@@ -2,12 +2,12 @@
 title: Publikování služby WCF
 ms.date: 03/30/2017
 ms.assetid: c806b253-cd47-4b96-b831-e73cbf08808f
-ms.openlocfilehash: 515885658612cf11ecff8e084c466a70ba698625
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: ca4a95b606f73800b11416627a27b8174e2bdda9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49452984"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54742997"
 ---
 # <a name="wcf-service-publishing"></a>Publikování služby WCF
 
@@ -58,7 +58,7 @@ Pokud budete chtít nasadit aplikaci do místní služby IIS, může dojít k ch
 ### <a name="svc-file"></a>. Soubor SVC File
  Operaci publikování generuje soubor *.svc pro každou službu WCF, zda soubor existuje nebo Ne, aby platnost verze. Existují dva různé typy souborů svc: jeden pro knihovny služby WCF a knihovna služby syndikace a jinou pro sekvenční a knihovna služby pracovního postupu stavu počítače. Vygenerovaný \*.svc soubor je zkopírován do kořenové složky v cílovém umístění.
 
-### <a name="webconfig-file"></a>Soubor Web.config
+### <a name="webconfig-file"></a>Web.config File
  Pokaždé, když do určité cílové umístění publikování projektu služby se vytvoří soubor Web.config.
 
  Vygenerovaný soubor Web.config obsahuje webové části, které jsou užitečné pro hostování webů a obsahu souboru App.config pro knihovnu služby WCF s následujícími změnami:
@@ -73,7 +73,7 @@ Pokud budete chtít nasadit aplikaci do místní služby IIS, může dojít k ch
 ## <a name="security"></a>Zabezpečení
  Publikování do místní služby IIS vyžaduje oprávnění správce, protože služba IIS vyžaduje spuštěné v účtu správce. Pokud se uživatel bez oprávnění správce spustí publikování služby WCF, služba IIS není k dispozici jako cílové umístění. Publikování v systému souborů nebo FTP funguje bez oprávnění správce.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Šablony sady Visual Studio pro WCF](../../../docs/framework/wcf/wcf-vs-templates.md)
 - [Hostitel služby WCF (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)

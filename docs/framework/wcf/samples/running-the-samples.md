@@ -2,12 +2,12 @@
 title: Spouštění ukázek Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: db8a83da-95c1-4a21-a9d2-48caeb6398ea
-ms.openlocfilehash: 3e49a88fa5369cc2ad2251e48f3eca74fa7c4445
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 3ae982b49a0d54d59d889166375938560c0d0d1b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836897"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535877"
 ---
 # <a name="running-the-windows-communication-foundation-samples"></a>Spouštění ukázek Windows Communication Foundation
 Ukázky Windows Communication Foundation (WCF) můžete spustit v konfiguraci jednoho počítače nebo mezi počítači. Jako zadán, ukázky jsou připravené ke spuštění na jednom počítači. V konfiguraci mezi počítači je nutné upravit nastavení tohoto příkladu konfiguračního souboru. Následující postupy popisují, jak ve stejném počítači a mezi počítači konfiguracích spuštění ukázky. Všimněte si, že jsou změny v postupu pro služby hostované v Internetové informační služby (IIS) a ukázky v místním prostředí. Většina ukázek, které jsou hostované ve službě IIS; Podívejte se ukázkovými informacemi o souboru readme k určení, jak je hostovaná.  
@@ -79,7 +79,7 @@ Ukázky Windows Communication Foundation (WCF) můžete spustit v konfiguraci je
   
 -   Pokud služba je hostována ve službě IIS pro účely zabezpečení, odeberte definici virtuální adresář a oprávnění udělené v kroků instalace, až budete hotovi s ukázkami.  
   
-## <a name="see-also"></a>Viz také  
- [Ukázky vytváření Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)  
- [Spouštění ukázek v pracovní skupině a v počítačích](https://msdn.microsoft.com/library/a451a525-e7ce-452d-9da9-620221260113)  
- [Tipy pro odstraňování potíží](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b)
+## <a name="see-also"></a>Viz také:
+- [Ukázky vytváření Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)
+- [Spouštění ukázek v pracovní skupině a v počítačích](https://msdn.microsoft.com/library/a451a525-e7ce-452d-9da9-620221260113)
+- [Tipy pro odstraňování potíží](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b)

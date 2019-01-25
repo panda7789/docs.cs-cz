@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0b249d26335a66b55d0643f3e75bfd90554f731e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c9a1ee9ab1649a832b6daefc96049d68850f3bc7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448866"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555554"
 ---
 # <a name="corunmanagedcallingconvention-enumeration"></a>CorUnmanagedCallingConvention – výčet
-Určuje konvencí volání nespravovaného kódu.  
+Určuje konvence volání nespravovaného kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,9 +48,9 @@ typedef enum CorUnmanagedCallingConvention {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_C`|Jazyk C volání konvence.|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_C`|C jazykové konvence volání.|  
 |`IMAGE_CEE_UNMANAGED_CALLCONV_STDCALL`|Standardní konvence volání.|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_THISCALL`|"Tato" konvence volání.|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_THISCALL`|"Tento" konvence volání.|  
 |`IMAGE_CEE_UNMANAGED_CALLCONV_FASTCALL`|"Rychlé" konvence volání.|  
 |`IMAGE_CEE_CS_CALLCONV_C`|Nepoužívá se.|  
 |`IMAGE_CEE_CS_CALLCONV_STDCALL`|Nepoužívá se.|  
@@ -61,11 +61,11 @@ typedef enum CorUnmanagedCallingConvention {
  Modul CLR nepodporuje "rychlé" konvence volání v rozhraní .NET Framework verze 1.0.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

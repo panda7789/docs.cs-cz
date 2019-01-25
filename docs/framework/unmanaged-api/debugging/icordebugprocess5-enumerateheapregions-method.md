@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d48d8e7b699f411ec45cf1b5d9810c23583b045e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c05ebc819d5fdd40ec20e62ece9f556244d914c0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423114"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661032"
 ---
 # <a name="icordebugprocess5enumerateheapregions-method"></a>ICorDebugProcess5::EnumerateHeapRegions – metoda
-Získá enumerátor pro rozsahy spravovaná halda paměti.  
+Získá enumerátor pro oblasti paměti spravované haldy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,17 +37,17 @@ HRESULT EnumerateHeapRegions(
   
 #### <a name="parameters"></a>Parametry  
  `ppRegions`  
- [out] Ukazatel na adresu [ICorDebugHeapSegmentEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) rozhraní objekt, který je enumerátor pro rozsahy, ve které objekty jsou umístěny v spravovaná halda paměti.  
+ [out] Ukazatel na adresu [icordebugheapsegmentenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) rozhraní objektu, který je enumerátor pro oblasti paměti, ve kterém jsou umístěny objekty ve spravované haldě.  
   
 ## <a name="remarks"></a>Poznámky  
- Před voláním `ICorDebugProcess5::EnumerateHeapRegions` metody by měly volat [icordebugprocess5::getgcheapinformation –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) metoda a zkontrolujte hodnotu `areGCStructuresValid` pole vráceného objektu [cor_heapinfo –](../../../../docs/framework/unmanaged-api/debugging/cor-heapinfo-structure.md) objekt, který chcete zkontrolujte, zda je vyčíslitelná kolekce halda paměti v jejím aktuálním stavu. Kromě toho `ICorDebugProcess5::EnumerateHeapRegions` metoda vrátí `E_FAIL` Pokud připojíte příliš brzy v doba platnosti procesu, před paměti oblasti budou vytvořeny.  
+ Před voláním `ICorDebugProcess5::EnumerateHeapRegions` metoda, měli byste zavolat [icordebugprocess5::getgcheapinformation –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) metoda a zkoumat hodnoty `areGCStructuresValid` pole vráceného [cor_heapinfo –](../../../../docs/framework/unmanaged-api/debugging/cor-heapinfo-structure.md) Ujistěte se, že haldě uvolňování paměti v jejím aktuálním stavu vyčíslitelný objekt. Kromě toho `ICorDebugProcess5::EnumerateHeapRegions` vrátí metoda `E_FAIL` Pokud připojíte příliš brzy v doba života procesu, před paměti oblastech budou vytvořeny.  
   
- Tato metoda záruku, že se vytvořit výčet všech oblastech paměti, které mohou obsahovat spravovaných objektů, ale nezaručí, že spravované objekty skutečně nacházejí v těchto oblastech. [ICorDebugHeapSegmentEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) objektu kolekce může zahrnovat oblasti prázdná nebo vyhrazené paměti.  
+ Tato metoda je zaručeno, že se vytvořit výčet všech oblastí paměti, které mohou obsahovat spravované objekty, ale nezaručuje, že spravované objekty ve skutečnosti jsou umístěny v těchto oblastech. [Icordebugheapsegmentenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) objektu kolekce může zahrnovat oblasti prázdný nebo vyhrazené paměti.  
   
- [ICorDebugHeapSegmentEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) objekt rozhraní je standardní enumerátor odvozen z rozhraní ICorDebugEnum, který umožňuje vytvořit výčet [cor_segment –](../../../../docs/framework/unmanaged-api/debugging/cor-segment-structure.md) objekty. Každý [cor_segment –](../../../../docs/framework/unmanaged-api/debugging/cor-segment-structure.md) objekt poskytuje informace o paměti rozsah určitý segment, společně s generování objektů v tomto segmentu.  
+ [Icordebugheapsegmentenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) objektu rozhraní je standardní výčet odvozený od icordebugenum – rozhraní, která umožňuje vytvořit výčet [cor_segment –](../../../../docs/framework/unmanaged-api/debugging/cor-segment-structure.md) objekty. Každý [cor_segment –](../../../../docs/framework/unmanaged-api/debugging/cor-segment-structure.md) objekt poskytuje informace o rozsahu paměti konkrétního segmentu, spolu s generování objekty v daném segmentu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -55,6 +55,6 @@ HRESULT EnumerateHeapRegions(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

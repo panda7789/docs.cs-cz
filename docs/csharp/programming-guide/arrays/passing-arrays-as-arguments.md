@@ -5,12 +5,12 @@ ms.date: 07/05/2018
 helpviewer_keywords:
 - arrays [C#], passing as arguments
 ms.assetid: f3a0971e-c87c-4a1f-8262-bc0a3b712772
-ms.openlocfilehash: 6e11020491c36349f035abb333aa3396c246dd68
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 1538988c1145a19055074b440f04cbaac4ef7aa7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245610"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54741175"
 ---
 # <a name="passing-arrays-as-arguments-c-programming-guide"></a>Předávání polí jako argumentů (C# Programming Guide)
 
@@ -58,8 +58,8 @@ V následujícím příkladu je inicializován a předat dvourozměrné pole cel
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../index.md)  
-- [Pole](index.md)  
-- [Jednorozměrná pole](single-dimensional-arrays.md)  
-- [Vícerozměrná pole](multidimensional-arrays.md)  
-- [Vícenásobná pole](jagged-arrays.md)  
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Pole](index.md)
+- [Jednorozměrná pole](single-dimensional-arrays.md)
+- [Vícerozměrná pole](multidimensional-arrays.md)
+- [Vícenásobná pole](jagged-arrays.md)

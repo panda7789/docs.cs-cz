@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: zabezpečení služby pomocí přihlašovacích údajů Windows'
+title: 'Postupy: Zabezpečení služby pomocí pověření systému Windows'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,14 @@ dev_langs:
 helpviewer_keywords:
 - WCF, security
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
-ms.openlocfilehash: c47539e0c614992efd74296171034b8091ba3f15
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 83b55ca42a3cebb6ceb2aec128202f14dc35da0a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183318"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54657555"
 ---
-# <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: zabezpečení služby pomocí přihlašovacích údajů Windows
+# <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: Zabezpečení služby pomocí pověření systému Windows
 Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Communication Foundation (WCF), která se nachází v doméně Windows a je volán klienty ve stejné doméně. Další informace o tomto scénáři najdete v tématu [zabezpečení přenosu pomocí ověřování Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázková aplikace, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) vzorku.  
   
  Toto téma předpokládá máte existující rozhraní kontrakt a implementaci již definována a přidává ke, který. Můžete také upravit existující služby a služby klienta.  
@@ -74,7 +74,7 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Commu
   
 ##### <a name="to-use-a-binding-in-a-client-with-code"></a>Pro použití vazby v klientovi s kódem  
   
-1.  Pomocí nástroje SvcUtil.exe generovat proxy kód z metadat služby. Další informace najdete v tématu [postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). Vygenerovaný proxy kód dědí z <xref:System.ServiceModel.ClientBase%601> třídu, která zajistí, že má každý klient nezbytné konstruktory, metody a vlastnosti komunikovat se službou WCF. V tomto příkladu obsahuje generovaného kódu `CalculatorClient` třídy, která implementuje `ICalculator` rozhraní, povolení kompatibility se kódu služby.  
+1.  Pomocí nástroje SvcUtil.exe generovat proxy kód z metadat služby. Další informace najdete v tématu [jak: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). Vygenerovaný proxy kód dědí z <xref:System.ServiceModel.ClientBase%601> třídu, která zajistí, že má každý klient nezbytné konstruktory, metody a vlastnosti komunikovat se službou WCF. V tomto příkladu obsahuje generovaného kódu `CalculatorClient` třídy, která implementuje `ICalculator` rozhraní, povolení kompatibility se kódu služby.  
   
 2.  Tento postup kód je vložen na začátek `Main` metoda klientskou aplikaci.  
   
@@ -127,7 +127,7 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Commu
   
 ##### <a name="to-use-a-binding-in-a-client-with-configuration"></a>Pro použití vazby v klientovi s konfigurací  
   
-1.  Pomocí nástroje SvcUtil.exe pro generování souboru kódu a konfigurace proxy serveru z metadat služby. Další informace najdete v tématu [postupy: vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
+1.  Pomocí nástroje SvcUtil.exe pro generování souboru kódu a konfigurace proxy serveru z metadat služby. Další informace najdete v tématu [jak: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
   
 2.  Nahradit [ \<vazby >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) část vygenerovaný konfigurační soubor s kódem konfigurace z předchozí části.  
   
@@ -147,9 +147,9 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Commu
  [!code-csharp[c_SecureWindowsClient#0](../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewindowsclient/cs/secureclient.cs#0)] 
  [!code-vb[c_SecureWindowsClient#0](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsclient/vb/secureclient.vb#0)]      
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.WSHttpBinding>  
- [Nástroj metadat modelu služby (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
- [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
- [Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md)  
- [Přehled zabezpečení](../../../docs/framework/wcf/feature-details/security-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.WSHttpBinding>
+- [Nástroj metadat modelu služby (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
+- [Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md)
+- [Přehled zabezpečení](../../../docs/framework/wcf/feature-details/security-overview.md)

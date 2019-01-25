@@ -13,12 +13,12 @@ helpviewer_keywords:
 - Visual Basic code, operators
 - arithmetic operators [Visual Basic], about arithmetic operators
 ms.assetid: 325dac7a-ea4f-41d5-8b48-f6e904211569
-ms.openlocfilehash: cd66d08eba973a796472fcbd40a6a84edbbb62ae
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: ff0532c87e03e4b502367313e33ddb9bd12ad8cf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43499260"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54730734"
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Aritmetické operátory v jazyce Visual Basic
 Aritmetické operátory jsou používány k provádění řady známých aritmetické operace, které zahrnují výpočet číselné hodnoty literály, proměnné, ostatní výrazy, funkce a volání vlastností a konstanty. Také klasifikovat s aritmetické operátory jsou bitové posunutí – operátory, které bude fungovat na úrovni jednotlivých bitů operandy a posunout své vzorců bitů doleva nebo doprava.  
@@ -94,10 +94,10 @@ Aritmetické operátory jsou používány k provádění řady známých aritmet
   
  Pokud nastavíte `Option Strict Off`, ale jazyka Visual Basic umožňuje implicitní zužující převody uskutečnit, i když může způsobit neočekávané ztráty dat nebo přesnosti. Z tohoto důvodu doporučujeme používat `Option Strict On` při psaní kódu produkčního prostředí. Další informace najdete v tématu [Widening a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
   
-## <a name="see-also"></a>Viz také  
- [Aritmetické operátory](../../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
- [Operátory bitového posunu](../../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
- [Operátory porovnání v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)  
- [Operátory řetězení v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)  
- [Logické a bitové operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)  
- [Účinná kombinace operátorů](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)
+## <a name="see-also"></a>Viz také:
+- [Aritmetické operátory](../../../../visual-basic/language-reference/operators/arithmetic-operators.md)
+- [Operátory bitového posunu](../../../../visual-basic/language-reference/operators/bit-shift-operators.md)
+- [Operátory porovnání v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Operátory řetězení v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)
+- [Logické a bitové operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Účinná kombinace operátorů](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)

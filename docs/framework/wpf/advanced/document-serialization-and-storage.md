@@ -6,12 +6,12 @@ helpviewer_keywords:
 - documents [WPF], storage
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
-ms.openlocfilehash: 39466eb528003e36bfa05751f83619d86b78a2a7
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 028f7e8f2be2aa0718eebc133ebd9d35717c824d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45988234"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54630850"
 ---
 # <a name="document-serialization-and-storage"></a>Serializace a úložiště dokumentu
 Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobrazování vysoce kvalitní dokumenty.  Rozšířené funkce, které podporují – dokumenty a tok dokumenty, rozšířené zobrazení ovládacích prvků, v kombinaci s výkonné 2D a 3D grafické možnosti trvat aplikace rozhraní .NET Framework na zcela novou úroveň kvality a činnost koncového uživatele.  Dokáže flexibilně spravovat v paměti reprezentace dokumentu je klíčovou funkcí rozhraní .NET Framework a nebudou moct efektivně ukládat a načítat dokumenty z úložiště dat je potřeba téměř všechny aplikace.  Proces převodu dokumentu z interního vyjádření v paměti k externím úložišti, se nazývá serializace.  Proces zpětné čtení úložiště dat a znovu vytvořit původní instance v paměti je označován deserializace.  
@@ -73,10 +73,10 @@ Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobr
   
 3.  Po vytvoření modulu plug-in serializátor instalačního skriptu je implementován pro distribuci a instalaci (a odinstalaci) modulu plug-in (viz výše, "[instalace modulu Plug-in Serializátory](#InstallingPluginSerializers)").  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Documents.Serialization>  
- <xref:System.Windows.Xps.XpsDocumentWriter>  
- <xref:System.Windows.Xps.Packaging.XpsDocument>  
- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)  
- [XML Paper Specification: Přehled](https://go.microsoft.com/fwlink?LinkID=106246)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Documents.Serialization>
+- <xref:System.Windows.Xps.XpsDocumentWriter>
+- <xref:System.Windows.Xps.Packaging.XpsDocument>
+- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)
+- [XML Paper Specification: Přehled](https://go.microsoft.com/fwlink?LinkID=106246)

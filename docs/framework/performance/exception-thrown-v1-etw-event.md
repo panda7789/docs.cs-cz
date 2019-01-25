@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 0d3da389-6b7b-40f6-a877-fac546d6019c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 865b7b16d5807bd9161855f453128a63c84eab96
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 07932a12916138dd7cbee2576e4fc747898b8063
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505220"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54610838"
 ---
 # <a name="exception-thrownv1-etw-event"></a>Událost Trasování událostí pro Windows výjimky Thrown_V1
 Tato událost zaznamená informace o výjimkách, které jsou vyvolány.  
@@ -33,12 +33,12 @@ Tato událost zaznamená informace o výjimkách, které jsou vyvolány.
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Typ výjimky|Windows: UnicodeString|Typ výjimky; například `System.NullReferenceException`.|  
-|Zpráva o výjimce|Windows: UnicodeString|Zpráva o výjimce skutečný.|  
-|EIPCodeThrow|Windows: ukazatele|Ukazatele na instrukci kde došlo k výjimce.|  
-|ExceptionHR|Windows: UInt32|Výjimka [HRESULT](https://go.microsoft.com/fwlink/?LinkId=179679).|  
-|Příznaky výjimky|Windows: UInt16|0x01: HasInnerException (viz [CLR ETW Events](../../../docs/framework/performance/clr-etw-events.md) dokumentace jazyka Visual Basic).<br /><br /> 0x02: IsNestedException.<br /><br /> 0x04: IsRethrownException.<br /><br /> 0x08: IsCorruptedStateException (vyplývá, že stav procesu je poškozen, naleznete v tématu [zpracování výjimek poškozený stav](https://go.microsoft.com/fwlink/?LinkId=179681) na webové stránce MSDN).<br /><br /> 0x10: IsCLSCompliant (výjimku, která je odvozena z <xref:System.Exception> je kompatibilní se Specifikací CLS; v opačném případě není kompatibilní se Specifikací CLS).|  
-|ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
+|Typ výjimky|win:UnicodeString|Typ výjimky; například `System.NullReferenceException`.|  
+|Zpráva o výjimce|win:UnicodeString|Zpráva o výjimce skutečný.|  
+|EIPCodeThrow|win:Pointer|Ukazatele na instrukci kde došlo k výjimce.|  
+|ExceptionHR|win:UInt32|Výjimka [HRESULT](https://go.microsoft.com/fwlink/?LinkId=179679).|  
+|ExceptionFlags|win:UInt16|0x01: HasInnerException (viz [CLR ETW Events](../../../docs/framework/performance/clr-etw-events.md) dokumentace jazyka Visual Basic).<br /><br /> 0x02: IsNestedException.<br /><br /> 0x04: IsRethrownException.<br /><br /> 0x08: IsCorruptedStateException (vyplývá, že stav procesu je poškozen, naleznete v tématu [zpracování výjimek poškozený stav](https://go.microsoft.com/fwlink/?LinkId=179681) na webové stránce MSDN).<br /><br /> 0x10: IsCLSCompliant (výjimku, která je odvozena z <xref:System.Exception> je kompatibilní se Specifikací CLS; v opačném případě není kompatibilní se Specifikací CLS).|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
-## <a name="see-also"></a>Viz také  
- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+## <a name="see-also"></a>Viz také:
+- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)

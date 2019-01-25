@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 59b37c30df6467439d04e367e13b0fc4ffff0ec6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5a5f21855ce83f5c1fb68637e3eeb6d3c831bce2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422943"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745151"
 ---
 # <a name="icordebugobjectenumnext-method"></a>ICorDebugObjectEnum::Next – metoda
-Získá relativní virtuální adresy (RVAs) zadaný počet objektů z výčtu, počínaje na aktuální pozici.  
+Získá relativních virtuálních adres (RVA) zadané počty objektů z výčtu od aktuální pozice.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ HRESULT Next (
   
 #### <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet objektů, které mají být načteny.  
+ [in] Počet objektů, které se mají načíst.  
   
  `objects`  
- [out] Pole ukazatele, každý z nich odkazuje na objekt CORDB_ADDRESS.  
+ [out] Pole ukazatelů, každý z nich odkazuje na objekt CORDB_ADDRESS.  
   
  `pceltFetched`  
- [out] Ukazatel na číslo ve skutečnosti vrácených objektů. Tato hodnota může být null. Pokud `celt` je jedna.  
+ [out] Ukazatel na počet skutečně vrácených objektů. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -57,5 +57,5 @@ HRESULT Next (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

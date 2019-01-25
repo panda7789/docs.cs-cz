@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vytvoření vlastního návrháře aktivit'
+title: 'Postupy: Vytvoření vlastního návrháře aktivit'
 ms.date: 03/30/2017
 ms.assetid: 2f3aade6-facc-44ef-9657-a407ef8b9b31
-ms.openlocfilehash: 86cd3544e9117cca273b6c8dde8454672f14a36a
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 034b8b8be828288f840dbfd902725c4f63c779ac
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873005"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54638181"
 ---
-# <a name="how-to-create-a-custom-activity-designer"></a>Postupy: vytvoření vlastního návrháře aktivit
+# <a name="how-to-create-a-custom-activity-designer"></a>Postupy: Vytvoření vlastního návrháře aktivit
 
 Vlastní návrháři aktivit jsou obvykle implementovány tak, aby jejich související aktivity sestavitelný s ostatními aktivitami, jehož návrháři dá přetáhnout do návrhové plochy s nimi. Tato funkce vyžaduje, aby poskytovaly vlastního návrháře aktivit "rozevírací zónu" umístění libovolné aktivity a také způsob, jak spravovat výsledný kolekci prvků na návrhové ploše. Toto téma popisuje, jak vytvořit vlastního návrháře aktivit, která obsahuje rozevírací zóny a jak vytvořit vlastního návrháře aktivit, které zajišťuje, že editačních funkcích museli spravovat kolekci elementů návrháře.
 
@@ -27,7 +27,7 @@ Vlastní návrháři aktivit jsou obvykle implementovány tak, aby jejich souvis
 
 ## <a name="to-create-a-custom-activity-designer-with-a-drop-zone-using-workflowitempresenter"></a>Vytvoření vlastního návrháře aktivit pomocí přetažení zóny pomocí WorkflowItemPresenter
 
-1.  Spusťte sadu Visual Studio 2010.
+1.  Start Visual Studio 2010.
 
 2.  Na **souboru** nabídky, přejděte k **nový**a pak vyberte **projektu...** .
 
@@ -43,7 +43,7 @@ Vlastní návrháři aktivit jsou obvykle implementovány tak, aby jejich souvis
 
 7.  V **řešení** pole, přijměte výchozí hodnotu.
 
-8.  Klikněte na tlačítko **OK**.
+8.  Klikněte na **OK**.
 
 9. Klikněte pravým tlačítkem na soubor MainWindows.xaml v **Průzkumníka řešení**vyberte **odstranit** a potvrďte **OK** v **sady Microsoft Visual Studio**dialogové okno.
 
@@ -343,7 +343,7 @@ Vlastní návrháři aktivit jsou obvykle implementovány tak, aby jejich souvis
     }
     ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Activities.Presentation.ActivityDesigner>
 - <xref:System.Activities.Presentation.WorkflowItemPresenter>

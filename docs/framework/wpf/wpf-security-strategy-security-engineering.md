@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Security Development Lifecycle (SDL), critical code management
 - threat modeling [WPF]
 ms.assetid: 0fc04394-4e47-49ca-b0cf-8cd1161d95b9
-ms.openlocfilehash: 60def26d21ff065bda3209ac90161af0672a38af
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6006024f29c37545ce95e579c7b93727d8c6bc67
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181693"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54547745"
 ---
 # <a name="wpf-security-strategy---security-engineering"></a>Strategie zabezpečení WPF – engineering zabezpečení
 Trustworthy Computing je iniciativy Microsoftu pro zajištění provozní bezpečný kód. Je klíčovým prvkem Trustworthy Computing iniciativa zaměřená [!INCLUDE[TLA#tla_sdl](../../../includes/tlasharptla-sdl-md.md)]. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Je technický postup, který se používá ve spojení s standardní technického procesu usnadňuje poskytování zabezpečeného kódu. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Sestává z deset fází, které kombinují osvědčené postupy s oblast, measurability a další strukturu, včetně:  
@@ -69,30 +69,30 @@ Trustworthy Computing je iniciativy Microsoftu pro zajištění provozní bezpe�
   
 -   **FXCop**: Vyhledá běžné problémy se zabezpečením ve spravovaném kódu od pravidla dědičnosti pro použití zabezpečení přístupu kódu na tom, jak bezpečně spolupracovat s nespravovaným kódem. Zobrazit [FXCop](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/bb429476%28v=vs.80%29).  
   
--   **Předpona/nástroje Prefast**: formátu zjistí ohrožení zabezpečení a běžné problémy se zabezpečením v nespravovaném kódu, jako je například přetečení vyrovnávací paměti řetězce problémy a kontroly chyb.  
+-   **Předpona/nástroje Prefast**: Zjistí ohrožení zabezpečení a běžné problémy se zabezpečením v nespravovaném kódu, jako je například přetečení vyrovnávací paměti, problémy řetězec formátu a kontroly chyb.  
   
--   **Rozhraní API zakázané**: hledání zdrojového kódu k identifikaci nechtěné funkcí, které jsou dobře známé pro způsobuje problémy se zabezpečením, jako například `strcpy`. Jakmile jej rozpoznáte, tyto funkce jsou nahrazeny alternativy, které jsou lepší zabezpečení.  
+-   **Rozhraní API zakázané**: Hledání zdrojového kódu k identifikaci nechtěné funkcí, které jsou dobře známé pro způsobuje problémy se zabezpečením, jako například `strcpy`. Jakmile jej rozpoznáte, tyto funkce jsou nahrazeny alternativy, které jsou lepší zabezpečení.  
   
 <a name="techniques"></a>   
 ### <a name="testing-techniques"></a>Metody testování  
  [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] využíváte různé metody, které zahrnují testování zabezpečení:  
   
--   **Testování Whitebox**: testery zobrazení zdrojového kódu a následně vytvořit testy před zneužitím  
+-   **Testování Whitebox**: Testeři zobrazení zdrojového kódu a začnete vytvářet testy před zneužitím  
   
--   **Testování Blackbox**: testery najít zabezpečení zneužije prozkoumáním rozhraní API a funkce a potom to zkusit k útoku na produktu.  
+-   **Testování Blackbox**: Testeři zkusit zjistit, že zneužije zabezpečení tím, že kontroluje rozhraní API a funkce a poté k útoku na produktu.  
   
--   **Vrátí problémy se zabezpečením od jiných produktů**: v případě potřeby jsou testovány problémy se zabezpečením ze souvisejících produktů. Například vhodné varianty přibližně 60 problémy se zabezpečením [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)] identifikaci a pokusili pro jejich použitelnost [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].  
+-   **Problémy se zabezpečením vrátí z jiných produktů**: V případě potřeby jsou testovány problémy se zabezpečením ze souvisejících produktů. Například vhodné varianty přibližně 60 problémy se zabezpečením [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)] identifikaci a pokusili pro jejich použitelnost [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].  
   
--   **Na základě nástroje pro testování průniku prostřednictvím souboru Fuzzing**: soubor fuzzing je využívání čtečku souboru se uživatelovo zadání rozsah přes celou řadu vstupů. Jedním z příkladů v [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] použití této techniky je chcete zkontrolovat chyby v kódu dekódování obrázku.  
+-   **Testování průniku založené na nástroji prostřednictvím souboru Fuzzing**: Soubor fuzzing je že využívání čtečku souboru se uživatelovo zadání rozsah přes celou řadu vstupů. Jedním z příkladů v [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] použití této techniky je chcete zkontrolovat chyby v kódu dekódování obrázku.  
   
 <a name="critical_code"></a>   
 ### <a name="critical-code-management"></a>Správa kritického kódu  
  Pro [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)], [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] sestavení izolovaného prostoru zabezpečení pomocí podpory rozhraní .NET Framework pro označení a sledování zabezpečení kritického kódu, který má oprávnění (naleznete v tématu **kritické pro zabezpečení metodologie** v [WPF Strategie zabezpečení – zabezpečení platformy](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)). Provádět požadavky na zabezpečení vysoké kvality při zabezpečení kritického kódu, takový kód obdrží další úroveň řízení a zabezpečení auditu správy zdroje. Přibližně 5 až 10 % [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] kritické pro zabezpečení kód, který je vyhrazený tým si předtím prostudovali zkontroloval se skládá. Zdrojový kód a proces vrácení se změnami se spravuje zabezpečení kritický kód pro sledování a mapováním každou kritické entitu (například metodu, která obsahuje kritický kód) na jeho znaménko vypnuté. Znaménko vypnutý stav zahrnuje názvy nejméně jeden revidující. Každý každodenními buildy sady [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] porovnává kritický kód, který v předchozí sestavení, která zkontroluje změny neschválených. Pokud pracovník změní kritického kódu bez schválení od revizí týmu, je zjistili a opravili okamžitě. Tento proces umožní aplikaci a údržby zejména vysoký stupeň kontroly nad [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] kód izolovaného prostoru.  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení](../../../docs/framework/wpf/security-wpf.md)  
- [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)  
- [Strategie zabezpečení WPF – zabezpečení platformy](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)  
- [Trustworthy Computing](https://www.microsoft.com/mscorp/twc/default.mspx)  
- [Modelování aplikace před internetovými útoky](https://msdn.microsoft.com/security/securecode/threatmodeling/acetm/)  
- [Pokyny pro zabezpečení: Rozhraní .NET Framework 2.0](https://msdn.microsoft.com/library/default.asp?url=/library/dnpag2/html/PAGGuidelines0003.asp)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení](../../../docs/framework/wpf/security-wpf.md)
+- [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)
+- [Strategie zabezpečení WPF – zabezpečení platformy](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)
+- [Trustworthy Computing](https://www.microsoft.com/mscorp/twc/default.mspx)
+- [Modelování aplikace před internetovými útoky](https://msdn.microsoft.com/security/securecode/threatmodeling/acetm/)
+- [Pokyny pro zabezpečení: Rozhraní .NET Framework 2.0](https://msdn.microsoft.com/library/default.asp?url=/library/dnpag2/html/PAGGuidelines0003.asp)

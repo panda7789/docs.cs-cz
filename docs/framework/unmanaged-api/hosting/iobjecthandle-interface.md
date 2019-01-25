@@ -16,30 +16,30 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fa16b67f11e5d4f44ef88daf27e0014ae8690769
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b9f6bf0dc0fb92d8b5bb7e3f4d017eed85d85338
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33443093"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54531200"
 ---
 # <a name="iobjecthandle-interface"></a>IObjectHandle – rozhraní
-Poskytuje metodu pro rozbalení zařazování hodnota objekty z indirection.  
+Poskytuje metodu pro rozbalení objekty zařazování podle hodnot z dereference.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Unwrap – metoda](../../../../docs/framework/unmanaged-api/hosting/iobjecthandle-unwrap-method.md)|Rozbalí objekt zařazování hodnotu z indirection.|  
+|[Unwrap – metoda](../../../../docs/framework/unmanaged-api/hosting/iobjecthandle-unwrap-method.md)|Rozbalí objekt zařazování podle hodnot z dereference.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

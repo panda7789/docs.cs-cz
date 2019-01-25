@@ -12,49 +12,49 @@ helpviewer_keywords:
 - Windows Forms controls, data binding
 - data-bound controls [Windows Forms], Windows Forms
 ms.assetid: 419aac5e-819b-4aad-88b0-73a2f8c0bd27
-ms.openlocfilehash: ab1b712a2c855bc27236b8b8989ba51054e57358
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a8b829466d9afaa550970ac0735a44c49762ba81
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33541658"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54704378"
 ---
 # <a name="data-binding-and-windows-forms"></a>Datové vazby a rozhraní Windows Forms
-V systému Windows Forms můžete vázat na právě tradičních datových zdrojů, ale také k téměř jakoukoli struktura, která obsahuje data. Můžete vázat na pole hodnot, které vypočítat za běhu, čtení ze souboru nebo odvozena z hodnot jiných ovládacích prvků.  
+Ve Windows Forms lze svázat jenom tradičních datových zdrojů, ale také pro téměř jakoukoli strukturu, která obsahuje data. Můžete vytvořit vazbu na pole hodnot, které vypočítat v době běhu, čtení ze souboru nebo jsou odvozeny z hodnot jiných ovládacích prvků.  
   
- Kromě toho můžete vázat žádnou vlastnost libovolný ovládací prvek na zdroj dat. V tradiční datovou vazbu, obvykle vazby vlastnosti zobrazení – například <xref:System.Windows.Forms.Control.Text%2A> vlastnost <xref:System.Windows.Forms.TextBox> ovládací prvek – ke zdroji dat. Pomocí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], máte také možnost nastavení prostřednictvím vazby také další vlastnosti. Vazba můžete použít k provádění následujících úloh:  
+ Kromě toho můžete vázat nějaká vlastnost libovolný ovládací prvek na zdroj dat. V tradičních datových vazbách obvykle vazby vlastnosti zobrazení – například <xref:System.Windows.Forms.Control.Text%2A> vlastnost <xref:System.Windows.Forms.TextBox> ovládacího prvku – ke zdroji dat. S [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], máte také možnost nastavení prostřednictvím vazby také další vlastnosti. Vazby můžete použít k provádění následujících úloh:  
   
--   Nastavení obrázek ovládacího prvku obrázek.  
+-   Nastaví obrázek ovládacího prvku pro obrázek.  
   
 -   Nastavení barvy pozadí jeden nebo více ovládacích prvků.  
   
 -   Nastavení velikosti ovládacích prvků.  
   
- Datová vazba je v podstatě automatické způsob nastavení žádnou běhu přístupné vlastnost libovolný ovládací prvek na formuláři.  
+ Datová vazba je v podstatě automatický způsob nastavení nějaká přístupné za běhu vlastnost libovolný ovládací prvek na formuláři.  
   
-## <a name="types-of-data-binding"></a>Typy datová vazba  
- Windows Forms můžete využít výhod dva typy datové vazby: jednoduché vázání a složitých vazby. Každý nabízí jiné výhody.  
+## <a name="types-of-data-binding"></a>Typy datových vazeb  
+ Formuláře Windows můžete využít dva druhy datové vazby: komplexní vazby a jednoduché vazby. Každá nabízí různé výhody.  
   
-|Typ datová vazba|Popis|  
+|Typ vázání dat|Popis|  
 |--------------------------|-----------------|  
-|Jednoduchá datová vazba|Schopnost ovládacího prvku vazby do jednoho datového elementu, jako je například hodnotu ve sloupci v tabulce datovou sadu. Jedná se o typ vazbu typických pro ovládací prvky, jako <xref:System.Windows.Forms.TextBox> ovládací prvek nebo <xref:System.Windows.Forms.Label> řízení, které jsou ovládací prvky, které obvykle pouze zobrazí jednu hodnotu. Všechny vlastnost v ovládacím prvku ve skutečnosti může být vázána na pole v databázi. Rozsáhlá podpora pro tuto funkci v sadě Visual Studio není k dispozici.<br /><br /> Další informace naleznete v tématu:<br /><br /> -   [Rozhraní související s datovou vazbou](../../../docs/framework/winforms/interfaces-related-to-data-binding.md)<br />-   [Postupy: navigace daty v systému Windows Forms](../../../docs/framework/winforms/how-to-navigate-data-in-windows-forms.md)<br />-   [Postupy: vytvoření jednoduše připojeného ovládacího prvku ve formuláři Windows](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)|  
-|Komplexní datová vazba|Schopnost ovládacího prvku vytvořit vazbu k více než jeden element dat, obvykle více než jeden záznam v databázi. Komplexní vazba je také označován na základě seznamu vazby. Příklady ovládacích prvků, které podporují komplexní vazby <xref:System.Windows.Forms.DataGridView>, <xref:System.Windows.Forms.ListBox>, a <xref:System.Windows.Forms.ComboBox> ovládací prvky. Příklad rozšířené datové vazby, naleznete v části [postupy: vytvoření vazby na Windows Forms ComboBox nebo ListBox – ovládací prvek k datům](../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md).|  
+|Jednoduchá vazba dat|Možnost ovládací prvek svázat jednoho datového prvku, jako je například hodnota ve sloupci v tabulce datové sady. Jedná se o typ vazby typické pro ovládací prvky, jako <xref:System.Windows.Forms.TextBox> ovládací prvek nebo <xref:System.Windows.Forms.Label> ovládacího prvku, které jsou ovládací prvky, které se obvykle zobrazuje pouze jednu hodnotu. Žádné vlastnost v ovládacím prvku ve skutečnosti může být vázána na pole v databázi. Není k dispozici rozsáhlou podporu pro tuto funkci v sadě Visual Studio.<br /><br /> Další informace naleznete v tématu:<br /><br /> -   [Rozhraní související s datovou vazbou](../../../docs/framework/winforms/interfaces-related-to-data-binding.md)<br />-   [Jak: Procházení dat v modelu Windows Forms](../../../docs/framework/winforms/how-to-navigate-data-in-windows-forms.md)<br />-   [Jak: Vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)|  
+|Rozšířené datové vazby|Možnost ovládací prvek svázat s více než jeden prvek dat, obvykle více než jeden záznam v databázi. Komplexní vazby se také nazývá vazbu založenou na seznamu. Příklady ovládacích prvků, které podporují složité vazby <xref:System.Windows.Forms.DataGridView>, <xref:System.Windows.Forms.ListBox>, a <xref:System.Windows.Forms.ComboBox> ovládací prvky. Příklad rozšířené datové vazby, naleznete v tématu [jak: Windows Forms ComboBox nebo ListBox – ovládací prvek svázat Data](../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md).|  
   
 ## <a name="bindingsource-component"></a>BindingSource – komponenta  
- Windows Forms ke zjednodušení datové vazby, umožňuje vytvoření vazby zdroje dat <xref:System.Windows.Forms.BindingSource> součásti a poté vazby ovládacích prvků <xref:System.Windows.Forms.BindingSource>. Můžete použít <xref:System.Windows.Forms.BindingSource> ve scénářích jednoduché nebo komplexní vazby. V obou případech <xref:System.Windows.Forms.BindingSource> jednání jako zprostředkovatel mezi zdroji dat a vázané ovládací prvky, které poskytuje oznámení měna řízení změn a dalších služeb.  
+ Windows Forms pro zjednodušení vytváření datových vazeb, umožňuje vytvoření vazby zdroje dat na <xref:System.Windows.Forms.BindingSource> komponentu a potom vazby ovládacích prvků <xref:System.Windows.Forms.BindingSource>. Můžete použít <xref:System.Windows.Forms.BindingSource> v jednoduchých nebo složitých vazby scénáře. V obou případech <xref:System.Windows.Forms.BindingSource> funguje jako prostředník mezi zdrojem dat a vázané ovládací prvky, které poskytují oznámení měny řízení změn a dalších služeb.  
   
-## <a name="common-scenarios-that-employ-data-binding"></a>Běžné scénáře, které využívají datová vazba  
- Téměř každý komerční aplikace používá informace o čtení ze zdroje dat jeden typ nebo jinou, obvykle prostřednictvím datové vazby. Následující seznam obsahuje několik nejběžnějších scénářů, které využívají datová vazba jako metodu prezentace dat a zpracování.  
+## <a name="common-scenarios-that-employ-data-binding"></a>Běžné scénáře, které používají datová vazba  
+ Téměř každá obchodní aplikace používá informace o čtení ze zdroje dat z jednoho typu nebo jiného, obvykle prostřednictvím datové vazby. Následující seznam uvádí některé z nejběžnějších scénářů, které využívají jako způsob prezentace dat a manipulace s datovou vazbu.  
   
 |Scénář|Popis|  
 |--------------|-----------------|  
-|Generování sestav|Sestavy poskytují flexibilní způsob, jak můžete zobrazit a shrnují data v tištěné dokumentu. Je velmi běžné vytvořit sestavu, která zobrazí obsah vybrané zdroje dat na obrazovce nebo na tiskárnu. Běžné sestavy obsahují seznamy, faktury a souhrny. Položky jsou obvykle naformátovaný do sloupce seznamů, dílčí položky seřazené podle jednotlivé položky seznamu, ale měli byste vybrat rozložení, který nejlépe vyhovuje data.|  
-|Vkládání dat|Prostřednictvím dat je běžným způsobem zadejte velkých objemů dat v relaci nebo Dotázat se uživatelů na informace. Uživatele můžete zadat informace nebo vyberte možnosti pomocí textová pole, možnost tlačítka, rozevírací seznamy a zaškrtávací políčka. Informace se potom odeslána a uloženy v databázi, jejíž struktura je založený na informacích zadali.|  
-|Vztahu seznam podrobnosti|Aplikace a podrobností je jeden formát pro prohlížení související data. Konkrétně, existují dvě tabulky dat vztahem jejich připojením – příklad classic firmy, tabulku "Zákazníci" a tabulku "Objednávky" se vztah mezi je serveru linking zákazníků a jejich odpovídajících objednávky. Další informace o vytvoření hlavního/podrobného aplikace s dvěma Windows Forms <xref:System.Windows.Forms.DataGridView> najdete v části ovládací prvky, [postupy: vytvoření hlavního a podrobného formuláře pomocí dvou prvkům Windows Forms DataGridView](../../../docs/framework/winforms/controls/create-a-master-detail-form-using-two-datagridviews.md)|  
-|Vyhledávací tabulky|Jiný běžný scénář prezentace nebo zpracování dat je tabulka vyhledávání. Jako součást větší zobrazení dat, často <xref:System.Windows.Forms.ComboBox> řízení se používá k zobrazení a pracovat s daty. Klíč je, že jsou data zobrazena v <xref:System.Windows.Forms.ComboBox> řízení se liší od data zapsána do databáze. Pokud máte například <xref:System.Windows.Forms.ComboBox> řízení zobrazení položky k dispozici z úložiště supermarketu, pravděpodobně chcete zobrazit názvy produktů (chléb, mléko, vejce). Však usnadňují načítání informací v databázi a pro normalizaci databáze, pravděpodobně uložení informací pro konkrétní položky daného pořadí položek čísla (#501, #603 a tak dále). Proto je implicitní propojení "popisný název" supermarketu položky v <xref:System.Windows.Forms.ComboBox> ovládací prvek na formuláři a související číslo, které se nachází v pořadí. Toto je podstatu prohledávání tabulky. Další informace najdete v tématu [postupy: vytváření vyhledávacích tabulek s komponentou Windows Forms BindingSource](../../../docs/framework/winforms/controls/how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component.md).|  
+|Generování sestav|Sestavy poskytují flexibilní způsob zobrazení a shrnujících data v tištěném dokumentu. Je velmi běžné, pokud chcete vytvořit sestavu, která vytiskne obsah vybrané zdroje dat na obrazovku nebo k tiskárně. Běžné sestavy zahrnují seznamy, faktury a souhrny. Položky jsou obvykle ve formátu do sloupce seznamů, s podřízené položky, které jsou uspořádané pod každou položku seznamu, ale měli byste zvolit na rozložení, které nejlépe vyhovuje stylu vaší data.|  
+|Zadávání dat|Běžný způsob zadat velké množství souvisejících dat nebo vyzve uživatele, které informace se prostřednictvím formuláře datových záznamů. Uživatelům můžete zadat informace nebo vyberte voleb textová pole, přepínačů, rozevírací seznamy a zaškrtávací políčka. Informace jsou pak odeslání a uloženy v databázi, jejíž struktura je založená na zadané informace.|  
+|Vztah záznamů master/detail|Záznamů master/detail aplikace je jeden formát pro vyhledávání na související data. Konkrétně, existují dvě tabulky data pomocí vztahu je propojí – v klasické obchodní například tabulku "Zákazníci" a tabulku "Orders" se vztahem mezi jejich propojení zákazníky a jejich příslušné objednávky. Další informace o vytvoření záznamů master/detail aplikace s dva formuláře Windows <xref:System.Windows.Forms.DataGridView> ovládacích prvků, naleznete v tématu [jak: Vytvoření hlavního/podrobného formuláře pomocí dvou prvkům Windows Forms DataGridView](../../../docs/framework/winforms/controls/create-a-master-detail-form-using-two-datagridviews.md)|  
+|Vyhledávací tabulky|Další z typických data prezentace a manipulaci s možností je prohledávání tabulky. Jako součást větší zobrazení dat, často <xref:System.Windows.Forms.ComboBox> ovládací prvek se používá k zobrazení a manipulaci s daty. Klíč je, že se data zobrazí v <xref:System.Windows.Forms.ComboBox> ovládací prvek se liší od data zapsaná do databáze. Pokud máte například <xref:System.Windows.Forms.ComboBox> ovládací prvek položky zobrazení je k dispozici z úložiště blízkým, pravděpodobně chcete zobrazit názvy produktů (chléb, mléka, vajíčka). Ale usnadnění načítání informací v databázi a databázi normalizace, pravděpodobně ukládání informací pro konkrétní položky daného pořadí jako čísla položky (#501, #603 a tak dále). Proto je implicitní propojení "popisný název" blízkým položky v <xref:System.Windows.Forms.ComboBox> ovládací prvek na formuláři a číslo související položky, která je k dispozici v pořadí. Toto je podstata prohledávání tabulky. Další informace najdete v tématu [jak: Vytvoření vyhledávací tabulky s komponentou Windows Forms BindingSource](../../../docs/framework/winforms/controls/how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component.md).|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.Binding>  
- [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)  
- [Postupy: Vázání ovládacího prvku Windows Forms DataGrid ke zdroji dat](../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)  
- [Komponenta BindingSource](../../../docs/framework/winforms/controls/bindingsource-component.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.Binding>
+- [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)
+- [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
+- [Komponenta BindingSource](../../../docs/framework/winforms/controls/bindingsource-component.md)

@@ -9,37 +9,38 @@ helpviewer_keywords:
 - templates [WPF], RadioButton
 - parts [WPF], RadioButton
 ms.assetid: 9acf93f7-dd2f-4010-8ce0-1edd81c52ae2
-ms.openlocfilehash: a73f9873de77b53c8916843fa3284912988b912d
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 58da02a3c6927e0457a16e354ac86724a783354b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661325"
 ---
 # <a name="radiobutton-styles-and-templates"></a>RadioButton – styly a šablony
-Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.RadioButton> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhledu ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku tak, že vytvoříte ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.RadioButton> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
   
-## <a name="radiobutton-parts"></a>RadioButton částí  
- <xref:System.Windows.Controls.RadioButton> Ovládací prvek nemá žádné pojmenované částí.  
+## <a name="radiobutton-parts"></a>Části ovládacího prvku RadioButton  
+ <xref:System.Windows.Controls.RadioButton> Ovládací prvek nemá žádné pojmenované součásti.  
   
-## <a name="radiobutton-states"></a>Stavy RadioButton  
- Následující tabulka uvádí visual stavy pro <xref:System.Windows.Controls.RadioButton> ovládacího prvku.  
+## <a name="radiobutton-states"></a>Stavy ovládacího prvku RadioButton  
+ V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.RadioButton> ovládacího prvku.  
   
-|Název VisualState|Název VisualStateGroup|Popis|  
+|Název vizuálního stavu|Název VisualStateGroup|Popis|  
 |----------------------|---------------------------|-----------------|  
 |Normální|CommonStates|Ve výchozím stavu.|  
-|Myš nad|CommonStates|Ukazatel myši je umístěn nad ovládacího prvku.|  
-|Stisknutí tlačítka|CommonStates|Stisknutí ovládacího prvku.|  
-|zakázáno|CommonStates|Ovládací prvek je zakázaný.|  
-|Zaměřuje|FocusStates|Ovládací prvek má právě fokus.|  
-|Nezaostřená|FocusStates|Ovládací prvek nemá fokus.|  
-|Zaškrtnutí|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> je `true`.|  
-|Nezaškrtnuto|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> je `false`.|  
-|Neurčitém|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsThreeState%2A> je `true`, a <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> je `null`.|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je přidružená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` má ovládací prvek má právě fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Myš nad|CommonStates|Je ukazatel myši umístěn nad ovládací prvek.|  
+|Stisknutí|CommonStates|Stisknutí ovládacího prvku.|  
+|Zakázáno|CommonStates|Ovládací prvek je zakázaný.|  
+|Fokus|FocusStates|Ovládací prvek má fokus.|  
+|Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|  
+|Zaškrtnuto|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> je `true`.|  
+|Není zaškrtnuto|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> je `false`.|  
+|Neurčitá|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsThreeState%2A> je `true`, a <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> je `null`.|  
+|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
   
-## <a name="radiobutton-controltemplate-example"></a>Příklad ControlTemplate RadioButton  
+## <a name="radiobutton-controltemplate-example"></a>Příklad šablony ControlTemplate ovládacího prvku RadioButton  
  Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.RadioButton> ovládacího prvku.  
   
  [!code-xaml[ControlTemplateExamples#RadioButton](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/radiobutton.xaml#radiobutton)]  
@@ -48,12 +49,12 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.RadioButt
   
  [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Kompletní příklad, najdete v části [styly s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
+ Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.FrameworkElement.Style%2A>  
- <xref:System.Windows.Controls.ControlTemplate>  
- [Styly a šablony ovládacích prvků](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
- [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)  
- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.FrameworkElement.Style%2A>
+- <xref:System.Windows.Controls.ControlTemplate>
+- [Styly a šablony ovládacích prvků](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)
+- [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)
+- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

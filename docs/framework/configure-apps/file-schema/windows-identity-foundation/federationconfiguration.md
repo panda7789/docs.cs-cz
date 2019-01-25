@@ -3,18 +3,18 @@ title: '&lt;federationConfiguration&gt;'
 ms.date: 03/30/2017
 ms.assetid: 8b14054c-6d07-46ab-ab58-03f14beac0f2
 author: BrucePerlerMS
-ms.openlocfilehash: 66fa16992d779b08ee8c55598efc98f8f5267656
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6f658fb4746211ac9d7001899133111c64f22408
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181706"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54645116"
 ---
 # <a name="ltfederationconfigurationgt"></a>&lt;federationConfiguration&gt;
 Konfiguruje <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM), používáte federované ověřování pomocí protokolu WS-Federation. Konfiguruje <xref:System.Security.Claims.ClaimsAuthorizationManager> při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> nebo <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy k poskytování řízení přístupu na základě deklarací identity.  
   
- \<system.identityModel.services >  
-\<federationConfiguration >  
+ \<system.identityModel.services>  
+\<federationConfiguration>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,15 +39,15 @@ Konfiguruje <xref:System.IdentityModel.Services.WSFederationAuthenticationModule
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<z toho důvodu >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|Konfiguruje soubor cookie obslužná rutina používá SAM. Volitelné.|  
-|[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicecertificate.md)|Nakonfiguruje certifikát používaný k šifrování a dešifrování tokenů. Volitelné.|  
-|[\<wsFederation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)|Nakonfiguruje ověřovací modul WS-Federation (WSFAM). Volitelné.|  
+|[\<cookieHandler>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler.md)|Konfiguruje soubor cookie obslužná rutina používá SAM. Volitelné.|  
+|[\<serviceCertificate>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicecertificate.md)|Nakonfiguruje certifikát používaný k šifrování a dešifrování tokenů. Volitelné.|  
+|[\<wsFederation>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)|Nakonfiguruje ověřovací modul WS-Federation (WSFAM). Volitelné.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.identityModel.services >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md)|Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.|  
+|[\<system.identityModel.services>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md)|Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.|  
   
 ## <a name="remarks"></a>Poznámky  
  \<FederationConfiguration > element obsahuje nastavení na dvou různých scénářů:  
@@ -91,8 +91,8 @@ Konfiguruje <xref:System.IdentityModel.Services.WSFederationAuthenticationModule
 </system.identityModel.services>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>  
- <xref:System.IdentityModel.Services.SessionAuthenticationModule>  
- <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>  
- [\<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>
+- <xref:System.IdentityModel.Services.SessionAuthenticationModule>
+- <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>
+- [\<identityConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)

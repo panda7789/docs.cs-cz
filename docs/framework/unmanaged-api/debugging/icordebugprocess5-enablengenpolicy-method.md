@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c598491acd27223a8a41234ddf2c6b8e6f005d52
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ca656aeba04526164a65760af990455965c5288e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423140"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54665211"
 ---
 # <a name="icordebugprocess5enablengenpolicy-method"></a>ICorDebugProcess5::EnableNGENPolicy – metoda
-Nastaví hodnotu, která určuje, jak aplikace načte nativní bitové kopie při spuštění pod spravované ladicí program.  
+Nastaví hodnotu, která určuje, jak aplikace načítá nativních bitových kopií při spuštění v rámci spravovaného ladicího programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,15 +37,15 @@ HRESULT EnableNGENPolicy(
   
 #### <a name="parameters"></a>Parametry  
  `ePolicy`  
- [v] A [CorDebugNGenPolicy](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md) konstanta, která určuje, jak aplikace načte nativní bitové kopie při spuštění pod spravované ladicí program.  
+ [in] A [cordebugngenpolicy –](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md) konstantu, která určuje, jak aplikace načítá nativních bitových kopií při spuštění v rámci spravovaného ladicího programu.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je zásada nastavená úspěšně, vrátí metoda `S_OK`. Pokud `ePolicy` je mimo rozsah výčtové hodnoty definované [CorDebugNGenPolicy](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md), vrátí metoda `E_INVALIDARG` a volání metody, které nemá žádný vliv. Pokud nelze aktualizovat zásady generátor (Ngen.exe), vrátí metoda `E_FAIL`.  
+ Pokud je zásada nastavená úspěšně, metoda vrátí `S_OK`. Pokud `ePolicy` je mimo rozsah výčtové hodnoty určené [cordebugngenpolicy –](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md), vrátí metoda `E_INVALIDARG` a volání metody, které nemá žádný vliv. Pokud nelze aktualizovat zásady Native Image Generator (Ngen.exe), metoda vrátí `E_FAIL`.  
   
- `ICorDebugProcess5::EnableNGenPolicy` Nelze volat metodu v průběhu životního cyklu procesu. Pro všechny moduly, které jsou načteny po nastavení zásad platí zásady.  
+ `ICorDebugProcess5::EnableNGenPolicy` Metodu lze volat kdykoli po celou dobu životnosti procesu. Zásady platí pro všechny moduly, které jsou načteny po nastavení zásad.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -53,7 +53,7 @@ HRESULT EnableNGENPolicy(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

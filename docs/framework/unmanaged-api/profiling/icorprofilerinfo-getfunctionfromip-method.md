@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fba01c1dfdea83b2580f45b7dbcef91fb7b73fb2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2b0859d2f6d4ea2abf72867f2a803132cbd04225
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33452901"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54568644"
 ---
 # <a name="icorprofilerinfogetfunctionfromip-method"></a>ICorProfilerInfo::GetFunctionFromIP – metoda
 Mapuje ukazatel instrukce spravovaného kódu `FunctionID`.  
@@ -37,13 +37,13 @@ HRESULT GetFunctionFromIP(
   
 #### <a name="parameters"></a>Parametry  
  `ip`  
- [v] Ukazatel instrukce ve spravovaném kódu.  
+ [in] Ukazatele na instrukci ve spravovaném kódu.  
   
  `pFunctionId`  
- [out] ID vrácený funkce.  
+ [out] ID vrácené funkce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -51,5 +51,5 @@ HRESULT GetFunctionFromIP(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, generics
 - generics [C#]
 ms.assetid: 75ea8509-a4ea-4e7a-a2b3-cf72482e9282
-ms.openlocfilehash: 03a5a594db86f5286979dbe22a8841f0e7d4518c
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 662b388dd9c279969ed777e443df42784e20d4c5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53240864"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54677196"
 ---
 # <a name="generics-c-programming-guide"></a>Obecné typy (Průvodce programováním v C#)
 Obecné typy byly přidány do verze 2.0 jazyka C# a common language runtime (CLR). Obecné typy rozhraní .NET Framework přinášejí koncept parametry typu, které umožňují návrh tříd a metod, které specifikace jeden nebo více typů odložit, dokud třídy nebo metody je deklarována a vytvořena kódem na straně klienta. Například můžete pomocí parametru obecného typu T napsat jednu třídu, jiný kód klienta můžete použít bez dalších nákladů na náklady nebo rizikem přetypování modulu runtime nebo operace zabalení, jak je znázorněno zde:  
@@ -60,11 +60,11 @@ Obecné typy byly přidány do verze 2.0 jazyka C# a common language runtime (CL
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  Další informace najdete v tématu [Specifikace jazyka C#](~/_csharplang/spec/types.md#constructed-types).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections.Generic>  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Typy](../../../csharp/programming-guide/types/index.md)  
-- [\<typeparam >](../../../csharp/programming-guide/xmldoc/typeparam.md)  
-- [\<typeparamref >](../../../csharp/programming-guide/xmldoc/typeparamref.md)  
-- [Obecné typy v .NET](../../../standard/generics/index.md)  
+- <xref:System.Collections.Generic>
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Typy](../../../csharp/programming-guide/types/index.md)
+- [\<typeparam >](../../../csharp/programming-guide/xmldoc/typeparam.md)
+- [\<typeparamref>](../../../csharp/programming-guide/xmldoc/typeparamref.md)
+- [Obecné typy v .NET](../../../standard/generics/index.md)

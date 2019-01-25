@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - My.Settings object
 ms.assetid: 41f30dc1-202a-4273-b9b7-5728941f996c
-ms.openlocfilehash: 83bba35340a917b649369fc1eb7a01a2bc6a2188
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 293e7cd6449b8a35b5e42b4823a4412e0d6a3f14
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861673"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54628159"
 ---
 # <a name="mysettings-object"></a>My.Settings – objekt
 Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.  
@@ -47,10 +47,10 @@ Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.
   
 |Chcete-li|Další informace naleznete v tématu|  
 |---|---|  
-|Čtení nastavení aplikace|[Postupy: čtení nastavení aplikace v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)|  
+|Čtení nastavení aplikace|[Postupy: Čtení nastavení aplikace v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)|  
 |Změna uživatelského nastavení|[Postupy: Změna uživatelského nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)|  
-|Zachování uživatelského nastavení|[Postupy: zachování uživatelského nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)|  
-|Vytvořit mřížku vlastností pro uživatelská nastavení|[Postupy: vytváření mřížek vlastností pro uživatelská nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
+|Zachování uživatelského nastavení|[Postupy: Zachování uživatelského nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)|  
+|Vytvořit mřížku vlastností pro uživatelská nastavení|[Postupy: Vytváření mřížek vlastností pro uživatelská nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
   
 ## <a name="example"></a>Příklad  
  Tento příklad zobrazuje hodnotu `Nickname` nastavení.  
@@ -59,10 +59,10 @@ Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.
   
  Pro tento příklad fungoval, musí mít vaše aplikace `Nickname` typu nastavení `String`.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Configuration.ApplicationSettingsBase>  
- [Postupy: čtení nastavení aplikace v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)  
- [Postupy: Změna uživatelského nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)  
- [Postupy: zachování uživatelského nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)  
- [Postupy: vytváření mřížek vlastností pro uživatelská nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)  
- [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Configuration.ApplicationSettingsBase>
+- [Postupy: Čtení nastavení aplikace v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)
+- [Postupy: Změna uživatelského nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)
+- [Postupy: Zachování uživatelského nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)
+- [Postupy: Vytváření mřížek vlastností pro uživatelská nastavení v jazyce Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)
+- [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet)

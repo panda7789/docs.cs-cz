@@ -9,12 +9,12 @@ helpviewer_keywords:
 - certificates [WCF], making X.509 certificates accessible to WCF
 - X.509 certificates [WCF], making accessible to WCF
 ms.assetid: a54e407c-c2b5-4319-a648-60e43413664b
-ms.openlocfilehash: 0917569b556c31413b715d75c83a96f3a4b015d7
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 7c90d5b0541edfc11145d9373c2554ee4595a7b1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50192197"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54741879"
 ---
 # <a name="how-to-make-x509-certificates-accessible-to-wcf"></a>Postupy: Zpřístupnění certifikátů X.509 pro WCF
 Zpřístupnit certifikát X.509 do služby Windows Communication Foundation (WCF), musí kód aplikace zadejte název úložiště certifikátu a umístění. V některých případech se identita procesu, musí mít přístup k souboru, který obsahuje privátní klíč spojený s certifikátem X.509. K získání soukromého klíče přidružené k certifikátu v úložišti certifikátů X.509, WCF, musí mít oprávnění k tomuto. Ve výchozím nastavení můžete přístup pouze vlastník a účet System privátní klíč certifikátu.  
@@ -43,7 +43,7 @@ Zpřístupnit certifikát X.509 do služby Windows Communication Foundation (WCF
   
     3.  Určení, kde je umístěn privátní klíč pro certifikát v počítači pomocí [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md) nástroj.  
   
-         [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md) nástroj vyžaduje název úložiště certifikátu, umístění úložiště certifikátů a něco, který jednoznačně identifikuje tento certifikát. Nástroj přijímá jako jedinečný identifikátor názvu subjektu certifikátu nebo jeho kryptografický otisk. Další informace o tom, jak určit kryptografický otisk certifikátu, naleznete v tématu [postupy: načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).  
+         [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md) nástroj vyžaduje název úložiště certifikátu, umístění úložiště certifikátů a něco, který jednoznačně identifikuje tento certifikát. Nástroj přijímá jako jedinečný identifikátor názvu subjektu certifikátu nebo jeho kryptografický otisk. Další informace o tom, jak určit kryptografický otisk certifikátu, naleznete v tématu [jak: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).  
   
          Následující příklad kódu používá [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md) nástroje k určení umístění privátního klíče pro certifikát v `My` ukládat v `CurrentUser` pomocí kryptografického otisku `46 dd 0e 7a ed 0b 7a 31 9b 02 a3 a0 43 7a d8 3f 60 40 92 9d`.  
   
@@ -70,7 +70,7 @@ Zpřístupnit certifikát X.509 do služby Windows Communication Foundation (WCF
         icacls.exe "C:\Documents and Settings\All Users\Application Data\Microsoft\Crypto\RSA\MachineKeys\8aeda5eb81555f14f8f9960745b5a40d_38f7de48-5ee9-452d-8a5a-92789d7110b1" /grant "NETWORK SERVICE":R  
         ```  
   
-## <a name="see-also"></a>Viz také  
-- [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md)  
-- [Postupy: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)  
+## <a name="see-also"></a>Viz také:
+- [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md)
+- [Postupy: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)
 - [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

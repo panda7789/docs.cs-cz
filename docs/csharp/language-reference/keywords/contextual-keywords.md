@@ -5,12 +5,12 @@ ms.date: 03/07/2017
 helpviewer_keywords:
 - contextual keywords [C#]
 ms.assetid: 7c76bc29-a754-4389-b0ab-f6b441018298
-ms.openlocfilehash: 3b8f9f124943d2092b65718f5dbf17831252a4a5
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: bce8901b4fec4386462ebaa85436b52aedc3f3bf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241393"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54708438"
 ---
 # <a name="contextual-keywords-c-reference"></a>Kontextová klíčová slova (Referenční dokumentace jazyka C#)
 Kontextové klíčové slovo slouží k poskytování zvláštní význam v kódu, ale to není rezervované slovo v jazyce C#. V této části jsou zavedené následující kontextová klíčová slova:  
@@ -23,7 +23,7 @@ Kontextové klíčové slovo slouží k poskytování zvláštní význam v kód
 |[dynamic](../../../csharp/language-reference/keywords/dynamic.md)|Definuje typ odkazu, který umožní operace, ve kterých se vyskytuje obejít kontrolu typu v době kompilace.|  
 |[get](../../../csharp/language-reference/keywords/get.md)|Definuje přístupové metody pro vlastnost nebo indexer.|  
 |[global](../../../csharp/language-reference/keywords/global.md)|Určuje výchozí globální obor názvů, které je jinak nepojmenované.|  
-|[Částečné](../../../csharp/language-reference/keywords/partial-type.md)|Definuje částečné třídy, struktury a rozhraní v rámci stejné jednotce kompilace.|  
+|[partial](../../../csharp/language-reference/keywords/partial-type.md)|Definuje částečné třídy, struktury a rozhraní v rámci stejné jednotce kompilace.|  
 |[remove](../../../csharp/language-reference/keywords/remove.md)|Definuje přístupový objekt vlastní událost, která je volána, když kód klienta odhlášení odběru událostí.|  
 |[set](../../../csharp/language-reference/keywords/set.md)|Definuje přístupové metody pro vlastnost nebo indexer.|  
 |[value](../../../csharp/language-reference/keywords/value.md)|Použít přístupové objekty set a při přidání nebo odebrání obslužných rutin událostí.|  
@@ -34,8 +34,8 @@ Kontextové klíčové slovo slouží k poskytování zvláštní význam v kód
   
  Všechna klíčová slova dotazu zavedené v jazyce C# 3.0 jsou také kontextové. Další informace najdete v tématu [klíčová slova dotazu (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)

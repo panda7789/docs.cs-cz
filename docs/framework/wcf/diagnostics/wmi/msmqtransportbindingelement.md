@@ -2,12 +2,12 @@
 title: MsmqTransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: 1c89f073-9ed3-4025-a8c5-13535a0f526b
-ms.openlocfilehash: 33cd9c427ed5ad04eaf9e9889f60f091f335d1e7
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d37ee4527226d9347e24fc2ee8007a263c71f198
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50198104"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564874"
 ---
 # <a name="msmqtransportbindingelement"></a>MsmqTransportBindingElement
 MsmqTransportBindingElement  
@@ -32,21 +32,21 @@ class MsmqTransportBindingElement : MsmqBindingElementBase
 ### <a name="maxpoolsize"></a>MaxPoolSize  
  Datový typ: sint32  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Maximální velikost fondu, který obsahuje objekty interní MSMQ zprávy.  
   
-### <a name="queuetransferprotocol"></a>Třída queueTransferProtocol  
+### <a name="queuetransferprotocol"></a>QueueTransferProtocol  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Hodnota výčtu, která označuje přenos zařazených do fronty komunikačního kanálu, který tato vazba používá.  
   
-### <a name="useactivedirectory"></a>Třída UseActiveDirectory  
+### <a name="useactivedirectory"></a>UseActiveDirectory  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Vrátí logickou hodnotu, která určuje, zda mají být adresy fronty převedeny pomocí služby Active Directory.  
   
@@ -56,5 +56,5 @@ class MsmqTransportBindingElement : MsmqBindingElementBase
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.MsmqTransportBindingElement>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.MsmqTransportBindingElement>

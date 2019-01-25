@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e0e3cdbff5054ec990c40c333ed4bd4029a91f12
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eb085cc486c307a308258709f4c58619597bc202
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420801"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54608385"
 ---
 # <a name="icordebugremotedebugactiveprocessex-method"></a>ICorDebugRemote::DebugActiveProcessEx – metoda
-Spustí proces ve vzdáleném počítači v rámci ladicího programu.  
+Spustí nějaký proces ve vzdáleném počítači v ladicím programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,29 +40,29 @@ HRESULT DebugActiveProcessEx (
   
 #### <a name="parameters"></a>Parametry  
  `pRemoteTarget`  
- [v] Ukazatel na [ICorDebugRemoteTarget rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md). Tento parametr slouží k určení počítače, na kterém je spuštěn proces.  
+ [in] Ukazatel [icordebugremotetarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md). Tento parametr slouží k určení počítače, na kterém je proces spuštěn.  
   
  `id`  
- [v] ID procesu, ke kterému má být připojen ladicí program.  
+ [in] ID procesu, ke kterému je ladicí program připojit.  
   
  `win32Attach`  
- [v] `true` Pokud ladicí program by měl chovat jako Win32 ladicí program pro proces a odesílání nespravované zpětná volání; jinak `false`.  
+ [in] `true` Pokud ladicí program by měl chovat jako ladicí program systému Win32 pro proces a odeslání nespravované zpětná volání; v opačném případě `false`.  
   
  `ppProcess`  
- [out] Ukazatel na adresu "ICorDebugProcess" objekt, který představuje proces, který byl připojen ladicí program.  
+ [out] Ukazatel na adresu "ICorDebugProcess" objekt, který představuje proces, ke kterému je připojen ladicí program.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Pro proces ve vzdáleném počítači se úspěšně připojil.  
+ Úspěšně připojeno k procesu ve vzdáleném počítači.  
   
- E_FAIL (nebo ostatní návratové kódy E_)  
- Nelze připojit k procesu ve vzdáleném počítači.  
+ E_FAIL (nebo jiné E_ návratové kódy)  
+ Nelze se připojit k procesu ve vzdáleném počítači.  
   
 ## <a name="remarks"></a>Poznámky  
- Ladění ve smíšeném režimu není podporována v programu Silverlight.  
+ Ladění ve smíšeném režimu není v Silverlightu podporovaný.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -70,8 +70,8 @@ HRESULT DebugActiveProcessEx (
   
  **Verze rozhraní .NET framework:** 4.5, 4, 3.5 SP1  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugRemote – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-interface.md)  
- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
-    
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugRemote – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-interface.md)
+- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

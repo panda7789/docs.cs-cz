@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5304496da992b44c171ca3c6ffa3fffa35d6f9cf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3e5f36e10fffebe89b805cee3cb57e88afd4df35
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33425363"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745292"
 ---
 # <a name="ibindingdisplay-interface"></a>IBindingDisplay – rozhraní
-Poskytuje metody, které zobrazují aktuální informace o vazbě o běžící aplikaci.  
+Poskytuje metody, které zobrazení aktuální vazby informací o spuštěné aplikaci.  
   
 ## <a name="methods"></a>Metody  
   
@@ -34,7 +34,7 @@ Poskytuje metody, které zobrazují aktuální informace o vazbě o běžící a
 |[InitializeForProcess – metoda](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md)|Inicializuje `IBindingDisplay` objektu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** BindingDisplay.h  
   
@@ -42,5 +42,5 @@ Poskytuje metody, které zobrazují aktuální informace o vazbě o běžící a
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

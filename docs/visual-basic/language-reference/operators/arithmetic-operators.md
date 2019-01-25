@@ -6,15 +6,15 @@ helpviewer_keywords:
 - arithmetic operators [Visual Basic]
 - math operators [Visual Basic]
 ms.assetid: 330178e0-a375-4742-b662-b3080c89fa54
-ms.openlocfilehash: 6a42357e90cbed93106e28a35a7c8f082a42173d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cc84ecf2bbbff1f213235750065ca17f9fcfef6d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33603269"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54660967"
 ---
 # <a name="arithmetic-operators-visual-basic"></a>Aritmetické operátory (Visual Basic)
-Níže jsou uvedeny aritmetické operátory, které jsou definované v jazyce Visual Basic.  
+Níže jsou aritmetické operátory definované v jazyce Visual Basic.  
   
  [^ – operátor](../../../visual-basic/language-reference/operators/exponentiation-operator.md)  
   
@@ -26,10 +26,10 @@ Níže jsou uvedeny aritmetické operátory, které jsou definované v jazyce Vi
   
  [Operátor Mod](../../../visual-basic/language-reference/operators/mod-operator.md)  
   
- [+ – Operátor](../../../visual-basic/language-reference/operators/addition-operator.md) (Unární a binární)  
+ [+ – Operátor](../../../visual-basic/language-reference/operators/addition-operator.md) (jednočlenné a binární)  
   
- [-– Operátor](../../../visual-basic/language-reference/operators/subtraction-operator.md) (Unární a binární)  
+ [-– Operátor](../../../visual-basic/language-reference/operators/subtraction-operator.md) (jednočlenné a binární)  
   
-## <a name="see-also"></a>Viz také  
- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
- [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+## <a name="see-also"></a>Viz také:
+- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

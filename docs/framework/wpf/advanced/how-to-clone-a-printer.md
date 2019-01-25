@@ -11,42 +11,42 @@ helpviewer_keywords:
 - print queues [WPF], cloning
 - cloning print queues [WPF]
 ms.assetid: dd6997c9-fe04-40f8-88a6-92e3ac0889eb
-ms.openlocfilehash: 8f3a9c3b4d9f4bcbe3a6ffcff9868aa7b19b8f28
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d7a73c6590ca2df00c77a3a7255f2064a8676c42
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33544193"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54677222"
 ---
 # <a name="how-to-clone-a-printer"></a>Postupy: Klonování tiskárny
-Většina podniků v určitém okamžiku koupit více tiskáren stejného modelu. Obvykle to jsou nainstalovány s nastavením konfigurace prakticky identické. Instalace tiskárny může být časově náročná a chyba náchylné k chybám. <xref:System.Printing.IndexedProperties?displayProperty=nameWithType> Obor názvů a <xref:System.Printing.PrintServer.InstallPrintQueue%2A> třídu, která se zveřejňují pomocí rozhraní Microsoft .NET Framework umožňuje okamžitě nainstalovat libovolný počet dalších tiskové fronty, které jsou klonovat z existující tiskovou frontu.  
+Většina podniků v určitém okamžiku koupit více tiskáren stejného modelu. Obvykle tyto jsou nainstalovány s nastavením konfigurace prakticky totožný. Instalace tiskárny, může být časově náročné a náchylné k chybám. <xref:System.Printing.IndexedProperties?displayProperty=nameWithType> Obor názvů a <xref:System.Printing.PrintServer.InstallPrintQueue%2A> třídu, která jsou přístupné pomocí rozhraní Microsoft .NET Framework umožňuje okamžitě nainstalovat libovolný počet dalších tiskové fronty, které se klonují z existující tiskovou frontu.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu je druhý tiskové fronty klonovat z existující tiskovou frontu. Druhá se liší od prvního pouze v jeho název, umístění, port a sdílený stav. Hlavní kroky tohoto postupu jsou následujícím způsobem.  
+ V následujícím příkladu je druhý tiskovou frontu naklonovali z existující tiskovou frontu. Druhý se liší od první pouze v jeho název, umístění, port a sdílený stav. Hlavní kroky tohoto postupu jsou následující.  
   
-1.  Vytvoření <xref:System.Printing.PrintQueue> objekt pro existující tiskárny, který se bude klonovat.  
+1.  Vytvoření <xref:System.Printing.PrintQueue> objektu, která se má klonovat existující tiskárny.  
   
-2.  Vytvoření <xref:System.Printing.IndexedProperties.PrintPropertyDictionary> z <xref:System.Printing.PrintSystemObject.PropertiesCollection%2A> z <xref:System.Printing.PrintQueue>. <xref:System.Collections.DictionaryEntry.Value%2A> Vlastnost každé položky tohoto slovníku je objekt jeden z typů, které jsou odvozené z <xref:System.Printing.IndexedProperties.PrintProperty>. Existují dva způsoby, jak nastavit hodnotu položky tohoto slovníku.  
+2.  Vytvoření <xref:System.Printing.IndexedProperties.PrintPropertyDictionary> z <xref:System.Printing.PrintSystemObject.PropertiesCollection%2A> z <xref:System.Printing.PrintQueue>. <xref:System.Collections.DictionaryEntry.Value%2A> Vlastností pro každou položku ve slovníku je objekt jednoho z typů odvozených z <xref:System.Printing.IndexedProperties.PrintProperty>. Existují dva způsoby, jak nastavit hodnotu položky ve slovníku.  
   
-    -   Pomocí slovníku **odebrat** a <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.Add%2A> metody pro odebrání položky a poté znovu přidejte s požadovanou hodnotu.  
+    -   Použití slovníku **odebrat** a <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.Add%2A> metody odeberte položku a poté znovu přidejte požadovanou hodnotu.  
   
-    -   Pomocí slovníku <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.SetProperty%2A> metoda.  
+    -   Použití slovníku <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.SetProperty%2A> metody.  
   
-     Následující příklad znázorňuje obou směrech.  
+     Následující příklad znázorňuje oba způsoby.  
   
-3.  Vytvoření <xref:System.Printing.IndexedProperties.PrintBooleanProperty> objektu a nastavit jeho <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> na "IsShared" a jeho <xref:System.Printing.IndexedProperties.PrintBooleanProperty.Value%2A> k `true`.  
+3.  Vytvoření <xref:System.Printing.IndexedProperties.PrintBooleanProperty> objektu a nastavte jeho <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> na "IsShared" a jeho <xref:System.Printing.IndexedProperties.PrintBooleanProperty.Value%2A> k `true`.  
   
-4.  Použití <xref:System.Printing.IndexedProperties.PrintBooleanProperty> objekt, který má být hodnota <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>na položku "IsShared".  
+4.  Použití <xref:System.Printing.IndexedProperties.PrintBooleanProperty> objekt má být hodnota <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>na položku "IsShared".  
   
-5.  Vytvoření <xref:System.Printing.IndexedProperties.PrintStringProperty> objektu a nastavit jeho <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> k "ShareName" a jeho <xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A> příslušné <xref:System.String>.  
+5.  Vytvoření <xref:System.Printing.IndexedProperties.PrintStringProperty> objektu a nastavte jeho <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> na "ShareName" a jeho <xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A> na odpovídající <xref:System.String>.  
   
-6.  Použití <xref:System.Printing.IndexedProperties.PrintStringProperty> objekt, který má být hodnota <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>na položku "ShareName".  
+6.  Použití <xref:System.Printing.IndexedProperties.PrintStringProperty> objekt má být hodnota <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>na položku "ShareName".  
   
-7.  Vytvořte další <xref:System.Printing.IndexedProperties.PrintStringProperty> objektu a nastavit jeho <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> "Místo" a jeho <xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A> příslušné <xref:System.String>.  
+7.  Vytvořte další <xref:System.Printing.IndexedProperties.PrintStringProperty> objektu a nastavte jeho <xref:System.Printing.IndexedProperties.PrintProperty.Name%2A> "Umístění" a jeho <xref:System.Printing.IndexedProperties.PrintStringProperty.Value%2A> na odpovídající <xref:System.String>.  
   
-8.  Použít druhý <xref:System.Printing.IndexedProperties.PrintStringProperty> objekt, který má být hodnota <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>na položku "Umístění".  
+8.  Použijte druhý <xref:System.Printing.IndexedProperties.PrintStringProperty> objekt má být hodnota <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>na položku "Umístění".  
   
-9. Vytvoření pole <xref:System.String>s. Každá položka je název port na serveru.  
+9. Vytvoření pole <xref:System.String>s. Každá položka je název portu na serveru.  
   
 10. Použití <xref:System.Printing.PrintServer.InstallPrintQueue%2A> k instalaci nové tiskárny s novými hodnotami.  
   
@@ -55,11 +55,11 @@ Většina podniků v určitém okamžiku koupit více tiskáren stejného modelu
  [!code-csharp[ClonePrinter#ClonePrinter](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ClonePrinter/CSharp/Program.cs#cloneprinter)]
  [!code-vb[ClonePrinter#ClonePrinter](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ClonePrinter/visualbasic/program.vb#cloneprinter)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Printing.IndexedProperties>  
- <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>  
- <xref:System.Printing.LocalPrintServer>  
- <xref:System.Printing.PrintQueue>  
- <xref:System.Collections.DictionaryEntry>  
- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Printing.IndexedProperties>
+- <xref:System.Printing.IndexedProperties.PrintPropertyDictionary>
+- <xref:System.Printing.LocalPrintServer>
+- <xref:System.Printing.PrintQueue>
+- <xref:System.Collections.DictionaryEntry>
+- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)

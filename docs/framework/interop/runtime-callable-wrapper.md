@@ -10,55 +10,55 @@ helpviewer_keywords:
 ms.assetid: 7e542583-1e31-4e10-b523-8cf2f29cb4a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7366bfd6459a9387e8c57092ba85cac5f4da125b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0832489d74abc3aec78218f87d2bce72e6e68f75
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33393507"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54632787"
 ---
 # <a name="runtime-callable-wrapper"></a>Obálka volatelná za běhu
-Modul common language runtime zpřístupní objektů COM prostřednictvím proxy serveru názvem obálka volatelná za běhu (RCW). I když RCW se zdá být objekt obyčejnou tak, aby klientů .NET, je jeho primární funkce zařazování volání mezi sebou klient .NET a objekt modelu COM.  
+Modul common language runtime poskytuje objekty modelu COM přes proxy server volá obálka volatelná za běhu (RCW). I když objekt RCW se zdá být běžný objekt pro klienty .NET, jeho primární funkce je zařadit volání mezi klient .NET a COM objekty.  
   
- Modul runtime vytvoří přesně jeden RCW pro každý objekt modelu COM, bez ohledu na počet odkazů, které existují na tento objekt. Modul runtime udržuje jeden RCW podle procesu pro každý objekt.  Pokud vytvoříte RCW v jedné doméně aplikace nebo typu apartment a pak předejte odkaz na jiné domény aplikace nebo typu apartment, použije se proxy server na první objekt.  Jak ukazuje následující obrázek, může obsahovat libovolný počet spravovaných klientů odkaz na objekty COM, které zveřejňují rozhraní INew a INewer.  
+ Modul runtime vytvoří přesně jeden objekt RCW pro každý objekt modelu COM, bez ohledu na počet odkazů, které existují k tomuto objektu. Modul runtime udržuje jeden objekt RCW proces pro každý objekt.  Pokud vytvoříte obálky RCW v jedné doméně aplikace nebo objektu apartment a pak předejte odkaz na další aplikační domény nebo objektu apartment, proxy první objekt, který se použije.  Jak ukazuje následující obrázek, může obsahovat libovolný počet spravovaných klientů odkaz na objekty modelu COM, které zveřejňují rozhraní INew a INewer.  
   
  ![RCW](./media/rcw.gif "rcw")  
 Přístup k objektům modelu COM pomocí obálka volatelná za běhu  
   
- Modul runtime pomocí metadat, které jsou odvozené z knihovny typů, vytvoří objekt COM volané i obálku pro tento objekt. Každý RCW udržuje mezipaměť ukazatele rozhraní na objekt COM se zabalí a uvolní jeho odkaz na objekt COM, když RCW již není potřeba. Modul runtime provádí RCW uvolňování paměti.  
+ Používání metadat odvozený z knihovny typů, modul runtime vytvoří volaný objekt modelu COM a obálku pro daný objekt. Každý objekt RCW udržuje mezipaměť ukazatele rozhraní na objekt COM, se zabalí a uvolní svůj odkaz na objekt modelu COM, pokud objekt RCW je už nepotřebujete. Modul runtime provádí uvolňování paměti RCW.  
   
- Mimo jiné RCW zařazuje data mezi spravovanými a nespravovanými kódu jménem zabalené objektu. Konkrétně RCW poskytuje zařazování pro argumenty metoda a návratové hodnoty metoda vždy, když klient a server mají různé reprezentace dat předávaných mezi nimi.  
+ Mezi ostatní aktivity zařadí RCW dat mezi spravovaným a nespravovaným kódem jménem zabaleného objektu. Konkrétně objekt RCW poskytuje zařazování pro argumenty metody a vrácené hodnoty metody pokaždé, když se klient a server mají odlišné reprezentace dat předávaných mezi nimi.  
   
- Standardní obálku vynucuje vestavěné zařazování pravidla. Když klient .NET předá typu String jako součást argument objekt nespravované, obálku převede řetězec na typ BSTR. Volající by měl vrátit objekt COM BSTR jeho spravované volajícího, obdrží řetězec. Klient a server odesílat a přijímat data, která je jim dobře známé. Jiné typy vyžadují žádný převod. Například standardní obálku vždycky předá 4bajtový celočíselný mezi spravovanými a nespravovanými kód bez převodu typu.  
+ Standardní obálky vynucuje integrované zařazování pravidla. Když klient .NET předá jako součást argumentu typu řetězec neřízeným objektem, obálku převede řetězec na typ BSTR. Volající by měl vrátit objekt modelu COM BSTR spravované volajícímu, přijímá řetězec. Klient i server odesílat a přijímat data, která je pro jejich srozumitelná. Jiné typy vyžadují žádný převod. Například standardní obálky vždycky předá 4bajtové celé číslo mezi spravovaným a nespravovaným kódem bez převodu typu.  
   
-## <a name="marshaling-selected-interfaces"></a>Zařazování vybrané rozhraní  
- Hlavním cílem, který [obálka volatelná za běhu](runtime-callable-wrapper.md) (RCW) je skrýt rozdíly mezi spravovanými a nespravovanými programovací modely. Vytvořit snadný přechod, RCW spotřebuje vybrané rozhraní modelu COM bez vystavení je do klienta rozhraní .NET, jak je znázorněno na následujícím obrázku.  
+## <a name="marshaling-selected-interfaces"></a>Zařazování vybraných rozhraní  
+ Hlavním cílem [obálka volatelná za běhu](runtime-callable-wrapper.md) (RCW), je skrýt rozdíly mezi spravovanými a nespravovanými programovacích modelů. Vytvořit jednoduchý přechod obálky RCW využívá vybrané rozhraní modelu COM bez vystavení klientovi .NET, jak je znázorněno na následujícím obrázku.  
   
- ![RCW s rozhraní](./media/rcwwithinterfaces.gif "rcwwithinterfaces")  
+ ![RCW pomocí rozhraní](./media/rcwwithinterfaces.gif "rcwwithinterfaces")  
 Rozhraní COM a obálka volatelná za běhu  
   
- Při vytváření jako objekt časné vazby RCW je konkrétního typu. Implementuje rozhraní implementuje a poskytuje metody, vlastnosti a události z objektu rozhraní COM objektu. Na obrázku RCW zpřístupňuje rozhraní INew ale využívá **IUnknown** a **IDispatch** rozhraní. Navíc RCW zpřístupní všechny členy rozhraní INew klienta rozhraní .NET.  
+ Po vytvoření jako objekt časné vazby Obálka RCW je určitého typu. Implementuje rozhraní, že objekt modelu COM implementuje a zveřejňuje metody, vlastnosti a události z rozhraní objektu. Na obrázku RCW zpřístupňuje rozhraní INew ale spotřebovává **IUnknown** a **IDispatch** rozhraní. Dále RCW zpřístupňuje všechny členy rozhraní INew na klienta rozhraní .NET.  
   
- RCW využívá rozhraní uvedené v následující tabulce, které jsou vystavené objekt, který se zabalí.  
-  
-|Rozhraní|Popis|  
-|---------------|-----------------|  
-|**IDispatch**|Pozdní vazba objekty modelu COM pomocí reflexe.|  
-|**IErrorInfo**|Obsahuje textový popis chyby, její zdroj, soubor nápovědy, kontextové nápovědy a identifikátor GUID rozhraní definované chyba (vždy **GUID_NULL** pro rozhraní .NET třídy).|  
-|**IProvideClassInfo**|Pokud se objekt COM zabalené implementuje **IProvideClassInfo**, RCW extrahuje informace o typu z tohoto rozhraní poskytovat lepší typ identitu.|  
-|**IUnknown**|Pro objekt identitu, převod typu a správu životního cyklu:<br /><br /> – Identity objekt<br />     Modul runtime rozlišuje mezi objekty modelu COM tak, že porovnáte hodnotu **IUnknown** rozhraní pro každý objekt.<br />– Typ převod<br />     RCW rozpozná dynamický typ zjišťování, provádí **QueryInterface** metoda.<br />-Správa životního cyklu<br />     Pomocí **QueryInterface** metodu, RCW získá a obsahuje odkaz na objekt nespravované, dokud modulu runtime provádí obálky, což uvolní nespravované objekt uvolňování paměti.|  
-  
- RCW volitelně využívá rozhraní uvedené v následující tabulce, které jsou vystavené objekt, který se zabalí.  
+ Objekt RCW využívá rozhraní uvedené v následující tabulce, které jsou zveřejněné v objektu, který ho zalamoval.  
   
 |Rozhraní|Popis|  
 |---------------|-----------------|  
-|**IConnectionPoint –** a **IConnectionPointContainer**|RCW převede objekty, které zveřejňují styl spojovací bod události na základě delegáta události.|  
-|**IDispatchEx**|Pokud třída implementuje **IDispatchEx**, implementuje RCW **IExpando**. **IDispatchEx** rozhraní je rozšířením **IDispatch** rozhraní, na rozdíl od **IDispatch**, umožňuje výčtu, přidání, odstranění a to malá a velká písmena volání metody členů.|  
+|**IDispatch**|Pozdní vazba modelu COM objektů prostřednictvím reflexe.|  
+|**IErrorInfo**|Poskytuje textový popis chyby, její zdroj, soubor nápovědy, kontextové nápovědy a identifikátor GUID rozhraní definované chyba (vždy **GUID_NULL** pro třídy .NET).|  
+|**IProvideClassInfo**|Pokud je objekt modelu COM zabalené implementuje **iprovideclassinfo –**, Objekt RCW extrahuje informace o typu z tohoto rozhraní poskytovat lepší typu identitu.|  
+|**IUnknown**|Pro objekt identit, převod typu a správa životního cyklu:<br /><br /> – Identity objekt<br />     Modul runtime rozlišuje mezi objekty modelu COM porovnáním hodnoty **IUnknown** rozhraní pro každý objekt.<br />– Vynucení typ<br />     Objekt RCW rozpozná zjišťování dynamického typu prováděné **QueryInterface** metody.<br />-Správa životního cyklu<br />     Použití **QueryInterface** metody RCW získá a uchovává odkaz na objekt v nespravované dlouho, dokud modul runtime provádí uvolňování paměti na obálku, který uvolní nespravované objektu.|  
+  
+ Objekt RCW volitelně využívá rozhraní uvedené v následující tabulce, které jsou zveřejněné v objektu, který ho zalamoval.  
+  
+|Rozhraní|Popis|  
+|---------------|-----------------|  
+|**IConnectionPoint** a **IConnectionPointContainer**|Převede objekty obálky RCW, která zpřístupňují spojovací bod styl události na základě delegáta události.|  
+|**Rozhraní IDispatchEx**|Pokud třída implementuje **rozhraní IDispatchEx**, implementuje RCW **IExpando**. **Rozhraní IDispatchEx** rozhraní je rozšířením **IDispatch** rozhraní, na rozdíl od **IDispatch**, umožňuje výčtu, přidání, odstranění a malá a velká písmena volání členů.|  
 |**IEnumVARIANT**|Umožňuje typy modelu COM, které podporují výčty jsou považovány za kolekce.|  
   
-## <a name="see-also"></a>Viz také  
- [COM – obálky](com-wrappers.md)  
- [Zařazování vybrané rozhraní](https://msdn.microsoft.com/library/fdb97fd0-f694-4832-bf15-a4e7cf413840(v=vs.100))  
- [Obálka volatelná aplikacemi COM](com-callable-wrapper.md)  
- [Knihovny typů pro souhrn konverze sestavení](https://msdn.microsoft.com/library/bf3f90c5-4770-4ab8-895c-3ba1055cc958(v=vs.100))  
- [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)
+## <a name="see-also"></a>Viz také:
+- [COM – obálky](com-wrappers.md)
+- [Zařazování vybraných rozhraní](https://msdn.microsoft.com/library/fdb97fd0-f694-4832-bf15-a4e7cf413840(v=vs.100))
+- [Obálka volatelná aplikacemi COM](com-callable-wrapper.md)
+- [Souhrn převodu sestavení knihovny typů na](https://msdn.microsoft.com/library/bf3f90c5-4770-4ab8-895c-3ba1055cc958(v=vs.100))
+- [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)

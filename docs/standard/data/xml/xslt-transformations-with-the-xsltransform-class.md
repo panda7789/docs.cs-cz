@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 500335af-f9b5-413b-968a-e6d9a824478c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 67062ab87182bcb42793cb166323020178ac1688
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 9aebc284e845eff229fff5bd41792e0c990a1092
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45746416"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54691354"
 ---
 # <a name="xslt-transformations-with-the-xsltransform-class"></a>Transformace XSLT s třídou XslTransform
 
@@ -98,11 +98,11 @@ public class Sample
 
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.Xsl.XslTransform>  
-- [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)  
-- [Implementace volitelného chování ve třídě XslTransform](implementation-of-discretionary-behaviors-in-the-xsltransform-class.md)  
-- [XPathNavigator v transformacích](xpathnavigator-in-transformations.md)  
-- [XPathNodeIterator v transformacích](xpathnodeiterator-in-transformations.md)  
-- [Vstup XPathDocument do XslTransform](xpathdocument-input-to-xsltransform.md)  
-- [Vstup XmlDataDocument do XslTransform](xmldatadocument-input-to-xsltransform.md)  
-- [Vstup XmlDocument do XslTransform](xmldocument-input-to-xsltransform.md)  
+- <xref:System.Xml.Xsl.XslTransform>
+- [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)
+- [Implementace volitelného chování ve třídě XslTransform](implementation-of-discretionary-behaviors-in-the-xsltransform-class.md)
+- [XPathNavigator v transformacích](xpathnavigator-in-transformations.md)
+- [XPathNodeIterator v transformacích](xpathnodeiterator-in-transformations.md)
+- [Vstup XPathDocument do XslTransform](xpathdocument-input-to-xsltransform.md)
+- [Vstup XmlDataDocument do XslTransform](xmldatadocument-input-to-xsltransform.md)
+- [Vstup XmlDocument do XslTransform](xmldocument-input-to-xsltransform.md)

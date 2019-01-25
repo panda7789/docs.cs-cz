@@ -2,12 +2,12 @@
 title: Podpora klienta SqlClient pro vysokou dostupnost, zotavení po havárii
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
-ms.openlocfilehash: 258922a1541c4594ce2b4673d4d68c279087aef2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 50f2e4c46fbb8c043237aac90ffee98112b8cefa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513023"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54609119"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Podpora klienta SqlClient pro vysokou dostupnost, zotavení po havárii
 Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) pro vysokou dostupnost, zotavení po havárii – skupin dostupnosti AlwaysOn.  Funkce dostupnosti skupin AlwaysOn byl přidán do systému SQL Server 2012. Další informace o skupinách dostupnosti AlwaysOn naleznete v tématu knihy Online SQL Server.  
@@ -51,7 +51,7 @@ Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../
   
 -   Připojení k serveru SQL Server instance nakonfigurované s více než 64 IP adresami způsobí selhání připojení.  
   
--   Chování aplikace, která se používá `MultiSubnetFailover` připojení vlastnost nemá vliv na základě typu ověřování: ověřování systému SQL Server, ověřování protokolu Kerberos nebo ověřování Windows.  
+-   Chování aplikace, která se používá `MultiSubnetFailover` připojení vlastnost nemá vliv na základě typu ověřování: Ověřování systému SQL Server, ověřování protokolu Kerberos nebo ověřování Windows.  
   
 -   Zvyšte hodnotu `Connect Timeout` podle pro převzetí služeb při selhání čas a omezit opakované pokusy o připojení aplikace.  
   
@@ -96,6 +96,6 @@ Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../
   
  Směrování jen pro čtení může trvat déle než připojení na primární, protože poprvé připojí k primární směrování jen pro čtení a potom vyhledá nejlepší dostupné čitelné sekundární. Z tohoto důvodu by měl zvýšit limit vaše přihlášení.  
   
-## <a name="see-also"></a>Viz také  
- [Funkce SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Funkce SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

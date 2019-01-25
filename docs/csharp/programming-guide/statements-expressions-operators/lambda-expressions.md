@@ -1,5 +1,5 @@
 ---
-title: Výrazy lambda - C# Průvodce programováním
+title: Výrazy lambda - C# Průvodce programováním pro službu
 ms.custom: seodec18
 ms.date: 03/03/2017
 helpviewer_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: 0feff32f3a2264b8e6cbd4746fdeaaaad728b8e5
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 91d972f468f80c509a90ea293937b117d54a2e7d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241285"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54737517"
 ---
-# <a name="lambda-expressions-c-programming-guide"></a>Výrazy lambda (Průvodce programováním v C#)
+# <a name="lambda-expressions-c-programming-guide"></a>Výrazy lambda (C# Programming Guide)
 
 Výraz lambda je [anonymní funkce](anonymous-methods.md) , můžete použít k vytvoření [delegáti](../delegates/using-delegates.md) nebo [stromu výrazů](../concepts/expression-trees/index.md) typy. Pomocí výrazů lambda můžete psát místní funkce, které mohou být předány jako argumenty nebo vráceny jako hodnota volání funkce. Výrazy lambda jsou zvláště užitečné pro psaní výrazů dotazů LINQ.
   
@@ -89,7 +89,8 @@ namespace ConsoleApplication1
 
  V předchozím příkladu si všimněte, že hlavní část výrazové lambdy může být tvořena voláním metody. Pokud však vytváříte stromy výrazu, které jsou vyhodnocovány mimo rozhraní .NET Framework, například na SQL Server, neměli byste používat volání metody ve výrazech lambda. Metody nemají význam mimo kontext modulu CLR (Common Language Runtime) rozhraní .NET.  
   
-## <a name="statement-lambdas"></a>Příkazové lambdy  
+## <a name="statement-lambdas"></a>Příkazové lambdy
+
  Příkazová lambda se podobá výrazové lambdě s tím rozdílem, že výrazy jsou uzavřeny ve složených závorkách:  
   
 (vstupní parametry) = > {příkaz;}
@@ -102,7 +103,8 @@ namespace ConsoleApplication1
 
  Příkazové lambdy nelze stejně jako anonymní metody používat k vytvoření stromů výrazu.  
   
-## <a name="async-lambdas"></a>Asynchronní lambdy  
+## <a name="async-lambdas"></a>Asynchronní lambdy
+
  Můžete snadno vytvořit výrazy lambda a příkazy, které zahrnují asynchronní zpracování pomocí [asynchronní](../../../csharp/language-reference/keywords/async.md) a [await](../../../csharp/language-reference/keywords/await.md) klíčová slova. Například následující příklad Windows Forms obsahuje obslužnou rutinu události, která volá a očekává asynchronní metodu, `ExampleMethodAsync`.  
   
 ```csharp
@@ -154,7 +156,8 @@ public partial class Form1 : Form
 
  Další informace o tom, jak vytvořit a používat asynchronní metody, naleznete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md).  
   
-## <a name="lambdas-with-the-standard-query-operators"></a>Výrazy lambda se standardními operátory dotazu  
+## <a name="lambdas-with-the-standard-query-operators"></a>Výrazy lambda s operátory standardního dotazu
+
  Mnoho standardních operátorů dotazu má vstupní parametr, jehož typ je jednou z <xref:System.Func%602> řady obecných delegátů. Tyto delegáty používají parametry typu pro definování počtu a typů vstupních parametrů a návratový typ delegátu. `Func` Delegáti jsou velmi užiteční pro zapouzdření výrazů definovaných uživatelem, které jsou použity pro každý prvek v sadě zdrojových dat. Zvažte například následující typ delegátu:  
   
 ```csharp  
@@ -191,7 +194,8 @@ var firstNumbersLessThan6 = numbers.TakeWhile(n => n < 6);
 var firstSmallNumbers = numbers.TakeWhile((n, index) => n >= index);  
 ```  
   
-## <a name="type-inference-in-lambdas"></a>Odvození typu ve výrazech lambda  
+## <a name="type-inference-in-lambdas"></a>Odvození typu proměnné ve výrazech lambda
+
  Při psaní výrazů lambda není často nutné zadat typ pro vstupní parametry, protože kompilátor může odvodit typ na základě hlavní části výrazu lambda, typu delegátu parametru a dalších faktorů, jak je popsáno ve specifikaci jazyka C#. Pro většinu standardních operátorů pro dotazování je prvním vstupem typ prvků ve zdrojové sekvenci. Pokud se dotazuje `IEnumerable<Customer>`, pak je vstupní proměnná odvozena jako `Customer` objekt, což znamená, že máte přístup k jejím metodám a vlastnostem:  
   
 ```csharp  
@@ -208,7 +212,8 @@ customers.Where(c => c.City == "London");
   
  Výrazy lambda nemají vlastní určený typ, protože systém běžných typů nezná vnitřní pojem „výraz lambda“. Někdy je však vhodné hovořit neformálně o „typu“ výrazu lambda. V těchto případech typ odkazuje na typ delegáta nebo <xref:System.Linq.Expressions.Expression> typ na který je převeden výraz lambda.  
   
-## <a name="variable-scope-in-lambda-expressions"></a>Rozsah proměnné ve výrazech lambda  
+## <a name="variable-scope-in-lambda-expressions"></a>Rozsah proměnné ve výrazech lambda
+
  Výrazy lambda mohou odkazovat na *vnější proměnné* (viz [anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)), které jsou v oboru v metodě, která definuje funkci lambda, nebo v rozsahu typu, který obsahuje výraz lambda. Proměnné, které jsou zachyceny tímto způsobem, jsou uloženy pro použití ve výrazu lambda i v případě, že proměnné by jinak přesáhly rozsah platnosti a bylo by vynuceno uvolnění paměti. Vnější proměnná musí být jednoznačně přiřazena dříve, než může být upotřebena ve výrazu lambda. Následující příklad znázorňuje tato pravidla:  
   
 ```csharp  
@@ -269,18 +274,20 @@ class Test
   
 -   Výraz lambda nemůže obsahovat `goto` příkazu `break` příkazu, nebo `continue` příkaz, který se nachází uvnitř funkce lambda, pokud cíl příkazu skoku je mimo blok. Je také chybou mít příkaz skoku mimo blok funkce lambda, pokud je cíl uvnitř bloku.  
   
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="featured-book-chapter"></a>Doporučená kapitola knihy  
+## <a name="featured-book-chapter"></a>Doporučená kapitola knihy
+
  [Delegáty, události a výrazy Lambda](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518994%28v=orm.10%29) v [ C# 3.0 Cookbook, Third Edition: Víc než 250 řešení pro C# 3.0 programmers](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff518995%28v=orm.10%29)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [LINQ (Language-Integrated Query)](../../../csharp/programming-guide/concepts/linq/index.md)  
-- [Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)  
-- [is](../../../csharp/language-reference/keywords/is.md)  
-- [Stromy výrazů](../../../csharp/programming-guide/concepts/expression-trees/index.md)  
-- [Visual Studio 2008 C# – ukázky (viz ukázkové soubory dotazů LINQ a XQuery program)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [LINQ (Language-Integrated Query)](../../../csharp/programming-guide/concepts/linq/index.md)
+- [Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)
+- [is](../../../csharp/language-reference/keywords/is.md)
+- [Stromy výrazů](../../../csharp/programming-guide/concepts/expression-trees/index.md)
+- [Visual Studio 2008 C# – ukázky (viz ukázkové soubory dotazů LINQ a XQuery program)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)
 - [Rekurzivní výrazy lambda](https://blogs.msdn.microsoft.com/madst/2007/05/11/recursive-lambda-expressions/)

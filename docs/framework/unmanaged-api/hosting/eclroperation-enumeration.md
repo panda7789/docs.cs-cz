@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4b18c89cee0c3f5088a9978e448a0d61de1b9848
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6244f01a78f08da839b233c3313f2fd6bff44b12
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33434242"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54675073"
 ---
 # <a name="eclroperation-enumeration"></a>EClrOperation – výčet
-Popisuje sadu operací, pro které můžete použít hostitele akce zásad.  
+Popisuje sadu operací, u které můžete použít hostitele akce zásad.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,25 +44,25 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`OPR_AppDomainRudeUnload`|Hostitele můžete určit zásady akce, které mají být provedeny, když <xref:System.AppDomain> je odpojeno způsobem řádně (článku neslušní).|  
-|`OPR_AppDomainUnload`|Hostitele můžete určit zásady akce, které mají být provedeny, když <xref:System.AppDomain> je odpojen.|  
-|`OPR_FinalizerRun`|Hostitele můžete zadat zásady akce prováděné při spuštění finalizační metody.|  
-|`OPR_ProcessExit`|Hostitele můžete určit zásady akce, které mají být provedeny, když proces bude ukončen.|  
-|`OPR_ThreadAbort`|Hostitele můžete určit zásady akce, které mají být provedeny, když byl přerušen vlákna.|  
-|`OPR_ThreadRudeAbortInCriticalRegion`|Hostitele můžete určit zásady akce, které mají být provedeny, když dojde k přerušení článku neslušní vláken v kritické oblasti kódu.|  
-|`OPR_ThreadRudeAbortInNonCriticalRegion`|Hostitele můžete určit zásady akce provést, když dojde k přerušení článku neslušní vláken v méně důležité oblasti kódu.|  
+|`OPR_AppDomainRudeUnload`|Hostitele můžete určit akce zásad, které mají být provedeny, když <xref:System.AppDomain> uvolnění způsobem řádné (pravidla).|  
+|`OPR_AppDomainUnload`|Hostitele můžete určit akce zásad, které mají být provedeny, když <xref:System.AppDomain> je uvolněna.|  
+|`OPR_FinalizerRun`|Hostitele můžete určit akce zásad, které mají být provedeny, když spuštění finalizační metody.|  
+|`OPR_ProcessExit`|Hostitele můžete určit akce zásad, které mají být provedeny při ukončení procesu.|  
+|`OPR_ThreadAbort`|Hostitele můžete určit akce zásad, které mají být provedeny, když je přerušeno vlákno.|  
+|`OPR_ThreadRudeAbortInCriticalRegion`|Hostitele můžete určit akce zásad, které mají být provedeny, když dojde k přerušení článku neslušní vlákna v důležité oblasti kódu.|  
+|`OPR_ThreadRudeAbortInNonCriticalRegion`|Hostitele můžete určit akce zásad má provést, když dojde k přerušení článku neslušní vlákna v méně důležité oblasti kódu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Common language runtime (CLR) spolehlivost infrastructure rozlišuje mezi přerušení a prostředků, ke kterým došlo v kritické oblastech kódu a soubory, ke kterým došlo v oblasti nekritické kódu chyby v přidělení. Tento rozdíl je navržena k umožnění hostitelů nastavit různé zásady v závislosti na tom, kde dojde k chybě v kódu.  
+ Common language runtime (CLR) spolehlivost infrastructure rozlišuje mezi přeruší a prostředků, ke kterým dochází v důležité oblasti kódu a těch, ke kterým dochází v méně důležité oblasti kódu chyby v přidělení. Toto rozlišení je navržena k umožnění hostitelů nastavit různé zásady v závislosti na tom, kde dojde k chybě v kódu.  
   
- A *kód důležité oblasti* je veškeré místo, kde modulu CLR nemůže zaručit, že přerušení úlohu nebo nedaří dokončit žádost o pro prostředky ovlivní pouze aktuální úlohy. Například pokud úloha je zámek a dostane HRESULT označující selhání při vytváření požadavku přidělení paměti, je nedostatečné jednoduše na tento úkol zajistit stabilitu zrušení <xref:System.AppDomain>, protože <xref:System.AppDomain> může obsahovat jiné Čekání na zámek stejné úlohy. Ukončil aktuální úloha může způsobit, že ty dalších úloh přestane reagovat (nebo zablokování) po neomezenou dobu. V takovém případě musí hostitel znát schopnost uvolnit celý <xref:System.AppDomain> místo nestabilitu potenciální riziko.  
+ A *důležité oblasti kódu* je jakýkoli prostor, kde nemůže zaručit CLR dané přeruší úlohu nebo selhání žádost pro prostředky ovlivní pouze aktuální úloha dokončí. Například pokud úloha drží zámek a přijímá HRESULT označující selhání při vytváření požadavku přidělení paměti, je jednoduše k přerušení tento úkol zajistit stabilitu <xref:System.AppDomain>, protože <xref:System.AppDomain> může obsahovat jiné Čekání na zámek stejné úkoly. Pokud chcete opustit aktuální úloha může způsobit, že ty další úlohy přestane reagovat (nebo přestane reagovat) po neomezenou dobu. V takovém případě hostitele musí být schopné uvolnit celý <xref:System.AppDomain> místo nestabilitu potenciální riziko.  
   
- A *nekritické kód oblasti*, na druhé straně je oblast, kde modulu CLR může zaručit, že přerušení nebo selhání ovlivní pouze úlohy, při kterém dojde k chybě.  
+ A *méně důležité oblasti kódu*, na druhé straně je oblast, ve kterém CLR může zaručit, že přerušení nebo selhání ovlivní pouze úlohy, na kterém dojde k chybě.  
   
- Modul CLR také rozlišuje řádně a řádně přerušení (článku neslušní). Obecně platí normální nebo řádně přerušení neustále snaží spustit rutiny zpracování výjimek a finalizační metody před ukončením úlohy, zatímco článku neslušní přerušení díky žádné záruky.  
+ CLR také rozlišuje mezi bezproblémové a jiné řádné přerušení (pravidla). Obecně platí normální nebo řádné přerušení snaží spustit před přerušením úlohy, zatímco hrubé přerušení nezaručuje tyto rutiny zpracování výjimek a finalizační metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -70,9 +70,9 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [EClrFailure – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)  
- [EPolicyAction – výčet](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)  
- [ICLRPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)  
- [IHostPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)  
- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [EClrFailure – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)
+- [EPolicyAction – výčet](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)
+- [ICLRPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)
+- [IHostPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)
+- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

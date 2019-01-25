@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - StackPanel control [WPF], creating
 ms.assetid: e7ce65cb-720a-4bb6-95b6-286b74488a58
-ms.openlocfilehash: 30f24d8dba7c09271a5957822439af6b64e05aca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 20e2b21b10129c096398606501768a7ace0617fa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33553024"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54674229"
 ---
 # <a name="how-to-create-a-stackpanel"></a>Postupy: Vytvoření objektu StackPanel
 Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.StackPanel>.  
   
 ## <a name="example"></a>Příklad  
- A <xref:System.Windows.Controls.StackPanel> umožňuje zásobníku elementů v zadaném směru. Pomocí vlastností, které jsou definovány na <xref:System.Windows.Controls.StackPanel>, obsah může obtékat i svisle, což je výchozí nastavení, nebo vodorovně.  
+ A <xref:System.Windows.Controls.StackPanel> umožňuje zásobníku prvky v zadaném směru. Pomocí vlastností, které jsou definovány na <xref:System.Windows.Controls.StackPanel>, obsah byl zajištěn tok obě svisle, což je výchozí nastavení, nebo vodorovně.  
   
- Následující příklad svisle balíků pět <xref:System.Windows.Controls.TextBlock> prvky, každý s jiným <xref:System.Windows.Controls.Border> a <xref:System.Windows.Controls.Border.Background%2A>, pomocí <xref:System.Windows.Controls.StackPanel>. Podřízené elementy, které mají není zadána žádná <xref:System.Windows.FrameworkElement.Width%2A> roztáhnou tak, aby vyplnil celou nadřazeného okna; však podřízené elementy jejichž zadané <xref:System.Windows.FrameworkElement.Width%2A>, na střed v rámci okna.  
+ Následující příklad svisle zásobníků pět <xref:System.Windows.Controls.TextBlock> ovládací prvky, každý s jiným <xref:System.Windows.Controls.Border> a <xref:System.Windows.Controls.Border.Background%2A>, s použitím <xref:System.Windows.Controls.StackPanel>. Podřízené prvky, které nemají zadán <xref:System.Windows.FrameworkElement.Width%2A> roztáhnout tak, aby vyplnil nadřazené okno; nicméně jsou podřízené prvky, které mají zadanou <xref:System.Windows.FrameworkElement.Width%2A>, je umístěn okna na střed.  
   
- Výchozí směr zásobníku v <xref:System.Windows.Controls.StackPanel> je svislý. K řízení toku obsahu v <xref:System.Windows.Controls.StackPanel>, použijte <xref:System.Windows.Controls.StackPanel.Orientation%2A> vlastnost. Vodorovné zarovnání můžete řídit pomocí <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnost.  
+ Výchozí směr zásobníku <xref:System.Windows.Controls.StackPanel> je svislý. K řízení toku obsahu v <xref:System.Windows.Controls.StackPanel>, použijte <xref:System.Windows.Controls.StackPanel.Orientation%2A> vlastnost. Vodorovné zarovnání můžete řídit pomocí <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnost.  
   
 ```xaml  
 <Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" WindowTitle="StackPanel Sample">  
@@ -43,7 +43,7 @@ Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.StackPanel>
 </Page>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.StackPanel>  
- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/controls/stackpanel-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.StackPanel>
+- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)
+- [Témata s postupy](../../../../docs/framework/wpf/controls/stackpanel-how-to-topics.md)

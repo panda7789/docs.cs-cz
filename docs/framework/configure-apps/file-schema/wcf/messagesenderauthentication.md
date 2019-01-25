@@ -2,23 +2,23 @@
 title: '&lt;messageSenderAuthentication&gt;'
 ms.date: 03/30/2017
 ms.assetid: ea62fc06-55fb-42e0-aa2b-8867bdf4b415
-ms.openlocfilehash: 2785eb9392a498447e6df4335897cdd310b2b9de
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 848c46e4a9144b4fa0827b40818c544f1e5d35ec
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54147341"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54688841"
 ---
 # <a name="ltmessagesenderauthenticationgt"></a>&lt;messageSenderAuthentication&gt;
 Určuje nastavení ověřování pro sdílené certifikát používaný službou odesílatele zprávy.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<serviceBehaviors >  
+\<serviceBehaviors>  
 \<chování >  
-\<serviceCredentials >  
-\<sdílená >  
-\<messageSenderAuthentication >  
+\<serviceCredentials>  
+\<peer>  
+\<messageSenderAuthentication>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,13 +53,13 @@ Určuje nastavení ověřování pro sdílené certifikát používaný službou
 ## <a name="remarks"></a>Poznámky  
  Tento element musí být nakonfigurované, pokud je zvoleno ověřování zpráv. Pro výstup kanály, každá zpráva je podepsaná pomocí certifikátu poskytnutého [ \<certifikátu >](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-element.md). Všechny zprávy, předtím, než se doručí do aplikace, jsou porovnávána s přihlašovacími údaji zprávy pomocí validátor určené `customCertificateValidatorType` atribut tohoto elementu. Validátor můžete přijmout nebo odmítnout přihlašovací údaje.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>  
- <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>  
- <xref:System.ServiceModel.Security.PeerCredential.MessageSenderAuthentication%2A>  
- <xref:System.ServiceModel.Configuration.PeerCredentialElement.MessageSenderAuthentication%2A>  
- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
- [Ověřování zpráv protokolu peer Channel](https://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
- [Vlastní ověřování protokolu peer Channel](https://msdn.microsoft.com/library/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
- [Zabezpečení aplikací protokolu Peer Channel](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>
+- <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>
+- <xref:System.ServiceModel.Security.PeerCredential.MessageSenderAuthentication%2A>
+- <xref:System.ServiceModel.Configuration.PeerCredentialElement.MessageSenderAuthentication%2A>
+- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)
+- [Ověřování zpráv protokolu peer Channel](https://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)
+- [Vlastní ověřování protokolu peer Channel](https://msdn.microsoft.com/library/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)
+- [Zabezpečení aplikací protokolu Peer Channel](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)

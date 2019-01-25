@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - AJAX integration and JSON support [WCF]
 ms.assetid: 3851a8fc-d861-4ac1-873c-96af0343d3a7
-ms.openlocfilehash: bcf1cab9386d9d9503af6258c1bb39f8744c073b
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 54942386bb4fb88e72a86b5e25f12cee4776a126
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47210185"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54625637"
 ---
 # <a name="ajax-integration-and-json-support"></a>Integrace jazyka AJAX a podpora formátu JSON
 Podpora Windows Communication Foundation (WCF) asynchronní jazyka JavaScript technologie ASP.NET a XML (AJAX) a formátu dat JavaScript Object Notation (JSON) povolte službám WCF vystavit operace klientům AJAX. Klienti AJAX jsou webové stránky spuštěním kódu jazyka JavaScript a přístup k těchto služeb WCF pomocí požadavků HTTP. Témata v této části poskytují informace o zprostředkovateli zabezpečení Schannel a způsobu jeho implementace.  
@@ -26,9 +26,9 @@ Podpora Windows Communication Foundation (WCF) asynchronní jazyka JavaScript te
  [Podpora JSON a dalších formátů přenosu dat](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)  
  Popisuje podporu formátu JSON (namísto XML) obvykle používají pro zasílání zpráv pomocí služby technologie ASP.NET AJAX.  
   
- [Postupy: Migrace webových služeb ASP.NET s podporou AJAX na WCF](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)  
+ [Postupy: Migrace s povoleným AJAX webových služeb ASP.NET na WCF](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)  
  Popisuje, jak migrovat s povoleným AJAX technologie ASP.NET webové služby WCF Web service.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>  
- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>
+- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

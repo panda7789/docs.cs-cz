@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Object data type [Visual Basic], data types
 - data types [Visual Basic], choosing
 ms.assetid: 64c71a12-9057-4dbf-baca-7379c4aada69
-ms.openlocfilehash: 490a462859a916d21c816ff96c47d2deeb9312ee
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7e32bf158b91c23c32028eb6877bd0089a9019b2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517793"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54655046"
 ---
 # <a name="miscellaneous-data-types-visual-basic"></a>Různé datové typy (Visual Basic)
 Visual Basic poskytuje několik typů dat, které nejsou orientovány čísel nebo znaků. Místo toho se vypořádají s specializované dat, jako Ano/ne hodnoty, hodnoty data a času a adresy objektu.  
@@ -30,10 +30,10 @@ Visual Basic poskytuje několik typů dat, které nejsou orientovány čísel ne
   
  Výhodou `Object` datový typ je, že se použije k ukládání dat libovolného datového typu. Nevýhodou je, že se vám účtovat žádné další operace, které potřebují delší dobu spuštění a vaše aplikace pracovat pomaleji. Pokud používáte `Object` proměnné pro typy hodnot, se vám účtovat *zabalení* a *rozbalení*. Když ho používáte pro typy odkazů, se vám účtovat *pozdní vazby*.  
   
-## <a name="see-also"></a>Viz také  
- [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
- [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)  
- [Číselné datové typy](../../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)  
- [Znakové datové typy](../../../../visual-basic/programming-guide/language-features/data-types/character-data-types.md)  
- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- [Statické a dynamické vazby](../../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
+## <a name="see-also"></a>Viz také:
+- [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)
+- [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
+- [Číselné datové typy](../../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)
+- [Znakové datové typy](../../../../visual-basic/programming-guide/language-features/data-types/character-data-types.md)
+- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
+- [Statické a dynamické vazby](../../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)

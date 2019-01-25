@@ -12,23 +12,23 @@ helpviewer_keywords:
 ms.assetid: 6e5c07be-bc5b-437a-8398-8779e23126ab
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 15957ce03925d75021d88bc81d12809c3fe31c2c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e20502cfd64e7e4e40bee0b815729e914c3dd4a2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33389938"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54553708"
 ---
 # <a name="streamwriterbuffereddatalost-mda"></a>streamWriterBufferedDataLost – pomocník spravovaného ladění (MDA)
-`streamWriterBufferedDataLost` Pomocník spravovaného ladění (MDA) se aktivuje při <xref:System.IO.StreamWriter> je zapsán do, ale <xref:System.IO.StreamWriter.Flush%2A> nebo <xref:System.IO.StreamWriter.Close%2A> metoda není volána následně před provedením instanci <xref:System.IO.StreamWriter> zničena. Pokud je povolena tato MDA, modul runtime určuje, zda veškerá data ve vyrovnávací paměti stále existuje v rámci <xref:System.IO.StreamWriter>. Pokud data ve vyrovnávací paměti neexistuje, MDA je aktivována. Volání <xref:System.GC.Collect%2A> a <xref:System.GC.WaitForPendingFinalizers%2A> metody můžete vynutit finalizační metody ke spuštění. Finalizační metody jinak poběží v zdánlivě libovolný dobu a může být vůbec na ukončení procesu. Explicitně systémem finalizační metody s Tento MDA povoleno pomůže spolehlivěji reprodukujte tento typ problému.  
+`streamWriterBufferedDataLost` Aktivovat pomocníka spravovaného ladění (MDA) při <xref:System.IO.StreamWriter> se zapisují do, ale <xref:System.IO.StreamWriter.Flush%2A> nebo <xref:System.IO.StreamWriter.Close%2A> metoda není volána následně před provedením instance <xref:System.IO.StreamWriter> zničen. Když je povolené toto MDA, modul runtime určuje, zda všechna data ve vyrovnávací paměti stále existuje v rámci <xref:System.IO.StreamWriter>. Pokud data ve vyrovnávací paměti, MDA aktivováno. Volání <xref:System.GC.Collect%2A> a <xref:System.GC.WaitForPendingFinalizers%2A> metod můžete vynutit finalizační metody ke spuštění. Finalizační metody jinak poběží v zdánlivě libovolného dobu a může být vůbec na ukončení procesu. Explicitně s toto MDA povoleno spuštění finalizační metody pomůže spolehlivěji reprodukovat tento typ problému.  
   
 ## <a name="symptoms"></a>Příznaky  
- A <xref:System.IO.StreamWriter> poslední 1 – 4 KB dat nelze zapsat do souboru.  
+ A <xref:System.IO.StreamWriter> nezapisuje poslední 1 – 4 KB dat do souboru.  
   
-## <a name="cause"></a>příčina  
- <xref:System.IO.StreamWriter> Uloží data interně, která vyžaduje, aby <xref:System.IO.StreamWriter.Close%2A> nebo <xref:System.IO.StreamWriter.Flush%2A> metodu volat při zápisu dat z vyrovnávací paměti do příslušné úložiště dat. Pokud <xref:System.IO.StreamWriter.Close%2A> nebo <xref:System.IO.StreamWriter.Flush%2A> není volána správně, data uložená do vyrovnávací paměti v <xref:System.IO.StreamWriter> instance nemusí být zapsána podle očekávání.  
+## <a name="cause"></a>Příčina  
+ <xref:System.IO.StreamWriter> Ukládá do vyrovnávací paměti dat interně, což vyžaduje, aby <xref:System.IO.StreamWriter.Close%2A> nebo <xref:System.IO.StreamWriter.Flush%2A> metodu volat zapisovat data ve vyrovnávací paměti k základnímu úložišti dat. Pokud <xref:System.IO.StreamWriter.Close%2A> nebo <xref:System.IO.StreamWriter.Flush%2A> není volána správně, data uložená do vyrovnávací paměti v <xref:System.IO.StreamWriter> instance nemusejí být určeny podle očekávání.  
   
- Následuje příklad chybně napsané kód, který by měl tento MDA catch.  
+ Následuje příklad špatně napsaný kód, který byste zachytit toto MDA.  
   
 ```csharp  
 // Poorly written code.  
@@ -40,7 +40,7 @@ void Write()
 }  
 ```  
   
- Předchozí kód se budou aktivovat tuto MDA více spolehlivě uvolnění paměti je aktivaci a potom pozastaveno, dokud finalizační metody dokončení. Chcete-li sledovat tento druh problému, můžete přidejte následující kód na konec předchozí postup v sestavení ladicí verze. To vám pomůže spolehlivě aktivovat MDA, ale samozřejmě neopraví příčinu problému.  
+ Předchozí kód se budou aktivovat toto MDA více spolehlivě uvolňování paměti se aktivuje a potom pozastaveno, dokud dokončení finalizační metody. Sledovat tento druh problému, můžete přidat následující kód na konec předchozí metodu v sestavení pro ladění. To vám pomůže spolehlivě aktivovat MDA, ale samozřejmě neopraví příčiny problému.  
   
 ```csharp
 GC.Collect();  
@@ -48,7 +48,7 @@ GC.WaitForPendingFinalizers();
 ```  
   
 ## <a name="resolution"></a>Rozlišení  
- Zajistěte, aby zavoláte <xref:System.IO.StreamWriter.Close%2A> nebo <xref:System.IO.StreamWriter.Flush%2A> na <xref:System.IO.StreamWriter> před jeho zavřením aplikace nebo jakékoli blok kódu, která má instance <xref:System.IO.StreamWriter>. Jedním z nejlepší mechanismy pro dosažení tohoto cíle se vytvořit instanci pomocí C# `using` blok (`Using` v jazyce Visual Basic), který zajistí <xref:System.IO.StreamWriter.Dispose%2A> je volána metoda pro službu zápisu, což vede k instanci správně ukončování.  
+ Ujistěte se, že zavoláte <xref:System.IO.StreamWriter.Close%2A> nebo <xref:System.IO.StreamWriter.Flush%2A> na <xref:System.IO.StreamWriter> před ukončením aplikace nebo jakékoli blok kódu, který má instance <xref:System.IO.StreamWriter>. Jednu z nejlepších mechanismy pro dosažení tohoto cíle je vytvoření instance s C# `using` blok (`Using` v jazyce Visual Basic), která zajistí <xref:System.IO.StreamWriter.Dispose%2A> je vyvolána metoda pro modul pro zápis, výsledkem je instance správně zavírá.  
   
 ```csharp
 using(StreamWriter sw = new StreamWriter("file.txt"))   
@@ -57,7 +57,7 @@ using(StreamWriter sw = new StreamWriter("file.txt"))
 }  
 ```  
   
- Následující kód ukazuje stejné řešení pomocí `try/finally` místo `using`.  
+ Následující kód ukazuje stejného řešení, pomocí `try/finally` místo `using`.  
   
 ```csharp
 StreamWriter sw;  
@@ -73,7 +73,7 @@ finally
 }  
 ```  
   
- Pokud ani jedno z těchto řešení je možné (například pokud <xref:System.IO.StreamWriter> je uložen v statického proměnné a nemůže spustit snadno kód na konci celé jeho životnosti), pak volání <xref:System.IO.StreamWriter.Flush%2A> na <xref:System.IO.StreamWriter> po jeho posledního použití nebo nastavení <xref:System.IO.StreamWriter.AutoFlush%2A> Vlastnost `true` před jeho první použití byste neměli tento problém.  
+ Pokud ani jedno z těchto řešení je možné (například pokud <xref:System.IO.StreamWriter> je uložen v statickou proměnnou a nemůže spustit snadno kódu na konci svého životního cyklu), následným voláním <xref:System.IO.StreamWriter.Flush%2A> na <xref:System.IO.StreamWriter> po nastavení nebo posledního použití <xref:System.IO.StreamWriter.AutoFlush%2A> Vlastnost `true` před jeho prvního použití byste se vyhnout tomuto problému.  
   
 ```csharp
 private static StreamWriter log;  
@@ -88,11 +88,11 @@ static WriteToFile()
 }  
 ```  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Tato MDA nemá žádný vliv na modulu runtime.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Toto MDA nemá žádný vliv na modul runtime.  
   
 ## <a name="output"></a>Výstup  
- Zprávu s upozorněním, že došlo k této porušení.  
+ Zprávu s oznámením, že došlo k porušení.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -104,6 +104,6 @@ static WriteToFile()
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IO.StreamWriter>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.IO.StreamWriter>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

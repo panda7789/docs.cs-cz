@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [.NET Framework], abstract
 ms.assetid: 0a632bc7-9b03-44ee-8842-c82f88672a45
 author: KrzysztofCwalina
-ms.openlocfilehash: 4ff79af968c8a0a360cade687b8c60cdd71de192
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: fcf566c24677630fdbb1fcd0eb7628f830b3be2b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149910"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54702935"
 ---
 # <a name="abstractions-abstract-types-and-interfaces"></a>Abstrakce (abstraktní typy a rozhraní)
 Abstrakce je typ, který popisuje kontrakt ale neposkytuje úplnou implementaci kontraktu. Abstrakce jsou obvykle implementovány jako abstraktní třídy nebo rozhraní a začne s kvalitně definované sady referenční dokumentaci popisující požadovaný sémantiku typy implementace kontraktu. Některé z vašich nejdůležitějších abstrakce v rozhraní .NET Framework zahrnují <xref:System.IO.Stream>, <xref:System.Collections.Generic.IEnumerable%601>, a <xref:System.Object>.  
@@ -33,11 +33,11 @@ Abstrakce je typ, který popisuje kontrakt ale neposkytuje úplnou implementaci 
   
  **✓ CONSIDER** poskytuje odkaz testy pro konkrétní implementace abstrakce. Tyto testy by měly umožnit uživatelům k ověření, zda jejich implementace správnou implementaci kontraktu.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)

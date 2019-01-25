@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6935a72bb99e636b3732958ee88ad224b401513b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e1c3d20b1b9470c744f6dca9ef638555b9322c1c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430717"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658114"
 ---
 # <a name="iassemblycachequeryassemblyinfo-method"></a>IAssemblyCache::QueryAssemblyInfo – metoda
-Získá požadovaná data o zadaném sestavení.  
+Získá požadovaná data o zadané sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,24 +39,24 @@ HRESULT QueryAssemblyInfo (
   
 #### <a name="parameters"></a>Parametry  
  `dwFlags`  
- [v] Příznaky definované v Fusion.idl. Podporovány jsou následující hodnoty:  
+ [in] Příznaky definované v Fusion.idl. Podporovány jsou následující hodnoty:  
   
 -   QUERYASMINFO_FLAG_VALIDATE (0X00000001)  
   
 -   QUERYASMINFO_FLAG_GETSIZE (0X00000002)  
   
  `pszAssemblyName`  
- [v] Název sestavení, pro které budou načtena data.  
+ [in] Název sestavení, pro kterou budou načtena data.  
   
  `pAsmInfo`  
- [ve out] [Assembly_info –](../../../../docs/framework/unmanaged-api/fusion/assembly-info-structure.md) struktura, která obsahuje data o sestavení.  
+ [out v] [Assembly_info –](../../../../docs/framework/unmanaged-api/fusion/assembly-info-structure.md) strukturu, která obsahuje data o sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Fusion.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)

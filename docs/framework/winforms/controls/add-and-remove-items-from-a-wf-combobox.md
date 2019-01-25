@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání a odebrání položek z ovládacích prvků Windows Forms ComboBox, ListBox nebo CheckedListBox'
+title: 'Postupy: Přidání a odebrání položek z Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,19 +14,19 @@ helpviewer_keywords:
 - combo boxes [Windows Forms], removing items
 - CheckedListBox control [Windows Forms], adding and removing items
 ms.assetid: 7224c8d2-4118-443e-ae1e-d7c17d1e69ee
-ms.openlocfilehash: f9319ffe5e9c4f06565648565ce21dec6fc672f9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3f789a0e00b1d235fe61b93190ae167250113846
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33527184"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54500217"
 ---
-# <a name="how-to-add-and-remove-items-from-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Přidání a odebrání položek z ovládacích prvků Windows Forms ComboBox, ListBox nebo CheckedListBox
-Položky lze přidat do Windows Forms pole se seznamem pole se seznamem, nebo zaškrtnutí pole se seznamem v mnoha různými způsoby, protože tyto ovládací prvky mohou být vázány na celou řadu zdrojů dat. Toto téma však představuje nejjednodušší způsob a vyžaduje žádná vazba na data. Položky zobrazené jsou obvykle řetězce; lze však použít libovolného objektu. Text, který se zobrazí v ovládacím prvku je hodnoty vrácené objektu `ToString` metoda.  
+# <a name="how-to-add-and-remove-items-from-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Přidání a odebrání položek z Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek
+Položky lze přidat do pole se seznamem Windows Forms, pole se seznamem, nebo zkontrolovat mnoha různými způsoby, pole se seznamem, protože tyto ovládací prvky mohou být vázány na širokou škálu zdrojů dat. Toto téma však ukazuje nejjednodušší způsob a vyžaduje žádné datové vazby. Zobrazení položek jsou obvykle řetězce; však můžete použít libovolný objekt. Text, který se zobrazí v ovládacím prvku je hodnotu vrácenou objektu `ToString` metody.  
   
-### <a name="to-add-items"></a>K přidávání položek  
+### <a name="to-add-items"></a>Chcete-li přidat položky  
   
-1.  Přidejte řetězec nebo objekt do seznamu pomocí `Add` metodu `ObjectCollection` třída. Kolekce odkazuje pomocí `Items` vlastnost:  
+1.  Přidání řetězec nebo objekt, do seznamu s použitím `Add` metodu `ObjectCollection` třídy. Kolekce odkazuje pomocí `Items` vlastnost:  
   
     ```vb  
     ComboBox1.Items.Add("Tokyo")  
@@ -42,7 +42,7 @@ Položky lze přidat do Windows Forms pole se seznamem pole se seznamem, nebo za
   
      - nebo –  
   
-2.  Vložte řetězec nebo objekt na požadované místo v seznamu pomocí `Insert` metoda:  
+2.  Vložit řetězec nebo objekt na požadované místo v seznamu se `Insert` metody:  
   
     ```vb  
     CheckedListBox1.Items.Insert(0, "Copenhagen")  
@@ -58,7 +58,7 @@ Položky lze přidat do Windows Forms pole se seznamem pole se seznamem, nebo za
   
      - nebo –  
   
-3.  Přiřadit celé pole na `Items` kolekce:  
+3.  Přiřadit celého pole na `Items` kolekce:  
   
     ```vb  
     Dim ItemObject(9) As System.Object  
@@ -87,11 +87,11 @@ Položky lze přidat do Windows Forms pole se seznamem pole se seznamem, nebo za
     listBox1->Items->AddRange(ItemObject);  
     ```  
   
-### <a name="to-remove-an-item"></a>Pokud chcete odebrat položku  
+### <a name="to-remove-an-item"></a>Chcete-li odebrat položku  
   
-1.  Volání `Remove` nebo `RemoveAt` metoda odstranit položky.  
+1.  Volání `Remove` nebo `RemoveAt` metoda odstraňovat položky.  
   
-     `Remove` má jeden argument, který určuje položka pro odstranění.`RemoveAt` Odebere položku se zadané číslo indexu.  
+     `Remove` má jeden argument, který obsahuje položky, které chcete odebrat.`RemoveAt` Odebere položku se zadané číslo indexu.  
   
     ```vb  
     ' To remove item with index 0:  
@@ -136,10 +136,10 @@ Položky lze přidat do Windows Forms pole se seznamem pole se seznamem, nebo za
     listBox1->Items->Clear();  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.ComboBox>  
- <xref:System.Windows.Forms.ListBox>  
- <xref:System.Windows.Forms.CheckedListBox>  
- [Postupy: Řazení obsahu ovládacího prvku ComboBox, ListBox nebo CheckedListBox z Windows Forms](../../../../docs/framework/winforms/controls/sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)  
- [Kdy použít prvek Windows Forms ComboBox místo prvku ListBox](../../../../docs/framework/winforms/controls/when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md)  
- [Ovládací prvky Windows Forms používané k výpisu možností](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.ComboBox>
+- <xref:System.Windows.Forms.ListBox>
+- <xref:System.Windows.Forms.CheckedListBox>
+- [Postupy: Řazení obsahu Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](../../../../docs/framework/winforms/controls/sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)
+- [Kdy použít prvek Windows Forms ComboBox místo prvku ListBox](../../../../docs/framework/winforms/controls/when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md)
+- [Ovládací prvky Windows Forms používané k výpisu možností](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)

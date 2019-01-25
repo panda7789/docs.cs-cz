@@ -2,12 +2,12 @@
 title: Výběr a ověření certifikátu
 ms.date: 03/30/2017
 ms.assetid: c933aca2-4cd0-4ff1-9df9-267143f25a6f
-ms.openlocfilehash: 2767f8fc62d44e480962690a3cbe379fea0f9662
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.openlocfilehash: 6d2c5470856f09d3da3bcae890717757c598a4c0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50048369"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54666658"
 ---
 # <a name="certificate-selection-and-validation"></a>Výběr a ověření certifikátu
 <xref:System.Net> Třídy podporují několik způsobů, jak vybrat a ověřit <xref:System.Security.Cryptography.X509Certificates> pro připojení vrstvy SSL (Secure Socket). Klienta můžete vybrat jeden nebo více certifikátů ke svému ověření serveru. Server může vyžadovat, že klientský certifikát mají jeden nebo více konkrétních atributů pro ověřování.  
@@ -52,6 +52,6 @@ ms.locfileid: "50048369"
   
  Kromě těchto nástrojů <xref:System.Security.Cryptography.X509Certificates.X509Certificate> a <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> třídy poskytuje metody pro načítání certifikátu ze systému souborů.  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení v síťovém programování](../../../docs/framework/network-programming/security-in-network-programming.md)  
- [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení v síťovém programování](../../../docs/framework/network-programming/security-in-network-programming.md)
+- [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)

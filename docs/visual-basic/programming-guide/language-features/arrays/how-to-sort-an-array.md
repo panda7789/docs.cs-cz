@@ -7,15 +7,15 @@ helpviewer_keywords:
 - arrays [Visual Basic], sorting
 - examples [Visual Basic], arrays
 ms.assetid: 9289aeaa-9626-4698-94a7-1d1fd3702b87
-ms.openlocfilehash: a067c40e1dd0e881516cbc7769cb9afb879d1b9d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0b04bfbedf9d7266d1b2e190fa85b8a64cf6efbf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33646293"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54558433"
 ---
 # <a name="how-to-sort-an-array-in-visual-basic"></a>Postupy: Řazení pole v jazyce Visual Basic
-Tento příklad deklaruje pole `String` objektů s názvem `zooAnimals`, naplní jej a abecedně seřadí.  
+V tomto příkladu deklaruje pole `String` objektů s názvem `zooAnimals`, naplní ho a pak ho seřadí podle abecedy.  
   
 ## <a name="example"></a>Příklad  
   
@@ -39,13 +39,13 @@ End Sub
   
 -   Pole je prázdné (<xref:System.ArgumentNullException> třídy)  
   
--   Pole je multidimenzionální (<xref:System.RankException> třídy)  
+-   Pole je vícerozměrné (<xref:System.RankException> třídy)  
   
--   Jeden či více elementů pole neimplementují <xref:System.IComparable> rozhraní (<xref:System.InvalidOperationException> třídy)  
+-   Jeden nebo více prvků pole neimplementují <xref:System.IComparable> rozhraní (<xref:System.InvalidOperationException> třídy)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Array.Sort%2A?displayProperty=nameWithType>  
- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
- [Řešení potíží s poli](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)  
- [Kolekce](../../concepts/collections.md)  
- [Příkaz For Each...Next](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Array.Sort%2A?displayProperty=nameWithType>
+- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [Řešení potíží s poli](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)
+- [Kolekce](../../concepts/collections.md)
+- [Příkaz For Each...Next](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)

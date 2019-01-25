@@ -3,12 +3,12 @@ title: Pokyny k migraci aplikace sestavené pomocí WIF 3.5 na WIF 4.5
 ms.date: 03/30/2017
 ms.assetid: 7a32fe6e-5f68-4693-9371-19411fa8063c
 author: BrucePerlerMS
-ms.openlocfilehash: ec66803edc21f186fa9a8c5bcb91b5181789893d
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: d843f2d01072db8b848f4d6f26dba32b4e48f302
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582512"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54696184"
 ---
 # <a name="guidelines-for-migrating-an-application-built-using-wif-35-to-wif-45"></a>Pokyny k migraci aplikace sestavené pomocí WIF 3.5 na WIF 4.5
 ## <a name="applies-to"></a>Platí pro  
@@ -170,8 +170,8 @@ add-windowsfeature windows-identity-foundation
 > [!NOTE]
 >  Protože mnoho třídy technologie WIF 3.5 a WIF 4.5 sdílí stejné názvy, při použití technologie WIF 3.5 a WIF 4.5 společně, nezapomeňte použít plně kvalifikované třídě názvy nebo aliasy oboru názvů použijte k rozlišení mezi třídy technologie WIF 3.5 a WIF 4.5.  
   
-## <a name="see-also"></a>Viz také  
- [Schéma konfigurace WIF](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/index.md)  
- [Mapování oborů názvů mezi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)  
- [Novinky ve Windows Workflow Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)  
- [Nástroj Identita a přístup pro Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md)
+## <a name="see-also"></a>Viz také:
+- [Schéma konfigurace WIF](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/index.md)
+- [Mapování oborů názvů mezi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)
+- [Novinky ve Windows Workflow Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)
+- [Nástroj Identita a přístup pro Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md)

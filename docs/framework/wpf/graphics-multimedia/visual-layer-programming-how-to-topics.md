@@ -8,15 +8,15 @@ helpviewer_keywords:
 - rendering support with Visual objects [WPF]
 - visual layer [WPF]
 ms.assetid: ac550423-60a3-43e6-a0bc-d65ef026e0cb
-ms.openlocfilehash: e4328e1628028be72d10ee2a59c3f53b18bd6580
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b53b5666985305362d093e2e579abe83ce619fc1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33561973"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54655852"
 ---
 # <a name="visual-layer-programming-how-to-topics"></a>Postupy: Témata programování vizuální vrstvy
-Témata v této části ukazují, jak používat visual vrstvy pro testování stiskněte klávesu a nízké úrovně složení.  
+Témata v této části ukazují, jak používat vizuální vrstvy pro spuštění testu a nízké úrovně složení.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Získání posunu vizuálního objektu](../../../../docs/framework/wpf/graphics-multimedia/how-to-get-the-offset-of-a-visual.md)  
@@ -26,9 +26,9 @@ Témata v této části ukazují, jak používat visual vrstvy pro testování s
  [Ověřování pozice pomocí kontejneru hostitele Win32](../../../../docs/framework/wpf/graphics-multimedia/how-to-hit-test-using-a-win32-host-container.md)  
  [Vykreslení intervalu podle snímků pomocí CompositionTarget](../../../../docs/framework/wpf/graphics-multimedia/how-to-render-on-a-per-frame-interval-using-compositiontarget.md)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Visual>  
- <xref:System.Windows.Media.VisualTreeHelper>  
- <xref:System.Windows.Media.DrawingVisual>  
- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Visual>
+- <xref:System.Windows.Media.VisualTreeHelper>
+- <xref:System.Windows.Media.DrawingVisual>
+- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)

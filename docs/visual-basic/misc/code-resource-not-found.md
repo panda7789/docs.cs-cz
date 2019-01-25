@@ -1,22 +1,22 @@
 ---
-title: Kód prostředek nebyl nalezen
+title: Prostředek kódu nebyl nalezen
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID454
 ms.assetid: f0e53e96-c3de-41e2-bf98-e72f93802dfa
-ms.openlocfilehash: cc76a14e1a2acfbf19e45ee6a9e5161e404505ea
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e143f1a1271afb593862257ca91705c2b94a6013
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33635545"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543117"
 ---
-# <a name="code-resource-not-found"></a>Kód prostředek nebyl nalezen
-Došlo k volání procedury v prostředku kód, ale kód prostředek nebyl nalezen.  
+# <a name="code-resource-not-found"></a>Prostředek kódu nebyl nalezen
+Došlo k volání do procedury v kódu prostředků, ale nepovedlo se najít prostředek kódu.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Zkontrolujte, zda je prostředek k dispozici a správně odkazované.  
+-   Zkontrolujte, že prostředek k dispozici a správně odkazované.  
   
-## <a name="see-also"></a>Viz také  
- [Typy chyb](../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a>Viz také:
+- [Typy chyb](../../visual-basic/programming-guide/language-features/error-types.md)

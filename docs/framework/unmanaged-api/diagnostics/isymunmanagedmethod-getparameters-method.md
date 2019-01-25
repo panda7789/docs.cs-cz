@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2fbedb7b1c10dcc2b9b9940db10aae7e4101436b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d0fc5fd29b8b423ddd3a659ee2fc8a339eea0105
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426208"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54733880"
 ---
 # <a name="isymunmanagedmethodgetparameters-method"></a>ISymUnmanagedMethod::GetParameters – metoda
-Získá parametry pro tuto metodu. Parametry jsou vráceny v pořadí, ve kterém jsou definovány v rámci signatury metody.  
+Získá parametry pro tuto metodu. Parametry jsou vráceny v pořadí, ve kterém jsou definovány v podpisu metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +39,19 @@ HRESULT GetParameters(
   
 #### <a name="parameters"></a>Parametry  
  `cParams`  
- [v] Velikost `params` pole.  
+ [in] Velikost `params` pole.  
   
  `pcParams`  
- [v] Ukazatel na `ULONG32` která přijme velikost vyrovnávací paměti, kterou musí obsahovat parametry.  
+ [in] Ukazatel `ULONG32` , která obdrží velikost vyrovnávací paměti, který musí obsahovat parametry.  
   
  `params`  
  [out] Ukazatel do vyrovnávací paměti, která přijímá parametry.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)

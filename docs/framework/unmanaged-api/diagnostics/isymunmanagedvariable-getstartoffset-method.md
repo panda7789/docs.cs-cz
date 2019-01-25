@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2b25d072ab96b822e79c6f87f535096550e4bb53
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0f551e2f8a89cf2988ce43bf72a1e87e0ddaf713
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33427060"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543208"
 ---
 # <a name="isymunmanagedvariablegetstartoffset-method"></a>ISymUnmanagedVariable::GetStartOffset – metoda
-Získá počáteční odsazení této proměnné v rámci jeho nadřazený objekt. Pokud je to místní proměnné v oboru, počáteční odsazení bude spadat do posuny definované pro obor.  
+Získá počáteční odsazení této proměnné v rámci svého nadřazeného objektu. Pokud je to místní proměnné v rámci oboru, počáteční odsazení bude spadat do posuny definované pro tento obor.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,14 +36,14 @@ HRESULT GetStartOffset(
   
 #### <a name="parameters"></a>Parametry  
  `pRetVal`  
- [out] Ukazatel na `ULONG32` která přijme počáteční odsazení.  
+ [out] Ukazatel `ULONG32` , která obdrží počáteční odsazení.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedVariable – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)  
- [GetEndOffset – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getendoffset-method.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedVariable – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)
+- [GetEndOffset – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getendoffset-method.md)

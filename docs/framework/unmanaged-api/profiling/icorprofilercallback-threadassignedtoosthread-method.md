@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e577413ea6807ea5ff8be4d668aa82f0acbb007d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5c55c6ffea0f3688fc7c3c3283701b4e35f1fcbe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33451831"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54651978"
 ---
 # <a name="icorprofilercallbackthreadassignedtoosthread-method"></a>ICorProfilerCallback::ThreadAssignedToOSThread – metoda
-Upozorní profileru, že spravované vlákno se implementuje pomocí vlákno konkrétní operační systém.  
+Oznámí profileru, že spravovaným vláknem se implementuje pomocí vlákno konkrétní operační systém.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT ThreadAssignedToOSThread(
   
 #### <a name="parameters"></a>Parametry  
  `managedThreadId`  
- [v] Identifikátor spravovaných vláken.  
+ [in] Identifikátor spravované vlákno.  
   
  `osThreadId`  
- [v] Identifikátor vláknu operačního systému.  
+ [in] Identifikátor vlákna operačního systému.  
   
 ## <a name="remarks"></a>Poznámky  
- `ThreadAssignedToOSThread` Zpětného volání existuje tak, aby profileru můžete udržovat přesné mapování mezi jsou vlákna vláken operačního systému na spravovaná vlákna.  
+ `ThreadAssignedToOSThread` Zpětného volání existuje tak, že profiler může udržovat přesné mapování mezi vlákna vlákna operačního systému na spravovaná vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -54,5 +54,5 @@ HRESULT ThreadAssignedToOSThread(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

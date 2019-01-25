@@ -2,12 +2,12 @@
 title: Nastavení vlastností Use a Style
 ms.date: 03/30/2017
 ms.assetid: c09a0600-116f-41cf-900a-1b7e4ea4e300
-ms.openlocfilehash: 6728ab0a02c4fc171019564fa2a55bc3a5afd394
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: cd6f9af034f2f36c4daf808492713fcd616e3a9c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195902"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54662150"
 ---
 # <a name="setting-the-use-and-style-properties"></a>Nastavení vlastností Use a Style
 Tento příklad znázorňuje způsob použití vlastností použití a stylu na <xref:System.ServiceModel.XmlSerializerFormatAttribute> a <xref:System.ServiceModel.DataContractFormatAttribute>. Tyto vlastnosti vliv na způsob formátování zprávy. Ve výchozím nastavení, text zprávy je formátováno s stylu nastavena na <xref:System.ServiceModel.OperationFormatStyle.Document>. Tato nastavení se dá nastavit na úrovni kontraktu služby nebo úroveň operace kontraktu.  
@@ -94,4 +94,4 @@ public interface IUseAndStyleCalculator
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\UseAndStyle`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

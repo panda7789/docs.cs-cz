@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 33c498e8379d68287bfe4a2e781d6797fd6b4c10
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: c3e6548484f3e41ce67522931f4eafef3acee1fe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44192586"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54652017"
 ---
 # <a name="managed-execution-process"></a>Proces spravovaného spouštění
 <a name="introduction"></a> Proces spravovaného spuštění zahrnuje následující kroky, které jsou detailně popsány dále v tomto tématu:  
@@ -109,12 +109,12 @@ ms.locfileid: "44192586"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled](../../docs/framework/get-started/overview.md)  
-- [Jazyková nezávislost a jazykově nezávislé komponenty](../../docs/standard/language-independence-and-language-independent-components.md)  
-- [Metadata a komponenty popisující samy sebe](../../docs/standard/metadata-and-self-describing-components.md)  
-- [Ilasm.exe (IL Assembler)](../../docs/framework/tools/ilasm-exe-il-assembler.md)  
-- [Zabezpečení](../../docs/standard/security/index.md)  
-- [Spolupráce s nespravovaným kódem](../../docs/framework/interop/index.md)  
-- [Nasazení](../../docs/framework/deployment/net-framework-applications.md)  
-- [Sestavení v modulu CLR (Common Language Runtime)](../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+- [Přehled](../../docs/framework/get-started/overview.md)
+- [Jazyková nezávislost a jazykově nezávislé komponenty](../../docs/standard/language-independence-and-language-independent-components.md)
+- [Metadata a komponenty popisující samy sebe](../../docs/standard/metadata-and-self-describing-components.md)
+- [Ilasm.exe (IL Assembler)](../../docs/framework/tools/ilasm-exe-il-assembler.md)
+- [Zabezpečení](../../docs/standard/security/index.md)
+- [Spolupráce s nespravovaným kódem](../../docs/framework/interop/index.md)
+- [Nasazení](../../docs/framework/deployment/net-framework-applications.md)
+- [Sestavení v modulu CLR (Common Language Runtime)](../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
 - [Aplikační domény](../../docs/framework/app-domains/application-domains.md)

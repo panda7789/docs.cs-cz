@@ -2,12 +2,12 @@
 title: Ukázka federace
 ms.date: 03/30/2017
 ms.assetid: 7e9da0ca-e925-4644-aa96-8bfaf649d4bb
-ms.openlocfilehash: 49a13b292a627c054510a10445e1e64ab869162c
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 8b884c416960b15da988bde2cc770895857cb06f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087821"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54625572"
 ---
 # <a name="federation-sample"></a>Ukázka federace
 V této ukázce federovaného zabezpečení.  
@@ -93,7 +93,7 @@ V této ukázce federovaného zabezpečení.
   
 2.  Otevřete FederationSample.sln v sadě Visual Studio a vyberte **sestavit řešení** z **sestavení** nabídky. To vytvoří běžné soubory projektu, knihkupectví služby, knihkupectví STS, HomeRealm STS a nasadí ve službě IIS. To také vytvoří knihkupectví klientská aplikace a umístí BookStoreClient.exe spustitelný soubor ve složce FederationSample\BookStoreClient\bin\Debug.  
   
-3.  Dvakrát klikněte na panel BookStoreClient.exe. Zobrazí se okno BookStoreClient.  
+3.  Double-click BookStoreClient.exe. Zobrazí se okno BookStoreClient.  
   
 4.  K dispozici v knihkupectví knih můžete procházet kliknutím **procházet knihy**.  
   
@@ -117,4 +117,4 @@ V této ukázce federovaného zabezpečení.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\Federation`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

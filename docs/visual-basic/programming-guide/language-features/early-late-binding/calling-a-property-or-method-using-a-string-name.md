@@ -12,12 +12,12 @@ helpviewer_keywords:
 - properties [Visual Basic], setting at run time
 - CallByName function
 ms.assetid: 79a7b8b4-b8c7-4ad8-aca8-12a9a2b32f03
-ms.openlocfilehash: 76be426049489bb58e50878822c03fa5cd5cca8e
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 865270cfc8089d0bf229d9de7a7775dd2a3361d4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42911643"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54731517"
 ---
 # <a name="calling-a-property-or-method-using-a-string-name-visual-basic"></a>Volání vlastnosti nebo metody pomocí názvu řetězce (Visual Basic)
 Ve většině případů můžete zjistit vlastnosti a metody objektu v době návrhu a napsat kód pro jejich zpracování. Ale v některých případech nemusí o vlastnostech a metodách objektu předem znáte, nebo budete chtít právě flexibilitu povolení koncového uživatele k zadání vlastností nebo provádění metod v době běhu.  
@@ -46,6 +46,6 @@ Ve většině případů můžete zjistit vlastnosti a metody objektu v době n�
 > [!NOTE]
 >  Zatímco `CallByName` funkce může být užitečné v některých případech, třeba zvažte jeho užitečnost proti vliv na výkon – pomocí `CallByName` k vyvolání procedury je o něco pomalejší než volání s pozdní vazbou. Pokud jsou volání funkce, která se nazývá opakovaně, například jako uvnitř smyčky, `CallByName` může mít vážné vliv na výkon.  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Interaction.CallByName%2A>  
- [Určení typu objektu](../../../../visual-basic/programming-guide/language-features/early-late-binding/determining-object-type.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Interaction.CallByName%2A>
+- [Určení typu objektu](../../../../visual-basic/programming-guide/language-features/early-late-binding/determining-object-type.md)

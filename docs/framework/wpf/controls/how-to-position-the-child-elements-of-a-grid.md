@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - Grid control [WPF], positioning child elements
 ms.assetid: 27b3ba9b-ad32-44e2-bcab-a79d573a463c
-ms.openlocfilehash: 5ccdcb3d166e1b703faff1dc8046e61ee213d12a
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: a1b567356588d6798bae5d73d3d410882d087986
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50186987"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54538671"
 ---
 # <a name="how-to-position-the-child-elements-of-a-grid"></a>Postupy: Umístění podřízených elementů mřížky
 Tento příklad ukazuje způsob použití get a set metod, které jsou definovány na <xref:System.Windows.Controls.Grid> umístění podřízených elementů.  
@@ -30,6 +30,6 @@ Tento příklad ukazuje způsob použití get a set metod, které jsou definová
  
  ![snímek obrazovky znázorňuje uživatelské rozhraní WPF se dvěma sloupci, pravé straně má mřížka 3 × 3 a levé straně tlačítka Přesunout barevný obdélník mezi sloupci a řádky mřížky](./media/grid-methods-sample.png) 
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.Grid>  
- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.Grid>
+- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)

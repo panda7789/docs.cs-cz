@@ -2,12 +2,12 @@
 title: Programovací objektový model WCF Web HTTP
 ms.date: 03/30/2017
 ms.assetid: ed96b5fc-ca2c-4b0d-bdba-d06b77c3cb2a
-ms.openlocfilehash: 8400798e4edcad41c4f5336d59646413900347f8
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: e15f616aa7ef9502176c5d508f8d8882e2a5bd47
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861634"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54739362"
 ---
 # <a name="wcf-web-http-programming-object-model"></a>Programovací objektový model WCF Web HTTP
 HTTP programovacího modelu WCF WEB umožňuje vývojářům vystavit služby Windows Communication Foundation (WCF) Web prostřednictvím základních požadavků protokolu HTTP bez nutnosti SOAP. HTTP programovacího modelu WCF WEB je postavený na existující model rozšiřitelnosti WCF. Definuje následující třídy:  
@@ -51,7 +51,7 @@ HTTP programovacího modelu WCF WEB umožňuje vývojářům vystavit služby Wi
 |`ResponseFormat`|Určuje formátování zprávy odpovědi.|  
 |`UriTemplate`|Určuje šablonu identifikátoru URI, který řídí, jaké požadavky HTTP mapována na atribut se použije na operaci služby.|  
   
-## <a name="webhttpbinding"></a>webHttpBinding  
+## <a name="webhttpbinding"></a>WebHttpBinding  
  <xref:System.ServiceModel.WebHttpBinding> Třída zahrnuje podporu pro XML, JSON a používání Nezpracovaná binární data <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>. Skládá se z <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>, <xref:System.ServiceModel.Channels.HttpTransportBindingElement> a <xref:System.ServiceModel.WebHttpSecurity> objektu. <xref:System.ServiceModel.WebHttpBinding> Používá ve spojení s <xref:System.ServiceModel.Description.WebHttpBehavior>.  
   
 ## <a name="webinvokeattribute"></a>WebInvokeAttribute  
@@ -70,7 +70,7 @@ HTTP programovacího modelu WCF WEB umožňuje vývojářům vystavit služby Wi
 ## <a name="uritemplate"></a>UriTemplate  
  <xref:System.UriTemplate> Třída umožňují definovat sadu strukturálně podobné identifikátorů URI. Šablony se skládají ze dvou částí, cestu a dotaz. Cesta se skládá z řady segmentů oddělených lomítkem (/). Každý segment může mít hodnotu literálu, hodnotu proměnné (napsané ve složených závorkách {[}], tak, aby odpovídaly obsah přesně jeden segment omezené) nebo zástupný znak (zapsán jako hvězdičku [\*], který odpovídá "zbývající část cesty"), která se musí nacházet v konce cesty. Výraz dotazu můžete zcela vynechat. Pokud jsou k dispozici, určuje Neseřazený řady párů název/hodnota. Elementy výrazu dotazu může být buď literál páry (? x = 2) nebo dvojice proměnné (? x = {*hodnotu*}). Nespárované hodnoty nejsou povoleny. <xref:System.UriTemplate> se používá interně pomocí protokolu HTTP programovacího modelu WCF WEB k mapování konkrétní identifikátory URI nebo skupiny identifikátorů URI k operacím služby.  
   
-## <a name="uritemplatetable"></a>Třída UriTemplateTable  
+## <a name="uritemplatetable"></a>UriTemplateTable  
  <xref:System.UriTemplateTable> Třída reprezentuje asociativní sadu <xref:System.UriTemplate> objekty vázané na uživatele výběr objektu vývojáře. To umožňuje porovnání šablony v sadě Release candidate Uniform Resource Identifier (identifikátory URI) a načíst data související s odpovídající šablony. <xref:System.UriTemplateTable> se používá interně pomocí protokolu HTTP programovacího modelu WCF WEB k mapování konkrétní identifikátory URI nebo skupiny identifikátorů URI k operacím služby.  
   
 ## <a name="webservicehost"></a>WebServiceHost  
@@ -94,15 +94,15 @@ HTTP programovacího modelu WCF WEB umožňuje vývojářům vystavit služby Wi
  <xref:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector> Třídy používá <xref:System.UriTemplate> a <xref:System.UriTemplateTable> třídy k odeslání volání operací služby.  
   
 ## <a name="compatibility"></a>Kompatibilita  
- Nepoužívá založený na protokolu SOAP zprávy HTTP programovacího modelu WCF WEB a proto nepodporuje WS-* protokoly. Ale můžete zpřístupnit stejný kontrakt ve dvou různých koncový bod: jeden pomocí protokolu SOAP a jiné ne pomocí protokolu SOAP. Zobrazit [postupy: zveřejnění kontraktu klientům SOAP a webovým klientům](../../../../docs/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) příklad.  
+ Nepoužívá založený na protokolu SOAP zprávy HTTP programovacího modelu WCF WEB a proto nepodporuje WS-* protokoly. Ale můžete zpřístupnit stejný kontrakt ve dvou různých koncový bod: jeden pomocí protokolu SOAP a jiné ne pomocí protokolu SOAP. Zobrazit [jak: Zveřejnění kontraktu klientům SOAP a webovým klientům](../../../../docs/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) příklad.  
   
 ## <a name="security"></a>Zabezpečení  
  Protože HTTP programovacího modelu WCF WEB nepodporuje WS-* protokolů je jediný způsob, jak zabezpečit webová služba založená na protokolu HTTP programovacího modelu WCF WEB k vystavení služby pomocí protokolu SSL. Další informace o nastavení protokolu SSL s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] naleznete v tématu [implementace protokolu SSL ve službě IIS](https://go.microsoft.com/fwlink/?LinkId=131613)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.WebHttpBinding>  
- <xref:System.ServiceModel.Web.WebGetAttribute>  
- <xref:System.ServiceModel.Web.WebInvokeAttribute>  
- <xref:System.ServiceModel.Description.WebHttpBehavior>  
- <xref:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector>  
- [Přehled programovacího modelu webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.WebHttpBinding>
+- <xref:System.ServiceModel.Web.WebGetAttribute>
+- <xref:System.ServiceModel.Web.WebInvokeAttribute>
+- <xref:System.ServiceModel.Description.WebHttpBehavior>
+- <xref:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector>
+- [Přehled programovacího modelu webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)

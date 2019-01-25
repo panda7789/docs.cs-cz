@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f5ce46b-e259-4bc9-a0b9-89d06fc9341c
-ms.openlocfilehash: ac789ba81d728c067be515479e749440bb5809d4
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: a2b8f4f49afb987243ed96c29a09d7f0ec842945
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042453"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744580"
 ---
 # <a name="trusted-subsystem"></a>Důvěryhodný subsystém
 Klient přistupuje k jedné nebo více webových služeb, které jsou distribuovány napříč sítí. Webové služby jsou navržené tak, aby tento přístup k dalším prostředkům (například databáze nebo jiné webové služby), je zapouzdřena v obchodní logice webové služby. Tyto prostředky musí být chráněný před neoprávněným přístupem. Následující obrázek znázorňuje proces důvěryhodný subsystém.  
@@ -38,7 +38,7 @@ Klient přistupuje k jedné nebo více webových služeb, které jsou distribuov
 |Integrita|Ano|  
 |Důvěrnost|Ano|  
 |Přenos|HTTP mezi klientem a službou důvěryhodný subsystém.<br /><br /> SÍŤ. TCP mezi důvěryhodný subsystém služeb a prostředků (služba back-end).|  
-|Vazba|<xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.NetTcpBinding> [ \<wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
+|Vazba|<xref:System.ServiceModel.WSHttpBinding> and <xref:System.ServiceModel.NetTcpBinding>[\<wsFederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
   
 ## <a name="resource-back-end-service"></a>Prostředků (služba Back-End)  
   
@@ -101,7 +101,7 @@ Klient přistupuje k jedné nebo více webových služeb, které jsou distribuov
  [!code-vb[TrustedSubSystems#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/trustedsubsystems/vb/source.vb#2)]  
   
 ### <a name="configuration"></a>Konfigurace  
- Následující konfigurace nastaví stejný koncový bod pomocí konfigurace. Všimněte si, že dvě vazby: jednu zabezpečuje službu hostovanou v důvěryhodný subsystém a druhý zajišťuje komunikaci mezi důvěryhodný subsystém a back-end služby.  
+ Následující konfigurace nastaví stejný koncový bod pomocí konfigurace. Všimněte si dvě vazby: Jeden zabezpečuje službu hostovanou v důvěryhodný subsystém a druhý zajišťuje komunikaci mezi důvěryhodný subsystém a back-end služby.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -210,6 +210,6 @@ Klient přistupuje k jedné nebo více webových služeb, které jsou distribuov
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

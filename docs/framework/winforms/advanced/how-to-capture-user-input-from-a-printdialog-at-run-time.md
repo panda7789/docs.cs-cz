@@ -11,19 +11,19 @@ helpviewer_keywords:
 - print options
 - run time [Windows Forms], changing print options
 ms.assetid: 438501d8-9a70-4fb3-aae6-e46579aba0c6
-ms.openlocfilehash: 554c3c43f8ac4d41ddfc8651472d0b7fbed960bb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a15563560615f5b857220c0b548fc57f31ee4e09
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522873"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527663"
 ---
 # <a name="how-to-capture-user-input-from-a-printdialog-at-run-time"></a>Postupy: Zachycení uživatelského vstupu z komponenty PrintDialog při běhu
-Když nastavíte možnosti týkající se tisku v době návrhu, někdy můžete tyto možnosti změnit za běhu, pravděpodobně z důvodu volby provedené uživatelem. Můžete zachycení uživatelského vstupu pro tisk dokumentu pomocí <xref:System.Windows.Forms.PrintDialog> a <xref:System.Drawing.Printing.PrintDocument> součásti.  
+Když nastavíte možnosti související s tiskem v době návrhu, někdy můžete změnit tyto možnosti v době běhu, pravděpodobně z důvodu volby provedené uživatelem. Můžete zaznamenat uživatelský vstup pro tisk dokumentu pomocí <xref:System.Windows.Forms.PrintDialog> a <xref:System.Drawing.Printing.PrintDocument> komponenty.  
   
 ### <a name="to-change-print-options-programmatically"></a>Chcete-li změnit možnosti tisku prostřednictvím kódu programu  
   
-1.  Přidat <xref:System.Windows.Forms.PrintDialog> a <xref:System.Drawing.Printing.PrintDocument> součásti do svého formuláře.  
+1.  Přidat <xref:System.Windows.Forms.PrintDialog> a <xref:System.Drawing.Printing.PrintDocument> komponentu do formuláře.  
   
 2.  Nastavte <xref:System.Windows.Forms.PrintDialog.Document%2A> vlastnost <xref:System.Windows.Forms.PrintDialog> k <xref:System.Drawing.Printing.PrintDocument> přidán do formuláře.  
   
@@ -39,7 +39,7 @@ Když nastavíte možnosti týkající se tisku v době návrhu, někdy můžete
     printDialog1->Document = PrintDocument1;  
     ```  
   
-3.  Zobrazení <xref:System.Windows.Forms.PrintDialog> součásti pomocí <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metoda.  
+3.  Zobrazení <xref:System.Windows.Forms.PrintDialog> komponentu pomocí <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metody.  
   
     ```vb  
     PrintDialog1.ShowDialog()  
@@ -53,8 +53,8 @@ Když nastavíte možnosti týkající se tisku v době návrhu, někdy můžete
     printDialog1->ShowDialog();  
     ```  
   
-4.  Tisk volby uživatele z tohoto dialogového okna se zkopírují na <xref:System.Drawing.Printing.PrinterSettings> vlastnost <xref:System.Drawing.Printing.PrintDocument> součásti.  
+4.  Možnosti tisku uživatele z tohoto dialogového okna bude zkopírován do <xref:System.Drawing.Printing.PrinterSettings> vlastnost <xref:System.Drawing.Printing.PrintDocument> komponenty.  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Tisk vícestránkového textového souboru v modelu Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)  
- [Podpora tisku v modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Tisk vícestránkového textového souboru ve Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)
+- [Podpora tisku v modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)

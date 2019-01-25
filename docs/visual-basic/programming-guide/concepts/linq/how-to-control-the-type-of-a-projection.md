@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: řízení typu projekce (Visual Basic)'
+title: 'Postupy: Řízení typu projekce (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a0171276-0b46-4817-aee5-a8d5191b12fe
-ms.openlocfilehash: efeb247c2b7662c71ec97ea1d8c1839361d82e14
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e892e6328576a9727a13a4c1acd951d44ce4daa8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33640290"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54628870"
 ---
-# <a name="how-to-control-the-type-of-a-projection-visual-basic"></a>Postupy: řízení typu projekce (Visual Basic)
-Projekce je proces trvá jednu sadu dat, je filtrování, změna jeho tvar a i změna jeho typu. Většina výrazy dotazů provést projekce. Většina výrazy dotazu uvedené v této sekci vyhodnocení <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, ale můžete řídit typ projekce k vytvoření kolekce jiných typů. Toto téma ukazuje, jak to udělat.  
+# <a name="how-to-control-the-type-of-a-projection-visual-basic"></a>Postupy: Řízení typu projekce (Visual Basic)
+Projekce je proces trvá jednu sadu dat, filtrovat, změně jeho tvar a změnu i jejího typu. Většina výrazy dotazu provést sami. Většina výrazy dotazu uvedené v této části vyhodnotit <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, ale můžete řídit typ projekce k vytvoření kolekce jiných typů. Toto téma ukazuje, jak to provést.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu definuje nový typ, `Customer`. Výraz dotazu pak vytvoří nové `Customer` objekty v `Select` klauzule. To způsobí, že typ výraz dotazu, který má být <xref:System.Collections.Generic.IEnumerable%601> z `Customer`.  
+ Následující příklad definuje nový typ `Customer`. Výraz dotazu poté vytvoří nový `Customer` objekty v `Select` klauzuli. To způsobí, že typ výrazu dotazu bude <xref:System.Collections.Generic.IEnumerable%601> z `Customer`.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Public Class Customer  
@@ -86,6 +86,6 @@ LAZYK:Lazy K Kountry Store:John Steel
 LETSS:Let's Stop N Shop:Jaime Yorres  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Linq.Enumerable.Select%2A>  
- [Projekce a transformace (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Linq.Enumerable.Select%2A>
+- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

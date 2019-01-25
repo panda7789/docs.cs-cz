@@ -2,12 +2,12 @@
 title: Zachování prázdných znaků při načítání nebo analýze XML1
 ms.date: 07/20/2015
 ms.assetid: f3ff58c4-55aa-4fcd-b933-e3a2ee6e706c
-ms.openlocfilehash: 019b4452bcd76fff462edab6a584cf5ae0276ee7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 3dbbbc8412cdef6ea62197171bb950d6c5344350
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514445"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54704940"
 ---
 # <a name="preserving-white-space-while-loading-or-parsing-xml"></a>Zachování prázdných znaků při načítání nebo analýze XML
 Toto téma popisuje, jak řídit chování prázdných [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
@@ -37,6 +37,6 @@ Toto téma popisuje, jak řídit chování prázdných [!INCLUDE[sqltecxlinq](~/
   
  Můžete vytvořit stromu XML pomocí <xref:System.Xml.XmlWriter>. Uzly, které jsou zapsány do <xref:System.Xml.XmlWriter> zaplnění ve stromové struktuře. Při vytváření stromu XML pomocí této metody všechny uzly jsou však zachovaných, bez ohledu na to, zda uzel je prázdný znak, nebo Ne, nebo určuje, zda je prázdné místo důležité nebo ne.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Analýza kódu XML (C#)](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)

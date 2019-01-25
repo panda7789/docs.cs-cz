@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-ms.openlocfilehash: 752c44bcd4ded82fb2144dca684482f30371b6aa
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 6a014309829d7dbd477a7ae4a658b84a3f35d91f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53244924"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54742416"
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>Obecné typy a reflexe (Průvodce programováním v C#)
 Protože Common Language Runtime (CLR) má přístup k informacím o obecného typu v době běhu, můžete získat informace o obecných typů v stejným způsobem jako u neobecné typy reflexe. Další informace najdete v tématu [obecné typy v čase spuštění](../../../csharp/programming-guide/generics/generics-in-the-run-time.md).  
@@ -45,9 +45,9 @@ Protože Common Language Runtime (CLR) má přístup k informacím o obecného t
 |<xref:System.Reflection.MethodBase.IsGenericMethodDefinition%2A>|Vrátí hodnotu true, pokud aktuální <xref:System.Reflection.MethodInfo> představuje definici obecné metody.|  
 |<xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>|Nahradí prvky pole typů pro parametry typu aktuální definice obecné metody a vrátí <xref:System.Reflection.MethodInfo> objekt představující výsledný vytvořena metoda.|  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Obecné typy](../../../csharp/programming-guide/generics/index.md)  
-- [Reflexe a obecné typy](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Obecné typy](../../../csharp/programming-guide/generics/index.md)
+- [Reflexe a obecné typy](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)
 - [Obecné typy](~/docs/standard/generics/index.md)

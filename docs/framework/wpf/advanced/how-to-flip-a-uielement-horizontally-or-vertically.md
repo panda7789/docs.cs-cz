@@ -5,49 +5,49 @@ helpviewer_keywords:
 - flipping UIElements [WPF]
 - UIElements [WPF], flipping
 ms.assetid: 02c6730f-65c0-40d5-a553-4cb663721882
-ms.openlocfilehash: 89dcf668f1fe361480dabdab227a35ea40c344a4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 024d447eb8abdbdaed3b3a08d19a873a529d2040
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33544392"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54693224"
 ---
 # <a name="how-to-flip-a-uielement-horizontally-or-vertically"></a>Postupy: Překlopení prvku UIElement vodorovně nebo svisle
-Tento příklad ukazuje, jak používat <xref:System.Windows.Media.ScaleTransform> k převrácení <xref:System.Windows.UIElement> vodorovně nebo svisle. V tomto příkladu <xref:System.Windows.Controls.Button> ovládací prvek (typ <xref:System.Windows.UIElement>) je obráceně použitím <xref:System.Windows.Media.ScaleTransform> k jeho <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost.  
+Tento příklad ukazuje způsob použití <xref:System.Windows.Media.ScaleTransform> k převrácení <xref:System.Windows.UIElement> vodorovně nebo svisle. V tomto příkladu <xref:System.Windows.Controls.Button> ovládacího prvku (typ <xref:System.Windows.UIElement>) obráceně použitím <xref:System.Windows.Media.ScaleTransform> k jeho <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost.  
   
 ## <a name="example"></a>Příklad  
- Následující obrázek znázorňuje tlačítko k převrácení.  
+ Tlačítko k převrácení naleznete na následujícím obrázku.  
   
  ![Tlačítko s žádná transformace](../../../../docs/framework/wpf/advanced/media/graphicsmm-buttonflipbeforeflip.gif "graphicsmm_buttonflipbeforeflip")  
-Prvků uživatelského rozhraní k převrácení  
+UIElement k převrácení  
   
- Následující zobrazuje kód, který vytvoří tlačítko.  
+ Následuje kód, který vytvoří tlačítko.  
   
  [!code-xaml[Transforms_snip#GraphicsMMButtonWithoutFlip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/FlipExample.xaml#graphicsmmbuttonwithoutflip)]  
   
 ## <a name="example"></a>Příklad  
- Chcete-li na tlačítko Překlopit vodorovně, vytvořte <xref:System.Windows.Media.ScaleTransform> a nastavit jeho <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> vlastnost na hodnotu -1. Použít <xref:System.Windows.Media.ScaleTransform> na tlačítko <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost.  
+ Převrátit vodorovně na tlačítko, vytvořit <xref:System.Windows.Media.ScaleTransform> a nastavte jeho <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> vlastnost na hodnotu -1. Použít <xref:System.Windows.Media.ScaleTransform> na tlačítko <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost.  
   
  [!code-xaml[Transforms_snip#GraphicsMMFlipButtonExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/FlipExample.xaml#graphicsmmflipbuttonexample1)]  
   
- ![Tlačítko překlopení vodorovně o &#40;0,0&#41;](../../../../docs/framework/wpf/advanced/media/graphicsmm-buttonfliphorizontalflip-displaced.gif "graphicsmm_buttonfliphorizontalflip_displaced")  
-Tlačítko po použití metody ScaleTransform  
+ ![Tlačítko obráceně vodorovně o &#40;0,0&#41;](../../../../docs/framework/wpf/advanced/media/graphicsmm-buttonfliphorizontalflip-displaced.gif "graphicsmm_buttonfliphorizontalflip_displaced")  
+Po použití ScaleTransform – tlačítko  
   
 ## <a name="example"></a>Příklad  
- Jak je vidět na předchozím obrázku, tlačítko byl obráceně, ale také byl přesunut. Je to způsobeno tlačítko byl obráceně z levého horního rohu. K převrácení tlačítko na místě, kterou chcete použít <xref:System.Windows.Media.ScaleTransform> jeho Center, ne jeho rohu. Snadný způsob, jak použít <xref:System.Windows.Media.ScaleTransform> tlačítka center je nastaven na tlačítko <xref:System.Windows.UIElement.RenderTransformOrigin%2A> vlastnost 0,5, 0,5.  
+ Jak je vidět z na předchozím obrázku, bylo na tlačítko obráceně, ale také byl přesunut. Důvodem je, na tlačítko se obráceně z levého horního rohu. K převrácení tlačítka na místě, které chcete použít <xref:System.Windows.Media.ScaleTransform> k jeho střed, nikoli jeho rohu. Snadný způsob, jak použít <xref:System.Windows.Media.ScaleTransform> na tlačítka je nastavit na tlačítko center <xref:System.Windows.UIElement.RenderTransformOrigin%2A> vlastnost 0,5, 0,5.  
   
  [!code-xaml[Transforms_snip#GraphicsMMFlipButtonExample2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/FlipExample.xaml#graphicsmmflipbuttonexample2)]  
   
- ![Tlačítko překlopení vodorovně o jeho center](../../../../docs/framework/wpf/advanced/media/graphicsmm-buttonfliphorizontalflip-inplace.gif "graphicsmm_buttonfliphorizontalflip_inplace")  
-Tlačítko s RenderTransformOrigin 0,5, 0,5  
+ ![Tlačítko obráceně vodorovně o jeho střed](../../../../docs/framework/wpf/advanced/media/graphicsmm-buttonfliphorizontalflip-inplace.gif "graphicsmm_buttonfliphorizontalflip_inplace")  
+Tlačítko s RenderTransformOrigin 0,5, 0.5  
   
 ## <a name="example"></a>Příklad  
- Chcete-li na tlačítko Překlopit svisle, nastavte <xref:System.Windows.Media.ScaleTransform> objektu <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> vlastnost místo jeho <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> vlastnost.  
+ Chcete-li svisle Převrátit tlačítko, nastavte <xref:System.Windows.Media.ScaleTransform> objektu <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> vlastnosti namísto jeho <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> vlastnost.  
   
  [!code-xaml[Transforms_snip#GraphicsMMVerticalFlipButtonExample2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Transforms_snip/CS/FlipExample.xaml#graphicsmmverticalflipbuttonexample2)]  
   
- ![Tlačítko překlopení svisle o jeho center](../../../../docs/framework/wpf/advanced/media/graphicsmm-buttonflipverticalflip-inplace.gif "graphicsmm_buttonflipverticalflip_inplace")  
-Tlačítko svisle přetočený  
+ ![Tlačítko obráceně svisle o jeho střed](../../../../docs/framework/wpf/advanced/media/graphicsmm-buttonflipverticalflip-inplace.gif "graphicsmm_buttonflipverticalflip_inplace")  
+Svisle přetočený tlačítko  
   
-## <a name="see-also"></a>Viz také  
- [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)

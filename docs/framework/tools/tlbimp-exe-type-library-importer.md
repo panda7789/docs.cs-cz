@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dfb73f6637be96d7994a808b8d9a2c77c2896838
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: f39f793d3d0a2cf815028ccdb49253c46dac2ec4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221723"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631305"
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (importér knihovny typů)
 Nástroj Type Library Importer převádí definice typu nalezené v knihovně typů modelu COM na ekvivalentní definice v sestavení Common Language Runtime. Výstupem nástroje Tlbimp.exe je binární soubor (sestavení) obsahující metadata modulu runtime pro typy definované v rámci původní knihovny typů. Tento soubor s nástroji můžete zkontrolovat, jako [Ildasm.exe](ildasm-exe-il-disassembler.md).  
@@ -64,8 +64,8 @@ tlbimp tlbFile [options]
 |**/sysarray**|Určuje, že nástroj má importovat styl SafeArray modelu COM jako spravovaný <xref:System.Array> typu.|  
 |**/tlbreference:** *název souboru*|Určuje soubor knihovny typů, který se má použít k vyřešení odkazů knihovny typů bez konzultace s registrem.<br /><br /> Tato možnost nenačte některé starší formáty knihovny typů.  Stále však můžete načíst starší formáty knihovny typů implicitně pomocí registru nebo aktuálního adresáře.|  
 |**/Trademark:** `trademarkinformation`|Přidá informace o obchodní známce do výstupního sestavení. Tyto informace můžete zobrazit v **vlastnosti souboru** dialogové okno pro sestavení.|  
-|**/ transform:** *transformname*|Transformuje metadata podle *transformname* parametru.<br /><br /> Zadejte **dispret** pro *transformname* parametrů na parametry transformace [out, retval] metod v určené pouze pro rozhraní (odesílající rozhraní) na návratové hodnoty.<br /><br /> Další informace o této možnosti naleznete v příkladech dále v tomto tématu.|  
-|**/ unsafe**|Vytvoří rozhraní bez kontroly zabezpečení rozhraní .NET Framework. Volání metody, která je vystavena tímto způsobem, může představovat bezpečnostní riziko. Tuto možnost nepoužívejte, pokud si nejste vědomi rizika vystavení takového kódu.|  
+|**/transform:** *transformname*|Transformuje metadata podle *transformname* parametru.<br /><br /> Zadejte **dispret** pro *transformname* parametrů na parametry transformace [out, retval] metod v určené pouze pro rozhraní (odesílající rozhraní) na návratové hodnoty.<br /><br /> Další informace o této možnosti naleznete v příkladech dále v tomto tématu.|  
+|**/unsafe**|Vytvoří rozhraní bez kontroly zabezpečení rozhraní .NET Framework. Volání metody, která je vystavena tímto způsobem, může představovat bezpečnostní riziko. Tuto možnost nepoužívejte, pokud si nejste vědomi rizika vystavení takového kódu.|  
 |**/verbose**|Určuje režim podrobného vypisování; zobrazí další informace o importované knihovně typů.|  
 |**/VariantBoolFieldToBool**|Převede `VARIANT_BOOL` pole ve strukturách na <xref:System.Boolean>.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
@@ -125,13 +125,13 @@ bool SomeMethod();
 void SomeMethod(out bool x);  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Nástroje](index.md)  
- [Tlbexp.exe (exportér knihovny typů)](tlbexp-exe-type-library-exporter.md)  
- [Import knihovny typů ve formě sestavení](../interop/importing-a-type-library-as-an-assembly.md)  
- [Souhrn převodu sestavení knihovny typů na](https://msdn.microsoft.com/library/bf3f90c5-4770-4ab8-895c-3ba1055cc958(v=vs.100))  
- [Ildasm.exe (IL Disassembler)](ildasm-exe-il-disassembler.md)  
- [Sn.exe (nástroj pro silný název)](sn-exe-strong-name-tool.md)  
- [Sestavení se silným názvem](../app-domains/strong-named-assemblies.md)  
- [Atributy pro import knihoven typů do sestavení vzájemné spolupráce](https://msdn.microsoft.com/library/81e587b8-393f-43e1-9add-c4b05e65cbfd(v=vs.100))  
- [Příkazové řádky](developer-command-prompt-for-vs.md)
+## <a name="see-also"></a>Viz také:
+- [Nástroje](index.md)
+- [Tlbexp.exe (exportér knihovny typů)](tlbexp-exe-type-library-exporter.md)
+- [Import knihovny typů ve formě sestavení](../interop/importing-a-type-library-as-an-assembly.md)
+- [Souhrn převodu sestavení knihovny typů na](https://msdn.microsoft.com/library/bf3f90c5-4770-4ab8-895c-3ba1055cc958(v=vs.100))
+- [Ildasm.exe (IL Disassembler)](ildasm-exe-il-disassembler.md)
+- [Sn.exe (nástroj pro silný název)](sn-exe-strong-name-tool.md)
+- [Sestavení se silným názvem](../app-domains/strong-named-assemblies.md)
+- [Atributy pro import knihoven typů do sestavení vzájemné spolupráce](https://msdn.microsoft.com/library/81e587b8-393f-43e1-9add-c4b05e65cbfd(v=vs.100))
+- [Příkazové řádky](developer-command-prompt-for-vs.md)

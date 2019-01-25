@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8d0e7f20be3f18e49dcc1b986460d5da0c3d7777
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dd544619f9e5fb85a0b08b91ead8231ea25743cb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401937"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54651225"
 ---
 # <a name="icordebugcodegetfunction-method"></a>ICorDebugCode::GetFunction – metoda
 Získá "ICorDebugFunction" přidružené k této "ICorDebugCode".  
@@ -40,10 +40,10 @@ HRESULT GetFunction (
  [out] Ukazatel na adresu funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugCode` a `ICorDebugFunction` udržovat relaci 1: 1.  
+ `ICorDebugCode` a `ICorDebugFunction` udržovat relaci.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -51,5 +51,5 @@ HRESULT GetFunction (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

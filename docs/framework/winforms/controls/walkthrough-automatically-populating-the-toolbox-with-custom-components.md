@@ -1,19 +1,19 @@
 ---
-title: 'Návod: Automatické vyplnění nástrojů vlastními komponentami'
+title: 'Průvodce: Automatické vyplnění nástrojů vlastními komponentami'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - IToolboxService interface
 - Toolbox [Windows Forms], populating
 - custom components [Windows Forms], adding to Toolbox
 ms.assetid: 2fa1e3e8-6b9f-42b2-97c0-2be57444dba4
-ms.openlocfilehash: 488d51e748ea17b09e61b982db7abadc34f8e311
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 8c40f4a58800183c142602d950e4fe1331c1eaf3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44041558"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54730266"
 ---
-# <a name="walkthrough-automatically-populating-the-toolbox-with-custom-components"></a>Návod: Automatické vyplnění nástrojů vlastními komponentami
+# <a name="walkthrough-automatically-populating-the-toolbox-with-custom-components"></a>Průvodce: Automatické vyplnění nástrojů vlastními komponentami
 Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešení, se automaticky zobrazí v **nástrojů**, třeba akce. Můžete také ručně naplnit **nástrojů** pomocí vlastních součástí s použitím [tlačítko panelu nástrojů položky dialogové okno (Visual Studio)](https://msdn.microsoft.com/library/bd07835f-18a8-433e-bccc-7141f65263bb), ale **nástrojů** bere v úvahu položky ve vašem řešení sestavení výstupy s následujícími charakteristikami:  
   
 -   Implementuje <xref:System.ComponentModel.IComponent>;  
@@ -49,7 +49,7 @@ Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešen
   
 2.  Přidáte novou součást do projektu. Pojmenujte ji `DemoComponent`.  
   
-     Další informace najdete v tématu [NIB: postupy: Přidání nové položky projektu](https://msdn.microsoft.com/library/63d3e16b-de6e-4bb5-a0e3-ecec762201ce).  
+     Další informace najdete v tématu [NIB: jak: Přidání nových položek projektu](https://msdn.microsoft.com/library/63d3e16b-de6e-4bb5-a0e3-ecec762201ce).  
   
 3.  Sestavte projekt.  
   
@@ -80,7 +80,7 @@ Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešen
   
 1.  Uvolněte projekt z řešení.  
   
-     Další informace o uvolnění projektů, naleznete v tématu [NIB: postupy: uvolnění a opětovné načtení projekty](https://msdn.microsoft.com/library/abc0155b-8fcb-4ffc-95b6-698518a7100b). Pokud se zobrazí výzva k uložení, zvolte **Ano**.  
+     Další informace o uvolnění projektů, naleznete v tématu [NIB: jak: Odebrat a znovu načíst projekty](https://msdn.microsoft.com/library/abc0155b-8fcb-4ffc-95b6-698518a7100b). Pokud se zobrazí výzva k uložení, zvolte **Ano**.  
   
 2.  Přidat nový **aplikace Windows** projektu do řešení. Otevřete formulář v nástrojích pro **návrháře**.  
   
@@ -93,8 +93,8 @@ Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešen
 ## <a name="next-steps"></a>Další kroky  
  Tento návod ukazuje, že **nástrojů** bere v úvahu součástí projektu, ale **nástrojů** je také přihlíží ovládacích prvků. Přidáváním a odebíráním ovládací prvek projekty z řešení můžete experimentovat s vlastní ovládací prvky.  
   
-## <a name="see-also"></a>Viz také  
- [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](https://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834)  
- [Postupy: manipulace s karty panelu nástrojů](https://msdn.microsoft.com/library/21285050-cadd-455a-b1f5-a2289a89c4db)  
- [Zvolte dialogové okno položky panelu nástrojů (Visual Studio)](https://msdn.microsoft.com/library/bd07835f-18a8-433e-bccc-7141f65263bb)  
- [Vkládání ovládacích prvků do Windows Forms](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](https://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834)
+- [Postupy: Manipulace s karty panelu nástrojů](https://msdn.microsoft.com/library/21285050-cadd-455a-b1f5-a2289a89c4db)
+- [Zvolte dialogové okno položky panelu nástrojů (Visual Studio)](https://msdn.microsoft.com/library/bd07835f-18a8-433e-bccc-7141f65263bb)
+- [Vkládání ovládacích prvků do Windows Forms](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)

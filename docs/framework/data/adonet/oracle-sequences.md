@@ -2,12 +2,12 @@
 title: Sekvence Oracle
 ms.date: 03/30/2017
 ms.assetid: 27cd371d-8252-414d-b5b2-5d31fa44b585
-ms.openlocfilehash: 4c1829cc3f9506b0317e6638fd2760a91c7d19d6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 1646ae7c2732fe152c9028ac6f4c1e4cbba85520
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520335"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54556035"
 ---
 # <a name="oracle-sequences"></a>Sekvence Oracle
 Zprostředkovatel dat .NET Framework pro Oracle poskytuje podporu pro načtení hodnoty klíče generovaný serverem sekvence Oracle po provedení operace vložení pomocí <xref:System.Data.OracleClient.OracleDataAdapter>.  
@@ -98,6 +98,6 @@ public void OracleSequence(String connectionString)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

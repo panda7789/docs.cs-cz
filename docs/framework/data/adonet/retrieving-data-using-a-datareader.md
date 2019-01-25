@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97afc121-fb8b-465b-bab3-6d844420badb
-ms.openlocfilehash: c97c30d77551f519777afa6efd31d507b3f21851
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 134bb68b9cf60cc5082afefdd9eb87d991b6e0ef
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155350"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54692753"
 ---
 # <a name="retrieve-data-using-a-datareader"></a>Načtení dat pomocí čtečky dat
 K načtení dat pomocí **DataReader**, vytvoření instance **příkaz** objektu a pak vytvořte **DataReader** voláním **Command.ExecuteReader**  načíst ze zdroje dat řádků. **DataReader** poskytuje bez vyrovnávací paměti datového proudu dat, která umožňuje procedurální logiku pro efektivní zpracování výsledků ze zdroje dat postupně. **DataReader** je dobrou volbou, pokud načítáte velkých objemů dat, protože data neukládají do mezipaměti v paměti.
@@ -257,9 +257,9 @@ adapter.Fill(ds);
 > [!NOTE]
 >  Aby se zabránilo **OverFlowException –**, doporučujeme také zpracovat jakýkoli převod z typu Oracle číslo na platný typ rozhraní .NET Framework před uložením hodnoty v <xref:System.Data.DataRow>. Můžete použít <xref:System.Data.Common.DataAdapter.FillError> událostí k určení, zda **OverFlowException –** došlo k chybě. Další informace o <xref:System.Data.Common.DataAdapter.FillError> událostí, naleznete v tématu [zpracování událostí adaptéru dat](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
   
-## <a name="see-also"></a>Viz také:  
- [Práce s čtečky dat](https://msdn.microsoft.com/library/126a966a-d08d-4d22-a19f-f432908b2b54)  
- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
- [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Práce s čtečky dat](https://msdn.microsoft.com/library/126a966a-d08d-4d22-a19f-f432908b2b54)
+- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
+- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
+- [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

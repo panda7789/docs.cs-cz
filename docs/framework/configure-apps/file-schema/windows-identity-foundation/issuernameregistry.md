@@ -3,21 +3,21 @@ title: '&lt;issuerNameRegistry&gt;'
 ms.date: 03/30/2017
 ms.assetid: 58b39d12-c953-40c4-88af-d7eb3343ca28
 author: BrucePerlerMS
-ms.openlocfilehash: de3ceb5d84d17307c69e9155834a0a584e6920a1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: f23f0103e228bc23a06a3ff0e0c5c2a12bdae73f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185911"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54748100"
 ---
 # <a name="ltissuernameregistrygt"></a>&lt;issuerNameRegistry&gt;
 Nakonfiguruje registru názvu vystavitele, který se používá obslužné rutiny v kolekci obslužná rutina tokenů.  
   
  \<system.identityModel>  
-\<identityConfiguration >  
-\<securityTokenHandlers >  
-\<securityTokenHandlerConfiguration >  
-\<issuerNameRegistry >  
+\<identityConfiguration>  
+\<securityTokenHandlers>  
+\<securityTokenHandlerConfiguration>  
+\<issuerNameRegistry>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,13 +48,13 @@ Nakonfiguruje registru názvu vystavitele, který se používá obslužné rutin
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<trustedIssuers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md)|Když `type` atribut určuje registru názvu vystavitele založená na konfiguraci ( <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> třídy), [ \<trustedIssuers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md) elementu musí být zadán. [ \<TrustedIssuers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md) element může trvat `<add>`, `<clear>`, nebo `<remove>` prvků jako podřízených prvků.|  
+|[\<trustedIssuers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md)|Když `type` atribut určuje registru názvu vystavitele založená na konfiguraci ( <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> třídy), [ \<trustedIssuers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md) elementu musí být zadán. [ \<TrustedIssuers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md) element může trvat `<add>`, `<clear>`, nebo `<remove>` prvků jako podřízených prvků.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Konfigurace pro kolekci zabezpečení poskytuje obslužné rutiny tokenů.|  
+|[\<securityTokenHandlerConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Konfigurace pro kolekci zabezpečení poskytuje obslužné rutiny tokenů.|  
   
 ## <a name="remarks"></a>Poznámky  
  Všechny tokeny vystavitele se ověřují pomocí registru názvu vystavitele. Toto je objekt, který je odvozen z <xref:System.IdentityModel.Tokens.IssuerNameRegistry> třídy. Registru názvu vystavitele je použito k přidružení symbolický název, který kryptografický materiál, který je nezbytný k ověřování podpisů tokeny vytvářených odpovídající vystavitele. Registru názvu vystavitele udržuje seznam vystavitelů, které jsou důvěryhodné aplikace předávající strany (RP). Typ registru názvu vystavitele je určen pomocí `type` atribut. `<issuerNameRegistry>` Prvek může mít jeden nebo více podřízených elementů, které poskytují konfigurace pro zadaný typ. Poskytuje logiku, která zpracovává tyto podřízené prvky tak, že přepíšete <xref:System.IdentityModel.Tokens.IssuerNameRegistry.LoadCustomConfiguration%2A> metody.  
@@ -77,6 +77,6 @@ Nakonfiguruje registru názvu vystavitele, který se používá obslužné rutin
 </issuerNameRegistry>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IdentityModel.Tokens.IssuerNameRegistry>  
- <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>
+## <a name="see-also"></a>Viz také:
+- <xref:System.IdentityModel.Tokens.IssuerNameRegistry>
+- <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>

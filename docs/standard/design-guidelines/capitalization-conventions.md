@@ -10,12 +10,12 @@ helpviewer_keywords:
 - names [.NET Framework], capitalization
 ms.assetid: 4c4ea526-9203-486f-b72d-29d61c5b3c6d
 author: KrzysztofCwalina
-ms.openlocfilehash: 159635d6e3ce414c8fd45ff7f02a75fd7cbdfe7e
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 9a4cf94ca7fcada7dfc0886422b373abc807a0fe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53131089"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54670170"
 ---
 # <a name="capitalization-conventions"></a>Konvence pro malá a velká písmena
 Pokyny v této kapitole rozložení si jednoduchý způsob pro použití malá a velká, že při použití konzistentně, zkontrolujte identifikátory pro typy, členy a parametry snadno čitelný.  
@@ -100,11 +100,11 @@ Pokyny v této kapitole rozložení si jednoduchý způsob pro použití malá a
   
  **X DO NOT** předpokládají, že jsou všechny programovací jazyky velká a malá písmena. Nejsou. Názvy nesmí liší případ samotný.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)

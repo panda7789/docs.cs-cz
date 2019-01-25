@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 49708175f8501c735a77b0f7f965a106b6e086f2
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 384fd14a136dbd94725d7ef478c769a1dfce0c4c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47424451"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54654656"
 ---
 # <a name="types-of-isolation"></a>Typy izolace
 Přístup k izolovanému úložišti je vždy omezen na uživatele, který jej vytvořil. K implementaci tohoto typu izolace, modul common language runtime používá stejný pojem identitu uživatele, který rozpoznává operační systém, který je identitu přidruženou k procesu, ve kterém kód běží při otevření úložiště. Tato identita je identity ověřeného uživatele, ale zosobnění může způsobit identity aktuálního uživatele, aby dynamicky měnit.  
@@ -108,5 +108,5 @@ Typy izolovaného úložiště
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.IO.IsolatedStorage.IsolatedStorageScope>  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageScope>
 - [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)

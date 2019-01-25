@@ -10,17 +10,17 @@ helpviewer_keywords:
 - data navigation
 - examples [Windows Forms], BindingNavigator control
 ms.assetid: 0e5d4f34-bc9b-47cf-9b8d-93acbb1f1dbb
-ms.openlocfilehash: 14f845e33b38da39b900b32c07297a350326350d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8fb95eb3640783f25890d08a1d6e01839020724c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519610"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54539685"
 ---
 # <a name="how-to-navigate-data-with-the-windows-forms-bindingnavigator-control"></a>Postupy: Navigace daty pomocí ovládacího prvku Windows Forms BindingNavigator
 Nástup <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku Windows Forms vývojářům umožňuje poskytovat koncovým uživatelům s jednoduchou datovou navigaci a manipulaci s uživatelským rozhraním ve formulářích vytvářejí.  
   
- <xref:System.Windows.Forms.BindingNavigator> Je ovládací prvek <xref:System.Windows.Forms.ToolStrip> předkonfigurované ovládacím prvkem tlačítka pro přechod na první, poslední, další a předchozí záznam v datové sady, jakož i tlačítka můžete přidávat a odstraňovat záznamy. Přidání tlačítek do <xref:System.Windows.Forms.BindingNavigator> ovládací prvek je snadné, protože se jedná <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  Viz také [postupy: Přidání načíst, uložit, a tlačítka Storno do ovládacího prvku Windows Forms BindingNavigator](https://msdn.microsoft.com/library/safa4957\(v=vs.110\)).  
+ <xref:System.Windows.Forms.BindingNavigator> Je ovládací prvek <xref:System.Windows.Forms.ToolStrip> předkonfigurované ovládacím prvkem tlačítka pro přechod na první, poslední, další a předchozí záznam v datové sady, jakož i tlačítka můžete přidávat a odstraňovat záznamy. Přidání tlačítek do <xref:System.Windows.Forms.BindingNavigator> ovládací prvek je snadné, protože se jedná <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  Viz také [jak: Přidat načíst, uložit, a tlačítka Storno pro Windows Forms BindingNavigator – ovládací prvek](https://msdn.microsoft.com/library/safa4957\(v=vs.110\)).  
   
  Pro každé tlačítko na <xref:System.Windows.Forms.BindingNavigator> řídit, neexistuje odpovídající člen <xref:System.Windows.Forms.BindingSource> komponenta, která umožňuje programově stejné funkce. Například <xref:System.Windows.Forms.BindingNavigator.MoveFirstItem%2A> tlačítko odpovídá <xref:System.Windows.Forms.BindingSource.MoveFirst%2A> metodu <xref:System.Windows.Forms.BindingSource> komponenty, <xref:System.Windows.Forms.BindingNavigator.DeleteItem%2A> tlačítko odpovídá <xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A> metody a tak dále. V důsledku toho povolení <xref:System.Windows.Forms.BindingNavigator> ovládací prvek pro procházení záznamů dat je jednoduše nastavení jeho <xref:System.Windows.Forms.BindingNavigator.BindingSource%2A> vlastnosti na příslušné <xref:System.Windows.Forms.BindingSource> komponenty ve formuláři.  
   
@@ -51,9 +51,9 @@ Nástup <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku Windows 
   
 -   Odkazy na sestavení systému, System.Data, System.Drawing, System.Windows.Forms a System.Xml.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.BindingNavigator>  
- [Ovládací prvek BindingNavigator](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)  
- [Ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.BindingNavigator>
+- [Ovládací prvek BindingNavigator](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)
+- [Ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)

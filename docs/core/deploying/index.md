@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 12/03/2018
 ms.custom: seodec18
-ms.openlocfilehash: bb520d852462b0bc12df46fd178d09da36b7ccfe
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: e744d9a1f74dad18f6eb6ad4ce019c98fb18d6e2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415686"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54743777"
 ---
 # <a name="net-core-application-deployment"></a>Nasazení aplikace .NET core
 
@@ -98,7 +98,7 @@ Podrobné příklady nasazení aplikace .NET Core pomocí nástrojů příkazov�
 
 ## <a name="see-also"></a>Viz také:
 
-* [Nasazení aplikací .NET Core pomocí nástrojů CLI](deploy-with-cli.md)
-* [Nasazení aplikací .NET Core pomocí sady Visual Studio](deploy-with-vs.md)
-* [Balíčky, metabalíčky a architektury](../packages.md)
-* [.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)
+- [Nasazení aplikací .NET Core pomocí nástrojů CLI](deploy-with-cli.md)
+- [Nasazení aplikací .NET Core pomocí sady Visual Studio](deploy-with-vs.md)
+- [Balíčky, metabalíčky a architektury](../packages.md)
+- [.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)

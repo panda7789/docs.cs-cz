@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 34186ee8825c0981ec095cf855c76ff5f800907d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a3ff37acd9b4dffe80112f0a0ebe9c9cd86ae66f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33432351"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54668444"
 ---
 # <a name="ienumdefinitionidentity-interface"></a>IEnumDefinitionIdentity – rozhraní
 Slouží jako enumerátoru pro kolekci `IDefinitionIdentity` objekty.  
@@ -55,18 +55,18 @@ IEnumDefinitionIdentity : IUnknown {
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|`IEnumDefinitionIdentity::Clone`|Získá ukazatele rozhraní na nový `IEnumDefinitionIdentity` objekt, který obsahuje členy stejné jako to `IEnumDefinitionIdentity`.|  
+|`IEnumDefinitionIdentity::Clone`|Získá ukazatel rozhraní na nový `IEnumDefinitionIdentity` objekt, který obsahuje stejné členy jako to `IEnumDefinitionIdentity`.|  
 |`IEnumDefinitionIdentity::Next`|Získá zadaný počet `IDefinitionIdentity` objektů, počínaje na aktuální pozici.|  
-|`IEnumDefinitionIdentity::Reset`|Ukazatel instrukce přesune na začátku tohoto `IEnumDefinitionIdentity`.|  
-|`IEnumDefinitionIdentity::Skip`|Ukazatel instrukce dál přesune o zadaný počet elementů, počínaje na aktuální pozici.|  
+|`IEnumDefinitionIdentity::Reset`|Přesune ukazatel na instrukci na začátek `IEnumDefinitionIdentity`.|  
+|`IEnumDefinitionIdentity::Skip`|Přesune ukazatele na instrukci vpřed o zadaný počet prvků počínaje od aktuální pozice.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Isolation.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [IDefinitionIdentity – rozhraní](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [IDefinitionIdentity – rozhraní](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md)

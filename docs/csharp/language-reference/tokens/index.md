@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4c5c0539-2e37-40b7-91ce-75af5aabd3f9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6c5866ff77ad5ff4fd45f9eb89f7d61bf32eda12
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 7231b43551e0b0ad0a9f32e1938106895d687818
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235511"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620289"
 ---
 # <a name="c-special-characters"></a>C# speciální znaky
 
@@ -28,7 +28,7 @@ Speciální znaky jsou předdefinované, kontextové, které určuje, do které 
 
 - [$](../../../csharp/language-reference/tokens/interpolated.md), interpolovaný řetězec znaků.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

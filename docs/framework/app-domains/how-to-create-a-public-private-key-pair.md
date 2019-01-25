@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vytvoření páru veřejného a privátního klíče'
+title: 'Postupy: Vytvoření páru veřejného a privátního klíče'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,14 +17,14 @@ helpviewer_keywords:
 ms.assetid: 05026813-f3bd-4d7c-9e0b-fc588eb3d114
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 08715f2824dcb7dbc2c6aa26fd3bd8bd71b97038
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: ce346bfe0c20e94673009adb0134fbaab62cf551
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086280"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54653915"
 ---
-# <a name="how-to-create-a-public-private-key-pair"></a>Postupy: vytvoření páru veřejného a privátního klíče
+# <a name="how-to-create-a-public-private-key-pair"></a>Postupy: Vytvoření páru veřejného a privátního klíče
 
 K podepsání sestavení silným názvem, potřebujete pár veřejného a privátního klíče. Tento pár veřejného a privátního kryptografických klíčů se používá během kompilace k vytvoření sestavení se silným názvem. Můžete vytvořit, pomocí páru klíčů [nástroj Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md). Soubory párů klíčů mají obvykle .snk rozšíření.
 
@@ -67,6 +67,6 @@ sn -p keypair.snk public.snk
  [!code-csharp[AssemblyName_KeyPair#21](../../../samples/snippets/csharp/VS_Snippets_CLR/AssemblyName_KeyPair/CS/keyfileattrib.cs#21)]
  [!code-vb[AssemblyName_KeyPair#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyName_KeyPair/VB/keyfileattrib.vb#21)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)

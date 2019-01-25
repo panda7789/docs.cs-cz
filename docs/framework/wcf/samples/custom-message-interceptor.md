@@ -2,12 +2,12 @@
 title: Vlastní zachycování zpráv
 ms.date: 03/30/2017
 ms.assetid: 73f20972-53f8-475a-8bfe-c133bfa225b0
-ms.openlocfilehash: 5a72a964c571cf68d4b215f4029ff95c52cba0e2
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 3b24535c67c1d16da63ec3b282d456e65ff8dd95
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44088021"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54733269"
 ---
 # <a name="custom-message-interceptor"></a>Vlastní zachycování zpráv
 Tento příklad ukazuje použití model rozšiřitelnosti kanálu. Konkrétně se ukazuje, jak implementovat vlastní prvek vazby, která vytváří objekty pro vytváření kanálů a moduly pro naslouchání kanálů aby se zachytily všechny příchozí a odchozí zprávy v určitém místě v zásobníku za běhu. Ukázka zahrnuje také klienta a serveru, které ukazují použití tyto vlastní objekty pro vytváření.  
@@ -68,7 +68,7 @@ public abstract class InterceptingElement : BindingElementExtensionElement { ...
 ## <a name="adding-policy"></a>Přidání zásad  
  Integrace s naší systému zásad `InterceptingBindingElement` implementuje IPolicyExportExtension signál, že jsme měli zúčastnit generování zásad. Podporu importu zásad na generovaného klienta, může uživatel zaregistrovat odvozenou třídu `InterceptingBindingElementImporter` a přepsat `CreateMessageInterceptor`() k vygenerování jejich zásady podporou `ChannelMessageInterceptor` třídy.  
   
-## <a name="example-droppable-message-inspector"></a>Příklad: Zpráva Droppable inspektoru  
+## <a name="example-droppable-message-inspector"></a>Příklad: Inspektor droppable zprávy  
  Ukázka je příklad implementace `ChannelMessageInspector` které zahodí zprávy.  
   
 ```  
@@ -161,4 +161,4 @@ Dangerous wind detected! Reported speed (70) is greater than 64 kph.
   
 5.  Nejprve spusťte Service.exe, pak spusťte Client.exe a podívejte se na obě okna konzoly pro výstup.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

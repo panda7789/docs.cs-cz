@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
-ms.openlocfilehash: d2683ead92eb4e76494e3e23bff1c688578a316d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 873ec2cfdf7e4b0c743a3bcf607abe8500ec4d3f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200989"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643049"
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>Izolace snímků na SQL serveru
 Izolace snímku vylepšuje souběžnosti pro aplikace s online zpracováním transakcí.  
@@ -141,7 +141,7 @@ SELECT * FROM TestSnapshotUpdate WITH (UPDLOCK)
   
  Pokud vaše aplikace obsahuje mnoho konflikty, izolaci snímku nemusí být nejlepší volbou. Pomocné parametry by měla sloužit pouze při opravdu potřebujete. Aplikace by neměl být navržený tak, aby neustále spoléhá na pomocné parametry zámku pro jeho operace.  
   
-## <a name="see-also"></a>Viz také  
- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)      
- [Průvodce Správa verzí řádku a transakce uzamčení](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide)
+## <a name="see-also"></a>Viz také:
+- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Průvodce Správa verzí řádku a transakce uzamčení](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide)

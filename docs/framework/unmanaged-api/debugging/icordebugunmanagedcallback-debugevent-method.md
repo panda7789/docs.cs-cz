@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 51ccc7b1b50613f0d2b44a9e101314128782c412
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4fd07f018bdc5bd9fd8ca6a81b4aca6d6f97a531
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423127"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54647293"
 ---
 # <a name="icordebugunmanagedcallbackdebugevent-method"></a>ICorDebugUnmanagedCallback::DebugEvent – metoda
-Upozorní ladicí program, že nativní událostí je aktivován.  
+Upozorní ladicího programu, že nativní události byl aktivován.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +38,22 @@ HRESULT DebugEvent (
   
 #### <a name="parameters"></a>Parametry  
  `pDebugEvent`  
- [v] Ukazatel na nativní událostí.  
+ [in] Ukazatel na nativní události.  
   
  `fOutOfBand`  
- [v] `true`, pokud interakci s stavu spravovaného procesu není možné po nespravované události dojde, dokud volání ladicí program [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md), jinak hodnota `false`.  
+ [in] `true`, pokud po výskytu nespravované události, až do volání ladicího programu není možné interakce s daným stavem spravovaného procesu [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md); v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je vlákno laděné Win32 vlákno, nepoužívejte žádné členy Win32 ladění v rozhraní. Můžete volat `ICorDebugController::Continue` pouze ve vlákně Win32 a pouze v případě, že budete pokračovat po out-of-band událost.  
+ Vlákno Win32 při ladění vlákna se nepoužívají žádné členy Win32 ladění v rozhraní. Můžete volat `ICorDebugController::Continue` pouze na vlákno Win32 a pouze v případě, že budete pokračovat minulé události out-of-band.  
   
- `DebugEvent` Zpětného volání nedodrží standardní pravidla pro zpětných volání. Při volání `DebugEvent`, proces bude v nezpracovaná, OS-debug zastaveno stavu. Proces se nebudou synchronizovat. Zadá automaticky synchronizovaného stavu, když je potřeba splnit požadavky na informace o spravovaného kódu, což může vést k jiné vnořené `DebugEvent` zpětných volání.  
+ `DebugEvent` Zpětného volání nedodržuje standardní pravidla pro zpětná volání. Při volání `DebugEvent`, proces bude v nezpracovaná, operační systém ladění stavu Zastaveno. Proces se nebudou synchronizovat. Zadá automaticky synchronizované stavové, když je potřeba splnit požadavky na informace o spravovaného kódu, který může vést k jiné vnořené `DebugEvent` zpětná volání.  
   
- Volání [icordebugprocess::clearcurrentexception –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-clearcurrentexception-method.md) na procesu, ignorovat událost výjimky před pokračováním procesu. Voláním této metody odešle DBG_CONTINUE místo DBG_EXCEPTION_NOT_HANDLED u požadavku pokračovat a automaticky vymaže krokování výjimek a out-of-band zarážky. Out-of-band události můžou mít kdykoli, i v případě, že laděné aplikace se zobrazí ukončeno, a když nevyřízené události integrované již existuje.  
+ Volání [icordebugprocess::clearcurrentexception –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-clearcurrentexception-method.md) na postup ignorovat události výjimky před pokračováním procesu. Voláním této metody odesílá DBG_CONTINUE místo DBG_EXCEPTION_NOT_HANDLED v požadavku pokračovat a automaticky vymaže out-of-band zarážky a krokování výjimky. Out-of-band události můžou mít v každém okamžiku i v případě, že právě laděné aplikace, zobrazí se zastavila, a když nezpracovaných událostí ve vzdálené již existuje.  
   
- V rozhraní .NET Framework verze 2.0 by měly ladicího programu okamžitě pokračovat po zarážku – out-of-band událost. Ladicí program by měl používat [icordebugprocess2::setunmanagedbreakpoint –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-setunmanagedbreakpoint-method.md) a [icordebugprocess2::clearunmanagedbreakpoint –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-clearunmanagedbreakpoint-method.md) metody pro přidání a odebrání zarážky. Tyto metody automaticky přeskočí přes všechny out-of-band zarážky. Proto pouze out-of-band zarážky, které získat odeslaných by měla být nezpracovaná zarážky, které jsou již v datovém proudu instrukce, jako je například volání Win32 `DebugBreak` funkce. Nepokoušejte se použít `ICorDebugProcess::ClearCurrentException`, [icordebugprocess::getthreadcontext –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-getthreadcontext-method.md), [icordebugprocess::setthreadcontext –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-setthreadcontext-method.md), nebo jakékoli jiné člen [rozhraní API pro ladění](../../../../docs/framework/unmanaged-api/debugging/index.md).  
+ V rozhraní .NET Framework verze 2.0 by měl ladicí program okamžitě pokračovat po zarážku out-of-band událost. Ladicí program by měl používat [icordebugprocess2::setunmanagedbreakpoint –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-setunmanagedbreakpoint-method.md) a [icordebugprocess2::clearunmanagedbreakpoint –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-clearunmanagedbreakpoint-method.md) metody pro přidání a odebrání zarážky. Tyto metody se přeskočit všechny zarážky out-of-band automaticky. Proto pouze out-of-band zarážek, které získáte odeslaných by měl být nezpracovaná zarážky, které jsou již ve službě stream instrukce, jako je například voláním rozhraní Win32 `DebugBreak` funkce. Nepokoušejte se použít `ICorDebugProcess::ClearCurrentException`, [icordebugprocess::getthreadcontext –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-getthreadcontext-method.md), [icordebugprocess::setthreadcontext –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-setthreadcontext-method.md), nebo libovolný jiný člen [ladění v rozhraní API](../../../../docs/framework/unmanaged-api/debugging/index.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -61,5 +61,5 @@ HRESULT DebugEvent (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugUnmanagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugunmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugUnmanagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugunmanagedcallback-interface.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4503c3c745fde148c77ff30c9ece008dd9d54829
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5f41eb1864ca2cc0640941abbbd8bc95801a0b31
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445793"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54539009"
 ---
 # <a name="imetadataemitdefinemoduleref-method"></a>IMetaDataEmit::DefineModuleRef – metoda
-Vytvoří metadata podpis pro modul se zadaným názvem.  
+Vytvoří podpis metadat pro modul se zadaným názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,20 +38,20 @@ HRESULT DefineModuleRef (
   
 #### <a name="parameters"></a>Parametry  
  `szName`  
- [v] Název souboru další metadata, obvykle knihovny DLL. Toto je pouze název souboru. Nepoužívejte úplnou cestu.  
+ [in] Název další metadata souboru obvykle knihovny DLL. Toto je pouze název souboru. Nepoužívejte úplné cesty.  
   
  `pmur`  
- [out] Přiřazená `mdModuleRef` tokenu.  
+ [out] Přiřazená `mdModuleRef` token.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: 59b21bf9bbe3e78a1ac8cedd3812863cbcae7382
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 3db3c49427765249f7d6c5ac394f8b239cd40fa3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582570"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592520"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Základy formulářové aplikace Windows (Visual Basic)
 Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Windows Forms, které se spouštějí místně v počítačích uživatelů. Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní pomocí Windows Forms. Aplikace modelu Windows Forms jsou založeny na třídách z <xref:System.Windows.Forms> oboru názvů.  
@@ -46,10 +46,10 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Vytvoření nové aplikace Windows Forms pomocí sady Visual Studio|[Návod: Vytvoření formuláře Windows jednoduché](https://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
-|Použití ovládacích prvků ve formulářích|[Postupy: Přidávání ovládacích prvků do Windows Forms](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
+|Vytvoření nové aplikace Windows Forms pomocí sady Visual Studio|[Návod: Vytvoření jednoduché Windows formuláře](https://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
+|Použití ovládacích prvků ve formulářích|[Postupy: Přidání ovládacích prvků do formulářů Windows](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
 |Vytváření grafiky <xref:System.Drawing>|[Začínáme s programováním grafiky](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
-|Vytvořit vlastní ovládací prvky|[Postupy: Dědění ze třídy UserControl](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
+|Vytvořit vlastní ovládací prvky|[Postupy: Dědit ze třídy UserControl](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  
   
 ## <a name="displaying-and-manipulating-data"></a>Zobrazení a manipulace s daty  
  Mnoho aplikací se musí zobrazovat data z databáze nebo soubor XML, webové služby XML nebo jiný zdroj dat. Windows Forms poskytuje flexibilní ovládací prvek volána <xref:System.Windows.Forms.DataGridView> ovládací prvek pro vykreslení takové tabulková data v tradiční řádků a sloupců formátu tak, aby každá část data zabírá vlastní buňku. Pomocí <xref:System.Windows.Forms.DataGridView> můžete přizpůsobit vzhled jednotlivé buňky, uzamknout libovolného řádků a sloupců na místě a zobrazit komplexní ovládací prvky do buněk, kromě jiných funkcí.  
@@ -66,9 +66,9 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Použití <xref:System.Windows.Forms.BindingSource> komponenty|[Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí Návrháře](../../../framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|  
-|Práce s [!INCLUDE[vstecado](~/includes/vstecado-md.md)] zdroje dat|[Postupy: Řazení a filtrování dat ADO.NET pomocí komponenty Windows Forms BindingSource](../../../framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|
-|Použití okna zdroje dat|[Návod: Zobrazování dat ve formuláři Windows](/visualstudio/data-tools/accessing-data-in-visual-studio)|  
+|Použití <xref:System.Windows.Forms.BindingSource> komponenty|[Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí návrháře](../../../framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|  
+|Práce s [!INCLUDE[vstecado](~/includes/vstecado-md.md)] zdroje dat|[Postupy: Řazení a filtrování dat ADO.NET pomocí Windows Forms BindingSource – komponenta](../../../framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|
+|Použití okna zdroje dat|[Návod: Zobrazení dat ve formuláři Windows](/visualstudio/data-tools/accessing-data-in-visual-studio)|  
   
 ## <a name="deploying-applications-to-client-computers"></a>Nasazení aplikací na klientských počítačích  
  Jakmile jste napsali vaší aplikace, musíte odeslat uživatelům tak, že můžete nainstalovat a spustit ve svých počítačích klienta. Použití [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] technologie, můžete nasadit aplikace z Visual Studia pomocí pár kliknutí a uživatelům poskytnout adresu URL odkazující na aplikaci na webu. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] spravuje všechny elementy a závislosti v aplikaci a zajišťuje, že je aplikace správně nainstalován na klientském počítači.  
@@ -82,7 +82,7 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
 |Nasazení aplikace pomocí [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[Postupy: Publikování aplikace ClickOnce pomocí průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
-|Aktualizace [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] nasazení|[Postupy: Správa aktualizací pro aplikaci ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|  
+|Aktualizace [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] nasazení|[Postupy: Správa aktualizací aplikace ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|  
 |Správa zabezpečení se [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[Postupy: Povolení nastavení zabezpečení ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
   
 ## <a name="other-controls-and-features"></a>Další ovládací prvky a funkce  
@@ -92,11 +92,11 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Vytisknout obsah formuláře|[Postupy: Tisk grafiky v modelu Windows Forms](../../../framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [Postupy: Tisk vícestránkového textového souboru v modelu Windows Forms](../../../framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|   
+|Vytisknout obsah formuláře|[Postupy: Tisk grafiky ve Windows Forms](../../../framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [Postupy: Tisk vícestránkového textového souboru ve Windows Forms](../../../framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|   
 |Další informace o Windows Forms – zabezpečení|[Přehled zabezpečení ve Windows Forms](../../../framework/winforms/security-in-windows-forms-overview.md)|  
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>  
-- [Přehled produktu Windows Forms](../../../framework/winforms/windows-forms-overview.md)  
+- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>
+- [Přehled produktu Windows Forms](../../../framework/winforms/windows-forms-overview.md)
 - [Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)

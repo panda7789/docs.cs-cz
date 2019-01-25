@@ -12,12 +12,12 @@ helpviewer_keywords:
 - True keyword [Visual Basic]
 - Boolean values [Visual Basic], True keyword
 ms.assetid: 4858e630-4813-4216-a55e-f4d0feb884e4
-ms.openlocfilehash: bbd914d8b4239bbae1de7031e68b2900cf5ad6a3
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 5e90d1dc5eb0beb3afd8fc69da32f89943e94c48
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43862380"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54741909"
 ---
 # <a name="boolean-data-type-visual-basic"></a>Boolean – datový typ (Visual Basic)
 Obsahuje hodnoty, které mohou být pouze `True` nebo `False`. Klíčová slova `True` a `False` odpovídají dvěma stavy `Boolean` proměnné.  
@@ -53,11 +53,11 @@ If scriptEngine = "VB" Then
 End If  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Boolean?displayProperty=nameWithType>  
- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)  
- [Řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- [Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Boolean?displayProperty=nameWithType>
+- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
+- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
+- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- [Řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
+- [Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)

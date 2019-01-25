@@ -9,30 +9,31 @@ helpviewer_keywords:
 - Auto keyword [Visual Basic]
 - Auto keyword [Visual Basic], marshaling strings
 ms.assetid: bf79ba95-a62c-48a5-916f-0ac7a52c13ec
-ms.openlocfilehash: 414998b4bef526060e7ba4f584fa071fbd0acaa5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c128ab9982ae7ccd5fff34020f2750f703da16a1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664600"
 ---
 # <a name="auto-visual-basic"></a>Auto (Visual Basic)
-Určuje, že jazyka Visual Basic by měl zařazování řetězců podle rozhraní .NET Framework pravidla založená na externí název externí procedura se deklarovat.  
+Určuje, že by měl Visual Basic zařazovat řetězce podle pravidel rozhraní .NET Framework, které jsou založené na externí název externí procedury byl deklarován.  
   
- Při volání procedury definované mimo projekt Visual Basic – kompilátor nemá přístup k informacím musí mít voláním procedury správně. Tyto informace zahrnují, kde se nachází postup, jak je identifikovat, jeho volací sekvence a návratový typ a řetězec znaková sada, se používá. [Deklarovat příkaz](../../../visual-basic/language-reference/statements/declare-statement.md) vytvoří odkaz na externí procedura a poskytuje tyto nezbytné informace.  
+ Při volání procedury definován vně vašeho projektu, kompilátor jazyka Visual Basic nemá přístup k informacím musí mít k voláním procedury správně. Tyto informace zahrnují, kde se nachází postup, jak je identifikovaný, jeho volací sekvence a návratový typ a řetězec znakové sady, ji používá. [Deklaraci příkazu](../../../visual-basic/language-reference/statements/declare-statement.md) vytvoří odkaz na externí procedura a poskytuje tyto nezbytné informace.  
   
- `charsetmodifier` Část v `Declare` příkaz poskytuje informace o znakových sadách pro zařazování řetězců během volání externí procedura. Ovlivní také jak jazyka Visual Basic prohledává externí soubor pro externí procedura název. `Auto` Modifikátor Určuje, že by měl jazyka Visual Basic zařazování řetězců podle pravidel rozhraní .NET Framework a se musí určit základní znakovou sadu platformy spuštění a případně upravit název externí procedura pokud počáteční vyhledávání se nezdaří. Další informace najdete v tématu "Sady znaků" v [deklarovat příkaz](../../../visual-basic/language-reference/statements/declare-statement.md).  
+ `charsetmodifier` Část v `Declare` příkaz poskytuje informace o znakových sadách pro zařazování řetězce při volání do externí procedury. Také ovlivní, jak Visual Basic vyhledá externí soubor pro název externí procedury. `Auto` Modifikátor Určuje, že by měl Visual Basic zařazovat řetězce podle pravidel rozhraní .NET Framework a, že ho měli určit základní znakové sady běhovou platformu a případně upravit název externí procedury úvodním vyhledávání se nezdaří. Další informace najdete v tématu "Znakových sadách" [deklaraci příkazu](../../../visual-basic/language-reference/statements/declare-statement.md).  
   
- Pokud není zadaný žádný modifikátor sady znaků, `Ansi` je výchozí.  
+ Pokud není zadána žádná modifikátor sady znaků, `Ansi` je výchozí nastavení.  
   
 ## <a name="remarks"></a>Poznámky  
- `Auto` Modifikátor můžete v tomto kontextu použít:  
+ `Auto` Modifikátor lze použít v tomto kontextu:  
   
  [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
 ## <a name="smart-device-developer-notes"></a>Poznámky pro vývojáře inteligentního zařízení  
- This – klíčové slovo není podporováno.  
+ Toto klíčové slovo se nepodporuje.  
   
-## <a name="see-also"></a>Viz také  
- [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md)  
- [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)  
- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
+## <a name="see-also"></a>Viz také:
+- [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md)
+- [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)
+- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

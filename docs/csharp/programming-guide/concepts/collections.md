@@ -2,12 +2,12 @@
 title: Kolekce (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-ms.openlocfilehash: 24b2155c07b6b66820d373d6310ff6b1c6ab224f
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 4163a87c04e280ed19f53d1f715df49b65d02f6f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45679171"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620601"
 ---
 # <a name="collections-c"></a>Kolekce (C#)
 U mnoha aplikací chcete vytvářet a spravovat skupiny souvisejících objektů. Existují dva způsoby, jak seskupit objekty: vytvořením polí objektů a vytvořením kolekcí objektů.  
@@ -31,9 +31,9 @@ U mnoha aplikací chcete vytvářet a spravovat skupiny souvisejících objektů
   
     -   [Třídy System.Collections.Generic](#BKMK_Generic)  
   
-    -   [Třídy System.Collections.Concurrent](#BKMK_Concurrent)  
+    -   [System.Collections.Concurrent Classes](#BKMK_Concurrent)  
   
-    -   [Třídy System.Collections](#BKMK_Collections)  
+    -   [System.Collections Classes](#BKMK_Collections)  
   
 -   [Implementace kolekce párů klíč/hodnota](#BKMK_KeyValuePairs)  
   
@@ -212,7 +212,7 @@ public class Galaxy
  Některé třídy v <xref:System.Collections.Concurrent> obor názvů jsou <xref:System.Collections.Concurrent.BlockingCollection%601>, <xref:System.Collections.Concurrent.ConcurrentDictionary%602>, <xref:System.Collections.Concurrent.ConcurrentQueue%601>, a <xref:System.Collections.Concurrent.ConcurrentStack%601>.  
   
 <a name="BKMK_Collections"></a>
-### <a name="systemcollections-classes"></a>Třídy System.Collections  
+### <a name="systemcollections-classes"></a>System.Collections Classes  
  Třídy v <xref:System.Collections?displayProperty=nameWithType> obor názvů neukládají prvky jako objekty s konkrétním typem, ale jako objekty typu `Object`.  
   
  Kdykoli je to možné, použijte obecné kolekce v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů nebo <xref:System.Collections.Concurrent> místo třídy zastaralých typů v `System.Collections` oboru názvů.  
@@ -575,15 +575,15 @@ private static IEnumerable<int> EvenSequence(
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
-- [Koncepty programování (C#)](../../../csharp/programming-guide/concepts/index.md)  
-- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
-- [LINQ to Objects (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
-- [Paralelní LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)  
-- [Kolekce a datové struktury](../../../standard/collections/index.md)  
-- [Vytváření a manipulace s kolekcemi](https://msdn.microsoft.com/library/2065398e-eb1a-4821-9188-75f16e42e069)  
-- [Výběr třídy kolekce](../../../standard/collections/selecting-a-collection-class.md)  
-- [Porovnávání a řazení v kolekcích](../../../standard/collections/comparisons-and-sorts-within-collections.md)  
-- [Kdy použít generické kolekce](../../../standard/collections/when-to-use-generic-collections.md)  
+- [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)
+- [Koncepty programování (C#)](../../../csharp/programming-guide/concepts/index.md)
+- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [LINQ to Objects (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
+- [Paralelní LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)
+- [Kolekce a datové struktury](../../../standard/collections/index.md)
+- [Vytváření a manipulace s kolekcemi](https://msdn.microsoft.com/library/2065398e-eb1a-4821-9188-75f16e42e069)
+- [Výběr třídy kolekce](../../../standard/collections/selecting-a-collection-class.md)
+- [Porovnávání a řazení v kolekcích](../../../standard/collections/comparisons-and-sorts-within-collections.md)
+- [Kdy použít generické kolekce](../../../standard/collections/when-to-use-generic-collections.md)

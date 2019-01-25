@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ebf72fe4f9fae5b3d791e6eed2e9421b9f4e3296
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9bb7e31f3bff9bfc2cb44259f29b6a7293193371
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450814"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623209"
 ---
 # <a name="icorprofilercallbackclassunloadfinished-method"></a>ICorProfilerCallback::ClassUnloadFinished – metoda
-Upozorní profileru, že byla dokončena třídu uvolnění.  
+Třída dokončení uvolnění oznámí profileru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT ClassUnloadFinished(
   
 #### <a name="parameters"></a>Parametry  
  `classId`  
- [v] Určuje třídu, která byla uvolněna.  
+ [in] Určuje třídu, která byla uvolněna.  
   
  `hrStatus`  
- [v] HRESULT, která určuje, zda byla třída úspěšně odpojen.  
+ [in] HRESULT, která určuje, zda byla třída úspěšně odpojen.  
   
 ## <a name="remarks"></a>Poznámky  
- Některé části uvolnění třídy, může pokračovat i po `ClassUnloadFinished` zpětného volání. Selhání HRESULT v `hrStatus` znamená chybu. Ale úspěšné HRESULT v `hrStatus` pouze označuje, že první část uvolnění třídy proběhl úspěšně.  
+ Některé části uvolnění třídy může pokračovat po `ClassUnloadFinished` zpětného volání. Selhání hodnoty HRESULT v `hrStatus` naznačuje chybu. Ale úspěch HRESULT v `hrStatus` značí pouze, že první část uvolnění třídy proběhla úspěšně.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -54,6 +54,6 @@ HRESULT ClassUnloadFinished(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [ClassUnloadStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classunloadstarted-method.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ClassUnloadStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classunloadstarted-method.md)

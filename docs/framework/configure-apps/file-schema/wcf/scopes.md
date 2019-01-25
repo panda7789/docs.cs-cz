@@ -2,21 +2,21 @@
 title: '&lt;Obory&gt;'
 ms.date: 03/30/2017
 ms.assetid: 9a0dd3ce-e383-4ac3-b7be-7d604388304a
-ms.openlocfilehash: 7afab700c2d9eb91ffe57bfefaf5864782a0af5f
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 1235b483f63ab71405803c16f2d3c9926b15cfad
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145325"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54642984"
 ---
 # <a name="ltscopesgt"></a>&lt;Obory&gt;
 Obsahuje kolekci prvků konfigurace, které určují vlastní rozsahy identifikátoru URI, který lze použít k fitrování koncových bodů služby během dotazu.  
   
 \<system.ServiceModel>  
 \<chování >  
-\<názvy endpointBehaviors >  
+\<endpointBehaviors>  
 \<chování >  
-\<endpointDiscovery >  
+\<endpointDiscovery>  
 \<obory >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -51,7 +51,7 @@ Obsahuje kolekci prvků konfigurace, které určují vlastní rozsahy identifik�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<endpointDiscovery >](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointdiscovery.md)|Určuje různá nastavení zjišťování pro koncový bod, například jeho rozpoznatelnost, rozsahy a všechny vlastní rozšíření jeho metadat.|  
+|[\<endpointDiscovery>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointdiscovery.md)|Určuje různá nastavení zjišťování pro koncový bod, například jeho rozpoznatelnost, rozsahy a všechny vlastní rozšíření jeho metadat.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

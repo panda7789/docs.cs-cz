@@ -10,15 +10,15 @@ helpviewer_keywords:
 - paths [Windows Forms], drawing
 - drawing [Windows Forms], paths
 ms.assetid: a5500dec-666c-41fd-9da3-2169dd89c5eb
-ms.openlocfilehash: 66d30b949fbfe8190b9e2ae2ea7896ac36bf0bac
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 55cd3284f331e9793a0bb73f26ed16bbd99fa116
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33523885"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54685644"
 ---
 # <a name="graphics-paths-in-gdi"></a>Cesty grafiky v GDI+
-Cesty se vytvoří kombinací řádků, obdélníků a jednoduchý křivek. Odvolat z [přehled vektorové grafiky](../../../../docs/framework/winforms/advanced/vector-graphics-overview.md) , následující základní stavební bloky ukázaly jako nejvhodnější pro vykreslování obrázků:  
+Cesty jsou vytvořené kombinací řádků, obdélníky a jednoduché křivky. Pamatujete z [přehled vektorové grafiky](../../../../docs/framework/winforms/advanced/vector-graphics-overview.md) , že tyto základní stavební bloky ukázaly být zvláště užitečná pro vykreslování obrázků:  
   
 -   řádky  
   
@@ -34,41 +34,41 @@ Cesty se vytvoří kombinací řádků, obdélníků a jednoduchý křivek. Odvo
   
 -   Bézierovy křivky  
   
- V rozhraní GDI + <xref:System.Drawing.Drawing2D.GraphicsPath> objekt umožňuje shromažďovat posloupnost tyto stavební bloky do jedné jednotky. Celé řady čar, obdélníků, mnohoúhelníky a křivek pak lze rozlišovat pomocí jednoho volání <xref:System.Drawing.Graphics.DrawPath%2A> metodu <xref:System.Drawing.Graphics> třídy. Následující obrázek znázorňuje cestu vytvořit kombinací řádek, oblouk, Bézierovy křivky a křivky mohutnosti.  
+ V rozhraní GDI + <xref:System.Drawing.Drawing2D.GraphicsPath> objektu umožňuje shromažďovat pořadí těchto stavebních bloků do jedné jednotky. S jedním zavoláním pak lze rozlišovat seřazených řádků, obdélníky, mnohoúhelníků a křivek <xref:System.Drawing.Graphics.DrawPath%2A> metodu <xref:System.Drawing.Graphics> třídy. Cesta vytvořené kombinací řádku, oblouk, Bézierovy křivky a křivky mohutnosti na následujícím obrázku.  
   
- ![Cesta](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art14.gif "Aboutgdip02_art14")  
+ ![Path](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art14.gif "Aboutgdip02_art14")  
   
 ## <a name="using-a-path"></a>Pomocí cesty  
- <xref:System.Drawing.Drawing2D.GraphicsPath> Třída poskytuje následující metody pro vytvoření posloupnost položek, které se mají vykreslovat: <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangle%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddPolygon%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> (pro základní křivky vyhlazení), a <xref:System.Drawing.Drawing2D.GraphicsPath.AddBezier%2A>. Každá z těchto metod je přetížena; To znamená jednotlivé metody podporují několik různých parametr seznamy. Například jeden varianta <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> metoda přijímá čtyři celá čísla a další varianta <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> metoda obdrží dvě <xref:System.Drawing.Point> objekty.  
+ <xref:System.Drawing.Drawing2D.GraphicsPath> Třída poskytuje následující metody pro vytváření pořadí položek, které chcete kreslit: <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangle%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddPolygon%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> (pro základní křivky vyhlazení), a <xref:System.Drawing.Drawing2D.GraphicsPath.AddBezier%2A>. Každá z těchto metod je přetížena. To znamená jednotlivé metody podporují několik různých parametr seznamů. Například jeden varianta <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> metoda obdrží čtyř celých čísel a další variantou <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> metoda obdrží dvě <xref:System.Drawing.Point> objekty.  
   
- Metody pro přidání řádků, obdélníků a Bézierových křivek na cestu, mají množném čísle doprovodné metody, které přidejte několik položek do cesty v jediném volání: <xref:System.Drawing.Drawing2D.GraphicsPath.AddLines%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangles%2A>, a <xref:System.Drawing.Drawing2D.GraphicsPath.AddBeziers%2A>. Navíc <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> a <xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A> metody mají metody Průvodce vyhledáváním, <xref:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve%2A> a <xref:System.Drawing.Drawing2D.GraphicsPath.AddPie%2A>, přidá výsečového nebo uzavřené křivky k cestě.  
+ Metody pro přidání řádků, obdélníky a Bézierových křivek na cestu mají množném čísle doprovodná metody, které přidejte několik položek na cestu v jednom volání: <xref:System.Drawing.Drawing2D.GraphicsPath.AddLines%2A>, <xref:System.Drawing.Drawing2D.GraphicsPath.AddRectangles%2A>, a <xref:System.Drawing.Drawing2D.GraphicsPath.AddBeziers%2A>. Navíc <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A> a <xref:System.Drawing.Drawing2D.GraphicsPath.AddArc%2A> metody mají metody doprovodné <xref:System.Drawing.Drawing2D.GraphicsPath.AddClosedCurve%2A> a <xref:System.Drawing.Drawing2D.GraphicsPath.AddPie%2A>, přidá výsečového nebo uzavřené křivky do cesty.  
   
- Kreslení cestu, musíte <xref:System.Drawing.Graphics> objekt, <xref:System.Drawing.Pen> objekt a <xref:System.Drawing.Drawing2D.GraphicsPath> objektu. <xref:System.Drawing.Graphics> Objekt poskytuje <xref:System.Drawing.Graphics.DrawPath%2A> metody a <xref:System.Drawing.Pen> objekt ukládá atributy, jako například šířku a barvu čáry použité k vykreslení cestu. <xref:System.Drawing.Drawing2D.GraphicsPath> Objekt ukládá řady čar a křivek, které tvoří cestu. <xref:System.Drawing.Pen> Objektu a <xref:System.Drawing.Drawing2D.GraphicsPath> objekt jsou předány jako argumenty, které mají <xref:System.Drawing.Graphics.DrawPath%2A> metoda. Následující příklad nevykresluje cestu, která se skládá z řádku, třemi tečkami a Bézierovy křivky:  
+ K nakreslení cesty, je nutné <xref:System.Drawing.Graphics> objektu, <xref:System.Drawing.Pen> objektu a <xref:System.Drawing.Drawing2D.GraphicsPath> objektu. <xref:System.Drawing.Graphics> Objekt, který poskytuje <xref:System.Drawing.Graphics.DrawPath%2A> metody a <xref:System.Drawing.Pen> ukládá atributy, například šířku a barvu čáry použité k vykreslení cestu. <xref:System.Drawing.Drawing2D.GraphicsPath> Ukládá posloupnost čar a křivek, které tvoří cestu. <xref:System.Drawing.Pen> Objektu a <xref:System.Drawing.Drawing2D.GraphicsPath> objektu jsou předány jako argumenty, které mají <xref:System.Drawing.Graphics.DrawPath%2A> metody. Následující příklad nakreslí cestu, která se skládá z řádku elipsu a Bézierovy křivky:  
   
  [!code-csharp[LinesCurvesAndShapes#101](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#101)]
  [!code-vb[LinesCurvesAndShapes#101](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#101)]  
   
- Následující obrázek ukazuje cestu.  
+ Následující obrázek znázorňuje cestu.  
   
- ![Cesta](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art15.gif "Aboutgdip02_art15")  
+ ![Path](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art15.gif "Aboutgdip02_art15")  
   
- Kromě přidání čar, obdélníků a křivek na cestu, můžete přidat cesty na cestu. To umožňuje zkombinovat existující cesty k vytvoření složitých cesty.  
+ Kromě přidání řádků, obdélníky a křivek na cestu, můžete přidat cesty na cestu. Díky tomu můžete kombinovat existující cesty k vytvoření složitých cesty.  
   
  [!code-csharp[LinesCurvesAndShapes#102](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#102)]
  [!code-vb[LinesCurvesAndShapes#102](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#102)]  
   
- Existují dva další položky, které můžete přidat do cesty: řetězce a koláče. Výsečový je část vnitřek elipsy. Následující příklad vytvoří cestu z oblouk, křivky mohutnosti, řetězec a výsečový:  
+ Existují dvě další položky, můžete přidat do cesty: řetězce a koláče. Výsečový se část vnitřní elipsu. Následující příklad vytvoří cestu z oblouk, křivky mohutnosti, řetězce a výsečový:  
   
  [!code-csharp[LinesCurvesAndShapes#103](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#103)]
  [!code-vb[LinesCurvesAndShapes#103](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#103)]  
   
- Následující obrázek ukazuje cestu. Všimněte si, že cestu nemusí být připojen; oblouk, křivky mohutnosti, string a kruhový jsou oddělené.  
+ Následující obrázek znázorňuje cestu. Všimněte si, že cestu nemusí být připojená arc, základní křivka vyhlazení, řetězce a výsečový jsou oddělené.  
   
- ![Cesty](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art16.gif "Aboutgdip02_Art16")  
+ ![Paths](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art16.gif "Aboutgdip02_Art16")  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=nameWithType>  
- <xref:System.Drawing.Point?displayProperty=nameWithType>  
- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
- [Postupy: Vytváření grafických objektů pro kreslení](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)  
- [Sestavování a kreslení cest](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Drawing.Drawing2D.GraphicsPath?displayProperty=nameWithType>
+- <xref:System.Drawing.Point?displayProperty=nameWithType>
+- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)
+- [Postupy: Vytváření grafických objektů pro kreslení](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)
+- [Sestavování a kreslení cest](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md)

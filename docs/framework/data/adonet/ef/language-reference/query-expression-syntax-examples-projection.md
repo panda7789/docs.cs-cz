@@ -1,18 +1,18 @@
 ---
-title: 'Příklady syntaxe výrazů dotazů: projekce'
+title: 'Příklady syntaxe výrazů dotazů: Projekce'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 079926c5-e6b5-4fb9-b4cf-9c63886dd626
-ms.openlocfilehash: cc50b2564d295f1c81feacdeb52008f9f0004adc
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: c12fdd70b7174d6e6fbae10d5132c9e3e2a7eb87
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43396623"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54733373"
 ---
-# <a name="query-expression-syntax-examples-projection"></a>Příklady syntaxe výrazů dotazů: projekce
+# <a name="query-expression-syntax-examples-projection"></a>Příklady syntaxe výrazů dotazů: Projekce
 Příklady v tomto tématu ukazují, jak používat `Select` metoda a `From … From …` klíčová slova k dotazování [AdventureWorks Sales Model](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) pomocí syntaxe výrazu dotazu. `From … From …` je ekvivalentní dotaz založený `SelectMany` metody. Prodeje společnosti AdventureWorks model používaný v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  
   
  V příkladech v tomto tématu se používá následující `using` / `Imports` příkazy:  
@@ -60,5 +60,5 @@ Příklady v tomto tématu ukazují, jak používat `Select` metoda a `From … 
  [!code-csharp[DP L2E Examples#SelectManyFromAssignment](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#selectmanyfromassignment)]
  [!code-vb[DP L2E Examples#SelectManyFromAssignment](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#selectmanyfromassignment)]  
   
-## <a name="see-also"></a>Viz také  
- [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)
+## <a name="see-also"></a>Viz také:
+- [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - queries [Visual Basic], Where
 - Where clause [Visual Basic]
 ms.assetid: 48b5c2c5-3181-429c-8545-894296798c89
-ms.openlocfilehash: de7b4bf3e7dc1145b7e95197c7bd05c66acdabd6
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 5ecfc523573a6ab8142a04557156a3819eed440e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042410"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54662293"
 ---
 # <a name="where-clause-visual-basic"></a>Where – klauzule (Visual Basic)
 Určuje podmínku filtrování dotazu.  
@@ -26,7 +26,7 @@ Where condition
   
 ## <a name="parts"></a>Součásti  
  `condition`  
- Požadováno. Výraz, který určuje, zda hodnoty pro aktuální položku v kolekci jsou zahrnuty v kolekci výstup. Výraz se musí vyhodnotit na `Boolean` hodnotu nebo ekvivalent `Boolean` hodnotu. Pokud je podmínka vyhodnocena jako `True`elementu je zahrnut ve výsledku dotazu; jinak vrátí hodnotu, elementu je vyloučen z výsledku dotazu.  
+ Povinný parametr. Výraz, který určuje, zda hodnoty pro aktuální položku v kolekci jsou zahrnuty v kolekci výstup. Výraz se musí vyhodnotit na `Boolean` hodnotu nebo ekvivalent `Boolean` hodnotu. Pokud je podmínka vyhodnocena jako `True`elementu je zahrnut ve výsledku dotazu; jinak vrátí hodnotu, elementu je vyloučen z výsledku dotazu.  
   
 ## <a name="remarks"></a>Poznámky  
  `Where` Klauzule umožňuje filtrovat dotaz na data tak, že vyberete pouze prvky, které splňují určitá kritéria. Elementy způsobovat jehož hodnoty `Where` klauzule vyhodnotilo `True` jsou zahrnuty ve výsledku dotazu; další prvky jsou vyloučeny. Výraz, který se používá v `Where` klauzule se musí vyhodnotit na `Boolean` nebo ekvivalent `Boolean`, například celé číslo, které se vyhodnotí jako `False` když jeho hodnota je nula. Můžete zkombinovat více výrazů v `Where` klauzule pomocí logických operátorů `And`, `Or`, `AndAlso`, `OrElse`, `Is`, a `IsNot`.  
@@ -45,9 +45,9 @@ Where condition
   
  [!code-vb[VbSimpleQuerySamples#31](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/where-clause_2.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Dotazy](../../../visual-basic/language-reference/queries/index.md)  
- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
- [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Dotazy](../../../visual-basic/language-reference/queries/index.md)
+- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
+- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
+- [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)

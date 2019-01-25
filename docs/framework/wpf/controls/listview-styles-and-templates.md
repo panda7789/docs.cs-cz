@@ -9,65 +9,65 @@ helpviewer_keywords:
 - ListView [WPF], styles and templates
 - templates [WPF], ListView
 ms.assetid: d2387356-2171-4785-822a-7247e024b4ee
-ms.openlocfilehash: e29f8cf14d80658b373dded2c7116524d165aa4c
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 66e9f5d45a4c9b3a04291a8ebbf054ebc055b5a2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34457476"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643634"
 ---
 # <a name="listview-styles-and-templates"></a>ListView – styly a šablony
-Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.ListView> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhledu ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku tak, že vytvoříte ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.ListView> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
   
-## <a name="listview-parts"></a>Části ListView  
- <xref:System.Windows.Controls.ListView> Ovládací prvek nemá žádné pojmenované částí.  
+## <a name="listview-parts"></a>Částí ListView  
+ <xref:System.Windows.Controls.ListView> Ovládací prvek nemá žádné pojmenované součásti.  
   
- Při vytváření <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.ListView>, může vaše šablona obsahovat <xref:System.Windows.Controls.ItemsPresenter> v rámci <xref:System.Windows.Controls.ScrollViewer>. ( <xref:System.Windows.Controls.ItemsPresenter> Zobrazí jednotlivé položky <xref:System.Windows.Controls.ListView>; <xref:System.Windows.Controls.ScrollViewer> umožňuje posouvání v ovládacím prvku).  Pokud <xref:System.Windows.Controls.ItemsPresenter> není přímými podřízenými z <xref:System.Windows.Controls.ScrollViewer>, musíte <xref:System.Windows.Controls.ItemsPresenter> název, `ItemsPresenter`.  
+ Při vytváření <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.ListView>, šablona může obsahovat <xref:System.Windows.Controls.ItemsPresenter> v rámci <xref:System.Windows.Controls.ScrollViewer>. ( <xref:System.Windows.Controls.ItemsPresenter> Zobrazuje každou položku v <xref:System.Windows.Controls.ListView>; <xref:System.Windows.Controls.ScrollViewer> umožňuje posouvání v ovládacím prvku).  Pokud <xref:System.Windows.Controls.ItemsPresenter> není za přímé podřízeného člena <xref:System.Windows.Controls.ScrollViewer>, je třeba zadat <xref:System.Windows.Controls.ItemsPresenter> názvu, `ItemsPresenter`.  
   
 ## <a name="listview-states"></a>Stavy ListView  
- Následující tabulka uvádí visual stavy pro <xref:System.Windows.Controls.ListView> ovládacího prvku.  
+ V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.ListView> ovládacího prvku.  
   
-|Název VisualState|Název VisualStateGroup|Popis|  
+|Název vizuálního stavu|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je přidružená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` má ovládací prvek má právě fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
   
-## <a name="listviewitem-parts"></a>ListViewItem částí  
- <xref:System.Windows.Controls.ListViewItem> Ovládací prvek nemá žádné pojmenované částí.  
+## <a name="listviewitem-parts"></a>Položka ListViewItem částí  
+ <xref:System.Windows.Controls.ListViewItem> Ovládací prvek nemá žádné pojmenované součásti.  
   
-## <a name="listviewitem-states"></a>Stavy ListViewItem  
- Následující tabulka uvádí stavy pro <xref:System.Windows.Controls.ListViewItem> ovládacího prvku.  
+## <a name="listviewitem-states"></a>Položka ListViewItem stavy  
+ V následující tabulce jsou uvedeny stavy <xref:System.Windows.Controls.ListViewItem> ovládacího prvku.  
   
-|Název VisualState|Název VisualStateGroup|Popis|  
+|Název vizuálního stavu|Název VisualStateGroup|Popis|  
 |-|-|-|  
 |Normální|CommonStates|Ve výchozím stavu.|  
-|zakázáno|CommonStates|Ovládací prvek je zakázaný.|  
-|Myš nad|CommonStates|Je ukazatel myši nad <xref:System.Windows.Controls.ComboBox> ovládacího prvku.|  
-|Zaměřuje|FocusStates|Ovládací prvek má právě fokus.|  
-|Nezaostřená|FocusStates|Ovládací prvek nemá fokus.|  
-|Vybrané|SelectionStates|Aktuálně vybranou položku.|  
-|Nezaškrtnuté|SelectionStates|Položka není vybrána.|  
-|SelectedUnfocused|SelectionStates|Položka je vybrána, ale nemá fokus.|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je přidružená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` má ovládací prvek má právě fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Zakázáno|CommonStates|Ovládací prvek je zakázaný.|  
+|Myš nad|CommonStates|Ukazatel myši je nad <xref:System.Windows.Controls.ComboBox> ovládacího prvku.|  
+|Fokus|FocusStates|Ovládací prvek má fokus.|  
+|Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|  
+|Vybráno|SelectionStates|Aktuálně vybranou položku.|  
+|Nevybrané|SelectionStates|Není vybraná položka.|  
+|SelectedUnfocused|SelectionStates|Položka vybrána, ale nemá fokus.|  
+|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
   
-## <a name="listview-controltemplate-examples"></a>Příklady ListView ControlTemplate  
- Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.ListView> ovládací prvek a jeho přidružené typy.  
+## <a name="listview-controltemplate-examples"></a>ListView ControlTemplate Examples  
+ Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.ListView> ovládacího prvku a jeho přidružené typy.  
   
  [!code-xaml[ControlTemplateExamples#ListView](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/listview.xaml#listview)]  
   
- <xref:System.Windows.Controls.ControlTemplate> Příklady pomocí jednoho nebo více z následujících prostředků.  
+ <xref:System.Windows.Controls.ControlTemplate> Příklady používají jeden nebo více z následujících prostředků.  
   
  [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Kompletní příklad, najdete v části [styly s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
+ Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.FrameworkElement.Style%2A>  
- <xref:System.Windows.Controls.ControlTemplate>  
- [Styly a šablony ovládacích prvků](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
- [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)  
- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.FrameworkElement.Style%2A>
+- <xref:System.Windows.Controls.ControlTemplate>
+- [Styly a šablony ovládacích prvků](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)
+- [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)
+- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

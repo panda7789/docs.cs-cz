@@ -7,12 +7,12 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: d4b4c776db542b6326fcceb8f2fd057d9caabf94
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: bee0cf4a1fcd70274ff8c1107a35ec3501ef2249
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/21/2018
-ms.locfileid: "49415247"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54563636"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Vývoj a nasazení služeb WCF Data Services
 
@@ -42,7 +42,7 @@ Při vývoji datových služeb WCF jako [!INCLUDE[vstecasp](../../../../includes
 
 1.  **Místní Server IIS**
 
-     Při vytváření datových služeb je [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace nebo [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou stránku, na kterém běží v Internetové informační služby (IIS), doporučujeme ji vyvíjet a testovat pomocí služby IIS v místním počítači. Spuštění datové služby ve službě IIS usnadňuje sledování požadavků HTTP během ladění. Zároveň vám to umožňuje předem stanovit práva, jež služba IIS potřebuje pro přístup k souborům, databázím a jiným prostředkům vyžadovaným datovou službou. Ke spuštění datové služby ve službě IIS, musí je zajištěno, že služba IIS a služby Windows Communication Foundation (WCF) jsou správnost instalace a konfigurace a udělit přístup k účtům služby IIS v systému souborů a databáze. Další informace najdete v tématu [postup: vývoj WCF Data Service běžících v IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).
+     Při vytváření datových služeb je [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace nebo [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou stránku, na kterém běží v Internetové informační služby (IIS), doporučujeme ji vyvíjet a testovat pomocí služby IIS v místním počítači. Spuštění datové služby ve službě IIS usnadňuje sledování požadavků HTTP během ladění. Zároveň vám to umožňuje předem stanovit práva, jež služba IIS potřebuje pro přístup k souborům, databázím a jiným prostředkům vyžadovaným datovou službou. Ke spuštění datové služby ve službě IIS, musí je zajištěno, že služba IIS a služby Windows Communication Foundation (WCF) jsou správnost instalace a konfigurace a udělit přístup k účtům služby IIS v systému souborů a databáze. Další informace najdete v tématu [jak: Vývoj datové služby WCF ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).
 
     > [!NOTE]
     > Visual Studio je nutné spustit s právy správce, chcete-li povolit ve vývojovém prostředí konfiguraci místního serveru služby IIS.
@@ -111,7 +111,7 @@ Služba WCF Data Service nabízí flexibilitu při výběru procesu, který je h
      Další informace o možnostech nasazení pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace, najdete v článku [Přehled nasazení webu pro Visual Studio a ASP.NET](https://msdn.microsoft.com/library/99bd1927-b59f-4e02-87b4-55c6ba2adbc3).
 
     > [!TIP]
-    > Než datovou službu nasadíte do služby IIS, nezapomeňte otestovat nasazení na webový server, na kterém je spuštěna služba IIS. Další informace najdete v tématu [postup: vývoj WCF Data Service běžících v IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).
+    > Než datovou službu nasadíte do služby IIS, nezapomeňte otestovat nasazení na webový server, na kterém je spuštěna služba IIS. Další informace najdete v tématu [jak: Vývoj datové služby WCF ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).
 
 -   **Windows Azure**
 
@@ -121,11 +121,11 @@ Služba WCF Data Service nabízí flexibilitu při výběru procesu, který je h
 
 Při nasazování datových služeb je vhodné zvážit následující faktory:
 
--   Při nasazování datových služeb používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele pro přístup k databázi SQL serveru, budete také muset datové struktury, data, nebo i s vašimi daty nasazení služby. Visual Studio může automaticky vytvářet skripty (soubory .sql) k tomu v cílové databázi, a tyto skripty mohou být součástí balíčku pro nasazení webu z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace. Další informace najdete v tématu [postupy: nasazení databáze se projekt webové aplikace](https://msdn.microsoft.com/library/683b33f1-8a3d-45cf-af6e-61ab50fc518b). Pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webu, Uděláte to tak pomocí **Database Publishing Wizard** v sadě Visual Studio. Další informace najdete v tématu [nasazení databáze pomocí Průvodce publikováním databáze](https://msdn.microsoft.com/library/1e3682e7-8b57-4da6-a393-af9640ccf8b7).
+-   Při nasazování datových služeb používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele pro přístup k databázi SQL serveru, budete také muset datové struktury, data, nebo i s vašimi daty nasazení služby. Visual Studio může automaticky vytvářet skripty (soubory .sql) k tomu v cílové databázi, a tyto skripty mohou být součástí balíčku pro nasazení webu z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace. Další informace najdete v tématu [jak: Nasazení databáze se projekt webové aplikace](https://msdn.microsoft.com/library/683b33f1-8a3d-45cf-af6e-61ab50fc518b). Pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webu, Uděláte to tak pomocí **Database Publishing Wizard** v sadě Visual Studio. Další informace najdete v tématu [nasazení databáze pomocí Průvodce publikováním databáze](https://msdn.microsoft.com/library/1e3682e7-8b57-4da6-a393-af9640ccf8b7).
 
 -   Služby WCF Data Services zahrnuje základní implementaci WCF, a proto můžete použít Windows Server AppFabric ke sledování datové služby nasazené ve službě IIS a běžící na Windows serveru. Další informace o používání služby Windows Server AppFabric ke sledování datové služby, najdete v příspěvku [sledování služeb WCF Data Services pomocí služby Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkID=202005).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Hostování datové služby](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)
 - [Zabezpečení datových služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)

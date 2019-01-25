@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: provádění dotazů služby dat (služby WCF Data Services)'
+title: 'Postupy: Provádění dotazů v datové služby (WCF Data Services)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,43 +9,43 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 62997821-e0c6-4c4d-9fb7-1273fb5e5d18
-ms.openlocfilehash: 574818c694b07775c4263dca066e0d2e462be27f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aac0e4c71ae2752d4f56ae5eadb5f0a8d381d5fe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33363419"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623284"
 ---
-# <a name="how-to-execute-data-service-queries-wcf-data-services"></a>Postupy: provádění dotazů služby dat (služby WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje dotazovat datové služby z klienta na základě rozhraní .NET Framework aplikace pomocí generovaného klienta datových služba tříd. Dotazy můžete spustit pomocí jedné z těchto metod:  
+# <a name="how-to-execute-data-service-queries-wcf-data-services"></a>Postupy: Provádění dotazů v datové služby (WCF Data Services)
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje dotazování dat služby z klienta na základě rozhraní .NET Framework aplikace s použitím tříd generované klientské datové služby. Provádění dotazů pomocí jedné z těchto metod:  
   
--   Provádění dotazů LINQ proti pojmenované <xref:System.Data.Services.Client.DataServiceQuery%601> které jste získali od <xref:System.Data.Services.Client.DataServiceContext> , `Add Data Service Reference` nástroj, který generuje.  
+-   Provádění dotazu LINQ na pojmenované <xref:System.Data.Services.Client.DataServiceQuery%601> , kterou získáte <xref:System.Data.Services.Client.DataServiceContext> , který `Add Data Service Reference` Nástroj generuje.  
   
--   Implicitně vytyčením přes pojmenované <xref:System.Data.Services.Client.DataServiceQuery%601> které jste získali od <xref:System.Data.Services.Client.DataServiceContext> , `Add Data Service Reference` nástroj, který generuje.  
+-   Implicitně vytyčením přes pojmenované <xref:System.Data.Services.Client.DataServiceQuery%601> , kterou získáte <xref:System.Data.Services.Client.DataServiceContext> , který `Add Data Service Reference` Nástroj generuje.  
   
--   Explicitně, voláním <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> metodu <xref:System.Data.Services.Client.DataServiceQuery%601>, nebo <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> metody pro asynchronní zpracování.  
+-   Explicitním voláním <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> metodu <xref:System.Data.Services.Client.DataServiceQuery%601>, nebo <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> metody pro asynchronní zpracování.  
   
- Další informace najdete v tématu [dotaz na službu Data](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
+ Další informace najdete v tématu [dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
   
- V příkladu v tomto tématu používá Northwind ukázková data služby a automaticky generovaný klienta dat služby třídy. Tato služba a datové třídy klienta se vytvoří při dokončení [rychlého startu služby WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  
+ V příkladu v tomto tématu se používá Northwind ukázková data service a automaticky vygenerovaných tříd klientské datové služby. Tuto službu a třídy dat klientů jsou vytvořeny po dokončení [rychlý start služeb WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak definovat a provedení dotazu LINQ, která vrátí všechny `Customers` proti službu Northwind data.  
+ Následující příklad ukazuje, jak definovat a spusťte dotaz LINQ, který vrátí všechny `Customers` proti datová služba Northwind.  
   
  [!code-csharp[Astoria Northwind Client#GetAllCustomersLinq](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getallcustomerslinq)]
  [!code-vb[Astoria Northwind Client#GetAllCustomersLinq](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getallcustomerslinq)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít kontext, `Add Data Service Reference` nástroj, který generuje implicitně provést dotaz, který vrátí všechny `Customers` proti službu Northwind data. Identifikátor URI požadované `Customers` sady entit je určen automaticky podle kontextu. Dotaz je implicitně provést, když dojde k výčtu.  
+ Následující příklad ukazuje, jak použít kontext, který `Add Data Service Reference` Nástroj generuje implicitně spustit dotaz, který vrátí všechny `Customers` proti datová služba Northwind. Identifikátor URI požadované `Customers` sady entit je automaticky určeno kontextu. Dotaz provádí implicitně, když dojde k výčtu.  
   
  [!code-csharp[Astoria Northwind Client#GetAllCustomers](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getallcustomers)]
  [!code-vb[Astoria Northwind Client#GetAllCustomers](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getallcustomers)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat <xref:System.Data.Services.Client.DataServiceContext> explicitně provést dotaz, který vrátí všechny `Customers` proti službu Northwind data.  
+ Následující příklad ukazuje způsob použití <xref:System.Data.Services.Client.DataServiceContext> explicitně spustit dotaz, který vrátí všechny `Customers` proti datová služba Northwind.  
   
  [!code-csharp[Astoria Northwind Client#GetAllCustomersExplicit](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getallcustomersexplicit)]
  [!code-vb[Astoria Northwind Client#GetAllCustomersExplicit](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getallcustomersexplicit)]  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Přidání možností do dotazu v datové službě](../../../../docs/framework/data/wcf/how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Přidání možností do dotazu v datové službě](../../../../docs/framework/data/wcf/how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)

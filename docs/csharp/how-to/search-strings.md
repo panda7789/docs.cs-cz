@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: b6d5ab1c4588e72bf49c5ca2f859b9996c0d3834
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 030d71f95947e98d9f269095908b0431c2192430
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857151"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623388"
 ---
 # <a name="how-to-search-strings"></a>Postupy: vyhledávání řetězců
 
@@ -74,12 +74,12 @@ Tento vzor hledání jednoduchého odpovídá mnoho platné řetězce. Regulárn
 
 Tyto ukázky můžete zkusit pohledem na kód v našich [úložiště GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako soubor zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../programming-guide/index.md)  
-- [Řetězce](../programming-guide/strings/index.md)  
+- [Průvodce programováním v jazyce C#](../programming-guide/index.md)
+- [Řetězce](../programming-guide/strings/index.md)
 - [LINQ a řetězce](../programming-guide/concepts/linq/linq-and-strings.md)
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>
 - [Regulárních výrazech .NET Frameworku](../../standard/base-types/regular-expressions.md)
 - [Jazyk regulárních výrazů – stručná referenční dokumentace](../../standard/base-types/regular-expression-language-quick-reference.md)
-- [Osvědčené postupy pro používání řetězců v .NET](../../standard/base-types/best-practices-strings.md)  
+- [Osvědčené postupy pro používání řetězců v .NET](../../standard/base-types/best-practices-strings.md)

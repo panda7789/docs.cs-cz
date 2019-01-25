@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
-ms.openlocfilehash: 2b2d487484f026be7637185ef759fb87db571b3a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 8c5f94cb7f815e4aebef10d930843971219baef6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145803"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623115"
 ---
 # <a name="queries-in-linq-to-dataset"></a>Dotazy v LINQ to DataSet
 Dotaz je výraz, který načítá data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializovaném dotazovacím jazyce, jako je například SQL pro relační databáze a XQuery pro XML. Proto vývojáři měli získat nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který dotazy. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] nabízí jednodušší a konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazu, vždy pracujete s programovacích objektech.  
@@ -59,8 +59,8 @@ Dotaz je výraz, který načítá data z datového zdroje. Dotazy jsou obvykle v
  [!code-csharp[DP LINQ to DataSet Examples#ToArray2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#toarray2)]
  [!code-vb[DP LINQ to DataSet Examples#ToArray2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#toarray2)]  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)  
- [Dotazy na datové sady](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)  
- [Začínáme s dotazy LINQ v jazyce C#](~/docs/csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
- [Začínáme s dotazy LINQ v jazyce Visual Basic](~/docs/visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
+## <a name="see-also"></a>Viz také:
+- [Průvodce programováním](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)
+- [Dotazy na datové sady](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)
+- [Začínáme s dotazy LINQ v jazyce C#](~/docs/csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
+- [Začínáme s dotazy LINQ v jazyce Visual Basic](~/docs/visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)

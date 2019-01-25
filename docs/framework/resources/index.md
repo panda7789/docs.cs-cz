@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4bc91f5f3872ee5f4a55f3e3cd9e0e9de9bcc422
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 6cda11a99211c6f797159b6d6bcbc78fe2e13c26
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524726"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54613945"
 ---
 # <a name="resources-in-net-apps"></a>Prostředky v aplikacích .NET
 Téměř každá aplikace produkční kvality musí používat prostředky. Prostředek je jakákoli nespustitelná část dat, která je logicky nasazována s aplikací. Prostředek může zobrazit v aplikaci jako chybové zprávy nebo jako součást uživatelského rozhraní. Prostředky mohou obsahovat data v různých formách, včetně řetězců, obrázků a trvale uložených objektů. (K zápisu do souboru prostředků trvalé objekty, objekty musí být serializovatelné.) Ukládání dat do souboru prostředků vám umožní měnit data bez opětovné kompilace celou aplikaci. Také umožňuje ukládat data na jednom místě a eliminuje nutnost využívají pevně zakódované data, která je uložena v několika umístěních.  
@@ -60,11 +60,11 @@ Téměř každá aplikace produkční kvality musí používat prostředky. Pros
   
 -   <xref:System.Resources.ResXResourceSet> Třídu, která vám umožňuje načíst všechny položky v souboru prostředků jazyka XML do paměti.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Globalization.CultureInfo>  
- <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>  
- [Základy vytváření aplikací](../../../docs/standard/application-essentials.md)  
- [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)  
- [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)  
- [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)  
- [Načítání prostředků](../../../docs/framework/resources/retrieving-resources-in-desktop-apps.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Globalization.CultureInfo>
+- <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType>
+- [Základy vytváření aplikací](../../../docs/standard/application-essentials.md)
+- [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)
+- [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
+- [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)
+- [Načítání prostředků](../../../docs/framework/resources/retrieving-resources-in-desktop-apps.md)

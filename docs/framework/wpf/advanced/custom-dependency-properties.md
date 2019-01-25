@@ -14,12 +14,12 @@ helpviewer_keywords:
 - wrappers [WPF], implementing
 - dependency properties [WPF], custom
 ms.assetid: e6bfcfac-b10d-4f58-9f77-a864c2a2938f
-ms.openlocfilehash: f15490417d54121c750e2ea918820c5cb717002e
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 1401885db6faeec1d493e0279d8a5472e3128245
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861513"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54594067"
 ---
 # <a name="custom-dependency-properties"></a>Vlastní vlastnosti závislosti
 
@@ -169,7 +169,7 @@ Vlastnosti závislosti by měl být deklarován jako veřejné vlastnosti. Pole 
 
 Je zásadně ve spravovaném kódu programování (často vynucuje sada nástrojů pro analýzu kódu jako je například FxCop), které třídy konstruktory by neměl volat virtuální metody. Je to proto, že konstruktory lze volat jako základní inicializace konstruktoru odvozené třídy, a zadáte virtuální metodu pomocí konstruktoru mohou nastat za stavu neúplná inicializace vytváří instanci objektu. Když odvozujete z jiné třídy, která už je odvozena z <xref:System.Windows.DependencyObject>, je třeba si uvědomit, že samotný systém vlastnosti volání a interně poskytuje virtuální metody. Tyto virtuální metody jsou součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systémových služeb. Přepsání metody umožňuje odvozené třídy se účastnit stanovení hodnotu. Aby se zabránilo problémům s inicializace za běhu, by neměl nastavíte závislost hodnoty vlastností v rámci konstruktory tříd, pokud podle vzoru velmi konkrétní konstruktor. Podrobnosti najdete v tématu [bezpečné zabezpečené vzory konstruktoru pro DependencyObjects](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)
 - [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení pořadí karet ve formulářích Windows'
+title: 'Postupy: Nastavení pořadí karet ve Windows Forms'
 ms.date: 03/30/2017
 f1_keywords:
 - TabStop
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - controls [Windows Forms], setting tab order
 - Windows Forms, setting tab order
 ms.assetid: 71fa8e76-0472-414b-ad3c-0f90166e0ad7
-ms.openlocfilehash: 74244ae4e3692ed210b2a8f1513b035c85e98376
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 118785e14dddcd5ff19aa8c143f9e8df05d8980b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43745512"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54675197"
 ---
-# <a name="how-to-set-the-tab-order-on-windows-forms"></a>Postupy: Nastavení pořadí karet ve formulářích Windows
+# <a name="how-to-set-the-tab-order-on-windows-forms"></a>Postupy: Nastavení pořadí karet ve Windows Forms
 Pořadí je v tom pořadí, ve kterém uživatel přesune fokus z jednoho ovládacího prvku na jiný stisknutím klávesy TAB. Každý formulář má svůj vlastní pořadí. Výchozí pořadí je stejné jako pořadí, ve které jste vytvořili ovládací prvky. Pořadí karet číslování začíná nulou.  
   
 > [!NOTE]
@@ -54,8 +54,8 @@ Pořadí je v tom pořadí, ve kterém uživatel přesune fokus z jednoho ovlád
     > [!NOTE]
     >  Skupina přepínacích tlačítek je do jedné karty zastavit v době běhu. Vybraného tlačítka (tj. tlačítko s jeho <xref:System.Windows.Forms.RadioButton.Checked%2A> vlastnost nastavena na hodnotu `true`) má jeho <xref:System.Windows.Forms.Control.TabStop%2A> automaticky nastavena na `true`, i když má další tlačítka jejich <xref:System.Windows.Forms.Control.TabStop%2A> nastavenou na `false`. Další informace o seskupování <xref:System.Windows.Forms.RadioButton> ovládacích prvků, naleznete v tématu [seskupení Windows Forms ovládací prvky RadioButton do funkce v podobě sady](../../../../docs/framework/winforms/controls/how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md).  
   
-## <a name="see-also"></a>Viz také  
- [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)  
- [Uspořádávání ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- [Ovládací prvky Windows Forms podle funkce](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)
+## <a name="see-also"></a>Viz také:
+- [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)
+- [Uspořádávání ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)
+- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+- [Ovládací prvky Windows Forms podle funkce](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)

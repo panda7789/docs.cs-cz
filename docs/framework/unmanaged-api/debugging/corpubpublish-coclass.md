@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9941a9be7d9f68255636b405db29a623be8d37e8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7a0d796b9c507665ff3ba67153df4691f078e5c5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33406435"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543838"
 ---
 # <a name="corpubpublish-coclass"></a>CorpubPublish – třída typu coclass
 Poskytuje rozhraní pro publikování informací o doménách aplikace a procesy.  
@@ -43,16 +43,16 @@ coclass CorpubPublish {
 |Rozhraní|Popis|  
 |---------------|-----------------|  
 |[ICorPublish – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublish-interface.md)|Poskytuje metody pro publikování informací o procesy a aplikační domény v těchto procesů.|  
-|[ICorPublishAppDomain – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md)|Reprezentuje a poskytuje informace o doméně aplikace v procesu.|  
-|[ICorPublishAppDomainEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-interface.md)|Poskytuje metody, které překračují kolekce aplikační domény, které existují v rámci procesu.|  
+|[ICorPublishAppDomain – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md)|Představuje a poskytuje informace o doméně aplikace v procesu.|  
+|[ICorPublishAppDomainEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-interface.md)|Poskytuje metody, které procházejí kolekci aplikačních doménách, které momentálně existují v rámci procesu.|  
 |[ICorPublishProcess – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md)|Představuje proces, který běží na počítači.|  
-|[ICorPublishProcessEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocessenum-interface.md)|Poskytuje metody, které překračují kolekce procesy, které jsou spuštěny v počítači.|  
+|[ICorPublishProcessEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocessenum-interface.md)|Poskytuje metody, které procházejí kolekci procesy, které jsou spuštěny v počítači.|  
   
 ## <a name="remarks"></a>Poznámky  
- Typický scénář publikování zahrnuje vývojáři, který chce ladění spravovaného kódu, který běží na počítači v rámci domény aplikace. Hostitelské prostředí může používat více než jedné domény aplikace v rámci procesu. Vývojář se má použít grafické uživatelské rozhraní nebo jiných prostředků k zobrazení seznamu všech procesů, které jsou spuštěné v počítači a vyberte konkrétní proces. Seznam by měly obsahovat všechny domény aplikace v rámci procesy, které běží spravovaného kódu. Vývojář můžete identifikovat specifické aplikační doméně a připojit ladicí program k této doméně.  
+ Typický scénář publikování zahrnuje vývojář, který chcete ladit spravovaný kód, který běží na počítači v rámci domény aplikace. Hostitelské prostředí může používat více než jedné domény aplikace v rámci procesu. Vývojář chce použít grafické uživatelské rozhraní nebo jiných prostředků k zobrazení seznamu všechny procesy, které jsou spuštěny v počítači a vybrat konkrétní proces. Seznam by měl obsahovat všechny domény aplikace uvnitř procesy, které jsou spuštěny spravovaného kódu. Vývojář můžete identifikovat specifické aplikační doméně a připojit ladicí program k této doméně.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorPub.idl  
   
@@ -60,5 +60,5 @@ coclass CorpubPublish {
   
  **Verze rozhraní .NET framework:**  [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

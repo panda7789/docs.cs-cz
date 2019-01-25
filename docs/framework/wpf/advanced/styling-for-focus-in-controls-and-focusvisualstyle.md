@@ -6,12 +6,12 @@ helpviewer_keywords:
 - focus [WPF], visual styling
 - styles [WPF], focus visual style
 ms.assetid: 786ac576-011b-4d72-913b-558deccb9b35
-ms.openlocfilehash: 07dd5f015624e934ceb4fd38f23f7e780d185dfc
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: e1cbab51d1c59cb8402617fa3a17c5d18ff7ccb8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43744982"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54562589"
 ---
 # <a name="styling-for-focus-in-controls-and-focusvisualstyle"></a>Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje dvě paralelní mechanismy pro změnu vizuálního vzhledu ovládacího prvku, když dostane fokus klávesnice. První mechanismus je určený nastavením vlastností pro vlastnosti, jako <xref:System.Windows.UIElement.IsKeyboardFocused%2A> ve stylu nebo šablony, která platí pro ovládací prvek. Druhý mechanismus se snaží poskytnout styl samostatné jako hodnotu <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> vlastnost; "zaměřit vizuální styl" vytvoří samostatné vizuálního stromu, který vykreslí nad ovládací prvek, nikoli změna vizuálním stromu ovládacího prvku nebo jiný prvek uživatelského rozhraní pro úpravy element podle jeho nahrazení. Toto téma popisuje scénáře, kde každý z těchto mechanismů je vhodné.  
@@ -76,8 +76,8 @@ ms.locfileid: "43744982"
 ### <a name="other-focus-properties"></a>Další vlastnosti fokus  
  Pokud chcete, aby všechny možné příčiny změny fokus pro vytvoření vizuální chování, byste měli založit setter nebo aktivaci <xref:System.Windows.UIElement.IsFocused%2A> vlastnost závislosti, případně na <xref:System.Windows.UIElement.GotFocus> nebo <xref:System.Windows.UIElement.LostFocus> událostech používaný pro <xref:System.Windows.EventSetter>.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>  
- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Přehled fokusu](../../../../docs/framework/wpf/advanced/focus-overview.md)  
- [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>
+- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+- [Přehled fokusu](../../../../docs/framework/wpf/advanced/focus-overview.md)
+- [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)

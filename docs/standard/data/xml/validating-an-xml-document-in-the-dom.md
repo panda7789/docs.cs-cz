@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d0f5ae64eb1017570a56efab59a4bf1a66d5e02b
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 5688559bcadea309bb0ddb4b156f94540e7be624
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48846237"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664327"
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>Ověřování dokumentu XML v modelu DOM
 <xref:System.Xml.XmlDocument> Třídy nelze ověřit kód XML v objektu modelu dokumentu (DOM) proti schéma XML definice jazyk (XSD) schématu nebo dokumentu typ definice (DTD) ve výchozím nastavení; XML je jenom ověřit, být ve správném formátu.  
@@ -84,9 +84,9 @@ ms.locfileid: "48846237"
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.XmlDocument>  
-- <xref:System.Xml.XmlReader>  
-- <xref:System.Xml.Schema.ValidationEventHandler>  
-- <xref:System.Xml.XmlReaderSettings>  
-- [Zpracování dat XML pomocí modelu DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
+- <xref:System.Xml.XmlDocument>
+- <xref:System.Xml.XmlReader>
+- <xref:System.Xml.Schema.ValidationEventHandler>
+- <xref:System.Xml.XmlReaderSettings>
+- [Zpracování dat XML pomocí modelu DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
 - [Práce se schématy XML](../../../../docs/standard/data/xml/working-with-xml-schemas.md)

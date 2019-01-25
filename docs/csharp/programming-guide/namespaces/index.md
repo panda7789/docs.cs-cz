@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, namespaces
 - namespaces [C#]
 ms.assetid: b1c4ab46-3fad-4ffa-9deb-dd50a2d8c65a
-ms.openlocfilehash: 4abdf8a0008ce50a89eb5f3ad3512a9579dc832a
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: bde7c6fae0afc165a4013645f8d8506ccca06da1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53236749"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744151"
 ---
 # <a name="namespaces-c-programming-guide"></a>Obory názvů (Průvodce programováním v C#)
 
@@ -46,14 +46,14 @@ Obory názvů mají následující vlastnosti:
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Použití oboru názvů](using-namespaces.md)
 - [Postupy: Použití aliasu globálního Namespace](how-to-use-the-global-namespace-alias.md)
 - [Postupy: Použití My Namespace](how-to-use-the-my-namespace.md)
-- [Průvodce programováním v jazyce C#](../index.md)  
+- [Průvodce programováním v jazyce C#](../index.md)
 - [Názvy identifikátorů](../inside-a-program/identifier-names.md)
-- [Klíčová slova oboru názvů](../../language-reference/keywords/namespace-keywords.md)  
-- [using – direktiva](../../language-reference/keywords/using-directive.md)  
-- [:: – operátor](../../language-reference/operators/namespace-alias-qualifer.md)  
+- [Klíčová slova oboru názvů](../../language-reference/keywords/namespace-keywords.md)
+- [using – direktiva](../../language-reference/keywords/using-directive.md)
+- [:: – operátor](../../language-reference/operators/namespace-alias-qualifer.md)
 - [. – operátor](../../language-reference/operators/member-access-operator.md)

@@ -2,12 +2,12 @@
 title: Vlastní pořadí serializace pomocí třídy XmlSerializer
 ms.date: 03/30/2017
 ms.assetid: 975abd20-2a1d-42db-aed3-e898025ccce7
-ms.openlocfilehash: 1dc9a73b45d8e62902ec8c6b7d810154a8a92566
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 159e8e278d7212e5f798f559dc1b51f71f74b127
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44183324"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54718946"
 ---
 # <a name="custom-serialization-order-with-xmlserializer"></a>Vlastní pořadí serializace pomocí třídy XmlSerializer
 [Stáhněte si ukázky](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/CustomOrder.zip.exe)  
@@ -34,9 +34,9 @@ ms.locfileid: "44183324"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Základní serializace](../../../docs/standard/serialization/basic-serialization.md)  
-- [Binární serializace](../../../docs/standard/serialization/binary-serialization.md)  
-- [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
-- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
-- [Serializace](../../../docs/standard/serialization/index.md)  
+- [Základní serializace](../../../docs/standard/serialization/basic-serialization.md)
+- [Binární serializace](../../../docs/standard/serialization/binary-serialization.md)
+- [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)
+- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
+- [Serializace](../../../docs/standard/serialization/index.md)
 - [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)

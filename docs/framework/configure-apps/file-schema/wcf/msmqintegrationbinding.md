@@ -1,17 +1,17 @@
 ---
-title: '&lt;MsmqIntegrationBinding&gt;'
+title: '&lt;msmqIntegrationBinding&gt;'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - msmqIntegrationBinding Element
 ms.assetid: edf277f3-e3bf-4ed8-9f55-83b5788430a7
-ms.openlocfilehash: 09ac3fe2ea86745b9c88ffe9ec999a4978b343fe
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 1517fcaf75ea24bd3bd4e6e90276753c4973d191
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145867"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744918"
 ---
-# <a name="ltmsmqintegrationbindinggt"></a>&lt;MsmqIntegrationBinding&gt;
+# <a name="ltmsmqintegrationbindinggt"></a>&lt;msmqIntegrationBinding&gt;
 Definuje vazbu, která podporuje řazení do fronty pomocí směrování zpráv prostřednictvím služby MSMQ.  
   
  \<system.ServiceModel>  
@@ -92,7 +92,7 @@ msmqIntegrationBinding
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento element vazby slouží k povolení aplikace Windows Communication Foundation (WCF) k odesílání a příjem zpráv z existujících aplikací služby MSMQ, které používají modelu COM, nativní rozhraní API služby MSMQ nebo typy definované v <xref:System.Messaging?displayProperty=nameWithType> obor názvů je můžete použít tento prvek konfigurace k určení způsoby, jak vyřešit fronty přenosu záruky, zda zprávy musí být trvale uložen a jak by měl chráněný a ověření zprávy. Další informace najdete v tématu [jak: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).  
@@ -129,12 +129,12 @@ msmqIntegrationBinding
 </configuration>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement>  
- <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>  
- <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement>  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [Fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement>
+- <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>
+- <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement>
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [Fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)

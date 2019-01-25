@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5c884d07fa35c053b1a3b65c04426ac0e3712621
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d25afe5ecc8dd23e78fd60fbf8452e28c5aa8be5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429670"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54610588"
 ---
 # <a name="flockclrversioncallback-function-pointer"></a>FLockClrVersionCallback – ukazatel na funkci
-Odkazuje na funkci, která běžné volání language runtime (CLR) označíte, že inicializace má buď spustit nebo byla dokončena.  
+Odkazuje na funkci, která běžné volání jazyka runtime (CLR) k označení, že inicializace je zahájena nebo dokončena.  
   
- Tento ukazatel na funkci se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Tento ukazatel na funkci se už nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,10 +35,10 @@ typedef HRESULT (__stdcall *FLockClrVersionCallback) ( );
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce je implementováno modulem hostitele.  
+ Tato funkce je implementováno hostitele.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -46,6 +46,6 @@ typedef HRESULT (__stdcall *FLockClrVersionCallback) ( );
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [LockClrVersion – funkce](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md)  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [LockClrVersion – funkce](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md)
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

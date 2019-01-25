@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 49b42a7fc54af56149b602b337e4a6c853c270cd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6cf4c0eb3f9bb36cb45aa93c576b4efddaa93482
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33406354"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54736530"
 ---
 # <a name="cordebuginternalframetype-enumeration"></a>CorDebugInternalFrameType – výčet
-Určuje typ rámce zásobníku. Tento výčet je používán [icordebuginternalframe::getframetype –](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe-getframetype-method.md) metoda.  
+Určuje typ rámce zásobníku. Tento výčet je používán [icordebuginternalframe::getframetype –](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe-getframetype-method.md) metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,19 +50,19 @@ typedef enum CorDebugInternalFrameType {
 |Člen|Popis|  
 |------------|-----------------|  
 |`STUBFRAME_NONE`|Hodnotu null. `ICorDebugInternalFrame::GetFrameType` Metoda nikdy vrátí tuto hodnotu.|  
-|`STUBFRAME_M2U`|Spravované na nespravované se zakázaným inzerováním rámce.|  
-|`STUBFRAME_U2M`|Rámce nespravovaného do spravovaného kódu.|  
-|`STUBFRAME_APPDOMAIN_TRANSITION`|Přechod mezi doménami aplikací.|  
-|`STUBFRAME_LIGHTWEIGHT_FUNCTION`|Volání metody lightweight.|  
-|`STUBFRAME_FUNC_EVAL`|Spuštění funkce vyhodnocování.|  
-|`STUBFRAME_INTERNALCALL`|Interní volání do modulu CLR.|  
-|`STUBFRAME_CLASS_INIT`|Spuštění inicializaci třídy.|  
+|`STUBFRAME_M2U`|Snímek spravovaného do nespravovaného zástupné procedury.|  
+|`STUBFRAME_U2M`|Se zakázaným inzerováním nespravovaného do spravovaného rámce.|  
+|`STUBFRAME_APPDOMAIN_TRANSITION`|Přechod mezi doménami aplikace.|  
+|`STUBFRAME_LIGHTWEIGHT_FUNCTION`|Volání metody zjednodušené.|  
+|`STUBFRAME_FUNC_EVAL`|Počáteční vyhodnocení funkce.|  
+|`STUBFRAME_INTERNALCALL`|Vnitřní volání do modulu common language runtime.|  
+|`STUBFRAME_CLASS_INIT`|Začátek inicializace třídy.|  
 |`STUBFRAME_EXCEPTION`|Výjimka, která je vyvolána výjimka.|  
-|`STUBFRAME_SECURITY`|Rámce, který se používá pro zabezpečení přístupu kódu.|  
-|`STUBFRAME_JIT_COMPILATION`|Modul runtime je JIT – kompilace metodu.|  
+|`STUBFRAME_SECURITY`|Rámeček pro zabezpečení přístupu kódu.|  
+|`STUBFRAME_JIT_COMPILATION`|Modul runtime je JIT kompilaci metody.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -70,5 +70,5 @@ typedef enum CorDebugInternalFrameType {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9351738e979b49ec23b51a2fa554fc219e163541
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0a6c39989a37f46d684c3a467d5e099ea7167185
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444113"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54624129"
 ---
 # <a name="imetadataconvertergettypelibfrommetadata-method"></a>IMetaDataConverter::GetTypeLibFromMetaData – metoda
-Získá odkazy `ITypeLib` instanci, která představuje knihovny typů, který má zadané názvy knihovny a modulu.  
+Získá ukazatel `ITypeLib` instanci, která představuje knihovnu typů, který má zadané názvy knihovny a modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +39,22 @@ HRESULT GetTypeLibFromMetaData (
   
 #### <a name="parameters"></a>Parametry  
  `strModule`  
- [v] Název modulu knihovny typů.  
+ [in] Název knihovny typů modulu.  
   
  `strTlbName`  
- [v] Název knihovny typů.  
+ [in] Název knihovny typů.  
   
  `ppITL`  
- [out] Ukazatel na umístění, která přijímá adresu `ITypeLib` instanci, která představuje knihovny typů.  
+ [out] Ukazatel na umístění, která bude přijímat adresy `ITypeLib` instanci, která představuje knihovnu typů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataConverter – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataconverter-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataConverter – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataconverter-interface.md)

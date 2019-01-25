@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2ce139669c0a31301f3eecdef4b4d61f83d5e4e1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a9887a05236b213fb439e334cdf1455f8f445e7e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33458936"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671925"
 ---
 # <a name="strongnamesignatureverificationex-function"></a>StrongNameSignatureVerificationEx – funkce
-Získá hodnotu označující, zda manifest sestavení v zadaná cesta obsahuje podpis silného názvu.  
+Získá hodnotu označující, zda obsahuje manifest sestavení v zadané cestě podpis silného názvu.  
   
  Tato funkce je zastaralá. Použití [iclrstrongname::strongnamesignatureverificationex –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverificationex-method.md) metoda místo.  
   
@@ -41,30 +41,30 @@ BOOLEAN StrongNameSignatureVerificationEx (
   
 #### <a name="parameters"></a>Parametry  
  `wszFilePath`  
- [v] Cesta k přenosné spustitelný soubor (.exe nebo .dll) souboru pro sestavení, které má být ověřen.  
+ [in] Cesta k přenositelný spustitelný soubor (.exe nebo .dll) soubor pro sestavení, který se má ověřit.  
   
  `fForceVerification`  
- [v] `true` provést ověření, i když je nezbytné pro přepsání nastavení registru; v opačném `false`.  
+ [in] `true` provádět ověřování, i když je potřeba přepsat nastavení registru; v opačném případě `false`.  
   
  `pfWasVerified`  
- [out] `true` Pokud podpis silného názvu byl ověřený, jinak hodnota `false`. `pfWasVerified` je také nastavena na `false` Pokud ověření bylo úspěšné z důvodu nastavení registru.  
+ [out] `true` Pokud byl podpis silného názvu ověřené; v opačném případě `false`. `pfWasVerified` je také nastavena na `false` Pokud bude ověření úspěšné z důvodu nastavení registru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Pokud ověření byla úspěšná. v opačném `false`.  
+ `true` Pokud bude ověření úspěšné; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- `StrongNameSignatureVerificationEx` poskytuje podobné funkce [strongnamesignatureverification –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignatureverification-function.md) funkce. Ale druhý vstupní parametr a výstupní parametr pro `StrongNameSignatureVerificationEx` typu `BOOLEAN` místo `DWORD`.  
+ `StrongNameSignatureVerificationEx` poskytuje podobné funkci [strongnamesignatureverification –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignatureverification-function.md) funkce. Ale druhé vstupní parametr a výstupní parametr pro `StrongNameSignatureVerificationEx` jsou typu `BOOLEAN` místo `DWORD`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** StrongName.h  
   
- **Knihovna:** zahrnuty jako prostředek v mscoree.dll  
+ **Knihovna:** Zahrnuté jako prostředek v mscoree.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [StrongNameSignatureVerificationEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverificationex-method.md)  
- [StrongNameSignatureVerification – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverification-method.md)  
- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+## <a name="see-also"></a>Viz také:
+- [StrongNameSignatureVerificationEx – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverificationex-method.md)
+- [StrongNameSignatureVerification – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverification-method.md)
+- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7d17ac4230296674381c87851377fcb535837ad3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3a27a50e6fb120e537d28759a79a2b90c6d437e4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416816"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54600450"
 ---
 # <a name="icordebugnativeframegetip-method"></a>ICorDebugNativeFrame::GetIP – metoda
-Získá nativní kód posun umístění, ke které je aktuálně nastaven ukazatel instrukce.  
+Získá kód nativní posun umístění, ke kterému je aktuálně nastavený ukazatele na instrukci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,10 +40,10 @@ HRESULT GetIP (
  [out] Ukazatel na umístění posunu v nativním kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud rámce zásobníku, která je reprezentována tento "ICorDebugNativeFrame" je aktivní, posun je adresa instrukce další spuštění. Pokud tento rámec zásobníku není aktivní, posun je adresa instrukce další budou spuštěny při opětovné aktivaci rámce zásobníku.  
+ Pokud je aktivní rámec zásobníku, která je reprezentována tento icordebugnativeframe "–", je posun adresa další instrukci, která má být proveden. Pokud tento rámec zásobníku není aktivní, posun je adresa další instrukci, který se spustí při opětovné aktivaci rámce zásobníku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -51,5 +51,5 @@ HRESULT GetIP (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

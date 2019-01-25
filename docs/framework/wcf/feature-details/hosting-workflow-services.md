@@ -2,12 +2,12 @@
 title: Hostování služeb pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 2d55217e-8697-4113-94ce-10b60863342e
-ms.openlocfilehash: d51157863984314583c5d225bc9d8d0b6cf74874
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: c933fd2bd46588ccd5c6115fbc2efca72bfadca4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50186093"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54594509"
 ---
 # <a name="hosting-workflow-services"></a>Hostování služeb pracovních postupů
 Služba pracovního postupu musí být hostovaný, aby se reagovat na příchozí zprávy. Služby pracovních postupů pomocí infrastruktury přenosu zpráv WCF a proto hostované podobným způsobem. Stejně jako služby WCF služby pracovních postupů je možné hostovat ve spravované aplikaci, v rámci Internetové informační služby (IIS) nebo v rámci služby pro aktivační proces Windows (WAS). Kromě toho je možné hostovat služby pracovních postupů v rámci Windows Server App Fabric. Další informace o systému Windows Server App Fabric najdete v části [dokumentace ke službě Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=193037), [funkce hostování AppFabric](https://go.microsoft.com/fwlink/?LinkId=196494), a [AppFabric hostování koncepty](https://go.microsoft.com/fwlink/?LinkId=196495). Další informace o různých způsobech hostitele WCF služeb najdete v tématu [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).
@@ -53,7 +53,7 @@ Služba pracovního postupu musí být hostovaný, aby se reagovat na příchoz�
 ## <a name="deployment"></a>Nasazení
  Nástroj nasazení webu byla vytvořená za účelem usnadnění práce pro nasazení. Nástroj umožňuje migrace aplikací mezi službami IIS 6.0 a IIS 7.0, synchronizace serverové farmy a balíčků, archivování a nasazování webových aplikací. Další informace najdete v tématu [nástroj pro nasazení MS](https://go.microsoft.com/fwlink/?LinkId=178690).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Interní informace o hostiteli služby pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-service-host-internals.md)
 - [Konfigurace třídy WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/configuring-workflowservicehost.md)

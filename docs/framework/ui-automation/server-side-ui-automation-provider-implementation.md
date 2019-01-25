@@ -8,16 +8,16 @@ helpviewer_keywords:
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 270267fa961e2d9420364bc11992be9eff03866b
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 94e9c510f7f3c183bf6cbde31e2ead04cc66bfb9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837370"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744112"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Tato část popisuje, jak pro implementaci zprostředkovatele automatizace uživatelského rozhraní na straně serveru pro vlastní ovládací prvek.  
   
@@ -171,12 +171,12 @@ ms.locfileid: "48837370"
   
  K tomu zpřístupňuje poskytovateli kořenové fragment matrice sadu podřízené prvky představující pásma. Každé pásmo má jednoho poskytovatele, který může zveřejnit vlastnosti a vzory. Ve své implementaci <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>, poskytovatel vzdálené vrátí výchozí zprostředkovatel okna pro ovládací prvek HWND, která se získá voláním <xref:System.Windows.Automation.Provider.AutomationInteropProvider.HostProviderFromHandle%2A>a předejte popisovač okna ovládacího prvku. Nakonec implementuje poskytovatele kořenové fragment matrice <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride> rozhraní a v jeho provádění <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride.GetOverrideProviderForHwnd%2A> vrátí odpovídající obsluhy vzdálené správy zprostředkovatele pro ovládací prvek obsažený v zadané HWND.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zprostředkovatelů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)  
- [Vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)  
- [Vrácení vlastností ze zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)  
- [Vyvolávání událostí ze zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)  
- [Povolení navigace u zprostředkovatele fragmentu automatizace uživatelského rozhraní na straně klienta](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)  
- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
- [Příklad jednoduchého zprostředkovatele](https://msdn.microsoft.com/library/c10a6255-e8dc-494b-a051-15111b47984a)  
- [Ukázka fragmentu poskytovatele](https://msdn.microsoft.com/library/778ef1bc-8610-4bc9-886e-aeff94a8a13e)
+## <a name="see-also"></a>Viz také:
+- [Přehled zprostředkovatelů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)
+- [Vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)
+- [Vrácení vlastností ze zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)
+- [Vyvolávání událostí ze zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)
+- [Povolení navigace u zprostředkovatele fragmentu automatizace uživatelského rozhraní na straně klienta](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)
+- [Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)
+- [Příklad jednoduchého zprostředkovatele](https://msdn.microsoft.com/library/c10a6255-e8dc-494b-a051-15111b47984a)
+- [Ukázka fragmentu poskytovatele](https://msdn.microsoft.com/library/778ef1bc-8610-4bc9-886e-aeff94a8a13e)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms]
 - controls [Windows Forms], composite
 ms.assetid: 3cea09e5-4344-4ccb-9858-b66ccac210ff
-ms.openlocfilehash: 9883f9166007405c3f47a9a1d66a3f4c546197d0
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: cd78a0f2513d0e352efa1b1b866627586e6068bd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43884559"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683921"
 ---
 # <a name="varieties-of-custom-controls"></a>Typy vlastních ovládacích prvků
 Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovládací prvky. Funkce ovládacího prvku známé uživatelské můžete rozšířit také existující ovládací prvky prostřednictvím dědičnosti. Můžete taky psát vlastní ovládací prvky, které vlastní vykreslení.  
@@ -53,7 +53,7 @@ Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovláda
   
  Složený ovládací prvek obsahuje všechny vlastní funkce spojené s jednotlivými obsažené ovládací prvky Windows Forms a umožňuje selektivně vystavení a vytvořit vazbu vlastnosti. Složený ovládací prvek také poskytuje spoustu výchozí klávesnice zpracování funkce s žádná náročnost vývoje navíc z vaší strany.  
   
- Například může být postavená složený ovládací prvek pro zobrazení adresy zákaznická data z databáze. Tento ovládací prvek může zahrnovat <xref:System.Windows.Forms.DataGridView> ovládací prvek pro zobrazení databázová pole, <xref:System.Windows.Forms.BindingSource> zpracování vazby ke zdroji dat a <xref:System.Windows.Forms.BindingNavigator> ovládací prvek pro procházení záznamů. Selektivně může zpřístupnit datové vazby vlastnosti, a můžete zabalit a znovu použít celý ovládací prvek z aplikací. Příklad tohoto druhu složeného ovládacího prvku, naleznete v tématu [postupy: použití atributů v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md).  
+ Například může být postavená složený ovládací prvek pro zobrazení adresy zákaznická data z databáze. Tento ovládací prvek může zahrnovat <xref:System.Windows.Forms.DataGridView> ovládací prvek pro zobrazení databázová pole, <xref:System.Windows.Forms.BindingSource> zpracování vazby ke zdroji dat a <xref:System.Windows.Forms.BindingNavigator> ovládací prvek pro procházení záznamů. Selektivně může zpřístupnit datové vazby vlastnosti, a můžete zabalit a znovu použít celý ovládací prvek z aplikací. Příklad tohoto druhu složeného ovládacího prvku, naleznete v tématu [jak: Použití atributů v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md).  
   
  Vytvoření složeného ovládacího prvku, odvozovat <xref:System.Windows.Forms.UserControl> třídy. <xref:System.Windows.Forms.UserControl> Základní třída poskytuje směrování klávesnice pro podřízené ovládací prvky a umožňuje podřízené ovládací prvky pro práci s jako skupinu. Další informace najdete v tématu [vývoj složeného ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md).  
   
@@ -85,7 +85,7 @@ Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovláda
   
  Pro implementaci vlastního ovládacího prvku, je nutné napsat kód pro <xref:System.Windows.Forms.Control.OnPaint%2A> události ovládacího prvku, stejně jako jakýkoli kód specifickými funkcemi, budete potřebovat. Můžete také přepsat <xref:System.Windows.Forms.Control.WndProc%2A> metoda a popisovač zpráv systému windows přímo. Jedná se o procesorově nejvýkonnější způsob vytvoření ovládacího prvku, ale efektivně používat tuto techniku, musíte se seznámit s rozhraním API Microsoft Win32®.  
   
- Příklad vlastního ovládacího prvku je hodiny ovládací prvek, který napodobuje vzhled a chování analogové hodiny. Vlastní vykreslování je vyvolán způsobit rukou hodiny tak, aby v reakci na přesunutí <xref:System.Windows.Forms.Timer.Tick> události z interní <xref:System.Windows.Forms.Timer> komponenty. Další informace najdete v tématu [postup: vývoj jednoduchého ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md).  
+ Příklad vlastního ovládacího prvku je hodiny ovládací prvek, který napodobuje vzhled a chování analogové hodiny. Vlastní vykreslování je vyvolán způsobit rukou hodiny tak, aby v reakci na přesunutí <xref:System.Windows.Forms.Timer.Tick> události z interní <xref:System.Windows.Forms.Timer> komponenty. Další informace najdete v tématu [jak: Vývoj ovládacího prvku jednoduchého Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md).  
   
  **Doporučení**  
   
@@ -96,7 +96,7 @@ Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovláda
 -   Potřebujete implementovat vlastní funkce, které nejsou k dispozici prostřednictvím standardní ovládací prvky.  
   
 ### <a name="activex-controls"></a>ActiveX – ovládací prvky  
- I když byla optimalizována pro infrastrukturu formulářů Windows do hostitelské ovládací prvky Windows Forms, můžete stále použít ovládací prvky ActiveX. Není poskytována podpora pro tuto úlohu v sadě Visual Studio. Další informace najdete v tématu [postupy: Přidání ovládacích prvků ActiveX do formulářů Windows](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md).  
+ I když byla optimalizována pro infrastrukturu formulářů Windows do hostitelské ovládací prvky Windows Forms, můžete stále použít ovládací prvky ActiveX. Není poskytována podpora pro tuto úlohu v sadě Visual Studio. Další informace najdete v tématu [jak: Přidávání ovládacích prvků ActiveX do formulářů Windows](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md).  
   
 ### <a name="windowless-controls"></a>Ovládací prvky bez oken  
  Podpora technologie ActiveX the Microsoft Visual Basic® 6.0and *bez oken* ovládacích prvků. Ovládací prvky bez oken nejsou podporovány v rozhraní Windows Forms.  
@@ -104,11 +104,11 @@ Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovláda
 ## <a name="custom-design-experience"></a>Vlastní návrhové prostředí  
  Pokud potřebujete implementovat vlastní možnosti času návrhu, můžete vytvářet vlastní návrháře. Složené ovládací prvky, odvodit vlastní třídu návrháře z <xref:System.Windows.Forms.Design.ParentControlDesigner> nebo <xref:System.Windows.Forms.Design.DocumentDesigner> třídy. Rozšířené a vlastních ovládacích prvků, jsou odvozeny z vlastní třídu návrháře <xref:System.Windows.Forms.Design.ControlDesigner> třídy.  
   
- Použití <xref:System.ComponentModel.DesignerAttribute> chcete přidružit k vaší návrhář ovládacího prvku. Další informace najdete v tématu [rozšíření podpory během návrhu](https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2) a [postupy: vytvoření Windows Forms ovládací prvek, že trvá výhody z návrhu funkcí](https://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c).  
+ Použití <xref:System.ComponentModel.DesignerAttribute> chcete přidružit k vaší návrhář ovládacího prvku. Další informace najdete v tématu [rozšíření podpory během návrhu](https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2) a [jak: Vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu](https://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c).  
   
-## <a name="see-also"></a>Viz také  
- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
- [Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)  
- [Vývoj složeného ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md)  
- [Rozšíření podpory během návrhu](https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)  
- [Postupy: vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu aplikace](https://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c)
+## <a name="see-also"></a>Viz také:
+- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)
+- [Postupy: Vývoj ovládacího prvku jednoduchého Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)
+- [Vývoj složeného ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/developing-a-composite-windows-forms-control.md)
+- [Rozšíření podpory během návrhu](https://msdn.microsoft.com/library/d6ac8a6a-42fd-4bc8-bf33-b212811297e2)
+- [Postupy: Vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu aplikace](https://msdn.microsoft.com/library/8e0bad0e-56f3-43d2-bf63-a945c654d97c)

@@ -2,12 +2,12 @@
 title: Obory názvů jazyka XAML pro technologii .NET Framework XAML Services
 ms.date: 03/30/2017
 ms.assetid: e4f15f13-c420-4c1e-aeab-9b6f50212047
-ms.openlocfilehash: ac6554cbdeb5bc6e0fe7fb96ea95d0143c293d22
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 2e9e2d9e2257e5e6059210b82a69d7a837254032
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48030863"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54736796"
 ---
 # <a name="xaml-namespaces-for-net-framework-xaml-services"></a>Obory názvů jazyka XAML pro technologii .NET Framework XAML Services
 Obor názvů XAML je pojem, který rozšiřuje definici oboru názvů XML. Podobně jako obor názvů XML, můžete definovat obor názvů XAML pomocí `xmlns` atribut v kódu. Obory názvů XAML jsou také reprezentované v datovém proudu uzlu XAML a jiných rozhraní API služeb XAML. Toto téma definuje pojem oboru názvů XAML a popisuje, jak lze definovat obory názvů XAML a jsou používány kontext schématu XAML a další aspekty rozhraní .NET Framework XAML Services.  
@@ -63,5 +63,5 @@ Obor názvů XAML je pojem, který rozšiřuje definici oboru názvů XML. Podob
   
  Dva další rozhraní API, které jsou relevantní pro obor názvů XAML v rozhraní .NET Framework XAML Services jsou atributy <xref:System.Windows.Markup.XmlnsDefinitionAttribute> a <xref:System.Windows.Markup.XmlnsPrefixAttribute>. Tyto atributy se vztahují na sestavení. <xref:System.Windows.Markup.XmlnsDefinitionAttribute> používá kontext schématu XAML pro interpretaci všechny deklarace oboru názvů XAML, která obsahuje identifikátor URI. <xref:System.Windows.Markup.XmlnsPrefixAttribute> používá nástroje, které generují XAML tak, aby konkrétní obor názvů XAML lze serializovat s příznakem předponu předvídatelné. Další informace najdete v tématu [XAML-Related CLR atributy pro vlastní typy a knihovny](../../../docs/framework/xaml-services/xaml-related-clr-attributes-for-custom-types-and-libraries.md).  
   
-## <a name="see-also"></a>Viz také  
- [Principy struktur a koncepcí streamu uzlů XAML](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)
+## <a name="see-also"></a>Viz také:
+- [Principy struktur a koncepcí streamu uzlů XAML](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
-ms.openlocfilehash: c4e2939c0868bc452496c2b8c4435b5ef316e573
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 48b151bb718cb05e171909d41ce4415a0988d1b2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030526"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54662579"
 ---
 # <a name="data-contract-schema-reference"></a>Schéma kontraktů dat – referenční informace
 Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Runtime.Serialization.DataContractSerializer> k popisu common language runtime (CLR) typy pro serializaci kódu XML.  
@@ -40,7 +40,7 @@ Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Ru
   
 ### <a name="xsschema-attributes"></a>\<xs:Schema >: atributy  
   
-|Atribut|Kontrakt DataContract|  
+|Atribut|DataContract|  
 |---------------|------------------|  
 |`attributeFormDefault`|Ignorovat.|  
 |`blockDefault`|Ignorovat.|  
@@ -674,16 +674,16 @@ new XmlQualifiedName("Person","http://Microsoft.ServiceModel.Samples");
       <xs:sequence minOccurs="1" maxOccurs="1">  
          <xs:element name="DateTime" type="xs:dateTime"  
          minOccurs="1" maxOccurs="1" />  
-         <xs:elementname="OffsetMinutes" type="xs:short"  
+         <xs:element name="OffsetMinutes" type="xs:short"  
          minOccurs="1" maxOccurs="1" />  
       </xs:sequence>  
    </xs:complexType>  
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.DataContractSerializer>  
- <xref:System.Runtime.Serialization.DataContractAttribute>  
- <xref:System.Runtime.Serialization.DataMemberAttribute>  
- <xref:System.Runtime.Serialization.XsdDataContractImporter>  
- [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.DataContractSerializer>
+- <xref:System.Runtime.Serialization.DataContractAttribute>
+- <xref:System.Runtime.Serialization.DataMemberAttribute>
+- <xref:System.Runtime.Serialization.XsdDataContractImporter>
+- [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)

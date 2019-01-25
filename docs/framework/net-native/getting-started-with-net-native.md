@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 41679d4041a6a5a7b9b71a451a083c539d6b4c7b
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: dd46266286687881956e5de31963ac5957dede84
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196484"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54641574"
 ---
 # <a name="getting-started-with-net-native"></a>Začínáme s .NET Native
 Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stávající aplikace pro Windows Store, můžete použít stejnou sadu postupy. Chcete-li vytvořit [!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace, postupujte podle těchto kroků:  
@@ -26,7 +26,7 @@ Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stáva
 >  Pokud migrujete stávající aplikace pro Windows Store [!INCLUDE[net_native](../../../includes/net-native-md.md)], nezapomeňte si přečíst [migrace Windows Store aplikace pro .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md).  
   
 <a name="Step1"></a>   
-## <a name="step-1-develop-and-test-debug-builds-of-your-uwp-app"></a>Krok 1: Vývoj a ladění testů sestavení vaší aplikace pro UPW  
+## <a name="step-1-develop-and-test-debug-builds-of-your-uwp-app"></a>Krok 1: Vyvíjejte a testujte sestavení pro ladění vaší aplikace UPW  
  Ať už vyvíjíte novou aplikaci nebo migraci stávající, opakujte stejný postup jako u všech aplikací pro Windows.  
   
 1.  Vytvoření nového projektu pro UPW v sadě Visual Studio pomocí šablony aplikace Universal Windows pro jazyk Visual C# nebo Visual Basic. Ve výchozím nastavení cílit na všechny aplikace UPW CoreCLR a jejich sestavení pro vydání jsou kompilovány pomocí .NET Native řetězec nástroje.  
@@ -41,7 +41,7 @@ Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stáva
  Ve výchozím nastavení, sestavení pro ladění byly zkompilovány JIT umožňuje rychlé nasazení F5, zatímco verze sestavení jsou kompilovány pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)] předkompilační technologie. To znamená, že by měl sestavení a testování ladění sestavení vaší aplikace k zajištění, že fungují normálně před kompilací s .NET Native řetězec nástroje.  
   
 <a name="Step2"></a>   
-## <a name="step-2-handle-additional-reflection-and-serialization-usage"></a>Krok 2: Zpracování další reflexe a použití serializace  
+## <a name="step-2-handle-additional-reflection-and-serialization-usage"></a>Krok 2: Zpracování další využívání reflection a serializace  
  Soubor direktiv modulu runtime, Default.rd.xml, je automaticky přidán do projektu po jeho vytvoření. Pokud vyvíjíte v jazyce C#, zjistí ve vašem projektu **vlastnosti** složky. Pokud vyvíjíte v jazyce Visual Basic, zjistí ve vašem projektu **Můj projekt** složky.  
   
 > [!NOTE]
@@ -71,10 +71,10 @@ Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stáva
 >  Názvy typů používaných pro soubory direktivy modulu runtime musí být plně kvalifikovaný. Soubor musíte například zadat "System.String" místo "String".  
   
 <a name="Step3"></a>   
-## <a name="step-3-deploy-and-test-the-release-builds-of-your-app"></a>Krok 3: Nasaďte a otestujte buildy vydaných verzí vaší aplikace  
+## <a name="step-3-deploy-and-test-the-release-builds-of-your-app"></a>Krok 3: Nasazení a testování buildy vydaných verzí vaší aplikace  
  Po aktualizaci souboru direktiv modulu runtime, můžete znovu sestavit a nasadit buildy vydaných verzí vaší aplikace. .NET native binární soubory jsou umístěny v podadresáři ILC.out v adresáři uvedeném na **výstupní cesta sestavení** textového pole projektu **vlastnosti** dialogovém okně **kompilaci**kartu. Binární soubory, které nejsou v této složce nebyla kompilována s .NET Native. Důkladně otestujte vaši aplikaci a testovat všechny scénáře, včetně scénářů selhání, na všech jeho cílové platformy.  
   
- Pokud vaše aplikace nebude fungovat správně (zejména v případech, kdy vyvolá [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) nebo [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) výjimky za běhu), postupujte podle pokynů v následujících části [krok 4: ruční vyřešení chybějí metadata](#Step4). Povolení výjimkách first-chance vám mohou pomoci najít tyto chyby.  
+ Pokud vaše aplikace nebude fungovat správně (zejména v případech, kdy vyvolá [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) nebo [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) výjimky za běhu), postupujte podle pokynů v následujících části [krok 4: Ruční vyřešení chybějí metadata](#Step4). Povolení výjimkách first-chance vám mohou pomoci najít tyto chyby.  
   
  Pokud jste otestovali a ladit ladění sestavení vaší aplikace a Věříme, že jste odstranili [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) a [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) výjimky, měli byste otestovat aplikace jako optimalizované [!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace. K tomuto účelu změnit konfiguraci aktivního projektu z **ladění** k **vydání**.  
   
@@ -112,11 +112,11 @@ Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stáva
   
 -   [Výjimky za běhu v nativních aplikací .NET](../../../docs/framework/net-native/runtime-exceptions-in-net-native-apps.md)  
   
-## <a name="see-also"></a>Viz také  
- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
- [NIB: .NET Native instalací a konfigurací](https://msdn.microsoft.com/library/7c9bc375-8b87-4c33-bede-72d513e362ec)  
- [.NET Native a kompilace](../../../docs/framework/net-native/net-native-and-compilation.md)  
- [Reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)  
- [Rozhraní API, která závisí na reflexi](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)  
- [Serializace a metadata](../../../docs/framework/net-native/serialization-and-metadata.md)  
- [Migrace aplikace pro Windows Store do .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md)
+## <a name="see-also"></a>Viz také:
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+- [NIB: .NET Native instalací a konfigurací](https://msdn.microsoft.com/library/7c9bc375-8b87-4c33-bede-72d513e362ec)
+- [.NET Native a kompilace](../../../docs/framework/net-native/net-native-and-compilation.md)
+- [Reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)
+- [Rozhraní API, která závisí na reflexi](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)
+- [Serializace a metadata](../../../docs/framework/net-native/serialization-and-metadata.md)
+- [Migrace aplikace pro Windows Store do .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md)

@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4959d595030df476f5554841c2ae3c73a86a2c31
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 70d2d4ed0d2b923b1095fd0ce898330c319fa5cf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446656"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54637369"
 ---
 # <a name="corserializationtype-enumeration"></a>CorSerializationType – výčet
-Určuje, jak modul common language runtime serializovat objekt.  
+Určuje, jak je objekt serializován modul common language runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -59,33 +59,33 @@ typedef enum CorSerializationType {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`SERIALIZATION_TYPE_UNDEFINED`|Serializace objektu není definován.|  
-|`SERIALIZATION_TYPE_BOOLEAN`|Objekt serializován jako typem logická hodnota|  
-|`SERIALIZATION_TYPE_CHAR`|Objekt serializován jako typ znak.|  
-|`SERIALIZATION_TYPE_I1`|Objekt serializován jako 1bajtový znaménkem.|  
-|`SERIALIZATION_TYPE_U1`|Objekt serializován jako celé číslo bez znaménka 1bajtový.|  
-|`SERIALIZATION_TYPE_I2`|Objekt serializován jako 2bajtová znaménkem.|  
-|`SERIALIZATION_TYPE_U2`|Objekt serializován jako celé číslo bez znaménka 2bajtová.|  
-|`SERIALIZATION_TYPE_I4`|Objekt serializován jako 4bajtový znaménkem.|  
-|`SERIALIZATION_TYPE_U4`|Objekt serializován jako celé číslo bez znaménka 4bajtový.|  
-|`SERIALIZATION_TYPE_I8`|Objekt serializován jako znaménkem 8 bajtů.|  
-|`SERIALIZATION_TYPE_U8`|Objekt serializován jako celé číslo bez znaménka 8 bajtů.|  
-|`SERIALIZATION_TYPE_R4`|Objekt serializován jako 4bajtový plovoucí desetinné čárky.|  
-|`SERIALIZATION_TYPE_R8`|Objekt serializován jako plovoucí desetinné čárky 8 bajtů.|  
-|`SERIALIZATION_TYPE_STRING`|Objekt serializován jako typ System.String.|  
-|`SERIALIZATION_TYPE_SZARRAY`|Objekt serializován jako jednorozměrná, nulové dolní mez pole.|  
+|`SERIALIZATION_TYPE_UNDEFINED`|Serializace objektu není definováno.|  
+|`SERIALIZATION_TYPE_BOOLEAN`|Objekt serializován jako typ Boolean|  
+|`SERIALIZATION_TYPE_CHAR`|Objekt serializován jako typ znaku.|  
+|`SERIALIZATION_TYPE_I1`|Objekt serializován jako celé číslo se znaménkem 1 bajt.|  
+|`SERIALIZATION_TYPE_U1`|Objekt serializován jako celé číslo bez znaménka 1 bajt.|  
+|`SERIALIZATION_TYPE_I2`|Objekt serializován jako celé číslo se znaménkem 2 bajtů.|  
+|`SERIALIZATION_TYPE_U2`|Objekt serializován jako celé číslo bez znaménka 2 bajtů.|  
+|`SERIALIZATION_TYPE_I4`|Objekt serializován jako celé číslo se znaménkem na 4 bajty.|  
+|`SERIALIZATION_TYPE_U4`|Objekt serializován jako celé číslo bez znaménka na 4 bajty.|  
+|`SERIALIZATION_TYPE_I8`|Objekt serializován jako celé číslo se znaménkem 8 bajtů.|  
+|`SERIALIZATION_TYPE_U8`|Objekt serializován jako 8bitové celé číslo bez znaménka.|  
+|`SERIALIZATION_TYPE_R4`|Objekt serializován jako plovoucí desetinnou čárkou na 4 bajty.|  
+|`SERIALIZATION_TYPE_R8`|Objekt serializován jako plovoucí desetinnou čárkou 8 bajtů.|  
+|`SERIALIZATION_TYPE_STRING`|Objekt serializován jako typu System.String.|  
+|`SERIALIZATION_TYPE_SZARRAY`|Objekt serializován jako jednorozměrné, nula dolní mez pole.|  
 |`SERIALIZATION_TYPE_TYPE`|Objekt serializován jako obecného typu.|  
-|`SERIALIZATION_TYPE_TAGGED_OBJECT`|Objekt serializován jako objekt s příznakem.|  
+|`SERIALIZATION_TYPE_TAGGED_OBJECT`|Objekt serializován jako objekt příznakem.|  
 |`SERIALIZATION_TYPE_FIELD`|Objekt serializován jako pole.|  
 |`SERIALIZATION_TYPE_PROPERTY`|Objekt serializován jako vlastnost.|  
-|`SERIALIZATION_TYPE_ENUM`|Objekt serializován jako Výčtový objekt.|  
+|`SERIALIZATION_TYPE_ENUM`|Objekt serializován jako výčet.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

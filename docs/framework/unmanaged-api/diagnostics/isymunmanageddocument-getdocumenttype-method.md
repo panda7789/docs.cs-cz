@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0460086874af38cad348c965237f8c423f18e868
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: adad8854052d76476076e5e1357f6d3e2dec1052
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33435993"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54629472"
 ---
 # <a name="isymunmanageddocumentgetdocumenttype-method"></a>ISymUnmanagedDocument::GetDocumentType – metoda
 Získá typ dokumentu tohoto dokumentu.  
@@ -36,10 +36,10 @@ HRESULT GetDocumentType(
   
 #### <a name="parameters"></a>Parametry  
  `pRetVal`  
- [out] Ukazatel na proměnnou, která přijímá typ dokumentu.  
+ [out] Ukazovat na proměnnou, která přijímá typ dokumentu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda bude úspěšná.  
+ S_OK, pokud metoda uspěje.  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedDocument – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedDocument – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - /win32icon compiler option [C#]
 - -win32icon compiler option [C#]
 ms.assetid: 756d9b6d-ab07-41b7-ba58-5bd88f711138
-ms.openlocfilehash: 5014b1da714f8e29f869d4641da93796a607aa4d
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: e4558084357c8ce07004a8ed71aef586a707f1a1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48027783"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54591744"
 ---
 # <a name="-win32icon-c-compiler-options"></a>-win32icon (možnosti kompilátoru C#)
 **-Win32icon** možnost vloží soubor .ico do výstupního souboru, který dává výstupnímu souboru požadovaný vzhled v Průzkumníku souborů.  
@@ -50,7 +50,7 @@ ms.locfileid: "48027783"
 csc -win32icon:rf.ico in.cs  
 ```  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

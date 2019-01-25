@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 761f1c66-631c-47af-aa86-ad9c50cfa453
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b3d61fcbab4c905ba675e08346ea7cb28b0e710c
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 19edbebb4dcc4ad48c28ee427084510f8d743c5e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845502"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54637826"
 ---
 # <a name="how-to-encrypt-xml-elements-with-x509-certificates"></a>Postupy: Šifrování XML elementů pomocí certifikátů X.509
 Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názvů k šifrování element v dokumentu XML.  Šifrování XML je standardní způsob pro výměnu nebo ukládání zašifrovaných dat XML, nemusíme mít starosti se snadno číst data.  Další informace o standardních šifrování XML, naleznete v tématu Specifikace World Wide Web Consortium (W3C) pro šifrování XML se nachází v <https://www.w3.org/TR/xmldsig-core/>.  
@@ -30,7 +30,7 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názv�
   
  V tomto příkladu šifruje elementu XML s použitím dva klíče.  Vygeneruje certifikát X.509 test pomocí [Certificate Creation Tool (Makecert.exe)](https://msdn.microsoft.com/library/windows/desktop/aa386968.aspx) a uloží certifikát do úložiště certifikátů.  V příkladu potom programově načte příslušný certifikát a použije k zašifrování – element XML pomocí <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> metody.  Interně <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> metoda vytvoří oddělený klíč relace a použije k zašifrování dokumentu XML. Tato metoda zašifruje klíč relace a uloží ho spolu s šifrované XML v rámci nového <`EncryptedData`> element.  
   
- Chcete-li dešifrovat elementu XML, jednoduše zavolejte <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> metodu, která automaticky načte příslušný certifikát X.509 z úložiště a provede nezbytné dešifrování.  Další informace o tom, jak dešifrování elementu XML, který byl zašifrován pomocí tohoto postupu najdete v tématu [postupy: dešifrování elementů XML pomocí certifikátů X.509](../../../docs/standard/security/how-to-decrypt-xml-elements-with-x-509-certificates.md).  
+ Chcete-li dešifrovat elementu XML, jednoduše zavolejte <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> metodu, která automaticky načte příslušný certifikát X.509 z úložiště a provede nezbytné dešifrování.  Další informace o tom, jak dešifrování elementu XML, který byl zašifrován pomocí tohoto postupu najdete v tématu [jak: Dešifrování elementů XML pomocí certifikátů X.509](../../../docs/standard/security/how-to-decrypt-xml-elements-with-x-509-certificates.md).  
   
  Tento příklad je vhodný pro situace, kdy je potřeba šifrovaná data sdílet více aplikací nebo pokud aplikace potřebuje k uložení šifrovaná data mezi časem, které běží.  
   
@@ -118,5 +118,5 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názv�
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Security.Cryptography.Xml>  
+- <xref:System.Security.Cryptography.Xml>
 - [Postupy: Dešifrování elementů XML pomocí certifikátů X.509](../../../docs/standard/security/how-to-decrypt-xml-elements-with-x-509-certificates.md)

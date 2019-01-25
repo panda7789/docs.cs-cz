@@ -18,54 +18,55 @@ helpviewer_keywords:
 - argument lists [Visual Basic]
 - procedures [Visual Basic], parameter lists
 ms.assetid: ff275aff-aa13-40df-bd4c-63486db8c1e9
-ms.openlocfilehash: b0ab186945b456d7fb4dde3f52724b08a99e2827
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 42f85ed98f399c96f89879129b085f25ab117096
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54731735"
 ---
 # <a name="procedure-parameters-and-arguments-visual-basic"></a>Parametry a argumenty procedury (Visual Basic)
-Ve většině případů musí procedury některé informace o v případech, ve kterých byla volána. Procedury, která provádí opakovaných nebo sdíleného úlohy používá různé informace pro každé volání. Tyto informace se skládá z proměnné, konstanty a výrazy, které se předávají k postupu při jeho volání.  
+Ve většině případů postup potřebuje určité informace o okolnostech, ve kterých byla volána. Postup, který provádí úlohy opakovaných nebo sdílené používá různé informace pro každé volání. Tyto informace se skládá z proměnné, konstanty a výrazy, které předáváte k postupu při jeho volání.  
   
- A *parametr* představuje hodnotu, která procedura očekává, že můžete zadat při jeho volání. Deklarace procedury definuje jeho parametry.  
+ A *parametr* představuje hodnotu, která procedura očekává, že můžete zadat při jeho volání. Podle postupu prohlášení definuje jeho parametry.  
   
- Můžete definovat procedura se žádné parametry, parametr jeden nebo více než jeden. Se označuje jako součást definice procedury, která určuje parametry *seznam parametrů*.  
+ Můžete definovat postup s žádné parametry, jeden parametr nebo více než jeden. Je volána část definice procedury, která určuje parametry *seznam parametrů*.  
   
- *Argument* představuje hodnotu zadáte parametr postupu při voláním procedury. Volání kódu poskytuje argumenty, když se volá proceduru. Část volání procedury, která určuje argumenty, které se nazývá *seznam argumentů*.  
+ *Argument* představuje hodnotu zadáte parametr procedury při volání procedury. Volající kód poskytuje argumenty při volání postup. Část volání procedury, která určuje argumenty se nazývá *seznam argumentů*.  
   
- Následující obrázek znázorňuje kód volání postup `safeSquareRoot` ze dvou různých míst. První volání předá hodnotu proměnné `x` (4.0) na parametr `number`a návratovou hodnotu v `root` (2.0) je přiřazen k proměnné `y`. Druhé volání předá hodnotu literálu 9.0 k `number`a přiřadí návratovou hodnotu (3.0) k proměnné `z`.  
+ Následující obrázek znázorňuje kódu volající proces `safeSquareRoot` ze dvou různých míst. První volání předá hodnotu proměnné `x` (4.0) k parametru `number`a návratová hodnota v `root` (2.0) je přiřazená k proměnné `y`. Druhé volání předá hodnotu literálu 9.0 na `number`a přiřadí proměnné návratovou hodnotu (3.0) `z`.  
   
- ![Grafický diagram předání argument na parametr](./media/parametersargue.gif "ParametersArgue")  
-Předávání argument na parametr  
+ ![Grafický diagram předání argumentu pro parametr](./media/parametersargue.gif "ParametersArgue")  
+Předání argumentu pro parametr  
   
  Další informace najdete v tématu [rozdíly mezi parametry a argumenty](./differences-between-parameters-and-arguments.md).  
   
-## <a name="parameter-data-type"></a>Typ dat parametru  
- Definovat datový typ pro parametr pomocí `As` klauzuli v jeho deklaraci. Například následující funkce přijme řetězce a celé číslo.  
+## <a name="parameter-data-type"></a>Datový typ parametru  
+ Definovat datový typ pro parametr pomocí `As` klauzule v jeho deklaraci. Například následující funkce přijímá řetězec a celé číslo.  
   
  [!code-vb[VbVbcnProcedures#32](./codesnippet/VisualBasic/procedure-parameters-and-arguments_1.vb)]  
   
- Pokud kontrola typu přepínače ([Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) je `Off,` `As` klauzule je volitelné, s tím rozdílem, že pokud žádné jeden parametr používá ji, všechny parametry musí používat. Pokud kontrola typu `On`, `As` klauzule je vyžadována pro všechny parametry procedur.  
+ Pokud kontrola typu ([Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) je `Off,` `As` klauzule je volitelné, s tím rozdílem, že pokud ho používáte jakékoli jeden parametr, musíte použít všechny parametry, ho. Pokud je kontrola typu `On`, `As` klauzule se vyžaduje pro všechny parametry procedury.  
   
- Pokud kód volání očekává, zadejte argument s datovým typem, který se liší od odpovídajícího parametru, jako například `Byte` k `String` parametru, je nutné provést s některou z následujících:  
+ Pokud volající kód očekává, že chcete zadat argument s datovým typem, který se liší od odpovídajícího parametru, například `Byte` k `String` parametr, musíte udělat jednu z následujících:  
   
--   Zadejte pouze argumenty s typy dat, které rozšíří na datový typ parametru;  
+-   Zadejte pouze argumenty s datovými typy, které rozšířit na datový typ parametru;  
   
--   Nastavit `Option Strict Off` umožňuje implicitní zužující převody; nebo  
+-   Nastavte `Option Strict Off` povolit implicitní zužující převody; nebo  
   
--   Explicitně převést na datový typ pomocí klíčového slova převodu.  
+-   Použijte klíčové slovo převodu k explicitnímu převodu datového typu.  
   
 ### <a name="type-parameters"></a>Parametry typu  
- A *obecný postup* definuje také nejméně jeden *parametry typu* kromě jeho normální parametry. Obecný postup umožňuje kód volání předat různé datové typy pokaždé, když ho volá proceduru, takže ho můžete přizpůsobit datové typy požadavků na jednotlivých volání. V tématu [obecné procedury v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).  
+ A *obecný postup* také definuje jeden nebo více *parametry typu* kromě své normální parametry. Obecný postup umožňuje volajícímu kódu k předání různých typů dat pokaždé, když volá proceduru, takže ho můžete přizpůsobit datové typy s požadavky každého jednotlivého volání. Zobrazit [obecné procedury v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).  
   
-## <a name="see-also"></a>Viz také  
- [Procedury](./index.md)  
- [Procedury Sub](./sub-procedures.md)  
- [Procedury funkce](./function-procedures.md)  
- [Procedury vlastnosti](./property-procedures.md)  
- [Procedury operátoru](./operator-procedures.md)  
- [Postupy: Definování parametru pro proceduru](./how-to-define-a-parameter-for-a-procedure.md)  
- [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)  
- [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)  
- [Přetížení procedury](./procedure-overloading.md)  
- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury](./index.md)
+- [Procedury Sub](./sub-procedures.md)
+- [Procedury funkce](./function-procedures.md)
+- [Procedury vlastnosti](./property-procedures.md)
+- [Procedury operátoru](./operator-procedures.md)
+- [Postupy: Definování parametru pro proceduru](./how-to-define-a-parameter-for-a-procedure.md)
+- [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)
+- [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)
+- [Přetížení procedury](./procedure-overloading.md)
+- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 96278bb7-6eab-4612-8594-ceebfc887d81
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3440e0869bfd131f8a57a74af6105716d4b72935
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 897f49dc783885728f7d7242482a2b42f3a114bc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43883719"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54498070"
 ---
 # <a name="latency-modes"></a>Latentní režimy
 Uvolnit objekty, uvolňování, musíte zastavit všechna vlákna provádění v aplikaci. V některých situacích, například když aplikace načítá data nebo zobrazí obsah úplné uvolnění paměti dochází při kritické době a bránit ve výkonu. Můžete upravit parametry systému uvolňování paměti tak, že nastavíte <xref:System.Runtime.GCSettings.LatencyMode%2A?displayProperty=nameWithType> vlastnost na jednu z <xref:System.Runtime.GCLatencyMode?displayProperty=nameWithType> hodnoty.  
@@ -56,6 +56,6 @@ Uvolnit objekty, uvolňování, musíte zastavit všechna vlákna provádění v
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.GC?displayProperty=nameWithType>  
-- [Vyvolané kolekce](../../../docs/standard/garbage-collection/induced.md)  
+- <xref:System.GC?displayProperty=nameWithType>
+- [Vyvolané kolekce](../../../docs/standard/garbage-collection/induced.md)
 - [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)

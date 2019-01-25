@@ -2,12 +2,12 @@
 title: Připojovací řetězce v ADO.NET
 ms.date: 10/10/2018
 ms.assetid: 745c5f95-2f02-4674-b378-6d51a7ec2490
-ms.openlocfilehash: 078fdab257115296f9ff00330265cb14ff8674c8
-ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
+ms.openlocfilehash: c765eee661858499240344cb5059fe1fa9a58ab5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50409454"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54627561"
 ---
 # <a name="connection-strings-in-adonet"></a>Připojovací řetězce v ADO.NET
 
@@ -57,6 +57,6 @@ Připojovací řetězce s ručně vytvořeným za běhu z neověřený vstup už
  [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
  Ukazuje postupy ochrany osobních údajů pro připojení ke zdroji dat.
   
-## <a name="see-also"></a>Viz také  
- [Připojení ke zdroji dat](/cpp/data/odbc/connecting-to-a-data-source)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Připojení ke zdroji dat](/cpp/data/odbc/connecting-to-a-data-source)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

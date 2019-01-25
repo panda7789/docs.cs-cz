@@ -7,40 +7,40 @@ helpviewer_keywords:
 - application settings [Windows Forms]
 - Windows Forms, application settings
 ms.assetid: 64090a34-8556-4904-8ea0-20efe9f8c886
-ms.openlocfilehash: 2c707d9ab2fd2be611fe0872501b45665d0a349e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6179837a072c9e4de8e0e8c71a2723942d010899
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517167"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54636966"
 ---
 # <a name="application-settings-for-windows-forms"></a>Nastavení aplikace pro Windows Forms
-Funkce nastavení aplikace Windows Forms umožňuje snadno vytvářet, ukládat a udržovat vlastní aplikaci a uživatelské předvolby v klientovi. Pomocí nastavení aplikace můžete uložit pouze data aplikací, jako je například databázové připojovací řetězce, ale také uživatelská data, jako třeba pozic panelu nástrojů a naposledy použít seznamy.  
+Nastavení aplikace součástí Windows Forms umožňuje snadno vytvářet, ukládat a udržovat vlastní aplikace a preference uživatelů v klientském počítači. Pomocí nastavení aplikace lze uložit pouze data aplikací, například databázové připojovací řetězce, ale také uživatelská data, jako je například pozic panelu nástrojů a naposledy použitých seznamů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled nastavení aplikace](~/docs/framework/winforms/advanced/application-settings-overview.md)  
- Popisuje postup vytvoření a uložení dat nastavení jménem vaší aplikace a uživatele.  
+ Popisuje, jak vytvářet a ukládat nastavení data jménem aplikace i vaše uživatele.  
   
  [Architektura nastavení aplikace](~/docs/framework/winforms/advanced/application-settings-architecture.md)  
- Popisuje, jak funkce funguje v nastavení aplikace a jsou zde popsány pokročilé funkce architektury, jako jsou seskupené nastavení a nastavení klíče.  
+ Popisuje, jak funkce nastavení aplikace a zkoumá možnosti pokročilé funkce architektury, jako jsou seskupené nastavení a nastavení klíče.  
   
  [Atributy nastavení aplikace](~/docs/framework/winforms/advanced/application-settings-attributes.md)  
- Uvádí a popisuje atributy, které můžete použít pro třídu obálky nastavení aplikace nebo jeho nastavení vlastnosti.  
+ Uvádí a popisuje atributy, které můžete použít pro třídu obálky nastavení aplikace nebo nastavení vlastností.  
   
  [Nastavení aplikace pro vlastní ovládací prvky](~/docs/framework/winforms/advanced/application-settings-for-custom-controls.md)  
- Popisuje, co je třeba provést poskytnout vlastní ovládací prvky umožňuje zachovat nastavení aplikace, když jsou hostované v aplikacích třetích stran.  
+ Tento článek popisuje, co je třeba provést na své vlastní ovládací prvky umožňují zachovat nastavení aplikace, když jsou hostované v aplikacích třetích stran.  
   
- [Postupy: Vytváření nastavení aplikace](~/docs/framework/winforms/advanced/how-to-create-application-settings.md)  
- Ukazuje vytvoření nové nastavení aplikace, které jsou nastavené jako trvalé mezi relacemi aplikace.  
+ [Postupy: Vytvořit nastavení aplikace](~/docs/framework/winforms/advanced/how-to-create-application-settings.md)  
+ Popisuje vytvoření nové nastavení aplikace, které jsou trvalé mezi jednotlivými relacemi aplikace.  
   
  [Postupy: Ověření nastavení aplikace](~/docs/framework/winforms/advanced/how-to-validate-application-settings.md)  
- Ukazuje nastavení ověřování aplikace předtím, než jsou nastavené jako trvalé.  
+ Ukazuje nastavení ověřování aplikace předtím, než jsou trvalé.  
   
 ## <a name="related-topics"></a>Související témata
 
-[Windows Forms konfigurační oddíl](../../../../docs/framework/configure-apps/file-schema/winforms/index.md)    
-Dokumenty nastavení pro povolení vysoké DPI podporují ve formulářové aplikaci Windows od verze 4.7 rozhraní .NET Framework.
+[Konfigurační oddíl pro model Windows Forms](../../../../docs/framework/configure-apps/file-schema/winforms/index.md)    
+Dokumenty podporují nastavení pro povolení vysokého nastavení DPI ve formulářové aplikaci Windows od verze rozhraní .NET Framework 4.7.
 
-## <a name="see-also"></a>Viz také  
-  
-[Windows Forms](../index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Windows Forms](../index.md)

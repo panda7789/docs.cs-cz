@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 02f57fdbbc1ea9a391d9c58c7ab49af0ef02f001
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2a108ec27cc4f8ed9d9d3c9227bf6ab0815fa933
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426952"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54739690"
 ---
 # <a name="isymunmanagedwriteropennamespace-method"></a>ISymUnmanagedWriter::OpenNamespace – metoda
-Otevře se nový obor názvů. Tuto metodu volejte před definováním metody nebo proměnné, které zabírají obor názvů. Mohou být vnořené obory názvů.  
+Otevře se nový obor názvů. Tuto metodu volejte před definováním metody nebo proměnné, které zabírají oboru názvů. Mohou být vnořené obory názvů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,14 +36,14 @@ HRESULT OpenNamespace(
   
 #### <a name="parameters"></a>Parametry  
  `name`  
- [v] Ukazatel na název nového oboru názvů.  
+ [in] Ukazatel na název nového oboru názvů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)  
- [CloseNamespace – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closenamespace-method.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [CloseNamespace – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closenamespace-method.md)

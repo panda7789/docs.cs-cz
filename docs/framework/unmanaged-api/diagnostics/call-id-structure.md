@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f8d6b16f3eeb32e41f3568e0b237f18c945a8cb8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 204c2dfbf28f95c1b8c2d2c1b757730e64a8e91d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423894"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54503700"
 ---
 # <a name="callid-structure"></a>CALL_ID – struktura
-Poskytuje informace o funkci, která je volána ladicí program. Najdete v článku [inotifysink2 –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) rozhraní pro další informace.  
+Poskytuje informace o ladicím programu o funkci, která je volána. Zobrazit [inotifysink2 –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) rozhraní pro další informace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,9 +44,9 @@ typedef struct tagCALL_ID
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`szMachine`|Identifikuje počítač, který je uskutečněním hovoru.|  
-|`dwPid`|Identifikuje počítač procesoru.|  
-|`pUserThread`|Identifikuje vlákno, které provádí volání.|  
+|`szMachine`|Identifikuje počítač, který provádí volání.|  
+|`dwPid`|Určuje procesor počítače.|  
+|`pUserThread`|Identifikuje vlákna, která provádí volání.|  
 |`addrStackPointer`|Určuje adresu zásobníku volání.|  
 |`szEntryPoint`|Určuje adresu volání.|  
 |`szDestinationMachine`|Identifikuje počítač, který provede volání.|  
@@ -54,6 +54,6 @@ typedef struct tagCALL_ID
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** ProtocolNotify2.idl  
   
-## <a name="see-also"></a>Viz také  
- [INotifySink2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
- [Struktury pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)
+## <a name="see-also"></a>Viz také:
+- [INotifySink2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
+- [Struktury pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)

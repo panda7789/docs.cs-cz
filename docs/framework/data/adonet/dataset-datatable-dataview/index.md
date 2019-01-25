@@ -2,17 +2,17 @@
 title: Datové sady, datové tabulky a datová zobrazení
 ms.date: 03/30/2017
 ms.assetid: 6d4c4b69-8919-4224-8a65-6cca1c61b48f
-ms.openlocfilehash: 0f537ad8ff468de54adc8bc820a060eaca357be9
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d712f82b0d776b671a8d8219276c32761d245047
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43506246"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54521280"
 ---
 # <a name="datasets-datatables-and-dataviews"></a>Datové sady, datové tabulky a datová zobrazení
 ADO.NET <xref:System.Data.DataSet> je rezidentní reprezentace dat, která poskytuje relační konzistentní programovací model bez ohledu na zdroj dat obsahuje. A <xref:System.Data.DataSet> představuje ucelenou sadu dat včetně tabulek, které obsahují, pořadí a omezit data, jakož i relace mezi tabulkami.  
   
- Práce s několika způsoby <xref:System.Data.DataSet>, který je možné použít samostatně nebo v kombinaci. Můžeš:  
+ Práce s několika způsoby <xref:System.Data.DataSet>, který je možné použít samostatně nebo v kombinaci. Můžete:  
   
 -   Prostřednictvím kódu programu vytvořit <xref:System.Data.DataTable>, <xref:System.Data.DataRelation>, a <xref:System.Data.Constraint> v rámci <xref:System.Data.DataSet> a naplnění tabulek daty.  
   
@@ -78,6 +78,6 @@ ADO.NET <xref:System.Data.DataSet> je rezidentní reprezentace dat, která posky
  [Přidání existujících omezení do datové sady](../../../../../docs/framework/data/adonet/adding-existing-constraints-to-a-dataset.md)  
  Popisuje, jak naplnit **datovou sadu** s informacemi o primárním klíči ze zdroje dat.  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET](../../../../../docs/framework/data/adonet/index.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET](../../../../../docs/framework/data/adonet/index.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

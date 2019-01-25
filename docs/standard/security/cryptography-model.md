@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d74ce08197ac76a601202da8e35ca6f619207076
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: e39e9b3cf83be03d9bb3a55e3741915588e755a5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45614733"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499574"
 ---
 # <a name="net-framework-cryptography-model"></a>Kryptografický model rozhraní .NET framework
 Rozhraní .NET Framework poskytuje mnoho standardních kryptografických algoritmů implementace. Tyto algoritmy jsou snadné použití a nejbezpečnější možné výchozí vlastnosti. Kryptografický model rozhraní .NET Framework dědičnost objektů, stream návrhu a konfigurace je také velmi rozšiřitelné.  
@@ -49,7 +49,7 @@ Rozhraní .NET Framework poskytuje mnoho standardních kryptografických algorit
 ## <a name="stream-design"></a>Stream návrhu  
  Modul common language runtime používá orientovaný na stream návrhu pro implementaci symetrické algoritmy a hashovacích algoritmů. Je základní tento návrh <xref:System.Security.Cryptography.CryptoStream> třída, která je odvozena z <xref:System.IO.Stream> třídy. Na základě Stream kryptografických objekty podporují rozhraní jediným standardním (`CryptoStream`) pro zpracování části přenosu dat objektu. Vzhledem k tomu, že všechny objekty jsou postavené na standardní rozhraní, můžete zřetězit dohromady víc objektů (například objekt algoritmu hash, za nímž následuje objekt šifrování) a můžete provádět více operací s daty bez nutnosti jakékoli sloužící jako přechodné úložiště pro něj. Streamování modelu také umožňuje vytvářet objekty z menších objektů. Kombinované šifrování a hashovací algoritmus může například zobrazit jako objekt jeden datový proud, i když tento objekt může být sestavena na základě sady objektů datového proudu.  
   
-## <a name="cryptographic-configuration"></a>Kryptografická konfigurace  
+## <a name="cryptographic-configuration"></a>Cryptographic Configuration  
  Kryptografická konfigurace umožňuje vyřešit konkrétní implementaci algoritmus název algoritmu, což rozšíření tříd šifrování .NET Framework. Můžete přidat vlastní hardware ani software provádění algoritmu a implementaci namapovat název algoritmu podle vašeho výběru. Pokud algoritmus není zadané v konfiguračním souboru, použijí se výchozí nastavení. Další informace o kryptografická konfigurace najdete v tématu [konfigurace šifrovacích tříd](../../../docs/framework/configure-apps/configure-cryptography-classes.md).  
   
 ## <a name="choosing-an-algorithm"></a>Výběr algoritmu  
@@ -89,4 +89,4 @@ Rozhraní .NET Framework poskytuje mnoho standardních kryptografických algorit
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)  
+- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)

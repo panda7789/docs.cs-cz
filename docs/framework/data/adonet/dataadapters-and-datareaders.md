@@ -2,12 +2,12 @@
 title: Adaptéry a čtečky dat
 ms.date: 03/30/2017
 ms.assetid: cc952ca2-ec19-46ab-9189-15174b52cb74
-ms.openlocfilehash: 6e711b11ef9a3eca53806b825f1e721169ab662d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f4588187aad910d0b50b0c804e6de20a477b567b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43516774"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583506"
 ---
 # <a name="dataadapters-and-datareaders"></a>Adaptéry a čtečky dat
 Můžete použít ADO.NET **DataReader** načíst jen pro čtení, dopředné datový proud s daty z databáze. Výsledky se vrátí jako dotaz spustí a jsou uloženy v síti vyrovnávací paměti na straně klienta, dokud si je vyžádat použití **čtení** metodu **DataReader**. Použití **DataReader** může zvýšit výkon aplikace, tak načítání dat, jako je k dispozici i (ve výchozím nastavení) ukládání pouze jeden řádek v daný okamžik v paměti a snížení režie systému.  
@@ -44,9 +44,9 @@ Můžete použít ADO.NET **DataReader** načíst jen pro čtení, dopředné da
  [Provádění dávkových operací pomocí adaptérů dat](../../../../docs/framework/data/adonet/performing-batch-operations-using-dataadapters.md)  
  Popisuje zlepšení výkonu aplikací snížením počet zpátečních cest k serveru SQL Server, při použití aktualizací od `DataSet`.  
   
-## <a name="see-also"></a>Viz také  
- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
- [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
- [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
+- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
+- [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)
+- [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

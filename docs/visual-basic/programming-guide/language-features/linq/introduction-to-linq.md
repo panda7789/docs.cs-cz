@@ -12,12 +12,12 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-ms.openlocfilehash: 0b163ac4af4e487ccab4c18b7907eba5a31e5779
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0642a67a6550109ffe1068e6c6ce4605b14c25af
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43509049"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524050"
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Představení technologie LINQ v jazyce Visual Basic
 Language Integrated Query (LINQ) přidává funkce dotazu do jazyka Visual Basic a při práci se všemi druhy dat poskytuje jednoduché a výkonné možnosti. Místo odeslání dotazu do databáze ke zpracování nebo práce s různou syntaxí dotazu pro každý typ hledaných dat, kterou hledáte, představuje LINQ dotazy jako součást jazyka Visual Basic. Používá jednotný syntax bez ohledu na typ data.  
@@ -38,7 +38,7 @@ Language Integrated Query (LINQ) přidává funkce dotazu do jazyka Visual Basic
   
  Visual Basic obsahuje následující poskytovatele LINQ.  
   
-|Zprostředkovatel|Popis|  
+|Poskytovatel|Popis|  
 |---|---|  
 |LINQ na objekty|Poskytovateli LINQ to Objects umožňuje dotazování kolekce v paměti a pole. Pokud objekt podporuje buď <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> rozhraní, poskytovatel LINQ to Objects umožňuje dotazování ho.<br /><br /> Můžete povolit poskytovateli LINQ to Objects pomocí importu <xref:System.Linq> obor názvů, která je importována ve výchozím nastavení pro všechny projekty jazyka Visual Basic.<br /><br /> Další informace o poskytovateli LINQ to Objects naleznete v tématu [LINQ to Objects](../../concepts/linq/linq-to-objects.md).|  
 |Technologie LINQ to SQL|Poskytovateli LINQ to SQL umožňuje dotazování a modifikaci dat v databázi serveru SQL Server. To usnadňuje mapování modelu objektu pro aplikaci tabulek a objektů v databázi.<br /><br /> Visual Basic usnadňuje práci s LINQ to SQL a to včetně Návrháře relací objektů (O/R Designer). Tento návrhář slouží k vytvoření objektového modelu v aplikaci, která mapuje pro objekty v databázi. O/R Designer také přiřazuje funkce mapě uložených procedur a funkcí <xref:System.Data.Linq.DataContext> objektu, který skladuje komunikaci s databází a ukládá stav kontroly optimistické souběžnosti.<br /><br /> Další informace o technologii LINQ to SQL poskytovatele najdete v tématu [technologie LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md). Další informace o Návrháři relací objektů naleznete v tématu [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).|  
@@ -177,7 +177,7 @@ Můžete použít další funkce dotazu LINQ voláním členů vyčíslitelného
   
  Pokud máte platné připojení k databázi serveru SQL Server, můžete přidat **třídy LINQ to SQL** šablonu položky projektu. Zobrazí se Návrhář relací objektů (O/R designer). O/R Designer umožňuje přetažení položek, které chcete získat přístup v kódu z **Průzkumníka serveru**/**Průzkumník databáze** na návrhové ploše. Přidá souboru LINQ to SQL <xref:System.Data.Linq.DataContext> objektu do projektu. Tento objekt obsahuje vlastnosti a kolekce pro tabulky a zobrazení, které mají přístup k a metody pro uložené procedury, které chcete volat. Po uložení změn do technologie LINQ to SQL (dbml) soubor je můžete přístup k těmto objektům ve vašem kódu odkazem <xref:System.Data.Linq.DataContext> objekt, který je definován pomocí Návrháře relací objektů. <xref:System.Data.Linq.DataContext> Objektu pro váš projekt je s názvem podle názvu vašeho souboru LINQ to SQL. Například technologie LINQ to SQL soubor s názvem Northwind.dbml vytvoří <xref:System.Data.Linq.DataContext> objekt s názvem `NorthwindDataContext`.  
   
- Příklady s podrobnými pokyny najdete v tématu [postupy: dotaz databáze](how-to-query-a-database-by-using-linq.md) a [postupy: volání uložené procedury](how-to-call-a-stored-procedure-by-using-linq.md).  
+ Příklady s podrobnými pokyny najdete v tématu [jak: Dotaz na databázi](how-to-query-a-database-by-using-linq.md) a [jak: Volání uložené procedury](how-to-call-a-stored-procedure-by-using-linq.md).  
   
 ## <a name="visual-basic-features-that-support-linq"></a>Funkce jazyka Visual Basic podporující LINQ  
  Visual Basic obsahuje další důležité funkcí, které zjednodušení použití LINQ a snižuje množství kódu, který musíte napsat k provádění dotazů LINQ. Patří mezi ně například:  
@@ -224,32 +224,32 @@ Můžete použít další funkce dotazu LINQ voláním členů vyčíslitelného
 |[LINQ to XML](../../concepts/linq/linq-to-xml.md)|Obsahuje obecné informace, pokyny pro programování a ukázky pro funkci LINQ to XML.|  
   
 ## <a name="how-to-and-walkthrough-topics"></a>Postupy a návody
- [Postupy: dotaz na databázi](how-to-query-a-database-by-using-linq.md)  
+ [Postupy: Dotaz na databázi](how-to-query-a-database-by-using-linq.md)  
   
- [Postupy: volání uložené procedury](how-to-call-a-stored-procedure-by-using-linq.md)  
+ [Postupy: Volání uložené procedury](how-to-call-a-stored-procedure-by-using-linq.md)  
   
  [Postupy: Změna dat v databázi](how-to-modify-data-in-a-database-by-using-linq.md)  
   
- [Postupy: kombinace dat s LINQ pomocí spojení](how-to-combine-data-with-linq-by-using-joins.md)  
+ [Postupy: Kombinace dat s LINQ pomocí spojení](how-to-combine-data-with-linq-by-using-joins.md)  
   
- [Postupy: řazení výsledků dotazu](how-to-sort-query-results-by-using-linq.md)  
+ [Postupy: Řazení výsledků dotazu](how-to-sort-query-results-by-using-linq.md)  
   
- [Postupy: filtrování výsledků dotazu](how-to-filter-query-results-by-using-linq.md)  
+ [Postupy: Filtrování výsledků dotazu](how-to-filter-query-results-by-using-linq.md)  
   
- [Postupy: počet, SUMA nebo průměr dat](how-to-count-sum-or-average-data-by-using-linq.md)  
+ [Postupy: Počet, SUMA nebo průměr dat](how-to-count-sum-or-average-data-by-using-linq.md)  
   
- [Postupy: hledání minimální nebo maximální hodnoty ve výsledku dotazu](how-to-find-the-minimum-or-maximum-value-in-a-query-result.md)  
+ [Postupy: Hledání minimální nebo maximální hodnoty ve výsledku dotazu](how-to-find-the-minimum-or-maximum-value-in-a-query-result.md)  
   
  [Postupy: Přiřazení uložených procedur za účelem aktualizací, vkládání a odstraňování (Návrhář relací objektů)](https://msdn.microsoft.com/library/e88224ab-ff61-4a3a-b6b8-6f3694546cac)  
   
 ## <a name="featured-book-chapters"></a>Doporučené kapitoly knihy  
- [Kapitole 17: LINQ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652502(v=orm.10)) v [programovacího jazyka Visual Basic 2008](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652504(v=orm.10))  
+ [Kapitola 17: LINQ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652502(v=orm.10)) v [programovacího jazyka Visual Basic 2008](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652504(v=orm.10))  
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ (Language-Integrated Query)](../../concepts/linq/index.md)  
-- [Přehled technologie LINQ to XML v jazyce Visual Basic](../../language-features/xml/overview-of-linq-to-xml.md)  
-- [Přehled LINQ to DataSet](~/docs/framework/data/adonet/linq-to-dataset-overview.md)  
-- [LINQ to SQL](~/docs/framework/data/adonet/sql/linq/index.md)  
-- [Nástroje LINQ to SQL v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  
+- [LINQ (Language-Integrated Query)](../../concepts/linq/index.md)
+- [Přehled technologie LINQ to XML v jazyce Visual Basic](../../language-features/xml/overview-of-linq-to-xml.md)
+- [Přehled LINQ to DataSet](~/docs/framework/data/adonet/linq-to-dataset-overview.md)
+- [LINQ to SQL](~/docs/framework/data/adonet/sql/linq/index.md)
+- [Nástroje LINQ to SQL v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)
 - [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)

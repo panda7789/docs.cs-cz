@@ -10,35 +10,35 @@ helpviewer_keywords:
 - Do statement [Visual Basic], Do loops
 - conditional statements [Visual Basic], loop structures
 ms.assetid: ecacb09b-a4c9-42be-98b2-a15d368b5db8
-ms.openlocfilehash: 8138609f06d82b53ef5b5afb480e8609461ffc33
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b72eef632b4564abc69e6ebef43b940eb0950e9a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33647888"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54523386"
 ---
 # <a name="loop-structures-visual-basic"></a>Struktury smyčky (Visual Basic)
-Struktury smyčky jazyka Visual Basic umožňují opakovaně spustit jeden nebo více řádků kódu. Příkazy v struktury smyčky můžete opakujte, dokud nebude podmínku `True`, dokud nebude podmínku `False`, zadat počet opakování, nebo jednou pro každý prvek v kolekci.  
+Struktury smyčky v jazyce Visual Basic umožňují opakovaně spustit jeden nebo více řádků kódu. Příkazy ve smyčce struktura můžete opakovat, dokud je podmínka `True`, dokud je podmínka `False`, zadaný počet opakování, nebo jednou pro každý prvek v kolekci.  
   
- Následující obrázek znázorňuje smyčky strukturu, která spustí sadu příkazů, dokud se stav změní na hodnotu true.  
+ Následující ilustrace znázorňuje strukturu smyčku, která spustí sadu příkazů, dokud se podmínka stane pravdivou.  
   
- ![Vývojový diagram DNT... Dokud smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/media/dountilloop.gif "DoUntilLoop")  
-Spuštění sadu příkazů, dokud se stav změní na hodnotu true  
+ ![Vývojový diagram DNT... Smyčka UNTIL](../../../../visual-basic/programming-guide/language-features/control-flow/media/dountilloop.gif "DoUntilLoop")  
+Spuštění sady příkazů, dokud se podmínka stane pravdivou  
   
-## <a name="while-loops"></a>While – smyčky  
- `While`... `End While` konstrukce spustí sadu příkazů, tak dlouho, dokud podmínky zadané v `While` příkaz `True`. Další informace najdete v tématu [při... End While – příkaz](../../../../visual-basic/language-reference/statements/while-end-while-statement.md).  
+## <a name="while-loops"></a>Smyčky while  
+ `While`... `End While` konstrukce spustí sadu příkazů tak dlouho, dokud podmínka podle `While` příkaz je `True`. Další informace najdete v tématu [během... End While – příkaz](../../../../visual-basic/language-reference/statements/while-end-while-statement.md).  
   
-## <a name="do-loops"></a>Do – smyčky  
- `Do`... `Loop` konstrukce umožňuje otestovat podmínku na začátku nebo konci struktury smyčky. Můžete také určit, zda opakování smyčky, přičemž zůstane podmínku `True` nebo dokud se nezmění `True`. Další informace najdete v tématu [provést... Cykly příkaz](../../../../visual-basic/language-reference/statements/do-loop-statement.md).  
+## <a name="do-loops"></a>Do Loops  
+ `Do`... `Loop` konstrukce využijete k otestování podmínky na začátku nebo konci struktury smyčky. Můžete také určit, jestli se má opakování cyklu, zatímco zůstane podmínka `True` nebo dokud nebude `True`. Další informace najdete v tématu [udělat... Smyčky příkaz](../../../../visual-basic/language-reference/statements/do-loop-statement.md).  
   
 ## <a name="for-loops"></a>Smyčky for  
- `For`... `Next` konstrukce provede smyčky sadu stanovený počet. Používá proměnnou řízení smyčky, označované taky jako *čítač*, můžete sledovat opakování. Zadejte počáteční a koncové hodnoty pro tento čítač a volitelně můžete zadat dobu, podle kterého jeho hodnota se zvyšuje z jednoho opakování na další. Další informace najdete v tématu [pro... Další příkaz](../../../../visual-basic/language-reference/statements/for-next-statement.md).  
+ `For`... `Next` konstrukce provádí smyčky do sady počtu opakování. Použije řídicí proměnná smyčky for, zkratka *čítač*, můžete sledovat opakování. Zadejte počáteční a koncové hodnoty tohoto čítače, a volitelně můžete zadat dobu, podle kterého jeho hodnota se zvyšuje z jednoho opakování na další. Další informace najdete v tématu [pro... Další příkaz](../../../../visual-basic/language-reference/statements/for-next-statement.md).  
   
-## <a name="for-each-loops"></a>Pro každý smyčky  
- `For Each`... `Next` konstrukce spustí sadu příkazů jednou pro každý prvek v kolekci. Zadejte proměnnou řízení smyčky, ale nemáte k určení počáteční nebo koncové hodnoty pro ni. Další informace najdete v tématu [For Each... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
+## <a name="for-each-loops"></a>Smyčky For Each  
+ `For Each`... `Next` konstrukce spustí sadu příkazů jednou pro každý prvek v kolekci. Zadat řídicí proměnná smyčky for, ale nemáte k určení počáteční nebo koncovou hodnotou pro něj. Další informace najdete v tématu [For Each... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
   
-## <a name="see-also"></a>Viz také  
- [Tok řízení](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)  
- [Rozhodovací struktury](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)  
- [Ostatní řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)  
- [Vnořené řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)
+## <a name="see-also"></a>Viz také:
+- [Tok řízení](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)
+- [Rozhodovací struktury](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)
+- [Ostatní řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)
+- [Vnořené řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)

@@ -9,15 +9,15 @@ helpviewer_keywords:
 - versioning [WCF]
 - data contracts [WCF], versioning
 ms.assetid: 4a0700cb-5f5f-4137-8705-3a3ecf06461f
-ms.openlocfilehash: 0e91bf597e344dd09e80bee5787e92383065b654
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e8a2f00458614367bbb661dd8ff74e88069d2dc0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520195"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646916"
 ---
 # <a name="data-contract-versioning"></a>Správa verzí kontraktů dat
-Jak vyvíjet aplikace, budete také muset změnit data smluv týkajících se používání služby. Toto téma vysvětluje, jak kontraktů dat verze. Toto téma popisuje mechanismy správy verzí pomocí kontraktu dat. Úplný přehled a doporučené postupy správy verzí pokyny najdete v tématu [osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
+Jak vyvíjet aplikace, budete také muset změnit data smluv týkajících se používání služby. Toto téma vysvětluje, jak kontraktů dat verze. Toto téma popisuje mechanismy správy verzí pomocí kontraktu dat. Úplný přehled a doporučené postupy správy verzí pokyny najdete v tématu [osvědčených postupů: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
   
 ## <a name="breaking-vs-nonbreaking-changes"></a>Zásadní vs. Méně zásadních změn  
  Změny kontraktu dat může být dopadem na dřívější kód nebo pevná. Při změně kontraktu dat pevná způsobem, aplikaci pomocí starší verze kontraktu můžou klienti komunikovat pomocí novější verze aplikace a aplikace pomocí novější verze kontraktu může komunikovat s aplikací pomocí starší verze. Rozbíjející změny na druhé straně znemožňuje komunikaci v jednom či obou směrech.  
@@ -94,7 +94,7 @@ Jak vyvíjet aplikace, budete také muset změnit data smluv týkajících se po
   
 -   Povinný datový člen, který má `EmitDefaultValue` nastavena na `false` nelze použít k serializaci jeho výchozí (nebo má nulovou hodnotu), hodnotu, ale mohou přijímat taková hodnota k deserializaci. Vzniká tak problém verzemi (lze číst data v ale stejná data nelze poté zapíšou). Proto pokud `IsRequired` je `true` a `EmitDefaultValue` je `false` v jedné verzi stejnou kombinaci by se měly používat pro všechny ostatní verze tak, aby žádná verze kontraktu dat mohl by být schopen vytvořit hodnotu, která nemá za následek odezvy.  
   
-## <a name="schema-considerations"></a>Důležité informace o schématu  
+## <a name="schema-considerations"></a>Schema Considerations  
  Vysvětlení, jaké schéma je vytvořen pro typy kontraktů dat, najdete v článku [schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
   
  Schéma WCF vytváří pro typy kontraktů dat znamená žádné ustanovení pro správu verzí. To znamená schéma exportované z verzi typu obsahuje pouze tyto datové členy v této verzi k dispozici. Implementace <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní nedojde ke změně schématu typu.  
@@ -115,17 +115,17 @@ Jak vyvíjet aplikace, budete také muset změnit data smluv týkajících se po
  Většina změn kolekce jsou pevné protože většinu typů kolekcí jsou zaměnitelné mezi sebou v datovém modelu kontraktu. Ale vytváření noncustomized kolekci přizpůsobili nebo naopak je zásadní změnu. Změna nastavení přizpůsobení kolekce je také k zásadní změně; To znamená změně jeho názvem kontraktu dat a obor názvů, opakující se název elementu, klíčovým prvkem název a hodnotu názvu elementu. Další informace o shromažďování vlastního nastavení naleznete v tématu [typy kolekcí v kontraktech dat](../../../../docs/framework/wcf/feature-details/collection-types-in-data-contracts.md).  
 Přirozeně změna kontraktu dat kolekce (například změna ze seznamu celých čísel do seznam řetězců) obsah je zásadní změnu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A>  
- <xref:System.Runtime.Serialization.DataMemberAttribute>  
- <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A>  
- <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>  
- <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A>  
- <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A>  
- <xref:System.Runtime.Serialization.SerializationException>  
- <xref:System.Runtime.Serialization.IExtensibleDataObject>  
- [Zpětná volání serializace tolerantní k verzím](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)  
- [Osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)  
- [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
- [Ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)  
- [Kontrakty dat s dopřednou kompatibilitou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A>
+- <xref:System.Runtime.Serialization.DataMemberAttribute>
+- <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A>
+- <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>
+- <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A>
+- <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A>
+- <xref:System.Runtime.Serialization.SerializationException>
+- <xref:System.Runtime.Serialization.IExtensibleDataObject>
+- [Zpětná volání serializace tolerantní k verzím](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)
+- [Osvědčené postupy: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)
+- [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+- [Ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)
+- [Kontrakty dat s dopřednou kompatibilitou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)

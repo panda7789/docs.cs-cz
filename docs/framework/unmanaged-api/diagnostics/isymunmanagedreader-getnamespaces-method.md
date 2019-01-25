@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f50a5cb1f16be44b03cd94b69fdf32efa9e9007b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5227de340bec85620f8c8d45538ad9a9d7f688fb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33425139"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54630954"
 ---
 # <a name="isymunmanagedreadergetnamespaces-method"></a>ISymUnmanagedReader::GetNamespaces – metoda
-Získá oborů názvů definovaných v globálním oboru v rámci úložiště tento symbol.  
+Získá oborů názvů definovaných v globálním oboru v rámci tohoto úložiště symbolů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +40,19 @@ HRESULT GetNamespaces (
   
 #### <a name="parameters"></a>Parametry  
  `cNameSpaces`  
- [v] Velikost pole obory názvů.  
+ [in] Velikost pole obory názvů.  
   
  `pcNameSpaces`  
- [out] Ukazatel na proměnnou, která přijímá délka seznamu obor názvů.  
+ [out] Ukazovat na proměnnou, která přijímá délka seznamu oborů názvů.  
   
  `namespaces`  
- [out] Ukazatel na proměnné, která přijímá seznamu oboru názvů.  
+ [out] Ukazovat na proměnnou, která přijímá seznam oborů názvů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

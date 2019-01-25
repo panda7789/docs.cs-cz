@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 355d2e259adb13da44b09e19872337c17ac20ade
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 821968fbde6d3f5434b83adf8c9661fe39d96293
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33439319"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54742026"
 ---
 # <a name="ihostcontrolgethostmanager-method"></a>IHostControl::GetHostManager – metoda
-Získá ukazatele rozhraní hostitele implementaci rozhraní se zadaným `IID`.  
+Získá ukazatel rozhraní k implementaci rozhraní hostitele se zadanou `IID`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,57 +38,57 @@ HRESULT GetHostManager (
   
 #### <a name="parameters"></a>Parametry  
  `riid`  
- [v] `IID` Rozhraní, které je dotazování common language runtime (CLR).  
+ [in] `IID` Rozhraní, které modul CLR (CLR) je pro dotazování.  
   
  `ppObject`  
- [out] Ukazatel rozhraní implementované hostitele nebo hodnota null, pokud hostitel nepodporuje toto rozhraní.  
+ [out] Ukazatel na rozhraní implementované hostitele, nebo hodnota null, pokud hostitel nepodporuje toto rozhraní.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`GetHostManager` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|`GetHostManager` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
-|E_INVALIDARG|Požadovanou `IID` není platný.|  
-|E_NOINTERFACE|Nepodporuje požadované rozhraní.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|E_INVALIDARG|Požadovaná `IID` není platný.|  
+|E_NOINTERFACE|Požadované rozhraní není podporováno.|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR dotazuje na hostiteli a zjistit, jestli podporuje jeden nebo více z následujících rozhraní:  
+ Modul CLR provádí dotazování hostitele k určení, jestli podporuje jednu nebo více z následujících rozhraní:  
   
--   [Ihostmemorymanager –](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)  
+-   [IHostMemoryManager](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)  
   
--   [Ihosttaskmanager –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)  
+-   [IHostTaskManager](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)  
   
--   [Ihostthreadpoolmanager –](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)  
+-   [IHostThreadPoolManager](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)  
   
--   [Ihostiocompletionmanager –](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)  
+-   [IHostIoCompletionManager](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)  
   
--   [Ihostsyncmanager –](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)  
+-   [IHostSyncManager](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)  
   
--   [Ihostassemblymanager –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  
+-   [IHostAssemblyManager](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  
   
--   [Ihostgcmanager –](../../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md)  
+-   [IHostGCManager](../../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md)  
   
--   [Ihostpolicymanager –](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)  
+-   [IHostPolicyManager](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)  
   
--   [Ihostsecuritymanager –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)  
+-   [IHostSecurityManager](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)  
   
- Pokud hostitel podporuje rozhraní zadané, nastaví `ppObject` její implementace tohoto rozhraní. Jinak, nastaví `ppObject` na hodnotu null.  
+ Pokud hostitel podporuje rozhraní zadané, nastaví `ppObject` k její implementaci rozhraní. Jinak, nastaví `ppObject` na hodnotu null.  
   
- Modul CLR nevyvolá `Release` hostitele manažerů, i když ho vypnout.  
+ Modul CLR nevolá `Release` na správci hostitele, i v případě, že ji vypnout.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IHostControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IHostControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)

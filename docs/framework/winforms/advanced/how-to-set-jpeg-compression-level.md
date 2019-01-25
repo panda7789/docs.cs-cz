@@ -8,18 +8,18 @@ helpviewer_keywords:
 - images [Windows Forms], changing encoder parameters
 - JPEG images [Windows Forms], setting quality level
 ms.assetid: 4b9a74e3-9504-43c1-9f28-ace651d0772e
-ms.openlocfilehash: 5f12f0ed8bae7b6cfb6f3162848e3c3761f7dbbd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aae7be0b610ba90b5915267cd9bc257be9b56362
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33525240"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54628110"
 ---
 # <a name="how-to-set-jpeg-compression-level"></a>Postupy: Nastavení úrovně komprese JPEG
-Můžete změnit parametry bitové kopie, když uložit obrázek na disk na minimální velikost souboru nebo zvýšení jeho kvality. Kvalitu obrazu JPEG můžete upravit změnou jeho úroveň komprese. K určení úrovně komprese při ukládání ve formátu JPEG, musíte vytvořit <xref:System.Drawing.Imaging.EncoderParameters> objektu a předejte ji do <xref:System.Drawing.Image.Save%2A> metodu <xref:System.Drawing.Image> třídy. Inicializace <xref:System.Drawing.Imaging.EncoderParameters> objektu tak, že IT oddělení má pole, které se skládá z jednoho <xref:System.Drawing.Imaging.EncoderParameter>. Když vytvoříte <xref:System.Drawing.Imaging.EncoderParameter>, zadejte <xref:System.Drawing.Imaging.Encoder.Quality> kodér a úroveň požadované komprese.  
+Můžete chtít upravit parametry bitovou kopii při uložení image na disk na minimální velikost souboru nebo zlepšení jeho kvality. Kvalita obrázku JPEG můžete upravit tak, že upravíte jejich úroveň komprese. Chcete-li určit úroveň komprese při ukládání ve formátu JPEG, musíte vytvořit <xref:System.Drawing.Imaging.EncoderParameters> objektu a předejte ji do <xref:System.Drawing.Image.Save%2A> metodu <xref:System.Drawing.Image> třídy. Inicializovat <xref:System.Drawing.Imaging.EncoderParameters> objektu tak, že je pole, které se skládá z jednoho <xref:System.Drawing.Imaging.EncoderParameter>. Při vytváření <xref:System.Drawing.Imaging.EncoderParameter>, zadejte <xref:System.Drawing.Imaging.Encoder.Quality> kodér a úroveň požadované komprese.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu vytvoří <xref:System.Drawing.Imaging.EncoderParameter> objekt a uloží tři JPEG – obrázky. Každý obrázek JPEG se uloží s úrovní jinou kvalitu změnou `long` hodnotu předanou <xref:System.Drawing.Imaging.EncoderParameter> konstruktor. Úrovně kvality 0 odpovídá největší komprese a úrovně kvality 100 odpovídá minimálně komprese.  
+ Následující příklad kódu vytvoří <xref:System.Drawing.Imaging.EncoderParameter> objekt a uloží tři obrázků JPEG. Každý obrázek JPEG je uložen s různou kvalitu úrovni, tak, že upravíte `long` hodnotu předanou <xref:System.Drawing.Imaging.EncoderParameter> konstruktoru. Úroveň kvality 0 odpovídá největší komprese a úroveň kvality 100 odpovídá nejméně komprese.  
   
 ```csharp  
 private void VaryQualityLevel()  
@@ -123,13 +123,13 @@ End Function
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Aplikace Windows Forms.  
+-   Aplikace modelu Windows Forms.  
   
 -   A <xref:System.Windows.Forms.PaintEventArgs>, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
--   Soubor obrázku, který je pojmenován `TestPhoto.jpg` a v umístění **c:\\**.  
+-   Soubor obrázku, který je pojmenován `TestPhoto.jpg` a umístění **c:\\**.  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Určení parametrů podporovaných kodérem](../../../../docs/framework/winforms/advanced/how-to-determine-the-parameters-supported-by-an-encoder.md)  
- [Typy rastrových obrázků](../../../../docs/framework/winforms/advanced/types-of-bitmaps.md)  
- [Použití kodérů a dekodérů ve spravovaném GDI+](../../../../docs/framework/winforms/advanced/using-image-encoders-and-decoders-in-managed-gdi.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Určuje parametry podporuje kodéru](../../../../docs/framework/winforms/advanced/how-to-determine-the-parameters-supported-by-an-encoder.md)
+- [Typy rastrových obrázků](../../../../docs/framework/winforms/advanced/types-of-bitmaps.md)
+- [Použití kodérů a dekodérů ve spravovaném GDI+](../../../../docs/framework/winforms/advanced/using-image-encoders-and-decoders-in-managed-gdi.md)

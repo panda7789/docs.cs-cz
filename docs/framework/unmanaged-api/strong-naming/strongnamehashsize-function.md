@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 92b9d9b5baee856f09dd24a62767aff604728997
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1ed8b6f047f26235e984fb514381a9b1d85543ec
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33454079"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54675129"
 ---
 # <a name="strongnamehashsize-function"></a>StrongNameHashSize – funkce
-Získá velikost vyrovnávací paměti vyžadované pro hodnotu hash, pomocí zadaný algoritmus hash.  
+Získá velikost vyrovnávací paměti vyžadované pro hodnotu hash pomocí algoritmu zadanou hodnotu hash.  
   
  Tato funkce je zastaralá. Použití [iclrstrongname::strongnamehashsize –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamehashsize-method.md) metoda místo.  
   
@@ -39,26 +39,26 @@ BOOLEAN StrongNameHashSize (
   
 #### <a name="parameters"></a>Parametry  
  `ulHashAlg`  
- [v] Algoritmus hash, který slouží k výpočtu velikost vyrovnávací paměti.  
+ [in] Hashovací algoritmus, který slouží k výpočtu velikosti vyrovnávací paměti.  
   
  `pcbSize`  
- [out] Vrácený vyrovnávací paměti velikost v bajtech.  
+ [out] Velikost vrácené vyrovnávací paměti v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném `false`.  
+ `true` Při úspěšném dokončení; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `StrongNameHashSize` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce načíst poslední generované chyba.  
+ Pokud `StrongNameHashSize` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** StrongName.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [StrongNameHashSize – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamehashsize-method.md)  
- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+## <a name="see-also"></a>Viz také:
+- [StrongNameHashSize – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamehashsize-method.md)
+- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

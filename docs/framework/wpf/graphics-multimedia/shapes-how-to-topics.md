@@ -9,15 +9,15 @@ helpviewer_keywords:
 - Shape objects [WPF]
 - Shape types [WPF]
 ms.assetid: 91a371f1-81e4-40da-ad61-ec24167152e6
-ms.openlocfilehash: d3b14881cc1366cefb4d11c9d14654c15952624b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0a218df17412f713eec272e49c13956b2efb71b5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33562867"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620224"
 ---
 # <a name="shapes-how-to-topics"></a>Postupy: Témata tvarů
-Témata v této části ukazují, jak používat <xref:System.Windows.Shapes.Shape> objektů pro kreslení základních tvarů na obrazovku.  
+Témata v této části ukazují, jak používat <xref:System.Windows.Shapes.Shape> objektů pro kreslení tvarů základní na obrazovku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vykreslení zavřeného tvaru pomocí mnohoúhelníku](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-closed-shape-by-using-the-polygon-element.md)  
@@ -27,6 +27,6 @@ Témata v této části ukazují, jak používat <xref:System.Windows.Shapes.Sha
  [Vykreslení obdélníku](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-rectangle.md)  
  [Změna zakončení na konci čáry nebo segmentu](../../../../docs/framework/wpf/graphics-multimedia/how-to-modify-the-cap-at-the-end-of-a-line-or-segment.md)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Shapes.Shape>  
- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Shapes.Shape>
+- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-ms.openlocfilehash: 1352b7b6d2146f4cf043034b8b24d7a737f93c3b
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: a334abcd4e4ad0edb176dd63dd962995aa0f13f2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53240434"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54493973"
 ---
 # <a name="delegates-c-programming-guide"></a>Delegáti (Průvodce programováním v C#)
 A [delegovat](../../../csharp/language-reference/keywords/delegate.md) je typ, který představuje odkazy na metody se seznamem konkrétních parametrů a návratovým typem. Pokud vytvoříte instanci delegátu, můžete příslušnou instanci přidružit s jakoukoli metodou s kompatibilním podpisem a návratovým typem. Metodu můžete vyvolat (nebo volat) prostřednictvím instance delegátu.  
@@ -68,8 +68,8 @@ Další informace najdete v tématu [delegáti](~/_csharplang/spec/delegates.md)
   
  [Delegáti a události](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652490%28v=orm.10%29) v [učení C# 3.0: Hlavní základní informace o C# 3.0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v=orm.10%29)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Delegate>  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- <xref:System.Delegate>
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Události](../../../csharp/programming-guide/events/index.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d4850de5-fa63-4936-a250-5678d118acba
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e343d48b5e50fdaef3a3667f066894dea03eeb80
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: e80e524a8bac28195067ce6bd30504005fc4b5a0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45991334"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592533"
 ---
 # <a name="automatic-memory-management"></a>Automatická správa paměti
 Automatická správa paměti je jedna ze služeb, které poskytuje modul Common Language Runtime během [Managed Execution](../../docs/standard/managed-execution-process.md). Modul Common Language Runtime systému uvolňování paměti spravuje přidělování a uvolňování paměti pro aplikaci. Pro vývojáře to znamená, že není nutné napsat kód k provedení paměti, že se úlohy správy počítačů při vývoji spravované aplikace. Automatická správa paměti může eliminovat běžné problémy, jako je například zapomínání uvolnění objektu a způsobuje nevrácení paměti nebo pokusu o přístup k paměti pro objekt, který již byl uvolněn. Tato část popisuje, jak systému uvolňování paměti přiděluje a uvolňuje paměť.  
@@ -38,7 +38,7 @@ Automatická správa paměti je jedna ze služeb, které poskytuje modul Common 
  Pokud chcete zlepšit výkon, modul runtime přiděluje paměť pro velké objekty v samostatných haldy. Uvolňování paměti automaticky uvolní paměť pro velké objekty. Abyste se vyhnuli přenášení velkých objektů v paměti, ale tato paměť není setřepána.  
   
 ## <a name="generations-and-performance"></a>Generace a výkon  
- Za účelem optimalizace výkonu systému uvolňování paměti spravované haldy je rozdělen na tři generace: 0, 1 a 2. Modul runtime uvolňování paměti kolekce algoritmus je založená na několik generalizace, které softwarovém průmyslu počítač objevil na hodnotu true Experimentováním s uvolňování paměti kolekce schémat. Nejprve je rychlejší ke komprimaci paměti pro část spravované haldy než pro celou spravovanou haldu. Za druhé novější objekty se mají životnost kratší a starší objekty se mají delší životnost. A konečně, novější objekty mají tendenci vzájemně souvisí a přistupuje aplikace přibližně ve stejnou dobu.  
+ Za účelem optimalizace výkonu systému uvolňování paměti spravované haldy rozdělen na tři generace: 0, 1 a 2. Modul runtime uvolňování paměti kolekce algoritmus je založená na několik generalizace, které softwarovém průmyslu počítač objevil na hodnotu true Experimentováním s uvolňování paměti kolekce schémat. Nejprve je rychlejší ke komprimaci paměti pro část spravované haldy než pro celou spravovanou haldu. Za druhé novější objekty se mají životnost kratší a starší objekty se mají delší životnost. A konečně, novější objekty mají tendenci vzájemně souvisí a přistupuje aplikace přibližně ve stejnou dobu.  
   
  Modul runtime systému uvolňování paměti uloží nové objekty 0. generace. Objekty vytvořené v rané fázi životního cyklu aplikace, které byly zachovány při kolekce jsou povýšeny a uloženy v generace 1 a 2. Proces povýšení objektu je popsána dále v tomto tématu. Protože je rychlejší compact část spravované haldy než celý haldy, toto schéma umožňuje uvolňování paměti uvolní paměť při konkrétní generování spíše než uvolnění paměti pro celou spravovanou haldu pokaždé, když provádí kolekce.  
   
@@ -53,6 +53,6 @@ Automatická správa paměti je jedna ze služeb, které poskytuje modul Common 
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.GC>  
-- [Uvolňování paměti](../../docs/standard/garbage-collection/index.md)  
+- <xref:System.GC>
+- [Uvolňování paměti](../../docs/standard/garbage-collection/index.md)
 - [Proces spravovaného spuštění](../../docs/standard/managed-execution-process.md)

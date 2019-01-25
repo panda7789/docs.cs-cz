@@ -1,5 +1,5 @@
 ---
-title: AddFile Method1
+title: AddFile – metoda1
 ms.date: 03/30/2017
 api_name:
 - IALink.AddFile
@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 57a350fadfa77fdad545ca7ccf2f63d28607c2ba
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 84b68638ed0f7a86156cf7e5fcc98d3c02cba18a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403917"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54662605"
 ---
-# <a name="addfile-method1"></a>AddFile Method1
-Přidá soubory do sestavení. Můžete také použít k vytvoření nepřipojeného moduly.  
+# <a name="addfile-method1"></a>AddFile – metoda1
+Přidá soubory do sestavení. Lze použít také k vytvoření nevázaného moduly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,27 +41,27 @@ HRESULT AddFile(
   
 #### <a name="parameters"></a>Parametry  
  `AssemblyID`  
- Jedinečné ID sestavení, které má být rozšířen.  
+ Jedinečné ID sestavení potřeba rozšířit.  
   
  `pszFilename`  
- Plně kvalifikovaný název souboru, který se má přidat.  
+ Plně kvalifikovaný název souboru má být přidána.  
   
  `dwFlags`  
- Modelu COM + FileDef flags – například `ffContainsNoMetaData` a `ffWriteable`. `dwFlags` Předaný [definefile – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
+ COM + FileDef označí jako `ffContainsNoMetaData` a `ffWriteable`. `dwFlags` je předán [definefile – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
   
  `pEmitter`  
- [Imetadataemit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) rozhraní, který se má použít pro vydávání metadata, v případě potřeby.  
+ [Imetadataemit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) rozhraní použít ke generování metadat, v případě potřeby.  
   
  `pFileToken`  
- Ukazatel na uložení jedinečné ID přidaný soubor.  
+ Ukazatel na kam se má jedinečné ID přidaný soubor uložit.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h.  
   
-## <a name="see-also"></a>Viz také  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

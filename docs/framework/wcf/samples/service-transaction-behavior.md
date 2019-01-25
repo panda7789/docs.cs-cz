@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Service Transaction Behavior Sample [Windows Communication Foundation]
 ms.assetid: 1a9842a3-e84d-427c-b6ac-6999cbbc2612
-ms.openlocfilehash: bfdf0c9ddb8654bf7a6736bcccb0d9350e9a12a6
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d9c3c63dece8a32280f17af6cc143b73bef58242
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50198468"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54739281"
 ---
 # <a name="service-transaction-behavior"></a>Chování transakce služby
 Tato ukázka demonstruje použití transakce koordinovaný klienta a nastavení atributu ServiceBehaviorAttribute a OperationBehaviorAttribute řídit chování transakce služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , který implementuje službu kalkulačky, ale je rozšířit na Udržovat protokol serveru provádět operace v databázové tabulce a stavový průběžný součet pro operace kalkulačky. Trvalé zápisy do tabulky protokolu serveru jsou závislé na výsledku transakce koordinovaný klient -, pokud klientská transakce nedokončí, transakce webové služby zajišťuje, že aktualizace databáze nejsou potvrzeny.  
@@ -228,7 +228,7 @@ Creating new service instance...
   
     5.  Klikněte na tlačítko **Ano** restartovat službu MS DTC a potom klikněte na **OK**.  
   
-    6.  Klikněte na tlačítko **OK** zavřete dialogové okno.  
+    6.  Kliknutím na **OK** zavřete dialogové okno.  
   
 2.  V počítači služby a klientský počítač konfigurace brány Windows Firewall zahrnout Microsoft distribuované transakce koordinátor (MSDTC) do seznamu vyloučení aplikací:  
   
@@ -254,7 +254,7 @@ Creating new service instance...
   
     5.  Klikněte na tlačítko **Ano** restartovat službu MS DTC a potom klikněte na **OK**.  
   
-    6.  Klikněte na tlačítko **OK** zavřete dialogové okno.  
+    6.  Kliknutím na **OK** zavřete dialogové okno.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
@@ -265,4 +265,4 @@ Creating new service instance...
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Transactions`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

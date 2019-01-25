@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Počet, suma nebo průměr dat pomocí LINQ (Visual Basic)'
+title: 'Postupy: Počet, SUMA nebo průměr dat pomocí LINQ (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - average operator [LINQ in Visual Basic]
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - query samples [Visual Basic]
 - count operator [LINQ in Visual Basic]
 ms.assetid: 51ca1f59-7770-4884-8b76-113002e54fc0
-ms.openlocfilehash: 942cb889c595f8caaf86dee1c025a935bd7db1b1
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: e95f9d75ab9db07b55257bbf6ca951a898b2fb2f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44041308"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54735088"
 ---
-# <a name="how-to-count-sum-or-average-data-by-using-linq-visual-basic"></a>Postupy: Počet, suma nebo průměr dat pomocí LINQ (Visual Basic)
+# <a name="how-to-count-sum-or-average-data-by-using-linq-visual-basic"></a>Postupy: Počet, SUMA nebo průměr dat pomocí LINQ (Visual Basic)
 Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi a spouštění dotazů.  
   
  Následující příklad ukazuje, jak vytvořit novou aplikaci, která provádí dotazy na databázi serveru SQL Server. Ukázka počítá, sečte a předběhli aktuální fázi výsledky pomocí `Aggregate` a `Group By` klauzule. Další informace najdete v tématu [Aggregate – klauzule](../../../../visual-basic/language-reference/queries/aggregate-clause.md) a [klauzule Group](../../../../visual-basic/language-reference/queries/group-by-clause.md).  
@@ -45,7 +45,7 @@ Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi 
   
 2.  Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**. Vyberte **třídy LINQ to SQL** šablony položky.  
   
-3.  Název souboru `northwind.dbml`. Klikněte na tlačítko **přidat**. Návrhář relací objektů (O/R Designer), je otevřené northwind.dbml souboru.  
+3.  Pojmenujte soubor `northwind.dbml`. Klikněte na **Přidat**. Návrhář relací objektů (O/R Designer), je otevřené northwind.dbml souboru.  
   
 ### <a name="to-add-tables-to-query-to-the-or-designer"></a>Přidání tabulek do dotazu do Návrháře relací objektů  
   
@@ -77,10 +77,10 @@ Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi 
   
 4.  Stisknutím klávesy F5 spusťte váš projekt a prohlédněte si výsledky.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
- [Dotazy](../../../../visual-basic/language-reference/queries/index.md)  
- [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
- [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)  
- [Klauzule Aggregate](../../../../visual-basic/language-reference/queries/aggregate-clause.md)  
- [Klauzule Group By](../../../../visual-basic/language-reference/queries/group-by-clause.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
+- [Dotazy](../../../../visual-basic/language-reference/queries/index.md)
+- [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
+- [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
+- [Klauzule Aggregate](../../../../visual-basic/language-reference/queries/aggregate-clause.md)
+- [Klauzule Group By](../../../../visual-basic/language-reference/queries/group-by-clause.md)

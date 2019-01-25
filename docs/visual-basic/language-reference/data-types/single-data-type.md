@@ -20,12 +20,12 @@ helpviewer_keywords:
 - zeros, trailing
 - numbers [Visual Basic], floating point
 ms.assetid: 224a2795-4cd5-496c-8f7a-a4f05a06d45d
-ms.openlocfilehash: 98433c0f1d1008664bb994f3b43fe48a753a432c
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: cd94411629f18557f677a6d1f65bfc0dede43e83
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582720"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54534510"
 ---
 # <a name="single-data-type-visual-basic"></a>Single – datový typ (Visual Basic)
 Blokování podepsané IEEE 32bitová (4bajtová) jednoduchou přesnost s plovoucí desetinnou čárkou čísla v rozmezí od - 3.4028235E + 38 prostřednictvím - 1, 401298E-45 pro záporné hodnoty a z 1, 401298E-45 prostřednictvím 3.4028235E + 38 pro kladné hodnoty. Čísla s jednoduchou přesností ukládání aproximaci reálné číslo.  
@@ -47,12 +47,12 @@ Blokování podepsané IEEE 32bitová (4bajtová) jednoduchou přesnost s plovou
   
 -   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Single?displayProperty=nameWithType> struktury.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Single?displayProperty=nameWithType>  
- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
- [Datový typ Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)  
- [Datový typ Double](../../../visual-basic/language-reference/data-types/double-data-type.md)  
- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)  
- [Řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Single?displayProperty=nameWithType>
+- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
+- [Datový typ Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)
+- [Datový typ Double](../../../visual-basic/language-reference/data-types/double-data-type.md)
+- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
+- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- [Řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)

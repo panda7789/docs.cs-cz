@@ -10,21 +10,21 @@ helpviewer_keywords:
 ms.assetid: 290d5f96-946d-4f02-babb-1d31ec0b8295
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 8363351efd0b6cbcfee5b137cf9f222e16dcc425
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: e3bc8fbb103d59b825e07cc52b155f1ea8061f31
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188739"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54649372"
 ---
 # <a name="ltcryptoclassesgt-element"></a>&lt;cryptoClasses&gt; – Element
 Obsahuje seznam šifrovacích tříd, které mají na popisný název v mapování [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) elementu.  
   
  \<Konfigurace >  
-\<mscorlib >  
-\<cryptographySettings – >  
-\<cryptoNameMapping >  
-\<cryptoClasses – >  
+\<mscorlib>  
+\<cryptographySettings>  
+\<cryptoNameMapping>  
+\<cryptoClasses>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +43,7 @@ Obsahuje seznam šifrovacích tříd, které mají na popisný název v mapován
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<cryptoclass – >](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)|Obsahuje kryptografickou třídu, která nemá mapování na popisný název v  **\<nameEntry >** elementu.|  
+|[\<cryptoClass>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)|Obsahuje kryptografickou třídu, která nemá mapování na popisný název v  **\<nameEntry >** elementu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -78,10 +78,10 @@ Obsahuje seznam šifrovacích tříd, které mají na popisný název v mapován
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Security.Cryptography>  
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
-- [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
-- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)  
-- [System.Security.Cryptography.CryptoConfig.CreateFromName](Overload:System.Security.Cryptography.CryptoConfig.CreateFromName)  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Security.Cryptography>
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
+- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
+- [System.Security.Cryptography.CryptoConfig.CreateFromName](Overload:System.Security.Cryptography.CryptoConfig.CreateFromName)
 - [Konfigurace šifrovacích tříd](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)

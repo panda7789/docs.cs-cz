@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 1453bc0c-6e0d-4d5a-b176-22607f8a3e6c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 01971980f4310bdeff2cbda47b51da0019d67b83
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dc5c90cf5006763a84ddc891b9a011dc6cfbe754
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423355"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54738284"
 ---
 # <a name="icordebugprocess6decodeevent-method"></a>ICorDebugProcess6::DecodeEvent – metoda
-Dekóduje spravované ladění události, které byly zapouzdřené v datové části události ladění speciálního nativní výjimky.  
+Dekóduje spravované ladění události, které byly zapouzdřené v datové části události speciálně nativní výjimka ladění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,30 +29,30 @@ HRESULT DecodeEvent(
   
 #### <a name="parameters"></a>Parametry  
  `pRecord`  
- [v] Ukazatel na bajtové pole z události ladění nativní výjimky, které obsahují informace o události spravovaného ladění.  
+ [in] Ukazatele na pole bajtů z nativní výjimka ladění události, která obsahuje informace o události spravované ladění.  
   
  `countBytes`  
- [v] Počet elementů ve `pRecord` bajtové pole.  
+ [in] Počet prvků v `pRecord` bajtové pole.  
   
  `format`  
- [v] A [CorDebugRecordFormat](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md) člen výčtu, která určují formát nespravované ladění událostí.  
+ [in] A [CorDebugRecordFormat](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md) člen výčtu, která určují formát nespravované ladění událostí.  
   
  `dwFlags`  
- [v] Bitová pole, závisí na cílové architektury a který určuje další informace o ladění událostí. Pro systémy Windows, může být členem skupiny [CorDebugDecodeEventFlagsWindows](../../../../docs/framework/unmanaged-api/debugging/cordebugdecodeeventflagswindows-enumeration.md) výčtu.  
+ [in] Bitové pole, která závisí na Cílová architektura a který určuje další informace o ladění události. Pro systémy Windows, může být členem skupiny [CorDebugDecodeEventFlagsWindows](../../../../docs/framework/unmanaged-api/debugging/cordebugdecodeeventflagswindows-enumeration.md) výčtu.  
   
  `dwThreadId`  
- [v] Identifikátor operačního systému vláken, na kterém byla výjimka vydána.  
+ [in] Operační systém identifikátor vlákna, na kterém byla výjimka vydána.  
   
  `ppEvent`  
- [out] Ukazatel na adresu [ICorDebugDebugEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-interface.md) objekt, který reprezentuje dekódované spravované ladění událostí.  
+ [out] Ukazatel na adresu [ICorDebugDebugEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-interface.md) objekt, který představuje událost dekódovaný spravované ladění.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je k dispozici s .NET Native jenom.  
+>  Tato metoda je pouze k dispozici s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -60,6 +60,6 @@ HRESULT DecodeEvent(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugProcess6 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugProcess6 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

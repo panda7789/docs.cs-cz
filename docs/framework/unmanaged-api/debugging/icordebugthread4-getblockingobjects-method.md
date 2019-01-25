@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 55251a3adfa67c1dac3b6952a37217e3eeb4c04a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5095dc04b118e782b00bb385427ad23a2786343c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421902"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54740161"
 ---
 # <a name="icordebugthread4getblockingobjects-method"></a>ICorDebugThread4::GetBlockingObjects – metoda
-Poskytuje seřazený výčet [cordebugblockingobject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) vláken struktury, které poskytují informace o blokování.  
+Poskytuje seřazený výčet [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) vlákna struktury, které poskytují informace o blokování.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,21 +36,21 @@ HRESULT GetBlockingObjects (
   
 #### <a name="parameters"></a>Parametry  
  `ppBlockingObjectEnum`  
- [out] Ukazatel na seřazený výčet [cordebugblockingobject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) struktury.  
+ [out] Ukazatel na seřazený výčet [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) struktury.  
   
 ## <a name="remarks"></a>Poznámky  
- První element ve vráceném výčtu odpovídá na první strukturu, která blokuje vlákno. Druhý prvkem odpovídá blokování položku, která je došlo při spouštění volání asynchronní procedury (APC), pokud je blokováno v prvním a tak dále.  
+ První prvek ve vrácené výčtu odpovídá první strukturu, která blokuje vlákno. Druhý prvek odpovídá blokující položkou, na kterou narazí při spouštění volání rozhraní asynchronní procedury (APC) při zablokování prvního a tak dále.  
   
  Výčet je platný pouze po dobu trvání aktuálního stavu synchronizovaná.  
   
- Tato metoda musí být volána při ladění je ve stavu synchronizovaná.  
+ Tato metoda musí být volána, když laděný proces je ve stavu synchronizovaná.  
   
- Pokud `ppBlockingObjectEnum` není platný ukazatel, výsledkem nedefinovaný.  
+ Pokud `ppBlockingObjectEnum` není platný ukazatel, výsledek nedefinován.  
   
- Pokud vlákno je blokovaný a nelze určit chyba, vrátí metoda HRESULT označující selhání; v opačném případě vrátí S_OK.  
+ Pokud je vlákno blokované a chyba nelze určit, že vrátí tato metoda hodnotu HRESULT označující selhání; v opačném případě vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -58,7 +58,7 @@ HRESULT GetBlockingObjects (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugThread4 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugThread4 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

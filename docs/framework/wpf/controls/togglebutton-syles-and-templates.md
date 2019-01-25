@@ -9,40 +9,41 @@ helpviewer_keywords:
 - templates [WPF], ToggleButton
 - parts [WPF], ToggleButton
 ms.assetid: 54f23f30-4bcb-4f09-8ce4-376a13a255a1
-ms.openlocfilehash: b2f3593fbfd2d1fabe2034570813538013623b8b
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 76b6cb370829da7dd7a8ee6c2dc2fd07c3478080
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54731228"
 ---
 # <a name="togglebutton-syles-and-templates"></a>ToggleButton – styly a šablony
-Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Primitives.ToggleButton> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhledu ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku tak, že vytvoříte ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Primitives.ToggleButton> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
   
-## <a name="togglebutton-parts"></a>Přepínací tlačítko částí  
- <xref:System.Windows.Controls.Primitives.ToggleButton> Ovládací prvek nemá žádné pojmenované částí.  
+## <a name="togglebutton-parts"></a>Části ToggleButton  
+ <xref:System.Windows.Controls.Primitives.ToggleButton> Ovládací prvek nemá žádné pojmenované součásti.  
   
-## <a name="togglebutton-states"></a>Přepínací tlačítko stavy  
- Následující tabulka uvádí visual stavy pro <xref:System.Windows.Controls.Primitives.ToggleButton> ovládacího prvku.  
+## <a name="togglebutton-states"></a>Stavy ToggleButton  
+ V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.Primitives.ToggleButton> ovládacího prvku.  
   
-|Název VisualState|Název VisualStateGroup|Popis|  
+|Název vizuálního stavu|Název VisualStateGroup|Popis|  
 |-|-|-|  
 |Normální|CommonStates|Ve výchozím stavu.|  
-|Myš nad|CommonStates|Ukazatel myši je umístěn nad ovládacího prvku.|  
-|Stisknutí tlačítka|CommonStates|Stisknutí ovládacího prvku.|  
-|zakázáno|CommonStates|Ovládací prvek je zakázaný.|  
-|Zaměřuje|FocusStates|Ovládací prvek má právě fokus.|  
-|Nezaostřená|FocusStates|Ovládací prvek nemá fokus.|  
-|Zaškrtnutí|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> je `true`.|  
-|Nezaškrtnuto|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> je `false`.|  
-|Neurčitém|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsThreeState%2A> je `true`, a <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> je `null`.|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je přidružená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` má ovládací prvek má právě fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Myš nad|CommonStates|Je ukazatel myši umístěn nad ovládací prvek.|  
+|Stisknutí|CommonStates|Stisknutí ovládacího prvku.|  
+|Zakázáno|CommonStates|Ovládací prvek je zakázaný.|  
+|Fokus|FocusStates|Ovládací prvek má fokus.|  
+|Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|  
+|Zaškrtnuto|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> je `true`.|  
+|Není zaškrtnuto|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> je `false`.|  
+|Neurčitá|CheckStates|<xref:System.Windows.Controls.Primitives.ToggleButton.IsThreeState%2A> je `true`, a <xref:System.Windows.Controls.Primitives.ToggleButton.IsChecked%2A> je `null`.|  
+|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
   
 > [!NOTE]
->  Pokud neurčitého stavu visual v šabloně ovládací prvek neexistuje, bude stav nezaškrtnuté visual použít jako výchozí visual stav.  
+>  Pokud neurčitý vizuálního stavu v šabloně ovládacího prvku neexistuje, pak Nekontrolovaná vizuálního stavu se použije jako výchozí vizuálního stavu.  
   
-## <a name="togglebutton-controltemplate-example"></a>Přepínací tlačítko ControlTemplate příklad  
+## <a name="togglebutton-controltemplate-example"></a>Příklad šablony ControlTemplate ToggleButton  
  Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Primitives.ToggleButton> ovládacího prvku.  
   
  [!code-xaml[ControlTemplateExamples#ToggleButton](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/combobox.xaml#togglebutton)]  
@@ -51,12 +52,12 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Primitive
   
  [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Kompletní příklad, najdete v části [styly s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
+ Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.FrameworkElement.Style%2A>  
- <xref:System.Windows.Controls.ControlTemplate>  
- [Styly a šablony ovládacích prvků](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
- [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)  
- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.FrameworkElement.Style%2A>
+- <xref:System.Windows.Controls.ControlTemplate>
+- [Styly a šablony ovládacích prvků](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)
+- [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)
+- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

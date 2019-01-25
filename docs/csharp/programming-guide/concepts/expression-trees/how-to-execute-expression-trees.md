@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: provádění stromů výrazů (C#)'
+title: 'Postupy: Provádění stromů výrazů (C#)'
 ms.date: 07/20/2015
 ms.assetid: b8c40db5-2464-4bb9-9001-8c2bc7f006c5
-ms.openlocfilehash: 2aad970946e417d623907c9f832e2c6e29eef912
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: bed37d8d96837062831f4a3017df8a3633446bf0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45641596"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583269"
 ---
-# <a name="how-to-execute-expression-trees-c"></a>Postupy: provádění stromů výrazů (C#)
+# <a name="how-to-execute-expression-trees-c"></a>Postupy: Provádění stromů výrazů (C#)
 Toto téma ukazuje, jak spustit strom výrazu. Provádění strom výrazu může vracet hodnotu, nebo ji může provádět jenom akce, jako je volání metody.  
   
  Je možné provést pouze stromů výrazů, které představují výrazů lambda. Stromy výrazů, které představují lambda výrazy jsou typu <xref:System.Linq.Expressions.LambdaExpression> nebo <xref:System.Linq.Expressions.Expression%601>. K provádění těchto stromů výrazů, zavolejte <xref:System.Linq.Expressions.LambdaExpression.Compile%2A> metody k vytvoření delegáta spustitelný soubor a pak vyvolejte delegáta.  
@@ -48,7 +48,7 @@ Console.WriteLine(result);
   
 -   Zahrnout System.Linq.Expressions oboru názvů.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Stromy výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)  
-- [Postupy: úpravy stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)
+- [Stromy výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)
+- [Postupy: Úpravy stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)

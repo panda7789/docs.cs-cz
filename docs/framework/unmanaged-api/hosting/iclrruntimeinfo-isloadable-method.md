@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e60c3b06453e0f447249bddf5d4da5c240576577
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e9780020abe609212fe3c4bd65f70200467ff9c8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33432957"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54533686"
 ---
 # <a name="iclrruntimeinfoisloadable-method"></a>ICLRRuntimeInfo::IsLoadable – metoda
-Určuje, zda modul runtime přidružené toto rozhraní je možné načíst do aktuální proces, vezme v úvahu další moduly runtime, který může být již načtena do procesu.  
+Určuje, zda modul runtime spojený s tímto rozhraním je možné načíst do aktuální proces zohledněním jiné moduly runtime, který může být již načten do procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,10 +36,10 @@ HRESULT IsLoadable(
   
 #### <a name="parameters"></a>Parametry  
  `pbLoadable`  
- [out] `true` Pokud tento modul runtime by mohla být načtena do aktuální proces, jinak hodnota `false`.  
+ [out] `true` Pokud tento modul runtime může být načtena do aktuální proces; v opačném případě `false`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
@@ -47,20 +47,20 @@ HRESULT IsLoadable(
 |E_POINTER|`pbLoadable` má hodnotu null.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud jiný modul runtime je již načtena do procesu a v procesu spuštění vedle sebe, mohou být načteny runtime spojené s tímto rozhraním `pbLoadable` vrátí `true`. Pokud dva moduly Runtime nelze spustit vedle sebe v rámci procesu, `pbLoadable` vrátí `false`. Modul CLR (CLR) verze 4 můžete například spustit-souběžného v rámci jednoho procesu s CLR verze 2.0 nebo CLR verze 1.1. Modul CLR verze 1.1 a verze modulu CLR 2.0 však nelze spustit vedle sebe v procesu.  
+ Pokud se jiný modul runtime je již načten do procesu a pro provádění vnitroprocesové vedle sebe, je možné načíst modul runtime spojený s tímto rozhraním `pbLoadable` vrátí `true`. Pokud dva moduly runtime nemůže spustit vedle sebe v procesu, `pbLoadable` vrátí `false`. Modul CLR verze 4 (CLR) můžete například spustit vedle sebe ve stejném procesu s CLR verze 2.0 nebo CLR verze 1.1. CLR verze 1.1 a 2.0 verze modulu CLR však nelze spustit vedle sebe v procesu.  
   
- Pokud jsou načteny žádné moduly runtime do procesu, tato metoda vždy vrátí `true`.  
+ Pokud nejsou načteny žádné moduly runtime do procesu, vrátí tato metoda vždy `true`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

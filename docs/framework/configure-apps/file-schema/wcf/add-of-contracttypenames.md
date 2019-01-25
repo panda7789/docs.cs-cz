@@ -2,18 +2,18 @@
 title: '&lt;add&gt; – &lt;contractTypeNames&gt;'
 ms.date: 03/30/2017
 ms.assetid: 03aff6be-5dfb-4a64-ada3-e36227cd43c7
-ms.openlocfilehash: 79972eaea6918b3fe923c963b6a219fd8f972516
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: cf9a1ae28b53b841ac5d8d85d31e1548e36369ac
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145611"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54735724"
 ---
 # <a name="ltaddgt-of-ltcontracttypenamesgt"></a>&lt;add&gt; – &lt;contractTypeNames&gt;
 Konfigurace element, který určuje název kontraktu služby vyhledaly a kritéria obvykle používá při vyhledávání pro službu. Pokud je zadán více než jeden název smlouvy, jenom koncové body služby odpovídající všechny kontrakty odpovíte. Všimněte si, že ve Windows Communication Foundation (WCF), koncový bod podporuje pouze jeden kontrakt.  
   
  \<system.ServiceModel>  
-\<standardEndpoints >  
+\<standardEndpoints>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -58,9 +58,9 @@ Konfigurace element, který určuje název kontraktu služby vyhledaly a kritér
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<contractTypeNames >](../../../../../docs/framework/configure-apps/file-schema/wcf/contracttypenames.md)|Kolekce názvů typů kontraktu.|  
+|[\<contractTypeNames>](../../../../../docs/framework/configure-apps/file-schema/wcf/contracttypenames.md)|Kolekce názvů typů kontraktu.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Discovery.FindCriteria>  
- <xref:System.ServiceModel.Discovery.Configuration.FindCriteriaElement>  
- <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Discovery.FindCriteria>
+- <xref:System.ServiceModel.Discovery.Configuration.FindCriteriaElement>
+- <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement>

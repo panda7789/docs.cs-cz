@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Ladění vlastních ovládacích prvků Windows Forms během návrhu'
+title: 'Průvodce: Ovládací prvky ladění vlastního Windows Forms v době návrhu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,15 +15,15 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], debugging
 - design-time debugging
 ms.assetid: 1fd83ccd-3798-42fc-85a3-6cba99467387
-ms.openlocfilehash: 824c1e47cf50dc13a3a986e48a49158b15dbb935
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: ceee83c9deb318f5912eb724cbd237c3d7b73152
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45964832"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54733334"
 ---
-# <a name="walkthrough-debugging-custom-windows-forms-controls-at-design-time"></a>Návod: Ladění vlastních ovládacích prvků Windows Forms během návrhu
-Při vytváření vlastního ovládacího prvku často zjistíte to potřebné k ladění jeho chování během návrhu. To platí zejména pokud vytváříte vlastní návrháře pro vlastní ovládací prvek. Podrobnosti najdete v tématu [návod: vytváření Windows Forms ovládací prvek, že trvá využívat z doby návrhu funkce sady Visual Studio](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md).  
+# <a name="walkthrough-debugging-custom-windows-forms-controls-at-design-time"></a>Průvodce: Ovládací prvky ladění vlastního Windows Forms v době návrhu
+Při vytváření vlastního ovládacího prvku často zjistíte to potřebné k ladění jeho chování během návrhu. To platí zejména pokud vytváříte vlastní návrháře pro vlastní ovládací prvek. Podrobnosti najdete v tématu [názorný postup: Vytváření Windows Forms ovládací prvek, který využívá funkce sady Visual Studio Design-Time](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md).  
   
  Vlastní ovládací prvky pomocí sady Visual Studio, můžete ladit stejně, jako by ladění jiných tříd rozhraní .NET Framework. Rozdíl spočívá v tom, že ladíte samostatnou instanci sady Visual Studio, na kterém běží vaše vlastní ovládací prvek kódu  
   
@@ -60,13 +60,13 @@ Při vytváření vlastního ovládacího prvku často zjistíte to potřebné k
   
 1.  Přidat **Knihovna ovládacích prvků Windows** projektu do řešení.  
   
-2.  Přidat nový **UserControl** položky do projektu DebugControlLibrary. Podrobnosti najdete v tématu [NIB: postupy: Přidání nové položky projektu](https://msdn.microsoft.com/library/63d3e16b-de6e-4bb5-a0e3-ecec762201ce). Zadejte základní název "DebugControl" nového zdrojového souboru.  
+2.  Přidat nový **UserControl** položky do projektu DebugControlLibrary. Podrobnosti najdete v tématu [NIB: jak: Přidání nových položek projektu](https://msdn.microsoft.com/library/63d3e16b-de6e-4bb5-a0e3-ecec762201ce). Zadejte základní název "DebugControl" nového zdrojového souboru.  
   
-3.  Použití **Průzkumníku řešení**, odstranění výchozího projektu ovládacího prvku tak, že odstraníte soubor kódu základní název s "`UserControl1`". Podrobnosti najdete v tématu [NIB: postupy: odebrání, odstranění a vyloučit položky](https://msdn.microsoft.com/library/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
+3.  Použití **Průzkumníku řešení**, odstranění výchozího projektu ovládacího prvku tak, že odstraníte soubor kódu základní název s "`UserControl1`". Podrobnosti najdete v tématu [NIB: jak: Odebrat, odstranit a vyloučit položky](https://msdn.microsoft.com/library/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
   
 4.  Sestavte řešení.  
   
-## <a name="checkpoint"></a>Kontrolní bod  
+## <a name="checkpoint"></a>CheckPoint  
  V tomto okamžiku budete moct zobrazit vaše vlastní ovládací prvky **nástrojů**.  
   
 #### <a name="to-check-your-progress"></a>Chcete-li zkontrolovat průběh  
@@ -136,7 +136,7 @@ Při vytváření vlastního ovládacího prvku často zjistíte to potřebné k
   
      V **spustit akci** vyberte **externí program Start**. Bude ladění samostatnou instanci sady Visual Studio, proto klikněte na symbol tří teček (![snímek obrazovky VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) tlačítko Procházet pro Visual Studio IDE. Název spustitelného souboru, který je **devenv.exe**, a pokud jste nainstalovali do výchozího umístění, je jeho cesta 9.0\Common7\IDE\devenv.exe %programfiles%\Microsoft Visual Studio.  
   
-3.  Klikněte na tlačítko **OK** zavřete dialogové okno.  
+3.  Kliknutím na **OK** zavřete dialogové okno.  
   
 4.  Klikněte pravým tlačítkem myši **DebugControlLibrary** projektu a vyberte **nastavit jako spouštěný projekt** k povolení této konfiguraci ladění.  
   
@@ -170,9 +170,9 @@ Při vytváření vlastního ovládacího prvku často zjistíte to potřebné k
   
 -   Několik atributů můžete provést u vlastností ovládacího prvku k manipulaci s vlastní ovládací prvek interakce s návrhářem. Tyto atributy v můžete najít <xref:System.ComponentModel?displayProperty=nameWithType> oboru názvů.  
   
--   Můžete napsat vlastního návrháře pro vlastní ovládací prvek. To vám plnou kontrolu nad komfortem při návrhu extensible návrháře infrastruktury zpřístupněný nástrojem Visual Studio. Podrobnosti najdete v tématu [návod: vytváření Windows Forms ovládací prvek, že trvá využívat z doby návrhu funkce sady Visual Studio](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md).  
+-   Můžete napsat vlastního návrháře pro vlastní ovládací prvek. To vám plnou kontrolu nad komfortem při návrhu extensible návrháře infrastruktury zpřístupněný nástrojem Visual Studio. Podrobnosti najdete v tématu [názorný postup: Vytváření Windows Forms ovládací prvek, který využívá funkce sady Visual Studio Design-Time](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md).  
   
-## <a name="see-also"></a>Viz také  
- [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
- [Postupy: přístup ke službám během návrhu](https://msdn.microsoft.com/library/c186c4b6-076c-438d-9ed3-f13da29c8c1f)  
- [Postupy: přístup k podpoře návrhu ve Windows Forms](https://msdn.microsoft.com/library/a84f8579-1f47-41b9-ba37-69030b0aff09)
+## <a name="see-also"></a>Viz také:
+- [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio Design-Time](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)
+- [Postupy: Přístup ke službám během návrhu](https://msdn.microsoft.com/library/c186c4b6-076c-438d-9ed3-f13da29c8c1f)
+- [Postupy: Podpora návrhu přístupu ve Windows Forms](https://msdn.microsoft.com/library/a84f8579-1f47-41b9-ba37-69030b0aff09)

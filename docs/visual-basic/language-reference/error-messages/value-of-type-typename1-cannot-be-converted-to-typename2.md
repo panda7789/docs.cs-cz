@@ -7,19 +7,19 @@ f1_keywords:
 helpviewer_keywords:
 - BC30955
 ms.assetid: 966b61eb-441e-48b0-bedf-ca95384ecb8b
-ms.openlocfilehash: 9b3c029ed7bf73ff92dba65438d797b27fa135f1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 00ce143eecefbdf2f1b9e204ae2005be4bb81e39
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33595235"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54627600"
 ---
 # <a name="value-of-type-39lttypename1gt39-cannot-be-converted-to-39lttypename2gt39"></a>Hodnotu typu &#39; &lt;NázevTypu1&gt; &#39; nelze převést na &#39; &lt;NázevTypu2&gt;&#39;
-Hodnotu typu '\<NázevTypu1 >' nelze převést na '\<NázevTypu2 > ". Neshoda typu může být kombinování odkazu na soubor s projektu odkaz na sestavení '\<assemblyname >'. Zkuste vyměnit odkaz na soubor '\<filepath >' v projektu '\<projectname1 >' s odkaz na projekt se\<projectname2 > ".  
+Hodnotu typu '\<NázevTypu1 >' nelze převést na "\<NázevTypu2 >'. Neshody typů může být způsobena kombinováním odkazu na soubor s odkazem na projekt do sestavení '\<assemblyname >'. Nahraďte odkaz na soubor "\<filepath >' v projektu"\<projectname1 >' s odkazem na projekt '\<projectname2 >'.  
   
- V situaci, kdy projektu vytvoří odkaz na projekt a odkaz na soubor kompilátor nezaručuje, že jeden typ lze převést na jiný.  
+ V situaci, kdy projekt vytvoří odkaz na projekt a odkaz na soubor kompilátor zaručit, že jeden typ lze převést na jiný.  
   
- Následující kód pseudo znázorňuje situaci, který může vytvořit tuto chybu.  
+ Následující kód pseudo ukazuje situaci, která mohou generovat k této chybě.  
   
  `' ================ Visual Basic project P1 ================`  
   
@@ -47,19 +47,19 @@ Hodnotu typu '\<NázevTypu1 >' nelze převést na '\<NázevTypu2 > ". Neshoda ty
   
  `End Class`  
   
- Projekt `P1` vytváří odkaz nepřímých projektu prostřednictvím projektu `P2` do projektu `P3`a také přímý odkaz na soubor na `P3`. Prohlášení o `commonObject` používá odkaz na soubor `P3`, při volání `P2.getCommonClass` používá odkaz na projekt `P3`.  
+ Projekt `P1` vytváří odkaz nepřímý projektu prostřednictvím projektu `P2` do projektu `P3`a také přímý odkaz na soubor na `P3`. Deklarace `commonObject` používá odkaz na soubor `P3`, při volání `P2.getCommonClass` používá odkaz na projekt do `P3`.  
   
- Problém v této situaci je, že odkaz na soubor Určuje název pro výstupní soubor a cesta k souboru `P3` (obvykle p3.dll), zatímco odkazů projektu identifikovat zdrojový projekt (`P3`) podle názvu projektu. Z toho důvodu nelze kompilátor zaručit, že typ `P3.commonClass` pochází z stejný zdrojový kód prostřednictvím dvou různých odkazy.  
+ Problém v této situaci je, že odkaz na soubor Určuje název výstupního souboru a cesta k souboru `P3` (obvykle p3.dll), zatímco odkazy projektu identifikovat zdrojový projekt (`P3`) podle názvu projektu. Z tohoto důvodu nelze kompilátor zaručit, že typ `P3.commonClass` pochází ze stejného zdrojového kódu přes dvě různé odkazy.  
   
- Tuto situaci obvykle dochází, když projektu odkazy a jsou kombinované odkazů na soubor. V předchozí ilustraci, nebude problém nastat, pokud `P1` provedené projektu přímý odkaz na `P3` místo odkaz na soubor.  
+ Tuto situaci obvykle dochází, když projekt odkazy a odkazy na soubory jsou smíšené. V předchozí ilustraci by problém nastat, pokud `P1` provedené přímý odkaz na `P3` namísto odkazu na soubor.  
   
  **ID chyby:** BC30955  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Změňte odkaz na soubor odkaz na projekt.  
+-   Změňte odkaz na soubor odkazu na projekt.  
   
-## <a name="see-also"></a>Viz také  
- [Převody typů v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
- [Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project)  
- 
+## <a name="see-also"></a>Viz také:
+- [Převody typů v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project)
+

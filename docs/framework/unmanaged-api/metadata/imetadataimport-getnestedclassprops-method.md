@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1c77f946b14fcb5ddc786488ab42e37eb868fbc9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9e54b4c4b1b3184b6aa0d50f82a501312db6a8e8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448276"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54655657"
 ---
 # <a name="imetadataimportgetnestedclassprops-method"></a>IMetaDataImport::GetNestedClassProps – metoda
-Získá token TypeDef pro nadřazený prvek <xref:System.Type> zadaného vnořené typu.  
+Získá token TypeDef pro nadřazený <xref:System.Type> zadaného vnořených typů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,20 +38,20 @@ HRESULT GetNestedClassProps (
   
 #### <a name="parameters"></a>Parametry  
  `tdNestedClass`  
- [v] TypeDef token reprezentující <xref:System.Type> vrátit nadřazené třídy pro token.  
+ [in] Token TypeDef představitel <xref:System.Type> se vraťte na nadřazenou třídu tokenu pro.  
   
  `ptdEnclosingClass`  
- [out] Ukazatel na token TypeDef pro <xref:System.Type> , `tdNestedClass` vnořen v.  
+ [out] Token TypeDef pro ukazatel <xref:System.Type> , který `tdNestedClass` je vnořená v.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

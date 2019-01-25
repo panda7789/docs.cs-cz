@@ -11,20 +11,20 @@ helpviewer_keywords:
 - TextBox control [Windows Forms], about TextBox controls
 - text boxes [Windows Forms], adding
 ms.assetid: d1a9c7f5-fa53-480a-a75c-158f8649ea2f
-ms.openlocfilehash: b15de762b166fb66ff926706e93cbac6d0c6ba9b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ed4a40c172e527c6210bc31ab2575ebc08ead1bd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33539864"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671236"
 ---
 # <a name="textbox-control-overview-windows-forms"></a>TextBox – přehled ovládacího prvku (Windows Forms)
-Windows Forms textová pole se používají k získání vstup od uživatele nebo k zobrazení textu. <xref:System.Windows.Forms.TextBox> Řízení se obecně používají pro upravovat text, i když ho můžete také provést jen pro čtení. Textová pole můžete zobrazit více řádků, zalomení textu velikosti ovládacího prvku a přidat základní formátování. <xref:System.Windows.Forms.TextBox> Řízení poskytuje jeden formát styl textu zobrazuje nebo je zadán do ovládacího prvku. Chcete-li zobrazit více typů formátovaný text, použijte <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. Další informace najdete v tématu [– Přehled ovládacího prvku RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-overview-windows-forms.md).  
+Windows Forms textová pole se používají k získání vstupy od uživatele nebo k zobrazení textu. <xref:System.Windows.Forms.TextBox> Ovládací prvek se obecně používají pro upravitelný text, i když ji můžete také nastavit jen pro čtení. Textová pole můžete zobrazit více řádků, zalamovat text, který má velikost ovládacího prvku a přidat základní formátování. <xref:System.Windows.Forms.TextBox> Řízení poskytuje jeden formát styl textu zobrazit nebo zadat do ovládacího prvku. Chcete-li zobrazit více typů formátovaný text, použijte <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. Další informace najdete v tématu [RichTextBox – Přehled ovládacího prvku](../../../../docs/framework/winforms/controls/richtextbox-control-overview-windows-forms.md).  
   
-## <a name="working-with-the-textbox-control"></a>Práce s ovládacím prvku TextBox  
- Je součástí textu zobrazovaného ovládacím prvkem <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost. Ve výchozím nastavení můžete zadat až 2048 znaků v textovém poli. Pokud nastavíte <xref:System.Windows.Forms.TextBox.Multiline%2A> vlastnost `true`, můžete zadat až 32 KB textu. <xref:System.Windows.Forms.TextBox.Text%2A> Vlastnost lze nastavit v době návrhu pomocí okna vlastností v době běhu v kódu, nebo uživatelského vstupu v době běhu. Aktuální obsahu textového pole můžete získat v době běhu čtením <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost.  
+## <a name="working-with-the-textbox-control"></a>Práce s ovládacím prvkem textového pole  
+ Text zobrazený ovládacím prvkem je součástí <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost. Ve výchozím nastavení můžete zadat maximálně 2048 znaků v textovém poli. Pokud jste nastavili <xref:System.Windows.Forms.TextBox.Multiline%2A> vlastnost `true`, můžete zadat až 32 KB textu. <xref:System.Windows.Forms.TextBox.Text%2A> Vlastnost lze nastavit v době návrhu pomocí okna vlastnosti v době běhu v kódu, nebo uživatelského vstupu v době běhu. Je možné načíst aktuální obsah textového pole za běhu v článku <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost.  
   
- Následující příklad kódu nastaví text v ovládacím prvku za běhu. `InitializeMyControl` Postup nebude automaticky spustit; musí být volána.  
+ Následující příklad kódu nastaví text v ovládacím prvku v době běhu. `InitializeMyControl` Postup nespustí automaticky, musí být volána.  
   
 ```vb  
 Private Sub InitializeMyControl()  
@@ -49,12 +49,12 @@ private:
    }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.TextBox>  
- [Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)  
- [Postupy: Vytvoření textového pole hesla pomocí ovládacího prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)  
- [Postupy: Vytvoření textového pole určeného jen pro čtení](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)  
- [Postupy: Vkládání uvozovek do řetězce](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)  
- [Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)  
- [Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)  
- [Ovládací prvek TextBox](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.TextBox>
+- [Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)
+- [Postupy: Vytvoření textového pole hesla pomocí ovládacího prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)
+- [Postupy: Vytvoření pole jen pro čtení textu](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)
+- [Postupy: Vkládání uvozovek do řetězce](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)
+- [Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)
+- [Postupy: Zobrazit více řádků v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
+- [Ovládací prvek TextBox](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)

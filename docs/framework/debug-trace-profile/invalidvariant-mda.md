@@ -10,30 +10,30 @@ helpviewer_keywords:
 ms.assetid: d273e070-d1b1-4a53-a9c7-7af837b04a3d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 426b9df449b12d2f34fa70fc721cc050fa3e4ddd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7d29d3f3638b3dae4381524fcaf55e1afeddc9f8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33386714"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54730799"
 ---
 # <a name="invalidvariant-mda"></a>invalidVariant – pomocník spravovaného ladění (MDA)
-`invalidVariant` Pomocník spravovaného ladění (MDA) se aktivuje, když neplatný `VARIANT` struktura je došlo během volání z nativní nebo nespravovaného kódu do spravovaného kódu.  
+`invalidVariant` Pomocníka spravovaného ladění (MDA) se aktivuje, když neplatný `VARIANT` struktura dochází při volání z nativní nebo nespravovaného kódu pro spravovaný kód.  
   
 ## <a name="symptoms"></a>Příznaky  
- Neočekávané chování během přechodu mezi nativní a spravované kódové zahrnující zařazování z `VARIANT` k objektu.  
+ Neočekávané chování během přechodu mezi nativním a spravovaným kódem zahrnující zařazování z `VARIANT` na objekt.  
   
-## <a name="cause"></a>příčina  
- Nativní kód je předávání chybná `VARIANT` struktura do spravovaného kódu.  Modul runtime pokusí zařazování to `VARIANT` na objekt a aktivuje MDA, pokud `VARIANT` není platný. Příkladem neplatné `VARIANT`S zahrnout `VARIANT` s `VARTYPE` VT_EMPTY &#124; VT_BYREF nebo `VARIANT` s `VARTYPE` VT_VARIANT.  
+## <a name="cause"></a>Příčina  
+ Nativní kód předává poškozené `VARIANT` struktura se spravovaným kódem.  Modul runtime pokusí zařazování to `VARIANT` na objekt a aktivuje MDA, pokud `VARIANT` není platný. Příklady neplatných `VARIANT`S zahrnout `VARIANT` s `VARTYPE` VT_EMPTY &#124; VT_BYREF nebo `VARIANT` s `VARTYPE` VT_VARIANT.  
   
 ## <a name="resolution"></a>Rozlišení  
- Kód nativní nebo nespravované předávání `VARIANT` musíte zajistit, aby `VARIANT` správně vytvořen a inicializován.  
+ Nativní nebo nespravovaný kód předá `VARIANT` musíte zajistit, aby `VARIANT` je správně vytvořen a inicializován.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- MDA nemá žádný vliv na modul runtime chování.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ MDA nemá žádný vliv na chování modulu runtime.  
   
 ## <a name="output"></a>Výstup  
- MDA zpráva označující, že modul runtime zjistil neplatný `VARIANT` předal modul nespravovaného do spravovaného kódu.  
+ MDA zpráva oznamující, že modul runtime zjistil neplatný `VARIANT` předávány modul nespravovaného do spravovaného kódu.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -45,7 +45,7 @@ ms.locfileid: "33386714"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.MarshalAsAttribute>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

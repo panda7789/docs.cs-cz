@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: 89647687c73cdb9b81625b830f0c9a77f1c67d13
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 646ff22aed68cc3c37a7d581ffa078a2e06df5b0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241084"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661617"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Postupy: Přihlaste se k odběru a zrušit její odběr událostí (C# Průvodce programováním v)
 Se přihlásíte k odběru události, která se publikuje jinou třídou, když chcete napsat vlastní kód, který se volá, když se vyvolá tuto událost. Například může přihlásit tlačítko `click` událostí, aby vaše aplikace dělat něco užitečné, když uživatel klikne na tlačítko.  
@@ -99,10 +99,10 @@ Se přihlásíte k odběru události, která se publikuje jinou třídou, když 
   
      Když všichni předplatitelé odhlásili odběr události, instanci události ve třídě vydavatele se nastaví na `null`.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Události](../../../csharp/programming-guide/events/index.md)  
-- [event](../../../csharp/language-reference/keywords/event.md)  
-- [Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)  
-- [-= – Operátor (referenční dokumentace jazyka C#)](../../language-reference/operators/subtraction-assignment-operator.md)  
+- [Události](../../../csharp/programming-guide/events/index.md)
+- [event](../../../csharp/language-reference/keywords/event.md)
+- [Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)
+- [-= – Operátor (referenční dokumentace jazyka C#)](../../language-reference/operators/subtraction-assignment-operator.md)
 - [+= – operátor](../../../csharp/language-reference/operators/addition-assignment-operator.md)

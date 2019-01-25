@@ -15,12 +15,12 @@ helpviewer_keywords:
 - mouse [Windows Forms], events
 - MouseUp event
 ms.assetid: 8cf0070d-793b-4876-b09e-d20d28280fab
-ms.openlocfilehash: 6f457756d2266a84c4f241a1cea167af194d8b81
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: ac44f58d5cf6edfc2010d8a878f22abcec0fe57f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864497"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54507574"
 ---
 # <a name="mouse-events-in-windows-forms"></a>Události myši ve Windows Forms
 Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele a stav tlačítka myši. Toto téma obsahuje podrobné informace o tom, jak získat tyto informace z událostí myši a vysvětluje, pořadí, ve které kliknutí myší jsou vyvolány události v ovládacích prvcích Windows Forms. Seznam a popis všech událostí myši najdete v tématu [jak funguje myši vstup ve Windows Forms](../../../docs/framework/winforms/how-mouse-input-works-in-windows-forms.md).  Viz také [Přehled obslužných rutin událostí (Windows Forms)](https://msdn.microsoft.com/library/be6fx1bb\(v=vs.110\)), [Přehled událostí (Windows Forms)](https://msdn.microsoft.com/library/1h12f09z\(v=vs.110\))  
@@ -62,7 +62,7 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
   
 8.  <xref:System.Windows.Forms.Control.MouseUp> události.  
   
- Příklad kódu, který ukazuje pořadí myši klikněte na události, najdete v článku [postupy: zpracování události uživatelského vstupu v ovládacích prvcích Windows Forms](../../../docs/framework/winforms/how-to-handle-user-input-events-in-windows-forms-controls.md).  
+ Příklad kódu, který ukazuje pořadí myši klikněte na události, najdete v článku [jak: Zpracování uživatelského vstupu událostí ve Windows Forms ovládací prvky](../../../docs/framework/winforms/how-to-handle-user-input-events-in-windows-forms-controls.md).  
   
 ### <a name="individual-controls"></a>Jednotlivých ovládacích prvků  
  Následující ovládací prvky není v souladu s Standardní zkratky myši klikněte na tlačítko chování události:  
@@ -74,11 +74,11 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
   
     -   Levé tlačítko myši: <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>  
   
-    -   Klikněte pravým tlačítkem myši na: žádné události kliknutí na vyvolána  
+    -   Klikněte pravým tlačítkem myši na: Žádné události kliknutí na vyvolána  
   
     -   Dvakrát klikněte na levý: <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>; <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>  
   
-    -   Vpravo klikněte dvakrát na: žádné události kliknutí na vyvolána  
+    -   Vpravo klikněte dvakrát na: Žádné události kliknutí na vyvolána  
   
 -   <xref:System.Windows.Forms.TextBox>, <xref:System.Windows.Forms.RichTextBox>, <xref:System.Windows.Forms.ListBox>, <xref:System.Windows.Forms.MaskedTextBox>, a <xref:System.Windows.Forms.CheckedListBox> ovládacích prvků  
   
@@ -87,11 +87,11 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
   
     -   Levé tlačítko myši: <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>  
   
-    -   Klikněte pravým tlačítkem myši na: žádné události kliknutí na vyvolána  
+    -   Klikněte pravým tlačítkem myši na: Žádné události kliknutí na vyvolána  
   
     -   Dvakrát klikněte na levý: <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>, <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDoubleClick>  
   
-    -   Vpravo klikněte dvakrát na: žádné události kliknutí na vyvolána  
+    -   Vpravo klikněte dvakrát na: Žádné události kliknutí na vyvolána  
   
 -   <xref:System.Windows.Forms.ListView> Ovládací prvek  
   
@@ -141,5 +141,5 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
     > [!NOTE]
     >  Pokud se uživatel přesune ukazatel myši mimo ovládací prvek přepínací tlačítko, zatímco je stisknuto levé tlačítko myši (jako je například hýbání myší <xref:System.Windows.Forms.Button> ovládací prvek je stisknutí), bude malovat vyvolanou ovládacím prvku přepínací tlačítko stavu a pouze <xref:System.Windows.Forms.Control.MouseUp> dojde k události. <xref:System.Windows.Forms.Control.Click> Nebo <xref:System.Windows.Forms.Control.MouseClick> nebude v této situaci dojde k událostem.  
   
-## <a name="see-also"></a>Viz také  
- [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)
+## <a name="see-also"></a>Viz také:
+- [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

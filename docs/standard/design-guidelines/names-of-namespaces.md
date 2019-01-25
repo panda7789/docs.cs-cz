@@ -9,12 +9,12 @@ helpviewer_keywords:
 - names [.NET Framework], type names
 ms.assetid: a49058d2-0276-43a7-9502-04adddf857b2
 author: KrzysztofCwalina
-ms.openlocfilehash: 64efdc46583a0931df9f57c32424ca4233bf2b82
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 0099c5c8a863023099b377e139461606de3e1e1c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143438"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54665133"
 ---
 # <a name="names-of-namespaces"></a>Názvy oborů názvů
 Jako s další pokyny pro pojmenování, cílem při pojmenování obory názvů vytváří dostatečná přehlednost pro programátora pomocí rozhraní hned vědět, co je pravděpodobné, že obsah oboru názvů. Následující šablony určuje obecné pravidlo pro pojmenování obory názvů:  
@@ -80,11 +80,11 @@ Jako s další pokyny pro pojmenování, cílem při pojmenování obory názvů
   
      **X DO NOT** zavést typ konflikty v názvech mezi typy v oborech názvů technologii a na obor názvů modelu aplikace (Pokud je tato technologie není určena pro použití s modelem aplikace).  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)

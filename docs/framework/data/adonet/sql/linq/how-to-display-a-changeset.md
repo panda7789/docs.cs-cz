@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: zobrazení změn'
+title: 'Postupy: Zobrazit sadu změn'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 126e7245-c5a0-4ebf-800d-cc1fcf9cd0ab
-ms.openlocfilehash: c9664c6d32f78f455aa29311f111acaecb5c7905
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 773e72d52a934bc7c6fa80fe252d62e67f87a34b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33359982"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596797"
 ---
-# <a name="how-to-display-a-changeset"></a>Postupy: zobrazení změn
-Sleduje změny si můžete prohlédnout <xref:System.Data.Linq.DataContext> pomocí <xref:System.Data.Linq.DataContext.GetChangeSet%2A>.  
+# <a name="how-to-display-a-changeset"></a>Postupy: Zobrazit sadu změn
+Sledovat změny si můžete prohlédnout <xref:System.Data.Linq.DataContext> pomocí <xref:System.Data.Linq.DataContext.GetChangeSet%2A>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad načte zákazníků, jejichž Město je Londýn, změny město Paříž a odešle, že změny zpět do databáze.  
+ Následující příklad načte zákazníků, jejichž Město je Londýn, Město se změní na Paříž a odešle změny zpět do databáze.  
   
  [!code-csharp[DLinqDebuggingSupport#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqDebuggingSupport/cs/Program.cs#2)]
  [!code-vb[DLinqDebuggingSupport#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqDebuggingSupport/vb/Module1.vb#2)]  
   
- Zobrazí se výstup z tohoto kódu podobný následujícímu. Všimněte si, že shrnutí na konci ukazuje, že byly provedeny změny osm.  
+ Výstup tohoto kódu se zobrazí podobný následujícímu. Všimněte si, že souhrnu uplynutí ukazuje, že byly provedeny změny osm.  
   
  `CustomerID: AROUT`  
   
@@ -75,5 +75,5 @@ Sleduje změny si můžete prohlédnout <xref:System.Data.Linq.DataContext> pomo
   
  `Total changes: {Added: 0, Removed: 0, Modified: 8}`  
   
-## <a name="see-also"></a>Viz také  
- [Podpora ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)
+## <a name="see-also"></a>Viz také:
+- [Podpora ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)

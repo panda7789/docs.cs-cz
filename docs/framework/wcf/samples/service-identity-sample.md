@@ -2,12 +2,12 @@
 title: Ukázka identity služby
 ms.date: 03/30/2017
 ms.assetid: 79fa8c1c-85bb-4b67-bc67-bfaf721303f8
-ms.openlocfilehash: 64adee14c3c0a0ba8071bbaca35b8712280e10b4
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 1efa354f62e1b28ad6cec02d9879448205791e4a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221957"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54707632"
 ---
 # <a name="service-identity-sample"></a>Ukázka identity služby
 Tato ukázka identity služby ukazuje, jak nastavit identitu služby. V době návrhu klient může načíst identitu pomocí metadat služby a za běhu pak se klient může ověřit identitu služby. Koncept identitu služby je umožnit klient k ověření služby před voláním některé z jeho operace, a tím chrání před neověřená volání klienta. Na zabezpečeném připojení služby také ověří přihlašovací údaje klienta před povolením přístupu, ale nejedná se o fokus této ukázky. Zobrazit ukázky [klienta](../../../../docs/framework/wcf/samples/client.md) , které zobrazí ověřování serveru.
@@ -159,4 +159,4 @@ class CustomIdentityVerifier : IdentityVerifier
     > [!NOTE]
     >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

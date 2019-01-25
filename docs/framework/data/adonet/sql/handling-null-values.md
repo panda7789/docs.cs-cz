@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
-ms.openlocfilehash: 039a6f5aab2f1b857f98803f8b3d6425cc549877
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: cd3a9cd8cf7862bfa3128b81f5ecf6d380e20c32
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43486038"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54554683"
 ---
 # <a name="handling-null-values"></a>Zpracování hodnot Null
 Hodnotu null v relační databázi se používá při neznámý nebo chybějící hodnota ve sloupci. Hodnota null není prázdný řetězec (pro datové typy znaků nebo datum a čas) ani nulovou hodnotu (pro číselné datové typy). Specifikace ANSI SQL-92 státy, s hodnotou null musí být stejný pro všechny typy dat, tak, aby všechny hodnoty Null se zpracovávají konzistentně. <xref:System.Data.SqlTypes> Obor názvů poskytuje sémantika s hodnotou null implementací <xref:System.Data.SqlTypes.INullable> rozhraní. Každý dat typy, které do <xref:System.Data.SqlTypes> má vlastní `IsNull` vlastnost a `Null` hodnotu, která je možné přiřadit do instance datového typu.  
@@ -21,7 +21,7 @@ Hodnotu null v relační databázi se používá při neznámý nebo chybějíc�
 ## <a name="nulls-and-three-valued-logic"></a>Hodnoty Null a s hodnotou tři logiky  
  Povolujících hodnoty null v definicích sloupce zavádí tři vracející logiky do vaší aplikace. Porovnání lze vyhodnotit na jednu ze tří podmínek:  
   
--   Hodnota TRUE  
+-   Pravda  
   
 -   False  
   
@@ -141,6 +141,6 @@ String.Equals instance method:
   Two empty strings=True   
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Datové typy SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Datové typy SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

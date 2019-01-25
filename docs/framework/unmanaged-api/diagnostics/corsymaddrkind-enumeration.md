@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 98cf49714829b4b2f80e0240c2ebde7fa6c280e1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 389cf2e77728002ce1078f63df3d741d1847c105
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33425402"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744970"
 ---
 # <a name="corsymaddrkind-enumeration"></a>CorSymAddrKind – výčet
-Určuje typ adresa paměti.  
+Určuje typ přidávané adresy paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,19 +48,19 @@ typedef enum CorSymAddrKind
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ADDR_IL_OFFSET`|Označuje Microsoft (MSIL intermediate language) místní proměnné nebo parametru indexem.|  
-|`ADDR_NATIVE_RVA`|Určuje relativní virtuální adresy do modulu.|  
-|`ADDR_NATIVE_REGISTER`|Označuje registrace procesoru.|  
-|`ADDR_NATIVE_REGREL`|Označuje, že první adresa je registr a druhá adresa je posun.|  
-|`ADDR_NATIVE_OFFSET`|Určuje posun z bázové adresy.|  
-|`ADDR_NATIVE_REGREG`|Označuje, že první adresa je nízkou část do registru a druhá adresa je vysoká část.|  
-|`ADDR_NATIVE_REGSTK`|Označuje, že první adresa je nízkou část zaregistrovat, druhý je vysoká část a třetí je posun.|  
-|`ADDR_NATIVE_STKREG`|Označuje, že první adresa je registr, posun je druhý a třetí je vysoká část registru.|  
-|`ADDR_BITFIELD`|Označuje, že první adresa je začátek pole a druhá adresa je délka pole.|  
-|`ADDR_NATIVE_ISECTOFFSET`|Označuje, že první adresa je v části a druhá adresa je posun.|  
+|`ADDR_IL_OFFSET`|Označuje, Microsoft intermediate language (MSIL) místní proměnná nebo parametr indexu.|  
+|`ADDR_NATIVE_RVA`|Určuje relativní virtuální adresu do modulu.|  
+|`ADDR_NATIVE_REGISTER`|Označuje registru procesoru.|  
+|`ADDR_NATIVE_REGREL`|Označuje, že první adresa registru a druhá adresa je posun.|  
+|`ADDR_NATIVE_OFFSET`|Určuje posun od základní adresa.|  
+|`ADDR_NATIVE_REGREG`|Označuje, že první adresa je nízká část registru a druhá adresa je vysoké.|  
+|`ADDR_NATIVE_REGSTK`|Označuje, že první adresa je nízká část registru, druhá je vysoká část a třetí je posun.|  
+|`ADDR_NATIVE_STKREG`|Označuje, že první adresa je registr, posun je druhý a třetí je vysoká část do registru.|  
+|`ADDR_BITFIELD`|Označuje, že první adresa je začátek pole a druhý adresa je délka pole.|  
+|`ADDR_NATIVE_ISECTOFFSET`|Označuje, že první adresa je oddíl a druhá adresa je posun.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)

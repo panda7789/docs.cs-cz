@@ -16,103 +16,103 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fdea4c456f04911c37acd69ced65ba841f7959ff
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e4241f2057ce77713f91e969eda7765739613333
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449348"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54732840"
 ---
 # <a name="imetadataimport-interface"></a>IMetaDataImport – rozhraní
-Poskytuje metody pro import a manipulace s existující metadat ze souboru přenosné spustitelný soubor (PE) nebo jiný zdroj, například knihovny typů nebo binární samostatnou, běhu metadat.  
+Poskytuje metody pro import a manipulace s existující metadata ze souboru (PE portable executable) nebo jiné zdroje, například knihovny typů nebo binární soubor metadat samostatné, za běhu.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[CloseEnum – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-closeenum-method.md)|Zavře čítač s Zadaný popisovač.|  
-|[CountEnum – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-countenum-method.md)|Získá počet elementů v enumerátor s Zadaný popisovač.|  
-|[EnumCustomAttributes – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md)|Zobrazí seznam vlastní definice atributu tokeny spojených s zadaný typ nebo člen.|  
-|[EnumEvents – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumevents-method.md)|Vytvoří výčet událostí definice tokeny pro zadaný token TypeDef.|  
-|[EnumFields – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md)|Vytvoří výčet FieldDef tokeny pro typ, který odkazuje zadaný token TypeDef.|  
+|[CloseEnum – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-closeenum-method.md)|Zavře čítač s určený.|  
+|[CountEnum – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-countenum-method.md)|Získá počet elementů v enumerátor určený.|  
+|[EnumCustomAttributes – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md)|Zobrazí seznam tokenů vlastní definice atributu přidružené zadaný typ nebo člen.|  
+|[EnumEvents – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumevents-method.md)|Vytvoří výčet tokeny definice události pro konkrétní token TypeDef.|  
+|[EnumFields – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md)|Vytvoří výčet FieldDef tokenů pro typ odkazuje zadaný token TypeDef.|  
 |[EnumFieldsWithName – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfieldswithname-method.md)|Vytvoří výčet FieldDef tokeny zadaného typu se zadaným názvem.|  
 |[EnumInterfaceImpls – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enuminterfaceimpls-method.md)|Vytvoří výčet MethodDef tokeny představující implementace rozhraní.|  
 |[EnumMemberRefs – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummemberrefs-method.md)|Vytvoří výčet MemberRef tokeny představující členů zadaného typu.|  
 |[EnumMembers – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummembers-method.md)|Vytvoří výčet MemberDef tokeny představující členů zadaného typu.|  
 |[EnumMembersWithName – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummemberswithname-method.md)|Vytvoří výčet MemberDef tokeny představující členů zadaného typu se zadaným názvem.|  
-|[EnumMethodImpls – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethodimpls-method.md)|Vytvoří výčet MethodBody a MethodDeclaration tokenů představující metody zadaného typu.|  
+|[EnumMethodImpls – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethodimpls-method.md)|Vytvoří výčet MethodBody a MethodDeclaration tokeny představující metody zadaného typu.|  
 |[EnumMethods – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethods-method.md)|Vytvoří výčet MethodDef tokeny představující metody zadaného typu.|  
-|[EnumMethodSemantics – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethodsemantics-method.md)|Vytvoří výčet vlastností a změnu vlastnosti události, ke kterým je související zadanou metodu.|  
-|[EnumMethodsWithName – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethodswithname-method.md)|Vytvoří výčet metod, které jsou definovány podle typu, který odkazuje zadaný token TypeDef, které mají zadaný název.|  
-|[EnumModuleRefs – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummodulerefs-method.md)|Vytvoří výčet Odkaz ModuleRef tokeny, které představují importovaných modulů.|  
-|[EnumParams – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumparams-method.md)|Vytvoří výčet představující parametry metody odkazuje zadaný token MethodDef tokeny ParamDef.|  
+|[EnumMethodSemantics – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethodsemantics-method.md)|Vytvoří výčet vlastností a změnu vlastnosti události, ke kterým se vztahuje zadanou metodu.|  
+|[EnumMethodsWithName – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethodswithname-method.md)|Podává výčet metod, které mají se zadaným názvem a typem odkazuje zadaný token TypeDef, která jsou definována.|  
+|[EnumModuleRefs – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummodulerefs-method.md)|Vytvoří výčet Odkaz ModuleRef tokeny, které představují importované moduly.|  
+|[EnumParams – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumparams-method.md)|Vytvoří výčet ParamDef tokeny představující parametry metody odkazuje zadaný token MethodDef.|  
 |[EnumPermissionSets – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumpermissionsets-method.md)|Vytvoří výčet oprávnění pro objekty v oboru Zadaná metadata.|  
-|[EnumProperties – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumproperties-method.md)|Vytvoří výčet představující vlastnosti typu odkazuje zadaný token TypeDef tokeny vlastnosti.|  
-|[EnumSignatures – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumsignatures-method.md)|Vytvoří výčet podpis tokeny představující samostatné podpisy v aktuálním oboru.|  
+|[EnumProperties – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumproperties-method.md)|Vytvoří výčet vlastnosti tokeny představující vlastnosti typu odkazuje zadaný token TypeDef.|  
+|[EnumSignatures – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumsignatures-method.md)|Vytvoří výčet tokenů podpisu představující samostatné podpisy v aktuálním oboru.|  
 |[EnumTypeDefs – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumtypedefs-method.md)|Vytvoří výčet TypeDef tokeny představující všechny typy v aktuálním oboru.|  
-|[EnumTypeRefs – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumtyperefs-method.md)|Vytvoří výčet Odkaz TypeRef tokeny definované v aktuálním oboru metadat.|  
-|[EnumTypeSpecs – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumtypespecs-method.md)|Zobrazí typ TypeSpec tokeny definované v aktuálním oboru metadat.|  
-|[EnumUnresolvedMethods – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumunresolvedmethods-method.md)|Vytvoří výčet MemberDef tokeny představující nerozpoznané metody v aktuálním oboru metadat.|  
-|[EnumUserStrings – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumuserstrings-method.md)|Vytvoří výčet tokeny řetězec představující pevně řetězce v aktuálním oboru metadat.|  
-|[FindField – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findfield-method.md)|Získá token FieldDef pole, která je členem zadaný typ a má zadaný název a podpis metadat.|  
-|[FindMember – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findmember-method.md)|Získá ukazatel na MemberDef token pro člena definované zadaný typ se zadaným názvem a podpis metadat.|  
-|[FindMemberRef – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findmemberref-method.md)|Získá ukazatel na MemberRef token pro člena definované zadaný typ se zadaným názvem a podpis metadat.|  
-|[FindMethod – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findmethod-method.md)|Získá ukazatel na MethodDef token pro metodu definované zadaný typ se zadaným názvem a podpis metadat.|  
-|[FindTypeDefByName – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findtypedefbyname-method.md)|Získá ukazatel k metadatům TypeDef token pro typ se zadaným názvem.|  
-|[FindTypeRef – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findtyperef-method.md)|Získá ukazatel na odkaz TypeRef metadata token, který odkazuje na typ v oboru zadaný hledaný se zadaným názvem.|  
-|[GetClassLayout – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getclasslayout-method.md)|Získá informace o třídě odkazuje zadaný TypeDef rozložení token.|  
-|[GetCustomAttributeByName – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getcustomattributebyname-method.md)|Získá hodnotu vlastních atributů, jeho název.|  
-|[GetCustomAttributeProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getcustomattributeprops-method.md)|Získá hodnotu atributu vlastní zadaný token jeho metadata.|  
-|[GetEventProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-geteventprops-method.md)|Získá informace o metadatech (včetně deklarující typ přidat a odebrat metody pro Delegáti a všechny příznaky a další související data) pro událost reprezentována token zadané události.|  
-|[GetFieldMarshal – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getfieldmarshal-method.md)|Získá ukazatel na nativní, nespravovaný typ pole reprezentována zadaný token metadata pole.|  
+|[EnumTypeRefs – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumtyperefs-method.md)|Vytvoří výčet TypeRef tokeny definované v aktuálním oboru metadat.|  
+|[EnumTypeSpecs – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumtypespecs-method.md)|Vytvoří výčet token TypeSpec tokeny definované v aktuálním oboru metadat.|  
+|[EnumUnresolvedMethods – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumunresolvedmethods-method.md)|Vytvoří výčet MemberDef tokeny představující nevyřešené metody v aktuálním oboru metadat.|  
+|[EnumUserStrings – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumuserstrings-method.md)|Vytvoří výčet řetězec tokeny představující pevně zakódované řetězce v aktuálním oboru metadat.|  
+|[FindField – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findfield-method.md)|Získá token FieldDef pro pole, která je členem zadaného typu a má zadaný název a podpis metadat.|  
+|[FindMember – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findmember-method.md)|Získá ukazatel MemberDef token pro člena definovaného podle zadaného typu pomocí zadaného názvu a podpisu metadat.|  
+|[FindMemberRef – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findmemberref-method.md)|Získá ukazatel Odkaz MemberRef token pro člena definovaného podle zadaného typu pomocí zadaného názvu a podpisu metadat.|  
+|[FindMethod – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findmethod-method.md)|Získá ukazatel MethodDef token metody definovány pomocí zadaného typu pomocí zadaného názvu a podpisu metadat.|  
+|[FindTypeDefByName – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findtypedefbyname-method.md)|Získá ukazatel na TypeDef metadata token pro typ se zadaným názvem.|  
+|[FindTypeRef – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findtyperef-method.md)|Získá ukazatel na token TypeRef metadata, která odkazuje na typ v rámci zadané hledání se zadaným názvem.|  
+|[GetClassLayout – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getclasslayout-method.md)|Získá informace o rozložení třídy odkazuje zadaný TypeDef token.|  
+|[GetCustomAttributeByName – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getcustomattributebyname-method.md)|Získá hodnotu vlastního atributu, jeho název.|  
+|[GetCustomAttributeProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getcustomattributeprops-method.md)|Získá hodnotu vlastní atribut zadaný svůj token metadat.|  
+|[GetEventProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-geteventprops-method.md)|Získá informace o metadatech (včetně deklarovaného typu, přidání a odebrání metody pro delegáty a všechny příznaky a další související data) pro událost reprezentována token zadané události.|  
+|[GetFieldMarshal – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getfieldmarshal-method.md)|Získá ukazatel na nativní, nespravovaným typem pole reprezentována zadaný token metadat pole.|  
 |[GetFieldProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getfieldprops-method.md)|Získá metadata spojená s polem odkazuje zadaný FieldDef token.|  
-|[GetInterfaceImplProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getinterfaceimplprops-method.md)|Získá ukazatel na tokeny metadata pro typ, který implementuje zadanou metodu a rozhraní, který deklaruje, že metoda.|  
-|[GetMemberProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getmemberprops-method.md)|Získá informace metadat (včetně názvu, binární podpisu a relativní virtuální adresy) člena typu odkazuje token Zadaná metadata.|  
-|[GetMemberRefProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getmemberrefprops-method.md)|Získá metadata spojených se členem odkazuje zadaný token.|  
-|[GetMethodProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getmethodprops-method.md)|Získá metadata přidružená metoda odkazuje zadaný MethodDef token.|  
-|[GetMethodSemantics – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getmethodsemantics-method.md)|Získá ukazatel na vztah mezi metoda odkazuje zadaný token MethodDef a spárované vlastnosti a události odkazuje zadaný EventProp token.|  
-|[GetModuleFromScope – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getmodulefromscope-method.md)|Získá ukazatel k metadatům token pro modul odkazuje v aktuálním oboru metadat.|  
-|[GetModuleRefProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getmodulerefprops-method.md)|Získá název modulu odkazuje token Zadaná metadata.|  
-|[GetNameFromToken – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getnamefromtoken-method.md)|Získá název znakové sady UTF-8 objektu odkazuje token Zadaná metadata.|  
-|[GetNativeCallConvFromSig – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getnativecallconvfromsig-method.md)|Získá nativního konvence volání pro metodu, která je reprezentována Zadaný podpis ukazatele.|  
-|[GetNestedClassProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getnestedclassprops-method.md)|Získá token TypeDef pro nadřazených nadřazený typ vnořené zadaného typu.|  
-|[GetParamForMethodIndex – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getparamformethodindex-method.md)|Získá ukazatel na token, který představuje parametr v zadané pořadové číslo pozice v pořadí parametrů metody pro metodu reprezentovanou zadaný token MethodDef.|  
-|[GetParamProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getparamprops-method.md)|Získá metadata hodnoty pro parametr odkazuje zadaný ParamDef token.|  
-|[GetPermissionSetProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getpermissionsetprops-method.md)|Získá metadata přidružená System.Security.PermissionSet reprezentována zadaný token oprávnění.|  
-|[GetPinvokeMap](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getpinvokemap-method.md)|Získá odkaz ModuleRef token představující cíl sestavení volání PInvoke.|  
-|[GetPropertyProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getpropertyprops-method.md)|Získá metadata přidružená vlastnost reprezentována zadaný token.|  
-|[GetRVA – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getrva-method.md)|Získá posun relativní virtuální adresy kód objekt reprezentovaný rozhraním zadaný token.|  
-|[GetScopeProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getscopeprops-method.md)|Získá název a volitelně identifikátor verze sestavení nebo modul v aktuálním oboru metadat.|  
-|[GetSigFromToken – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getsigfromtoken-method.md)|Získá podpis binární metadata související s zadaný token.|  
-|[GetTypeDefProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-gettypedefprops-method.md)|Vrátí informace metadat pro typu představovaný typem zadaný token TypeDef.|  
-|[GetTypeRefProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-gettyperefprops-method.md)|Získá metadata spojená s typem odkazuje zadaný odkaz TypeRef token.|  
-|[GetTypeSpecFromToken – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-gettypespecfromtoken-method.md)|Získá podpis binární metadat specifikace typu reprezentována zadaný token.|  
-|[GetUserString – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getuserstring-method.md)|Získá reprezentována Zadaná metadata token řetězcového literálu.|  
-|[IsGlobal – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-isglobal-method.md)|Získá hodnotu označující, zda pole, metoda nebo typu představovaný typem Zadaná metadata token má globální obor.|  
+|[GetInterfaceImplProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getinterfaceimplprops-method.md)|Získá ukazatel na tokeny metadat pro typ, který implementuje zadanou metodu a rozhraní, které deklaruje dané metody.|  
+|[GetMemberProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getmemberprops-method.md)|Získá metadata informace (včetně názvu, binární podpis a relativní virtuální adresa), odkazuje token metadat zadaného člena typu.|  
+|[GetMemberRefProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getmemberrefprops-method.md)|Získá metadata přidružená k členu odkazuje zadaný token.|  
+|[GetMethodProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getmethodprops-method.md)|Získá token budou metadata spojená s metodou odkazuje zadaný MethodDef.|  
+|[GetMethodSemantics – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getmethodsemantics-method.md)|Získá ukazatel na vztah mezi metodou odkazuje zadaný token MethodDef a spárované vlastnosti a události odkazuje zadaný EventProp token.|  
+|[GetModuleFromScope – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getmodulefromscope-method.md)|Získá ukazatel k metadatům token pro modul odkazovat v aktuálním oboru metadat.|  
+|[GetModuleRefProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getmodulerefprops-method.md)|Získá název odkazuje token metadat zadaného modulu.|  
+|[GetNameFromToken – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getnamefromtoken-method.md)|Získá název kódování UTF-8 odkazuje token metadat zadaného objektu.|  
+|[GetNativeCallConvFromSig – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getnativecallconvfromsig-method.md)|Získá nativní konvence volání pro metodu, která je reprezentována zadaným podpisem ukazatele.|  
+|[GetNestedClassProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getnestedclassprops-method.md)|Získá token TypeDef pro zadaný typ vnořeného typu nadřazeného nadřazeného typu.|  
+|[GetParamForMethodIndex – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getparamformethodindex-method.md)|Získá ukazatel na token, který představuje parametr na zadané pořadové číslo pozice v pořadí parametrů metody k metodě reprezentované zadaný token MethodDef.|  
+|[GetParamProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getparamprops-method.md)|Získá metadata hodnot pro parametr odkazuje zadaný ParamDef token.|  
+|[GetPermissionSetProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getpermissionsetprops-method.md)|Získá metadata přidružená k System.Security.PermissionSet reprezentována zadaný token oprávnění.|  
+|[GetPinvokeMap](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getpinvokemap-method.md)|Získá token představující cílové sestavení volání PInvoke Odkaz ModuleRef.|  
+|[GetPropertyProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getpropertyprops-method.md)|Získá metadata přidružená vlastnost reprezentována zadaného tokenu.|  
+|[GetRVA – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getrva-method.md)|Získá posun relativní virtuální adresu kód objektu reprezentovaného parametrem zadaného tokenu.|  
+|[GetScopeProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getscopeprops-method.md)|Získá název a volitelně identifikátor verze sestavení nebo modulu v aktuálním oboru metadat.|  
+|[GetSigFromToken – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getsigfromtoken-method.md)|Získá metadata binární podpis přidružené k zadaným tokenu.|  
+|[GetTypeDefProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-gettypedefprops-method.md)|Vrátí informace metadat pro typ zastoupený zadaný token TypeDef.|  
+|[GetTypeRefProps – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-gettyperefprops-method.md)|Získá token budou metadata spojená s typem odkazuje zadaný odkaz TypeRef.|  
+|[GetTypeSpecFromToken – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-gettypespecfromtoken-method.md)|Získá metadata binární podpis specifikace typu, který je reprezentován zadaného tokenu.|  
+|[GetUserString – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getuserstring-method.md)|Získá reprezentována token metadat zadaného řetězcového literálu.|  
+|[IsGlobal – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-isglobal-method.md)|Získá hodnotu označující, zda pole, metodu nebo typ zastoupený token metadat zadaného má globální obor.|  
 |[IsValidToken – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-isvalidtoken-method.md)|Získá hodnotu označující, zda zadaný token obsahuje neplatný odkaz na objekt kódu.|  
-|[ResetEnum – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-resetenum-method.md)|Zadaný čítač obnoví na zadané pozici.|  
-|[ResolveTypeRef – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-resolvetyperef-method.md)|Získá typ informace pro typ, který odkazuje zadaný odkaz TypeRef token.|  
+|[ResetEnum – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-resetenum-method.md)|Zadaný čítač resetuje na určenou pozici.|  
+|[ResolveTypeRef – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-resolvetyperef-method.md)|Získá typ informací pro typ odkazuje zadaný token TypeRef.|  
   
 ## <a name="remarks"></a>Poznámky  
- Návrh `IMetaDataImport` rozhraní je určena především pro použití pomocí nástroje a služby, které bude import informací o typu (například nástroje pro vývoj) nebo Správa nasazení součásti (například řešení nebo aktivace služby). Metody v `IMetaDataImport` spadají do následujících kategorií úloh:  
+ Návrh `IMetaDataImport` rozhraní je určený hlavně kvůli používat nástroje a služby, které bude import informací o typu (například nástroje pro vývoj) nebo správu nasazení součásti (například řešení/aktivace služby). Metody v `IMetaDataImport` spadají do následujících kategorií úloh:  
   
--   Vytváření výčtů kolekcí položek v oboru metadat.  
+-   Vytváření výčtů kolekcí položek v rámci metadat.  
   
--   Hledání položku, která obsahuje konkrétní sadu vlastností.  
+-   Hledání položky, která má specifickou sadu vlastností.  
   
--   Získávání vlastnosti zadané položky.  
+-   Získání vlastnosti zadané položky.  
   
--   Metody Get jsou navrženy speciálně vrátit jednou hodnotou vlastnosti položky metadat. Když vlastnost je odkaz na další položku, se vrátí token pro danou položku. Všechny vstupní typ ukazatele může mít hodnotu NULL k označení, že není požadováno pro dané hodnoty. K získání vlastností, které jsou v podstatě kolekci objektů (například kolekce rozhraní, která implementuje třídu), použijte metodu výčtu.  
+-   Metody Get jsou vytvořené speciálně k vrácení jednou hodnotou vlastnosti položky metadat. Vlastnost je odkazem na jinou položku, bude vrácen token pro danou položku. Žádné vstupní typ ukazatele může mít hodnotu NULL k označení, že není žádá konkrétní hodnotu. Získat vlastnosti, které jsou v podstatě kolekci objektů (například kolekce rozhraní, která implementuje třídu), použijte metody výčtu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

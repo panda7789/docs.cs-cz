@@ -4,25 +4,25 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - transactions [WCF], ServiceModel configuration
 ms.assetid: 5636067a-7fbd-4485-aaa2-8141c502acf3
-ms.openlocfilehash: 2c724e3f67bbf6554abffb44f101d2f28f748023
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ee35b6c02637c3013a42303dcd7aa7c813bd183c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33498342"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54693159"
 ---
 # <a name="servicemodel-transaction-configuration"></a>Konfigurace transakcí ServiceModel
 Windows Communication Foundation (WCF) obsahuje tři atributy pro konfiguraci transakce pro službu: `transactionFlow`, `transactionProtocol`, a `transactionTimeout`.  
   
 ## <a name="configuring-transactionflow"></a>Konfigurace transactionFlow  
- Většina předdefinovaných vazby WCF poskytuje obsahovat `transactionFlow` a `transactionProtocol` atributy, takže můžete nakonfigurovat vazby tak, aby přijímal příchozí transakce pro koncový bod konkrétní použití protokolu toku konkrétní transakce. Kromě toho můžete použít `transactionFlow` elementu a jeho `transactionProtocol` atribut vytvářet vlastní vlastní vazby. Další informace o nastavení konfigurační prvky najdete v tématu [ \<vazby >](../../../../docs/framework/misc/binding.md) a [konfigurační schéma služby WCF](../../../../docs/framework/configure-apps/file-schema/wcf/index.md).  
+ Většina předdefinovaných vazeb WCF poskytuje, obsahují `transactionFlow` a `transactionProtocol` atributy, tak, abyste mohli nakonfigurovat vazbu tak, aby přijímal příchozí transakce pro určitý koncový bod pomocí protokolu toku určené transakce. Kromě toho můžete použít `transactionFlow` elementu a jeho `transactionProtocol` atributu k sestavení vlastních vlastní vazby. Další informace o nastavení konfigurační prvky, naleznete v tématu [ \<vazby >](../../../../docs/framework/misc/binding.md) a [konfigurační schéma služby WCF](../../../../docs/framework/configure-apps/file-schema/wcf/index.md).  
   
- `transactionFlow` Atribut určuje, zda toku transakcí je povoleno pro koncové body služby, které používají vazby.  
+ `transactionFlow` Atribut určuje, zda je povolen tok transakce pro koncové body služby, které tuto vazbu využíval.  
   
 ## <a name="configuring-transactionprotocol"></a>Konfigurace transactionProtocol  
- `transactionProtocol` Určuje atribut, protokol transakcí pro použití s koncové body služby, které používají vazby.  
+ `transactionProtocol` Atribut určuje protokol transakce má použít s koncovými body služby, které tuto vazbu využíval.  
   
- Následuje příklad konfiguračního oddílu, který konfiguruje protokol WS-AtomicTransaction Zadaná vazba pro podporu toku transakcí, jakož i použití.  
+ Následuje příklad konfiguračního oddílu, který konfiguruje určenou vazbu pro podporu toku transakcí, stejně jako k využívání WS-AtomicTransaction protokolu.  
   
 ```xml  
 <netNamedPipeBinding>  
@@ -42,7 +42,7 @@ Windows Communication Foundation (WCF) obsahuje tři atributy pro konfiguraci tr
 ```  
   
 ## <a name="configuring-transactiontimeout"></a>Konfigurace vlastností transactionTimeout  
- Můžete nakonfigurovat `transactionTimeout` atribut služby WCF v `behavior` element konfiguračního souboru. Následující kód ukazuje, jak to provést.  
+ Můžete nakonfigurovat `transactionTimeout` atribut pro vaši službu WCF v `behavior` element konfiguračního souboru. Následující kód ukazuje, jak to provést.  
   
 ```xml  
 <configuration>  
@@ -54,14 +54,14 @@ Windows Communication Foundation (WCF) obsahuje tři atributy pro konfiguraci tr
 </configuration>  
 ```  
   
- `transactionTimeout` Atribut určuje časové období, ve kterém musí dokončit v službě vytvořit novou transakci. Je používán jako <xref:System.Transactions.TransactionScope> časový limit pro žádnou operaci, která vytvoří novou transakci, a pokud <xref:System.ServiceModel.OperationBehaviorAttribute> se použije, <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> je nastavena na `true`.  
+ `transactionTimeout` Atribut určuje časové období, ve kterém musí být vytvořené ve službě nové transakce dokončena. Se používá jako <xref:System.Transactions.TransactionScope> časový limit pro jakoukoli operaci, která zavádí novou transakci, a pokud <xref:System.ServiceModel.OperationBehaviorAttribute> se použije <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> je nastavena na `true`.  
   
- Časový limit určuje dobu od okamžiku vytvoření transakce pro dokončení fáze 1 dvoufázového protokolu.  
+ Časový limit určuje doba od vytvoření transakce pro dokončení fáze 1 v protokol dvoufázového potvrzení.  
   
- Pokud tento atribut nastavený v rámci `service` konfigurační oddíl, byste měli použít alespoň jednu metodu odpovídající služby s <xref:System.ServiceModel.OperationBehaviorAttribute>, ve kterém <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> je nastavena na `true`.  
+ Pokud tento atribut je nastaven v rámci `service` konfiguračního oddílu, byste měli použít alespoň jednu metodu s odpovídající služby <xref:System.ServiceModel.OperationBehaviorAttribute>, ve kterém <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> je nastavena na `true`.  
   
- Upozorňujeme, že dojde k vypršení platnosti použít nejmenší hodnotu mezi touto `transactionTimeout` nastavení konfigurace a všechny <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> vlastnost.  
+ Mějte na paměti, že hodnota časového limitu je nejmenší hodnotu mezi touto `transactionTimeout` nastavení konfigurace a všechny <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> vlastnost.  
   
-## <a name="see-also"></a>Viz také  
- [\<Vazba >](../../../../docs/framework/misc/binding.md)  
- [Konfigurační schéma služby WCF](../../../../docs/framework/configure-apps/file-schema/wcf/index.md)
+## <a name="see-also"></a>Viz také:
+- [\<Vytvoření vazby >](../../../../docs/framework/misc/binding.md)
+- [Konfigurační schéma služby WCF](../../../../docs/framework/configure-apps/file-schema/wcf/index.md)

@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 6a14125f-1a8d-41a1-8a32-659ca0ad12de
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b713eefa4f23aec34b5f55c0c3457381f54ef931
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: de8569c55ef50e3f18d084f7d7ad60c733e58e50
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394618"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623102"
 ---
 # <a name="ltfieldgt-element-net-native"></a>Element &lt;Field&gt; (.NET Native)
-Platí zásady reflexe modulu runtime pro pole.  
+Použije zásady reflexe runtime pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,21 +31,21 @@ Platí zásady reflexe modulu runtime pro pole.
 |Atribut|Typ atributu|Popis|  
 |---------------|--------------------|-----------------|  
 |`Name`|Obecné|Požadovaný atribut. Určuje název pole.|  
-|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky dotazování na informace o nebo vytváření výčtu pole, ale neumožňuje žádné dynamické přístup za běhu.|  
-|`Dynamic`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup do pole, které chcete povolit dynamické programování. Tato zásada zajistí, že pole můžete nastavit nebo načíst dynamicky za běhu.|  
-|`Serialize`|Serializace|Nepovinný atribut. Určuje runtime přístup do pole, které chcete povolit instance typu bylo serializováno modulem knihovny například serializátor Newtonsoft JSON nebo má být použit pro datové vazby.|  
+|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky dotazování na informace o nebo vytváření výčtu pole, ale neumožňuje dynamické přístup za běhu.|  
+|`Dynamic`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k poli Povolit dynamické programování. Tato zásada zajistí, že pole můžete nastavit nebo načíst dynamicky za běhu.|  
+|`Serialize`|Serializace|Nepovinný atribut. Určuje runtime přístup do pole, které chcete povolit instance typu bylo serializováno modulem knihoven, jako je například serializátor Newtonsoft JSON nebo má být použit pro vytváření datových vazeb.|  
   
-## <a name="name-attribute"></a>Atribut Name.  
+## <a name="name-attribute"></a>Název atributu  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|*method_name*|Název pole. Typ pole je definován nadřazený [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) nebo [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element.|  
+|*method_name*|Název pole. Typ pole je definován nadřazený [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) nebo [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementu.|  
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|*policy_setting*|Nastavení, které chcete použít pro tento typ zásad pro pole. Možné hodnoty jsou `Auto`, `Excluded`, `Included`, a `Required`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|*policy_setting*|Toto nastavení platí pro tento typ zásad pole. Možné hodnoty jsou `Auto`, `Excluded`, `Included`, a `Required`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -54,13 +54,13 @@ Platí zásady reflexe modulu runtime pro pole.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Reflexe zásada se vztahuje na typ a všechny její členy.|  
-|[\<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Reflexe zásada se vztahuje na sestavené obecné typy a všechny její členy.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud pole zásady nejsou výslovně definované, dědí zásady modulu runtime objektů svého nadřízeného elementu.  
+ Pokud nejsou výslovně definované zásady polí, dědí zásady modulu runtime objektů svého nadřízeného elementu.  
   
-## <a name="see-also"></a>Viz také  
- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)  
- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
+## <a name="see-also"></a>Viz také:
+- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

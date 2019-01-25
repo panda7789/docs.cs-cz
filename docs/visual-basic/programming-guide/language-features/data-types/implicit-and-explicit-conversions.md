@@ -20,12 +20,12 @@ helpviewer_keywords:
 - data type conversion [Visual Basic], implicit
 - implicit data type conversions [Visual Basic]
 ms.assetid: 77de1659-af8a-492c-967e-e7ef60ccce66
-ms.openlocfilehash: 09d96b304ba3bcf2a9de2812ce37ae69dba73a41
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 8e0ab9e3818ff4210dc6e349104ea0dcc4c8bfa7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44185347"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596004"
 ---
 # <a name="implicit-and-explicit-conversions-visual-basic"></a>Implicitní a explicitní převody (Visual Basic)
 *Implicitní převod* nevyžaduje žádnou zvláštní syntaxi ve zdrojovém kódu. V následujícím příkladu, Visual Basic implicitně převede hodnotu `k` na jednoduchou přesnost s plovoucí desetinnou čárkou hodnotu před přiřazením na `q`.  
@@ -117,7 +117,7 @@ End If
  Další informace a příklad najdete v tématu [převody pole](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md).  
   
 ### <a name="types-defining-ctype"></a>Typy definování CType  
- Můžete definovat `CType` na třídy nebo struktury, které jste definovali. To umožňuje převod hodnoty do a z typu třídy nebo struktury. Další informace a příklad najdete v tématu [postupy: definice operátora převodu](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
+ Můžete definovat `CType` na třídy nebo struktury, které jste definovali. To umožňuje převod hodnoty do a z typu třídy nebo struktury. Další informace a příklad najdete v tématu [jak: Definice operátora převodu](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
   
 > [!NOTE]
 >  Použít s klíčovým slovem převod hodnoty musí být platná pro cílový datový typ nebo dojde k chybě. Například, pokud se pokusíte převést `Long` k `Integer`, hodnota `Long` musí být v platném rozsahu pro `Integer` datového typu.  
@@ -125,15 +125,15 @@ End If
 > [!CAUTION]
 >  Určení `CType` převést z jedné třídy typu na jiný selže v době běhu Pokud zdrojový typ není odvozen z cílového typu. Takové selhání vyvolá <xref:System.InvalidCastException> výjimky.  
   
- Nicméně je-li jeden z typů struktury nebo třídy, které jste definovali, a pokud jste definovali `CType` v této struktury nebo třídy, může převod úspěšné, pokud splňuje požadavky vaší `CType`. Zobrazit [postupy: definice operátora převodu](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
+ Nicméně je-li jeden z typů struktury nebo třídy, které jste definovali, a pokud jste definovali `CType` v této struktury nebo třídy, může převod úspěšné, pokud splňuje požadavky vaší `CType`. Zobrazit [jak: Definice operátora převodu](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
   
  Provedení explicitního převodu se taky říká *přetypování* výraz, který se daná data typu nebo objekt třídy.  
   
-## <a name="see-also"></a>Viz také  
- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
- [Převody mezi řetězci a ostatními typy](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)  
- [Postupy: převedení objektu na jiný typ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)  
- [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
- [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
+## <a name="see-also"></a>Viz také:
+- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Převody mezi řetězci a ostatními typy](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)
+- [Postupy: Převést objekt na jiný typ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)
+- [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)
+- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
+- [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)

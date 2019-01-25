@@ -1,15 +1,15 @@
 ---
-title: Seskupit podle (entita SQL)
+title: Seskupit podle (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: cf4f4972-4724-4945-ba44-943a08549139
-ms.openlocfilehash: 3b5edee08afef8418f19df433223818218ae909d
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 4dffc88866721bde0d4e846fa805bb60c6855b5b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32763183"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54740564"
 ---
-# <a name="group-by-entity-sql"></a>Seskupit podle (entita SQL)
+# <a name="group-by-entity-sql"></a>Seskupit podle (Entity SQL)
 Určuje skupiny, do které objektů vrácených dotazem ([vyberte](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)) výrazu mají být umístěny.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -20,25 +20,25 @@ Určuje skupiny, do které objektů vrácených dotazem ([vyberte](../../../../.
   
 ## <a name="arguments"></a>Arguments  
  `aliasedExpression`  
- Jakýkoli platný dotaz výraz, ve kterém se provádí seskupení. `expression` může být vlastnost nebo není agregační výraz, který odkazuje vlastnost vrácený klauzule FROM. Každý výraz v klauzuli GROUP BY musí být typ, který může být porovnána shoda. Tyto typy jsou obecně skalární primitiv například čísla, řetězce a data. Nelze seskupit podle kolekce.  
+ Libovolný výraz platný dotaz, na kterém se provádí seskupení. `expression` může být vlastnost ani není agregační výraz, který odkazuje na vlastnost vrácené v klauzuli FROM. Každý výraz v klauzuli GROUP BY musí vyhodnotit na typ, který může být porovnána shoda. Tyto typy jsou obecně skalární primitivních elementů, jako jsou čísla, řetězce a data. Nelze seskupit podle kolekce.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud agregační funkce, které jsou zahrnuty v klauzuli SELECT \<seznamu výběru >, GROUP BY vypočítá souhrnnou hodnotu pro každou skupinu. Při zadání GROUP BY je každý název vlastnosti v jakékoli jiné než agregované výraz v seznamu select by měl být součástí seznamu GROUP BY nebo výraz GROUP BY musí přesně odpovídat výrazu seznamu výběru.  
+ Pokud agregační funkce jsou zahrnuty v klauzuli SELECT \<seznamu příkazu select >, GROUP BY vypočítá souhrnnou hodnotu pro každou skupinu. Je-li seskupit podle zadána, název každé vlastnosti v jakékoli jiné než agregované výraz v seznamu select, měly by být součástí seznamu GROUP BY nebo výraz GROUP BY musí přesně odpovídat výrazu seznamu příkazu select.  
   
 > [!NOTE]
->  Pokud není zadán v klauzuli ORDER BY, nejsou skupiny vrácené v klauzuli GROUP BY v libovolném pořadí. Pokud chcete zadat konkrétní řazení dat, doporučujeme vždy použít klauzuli ORDER by.  
+>  Pokud není zadána klauzule ORDER BY, nejsou skupiny vrácené v klauzuli GROUP BY v libovolném pořadí. Chcete-li určit konkrétní pořadí dat, doporučujeme vždy používat klauzuli ORDER by.  
   
- Při zadání klauzule GROUP BY je buď explicitně nebo implicitně (například klauzule HAVING v dotazu), aktuální obor je skrytá a zavádí nový obor.  
+ Pokud klauzule GROUP BY je zadán, buď explicitně nebo implicitně (například pomocí klauzule HAVING v dotazu), je skrytý v aktuálním oboru a zavedl nový obor.  
   
- Klauzule SELECT, klauzuli HAVING a klauzuli ORDER by už nebudou k odkazování na element názvy zadané v klauzuli FROM. Mohou odkazovat pouze na výrazy seskupení sami. K tomuto účelu můžete přiřadit nové názvy (aliasy) pro každý výraz seskupení. Pokud není zadán žádný alias pro výraz seskupení [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pokusí jej vygenerovat pomocí pravidel pro vytvoření aliasu, jak je znázorněno v následujícím příkladu.  
+ Klauzule SELECT, klauzuli HAVING a ORDER BY – klauzule již nebude moci odkazovat na názvy elementů zadaný v klauzuli FROM. Mohou odkazovat pouze na výrazy seskupování sami. K tomuto účelu můžete přiřadit nové názvy (aliasy) pro každý výraz seskupení. Pokud není zadán žádný alias pro výraz grouping [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pokusí vygenerovat pomocí pravidel pro vytvoření aliasu, jak je znázorněno v následujícím příkladu.  
   
  `SELECT g1, g2, ...gn FROM c as c1`  
   
  `GROUP BY e1 as g1, e2 as g2, ...en as gn`  
   
- Výrazy v klauzuli GROUP BY nelze odkazovat na názvy definované výše v stejné klauzule GROUP BY.  
+ Výrazy v klauzuli GROUP BY nemůže odkazovat na názvy definované výše v stejné klauzule GROUP BY.  
   
- Kromě názvy seskupení můžete také zadat agregace v klauzuli SELECT, klauzuli HAVING a klauzuli ORDER by. Agregace obsahuje výraz, který se vyhodnotí pro každý prvek skupiny. Agregační operátor snižuje hodnoty těchto výrazů (obvykle, ale ne vždy do jedinou hodnotu). Agregační výraz můžete nastavit odkazy na původní element názvy viditelné v nadřazeném oboru nebo na některé nové názvy zavedených v klauzuli GROUP BY, sám sebe. I když agregace se zobrazí v klauzuli SELECT, klauzuli HAVING a ORDER BY – klauzule, jsou ve skutečnosti vyhodnocovány v rámci stejného oboru jako seskupení výrazy, jak je znázorněno v následujícím příkladu.  
+ Kromě seskupení názvy můžete také určit agregace v klauzuli SELECT, klauzuli HAVING a ORDER BY – klauzule. Agregace obsahuje výraz, který se vyhodnocuje pro každý prvek skupiny. Agregační operátor snižuje hodnoty těchto výrazů (obvykle, ale ne vždy do jediné hodnoty). Agregační výraz můžete vytvořit odkazy na původní názvy prvků viditelné v nadřazeném oboru nebo na nové názvy zavedené v klauzuli GROUP BY, samotného. I když se v klauzuli SELECT, klauzuli HAVING a ORDER BY – klauzule zobrazí agregací, ve skutečnosti vyhodnocují se v rámci stejného oboru jako výrazy seskupování, jak je znázorněno v následujícím příkladu.  
   
  `SELECT name, sum(o.Price * o.Quantity) as total`  
   
@@ -46,9 +46,9 @@ Určuje skupiny, do které objektů vrácených dotazem ([vyberte](../../../../.
   
  `GROUP BY o.Product as name`  
   
- Tento dotaz používá v klauzuli GROUP BY k vytvoření sestavy náklady na všechny produkty, řazení, rozděleno podle produktu. Nabízí název `name` produktu jako součást výrazu seskupení a pak odkazy, které se název v seznamu SELECT. Určuje také agregace `sum` v seznamu SELECT, který interně odkazuje na ceny a množství na řádku pořadí.  
+ Tento dotaz používá k vytvoření sestavy nákladů na všechny produkty, které jsou uspořádány v klauzuli GROUP BY rozděleno podle produktu. Poskytuje název `name` produktu jako součást výrazu seskupení a pak odkazy, které název v seznamu SELECT. Určuje také agregace `sum` v seznamu SELECT, který interně odkazuje cena a množství objednávky.  
   
- Každý výraz GROUP By klíče musí mít aspoň jednu referenci k vstupnímu rozsahu:  
+ Každý výraz GROUP By klíče musí mít alespoň jeden odkaz na vstupní obor:  
   
 ```  
 SELECT FROM Persons as P  
@@ -57,17 +57,17 @@ GROUP BY Q   -- BAD
 GROUP BY 1   -- BAD, a constant is not allowed  
 ```  
   
- Příklad použití GROUP BY, naleznete v části [HAVING](../../../../../../docs/framework/data/adonet/ef/language-reference/having-entity-sql.md).  
+ Příklad použití GROUP BY, naleznete v tématu [HAVING](../../../../../../docs/framework/data/adonet/ef/language-reference/having-entity-sql.md).  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz Entity SQL používá operátor GROUP BY určit skupiny, do kterých jsou objekty vrácených dotazem. Dotaz je založen na modelu prodej AdventureWorks. Pro zkompilování a spuštění tohoto dotazu, postupujte takto:  
+ Následující dotaz Entity SQL používá operátor GROUP BY k určení skupin, do kterých jsou objekty vrácených dotazem. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
   
-1.  Postupujte podle pokynů v [postup: provedení dotazu tohoto vrátí výsledky PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1.  Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
   
-2.  Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metoda:  
+2.  Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
   
  [!code-csharp[DP EntityServices Concepts 2#GROUPBY](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#groupby)]  
   
-## <a name="see-also"></a>Viz také  
- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
- [Výrazy dotazu](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)
+## <a name="see-also"></a>Viz také:
+- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Výrazy dotazu](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1e15bab136540c73f8e1cff0e6bb52ec1d6c0063
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4ecb726f275a694fded2c486448a60b28fadb168
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426221"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54561865"
 ---
 # <a name="isymunmanagedmethodgetsourcestartend-method"></a>ISymUnmanagedMethod::GetSourceStartEnd – metoda
-Získá počáteční a koncové pozice dokumentu pro zdroj této metody. První pozice pole je spuštění a druhý pozice pole je end.  
+Získá počáteční a koncové pozice dokumentu pro zdroj této metody. První pozice pole je spuštění a druhý pozice pole je do konce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +39,22 @@ HRESULT GetSourceStartEnd(
   
 #### <a name="parameters"></a>Parametry  
  `docs`  
- [v] Počáteční a koncovou zdroj dokumenty.  
+ [in] Počáteční a koncovou zdroje dokumentů.  
   
  `lines`  
- [v] Počáteční a koncovou řádky do odpovídajícího zdroje dokumenty.  
+ [in] Počáteční a koncovou řádky do odpovídajícího zdroje dokumentů.  
   
  `columns`  
- [v] Počáteční a koncovou sloupce do odpovídajícího zdroje dokumenty.  
+ [in] Počáteční a koncovou sloupce do odpovídajícího zdroje dokumentů.  
   
  `pRetVal`  
- [out] `true` kdyby pozic definován; jinak hodnota `false`.  
+ [out] `true` pozice byl definován; jinak `false`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)

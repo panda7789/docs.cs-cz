@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 429c9d09-92ac-46ec-829a-fbff0a9575a2
-ms.openlocfilehash: d52c6bfdadf0a53ac4c5f62c37f1056c6702a82c
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 99f6e9e265071c2e7e3c79cf158ab5051eb78f04
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842707"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620263"
 ---
 # <a name="provider-statistics-for-sql-server"></a>Statistiky zprostředkovatelů na SQL serveru
 Od verze rozhraní .NET Framework verze 2.0, zprostředkovatele dat .NET Framework pro SQL Server podporuje běhové statistiky. Je nutné povolit statistiky tak, že nastavíte <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> vlastnost <xref:System.Data.SqlClient.SqlConnection> objektu `True` po máte platné připojení objekt vytvořený. Po statistiky jsou povolené, můžete zkontrolovat je jako "snímku v čase" načtením <xref:System.Collections.IDictionary> odkazovat prostřednictvím <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objektu. Můžete zobrazit výčet prostřednictvím seznamu jako sada položek slovníku dvojice název/hodnota. Tyto páry název/hodnota Neseřazený. Kdykoli můžete volat <xref:System.Data.SqlClient.SqlConnection.ResetStatistics%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objekt resetovat počítadla. Pokud statistiky shromažďování není povolený, výjimka se nevygeneroval. Kromě toho pokud <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> je volána bez <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> s byla nejdříve volána, jsou hodnoty získané počáteční hodnoty pro každou položku. Pokud povolíte statistiky, spusťte aplikaci na dobu a potom zakázat statistiky, hodnoty získané bude odpovídat hodnotám shromážděných až do chvíle, kdy byly zakázány statistiky. Na jednotlivá připojení jsou všechny statistické hodnoty shromážděné.  
@@ -31,7 +31,7 @@ Od verze rozhraní .NET Framework verze 2.0, zprostředkovatele dat .NET Framewo
 |`BytesSent`|Vrátí počet bajtů dat odeslaných k systému SQL Server v paketech TDS po aplikace byla spuštěna pomocí zprostředkovatele a má povolený statistiky.|  
 |`ConnectionTime`|Množství času (v milisekundách), které bylo připojení otevřené po statistiky byly povoleny (celková doba připojení, pokud statistiky byly povoleny před otevřením připojení).|  
 |`CursorOpens`|Vrátí počet pokusů, které kurzor byl otevřen prostřednictvím připojení, jakmile aplikace byla spuštěna pomocí zprostředkovatele a má povolený statistiky.<br /><br /> Mějte na paměti, že – pouze pro předávání – jen pro čtení výsledky vrácené příkazy SELECT nejsou považovány za ukazatele a proto nemají vliv na tento čítač.|  
-|`ExecutionTime`|Vrátí souhrnně za dobu (v milisekundách), že zprostředkovatel strávil zpracování po povolili statistiky, včetně času strávenému čekáním odpovědi ze serveru, jakož i čas strávený prováděním kódu v samotného poskytovatele.<br /><br /> Třídy, které obsahují kód časování jsou:<br /><br /> Připojení SqlConnection<br /><br /> Třídy SqlCommand<br /><br /> SqlDataReader<br /><br /> SqlDataAdapter<br /><br /> SqlTransaction<br /><br /> SqlCommandBuilder<br /><br /> Pokud chcete zachovat výkon důležité členy co nejmenší, nejsou vypršel časový limit následující členy:<br /><br /> SqlDataReader<br /><br /> Tato [] – operátor (všechna přetížení)<br /><br /> GetBoolean<br /><br /> GetChar<br /><br /> GetDateTime<br /><br /> GetDecimal<br /><br /> GetDouble<br /><br /> GetFloat<br /><br /> Getguid –<br /><br /> Getint16 –<br /><br /> GetInt32<br /><br /> GetInt64<br /><br /> GetName<br /><br /> Getordinal –<br /><br /> GetSqlBinary<br /><br /> GetSqlBoolean<br /><br /> GetSqlByte<br /><br /> GetSqlDateTime<br /><br /> GetSqlDecimal<br /><br /> GetSqlDouble<br /><br /> GetSqlGuid<br /><br /> GetSqlInt16<br /><br /> GetSqlInt32<br /><br /> GetSqlInt64<br /><br /> GetSqlMoney<br /><br /> GetSqlSingle<br /><br /> GetSqlString<br /><br /> GetString<br /><br /> IsDBNull|  
+|`ExecutionTime`|Vrátí souhrnně za dobu (v milisekundách), že zprostředkovatel strávil zpracování po povolili statistiky, včetně času strávenému čekáním odpovědi ze serveru, jakož i čas strávený prováděním kódu v samotného poskytovatele.<br /><br /> Třídy, které obsahují kód časování jsou:<br /><br /> SqlConnection<br /><br /> SqlCommand<br /><br /> SqlDataReader<br /><br /> SqlDataAdapter<br /><br /> SqlTransaction<br /><br /> SqlCommandBuilder<br /><br /> Pokud chcete zachovat výkon důležité členy co nejmenší, nejsou vypršel časový limit následující členy:<br /><br /> SqlDataReader<br /><br /> Tato [] – operátor (všechna přetížení)<br /><br /> GetBoolean<br /><br /> GetChar<br /><br /> GetDateTime<br /><br /> GetDecimal<br /><br /> GetDouble<br /><br /> GetFloat<br /><br /> GetGuid<br /><br /> GetInt16<br /><br /> GetInt32<br /><br /> GetInt64<br /><br /> GetName<br /><br /> Getordinal –<br /><br /> GetSqlBinary<br /><br /> GetSqlBoolean<br /><br /> GetSqlByte<br /><br /> GetSqlDateTime<br /><br /> GetSqlDecimal<br /><br /> GetSqlDouble<br /><br /> GetSqlGuid<br /><br /> GetSqlInt16<br /><br /> GetSqlInt32<br /><br /> GetSqlInt64<br /><br /> GetSqlMoney<br /><br /> GetSqlSingle<br /><br /> GetSqlString<br /><br /> GetString<br /><br /> IsDBNull|  
 |`IduCount`|Vrátí celkový počet příkazů INSERT, odstranění a aktualizace provést přes připojení po aplikace byla spuštěna pomocí zprostředkovatele a má povolený statistiky.|  
 |`IduRows`|Vrátí celkový počet řádky ovlivněné příkazy INSERT, odstranění a aktualizace provést přes připojení po aplikace byla spuštěna pomocí zprostředkovatele a má povolený statistiky.|  
 |`NetworkServerTime`|Vrátí souhrnně za dobu (v milisekundách), který stráví poskytovateli čekání na odpovědi ze serveru po aplikace byla spuštěna pomocí zprostředkovatele a má povolený statistiky.|  
@@ -338,6 +338,6 @@ namespace CS_Stats_Console_GetAll
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

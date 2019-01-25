@@ -11,45 +11,45 @@ helpviewer_keywords:
 ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: baa5b9f250fe7117838f936b09b050ba500b7209
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a40b9524990213eaaf2ed78503b6f831776306ec
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33389041"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524309"
 ---
 # <a name="qualifying-net-types-for-interoperation"></a>Kvalifikace typů .NET pro spolupráci
-Pokud máte v úmyslu vystavit typy v sestavení aplikace modelu COM, zvažte požadavky na zprostředkovatel komunikace s objekty COM v době návrhu. Spravované typy (třída, rozhraní, struktura a výčet) se hladce integrují s typy modelu COM, když budete dodržovat následující pokyny:  
+Pokud chcete vystavit typy v sestavení aplikace modelu COM, zvažte požadavky na spolupráci s COM v době návrhu. Spravované typy (třída, rozhraní, struktury a výčet) bez problémů integrovat typy modelu COM při dodržovat následující pokyny:  
   
 -   Třídy musí implementovat rozhraní explicitně.  
   
-     I když se zprostředkovatel komunikace s objekty COM poskytuje mechanismus pro automatické generování rozhraní obsahující všechny členy třídy a členy základní třídy, je mnohem lepší zajistit explicitní rozhraní. Automaticky generovaného rozhraní nazývá rozhraní třídy. Pokyny najdete v části [představení rozhraní třídy](com-callable-wrapper.md#introducing-the-class-interface).  
+     Ačkoli komunikace s objekty COM poskytuje mechanismus pro automatické generování rozhraní obsahující všechny členy třídy a členy své základní třídy, je mnohem lepší poskytnout explicitní rozhraní. Automaticky generovaného rozhraní je volat rozhraní třídy. Pokyny najdete v části [představení rozhraní třídy](com-callable-wrapper.md#introducing-the-class-interface).  
   
-     Visual Basic, C# a C++ slouží k začlenit definice rozhraní v kódu, místo nutnosti použít definice jazyka IDL (Interface) nebo jeho ekvivalent. Syntaxe podrobnosti najdete v dokumentaci jazyk.  
+     Můžete použít v jazyce Visual Basic C#a C++ až po začlenění definice rozhraní ve vašem kódu, místo nutnosti použít rozhraní Definition Language (IDL) nebo jeho ekvivalent. Podrobnosti o syntaxi naleznete v dokumentaci jazyka.  
   
 -   Spravované typy musí být veřejné.  
   
-     Pouze veřejné typy v sestavení jsou zaregistrované a exportují do knihovny typů. V důsledku toho jsou pouze veřejné typy viditelné modelu COM.  
+     Pouze veřejné typy v sestavení jsou registrovány a exportovat do knihovny typů. V důsledku toho pouze veřejné typy jsou viditelné v modelu COM.  
   
-     Spravované typy zveřejněte funkce do jiných spravovaného kódu, která nemusí být vystavena modelu COM. Parametrizované konstruktory, statické metody a konstantní pole nejsou pro instanci zveřejněné klientům COM. Navíc jako modul runtime zařazuje dat a deaktivovat typu, data mohou kopírovat nebo transformovat.  
+     Spravované typy zveřejňují funkce pro další spravovaný kód, který nemusí být vystaveny objektům modelu COM. Například konstruktor s parametry, statické metody a konstantní pole nejsou zveřejněné klientům modelu COM. Dále jak modul runtime zařazuje dat do a z typu, data může kopírovat nebo transformovat.  
   
 -   Metody, vlastnosti, pole a události musí být veřejné.  
   
-     Členové veřejné typy musí být také veřejné, pokud mají být viditelné modelu COM. Můžete omezit viditelnost sestavení, typu veřejný nebo veřejné členy veřejného typu použitím <xref:System.Runtime.InteropServices.ComVisibleAttribute>. Ve výchozím nastavení jsou zobrazené všechny veřejné typy a členy.  
+     Členové veřejné typy musí být také veřejné, pokud mají být viditelné modelu COM. Můžete omezit, zda se sestavení, veřejný typ nebo veřejné členy typu public použitím <xref:System.Runtime.InteropServices.ComVisibleAttribute>. Ve výchozím nastavení jsou viditelné všechny veřejné typy a členy.  
   
--   Typy musí mít veřejný výchozí konstruktor chcete aktivovat. z modelu COM.  
+-   Typy musí mít veřejný výchozí konstruktor, chcete-li aktivovat z modelu COM.  
   
-     Spravované, veřejné typy jsou viditelné pro COM. Bez výchozí veřejný konstruktor (konstruktor bez argumentů), ale klienti COM nelze vytvořit typ. Klienti COM můžete dál používat typ, pokud je aktivovaná jiným způsobem.  
+     Spravovaná, veřejné typy jsou viditelné v modelu COM. Ale bez veřejného výchozího konstruktoru (konstruktor bez argumentů), nelze vytvořit klientům modelu COM typu. Klientům modelu COM můžete stále použít typ, pokud je aktivovaná jiným způsobem.  
   
 -   Typy nemohou být abstraktní.  
   
-     Klienti COM ani klientů .NET můžete vytvořit abstraktní typy.  
+     Klienti modelu COM ani klientů .NET můžete vytvořit abstraktní typy.  
   
- Při exportu do modelu COM, se sloučí hierarchie dědičnosti spravovaného typu. Správa verzí se také liší mezi spravovanými a nespravovanými prostředí. Typy vystaven objektům modelu COM nemají stejné vlastnosti Správa verzí jako jiné spravované typy.  
+ Při exportu do modelu COM, hierarchie dědičnosti spravovaného typu se sloučí. Správa verzí se také liší mezi spravovanými a nespravovanými prostředí. Typy vystavit rozhraní COM nemají stejné vlastnosti jako jiné spravované typy správy verzí.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.ComVisibleAttribute>  
- [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  
- [Představení rozhraní – třída](com-callable-wrapper.md#introducing-the-class-interface)  
- [Použití atributů spolupráce](../../../docs/framework/interop/applying-interop-attributes.md)  
- [Zabalení sestavení pro model COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.ComVisibleAttribute>
+- [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
+- [Představení rozhraní třídy](com-callable-wrapper.md#introducing-the-class-interface)
+- [Použití atributů spolupráce](../../../docs/framework/interop/applying-interop-attributes.md)
+- [Zabalení sestavení pro model COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md)

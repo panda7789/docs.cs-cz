@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 66b2b9d6fb3f6379abb92fe081f36b487f9df234
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b54f5bb47135bcf56c91cd07b916c959e75b9fb5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446451"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745296"
 ---
 # <a name="imetadataemit2definegenericparam-method"></a>IMetaDataEmit2::DefineGenericParam – metoda
 Vytvoří definici pro parametr obecného typu a získá token pro tento parametr obecného typu.  
@@ -43,35 +43,35 @@ HRESULT DefineGenericParam (
   
 #### <a name="parameters"></a>Parametry  
  `tk`  
- [v] `mdTypeDef` Nebo `mdMethodDef` token, který představuje metoda nebo konstruktor, pro které chcete definovat obecný parametr.  
+ [in] `mdTypeDef` Nebo `mdMethodDef` token, který představuje tato metoda nebo konstruktor, pro které chcete definovat obecný parametr.  
   
  `ulParamSeq`  
- [v] Index obecný parametr.  
+ [in] Index obecný parametr.  
   
  `dwParamFlags`  
- [v] Hodnota [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) výčet, který popisuje typ pro obecný parametr.  
+ [in] Hodnota [corgenericparamattr –](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) výčet, který popisuje typu pro obecný parametr.  
   
  `szname`  
- [v] Název parametru.  
+ [in] Název parametru.  
   
  `reserved`  
- [v] Tento parametr je vyhrazená pro budoucí rozšíření.  
+ [in] Tento parametr je vyhrazený pro budoucí rozšíření.  
   
  `rtkConstraints`  
- [v] Byl ukončen nula pole Typ omezení. Pole členů musí být `mdTypeDef`, `mdTypeRef`, nebo `mdTypeSpec` metadata token.  
+ [in] Ukončit nulou pole omezení typu. Členy pole musí být `mdTypeDef`, `mdTypeRef`, nebo `mdTypeSpec` token metadat.  
   
  `pgp`  
- [out] Token, který reprezentuje obecný parametr.  
+ [out] Token, který představuje obecný parametr.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

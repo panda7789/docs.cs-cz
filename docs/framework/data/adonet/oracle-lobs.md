@@ -2,12 +2,12 @@
 title: Soubory Oracle LOB
 ms.date: 03/30/2017
 ms.assetid: 272e8e1e-a31f-475a-8c2a-ae8e1286bdab
-ms.openlocfilehash: 39ff8f1c21fc1161f4f3726548713d384c7d7400
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 70928cdd1ff82e54fd8e45563bb14df6340e4a95
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43863873"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54747996"
 ---
 # <a name="oracle-lobs"></a>Soubory Oracle LOB
 Zprostředkovatel dat .NET Framework pro Oracle se zahrnuje <xref:System.Data.OracleClient.OracleLob> třídu, která se používá pro práci se společností Oracle **LOB** datové typy.  
@@ -16,8 +16,8 @@ Zprostředkovatel dat .NET Framework pro Oracle se zahrnuje <xref:System.Data.Or
   
 |Datový typ|Popis|  
 |---------------|-----------------|  
-|**Objekt BLOB**|Oracle **BLOB** datový typ, který obsahuje binární data a maximální velikost 4 GB. To se mapuje **pole** typu **bajtů**.|  
-|**Datový typ CLOB**|Oracle **datový typ CLOB** datový typ, který obsahuje znak dat v závislosti na znak výchozí nastavení na serveru, a maximální velikost 4 GB. To se mapuje na **řetězec**.|  
+|**Objekt blob**|Oracle **BLOB** datový typ, který obsahuje binární data a maximální velikost 4 GB. To se mapuje **pole** typu **bajtů**.|  
+|**Clob**|Oracle **datový typ CLOB** datový typ, který obsahuje znak dat v závislosti na znak výchozí nastavení na serveru, a maximální velikost 4 GB. To se mapuje na **řetězec**.|  
 |**NClob**|Oracle **NCLOB** datový typ, který obsahuje znak data podle národního znakovou sadu na serveru s maximální velikost 4 GB. To se mapuje na **řetězec**.|  
   
  **OracleLob** se liší od <xref:System.Data.OracleClient.OracleBFile> v tom, že jsou data uložená na serveru místo ve fyzických souborů v operačním systému. Na rozdíl od může být objekt pro čtení a zápis **OracleBFile**, což je vždy jen pro čtení.  
@@ -247,6 +247,6 @@ cmd.ExecuteNonQuery();
 tx.Commit();  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

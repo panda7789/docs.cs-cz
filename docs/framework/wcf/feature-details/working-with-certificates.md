@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: 4302ee961fcd396c7e6a6ddb0d9bbe1bdb714cfc
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: d9bf6bd6b142fadbf8326c96f7220c9b74fbc1d0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453460"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54693607"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 Programování zabezpečení Windows Communication Foundation (WCF), digitální certifikáty X.509 běžně slouží k ověřování klientů a serverů, šifrování a digitálnímu podepisování zpráv. V tomto tématu stručně popisuje funkce digitální certifikát X.509 a jak je používat v WCF a obsahuje odkazy na témata, která popisují tyto koncepty další nebo, která ukazují, jak provádět běžné úlohy pomocí WCF a certifikáty.  
@@ -24,7 +24,7 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
  Certifikáty musí být vystavené certifikační autority, což se často stává třetích stran vystavitelů certifikátů. V doméně Windows je součástí certifikační autority, který slouží k vydávání certifikátů pro počítače v doméně.  
   
 ## <a name="viewing-certificates"></a>Zobrazení certifikátů  
- Pro práci s certifikáty, je často potřeba je zobrazit a prozkoumat jejich vlastnosti. Snadno to provádí pomocí modulu snap-in nástroje Microsoft Management Console (MMC). Další informace najdete v tématu [postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
+ Pro práci s certifikáty, je často potřeba je zobrazit a prozkoumat jejich vlastnosti. Snadno to provádí pomocí modulu snap-in nástroje Microsoft Management Console (MMC). Další informace najdete v tématu [jak: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
   
 ## <a name="certificate-stores"></a>Úložiště certifikátů  
  Certifikáty se nacházejí v úložištích. Dvěma umístěními velké úložiště existují, které se dále dělí do dílčí úložišť. Pokud jste správce v počítači, se zobrazí oba hlavní úložiště pomocí nástroje modulu snap-in konzoly MMC. Bez správci mohou zobrazit pouze aktuální úložiště uživatele.  
@@ -52,12 +52,12 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
 -   Pokud služba nebo klient je aplikace, na kterém běží pod účtem uživatele, použijte **aktuálního uživatele** ukládat.  
   
 ### <a name="accessing-stores"></a>Přístup k úložišti  
- Úložiště jsou chráněné pomocí seznamů řízení přístupu (ACL), podobně jako složky v počítači. Při vytváření služby podle Internetové informační služby (IIS) hostovaných [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] proces běží pod [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] účtu. Služba se používá, musí mít přístup k úložišti, který obsahuje certifikáty. Všechny hlavní obchody je pak chráněn rozhraním výchozí seznam, ale seznamy je možné upravit. Pokud vytvoříte samostatné role pro přístup k úložišti, je nutné udělit přístupová oprávnění této role. Zjistěte, jak upravit seznam přístupu pomocí nástroje WinHttpCertConfig.exe, najdete v článku [postupy: vytváření dočasných certifikátů pro použití během vývoje](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md). Další informace o používání certifikátů klienta se službou IIS najdete v tématu [volání webové služby pomocí klientského certifikátu pro ověřování ve webové aplikaci ASP.NET](https://go.microsoft.com/fwlink/?LinkId=88914).  
+ Úložiště jsou chráněné pomocí seznamů řízení přístupu (ACL), podobně jako složky v počítači. Při vytváření služby podle Internetové informační služby (IIS) hostovaných [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] proces běží pod [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] účtu. Služba se používá, musí mít přístup k úložišti, který obsahuje certifikáty. Všechny hlavní obchody je pak chráněn rozhraním výchozí seznam, ale seznamy je možné upravit. Pokud vytvoříte samostatné role pro přístup k úložišti, je nutné udělit přístupová oprávnění této role. Zjistěte, jak upravit seznam přístupu pomocí nástroje WinHttpCertConfig.exe, najdete v článku [jak: Vytváření dočasných certifikátů pro použití během vývoje](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md). Další informace o používání certifikátů klienta se službou IIS najdete v tématu [volání webové služby pomocí klientského certifikátu pro ověřování ve webové aplikaci ASP.NET](https://go.microsoft.com/fwlink/?LinkId=88914).  
   
 ## <a name="chain-trust-and-certificate-authorities"></a>Řetězce důvěryhodnosti a certifikační autority  
  Certifikáty jsou vytvořeny v hierarchii, kde je každý jednotlivý certifikát certifikační Autority, která vydala certifikát propojen. Tento odkaz je certifikát Certifikační autority. Certifikát Certifikační autority pak odkazy na certifikační Autoritu, která vydala certifikát původní CA. Tento postup se opakuje, dokud nenastane certifikát kořenové certifikační Autority. Certifikát kořenové certifikační Autority je ze své podstaty důvěryhodný.  
   
- Digitální certifikáty se používají k ověřování entity spoléhání se na tuto hierarchii, také nazývané *řetězu certifikátů*. Můžete zobrazit řetězec některý z certifikátů pomocí modulu snap-in konzoly MMC poklepáním na některý z certifikátů a pak kliknete **cesta k certifikátu** kartu. Další informace o importu řetězy certifikátů certifikační autority najdete v tématu [postupy: určení certifikátu autority certifikát řetězu používá k ověření signatury](../../../../docs/framework/wcf/feature-details/specify-the-certificate-authority-chain-verify-signatures-wcf.md).  
+ Digitální certifikáty se používají k ověřování entity spoléhání se na tuto hierarchii, také nazývané *řetězu certifikátů*. Můžete zobrazit řetězec některý z certifikátů pomocí modulu snap-in konzoly MMC poklepáním na některý z certifikátů a pak kliknete **cesta k certifikátu** kartu. Další informace o importu řetězy certifikátů certifikační autority najdete v tématu [jak: Zadejte řetězu certifikátů certifikační autority certifikátu používaného k ověřování podpisů](../../../../docs/framework/wcf/feature-details/specify-the-certificate-authority-chain-verify-signatures-wcf.md).  
   
 > [!NOTE]
 >  Všechny vystavitele lze označit důvěryhodné kořenové autority tak, že vystavitele certifikátu v úložišti certifikátů důvěryhodných kořenových autorit.  
@@ -74,11 +74,11 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
   
  Můžete také nastavit vlastnost pomocí konfigurace. Tyto prvky se používají k určení režimu ověřování:  
   
--   [\<ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)  
+-   [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)  
   
--   [\<peerAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication-element.md)  
+-   [\<peerAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication-element.md)  
   
--   [\<messageSenderAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication-element.md)  
+-   [\<messageSenderAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication-element.md)  
   
 ## <a name="custom-authentication"></a>Vlastní ověřování  
  `CertificateValidationMode` Vlastnost také umožňuje přizpůsobit způsob ověřování certifikátů. Ve výchozím nastavení, úroveň je nastavena `ChainTrust`. Použít <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> hodnotu, je nutné nastavit také `CustomCertificateValidatorType` atribut na sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní validátor, musí dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy.  
@@ -96,7 +96,7 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
   
 3.  Kořenový certifikát autority naimportujte do úložiště Důvěryhodné kořenové certifikační autority.  
   
-4.  Podrobné pokyny najdete v tématu [postupy: vytváření dočasných certifikátů pro použití během vývoje](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md).  
+4.  Podrobné pokyny najdete v tématu [jak: Vytváření dočasných certifikátů pro použití během vývoje](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md).  
   
 ## <a name="which-certificate-to-use"></a>Který certifikát se má použít?  
  Běžné dotazy týkající se certifikátů jsou který certifikát se má použít a proč. Odpověď závisí na tom, jestli jsou programování klienta nebo služby. Tyto informace obsahuje obecných pokynů a není vyčerpávající odpovědi na tyto otázky.  
@@ -170,9 +170,9 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
   
  V první verzi WCF mapování se provádí bez konzultace zásada domény. Proto je možné, že starší aplikace, které používají k práci při spuštění v prvním vydání se nepovede, pokud je povoleno mapování a certifikát X.509 nesplňuje zásady domény.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels>  
- <xref:System.ServiceModel.Security>  
- <xref:System.ServiceModel>  
- <xref:System.Security.Cryptography.X509Certificates.X509FindType>  
- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels>
+- <xref:System.ServiceModel.Security>
+- <xref:System.ServiceModel>
+- <xref:System.Security.Cryptography.X509Certificates.X509FindType>
+- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

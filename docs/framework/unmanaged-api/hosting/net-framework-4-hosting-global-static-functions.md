@@ -8,20 +8,20 @@ helpviewer_keywords:
 ms.assetid: 07a1a6e1-db73-4555-81df-bc4054c51492
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 019a17b38eb1cfccab4537d5f27b7625fdef1268
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 825df88f4e8ee79f7159307d3f22416ddc27ae0a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33441465"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54734338"
 ---
 # <a name="net-framework-4-hosting-global-static-functions"></a>.NET Framework 4 – hostování globálních statických funkcí
-[!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Představuje jednu nové exportovaný metodu v MSCorEE.dll: [CLRCreateIntstance](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md).  
+[!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Zavádí nové exportovaných metod v MSCorEE.dll: [CLRCreateIntstance](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [CLRCreateInstance – funkce](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md)  
- Poskytuje jedno z tři rozhraní: [iclrmetahost –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [iclrmetahostpolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md), nebo [iclrdebugging –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-interface.md).  
+ Poskytuje jednu ze tří rozhraní: [Iclrmetahost –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md), [iclrmetahostpolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md), nebo [iclrdebugging –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-interface.md).  
   
-## <a name="see-also"></a>Viz také  
- [Globální statické funkce pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-global-static-functions.md)  
- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
+## <a name="see-also"></a>Viz také:
+- [Globální statické funkce pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-global-static-functions.md)
+- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

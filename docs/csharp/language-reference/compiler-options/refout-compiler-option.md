@@ -7,12 +7,12 @@ helpviewer_keywords:
 - refout compiler option [C#]
 - /refout compiler option [C#]
 - -refout compiler option [C#]
-ms.openlocfilehash: e204a053f6f68a4b848d22c95c98f04edff58716
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 51029c071b3c5bdefe5af798f01238086b8e6d4f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43506622"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54589789"
 ---
 # <a name="-refout-c-compiler-options"></a>-refout (možnosti kompilátoru C#)
 
@@ -44,7 +44,7 @@ Další referenční sestavení odebrání metadat (soukromé členy) obsahujíc
 
 `-refout` a [ `-refonly` ](refonly-compiler-option.md) možnosti se vzájemně vylučují.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

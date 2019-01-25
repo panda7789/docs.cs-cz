@@ -16,30 +16,30 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a6761ff204d299bc2db84e2e80d988306125a110
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4be027238d676d78a3ec29e4f2696f765291f29b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430818"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54504428"
 ---
 # <a name="iappdomainbinding-interface"></a>IAppDomainBinding – rozhraní
-Poskytne metodu, která je volána metodou modul CLR (CLR) oznámit hostitelskou aplikaci vytvořený domény aplikace.  
+Poskytuje metodu, která je volána modulem common language runtime (CLR), která upozorní aplikaci hostitele Vytvoření domény aplikace.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[OnAppDomain – metoda](../../../../docs/framework/unmanaged-api/hosting/iappdomainbinding-onappdomain-method.md)|Voláno rozhraním modul CLR (CLR) oznámit hostitele vytvořený domény aplikace.|  
+|[OnAppDomain – metoda](../../../../docs/framework/unmanaged-api/hosting/iappdomainbinding-onappdomain-method.md)|Volána modulem common language runtime (CLR), aby upozornil hostitele Vytvoření domény aplikace.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

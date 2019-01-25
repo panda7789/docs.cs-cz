@@ -1,16 +1,16 @@
 ---
-title: Pomocí XSLT k transformaci strom XML (Visual Basic)
+title: Použití XSLT transformace stromu XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 3390ca68-c270-4e1d-b64b-6a063a77017c
-ms.openlocfilehash: bee661ea2a3261d25ed9f9d1aabdc656c898610f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 37fd25a327906327f33106ae145d45c5387cae47
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33646588"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54690394"
 ---
-# <a name="using-xslt-to-transform-an-xml-tree-visual-basic"></a>Pomocí XSLT k transformaci strom XML (Visual Basic)
-Můžete vytvořit strom XML, vytvořit <xref:System.Xml.XmlReader> ve stromové struktuře XML vytvoříte nový textový dokument a vytvoření <xref:System.Xml.XmlWriter> , bude zapisovat do nového dokumentu. Potom můžete vyvolat transformace XSLT, předávání <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> k transformaci. Po úspěšném dokončení transformace, se zobrazí v stromu nové XML výsledky pro transformaci.  
+# <a name="using-xslt-to-transform-an-xml-tree-visual-basic"></a>Použití XSLT transformace stromu XML (Visual Basic)
+Můžete vytvořit stromu XML, vytvořit <xref:System.Xml.XmlReader> ze stromu XML vytvoříte nový textový dokument a vytvoření <xref:System.Xml.XmlWriter> , která bude zapisovat do nového dokumentu. Potom můžete vyvolat transformace XSLT, předá <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> k transformaci. Po úspěšném dokončení transformace nového stromu XML je vyplněno pomocí výsledků transformace.  
   
 ## <a name="example"></a>Příklad  
   
@@ -60,7 +60,7 @@ Console.WriteLine(newTree)
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XContainer.CreateWriter%2A?displayProperty=nameWithType>  
- <xref:System.Xml.Linq.XNode.CreateReader%2A?displayProperty=nameWithType>  
- [Pokročilé technologie LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xml.Linq.XContainer.CreateWriter%2A?displayProperty=nameWithType>
+- <xref:System.Xml.Linq.XNode.CreateReader%2A?displayProperty=nameWithType>
+- [Pokročilé technologie LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

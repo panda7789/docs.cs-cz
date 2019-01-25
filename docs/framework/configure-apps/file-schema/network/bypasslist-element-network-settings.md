@@ -8,19 +8,19 @@ helpviewer_keywords:
 - bypasslist element
 - <bypasslist> element
 ms.assetid: 124446b7-abb1-4e5e-a492-b64398f268f1
-ms.openlocfilehash: c696017c153b63ba6f2d485855c969b2b45ba0ab
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 82a9a3e6362538fc62b4afdb010ca784590b9db9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188525"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54746335"
 ---
 # <a name="ltbypasslistgt-element-network-settings"></a>&lt;atribut bypasslist bude&gt; – Element (nastavení sítě)
 Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.  
   
  \<Konfigurace >  
 \<system.net>  
-\<defaultProxy >  
+\<defaultProxy>  
 \<bypasslist – >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,7 +41,7 @@ Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívaj
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
 |[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-bypasslist-network-settings.md)|Přidá do seznamu obcházení proxy IP adresu nebo název DNS.|  
-|[Vymazat](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-bypasslist-network-settings.md)|Seznam obcházení vymaže.|  
+|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-bypasslist-network-settings.md)|Seznam obcházení vymaže.|  
 |[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-bypasslist-network-settings.md)|Odebere ze seznamu obcházení proxy IP adresu nebo název DNS.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
@@ -76,6 +76,6 @@ Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívaj
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.WebProxy?displayProperty=nameWithType>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.WebProxy?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

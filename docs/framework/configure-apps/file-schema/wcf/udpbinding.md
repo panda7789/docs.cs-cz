@@ -2,12 +2,12 @@
 title: '&lt;udpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: fa291901-8340-45c6-9c44-5d9281c70bc3
-ms.openlocfilehash: 4b5fca2fbcece8c5a1641d4cea7700f12de11782
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: c8e77eae52352a4ed5167a43386ec933afffa1fc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145832"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592416"
 ---
 # <a name="ltudpbindinggt"></a>&lt;udpBinding&gt;
 Konfigurace element, který se používá ke konfiguraci <xref:System.ServiceModel.UdpBinding> vazby.  
@@ -62,7 +62,7 @@ Konfigurace element, který se používá ke konfiguraci <xref:System.ServiceMod
 |`openTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
 |`receiveTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace obdržení. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:10:00.|  
 |`sendTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
-|`textEncoding`|Nastaví znakovou sadu kódování, které má být použito pro vysílání zpráv z vazby. Platné hodnoty patří:<br /><br /> -BigEndianUnicode: Kódování Unicode BigEndian.<br />-Unicode: 16bitové kódování.<br />-UTF8: 8bitové kódování<br /><br /> Použije se UTF8. Tento atribut je typu <xref:System.Text.Encoding>.|  
+|`textEncoding`|Nastaví znakovou sadu kódování, které má být použito pro vysílání zpráv z vazby. Platné hodnoty patří:<br /><br /> -BigEndianUnicode: Kódování Unicode BigEndian.<br />-Unicode: 16bitové kódování.<br />-   UTF8: 8bitové kódování<br /><br /> Použije se UTF8. Tento atribut je typu <xref:System.Text.Encoding>.|  
 |`timeToLive`|Časový interval hodnotu, která určuje time to live pro vazbu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -75,7 +75,7 @@ Konfigurace element, který se používá ke konfiguraci <xref:System.ServiceMod
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky  
  UdpBinding umožňuje služeb WCF pro komunikaci pomocí přenosu UDP. Umožňuje "vypal a zapomeň" výměny zpráv kde klient odešle zprávu službě a očekává, že žádná odpověď zpět.  
@@ -103,12 +103,12 @@ Konfigurace element, který se používá ke konfiguraci <xref:System.ServiceMod
 </udpBinding>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.Binding>  
- <xref:System.ServiceModel.Channels.BindingElement>  
- <xref:System.ServiceModel.BasicHttpBinding>  
- <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.Binding>
+- <xref:System.ServiceModel.Channels.BindingElement>
+- <xref:System.ServiceModel.BasicHttpBinding>
+- <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

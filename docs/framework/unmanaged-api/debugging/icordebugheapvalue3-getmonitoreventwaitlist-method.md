@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a395579892ff2410865a4fcdd19cf20449b82b88
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 27815cf8cb7fdcd1c01f26391c317d52bbb388ca
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421069"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54628510"
 ---
 # <a name="icordebugheapvalue3getmonitoreventwaitlist-method"></a>ICorDebugHeapValue3::GetMonitorEventWaitList – metoda
-Poskytuje seřazený seznam vláken, které jsou zařazeny do fronty na událost, která souvisí s monitorování zámku.  
+Poskytuje seřazený seznam vláken, které jsou zařazeny do fronty na událost, která souvisí se zámkem monitorování.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,31 +37,31 @@ HRESULT GetMonitorEventWaitList (
   
 #### <a name="parameters"></a>Parametry  
  `ppThreadEnum`  
- [out] ICorDebugThreadEnum enumerátor, který poskytuje seřazený seznam vláken.  
+ [out] Icordebugthreadenum – enumerátor, který poskytuje seřazený seznam vláken.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|V seznamu není prázdná.|  
+|S_OK|Seznam není prázdný.|  
 |S_FALSE|Seznam je prázdný.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- První vlákno v seznamu se první vlákno, které je publikována v rámci další volání <xref:System.Threading.Monitor.Pulse%28System.Object%29?displayProperty=nameWithType>. Další vlákno v seznamu je vydala následující volání a tak dále.  
+ První vlákno v seznamu je první vlákno, které se vydal další volání <xref:System.Threading.Monitor.Pulse%28System.Object%29?displayProperty=nameWithType>. Další vlákno v seznamu je vydána následující volání a tak dále.  
   
- Pokud v seznamu není prázdný, vrátí tato metoda S_OK. Pokud je seznam prázdný, vrátí metoda S_FALSE; v takovém případě je stále platný, výčtu, i když je prázdný.  
+ Pokud seznam není prázdný, tato metoda vrátí hodnotu S_OK. Pokud je seznam prázdný, vrátí metoda S_FALSE; v tomto případě je stále platné, výčtu, i když je prázdný.  
   
- V obou případech je rozhraní výčtu použitelné pouze po dobu trvání aktuálního stavu synchronizovaná. Vlákna rozhraní distribuován z něj jsou však platný až do konce vlákno.  
+ V obou případech rozhraní výčtu je použitelné pouze po dobu trvání aktuálního stavu synchronizovaná. Však rozhraní vlákna distribuován z něj platí až do ukončení vlákna.  
   
- Pokud `ppThreadEnum` není platný ukazatel, výsledkem nedefinovaný.  
+ Pokud `ppThreadEnum` není platný ukazatel, výsledek nedefinován.  
   
- Pokud dojde k chybě tak, že nelze určit, která, pokud existuje, vláken, které čekají na monitorování, vrátí metoda HRESULT označující selhání.  
+ Pokud dojde k chybě, takže ji nelze určit, které případně vlákna čekají na monitorování, metoda vrátí HRESULT označující selhání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -69,6 +69,6 @@ HRESULT GetMonitorEventWaitList (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

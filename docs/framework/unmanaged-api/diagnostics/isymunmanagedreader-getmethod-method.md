@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e9f1056d8d5ec4486e748d3b079507943a8a72ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: deb5d7aa24cf750a9584ef2aa32d10816ec12f57
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430635"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54614403"
 ---
 # <a name="isymunmanagedreadergetmethod-method"></a>ISymUnmanagedReader::GetMethod – metoda
-Získá metody čtečky symbol, zadaný token metoda.  
+Získá metodu čtečky symbolů daný token metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT GetMethod (
   
 #### <a name="parameters"></a>Parametry  
  `token`  
- [v] Metoda token.  
+ [in] Token metody.  
   
  `pRetVal`  
- [out] Ukazatel rozhraní vrácená.  
+ [out] Ukazatel na vrácené rozhraní.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

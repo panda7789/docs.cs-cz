@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b6675d50d3222a43abc8838c3c86cb825d2dad16
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f82fca1d7701921a10c1feb9cce19371729ff01e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445715"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54493467"
 ---
 # <a name="imetadataassemblyemitdefineassemblyref-method"></a>IMetaDataAssemblyEmit::DefineAssemblyRef – metoda
-Vytvoří `AssemblyRef` struktura obsahující metadata pro sestavení, které toto sestavení odkazuje a vrátí token přidružených metadat.  
+Vytvoří `AssemblyRef` struktura obsahující metadata pro sestavení, které toto sestavení odkazuje a vrátí token metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,42 +44,42 @@ HRESULT DefineAssemblyRef (
   
 #### <a name="parameters"></a>Parametry  
  `pbPublicKeyOrToken`  
- [v] Veřejný klíč vydavatele odkazované sestavení. Pomocné funkce [strongnametokenfromassembly –](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfromassembly-function.md) můžete použít k získání hodnota hash veřejného klíče předat jako tento parametr.  
+ [in] Veřejný klíč vydavatele odkazovaných sestavení. Pomocná funkce [strongnametokenfromassembly –](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfromassembly-function.md) můžete použít k získání hodnota hash veřejného klíče předejte jako tento parametr.  
   
  `cbPublicKeyOrToken`  
- [v] Velikost v bajtech `pbPublicKeyOrToken`.  
+ [in] Velikost v bajtech `pbPublicKeyOrToken`.  
   
  `szName`  
- [v] Čitelný text název sestavení. Tato hodnota nesmí být delší než 1024 znaků.  
+ [in] Uživatelsky čitelná textová název sestavení. Tato hodnota nesmí překročit 1024 znaků.  
   
  `pMetaData`  
- [v] Assemblymetadata – instance, který obsahuje informace o verzi, platformy a národní prostředí odkazované sestavení.  
+ [in] Assemblymetadata – instance, který obsahuje informace o verzi, platformy a národní prostředí odkazovaného sestavení.  
   
  `pbHashValue`  
- [v] Hodnota hash data související s odkazované sestavení. Volitelné.  
+ [in] Hodnota hash data přidružená k odkazované sestavení. Volitelné.  
   
  `cbHashValue`  
- [v] Velikost v bajtech `pbHashValue`.  
+ [in] Velikost v bajtech `pbHashValue`.  
   
  `dwAssemblyRefFlags`  
- [v] Bitovou kombinaci [CorAssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) hodnoty, které ovlivňují chování objektu modul provádění.  
+ [in] Bitová kombinace hodnot [corassemblyflags –](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) hodnoty, které ovlivňují chování prováděcího modulu.  
   
  `pmdar`  
- [out] Ukazatel na vrácený `AssemblyRef` metadata token.  
+ [out] Ukazatel na vrácenou `AssemblyRef` token metadat.  
   
 ## <a name="remarks"></a>Poznámky  
- Jeden `AssemblyRef` strukturu metadat musí být definovaná pro každé sestavení, které odkazuje toto sestavení.  
+ Jeden `AssemblyRef` struktury metadat musí být definované pro jednotlivá sestavení, která toto sestavení odkazuje.  
   
- V době běhu podrobnosti o odkazované sestavení předaný překladač sestavení s údajem, že představují údaje "tak, jak vytvořené". Překladač sestavení potom platí zásady.  
+ Podrobnosti o odkazovaném sestavení v době běhu, jsou předány překladač sestavení s údajem, že představují informace "jako předdefinovaný". Překladač sestavení potom použije zásady.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

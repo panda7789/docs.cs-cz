@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 5bf724bc76591ae59c073b5b9a788ca065f51dc0
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: 0eef69cea9f59911b5076f56579b0192be357431
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54416071"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54659108"
 ---
 # <a name="ixclrdatamethodinstance-interface"></a>IXCLRDataMethodInstance Interface
 
@@ -45,7 +45,7 @@ Toto rozhraní se nachází uvnitř modulu runtime a není dostupná záhlaví n
 **Knihovna:** Žádná  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
 - [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -2,12 +2,12 @@
 title: Typové datové sady
 ms.date: 03/30/2017
 ms.assetid: 033d2548-cf24-4c05-8179-67d8b009c048
-ms.openlocfilehash: 68721bcdbce6bf6d3279d6018ce6bc48d65c55a3
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 3a61005f0064ec9ba0bbe70b759394d3691018de
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45591183"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54680358"
 ---
 # <a name="typed-datasets"></a>Typové datové sady
 Spolu s pozdní vazbou přístup k hodnotám prostřednictvím slabě typované proměnné <xref:System.Data.DataSet> poskytuje přístup k datům prostřednictvím metafora silného typu. Tabulky a sloupce, které jsou součástí **datovou sadu** lze přistupovat pomocí uživatelsky přívětivých názvů a silně typované proměnné.  
@@ -23,6 +23,6 @@ Spolu s pozdní vazbou přístup k hodnotám prostřednictvím slabě typované 
  [Zadávání poznámek k typovým datovým sadám](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/annotating-typed-datasets.md)  
  Popisuje postup přidání poznámek ke jazyk (XSD) schématu definice schématu XML sloužící ke generování silného typu **datovou sadu**, abyste **datovou sadu** popisné názvy prvků beze změny podkladového schématu.  
   
-## <a name="see-also"></a>Viz také  
- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

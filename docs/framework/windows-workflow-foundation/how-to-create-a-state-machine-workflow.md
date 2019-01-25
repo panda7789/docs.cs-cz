@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: vytvoření pracovního postupu stavového stroje'
+title: 'Postupy: Vytvoření pracovního postupu stavového stroje'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 3ec60e8f-fad4-493e-a426-e7962d7aee8c
-ms.openlocfilehash: 8098ab4b056ad6375c248e803134c35d67e3f27b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 556a3c8953f72a1272d74c4f887ded4845d3cd28
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519818"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54739599"
 ---
-# <a name="how-to-create-a-state-machine-workflow"></a>Postupy: vytvoření pracovního postupu stavového stroje
-Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastních aktivit. V tomto tématu se provede vytvořením pracovního postupu, který používá obě integrované aktivity, jako <xref:System.Activities.Statements.StateMachine> aktivity a vlastní aktivity z předchozího [jak: vytvořit aktivitu](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md) tématu. Pracovní postup modely číslo rozluštění hru.  
+# <a name="how-to-create-a-state-machine-workflow"></a>Postupy: Vytvoření pracovního postupu stavového stroje
+Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastních aktivit. Toto téma se provede vytvořením pracovního postupu, který používá obě integrované aktivity, jako <xref:System.Activities.Statements.StateMachine> aktivity a vlastní aktivity z předchozího [jak: Vytvořit aktivitu](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md) tématu. Pracovní postup modely číslo rozluštění hru.  
   
 > [!NOTE]
->  Každé téma v kurzu Začínáme závisí na předchozí témata. K dokončení tohoto tématu, musíte nejdřív Dokončit [postupy: vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md).  
+>  Každé téma v kurzu Začínáme závisí na předchozí témata. K dokončení tohoto tématu, musíte nejdřív Dokončit [jak: Vytvořit aktivitu](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md).  
   
 > [!NOTE]
 >  Chcete-li stáhnout úplnou verzi tohoto kurzu, přečtěte si téma [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
@@ -185,13 +185,13 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
   
 1.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
   
-     Návod, jak spustit workflow, najdete dalším tématu s názvem [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md). Pokud jste už dokončili [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) krok s jiným stylem pracovního postupu a chcete ji spustit pomocí pracovní postup stavového stroje z tohoto kroku, přeskočte k části [sestavíte a spustíte aplikaci](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md#BKMK_ToRunTheApplication) část [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md).  
+     Návod, jak spustit workflow, najdete dalším tématu s názvem [jak: Spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md). Pokud jste už dokončili [jak: Spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) krok s jiným stylem pracovního postupu a chcete ji spustit pomocí pracovní postup stavového stroje z tohoto kroku, přeskočte k části [sestavíte a spustíte aplikaci](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md#BKMK_ToRunTheApplication) část [jak: Spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Activities.Statements.Flowchart>  
- <xref:System.Activities.Statements.FlowDecision>  
- [Programování Windows Workflow Foundation](../../../docs/framework/windows-workflow-foundation/programming.md)  
- [Návrh pracovních postupů](../../../docs/framework/windows-workflow-foundation/designing-workflows.md)  
- [Kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)  
- [Postupy: Vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md)  
- [Postupy: Spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Activities.Statements.Flowchart>
+- <xref:System.Activities.Statements.FlowDecision>
+- [Programování Windows Workflow Foundation](../../../docs/framework/windows-workflow-foundation/programming.md)
+- [Návrh pracovních postupů](../../../docs/framework/windows-workflow-foundation/designing-workflows.md)
+- [Kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)
+- [Postupy: Vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md)
+- [Postupy: Spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md)

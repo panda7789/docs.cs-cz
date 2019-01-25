@@ -8,12 +8,12 @@ helpviewer_keywords:
 - invoking print dialogs [WPF]
 - print dialogs [WPF], invoking
 ms.assetid: e3a2c84c-74fe-45a4-8501-5813f9dbfed2
-ms.openlocfilehash: 271652fe9e98f9a381da5655bd313e12f8ee917d
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 92a4cd6e29e37478981aad32286c181a412a6bfa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45988306"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54735828"
 ---
 # <a name="how-to-invoke-a-print-dialog"></a>Postupy: Vyvolání dialogového okna Tisk
 Pokud chcete poskytnout možnost tisku z vaší aplikace, můžete jednoduše vytvořit a otevřít <xref:System.Windows.Controls.PrintDialog> objektu.  
@@ -31,8 +31,8 @@ Pokud chcete poskytnout možnost tisku z vaší aplikace, můžete jednoduše vy
   
  Přesněji řečeno, můžete použít <xref:System.Windows.Controls.PrintDialog.PrintDocument%2A> metoda bez někdy otevření dialogového okna. V tomto smyslu ovládací prvek může sloužit jako komponentu nezobrazený tisku. Z důvodů výkonu by bylo vhodnější použít jednu, ale <xref:System.Printing.PrintQueue.AddJob%2A> metody nebo jeden mnoho <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> a <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> metody <xref:System.Windows.Xps.XpsDocumentWriter>. Další informace najdete v části [programově tisk souborů XPS z](../../../../docs/framework/wpf/advanced/how-to-programmatically-print-xps-files.md) a.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.PrintDialog>  
- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)  
- [Zapisovací modul dokumentů Microsoft XPS](https://go.microsoft.com/fwlink/?LinkId=147319)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.PrintDialog>
+- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)
+- [Zapisovací modul dokumentů Microsoft XPS](https://go.microsoft.com/fwlink/?LinkId=147319)

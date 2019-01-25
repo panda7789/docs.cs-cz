@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 573336b32040f44ff1b59fcbb75b59aa00976b5c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 70405d774d665e3add03c510f3b99a3280da4860
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430176"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54625143"
 ---
 # <a name="corexemain2-function"></a>_CorExeMain2 – funkce
-Vstupní bod se spustí v zadaný kód mapované paměti. Tato funkce je volána zavaděčem operačního systému.  
+Spustí vstupní bod v zadané kódu mapované paměti. Tato funkce je volána zavaděčem operačního systému.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +40,28 @@ __int32 STDMETHODCALLTYPE _CorExeMain2 (
   
 #### <a name="parameters"></a>Parametry  
  `pUnmappedPE`  
- [v] Ukazatel na kód mapované paměti.  
+ [in] Ukazatel na kódu mapované paměti.  
   
  `cUnmappedPE`  
- [v] Počet elementů `pUnmappedPE` mohou být uloženy.  
+ [in] Počet prvků, které `pUnmappedPE` může obsahovat.  
   
  `pImageNameIn`  
- [v] Ukazatel na název spustitelné bitové kopie.  
+ [in] Ukazatel na název spustitelné bitové kopie.  
   
  `pLoadersFileName`  
- [v] Název souboru zavaděč.  
+ [in] Název souboru zavaděče.  
   
  `pCmdLine`  
- [v] Parametry příkazového řádku, pokud existuje.  
+ [in] Parametry příkazového řádku, pokud existuje.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

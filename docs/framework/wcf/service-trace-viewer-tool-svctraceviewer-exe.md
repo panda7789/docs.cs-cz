@@ -2,12 +2,12 @@
 title: Prohlížeč trasování služeb (SvcTraceViewer.exe)
 ms.date: 03/30/2017
 ms.assetid: 9027efd3-df8d-47ed-8bcd-f53d55ed803c
-ms.openlocfilehash: a03c459355f18ad30849113f353e35e97b6141ae
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: f5401129601f84a5575a544490244f81b1e759ef
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44251781"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54510595"
 ---
 # <a name="service-trace-viewer-tool-svctraceviewerexe"></a>Prohlížeč trasování služeb (SvcTraceViewer.exe)
 Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF) pomáhá analyzovat diagnostické trasování, které se vygenerovaly WCF. Prohlížeče trasování služeb poskytuje způsob, jak snadno sloučení, zobrazení a filtrování trasovací zprávy v protokolu, takže můžete diagnostikovat, opravit a ověřit problémy se službou WCF.  
@@ -46,7 +46,7 @@ Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF)
 |Chyba|– Protokoluje všechny výjimky. Můžete použít úroveň chyb v těchto situacích:<br />-Kódu došlo k chybě z důvodu výjimky neplatné přetypování.<br />– S výjimkou "nepovedlo se vytvořit koncový bod" je příčinou selhání při spuštění aplikace.|  
 |Upozornění|-Existuje podmínku, která může následně vést chybě nebo kritické chyby. Můžete použít tuto úroveň v následujících situacích:<br />-Aplikace přijímá více požadavků než povoluje jeho nastavení omezení šířky pásma.<br />-Přijímající fronta je v 98 procent společností z žebříčku jeho konfigurovanou kapacitu.|  
 |Informace o|-Zprávy užitečné pro monitorování a diagnostiku stavu systému, měření výkonu nebo profilování jsou generovány. Můžete využít tyto informace pro správu výkon a plánování kapacity. Můžete použít tuto úroveň v následujících situacích:<br />-Selháním po zprávy bylo dosaženo domény aplikace a byla deserializovat.<br />-K selhání došlo k chybě při vytváření vazby HTTP.|  
-|verbose|Ladění úroveň trasování pro obě uživatelský kód a údržba. Nastavíte úroveň při:<br />-Si nejste jisti, jakou metodu v kódu byla volána, když došlo k chybě.<br />-Máte nesprávné koncový bod nakonfigurovaný a službě se nepovedlo spustit, protože položka v úložišti rezervace je uzamčen.|  
+|Podrobnosti|Ladění úroveň trasování pro obě uživatelský kód a údržba. Nastavíte úroveň při:<br />-Si nejste jisti, jakou metodu v kódu byla volána, když došlo k chybě.<br />-Máte nesprávné koncový bod nakonfigurovaný a službě se nepovedlo spustit, protože položka v úložišti rezervace je uzamčen.|  
 |ActivityTracing|Tok událostí mezi zpracování aktivit a komponent.<br /><br /> Tato úroveň umožňuje vývojářům a správcům ke korelaci aplikací ve stejné doméně aplikace.<br /><br /> – Trasování pro aktivitu hranice: start/stop.<br />-Trasování pro přenosy.|  
   
  Můžete použít `add` Chcete-li určit název a typ naslouchací proces trasování, kterou chcete použít. V konfiguraci příklad je naslouchací proces s názvem `sdt` a standardní naslouchací proces trasování rozhraní .NET Framework (`System.Diagnostics.XmlWriterTraceListener`) se přidá jako typ. Použití `initializeData` nastavit název souboru protokolu pro tuto naslouchací proces. Kromě toho můžete nahradit úplná cesta k souboru jednoduchý název.  
@@ -191,7 +191,7 @@ Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF)
 -   Zobrazit podrobné trasování Non zpráv, který v případě nezaškrtnutí ignorovat podrobné úrovně trasování, s výjimkou trasování zprávy. Ve většině případů jsou méně důležité pro analýzu úroveň trasování podrobné. Tato možnost je užitečné, pokud nechcete k analýze podrobné úrovně trasování a pouze chcete se soustředit na důležité trasování.  
   
 ###### <a name="layout-mode"></a>Režim rozložení  
- Prohlížeč má dva režimy rozložení: **procesu** a **vlákna**. Toto nastavení definuje největší jednotka organizace. Výchozí hodnota je režim rozložení **procesu**, což znamená, že aktivity jsou seskupené podle procesy v grafu.  
+ Prohlížeč má dva režimy rozložení: **Proces** a **vlákna**. Toto nastavení definuje největší jednotka organizace. Výchozí hodnota je režim rozložení **procesu**, což znamená, že aktivity jsou seskupené podle procesy v grafu.  
   
 ###### <a name="execution-list"></a>Seznam spuštění  
  Můžete vybrat, který proces nebo vlákno, který se má zobrazit v grafu z tohoto rozevíracího seznamu. Například pokud máte soubory trasování dvou klientů (A a B) a jedna služba otevřít a pouze chcete zobrazit v grafu služby a klient A, můžete zrušit zaškrtnutí klienta B ze seznamu.  
@@ -227,9 +227,9 @@ Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF)
 #### <a name="using-the-filter-toolbar"></a>Pomocí panelu filtru  
  Panel nástrojů filtru se zobrazí v horní části nástroje. Pokud tam není, můžete si ji můžou aktivovat v **zobrazení** nabídky. Na panelu má tři komponenty:  
   
--   Hledat: **vyhledejte** definuje předmět v operaci filtru. Například pokud chcete najít všechna trasování, které byly, protože ho v rámci procesu X, nastavte pole na X a **prohledávat** pole "Název procesu". Je vybrán tohoto pole se změní na ovládací prvek Výběr data a času při filtrování podle času.  
+-   Hledat: **Vyhledejte** definuje předmět v operaci filtru. Například pokud chcete najít všechna trasování, které byly, protože ho v rámci procesu X, nastavte pole na X a **prohledávat** pole "Název procesu". Je vybrán tohoto pole se změní na ovládací prvek Výběr data a času při filtrování podle času.  
   
--   Hledání v: Toto pole definuje typ filtr.  
+-   Hledat v: Toto pole definuje typ filtr.  
   
 -   Úroveň: Nastavení úrovně definuje minimální úroveň trasování povolen filtr. Například pokud je nastavena úroveň a novějšími verzemi na chybu, se zobrazují pouze trasování při chybě a kritickou úroveň. Tento filtr kombinuje kritérii zadanými Hledat a prohledávat.  
   
@@ -277,7 +277,7 @@ Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF)
   
 3.  Na minimum a zadejte název filtru a výraz XPath výrazů.  
   
-4.  Klikněte na tlačítko **OK**.  
+4.  Klikněte na **OK**.  
   
 ###### <a name="applying-a-custom-filter"></a>Použití vlastního filtru  
  Po vytvoření vlastního filtru, i když byl přístupný panelu filtru. Vyberte filtr, který má být použita v **prohledávat** pole panelu filtru. V předchozím příkladu vyberte "ID vlákna.  
@@ -286,7 +286,7 @@ Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF)
   
 2.  Klikněte na tlačítko **filtr nyní**a podívejte se na výsledek operace.  
   
- Je-li filtr používá více parametry, zadejte je pomocí ";" jako oddělovač v **najít** pole. Například následující řetězec definuje 3 parametry: "1; findValue; text". V prohlížeči se vztahuje na '1' {0} parametr filtru. 'findValue' a 'text' se použijí u {1} a {2} v uvedeném pořadí.  
+ Je-li filtr používá více parametry, zadejte je pomocí ";" jako oddělovač v **najít** pole. Například následující řetězec definuje 3 parametry: "1; findValue text". V prohlížeči se vztahuje na '1' {0} parametr filtru. 'findValue' a 'text' se použijí u {1} a {2} v uvedeném pořadí.  
   
 ###### <a name="sharing-custom-filters"></a>Sdílení vlastní filtry  
  Vlastní filtry lze sdílet mezi různými relacemi a různí uživatelé. Můžete exportovat do souboru definice filtry a importování tohoto souboru v jiném umístění.  
@@ -321,9 +321,9 @@ Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF)
   
  Panel nástrojů hledání se zobrazí v horní části okna. Pokud tam není, můžete si ji můžou aktivovat v **zobrazení** nabídky. Na panelu má dvě součásti:  
   
--   Najít: Umožňuje Zadejte hledaná klíčová slova.  
+-   Najdete: Umožňuje Zadejte hledaná klíčová slova.  
   
--   Oblast hledání: Můžete zadat rozsah hledání. Můžete vybrat, jestli se má hledat ve všech aktivitách nebo v rámci aktuální aktivity.  
+-   Oblast hledání: Umožňuje zadat rozsah hledání. Můžete vybrat, jestli se má hledat ve všech aktivitách nebo v rámci aktuální aktivity.  
   
  Dialogové okno hledání poskytuje dvě další možnosti:  
   
@@ -335,7 +335,7 @@ Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF)
   
     -   Možnost "Zaznamenána zpráva" vyhledá klíčové slovo pouze v zprávy.  
   
--   Ignorovat kořenové aktivity: ignoruje trasování v "000000000000" aktivity vyhledávání. To zvyšuje výkon velké trasovací soubory po tisíce trasování, většina z nich jsou přenosy kořenovou aktivitu.  
+-   Ignorujte kořenové aktivity: Hledání ignoruje trasování v aktivitě "000000000000". To zvyšuje výkon velké trasovací soubory po tisíce trasování, většina z nich jsou přenosy kořenovou aktivitu.  
   
 ### <a name="navigating-traces"></a>Navigace trasování  
  Protože trasování se zaznamenávají krok za krokem při spuštění aplikace, navigace trasování vám mohou pomoci při ladění aplikace. Prohlížeče trasování služeb poskytuje různé způsoby, jak vracet se v trasování.  
@@ -343,23 +343,23 @@ Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF)
 #### <a name="step-forward-or-backward"></a>Krok dopředu nebo dozadu  
  Pokud považujete za každý trasování jako řádek kódu v programu, krokování vpřed je velmi podobný "Krok za" v Visual Studio integrované vývojové prostředí (IDE). Rozdíl je, že můžete také krokovat zpět v trasování. Procházení dopředu znamená přechod na další trasování v rámci aktivity.  
   
--   Krok vpřed: Použijte **aktivity** nabídky nebo stisknutím klávesy "F10". V podokně trasování můžete použít i klíč šipka "dolů".  
+-   Krok vpřed: Použití **aktivity** nabídky nebo stisknutím klávesy "F10". V podokně trasování můžete použít i klíč šipka "dolů".  
   
--   Kroku zpět: Použití **aktivity** nabídky nebo stisknutím klávesy "F9". V podokně trasování můžete použít i klíč šipka "nahoru".  
+-   Krokovat zpět: Použití **aktivity** nabídky nebo stisknutím klávesy "F9". V podokně trasování můžete použít i klíč šipka "nahoru".  
   
 > [!NOTE]
 >  To může trvat je k aktivitě, ke kterým dochází v jiném procesu nebo i v jiném počítači, protože zpráv WCF mohou obsahovat ID, které jsou rozmístěny počítače aktivity.  
   
 #### <a name="follow-transfer"></a>Postupujte podle přenosu  
- Přenos trasování jsou speciální trasování v trasovacím souboru. Aktivita, mohou předávat na jinou aktivitu metodou přenos trasování. Například "Aktivita A", mohou předávat "Aktivita b". V takovém případě není na ikonu "Aktivitě A" s názvem "Na aktivitu:" a přenos přenos trasování. Přenos trasování je propojení těchto dvou trasování. V "Aktivita B" můžou být dostupné taky na konci aktivity přenést zpět do "Aktivitě A" přenos trasování. Podobá se to volání funkce v programech: A volá B, vrátí B.  
+ Přenos trasování jsou speciální trasování v trasovacím souboru. Aktivita, mohou předávat na jinou aktivitu metodou přenos trasování. Například "Aktivita A", mohou předávat "Aktivita b". V takovém případě je přenos trasování v "Aktivity A" s názvem "na: Aktivita"a ikonu převodu. Přenos trasování je propojení těchto dvou trasování. V "Aktivita B" můžou být dostupné taky na konci aktivity přenést zpět do "Aktivitě A" přenos trasování. To se podobá volání funkce v programech: Volá B, B a vrátí.  
   
  "Sledovat přenos" je podobný "Krokování s vnořením" ladicího programu. Následující přenos z A B. Nemá žádný vliv na ostatní trasování.  
   
  Postupujte podle přenos dvěma způsoby: pomocí myši nebo klávesnice:  
   
--   Pomocí myši: Dvakrát klikněte na přenos trasování v podokně trasování.  
+-   Pomocí myši: Klikněte dvakrát na přenos trasování v podokně trasování.  
   
--   Pomocí klávesnice: Vyberte přenos trasování a použijte "Přenos postupujte podle" v **aktivity** nabídky nebo stisknutím klávesy "F11"  
+-   Pomocí klávesnice: Přenos trasování vyberte a použijte "Přenos postupujte podle" v **aktivity** nabídky nebo stisknutím klávesy "F11"  
   
 > [!NOTE]
 >  V mnoha případech po aktivitě A přenese aktivita B, aktivity A počká, dokud aktivita B přenosy zpět na aktivitu A. To znamená, že má aktivita A bez trasování zaznamenána během doby, kdy je aktivita B aktivně trasování. Je však také možné, že aktivity A nečeká a pokračuje do protokolu trasování. Je také možné, že aktivita B nepřenese zpět na aktivitu A. Proto jsou stále neliší od volání funkce v tomto smyslu přenosy aktivit. Rozumíte aktivity přenosů lepších v zobrazení grafu.  
@@ -367,9 +367,9 @@ Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF)
 #### <a name="jump-to-next-or-previous-transfer"></a>Přejít na další nebo předchozí přenosu  
  Při analýze aktuální aktivitu nebo vybrané aktivity při výběru více aktivit, můžete rychle najít aktivity, které se přenese na. "Přechod na přenos" umožňuje najít další přenos trasování v rámci aktivity. Jakmile najdete přenos trasování, vám pomůže "Sledovat přenos" krokování s vnořením do další aktivity.  
   
--   Přejít na další přenos: použití **aktivity** nabídky nebo stisknutím klávesy "Ctrl + F10".  
+-   Přejít na další přenos: Použití **aktivity** nabídky nebo stisknutím klávesy "Ctrl + F10".  
   
--   Přejít na předchozí přenosu: použití **aktivity** nabídky nebo stisknutím klávesy "Ctrl + F9".  
+-   Přejít na předchozí přenos: Použití **aktivity** nabídky nebo stisknutím klávesy "Ctrl + F9".  
   
 #### <a name="navigate-in-graph-view"></a>Přejděte v zobrazení grafu  
  I když přejdete podokna aktivit a trasování je podobné ladění, pomocí **grafu** zobrazení poskytuje mnohem lepší prostředí v navigačním panelu. Další informace jsou uvedeny v části "Zobrazení grafu".  
@@ -404,41 +404,41 @@ Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF)
   
 |Ikona|Popis|  
 |----------|-----------------|  
-|![Upozornění trasování](../../../docs/framework/wcf/media/7457c4ed-8383-4ac7-bada-bcb27409da58.gif "7457c4ed-8383-4ac7-bada-bcb27409da58")|Upozornění trasování: trasování, které jsou vydávány na úroveň pro upozornění|  
-|![Trasování chyb](../../../docs/framework/wcf/media/7d908807-4967-4f6d-9226-d52125db69ca.gif "7d908807-4967-4f6d-9226-d52125db69ca")|Trasování chyb: trasování, které jsou vydávány na úrovni chyby.|  
-|![Trasování spuštění aktivit:](../../../docs/framework/wcf/media/8a728f91-5f80-4a95-afe8-0b6acd6e0317.gif "8a728f91-5f80-4a95-afe8-0b6acd6e0317")|Trasování spuštění aktivit: trasování, který označuje začátek aktivity. Obsahuje název aktivity. Jako návrháře aplikaci nebo pro vývojáře byste měli definovat jednu aktivitu zahájení trasování podle id aktivity za procesu nebo vlákna.<br /><br /> Pokud id aktivity se šíří přes zdrojů trasování pro trasování korelace, zobrazí se pak více spuštění pro stejný id aktivity (jeden do každého zdroje trasování). Zahájení trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|  
-|![Aktivita zastavení trasování](../../../docs/framework/wcf/media/a0493e95-653e-4af8-84a4-4d09a400bc31.gif "a0493e95-653e-4af8-84a4-4d09a400bc31")|Aktivita zastavení trasování: trasování, který označuje konec aktivity. . Obsahuje název aktivity. Jako návrháře aplikaci nebo pro vývojáře byste měli definovat jednu aktivitu Zastavit trasování podle id aktivity za zdroje trasování. Žádné trasování ze zdroje daného trasování se zobrazí po aktivitě zastavit, protože ho vygeneroval tento zdroj trasování, s výjimkou Pokud časové intervaly trasování není dostatečně malý. Pokud k tomu dojde, může být prokládané dvou trasování se stejným časem, včetně zarážku, při zobrazení. Id aktivity se šíří přes zdrojů trasování pro trasování korelace, zobrazí se více zarážek pro stejné id aktivity (jeden do každého zdroje trasování). Zastavení trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|  
-|![Aktivita Suspend trasování](../../../docs/framework/wcf/media/6f7f4191-df2b-4592-8998-8379769e2d32.gif "6f7f4191-df2b-4592-8998-8379769e2d32")|Aktivita Suspend trasování: trasování, který označuje čas aktivita je pozastavená. Žádné trasování jsou emitovány pozastavené aktivity, dokud aktivita obnoví. Pozastavené aktivity označuje, že žádné zpracování se děje v aktivity v rámci zdroje trasování. Trasování operací pozastavit/pokračovat jsou užitečné pro profilování. Pozastavení trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|  
-|![Pokračování aktivity trasování](../../../docs/framework/wcf/media/1060d9d2-c9c8-4e0a-9988-cdc2f7030f17.gif "1060d9d2-c9c8-4e0a-9988-cdc2f7030f17")|Pokračování aktivity trasování: trasování, který označuje dobu obnovení aktivitu poté, co bylo pozastaveno. Trasování může znovu vygenerován v této aktivitě. Trasování operací pozastavit/pokračovat jsou užitečné pro profilování. Obnovit trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|  
-|![Transfer](../../../docs/framework/wcf/media/b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5.gif "b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5")|Přenos: Trasování, které jsou vydávány při převodu logické řízení toku z jedné aktivity do druhé. Aktivity, které mohou být přenos může i nadále provádět práci paralelně na aktivitu, kterou přenos přejde na. Přenos trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|  
-|![Přenos z](../../../docs/framework/wcf/media/1df215cb-b344-4f36-a20d-195999bda741.gif "1df215cb-b344-4f36-a20d-195999bda741")|Přenos z: Trasování, který definuje přenos z jiné aktivity do aktuální aktivitu.|  
-|![Transfer To](../../../docs/framework/wcf/media/74255b6e-7c47-46ef-8e53-870c76b04c3f.gif "74255b6e-7c47-46ef-8e53-870c76b04c3f")|Přenos do: Trasování, který definuje přenos logické řízení toku z aktuální aktivity k jiné aktivitě.|  
+|![Upozornění trasování](../../../docs/framework/wcf/media/7457c4ed-8383-4ac7-bada-bcb27409da58.gif "7457c4ed-8383-4ac7-bada-bcb27409da58")|Upozornění trasování: Trasování, které jsou vydávány na úroveň pro upozornění|  
+|![Trasování chyb](../../../docs/framework/wcf/media/7d908807-4967-4f6d-9226-d52125db69ca.gif "7d908807-4967-4f6d-9226-d52125db69ca")|Trasování chyb: Trasování, které jsou vydávány na úrovni chyby.|  
+|![Trasování spuštění aktivit:](../../../docs/framework/wcf/media/8a728f91-5f80-4a95-afe8-0b6acd6e0317.gif "8a728f91-5f80-4a95-afe8-0b6acd6e0317")|Trasování spuštění aktivit: Trasování, který označuje začátek aktivity. Obsahuje název aktivity. Jako návrháře aplikaci nebo pro vývojáře byste měli definovat jednu aktivitu zahájení trasování podle id aktivity za procesu nebo vlákna.<br /><br /> Pokud id aktivity se šíří přes zdrojů trasování pro trasování korelace, zobrazí se pak více spuštění pro stejný id aktivity (jeden do každého zdroje trasování). Zahájení trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|  
+|![Aktivita zastavení trasování](../../../docs/framework/wcf/media/a0493e95-653e-4af8-84a4-4d09a400bc31.gif "a0493e95-653e-4af8-84a4-4d09a400bc31")|Aktivita zastavení trasování: Trasování, který označuje konec aktivity. . Obsahuje název aktivity. Jako návrháře aplikaci nebo pro vývojáře byste měli definovat jednu aktivitu Zastavit trasování podle id aktivity za zdroje trasování. Žádné trasování ze zdroje daného trasování se zobrazí po aktivitě zastavit, protože ho vygeneroval tento zdroj trasování, s výjimkou Pokud časové intervaly trasování není dostatečně malý. Pokud k tomu dojde, může být prokládané dvou trasování se stejným časem, včetně zarážku, při zobrazení. Id aktivity se šíří přes zdrojů trasování pro trasování korelace, zobrazí se více zarážek pro stejné id aktivity (jeden do každého zdroje trasování). Zastavení trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|  
+|![Aktivita Suspend trasování](../../../docs/framework/wcf/media/6f7f4191-df2b-4592-8998-8379769e2d32.gif "6f7f4191-df2b-4592-8998-8379769e2d32")|Aktivita Suspend trasování: Trasování, který označuje dobou, kdy aktivita je pozastavená. Žádné trasování jsou emitovány pozastavené aktivity, dokud aktivita obnoví. Pozastavené aktivity označuje, že žádné zpracování se děje v aktivity v rámci zdroje trasování. Trasování operací pozastavit/pokračovat jsou užitečné pro profilování. Pozastavení trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|  
+|![Pokračování aktivity trasování](../../../docs/framework/wcf/media/1060d9d2-c9c8-4e0a-9988-cdc2f7030f17.gif "1060d9d2-c9c8-4e0a-9988-cdc2f7030f17")|Trasování činnosti obnovení: Trasování, který označuje čas, kdy aktivita obnovení poté, co bylo pozastaveno. Trasování může znovu vygenerován v této aktivitě. Trasování operací pozastavit/pokračovat jsou užitečné pro profilování. Obnovit trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|  
+|![Transfer](../../../docs/framework/wcf/media/b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5.gif "b2d9850e-f362-4ae5-bb8d-9f6f3ca036a5")|Přenos: Trasování, který je vygenerován při převodu logické řízení toku z jedné aktivity do druhé. Aktivity, které mohou být přenos může i nadále provádět práci paralelně na aktivitu, kterou přenos přejde na. Přenos trasování je vygenerován, pokud je pro zdroj trasování povoleno ActivityTracing.|  
+|![Transfer From](../../../docs/framework/wcf/media/1df215cb-b344-4f36-a20d-195999bda741.gif "1df215cb-b344-4f36-a20d-195999bda741")|Přenos z: Trasování, který definuje přenos z jiné aktivity do aktuální aktivitu.|  
+|![Transfer To](../../../docs/framework/wcf/media/74255b6e-7c47-46ef-8e53-870c76b04c3f.gif "74255b6e-7c47-46ef-8e53-870c76b04c3f")|Přenést do: Trasování, který definuje přenos logické řízení toku z aktuální aktivity k jiné aktivitě.|  
   
 ### <a name="wcf-traces"></a>Trasování WCF  
   
 |Ikona|Popis|  
 |----------|-----------------|  
-|![Zprávy protokolu trasování](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Zprávy protokolu trasování: trasování, které jsou vydávány, když se zaznamená zprávu WCF funkcí protokolování zpráv, když `System.ServiceModel.MessageLogging` zdroj trasování je povolené. Kliknutím na toto trasování zobrazí zprávu. Existují čtyři body konfigurovat protokolování zprávy: ServiceLevelSendRequest, TransportSend, TransportReceive a ServiceLevelReceiveRequest, což je také možné zadat tak `messageSource` atribut v protokolu trasování zpráv.|  
-|![Zprávy trasování přijaté](../../../docs/framework/wcf/media/de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c.gif "de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c")|Zprávy přijaté trasování: trasování, které jsou vydávány při doručení zprávy do WCF, pokud `System.ServiceModel` zdroj trasování je povolené na úrovni informace nebo Verbose. Trasování je nezbytné pro zobrazení šipky korelace zprávu v aktivitě **grafu** zobrazení.|  
-|![Zprávy trasování odeslaných](../../../docs/framework/wcf/media/558943c4-17cf-4c12-9405-677e995ac387.gif "558943c4-17cf-4c12-9405-677e995ac387")|Zprávy odeslané trasování: trasování, které jsou vydávány při odesílání zprávy WCF, pokud `System.ServiceModel` zdroj trasování je povolené na úrovni informace nebo Verbose. Trasování je nezbytné pro zobrazení šipky korelace zprávu v aktivitě **grafu** zobrazení.|  
+|![Zprávy protokolu trasování](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Zprávy trasování protokolu: Trasování, které jsou vydávány, když se zaznamená zprávu WCF funkcí protokolování zpráv, když `System.ServiceModel.MessageLogging` zdroj trasování je povolené. Kliknutím na toto trasování zobrazí zprávu. Existují čtyři body konfigurovat protokolování zprávy: ServiceLevelSendRequest, TransportSend, TransportReceive a ServiceLevelReceiveRequest, což je také možné zadat tak, `messageSource` atribut v protokolu trasování zpráv.|  
+|![Zprávy trasování přijaté](../../../docs/framework/wcf/media/de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c.gif "de4f586c-c5dd-41ec-b1c3-ac56b4dfa35c")|Trasování přijatých zpráv: Trasování, které jsou vydávány při doručení zprávy do WCF, pokud `System.ServiceModel` zdroj trasování je povolené na úrovni informace nebo Verbose. Trasování je nezbytné pro zobrazení šipky korelace zprávu v aktivitě **grafu** zobrazení.|  
+|![Zprávy trasování odeslaných](../../../docs/framework/wcf/media/558943c4-17cf-4c12-9405-677e995ac387.gif "558943c4-17cf-4c12-9405-677e995ac387")|Trasování odeslaných zpráv: Trasování, které jsou vydávány při odesílání zprávy WCF, pokud `System.ServiceModel` zdroj trasování je povolené na úrovni informace nebo Verbose. Trasování je nezbytné pro zobrazení šipky korelace zprávu v aktivitě **grafu** zobrazení.|  
   
 ### <a name="activities"></a>Aktivity  
   
 |Ikona|Popis|  
 |----------|-----------------|  
-|![Aktivita](../../../docs/framework/wcf/media/wcfc-defaultactivityc.gif "wcfc_defaultActivityc")|Aktivita: Označuje, že je aktuální aktivita Obecná aktivita.|  
-|![Kořenová aktivita](../../../docs/framework/wcf/media/5dc8e0eb-1c32-4076-8c66-594935beaee9.gif "5dc8e0eb-1c32-4076-8c66-594935beaee9")|Kořenové aktivity: Určuje kořenové aktivity procesu.|  
+|![Activity](../../../docs/framework/wcf/media/wcfc-defaultactivityc.gif "wcfc_defaultActivityc")|Aktivita: Označuje, že je aktuální aktivita Obecná aktivita.|  
+|![Kořenová aktivita](../../../docs/framework/wcf/media/5dc8e0eb-1c32-4076-8c66-594935beaee9.gif "5dc8e0eb-1c32-4076-8c66-594935beaee9")|Kořenová aktivita: Označuje kořenové aktivity procesu.|  
   
 ### <a name="wcf-activities"></a>Aktivity WCF  
   
 |Ikona|Popis|  
 |----------|-----------------|  
-|![Aktivita prostředí](../../../docs/framework/wcf/media/29fa00ac-cf78-46e5-822d-56222fff61d1.gif "29fa00ac-cf78-46e5-822d-56222fff61d1")|Prostředí aktivitu: aktivitu, která vytvoří, otevře se nebo zavře WCF hostitele nebo klienta. Tato aktivita se zobrazí chyby, ke kterým došlo během těchto fází.|  
-|![Naslouchání aktivity](../../../docs/framework/wcf/media/d7b135f6-ec7d-45d7-9913-037ab30e4c26.gif "d7b135f6-ec7d-45d7-9913-037ab30e4c26")|Naslouchání aktivitu: aktivitu, která protokoly trasování související s naslouchacím procesem. Uvnitř této aktivity můžeme si prohlédnout žádosti o připojení a informace o naslouchací proces.|  
-|![Bajty aktivita příjmu](../../../docs/framework/wcf/media/2f628580-b80f-45a7-925b-616c96426c0e.gif "2f628580-b80f-45a7-925b-616c96426c0e")|Přijímání bajtů aktivitu: aktivitu, která seskupuje všechna trasování týkající se přijímání Příchozí bajty v připojení mezi dva koncové body. Tato aktivita je nezbytné v korelaci s aktivitami přenosu, které rozšíří své id aktivity, jako je například http.sys. Chyby připojení, jako je například přeruší se zobrazí v rámci této aktivity.|  
-|![Zpracování zpráv aktivity](../../../docs/framework/wcf/media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Zpracování zpráv aktivitu: aktivitu, která seskupuje trasování související s vytvořením zprávy WCF. Chyby vzniklé v důsledku chybných obálky nebo poškozená zpráva se zobrazí v této aktivitě. Uvnitř této aktivity jsme mohli prohlédnout záhlaví zprávy zobrazíte, pokud id aktivity byla rozšířena z volající. Pokud je to pravda, pokud jsme přenést do procesu akce aktivity (Další), jsme můžete také přiřadit pro danou aktivitu rozšíří aktivity id korelace mezi volající nebo volaný trasování.|  
-|![Zprávy protokolu trasování](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Zpracování akce aktivitu: aktivitu, která seskupuje všechna trasování související se žádost o WCF mezi dva koncové body. Pokud `propagateActivity` je nastavena na `true` na oba koncové body v konfiguraci, všechna trasování z oba koncové body jsou sloučeny do jedné aktivity pro přímou spojitost s míněním. Tato aktivita bude obsahovat chyby kvůli přenosu nebo zabezpečení, zpracování, rozšíření na hranici kód uživatele a zpět (pokud existuje odpověď).|  
-|![Zpracování zpráv aktivity](../../../docs/framework/wcf/media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Aktivita uživatelský kód spuštění: trasování aktivity, která seskupuje uživatelský kód pro zpracování požadavku.|  
+|![Environment activity](../../../docs/framework/wcf/media/29fa00ac-cf78-46e5-822d-56222fff61d1.gif "29fa00ac-cf78-46e5-822d-56222fff61d1")|Aktivita prostředí: Aktivita, která vytvoří, otevře se nebo zavře WCF hostitele nebo klienta. Tato aktivita se zobrazí chyby, ke kterým došlo během těchto fází.|  
+|![Listen activity](../../../docs/framework/wcf/media/d7b135f6-ec7d-45d7-9913-037ab30e4c26.gif "d7b135f6-ec7d-45d7-9913-037ab30e4c26")|Naslouchání aktivity: Aktivita, která protokoluje související s naslouchací proces trasování. Uvnitř této aktivity můžeme si prohlédnout žádosti o připojení a informace o naslouchací proces.|  
+|![Bajty aktivita příjmu](../../../docs/framework/wcf/media/2f628580-b80f-45a7-925b-616c96426c0e.gif "2f628580-b80f-45a7-925b-616c96426c0e")|Bajty aktivita příjmu: Aktivity, která seskupuje všechna trasování týkající se přijímání Příchozí bajty v připojení mezi dva koncové body. Tato aktivita je nezbytné v korelaci s aktivitami přenosu, které rozšíří své id aktivity, jako je například http.sys. Chyby připojení, jako je například přeruší se zobrazí v rámci této aktivity.|  
+|![Zpracování zpráv aktivity](../../../docs/framework/wcf/media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Zpracování zpráv aktivity: Aktivity, která seskupuje trasování související s vytvořením zprávy WCF. Chyby vzniklé v důsledku chybných obálky nebo poškozená zpráva se zobrazí v této aktivitě. Uvnitř této aktivity jsme mohli prohlédnout záhlaví zprávy zobrazíte, pokud id aktivity byla rozšířena z volající. Pokud je to pravda, pokud jsme přenést do procesu akce aktivity (Další), jsme můžete také přiřadit pro danou aktivitu rozšíří aktivity id korelace mezi volající nebo volaný trasování.|  
+|![Zprávy protokolu trasování](../../../docs/framework/wcf/media/7c66e994-2476-4260-a0db-98948b9af197.gif "7c66e994-2476-4260-a0db-98948b9af197")|Aktivitu procesu akce: Aktivity, která seskupuje všechna trasování související s WCF žádostí napříč dva koncové body. Pokud `propagateActivity` je nastavena na `true` na oba koncové body v konfiguraci, všechna trasování z oba koncové body jsou sloučeny do jedné aktivity pro přímou spojitost s míněním. Tato aktivita bude obsahovat chyby kvůli přenosu nebo zabezpečení, zpracování, rozšíření na hranici kód uživatele a zpět (pokud existuje odpověď).|  
+|![Zpracování zpráv aktivity](../../../docs/framework/wcf/media/wcfc-executionactivityiconc.GIF "wcfc_ExecutionActivityIconc")|Aktivita uživatelský kód spuštění: Aktivity, která seskupuje uživatele trasování kódu pro zpracování požadavku.|  
   
 ## <a name="troubleshooting"></a>Poradce při potížích  
  Pokud nemáte oprávnění k zápisu do registru, získáte následující chybová zpráva "Microsoft Service prohlížeče trasování nebyl registrován v systému" při použití "`svctraceviewer /register`" příkaz pro registraci nástroje. V tomto případě by měl přihlásit pomocí účtu, který má oprávnění k zápisu do registru.  
@@ -449,7 +449,7 @@ Nástroj Prohlížeč trasování služeb Windows Communication Foundation (WCF)
   
  Pokud otevřete protokol trasování vytvořené pomocí arabském operačním systému, můžete si všimnout, který čas, kdy filtr nefunguje. Například roku 2005 odpovídá rok 1427 Arabské kalendáře. Časový rozsah podporovaný filtr nástroje prohlížeče trasování služeb však nepodporuje data starší než 1752. To může znamenat, že zatím nejste schopni vybrat správné datum ve filtru. Chcete-li vyřešit tento problém, můžete vytvořit vlastní filtr (**zobrazení/vlastní filtry**) pomocí výrazu XPath zahrnout konkrétní časové období.  
   
-## <a name="see-also"></a>Viz také  
- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
- [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
- [Trasování aktivit a šíření pro trasovacího začátku do konce korelaci](https://msdn.microsoft.com/library/2c11a905-64f8-47b5-bae5-a74fc666137e)
+## <a name="see-also"></a>Viz také:
+- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
+- [Trasování aktivit a šíření pro trasovacího začátku do konce korelaci](https://msdn.microsoft.com/library/2c11a905-64f8-47b5-bae5-a74fc666137e)

@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: dotazování na LINQ to XML pomocí jazyka XPath (C#)'
+title: 'Postupy: Dotazování na LINQ to XML pomocí jazyka XPath (C#)'
 ms.date: 07/20/2015
 ms.assetid: ee5af263-4ab1-45e5-b792-33a3221b426d
-ms.openlocfilehash: 3d4a75e4688725f2444d3bbc4d55bec828485a5d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a3e9cb29b9ba027cfc70eeb0cd163b24834dff83
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511188"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564104"
 ---
-# <a name="how-to-query-linq-to-xml-using-xpath-c"></a>Postupy: dotazování na LINQ to XML pomocí jazyka XPath (C#)
+# <a name="how-to-query-linq-to-xml-using-xpath-c"></a>Postupy: Dotazování na LINQ to XML pomocí jazyka XPath (C#)
 Toto téma představuje rozšiřující metody, které vám umožní dotazovat stromu XML pomocí XPath. Podrobné informace o použití těchto metod rozšíření najdete v tématu <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>.  
   
  Pokud nemáte velmi konkrétní důvod pro dotazování pomocí XPath, jako je například příliš často používá starší verzi kódu s LINQ to XML pomocí jazyka XPath se nedoporučuje. Nebude provádět dotazy XPath a jednak [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy.  
@@ -39,6 +39,6 @@ foreach (XElement el in list)
 <Child2>6</Child2>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

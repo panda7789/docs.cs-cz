@@ -2,12 +2,12 @@
 title: Ukázková tabulka UriTemplate
 ms.date: 03/30/2017
 ms.assetid: 5dd1d38f-1989-4c64-820d-821f5a02216a
-ms.openlocfilehash: 6cd02e5cdf4137efd3254ff1071e5a4a79c2e88a
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 2babbbf89e536455af9d1fd083dd0e4e21a52893
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44199372"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54588428"
 ---
 # <a name="uritemplate-table-sample"></a>Ukázková tabulka UriTemplate
 <xref:System.UriTemplateTable> Třída poskytuje strukturu jako slovník asociativní tabulky pro práci se sadou `UriTemplate` instancí. Konkrétní Uniform Resource Identifier (identifikátory URI) mohou být efektivně hledána všechny šablony v tabulce, a je možné načíst data přidružená k šabloně odpovídající.  
@@ -35,6 +35,6 @@ ms.locfileid: "44199372"
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\UriTemplateTable`  
   
-## <a name="see-also"></a>Viz také  
- [Dispečer tabulky UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-table-dispatcher-sample.md)  
- [UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-sample.md)
+## <a name="see-also"></a>Viz také:
+- [Dispečer tabulky UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-table-dispatcher-sample.md)
+- [UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-sample.md)

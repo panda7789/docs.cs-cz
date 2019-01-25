@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Připojení dat k ovládacímu prvku Windows Forms DataGridView'
+title: 'Postupy: Vytvoření vazby dat na ovládacím prvku Windows Forms DataGridView'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,17 +10,17 @@ helpviewer_keywords:
 - data binding [Windows Forms], DataGridView control
 - DataGridView control [Windows Forms], data binding
 ms.assetid: 1660f69c-5711-45d2-abc1-e25bc6779124
-ms.openlocfilehash: 4064ef26ee550c02ac8825ac4c1a417472b64de6
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: eefc588ef8f637e91bfcad1bcc24d88bb0078fdc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836177"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744385"
 ---
-# <a name="how-to-bind-data-to-the-windows-forms-datagridview-control"></a>Postupy: Připojení dat k ovládacímu prvku Windows Forms DataGridView
+# <a name="how-to-bind-data-to-the-windows-forms-datagridview-control"></a>Postupy: Vytvoření vazby dat na ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> Ovládací prvek podporuje standardní Windows Forms datový model vazby, proto vytvoří vazbu k řadě zdrojů dat. Ve většině případů však můžete vytvoří vazbu <xref:System.Windows.Forms.BindingSource> komponenta, která bude spravovat podrobnosti o práci se zdrojem dat. <xref:System.Windows.Forms.BindingSource> Součásti může představovat libovolný zdroj dat Windows Forms a poskytuje flexibilitu při výběru nebo změně umístění vaše data. Další informace o zdrojích dat podporovaných službou <xref:System.Windows.Forms.DataGridView> řídí, najdete v článku [Přehled ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md).  
   
- Není k dispozici rozsáhlou podporu pro tuto úlohu v sadě Visual Studio.  Viz také [postupy: vytvoření vazby dat na Windows Forms DataGridView ovládacího prvku pomocí návrháře](https://msdn.microsoft.com/library/33w255ac\(v=vs.110\)).  
+ Není k dispozici rozsáhlou podporu pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Vytvoření vazby dat k Windows Forms DataGridView pomocí návrháře](https://msdn.microsoft.com/library/33w255ac\(v=vs.110\)).  
   
 ## <a name="procedure"></a>Postup  
   
@@ -50,14 +50,14 @@ ms.locfileid: "48836177"
   
 -   Odkazy na sestavení systému, System.Windows.Forms, System.Data a System.XML.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Ukládání citlivých informací, jako jsou hesla, v rámci připojovací řetězec může ovlivnit zabezpečení aplikace. Bezpečnější způsob, jak řídit přístup k databázi, je ověřování systému Windows (označované také jako integrované zabezpečení). Další informace najdete v tématu [chrání informace o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.DataGridView>  
- <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>  
- <xref:System.Windows.Forms.BindingSource>  
- [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)  
- [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.DataGridView>
+- <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.BindingSource>
+- [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)
+- [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)

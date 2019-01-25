@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a7a36d14b67efb3934089dc16de41a3b80ea0c0e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 11ab93e9cb4449ab77e5e9c4da81073aaf432382
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447987"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54669689"
 ---
 # <a name="imetadatatablesgetcodedtokeninfo-method"></a>IMetaDataTables::GetCodedTokenInfo – metoda
-Získá ukazatel na pole tokeny přidružený index zadaný řádku.  
+Získá ukazatel na pole tokenů přidružený index zadaný řádek.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,26 +40,26 @@ HRESULT GetCodedTokenInfo (
   
 #### <a name="parameters"></a>Parametry  
  `ixCdTkn`  
- [v] Druh programové token, který má vrátit.  
+ [in] Druh programové token k vrácení.  
   
  `pcTokens`  
- [out] Ukazatel na délce `ppTokens`.  
+ [out] Ukazatel na délku `ppTokens`.  
   
  `ppTokens`  
- [out] Ukazatel na ukazatel na pole, které obsahuje seznam vrátil tokeny.  
+ [out] Ukazatel na ukazatel na pole, která obsahuje seznam vrácených tokenů.  
   
  `ppName`  
- [out] Ukazatel na ukazatel na název tokenu v `ixCdTkn`.  
+ [out] Ukazatel na ukazatel na název token na `ixCdTkn`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
+- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

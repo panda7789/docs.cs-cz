@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 28116714-da77-45f7-826d-fa035d121948
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1aed7e1e9e85f746c4b55b10c59dd82e85565b00
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 27bbc1b382d962379a50fba4557e3f2a408d9bc4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194836"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54649164"
 ---
 # <a name="assembly-contents"></a>Obsah sestavení
 Obecně platí Statická sestavení se může skládat z čtyři elementy:  
@@ -48,7 +48,7 @@ Vícesouborová sestavení
   
  Při návrhu aktuálně zdrojového kódu, proveďte explicitní rozhodnutí o tom, jak rozdělit funkce vaší aplikace do jednoho nebo více souborů. Při navrhování kódu rozhraní .NET Framework, bude podobné rozhodnutí o tom, jak rozdělit funkce do jednoho nebo více sestavení.  
   
-## <a name="see-also"></a>Viz také  
-- [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
-- [Manifest sestavení](../../../docs/framework/app-domains/assembly-manifest.md)  
+## <a name="see-also"></a>Viz také:
+- [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+- [Manifest sestavení](../../../docs/framework/app-domains/assembly-manifest.md)
 - [Důležité informace o zabezpečení sestavení](../../../docs/framework/app-domains/assembly-security-considerations.md)

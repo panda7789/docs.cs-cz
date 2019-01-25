@@ -9,12 +9,12 @@ helpviewer_keywords:
 - animation [WPF], properties [WPF], methods for
 - properties [WPF], methods for animating
 ms.assetid: 74f61413-f8c0-4e75-bf04-951886426c8b
-ms.openlocfilehash: 438b59aa4aa4213960e0bc3d479a2b949f6d374e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 09e778f89f58556a53f19b4c89e3d82ed94cd64b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43395959"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54614156"
 ---
 # <a name="property-animation-techniques-overview"></a>Přehled způsobů animace vlastností
 Toto téma popisuje různé přístupy k animace vlastností: scénáře, místní animace, hodiny a za snímků animace.  
@@ -31,7 +31,7 @@ Toto téma popisuje různé přístupy k animace vlastností: scénáře, místn
   
 |Animace technika|Scénáře|Podporuje XAML|Může interaktivně ovládat|  
 |-------------------------|---------------|-------------------|--------------------------------|  
-|Animace scénáře|Jednotlivé instance, <xref:System.Windows.Style>, <xref:System.Windows.Controls.ControlTemplate>, <xref:System.Windows.DataTemplate>|Ano|Ano|  
+|Animace scénáře|Per-instance, <xref:System.Windows.Style>, <xref:System.Windows.Controls.ControlTemplate>, <xref:System.Windows.DataTemplate>|Ano|Ano|  
 |Místní animace|Jednotlivé instance|Ne|Ne|  
 |Hodiny animace|Jednotlivé instance|Ne|Ano|  
 |Na snímku animace|Jednotlivé instance|Ne|Není k dispozici|  
@@ -58,7 +58,7 @@ Toto téma popisuje různé přístupy k animace vlastností: scénáře, místn
 |--------------------------------|-------------------|-----------|----------------------|-------------------|-------------|  
 |<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.EventTrigger>|Ano|Ano|Ano|Ano|[Animace vlastnosti pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
 |<xref:System.Windows.Media.Animation.BeginStoryboard> a vlastnosti <xref:System.Windows.Trigger>|Ne|Ano|Ano|Ano|[Spuštění animace při změně hodnoty vlastnosti](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-an-animation-when-a-property-value-changes.md)|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.DataTrigger>|Ne|Ano|Ano|Ano|[Postupy: spuštění animace při změně dat](https://msdn.microsoft.com/library/a736bb3a-2ae5-479a-a33a-75a27055d863)|  
+|<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.DataTrigger>|Ne|Ano|Ano|Ano|[Postupy: Spuštění animace při změně dat](https://msdn.microsoft.com/library/a736bb3a-2ae5-479a-a33a-75a27055d863)|  
 |<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> – Metoda|Ano|Ne|Ne|Ne|[Animace vlastnosti pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
   
  Další informace o <xref:System.Windows.Media.Animation.Storyboard> objekty, najdete [přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).  
@@ -121,8 +121,8 @@ Toto téma popisuje různé přístupy k animace vlastností: scénáře, místn
   
  Další informace najdete v tématu <xref:System.Windows.Media.CompositionTarget.Rendering> stránky.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)  
- [Přehled animace a systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)  
- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)
+- [Přehled animace a systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)
+- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)

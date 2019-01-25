@@ -8,34 +8,34 @@ helpviewer_keywords:
 - scenes [WPF], 3-D
 - 3-D scenes
 ms.assetid: adb4a598-71a2-4dd5-b677-ea3fc11b78b2
-ms.openlocfilehash: e3c2ea803961ca57606f8ea8bec21d50a38dbe1f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 23e01934eac0d9e1ea9fb5fbbbc5d8c9d8aabbc5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33559523"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54494364"
 ---
 # <a name="how-to-create-a-3-d-scene"></a>Postupy: Vytvoření 3D scény
-Tento příklad ukazuje postup vytvoření 3D objekt, který vypadá jako plochý list dokumentu, který otočený. A <xref:System.Windows.Controls.Viewport3D> společně s následující součásti, které se používají k vytvoření tohoto jednoduchého 3D scény:  
+Tento příklad ukazuje postup vytvoření 3D objekt, který vypadá jako seznam bez stromové struktury papíru, které byly otočen. A <xref:System.Windows.Controls.Viewport3D> spolu s následující součásti, které se používají k vytvoření tohoto jednoduchého 3D scény:  
   
--   Fotoaparátu je vytvořený pomocí <xref:System.Windows.Media.Media3D.PerspectiveCamera>. Kamera Určuje, jaká část 3D scény jsou viditelná.  
+-   Fotoaparát je vytvořený pomocí <xref:System.Windows.Media.Media3D.PerspectiveCamera>. Fotoaparátu/kamery Určuje, jaká část 3D Scéna je zobrazit.  
   
--   Vytvoření mřížku k určení obrazec 3D objekt (list papíru) pomocí <xref:System.Windows.Media.Media3D.GeometryModel3D.Geometry%2A> vlastnost <xref:System.Windows.Media.Media3D.GeometryModel3D>.  
+-   Vytvoření sítě určit tvar 3D objekt (list papíru) pomocí <xref:System.Windows.Media.Media3D.GeometryModel3D.Geometry%2A> vlastnost <xref:System.Windows.Media.Media3D.GeometryModel3D>.  
   
--   Materiálu, který je zadán zobrazený na povrchu objekt (lineárního přechodu v této ukázce) pomocí <xref:System.Windows.Media.Media3D.GeometryModel3D.Material%2A> vlastnost <xref:System.Windows.Media.Media3D.GeometryModel3D>.  
+-   Je zadán materiál zobrazený na povrchu objektu (lineárního přechodu v této ukázce) pomocí <xref:System.Windows.Media.Media3D.GeometryModel3D.Material%2A> vlastnost <xref:System.Windows.Media.Media3D.GeometryModel3D>.  
   
--   Lehkým se vytvoří pro září na objekt pomocí <xref:System.Windows.Media.Media3D.DirectionalLight>.  
+-   Světla vytvářen do září na objekt pomocí <xref:System.Windows.Media.Media3D.DirectionalLight>.  
   
 ## <a name="example"></a>Příklad  
- Následující kód ukazuje, jak vytvořit 3D scény v jazyce XAML.  
+ Následující kód ukazuje postup vytvoření 3D scény v XAML.  
   
  [!code-xaml[3DGallery_snip#Basic3DShapeExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_snip/CS/Basic3DShapeExample.xaml#basic3dshapeexamplewholepage)]  
   
 ## <a name="example"></a>Příklad  
- Následující kód ukazuje, jak vytvořit stejné 3D scény v procedurální kódu.  
+ Následující kód ukazuje, jak vytvořit stejnou 3D scénu v kódu procedury.  
   
  [!code-csharp[3DGallery_procedural_snip#Basic3DShapeCodeExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_procedural_snip/CSharp/Basic3DShapeExample.cs#basic3dshapecodeexamplewholepage)]
  [!code-vb[3DGallery_procedural_snip#Basic3DShapeCodeExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/3DGallery_procedural_snip/visualbasic/basic3dshapeexample.vb#basic3dshapecodeexamplewholepage)]  
   
-## <a name="see-also"></a>Viz také  
- [Přehled 3D grafiky](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled 3D grafiky](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-overview.md)

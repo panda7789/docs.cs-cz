@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - object equality [C#]
 ms.assetid: 10b865ea-4e7b-4127-9242-c9b8f57d9f04
-ms.openlocfilehash: 2bf1e788c635dd466739178f80b0f2f147c04cfd
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 25ac904b848311639dda1ecf231f0d6565799733
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235355"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620172"
 ---
 # <a name="equality-comparisons-c-programming-guide"></a>Porovnání rovnosti (Průvodce programováním v C#)
 Někdy je nutné srovnat dvě hodnoty na rovnost. V některých případech testujete *hodnota rovnosti*, označované také jako *ekvivalence*, což znamená, že hodnoty, které jsou obsaženy ve dvou proměnných jsou stejné. V ostatních případech je nutné určit, zda hodnoty dvou proměnných odkazují na stejný základní objekt v paměti. Tento typ rovnosti se nazývá *referenční rovnost*, nebo *identity*. Toto téma popisuje tyto dva druhy rovnosti a obsahuje odkazy na další témata pro další informace.  
@@ -54,6 +54,6 @@ if( b == a)
 |[Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)|Obsahuje odkazy na podrobné informace o důležitých funkcích jazyka C# a funkce, které jsou k dispozici pro C# pomocí rozhraní .NET Framework.|  
 |[Typy](../../../csharp/programming-guide/types/index.md)|Poskytuje informace o typu systému C# a odkazy na další informace.|  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

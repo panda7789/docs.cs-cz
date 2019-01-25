@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vyhledání předcházejících elementů (XPath – LINQ to XML) (Visual Basic)'
+title: 'Postupy: Vyhledání předcházejících elementů (XPath – LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 59055718-d0a7-4db3-8901-18dd33587703
-ms.openlocfilehash: 1b8c73f266cc618660b59e76e46420c08b5299d3
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: a00845f6efcfa63021d64963b39ff568af98fa73
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43878818"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54600530"
 ---
-# <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-visual-basic"></a>Postupy: vyhledání předcházejících elementů (XPath – LINQ to XML) (Visual Basic)
+# <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání předcházejících elementů (XPath – LINQ to XML) (Visual Basic)
 Toto téma srovnává jazyka XPath `preceding-sibling` osy [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] podřízené <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> osy.  
   
  Výraz XPath je:  
@@ -21,7 +21,7 @@ Toto téma srovnává jazyka XPath `preceding-sibling` osy [!INCLUDE[sqltecxlinq
 ## <a name="example"></a>Příklad  
  Vyhledá v následujícím příkladu `FullAddress` prvek a poté obnoví předchozí prvky pomocí `preceding-sibling` osy.  
   
- Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Dim co As XElement = XElement.Load("CustomersOrders.xml")  
@@ -55,5 +55,5 @@ Results are identical
 <Phone>(503) 555-7555</Phone>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

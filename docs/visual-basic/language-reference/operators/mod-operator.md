@@ -12,12 +12,12 @@ helpviewer_keywords:
 - arithmetic operators [Visual Basic], Mod
 - math operators [Visual Basic]
 ms.assetid: 6ff7e40e-cec8-4c77-bff6-8ddd2791c25b
-ms.openlocfilehash: a04a294d5505180a41edeba4643d25667a301c1d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d74e1f7aaaa22d68c49f4e40ca557511a48e0554
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50201608"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54525024"
 ---
 # <a name="mod-operator-visual-basic"></a>Mod – operátor (Visual Basic)
 Provede podíl dvou čísel a vrátí pouze zbytek.  
@@ -30,10 +30,10 @@ number1 Mod number2
   
 ## <a name="parts"></a>Součásti  
  `number1`  
- Požadováno. Jakýkoli číselný výraz.  
+ Povinný parametr. Jakýkoli číselný výraz.  
   
  `number2`  
- Požadováno. Jakýkoli číselný výraz.  
+ Povinný parametr. Jakýkoli číselný výraz.  
   
 ## <a name="supported-types"></a>Podporované typy  
  Všechny číselné typy. Jedná se o typy bez znaménka a s plovoucí desetinnou čárkou a `Decimal`.  
@@ -100,12 +100,12 @@ End Module
   
  [!code-vb[VbVbalrOperators#32](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/mod-operator_2.vb)]  
   
-## <a name="see-also"></a>Viz také:  
- <xref:Microsoft.VisualBasic.Conversion.Int%2A>  
- <xref:Microsoft.VisualBasic.Conversion.Fix%2A>  
- [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
- [Řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)  
- [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Conversion.Int%2A>
+- <xref:Microsoft.VisualBasic.Conversion.Fix%2A>
+- [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
+- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+- [Řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
+- [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md)

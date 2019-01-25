@@ -1,5 +1,5 @@
 ---
-title: Codechunkinfo – – Struktura1
+title: CodeChunkInfo Structure1
 ms.date: 03/30/2017
 api_name:
 - CodeChunkInfo
@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6e3d138700ef06da7b40a88a768a41f3ffcb38eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d658e360fcfd3fda837c6d7ccab9458594ce9641
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403237"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54522541"
 ---
-# <a name="codechunkinfo-structure1"></a>Codechunkinfo – – Struktura1
-Představuje jeden blok kódu v paměti.  
+# <a name="codechunkinfo-structure1"></a>CodeChunkInfo Structure1
+Představuje jediný neodkazovaný blok kódu v paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,14 +39,14 @@ typedef struct _CodeChunkInfo {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`startAddr`|A `CORDB_ADDRESS` hodnotu, která určuje počáteční adresa bloku.|  
-|`length`|Velikost v bajtech, bloku.|  
+|`startAddr`|A `CORDB_ADDRESS` hodnotu, která určuje počáteční adresu bloků.|  
+|`length`|Velikost v bajtech, bloků.|  
   
 ## <a name="remarks"></a>Poznámky  
- U jednoho bloku kódu je oblasti nativního kódu, který je součástí objektu kódu, jako je například funkce.  
+ Jediný neodkazovaný blok kódu je oblast nativní kód, který je součástí objektu kódu, jako je například funkce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl  
   
@@ -54,7 +54,7 @@ typedef struct _CodeChunkInfo {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [GetCodeChunks – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)  
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [GetCodeChunks – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)
+- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

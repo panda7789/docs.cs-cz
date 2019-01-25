@@ -2,12 +2,12 @@
 title: Vytváření vlastních atributů (C#)
 ms.date: 07/20/2015
 ms.assetid: 500e1977-c6de-462d-abce-78a0eb1eda22
-ms.openlocfilehash: 0a27924623cc462f6d3339149718a1b29999ac1d
-ms.sourcegitcommit: deb9225a55485a5a6e6c7914deb30ccfceb69d3f
+ms.openlocfilehash: 0277a88b7e5beda511f6490261a7009adcfed4ee
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2019
-ms.locfileid: "54058266"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54674632"
 ---
 # <a name="creating-custom-attributes-c"></a>Vytváření vlastních atributů (C#)
 Můžete vytvořit vlastní atributy definováním třídy atributu, třídu, která je odvozena přímo nebo nepřímo z <xref:System.Attribute>, díky kterému budou Identifikace definice atributu v metadatech rychlé a snadné. Předpokládejme, že chcete typy značek s názvem programátora, který napsal typu. Můžete třeba definovat vlastní `Author` třídy atributů:  
@@ -63,12 +63,12 @@ class SampleClass
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Reflection>  
-- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
-- [Zápis vlastních atributů](../../../../standard/attributes/writing-custom-attributes.md)  
-- [Reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
-- [Atributy (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)  
-- [Přístup k atributům pomocí reflexe (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)  
+- <xref:System.Reflection>
+- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
+- [Zápis vlastních atributů](../../../../standard/attributes/writing-custom-attributes.md)
+- [Reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md)
+- [Atributy (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)
+- [Přístup k atributům pomocí reflexe (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
 - [AttributeUsage (C#)](../../../../csharp/programming-guide/concepts/attributes/attributeusage.md)

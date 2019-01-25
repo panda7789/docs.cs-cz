@@ -5,12 +5,12 @@ helpviewer_keywords:
 - LINQ [C#], query syntax vs. method syntax
 - queries [LINQ in C#], syntax comparisons
 ms.assetid: eedd6dd9-fec2-428c-9581-5b8783810ded
-ms.openlocfilehash: fe1fbfbf76507f19905d1a9a3a836483a8dd3849
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 5ad58e921b16498139abe403a45b21bb22ef895d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43748233"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564315"
 ---
 # <a name="query-syntax-and-method-syntax-in-linq-c"></a>Syntaxe využívající dotazy a syntaxe využívající metody v jazyce LINQ (C#)
 Většina dotazů v úvodní Language Integrated Query ([!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]) dokumentace jsou zapsány pomocí syntaxe deklarativní dotazů LINQ. Syntaxe dotazu však musí být převedeny do volání metod pro .NET common language runtime (CLR) při kompilaci kódu. Tato metoda volání vyvolat operátory standardního dotazu, které mají názvy, jako `Where`, `Select`, `GroupBy`, `Join`, `Max`, a `Average`. Můžete je volat přímo pomocí syntaxe metody místo syntaxe dotazu.  
@@ -35,13 +35,13 @@ Většina dotazů v úvodní Language Integrated Query ([!INCLUDE[vbteclinq](~/i
  Další informace o metodách rozšíření naleznete v tématu [rozšiřující metody](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md). Další informace o standardních operátorů pro dotazování, naleznete v tématu [přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md). Některé [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatelů, jako například [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], implementovat vlastní standardních operátorů pro dotazování a další rozšiřující metody pro ostatní typy kromě <xref:System.Collections.Generic.IEnumerable%601>.  
   
 ## <a name="lambda-expressions"></a>Výrazy lambda  
- V předchozím příkladu, Všimněte si, že podmíněný výraz (`num % 2 == 0`) je předán jako argument v řádku `Where` metoda: `Where(num => num % 2 == 0).` vložený výraz se nazývá výraz lambda. Je to pohodlný způsob, jak napsat kód, který byste jinak museli být napsány v těžkopádnější formuláře jako anonymní metody nebo obecný delegát nebo strom výrazů. V jazyce C# `=>` je operátor lambda, který je pro čtení jako "vloží do". `num` Na levé straně operátoru je vstupní proměnná, která odpovídá `num` ve výrazu dotazu. Kompilátor může odvodit typ `num` protože ví, `numbers` je obecný <xref:System.Collections.Generic.IEnumerable%601> typu. Tělo výrazu lambda je stejně jako výraz v syntaxi dotazů nebo v jiných výraz v C# nebo příkaz může obsahovat jiné komplexní logiku a volání metod. "Vrácená hodnota" je právě výsledku výrazu.  
+ V předchozím příkladu, Všimněte si, že podmíněný výraz (`num % 2 == 0`) je předán jako argument v řádku `Where` metody: `Where(num => num % 2 == 0).` Tento výraz inline se nazývá výraz lambda. Je to pohodlný způsob, jak napsat kód, který byste jinak museli být napsány v těžkopádnější formuláře jako anonymní metody nebo obecný delegát nebo strom výrazů. V jazyce C# `=>` je operátor lambda, který je pro čtení jako "vloží do". `num` Na levé straně operátoru je vstupní proměnná, která odpovídá `num` ve výrazu dotazu. Kompilátor může odvodit typ `num` protože ví, `numbers` je obecný <xref:System.Collections.Generic.IEnumerable%601> typu. Tělo výrazu lambda je stejně jako výraz v syntaxi dotazů nebo v jiných výraz v C# nebo příkaz může obsahovat jiné komplexní logiku a volání metod. "Vrácená hodnota" je právě výsledku výrazu.  
   
  Abyste mohli začít používat [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], není nutné důkladně použití výrazů lambda. Ale některé dotazy lze vyjádřit pouze v syntaxe využívající metody a některé vyžadují také výrazy lambda. Až se podrobněji seznamujete s výrazy lambda, zjistíte, že jsou výkonná a flexibilní nástroj v vaše [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sady nástrojů. Další informace najdete v tématu [výrazy Lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
 ## <a name="composability-of-queries"></a>Skládání dotazů  
  V předcházejícím příkladu, Všimněte si, že `OrderBy` pomocí operátoru tečka při volání je vyvolána metoda `Where`. `Where` Vytvoří filtrované posloupnost a potom `Orderby` funguje v této sekvenci, že je seřadíte. Protože vrátit dotazech `IEnumerable`, můžete vytvořit v syntaxe využívající metody ve zřetězení volání metod. Je to, co kompilátor provádí na pozadí při psaní dotazů pomocí syntaxe dotazu. A protože proměnné dotazu neukládá výsledky dotazu, můžete ho upravit nebo ho použít jako základ pro nový dotaz v okamžiku, přestože byl proveden.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)

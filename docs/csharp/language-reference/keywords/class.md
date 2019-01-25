@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-ms.openlocfilehash: d436dee14280d86062834ac131bbe4775705d748
-ms.sourcegitcommit: d6e419f9d9cd7e8f21ebf5acde6d016c16332579
+ms.openlocfilehash: 83e7d278b38e17dac668b32687a368211399d437
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53286491"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54652069"
 ---
 # <a name="class-c-reference"></a>class (Referenční dokumentace jazyka C#)
 
@@ -102,7 +102,7 @@ A konečně, Všimněte si, že pro objekt vytvořený pomocí výchozího konst
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
 - [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 79f08109f1ad267c4898cc0789859b55f534d1b9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 245933b23028e2baf8a09ca07595f394b65c0ec3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448078"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698294"
 ---
 # <a name="imetadatatablesgetcolumninfo-method"></a>IMetaDataTables::GetColumnInfo – metoda
 Získá data o zadaný sloupec zadané tabulky.  
@@ -42,16 +42,16 @@ HRESULT GetColumnInfo (
   
 #### <a name="parameters"></a>Parametry  
  `ixTbl`  
- [v] Index požadovanou tabulku.  
+ [in] Index požadovanou tabulku.  
   
  `ixCol`  
- [v] Index požadovaný sloupec.  
+ [in] Index na požadovaný sloupec.  
   
  `poCol`  
  [out] Ukazatel na posun sloupce v řádku.  
   
  `pcbCol`  
- [out] Ukazatel na velikost v bajtech sloupce.  
+ [out] Ukazatel na velikost v bajtech, ve sloupci.  
   
  `pType`  
  [out] Ukazatel na typ hodnoty ve sloupci.  
@@ -60,14 +60,14 @@ HRESULT GetColumnInfo (
  [out] Ukazatel na ukazatel na název sloupce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
+- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generic types [LINQ]
 - generics [LINQ]
 ms.assetid: 660e3799-25ca-462c-8c4a-8bce04fbb031
-ms.openlocfilehash: 45bc5cbbdd1c0721797aed38636892e731c2883f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 02540db02d8e413ec254c0642d106ca41b263376
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513883"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54662514"
 ---
 # <a name="linq-and-generic-types-c"></a>LINQ a obecné typy (C#)
 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy jsou založeny na obecné typy, které jsou nově ve verzi 2.0 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Předtím, než můžete začít psát dotazy nepotřebujete hlubokou znalost obecných typů. Však může být vhodné pochopit dvě základní koncepty:  
@@ -36,7 +36,7 @@ ms.locfileid: "43513883"
   
  `var` – Klíčové slovo je užitečné, když je typ proměnné zřejmý nebo když není důležité to s ohledem na vnořených obecných typech, jako jsou ty, které vytváří skupiny dotazů. Obecně doporučujeme, pokud používáte `var`, dobré si uvědomit, že ji může ztížit kódu pro ostatní uživatele. Další informace najdete v tématu [implicitně typované lokální proměnné](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
+- [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
 - [Obecné typy](../../../../csharp/programming-guide/generics/index.md)

@@ -9,22 +9,22 @@ helpviewer_keywords:
 ms.assetid: 3ff6b578-273d-407f-b07f-8251f1f9f5d0
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 5cfed154af93d72f69efc24c6475b432d0963580
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 8beb3ef041b153535afcb8bd92e1c29787e1f161
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48029280"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54654409"
 ---
 # <a name="ltremovegt-element-for-ltlistenersgt-for-ltsourcegt"></a>&lt;Odebrat&gt; – Element pro &lt;naslouchacích procesů&gt; pro &lt;zdroje&gt;
 Odebere z naslouchacího procesu `Listeners` kolekci pro zdroj trasování.  
   
  \<Konfigurace >  
-\<System.Diagnostics >  
+\<system.diagnostics>  
 \<zdroje >  
 \<zdroj >  
 \<naslouchací procesy >  
-\<Odebrat >  
+\<remove>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -81,9 +81,9 @@ Odebere z naslouchacího procesu `Listeners` kolekci pro zdroj trasování.
 </configuration>   
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Diagnostics.TraceSource.Listeners%2A>  
- <xref:System.Diagnostics.TraceSource>  
- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
- [\<clear>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-source.md)  
- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Diagnostics.TraceSource.Listeners%2A>
+- <xref:System.Diagnostics.TraceSource>
+- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [\<clear>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-source.md)
+- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

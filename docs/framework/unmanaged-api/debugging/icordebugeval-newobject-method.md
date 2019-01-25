@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ff378602fc7338263ef49aee6802d2138bab9d2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9ff4f86105fd1dfbd12360c01046492f3a6dbdcd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413169"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54589886"
 ---
 # <a name="icordebugevalnewobject-method"></a>ICorDebugEval::NewObject – metoda
-Přidělí nové instance objektu a volá metodu zadané konstruktor.  
+Přidělí novou instanci objektu a volá metodu zadaný konstruktor.  
   
  Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0. Použití [icordebugeval2::newparameterizedobject –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md) místo.  
   
@@ -41,16 +41,16 @@ HRESULT NewObject (
   
 #### <a name="parameters"></a>Parametry  
  `pConstructor`  
- [v] Konstruktor, který má být volána.  
+ [in] Konstruktor, který má být volána.  
   
  `nArgs`  
- [v] Velikost `ppArgs` pole.  
+ [in] Velikost `ppArgs` pole.  
   
  `ppArgs`  
- [v] Pole objektů ICorDebugValue, z nichž každý představuje argument mají být předány konstruktoru.  
+ [in] Pole objektů ICorDebugValue, z nichž každý představuje argument předaný do konstruktoru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -58,5 +58,5 @@ HRESULT NewObject (
   
  **Verze rozhraní .NET framework:** 1.1, 1.0  
   
-## <a name="see-also"></a>Viz také  
- [NewParameterizedObject – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md)
+## <a name="see-also"></a>Viz také:
+- [NewParameterizedObject – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md)

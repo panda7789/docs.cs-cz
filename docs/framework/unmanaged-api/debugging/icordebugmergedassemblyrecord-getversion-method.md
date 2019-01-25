@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: c6858b06-ae26-4312-b325-ea6025016675
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eb206d1bf39307852dd317613eb81028b777514d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4895610ba3a8e8e8eb1a1c360ecb2b707f9cee4d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33414596"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54622088"
 ---
 # <a name="icordebugmergedassemblyrecordgetversion-method"></a>ICorDebugMergedAssemblyRecord::GetVersion – metoda
 Získá informace o verzi sestavení.  
@@ -27,7 +27,7 @@ HRESULT GetVersion(
   
 #### <a name="parameters"></a>Parametry  
  `pMajor`  
- [out] Ukazatel na hlavní číslo verze.  
+ [out] Ukazatel na číslo hlavní verze.  
   
  `pMinor`  
  [out] Ukazatel na číslo podverze.  
@@ -39,13 +39,13 @@ HRESULT GetVersion(
  [out] Ukazatel na číslo revize.  
   
 ## <a name="remarks"></a>Poznámky  
- Informace o sestavení čísla verzí, najdete v článku <xref:System.Version> třída tématu.  
+ Informace o číslech verzí sestavení, najdete v článku <xref:System.Version> třídě.  
   
 > [!NOTE]
->  Tato metoda je k dispozici s .NET Native jenom.  
+>  Tato metoda je pouze k dispozici s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -53,6 +53,6 @@ HRESULT GetVersion(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugMergedAssemblyRecord – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugMergedAssemblyRecord – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -2,12 +2,12 @@
 title: Řízení spotřeby prostředků a zlepšení výkonu
 ms.date: 03/30/2017
 ms.assetid: 9a829669-5f76-4c88-80ec-92d0c62c0660
-ms.openlocfilehash: 1e0512ce62f5a7b25546e8824a745fdaabb5ec72
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 11d1333ed0ae8b46f8f87fa6f4643d4b31fac3ff
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43397872"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664158"
 ---
 # <a name="controlling-resource-consumption-and-improving-performance"></a>Řízení spotřeby prostředků a zlepšení výkonu
 Toto téma popisuje různé vlastnosti v různých oblastech Architektura Windows Communication Foundation (WCF), které fungují při řízení spotřeby prostředků a ovlivňují metrik výkonu.
@@ -41,12 +41,12 @@ Toto téma popisuje různé vlastnosti v různých oblastech Architektura Window
 > [!NOTE]
 > Serializace předem generovaného kódu lze použít pouze v klientských aplikacích a ne v služeb.
 
- [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) výkon lze zvýšit objem požadovaný při spuštění pro tyto aplikace generování kódu serializace nezbytné ze zkompilovaných sestavení pro aplikaci. Další informace najdete v tématu [postupy: vylepšení spuštění čas z klientských aplikací WCF pomocí třídy XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).
+ [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) výkon lze zvýšit objem požadovaný při spuštění pro tyto aplikace generování kódu serializace nezbytné ze zkompilovaných sestavení pro aplikaci. Další informace najdete v tématu [jak: Vylepšení spuštění čas z klientských aplikací WCF pomocí třídy XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).
 
 ## <a name="performance-issues-when-hosting-wcf-services-under-aspnet"></a>Problémy s výkonem při hostování služby WCF v ASP.NET
  Když je služba WCF hostované na IIS a ASP.NET, nastavení konfigurace služby IIS a ASP.NET může ovlivnit nároky na propustnost a paměti služby WCF.  Další informace o výkonu technologie ASP.NET, naleznete v tématu [zlepšení výkonu technologie ASP.NET](https://go.microsoft.com/fwlink/?LinkId=186462).  Jedno nastavení, která může mít nežádoucí důsledky je <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A>, což je vlastnost <xref:System.Web.Configuration.ProcessModelSection>. Pokud vaše aplikace má pevný nebo malý počet klientů, nastavení <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> 2 může poskytnout zvýšení propustnosti na počítači s více procesory, který má využití procesoru téměř 100 %. Toto zvýšení výkonu se dodává s náklady: také způsobí zvýšení využití paměti, což může omezit škálovatelnost.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)
 - [Objemná data a streamování](../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)

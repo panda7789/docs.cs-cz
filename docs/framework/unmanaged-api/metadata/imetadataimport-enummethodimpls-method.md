@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 75d1ce526d4cba025ea6e9db8281023969e7cb0c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aebfd41a232a3284f79e4229a8845bf5a34f9d1f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448508"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54574765"
 ---
 # <a name="imetadataimportenummethodimpls-method"></a>IMetaDataImport::EnumMethodImpls – metoda
-Vytvoří výčet MethodBody a MethodDeclaration tokenů představující metody zadaného typu.  
+Vytvoří výčet MethodBody a MethodDeclaration tokeny představující metody zadaného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,39 +42,39 @@ HRESULT EnumMethodImpls (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor. Toto musí mít hodnotu NULL pro první volání této metody.  
+ [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
   
  `td`  
- [v] Definice typu pro typ tokenu, jejíž implementace metody pro výčet.  
+ [in] Definice typu pro typ token, jehož implementace metody pro výčet.  
   
  `rMethodBody`  
- [out] Pole pro uložení MethodBody tokenů.  
+ [out] Pole pro ukládání tokenů MethodBody.  
   
  `rMethodDecl`  
- [out] Pole pro uložení MethodDeclaration tokenů.  
+ [out] Pole pro ukládání tokenů MethodDeclaration.  
   
  `cMax`  
- [v] Maximální velikost `rMethodBody` a `rMethodDecl` pole.  
+ [in] Maximální velikost `rMethodBody` a `rMethodDecl` pole.  
   
  `pcTokens`  
- [v] Skutečný počet metody, vrátí se v `rMethodBody` a `rMethodDecl`.  
+ [in] Skutečný počet metod vrácené v `rMethodBody` a `rMethodDecl`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodImpls` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné metoda tokenů pro zobrazení výčtu. V takovém případě `pcTokens` je nulová.|  
+|`S_OK`|`EnumMethodImpls` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny metody pro výčet. V takovém případě `pcTokens` je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

@@ -1,15 +1,15 @@
 ---
-title: Cloudy PNRP
+title: PNRP Clouds
 ms.date: 03/30/2017
 ms.assetid: a82e2bf1-62ab-4c2d-83f3-3217a6aead2e
-ms.openlocfilehash: 22401459a183d8d21e37211d942b24dbc76a6f94
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d91bf1b68b8446e2700b601d818c493b8edc1b82
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195356"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54742195"
 ---
-# <a name="pnrp-clouds"></a>Cloudy PNRP
+# <a name="pnrp-clouds"></a>PNRP Clouds
 Protokol PNRP "cloud" představuje sadu uzlů, které mohou vzájemně komunikovat přes síť. Termín "cloud" je synonymem "partnerské sítě" a "peer-to-peer graf".  
   
  Komunikace mezi uzly by nikdy napříč z jednoho cloudu do jiného. A <xref:System.Net.PeerToPeer.Cloud> instance je jedinečně identifikovaný jeho název, který je velká a malá písmena. Jediné sdílené nebo uzel může být připojen k více než jeden cloud.  
@@ -31,6 +31,6 @@ Protokol PNRP "cloud" představuje sadu uzlů, které mohou vzájemně komunikov
   
  Po vytvoření nebo získat instance cloudové názvy partnerských uzlů můžete zaregistrovat ho k vytvoření sítě známého partnerským uzlům.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Net.PeerToPeer.Cloud>  
- [Protokol PNRP](../../../docs/framework/network-programming/peer-name-resolution-protocol.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.PeerToPeer.Cloud>
+- [Protokol PNRP](../../../docs/framework/network-programming/peer-name-resolution-protocol.md)

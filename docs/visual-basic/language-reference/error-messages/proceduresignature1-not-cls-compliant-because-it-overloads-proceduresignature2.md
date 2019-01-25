@@ -1,5 +1,5 @@
 ---
-title: '&lt;proceduresignature1&gt; není kompatibilní se specifikací CLS, protože ho přetížení &lt;proceduresignature2&gt; který se liší od jeho pouze pole typů parametr pole nebo pořadí typy pole parametrů'
+title: '&lt;proceduresignature1&gt; není kompatibilní se Specifikací CLS, protože přetěžuje &lt;proceduresignature2&gt; které se od ní liší jenom polem typů parametrů nebo rozměrem typů parametru pole'
 ms.date: 07/20/2015
 f1_keywords:
 - vbc40035
@@ -7,17 +7,17 @@ f1_keywords:
 helpviewer_keywords:
 - BC40035
 ms.assetid: 50a66dbe-2c1e-41bf-96bc-369301c891ac
-ms.openlocfilehash: 0d150dad8d32b4bfa2b9e549e068ef24382d0eba
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0f4eaa09c3d04af350637fba0d672f55040a6466
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33594725"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54626846"
 ---
-# <a name="ltproceduresignature1gt-is-not-cls-compliant-because-it-overloads-ltproceduresignature2gt-which-differs-from-it-only-by-array-of-array-parameter-types-or-by-the-rank-of-the-array-parameter-types"></a>&lt;proceduresignature1&gt; není kompatibilní se specifikací CLS, protože ho přetížení &lt;proceduresignature2&gt; který se liší od jeho pouze pole typů parametr pole nebo pořadí typy pole parametrů
-Procedura nebo vlastnosti je označena jako `<CLSCompliant(True)>` při přepíše jiný postup nebo vlastnost a je jediným rozdílem mezi seznamy jejich parametrů úroveň vnoření Vícenásobná pole nebo pole pořadí.  
+# <a name="ltproceduresignature1gt-is-not-cls-compliant-because-it-overloads-ltproceduresignature2gt-which-differs-from-it-only-by-array-of-array-parameter-types-or-by-the-rank-of-the-array-parameter-types"></a>&lt;proceduresignature1&gt; není kompatibilní se Specifikací CLS, protože přetěžuje &lt;proceduresignature2&gt; které se od ní liší jenom polem typů parametrů nebo rozměrem typů parametru pole
+Procedura nebo vlastnost je označena jako `<CLSCompliant(True)>` když přepíše jiný postup nebo vlastnost a jediným rozdílem mezi seznamy parametrů je úroveň vnoření vícenásobného pole nebo počet rozměrů pole.  
   
- V následující deklarace druhý a třetí deklarace generovat tuto chybu.  
+ V následující deklarace generovat deklarace druhý a třetí k této chybě.  
   
  `Overloads Sub processArray(ByVal arrayParam() As Integer)`  
   
@@ -25,23 +25,23 @@ Procedura nebo vlastnosti je označena jako `<CLSCompliant(True)>` při přepí�
   
  `Overloads Sub processArray(ByVal arrayParam(,) As Integer)`  
   
- Druhý deklaraci změní parametr původní jednorozměrné `arrayParam` do pole polí. Třetí změny deklarace `arrayParam` dvourozměrné pole (pořadí 2). Přestože jazyka Visual Basic umožňuje přetížení pro liší pouze jednu z těchto změn, takové přetížení není kompatibilní s [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS).  
+ Druhý deklarace změní původní jednorozměrné parametr `arrayParam` do pole polí. Třetí deklarace změny `arrayParam` dvourozměrné pole (řazení 2). Přestože Visual Basic umožňuje přetížení se liší pouze jednou z těchto změn, tato přetížení není kompatibilní s [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS).  
   
- Pokud použijete <xref:System.CLSCompliantAttribute> programovací element, nastavíte atributu `isCompliant` buď parametr `True` nebo `False` indikující dodržování předpisů nebo nesplňujících požadavky. Neexistuje žádný výchozí hodnotou tohoto parametru, a je nutné zadat hodnotu.  
+ Pokud použijete <xref:System.CLSCompliantAttribute> na programovací prvek, nastavíte atributu `isCompliant` buď parametr `True` nebo `False` k označení dodržování předpisů nebo při nedodržení předpisů. Neexistuje žádný výchozí hodnotou tohoto parametru, a je nutné zadat hodnotu.  
   
- Pokud se nevztahují <xref:System.CLSCompliantAttribute> na element, je považován za nedodržuje předpisy.  
+ Pokud se nevztahují <xref:System.CLSCompliantAttribute> na element, se považuje za jako nevyhovující.  
   
- Ve výchozím nastavení je tato zpráva upozornění. Informace o zobrazení nebo skrytí upozornění práce upozornění jako chyby najdete v tématu [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ Ve výchozím nastavení tato zpráva je upozornění. Informace o zobrazení nebo skrytí upozornění zpracování upozornění jako chyby, najdete v části [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
  **ID chyby:** BC40035  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud budete potřebovat souladu se specifikací CLS, definujte vaše přetížení pro více způsoby než pouze změny, které jsou uvedené na této stránce nápovědy se liší od sebe navzájem.  
+-   Pokud budete vyžadovat dodržování specifikace CLS, definujte vaši přetížení se liší od sebe navzájem více způsoby než pouze změny, které jsou uvedené na této stránce nápovědy.  
   
--   Pokud požadujete, aby přetížení liší pouze změnami citovalo na této nápovědy stránky, odeberte <xref:System.CLSCompliantAttribute> z jejich definice nebo označit je jako `<CLSCompliant(False)>`.  
+-   Pokud budete vyžadovat, aby přetížení se liší pouze provedené změny uvedené v této nápovědě stránce, odeberte <xref:System.CLSCompliantAttribute> z jejich definice nebo označit je jako `<CLSCompliant(False)>`.  
   
-## <a name="see-also"></a>Viz také  
-   
- [Přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)  
- [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)
+## <a name="see-also"></a>Viz také:
+
+- [Přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)
+- [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)

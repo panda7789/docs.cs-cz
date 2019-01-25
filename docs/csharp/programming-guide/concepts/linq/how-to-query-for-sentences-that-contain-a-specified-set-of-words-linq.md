@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: dotaz na věty obsahující zadanou množinu slov (LINQ) (C#)'
+title: 'Postupy: Dotazu na věty obsahující zadanou množinu slov (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 0724b429-4b87-4d26-a7b1-409358f3fc20
-ms.openlocfilehash: db9c35c0dd8f31541b69877b3ec869b9f4aa9081
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 0c91b225527f9c6322da98e3331127652ef52df7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43885641"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54747931"
 ---
-# <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-c"></a>Postupy: dotaz na věty obsahující zadanou množinu slov (LINQ) (C#)
+# <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-c"></a>Postupy: Dotazu na věty obsahující zadanou množinu slov (LINQ) (C#)
 Tento příklad ukazuje, jak najít věty v textovém souboru, které obsahují shody pro každou zadanou množinu slov. I když pevně zakódované v tomto příkladu je pole podmínek vyhledávání, ho může se také vyplňují dynamicky za běhu. V tomto příkladu dotaz vrátí věty obsahující slova "V minulosti," "data" a "integrované".  
   
 ## <a name="example"></a>Příklad  
@@ -69,6 +69,6 @@ Historically, the world of data and the world of objects have not been well inte
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)

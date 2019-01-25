@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Kontrola stavu připojení v jazyce Visual Basic'
+title: 'Postupy: Kontrola stavu připojení v jazyce Visual Basic'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Web connections [Visual Basic]
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - connections [Visual Basic], checking status
 - connection status [Visual Basic]
 ms.assetid: 4d9ee8ab-9a6f-4279-ace4-b75afc976a74
-ms.openlocfilehash: 4a6cb67474d03ada5e0a73d94f65da7a381c44a8
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: c7a43fd154616e516f8c5e7d36d25f34924649ac
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42911938"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499957"
 ---
-# <a name="how-to-check-connection-status-in-visual-basic"></a>Postupy: Kontrola stavu připojení v jazyce Visual Basic
+# <a name="how-to-check-connection-status-in-visual-basic"></a>Postupy: Kontrola stavu připojení v jazyce Visual Basic
 <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable> Vlastnost lze použít k určení, zda má počítač funkční síť a připojení k Internetu.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
@@ -27,6 +27,6 @@ ms.locfileid: "42911938"
   
      Tento příklad kódu je také dostupný jako fragment kódu technologie IntelliSense. V dialogu pro výběr fragmentu kódu je umístěn v **připojení a sítě**. Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Devices.Network?displayProperty=nameWithType>  
- <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable>
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Devices.Network?displayProperty=nameWithType>
+- <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable>

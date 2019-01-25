@@ -8,12 +8,12 @@ helpviewer_keywords:
 - queries [Visual Basic], Take
 - Take clause [Visual Basic]
 ms.assetid: 77bf87b2-1476-4456-957f-fee922fbad8c
-ms.openlocfilehash: bfaccf470d93a6a72451e7ad8b41e8dbb1171c71
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: bdd12340c5a0bd522c09a22e74c7b4f487cc5821
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43856569"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54626729"
 ---
 # <a name="take-clause-visual-basic"></a>Take – klauzule (Visual Basic)
 Vrátí zadaný počet souvislých prvků od začátku kolekce.  
@@ -26,7 +26,7 @@ Take count
   
 ## <a name="parts"></a>Součásti  
  `count`  
- Požadováno. Hodnota nebo výraz, který se vyhodnotí jako počet elementů k vrácení sekvence.  
+ Povinný parametr. Hodnota nebo výraz, který se vyhodnotí jako počet elementů k vrácení sekvence.  
   
 ## <a name="remarks"></a>Poznámky  
  `Take` Klauzule způsobí, že dotaz pro přidání zadaný počet souvislých prvků od začátku seznamu výsledků. Je určený počet prvků, které chcete zahrnout `count` parametru.  
@@ -42,11 +42,11 @@ Take count
   
  [!code-vb[VbSimpleQuerySamples#1](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/take-clause_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Dotazy](../../../visual-basic/language-reference/queries/index.md)  
- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
- [Klauzule Order By](../../../visual-basic/language-reference/queries/order-by-clause.md)  
- [Klauzule Take While](../../../visual-basic/language-reference/queries/take-while-clause.md)  
- [Klauzule Skip](../../../visual-basic/language-reference/queries/skip-clause.md)
+## <a name="see-also"></a>Viz také:
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Dotazy](../../../visual-basic/language-reference/queries/index.md)
+- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
+- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
+- [Klauzule Order By](../../../visual-basic/language-reference/queries/order-by-clause.md)
+- [Klauzule Take While](../../../visual-basic/language-reference/queries/take-while-clause.md)
+- [Klauzule Skip](../../../visual-basic/language-reference/queries/skip-clause.md)

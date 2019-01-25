@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ce94765467899ac7c906b0dfcdf0ceb78c659b5f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e7d42fe17af5b10d718d0e2b6a7ae33644fa4813
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448201"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54730292"
 ---
 # <a name="imetadataemitdefineevent-method"></a>IMetaDataEmit::DefineEvent – metoda
-Vytvoří definici pro události s podpisem Zadaná metadata a získá token tuto definici událostí.  
+Vytvoří definici pro události s podpisem Zadaná metadata a získá token pro tuto definici událostí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,41 +45,41 @@ HRESULT DefineEvent (
   
 #### <a name="parameters"></a>Parametry  
  `td`  
- [v] Token pro danou cílovou třídu nebo rozhraní. To znamená buď `mdTypeDef` nebo `mdTypeDefNil` tokenu.  
+ [in] Token pro cílovou třídu nebo rozhraní. Je to `mdTypeDef` nebo `mdTypeDefNil` token.  
   
  `szEvent`  
- [v] Název události.  
+ [in] Název události.  
   
  `dwEventFlags`  
- [v] Příznaky událostí.  
+ [in] Příznaky událostí.  
   
  `tkEventType`  
- [v] Token pro třídy události. Toto je `mdTypeDef`, `mdTypeRef`, nebo `mdTokenNil` tokenu.  
+ [in] Token pro třídy události. Jde `mdTypeDef`, `mdTypeRef`, nebo `mdTokenNil` token.  
   
  `mdAddOn`  
- [v] Metoda použitá k odběru události, nebo hodnotu null.  
+ [in] Metoda použitá k přihlášení k odběru událostí, nebo hodnotu null.  
   
  `mdRemoveOn`  
- [v] Metoda použitá k odhlášení odběru událostí, nebo hodnotu null.  
+ [in] Metoda použitá k odhlášení odběru událostí, nebo hodnotu null.  
   
  `mdFire`  
- [v] Metoda použitá k vyvolání události (podle odvozené třídy).  
+ [in] Metoda použitá pro vyvolání události (prostřednictvím odvozené třídy).  
   
  `rmdOtherMethods[]`  
- [v] Pole tokeny pro jiné metody přidružený k události. Toto pole je byla ukončena s `mdMethodDefNil` tokenu.  
+ [in] Pole tokenů pro jiné metody přidružené k události. Pole je přerušen skrze `mdMethodDefNil` token.  
   
  `pmdEvent`  
- [out] Metadata token přiřazené k události.  
+ [out] Token metadat přiřazený k této události.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

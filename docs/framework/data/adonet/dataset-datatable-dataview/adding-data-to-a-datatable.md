@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6aa8474-7bde-48f7-949d-20dc38a1625b
-ms.openlocfilehash: c1ebe2d735924c559f450f4041884dc9845e4fe0
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: adf2378cead054efcef10a73bfd00ef541940949
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514512"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54494117"
 ---
 # <a name="adding-data-to-a-datatable"></a>Přidání dat do datové tabulky
 Po vytvoření <xref:System.Data.DataTable> a definovat jeho strukturu pomocí sloupců a omezení, můžete přidat nové řádky dat do tabulky. Chcete-li přidat nový řádek, deklarovat novou proměnnou jako typ <xref:System.Data.DataRow>. Nový **DataRow** objekt je vrácen při volání <xref:System.Data.DataTable.NewRow%2A> metody. **DataTable** vytvoří **DataRow** objektu na základě struktury tabulky, tak jak je definoval <xref:System.Data.DataColumnCollection>.  
@@ -85,10 +85,10 @@ for (int i = 0; i <= 9; i++)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Data.DataColumnCollection>  
- <xref:System.Data.DataRow>  
- <xref:System.Data.DataRowCollection>  
- <xref:System.Data.DataTable>  
- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Data.DataColumnCollection>
+- <xref:System.Data.DataRow>
+- <xref:System.Data.DataRowCollection>
+- <xref:System.Data.DataTable>
+- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

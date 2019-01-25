@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 59b940c0dbe9462dda513e933b7360ff55a9b447
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ca33c8eb5e214cdaaa49905c311fd62042285d4f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33437346"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54569284"
 ---
 # <a name="icorconfigurationadddebuggerspecialthread-method"></a>ICorConfiguration::AddDebuggerSpecialThread – metoda
-K ladění služby označuje, že konkrétní vlákno by měl povolit chcete pokračovat v provádění ladicí program se zastavila během ladění scénáře spravované nebo nespravované aplikace.  
+Ladění služeb označuje, že konkrétní vlákno by měla být povolena má pokračovat provedením zatímco ladicí program zastavuje během scénáře ladění spravované nebo nespravované aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +37,19 @@ HRESULT AddDebuggerSpecialThread (
   
 #### <a name="parameters"></a>Parametry  
  `dwSpecialThreadId`  
- [v] ID podprocesu, který má být povoleno se pokračovat v provádění.  
+ [in] ID vlákna, která by měla bude moct pokračovat v provádění.  
   
 ## <a name="remarks"></a>Poznámky  
- Zadaný vlákno nebude možné spustit spravovaného kódu nebo modul runtime zadejte žádným způsobem. Příkladem takových vlákna by přístup z více vláken v procesu pro podporu ladicí programy starší verze skriptu.  
+ Zadané vlákno nebude moci spouštět spravovaný kód nebo zadejte modul runtime žádným způsobem. Příkladem takových vlákno může být vlákno v procesu pro podporu ladicí programy starší verzi skriptu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorConfiguration – rozhraní](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorConfiguration – rozhraní](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md)

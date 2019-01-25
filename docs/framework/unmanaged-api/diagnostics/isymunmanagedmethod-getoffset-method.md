@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6d88e9279f70c36fd8a9c626972e33305cded5fb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6485688c2964d477f0c5f68a3da714f084fa308f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424388"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54515300"
 ---
 # <a name="isymunmanagedmethodgetoffset-method"></a>ISymUnmanagedMethod::GetOffset – metoda
 Vrátí posunutí v rámci této metody, které odpovídá na dané pozici v rámci dokumentu.  
@@ -39,22 +39,22 @@ HRESULT GetOffset(
   
 #### <a name="parameters"></a>Parametry  
  `document`  
- [v] Ukazatel na dokument, pro které je požadováno posun.  
+ [in] Ukazatel na dokument, pro kterou je požadována posun.  
   
  `line`  
- [v] Řádek dokumentu, pro který je vyžadován posun.  
+ [in] Řádek dokumentu, pro který je vyžadován posun.  
   
  `column`  
- [v] Sloupec dokumentu, pro které je požadováno posun.  
+ [in] Sloupec dokumentu, pro kterou je požadována posun.  
   
  `pRetVal`  
- [out] Ukazatel na `ULONG32` která přijme posunutí.  
+ [out] Ukazatel `ULONG32` , která obdrží posunutí.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)

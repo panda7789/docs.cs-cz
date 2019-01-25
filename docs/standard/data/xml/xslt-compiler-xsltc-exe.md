@@ -1,18 +1,18 @@
 ---
-title: Kompilátor XSLT (xsltc.exe)
+title: XSLT Compiler (xsltc.exe)
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 672a5ac8-8305-4d28-ba10-11089c2c0924
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 470dd0eb37d8081d388ef69b204293f568096a5e
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 321afe8904ff683ce9807ba9912bf3a38ecd73bb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45615042"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54650506"
 ---
-# <a name="xslt-compiler-xsltcexe"></a>Kompilátor XSLT (xsltc.exe)
+# <a name="xslt-compiler-xsltcexe"></a>XSLT Compiler (xsltc.exe)
 Kompilátor XSLT (xsltc.exe) zkompiluje šablon stylů XSLT a generuje sestavení. Zkompilované šablony stylů je pak možné předat přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody. Podepsaná sestavení s xsltc.exe nelze generovat.  
   
  Nástroj xsltc.exe je součástí sady Visual Studio. Další informace najdete v tématu [stahování sady Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).  
@@ -34,7 +34,7 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 |Možnost|Popis|  
 |------------|-----------------|  
 |`/c[lass]:``name`|Určuje název třídy pro následující šablony stylů. Může být plně kvalifikovaný název třídy.<br /><br /> Výchozí název třídy na název šablony stylů. Například pokud je kompilován customers.xsl list stylu, výchozí název třídy je zákazníkům.|  
-|`/debug[`+&#124;-`]`|Určuje, jestli se má generovat ladicí informace.<br /><br /> Určení `+` nebo `/debug`, způsobí, že kompilátor generovat ladicí informace a vložit ho do souboru databáze (PDB) programu. Název generovaného souboru PDB je `assemblyName`.pdb.<br /><br /> Určení `-`, který je v platnosti, pokud nezadáte `/debug`, způsobí, že žádné informace o ladění, který se má vytvořit. Maloobchodní sestavení je generováno. **Poznámka:** kompilace v režimu ladění může významně ovlivnit výkon XSLT.|  
+|`/debug[`+&#124;-`]`|Určuje, jestli se má generovat ladicí informace.<br /><br /> Určení `+` nebo `/debug`, způsobí, že kompilátor generovat ladicí informace a vložit ho do souboru databáze (PDB) programu. Název generovaného souboru PDB je `assemblyName`.pdb.<br /><br /> Určení `-`, který je v platnosti, pokud nezadáte `/debug`, způsobí, že žádné informace o ladění, který se má vytvořit. Maloobchodní sestavení je generováno. **Poznámka:**  Kompilace v režimu ladění může ovlivnit výkon XSLT pouze výrazně.|  
 |`/help`|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |`/nologo`|Potlačí zprávu o autorských právech kompilátoru ze zobrazení.|  
 |`/platform:``string`|Určuje sestavení můžete spustit na platformách. Následující část popisuje hodnoty platné platformy:<br /><br /> `x86` kompiluje sestavení ke spuštění v 32bitové, které je kompatibilní x86 common language runtime<br /><br /> `x64` kompiluje sestavení ke spuštění modulem common language runtime 64-bit na počítači, který podporuje AMD64 nebo EM64T instrukční sadu.<br /><br /> [!INCLUDE[vcpritanium](../../../../includes/vcpritanium-md.md)] kompiluje sestavení ke spuštění modulem common language runtime 64-bit na počítači, který má [!INCLUDE[vcpritanium](../../../../includes/vcpritanium-md.md)] procesoru.<br /><br /> `anycpu` Kompiluje sestavení pro spouštěn na libovolné platformě. Toto nastavení je výchozí.|  
@@ -84,6 +84,6 @@ xsltc booksort.xsl output.xsl
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.Xsl.XslCompiledTransform>  
-- [Postup: Provedení transformace XSLT pomocí sestavení](../../../../docs/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly.md)  
+- <xref:System.Xml.Xsl.XslCompiledTransform>
+- [Postupy: Provedení transformace XSLT pomocí sestavení](../../../../docs/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly.md)
 - [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)

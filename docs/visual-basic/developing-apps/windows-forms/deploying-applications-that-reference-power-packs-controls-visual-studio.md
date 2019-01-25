@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - Power Packs, deploying
 ms.assetid: f2230f53-a745-4731-89e6-033943faa209
-ms.openlocfilehash: bd235bc0b4a7f9978333931ae1dce012c0950374
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: 3fd46a6e8aad61d2f8ce5a230c856470f913d0bd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39198225"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54551771"
 ---
 # <a name="deploying-applications-that-reference-power-packs-controls-visual-studio"></a>Nasazení aplikací odkazujících na ovládací prvky Power Pack (Visual Studio)
 Pokud chcete nasadit aplikaci, která odkazuje na ovládací prvky Power Packs (<xref:Microsoft.VisualBasic.PowerPacks.LineShape>, <xref:Microsoft.VisualBasic.PowerPacks.OvalShape>, <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape>, nebo <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>), ovládací prvky musí být nainstalován v cílovém počítači.  
@@ -28,6 +28,6 @@ Pokud chcete nasadit aplikaci, která odkazuje na ovládací prvky Power Packs (
   
  Jako alternativu k spuštění můžete předem nasadit ovládací prvky Power Packs použití systému distribuční elektronické softwaru jako je například Microsoft Systems Management Server.  
   
-## <a name="see-also"></a>Viz také:  
- [Postupy: Instalace předpokladů s aplikací ClickOnce](/visualstudio/deployment/how-to-install-prerequisites-with-a-clickonce-application)  
- [Ovládací prvky jazyka Visual Basic Power Pack](../../../visual-basic/developing-apps/windows-forms/power-packs-controls.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Instalace nezbytných součástí aplikace ClickOnce](/visualstudio/deployment/how-to-install-prerequisites-with-a-clickonce-application)
+- [Visual Basic Power Packs Controls](../../../visual-basic/developing-apps/windows-forms/power-packs-controls.md)

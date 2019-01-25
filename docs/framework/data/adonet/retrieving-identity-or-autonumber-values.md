@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6b7f9cb-81be-44e1-bb94-56137954876d
-ms.openlocfilehash: e6fe804b3d7d4b29f577d4e4ed2e1043ecd6642a
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 367caeb1d38203c7a6fe7ff576a1cd8c8eb1d3d7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837422"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54637382"
 ---
 # <a name="retrieving-identity-or-autonumber-values"></a>Načítají se Identity nebo automatického číslování hodnoty
 
@@ -32,7 +32,7 @@ Primární klíče v relační databázi je sloupec nebo kombinace sloupců, kte
 |--------------|-----------------|
 |SCOPE_IDENTITY|Vrátí poslední hodnotu identity v aktuálním oboru spuštění. SCOPE_IDENTITY se doporučuje pro většinu scénářů.|
 |@@IDENTITY|Obsahuje poslední hodnotu identity, které jsou generovány v libovolné tabulce v aktuální relaci. @@IDENTITY může být ovlivněna aktivační události a nesmí vracet hodnotu identity, které jste očekávali.|
-|FUNKCE IDENT_CURRENT|Vrátí poslední hodnotu identity vygenerovat pro konkrétní tabulku v jakékoli relace a kteréhokoliv oboru.|
+|IDENT_CURRENT|Vrátí poslední hodnotu identity vygenerovat pro konkrétní tabulku v jakékoli relace a kteréhokoliv oboru.|
 
  Následující uložené procedury ukazuje, jak vložit řádek do **kategorie** tabulky a použít výstupní parametr, který vrátí novou hodnotu identity generované funkcí SCOPE_IDENTITY() příkazů jazyka Transact-SQL.
 
@@ -531,7 +531,7 @@ class Program {
 }
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
 - [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)

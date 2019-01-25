@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytváření oznámení o změnách pomocí metody BindingSource ResetItem'
+title: 'Postupy: Vytváření oznámení o změnách pomocí metody BindingSource Resetitem'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - data sources [Windows Forms], detecting changes
 - change notifications
 ms.assetid: ab8b4096-37ff-4e30-aabc-de79a2f2e972
-ms.openlocfilehash: cd2a15d5c3cbdf15f055196e63548a1240202479
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 50d2203638363831d236a6add7c6f4ba4fbebf4b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087460"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54644814"
 ---
-# <a name="how-to-raise-change-notifications-using-the-bindingsource-resetitem-method"></a>Postupy: Vytváření oznámení o změnách pomocí metody BindingSource ResetItem
+# <a name="how-to-raise-change-notifications-using-the-bindingsource-resetitem-method"></a>Postupy: Vytváření oznámení o změnách pomocí metody BindingSource Resetitem
 Některé zdroje dat pro ovládací prvky nevyvolávejte oznámení o změnách při změně, přidání nebo odstranění položek. S <xref:System.Windows.Forms.BindingSource> součásti, můžete vytvořit vazbu k takovým zdrojům dat a vyvolání oznámení o změně v kódu.  
   
 ## <a name="example"></a>Příklad  
@@ -34,11 +34,11 @@ Některé zdroje dat pro ovládací prvky nevyvolávejte oznámení o změnách 
   
 -   Odkazy na sestavení systému, System.Data, System.Drawing a System.Windows.Forms.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.BindingNavigator>  
- <xref:System.Windows.Forms.DataGridView>  
- <xref:System.Windows.Forms.BindingSource>  
- [Komponenta BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
- [Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.BindingNavigator>
+- <xref:System.Windows.Forms.DataGridView>
+- <xref:System.Windows.Forms.BindingSource>
+- [Komponenta BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md)
+- [Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu](../../../../docs/framework/winforms/controls/how-to-bind-a-windows-forms-control-to-a-type.md)

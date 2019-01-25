@@ -5,15 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-ms.openlocfilehash: b1e1405941cf9076e88aee5689ed933724727bb2
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 16a8c1c9534e121c24289fbbfff14485b0338f63
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53237100"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54743943"
 ---
 # <a name="using-structs-c-programming-guide"></a>Použití struktur (Průvodce programováním v C#)
-`struct` Typ je vhodný pro zjednodušené objekty, jako představující `Point`, `Rectangle`, a `Color`. I když je každopádně pohodlné představuje bod jako [třídy](../../../csharp/language-reference/keywords/class.md) s [implemented Properties](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), [struktura](../../../csharp/language-reference/keywords/struct.md) může být efektivnější v některých scénářích. Například, pokud deklarujete pole 1000 `Point` objekty, přidělí paměť navíc pro odkazování na každý objekt; v takovém, struktura bude méně nákladné. Vzhledem k tomu, [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] obsahuje objektu s názvem <xref:System.Drawing.Point>, struktura v tomto příkladu má název "CoOrds" místo.  
+`struct` Typ je vhodný pro zjednodušené objekty, jako představující `Point`, `Rectangle`, a `Color`. I když je každopádně pohodlné představuje bod jako [třídy](../../../csharp/language-reference/keywords/class.md) s [implemented Properties](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), [struktura](../../../csharp/language-reference/keywords/struct.md) může být efektivnější v některých scénářích. Například, pokud deklarujete pole 1000 `Point` objekty, přidělí paměť navíc pro odkazování na každý objekt; v takovém, struktura bude méně nákladné. Vzhledem k tomu, [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] obsahuje objektu s názvem <xref:System.Drawing.Point>, struktura v tomto příkladu má název "Coords" místo.  
   
  [!code-csharp[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_1.cs)]  
   
@@ -44,15 +44,15 @@ ms.locfileid: "53237100"
 ## <a name="example-2"></a>Příklad 2  
   
 ### <a name="description"></a>Popis  
- Tento příklad ukazuje funkce, která je jedinečné pro struktury. Vytvoří objekt CoOrds bez použití `new` operátor. Pokud vyměňujete slovo `struct` slovo `class`, nebude kompilovat program.  
+ Tento příklad ukazuje funkce, která je jedinečné pro struktury. Vytvoří objekt Coords bez použití `new` operátor. Pokud vyměňujete slovo `struct` slovo `class`, nebude kompilovat program.  
   
 ### <a name="code"></a>Kód  
  [!code-csharp[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_1.cs)]  
   
  [!code-csharp[csProgGuideObjects#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_3.cs)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
 - [Struktury](../../../csharp/programming-guide/classes-and-structs/structs.md)

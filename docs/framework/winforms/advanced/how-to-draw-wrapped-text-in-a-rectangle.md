@@ -9,32 +9,32 @@ helpviewer_keywords:
 - text [Windows Forms], drawing in a rectangle
 - strings [Windows Forms], drawing in a rectangle
 ms.assetid: e1fb432a-dc90-48b5-9b6b-acc14507133d
-ms.openlocfilehash: c753be6a200f166e59e1330c7dbcf1fadc7588a6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4afe3eb7c3525dac856751331117e0980063faad
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33524970"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54602946"
 ---
 # <a name="how-to-draw-wrapped-text-in-a-rectangle"></a>Postupy: Kreslení zalomeného textu do obdélníku
-Zalamování textu můžete kreslení v obdélníku pomocí <xref:System.Drawing.Graphics.DrawString%2A> přetížený metodu <xref:System.Drawing.Graphics> třídu, která přebírá <xref:System.Drawing.Rectangle> nebo <xref:System.Drawing.RectangleF> parametr. Budete taky používat <xref:System.Drawing.Brush> a <xref:System.Drawing.Font>.  
+Můžete nakreslit zalamování textu do obdélníku pomocí <xref:System.Drawing.Graphics.DrawString%2A> přetížené metody <xref:System.Drawing.Graphics> třídu, která přijímá <xref:System.Drawing.Rectangle> nebo <xref:System.Drawing.RectangleF> parametru. Budete taky používat <xref:System.Drawing.Brush> a <xref:System.Drawing.Font>.  
   
- Zalamování textu můžete také kreslení v obdélníku pomocí <xref:System.Windows.Forms.TextRenderer.DrawText%2A> přetížený metodu <xref:System.Windows.Forms.TextRenderer> , která má <xref:System.Drawing.Rectangle> a <xref:System.Windows.Forms.TextFormatFlags> parametr. Budete taky používat <xref:System.Drawing.Color> a <xref:System.Drawing.Font>.  
+ Můžete také nakreslit zalamování textu do obdélníku pomocí <xref:System.Windows.Forms.TextRenderer.DrawText%2A> přetížené metody <xref:System.Windows.Forms.TextRenderer> , která přijímá <xref:System.Drawing.Rectangle> a <xref:System.Windows.Forms.TextFormatFlags> parametru. Budete taky používat <xref:System.Drawing.Color> a <xref:System.Drawing.Font>.  
   
- Následující obrázek ukazuje výstup textu vykresluje v obdélníku, při použití <xref:System.Drawing.Graphics.DrawString%2A> metoda.  
+ Následující obrázek znázorňuje výstup textu vykreslen v obdélníku použijete <xref:System.Drawing.Graphics.DrawString%2A> metody.  
   
- ![Text písem](../../../../docs/framework/winforms/advanced/media/csfontstext2.png "csfontstext2")  
+ ![Písma textu](../../../../docs/framework/winforms/advanced/media/csfontstext2.png "csfontstext2")  
   
 ### <a name="to-draw-wrapped-text-in-a-rectangle-with-gdi"></a>Kreslení zalomeného textu do obdélníku pomocí GDI +  
   
-1.  Použití <xref:System.Drawing.Graphics.DrawString%2A> metodu, předávání text, který má, přetížených <xref:System.Drawing.Rectangle> nebo <xref:System.Drawing.RectangleF>, <xref:System.Drawing.Font> a <xref:System.Drawing.Brush>.  
+1.  Použití <xref:System.Drawing.Graphics.DrawString%2A> přetížené metody předáním text, který má <xref:System.Drawing.Rectangle> nebo <xref:System.Drawing.RectangleF>, <xref:System.Drawing.Font> a <xref:System.Drawing.Brush>.  
   
      [!code-csharp[System.Drawing.AlignDrawnText#50](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/CS/Form1.cs#50)]
      [!code-vb[System.Drawing.AlignDrawnText#50](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/VB/Form1.vb#50)]  
   
 ### <a name="to-draw-wrapped-text-in-a-rectangle-with-gdi"></a>Kreslení zalomeného textu do obdélníku pomocí GDI  
   
-1.  Použití <xref:System.Windows.Forms.TextFormatFlags> hodnota výčtu Určuje text by měl být uzavřen s <xref:System.Windows.Forms.TextRenderer.DrawText%2A> metodu, předávání text, který má, přetížených <xref:System.Drawing.Rectangle>, <xref:System.Drawing.Font> a <xref:System.Drawing.Color>.  
+1.  Použití <xref:System.Windows.Forms.TextFormatFlags> hodnotu výčtu text by měl být uzavřen s <xref:System.Windows.Forms.TextRenderer.DrawText%2A> přetížené metody předáním text, který má <xref:System.Drawing.Rectangle>, <xref:System.Drawing.Font> a <xref:System.Drawing.Color>.  
   
      [!code-csharp[System.Drawing.AlignDrawnText#60](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/CS/Form1.cs#60)]
      [!code-vb[System.Drawing.AlignDrawnText#60](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/VB/Form1.vb#60)]  
@@ -44,8 +44,8 @@ Zalamování textu můžete kreslení v obdélníku pomocí <xref:System.Drawing
   
 -   <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Kreslení textu pomocí GDI](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)  
- [Použití písem a textu](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)  
- [Postupy: Vytváření rodin písem a písem](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)  
- [Postupy: Kreslení textu v určeném umístění](../../../../docs/framework/winforms/advanced/how-to-draw-text-at-a-specified-location.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Kreslení textu pomocí GDI](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)
+- [Použití písem a textu](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)
+- [Postupy: Vytváření rodin písem a písem](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)
+- [Postupy: Kreslení textu v určeném umístění](../../../../docs/framework/winforms/advanced/how-to-draw-text-at-a-specified-location.md)

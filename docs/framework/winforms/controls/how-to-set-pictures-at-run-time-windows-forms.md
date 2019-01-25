@@ -13,21 +13,21 @@ helpviewer_keywords:
 - images [Windows Forms], adding with PictureBox control [Windows Forms]
 - PictureBox control [Windows Forms], adding pictures
 ms.assetid: 18ca41d0-68a5-4660-985e-a6c1fbc01d76
-ms.openlocfilehash: fedddf56966c3ab11a1dfb20c1d4cbd8a45fb1a9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c7a65bcc65710324a4457c17dd728b4771550c06
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33533471"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54694071"
 ---
 # <a name="how-to-set-pictures-at-run-time-windows-forms"></a>Postupy: Nastavení obrázků za běhu (Windows Forms)
-Můžete programově nastavení obrázku zobrazovaného ve Windows Forms <xref:System.Windows.Forms.PictureBox> ovládacího prvku.  
+Můžete programově nastavení obrázku zobrazovaného rozhraním Windows Forms <xref:System.Windows.Forms.PictureBox> ovládacího prvku.  
   
 ### <a name="to-set-a-picture-programmatically"></a>Chcete-li nastavit obrázek prostřednictvím kódu programu  
   
--   Nastavit <xref:System.Windows.Forms.PictureBox.Image%2A> pomocí vlastnosti <xref:System.Drawing.Image.FromFile%2A> metodu <xref:System.Drawing.Image> třídy.  
+-   Nastavte <xref:System.Windows.Forms.PictureBox.Image%2A> pomocí vlastnosti <xref:System.Drawing.Image.FromFile%2A> metodu <xref:System.Drawing.Image> třídy.  
   
-     V následujícím příkladu je cesta pro umístění bitové kopie nastavit složky Dokumenty. Důvodem je, protože můžete předpokládat, že většina počítačů s operačním systémem Windows budou obsahovat tento adresář. To také umožňuje uživatelům s minimální systém úrovně přístupu pro aplikaci bezpečně spustit. Následující příklad předpokládá formulář s <xref:System.Windows.Forms.PictureBox> ovládací prvek již přidán.  
+     V následujícím příkladu je cesta pro umístění bitové kopie složky Dokumenty. Je to, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat tento adresář. Také to umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace. Následující příklad předpokládá formulář s <xref:System.Windows.Forms.PictureBox> ovládací prvek již přidán.  
   
     ```vb  
     Private Sub LoadNewPict()  
@@ -65,9 +65,9 @@ Můžete programově nastavení obrázku zobrazovaného ve Windows Forms <xref:S
        }  
     ```  
   
-### <a name="to-clear-a-graphic"></a>Zrušte grafiky  
+### <a name="to-clear-a-graphic"></a>Vymazat obrázek  
   
--   Nejprve uvolnění paměti používané bitovou kopii a zrušte zaškrtnutí políčka na obrázku. Uvolňování paměti se uvolní paměť později Správa paměti přestane být problém.  
+-   Nejprve uvolnění paměti používané bitovou kopii a zrušte na obrázku. Uvolňování paměti uvolní se paměť později Pokud Správa paměti stane problém.  
   
     ```vb  
     If Not (PictureBox1.Image Is Nothing) Then  
@@ -93,14 +93,14 @@ Můžete programově nastavení obrázku zobrazovaného ve Windows Forms <xref:S
     ```  
   
     > [!NOTE]
-    >  Další informace o důvod, proč byste měli používat <xref:System.Drawing.Image.Dispose%2A> najdete v článku metoda tímto způsobem [čištění nespravovaných prostředků](../../../../docs/standard/garbage-collection/unmanaged.md).  
+    >  Další informace o důvod, proč byste měli použít <xref:System.Drawing.Image.Dispose%2A> najdete v článku metoda tímto způsobem [Cleaning Up Unmanaged Resources](../../../../docs/standard/garbage-collection/unmanaged.md).  
   
-     Tento kód vymaže bitovou kopii, i když grafiky byla načtena do ovládacího prvku v době návrhu.  
+     Tento kód se vymažou bitovou kopii, i v případě, že grafický objekt byl načten do ovládacího prvku v době návrhu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.PictureBox>  
- <xref:System.Drawing.Image.FromFile%2A?displayProperty=nameWithType>  
- [Přehled ovládacího prvku PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-overview-windows-forms.md)  
- [Postupy: Načtení obrázku pomocí Návrháře](../../../../docs/framework/winforms/controls/how-to-load-a-picture-using-the-designer-windows-forms.md)  
- [Postupy: Změna velikosti či umístění obrázku za běhu](../../../../docs/framework/winforms/controls/how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)  
- [Ovládací prvek PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.PictureBox>
+- <xref:System.Drawing.Image.FromFile%2A?displayProperty=nameWithType>
+- [Přehled ovládacího prvku PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-overview-windows-forms.md)
+- [Postupy: Načtení obrázku pomocí návrháře](../../../../docs/framework/winforms/controls/how-to-load-a-picture-using-the-designer-windows-forms.md)
+- [Postupy: Změna velikosti či umístění obrázku za běhu](../../../../docs/framework/winforms/controls/how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
+- [Ovládací prvek PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-windows-forms.md)

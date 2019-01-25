@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Výběr složek se součástí Windows Forms FolderBrowserDialog'
+title: 'Postupy: Zvolte složky s komponentou Windows Forms FolderBrowserDialog'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,25 +12,25 @@ helpviewer_keywords:
 - folders [Windows Forms], choosing
 - directories [Windows Forms], selecting
 ms.assetid: 4593670e-7c7d-4661-b46b-4ffb63258adb
-ms.openlocfilehash: 657aad6efa195ec3d9741f4f91d4e01af4a54a19
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7055875f25aa0f39feb2d944f4b6684c6ae5d9a5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33531232"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54614690"
 ---
-# <a name="how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component"></a>Postupy: Výběr složek se součástí Windows Forms FolderBrowserDialog
-V rámci aplikace systému Windows, které vytvoříte, často, bude mít vyzve uživatele, vyberte složku, většina často k uložení sady souborů. Windows Forms <xref:System.Windows.Forms.FolderBrowserDialog> součást umožňuje snadno dosáhnout.  
+# <a name="how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component"></a>Postupy: Zvolte složky s komponentou Windows Forms FolderBrowserDialog
+Často v rámci aplikace Windows, které vytvoříte, budete muset vyzvat uživatele, vyberte složku, většina často budou sadu souborů. Windows Forms <xref:System.Windows.Forms.FolderBrowserDialog> komponenta umožňuje snadno provést tuto úlohu.  
   
 ### <a name="to-choose-folders-with-the-folderbrowserdialog-component"></a>Chcete-li zvolit složky s FolderBrowserDialog – komponenta  
   
-1.  V postupu, zkontrolujte <xref:System.Windows.Forms.FolderBrowserDialog> součásti <xref:System.Windows.Forms.Form.DialogResult%2A> vlastnosti chcete zobrazit, jak bylo ukončeno dialogové okno a získat hodnotu <xref:System.Windows.Forms.FolderBrowserDialog> součásti <xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A> vlastnost.  
+1.  V postupu, zkontrolujte <xref:System.Windows.Forms.FolderBrowserDialog> komponenty <xref:System.Windows.Forms.Form.DialogResult%2A> vlastnosti naleznete v tématu Jak bylo ukončeno dialogových oken a získání hodnoty <xref:System.Windows.Forms.FolderBrowserDialog> komponenty <xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A> vlastnost.  
   
-2.  Pokud budete potřebovat sadu nejvyšší úrovni složky, která se zobrazí ve stromovém zobrazení dialogového okna, nastavte <xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A> vlastnost, která přebírá členem <xref:System.Environment.SpecialFolder> výčtu.  
+2.  Pokud je nutné do složky sady úplně nahoře, který se zobrazí ve stromovém zobrazení dialogového okna, nastavte <xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A> vlastnost, která přebírá členem <xref:System.Environment.SpecialFolder> výčtu.  
   
-3.  Kromě toho můžete nastavit <xref:System.Windows.Forms.FolderBrowserDialog.Description%2A> vlastnosti, která určuje také textový řetězec, který se zobrazí v horní části stromovém zobrazení složky prohlížeče.  
+3.  Kromě toho můžete nastavit <xref:System.Windows.Forms.FolderBrowserDialog.Description%2A> vlastnost, která určuje, textový řetězec, který se zobrazí v horní části stromu zobrazení prohlížeč složek.  
   
-     V následujícím příkladu <xref:System.Windows.Forms.FolderBrowserDialog> součást slouží k výběru složky, podobně jako při vytvoření projektu v sadě Visual Studio a vyzváni k výběru složku pro uložení v. V tomto příkladu se následně zobrazí název složky v <xref:System.Windows.Forms.TextBox> ovládací prvek na formuláři. Je vhodné umístit umístění upravitelné oblast, například <xref:System.Windows.Forms.TextBox> řídit, tak, aby uživatelé mohou upravovat jejich výběr v případě chyby nebo jiných problémů. Tento příklad předpokládá formulář s <xref:System.Windows.Forms.FolderBrowserDialog> součásti a <xref:System.Windows.Forms.TextBox> ovládacího prvku.  
+     V následujícím příkladu <xref:System.Windows.Forms.FolderBrowserDialog> komponenty slouží k výběru složky, podobně jako při vytvoření projektu v sadě Visual Studio a vyzváni k výběru pro uložte ho do složky. V tomto příkladu název složky se následně zobrazí <xref:System.Windows.Forms.TextBox> ovládací prvek na formuláři. Je vhodné umístit umístění upravitelné oblasti, jako například <xref:System.Windows.Forms.TextBox> řídit, takže uživatelé mohou upravovat jejich výběr v případě chyby nebo jiné problémy. Tento příklad předpokládá formulář s <xref:System.Windows.Forms.FolderBrowserDialog> komponenty a <xref:System.Windows.Forms.TextBox> ovládacího prvku.  
   
     ```vb  
     Public Sub ChooseFolder()  
@@ -62,11 +62,11 @@ V rámci aplikace systému Windows, které vytvoříte, často, bude mít vyzve 
     ```  
   
     > [!IMPORTANT]
-    >  Pokud chcete používat tuto třídu, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A> vlastnost, která je součástí z <xref:System.Security.Permissions.FileIOPermissionAccess> – výčet. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku z důvodu nedostatečných oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).  
+    >  Pro tuto třídu použít, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A> vlastnost, která je součástí sady <xref:System.Security.Permissions.FileIOPermissionAccess> výčtu. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, procesu může vyvolat výjimku z důvodu dostatečná oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).  
   
- Informace o tom, jak ukládat soubory najdete v tématu [postupy: ukládání souborů pomocí součásti SaveFileDialog](../../../../docs/framework/winforms/controls/how-to-save-files-using-the-savefiledialog-component.md).  
+ Informace o tom, jak uložit soubory, naleznete v tématu [jak: Ukládání souborů pomocí součásti SaveFileDialog](../../../../docs/framework/winforms/controls/how-to-save-files-using-the-savefiledialog-component.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.FolderBrowserDialog>  
- [Přehled komponenty FolderBrowserDialog (Windows Forms)](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-overview-windows-forms.md)  
- [Komponenta FolderBrowserDialog](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.FolderBrowserDialog>
+- [Přehled komponenty FolderBrowserDialog (Windows Forms)](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-overview-windows-forms.md)
+- [Komponenta FolderBrowserDialog](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-windows-forms.md)

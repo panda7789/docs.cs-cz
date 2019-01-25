@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d6f8b896d50bb659897291d7bf85e836482611a8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c62ad58cd7ad1bd752d5958a5630dc7a019131e9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33428983"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54645441"
 ---
 # <a name="isymunmanagedwriterdefinelocalvariable-method"></a>ISymUnmanagedWriter::DefineLocalVariable – metoda
-V aktuálním oboru lexikální definuje jednu proměnnou. Tuto metodu lze volat vícekrát proměnné se stejným názvem, který má více domácnostech v rámci oboru. V takovém případě však hodnoty `startOffset` a `endOffset` parametry se nesmí překrývat.  
+V aktuálním oboru lexikální definuje jednu proměnnou. Tuto metodu lze volat pro proměnnou se stejným názvem, který má více domovů v rámci oboru více než jednou. V takovém případě však hodnoty `startOffset` a `endOffset` parametry se nesmí překrývat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,42 +45,42 @@ HRESULT DefineLocalVariable(
   
 #### <a name="parameters"></a>Parametry  
  `name`  
- [v] Ukazatel na `WCHAR` , který definuje místní název proměnné.  
+ [in] Ukazatel `WCHAR` , který definuje název místní proměnné.  
   
  `attributes`  
- [v] Místní proměnné atributy.  
+ [in] Místní proměnné atributy.  
   
  `cSig`  
- [v] A `ULONG32` určující velikost v bajtech z `signature` vyrovnávací paměti.  
+ [in] A `ULONG32` určující velikost v bajtech, nástroje `signature` vyrovnávací paměti.  
   
  `signature`  
- [v] Místní proměnné podpis.  
+ [in] Místní proměnné podpis.  
   
  `addrKind`  
- [v] Typ adresy.  
+ [in] Typ adresy.  
   
  `addr1`  
- [v] První adresa pro specifikaci parametru.  
+ [in] První adresa pro specifikaci parametru.  
   
  `addr2`  
- [v] Druhý adresu pro specifikaci parametru.  
+ [in] Druhý adresa pro specifikaci parametru.  
   
  `addr3`  
- [v] Je třetí adresa pro specifikaci parametru.  
+ [in] Je třetí adresa pro specifikaci parametru.  
   
  `startOffset`  
- [v] Počáteční odsazení proměnné. Tento parametr je volitelný. Pokud je 0, tento parametr je ignorován a proměnná je definována v rámci celého rozsahu. Pokud je nenulovou hodnotu, proměnná spadá do posunutí aktuálního oboru.  
+ [in] Počáteční odsazení pro proměnnou. Tento parametr je volitelný. Pokud je 0, tento parametr je ignorován a proměnná je definována v rámci celého rozsahu. Pokud je nenulovou hodnotu, proměnná spadá do posuny aktuálního oboru.  
   
  `endOffset`  
- [v] Koncové posunutí pro proměnnou. Tento parametr je volitelný. Pokud je 0, tento parametr je ignorován a proměnná je definována v rámci celého rozsahu. Pokud je nenulovou hodnotu, proměnná spadá do posunutí aktuálního oboru.  
+ [in] Koncové odsazení pro proměnnou. Tento parametr je volitelný. Pokud je 0, tento parametr je ignorován a proměnná je definována v rámci celého rozsahu. Pokud je nenulovou hodnotu, proměnná spadá do posuny aktuálního oboru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)  
- [DefineGlobalVariable – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-defineglobalvariable-method.md)  
- [DefineLocalVariable2 – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-definelocalvariable2-method.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [DefineGlobalVariable – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-defineglobalvariable-method.md)
+- [DefineLocalVariable2 – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-definelocalvariable2-method.md)

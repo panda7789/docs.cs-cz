@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b36f4007f286938169cc5d583908493916b9e6f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6199a0d0444f07c57e88d0369f192684755d301c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33425337"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54705268"
 ---
 # <a name="isymunmanagedreadergetsymbolstorefilename-method"></a>ISymUnmanagedReader::GetSymbolStoreFileName – metoda
-Obsahuje název souboru na disku úložiště symbolů.  
+Poskytuje název souboru na disku úložiště symbolů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +39,19 @@ HRESULT GetSymbolStoreFileName (
   
 #### <a name="parameters"></a>Parametry  
  `cchName`  
- [v] Velikost `szName` vyrovnávací paměti.  
+ [in] Velikost `szName` vyrovnávací paměti.  
   
  `pcchName`  
- [out] Ukazatel na proměnnou, která přijímá délka názvu, vrátí se v `szName`, včetně ukončení hodnotu null.  
+ [out] Ukazatel na proměnnou, která přijímá délka názvu vrátil v `szName`, včetně ukončení hodnotu null.  
   
  `szName`  
- [out] Ukazatel na proměnnou, která přijímá název souboru úložiště symbolů.  
+ [out] Ukazatel na proměnnou, která přijímá název souboru v úložišti symbolů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

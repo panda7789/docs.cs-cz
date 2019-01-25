@@ -6,43 +6,43 @@ f1_keywords:
 helpviewer_keywords:
 - MaskedTextBox control [Windows Forms]
 ms.assetid: 779b3a12-cd74-4e58-b46e-04983bda5b2c
-ms.openlocfilehash: 6f554c239e3444db5f6ac84f7994108ac70df0a9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 68a3e72f23e881bc68441e8aee9674f1a822882a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33537038"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658910"
 ---
 # <a name="how-to-set-the-input-mask"></a>Postupy: Nastavení vstupní masky
-Maskované textové pole je prvek pole rozšířené text, který podporuje deklarativní syntaxe pro přijetí nebo odmítnutí vstup uživatele. Nastavením vlastnosti maska můžete povolená uživatelský vstup bez nutnosti psaní veškeré logiky vlastního ověřování ve vaší aplikaci. Další informace najdete v části poznámky <xref:System.Windows.Forms.MaskedTextBox> třídy.  
+Maskované textové pole je vylepšené textový ovládací prvek, který podporuje deklarativní syntaxe pro přijetí nebo odmítnutí vstup uživatele. Tím, že nastavíte vlastnost maska, můžete zadat povolenou uživatelský vstup bez nutnosti jakékoli vlastní ověřovací logiky ve vaší aplikaci. Další informace najdete v části poznámky <xref:System.Windows.Forms.MaskedTextBox> třídy.  
   
-## <a name="setting-the-mask-property-manually"></a>Nastavení vlastnosti maska ručně  
- Pokud jste obeznámeni s znaky, které podporuje vlastnost maska, můžete ji zadat ručně. Souhrn znaků, které podporuje vlastnost maska, najdete v části poznámky <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost.  
+## <a name="setting-the-mask-property-manually"></a>Vlastnost maska nastavení ručně  
+ Pokud jste se seznámili se znaky, které podporuje vlastnost maska, můžete ji zadat ručně. Přehled znaky, které podporuje vlastnost maska, naleznete v části poznámky <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost.  
   
-#### <a name="to-set-the-mask-property-manually"></a>Chcete-li ručně nastavit vlastnost maska  
+#### <a name="to-set-the-mask-property-manually"></a>Chcete-li nastavit vlastnost maska ručně  
   
 1.  V **návrhu** zobrazení, vyberte <xref:System.Windows.Forms.MaskedTextBox>.  
   
-2.  V **vlastnosti** okno, vyhledejte <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost.  
+2.  V **vlastnosti** okna, vyhledejte <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost.  
   
-3.  Zadejte masku, který chcete. Můžete například zadat `###`.  
+3.  Zadejte masku, který chcete. Zadejte například příkaz `###`.  
   
 ## <a name="using-the-input-mask-dialog-box"></a>Pomocí dialogového okna vstupní maska  
- Vstupní maska dialogové okno obsahuje několik předdefinovaných vstupní masky. Můžete také změnit předdefinované masek nebo zadejte vlastní masku ručně.  
+ Vstupní maska dialogové okno obsahuje některé předdefinované vstupní masky. Můžete také změnit předdefinované masky nebo ručně zadejte vlastní masku.  
   
 #### <a name="to-open-the-input-mask-dialog-box"></a>Chcete-li otevřít dialogové okno Vstupní maska  
   
 1.  V **návrhu** zobrazení, vyberte <xref:System.Windows.Forms.MaskedTextBox>.  
   
-    1.  Klikněte na inteligentní značky otevřete **MaskedTextBox úlohy** panelu.  
+    1.  Kliknutím na inteligentní značku otevřete **MaskedTextBox úlohy** panelu.  
   
-    2.  Klikněte na tlačítko **nastavit maska**.  
+    2.  Klikněte na tlačítko **nastavení masky**.  
   
      \- nebo –  
   
-    1.  V **vlastnosti** vyberte <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost.  
+    1.  V **vlastnosti** okna, vyberte <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost.  
   
-    2.  Klikněte na tlačítko se třemi tečkami ve sloupci Hodnota vlastnosti.  
+    2.  Klikněte na tlačítko se třemi tečkami v sloupec hodnoty vlastnosti.  
   
      **Vstupní maska** zobrazí se dialogové okno.  
   
@@ -50,18 +50,18 @@ Maskované textové pole je prvek pole rozšířené text, který podporuje dekl
   
 1.  (Volitelné) Klikněte na jednu z předdefinovaných masky v seznamu.  
   
-2.  (Volitelné) Upravit předdefinované maska ve **maska** pole.  
+2.  (Volitelné) Upravit předdefinované masky v **maska** pole.  
   
-3.  (Volitelné) Zadejte masku nové v **maska** pole. To znamená, že nemáte použijte jeden z předdefinovaných masky.  
+3.  (Volitelné) Zadejte nový masku **maska** pole. To znamená, že nemáte použijte jednu z předdefinovaných masky.  
   
     > [!NOTE]
-    >  V poli Náhled zobrazí znaky, které uživateli se zobrazí v <xref:System.Windows.Forms.MaskedTextBox>. Tyto znaky jsou Průvodce pomoct uživateli zadat data správně.  
+    >  Zobrazí znaky, které uživateli se zobrazí v náhledu <xref:System.Windows.Forms.MaskedTextBox>. Tyto znaky se tento průvodce pomůže uživateli zadat data správně.  
   
-4.  Vyberte nebo zrušte **použití ValidatingType** zaškrtávací políčko. **Použití ValidatingType** políčko určuje, jestli používá datový typ ověření vstupu dat uživatelem. Další informace najdete v tématu <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> vlastnost.  
+4.  Zaškrtněte nebo zrušte zaškrtnutí **použít vlastnost ValidatingType** zaškrtávací políčko. **Použít vlastnost ValidatingType** zaškrtávací políčko určuje, zda datový typ se používá k ověření vstupu dat uživatelem. Další informace najdete v tématu <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> vlastnost.  
   
-5.  Click **OK**.  
+5.  Klikněte na **OK**.  
   
-     Maska je zadána v **maska** vlastnost **vlastnosti** okno.  
+     Maska je zadána v **maska** vlastnost **vlastnosti** okna.  
   
-## <a name="see-also"></a>Viz také  
- [Návod: Práce s ovládacím prvkem MaskedTextBox](../../../../docs/framework/winforms/controls/walkthrough-working-with-the-maskedtextbox-control.md)
+## <a name="see-also"></a>Viz také:
+- [Návod: Práce s ovládacím prvkem MaskedTextBox](../../../../docs/framework/winforms/controls/walkthrough-working-with-the-maskedtextbox-control.md)

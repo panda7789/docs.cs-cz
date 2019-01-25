@@ -9,12 +9,12 @@ helpviewer_keywords:
 - exceptions, throwing
 ms.assetid: ab22ce03-78f9-4dca-8824-c7ed3bdccc27
 author: KrzysztofCwalina
-ms.openlocfilehash: dbf54f602fbe4ace01b60bb57e1106d3f19ba7df
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: b947c7cce057c060b1ab5054d1227f5703ccbf89
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53144218"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543903"
 ---
 # <a name="using-standard-exception-types"></a>Použití standardních typů výjimek
 Tato část popisuje standardních výjimek poskytované rozhraní Framework a podrobnosti o jejich využití. V seznamu nejsou v žádném smyslu vyčerpávající. Najdete na referenční dokumentaci rozhraní .NET Framework pro použití jiných typů výjimek Framework.  
@@ -26,7 +26,7 @@ Tato část popisuje standardních výjimek poskytované rozhraní Framework a p
   
  **X AVOID** zachytávání `System.Exception` nebo `System.SystemException`, kromě obslužné rutiny výjimek nejvyšší úrovně.  
   
-## <a name="applicationexception"></a>ApplicationException –  
+## <a name="applicationexception"></a>ApplicationException  
  **X DO NOT** throw nebo jsou odvozeny od <xref:System.ApplicationException>.  
   
 ## <a name="invalidoperationexception"></a>InvalidOperationException  
@@ -59,11 +59,11 @@ Tato část popisuje standardních výjimek poskytované rozhraní Framework a p
 ## <a name="comexception-sehexception-and-executionengineexception"></a>ComException SEHException – a ExecutionEngineException  
  **X DO NOT** explicitní generování <xref:System.Runtime.InteropServices.COMException>, <xref:System.ExecutionEngineException>, a <xref:System.Runtime.InteropServices.SEHException>. Tyto výjimky jsou vyvolány pouze infrastruktury CLR.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Pokyny k návrhu pro výjimky](../../../docs/standard/design-guidelines/exceptions.md)

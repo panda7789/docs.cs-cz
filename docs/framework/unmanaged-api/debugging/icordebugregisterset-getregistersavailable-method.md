@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3174be7237bcdbd5a12f38f04d6e67d9eb9a573e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f57e4a72828cdf744d5acd5483024de7d303f4a2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421850"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54743345"
 ---
 # <a name="icordebugregistersetgetregistersavailable-method"></a>ICorDebugRegisterSet::GetRegistersAvailable – metoda
-Získá trochu maskování, která určuje, který registruje v tomto [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) jsou nyní k dispozici.  
+Získá o něco maskování určující, který registruje v tomto [icordebugregisterset –](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) jsou aktuálně k dispozici.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,15 +37,15 @@ HRESULT GetRegistersAvailable (
   
 #### <a name="parameters"></a>Parametry  
  `pAvailable`  
- [out] Bitová maska, která určuje, která registruje jsou nyní k dispozici.  
+ [out] Bitová maska, která určuje, která registruje jsou aktuálně k dispozici.  
   
 ## <a name="remarks"></a>Poznámky  
- Registrace může nedostupná, pokud pro dané situaci nelze určit jeho hodnotu.  
+ Registru možná nebudou k dispozici, pokud jeho hodnotu nelze určit pro dané situaci.  
   
- Maska vrácená trochu obsahuje pro každý registr (1 << index registrace). Bitová hodnota je 1, pokud zaregistrovat bude k dispozici, nebo 0, pokud není k dispozici.  
+ Vrácené maska obsahuje trochu pro každý registr (1 << registr indexu). Bitová hodnota je 1, pokud do registru je k dispozici, nebo 0, pokud není k dispozici.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -53,6 +53,6 @@ HRESULT GetRegistersAvailable (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugRegisterSet – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)  
- [ICorDebugRegisterSet2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugRegisterSet – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
+- [ICorDebugRegisterSet2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)

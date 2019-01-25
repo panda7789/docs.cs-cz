@@ -7,12 +7,12 @@ helpviewer_keywords:
 - toolbars [Windows Forms]
 - ToolStripPanel control [Windows Forms], about ToolStripPanel control
 ms.assetid: ce54a60c-5eba-4b4c-bd77-cf0748a666cc
-ms.openlocfilehash: 1f13240df9879f656d986845552e8e93a74ade8f
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 104ccfd0370eff48312372a2391031575b53b3bf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193366"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54660226"
 ---
 # <a name="toolstrippanel-control-overview"></a>ToolStripPanel – přehled ovládacího prvku
 A <xref:System.Windows.Forms.ToolStripPanel> poskytuje jeden prostor pro umístění a rafting <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, a <xref:System.Windows.Forms.StatusStrip> ovládací prvky. Více <xref:System.Windows.Forms.ToolStrip> ovládací prvky zásobníku vertikálně nebo horizontálně. v závislosti na tom <xref:System.Windows.Forms.ToolStripPanelRow.Orientation%2A> z <xref:System.Windows.Forms.ToolStripPanel>.  
@@ -28,7 +28,7 @@ A <xref:System.Windows.Forms.ToolStripPanel> poskytuje jeden prostor pro umíst�
 |<xref:System.Windows.Forms.ToolStripPanel.Rows%2A>|Získá <xref:System.Windows.Forms.ToolStripPanelRow> v tomto <xref:System.Windows.Forms.ToolStripPanel>.|  
 |<xref:System.Windows.Forms.ToolStripPanel.Join%2A>|Přidá <xref:System.Windows.Forms.ToolStrip> k <xref:System.Windows.Forms.ToolStripPanel>.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.ToolStripContainer>  
- <xref:System.Windows.Forms.ToolStripContentPanel>  
- [Ukázka ovládacího prvku ToolStrip](https://msdn.microsoft.com/library/b7352439-184a-4a3a-b2ad-07465d3af9ed)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.ToolStripContainer>
+- <xref:System.Windows.Forms.ToolStripContentPanel>
+- [Ukázka ovládacího prvku ToolStrip](https://msdn.microsoft.com/library/b7352439-184a-4a3a-b2ad-07465d3af9ed)

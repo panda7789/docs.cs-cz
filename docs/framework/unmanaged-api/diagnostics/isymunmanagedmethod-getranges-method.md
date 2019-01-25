@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 32036058924aaf79fa7282144ced75040bc1f825
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b6afe0f0d8780a93a7d98f24a11bb67ef65ebf63
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426017"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54604272"
 ---
 # <a name="isymunmanagedmethodgetranges-method"></a>ISymUnmanagedMethod::GetRanges – metoda
-Dané pozici v dokumentu vrátí pole počáteční a koncové posunutí párů, které odpovídají na rozsahy Microsoft (MSIL intermediate language) pokrývající pozici v rámci této metody. Toto pole je pole celých čísel a má formát [start, end, spuštění, koncové]. Počet dvojic rozsah je délka pole dělený 2.  
+Danou pozici v dokumentu vrátí pole dvojic počáteční a koncové posunutí, které odpovídají na rozsahy jazyk Microsoft intermediate language (MSIL), která zahrnuje pozici v rámci této metody. Pole je pole celých čísel a má formát [spuštění, end, zahájení, ukončení]. Počet dvojic rozsah je délka pole, děleno 2.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,28 +42,28 @@ HRESULT GetRanges(
   
 #### <a name="parameters"></a>Parametry  
  `document`  
- [v] Dokument, pro které je požadováno posun.  
+ [in] Dokument, pro kterou je požadována posun.  
   
  `line`  
- [v] Dokument řádku odpovídající rozsahy.  
+ [in] Dokument řádek odpovídající oblasti.  
   
  `column`  
- [v] Sloupec dokumentu odpovídající rozsahy.  
+ [in] Sloupec dokumentu odpovídající oblasti.  
   
  `cRanges`  
- [v] Velikost `ranges` pole.  
+ [in] Velikost `ranges` pole.  
   
  `pcRanges`  
- [out] Ukazatel na `ULONG32` která přijme velikost vyrovnávací paměti musí obsahovat rozsahy.  
+ [out] Ukazatel `ULONG32` , která obdrží velikost vyrovnávací paměti musí obsahovat rozsahy.  
   
  `ranges`  
- [out] Ukazatel do vyrovnávací paměti, která přijímá rozsahy.  
+ [out] Ukazatel do vyrovnávací paměti, která přijímá rozsahů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)

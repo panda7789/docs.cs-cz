@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 8da1deec2238f74a9b594c85feab0445ec2a35b7
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: c231533604b4ebadfb709295b5a8b877f87bba1c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241311"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54493415"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozšíření (Průvodce programováním v C#)
 Metody rozšíření umožňují „přidávat“ metody ke stávajícím typům bez vytváření nového odvozeného typu, rekompilace nebo jiné změny původního typu. Metody rozšíření jsou zvláštním druhem statické metody, jsou však volány tak, jako kdyby byly metodami instance rozšířeného typu. Pro klientský kód napsaný v C#, F# a Visual Basic neexistuje žádný zjevný rozdíl mezi voláním metody rozšíření a metody, které jsou ve skutečnosti definovány v rámci typu.  
@@ -79,13 +79,13 @@ using System.Linq;
   
  Chcete-li zamezit zvýšení čísla verze sestavení, neměli byste pro implementovanou knihovnu metody rozšíření používat. Pokud chcete přidat významné funkce do knihovny, jejíž zdrojový kód vlastníte, měli byste postupovat podle standardních pokynů pro rozhraní .NET Framework pro správu verzí sestavení. Další informace najdete v tématu [Správa verzí sestavení](../../../../docs/framework/app-domains/assembly-versioning.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Ukázky paralelního programování (včetně mnoha příkladů metod rozšíření)](https://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)  
-- [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Ukázky paralelního programování (včetně mnoha příkladů metod rozšíření)](https://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)
+- [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
 - [Přehled standardních operátorů dotazu](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Pravidla převodu pro instanci parametrů a jejich dopad](https://blogs.msdn.microsoft.com/sreekarc/2007/10/11/conversion-rules-for-instance-parameters-and-their-impact)  
-- [Interoperabilita metod rozšíření mezi jazyky](https://blogs.msdn.microsoft.com/sreekarc/2007/10/11/extension-methods-interoperability-between-languages)  
-- [Metody rozšíření a Curryfikované delegáty](https://blogs.msdn.microsoft.com/sreekarc/2007/05/01/extension-methods-and-curried-delegates)  
+- [Pravidla převodu pro instanci parametrů a jejich dopad](https://blogs.msdn.microsoft.com/sreekarc/2007/10/11/conversion-rules-for-instance-parameters-and-their-impact)
+- [Interoperabilita metod rozšíření mezi jazyky](https://blogs.msdn.microsoft.com/sreekarc/2007/10/11/extension-methods-interoperability-between-languages)
+- [Metody rozšíření a Curryfikované delegáty](https://blogs.msdn.microsoft.com/sreekarc/2007/05/01/extension-methods-and-curried-delegates)
 - [Rozšiřující metoda vazby a hlášení chyb](https://blogs.msdn.microsoft.com/sreekarc/2007/04/26/extension-method-binding-and-error-reporting)

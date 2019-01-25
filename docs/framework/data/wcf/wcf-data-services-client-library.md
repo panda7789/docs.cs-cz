@@ -6,12 +6,12 @@ helpviewer_keywords:
 - DataServiceQuery class, about DataServiceQuery class
 - DataServiceContext class, about DataServiceContext class
 ms.assetid: 21075e50-8917-413e-a8ea-35a0f6e65aa5
-ms.openlocfilehash: 4f389530b287d1c7a11a88972ef948347d3ea533
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 9af19f2ef552c5871d488c968368a9192bae9edb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508957"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54656216"
 ---
 # <a name="wcf-data-services-client-library"></a>Klientské knihovny WCF Data Services
 Všechny aplikace mohou komunikovat s [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]– na základě dat služby, pokud může odeslat požadavek HTTP a procesu služby [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu, vrací datovou službu. Tato spolupráce umožňuje získat přístup k [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby z široké povolené rozsahu webových aplikací. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje klientské knihovny, které poskytují pohodlnější a pestřejší prostředí programovací spotřebuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály z rozhraní .NET Framework nebo aplikací založené na technologii Silverlight.  
@@ -51,6 +51,6 @@ Všechny aplikace mohou komunikovat s [!INCLUDE[ssODataFull](../../../../include
  [Práce s binárními daty](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)  
  Popisuje, jak získávat přístup a měnit binárních dat vrácených datovou službou jako datový proud.  
   
-## <a name="see-also"></a>Viz také  
- [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
- [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
+## <a name="see-also"></a>Viz také:
+- [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
+- [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)

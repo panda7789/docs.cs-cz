@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 13ec60999db88b9d7191a3866fcebe8098b4edee
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8614dd612fff2886c4e44a977d05a575fce74eec
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33411383"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54648940"
 ---
 # <a name="icordebugcodegetiltonativemapping-method"></a>ICorDebugCode::GetILToNativeMapping – metoda
-Získá pole instancí "cor_debug_il_to_native_map –", která představuje mapování nativní posuny od společnosti Microsoft posune (MSIL intermediate language).  
+Získává pole instancí "cor_debug_il_to_native_map –", které představují mapování z Microsoft intermediate language (MSIL) kompenzuje do nativních posunů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +40,21 @@ HRESULT GetILToNativeMapping (
   
 #### <a name="parameters"></a>Parametry  
  `cMap`  
- [v] Velikost `map` pole.  
+ [in] Velikost `map` pole.  
   
  `pcMap`  
- [out] Ukazatel na skutečný počet elementy, vrátí se v `map` pole.  
+ [out] Ukazatel na skutečný počet prvků vrácených v `map` pole.  
   
  `map`  
- [out] Pole `COR_DEBUG_IL_TO_NATIVE_MAP` stuctures, z nichž každý představuje mapování z MSIL posun na nativní posun.  
+ [out] Pole `COR_DEBUG_IL_TO_NATIVE_MAP` stuctures, z nichž každý představuje mapování z jazyka MSIL posun na nativní posun.  
   
- Není žádný řazení do pole elementů vrátila.  
+ Neexistuje žádné řazení k poli prvků vrácených.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetILToNativeMapping` Metoda vrací výsledky, smysl pouze v případě, že tato instance "ICorDebugCode" představuje nativního kódu, který byl právě za běhu (JIT) zkompilovat z MSIL kódu.  
+ `GetILToNativeMapping` Metoda vrátí smysluplné výsledky, pouze v případě, že tato instance "ICorDebugCode" představuje nativní kód, který byl just-in-time (JIT) kompilaci kódu jazyka MSIL.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -62,5 +62,5 @@ HRESULT GetILToNativeMapping (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugCode – rozhraní 1](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugCode – rozhraní 1](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)

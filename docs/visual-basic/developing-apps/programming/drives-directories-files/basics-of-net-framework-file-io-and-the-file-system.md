@@ -9,12 +9,12 @@ helpviewer_keywords:
 - streams
 - streams, definition
 ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
-ms.openlocfilehash: 5ce95d84782f02df1a4f9f362629bab776a8060c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: e60aae158d822a3cfba93f6d714d83bcd7aa0e08
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155022"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54600762"
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>Základy vstupně-výstupních operací se soubory a systému souborů v rozhraní .NET Framework (Visual Basic)
 Třídy v <xref:System.IO> obor názvů se používají k práci s disky, soubory a adresáře.  
@@ -57,11 +57,11 @@ Třídy v <xref:System.IO> obor názvů se používají k práci s disky, soubor
   
 |Chcete-li|Další informace naleznete v tématu|
 |---|---|   
-|Čtení a zápis do datového souboru|[Jak: Čtení a zápis do nově vytvořeného datového souboru](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
-|Čtení textu ze souboru|[Jak: Čtení textu ze souboru](../../../../standard/io/how-to-read-text-from-a-file.md)|  
-|Zápis textu do souboru|[Jak: Zápis textu do souboru](../../../../standard/io/how-to-write-text-to-a-file.md)|  
-|Čtení znaků z řetězce|[Jak: Čtení znaků z řetězce](../../../../standard/io/how-to-read-characters-from-a-string.md)|  
-|Zápis znaků do řetězce|[Jak: Zápis znaků do řetězce](../../../../standard/io/how-to-write-characters-to-a-string.md)|  
+|Čtení a zápis do datového souboru|[Postupy: Čtení a zápis do nově vytvořeného datového souboru](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
+|Čtení textu ze souboru|[Postupy: Čtení textu ze souboru](../../../../standard/io/how-to-read-text-from-a-file.md)|  
+|Zápis textu do souboru|[Postupy: Zápis textu do souboru](../../../../standard/io/how-to-write-text-to-a-file.md)|  
+|Čtení znaků z řetězce|[Postupy: Čtení znaků z řetězce](../../../../standard/io/how-to-read-characters-from-a-string.md)|  
+|Zápis znaků do řetězce|[Postupy: Zápis znaků do řetězce](../../../../standard/io/how-to-write-characters-to-a-string.md)|  
 |Šifrování dat|[Šifrování dat](../../../../standard/security/encrypting-data.md)|  
 |Dešifrování dat|[Dešifrování dat](../../../../standard/security/decrypting-data.md)|  
   
@@ -74,7 +74,7 @@ Třídy v <xref:System.IO> obor názvů se používají k práci s disky, soubor
   
 |Chcete-li|Další informace naleznete v tématu|  
 |---|---|
-|Otevření a připojení textu k souboru protokolu|[Jak: Otevření a připojení k souboru protokolu](../../../../standard/io/how-to-open-and-append-to-a-log-file.md)|  
+|Otevření a připojení textu k souboru protokolu|[Postupy: Otevření a připojení k souboru protokolu](../../../../standard/io/how-to-open-and-append-to-a-log-file.md)|  
 |Určení atributů souboru|<xref:System.IO.FileAttributes>|  
   
 ## <a name="file-permissions"></a>Oprávnění k souboru  
@@ -87,19 +87,19 @@ Třídy v <xref:System.IO> obor názvů se používají k práci s disky, soubor
   
 |Chcete-li|Další informace naleznete v tématu|
 |---|---|  
-|Vytvoření izolované úložiště|[Jak: Získávání úložišť pro izolované úložiště](../../../../standard/io/how-to-obtain-stores-for-isolated-storage.md)|  
-|Zobrazení výčtu izolovaných úložišť|[Jak: Vytvoření výčtu úložišť pro izolované úložiště](../../../../standard/io/how-to-enumerate-stores-for-isolated-storage.md)|  
-|Odstranit izolované úložiště|[Jak: Odstraňování úložišť v izolovaném úložišti](../../../../standard/io/how-to-delete-stores-in-isolated-storage.md)|  
-|Vytvořit soubor nebo adresář v izolovaném úložišti|[Jak: Vytváření souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|  
-|Hledání souboru v izolovaném úložišti|[Jak: Hledání existujících souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|  
-|Čtení nebo zápis do souboru v izolovaném úložišti|[Jak: Čtení a zápis do souborů v izolovaném úložišti](../../../../standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|  
-|Odstranit soubor nebo adresář v izolovaném úložišti|[Jak: Odstraňování souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|  
+|Vytvoření izolované úložiště|[Postupy: Získávání úložišť pro izolované úložiště](../../../../standard/io/how-to-obtain-stores-for-isolated-storage.md)|  
+|Zobrazení výčtu izolovaných úložišť|[Postupy: Vytvoření výčtu úložišť pro izolované úložiště](../../../../standard/io/how-to-enumerate-stores-for-isolated-storage.md)|  
+|Odstranit izolované úložiště|[Postupy: Odstraňování úložišť v izolovaném úložišti](../../../../standard/io/how-to-delete-stores-in-isolated-storage.md)|  
+|Vytvořit soubor nebo adresář v izolovaném úložišti|[Postupy: Vytváření souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|  
+|Hledání souboru v izolovaném úložišti|[Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|  
+|Čtení nebo zápis do souboru v izolovaném úložišti|[Postupy: Čtení a zápis do souborů v izolovaném úložišti](../../../../standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|  
+|Odstranit soubor nebo adresář v izolovaném úložišti|[Postupy: Odstraňování souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|  
   
 ## <a name="file-events"></a>Soubor událostí  
  <xref:System.IO.FileSystemWatcher> Komponenta umožňuje sledovat změny souborů a adresářů v systému nebo v libovolném počítači, ke kterému máte přístup k síti. Pokud se změní soubor, můžete chtít odeslat oznámení změny proběhla uživatele. Při změnách, jeden nebo více událostí jsou aktivovaná, uloženy ve vyrovnávací paměti a předána <xref:System.IO.FileSystemWatcher> komponent pro zpracování.  
   
-## <a name="see-also"></a>Viz také  
- [Skládání streamů](../../../../standard/io/composing-streams.md)  
- [Vstup/výstup souborů a streamů](../../../../standard/io/index.md)  
- [Asynchronní vstupně-výstupní operace se soubory](../../../../standard/io/asynchronous-file-i-o.md)  
- [Třídy používané ve vstupně-výstupní operace souboru rozhraní .NET Framework a systému souborů (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)
+## <a name="see-also"></a>Viz také:
+- [Skládání streamů](../../../../standard/io/composing-streams.md)
+- [Vstup/výstup souborů a streamů](../../../../standard/io/index.md)
+- [Asynchronní vstupně-výstupní operace se soubory](../../../../standard/io/asynchronous-file-i-o.md)
+- [Třídy používané ve vstupně-výstupní operace souboru rozhraní .NET Framework a systému souborů (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)
