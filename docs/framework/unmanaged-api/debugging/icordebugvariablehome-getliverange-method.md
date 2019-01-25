@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c0f9c586a9e95fc2e57c4956601f6dce2b988159
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 894629b7cc1c48eb6c1820c65a0a2a41332a8080
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423062"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54549688"
 ---
-# <a name="icordebugvariablehomegetliverange-method"></a><span data-ttu-id="a62fa-102">IcorDebugVariableHome::GetLiveRange – metoda</span><span class="sxs-lookup"><span data-stu-id="a62fa-102">IcorDebugVariableHome::GetLiveRange Method</span></span>
-<span data-ttu-id="a62fa-103">Získá nativní rozsahu, za které je tato proměnná za provozu.</span><span class="sxs-lookup"><span data-stu-id="a62fa-103">Gets the native range over which this variable is live.</span></span>  
+# <a name="icordebugvariablehomegetliverange-method"></a><span data-ttu-id="888a5-102">IcorDebugVariableHome::GetLiveRange – metoda</span><span class="sxs-lookup"><span data-stu-id="888a5-102">IcorDebugVariableHome::GetLiveRange Method</span></span>
+<span data-ttu-id="888a5-103">Získá nativní rozsah nad tím, které tato proměnná je v provozu.</span><span class="sxs-lookup"><span data-stu-id="888a5-103">Gets the native range over which this variable is live.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a62fa-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a62fa-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="888a5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="888a5-104">Syntax</span></span>  
   
 ```  
 HRESULT GetLiveRange(  
@@ -36,21 +36,21 @@ HRESULT GetLiveRange(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="a62fa-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a62fa-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="888a5-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="888a5-105">Parameters</span></span>  
  `pStartOffset`  
- <span data-ttu-id="a62fa-106">[out] Logické posun, na které proměnné jsou první za provozu.</span><span class="sxs-lookup"><span data-stu-id="a62fa-106">[out] The logical offset at which the variable is first live.</span></span>  
+ <span data-ttu-id="888a5-106">[out] Logický posun jakou proměnná je první za provozu.</span><span class="sxs-lookup"><span data-stu-id="888a5-106">[out] The logical offset at which the variable is first live.</span></span>  
   
  `pEndOffset`  
- <span data-ttu-id="a62fa-107">[out] Logické posun ihned po bodu, na které proměnné jsou poslední za provozu.</span><span class="sxs-lookup"><span data-stu-id="a62fa-107">[out] The logical offset immediately after the point at which the variable is last live.</span></span>  
+ <span data-ttu-id="888a5-107">[out] Logický posun hned od chvíle, kdy je proměnná poslední za provozu.</span><span class="sxs-lookup"><span data-stu-id="888a5-107">[out] The logical offset immediately after the point at which the variable is last live.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a62fa-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a62fa-108">Requirements</span></span>  
- <span data-ttu-id="a62fa-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a62fa-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="888a5-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="888a5-108">Requirements</span></span>  
+ <span data-ttu-id="888a5-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="888a5-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a62fa-110">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a62fa-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="888a5-110">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="888a5-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="a62fa-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a62fa-111">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="888a5-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="888a5-111">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="a62fa-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a62fa-112">**.NET Framework Versions:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]</span></span>  
+ <span data-ttu-id="888a5-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="888a5-112">**.NET Framework Versions:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a62fa-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="a62fa-113">See Also</span></span>  
- [<span data-ttu-id="a62fa-114">ICorDebugVariableHome – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a62fa-114">ICorDebugVariableHome Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
+## <a name="see-also"></a><span data-ttu-id="888a5-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="888a5-113">See also</span></span>
+- [<span data-ttu-id="888a5-114">ICorDebugVariableHome – rozhraní</span><span class="sxs-lookup"><span data-stu-id="888a5-114">ICorDebugVariableHome Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)

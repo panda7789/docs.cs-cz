@@ -7,37 +7,37 @@ helpviewer_keywords:
 - animation [WPF], key-frame
 - key frames [WPF], how-to topics
 ms.assetid: a5f9ab1a-d14c-4816-8540-3c5b8c8143d5
-ms.openlocfilehash: 4efd6ea1ee5987efcabb038152fca7f1ed90c8f5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6571ee16b54c7b22d65567c8d3347cfe4a7936fa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33561960"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54510426"
 ---
-# <a name="key-frame-animation-how-to-topics"></a><span data-ttu-id="37380-102">Postupy: Témata animace klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-102">Key-Frame Animation How-to Topics</span></span>
-<span data-ttu-id="37380-103">Témata v této části ukazují, jak používat klíčových snímků animace k více než dvě hodnoty vlastností a interpolace ovládacího prvku animace.</span><span class="sxs-lookup"><span data-stu-id="37380-103">The topics in this section demonstrate how to use key frame animations to animate more than two property values and control interpolation.</span></span>  
+# <a name="key-frame-animation-how-to-topics"></a><span data-ttu-id="c04fa-102">Postupy: Témata animace klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-102">Key-Frame Animation How-to Topics</span></span>
+<span data-ttu-id="c04fa-103">Témata v této části ukazují, jak více než dvě hodnoty vlastností a ovládacího prvku interpolace animace pomocí klíčových snímků animace.</span><span class="sxs-lookup"><span data-stu-id="c04fa-103">The topics in this section demonstrate how to use key frame animations to animate more than two property values and control interpolation.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="37380-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="37380-104">In This Section</span></span>  
- [<span data-ttu-id="37380-105">Animace objektu pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-105">Animate an Object by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-object-by-using-key-frames.md)  
- [<span data-ttu-id="37380-106">Animace logické hodnoty pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-106">Animate a Boolean by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-boolean-by-using-key-frames.md)  
- [<span data-ttu-id="37380-107">Animace dvojice pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-107">Animate a Double by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-double-by-using-key-frames.md)  
- [<span data-ttu-id="37380-108">Animace matice pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-108">Animate a Matrix by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-matrix-by-using-key-frames.md)  
- [<span data-ttu-id="37380-109">Animace bodu pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-109">Animate a Point by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-point-by-using-key-frames.md)  
- [<span data-ttu-id="37380-110">Animace obdélníkové geometrie pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-110">Animate a Rectangle Geometry by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-rectangle-geometry-by-using-key-frames.md)  
- [<span data-ttu-id="37380-111">Animace řetězce pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-111">Animate a String by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-string-by-using-key-frames.md)  
- [<span data-ttu-id="37380-112">Animace barev pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-112">Animate Color by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-color-by-using-key-frames.md)  
- [<span data-ttu-id="37380-113">Animace změn velikosti pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-113">Animate Size Changes by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-size-changes-by-using-key-frames.md)  
- [<span data-ttu-id="37380-114">Animace tloušťky ohraničení pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-114">Animate the Thickness of a Border by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-thickness-of-a-border-by-using-key-frames.md)  
- [<span data-ttu-id="37380-115">Řízení časování pro animace klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-115">Control Key-Frame Animation Timing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-key-frame-animation-timing.md)  
+## <a name="in-this-section"></a><span data-ttu-id="c04fa-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c04fa-104">In This Section</span></span>  
+ [<span data-ttu-id="c04fa-105">Animace objektu pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-105">Animate an Object by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-object-by-using-key-frames.md)  
+ [<span data-ttu-id="c04fa-106">Animace logické hodnoty pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-106">Animate a Boolean by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-boolean-by-using-key-frames.md)  
+ [<span data-ttu-id="c04fa-107">Animace dvojice pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-107">Animate a Double by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-double-by-using-key-frames.md)  
+ [<span data-ttu-id="c04fa-108">Animace matice pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-108">Animate a Matrix by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-matrix-by-using-key-frames.md)  
+ [<span data-ttu-id="c04fa-109">Animace bodu pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-109">Animate a Point by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-point-by-using-key-frames.md)  
+ [<span data-ttu-id="c04fa-110">Animace obdélníkové geometrie pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-110">Animate a Rectangle Geometry by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-rectangle-geometry-by-using-key-frames.md)  
+ [<span data-ttu-id="c04fa-111">Animace řetězce pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-111">Animate a String by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-string-by-using-key-frames.md)  
+ [<span data-ttu-id="c04fa-112">Animace barev pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-112">Animate Color by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-color-by-using-key-frames.md)  
+ [<span data-ttu-id="c04fa-113">Animace změn velikosti pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-113">Animate Size Changes by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-size-changes-by-using-key-frames.md)  
+ [<span data-ttu-id="c04fa-114">Animace tloušťky ohraničení pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-114">Animate the Thickness of a Border by Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-thickness-of-a-border-by-using-key-frames.md)  
+ [<span data-ttu-id="c04fa-115">Řízení časování pro animace klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-115">Control Key-Frame Animation Timing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-key-frame-animation-timing.md)  
   
-## <a name="reference"></a><span data-ttu-id="37380-116">Odkaz</span><span class="sxs-lookup"><span data-stu-id="37380-116">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="c04fa-116">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c04fa-116">Reference</span></span>  
  <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>  
   
  <xref:System.Windows.Media.Animation.Storyboard>  
   
  <xref:System.Windows.Media.Animation.KeyTime>  
   
-## <a name="see-also"></a><span data-ttu-id="37380-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="37380-117">See Also</span></span>  
- [<span data-ttu-id="37380-118">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="37380-118">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
- [<span data-ttu-id="37380-119">Přehled animace</span><span class="sxs-lookup"><span data-stu-id="37380-119">Animation Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [<span data-ttu-id="37380-120">Přehled animací klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="37380-120">Key-Frame Animations Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)
+## <a name="see-also"></a><span data-ttu-id="c04fa-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c04fa-117">See also</span></span>
+- [<span data-ttu-id="c04fa-118">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="c04fa-118">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+- [<span data-ttu-id="c04fa-119">Přehled animace</span><span class="sxs-lookup"><span data-stu-id="c04fa-119">Animation Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [<span data-ttu-id="c04fa-120">Přehled animací klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c04fa-120">Key-Frame Animations Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)
