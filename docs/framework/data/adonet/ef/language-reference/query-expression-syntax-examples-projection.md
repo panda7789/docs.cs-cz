@@ -1,64 +1,64 @@
 ---
-title: 'Příklady syntaxe výrazů dotazů: projekce'
+title: 'Příklady syntaxe výrazů dotazů: Projekce'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 079926c5-e6b5-4fb9-b4cf-9c63886dd626
-ms.openlocfilehash: cc50b2564d295f1c81feacdeb52008f9f0004adc
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: c12fdd70b7174d6e6fbae10d5132c9e3e2a7eb87
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43396623"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54733373"
 ---
-# <a name="query-expression-syntax-examples-projection"></a><span data-ttu-id="81a8f-102">Příklady syntaxe výrazů dotazů: projekce</span><span class="sxs-lookup"><span data-stu-id="81a8f-102">Query Expression Syntax Examples: Projection</span></span>
-<span data-ttu-id="81a8f-103">Příklady v tomto tématu ukazují, jak používat `Select` metoda a `From … From …` klíčová slova k dotazování [AdventureWorks Sales Model](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) pomocí syntaxe výrazu dotazu.</span><span class="sxs-lookup"><span data-stu-id="81a8f-103">The examples in this topic demonstrate how to use the `Select` method and the `From … From …` keywords to query the [AdventureWorks Sales Model](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) using query expression syntax.</span></span> <span data-ttu-id="81a8f-104">`From … From …` je ekvivalentní dotaz založený `SelectMany` metody.</span><span class="sxs-lookup"><span data-stu-id="81a8f-104">`From … From …` is the query based equivalent of the `SelectMany` method.</span></span> <span data-ttu-id="81a8f-105">Prodeje společnosti AdventureWorks model používaný v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.</span><span class="sxs-lookup"><span data-stu-id="81a8f-105">The AdventureWorks Sales model used in these examples is built from the Contact, Address, Product, SalesOrderHeader, and SalesOrderDetail tables in the AdventureWorks sample database.</span></span>  
+# <a name="query-expression-syntax-examples-projection"></a><span data-ttu-id="f973d-102">Příklady syntaxe výrazů dotazů: Projekce</span><span class="sxs-lookup"><span data-stu-id="f973d-102">Query Expression Syntax Examples: Projection</span></span>
+<span data-ttu-id="f973d-103">Příklady v tomto tématu ukazují, jak používat `Select` metoda a `From … From …` klíčová slova k dotazování [AdventureWorks Sales Model](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) pomocí syntaxe výrazu dotazu.</span><span class="sxs-lookup"><span data-stu-id="f973d-103">The examples in this topic demonstrate how to use the `Select` method and the `From … From …` keywords to query the [AdventureWorks Sales Model](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) using query expression syntax.</span></span> <span data-ttu-id="f973d-104">`From … From …` je ekvivalentní dotaz založený `SelectMany` metody.</span><span class="sxs-lookup"><span data-stu-id="f973d-104">`From … From …` is the query based equivalent of the `SelectMany` method.</span></span> <span data-ttu-id="f973d-105">Prodeje společnosti AdventureWorks model používaný v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.</span><span class="sxs-lookup"><span data-stu-id="f973d-105">The AdventureWorks Sales model used in these examples is built from the Contact, Address, Product, SalesOrderHeader, and SalesOrderDetail tables in the AdventureWorks sample database.</span></span>  
   
- <span data-ttu-id="81a8f-106">V příkladech v tomto tématu se používá následující `using` / `Imports` příkazy:</span><span class="sxs-lookup"><span data-stu-id="81a8f-106">The examples in this topic use the following `using`/`Imports` statements:</span></span>  
+ <span data-ttu-id="f973d-106">V příkladech v tomto tématu se používá následující `using` / `Imports` příkazy:</span><span class="sxs-lookup"><span data-stu-id="f973d-106">The examples in this topic use the following `using`/`Imports` statements:</span></span>  
   
  [!code-csharp[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#importsusing)]  
   
-## <a name="select"></a><span data-ttu-id="81a8f-107">Vyberte</span><span class="sxs-lookup"><span data-stu-id="81a8f-107">Select</span></span>  
+## <a name="select"></a><span data-ttu-id="f973d-107">Vyberte</span><span class="sxs-lookup"><span data-stu-id="f973d-107">Select</span></span>  
   
-### <a name="example"></a><span data-ttu-id="81a8f-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="81a8f-108">Example</span></span>  
- <span data-ttu-id="81a8f-109">V následujícím příkladu <xref:System.Linq.Enumerable.Select%2A> metody, která vrátí všechny řádky z `Product` tabulky a zobrazení názvů produktů.</span><span class="sxs-lookup"><span data-stu-id="81a8f-109">The following example uses the <xref:System.Linq.Enumerable.Select%2A> method to return all the rows from the `Product` table and display the product names.</span></span>  
+### <a name="example"></a><span data-ttu-id="f973d-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="f973d-108">Example</span></span>  
+ <span data-ttu-id="f973d-109">V následujícím příkladu <xref:System.Linq.Enumerable.Select%2A> metody, která vrátí všechny řádky z `Product` tabulky a zobrazení názvů produktů.</span><span class="sxs-lookup"><span data-stu-id="f973d-109">The following example uses the <xref:System.Linq.Enumerable.Select%2A> method to return all the rows from the `Product` table and display the product names.</span></span>  
   
  [!code-csharp[DP L2E Examples#SelectSimple1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#selectsimple1)]
  [!code-vb[DP L2E Examples#SelectSimple1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#selectsimple1)]  
   
-### <a name="example"></a><span data-ttu-id="81a8f-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="81a8f-110">Example</span></span>  
- <span data-ttu-id="81a8f-111">Následující příklad používá <xref:System.Linq.Enumerable.Select%2A> k vrácení sekvence pouze názvy produktů.</span><span class="sxs-lookup"><span data-stu-id="81a8f-111">The following example uses <xref:System.Linq.Enumerable.Select%2A> to return a sequence of only product names.</span></span>  
+### <a name="example"></a><span data-ttu-id="f973d-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="f973d-110">Example</span></span>  
+ <span data-ttu-id="f973d-111">Následující příklad používá <xref:System.Linq.Enumerable.Select%2A> k vrácení sekvence pouze názvy produktů.</span><span class="sxs-lookup"><span data-stu-id="f973d-111">The following example uses <xref:System.Linq.Enumerable.Select%2A> to return a sequence of only product names.</span></span>  
   
  [!code-csharp[DP L2E Examples#SelectSimple2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#selectsimple2)]
  [!code-vb[DP L2E Examples#SelectSimple2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#selectsimple2)]  
   
-### <a name="example"></a><span data-ttu-id="81a8f-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="81a8f-112">Example</span></span>  
- <span data-ttu-id="81a8f-113">V následujícím příkladu <xref:System.Linq.Queryable.Select%2A> metoda do projektu `Product.Name` a `Product.ProductID` vlastnosti na sekvenci anonymních typů.</span><span class="sxs-lookup"><span data-stu-id="81a8f-113">The following example uses the <xref:System.Linq.Queryable.Select%2A> method to project the `Product.Name` and `Product.ProductID` properties into a sequence of anonymous types.</span></span>  
+### <a name="example"></a><span data-ttu-id="f973d-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="f973d-112">Example</span></span>  
+ <span data-ttu-id="f973d-113">V následujícím příkladu <xref:System.Linq.Queryable.Select%2A> metoda do projektu `Product.Name` a `Product.ProductID` vlastnosti na sekvenci anonymních typů.</span><span class="sxs-lookup"><span data-stu-id="f973d-113">The following example uses the <xref:System.Linq.Queryable.Select%2A> method to project the `Product.Name` and `Product.ProductID` properties into a sequence of anonymous types.</span></span>  
   
  [!code-csharp[DP L2E Examples#SelectAnonymousTypes](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#selectanonymoustypes)]
  [!code-vb[DP L2E Examples#SelectAnonymousTypes](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#selectanonymoustypes)]  
   
-## <a name="from--from--selectmany"></a><span data-ttu-id="81a8f-114">Z...</span><span class="sxs-lookup"><span data-stu-id="81a8f-114">From …</span></span> <span data-ttu-id="81a8f-115">Z...</span><span class="sxs-lookup"><span data-stu-id="81a8f-115">From …</span></span> <span data-ttu-id="81a8f-116">(Operátor SelectMany)</span><span class="sxs-lookup"><span data-stu-id="81a8f-116">(SelectMany)</span></span>  
+## <a name="from--from--selectmany"></a><span data-ttu-id="f973d-114">Z...</span><span class="sxs-lookup"><span data-stu-id="f973d-114">From …</span></span> <span data-ttu-id="f973d-115">Z...</span><span class="sxs-lookup"><span data-stu-id="f973d-115">From …</span></span> <span data-ttu-id="f973d-116">(Operátor SelectMany)</span><span class="sxs-lookup"><span data-stu-id="f973d-116">(SelectMany)</span></span>  
   
-### <a name="example"></a><span data-ttu-id="81a8f-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="81a8f-117">Example</span></span>  
- <span data-ttu-id="81a8f-118">V následujícím příkladu `From … From …` (ekvivalent <xref:System.Linq.Enumerable.SelectMany%2A> metoda) Chcete-li vybrat všechny objednávky where `TotalDue` je menší než 500,00.</span><span class="sxs-lookup"><span data-stu-id="81a8f-118">The following example uses `From … From …` (the equivalent of the <xref:System.Linq.Enumerable.SelectMany%2A> method) to select all orders where `TotalDue` is less than 500.00.</span></span>  
+### <a name="example"></a><span data-ttu-id="f973d-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="f973d-117">Example</span></span>  
+ <span data-ttu-id="f973d-118">V následujícím příkladu `From … From …` (ekvivalent <xref:System.Linq.Enumerable.SelectMany%2A> metoda) Chcete-li vybrat všechny objednávky where `TotalDue` je menší než 500,00.</span><span class="sxs-lookup"><span data-stu-id="f973d-118">The following example uses `From … From …` (the equivalent of the <xref:System.Linq.Enumerable.SelectMany%2A> method) to select all orders where `TotalDue` is less than 500.00.</span></span>  
   
  [!code-csharp[DP L2E Examples#SelectManyCompoundFrom](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#selectmanycompoundfrom)]
  [!code-vb[DP L2E Examples#SelectManyCompoundFrom](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#selectmanycompoundfrom)]  
   
-### <a name="example"></a><span data-ttu-id="81a8f-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="81a8f-119">Example</span></span>  
- <span data-ttu-id="81a8f-120">V následujícím příkladu `From … From …` (ekvivalent <xref:System.Linq.Enumerable.SelectMany%2A> metoda) Chcete-li vybrat všechny objednávky, kde byla provedena pořadí 1. října 2002 nebo novější.</span><span class="sxs-lookup"><span data-stu-id="81a8f-120">The following example uses `From … From …` (the equivalent of the <xref:System.Linq.Enumerable.SelectMany%2A> method) to select all orders where the order was made on October 1, 2002 or later.</span></span>  
+### <a name="example"></a><span data-ttu-id="f973d-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="f973d-119">Example</span></span>  
+ <span data-ttu-id="f973d-120">V následujícím příkladu `From … From …` (ekvivalent <xref:System.Linq.Enumerable.SelectMany%2A> metoda) Chcete-li vybrat všechny objednávky, kde byla provedena pořadí 1. října 2002 nebo novější.</span><span class="sxs-lookup"><span data-stu-id="f973d-120">The following example uses `From … From …` (the equivalent of the <xref:System.Linq.Enumerable.SelectMany%2A> method) to select all orders where the order was made on October 1, 2002 or later.</span></span>  
   
  [!code-csharp[DP L2E Examples#SelectManyCompoundFrom2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#selectmanycompoundfrom2)]
  [!code-vb[DP L2E Examples#SelectManyCompoundFrom2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#selectmanycompoundfrom2)]  
   
-### <a name="example"></a><span data-ttu-id="81a8f-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="81a8f-121">Example</span></span>  
- <span data-ttu-id="81a8f-122">V následujícím příkladu `From … From …` (ekvivalent <xref:System.Linq.Enumerable.SelectMany%2A> metoda) Chcete-li vybrat všechny objednávky, kde je větší než 10000.00 a používá pořadí celkový počet `From` přiřazení žádosti o celkové dvakrát, aby.</span><span class="sxs-lookup"><span data-stu-id="81a8f-122">The following example uses a `From … From …` (the equivalent of the <xref:System.Linq.Enumerable.SelectMany%2A> method) to select all orders where the order total is greater than 10000.00 and uses `From` assignment to avoid requesting the total twice.</span></span>  
+### <a name="example"></a><span data-ttu-id="f973d-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="f973d-121">Example</span></span>  
+ <span data-ttu-id="f973d-122">V následujícím příkladu `From … From …` (ekvivalent <xref:System.Linq.Enumerable.SelectMany%2A> metoda) Chcete-li vybrat všechny objednávky, kde je větší než 10000.00 a používá pořadí celkový počet `From` přiřazení žádosti o celkové dvakrát, aby.</span><span class="sxs-lookup"><span data-stu-id="f973d-122">The following example uses a `From … From …` (the equivalent of the <xref:System.Linq.Enumerable.SelectMany%2A> method) to select all orders where the order total is greater than 10000.00 and uses `From` assignment to avoid requesting the total twice.</span></span>  
   
  [!code-csharp[DP L2E Examples#SelectManyFromAssignment](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#selectmanyfromassignment)]
  [!code-vb[DP L2E Examples#SelectManyFromAssignment](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#selectmanyfromassignment)]  
   
-## <a name="see-also"></a><span data-ttu-id="81a8f-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="81a8f-123">See Also</span></span>  
- [<span data-ttu-id="81a8f-124">Dotazy v technologii LINQ to Entities</span><span class="sxs-lookup"><span data-stu-id="81a8f-124">Queries in LINQ to Entities</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)
+## <a name="see-also"></a><span data-ttu-id="f973d-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f973d-123">See also</span></span>
+- [<span data-ttu-id="f973d-124">Dotazy v technologii LINQ to Entities</span><span class="sxs-lookup"><span data-stu-id="f973d-124">Queries in LINQ to Entities</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)

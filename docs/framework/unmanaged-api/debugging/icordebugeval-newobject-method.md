@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ff378602fc7338263ef49aee6802d2138bab9d2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9ff4f86105fd1dfbd12360c01046492f3a6dbdcd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413169"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54589886"
 ---
-# <a name="icordebugevalnewobject-method"></a><span data-ttu-id="d5f84-102">ICorDebugEval::NewObject – metoda</span><span class="sxs-lookup"><span data-stu-id="d5f84-102">ICorDebugEval::NewObject Method</span></span>
-<span data-ttu-id="d5f84-103">Přidělí nové instance objektu a volá metodu zadané konstruktor.</span><span class="sxs-lookup"><span data-stu-id="d5f84-103">Allocates a new object instance and calls the specified constructor method.</span></span>  
+# <a name="icordebugevalnewobject-method"></a><span data-ttu-id="480f8-102">ICorDebugEval::NewObject – metoda</span><span class="sxs-lookup"><span data-stu-id="480f8-102">ICorDebugEval::NewObject Method</span></span>
+<span data-ttu-id="480f8-103">Přidělí novou instanci objektu a volá metodu zadaný konstruktor.</span><span class="sxs-lookup"><span data-stu-id="480f8-103">Allocates a new object instance and calls the specified constructor method.</span></span>  
   
- <span data-ttu-id="d5f84-104">Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="d5f84-104">This method is obsolete in the .NET Framework version 2.0.</span></span> <span data-ttu-id="d5f84-105">Použití [icordebugeval2::newparameterizedobject –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md) místo.</span><span class="sxs-lookup"><span data-stu-id="d5f84-105">Use [ICorDebugEval2::NewParameterizedObject](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md) instead.</span></span>  
+ <span data-ttu-id="480f8-104">Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="480f8-104">This method is obsolete in the .NET Framework version 2.0.</span></span> <span data-ttu-id="480f8-105">Použití [icordebugeval2::newparameterizedobject –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md) místo.</span><span class="sxs-lookup"><span data-stu-id="480f8-105">Use [ICorDebugEval2::NewParameterizedObject](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md) instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d5f84-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d5f84-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="480f8-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="480f8-106">Syntax</span></span>  
   
 ```  
 HRESULT NewObject (  
@@ -39,24 +39,24 @@ HRESULT NewObject (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="d5f84-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="d5f84-107">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="480f8-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="480f8-107">Parameters</span></span>  
  `pConstructor`  
- <span data-ttu-id="d5f84-108">[v] Konstruktor, který má být volána.</span><span class="sxs-lookup"><span data-stu-id="d5f84-108">[in] The constructor to be called.</span></span>  
+ <span data-ttu-id="480f8-108">[in] Konstruktor, který má být volána.</span><span class="sxs-lookup"><span data-stu-id="480f8-108">[in] The constructor to be called.</span></span>  
   
  `nArgs`  
- <span data-ttu-id="d5f84-109">[v] Velikost `ppArgs` pole.</span><span class="sxs-lookup"><span data-stu-id="d5f84-109">[in] The size of the `ppArgs` array.</span></span>  
+ <span data-ttu-id="480f8-109">[in] Velikost `ppArgs` pole.</span><span class="sxs-lookup"><span data-stu-id="480f8-109">[in] The size of the `ppArgs` array.</span></span>  
   
  `ppArgs`  
- <span data-ttu-id="d5f84-110">[v] Pole objektů ICorDebugValue, z nichž každý představuje argument mají být předány konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="d5f84-110">[in] An array of ICorDebugValue objects, each of which represents an argument to be passed to the constructor.</span></span>  
+ <span data-ttu-id="480f8-110">[in] Pole objektů ICorDebugValue, z nichž každý představuje argument předaný do konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="480f8-110">[in] An array of ICorDebugValue objects, each of which represents an argument to be passed to the constructor.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d5f84-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d5f84-111">Requirements</span></span>  
- <span data-ttu-id="d5f84-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d5f84-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="480f8-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="480f8-111">Requirements</span></span>  
+ <span data-ttu-id="480f8-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="480f8-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d5f84-113">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="d5f84-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="480f8-113">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="480f8-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="d5f84-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d5f84-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="480f8-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="480f8-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="d5f84-115">**Verze rozhraní .NET framework:** 1.1, 1.0</span><span class="sxs-lookup"><span data-stu-id="d5f84-115">**.NET Framework Versions:** 1.1, 1.0</span></span>  
+ <span data-ttu-id="480f8-115">**Verze rozhraní .NET framework:** 1.1, 1.0</span><span class="sxs-lookup"><span data-stu-id="480f8-115">**.NET Framework Versions:** 1.1, 1.0</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d5f84-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="d5f84-116">See Also</span></span>  
- [<span data-ttu-id="d5f84-117">NewParameterizedObject – metoda</span><span class="sxs-lookup"><span data-stu-id="d5f84-117">NewParameterizedObject Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md)
+## <a name="see-also"></a><span data-ttu-id="480f8-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="480f8-116">See also</span></span>
+- [<span data-ttu-id="480f8-117">NewParameterizedObject – metoda</span><span class="sxs-lookup"><span data-stu-id="480f8-117">NewParameterizedObject Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md)

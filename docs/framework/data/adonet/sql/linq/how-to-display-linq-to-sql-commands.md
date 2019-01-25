@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: zobrazení LINQ SQL příkazy'
+title: 'Postupy: Zobrazení technologie LINQ to SQL příkazy'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1decb05e-37ad-4ed6-ab2f-071eb4c4f628
-ms.openlocfilehash: 2be4096f03fe73f417b4b1871ebfc3b4f0f67206
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a70f1e0dd471e86afe2e744c157d4aed2a217deb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33359888"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54630824"
 ---
-# <a name="how-to-display-linq-to-sql-commands"></a><span data-ttu-id="a5db6-102">Postupy: zobrazení LINQ SQL příkazy</span><span class="sxs-lookup"><span data-stu-id="a5db6-102">How to: Display LINQ to SQL Commands</span></span>
-<span data-ttu-id="a5db6-103">Použití <xref:System.Data.Linq.DataContext.GetCommand%2A> zobrazíte příkazy SQL a další informace.</span><span class="sxs-lookup"><span data-stu-id="a5db6-103">Use <xref:System.Data.Linq.DataContext.GetCommand%2A> to display SQL commands and other information.</span></span>  
+# <a name="how-to-display-linq-to-sql-commands"></a><span data-ttu-id="30a94-102">Postupy: Zobrazení technologie LINQ to SQL příkazy</span><span class="sxs-lookup"><span data-stu-id="30a94-102">How to: Display LINQ to SQL Commands</span></span>
+<span data-ttu-id="30a94-103">Použití <xref:System.Data.Linq.DataContext.GetCommand%2A> zobrazit příkazy jazyka SQL a další informace.</span><span class="sxs-lookup"><span data-stu-id="30a94-103">Use <xref:System.Data.Linq.DataContext.GetCommand%2A> to display SQL commands and other information.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="a5db6-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="a5db6-104">Example</span></span>  
- <span data-ttu-id="a5db6-105">V následujícím příkladu se zobrazí v okně konzoly výstup z dotazu, za nímž následuje příkazy SQL, které jsou generovány, typ příkazů a typ připojení.</span><span class="sxs-lookup"><span data-stu-id="a5db6-105">In the following example, the console window displays the output from the query, followed by the SQL commands that are generated, the type of commands, and the type of connection.</span></span>  
+## <a name="example"></a><span data-ttu-id="30a94-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="30a94-104">Example</span></span>  
+ <span data-ttu-id="30a94-105">V následujícím příkladu se v okně konzoly se zobrazí výstup z dotazu, za nímž následuje příkazy SQL, které jsou generovány, typ příkazů a typ připojení.</span><span class="sxs-lookup"><span data-stu-id="30a94-105">In the following example, the console window displays the output from the query, followed by the SQL commands that are generated, the type of commands, and the type of connection.</span></span>  
   
  [!code-csharp[DLinqDebuggingSupport#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqDebuggingSupport/cs/Program.cs#3)]
  [!code-vb[DLinqDebuggingSupport#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqDebuggingSupport/vb/Module1.vb#3)]  
   
- <span data-ttu-id="a5db6-106">Zobrazí se následující výstup:</span><span class="sxs-lookup"><span data-stu-id="a5db6-106">Output appears as follows:</span></span>  
+ <span data-ttu-id="30a94-106">Zobrazí se následující výstup:</span><span class="sxs-lookup"><span data-stu-id="30a94-106">Output appears as follows:</span></span>  
   
 ```  
 Customers from London:  
@@ -48,5 +48,5 @@ Command Type: Text
 Connection: System.Data.SqlClient.SqlConnection  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="a5db6-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="a5db6-107">See Also</span></span>  
- [<span data-ttu-id="a5db6-108">Podpora ladění</span><span class="sxs-lookup"><span data-stu-id="a5db6-108">Debugging Support</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)
+## <a name="see-also"></a><span data-ttu-id="30a94-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="30a94-107">See also</span></span>
+- [<span data-ttu-id="30a94-108">Podpora ladění</span><span class="sxs-lookup"><span data-stu-id="30a94-108">Debugging Support</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)

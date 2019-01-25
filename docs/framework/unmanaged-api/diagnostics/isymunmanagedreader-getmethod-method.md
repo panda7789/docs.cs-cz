@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e9f1056d8d5ec4486e748d3b079507943a8a72ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: deb5d7aa24cf750a9584ef2aa32d10816ec12f57
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430635"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54614403"
 ---
-# <a name="isymunmanagedreadergetmethod-method"></a><span data-ttu-id="b6b42-102">ISymUnmanagedReader::GetMethod – metoda</span><span class="sxs-lookup"><span data-stu-id="b6b42-102">ISymUnmanagedReader::GetMethod Method</span></span>
-<span data-ttu-id="b6b42-103">Získá metody čtečky symbol, zadaný token metoda.</span><span class="sxs-lookup"><span data-stu-id="b6b42-103">Gets a symbol reader method, given a method token.</span></span>  
+# <a name="isymunmanagedreadergetmethod-method"></a><span data-ttu-id="a9811-102">ISymUnmanagedReader::GetMethod – metoda</span><span class="sxs-lookup"><span data-stu-id="a9811-102">ISymUnmanagedReader::GetMethod Method</span></span>
+<span data-ttu-id="a9811-103">Získá metodu čtečky symbolů daný token metody.</span><span class="sxs-lookup"><span data-stu-id="a9811-103">Gets a symbol reader method, given a method token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b6b42-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b6b42-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a9811-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a9811-104">Syntax</span></span>  
   
 ```  
 HRESULT GetMethod (  
@@ -35,18 +35,18 @@ HRESULT GetMethod (
     [out, retval] ISymUnmanagedMethod**  pRetVal);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="b6b42-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b6b42-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="a9811-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a9811-105">Parameters</span></span>  
  `token`  
- <span data-ttu-id="b6b42-106">[v] Metoda token.</span><span class="sxs-lookup"><span data-stu-id="b6b42-106">[in] The method token.</span></span>  
+ <span data-ttu-id="a9811-106">[in] Token metody.</span><span class="sxs-lookup"><span data-stu-id="a9811-106">[in] The method token.</span></span>  
   
  `pRetVal`  
- <span data-ttu-id="b6b42-107">[out] Ukazatel rozhraní vrácená.</span><span class="sxs-lookup"><span data-stu-id="b6b42-107">[out] A pointer to the returned interface.</span></span>  
+ <span data-ttu-id="a9811-107">[out] Ukazatel na vrácené rozhraní.</span><span class="sxs-lookup"><span data-stu-id="a9811-107">[out] A pointer to the returned interface.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="b6b42-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b6b42-108">Return Value</span></span>  
- <span data-ttu-id="b6b42-109">S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="b6b42-109">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="a9811-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="a9811-108">Return Value</span></span>  
+ <span data-ttu-id="a9811-109">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="a9811-109">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b6b42-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b6b42-110">Requirements</span></span>  
- <span data-ttu-id="b6b42-111">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="b6b42-111">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a9811-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a9811-110">Requirements</span></span>  
+ <span data-ttu-id="a9811-111">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="a9811-111">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b6b42-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="b6b42-112">See Also</span></span>  
- [<span data-ttu-id="b6b42-113">ISymUnmanagedReader – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b6b42-113">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a><span data-ttu-id="a9811-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a9811-112">See also</span></span>
+- [<span data-ttu-id="a9811-113">ISymUnmanagedReader – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a9811-113">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

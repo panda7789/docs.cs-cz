@@ -7,26 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - My.Response object
 ms.assetid: 626359bc-3165-40b4-bfaf-2c610e26eb5b
-ms.openlocfilehash: d5f49529a2593093a234babc22f64b591ea3cc61
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: c133e46b1adff0c100d49c4bfe5e17db4314a0bb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47399804"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54738810"
 ---
-# <a name="myresponse-object"></a><span data-ttu-id="cd33c-102">My.Response – objekt</span><span class="sxs-lookup"><span data-stu-id="cd33c-102">My.Response Object</span></span>
-<span data-ttu-id="cd33c-103">Získá <xref:System.Web.HttpResponse> objekt přidružený k <xref:System.Web.UI.Page>.</span><span class="sxs-lookup"><span data-stu-id="cd33c-103">Gets the <xref:System.Web.HttpResponse> object associated with the <xref:System.Web.UI.Page>.</span></span> <span data-ttu-id="cd33c-104">Tento objekt umožňuje odeslat data odpovědi HTTP do klienta a obsahuje informace o této odpovědi.</span><span class="sxs-lookup"><span data-stu-id="cd33c-104">This object allows you to send HTTP response data to a client and contains information about that response.</span></span>  
+# <a name="myresponse-object"></a><span data-ttu-id="dda04-102">My.Response – objekt</span><span class="sxs-lookup"><span data-stu-id="dda04-102">My.Response Object</span></span>
+<span data-ttu-id="dda04-103">Získá <xref:System.Web.HttpResponse> objekt přidružený k <xref:System.Web.UI.Page>.</span><span class="sxs-lookup"><span data-stu-id="dda04-103">Gets the <xref:System.Web.HttpResponse> object associated with the <xref:System.Web.UI.Page>.</span></span> <span data-ttu-id="dda04-104">Tento objekt umožňuje odeslat data odpovědi HTTP do klienta a obsahuje informace o této odpovědi.</span><span class="sxs-lookup"><span data-stu-id="dda04-104">This object allows you to send HTTP response data to a client and contains information about that response.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="cd33c-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="cd33c-105">Remarks</span></span>  
- <span data-ttu-id="cd33c-106">`My.Response` Objekt obsahuje aktuální <xref:System.Web.HttpResponse> objekt přidružený k stránky.</span><span class="sxs-lookup"><span data-stu-id="cd33c-106">The `My.Response` object contains the current <xref:System.Web.HttpResponse> object associated with the page.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="dda04-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="dda04-105">Remarks</span></span>  
+ <span data-ttu-id="dda04-106">`My.Response` Objekt obsahuje aktuální <xref:System.Web.HttpResponse> objekt přidružený k stránky.</span><span class="sxs-lookup"><span data-stu-id="dda04-106">The `My.Response` object contains the current <xref:System.Web.HttpResponse> object associated with the page.</span></span>  
   
- <span data-ttu-id="cd33c-107">`My.Response` Objektu je dostupná jenom pro [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] aplikací.</span><span class="sxs-lookup"><span data-stu-id="cd33c-107">The `My.Response` object is only available for [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] applications.</span></span>  
+ <span data-ttu-id="dda04-107">`My.Response` Objektu je dostupná jenom pro [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] aplikací.</span><span class="sxs-lookup"><span data-stu-id="dda04-107">The `My.Response` object is only available for [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] applications.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="cd33c-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="cd33c-108">Example</span></span>  
- <span data-ttu-id="cd33c-109">Následující příklad získá kolekci hlaviček z `My.Request` a použije `My.Response` objekt k zápisu na stránku ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="cd33c-109">The following example gets the header collection from the `My.Request` object and uses the `My.Response` object to write it to the ASP.NET page.</span></span>  
+## <a name="example"></a><span data-ttu-id="dda04-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="dda04-108">Example</span></span>  
+ <span data-ttu-id="dda04-109">Následující příklad získá kolekci hlaviček z `My.Request` a použije `My.Response` objekt k zápisu na stránku ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="dda04-109">The following example gets the header collection from the `My.Request` object and uses the `My.Response` object to write it to the ASP.NET page.</span></span>  
   
  [!code-vb[VbVbalrMyWeb#1](../../../visual-basic/language-reference/objects/codesnippet/VisualBasic/my-response-object_1.aspx)]  
   
-## <a name="see-also"></a><span data-ttu-id="cd33c-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="cd33c-110">See Also</span></span>  
- <xref:System.Web.HttpResponse>  
- [<span data-ttu-id="cd33c-111">Objekt My.Request</span><span class="sxs-lookup"><span data-stu-id="cd33c-111">My.Request Object</span></span>](../../../visual-basic/language-reference/objects/my-request-object.md)
+## <a name="see-also"></a><span data-ttu-id="dda04-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dda04-110">See also</span></span>
+- <xref:System.Web.HttpResponse>
+- [<span data-ttu-id="dda04-111">Objekt My.Request</span><span class="sxs-lookup"><span data-stu-id="dda04-111">My.Request Object</span></span>](../../../visual-basic/language-reference/objects/my-request-object.md)

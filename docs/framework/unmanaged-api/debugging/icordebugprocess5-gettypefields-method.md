@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 214fc97e41d8d220547a5f8bd28117ff411fa89b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3f688993bfd8e6bef66451b075a49f31efe641cb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418402"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54497102"
 ---
-# <a name="icordebugprocess5gettypefields-method"></a><span data-ttu-id="db7c6-102">ICorDebugProcess5::GetTypeFields – metoda</span><span class="sxs-lookup"><span data-stu-id="db7c6-102">ICorDebugProcess5::GetTypeFields Method</span></span>
-<span data-ttu-id="db7c6-103">Poskytuje informace o pole, které patří do typu.</span><span class="sxs-lookup"><span data-stu-id="db7c6-103">Provides information about the fields that belong to a type.</span></span>  
+# <a name="icordebugprocess5gettypefields-method"></a><span data-ttu-id="a1c8f-102">ICorDebugProcess5::GetTypeFields – metoda</span><span class="sxs-lookup"><span data-stu-id="a1c8f-102">ICorDebugProcess5::GetTypeFields Method</span></span>
+<span data-ttu-id="a1c8f-103">Poskytuje informace o polích, které patří k typu.</span><span class="sxs-lookup"><span data-stu-id="a1c8f-103">Provides information about the fields that belong to a type.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="db7c6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="db7c6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a1c8f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a1c8f-104">Syntax</span></span>  
   
 ```  
 HRESULT GetTypeFields(  
@@ -38,31 +38,31 @@ HRESULT GetTypeFields(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="db7c6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="db7c6-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="a1c8f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a1c8f-105">Parameters</span></span>  
  `id`  
- <span data-ttu-id="db7c6-106">[v] Identifikátor typu je načíst informace o jejichž pole.</span><span class="sxs-lookup"><span data-stu-id="db7c6-106">[in] The identifier of the type whose field information is retrieved.</span></span>  
+ <span data-ttu-id="a1c8f-106">[in] Identifikátor typu, jehož informace v poli je načten.</span><span class="sxs-lookup"><span data-stu-id="a1c8f-106">[in] The identifier of the type whose field information is retrieved.</span></span>  
   
  `celt`  
- <span data-ttu-id="db7c6-107">[v] Počet [cor_field –](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md) objekty, jejichž informace pole se mají být načteny.</span><span class="sxs-lookup"><span data-stu-id="db7c6-107">[in] The number of [COR_FIELD](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md) objects whose field information is to be retrieved.</span></span>  
+ <span data-ttu-id="a1c8f-107">[in] Počet [cor_field –](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md) objekty, jejichž informace z pole má být načtena.</span><span class="sxs-lookup"><span data-stu-id="a1c8f-107">[in] The number of [COR_FIELD](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md) objects whose field information is to be retrieved.</span></span>  
   
  `fields`  
- <span data-ttu-id="db7c6-108">[out] Pole [cor_field –](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md) objekty, které obsahují informace o pole, které patří k typu.</span><span class="sxs-lookup"><span data-stu-id="db7c6-108">[out] An array of [COR_FIELD](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md) objects that provide information about the fields that belong to the type.</span></span>  
+ <span data-ttu-id="a1c8f-108">[out] Pole [cor_field –](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md) objekty, které poskytují informace o polích, které patří do typu.</span><span class="sxs-lookup"><span data-stu-id="a1c8f-108">[out] An array of [COR_FIELD](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md) objects that provide information about the fields that belong to the type.</span></span>  
   
  `pceltNeeded`  
- <span data-ttu-id="db7c6-109">[out] Ukazatel na počet [cor_field –](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md) objektů obsažených v `fields`.</span><span class="sxs-lookup"><span data-stu-id="db7c6-109">[out] A pointer to the number of [COR_FIELD](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md) objects included in `fields`.</span></span>  
+ <span data-ttu-id="a1c8f-109">[out] Ukazatel na počet [cor_field –](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md) objektů obsažených v `fields`.</span><span class="sxs-lookup"><span data-stu-id="a1c8f-109">[out] A pointer to the number of [COR_FIELD](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md) objects included in `fields`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="db7c6-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="db7c6-110">Remarks</span></span>  
- <span data-ttu-id="db7c6-111">`celt` Parametr, který určuje počet polí, jejichž pole informace metoda používá k naplnění `fields`, by měla odpovídat hodnotě `COR_TYPE_LAYOUT::numFields` pole.</span><span class="sxs-lookup"><span data-stu-id="db7c6-111">The `celt` parameter, which specifies the number of fields whose field information the method uses to populate `fields`, should correspond to the value of the `COR_TYPE_LAYOUT::numFields` field.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="a1c8f-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a1c8f-110">Remarks</span></span>  
+ <span data-ttu-id="a1c8f-111">`celt` Parametr, který určuje počet polí, jejichž informace v poli Metoda používá k naplnění `fields`, by měl odpovídat hodnotě `COR_TYPE_LAYOUT::numFields` pole.</span><span class="sxs-lookup"><span data-stu-id="a1c8f-111">The `celt` parameter, which specifies the number of fields whose field information the method uses to populate `fields`, should correspond to the value of the `COR_TYPE_LAYOUT::numFields` field.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="db7c6-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="db7c6-112">Requirements</span></span>  
- <span data-ttu-id="db7c6-113">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="db7c6-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a1c8f-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a1c8f-112">Requirements</span></span>  
+ <span data-ttu-id="a1c8f-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a1c8f-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="db7c6-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="db7c6-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="a1c8f-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a1c8f-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="db7c6-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="db7c6-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="a1c8f-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a1c8f-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="db7c6-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="db7c6-116">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="a1c8f-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a1c8f-116">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="db7c6-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="db7c6-117">See Also</span></span>  
- [<span data-ttu-id="db7c6-118">ICorDebugProcess5 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="db7c6-118">ICorDebugProcess5 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)  
- [<span data-ttu-id="db7c6-119">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="db7c6-119">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="a1c8f-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a1c8f-117">See also</span></span>
+- [<span data-ttu-id="a1c8f-118">ICorDebugProcess5 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a1c8f-118">ICorDebugProcess5 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
+- [<span data-ttu-id="a1c8f-119">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="a1c8f-119">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

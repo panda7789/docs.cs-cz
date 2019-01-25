@@ -6,23 +6,23 @@ helpviewer_keywords:
 - TAB key [Windows Forms], enabling
 - ToolStrip control [Windows Forms], moving from
 ms.assetid: 40f9e88b-09a3-428e-8da8-c00bb65079c6
-ms.openlocfilehash: 0af6c4c308ac1988b5f1babd80897afd5bf6a4d5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a98c8a54389daa898c877a08f8cc2cae46a11da9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33531205"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54663067"
 ---
-# <a name="how-to-enable-the-tab-key-to-move-out-of-a-toolstrip-control"></a><span data-ttu-id="36a44-102">Postupy: Povolení klávesy TAB pro přesun mimo ovládací prvek ToolStrip</span><span class="sxs-lookup"><span data-stu-id="36a44-102">How to: Enable the TAB Key to Move Out of a ToolStrip Control</span></span>
-<span data-ttu-id="36a44-103">Chcete-li zajistit, aby uživatel ke stisknutí klávesy TAB pro přesun mimo použijte následující postup <xref:System.Windows.Forms.ToolStrip> na další ovládací prvek v pořadí.</span><span class="sxs-lookup"><span data-stu-id="36a44-103">Use the following procedure to enable the user to press the TAB key to move out of a <xref:System.Windows.Forms.ToolStrip> to the next control in the tab order.</span></span>  
+# <a name="how-to-enable-the-tab-key-to-move-out-of-a-toolstrip-control"></a><span data-ttu-id="8185a-102">Postupy: Povolení klávesy TAB pro přesun mimo ovládací prvek ToolStrip</span><span class="sxs-lookup"><span data-stu-id="8185a-102">How to: Enable the TAB Key to Move Out of a ToolStrip Control</span></span>
+<span data-ttu-id="8185a-103">Pomocí následujícího postupu umožňující uživateli ke stisknutí klávesy TAB pro přesun z celkového počtu <xref:System.Windows.Forms.ToolStrip> na další ovládací prvek v pořadí.</span><span class="sxs-lookup"><span data-stu-id="8185a-103">Use the following procedure to enable the user to press the TAB key to move out of a <xref:System.Windows.Forms.ToolStrip> to the next control in the tab order.</span></span>  
   
- <span data-ttu-id="36a44-104"><xref:System.Windows.Forms.ToolStrip> Přijme první stisknutím klávesy TAB a klávesy ŠIPKA vyberte položky v rámci <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="36a44-104">The <xref:System.Windows.Forms.ToolStrip> accepts the first press of the TAB key, and the arrow keys select items within the <xref:System.Windows.Forms.ToolStrip>.</span></span> <span data-ttu-id="36a44-105">Po stisknutí klávesy TAB podruhé, trvá uživatele na další ovládací prvek v pořadí.</span><span class="sxs-lookup"><span data-stu-id="36a44-105">When the user presses the TAB key a second time, it takes the user to the next control in the tab order.</span></span>  
+ <span data-ttu-id="8185a-104"><xref:System.Windows.Forms.ToolStrip> Přijímá první stiskněte klávesu TAB a klávesy ŠIPKA vyberte položek v rámci <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="8185a-104">The <xref:System.Windows.Forms.ToolStrip> accepts the first press of the TAB key, and the arrow keys select items within the <xref:System.Windows.Forms.ToolStrip>.</span></span> <span data-ttu-id="8185a-105">Když uživatel stiskne klávesu TAB podruhé, přesune uživatele na další ovládací prvek v pořadí.</span><span class="sxs-lookup"><span data-stu-id="8185a-105">When the user presses the TAB key a second time, it takes the user to the next control in the tab order.</span></span>  
   
-### <a name="to-enable-the-user-to-press-the-tab-key-to-move-out-of-a-toolstrip-to-the-next-control"></a><span data-ttu-id="36a44-106">Chcete-li zajistit, aby uživatel ke stisknutí klávesy TAB pro přesun mimo prvku ToolStrip na další ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="36a44-106">To enable the user to press the TAB key to move out of a ToolStrip to the next control</span></span>  
+### <a name="to-enable-the-user-to-press-the-tab-key-to-move-out-of-a-toolstrip-to-the-next-control"></a><span data-ttu-id="8185a-106">Povolit uživateli stiskněte klávesu TAB pro přesun na další ovládací prvek mimo prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="8185a-106">To enable the user to press the TAB key to move out of a ToolStrip to the next control</span></span>  
   
--   <span data-ttu-id="36a44-107">Nastavte <xref:System.Windows.Forms.ToolStrip.TabStop%2A> vlastnost <xref:System.Windows.Forms.ToolStrip> k `true`.</span><span class="sxs-lookup"><span data-stu-id="36a44-107">Set the <xref:System.Windows.Forms.ToolStrip.TabStop%2A> property of the <xref:System.Windows.Forms.ToolStrip> to `true`.</span></span>  
+-   <span data-ttu-id="8185a-107">Nastavte <xref:System.Windows.Forms.ToolStrip.TabStop%2A> vlastnost <xref:System.Windows.Forms.ToolStrip> k `true`.</span><span class="sxs-lookup"><span data-stu-id="8185a-107">Set the <xref:System.Windows.Forms.ToolStrip.TabStop%2A> property of the <xref:System.Windows.Forms.ToolStrip> to `true`.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="36a44-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="36a44-108">See Also</span></span>  
- <xref:System.Windows.Forms.ToolStrip>  
- <xref:System.Windows.Forms.ToolStrip.TabStop%2A>  
- [<span data-ttu-id="36a44-109">Přehled ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="36a44-109">ToolStrip Control Overview</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="8185a-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8185a-108">See also</span></span>
+- <xref:System.Windows.Forms.ToolStrip>
+- <xref:System.Windows.Forms.ToolStrip.TabStop%2A>
+- [<span data-ttu-id="8185a-109">Přehled ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="8185a-109">ToolStrip Control Overview</span></span>](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)

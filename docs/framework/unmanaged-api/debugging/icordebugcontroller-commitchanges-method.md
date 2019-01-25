@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ed8c616fd71855f3c2313cee0b9fee3ba31babd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e1af7bfa321313ee8d3e7e72ffd5703a8ced561e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415172"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744762"
 ---
-# <a name="icordebugcontrollercommitchanges-method"></a><span data-ttu-id="80b3f-102">ICorDebugController::CommitChanges – metoda</span><span class="sxs-lookup"><span data-stu-id="80b3f-102">ICorDebugController::CommitChanges Method</span></span>
-<span data-ttu-id="80b3f-103">`CommitChanges` je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="80b3f-103">`CommitChanges` is obsolete.</span></span> <span data-ttu-id="80b3f-104">Tato metoda není volána.</span><span class="sxs-lookup"><span data-stu-id="80b3f-104">Do not call this method.</span></span>  
+# <a name="icordebugcontrollercommitchanges-method"></a><span data-ttu-id="0d432-102">ICorDebugController::CommitChanges – metoda</span><span class="sxs-lookup"><span data-stu-id="0d432-102">ICorDebugController::CommitChanges Method</span></span>
+<span data-ttu-id="0d432-103">`CommitChanges` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="0d432-103">`CommitChanges` is obsolete.</span></span> <span data-ttu-id="0d432-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="0d432-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="80b3f-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="80b3f-105">See Also</span></span>  
- 
+## <a name="see-also"></a><span data-ttu-id="0d432-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0d432-105">See also</span></span>
+

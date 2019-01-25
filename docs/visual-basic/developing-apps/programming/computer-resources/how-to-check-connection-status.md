@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Kontrola stavu připojení v jazyce Visual Basic'
+title: 'Postupy: Kontrola stavu připojení v jazyce Visual Basic'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Web connections [Visual Basic]
@@ -7,26 +7,26 @@ helpviewer_keywords:
 - connections [Visual Basic], checking status
 - connection status [Visual Basic]
 ms.assetid: 4d9ee8ab-9a6f-4279-ace4-b75afc976a74
-ms.openlocfilehash: 4a6cb67474d03ada5e0a73d94f65da7a381c44a8
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: c7a43fd154616e516f8c5e7d36d25f34924649ac
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42911938"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499957"
 ---
-# <a name="how-to-check-connection-status-in-visual-basic"></a><span data-ttu-id="20912-102">Postupy: Kontrola stavu připojení v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="20912-102">How to: Check Connection Status in Visual Basic</span></span>
-<span data-ttu-id="20912-103"><xref:Microsoft.VisualBasic.Devices.Network.IsAvailable> Vlastnost lze použít k určení, zda má počítač funkční síť a připojení k Internetu.</span><span class="sxs-lookup"><span data-stu-id="20912-103">The <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable> property can be used to determine whether the computer has a working network or Internet connection.</span></span>  
+# <a name="how-to-check-connection-status-in-visual-basic"></a><span data-ttu-id="04181-102">Postupy: Kontrola stavu připojení v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="04181-102">How to: Check Connection Status in Visual Basic</span></span>
+<span data-ttu-id="04181-103"><xref:Microsoft.VisualBasic.Devices.Network.IsAvailable> Vlastnost lze použít k určení, zda má počítač funkční síť a připojení k Internetu.</span><span class="sxs-lookup"><span data-stu-id="04181-103">The <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable> property can be used to determine whether the computer has a working network or Internet connection.</span></span>  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-check-whether-a-computer-has-a-working-connection"></a><span data-ttu-id="20912-104">Zkontrolujte, zda počítač má připojení k práci</span><span class="sxs-lookup"><span data-stu-id="20912-104">To check whether a computer has a working connection</span></span>  
+### <a name="to-check-whether-a-computer-has-a-working-connection"></a><span data-ttu-id="04181-104">Zkontrolujte, zda počítač má připojení k práci</span><span class="sxs-lookup"><span data-stu-id="04181-104">To check whether a computer has a working connection</span></span>  
   
--   <span data-ttu-id="20912-105">Určení, zda `IsAvailable` vlastnost `True` nebo `False`.</span><span class="sxs-lookup"><span data-stu-id="20912-105">Determine whether the `IsAvailable` property is `True` or `False`.</span></span> <span data-ttu-id="20912-106">Následující kód kontroluje stav vlastnosti a ohlásí ji:</span><span class="sxs-lookup"><span data-stu-id="20912-106">The following code checks the property's status and reports it:</span></span>  
+-   <span data-ttu-id="04181-105">Určení, zda `IsAvailable` vlastnost `True` nebo `False`.</span><span class="sxs-lookup"><span data-stu-id="04181-105">Determine whether the `IsAvailable` property is `True` or `False`.</span></span> <span data-ttu-id="04181-106">Následující kód kontroluje stav vlastnosti a ohlásí ji:</span><span class="sxs-lookup"><span data-stu-id="04181-106">The following code checks the property's status and reports it:</span></span>  
   
      [!code-vb[VbResourceTasks#3](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-check-connection-status_1.vb)]  
   
-     <span data-ttu-id="20912-107">Tento příklad kódu je také dostupný jako fragment kódu technologie IntelliSense.</span><span class="sxs-lookup"><span data-stu-id="20912-107">This code example is also available as an IntelliSense code snippet.</span></span> <span data-ttu-id="20912-108">V dialogu pro výběr fragmentu kódu je umístěn v **připojení a sítě**.</span><span class="sxs-lookup"><span data-stu-id="20912-108">In the code snippet picker, it is located in **Connectivity and Networking**.</span></span> <span data-ttu-id="20912-109">Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).</span><span class="sxs-lookup"><span data-stu-id="20912-109">For more information, see [Code Snippets](/visualstudio/ide/code-snippets).</span></span>  
+     <span data-ttu-id="04181-107">Tento příklad kódu je také dostupný jako fragment kódu technologie IntelliSense.</span><span class="sxs-lookup"><span data-stu-id="04181-107">This code example is also available as an IntelliSense code snippet.</span></span> <span data-ttu-id="04181-108">V dialogu pro výběr fragmentu kódu je umístěn v **připojení a sítě**.</span><span class="sxs-lookup"><span data-stu-id="04181-108">In the code snippet picker, it is located in **Connectivity and Networking**.</span></span> <span data-ttu-id="04181-109">Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).</span><span class="sxs-lookup"><span data-stu-id="04181-109">For more information, see [Code Snippets](/visualstudio/ide/code-snippets).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="20912-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="20912-110">See Also</span></span>  
- <xref:Microsoft.VisualBasic.Devices.Network?displayProperty=nameWithType>  
- <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable>
+## <a name="see-also"></a><span data-ttu-id="04181-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="04181-110">See also</span></span>
+- <xref:Microsoft.VisualBasic.Devices.Network?displayProperty=nameWithType>
+- <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable>

@@ -2,20 +2,20 @@
 title: 'Postupy: Generování XML ze souborů CSV (C#)'
 ms.date: 07/20/2015
 ms.assetid: 57b9ccde-f983-4a21-ae61-70ecede30307
-ms.openlocfilehash: 9200cfc443ae87fcbeaf87c7674f15d8a241f5dc
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 769cc6c2ca8f4c05c46a0054eaccccfe3911a74c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45609185"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54605783"
 ---
-# <a name="how-to-generate-xml-from-csv-files-c"></a><span data-ttu-id="50bf9-102">Postupy: Generování XML ze souborů CSV (C#)</span><span class="sxs-lookup"><span data-stu-id="50bf9-102">How to: Generate XML from CSV Files (C#)</span></span>
-<span data-ttu-id="50bf9-103">Tento příklad ukazuje způsob použití [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ke generování souboru XML ze souboru hodnot oddělených čárkami (CSV).</span><span class="sxs-lookup"><span data-stu-id="50bf9-103">This example shows how to use [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to generate an XML file from a comma-separated value (CSV) file.</span></span>  
+# <a name="how-to-generate-xml-from-csv-files-c"></a><span data-ttu-id="1d77d-102">Postupy: Generování XML ze souborů CSV (C#)</span><span class="sxs-lookup"><span data-stu-id="1d77d-102">How to: Generate XML from CSV Files (C#)</span></span>
+<span data-ttu-id="1d77d-103">Tento příklad ukazuje způsob použití [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ke generování souboru XML ze souboru hodnot oddělených čárkami (CSV).</span><span class="sxs-lookup"><span data-stu-id="1d77d-103">This example shows how to use [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to generate an XML file from a comma-separated value (CSV) file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="50bf9-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="50bf9-104">Example</span></span>  
- <span data-ttu-id="50bf9-105">Následující kód provede [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz na pole řetězců.</span><span class="sxs-lookup"><span data-stu-id="50bf9-105">The following code performs a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query on an array of strings.</span></span>  
+## <a name="example"></a><span data-ttu-id="1d77d-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="1d77d-104">Example</span></span>  
+ <span data-ttu-id="1d77d-105">Následující kód provede [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz na pole řetězců.</span><span class="sxs-lookup"><span data-stu-id="1d77d-105">The following code performs a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query on an array of strings.</span></span>  
   
- <span data-ttu-id="50bf9-106">Použije dotaz `let` klauzule pro každý řetězec rozdělit do pole polí.</span><span class="sxs-lookup"><span data-stu-id="50bf9-106">The query uses the `let` clause to split each string into an array of fields.</span></span>  
+ <span data-ttu-id="1d77d-106">Použije dotaz `let` klauzule pro každý řetězec rozdělit do pole polí.</span><span class="sxs-lookup"><span data-stu-id="1d77d-106">The query uses the `let` clause to split each string into an array of fields.</span></span>  
   
 ```csharp  
 // Create the text file.  
@@ -48,7 +48,7 @@ XElement cust = new XElement("Root",
 Console.WriteLine(cust);  
 ```  
   
- <span data-ttu-id="50bf9-107">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="50bf9-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="1d77d-107">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="1d77d-107">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -107,6 +107,6 @@ Console.WriteLine(cust);
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="50bf9-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="50bf9-108">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1d77d-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1d77d-108">See also</span></span>
 
-- [<span data-ttu-id="50bf9-109">Projekce a transformace (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="50bf9-109">Projections and Transformations (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [<span data-ttu-id="1d77d-109">Projekce a transformace (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="1d77d-109">Projections and Transformations (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

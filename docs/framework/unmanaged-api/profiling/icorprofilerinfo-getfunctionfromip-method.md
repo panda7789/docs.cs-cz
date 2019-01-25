@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fba01c1dfdea83b2580f45b7dbcef91fb7b73fb2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2b0859d2f6d4ea2abf72867f2a803132cbd04225
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33452901"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54568644"
 ---
-# <a name="icorprofilerinfogetfunctionfromip-method"></a><span data-ttu-id="70ee8-102">ICorProfilerInfo::GetFunctionFromIP – metoda</span><span class="sxs-lookup"><span data-stu-id="70ee8-102">ICorProfilerInfo::GetFunctionFromIP Method</span></span>
-<span data-ttu-id="70ee8-103">Mapuje ukazatel instrukce spravovaného kódu `FunctionID`.</span><span class="sxs-lookup"><span data-stu-id="70ee8-103">Maps a managed code instruction pointer to a `FunctionID`.</span></span>  
+# <a name="icorprofilerinfogetfunctionfromip-method"></a><span data-ttu-id="b3c55-102">ICorProfilerInfo::GetFunctionFromIP – metoda</span><span class="sxs-lookup"><span data-stu-id="b3c55-102">ICorProfilerInfo::GetFunctionFromIP Method</span></span>
+<span data-ttu-id="b3c55-103">Mapuje ukazatel instrukce spravovaného kódu `FunctionID`.</span><span class="sxs-lookup"><span data-stu-id="b3c55-103">Maps a managed code instruction pointer to a `FunctionID`.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="70ee8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="70ee8-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b3c55-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b3c55-104">Syntax</span></span>  
   
 ```  
 HRESULT GetFunctionFromIP(  
@@ -35,21 +35,21 @@ HRESULT GetFunctionFromIP(
     [out] FunctionID *pFunctionId);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="70ee8-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="70ee8-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="b3c55-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b3c55-105">Parameters</span></span>  
  `ip`  
- <span data-ttu-id="70ee8-106">[v] Ukazatel instrukce ve spravovaném kódu.</span><span class="sxs-lookup"><span data-stu-id="70ee8-106">[in] The instruction pointer in managed code.</span></span>  
+ <span data-ttu-id="b3c55-106">[in] Ukazatele na instrukci ve spravovaném kódu.</span><span class="sxs-lookup"><span data-stu-id="b3c55-106">[in] The instruction pointer in managed code.</span></span>  
   
  `pFunctionId`  
- <span data-ttu-id="70ee8-107">[out] ID vrácený funkce.</span><span class="sxs-lookup"><span data-stu-id="70ee8-107">[out] The returned function ID.</span></span>  
+ <span data-ttu-id="b3c55-107">[out] ID vrácené funkce.</span><span class="sxs-lookup"><span data-stu-id="b3c55-107">[out] The returned function ID.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="70ee8-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="70ee8-108">Requirements</span></span>  
- <span data-ttu-id="70ee8-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="70ee8-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b3c55-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b3c55-108">Requirements</span></span>  
+ <span data-ttu-id="b3c55-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b3c55-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="70ee8-110">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="70ee8-110">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="b3c55-110">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="b3c55-110">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="70ee8-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="70ee8-111">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b3c55-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b3c55-111">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="70ee8-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="70ee8-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="b3c55-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b3c55-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="70ee8-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="70ee8-113">See Also</span></span>  
- [<span data-ttu-id="70ee8-114">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="70ee8-114">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a><span data-ttu-id="b3c55-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b3c55-113">See also</span></span>
+- [<span data-ttu-id="b3c55-114">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b3c55-114">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

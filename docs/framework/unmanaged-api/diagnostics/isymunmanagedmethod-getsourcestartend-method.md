@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1e15bab136540c73f8e1cff0e6bb52ec1d6c0063
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4ecb726f275a694fded2c486448a60b28fadb168
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426221"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54561865"
 ---
-# <a name="isymunmanagedmethodgetsourcestartend-method"></a><span data-ttu-id="d26be-102">ISymUnmanagedMethod::GetSourceStartEnd – metoda</span><span class="sxs-lookup"><span data-stu-id="d26be-102">ISymUnmanagedMethod::GetSourceStartEnd Method</span></span>
-<span data-ttu-id="d26be-103">Získá počáteční a koncové pozice dokumentu pro zdroj této metody.</span><span class="sxs-lookup"><span data-stu-id="d26be-103">Gets the start and end document positions for the source of this method.</span></span> <span data-ttu-id="d26be-104">První pozice pole je spuštění a druhý pozice pole je end.</span><span class="sxs-lookup"><span data-stu-id="d26be-104">The first array position is the start, and the second array position is the end.</span></span>  
+# <a name="isymunmanagedmethodgetsourcestartend-method"></a><span data-ttu-id="0ad6c-102">ISymUnmanagedMethod::GetSourceStartEnd – metoda</span><span class="sxs-lookup"><span data-stu-id="0ad6c-102">ISymUnmanagedMethod::GetSourceStartEnd Method</span></span>
+<span data-ttu-id="0ad6c-103">Získá počáteční a koncové pozice dokumentu pro zdroj této metody.</span><span class="sxs-lookup"><span data-stu-id="0ad6c-103">Gets the start and end document positions for the source of this method.</span></span> <span data-ttu-id="0ad6c-104">První pozice pole je spuštění a druhý pozice pole je do konce.</span><span class="sxs-lookup"><span data-stu-id="0ad6c-104">The first array position is the start, and the second array position is the end.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d26be-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d26be-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0ad6c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0ad6c-105">Syntax</span></span>  
   
 ```  
 HRESULT GetSourceStartEnd(  
@@ -37,24 +37,24 @@ HRESULT GetSourceStartEnd(
     [out] BOOL                   *pRetVal);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="d26be-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="d26be-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="0ad6c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="0ad6c-106">Parameters</span></span>  
  `docs`  
- <span data-ttu-id="d26be-107">[v] Počáteční a koncovou zdroj dokumenty.</span><span class="sxs-lookup"><span data-stu-id="d26be-107">[in] The starting and ending source documents.</span></span>  
+ <span data-ttu-id="0ad6c-107">[in] Počáteční a koncovou zdroje dokumentů.</span><span class="sxs-lookup"><span data-stu-id="0ad6c-107">[in] The starting and ending source documents.</span></span>  
   
  `lines`  
- <span data-ttu-id="d26be-108">[v] Počáteční a koncovou řádky do odpovídajícího zdroje dokumenty.</span><span class="sxs-lookup"><span data-stu-id="d26be-108">[in] The starting and ending lines in the corresponding source documents.</span></span>  
+ <span data-ttu-id="0ad6c-108">[in] Počáteční a koncovou řádky do odpovídajícího zdroje dokumentů.</span><span class="sxs-lookup"><span data-stu-id="0ad6c-108">[in] The starting and ending lines in the corresponding source documents.</span></span>  
   
  `columns`  
- <span data-ttu-id="d26be-109">[v] Počáteční a koncovou sloupce do odpovídajícího zdroje dokumenty.</span><span class="sxs-lookup"><span data-stu-id="d26be-109">[in] The starting and ending columns in the corresponding source documents.</span></span>  
+ <span data-ttu-id="0ad6c-109">[in] Počáteční a koncovou sloupce do odpovídajícího zdroje dokumentů.</span><span class="sxs-lookup"><span data-stu-id="0ad6c-109">[in] The starting and ending columns in the corresponding source documents.</span></span>  
   
  `pRetVal`  
- <span data-ttu-id="d26be-110">[out] `true` kdyby pozic definován; jinak hodnota `false`.</span><span class="sxs-lookup"><span data-stu-id="d26be-110">[out] `true` if positions were defined; otherwise, `false`.</span></span>  
+ <span data-ttu-id="0ad6c-110">[out] `true` pozice byl definován; jinak `false`.</span><span class="sxs-lookup"><span data-stu-id="0ad6c-110">[out] `true` if positions were defined; otherwise, `false`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="d26be-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d26be-111">Return Value</span></span>  
- <span data-ttu-id="d26be-112">S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="d26be-112">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="0ad6c-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0ad6c-111">Return Value</span></span>  
+ <span data-ttu-id="0ad6c-112">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="0ad6c-112">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d26be-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d26be-113">Requirements</span></span>  
- <span data-ttu-id="d26be-114">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="d26be-114">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0ad6c-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0ad6c-113">Requirements</span></span>  
+ <span data-ttu-id="0ad6c-114">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="0ad6c-114">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d26be-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="d26be-115">See Also</span></span>  
- [<span data-ttu-id="d26be-116">ISymUnmanagedMethod – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d26be-116">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+## <a name="see-also"></a><span data-ttu-id="0ad6c-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0ad6c-115">See also</span></span>
+- [<span data-ttu-id="0ad6c-116">ISymUnmanagedMethod – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0ad6c-116">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)

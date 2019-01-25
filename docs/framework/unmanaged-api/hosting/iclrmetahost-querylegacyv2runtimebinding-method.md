@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1664c47e580730fb0000465f9010e024c64fec2b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dd58d38e92f492522008745384459045e007c3ae
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33432941"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646838"
 ---
-# <a name="iclrmetahostquerylegacyv2runtimebinding-method"></a><span data-ttu-id="8e60e-102">ICLRMetaHost::QueryLegacyV2RuntimeBinding – metoda</span><span class="sxs-lookup"><span data-stu-id="8e60e-102">ICLRMetaHost::QueryLegacyV2RuntimeBinding Method</span></span>
-<span data-ttu-id="8e60e-103">Vrátí rozhraní, které představuje runtime, do které starší verze aktivace zásad byla svázána, například pomocí `useLegacyV2RuntimeActivationPolicy` atributu u [ \<spuštění > element](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) souboru položka konfigurace, pomocí přímých Aktivace starší verze rozhraní API nebo voláním [iclrruntimeinfo::bindaslegacyv2runtime –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-bindaslegacyv2runtime-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="8e60e-103">Returns an interface that represents a runtime to which legacy activation policy has been bound, for example, by using the `useLegacyV2RuntimeActivationPolicy` attribute on the [\<startup> element](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) configuration file entry, by direct use of the legacy activation APIs, or by calling the [ICLRRuntimeInfo::BindAsLegacyV2Runtime](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-bindaslegacyv2runtime-method.md) method.</span></span>  
+# <a name="iclrmetahostquerylegacyv2runtimebinding-method"></a><span data-ttu-id="007b4-102">ICLRMetaHost::QueryLegacyV2RuntimeBinding – metoda</span><span class="sxs-lookup"><span data-stu-id="007b4-102">ICLRMetaHost::QueryLegacyV2RuntimeBinding Method</span></span>
+<span data-ttu-id="007b4-103">Vrátí rozhraní, která představuje modul runtime, ke kterému zásady aktivace starší verze byl vázán, například pomocí `useLegacyV2RuntimeActivationPolicy` atribut na [ \<spuštění > element](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) položka souboru konfigurace s přímým přístupem pomocí Aktivace starší verze rozhraní API, nebo pomocí volání [iclrruntimeinfo::bindaslegacyv2runtime –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-bindaslegacyv2runtime-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="007b4-103">Returns an interface that represents a runtime to which legacy activation policy has been bound, for example, by using the `useLegacyV2RuntimeActivationPolicy` attribute on the [\<startup> element](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) configuration file entry, by direct use of the legacy activation APIs, or by calling the [ICLRRuntimeInfo::BindAsLegacyV2Runtime](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-bindaslegacyv2runtime-method.md) method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8e60e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8e60e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="007b4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="007b4-104">Syntax</span></span>  
   
 ```  
 HRESULT QueryLegacyV2RuntimeBinding (  
@@ -35,33 +35,33 @@ HRESULT QueryLegacyV2RuntimeBinding (
     [out, iid_is(riid), retval] LPVOID *ppUnk);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="8e60e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="8e60e-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="007b4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="007b4-105">Parameters</span></span>  
  `riid`  
- <span data-ttu-id="8e60e-106">[v] Jedinou platnou hodnotou tohoto parametru je Required.Currently `IID_ICLRRuntimeInfo`.</span><span class="sxs-lookup"><span data-stu-id="8e60e-106">[in] Required.Currently the only valid value for this parameter is `IID_ICLRRuntimeInfo`.</span></span>  
+ <span data-ttu-id="007b4-106">[in] Jediná platná hodnota pro tento parametr je Required.Currently `IID_ICLRRuntimeInfo`.</span><span class="sxs-lookup"><span data-stu-id="007b4-106">[in] Required.Currently the only valid value for this parameter is `IID_ICLRRuntimeInfo`.</span></span>  
   
  `ppUnk`  
- <span data-ttu-id="8e60e-107">[out] Vyžaduje se.</span><span class="sxs-lookup"><span data-stu-id="8e60e-107">[out] Required.</span></span> <span data-ttu-id="8e60e-108">Když tato metoda vrací výsledek, obsahuje odkazy [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní, které představuje modul runtime, který bylo svázáno se starší verze aktivace zásad.</span><span class="sxs-lookup"><span data-stu-id="8e60e-108">When this method returns, contains a pointer to the [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface that represents a runtime that has been bound to legacy activation policy.</span></span>  
+ <span data-ttu-id="007b4-107">[out] Povinné.</span><span class="sxs-lookup"><span data-stu-id="007b4-107">[out] Required.</span></span> <span data-ttu-id="007b4-108">Po návratu metody obsahuje ukazatel [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní, které představuje modul runtime, který bylo svázáno se zásady aktivace starší verze.</span><span class="sxs-lookup"><span data-stu-id="007b4-108">When this method returns, contains a pointer to the [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface that represents a runtime that has been bound to legacy activation policy.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="8e60e-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="8e60e-109">Return Value</span></span>  
- <span data-ttu-id="8e60e-110">Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="8e60e-110">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="007b4-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="007b4-109">Return Value</span></span>  
+ <span data-ttu-id="007b4-110">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="007b4-110">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
   
-|<span data-ttu-id="8e60e-111">HRESULT</span><span class="sxs-lookup"><span data-stu-id="8e60e-111">HRESULT</span></span>|<span data-ttu-id="8e60e-112">Popis</span><span class="sxs-lookup"><span data-stu-id="8e60e-112">Description</span></span>|  
+|<span data-ttu-id="007b4-111">HRESULT</span><span class="sxs-lookup"><span data-stu-id="007b4-111">HRESULT</span></span>|<span data-ttu-id="007b4-112">Popis</span><span class="sxs-lookup"><span data-stu-id="007b4-112">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="8e60e-113">S_OK</span><span class="sxs-lookup"><span data-stu-id="8e60e-113">S_OK</span></span>|<span data-ttu-id="8e60e-114">Metoda byla úspěšně dokončena a vrátí modul runtime, který byl spojen starší verze aktivace zásad.</span><span class="sxs-lookup"><span data-stu-id="8e60e-114">The method completed successfully and returned a runtime that was bound to legacy activation policy.</span></span>|  
-|<span data-ttu-id="8e60e-115">S_FALSE</span><span class="sxs-lookup"><span data-stu-id="8e60e-115">S_FALSE</span></span>|<span data-ttu-id="8e60e-116">Metoda byla úspěšně dokončena, ale starší verze modulu runtime nebyl ještě svázány.</span><span class="sxs-lookup"><span data-stu-id="8e60e-116">The method completed successfully, but a legacy runtime has not yet been bound.</span></span>|  
-|<span data-ttu-id="8e60e-117">E_NOINTERFACE</span><span class="sxs-lookup"><span data-stu-id="8e60e-117">E_NOINTERFACE</span></span>|<span data-ttu-id="8e60e-118">Metoda nalezena modul runtime, který byl spojen starší verze aktivace zásad, ale `riid` nepodporuje tento modul runtime.</span><span class="sxs-lookup"><span data-stu-id="8e60e-118">The method found a runtime that was bound to legacy activation policy, but `riid` is not supported by that runtime.</span></span>|  
+|<span data-ttu-id="007b4-113">S_OK</span><span class="sxs-lookup"><span data-stu-id="007b4-113">S_OK</span></span>|<span data-ttu-id="007b4-114">Metoda byla úspěšně dokončena a vrátí modulu runtime, která byla vázána na starší verzi Aktivace zásady.</span><span class="sxs-lookup"><span data-stu-id="007b4-114">The method completed successfully and returned a runtime that was bound to legacy activation policy.</span></span>|  
+|<span data-ttu-id="007b4-115">S_FALSE</span><span class="sxs-lookup"><span data-stu-id="007b4-115">S_FALSE</span></span>|<span data-ttu-id="007b4-116">Metoda byla úspěšně dokončena, ale starší verzi modulu runtime nebyl dosud byl svázán.</span><span class="sxs-lookup"><span data-stu-id="007b4-116">The method completed successfully, but a legacy runtime has not yet been bound.</span></span>|  
+|<span data-ttu-id="007b4-117">E_NOINTERFACE</span><span class="sxs-lookup"><span data-stu-id="007b4-117">E_NOINTERFACE</span></span>|<span data-ttu-id="007b4-118">Metoda najít modul runtime, který je vázán na zásady aktivace starší verze, ale `riid` nepodporuje tento modul runtime.</span><span class="sxs-lookup"><span data-stu-id="007b4-118">The method found a runtime that was bound to legacy activation policy, but `riid` is not supported by that runtime.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="8e60e-119">Poznámky</span><span class="sxs-lookup"><span data-stu-id="8e60e-119">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="007b4-119">Poznámky</span><span class="sxs-lookup"><span data-stu-id="007b4-119">Remarks</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="8e60e-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8e60e-120">Requirements</span></span>  
- <span data-ttu-id="8e60e-121">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8e60e-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="007b4-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="007b4-120">Requirements</span></span>  
+ <span data-ttu-id="007b4-121">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="007b4-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="8e60e-122">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="8e60e-122">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="007b4-122">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="007b4-122">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="8e60e-123">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="8e60e-123">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="007b4-123">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="007b4-123">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="8e60e-124">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8e60e-124">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="007b4-124">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="007b4-124">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8e60e-125">Viz také</span><span class="sxs-lookup"><span data-stu-id="8e60e-125">See Also</span></span>  
- [<span data-ttu-id="8e60e-126">ICLRMetaHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8e60e-126">ICLRMetaHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)  
- [<span data-ttu-id="8e60e-127">Hostování</span><span class="sxs-lookup"><span data-stu-id="8e60e-127">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)
+## <a name="see-also"></a><span data-ttu-id="007b4-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="007b4-125">See also</span></span>
+- [<span data-ttu-id="007b4-126">ICLRMetaHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="007b4-126">ICLRMetaHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)
+- [<span data-ttu-id="007b4-127">Hostování</span><span class="sxs-lookup"><span data-stu-id="007b4-127">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)

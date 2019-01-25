@@ -17,30 +17,30 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 113c228fd0a160ef6d8dd593891a6f9dd053a28c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4eeadadee181a8a726cb0b7a16425d68a112aae4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33452664"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54517718"
 ---
-# <a name="imetadatavalidatevalidatemetadata-method"></a><span data-ttu-id="576cc-102">IMetaDataValidate::ValidateMetaData – metoda</span><span class="sxs-lookup"><span data-stu-id="576cc-102">IMetaDataValidate::ValidateMetaData Method</span></span>
-<span data-ttu-id="576cc-103">Ověří metadata podpisy objektů v aktuálním oboru metadat.</span><span class="sxs-lookup"><span data-stu-id="576cc-103">Validates the metadata signatures of the objects in the current metadata scope.</span></span>  
+# <a name="imetadatavalidatevalidatemetadata-method"></a><span data-ttu-id="f0030-102">IMetaDataValidate::ValidateMetaData – metoda</span><span class="sxs-lookup"><span data-stu-id="f0030-102">IMetaDataValidate::ValidateMetaData Method</span></span>
+<span data-ttu-id="f0030-103">Ověří podpisy metadat objektů v aktuálním oboru metadat.</span><span class="sxs-lookup"><span data-stu-id="f0030-103">Validates the metadata signatures of the objects in the current metadata scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="576cc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="576cc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f0030-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f0030-104">Syntax</span></span>  
   
 ```  
 HRESULT ValidateMetaData ();  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="576cc-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="576cc-105">Requirements</span></span>  
- <span data-ttu-id="576cc-106">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="576cc-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f0030-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f0030-105">Requirements</span></span>  
+ <span data-ttu-id="f0030-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f0030-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="576cc-107">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="576cc-107">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="f0030-107">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="f0030-107">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="576cc-108">**Knihovna:** používat jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="576cc-108">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="f0030-108">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f0030-108">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="576cc-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="576cc-109">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="f0030-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f0030-109">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="576cc-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="576cc-110">See Also</span></span>  
- [<span data-ttu-id="576cc-111">IMetaDataValidate – rozhraní</span><span class="sxs-lookup"><span data-stu-id="576cc-111">IMetaDataValidate Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-interface.md)
+## <a name="see-also"></a><span data-ttu-id="f0030-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f0030-110">See also</span></span>
+- [<span data-ttu-id="f0030-111">IMetaDataValidate – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f0030-111">IMetaDataValidate Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-interface.md)

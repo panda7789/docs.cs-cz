@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 59b37c30df6467439d04e367e13b0fc4ffff0ec6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5a5f21855ce83f5c1fb68637e3eeb6d3c831bce2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422943"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745151"
 ---
-# <a name="icordebugobjectenumnext-method"></a><span data-ttu-id="f67c6-102">ICorDebugObjectEnum::Next – metoda</span><span class="sxs-lookup"><span data-stu-id="f67c6-102">ICorDebugObjectEnum::Next Method</span></span>
-<span data-ttu-id="f67c6-103">Získá relativní virtuální adresy (RVAs) zadaný počet objektů z výčtu, počínaje na aktuální pozici.</span><span class="sxs-lookup"><span data-stu-id="f67c6-103">Gets the relative virtual addresses (RVAs) of the specified number of objects from the enumeration, starting at the current position.</span></span>  
+# <a name="icordebugobjectenumnext-method"></a><span data-ttu-id="974c8-102">ICorDebugObjectEnum::Next – metoda</span><span class="sxs-lookup"><span data-stu-id="974c8-102">ICorDebugObjectEnum::Next Method</span></span>
+<span data-ttu-id="974c8-103">Získá relativních virtuálních adres (RVA) zadané počty objektů z výčtu od aktuální pozice.</span><span class="sxs-lookup"><span data-stu-id="974c8-103">Gets the relative virtual addresses (RVAs) of the specified number of objects from the enumeration, starting at the current position.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f67c6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f67c6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="974c8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="974c8-104">Syntax</span></span>  
   
 ```  
 HRESULT Next (  
@@ -38,24 +38,24 @@ HRESULT Next (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="f67c6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f67c6-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="974c8-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="974c8-105">Parameters</span></span>  
  `celt`  
- <span data-ttu-id="f67c6-106">[v] Počet objektů, které mají být načteny.</span><span class="sxs-lookup"><span data-stu-id="f67c6-106">[in] The number of objects to be retrieved.</span></span>  
+ <span data-ttu-id="974c8-106">[in] Počet objektů, které se mají načíst.</span><span class="sxs-lookup"><span data-stu-id="974c8-106">[in] The number of objects to be retrieved.</span></span>  
   
  `objects`  
- <span data-ttu-id="f67c6-107">[out] Pole ukazatele, každý z nich odkazuje na objekt CORDB_ADDRESS.</span><span class="sxs-lookup"><span data-stu-id="f67c6-107">[out] An array of pointers, each of which points to a CORDB_ADDRESS object.</span></span>  
+ <span data-ttu-id="974c8-107">[out] Pole ukazatelů, každý z nich odkazuje na objekt CORDB_ADDRESS.</span><span class="sxs-lookup"><span data-stu-id="974c8-107">[out] An array of pointers, each of which points to a CORDB_ADDRESS object.</span></span>  
   
  `pceltFetched`  
- <span data-ttu-id="f67c6-108">[out] Ukazatel na číslo ve skutečnosti vrácených objektů.</span><span class="sxs-lookup"><span data-stu-id="f67c6-108">[out] Pointer to the number of objects actually returned.</span></span> <span data-ttu-id="f67c6-109">Tato hodnota může být null. Pokud `celt` je jedna.</span><span class="sxs-lookup"><span data-stu-id="f67c6-109">This value may be null if `celt` is one.</span></span>  
+ <span data-ttu-id="974c8-108">[out] Ukazatel na počet skutečně vrácených objektů.</span><span class="sxs-lookup"><span data-stu-id="974c8-108">[out] Pointer to the number of objects actually returned.</span></span> <span data-ttu-id="974c8-109">Tato hodnota může mít hodnotu null Pokud `celt` je jedna.</span><span class="sxs-lookup"><span data-stu-id="974c8-109">This value may be null if `celt` is one.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f67c6-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f67c6-110">Requirements</span></span>  
- <span data-ttu-id="f67c6-111">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f67c6-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="974c8-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="974c8-110">Requirements</span></span>  
+ <span data-ttu-id="974c8-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="974c8-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f67c6-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="f67c6-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="974c8-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="974c8-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="f67c6-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f67c6-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="974c8-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="974c8-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="f67c6-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f67c6-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="974c8-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="974c8-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f67c6-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="f67c6-115">See Also</span></span>  
- 
+## <a name="see-also"></a><span data-ttu-id="974c8-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="974c8-115">See also</span></span>
+

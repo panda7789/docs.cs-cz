@@ -14,19 +14,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e02f44e4f581170a842a1c103ed069cb90cde79c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5e5a706b3e60bb9460434425ab82125811862ba0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412295"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54740577"
 ---
-# <a name="icordebugilcode2getlocalvarsigtoken-method"></a><span data-ttu-id="068b6-102">ICorDebugILCode2::GetLocalVarSigToken – metoda</span><span class="sxs-lookup"><span data-stu-id="068b6-102">ICorDebugILCode2::GetLocalVarSigToken Method</span></span>
-<span data-ttu-id="068b6-103">[Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]</span><span class="sxs-lookup"><span data-stu-id="068b6-103">[Supported in the .NET Framework 4.5.2 and later versions]</span></span>  
+# <a name="icordebugilcode2getlocalvarsigtoken-method"></a><span data-ttu-id="7d0bc-102">ICorDebugILCode2::GetLocalVarSigToken – metoda</span><span class="sxs-lookup"><span data-stu-id="7d0bc-102">ICorDebugILCode2::GetLocalVarSigToken Method</span></span>
+<span data-ttu-id="7d0bc-103">[Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]</span><span class="sxs-lookup"><span data-stu-id="7d0bc-103">[Supported in the .NET Framework 4.5.2 and later versions]</span></span>  
   
- <span data-ttu-id="068b6-104">Získá metadata token pro místní proměnné podpis pro funkce, která je reprezentována této instance.</span><span class="sxs-lookup"><span data-stu-id="068b6-104">Gets the metadata token for the local variable signature for the function that is represented by this instance.</span></span>  
+ <span data-ttu-id="7d0bc-104">Získá token metadat pro místní proměnné podpis pro funkci, která je reprezentovaný touto instancí.</span><span class="sxs-lookup"><span data-stu-id="7d0bc-104">Gets the metadata token for the local variable signature for the function that is represented by this instance.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="068b6-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="068b6-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7d0bc-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7d0bc-105">Syntax</span></span>  
   
 ```cpp
 HRESULT GetLocalVarSigToken(  
@@ -34,21 +34,21 @@ HRESULT GetLocalVarSigToken(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="068b6-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="068b6-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="7d0bc-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="7d0bc-106">Parameters</span></span>  
  `pmdSig`  
- <span data-ttu-id="068b6-107">[out] Ukazatel `mdSignature` tokenu pro místní proměnné podpis pro tuto funkci, nebo `mdSignatureNil` Pokud neexistuje žádný podpis (to znamená, pokud je funkce nemá žádné místní proměnné).</span><span class="sxs-lookup"><span data-stu-id="068b6-107">[out] A pointer to the `mdSignature` token for the local variable signature for this function, or `mdSignatureNil` if there is no signature (that is, if the function doesn't have any local variables).</span></span>  
+ <span data-ttu-id="7d0bc-107">[out] Ukazatel `mdSignature` token pro místní proměnné podpis pro tuto funkci nebo `mdSignatureNil` Pokud neexistuje žádný podpis (to znamená, pokud je funkce nemá žádné místní proměnné).</span><span class="sxs-lookup"><span data-stu-id="7d0bc-107">[out] A pointer to the `mdSignature` token for the local variable signature for this function, or `mdSignatureNil` if there is no signature (that is, if the function doesn't have any local variables).</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="068b6-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="068b6-108">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="7d0bc-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7d0bc-108">Remarks</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="068b6-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="068b6-109">Requirements</span></span>  
- <span data-ttu-id="068b6-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="068b6-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7d0bc-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7d0bc-109">Requirements</span></span>  
+ <span data-ttu-id="7d0bc-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7d0bc-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="068b6-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="068b6-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="7d0bc-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="7d0bc-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="068b6-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="068b6-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="7d0bc-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="7d0bc-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="068b6-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="068b6-113">**.NET Framework Versions:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]</span></span>  
+ <span data-ttu-id="7d0bc-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7d0bc-113">**.NET Framework Versions:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="068b6-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="068b6-114">See Also</span></span>  
- [<span data-ttu-id="068b6-115">ICorDebugILCode2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="068b6-115">ICorDebugILCode2 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode2-interface.md)  
- [<span data-ttu-id="068b6-116">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="068b6-116">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="7d0bc-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7d0bc-114">See also</span></span>
+- [<span data-ttu-id="7d0bc-115">ICorDebugILCode2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7d0bc-115">ICorDebugILCode2 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode2-interface.md)
+- [<span data-ttu-id="7d0bc-116">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="7d0bc-116">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

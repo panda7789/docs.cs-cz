@@ -17,46 +17,46 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c34d9243e4ed7ed2492784154b157189c7d22cd2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 98af4c0d2e5f5930c179b4b96ffccd7ef0703211
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33440577"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54562398"
 ---
-# <a name="ihostsecuritymanagerreverttoself-method"></a><span data-ttu-id="0ae04-102">IHostSecurityManager::RevertToSelf – metoda</span><span class="sxs-lookup"><span data-stu-id="0ae04-102">IHostSecurityManager::RevertToSelf Method</span></span>
-<span data-ttu-id="0ae04-103">Ukončí zosobnění aktuální identitu uživatele a vrátí původní tokenu vlákna.</span><span class="sxs-lookup"><span data-stu-id="0ae04-103">Terminates impersonation of the current user identity and returns the original thread token.</span></span>  
+# <a name="ihostsecuritymanagerreverttoself-method"></a><span data-ttu-id="ff9d1-102">IHostSecurityManager::RevertToSelf – metoda</span><span class="sxs-lookup"><span data-stu-id="ff9d1-102">IHostSecurityManager::RevertToSelf Method</span></span>
+<span data-ttu-id="ff9d1-103">Zosobnění aktuální identitu uživatele se ukončí a vrátí původní token vlákna.</span><span class="sxs-lookup"><span data-stu-id="ff9d1-103">Terminates impersonation of the current user identity and returns the original thread token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0ae04-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0ae04-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ff9d1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ff9d1-104">Syntax</span></span>  
   
 ```  
 HRESULT RevertToSelf ();  
 ```  
   
-## <a name="return-value"></a><span data-ttu-id="0ae04-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0ae04-105">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="ff9d1-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ff9d1-105">Return Value</span></span>  
   
-|<span data-ttu-id="0ae04-106">HRESULT</span><span class="sxs-lookup"><span data-stu-id="0ae04-106">HRESULT</span></span>|<span data-ttu-id="0ae04-107">Popis</span><span class="sxs-lookup"><span data-stu-id="0ae04-107">Description</span></span>|  
+|<span data-ttu-id="ff9d1-106">HRESULT</span><span class="sxs-lookup"><span data-stu-id="ff9d1-106">HRESULT</span></span>|<span data-ttu-id="ff9d1-107">Popis</span><span class="sxs-lookup"><span data-stu-id="ff9d1-107">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="0ae04-108">S_OK</span><span class="sxs-lookup"><span data-stu-id="0ae04-108">S_OK</span></span>|<span data-ttu-id="0ae04-109">`RevertToSelf` úspěšně vrácena.</span><span class="sxs-lookup"><span data-stu-id="0ae04-109">`RevertToSelf` returned successfully.</span></span>|  
-|<span data-ttu-id="0ae04-110">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="0ae04-110">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="0ae04-111">Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="0ae04-111">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="0ae04-112">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="0ae04-112">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="0ae04-113">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="0ae04-113">The call timed out.</span></span>|  
-|<span data-ttu-id="0ae04-114">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="0ae04-114">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="0ae04-115">Volající není vlastníkem zámek.</span><span class="sxs-lookup"><span data-stu-id="0ae04-115">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="0ae04-116">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="0ae04-116">HOST_E_ABANDONED</span></span>|<span data-ttu-id="0ae04-117">Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.</span><span class="sxs-lookup"><span data-stu-id="0ae04-117">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="0ae04-118">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="0ae04-118">E_FAIL</span></span>|<span data-ttu-id="0ae04-119">Došlo k neznámému závažné selhání.</span><span class="sxs-lookup"><span data-stu-id="0ae04-119">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="0ae04-120">Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="0ae04-120">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="0ae04-121">Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="0ae04-121">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="ff9d1-108">S_OK</span><span class="sxs-lookup"><span data-stu-id="ff9d1-108">S_OK</span></span>|<span data-ttu-id="ff9d1-109">`RevertToSelf` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="ff9d1-109">`RevertToSelf` returned successfully.</span></span>|  
+|<span data-ttu-id="ff9d1-110">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="ff9d1-110">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="ff9d1-111">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="ff9d1-111">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="ff9d1-112">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="ff9d1-112">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="ff9d1-113">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="ff9d1-113">The call timed out.</span></span>|  
+|<span data-ttu-id="ff9d1-114">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="ff9d1-114">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="ff9d1-115">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="ff9d1-115">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="ff9d1-116">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="ff9d1-116">HOST_E_ABANDONED</span></span>|<span data-ttu-id="ff9d1-117">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="ff9d1-117">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="ff9d1-118">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="ff9d1-118">E_FAIL</span></span>|<span data-ttu-id="ff9d1-119">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="ff9d1-119">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="ff9d1-120">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="ff9d1-120">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="ff9d1-121">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="ff9d1-121">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="0ae04-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0ae04-122">Remarks</span></span>  
- <span data-ttu-id="0ae04-123">`RevertToSelf` je volána se vraťte do původní tokenu vlákna po starší volání [ImpersonateLoggedOnUser –](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-impersonateloggedonuser-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="0ae04-123">`RevertToSelf` is called to return to the original thread token, after an earlier call to the [ImpersonateLoggedOnUser](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-impersonateloggedonuser-method.md) method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ff9d1-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ff9d1-122">Remarks</span></span>  
+ <span data-ttu-id="ff9d1-123">`RevertToSelf` je volána k vrácení k původní tokenu vlákna po dřívějším volání [ImpersonateLoggedOnUser](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-impersonateloggedonuser-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="ff9d1-123">`RevertToSelf` is called to return to the original thread token, after an earlier call to the [ImpersonateLoggedOnUser](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-impersonateloggedonuser-method.md) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="0ae04-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0ae04-124">Requirements</span></span>  
- <span data-ttu-id="0ae04-125">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0ae04-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ff9d1-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ff9d1-124">Requirements</span></span>  
+ <span data-ttu-id="ff9d1-125">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ff9d1-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="0ae04-126">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="0ae04-126">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="ff9d1-126">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="ff9d1-126">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="0ae04-127">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="0ae04-127">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="ff9d1-127">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ff9d1-127">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="0ae04-128">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0ae04-128">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="ff9d1-128">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ff9d1-128">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0ae04-129">Viz také</span><span class="sxs-lookup"><span data-stu-id="0ae04-129">See Also</span></span>  
- [<span data-ttu-id="0ae04-130">IHostSecurityContext – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0ae04-130">IHostSecurityContext Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)  
- [<span data-ttu-id="0ae04-131">IHostSecurityManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0ae04-131">IHostSecurityManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)  
- [<span data-ttu-id="0ae04-132">ImpersonateLoggedOnUser – metoda</span><span class="sxs-lookup"><span data-stu-id="0ae04-132">ImpersonateLoggedOnUser Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-impersonateloggedonuser-method.md)
+## <a name="see-also"></a><span data-ttu-id="ff9d1-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ff9d1-129">See also</span></span>
+- [<span data-ttu-id="ff9d1-130">IHostSecurityContext – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ff9d1-130">IHostSecurityContext Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)
+- [<span data-ttu-id="ff9d1-131">IHostSecurityManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ff9d1-131">IHostSecurityManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)
+- [<span data-ttu-id="ff9d1-132">ImpersonateLoggedOnUser – metoda</span><span class="sxs-lookup"><span data-stu-id="ff9d1-132">ImpersonateLoggedOnUser Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-impersonateloggedonuser-method.md)

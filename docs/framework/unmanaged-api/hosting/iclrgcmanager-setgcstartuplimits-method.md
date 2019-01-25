@@ -17,20 +17,20 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8cbcd3ae758add4beec24959314d2cf806c2a2b3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cf68d2284a6b2603ab97b5be27d6659857fd6c63
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33435690"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54656476"
 ---
-# <a name="iclrgcmanagersetgcstartuplimits-method"></a><span data-ttu-id="e7c51-102">ICLRGCManager::SetGCStartupLimits – metoda</span><span class="sxs-lookup"><span data-stu-id="e7c51-102">ICLRGCManager::SetGCStartupLimits Method</span></span>
-<span data-ttu-id="e7c51-103">Nastaví velikost segment kolekce paměti a maximální velikost systém kolekce paměti generace 0.</span><span class="sxs-lookup"><span data-stu-id="e7c51-103">Sets the size of a garbage collection segment and the maximum size of the garbage collection system's generation 0.</span></span>  
+# <a name="iclrgcmanagersetgcstartuplimits-method"></a><span data-ttu-id="508c3-102">ICLRGCManager::SetGCStartupLimits – metoda</span><span class="sxs-lookup"><span data-stu-id="508c3-102">ICLRGCManager::SetGCStartupLimits Method</span></span>
+<span data-ttu-id="508c3-103">Nastaví velikost segmentu kolekce uvolnění paměti a maximální velikost systému kolekce uvolnění paměti generace 0.</span><span class="sxs-lookup"><span data-stu-id="508c3-103">Sets the size of a garbage collection segment and the maximum size of the garbage collection system's generation 0.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="e7c51-104">Počínaje [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], můžete nastavit velikost segmentu a hodnoty větší než maximální generace 0 velikost tak, aby `DWORD` pomocí [iclrgcmanager2::setgcstartuplimitsex –](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="e7c51-104">Starting with the [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], you can set segment size and maximum generation 0 size to values greater than `DWORD` by using the [ICLRGCManager2::SetGCStartupLimitsEx](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md) method.</span></span>  
+>  <span data-ttu-id="508c3-104">Počínaje [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], můžete nastavit velikost segmentu a hodnoty větší než maximální generace 0 velikost `DWORD` pomocí [iclrgcmanager2::setgcstartuplimitsex –](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="508c3-104">Starting with the [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], you can set segment size and maximum generation 0 size to values greater than `DWORD` by using the [ICLRGCManager2::SetGCStartupLimitsEx](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md) method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e7c51-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e7c51-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="508c3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="508c3-105">Syntax</span></span>  
   
 ```  
 HRESULT SetGCStartupLimits (  
@@ -39,42 +39,42 @@ HRESULT SetGCStartupLimits (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="e7c51-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="e7c51-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="508c3-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="508c3-106">Parameters</span></span>  
  `SegmentSize`  
- <span data-ttu-id="e7c51-107">[v] Zadaná velikost paměti segment kolekce.</span><span class="sxs-lookup"><span data-stu-id="e7c51-107">[in] The specified size of a garbage collection segment.</span></span>  
+ <span data-ttu-id="508c3-107">[in] Zadaná velikost segmentu kolekce uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="508c3-107">[in] The specified size of a garbage collection segment.</span></span>  
   
- <span data-ttu-id="e7c51-108">Velikost minimální segmentu je 4 MB volného místa.</span><span class="sxs-lookup"><span data-stu-id="e7c51-108">The minimum segment size is 4 MB.</span></span> <span data-ttu-id="e7c51-109">Segmenty může být vyšší v přírůstcích po 1 MB nebo větší.</span><span class="sxs-lookup"><span data-stu-id="e7c51-109">Segments can be increased in increments of 1 MB or larger.</span></span>  
+ <span data-ttu-id="508c3-108">Segment minimální velikost je 4 MB.</span><span class="sxs-lookup"><span data-stu-id="508c3-108">The minimum segment size is 4 MB.</span></span> <span data-ttu-id="508c3-109">Segmenty může být větší nebo vyšší v krocích po 1 MB.</span><span class="sxs-lookup"><span data-stu-id="508c3-109">Segments can be increased in increments of 1 MB or larger.</span></span>  
   
  `MaxGen0Size`  
- <span data-ttu-id="e7c51-110">[v] Zadaná maximální velikost pro generování 0.</span><span class="sxs-lookup"><span data-stu-id="e7c51-110">[in] The specified maximum size for generation 0.</span></span>  
+ <span data-ttu-id="508c3-110">[in] Zadaná maximální velikost 0. generace.</span><span class="sxs-lookup"><span data-stu-id="508c3-110">[in] The specified maximum size for generation 0.</span></span>  
   
- <span data-ttu-id="e7c51-111">Velikost minimální generace 0 je 64 KB.</span><span class="sxs-lookup"><span data-stu-id="e7c51-111">The minimum generation 0 size is 64 KB.</span></span>  
+ <span data-ttu-id="508c3-111">Velikost minimální generace 0 je 64 KB.</span><span class="sxs-lookup"><span data-stu-id="508c3-111">The minimum generation 0 size is 64 KB.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="e7c51-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e7c51-112">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="508c3-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="508c3-112">Return Value</span></span>  
   
-|<span data-ttu-id="e7c51-113">HRESULT</span><span class="sxs-lookup"><span data-stu-id="e7c51-113">HRESULT</span></span>|<span data-ttu-id="e7c51-114">Popis</span><span class="sxs-lookup"><span data-stu-id="e7c51-114">Description</span></span>|  
+|<span data-ttu-id="508c3-113">HRESULT</span><span class="sxs-lookup"><span data-stu-id="508c3-113">HRESULT</span></span>|<span data-ttu-id="508c3-114">Popis</span><span class="sxs-lookup"><span data-stu-id="508c3-114">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="e7c51-115">S_OK</span><span class="sxs-lookup"><span data-stu-id="e7c51-115">S_OK</span></span>|<span data-ttu-id="e7c51-116">`SetGCStartupLimits` úspěšně vrácena.</span><span class="sxs-lookup"><span data-stu-id="e7c51-116">`SetGCStartupLimits` returned successfully.</span></span>|  
-|<span data-ttu-id="e7c51-117">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="e7c51-117">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="e7c51-118">Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="e7c51-118">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="e7c51-119">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="e7c51-119">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="e7c51-120">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="e7c51-120">The call timed out.</span></span>|  
-|<span data-ttu-id="e7c51-121">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="e7c51-121">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="e7c51-122">Volající není vlastníkem zámek.</span><span class="sxs-lookup"><span data-stu-id="e7c51-122">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="e7c51-123">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="e7c51-123">HOST_E_ABANDONED</span></span>|<span data-ttu-id="e7c51-124">Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.</span><span class="sxs-lookup"><span data-stu-id="e7c51-124">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="e7c51-125">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="e7c51-125">E_FAIL</span></span>|<span data-ttu-id="e7c51-126">Došlo k neznámému závažné selhání.</span><span class="sxs-lookup"><span data-stu-id="e7c51-126">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="e7c51-127">Po návratu metoda E_FAIL modulu CLR již není použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="e7c51-127">After a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="e7c51-128">Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="e7c51-128">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="508c3-115">S_OK</span><span class="sxs-lookup"><span data-stu-id="508c3-115">S_OK</span></span>|<span data-ttu-id="508c3-116">`SetGCStartupLimits` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="508c3-116">`SetGCStartupLimits` returned successfully.</span></span>|  
+|<span data-ttu-id="508c3-117">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="508c3-117">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="508c3-118">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="508c3-118">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="508c3-119">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="508c3-119">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="508c3-120">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="508c3-120">The call timed out.</span></span>|  
+|<span data-ttu-id="508c3-121">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="508c3-121">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="508c3-122">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="508c3-122">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="508c3-123">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="508c3-123">HOST_E_ABANDONED</span></span>|<span data-ttu-id="508c3-124">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="508c3-124">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="508c3-125">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="508c3-125">E_FAIL</span></span>|<span data-ttu-id="508c3-126">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="508c3-126">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="508c3-127">Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="508c3-127">After a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="508c3-128">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="508c3-128">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="e7c51-129">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e7c51-129">Remarks</span></span>  
- <span data-ttu-id="e7c51-130">Hodnoty, `SetGCStartupLimits` sady lze zadat pouze jednou.</span><span class="sxs-lookup"><span data-stu-id="e7c51-130">The values that `SetGCStartupLimits` sets can be specified only once.</span></span> <span data-ttu-id="e7c51-131">Novější volá, aby se `SetGCStartupLimits` jsou ignorovány.</span><span class="sxs-lookup"><span data-stu-id="e7c51-131">Later calls to `SetGCStartupLimits` are ignored.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="508c3-129">Poznámky</span><span class="sxs-lookup"><span data-stu-id="508c3-129">Remarks</span></span>  
+ <span data-ttu-id="508c3-130">Hodnoty, které `SetGCStartupLimits` sady lze zadat pouze jednou.</span><span class="sxs-lookup"><span data-stu-id="508c3-130">The values that `SetGCStartupLimits` sets can be specified only once.</span></span> <span data-ttu-id="508c3-131">Pozdější volání `SetGCStartupLimits` jsou ignorovány.</span><span class="sxs-lookup"><span data-stu-id="508c3-131">Later calls to `SetGCStartupLimits` are ignored.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e7c51-132">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e7c51-132">Requirements</span></span>  
- <span data-ttu-id="e7c51-133">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e7c51-133">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="508c3-132">Požadavky</span><span class="sxs-lookup"><span data-stu-id="508c3-132">Requirements</span></span>  
+ <span data-ttu-id="508c3-133">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="508c3-133">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e7c51-134">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="e7c51-134">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="508c3-134">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="508c3-134">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="e7c51-135">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e7c51-135">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="508c3-135">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="508c3-135">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="e7c51-136">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e7c51-136">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="508c3-136">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="508c3-136">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e7c51-137">Viz také</span><span class="sxs-lookup"><span data-stu-id="e7c51-137">See Also</span></span>  
- [<span data-ttu-id="e7c51-138">Automatická správa paměti</span><span class="sxs-lookup"><span data-stu-id="e7c51-138">Automatic Memory Management</span></span>](../../../../docs/standard/automatic-memory-management.md)  
- [<span data-ttu-id="e7c51-139">Uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="e7c51-139">Garbage Collection</span></span>](../../../../docs/standard/garbage-collection/index.md)  
- [<span data-ttu-id="e7c51-140">ICLRControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e7c51-140">ICLRControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
- [<span data-ttu-id="e7c51-141">ICLRGCManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e7c51-141">ICLRGCManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-interface.md)
+## <a name="see-also"></a><span data-ttu-id="508c3-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="508c3-137">See also</span></span>
+- [<span data-ttu-id="508c3-138">Automatická správa paměti</span><span class="sxs-lookup"><span data-stu-id="508c3-138">Automatic Memory Management</span></span>](../../../../docs/standard/automatic-memory-management.md)
+- [<span data-ttu-id="508c3-139">Uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="508c3-139">Garbage Collection</span></span>](../../../../docs/standard/garbage-collection/index.md)
+- [<span data-ttu-id="508c3-140">ICLRControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="508c3-140">ICLRControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
+- [<span data-ttu-id="508c3-141">ICLRGCManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="508c3-141">ICLRGCManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-interface.md)

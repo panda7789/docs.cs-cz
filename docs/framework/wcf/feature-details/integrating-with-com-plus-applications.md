@@ -9,31 +9,31 @@ helpviewer_keywords:
 - COM+ [WCF]
 - WCF, COM+ integration
 ms.assetid: 98bf7dc4-d49a-4129-a59b-db7a7ec8c241
-ms.openlocfilehash: d321d1585b04a8a22ecc138ceef11630229b1054
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 08e9b6b1320b1d44281b573af6afd29e9710383c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33490494"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54541765"
 ---
-# <a name="integrating-with-com-applications"></a><span data-ttu-id="88f09-102">Integrace s aplikacemi modelu COM+</span><span class="sxs-lookup"><span data-stu-id="88f09-102">Integrating with COM+ Applications</span></span>
-<span data-ttu-id="88f09-103">Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytváření distribuované aplikace.</span><span class="sxs-lookup"><span data-stu-id="88f09-103">Windows Communication Foundation (WCF) provides a rich environment for creating distributed applications.</span></span> <span data-ttu-id="88f09-104">Pokud máte významné investice v logiku aplikace založené na součást hostované v modelu COM +, můžete rozšířit existující logiky, místo aby ho přepsání WCF.</span><span class="sxs-lookup"><span data-stu-id="88f09-104">If you have a substantial investment in component-based application logic hosted in COM+, you can use WCF to extend your existing logic rather than having to rewrite it.</span></span> <span data-ttu-id="88f09-105">Témata v této části popisují způsob použití modelu COM + s použitím technologie WCF.</span><span class="sxs-lookup"><span data-stu-id="88f09-105">The topics within this section describe how to use COM+ with WCF.</span></span>  
+# <a name="integrating-with-com-applications"></a><span data-ttu-id="f0227-102">Integrace s aplikacemi modelu COM+</span><span class="sxs-lookup"><span data-stu-id="f0227-102">Integrating with COM+ Applications</span></span>
+<span data-ttu-id="f0227-103">Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytváření distribuované aplikace.</span><span class="sxs-lookup"><span data-stu-id="f0227-103">Windows Communication Foundation (WCF) provides a rich environment for creating distributed applications.</span></span> <span data-ttu-id="f0227-104">Pokud máte značné investice do aplikací založených na komponentách logiky hostované v modelu COM +, můžou využít WCF k rozšíření existující logic namísto nutnosti jeho přepsání.</span><span class="sxs-lookup"><span data-stu-id="f0227-104">If you have a substantial investment in component-based application logic hosted in COM+, you can use WCF to extend your existing logic rather than having to rewrite it.</span></span> <span data-ttu-id="f0227-105">Témata v této části popisují způsob použití modelu COM + s použitím technologie WCF.</span><span class="sxs-lookup"><span data-stu-id="f0227-105">The topics within this section describe how to use COM+ with WCF.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="88f09-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="88f09-106">In This Section</span></span>  
- [<span data-ttu-id="88f09-107">Přehled integrace s aplikacemi modelu COM+</span><span class="sxs-lookup"><span data-stu-id="88f09-107">Integrating with COM+ Applications Overview</span></span>](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)  
- <span data-ttu-id="88f09-108">Bude stručně charakterizovat, kdy a jak integrovat komponenty modelu COM +.</span><span class="sxs-lookup"><span data-stu-id="88f09-108">Gives an overview of when and how to integrate COM+ components.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="f0227-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f0227-106">In This Section</span></span>  
+ [<span data-ttu-id="f0227-107">Přehled integrace s aplikacemi modelu COM+</span><span class="sxs-lookup"><span data-stu-id="f0227-107">Integrating with COM+ Applications Overview</span></span>](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)  
+ <span data-ttu-id="f0227-108">Poskytuje přehled kdy a jak integrovat komponenty modelu COM +.</span><span class="sxs-lookup"><span data-stu-id="f0227-108">Gives an overview of when and how to integrate COM+ components.</span></span>  
   
- [<span data-ttu-id="88f09-109">Postupy: Použití nástroje pro konfiguraci služby modelu COM+</span><span class="sxs-lookup"><span data-stu-id="88f09-109">How to: Use the COM+ Service Model Configuration Tool</span></span>](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)  
- <span data-ttu-id="88f09-110">Vysvětluje, jak nakonfigurovat rozhraní aplikace, které chcete zveřejněné jako služby WCF pomocí nástroje příkazového řádku na modelu COM + Service Model Configuration (ComSvcConfig.exe).</span><span class="sxs-lookup"><span data-stu-id="88f09-110">Explains how to use the COM+ Service Model Configuration command-line tool (ComSvcConfig.exe) to configure the application interfaces that you want exposed as WCF services.</span></span>  
+ [<span data-ttu-id="f0227-109">Postupy: Použijte nástroj pro konfiguraci modelu služby COM +</span><span class="sxs-lookup"><span data-stu-id="f0227-109">How to: Use the COM+ Service Model Configuration Tool</span></span>](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)  
+ <span data-ttu-id="f0227-110">Vysvětluje, jak pomocí nástroje příkazového řádku modelu COM + Service Model Configuration (ComSvcConfig.exe) ke konfiguraci rozhraní aplikací, které mají být vystavený jako služba WCF.</span><span class="sxs-lookup"><span data-stu-id="f0227-110">Explains how to use the COM+ Service Model Configuration command-line tool (ComSvcConfig.exe) to configure the application interfaces that you want exposed as WCF services.</span></span>  
   
- [<span data-ttu-id="88f09-111">Postupy: Konfigurace nastavení služby modelu COM+</span><span class="sxs-lookup"><span data-stu-id="88f09-111">How to: Configure COM+ Service Settings</span></span>](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)  
- <span data-ttu-id="88f09-112">Vysvětluje postup konfigurace objektu modelu COM + jako služby WCF.</span><span class="sxs-lookup"><span data-stu-id="88f09-112">Explains how to configure a COM+ object as a WCF service.</span></span>  
+ [<span data-ttu-id="f0227-111">Postupy: Konfigurace nastavení služby modelu COM +</span><span class="sxs-lookup"><span data-stu-id="f0227-111">How to: Configure COM+ Service Settings</span></span>](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)  
+ <span data-ttu-id="f0227-112">Vysvětluje, jak nakonfigurovat objekt modelu COM + jako služba WCF.</span><span class="sxs-lookup"><span data-stu-id="f0227-112">Explains how to configure a COM+ object as a WCF service.</span></span>  
   
- [<span data-ttu-id="88f09-113">Postupy: Nasazení integrační aplikace modelu COM+</span><span class="sxs-lookup"><span data-stu-id="88f09-113">How to: Deploy a COM+ Integration Application</span></span>](../../../../docs/framework/wcf/feature-details/how-to-deploy-a-com-integration-application.md)  
- <span data-ttu-id="88f09-114">Vysvětluje, jak přesunout integrace aplikace modelu COM +.</span><span class="sxs-lookup"><span data-stu-id="88f09-114">Explains how to move a COM+ integration application.</span></span>  
+ [<span data-ttu-id="f0227-113">Postupy: Nasazení aplikace integrací COM +.</span><span class="sxs-lookup"><span data-stu-id="f0227-113">How to: Deploy a COM+ Integration Application</span></span>](../../../../docs/framework/wcf/feature-details/how-to-deploy-a-com-integration-application.md)  
+ <span data-ttu-id="f0227-114">Vysvětluje, jak přesunout aplikace integrací COM +.</span><span class="sxs-lookup"><span data-stu-id="f0227-114">Explains how to move a COM+ integration application.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="88f09-115">Odkaz</span><span class="sxs-lookup"><span data-stu-id="88f09-115">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="f0227-115">Odkaz</span><span class="sxs-lookup"><span data-stu-id="f0227-115">Reference</span></span>  
  <xref:System.ServiceModel>  
   
-## <a name="see-also"></a><span data-ttu-id="88f09-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="88f09-116">See Also</span></span>  
- [<span data-ttu-id="88f09-117">Integrace s aplikacemi modelu COM</span><span class="sxs-lookup"><span data-stu-id="88f09-117">Integrating with COM Applications</span></span>](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md)
+## <a name="see-also"></a><span data-ttu-id="f0227-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f0227-116">See also</span></span>
+- [<span data-ttu-id="f0227-117">Integrace s aplikacemi modelu COM</span><span class="sxs-lookup"><span data-stu-id="f0227-117">Integrating with COM Applications</span></span>](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md)

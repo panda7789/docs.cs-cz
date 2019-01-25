@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d475d356-6abb-4701-8fd1-2906fb93dfba
-ms.openlocfilehash: e27ef72f0341524524a8f267eeeb13a6f46deb52
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: 72ab53c9b7687246e1ab219774a67b7b1d42938f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261164"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54666823"
 ---
-# <a name="childviews-and-relations"></a><span data-ttu-id="ac94e-102">ChildViews a relace</span><span class="sxs-lookup"><span data-stu-id="ac94e-102">ChildViews and Relations</span></span>
-<span data-ttu-id="ac94e-103">Pokud existuje relace mezi tabulkami v <xref:System.Data.DataSet>, můžete vytvořit <xref:System.Data.DataView> obsahující řádky ze související podřízené tabulce pomocí <xref:System.Data.DataRowView.CreateChildView%2A> metodu <xref:System.Data.DataRowView> pro řádky v nadřazené tabulce.</span><span class="sxs-lookup"><span data-stu-id="ac94e-103">If a relationship exists between tables in a <xref:System.Data.DataSet>, you can create a <xref:System.Data.DataView> containing rows from the related child table by using the <xref:System.Data.DataRowView.CreateChildView%2A> method of the <xref:System.Data.DataRowView> for the rows in the parent table.</span></span> <span data-ttu-id="ac94e-104">Například následující kód zobrazí **kategorie** a jejich souvisejících **produkty** abecedně seřazené podle **CategoryName** a **ProductName** .</span><span class="sxs-lookup"><span data-stu-id="ac94e-104">For example, the following code displays **Categories** and their related **Products** in alphabetical order sorted by **CategoryName** and **ProductName**.</span></span>  
+# <a name="childviews-and-relations"></a><span data-ttu-id="36271-102">ChildViews a relace</span><span class="sxs-lookup"><span data-stu-id="36271-102">ChildViews and Relations</span></span>
+<span data-ttu-id="36271-103">Pokud existuje relace mezi tabulkami v <xref:System.Data.DataSet>, můžete vytvořit <xref:System.Data.DataView> obsahující řádky ze související podřízené tabulce pomocí <xref:System.Data.DataRowView.CreateChildView%2A> metodu <xref:System.Data.DataRowView> pro řádky v nadřazené tabulce.</span><span class="sxs-lookup"><span data-stu-id="36271-103">If a relationship exists between tables in a <xref:System.Data.DataSet>, you can create a <xref:System.Data.DataView> containing rows from the related child table by using the <xref:System.Data.DataRowView.CreateChildView%2A> method of the <xref:System.Data.DataRowView> for the rows in the parent table.</span></span> <span data-ttu-id="36271-104">Například následující kód zobrazí **kategorie** a jejich souvisejících **produkty** abecedně seřazené podle **CategoryName** a **ProductName** .</span><span class="sxs-lookup"><span data-stu-id="36271-104">For example, the following code displays **Categories** and their related **Products** in alphabetical order sorted by **CategoryName** and **ProductName**.</span></span>  
   
 ```vb  
 Dim catTable As DataTable = catDS.Tables("Categories")  
@@ -73,9 +73,9 @@ foreach (DataRowView catDRV in catView)
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ac94e-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="ac94e-105">See Also</span></span>  
- <xref:System.Data.DataSet>  
- <xref:System.Data.DataView>  
- <xref:System.Data.DataRowView>  
- [<span data-ttu-id="ac94e-106">Zobrazení dat</span><span class="sxs-lookup"><span data-stu-id="ac94e-106">DataViews</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
- [<span data-ttu-id="ac94e-107">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="ac94e-107">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="36271-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="36271-105">See also</span></span>
+- <xref:System.Data.DataSet>
+- <xref:System.Data.DataView>
+- <xref:System.Data.DataRowView>
+- [<span data-ttu-id="36271-106">Zobrazení dat</span><span class="sxs-lookup"><span data-stu-id="36271-106">DataViews</span></span>](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)
+- [<span data-ttu-id="36271-107">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="36271-107">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)

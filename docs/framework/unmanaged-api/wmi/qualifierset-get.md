@@ -16,19 +16,19 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e8c10a680f1caffd583097b16c046729fe10b140
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 357182d6157b63f1bccf47cb43f0c78dec5875cf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43804237"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54625936"
 ---
-# <a name="qualifiersetget-function"></a><span data-ttu-id="76ed5-103">QualifierSet_Get – funkce</span><span class="sxs-lookup"><span data-stu-id="76ed5-103">QualifierSet_Get function</span></span>
-<span data-ttu-id="76ed5-104">Získá zadaný s názvem kvalifikátoru.</span><span class="sxs-lookup"><span data-stu-id="76ed5-104">Gets the specified named qualifier.</span></span>  
+# <a name="qualifiersetget-function"></a><span data-ttu-id="6d64d-103">QualifierSet_Get – funkce</span><span class="sxs-lookup"><span data-stu-id="6d64d-103">QualifierSet_Get function</span></span>
+<span data-ttu-id="6d64d-104">Získá zadaný s názvem kvalifikátoru.</span><span class="sxs-lookup"><span data-stu-id="6d64d-104">Gets the specified named qualifier.</span></span>  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
-## <a name="syntax"></a><span data-ttu-id="76ed5-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="76ed5-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6d64d-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6d64d-105">Syntax</span></span>  
   
 ```  
 HRESULT QualifierSet_Get (
@@ -41,46 +41,46 @@ HRESULT QualifierSet_Get (
 ); 
 ```  
 
-## <a name="parameters"></a><span data-ttu-id="76ed5-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="76ed5-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="6d64d-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="6d64d-106">Parameters</span></span>
 
 `vFunc`   
-<span data-ttu-id="76ed5-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="76ed5-107">[in] This parameter is unused.</span></span>
+<span data-ttu-id="6d64d-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="6d64d-107">[in] This parameter is unused.</span></span>
 
 `ptr`   
-<span data-ttu-id="76ed5-108">[in] Ukazatel [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.</span><span class="sxs-lookup"><span data-stu-id="76ed5-108">[in] A pointer to an [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.</span></span>
+<span data-ttu-id="6d64d-108">[in] Ukazatel [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.</span><span class="sxs-lookup"><span data-stu-id="6d64d-108">[in] A pointer to an [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.</span></span>
 
 `wszName`   
-<span data-ttu-id="76ed5-109">[in] Název kvalifikátor, jehož hodnota je požadováno.</span><span class="sxs-lookup"><span data-stu-id="76ed5-109">[in] The name of the qualifier whose value is requested.</span></span>
+<span data-ttu-id="6d64d-109">[in] Název kvalifikátor, jehož hodnota je požadováno.</span><span class="sxs-lookup"><span data-stu-id="6d64d-109">[in] The name of the qualifier whose value is requested.</span></span>
 
 `lFlags`   
-<span data-ttu-id="76ed5-110">[in] Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="76ed5-110">[in] Reserved.</span></span> <span data-ttu-id="76ed5-111">Tento parametr musí být 0.</span><span class="sxs-lookup"><span data-stu-id="76ed5-111">This parameter must be 0.</span></span>
+<span data-ttu-id="6d64d-110">[in] Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="6d64d-110">[in] Reserved.</span></span> <span data-ttu-id="6d64d-111">Tento parametr musí být 0.</span><span class="sxs-lookup"><span data-stu-id="6d64d-111">This parameter must be 0.</span></span>
 
 `pVal`   
-<span data-ttu-id="76ed5-112">[out] V případě úspěchu správný typ a hodnota pro kvalifikátor.</span><span class="sxs-lookup"><span data-stu-id="76ed5-112">[out] When successful, the correct type and value for the qualifier.</span></span> <span data-ttu-id="76ed5-113">Pokud funkce selže, `VARIANT` odkazované `pVal` se nezmění.</span><span class="sxs-lookup"><span data-stu-id="76ed5-113">If the function fails, the `VARIANT` pointed to by `pVal` is not modified.</span></span> <span data-ttu-id="76ed5-114">Pokud je tento parametr `null`, tento parametr je ignorován.</span><span class="sxs-lookup"><span data-stu-id="76ed5-114">If this parameter is `null`, the parameter is ignored.</span></span>
+<span data-ttu-id="6d64d-112">[out] V případě úspěchu správný typ a hodnota pro kvalifikátor.</span><span class="sxs-lookup"><span data-stu-id="6d64d-112">[out] When successful, the correct type and value for the qualifier.</span></span> <span data-ttu-id="6d64d-113">Pokud funkce selže, `VARIANT` odkazované `pVal` se nezmění.</span><span class="sxs-lookup"><span data-stu-id="6d64d-113">If the function fails, the `VARIANT` pointed to by `pVal` is not modified.</span></span> <span data-ttu-id="6d64d-114">Pokud je tento parametr `null`, tento parametr je ignorován.</span><span class="sxs-lookup"><span data-stu-id="6d64d-114">If this parameter is `null`, the parameter is ignored.</span></span>
 
 `plFlavor`   
-<span data-ttu-id="76ed5-115">[out] Ukazatel, který přijímá bity charakter kvalifikátoru pro požadovaný kvalifikátor DLOUHO.</span><span class="sxs-lookup"><span data-stu-id="76ed5-115">[out] A pointer to a LONG that receives the qualifier flavor bits for the requested qualifier.</span></span> <span data-ttu-id="76ed5-116">Pokud není žádoucí informace charakter, tento parametr může být `null`.</span><span class="sxs-lookup"><span data-stu-id="76ed5-116">If flavor information is not desired, this parameter can be `null`.</span></span> 
+<span data-ttu-id="6d64d-115">[out] Ukazatel, který přijímá bity charakter kvalifikátoru pro požadovaný kvalifikátor DLOUHO.</span><span class="sxs-lookup"><span data-stu-id="6d64d-115">[out] A pointer to a LONG that receives the qualifier flavor bits for the requested qualifier.</span></span> <span data-ttu-id="6d64d-116">Pokud není žádoucí informace charakter, tento parametr může být `null`.</span><span class="sxs-lookup"><span data-stu-id="6d64d-116">If flavor information is not desired, this parameter can be `null`.</span></span> 
 
-## <a name="return-value"></a><span data-ttu-id="76ed5-117">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="76ed5-117">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="6d64d-117">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="6d64d-117">Return value</span></span>
 
-<span data-ttu-id="76ed5-118">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="76ed5-118">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
+<span data-ttu-id="6d64d-118">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="6d64d-118">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
 
-|<span data-ttu-id="76ed5-119">Konstanta</span><span class="sxs-lookup"><span data-stu-id="76ed5-119">Constant</span></span>  |<span data-ttu-id="76ed5-120">Hodnota</span><span class="sxs-lookup"><span data-stu-id="76ed5-120">Value</span></span>  |<span data-ttu-id="76ed5-121">Popis</span><span class="sxs-lookup"><span data-stu-id="76ed5-121">Description</span></span>  |
+|<span data-ttu-id="6d64d-119">Konstanta</span><span class="sxs-lookup"><span data-stu-id="6d64d-119">Constant</span></span>  |<span data-ttu-id="6d64d-120">Hodnota</span><span class="sxs-lookup"><span data-stu-id="6d64d-120">Value</span></span>  |<span data-ttu-id="6d64d-121">Popis</span><span class="sxs-lookup"><span data-stu-id="6d64d-121">Description</span></span>  |
 |---------|---------|---------|
-|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="76ed5-122">0x80041008</span><span class="sxs-lookup"><span data-stu-id="76ed5-122">0x80041008</span></span> | <span data-ttu-id="76ed5-123">Parametr není platný.</span><span class="sxs-lookup"><span data-stu-id="76ed5-123">A parameter is not valid.</span></span> |
-|`WBEM_E_NOT_FOUND` | <span data-ttu-id="76ed5-124">0x80041002</span><span class="sxs-lookup"><span data-stu-id="76ed5-124">0x80041002</span></span> | <span data-ttu-id="76ed5-125">Zadaný kvalifikátor neexistuje.</span><span class="sxs-lookup"><span data-stu-id="76ed5-125">The specified qualifier does not exist.</span></span> |
-|`WBEM_S_NO_ERROR` | <span data-ttu-id="76ed5-126">0</span><span class="sxs-lookup"><span data-stu-id="76ed5-126">0</span></span> | <span data-ttu-id="76ed5-127">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="76ed5-127">The function call was successful.</span></span>  |
+|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="6d64d-122">0x80041008</span><span class="sxs-lookup"><span data-stu-id="6d64d-122">0x80041008</span></span> | <span data-ttu-id="6d64d-123">Parametr není platný.</span><span class="sxs-lookup"><span data-stu-id="6d64d-123">A parameter is not valid.</span></span> |
+|`WBEM_E_NOT_FOUND` | <span data-ttu-id="6d64d-124">0x80041002</span><span class="sxs-lookup"><span data-stu-id="6d64d-124">0x80041002</span></span> | <span data-ttu-id="6d64d-125">Zadaný kvalifikátor neexistuje.</span><span class="sxs-lookup"><span data-stu-id="6d64d-125">The specified qualifier does not exist.</span></span> |
+|`WBEM_S_NO_ERROR` | <span data-ttu-id="6d64d-126">0</span><span class="sxs-lookup"><span data-stu-id="6d64d-126">0</span></span> | <span data-ttu-id="6d64d-127">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="6d64d-127">The function call was successful.</span></span>  |
   
-## <a name="remarks"></a><span data-ttu-id="76ed5-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="76ed5-128">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="6d64d-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6d64d-128">Remarks</span></span>
 
-<span data-ttu-id="76ed5-129">Tato funkce zalamuje volání na [IWbemQualifierSet::Get](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-get) metody.</span><span class="sxs-lookup"><span data-stu-id="76ed5-129">This function wraps a call to the [IWbemQualifierSet::Get](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-get) method.</span></span>
+<span data-ttu-id="6d64d-129">Tato funkce zalamuje volání na [IWbemQualifierSet::Get](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-get) metody.</span><span class="sxs-lookup"><span data-stu-id="6d64d-129">This function wraps a call to the [IWbemQualifierSet::Get](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-get) method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="76ed5-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="76ed5-130">Requirements</span></span>  
- <span data-ttu-id="76ed5-131">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="76ed5-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="6d64d-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6d64d-130">Requirements</span></span>  
+ <span data-ttu-id="6d64d-131">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6d64d-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="76ed5-132">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="76ed5-132">**Header:** WMINet_Utils.idl</span></span>  
+ <span data-ttu-id="6d64d-132">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="6d64d-132">**Header:** WMINet_Utils.idl</span></span>  
   
- <span data-ttu-id="76ed5-133">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="76ed5-133">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
+ <span data-ttu-id="6d64d-133">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="6d64d-133">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="76ed5-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="76ed5-134">See also</span></span>  
-[<span data-ttu-id="76ed5-135">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="76ed5-135">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="6d64d-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6d64d-134">See also</span></span>
+- [<span data-ttu-id="6d64d-135">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="6d64d-135">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)

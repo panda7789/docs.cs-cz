@@ -7,34 +7,34 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], ordering members
 ms.assetid: 0658a47d-b6e5-4ae0-ba72-ababc3c6ff33
-ms.openlocfilehash: e286b900d7647bcd5bc99b78164e6820c1417a63
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 93ec81d94d8133fc5a6d71d7f1b57b2e9a6aad21
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33489541"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54659628"
 ---
-# <a name="data-member-order"></a><span data-ttu-id="6f9e8-102">Pořadí datových členů</span><span class="sxs-lookup"><span data-stu-id="6f9e8-102">Data Member Order</span></span>
-<span data-ttu-id="6f9e8-103">V některých aplikacích je dobré vědět, pořadí, ve kterém se odesílají data z různých datových členů, nebo musí být přijata (například pořadí, ve kterém se data zobrazí v serializovaných XML).</span><span class="sxs-lookup"><span data-stu-id="6f9e8-103">In some applications, it is useful to know the order in which data from the various data members is sent or is expected to be received (such as the order in which data appears in the serialized XML).</span></span> <span data-ttu-id="6f9e8-104">V některých případech může být potřeba změnit toto pořadí.</span><span class="sxs-lookup"><span data-stu-id="6f9e8-104">Sometimes it may be necessary to change this order.</span></span> <span data-ttu-id="6f9e8-105">Toto téma popisuje pravidla řazení.</span><span class="sxs-lookup"><span data-stu-id="6f9e8-105">This topic explains the ordering rules.</span></span>  
+# <a name="data-member-order"></a><span data-ttu-id="50bd2-102">Pořadí datových členů</span><span class="sxs-lookup"><span data-stu-id="50bd2-102">Data Member Order</span></span>
+<span data-ttu-id="50bd2-103">V některých aplikacích je užitečné vědět, pořadí, ve kterém se odešle data z různých datových členů, nebo má být přijata (jako například pořadí, ve kterém se zobrazí data v serializovaném kódu XML).</span><span class="sxs-lookup"><span data-stu-id="50bd2-103">In some applications, it is useful to know the order in which data from the various data members is sent or is expected to be received (such as the order in which data appears in the serialized XML).</span></span> <span data-ttu-id="50bd2-104">V některých případech může být potřeba toto pořadí změnit.</span><span class="sxs-lookup"><span data-stu-id="50bd2-104">Sometimes it may be necessary to change this order.</span></span> <span data-ttu-id="50bd2-105">Toto téma popisuje pravidla řazení.</span><span class="sxs-lookup"><span data-stu-id="50bd2-105">This topic explains the ordering rules.</span></span>  
   
-## <a name="basic-rules"></a><span data-ttu-id="6f9e8-106">Základních pravidel</span><span class="sxs-lookup"><span data-stu-id="6f9e8-106">Basic Rules</span></span>  
- <span data-ttu-id="6f9e8-107">Základní pravidla pro řazení dat patří:</span><span class="sxs-lookup"><span data-stu-id="6f9e8-107">The basic rules for data ordering include:</span></span>  
+## <a name="basic-rules"></a><span data-ttu-id="50bd2-106">Základní pravidla</span><span class="sxs-lookup"><span data-stu-id="50bd2-106">Basic Rules</span></span>  
+ <span data-ttu-id="50bd2-107">Základní pravidla pro řazení dat patří:</span><span class="sxs-lookup"><span data-stu-id="50bd2-107">The basic rules for data ordering include:</span></span>  
   
--   <span data-ttu-id="6f9e8-108">Pokud typ kontraktu dat je součástí hierarchie dědičnosti, jsou vždy první v pořadí datových členů z jeho základních typů.</span><span class="sxs-lookup"><span data-stu-id="6f9e8-108">If a data contract type is a part of an inheritance hierarchy, data members of its base types are always first in the order.</span></span>  
+-   <span data-ttu-id="50bd2-108">Pokud typ kontraktu dat je součástí hierarchie dědičnosti, jsou vždy první v pořadí datových členů z jeho základních typů.</span><span class="sxs-lookup"><span data-stu-id="50bd2-108">If a data contract type is a part of an inheritance hierarchy, data members of its base types are always first in the order.</span></span>  
   
--   <span data-ttu-id="6f9e8-109">Další v pořadí jsou členy aktuální typ dat, které nemají <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> nastaven v abecedním pořadí atribut.</span><span class="sxs-lookup"><span data-stu-id="6f9e8-109">Next in order are the current type’s data members that do not have the <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> property of the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute set, in alphabetical order.</span></span>  
+-   <span data-ttu-id="50bd2-109">Dále v pořadí jsou aktuální typ datové členy, které nemají <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> atribut sady, v abecedním pořadí.</span><span class="sxs-lookup"><span data-stu-id="50bd2-109">Next in order are the current type’s data members that do not have the <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> property of the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute set, in alphabetical order.</span></span>  
   
--   <span data-ttu-id="6f9e8-110">Dále jsou všechny datové členy, které mají <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> nastaven atribut.</span><span class="sxs-lookup"><span data-stu-id="6f9e8-110">Next are any data members that have the <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> property of the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute set.</span></span> <span data-ttu-id="6f9e8-111">Tyto jsou seřazené podle hodnoty `Order` vlastnost první a potom abecedně, pokud je více než jednoho člena určité `Order` hodnotu.</span><span class="sxs-lookup"><span data-stu-id="6f9e8-111">These are ordered by the value of the `Order` property first and then alphabetically if there is more than one member of a certain `Order` value.</span></span> <span data-ttu-id="6f9e8-112">Může být přeskočeny hodnoty pořadí.</span><span class="sxs-lookup"><span data-stu-id="6f9e8-112">Order values may be skipped.</span></span>  
+-   <span data-ttu-id="50bd2-110">Dále jsou všechny datové členy, které mají <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> sadu atributů.</span><span class="sxs-lookup"><span data-stu-id="50bd2-110">Next are any data members that have the <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> property of the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute set.</span></span> <span data-ttu-id="50bd2-111">Tyto jsou řazeny podle hodnoty `Order` vlastnost první a pak podle abecedy, pokud existuje více než jednoho člena sady určitým `Order` hodnotu.</span><span class="sxs-lookup"><span data-stu-id="50bd2-111">These are ordered by the value of the `Order` property first and then alphabetically if there is more than one member of a certain `Order` value.</span></span> <span data-ttu-id="50bd2-112">Hodnoty pořadí se může přeskočit.</span><span class="sxs-lookup"><span data-stu-id="50bd2-112">Order values may be skipped.</span></span>  
   
- <span data-ttu-id="6f9e8-113">Abecedním pořadí založená na volání <xref:System.String.CompareOrdinal%2A> metoda.</span><span class="sxs-lookup"><span data-stu-id="6f9e8-113">Alphabetical order is established by calling the <xref:System.String.CompareOrdinal%2A> method.</span></span>  
+ <span data-ttu-id="50bd2-113">Abecedním pořadí pokládáme stav, voláním <xref:System.String.CompareOrdinal%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="50bd2-113">Alphabetical order is established by calling the <xref:System.String.CompareOrdinal%2A> method.</span></span>  
   
-## <a name="examples"></a><span data-ttu-id="6f9e8-114">Příklady</span><span class="sxs-lookup"><span data-stu-id="6f9e8-114">Examples</span></span>  
- <span data-ttu-id="6f9e8-115">Vezměte v úvahu následující kód.</span><span class="sxs-lookup"><span data-stu-id="6f9e8-115">Consider the following code.</span></span>  
+## <a name="examples"></a><span data-ttu-id="50bd2-114">Příklady</span><span class="sxs-lookup"><span data-stu-id="50bd2-114">Examples</span></span>  
+ <span data-ttu-id="50bd2-115">Uvažujme následující kód.</span><span class="sxs-lookup"><span data-stu-id="50bd2-115">Consider the following code.</span></span>  
   
  [!code-csharp[C_DataContractNames#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontractnames/cs/source.cs#4)]
  [!code-vb[C_DataContractNames#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontractnames/vb/source.vb#4)]  
   
- <span data-ttu-id="6f9e8-116">XML vytvořeného je podobný následujícímu.</span><span class="sxs-lookup"><span data-stu-id="6f9e8-116">The XML produced is similar to the following.</span></span>  
+ <span data-ttu-id="50bd2-116">Vytvořený kód XML je podobný následujícímu.</span><span class="sxs-lookup"><span data-stu-id="50bd2-116">The XML produced is similar to the following.</span></span>  
   
 ```xml  
 <DerivedType>  
@@ -62,7 +62,7 @@ ms.locfileid: "33489541"
 </DerivedType>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="6f9e8-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="6f9e8-117">See Also</span></span>  
- <xref:System.Runtime.Serialization.DataContractAttribute>  
- [<span data-ttu-id="6f9e8-118">Ekvivalence kontraktů dat</span><span class="sxs-lookup"><span data-stu-id="6f9e8-118">Data Contract Equivalence</span></span>](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)  
- [<span data-ttu-id="6f9e8-119">Použití kontraktů dat</span><span class="sxs-lookup"><span data-stu-id="6f9e8-119">Using Data Contracts</span></span>](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+## <a name="see-also"></a><span data-ttu-id="50bd2-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="50bd2-117">See also</span></span>
+- <xref:System.Runtime.Serialization.DataContractAttribute>
+- [<span data-ttu-id="50bd2-118">Ekvivalence kontraktů dat</span><span class="sxs-lookup"><span data-stu-id="50bd2-118">Data Contract Equivalence</span></span>](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)
+- [<span data-ttu-id="50bd2-119">Použití kontraktů dat</span><span class="sxs-lookup"><span data-stu-id="50bd2-119">Using Data Contracts</span></span>](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
