@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vytvoření dotazu na ArrayList pomocí LINQ (C#)'
+title: 'Postupy: Vytvoření dotazu na ArrayList pomocí LINQ (C#)'
 ms.date: 07/20/2015
 ms.assetid: 2bfb471c-6e9a-4e60-bd83-4a1778abde11
-ms.openlocfilehash: 7cf804bc86dc6f8378e62e01ba373bb82821de52
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 9276ebe02858d7a7e295430b0125c590b9c2f308
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43740231"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54651801"
 ---
-# <a name="how-to-query-an-arraylist-with-linq-c"></a>Postupy: vytvoření dotazu na ArrayList pomocí LINQ (C#)
+# <a name="how-to-query-an-arraylist-with-linq-c"></a>Postupy: Vytvoření dotazu na ArrayList pomocí LINQ (C#)
 Při použití LINQ dotaz neobecnou <xref:System.Collections.IEnumerable> kolekcí, jako <xref:System.Collections.ArrayList>, musíte explicitně deklarovat typ proměnné rozsahu tak, aby odrážely konkrétní typ objektů v kolekci. Pokud máte například <xref:System.Collections.ArrayList> z `Student` objekty, vaše [klauzule from](../../../../csharp/language-reference/keywords/from-clause.md) by měl vypadat takto:  
   
 ```  
@@ -83,6 +83,6 @@ namespace NonGenericLINQ
 */  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)

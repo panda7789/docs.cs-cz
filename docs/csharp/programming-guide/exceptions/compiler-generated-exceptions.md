@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - exceptions [C#], compiler-generated
 ms.assetid: 53b52f97-b366-4ed7-b05b-9eb78096b7f9
-ms.openlocfilehash: e21b75e5b7e338bda54ca00abaa733775865fdb9
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 15a42b8fb23aed024fede726d0b5fb731d8272f8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53238387"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54686358"
 ---
 # <a name="compiler-generated-exceptions-c-programming-guide"></a>Výjimky generované kompilátorem (Průvodce programováním v C#)
 Některé výjimky jsou vyvolány automaticky modulem CLR rozhraní .NET Framework common language runtime (CLR), když dojde k selhání základních operací. Tyto výjimky a jejich chybové podmínky jsou uvedeny v následující tabulce.  
@@ -28,11 +28,11 @@ Některé výjimky jsou vyvolány automaticky modulem CLR rozhraní .NET Framewo
 |<xref:System.StackOverflowException>|Vyvolána, když se vyčerpá zásobníku spouštění tak, že příliš mnoho volání metody čekající; obvykle označuje velmi podrobné nebo nekonečné rekurzi.|  
 |<xref:System.TypeInitializationException>|Vyvolána, když statický konstruktor vyvolá výjimku a žádné kompatibilní `catch` existuje klauzule má zachytit.|  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)  
-- [Zpracování výjimek](../../../csharp/programming-guide/exceptions/exception-handling.md)  
-- [try-catch](../../../csharp/language-reference/keywords/try-catch.md)  
-- [try-finally](../../../csharp/language-reference/keywords/try-finally.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)
+- [Zpracování výjimek](../../../csharp/programming-guide/exceptions/exception-handling.md)
+- [try-catch](../../../csharp/language-reference/keywords/try-catch.md)
+- [try-finally](../../../csharp/language-reference/keywords/try-finally.md)
 - [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)

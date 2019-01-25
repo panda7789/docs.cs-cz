@@ -5,12 +5,12 @@ helpviewer_keywords:
 - authentication [WCF]
 - security [WCF], authentication
 ms.assetid: 9254d873-843d-4c6e-bea4-8184ac3e44f4
-ms.openlocfilehash: 401bd8901f4d8b9292e83d3e54d0afce30c9584f
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 22bfd7edf0ca0e9eb57e63c168c783f25782d607
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43785827"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54523919"
 ---
 # <a name="authentication-in-wcf"></a>Ověřování ve WCF
 Následující témata ukazují celou řadou různých mechanismů ve Windows Communication Foundation (WCF), které poskytují ověřování, například, ověřování Windows, certifikáty X.509 a uživatelského jména a hesla.  
@@ -19,7 +19,7 @@ Následující témata ukazují celou řadou různých mechanismů ve Windows Co
  [Postupy: Používání poskytovatele členství ASP.NET](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-membership-provider.md)  
  Funkce ASP.NET zahrnují členství a zprostředkovatel rolí, databázi k ukládání párů jméno/heslo uživatele pro ověřování a uživatelských rolí pro autorizaci. Toto téma vysvětluje, jak můžete používat stejnou databázi k ověřování a autorizaci uživatelů služby WCF.  
   
- [Postupy: Použití validátoru vlastního uživatelského jména a hesla](../../../../docs/framework/wcf/feature-details/how-to-use-a-custom-user-name-and-password-validator.md)  
+ [Postupy: Pomocí vlastního uživatelského jména a hesla program pro ověření](../../../../docs/framework/wcf/feature-details/how-to-use-a-custom-user-name-and-password-validator.md)  
  Ukazuje, jak integrovat validátor vlastní uživatelské jméno/heslo.  
   
  [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
@@ -37,6 +37,6 @@ Následující témata ukazují celou řadou různých mechanismů ve Windows Co
 ## <a name="related-sections"></a>Související oddíly  
  [Běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

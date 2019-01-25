@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 886bb706be30481c082012bf057a001f37903b16
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ff79f6e439f2bafd598d9d416cc6f7404f4c231d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33461653"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54547329"
 ---
 # <a name="icorprofilerinfosetilfunctionbody-method"></a>ICorProfilerInfo::SetILFunctionBody – metoda
-Nahradí text zadaná funkce v zadaný modul.  
+Nahrazuje tělo zadanou funkci v zadaném modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,23 +38,23 @@ HRESULT SetILFunctionBody(
   
 #### <a name="parameters"></a>Parametry  
  `moduleId`  
- [v] ID modulu, ve kterém se funkce nachází.  
+ [in] ID modulu, ve kterém se funkce nachází.  
   
  `methodid`  
- [v] Token pro kterou chcete nahradit tělo funkce.  
+ [in] Token pro které se mají nahradit tělo funkce.  
   
  `pbNewILMethodHeader`  
- [v] Nové záhlaví funkce.  
+ [in] Nové záhlaví pro funkci.  
   
 ## <a name="remarks"></a>Poznámky  
- `SetILFunctionBody` Metoda nahrazuje relativní virtuální adresy funkce v metadatech tak, aby odkazoval na nový tělo funkce a upraví interních datových struktur podle potřeby.  
+ `SetILFunctionBody` Metoda nahrazuje relativní virtuální adresu funkce v metadatech tak, aby odkazuje na nové tělo funkce a upraví interních datových struktur podle potřeby.  
   
- `SetILFunctionBody` Metodu lze volat pouze funkce, které nikdy sestavili jsme kompilátorem v běhu (JIT).  
+ `SetILFunctionBody` Metodu lze volat pouze funkce, které nikdy byl zkompilován kompilátorem just-in-time (JIT).  
   
- Použití [icorprofilerinfo::getilfunctionbodyallocator –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md) metoda k přidělení místa pro nová metoda pro zajištění, že vyrovnávací paměť je kompatibilní.  
+ Použití [icorprofilerinfo::getilfunctionbodyallocator –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md) metoda k přidělení místa pro nové metody k zajištění, že vyrovnávací paměť je kompatibilní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -62,5 +62,5 @@ HRESULT SetILFunctionBody(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

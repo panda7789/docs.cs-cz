@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: používání časových pásem v aritmetice kalendářních a časových'
+title: 'Postupy: Používání časových pásem v aritmetice kalendářních a časových'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,14 +12,14 @@ helpviewer_keywords:
 ms.assetid: 83dd898d-1338-415d-8cd6-445377ab7871
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9c9f7b2623b4ed766fb44b46c3f54caa962c07eb
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 053ca2d10deadf58d5bb8b4628fb5dee815d82c8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44041512"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54682690"
 ---
-# <a name="how-to-use-time-zones-in-date-and-time-arithmetic"></a>Postupy: používání časových pásem v aritmetice kalendářních a časových
+# <a name="how-to-use-time-zones-in-date-and-time-arithmetic"></a>Postupy: Používání časových pásem v aritmetice kalendářních a časových
 
 Obvykle při provádění datum a čas aritmetické pomocí <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnot, výsledek neodráží všechna pravidla úpravy časového pásma. To platí i v případě, časovém pásmu z hodnoty data a času je jasně údaje (například když <xref:System.DateTime.Kind%2A> je nastavena na <xref:System.DateTimeKind.Local>). Toto téma ukazuje, jak provádět aritmetické operace na hodnoty data a času, které patří do určitého časového pásma. Výsledky aritmetické operace bude odrážet pravidla úpravy časového pásma.
 
@@ -66,5 +66,5 @@ Tento příklad vyžaduje:
 
 ## <a name="see-also"></a>Viz také:
 
-* [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-* [Provádění aritmetických operací s daty a časy](../../../docs/standard/datetime/performing-arithmetic-operations.md)
+- [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
+- [Provádění aritmetických operací s daty a časy](../../../docs/standard/datetime/performing-arithmetic-operations.md)

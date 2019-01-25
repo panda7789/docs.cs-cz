@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security [Windows Forms], about security
 - access control [Windows Forms], Windows Forms
 ms.assetid: 4810dc9f-ea23-4ce1-8ea1-657f0ff1d820
-ms.openlocfilehash: 36d38756f7df88ec04aca781525f0f6b0a48b768
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: a19e6d2ed39c21301b3409cdeb55a569f0d2eff4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48839128"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54703377"
 ---
 # <a name="security-in-windows-forms-overview"></a>Přehled zabezpečení ve Windows Forms
 Před vydáním [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], všechny kód spuštěný na uživatele v počítači měl stejné práva nebo oprávnění pro přístup k prostředkům, které měl uživatel počítače. Například pokud byl uživatel pro přístup k systému souborů, kód byl povolen přístup k systému souborů. Uživatel byl povolen přístup k databázi, kód byl povolen přístup k této databázi. Ačkoli tato práva nebo oprávnění může být přijatelný pro kód v spustitelné soubory, které uživatel nainstaloval explicitně v místním počítači, se nemusí být přijatelné pro potenciálně škodlivý kód pocházející z Internetu nebo intranetu. Tento kód by neměl být přístup k prostředkům počítače uživatele bez oprávnění.  
@@ -75,17 +75,17 @@ Před vydáním [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], v�
   
  Technologii, kterou zvolíte, závisí na prostředí pro nasazení. Další informace najdete v tématu [Výběr strategie nasazení ClickOnce](/visualstudio/deployment/choosing-a-clickonce-deployment-strategy).  
   
- Ve výchozím nastavení [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace nasazené pomocí nástroje Visual Studio nebo [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] nástroje sady SDK (Mage.exe a MageUI.exe) jsou nakonfigurovány na spuštění v klientském počítači, který má úplný vztah důvěryhodnosti. Pokud nasazujete aplikaci s použitím částečným vztahem důvěryhodnosti nebo s použitím pouze některá další oprávnění, budete muset změnit toto výchozí nastavení. To lze provést pomocí sady Visual Studio nebo [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] sady SDK nástroje MageUI.exe při konfiguraci vašeho nasazení. Další informace o tom, jak používat MageUI.exe, najdete v článku návod: nasazení aplikace ClickOnce z příkazového řádku.  Viz také [jak: nastavit vlastní oprávnění pro aplikaci ClickOnce](https://msdn.microsoft.com/library/hafybdaa\(v=vs.110\)) nebo [jak: nastavit vlastní oprávnění pro aplikaci ClickOnce](https://msdn.microsoft.com/library/hafybdaa\(v=vs.120\)).  
+ Ve výchozím nastavení [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace nasazené pomocí nástroje Visual Studio nebo [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] nástroje sady SDK (Mage.exe a MageUI.exe) jsou nakonfigurovány na spuštění v klientském počítači, který má úplný vztah důvěryhodnosti. Pokud nasazujete aplikaci s použitím částečným vztahem důvěryhodnosti nebo s použitím pouze některá další oprávnění, budete muset změnit toto výchozí nastavení. To lze provést pomocí sady Visual Studio nebo [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] sady SDK nástroje MageUI.exe při konfiguraci vašeho nasazení. Další informace o tom, jak používat MageUI.exe najdete v návodu: Nasazení aplikace ClickOnce z příkazového řádku.  Viz také [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](https://msdn.microsoft.com/library/hafybdaa\(v=vs.110\)) nebo [jak: Nastavení vlastních oprávnění pro aplikaci ClickOnce](https://msdn.microsoft.com/library/hafybdaa\(v=vs.120\)).  
   
  Další informace o aspektech zabezpečení [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] a zvýšení úrovně oprávnění, najdete v článku [zabezpečení aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications). Další informace o nasazení důvěryhodných aplikací najdete v tématu [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview).  
   
 ### <a name="testing-the-application"></a>Testování aplikace  
- Pokud jste nasadili aplikaci Windows Forms pomocí sady Visual Studio, můžete povolit ladění v částečném vztahu důvěryhodnosti nebo sada z vývojového prostředí omezené oprávnění.  Viz také [postupy: ladění aplikace ClickOnce s omezenými oprávněními](https://msdn.microsoft.com/library/593zkfdf\(v=vs.110\)) nebo [postupy: ladění aplikace ClickOnce s omezenými oprávněními](https://msdn.microsoft.com/library/593zkfdf\(v=vs.120\)).  
+ Pokud jste nasadili aplikaci Windows Forms pomocí sady Visual Studio, můžete povolit ladění v částečném vztahu důvěryhodnosti nebo sada z vývojového prostředí omezené oprávnění.  Viz také [jak: Ladění aplikace ClickOnce s omezenými oprávněními](https://msdn.microsoft.com/library/593zkfdf\(v=vs.110\)) nebo [jak: Ladění aplikace ClickOnce s omezenými oprávněními](https://msdn.microsoft.com/library/593zkfdf\(v=vs.120\)).  
   
-## <a name="see-also"></a>Viz také  
- [Windows Forms – zabezpečení](../../../docs/framework/winforms/windows-forms-security.md)  
- [Základy zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security-basics.md)  
- [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)  
- [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview)  
- [Mage.exe (Manifest Generation and Editing Tool)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)  
- [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)
+## <a name="see-also"></a>Viz také:
+- [Windows Forms – zabezpečení](../../../docs/framework/winforms/windows-forms-security.md)
+- [Základy zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security-basics.md)
+- [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)
+- [Přehled nasazení důvěryhodných aplikací](/visualstudio/deployment/trusted-application-deployment-overview)
+- [Mage.exe (Manifest Generation and Editing Tool)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)
+- [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)

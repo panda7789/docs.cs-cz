@@ -2,12 +2,12 @@
 title: 'Ukázkový soubor XML: Knihy (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: b75ab1a2-fb76-4df9-bd01-c45ec22a29ef
-ms.openlocfilehash: 8eeff6fad78fe45ca38a3d3fa07f745b80590e28
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 9072c7e741525156719a5b6d65a8c3a6991c67ae
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44180954"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54692438"
 ---
 # <a name="sample-xml-file-books-linq-to-xml"></a>Ukázkový soubor XML: Knihy (LINQ to XML)
 Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Soubor obsahuje informace o knihách.  
@@ -39,6 +39,6 @@ Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqlt
 </Catalog>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Ukázkové dokumenty XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - frames [Windows Forms], accessing
 - DOM [Windows Forms], accessing frames in managed HTML
 ms.assetid: cdeeaa22-0be4-4bbf-9a75-4ddc79199f8d
-ms.openlocfilehash: b1a858e88ff27de19e2ebbd69c14060813873c13
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: d90c2d7f8be2448e1d4f10410b27bc5132cdb16a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49308484"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54653824"
 ---
 # <a name="accessing-frames-in-the-managed-html-document-object-model"></a>Přístup k rámcům v modelu spravovaného objektu dokumentu HTML
 Některé dokumenty HTML se skládají z celkového počtu *snímků*, nebo windows, které může obsahovat vlastní odlišné dokumentů HTML. Pomocí snímků usnadňuje vytvoření stránky HTML, ve kterých zůstat statický, jako je například navigační panel, jeden nebo více kusů stránky, zatímco jiné rámce neustále měnit jejich obsah.  
@@ -40,6 +40,6 @@ Některé dokumenty HTML se skládají z celkového počtu *snímků*, nebo wind
   
  Další informace o skriptování napříč weby, naleznete v tématu [o skriptování a zabezpečení](https://msdn.microsoft.com/library/ms533028.aspx).  
   
-## <a name="see-also"></a>Viz také  
- [Element rámce &#124; objektu frame](https://msdn.microsoft.com/library/ms535250.aspx)  
- [Použití spravovaného modelu DOM (Document Object Model) HTML](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)
+## <a name="see-also"></a>Viz také:
+- [Element rámce &#124; objektu frame](https://msdn.microsoft.com/library/ms535250.aspx)
+- [Použití spravovaného modelu DOM (Document Object Model) HTML](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)

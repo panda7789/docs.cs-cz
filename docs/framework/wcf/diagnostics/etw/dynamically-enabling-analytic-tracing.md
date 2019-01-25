@@ -2,12 +2,12 @@
 title: Dynamické povolování analytického sledování
 ms.date: 03/30/2017
 ms.assetid: 58b63cfc-307a-427d-b69d-9917ff9f44ac
-ms.openlocfilehash: f03d2ce381be430121a11df95341886a4be667e2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 42d238c704910c2406eb580c2ce102e5e84ed0f7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43529516"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54719986"
 ---
 # <a name="dynamically-enabling-analytic-tracing"></a>Dynamické povolování analytického sledování
 Pomocí nástrojů, které se dodávají s operačním systémem Windows, můžete povolit nebo zakázat trasování dynamicky pomocí Event Tracing for Windows (ETW). Pro všechny [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] služby Windows Communication Foundation (WCF), analytické trasování může být povolení i Zakázaní dynamicky bez úpravy souboru Web.config aplikace nebo restartování služby. To umožňuje, aby aplikace, který vysílá události trasování k zajištění nepřerušeného.  
@@ -40,5 +40,5 @@ Pomocí nástrojů, které se dodávají s operačním systémem Windows, může
 |`ServiceHost`|Události, protože ho vygeneroval hostitele služby.|  
 |`WCFMessageLogging`|Události protokolování zpráv WCF.|  
   
-## <a name="see-also"></a>Viz také  
- [Služby WCF a Trasování událostí pro Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)
+## <a name="see-also"></a>Viz také:
+- [Služby WCF a Trasování událostí pro Windows](../../../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md)

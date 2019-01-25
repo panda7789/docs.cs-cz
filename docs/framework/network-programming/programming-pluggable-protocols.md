@@ -15,12 +15,12 @@ helpviewer_keywords:
 - receiving data, pluggable protocols
 - protocols, pluggable
 ms.assetid: 66ef8456-7576-4e97-8956-959b216373db
-ms.openlocfilehash: 74dd44e704836b209366a7975d08a43375318e90
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 1becdc227995064a3f34d712834ab358cc41754b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190785"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646591"
 ---
 # <a name="programming-pluggable-protocols"></a>Programování připojitelných protokolů
 Abstraktní <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy poskytují základ pro připojitelné protokoly. Odvozené třídy pro konkrétní z <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse>, můžete data žádosti z internetového zdroji a čtení odpovědi bez zadání protokolu používá aplikace.  
@@ -31,8 +31,8 @@ Abstraktní <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy
   
  Abyste mohli využívat připojitelných protokolů, vaše <xref:System.Net.WebRequest> následníků musí poskytovat výchozí transakce požadavků a odpovědí, který nevyžaduje konkrétní nastavení vlastností. Například <xref:System.Net.HttpWebRequest> třídy, která implementuje <xref:System.Net.WebRequest> třídy pro protokol HTTP, poskytuje `GET` žádost ve výchozím nastavení a vrátí <xref:System.Net.HttpWebResponse> datový proud vrácený z webového serveru, který obsahuje.  
   
-## <a name="see-also"></a>Viz také  
- [Odvození ze žádosti WebRequest](../../../docs/framework/network-programming/deriving-from-webrequest.md)  
- [Odvození z odpovědi WebResponse](../../../docs/framework/network-programming/deriving-from-webresponse.md)  
- [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)  
- [Postupy: Zadání žádosti WebRequest pro přístup k vlastnostem specifickým pro protokol](../../../docs/framework/network-programming/how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)
+## <a name="see-also"></a>Viz také:
+- [Odvození ze žádosti WebRequest](../../../docs/framework/network-programming/deriving-from-webrequest.md)
+- [Odvození z odpovědi WebResponse](../../../docs/framework/network-programming/deriving-from-webresponse.md)
+- [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)
+- [Postupy: Zadání žádosti WebRequest pro přístup k protokolu konkrétním vlastnostem](../../../docs/framework/network-programming/how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5d49ac70aceb76f69711ea4bf514f69697ac156c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 33bff2b72f2381fea461bb043506ee78f757dea8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447369"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54504900"
 ---
 # <a name="imetadataemitdefineparam-method"></a>IMetaDataEmit::DefineParam – metoda
-Vytvoří definici parametru podpisem zadaný pro metodu odkazuje zadaný token a získá token pro tuto definici parametru.  
+Vytvoří definici parametru se zadaným podpisem pro metodu odkazuje zadaný token a získá token pro tuto definici parametru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,41 +44,41 @@ HRESULT DefineParam (
   
 #### <a name="parameters"></a>Parametry  
  `md`  
- [v] Token pro metodu, jejichž parametr je definovaný.  
+ [in] Token pro metodu, jejíž parametr se zrovna definuje.  
   
  `ulParamSeq`  
- [v] Pořadové číslo parametru.  
+ [in] Pořadové číslo parametru.  
   
  `szName`  
- [v] Název parametru v kódování Unicode.  
+ [in] Název parametru v kódování Unicode.  
   
  `dwParamFlags`  
- [v] Příznaky pro parametr. Toto je bitová maska s `CorParamAttr` hodnoty.  
+ [in] Příznaky pro parametr. To je bitová maska z `CorParamAttr` hodnoty.  
   
  `dwCPlusTypeFlag`  
- [v] `ELEMENT_TYPE_` *\** pro konstantní hodnotu.  
+ [in] `ELEMENT_TYPE_` *\** pro konstantní hodnoty.  
   
  `pValue`  
- [v] Konstantní hodnota pro parametr.  
+ [in] Konstantní hodnota parametru.  
   
  `cchValue`  
- [v] Velikost v znaky Unicode z `pValue`.  
+ [in] Velikost v znaky Unicode z `pValue`.  
   
  `ppd`  
  [out] `mdParamDef` Token přiřazený.  
   
 ## <a name="remarks"></a>Poznámky  
- Pořadí hodnot v `ulParamSeq` začínat 1 pro parametry. Vrácená hodnota má pořadové číslo 0.  
+ Pořadí hodnot v `ulParamSeq` začínají znakem 1 pro parametry. Návratová hodnota má pořadové číslo 0.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

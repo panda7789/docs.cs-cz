@@ -4,18 +4,18 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [Visual Basic], type definition
 ms.assetid: 7a8a0ddc-55ba-4d67-869e-87a84d938bac
-ms.openlocfilehash: 179fb9773fde2631666498d54894037b2bbfd087
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9cb03eab00033c3d08b51de7524e9489198d6d76
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33649617"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54678397"
 ---
 # <a name="anonymous-type-definition-visual-basic"></a>Definice autonomního typu (Visual Basic)
-V reakci na deklaraci instanci anonymního typu kompilátor vytvoří nové definice třídy, která obsahuje zadané vlastnosti pro typ.  
+V reakci na deklarace instanci anonymního typu kompilátor vytvoří novou definici třídy, která obsahuje zadané vlastnosti pro typy.  
   
-## <a name="compiler-generated-code"></a>Generované kompilátorem kódu  
- Pro následující definici `product`, kompilátor vytvoří nové definice třídy, která obsahuje vlastnosti `Name`, `Price`, a `OnHand`.  
+## <a name="compiler-generated-code"></a>Kód generovaný kompilátorem  
+ Pro následující definici `product`, kompilátor vytvoří novou definici třídy, který obsahuje vlastnosti `Name`, `Price`, a `OnHand`.  
   
  [!code-vb[VbVbalrAnonymousTypes#25](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-type-definition_1.vb)]  
   
@@ -50,37 +50,37 @@ Public Class $Anonymous1
 End Class  
 ```  
   
- Definice autonomního typu navíc obsahovat výchozí konstruktor. Konstruktory, které vyžadují parametry nejsou povoleny.  
+ Definice anonymního typu navíc obsahovat výchozí konstruktor. Konstruktory, které vyžadují parametry nejsou povoleny.  
   
- Pokud deklaraci anonymního typu obsahuje alespoň jednu klíčovou vlastnost, definici typu nahradí tři členy zděděno z <xref:System.Object>: <xref:System.Object.Equals%2A>, <xref:System.Object.GetHashCode%2A>, a <xref:System.Object.ToString%2A>. Pokud jsou deklarovány žádné klíčové vlastnosti, pouze <xref:System.Object.ToString%2A> přepsána. Přepsání poskytují následující funkce:  
+ Pokud deklarace anonymního typu obsahuje alespoň jednu klíčovou vlastnost, přepíše definice typu tři členy zděděné z <xref:System.Object>: <xref:System.Object.Equals%2A>, <xref:System.Object.GetHashCode%2A>, a <xref:System.Object.ToString%2A>. Pokud jsou deklarovány žádné vlastnosti klíče, pouze <xref:System.Object.ToString%2A> je přepsána. Přepsání poskytují následující funkce:  
   
--   `Equals` Vrátí `True` Pokud dvě instance anonymního typu stejnou instanci, nebo pokud nebudou splňovat následující podmínky:  
+-   `Equals` Vrátí `True` Pokud dvě instance anonymního typu jsou stejnou instanci, nebo pokud nebudou splňovat následující podmínky:  
   
-    -   Mají stejný počet vlastnosti.  
+    -   Mají stejný počet vlastností.  
   
     -   Vlastnosti jsou deklarovány ve stejném pořadí, se stejnými názvy a stejné odvozené typy. Název porovnání nerozlišují malá a velká písmena.  
   
-    -   Nejméně jedna z vlastností je klíčovou vlastnost a `Key` – klíčové slovo, které se použijí na stejné vlastnosti.  
+    -   Nejméně jedna z vlastností je klíčová vlastnost a `Key` – klíčové slovo platí stejné vlastnosti.  
   
-    -   Vrátí porovnání každé odpovídající dvojice klíčové vlastnosti `True`.  
+    -   Porovnání jednotlivých odpovídající dvojice klíčů vlastnosti vrátí `True`.  
   
-     Například v následujících příkladech `Equals` vrátí `True` pouze pro `employee01` a `employee08`. Komentář před každý řádek Určuje důvod, proč nová instance neodpovídá `employee01`.  
+     Například v následujících příkladech `Equals` vrátí `True` pouze pro `employee01` a `employee08`. Komentář před každý řádek Určuje důvod, proč novou instanci se neshoduje s `employee01`.  
   
      [!code-vb[VbVbalrAnonymousTypes#24](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-type-definition_2.vb)]  
   
--   `GetHashcode` poskytuje správně jedinečný GetHashCode algoritmu. Algoritmus používá jenom klíčové vlastnosti vypočítat hodnotu hash.  
+-   `GetHashcode` poskytuje odpovídajícím způsobem jedinečný algoritmus GetHashCode. Tento algoritmus se používá pouze klíčové vlastnosti k výpočtu kódů hash.  
   
--   `ToString` vrací řetězec hodnot zřetězených vlastností, jak je znázorněno v následujícím příkladu. Klíč a neklíčovými vlastnostmi jsou zahrnuty.  
+-   `ToString` Vrátí řetězec hodnoty zřetězených vlastností, jak je znázorněno v následujícím příkladu. Klíče a vlastnosti neklíčovým jsou zahrnuty.  
   
      [!code-vb[VbVbalrAnonymousTypes#29](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-type-definition_3.vb)]  
   
- Explicitně pojmenované vlastnosti anonymního typu nelze v konfliktu s tyto generovaného metody. To znamená, že nelze použít `.Equals`, `.GetHashCode`, nebo `.ToString` na název vlastnosti.  
+ Explicitně pojmenované vlastnosti anonymního typu nelze v konfliktu s těmito generované metody. To znamená, že nelze použít `.Equals`, `.GetHashCode`, nebo `.ToString` název vlastnosti.  
   
- Definice autonomního typu, které obsahují aspoň jeden klíč vlastnost také implementace <xref:System.IEquatable%601?displayProperty=nameWithType> rozhraní, kde `T` je typ anonymního typu.  
+ Definice anonymního typu, které obsahují alespoň jeden klíčové vlastnosti také implementovat <xref:System.IEquatable%601?displayProperty=nameWithType> rozhraní, ve kterém `T` je typ anonymního typu.  
   
 > [!NOTE]
->  Deklaracích anonymního typu vytvářet stejný typ anonymní jenom v případě nastávají ve stejném sestavení, jejich vlastnosti mají stejné názvy a stejné odvozené typy, jsou ve stejném pořadí deklarované vlastnosti a stejné vlastnosti, které jsou označeny jako vlastnosti klíče.  
+>  Anonymní typ deklarace vytvoření stejné anonymního typu pouze v případě, že se objeví ve stejném sestavení, jejich vlastnosti mají stejné názvy a stejné odvodit typy, vlastnosti jsou deklarovány ve stejném pořadí a stejné vlastnosti jsou označeny jako vlastnosti klíče.  
   
-## <a name="see-also"></a>Viz také  
- [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
- [Postupy: Odvození názvů a typů vlastností v deklaracích anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)
+## <a name="see-also"></a>Viz také:
+- [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
+- [Postupy: Odvození názvů a typů v deklaracích anonymního typu vlastností](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)

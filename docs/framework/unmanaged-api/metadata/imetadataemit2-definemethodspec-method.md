@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 85b17199ad40d8b3fbf4e1a0271828e5a5ac7991
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2d56209e030939f53e3f72fe0c8a10db2160dd19
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445257"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492517"
 ---
 # <a name="imetadataemit2definemethodspec-method"></a>IMetaDataEmit2::DefineMethodSpec – metoda
-Vytvoří instanci obecné metody a získá token k definici.  
+Vytvoří instanci obecné metody a získá token pro definici.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,26 +40,26 @@ HRESULT DefineMethodSpec (
   
 #### <a name="parameters"></a>Parametry  
  `tkParent`  
- [v] Token pro metodu pro vytvoření obecné instance. Token musí být typu `mdMethodDef` nebo `mdMemberRef`.  
+ [in] Token pro metodu z nich pro vytvoření obecného instance. Token musí být typu `mdMethodDef` nebo `mdMemberRef`.  
   
  `pvSigBlob`  
- [v] Ukazatel na binární modelu COM + podpis metody.  
+ [in] Ukazatel na binární modelu COM + podpis metody.  
   
  `cbSibBlob`  
- [v] Velikost v bajtech z `pvSigBlob`.  
+ [in] Velikost v bajtech, z `pvSigBlob`.  
   
  `pmi`  
- [out] Token pro definici metadat podpis metody.  
+ [out] Token k definici metadat podpis metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

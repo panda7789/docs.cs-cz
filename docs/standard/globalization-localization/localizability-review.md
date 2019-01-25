@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 3aee2fbb-de47-4e37-8fe4-ddebb9719247
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b19bc78f44781923df6873ccc9720f4605731976
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: a4c205d61e6de3e835954e405cece143520b4d2c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086502"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623977"
 ---
 # <a name="localizability-review"></a>Revize lokalizovatelnosti
 Přezkoumání lokalizovatelnosti je mezikroku vývoj světově připravených aplikací. Ověřuje, že globalizovaná aplikace je připravena k lokalizaci a identifikuje jakýkoli kód, nebo všechny aspekty uživatelského rozhraní, které vyžadují speciální zacházení. Tento krok také pomáhá zajistit, že proces lokalizace nezpůsobí žádné funkčních chyb do vaší aplikace. Při všech problémech, přezkoumání lokalizovatelnosti vyvolané vyřeší, vaše aplikace je připravena k lokalizaci. Pokud je důkladné přezkoumání lokalizovatelnosti, by nemělo být upravit veškerý kód zdroje během proces lokalizace.  
@@ -75,7 +75,7 @@ Přezkoumání lokalizovatelnosti je mezikroku vývoj světově připravených a
   
 ## <a name="see-also"></a>Viz také:
 
-- [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)  
-- [Lokalizace](../../../docs/standard/globalization-localization/localization.md)  
-- [Globalizace](../../../docs/standard/globalization-localization/globalization.md)  
+- [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)
+- [Lokalizace](../../../docs/standard/globalization-localization/localization.md)
+- [Globalizace](../../../docs/standard/globalization-localization/globalization.md)
 - [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)

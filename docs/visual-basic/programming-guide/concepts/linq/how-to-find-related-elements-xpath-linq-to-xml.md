@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: vyhledání související prvky (XPath-technologie LINQ to XML) (Visual Basic)'
+title: 'Postupy: Vyhledání souvisejících elementů (XPath – LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 6b0ef058-d704-48a5-98cd-33f00d088af9
-ms.openlocfilehash: 24a8f252d0c703cc7883ae1408120b8cae018331
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ced58274773b9a5c16331805f9a5513a5231c5ca
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643149"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54655410"
 ---
-# <a name="how-to-find-related-elements-xpath-linq-to-xml-visual-basic"></a>Postupy: vyhledání související prvky (XPath-technologie LINQ to XML) (Visual Basic)
-Toto téma ukazuje, jak získat výběr na atribut, který odkazuje hodnota elementu jiného elementu.  
+# <a name="how-to-find-related-elements-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání souvisejících elementů (XPath – LINQ to XML) (Visual Basic)
+Toto téma ukazuje, jak získat prvek Výběr na atribut, který je uvedené hodnotou jiného elementu.  
   
  Výraz XPath je:  
   
  `.//Customer[@CustomerID=/Root/Orders/Order[12]/CustomerID]`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vyhledá 12. `Order` elementu a potom vyhledá zákazník pro uvedeném pořadí.  
+ Tento příklad vyhledá 12. `Order` prvek a následně vyhledá zákazníka pro tuto objednávku.  
   
- Všimněte si, že indexování do seznamu v rozhraní .net je "nula" na základě. Indexování do kolekce uzlů v predikát jazyka XPath je 'jedním' na základě. Tento příklad zobrazuje tento rozdíl.  
+ Všimněte si, že indexování do seznamu v rozhraní .net je "žádný" na základě. Indexování do kolekce uzlů v predikát jazyka XPath je "jedna" na základě. Tento příklad zobrazuje tento rozdíl.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Dim co As XDocument = XDocument.Load("CustomersOrders.xml")  
@@ -73,5 +73,5 @@ Results are identical
 </Customer>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

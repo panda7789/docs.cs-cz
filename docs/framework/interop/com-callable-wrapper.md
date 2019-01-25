@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 75a8fb01fd22a7f84fadaf355a269b3ad3de63ab
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: e62d115292edc7b75ff782ac2c9161d942077333
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145173"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54655332"
 ---
 # <a name="com-callable-wrapper"></a>Obálka volatelná aplikacemi COM
 Jakmile klient modelu COM zavolá objekt rozhraní .NET, vytvoří modul CLR (Common Language Runtime) pro daný objekt spravovaný objekt a obálku volatelnou modelem COM (CCW). Pokud nelze odkazovat na objekt rozhraní .NET přímo, budou klienti modelu COM pro spravovaný objekt používat objekt CCW jako proxy.  
@@ -50,12 +50,12 @@ Rozhraní COM a obálka volatelná aplikacemi COM
   
 |Rozhraní|Popis|  
 |---------------|-----------------|  
-|**IDispatch**|Poskytuje mechanismus pro pozdní vazbu na typ.|  
+|**Idispatch**|Poskytuje mechanismus pro pozdní vazbu na typ.|  
 |**IerrorInfo**|Poskytuje textový popis chyby, její zdroj, soubor nápovědy, kontextové nápovědy a identifikátor GUID rozhraní definované chyba (vždy **GUID_NULL** pro třídy .NET).|  
 |**IprovideClassInfo**|Umožňuje získat přístup ke klientům modelu COM **ITypeInfo** rozhraní implementovány pomocí spravované třídy.|  
 |**IsupportErrorInfo**|Umožňuje určit, zda spravovaný objekt podporuje klient modelu COM **IErrorInfo** rozhraní. Pokud ano, umožňuje klientům získat ukazatel objektu nejnovější výjimky. Všechny spravované typy podporu **IErrorInfo** rozhraní.|  
 |**ItypeInfo**|Poskytuje informace o typu pro třídu, která je stejná jako informace o typu, který je vytvořený pomocí Tlbexp.exe.|  
-|**IUnknown**|Poskytuje standardní implementace **IUnknown** rozhraní, se kterým klient modelu COM, spravuje životnost objekt CCW a obsahuje převod typu.|  
+|**Iunknown**|Poskytuje standardní implementace **IUnknown** rozhraní, se kterým klient modelu COM, spravuje životnost objekt CCW a obsahuje převod typu.|  
   
  Spravované třídy můžete také zadat rozhraní modelu COM, které jsou popsány v následující tabulce.  
   
@@ -189,9 +189,9 @@ Pokud vaše aplikace vyžaduje volání časné vazby na metody rozhraní událo
 <EmbedInteropTypes>True</EmbedInteropTypes>
 ```
 
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>  
- [COM – obálky](com-wrappers.md)  
- [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)  
- [Kvalifikace typů .NET pro spolupráci](qualifying-net-types-for-interoperation.md)  
- [Obálka volatelná za běhu](runtime-callable-wrapper.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>
+- [COM – obálky](com-wrappers.md)
+- [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)
+- [Kvalifikace typů .NET pro spolupráci](qualifying-net-types-for-interoperation.md)
+- [Obálka volatelná za běhu](runtime-callable-wrapper.md)

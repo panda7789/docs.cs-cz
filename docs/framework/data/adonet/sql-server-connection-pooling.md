@@ -1,18 +1,18 @@
 ---
-title: Připojení k SQL serveru sdružování (ADO.NET)
+title: SQL Server Connection Pooling (ADO.NET)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-ms.openlocfilehash: 7086bdfbbd2ebace25f2999a0787bcee48494ab8
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 640e8976b95b5228f1caa967c053ffd95d2553ac
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147669"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54651601"
 ---
-# <a name="sql-server-connection-pooling-adonet"></a>Připojení k SQL serveru sdružování (ADO.NET)
+# <a name="sql-server-connection-pooling-adonet"></a>SQL Server Connection Pooling (ADO.NET)
 Připojování k databázovému serveru, obvykle se skládá z několika kroků časově náročné. Fyzické kanál například soket nebo pojmenovaný kanál musí navázat, počáteční metody handshake se serverem se musí vyskytovat, informace o připojovacím řetězci musí být analyzován, server musí být ověřené připojení, kontroly musí být spuštěn pro zařazování aktuální transakce a tak dále.  
   
  V praxi používat většinu aplikací pouze jednu nebo několik různých konfigurací pro připojení. To znamená, že při spuštění aplikace, mnoho stejné připojení bude možné opakovaně otevřel a uzavřel. Chcete-li minimalizovat náklady na otevření připojení, [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] používá optimalizaci techniky označované jako *sdružování připojení*.  
@@ -129,8 +129,8 @@ using (SqlConnection connection = new SqlConnection(
 ### <a name="application-role-alternatives"></a>Alternativy Role aplikace  
  Doporučujeme vám, že využijete mechanismy zabezpečení, které můžete použít namísto aplikační role. Další informace najdete v tématu [vytváření rolí aplikací v systému SQL Server](../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md).  
   
-## <a name="see-also"></a>Viz také  
- [Sdružování připojení](../../../../docs/framework/data/adonet/connection-pooling.md)  
- [SQL Server a ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)  
- [Čítače výkonu](../../../../docs/framework/data/adonet/performance-counters.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Sdružování připojení](../../../../docs/framework/data/adonet/connection-pooling.md)
+- [SQL Server a ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)
+- [Čítače výkonu](../../../../docs/framework/data/adonet/performance-counters.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

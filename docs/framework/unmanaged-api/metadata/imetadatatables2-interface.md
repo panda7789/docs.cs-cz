@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: acd51e06382502fdc2facae939212e02d3675f6a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cdd90e3d10bc5f110622f11fd5bfd17853142ac2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450073"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54516626"
 ---
 # <a name="imetadatatables2-interface"></a>IMetaDataTables2 – rozhraní
 Rozšiřuje [imetadatatables –](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md) zahrnout metody pro práci s datovými proudy metadat.  
@@ -30,18 +30,18 @@ Rozšiřuje [imetadatatables –](../../../../docs/framework/unmanaged-api/metad
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetMetaDataStorage – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-getmetadatastorage-method.md)|Získá velikost a obsah metadata uložená v zadaný oddíl.|  
-|[GetMetaDataStreamInfo – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-getmetadatastreaminfo-method.md)|Získá název, velikost a obsah datového proudu metadata v zadaném indexu.|  
+|[GetMetaDataStorage – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-getmetadatastorage-method.md)|Získá velikost a obsah metadata uložená v zadaném oddílu.|  
+|[GetMetaDataStreamInfo – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-getmetadatastreaminfo-method.md)|Získá název, velikost a obsah služby stream metadat v zadaném indexu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
- [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
+- [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)

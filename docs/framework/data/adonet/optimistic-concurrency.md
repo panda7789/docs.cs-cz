@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
-ms.openlocfilehash: 641a1cc0fd0ec53872ee3312e7da06923b82ddd7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 132a4c72f6abc4b1510c4d28b4ec0de6f80c1261
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507602"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54539648"
 ---
 # <a name="optimistic-concurrency"></a>Optimistická souběžnost
 V prostředí, existují dva modely pro aktualizaci dat v databázi: optimistického řízení souběžnosti a Pesimistická souběžnost. <xref:System.Data.DataSet> Objektu je účelem je podporovat používání optimistického řízení souběžnosti pro dlouho běžící aktivity, jako jsou data vzdálenou komunikaci a interakci s daty.  
@@ -37,8 +37,8 @@ V prostředí, existují dva modely pro aktualizaci dat v databázi: optimistick
 |Název sloupce|Původní hodnota|Aktuální hodnota|Hodnota v databázi|  
 |-----------------|--------------------|-------------------|-----------------------|  
 |CustID|101|101|101|  
-|Příjmení|Smith|Smith|Smith|  
-|Jméno|Bob|Bob|Bob|  
+|LastName|Smith|Smith|Smith|  
+|FirstName|Bob|Bob|Bob|  
   
  V 13:01:00 uživatel2 přečte na stejném řádku.  
   
@@ -47,8 +47,8 @@ V prostředí, existují dva modely pro aktualizaci dat v databázi: optimistick
 |Název sloupce|Původní hodnota|Aktuální hodnota|Hodnota v databázi|  
 |-----------------|--------------------|-------------------|-----------------------|  
 |CustID|101|101|101|  
-|Příjmení|Smith|Smith|Smith|  
-|Jméno|Bob|Robert|Bob|  
+|LastName|Smith|Smith|Smith|  
+|FirstName|Bob|Robert|Bob|  
   
  Tato aktualizace bude úspěšné, protože původní hodnoty, které má uživatel2 shodovat s hodnotami v databázi v době aktualizace.  
   
@@ -57,8 +57,8 @@ V prostředí, existují dva modely pro aktualizaci dat v databázi: optimistick
 |Název sloupce|Původní hodnota|Aktuální hodnota|Hodnota v databázi|  
 |-----------------|--------------------|-------------------|-----------------------|  
 |CustID|101|101|101|  
-|Příjmení|Smith|Smith|Smith|  
-|Jméno|Bob|James|Robert|  
+|LastName|Smith|Smith|Smith|  
+|FirstName|Bob|James|Robert|  
   
  V tomto okamžiku User1 dojde k narušení optimistického řízení souběžnosti protože hodnota v databázi ("Robert") už odpovídá původní hodnotu, že User1 očekávané ("Bob"). Narušení souběžného zpracování jednoduše poznáte, že aktualizace nebyla úspěšná. Rozhodnutí teď je potřeba provést, zda chcete přepsat změny poskytnutých uživatel2 změnami poskytnutých uživatel1, nebo zrušit změny uživatele User1.  
   
@@ -206,9 +206,9 @@ protected static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
- [Informace o chybě na řádku](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)  
- [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
+- [Informace o chybě na řádku](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)
+- [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

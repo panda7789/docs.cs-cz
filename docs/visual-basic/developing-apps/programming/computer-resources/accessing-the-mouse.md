@@ -5,24 +5,24 @@ helpviewer_keywords:
 - My.Computer.Mouse object [Visual Basic], tasks
 - mouse [Visual Basic], accessing [Visual Basic]
 ms.assetid: 6d31a3d2-d860-459d-9d13-3aa192d62ba2
-ms.openlocfilehash: e08c5c24e0de0f467d012870238663b967656973
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8d5b79aa91abac37cfa860463df4044d080e8074
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33582587"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54688256"
 ---
 # <a name="accessing-the-mouse-visual-basic"></a>Přístup k myši (Visual Basic)
-`My.Computer.Mouse` Objekt poskytuje způsob, jak najít informace o myši počítače, například pokud myši existuje, počet tlačítka myši a podrobnosti o kolečko myši.  
+`My.Computer.Mouse` Objekt, který poskytuje způsob, jak najít informace o myši počítače, například když myší existuje, počet tlačítka myši a podrobnosti o kolečko myši.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato tabulka uvádí úlohy spojené s `My.Computer.Mouse` objektu a odkazy na témata, který ukazuje, jak provést každý.  
+ Tato tabulka uvádí úlohy spojené s `My.Computer.Mouse` objektu a odkazuje na témata, které provedení.  
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Určuje, jestli má myši kolečko.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelExists>|  
-|Určení, zda byla prohodily tlačítka vlevo a vpravo myši|<xref:Microsoft.VisualBasic.Devices.Mouse.ButtonsSwapped>|  
-|Nastavte posunu otočený jeden stupeň po kolečko myši.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelScrollLines>|  
+|Určení, zda má ukazatel myši kolečko.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelExists>|  
+|Určení, zda byla Prohodit tlačítka myši doleva a doprava|<xref:Microsoft.VisualBasic.Devices.Mouse.ButtonsSwapped>|  
+|Nastavte, kolik posouvat otočený o jeden stupeň po kolečko myši.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelScrollLines>|  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Devices.Mouse>
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Devices.Mouse>

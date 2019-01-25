@@ -1,5 +1,5 @@
 ---
-title: ICorDebugValue Interface1
+title: ICorDebugValue – rozhraní 1
 ms.date: 03/30/2017
 api_name:
 - ICorDebugValue
@@ -16,35 +16,35 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0fe53490014a2a7d9acc0a426613af54867599e1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 41afc2e4305034340ad408e52ce08372bf8962dd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422120"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54507444"
 ---
-# <a name="icordebugvalue-interface1"></a>ICorDebugValue Interface1
-Reprezentuje hodnotu v procesu laděné. Hodnota může být pro čtení nebo zápisu hodnotu.  
+# <a name="icordebugvalue-interface1"></a>ICorDebugValue – rozhraní 1
+Reprezentuje hodnotu v laděném procesu. Hodnota může být čtení nebo zápis hodnoty.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[CreateBreakpoint – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-createbreakpoint-method.md)|Tato metoda není implementována aktuálně.|  
-|[GetAddress – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getaddress-method.md)|Získá adresu tohoto `ICorDebugValue` objekt, který je právě probíhá ladit.|  
-|[GetSize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getsize-method.md)|Získá velikost v bajtech to `ICorDebugValue` objektu.|  
-|[GetType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-gettype-method.md)|Získá primitivní typ tohoto objektu `ICorDebugValue` objektu.|  
+|[CreateBreakpoint – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-createbreakpoint-method.md)|Tato metoda teď není implementovaná.|  
+|[GetAddress – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getaddress-method.md)|Získá adresu této `ICorDebugValue` objektu, který se právě laděn.|  
+|[GetSize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getsize-method.md)|Získá velikost v bajtech, to `ICorDebugValue` objektu.|  
+|[GetType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-gettype-method.md)|Získá základní typ tohoto objektu `ICorDebugValue` objektu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Obecně platí vlastnictví objekt hodnoty se předá, když se vrátí. Pro odebrání odkaz z objektu po dokončení s daným objektem zodpovídá příjemce.  
+ Obecně platí vlastnictví objektu hodnotou je předána, když bude vrácen. Pro odebrání odkazu z objektu po dokončení se pomocí objektu zodpovídá příjemce.  
   
- V závislosti na tom, kde hodnota byla načtena z nemusí zůstat hodnotu platnou po dokončení opravy. Ano, obecně hodnota by neměla uchovávat prostřednictvím volání z [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) metoda.  
+ V závislosti na tom, kde hodnota byla načtena z nemusí zůstat hodnotu platnou po obnovení procesu. Ano, obecně platí, hodnota by se neměly ukládat ve volání [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) metody.  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -52,10 +52,10 @@ Reprezentuje hodnotu v procesu laděné. Hodnota může být pro čtení nebo z�
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
-    
-    
-    
-    
- [ICorDebugValue3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+
+
+
+
+- [ICorDebugValue3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

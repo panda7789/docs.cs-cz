@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9f13fad537a6847ba6e19c939e72df86036e28ff
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c4eddb1461ad448a1a1718db8a11173e5e2e4a17
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402201"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527780"
 ---
 # <a name="efngetmanagedobjectname-function"></a>_EFN_GetManagedObjectName – funkce
-Získá název typu pomocí ukazatele zadaný spravovaného objektu.  
+Získá název typu pomocí ukazatele zadaný spravovaný objekt.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +39,26 @@ HRESULT _EFN_GetManagedObjectName(
   
 #### <a name="parameters"></a>Parametry  
  `Client`  
- [v] Ukazatel na klientské ladění.  
+ [in] Ukazatel na klientovi ladění.  
   
  `objAddr`  
- [v] Ukazatel spravovaného objektu.  
+ [in] Ukazatel spravovaného objektu.  
   
  szName  
  [out] Název typu.  
   
  `cbName`  
- [out] Počet znaků, které jsou k dispozici ve vyrovnávací paměti řetězců.  
+ [out] Počet znaků, které jsou k dispozici ve vyrovnávací paměti řetězce.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a chybový kód 0x1000.  
+ Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a 0x1000 kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** SOS_Stacktrace.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)

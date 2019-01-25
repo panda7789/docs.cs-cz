@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f489ab29726292f6c55151169ad9efc6f0fbfbcf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b1ee5044c2223d3ff90cf10b53cad4e1b353d87c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407791"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54726507"
 ---
 # <a name="cordebuguserstate-enumeration"></a>CorDebugUserState – výčet
 Určuje stav uživatele vlákna.  
@@ -46,23 +46,23 @@ typedef enum CorDebugUserState {
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`USER_STOP_REQUESTED`|Byla vyžádána ukončení vlákna.|  
-|`USER_SUSPEND_REQUESTED`|Byla vyžádána pozastavení vlákno.|  
+|`USER_STOP_REQUESTED`|Bylo vyžádáno ukončení vlákna.|  
+|`USER_SUSPEND_REQUESTED`|Se požaduje pozastavení vlákna.|  
 |`USER_BACKGROUND`|Vlákno je spuštěno na pozadí.|  
-|`USER_UNSTARTED`|Vlákno nebyla spuštěna.|  
-|`USER_STOPPED`|Vlákno byla ukončena.|  
-|`USER_WAIT_SLEEP_JOIN`|Vlákno čeká další vlákno k dokončení úlohy.|  
+|`USER_UNSTARTED`|Vlákno není spuštěna.|  
+|`USER_STOPPED`|Vlákno bylo ukončeno.|  
+|`USER_WAIT_SLEEP_JOIN`|Vlákno čeká další vlákno k dokončení úkolu.|  
 |`USER_SUSPENDED`|Vlákno bylo pozastaveno.|  
-|`USER_UNSAFE_POINT`|Vlákno je na bod unsafe. To znamená vlákno je na místo v provádění kde může toto blokování uvolňování paměti.<br /><br /> Ladění událostí může odeslat z bodů unsafe, ale pozastavení vlákna na bod unsafe velmi pravděpodobně zablokování způsobí dokud vlákno obnovení. Bezpečné a unsafe body jsou určeny v běhu (JIT) a implementaci kolekce paměti.|  
-|`USER_THREADPOOL`|Vlákno je z fondu vláken.|  
+|`USER_UNSAFE_POINT`|Vlákno je nebezpečné okamžiku. Vlákno je v bodě provádění kde blokuje uvolňování paměti.<br /><br /> Ladění události může být z něj odešle nebezpečné body, ale nebezpečné okamžiku pozastavení vlákna budou velmi pravděpodobné, že k vzájemnému zablokování až se obnoví vlákno. Bezpečné a unsafe body jsou určeny just-in-time (JIT) a implementaci kolekce uvolnění paměti.|  
+|`USER_THREADPOOL`|Vlákno je z fondu podprocesů.|  
   
 ## <a name="remarks"></a>Poznámky  
- Stav uživatele vlákno je stav, který má vlákno při prozkoumá ladicího programu. Vlákno může mít kombinaci stavů uživatele.  
+ Stav uživatele vlákna je stav, který má vlákna prozkoumá ladicí program. Vlákno může mít kombinaci stavů uživatele.  
   
- Použití [icordebugthread::getuserstate –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getuserstate-method.md) metoda pro načtení stavu uživatele vlákno.  
+ Použití [icordebugthread::getuserstate –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getuserstate-method.md) metody k získání stavu uživatele vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -70,5 +70,5 @@ typedef enum CorDebugUserState {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

@@ -2,19 +2,19 @@
 title: '&lt;certificate&gt; pro &lt;identity&gt;'
 ms.date: 03/30/2017
 ms.assetid: 4aeccaf7-8f23-495c-aa5f-5bd8b5d4a10c
-ms.openlocfilehash: 0b65157aea84760f3e52bc294f7559967fc308f1
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 28a1b992a70986652030ad42d4d4a5738350ae1f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146911"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54676156"
 ---
 # <a name="ltcertificategt-for-ltidentitygt"></a>&lt;certificate&gt; pro &lt;identity&gt;
 Určuje certifikát X.509 sloužící k ověření serveru do klienta.  
   
  Další informace o nastavení hodnoty prvku naleznete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
- \<identity >  
+ \<identity>  
 \<certifikát >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,7 +39,7 @@ Určuje certifikát X.509 sloužící k ověření serveru do klienta.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje identitu služby k ověření klienta.|  
+|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje identitu služby k ověření klienta.|  
   
 ## <a name="example"></a>Příklad  
  Následující kód určuje kódovaného reprezentace certifikát používaný k ověření serveru do klienta.  
@@ -50,10 +50,10 @@ Určuje certifikát X.509 sloužící k ověření serveru do klienta.
 </identity>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.IdentityElement>  
- <xref:System.ServiceModel.EndpointAddress>  
- <xref:System.ServiceModel.EndpointAddress.Identity%2A>  
- <xref:System.ServiceModel.EndpointIdentity>  
- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
- [\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.IdentityElement>
+- <xref:System.ServiceModel.EndpointAddress>
+- <xref:System.ServiceModel.EndpointAddress.Identity%2A>
+- <xref:System.ServiceModel.EndpointIdentity>
+- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+- [\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)

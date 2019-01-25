@@ -7,12 +7,12 @@ helpviewer_keywords:
 - namespaces [C#], global namespace qualifier
 - global namespace [C#]
 ms.assetid: 98a1d89b-3c5a-44f7-8400-c4a3c0ec22a9
-ms.openlocfilehash: 19d8d20ae630573b44399f8f5c5351f02b9fb1df
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: e01f8d5e8868c11a88d99c42fba06d8fefa5dc92
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53236602"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491685"
 ---
 # <a name="how-to-use-the-global-namespace-alias-c-programming-guide"></a>Postupy: Použití aliasu globálního Namespace (C# Průvodce programováním v)
 Umožňuje přístup ke členu v globální [obor názvů](../../../csharp/language-reference/keywords/namespace.md) je užitečné, když člen může být skryty pomocí jiné entity se stejným názvem.  
@@ -42,14 +42,14 @@ Umožňuje přístup ke členu v globální [obor názvů](../../../csharp/langu
   
  [!code-csharp[csProgGuideNamespaces#5](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/how-to-use-the-global-namespace-alias_6.cs)]  
   
-**1**
+**A 1**
 **B 2**
 **C 3**
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)  
-- [. – operátor](../../../csharp/language-reference/operators/member-access-operator.md)  
-- [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)
+- [. – operátor](../../../csharp/language-reference/operators/member-access-operator.md)
+- [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)
 - [extern](../../../csharp/language-reference/keywords/extern.md)

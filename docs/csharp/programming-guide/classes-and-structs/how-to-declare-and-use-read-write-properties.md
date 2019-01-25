@@ -9,12 +9,12 @@ helpviewer_keywords:
 - read/write properties [C#]
 - accessors [C#], declaring properties with
 ms.assetid: a4962fef-af7e-4c4b-a929-4ae4d646ab8a
-ms.openlocfilehash: 348fcf6605030396095a2d94970ffe46e8d19357
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 792c3a8f1b02f36775edb84bdf7f1ff296630fea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241837"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54725282"
 ---
 # <a name="how-to-declare-and-use-read-write-properties-c-programming-guide"></a>Postupy: Deklarování a použití vlastností čtení/zápisu (C# Průvodce programováním v)
 Vlastnosti poskytují pohodlí veřejné datové členy bez rizika, které jsou součástí nechráněné, nekontrolovaného a neověřený přístup k datům objektu. To lze provést prostřednictvím *přistupující objekty*: speciální metody, které přiřadíte a načítat hodnoty ze základní datový člen. [Nastavit](../../../csharp/language-reference/keywords/set.md) přistupující objekt umožňuje datové členy mají být přiřazeny a [získat](../../../csharp/language-reference/keywords/get.md) přistupující objekt načte hodnoty datových členů.  
@@ -55,8 +55,8 @@ person.SetAge(person.GetAge() + 1);
   
  Všimněte si, že `ToString` není použito explicitně v programu. Vyvolá se ve výchozím nastavení `WriteLine` volání.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)
 - [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)

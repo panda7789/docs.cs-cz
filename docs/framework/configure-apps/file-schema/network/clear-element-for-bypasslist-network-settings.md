@@ -10,21 +10,21 @@ helpviewer_keywords:
 - <bypasslist>, clear element
 - bypasslist, clear element
 ms.assetid: 301584ca-a914-4100-b180-3b288d3b099e
-ms.openlocfilehash: 5c26857496d52f9fb98ef76a72cb72fe8d852349
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 840833f2752115cb5f5639a25daf05bcbff3d452
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50201410"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720912"
 ---
 # <a name="ltcleargt-element-for-bypasslist-network-settings"></a>&lt;Vymazat&gt; – Element pro bypasslist (nastavení sítě)
 Vymaže seznam obcházení proxy serveru.  
   
  \<Konfigurace >  
 \<system.net>  
-\<defaultProxy >  
+\<defaultProxy>  
 \<bypasslist – >  
-\<Vymazat >  
+\<clear>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,7 +45,7 @@ Vymaže seznam obcházení proxy serveru.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[atribut bypasslist bude](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.|  
+|[bypasslist](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.|  
   
 ## <a name="remarks"></a>Poznámky  
  `clear` Element vymaže všechny položky ze seznamu jednorázové přihlášení.  
@@ -70,6 +70,6 @@ Vymaže seznam obcházení proxy serveru.
 </configuration>   
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.WebProxy?displayProperty=nameWithType>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.WebProxy?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

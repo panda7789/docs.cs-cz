@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Úprava dokumentu systému Office Open XML (Visual Basic)'
+title: 'Postupy: Úprava dokumentu Office Open XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 1cefd7f5-8e39-44c4-869c-f8021538a777
-ms.openlocfilehash: 8d4ecdf89606190eed16b5374a5e43421d1260b7
-ms.sourcegitcommit: d8bf4976eafe3289275be3811e7cb721bfff7e1e
+ms.openlocfilehash: 333896eab6002a578b1cb53eb02f787bc9259123
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753390"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54670365"
 ---
-# <a name="how-to-modify-an-office-open-xml-document-visual-basic"></a>Postupy: Úprava dokumentu systému Office Open XML (Visual Basic)
-Toto téma představuje příklad, který otevře dokument Office Open XML, upraví se a uloží ho.  
+# <a name="how-to-modify-an-office-open-xml-document-visual-basic"></a>Postupy: Úprava dokumentu Office Open XML (Visual Basic)
+Toto téma představuje příklad, který otevře dokumentu Office Open XML, změní se a ukládá ji.  
   
- Další informace o Office Open XML, najdete v části [Tomáš prázdné Blog](http://www.ericwhite.com).  
+ Další informace o Office Open XML naleznete v tématu [Eric prázdné blogu](http://www.ericwhite.com).  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vyhledá první element odstavce do dokumentu. Načte text z odstavce a pak odstranění veškerého textu spustí v odstavci. Vytvoří nový text spuštění, který se skládá z první text odstavce, který byl převeden na velká písmena. Poté serializuje změněné XML do balíčku Open XML a zavře.  
+ Tento příklad vyhledá první element odstavce v dokumentu. Získá text ze odstavce a poté odstraní veškerý text běží v odstavci. Vytvoří nový text spuštění, který se skládá z první odstavec text, který byl převeden na velká písmena. Poté serializuje změněné XML do balíčku Open XML a zavře.  
   
  Tento příklad používá třídy v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
@@ -135,13 +135,13 @@ Module Module1
 End Module  
 ```  
   
- Pokud otevřete `SampleDoc.docx` po spuštění tohoto programu, uvidíte, že tento program převeden na velká prvním odstavci v dokumentu.  
+ Pokud otevřete `SampleDoc.docx` po spuštění tohoto programu, uvidíte, že tento program převeden na velká písmena první odstavec v dokumentu.  
   
- Spuštění s popsané v dokumentu Open XML ukázka [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:  
+ Při spuštění s ukázkový dokument Open XML je popsáno v [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:  
   
 ```  
 New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé techniky dotazu (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Pokročilé techniky dotazování (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

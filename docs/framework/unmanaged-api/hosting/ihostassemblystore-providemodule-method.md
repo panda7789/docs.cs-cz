@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8b604e1d7fc3d3c8adf7d95bd95843bc0110dbc9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eb0e3bcb563387c5ee7f95d2aa6f6b5ec771f3a4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33440015"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54717529"
 ---
 # <a name="ihostassemblystoreprovidemodule-method"></a>IHostAssemblyStore::ProvideModule – metoda
-Přeloží souboru prostředků modulu v sestavení nebo spojen (ale nikoli vložené).  
+Přeloží do souboru prostředků modulu v sestavení nebo propojená (ale nikoli vložené).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,43 +40,43 @@ HRESULT ProvideModule (
   
 #### <a name="parameters"></a>Parametry  
  `pBindInfo`  
- [v] Ukazatel [modulebindinfo –](../../../../docs/framework/unmanaged-api/hosting/modulebindinfo-structure.md) instanci, která popisuje požadovaný modul <xref:System.AppDomain>, sestavení a název modulu.  
+ [in] Ukazatel [modulebindinfo –](../../../../docs/framework/unmanaged-api/hosting/modulebindinfo-structure.md) instanci, která popisuje požadovaný modul <xref:System.AppDomain>, sestavení a název modulu.  
   
  `pdwModuleId`  
- [out] Ukazatel na jedinečný identifikátor `IStream` obsahující načíst modul.  
+ [out] Ukazatel na jedinečný identifikátor `IStream` obsahující načteného modulu.  
   
  `ppStmModuleImage`  
- [out] Ukazatel na adresu `IStream` objektu, který obsahuje bitovou kopii přenosné spustitelný soubor (PE) mají být načteny, nebo hodnota null, pokud modul nebyl nalezen.  
+ [out] Ukazatel na adresu `IStream` objekt, který obsahuje image (PE portable executable) mají být načteny, nebo hodnota null, pokud modul nebyl nalezen.  
   
  `ppStmPDB`  
- [out] Ukazatel na adresu `IStream` objektu, který obsahuje informace o ladění (PDB) program pro požadovaný modul, nebo hodnota null, pokud na soubor .pdb nebyl nalezen.  
+ [out] Ukazatel na adresu `IStream` objekt, který obsahuje informace o ladění (PDB) programu požadované pro modul, nebo hodnota null, pokud soubor PDB nebyl nalezen.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`ProvideModule` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|`ProvideModule` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
-|COR_E_FILENOTFOUND (0X80070002)|Nelze najít požadovaný sestavení nebo propojeného prostředku.|  
-|E_NOT_SUFFICIENT_BUFFER|`pdwModuleId` není dostatečně velký, aby se tak, aby obsahovala identifikátor, který chce vrátit hostitele.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|COR_E_FILENOTFOUND (0x80070002)|Požadované sestavení nebo propojeného prostředku nebyla nalezena.|  
+|E_NOT_SUFFICIENT_BUFFER|`pdwModuleId` není dostatečně velký, aby obsahovat identifikátor, který chce vrátit hostitele.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vrátí hodnotu identity pro `pdwModuleId` je zadán pro hostitele. Identifikátory musí být jedinečný v rámci životnosti procesu. Modul CLR používá tuto hodnotu jako jedinečný identifikátor pro přidružené datového proudu. Zkontroluje s hodnotami pro každou hodnotu `pAssemblyId` vrácený volání [provideassembly –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md) a s hodnotami pro `pdwModuleId` vrácený další volání `ProvideModule`. Pokud hostitel vrací stejnou hodnotu, identifikátor pro jinou `IStream`, modul CLR kontroluje, zda jste již namapována obsah tohoto datového proudu. Pokud ano, modulu CLR načte existující kopii místo mapování novou. Proto nesmí identifikátor také překrývat s identifikátory sestavení vrácená z `ProvideAssembly`.  
+ Vrátí hodnotu identity pro `pdwModuleId` zadaná hostitelem. Identifikátory musí být jedinečné v rámci životního cyklu procesu. Modul CLR používá tuto hodnotu jako jedinečný identifikátor pro přidružené datového proudu. Zkontroluje každou hodnotu s hodnotami pro `pAssemblyId` vrácený volání [provideassembly –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md) a s hodnotami pro `pdwModuleId` vrácený další volání `ProvideModule`. Pokud hostitel vrátí stejnou hodnotu identifikátoru dalších `IStream`, CLR kontroluje, zda již byly namapovány obsah tohoto datového proudu. Pokud ano, načte modul CLR stávající bitovou místo mapování novou kopii. Proto nesmí identifikátor také překrývat s identifikátory sestavení vrácená `ProvideAssembly`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRAssemblyReferenceList – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)  
- [IHostAssemblyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  
- [IHostAssemblyStore – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRAssemblyReferenceList – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
+- [IHostAssemblyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)
+- [IHostAssemblyStore – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)

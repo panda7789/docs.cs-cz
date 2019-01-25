@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: f356116d-e415-4f7c-a332-6e6a60227192
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b8b4cbdff72167cfc063254cf5370d22fb729b0a
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.openlocfilehash: 42356348ba454ffe0c3778e23dc9a0ff272c9f64
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50088569"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54727739"
 ---
 # <a name="how-to-unload-an-application-domain"></a>Postupy: Uvolnění domény aplikace
 Po dokončení používání domény aplikace, odinstalovat ji pomocí <xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> metody. **Uvolnění** metoda řádně ukončí zadanou doménu aplikace. Během procesu uvolnění žádná nová vlákna můžete přístup k doméně aplikace a všechny aplikace domény specifické datové struktury jsou uvolněny.  
@@ -31,7 +31,7 @@ Po dokončení používání domény aplikace, odinstalovat ji pomocí <xref:Sys
  [!code-csharp[System.AppDomain.Load#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.load/cs/source3.cs#3)]
  [!code-vb[System.AppDomain.Load#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.load/vb/source3.vb#3)]  
   
-## <a name="see-also"></a>Viz také  
-- [Programování pomocí domén aplikace](application-domains.md#programming-with-application-domains)  
-- [Postupy: Vytvoření domény aplikace](../../../docs/framework/app-domains/how-to-create-an-application-domain.md)  
+## <a name="see-also"></a>Viz také:
+- [Programování pomocí domén aplikace](application-domains.md#programming-with-application-domains)
+- [Postupy: Vytvoření domény aplikace](../../../docs/framework/app-domains/how-to-create-an-application-domain.md)
 - [Používání domén aplikací](../../../docs/framework/app-domains/use.md)

@@ -4,12 +4,12 @@ ms.date: 10/22/2008
 ms.technology: dotnet-standard
 ms.assetid: 212cfb1e-cec4-4047-94a6-47209b387f6f
 author: KrzysztofCwalina
-ms.openlocfilehash: b577f42c98cb56fb367cb57a550cb094a8ef105e
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 52d7a69a3f52c67ebff3f3db1daf0790e995913a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145238"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54721943"
 ---
 # <a name="dependency-properties"></a>Vlastnosti závislosti
 Vlastnost závislosti (DP) je regulární vlastnost, která uloží svou hodnotu v úložišti vlastností místo ukládání proměnná typu (pole), např.  
@@ -93,11 +93,11 @@ public class Grid {
   
  Vlastnosti závislosti mají integrovanou vynucení funkce a je možné poskytnutím zpětné volání vynucení, aby `PropertyMetadata`.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Obecné vzory návrhu](../../../docs/standard/design-guidelines/common-design-patterns.md)

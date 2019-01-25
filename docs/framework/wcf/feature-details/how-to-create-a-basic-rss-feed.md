@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 431879b8-a5f8-4947-ad1e-4768c726aca8
-ms.openlocfilehash: bf8f719a47fda8b592165368234a2db0467c59ce
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 1de8d252be4740ad2a23ce1074d772364529eecf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48835787"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54695566"
 ---
 # <a name="how-to-create-a-basic-rss-feed"></a>Postupy: Vytvoření základního kanálu RSS
 Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zveřejňuje informačního kanálu syndikace. Toto téma popisuje, jak vytvořit služby syndikace, který zpřístupňuje informačního kanálu syndikace RSS.  
@@ -23,7 +23,7 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zve�
      [!code-vb[htRssBasic#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htrssbasic/vb/program.vb#0)]  
   
     > [!NOTE]
-    >  Všechny operace služby, které se vztahují <xref:System.ServiceModel.Web.WebGetAttribute> atribut se mapují na požadavky HTTP GET. Chcete-li namapovat operace jinou metodu HTTP, použijte <xref:System.ServiceModel.Web.WebInvokeAttribute> místo. Další informace najdete v tématu [postupy: vytvoření základní služby WCF Web HTTP](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md).  
+    >  Všechny operace služby, které se vztahují <xref:System.ServiceModel.Web.WebGetAttribute> atribut se mapují na požadavky HTTP GET. Chcete-li namapovat operace jinou metodu HTTP, použijte <xref:System.ServiceModel.Web.WebInvokeAttribute> místo. Další informace najdete v tématu [jak: Vytvoření webové služby HTTP WCF základní](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md).  
   
 2.  Implementace kontraktu služby.  
   
@@ -94,6 +94,6 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zve�
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Při kompilaci předchozí kód, odkazovat System.ServiceModel.dll a System.ServiceModel.Web.dll.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.WebHttpBinding>  
- <xref:System.ServiceModel.Web.WebGetAttribute>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.WebHttpBinding>
+- <xref:System.ServiceModel.Web.WebGetAttribute>

@@ -2,12 +2,12 @@
 title: '&lt;net.tcp&gt;'
 ms.date: 03/30/2017
 ms.assetid: 8bc2f2be-11c1-4bab-9018-1d21ae568d94
-ms.openlocfilehash: 2a75a33eac61d85a0dab4732cb3b0de7f4703fa7
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 7df24d816b4eed8ceed542e14261413fbe7651a4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145780"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54728723"
 ---
 # <a name="ltnettcpgt"></a>&lt;net.tcp&gt;
 Určuje nastavení konfigurace sítě. TCP služba Sdílení portů, která umožňuje sdílet stejný port TCP mezi více procesy.  
@@ -62,7 +62,7 @@ Určuje nastavení konfigurace sítě. TCP služba Sdílení portů, která umo�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<allowAccounts >](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|Kolekce elementů konfigurace, které obsahují `securityIdentifier` atributy uživatelské účty pro procesy, které hostují služby WCF a jemuž je udělen přístup ke službě sdílení.|  
+|[\<allowAccounts>](../../../../../docs/framework/configure-apps/file-schema/wcf/allowaccounts.md)|Kolekce elementů konfigurace, které obsahují `securityIdentifier` atributy uživatelské účty pro procesy, které hostují služby WCF a jemuž je udělen přístup ke službě sdílení.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -73,7 +73,7 @@ Určuje nastavení konfigurace sítě. TCP služba Sdílení portů, která umo�
 ## <a name="remarks"></a>Poznámky  
  Další informace o sdílení portů najdete v tématu [sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md). Postup konfigurace služby Sdílení portů najdete v tématu [konfigurace služby Sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Activation.Configuration.NetTcpSection>  
- [Sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)  
- [Konfigurace služby sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Activation.Configuration.NetTcpSection>
+- [Sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)
+- [Konfigurace služby sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)

@@ -1,15 +1,15 @@
 ---
-title: 'Vzory návrhu: Založený na seznamu publikování a odběru'
+title: 'Vzorce návrhu: Vzorec Publikování–odběr založený na seznamu'
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-ms.openlocfilehash: caec9a9aa6de267cb5407ad4a7166701740f9a63
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: 87151cb8e50f526838565b22088f117941d6ab98
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086567"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54717887"
 ---
-# <a name="design-patterns-list-based-publish-subscribe"></a>Vzory návrhu: Založený na seznamu publikování a odběru
+# <a name="design-patterns-list-based-publish-subscribe"></a>Vzorce návrhu: Vzorec Publikování–odběr založený na seznamu
 Tento příklad znázorňuje vzor založený na seznamu publikování a odběru implementovaná jako program Windows Communication Foundation (WCF).  
   
 > [!NOTE]
@@ -161,4 +161,4 @@ public class PriceChangeEventArgs : EventArgs
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DesignPatterns/ListBasedPublishSubscribe`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

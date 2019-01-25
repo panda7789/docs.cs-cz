@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b2ad9ef473a498804e5b3ac0469b5b68697c49f5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ccd6dbe63f02fa7e28c6aec1be815f1f1967a90a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33439170"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54718725"
 ---
 # <a name="iclrvalidatorvalidate-method"></a>ICLRValidator::Validate – metoda
-Ověří přenosné spustitelný soubor (PE) nebo Microsoft (MSIL intermediate language) do zadaného souboru.  
+Ověří (PE portable executable) nebo Microsoft intermediate language (MSIL) do zadaného souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,48 +44,48 @@ HRESULT Validate (
   
 #### <a name="parameters"></a>Parametry  
  `veh`  
- [v] Ukazatel na `IVEHandler` instanci, která zpracovává chyby ověření.  
+ [in] Ukazatel `IVEHandler` instanci, která zpracovává chyby ověření.  
   
  `ulAppDomainId`  
- [v] Identifikátor pro aktuální <xref:System.AppDomain>.  
+ [in] Identifikátor pro aktuální <xref:System.AppDomain>.  
   
  `ulFlags`  
- [v] Kombinace [ValidatorFlags](../../../../docs/framework/unmanaged-api/hosting/validatorflags-enumeration.md) hodnoty, která určuje druh ověřování, která má být provedena.  
+ [in] Kombinace [validatorflags –](../../../../docs/framework/unmanaged-api/hosting/validatorflags-enumeration.md) hodnoty určující druh ověřování, která má být provedena.  
   
  `ulMaxError`  
- [v] Maximální počet chyb umožňující před ukončením ověření.  
+ [in] Maximální počet chyb, aby před ukončením ověření.  
   
  `token`  
- [v] Nepoužívá se.  
+ [in] Nevyužité.  
   
  `fileName`  
- [v] Název souboru, který má být ověřen.  
+ [in] Název souboru, který má být ověřen.  
   
  `pe`  
- [v] Ukazatel do vyrovnávací paměti souboru.  
+ [in] Ukazatel do vyrovnávací paměti souboru.  
   
  `ulSize`  
- [v] Velikost v bajtech, soubor, který má být ověřen.  
+ [in] Velikost v bajtech, soubor, který má být ověřen.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Validate` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|`Validate` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** IValidator.idl, IValidator.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRValidator – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRValidator – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-interface.md)

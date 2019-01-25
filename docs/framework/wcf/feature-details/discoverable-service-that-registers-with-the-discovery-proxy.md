@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: implementace zjistitelný služba, která zaregistruje se zjišťování Proxy'
+title: 'Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování'
 ms.date: 03/30/2017
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
-ms.openlocfilehash: e0ceada8f65b98676d160ba096c63bf946a178cf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 30cf098b97b1e0188f264bee2ce3dbcdcdb8921b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33490594"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623687"
 ---
-# <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>Postupy: implementace zjistitelný služba, která zaregistruje se zjišťování Proxy
-Toto téma je druhý čtyři témata, která popisuje, jak implementace zjišťování proxy. V předchozích tématu [postupy: Implementace zjišťování Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), implementována zjišťování proxy. V tomto tématu, vytvoření služby WCF, který odešle oznámení zprávy (`Hello` a `Bye`) na server proxy zjišťování způsobuje jeho registrace a zrušení registrace s proxy serverem zjišťování.  
+# <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování
+Toto téma je druhý čtyři témat, která popisuje, jak implementace zjišťování proxy. V předchozím tématu [jak: Implementace zjišťování Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), jste implementovali proxy zjišťování. V tomto tématu vytvoříte službu WCF, která odesílá zprávy oznámení (`Hello` a `Bye`) na server proxy zjišťování by ji chcete registrovat a deregistrovat pomocí proxy zjišťování.  
   
 ### <a name="to-define-the-service-contract"></a>K definování kontraktu služby  
   
-1.  Přidat nový projekt konzolové aplikace na `DiscoveryProxyExample` řešení volat `Service`.  
+1.  Přidat nový projekt konzolové aplikace na `DiscoveryProxyExample` řešení `Service`.  
   
 2.  Přidejte odkazy na následující sestavení:  
   
@@ -22,7 +22,7 @@ Toto téma je druhý čtyři témata, která popisuje, jak implementace zjišťo
   
     2.  System.ServiceModel.Discovery  
   
-3.  Přidejte novou třídu do projektu názvem `CalculatorService`.  
+3.  Přidejte novou třídu projektu s názvem `CalculatorService`.  
   
 4.  Přidejte následující příkazy using.  
   
@@ -49,7 +49,7 @@ Toto téma je druhý čtyři témata, která popisuje, jak implementace zjišťo
         }  
     ```  
   
-6.  Také v rámci CalculatorService.cs, implementujte kontrakt služby.  
+6.  Také v rámci CalculatorService.cs, implementace kontraktu služby.  
   
     ```csharp  
     // Service class which implements the service contract.      
@@ -102,7 +102,7 @@ Toto téma je druhý čtyři témata, která popisuje, jak implementace zjišťo
     using System.ServiceModel.Discovery;  
     ```  
   
-3.  V rámci `Main()` metoda, přidejte následující kód:  
+3.  V rámci `Main()` metodu, přidejte následující kód:  
   
     ```csharp  
     // Define the base address of the service  
@@ -154,10 +154,10 @@ Toto téma je druhý čtyři témata, která popisuje, jak implementace zjišťo
     }  
     ```  
   
- Dokončili jste implementace zjistitelný služby. Pokračujte na [postupy: Implementace klientské aplikace používající zjišťování Proxy k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md).  
+ Dokončili jste implementace zjistitelné služby. Pokračovat k [jak: Implementace klientské aplikace používající zjišťování Proxy k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md).  
   
 ## <a name="example"></a>Příklad  
- Toto je úplný seznam kód použitý v tomto tématu.  
+ Toto je úplný přehled kód použitý v tomto tématu.  
   
 ```csharp  
 // CalculatorService.cs  
@@ -284,7 +284,7 @@ namespace Microsoft.Samples.Discovery
 }  
 ```  
 
-## <a name="see-also"></a>Viz také  
- [Zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)  
- [Postupy: Implementace proxy zjišťování](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)  
- [Postupy: Implementace klientské aplikace používající proxy zjišťování k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
+## <a name="see-also"></a>Viz také:
+- [Zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)
+- [Postupy: Implementace Proxy zjišťování](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)
+- [Postupy: Implementace klientské aplikace používající zjišťování Proxy k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)

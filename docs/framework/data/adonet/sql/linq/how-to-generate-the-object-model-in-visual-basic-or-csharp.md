@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: generování objektového modelu v jazyce Visual Basic nebo C#'
+title: 'Postupy: Generování objektového modelu v jazyce Visual Basic neboC#'
 ms.date: 03/30/2017
 ms.assetid: a0c73b33-5650-420c-b9dc-f49310c201ee
-ms.openlocfilehash: 21266ca2d1230a1afc903734d1b4c53b259e50e1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 79b2656ec72e2b93592742ddd39e7bfe4dcd7c43
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200924"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54510569"
 ---
-# <a name="how-to-generate-the-object-model-in-visual-basic-or-c"></a>Postupy: generování objektového modelu v jazyce Visual Basic nebo C# #
+# <a name="how-to-generate-the-object-model-in-visual-basic-or-c"></a>Postupy: Generování objektového modelu v jazyce Visual Basic neboC# #
 V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], objektový model v programovacím jazyce se mapuje na relační databáze. Dva nástroje jsou k dispozici pro automatické generování jazyka Visual Basic nebo C# modelů z metadat existující databázi.  
   
 -   Pokud používáte Visual Studio, můžete použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] ke generování objektového modelu. [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] Poskytuje bohaté možnosti uživatelského rozhraní můžete generovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model. Další informace najdete v tématu [Linq to SQL nástroje v sadě Visual Studio](https://docs.microsoft.com/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).
@@ -17,7 +17,7 @@ V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], objektov�
 -   Nástroj příkazového řádku SQLMetal. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
     > [!NOTE]
-    >  Pokud nemáte stávající databáze a vytvořit jeden z objektového modelu, můžete vytvořit objektový model s použitím kódu editor a <xref:System.Data.Linq.DataContext.CreateDatabase%2A>. Další informace najdete v tématu [postupy: Dynamické vytvoření databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-dynamically-create-a-database.md).  
+    >  Pokud nemáte stávající databáze a vytvořit jeden z objektového modelu, můžete vytvořit objektový model s použitím kódu editor a <xref:System.Data.Linq.DataContext.CreateDatabase%2A>. Další informace najdete v tématu [jak: Dynamické vytvoření databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-dynamically-create-a-database.md).  
   
  Dokumentace k [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] obsahuje příklady toho, jak generovat jazyka Visual Basic nebo C# objektový model s použitím [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)]. Následující informace jsou uvedeny příklady toho, jak pomocí nástroje příkazového řádku SQLMetal. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
@@ -35,13 +35,13 @@ sqlmetal /code:northwind.vb /language:vb "c:\northwnd.mdf" /sprocs /functions
 sqlmetal /code:northwind.cs /language:csharp "c:\northwnd.mdf" /sprocs /functions /pluralize  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)  
- [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)  
- [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)  
- [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)  
- [Mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)  
- [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)  
- [Externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
- [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
+## <a name="see-also"></a>Viz také:
+- [Průvodce programováním](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)
+- [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)
+- [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
+- [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)
+- [Mapování na základě atributů](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)
+- [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)
+- [Externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
+- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+- [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)

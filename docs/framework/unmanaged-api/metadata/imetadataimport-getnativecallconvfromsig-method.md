@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 963d46aea4ab31e770cb845fe699208f6c8f9ac7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 752dcf90f790d6403c37fcee377c35656b655b36
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447237"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491063"
 ---
 # <a name="imetadataimportgetnativecallconvfromsig-method"></a>IMetaDataImport::GetNativeCallConvFromSig – metoda
-Získá nativního konvence volání pro metodu, která je reprezentována Zadaný podpis ukazatele.  
+Získá nativní konvence volání pro metodu, která je reprezentována zadaným podpisem ukazatele.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,24 +39,24 @@ HRESULT GetNativeCallConvFromSig (
   
 #### <a name="parameters"></a>Parametry  
  `pvSig`  
- [v] Ukazatel na metadata podpis metody, která vrátí konvenci volání.  
+ [in] Ukazatel na podpis metadat k vrácení konvence volání pro metodu.  
   
  `cbSig`  
- [v] Velikost v bajtech `pvSig`.  
+ [in] Velikost v bajtech `pvSig`.  
   
  `pCallConv`  
  [out] Ukazatel na nativní konvence volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.CallingConvention>  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.CallingConvention>
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

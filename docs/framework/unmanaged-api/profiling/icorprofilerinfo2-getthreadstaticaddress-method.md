@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a38c8323157cee866ac0ecab97532b9b72a932b2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3574d7e889481931f40dbfb3158ad523c7e5637e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33454123"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54534992"
 ---
 # <a name="icorprofilerinfo2getthreadstaticaddress-method"></a>ICorProfilerInfo2::GetThreadStaticAddress – metoda
-Získá adresu zadaného pole statické přístup z více vláken, který je v rozsahu zadaný vlákno.  
+Získá adresu zadané pole vlákna, která je v rámci zadaného vlákna.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT GetThreadStaticAddress(
   
 #### <a name="parameters"></a>Parametry  
  `classId`  
- [v] ID třídy, která obsahuje požadovaná pole statické přístup z více vláken.  
+ [in] ID třídy, která obsahuje požadovaná pole statická na úrovni vlákna.  
   
  `fieldToken`  
- [v] Token metadata pro požadované pole statické přístup z více vláken.  
+ [in] Token metadat pro požadované pole statická na úrovni vlákna.  
   
  `threadId`  
- [v] ID podprocesu, který je v rozsahu pro požadovaný statické pole.  
+ [in] ID vlákna, která je v oboru pro požadovaný statické pole.  
   
  `ppAddress`  
- [out] Ukazatel na adresu statické pole, které je v rámci zadaného vlákno.  
+ [out] Ukazatel na adresu statické pole, která je v rámci zadaného vlákna.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetThreadStaticAddress` Metoda může vrátit jednu z následujících:  
+ `GetThreadStaticAddress` Metoda může vrátit jednu z následujících akcí:  
   
--   HRESULT CORPROF_E_DATAINCOMPLETE, pokud daný statické pole nebyla přiřazena adresu v zadaném kontextu.  
+-   CORPROF_E_DATAINCOMPLETE HRESULT, pokud daný statické pole nebyla přiřazena adresa v zadaném kontextu.  
   
--   Adresy objekty, které mohou být v kolekci halda paměti. Tyto adresy může zneplatní po uvolňování paměti, takže po profilery kolekce paměti by neměl předpokládat jsou platné.  
+-   Adresy objektů, které mohou být v haldě uvolňování paměti. Tyto adresy můžou stát neplatnými po uvolnění paměti, takže se po uvolňování paměti kolekce profilovací programy by neměl předpokládají, že jsou platné.  
   
- Před dokončením konstruktoru třídy třídy `GetThreadStaticAddress` vrátí CORPROF_E_DATAINCOMPLETE pro všechna její statické pole, i když některé statických polí mohou již být inicializován a vytvoření kořenového adresáře objekty kolekce paměti.  
+ Před dokončením konstruktoru třídy třídy `GetThreadStaticAddress` vrátí CORPROF_E_DATAINCOMPLETE pro všechny jeho statická pole, i když některé statická pole může již být inicializován a kořenová objekty uvolnění paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -68,6 +68,6 @@ HRESULT GetThreadStaticAddress(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

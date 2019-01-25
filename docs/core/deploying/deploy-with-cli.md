@@ -1,207 +1,168 @@
 ---
-title: Nasazení aplikací .NET Core s využitím nástroje rozhraní příkazového řádku (CLI)
-description: Naučte se nasazovat aplikace .NET Core pomocí nástrojů rozhraní příkazového řádku (CLI)
-author: rpetrusha
-ms.author: ronpet
-ms.date: 09/05/2018
+title: Publikování .NET Core aplikací pomocí rozhraní příkazového řádku
+description: Zjistěte, jak publikovat aplikaci .NET Core s nástroji .NET Core SDK rozhraní příkazového řádku (CLI).
+author: thraka
+ms.author: adegeo
+ms.date: 01/16/2019
 dev_langs:
 - csharp
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: 05460174e9b8472a2862c829cd58b72aec26b549
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: dfb99681ba363f23d742ac83940f1ce3e5e78bb1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151093"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54503999"
 ---
-# <a name="deploy-net-core-apps-with-command-line-interface-cli-tools"></a>Nasazení aplikací .NET Core s využitím nástroje rozhraní příkazového řádku (CLI)
+# <a name="publish-net-core-apps-with-the-cli"></a>Publikování .NET Core aplikací pomocí rozhraní příkazového řádku
 
-Můžete nasadit aplikaci .NET Core buď jako *nasazení závisí na architektuře*, který obsahuje binární soubory vaší aplikace, ale závisí na přítomnosti .NET Core v cílovém systému, nebo jako *samostatná nasazení*, což zahrnuje aplikace a binární soubory .NET Core. Přehled najdete v tématu [nasazení aplikace .NET Core](index.md).
+Tento článek ukazuje, jak publikovat aplikaci .NET Core z příkazového řádku. .NET core nabízí tři způsoby, jak publikovat aplikace. Nasazení závisí na architektuře vytvoří soubor .dll napříč platformami, která používá místně nainstalovaný modul runtime .NET Core. Vytvoří spustitelný soubor závisí na architektuře specifické pro platformu spustitelný soubor, který používá místně nainstalovaný modul runtime .NET Core. Samostatný spustitelný soubor vytvoří spustitelný soubor pro konkrétní platformu a obsahuje místní kopie modulu runtime .NET Core.
 
-Následující části vysvětlují, jak používat [nástroje rozhraní příkazového řádku .NET Core](../tools/index.md) vytvořit následující typy nasazení:
+Přehled těchto publikování režimech najdete v tématu [nasazení aplikace .NET Core](index.md). 
 
-- Nasazení závisí na architektuře
-- Nasazení závisí na architektuře s závislostí třetích stran
-- Samostatná nasazení
-- Samostatná nasazení s závislostí třetích stran
+Hledáte rychlý pomoc pomocí rozhraní příkazového řádku? Následující tabulka ukazuje několik příkladů toho, jak publikovat aplikaci. Můžete určit cílovou architekturu s `-f <TFM>` parametr nebo úpravou souboru projektu. Další informace najdete v tématu [publikování Základy](#publishing-basics).
 
-Při práci z příkazového řádku, můžete program editoru podle vašeho výběru. Pokud je váš program editor [Visual Studio Code](https://code.visualstudio.com), nástroje command console v prostředí Visual Studio Code můžete otevřít tak, že vyberete **zobrazení** > **integrovaný terminál**.
+| Režim publikování | Verze sady SDK | Příkaz |
+| ------------ | ----------- | ------- |
+| Nasazení závisí na architektuře | 2.x | `dotnet publish -c Release` |
+| Spustitelný soubor závisí na architektuře | 2.2 | `dotnet publish -c Release -r <RID> --self-contained false` |
+|                                | 3.0 | `dotnet publish -c Release -r <RID> --self-contained false` |
+|                                | 3.0* | `dotnet publish -c Release` |
+| Samostatná nasazení      | 2.1 | `dotnet publish -c Release -r <RID> --self-contained true` |
+|                                | 2.2 | `dotnet publish -c Release -r <RID> --self-contained true` |
+|                                | 3.0 | `dotnet publish -c Release -r <RID> --self-contained true` |
+
+>[!IMPORTANT]
+>\*Při použití sady SDK verze 3.0, závisí na architektuře spustitelný soubor to je výchozí režim publikování při spuštění na úrovni basic `dotnet publish` příkazu. To platí jenom pro projekty, které se zaměřují **.NET Core 2.1** nebo **.NET Core 3.0**.
+
+## <a name="publishing-basics"></a>Základní informace o publikování
+
+`<TargetFramework>` Nastavení souboru projektu určuje výchozí Cílová architektura, která při publikování vaší aplikace. Můžete změnit cílovou architekturu na libovolný platný [cílové rozhraní Framework Moniker (TFM)](../../standard/frameworks.md). Například, pokud váš projekt používá `<TargetFramework>netcoreapp2.2</TargetFramework>`, se vytvoří binární soubor, který cílí na .NET Core 2.2. TFM zadané v tomto nastavení je výchozí cíl používané [ `dotnet publish` ] [ dotnet-publish] příkazu.
+
+Pokud chcete cílit na více než jedno rozhraní, můžete nastavit `<TargetFrameworks>` nastavení k více než jednu hodnotu TFM oddělené středníkem. Jedno z rozhraní s publikováním `dotnet publish -f <TFM>` příkazu. Pokud máte například `<TargetFrameworks>netcoreapp2.1;netcoreapp2.2</TargetFrameworks>` a spusťte `dotnet publish -f netcoreapp2.1`, se vytvoří binární soubor, který cílí na .NET Core 2.1.
+
+Není-li jinak nastavit výstupní adresář [ `dotnet publish` ] [ dotnet-publish] příkaz je `./bin/<BUILD-CONFIGURATION>/<TFM>/publish/`. Výchozí hodnota **konfiguraci sestavení** režim je **ladění** není-li změnit `-c` parametr. Například `dotnet publish -c Release -f netcoreapp2.1` publikuje do `myfolder/bin/Release/netcoreapp2.1/publish/`. 
+
+Pokud používáte .NET Core SDK 3.0, výchozí režim pro aplikace, že cílová verze .NET Core 2.1, 2.2 nebo 3.0 je spustitelný soubor závisí na architektuře publikování.
+
+Pokud používáte .NET Core SDK 2.1, výchozí režim pro aplikace, že je verze cílového rozhraní .NET Core 2.1, 2.2 nasazení závisí na architektuře publikování.
+
+### <a name="native-dependencies"></a>Nativní závislosti
+
+Pokud vaše aplikace obsahuje nativní závislosti, nebude fungovat v různých operačních systémů. Například pokud vaše aplikace používá nativní rozhraní API systému Win32, nebude fungovat v systému macOS nebo Linux. Je třeba zadat kód specifický pro platformu a kompilace spustitelný soubor pro každou platformu. 
+
+Zvažte také, pokud má knihovna odkazujete nativní závislost, vaše aplikace se možná nespustí na všech platformách. Ale je možné, který se odkazuje na balíček NuGet je součástí verze specifické pro platformu pro zpracování požadované závislosti nativního za vás.
+
+Při distribuci aplikace s nativní závislosti, budete možná muset použít `dotnet publish -r <RID>` přepínač tak, aby zadejte cílovou platformu, kterou chcete publikovat pro. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
+
+Další informace o specifických pro platformu binárních souborů se věnuje [spustitelného souboru závisí na architektuře](#framework-dependent-executable) a [samostatná nasazení](#self-contained-deployment) oddíly.
+
+## <a name="sample-app"></a>Ukázková aplikace
+
+Tyto aplikace můžete použít k prozkoumání příkazy pro publikování. Vytvoření aplikace spuštěním následujících příkazů v terminálu:
+
+```dotnetcli
+mkdir apptest1
+cd apptest1
+dotnet new console
+dotnet add package Figgle
+```
+
+`Program.cs` Nebo `Program.vb` souboru, který je generován šablonou konzoly musí změnit tak, aby následující:
+
+```csharp
+using System;
+
+namespace apptest1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Figgle.FiggleFonts.Standard.Render("Hello, World!"));
+        }
+    }
+}
+```
+```vb
+Imports System
+
+Module Program
+    Sub Main(args As String())
+        Console.WriteLine(Figgle.FiggleFonts.Standard.Render("Hello, World!"))
+    End Sub
+End Module
+```
+
+Při spuštění aplikace ([`dotnet run`][dotnet-run]), se zobrazí následující výstup:
+
+```terminal
+  _   _      _ _         __        __         _     _ _
+ | | | | ___| | | ___    \ \      / /__  _ __| | __| | |
+ | |_| |/ _ \ | |/ _ \    \ \ /\ / / _ \| '__| |/ _` | |
+ |  _  |  __/ | | (_) |    \ V  V / (_) | |  | | (_| |_|
+ |_| |_|\___|_|_|\___( )    \_/\_/ \___/|_|  |_|\__,_(_)
+                     |/
+```
 
 ## <a name="framework-dependent-deployment"></a>Nasazení závisí na architektuře
 
-Nasazení závisí na architektuře bez závislostí třetích stran zahrnuje vytváření, testování a publikování aplikace. Jednoduchý příklad napsané v jazyce C# znázorňuje proces.
+Pro .NET Core SDK 2.x rozhraní příkazového řádku, závisí na architektuře nasazení (chyba) je výchozí režim pro základní `dotnet publish` příkazu.
 
-1. Vytvořte adresář projektu.
+Při publikování aplikací tak, jak disketové jednotky, `<PROJECT-NAME>.dll` ve vytvoří soubor `./bin/<BUILD-CONFIGURATION>/<TFM>/publish/` složky. Ke spuštění vaší aplikace, přejděte do složky výstupu a použít `dotnet <PROJECT-NAME>.dll` příkazu.
 
-   Vytvořte adresář pro váš projekt a nastavte ji váš aktuální adresář.
+Vaše aplikace je nakonfigurovaná k cílení na konkrétní verzi .NET Core. Která je určená .NET Core runtime musí být na počítači, ve kterém chcete spustit vaši aplikaci. Například pokud vaše aplikace cílí na .NET Core 2.2, musí mít všechny počítače, které vaše aplikace běží na modulu runtime .NET Core 2.2 nainstalované. Jak je uvedeno v [publikování Základy](#publishing-basics) oddílu, můžete upravit váš soubor projektu, chcete-li změnit výchozí Cílová architektura nebo cílit na více než jedno rozhraní.
 
-1. Vytvoření projektu.
+Publikování disketové jednotky vytvoří aplikaci, která automaticky zobrazí souhrn po dopředné nejnovější .NET Core opravy dostupné v systému, na kterém běží aplikace. Další informace o vázání verze v době kompilace, naleznete v tématu [vyberte verzi .NET Core používat](../versions/selection.md#framework-dependent-apps-roll-forward).
 
-   Z příkazového řádku, zadejte [dotnet nové konzoly](../tools/dotnet-new.md) vytvořte nový projekt konzoly C# nebo [dotnet nové konzoly - lang vb](../tools/dotnet-new.md) vytvoříte nový projekt konzoly jazyka Visual Basic v tomto adresáři.
+## <a name="framework-dependent-executable"></a>Spustitelný soubor závisí na architektuře
 
-1. Přidejte zdrojový kód aplikace.
+Pro .NET Core SDK 3.x rozhraní příkazového řádku, závisí na architektuře spustitelný soubor (FDE) výchozí režim pro základní `dotnet publish` příkazu. Není nutné k určení dalších parametrů jako cílových aktuálního operačního systému.
 
-   Otevřít *Program.cs* nebo *soubor Program.vb* souboru ve svém editoru a automaticky vygenerovaném kódu nahraďte následujícím kódem. Se zobrazí výzva k zadání textu a zobrazuje jednotlivá slova zadané uživatelem. Používá regulární výraz `\w+` k oddělení slov ve vstupním textu.
+V tomto režimu se vytvoří spustitelný soubor hostitele specifické pro platformu pro hostování vaší aplikace pro různé platformy. Tento režim je podobný disketové jednotky, protože vyžaduje disketové jednotky hostitele ve formě `dotnet` příkazu. Hostitel spustitelného souboru se liší podle platformy a s názvem podobný `<PROJECT-FILE>.exe`. Můžete spustit tento spustitelný soubor přímo, bez volání `dotnet <PROJECT-FILE>.dll` což je stále přijatelné způsob, jak spustit aplikaci.
 
-   [!code-csharp[deployment#1](~/samples/snippets/core/deploying/cs/deployment-example.cs)]
-   [!code-vb[deployment#1](~/samples/snippets/core/deploying/vb/deployment-example.vb)]
+Vaše aplikace je nakonfigurovaná k cílení na konkrétní verzi .NET Core. Která je určená .NET Core runtime musí být na počítači, ve kterém chcete spustit vaši aplikaci. Například pokud vaše aplikace cílí na .NET Core 2.2, musí mít všechny počítače, které vaše aplikace běží na modulu runtime .NET Core 2.2 nainstalované. Jak je uvedeno v [publikování Základy](#publishing-basics) oddílu, můžete upravit váš soubor projektu, chcete-li změnit výchozí Cílová architektura nebo cílit na více než jedno rozhraní.
 
-1. Aktualizujte závislosti projektu a nástroje.
+Publikování FDE vytvoří aplikaci, která automaticky zobrazí souhrn po dopředné nejnovější .NET Core opravy dostupné v systému, na kterém běží aplikace. Další informace o vázání verze v době kompilace, naleznete v tématu [vyberte verzi .NET Core používat](../versions/selection.md#framework-dependent-apps-roll-forward).
 
-   Spustit [dotnet restore](../tools/dotnet-restore.md) ([viz Poznámka](#dotnet-restore-note)) příkaz pro obnovení závislosti zadaný ve vašem projektu.
+Je nutné (s výjimkou .NET Core 3.x, pokud cílíte na platformu aktuální) použijte následující přepínače s `dotnet publish` příkaz pro publikování FDE:
 
-1. Vytvořte sestavení pro ladění vaší aplikace.
+- `-r <RID>`  
+  Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
 
-   Použití [dotnet sestavení](../tools/dotnet-build.md) příkazu k sestavení aplikace nebo [dotnet spustit](../tools/dotnet-run.md) příkazu sestavit a spustit ho.
+- `--self-contained false`  
+  Tento přepínač říká .NET Core SDK k vytvoření spustitelného souboru jako FDE.
 
-1. Nasazení vaší aplikace.
+Vždy, když použijete `-r` přepínače, cesta ke složce výstupu se změní na: `./bin/<BUILD-CONFIGURATION>/<TFM>/<RID>/publish/`
 
-   Po ladit a testovat program, vytvořte nasazení pomocí následujícího příkazu:
+Pokud používáte [ukázkovou aplikaci](#sample-app)spuštěním `dotnet publish -f netcoreapp2.2 -r win10-x64 --self-contained false`. Tento příkaz vytvoří následující spustitelný soubor: `./bin/Debug/netcoreapp2.2/win10-x64/publish/apptest1.exe`
 
-      ```console
-      dotnet publish -f netcoreapp2.1 -c Release
-      ```
-   Tím se vytvoří vydanou verzi (místo ladění) verze vaší aplikace. Výsledné soubory jsou umístěny v adresáři s názvem *publikovat* , který je v podadresáři vašeho projektu *bin* adresáře.
+> [!Note]
+> Můžete snížit celkovou velikost vašeho nasazení tím, že **invariantní režimu globalizace**. Tento režim je užitečný pro aplikace, které nejsou globální a které používají konvence formátování, konvence malých a velkých písmen a řetězec porovnání a řazení pořadí [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture). Další informace o **invariantní režimu globalizace** a jak ho chcete povolit, najdete v článku [invariantní režimu globalizace rozhraní .NET Core](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md)
 
-   Proces publikování spolu se soubory vaší aplikace, generuje soubor databáze (PDB) programu, který obsahuje ladicí informace o vaší aplikaci. Soubor je užitečné hlavně pro ladění výjimky. Můžete nechcete distribuovat s vaší aplikace soubory. Měli byste, však uložit ho v případě, že chcete ladit sestavení pro vydání aplikace.
+## <a name="self-contained-deployment"></a>Samostatná nasazení
 
-   Můžete nasadit kompletní sadu souborů aplikace žádným způsobem, který vám vyhovuje. Například lze zabalit jako soubor Zip, použít jednoduchý `copy` příkazu, nebo je nasadit v balíčcích instalace podle vašeho výběru.
+Když publikujete samostatná nasazení (SCD), .NET Core SDK vytvoří spustitelný soubor pro konkrétní platformu. Publikování SCD zahrnuje všechny požadované soubory .NET Core ke spouštění vaší aplikace, ale neobsahuje [nativní závislosti .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md). Tyto závislosti musí být k dispozici v systému před spuštěním aplikace. 
 
-1. Spuštění aplikace
+Publikování SCD vytvoří aplikaci, která není vpřed na nejnovější dostupné .NET Core opravu zabezpečení. Další informace o vázání verze v době kompilace, naleznete v tématu [vyberte verzi .NET Core používat](../versions/selection.md#self-contained-deployments-include-the-selected-runtime).
 
-   Po instalaci se uživatelé můžou spustit vaši aplikaci pomocí `dotnet` příkazu a poskytuje název souboru aplikace, jako například `dotnet fdd.dll`.
+Je nutné použít následující přepínače s `dotnet publish` příkaz pro publikování SCD:
 
-   Kromě binární soubory aplikace Instalační program by měl také vytvoření balíčku Instalační služby sdílené architektuře nebo vyhledat jako předpoklad jako součást instalace aplikace.  Instalace rozhraní sdílené vyžaduje přístup správce/root.
+- `-r <RID>`  
+  Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
 
-## <a name="framework-dependent-deployment-with-third-party-dependencies"></a>Nasazení závisí na architektuře s závislostí třetích stran
+- `--self-contained true`  
+  Tento přepínač říká .NET Core SDK k vytvoření spustitelného souboru jako SCD.
 
-Nasazení závisí na architektuře se jeden nebo více závislostí třetích stran vyžaduje, aby tyto závislosti k dispozici pro váš projekt. Další dva kroky jsou požadovány, než můžete spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz:
+> [!Note]
+> Můžete snížit celkovou velikost vašeho nasazení tím, že **invariantní režimu globalizace**. Tento režim je užitečný pro aplikace, které nejsou globální a které používají konvence formátování, konvence malých a velkých písmen a řetězec porovnání a řazení pořadí [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture). Další informace o **invariantní režimu globalizace** a jak ho chcete povolit, najdete v článku [invariantní režimu globalizace rozhraní .NET Core](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md)
 
-1. Přidat odkazy na požadované knihovny třetích stran `<ItemGroup>` část vaší *csproj* souboru. Následující `<ItemGroup>` oddíl obsahuje závislost na [Json.NET](https://www.newtonsoft.com/json) jako knihovny třetích stran:
-
-      ```xml
-      <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
-      </ItemGroup>
-      ```
-
-1. Pokud jste tak dosud neučinili, stáhněte si balíček NuGet obsahující závislostí třetích stran. Pokud chcete stáhnout balíček, spusťte `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz po přidání závislosti. Protože závislost vyřeší z místní mezipaměti NuGet na čas publikování, musí být k dispozici ve vašem systému.
-
-Všimněte si, že nasazení závisí na architektuře závislostí třetích stran je pouze jako přenosný jeho závislostí třetích stran. Například pokud knihovny třetí strany pouze podporuje macOS, aplikace není přenosný do systémů Windows. To se stane, když závislostí třetích stran, samotný závisí na nativní kód. Dobrým příkladem tohoto je [Kestrel server](/aspnet/core/fundamentals/servers/kestrel), což vyžaduje nativní závislost na [libuv](https://github.com/libuv/libuv). Po vytvoření disketové jednotky pro aplikace s tímto druhem závislostí třetích stran publikovaný výstup obsahuje složku pro každý [identifikátor modulu Runtime (RID)](../rid-catalog.md) podporující nativní závislostí (a, která existuje v jeho balíček NuGet).
-
-## <a name="simpleSelf"></a> Samostatná nasazení bez závislostí třetích stran
-
-Samostatná nasazení bez závislostí třetích stran zahrnuje vytvoření projektu, úpravy *csproj* souboru, sestavování, testování a publikování aplikace. Jednoduchý příklad napsané v jazyce C# znázorňuje proces. Tento příklad ukazuje, jak vytvořit samostatná nasazení pomocí [nástrojů dotnet](../tools/dotnet.md) z příkazového řádku.
-
-1. Vytvořte adresář pro projekt.
-
-   Vytvořte adresář pro váš projekt a nastavte ji váš aktuální adresář.
-
-1. Vytvoření projektu.
-
-   Z příkazového řádku, zadejte [nové konzoly dotnet](../tools/dotnet-new.md) v tomto adresáři vytvořte nový projekt konzoly C#.
-
-1. Přidejte zdrojový kód aplikace.
-
-   Otevřít *Program.cs* souboru ve svém editoru a automaticky vygenerovaném kódu nahraďte následujícím kódem. Se zobrazí výzva k zadání textu a zobrazuje jednotlivá slova zadané uživatelem. Používá regulární výraz `\w+` k oddělení slov ve vstupním textu.
-
-   [!code-csharp[deployment#1](~/samples/snippets/core/deploying/cs/deployment-example.cs)]
-   [!code-vb[deployment#1](~/samples/snippets/core/deploying/vb/deployment-example.vb)]
-1. Definování platformy, které se zaměří na vaši aplikaci.
-
-   Vytvoření `<RuntimeIdentifiers>` značku `<PropertyGroup>` část vaší *csproj* soubor, který definuje platformy, zaměřuje a zadejte identifikátor modulu runtime (RID) pro každou platformu, která je cílem vaší aplikace. Všimněte si, že budete také muset přidat středníkem k oddělení identifikátory RID. Zobrazit [katalog identifikátorů modulu Runtime](../rid-catalog.md) seznam identifikátorů modulů runtime.
-
-   Například následující `<PropertyGroup>` části označuje, že aplikace běží na 64bitová verze Windows 10 operačních systémů a operačním systému OS 10.11 verze X 64-bit.
-
-     ```xml
-     <PropertyGroup>
-         <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
-     </PropertyGroup>
-     ```
-
-   Všimněte si, že `<RuntimeIdentifiers>` element lze použít v libovolném `<PropertyGroup>` ve vašich *csproj* souboru. Úplnou ukázku *csproj* souboru se zobrazí později v této části.
-
-1. Aktualizujte závislosti projektu a nástroje.
-
-   Spustit [dotnet restore](../tools/dotnet-restore.md) ([viz Poznámka](#dotnet-restore-note)) příkaz pro obnovení závislosti zadaný ve vašem projektu.
-
-1. Určete, jestli chcete použít režim globalizace invariantní.
-
-   Zejména v případě, že vaše aplikace cílí na Linux, můžete snížit celkovou velikost vašeho nasazení s využitím [invariantní režimu globalizace](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md). Globalizace invariantní režim je užitečný pro aplikace, které nejsou globální a které používají konvence formátování, konvence malých a velkých písmen a řetězec porovnání a řazení pořadí [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture).
-
-   Výchozí režim povolit, klikněte pravým tlačítkem na projekt (nikoli řešení) v **Průzkumníka řešení**a vyberte **upravit SCD.csproj** nebo **upravit SCD.vbproj**. Pak přidejte následující zvýrazněný řádky do souboru:
-
- [!code-xml[globalization-invariant-mode](~/samples/snippets/core/deploying/xml/invariant.csproj)]
-
-1. Vytvořte sestavení pro ladění vaší aplikace.
-
-   Z příkazového řádku, použijte [dotnet sestavení](../tools/dotnet-build.md) příkazu.
-
-1. Po ladit a testovat program, vytvoření souborů k nasazení s vaší aplikací pro každou platformu, zaměřuje.
-
-   Použití `dotnet publish` příkaz pro obě cílových platforem následujícím způsobem:
-
-      ```console
-      dotnet publish -c Release -r win10-x64
-      dotnet publish -c Release -r osx.10.11-x64
-      ```
-
-   Tím se vytvoří vydanou verzi (místo ladění) verze vaší aplikace pro každou cílovou platformu. Výsledné soubory jsou umístěny v podadresáři s názvem *publikovat* , který je v podadresáři vašeho projektu *.\bin\Release\netcoreapp2.1\<runtime_identifier >* podadresáře. Všimněte si, že každý podadresář obsahuje kompletní sadu souborů (soubory aplikace a všechny soubory .NET Core) potřebné pro spuštění vaší aplikace.
-
-Proces publikování spolu se soubory vaší aplikace, generuje soubor databáze (PDB) programu, který obsahuje ladicí informace o vaší aplikaci. Soubor je užitečné hlavně pro ladění výjimky. Můžete není balíček se soubory vaší aplikace. Měli byste, však uložit ho v případě, že chcete ladit sestavení pro vydání aplikace.
-
-Nasaďte publikované soubory žádným způsobem, který vám vyhovuje. Například lze zabalit jako soubor Zip, použít jednoduchý `copy` příkazu, nebo je nasadit v balíčcích instalace podle vašeho výběru.
-
-Tady je úplný *csproj* souboru pro tento projekt.
-
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
-  </PropertyGroup>
-</Project>
-```
-
-## <a name="self-contained-deployment-with-third-party-dependencies"></a>Samostatná nasazení s závislostí třetích stran
-
-Samostatná nasazení s jeden nebo více závislostí třetích stran, zahrnuje přidání závislosti. Další dva kroky jsou požadovány, než můžete spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz:
-
-1. Přidat odkazy na žádné knihovny třetích stran `<ItemGroup>` část vaší *csproj* souboru. Následující `<ItemGroup>` části používá technologii Json.NET jako knihovny třetí strany.
-
-    ```xml
-      <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
-      </ItemGroup>
-    ```
-
-1. Pokud jste tak dosud neučinili, stáhněte si balíček NuGet obsahující závislostí třetích stran do vašeho systému. Pokud chcete zpřístupnit závislost do aplikace, spusťte `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz po přidání závislosti. Protože závislost vyřeší z místní mezipaměti NuGet na čas publikování, musí být k dispozici ve vašem systému.
-
-Tady je úplný *csproj* souboru pro tento projekt:
-
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RuntimeIdentifiers>win10-x64;osx.10.11-x64</RuntimeIdentifiers>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
-  </ItemGroup>
-</Project>
-```
-
-Při nasazení vaší aplikace jsou také obsažena případných závislostí třetích stran používají ve vaší aplikaci se soubory aplikace. V systému, na kterém běží aplikace nejsou vyžadovány knihovny třetích stran.
-
-Všimněte si, že lze nasadit pouze samostatná nasazení pomocí knihovny třetí strany na platformách podporovaných aplikací tuto knihovnu. Toto je podobný s tím, že závislostí třetích stran s nativní závislosti v nasazení závisí na architektuře, kde musí být kompatibilní s platformou, do kterého byla nasazena aplikace, nativní závislosti.
-
-<a name="dotnet-restore-note"></a>
-[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-* [Nasazení aplikace .NET core](index.md)
-* [.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)
+- [Přehled nasazení aplikací .NET core](index.md)
+- [.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)
+
+[dotnet-publish]: ../tools/dotnet-publish.md
+[dotnet-run]: ../tools/dotnet-run.md

@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1fbc41ca1366b412c37d6af09e90e3f1b042ba21
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0bb92f9ba8ff0aed1c6eb1fa44fb4d7c9abc186a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449982"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54714228"
 ---
 # <a name="corprffunctionargumentinfo-structure"></a>COR_PRF_FUNCTION_ARGUMENT_INFO – struktura
-Představuje argumenty funkcí v pořadí zleva doprava.  
+Představuje argumenty funkce, v pořadí zleva doprava.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +40,19 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_INFO {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`numRanges`|Počet bloků argumentů. Tato hodnota je počet [COR_PRF_FUNCTION_ARGUMENT_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md) struktury v `ranges` pole.|  
-|`totalArgumentSize`|Celková velikost všech argumentů. Jinými slovy tato hodnota je součtem argument délek.|  
-|`ranges`|Pole `COR_PRF_FUNCTION_ARGUMENT_RANGE` struktury, z nichž každý představuje jeden blok argumenty funkce.|  
+|`numRanges`|Počet bloků argumentů. To znamená, že tato hodnota je počet [cor_prf_function_argument_range –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md) struktur v `ranges` pole.|  
+|`totalArgumentSize`|Celková velikost všech argumentů. Jinými slovy tato hodnota je součet délek argumentů.|  
+|`ranges`|Pole `COR_PRF_FUNCTION_ARGUMENT_RANGE` struktury, z nichž každý představuje jeden blok argumentů funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
- Funkce může mít mnoho argumentů. Tyto argumenty nemusí být souvisle uložené v paměti. Můžete mít blok tři argumenty na jednom místě, blok dva argumenty na jiném místě a poslední blok jeden argument na jiné místo. Jsou všechny tyto argumenty pro stejnou funkci; právě byly uloženy do různých místech.  
+ Funkce může mít velký počet argumentů. Tyto argumenty nemusí uložena souvisle v paměti. Můžete mít blok tři argumenty na jednom místě, blok dva argumenty na jiném místě a posledního bloku s jedním argumentem na jiném místě. Všechny tyto argumenty jsou pro stejnou funkci. právě jsou uloženy na různých místech.  
   
- `COR_PRF_FUNCTION_ARGUMENT_INFO` Struktura představuje všechny argumenty jedné funkce. Chcete-li všechny bloky argumenty funkce používá pole. Ano, pro jednu funkci, máte jediný `COR_PRF_FUNCTION_ARGUMENT_INFO` strukturu, která odkazuje na více `COR_PRF_FUNCTION_ARGUMENT_RANGE` struktury, každý z nich odkazuje na jeden nebo více argumenty funkce.  
+ `COR_PRF_FUNCTION_ARGUMENT_INFO` Struktura představuje všechny argumenty jedné funkce. Pole se používá k odkazování všechny bloky argumentů funkce. Ano, pro jednu funkci, máte jediný `COR_PRF_FUNCTION_ARGUMENT_INFO` strukturu, která odkazuje na více `COR_PRF_FUNCTION_ARGUMENT_RANGE` struktury, každý z nich odkazuje na jeden nebo více argumentů funkce.  
   
- Argumenty, které jsou uložené v registrech jsou uniknout do paměti k vytvoření struktury.  
+ Argumenty, které jsou uloženy v registrech, jsou přesahovat do paměti k vytvoření struktury.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl  
   
@@ -60,5 +60,5 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_INFO {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)

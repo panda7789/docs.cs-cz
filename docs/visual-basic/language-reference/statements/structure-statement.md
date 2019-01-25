@@ -12,12 +12,12 @@ helpviewer_keywords:
 - UDT (user-defined types)
 - types [Visual Basic], user-defined
 ms.assetid: 9bd1deea-2a89-4cdc-812c-6dcbb947c391
-ms.openlocfilehash: 9377d889f56049720ab10439582300913f5cbb37
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: 64ded285c74d61206618695c1d0bb6f158ce860d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49347991"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54704901"
 ---
 # <a name="structure-statement"></a>Structure – příkaz
 Deklaruje název struktury a zavádí definici proměnných, vlastností, událostí a postupů, které tvoří strukturu.  
@@ -38,17 +38,17 @@ End Structure
 |Termín|Definice|  
 |---|---|  
 |`attributelist`|Volitelné. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).|  
-|`accessmodifier`|Volitelné. Může být jedna z následujících akcí:<br /><br /> -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [chráněný](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend –](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />- [Chráněné typu Friend](../../language-reference/modifiers/protected-friend.md)<br/>- [Privátní, chráněné](../../language-reference/modifiers/private-protected.md) <br /><br /> Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
+|`accessmodifier`|Volitelné. Může být jedna z následujících akcí:<br /><br /> -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend –](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />- [Chráněné typu Friend](../../language-reference/modifiers/protected-friend.md)<br/>- [Privátní, chráněné](../../language-reference/modifiers/private-protected.md) <br /><br /> Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
 |`Shadows`|Volitelné. Zobrazit [stíny](../../../visual-basic/language-reference/modifiers/shadows.md).|  
 |`Partial`|Volitelné. Označuje částečnou definici struktury. Zobrazit [částečné](../../../visual-basic/language-reference/modifiers/partial.md).|  
-|`name`|Požadováno. Název této struktury. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
+|`name`|Povinný parametr. Název této struktury. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
 |`Of`|Volitelné. Určuje, že se jedná o obecnou strukturu.|  
 |`typelist`|Povinné, pokud používáte [z](../../../visual-basic/language-reference/statements/of-clause.md) – klíčové slovo. Seznam parametrů typu v této struktuře. Zobrazit [seznamu](../../../visual-basic/language-reference/statements/type-list.md).|  
 |`Implements`|Volitelné. Označuje, že tato struktura implementuje členy jednoho nebo více rozhraní. Zobrazit [implementuje příkaz](../../../visual-basic/language-reference/statements/implements-statement.md).|  
 |`interfacenames`|Povinné, pokud používáte `Implements` příkazu. Názvy rozhraní, které implementuje tato struktura.|  
-|`datamemberdeclarations`|Požadováno. Nula nebo více `Const`, `Dim`, `Enum`, nebo `Event` příkazy deklarace *datové členy* struktury.|  
+|`datamemberdeclarations`|Povinný parametr. Nula nebo více `Const`, `Dim`, `Enum`, nebo `Event` příkazy deklarace *datové členy* struktury.|  
 |`methodmemberdeclarations`|Volitelné. Nula nebo více deklarací `Function`, `Operator`, `Property`, nebo `Sub` postupy, které slouží jako *členové metody* struktury.|  
-|`End Structure`|Požadováno. Ukončuje `Structure` definice.|  
+|`End Structure`|Povinný parametr. Ukončuje `Structure` definice.|  
   
 ## <a name="remarks"></a>Poznámky  
  `Structure` Prohlášení definuje složený typ hodnoty, kterou můžete přizpůsobit. A *struktura* je generalizace uživatelem definovaného typu (UDT) z předchozích verzí jazyka Visual Basic. Další informace najdete v tématu [struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md).  
@@ -104,14 +104,14 @@ End Structure
   
  [!code-vb[VbVbalrStatements#57](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/structure-statement_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
- [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)  
- [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
- [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)  
- [Příkaz Enum](../../../visual-basic/language-reference/statements/enum-statement.md)  
- [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
- [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
- [Struktury a třídy](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)
+- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)
+- [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)
+- [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)
+- [Příkaz Enum](../../../visual-basic/language-reference/statements/enum-statement.md)
+- [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)
+- [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
+- [Struktury a třídy](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)

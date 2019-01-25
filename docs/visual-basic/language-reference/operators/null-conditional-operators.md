@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ?. operator [Visual Basic]
 - ?[] operator [C#]
 - ?[] operator [Visual Basic]
-ms.openlocfilehash: c29362a1e335e18b66821919e266b1ce57774692
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d30d452a7c140a0c56529386b14ef3a3512df490
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195978"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54722150"
 ---
 # <a name="-and--null-conditional-operators-visual-basic"></a>?. a? () podmíněné operátory s null (Visual Basic)
 
@@ -60,4 +60,4 @@ Nový způsob je bezpečná pro vlákno, protože kompilátor generuje kód do v
 
 - [Operátory (Visual Basic)](index.md)
 - [Průvodce programováním v jazyce Visual Basic](../../../visual-basic/programming-guide/index.md)
-- [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  
+- [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)

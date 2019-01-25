@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a63ebf55-7269-416b-b4f5-286f6c03bf0e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9a22f462bc425a9c9e8f1be700474e7326193674
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: c75f9ffe17d04ad4b8e41a6e1402a3cf4be7e07f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46001061"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54722709"
 ---
 # <a name="custom-timespan-format-strings"></a>Vlastní řetězce formátu TimeSpan
 
@@ -45,31 +45,31 @@ Vlastní <xref:System.TimeSpan> formátovací řetězce jsou také používány 
 
 | Specifikátor formátu | Popis | Příklad |
 |----------------------|-----------------|-------------|
-|"d", "%d.|Počet celých dnů v časovém intervalu.<br /><br /> Další informace: [specifikátor vlastního formátu "d"](#dSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%d` --> "6"<br /><br /> `d\.hh\:mm` --> "6.14:32"|
+|"d", "%d.|Počet celých dnů v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "d"](#dSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%d` --> "6"<br /><br /> `d\.hh\:mm` --> "6.14:32"|
 |"dd"-"dddddddd"|Počet celých dnů v časovém intervalu doplněno počátečními nulami, podle potřeby.<br /><br /> Další informace: ["dd"-"dddddddd" specifikátorů vlastního formátu](#ddSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `ddd` --> "006"<br /><br /> `dd\.hh\:mm` --> "06.14:32"|
-|"h", "%h"|Počet celé hodiny v časovém intervalu, který se nepočítají jako součást dnů. Jednociferné hodin nemají úvodní nuly.<br /><br /> Další informace: [specifikátor vlastního formátu "h"](#hSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%h` --> "14"<br /><br /> `hh\:mm` --> "14:32"|
-|"hh"|Počet celé hodiny v časovém intervalu, který se nepočítají jako součást dnů. Jednociferné hodin obsahovat úvodní nuly.<br /><br /> Další informace: [specifikátor vlastního formátu "hh"](#hhSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `hh` --> "14"<br /><br /> `new TimeSpan(6, 8, 32, 17, 685):`<br /><br /> `hh` --> 08|
-|"m", "%m"|Počet celých minut časového období, které nejsou součástí hodiny nebo i dny. Jednociferné minut nemají úvodní nuly.<br /><br /> Další informace: [specifikátor vlastního formátu "m"](#mSpecifier).|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `%m` --> "8"<br /><br /> `h\:m` --> "14:8"|
-|"mm"|Počet celých minut časového období, které nejsou součástí hodiny nebo i dny. Jednociferné minut obsahovat úvodní nuly.<br /><br /> Další informace: [specifikátor vlastního formátu "mm"](#mmSpecifier).|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `mm` --> "08"<br /><br /> `new TimeSpan(6, 8, 5, 17, 685):`<br /><br /> `d\.hh\:mm\:ss` --> 6.08:05:17|
-|"s", "%s"|Počet celé sekundy v časovém intervalu, které nejsou součástí hodinách, dnech nebo minut. Jednociferné sekund nemají úvodní nuly.<br /><br /> Další informace: [specifikátor vlastního formátu "s"](#sSpecifier).|`TimeSpan.FromSeconds(12.965)`:<br /><br /> `%s` --> 12<br /><br /> `s\.fff` --> 12.965|
-|"ss"|Počet celé sekundy v časovém intervalu, které nejsou součástí hodinách, dnech nebo minut.  Jednociferné sekund obsahovat úvodní nuly.<br /><br /> Další informace: [specifikátor vlastního formátu "ss"](#ssSpecifier).|`TimeSpan.FromSeconds(6.965)`:<br /><br /> `ss` --> 06<br /><br /> `ss\.fff` --> 06.965|
-|"f", "%f"|Desetiny sekundy v časovém intervalu.<br /><br /> Další informace: [specifikátor vlastního formátu "f"](#fSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `f` --> 8<br /><br /> `ss\.f` --> 06.8|
+|"h", "%h"|Počet celé hodiny v časovém intervalu, který se nepočítají jako součást dnů. Jednociferné hodin nemají úvodní nuly.<br /><br /> Další informace: [Specifikátor vlastního formátu "h"](#hSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `%h` --> "14"<br /><br /> `hh\:mm` --> "14:32"|
+|"hh"|Počet celé hodiny v časovém intervalu, který se nepočítají jako součást dnů. Jednociferné hodin obsahovat úvodní nuly.<br /><br /> Další informace: [Specifikátor vlastního formátu "hh"](#hhSpecifier).|`new TimeSpan(6, 14, 32, 17, 685):`<br /><br /> `hh` --> "14"<br /><br /> `new TimeSpan(6, 8, 32, 17, 685):`<br /><br /> `hh` --> 08|
+|"m", "%m"|Počet celých minut časového období, které nejsou součástí hodiny nebo i dny. Jednociferné minut nemají úvodní nuly.<br /><br /> Další informace: [Specifikátor vlastního formátu "m"](#mSpecifier).|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `%m` --> "8"<br /><br /> `h\:m` --> "14:8"|
+|"mm"|Počet celých minut časového období, které nejsou součástí hodiny nebo i dny. Jednociferné minut obsahovat úvodní nuly.<br /><br /> Další informace: [Specifikátor vlastního formátu "mm"](#mmSpecifier).|`new TimeSpan(6, 14, 8, 17, 685):`<br /><br /> `mm` --> "08"<br /><br /> `new TimeSpan(6, 8, 5, 17, 685):`<br /><br /> `d\.hh\:mm\:ss` --> 6.08:05:17|
+|"s", "%s"|Počet celé sekundy v časovém intervalu, které nejsou součástí hodinách, dnech nebo minut. Jednociferné sekund nemají úvodní nuly.<br /><br /> Další informace: [Specifikátor vlastního formátu "s"](#sSpecifier).|`TimeSpan.FromSeconds(12.965)`:<br /><br /> `%s` --> 12<br /><br /> `s\.fff` --> 12.965|
+|"ss"|Počet celé sekundy v časovém intervalu, které nejsou součástí hodinách, dnech nebo minut.  Jednociferné sekund obsahovat úvodní nuly.<br /><br /> Další informace: [Specifikátor vlastního formátu "ss"](#ssSpecifier).|`TimeSpan.FromSeconds(6.965)`:<br /><br /> `ss` --> 06<br /><br /> `ss\.fff` --> 06.965|
+|"f", "%f"|Desetiny sekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "f"](#fSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `f` --> 8<br /><br /> `ss\.f` --> 06.8|
 |"ff"|Setiny sekundy v časovém intervalu.<br /><br /> Další informace:[specifikátor vlastního formátu "ff"](#ffSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `ff` --> 89<br /><br /> `ss\.ff` --> 06.89|
-|"fff"|Milisekundy v časovém intervalu.<br /><br /> Další informace: [specifikátor vlastního formátu "fff"](#f3Specifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `fff` --> 895<br /><br /> `ss\.fff` --> 06.895|
-|"ffff"|Desetitisíciny sekundy v časovém intervalu.<br /><br /> Další informace: [specifikátor vlastního formátu "ffff"](#f4Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffff` --> 8954<br /><br /> `ss\.ffff` --> 06.8954|
-|"fffff"|Stotisíciny sekundy v časovém intervalu.<br /><br /> Další informace: [specifikátor vlastního formátu "fffff"](#f5Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffff` --> 89543<br /><br /> `ss\.fffff` --> 06.89543|
-|"ffffff"|Miliontiny sekundy v časovém intervalu.<br /><br /> Další informace: [specifikátor vlastního formátu "ffffff"](#f6Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffffff` --> 895432<br /><br /> `ss\.ffffff` --> 06.895432|
-|"fffffff"|-Desetimiliontiny sekundy (nebo desetinné dílků) v časovém intervalu.<br /><br /> Další informace: [specifikátor vlastního formátu "fffffff"](#f7Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffffff` --> 8954321<br /><br /> `ss\.fffffff` --> 06.8954321|
-|"F", "%F"|Desetiny sekundy v časovém intervalu. Pokud je číslice nula, nezobrazí se žádná hodnota.<br /><br /> Další informace: [specifikátor formátu "F" vlastního](#F_Specifier).|`TimeSpan.Parse("00:00:06.32")`:<br /><br /> `%F`: 3<br /><br /> `TimeSpan.Parse("0:0:3.091")`:<br /><br /> `ss\.F`: 03.|
-|"FF"|Setiny sekundy v časovém intervalu. Všechny koncové nuly nebo dvě desetinné nul nejsou zahrnuty.<br /><br /> Další informace: [specifikátor vlastního formátu "FF"](#FF_Specifier).|`TimeSpan.Parse("00:00:06.329")`:<br /><br /> `FF`: 32<br /><br /> `TimeSpan.Parse("0:0:3.101")`:<br /><br /> `ss\.FF`: 03.1|
+|"fff"|Milisekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "fff"](#f3Specifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `fff` --> 895<br /><br /> `ss\.fff` --> 06.895|
+|"ffff"|Desetitisíciny sekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "ffff"](#f4Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffff` --> 8954<br /><br /> `ss\.ffff` --> 06.8954|
+|"fffff"|Stotisíciny sekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffff"](#f5Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffff` --> 89543<br /><br /> `ss\.fffff` --> 06.89543|
+|"ffffff"|Miliontiny sekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "ffffff"](#f6Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffffff` --> 895432<br /><br /> `ss\.ffffff` --> 06.895432|
+|"fffffff"|-Desetimiliontiny sekundy (nebo desetinné dílků) v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffffff"](#f7Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffffff` --> 8954321<br /><br /> `ss\.fffffff` --> 06.8954321|
+|"F", "%F"|Desetiny sekundy v časovém intervalu. Pokud je číslice nula, nezobrazí se žádná hodnota.<br /><br /> Další informace: [Specifikátor formátu "F" vlastního](#F_Specifier).|`TimeSpan.Parse("00:00:06.32")`:<br /><br /> `%F`: 3<br /><br /> `TimeSpan.Parse("0:0:3.091")`:<br /><br /> `ss\.F`: 03.|
+|"FF"|Setiny sekundy v časovém intervalu. Všechny koncové nuly nebo dvě desetinné nul nejsou zahrnuty.<br /><br /> Další informace: [Specifikátor vlastního formátu "FF"](#FF_Specifier).|`TimeSpan.Parse("00:00:06.329")`:<br /><br /> `FF`: 32<br /><br /> `TimeSpan.Parse("0:0:3.101")`:<br /><br /> `ss\.FF`: 03.1|
 |"FFF"|Milisekundy v časovém intervalu. Žádné desetinné části koncové nuly nejsou zahrnuty.<br /><br /> Další informace:|`TimeSpan.Parse("00:00:06.3291")`:<br /><br /> `FFF`: 329<br /><br /> `TimeSpan.Parse("0:0:3.1009")`:<br /><br /> `ss\.FFF`: 03.1|
-|"FFFF"|Desetitisíciny sekundy v časovém intervalu. Žádné desetinné části koncové nuly nejsou zahrnuty.<br /><br /> Další informace: [specifikátor vlastního formátu "FFFF"](#F4_Specifier).|`TimeSpan.Parse("00:00:06.32917")`:<br /><br /> `FFFFF`: 3291<br /><br /> `TimeSpan.Parse("0:0:3.10009")`:<br /><br /> `ss\.FFFF`: 03.1|
-|"FFFFF"|Stotisíciny sekundy v časovém intervalu. Žádné desetinné části koncové nuly nejsou zahrnuty.<br /><br /> Další informace: [specifikátor vlastního formátu "FFFFF"](#F5_Specifier).|`TimeSpan.Parse("00:00:06.329179")`:<br /><br /> `FFFFF`: 32917<br /><br /> `TimeSpan.Parse("0:0:3.100009")`:<br /><br /> `ss\.FFFFF`: 03.1|
-|"FFFFFF"|Miliontiny sekundy v časovém intervalu. Nejsou zobrazeny žádné desetinné části koncové nuly.<br /><br /> Další informace: [specifikátor vlastního formátu "FFFFFF"](#F6_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 329179<br /><br /> `TimeSpan.Parse("0:0:3.1000009")`:<br /><br /> `ss\.FFFFFF`: 03.1|
-|"FFFFFFF"|Desetimiliontiny sekundy v časovém intervalu. Nejsou zobrazeny žádné desetinné části koncové nuly nebo sedmi nul.<br /><br /> Další informace: [specifikátor vlastního formátu "FFFFFFF"](#F7_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 3291791<br /><br /> `TimeSpan.Parse("0:0:3.1900000")`:<br /><br /> `ss\.FFFFFF`: 03.19|
-|"*řetězec*.|Oddělovač řetězcového literálu.<br /><br /> Další informace: [ostatní znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh':'mm':'ss` --> "14:32:17"|
+|"FFFF"|Desetitisíciny sekundy v časovém intervalu. Žádné desetinné části koncové nuly nejsou zahrnuty.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFF"](#F4_Specifier).|`TimeSpan.Parse("00:00:06.32917")`:<br /><br /> `FFFFF`: 3291<br /><br /> `TimeSpan.Parse("0:0:3.10009")`:<br /><br /> `ss\.FFFF`: 03.1|
+|"FFFFF"|Stotisíciny sekundy v časovém intervalu. Žádné desetinné části koncové nuly nejsou zahrnuty.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFF"](#F5_Specifier).|`TimeSpan.Parse("00:00:06.329179")`:<br /><br /> `FFFFF`: 32917<br /><br /> `TimeSpan.Parse("0:0:3.100009")`:<br /><br /> `ss\.FFFFF`: 03.1|
+|"FFFFFF"|Miliontiny sekundy v časovém intervalu. Nejsou zobrazeny žádné desetinné části koncové nuly.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFFF"](#F6_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 329179<br /><br /> `TimeSpan.Parse("0:0:3.1000009")`:<br /><br /> `ss\.FFFFFF`: 03.1|
+|"FFFFFFF"|Desetimiliontiny sekundy v časovém intervalu. Nejsou zobrazeny žádné desetinné části koncové nuly nebo sedmi nul.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFFFF"](#F7_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 3291791<br /><br /> `TimeSpan.Parse("0:0:3.1900000")`:<br /><br /> `ss\.FFFFFF`: 03.19|
+|"*řetězec*.|Oddělovač řetězcového literálu.<br /><br /> Další informace: [Jiné znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh':'mm':'ss` --> "14:32:17"|
 |\\| Řídicí znak.<br /><br /> Další informace:[ostatní znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|
-|Jakýkoli jiný znak|Další znak bez řídícího znaku je interpretován jako specifikátor vlastního formátu.<br /><br /> Další informace: [jiné znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|
+|Jakýkoli jiný znak|Další znak bez řídícího znaku je interpretován jako specifikátor vlastního formátu.<br /><br /> Další informace: [Jiné znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|
 
 <a name="dSpecifier"></a> 
 
@@ -420,5 +420,5 @@ Následující příklad používá řídicí znak a jednoduché uvozovky k defi
 
 ## <a name="see-also"></a>Viz také:
 
-- [Typy formátování](formatting-types.md)  
-- [Standardní řetězce formátu TimeSpan](standard-timespan-format-strings.md)  
+- [Typy formátování](formatting-types.md)
+- [Standardní řetězce formátu TimeSpan](standard-timespan-format-strings.md)

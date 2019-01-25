@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms'
+title: 'Postupy: Nastavit Text, zobrazený ovládacím prvkem Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -21,15 +21,15 @@ helpviewer_keywords:
 - controls [Windows Forms], captions
 - forms [Windows Forms], captions
 ms.assetid: 36b95bff-8780-479d-b86a-f1a0673653aa
-ms.openlocfilehash: d9c9bea26cfc3d5b2cfc4484173a7680ff2fc34d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 30cf71aa2a87ff99ccb965844b620ef08a20b69c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525032"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54636443"
 ---
-# <a name="how-to-set-the-text-displayed-by-a-windows-forms-control"></a>Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms
-Ovládací prvky Windows Forms obvykle zobrazí text, který souvisí s primární funkce ovládacího prvku. Například <xref:System.Windows.Forms.Button> ovládací prvek obvykle zobrazí popisek indikující, jaká akce se provede při kliknutí na tlačítko. Pro všechny ovládací prvky, můžete nastavit nebo načíst text pomocí <xref:System.Windows.Forms.Control.Text%2A> vlastnost. Můžete změnit písmo pomocí <xref:System.Windows.Forms.Control.Font%2A> vlastnost. Můžete také nastavit text pomocí návrháře.  Také naleznete v tématu [postupy: vytvoření přístup klíčů pro Windows Forms ovládací prvky pomocí návrháře](how-to-create-access-keys-for-windows-forms-controls-using-the-designer.md), [jak: nastavit Text zobrazí s použitím ovládacího prvku Windows Forms návrháře](how-to-set-the-text-displayed-by-a-windows-forms-control-using-the-designer.md), [postupy: nastavení obrázku Zobrazený Windows Forms pomocí návrháře ovládací prvek](how-to-set-the-image-displayed-by-a-windows-forms-control-using-the-designer.md).  
+# <a name="how-to-set-the-text-displayed-by-a-windows-forms-control"></a>Postupy: Nastavit Text, zobrazený ovládacím prvkem Windows Forms
+Ovládací prvky Windows Forms obvykle zobrazí text, který souvisí s primární funkce ovládacího prvku. Například <xref:System.Windows.Forms.Button> ovládací prvek obvykle zobrazí popisek indikující, jaká akce se provede při kliknutí na tlačítko. Pro všechny ovládací prvky, můžete nastavit nebo načíst text pomocí <xref:System.Windows.Forms.Control.Text%2A> vlastnost. Můžete změnit písmo pomocí <xref:System.Windows.Forms.Control.Font%2A> vlastnost. Můžete také nastavit text pomocí návrháře.  Viz také [jak: Vytváření přístupových klíčů pro Windows Forms pomocí návrháře ovládacích prvků](how-to-create-access-keys-for-windows-forms-controls-using-the-designer.md), [jak: Nastavit Text, zobrazený Windows Forms pomocí návrháře ovládací prvek](how-to-set-the-text-displayed-by-a-windows-forms-control-using-the-designer.md), [jak: Nastavení obrázku zobrazovaného pomocí ovládacího prvku pomocí Návrháře formulářů Windows](how-to-set-the-image-displayed-by-a-windows-forms-control-using-the-designer.md).  
   
 ### <a name="to-set-the-text-displayed-by-a-control-programmatically"></a>K nastavení textu zobrazovaného ovládacím prvkem prostřednictvím kódu programu  
   
@@ -71,7 +71,7 @@ Ovládací prvky Windows Forms obvykle zobrazí text, který souvisí s primárn
     mpMenuItem->Text = "&& Now For Something Completely Different";  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.Control.Text%2A?displayProperty=nameWithType>  
- [Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-access-keys-for-windows-forms-controls.md)  
- [Postupy: Reakce na kliknutí na tlačítko Windows Forms](../../../../docs/framework/winforms/controls/how-to-respond-to-windows-forms-button-clicks.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.Control.Text%2A?displayProperty=nameWithType>
+- [Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-access-keys-for-windows-forms-controls.md)
+- [Postupy: Reakce na kliknutí na tlačítko Windows Forms](../../../../docs/framework/winforms/controls/how-to-respond-to-windows-forms-button-clicks.md)

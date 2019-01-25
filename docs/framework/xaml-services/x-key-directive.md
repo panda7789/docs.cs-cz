@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Key attribute in XAML [XAML Services]
 - XAML [XAML Services], x:Key attribute
 ms.assetid: 1985cd45-f197-42d5-b75e-886add64b248
-ms.openlocfilehash: f77f0a952224f79ee95a755cb848a4f8b68c9602
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 23c483daed0156dd29134b255e9da2f7922980ba
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47232765"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492779"
 ---
 # <a name="xkey-directive"></a>x:Key – direktiva
 Jednoznačně identifikuje elementy, které jsou vytvořeny a odkazovány ve slovníku definice XAML. Přidání `x:Key` hodnota prvku objektu XAML je nejběžnějším způsobem identifikace prostředku ve slovníku prostředků, například v WPF <xref:System.Windows.ResourceDictionary>.  
@@ -110,7 +110,7 @@ keyObject
 ## <a name="silverlight-usage-notes"></a>Poznámky k použití aplikace Silverlight  
  `x:Key` pro prostředí Silverlight je zdokumentován samostatně. Další informace najdete v tématu [Namespace XAML (x:) Funkce jazyka (Silverlight)](https://go.microsoft.com/fwlink/?LinkId=199081).  
   
-## <a name="see-also"></a>Viz také  
- [Prostředky XAML](../../../docs/framework/wpf/advanced/xaml-resources.md)  
- [Prostředky a kód](../../../docs/framework/wpf/advanced/resources-and-code.md)  
- [Rozšíření značek StaticResource](../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)
+## <a name="see-also"></a>Viz také:
+- [Prostředky XAML](../../../docs/framework/wpf/advanced/xaml-resources.md)
+- [Prostředky a kód](../../../docs/framework/wpf/advanced/resources-and-code.md)
+- [Rozšíření značek StaticResource](../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)

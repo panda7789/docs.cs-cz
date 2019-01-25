@@ -12,15 +12,15 @@ helpviewer_keywords:
 - arguments [Visual Basic], optional
 - optional arguments [Visual Basic], and named arguments
 ms.assetid: 398d2845-1069-4e94-b934-a73b545c8b87
-ms.openlocfilehash: a438455668310769c5267a6d42a2e694bb7b01dc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0f7f7910b5e19c3e1a22598c1a987aa2b02e256e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33651606"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552226"
 ---
 # <a name="optional-parameters-visual-basic"></a>Volitelné parametry (Visual Basic)
-Můžete určit, že parametr procedury je volitelný, a při volání této procedury se nemusí zadávat žádný argument. *Volitelné parametry* jsou označeny `Optional` – klíčové slovo v definici postupu. Platí následující pravidla:  
+Můžete určit, že parametr procedury je volitelný, a při volání této procedury se nemusí zadávat žádný argument. *Volitelné parametry* jsou označeny `Optional` – klíčové slovo v definici procedury. Platí následující pravidla:  
   
 -   Každý volitelný parametr v definici procedury musí mít výchozí hodnotu.  
   
@@ -43,28 +43,28 @@ Sub name(ByVal parameter1 As datatype1, Optional ByVal parameter2 As datatype2 =
 Sub name(argument 1, , , argument 4)  
 ```  
   
- Následující příklad vytvoří několik volání `MsgBox` funkce. `MsgBox` jeden vyžaduje parametr a dva volitelné parametry.  
+ Následující příklad provede několik volání `MsgBox` funkce. `MsgBox` má jeden povinný parametr a dva volitelné parametry.  
   
- První volání `MsgBox` poskytuje všechny tři argumenty v pořadí, které `MsgBox` definuje je. Ve druhém volání je zadán pouze povinný argument. Ve třetím a čtvrtém volání je zadán první a třetí argument. Třetí volání tak činí podle pozice a čtvrté volání podle názvu.  
+ První volání `MsgBox` poskytuje všechny tři argumenty v pořadí, které `MsgBox` definuje. Ve druhém volání je zadán pouze povinný argument. Ve třetím a čtvrtém volání je zadán první a třetí argument. Třetí volání tak činí podle pozice a čtvrté volání podle názvu.  
   
  [!code-vb[VbVbcnProcedures#47](./codesnippet/VisualBasic/optional-parameters_1.vb)]  
   
 ## <a name="determining-whether-an-optional-argument-is-present"></a>Určení, zda existuje volitelný argument  
- Procedura nedokáže za běhu zjistit, zda byl daný argument vynechán nebo zda volající kód explicitně poskytuje výchozí hodnotu. Pokud to potřebujete rozlišit, můžete jako výchozí nastavit nějakou nepravděpodobnou hodnotu. Následující postup definuje volitelný parametr `office`a testy pro jeho výchozí hodnotu `QJZ`, pokud chcete zobrazit, pokud byla vynechána ve volání:  
+ Procedura nedokáže za běhu zjistit, zda byl daný argument vynechán nebo zda volající kód explicitně poskytuje výchozí hodnotu. Pokud to potřebujete rozlišit, můžete jako výchozí nastavit nějakou nepravděpodobnou hodnotu. Následující procedura definuje volitelný parametr `office`a testováním jeho výchozí hodnotu, `QJZ`, pokud chcete zobrazit, pokud ji má ve volání vynechán:  
   
  [!code-vb[VbVbcnProcedures#46](./codesnippet/VisualBasic/optional-parameters_2.vb)]  
   
- Pokud volitelný parametr, jako je typ odkazu `String`, můžete použít `Nothing` jako výchozí hodnota zadaná, nejedná se očekávaná hodnota pro argument.  
+ Pokud volitelný parametr, jako je typem odkazu `String`, můžete použít `Nothing` jako výchozí hodnota zadaná, nejedná se o očekávanou hodnotou pro argument.  
   
 ## <a name="optional-parameters-and-overloading"></a>Volitelné parametry a přetěžování  
  Proceduru s volitelnými parametry lze definovat také pomocí přetěžování. Pokud máte jeden volitelný parametr, můžete definovat dvě přetížené verze procedury – jednu s parametrem a druhou bez parametru. S rostoucím počtem volitelných parametrů se zvyšuje složitost. Výhodou ale je, že máte absolutní jistotu, zda volající program poskytl jednotlivé volitelné argumenty.  
   
-## <a name="see-also"></a>Viz také  
- [Procedury](./index.md)  
- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)  
- [Předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md)  
- [Pole parametrů](./parameter-arrays.md)  
- [Přetížení procedury](./procedure-overloading.md)  
- [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)  
- [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury](./index.md)
+- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
+- [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)
+- [Předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md)
+- [Pole parametrů](./parameter-arrays.md)
+- [Přetížení procedury](./procedure-overloading.md)
+- [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)
+- [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)

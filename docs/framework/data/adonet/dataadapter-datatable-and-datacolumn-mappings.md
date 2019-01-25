@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d023260a-a66a-4c39-b8f4-090cd130e730
-ms.openlocfilehash: 9f33ae085bef2b611d1ce95bed1b26f9101a10b9
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 6aaaa126a0b19300abc2c10b88b0e4ff39a3ad66
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505239"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530428"
 ---
 # <a name="dataadapter-datatable-and-datacolumn-mappings"></a>Vlastnost DataAdapter, datové tabulky a DataColumn mapování
 A **DataAdapter** obsahuje kolekci nula nebo více <xref:System.Data.Common.DataTableMapping> objekty v jeho **TableMappings** vlastnost. A **DataTableMapping** poskytuje hlavní mapování mezi data vrácená z dotazu na zdroji dat a <xref:System.Data.DataTable>. **DataTableMapping** název mohou být předány místo **DataTable** název k **vyplnit** metodu **DataAdapter**. Následující příklad vytvoří **DataTableMapping** s názvem **AuthorsMapping** pro **autoři** tabulky.  
@@ -90,14 +90,14 @@ adapter.Fill(custDS, "Customers");
 adapter.Fill(customersDataSet, "Customers")  
 ```  
   
- Dvě tabulky vytvářejí **datovou sadu**: **zákazníkům** a **Customers1**. Mapování tabulek můžete použít k zajištění, že je v druhé tabulce s názvem **objednávky** místo **Customers1**. K tomuto účelu mapování zdrojové tabulky **Customers1** k **datovou sadu** tabulky **objednávky**, jak je znázorněno v následujícím příkladu.  
+ Dvě tabulky vytvářejí **datovou sadu**: **Zákazníci** a **Customers1**. Mapování tabulek můžete použít k zajištění, že je v druhé tabulce s názvem **objednávky** místo **Customers1**. K tomuto účelu mapování zdrojové tabulky **Customers1** k **datovou sadu** tabulky **objednávky**, jak je znázorněno v následujícím příkladu.  
   
 ```  
 adapter.TableMappings.Add("Customers1", "Orders")  
 adapter.Fill(customersDataSet, "Customers")  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
+- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

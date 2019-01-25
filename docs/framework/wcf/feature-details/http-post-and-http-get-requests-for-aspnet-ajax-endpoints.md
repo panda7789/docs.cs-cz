@@ -1,17 +1,17 @@
 ---
-title: 'Postupy: volba mezi HTTP POST a HTTP GET požadavky u koncových bodů ASP.NET AJAX'
+title: 'Postupy: Volba mezi žádostmi HTTP POST a HTTP GET u koncových bodů ASP.NET AJAX'
 ms.date: 03/30/2017
 ms.assetid: b47de82a-4c92-4af6-bceb-a5cb8bb8ede9
-ms.openlocfilehash: 5cebdf0bae937d84ec23ed97a5d2feca24fff473
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 8de65bbf8cd9e0eab3861504946967ad319cd824
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47199027"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54718803"
 ---
-# <a name="how-to-choose-between-http-post-and-http-get-requests-for-aspnet-ajax-endpoints"></a>Postupy: volba mezi HTTP POST a HTTP GET požadavky u koncových bodů ASP.NET AJAX
+# <a name="how-to-choose-between-http-post-and-http-get-requests-for-aspnet-ajax-endpoints"></a>Postupy: Volba mezi žádostmi HTTP POST a HTTP GET u koncových bodů ASP.NET AJAX
 
-Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpřístupňuje koncový bod s podporou technologie ASP.NET AJAX, který může být volána z jazyka JavaScript na webové stránce klienta. Základní postupy pro vytváření těchto služeb je podrobněji popsána [postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) a [postupy: Přidání ASP.NET AJAX konfigurace koncového bodu bez použití](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).  
+Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpřístupňuje koncový bod s podporou technologie ASP.NET AJAX, který může být volána z jazyka JavaScript na webové stránce klienta. Základní postupy pro vytváření těchto služeb je podrobněji popsána [jak: Použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) a [jak: Přidání koncového bodu ASP.NET AJAX bez použití konfiguračního](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).  
   
  ASP.NET AJAX podporuje operace, které používají operace HTTP POST a HTTP GET, pomocí HTTP POST, je výchozí hodnota. Při vytváření operace, která nemá žádné vedlejší účinky a vrací data, která se mění jen zřídka nebo vůbec, použijte GET protokolu HTTP. Výsledky operací GET můžete uložit do mezipaměti, což znamená, že několik volání do stejné operace mohou způsobit pouze jeden požadavek na vaši službu. Ukládání do mezipaměti se provádí WCF, ale může probíhat na libovolné úrovni (do prohlížeče uživatele, na proxy server a další úrovně.) Ukládání do mezipaměti je výhodné, pokud chcete zvýšit výkon služby, ale nemusí být akceptovatelné Pokud, data se často mění, nebo pokud operace provede určitou akci.  
   
@@ -90,6 +90,6 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpř
   
 2. Služby můžete použít s operacemi GET stejným způsobem jako jiné služby technologie ASP.NET AJAX – tak, že zadáte službu ovládací prvek adresy URL do kolekce skriptů správce skriptů AJAX technologie ASP.NET. Příklad najdete v tématu [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md).
   
-## <a name="see-also"></a>Viz také  
- [Vytváření služeb WCF pro ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md)  
- [Postupy: Migrace webových služeb ASP.NET s podporou AJAX na WCF](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)
+## <a name="see-also"></a>Viz také:
+- [Vytváření služeb WCF pro ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md)
+- [Postupy: Migrace s povoleným AJAX webových služeb ASP.NET na WCF](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)

@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fb37394799db39baa406ef332066d5ebb2dbf19d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 793d3996f9cbcb1a38a728ade06f775784166123
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33441926"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745893"
 ---
 # <a name="waitoption-enumeration"></a>WAIT_OPTION – výčet
-Obsahuje hodnoty, které označují, že akce hostitele by měl trvat, pokud operace požadoval běžné bloky runtime (CLR) jazyk.  
+Obsahuje hodnoty, které označují, že by akce hostitele zabrat Pokud operace požadoval společné bloky language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,15 +40,15 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`WAIT_ALERTABLE`|Hostitele upozorní, že úloha se probudí, modul CLR volá-li [ihosttask::alert –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) metoda.|  
-|`WAIT_MSGPUMP`|Zprávy v aktuální vlákno operačního systému se musí čerpadla, když se stane zablokuje vlákno upozorní hostitele. Modul runtime určuje jenom na tuto hodnotu <xref:System.Threading.ApartmentState.STA> přístup z více vláken.|  
-|`WAIT_NOTINDEADLOCK`|Upozorní hostitele, že žádost o synchronizaci zadaný nelze rozdělit hostitele. To znamená, nemůže vrátit hostitele `HOST_E_DEADLOCK`.|  
+|`WAIT_ALERTABLE`|Upozorňuje hostitele, že úloha se probudí, modul CLR volá-li [ihosttask::alert –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md) metody.|  
+|`WAIT_MSGPUMP`|Upozorňuje hostitele, že ho musí pump zprávy v aktuálním vlákně operačního systému, pokud vlákno bude blokováno. Modul runtime určuje pouze na tuto hodnotu <xref:System.Threading.ApartmentState.STA> vlákna.|  
+|`WAIT_NOTINDEADLOCK`|Upozorňuje hostitele, nelze rozdělit žádost o synchronizaci zadaný hostitel. To znamená, nejde vrátit hostitele `HOST_E_DEADLOCK`.|  
   
 ## <a name="remarks"></a>Poznámky  
  [Ihosttaskmanager::Sleep –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-sleep-method.md) a [ihosttaskmanager::switchtotask –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-switchtotask-method.md) metody obou přijímají parametr tohoto typu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -56,5 +56,5 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

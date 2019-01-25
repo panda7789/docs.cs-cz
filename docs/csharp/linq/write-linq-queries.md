@@ -1,14 +1,14 @@
 ---
 title: Zápis dotazů LINQ v jazyce C#
 description: Zjistěte, jak psát dotazy LINQ v jazyce C#.
-ms.date: 12/1/2016
+ms.date: 12/01/2016
 ms.assetid: 30703f79-cf3a-4d02-b892-c95d58a1d9ed
-ms.openlocfilehash: 2ebba0d2d601932c976a88726fbe3ed37daffdcb
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 0837ebc6ebb2282ea26fad29ac1c31c87a0627ce
+ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44214976"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54857811"
 ---
 # <a name="write-linq-queries-in-c"></a>Zápis dotazů LINQ v jazyce C# #
 
@@ -81,6 +81,6 @@ int numCount = numbers.Where(n => n < 3 || n > 7).Count();
 
 ## <a name="see-also"></a>Viz také:
 
-- [Návod: Zápis dotazů v jazyce C#](../programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)
+- [Návod: Zápis dotazů vC#](../programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)
 - [LINQ (Language Integrated Query)](index.md)
 - [where – klauzule](../language-reference/keywords/where-clause.md)

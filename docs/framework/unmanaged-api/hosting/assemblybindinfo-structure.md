@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 385ccc7a63fb5eb27ae7bdda5bdcf13c750eb667
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0247f356bfc9f354edc420ea5460da02b17ab116
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33436144"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54561137"
 ---
 # <a name="assemblybindinfo-structure"></a>AssemblyBindInfo – struktura
-Poskytuje podrobné informace o odkazované sestavení.  
+Poskytuje podrobné informace o odkazovaném sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,27 +41,27 @@ typedef struct _AssemblyBindInfo {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`dwAppDomainId`|Jedinečný identifikátor `IStream` vrácený volání [ihostassemblystore::provideassembly –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md), ze které odkazované sestavení se jej načíst.|  
-|`lpReferencedIdentity`|Jedinečný identifikátor pro odkazované sestavení.|  
-|`lpPostPolicyIdentity`|Identifikátor pro odkazované sestavení po použití hodnoty zásad žádné vazby.|  
-|`ePolicyLevel`|Jeden z [EPolicyAction](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) hodnoty, které označují, které zásady správy verzí, pokud existuje, bude použito k odkazované sestavení.|  
+|`dwAppDomainId`|Jedinečný identifikátor `IStream` vrácený voláním [ihostassemblystore::provideassembly –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md), ze které má odkazované sestavení má být načten.|  
+|`lpReferencedIdentity`|Jedinečný identifikátor odkazovaného sestavení.|  
+|`lpPostPolicyIdentity`|Identifikátor odkazovaného sestavení po použití hodnoty zásad žádné vazby.|  
+|`ePolicyLevel`|Jeden z [epolicyaction –](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) hodnoty, které označují, které zásady správy verzí, pokud existuje, bude použito k odkazovanému sestavení.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel poskytuje jedinečný identifikátor `dwAppDomainId` do common language runtime (CLR). Po volání `IHostAssemblyStore::ProvideAssembly` vrací, běhové prostředí používá k určení identifikátor zda obsah `IStream` namapované. Pokud ano, načte modul runtime existující kopie místo přemapování datového proudu. Modul runtime tento identifikátor také používá jako klíč vyhledávání pro datové proudy vrácená z volání [ihostassemblystore::providemodule –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-providemodule-method.md). Identifikátor proto musí být jedinečný pro modul požadavky a požadavky sestavení.  
+ Hostitel poskytuje jedinečný identifikátor `dwAppDomainId` do common language runtime (CLR). Po volání `IHostAssemblyStore::ProvideAssembly` vrátí, modul runtime používá identifikátoru k určení, zda obsah `IStream` nebyly namapovány. Pokud ano, načte modul runtime stávající kopie spíše než přemapování datového proudu. Modul runtime také používá tento identifikátor jako vyhledávací klíč pro datové proudy vrácené z volání [ihostassemblystore::providemodule –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-providemodule-method.md). Proto musí být identifikátor jedinečný modul požadavky a požadavky na sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.idl  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)  
- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)  
- [ICLRAssemblyReferenceList – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)  
- [IHostAssemblyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  
- [IHostAssemblyStore – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)  
- [ModuleBindInfo – struktura](../../../../docs/framework/unmanaged-api/hosting/modulebindinfo-structure.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
+- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
+- [ICLRAssemblyReferenceList – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
+- [IHostAssemblyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)
+- [IHostAssemblyStore – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)
+- [ModuleBindInfo – struktura](../../../../docs/framework/unmanaged-api/hosting/modulebindinfo-structure.md)

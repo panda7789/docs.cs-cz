@@ -10,12 +10,12 @@ helpviewer_keywords:
 - flags enumerations
 ms.assetid: dd53c952-9d9a-4736-86ff-9540e815d545
 author: KrzysztofCwalina
-ms.openlocfilehash: 429f2e3821ff12ff4fc51b73c102ee3799d0228d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: c0645ba1179c4c6fd961b871b3061cd51174f427
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53148129"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54675196"
 ---
 # <a name="enum-design"></a>Návrh výčtu
 Výčty jsou zvláštní druh typu hodnoty. Existují dva typy výčtů: jednoduchý, výčty a příznak výčty.  
@@ -92,11 +92,11 @@ Výčty jsou zvláštní druh typu hodnoty. Existují dva typy výčtů: jednodu
   
  Pokud máte reálná data o nekompatibility aplikací způsobené dodatky na výčet, zvažte přidání nového rozhraní API, který vrací hodnoty novém i starém a vyřazení staré rozhraní API, které by měly pokračovat ve vrací pouze původní hodnoty. Tím se zajistí, že zůstane svoje stávající aplikace kompatibilní.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
+- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)
 - [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

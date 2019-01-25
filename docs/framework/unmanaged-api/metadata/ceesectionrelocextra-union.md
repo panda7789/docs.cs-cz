@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c7634ec801a30aa7ba07954c1df0c3d37ec279eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9d6a5673c2aaf287131274b0c590f00a69c64fed
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33440298"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54517146"
 ---
 # <a name="ceesectionrelocextra-union"></a>CeeSectionRelocExtra – sjednocení
-Představuje posunem adres, který je používán [iceegen –](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) rozhraní přesunovat oddíl.  
+Představuje posun adresy používané [iceegen –](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) rozhraní přemístit oddíl.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +38,16 @@ typedef union  {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`highAdj`|Úprava horní adresa pro oddíl.|  
+|`highAdj`|Úprava horní adresu pro oddíl.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Sjednocení pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)
+## <a name="see-also"></a>Viz také:
+- [Sjednocení pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)

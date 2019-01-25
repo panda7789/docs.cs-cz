@@ -10,23 +10,23 @@ helpviewer_keywords:
 - return values of page functions [WPF]
 - getting [WPF], return values of page functions
 ms.assetid: 75470af6-256c-4c46-87e7-705080723a1c
-ms.openlocfilehash: 2994a0fd7a192716a829c8290f030788da74cec5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8ac1b59330790432ac29edd63a37db44283ba542
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33545266"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54724210"
 ---
 # <a name="how-to-get-the-return-value-of-a-page-function"></a>Postupy: Načtení návratové hodnoty funkce stránky
-Tento příklad ukazuje, jak získat výsledek, který je vrácené funkcí stránky.  
+Tento příklad ukazuje, jak získat výsledek, který je vrácen funkce stránky.  
   
 ## <a name="example"></a>Příklad  
- Chcete-li získat výsledek, který je vrácen z funkce stránky, je potřeba zpracování <xref:System.Windows.Navigation.PageFunction%601.Return> při volání funkce stránky.  
+ K získání výsledku, který je vrácen z funkce stránky, je potřeba zpracovat <xref:System.Windows.Navigation.PageFunction%601.Return> se označuje jako volání funkce stránky.  
   
  [!code-xaml[HOWTOPageFunctionSnippets#CallAPageFunctionXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOPageFunctionSnippets/CSharp/CallingPage.xaml#callapagefunctionxaml)]  
   
  [!code-csharp[HOWTOPageFunctionSnippets#GetPageFunctionResultCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOPageFunctionSnippets/CSharp/CallingPage.xaml.cs#getpagefunctionresultcodebehind)]
  [!code-vb[HOWTOPageFunctionSnippets#GetPageFunctionResultCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOPageFunctionSnippets/VisualBasic/CallingPage.xaml.vb#getpagefunctionresultcodebehind)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Navigation.PageFunction%601>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Navigation.PageFunction%601>

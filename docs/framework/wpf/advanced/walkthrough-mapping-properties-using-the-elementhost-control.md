@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Mapování vlastností použitím ovládacího prvku ElementHost'
+title: 'Průvodce: Mapování vlastností použitím ovládacího prvku ElementHost'
 ms.date: 08/18/2018
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - mapping properties [WPF]
 - ElementHost control [WPF], mapping properties
 ms.assetid: bccd6e0d-2272-4924-9107-ff8ed58b88aa
-ms.openlocfilehash: 34119d889c8d6600fdda12cac33192c32d8e0fa6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: bb418b725afd0c38a39e42e50511147d0f616059
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43510008"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623214"
 ---
-# <a name="walkthrough-mapping-properties-using-the-elementhost-control"></a>Návod: Mapování vlastností použitím ovládacího prvku ElementHost
+# <a name="walkthrough-mapping-properties-using-the-elementhost-control"></a>Průvodce: Mapování vlastností použitím ovládacího prvku ElementHost
 
 Tento návod ukazuje, jak používat <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A> vlastnost mapovat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vlastnosti odpovídající vlastnosti na hostovaný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] elementu.
 
@@ -62,7 +62,7 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 4.  Otevřít `Form1` v Návrháři formulářů Windows. Klikněte dvakrát na formuláři pro přidání obslužné rutiny události <xref:System.Windows.Forms.Form.Load> událostí.
 
-5.  Vraťte se do Návrháře formulářů Windows a přidejte obslužnou rutinu události pro daný formulář <xref:System.Windows.Forms.Control.Resize> událostí. Další informace najdete v tématu [postupy: vytváření událostí obslužné rutiny pomocí návrháře](https://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).
+5.  Vraťte se do Návrháře formulářů Windows a přidejte obslužnou rutinu události pro daný formulář <xref:System.Windows.Forms.Control.Resize> událostí. Další informace najdete v tématu [jak: Vytváření obslužných rutin událostí pomocí návrháře](https://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).
 
 6.  Deklarovat <xref:System.Windows.Forms.Integration.ElementHost> pole `Form1` třídy.
 
@@ -140,7 +140,7 @@ Můžete použít výchozí mapování vlastností a také rozšířit o vlastn�
 
 2.  Stisknutím klávesy F5 sestavte a spusťte aplikaci.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A?displayProperty=nameWithType>

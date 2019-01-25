@@ -2,12 +2,12 @@
 title: Nástroj XML Serializer Generator (Sgen.exe)
 ms.date: 03/30/2017
 ms.assetid: cc1d1f1c-fb26-4be9-885a-3fe84c81cec6
-ms.openlocfilehash: 2091c75f5aeef8b64ac9afa361f28dbe0b76530b
-ms.sourcegitcommit: deb9225a55485a5a6e6c7914deb30ccfceb69d3f
+ms.openlocfilehash: aa8671146c241c2867c373aacf3cd12f12aaeb1a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2019
-ms.locfileid: "54058305"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54743553"
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>Nástroj XML Serializer Generator (Sgen.exe)
 Vytvoří generátor serializátor XML sestavení serializace XML pro typy v zadané sestavení s cílem zlepšit výkon při spuštění <xref:System.Xml.Serialization.XmlSerializer> při serializuje nebo deserializuje objekty zadaného typů.  
@@ -57,6 +57,6 @@ sgen Data.dll
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje](../../../docs/framework/tools/index.md)  
-- [Přehled webových služeb XML](https://msdn.microsoft.com/library/9db0c7b8-bca6-462b-9be5-f5f9a7f05a4d)  
+- [Nástroje](../../../docs/framework/tools/index.md)
+- [Přehled webových služeb XML](https://msdn.microsoft.com/library/9db0c7b8-bca6-462b-9be5-f5f9a7f05a4d)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

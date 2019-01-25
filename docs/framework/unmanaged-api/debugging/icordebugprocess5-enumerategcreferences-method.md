@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b5f66099eb4b1cb84d9911567cac4255bf20480
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 44093f84ea644757a5f5c73da54ce5bcfa717a4e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421394"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54728083"
 ---
 # <a name="icordebugprocess5enumerategcreferences-method"></a>ICorDebugProcess5::EnumerateGCReferences – metoda
-Získá enumerátor pro všechny objekty, které mají být uklizeny v procesu.  
+Získá enumerátor pro všechny objekty, které mají být prováděno uvolnění paměti v procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +38,16 @@ HRESULT EnumerateGCReferences(
   
 #### <a name="parameters"></a>Parametry  
  `enumerateWeakReferences`  
- [v] Logická hodnota, která určuje, zda slabé odkazy jsou také výčet. Pokud `enumerateWeakReferences` je `true`, `ppEnum` enumerátor zahrnuje silné odkazy a slabé odkazy. Pokud `enumerateWeakReferences` je `false`, enumerátor obsahuje pouze silné odkazy.  
+ [in] Logická hodnota, která určuje, zda slabé odkazy taky jsou pro provedení výčtu. Pokud `enumerateWeakReferences` je `true`, `ppEnum` enumerátor obsahuje odkazy na silné a slabé odkazy. Pokud `enumerateWeakReferences` je `false`, enumerátor obsahuje pouze silné odkazy.  
   
  `ppEnum`  
- [out] Ukazatel na adresu [ICorDebugGCReferenceEnum](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) tedy enumerátor pro objekty být uvolňování paměti.  
+ [out] Ukazatel na adresu [icordebuggcreferenceenum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) , který je enumerátor pro objekty být uvolněna.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda poskytuje způsob, jak určit úplnou rooting řetězu pro každý spravovaný objekt v procesu a umožňuje zjistit, proč je objekt stále aktivní.  
+ Tato metoda poskytuje způsob, jak určit úplný řetěz kořenové pro každý spravovaný objekt v procesu a je možné zjistit, proč je objekt stále aktivní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -55,6 +55,6 @@ HRESULT EnumerateGCReferences(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

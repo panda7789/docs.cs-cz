@@ -6,12 +6,12 @@ helpviewer_keywords:
 - properties [C#], on interfaces
 - interfaces [C#], properties
 ms.assetid: 6503e9ed-33d7-44ec-b4c1-cc16c084b795
-ms.openlocfilehash: c51064f9bb5e834648e0086fd8d28f9c0bd84b61
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: af80f403942f59d672854c80830e175ef7ebaff5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241584"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54652182"
 ---
 # <a name="interface-properties-c-programming-guide"></a>Vlastnosti rozhraní (Průvodce programováním v C#)
 Vlastnosti mohou být deklarovány na [rozhraní](../../../csharp/language-reference/keywords/interface.md). Následuje příklad přistupující objekt vlastnosti rozhraní:  
@@ -51,11 +51,11 @@ Vlastnosti mohou být deklarovány na [rozhraní](../../../csharp/language-refer
   
  `Employee name: Hazem Abolrous`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
-- [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
-- [Porovnání mezi vlastnostmi a indexery](../../../csharp/programming-guide/indexers/comparison-between-properties-and-indexers.md)  
-- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)
+- [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)
+- [Porovnání mezi vlastnostmi a indexery](../../../csharp/programming-guide/indexers/comparison-between-properties-and-indexers.md)
+- [Indexery](../../../csharp/programming-guide/indexers/index.md)
 - [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)

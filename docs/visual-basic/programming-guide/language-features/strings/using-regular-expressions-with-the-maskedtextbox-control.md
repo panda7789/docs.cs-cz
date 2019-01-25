@@ -5,12 +5,12 @@ helpviewer_keywords:
 - strings [Visual Basic], regular expressions
 - strings [Visual Basic], masked edit
 ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
-ms.openlocfilehash: 25bdfaef300b001d1c052aeea4e1ad3547a6d3d7
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 58c0caa9d1df49ec53273e5b0f456cf89fc64c42
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43803806"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683687"
 ---
 # <a name="using-regular-expressions-with-the-maskedtextbox-control-in-visual-basic"></a>Používání regulárních výrazů s ovládacím prvkem MaskedTextBox v jazyce Visual Basic
 Tento příklad ukazuje, jak převést jednoduché regulárních výrazů pro práci s <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku.  
@@ -23,15 +23,15 @@ Tento příklad ukazuje, jak převést jednoduché regulárních výrazů pro pr
 |Element maskování|Popis|Regulární výraz element|  
 |---------------------|-----------------|--------------------------------|  
 |0|Libovolná číslice od 0 do 9. Je nutné provést zadání.|\d|  
-|9|Číslice nebo mezera. Položka je nepovinná.|[\d]?|  
-|#|Číslice nebo mezera. Položka je nepovinná. Pokud toto umístění je prázdné v masce, zobrazí se jako mezera. Plus (+) a minus (-) jsou povolené znaky.|[\d+-]?|  
+|9|Číslice nebo mezera. Položka je nepovinná.|[ \d]?|  
+|#|Číslice nebo mezera. Položka je nepovinná. Pokud toto umístění je prázdné v masce, zobrazí se jako mezera. Plus (+) a minus (-) jsou povolené znaky.|[ \d+-]?|  
 |L|Písmeno ASCII. Je nutné provést zadání.|[a-zA-Z]|  
 |?|Písmeno ASCII. Položka je nepovinná.|[a-zA-Z]?|  
 |&|znak. Je nutné provést zadání.|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]|  
 |C|znak. Položka je nepovinná.|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]?|  
 |OBJEKT|Alfanumerické znaky. Položka je nepovinná.|\W|  
 |.|Odpovídající jazykovou verzi zástupný znak desetinné čárky.|Není k dispozici.|  
-|,|Zástupný symbol tisíců odpovídající jazykovou verzi.|Není k dispozici.|  
+|, |Zástupný symbol tisíců odpovídající jazykovou verzi.|Není k dispozici.|  
 |:|Oddělovač času odpovídající jazykovou verzi.|Není k dispozici.|  
 |/|Oddělovač data odpovídající jazykovou verzi.|Není k dispozici.|  
 |$|Symbol měny odpovídající jazykovou verzi.|Není k dispozici.|  
@@ -55,8 +55,8 @@ Tento příklad ukazuje, jak převést jednoduché regulárních výrazů pro pr
 |`(\(\d{3}\)-)?\d{3}-d{4}`|`(999)-000-0000`|Spojené státy telefonní číslo, předčíslí volitelné. Pokud uživatel nechce zadejte volitelné znaky, které můžete zadat mezery nebo umístěte ukazatel myši přímo na pozici v masce reprezentována první 0.|  
 |`$\d{6}.00`|`$999,999.00`|Hodnota měny v rozsahu 0-999999. Měna, / 1 000 a decimální znaky se nahradí za běhu ekvivalenty specifické pro jazykovou verzi.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>  
- <xref:System.Windows.Forms.MaskedTextBox>  
- [Ověřování řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)  
- [Ovládací prvek MaskedTextBox](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>
+- <xref:System.Windows.Forms.MaskedTextBox>
+- [Ověřování řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)
+- [Ovládací prvek MaskedTextBox](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)

@@ -10,34 +10,34 @@ helpviewer_keywords:
 - Widening keyword [Visual Basic]
 - data type conversion [Visual Basic]
 ms.assetid: 646ae263-94d3-40a2-b0cc-64f619292f56
-ms.openlocfilehash: 2323aa38c81ce4e027f256d0e29c069f7ec77c00
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3b9d1ec15c6c2000fb0842abe25848f853cdf986
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33595309"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54703705"
 ---
 # <a name="widening-visual-basic"></a>Rozšíření (Visual Basic)
-Určuje, že operátora převodu (`CType`) převede třídu nebo strukturu typ, který může obsahovat všechny možné hodnoty z původní třídu nebo strukturu.  
+Označuje, že operátor převodu (`CType`) převede třídu nebo strukturu na typ, který může uchovat všechny možné hodnoty původní třídy nebo struktury.  
   
-## <a name="converting-with-the-widening-keyword"></a>Převádění s rozšiřující – klíčové slovo  
- Musíte zadat procesu převodu `Public Shared` kromě `Widening`.  
+## <a name="converting-with-the-widening-keyword"></a>Převod pomocí rozšiřující – klíčové slovo  
+ Proces převodu musíte zadat `Public Shared` kromě `Widening`.  
   
- Rozšiřující převody proběhnout úspěšně v době běhu a nikdy dojít ke ztrátě dat. Příklady `Single` k `Double`, `Char` k `String`a k jeho základní typ odvozený typ. Tento poslední převod je rozšíření, protože obsahuje všechny členy základní typ odvozený typ a proto je instance základního typu.  
+ Rozšiřující převody proběhnout úspěšně, v době spuštění a nikdy ztrátě dat se vám účtovat. Mezi příklady patří `Single` k `Double`, `Char` k `String`a na jeho základní typ odvozený typ. Tento poslední převod je rozšíření, protože odvozený typ obsahuje všechny členy ze základního typu a tedy instanci základního typu.  
   
- Není nutné používat kód náročné `CType` pro rozšiřující převody, i když `Option Strict` je `On`.  
+ Není nutné používat časově náročný kód `CType` pro rozšiřující převody, i když `Option Strict` je `On`.  
   
  `Widening` – Klíčové slovo lze použít v tomto kontextu:  
   
  [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
- Například zobrazit definice rozšíření a zúžení operátory převodu [postupy: definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
+ Příklad naleznete v tématu definice rozšíření a zúžení operátory převodu [jak: Definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
- [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)  
- [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)  
- [Postupy: Definice operátoru](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)  
- [Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)  
- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
- [Postupy: Definice operátoru převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)
+- [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+- [Postupy: Definovat operátor](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)
+- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Postupy: Definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)

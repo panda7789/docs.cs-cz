@@ -11,12 +11,12 @@ helpviewer_keywords:
 - operator \= [Visual Basic]
 - compound assignment statements [Visual Basic]
 ms.assetid: 6f39915d-e398-4045-afcc-da6885e57b9c
-ms.openlocfilehash: bcfc59efda0627f83713fe9ada24cedc20d823e3
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 8985fb081443d931be3210c81099d510e2da057d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43776246"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491893"
 ---
 # <a name="-operator"></a>\\= – Operátor
 Vydělí hodnotu proměnné nebo vlastnosti hodnotou výrazu a přiřadí proměnné nebo vlastnosti výsledku celého čísla.  
@@ -29,10 +29,10 @@ variableorproperty \= expression
   
 ## <a name="parts"></a>Součásti  
  `variableorproperty`  
- Požadováno. Všechny číselné proměnné nebo vlastnosti.  
+ Povinný parametr. Všechny číselné proměnné nebo vlastnosti.  
   
  `expression`  
- Požadováno. Jakýkoli číselný výraz.  
+ Povinný parametr. Jakýkoli číselný výraz.  
   
 ## <a name="remarks"></a>Poznámky  
  Element na levé straně `\=` operátor může být jednoduché skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).  
@@ -49,11 +49,11 @@ variableorproperty \= expression
   
  [!code-vb[VbVbalrOperators#19](codesnippet/VisualBasic/integer-division-assignment-operator_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md)  
- [/ = – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)  
- [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)  
- [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
- [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)
+## <a name="see-also"></a>Viz také:
+- [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md)
+- [/ = – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)
+- [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
+- [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
+- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+- [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)

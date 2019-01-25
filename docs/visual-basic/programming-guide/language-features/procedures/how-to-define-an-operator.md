@@ -13,22 +13,22 @@ helpviewer_keywords:
 - return values [Visual Basic], Operator procedures
 - operator overloading
 ms.assetid: d4b0e253-092a-4e6e-9fe2-01f562140a29
-ms.openlocfilehash: 1f5a020a710cecdfd8722a9fca0a8b329697eced
-ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
+ms.openlocfilehash: fb150298562c1ec91f73f3c8075f4f8a4fc20b27
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34805396"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54679523"
 ---
 # <a name="how-to-define-an-operator-visual-basic"></a>Postupy: Definice operátora (Visual Basic)
-Pokud jste definovali třídu nebo strukturu, můžete definovat chování standardní operátor (například `*`, `<>`, nebo `And`) Pokud je jedna nebo obě sady operandy typu třídu nebo strukturu.  
+Pokud jste definovali třídy nebo struktury, můžete definovat chování standardní – operátor (například `*`, `<>`, nebo `And`) Pokud je jeden nebo oba operandy typu třídy nebo struktury.  
   
- Definujte standardní operátor jako procedury operátora v rámci třídu nebo strukturu. Musí být všechny postupy operátor `Public` `Shared`.  
+ Standardní operátor definujte jako procedury operátora v rámci třídy nebo struktury. Musí být všechny procedury operátoru `Public` `Shared`.  
   
- Definování operátor na třídu nebo strukturu je také označován *přetížení* operátor.  
+ Definování v třídě nebo struktuře operátor se také nazývá *přetížení* operátor.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu je definován `+` názvem operátor pro strukturu `height`. Struktura používá výšky měřená v stopy a palce. Jeden *palec* je 2,54 cm a jeden */zápatí* je 12 palců. Aby normalizovaný hodnoty (palce < 12.0), provede konstruktoru *modulo* aritmetické 12. `+` Operátor používá ke generování hodnot normalizovaný konstruktoru.  
+ Následující příklad definuje `+` volat operátor pro strukturu `height`. Struktura používá měřené v stopy a palce výšky. Jeden *palec* je 2,54 cm a jedno *zápatí* 12 palců. Aby bylo zajištěno normalizované hodnoty (palce < 12.0), konstruktor provádí *modulo* aritmetické 12. `+` Operátor používá konstruktor k vygenerování normalizované hodnoty.  
   
  [!code-vb[VbVbcnProcedures#25](./codesnippet/VisualBasic/how-to-define-an-operator_1.vb)]  
   
@@ -36,14 +36,14 @@ Pokud jste definovali třídu nebo strukturu, můžete definovat chování stand
   
  [!code-vb[VbVbcnProcedures#26](./codesnippet/VisualBasic/how-to-define-an-operator_2.vb)]  
   
- Další informace a příklady naleznete v tématu [operátor přetížení Visual Basic 2005](https://msdn.microsoft.com/library/ms379613(v=vs.80).aspx).  
+ Další informace a příklady najdete v tématu [přetížení operátoru v jazyce Visual Basic 2005](https://msdn.microsoft.com/library/ms379613(v=vs.80).aspx).  
   
-## <a name="see-also"></a>Viz také  
- [Procedury operátoru](./operator-procedures.md)  
- [Postupy: Definice operátoru převodu](./how-to-define-a-conversion-operator.md)  
- [Postupy: Volání procedury operátoru](./how-to-call-an-operator-procedure.md)  
- [Postupy: Použití třídy, která definuje operátory](./how-to-use-a-class-that-defines-operators.md)  
- [Příkaz Operator](../../../../visual-basic/language-reference/statements/operator-statement.md)  
- [Příkaz Structure](../../../../visual-basic/language-reference/statements/structure-statement.md)  
- [Postupy: Definice struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
- [Operátor Mod](../../../../visual-basic/language-reference/operators/mod-operator.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury operátoru](./operator-procedures.md)
+- [Postupy: Definice operátora převodu](./how-to-define-a-conversion-operator.md)
+- [Postupy: Volání procedury operátora](./how-to-call-an-operator-procedure.md)
+- [Postupy: Použití třídy, která definuje operátory](./how-to-use-a-class-that-defines-operators.md)
+- [Příkaz Operator](../../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Příkaz Structure](../../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Postupy: Deklarace struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
+- [Operátor Mod](../../../../visual-basic/language-reference/operators/mod-operator.md)

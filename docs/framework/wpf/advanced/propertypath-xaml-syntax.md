@@ -5,12 +5,12 @@ helpviewer_keywords:
 - PropertyPath object [WPF]
 - XAML [WPF], PropertyPath object
 ms.assetid: 0e3cdf07-abe6-460a-a9af-3764b4fd707f
-ms.openlocfilehash: 24dd4ca5663f2e6d98ed3888f07329724fdc353d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 7c6f658558618e0812ea2537837577cbf011edd4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042540"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54648749"
 ---
 # <a name="propertypath-xaml-syntax"></a>PropertyPath – syntaxe v jazyce XAML
 <xref:System.Windows.PropertyPath> Objekt podporuje komplexní vložené [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntaxi pro různé vlastnosti, které provést nastavení <xref:System.Windows.PropertyPath> typu jako jeho hodnotu. Toto téma dokumenty <xref:System.Windows.PropertyPath> syntaxe jako použitý pro vazbu a animace syntaxe.  
@@ -196,7 +196,7 @@ or
   
  Obecně platí <xref:System.Windows.PropertyPath> je navržen pro použití dva různé konstruktory, jeden pro použití vazby a nejjednodušší použití animace a jeden pro použití komplexní animace. Použití <xref:System.Windows.PropertyPath.%23ctor%28System.Object%29> podpis pro vazby použití, kde je objekt na řetězec. Použití <xref:System.Windows.PropertyPath.%23ctor%28System.Object%29> podpis pro jednoduchý animace cesty, kde je objekt <xref:System.Windows.DependencyProperty>. Použití <xref:System.Windows.PropertyPath.%23ctor%28System.String%2CSystem.Object%5B%5D%29> podpis pro komplexní animace. Tento druhý konstruktor používá řetězec tokenu pro první parametr a pole objektů, které vyplnění pozic v řetězec tokenu k definování relace vlastnost cesty.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.PropertyPath>  
- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.PropertyPath>
+- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
+- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)

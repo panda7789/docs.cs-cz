@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d9d4965751db1a70871270317a644b0acb1302f7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c22d9bf286a2241b0c1c5512e29532a01032cb3d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405977"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54648868"
 ---
 # <a name="clrdatacreateinstance-function"></a>CLRDataCreateInstance – funkce
 Vytvoří objekt rozhraní pro zadanou cílovou položku.  
@@ -39,19 +39,19 @@ HRESULT CLRDataCreateInstance (
   
 #### <a name="parameters"></a>Parametry  
  `iid`  
- [v] Identifikátor rozhraní, které má být vytvořena instance.  
+ [in] Identifikátor rozhraní má být vytvořena.  
   
  `target`  
- [v] Ukazatel na uživatele implementované [ICLRDataTarget](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md) objekt, který reprezentuje cílová položka pro který chcete vytvořit objekt rozhraní.  
+ [in] Ukazatel na uživatelské implementované [iclrdatatarget –](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md) objekt, který představuje cílovou položku, pro který chcete vytvořit objekt rozhraní.  
   
  `iface`  
- [out] Ukazatel na adresu objekt vrácený rozhraní.  
+ [out] Ukazatel na adresu objektu vrácené rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICLRDataTarget` Objektu je implementováno modulem zapisovač ladění aplikace. Implementace závisí na typu položky cíl reprezentované. Cílová položka může být proces, výpis stavu paměti, vzdálený počítač a tak dále.  
+ `ICLRDataTarget` Objektu je implementováno tvůrci ladění aplikace. Implementace závisí na typu představované cílovou položku. Cílová položka může být proces, výpis paměti, vzdálený počítač a tak dále.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl  
   
@@ -59,5 +59,5 @@ HRESULT CLRDataCreateInstance (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)

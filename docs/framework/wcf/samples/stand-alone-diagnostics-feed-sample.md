@@ -2,12 +2,12 @@
 title: Ukázka samostatného diagnostického informačního kanálu
 ms.date: 03/30/2017
 ms.assetid: d31c6c1f-292c-4d95-8e23-ed8565970ea5
-ms.openlocfilehash: 6def1d02ed46675d98db115f77ac36bb9f9401de
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 53eadcb8ad806fdec60739c8422abe05087cb937
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123550"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54707684"
 ---
 # <a name="stand-alone-diagnostics-feed-sample"></a>Ukázka samostatného diagnostického informačního kanálu
 Tento příklad ukazuje, jak vytvořit pro syndikaci Windows Communication Foundation (WCF) informační kanál RSS/Atom. Je to základní program "Hello World", který ukazuje základy objektový model a jak ho nastavit na službu Windows Communication Foundation (WCF).  
@@ -93,6 +93,6 @@ foreach (SyndicationItem i in feed.Items)
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Syndication\DiagnosticsFeed`  
   
-## <a name="see-also"></a>Viz také  
- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
- [Syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)
+## <a name="see-also"></a>Viz také:
+- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)

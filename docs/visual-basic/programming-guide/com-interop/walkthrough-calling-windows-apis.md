@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Volání rozhraní API systému Windows (Visual Basic)'
+title: 'Průvodce: Volání rozhraní API Windows (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - DLLs, calling
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - DllImport attribute, calling Windows API
 - Declare statement [Visual Basic], declaring DLL functions
 ms.assetid: 9280ca96-7a93-47a3-8d01-6d01be0657cb
-ms.openlocfilehash: bb98d842bfe65bdf637a789fc9a8319a70cb2bc8
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
+ms.openlocfilehash: 59c316ccb3a35a650ac11b96717a3ad729e777a3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332857"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54657971"
 ---
-# <a name="walkthrough-calling-windows-apis-visual-basic"></a>Návod: Volání rozhraní API systému Windows (Visual Basic)
+# <a name="walkthrough-calling-windows-apis-visual-basic"></a>Průvodce: Volání rozhraní API Windows (Visual Basic)
 Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí operačního systému Windows. Můžete využít k provádění úkolů, když je obtížné je napsat ekvivalentní postupy. Například Windows poskytuje funkci s názvem `FlashWindowEx` , který umožňuje provádět alternativní mezi světlé a tmavé odstínů v záhlaví okna aplikace.  
   
  Výhodou použití rozhraní API Windows ve vašem kódu je, že se dají ušetřit dobu vývoje, protože obsahují řadě užitečných funkcí, které již byly napsány a čekáním, který se má použít. Nevýhodou je, že rozhraní API Windows může být obtížné pro práci s a nepřijímá, když něco selže.  
@@ -39,7 +39,7 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
     > [!NOTE]
     >  Podrobnější informace o rozhraní API pro Windows naleznete v dokumentaci sady SDK Win32 v rozhraní API sady SDK Windows Platform. Další informace o konstanty, které používají rozhraní API pro Windows zkontrolujte soubory hlaviček, jako Windows.h, které jsou součástí sady SDK platformy.  
   
-2.  Kliknutím otevřete nový projekt aplikace Windows **nový** na **souboru** nabídky a pak levým na **projektu**. **Nový projekt** zobrazí se dialogové okno.  
+2.  Kliknutím otevřete nový projekt aplikace Windows **nový** na **souboru** nabídky a pak levým na **projektu**. Zobrazí se dialogové okno **Nový projekt**.  
   
 3.  Vyberte **aplikace Windows** ze seznamu šablon projektů jazyka Visual Basic. Zobrazí se nový projekt.  
   
@@ -113,7 +113,7 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
   
 #### <a name="to-call-a-windows-api-using-the-dllimport-attribute"></a>Pro volání Windows API pomocí atributu DllImport  
   
-1.  Kliknutím otevřete nový projekt aplikace Windows **nový** na **souboru** nabídky a pak levým na **projektu**. **Nový projekt** zobrazí se dialogové okno.  
+1.  Kliknutím otevřete nový projekt aplikace Windows **nový** na **souboru** nabídky a pak levým na **projektu**. Zobrazí se dialogové okno **Nový projekt**.  
   
 2.  Vyberte **aplikace Windows** ze seznamu šablon projektů jazyka Visual Basic. Zobrazí se nový projekt.  
   
@@ -147,12 +147,12 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
   
 12. Klikněte na tlačítko **Button2**. Pokud soubor lze přesunout, zobrazí se zpráva "soubor byl úspěšně přesunut.".  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.DllImportAttribute>  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
- [Auto](../../../visual-basic/language-reference/modifiers/auto.md)  
- [Alias](../../../visual-basic/language-reference/statements/alias-clause.md)  
- [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)  
- [Vytváření prototypů ve spravovaném kódu](../../../framework/interop/creating-prototypes-in-managed-code.md)  
- [Zařazování delegáta jako metody zpětného volání](../../../framework/interop/marshaling-a-delegate-as-a-callback-method.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.DllImportAttribute>
+- <xref:System.Runtime.InteropServices.MarshalAsAttribute>
+- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Auto](../../../visual-basic/language-reference/modifiers/auto.md)
+- [Alias](../../../visual-basic/language-reference/statements/alias-clause.md)
+- [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)
+- [Vytváření prototypů ve spravovaném kódu](../../../framework/interop/creating-prototypes-in-managed-code.md)
+- [Zařazování delegáta jako metody zpětného volání](../../../framework/interop/marshaling-a-delegate-as-a-callback-method.md)

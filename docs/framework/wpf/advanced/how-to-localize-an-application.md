@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 1190fb739e7c1873532e96b50399ac0deb6bb51c
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 1761fbf1cb8ec337ea5733e3ab693031b1934179
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48846276"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54725538"
 ---
 # <a name="how-to-localize-an-application"></a>Postupy: Lokalizace aplikace
 Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml – nástroj.  
@@ -91,21 +91,21 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
   
 4.  Možnosti, které můžete zadat při spuštění locbaml – jsou následující:  
   
-    -   **analyzovat** nebo **-p:** analyzuje Baml prostředky, nebo [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] soubory vygenerovat soubor CSV nebo .txt.  
+    -   **analyzovat** nebo **-p:** Analyzuje Baml, prostředky, nebo [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] soubory vygenerovat soubor CSV nebo .txt.  
   
-    -   **Generovat** nebo **-g:** generuje lokalizované binární soubor s použitím přeložený soubor.  
+    -   **Generovat** nebo **-k:** Generuje lokalizované binární soubor s použitím přeložený soubor.  
   
-    -   **navýšení kapacity** nebo **-o** {*filedirectory*] **:** název výstupního souboru.  
+    -   **navýšení kapacity** nebo **-o** {*filedirectory*] **:** Název výstupního souboru.  
   
-    -   **jazyková verze** nebo **- cul** {*jazykovou verzi*] **:** národního prostředí z výstupu sestavení.  
+    -   **jazyková verze** nebo **- cul** {*jazykovou verzi*] **:** Národní prostředí z výstupu sestavení.  
   
-    -   **překlad** nebo **- trans** {*translation.csv*] **:** přeložena nebo lokalizovaný soubor.  
+    -   **překlad** nebo **- trans** {*translation.csv*] **:** Přeložené nebo lokalizovaný soubor.  
   
-    -   **asmpath** nebo **- asmpath:** {*filedirectory*] **:** Pokud vaše [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kód obsahuje vlastní ovládací prvky, je nutné zadat  **asmpath** sestavení vlastního ovládacího prvku.  
+    -   **asmpath** nebo **- asmpath:** {*filedirectory*] **:** Pokud vaše [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] kód obsahuje vlastní ovládací prvky, je nutné zadat **asmpath** sestavení vlastního ovládacího prvku.  
   
-    -   **nologo:** zobrazuje informace bez logo nebo autorských práv.  
+    -   **nologo:** Zobrazuje informace bez logo nebo autorských práv.  
   
-    -   **verbose:** zobrazí informace o režimu s komentářem.  
+    -   **verbose:** Zobrazí informace o režimu s komentářem.  
   
     > [!NOTE]
     >  Pokud potřebujete seznam možností, pokud spouštíte nástroj, zadejte **LocBaml.exe** a stiskněte klávesu ENTER.  
@@ -127,9 +127,9 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
 
    | |
    |-|
-   |HelloApp.g.en US.resources:window1.baml, Stack1:System.Windows.Controls.StackPanel. $Content, ignorovat FALSE; hodnota FALSE, #Text1; #Text2;|
-   |HelloApp.g.en US.resources:window1.baml, Text1:System.Windows.Controls.TextBlock. $Content, None, TRUE, TRUE, Hello World|
-   |HelloApp.g.en US.resources:window1.baml, Text2:System.Windows.Controls.TextBlock. $Content, None, TRUE, TRUE, Goodbye World|
+   |HelloApp.g.en-US.resources:window1.baml,Stack1:System.Windows.Controls.StackPanel.$Content,Ignore,FALSE, FALSE,,#Text1;#Text2;|
+   |HelloApp.g.en-US.resources:window1.baml,Text1:System.Windows.Controls.TextBlock.$Content,None,TRUE, TRUE,,Hello World|
+   |HelloApp.g.en-US.resources:window1.baml,Text2:System.Windows.Controls.TextBlock.$Content,None,TRUE, TRUE,,Goodbye World|
 
    Sedm pole jsou:  
   
@@ -151,9 +151,9 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
   
    |Název BAML|Klíč prostředku|Kategorie|Lepší čitelnost|Modifiability|Komentáře|Hodnota|  
    |---------------|------------------|--------------|-----------------|-------------------|--------------|-----------|
-   |HelloApp.g.en US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignorovat|FALSE|FALSE||#Text1; #Text2|
-   |HelloApp.g.en US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádné|HODNOTA TRUE|HODNOTA TRUE||Hello World|
-   |HelloApp.g.en US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádné|HODNOTA TRUE|HODNOTA TRUE||Goodbye World|
+   |HelloApp.g.en-US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignorovat|FALSE|FALSE||#Text1;#Text2|
+   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádná|HODNOTA TRUE|HODNOTA TRUE||Hello World|
+   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádná|HODNOTA TRUE|HODNOTA TRUE||Goodbye World|
   
    Všimněte si, že všechny hodnoty **komentáře** pole neobsahují žádné hodnoty; Pokud pole nemá hodnotu, je prázdný. Všimněte si také, že položka v prvním řádku není ani čitelná ani měnit a má "Ignorovat" jako jeho **kategorie** hodnoty, které označuje, že hodnota není lokalizovatelné.  
   
@@ -169,7 +169,7 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
   
 1.  Použijte následující syntaxi pro vytvoření nového souboru HelloApp.resources.dll. Označit jazykovou verzi jako en US (/ cul:en-US).  
   
-     **LocBaml.exe / generovat HelloApp.resources.dll /trans:Hello.csv /out:c: \ /cul:en-USA**  
+     **LocBaml.exe /generate HelloApp.resources.dll /trans:Hello.csv /out:c:\ /cul:en-US**  
   
     > [!NOTE]
     >  Pokud vstupní soubor Hello.csv, není ve stejném adresáři jako spustitelný soubor, LocBaml.exe, přesuňte jeden ze souborů tak, že oba soubory jsou ve stejném adresáři.  
@@ -180,7 +180,7 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
   
 4.  Pro převod na jinou jazykovou verzi, pomocí jazyka, který se překládá na jazykovou verzi. Následující příklad ukazuje, jak převést French-Canadian:  
   
-     **LocBaml.exe / generovat HelloApp.resources.dll /trans:Hellofr-CA.csv /out:c: \ /cul:fr-certifikační Autority**  
+     **LocBaml.exe /generate HelloApp.resources.dll /trans:Hellofr-CA.csv /out:c:\ /cul:fr-CA**  
   
 5.  Ve stejném sestavení jako sestavení hlavní aplikace vytvořte novou složku specifické pro jazykovou verzi k umístění nového satelitní sestavení. U French-Canadian bude složka fr-CA.  
   
@@ -209,6 +209,6 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
 ## <a name="whats-next"></a>Co se chystá  
  Nyní byste měli mít základní znalosti o tom, jak používat locbaml – nástroj.  Můžete by měl být schopen provést soubor obsahující identifikátory UID. S použitím locbaml – nástroj, byste měli analyzovat soubor, který chcete extrahovat lokalizovatelné obsah a po obsahu se kombinují, by měla být schopna generovat. resources.dll soubor, který sloučí přeloženého obsahu. Toto téma neobsahuje všechny možné podrobnosti, ale Teď máte znalosti, které jsou nezbytné pro účely locbaml – lokalizace vašich aplikací.  
   
-## <a name="see-also"></a>Viz také  
- [Globalizace pro WPF](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)  
- [Přehled automatického rozložení](../../../../docs/framework/wpf/advanced/use-automatic-layout-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Globalizace pro WPF](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)
+- [Přehled automatického rozložení](../../../../docs/framework/wpf/advanced/use-automatic-layout-overview.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 881c0b1f755e750efcc74ca61a60bbd97bc5dba7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 578f79136f6ccc8a6b7eac644b2a5084d30d2ba0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444461"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54722826"
 ---
 # <a name="imetadataemitdefinememberref-method"></a>IMetaDataEmit::DefineMemberRef – metoda
-Definuje odkaz na člena modulu mimo aktuální obor a získá token pro tuto referenční definice.  
+Definuje odkaz na člena modulu mimo aktuální obor a získá token pro tuto definici odkazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,29 +41,29 @@ HRESULT DefineMemberRef (
   
 #### <a name="parameters"></a>Parametry  
  `tkImport`  
- [v] Token pro člena cílové třídy nebo rozhraní, pokud člen není globální; Pokud je člen globální, `mdModuleRef` tokenu pro tento druhý soubor.  
+ [in] Token pro cílový člen třídy nebo rozhraní, pokud člen není globální; Pokud je globální, člen `mdModuleRef` token pro tento soubor.  
   
  `szName`  
- [v] Název člena cíl.  
+ [in] Jméno člena cíl.  
   
  `pvSigBlob`  
- [v] Podpis cíl člena.  
+ [in] Podpis cílové člena.  
   
  `cbSigBlob`  
- [v] Počet bajtů v `pvSigBlob`.  
+ [in] Počet bajtů v `pvSigBlob`.  
   
  `pmr`  
  [out] `mdMemberRef` Token přiřazený.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

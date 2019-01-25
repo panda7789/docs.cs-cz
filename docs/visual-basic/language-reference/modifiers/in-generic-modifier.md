@@ -7,45 +7,45 @@ helpviewer_keywords:
 - contravariance, In keyword [Visual Basic]
 - In keyword [Visual Basic]
 ms.assetid: 59bb13c5-fe96-42b8-8286-86293d1661c5
-ms.openlocfilehash: d1d9209cd583ac96ece59660ad29c76a66d3395a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4d5909e6ee7436b7e4f7baa30bfe81eb8ba5441e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33597429"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54625744"
 ---
 # <a name="in-generic-modifier-visual-basic"></a>In (generický modifikátor) (Visual Basic)
 Pro parametry obecného typu `In` – klíčové slovo určuje, že parametr typu je kontravariant.  
   
 ## <a name="remarks"></a>Poznámky  
- Kontravariance umožňuje používat méně odvozený typ, než je určeno obecný parametr. To umožňuje implicitní převod tříd, které implementují rozhraní variant a implicitní převod typů delegátů.  
+ Kontravariance umožňuje použít méně odvozený typ, než je určeno obecný parametr. To umožňuje implicitní převod z třídy, které implementují rozhraní variant a implicitní převod delegujících typů.  
   
  Další informace najdete v tématu [kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md).  
   
-## <a name="rules"></a>Pravidla  
- Můžete použít `In` – klíčové slovo v obecném rozhraní a delegáti.  
+## <a name="rules"></a>pravidla  
+ Můžete použít `In` – klíčové slovo v obecných rozhraních a delegátech.  
   
- Parametr typu lze deklarovat kontravariant v obecné rozhraní nebo delegáta, pokud je použit pouze jako typ metoda argumenty a nejsou používány jako návratový typ. metoda. `ByRef` parametry nemohou mít kovariantní nebo kontravariant.  
+ Parametr typu mohou být deklarovány v obecné rozhraní nebo delegát Kontravariantní, pokud je použít jenom jako typ argumentů metody a nepoužívá se jako návratový typ metody. `ByRef` parametry nemohou být kovariantní nebo kontravariantní.  
   
- Kovariance a kontravariance jsou podporovány pro odkazové typy a není podporována u typů hodnot.  
+ Kovariance a kontravariance jsou podporovány pro typy odkazů a nejsou podporovány pro typy hodnot.  
   
- V jazyce Visual Basic nelze deklarovat události v rozhraní kontravariant bez zadání typu delegáta. Navíc kontravariant rozhraní vnořené třídy, výčty a struktury, ale mohou mít vnořené rozhraní.  
+ V jazyce Visual Basic nelze deklarovat události v rozhraní kontravariantní bez zadání typu delegáta. Také kontravariantní rozhraní nemůžou být vnořené třídy, výčty a struktury, ale mohou být vnořené rozhraní.  
   
 ## <a name="behavior"></a>Chování  
- Rozhraní, které má parametr typu kontravariant umožňuje její metody tak, aby přijímal argumenty odvozených typů menší než je zadáno v parametru typu rozhraní. Například protože v rozhraní .NET Framework 4 v <xref:System.Collections.Generic.IComparer%601> rozhraní T typu je kontravariant, můžete jim přiřadit objekt `IComparer(Of Person)` typ na objekt `IComparer(Of Employee)` typu bez použití žádné speciální převod metody, pokud `Person` dědí `Employee`.  
+ Rozhraní, která má parametr kontravariantního typu umožňuje její metody pro přijímání argumentů méně odvozené typy než je zadáno parametrem typu rozhraní. Například protože v rozhraní .NET Framework 4, v <xref:System.Collections.Generic.IComparer%601> rozhraní, typ T je kontravariantní, můžete přiřadit objektu `IComparer(Of Person)` typu na objekt `IComparer(Of Employee)` typ bez použití jakékoli speciální převod metody, pokud `Person` dědí `Employee`.  
   
- Delegát kontravariant může být přiřazen jiný delegát stejného typu, ale s méně odvozený parametr obecného typu.  
+ Kontravariantní delegát může být přiřazen jiný delegát stejného typu, ale s méně odvozený parametr obecného typu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak deklarovat, rozšířit a implementovat obecné rozhraní kontravariant. Také ukazuje, jak můžete použít implicitní převod pro třídy, které toto rozhraní implementovat.  
+ Následující příklad ukazuje, jak deklarovat, rozšíření a implementovat obecné rozhraní kontravariantní. Také ukazuje, jak můžete použít implicitní převod pro třídy, které toto rozhraní implementují.  
   
  [!code-vb[vbVarianceKeywords#1](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/in-generic-modifier_1.vb)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak deklarování, vytváření instancí a vyvolání obecný delegát kontravariant. Také ukazuje, jak můžete implicitně převést typem delegáta.  
+ Následující příklad ukazuje, jak deklarovat, vytváření instancí a vyvolání obecného delegátu kontravariantní. Profil také ukazuje, jak lze implicitně převést typ delegáta.  
   
  [!code-vb[vbVarianceKeywords#2](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/in-generic-modifier_2.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Odchylky obecných rozhraní](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
- [na více systémů](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)
+## <a name="see-also"></a>Viz také:
+- [Odchylky obecných rozhraní](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
+- [navýšení kapacity](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)

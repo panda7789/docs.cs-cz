@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 0ea65c59-85eb-4a52-94ca-c36d3bd13058
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 86642da8647d185d863607819bbb18de9e976e6b
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: f018ed182e6354bbc6e6873f0df1b35e023c9c17
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664537"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54512343"
 ---
 # <a name="type-conversion-tables-in-net"></a>Tabulky převodu typů v .NET
 Rozšiřující převod vyvolá při převodu hodnoty jednoho typu na jiný typ, který je roven nebo větší velikosti. Zužující převod nastane, pokud je hodnota jednoho typu je převedena na hodnotu jiný typ, který je menší velikost. Tabulky v tomto tématu ilustrují chování vykazují oba typy převodů.  
@@ -73,5 +73,5 @@ Rozšiřující převod vyvolá při převodu hodnoty jednoho typu na jiný typ,
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Convert?displayProperty=nameWithType>  
+- <xref:System.Convert?displayProperty=nameWithType>
 - [Převod typů v rozhraní .NET](../../../docs/standard/base-types/type-conversion.md)

@@ -1,23 +1,23 @@
 ---
-title: '&lt;useLegacyJit&gt; – Element'
+title: '&lt;useLegacyJit&gt; Element'
 ms.date: 04/26/2017
 ms.assetid: c2cf97f0-9262-4f1f-a754-5568b51110ad
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dd4f9728338ecc66f84fe42b9bdbda9938ed518b
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: ecf4d805feeb27a7c3fa08d2ab6dd05b6fff693a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612189"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54648177"
 ---
-# <a name="ltuselegacyjitgt-element"></a>&lt;useLegacyJit&gt; – Element
+# <a name="ltuselegacyjitgt-element"></a>&lt;useLegacyJit&gt; Element
 
 Určuje, zda modul common language runtime používá starší verzi 64bitového kompilátoru JIT kompilace just-in-time.  
   
 \<Konfigurace >  
 \<modul runtime >  
-\<useLegacyJit >
+\<useLegacyJit>
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -95,6 +95,6 @@ Následující konfigurační soubor zakazuje kompilaci pomocí nového 64bitov�
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<modul runtime > – Element](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)   
-- [\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)   
+- [\<modul runtime > – Element](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)
+- [\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)
 - [Omezení rizik: Nový kompilátor JIT 64-bit](../../../../../docs/framework/migration-guide/mitigation-new-64-bit-jit-compiler.md)

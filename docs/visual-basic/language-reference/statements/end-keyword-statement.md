@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - End keyword [Visual Basic]
 ms.assetid: 42d6e088-ab0f-4cda-88e8-fdce3e5fcf4f
-ms.openlocfilehash: 8137434bfd8c26144d78b1761b784cdba4894eaf
-ms.sourcegitcommit: 7fe772c6c05a982153655d618c826e9839d39cac
+ms.openlocfilehash: d65c921a1631cd38c4d0d1ab9b34db3d7e43a97e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "33605261"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54654838"
 ---
 # <a name="end-ltkeywordgt-statement-visual-basic"></a>End &lt;– klíčové slovo&gt; – příkaz (Visual Basic)
 
@@ -48,7 +48,7 @@ End With
 
 |Část|Popis|
 |---|---|
-|`End`|Požadováno. Ukončí definici programovací element.|
+|`End`|Povinný parametr. Ukončí definici programovací element.|
 |`AddHandler`|Povinnost ukončit `AddHandler` přistupující objekt zahájené odpovídající `AddHandler` příkaz ve vlastním [Event – příkaz](event-statement.md).|
 |`Class`|Povinnost ukončit definici třídy zahájené odpovídající [Class – příkaz](class-statement.md).|
 |`Enum`|Povinnost ukončit definice výčtu zahájené odpovídající [Enum – příkaz](enum-statement.md).|
@@ -85,7 +85,7 @@ Když uvozená znakem čísla (`#`), `End` – klíčové slovo ukončí blok p�
 
 |Část|Popis|
 |---|---|
-|`#End`|Požadováno. Ukončí definici bloku předběžného zpracování.|
+|`#End`|Povinný parametr. Ukončí definici bloku předběžného zpracování.|
 |`ExternalSource`|Povinnost ukončit z externího zdroje bloku zahájené odpovídající [#ExternalSource – direktiva](../directives/externalsource-directive.md).|
 |`If`|Povinnost ukončit blok podmíněné kompilace zahájené odpovídající `#If` směrnice. Zobrazit [#If... Then... #Else – direktivy](../directives/if-then-else-directives.md).|
 |`Region`|Povinnost ukončit blok zdrojové oblasti zahájené odpovídající [#Region – direktiva](../directives/region-directive.md).|
@@ -101,4 +101,4 @@ Když uvozená znakem čísla (`#`), `End` – klíčové slovo ukončí blok p�
   
 ## <a name="see-also"></a>Viz také:
 
-[Příkaz End](end-statement.md)
+- [Příkaz End](end-statement.md)

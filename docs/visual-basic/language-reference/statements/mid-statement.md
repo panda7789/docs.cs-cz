@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Mid statement [Visual Basic]
 - strings [Visual Basic], replacing
 ms.assetid: 2b82d7a8-9646-4cb0-bec5-80abc98297bf
-ms.openlocfilehash: a653e63ded04616b6b0c6bdfb26a0a673d9299fc
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 47034b3699f4dfee67d36e72d4b22898d469c900
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47084706"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700293"
 ---
 # <a name="mid-statement"></a>Mid – příkaz
 Nahradí zadaný počet znaků `String` proměnné se znaky z jiného řetězce.  
@@ -32,16 +32,16 @@ Mid( _
   
 ## <a name="parts"></a>Součásti  
  `Target`  
- Požadováno. Název `String` proměnné, které chcete upravit.  
+ Povinný parametr. Název `String` proměnné, které chcete upravit.  
   
  `Start`  
- Požadováno. `Integer` výraz. Znak pozice v `Target` kde začne nahrazování textu. `Start` používá indexu se základem 1.  
+ Povinný parametr. `Integer` výraz. Znak pozice v `Target` kde začne nahrazování textu. `Start` používá indexu se základem 1.  
   
  `Length`  
  Volitelné. `Integer` výraz. Počet znaků k nahrazení. Pokud tento parametr vynechán, všechny `String` se používá.  
   
  `StringExpression`  
- Požadováno. `String` výraz, který nahradí část `Target`.  
+ Povinný parametr. `String` výraz, který nahradí část `Target`.  
   
 ## <a name="exceptions"></a>Výjimky  
   
@@ -69,7 +69,7 @@ Mid( _
   
  **Sestavení:** [!INCLUDE[vbprvbruntime](~/includes/vbprvbruntime-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Strings.Mid%2A>  
- [Řetězce](../../../visual-basic/programming-guide/language-features/strings/index.md)  
- [Úvod do řetězců v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Strings.Mid%2A>
+- [Řetězce](../../../visual-basic/programming-guide/language-features/strings/index.md)
+- [Úvod do řetězců v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)

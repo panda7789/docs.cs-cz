@@ -15,17 +15,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a431283386f847c5fb0e7e8ac9d5a1d3d5875181
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e3b63756fd300dc300932d070e451d2d072adc6e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460561"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54621406"
 ---
 # <a name="icorprofilercallback6getassemblyreferences-method"></a>ICorProfilerCallback6::GetAssemblyReferences – metoda
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
   
- Upozorní profileru, že sestavení v velmi brzy načítá fáze, když modul common language runtime provede procházení uzavření odkaz na sestavení.  
+ Oznámí profileru, že sestavení ve velmi brzy načítá fáze, když modul CLR provede procházení uzavření odkaz sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +37,25 @@ HRESULT GetAssemblyReferences(        [in, string] const WCHAR* wszAssemblyPath,
   
 #### <a name="parameters"></a>Parametry  
  `wszAssemblyPath`  
- [v] Cesta a název sestavení, jejichž metadata budou upraveny.  
+ [in] Cesta a název sestavení, jejichž metadata budou upraveny.  
   
  `pAsmRefProvider`  
- [v] Ukazatel na adresu [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) rozhraní, které určuje sestavení odkazuje na Přidat.  
+ [in] Ukazatel na adresu [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) rozhraní, které určuje sestavení odkazuje přidat.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Návratové hodnoty z této zpětné volání se ignorují.  
+ Návratové hodnoty v tomto zpětném volání jsou ignorovány.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato zpětné volání je řízena nastavením [COR_PRF_HIGH_ADD_ASSEMBLY_REFERENCES](../../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md) příznak maska událostí při volání metody [ICorProfilerCallback5::SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) metoda. Pokud profileru zaregistruje [icorprofilercallback6::getassemblyreferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback6-getassemblyreferences-method.md) metoda zpětného volání, modul runtime předá cestu a název sestavení, která má být načten, spolu s odkazy [ ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) rozhraní objektu do dané metody. Potom můžete volat profileru [icorprofilerassemblyreferenceprovider::addassemblyreference –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) metoda s `COR_PRF_ASSEMBLY_REFERENCE_INFO` objekt pro každý cíl sestavení se plánuje odkazovat z sestavení zadané v `GetAssemblyReferences` zpětné volání.  
+ Toto zpětné volání je řízena nastavením [COR_PRF_HIGH_ADD_ASSEMBLY_REFERENCES](../../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md) příznak masky události při volání [ICorProfilerCallback5::SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) metody. Pokud profiler zaregistruje [icorprofilercallback6::getassemblyreferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback6-getassemblyreferences-method.md) metoda zpětného volání, modul runtime předá cestu a název sestavení, který se má načíst, spolu s ukazatelem na [ ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) objektu rozhraní k této metodě. Profiler pak volat [icorprofilerassemblyreferenceprovider::addassemblyreference –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) metody `COR_PRF_ASSEMBLY_REFERENCE_INFO` objekt pro každý cíl sestavení má odkazovat ze sestavení zadaná v `GetAssemblyReferences` zpětné volání.  
   
- Použití `GetAssemblyReferences` zpětného volání pouze v případě, že má profileru ke změně metadat sestavení přidat odkazy na sestavení. (Všimněte si, že skutečné úpravy sestavení metadat se provádí v, ale [icorprofilercallback::moduleloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)metoda zpětného volání.) Profileru by měla implementovat `GetAssemblyReferences` metoda zpětného volání k informování common language runtime (CLR), odkazy na sestavení bude přidáno, jakmile se načetl modul.  To pomáhá zajistit, že sestavení sdílení rozhodnutí CLR během této fáze časná dál platné i když profileru plánuje později upravit odkazy na metadata sestavení.  To se můžete vyhnout některých případech, ve které profileru způsobit změny metadata `SECURITY_E_INCOMPATIBLE_SHARE` chyby.  
+ Použití `GetAssemblyReferences` zpětného volání pouze v případě, že profiler má k úpravě metadat sestavení přidat odkazy na sestavení. (Všimněte si, že skutečné změna sestavení metadata se provádí na, ale [icorprofilercallback::moduleloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)metoda zpětného volání.) Profiler by měly implementovat `GetAssemblyReferences` metoda zpětného volání k informování common language runtime (CLR), se přidají odkazy na sestavení při načtení modulu.  To pomáhá zajistit, že sestavení sdílení rozhodnutí modulem CLR během této rané nadále platné, i když profiler má v plánu později změnit odkazy v metadatech sestavení.  To se můžete vyhnout nějaké instance, v které profileru způsobit změny metadat `SECURITY_E_INCOMPATIBLE_SHARE` chyby.  
   
- Používá profileru [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) objekt Poskytnutý tuto metodu za účelem přidání odkazů na sestavení pro uzavření walkera CLR sestavení odkaz.  [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) objekt by měl použít pouze v rámci této zpětného volání. Volání [icorprofilerassemblyreferenceprovider::addassemblyreference –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) metoda z této zpětného volání nezpůsobují v upravené metadata, ale jenom v procházení uzavření odkaz upravené sestavení. Profileru bude muset nadále používat [imetadataassemblyemit –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) objekt, který chcete explicitně přidat odkazy na sestavení z uvnitř [icorprofilercallback::moduleloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) zpětné volání pro odkazujícího sestavení, i když se implementuje `GetAssemblyReferences` zpětného volání.  
+ Profiler používá [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) objekt Poskytnutý tuto metodu za účelem přidání odkazů na sestavení pro walker uzavření odkaz na sestavení CLR.  [ICorProfilerAssemblyReferenceProvider](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md) objektu by měla sloužit pouze z v rámci tohoto zpětného volání. Volání [icorprofilerassemblyreferenceprovider::addassemblyreference –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) metodu z tohoto zpětného volání není způsobit změny metadat, ale pouze v procházení uzavření upravené sestavení odkazu. Profiler bude muset nadále používat [imetadataassemblyemit –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) objekt explicitně přidat odkazy na sestavení v rámci [icorprofilercallback::moduleloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) zpětného volání pro odkazování sestavení, i v případě, že implementuje `GetAssemblyReferences` zpětného volání.  
   
- Profileru musí být připravené pro příjem duplicitní volání této zpětného volání pro stejného sestavení a má odpovědět stejně jako pro každé takové duplicitní volání (tím, že stejnou sadu [ICorProfilerAssemblyReferenceProvider:: AddAssemblyReference](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) volání).  
+ Profiler by měl být připraven pro příjem duplicitní volání tohoto zpětného volání pro stejného sestavení a by měl reagovat stejně jako u každé duplicitní volání (tím, že stejná sada [ICorProfilerAssemblyReferenceProvider:: AddAssemblyReference](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-addassemblyreference-method.md) volání).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -63,8 +63,8 @@ HRESULT GetAssemblyReferences(        [in, string] const WCHAR* wszAssemblyPath,
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback6 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback6-interface.md)  
- [ModuleLoadFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)  
- [COR_PRF_ASSEMBLY_REFERENCE_INFO – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)  
- [ICorProfilerAssemblyReferenceProvider – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback6 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback6-interface.md)
+- [ModuleLoadFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)
+- [COR_PRF_ASSEMBLY_REFERENCE_INFO – struktura](../../../../docs/framework/unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)
+- [ICorProfilerAssemblyReferenceProvider – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md)

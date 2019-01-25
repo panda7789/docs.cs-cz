@@ -2,12 +2,12 @@
 title: Interní informace o hostiteli služby pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: af44596f-bf6a-4149-9f04-08d8e8f45250
-ms.openlocfilehash: dd03508397b77f4446a5b708c69333336d97193c
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: c3293fe7f835ed0d5b3b62404a1f3f2e20b73fd6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036036"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54708490"
 ---
 # <a name="workflow-service-host-internals"></a>Interní informace o hostiteli služby pracovního postupu
 <xref:System.ServiceModel.WorkflowServiceHost> poskytuje hostitele služby pracovního postupu. Je zodpovědná za naslouchání pro příchozí zprávy a směrování je instance služby příslušné pracovní postup, se řídí uvolnění a při zachování nečinných pracovních postupů a dalších. Toto téma popisuje, jak hostitele služby pracovního postupu zpracování příchozích zpráv.  
@@ -26,7 +26,7 @@ ms.locfileid: "48036036"
   
  ![Tok zpráv hostitele služby pracovního postupu](../../../../docs/framework/wcf/feature-details/media/wfshmessageflow.gif "WFSHMessageFlow")  
   
- Tento diagram znázorňuje tři různé koncové body, koncový bod aplikace, koncový bod pracovního postupu ovládacího prvku a hostování koncový bod pracovního postupu. Koncový bod aplikace přijímá zprávy, které jsou vázány pro instanci konkrétního pracovního postupu. Kontrolní koncový bod pracovního postupu čeká operace u ovládacího prvku. Pracovní postup, který je hostitelem koncového bodu čeká na zprávy, které způsobují <xref:System.ServiceModel.WorkflowServiceHost> načíst a spustit bez služby pracovních postupů. Jak je znázorněno diagramu všechny zprávy se zpracovávají prostřednictvím modul runtime WCF.  Omezení instance služby pracovního postupu můžete dosáhnout použitím <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> vlastnost. Tato vlastnost bude omezovat počet instancí služby souběžných pracovních postupů. Překročení tohoto omezení je všechny další požadavky pro nové instance služby pracovního postupu nebo žádosti o aktivaci instance trvalá pracovního postupu se zařadí do fronty. Požadavky ve frontě se zpracovávají v pořadí FIFO bez ohledu na to, zda jsou požadavky na novou instanci nebo instance spuštěné, trvalý. Informace o zásadách hostitele je načtena, která určuje, jak jsou řešeny neošetřené výjimky a jak nečinných pracovních postupů služby jsou odpojeno a zachována. Další informace o těchto tématech naleznete v tématu [postupy: Konfigurace chování pracovního postupu nezpracované výjimky pomocí třídy WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/config-workflow-unhandled-exception-workflowservicehost.md) a [postupy: Konfigurace chování nečinnosti pomocí WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/how-to-configure-idle-behavior-with-workflowservicehost.md). Instance pracovního postupu jsou trvalé podle zásad hostiteli a jsou znovu načíst v případě potřeby. Další informace o trvalost pracovního postupu v tématu: [postupy: Konfigurace trvalosti pomocí WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/how-to-configure-persistence-with-workflowservicehost.md), [vytvoření dlouhodobé služby pracovního postupu](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md), a [trvalost pracovního postupu ](../../../../docs/framework/windows-workflow-foundation/workflow-persistence.md).  
+ Tento diagram znázorňuje tři různé koncové body, koncový bod aplikace, koncový bod pracovního postupu ovládacího prvku a hostování koncový bod pracovního postupu. Koncový bod aplikace přijímá zprávy, které jsou vázány pro instanci konkrétního pracovního postupu. Kontrolní koncový bod pracovního postupu čeká operace u ovládacího prvku. Pracovní postup, který je hostitelem koncového bodu čeká na zprávy, které způsobují <xref:System.ServiceModel.WorkflowServiceHost> načíst a spustit bez služby pracovních postupů. Jak je znázorněno diagramu všechny zprávy se zpracovávají prostřednictvím modul runtime WCF.  Omezení instance služby pracovního postupu můžete dosáhnout použitím <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentInstances%2A> vlastnost. Tato vlastnost bude omezovat počet instancí služby souběžných pracovních postupů. Překročení tohoto omezení je všechny další požadavky pro nové instance služby pracovního postupu nebo žádosti o aktivaci instance trvalá pracovního postupu se zařadí do fronty. Požadavky ve frontě se zpracovávají v pořadí FIFO bez ohledu na to, zda jsou požadavky na novou instanci nebo instance spuštěné, trvalý. Informace o zásadách hostitele je načtena, která určuje, jak jsou řešeny neošetřené výjimky a jak nečinných pracovních postupů služby jsou odpojeno a zachována. Další informace o těchto tématech naleznete v tématu [jak: Pracovní postup konfigurace chování neošetřené výjimky pomocí třídy WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/config-workflow-unhandled-exception-workflowservicehost.md) a [jak: Konfigurace chování při nečinnosti pomocí WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/how-to-configure-idle-behavior-with-workflowservicehost.md). Instance pracovního postupu jsou trvalé podle zásad hostiteli a jsou znovu načíst v případě potřeby. Další informace o pracovním postupu trvalosti najdete v tématu: [Postupy: Konfigurace trvalosti pomocí WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/how-to-configure-persistence-with-workflowservicehost.md), [vytvoření dlouhodobé služby pracovního postupu](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md), a [trvalost pracovního postupu](../../../../docs/framework/windows-workflow-foundation/workflow-persistence.md).  
   
  Následující obrázek znázorňuje, co je volána WorkflowServiceHost.Open.  
   
@@ -49,11 +49,11 @@ ms.locfileid: "48036036"
 > [!WARNING]
 > Hostitel služby pracovního postupu se nepodaří otevřít, pokud je SQL Server nakonfigurovaný tak, aby naslouchala na pouze protokol pojmenovaného kanálu.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
-- [Hostování služeb pracovních postupů](../../../../docs/framework/wcf/feature-details/hosting-workflow-services.md)  
-- [Kontrolní koncový bod pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-control-endpoint.md)  
-- [Postupy: Konfigurace chování neošetřené výjimky pracovního postupu pomocí WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/config-workflow-unhandled-exception-workflowservicehost.md)  
-- [Vytvoření dlouhodobé služby pracovního postupu](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)  
+- [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
+- [Hostování služeb pracovních postupů](../../../../docs/framework/wcf/feature-details/hosting-workflow-services.md)
+- [Kontrolní koncový bod pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-control-endpoint.md)
+- [Postupy: Pracovní postup konfigurace chování neošetřené výjimky pomocí třídy WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/config-workflow-unhandled-exception-workflowservicehost.md)
+- [Vytvoření dlouhodobé služby pracovního postupu](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)
 - [Trvalost pracovního postupu](../../../../docs/framework/windows-workflow-foundation/workflow-persistence.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7a53b0a9cdcec33846f9d491e7d6567bcf9235b5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5f2a05009caed7bef6da9edee57a4a54b876b18f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33428759"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580990"
 ---
 # <a name="corlaunchapplication-function"></a>CorLaunchApplication – funkce
-Spuštění aplikace v zadané síťové cestě, pomocí zadané manifesty a ostatní data aplikací.  
+Spustí aplikaci v zadané síťové cestě pomocí zadaných manifestů a dalších dat aplikací.  
   
  Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
@@ -45,28 +45,28 @@ HRESULT CorLaunchApplication (
   
 #### <a name="parameters"></a>Parametry  
  `dwClickOnceHost`  
- [v] Hodnota [HOST_TYPE](../../../../docs/framework/unmanaged-api/hosting/host-type-enumeration.md) výčet, který určuje typ hostitele, který je spuštění aplikace.  
+ [in] Hodnota [host_type –](../../../../docs/framework/unmanaged-api/hosting/host-type-enumeration.md) výčet, který určuje typ hostitele, který se spuštěním aplikace.  
   
  `pwzAppFullName`  
- [v] Úplný název aplikace, která je právě spuštěna.  
+ [in] Celý název aplikace, která se spustí.  
   
  `dwManifestPaths`  
- [v] Počet manifestu cesty pro danou aplikaci.  
+ [in] Počet cesty k manifestu aplikace.  
   
  `ppwzManifestPaths`  
- [v] Pole řetězců, z nichž každý Určuje cestu k manifestu pro aplikace, která je právě spuštěna.  
+ [in] Pole řetězců, z nichž každý Určuje cestu k manifestu pro aplikaci, která se spustí.  
   
  `dwActivationData`  
- [v] Počet položek dat aktivace pro aplikaci, která je právě spuštěna.  
+ [in] Počet datových položek aktivace pro aplikaci, která se spustí.  
   
  `ppwzActivationData`  
- [v] Pole řetězců, z nichž každý je aktivace položky dat pro aplikaci, která je právě spuštěna.  
+ [in] Pole řetězců, z nichž každý je aktivace položka dat pro aplikace, která se spustí.  
   
  `lpProcessInformation`  
  [out] Ukazatel na informace o procesu, ve kterém se načetl aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -74,5 +74,5 @@ HRESULT CorLaunchApplication (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

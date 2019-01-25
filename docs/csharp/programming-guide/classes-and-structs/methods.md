@@ -6,12 +6,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: df2d7837217f4267f95ed73948a4eb479cc035c1
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: fa863a5606c7526ae32bc28a0cfeaa91f8c7b539
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53244411"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54712152"
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
 Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že příkazů ke spuštění volání metody a zadáním argumentů požadovanou metodu. V jazyce C# se provádí každých provedené instrukce v rámci metody. Metoda Main je vstupním bodem pro každou aplikaci C# a je volána modulem common language runtime (CLR), když se program spustí.  
@@ -156,16 +156,16 @@ public Customer this[long id] => store.LookupCustomer(id);
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Třídy a struktury](index.md)  
-- [Modifikátory přístupu](access-modifiers.md)  
-- [Statické třídy a jejich členové](static-classes-and-static-class-members.md)  
-- [Dědičnost](inheritance.md)  
-- [Abstraktní a uzavřené třídy a jejich členové](abstract-and-sealed-classes-and-class-members.md)  
-- [params](../../../csharp/language-reference/keywords/params.md)  
-- [return](../../../csharp/language-reference/keywords/return.md)  
-- [out](../../../csharp/language-reference/keywords/out.md)  
-- [ref](../../../csharp/language-reference/keywords/ref.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Třídy a struktury](index.md)
+- [Modifikátory přístupu](access-modifiers.md)
+- [Statické třídy a jejich členové](static-classes-and-static-class-members.md)
+- [Dědičnost](inheritance.md)
+- [Abstraktní a uzavřené třídy a jejich členové](abstract-and-sealed-classes-and-class-members.md)
+- [params](../../../csharp/language-reference/keywords/params.md)
+- [return](../../../csharp/language-reference/keywords/return.md)
+- [out](../../../csharp/language-reference/keywords/out.md)
+- [ref](../../../csharp/language-reference/keywords/ref.md)
 - [Předávání parametrů](passing-parameters.md)

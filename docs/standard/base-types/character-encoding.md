@@ -14,12 +14,12 @@ ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 55eb1d713c25314877fffd8a683ce5a8d9516d92
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 16154ff6b2fcf6c537126b6ced03c45f6746b57a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149923"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54649398"
 ---
 # <a name="character-encoding-in-net"></a>Kódování znaků v rozhraní .NET
 Znaky jsou abstraktní entity, které může být reprezentována mnoha různými způsoby. Kódování znaků je systém, který páry každý znak v podporované znakové sady s některá z hodnot, který představuje daný znak. Například morseovkou je znak kódování této páry každý znak v latinku pomocí vzoru tečky a spojovníky, které jsou vhodné pro přenos přes telegrafní řádky. Znak kódování dvojice počítačů pro každý znak v podporované znakové sady s číselnou hodnotu, která představuje tento znak. Kódování znaků má dvě různé součásti:  
@@ -267,9 +267,9 @@ Znaky jsou abstraktní entity, které může být reprezentována mnoha různým
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Text.Encoder>  
-- <xref:System.Text.Decoder>  
-- <xref:System.Text.DecoderFallback>  
-- <xref:System.Text.Encoding>  
-- <xref:System.Text.EncoderFallback>  
+- <xref:System.Text.Encoder>
+- <xref:System.Text.Decoder>
+- <xref:System.Text.DecoderFallback>
+- <xref:System.Text.Encoding>
+- <xref:System.Text.EncoderFallback>
 - [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)

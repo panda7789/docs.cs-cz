@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 68288111e3f862cf1364031eaad9c63cf347146f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 77a37d70b0e8675ad4edaf304e08e069073f76af
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415935"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499051"
 ---
 # <a name="icordebugmanagedcallback2changeconnection-method"></a>ICorDebugManagedCallback2::ChangeConnection – metoda
-Upozorní ladicí program, že se změnila sadu úloh, které jsou přidružené k zadané připojení.  
+Upozorní ladicího programu, že se změnila sadu úkolů přidružených k zadané připojení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +38,22 @@ HRESULT ChangeConnection (
   
 #### <a name="parameters"></a>Parametry  
  `pProcess`  
- [v] Ukazatel na objekt "ICorDebugProcess", který představuje proces obsahující připojení, který změnil.  
+ [in] Ukazatel na objekt "ICorDebugProcess", který reprezentuje proces obsahující připojení, která se změnila.  
   
  `dwConnectionId`  
- [v] ID připojení, který změnil.  
+ [in] ID připojení, která se změnila.  
   
 ## <a name="remarks"></a>Poznámky  
- A `ChangeConnection` zpětného volání nebudou vydány v některém z následujících případech:  
+ A `ChangeConnection` aktivuje zpětného volání v některém z následujících případech:  
   
--   Když ladicí program připojí k procesu, který obsahuje připojení. V takovém případě bude modulu runtime generování a odesílání [icordebugmanagedcallback2::createconnection –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-createconnection-method.md) událostí a `ChangeConnection` událost pro každé připojení v procesu. A `ChangeConnection` se vyvolá událost pro každý existující připojení, bez ohledu na to, jestli toto připojení sadu úloh se změnil od svého vytvoření.  
+-   Pokud ladicí program připojí k procesu, který obsahuje připojení. V takovém případě modul runtime bude generovat a odeslání [icordebugmanagedcallback2::createconnection –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-createconnection-method.md) událostí a `ChangeConnection` události pro každé připojení v procesu. A `ChangeConnection` vygenerování události pro každé existující připojení, bez ohledu na to, zda toto připojení sady úloh změnila od jeho vytvoření.  
   
--   Když hostitel volá [iclrdebugmanager::setconnectiontasks –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setconnectiontasks-method.md) v [hostování rozhraní API](../../../../docs/framework/unmanaged-api/hosting/index.md).  
+-   Když hostitel volá [iclrdebugmanager::setconnectiontasks –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setconnectiontasks-method.md) v [API pro hostování](../../../../docs/framework/unmanaged-api/hosting/index.md).  
   
- Ladicí program by měl kontrolu všech vláken v procesu vybrat nové změny.  
+ Ladicí program byste nechat zkontrolovat všechna vlákna v procesu, aby se získaly nové změny.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -61,6 +61,6 @@ HRESULT ChangeConnection (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

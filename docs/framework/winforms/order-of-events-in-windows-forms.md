@@ -9,18 +9,18 @@ helpviewer_keywords:
 - validation events [Windows Forms], order of
 - application startup event order
 ms.assetid: e81db09b-4453-437f-b78a-62d7cd5c9829
-ms.openlocfilehash: 10a6451827a16605ba738cf74b7f684b69adb5dc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 814c788285d974db5a8ef2bbaec1368a860c21d2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33538467"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643959"
 ---
 # <a name="order-of-events-in-windows-forms"></a>Řazení událostí ve Windows Forms
-Pořadí, ve kterém události jsou vyvolány v aplikacích Windows Forms je zajímají hlavně o vývojáři nevadí, každá z těchto událostí zase zpracování. Když stav vyžaduje pečlivou zpracování události, například když jsou překreslování části formuláře, je nutné je třeba znát přesné pořadí, ve kterém jsou vyvolány události za běhu. Toto téma obsahuje některé podrobnosti v řádu události během několika fázích důležité v životního cyklu aplikací a ovládací prvky. Konkrétní podrobnosti o pořadí vstupních událostech myši najdete v tématu [události myši ve Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md). Přehled událostí ve Windows Forms najdete v tématu [Přehled událostí](../../../docs/framework/winforms/events-overview-windows-forms.md). Podrobnosti o způsob vytvoření obslužných rutin událostí najdete v tématu [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md).  
+Pořadí, ve kterém jsou vyvolány události v aplikacích Windows Forms je zajímavé především pro vývojáře se každá z těchto událostí zase zpracování. Když situace vyžaduje pečlivou zpracování událostí, například když jsou překreslování části formuláře, je nezbytné povědomí o přesné pořadí, ve kterém jsou vyvolány události v době běhu. Toto téma obsahuje některé podrobnosti pořadí událostí během několik důležitých fází životního cyklu aplikací a ovládací prvky. Konkrétní podrobnosti o pořadí vstupních událostí myši najdete v tématu [události myši ve Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md). Přehled událostí ve Windows Forms, naleznete v tématu [Přehled událostí](../../../docs/framework/winforms/events-overview-windows-forms.md). Podrobnosti o strukturu obslužné rutiny událostí najdete v tématu [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md).  
   
-## <a name="application-startup-and-shutdown-events"></a>Spuštění aplikace a událostí vypnutí  
- <xref:System.Windows.Forms.Form> a <xref:System.Windows.Forms.Control> třídy poskytují sadu události související s aplikací spuštění a vypnutí. Při spuštění aplikace Windows Forms události spuštění hlavního formuláře jsou vyvolány v následujícím pořadí:  
+## <a name="application-startup-and-shutdown-events"></a>Události ukončení a spuštění aplikace  
+ <xref:System.Windows.Forms.Form> a <xref:System.Windows.Forms.Control> třídy poskytují sadu události související s aplikací při spuštění a ukončení. Při spuštění aplikace modelu Windows Forms jsou vyvolány události spuštění hlavního formuláře v tomto pořadí:  
   
 -   <xref:System.Windows.Forms.Control.HandleCreated?displayProperty=nameWithType>  
   
@@ -34,7 +34,7 @@ Pořadí, ve kterém události jsou vyvolány v aplikacích Windows Forms je zaj
   
 -   <xref:System.Windows.Forms.Form.Shown?displayProperty=nameWithType>  
   
- Až se aplikace zavře, události vypnutí hlavního formuláře jsou vyvolány v následujícím pořadí:  
+ Po zavření aplikace jsou vyvolány události vypnutí hlavního formuláře v následujícím pořadí:  
   
 -   <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>  
   
@@ -46,13 +46,13 @@ Pořadí, ve kterém události jsou vyvolány v aplikacích Windows Forms je zaj
   
 -   <xref:System.Windows.Forms.Form.Deactivate?displayProperty=nameWithType>  
   
- <xref:System.Windows.Forms.Application.ApplicationExit> Události <xref:System.Windows.Forms.Application> třída je vyvolána po události vypnutí hlavního formuláře.  
+ <xref:System.Windows.Forms.Application.ApplicationExit> Událost <xref:System.Windows.Forms.Application> třídy je vyvolán po vypnutí události hlavního formuláře.  
   
 > [!NOTE]
 >  Visual Basic 2005 zahrnuje další události aplikace, jako například <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup?displayProperty=nameWithType> a <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown?displayProperty=nameWithType>.  
   
-## <a name="focus-and-validation-events"></a>Fokus a události ověření  
- Pokud změníte fokus pomocí klávesnice (karta, SHIFT + TAB a tak dále), pomocí volání metody <xref:System.Windows.Forms.Control.Select%2A> nebo <xref:System.Windows.Forms.Control.SelectNextControl%2A> metody, nebo nastavením <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> vlastnost aktuálního formuláře, události fokus <xref:System.Windows.Forms.Control> třídy, ke kterým došlo v následujícím pořadí :  
+## <a name="focus-and-validation-events"></a>Fokus a události ověřování  
+ Při změně fokusu pomocí klávesnice (TAB, SHIFT + TAB a podobně), voláním <xref:System.Windows.Forms.Control.Select%2A> nebo <xref:System.Windows.Forms.Control.SelectNextControl%2A> metod, nebo nastavením <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> vlastnost pro aktuální formulář se události fokusu z <xref:System.Windows.Forms.Control> třídy dojít v uvedeném pořadí :  
   
 -   <xref:System.Windows.Forms.Control.Enter>  
   
@@ -66,7 +66,7 @@ Pořadí, ve kterém události jsou vyvolány v aplikacích Windows Forms je zaj
   
 -   <xref:System.Windows.Forms.Control.LostFocus>  
   
- Pokud změníte fokus pomocí myši nebo volání <xref:System.Windows.Forms.Control.Focus%2A> metoda, události fokus <xref:System.Windows.Forms.Control> třídy, ke kterým došlo v následujícím pořadí:  
+ Při změně fokusu pomocí myší nebo voláním <xref:System.Windows.Forms.Control.Focus%2A> metody, události fokusu <xref:System.Windows.Forms.Control> třídy vyskytují v následujícím pořadí:  
   
 -   <xref:System.Windows.Forms.Control.Enter>  
   
@@ -80,5 +80,5 @@ Pořadí, ve kterém události jsou vyvolány v aplikacích Windows Forms je zaj
   
 -   <xref:System.Windows.Forms.Control.Validated>  
   
-## <a name="see-also"></a>Viz také  
- [Vytváření obslužných rutin událostí ve Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- [Vytváření obslužných rutin událostí ve Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)

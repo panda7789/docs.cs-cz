@@ -2,12 +2,12 @@
 title: Výkon zřetězených dotazů (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: b2f1d715-8946-4dc0-8d56-fb3d1bba54a6
-ms.openlocfilehash: 9377c4e57eb19f133a1f973ea7f86c3bf72e4cf8
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: e099d4d725a0603df61f5e308ce9897feec0af29
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43854577"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54677314"
 ---
 # <a name="performance-of-chained-queries-linq-to-xml-c"></a>Výkon zřetězených dotazů (LINQ to XML) (C#)
 Jednou z vašich nejdůležitějších výhod LINQ (a LINQ to XML) je, že zřetězených dotazů můžete provádět i pomocí jediného dotazu větší a složitější.  
@@ -54,8 +54,8 @@ foreach (var i in query2)
   
  Další informace o iterátorech naleznete v tématu [yield](../../../../csharp/language-reference/keywords/yield.md).  
   
- Podrobnější kurz na zřetězení dotazů, najdete v tématu [kurz: zřetězení dotazů společně](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md).  
+ Podrobnější kurz na zřetězení dotazů, najdete v tématu [kurzu: Zřetězení dotazů](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Výkon (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/performance-linq-to-xml.md)

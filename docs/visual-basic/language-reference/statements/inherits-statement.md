@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Inherits statement [Visual Basic]
 - Inherits statement [Visual Basic], syntax
 ms.assetid: 9e6fe042-9af3-4341-8093-fc3537770cf2
-ms.openlocfilehash: 4a98ada39a04730b46f40fe139e72d1855d9b067
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 329b4f68874d29d141001800ed326a454a878ab8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43739500"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54502895"
 ---
 # <a name="inherits-statement"></a>Inherits – příkaz
 Způsobí, že aktuální třída nebo rozhraní zdědí atributy, proměnné, vlastnosti, procedury a události z jiné třídy nebo sady rozhraní.  
@@ -28,7 +28,7 @@ Inherits basetypenames
   
 |Termín|Definice|  
 |---|---|  
-|`basetypenames`|Požadováno. Název třídy, ze kterého tato třída odvozená.<br /><br /> -nebo-<br /><br /> Názvy rozhraní, ze kterých tato rozhraní je odvozena. Použijte čárky k oddělení více názvů.|  
+|`basetypenames`|Povinný parametr. Název třídy, ze kterého tato třída odvozená.<br /><br /> -nebo-<br /><br /> Názvy rozhraní, ze kterých tato rozhraní je odvozena. Použijte čárky k oddělení více názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud použijete, `Inherits` příkaz musí být na prvním řádku neprázdné, mimo komentář v definici třídy nebo rozhraní. Měla by odpovídat okamžitě `Class` nebo `Interface` příkazu.  
@@ -63,9 +63,9 @@ Inherits basetypenames
   
  Rozhraní s názvem `thisInterface` teď obsahuje všechny definice v <xref:System.IComparable>, <xref:System.IDisposable>, a <xref:System.IFormattable> rozhraní zděděných členů poskytují v uvedeném pořadí pro konkrétní typ porovnání dvou objektů uvolnění při přidělování prostředků a vyjádření hodnoty objektu jako `String`. Třídu, která implementuje `thisInterface` musíte implementovat každého člena každé základní rozhraní.  
   
-## <a name="see-also"></a>Viz také  
- [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)  
- [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)  
- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
- [Základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)  
- [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+## <a name="see-also"></a>Viz také:
+- [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)
+- [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)
+- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+- [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)

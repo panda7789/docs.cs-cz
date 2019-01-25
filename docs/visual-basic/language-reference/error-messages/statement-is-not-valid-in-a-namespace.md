@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - BC30001
 ms.assetid: 43c1b509-15f9-4e91-bcad-90bcb5f6f191
-ms.openlocfilehash: 9143e84ab17711c08ff9b1eb241fe6b79426d0bb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 98a450fd92993506005268b54798bbc8547a60fc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33594764"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54686306"
 ---
 # <a name="statement-is-not-valid-in-a-namespace"></a>Příkaz není platný v oboru názvů.
-Příkaz nelze vložit na úrovni oboru názvů. Jenom deklarace, které jsou povolené na úrovni oboru názvů jsou modulu, rozhraní, – třída, delegáta, výčet a deklarace struktury.  
+Příkaz nemůže být použit na úrovni oboru názvů. Pouze deklarace povolené na úrovni oboru názvů jsou modulu, rozhraní, třídy, delegát, výčet a deklarace struktur.  
   
  **ID chyby:** BC30001  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Příkaz přesunete do umístění v rámci modulu, třídu, rozhraní, struktura, výčet nebo definice delegáta.  
+-   Příkaz přesuňte do umístění v rámci modulu, třídy, rozhraní, struktury, výčet nebo definice delegáta.  
   
-## <a name="see-also"></a>Viz také  
- [Rozsah v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
- [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
+## <a name="see-also"></a>Viz také:
+- [Obor v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
