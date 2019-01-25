@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9a79133b117f3a718dd84af6c2144a6098bc79f2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2ef46c066512caac93f5f0cb189152d2cac6dada
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407226"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54633840"
 ---
-# <a name="iclrdatatargetgetimagebase-method"></a><span data-ttu-id="fc7f1-102">ICLRDataTarget::GetImageBase – metoda</span><span class="sxs-lookup"><span data-stu-id="fc7f1-102">ICLRDataTarget::GetImageBase Method</span></span>
-<span data-ttu-id="fc7f1-103">Získá základní paměti adresu zadanou bitovou kopii.</span><span class="sxs-lookup"><span data-stu-id="fc7f1-103">Gets the base memory address of the specified image.</span></span>  
+# <a name="iclrdatatargetgetimagebase-method"></a><span data-ttu-id="71417-102">ICLRDataTarget::GetImageBase – metoda</span><span class="sxs-lookup"><span data-stu-id="71417-102">ICLRDataTarget::GetImageBase Method</span></span>
+<span data-ttu-id="71417-103">Získá adresu základní paměti zadané bitové kopie.</span><span class="sxs-lookup"><span data-stu-id="71417-103">Gets the base memory address of the specified image.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fc7f1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fc7f1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="71417-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="71417-104">Syntax</span></span>  
   
 ```  
 HRESULT GetImageBase (  
@@ -36,24 +36,24 @@ HRESULT GetImageBase (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="fc7f1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="fc7f1-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="71417-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="71417-105">Parameters</span></span>  
  `imagePath`  
- <span data-ttu-id="fc7f1-106">[v] Název souboru obrázku, včetně jeho cesty.</span><span class="sxs-lookup"><span data-stu-id="fc7f1-106">[in] The file name of the image, including its path.</span></span>  
+ <span data-ttu-id="71417-106">[in] Název souboru obrázku, včetně jeho cesty.</span><span class="sxs-lookup"><span data-stu-id="71417-106">[in] The file name of the image, including its path.</span></span>  
   
  `baseAddress`  
- <span data-ttu-id="fc7f1-107">[out] Ukazatel na CLRDATA_ADDRESS, uchovávající základní adresu bitové kopie.</span><span class="sxs-lookup"><span data-stu-id="fc7f1-107">[out] A pointer to a CLRDATA_ADDRESS that stores the base address of the image.</span></span>  
+ <span data-ttu-id="71417-107">[out] Ukazatel na CLRDATA_ADDRESS, která ukládá adresu základní Image.</span><span class="sxs-lookup"><span data-stu-id="71417-107">[out] A pointer to a CLRDATA_ADDRESS that stores the base address of the image.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="fc7f1-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fc7f1-108">Remarks</span></span>  
- <span data-ttu-id="fc7f1-109">Název souboru obrázku může nebo nemusí mít cestu.</span><span class="sxs-lookup"><span data-stu-id="fc7f1-109">The image file name may or may not have a path.</span></span> <span data-ttu-id="fc7f1-110">Pokud je cesta zadána, odpovídající se provádí na celou cestu. v ostatních případech porovnávání se provádí pouze na název souboru.</span><span class="sxs-lookup"><span data-stu-id="fc7f1-110">If a path is specified, matching is done on the whole path; otherwise, matching is done only on the file name.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="71417-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="71417-108">Remarks</span></span>  
+ <span data-ttu-id="71417-109">Název souboru obrázku může nebo nemusí mít cestu.</span><span class="sxs-lookup"><span data-stu-id="71417-109">The image file name may or may not have a path.</span></span> <span data-ttu-id="71417-110">Pokud je zadána cesta, odpovídající se provádí na celou cestu. v opačném případě odpovídající se provádí pouze na název souboru.</span><span class="sxs-lookup"><span data-stu-id="71417-110">If a path is specified, matching is done on the whole path; otherwise, matching is done only on the file name.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="fc7f1-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fc7f1-111">Requirements</span></span>  
- <span data-ttu-id="fc7f1-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fc7f1-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="71417-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="71417-111">Requirements</span></span>  
+ <span data-ttu-id="71417-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="71417-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="fc7f1-113">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="fc7f1-113">**Header:** ClrData.idl, ClrData.h</span></span>  
+ <span data-ttu-id="71417-113">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="71417-113">**Header:** ClrData.idl, ClrData.h</span></span>  
   
- <span data-ttu-id="fc7f1-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="fc7f1-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="71417-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="71417-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="fc7f1-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="fc7f1-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="71417-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="71417-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fc7f1-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="fc7f1-116">See Also</span></span>  
- [<span data-ttu-id="fc7f1-117">ICLRDataTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fc7f1-117">ICLRDataTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+## <a name="see-also"></a><span data-ttu-id="71417-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="71417-116">See also</span></span>
+- [<span data-ttu-id="71417-117">ICLRDataTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="71417-117">ICLRDataTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

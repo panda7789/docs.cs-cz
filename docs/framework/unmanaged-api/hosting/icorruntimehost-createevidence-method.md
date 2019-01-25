@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a06d57348cfbdfb8bb57580a48e54e298e27e166
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8270a1ececccea8581b65f51f563e42016d0432a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33438191"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54650681"
 ---
-# <a name="icorruntimehostcreateevidence-method"></a><span data-ttu-id="b490d-102">ICorRuntimeHost::CreateEvidence – metoda</span><span class="sxs-lookup"><span data-stu-id="b490d-102">ICorRuntimeHost::CreateEvidence Method</span></span>
-<span data-ttu-id="b490d-103">Získá ukazatele rozhraní typu <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType>, což umožňuje na hostiteli a poté vytvořit důkaz zabezpečení mají být předány [CreateDomain](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md) nebo [createdomainex –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainex-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="b490d-103">Gets an interface pointer of type <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType>, which allows the host to create security evidence to pass to the [CreateDomain](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md) or [CreateDomainEx](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainex-method.md) method.</span></span>  
+# <a name="icorruntimehostcreateevidence-method"></a><span data-ttu-id="dfa4a-102">ICorRuntimeHost::CreateEvidence – metoda</span><span class="sxs-lookup"><span data-stu-id="dfa4a-102">ICorRuntimeHost::CreateEvidence Method</span></span>
+<span data-ttu-id="dfa4a-103">Získá ukazatel rozhraní typu <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType>, který umožňuje hostiteli vytvořit legitimace zabezpečení k předání do [CreateDomain](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md) nebo [createdomainex –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainex-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="dfa4a-103">Gets an interface pointer of type <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType>, which allows the host to create security evidence to pass to the [CreateDomain](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md) or [CreateDomainEx](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomainex-method.md) method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b490d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b490d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="dfa4a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dfa4a-104">Syntax</span></span>  
   
 ```  
 HRESULT CreateEvidence (  
@@ -35,32 +35,32 @@ HRESULT CreateEvidence (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="b490d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b490d-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="dfa4a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="dfa4a-105">Parameters</span></span>  
  `pEvidence`  
- <span data-ttu-id="b490d-106">[out] Ukazatel rozhraní <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType> instance použitý k vytvoření důkaz zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="b490d-106">[out] A interface pointer to an <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType> instance used to create security evidence.</span></span> <span data-ttu-id="b490d-107">Tento ukazatel je zadán `IUnknown`, takže volající by měly volat obvykle `QueryInterface` na tomto rozhraní k získání ukazatele na <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="b490d-107">This pointer is typed `IUnknown`, so callers should typically call `QueryInterface` on this interface to obtain a pointer to an <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType>.</span></span>  
+ <span data-ttu-id="dfa4a-106">[out] Ukazatel rozhraní <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType> instance použitý k vytvoření legitimace zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="dfa4a-106">[out] A interface pointer to an <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType> instance used to create security evidence.</span></span> <span data-ttu-id="dfa4a-107">Je zadán ukazatel this `IUnknown`, aby volající by měl obvykle zavolat `QueryInterface` na tomto rozhraní pro získání ukazatele na <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="dfa4a-107">This pointer is typed `IUnknown`, so callers should typically call `QueryInterface` on this interface to obtain a pointer to an <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType>.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="b490d-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b490d-108">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="dfa4a-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="dfa4a-108">Return Value</span></span>  
   
-|<span data-ttu-id="b490d-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="b490d-109">HRESULT</span></span>|<span data-ttu-id="b490d-110">Popis</span><span class="sxs-lookup"><span data-stu-id="b490d-110">Description</span></span>|  
+|<span data-ttu-id="dfa4a-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="dfa4a-109">HRESULT</span></span>|<span data-ttu-id="dfa4a-110">Popis</span><span class="sxs-lookup"><span data-stu-id="dfa4a-110">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="b490d-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="b490d-111">S_OK</span></span>|<span data-ttu-id="b490d-112">Operace byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="b490d-112">The operation was successful.</span></span>|  
-|<span data-ttu-id="b490d-113">S_FALSE</span><span class="sxs-lookup"><span data-stu-id="b490d-113">S_FALSE</span></span>|<span data-ttu-id="b490d-114">Operaci se nepodařilo dokončit.</span><span class="sxs-lookup"><span data-stu-id="b490d-114">The operation failed to complete.</span></span>|  
-|<span data-ttu-id="b490d-115">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="b490d-115">E_FAIL</span></span>|<span data-ttu-id="b490d-116">Došlo k neznámé, závažnou chybu.</span><span class="sxs-lookup"><span data-stu-id="b490d-116">An unknown, catastrophic failure occurred.</span></span> <span data-ttu-id="b490d-117">Pokud metoda vrátí E_FAIL, modul CLR (CLR) již není použitelné v procesu.</span><span class="sxs-lookup"><span data-stu-id="b490d-117">If a method returns E_FAIL, the common language runtime (CLR) is no longer usable in the process.</span></span> <span data-ttu-id="b490d-118">Následující volání žádné hostování rozhraní API vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="b490d-118">Subsequent calls to any hosting APIs return HOST_E_CLRNOTAVAILABLE.</span></span>|  
-|<span data-ttu-id="b490d-119">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="b490d-119">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="b490d-120">Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="b490d-120">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="dfa4a-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="dfa4a-111">S_OK</span></span>|<span data-ttu-id="dfa4a-112">Operace byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="dfa4a-112">The operation was successful.</span></span>|  
+|<span data-ttu-id="dfa4a-113">S_FALSE</span><span class="sxs-lookup"><span data-stu-id="dfa4a-113">S_FALSE</span></span>|<span data-ttu-id="dfa4a-114">Operaci se nepodařilo dokončit.</span><span class="sxs-lookup"><span data-stu-id="dfa4a-114">The operation failed to complete.</span></span>|  
+|<span data-ttu-id="dfa4a-115">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="dfa4a-115">E_FAIL</span></span>|<span data-ttu-id="dfa4a-116">Došlo k neznámé, katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="dfa4a-116">An unknown, catastrophic failure occurred.</span></span> <span data-ttu-id="dfa4a-117">Pokud metoda vrátí E_FAIL, modul CLR (CLR) už nejsou použitelné v procesu.</span><span class="sxs-lookup"><span data-stu-id="dfa4a-117">If a method returns E_FAIL, the common language runtime (CLR) is no longer usable in the process.</span></span> <span data-ttu-id="dfa4a-118">Následující volání jakékoli hostitelské rozhraní API vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="dfa4a-118">Subsequent calls to any hosting APIs return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="dfa4a-119">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="dfa4a-119">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="dfa4a-120">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="dfa4a-120">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="b490d-121">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b490d-121">Remarks</span></span>  
- <span data-ttu-id="b490d-122">Tato metoda vrátí prázdnou kolekci, která nelze načíst z nativního kódu.</span><span class="sxs-lookup"><span data-stu-id="b490d-122">This method returns an empty collection that cannot be populated from native code.</span></span> <span data-ttu-id="b490d-123">Měli byste použít <xref:System.Security.Policy.Evidence> metoda místo.</span><span class="sxs-lookup"><span data-stu-id="b490d-123">You should use the <xref:System.Security.Policy.Evidence> method instead.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="dfa4a-121">Poznámky</span><span class="sxs-lookup"><span data-stu-id="dfa4a-121">Remarks</span></span>  
+ <span data-ttu-id="dfa4a-122">Tato metoda vrátí prázdnou kolekci, která nelze naplnit z nativního kódu.</span><span class="sxs-lookup"><span data-stu-id="dfa4a-122">This method returns an empty collection that cannot be populated from native code.</span></span> <span data-ttu-id="dfa4a-123">Měli byste použít <xref:System.Security.Policy.Evidence> metoda místo.</span><span class="sxs-lookup"><span data-stu-id="dfa4a-123">You should use the <xref:System.Security.Policy.Evidence> method instead.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b490d-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b490d-124">Requirements</span></span>  
- <span data-ttu-id="b490d-125">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b490d-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="dfa4a-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="dfa4a-124">Requirements</span></span>  
+ <span data-ttu-id="dfa4a-125">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="dfa4a-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b490d-126">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="b490d-126">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="dfa4a-126">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="dfa4a-126">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="b490d-127">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b490d-127">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="dfa4a-127">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="dfa4a-127">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="b490d-128">**Verze rozhraní .NET framework:** 1.0, 1.1</span><span class="sxs-lookup"><span data-stu-id="b490d-128">**.NET Framework Version:** 1.0, 1.1</span></span>  
+ <span data-ttu-id="dfa4a-128">**Verze rozhraní .NET framework:** 1.0, 1.1</span><span class="sxs-lookup"><span data-stu-id="dfa4a-128">**.NET Framework Version:** 1.0, 1.1</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b490d-129">Viz také</span><span class="sxs-lookup"><span data-stu-id="b490d-129">See Also</span></span>  
- <xref:System._AppDomain>  
- <xref:System.AppDomain>  
- [<span data-ttu-id="b490d-130">ICorRuntimeHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b490d-130">ICorRuntimeHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
+## <a name="see-also"></a><span data-ttu-id="dfa4a-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dfa4a-129">See also</span></span>
+- <xref:System._AppDomain>
+- <xref:System.AppDomain>
+- [<span data-ttu-id="dfa4a-130">ICorRuntimeHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="dfa4a-130">ICorRuntimeHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
