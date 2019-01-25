@@ -11,21 +11,21 @@ helpviewer_keywords:
 ms.assetid: d40fba59-98f9-4783-ae0c-2ebea27ce77b
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: a73c3e8f554d2c78252ca763a620d05c5b494884
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: e51298e86c1b3167f822e060693d0a2ee4193b67
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50192925"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54723469"
 ---
-# <a name="ltcompilersgt-element"></a><span data-ttu-id="3bbdc-102">&lt;Kompilátory&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="3bbdc-102">&lt;compilers&gt; Element</span></span>
-<span data-ttu-id="3bbdc-103">Kontejner pro kompilátor – elementy konfigurace; obsahuje nulu nebo více [ \<kompilátoru >](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) elementy.</span><span class="sxs-lookup"><span data-stu-id="3bbdc-103">Container for compiler configuration elements; contains zero or more [\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) elements.</span></span>  
+# <a name="ltcompilersgt-element"></a><span data-ttu-id="4ffdd-102">&lt;Kompilátory&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="4ffdd-102">&lt;compilers&gt; Element</span></span>
+<span data-ttu-id="4ffdd-103">Kontejner pro kompilátor – elementy konfigurace; obsahuje nulu nebo více [ \<kompilátoru >](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) elementy.</span><span class="sxs-lookup"><span data-stu-id="4ffdd-103">Container for compiler configuration elements; contains zero or more [\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) elements.</span></span>  
   
- <span data-ttu-id="3bbdc-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="3bbdc-104">\<configuration></span></span>  
-<span data-ttu-id="3bbdc-105">\<System.CodeDom ></span><span class="sxs-lookup"><span data-stu-id="3bbdc-105">\<system.codedom></span></span>  
-<span data-ttu-id="3bbdc-106">\<Kompilátory > – Element</span><span class="sxs-lookup"><span data-stu-id="3bbdc-106">\<compilers> Element</span></span>  
+ <span data-ttu-id="4ffdd-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="4ffdd-104">\<configuration></span></span>  
+<span data-ttu-id="4ffdd-105">\<system.codedom></span><span class="sxs-lookup"><span data-stu-id="4ffdd-105">\<system.codedom></span></span>  
+<span data-ttu-id="4ffdd-106">\<Kompilátory > – Element</span><span class="sxs-lookup"><span data-stu-id="4ffdd-106">\<compilers> Element</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3bbdc-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3bbdc-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4ffdd-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4ffdd-107">Syntax</span></span>  
   
 ```xml  
 <compilers>  
@@ -33,35 +33,35 @@ ms.locfileid: "50192925"
 </compilers>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="3bbdc-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="3bbdc-108">Attributes and Elements</span></span>  
- <span data-ttu-id="3bbdc-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="3bbdc-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="4ffdd-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="4ffdd-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="4ffdd-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="4ffdd-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="3bbdc-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="3bbdc-110">Attributes</span></span>  
- <span data-ttu-id="3bbdc-111">Žádné</span><span class="sxs-lookup"><span data-stu-id="3bbdc-111">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="4ffdd-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="4ffdd-110">Attributes</span></span>  
+ <span data-ttu-id="4ffdd-111">Žádné</span><span class="sxs-lookup"><span data-stu-id="4ffdd-111">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="3bbdc-112">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="3bbdc-112">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="4ffdd-112">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="4ffdd-112">Child Elements</span></span>  
   
-|<span data-ttu-id="3bbdc-113">Prvek</span><span class="sxs-lookup"><span data-stu-id="3bbdc-113">Element</span></span>|<span data-ttu-id="3bbdc-114">Popis</span><span class="sxs-lookup"><span data-stu-id="3bbdc-114">Description</span></span>|  
+|<span data-ttu-id="4ffdd-113">Prvek</span><span class="sxs-lookup"><span data-stu-id="4ffdd-113">Element</span></span>|<span data-ttu-id="4ffdd-114">Popis</span><span class="sxs-lookup"><span data-stu-id="4ffdd-114">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="3bbdc-115">\<Kompilátor > – Element</span><span class="sxs-lookup"><span data-stu-id="3bbdc-115">\<compiler> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|<span data-ttu-id="3bbdc-116">Určuje kompilátor – konfigurační atributy pro poskytovatele jazyka.</span><span class="sxs-lookup"><span data-stu-id="3bbdc-116">Specifies the compiler configuration attributes for a language provider.</span></span>|  
+|[<span data-ttu-id="4ffdd-115">\<Kompilátor > – Element</span><span class="sxs-lookup"><span data-stu-id="4ffdd-115">\<compiler> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|<span data-ttu-id="4ffdd-116">Určuje kompilátor – konfigurační atributy pro poskytovatele jazyka.</span><span class="sxs-lookup"><span data-stu-id="4ffdd-116">Specifies the compiler configuration attributes for a language provider.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="3bbdc-117">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="3bbdc-117">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="4ffdd-117">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="4ffdd-117">Parent Elements</span></span>  
   
-|<span data-ttu-id="3bbdc-118">Prvek</span><span class="sxs-lookup"><span data-stu-id="3bbdc-118">Element</span></span>|<span data-ttu-id="3bbdc-119">Popis</span><span class="sxs-lookup"><span data-stu-id="3bbdc-119">Description</span></span>|  
+|<span data-ttu-id="4ffdd-118">Prvek</span><span class="sxs-lookup"><span data-stu-id="4ffdd-118">Element</span></span>|<span data-ttu-id="4ffdd-119">Popis</span><span class="sxs-lookup"><span data-stu-id="4ffdd-119">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="3bbdc-120">\<Konfigurace > – Element</span><span class="sxs-lookup"><span data-stu-id="3bbdc-120">\<configuration> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|<span data-ttu-id="3bbdc-121">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="3bbdc-121">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|[<span data-ttu-id="3bbdc-122">\<system.codedom> Element</span><span class="sxs-lookup"><span data-stu-id="3bbdc-122">\<system.codedom> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|<span data-ttu-id="3bbdc-123">Určuje konfigurační nastavení kompilátoru pro zprostředkovatele dostupných poskytovatelů jazyka.</span><span class="sxs-lookup"><span data-stu-id="3bbdc-123">Specifies compiler configuration settings for available language providers.</span></span>|  
+|[<span data-ttu-id="4ffdd-120">\<Konfigurace > – Element</span><span class="sxs-lookup"><span data-stu-id="4ffdd-120">\<configuration> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|<span data-ttu-id="4ffdd-121">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="4ffdd-121">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|[<span data-ttu-id="4ffdd-122">\<system.codedom> Element</span><span class="sxs-lookup"><span data-stu-id="4ffdd-122">\<system.codedom> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|<span data-ttu-id="4ffdd-123">Určuje konfigurační nastavení kompilátoru pro zprostředkovatele dostupných poskytovatelů jazyka.</span><span class="sxs-lookup"><span data-stu-id="4ffdd-123">Specifies compiler configuration settings for available language providers.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="3bbdc-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3bbdc-124">Remarks</span></span>  
- <span data-ttu-id="3bbdc-125">[ \<Compilers >](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md) element obsahuje konfigurační nastavení kompilátoru pro poskytovatele jazyka v počítači.</span><span class="sxs-lookup"><span data-stu-id="3bbdc-125">The [\<compilers>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md) element contains the compiler configuration settings for language providers on a computer.</span></span> <span data-ttu-id="3bbdc-126">Každý [ \<kompilátoru >](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) prvek určuje kompilátor – konfigurační atributy pro konkrétní jazyk zprostředkovatele.</span><span class="sxs-lookup"><span data-stu-id="3bbdc-126">Each [\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) element specifies the compiler configuration attributes for a specific language provider.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="4ffdd-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4ffdd-124">Remarks</span></span>  
+ <span data-ttu-id="4ffdd-125">[ \<Compilers >](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md) element obsahuje konfigurační nastavení kompilátoru pro poskytovatele jazyka v počítači.</span><span class="sxs-lookup"><span data-stu-id="4ffdd-125">The [\<compilers>](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md) element contains the compiler configuration settings for language providers on a computer.</span></span> <span data-ttu-id="4ffdd-126">Každý [ \<kompilátoru >](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) prvek určuje kompilátor – konfigurační atributy pro konkrétní jazyk zprostředkovatele.</span><span class="sxs-lookup"><span data-stu-id="4ffdd-126">Each [\<compiler>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) element specifies the compiler configuration attributes for a specific language provider.</span></span>  
   
- <span data-ttu-id="3bbdc-127">Rozhraní .NET Framework definuje počáteční kompilátoru a poskytovatele nastavení jazyka v konfiguračním souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="3bbdc-127">The .NET Framework defines the initial compiler and language provider settings in the machine configuration file (Machine.config).</span></span> <span data-ttu-id="3bbdc-128">Vývojářům a dodavatelům kompilátoru můžete přidat nastavení konfigurace pro nové <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> implementace.</span><span class="sxs-lookup"><span data-stu-id="3bbdc-128">Developers and compiler vendors can add configuration settings for a new <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> implementation.</span></span> <span data-ttu-id="3bbdc-129">Použití <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> způsob, jak programově vytvářet výčty zprostředkovatele a kompilátoru konfigurace nastavení jazyka v počítači.</span><span class="sxs-lookup"><span data-stu-id="3bbdc-129">Use the <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> method to programmatically enumerate language provider and compiler configuration settings on a computer.</span></span>  
+ <span data-ttu-id="4ffdd-127">Rozhraní .NET Framework definuje počáteční kompilátoru a poskytovatele nastavení jazyka v konfiguračním souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="4ffdd-127">The .NET Framework defines the initial compiler and language provider settings in the machine configuration file (Machine.config).</span></span> <span data-ttu-id="4ffdd-128">Vývojářům a dodavatelům kompilátoru můžete přidat nastavení konfigurace pro nové <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> implementace.</span><span class="sxs-lookup"><span data-stu-id="4ffdd-128">Developers and compiler vendors can add configuration settings for a new <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> implementation.</span></span> <span data-ttu-id="4ffdd-129">Použití <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> způsob, jak programově vytvářet výčty zprostředkovatele a kompilátoru konfigurace nastavení jazyka v počítači.</span><span class="sxs-lookup"><span data-stu-id="4ffdd-129">Use the <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> method to programmatically enumerate language provider and compiler configuration settings on a computer.</span></span>  
   
-## <a name="configuration-file"></a><span data-ttu-id="3bbdc-130">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="3bbdc-130">Configuration File</span></span>  
- <span data-ttu-id="3bbdc-131">Tento element lze použít v konfiguračním souboru počítače a konfigurační soubor aplikace.</span><span class="sxs-lookup"><span data-stu-id="3bbdc-131">This element can be used in the machine configuration file and the application configuration file.</span></span>  
+## <a name="configuration-file"></a><span data-ttu-id="4ffdd-130">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="4ffdd-130">Configuration File</span></span>  
+ <span data-ttu-id="4ffdd-131">Tento element lze použít v konfiguračním souboru počítače a konfigurační soubor aplikace.</span><span class="sxs-lookup"><span data-stu-id="4ffdd-131">This element can be used in the machine configuration file and the application configuration file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3bbdc-132">Příklad</span><span class="sxs-lookup"><span data-stu-id="3bbdc-132">Example</span></span>  
- <span data-ttu-id="3bbdc-133">Následující příklad ukazuje prvek typické kompilátoru konfigurace.</span><span class="sxs-lookup"><span data-stu-id="3bbdc-133">The following example illustrates a typical compiler configuration element.</span></span>  
+## <a name="example"></a><span data-ttu-id="4ffdd-132">Příklad</span><span class="sxs-lookup"><span data-stu-id="4ffdd-132">Example</span></span>  
+ <span data-ttu-id="4ffdd-133">Následující příklad ukazuje prvek typické kompilátoru konfigurace.</span><span class="sxs-lookup"><span data-stu-id="4ffdd-133">The following example illustrates a typical compiler configuration element.</span></span>  
   
 ```xml  
 <configuration>  
@@ -79,9 +79,9 @@ ms.locfileid: "50192925"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3bbdc-134">Viz také</span><span class="sxs-lookup"><span data-stu-id="3bbdc-134">See Also</span></span>  
-- <xref:System.CodeDom.Compiler.CompilerInfo>  
-- <xref:System.CodeDom.Compiler.CodeDomProvider>  
-- [<span data-ttu-id="3bbdc-135">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="3bbdc-135">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
-- [<span data-ttu-id="3bbdc-136">Schéma nastavení kompilátoru a poskytovatele jazyka</span><span class="sxs-lookup"><span data-stu-id="3bbdc-136">Compiler and Language Provider Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/index.md)  
-- [<span data-ttu-id="3bbdc-137">\<Kompilátor > – Element</span><span class="sxs-lookup"><span data-stu-id="3bbdc-137">\<compiler> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)
+## <a name="see-also"></a><span data-ttu-id="4ffdd-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4ffdd-134">See also</span></span>
+- <xref:System.CodeDom.Compiler.CompilerInfo>
+- <xref:System.CodeDom.Compiler.CodeDomProvider>
+- [<span data-ttu-id="4ffdd-135">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="4ffdd-135">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [<span data-ttu-id="4ffdd-136">Schéma nastavení kompilátoru a poskytovatele jazyka</span><span class="sxs-lookup"><span data-stu-id="4ffdd-136">Compiler and Language Provider Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/index.md)
+- [<span data-ttu-id="4ffdd-137">\<Kompilátor > – Element</span><span class="sxs-lookup"><span data-stu-id="4ffdd-137">\<compiler> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)

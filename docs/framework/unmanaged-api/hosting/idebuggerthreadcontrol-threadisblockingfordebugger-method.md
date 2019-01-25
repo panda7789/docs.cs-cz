@@ -17,35 +17,35 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9766c71c568c9661cf284e9c05eb2dd7634a95aa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aa72c136e98f80df6d2868c447e1c535ae61af06
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33437427"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54739625"
 ---
-# <a name="idebuggerthreadcontrolthreadisblockingfordebugger-method"></a><span data-ttu-id="92350-102">IDebuggerThreadControl::ThreadIsBlockingForDebugger – metoda</span><span class="sxs-lookup"><span data-stu-id="92350-102">IDebuggerThreadControl::ThreadIsBlockingForDebugger Method</span></span>
-<span data-ttu-id="92350-103">Upozorní hostitele, který podproces, který odesílá tento zpětné volání je o blok v rámci služby ladění.</span><span class="sxs-lookup"><span data-stu-id="92350-103">Notifies the host that the thread that is sending this callback is about to block within the debugging services.</span></span>  
+# <a name="idebuggerthreadcontrolthreadisblockingfordebugger-method"></a><span data-ttu-id="417bd-102">IDebuggerThreadControl::ThreadIsBlockingForDebugger – metoda</span><span class="sxs-lookup"><span data-stu-id="417bd-102">IDebuggerThreadControl::ThreadIsBlockingForDebugger Method</span></span>
+<span data-ttu-id="417bd-103">Upozorňuje hostitele, který spočívá v vlákna, která se odesílá toto zpětné volání do bloku v rámci služeb ladění.</span><span class="sxs-lookup"><span data-stu-id="417bd-103">Notifies the host that the thread that is sending this callback is about to block within the debugging services.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="92350-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="92350-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="417bd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="417bd-104">Syntax</span></span>  
   
 ```  
 HRESULT ThreadIsBlockingForDebugger ( );  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="92350-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="92350-105">Remarks</span></span>  
- <span data-ttu-id="92350-106">`ThreadIsBlockingForDebugger` Metoda bude volána vždy v podprocesu modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="92350-106">The `ThreadIsBlockingForDebugger` method will always be called on a runtime thread.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="417bd-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="417bd-105">Remarks</span></span>  
+ <span data-ttu-id="417bd-106">`ThreadIsBlockingForDebugger` Metoda bude volána vždy ve vlákně modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="417bd-106">The `ThreadIsBlockingForDebugger` method will always be called on a runtime thread.</span></span>  
   
- <span data-ttu-id="92350-107">`ThreadIsBlockingForDebugger` Metoda dává hostitele možnost provést další akci zablokuje přístup z více vláken.</span><span class="sxs-lookup"><span data-stu-id="92350-107">The `ThreadIsBlockingForDebugger` method gives the host an opportunity to perform another action while the thread blocks.</span></span>  
+ <span data-ttu-id="417bd-107">`ThreadIsBlockingForDebugger` Metoda poskytuje hostiteli příležitost provést jinou akci při vlákno blokováno.</span><span class="sxs-lookup"><span data-stu-id="417bd-107">The `ThreadIsBlockingForDebugger` method gives the host an opportunity to perform another action while the thread blocks.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="92350-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="92350-108">Requirements</span></span>  
- <span data-ttu-id="92350-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="92350-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="417bd-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="417bd-108">Requirements</span></span>  
+ <span data-ttu-id="417bd-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="417bd-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="92350-110">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="92350-110">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="417bd-110">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="417bd-110">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="92350-111">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="92350-111">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="417bd-111">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="417bd-111">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="92350-112">**NET Framework verze:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="92350-112">**NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="417bd-112">**Verze rozhraní .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="417bd-112">**NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="92350-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="92350-113">See Also</span></span>  
- [<span data-ttu-id="92350-114">IDebuggerThreadControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="92350-114">IDebuggerThreadControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-interface.md)
+## <a name="see-also"></a><span data-ttu-id="417bd-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="417bd-113">See also</span></span>
+- [<span data-ttu-id="417bd-114">IDebuggerThreadControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="417bd-114">IDebuggerThreadControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-interface.md)

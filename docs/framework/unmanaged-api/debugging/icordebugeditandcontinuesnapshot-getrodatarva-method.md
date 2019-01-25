@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3c46e85309f1e6867899a3b0fb123f4a3e535493
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a0fcd03fde49622a8c388bb821549cec2cf3a154
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33411762"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54531012"
 ---
-# <a name="icordebugeditandcontinuesnapshotgetrodatarva-method"></a><span data-ttu-id="f5d9c-102">ICorDebugEditAndContinueSnapshot::GetRoDataRVA – metoda</span><span class="sxs-lookup"><span data-stu-id="f5d9c-102">ICorDebugEditAndContinueSnapshot::GetRoDataRVA Method</span></span>
-<span data-ttu-id="f5d9c-103">`GetRoDataRVA` je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="f5d9c-103">`GetRoDataRVA` is obsolete.</span></span> <span data-ttu-id="f5d9c-104">Tato metoda není volána.</span><span class="sxs-lookup"><span data-stu-id="f5d9c-104">Do not call this method.</span></span>  
+# <a name="icordebugeditandcontinuesnapshotgetrodatarva-method"></a><span data-ttu-id="b17da-102">ICorDebugEditAndContinueSnapshot::GetRoDataRVA – metoda</span><span class="sxs-lookup"><span data-stu-id="b17da-102">ICorDebugEditAndContinueSnapshot::GetRoDataRVA Method</span></span>
+<span data-ttu-id="b17da-103">`GetRoDataRVA` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="b17da-103">`GetRoDataRVA` is obsolete.</span></span> <span data-ttu-id="b17da-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="b17da-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f5d9c-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="f5d9c-105">See Also</span></span>  
- [<span data-ttu-id="f5d9c-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="f5d9c-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="b17da-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b17da-105">See also</span></span>
+- [<span data-ttu-id="b17da-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="b17da-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

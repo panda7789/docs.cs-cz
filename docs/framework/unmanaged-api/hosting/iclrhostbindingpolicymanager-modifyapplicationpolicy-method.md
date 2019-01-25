@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7a221b286ada97c3c03387556cb30ee6ddd2c453
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 45e0099ea60a338f0ea1ef414f4d2fa1c33c9d70
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33436251"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54726881"
 ---
-# <a name="iclrhostbindingpolicymanagermodifyapplicationpolicy-method"></a><span data-ttu-id="d1314-102">ICLRHostBindingPolicyManager::ModifyApplicationPolicy – metoda</span><span class="sxs-lookup"><span data-stu-id="d1314-102">ICLRHostBindingPolicyManager::ModifyApplicationPolicy Method</span></span>
-<span data-ttu-id="d1314-103">Změní zásadu vazby pro zadaného sestavení a vytvoří se nová verze zásad.</span><span class="sxs-lookup"><span data-stu-id="d1314-103">Modifies the binding policy for the specified assembly, and creates a new version of the policy.</span></span>  
+# <a name="iclrhostbindingpolicymanagermodifyapplicationpolicy-method"></a><span data-ttu-id="27369-102">ICLRHostBindingPolicyManager::ModifyApplicationPolicy – metoda</span><span class="sxs-lookup"><span data-stu-id="27369-102">ICLRHostBindingPolicyManager::ModifyApplicationPolicy Method</span></span>
+<span data-ttu-id="27369-103">Změní zásady vazeb pro zadané sestavení a vytvoří se nová verze zásad.</span><span class="sxs-lookup"><span data-stu-id="27369-103">Modifies the binding policy for the specified assembly, and creates a new version of the policy.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d1314-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d1314-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="27369-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="27369-104">Syntax</span></span>  
   
 ```  
 HRESULT  ModifyApplicationPolicy (  
@@ -41,52 +41,52 @@ HRESULT  ModifyApplicationPolicy (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="d1314-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d1314-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="27369-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="27369-105">Parameters</span></span>  
  `pwzSourceAssemblyIdentity`  
- <span data-ttu-id="d1314-106">[v] Identita sestavení, které chcete upravit.</span><span class="sxs-lookup"><span data-stu-id="d1314-106">[in] The identity of the assembly to modify.</span></span>  
+ <span data-ttu-id="27369-106">[in] Identita sestavení změnit.</span><span class="sxs-lookup"><span data-stu-id="27369-106">[in] The identity of the assembly to modify.</span></span>  
   
  `pwzTargetAssemblyIdentity`  
- <span data-ttu-id="d1314-107">[v] Novou identitu upravené sestavení.</span><span class="sxs-lookup"><span data-stu-id="d1314-107">[in] The new identity of the modified assembly.</span></span>  
+ <span data-ttu-id="27369-107">[in] Nové identity upravené sestavení.</span><span class="sxs-lookup"><span data-stu-id="27369-107">[in] The new identity of the modified assembly.</span></span>  
   
  `pbApplicationPolicy`  
- <span data-ttu-id="d1314-108">[v] Ukazatel na vyrovnávací paměť, která obsahuje data zásad vazby pro sestavení, které chcete upravit.</span><span class="sxs-lookup"><span data-stu-id="d1314-108">[in] A pointer to a buffer that contains the binding policy data for the assembly to modify.</span></span>  
+ <span data-ttu-id="27369-108">[in] Ukazatel do vyrovnávací paměti, která obsahuje data zásad vazby pro sestavení, které chcete upravit.</span><span class="sxs-lookup"><span data-stu-id="27369-108">[in] A pointer to a buffer that contains the binding policy data for the assembly to modify.</span></span>  
   
  `cbAppPolicySize`  
- <span data-ttu-id="d1314-109">[v] Velikost vazby zásady, které mají být nahrazeny.</span><span class="sxs-lookup"><span data-stu-id="d1314-109">[in] The size of the binding policy to be replaced.</span></span>  
+ <span data-ttu-id="27369-109">[in] Velikost zásady vazeb, které mají být nahrazeny.</span><span class="sxs-lookup"><span data-stu-id="27369-109">[in] The size of the binding policy to be replaced.</span></span>  
   
  `dwPolicyModifyFlags`  
- <span data-ttu-id="d1314-110">[v] Logická nebo kombinace [EHostBindingPolicyModifyFlags](../../../../docs/framework/unmanaged-api/hosting/ehostbindingpolicymodifyflags-enumeration.md) hodnoty, indikujících řízení přesměrování.</span><span class="sxs-lookup"><span data-stu-id="d1314-110">[in] A logical OR combination of [EHostBindingPolicyModifyFlags](../../../../docs/framework/unmanaged-api/hosting/ehostbindingpolicymodifyflags-enumeration.md) values, indicating control of redirection.</span></span>  
+ <span data-ttu-id="27369-110">[in] Logický OR kombinaci [ehostbindingpolicymodifyflags –](../../../../docs/framework/unmanaged-api/hosting/ehostbindingpolicymodifyflags-enumeration.md) hodnoty určující kontrolu nad přesměrování.</span><span class="sxs-lookup"><span data-stu-id="27369-110">[in] A logical OR combination of [EHostBindingPolicyModifyFlags](../../../../docs/framework/unmanaged-api/hosting/ehostbindingpolicymodifyflags-enumeration.md) values, indicating control of redirection.</span></span>  
   
  `pbNewApplicationPolicy`  
- <span data-ttu-id="d1314-111">[out] Ukazatel na vyrovnávací paměť, která obsahuje nové zásady data vazby.</span><span class="sxs-lookup"><span data-stu-id="d1314-111">[out] A pointer to a buffer that contains the new binding policy data.</span></span>  
+ <span data-ttu-id="27369-111">[out] Ukazatel do vyrovnávací paměti, který obsahuje data nové zásady vazby.</span><span class="sxs-lookup"><span data-stu-id="27369-111">[out] A pointer to a buffer that contains the new binding policy data.</span></span>  
   
  `pcbNewAppPolicySize`  
- <span data-ttu-id="d1314-112">[ve out] Ukazatel na velikost vyrovnávací paměť nového zásad vazby.</span><span class="sxs-lookup"><span data-stu-id="d1314-112">[in, out] A pointer to the size of the new binding policy buffer.</span></span>  
+ <span data-ttu-id="27369-112">[out v] Ukazatel na velikost vyrovnávací paměť nového zásady vazby.</span><span class="sxs-lookup"><span data-stu-id="27369-112">[in, out] A pointer to the size of the new binding policy buffer.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="d1314-113">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d1314-113">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="27369-113">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="27369-113">Return Value</span></span>  
   
-|<span data-ttu-id="d1314-114">HRESULT</span><span class="sxs-lookup"><span data-stu-id="d1314-114">HRESULT</span></span>|<span data-ttu-id="d1314-115">Popis</span><span class="sxs-lookup"><span data-stu-id="d1314-115">Description</span></span>|  
+|<span data-ttu-id="27369-114">HRESULT</span><span class="sxs-lookup"><span data-stu-id="27369-114">HRESULT</span></span>|<span data-ttu-id="27369-115">Popis</span><span class="sxs-lookup"><span data-stu-id="27369-115">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="d1314-116">S_OK</span><span class="sxs-lookup"><span data-stu-id="d1314-116">S_OK</span></span>|<span data-ttu-id="d1314-117">Zásady byl úspěšně upraven.</span><span class="sxs-lookup"><span data-stu-id="d1314-117">The policy was modified successfully.</span></span>|  
-|<span data-ttu-id="d1314-118">E_INVALIDARG</span><span class="sxs-lookup"><span data-stu-id="d1314-118">E_INVALIDARG</span></span>|<span data-ttu-id="d1314-119">`pwzSourceAssemblyIdentity` nebo `pwzTargetAssemblyIdentity` byl odkaz s hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="d1314-119">`pwzSourceAssemblyIdentity` or `pwzTargetAssemblyIdentity` was a null reference.</span></span>|  
-|<span data-ttu-id="d1314-120">ERROR_INSUFFICIENT_BUFFER</span><span class="sxs-lookup"><span data-stu-id="d1314-120">ERROR_INSUFFICIENT_BUFFER</span></span>|<span data-ttu-id="d1314-121">`pbNewApplicationPolicy` je příliš malá.</span><span class="sxs-lookup"><span data-stu-id="d1314-121">`pbNewApplicationPolicy` is too small.</span></span>|  
-|<span data-ttu-id="d1314-122">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="d1314-122">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="d1314-123">Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="d1314-123">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="d1314-124">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="d1314-124">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="d1314-125">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="d1314-125">The call timed out.</span></span>|  
-|<span data-ttu-id="d1314-126">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="d1314-126">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="d1314-127">Volající není vlastníkem zámek.</span><span class="sxs-lookup"><span data-stu-id="d1314-127">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="d1314-128">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="d1314-128">HOST_E_ABANDONED</span></span>|<span data-ttu-id="d1314-129">Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.</span><span class="sxs-lookup"><span data-stu-id="d1314-129">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="d1314-130">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="d1314-130">E_FAIL</span></span>|<span data-ttu-id="d1314-131">Došlo k neznámému závažné selhání.</span><span class="sxs-lookup"><span data-stu-id="d1314-131">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="d1314-132">Po návratu metoda E_FAIL modulu CLR již není použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="d1314-132">After a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="d1314-133">Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="d1314-133">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="27369-116">S_OK</span><span class="sxs-lookup"><span data-stu-id="27369-116">S_OK</span></span>|<span data-ttu-id="27369-117">Tyto zásady se úspěšně změnily.</span><span class="sxs-lookup"><span data-stu-id="27369-117">The policy was modified successfully.</span></span>|  
+|<span data-ttu-id="27369-118">E_INVALIDARG</span><span class="sxs-lookup"><span data-stu-id="27369-118">E_INVALIDARG</span></span>|<span data-ttu-id="27369-119">`pwzSourceAssemblyIdentity` nebo `pwzTargetAssemblyIdentity` byl odkaz s hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="27369-119">`pwzSourceAssemblyIdentity` or `pwzTargetAssemblyIdentity` was a null reference.</span></span>|  
+|<span data-ttu-id="27369-120">ERROR_INSUFFICIENT_BUFFER</span><span class="sxs-lookup"><span data-stu-id="27369-120">ERROR_INSUFFICIENT_BUFFER</span></span>|<span data-ttu-id="27369-121">`pbNewApplicationPolicy` je příliš malá.</span><span class="sxs-lookup"><span data-stu-id="27369-121">`pbNewApplicationPolicy` is too small.</span></span>|  
+|<span data-ttu-id="27369-122">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="27369-122">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="27369-123">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="27369-123">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="27369-124">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="27369-124">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="27369-125">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="27369-125">The call timed out.</span></span>|  
+|<span data-ttu-id="27369-126">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="27369-126">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="27369-127">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="27369-127">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="27369-128">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="27369-128">HOST_E_ABANDONED</span></span>|<span data-ttu-id="27369-129">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="27369-129">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="27369-130">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="27369-130">E_FAIL</span></span>|<span data-ttu-id="27369-131">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="27369-131">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="27369-132">Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="27369-132">After a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="27369-133">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="27369-133">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="d1314-134">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d1314-134">Remarks</span></span>  
- <span data-ttu-id="d1314-135">`ModifyApplicationPolicy` Nelze volat metodu dvakrát.</span><span class="sxs-lookup"><span data-stu-id="d1314-135">The `ModifyApplicationPolicy` method can be called twice.</span></span> <span data-ttu-id="d1314-136">Prvním volání musí zadat hodnotu null pro `pbNewApplicationPolicy` parametr.</span><span class="sxs-lookup"><span data-stu-id="d1314-136">The first call should supply a null value for the `pbNewApplicationPolicy` parameter.</span></span> <span data-ttu-id="d1314-137">Toto volání se vrátí hodnotou potřebné pro `pcbNewAppPolicySize`.</span><span class="sxs-lookup"><span data-stu-id="d1314-137">This call will return with the necessary value for `pcbNewAppPolicySize`.</span></span> <span data-ttu-id="d1314-138">Druhé volání musí zadat tuto hodnotu pro `pcbNewAppPolicySize`a přejděte do vyrovnávací paměti této velikosti pro `pbNewApplicationPolicy`.</span><span class="sxs-lookup"><span data-stu-id="d1314-138">The second call should supply this value for `pcbNewAppPolicySize`, and point to a buffer of that size for `pbNewApplicationPolicy`.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="27369-134">Poznámky</span><span class="sxs-lookup"><span data-stu-id="27369-134">Remarks</span></span>  
+ <span data-ttu-id="27369-135">`ModifyApplicationPolicy` Metodu lze volat dvakrát.</span><span class="sxs-lookup"><span data-stu-id="27369-135">The `ModifyApplicationPolicy` method can be called twice.</span></span> <span data-ttu-id="27369-136">První volání by mělo nabízet pro hodnotu null `pbNewApplicationPolicy` parametru.</span><span class="sxs-lookup"><span data-stu-id="27369-136">The first call should supply a null value for the `pbNewApplicationPolicy` parameter.</span></span> <span data-ttu-id="27369-137">Toto volání vrátí hodnotou nezbytné pro `pcbNewAppPolicySize`.</span><span class="sxs-lookup"><span data-stu-id="27369-137">This call will return with the necessary value for `pcbNewAppPolicySize`.</span></span> <span data-ttu-id="27369-138">Druhé volání by mělo nabízet tuto hodnotu pro `pcbNewAppPolicySize`a přejděte do vyrovnávací paměti, že velikosti pro `pbNewApplicationPolicy`.</span><span class="sxs-lookup"><span data-stu-id="27369-138">The second call should supply this value for `pcbNewAppPolicySize`, and point to a buffer of that size for `pbNewApplicationPolicy`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d1314-139">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d1314-139">Requirements</span></span>  
- <span data-ttu-id="d1314-140">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d1314-140">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="27369-139">Požadavky</span><span class="sxs-lookup"><span data-stu-id="27369-139">Requirements</span></span>  
+ <span data-ttu-id="27369-140">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="27369-140">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d1314-141">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="d1314-141">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="27369-141">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="27369-141">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="d1314-142">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="d1314-142">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="27369-142">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="27369-142">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="d1314-143">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d1314-143">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="27369-143">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="27369-143">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d1314-144">Viz také</span><span class="sxs-lookup"><span data-stu-id="d1314-144">See Also</span></span>  
- [<span data-ttu-id="d1314-145">ICLRHostBindingPolicyManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d1314-145">ICLRHostBindingPolicyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md)
+## <a name="see-also"></a><span data-ttu-id="27369-144">Viz také:</span><span class="sxs-lookup"><span data-stu-id="27369-144">See also</span></span>
+- [<span data-ttu-id="27369-145">ICLRHostBindingPolicyManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="27369-145">ICLRHostBindingPolicyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md)

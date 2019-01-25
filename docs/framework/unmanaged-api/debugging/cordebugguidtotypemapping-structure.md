@@ -18,17 +18,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c803a805da605bd52fd50eb1e292c0e277143d7a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 49290a37ca7ea101e3c8b458a5daa4995cb3beee
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405256"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54610042"
 ---
-# <a name="cordebugguidtotypemapping-structure"></a><span data-ttu-id="6dc09-102">CorDebugGuidToTypeMapping – struktura</span><span class="sxs-lookup"><span data-stu-id="6dc09-102">CorDebugGuidToTypeMapping Structure</span></span>
-<span data-ttu-id="6dc09-103">Mapy [!INCLUDE[wrt](../../../../includes/wrt-md.md)] identifikátor GUID do její odpovídající ICorDebugType objektu.</span><span class="sxs-lookup"><span data-stu-id="6dc09-103">Maps a [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID to its corresponding ICorDebugType object.</span></span>  
+# <a name="cordebugguidtotypemapping-structure"></a><span data-ttu-id="c6900-102">CorDebugGuidToTypeMapping – struktura</span><span class="sxs-lookup"><span data-stu-id="c6900-102">CorDebugGuidToTypeMapping Structure</span></span>
+<span data-ttu-id="c6900-103">Mapy [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID na jeho odpovídající objekt ICorDebugType.</span><span class="sxs-lookup"><span data-stu-id="c6900-103">Maps a [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID to its corresponding ICorDebugType object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6dc09-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6dc09-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c6900-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c6900-104">Syntax</span></span>  
   
 ```cpp
 typedef struct CorDebugGuidToTypeMapping {  
@@ -37,22 +37,22 @@ typedef struct CorDebugGuidToTypeMapping {
 } CorDebugGuidToTypeMapping;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="6dc09-105">Členové</span><span class="sxs-lookup"><span data-stu-id="6dc09-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="c6900-105">Členové</span><span class="sxs-lookup"><span data-stu-id="c6900-105">Members</span></span>  
   
-|<span data-ttu-id="6dc09-106">Člen</span><span class="sxs-lookup"><span data-stu-id="6dc09-106">Member</span></span>|<span data-ttu-id="6dc09-107">Popis</span><span class="sxs-lookup"><span data-stu-id="6dc09-107">Description</span></span>|  
+|<span data-ttu-id="c6900-106">Člen</span><span class="sxs-lookup"><span data-stu-id="c6900-106">Member</span></span>|<span data-ttu-id="c6900-107">Popis</span><span class="sxs-lookup"><span data-stu-id="c6900-107">Description</span></span>|  
 |------------|-----------------|  
-|`iid`|<span data-ttu-id="6dc09-108">Identifikátor GUID uložená v mezipaměti [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typu.</span><span class="sxs-lookup"><span data-stu-id="6dc09-108">The GUID of the cached [!INCLUDE[wrt](../../../../includes/wrt-md.md)] type.</span></span>|  
-|`pType`|<span data-ttu-id="6dc09-109">Ukazatel na ICorDebugType objektu, který obsahuje informace o mezipaměti typu.</span><span class="sxs-lookup"><span data-stu-id="6dc09-109">A pointer to an ICorDebugType object that provides information about the cached type.</span></span>|  
+|`iid`|<span data-ttu-id="c6900-108">Identifikátor GUID v mezipaměti [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typu.</span><span class="sxs-lookup"><span data-stu-id="c6900-108">The GUID of the cached [!INCLUDE[wrt](../../../../includes/wrt-md.md)] type.</span></span>|  
+|`pType`|<span data-ttu-id="c6900-109">Ukazatel na objekt ICorDebugType, který poskytuje informace o typu v mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="c6900-109">A pointer to an ICorDebugType object that provides information about the cached type.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="6dc09-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6dc09-110">Requirements</span></span>  
- <span data-ttu-id="6dc09-111">**Platformy:** [!INCLUDE[wrt](../../../../includes/wrt-md.md)].</span><span class="sxs-lookup"><span data-stu-id="6dc09-111">**Platforms:** [!INCLUDE[wrt](../../../../includes/wrt-md.md)].</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c6900-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c6900-110">Requirements</span></span>  
+ <span data-ttu-id="c6900-111">**Platformy:** [!INCLUDE[wrt](../../../../includes/wrt-md.md)].</span><span class="sxs-lookup"><span data-stu-id="c6900-111">**Platforms:** [!INCLUDE[wrt](../../../../includes/wrt-md.md)].</span></span>  
   
- <span data-ttu-id="6dc09-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="6dc09-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="c6900-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c6900-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="6dc09-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6dc09-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c6900-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c6900-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="6dc09-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6dc09-114">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="c6900-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c6900-114">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6dc09-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="6dc09-115">See Also</span></span>  
- [<span data-ttu-id="6dc09-116">Struktury pro ladění</span><span class="sxs-lookup"><span data-stu-id="6dc09-116">Debugging Structures</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
- [<span data-ttu-id="6dc09-117">Ladění</span><span class="sxs-lookup"><span data-stu-id="6dc09-117">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a><span data-ttu-id="c6900-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c6900-115">See also</span></span>
+- [<span data-ttu-id="c6900-116">Struktury pro ladění</span><span class="sxs-lookup"><span data-stu-id="c6900-116">Debugging Structures</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [<span data-ttu-id="c6900-117">Ladění</span><span class="sxs-lookup"><span data-stu-id="c6900-117">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

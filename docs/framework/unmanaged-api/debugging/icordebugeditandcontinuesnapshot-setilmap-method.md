@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 22e35f06cfe5175ef3666dd5466d79384b17f2f2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cfe71abfa97a3773c8ff50c0f908d48681ebdc8c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33411655"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54680345"
 ---
-# <a name="icordebugeditandcontinuesnapshotsetilmap-method"></a><span data-ttu-id="ede8f-102">ICorDebugEditAndContinueSnapshot::SetILMap – metoda</span><span class="sxs-lookup"><span data-stu-id="ede8f-102">ICorDebugEditAndContinueSnapshot::SetILMap Method</span></span>
-<span data-ttu-id="ede8f-103">`SetILMap` je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="ede8f-103">`SetILMap` is obsolete.</span></span> <span data-ttu-id="ede8f-104">Tato metoda není volána.</span><span class="sxs-lookup"><span data-stu-id="ede8f-104">Do not call this method.</span></span>  
+# <a name="icordebugeditandcontinuesnapshotsetilmap-method"></a><span data-ttu-id="5d3b8-102">ICorDebugEditAndContinueSnapshot::SetILMap – metoda</span><span class="sxs-lookup"><span data-stu-id="5d3b8-102">ICorDebugEditAndContinueSnapshot::SetILMap Method</span></span>
+<span data-ttu-id="5d3b8-103">`SetILMap` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="5d3b8-103">`SetILMap` is obsolete.</span></span> <span data-ttu-id="5d3b8-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="5d3b8-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ede8f-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="ede8f-105">See Also</span></span>  
- [<span data-ttu-id="ede8f-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="ede8f-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="5d3b8-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5d3b8-105">See also</span></span>
+- [<span data-ttu-id="5d3b8-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="5d3b8-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
