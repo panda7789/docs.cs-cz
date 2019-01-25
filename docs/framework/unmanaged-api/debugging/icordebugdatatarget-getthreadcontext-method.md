@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ab2fbf6bb08a33158ea450f0f19eca50e280d8c6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 71d267eedf621a11f8ad21cc7148e1810955521c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412877"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54713428"
 ---
-# <a name="icordebugdatatargetgetthreadcontext-method"></a><span data-ttu-id="db8d1-102">ICorDebugDataTarget::GetThreadContext – metoda</span><span class="sxs-lookup"><span data-stu-id="db8d1-102">ICorDebugDataTarget::GetThreadContext Method</span></span>
-<span data-ttu-id="db8d1-103">Vrátí aktuální vlákno kontext pro zadaný vlákno.</span><span class="sxs-lookup"><span data-stu-id="db8d1-103">Returns the current thread context for the specified thread.</span></span>  
+# <a name="icordebugdatatargetgetthreadcontext-method"></a><span data-ttu-id="32788-102">ICorDebugDataTarget::GetThreadContext – metoda</span><span class="sxs-lookup"><span data-stu-id="32788-102">ICorDebugDataTarget::GetThreadContext Method</span></span>
+<span data-ttu-id="32788-103">Vrátí kontext aktuálního vlákna pro zadaný podproces.</span><span class="sxs-lookup"><span data-stu-id="32788-103">Returns the current thread context for the specified thread.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="db8d1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="db8d1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="32788-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="32788-104">Syntax</span></span>  
   
 ```  
 HRESULT GetThreadContext(  
@@ -37,32 +37,32 @@ HRESULT GetThreadContext(
        [out, size_is(contextSize)] BYTE * pContext);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="db8d1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="db8d1-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="32788-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="32788-105">Parameters</span></span>  
  `dwThreadID`  
- <span data-ttu-id="db8d1-106">[v] Identifikátor vlákno, jehož kontext je mají být načteny.</span><span class="sxs-lookup"><span data-stu-id="db8d1-106">[in] The identifier of the thread whose context is to be retrieved.</span></span> <span data-ttu-id="db8d1-107">Identifikátor je definována v operačním systému.</span><span class="sxs-lookup"><span data-stu-id="db8d1-107">The identifier is defined by the operating system.</span></span>  
+ <span data-ttu-id="32788-106">[in] Identifikátor vlákna, jehož rámci má být načtena.</span><span class="sxs-lookup"><span data-stu-id="32788-106">[in] The identifier of the thread whose context is to be retrieved.</span></span> <span data-ttu-id="32788-107">Identifikátor je definován v operačním systému.</span><span class="sxs-lookup"><span data-stu-id="32788-107">The identifier is defined by the operating system.</span></span>  
   
  `contextFlags`  
- <span data-ttu-id="db8d1-108">[v] Bitová kombinace příznaky závislé na platformy, které označují, které části kontextu byste si měli přečíst.</span><span class="sxs-lookup"><span data-stu-id="db8d1-108">[in] A bitwise combination of platform-dependent flags that indicate which portions of the context should be read.</span></span>  
+ <span data-ttu-id="32788-108">[in] Bitová kombinace příznaků závislého na platformě, které označují, které části kontextu byste si měli přečíst.</span><span class="sxs-lookup"><span data-stu-id="32788-108">[in] A bitwise combination of platform-dependent flags that indicate which portions of the context should be read.</span></span>  
   
  `contextSize`  
- <span data-ttu-id="db8d1-109">[v] Velikost `pContext`.</span><span class="sxs-lookup"><span data-stu-id="db8d1-109">[in] The size of `pContext`.</span></span>  
+ <span data-ttu-id="32788-109">[in] Velikost `pContext`.</span><span class="sxs-lookup"><span data-stu-id="32788-109">[in] The size of `pContext`.</span></span>  
   
  `pContext`  
- <span data-ttu-id="db8d1-110">[out] Vyrovnávací paměť, kde bude uložena kontext přístup z více vláken.</span><span class="sxs-lookup"><span data-stu-id="db8d1-110">[out] The buffer where the thread context will be stored.</span></span>  
+ <span data-ttu-id="32788-110">[out] Vyrovnávací paměť, kam se má kontext vlákna uložit.</span><span class="sxs-lookup"><span data-stu-id="32788-110">[out] The buffer where the thread context will be stored.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="db8d1-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="db8d1-111">Remarks</span></span>  
- <span data-ttu-id="db8d1-112">U platforem Windows `pContext` musí být `CONTEXT` struktury (definovanou v souboru WinNT.h), který je vhodný pro typ počítače určeného [icordebugdatatarget::getplatform –](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="db8d1-112">On Windows platforms, `pContext` must be a `CONTEXT` structure (defined in WinNT.h) that is appropriate for the machine type specified by the [ICorDebugDataTarget::GetPlatform](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) method.</span></span> <span data-ttu-id="db8d1-113">`contextFlags` musí mít stejné hodnoty jako `ContextFlags` pole z `CONTEXT` struktura.</span><span class="sxs-lookup"><span data-stu-id="db8d1-113">`contextFlags` must have the same values as the `ContextFlags` field of the `CONTEXT` structure.</span></span> <span data-ttu-id="db8d1-114">`CONTEXT` Struktura je specifické pro procesor, naleznete v souboru WinNT.h souboru podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="db8d1-114">The `CONTEXT` structure is processor-specific; refer to the WinNT.h file for details.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="32788-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="32788-111">Remarks</span></span>  
+ <span data-ttu-id="32788-112">Na platformách Windows `pContext` musí být `CONTEXT` strukturu (definované v souboru WinNT.h), který je vhodný pro typ počítače určené [icordebugdatatarget::getplatform –](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="32788-112">On Windows platforms, `pContext` must be a `CONTEXT` structure (defined in WinNT.h) that is appropriate for the machine type specified by the [ICorDebugDataTarget::GetPlatform](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) method.</span></span> <span data-ttu-id="32788-113">`contextFlags` musí mít stejné hodnoty jako `ContextFlags` pole `CONTEXT` struktury.</span><span class="sxs-lookup"><span data-stu-id="32788-113">`contextFlags` must have the same values as the `ContextFlags` field of the `CONTEXT` structure.</span></span> <span data-ttu-id="32788-114">`CONTEXT` Struktura je specifické pro procesor, naleznete v souboru WinNT.h souboru podrobnosti.</span><span class="sxs-lookup"><span data-stu-id="32788-114">The `CONTEXT` structure is processor-specific; refer to the WinNT.h file for details.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="db8d1-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="db8d1-115">Requirements</span></span>  
- <span data-ttu-id="db8d1-116">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="db8d1-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="32788-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="32788-115">Requirements</span></span>  
+ <span data-ttu-id="32788-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="32788-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="db8d1-117">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="db8d1-117">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="32788-117">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="32788-117">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="db8d1-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="db8d1-118">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="32788-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="32788-118">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="db8d1-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="db8d1-119">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="32788-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="32788-119">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="db8d1-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="db8d1-120">See Also</span></span>  
- [<span data-ttu-id="db8d1-121">ICorDebugDataTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="db8d1-121">ICorDebugDataTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md)  
- [<span data-ttu-id="db8d1-122">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="db8d1-122">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [<span data-ttu-id="db8d1-123">Ladění</span><span class="sxs-lookup"><span data-stu-id="db8d1-123">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a><span data-ttu-id="32788-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="32788-120">See also</span></span>
+- [<span data-ttu-id="32788-121">ICorDebugDataTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="32788-121">ICorDebugDataTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md)
+- [<span data-ttu-id="32788-122">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="32788-122">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="32788-123">Ladění</span><span class="sxs-lookup"><span data-stu-id="32788-123">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

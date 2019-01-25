@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9e8aa71a79bee45d5a8e1f3448c781e6ba1ec605
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e1e97b8df2ad81f91cd7250afbe4c5cc544ca6be
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33414135"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54702246"
 ---
-# <a name="icordebugmanagedcallbackeditandcontinueremap-method"></a><span data-ttu-id="af240-102">ICorDebugManagedCallback::EditAndContinueRemap – metoda</span><span class="sxs-lookup"><span data-stu-id="af240-102">ICorDebugManagedCallback::EditAndContinueRemap Method</span></span>
-<span data-ttu-id="af240-103">Tato metoda je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="af240-103">This method has been deprecated.</span></span> <span data-ttu-id="af240-104">Upozorní ladicího programu, přemapování událostí byl odeslán do integrované vývojové prostředí (IDE).</span><span class="sxs-lookup"><span data-stu-id="af240-104">It notifies the debugger that a remap event has been sent to the integrated development environment (IDE).</span></span>  
+# <a name="icordebugmanagedcallbackeditandcontinueremap-method"></a><span data-ttu-id="3d1dd-102">ICorDebugManagedCallback::EditAndContinueRemap – metoda</span><span class="sxs-lookup"><span data-stu-id="3d1dd-102">ICorDebugManagedCallback::EditAndContinueRemap Method</span></span>
+<span data-ttu-id="3d1dd-103">Tato metoda je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="3d1dd-103">This method has been deprecated.</span></span> <span data-ttu-id="3d1dd-104">Upozorní ladicího programu, že přemapování události odeslala do integrovaného vývojového prostředí (IDE).</span><span class="sxs-lookup"><span data-stu-id="3d1dd-104">It notifies the debugger that a remap event has been sent to the integrated development environment (IDE).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="af240-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="af240-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3d1dd-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3d1dd-105">Syntax</span></span>  
   
 ```  
 HRESULT EditAndContinueRemap (  
@@ -38,17 +38,17 @@ HRESULT EditAndContinueRemap (
 );  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="af240-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="af240-106">Remarks</span></span>  
- <span data-ttu-id="af240-107">`EditAndContinueRemap` Metoda je volána, když má došlo k pokusu o spuštění kódu v původní verzi aktualizované funkce.</span><span class="sxs-lookup"><span data-stu-id="af240-107">The `EditAndContinueRemap` method is called when the execution of the code in an old version of an updated function has been attempted.</span></span> <span data-ttu-id="af240-108">Běžné volání modulu runtime jazyka `EditAndContinueRemap` metodu pro odeslání události přemapování do prostředí IDE.</span><span class="sxs-lookup"><span data-stu-id="af240-108">The common language runtime calls the `EditAndContinueRemap` method to send a remap event to the IDE.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="3d1dd-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3d1dd-106">Remarks</span></span>  
+ <span data-ttu-id="3d1dd-107">`EditAndContinueRemap` Metoda se volá, když byl pokus o spuštění kódu v původní verzi aktualizované funkce.</span><span class="sxs-lookup"><span data-stu-id="3d1dd-107">The `EditAndContinueRemap` method is called when the execution of the code in an old version of an updated function has been attempted.</span></span> <span data-ttu-id="3d1dd-108">Common language runtime zavolá `EditAndContinueRemap` metodu pro odeslání události přemapování do integrovaného vývojového prostředí.</span><span class="sxs-lookup"><span data-stu-id="3d1dd-108">The common language runtime calls the `EditAndContinueRemap` method to send a remap event to the IDE.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="af240-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="af240-109">Requirements</span></span>  
- <span data-ttu-id="af240-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="af240-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3d1dd-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3d1dd-109">Requirements</span></span>  
+ <span data-ttu-id="3d1dd-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3d1dd-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="af240-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="af240-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="3d1dd-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="3d1dd-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="af240-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="af240-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="3d1dd-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="3d1dd-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="af240-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="af240-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="3d1dd-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3d1dd-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="af240-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="af240-114">See Also</span></span>  
- [<span data-ttu-id="af240-115">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="af240-115">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a><span data-ttu-id="3d1dd-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3d1dd-114">See also</span></span>
+- [<span data-ttu-id="3d1dd-115">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3d1dd-115">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

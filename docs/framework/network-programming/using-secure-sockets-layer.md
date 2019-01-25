@@ -15,25 +15,25 @@ helpviewer_keywords:
 - receiving data, Secure Sockets Layer
 - Internet, Secure Sockets Layer
 ms.assetid: 6e4289e6-d1b7-4e82-ab0d-e83e3b6063ed
-ms.openlocfilehash: 41baeb9724d142bb860e51fa3ee84fb6c3f6261e
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 5d095d4cd6d8ee204b6d05a7674dee67c35e46c9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188687"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54694917"
 ---
-# <a name="using-secure-sockets-layer"></a><span data-ttu-id="eedf3-102">Pomocí zabezpečeného Sockets Layer</span><span class="sxs-lookup"><span data-stu-id="eedf3-102">Using Secure Sockets Layer</span></span>
-<span data-ttu-id="eedf3-103"><xref:System.Net> Třídy použít k šifrování připojení pro několik síťových protokolů vrstvy SSL (Secure Sockets).</span><span class="sxs-lookup"><span data-stu-id="eedf3-103">The <xref:System.Net> classes use the Secure Sockets Layer (SSL) to encrypt the connection for several network protocols.</span></span>  
+# <a name="using-secure-sockets-layer"></a><span data-ttu-id="d1319-102">Pomocí zabezpečeného Sockets Layer</span><span class="sxs-lookup"><span data-stu-id="d1319-102">Using Secure Sockets Layer</span></span>
+<span data-ttu-id="d1319-103"><xref:System.Net> Třídy použít k šifrování připojení pro několik síťových protokolů vrstvy SSL (Secure Sockets).</span><span class="sxs-lookup"><span data-stu-id="d1319-103">The <xref:System.Net> classes use the Secure Sockets Layer (SSL) to encrypt the connection for several network protocols.</span></span>  
   
- <span data-ttu-id="eedf3-104">Pro připojení prostřednictvím protokolu http <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy používat protokol SSL ke komunikaci s weboví hostitelé, které podporují protokol SSL.</span><span class="sxs-lookup"><span data-stu-id="eedf3-104">For http connections, the <xref:System.Net.WebRequest> and <xref:System.Net.WebResponse> classes use SSL to communicate with web hosts that support SSL.</span></span> <span data-ttu-id="eedf3-105">Provádí rozhodnutí pro použití protokolu SSL <xref:System.Net.WebRequest> třídy založené na identifikátor URI se klíči přiřadí.</span><span class="sxs-lookup"><span data-stu-id="eedf3-105">The decision to use SSL is made by the <xref:System.Net.WebRequest> class, based on the URI it is given.</span></span> <span data-ttu-id="eedf3-106">Pokud identifikátor URI začíná řetězcem "https:", se používá protokol SSL; Pokud identifikátor URI začíná řetězcem "http:", se používá s nešifrovaným připojením.</span><span class="sxs-lookup"><span data-stu-id="eedf3-106">If the URI begins with "https:", SSL is used; if the URI begins with "http:", an unencrypted connection is used.</span></span>  
+ <span data-ttu-id="d1319-104">Pro připojení prostřednictvím protokolu http <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy používat protokol SSL ke komunikaci s weboví hostitelé, které podporují protokol SSL.</span><span class="sxs-lookup"><span data-stu-id="d1319-104">For http connections, the <xref:System.Net.WebRequest> and <xref:System.Net.WebResponse> classes use SSL to communicate with web hosts that support SSL.</span></span> <span data-ttu-id="d1319-105">Provádí rozhodnutí pro použití protokolu SSL <xref:System.Net.WebRequest> třídy založené na identifikátor URI se klíči přiřadí.</span><span class="sxs-lookup"><span data-stu-id="d1319-105">The decision to use SSL is made by the <xref:System.Net.WebRequest> class, based on the URI it is given.</span></span> <span data-ttu-id="d1319-106">Pokud identifikátor URI začíná řetězcem "https:", se používá protokol SSL; Pokud identifikátor URI začíná řetězcem "http:", se používá s nešifrovaným připojením.</span><span class="sxs-lookup"><span data-stu-id="d1319-106">If the URI begins with "https:", SSL is used; if the URI begins with "http:", an unencrypted connection is used.</span></span>  
   
- <span data-ttu-id="eedf3-107">Chcete-li používat protokol SSL pomocí protokolu FTP (File Transfer), nastavte <xref:System.Net.FtpWebRequest.EnableSsl> vlastnost na hodnotu true před voláním <xref:System.Net.FtpWebRequest.GetResponse>.</span><span class="sxs-lookup"><span data-stu-id="eedf3-107">To use SSL with File Transfer Protocol (FTP), set the <xref:System.Net.FtpWebRequest.EnableSsl> property to true prior to calling <xref:System.Net.FtpWebRequest.GetResponse>.</span></span> <span data-ttu-id="eedf3-108">Podobně pro použití protokolu SSL s přenosu protokolu SMTP (Simple Mail), nastavte <xref:System.Net.Mail.SmtpClient.EnableSsl> vlastnost na hodnotu true, před odesláním e-mailu.</span><span class="sxs-lookup"><span data-stu-id="eedf3-108">Similarly, to use SSL with Simple Mail Transport Protocol (SMTP), set the <xref:System.Net.Mail.SmtpClient.EnableSsl> property to true prior to sending the email.</span></span>  
+ <span data-ttu-id="d1319-107">Chcete-li používat protokol SSL pomocí protokolu FTP (File Transfer), nastavte <xref:System.Net.FtpWebRequest.EnableSsl> vlastnost na hodnotu true před voláním <xref:System.Net.FtpWebRequest.GetResponse>.</span><span class="sxs-lookup"><span data-stu-id="d1319-107">To use SSL with File Transfer Protocol (FTP), set the <xref:System.Net.FtpWebRequest.EnableSsl> property to true prior to calling <xref:System.Net.FtpWebRequest.GetResponse>.</span></span> <span data-ttu-id="d1319-108">Podobně pro použití protokolu SSL s přenosu protokolu SMTP (Simple Mail), nastavte <xref:System.Net.Mail.SmtpClient.EnableSsl> vlastnost na hodnotu true, před odesláním e-mailu.</span><span class="sxs-lookup"><span data-stu-id="d1319-108">Similarly, to use SSL with Simple Mail Transport Protocol (SMTP), set the <xref:System.Net.Mail.SmtpClient.EnableSsl> property to true prior to sending the email.</span></span>  
   
- <span data-ttu-id="eedf3-109"><xref:System.Net.Security.SslStream> Třída poskytuje abstrakce založené na datový proud pro protokol SSL a nabízí mnoho způsobů, jak konfigurovat metodu handshake SSL.</span><span class="sxs-lookup"><span data-stu-id="eedf3-109">The <xref:System.Net.Security.SslStream> class provides a stream-based abstraction for SSL, and offers many ways to configure the SSL handshake.</span></span>  
+ <span data-ttu-id="d1319-109"><xref:System.Net.Security.SslStream> Třída poskytuje abstrakce založené na datový proud pro protokol SSL a nabízí mnoho způsobů, jak konfigurovat metodu handshake SSL.</span><span class="sxs-lookup"><span data-stu-id="d1319-109">The <xref:System.Net.Security.SslStream> class provides a stream-based abstraction for SSL, and offers many ways to configure the SSL handshake.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="eedf3-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="eedf3-110">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="d1319-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="d1319-110">Example</span></span>  
   
-### <a name="code"></a><span data-ttu-id="eedf3-111">Kód</span><span class="sxs-lookup"><span data-stu-id="eedf3-111">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="d1319-111">Kód</span><span class="sxs-lookup"><span data-stu-id="d1319-111">Code</span></span>  
   
 ```vb  
 Dim MyURI As String = "https://www.contoso.com/"  
@@ -57,12 +57,12 @@ request.Method = WebRequestMethods.Ftp.DeleteFile;
 FtpWebResponse response = (FtpWebResponse)request.GetResponse();  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="eedf3-112">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="eedf3-112">Compiling the Code</span></span>  
- <span data-ttu-id="eedf3-113">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="eedf3-113">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="d1319-112">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="d1319-112">Compiling the Code</span></span>  
+ <span data-ttu-id="d1319-113">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="d1319-113">This example requires:</span></span>  
   
--   <span data-ttu-id="eedf3-114">Odkazy **System.Net** oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="eedf3-114">References to the **System.Net** namespace.</span></span>  
+-   <span data-ttu-id="d1319-114">Odkazy **System.Net** oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="d1319-114">References to the **System.Net** namespace.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="eedf3-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="eedf3-115">See Also</span></span>  
- [<span data-ttu-id="eedf3-116">Zabezpečení v síťovém programování</span><span class="sxs-lookup"><span data-stu-id="eedf3-116">Security in Network Programming</span></span>](../../../docs/framework/network-programming/security-in-network-programming.md)  
- [<span data-ttu-id="eedf3-117">Síťové programování v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="eedf3-117">Network Programming in the .NET Framework</span></span>](../../../docs/framework/network-programming/index.md)  
- [<span data-ttu-id="eedf3-118">Výběr a ověření certifikátu</span><span class="sxs-lookup"><span data-stu-id="eedf3-118">Certificate Selection and Validation</span></span>](../../../docs/framework/network-programming/certificate-selection-and-validation.md)
+## <a name="see-also"></a><span data-ttu-id="d1319-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d1319-115">See also</span></span>
+- [<span data-ttu-id="d1319-116">Zabezpečení v síťovém programování</span><span class="sxs-lookup"><span data-stu-id="d1319-116">Security in Network Programming</span></span>](../../../docs/framework/network-programming/security-in-network-programming.md)
+- [<span data-ttu-id="d1319-117">Síťové programování v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="d1319-117">Network Programming in the .NET Framework</span></span>](../../../docs/framework/network-programming/index.md)
+- [<span data-ttu-id="d1319-118">Výběr a ověření certifikátu</span><span class="sxs-lookup"><span data-stu-id="d1319-118">Certificate Selection and Validation</span></span>](../../../docs/framework/network-programming/certificate-selection-and-validation.md)

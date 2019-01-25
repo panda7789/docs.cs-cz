@@ -1,51 +1,51 @@
 ---
-title: S (entita SQL)
+title: S (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: b5d52d97-8372-4335-beac-2d0b79dc3707
-ms.openlocfilehash: 75f30c19fb54d66be0e460ab64b61d283d650005
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 0378aa365351dcd8c6c1b59674d785def1ee2648
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32764382"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54684824"
 ---
-# <a name="having-entity-sql"></a><span data-ttu-id="44c51-102">S (entita SQL)</span><span class="sxs-lookup"><span data-stu-id="44c51-102">HAVING (Entity SQL)</span></span>
-<span data-ttu-id="44c51-103">Určuje podmínku vyhledávání pro skupinu nebo agregace.</span><span class="sxs-lookup"><span data-stu-id="44c51-103">Specifies a search condition for a group or an aggregate.</span></span>  
+# <a name="having-entity-sql"></a><span data-ttu-id="d10fe-102">S (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="d10fe-102">HAVING (Entity SQL)</span></span>
+<span data-ttu-id="d10fe-103">Určuje podmínku hledání pro skupinu nebo agregace.</span><span class="sxs-lookup"><span data-stu-id="d10fe-103">Specifies a search condition for a group or an aggregate.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="44c51-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="44c51-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d10fe-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d10fe-104">Syntax</span></span>  
   
 ```  
 [ HAVING search_condition ]  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="44c51-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="44c51-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="d10fe-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="d10fe-105">Arguments</span></span>  
  `search_condition`  
- <span data-ttu-id="44c51-106">Určuje podmínku vyhledávání pro skupiny nebo agregace splnění.</span><span class="sxs-lookup"><span data-stu-id="44c51-106">Specifies the search condition for the group or the aggregate to meet.</span></span> <span data-ttu-id="44c51-107">Při HAVING se používá s GROUP BY ALL, klauzule HAVING přepíše všechny.</span><span class="sxs-lookup"><span data-stu-id="44c51-107">When HAVING is used with GROUP BY ALL, the HAVING clause overrides ALL.</span></span>  
+ <span data-ttu-id="d10fe-106">Určuje pro skupinu nebo agregace pro splnění podmínky vyhledávání.</span><span class="sxs-lookup"><span data-stu-id="d10fe-106">Specifies the search condition for the group or the aggregate to meet.</span></span> <span data-ttu-id="d10fe-107">Při použití s s GROUP BY ALL v klauzuli HAVING přepíše všechny.</span><span class="sxs-lookup"><span data-stu-id="d10fe-107">When HAVING is used with GROUP BY ALL, the HAVING clause overrides ALL.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="44c51-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="44c51-108">Remarks</span></span>  
- <span data-ttu-id="44c51-109">V klauzuli HAVING slouží k určení další podmínku filtrování na výsledek seskupení.</span><span class="sxs-lookup"><span data-stu-id="44c51-109">The HAVING clause is used to specify an additional filtering condition on the result of a grouping.</span></span> <span data-ttu-id="44c51-110">Pokud ve výrazu dotazu je zadána klauzule GROUP BY, předpokládá se skupinu implicitní single-set.</span><span class="sxs-lookup"><span data-stu-id="44c51-110">If no GROUP BY clause is specified in the query expression, an implicit single-set group is assumed.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="d10fe-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d10fe-108">Remarks</span></span>  
+ <span data-ttu-id="d10fe-109">V klauzuli HAVING slouží k určení dalších podmínku filtrování pro výsledek seskupení.</span><span class="sxs-lookup"><span data-stu-id="d10fe-109">The HAVING clause is used to specify an additional filtering condition on the result of a grouping.</span></span> <span data-ttu-id="d10fe-110">Klauzule GROUP BY je zadaný ve výrazu dotazu, předpokládá se implicitní skupina jedné sady.</span><span class="sxs-lookup"><span data-stu-id="d10fe-110">If no GROUP BY clause is specified in the query expression, an implicit single-set group is assumed.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="44c51-111">HAVING lze použít pouze s [vyberte](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) příkaz.</span><span class="sxs-lookup"><span data-stu-id="44c51-111">HAVING can be used only with the [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) statement.</span></span> <span data-ttu-id="44c51-112">Když [GROUP BY](../../../../../../docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md) se nepoužívá, HAVING chová jako klauzuli WHERE.</span><span class="sxs-lookup"><span data-stu-id="44c51-112">When [GROUP BY](../../../../../../docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md) is not used, HAVING behaves like a WHERE clause.</span></span>  
+>  <span data-ttu-id="d10fe-111">HAVING jde použít jenom s [vyberte](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) příkazu.</span><span class="sxs-lookup"><span data-stu-id="d10fe-111">HAVING can be used only with the [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) statement.</span></span> <span data-ttu-id="d10fe-112">Když [Group](../../../../../../docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md) se nepoužívá, HAVING se chová jako klauzuli WHERE.</span><span class="sxs-lookup"><span data-stu-id="d10fe-112">When [GROUP BY](../../../../../../docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md) is not used, HAVING behaves like a WHERE clause.</span></span>  
   
- <span data-ttu-id="44c51-113">V klauzuli HAVING funguje jako klauzule WHERE, s tím rozdílem, že se použije po operaci GROUP BY.</span><span class="sxs-lookup"><span data-stu-id="44c51-113">The HAVING clause works like the WHERE clause except that it is applied after the GROUP BY operation.</span></span> <span data-ttu-id="44c51-114">To znamená, že v klauzuli HAVING lze vytvořit pouze odkazy na seskupení aliasy a agregace, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="44c51-114">This means that the HAVING clause can only make references to grouping aliases and aggregates, as illustrated in the following example.</span></span>  
+ <span data-ttu-id="d10fe-113">V klauzuli HAVING funguje jako klauzuli WHERE, s tím rozdílem, že se použije po provedení této operace GROUP BY.</span><span class="sxs-lookup"><span data-stu-id="d10fe-113">The HAVING clause works like the WHERE clause except that it is applied after the GROUP BY operation.</span></span> <span data-ttu-id="d10fe-114">To znamená, že v klauzuli HAVING lze vytvořit pouze odkazy na seskupení aliasů a agregace, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="d10fe-114">This means that the HAVING clause can only make references to grouping aliases and aggregates, as illustrated in the following example.</span></span>  
   
 ```  
 SELECT Name, SUM(o.Price * o.Quantity) AS Total FROM orderLines AS o GROUP BY o.Product AS Name  
 HAVING SUM(o.Quantity) > 1  
 ```  
   
- <span data-ttu-id="44c51-115">Předchozí omezuje skupiny jenom na ty, které obsahují více produktů.</span><span class="sxs-lookup"><span data-stu-id="44c51-115">The previous restricts the groups to only those that include more than one product.</span></span>  
+ <span data-ttu-id="d10fe-115">Předchozí skupiny omezuje jenom na ty, které obsahují více než jeden produkt.</span><span class="sxs-lookup"><span data-stu-id="d10fe-115">The previous restricts the groups to only those that include more than one product.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="44c51-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="44c51-116">Example</span></span>  
- <span data-ttu-id="44c51-117">Následující dotaz Entity SQL používá operátory HAVING a GROUP BY k zadání podmínek vyhledávání pro skupinu nebo agregace.</span><span class="sxs-lookup"><span data-stu-id="44c51-117">The following Entity SQL query uses the HAVING and GROUP BY operators to specify a search condition for a group or an aggregate.</span></span> <span data-ttu-id="44c51-118">Dotaz je založen na modelu prodej AdventureWorks.</span><span class="sxs-lookup"><span data-stu-id="44c51-118">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="44c51-119">Pro zkompilování a spuštění tohoto dotazu, postupujte takto:</span><span class="sxs-lookup"><span data-stu-id="44c51-119">To compile and run this query, follow these steps:</span></span>  
+## <a name="example"></a><span data-ttu-id="d10fe-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="d10fe-116">Example</span></span>  
+ <span data-ttu-id="d10fe-117">Následující dotaz Entity SQL používá operátory HAVING a GROUP BY k zadání podmínek vyhledávání pro skupinu nebo agregace.</span><span class="sxs-lookup"><span data-stu-id="d10fe-117">The following Entity SQL query uses the HAVING and GROUP BY operators to specify a search condition for a group or an aggregate.</span></span> <span data-ttu-id="d10fe-118">Dotaz je založen na modelu Sales AdventureWorks.</span><span class="sxs-lookup"><span data-stu-id="d10fe-118">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="d10fe-119">Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:</span><span class="sxs-lookup"><span data-stu-id="d10fe-119">To compile and run this query, follow these steps:</span></span>  
   
-1.  <span data-ttu-id="44c51-120">Postupujte podle pokynů v [postup: provedení dotazu tohoto vrátí výsledky PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).</span><span class="sxs-lookup"><span data-stu-id="44c51-120">Follow the procedure in [How to: Execute a Query that Returns PrimitiveType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).</span></span>  
+1.  <span data-ttu-id="d10fe-120">Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).</span><span class="sxs-lookup"><span data-stu-id="d10fe-120">Follow the procedure in [How to: Execute a Query that Returns PrimitiveType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).</span></span>  
   
-2.  <span data-ttu-id="44c51-121">Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metoda:</span><span class="sxs-lookup"><span data-stu-id="44c51-121">Pass the following query as an argument to the `ExecutePrimitiveTypeQuery` method:</span></span>  
+2.  <span data-ttu-id="d10fe-121">Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:</span><span class="sxs-lookup"><span data-stu-id="d10fe-121">Pass the following query as an argument to the `ExecutePrimitiveTypeQuery` method:</span></span>  
   
  [!code-csharp[DP EntityServices Concepts 2#HAVING](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#having)]  
   
-## <a name="see-also"></a><span data-ttu-id="44c51-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="44c51-122">See Also</span></span>  
- [<span data-ttu-id="44c51-123">Reference k Entity SQL</span><span class="sxs-lookup"><span data-stu-id="44c51-123">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
- [<span data-ttu-id="44c51-124">Výrazy dotazu</span><span class="sxs-lookup"><span data-stu-id="44c51-124">Query Expressions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)
+## <a name="see-also"></a><span data-ttu-id="d10fe-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d10fe-122">See also</span></span>
+- [<span data-ttu-id="d10fe-123">Reference k Entity SQL</span><span class="sxs-lookup"><span data-stu-id="d10fe-123">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [<span data-ttu-id="d10fe-124">Výrazy dotazu</span><span class="sxs-lookup"><span data-stu-id="d10fe-124">Query Expressions</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)

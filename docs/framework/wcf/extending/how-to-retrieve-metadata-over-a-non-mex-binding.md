@@ -2,19 +2,19 @@
 title: 'Postupy: Načítání metadat přes vazbu jiného typu než MEX'
 ms.date: 03/30/2017
 ms.assetid: 2292e124-81b2-4317-b881-ce9c1ec66ecb
-ms.openlocfilehash: 198c343aa6f25d55e518990dc1dbd2667a8c17ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ac0a7d979e6b86933c4acd88b1a2fa11ba5bc991
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33488085"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689548"
 ---
-# <a name="how-to-retrieve-metadata-over-a-non-mex-binding"></a><span data-ttu-id="5a3e5-102">Postupy: Načítání metadat přes vazbu jiného typu než MEX</span><span class="sxs-lookup"><span data-stu-id="5a3e5-102">How to: Retrieve Metadata Over a non-MEX Binding</span></span>
-<span data-ttu-id="5a3e5-103">Toto téma popisuje, jak načíst metadata z koncového bodu MEX přes jiný MEX vazby.</span><span class="sxs-lookup"><span data-stu-id="5a3e5-103">This topic describes how to retrieve metadata from a MEX endpoint over a non-MEX binding.</span></span> <span data-ttu-id="5a3e5-104">Kód v této ukázce je založen na [koncový bod metadat zabezpečení vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) ukázka.</span><span class="sxs-lookup"><span data-stu-id="5a3e5-104">The code in this sample is based on the [Custom Secure Metadata Endpoint](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) sample.</span></span>  
+# <a name="how-to-retrieve-metadata-over-a-non-mex-binding"></a><span data-ttu-id="716fb-102">Postupy: Načítání metadat přes vazbu jiného typu než MEX</span><span class="sxs-lookup"><span data-stu-id="716fb-102">How to: Retrieve Metadata Over a non-MEX Binding</span></span>
+<span data-ttu-id="716fb-103">Toto téma popisuje, jak načíst metadata z koncového bodu MEX nad bez MEX vazby.</span><span class="sxs-lookup"><span data-stu-id="716fb-103">This topic describes how to retrieve metadata from a MEX endpoint over a non-MEX binding.</span></span> <span data-ttu-id="716fb-104">Kód v této ukázce je založený na [koncový bod metadat zabezpečení vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) vzorku.</span><span class="sxs-lookup"><span data-stu-id="716fb-104">The code in this sample is based on the [Custom Secure Metadata Endpoint](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) sample.</span></span>  
   
-### <a name="to-retrieve-metadata-over-a-non-mex-binding"></a><span data-ttu-id="5a3e5-105">Pro načtení metadat přes vazbu bez MEX</span><span class="sxs-lookup"><span data-stu-id="5a3e5-105">To retrieve metadata over a non-MEX binding</span></span>  
+### <a name="to-retrieve-metadata-over-a-non-mex-binding"></a><span data-ttu-id="716fb-105">Načítání metadat přes vazbu než MEX</span><span class="sxs-lookup"><span data-stu-id="716fb-105">To retrieve metadata over a non-MEX binding</span></span>  
   
-1.  <span data-ttu-id="5a3e5-106">Určení vazba použitá v MEX koncovém bodě.</span><span class="sxs-lookup"><span data-stu-id="5a3e5-106">Determine the binding used by the MEX endpoint.</span></span> <span data-ttu-id="5a3e5-107">Pro služby Windows Communication Foundation (WCF) můžete určit vazby MEX pomocí přístupu k souboru konfigurace služby.</span><span class="sxs-lookup"><span data-stu-id="5a3e5-107">For Windows Communication Foundation (WCF) services, you can determine the MEX binding by accessing the service's configuration file.</span></span> <span data-ttu-id="5a3e5-108">V takovém případě MEX vazba je definována v následující konfiguraci služby.</span><span class="sxs-lookup"><span data-stu-id="5a3e5-108">In this case, the MEX binding is defined in the following service configuration.</span></span>  
+1.  <span data-ttu-id="716fb-106">Určení vazby používá koncový bod MEX.</span><span class="sxs-lookup"><span data-stu-id="716fb-106">Determine the binding used by the MEX endpoint.</span></span> <span data-ttu-id="716fb-107">Pro služby Windows Communication Foundation (WCF) můžete určit vazby MEX díky přístupu do konfiguračního souboru služby.</span><span class="sxs-lookup"><span data-stu-id="716fb-107">For Windows Communication Foundation (WCF) services, you can determine the MEX binding by accessing the service's configuration file.</span></span> <span data-ttu-id="716fb-108">V takovém případě vazby MEX je definován v následující konfiguraci služby.</span><span class="sxs-lookup"><span data-stu-id="716fb-108">In this case, the MEX binding is defined in the following service configuration.</span></span>  
   
     ```xml  
     <services>  
@@ -48,7 +48,7 @@ ms.locfileid: "33488085"
      </bindings>  
     ```  
   
-2.  <span data-ttu-id="5a3e5-109">V konfiguračním souboru klienta nakonfigurujte stejné vlastní vazby.</span><span class="sxs-lookup"><span data-stu-id="5a3e5-109">In the client configuration file, configure the same custom binding.</span></span> <span data-ttu-id="5a3e5-110">Zde také definuje klienta `clientCredentials` chování poskytnutí certifikátu sloužící k ověření služby při požaduje metadata z koncového bodu MEX.</span><span class="sxs-lookup"><span data-stu-id="5a3e5-110">Here the client also defines a `clientCredentials` behavior to provide a certificate to use to authenticate to the service when requesting metadata from the MEX endpoint.</span></span> <span data-ttu-id="5a3e5-111">Při použití Svcutil.exe k vyžádání metadat prostřednictvím vlastní vazby, měli byste přidat konfiguraci koncového bodu MEX do konfiguračního souboru pro Svcutil.exe (Svcutil.exe.config) a název konfigurace koncového bodu musí odpovídat schéma identifikátoru URI adresy MEX koncového bodu, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="5a3e5-111">When using Svcutil.exe to request metadata over a custom binding, you should add the MEX endpoint configuration to the configuration file for Svcutil.exe (Svcutil.exe.config), and the name of the endpoint configuration should match the URI scheme of the address of the MEX endpoint, as shown in the following code.</span></span>  
+2.  <span data-ttu-id="716fb-109">V konfiguračním souboru klienta nakonfigurujte stejné vlastní vazby.</span><span class="sxs-lookup"><span data-stu-id="716fb-109">In the client configuration file, configure the same custom binding.</span></span> <span data-ttu-id="716fb-110">Zde také definuje klienta `clientCredentials` chování, jak poskytnout certifikát má použít k ověření ve službě, pokud se požaduje metadata z koncového bodu MEX.</span><span class="sxs-lookup"><span data-stu-id="716fb-110">Here the client also defines a `clientCredentials` behavior to provide a certificate to use to authenticate to the service when requesting metadata from the MEX endpoint.</span></span> <span data-ttu-id="716fb-111">Při použití Svcutil.exe k vyžádání metadat prostřednictvím vlastní vazby, měli byste přidat konfigurace koncového bodu MEX do konfiguračního souboru pro Svcutil.exe (Svcutil.exe.config) a název konfigurace koncového bodu by měl odpovídat schéma identifikátoru URI adresy MEX koncový bod, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="716fb-111">When using Svcutil.exe to request metadata over a custom binding, you should add the MEX endpoint configuration to the configuration file for Svcutil.exe (Svcutil.exe.config), and the name of the endpoint configuration should match the URI scheme of the address of the MEX endpoint, as shown in the following code.</span></span>  
   
     ```xml  
     <system.serviceModel>  
@@ -83,7 +83,7 @@ ms.locfileid: "33488085"
     </system.serviceModel>  
     ```  
   
-3.  <span data-ttu-id="5a3e5-112">Vytvoření `MetadataExchangeClient` a volání `GetMetadata`.</span><span class="sxs-lookup"><span data-stu-id="5a3e5-112">Create a `MetadataExchangeClient` and call `GetMetadata`.</span></span> <span data-ttu-id="5a3e5-113">Existují dva způsoby, jak to udělat: můžete zadat vlastní vazby v konfiguraci, nebo můžete zadat vlastní vazby v kódu, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="5a3e5-113">There are two ways to do this: you can specify the custom binding in configuration, or you can specify the custom binding in code, as shown in the following example.</span></span>  
+3.  <span data-ttu-id="716fb-112">Vytvoření `MetadataExchangeClient` a volat `GetMetadata`.</span><span class="sxs-lookup"><span data-stu-id="716fb-112">Create a `MetadataExchangeClient` and call `GetMetadata`.</span></span> <span data-ttu-id="716fb-113">Chcete-li to provést dvěma způsoby: můžete zadat vlastní vazby v konfiguraci, nebo můžete zadat vlastní vazby v kódu, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="716fb-113">There are two ways to do this: you can specify the custom binding in configuration, or you can specify the custom binding in code, as shown in the following example.</span></span>  
   
     ```  
     // The custom binding is specified in configuration.  
@@ -114,14 +114,14 @@ ms.locfileid: "33488085"
     MetadataSet mexSet2 = mexClient2.GetMetadata(mexAddress);  
     ```  
   
-4.  <span data-ttu-id="5a3e5-114">Vytvoření `WsdlImporter` a volání `ImportAllEndpoints`, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="5a3e5-114">Create a `WsdlImporter` and call `ImportAllEndpoints`, as shown in the following code.</span></span>  
+4.  <span data-ttu-id="716fb-114">Vytvoření `WsdlImporter` a volat `ImportAllEndpoints`, jak je znázorněno v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="716fb-114">Create a `WsdlImporter` and call `ImportAllEndpoints`, as shown in the following code.</span></span>  
   
     ```  
     WsdlImporter importer = new WsdlImporter(mexSet);  
     ServiceEndpointCollection endpoints = importer.ImportAllEndpoints();  
     ```  
   
-5.  <span data-ttu-id="5a3e5-115">V tuto chvíli máte kolekci koncové body služby.</span><span class="sxs-lookup"><span data-stu-id="5a3e5-115">At this point, you have a collection of service endpoints.</span></span> <span data-ttu-id="5a3e5-116">Další informace o importu metadat najdete v tématu [postupy: Import metadat do koncových bodů služby](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md).</span><span class="sxs-lookup"><span data-stu-id="5a3e5-116">For more information about importing metadata, see [How to: Import Metadata into Service Endpoints](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md).</span></span>  
+5.  <span data-ttu-id="716fb-115">V tomto okamžiku máte kolekce koncových bodů služby.</span><span class="sxs-lookup"><span data-stu-id="716fb-115">At this point, you have a collection of service endpoints.</span></span> <span data-ttu-id="716fb-116">Další informace o importu metadat najdete v tématu [jak: Import metadat do koncových bodů služby](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md).</span><span class="sxs-lookup"><span data-stu-id="716fb-116">For more information about importing metadata, see [How to: Import Metadata into Service Endpoints](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5a3e5-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="5a3e5-117">See Also</span></span>  
- [<span data-ttu-id="5a3e5-118">Metadata</span><span class="sxs-lookup"><span data-stu-id="5a3e5-118">Metadata</span></span>](../../../../docs/framework/wcf/feature-details/metadata.md)
+## <a name="see-also"></a><span data-ttu-id="716fb-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="716fb-117">See also</span></span>
+- [<span data-ttu-id="716fb-118">Metadata</span><span class="sxs-lookup"><span data-stu-id="716fb-118">Metadata</span></span>](../../../../docs/framework/wcf/feature-details/metadata.md)

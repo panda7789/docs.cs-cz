@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6f8276e2a8fd1bdc546add2ae1ca5d96298186c7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d73a82ddbb15ba7895f1e5e10f7066909a3c7e43
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412828"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54697141"
 ---
-# <a name="icordebugcontrollerenumeratethreads-method"></a><span data-ttu-id="b6bad-102">ICorDebugController::EnumerateThreads – metoda</span><span class="sxs-lookup"><span data-stu-id="b6bad-102">ICorDebugController::EnumerateThreads Method</span></span>
-<span data-ttu-id="b6bad-103">Získá enumerátor pro aktivní spravovaných vláken v procesu.</span><span class="sxs-lookup"><span data-stu-id="b6bad-103">Gets an enumerator for the active managed threads in the process.</span></span>  
+# <a name="icordebugcontrollerenumeratethreads-method"></a><span data-ttu-id="5fdb1-102">ICorDebugController::EnumerateThreads – metoda</span><span class="sxs-lookup"><span data-stu-id="5fdb1-102">ICorDebugController::EnumerateThreads Method</span></span>
+<span data-ttu-id="5fdb1-103">Získá enumerátor pro aktivní spravovaná vlákna v procesu.</span><span class="sxs-lookup"><span data-stu-id="5fdb1-103">Gets an enumerator for the active managed threads in the process.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b6bad-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b6bad-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5fdb1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5fdb1-104">Syntax</span></span>  
   
 ```  
 HRESULT EnumerateThreads (  
@@ -35,21 +35,21 @@ HRESULT EnumerateThreads (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="b6bad-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b6bad-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="5fdb1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5fdb1-105">Parameters</span></span>  
  `ppThreads`  
- <span data-ttu-id="b6bad-106">[out] Ukazatel na adresu "ICorDebugThreadEnum" objekt, který reprezentuje enumerátor pro všechny spravované vláken, které jsou aktivní v procesu.</span><span class="sxs-lookup"><span data-stu-id="b6bad-106">[out] A pointer to the address of an "ICorDebugThreadEnum" object that represents an enumerator for all managed threads that are active in the process.</span></span>  
+ <span data-ttu-id="5fdb1-106">[out] Ukazatel na adresu objektu "icordebugthreadenum –", který představuje enumerátor pro všechna spravovaná vlákna, které jsou aktivní v procesu.</span><span class="sxs-lookup"><span data-stu-id="5fdb1-106">[out] A pointer to the address of an "ICorDebugThreadEnum" object that represents an enumerator for all managed threads that are active in the process.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="b6bad-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b6bad-107">Remarks</span></span>  
- <span data-ttu-id="b6bad-108">Vlákno je považováno za aktivní po [icordebugmanagedcallback::CreateThread –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createthread-method.md) zpětného volání byla odeslána a před [icordebugmanagedcallback::ExitThread –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitthread-method.md) zpětného volání byla odeslána. .</span><span class="sxs-lookup"><span data-stu-id="b6bad-108">A thread is considered active after the [ICorDebugManagedCallback::CreateThread](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createthread-method.md) callback has been dispatched and before the [ICorDebugManagedCallback::ExitThread](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitthread-method.md) callback has been dispatched.</span></span> <span data-ttu-id="b6bad-109">Spravované vlákno nemusí mít nutně žádné spravované rámce v jeho zásobníku.</span><span class="sxs-lookup"><span data-stu-id="b6bad-109">A managed thread may not necessarily have any managed frames on its stack.</span></span> <span data-ttu-id="b6bad-110">Vlákna mohou být i před uvedené [icordebugmanagedcallback::CreateProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="b6bad-110">Threads can be enumerated even before the [ICorDebugManagedCallback::CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) callback.</span></span> <span data-ttu-id="b6bad-111">Výčet přirozeně bude prázdný.</span><span class="sxs-lookup"><span data-stu-id="b6bad-111">The enumeration will naturally be empty.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="5fdb1-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5fdb1-107">Remarks</span></span>  
+ <span data-ttu-id="5fdb1-108">Vlákno se považuje za aktivní po [icordebugmanagedcallback::CreateThread –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createthread-method.md) byly odeslány zpětného volání a před [icordebugmanagedcallback::ExitThread –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitthread-method.md) zpětného volání byly odeslány. .</span><span class="sxs-lookup"><span data-stu-id="5fdb1-108">A thread is considered active after the [ICorDebugManagedCallback::CreateThread](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createthread-method.md) callback has been dispatched and before the [ICorDebugManagedCallback::ExitThread](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitthread-method.md) callback has been dispatched.</span></span> <span data-ttu-id="5fdb1-109">Spravované vlákno nemusí mít nutně žádné spravované bloky na svůj zásobník.</span><span class="sxs-lookup"><span data-stu-id="5fdb1-109">A managed thread may not necessarily have any managed frames on its stack.</span></span> <span data-ttu-id="5fdb1-110">Vlákna mohou být ještě před uvedené [icordebugmanagedcallback::CreateProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="5fdb1-110">Threads can be enumerated even before the [ICorDebugManagedCallback::CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) callback.</span></span> <span data-ttu-id="5fdb1-111">Výčet přirozeně bude prázdný.</span><span class="sxs-lookup"><span data-stu-id="5fdb1-111">The enumeration will naturally be empty.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b6bad-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b6bad-112">Requirements</span></span>  
- <span data-ttu-id="b6bad-113">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b6bad-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5fdb1-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5fdb1-112">Requirements</span></span>  
+ <span data-ttu-id="5fdb1-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5fdb1-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b6bad-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b6bad-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="5fdb1-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="5fdb1-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="b6bad-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b6bad-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="5fdb1-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="5fdb1-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b6bad-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b6bad-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="5fdb1-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5fdb1-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b6bad-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="b6bad-117">See Also</span></span>  
- 
+## <a name="see-also"></a><span data-ttu-id="5fdb1-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5fdb1-117">See also</span></span>
+
