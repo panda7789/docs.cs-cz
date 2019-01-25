@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d93763da2afbbdb1e738c802ba172e9f16e5f7af
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 98d7be5adc81cff09b121265e7d5b5f712122607
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448455"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54611407"
 ---
 # <a name="imetadataimportgetmemberprops-method"></a>IMetaDataImport::GetMemberProps – metoda
-Získá informace o metadatech, včetně názvu, binární podpisu a relativní virtuální adresy, nástroje <xref:System.Type> člen odkazuje token Zadaná metadata.  
+Získá informace o metadata, včetně názvu, binární podpis a relativní virtuální adresu, <xref:System.Type> odkazuje token metadat zadaného člena.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,53 +49,53 @@ HRESULT GetMemberProps (
   
 #### <a name="parameters"></a>Parametry  
  `mb`  
- [v] Token, který odkazuje na člena získat související metadata pro.  
+ [in] Token, který odkazuje na člen, který chcete získat související metadata pro.  
   
  `pClass`  
- [out] Ukazatel na metadata token, který představuje třídu člena.  
+ [out] Ukazatel na token metadat, který představuje třídu člena.  
   
  `szMember`  
  [out] Název člena.  
   
  `cchMember`  
- [v] Velikost v široké znaky `szMember` vyrovnávací paměti.  
+ [in] Velikost v širokých znaků `szMember` vyrovnávací paměti.  
   
  `pchMember`  
  [out] Velikost v široké znaky vrácený název.  
   
  `pdwAttr`  
- [out] Veškeré příznak hodnoty, použijí se členem.  
+ [out] Žádné příznak hodnoty použité k členu.  
   
  `ppvSigBlob`  
- [out] Ukazatel na podpis binární metadata člena.  
+ [out] Ukazatel na binární metadat podpisu člena.  
   
  `pcbSigBlob`  
  [out] Velikost v bajtech `ppvSigBlob`.  
   
  `pulCodeRVA`  
- [out] Ukazatel s relativní virtuální adresou tohoto člena.  
+ [out] Ukazatel na relativní virtuální adresu člena.  
   
  `pdwImplFlags`  
- [out] Žádné příznaky implementace metoda spojených se členem.  
+ [out] Žádné příznaky implementace spojených se členem.  
   
  `pdwCPlusTypeFlag`  
- [out] Příznak, který určuje, že <xref:System.ValueType>.  
+ [out] Příznak, který označuje <xref:System.ValueType>.  
   
  `ppValue`  
- [out] Hodnota konstantní řetězec vrácený tohoto člena.  
+ [out] Hodnota konstanty typu řetězec vrácený tohoto člena.  
   
  `pcchValue`  
  [out] Velikost ve znacích `ppValue`, nebo nula, pokud `ppValue` neobsahuje řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

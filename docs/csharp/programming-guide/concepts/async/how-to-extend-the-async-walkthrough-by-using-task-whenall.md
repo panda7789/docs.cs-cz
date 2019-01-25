@@ -2,12 +2,12 @@
 title: 'Postupy: Rozšíření návodu úloh pomocí metody Task.whenall asynchronních (C#)'
 ms.date: 07/20/2015
 ms.assetid: f6927ef2-dc6c-43f8-bc82-bbeac42de423
-ms.openlocfilehash: 66636476d0c76f26f87198bc58146e034bdad6af
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 6143dfa43227f35eb8c74b386bee96ccec696a4e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151113"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631799"
 ---
 # <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-c"></a>Postupy: Rozšíření návodu úloh pomocí metody Task.whenall asynchronních (C#)
 Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) pomocí <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> metody. Tato metoda asynchronně čeká na více asynchronních operací, které jsou reprezentovány ve formě kolekci úkolů.  
@@ -434,7 +434,7 @@ namespace AsyncExampleWPF_HttpClient_WhenAll
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>  
+- <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>
 - [Návod: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)

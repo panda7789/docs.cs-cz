@@ -1,5 +1,5 @@
 ---
-title: ICorDebugType2::GetTypeID – metoda
+title: ICorDebugType2::GetTypeID Method
 ms.date: 03/30/2017
 api_name:
 - ICorDebugType2.GetTypeID
@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5bc1407f8444b78154981619742bd0da188c4335
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 463838681ceaaeb2edab85a22dd979fb143b9248
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422068"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54602881"
 ---
-# <a name="icordebugtype2gettypeid-method"></a>ICorDebugType2::GetTypeID – metoda
-Získá [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) pro tento typ.  
+# <a name="icordebugtype2gettypeid-method"></a>ICorDebugType2::GetTypeID Method
+Získá [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) u tohoto typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +40,21 @@ HRESULT GetTypeID(
  [out] Ukazatel [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) pro tento ICorDebugType.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrácená hodnota je `S_OK` na úspěch nebo neúspěch `HRESULT` kód při selhání. `HRESULT` Kódy zahrnují následující:  
+ Vrácená hodnota je `S_OK` na úspěch nebo neúspěch `HRESULT` kódu při selhání. `HRESULT` Kódy patří následující:  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
-|`S_OK`|Metoda byla úspěšná. Metoda má načíst platná [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md).|  
-|`CORDBG_E_CLASS_NOT_LOADED`|Typ nebyla načtena.|  
-|`CORDBG_E_UNSUPPORTED`|Typ není podporován.|  
+|`S_OK`|Metoda byla úspěšná. Metoda byla načtena platný [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md).|  
+|`CORDBG_E_CLASS_NOT_LOADED`|Typ se nenačetl.|  
+|`CORDBG_E_UNSUPPORTED`|Tento typ není podporovaný.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda poskytuje mapování z ICorDebugType, který představuje typ, který může nebo nemusí mít byla načtena do modulu runtime pro [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md), která slouží jako neprůhledné zpracování, který identifikuje typu načíst do modulu runtime.  
+ Tato metoda poskytuje mapování z ICorDebugType, který představuje typ, který může nebo nemusí byla načtena do modulu runtime, na [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md), která slouží jako neprůhledným zpracování, který identifikuje typ zavedeny do modulu runtime.  
   
- Pokud typ, který představuje ICorDebugType nebyl dosud bylo načteno, vrátí tato metoda `CORDBG_E_CLASS_NOT_LOADED`.  Pokud není podporován typ, vrátí `CORDBG_E_UNSUPPORTED`.  
+ Pokud typ, který představuje ICorDebugType nebyl dosud bylo načteno, vrátí tato metoda `CORDBG_E_CLASS_NOT_LOADED`.  Pokud typ není podporován, vrátí `CORDBG_E_UNSUPPORTED`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -62,5 +62,5 @@ HRESULT GetTypeID(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugType2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugtype2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugType2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugtype2-interface.md)

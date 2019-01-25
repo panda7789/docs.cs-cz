@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: a3355d78-2a88-4109-8521-830d7cae260a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3d741e8df8f2b8c6d90a1d867c73495a2ffd1304
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e2d05f9c727672c4f249e388a32b1101aaafd2f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397790"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54538256"
 ---
 # <a name="ltmethodinstantiationgt-element-net-native"></a>Element &lt;MethodInstantiation&gt; (.NET Native)
-Sestavené obecné metody se týká zásady reflexe modulu runtime.  
+Použije zásady reflexe runtime konstruovanou obecnou metodu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,34 +32,34 @@ Sestavené obecné metody se týká zásady reflexe modulu runtime.
 |Atribut|Typ atributu|Popis|  
 |---------------|--------------------|-----------------|  
 |`Name`|Obecné|Požadovaný atribut. Určuje název metody.|  
-|`Signature`|Obecné|Nepovinný atribut. Určuje pojmenované parametry metody. Více pojmenované parametry jsou oddělené čárkami. `Signature` Atribut se používá k rozlišení přetížené metody.|  
-|`Arguments`|Obecné|Požadovaný atribut. Určuje argumenty obecného typu. Pokud jsou v něm více argumentů, jsou oddělené čárkami.|  
-|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky dotazování na informace o nebo vytváření výčtu metodu, ale neumožňuje žádné dynamické volání za běhu.|  
-|`Dynamic`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktor nebo způsob povolení dynamické programování. Tato zásada zajistí, že člena nelze vyvolat dynamicky za běhu.|  
+|`Signature`|Obecné|Nepovinný atribut. Určuje pojmenované parametry metody. Více pojmenované parametry jsou odděleny čárkami. `Signature` Atribut se používá k rozlišení přetížené metody.|  
+|`Arguments`|Obecné|Požadovaný atribut. Určuje argumenty obecného typu. Pokud je více argumentů, jsou odděleny čárkami.|  
+|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky dotazování na informace o nebo vytváření výčtu metody, ale nepovolí všechny dynamické vyvolání za běhu.|  
+|`Dynamic`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktoru nebo metody, které chcete povolit dynamické programování. Tato zásada zajistí, že člen může být vyvolána dynamicky za běhu.|  
   
-## <a name="name-attribute"></a>Atribut Name.  
+## <a name="name-attribute"></a>Název atributu  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|*method_name*|Název metody. Typ metody je definován nadřazený [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) nebo [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element.|  
+|*method_name*|Název metody. Typ metody je definován nadřazený [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) nebo [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementu.|  
   
 ## <a name="signature-attribute"></a>Atribut podpisu  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|*method_signature*|Určuje pojmenované parametry metody. Pokud jsou v něm několik parametrů, jsou oddělené čárkami.|  
+|*method_signature*|Určuje pojmenované parametry metody. Pokud více parametrů jsou k dispozici, jsou odděleny čárkami.|  
   
 ## <a name="arguments-attribute"></a>Argumenty atributu  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|*method_arguments*|Určuje argumenty obecného typu. Pokud jsou v něm více argumentů, jsou oddělené čárkami. Každý argument musí obsahovat plně kvalifikovaného názvu.|  
+|*method_arguments*|Určuje argumenty obecného typu. Pokud je více argumentů, jsou odděleny čárkami. Každý argument musí obsahovat plně kvalifikovaného názvu.|  
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|*policy_setting*|Nastavení, které chcete použít pro tento typ zásad pro metodu. Možné hodnoty jsou `Auto`, `Excluded`, `Included`, a `Required`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|*policy_setting*|Toto nastavení platí pro tento typ zásad pro metodu. Možné hodnoty jsou `Auto`, `Excluded`, `Included`, a `Required`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -68,14 +68,14 @@ Sestavené obecné metody se týká zásady reflexe modulu runtime.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Reflexe zásada se vztahuje na typ a všechny její členy.|  
-|[\<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Reflexe zásada se vztahuje na sestavené obecné typy a všechny její členy.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<MethodInstantiation>` Element přednost před zásadami reflexe runtime jeho odpovídající otevřete obecné metody.  
+ `<MethodInstantiation>` Prvek přepisuje zásady reflexe modulu runtime jeho odpovídající otevřít obecné metody.  
   
-## <a name="see-also"></a>Viz také  
- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)  
- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)  
- [\<Metoda > elementu](../../../docs/framework/net-native/method-element-net-native.md)
+## <a name="see-also"></a>Viz také:
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
+- [\<Metoda > – Element](../../../docs/framework/net-native/method-element-net-native.md)

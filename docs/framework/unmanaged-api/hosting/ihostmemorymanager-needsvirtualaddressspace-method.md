@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 87c97a678fce4c25a113670a4668515a898e5251
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c4a67e1eb5a257cc6d4e4c9bc8798b61c97fba38
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33438415"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661747"
 ---
 # <a name="ihostmemorymanagerneedsvirtualaddressspace-method"></a>IHostMemoryManager::NeedsVirtualAddressSpace – metoda
-Aby modul CLR (CLR) bude pokus o použití zadaná paměťová upozorní hostitele.  
+Upozorňuje hostitele, že bude pokus o použití zadaná paměťová common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,24 +38,24 @@ HRESULT NeedsVirtualAddressSpace (
   
 #### <a name="parameters"></a>Parametry  
  `startAddress`  
- [v] Počáteční adresa paměti.  
+ [in] Počáteční adresa paměti.  
   
  `size`  
- [v] Velikost v bajtech paměti.  
+ [in] Velikost v bajtech paměti.  
   
 ## <a name="remarks"></a>Poznámky  
- `NeedsVirtualAddressSpace` Metoda je metoda zpětného volání a musí být implementována zapisovačem hostitelskou aplikaci. Je volána metodou modulu CLR.  
+ `NeedsVirtualAddressSpace` Metoda je metoda zpětného volání a musí být implementováno tvůrci hostitelské aplikace. Je volána modulem CLR.  
   
- Pokud hostitel nechce CLR použití zadané paměti, může vrátit E_OUTOFMEMORY HRESULT.  
+ Pokud hostitel nechce CLR, která pomocí zadané paměti, může vrátit E_OUTOFMEMORY HRESULT.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IHostMemoryManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IHostMemoryManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)

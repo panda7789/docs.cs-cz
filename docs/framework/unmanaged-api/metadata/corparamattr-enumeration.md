@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6ba2103003e3976e51e82ad6b42315a881582f5a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7d07c6de47038d5c52d76ad8ca8e0a5684551d59
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444288"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491464"
 ---
 # <a name="corparamattr-enumeration"></a>CorParamAttr – výčet
 Obsahuje hodnoty, které popisují metadata parametru metody.  
@@ -49,19 +49,19 @@ typedef enum CorParamAttr {
 |Člen|Popis|  
 |------------|-----------------|  
 |`pdIn`|Určuje, že parametr se předává do volání metody.|  
-|`pdOut`|Určuje, že parametr se předává z metody návratový.|  
-|`pdOptional`|Určuje, zda se jedná o volitelný parametr.|  
+|`pdOut`|Určuje, že parametr je předán z metody návratovou.|  
+|`pdOptional`|Určuje, že se jedná o volitelný parametr.|  
 |`pdReservedMask`|Modul common language runtime vyhrazené pro interní použití.|  
-|`pdHasDefault`|Určuje, že parametr nemá výchozí hodnotu.|  
-|`pdHasFieldMarshal`|Určuje, zda má parametr zařazování informace.|  
-|`pdUnused`|Nepoužívá se.|  
+|`pdHasDefault`|Určuje, že parametr má výchozí hodnotu.|  
+|`pdHasFieldMarshal`|Určuje, že parametr obsahuje zařazovací informace.|  
+|`pdUnused`|Nevyužité.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

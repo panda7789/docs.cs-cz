@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4dfb31a2fad8a07b3821ac85bbb43b25693f11d8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 25b7a708bb2f16433d9de9b5fc1c178cb48874a7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33404094"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658465"
 ---
 # <a name="exportnestedtypeforwarder-method"></a>ExportNestedTypeForwarder – metoda
-Předávání typů pro vnořené typy přidá do tabulky typu zadaného sestavení.  
+Předávání typů pro vnořený typ se přidá do tabulky typů daného sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,30 +45,30 @@ HRESULT ExportNestedTypeForwarder(
  ID sestavení, ze které chcete exportovat.  
   
  `FileToken`  
- Soubor ID souboru, který definuje typ tokenu nebo sestavení.  
+ ID tokenu nebo sestavení souboru, který definuje typ souboru.  
   
  `TypeToken`  
- Token pro typ.  
+ Pro typ tokenu.  
   
  `ParentType`  
  Token nadřazeného typu.  
   
  `pszTypename`  
- Úplný název typu pro export.  
+ Plně kvalifikovaný název typu pro export.  
   
  `dwFlags`  
- `ComType` Flags – například `tdPublic` nebo `tdNested`.  
+ `ComType` označí jako `tdPublic` nebo `tdNested`.  
   
  `pType`  
- Přijme token typu export. To je nezbytné pouze pro generování vnořené typy.  
+ Přijme token typu exportu. To je nezbytné pouze pro generování vnořené typy.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h  
   
-## <a name="see-also"></a>Viz také  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

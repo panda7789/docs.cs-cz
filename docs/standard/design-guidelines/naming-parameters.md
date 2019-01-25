@@ -7,12 +7,12 @@ helpviewer_keywords:
 - names [.NET Framework], parameters
 ms.assetid: ca3c956e-725a-441b-b4e3-eab5d472f41c
 author: KrzysztofCwalina
-ms.openlocfilehash: 35965f03f5c50cbe3ffcc9bdb615d99c50fc30a2
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 0e5b33839372e303b96bd6b84949f9a82da2f689
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147908"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646617"
 ---
 # <a name="naming-parameters"></a>Parametry pojmenování
 Nad rámec zřejmé z důvodu čitelnosti je potřeba postupovat podle pokynů pro názvy parametrů, protože parametry jsou zobrazeny v dokumentaci a v návrháři, když poskytují vizuální návrh nástroje technologie Intellisense a procházení funkce třídy.  
@@ -32,11 +32,11 @@ Nad rámec zřejmé z důvodu čitelnosti je potřeba postupovat podle pokynů p
   
  **X DO NOT** používání zkratky nebo číselné indexů pro operátor přetížení názvy parametrů.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)

@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: použití stromů výrazů k sestavování dynamických dotazů (C#)'
+title: 'Postupy: Použití stromů výrazů k sestavování dynamických dotazů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 52cd44dd-a3ec-441e-b93a-4eca388119c7
-ms.openlocfilehash: e3afbea647bb429d25f41f37fde268565bc5bf8a
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: dec9d84f7fa37f859e307f2a653464608684bc88
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45591409"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499548"
 ---
-# <a name="how-to-use-expression-trees-to-build-dynamic-queries-c"></a>Postupy: použití stromů výrazů k sestavování dynamických dotazů (C#)
+# <a name="how-to-use-expression-trees-to-build-dynamic-queries-c"></a>Postupy: Použití stromů výrazů k sestavování dynamických dotazů (C#)
 V technologii LINQ, stromy výrazů se používají k vyjádření strukturovaných dotazů, které se zaměřují zdroje dat, které implementují <xref:System.Linq.IQueryable%601>. Například implementuje zprostředkovatele LINQ <xref:System.Linq.IQueryable%601> rozhraní pro dotazování na relačních dat úložiště. Kompilátor jazyka C# kompiluje dotazy, které se zaměřují takovým zdrojům dat do kódu, který vytváří strom výrazu v době běhu. Poskytovatele dotazů můžete procházet stromovou strukturu dat výraz a přeloží ji do dotazovací jazyk, který je vhodný pro zdroj dat.  
   
  Stromy výrazů se také používají v technologii LINQ k reprezentaci lambda výrazy, které jsou přiřazeny proměnné typu <xref:System.Linq.Expressions.Expression%601>.  
@@ -108,8 +108,8 @@ foreach (string company in results)
   
 -   Zkopírovat kód z příkladu a vložte ho do `Main` metody.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Stromy výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)  
-- [Postupy: provádění stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)  
-- [Postupy: dynamické určování filtrů predikátů při běhu](../../../../csharp/programming-guide/linq-query-expressions/how-to-dynamically-specify-predicate-filters-at-runtime.md)
+- [Stromy výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)
+- [Postupy: Provádění stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
+- [Postupy: Dynamické určování filtrů predikátů při běhu](../../../../csharp/programming-guide/linq-query-expressions/how-to-dynamically-specify-predicate-filters-at-runtime.md)

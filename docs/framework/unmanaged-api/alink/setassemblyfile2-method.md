@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ade568889d1c0203115f160d855de8c598798196
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3882998d3155b49251fbe091b72ef11022ebfd2b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403354"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540205"
 ---
 # <a name="setassemblyfile2-method"></a>SetAssemblyFile2 – metoda
-Nastaví název a možnosti pro nové sestavení. Tato metoda není volána při vytvoření nepřipojeného moduly.  
+Nastaví název a možnosti pro nové sestavení. Nevolejte tuto metodu při vytvoření nevázaného moduly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,18 +45,18 @@ HRESULT SetAssemblyFile2(
  [Imetadataemit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md) rozhraní pro tento soubor.  
   
  `afFlags`  
- Možnosti reprezentována [AssemblyFlags – výčet](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md).  
+ Možnosti reprezentována [assemblyflags – výčet](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md).  
   
  `pAssemblyID`  
- Získá jedinečné ID pro sestavení vytvářen.  
+ Získá jedinečné ID pro sestavení vytváří.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h.  
   
-## <a name="see-also"></a>Viz také  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

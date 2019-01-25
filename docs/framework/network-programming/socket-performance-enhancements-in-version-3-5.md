@@ -2,12 +2,12 @@
 title: Vylepšení výkonu soketů ve verzi 3.5
 ms.date: 03/30/2017
 ms.assetid: 225aa5f9-c54b-4620-ab64-5cd100cfd54c
-ms.openlocfilehash: 588edc35f1b0fb39beb9be9a71573a1727ffeab8
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 590caba9080119386454671e2cab597a22e4d49b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50193445"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54587762"
 ---
 # <a name="socket-performance-enhancements-in-version-35"></a>Vylepšení výkonu soketů ve verzi 3.5
 <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> Třídy vylepšili jsme ve verzi 3.5 pro použití aplikacemi, které můžete dosáhnout nejvyšší výkon sítě asynchronní vstupně-výstupních operací. Řadu nových tříd se přidaly jako součást sadu rozšíření <xref:System.Net.Sockets.Socket> třídu, která poskytují alternativní asynchronní zpracování, které mohou využívat specializované vysoce výkonné soketu aplikací. Tato vylepšení byly navrženy speciálně pro serverové aplikace sítě, které vyžadují vysoký výkon. Aplikace můžete použít rozšířené asynchronní vzor výhradně, nebo pouze v cílové horké oblastí aplikace (při přijetí velkého objemu dat, třeba).  
@@ -33,10 +33,10 @@ ms.locfileid: "50193445"
   
  Životnost nový objekt kontextu operace asynchronního soketu se určuje podle odkazů v kódu aplikace a odkazy na asynchronní vstupně-výstupních operací. Není nutné pro aplikaci pro zachování odkaz na objekt kontextu soketu asynchronní operaci po odeslání jako parametr do jedné z metod soketu asynchronní operace. Bude se dál odkazované až do dokončení zpětného volání vrátí. Je ale výhodné pro aplikaci, aby si ponechají odkaz na objekt kontextu, takže můžete znovu použít pro budoucí soketu asynchronní operaci.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Net.Sockets.Socket?displayProperty=nameWithType>  
- <xref:System.Net.Sockets.SendPacketsElement?displayProperty=nameWithType>  
- <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType>  
- <xref:System.Net.Sockets.SocketAsyncOperation?displayProperty=nameWithType>  
- [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
- [Příklady kódu soketu](socket-code-examples.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.Sockets.Socket?displayProperty=nameWithType>
+- <xref:System.Net.Sockets.SendPacketsElement?displayProperty=nameWithType>
+- <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType>
+- <xref:System.Net.Sockets.SocketAsyncOperation?displayProperty=nameWithType>
+- [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)
+- [Příklady kódu soketu](socket-code-examples.md)

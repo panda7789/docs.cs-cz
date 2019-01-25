@@ -6,33 +6,33 @@ helpviewer_keywords:
 - writing extension methods [Visual Basic]
 - extension methods [Visual Basic]
 ms.assetid: fb2739cc-958d-4ef4-a38b-214a74c93413
-ms.openlocfilehash: e220a025c39757b492be033caeb8924523515804
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 019104956b21e527c0498c286d85da27abdc5695
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33648730"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576068"
 ---
 # <a name="how-to-write-an-extension-method-visual-basic"></a>Postupy: Zápis metody rozšíření (Visual Basic)
-Rozšiřující metody umožňují přidání metody do existující třídy. Rozšíření metodu lze volat, jako by šlo instance této třídy.  
+Rozšiřující metody umožňují přidat metody do existující třídy. Metody rozšíření lze volat, jako by šlo instanci dané třídy.  
   
-### <a name="to-define-an-extension-method"></a>Chcete-li definovat metody rozšíření  
+### <a name="to-define-an-extension-method"></a>Chcete-li definovat metodu rozšíření  
   
-1.  Otevřete nové nebo existující aplikace Visual Basic v sadě Visual Studio.  
+1.  Otevření nové nebo existující aplikace v jazyce Visual Basic v sadě Visual Studio.  
   
-2.  V horní části souboru, ve kterém chcete definovat metody rozšíření patří následující příkaz importu:  
+2.  V horní části souboru, ve kterém chcete definovat rozšiřující metodu patří následující příkaz importu:  
   
     ```  
     Imports System.Runtime.CompilerServices  
     ```  
   
-3.  V modulu v nové nebo existující aplikace začněte definici metody s atributem rozšíření:  
+3.  V rámci modulu v nové nebo existující aplikace začněte definici metody s atributem rozšíření:  
   
     ```  
     <Extension()>  
     ```  
   
-4.  Deklarujte metodu běžným způsobem s tím rozdílem, že typ prvního parametru musí být datový typ, který chcete rozšířit.  
+4.  Deklarujte metodu běžným způsobem s tím rozdílem, že první parametr typu musí být datový typ, který chcete rozšířit.  
   
     ```  
     <Extension()>   
@@ -42,7 +42,7 @@ Rozšiřující metody umožňují přidání metody do existující třídy. Ro
     ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad uvádí metody rozšíření v modulu `StringExtensions`. Druhý modul `Module1`, naimportuje `StringExtensions` a volá metodu. Metody rozšíření musí být v oboru, když je volána. Metody rozšíření `PrintAndPunctuate` rozšiřuje <xref:System.String> se metoda, která zobrazí instanci řetězec, za nímž následuje řetězec interpunkčních znamének odesláno jako parametr.  
+ Následující příklad deklaruje rozšiřující metodu v modulu `StringExtensions`. Druhý modul `Module1`, importuje `StringExtensions` a volá metodu. Metoda rozšíření musí být v rozsahu, když je volána. Metoda rozšíření `PrintAndPunctuate` rozšiřuje <xref:System.String> třídu s metodou, která zobrazuje instanci řetězce, za nímž následuje řetězec interpunkčních znamének poslaná jako parametr.  
   
 ```vb  
 ' Declarations will typically be in a separate module.  
@@ -75,15 +75,15 @@ Module Module1
 End Module  
 ```  
   
- Všimněte si, že metoda je definován s dva parametry a s názvem jen s jednou. První parametr `aString`, v metodě je vázána definice `example`, instanci `String` , který volá metodu. Výstup tohoto příkladu je následující:  
+ Všimněte si, že metoda je definováno se dvěma parametry a volat pouze jednou. První parametr `aString`, v metodě definice je vázán na `example`, instanci `String` , která volá metodu. Výstup v příkladu vypadá takto:  
   
  `Hello?`  
   
  `Hello!!!!`  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.CompilerServices.ExtensionAttribute>  
- [Rozšiřující metody](./extension-methods.md)  
- [Příkaz Module](../../../../visual-basic/language-reference/statements/module-statement.md)  
- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.CompilerServices.ExtensionAttribute>
+- [Rozšiřující metody](./extension-methods.md)
+- [Příkaz Module](../../../../visual-basic/language-reference/statements/module-statement.md)
+- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
+- [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)

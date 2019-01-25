@@ -7,15 +7,15 @@ helpviewer_keywords:
 - GetType operator [Visual Basic]
 - GetType keyword [Visual Basic]
 ms.assetid: 4f733297-2503-4607-850c-15eba65fff90
-ms.openlocfilehash: 581f576222eb149aede841a5da7a0e5f38c77b58
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cfb54858286ed31d566b5aeb46faed9070f110bf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33603844"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54612837"
 ---
 # <a name="gettype-operator-visual-basic"></a>GetType – operátor (Visual Basic)
-Vrátí <xref:System.Type> objekt pro zadaný typ. <xref:System.Type> Objekt poskytuje informace o typu, například jeho vlastnosti, metod a události.  
+Vrátí <xref:System.Type> objekt zadaného typu. <xref:System.Type> Objekt poskytuje informace o typu jako jeho vlastnosti, metody a události.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,37 +27,37 @@ GetType(typename)
   
 |Parametr|Popis|  
 |---|---|  
-|`typename`|Název typu, pro které očekáváte informace.|  
+|`typename`|Název typu, pro kterou vyžadujete informace.|  
   
 ## <a name="remarks"></a>Poznámky  
- `GetType` Vrátí operátor <xref:System.Type> objekt pro zadaný `typename`. Můžete předat název typu žádné definované v `typename`. To zahrnuje následující:  
+ `GetType` Operátor vrátí <xref:System.Type> objekt pro zadaný rozbočovač `typename`. Můžete předat název libovolného typu definované v `typename`. Ta zahrnují následující:  
   
--   Zadejte všechna data jazyka Visual Basic, například `Boolean` nebo `Date`.  
+-   Zadejte všechna data v jazyce Visual Basic, například `Boolean` nebo `Date`.  
   
--   Všechny třídy rozhraní .NET Framework, struktury, modul nebo rozhraní, jako například <xref:System.ArgumentException?displayProperty=nameWithType> nebo <xref:System.Double?displayProperty=nameWithType>.  
+-   Všechny třídy rozhraní .NET Framework, struktura, modul nebo rozhraní, jako například <xref:System.ArgumentException?displayProperty=nameWithType> nebo <xref:System.Double?displayProperty=nameWithType>.  
   
--   Všechny třídy, struktury, modul nebo rozhraní definovaný vaší aplikací.  
+-   Všechny třídy, struktury, modul nebo rozhraní definovaných v aplikaci.  
   
--   Žádné pole definovaný vaší aplikací.  
+-   Jakékoli pole definovaných v aplikaci.  
   
--   Všechny delegát definovaný vaší aplikací.  
+-   Jakýkoli delegát definovaných v aplikaci.  
   
--   Všechny výčtu definované jazyka Visual Basic, rozhraní .NET Framework nebo aplikace.  
+-   Žádné výčtu definované jazyka Visual Basic, rozhraní .NET Framework nebo aplikace.  
   
- Pokud chcete získat objekt typu objektové proměnné, použijte <xref:System.Type.GetType%2A?displayProperty=nameWithType> metoda.  
+ Pokud chcete získat objekt typu objektové proměnné, použijte <xref:System.Type.GetType%2A?displayProperty=nameWithType> metody.  
   
- `GetType` Operátor může být užitečné v následujících případech:  
+ `GetType` Operátor může být užitečná v následujících případech:  
   
--   Metadata pro typ potřebuje přístup za běhu. <xref:System.Type> Objekt poskytuje metadata například členy typu a informace o nasazení. Potřebujete, například tak, aby odrážela přes sestavení. Další informace naleznete v tématu <xref:System.Reflection?displayProperty=nameWithType>.  
+-   Třeba získat přístup k metadatům pro typ v době běhu. <xref:System.Type> Objekt poskytuje metadat – například členy typu a informace o nasazení. Je třeba to, například reflexi pro sestavení. Další informace naleznete v tématu <xref:System.Reflection?displayProperty=nameWithType>.  
   
--   Chcete porovnat dva odkazy na objekty zobrazíte Pokud odkazují instance stejného typu. Pokud tomu tak je, `GetType` vrátí odkazy na stejné <xref:System.Type> objektu.  
+-   Chcete porovnat dva odkazy na objekty a zjistěte, jestli se vztahují na instance stejného typu. V takovém případě `GetType` vrátí odkazy na stejný <xref:System.Type> objektu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklady zobrazují `GetType` operátor používá.  
+ Následující příklady ukazují `GetType` operátor používá.  
   
  [!code-vb[VbVbalrOperators#26](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/gettype-operator_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
- [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+## <a name="see-also"></a>Viz také:
+- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+- [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
-ms.openlocfilehash: 4d0e0a1bea32fe3be896b80e77de34e04cd9f2f4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: bc21cba7889652a8b485d101205b15d6f189d12d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525879"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592429"
 ---
 # <a name="configuring-ws-atomic-transaction-support"></a>Konfigurace podpory protokolu WS-AT (WS-Atomic Transactions)
 Toto téma popisuje, jak můžete nakonfigurovat podporu WS-AtomicTransaction (WS-AT) pomocí nástroje Konfigurace WS-AT.  
@@ -29,7 +29,7 @@ Toto téma popisuje, jak můžete nakonfigurovat podporu WS-AtomicTransaction (W
   
  Pokud chcete povolit uživatelské rozhraní nástroje, musíte se nejprve zaregistrovat soubor WsatUI.dll umístěný v následující cestě  
   
- %ProgramFiles%\Microsoft SDKs\Windows\v6.0\Bin  
+ %PROGRAMFILES%\Microsoft SDKs\Windows\v6.0\Bin  
   
  K registraci, spusťte následující příkaz z okna příkazového řádku:  
   
@@ -54,7 +54,7 @@ Toto téma popisuje, jak můžete nakonfigurovat podporu WS-AtomicTransaction (W
 ### <a name="creating-and-exporting-certificates"></a>Vytvoření a export certifikátů  
  Tento postup vyžaduje modul snap-in Certifikáty konzoly MMC. Modul snap-in můžete přístup otevřením nabídky Start nebo spuštění, do vstupního pole zadáním "konzoly mmc" a kliknutím na tlačítko OK. Potom v **Konzola1** okno, přejděte na **soubor a přidat nebo odebrat** modul Snap-in klikněte na tlačítko Přidat a vybrat **certifikáty** z **k dispozici samostatná Moduly snap-in** seznamu. Nakonec vyberte **účet počítače** pro správu a klikněte na tlačítko **OK**. **Certifikáty** uzel se zobrazí v modulu snap-in konzoly.  
   
- Musíte již vlastnit požadované certifikáty k navázání vztahu důvěryhodnosti. Zjistěte, jak vytvořit a nainstalovat nové certifikáty před následující kroky, najdete v článku [postupy: vytvoření a instalace dočasných certifikátů klienta WCF při vývoji](https://go.microsoft.com/fwlink/?LinkId=158925).  
+ Musíte již vlastnit požadované certifikáty k navázání vztahu důvěryhodnosti. Zjistěte, jak vytvořit a nainstalovat nové certifikáty před následující kroky, najdete v článku [jak: Vytvoření a instalace dočasné klientských certifikátů ve službě WCF při vývoji](https://go.microsoft.com/fwlink/?LinkId=158925).  
   
 1.  Na počítač A pomocí importu modulu snap-in Certifikáty konzoly MMC existujícího certifikátu (certA) do LocalMachine\MY (osobní uzlu) a úložiště LocalMachine\ROOT (důvěryhodné kořenové certifikační autority uzlu). Chcete-li importovat certifikát na konkrétním uzlu, klikněte pravým tlačítkem na uzel a zvolte **všechny úlohy/Import**.  
   
@@ -118,6 +118,6 @@ Toto téma popisuje, jak můžete nakonfigurovat podporu WS-AtomicTransaction (W
   
 -   do 31: podrobné  
   
-## <a name="see-also"></a>Viz také  
- [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)  
- [Modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)
+## <a name="see-also"></a>Viz také:
+- [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+- [Modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)

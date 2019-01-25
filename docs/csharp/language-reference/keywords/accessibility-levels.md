@@ -6,12 +6,12 @@ helpviewer_keywords:
 - access modifiers [C#], accessibility levels
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
-ms.openlocfilehash: 1bd4c063afe175b5585e5f732ebddbe1a271c8b3
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: ca7bef8bf68b80015128619336db9fc6a8f5c237
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53243774"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661822"
 ---
 # <a name="accessibility-levels-c-reference"></a>Úrovně přístupnosti (Referenční dokumentace jazyka C#)
 
@@ -40,7 +40,7 @@ Používat modifikátory přístupu `public`, `protected`, `internal`, nebo `pri
 |----------------|----------------------------------|--------------------------------------------------|  
 |`enum`|`public`|Žádná|  
 |`class`|`private`|`public`<br /><br /> `protected`<br /><br /> `internal`<br /><br /> `private`<br /><br /> `protected internal` <br /><br />`private protected`|  
-|`interface`|`public`|Žádné|  
+|`interface`|`public`|Žádná|  
 |`struct`|`private`|`public`<br /><br /> `internal`<br /><br /> `private`|  
   
  Přístupnost vnořeného typu závisí na jeho [doména přístupnosti](../../../csharp/language-reference/keywords/accessibility-domain.md), které je určeno deklarovanou přístupností člena a doménou přístupnosti bezprostředně nadřazeného typu. Doména přístupnosti vnořeného typu však nesmí přesáhnout přístupnost nadřazeného typu.  
@@ -48,15 +48,15 @@ Používat modifikátory přístupu `public`, `protected`, `internal`, nebo `pri
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
-- [Modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md)  
-- [Doména přístupnosti](../../../csharp/language-reference/keywords/accessibility-domain.md)  
-- [Omezení používání úrovní přístupu](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md)  
-- [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  
-- [public](../../../csharp/language-reference/keywords/public.md)  
-- [private](../../../csharp/language-reference/keywords/private.md)  
-- [protected](../../../csharp/language-reference/keywords/protected.md)  
+## <a name="see-also"></a>Viz také:
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
+- [Modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md)
+- [Doména přístupnosti](../../../csharp/language-reference/keywords/accessibility-domain.md)
+- [Omezení používání úrovní přístupu](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md)
+- [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)
+- [public](../../../csharp/language-reference/keywords/public.md)
+- [private](../../../csharp/language-reference/keywords/private.md)
+- [protected](../../../csharp/language-reference/keywords/protected.md)
 - [internal](../../../csharp/language-reference/keywords/internal.md)

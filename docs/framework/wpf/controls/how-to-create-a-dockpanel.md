@@ -8,21 +8,21 @@ helpviewer_keywords:
 - controls [WPF], DockPanel
 - DockPanel control [WPF], creating
 ms.assetid: 9194f663-e279-4f1a-86d7-125a57d05c6f
-ms.openlocfilehash: 4382314b0fe5385c158af9764ccb0067b741a693
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1686ce0d9cd6f02fc524789c1e3ad7daedcbbaf2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33550147"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54674346"
 ---
 # <a name="how-to-create-a-dockpanel"></a>Postupy: Vytvoření objektu DockPanel
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří a použije instanci <xref:System.Windows.Controls.DockPanel> pomocí kódu. Tento příklad ukazuje, jak oddílu místo vytvořením pět <xref:System.Windows.Shapes.Rectangle> elementy a umístění (ukotvení) je uvnitř nadřazené <xref:System.Windows.Controls.DockPanel>. Je-li zachovat výchozí nastavení, doplní konečné rámeček všechny zbývající volné místo.  
+ Následující příklad vytvoří a používá instanci <xref:System.Windows.Controls.DockPanel> pomocí kódu. Tento příklad ukazuje, jak rozdělení prostoru tak, že vytvoříte pět <xref:System.Windows.Shapes.Rectangle> elementy a umístění (ukotvení) je uvnitř nadřazené <xref:System.Windows.Controls.DockPanel>. Je-li zachovat výchozí nastavení, finální obdélník vyplní všechny zbývající volné místo.  
   
  [!code-csharp[DockPanelCode#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DockPanelCode/CSharp/DockPanel_Code.cs#1)]
  [!code-vb[DockPanelCode#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DockPanelCode/VisualBasic/dockpanel_vb.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.DockPanel>  
- <xref:System.Windows.Controls.Dock>  
- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.DockPanel>
+- <xref:System.Windows.Controls.Dock>
+- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 61014e067b2afb8b7e4be0488ed6a3c7f1bd6fc4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3534160e14c46bc3f8f5da81c4c14a3191a6238b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420697"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54553189"
 ---
 # <a name="icordebugvariablehomegetslotindex-method"></a>ICorDebugVariableHome::GetSlotIndex – metoda
-Získá spravovaného indexu slotu místní proměnné.  
+Získá spravované slotu index lokální proměnné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,21 +37,21 @@ HRESULT GetSlotIndex(
   
 #### <a name="parameters"></a>Parametry  
  `pSlotIndex`  
- [out] Ukazatel na pozici indexu místní proměnné.  
+ [out] Ukazatel pozice index lokální proměnné.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Metoda vrátí následující hodnoty.  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`S_OK`|Volání metody, které vrátil hodnotu pozici indexu v `pSlotIndex`.|  
-|`E_FAIL`|Aktuální [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instance představuje argument funkce.|  
+|`S_OK`|Volání metody, které vrátil hodnotu index pozice v `pSlotIndex`.|  
+|`E_FAIL`|Aktuální [icordebugvariablehome –](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) představuje instanci jako argument funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
- Index slotu lze načíst metadata pro tuto místní proměnné.  
+ Index pozice, je možné načíst metadata pro tuto místní proměnnou.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -59,5 +59,5 @@ HRESULT GetSlotIndex(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugVariableHome – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugVariableHome – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)

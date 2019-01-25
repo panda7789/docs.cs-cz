@@ -2,22 +2,22 @@
 title: '&lt;clientCertificate&gt; elementu &lt;clientCredentials&gt;'
 ms.date: 03/30/2017
 ms.assetid: 3b3fa000-3434-4142-a178-11903bdd2c5d
-ms.openlocfilehash: f6dbc2c7d43558d86f74468adbc7026e8462812c
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: d908da5db4fc54b002fb4e3492b7d32da67f5524
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54147938"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54599124"
 ---
 # <a name="ltclientcertificategt-of-ltclientcredentialsgt-element"></a>&lt;clientCertificate&gt; elementu &lt;clientCredentials&gt;
 Určuje certifikát X.509 použitý k ověření klienta ke službě.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<názvy endpointBehaviors >  
+\<endpointBehaviors>  
 \<chování >  
-\<třídu clientCredentials >  
-\<clientCertificate >  
+\<clientCredentials>  
+\<clientCertificate>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,7 +38,7 @@ Určuje certifikát X.509 použitý k ověření klienta ke službě.
 |`findValue`|Řetězec, který obsahuje hodnotu vyhledávání v úložišti certifikátů X.509. Typ obsažené v atributu musí splňovat požadavky `X509FindType` hodnotu atributu. Výchozí hodnota je prázdný řetězec.|  
 |`storeLocation`|Určuje umístění certifikátu X.509, který klient použije ke svému ověření ke službě. Platné hodnoty patří:<br /><br /> -LocalMachine: úložiště certifikátů přiřazené do místního počítače.<br />-CurrentUser: úložiště certifikátů přiřazené aktuálnímu uživateli.<br /><br /> Výchozí hodnota je v místním počítači. Tento atribut je typu <xref:System.Security.Cryptography.X509Certificates.StoreLocation>.|  
 |`storeName`|Určuje název úložiště certifikátů X.509 pro hledání. Platné hodnoty patří:<br /><br /> -Adresáře: Úložiště certifikátů pro ostatní uživatele.<br />-AuthRoot: Úložiště certifikátů pro nezávislé certifikační autority (CA).<br />-CertificateAuthority: Úložiště certifikátů zprostředkující certifikační autority (CA).<br />– Zakázáno: Úložiště certifikátů pro odvolaných certifikátů.<br />-Můj: Úložiště certifikátů pro osobní certifikáty.<br />-Root: Úložiště certifikátů pro důvěryhodné kořenové certifikační autority (CA).<br />-TrustedPeople: Úložiště certifikátů přímo důvěryhodných osob a prostředky.<br />-TrustedPublisher: Úložiště certifikátů přímo důvěryhodných vydavatelů.<br /><br /> Výchozí hodnota je My. Tento atribut je typu <xref:System.Security.Cryptography.X509Certificates.StoreName>.|  
-|X509FindType|Definuje typ hledání X.509, který se spustí. Typ součástí `findValue` atribut musí splňovat požadavky na tento atribut. Platné hodnoty patří:<br /><br /> -FindByThumbPrint<br />-FindBySubjectName<br />-FindBySubjectDistinguishedName<br />-FindByIssuerName<br />-FindByIssuerDistinguishedName<br />-FindBySerialNumber<br />-FindByTimeValid<br />-FindByTimeNotYetValid<br />-FindByTemplateName<br />-FindByApplicationPolicy<br />-FindByCertificatePolicy<br />-FindByExtension<br />-FindByKeyUsage<br />-FindBySubjectKeyIdentifier<br /><br /> Výchozí hodnota je FindBySubjectDistinguishedName. Tento atribut je typu <xref:System.Security.Cryptography.X509Certificates.X509FindType>.|  
+|X509FindType|Definuje typ hledání X.509, který se spustí. Typ součástí `findValue` atribut musí splňovat požadavky na tento atribut. Platné hodnoty patří:<br /><br /> -FindByThumbPrint<br />-FindBySubjectName<br />-FindBySubjectDistinguishedName<br />-   FindByIssuerName<br />-   FindByIssuerDistinguishedName<br />-   FindBySerialNumber<br />-FindByTimeValid<br />-FindByTimeNotYetValid<br />-FindByTemplateName<br />-FindByApplicationPolicy<br />-FindByCertificatePolicy<br />-FindByExtension<br />-FindByKeyUsage<br />-   FindBySubjectKeyIdentifier<br /><br /> Výchozí hodnota je FindBySubjectDistinguishedName. Tento atribut je typu <xref:System.Security.Cryptography.X509Certificates.X509FindType>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -47,20 +47,20 @@ Určuje certifikát X.509 použitý k ověření klienta ke službě.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<třídu clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Určuje pověření pro ověření klienta ke službě.|  
+|[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Určuje pověření pro ověření klienta ke službě.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento prvek konfigurace Určuje certifikát používaný k ověření klienta s tímto elementem. Další informace najdete v tématu [jak: Zadání hodnot přihlašovacích údajů klienta](../../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.ClientCredentialsElement>  
- <xref:System.ServiceModel.Configuration.ClientCredentialsElement.ClientCertificate%2A>  
- <xref:System.ServiceModel.Description.ClientCredentials>  
- <xref:System.ServiceModel.Description.ClientCredentials.ClientCertificate%2A>  
- <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement>  
- <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>  
- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- [Postupy: Zadání hodnot přihlašovacích údajů klienta](../../../../../docs/framework/wcf/how-to-specify-client-credential-values.md)  
- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)  
- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.ClientCredentialsElement>
+- <xref:System.ServiceModel.Configuration.ClientCredentialsElement.ClientCertificate%2A>
+- <xref:System.ServiceModel.Description.ClientCredentials>
+- <xref:System.ServiceModel.Description.ClientCredentials.ClientCertificate%2A>
+- <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement>
+- <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>
+- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
+- [Postupy: Zadání hodnot přihlašovacích údajů klienta](../../../../../docs/framework/wcf/how-to-specify-client-credential-values.md)
+- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
+- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

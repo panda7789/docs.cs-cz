@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 72c76f0b-7255-4576-9261-3587f949669c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4b57233457c697dbe35ab0f68d6ce3557cee9b5c
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 6c3e9e58a8cfe5f18aba2e8db56f84d089cc49df
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48580086"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54641145"
 ---
 # <a name="app-resources-for-libraries-that-target-multiple-platforms"></a>Prostředky aplikací pro knihovny cílené na více platforem
 Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) projektu typu zajistit, že prostředky v knihovnách tříd můžete přistupovat z více platforem. Tento typ projektu je k dispozici v sadě Visual Studio 2012 a cílí na přenosné podmnožiny knihovny tříd rozhraní .NET Framework. Použití [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] zajistí, že vaše knihovna přístupná z aplikací klasické pracovní plochy, aplikace Silverlight, Windows Phone apps, a [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.
@@ -81,7 +81,7 @@ Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../..
 
  [!code-csharp[Conceptual.Resources.PortableMetro#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portablemetro/cs/blankpage.xaml.cs#1)]
 
-## <a name="example-localized-includenetportableincludesnet-portable-mdmd"></a>Příklad: lokalizovaný [!INCLUDE[net_portable](../../../includes/net-portable-md.md)]
+## <a name="example-localized-includenetportableincludesnet-portable-mdmd"></a>Příklad: Lokalizovaný [!INCLUDE[net_portable](../../../includes/net-portable-md.md)]
  Následující lokalizovaný [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] příklad obsahuje prostředky pro francouzština (Francie) a jazykové verze Angličtina (Spojené státy). Jazyková verze Angličtina (Spojené státy) je výchozí jazykovou verzi aplikace; její prostředky jsou uvedeny v tabulce [předchozí části](../../../docs/standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md#NonLoc). Soubor prostředků pro jazykovou verzi Francouzština (Francie) má název LibResources.fr-FR.resx a obsahuje prostředky řetězců, které jsou uvedeny v následující tabulce. Zdrojový kód `UILibrary` třída je stejný jako uvedeny v předchozí části.
 
 |Název prostředku|Hodnota prostředku|
@@ -106,6 +106,6 @@ Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../..
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Resources.ResourceManager>  
-- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)  
+- <xref:System.Resources.ResourceManager>
+- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
 - [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)

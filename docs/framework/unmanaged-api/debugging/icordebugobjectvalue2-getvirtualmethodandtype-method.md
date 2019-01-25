@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c9a6978f35b5ea9fb71f8e933dbc7a08b1c390ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: af07df53c094654ab86f5e6531fd78124aded988
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416498"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54630889"
 ---
 # <a name="icordebugobjectvalue2getvirtualmethodandtype-method"></a>ICorDebugObjectValue2::GetVirtualMethodAndType – metoda
 Tato metoda není dosud implementována.  
@@ -38,8 +38,8 @@ HRESULT GetVirtualMethodAndType (
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Získá rozhraní ukazatele "ICorDebugFunction" a "ICorDebugType" instancí, které představují nejodvozenějších metoda a typ pro odkaz na zadaný člen.  
+ Získá rozhraní ukazatelů "ICorDebugFunction" a "ICorDebugType" instancí, které představují nejvíce Odvozená metoda a typ odkazu zadaného člena.  
   
-## <a name="see-also"></a>Viz také  
-    
- 
+## <a name="see-also"></a>Viz také:
+
+

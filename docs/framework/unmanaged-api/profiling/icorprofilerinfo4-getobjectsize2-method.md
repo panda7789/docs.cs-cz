@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8ebbc3422f48c0c2b8ff7b807228c63fbb35dd7b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9a3b0ddc804e8eefdf90b3b0f17f4575b4d92bf3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33454094"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54502647"
 ---
 # <a name="icorprofilerinfo4getobjectsize2-method"></a>ICorProfilerInfo4::GetObjectSize2 – metoda
-Vrátí velikost zadaný objekt. Nahradí [icorprofilerinfo::getobjectsize –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getobjectsize-method.md) metoda velikosti objektů, které jsou větší než co může být vyjádřený v generování sestav `ULONG`.  
+Vrátí velikost zadaného objektu. Nahrazuje [icorprofilerinfo::getobjectsize –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getobjectsize-method.md) metody pomocí generování sestav velikosti objektů, které jsou větší, než co lze vyjádřit v `ULONG`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT GetObjectSize2(
   
 #### <a name="parameters"></a>Parametry  
  `objectId`  
- [v] ID objektu.  
+ [in] ID objektu.  
   
  `pcSize`  
- [out] Ukazatel na objektu velikost v bajtech.  
+ [out] Ukazatel objekt velikost v bajtech.  
   
 ## <a name="remarks"></a>Poznámky  
- Různé objekty stejné typy často mít stejnou velikost. Některé typy, jako je například pole nebo řetězce, ale může mít různou velikost pro každý objekt.  
+ Různé objekty stejné typy často mají stejnou velikost. Některé typy, například pole nebo řetězce, ale může mít jinou velikost pro každý objekt.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -54,5 +54,5 @@ HRESULT GetObjectSize2(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)

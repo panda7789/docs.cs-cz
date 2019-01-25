@@ -1,18 +1,18 @@
 ---
-title: ICorDebugSymbolProvider2::GetFrameProps – metoda
+title: ICorDebugSymbolProvider2::GetFrameProps Method
 ms.date: 03/30/2017
 ms.assetid: f07b73f3-188d-43a9-8f7d-44dce2f1ddb7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 419e7bae5998679fafac48ebfd5b0673e0e4bac5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cd8cc461519b01a9bf62a28610386e51630060d4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33419078"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646194"
 ---
-# <a name="icordebugsymbolprovider2getframeprops-method"></a>ICorDebugSymbolProvider2::GetFrameProps – metoda
-Vrátí metodu počáteční relativní virtuální adresa metodu a nadřazeného rámce zadaný relativní virtuální adresu kódu.  
+# <a name="icordebugsymbolprovider2getframeprops-method"></a>ICorDebugSymbolProvider2::GetFrameProps Method
+Vrátí metodu počáteční relativní virtuální adresa metodu a daný kód relativní virtuální adresu nadřazeného rámce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,21 +26,21 @@ HRESULT GetFrameProps(
   
 #### <a name="parameters"></a>Parametry  
  `codeRva`  
- [v] Kód relativní virtuální adresu.  
+ [in] Kód relativní virtuální adresu.  
   
  `pCodeStartRva`  
- [out] Ukazatel metoda počáteční relativní virtuální adresa.  
+ [out] Ukazatel způsob spuštění relativní virtuální adresu.  
   
  `pParentFrameStartRva`  
- [out] Ukazatel na rámečku počáteční relativní virtuální adresa.  
+ [out] Ukazatel rámec počáteční relativní virtuální adresa.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je k dispozici s .NET Native jenom.  
+>  Tato metoda je pouze k dispozici s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -48,6 +48,6 @@ HRESULT GetFrameProps(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugSymbolProvider2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider2-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugSymbolProvider2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider2-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

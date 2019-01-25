@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bde194023ff6913db9a56e30eddaad8d7abc5ad1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a9e1ef61271e5b413972b8ba40a8fe8bac60ceeb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33452804"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54566210"
 ---
 # <a name="icorprofilerinfogetilfunctionbody-method"></a>ICorProfilerInfo::GetILFunctionBody – metoda
-Získá ukazatel k tělu metody v kódu (MSIL intermediate language) společnosti Microsoft, začínající na jeho záhlaví.  
+Získá ukazatel do těla metody v kódu Microsoft intermediate language (MSIL) začínající na jeho záhlaví.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,10 +39,10 @@ HRESULT GetILFunctionBody(
   
 #### <a name="parameters"></a>Parametry  
  `moduleId`  
- [v] ID modulu, ve kterém se funkce nachází.  
+ [in] ID modulu, ve kterém se funkce nachází.  
   
  `methodId`  
- [v] Token metadata pro metodu.  
+ [in] Token metadat pro metodu.  
   
  `ppMethodHeader`  
  [out] Ukazatel na záhlaví metody.  
@@ -51,12 +51,12 @@ HRESULT GetILFunctionBody(
  [out] Celé číslo, které určuje velikost metody.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda je vymezen modulu, ve kterém je umístěn. Protože `GetILFunctionBody` metoda je navržená tak, aby poskytl přístup k nástroji kód MSIL předtím, než byl načten modulem common language runtime (CLR), použije token metadata metody najít požadované instance.  
+ Metoda je určeno v modulu, ve kterém se nachází. Vzhledem k tomu, `GetILFunctionBody` metoda je určena poskytnout přístup k nástroji pro kód jazyka MSIL, předtím, než byl načten modulem common language runtime (CLR), použije token metadat metody k vyhledání požadovaného instance.  
   
- `GetILFunctionBody` CORPROF_E_FUNCTION_NOT_IL HRESULT může vrátit, pokud `methodId` odkazuje na metodu, bez jakékoli MSIL kód (například abstraktní metodu nebo platformu invoke – metoda (PInvoke)).  
+ `GetILFunctionBody` může vrátit hodnotu HRESULT CORPROF_E_FUNCTION_NOT_IL, pokud `methodId` odkazuje na metodu, bez jakékoli MSIL kód (jako abstraktní metody nebo platformu vyvolání metody (PInvoke)).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -64,5 +64,5 @@ HRESULT GetILFunctionBody(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

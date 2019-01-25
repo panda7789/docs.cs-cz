@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: vytvoření hierarchii pomocí seskupení (Visual Basic)'
+title: 'Postupy: Vytvoření hierarchie pomocí seskupení (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 4eb3ca6b-1aed-43de-b8b9-41c769c993f8
-ms.openlocfilehash: 9df85a52d63c4d7dbffb99a47378d3a1efc10cca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d7c77d0e6b67f21d9d6e0ca270874641011e5924
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33639321"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54520994"
 ---
-# <a name="how-to-create-hierarchy-using-grouping-visual-basic"></a>Postupy: vytvoření hierarchii pomocí seskupení (Visual Basic)
-Tento příklad ukazuje, jak k seskupení dat a pak generování XML podle seskupení.  
+# <a name="how-to-create-hierarchy-using-grouping-visual-basic"></a>Postupy: Vytvoření hierarchie pomocí seskupení (Visual Basic)
+Tento příklad ukazuje, jak seskupit data a pak vygenerovat XML podle seskupení.  
   
 ## <a name="example"></a>Příklad  
- Tato data příklad první skupin podle kategorií, pak generuje nový soubor XML, ve kterém hierarchii XML odráží seskupení.  
+ Tento příklad první seskupuje data podle kategorie, poté vygeneruje nový soubor XML, ve kterém odráží hierarchii XML seskupení.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: Číselná Data (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Číselná Data (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
   
 ```vb  
 Dim doc As XElement = XElement.Load("Data.xml")  
@@ -79,5 +79,5 @@ Console.WriteLine(newData)
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé techniky dotazu (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Pokročilé techniky dotazování (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

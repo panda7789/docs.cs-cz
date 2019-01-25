@@ -9,12 +9,12 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: 7addb503d0a7d4c7a4388144759e7f40264d7703
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 111b129b17d0fe473b0249c43e25ddc50bfe6fd6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43522432"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513448"
 ---
 # <a name="pack-uris-in-wpf"></a>Sbalení URI v technologii WPF
 Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] slouží k identifikaci a načíst soubory mnoha způsoby, včetně následujících:  
@@ -46,7 +46,7 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
   
  ![Diagram balíčku a částí](../../../../docs/framework/wpf/app-development/media/wpfpackurischemefigure1.PNG "WPFPackURISchemeFigure1")  
   
- K identifikaci částí specifikace OPC využívá rozšiřitelnosti RFC 2396 (identifikátory URI (Uniform Resource): Obecná syntaxe) k definování sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] schéma.  
+ K identifikaci částí specifikace OPC využívá rozšiřitelnosti RFC 2396 (identifikátory URI (Uniform Resource): Obecná syntaxe) pro definování sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] schéma.  
   
  Schéma, která je zadána [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] je reprezentován jeho předponu http, ftp a souboru jsou známých příkladů. Této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] schématu jako jeho schéma používá "balíček" a obsahuje dvě součásti: autorita a cestu. Tady je formát pro sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].  
   
@@ -89,7 +89,7 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
   
 -   **Autorita**: aplikace: / / / / /.  
   
--   **Cesta**: název souboru prostředků, včetně jeho cesty vzhledem ke kořenové složce místní sestavení projektu.  
+-   **Cesta**: Název souboru prostředků, včetně jeho cesty vzhledem ke kořenové složce místní sestavení projektu.  
   
  Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor prostředků, který se nachází v kořenové složce místní sestavení projektu.  
   
@@ -105,7 +105,7 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
   
 -   **Autorita**: aplikace: / / / / /.  
   
--   **Cesta**: název souboru prostředku, který se zkompiluje do odkazovaných sestavení. Cestou musí být v následujícím formátu:  
+-   **Cesta**: Název zdrojového souboru, který se zkompiluje do odkazovaných sestavení. Cestou musí být v následujícím formátu:  
   
      *AssemblyShortName*{*; Verze*] {*; PublicKey*]; component /*cesta*  
   
@@ -141,7 +141,7 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
   
 -   **Autorita**: aplikace: / / / / /.  
   
--   **Cesta**: název souboru obsahu, včetně jeho cesty relativní k umístění systému souboru hlavního spustitelného sestavení aplikace.  
+-   **Cesta**: Název souboru obsahu, včetně jeho cesty relativní k umístění systému souboru hlavního spustitelného sestavení aplikace.  
   
  Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] obsahu soubor umístěný ve stejné složce jako spustitelného sestavení.  
   
@@ -160,7 +160,7 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
   
 -   **Autorita**: siteoforigin: / / / / /.  
   
--   **Cesta**: název webu zdrojový soubor, včetně jeho cesty relativní k umístění, ze kterého byl spuštěn spustitelný soubor sestavení.  
+-   **Cesta**: Název lokality zdrojový soubor, včetně jeho cesty relativní k umístění, ze kterého byl spuštěn spustitelný soubor sestavení.  
   
  Následující příklad ukazuje, pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] lokality zdrojový soubor, uložené v umístění, ze kterého je spuštěn spustitelný soubor sestavení.  
   
@@ -297,7 +297,7 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
   
  Tabulka 2 ukazuje různé relativní pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , můžete zadat v kódu.  
   
- Tabulka 2: Pack relativní identifikátory URI v kódu  
+ Tabulka 2: Balíček relativní identifikátory URI v kódu  
   
 |Soubor|Relativní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]|  
 |----------|-------------------------------------------------------------------------------------------------------------------------|  
@@ -358,7 +358,7 @@ Uri uri = new Uri(userProvidedUriTextBox.Text, UriKind.RelativeOrAbsolute);
   
  Tabulka 4 znázorňuje různé relativní pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , můžete zadat v kódu pomocí <xref:System.Uri?displayProperty=nameWithType>.  
   
- Tabulka 4: Pack relativní identifikátory URI v kódu  
+ Tabulka 4: Balíček relativní identifikátory URI v kódu  
   
 |Soubor|Relativní pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)]|  
 |----------|-------------------------------------------------------------------------------------------------------------------------|  
@@ -423,5 +423,5 @@ Uri uri = new Uri(userProvidedUriTextBox.Text, UriKind.RelativeOrAbsolute);
   
  Přehled motivy obsažené v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], naleznete v tématu [styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md).  
   
-## <a name="see-also"></a>Viz také  
- [Prostředek, obsah a datové soubory aplikace WPF](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)
+## <a name="see-also"></a>Viz také:
+- [Prostředek, obsah a datové soubory aplikace WPF](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)

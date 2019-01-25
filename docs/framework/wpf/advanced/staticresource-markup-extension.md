@@ -8,15 +8,15 @@ helpviewer_keywords:
 - XAML [WPF], StaticResource markup extension
 - StaticResource markup extensions [WPF]
 ms.assetid: 97af044c-71f1-4617-9a94-9064b68185d2
-ms.openlocfilehash: 518a85c158c9a4472689d3c236b84278114cf3ce
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5d6c660dba1a351df4dafd756bcabd484b9afad6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33547196"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54554930"
 ---
 # <a name="staticresource-markup-extension"></a>StaticResource – rozšíření značek
-Poskytuje hodnotu pro všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vlastnost atribut vyhledáním odkaz na prostředek už definované. Chování vyhledávání pro tento prostředek je obdobou čas načítání vyhledávání, který bude hledat prostředky, které byly dříve načteny z kódu aktuální [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky a také další aplikace zdroje a vygeneruje tuto hodnotu prostředků, jako Hodnota vlastnosti v objektech spuštění.  
+Poskytuje hodnotu pro všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vlastnost atributu vyhledáním odkaz na prostředek už definované. Chování při vyhledávání pro daný prostředek je obdobou během načítání vyhledávání, která bude hledat prostředky, které byly dříve načteny z kódu aktuálního [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránek a jiných zdrojů aplikace a vygeneruje tuto hodnotu prostředků jako Hodnota vlastnosti objektů za běhu.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -38,38 +38,38 @@ Poskytuje hodnotu pro všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla
   
 |||  
 |-|-|  
-|`key`|Klíč pro požadovaný prostředek. Tento klíč původně přiřazený pomocí [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md) prostředek byl vytvořen v značek, zda byla poskytnuta jako `key` parametr při volání metody <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> Pokud prostředek se vytvořil v kódu.|  
+|`key`|Klíč pro požadovaný prostředek. Tento klíč byl zpočátku přiřadil [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md) prostředek byl vytvořen v označení, zda byla poskytnuta jako `key` parametru při volání metody <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> Pokud prostředek se vytvořil v kódu.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!IMPORTANT]
->  A `StaticResource` nesmí pokus o spuštění dopředného odkazu na prostředek, který je definován v rámci lexikálně Další [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru. Pokusili, není podporován, a i v případě odkazu neselže, pokusu o odkaz na dopředného zpoplatněná snížení výkonu času zatížení při interní hodnota hash tabulky představující <xref:System.Windows.ResourceDictionary> vyhledávají. Nejlepších výsledků dosáhnete upravte složení vaší slovnících prostředků tak, aby se vyhnout dopředného odkazy. Pokud se nelze vyhnout dopředného odkaz, použijte [DynamicResource – rozšíření značek](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md) místo.  
+>  A `StaticResource` nesmí se pokusit vytvořit dopředný odkaz na prostředek, který je definován v rámci lexikálně Další [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru. To pokusíte, není podporována, a i v případě selhání odkazu není pokusem dopředný odkaz se vám být naúčtovány snížení výkonu času zatížení při interní zatřiďovacích tabulek reprezentující <xref:System.Windows.ResourceDictionary> budou vyhledány. Nejlepších výsledků dosáhnete upravte tak, aby dopředné odkazy se lze vyvarovat složení zdrojové slovníky. Pokud se nelze vyhnout dopředný odkaz, použijte [– rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md) místo.  
   
- Zadaný <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> by měla odpovídat existující prostředek, označeny [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md) na určité úrovni v stránku, aplikace, k dispozici řízení motivy a externím prostředkům nebo systémové prostředky. K vyhledávání prostředků v tomto pořadí. Další informace o chování vyhledávání prostředků pro statické a dynamické prostředky najdete v tématu [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
+ Zadaný <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> by měl odpovídat existující prostředek, označena [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md) na určité úrovni v vaše stránka, aplikace, ovládací prvek k dispozici motivy a externí prostředky nebo systémové prostředky. Vyvolá se v tomto pořadí vyhledávání prostředků. Další informace o chování při vyhledávání prostředků pro statické a dynamické prostředky, najdete v části [prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
   
- Klíč prostředku může být libovolný řetězec definovaný v [XamlName – gramatika](../../../../docs/framework/xaml-services/xamlname-grammar.md). Klíč prostředku může být také další typy objektů, jako například <xref:System.Type>. A <xref:System.Type> klíč je nezbytné, aby jak můžete ve ovládací prvky podle motivy, prostřednictvím klíčem implicitní stylu. Další informace najdete v tématu [vytváření – Přehled ovládacího prvku](../../../../docs/framework/wpf/controls/control-authoring-overview.md).  
+ Klíč prostředku může obsahovat libovolný řetězec podle [xamlname – gramatika](../../../../docs/framework/xaml-services/xamlname-grammar.md). Klíč prostředku může být také jinými typy objektů, například <xref:System.Type>. A <xref:System.Type> klíč je nezbytné k tom, jak můžete styl ovládací prvky podle motivy, prostřednictvím klíče k implicitní styl. Další informace najdete v tématu [Přehled vytváření ovládacího prvku](../../../../docs/framework/wpf/controls/control-authoring-overview.md).  
   
- Odkazování na prostředek alternativní deklarativní způsob je jako [DynamicResource – rozšíření značek](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md).  
+ Alternativní deklarativní způsob odkazuje na prostředek je jako [– rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md).  
   
- Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Token řetězec zadaný po `StaticResource` řetězec identifikátoru je přiřazen jako <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> hodnotu základní <xref:System.Windows.StaticResourceExtension> rozšíření třídy.  
+ Nejčastějším typem syntaxe, která se používá u tohoto rozšíření značek, je syntaxe atributu. Řetězec s tokenem uvedený za `StaticResource` řetězec identifikátoru je přiřazen jako <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> hodnoty základního <xref:System.Windows.StaticResourceExtension> rozšíření třídy.  
   
- `StaticResource` lze použít v syntaxi objekt elementu. V takovém případě určující hodnotu <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> vlastnost je povinná.  
+ `StaticResource` můžete použít v syntaxi elementu objektu. V takovém případě zadáte hodnotu <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> vlastnost je povinná.  
   
- `StaticResource` Můžete také použít využití podrobné atribut, který určuje <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> vlastnost jako vlastnost = dvojice hodnota:  
+ `StaticResource` je také možné využití podrobné atribut, který určuje <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> vlastnost jako vlastnost = hodnota pár:  
   
 ```xml  
 <object property="{StaticResource ResourceKey=key}" .../>  
 ```  
   
- Použití podrobné syntaxe je často užitečné pro rozšíření, která mají více než jednu nastavitelnou vlastnost, nebo v případě, že jsou některé vlastnosti volitelné. Protože `StaticResource` má jenom jednu nastavit vlastnost, který je vyžadován, toto podrobné použití není Typická.  
+ Použití podrobné syntaxe je často užitečné pro rozšíření, která mají více než jednu nastavitelnou vlastnost, nebo v případě, že jsou některé vlastnosti volitelné. Protože `StaticResource` má jen jednu nastavitelnou vlastnost, která je požadována, toto použití podrobné syntaxe není typické.  
   
- V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] implementace procesor je definovaný zpracování pro toto rozšíření značek <xref:System.Windows.StaticResourceExtension> třídy.  
+ V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru, zpracování tohoto rozšíření značek definováno <xref:System.Windows.StaticResourceExtension> třídy.  
   
- `StaticResource` je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] použít {a} znaků v jejich syntaxi atributů, což je konvence, podle kterého [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor rozpozná, že rozšíření značek musí zpracovat atribut. Další informace najdete v tématu [rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
+ `StaticResource` je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] použít {a} znaků v syntaxi atributu, což je konvence, podle kterého [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru rozpozná, že rozšíření značek musí zpracovat atribut. Další informace najdete v tématu [– rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
   
-## <a name="see-also"></a>Viz také  
- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [Rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
- [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
- [Prostředky a kód](../../../../docs/framework/wpf/advanced/resources-and-code.md)
+## <a name="see-also"></a>Viz také:
+- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [Rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+- [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)
+- [Prostředky a kód](../../../../docs/framework/wpf/advanced/resources-and-code.md)

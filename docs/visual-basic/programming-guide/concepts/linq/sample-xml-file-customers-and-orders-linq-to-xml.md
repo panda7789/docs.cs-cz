@@ -2,19 +2,19 @@
 title: 'Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: ed319807-c432-4f8e-9694-dad4c7648310
-ms.openlocfilehash: 564347d2203390fbf5c609bd7d0a8b2ab885d87b
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 1ee702b8a487544f89454f35a1c1bdb5658c393d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39244048"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671600"
 ---
 # <a name="sample-xml-file-customers-and-orders-linq-to-xml"></a>Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)
 Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje zákazníci a objednávky.  
   
  Téma [ukázkový soubor XSD: Zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md) obsahuje XSD, který slouží k ověření tohoto dokumentu. Používá `xs:key` a `xs:keyref` funkce XSD zajistit, že `CustomerID` atribut `Customer` element je klíč a k vytvoření vztahu mezi `CustomerID` element v každé `Order` elementu a `CustomerID` atributy v každém `Customer` elementu.  
   
- Příklad zápis dotazů LINQ, které využívají relace pomocí `Join` klauzule, naleznete v tématu [postupy: spojení dvou kolekcí (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md).  
+ Příklad zápis dotazů LINQ, které využívají relace pomocí `Join` klauzule, naleznete v tématu [jak: Spojení dvou kolekcí (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md).  
   
 ## <a name="customersordersxml"></a>CustomersOrders.xml  
   
@@ -434,5 +434,5 @@ Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqlt
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Ukázkové dokumenty XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Ukázkové dokumenty XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

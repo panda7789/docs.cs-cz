@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b85cdee4a65e91c51fdb014bdcc4797b99214daf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aec97ef36b73b1b789c819c4bca516d13ecf1051
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446128"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631201"
 ---
 # <a name="iceegengetsectiondatalen-method"></a>ICeeGen::GetSectionDataLen – metoda
 Získá délku zadaný oddíl.  
   
- Tato metoda je zastaralá a by se neměla používat.  
+ Tato metoda je zastaralý a neměl by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +40,22 @@ HRESULT GetSectionDataLen (
   
 #### <a name="parameters"></a>Parametry  
  `section`  
- [v] Část dat, jehož délka bude načten.  
+ [in] Datové části, jehož délka budou načítat.  
   
  `dataLen`  
  [out] Vrácená délka zadaný oddíl.  
   
 ## <a name="remarks"></a>Poznámky  
- Volání `GetSectionDataLen` pouze v případě, že máte speciální části požadavky, které nejsou zpracovány jinými metodami.  
+ Volání `GetSectionDataLen` pouze v případě, že máte zvláštní oddíl s požadavky, které nejsou zpracovány jinými metodami.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

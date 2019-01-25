@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: volba tiskáren připojených k uživateli&#39;s počítači v systému Windows Forms'
+title: 'Postupy: Volba tiskáren připojených k uživateli&#39;s počítači v modelu Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,25 +9,25 @@ helpviewer_keywords:
 - printing [Windows Forms], choosing printers
 - printers [Windows Forms], choosing
 ms.assetid: 63c1172b-2931-4ac0-953f-37f629494bbf
-ms.openlocfilehash: 5f54a74dc8118d2ebcb2df7e91f229c1807b0297
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 10f45fadab0f3480d4c475ff8ee448b8d1cddb13
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522705"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572809"
 ---
-# <a name="how-to-choose-the-printers-attached-to-a-user39s-computer-in-windows-forms"></a>Postupy: volba tiskáren připojených k uživateli&#39;s počítači v systému Windows Forms
-Často uživatelé chtějí zvolte jiné než výchozí tiskárny pro tisk na tiskárnu. Můžete povolit uživatelům zvolit některou tiskárnu aktuálně nainstalované pomocí <xref:System.Windows.Forms.PrintDialog> součásti. Prostřednictvím <xref:System.Windows.Forms.PrintDialog> součásti, <xref:System.Windows.Forms.DialogResult> z <xref:System.Windows.Forms.PrintDialog> součásti bude zachycen a použit k výběru tiskárny.  
+# <a name="how-to-choose-the-printers-attached-to-a-user39s-computer-in-windows-forms"></a>Postupy: Volba tiskáren připojených k uživateli&#39;s počítači v modelu Windows Forms
+Uživatelé často chtějí vybrat tiskárnu jiné než výchozí tiskárna pro tisk. Můžete umožnit uživatelům si vybrat tiskárnu z aktuálně nainstalované pomocí <xref:System.Windows.Forms.PrintDialog> komponenty. Prostřednictvím <xref:System.Windows.Forms.PrintDialog> komponenty, <xref:System.Windows.Forms.DialogResult> z <xref:System.Windows.Forms.PrintDialog> komponenta je zachycena a umožňuje vybrat tiskárnu.  
   
- V následujícím postupu je vybrán vytištěny do výchozí tiskárny do textového souboru. <xref:System.Windows.Forms.PrintDialog> Pak vytvořit instanci třídy.  
+ V následujícím postupu je textový soubor vybraný které se mají vytisknout, použije se výchozí tiskárna. <xref:System.Windows.Forms.PrintDialog> Pak vytvoření instance třídy.  
   
-### <a name="to-choose-a-printer-and-then-print-a-file"></a>Vybrat tiskárnu a pak vytištění souboru  
+### <a name="to-choose-a-printer-and-then-print-a-file"></a>Můžete vybrat tiskárnu a potom tisk souboru  
   
-1.  Vyberte tiskárny k použití pomocí <xref:System.Windows.Forms.PrintDialog> součásti.  
+1.  Vyberte tiskárny, kterou chcete použít pomocí <xref:System.Windows.Forms.PrintDialog> komponenty.  
   
-     V následujícím příkladu kódu jsou dvě události ke zpracování. V první <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> událostí, <xref:System.Windows.Forms.PrintDialog> vytvoření instance třídy a je vybraný uživatelem tiskárny zachyceného <xref:System.Windows.Forms.DialogResult> vlastnost.  
+     V následujícím příkladu kódu existují dvě události se zpracovávají. V první <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> událostí, <xref:System.Windows.Forms.PrintDialog> je vytvořena instance třídy a jsou zachyceny tiskárny vybraných uživatelem <xref:System.Windows.Forms.DialogResult> vlastnost.  
   
-     V druhé události <xref:System.Drawing.Printing.PrintDocument.PrintPage> události <xref:System.Drawing.Printing.PrintDocument> součásti, dokument ukázka tisku tiskárně zadán.  
+     V druhém případě <xref:System.Drawing.Printing.PrintDocument.PrintPage> událost <xref:System.Drawing.Printing.PrintDocument> komponentu, vytiskne se ukázkový dokument na tiskárně zadaná.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -106,5 +106,5 @@ ms.locfileid: "33522705"
        System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Podpora tisku v modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)
+## <a name="see-also"></a>Viz také:
+- [Podpora tisku v modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)

@@ -2,23 +2,23 @@
 title: Microsoft.Transactions.TransactionBridge.DurableParticipantReplayWhilePreparing
 ms.date: 03/30/2017
 ms.assetid: 10ef3876-6f8e-4d4e-8444-f47847b64795
-ms.openlocfilehash: fe88e70ab4955305d78baa1158cd73a93ba2ed2c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3b51a100677221866186b2e24f34396c012d11c1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33476317"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54603128"
 ---
 # <a name="microsofttransactionstransactionbridgedurableparticipantreplaywhilepreparing"></a>Microsoft.Transactions.TransactionBridge.DurableParticipantReplayWhilePreparing
-Služba Protokol WS-AT přijala zprávu opětovného přehrání z trvalého účastníka, které neodpovídají na přípravu. V důsledku toho byla transakce přerušena.  
+Služba protokolu WS-AT obdržela odpověď od trvalého účastníka, který neodpověděl na připravit. V důsledku toho byla transakce přerušena.  
   
 ## <a name="description"></a>Popis  
- Trasovat, pokud bylo přijato formou opakovaného přehrávání zprávy trvalého účastníka stále připravuje. Tato zpráva neplatné pro tento stav je a transakce přerušena.  
+ Trasovaná, pokud se stále připravuje trvalého účastníka bylo přijato odpověď. Toto je neplatná zpráva pro tento stav a transakce bude přerušen.  
   
 ## <a name="troubleshooting"></a>Poradce při potížích  
- Tato chyba může indiate, že trvalého účastníka (včetně podřízených TransactionManagers) došlo k zotavení z chyby, ale je jistí výstup transakce a požádat o jeho stav.  
+ Tato chyba může indiate, trvalého účastníka (včetně podřízených TransactionManagers) se zotavil po selhání, i když je jistí, jaké výsledek transakce a požádat o jeho stav.  
   
-## <a name="see-also"></a>Viz také  
- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a>Viz také:
+- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

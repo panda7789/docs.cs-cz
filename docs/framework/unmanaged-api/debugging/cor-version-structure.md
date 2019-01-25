@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e2668e36debebb5ba71277912f37833eba584fde
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e07487f536454d9d2dcfff15eb871124112d250e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403276"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54634953"
 ---
 # <a name="corversion-structure"></a>COR_VERSION – struktura
-Ukládá číslo standardní sestávající ze čtyř částí verze modulu CLR.  
+Ukládá číslo standardní sestávající ze čtyř částí verze modulu common language runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,10 +47,10 @@ typedef struct _COR_VERSION {
 |`dwSubBuild`|Číslo dílčí sestavení.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je číslo verze 1.0.3705.288, je hlavní číslo verze 1, 0 je číslo podverze, 3705 je číslo sestavení a 288 je číslo dílčí sestavení.  
+ Pokud číslo verze je 1.0.3705.288, je číslo hlavní verze 1, 0 je číslo podverze, 3705 je číslo sestavení a 288 je číslo dílčí sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl  
   
@@ -58,6 +58,6 @@ typedef struct _COR_VERSION {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

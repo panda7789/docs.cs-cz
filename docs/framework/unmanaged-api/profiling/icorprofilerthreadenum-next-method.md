@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ed01b2f59c46d1dcedd62846ea663c9aa7213b37
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 25a6baea0cdd92d6d214ab8a697b0c00c44c42bf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33457723"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664574"
 ---
 # <a name="icorprofilerthreadenumnext-method"></a>ICorProfilerThreadEnum::Next – metoda
-Získá zadaný počet vláken, souvislý z kolekce sekvenčních vláken, začínající na enumerátor na aktuální pozici v pořadí.  
+Získá zadaný počet souvislých vlákna z kolekce sekvenčních vláken, od aktuální pozice čítače výčtu v sekvenci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,24 +39,24 @@ HRESULT Next (    [in]  ULONG      celt,
   
 #### <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet vláken pro načtení.  
+ [in] Počet vláken pro načtení.  
   
  `ids`  
- [out] Pole `ThreadID` hodnoty, z nichž každý představuje načtené vlákna.  
+ [out] Pole `ThreadID` hodnot, z nichž každý představuje načtený vlákna.  
   
  `pceltFetched`  
- [out] Ukazatel na počet vláken ve skutečnosti, vrátí se v `ids` pole.  
+ [out] Ukazatel na počet skutečně vrácených v vláken `ids` pole.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|`celt` elementy byly vráceny.|  
-|S_FALSE|Méně než `celt` byly vráceny elementy, které označuje, že výčtu je kompletní.|  
+|S_FALSE|Méně než `celt` prvky byly vráceny, což znamená, že dokončení výčtu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -64,6 +64,6 @@ HRESULT Next (    [in]  ULONG      celt,
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerThreadEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerThreadEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

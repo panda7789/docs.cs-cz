@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ab4d3bf7db928f926b802c08ee5e61edf86055b6
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 32b212f336e622719d9979d46ea885deb919c51c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196748"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54635023"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Zastaralé typy v rozhraní .NET Framework
 <a name="introduction"></a> V tabulkách v tomto článku jsou uvedeny typy, které jsou zastaralé v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]uspořádaných podle sestavení. Pokud chcete zobrazit seznam zastaralých typů a doporučené alternativy v každé sestavení pomocí následujících odkazů. Protože tyto typy jsou zastaralé, jsou zastaralé také jejich členy. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework najdete v tématu [zastaralé členy](../../../docs/framework/whats-new/obsolete-members.md).
@@ -84,7 +84,7 @@ ms.locfileid: "47196748"
 |<xref:System.Collections.IHashCodeProvider?displayProperty=nameWithType>|Použijte prosím <xref:System.Collections.IEqualityComparer?displayProperty=nameWithType> místo.|
 |<xref:System.Configuration.Assemblies.AssemblyHash?displayProperty=nameWithType>|<xref:System.Configuration.Assemblies.AssemblyHash> Třída je zastaralá.|
 |<xref:System.Diagnostics.Contracts.Internal.ContractHelper?displayProperty=nameWithType>|Nejprve zastaralé v rozhraní .NET Framework 4.5. Použití <xref:System.Runtime.CompilerServices.ContractHelper?displayProperty=nameWithType> třídy v oboru názvů System.Runtime.CompilerServices místo.|
-|<xref:System.Reflection.Emit.UnmanagedMarshal?displayProperty=nameWithType>|Alternativní rozhraní API je k dispozici: generování <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> vlastního atributu místo.|
+|<xref:System.Reflection.Emit.UnmanagedMarshal?displayProperty=nameWithType>|Alternativní rozhraní API je k dispozici: Generování <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> vlastního atributu místo.|
 |<xref:System.Runtime.InteropServices.BIND_OPTS?displayProperty=nameWithType>|Místo nich se používá <xref:System.Runtime.InteropServices.ComTypes.BIND_OPTS?displayProperty=nameWithType>.|
 |<xref:System.Runtime.InteropServices.BINDPTR?displayProperty=nameWithType>|Místo nich se používá <xref:System.Runtime.InteropServices.ComTypes.BINDPTR?displayProperty=nameWithType>.|
 |<xref:System.Runtime.InteropServices.CALLCONV?displayProperty=nameWithType>|Místo nich se používá <xref:System.Runtime.InteropServices.ComTypes.CALLCONV?displayProperty=nameWithType>.|
@@ -140,7 +140,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="Core"></a>
-### <a name="assembly-systemcoredll"></a>Assembly: System.Core.dll
+### <a name="assembly-systemcoredll"></a>Sestavení: System.Core.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -149,7 +149,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="data"></a>
-### <a name="assembly-systemdatadll"></a>Assembly: System.Data.dll
+### <a name="assembly-systemdatadll"></a>Sestavení: System.Data.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -161,7 +161,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="oracleclient"></a>
-### <a name="assembly-systemdataoracleclientdll"></a>Assembly: System.Data.OracleClient.dll
+### <a name="assembly-systemdataoracleclientdll"></a>Sestavení: System.Data.OracleClient.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -214,7 +214,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="enterpriseservices"></a>
-### <a name="assembly-systementerpriseservicesdll"></a>Assembly: System.EnterpriseServices.dll
+### <a name="assembly-systementerpriseservicesdll"></a>Sestavení: System.EnterpriseServices.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -223,7 +223,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="net"></a>
-### <a name="assembly-systemnetdll"></a>Assembly: System.Net.dll
+### <a name="assembly-systemnetdll"></a>Sestavení: System.Net.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -240,7 +240,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="servicemodel"></a>
-### <a name="assembly-systemservicemodeldll"></a>Assembly: System.ServiceModel.dll
+### <a name="assembly-systemservicemodeldll"></a>Sestavení: System.ServiceModel.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -256,7 +256,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="web"></a>
-### <a name="assembly-systemwebdll"></a>Assembly: System.Web.dll
+### <a name="assembly-systemwebdll"></a>Sestavení: System.Web.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -277,7 +277,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="mobile"></a>
-### <a name="assembly-systemwebmobiledll"></a>Assembly: System.Web.Mobile.dll
+### <a name="assembly-systemwebmobiledll"></a>Sestavení: System.Web.Mobile.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -490,7 +490,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="workflow_componentmodel"></a>
-### <a name="assembly-systemworkflowcomponentmodeldll"></a>Assembly: System.Workflow.ComponentModel.dll
+### <a name="assembly-systemworkflowcomponentmodeldll"></a>Sestavení: System.Workflow.ComponentModel.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -523,7 +523,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="workflowservices"></a>
-### <a name="assembly-systemworkflowservicesdll"></a>Assembly: System.WorkflowServices.dll
+### <a name="assembly-systemworkflowservicesdll"></a>Sestavení: System.WorkflowServices.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -552,7 +552,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="xaml"></a>
-### <a name="assembly-systemxamldll"></a>Assembly: System.Xaml.dll
+### <a name="assembly-systemxamldll"></a>Sestavení: System.Xaml.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -561,7 +561,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="xml"></a>
-### <a name="assembly-systemxmldll"></a>Assembly: System.Xml.dll
+### <a name="assembly-systemxmldll"></a>Sestavení: System.Xml.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -574,7 +574,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="WindowsBase"></a>
-### <a name="assembly-windowsbasedll"></a>Sestavení: knihovně WindowsBase.dll
+### <a name="assembly-windowsbasedll"></a>Sestavení: WindowsBase.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -603,7 +603,7 @@ ms.locfileid: "47196748"
  [Zpět na začátek](#introduction)
 
 <a name="jscript"></a>
-### <a name="assembly-microsoftjscriptdll"></a>Assembly: Microsoft.JScript.dll
+### <a name="assembly-microsoftjscriptdll"></a>Sestavení: Microsoft.JScript.dll
 
 |Typ|Zpráva|
 |----------|-------------|
@@ -776,5 +776,6 @@ ms.locfileid: "47196748"
 |<xref:Microsoft.VisualC.NeedsCopyConstructorModifier?displayProperty=nameWithType>|Microsoft.VisualC.dll je sestavení zastaralé a existuje pouze pro zpětnou kompatibilitu.|
 |<xref:Microsoft.VisualC.NoSignSpecifiedModifier?displayProperty=nameWithType>|Microsoft.VisualC.dll je sestavení zastaralé a existuje pouze pro zpětnou kompatibilitu.|
 
-## <a name="see-also"></a>Viz také
- [Co je zastaralé v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md) [zastaralé členy](../../../docs/framework/whats-new/obsolete-members.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé položky v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md)
+- [Zastaralé členy](../../../docs/framework/whats-new/obsolete-members.md)

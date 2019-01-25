@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 637ff0fca74dc123a3f7a47dcc3fdeded8d884ea
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 92ee0570a1a9bcc48cea744d5cc707750742d51a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430044"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54534079"
 ---
 # <a name="getcorrequiredversion-function"></a>GetCORRequiredVersion – funkce
-Získá požadované běžné language runtime (CLR) číslo verze.  
+Získá požadované common language runtime (CLR) číslo verze.  
   
  Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
@@ -40,16 +40,16 @@ HRESULT GetCORRequiredVersion (
   
 #### <a name="parameters"></a>Parametry  
  `pbuffer`  
- [out] Vyrovnávací paměť, která obsahuje řetězec, který určuje číslo verze.  
+ [out] Vyrovnávací paměti, který obsahuje řetězec, který určuje číslo verze.  
   
  `cchBuffer`  
- [v] Velikost v bajtech vyrovnávací paměti.  
+ [in] Velikost v bajtech, vyrovnávací paměti.  
   
  `dwLength`  
- [out] Vrátí počet bajtů ve vyrovnávací paměti.  
+ [out] Počet bajtů vrácených ve vyrovnávací paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -57,5 +57,5 @@ HRESULT GetCORRequiredVersion (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

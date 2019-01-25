@@ -16,25 +16,25 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b2ee8a5d98c3577bc54ecdaa5205f08a5c610830
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 52b2c46fbcbf89bdcf1100f41e0ba7553d1f0b0a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424453"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54635049"
 ---
 # <a name="isymunmanageddocumentwriter-interface"></a>ISymUnmanagedDocumentWriter – rozhraní
-Poskytuje metody pro zápis do dokumentu odkazuje úložiště symbolů.  
+Poskytuje metody pro zápis na dokument odkazuje úložiště symbolů.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
 |[SetCheckSum – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-setchecksum-method.md)|Nastaví údaj o kontrolním součtu.|  
-|[SetSource – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-setsource-method.md)|Nastaví vložený zdroj pro dokument, který se připravuje.|  
+|[SetSource – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-setsource-method.md)|Nastaví vložený zdroj pro dokument, u kterého probíhá zápis.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

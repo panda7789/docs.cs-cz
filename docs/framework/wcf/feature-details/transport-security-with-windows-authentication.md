@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 96dd26e2-46e7-4de0-9a29-4fcb05bf187b
-ms.openlocfilehash: 3e48c397cb97cdfeb476daaf09d997e9609b3467
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: bd4e12a861207e5318e8f3f34b38204f6724e7b9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50201488"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54652589"
 ---
 # <a name="transport-security-with-windows-authentication"></a>Zabezpečení přenosu pomocí ověřování systému Windows
-Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby zabezpečuje zabezpečení Windows. Další informace o programování naleznete v tématu [postupy: zabezpečení služby pomocí pověření Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
+Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby zabezpečuje zabezpečení Windows. Další informace o programování naleznete v tématu [jak: Zabezpečení služby pomocí pověření Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
   
  Intranet webové služby zobrazí informace o lidských zdrojů. Klient je aplikace Windows Form. Aplikace je nasazená v doméně pomocí protokolu Kerberos řadiče domény zabezpečení.  
   
@@ -26,7 +26,7 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
 |Ověření (Server)<br /><br /> Ověření (klient)|Ano (s použitím integrované ověřování Windows)<br /><br /> Ano (s použitím integrované ověřování Windows)|  
 |Integrita|Ano|  
 |Důvěrnost|Ano|  
-|Přenos|SÍŤ. TCP|  
+|Přenos|NET.TCP|  
 |Vazba|<xref:System.ServiceModel.NetTcpBinding>|  
   
 ## <a name="service"></a>Služba  
@@ -117,7 +117,7 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

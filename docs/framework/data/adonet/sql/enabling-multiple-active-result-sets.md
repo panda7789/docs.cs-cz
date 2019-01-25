@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 576079e4-debe-4ab5-9204-fcbe2ca7a5e2
-ms.openlocfilehash: 073cd3a57f254f639fac44900ff6bf022e1fb165
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 70e589fcff241a664ef470dfeb746412cde6b515
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43504303"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54570197"
 ---
 # <a name="enabling-multiple-active-result-sets"></a>Povolení více aktivních sad výsledků
 Více sad aktivní výsledků (MARS) je funkce, která funguje se serverem SQL Server, aby bylo možné spouštění více dávek na jedno připojení. Pokud MARS je povolené pro použití se serverem SQL Server, přidá každý objekt příkazu použít relaci připojení.  
@@ -92,7 +92,7 @@ string connectionString = "Data Source=MSSQL1;" +
   
  Představte si třeba následující scénář. Příkaz jsou vytvořeny dva objekty, jeden pro zpracování je sada výsledků dotazu a druhý pro aktualizaci dat; sdílejí společné připojení přes MARS. V tomto scénáři `Transaction`.`Commit` Při aktualizaci selhávat, dokud se všechny výsledky byly načteny na první příkaz objekt, což má za následek následující výjimku:  
   
- Zpráva: Kontext transakce používá jiná relace.  
+ zpráva: Kontext transakce používá jiná relace.  
   
  Zdroj: Zprostředkovatel dat .net SqlClient  
   
@@ -111,6 +111,6 @@ string connectionString = "Data Source=MSSQL1;" +
 ### <a name="detecting-mars-support"></a>Zjišťování MARS podpory  
  Aplikace můžete zkontrolovat MARS podpory najdete `SqlConnection.ServerVersion` hodnotu. Hlavní číslo musí být pro SQL Server 2005 9 a 10 pro SQL Server 2008.  
   
-## <a name="see-also"></a>Viz také  
- [Více aktivních sad výsledků (MARS)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Více aktivních sad výsledků (MARS)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -2,12 +2,12 @@
 title: Správa souběžnosti s DependentTransaction
 ms.date: 03/30/2017
 ms.assetid: b85a97d8-8e02-4555-95df-34c8af095148
-ms.openlocfilehash: 5bcf321c2c09411ddb720e2cb4be1ddb076bbe6a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1943c8c8c03bb9598dc0c456d52fa962288d240c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33363201"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664457"
 ---
 # <a name="managing-concurrency-with-dependenttransaction"></a>Správa souběžnosti s DependentTransaction
 <xref:System.Transactions.Transaction> Objekt je vytvořen pomocí <xref:System.Transactions.Transaction.DependentClone%2A> metody. Jejím jediným účelem je zajistit, že transakci nelze potvrdit při některých jiných částí kódu (například pracovní podproces) jsou stále provede práci na transakci. Při práci v rámci naklonované transakce je dokončena a připravena k potvrzené, jej můžete upozornit na transakci pomocí Tvůrce <xref:System.Transactions.DependentTransaction.Complete%2A> metody. Proto můžete zachovat konzistence a správností data.  
@@ -70,7 +70,7 @@ using(TransactionScope scope = new TransactionScope())
   
  `ThreadMethod` Metoda provádí u nového vlákna. Klient spustí nového vlákna, předávání závislé transakce, jako `ThreadMethod` parametru.  
   
- Vzhledem k tomu, že závislé transakce je vytvořen s <xref:System.Transactions.DependentCloneOption.BlockCommitUntilComplete>, zaručuje, že transakci nelze zapsat do všech transakční práce vykonané na druhou po dokončení vlákna a <xref:System.Transactions.DependentTransaction.Complete%2A> je volán na závislé transakce. To znamená, že pokud skončí obor klienta (při pokusu o odstranění transakční objekt na konci **pomocí** příkaz) před nové vlákno volání <xref:System.Transactions.DependentTransaction.Complete%2A> na závislé transakce, kód klienta blokuje dokud <xref:System.Transactions.DependentTransaction.Complete%2A> se volá na závislé položky. Poté můžete transakci dokončit potvrzení nebo přerušení.  
+ Vzhledem k tomu, že závislé transakce je vytvořen s <xref:System.Transactions.DependentCloneOption.BlockCommitUntilComplete>, zaručuje, že transakci nelze zapsat do všech transakční práce vykonané na druhou po dokončení vlákna a <xref:System.Transactions.DependentTransaction.Complete%2A> je volán na závislé transakce. To znamená, že pokud skončí klienta oboru (při pokusu o uvolnění objektu transakce na konci **pomocí** prohlášení) před nové vlákno hovory <xref:System.Transactions.DependentTransaction.Complete%2A> na závislé transakce kódu klienta blokování až <xref:System.Transactions.DependentTransaction.Complete%2A> je volána v rolích dependent. Poté můžete transakci dokončit potvrzení nebo přerušení.  
   
 ## <a name="concurrency-issues"></a>Problémy s souběžnosti  
  Existuje několik dalších souběžnosti problémy, které potřebujete vědět, používáte-li <xref:System.Transactions.DependentTransaction> třídy:  
@@ -81,5 +81,5 @@ using(TransactionScope scope = new TransactionScope())
   
 -   Pokud pracovní podproces založí nový pracovní podproces, ujistěte se, k vytvoření závislá kopie z závislá kopie a předejte jí nové vlákno.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Transactions.DependentTransaction>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Transactions.DependentTransaction>

@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: df363480-ba02-4233-9ddf-8434e421c4f1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 10449867a37863798a0da2df9111bcd7addfc6ef
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 4835536dd3ae815fbe7e50582b94caefb1fc9082
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45625942"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683817"
 ---
 # <a name="result-tree-fragment-in-transformations"></a>Fragment stromu výsledků v transformacích
 
@@ -35,7 +35,7 @@ Pro `parameter` elementu, je hodnota přiřazena kvalifikovaný název (`Qname`)
 
 Pro `variable` elementu, hodnota je také přiřazený několika způsoby. Vrácením obsahu z výrazu XPath v ji můžete přiřadit `select` atribut, nebo za její přiřazení obsahu těla šablony.
 
-Pro obě `parameter` a `variable` prvky, pokud je hodnota přiřazena pomocí výrazu XPath, pak jednu z čtyři základní typy jazyka XPath bude vrácen: logická hodnota, řetězec, číslo nebo uzel nastavení. Pokud hodnota je uvedená pomocí prázdné šablony textu, pak je vrácený datový typ výraz XPath a bude fragment stromu výsledek.
+Pro obě `parameter` a `variable` prvky, pokud je hodnota přiřazena pomocí výrazu XPath, pak jednu z čtyři základní typy jazyka XPath bude vrácen: Logická hodnota, řetězec, číslo nebo uzel nastavení. Pokud hodnota je uvedená pomocí prázdné šablony textu, pak je vrácený datový typ výraz XPath a bude fragment stromu výsledek.
 
 Pokud proměnná je vázán k fragment stromu výsledek místo jedné z čtyři základní typy dat XPath, pak toto je pouze, že dotaz XPath vrátí typ, který není jedním ze čtyř typů objektů jazyka XPath. Jejich chování a výsledků fragmenty jsou popsány v [specifikace World Wide Web Consortium (W3C)](https://www.w3.org/TR/xslt-10/), [části 11.1 výsledků fragmenty](https://www.w3.org/TR/xslt-10/#section-Result-Tree-Fragments) prostřednictvím [části 11.6 předávání Parametry šablony](https://www.w3.org/TR/xslt-10/#section-Passing-Parameters-to-Templates). Navíc [části 1 Úvod](https://www.w3.org/TR/xslt-10/#section-Introduction) popisuje, jak šablony může obsahovat elementy z oboru názvů XSLT, které vrátí nebo vytvoří výsledků fragmenty stromu.
 
@@ -194,7 +194,7 @@ Výsledek transformace XML pomocí této šablony stylů je následující:
 
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.XPath.XPathNodeIterator>  
-- <xref:System.Xml.XPath.XPathNodeIterator>  
-- [Transformace XSLT s třídou XslTransform](xslt-transformations-with-the-xsltransform-class.md)  
-- [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)  
+- <xref:System.Xml.XPath.XPathNodeIterator>
+- <xref:System.Xml.XPath.XPathNodeIterator>
+- [Transformace XSLT s třídou XslTransform](xslt-transformations-with-the-xsltransform-class.md)
+- [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - utf8output compiler option [Visual Basic]
 - /utf8output compiler option [Visual Basic]
 ms.assetid: 8ab36b1e-027a-49ac-85b4-f48997d9e4d6
-ms.openlocfilehash: 753c92cdf2124ee7fb1b471c7bc543b6db6f3daa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e6bb04364c2f92129993e19c746fd7cb9c18dc8a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33653582"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54648531"
 ---
 # <a name="-utf8output-visual-basic"></a>-utf8output (Visual Basic)
 Zobrazí výstup kompilátoru pomocí kódování UTF-8.  
@@ -27,18 +27,18 @@ Zobrazí výstup kompilátoru pomocí kódování UTF-8.
  Volitelné. Výchozí hodnota pro tuto možnost je `-utf8output-`, což znamená, že výstup kompilátoru nepoužívá kódování UTF-8. Určení `-utf8output` je stejné jako zadání `-utf8output+`.  
   
 ## <a name="remarks"></a>Poznámky  
- V některých konfiguracích mezinárodní výstupu kompilátoru nelze správně v konzole. V takových situacích použít `-utf8output` a přesměrujte výstup kompilátoru do souboru.  
+ V některých konfiguracích mezinárodní není výstup kompilátoru správně zobrazovat v konzole. V takových situacích použít `-utf8output` a přesměrovat výstup kompilátoru do souboru.  
   
 > [!NOTE]
->  `-utf8output` Možnost není k dispozici ve vývojovém prostředí sady Visual Studio, je k dispozici pouze při kompilaci z příkazového řádku.  
+>  `-utf8output` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici jenom při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `In.vb` a přesměruje kompilátoru k zobrazení výstupu pomocí kódování UTF-8.  
+ Následující kód zkompiluje `In.vb` a instruuje kompilátor, aby zobrazení výstupu pomocí kódování UTF-8.  
   
 ```console  
 vbc -utf8output in.vb  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+## <a name="see-also"></a>Viz také:
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

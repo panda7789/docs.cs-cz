@@ -15,14 +15,14 @@ helpviewer_keywords:
 - Terminate event [Visual Basic]
 - execution [Visual Basic], stopping
 ms.assetid: 07018828-2d49-4cf5-a44b-19fb15d9efea
-ms.openlocfilehash: aac30a8b0272ae6c141138a91585953237ab8098
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: c41d3b2c8d905395f1249b15709da8dbdf5d4632
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43403539"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54640430"
 ---
-# <a name="walkthrough-defining-classes-visual-basic"></a>Návod: Definování tříd (Visual Basic)
+# <a name="walkthrough-defining-classes-visual-basic"></a>Průvodce: Definování třídy (Visual Basic)
 
 Tento návod ukazuje, jak definovat třídy, které pak můžete použít k vytváření objektů. Také ukazuje, jak přidat vlastnosti a metody do nové třídy a ukazuje, jak inicializovat objekt.  
   
@@ -30,11 +30,11 @@ Tento návod ukazuje, jak definovat třídy, které pak můžete použít k vytv
   
 ## <a name="to-define-a-class"></a>Definování třídy
   
-1.  Vytvořte projekt kliknutím **nový projekt** na **souboru** nabídky. **Nový projekt** zobrazí se dialogové okno.  
+1.  Vytvořte projekt kliknutím **nový projekt** na **souboru** nabídky. Zobrazí se dialogové okno **Nový projekt**.  
   
 2.  Vyberte ze seznamu šablon projektů jazyka Visual Basic k zobrazení nového projektu aplikace Windows.  
   
-3.  Přidejte novou třídu do projektu kliknutím **přidat třídu** na **projektu** nabídky. **Přidat novou položku** zobrazí se dialogové okno.  
+3.  Přidejte novou třídu do projektu kliknutím **přidat třídu** na **projektu** nabídky. Zobrazí se dialogové okno **Přidat novou položku**.  
   
 4.  Vyberte **třídy** šablony.  
   
@@ -81,5 +81,5 @@ Tento návod ukazuje, jak definovat třídy, které pak můžete použít k vytv
   
 ## <a name="see-also"></a>Viz také:
 
-[Objektově orientované programování (Visual Basic)](../../concepts/object-oriented-programming.md)  
-[Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Objektově orientované programování (Visual Basic)](../../concepts/object-oriented-programming.md)
+- [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

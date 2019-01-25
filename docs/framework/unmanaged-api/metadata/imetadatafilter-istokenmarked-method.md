@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5bf5149e8e42a810a6a490767638b374f66b5679
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 32642c4ff6193e2002c8a4c7d201b36c7601debb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445861"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54582536"
 ---
 # <a name="imetadatafilteristokenmarked-method"></a>IMetaDataFilter::IsTokenMarked – metoda
-Získá hodnotu označující, zda zadaná metadata token byla označena jako zpracovaná.  
+Získá hodnotu označující, zda byl token metadat zadaného označena jako zpracovaná.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT IsTokenMarked (
   
 #### <a name="parameters"></a>Parametry  
  `tk`  
- [v] Token k prozkoumání pro zpracování značky.  
+ [in] Token, který chcete prozkoumat pro zpracování značku.  
   
  `pIsMarked`  
- [out] Hodnotu, která je `true` Pokud `tk` byl zpracován; jinak hodnota `false`.  
+ [out] Hodnotu, která je `true` Pokud `tk` byl zpracovaných; v opačném případě `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataFilter – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatafilter-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataFilter – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatafilter-interface.md)

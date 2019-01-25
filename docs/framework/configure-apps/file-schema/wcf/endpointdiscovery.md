@@ -2,21 +2,21 @@
 title: '&lt;endpointDiscovery&gt;'
 ms.date: 03/30/2017
 ms.assetid: 70812717-888a-4748-9640-0df6715ff029
-ms.openlocfilehash: 58bab9aef2e20d762c303e8b698214125531a136
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 4611d529c1854ee456585ad3f7aac339ff771bce
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150913"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54556441"
 ---
 # <a name="ltendpointdiscoverygt"></a>&lt;endpointDiscovery&gt;
 Určuje různá nastavení zjišťování pro koncový bod, například jeho rozpoznatelnost, rozsahy a všechny vlastní rozšíření jeho metadat.  
   
 \<system.ServiceModel>  
 \<chování >  
-\<názvy endpointBehaviors >  
+\<endpointBehaviors>  
 \<chování >  
-\<endpointDiscovery >  
+\<endpointDiscovery>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,7 +48,7 @@ Určuje různá nastavení zjišťování pro koncový bod, například jeho roz
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<obory >](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)|Kolekce oboru identifikátory URI pro koncový bod. Více než jednoho oboru identifikátory URI lze přidružit jeden koncový bod.|  
+|[\<scopes>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)|Kolekce oboru identifikátory URI pro koncový bod. Více než jednoho oboru identifikátory URI lze přidružit jeden koncový bod.|  
 |[\<Rozšíření >](../../../../../docs/framework/configure-apps/file-schema/wcf/extensions.md) [z \<endpointDiscovery >]|Kolekce elementů XML, který vám umožní určit vlastních metadat pro publikování pro koncový bod.|  
 |\<typy >|Kolekce rozhraní pro hledání.|  
   
@@ -56,7 +56,7 @@ Určuje různá nastavení zjišťování pro koncový bod, například jeho roz
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
 |||  
   
 ## <a name="remarks"></a>Poznámky  
@@ -104,5 +104,5 @@ Určuje různá nastavení zjišťování pro koncový bod, například jeho roz
 </behaviors>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

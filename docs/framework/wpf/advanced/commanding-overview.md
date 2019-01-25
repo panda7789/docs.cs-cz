@@ -13,12 +13,12 @@ helpviewer_keywords:
 - commanding [WPF]
 - CommandManager [WPF]
 ms.assetid: bc208dfe-367d-426a-99de-52b7e7511e81
-ms.openlocfilehash: d41613ce2488fa572fa11def06350ab1e564df6c
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 7358cc97f5b6b822be592c9e78aebbf9078fdd25
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44086216"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54723534"
 ---
 # <a name="commanding-overview"></a>Přehled příkazů
 <a name="introduction"></a> Příkazů je mechanismus vstupní v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytující vstupní zpracování více sémantických úrovni, než vstupní zařízení. Příklady příkazů **kopírování**, **Vyjmout**, a **vložit** nalézt operace v mnoha aplikacích.  
@@ -183,13 +183,13 @@ ms.locfileid: "44086216"
   
  Příklad vytvoření vlastní <xref:System.Windows.Input.RoutedCommand>, naleznete v tématu [vytvoření vlastní routedcommand – ukázky](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Input.RoutedCommand>  
- <xref:System.Windows.Input.CommandBinding>  
- <xref:System.Windows.Input.InputBinding>  
- <xref:System.Windows.Input.CommandManager>  
- [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)  
- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
- [Implementace rozhraní ICommandSource](../../../../docs/framework/wpf/advanced/how-to-implement-icommandsource.md)  
- [Postupy: přidání příkazu do položku nabídky](https://msdn.microsoft.com/library/013d68a0-5373-4a68-bd91-5de574307370)  
- [Vytvoření vlastní routedcommand – ukázky](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Input.RoutedCommand>
+- <xref:System.Windows.Input.CommandBinding>
+- <xref:System.Windows.Input.InputBinding>
+- <xref:System.Windows.Input.CommandManager>
+- [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)
+- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+- [Implementace rozhraní ICommandSource](../../../../docs/framework/wpf/advanced/how-to-implement-icommandsource.md)
+- [Postupy: Přidání příkazu do položku nabídky](https://msdn.microsoft.com/library/013d68a0-5373-4a68-bd91-5de574307370)
+- [Vytvoření vlastní routedcommand – ukázky](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand)

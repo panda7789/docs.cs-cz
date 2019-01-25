@@ -3,12 +3,12 @@ title: Reference k rozhraní API technologie WIF
 ms.date: 03/30/2017
 ms.assetid: a027d902-9314-4bfd-b172-4e81847b1d68
 author: BrucePerlerMS
-ms.openlocfilehash: 0cd373ae3fd5acb1650f0d8614b34c5d19cf9016
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 21b294a58efcad6c3eb7c74e643a2ac3e0ea23fd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47195470"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54663593"
 ---
 # <a name="wif-api-reference"></a>Reference k rozhraní API technologie WIF
 Třídy technologie Windows Identity Foundation (WIF) se rozdělit mezi následující sestavení: `mscorlib` (mscorlib.dll) `System.IdentityModel` (System.IdentityModel.dll) `System.IdentityModel.Services` (System.IdentityModel.Services.dll), a `System.ServiceModel` () System.ServiceModel.dll). Toto téma obsahuje odkazy na obory názvů WIF a stručné vysvětlení tříd, které obsahuje každý obor názvů.  
@@ -46,6 +46,6 @@ Třídy technologie Windows Identity Foundation (WIF) se rozdělit mezi následu
  <xref:System.ServiceModel.Security?displayProperty=nameWithType>  
  Obsahuje třídy, které představují WCF kontrakty, kanály, obsluha hostitelů a další artefakty, které se používají ve scénářích aktivní (WS-Trust). Tento obor názvů také obsahuje třídy, které jsou specifické pro Windows Communication Foundation (WCF) a které nejsou používány technologie WIF.  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace ke konfiguraci WIF](../../../docs/framework/security/wif-configuration-reference.md)  
- [Mapování oborů názvů mezi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)
+## <a name="see-also"></a>Viz také:
+- [Referenční dokumentace ke konfiguraci WIF](../../../docs/framework/security/wif-configuration-reference.md)
+- [Mapování oborů názvů mezi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md)

@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], benefits
 ms.assetid: 80f037cd-9ea7-48be-bfc1-219bfb2d4277
-ms.openlocfilehash: f97d3ce7a67638719d02c31879c00679405118bc
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 9ba4b81db0ea352f82127a838ab6b13f09d259e4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245009"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54650977"
 ---
 # <a name="benefits-of-generics-c-programming-guide"></a>Výhody obecných typů (Průvodce programováním v C#)
 Obecné typy poskytují řešení k omezení v dřívějších verzích common language runtime a ve kterém se provádí generalizace typy přetypování do a z univerzální základní typ jazyka C# <xref:System.Object>. Vytvořením obecné třídy můžete vytvořit kolekci, která je typově bezpečné v době kompilace.  
@@ -35,11 +35,11 @@ Obecné typy poskytují řešení k omezení v dřívějších verzích common l
   
  Pro klientský kód pouze přidat syntaxe <xref:System.Collections.Generic.List%601> ve srovnání s <xref:System.Collections.ArrayList> je argument typu v deklaraci a instance. Po této o něco víc o kódování složitost, můžete vytvořit seznam, který je nejen bezpečnější než <xref:System.Collections.ArrayList>, ale také výrazně rychlejší, zejména v případě, že položky seznamu jsou typy hodnot.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections.Generic>  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md)  
-- [Zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md)  
-- [Kdy použít generické kolekce](../../../standard/collections/when-to-use-generic-collections.md)  
-- [Pokyny pro kolekce](../../../standard/design-guidelines/guidelines-for-collections.md)   
+- <xref:System.Collections.Generic>
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md)
+- [Zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md)
+- [Kdy použít generické kolekce](../../../standard/collections/when-to-use-generic-collections.md)
+- [Pokyny pro kolekce](../../../standard/design-guidelines/guidelines-for-collections.md)
