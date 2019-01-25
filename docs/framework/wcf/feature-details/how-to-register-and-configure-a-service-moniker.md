@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: registrace a konfigurace Monikeru služby'
+title: 'Postupy: Registrace a konfigurace monikeru služby'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM [WCF], configure service monikers
 - COM [WCF], register service monikers
 ms.assetid: e5e16c80-8a8e-4eef-af53-564933b651ef
-ms.openlocfilehash: cd3b6bbb47dfd72bf70091c9ca4d6fc5e228d950
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 2f8f19e70b3345b61f1f5caba2fc6f764b58cc9b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44221542"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54593794"
 ---
-# <a name="how-to-register-and-configure-a-service-moniker"></a>Postupy: registrace a konfigurace Monikeru služby
+# <a name="how-to-register-and-configure-a-service-moniker"></a>Postupy: Registrace a konfigurace monikeru služby
 Před použitím monikeru služby Windows Communication Foundation (WCF) v rámci aplikace modelu COM s typem kontraktu, musí zaregistrovat požadované typy s atributy s modelem COM a konfigurace aplikace modelu COM a zástupný název požadované vazby konfigurace.  
   
 ### <a name="to-register-the-required-attributed-types-with-com"></a>Zaregistrovat s atributy požadované typy modelu COM  
@@ -87,7 +87,7 @@ Před použitím monikeru služby Windows Communication Foundation (WCF) v rámc
     >  Podobný kód v C#, C++ nebo jakékoli jiné aplikace jazyk .NET můžete použít.  
   
     > [!NOTE]
-    >  : Pokud monikeru je poškozený nebo pokud služba není dostupná, volání `GetObject` vrátí chybu "Neplatná syntaxe". Pokud se zobrazí tato chyba, ujistěte se, že zástupný název, který používáte, je správná a služba není k dispozici.  
+    >  : Pokud je moniker je poškozený nebo pokud služba není dostupná, volání `GetObject` vrátí chybu "Neplatná syntaxe". Pokud se zobrazí tato chyba, ujistěte se, že zástupný název, který používáte, je správná a služba není k dispozici.  
   
      I když toto téma se zaměřuje na použití monikeru služby z kódu jazyka Visual Basic 6.0, je použití monikeru služby z jiných jazyků. Při použití monikeru z jazyka C++ code Svcutil.exe vygenerované sestavení by měl je importovat s "no_namespace named_guids – raw_interfaces_only" jak je znázorněno v následujícím kódu.  
   
@@ -97,5 +97,5 @@ Před použitím monikeru služby Windows Communication Foundation (WCF) v rámc
   
      To definice importované rozhraní upraví tak, aby všechny metody vrátit `HResult`. Všechny ostatní vrácené hodnoty se převedou na výstupní parametry. Celkové provádění metody zůstává stejná. To umožňuje určit, proč výjimku při volání metody na proxy serveru. Tato funkce je dostupná pouze z kódu jazyka C++.  
   
-## <a name="see-also"></a>Viz také  
- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+## <a name="see-also"></a>Viz také:
+- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aeb3c4e9a1d87b2d93a310b88c340aec0955a845
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5478a8d3433a8a57dab458c98ea745f32a9ffdf4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33425295"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54721882"
 ---
 # <a name="isymunmanagednamespacegetname-method"></a>ISymUnmanagedNamespace::GetName – metoda
 Získá název tohoto oboru názvů.  
@@ -39,19 +39,19 @@ HRESULT GetName(
   
 #### <a name="parameters"></a>Parametry  
  `cchName`  
- [v] A `ULONG32` určující velikost `szName` vyrovnávací paměti.  
+ [in] A `ULONG32` , který označuje velikost `szName` vyrovnávací paměti.  
   
  `pcchName`  
- [out] Ukazatel na `ULONG32` velikostí, která přijme ve znacích vyrovnávací paměti musí obsahovat název oboru názvů, včetně ukončení hodnotu null.  
+ [out] Ukazatel `ULONG32` , která obdrží velikost ve znacích, vyrovnávací paměti musí obsahovat obor názvů, včetně ukončení hodnotu null.  
   
  `szName`  
- [out] Ukazatel na vyrovnávací paměť, která obsahuje název oboru názvů.  
+ [out] Ukazatel do vyrovnávací paměti, který obsahuje název oboru názvů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedNamespace – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedNamespace – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md)

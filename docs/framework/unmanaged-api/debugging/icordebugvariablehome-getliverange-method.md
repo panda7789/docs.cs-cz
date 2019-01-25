@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c0f9c586a9e95fc2e57c4956601f6dce2b988159
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 894629b7cc1c48eb6c1820c65a0a2a41332a8080
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423062"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54549688"
 ---
 # <a name="icordebugvariablehomegetliverange-method"></a>IcorDebugVariableHome::GetLiveRange – metoda
-Získá nativní rozsahu, za které je tato proměnná za provozu.  
+Získá nativní rozsah nad tím, které tato proměnná je v provozu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +38,13 @@ HRESULT GetLiveRange(
   
 #### <a name="parameters"></a>Parametry  
  `pStartOffset`  
- [out] Logické posun, na které proměnné jsou první za provozu.  
+ [out] Logický posun jakou proměnná je první za provozu.  
   
  `pEndOffset`  
- [out] Logické posun ihned po bodu, na které proměnné jsou poslední za provozu.  
+ [out] Logický posun hned od chvíle, kdy je proměnná poslední za provozu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -52,5 +52,5 @@ HRESULT GetLiveRange(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugVariableHome – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugVariableHome – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)

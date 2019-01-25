@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1be7120b9bff5c51141a1eac80051c4b464433aa
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 0c58fe8aeeb9acdb886cb224046c68af0577eae7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43801551"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54539750"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Načítání prostředků v aplikacích klasické pracovní plochy
 Při práci s lokalizované prostředky v desktopových aplikacích rozhraní .NET Framework by měl v ideálním případě balíček prostředků pro výchozí nebo neutrální jazykovou verzi s hlavním sestavením a vytvořte samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, která vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídy, jak je popsáno v další části a přístup k pojmenovaným prostředkům. Pokud se rozhodnete vložit prostředky do hlavního sestavení a satelitní sestavení, se dá dostat taky binárních souborů .resources přímo, jak je popsáno v části [načítání prostředků ze souborů .resources](#from_file) dále v tomto článek.  Pro načtení prostředků v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, najdete v článku [vytváření a načítání prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674) Windows Dev Center.  
@@ -40,7 +40,7 @@ Při práci s lokalizované prostředky v desktopových aplikacích rozhraní .N
   
  Proces získávání náhradních prostředků resource Manageru používá k řízení, jak aplikace načítá prostředky specifické pro jazykovou verzi. Další informace najdete v tématu v části "Proces záložního prostředku" [Packaging and Deploying Resources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Informace o vytvoření instance <xref:System.Resources.ResourceManager> objektu, naleznete v části "Vytvoření instance objektu ResourceManager" <xref:System.Resources.ResourceManager> třídě.  
   
-### <a name="retrieving-string-data-an-example"></a>Načítání dat řetězce: Příklad  
+### <a name="retrieving-string-data-an-example"></a>Načítají se Data řetězce: Příklad  
  Následující příklad volá <xref:System.Resources.ResourceManager.GetString%28System.String%29> metody k získání řetězcové prostředky aktuální jazykové verze uživatelského rozhraní. Francouzština (Francie) a jazykové verze ruština (Rusko) obsahuje prostředek řetězce neutrální jazykové verze Angličtina (Spojené státy) a lokalizované prostředky. Následující prostředek Angličtina (Spojené státy) je do souboru s názvem Strings.txt:  
   
 ```  
@@ -200,9 +200,9 @@ Resgen Strings.ru-RU.txt Resources\Strings.ru-RU.resources
 csc Example.cs  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Resources.ResourceManager>  
- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)  
- [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)  
- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- [Vytváření a načítání prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Resources.ResourceManager>
+- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
+- [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
+- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Vytváření a načítání prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674)

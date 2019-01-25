@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f6909fa426fa952c0918638f40a571393c651e8d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: db3b0f59884b2ec20ea3a2bd9779dbffd0fc8e1b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449930"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583753"
 ---
 # <a name="corprfclausetype-enumeration"></a>COR_PRF_CLAUSE_TYPE – výčet
-Určuje typ výjimky klauzuli, který právě zadán kód nebo doleva.  
+Určuje typ výjimky klauzuli, která je právě zadali kód nebo doleva.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,13 +41,13 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_CLAUSE_NONE`|V klauzuli výjimka není platný.|  
+|`COR_PRF_CLAUSE_NONE`|Klauzule výjimka není platná.|  
 |`COR_PRF_CLAUSE_FILTER`|V klauzuli výjimka je výraz filtru.|  
-|`COR_PRF_CLAUSE_CATCH`|Je v klauzuli výjimky `catch` příkaz.|  
-|`COR_PRF_CLAUSE_FINALLY`|Je v klauzuli výjimky `finally` příkaz.|  
+|`COR_PRF_CLAUSE_CATCH`|Klauzule výjimka je `catch` příkazu.|  
+|`COR_PRF_CLAUSE_FINALLY`|Klauzule výjimka je `finally` příkazu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -55,5 +55,5 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

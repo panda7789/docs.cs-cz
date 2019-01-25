@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f08008a9-042e-4de9-94f3-4f0e502b1eb5
-ms.openlocfilehash: 1d9321a1db4f68195fb914f271fb98f904d2f963
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 473ea9963ce192f42e418bebc8e38971019350e3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43805803"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54548557"
 ---
 # <a name="datatable-edits"></a>Úpravy datových tabulek
 Když provedete změny hodnot sloupce v <xref:System.Data.DataRow>, změny se okamžitě umístí v aktuálním stavu řádku. <xref:System.Data.DataRowState> Je nastaven na **změněné**, a změny budou přijímat nebo odmítat. pomocí <xref:System.Data.DataRow.AcceptChanges%2A> nebo <xref:System.Data.DataRow.RejectChanges%2A> metody **DataRow**. **DataRow** také poskytuje tři metody, které vám umožní pozastavit stavu řádku, pokud jeho úpravě. Tyto metody jsou <xref:System.Data.DataRow.BeginEdit%2A>, <xref:System.Data.DataRow.EndEdit%2A>, a <xref:System.Data.DataRow.CancelEdit%2A>.  
   
- Při změně hodnot sloupce v **DataRow** přímo **DataRow** spravuje hodnoty ve sloupcích pomocí **aktuální**, **výchozí**, a **Původní** verze řádků. Kromě těchto verze řádků **funkce BeginEdit**, **EndEdit –**, a **metodu CancelEdit** metody používají čtvrtý řádek verze: **navrhované**. Další informace o verzích řádku, naleznete v tématu [stavy řádků a verze řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).  
+ Při změně hodnot sloupce v **DataRow** přímo **DataRow** spravuje hodnoty ve sloupcích pomocí **aktuální**, **výchozí**, a **Původní** verze řádků. Kromě těchto verze řádků **funkce BeginEdit**, **EndEdit –**, a **metodu CancelEdit** metody používají čtvrtý řádek verze: **Navrhované**. Další informace o verzích řádku, naleznete v tématu [stavy řádků a verze řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).  
   
  **Navrhované** verze řádku existuje během operace úprav, který začíná voláním **funkce BeginEdit** a, který končí buď pomocí **EndEdit –** nebo **metodu CancelEdit,**  nebo voláním **metoda AcceptChanges** nebo **RejectChanges**.  
   
@@ -86,10 +86,10 @@ protected static void OnColumnChanged(
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Data.DataRow>  
- <xref:System.Data.DataTable>  
- <xref:System.Data.DataRowVersion>  
- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
- [Zpracování událostí datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Data.DataRow>
+- <xref:System.Data.DataTable>
+- <xref:System.Data.DataRowVersion>
+- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
+- [Zpracování událostí datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

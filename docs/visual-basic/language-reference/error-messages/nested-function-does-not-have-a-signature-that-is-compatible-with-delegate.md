@@ -1,5 +1,5 @@
 ---
-title: Vnořené funkce neobsahuje podpis, který je kompatibilní s delegáta &#39; &lt;vlastnost delegatename&gt;&#39;
+title: Vnořená funkce nemá stejný podpis kompatibilní s delegátem &#39; &lt;vlastnost delegatename&gt;&#39;
 ms.date: 07/20/2015
 f1_keywords:
 - vbc36532
@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC36532
 ms.assetid: 493f292c-d81e-40ef-8b47-61f020571829
-ms.openlocfilehash: 94c53d30ad9aea9386fbb1be3e65fa31719f7a2f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: abfda4ee6064ec9ea54b8a3c383d10f8263a1458
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33594468"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506404"
 ---
-# <a name="nested-function-does-not-have-a-signature-that-is-compatible-with-delegate-39ltdelegatenamegt39"></a>Vnořené funkce neobsahuje podpis, který je kompatibilní s delegáta &#39; &lt;vlastnost delegatename&gt;&#39;
-Výraz lambda byl přiřazen delegáta, který má nekompatibilní podpis. Například následující kód, delegovat `Del` má dva parametry celé číslo.  
+# <a name="nested-function-does-not-have-a-signature-that-is-compatible-with-delegate-39ltdelegatenamegt39"></a>Vnořená funkce nemá stejný podpis kompatibilní s delegátem &#39; &lt;vlastnost delegatename&gt;&#39;
+Výraz lambda se přiřadila do delegáta, který má nekompatibilní podpis. Například v následujícím kódu, delegátu `Del` má dva celočíselné parametry.  
   
 ```vb  
 Delegate Function Del(ByVal p As Integer, ByVal q As Integer) As Integer  
 ```  
   
- Chyba se vyvolá, pokud výraz lambda s jedním argumentem je deklarován jako typ `Del`:  
+ Chyba se vyvolá, pokud výraz lambda s jedním argumentem je deklarovaný jako typ `Del`:  
   
 ```vb  
 ' Neither of these is valid.   
@@ -33,8 +33,8 @@ Delegate Function Del(ByVal p As Integer, ByVal q As Integer) As Integer
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Upravte definici delegáta nebo výrazu lambda přiřazené tak, aby byly kompatibilní podpisů.  
+-   Úprava definice delegáta nebo přiřazené lambda výraz tak, aby podpisy jsou kompatibilní.  
   
-## <a name="see-also"></a>Viz také  
- [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)  
- [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+## <a name="see-also"></a>Viz také:
+- [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+- [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)

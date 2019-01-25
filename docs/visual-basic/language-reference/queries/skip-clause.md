@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Skip statement [Visual Basic]
 - Skip clause [Visual Basic]
 ms.assetid: f00eb172-3907-4c43-9745-d8546ab86234
-ms.openlocfilehash: 615f98bf36d29c1f269d6866b1232ad33a5ae2f2
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 53fc47c7dd26142d2ead49178afefe2775a96580
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925434"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543143"
 ---
 # <a name="skip-clause-visual-basic"></a>Skip – klauzule (Visual Basic)
 Vynechá zadaný počet prvků v kolekci a vrátí zbývající prvky.  
@@ -26,7 +26,7 @@ Skip count
   
 ## <a name="parts"></a>Součásti  
  `count`  
- Požadováno. Hodnota nebo výraz, který se vyhodnotí jako počet elementů pořadí přeskočit.  
+ Povinný parametr. Hodnota nebo výraz, který se vyhodnotí jako počet elementů pořadí přeskočit.  
   
 ## <a name="remarks"></a>Poznámky  
  `Skip` Klauzule způsobí, že dotaz obejít prvky na začátek seznamu výsledků a vrátí zbývající prvky. Počet prvků, které mají přeskočit je identifikován `count` parametru.  
@@ -42,11 +42,11 @@ Skip count
   
  [!code-vb[VbSimpleQuerySamples#1](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/skip-clause_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Dotazy](../../../visual-basic/language-reference/queries/index.md)  
- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
- [Klauzule Order By](../../../visual-basic/language-reference/queries/order-by-clause.md)  
- [Klauzule Skip While](../../../visual-basic/language-reference/queries/skip-while-clause.md)  
- [Klauzule Take](../../../visual-basic/language-reference/queries/take-clause.md)
+## <a name="see-also"></a>Viz také:
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Dotazy](../../../visual-basic/language-reference/queries/index.md)
+- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
+- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
+- [Klauzule Order By](../../../visual-basic/language-reference/queries/order-by-clause.md)
+- [Klauzule Skip While](../../../visual-basic/language-reference/queries/skip-while-clause.md)
+- [Klauzule Take](../../../visual-basic/language-reference/queries/take-clause.md)

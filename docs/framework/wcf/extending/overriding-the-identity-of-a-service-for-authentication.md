@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
-ms.openlocfilehash: c6810009e4cda0b493a5f215d966cb37fc6fb090
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8c0807a7b811cf2cb3a13576018373d135e3e5cd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511991"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54554462"
 ---
 # <a name="overriding-the-identity-of-a-service-for-authentication"></a>Přepsání identity služby kvůli ověřování
 Standardně nastavit identitu ve službě, protože výběr typu pověření klienta Určuje typ identity v metadatech služby není nutné. Například následující kód konfigurace používá [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu a nastaví `clientCredentialType` atribut pro Windows.  
@@ -26,7 +26,7 @@ Standardně nastavit identitu ve službě, protože výběr typu pověření kli
 ## <a name="kerberos-authentication-and-identity"></a>Ověřování protokolem Kerberos a Identity  
  Ve výchozím nastavení, když služba je nakonfigurován pro použití přihlašovací údaje Windows [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) element, který obsahuje [ \<userPrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/userprincipalname.md) nebo [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) vygenerován element ve schématu WSDL. Pokud služba běží `LocalSystem`, `LocalService`, nebo `NetworkService` účtu, služby (SPN) pro hlavní název je generován výchozí ve formě `host/` \< *název hostitele*> protože Tyto účty mají přístup k datům hlavního názvu služby počítači. Pokud služba běží pod jiným účtem, generuje Windows Communication Foundation (WCF) hlavní název uživatele v podobě \< *uživatelské jméno*>@<*domainName* `>` . K tomu dochází, protože vyžaduje ověřování protokolem Kerberos, že název SPN a UPN zadat do klienta k ověřování.  
   
- Můžete také použít nástroje Setspn.exe Další SPN zaregistrovat u účtu služby v doméně. Hlavní název služby můžete pak použít jako identita služby. Stáhněte si nástroj, najdete v článku [Windows 2000 Resource Kit nástroj: Setspn.exe](https://go.microsoft.com/fwlink/?LinkId=91752). Další informace o tomto nástroji naleznete v tématu [přehled nástroje Setspn](https://go.microsoft.com/fwlink/?LinkId=61374).  
+ Můžete také použít nástroje Setspn.exe Další SPN zaregistrovat u účtu služby v doméně. Hlavní název služby můžete pak použít jako identita služby. Stáhněte si nástroj, najdete v článku [Windows 2000 Resource Kit nástroje: Setspn.exe](https://go.microsoft.com/fwlink/?LinkId=91752). Další informace o tomto nástroji naleznete v tématu [přehled nástroje Setspn](https://go.microsoft.com/fwlink/?LinkId=61374).  
   
 > [!NOTE]
 >  Pokud chcete použít typ přihlašovacích údajů Windows bez vyjednávání, služby uživatelský účet musí mít přístup k hlavní název služby, které je zaregistrované v doméně služby Active Directory. Můžete to udělat následujícími způsoby:  
@@ -65,6 +65,6 @@ Standardně nastavit identitu ve službě, protože výběr typu pověření kli
  [!code-csharp[C_Identity#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#5)]
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Vytvoření vlastního ověřovatele identity klientů](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
- [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Vytvoření vlastního ověřovatele Identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)
+- [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)

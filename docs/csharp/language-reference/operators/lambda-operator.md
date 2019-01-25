@@ -1,101 +1,53 @@
 ---
 title: =&gt; Operator - C# odkaz
 ms.custom: seodec18
-ms.date: 10/02/2017
+ms.date: 01/22/2019
 f1_keywords:
 - =>_CSharpKeyword
 helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: 8641757d9252c88cf30595cec06d27b964e4d95c
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: fa2e149f5b19e80e3171d08519be3ae249d2a112
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415283"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540803"
 ---
 # <a name="gt-operator-c-reference"></a>=&gt; – Operátor (referenční dokumentace jazyka C#)
 
-`=>` Dvě možnosti, jak v jazyce C# lze použít operátor:
-
-- Jako [operátor lambda](#lambda-operator) v [výraz lambda](../../lambda-expressions.md), rozděluje vstupní proměnné z hlavní část výrazu lambda.
- 
-- V [definice těla výrazu](#expression-body-definition), název člena ho odděluje od implementace členu. 
+`=>` Token je podporován ve dvou formách: jako operátor lambda a jako oddělovač názvu členu a implementace členu v definici tělo výrazu.
 
 ## <a name="lambda-operator"></a>Lambda – operátor
 
-`=>` Token se nazývá operátor lambda. Používá se v *výrazy lambda* oddělení vstupních proměnných na levé straně od hlavní část výrazu lambda na pravé straně. Výrazy lambda jsou vložené výrazy podobné anonymní metody, ale flexibilnější; často se používají v dotazech LINQ, které jsou vyjádřeny syntaxe využívající metody. Další informace najdete v tématu [výrazy Lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
-  
- Následující příklad ukazuje dva způsoby, jak vyhledat a zobrazit délku nejkratší řetězce v poli řetězců. První část v příkladu platí výrazu lambda (`w => w.Length`) ke každému prvku objektu `words` pole a pak použije <xref:System.Linq.Enumerable.Min%2A> metody k vyhledání minimální délku. Pro porovnání druhá část tento příklad ukazuje delší dobu řešení, které používá syntaxi dotazu pro stejnou věc udělat.  
-  
-```csharp  
-string[] words = { "cherry", "apple", "blueberry" };  
-  
-// Use method syntax to apply a lambda expression to each element  
-// of the words array.   
-int shortestWordLength = words.Min(w => w.Length);  
-Console.WriteLine(shortestWordLength);  
-  
-// Compare the following code that uses query syntax.  
-// Get the lengths of each word in the words array.  
-var query = from w in words  
-            select w.Length;  
-// Apply the Min method to execute the query and get the shortest length.  
-int shortestWordLength2 = query.Min();  
-Console.WriteLine(shortestWordLength2);  
-  
-// Output:   
-// 5  
-// 5  
-```  
-  
-### <a name="remarks"></a>Poznámky  
- `=>` Operátor má stejnou prioritu jako operátor přiřazení (`=`) a je asociativní zprava.  
-  
- Můžete explicitně zadat typ je vstupní proměnná nebo umožnili kompilátoru odvodit. v obou případech je proměnná silného typu v době kompilace. Při zadávání typu musíte uvést název typu a název proměnné v závorkách, jak ukazuje následující příklad.  
-  
-```csharp  
-int shortestWordLength = words.Min((string w) => w.Length);  
-```  
-  
-### <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zapsat lambda výraz pro přetížení operátoru standardního dotazu <xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> , který přebírá dva argumenty. Vzhledem k tomu, že výraz lambda má více než jeden parametr, parametry musí být uzavřen v závorkách. Druhý parametr `index`, představuje index aktuálního prvku kolekce. `Where` Výraz vrátí všechny řetězce, jejichž délky mají hodnotu menší než index pozice v poli.  
-  
-```csharp  
-static void Main(string[] args)  
-{  
-    string[] digits = { "zero", "one", "two", "three", "four", "five",   
-            "six", "seven", "eight", "nine" };  
-  
-    Console.WriteLine("Example that uses a lambda expression:");  
-    var shortDigits = digits.Where((digit, index) => digit.Length < index);  
-    foreach (var sD in shortDigits)  
-    {  
-        Console.WriteLine(sD);  
-    }  
-  
-    // Output:  
-    // Example that uses a lambda expression:  
-    // five  
-    // six  
-    // seven  
-    // eight  
-    // nine  
-}  
-```  
+V [výrazy lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md), operátor lambda `=>` odděluje vstupních proměnných na levé straně od hlavní část výrazu lambda na pravé straně.
+
+V následujícím příkladu [LINQ](../../programming-guide/concepts/linq/index.md) funkce pomocí syntaxe metody k předvedení použití lambda výrazů:
+
+[!code-csharp-interactive[infer types of input variables](~/samples/snippets/csharp/language-reference/operators/LambdaOperatorExamples.cs#InferredTypes)]
+
+Vstupních proměnných, výrazů lambda jsou silného typu v době kompilace. Když kompilátor může odvodit typ vstupních proměnných, stejně jako v předchozím příkladu, můžete vynechat deklarace typů. Pokud je třeba zadat typ vstupních proměnných, je nutné použít pro každou proměnnou, jako v následujícím příkladu:
+
+[!code-csharp-interactive[specify types of input variables](~/samples/snippets/csharp/language-reference/operators/LambdaOperatorExamples.cs#ExplicitTypes)]
+
+Následující příklad ukazuje, jak definovat výraz lambda bez vstupních proměnných:
+
+[!code-csharp-interactive[without input variables](~/samples/snippets/csharp/language-reference/operators/LambdaOperatorExamples.cs#WithoutInput)]
+
+Další informace najdete v tématu [výrazy Lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md).
+
 ## <a name="expression-body-definition"></a>Definice textu výrazu
 
-Definice těla výrazu obsahuje implementace člena ve vysoce zhuštěnému čitelné formy. Má následující obecnou syntaxi:
+Definice těla výrazu má následující obecnou syntaxi:
 
 ```csharp
 member => expression;
 ```
-kde *výraz* je platný výraz. Všimněte si, že *výraz* může být *výrazu příkazu* pouze pokud je člen návratový typ je `void`, nebo pokud je člen konstruktoru nebo finalizační metodu.
 
-Definice textu výrazu pro metody a vlastnosti get příkazy jsou podporovány od verze C# 6. Definice těla výrazu pro konstruktory, finalizační metody, nastavte vlastnost příkazy a indexery jsou podporovány od verze C# 7.
+kde *výraz* je platný výraz. Všimněte si, že *výraz* může být *výrazu příkazu* pouze pokud je člen návratový typ je `void`, nebo pokud je člen konstruktoru, finalizační metodu nebo vlastnost `set` přistupujícího objektu.
 
-Tady je definice těla výrazu pro `Person.ToString` metody:
+Následující příklad ukazuje definici tělo výrazu pro `Person.ToString` metody:
 
 ```csharp
 public override string ToString() => $"{fname} {lname}".Trim();
@@ -109,11 +61,23 @@ public override string ToString()
    return $"{fname} {lname}".Trim();
 }
 ```
-Podrobnější informace o definicích tělo výrazu, najdete v článku [členové tvoření](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).
 
-## <a name="see-also"></a>Viz také
+Definice těla výrazu pro metody a vlastnosti jen pro čtení jsou podporovány od verze C# 6. Definice těla výrazu pro konstruktory, finalizační metody, přistupující objekty vlastnosti a indexery jsou podporovány od verze C# 7.0.
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)   
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)   
-- [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)   
-- [Členové tvoření](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).
+Další informace najdete v tématu [členové tvoření](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).
+
+## <a name="operator-overloadability"></a>Overloadability – operátor
+
+`=>` Operátor nelze přetížit.
+
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+Další informace najdete v tématu [výrazy anonymní funkce](~/_csharplang/spec/expressions.md#anonymous-function-expressions) část [ C# specifikace jazyka](../language-specification/index.md).
+
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Operátory jazyka C#](index.md)
+- [Výrazy lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md)
+- [Členové tvoření výrazy](../../programming-guide/statements-expressions-operators/expression-bodied-members.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d787e3eae59218c46a95c327a0f93502c3833d9b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d4ebf93c103b74be458ba51577a5195795029176
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33456232"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54520396"
 ---
 # <a name="icorprofilerinfo2getcontextstaticaddress-method"></a>ICorProfilerInfo2::GetContextStaticAddress – metoda
-Získá adresu pro zadaný kontext statické pole, která je v rozsahu zadaný kontext.  
+Získá adresu pro zadaný kontext statická pole, která je v rámci zadaného kontextu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT GetContextStaticAddress(
   
 #### <a name="parameters"></a>Parametry  
  `classId`  
- [v] ID třídy, která obsahuje požadovanou kontextu statické pole.  
+ [in] ID třídy, která obsahuje požadovaná pole statického kontextu.  
   
  `fieldToken`  
- [v] Token metadata pro požadované pole kontextu statické.  
+ [in] Token metadat pro požadované pole statického kontextu.  
   
  `contextId`  
- [v] ID kontext, který je v rozsahu pro požadované pole kontextu statické.  
+ [in] ID kontextu, který je rozsah pro požadované pole statického kontextu.  
   
  `ppAddress`  
  [out] Ukazatel na adresu statické pole, která je v rámci zadaného kontextu.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetContextStaticAddress` Metoda může vrátit jednu z následujících:  
+ `GetContextStaticAddress` Metoda může vrátit jednu z následujících akcí:  
   
--   HRESULT CORPROF_E_DATAINCOMPLETE, pokud daný statické pole nebyla přiřazena adresu v zadaném kontextu.  
+-   CORPROF_E_DATAINCOMPLETE HRESULT, pokud daný statické pole nebyla přiřazena adresa v zadaném kontextu.  
   
--   Adresy objekty, které mohou být v kolekci halda paměti. Tyto adresy může zneplatní po uvolňování paměti, takže po uvolnění paměti by neměl profilery předpokládá platnými.  
+-   Adresy objektů, které mohou být v haldě uvolňování paměti. Tyto adresy mohou stát neplatnými po uvolnění paměti, takže po uvolnění paměti, profilovací programy by neměl se předpokládá, že jsou platné.  
   
- Před dokončením konstruktoru třídy třídy `GetContextStaticAddress` vrátí CORPROF_E_DATAINCOMPLETE pro všechna její statické pole, i když některé statických polí mohou již být inicializován a vytvoření kořenového adresáře objekty kolekce paměti.  
+ Před dokončením konstruktoru třídy třídy `GetContextStaticAddress` vrátí CORPROF_E_DATAINCOMPLETE pro všechny jeho statická pole, i když některé statická pole může již být inicializován a kořenová objekty uvolnění paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -68,6 +68,6 @@ HRESULT GetContextStaticAddress(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

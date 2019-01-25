@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - WCF, security
 ms.assetid: f478c80d-792d-4e7a-96bd-a2ff0b6f65f9
-ms.openlocfilehash: c8918bce1d0e19e8f70be4ddbda892924a944e68
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 12eafa006e65527a70245c4332a34eb55f7d8af0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185232"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54525258"
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
 Windows Communication Foundation (WCF) je protokol SOAP založenou na zprávách programovací platforma pro distribuované a zabezpečení zpráv mezi klienty a službami je nezbytné pro ochranu dat. WCF poskytuje všestranné a interoperabilní platformu pro výměnu zabezpečených zpráv na základě existující infrastruktura zabezpečení a standardům hlediska zabezpečení pro zprávy protokolu SOAP.  
@@ -68,7 +68,7 @@ Windows Communication Foundation (WCF) je protokol SOAP založenou na zprávách
 ### <a name="standards-and-interoperability"></a>Standardy a vzájemná funkční spolupráce  
  Ve světě s velké stávající nasazení homogenity není obvyklé. Distribuované výpočetní/komunikace platformy musí spolupracovat s technologiemi, které nabízejí různých výrobců. Obdobně zabezpečení musí být také interoperabilní.  
   
- Pokud chcete povolit interoperabilní zabezpečení systémů, jste vytvořili společností v oboru webové služby active celou řadu norem. Konkrétně týkající se zabezpečení, byla navržena několik významných standardy: specifikace WS-Security: zabezpečení zpráv SOAP (subjektem OASIS standardy a dříve označované jako WS-Security), WS-Trust, WS-SecureConversation a WS-SecurityPolicy.  
+ Pokud chcete povolit interoperabilní zabezpečení systémů, jste vytvořili společností v oboru webové služby active celou řadu norem. Konkrétně týkající se zabezpečení byly navrženy několik významných standardů: WS-Security: Zabezpečení zpráv SOAP (subjektem OASIS standardy a dříve označované jako WS-Security), WS-Trust, WS-SecureConversation a WS-SecurityPolicy.  
   
  WCF podporuje širokou škálu scénářů vzájemná funkční spolupráce. <xref:System.ServiceModel.BasicHttpBinding> Třídy, zaměřuje na základní profil zabezpečení (BSP) a <xref:System.ServiceModel.WSHttpBinding> třídy je zaměřený na nejnovějších standardů zabezpečení, jako je WS-Security 1.1 a WS-SecureConversation. Zabezpečení WCF díky dodržování těchto standardů, můžete spolupracovat a integraci s webovými službami, které jsou hostované v operačních systémech a platformách než Windows Microsoft.  
   
@@ -95,21 +95,21 @@ Windows Communication Foundation (WCF) je protokol SOAP založenou na zprávách
  Ve službě WCF, funkce řízení přístupu jsou k dispozici díky integraci se službou common language runtime (CLR) <xref:System.Security.Permissions.PrincipalPermissionAttribute> a prostřednictvím sady rozhraní API, nazývá *modelem identity*. Podrobnosti o řízení přístupu a autorizace na základě rolí najdete v tématu [rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md).  
   
 ### <a name="auditing"></a>Auditování  
- *Auditování* je protokolování událostí zabezpečení do protokolu událostí Windows. Můžete protokolovat události související se zabezpečením, jako je například selhání ověřování (nebo úspěšné). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md). Programování podrobnosti najdete v tématu [postupy: auditování událostí zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md).  
+ *Auditování* je protokolování událostí zabezpečení do protokolu událostí Windows. Můžete protokolovat události související se zabezpečením, jako je například selhání ověřování (nebo úspěšné). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md). Programování podrobnosti najdete v tématu [jak: Auditování událostí zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Security.Permissions.PrincipalPermissionAttribute>  
- [Zabezpečení služeb](../../../../docs/framework/wcf/securing-services.md)  
- [Běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
- [Vazby a zabezpečení](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)  
- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Ověřování](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)  
- [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)  
- [Federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
- [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
- [Informace o zabezpečení a osvědčené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
- [Konfigurace služeb pomocí konfiguračních souborů](../../../../docs/framework/wcf/configuring-services-using-configuration-files.md)  
- [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)  
- [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)  
- [Rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Security.Permissions.PrincipalPermissionAttribute>
+- [Zabezpečení služeb](../../../../docs/framework/wcf/securing-services.md)
+- [Běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)
+- [Vazby a zabezpečení](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)
+- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Ověřování](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)
+- [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)
+- [Federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
+- [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)
+- [Informace o zabezpečení a osvědčené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)
+- [Konfigurace služeb pomocí konfiguračních souborů](../../../../docs/framework/wcf/configuring-services-using-configuration-files.md)
+- [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)
+- [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)
+- [Rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

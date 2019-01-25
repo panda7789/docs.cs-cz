@@ -10,25 +10,25 @@ helpviewer_keywords:
 ms.assetid: 8d575722-4fb6-49a2-8a06-f72d62dc3766
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3940cf8d1ebda668925a5c461b84a8bc61550476
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 81da6f785394312dea92fffdbb00ce9d13f1bd6c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33391131"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555645"
 ---
 # <a name="mitigation-ziparchiveentryfullname-path-separator"></a>Omezení rizik: Oddělovač cesty ZipArchiveEntry.FullName
-Počínaje aplikací cílených [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], cesta oddělovač použitý v <xref:System.IO.Compression.ZipArchiveEntry.FullName%2A?displayProperty=nameWithType> vlastnost bylo změněno z zpětné lomítko ("\\") používají v předchozích verzích rozhraní .NET Framework na dopředné lomítko ("/").   <xref:System.IO.Compression.ZipArchiveEntry?displayProperty=nameWithType> objekty jsou vytvořené pomocí jednoho z přetížení volání <xref:System.IO.Compression.ZipFile.CreateFromDirectory%2A?displayProperty=nameWithType> metoda.  
+Počínaje aplikací, které se zaměřují [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], cesta oddělovač použitý v <xref:System.IO.Compression.ZipArchiveEntry.FullName%2A?displayProperty=nameWithType> vlastnost se změnil z zpětné lomítko ("\\") používají v předchozích verzích rozhraní .NET Framework na dopředné lomítko ("/").   <xref:System.IO.Compression.ZipArchiveEntry?displayProperty=nameWithType> objekty byly vytvořeny zavoláním jednoho z přetížení <xref:System.IO.Compression.ZipFile.CreateFromDirectory%2A?displayProperty=nameWithType> metody.  
   
 ## <a name="impact"></a>Dopad  
- Tato změna přináší implementace rozhraní .NET do souladu s části 4.4.17.1 [. Specifikace formátu souboru ZIP](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) a umožňuje. ZIP archivy k dekomprimaci na jiné operační systémy.  
+ Tato změna přináší implementace .NET do souladu s část 4.4.17.1 [. Specifikaci formátu souboru ZIP](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) a umožňuje. Na systémech než Windows dekomprimovat archivy ZIP.  
   
- Dekompresi soubor zip vytvořené aplikace s cílem předchozí verzi rozhraní .NET Framework na jiný systém než Windows operační systémy, třeba Macintosh nepodaří zachovat strukturu adresáře. Například na Macintosh, vytvoří sadu souborů, jejichž název souboru zřetězí cesta k adresáři, společně s žádné zpětné lomítko ("\\") znaků a název souboru. V důsledku toho není zachován struktura adresářů dekomprimovaných souborů.  
+ Dekomprese souboru zip vytvořil aplikaci, který cílí předchozí verze rozhraní .NET Framework v operačních systémech než Windows například Macintosh selže zachovat adresářovou strukturu. Například na Macintosh, vytvoří sadu souborů, jejichž název souboru zřetězí cesta k adresáři, spolu s jakékoli zpětné lomítko ("\\") znaků a název souboru. V důsledku toho se nezachová struktura adresářů dekomprimovaných souborů.  
   
- Dopad na tuto změnu. Soubory ZIP, které jsou dekomprimovat operačního systému Windows pomocí rozhraní API v rozhraní .NET Framework <xref:System.IO> oboru názvů musí být minimální, protože tato rozhraní API může bezproblémově zpracovat lomítko ("/") ani zpětné lomítko ("\\") jako cesta oddělovací znak.  
+ Dopad na tuto změnu. Soubory ZIP, které jsou v operačním systému Windows dekomprimovat rozhraní API v rozhraní .NET Framework <xref:System.IO> oborem názvů musí být minimální, protože tato rozhraní API bez problémů zvládne lomítko ("/") nebo zpětné lomítko ("\\") jako oddělovač cesty.  
   
 ## <a name="mitigation"></a>Zmírnění  
- Pokud je toto chování žádoucí, můžete zvolit z přidáním nastavení konfigurace, pro které [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) oddíl konfiguračního souboru aplikace. Následující příklad zobrazuje i `<runtime>` části a vyjádření výslovného nesouhlasu s přepínačem.  
+ Pokud toto chování nežádoucí, můžete se rozhodnout z přidáním nastavení konfigurace, které [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) oddílu konfiguračního souboru aplikace. Následující příklad zobrazuje i `<runtime>` části a výslovného nesouhlasu s přepínačem.  
   
 ```xml  
 <runtime>  
@@ -36,7 +36,7 @@ Počínaje aplikací cílených [!INCLUDE[net_v461](../../../includes/net-v461-m
 </runtime>  
 ```  
   
- Kromě toho aplikace, které cílí na předchozích verzích rozhraní .NET Framework, ale jsou spuštěny na [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] a novější verze můžete vyjádřit výslovný souhlas pro toto chování přidáním nastavení konfigurace, pro které [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) část konfigurační soubor aplikace. Následující příklad zobrazuje i `<runtime>` části a přepínače přihlášení.  
+ Kromě toho, které cílí na předchozí verze rozhraní .NET Framework, ale jsou spuštěny na [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] a novější verze můžete vyjádřit výslovný souhlas pro toto chování tak, že přidáte nastavení konfigurace, které [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) část konfigurační soubor aplikace. Následující příklad zobrazuje i `<runtime>` části a přepínač opt-in.  
   
 ```xml  
 <runtime>  
@@ -44,6 +44,6 @@ Počínaje aplikací cílených [!INCLUDE[net_v461](../../../includes/net-v461-m
 </runtime>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Odlišnosti ve změnách cílení](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-1.md)  
- [Kompatibilita aplikací v 4.6.1](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-1.md)
+## <a name="see-also"></a>Viz také:
+- [Odlišnosti ve změnách cílení](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-1.md)
+- [Kompatibilita aplikací ve verzi 4.6.1](../../../docs/framework/migration-guide/application-compatibility-in-the-net-framework-4-6-1.md)

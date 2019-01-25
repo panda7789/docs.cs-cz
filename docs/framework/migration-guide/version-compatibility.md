@@ -9,15 +9,15 @@ helpviewer_keywords:
 ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0d3d0e2dbd57d9581d1c8b0ca42d1e9d556d8905
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 8ef9445bb56523f3ef2adf668a4a637868b5d565
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845538"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54558914"
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>Kompatibilita verzí v rozhraní .NET Framework
-Zpětná kompatibilita znamená, že aplikace vyvinutá pro konkrétní verzi platformy poběží v novějších verzích této platformy. Rozhraní .NET Framework se snaží maximalizovat zpětnou kompatibilitu: zdrojový kód napsaný pro jednu verzi rozhraní .NET Framework by měl kompilovat v novějších verzích rozhraní .NET Framework a binární soubory, které běží na jednu verzi rozhraní .NET Framework by se měly chovat identicky v novější verze rozhraní .NET Framework.  
+Zpětná kompatibilita znamená, že aplikace vyvinutá pro konkrétní verzi platformy poběží v novějších verzích této platformy. Rozhraní .NET Framework se snaží maximalizovat zpětnou kompatibilitu: Zdrojový kód napsaný pro jednu verzi rozhraní .NET Framework by měl kompilovat v novějších verzích rozhraní .NET Framework a binární soubory, které běží na jednu verzi rozhraní .NET Framework by se měly chovat identicky v novějších verzích rozhraní .NET Framework.  
   
 <a name="Apps"></a>   
 ## <a name="version-compatibility-for-apps"></a>Kompatibilita verzí pro aplikace  
@@ -34,7 +34,7 @@ Zpětná kompatibilita znamená, že aplikace vyvinutá pro konkrétní verzi pl
 </configuration>  
 ```  
   
- Další informace najdete v tématu [postupy: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo 4.x](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md).  
+ Další informace najdete v tématu [jak: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo 4.x](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md).  
   
 ## <a name="version-compatibility-for-components"></a>Kompatibilita verzí pro komponenty  
  Aplikace může kontrolovat verzi rozhraní .NET Framework, na kterém běží, ale součást nikoli. Komponenty a knihovny tříd jsou načteny v kontextu konkrétní aplikace a proto se automaticky spouštějí ve verzi rozhraní .NET Framework, na které aplikace poběží.  
@@ -65,9 +65,9 @@ Zpětná kompatibilita znamená, že aplikace vyvinutá pro konkrétní verzi pl
 ## <a name="compatibility-and-side-by-side-execution"></a>Spuštění kompatibility a vedle sebe  
  Pokud nemůžete najít vhodné řešení problému, nezapomeňte, že pracuje s verzemi 1.1, 2.0 a 3.5 rozhraní .NET Framework 4.5 (nebo některá z jeho vydání bodu) a je místní aktualizace, která nahrazuje verzi 4. U aplikací s cílovou verzí 1.1, 2.0 a 3.5 můžete nainstalovat odpovídající verzi rozhraní .NET Framework na cílovém počítači spusťte aplikaci v tom nejlepším prostředí. Další informace o spuštění vedle sebe, naleznete v tématu [spuštění vedle sebe](../../../docs/framework/deployment/side-by-side-execution.md).  
   
-## <a name="see-also"></a>Viz také  
- [Co je nového](../../../docs/framework/whats-new/index.md)  
- [Zastaralé položky v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md)  
- [Kompatibilita aplikací](../../../docs/framework/migration-guide/application-compatibility.md)  
- [Zásady životního cyklu podpory rozhraní Microsoft .NET Framework](https://go.microsoft.com/fwlink/p/?LinkId=248212)  
- [Potíže s migrací rozhraní .NET framework 4](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md)
+## <a name="see-also"></a>Viz také:
+- [Co je nového](../../../docs/framework/whats-new/index.md)
+- [Zastaralé položky v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md)
+- [Kompatibilita aplikací](../../../docs/framework/migration-guide/application-compatibility.md)
+- [Zásady životního cyklu podpory rozhraní Microsoft .NET Framework](https://go.microsoft.com/fwlink/p/?LinkId=248212)
+- [Potíže s migrací rozhraní .NET framework 4](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-ms.openlocfilehash: 6471a8a8e257ea3bb6f26a8041694ef25151ad1a
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 5c7451e5e914c372c8631922001cfec5e84a586c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195941"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527949"
 ---
 # <a name="security-considerations-for-data"></a>Důležité informace o zabezpečení pro data
 Při práci s daty ve Windows Communication Foundation (WCF), je nutné zvážit počet kategorií ohrožení. V následující tabulce jsou uvedeny nejdůležitější hrozby tříd, které se týkají zpracování dat. WCF poskytuje nástroje ke zmírnění těchto hrozeb.  
@@ -225,7 +225,7 @@ Při práci s daty ve Windows Communication Foundation (WCF), je nutné zvážit
   
  Při zadání známých typů v konfiguraci, ujistěte se, že je konfigurační soubor zabezpečení. Vždy používat silné názvy v konfiguraci (zadáním veřejného klíče podepsané sestavení, ve které se nachází typ), ale neurčují verzi typ, který chcete načíst. Zavaděč typ automaticky vybere nejnovější verze, pokud je to možné. Pokud chcete zadat konkrétní verzi v konfiguraci, spusťte následující rizika: Typ může mít ohrožení zabezpečení, který může být stanovena v budoucí verzi, ale verze stále načítá, protože je explicitně zadaná v konfiguraci.  
   
- Příliš mnoho známých typů má jiné důsledkem: <xref:System.Runtime.Serialization.DataContractSerializer> vytvoří mezipaměť kódu pro serializaci nebo deserializaci v doméně aplikace, s položkou pro každý typ musí serializovat a deserializovat. Tato mezipaměť se nikdy vymaže tak dlouho, dokud běží v doméně aplikace. Útočník, který si je vědoma, že aplikace používá mnoho známé typy proto může způsobit deserializace všechny tyto typy, což způsobí mezipaměti využívat nepřiměřeně velké množství paměti.  
+ Příliš mnoho známých typů má jiné důsledky: <xref:System.Runtime.Serialization.DataContractSerializer> Vytvoří mezipaměť kódu pro serializaci nebo deserializaci v doméně aplikace, s položkou pro každý typ musí serializovat a deserializovat. Tato mezipaměť se nikdy vymaže tak dlouho, dokud běží v doméně aplikace. Útočník, který si je vědoma, že aplikace používá mnoho známé typy proto může způsobit deserializace všechny tyto typy, což způsobí mezipaměti využívat nepřiměřeně velké množství paměti.  
   
 ### <a name="preventing-types-from-being-in-an-unintended-state"></a>Znemožňuje uvolnění typy v nežádoucího stavu  
  Typ může mít interní konzistence omezení, které se musí vynutit. Aby se zabránilo přerušení těchto omezení během deserializace musí věnovat pozornost.  
@@ -353,8 +353,8 @@ Při práci s daty ve Windows Communication Foundation (WCF), je nutné zvážit
   
 -   Obecně platí při použití jakékoli součásti, která přijímá kvótu, pochopit jeho vliv na zabezpečení a nastavte ho na bezpečné hodnotu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.DataContractSerializer>  
- <xref:System.Xml.XmlDictionaryReader>  
- <xref:System.Xml.Serialization.XmlSerializer>  
- [Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.DataContractSerializer>
+- <xref:System.Xml.XmlDictionaryReader>
+- <xref:System.Xml.Serialization.XmlSerializer>
+- [Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)

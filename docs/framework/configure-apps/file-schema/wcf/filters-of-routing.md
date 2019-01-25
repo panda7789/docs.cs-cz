@@ -2,18 +2,18 @@
 title: '&lt;filters&gt; – &lt;routing&gt;'
 ms.date: 03/30/2017
 ms.assetid: 7993cf90-9afd-4c3c-9608-184d5da1105c
-ms.openlocfilehash: 4a6a079264c54ac481c3a8996b74ac924c33bdc7
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 468c10bc06b60f80ce93cf413c02582fe3861f70
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150887"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54704430"
 ---
 # <a name="ltfiltersgt-of-ltroutinggt"></a>&lt;filters&gt; – &lt;routing&gt;
 
 Představuje konfigurační oddíl pro definování sady směrovacích filtrů, které určují typ služby Windows Communication Foundation (WCF) <xref:System.ServiceModel.Dispatcher.MessageFilter> má být použit při vyhodnocování příchozích zpráv.
 
-[**\<system.serviceModel >**](system-servicemodel.md)   
+[**\<system.serviceModel>**](system-servicemodel.md)   
 &nbsp;&nbsp;[**\<směrování >**](routing.md)   
 &nbsp;&nbsp;&nbsp;&nbsp;**\<Filtry >**
   
@@ -54,4 +54,4 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="see-also"></a>Viz také:
 
-<xref:System.ServiceModel.Routing.Configuration.FilterElement?displayProperty=nameWithType>
+- <xref:System.ServiceModel.Routing.Configuration.FilterElement?displayProperty=nameWithType>

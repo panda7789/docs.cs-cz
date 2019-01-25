@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ebd7ef3b329eae8e35b680f3d8c74864e2a0f4d8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: be2edd5b217466a58aa9c478dadc10004ebda721
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33428684"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54556139"
 ---
 # <a name="corimageunloading-function"></a>_CorImageUnloading – funkce
-Zavaděč upozorní, když jsou obrázky spravovaný modul odpojen.  
+Upozorní zavaděč na bitové kopie spravovaného modulu jsou uvolněna.  
   
  Tato funkce není implementována. Pokud je volána, vrátí E_NOTIMPL.  
   
@@ -38,16 +38,16 @@ STDAPI (VOID) _CorImageUnloading(
   
 #### <a name="parameters"></a>Parametry  
  `ImageBase`  
- [v] Ukazatel na počáteční umístění bitové kopie se uvolnit.  
+ [in] Ukazatel na počáteční umístění image uvolnit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

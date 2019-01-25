@@ -2,12 +2,12 @@
 title: Odvození relační struktury datové sady z XML
 ms.date: 03/30/2017
 ms.assetid: cd2f41c6-6785-420e-aa43-3ceb0bdccdce
-ms.openlocfilehash: 13f63d416b76dbeaedbc007cd27eb2975f1efdef
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f5cbbcd148f13a630398e870124803d482f63698
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43515586"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54587645"
 ---
 # <a name="inferring-dataset-relational-structure-from-xml"></a>Odvození relační struktury datové sady z XML
 Relační struktury nebo schématu, nástroje <xref:System.Data.DataSet> se skládá z tabulky, sloupce, omezení a vztahy. Při načítání <xref:System.Data.DataSet> ze souboru XML, můžete předem definovaná schématu, ale mohou být vytvořeny, explicitně nebo prostřednictvím odvození z XML načítán. Další informace o načítání schématu a obsah <xref:System.Data.DataSet> ze souboru XML, naleznete v tématu [načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [načítání informace schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md).  
@@ -47,5 +47,5 @@ Relační struktury nebo schématu, nástroje <xref:System.Data.DataSet> se skl�
  [Přehled ADO.NET](../../../../../docs/framework/data/adonet/ado-net-overview.md)  
  Popisuje ADO.NET architektura a komponenty a jejich použití pro přístup k existujícím zdrojům dat a spravovat data aplikací.  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

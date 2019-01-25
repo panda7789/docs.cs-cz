@@ -2,12 +2,12 @@
 title: Důležité informace o výkonu (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 61913f3b-4f42-4d9b-810f-2a13c2388a4a
-ms.openlocfilehash: 8adf3a2787c47efd929ebc5c0198e13240c279ee
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 43194baeaaeefd8748980a8542bea199d3e8d29f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130217"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54732008"
 ---
 # <a name="performance-considerations-entity-framework"></a>Důležité informace o výkonu (Entity Framework)
 Toto téma popisuje charakteristiky výkonu technologie ADO.NET Entity Framework a obsahuje některé aspekty, které pomůžou zlepšit výkon aplikací využívajících rozhraní Entity Framework.  
@@ -151,7 +151,7 @@ Toto téma popisuje charakteristiky výkonu technologie ADO.NET Entity Framework
   
 -   [Zkoumání výkonu technologie ADO.NET Entity Framework – část 2](https://go.microsoft.com/fwlink/?LinkId=123909)  
   
--   [Porovnání výkonu technologie ADO.NET Entity Framework](https://go.microsoft.com/fwlink/?LinkID=123913)  
+-   [ADO.NET Entity Framework Performance Comparison](https://go.microsoft.com/fwlink/?LinkID=123913)  
   
-## <a name="see-also"></a>Viz také  
- [Důležité informace o vývoji a nasazení](../../../../../docs/framework/data/adonet/ef/development-and-deployment-considerations.md)
+## <a name="see-also"></a>Viz také:
+- [Důležité informace o vývoji a nasazení](../../../../../docs/framework/data/adonet/ef/development-and-deployment-considerations.md)

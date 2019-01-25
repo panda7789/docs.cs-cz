@@ -1,34 +1,34 @@
 ---
-title: 'Úloha 2: Hostování návrháře pracovních postupů'
+title: 'Úloha 2: Hostování návrháře postupu provádění'
 ms.date: 03/30/2017
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
-ms.openlocfilehash: 8ac6b3590d146909c1cb9fd8cf9cae2352b0155b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e8895e4b2c90f189c88ec3a803615e736dada455
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33519061"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572770"
 ---
-# <a name="task-2-host-the-workflow-designer"></a>Úloha 2: Hostování návrháře pracovních postupů
-Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] v aplikaci Windows Presentation Foundation (WPF).  
+# <a name="task-2-host-the-workflow-designer"></a>Úloha 2: Hostování návrháře postupu provádění
+Toto téma popisuje postup, pro který je hostitelem instance [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] v aplikaci Windows Presentation Foundation (WPF).  
   
- Postup konfiguruje **mřížky** ovládací prvek, který obsahuje návrháře, prostřednictvím kódu programu vytvoří instanci <xref:System.Activities.Presentation.WorkflowDesigner> obsahující výchozí <xref:System.Activities.Statements.Sequence> aktivity, zaregistruje návrháře metadata zajistit Podpora návrháře pro všechny zabudované aktivity a hostitelé [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] v [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] aplikace.  
+ Postup konfiguruje **mřížky** ovládací prvek, který obsahuje Návrhář, prostřednictvím kódu programu vytvoří instanci <xref:System.Activities.Presentation.WorkflowDesigner> , který obsahuje výchozí <xref:System.Activities.Statements.Sequence> aktivity, zaregistruje metadata návrháře k poskytování Podpora návrhářů pro všechny vestavěné aktivity a hostitele [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] v [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] aplikace.  
   
-### <a name="to-host-the-workflow-designer"></a>K hostování návrháře pracovních postupů  
+### <a name="to-host-the-workflow-designer"></a>K hostování návrháře postupu provádění  
   
-1.  Otevřete HostingApplication projektu, kterou jste vytvořili v [úloha 1: Vytvořte novou aplikaci Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md).  
+1.  Otevřít HostingApplication projektu, kterou jste vytvořili v [úkol 1: Vytvoření nové aplikace Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md).  
   
-2.  Upravit velikost okna, aby bylo snazší používat [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]. Chcete-li to provést, vyberte **MainWindow** v návrháři, zobrazte stisknutím klávesy F4 **vlastnosti** okno a v **rozložení** části existuje, nastavte **šířka** na hodnotu 600 a **výška** na hodnotu 350.  
+2.  Úprava velikosti okna, které usnadňují použití [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]. Chcete-li to provést, vyberte **hlavního okna MainWindow** v návrháři, zobrazíte stisknutím klávesy F4 **vlastnosti** okna a v **rozložení** části existuje, nastavte **šířku** k hodnotě čítače 600 a **výška** na hodnotu 350.  
   
-3.  Název mřížky nastavit tak, že vyberete **mřížky** panelu v Návrháři (klikněte na pole uvnitř **MainWindow**) a nastavení **název** vlastnost v horní části  **Vlastnosti** okno "grid1".  
+3.  Nastavte název tabulky tak, že vyberete **mřížky** panelu v Návrháři (klikněte na pole uvnitř **hlavního okna MainWindow**) a nastavení **název** vlastnost v horní části  **Vlastnosti** okno "grid1".  
   
-4.  V **vlastnosti** okně klikněte na tlačítko se třemi tečkami (**...** ) vedle položky `ColumnDefinitions` vlastnost otevřete **Editor kolekce** dialogové okno.  
+4.  V **vlastnosti** okna, klikněte na tlačítko se třemi tečkami (**...** ) vedle položky `ColumnDefinitions` vlastnosti otevřít **Editor kolekce** dialogové okno.  
   
-5.  V **Editor kolekce** dialogové okno, klikněte **přidat** tlačítko třikrát na tři sloupce k vložení do rozložení. První sloupec bude obsahovat **sada nástrojů**, druhý sloupec bude hostovat [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], a třetí sloupec se použije pro vlastnost inspector.  
+5.  V **Editor kolekce** dialogové okno, klikněte na tlačítko **přidat** tlačítko třikrát pro vložení tři sloupce do požadovaného rozložení. První sloupec bude obsahovat **nástrojů**, druhý sloupec bude hostovat [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], a třetí sloupec bude použit pro vlastnost inspector.  
   
-6.  Nastavte `Width` vlastnost střední sloupce na hodnotu "4 *".  
+6.  Nastavte `Width` vlastnost v prostředním sloupci na hodnotu "4 *".  
   
-7.  Klikněte na tlačítko **OK** a uložte změny. Následující XAML se přidá do souboru MainWindow.xaml:  
+7.  Změny uložíte kliknutím na tlačítko **OK** . Do souboru MainWindow.xaml je přidána následující XAML:  
   
     ```xml  
     <Grid Name="grid1">  
@@ -40,9 +40,9 @@ Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../inc
     </Grid>  
     ```  
   
-8.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na MainWindow.xaml a vyberte **kód zobrazení**. Upravte kód pomocí následujících kroků:  
+8.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na soubor MainWindow.xaml a vyberte **zobrazit kód**. Úprava kódu pomocí následujících kroků:  
   
-    1.  Přidání následujících oborů názvů:  
+    1.  Přidejte následující obory názvů:  
   
         ```csharp  
         using System.Activities;  
@@ -54,7 +54,7 @@ Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../inc
         using System.ComponentModel;  
         ```  
   
-    2.  Deklarovat privátního člena pole pro uložení instance <xref:System.Activities.Presentation.WorkflowDesigner>, přidejte následující kód, který `MainWindow` – třída.  
+    2.  Chcete-li deklarovat pole soukromý člen pro uložení instance <xref:System.Activities.Presentation.WorkflowDesigner>, přidejte následující kód, který `MainWindow` třídy.  
   
         ```csharp  
         public partial class MainWindow : Window  
@@ -68,7 +68,7 @@ Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../inc
         }  
         ```  
   
-    3.  Přidejte následující `AddDesigner` metodu `MainWindow` třídy. Implementace vytvoří instanci <xref:System.Activities.Presentation.WorkflowDesigner>, přidá <xref:System.Activities.Statements.Sequence> aktivitu a umístí jej v prostředním sloupci grid1 **mřížky**.  
+    3.  Přidejte následující `AddDesigner` metodu `MainWindow` třídy. Implementace vytvoří instanci <xref:System.Activities.Presentation.WorkflowDesigner>, přidá <xref:System.Activities.Statements.Sequence> aktivitu a umístí ji v prostředním sloupci grid1 **mřížky**.  
   
         ```csharp  
         private void AddDesigner()  
@@ -87,7 +87,7 @@ Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../inc
         }  
         ```  
   
-    4.  Zaregistrujte návrháře metadata o návrháře podporu zabudované aktivity. To umožňuje vyřadit aktivity z panelu nástrojů na původní <xref:System.Activities.Statements.Sequence> aktivity v [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]. Chcete-li to provést, přidejte `RegisterMetadata` metodu `MainWindow` – třída.  
+    4.  Zaregistrujte metadata návrháře návrháře podporu pro všechny vestavěné aktivity. To umožňuje umístit aktivity z panelu nástrojů do původní <xref:System.Activities.Statements.Sequence> aktivity v [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]. Chcete-li to provést, přidejte `RegisterMetadata` metodu `MainWindow` třídy.  
   
         ```csharp  
         private void RegisterMetadata()  
@@ -97,9 +97,9 @@ Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../inc
         }  
         ```  
   
-         Další informace o registraci návrháře aktivit najdete v tématu [postupy: vytvoření Návrháře vlastních aktivit](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md).  
+         Další informace o registraci návrháři aktivit najdete v tématu [jak: Vytvoření vlastního návrháře aktivit](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md).  
   
-    5.  V `MainWindow` konstruktoru třídy, přidejte volání metody dříve deklarované registrujete metadata pro návrháře podporu a vytvářet <xref:System.Activities.Presentation.WorkflowDesigner>.  
+    5.  V `MainWindow` konstruktor třídy, přidejte volání metody deklarované dříve zaregistrovat metadata pro podporu návrháře a vytvořit <xref:System.Activities.Presentation.WorkflowDesigner>.  
   
         ```csharp  
         public MainWindow()  
@@ -115,13 +115,13 @@ Toto téma popisuje postup pro hostování instanci [!INCLUDE[wfd1](../../../inc
         ```  
   
         > [!NOTE]
-        >  `RegisterMetadata` Metoda registruje návrháře metadata integrovaných aktivit, včetně <xref:System.Activities.Statements.Sequence> aktivity. Protože `AddDesigner` metoda používá <xref:System.Activities.Statements.Sequence> aktivity, `RegisterMetadata` metoda musí být volána nejprve.  
+        >  `RegisterMetadata` Metoda registruje metadata návrháře integrovaných aktivit, včetně <xref:System.Activities.Statements.Sequence> aktivity. Protože `AddDesigner` metoda používá <xref:System.Activities.Statements.Sequence> aktivity, `RegisterMetadata` metoda musí být nejdříve volána.  
   
-9. Stisknutím klávesy F5 sestavení a spuštění řešení.  
+9. Stisknutím klávesy F5 sestavte a spusťte řešení.  
   
-10. V tématu [úloha 3: vytvoření sady nástrojů a PropertyGrid podokna](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md) se dozvíte, jak přidat **sada nástrojů** a **PropertyGrid** podporu do vaší opětovné hostování nástroje pracovního postupu návrháře.  
+10. Zobrazit [úloha 3: Vytvořit panel nástrojů a podokna PropertyGrid](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md) Další informace o přidání **nástrojů** a **PropertyGrid** podporují do návrháře postupu provádění se změněným hostováním.  
   
-## <a name="see-also"></a>Viz také  
- [Změna hostování Návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
- [Úkol 1: Vytvoření nové aplikace Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)  
- [Úkol 3: Vytvoření podoken pro sady nástrojů a mřížku vlastností](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)
+## <a name="see-also"></a>Viz také:
+- [Změna hostování Návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)
+- [Úloha 1: Vytvoření nové aplikace Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)
+- [Úloha 3: Vytvořit panel nástrojů a PropertyGrid podokna](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)

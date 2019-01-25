@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - sessions [WCF]
 ms.assetid: 864ba12f-3331-4359-a359-6d6d387f1035
-ms.openlocfilehash: 898e5688ae08a59415c8b3116665eec6cb4cf904
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.openlocfilehash: 9285f68521770e0dd4fbc8d6f9aa006eccc502c3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44260201"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54533133"
 ---
 # <a name="using-sessions"></a>Použití relací
 V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu zpráv do konverzace. Relace WCF se liší od objekt relace, která je k dispozici v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace podporují různé chování a se řídí různými způsoby. Toto téma popisuje funkce, které umožňují relace ve službě WCF aplikací a jejich použití.  
@@ -129,7 +129,7 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
   
 -   Ukončující operace na buď typ objektu klienta WCF (ve výchozím nastavení, se ukončuje žádné operace, kontrakt musíte explicitně zadat ukončující operace). Při první operace je volána, objekt klienta WCF se automaticky otevře kanál a spustí relaci.  
   
- Příklady najdete v tématu [postupy: vytváření služba, vyžaduje relací](../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md) také [výchozí chování služby](../../../docs/framework/wcf/samples/default-service-behavior.md) a [Instancing](../../../docs/framework/wcf/samples/instancing.md) ukázky.  
+ Příklady najdete v tématu [jak: Vytváření služba, vyžaduje relací](../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md) také [výchozí chování služby](../../../docs/framework/wcf/samples/default-service-behavior.md) a [Instancing](../../../docs/framework/wcf/samples/instancing.md) ukázky.  
   
  Další informace o klientech a relace najdete v tématu [přístup ke službám pomocí klienta WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
   
@@ -145,6 +145,6 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
 > [!NOTE]
 >  MaxConcurrentSessions nemají žádný vliv v tomto případě, protože není k dispozici pouze jeden "relace".  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.OperationContractAttribute.IsInitiating%2A>  
- <xref:System.ServiceModel.OperationContractAttribute.IsTerminating%2A>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.OperationContractAttribute.IsInitiating%2A>
+- <xref:System.ServiceModel.OperationContractAttribute.IsTerminating%2A>

@@ -2,12 +2,12 @@
 title: Fronty ve WCF
 ms.date: 03/30/2017
 ms.assetid: e98d76ba-1acf-42cd-b137-0f8214661112
-ms.openlocfilehash: f04055df2c6d4b0a51b36040a5b377bb8738c534
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: fcdd38cf02157829bdc476cc289ea89ff8767487
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086593"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559463"
 ---
 # <a name="queuing-in-wcf"></a>Fronty ve WCF
 Tato část popisuje způsob použití komunikaci ve frontě ve Windows Communication Foundation (WCF).  
@@ -40,7 +40,7 @@ Tato část popisuje způsob použití komunikaci ve frontě ve Windows Communic
   
  Další informace o MSMQ najdete v tématu [instalace řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md).  
   
-### <a name="netmsmqbinding"></a>netMsmqBinding  
+### <a name="netmsmqbinding"></a>NetMsmqBinding  
  [ \<NetMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md) je ve frontě vazby WCF poskytuje dva koncové body služby WCF pro komunikaci pomocí služby MSMQ. Vazba, proto zpřístupní vlastnosti, které jsou specifické pro službu MSMQ. Ale ne všechny funkce služby MSMQ a vlastnosti nejsou zveřejněné v žádném `NetMsmqBinding`. Komprese `NetMsmqBinding` je navržená s optimální sadu funkcí, které většina zákazníků byste najít dostatečná.  
   
  `NetMsmqBinding` Manifesty základní koncepty služby Řízení front doposud popsané ve formě vlastnosti na vazby. Tyto vlastnosti zase komunikaci služby MSMQ přenosu a doručovat zprávy. Diskuzi o vlastnosti kategorie je v následujících částech. Další informace najdete v tématu koncepční témata, které popisují konkrétní vlastnosti komplexněji.  
@@ -83,9 +83,9 @@ Tato část popisuje způsob použití komunikaci ve frontě ve Windows Communic
 #### <a name="other-properties"></a>Další vlastnosti  
  Kromě předchozích vlastností další vlastnosti specifické pro službu MSMQ v vazby zahrnout:  
   
--   `UseSourceJournal`Je zapnuté: Vlastnost umožňující označit, že záznamu do deníku zdroje. Záznamu do deníku zdroje je funkce služby MSMQ, která uchovává informace o zprávy, které byly úspěšně odeslány z fronty přenosu.  
+-   `UseSourceJournal`: Je povolena vlastnost umožňující označit, že záznamu do deníku zdroje. Záznamu do deníku zdroje je funkce služby MSMQ, která uchovává informace o zprávy, které byly úspěšně odeslány z fronty přenosu.  
   
--   `UseMsmqTracing`: Vlastnost označující, jestli je zapnutá trasování služby MSMQ. Trasování služby MSMQ odešle zprávy do fronty hlášení pokaždé, když opustí zpráva nebo zpráva dorazí na počítače hostujícího správce fronty MSMQ.  
+-   `UseMsmqTracing`: Vlastnost umožňující označit, že je zapnutá trasování služby MSMQ. Trasování služby MSMQ odešle zprávy do fronty hlášení pokaždé, když opustí zpráva nebo zpráva dorazí na počítače hostujícího správce fronty MSMQ.  
   
 -   `QueueTransferProtocol`: Výčet protokol bude použit pro přenos zpráv k frontě. MSMQ – implementuje nativní k frontě přenosový protokol a názvem protokol spolehlivého zasílání zpráv na SOAP (SRMP) protokol založený na protokolu SOAP. SRMP se používá při použití přenosového protokolu HTTP pro přenos k frontě. SRMP zabezpečení se používá při použití protokolu HTTPS pro přenosy na frontě.  
   
@@ -102,12 +102,12 @@ Tato část popisuje způsob použití komunikaci ve frontě ve Windows Communic
   
 -   Smyslem serializaci a deserializaci textu zprávy, jsou k dispozici serializátory, jako jsou XML a ActiveX.  
   
-### <a name="sample-code"></a>Ukázkový kód  
+### <a name="sample-code"></a>Vzorový kód  
  Podrobné pokyny o tom, jak napsat WCF služby, které používají služby MSMQ naleznete v následujících tématech:  
   
--   [Postupy: Výměna zpráv s koncovými body WCF a aplikací pro řazení zpráv do front](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+-   [Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
   
--   [Postupy: Výměna zpráv zařazených do fronty s koncovými body WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
+-   [Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
   
  Dokončený kód v ukázce použití služby MSMQ ve službě WCF najdete v následujících tématech:  
   
@@ -125,6 +125,6 @@ Tato část popisuje způsob použití komunikaci ve frontě ve Windows Communic
   
 -   [Zabezpečení zprávy pomocí služby Řízení front zpráv](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)  
   
-## <a name="see-also"></a>Viz také  
- [Koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md)  
- [Webhosting frontové aplikace](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)
+## <a name="see-also"></a>Viz také:
+- [Koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md)
+- [Webhosting frontové aplikace](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)

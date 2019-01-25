@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7078b2eb98c15b7229132076da8af4691032bb08
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8a4cc17bdcaea5099d0d2b0195ae4fa28e3d4744
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33441789"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744598"
 ---
 # <a name="corimportoptions-enumeration"></a>CorImportOptions – výčet
-Obsahuje příznak hodnoty, které řídí chování při import sestavení v aktuálním oboru.  
+Obsahuje příznak hodnoty, které řídí chování během import sestavení mimo aktuální rozsah.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,20 +50,20 @@ typedef enum CorImportOptions {
 |------------|-----------------|  
 |`MDImportOptionDefault`|Určuje výchozí chování, které se mají přeskočit odstraněné záznamy.|  
 |`MDImportOptionAll`|Označuje, že všechna metadata ve výčtu.|  
-|`MDImportOptionAllTypeDefs`|Označuje, že všechny definice TypeDef, včetně odstraněné ty ve výčtu.|  
-|`MDImportOptionAllMethodDefs`|Označuje, že všechny MethodDefs, včetně odstraněné ty ve výčtu.|  
-|`MDImportOptionAllFieldDefs`|Označuje, že všechny FieldDefs, včetně odstraněné ty ve výčtu.|  
-|`MDImportOptionAllProperties`|Označuje, že všechny PropertyDefs, včetně odstraněné ty ve výčtu.|  
-|`MDImportOptionAllEvents`|Označuje, že všechny EventDefs, včetně odstraněné ty ve výčtu.|  
-|`MDImportOptionAllCustomAttributes`|Označuje, že všech vlastních atributů, včetně odstraněné ty ve výčtu.|  
-|`MDImportOptionAllExportedTypes`|Označuje, že všechny exportovaný typů, včetně odstraněné ty ve výčtu.|  
+|`MDImportOptionAllTypeDefs`|Označuje, že všechny definice TypeDef, včetně odstraněné ty, které jsou ve výčtu.|  
+|`MDImportOptionAllMethodDefs`|Označuje, že všechny MethodDefs, včetně odstraněné ty, které jsou ve výčtu.|  
+|`MDImportOptionAllFieldDefs`|Označuje, že všechny FieldDefs, včetně odstraněné ty, které jsou ve výčtu.|  
+|`MDImportOptionAllProperties`|Označuje, že všechny PropertyDefs, včetně odstraněné ty, které jsou ve výčtu.|  
+|`MDImportOptionAllEvents`|Označuje, že všechny EventDefs, včetně odstraněné ty, které jsou ve výčtu.|  
+|`MDImportOptionAllCustomAttributes`|Označuje, že všechny vlastní atributy, včetně odstraněné ty, které jsou ve výčtu.|  
+|`MDImportOptionAllExportedTypes`|Označuje, že všechny exportované typy, včetně odstraněné ty, které jsou ve výčtu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

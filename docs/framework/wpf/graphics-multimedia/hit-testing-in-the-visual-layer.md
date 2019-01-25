@@ -8,12 +8,12 @@ helpviewer_keywords:
 - hit testing functionality [WPF]
 - visual layer [WPF], hit testing functionality
 ms.assetid: b1a64b61-14be-4d75-b89a-5c67bebb2c7b
-ms.openlocfilehash: fe54578407e881ec7d6782ec21100b29eded07a3
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 27e5e8c939cf95b6406c810c25940cc04420b22c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45988579"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54692412"
 ---
 # <a name="hit-testing-in-the-visual-layer"></a>Spuštění testování ve vizuální vrstvě
 Toto téma obsahuje základní informace o volání funkce testování k dispozici ve vizuální vrstvě. Volání podpory testování umožňuje určit, zda hodnota geometrie nebo bodu spadá do vykreslený obsah <xref:System.Windows.Media.Visual>, abyste mohli implementovat rozhraní chování uživatelů, jako je například obdélníku výběru vybrat více objektů.  
@@ -30,7 +30,7 @@ Toto téma obsahuje základní informace o volání funkce testování k dispozi
   
 -   Spuštění testování na více objektů: To platí, když budete chtít spuštění testu s více objekty, jako je překrývání objekty. Získat výsledky pro všechny vizuály protínající se operátory geometrie nebo bodu, nikoli pouze první z nich.  
   
--   Ignorování <xref:System.Windows.UIElement> přístupů k testování zásad: To platí, pokud chcete ignorovat <xref:System.Windows.UIElement> přístupů k testování zásad, který bere v úvahu faktory, jako Určuje, zda je prvek zakázaný nebo neviditelné.  
+-   Ignorování <xref:System.Windows.UIElement> přístupů testování zásad: To platí, pokud chcete ignorovat <xref:System.Windows.UIElement> přístupů k testování zásad, který bere v úvahu faktory, jako Určuje, zda je prvek zakázaný nebo neviditelné.  
   
 > [!NOTE]
 >  Testování ve vizuální vrstvě kompletní kód ukázkové ilustrující průchodu, najdete v části [ukázka spuštění testu DrawingVisuals](https://go.microsoft.com/fwlink/?LinkID=159994) a [spuštění testu s ukázkou vzájemná spolupráce grafického subsystému Win32](https://go.microsoft.com/fwlink/?LinkID=159995).  
@@ -41,7 +41,7 @@ Toto téma obsahuje základní informace o volání funkce testování k dispozi
   
  Následující ilustrace znázorňuje vztah mezi oblasti obdélníkový objektu a jeho ohraničující obdélník.  
   
- ![Diagram platná pozice oblasti](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-visuals-hittest-1.png "wcpsdk_mmgraphics_visuals_hittest_1")  
+ ![Diagram of valid hit test region](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-visuals-hittest-1.png "wcpsdk_mmgraphics_visuals_hittest_1")  
 Diagram platná pozice oblasti  
   
 <a name="hit_testing_and_z-order"></a>   
@@ -138,13 +138,13 @@ Vyřazování vizuální strom
  [!code-csharp[HitTestingOverview#108](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#108)]
  [!code-vb[HitTestingOverview#108](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#108)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>  
- <xref:System.Windows.Media.HitTestResult>  
- <xref:System.Windows.Media.HitTestResultCallback>  
- <xref:System.Windows.Media.HitTestFilterCallback>  
- <xref:System.Windows.UIElement.IsHitTestVisible%2A>  
- [Spuštění testu použitím DrawingVisuals vzorku](https://go.microsoft.com/fwlink/?LinkID=159994)  
- [Spuštění testu s ukázkou Win32 vzájemné spolupráce](https://go.microsoft.com/fwlink/?LinkID=159995)  
- [Ověření pozice objektu Geometry ve vizuálním objektu](../../../../docs/framework/wpf/graphics-multimedia/how-to-hit-test-geometry-in-a-visual.md)  
- [Ověřování pozice pomocí kontejneru hostitele Win32](../../../../docs/framework/wpf/graphics-multimedia/how-to-hit-test-using-a-win32-host-container.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>
+- <xref:System.Windows.Media.HitTestResult>
+- <xref:System.Windows.Media.HitTestResultCallback>
+- <xref:System.Windows.Media.HitTestFilterCallback>
+- <xref:System.Windows.UIElement.IsHitTestVisible%2A>
+- [Spuštění testu použitím DrawingVisuals vzorku](https://go.microsoft.com/fwlink/?LinkID=159994)
+- [Spuštění testu s ukázkou Win32 vzájemné spolupráce](https://go.microsoft.com/fwlink/?LinkID=159995)
+- [Ověření pozice objektu Geometry ve vizuálním objektu](../../../../docs/framework/wpf/graphics-multimedia/how-to-hit-test-geometry-in-a-visual.md)
+- [Ověřování pozice pomocí kontejneru hostitele Win32](../../../../docs/framework/wpf/graphics-multimedia/how-to-hit-test-using-a-win32-host-container.md)

@@ -5,18 +5,18 @@ author: cartermp
 ms.author: mairaw
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: b98095cd6afd408331ab8c8f6bb15e7741d3073a
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: b35db12c8da1f333b481d2bd2e7633026ae30c30
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50189690"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54570720"
 ---
 # <a name="net-architectural-components"></a>Architekturálních komponentách .NET
 
 Je vyvinutý pro aplikace .NET a běží v jedné nebo více *implementace .NET*.  Implementace .NET zahrnout rozhraní .NET Framework, Mono a .NET Core. Společné pro všechny implementace .NET, které se nazývá .NET Standard je specifikace rozhraní API. Tento článek přináší stručný úvod ke každé z těchto konceptů.
 
-## <a name="net-standard"></a>.NET standard
+## <a name="net-standard"></a>.NET Standard
 
 .NET Standard je sada rozhraní API, které jsou implementované základní knihovny tříd .NET implementace. Více formálně je specifikace rozhraní API .NET, která tvoří sadu smluv, které kompilaci kódu proti jednotné. Tyto smlouvy jsou implementovány v každé implementace .NET. To umožňuje přenositelnost napříč různými implementacemi .NET umožňuje efektivně váš kód běžet kdekoli.
 
@@ -28,7 +28,7 @@ Další informace o .NET Standard a jak se zaměřit na to, najdete v článku [
 
 Každá implementace .NET obsahuje následující součásti:
 
-- Jeden nebo více modulů runtime. Příklady: CLR pro rozhraní .NET Framework, CoreCLR a CoreRT pro .NET Core.
+- Jeden nebo více modulů runtime. Příklady: Modul CLR pro rozhraní .NET Framework, CoreCLR a CoreRT pro .NET Core.
 - Knihovny tříd .NET Standard a může implementovat další rozhraní API. Příklady: Základní knihovny tříd .NET Framework, knihovně základních tříd .NET Core.
 - Volitelně můžete jeden nebo více aplikačních architektur. Příklady: [ASP.NET](https://www.asp.net/), [Windows Forms](../framework/winforms/windows-forms-overview.md), a [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) jsou zahrnuty v rozhraní .NET Framework.
 - Volitelně můžete nástroje pro vývoj. Některé vývojové nástroje jsou sdíleny více implementací.
@@ -86,10 +86,10 @@ Máte přístup k rozsáhlé sadu nástrojů a komponent infrastruktury, které 
 
 ## <a name="see-also"></a>Viz také:
 
-- [Volba mezi .NET Core a .NET Framework pro serverové aplikace](choosing-core-framework-server.md)   
-- [.NET Standard](net-standard.md)  
-- [Průvodce platformou .NET Core](../core/index.md)  
-- [Průvodce rozhraním .NET Framework](../framework/index.md)  
-- [Průvodce jazykem C#](../csharp/index.md)  
-- [Průvodce jazykem F#](../fsharp/index.md)  
-- [Průvodce VB.NET](../visual-basic/index.md)  
+- [Volba mezi .NET Core a .NET Framework pro serverové aplikace](choosing-core-framework-server.md)
+- [.NET Standard](net-standard.md)
+- [Průvodce platformou .NET Core](../core/index.md)
+- [Průvodce rozhraním .NET Framework](../framework/index.md)
+- [Průvodce jazykem C#](../csharp/index.md)
+- [Průvodce jazykem F#](../fsharp/index.md)
+- [VB.NET Guide](../visual-basic/index.md)

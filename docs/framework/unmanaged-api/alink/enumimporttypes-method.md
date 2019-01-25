@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 90319886dfe149a3d2d76451c1a8526299cf5b89
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4e437868138d7ae31d233853ecc0f709de3ee39d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401645"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54512720"
 ---
 # <a name="enumimporttypes-method"></a>EnumImportTypes – metoda
 Vytvoří výčet jednotlivých typů v každém oboru.  
@@ -40,24 +40,24 @@ HRESULT EnumImportTypes(
   
 #### <a name="parameters"></a>Parametry  
  `hEnum`  
- Obslužná rutina pro enumerátor.  
+ Popisovač pro enumerátor.  
   
  `dwMax`  
  Maximální počet typů, který chcete načíst.  
   
  `aTypeDefs`  
- Recieves zadejte tokeny nepřesahující `dwMax`.  
+ Zadejte Recieves tokeny, která nepřekročí `dwMax`.  
   
  `pdwCount`  
- Získá skutečný počet typu v `aTypeDefs`.  
+ Přijímá skutečný počet typů v `aTypeDefs`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h  
   
-## <a name="see-also"></a>Viz také  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

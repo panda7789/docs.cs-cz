@@ -2,12 +2,12 @@
 title: CallbackBehavior
 ms.date: 03/30/2017
 ms.assetid: 42acd302-2b62-4849-a2d1-a03084343ecd
-ms.openlocfilehash: 38a38a71db2927d187ccdd93e5e364b0d4955373
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: 2854671eaabb37066b57d87a7496183c9e5bba4d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49452609"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54562844"
 ---
 # <a name="callbackbehavior"></a>CallbackBehavior
 CallbackBehavior  
@@ -36,48 +36,48 @@ class CallbackBehavior : Behavior
 ### <a name="automaticsessionshutdown"></a>AutomaticSessionShutdown  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  V případě hodnoty true relace je automaticky uzavřena poté, co služba uzavře oboustrannou relaci.  
   
-### <a name="concurrencymode"></a>Režim ConcurrencyMode  
+### <a name="concurrencymode"></a>ConcurrencyMode  
  Datový typ: řetězec  
-Přístup k typu: jen pro čtení  
+Typ přístupu: jen pro čtení  
   
  Určuje, zda služba podporuje jedno vlákno, několik vláken nebo znovu zadaných volání.  
   
 ### <a name="ignoreextensiondataobject"></a>IgnoreExtensionDataObject  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Hodnota, která určuje, zda mají data neznámé serializace přenosu.  
   
 ### <a name="includeexceptiondetailinfaults"></a>Třídu IncludeExceptionDetailInFaults  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Při povolené, podrobnosti o výjimkách odvolání připojeny k chybám vrácených službě.  
   
 ### <a name="maxitemsinobjectgraph"></a>MaxItemsInObjectGraph  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Maximální počet položek povolených v serializovaném objektu.  
   
 ### <a name="usesynchronizationcontext"></a>UseSynchronizationContext  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Určuje, jestli se má použít aktuální synchronizační kontext pro výběr vlákna exekuce.  
   
 ### <a name="validatemustunderstand"></a>ValidateMustUnderstand  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Určuje, zda systém nebo aplikace uplatňuje zpracování záhlaví SOAP MustUnderstand.  
   
@@ -87,5 +87,5 @@ Přístup k typu: jen pro čtení
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.CallbackBehaviorAttribute>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.CallbackBehaviorAttribute>

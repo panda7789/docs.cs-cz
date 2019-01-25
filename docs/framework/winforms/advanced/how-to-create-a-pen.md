@@ -10,12 +10,12 @@ helpviewer_keywords:
 - pens [Windows Forms], creating
 - Pen object
 ms.assetid: 7fbea8b7-7ac1-4413-9c17-733a850381e3
-ms.openlocfilehash: aff1771af12a9f59127a9f21f4b692d6214c457d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b8a61e554ef58ca216050d34269e44355f7c1aaf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520975"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527442"
 ---
 # <a name="how-to-create-a-pen"></a>Postupy: Vytvoření pera
 Tento příklad vytvoří <xref:System.Drawing.Pen> objektu.  
@@ -26,9 +26,9 @@ Tento příklad vytvoří <xref:System.Drawing.Pen> objektu.
  [!code-vb[System.Drawing.ConceptualHowTos#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConceptualHowTos/VB/form1.vb#3)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Po ukončení používání objektů, které využívají systémové prostředky, jako například <xref:System.Drawing.Pen> objekty, by měly volat <xref:System.Drawing.Pen.Dispose%2A> na ně.  
+ Po dokončení používání objektů, které využívají systémové prostředky, jako například <xref:System.Drawing.Pen> objektů, měli byste zavolat <xref:System.Drawing.Pen.Dispose%2A> na ně.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Drawing.Pen>  
- [Začínáme s programováním grafiky](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)  
- [Pera, čáry a obdélníky v GDI+](../../../../docs/framework/winforms/advanced/pens-lines-and-rectangles-in-gdi.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Drawing.Pen>
+- [Začínáme s programováním grafiky](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)
+- [Pera, čáry a obdélníky v GDI+](../../../../docs/framework/winforms/advanced/pens-lines-and-rectangles-in-gdi.md)

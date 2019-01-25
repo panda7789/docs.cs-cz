@@ -5,40 +5,40 @@ helpviewer_keywords:
 - applications [WPF], optimizing
 - WPF application [WPF], optimizing
 ms.assetid: c91bd0c5-a193-46ff-9da1-eb7a3a76a3b3
-ms.openlocfilehash: c8e763686b30ca9c8e1dc5a7f6234d77201e4cba
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3fadba2fe8036fc558e18f80bd7cb1ffc977b762
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33546949"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54632111"
 ---
 # <a name="planning-for-application-performance"></a>Plánování výkonu aplikace
-Úspěch dosažení výkonnostní cíle, závisí na tom, jak dobře vývoj strategie výkonu. Plánování je první fázi ve vývoji některý z produktů. Toto téma popisuje několik velmi jednoduchých pravidel pro vývoj strategie dobrý výkon.  
+Úspěch dosažení svých cílů výkonu závisí na tom, jak dobře při vývoji strategie výkonu. Plánování je první fázi při vývoji libovolný produkt. Toto téma popisuje několik velmi jednoduchých pravidel pro vývoj strategie dobrého výkonu.  
   
-## <a name="think-in-terms-of-scenarios"></a>Vezměte v úvahu z hlediska scénáře  
- Scénáře můžete soustředit na důležité součásti vaší aplikace. Scénáře jsou obecně odvozená od vašeho zákazníků, jakož i konkurenční produkty. Vždy prostudovali vaši zákazníci a zjistit, co opravdu umožňuje jejich nadšení o produktu a vašich konkurentů produkty. Názory zákazníků můžete určit primární scénář vaší aplikace. Například pokud navrhujete komponenty, která se použije při spuštění, je pravděpodobné, že bude lze komponentu volat pouze jednou, při spuštění aplikace. Čas spuštění se změní na váš scénář klíče. Další příklady klíčových scénářů může být požadované snímků za sekundu pro animace pořadí, nebo maximální pracovní sadu pro aplikaci povolena.  
+## <a name="think-in-terms-of-scenarios"></a>Uvažují v rámci scénáře  
+ Scénáře můžete soustředit na důležité komponent vaší aplikace. Scénáře jsou obvykle odvozen z vašich zákazníků, jakož i konkurenčních produktů. Vždy studovat vaše zákazníky a zjistěte, co Opravdu je mezi nimi vlastně těší zpráva o produktu a produktů konkurence. Názory vašich zákazníků můžete určit primární scénáře vaší aplikace. Například pokud navrhujete komponenty, která se použije při spuštění, je pravděpodobné, že součást bude volat pouze jednou při spuštění aplikace. Klíčovým scénářem bude čas spuštění. Další příklady klíčových scénářů může být požadované Snímková frekvence pro animace pořadí nebo maximální pracovní sada pro aplikaci povolená.  
   
-## <a name="define-goals"></a>Definování cílů  
- Cíle umožňují určit, zda aplikace pracuje pomaleji nebo rychlejší. Měli byste cíle pro všechny vaše scénáře. Všechna výkonnostní cíle, které definujete by měla být založena na očekávání vašich zákazníků. Může být obtížné výkonu sadu cílů již v rané fázi na při vývoji aplikace cyklus, když jsou stále mnoho nevyřešené problémy. Je nicméně lepší nastavit počáteční cílem a zkontrolujte ji později než k nemá cílem vůbec.  
+## <a name="define-goals"></a>Definování cíle  
+ Cíle umožňují určit, zda aplikace pracuje pomaleji, nebo rychleji. Cíle byste měli definovat pro všechny scénáře. Všechna výkonnostní cíle, které definujete by podle očekávání vašich zákazníků. Může být obtížné výkonu sady cílů raném stádiu při vývoji aplikace cyklu, pokud stále existuje řada nevyřešené problémy. Je však lepší nastavit počáteční cíle a zkontrolujte ji později než není mají cíl vůbec.  
   
-## <a name="understand-your-platform"></a>Pochopení vaši platformu  
- Vždy udržujte cyklus měření příčin, upřesnění nebo odstranění cyklu vývoje aplikace. Od začátku do konce cyklu vývoje, budete muset měřit výkon aplikace v prostředí spolehlivou a stabilní. Neměli byste variabilita způsobené externí faktory. Například při testování výkonu, můžete měli zakázat antivirový či jakékoli automatických aktualizací, například SMS, aby nebyla dopad výkonu výsledky testu. Jakmile se mají měřit výkon aplikace, musíte určit změny, které bude mít za následek největších vylepšení. Jakmile změníte vaší aplikace, spusťte znovu cyklu.  
+## <a name="understand-your-platform"></a>Vysvětlení vaši platformu  
+ Vždy zachovat cyklu měření, zkoumání, upřesnění a oprava během cyklu vývoje aplikací. Od začátku do konce cyklu vývoje, je nutné měřit výkon vaší aplikace v spolehlivé a stabilní prostředí. Měli byste se vyhnout proměnlivé způsobené externí faktory. Například při testování výkonu, můžete by měl zakázat antivirový program nebo jakékoli automatické aktualizace, jako je SMS, aby ovlivnit výkon výsledky testů. Jakmile se mají měřit výkon vaší aplikace, je potřeba identifikovat změny, které bude mít za následek největší vylepšení. Jakmile vaše aplikace byly upraveny, spuštění cyklu znovu.  
   
-## <a name="make-performance-tuning-an-iterative-process"></a>Ujistěte se, iterativní proces optimalizace výkonu  
- Měli byste vědět relativní náklady na jednotlivé funkce, které chcete použít. Například použití reflexe v rozhraní Microsoft .NET Framework je obecně výkonu náročné z hlediska výpočetních prostředků, takže je vhodnější pro použití uvážlivě. To neznamená vyhnout se použití reflexe, pouze zda je třeba pečlivě vyvážit požadavky na výkon vaší aplikace s požadavky výkonu funkce, které používáte.  
+## <a name="make-performance-tuning-an-iterative-process"></a>Ujistěte se, iterativní proces pro optimalizaci výkonu  
+ Měli byste vědět relativní náklady na jednotlivé funkce, které budete používat. Například použití reflexe v rozhraní Microsoft .NET Framework je obvykle výkon náročné z hlediska výpočetních prostředků, takže byste měli používat uvážlivě. Neznamená to, aby využívání reflection, pouze, měli byste být opatrní k vyrovnávání požadavků na výkon vaší aplikace pomocí funkcí, které používáte požadavky na výkon.  
   
-## <a name="build-towards-graphical-richness"></a>Sestavení směrem grafické Zvučnost  
- Klíče technika pro vytváření škálovatelných přístup k dosahování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] výkon aplikace je k sestavení směrem grafické zvučnost a složitost. Vždy spusťte s použitím minimálně výkonu náročné prostředky k dosažení cílů scénář. Po dosažení těchto cílů sestavení směrem grafické zvučnost pomocí další funkce náročné výkonu, nezapomeňte udržování cílů scénář. Pamatujte si, že [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je velmi platformu a poskytuje velmi bohaté grafické funkce. Pomocí funkce náročné výkonu bez přemýšlení může negativně ovlivnit výkon celkové aplikace.  
+## <a name="build-towards-graphical-richness"></a>Sestavení pro grafické kombinujícím  
+ Představuje klíčovou techniku pro vytváření škálovatelných přístup k dosažení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] výkon aplikace, je vytvořit pro grafické kombinujícím funkce a složitost. Vždy začněte s použitím nejméně náročné na prostředky výkonu k dosažení cílů scénář. Po dosažení těchto cílů sestavení směrem k grafické kombinujícím pomocí více funkcí náročné na výkon, vždy dodržujte při tom cílů scénář. Mějte na paměti, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je velmi velké množství platformy a poskytuje velmi velké množství grafické funkce. Pomocí funkce náročné na výkon bez přemýšlení může mít negativní vliv na výpočetní výkon.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky jsou ze své podstaty extensible tím, že pro hromadné přizpůsobení vzhledu při není změna jejich chování ovládacího prvku. Využitím styly, šablony dat a řízení šablony, můžete vytvořit a přírůstkově momentální nastavit vlastní [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] který přizpůsobí vašim požadavkům na výkon.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky jsou ze své podstaty extensible tím, že pro přizpůsobení šíření celého jejich výskytu, při není změna jejich chování ovládacího prvku. S využitím styly, šablony a šablony ovládacích prvků, můžete vytvořit a postupně vyvíjí přizpůsobitelnou [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] , která se přizpůsobí vašim požadavkům na výkon.  
   
-## <a name="see-also"></a>Viz také  
- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
- [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  
- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
- [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
- [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
- [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
+## <a name="see-also"></a>Viz také:
+- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
+- [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)
+- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)
+- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)
+- [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)
+- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)
+- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
+- [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)

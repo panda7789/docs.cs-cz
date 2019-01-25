@@ -1,5 +1,5 @@
 ---
-title: Nelze načíst informace pro třídu &#39; &lt;elementem classname&gt;&#39;
+title: Nepodařilo se načíst informace pro třídu &#39; &lt;classname&gt;&#39;
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30712
@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30712
 ms.assetid: c7ffbd6d-05c6-4261-b44b-1bcd521bb350
-ms.openlocfilehash: 4ee58b02965bef680731f6911d8b5121fd890eb3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 368484d9138d1ae10efb8c63f6cfaa6bcefa6ed8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604169"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54528959"
 ---
-# <a name="unable-to-load-information-for-class-39ltclassnamegt39"></a>Nelze načíst informace pro třídu &#39; &lt;elementem classname&gt;&#39;
-Odkaz byl proveden třídu, která není k dispozici.  
+# <a name="unable-to-load-information-for-class-39ltclassnamegt39"></a>Nepodařilo se načíst informace pro třídu &#39; &lt;classname&gt;&#39;
+Se odkazuje na třídu, která není k dispozici.  
   
  **ID chyby:** BC30712  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Ověřte, že je třída definovaná a zda je název zadán správně.  
+1.  Ověřte, že je třída definovaná a že je název zadán správně.  
   
-2.  Zkuste přístup k jednoho z členů deklarované v modulu. V některých případech nelze ladění prostředí najít členy, protože moduly, které jsou deklarovány dosud nebyla načtena.  
+2.  Zkuste jednu z členy deklarované v modulu. V některých případech nelze ladicího prostředí najít členy, protože ještě nebyly načtené moduly, ve kterém jsou deklarovány.  
   
-## <a name="see-also"></a>Viz také  
- [Ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)
+## <a name="see-also"></a>Viz také:
+- [Ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)

@@ -10,28 +10,28 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], types of errors
 - syntax errors [Visual Basic], Visual Basic
 ms.assetid: 3048aabf-8c97-4e13-9150-853769cb5f6f
-ms.openlocfilehash: c11b7f41dee57fc52ca1dff75734ad0b27b6a43a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dc7cba394f623ae94a0d9ca8285fc12af8f0dacf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33647108"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54600333"
 ---
 # <a name="error-types-visual-basic"></a>Typy chyb (Visual Basic)
-V jazyce Visual Basic, chyby (také nazývané *výjimky*) spadají do tří kategorií: chyby syntaxe, chyby a logiku chyby.  
+V jazyce Visual Basic, chyby (také nazývané *výjimky*) spadají do jedné ze tří kategorií: chyby syntaxe, chyby za běhu a chyby logiky.  
   
 ## <a name="syntax-errors"></a>Chyby syntaxe  
- *Chyby syntaxe* jsou ty, které se zobrazí při psaní kódu. Visual Basic zkontroluje váš kód při psaní do **Editor kódu** okno a upozorní vás, pokud došlo k chybě, třeba Chyba v pravopisu slovo nebo element jazyk nesprávně. Chyby syntaxe jsou nejběžnější typ chyby. Můžete je vyřešit je snadno v kódování prostředí Jakmile k nim dojde.  
+ *Chyby syntaxe* jsou ty, které se zobrazí při psaní kódu. Visual Basic zkontroluje váš kód během psaní v **Editor kódu** okno a upozorní vás, pokud uděláte chybu, jako je například Chyba v pravopisu slova nebo nesprávně pomocí prvku jazyka. Chyby syntaxe jsou nejběžnějším typem chyby. Je lze opravit snadno v kódování prostředí Jakmile k nim dojde.  
   
 > [!NOTE]
->  `Option Explicit` Příkaz je jeden z prostředků k zamezení chyby syntaxe. Vynutí předem, deklarovat všechny proměnné, který se má použít v aplikaci. Proto když tyto proměnné se používají v kódu, typografické chyby jsou zachyceny okamžitě a odstraněny.  
+>  `Option Explicit` Příkaz je jeden způsob jak se vyhnout chyby syntaxe. Vynutí předem deklarovat všechny proměnné, který se má použít v aplikaci. Proto při těchto proměnných se používá v kódu, jsou zachyceny okamžitě typografické chyby a lze napravit.  
   
-## <a name="run-time-errors"></a>Běhové chyby  
- *Běhové chyby* jsou ty, které zobrazují, jenom když zkompilování a spuštění kódu. To zahrnuje kód, který může zdají být správná, v tom má žádné chyby syntaxe, ale nelze jej provést. Například může správně zapsat řádek kódu a otevřete soubor. Pokud soubor je poškozený, aplikace nelze provést, ale `Open` funkce a zastaví se. Většina běhové chyby lze vyřešit přepsáním chybného kód a pak nutnosti rekompilace a znovu ji spustit.  
+## <a name="run-time-errors"></a>Chyby za běhu  
+ *Chyby za běhu* jsou ty, které se zobrazí pouze po kompilaci a spuštění kódu. To zahrnuje kód, který se zdá být správná, nemá žádné chyby syntaxe, ale nelze jej provést. Například můžete například napsat správně psát kód pro otevření souboru. Pokud soubor je poškozený, aplikace nelze provést, ale `Open` funkce a zastaví se. Většina chyb za běhu můžete vyřešit přepsání chybného kódu zkompilováním a spuštěním.  
   
 ## <a name="logic-errors"></a>Logické chyby  
- *Logické chyby* jsou ty, které je zaprotokolována jednou aplikace je používána. Jsou většina nežádoucí nebo neočekávané výsledky v odpovědi na akce uživatele. Například chybným klíč nebo jiných vnějších vliv může způsobit, že aplikace přestane fungovat v rámci očekávané parametry, nebo úplně. Logické chyby jsou obvykle nejtěžší typ opravit, protože není vždy jasné, které pocházejí.  
+ *Logické chyby* jsou ty, které se zobrazí, až se aplikace nepoužívá. Jsou to většina často nežádoucí nebo neočekávané výsledky v reakci na akce uživatele. Chybným zadáním klíče nebo jiných mimo vliv například může způsobit, že aplikace přestane fungovat během očekávané parametry, nebo úplně se vynechá. Logické chyby jsou obvykle nejtěžší typ k vyřešení, protože není vždy jasné kde pocházejí.  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
- [Základy ladicího programu](/visualstudio/debugger/debugger-basics)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+- [Základy ladicího programu](/visualstudio/debugger/debugger-basics)

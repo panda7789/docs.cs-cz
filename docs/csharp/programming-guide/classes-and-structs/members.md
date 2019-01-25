@@ -6,12 +6,12 @@ helpviewer_keywords:
 - types [C#], nested types
 - C# language, type members
 ms.assetid: 4a30a4ab-d690-4936-9124-92ce9448665a
-ms.openlocfilehash: e8429df6ef633f11df50ee5526496f9688f845ea
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 246ddeeab9814f32b0a3bf0d3586007a434d3953
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245100"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592847"
 ---
 # <a name="members-c-programming-guide"></a>Členové (Průvodce programováním v C#)
 Třídy a struktury mají členy, které zastupují jejich data a chování. Členy třídy zahrnují všechny členy deklarované ve třídě spolu se všemi členy (s výjimkou konstruktorů a finalizační metody) deklarovanými ve všech třídách v její hierarchii dědičnosti. Soukromé členy základních tříd jsou zděděné, ale nejsou přístupné z odvozených tříd.  
@@ -31,17 +31,17 @@ Třídy a struktury mají členy, které zastupují jejich data a chování. Čl
 |[Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)|Finalizační metody se v jazyce C# jen velmi zřídka používají. Jsou to metody, které jsou volány spouštěcím modulem modulu runtime, když má být objekt odstraněn z paměti. Používají se obvykle k zajištění, aby veškeré prostředky, které musí být uvolněny, byly zpracovány správným způsobem.|  
 |[Vnořené typy](../../../csharp/programming-guide/classes-and-structs/nested-types.md)|Vnořené typy jsou typy deklarované v rámci jiného typu. Vnořené typy se často používají k popisu objektů, které jsou používány pouze typy, jež je obsahují.|  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)  
-- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
-- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
-- [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
-- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
-- [Pole](../../../csharp/programming-guide/classes-and-structs/fields.md)  
-- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
-- [Události](../../../csharp/programming-guide/events/index.md)  
-- [Vnořené typy](../../../csharp/programming-guide/classes-and-structs/nested-types.md)  
-- [Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)
+- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)
+- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)
+- [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)
+- [Pole](../../../csharp/programming-guide/classes-and-structs/fields.md)
+- [Indexery](../../../csharp/programming-guide/indexers/index.md)
+- [Události](../../../csharp/programming-guide/events/index.md)
+- [Vnořené typy](../../../csharp/programming-guide/classes-and-structs/nested-types.md)
+- [Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)
 - [Přetížitelné operátory](../../../csharp/programming-guide/statements-expressions-operators/overloadable-operators.md)

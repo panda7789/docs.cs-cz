@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: da761658-a535-4f26-a452-b30df47f73d5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5e52b827f337892c33ec61b9affa1cc646a759c5
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 1f2aa68822dd14b4cb81b48598faa6bdb4c71a13
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48841174"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54544351"
 ---
 # <a name="composing-streams"></a>Skládání datových proudů
 Záložní úložiště je paměťové médium, například disku nebo paměti. Každý záložní úložiště implementuje vlastní datový proud jako implementace <xref:System.IO.Stream> třídy. Každý typ datového proudu čte a zapisuje bajtů z a do jeho dané záložního úložiště. Datové proudy, které se připojují k zálohování úložišť jsou volány základní datové proudy. Základní datové proudy mít konstruktory, které mají parametry potřebné k připojení datový proud záložního úložiště. Například <xref:System.IO.FileStream> konstruktory, které určují parametr cesty, která určuje, jak budou sdílet soubor, procesy a tak dále.  
@@ -41,10 +41,10 @@ Záložní úložiště je paměťové médium, například disku nebo paměti. 
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.IO.StreamReader>  
-- <xref:System.IO.StreamReader.ReadLine%2A?displayProperty=nameWithType>  
-- <xref:System.IO.StreamReader.Peek%2A?displayProperty=nameWithType>  
-- <xref:System.IO.FileStream>  
-- <xref:System.IO.BinaryReader>  
-- <xref:System.IO.BinaryReader.ReadByte%2A?displayProperty=nameWithType>  
+- <xref:System.IO.StreamReader>
+- <xref:System.IO.StreamReader.ReadLine%2A?displayProperty=nameWithType>
+- <xref:System.IO.StreamReader.Peek%2A?displayProperty=nameWithType>
+- <xref:System.IO.FileStream>
+- <xref:System.IO.BinaryReader>
+- <xref:System.IO.BinaryReader.ReadByte%2A?displayProperty=nameWithType>
 - <xref:System.IO.BinaryReader.PeekChar%2A?displayProperty=nameWithType>

@@ -16,30 +16,30 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b11cf0fadc9142ee291115cf9f0d84e6429834fb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6f5c21d329ed35f82e36c2d88ac911401799e820
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33455114"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596017"
 ---
 # <a name="imethodmalloc-interface"></a>IMethodMalloc – rozhraní
-Poskytuje metodu pro přidělení paměti pro nový tělo funkce (MSIL intermediate language) společnosti Microsoft.  
+Poskytuje metodu, jak přidělit paměť pro nové tělo funkce Microsoft intermediate language (MSIL).  
   
 > [!NOTE]
->  `IMethodMalloc` Rozhraní je přidělení jednoduché paměti. Umožní vám přidělit paměť, ale nechcete ho volné.  
+>  `IMethodMalloc` Rozhraní je jednoduché paměti alokátoru. Je možné přidělit paměť, ale nechcete ho zdarma.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Alloc – metoda](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-alloc-method.md)|Pokusí se přidělit zadanou velikost paměti pro nový tělo funkce MSIL.|  
+|[Alloc – metoda](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-alloc-method.md)|Pokusí se přidělit zadanou velikost paměti pro nové tělo funkce jazyka MSIL.|  
   
 ## <a name="remarks"></a>Poznámky  
- Každý allocator je modulů a zajistí, že tělo funkce bude v kladné posun od základní modulu. Paměť nad základní modulu může být drahocenný, takže přidělujícího modulu se má použít k přidělení paměti pouze pro tělo funkce.  
+ Každý allocator je modulů a zajistí, že tělo funkce bude kladné posunem od báze modulu. Paměť nad základní modul může být účely, proto alokátoru by měla sloužit pouze pro tělo funkce přidělení paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -47,5 +47,5 @@ Poskytuje metodu pro přidělení paměti pro nový tělo funkce (MSIL intermedi
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

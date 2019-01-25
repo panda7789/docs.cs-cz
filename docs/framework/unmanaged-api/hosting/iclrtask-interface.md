@@ -16,49 +16,49 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 94ba53e4af114773a347d15b7308dc4c3567154e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9d5f0bb07498203d3db57ac3948efddce4f050a2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33435703"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54533712"
 ---
 # <a name="iclrtask-interface"></a>ICLRTask – rozhraní
-Poskytuje metody, které umožňují hostitel provádět požadavky na common language runtime (CLR), nebo k poskytování oznámení CLR o související úlohy.  
+Poskytuje metody, které umožňují hostitele k podání žádostí o modulu common language runtime (CLR), nebo k poskytování oznámení o přidružené úloze modulu CLR.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Abort – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-abort-method.md)|Požadavky, modul CLR přerušit úlohu, aktuální `ICLRTask` instance představuje.|  
-|[ExitTask – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-exittask-method.md)|Upozorní CLR, které úlohy spojené s aktuálním `ICLRTask` instance ukončuje a pokusí se korektně vypnout úlohu.|  
-|[GetMemStats – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md)|Získá statistické informace o použití paměťových prostředků úlohou reprezentována aktuální `ICLRTask` instance.|  
-|[LocksHeld – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-locksheld-method.md)|Získá počet uzamčení aktuálně uchovávat v úloze.|  
-|[NeedsPriorityScheduling – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-needspriorityscheduling-method.md)|Získá hodnotu označující, zda hostitel vysokou prioritu má přiřadit změnou plánu úlohy reprezentována aktuální `ICLRTask` instance.|  
-|[Reset – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-reset-method.md)|Informuje o modulu CLR, že byla dokončena úloha hostitele a umožňuje CLR znovu použít aktuální `ICLRTask` instance představují jiná úloha.|  
-|[RudeAbort – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-rudeabort-method.md)|Způsobí, že CLR na zrušení úlohy reprezentována aktuální `ICLRTask` instance okamžitě, bez záruku, že bude proveden finalizační metody.|  
-|[SetTaskIdentifier – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-settaskidentifier-method.md)|Nastaví jedinečný identifikátor pro úlohu reprezentována aktuální `ICLRTask` instance pro použití při ladění.|  
-|[SwitchIn – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-switchin-method.md)|Upozorní CLR, která úloha reprezentována aktuální `ICLRTask` instance je ve stavu spustitelného.|  
-|[SwitchOut – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-switchout-method.md)|Upozorní CLR, která úloha reprezentována aktuální `ICLRTask` instance je již v spustitelného stavu.|  
-|[YieldTask – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-yieldtask-method.md)|Požadavky, které procesorového času zkontrolujte CLR k dispozici pro jiné úlohy. Modul CLR je zaručeno, že úloha bude přepnut ve stavu, kde přispět doba zpracování.|  
+|[Abort – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-abort-method.md)|Požadavky, že modul CLR přerušit úlohu, která aktuální `ICLRTask` instance představuje.|  
+|[ExitTask – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-exittask-method.md)|Upozorní CLR, který úlohy spojené s aktuálním `ICLRTask` instance ukončuje a pokusí se řádně úlohu ukončit.|  
+|[GetMemStats – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md)|Získá statistické informace týkající se použití paměťových prostředků úlohou reprezentované aktuální `ICLRTask` instance.|  
+|[LocksHeld – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-locksheld-method.md)|Získá počet zámků právě načtený v úloze.|  
+|[NeedsPriorityScheduling – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-needspriorityscheduling-method.md)|Získá hodnotu označující, zda hostitel s vysokou prioritou má přiřadit změnou plánu úlohy reprezentované aktuální `ICLRTask` instance.|  
+|[Reset – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-reset-method.md)|Informuje o tom CLR, že byla dokončena úloha hostitele a umožňuje modulu CLR pro opětovné použití aktuální `ICLRTask` instance k reprezentování jiného úkolu.|  
+|[RudeAbort – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-rudeabort-method.md)|Způsobí, že modul CLR na zrušení úlohy reprezentované aktuální `ICLRTask` instance okamžitě, bez záruky, že se spustí finalizační metody.|  
+|[SetTaskIdentifier – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-settaskidentifier-method.md)|Nastaví jedinečný identifikátor pro úlohu reprezentované aktuální `ICLRTask` instance pro použití v ladění.|  
+|[SwitchIn – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-switchin-method.md)|Upozorní CLR, která úloha je reprezentována aktuální `ICLRTask` instance je do provozuschopného stavu.|  
+|[SwitchOut – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-switchout-method.md)|Upozorní CLR, která úloha je reprezentována aktuální `ICLRTask` instance již provozuschopného stavu.|  
+|[YieldTask – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrtask-yieldtask-method.md)|Požadavky procesorového času zkontrolujte CLR k dispozici pro jiné úlohy. Modul CLR je zaručeno, že úlohy budou umístěny ve stavu, ve kterém se může přinést doba zpracování.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ICLRTask` Je reprezentace úlohu pro modulu CLR. Kdykoli během provádění kódu lze popsat úlohu buď jako spuštěna nebo k čekání na spuštění. Volání hostitele `ICLRTask::SwitchIn` metoda oznámit modulu CLR, úlohy, aktuální `ICLRTask` představuje instanci je nyní v spustitelného stavu. Po volání `ICLRTask::SwitchIn`, hostiteli můžete naplánovat úlohu na všech vláknu operačního systému, s výjimkou v případech, kde vyžaduje modul runtime spřažení vláken, podle specifikace volání [ihosttaskmanager::beginthreadaffinity –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-beginthreadaffinity-method.md) a [Ihosttaskmanager::endthreadaffinity –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-endthreadaffinity-method.md) metody. Některé později, operační systém rozhodnout odebrat úlohu z vlákna a umístěte ji ve stavu není spuštěná. Například k tomu může dojít vždy, když blokuje na synchronizace primitiv úlohu nebo čeká na dokončení vstupně-výstupních operací. Volání hostitele [switchout –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-switchout-method.md) oznámit CLR, která úloha reprezentována aktuální `ICLRTask` instance je již v spustitelného stavu.  
+ `ICLRTask` Je reprezentace úlohu pro modul CLR. Kdykoli během provádění kódu lze popsat úkol buď jako spuštěna nebo k čekání na spuštění. Volání hostitele `ICLRTask::SwitchIn` metoda upozornit modul CLR, která úkol, který aktuální `ICLRTask` představuje instanci je teď v provozuschopného stavu. Po volání `ICLRTask::SwitchIn`, hostitele můžete naplánovat úlohu v libovolném vlákně operačního systému, s výjimkou v případech, kdy vyžaduje, aby modul runtime spřažení vláken, jak je uvedeno ve volání [ihosttaskmanager::beginthreadaffinity –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-beginthreadaffinity-method.md) a [Ihosttaskmanager::endthreadaffinity –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-endthreadaffinity-method.md) metody. Později, operační systém rozhodnout odebrat úlohu z vlákna a umístěte ho do jiné spuštěném stavu. Například k tomu může dojít pokaždé, když se úkol zablokuje v primitivních elementů synchronizace nebo čeká na dokončení vstupně-výstupních operací. Volání hostitele [switchout –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-switchout-method.md) upozornit modul CLR, která úloha je reprezentována aktuální `ICLRTask` instance již provozuschopného stavu.  
   
- Úloha se obvykle ukončí na konci provádění kódu. V ten moment se volá hostitele `ICLRTask::ExitTask` zrušení přidruženého `ICLRTask`. Také však recyklované úlohy pomocí volání `ICLRTask::Reset`, což umožňuje `ICLRTask` instance, který se má použít znovu. Tento přístup zabraňuje režii opakovaně vytváření a zničení instancí.  
+ Úloha obvykle ukončí provádění kódu na konci. V tu chvíli hostitele volá `ICLRTask::ExitTask` ke zničení přidruženého `ICLRTask`. Také však recyklaci úlohy s použitím volání `ICLRTask::Reset`, což umožňuje `ICLRTask` instance se použije znovu. Tento postup brání režijní náklady na opakované vytváření a ničení instancí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  
- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  
- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
- [ICLRTask2 – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
+- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
+- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [ICLRTask2 – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask2-interface.md)

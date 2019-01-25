@@ -2,12 +2,12 @@
 title: Služba AJAX bez konfigurace
 ms.date: 03/30/2017
 ms.assetid: e6db7acd-5679-45d4-b98a-8449c6873838
-ms.openlocfilehash: 60b61a26574764f0f2ea4ca834c5ba92b49a043d
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: f722eac27fadbd772b85a638c3c9171c2783a8b5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49308398"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54582183"
 ---
 # <a name="ajax-service-without-configuration"></a>Služba AJAX bez konfigurace
 Tento příklad ukazuje, jak pomocí Windows Communication Foundation (WCF) bez použití jakékoli konfigurace základní technologie ASP.NET asynchronní JavaScript a XML (AJAX) službu (služba, obsahujících pomocí kódu jazyka JavaScript z webového prohlížeče klienta) nastavení. Služba používá speciální syntaxe v souboru SVC automaticky povolení koncového bodu AJAX.  
@@ -50,5 +50,5 @@ Tento příklad ukazuje, jak pomocí Windows Communication Foundation (WCF) bez 
 > [!NOTE]
 >  Při spuštění této ukázky, ujistěte se, že anonymní ověřování a ověřování Windows nejsou současně povoleno ServiceModelSamples složky ve službě IIS. Pokud je to tento případ, zakažte ověřování Windows. Po spuštění ukázky, povolit ověřování Windows a spusťte "příkaz iisreset".  
   
-## <a name="see-also"></a>Viz také  
- [Základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md)
+## <a name="see-also"></a>Viz také:
+- [Základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md)
