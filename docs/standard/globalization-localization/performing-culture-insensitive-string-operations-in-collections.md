@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 5cdc9396-a64b-4615-a1cd-b605db4c5983
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0e458f45fea8e2207ced930daebf10e653901fa7
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 86ddb4ed45479e483dde447983f6dc31edcc8930
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582798"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54738836"
 ---
 # <a name="performing-culture-insensitive-string-operations-in-collections"></a>Provádění řetězcových operací nezávislých na jazykové verzi v kolekcích
 Existují třídy a členy v <xref:System.Collections> obor názvů, který poskytuje ve výchozím nastavení chování závislé na jazykové verzi. Výchozí konstruktory pro <xref:System.Collections.CaseInsensitiveComparer> a <xref:System.Collections.CaseInsensitiveHashCodeProvider> třídy inicializuje novou instanci používat <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> vlastnost. Všechna přetížení <xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A?displayProperty=nameWithType> metoda vytvořit novou instanci třídy <xref:System.Collections.Hashtable> pomocí `Thread.CurrentCulture` vlastnosti ve výchozím nastavení. Přetížení <xref:System.Collections.ArrayList.Sort%2A?displayProperty=nameWithType> metoda provedení řazení zohledňující jazykovou verzi pomocí výchozí `Thread.CurrentCulture`. Řazení a vyhledávání v <xref:System.Collections.SortedList> může být ovlivněna `Thread.CurrentCulture` při použití řetězců jako klíče. Použití doporučení k dispozici v této části získání výsledků nezávislých na jazykové verzi z těchto tříd a metod v `Collections` oboru názvů.  
@@ -135,11 +135,11 @@ internal class InvariantComparer : IComparer
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections.CaseInsensitiveComparer>  
-- <xref:System.Collections.CaseInsensitiveHashCodeProvider>  
-- <xref:System.Collections.ArrayList.Sort%2A?displayProperty=nameWithType>  
-- <xref:System.Collections.SortedList>  
-- <xref:System.Collections.Hashtable>  
-- <xref:System.Collections.IComparer>  
-- [Provádění řetězcových operací nezávislých na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)  
+- <xref:System.Collections.CaseInsensitiveComparer>
+- <xref:System.Collections.CaseInsensitiveHashCodeProvider>
+- <xref:System.Collections.ArrayList.Sort%2A?displayProperty=nameWithType>
+- <xref:System.Collections.SortedList>
+- <xref:System.Collections.Hashtable>
+- <xref:System.Collections.IComparer>
+- [Provádění řetězcových operací nezávislých na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
 - <xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A?displayProperty=nameWithType>

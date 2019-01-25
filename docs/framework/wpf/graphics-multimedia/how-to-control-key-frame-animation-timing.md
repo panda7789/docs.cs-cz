@@ -8,12 +8,12 @@ helpviewer_keywords:
 - key frames [WPF], timing
 - timing key-fram animation
 ms.assetid: b059216f-7d4b-4ca8-a019-bc287ee7bf16
-ms.openlocfilehash: d65bf6f7643adf1d98d468853ae8017a4a6554ac
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 3a8e11ee8bfbbe87ca5a1c51b815dd21c124a951
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44086190"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54712022"
 ---
 # <a name="how-to-control-key-frame-animation-timing"></a>Postupy: Řízení časování pro animace klíčových snímků
 Tento příklad ukazuje, jak řídit načasování v rámci klíčových snímků animace klíčových snímků. Stejně jako jiné animace klíčových snímků animace mít <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnost. Kromě určení doby trvání animace, budete muset určit, jaká část tento čas je vymezena pro každý z jeho použitím klíčových snímků. Chcete-li přidělit čas, zadejte <xref:System.Windows.Media.Animation.KeyTime> pro každý klíčový snímek animace.  
@@ -65,7 +65,7 @@ Tento příklad ukazuje, jak řídit načasování v rámci klíčových snímk�
   
  Úplnou ukázku najdete v tématu [klíčový snímek animace ukázka](https://go.microsoft.com/fwlink/?LinkID=160012). Další informace o animacích klíčových snímků, najdete v článku [přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)

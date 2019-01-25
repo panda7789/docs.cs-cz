@@ -6,12 +6,12 @@ helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: 1dc5a8ad-a4f7-4f32-8506-3fc6d8c8bfed
-ms.openlocfilehash: faf7f635a42ece1a30c5bac096a909e32095fc0c
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: a987d0501e36232993a2f1a2b4ebda29d007afd0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53237230"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54618643"
 ---
 # <a name="how-to-implement-a-lightweight-class-with-auto-implemented-properties-c-programming-guide"></a>Postupy: Implementace lehké třídy s automaticky implementovanými vlastnostmi (C# Průvodce programováním v)
 Tento příklad ukazuje, jak vytvořit neměnné lehké třídy, která slouží pouze k zapouzdření sadu automaticky implementované vlastnosti. Použijte tento druh konstrukce místo struktury, pokud musíte použít odkazové sémantiky typu.  
@@ -114,8 +114,8 @@ Tento příklad ukazuje, jak vytvořit neměnné lehké třídy, která slouží
   
  Kompilátor vytvoří pole zálohování pro jednotlivé automaticky implementované vlastnosti. Pole nejsou přístupné přímo ze zdrojového kódu.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
-- [struct](../../../csharp/language-reference/keywords/struct.md)  
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)
+- [struct](../../../csharp/language-reference/keywords/struct.md)
 - [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)

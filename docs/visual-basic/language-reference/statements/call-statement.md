@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Call statement [Visual Basic]
 - procedures [Visual Basic], calling
 ms.assetid: e5b31571-6867-406f-b8e7-a3f9aae4723a
-ms.openlocfilehash: 259fcc6f1c59df09e768a08204df81aa8105de53
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: e706650ac6da84d9b4e77fc549811e731be61b92
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37936786"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54594158"
 ---
 # <a name="call-statement-visual-basic"></a>Call – příkaz (Visual Basic)
 Přenosy ovládacího prvku `Function`, `Sub`, nebo procedura dynamická knihovna (DLL).  
@@ -27,7 +27,7 @@ Přenosy ovládacího prvku `Function`, `Sub`, nebo procedura dynamická knihovn
 ## <a name="parts"></a>Součásti  
 |||
 |---|---|
-|`procedureName`|Požadováno. Název procedury pro volání.|
+|`procedureName`|Povinný parametr. Název procedury pro volání.|
 |`argumentList`|Volitelné. Seznam proměnných a výrazů představujících argumenty, které jsou předány na postup, když je volána. Více argumentů jsou odděleny čárkami. Pokud zahrnete `argumentList`, je nutné uzavřít do závorek.|
 |||
   
@@ -43,8 +43,8 @@ Přenosy ovládacího prvku `Function`, `Sub`, nebo procedura dynamická knihovn
   
  [!code-vb[VbVbalrStatements#97](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/call-statement_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
- [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)

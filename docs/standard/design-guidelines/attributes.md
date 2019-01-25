@@ -7,12 +7,12 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], attributes
 ms.assetid: ee0038ef-b247-4747-a650-3c5c5cd58d8b
 author: KrzysztofCwalina
-ms.openlocfilehash: 332917e5d31c2299f7d68a8fe6716d28ed08759d
-ms.sourcegitcommit: 882a2f56bf6afdcb40d468e4ae9371296822b68c
+ms.openlocfilehash: 6d4cc6615b7f7346e9c8fc2a7264025f318c8a3d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53451167"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698879"
 ---
 # <a name="attributes"></a>Atributy
 <xref:System.Attribute?displayProperty=nameWithType> slouží k definování uživatelských atributů, které základní třídy.  
@@ -45,11 +45,11 @@ ms.locfileid: "53451167"
   
  **✓ DO** zapečetit vlastní atribut třídy, pokud je to možné. Díky tomu vyhledávání pro atribut rychleji.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - anonymous types [C#]
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
-ms.openlocfilehash: 234190beb2cde69906df9d5c5f468689b7399535
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 179e49f44b2dbf711dae2ce81a1ef14815b7d18a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235982"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54729756"
 ---
 # <a name="anonymous-types-c-programming-guide"></a>Anonymní typy (Průvodce programováním v C#)
 Anonymní typy poskytují pohodlný způsob, jak zapouzdřit sadu vlastnosti jen pro čtení bez nutnosti explicitně definovat typ nejprve do jediného objektu. Název typu je generovaný kompilátorem a není k dispozici na úrovni zdrojového kódu. Typ každé vlastnosti je odvozen kompilátorem.  
@@ -55,9 +55,9 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
   
  Protože <xref:System.Object.Equals%2A> a <xref:System.Object.GetHashCode%2A> z hlediska jsou definovány metody anonymních typů `Equals` a `GetHashCode` metody vlastností dva výskyty stejného anonymního typu jsou rovny, pouze pokud jejich vlastnosti jsou stejné.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
-- [Začínáme s dotazy LINQ v jazyce C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)
+- [Začínáme s dotazy LINQ v jazyce C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
 - [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)

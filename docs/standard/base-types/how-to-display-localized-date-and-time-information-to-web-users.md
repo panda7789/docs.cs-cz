@@ -10,19 +10,22 @@ helpviewer_keywords:
 - displaying date and time data
 - localized date displays [.NET Framework]
 ms.assetid: 377fe93c-32be-421a-a30a-be639a46ede8
+dev_langs:
+- csharp
+- vb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0918e1320e04930ae8d9f30246936ef125f9ce82
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: d46b2634096cf71701458ca7ecb6f66a01ebffbe
+ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54686579"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54857655"
 ---
 # <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>Postupy: Zobrazování lokalizovaných informací data a času webovým uživatelům
 Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, operací, které analyzovat a formátování hodnot data a času, neměli byste tedy spoléhat na výchozí formát (což je nejčastěji formátu jazykové verze místní webový server) při interakci s uživatelem. Webové formuláře, které zpracovávají datum a čas uživatelský vstup řetězce místo toho by se měly analyzovat řetězců pomocí upřednostňované jazykové verze uživatele. Podobně data a času má být zobrazena na uživatele ve formátu, který odpovídá na jazykovou verzi uživatele. Toto téma ukazuje, jak to provést.  
   
-### <a name="to-parse-date-and-time-strings-input-by-the-user"></a>Analyzovat datum a čas řetězce uživatelský vstup  
+## <a name="to-parse-date-and-time-strings-input-by-the-user"></a>Analyzovat datum a čas řetězce uživatelský vstup  
   
 1.  Určení, zda pole řetězce vrácené <xref:System.Web.HttpRequest.UserLanguages%2A?displayProperty=nameWithType> vyplní vlastnost. Pokud není, pokračujte krokem 6.  
   
@@ -40,7 +43,7 @@ Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, o
   
 6.  Pokud převod se nezdaří, nebo pokud řetězec pole vrácené metodou <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost nevyplněná, analýzu řetězce pomocí neutrální jazykové verze, která je vrácena <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost.  
   
-### <a name="to-parse-the-local-date-and-time-of-the-users-request"></a>Analýza místního data a času žádost uživatele  
+## <a name="to-parse-the-local-date-and-time-of-the-users-request"></a>Analýza místního data a času žádost uživatele  
   
 1.  Přidat <xref:System.Web.UI.WebControls.HiddenField> ovládací prvek webového formuláře.  
   

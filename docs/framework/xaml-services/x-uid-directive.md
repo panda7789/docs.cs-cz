@@ -7,12 +7,12 @@ helpviewer_keywords:
 - x:Uid attribute [XAML Services]
 - Uid attribute [XAML Services]
 ms.assetid: 81defade-483b-4a89-b76d-9b25bba34010
-ms.openlocfilehash: 7075f8258e617d2d13d4585fdd5fb7aefaa50664
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 361240c2d2c140c7bf521ece423df4aaed075ba4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43528385"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745412"
 ---
 # <a name="xuid-directive"></a>x:Uid – direktiva
 Poskytuje jedinečný identifikátor pro elementy značek. V mnoha scénářích používá tento jedinečný identifikátor nástroje a procesy lokalizace XAML.  
@@ -41,7 +41,7 @@ Poskytuje jedinečný identifikátor pro elementy značek. V mnoha scénářích
 ## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
  Další informace o roli `x:Uid` proces lokalizace WPF a BAML formu XAML najdete v tématu [globalizace pro WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md) nebo <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>  
- <xref:Microsoft.Build.Tasks.Windows.UidManager>  
- [Globalizace pro WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A>
+- <xref:Microsoft.Build.Tasks.Windows.UidManager>
+- [Globalizace pro WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)

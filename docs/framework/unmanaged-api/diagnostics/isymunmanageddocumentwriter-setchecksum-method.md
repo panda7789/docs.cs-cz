@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3b9b77b94e466a4aab4a575501ac6922293b3410
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d7a3fcd34f8cab6fa3c2949a4ee3270189b3dc77
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424141"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54730032"
 ---
 # <a name="isymunmanageddocumentwritersetchecksum-method"></a>ISymUnmanagedDocumentWriter::SetCheckSum – metoda
 Nastaví údaj o kontrolním součtu.  
@@ -38,19 +38,19 @@ HRESULT SetCheckSum(
   
 #### <a name="parameters"></a>Parametry  
  `algorithmId`  
- [v] Identifikátor GUID, který reprezentuje identifikátor algoritmu.  
+ [in] Identifikátor GUID, který zastupuje identifikátor algoritmu.  
   
  `checkSumSize`  
- [v] A `ULONG32` určující velikost v bajtech z `checkSum` vyrovnávací paměti.  
+ [in] A `ULONG32` určující velikost v bajtech, nástroje `checkSum` vyrovnávací paměti.  
   
  `checkSum`  
- [v] Vyrovnávací paměť, která ukládá informace o kontrolního součtu.  
+ [in] Vyrovnávací paměť, která ukládá informace kontrolního součtu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedDocumentWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedDocumentWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-interface.md)

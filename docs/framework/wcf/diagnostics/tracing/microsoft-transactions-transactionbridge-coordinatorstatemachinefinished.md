@@ -2,20 +2,20 @@
 title: Microsoft.Transactions.TransactionBridge.CoordinatorStateMachineFinished
 ms.date: 03/30/2017
 ms.assetid: 16cb428d-d886-4789-a961-6fded4b0dbba
-ms.openlocfilehash: abb6a81d22da3a35c754c5d1485c5d612c9cd1e3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8cc32e7b38bfd1bdafd2377ad759f98b248d722e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33473130"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54710453"
 ---
 # <a name="microsofttransactionstransactionbridgecoordinatorstatemachinefinished"></a>Microsoft.Transactions.TransactionBridge.CoordinatorStateMachineFinished
-Stav stavového stroje pro zápis koordinátora má přešla do stavu dokončení.  
+Stavový počítač pro zapsání koordinátora zadal stav dokončeno.  
   
 ## <a name="description"></a>Popis  
- Sledovat, když místní správce transakcí dochází k závěru, že zápis nadřízená koordinátora je dokončená 2pc zpracování. Výsledek pro zařazení může být potvrzení nebo bylo přerušeno nebo Forgotten. Také trasovaný Pokud místní správce transakcí hlasy během Příprava jen pro čtení.  
+ Trasovaná při místní správce transakcí se řídí zásadou, že zapsání koordinátora na dokonalá dokončil zpracování 2pc. Výsledek pro zařazení může být potvrzeno nebo bylo přerušeno nebo zapomenuté. Také trasován Pokud místní správce transakcí hlasů jen pro čtení během přípravy.  
   
-## <a name="see-also"></a>Viz také  
- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a>Viz také:
+- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

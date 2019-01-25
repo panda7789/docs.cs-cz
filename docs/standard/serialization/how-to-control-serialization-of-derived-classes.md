@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: řízení serializace odvozených tříd'
+title: 'Postupy: Řízení serializace odvozených tříd'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: caa92596-9e15-4d91-acbe-56911ef47a84
-ms.openlocfilehash: 00eb4ba1f5f84c60f1ca51871f604b6ee27798c3
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 12cb3a1fb3311450b8597ef13f1f2efa4adeaf7e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46002837"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54728840"
 ---
-# <a name="how-to-control-serialization-of-derived-classes"></a>Postupy: řízení serializace odvozených tříd
+# <a name="how-to-control-serialization-of-derived-classes"></a>Postupy: Řízení serializace odvozených tříd
 Použití **XmlElementAttribute** atribut můžete změnit název elementu XML není jedinou možností k přizpůsobení serializaci objektů. Datový proud XML můžete také upravit tak, že vyplývající z existující třídy a instruující <xref:System.Xml.Serialization.XmlSerializer> instance jak k serializaci nové třídy.  
   
  Například uděleno `Book` třídy, můžete z něj odvodit a vytvořit `ExpandedBook` třídu, která má několik více vlastností. Však musí dát pokyn **XmlSerializer** přijmout odvozený typ při serializaci nebo deserializaci. To můžete udělat tak, že vytvoříte <xref:System.Xml.Serialization.XmlElementAttribute> instance a nastavení jeho **typ** vlastnost má typ odvozené třídy. Přidat **XmlElementAttribute** k <xref:System.Xml.Serialization.XmlAttributes> instance. Pak přidejte **atributy XmlAttribute** k <xref:System.Xml.Serialization.XmlAttributeOverrides> instance, určuje typ přepsání a název členu, který přijme odvozené třídy. To je ukázáno v následujícím příkladu.  
@@ -234,10 +234,10 @@ public class Run
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.Serialization.XmlSerializer>  
-- <xref:System.Xml.Serialization.XmlElementAttribute>  
-- <xref:System.Xml.Serialization.XmlAttributes>  
-- <xref:System.Xml.Serialization.XmlAttributeOverrides>  
-- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
-- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
-- [Postupy: Zadání alternativního názvu elementu pro XML stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- <xref:System.Xml.Serialization.XmlSerializer>
+- <xref:System.Xml.Serialization.XmlElementAttribute>
+- <xref:System.Xml.Serialization.XmlAttributes>
+- <xref:System.Xml.Serialization.XmlAttributeOverrides>
+- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
+- [Postupy: Určení alternativního názvu elementu pro Stream XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)

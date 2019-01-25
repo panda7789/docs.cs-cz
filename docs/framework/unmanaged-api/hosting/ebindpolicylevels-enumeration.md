@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1da1d368725ab0a2334080c1caa7d4e25f5f3bab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 635cf7c4e8ff715096728414506b4a7e683727b4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33431120"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54704209"
 ---
 # <a name="ebindpolicylevels-enumeration"></a>EBindPolicyLevels – výčet
-Poskytuje příznaky k určení úrovně, kdy má nastavení nebo změna zásad sestavení.  
+Poskytuje příznaků, které určují úroveň, kde nastavení nebo změna zásady sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,20 +45,20 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ePolicyLevelAdmin`|Určuje, že by měl být zásada na úrovni správce.|  
-|`ePolicyLevelApp`|Určuje, že by měl být zásada na úrovni aplikace.|  
-|`ePolicyLevelHost`|Určuje, že by měl být zásada na úrovni hostitele.|  
-|`ePolicyLevelNone`|Určuje příznaky žádné zásady úrovni.|  
+|`ePolicyLevelAdmin`|Určuje, že je použita zásada na úrovni správce.|  
+|`ePolicyLevelApp`|Určuje, že je použita zásada na úrovni aplikace.|  
+|`ePolicyLevelHost`|Určuje, že je použita zásada na úrovni hostitele.|  
+|`ePolicyLevelNone`|Určuje příznaky žádná úroveň zásad.|  
 |`ePolicyLevelPublisher`|Určuje, že je použita zásada na úrovni vydavatele.|  
-|`ePolicyLevelRetargetable`|Určuje, že zásady by měl být použít proměnné na úrovni.|  
-|`ePolicyPortability`|Určuje, že zásady by měly podporovat přenositelnost mezi implementací sestavení rozhraní .NET Framework. Najdete v článku [ \<supportPortability – >](../../../../docs/framework/configure-apps/file-schema/runtime/supportportability-element.md) konfigurační soubor prvek.|  
-|`ePolicyUnifiedToCLR`|Určuje, že zásady by měl být unified na který common language runtime (CLR).|  
+|`ePolicyLevelRetargetable`|Určuje, že zásada by měla být použít proměnné na úrovni.|  
+|`ePolicyPortability`|Určuje, že zásady by měly podporovat přenositelnost mezi implementacemi sestavení rozhraní .NET Framework. Zobrazit [ \<supportPortability >](../../../../docs/framework/configure-apps/file-schema/runtime/supportportability-element.md) prvek souboru konfigurace.|  
+|`ePolicyUnifiedToCLR`|Určuje, že zásady by měl unified, který modulu common language runtime (CLR).|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento výčet je předán metody [iclrhostbindingpolicymanager –](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md) rozhraní k zadání změny v zásadách aplikací.  
+ Tento výčet je předán do metody [iclrhostbindingpolicymanager –](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md) rozhraní a zadejte změny v zásadách aplikací.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -66,6 +66,6 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)  
- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRAssemblyIdentityManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
+- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

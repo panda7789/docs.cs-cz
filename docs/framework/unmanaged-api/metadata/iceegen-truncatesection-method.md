@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a7b21179faec0b6f37b8084c9ee8a0bfd327193e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1ef6583587b960d74c83350b061be3c2e36fd4f9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33443561"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54722670"
 ---
 # <a name="iceegentruncatesection-method"></a>ICeeGen::TruncateSection – metoda
 Zkrátí části zadaný kód pomocí zadané délky.  
   
- Tato metoda je zastaralá a by se neměla používat.  
+ Tato metoda je zastaralý a neměl by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +40,22 @@ HRESULT TruncateSection (
   
 #### <a name="parameters"></a>Parametry  
  `section`  
- [v] V části zkrátit.  
+ [in] V části došlo ke zkrácení.  
   
  `len`  
- [v] Délka v bajtech, podle kterého zkrátit části.  
+ [in] Délka v bajtech, podle kterého chcete zkrátit části.  
   
 ## <a name="remarks"></a>Poznámky  
- Volání `TruncateSection` pouze v případě, že máte speciální části požadavky, které nejsou zpracovány jinými metodami.  
+ Volání `TruncateSection` pouze v případě, že máte zvláštní oddíl s požadavky, které nejsou zpracovány jinými metodami.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

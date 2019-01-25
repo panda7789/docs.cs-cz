@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 54832ee9-dca8-4c8b-913c-c0b9d265e9a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: df8590b38ace0abcc370f94852a35569b95c4a2d
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 2713011d61b41dfa4d72a635c656c0c00cb42f8d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582447"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643608"
 ---
 # <a name="creating-assemblies"></a>Vytváření sestavení
 
@@ -46,11 +46,11 @@ Máte několik možností, jak při seskupování moduly kódu a prostředků do
 
 Speciální aspekty musí vzít v úvahu zpřístupnění common language runtime sestavení s nespravovanými aplikacemi COM. Další informace o práci s nespravovaným kódem, najdete v části [vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)
 - [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md)
-- [Postupy: Vytváření sestavení s jediným souborem](../../../docs/framework/app-domains/how-to-build-a-single-file-assembly.md)
+- [Postupy: Sestavení s jediným souborem](../../../docs/framework/app-domains/how-to-build-a-single-file-assembly.md)
 - [Postupy: Vytváření vícesouborového sestavení](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)
 - [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
 - [Vícesouborová sestavení](../../../docs/framework/app-domains/multifile-assemblies.md)

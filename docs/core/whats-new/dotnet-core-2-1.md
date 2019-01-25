@@ -7,12 +7,12 @@ dev_langs:
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/10/2018
-ms.openlocfilehash: 7d8c89793f26ab07917e71832d5f3511d9b1aa5a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 96f592799c42e96a5607489f18ee584264b167e1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127547"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54693675"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
@@ -239,6 +239,6 @@ V Linuxu a macOS, můžete konfigurovat pouze <xref:System.Net.Http.HttpClient> 
 
 ## <a name="see-also"></a>Viz také:
 
-* [Co je nového v .NET Core](index.md)  
-* [Novinky v EF Core 2.1](/ef/core/what-is-new/ef-core-2.1)  
-* [Co je nového v ASP.NET Core 2.1](/aspnet/core/aspnetcore-2.1)
+- [Co je nového v .NET Core](index.md)
+- [Novinky v EF Core 2.1](/ef/core/what-is-new/ef-core-2.1)
+- [Co je nového v ASP.NET Core 2.1](/aspnet/core/aspnetcore-2.1)

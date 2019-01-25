@@ -2,20 +2,20 @@
 title: '&lt;Vymazat&gt; – Element pro schemeSettings (nastavení Uri)'
 ms.date: 03/30/2017
 ms.assetid: 65098332-ce61-4542-ab8d-e7dc0257d31f
-ms.openlocfilehash: 043ce78283c42d2cf42851e13919bf71a77b28b4
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 931ec37dde0e083991f1db016a2788bd5c41c29e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50196671"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54589914"
 ---
 # <a name="ltcleargt-element-for-schemesettings-uri-settings"></a>&lt;Vymazat&gt; – Element pro schemeSettings (nastavení Uri)
 Vymaže všechna existující nastavení schéma.  
   
  \<Konfigurace >  
-\<identifikátor URI >  
-\<schemeSettings >  
-\<Vymazat >  
+\<uri>  
+\<schemeSettings>  
+\<clear>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -70,11 +70,11 @@ Vymaže všechna existující nastavení schéma.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>  
-- <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>  
-- <xref:System.Configuration.UriSection?displayProperty=nameWithType>  
-- <xref:System.Configuration.UriSection.SchemeSettings%2A?displayProperty=nameWithType>  
-- <xref:System.GenericUriParserOptions?displayProperty=nameWithType>  
-- <xref:System.Uri?displayProperty=nameWithType>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>
+- <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>
+- <xref:System.Configuration.UriSection?displayProperty=nameWithType>
+- <xref:System.Configuration.UriSection.SchemeSettings%2A?displayProperty=nameWithType>
+- <xref:System.GenericUriParserOptions?displayProperty=nameWithType>
+- <xref:System.Uri?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

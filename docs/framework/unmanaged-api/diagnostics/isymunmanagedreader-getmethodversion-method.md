@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 76d850363940ff53135fc66ec057ee67822fa40d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 45aaceb2c39703cb1369941ce801c9cff1935ad6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424661"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555840"
 ---
 # <a name="isymunmanagedreadergetmethodversion-method"></a>ISymUnmanagedReader::GetMethodVersion – metoda
-Získá verzi metoda. Metoda verze začíná na 1 a se zvýší pokaždé, když znovu zkompiluje metodu. Rekompilace může dojít bez změny metody.  
+Získá verzi metody. Metoda verze začíná 1 a se zvýší pokaždé, když metoda přepsán. Opětovnou kompilaci může dojít bez změny metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT GetMethodVersion (
   
 #### <a name="parameters"></a>Parametry  
  `pMethod`  
- [v] Metoda, pro které chcete získat verzi.  
+ [in] Metoda, u kterého chcete získat verzi.  
   
  `version`  
- [out] Ukazatel na proměnné, která přijímá metoda verze.  
+ [out] Ukazovat na proměnnou, která přijímá verze metody.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

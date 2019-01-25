@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - file I/O classes
 ms.assetid: 4a5ca924-eea8-4a95-a5f0-6ac10de276a3
-ms.openlocfilehash: 4c13b482ddbb3c1c109ca8dfe36ed76a2025d61a
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
+ms.openlocfilehash: 9e84ac90054e4ac3d32bb436fc0756248e84fcd0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39333036"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54705320"
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>Třídy používané ve vstupně-výstupních operacích se soubory a v systému souborů v rozhraní .NET Framework (Visual Basic)
 Následující tabulky uvádějí třídy běžně používané pro soubor rozhraní .NET Framework vstupně-výstupních operací zařazených do kategorií do souboru vstupně-výstupních tříd, použitý k vytvoření datových proudů třídy a třídy používané pro čtení a zápis do datových proudů.  
@@ -56,8 +56,8 @@ Následující tabulky uvádějí třídy běžně používané pro soubor rozhr
 |<xref:System.IO.StringReader?displayProperty=nameWithType>|Přečte znaky z `String`. Výstup může být buď datový proud v jakémkoli kódování nebo `String`.|  
 |<xref:System.IO.StringWriter?displayProperty=nameWithType>|Zapíše znaků, které mají `String`. Výstup může být buď datový proud v jakémkoli kódování nebo `String`.|  
   
-## <a name="see-also"></a>Viz také  
- [Skládání streamů](../../../../standard/io/composing-streams.md)  
- [Vstup/výstup souborů a streamů](../../../../standard/io/index.md)  
- [Asynchronní vstupně-výstupní operace se soubory](../../../../standard/io/asynchronous-file-i-o.md)  
- [Základy vstupně-výstupní operace souboru rozhraní .NET Framework a systému souborů (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)
+## <a name="see-also"></a>Viz také:
+- [Skládání streamů](../../../../standard/io/composing-streams.md)
+- [Vstup/výstup souborů a streamů](../../../../standard/io/index.md)
+- [Asynchronní vstupně-výstupní operace se soubory](../../../../standard/io/asynchronous-file-i-o.md)
+- [Základy vstupně-výstupní operace souboru rozhraní .NET Framework a systému souborů (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Řízení bodu pro vkládání v ovládacím prvku Windows Forms TextBox'
+title: 'Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,25 +10,25 @@ helpviewer_keywords:
 - insertion points [Windows Forms], TextBox controls
 - text boxes [Windows Forms], controlling insertion point
 ms.assetid: 5bee7d34-5121-429e-ab1f-d8ff67bc74c1
-ms.openlocfilehash: ced563eb063bbcc429cdf1447a0158459e5d5c97
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6ed49cac8341551dd0900a8468990e314a16e7b6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33530735"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54660187"
 ---
-# <a name="how-to-control-the-insertion-point-in-a-windows-forms-textbox-control"></a>Postupy: Řízení bodu pro vkládání v ovládacím prvku Windows Forms TextBox
-Když Windows Forms <xref:System.Windows.Forms.TextBox> řízení nejprve obdrží fokus, výchozí vložení v rámci textového pole je nalevo od existujícího textu. Kurzor s klávesnici nebo myš, může uživatel přesunout. Pokud textového pole ztratí a pak znovu získal fokus, bude bod vložení kdekoli uživatele poslední ho umístili.  
+# <a name="how-to-control-the-insertion-point-in-a-windows-forms-textbox-control"></a>Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox
+Když prvku Windows Forms <xref:System.Windows.Forms.TextBox> ovládací prvek nejprve dostane fokus, je výchozí kurzor v textovém poli na levé straně jakýkoli existující text. Uživatel může přesunout kurzor pomocí klávesnice nebo myši. Pokud textové pole ztratí a potom získá fokus, kurzor se všude, kde uživatel naposledy vložili.  
   
- V některých případech může být toto chování zneklidňovat uživateli. V textovém editoru aplikace, může uživatel očekávat nové znaků, než se objeví po existujícího textu. V aplikaci vstupní data může uživatel očekávat všechny stávající položku nahradit novou znaků. <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> a <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> vlastnosti umožňují změnit chování tak, aby vyhovovala vaší účel.  
+ V některých případech může být toto chování zneklidňovat uživateli. V textovém editoru aplikace, uživatel může očekávat, že znaky nového objevovat po jakýkoli existující text. V aplikaci vstupní data uživatel může očekávat znaky nového nahradit všechny existující položky. <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> a <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> vlastnosti umožňují změnit chování při vyhovovaly vašim konkrétním potřebám.  
   
-### <a name="to-control-the-insertion-point-in-a-textbox-control"></a>K řízení bodu vložení v ovládacím prvku TextBox  
+### <a name="to-control-the-insertion-point-in-a-textbox-control"></a>K řízení místa vložení v ovládacím prvku TextBox  
   
-1.  Nastavte <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> vlastnost na odpovídající hodnotu. Nula umístí kurzor vlevo prvního znaku.  
+1.  Nastavte <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> vlastnost na odpovídající hodnotu. Nula umístí kurzor bezprostředně nalevo od prvního znaku.  
   
-2.  (Volitelné) Nastavte <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> vlastnost, která má délku textu, kterou chcete vybrat.  
+2.  (Volitelné) Nastavte <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> vlastnost Délka textu, kterou chcete vybrat.  
   
-     Následující kód vždy vrátí kurzor na hodnotu 0. `TextBox1_Enter` Obslužné rutiny události musí být vázána k ovládacímu prvku; další informace naleznete v tématu [vytváření obslužných rutin událostí v systému Windows Forms](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md).  
+     Následující kód vždy vrátí kurzor na hodnotu 0. `TextBox1_Enter` Obslužné rutiny události musí být vázán na ovládací prvek; další informace naleznete v tématu [vytváření obslužných rutin událostí ve Windows Forms](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md).  
   
     ```vb  
     Private Sub TextBox1_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox1.Enter  
@@ -54,19 +54,19 @@ Když Windows Forms <xref:System.Windows.Forms.TextBox> řízení nejprve obdrž
        }  
     ```  
   
-## <a name="making-the-insertion-point-visible-by-default"></a>Ve výchozím nastavení viditelnosti kurzoru  
- <xref:System.Windows.Forms.TextBox> Je standardně viditelné v nové jenom Pokud formuláře kurzor <xref:System.Windows.Forms.TextBox> řízení je první v pořadí. V opačném kurzoru se zobrazí pouze v případě, že přidělíte <xref:System.Windows.Forms.TextBox> fokus klávesnice nebo myš.  
+## <a name="making-the-insertion-point-visible-by-default"></a>Ve výchozím nastavení zviditelnění kurzor  
+ <xref:System.Windows.Forms.TextBox> Viditelné ve výchozím nastavení nového formuláře pouze tehdy, pokud je kurzor <xref:System.Windows.Forms.TextBox> ovládací prvek je první v pořadí. V opačném případě se zobrazí kurzor pouze v případě, že přidělíte <xref:System.Windows.Forms.TextBox> fokusu pomocí klávesnice nebo myši.  
   
-#### <a name="to-make-the-text-box-insertion-point-visible-by-default-on-a-new-form"></a>Ke zviditelnění bodu vložení textové pole na nový formulář ve výchozím nastavení  
+#### <a name="to-make-the-text-box-insertion-point-visible-by-default-on-a-new-form"></a>Ke zviditelnění pole kurzor text ve výchozím nastavení nový formulář  
   
 -   Nastavte <xref:System.Windows.Forms.TextBox> ovládacího prvku <xref:System.Windows.Forms.Control.TabIndex%2A> vlastnost `0`.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.TextBox>  
- [Přehled ovládacího prvku TextBox](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)  
- [Postupy: Vytvoření textového pole hesla pomocí ovládacího prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)  
- [Postupy: Vytvoření textového pole určeného jen pro čtení](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)  
- [Postupy: Vkládání uvozovek do řetězce](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)  
- [Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)  
- [Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)  
- [Ovládací prvek TextBox](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.TextBox>
+- [Přehled ovládacího prvku TextBox](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)
+- [Postupy: Vytvoření textového pole hesla pomocí ovládacího prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)
+- [Postupy: Vytvoření pole jen pro čtení textu](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)
+- [Postupy: Vkládání uvozovek do řetězce](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)
+- [Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)
+- [Postupy: Zobrazit více řádků v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
+- [Ovládací prvek TextBox](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)

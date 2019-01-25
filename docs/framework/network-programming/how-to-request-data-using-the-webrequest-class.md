@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vyžádání dat pomocí třídy WebRequest'
+title: 'Postupy: Žádost o Data pomocí třídy WebRequest'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - receiving data, using WebRequest class
 - Internet, requesting data
 ms.assetid: 368b8d0f-dc5e-4469-a8b8-b2adbf5dd800
-ms.openlocfilehash: 8a740d2eecd4d866fd3042985f1f6f3194a12ec5
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: ac7f9fc4a3c7a376d96d7cf820d2051bf2103e51
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50192756"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623063"
 ---
-# <a name="how-to-request-data-using-the-webrequest-class"></a>Postupy: vyžádání dat pomocí třídy WebRequest
+# <a name="how-to-request-data-using-the-webrequest-class"></a>Postupy: Žádost o Data pomocí třídy WebRequest
 Následující postup popisuje kroky používaná pro požádání o prostředku ze serveru, například webovou stránku nebo soubor. Prostředek musí být označeny identifikátorem URI.  
   
 ### <a name="to-request-data-from-a-host-server"></a>Žádost o data z hostitelského serveru  
@@ -172,9 +172,9 @@ Namespace Examples.System.Net
 End Namespace  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Vytváření internetových žádostí](../../../docs/framework/network-programming/creating-internet-requests.md)  
- [Použití streamů v síti](../../../docs/framework/network-programming/using-streams-on-the-network.md)  
- [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  
- [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)  
- [Postupy:Odeslání dat pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-send-data-using-the-webrequest-class.md)
+## <a name="see-also"></a>Viz také:
+- [Vytváření internetových žádostí](../../../docs/framework/network-programming/creating-internet-requests.md)
+- [Použití streamů v síti](../../../docs/framework/network-programming/using-streams-on-the-network.md)
+- [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)
+- [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)
+- [Postupy: Odesílání dat pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-send-data-using-the-webrequest-class.md)

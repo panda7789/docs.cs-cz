@@ -1,42 +1,42 @@
 ---
-title: 'Postupy: Získání kolekce souborů z adresáře v jazyce Visual Basic'
+title: 'Postupy: Získání kolekce souborů v adresáři v jazyce Visual Basic'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - folders, working with
 - files [Visual Basic], accessing
 ms.assetid: 6c8ba7e8-dd37-4853-92bf-762b67c98160
-ms.openlocfilehash: c498928bd5fc58b8264e9098f49aabafc68c7fe6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a708d9cfd7b1a5ded3088ee567660bd0b3a5423f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33586556"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54731930"
 ---
-# <a name="how-to-get-the-collection-of-files-in-a-directory-in-visual-basic"></a>Postupy: Získání kolekce souborů z adresáře v jazyce Visual Basic
-Přetížení <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?displayProperty=nameWithType> metoda vrátit jen pro čtení kolekce řetězce představující názvy souborů v adresáři:  
+# <a name="how-to-get-the-collection-of-files-in-a-directory-in-visual-basic"></a>Postupy: Získání kolekce souborů v adresáři v jazyce Visual Basic
+Přetížení <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?displayProperty=nameWithType> metoda vrátit jen pro čtení kolekce řetězců, které představují názvy souborů v adresáři:  
   
--   Použití <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%28System.String%29> přetížení pro hledání jednoduchého souboru v daném adresáři, bez hledání podadresářů.  
+-   Použití <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%28System.String%29> přetížení pro hledání jednoduchého souboru v zadaném adresáři, bez vyhledávání podadresářů.  
   
--   Použití <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(System.String,Microsoft.VisualBasic.FileIO.SearchOption,System.String[])> přetížení k určení dalších možností pro hledání. Můžete použít `wildCards` parametr k určení vzoru hledání. Chcete-li do vyhledávání přidat podadresáře, nastavte `searchType` parametru <xref:Microsoft.VisualBasic.FileIO.SearchOption.SearchAllSubDirectories?displayProperty=nameWithType>.  
+-   Použití <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(System.String,Microsoft.VisualBasic.FileIO.SearchOption,System.String[])> přetížení k určení dalších možností pro hledání. Můžete použít `wildCards` parametr k určení vzoru hledání. Chcete-li do hledání zahrnout podadresářů, nastavte `searchType` parametr <xref:Microsoft.VisualBasic.FileIO.SearchOption.SearchAllSubDirectories?displayProperty=nameWithType>.  
   
- Prázdná kolekce je vrácena, pokud nejsou nalezeny žádné soubory odpovídající zadanému vzoru.  
+ Prázdná kolekce je vrácena, pokud se nenajdou žádné soubory odpovídající zadanému vzoru.  
   
 ### <a name="to-list-files-in-a-directory"></a>Pro vytvoření seznamu souborů v adresáři  
   
--   Použijte jednu z <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?displayProperty=nameWithType> přetížení metody zadávání název a cestu k adresáři pro hledání v `directory` parametr. Následující příklad vrátí všechny soubory v adresáři a přidá je do `ListBox1`.  
+-   Použijte jednu z <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?displayProperty=nameWithType> přetížení metody poskytnutí název a cesta k adresáři pro hledání v `directory` parametru. Následující příklad vrátí všechny soubory v adresáři a přidá je do `ListBox1`.  
   
      [!code-vb[VbVbcnMyFileSystem#32](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-get-the-collection-of-files-in-a-directory_1.vb)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
--   Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje jenom prázdné znaky, obsahuje neplatné znaky nebo je cesta zařízení (začíná \\ \\.\\) (<xref:System.ArgumentException>).  
+-   Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (začíná \\ \\.\\) (<xref:System.ArgumentException>).  
   
 -   Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
   
 -   `directory` neexistuje (<xref:System.IO.DirectoryNotFoundException>).  
   
--   `directory` ukazuje na existující soubor (<xref:System.IO.IOException>).  
+-   `directory` odkaz na existující soubor (<xref:System.IO.IOException>).  
   
 -   Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).  
   
@@ -46,7 +46,7 @@ Přetížení <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?displayP
   
 -   Uživatel nemá potřebná oprávnění (<xref:System.UnauthorizedAccessException>).  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A>  
- [Postupy: Hledání souborů pomocí specifického vzoru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)  
- [Postupy: Hledání podadresářů pomocí specifického vzoru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A>
+- [Postupy: Hledání souborů pomocí specifického vzoru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-files-with-a-specific-pattern.md)
+- [Postupy: Hledání podadresářů pomocí specifického vzoru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)

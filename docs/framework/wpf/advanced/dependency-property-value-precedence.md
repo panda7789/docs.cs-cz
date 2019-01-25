@@ -7,12 +7,12 @@ helpviewer_keywords:
 - classes [WPF], owners of dependency properties
 - metadata [WPF], dependency properties
 ms.assetid: 1fbada8e-4867-4ed1-8d97-62c07dad7ebc
-ms.openlocfilehash: 25dfe63a65c3044837beb26ec6c4eaa772c1df1b
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: ad5bd74388ab1d4a20e496271fd992b1562587d6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46696786"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54711272"
 ---
 # <a name="dependency-property-value-precedence"></a>Priorita hodnot závislých vlastností
 <a name="introduction"></a> Toto téma vysvětluje, jak fungování [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost systému může mít vliv na hodnotu vlastnosti závislosti a popisuje prioritu, ve které aspekty vlastnost systému použít na platnou hodnotu vlastnosti.  
@@ -126,9 +126,9 @@ ms.locfileid: "46696786"
 ## <a name="clearvalue-and-value-precedence"></a>ClearValue a Priorita hodnot  
  <xref:System.Windows.DependencyObject.ClearValue%2A> Metoda poskytuje účelné znamená, že chcete vymazat všechny místně použité hodnoty z vlastnosti závislosti, který je nastaven pro element. Však voláním <xref:System.Windows.DependencyObject.ClearValue%2A> nezaručuje, že je výchozí, jak je stanoveno v metadatech během registrace vlastnost novou platnou hodnotu. Všechny ostatní účastníci Priorita hodnot jsou stále aktivní. Pouze místně nastavené hodnota byla odebrána z pořadí priority. Například, pokud zavoláte <xref:System.Windows.DependencyObject.ClearValue%2A> u vlastnosti, kde tato vlastnost nastavena také ve stylu motivu, pak hodnota motiv se použije jako novou hodnotu než výchozí na základě metadat. Pokud chcete využít všichni účastníci hodnotu vlastnosti mimo proces a nastavte hodnotu na výchozí registrované metadata, můžete získat, výchozí hodnota platností pomocí dotazu na metadata vlastností závislosti a pak můžete použít výchozí hodnotu místně Nastavte vlastnost voláním <xref:System.Windows.DependencyObject.SetValue%2A>.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.DependencyObject>  
- <xref:System.Windows.DependencyProperty>  
- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
- [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
- [Zpětné volání a ověření vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.DependencyObject>
+- <xref:System.Windows.DependencyProperty>
+- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)
+- [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)
+- [Zpětné volání a ověření vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)

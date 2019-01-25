@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4037ca42c5a66f075e949cd2035c1e7db510bb8e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2ca43ebc257ee4eb9d0ef17f3399e87c03b9f9c3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448905"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54740005"
 ---
 # <a name="imetadataimportgetmethodprops-method"></a>IMetaDataImport::GetMethodProps – metoda
-Získá metadata přidružená metoda odkazuje zadaný MethodDef token.  
+Získá token budou metadata spojená s metodou odkazuje zadaný MethodDef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,44 +46,44 @@ HRESULT GetMethodProps (
   
 #### <a name="parameters"></a>Parametry  
  `mb`  
- [v] MethodDef token, který představuje metodu vrátit metadata pro.  
+ [in] Token MethodDef, který představuje metodu vrátit metadata pro.  
   
  `pClass`  
- [out] Ukazatel na TypeDef token, který představuje typ, který implementuje metodu.  
+ [out] Ukazatel, který představuje typ, který implementuje metodu token TypeDef.  
   
  `szMethod`  
- [out] Ukazatel na vyrovnávací paměť, která má název metody.  
+ [out] Ukazatel do vyrovnávací paměti, který má název metody.  
   
  `cchMethod`  
- [v] Požadovaná velikost `szMethod`.  
+ [in] Požadovaná velikost `szMethod`.  
   
  `pchMethod`  
- [out] Ukazatel na velikost v široké znaky `szMethod`, nebo v případě zkrácení, skutečný počet široké znaky v názvu metody.  
+ [out] Ukazatel na velikost v širokých znaků `szMethod`, nebo v případě zkrácení, skutečný počet širokých znaků v názvu metody.  
   
  `pdwAttr`  
- [out] Ukazatel na žádné příznaky přidružené k metodě.  
+ [out] Ukazatel na libovolný příznaky spojené s metodou.  
   
  `ppvSigBlob`  
- [out] Ukazatel na binární metadata podpis metody.  
+ [out] Ukazatel na binární metadat podpis metody.  
   
  `pcbSigBlob`  
  [out] Ukazatel na velikost v bajtech `ppvSigBlob`.  
   
  `pulCodeRVA`  
- [out] Ukazatel na adresu relativní virtuální metody.  
+ [out] Ukazatel na relativní virtuální adresu metody.  
   
  `pdwImplFlags`  
- [out] Ukazatel na žádné příznaky implementace pro metodu.  
+ [out] Ukazatel na libovolný příznaky implementace metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

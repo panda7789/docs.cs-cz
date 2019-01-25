@@ -2,12 +2,12 @@
 title: Fronty nedoručených zpráv
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-ms.openlocfilehash: c6b3f059f1a1b11825b595346ed47f6a498078f1
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 263c1fd399c8863154e0e53a1f79528d38022b78
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582603"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54721292"
 ---
 # <a name="dead-letter-queues"></a>Fronty nedoručených zpráv
 Tento příklad ukazuje, jak pro zpracování a zpracování zpráv, které selhaly doručování. Je založen na [nepodporuje transakce vazby služby MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) vzorku. Tento příklad používá `netMsmqBinding` vazby. Služba je v místním prostředí konzolovou aplikaci pro vám umožní sledovat službu přijímání zpráv zařazených do fronty.
@@ -26,11 +26,11 @@ Tento příklad ukazuje, jak pro zpracování a zpracování zpráv, které selh
 
 -   <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A> Vlastnost express typ fronty nedoručených zpráv klientů. Tento výčet má následující hodnoty:
 
--   `None`: Klient vyžaduje žádná fronta nedoručených zpráv.
+-   `None`: Žádné fronty nedoručených zpráv nevyžadovala klienta.
 
--   `System`Fronty nedoručených zpráv pro: system slouží k uložení nedoručené zprávy. Fronty nedoručených zpráv systému sdílí všechny aplikace spuštěné v počítači.
+-   `System`: Fronty nedoručených zpráv systému se používá k ukládání nedoručené zprávy. Fronty nedoručených zpráv systému sdílí všechny aplikace spuštěné v počítači.
 
--   `Custom`Zadat pomocí: vlastní frontu nedoručených zpráv <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> vlastnost se používá k ukládání nedoručené zprávy. Tato funkce je dostupná pouze na [!INCLUDE[wv](../../../../includes/wv-md.md)]. To se používá při aplikace musíte použít svoji vlastní frontu nedoručených zpráv místo sdílení s ostatními aplikacemi spuštěnými ve stejném počítači.
+-   `Custom`: Vlastní frontu nedoručených zadat pomocí <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> vlastnost se používá k ukládání nedoručené zprávy. Tato funkce je dostupná pouze na [!INCLUDE[wv](../../../../includes/wv-md.md)]. To se používá při aplikace musíte použít svoji vlastní frontu nedoručených zpráv místo sdílení s ostatními aplikacemi spuštěnými ve stejném počítači.
 
 -   <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> Vlastnost express konkrétní fronty pro použití jako fronty nedoručených zpráv. Tato možnost je dostupná jenom v [!INCLUDE[wv](../../../../includes/wv-md.md)].
 
@@ -350,7 +350,7 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
     >  Nastavení `security mode` k `None` je ekvivalentní nastavení `MsmqAuthenticationMode`, `MsmqProtectionLevel` a `Message` zabezpečení `None`.
 
 ## <a name="comments"></a>Komentáře
- Ve výchozím nastavení se `netMsmqBinding` vazby přenosu, zabezpečení je povolená. Dvě vlastnosti `MsmqAuthenticationMode` a `MsmqProtectionLevel`, společně určují typ zabezpečení přenosu. Ve výchozím nastavení je režim ověřování nastaven na `Windows` a aby úroveň ochrany je nastavená na `Sign`. Pro službu MSMQ. k ověřování a podepisování funkce musí být součástí domény. Pokud tuto ukázku spustit na počítači, který není součástí domény, se zobrazí následující chybová zpráva: "Uživatele interní zprávy služby Řízení front certifikát neexistuje".
+ Ve výchozím nastavení se `netMsmqBinding` vazby přenosu, zabezpečení je povolená. Dvě vlastnosti `MsmqAuthenticationMode` a `MsmqProtectionLevel`, společně určují typ zabezpečení přenosu. Ve výchozím nastavení je režim ověřování nastaven na `Windows` a aby úroveň ochrany je nastavená na `Sign`. Pro službu MSMQ. k ověřování a podepisování funkce musí být součástí domény. Pokud tuto ukázku spustit na počítači, který není součástí domény, zobrazí se následující chybová zpráva: "Certifikátu interní front uživatele neexistuje".
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
@@ -361,4 +361,4 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\DeadLetter`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

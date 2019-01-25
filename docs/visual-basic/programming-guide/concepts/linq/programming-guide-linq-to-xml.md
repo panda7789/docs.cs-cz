@@ -2,12 +2,12 @@
 title: Průvodce programováním (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: f1f942bf-3404-4354-b4c5-4fe35e37a02b
-ms.openlocfilehash: 70c169cecc8ca4ede30216bc832a8518766cd1a5
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 04e98c6aaa038bea03dd118521311adf40e3e2be
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42929812"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54675095"
 ---
 # <a name="programming-guide-linq-to-xml-visual-basic"></a>Průvodce programováním (LINQ to XML) (Visual Basic)
 Tato část obsahuje rámcové a postupy: informace o programování v jazyce [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
@@ -34,6 +34,6 @@ Tato část obsahuje rámcové a postupy: informace o programování v jazyce [!
 |[Zabezpečení LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-security.md)|Popisuje problémy se zabezpečením související s LINQ to XML a poskytuje pokyny pro snížení rizik souvisejících s ohrožení zabezpečení.|  
 |[Ukázkové dokumenty XML (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)|Obsahuje ukázkové dokumenty XML, které jsou používány mnoho příkladů v této dokumentaci.|  
   
-## <a name="see-also"></a>Viz také  
- [Začínáme (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)  
- [LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Začínáme (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)
+- [LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)

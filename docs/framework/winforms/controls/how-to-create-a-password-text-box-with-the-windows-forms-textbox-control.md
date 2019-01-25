@@ -12,28 +12,28 @@ helpviewer_keywords:
 - passwords [Windows Forms], input mask
 - passwords [Windows Forms], password text box
 ms.assetid: d105d6b9-3d50-44cd-80d8-2c0e2f486727
-ms.openlocfilehash: 41bfb2bc1a1ead5bb289264c44145b88721efe49
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b6fe0e615cc5bbd0f549505ed9e6add8d7a51433
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33534297"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54523984"
 ---
 # <a name="how-to-create-a-password-text-box-with-the-windows-forms-textbox-control"></a>Postupy: Vytvoření textového pole hesla pomocí ovládacího prvku Windows Forms TextBox
-Pole pro heslo je Windows Forms textové pole, které zobrazí zástupné znaky, když uživatel zadá řetězec.  
+Pole pro heslo je textové pole formulářů Windows, která zobrazuje zástupné znaky, když uživatel zadá řetězec.  
   
 ### <a name="to-create-a-password-text-box"></a>K vytvoření textového pole hesla  
   
-1.  Nastavte <xref:System.Windows.Forms.TextBox.PasswordChar%2A> vlastnost <xref:System.Windows.Forms.TextBox> řízení zvláštní znak.  
+1.  Nastavte <xref:System.Windows.Forms.TextBox.PasswordChar%2A> vlastnost <xref:System.Windows.Forms.TextBox> ovládacího prvku na konkrétní znak.  
   
-     <xref:System.Windows.Forms.TextBox.PasswordChar%2A> Vlastnost určuje znak zobrazí v textovém poli. Například pokud chcete hvězdičky zobrazí do pole heslo, zadejte * pro <xref:System.Windows.Forms.TextBox.PasswordChar%2A> vlastnost v okně Vlastnosti. Bez ohledu na to, jaké znak uživatel zadá do textového pole, pak se zobrazí hvězdičku.  
+     <xref:System.Windows.Forms.TextBox.PasswordChar%2A> Vlastnost určuje znak, který zobrazí v textovém poli. Například pokud chcete hvězdičky z obou stran zobrazí v poli hesla, zadejte * pro <xref:System.Windows.Forms.TextBox.PasswordChar%2A> vlastností v okně Vlastnosti. Bez ohledu na to, jakou znakovou uživatel zadá do textového pole, pak se zobrazí hvězdičku.  
   
-2.  (Volitelné) Nastavte <xref:System.Windows.Forms.TextBoxBase.MaxLength%2A> vlastnost. Vlastnost určuje, kolik znaků lze zadat do textového pole. Pokud dojde k překročení maximální délku, systém vysílá zvukový signál a textového pole nepřijímá žádné další znaky. Všimněte si, že pravděpodobně chcete jako maximální délku hesla k tomu může být použita hackery, kteří se snaží uhodnout heslo.  
+2.  (Volitelné) Nastavte <xref:System.Windows.Forms.TextBoxBase.MaxLength%2A> vlastnost. Vlastnost určuje, kolik znaků lze zadat do textového pole. Pokud je překročen maximální počet znaků, systém vydá zvukový signál a do textového pole nepřijímá žádné další znaky. Všimněte si, že pravděpodobně chcete to udělat jako maximální délku hesla může být použita hackery, kteří se snaží uhodnout heslo.  
   
-     Následující příklad kódu ukazuje, jak k chybě při inicializaci textové pole, které budou přijímat řetězec až 14 znaků a zobrazení hvězdičky místo řetězec. `InitializeMyControl` Postup nebude automaticky spustit; musí být volána.  
+     Následující příklad kódu ukazuje, jak inicializovat textové pole, která bude přijímat řetězec až 14 znaků dlouhé a zobrazení hvězdičky z obou stran namísto řetězce. `InitializeMyControl` Postup nespustí automaticky, musí být volána.  
   
     > [!IMPORTANT]
-    >  Pomocí <xref:System.Windows.Forms.TextBox.PasswordChar%2A> vlastnost v textovém poli může pomoci zajistit, že ostatní uživatelé nebudou moci určit heslo uživatele, pokud sledují uživatele při jeho zadávání. Tato bezpečnostní opatření nepopisuje všechny řazení úložiště nebo přenos heslo, které můžou nastat v důsledku logiky aplikace. Vzhledem k tomu, že zadaný text není zašifrovaná žádným způsobem, by měly zpracovávat stejně jako jiné důvěrné údaje. I když se nezobrazí jako takový, heslo bude stále zacházeno jako řetězec ve formátu prostého textu (Pokud jste implementovali některé další bezpečnostní opatření).  
+    >  Použití <xref:System.Windows.Forms.TextBox.PasswordChar%2A> vlastnost v textovém poli můžete zajistit, že ostatní uživatelé nebudou moct určit heslo uživatele, pokud sledují uživatele při jeho zadávání. Tato bezpečnostní opatření nepopisuje jakýkoli druh úložiště nebo přenosu heslo, které může dojít z vaší aplikace logiky. Vzhledem k tomu, že zadaný text není zašifrovaný žádným způsobem, by měly zpracovávat stejně jako jakákoli důvěrná data. I když není zobrazen jako takové, hesla je stále se zachází jako řetězec ve formátu prostého textu (Pokud jste implementovali některé další bezpečnostní opatření).  
   
     ```vb  
     Private Sub InitializeMyControl()  
@@ -71,12 +71,12 @@ Pole pro heslo je Windows Forms textové pole, které zobrazí zástupné znaky,
        }  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.TextBox>  
- [Přehled ovládacího prvku TextBox](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)  
- [Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)  
- [Postupy: Vytvoření textového pole určeného jen pro čtení](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)  
- [Postupy: Vkládání uvozovek do řetězce](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)  
- [Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)  
- [Postupy: Zobrazování více řádků v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)  
- [Ovládací prvek TextBox](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.TextBox>
+- [Přehled ovládacího prvku TextBox](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)
+- [Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)
+- [Postupy: Vytvoření pole jen pro čtení textu](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)
+- [Postupy: Vkládání uvozovek do řetězce](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)
+- [Postupy: Výběr textu v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)
+- [Postupy: Zobrazit více řádků v ovládacím prvku Windows Forms TextBox](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
+- [Ovládací prvek TextBox](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)

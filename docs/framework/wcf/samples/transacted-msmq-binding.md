@@ -2,12 +2,12 @@
 title: Zpracované vazby služby MSMQ
 ms.date: 03/30/2017
 ms.assetid: 71f5cb8d-f1df-4e1e-b8a2-98e734a75c37
-ms.openlocfilehash: e8b0b21acb9c99305ef144d18104338da5f8769a
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: e85a6396f0627454971cdd1b0b63d2fa521c2625
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48846523"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54678197"
 ---
 # <a name="transacted-msmq-binding"></a>Zpracované vazby služby MSMQ
 Tento příklad znázorňuje způsob provedení transakčního komunikaci ve frontě pomocí služby Řízení front zpráv (MSMQ).
@@ -238,4 +238,4 @@ Processing Purchase Order: 7b31ce51-ae7c-4def-9b8b-617e4288eafd
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Transacted`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

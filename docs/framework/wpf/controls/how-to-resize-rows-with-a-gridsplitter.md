@@ -6,36 +6,36 @@ helpviewer_keywords:
 - grid rows [WPF], resizing
 - GridSplitter control [WPF], resizing grid rows
 ms.assetid: 2413a9f2-1d81-46ed-95cb-95ec8233eea2
-ms.openlocfilehash: 9bd7b073237fa995ac67fe23b616cd54980fbec9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 93a04ce55a10f54a6770c279f1773491d7aa463f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33554882"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54740135"
 ---
 # <a name="how-to-resize-rows-with-a-gridsplitter"></a>Postupy: Změna velikosti řádků pomocí prvku GridSplitter
-Tento příklad ukazuje, jak používat vodorovných <xref:System.Windows.Controls.GridSplitter> mezery mezi dva řádky v znovu distribuovat <xref:System.Windows.Controls.Grid> bez změnit rozměry <xref:System.Windows.Controls.Grid>.  
+Tento příklad ukazuje způsob použití vodorovnou <xref:System.Windows.Controls.GridSplitter> distribuovat mezeru mezi dvěma řádky <xref:System.Windows.Controls.Grid> beze změny velikosti <xref:System.Windows.Controls.Grid>.  
   
 ## <a name="example"></a>Příklad  
- **Postup vytvoření GridSplitter které překrývá okraj řádku**  
+ **Vytvoření objektu GridSplitter které překrývá okraj řádku**  
   
- Chcete-li určit <xref:System.Windows.Controls.GridSplitter> , změní sousedících řádků v <xref:System.Windows.Controls.Grid>, nastavte <xref:System.Windows.Controls.Grid.Row%2A> přidružená vlastnost do jednoho z řádků, které chcete změnit velikost. Pokud vaše <xref:System.Windows.Controls.Grid> má více než jeden sloupec, nastavte <xref:System.Windows.Controls.Grid.ColumnSpan%2A> připojené vlastnosti a určit počet sloupců. Nastavte <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> k <xref:System.Windows.VerticalAlignment.Top> nebo <xref:System.Windows.VerticalAlignment.Bottom> (které zarovnání nastavíte závisí na dva řádky, které chcete změnit velikost). Nakonec nastavte <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnost <xref:System.Windows.HorizontalAlignment.Stretch>.  
+ K určení <xref:System.Windows.Controls.GridSplitter> , která přizpůsobí svou velikost sousední řádků v <xref:System.Windows.Controls.Grid>, nastavte <xref:System.Windows.Controls.Grid.Row%2A> přidružená vlastnost na jeden z řádků, které chcete změnit velikost. Pokud vaše <xref:System.Windows.Controls.Grid> má více než jeden sloupec, nastavte <xref:System.Windows.Controls.Grid.ColumnSpan%2A> připojené vlastnosti a určit počet sloupců. Nastavte <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> k <xref:System.Windows.VerticalAlignment.Top> nebo <xref:System.Windows.VerticalAlignment.Bottom> (zarovnání, které nastavíte, závisí na dvou řádků, kterého chcete změnit velikost). Nastavte <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnost <xref:System.Windows.HorizontalAlignment.Stretch>.  
   
- Následující příklad ukazuje, jak definovat vodorovných <xref:System.Windows.Controls.GridSplitter> , změní sousedících řádků.  
+ Následující příklad ukazuje, jak definovat vodorovnou <xref:System.Windows.Controls.GridSplitter> , která přizpůsobí svou velikost sousední řádků.  
   
  [!code-xaml[GridSplitterRowColumn#GridSplitterRowOverlay](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterrowoverlay)]  
   
- A <xref:System.Windows.Controls.GridSplitter> nezabírá svůj vlastní řádek mohou být skryty z jiných ovládacích prvků v <xref:System.Windows.Controls.Grid>. Další informace o tom, aby se tento problém, naleznete v části [zkontrolujte, zda, GridSplitter je viditelný](../../../../docs/framework/wpf/controls/how-to-make-sure-that-a-gridsplitter-is-visible.md).  
+ A <xref:System.Windows.Controls.GridSplitter> nezabírá svůj vlastní řádek mohou být skryty ovládací prvky v <xref:System.Windows.Controls.Grid>. Další informace o tom, jak tomuto problému předejít, naleznete v tématu [zkontrolujte, zda je viditelný objektu GridSplitter](../../../../docs/framework/wpf/controls/how-to-make-sure-that-a-gridsplitter-is-visible.md).  
   
- **Postup vytvoření GridSplitter, který bude zabírat řádek**  
+ **Jak vytvořit, který bude zabírat řádek objektu GridSplitter**  
   
- Chcete-li určit <xref:System.Windows.Controls.GridSplitter> která sídlí v řádku v <xref:System.Windows.Controls.Grid>, nastavte <xref:System.Windows.Controls.Grid.Row%2A> přidružená vlastnost do jednoho z řádků, které chcete změnit velikost. Pokud vaše <xref:System.Windows.Controls.Grid> má více než jeden sloupec, nastavte <xref:System.Windows.Controls.Grid.ColumnSpan%2A> přidružená vlastnost počet sloupců. Nastavte <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> k <xref:System.Windows.VerticalAlignment.Center>, nastavte <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnost <xref:System.Windows.HorizontalAlignment.Stretch>a nastavte <xref:System.Windows.Controls.RowDefinition.Height%2A> řádku, který obsahuje <xref:System.Windows.Controls.GridSplitter> k <xref:System.Windows.GridLength.Auto%2A>.  
+ K určení <xref:System.Windows.Controls.GridSplitter> , který bude zabírat řádek v <xref:System.Windows.Controls.Grid>, nastavte <xref:System.Windows.Controls.Grid.Row%2A> přidružená vlastnost na jeden z řádků, které chcete změnit velikost. Pokud vaše <xref:System.Windows.Controls.Grid> má více než jeden sloupec, nastavte <xref:System.Windows.Controls.Grid.ColumnSpan%2A> přidružená vlastnost počtu sloupců. Nastavte <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> k <xref:System.Windows.VerticalAlignment.Center>, nastavte <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> vlastnost <xref:System.Windows.HorizontalAlignment.Stretch>a nastavte <xref:System.Windows.Controls.RowDefinition.Height%2A> řádku, který obsahuje <xref:System.Windows.Controls.GridSplitter> k <xref:System.Windows.GridLength.Auto%2A>.  
   
- Následující příklad ukazuje, jak definovat vodorovných <xref:System.Windows.Controls.GridSplitter> který zabírá jeden řádek a změní velikost řádků na obou stranách.  
+ Následující příklad ukazuje, jak definovat vodorovnou <xref:System.Windows.Controls.GridSplitter> , které zabírá řádek a změní velikost řádků na obou stranách.  
   
  [!code-xaml[GridSplitterRowColumn#GridSplitterEntireRowPart1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterentirerowpart1)]  
 [!code-xaml[GridSplitterRowColumn#GridSplitterEntireRowPart2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridSplitterRowColumn/CS/Window1.xaml#gridsplitterentirerowpart2)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.GridSplitter>  
- [Témata s postupy](../../../../docs/framework/wpf/controls/gridsplitter-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.GridSplitter>
+- [Témata s postupy](../../../../docs/framework/wpf/controls/gridsplitter-how-to-topics.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-ms.openlocfilehash: d29de118e928522dcc3a4b4ab32fe2d2c4d1f2f9
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: e52e5857d9fbe70cbd71ec91f8aa0c49b0e85df8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235775"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552304"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Použití oboru názvů (Průvodce programováním v C#)
 V aplikacích jazyka C# dvě možnosti, jak se hojně používají obory názvů. Za prvé tříd rozhraní .NET Framework pomocí oborů názvů můžete organizovat jeho mnoho tříd. Za druhé deklarující vlastní obory názvů umožňují omezit rozsah třídy a metody názvy ve větších programovací projektů.  
@@ -88,11 +88,11 @@ V aplikacích jazyka C# dvě možnosti, jak se hojně používají obory názvů
   
  Naleznete v tématu [jak: Použití aliasu globálního Namespace](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md) Další informace týkající `global` alias.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)  
-- [Klíčová slova oboru názvů](../../../csharp/language-reference/keywords/namespace-keywords.md)  
-- [. – operátor](../../../csharp/language-reference/operators/member-access-operator.md)  
-- [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)
+- [Klíčová slova oboru názvů](../../../csharp/language-reference/keywords/namespace-keywords.md)
+- [. – operátor](../../../csharp/language-reference/operators/member-access-operator.md)
+- [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)
 - [extern](../../../csharp/language-reference/keywords/extern.md)

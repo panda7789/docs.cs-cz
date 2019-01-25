@@ -1,5 +1,5 @@
 ---
-title: Kompilace schématu XmlSchemaCollection
+title: XmlSchemaCollection Schema Compilation
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,14 +8,14 @@ dev_langs:
 ms.assetid: 76f28770-7126-428f-9ed5-7b5ae8bad5ee
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d7b6ea782020dde83aa7d59be8ec3058a27075ad
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 3d47fa4d4ef7a55182dd27aa6f64542fec1fa99c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48030665"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54704313"
 ---
-# <a name="xmlschemacollection-schema-compilation"></a>Kompilace schématu XmlSchemaCollection
+# <a name="xmlschemacollection-schema-compilation"></a>XmlSchemaCollection Schema Compilation
 **Třídou XmlSchemaCollection** mezipaměti nebo knihovny, kde můžete ukládat a ověřit XML-Data Reduced (XDR) a schéma XML definice jazyk (XSD) schémata. **Kolekci XmlSchemaCollection** zvyšuje výkon díky ukládání do mezipaměti schémat v paměti namísto se k nim dostanete ze souboru nebo adresy URL.  
   
 > [!NOTE]
@@ -59,5 +59,5 @@ vr.Schemas.Add(xsc);
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ověření XDR s třídou XmlSchemaCollection](../../../../docs/standard/data/xml/xdr-validation-with-xmlschemacollection.md)  
+- [Ověření XDR s třídou XmlSchemaCollection](../../../../docs/standard/data/xml/xdr-validation-with-xmlschemacollection.md)
 - [Ověření schématu XML (XSD) s třídou XmlSchemaCollection](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemacollection.md)

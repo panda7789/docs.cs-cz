@@ -8,12 +8,12 @@ helpviewer_keywords:
 - height properties [WPF]
 - Panel control [WPF], height properties of elements
 ms.assetid: 5ab9e781-dbb8-469a-a3c8-cf38ce312647
-ms.openlocfilehash: 4d4aade743507001f825c19994e2f5feb1726ac4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: be3235d4bf7b5e108420b5ed030157067cacdb8a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525471"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54637045"
 ---
 # <a name="how-to-set-the-height-properties-of-an-element"></a>Postupy: Nastavení vlastností výšky elementu
 ## <a name="example"></a>Příklad  
@@ -33,13 +33,13 @@ ms.locfileid: "43525471"
   
  Úplnou ukázku najdete v tématu [výška vlastnosti vzorku](https://go.microsoft.com/fwlink/?LinkID=159993).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.FrameworkElement>  
- <xref:System.Windows.Controls.ListBox>  
- <xref:System.Windows.FrameworkElement.ActualHeight%2A>  
- <xref:System.Windows.FrameworkElement.MaxHeight%2A>  
- <xref:System.Windows.FrameworkElement.MinHeight%2A>  
- <xref:System.Windows.FrameworkElement.Height%2A>  
- [Nastavení vlastností šířky elementu](../../../../docs/framework/wpf/controls/how-to-set-the-width-properties-of-an-element.md)  
- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [Výška vlastnosti vzorku](https://go.microsoft.com/fwlink/?LinkID=159993)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.FrameworkElement>
+- <xref:System.Windows.Controls.ListBox>
+- <xref:System.Windows.FrameworkElement.ActualHeight%2A>
+- <xref:System.Windows.FrameworkElement.MaxHeight%2A>
+- <xref:System.Windows.FrameworkElement.MinHeight%2A>
+- <xref:System.Windows.FrameworkElement.Height%2A>
+- [Nastavení vlastností šířky elementu](../../../../docs/framework/wpf/controls/how-to-set-the-width-properties-of-an-element.md)
+- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)
+- [Výška vlastnosti vzorku](https://go.microsoft.com/fwlink/?LinkID=159993)

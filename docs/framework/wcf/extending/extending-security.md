@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WCF], extending
 ms.assetid: a015a040-9fdf-4147-9ea9-f83b570be1d4
-ms.openlocfilehash: 2d2f1997534a33f246c85501e66b6aa8a684445f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 798a1d1cd21fd9a0bc21c6ccaa42c478379cc7a3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190694"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54511534"
 ---
 # <a name="extending-security"></a>Rozšíření zabezpečení
 Tak, aby vyhovovaly nové typy deklarací identity a vlastní tokeny, můžete rozšířit Infrastruktura zabezpečení Windows Communication Foundation (WCF). Témata v této části ukazují, jak to lze provést.  
@@ -30,7 +30,7 @@ Tak, aby vyhovovaly nové typy deklarací identity a vlastní tokeny, můžete r
  [Přepsání identity služby kvůli ověřování](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)  
  Popisuje přepsání identity služby kvůli ověřování.  
   
- [Postupy: Vytvoření vlastního ověřovatele identity klientů](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
+ [Postupy: Vytvoření vlastního ověřovatele Identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
  Ukazuje, jak se ověřit identitu vlastní koncový bod.  
   
  [Postupy: Použití samostatných certifikátů X.509 pro přihlašování a šifrování](../../../../docs/framework/wcf/extending/how-to-use-separate-x-509-certificates-for-signing-and-encryption.md)  
@@ -57,5 +57,5 @@ Tak, aby vyhovovaly nové typy deklarací identity a vlastní tokeny, můžete r
   
  [Základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md)  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)

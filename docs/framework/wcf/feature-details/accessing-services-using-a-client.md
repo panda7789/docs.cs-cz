@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c8329832-bf66-4064-9034-bf39f153fc2d
-ms.openlocfilehash: 1ac7acda0b9065fde4ab04c80e9d26a1ec23fa6e
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 03b37dae72be0ffa589159b2aedc2ac16e35139e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130985"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583204"
 ---
 # <a name="accessing-services-using-a-client"></a>Přístup ke službám pomocí klienta
 Klientské aplikace musíte vytvořit, konfigurovat a komunikace se službami pomocí WCF klienta nebo kanál objektů. [Přehled klientů WCF](../../../../docs/framework/wcf/wcf-client-overview.md) téma obsahuje přehled objektů a kroky při vytváření základních klienta a kanál objektů a jejich používání.  
@@ -93,11 +93,11 @@ Klientské aplikace musíte vytvořit, konfigurovat a komunikace se službami po
   
  Aplikace, které používají implicitní přístup vyvolat inicializátory uživatelského rozhraní, ale pokud uživatel aplikace přestane reagovat v časovém limitu odesílání vazby, dojde k výjimce při návratu uživatelského rozhraní.  
   
-## <a name="see-also"></a>Viz také  
- [Duplexní služby](../../../../docs/framework/wcf/feature-details/duplex-services.md)  
- [Jak: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů požadavek odpověď](../../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)  
- [Jak: Přístup ke službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)  
- [Jak: Přístup k WSE 3.0 Service](../../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)  
- [Jak: Používání ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)  
- [Jak: Asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)  
- [Klientské aplikace střední vrstvy](../../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md)
+## <a name="see-also"></a>Viz také:
+- [Duplexní služby](../../../../docs/framework/wcf/feature-details/duplex-services.md)
+- [Postupy: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů požadavek odpověď](../../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
+- [Postupy: Přístup ke službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)
+- [Postupy: Přístup k WSE 3.0 Service](../../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
+- [Postupy: Používání ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)
+- [Postupy: Asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)
+- [Klientské aplikace střední vrstvy](../../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md)

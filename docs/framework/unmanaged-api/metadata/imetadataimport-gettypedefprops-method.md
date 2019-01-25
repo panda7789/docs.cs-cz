@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aa69eda974187748d7046c792fa16b7729e3deff
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 12adffbfeb2ce6271774cf44c1a913d7a1414ba4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446879"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54718608"
 ---
 # <a name="imetadataimportgettypedefprops-method"></a>IMetaDataImport::GetTypeDefProps – metoda
 Vrátí informace metadat pro <xref:System.Type> reprezentována zadaný token TypeDef.  
@@ -42,32 +42,32 @@ HRESULT GetTypeDefProps (
   
 #### <a name="parameters"></a>Parametry  
  `td`  
- [v] TypeDef token, který představuje typ vrátit metadata pro.  
+ [in] Token TypeDef, která představuje typ, který chcete vrátit metadata pro.  
   
  `szTypeDef`  
- [out] Vyrovnávací paměť, která obsahuje název typu.  
+ [out] Vyrovnávací paměti, který obsahuje název typu.  
   
  `cchTypeDef`  
- [v] Velikost v široké znaky `szTypeDef`.  
+ [in] Velikost v širokých znaků `szTypeDef`.  
   
  `pchTypeDef`  
- [out] Počet široké znaky, vrátí se v `szTypeDef`.  
+ [out] Počet širokých znaků, které jsou vráceny v `szTypeDef`.  
   
  `pdwTypeDefFlags`  
- [out] Ukazatel na žádné příznaky, které upravit definici typu. Tato hodnota je bitová maska z [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) výčtu.  
+ [out] Ukazatel na libovolný příznaky, které mění definici typu. Tato hodnota je bitová maska z [cortypeattr –](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) výčtu.  
   
  `ptkExtends`  
- [out] TypeDef nebo Odkaz TypeRef metadata token, který představuje základní typ požadovaného typu.  
+ [out] Definice TypeDef nebo TypeRef token metadat, který představuje základní typ požadovaného typu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

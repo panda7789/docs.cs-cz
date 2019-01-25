@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC2004
 ms.assetid: 6bc0939c-e279-4875-a91c-f4076860b5b9
-ms.openlocfilehash: 543dfa8900fb14b30f6e70cdd0b4d281cc52708d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6e0efebfaa9c922ea7b72a7c4314801eb2c35dda
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33598865"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54595523"
 ---
 # <a name="out-of-memory-visual-basic-compiler-error"></a>Nedostatek paměti (chyba kompilátoru jazyka Visual Basic)
-Nebyla nutná, než je k dispozici další paměť.  
+Byla požadována, než je k dispozici více paměti.  
   
  **ID chyby:** BC2004  
   
@@ -23,15 +23,15 @@ Nebyla nutná, než je k dispozici další paměť.
   
 -   Zavřete nepotřebných aplikací, dokumenty a zdrojové soubory.  
   
--   Vyloučení nepotřebných ovládací prvky a forms tak méně jsou načtena v jednom okamžiku  
+-   Vyloučit nepotřebné ovládací prvky a formuláře tak méně jsou načteny najednou  
   
 -   Snižte počet `Public` proměnné.  
   
 -   Zkontrolujte dostupné místo na disku.  
   
--   Zvýšení dostupné paměti RAM instalací další paměť nebo změna přidělování paměti.  
+-   Zvýšení dostupné paměti RAM instalací další paměť nebo změna přidělení paměti.  
   
--   Ujistěte se, že paměť je uvolněna, když už ho nepotřebují.  
+-   Ujistěte se, že paměť je uvolněna, pokud už je nepotřebujete.  
   
-## <a name="see-also"></a>Viz také  
- [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a>Viz také:
+- [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)

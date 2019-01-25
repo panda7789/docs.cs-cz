@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ba09991e9452a86c6b7a1cbb08a38a71ba2aeaa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8d3e10a3dbae0d1b790c0d80c9286affedaa4c8b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416761"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709140"
 ---
 # <a name="icordebugheapvalue3getthreadowningmonitorlock-method"></a>ICorDebugHeapValue3::GetThreadOwningMonitorLock – metoda
-Vrátí spravované vlákno, které vlastní monitorování zámek na tomto objektu.  
+Vrátí spravované vlákno, který vlastní monitorování zámek na tomto objektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +38,13 @@ HRESULT GetThreadOwningMonitorLock (
   
 #### <a name="parameters"></a>Parametry  
  `ppThread`  
- [out] Spravované vlákno, které vlastní monitorování zámek na tomto objektu.  
+ [out] Spravovaná vlákna, které vlastní monitorování zámek na tomto objektu.  
   
  `pAcquisitionCount`  
- [out] Počet přístupů, se uvolní zámek před vrátí se bez přiřazeného vlastníka tohoto podprocesu.  
+ [out] Počet pokusů, museli byste toto vlákno uvolní zámek před vrácením se bez přiřazeného vlastníka.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
@@ -56,18 +56,18 @@ HRESULT GetThreadOwningMonitorLock (
 ## <a name="remarks"></a>Poznámky  
  Pokud spravované vlákno vlastní monitorování zámek na tomto objektu:  
   
--   Metoda vrátí S_OK.  
+-   Metoda vrátí hodnotu S_OK.  
   
--   Objekt vlákno je platný, až do konce vlákno.  
+-   Objekt vlákna je platná, dokud se vlákno ukončí.  
   
- Pokud žádné spravované vlákno vlastní monitorování zámek na tomto objektu `ppThread` a `pAcquisitionCount` jsou stejné, a vrátí metoda S_FALSE.  
+ Pokud žádné spravované vlákno vlastní monitorování zámek na tomto objektu `ppThread` a `pAcquisitionCount` jsou beze změny, a metoda vrátí S_FALSE.  
   
- Pokud `ppThread` nebo `pAcquisitionCount` není platný ukazatel, výsledkem nedefinovaný.  
+ Pokud `ppThread` nebo `pAcquisitionCount` není platný ukazatel, výsledek nedefinován.  
   
- Pokud dojde k chybě tak, že nelze určit, který případná vlastní vlákna sledování zámku na tento objekt metoda vrátí HRESULT označující selhání.  
+ Pokud dojde k chybě, takže ji nelze určit, který, pokud existuje, vlákno vlastní monitorování zámek na tomto objektu, metoda vrátí HRESULT označující selhání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -75,6 +75,6 @@ HRESULT GetThreadOwningMonitorLock (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

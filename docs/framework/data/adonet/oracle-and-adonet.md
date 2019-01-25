@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ee8e389-53cf-45cf-80bd-1df63ef34f2e
-ms.openlocfilehash: 9a60499674f0192bb7589f227bffb6f907f682d9
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: cec371c414d6945386816703232abbc642633070
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44084595"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661839"
 ---
 # <a name="oracle-and-adonet"></a>Oracle a ADO.NET
 > [!NOTE]
@@ -77,6 +77,6 @@ csc /r:System.Data.OracleClient.dll
  [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)  
  Popisuje obecné třídy, které umožňuje psát kód nezávislý na zprostředkovatele [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET](../../../../docs/framework/data/adonet/index.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET](../../../../docs/framework/data/adonet/index.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

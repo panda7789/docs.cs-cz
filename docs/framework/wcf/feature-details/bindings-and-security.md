@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-ms.openlocfilehash: 9cd180c5e1bd8afff462c380ad3389a78027eb48
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 5ec801e1e20fdb495537505a71ddaef6218ad5fb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195317"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54521371"
 ---
 # <a name="bindings-and-security"></a>Vazby a zabezpečení
 Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) nabízí rychlý způsob, jak programovat aplikace WCF. S jednou výjimkou mají všechny vazby výchozí schéma zabezpečení povoleno. Toto téma vám pomůže vybrat správné vazba pro vaše požadavky na zabezpečení.  
@@ -146,7 +146,7 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
  Další informace naleznete v tématu <xref:System.ServiceModel.NetMsmqSecurity> a <xref:System.ServiceModel.NetMsmqSecurityMode>.  
   
-### <a name="netmsmqbinding"></a>netMsmqBinding  
+### <a name="netmsmqbinding"></a>NetMsmqBinding  
  V kódu, použijte <xref:System.ServiceModel.NetMsmqBinding> třídy; v konfiguraci, použijte [ \<netMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md).  
   
  Tato vazba je určena pro použití při vytváření služeb WCF, které vyžadují služby MSMQ Podpora zpráv zařazených do fronty.  
@@ -161,7 +161,7 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
 -   Souběžné přenosu zpráv zabezpečení a (i).  
   
--   Podporované typy přihlašovacích údajů klienta: None, Windows, uživatelské jméno, certifikát, třídy IssuedToken.  
+-   Podporované typy přihlašovacích údajů klienta: Žádný, Windows, uživatelské jméno, certifikát, třídy IssuedToken.  
   
  <xref:System.ServiceModel.MessageCredentialType.Certificate> Přihlašovacích údajů se podporuje jenom režim zabezpečení je nastaven na hodnotu <xref:System.ServiceModel.NetMsmqSecurityMode.Both> nebo <xref:System.ServiceModel.NetMsmqSecurityMode.Message>.  
   
@@ -204,9 +204,9 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
 |Typ|Popis|  
 |----------|-----------------|  
-|Žádné|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
-|Základní|Základní ověřování. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest, k dispozici na [ https://go.microsoft.com/fwlink/?LinkId=84023 ](https://go.microsoft.com/fwlink/?LinkId=84023).|  
-|ověřování algoritmem Digest|Ověřování algoritmem Digest. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest, k dispozici na [ https://go.microsoft.com/fwlink/?LinkId=84023 ](https://go.microsoft.com/fwlink/?LinkId=84023).|  
+|Žádná|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
+|Základní|Základní ověřování. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest, k dispozici na [ https://go.microsoft.com/fwlink/?LinkId=84023 ](https://go.microsoft.com/fwlink/?LinkId=84023).|  
+|ověřování algoritmem Digest|Ověřování algoritmem Digest. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest, k dispozici na [ https://go.microsoft.com/fwlink/?LinkId=84023 ](https://go.microsoft.com/fwlink/?LinkId=84023).|  
 |NTLM|NT LAN Manager (NTLM) authentication.|  
 |Windows|Ověřování Windows.|  
 |Certifikát|Ověřování provádí pomocí certifikátu.|  
@@ -217,16 +217,16 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
 |Typ|Popis|  
 |----------|-----------------|  
-|Žádné|Umožňuje službě komunikovat s anonymní klienty.|  
+|Žádná|Umožňuje službě komunikovat s anonymní klienty.|  
 |Windows|Umožňuje výměny zpráv SOAP podle ověřený kontext přihlašovacích údajů Windows.|  
 |UserName|Umožňuje službě tak, aby vyžadovala, která klient ověřena pomocí pověření uživatelského jména. Všimněte si, že pokud režim zabezpečení je nastavený na `TransportWithMessageCredential`, WCF nepodporuje odeslání hesla hodnotou hash nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro režim zabezpečení zpráv. V důsledku toho WCF vynutí, že při použití uživatelských přihlašovacích údajů název je zabezpečený přenos.|  
 |Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu.|  
 |Třídy IssuedToken|Umožňuje službě můžete zadat vlastní token služby tokenů zabezpečení.|  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Výběr typu přihlašovacích údajů](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
- [Možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)  
- [Chování zabezpečení](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Výběr typu přihlašovacích údajů](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
+- [Možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
+- [Chování zabezpečení](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

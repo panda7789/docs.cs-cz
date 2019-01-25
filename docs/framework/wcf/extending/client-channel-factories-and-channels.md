@@ -2,12 +2,12 @@
 title: 'Klient: Objekty pro vytváření kanálů a kanály'
 ms.date: 03/30/2017
 ms.assetid: ef245191-fdab-4468-a0da-7c6f25d2110f
-ms.openlocfilehash: 3f045f56f7b73c5416e7a21a3afde29d22212d68
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 71ed9f9cbef35d14597ce6452d65bfca994dc23e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50182434"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720311"
 ---
 # <a name="client-channel-factories-and-channels"></a>Klient: Objekty pro vytváření kanálů a kanály
 Toto téma popisuje vytvoření vytvoření objektů pro vytváření kanálů a kanály.  
@@ -73,5 +73,5 @@ this.socket.SendTo(
 );  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md)
+## <a name="see-also"></a>Viz také:
+- [Vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md)

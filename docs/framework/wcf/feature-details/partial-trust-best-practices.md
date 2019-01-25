@@ -2,69 +2,69 @@
 title: Doporučené postupy s částečnou důvěryhodností
 ms.date: 03/30/2017
 ms.assetid: 0d052bc0-5b98-4c50-8bb5-270cc8a8b145
-ms.openlocfilehash: fca975ff4216384b970535273511eb07cd6ded68
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d63c9de4b1ea935b35f718056d191689f28c3813
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33497266"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54640105"
 ---
 # <a name="partial-trust-best-practices"></a>Doporučené postupy s částečnou důvěryhodností
 Toto téma popisuje osvědčené postupy při spuštění Windows Communication Foundation (WCF) v prostředí s částečnou důvěryhodností.  
   
 ## <a name="serialization"></a>Serializace  
- Použít následující postupy při použití <xref:System.Runtime.Serialization.DataContractSerializer> v aplikaci částečně důvěryhodné.  
+ Použijte následující postupy při používání <xref:System.Runtime.Serialization.DataContractSerializer> v částečně důvěryhodné aplikaci.  
   
--   Všechny Serializovatelné typy musí být explicitně označené `[DataContract]` atribut. V prostředí s částečnou důvěryhodností nejsou podporovány následující techniky:  
+-   Všechny Serializovatelné typy musí být explicitně označeny pomocí `[DataContract]` atribut. V prostředí s částečnou důvěryhodností nejsou podporovány následující techniky:  
   
--   Označení tříd pro Dal serializovat s příznakem <xref:System.SerializableAttribute>.  
+-   Označení tříd Dal serializovat s příznakem <xref:System.SerializableAttribute>.  
   
--   Implementace <xref:System.Runtime.Serialization.ISerializable> rozhraní povolit třídu řídit zpracování serializace.  
+-   Implementace <xref:System.Runtime.Serialization.ISerializable> rozhraní umožňující třídy řídit její procesu serializace.  
   
-### <a name="using-datacontractserializer"></a>Použití DataContractSerializer  
+### <a name="using-datacontractserializer"></a>Pomocí třídy DataContractSerializer  
   
--   Všechny typy označené jako `[DataContract]` atributu musí být veřejné. Není veřejné typy nelze serializovat v prostředí s částečnou důvěryhodností.  
+-   Všechny typy označeny pomocí `[DataContract]` atribut musí být veřejné. Neveřejné typy nejde serializovat v částečném vztahu důvěryhodnosti prostředí.  
   
--   Všechny `[DataContract]` členové serializable `[DataContract]` typ musí být veřejné. Typ s neveřejným `[DataMember]` nelze serializovat v prostředí s částečnou důvěryhodností.  
+-   Všechny `[DataContract]` členy v serializovatelného `[DataContract]` typ musí být veřejný. Typ se oprávnění neveřejné `[DataMember]` nejde serializovat v částečném vztahu důvěryhodnosti prostředí.  
   
--   Metody, které zpracování serializace událostí (například `OnSerializing`, `OnSerialized`, `OnDeserializing`, a `OnDeserialized`) musí být deklarován jako veřejné. Ale explicitní a implicitní implementace <xref:System.Runtime.Serialization.IDeserializationCallback.OnDeserialization%28System.Object%29> jsou podporovány.  
+-   Metody, které zpracovávají události serializace (například `OnSerializing`, `OnSerialized`, `OnDeserializing`, a `OnDeserialized`) musí být deklarován jako veřejná. Ale implementace explicitního a implicitního <xref:System.Runtime.Serialization.IDeserializationCallback.OnDeserialization%28System.Object%29> jsou podporovány.  
   
--   `[DataContract]` typy v sestavení implementována označené jako <xref:System.Security.AllowPartiallyTrustedCallersAttribute> nesmí provádět akce související se zabezpečením v konstruktoru typu, jako <xref:System.Runtime.Serialization.DataContractSerializer> nevyvolá konstruktoru nově instanci objektu během deserializace. Konkrétně je třeba se vyhnout následující běžné techniky zabezpečení pro `[DataContract]` typy:  
+-   `[DataContract]` typy, které jsou implementované v sestavení označená pomocí <xref:System.Security.AllowPartiallyTrustedCallersAttribute> nesmí provádět akce související se zabezpečením v konstruktoru typu, jako <xref:System.Runtime.Serialization.DataContractSerializer> nevolá konstruktor objektu nově vytvořena při deserializaci. Konkrétně, je třeba se vyhnout následující běžné postupy zabezpečení pro `[DataContract]` typy:  
   
--   Probíhá pokus o omezit částečnou důvěryhodností přístup tím, že typ konstruktor interní nebo privátní.  
+-   Probíhá pokus o omezit částečným vztahem důvěryhodnosti přístup tím, že konstruktor typu interní nebo privátní.  
   
--   Omezení přístupu k typu přidáním `[LinkDemand]` konstruktoru typu.  
+-   Omezení přístupu k typu tak, že přidáte `[LinkDemand]` konstruktoru typu.  
   
--   Za předpokladu, že protože objekt byl úspěšně vytvořit instance, všechny ověřovací kontroly vynucováno konstruktoru mít bylo úspěšné.  
+-   Za předpokladu, že vzhledem k tomu, že má byla úspěšně vytvořena instance objektu, mají všechny ověřovací kontroly vynucuje konstruktoru bylo úspěšné.  
   
-### <a name="using-ixmlserializable"></a>Pomocí IXmlSerializable  
- Použít následující osvědčené postupy pro typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable> a se serializují pomocí <xref:System.Runtime.Serialization.DataContractSerializer>:  
+### <a name="using-ixmlserializable"></a>Pomocí rozhraní IXmlSerializable  
+ Použijte následující osvědčené postupy pro typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable> a serializují pomocí <xref:System.Runtime.Serialization.DataContractSerializer>:  
   
--   <xref:System.Xml.Serialization.IXmlSerializable.GetSchema%2A> Musí být statickou metodu implementace `public`.  
+-   <xref:System.Xml.Serialization.IXmlSerializable.GetSchema%2A> Musí být statická metoda implementace `public`.  
   
 -   Instance metody, které implementují <xref:System.Xml.Serialization.IXmlSerializable> rozhraní musí být `public`.  
   
-## <a name="using-wcf-from-fully-trusted-platform-code-that-allows-calls-from-partially-trusted-callers"></a>Pomocí WCF z platformy plně důvěryhodný kód, který umožňuje volání z částečně důvěryhodné volající  
- Model zabezpečení WCF částečnou důvěryhodností předpokládá, že všechny volající veřejná metoda WCF nebo vlastnosti je spuštěn v kontextu zabezpečení (CA) přístupu kód hostitelskou aplikaci. WCF také předpokládá, že kontext zabezpečení jenom jednu aplikaci existuje pro každou <xref:System.AppDomain>, a který tento kontext je vytvořen v <xref:System.AppDomain> čas vytvoření důvěryhodného hostitele (například voláním <xref:System.AppDomain.CreateDomain%2A> nebo správcem aplikace ASP.NET).  
+## <a name="using-wcf-from-fully-trusted-platform-code-that-allows-calls-from-partially-trusted-callers"></a>Pomocí technologie WCF z plně důvěryhodné platformě kódu, který umožňuje volání od částečně důvěryhodné volající  
+ Model zabezpečení částečným vztahem důvěryhodnosti WCF se předpokládá, že jakýkoli volající této WCF veřejnou metodu nebo vlastnost běží v rámci kódu access security (CAS) hostitelské aplikace. WCF také předpokládá tento kontext zabezpečení pouze jednu aplikaci existuje pro každý <xref:System.AppDomain>, a že tento kontext se stanoví při <xref:System.AppDomain> čas vytvoření důvěryhodný hostitel (například voláním <xref:System.AppDomain.CreateDomain%2A> nebo správcem aplikace technologie ASP.NET).  
   
- Tento model zabezpečení platí pro uživatele zapsána aplikací, které nelze vyhodnocení další oprávnění certifikační Autority, jako je například uživatelský kód spuštěný v aplikaci ASP.NET střední vztah důvěryhodnosti. Kód plně důvěryhodná platformy (například třetí strany sestavení, které je nainstalována v globální mezipaměti sestavení a přijímá volání z částečně důvěryhodného kódu) však vyžaduje explicitní pozor, při volání do WCF jménem částečně důvěryhodné aplikace Vyhněte se zavedení chyby zabezpečení na úrovni aplikace.  
+ Tento model zabezpečení se vztahuje na uživatelem zapsaný aplikace, které nelze uplatnit další oprávnění certifikační Autority, jako je například uživatelský kód spuštěný v aplikaci ASP.NET důvěřovat střední. Však musí kód platformy plně důvěryhodné (například sestavení třetích stran, která je nainstalována v globální mezipaměti sestavení a přijímá volání od částečně důvěryhodným kódem) postupujte opatrně explicitní při volání do WCF jménem částečně důvěryhodné aplikace Vyhýbejte se ohrožení zabezpečení na úrovni aplikace.  
   
- Kód plné důvěryhodnosti byste neměli změna sadu oprávnění certifikační Autority aktuální vlákno (voláním <xref:System.Security.PermissionSet.Assert%2A>, <xref:System.Security.PermissionSet.PermitOnly%2A>, nebo <xref:System.Security.PermissionSet.Deny%2A>) před volání rozhraní API WCF jménem částečně důvěryhodného kódu. Potvrzující, odepření nebo jinak vytváření kontextu specifické pro vlákno oprávnění, která je nezávislá kontext zabezpečení na aplikační úrovni může vést k neočekávanému chování. V závislosti na aplikaci toto chování může mít za následek ohrožení zabezpečení na úrovni aplikace.  
+ Plně důvěryhodného kódu by měla neupravujte sada oprávnění CAS aktuálního vlákna (voláním <xref:System.Security.PermissionSet.Assert%2A>, <xref:System.Security.PermissionSet.PermitOnly%2A>, nebo <xref:System.Security.PermissionSet.Deny%2A>) před voláním rozhraní API pro WCF jménem částečně důvěryhodným kódem. Uplatnění, zamítnutí nebo jinak vytvoření kontextu specifické pro vlákno oprávnění, která je nezávislá kontextu zabezpečení na úrovni aplikace může způsobit neočekávané chování. V závislosti na aplikaci toto chování může vést k ohrožení zabezpečení na úrovni aplikace.  
   
- Kód, který musí být volání do WCF pomocí kontextu specifické pro vlákno oprávnění připraveno pro zpracování těchto situacích, které může způsobit:  
+ Kód, který volá do WCF pomocí oprávnění specifické pro vlákno kontextu musí být připravena ke zpracování těchto situacích, které může způsobit:  
   
--   Kontext zabezpečení specifické pro vlákno nemusí uchovávají po dobu trvání operace, což vede k potenciální výjimky zabezpečení.  
+-   Kontext zabezpečení specifické pro vlákno nemusí být zachována po dobu trvání operace, což vede k potenciálním bezpečnostním výjimkám.  
   
--   Interní kód WCF a také všechny zadaný uživatelem zpětná volání může spustit v kontextu zabezpečení jiný než ten, pod kterým původně zahájení hovoru. Tyto kontexty patří:  
+-   Vnitřní kód WCF, stejně jako všechny uživatelem zadaný zpětná volání může spustit v kontextu zabezpečení než ve kterém bylo původně zahájeno volání. Kontexty patří:  
   
     -   Kontext oprávnění aplikace.  
   
-    -   Žádné oprávnění specifické pro vlákno kontextu jste předtím vytvořili pomocí jiné uživatele vlákna používaná k volání do WCF po dobu životnosti aktuálně spuštěna <xref:System.AppDomain>.  
+    -   Jakýkoli kontext specifické pro vlákno oprávnění dříve vytvořené jinými vlákny uživatele použít k volání do WCF po celou dobu životnosti aktuálně běžících <xref:System.AppDomain>.  
   
- WCF zaručuje, že částečně důvěryhodného kódu, nelze získat plná oprávnění, pokud taková oprávnění jsou prosazený komponentu plně důvěryhodná před voláním do WCF veřejná rozhraní API. Však není zaručeno, že důsledky potvrzující úplný vztah důvěryhodnosti je izolovaný konkrétní vlákno, operace nebo akce uživatele.  
+ WCF zaručuje, že částečně důvěryhodným kódem nemůže získat oprávnění plné důvěryhodnosti, pokud taková oprávnění se uplatňovaný plně důvěryhodné komponenty před voláním do veřejných rozhraní API WCF. Však nezaručuje, že účinky uplatnění úplný vztah důvěryhodnosti je izolovaná na konkrétní vlákno, operace nebo akce uživatele.  
   
- Jako osvědčený postup, vyhněte se vytváření kontextu specifické pro vlákno oprávnění voláním <xref:System.Security.PermissionSet.Assert%2A>, <xref:System.Security.PermissionSet.PermitOnly%2A>, nebo <xref:System.Security.PermissionSet.Deny%2A>. Místo toho udělit nebo odepřít oprávnění k vlastní, aplikace tak, aby žádné <xref:System.Security.PermissionSet.Assert%2A>, <xref:System.Security.PermissionSet.Deny%2A>, nebo <xref:System.Security.PermissionSet.PermitOnly%2A> je vyžadován.  
+ Jako osvědčený postup, vyhněte se vytváření kontextu oprávnění specifické pro vlákno voláním <xref:System.Security.PermissionSet.Assert%2A>, <xref:System.Security.PermissionSet.PermitOnly%2A>, nebo <xref:System.Security.PermissionSet.Deny%2A>. Místo toho udělit nebo odepřít oprávnění k aplikaci, tak, aby žádné <xref:System.Security.PermissionSet.Assert%2A>, <xref:System.Security.PermissionSet.Deny%2A>, nebo <xref:System.Security.PermissionSet.PermitOnly%2A> je povinný.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.DataContractSerializer>  
- <xref:System.Xml.Serialization.IXmlSerializable>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.DataContractSerializer>
+- <xref:System.Xml.Serialization.IXmlSerializable>

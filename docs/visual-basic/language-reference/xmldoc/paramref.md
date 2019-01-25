@@ -5,12 +5,12 @@ helpviewer_keywords:
 - paramref XML tag
 - <paramref> XML tag
 ms.assetid: 8979d53b-beb1-41b7-b41e-6bbea1c17a03
-ms.openlocfilehash: 153f5ddeeb7d09159049af4d466b0695f5cb6f23
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 44b8124068a8cfb507fcbe389c19ff0c9168b5db
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43503199"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700244"
 ---
 # <a name="ltparamrefgt-visual-basic"></a>&lt;paramref&gt; (Visual Basic)
 Formátuje slova jako parametr.  
@@ -35,5 +35,5 @@ Formátuje slova jako parametr.
   
  [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/paramref_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
+## <a name="see-also"></a>Viz také:
+- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

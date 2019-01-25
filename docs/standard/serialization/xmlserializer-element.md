@@ -1,23 +1,23 @@
 ---
-title: '&lt;xmlSerializer&gt; – Element'
+title: '&lt;xmlSerializer&gt; Element'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <xmlSerializer> element
 - XML serialization, configuration
 - xmlSerializer element
 ms.assetid: d129d10c-3eb7-45d9-8098-5fa853825e47
-ms.openlocfilehash: 2770b82f71f3c4b43df4c44f75248e5392c528c2
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 4b511dc229c9e8321b91fbb0f9395627680e5d12
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46585251"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54591952"
 ---
-# <a name="ltxmlserializergt-element"></a>&lt;xmlSerializer&gt; – Element
+# <a name="ltxmlserializergt-element"></a>&lt;xmlSerializer&gt; Element
 Určuje, zda dodatečnou kontrolu průběh <xref:System.Xml.Serialization.XmlSerializer> je Hotovo.  
   
  \<Konfigurace >  
-\<System.XML.Serialization >  
+\<system.xml.serialization>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,7 +45,7 @@ Určuje, zda dodatečnou kontrolu průběh <xref:System.Xml.Serialization.XmlSer
 |[\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)|Obsahuje nastavení konfigurace pro <xref:System.Xml.Serialization.XmlSerializer> a <xref:System.Xml.Serialization.XmlSchemaImporter> třídy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení <xref:System.Xml.Serialization.XmlSerializer> poskytuje další vrstvu zabezpečení proti potenciální odmítnutí útoků služby při deserializaci nedůvěryhodná data. Učiní tak pokusem o detekovat nekonečné smyčce během deserializace. Pokud je zjištěno takovou podmínku, je vyvolána výjimka s následující zprávou: "došlo k vnitřní chybě: deserializace se nezdařila lze postoupit nad základního datového proudu."  
+ Ve výchozím nastavení <xref:System.Xml.Serialization.XmlSerializer> poskytuje další vrstvu zabezpečení proti potenciální odmítnutí útoků služby při deserializaci nedůvěryhodná data. Učiní tak pokusem o detekovat nekonečné smyčce během deserializace. Pokud je zjištěno takovou podmínku, je vyvolána výjimka s následující zprávou: "Došlo k vnitřní chybě: deserializace se nezdařila lze postoupit nad základního datového proudu."  
   
  Přijetí tato zpráva nemusí znamenat, že útoku služby probíhá. V některých výjimečných případech mechanismus detekce nekonečné smyčce vytváří chybné detekce a legitimní příchozí zprávy, je vyvolána výjimka. Pokud zjistíte, že v aplikaci konkrétní legitimní zprávy jsou odmítnuta, podle této další úroveň ochrany, nastavte **checkDeserializeAdvances** atribut "false".  
   
@@ -62,6 +62,6 @@ Určuje, zda dodatečnou kontrolu průběh <xref:System.Xml.Serialization.XmlSer
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.Serialization.XmlSerializer>  
-- [\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)  
+- <xref:System.Xml.Serialization.XmlSerializer>
+- [\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)
 - [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)

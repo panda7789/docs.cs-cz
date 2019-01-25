@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Help, Visual C# documentation
 - C# language
 - Visual C#
-ms.openlocfilehash: 5b0f3cc4a090e3479489285631a8d13b8b134c56
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 458b53c9a2f1ea9774a61bb3439fe041cc8c2861
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145657"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709478"
 ---
 # <a name="c-guide"></a>Průvodce jazykem C#
 
@@ -66,6 +66,6 @@ Existuje několik oddílů v příručce jazyka C#. Můžete číst je popořad�
 
 ## <a name="see-also"></a>Viz také:
 
-* [Začínáme s jazykem Visual C# a Visual Basic](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)  
-* [Průvodce technologií .NET](../standard/index.md)  
-* [Ukázky C#](https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=ProgrammingLanguage&f%5B0%5D.Value=C%23&f%5B0%5D.Text=C%23)  
+- [Začínáme s jazykem Visual C# a Visual Basic](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
+- [Průvodce technologií .NET](../standard/index.md)
+- [Ukázky C#](https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=ProgrammingLanguage&f%5B0%5D.Value=C%23&f%5B0%5D.Text=C%23)

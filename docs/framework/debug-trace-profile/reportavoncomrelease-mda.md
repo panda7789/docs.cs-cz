@@ -13,30 +13,30 @@ helpviewer_keywords:
 ms.assetid: a2b86b63-08b2-4943-b344-3c2cf46ccd31
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7b03b4f3f8c5b6e3e86903a240259ddf2fbf5c71
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c70c70f251fca9312019d4c63304e8354bf87fd1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33386363"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54729155"
 ---
 # <a name="reportavoncomrelease-mda"></a>reportAvOnComRelease – pomocník spravovaného ladění (MDA)
-`reportAvOnComRelease` Pomocník spravovaného ladění (MDA) se aktivuje, pokud jsou výjimky vyvolány z důvodu chyby při provádění COM spolupráce a pomocí počítání uživatelských referencí <xref:System.Runtime.InteropServices.Marshal.Release%2A> nebo <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> metoda v kombinaci s nezpracovaná volání COM.  
+`reportAvOnComRelease` Pomocníka spravovaného ladění (MDA) se aktivuje, pokud jsou výjimky vyvolány z důvodu chyby při provádění COM interop a používá počítání uživatelských referencí <xref:System.Runtime.InteropServices.Marshal.Release%2A> nebo <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> metoda v kombinaci s nezpracovaná volání COM.  
   
 ## <a name="symptoms"></a>Příznaky  
  Narušení přístupu a poškození paměti.  
   
-## <a name="cause"></a>příčina  
- V některých případech je vyvolána výjimka z důvodu chyby při provádění COM spolupráce a pomocí počítání uživatelských referencí <xref:System.Runtime.InteropServices.Marshal.Release%2A> nebo <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> metoda v kombinaci s nezpracovaná volání COM. Za normálních okolností se tato výjimka je zahozena, protože není tak by způsobit narušení přístupu v prostředí CLR, bude mimo provoz. Pokud tohoto pomocníka je povoleno, můžete tyto výjimky zjistil a hlášené místo jednoduše budou odstraněny.  
+## <a name="cause"></a>Příčina  
+ V některých případech je vyvolána výjimka z důvodu chyby při provádění COM interop a používá počítání uživatelských referencí <xref:System.Runtime.InteropServices.Marshal.Release%2A> nebo <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> metoda v kombinaci s nezpracovaná volání COM. Za normálních okolností se tato výjimka je zahozena, protože pokud to neuděláte by způsobila porušení přístupu v prostředí CLR, Probíhá ukončování. Pokud tohoto Pomocníka s nastavením je povoleno, možné takové výjimky zjištěna a předávat místo jednoduše zahozeny.  
   
 ## <a name="resolution"></a>Rozlišení  
- Zkontrolujte vaši informaci, kód a vyhledejte chyby při počítání a také zkoumání nativních klientů objektu pro chyby při počítání referencí.  
+ Zkontrolujte vaši informaci, počítací kódu a vyhledejte chyby, stejně jako zkoumání nativní klienty objektu pro chyby při počítání referencí.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- K dispozici jsou dva režimy. Pokud `allowAv` atribut je `true`, pomocníka brání modulu runtime zahození porušení přístupu. Pokud `allowAv` je `false`, který je výchozí, modul runtime zahodí narušení přístupu, ale upozornění údajně uživateli znamenat, že byla vyvolána a zahodí výjimku.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ K dispozici jsou dva režimy. Pokud `allowAv` atribut je `true`, pomocníka zabraňuje modulu runtime zahazuje se narušení přístupu. Pokud `allowAv` je `false`, což je výchozí, modul runtime odstraní narušení přístupu, ale upozornění se oznamuje službě uživatele k označení, že výjimka byla vyvolána a zahodí.  
   
 ## <a name="output"></a>Výstup  
- Pokud je to možné výstup obsahuje původní vtable ukazatel rozhraní COM. Jinak se zobrazí informační zpráva.  
+ Pokud je to možné výstup obsahuje původní ukazatel rozhraní modelu COM vtable. V opačném případě se zobrazí informační zpráva.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -48,7 +48,7 @@ ms.locfileid: "33386363"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.MarshalAsAttribute>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

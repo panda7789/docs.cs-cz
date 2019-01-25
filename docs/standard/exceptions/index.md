@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: f99a1d29-a2a8-47af-9707-9909f9010735
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 263e6394a57ec3e7ef00eb79671d9b8ac47e724f
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 648a4d9e2f9be2cd8a5912ebfe272331a70ee76e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845590"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54707879"
 ---
 # <a name="handling-and-throwing-exceptions-in-net"></a>Zpracování a vyvolání výjimek v rozhraní .NET
 
@@ -60,13 +60,13 @@ Následující tabulka uvádí některé běžné výjimky s příklady, co mů�
 
 ## <a name="see-also"></a>Viz také:
 
-- [Třída a vlastnosti výjimky](exception-class-and-properties.md)  
-- [Postupy: Používání bloku Try/Catch k zachycování výjimek](how-to-use-the-try-catch-block-to-catch-exceptions.md)  
-- [Postupy: Používání specifických výjimek v bloku Catch](how-to-use-specific-exceptions-in-a-catch-block.md)  
-- [Postupy: Explicitní generování výjimek](how-to-explicitly-throw-exceptions.md)  
-- [Postupy: Vytváření uživatelsky definovaných výjimek](how-to-create-user-defined-exceptions.md)  
-- [Používání obslužných rutin uživatelsky filtrovaných výjimek](using-user-filtered-exception-handlers.md)  
-- [Postupy: Používání bloků Finally](how-to-use-finally-blocks.md)  
-- [Zpracování výjimek vzájemné spolupráce COM](handling-com-interop-exceptions.md)  
-- [Doporučené postupy pro výjimky](best-practices-for-exceptions.md)  
+- [Třída a vlastnosti výjimky](exception-class-and-properties.md)
+- [Postupy: Používání bloku Try-Catch k zachycování výjimek](how-to-use-the-try-catch-block-to-catch-exceptions.md)
+- [Postupy: Používání specifických výjimek v bloku Catch](how-to-use-specific-exceptions-in-a-catch-block.md)
+- [Postupy: Explicitní generování výjimek](how-to-explicitly-throw-exceptions.md)
+- [Postupy: Vytvořit uživatelsky definovaných výjimek](how-to-create-user-defined-exceptions.md)
+- [Používání obslužných rutin uživatelsky filtrovaných výjimek](using-user-filtered-exception-handlers.md)
+- [Postupy: Použití bloku Finally.](how-to-use-finally-blocks.md)
+- [Zpracování výjimek vzájemné spolupráce COM](handling-com-interop-exceptions.md)
+- [Doporučené postupy pro výjimky](best-practices-for-exceptions.md)
 - [Co každých vývoj je potřeba vědět o výjimky v modulu Runtime](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/exceptions.md).

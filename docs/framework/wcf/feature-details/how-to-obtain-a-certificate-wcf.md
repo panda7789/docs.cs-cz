@@ -1,17 +1,17 @@
 ---
-title: 'Postupy: získání certifikátu (WCF)'
+title: 'Postupy: Získání certifikátu (WCF)'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], obtaining
 ms.assetid: d53762fd-15ea-42dc-b0ea-6a6597aa23f7
-ms.openlocfilehash: 664eb62997123ea248b0b69700b86bf794646d4b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: cefea47d77fef9a59234584b02b03dca4cd99ebe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519219"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709439"
 ---
-# <a name="how-to-obtain-a-certificate-wcf"></a>Postupy: získání certifikátu (WCF)
+# <a name="how-to-obtain-a-certificate-wcf"></a>Postupy: Získání certifikátu (WCF)
 K používání některé Windows Communication Foundation (WCF) funkce, která používají certifikáty X.509, stačí nejprve získat certifikáty.  
   
 ### <a name="to-obtain-an-x509-certificate"></a>Získání certifikátu X.509  
@@ -27,6 +27,6 @@ K používání některé Windows Communication Foundation (WCF) funkce, která 
     > [!NOTE]
     >  Podle toho, která přístup, příjemce, který obsahuje certifikát X.509 žádosti SOAP musí důvěřovat certifikátu X.509. To znamená, že certifikát X.509 nebo vystavitele v řetězu certifikátů je v úložišti certifikátů důvěryhodných osob a že certifikát X.509 není v úložišti nedůvěryhodné certifikáty.  
   
-## <a name="see-also"></a>Viz také  
- [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [Postupy: Vytváření dočasných certifikátů pro použití během vývoje](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)
+## <a name="see-also"></a>Viz také:
+- [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Postupy: Vytváření dočasných certifikátů pro použití během vývoje.](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)

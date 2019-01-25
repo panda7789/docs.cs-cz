@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extension methods [C#], for enums
 - enum extensibility [C#]
 ms.assetid: 100106f9-1e54-462c-8ebe-3892fe23b6eb
-ms.openlocfilehash: f8495cd747cf895c4da34c216ba9285182890af1
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 411606b6d86f8781be0cb2db19474d563c09a610
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53238726"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54725126"
 ---
 # <a name="how-to-create-a-new-method-for-an-enumeration-c-programming-guide"></a>Postupy: Vytvoření nové metody pro výčet (C# Průvodce programováním v)
 Rozšiřující metody slouží k přidání funkce specifické pro typ konkrétní výčtu.  
@@ -27,7 +27,7 @@ Rozšiřující metody slouží k přidání funkce specifické pro typ konkrét
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento kód spustit, zkopírujte a vložte ho do jazyka Visual C# projekt konzolové aplikace, který nebyl vytvořen v sadě Visual Studio. Ve výchozím nastavení, tento projekt zaměřen na verzi 3.5 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], a obsahuje odkaz na System.Core.dll a `using` směrnice pro System.Linq. Pokud z projektu chybí jeden nebo více z těchto požadavků, můžete je přidat ručně.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)

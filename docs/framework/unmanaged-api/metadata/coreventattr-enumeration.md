@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e4e4b9d9c7481bdc51aaf75b26b3805940875f8d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d34aa954126cc26519aaea963f99299e5557d2c8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442303"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54743048"
 ---
 # <a name="coreventattr-enumeration"></a>CorEventAttr – výčet
-Obsahuje hodnoty, které popisují metadata události.  
+Obsahuje hodnoty, které popisují metadata událost.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,16 +43,16 @@ typedef enum CorEventAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`evSpecialName`|Určuje, že událost je speciální a že její název popisuje, jak.|  
+|`evSpecialName`|Určuje, že událost je speciální a který odpovídá názvu jak.|  
 |`evReservedMask`|Modul common language runtime vyhrazené pro interní použití.|  
-|`evRTSpecialName`|Určuje, že by měl modul common language runtime kontrolovat kódování název události.|  
+|`evRTSpecialName`|Určuje, že modul common language runtime by měla kontrolovat kódování název události.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

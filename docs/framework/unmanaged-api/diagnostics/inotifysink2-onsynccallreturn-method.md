@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ebfa886e85cd72c4ea7d088ef345bc9968dec18f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bc182687b12f5941996c17f4c09da44c49ef815c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426004"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54694903"
 ---
 # <a name="inotifysink2onsynccallreturn-method"></a>INotifySink2::OnSyncCallReturn – metoda
-Získá volá při volání.  
+Získá vyvolán při volání vrátí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +40,21 @@ HRESULT OnSyncCallReturn
   
 #### <a name="parameters"></a>Parametry  
  `in_CallID`  
- [v] ID se vrácená z volání. V tématu [CALL_ID – struktura](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
+ [in] Identifikátor hovoru vráceného z. Zobrazit [call_id – struktura](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
   
  `in_pBuffer`  
- [v] Volání vyrovnávací paměti.  
+ [in] Volání vyrovnávací paměti.  
   
  `in_BufferSize`  
- [v] Velikost vyrovnávací paměti volání, v bajtech.  
+ [in] Velikost vyrovnávací paměti volání, v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda bude úspěšná.  
+ S_OK, pokud metoda uspěje.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** ProtocolNotify2.idl  
   
-## <a name="see-also"></a>Viz také  
- [INotifySink2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
- [INotifySource2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)  
- [INotifyConnection2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [INotifySink2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
+- [INotifySource2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
+- [INotifyConnection2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)

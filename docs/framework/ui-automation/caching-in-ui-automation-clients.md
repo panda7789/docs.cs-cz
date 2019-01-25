@@ -7,16 +7,16 @@ helpviewer_keywords:
 ms.assetid: 94c15031-4975-43cc-bcd5-c9439ed21c9c
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 2b821a1deb947db86e89207c447045f76a8bb842
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 4571af701ea28c3b7dbecbb1b1a82e7093c2831e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035107"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646458"
 ---
 # <a name="caching-in-ui-automation-clients"></a>Práce s mezipamětí u klientů automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Toto téma představuje ukládání do mezipaměti [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vzory vlastností a ovládacího prvku.  
   
@@ -103,7 +103,7 @@ ms.locfileid: "48035107"
   
  Aktualizace mezipaměti nezmění vlastnosti všechny existující <xref:System.Windows.Automation.AutomationElement> odkazy.  
   
-## <a name="see-also"></a>Viz také  
- [Události automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)  
- [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)  
- [Ukázka FetchTimer](https://msdn.microsoft.com/library/5b7d3294-de22-4f24-b2d6-d4785a304b90)
+## <a name="see-also"></a>Viz také:
+- [Události automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)
+- [Použití mezipaměti při automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
+- [Ukázka FetchTimer](https://msdn.microsoft.com/library/5b7d3294-de22-4f24-b2d6-d4785a304b90)

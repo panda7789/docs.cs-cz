@@ -1,5 +1,5 @@
 ---
-title: ICorDebugCode4 rozhraní
+title: ICorDebugCode4 Interface
 ms.date: 03/30/2017
 api_name:
 - ICorDebugCode4
@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 624db77f0db2fe374e16abae64b6bf6ad290baa5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c38ce53ca1c02ead03ab9d1ff1e53cda772333f1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33411431"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54739716"
 ---
-# <a name="icordebugcode4-interface"></a>ICorDebugCode4 rozhraní
-Poskytne metodu, která umožňuje ladicí program výčet místní proměnné a argumenty ve funkci.  
+# <a name="icordebugcode4-interface"></a>ICorDebugCode4 Interface
+Poskytuje metodu, která umožňuje ladicí program, který výčet lokálních proměnných a argumentů funkce.  
   
 ## <a name="methods"></a>Metody  
   
@@ -35,10 +35,10 @@ Poskytne metodu, která umožňuje ladicí program výčet místní proměnné a
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -46,8 +46,8 @@ Poskytne metodu, která umožňuje ladicí program výčet místní proměnné a
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
-    
-    
- [ICorDebugCode3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+
+
+- [ICorDebugCode3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

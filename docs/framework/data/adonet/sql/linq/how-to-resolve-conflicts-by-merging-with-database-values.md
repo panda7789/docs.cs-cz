@@ -1,46 +1,46 @@
 ---
-title: 'Postupy: řešení konfliktů sloučením s hodnotami databáze'
+title: 'Postupy: Řešení konfliktů sloučení s hodnotami v databázi'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1988b79c-3bfc-4c5c-a08a-86cf638bbe17
-ms.openlocfilehash: a263afb7daceccecf7153c6e9bcfc68e10638c30
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2b6daa28c23c74eaea21f1f3d499a2e206252abd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33360986"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744125"
 ---
-# <a name="how-to-resolve-conflicts-by-merging-with-database-values"></a>Postupy: řešení konfliktů sloučením s hodnotami databáze
-Chcete-li sjednocení rozdílů mezi hodnotami očekávaných a aktuálních databáze, než se pokusíte odeslat znovu provedené změny, můžete použít <xref:System.Data.Linq.RefreshMode.KeepChanges> sloučit hodnot v databázi s aktuální hodnoty členů klienta. Další informace najdete v tématu [optimistickou metodu souběžného: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
+# <a name="how-to-resolve-conflicts-by-merging-with-database-values"></a>Postupy: Řešení konfliktů sloučení s hodnotami v databázi
+Sjednocení rozdílů mezi hodnotami očekávaných a aktuálních databáze, než se pokusíte znovu odeslat změny, můžete použít <xref:System.Data.Linq.RefreshMode.KeepChanges> sloučit hodnot v databázi pomocí aktuálních hodnot členů klienta. Další informace najdete v tématu [optimistického řízení souběžnosti: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
   
 > [!NOTE]
->  Ve všech případech je nejprve záznamu v klientovi aktualizovat načtením aktualizovaná data z databáze. Tato akce je zajištěno, že na další pokus o aktualizaci nebudou na stejném kontrolách souběžnosti.  
+>  Ve všech případech se záznam na straně klienta se aktualizují nejprve načtením aktualizovaná data z databáze. Tato akce zajistí, že dalším pokusu o aktualizaci nebudou na stejném kontrolách souběžnosti.  
   
 ## <a name="example"></a>Příklad  
- V tomto scénáři <xref:System.Data.Linq.ChangeConflictException> je vyvolána výjimka, když se uživatel1 pokusí odeslat změny, protože uživatel2 mezitím změnila sloupce asistenta a oddělení. V následující tabulce jsou uvedeny situaci.  
+ V tomto scénáři <xref:System.Data.Linq.ChangeConflictException> User1 se pokusí odeslat změny, protože uživatel2 se mezitím změnila Pomocníka s nastavením a oddělení sloupců je vyvolána výjimka. V následující tabulce jsou uvedeny situace.  
   
-||Správce|Pomocník pro|Oddělení|  
+||Správce|Pomocníka s nastavením|Oddělení|  
 |------|-------------|---------------|----------------|  
-|Při dotazu uživatel1 a uživatel2 původního stavu databáze.|Alfreds|Marie|Prodeje|  
-|Uživatel1 připraví odešle tyto změny.|Alfred||Marketingové|  
-|Uživatel2 již odeslána tyto změny.||Marie|Služba|  
+|Když dotazovat uživatel1, uživatel2 tak původní stav databáze.|Alfreds|Maria|Prodej|  
+|Uživatel1 připravuje k odeslání těchto změn.|Alfred||Marketing|  
+|Uživatel2 už odeslal tyto změny.||Mary|Služba|  
   
- Uživatel1 rozhodne na tento konflikt vyřešte sloučením hodnot v databázi s aktuální hodnoty členů klienta. Výsledkem bude, že databáze, které hodnoty budou přepsána jenom v případě, že aktuální změn také změnil tuto hodnotu.  
+ Uživatel User1 se rozhodne tento konflikt sloučení hodnot v databázi pomocí aktuálních hodnot členů klienta. Výsledkem bude tuto databázi, hodnoty jsou přepsány, pouze v případě, že aktuální sady změn také změnil tuto hodnotu.  
   
- Když uživatel1 vyřeší konflikt pomocí <xref:System.Data.Linq.RefreshMode.KeepChanges>, výsledek v databázi je stejně jako v následující tabulce:  
+ Když uživatel User1 konflikt pomocí <xref:System.Data.Linq.RefreshMode.KeepChanges>, výsledek v databázi je stejně jako v následující tabulce:  
   
-||Správce|Pomocník pro|Oddělení|  
+||Správce|Pomocníka s nastavením|Oddělení|  
 |------|-------------|---------------|----------------|  
-|Nový stav po řešení konfliktů.|Alfred<br /><br /> (z uživatel1)|Marie<br /><br /> (z uživatel2)|Marketingové<br /><br /> (z uživatel1)|  
+|Nový stav po vyřešení konfliktu.|Alfred<br /><br /> (z User1)|Mary<br /><br /> (z uživatel2)|Marketing<br /><br /> (z User1)|  
   
- Následující příklad ukazuje způsob sloučení hodnot v databázi s aktuální hodnoty členů klienta (Pokud klient změnil tuto hodnotu). Dojde k žádné kontroly nebo vlastní zpracování konfliktů jednotlivými členy.  
+ Následující příklad ukazuje, jak sloučit hodnot v databázi pomocí aktuálních hodnot členů klienta (Pokud klient také změnil tuto hodnotu). Dojde k žádné kontroly nebo vlastního zpracování konfliktů jednotliví členové.  
   
  [!code-csharp[System.Data.Linq.RefreshMode#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/system.data.linq.refreshmode/cs/program.cs#3)]
  [!code-vb[System.Data.Linq.RefreshMode#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.refreshmode/vb/module1.vb#3)]  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Řešení konfliktů přepsáním hodnot v databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-overwriting-database-values.md)  
- [Postupy: Řešení konfliktů zachováním hodnot v databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-retaining-database-values.md)  
- [Postupy: Správa konfliktů změn](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Řešení konfliktů přepsáním hodnot v databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-overwriting-database-values.md)
+- [Postupy: Řešení konfliktů zachováním hodnot v databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-retaining-database-values.md)
+- [Postupy: Správa konfliktů změn](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)

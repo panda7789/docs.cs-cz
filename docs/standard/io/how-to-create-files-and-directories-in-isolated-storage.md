@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 2ca4d2a4-809b-4f00-bc08-bf4a64d3a5c3
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 08beb44fdb58ab1c1d53f70ac0653348b96fcb18
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 92f4b686a5a2bdc74ff3f0f68de4c6b2048da5a1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47157831"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709010"
 ---
 # <a name="how-to-create-files-and-directories-in-isolated-storage"></a>Postupy: Vytváření souborů a adresářů v izolovaném úložišti
 Po získání izolovaného úložiště, můžete vytvořit adresářů a souborů k ukládání dat. V rámci úložiště jsou zadané názvy souborů a adresářů s ohledem na kořenovém virtuálním souborovém systému.  
@@ -40,6 +40,6 @@ Po získání izolovaného úložiště, můžete vytvořit adresářů a soubor
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFile>
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>
 - [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)

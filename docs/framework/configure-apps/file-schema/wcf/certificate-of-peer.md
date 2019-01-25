@@ -2,22 +2,22 @@
 title: '&lt;certificate&gt; – &lt;peer&gt;'
 ms.date: 03/30/2017
 ms.assetid: 48b69142-c957-4305-a042-c9d0c9a55c0e
-ms.openlocfilehash: 067168742636878b836f315f79a49c2cf0c99613
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 785c0a6d8f009d8ab643dcc3c90e98b95c24a8f2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54147158"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54707944"
 ---
 # <a name="ltcertificategt-of-ltpeergt"></a>&lt;certificate&gt; – &lt;peer&gt;
 Určuje certifikát používaný druhou stranou.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<serviceBehaviors >  
+\<serviceBehaviors>  
 \<chování >  
-\<serviceCredentials >  
-\<sdílená >  
+\<serviceCredentials>  
+\<peer>  
 \<certifikát >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,7 +39,7 @@ Určuje certifikát používaný druhou stranou.
 |`findValue`|Řetězec, který obsahuje hodnotu vyhledávání v úložišti certifikátů X.509. Typ obsažené v atributu musí splňovat požadavky na zadané `x509FindType`. Výchozí hodnota je prázdný řetězec.|  
 |`storeLocation`|Určuje umístění úložiště certifikátů X.509, který klient používá k ověření certifikátu druhé strany. Platné hodnoty patří:<br /><br /> -LocalMachine: úložiště certifikátů přiřazené do místního počítače.<br />-CurrentUser: úložiště certifikátů přiřazené aktuálnímu uživateli.<br /><br /> Výchozí hodnota je v místním počítači.|  
 |`storeName`|Určuje název úložiště certifikátu X.509 otevřete. Platné hodnoty patří:<br /><br /> -Adresáře: Úložiště certifikátů pro ostatní uživatele.<br />-AuthRoot: Úložiště certifikátů pro nezávislé certifikační autority (CA).<br />-CertificateAuthority: Úložiště certifikátů zprostředkující certifikační autority (CA).<br />– Zakázáno: Úložiště certifikátů pro odvolaných certifikátů.<br />-Můj: Úložiště certifikátů pro osobní certifikáty.<br />-Root: Úložiště certifikátů pro důvěryhodné kořenové certifikační autority (CA).<br />-TrustedPeople: Úložiště certifikátů přímo důvěryhodných osob a prostředky.<br />-TrustedPublisher: Úložiště certifikátů přímo důvěryhodných vydavatelů.<br /><br /> Výchozí hodnota je My.|  
-|`X509FindType`|Definuje typ hledání X.509, který se spustí. Platné hodnoty patří:<br /><br /> -FindByThumbPrint<br />-FindBySubjectName<br />-FindBySubjectDistinguishedName<br />-FindByIssuerName<br />-FindByIssuerDistinguishedName<br />-FindBySerialNumber<br />-FindByTimeValid<br />-FindByTimeNotYetValid<br />-FindByTemplateName<br />-FindByApplicationPolicy<br />-FindByCertificatePolicy<br />-FindByExtension<br />-FindByKeyUsage<br />-FindBySubjectKeyIdentifier<br /><br /> Typ součástí `findValue` atribut musí splňovat požadavky na zadané `X509FindType`.<br /><br /> Výchozí hodnota je FindBySubjectDistinguishedName.|  
+|`X509FindType`|Definuje typ hledání X.509, který se spustí. Platné hodnoty patří:<br /><br /> -FindByThumbPrint<br />-FindBySubjectName<br />-FindBySubjectDistinguishedName<br />-   FindByIssuerName<br />-   FindByIssuerDistinguishedName<br />-   FindBySerialNumber<br />-FindByTimeValid<br />-FindByTimeNotYetValid<br />-FindByTemplateName<br />-FindByApplicationPolicy<br />-FindByCertificatePolicy<br />-FindByExtension<br />-FindByKeyUsage<br />-   FindBySubjectKeyIdentifier<br /><br /> Typ součástí `findValue` atribut musí splňovat požadavky na zadané `X509FindType`.<br /><br /> Výchozí hodnota je FindBySubjectDistinguishedName.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -55,15 +55,15 @@ Určuje certifikát používaný druhou stranou.
   
  Další informace o programování peer-to-peer, naleznete v tématu [sítě Peer-to-Peer](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.PeerCredentialElement>  
- <xref:System.ServiceModel.Configuration.PeerCredentialElement.Certificate%2A>  
- <xref:System.ServiceModel.Configuration.X509PeerCertificateElement>  
- <xref:System.ServiceModel.Security.PeerCredential.Certificate%2A>  
- <xref:System.ServiceModel.Security.PeerCredential>  
- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
- [Ověřování zpráv protokolu peer Channel](https://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
- [Vlastní ověřování protokolu peer Channel](https://msdn.microsoft.com/library/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
- [Zabezpečení aplikací protokolu Peer Channel](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.PeerCredentialElement>
+- <xref:System.ServiceModel.Configuration.PeerCredentialElement.Certificate%2A>
+- <xref:System.ServiceModel.Configuration.X509PeerCertificateElement>
+- <xref:System.ServiceModel.Security.PeerCredential.Certificate%2A>
+- <xref:System.ServiceModel.Security.PeerCredential>
+- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)
+- [Ověřování zpráv protokolu peer Channel](https://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)
+- [Vlastní ověřování protokolu peer Channel](https://msdn.microsoft.com/library/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)
+- [Zabezpečení aplikací protokolu Peer Channel](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

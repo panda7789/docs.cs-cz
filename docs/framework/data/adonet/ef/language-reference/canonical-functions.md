@@ -2,53 +2,53 @@
 title: Kanonické funkce
 ms.date: 03/30/2017
 ms.assetid: bbcc9928-36ea-4dff-9e31-96549ffed958
-ms.openlocfilehash: fed6e45056e318ec0bf34951097304ef3c98f629
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 4657fd2b68008e4194fc39982dc2ac5b34a644ce
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32760931"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513877"
 ---
 # <a name="canonical-functions"></a>Kanonické funkce
-Tato část popisuje kanonické funkce, které jsou podporovány všechny zprostředkovateli dat a mohou být využívána všechny dotazování technologie. Kanonické funkce nelze rozšířit pomocí zprostředkovatele.  
+Tato část popisuje kanonické funkce, které jsou podporovány všechny poskytovatele dat a může využívat všechny dotazy technologie. Kanonické funkce nelze rozšířit poskytovatelem.  
   
- Tyto kanonické funkce bude možné přeložit funkci odpovídající zdroj dat pro zprostředkovatele. To umožňuje volání funkce vyjádřené v běžné formuláře napříč datové zdroje.  
+ Tyto kanonické funkce se přeložit na funkci odpovídající zdroj dat poskytovatele. To umožňuje vyjádřené v běžné formě napříč zdroji dat obsahující záznamy volání funkcí.  
   
- Protože tyto kanonické funkce jsou nezávislé na zdroje dat, jsou definovány argument a návratové typy kanonické funkce z hlediska typy v konceptuálním modelu. Některé zdroje dat však nemusí podporovat všechny typy v konceptuálním modelu.  
+ Protože tyto kanonické funkce jsou nezávislé na zdroje dat, jsou definována v argumentu a návratovým typem kanonické funkce typů v konceptuálním modelu. Některé zdroje dat však nemusí podporovat všechny typy v konceptuálním modelu.  
   
- Při použití kanonické funkce v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz, příslušnou funkci bude volána ve zdroji dat.  
+ Při použití kanonické funkce v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu, příslušnou funkci bude volána ve zdroji dat.  
   
- Všechny kanonické funkce mít hodnotu null vstup chování a chybové stavy explicitně určena. Poskytovatelé úložiště, by měly splňovat chování, ale [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] nevynucuje toto chování.  
+ Všechny kanonické funkce mají chování vstupní hodnotu null a chybové stavy explicitně zadán. Poskytovatelé Store by měly splňovat toto chování ale [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] nevynucuje toto chování.  
   
- Pro scénáře LINQ dotazy proti [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] zahrnují mapování metod modulu CLR do metod v podkladovém zdroji dat. Mapa metody CLR na kanonické funkce tak, aby konkrétní nastavena metod bude správně mapovat, bez ohledu na zdroj dat.  
+ U scénářů s LINQ dotazy proti [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] zahrnují mapování metod v podkladovém zdroji dat metod modulu CLR. Mapu metod modulu CLR, aby kanonické funkce tak, aby konkrétní sadu metod se správně rozvržení, bez ohledu na zdroj dat  
   
 ## <a name="canonical-functions-namespace"></a>Namespace kanonické funkce  
- Obor názvů pro kanonické funkce je <xref:System.Data.Metadata.Edm>. <xref:System.Data.Metadata.Edm> Obor názvů je automaticky součástí všechny dotazy. Ale pokud je importované jiný obor názvů, který obsahuje funkce se stejným názvem jako kanonické funkce (v <xref:System.Data.Metadata.Edm> oboru názvů), je nutné zadat obor názvů.  
+ Obor názvů pro kanonické funkce je <xref:System.Data.Metadata.Edm>. <xref:System.Data.Metadata.Edm> Obor názvů je automaticky zahrnut ve všech dotazů. Ale pokud dojde k importu jiný obor názvů, který obsahuje funkce se stejným názvem jako kanonické funkce (v <xref:System.Data.Metadata.Edm> oboru názvů), je nutné zadat obor názvů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Agregační kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)  
- Popisuje agregace [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
+ Tento článek popisuje agregace [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
   
  [Matematické kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)  
- Popisuje matematické [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
+ Tento článek popisuje matematické [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
   
  [Řetězcové kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)  
- Popisuje řetězec [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
+ Tento článek popisuje řetězec [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
   
  [Kanonické funkce pro datum a čas](../../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)  
- Popisuje data a času [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
+ Tento článek popisuje data a času [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
   
  [Bitové kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)  
- Popisuje bitový [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
+ Tento článek popisuje bitový [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
   
  [Prostorové funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/spatial-functions.md)  
- Popisuje Spatial [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
+ Tento článek popisuje Spatial [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kanonické funkce.  
   
  [Jiné kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/other-canonical-functions.md)  
- Popisuje funkce není klasifikovaný bitové, datum a čas, řetězec, matematické nebo agregace.  
+ Tento článek popisuje funkce nejsou klasifikovány jako bitové operace, datum a čas, řetězec, matematických výpočtů nebo agregace.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)  
- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
- [Konceptuální model v kanonickém formátu pro mapování funkcí SQL Serveru](../../../../../../docs/framework/data/adonet/ef/conceptual-model-canonical-to-sql-server-functions-mapping.md)  
- [Uživatelem definované funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/user-defined-functions-entity-sql.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Konceptuální model v kanonickém formátu pro mapování funkcí SQL Serveru](../../../../../../docs/framework/data/adonet/ef/conceptual-model-canonical-to-sql-server-functions-mapping.md)
+- [Uživatelem definované funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/user-defined-functions-entity-sql.md)

@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: ea01a858-65da-4348-800f-5e3df59d4d79
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: dd521e3afa7584cadb28829028a5ecfd1cb55a92
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: ea860c185d68a24c31ec24de4a087b9b98fe791f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612295"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54727804"
 ---
 # <a name="ltcleargt-element-for-ltnamedcachesgt"></a>&lt;Vymazat&gt; – Element pro &lt;namedCaches&gt;
 Vymaže všechny `namedCache` položky `namedCaches` kolekce pro mezipaměť.  
   
  \<system.runtime.caching>  
-\<memoryCache >  
-\<namedcaches – >  
+\<memoryCache>  
+\<namedCaches>  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -52,5 +52,5 @@ Vymaže všechny `namedCache` položky `namedCaches` kolekce pro mezipaměť.
 ## <a name="remarks"></a>Poznámky  
  `clear` Element vymaže všechny `namedCache` položky v kolekci s názvem mezipaměti pro mezipaměť. Můžete použít `clear` prvek před použitím `add` prvek, který chcete přidat novou položku pojmenovanou mezipaměť, aby bylo možné je potřeba mít jistotu, neexistují žádné jiné s názvem mezipaměti v kolekci.  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 - [\<namedcaches – > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)

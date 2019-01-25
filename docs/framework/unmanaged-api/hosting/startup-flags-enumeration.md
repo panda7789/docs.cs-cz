@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f4680187de7318a6438bf6a5e6bd7c5f3acd05c2
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 6a4a9bda348ce4c0dfd1e41d4154cad88d4966a1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46702969"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54701752"
 ---
 # <a name="startupflags-enumeration"></a>STARTUP_FLAGS – výčet
 Obsahuje hodnoty, které označují chování při spouštění modulu common language runtime (CLR). Uvolňování paměti je standardně nesouběžné a pouze v knihovně základních tříd je načtena do doménově neutrální oblasti.  
@@ -57,7 +57,7 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`STARTUP_CONCURRENT_GC`|Určuje, že má být použito souběžné uvolňování paměti. Pokud volající požaduje sestavení serveru a souběžné uvolňování paměti na počítači s jedním procesorem, sestavení pracovní stanice a nesouběžné uvolnění místo toho spuštěno. **Poznámka:** nepodporuje souběžné uvolňování paměti v aplikacích, které jsou spuštěny modulu WOW64 x86 emulátor v 64bitových systémech, které implementují Intel Itanium architekturu (dříve označovanou jako IA-64). Další informace o použití modulu WOW64 v 64bitových systémech Windows najdete v tématu [spuštění 32bitových aplikací](/windows/desktop/WinProg64/running-32-bit-applications).|  
+|`STARTUP_CONCURRENT_GC`|Určuje, že má být použito souběžné uvolňování paměti. Pokud volající požaduje sestavení serveru a souběžné uvolňování paměti na počítači s jedním procesorem, sestavení pracovní stanice a nesouběžné uvolnění místo toho spuštěno. **Poznámka:**  Souběžné uvolňování paměti se nepodporuje v aplikacích, které jsou spuštěny modulu WOW64 x86 emulátor v 64bitových systémech, které implementují Intel Itanium architekturu (dříve označovanou jako IA-64). Další informace o použití modulu WOW64 v 64bitových systémech Windows najdete v tématu [spuštění 32bitových aplikací](/windows/desktop/WinProg64/running-32-bit-applications).|  
 |`STARTUP_LOADER_OPTIMIZATION_MASK`|Určuje, že optimalizační zavaděč se vyskytují.|  
 |`STARTUP_LOADER_OPTIMIZATION_SINGLE_DOMAIN`|Určuje, že žádná sestavení nejsou načtena jako doménově neutrální.|  
 |`STARTUP_LOADER_OPTIMIZATION_MULTI_DOMAIN`|Určuje, že všechna sestavení jsou načtena jako doménově neutrální.|  
@@ -75,7 +75,7 @@ typedef enum {
 |`STARTUP_ARM`|Určuje, zda je povoleno sledování prostředků domény aplikace. Zobrazit <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> vlastnost a [ \<appdomainresourcemonitoring – > Element](../../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -83,5 +83,5 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

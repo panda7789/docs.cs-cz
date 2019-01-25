@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 3d726b71-4d8b-4581-a3bb-02b9af51d11b
-ms.openlocfilehash: 15ead0a99782fcb329767395a316d9287337173a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: b31694e41e6e6568feb0cb32364b291657269488
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53144590"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54618552"
 ---
 # <a name="transport-security-with-certificate-authentication"></a>Zabezpečení přenosu s ověřováním certifikátu
 Toto téma popisuje, při použití zabezpečení přenosu pomocí certifikátů X.509 pro ověření klienta a serveru. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikátů X.509](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates). Certifikáty musí být vystavené certifikační autority, což se často stává třetích stran vystavitelů certifikátů. V doméně systému Windows Server Active Directory Certificate Services slouží k vydávání certifikátů pro klientské počítače v doméně. Další informace najdete v části [Windows 2008 R2 Certificate Services](https://go.microsoft.com/fwlink/?LinkID=209949&clcid=0x409). V tomto scénáři je služba hostována v části Internetová informační služba (), který je nakonfigurovaný s vrstvy SSL (Secure Sockets). Služba je nakonfigurována s certifikátem protokolu SSL (X.509) a umožňuje klientům ověřit identitu serveru. Klient je také nakonfigurováno s certifikát X.509, který umožňuje službě k ověření identity klienta. Klient musí důvěřovat certifikátu serveru a server musí důvěřovat certifikátu klienta. Skutečné mechanismu jak klienta a služby ověří identitu uživatele toho druhého je nad rámec tohoto tématu. Další informace najdete v části [digitální podpis v encyklopedii Wikipedia](https://go.microsoft.com/fwlink/?LinkId=253157).  
@@ -137,6 +137,6 @@ cc.Close();
 <startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup></configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

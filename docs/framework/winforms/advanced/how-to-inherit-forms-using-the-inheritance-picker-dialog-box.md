@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Inheritance Picker dialog box
 - inherited forms [Windows Forms], creating
 ms.assetid: 969b4c04-12aa-4297-93a2-0ae747447823
-ms.openlocfilehash: 7a6de60ec7621792b4f19857a2743f64cbdc686c
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 94fe3d551e8f846d8deec6f2b6ab9e96d91e8335
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837294"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54601828"
 ---
 # <a name="how-to-inherit-forms-using-the-inheritance-picker-dialog-box"></a>Postupy: Dědění formulářů pomocí dialogového okna Výběr dědičnosti
 Nejjednodušší způsob, jak dědit formuláře nebo jiný objekt je použít **výběr dědičnosti** dialogové okno. Pomocí něho můžete využít výhod kódu nebo uživatelské rozhraní (UI), již jste vytvořili v jiných řešení.  
@@ -54,10 +54,10 @@ Nejjednodušší způsob, jak dědit formuláře nebo jiný objekt je použít *
      Informace o tom, jak změnit vzhled podkladového formuláře, naleznete v tématu [účinky úpravy vzhledu základního formuláře](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md).  
   
     > [!NOTE]
-    >  Když zkombinujete zděděný ovládací prvky a součásti se standardní ovládací prvky a komponenty v aplikaci Windows Forms, může dojít, je v konfliktu s pořadí vykreslování. Můžete tento problém můžete vyřešit tak, že upravíte pořadí vykreslování, které se provádí v klikněte na **formátu** nabídky, přejdete na **pořadí**a pak levým na **přenést dopředu** nebo  **Přenést do pozadí**. Další informace o pořadí vykreslování ovládacích prvků naleznete v tématu [jak: objekty vrstvy v modelu Windows Forms](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md).  
+    >  Když zkombinujete zděděný ovládací prvky a součásti se standardní ovládací prvky a komponenty v aplikaci Windows Forms, může dojít, je v konfliktu s pořadí vykreslování. Můžete tento problém můžete vyřešit tak, že upravíte pořadí vykreslování, které se provádí v klikněte na **formátu** nabídky, přejdete na **pořadí**a pak levým na **přenést dopředu** nebo  **Přenést do pozadí**. Další informace o pořadí vykreslování ovládacích prvků naleznete v tématu [jak: Vrstvení objektů ve Windows Forms](../../../../docs/framework/winforms/controls/how-to-layer-objects-on-windows-forms.md).  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Inherits](~/docs/visual-basic/language-reference/statements/inherits-statement.md)  
- [using](~/docs/csharp/language-reference/keywords/using.md)  
- [Účinky úpravy vzhledu základního formuláře](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md)  
- [Vizuální dědění modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Inherits](~/docs/visual-basic/language-reference/statements/inherits-statement.md)
+- [using](~/docs/csharp/language-reference/keywords/using.md)
+- [Účinky úpravy vzhledu základního formuláře](../../../../docs/framework/winforms/advanced/effects-of-modifying-base-form-appearance.md)
+- [Vizuální dědění modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)

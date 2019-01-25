@@ -8,31 +8,31 @@ helpviewer_keywords:
 - ANSI, Visual Basic
 - ANSI
 ms.assetid: 4f1fa6ff-5557-41ab-b6da-90baf4c15917
-ms.openlocfilehash: c7037acac58de56a396bd89f595ef897743ff4e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e474bd686cc753a0265df1fc2914a73d1b62f1b5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33595076"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54737319"
 ---
 # <a name="ansi-visual-basic"></a>Ansi (Visual Basic)
-Určuje, že jazyka Visual Basic má zařazování všechny řetězce hodnoty American National Standards Institute (ANSI) bez ohledu na název externí procedura je deklarován.  
+Určuje, že by měl Visual Basic zařazovat všechny řetězce na hodnoty American National Standards Institute (ANSI) bez ohledu na název externí procedury byl deklarován.  
   
- Při volání procedury definované mimo projekt Visual Basic – kompilátor nemá přístup k informacím, které potřebuje voláním procedury správně. Tyto informace zahrnují, kde se nachází postup, jak je identifikovat, jeho volací sekvence a návratový typ a řetězec znaková sada, se používá. [Deklarovat příkaz](../../../visual-basic/language-reference/statements/declare-statement.md) vytvoří odkaz na externí procedura a poskytuje tyto nezbytné informace.  
+ Při volání procedury definován vně vašeho projektu, kompilátor jazyka Visual Basic nemá přístup k informacím, které potřebuje k voláním procedury správně. Tyto informace zahrnují, kde se nachází postup, jak je identifikovaný, jeho volací sekvence a návratový typ a řetězec znakové sady, ji používá. [Deklaraci příkazu](../../../visual-basic/language-reference/statements/declare-statement.md) vytvoří odkaz na externí procedura a poskytuje tyto nezbytné informace.  
   
- `charsetmodifier` Část v `Declare` příkaz poskytuje informace o znakových sadách pro zařazování řetězců během volání externí procedura. Ovlivní také jak jazyka Visual Basic prohledává externí soubor pro externí procedura název. `Ansi` Modifikátor Určuje, že jazyka Visual Basic má zařazování všechny řetězce ANSI hodnoty a musí vyhledat postup beze změny jeho názvu během hledání.  
+ `charsetmodifier` Část v `Declare` příkaz poskytuje informace o znakových sadách pro zařazování řetězce při volání do externí procedury. Také ovlivní, jak Visual Basic vyhledá externí soubor pro název externí procedury. `Ansi` Modifikátor Určuje, že jazyka Visual Basic by měla zařazovat všechny řetězce na hodnoty ANSI a by měl vyhledávat proceduru bez úpravy jejího názvu během vyhledávání.  
   
- Pokud není zadaný žádný modifikátor sady znaků, `Ansi` je výchozí.  
+ Pokud není zadána žádná modifikátor sady znaků, `Ansi` je výchozí nastavení.  
   
 ## <a name="remarks"></a>Poznámky  
- `Ansi` Modifikátor můžete v tomto kontextu použít:  
+ `Ansi` Modifikátor lze použít v tomto kontextu:  
   
  [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
 ## <a name="smart-device-developer-notes"></a>Poznámky pro vývojáře inteligentního zařízení  
- This – klíčové slovo není podporováno.  
+ Toto klíčové slovo se nepodporuje.  
   
-## <a name="see-also"></a>Viz také  
- [Auto](../../../visual-basic/language-reference/modifiers/auto.md)  
- [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)  
- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
+## <a name="see-also"></a>Viz také:
+- [Auto](../../../visual-basic/language-reference/modifiers/auto.md)
+- [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)
+- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

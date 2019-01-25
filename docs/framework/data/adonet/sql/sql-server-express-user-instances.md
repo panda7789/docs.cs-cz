@@ -1,18 +1,18 @@
 ---
-title: Instance systému SQL Server Express uživatele
+title: SQL Server Express User Instances
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 00c12376-cb26-4317-86ad-e6e9c089be57
-ms.openlocfilehash: 31c0efbe953b56304c264444082185b9a9227d60
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: d7ab6694ec467f957228bfde0a044c577bc2f923
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43745095"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664080"
 ---
-# <a name="sql-server-express-user-instances"></a>Instance systému SQL Server Express uživatele
+# <a name="sql-server-express-user-instances"></a>SQL Server Express User Instances
 Microsoft SQL Server Express Edition (SQL Server Express) podporuje funkci instance uživatele, která je dostupná jenom při použití zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`). Uživatelské instance se samostatnou instanci SQL serveru Express databázového stroje, který je generován nadřazená instance. Uživatelské instance povolit uživatelům, kteří nejsou správci na svých místních počítačích k připojení a připojení k databázím SQL Server Express. Každá instance spouští v kontextu zabezpečení jednotlivých uživatelů, na jednu instanci každého uživatele zvlášť.  
   
 ## <a name="user-instance-capabilities"></a>Možnosti uživatele Instance  
@@ -150,8 +150,8 @@ private static void OpenSqlConnection()
   
 -   Vyhrazené hostování v technologii ASP.NET pomocí ověřování Windows. Jedna instance systému SQL Server Express je možné hostovat na intranetu. Aplikace se připojí pomocí účtu Windows ASPNET, nikoli pomocí zosobnění. Uživatelské instance není vhodné používat pro třetí strany nebo sdílené hostování situacích, kdy všechny aplikace bude sdílet stejnou instanci uživatele a by už zůstat izolované od sebe navzájem.  
   
-## <a name="see-also"></a>Viz také  
- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
- [Připojovací řetězce](../../../../../docs/framework/data/adonet/connection-strings.md)  
- [Připojení ke zdroji dat](../../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
+- [Připojovací řetězce](../../../../../docs/framework/data/adonet/connection-strings.md)
+- [Připojení ke zdroji dat](../../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

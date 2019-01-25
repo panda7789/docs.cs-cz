@@ -1,15 +1,15 @@
 ---
-title: Přehled ADO.NET
+title: ADO.NET Overview
 ms.date: 03/30/2017
 ms.assetid: ee3bc1d8-11db-4be4-89eb-c708cf04117d
-ms.openlocfilehash: 697911201171a540d6749d03c51f14efba945765
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 6769370396fc263f237a2884435630a2930b882b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43529920"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54714383"
 ---
-# <a name="adonet-overview"></a>Přehled ADO.NET
+# <a name="adonet-overview"></a>ADO.NET Overview
 ADO.NET poskytuje konzistentní vzhledem k aplikacím přístup ke zdrojům dat jako SQL Server a XML a ke zdrojům dat prostřednictvím OLE DB a ODBC. Sdílení dat aplikace pro koncové uživatele slouží k připojení k těmto zdrojům dat a načtení, zpracování a aktualizace dat, které obsahují ADO.NET.  
   
  ADO.NET odděluje přístup k datům z manipulace s daty do samostatné součásti, které lze použít samostatně nebo v kombinaci. ADO.NET obsahuje zprostředkovatele dat .NET Framework pro připojení k databázi, provádění příkazů a načíst výsledky. Tyto výsledky se buď zpracovávají přímo, umístí do technologie ADO.NET <xref:System.Data.DataSet> objektu, aby bylo možné vystavit uživatele ad hoc způsobem, v kombinaci s daty z více zdrojů nebo předány mezi vrstvami. `DataSet` Objekt také lze použít bez ohledu na jejich zprostředkovatele dat .NET Framework ke správě dat místní aplikace nebo zdroj XML.  
@@ -20,7 +20,7 @@ ADO.NET poskytuje konzistentní vzhledem k aplikacím přístup ke zdrojům dat 
   
  ADO.NET obsahuje velmi přímočarou metodou přístup k datům v rámci rozhraní .NET Framework. Abstrakce vyšší úrovně, která umožňuje aplikacím tak, aby odpovídaly Koncepční model místo základní model úložiště, najdete v článku [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md).  
   
- **Zásady ochrany osobních údajů**: The System.Data.dll, System.Data.Design.dll, System.Data.OracleClient.dll, System.Data.SqlXml.dll, knihovně System.Data.Linq.dll, System.Data.SqlServerCe.dll a System.Data.DataSetExtensions.dll sestavení nepodporují rozlišovat mezi uživatele privátní a veřejné daty.  Tato sestavení shromažďovat, ukládat ani přenosu dat soukromých kteréhokoli uživatele. Aplikace třetích stran může však shromažďování, ukládání nebo přenosu dat soukromých uživatele tato sestavení používají.  
+ **Zásady ochrany osobních údajů**: Sestavení System.Data.dll, System.Data.Design.dll, System.Data.OracleClient.dll, System.Data.SqlXml.dll, knihovně System.Data.Linq.dll, System.Data.SqlServerCe.dll a System.Data.DataSetExtensions.dll nerozlišuje mezi uživatele veřejné data a osobní data.  Tato sestavení shromažďovat, ukládat ani přenosu dat soukromých kteréhokoli uživatele. Aplikace třetích stran může však shromažďování, ukládání nebo přenosu dat soukromých uživatele tato sestavení používají.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Architektura ADO.NET](../../../../docs/framework/data/adonet/ado-net-architecture.md)  
@@ -57,7 +57,7 @@ ADO.NET poskytuje konzistentní vzhledem k aplikacím přístup ke zdrojům dat 
  [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
  Popisuje, jak se připojit ke zdroji dat, načtení dat a upravovat data. Jedná se o `DataReaders` a `DataAdapters`.  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET](../../../../docs/framework/data/adonet/index.md)  
- [Přístup k datům v sadě Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET](../../../../docs/framework/data/adonet/index.md)
+- [Přístup k datům v sadě Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

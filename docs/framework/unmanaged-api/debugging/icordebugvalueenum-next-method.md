@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 433e387365834498203e444ed2f85889f8adde06
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 020df45f7f18a029f8c098fcc4dea1c131da017c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420441"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54706914"
 ---
 # <a name="icordebugvalueenumnext-method"></a>ICorDebugValueEnum::Next – metoda
-Získá zadaný počet instancí "ICorDebugValue" z výčtu, počínaje na aktuální pozici.  
+Získá zadaný počet instancí "ICorDebugValue" z výčtu od aktuální pozice.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ HRESULT Next (
   
 #### <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet `ICorDebugValue` instancí, které mají být načteny.  
+ [in] Počet `ICorDebugValue` instancí, který se má načíst.  
   
  `values`  
- [out] Ukazatele, každý z nich odkazuje na pole `ICorDebugValue` objektu.  
+ [out] Pole ukazatelů, každý z nich odkazuje na `ICorDebugValue` objektu.  
   
  `pceltFetched`  
- [out] Ukazatel na počet `ICorDebugValue` instancí vrácených ve skutečnosti. Tato hodnota může být null. Pokud `celt` je jedna.  
+ [out] Ukazatel na počet `ICorDebugValue` skutečně vrácených instancí. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -57,6 +57,6 @@ HRESULT Next (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
-    
- 
+## <a name="see-also"></a>Viz také:
+
+

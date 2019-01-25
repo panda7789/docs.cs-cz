@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4bb91423b2eaeda7d945cf14553609fd33ce9b0c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8ef293daea1a768c26adf05d14107a42889226e0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33443486"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491282"
 ---
 # <a name="cormethodimpl-enumeration"></a>CorMethodImpl – výčet
 Obsahuje hodnoty, které popisují způsob implementace funkce.  
@@ -59,28 +59,28 @@ typedef enum CorMethodImpl {
 |Člen|Popis|  
 |------------|-----------------|  
 |`miCodeTypeMask`|Příznaky, které popisují typ kódu.|  
-|`miIL`|Určuje, že je metoda implementace Microsoft (MSIL intermediate language).|  
-|`miNative`|Určuje, že je nativní implementace metod.|  
-|`miOPTIL`|Určuje, že je metoda implementace OPTIL.|  
-|`miRuntime`|Určuje, že implementace metod poskytuje modul common language runtime.|  
-|`miManagedMask`|Příznaky, které označuje, zda kód je spravované nebo nespravované.|  
-|`miUnmanaged`|Určuje, že je metoda implementace nespravované.|  
-|`miManaged`|Určuje, že je spravovaný implementace metod.|  
-|`miForwardRef`|Určuje, že metoda je definována. Tento příznak se používá hlavně ve scénářích sloučení.|  
-|`miPreserveSig`|Určuje, zda podpis metody nemůže být pro konverzi HRESULT pozměněny.|  
+|`miIL`|Určuje, že implementace metody je jazyk Microsoft intermediate language (MSIL).|  
+|`miNative`|Určuje, že je nativní implementace metody.|  
+|`miOPTIL`|Určuje, že implementace metody OPTIL.|  
+|`miRuntime`|Určuje, že implementace metody poskytuje modul common language runtime.|  
+|`miManagedMask`|Příznaky, které označují, zda kód je spravovaná nebo nespravovaná.|  
+|`miUnmanaged`|Určuje, že implementace metody nespravované.|  
+|`miManaged`|Určuje, že je spravovaná implementace metody.|  
+|`miForwardRef`|Určuje, že metoda je definována. Tento příznak se používá především ve scénářích sloučení.|  
+|`miPreserveSig`|Určuje, že podpis metody nemůže být pozměnění pro konverzi HRESULT.|  
 |`miInternalCall`|Modul common language runtime vyhrazené pro interní použití.|  
-|`miSynchronized`|Určuje, že metoda je jednovláknové prostřednictvím jeho obsahu.|  
+|`miSynchronized`|Určuje, že metoda je jednovláknový prostřednictvím svého těla.|  
 |`miNoInlining`|Určuje, že metoda nemůže být vložená.|  
-|`miAggressiveInlining`|Určuje, že metoda by měla být vložená Pokud je to možné.|  
-|`miNoOptimization`|Určuje, že by neměl být optimalizována metodu.|  
-|`miMaxMethodImplVal`|Maximální hodnota platná `CorMethodImpl`.|  
+|`miAggressiveInlining`|Určuje, že metoda by měla být vložit. Pokud je to možné.|  
+|`miNoOptimization`|Určuje, že metoda neměl optimalizovat.|  
+|`miMaxMethodImplVal`|Největší platná hodnota pro `CorMethodImpl`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

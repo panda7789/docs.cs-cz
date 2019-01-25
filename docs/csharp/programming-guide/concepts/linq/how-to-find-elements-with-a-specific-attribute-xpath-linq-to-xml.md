@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vyhledání elementů s konkrétním atributem (XPath – LINQ to XML) (C#)'
+title: 'Postupy: Vyhledání elementů s konkrétním atributem (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: daed00dd-923a-43be-8a90-eee406f6f574
-ms.openlocfilehash: da7633b34ddd61577bfc62f4f76d8f8929be1cc4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c5b8ae9a41c5b05438d14f2717c8edfb151d47c0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500277"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709374"
 ---
-# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a>Postupy: vyhledání elementů s konkrétním atributem (XPath – LINQ to XML) (C#)
+# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-c"></a>Postupy: Vyhledání elementů s konkrétním atributem (XPath – LINQ to XML) (C#)
 Někdy budete chtít najít všechny elementy, které mají určitý atribut. Nejste obavy o obsah atributu. Místo toho chcete vybrat na základě existence atributu.  
   
  Výraz XPath je:  
@@ -56,6 +56,6 @@ Results are identical
 <Child4 Select="true">4</Child4>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

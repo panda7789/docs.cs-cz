@@ -6,12 +6,12 @@ helpviewer_keywords:
 - method parameters [C#], value types
 - parameters [C#], value
 ms.assetid: 193ab86f-5f9b-4359-ac29-7cdf8afad3a6
-ms.openlocfilehash: df394a6b71a06edc064fba0925398f87ed1802a8
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: e5d1aa97a53d52e0915c2fbf5f1b296c65b16435
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245360"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54704888"
 ---
 # <a name="passing-value-type-parameters-c-programming-guide"></a>Předávání parametrů typu hodnoty (Průvodce programováním v C#)
 A [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) proměnná obsahuje jeho data přímo jako nikoli [typu odkazu](../../../csharp/language-reference/keywords/reference-types.md) proměnnou, která obsahuje odkaz na svoje data. Předání hodnotou proměnné typu hodnoty metodě znamená předání kopii proměnné metodě. Žádné změny k parametru, které se provedou uvnitř metody nemají žádný vliv na původní data uložená v proměnné argumentu. Pokud chcete volané metody, chcete-li změnit hodnotu parametru, musíte jí předat odkazem, pomocí [ref](../../../csharp/language-reference/keywords/ref.md) nebo [si](../../../csharp/language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Můžete také použít [v](../../../csharp/language-reference/keywords/in-parameter-modifier.md) – klíčové slovo předávání pomocí odkazu, aby kopie při zajištění, že se nezmění hodnotu parametru hodnoty. Pro zjednodušení následující příklady používají `ref`.  
@@ -39,8 +39,8 @@ A [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) prom
   
  [!code-csharp[csProgGuideParameters#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/passing-value-type-parameters_4.cs)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Předávání parametrů](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Předávání parametrů](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)
 - [Předávání parametrů typu odkazu](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md)

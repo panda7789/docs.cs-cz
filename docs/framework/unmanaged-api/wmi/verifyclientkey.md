@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ea8a74633d3e950f6cf7ba87c00a9efa45206545
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 94d601125049f0c215b3b03bf8b13d2959872c3d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33459561"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54711756"
 ---
 # <a name="verifyclientkey-function"></a>VerifyClientKey – funkce
-Zajišťuje, že klíč klienta má správné zabezpečení.  
+Zajistí, že klíč klienta bude mít správné zabezpečení.  
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -36,16 +36,16 @@ LONG VerifyClientKey();
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Pokud funkci úspěšné, je vrácenou hodnotu `ERROR_SUCCESS` (0).
+Pokud funkce uspěje, vrácená hodnota je `ERROR_SUCCESS` (0).
 
-V případě selhání funkce návratová hodnota je kód chyby nenulové definované v *WinError.h*.
+Pokud funkce selže, vrácená hodnota je kód chyby definované v *WinError.h*.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.def  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:
+- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

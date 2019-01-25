@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - buttons [WPF]
 ms.assetid: 138c41c4-1759-4bbf-8d77-77031a06a8a0
-ms.openlocfilehash: a28a027e3b804de8e40d8c7831e7556cc7f55188
-ms.sourcegitcommit: 81bd16c7435a8c9183d2a7e878a2a5eff7d04584
+ms.openlocfilehash: d88eca573d09c0c40575718a125a65b2d13593d8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54249148"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54606780"
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>Průvodce: Vytvoření tlačítka použitím XAML
 Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro použití v aplikaci Windows Presentation Foundation (WPF). Tento návod používá – styly a šablony vytvořit tlačítko vlastní prostředek, umožňující opětovné použití kódu a oddělení logiky tlačítko od deklarace tlačítko. Tento návod byl napsán výhradně v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
@@ -361,7 +361,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      Stisknutím klávesy F5 spusťte aplikaci a klikněte na jedno z tlačítek. Všimněte si, že zůstane po kliknutí na jeho protože stále má fokus zvýrazněné tlačítko. Pokud klepnete na tlačítko Další, nové tlačítko získá fokus, zatímco poslední z nich se ztratí.  
   
-4.  **Přidání animace k** <xref:System.Windows.UIElement.MouseEnter> **a** <xref:System.Windows.UIElement.MouseLeave> **:**  Vedle přidáme některé animace aktivačních událostí. Přidejte následující kód, kdekoli uvnitř sady `ControlTemplate.Triggers` bloku.  
+4.  **Přidání animace k** <xref:System.Windows.UIElement.MouseEnter> **a** <xref:System.Windows.UIElement.MouseLeave> **:** Vedle přidáme některé animace aktivačních událostí. Přidejte následující kód, kdekoli uvnitř sady `ControlTemplate.Triggers` bloku.  
   
     ```xaml
     <!-- Animations that start when mouse enters and leaves button. -->  
@@ -431,9 +431,9 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
 -   Přizpůsobit chování pro tlačítka v reakci na akce uživatele (například <xref:System.Windows.UIElement.MouseEnter>, <xref:System.Windows.UIElement.MouseLeave>, a <xref:System.Windows.Controls.Primitives.ButtonBase.Click>), které obsahovat efekty animace.  
   
-## <a name="see-also"></a>Viz také  
- [Vytvoření tlačítka pomocí nástroje Microsoft Expression Blend](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md)  
- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
- [Přehled efektů bitmap](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Vytvoření tlačítka pomocí nástroje Microsoft Expression Blend](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md)
+- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
+- [Přehled efektů bitmap](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects-overview.md)

@@ -10,12 +10,12 @@ api_type:
 ms.assetid: d468325a-21c5-43ce-8567-84e342b22308
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fd77a8a81718837d55f3018564d0f4ba8fdc95ee
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 9987640f988f2239a01d2dfdbcd6b1684579d8bc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47198901"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54601504"
 ---
 # <a name="certtimestampauthenticodelicense-function"></a>Funkce CertTimestampAuthenticodeLicense
 Časová razítka na Authenticode XrML licence.  
@@ -46,5 +46,5 @@ HRESULT CertTimestampAuthenticodeLicense (
 ## <a name="return-value"></a>Návratová hodnota  
  `S_OK` Pokud je funkce úspěšná. V opačném případě vrátí kód chyby.  
   
-## <a name="see-also"></a>Viz také  
- [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)
+## <a name="see-also"></a>Viz také:
+- [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)

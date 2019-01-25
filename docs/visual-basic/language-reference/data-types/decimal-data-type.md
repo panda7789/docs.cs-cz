@@ -20,12 +20,12 @@ helpviewer_keywords:
 - '@ identifier type character'
 - identifier type characters [Visual Basic], @
 ms.assetid: 1d855b45-afe2-45b0-a623-96b6f63a43d5
-ms.openlocfilehash: ffc1cd141ba624d2ce26e4b1c070431ff0ddd6fe
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 7a04f0a9862927f8588a895c7f0f099509aa4d8d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44180459"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54512889"
 ---
 # <a name="decimal-data-type-visual-basic"></a>Decimal – datový typ (Visual Basic)
 Blokování podepsané 128-bit (16 bajtů) hodnoty představující celé číslo (12 bajtů) verze 96 čísla měřítkem řídit proměnné násobky 10. Koeficient změny měřítka určuje počet číslic vpravo od desetinné čárky rozsah od 0 do 28. S měřítkem 0 (bez desetinných míst), je možná největší hodnota +/-79,228,162,514,264,337,593,543,950,335 (+/-7 .9228162514264337593543950335E + 28). 28 desetinných míst největší hodnota, je +/-7,9228162514264337593543950335 a +/-0,0000000000000000000000000001 (+/-1E-28) je nejmenší nenulovou hodnotu.  
@@ -78,13 +78,13 @@ Dim bigDec3 As Decimal = 9223372036854775808D  ' No overflow.
   
  Pro `bigDec3`, znak typu literálu `D` řeší problém vynucením kompilátor k interpretaci jako literál `Decimal` místo jako `Long`.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Decimal?displayProperty=nameWithType>  
- <xref:System.Decimal.%23ctor%2A?displayProperty=nameWithType>  
- <xref:System.Math.Round%2A?displayProperty=nameWithType>  
- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
- [Datový typ Single](../../../visual-basic/language-reference/data-types/single-data-type.md)  
- [Datový typ Double](../../../visual-basic/language-reference/data-types/double-data-type.md)  
- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Decimal?displayProperty=nameWithType>
+- <xref:System.Decimal.%23ctor%2A?displayProperty=nameWithType>
+- <xref:System.Math.Round%2A?displayProperty=nameWithType>
+- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
+- [Datový typ Single](../../../visual-basic/language-reference/data-types/single-data-type.md)
+- [Datový typ Double](../../../visual-basic/language-reference/data-types/double-data-type.md)
+- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
+- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

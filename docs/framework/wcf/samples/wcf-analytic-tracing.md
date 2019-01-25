@@ -2,12 +2,12 @@
 title: Analytické trasování WCF
 ms.date: 03/30/2017
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
-ms.openlocfilehash: a5e4b82bd28cae18f393a4143325623634d4bbaf
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 6d4db9a8ec11e215ef18dcab6b7940526bc24927
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147421"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54748139"
 ---
 # <a name="wcf-analytic-tracing"></a>Analytické trasování WCF
 Tato ukázka předvádí, jak přidat vlastní události trasování do datového proudu analytického trasování, které Windows Communication Foundation (WCF) zapisuje do trasování událostí pro Windows v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Analytické trasování jsou určené k tomu, aby, získat přehled o vaší služby bez nutnosti platit penalizace vysoký výkon. Tento příklad ukazuje způsob použití <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> rozhraní API pro zápis událostí, které integrace se službami WCF.  
@@ -19,16 +19,16 @@ Tato ukázka předvádí, jak přidat vlastní události trasování do datovéh
 ## <a name="disposing-eventprovider"></a>Připravuje se EventProvider  
  Tento příklad používá <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType> třídy, která implementuje <xref:System.IDisposable?displayProperty=nameWithType>. Při implementaci trasování pro služby WCF, je pravděpodobné, že můžete použít <xref:System.Diagnostics.Eventing.EventProvider>od prostředků po dobu životnosti služby. Z tohoto důvodu a pro lepší čitelnost, tato ukázka nikdy uvolní zabalenou <xref:System.Diagnostics.Eventing.EventProvider>. Pokud z nějakého důvodu vaše služba má jiné požadavky při trasování a je musí odstranění tohoto prostředku, pak byste měli upravit tato ukázka podle osvědčených postupů pro uvolnění nespravovaných prostředků. Další informace o uvolnění nespravovaných prostředků najdete v tématu [Implementing a Dispose Method](https://go.microsoft.com/fwlink/?LinkId=166436).  
   
-## <a name="self-hosting-vs-web-hosting"></a>Hostování na vlastním vs. Hostování webů  
+## <a name="self-hosting-vs-web-hosting"></a>Hostování na vlastním vs. Web Hosting  
  Analytické trasování WCF. pro hostované webové služby, zadejte pole, s názvem "HostReference", který se používá k identifikaci služby, který generuje trasování. Trasování rozšiřitelnými uživatelskými mohl podílet na tomto modelu a v této ukázce osvědčené postupy to udělat. Formát webového hostitele odkazovat při do kanálu '&#124;"znak se objeví ve skutečnosti ve výsledné řetězce může být jedna z následujících akcí:  
   
 -   Pokud aplikace není v kořenovém adresáři.  
   
-     \<Název webu % >\<ApplicationVirtualPath >&#124;\<ServiceVirtualPath >&#124;\<název_služby >  
+     \<SiteName>\<ApplicationVirtualPath>&#124;\<ServiceVirtualPath>&#124;\<ServiceName>  
   
 -   Pokud je v kořenovém adresáři.  
   
-     \<Název webu % >&#124;\<ServiceVirtualPath >&#124;\<název_služby >  
+     \<SiteName>&#124;\<ServiceVirtualPath>&#124;\<ServiceName>  
   
  V místním prostředí služby analytické trasování WCF. není vyplnění pole "HostReference". `WCFUserEventProvider` Třídy v této ukázce se chová konzistentně při použití služby v místním prostředí.  
   
@@ -117,5 +117,5 @@ Tato ukázka předvádí, jak přidat vlastní události trasování do datovéh
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTrace`  
   
-## <a name="see-also"></a>Viz také  
- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)
+## <a name="see-also"></a>Viz také:
+- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

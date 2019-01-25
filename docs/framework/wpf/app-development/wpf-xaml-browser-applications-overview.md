@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: 8121b6e8c5a136f5f89b59636a7cb7f15794164a
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: b243ee7fdb72aaf749492a008708da4209a7736e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43745473"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54611979"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>
@@ -35,7 +35,7 @@ ms.locfileid: "43745473"
   
 <a name="creating_a_new_xaml_browser_application_xbap"></a>   
 ## <a name="creating-a-new-xaml-browser-application-xbap"></a>Vytvoření nové aplikace prohlížeče XAML (XBAP)  
- Nejjednodušší způsob, jak vytvořit nového projektu XBAP, který je sadou Microsoft Visual Studio. Při vytváření nového projektu, vyberte **aplikace WPF pro prohlížeč** ze seznamu šablon. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace prohlížeče WPF](https://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f).  
+ Nejjednodušší způsob, jak vytvořit nového projektu XBAP, který je sadou Microsoft Visual Studio. Při vytváření nového projektu, vyberte **aplikace WPF pro prohlížeč** ze seznamu šablon. Další informace najdete v tématu [jak: Vytvoření nového projektu aplikace prohlížeče WPF](https://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f).  
   
  Při spuštění projektu XBAP, který se otevře v okně prohlížeče místo samostatné okna. Když ladíte XBAP ze sady Visual Studio, aplikace se spustí s oprávněním zóny Internet a vyvolá proto bezpečnostním výjimkám překročení těchto oprávnění. Další informace najdete v tématu [zabezpečení](../../../../docs/framework/wpf/security-wpf.md) a [částečné zabezpečení důvěryhodnosti WPF](../../../../docs/framework/wpf/wpf-partial-trust-security.md).  
   
@@ -118,7 +118,7 @@ ms.locfileid: "43745473"
   
 7.  V **nastavení** seznamu v části **zabezpečení**, zkontrolujte **aktivní obsah ke spuštění v souborech na tomto počítači povolit** zaškrtávací políčko.  
   
-8.  Klikněte na tlačítko **OK**.  
+8.  Klikněte na **OK**.  
   
      Změny se projeví po restartování aplikace Internet Explorer.  
   
@@ -186,6 +186,6 @@ ms.locfileid: "43745473"
   
  Kromě toho lepší souběžnosti pořadí stahování ClickOnce zlepšuje čas zahájení až deset procent. Po ClickOnce soubory ke stažení a ověří spustí aktualizovat manifesty spustí stahování aplikací a indikátor průběhu.  
   
-## <a name="see-also"></a>Viz také  
- [Konfigurace sady Visual Studio pro ladění aplikace Prohlížeče XAML za účelem volání webové služby](../../../../docs/framework/wpf/app-development/configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)  
- [Nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)
+## <a name="see-also"></a>Viz také:
+- [Konfigurace sady Visual Studio pro ladění aplikace Prohlížeče XAML za účelem volání webové služby](../../../../docs/framework/wpf/app-development/configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)
+- [Nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)

@@ -5,55 +5,55 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 396b875a-d203-4ebe-a3a1-6a330d962e95
-ms.openlocfilehash: da92b8f2d1223f582677a93a8ff6fd697512d297
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: 9adbb4166d713cea0344c9fa58ce85e5afce086d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34037360"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54717907"
 ---
 # <a name="duplex-services"></a>Duplexní služby
-Kontrakt duplexní služby je vzorce výměny zpráv, ve kterém oba koncové body mohou zasílat zprávy do dalších nezávisle. Duplexní služby, proto mohou zasílat zprávy zpět do koncového bodu klienta, poskytuje podobné události chování. Duplexní komunikace nastane, když se klient připojuje ke službě a poskytuje službu s kanálem, na kterém služba mohou zasílat zprávy zpět do klienta. Všimněte si, že událost jako chování duplexní služby funguje pouze v rámci relace.  
+Duplexní kontrakt služeb je vzoru výměny zpráv, ve kterém oba koncové body můžete odesílat zprávy do jiné nezávisle na sobě. Duplexní služby proto může odesílat zprávy zpět do koncový bod klienta, poskytování podobně jako události. Duplexní komunikaci nastane, pokud se klient připojí ke službě a poskytuje službu s kanálem, na kterém služba odesílat zprávy o zpět do klienta. Všimněte si, že události podobně duplexní služby funguje jenom v rámci relace.  
   
- K vytvoření duplexního kontraktu vytvořit pár rozhraní. První je rozhraní kontraktu služby, které popisuje operace, které můžete vyvolat klienta. Musíte zadat Tento kontrakt služby *kontrakt zpětného volání* v <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> vlastnost. Kontrakt zpětného volání je rozhraní, které definuje operace, které služba můžete volat na koncovém bodu klienta. Duplexního kontraktu nevyžaduje relace, i když zkontrolujte duplexní vazby poskytované systémem použijte z nich.  
+ K vytvoření duplexního kontraktu vytvořit dvojici rozhraní. První je rozhraní kontraktu služby, který popisuje operace, které může klient vyvolat. Musíte zadat Tento kontrakt služby *kontrakt zpětného volání* v <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> vlastnost. Smlouva zpětného volání je rozhraní, které definuje operace, které můžete volat službu na koncový bod klienta. Duplexní kontrakt nevyžaduje relace, i když duplexní vazeb poskytovaných systémem Ujistěte se, jejich použití.  
   
  Následuje příklad duplexního kontraktu.  
   
  [!code-csharp[c_DuplexServices#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_duplexservices/cs/service.cs#0)]
  [!code-vb[c_DuplexServices#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_duplexservices/vb/service.vb#0)]  
   
- `CalculatorService` Třída implementuje primární `ICalculatorDuplex` rozhraní. Služba používá <xref:System.ServiceModel.InstanceContextMode.PerSession> instance režimu zachování výsledek pro každou relaci. Soukromá vlastnost s názvem `Callback` přistupuje k kanál zpětného volání pro klienta. Služba používá zpětné volání pro odesílání zpráv zpět do klienta přes rozhraní zpětné volání, jak je znázorněno v následujícím ukázkovém kódu.  
+ `CalculatorService` Třída implementuje primární `ICalculatorDuplex` rozhraní. Služba používá <xref:System.ServiceModel.InstanceContextMode.PerSession> režimu instance udržovat výsledek pro každou relaci. Soukromá vlastnost s názvem `Callback` přistupuje k zpětného volání kanálu ke klientovi. Služba používá zpětné volání pro odesílání zpráv zpět do klienta prostřednictvím rozhraní zpětného volání, jak je znázorněno v následujícím ukázkovém kódu.  
   
  [!code-csharp[c_DuplexServices#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_duplexservices/cs/service.cs#1)]
  [!code-vb[c_DuplexServices#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_duplexservices/vb/service.vb#1)]  
   
- Klient musí poskytnout třídu, která implementuje rozhraní zpětné volání duplexního kontraktu pro příjem zpráv ze služby. Následující ukázkový kód ukazuje `CallbackHandler` třídu, která implementuje `ICalculatorDuplexCallback` rozhraní.  
+ Klient musí poskytnout třídu, která implementuje rozhraní zpětného volání duplexní kontrakt pro příjem zpráv ze služby. Následující ukázkový kód ukazuje `CallbackHandler` třídu, která implementuje `ICalculatorDuplexCallback` rozhraní.  
   
  [!code-csharp[c_DuplexServices#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_duplexservices/cs/client.cs#2)]
  [!code-vb[c_DuplexServices#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_duplexservices/vb/client.vb#2)]  
   
- Klienta WCF, který se vygeneruje pro vyžaduje duplexního kontraktu <xref:System.ServiceModel.InstanceContext> třídy je třeba zadat při vytváření. To <xref:System.ServiceModel.InstanceContext> třída se používá jako lokality pro objekt, který implementuje rozhraní zpětného volání a zpracovává zprávy, které se odesílají zpět ze služby. <xref:System.ServiceModel.InstanceContext> Třída je vytvořený pomocí instance `CallbackHandler` třídy. Tento objekt zpracovává zprávy odeslané ze služby pro klienta v rozhraní zpětného volání.  
+ Klient WCF, který je vygenerován pro duplexní kontrakt vyžaduje <xref:System.ServiceModel.InstanceContext> poskytované při konstrukci třídy. To <xref:System.ServiceModel.InstanceContext> třída se používá jako web pro objekt, který implementuje rozhraní zpětného volání a zpracovává zprávy odeslané ze služby. <xref:System.ServiceModel.InstanceContext> Třídy je vytvořený pomocí instance `CallbackHandler` třídy. Tento objekt zpracovává zprávy odeslané do klienta v rozhraní zpětného volání ze služby.  
   
  [!code-csharp[c_DuplexServices#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_duplexservices/cs/client.cs#3)]
  [!code-vb[c_DuplexServices#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_duplexservices/vb/client.vb#3)]  
   
- Konfigurace služby musí ho nastavit má být poskytnuta vazba, která podporuje komunikaci relace a duplexní komunikace. `wsDualHttpBinding` Element podporuje komunikaci relace a umožňuje duplexní komunikace tím, že poskytuje duální připojení protokolu HTTP, jeden pro všechny směry.  
+ Konfigurace pro službu, musíte nastavit má být poskytnuta vazba, která podporuje komunikace relace a duplexní komunikaci. `wsDualHttpBinding` Element podporuje komunikaci relace a umožňuje duplexní komunikaci poskytnutím duální připojení pomocí protokolu HTTP, jeden pro každý směr.  
   
- Na klientovi je nutné nakonfigurovat adresu, která server můžete použít pro připojení ke klientovi, jak je znázorněno v následující ukázka konfigurace.  
+ Na straně klienta je nutné nakonfigurovat adresu serveru můžete použít pro připojení ke klientovi, jak je znázorněno v následující ukázková konfigurace.  
   
   
   
 > [!NOTE]
->  Duplexní bez klienty, kteří nepodaří ověřit pomocí zabezpečenou konverzaci obvykle throw <xref:System.ServiceModel.Security.MessageSecurityException>. Ale pokud se ověření nezdaří duplexní klienta, který používá zabezpečené konverzaci, klient přijme <xref:System.TimeoutException> místo.  
+>  Throw bez duplexní klienty, kteří neumožňuje ověřovat, obvykle pomocí zabezpečené konverzace <xref:System.ServiceModel.Security.MessageSecurityException>. Ale pokud se ověření nezdaří duplexní klienta, který využívá zabezpečené konverzace, klient přijme <xref:System.TimeoutException> místo.  
   
- Pokud vytvoříte klienta nebo službu pomocí `WSHttpBinding` elementu a nezahrnovat koncový bod zpětného volání klienta, zobrazí se následující chyba.  
+ Pokud vytvoříte klienta a služby pomocí `WSHttpBinding` elementu a nezahrnují koncový bod klienta zpětné volání, zobrazí se následující chybová zpráva.  
   
 ```  
 HTTP could not register URL  
 htp://+:80/Temporary_Listen_Addresses/<guid> because TCP port 80 is being used by another application.  
 ```  
   
- Následující vzorový kód ukazuje, jak zadat klienta adresa koncového bodu prostřednictvím kódu programu.
+ Následující ukázkový kód ukazuje, jak zadat klienta adresy koncového bodu prostřednictvím kódu programu.
   
 ```csharp  
 WSDualHttpBinding binding = new WSDualHttpBinding();  
@@ -66,7 +66,7 @@ Dim endptadr As New EndpointAddress("http://localhost:12000/DuplexTestUsingCode/
 binding.ClientBaseAddress = New Uri("http://localhost:8000/DuplexTestUsingCode/Client/")  
 ```
 
- Následující vzorový kód ukazuje, jak zadat klienta adresa koncového bodu v konfiguraci.  
+ Následující ukázkový kód ukazuje, jak zadat klienta adresy koncového bodu v konfiguraci.  
   
 ```xml  
 <client>  
@@ -87,9 +87,9 @@ binding.ClientBaseAddress = New Uri("http://localhost:8000/DuplexTestUsingCode/C
 ```  
   
 > [!WARNING]
->  Duplexní modelu automaticky nerozpozná služba nebo klienta zavře jeho kanálu. Takže pokud klient neočekávaně ukončí, ve výchozím nastavení služba nebudete nijak upozorněni, nebo pokud neočekávaně ukončí klient služby nebudete nijak upozorněni. Služby a klienti můžete implementovat vlastní protokol navzájem upozorní, pokud si vyberou.  
+>  Když služba nebo klient ukončí její kanál duplexní modelu nerozpozná automaticky. Takže pokud klient neočekávaně ukončí, ve výchozím nastavení službu nedostanou nebo pokud klient neočekávaně skončí, nebudete nijak upozorněni služby. Služby a klienti můžou implementovat vlastní protokol na sebe navzájem upozornit, pokud se tedy rozhodne.  
   
-## <a name="see-also"></a>Viz také  
- [Duplex](../../../../docs/framework/wcf/samples/duplex.md)  
- [Nastavení chování klienta za běhu](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)  
- [Postupy: Vytvoření objektu pro vytváření kanálů a jeho použití k vytvoření a správě kanálů](../../../../docs/framework/wcf/feature-details/how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)
+## <a name="see-also"></a>Viz také:
+- [Duplex](../../../../docs/framework/wcf/samples/duplex.md)
+- [Nastavení chování klienta za běhu](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
+- [Postupy: Vytvoření objektu pro vytváření kanálů a jeho použití k vytvoření a správě kanálů](../../../../docs/framework/wcf/feature-details/how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)

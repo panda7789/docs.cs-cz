@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 28e6e95bbcca35ad39f30adcf100519748c02838
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7c3a3581d2a9a1cb79f4ffe1d0a37269c18789a6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449995"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54652176"
 ---
 # <a name="corprfruntimetype-enumeration"></a>COR_PRF_RUNTIME_TYPE – výčet
-Obsahuje hodnoty, které označují verzí common language runtime (CLR): plocha nebo CoreCLR, který se používá v programu Silverlight.  
+Obsahuje hodnoty, které označují verzi modulu common language runtime (CLR): plochy nebo CoreCLR, který se používá v programu Silverlight.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,13 +40,13 @@ typedef enum
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_DESKTOP_CLR`|Plochy verzi modulu CLR.|  
+|`COR_PRF_DESKTOP_CLR`|Desktopová verze modulu CLR.|  
 |`COR_PRF_CORE_CLR`|Základní verzi modulu CLR, použít v programu Silverlight.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -54,5 +54,5 @@ typedef enum
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

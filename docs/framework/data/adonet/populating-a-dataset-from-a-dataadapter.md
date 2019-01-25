@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3fa0ac7d-e266-4954-bfac-3fbe2f913153
-ms.openlocfilehash: d865f76b1a3e1ef72717fe790d3f1bc8895f8f58
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 0756eb0917e812101006f000db07f55f39afda57
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43740513"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54597122"
 ---
 # <a name="populating-a-dataset-from-a-dataadapter"></a>Naplnění datové sady z adaptéru dat
 [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] <xref:System.Data.DataSet> Rezidentní reprezentace dat, které poskytuje konzistentní relační programovací model bez ohledu na zdroj dat je. `DataSet` Představuje ucelenou sadu dat, která obsahuje tabulky, omezení a relace mezi tabulkami. Protože `DataSet` je nezávislý na zdroji dat `DataSet` může obsahovat místní aplikaci a data z různých zdrojů dat. Interakce s stávajících zdrojů dat je řízen pomocí `DataAdapter`.  
@@ -165,14 +165,14 @@ adapter.Fill(customers, "Customers");
   
  Když `Fill` operace se dokončila, `DataSet` obsahuje dvě tabulky: `Customers` a `CustomersOrders`, kde `CustomersOrders` představuje sloupci nepoužívaly kapitoly. Další sloupec s názvem `Orders` se přidá do `Customers` tabulku a sloupec s názvem `CustomersOrders` se přidá do `CustomersOrders` tabulky. `Orders` Sloupec `Customers` tabulky je nastavena na automatické zvyšování čísla. A `DataRelation`, `CustomersOrders`, se vytvoří s použitím sloupce, které byly přidány do tabulky s `Customers` jako nadřazená tabulka. Následující tabulky popisují některé ukázkové výsledky.  
   
-### <a name="tablename-customers"></a>TableName: Zákazníci  
+### <a name="tablename-customers"></a>Název tabulky: Zákazníci  
   
-|ID zákazníka|Firma|Objednávky|  
+|ID zákazníka|CompanyName|Objednávky|  
 |----------------|-----------------|------------|  
 |ALFKI|Alfreds Futterkiste|0|  
 |ANATR|Helados Ana Trujillo Emparedados y|1|  
   
-### <a name="tablename-customersorders"></a>TableName: CustomersOrders  
+### <a name="tablename-customersorders"></a>Název tabulky: CustomersOrders  
   
 |ID zákazníka|ID objednávky|CustomersOrders|  
 |----------------|-------------|---------------------|  
@@ -181,9 +181,9 @@ adapter.Fill(customers, "Customers");
 |ANATR|10308|1|  
 |ANATR|10625|1|  
   
-## <a name="see-also"></a>Viz také  
- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- [Mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
- [Úpravy dat přes DbDataAdapter](../../../../docs/framework/data/adonet/modifying-data-with-a-dbdataadapter.md)  
- [Více aktivních sad výsledků (MARS)](../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
+- [Mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)
+- [Úpravy dat přes DbDataAdapter](../../../../docs/framework/data/adonet/modifying-data-with-a-dbdataadapter.md)
+- [Více aktivních sad výsledků (MARS)](../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

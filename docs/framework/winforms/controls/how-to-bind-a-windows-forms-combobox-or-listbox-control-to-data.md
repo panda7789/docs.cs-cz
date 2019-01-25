@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vázání ovládacího prvku Windows Forms ComboBox nebo ListBox k datům'
+title: 'Postupy: Windows Forms ComboBox nebo ListBox – ovládací prvek svázat Data'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,25 +15,25 @@ helpviewer_keywords:
 - Windows Forms controls, data binding
 - data-bound controls [Windows Forms], Windows Forms
 ms.assetid: dfd7f081-8bea-4a41-86a3-86a1934828ef
-ms.openlocfilehash: 270ed1c9fab4013df72b715ce8b074d287616713
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4220e3e7d750e0d0caf0adbcbd2e1d96131e7c88
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33530130"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698372"
 ---
-# <a name="how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data"></a>Postupy: Vázání ovládacího prvku Windows Forms ComboBox nebo ListBox k datům
-Můžete vytvořit vazbu <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.Forms.ListBox> k datům a provádět úlohy, jako je například procházení dat v databázi, zadávání nová data nebo úpravou existující data.  
+# <a name="how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data"></a>Postupy: Windows Forms ComboBox nebo ListBox – ovládací prvek svázat Data
+Můžete vytvořit vazbu <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.Forms.ListBox> k datům s cílem provést úlohy, jako je procházení dat v databázi, zadáním nových dat nebo úpravy existující data.  
   
 ### <a name="to-bind-a-combobox-or-listbox-control"></a>K vytvoření vazby ovládacího prvku ComboBox nebo ListBox  
   
-1.  Nastavte `DataSource` vlastnost, která má objekt zdroje dat. Zdroje dat možné zahrnout <xref:System.Windows.Forms.BindingSource> vázána na data, data tabulky, zobrazení dat, datové sady, data zobrazení, správce, pole nebo jakákoli třída, která implementuje <xref:System.Collections.IList> rozhraní. Další informace najdete v tématu [datového zdroje podporované rozhraním Windows Forms](../../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md).  
+1.  Nastavte `DataSource` vlastnost na objekt zdroje dat. Zdroje dat patří <xref:System.Windows.Forms.BindingSource> vázán na data, data tabulky, zobrazení dat, datové sady, data zobrazení, správce, pole nebo jakékoli třídy, která implementuje <xref:System.Collections.IList> rozhraní. Další informace najdete v tématu [zdroje dat podporované rozhraním Windows Forms](../../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md).  
   
-2.  Pokud vytváříte vazbu do tabulky, nastavte `DisplayMember` vlastnost na název sloupce v datovém zdroji.  
+2.  Pokud vytváříte vazbu na tabulku, nastavte `DisplayMember` nastavte na název sloupce ve zdroji dat.  
   
      \- nebo –  
   
-     Pokud vytváříte vazbu <xref:System.Collections.IList>, člen zobrazení nastavit na veřejné vlastnosti typu v seznamu.  
+     Pokud se vazba na <xref:System.Collections.IList>, nastavte veřejnou vlastnost typu v seznamu zobrazit člena.  
   
     ```vb  
     Private Sub BindComboBox()  
@@ -51,11 +51,11 @@ Můžete vytvořit vazbu <xref:System.Windows.Forms.ComboBox> a <xref:System.Win
     ```  
   
     > [!NOTE]
-    >  Pokud jsou vázány na zdroj dat, který neimplementuje <xref:System.ComponentModel.IBindingList> rozhraní, například <xref:System.Collections.ArrayList>, nebude při aktualizaci zdroje dat aktualizovat data připojeného ovládacího prvku. Například pokud máte pole se seznamem se vázána na <xref:System.Collections.ArrayList> a data se přidá <xref:System.Collections.ArrayList>, tyto nové položky se nebude zobrazovat na pole se seznamem. Ale můžete vynutit pole se seznamem aktualizovat volání <xref:System.Windows.Forms.BindingManagerBase.SuspendBinding%2A> a <xref:System.Windows.Forms.BindingManagerBase.ResumeBinding%2A> metody na instanci systému <xref:System.Windows.Forms.BindingContext> třídy pro ovládací prvek vázán.  
+    >  Pokud jsou vázány na zdroj dat, který neimplementuje <xref:System.ComponentModel.IBindingList> rozhraní, například <xref:System.Collections.ArrayList>, vázaného ovládacího prvku dat nebude aktualizovat, když dojde k aktualizaci zdroje dat. Například pokud máte pole se seznamem povinen <xref:System.Collections.ArrayList> a data je přidána do <xref:System.Collections.ArrayList>, tyto nové položky v poli se seznamem nezobrazí. Ale můžete vynutit pole se seznamem aktualizovat voláním <xref:System.Windows.Forms.BindingManagerBase.SuspendBinding%2A> a <xref:System.Windows.Forms.BindingManagerBase.ResumeBinding%2A> metody instance <xref:System.Windows.Forms.BindingContext> třídy pro ovládací prvek vázán.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.ComboBox>  
- <xref:System.Windows.Forms.ListBox>  
- [Windows Forms – datová vazba](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
- [Datové vazby a Windows Forms](../../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
- [Ovládací prvky Windows Forms používané k výpisu možností](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.ComboBox>
+- <xref:System.Windows.Forms.ListBox>
+- [Windows Forms – datová vazba](../../../../docs/framework/winforms/windows-forms-data-binding.md)
+- [Datové vazby a Windows Forms](../../../../docs/framework/winforms/data-binding-and-windows-forms.md)
+- [Ovládací prvky Windows Forms používané k výpisu možností](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)

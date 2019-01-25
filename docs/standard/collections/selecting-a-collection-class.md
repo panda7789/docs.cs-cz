@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d84bc5ac2256139626311ff7c848170c28ffbd5b
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 049976c1e63d04c495a38b39531313adc1d12c5c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836508"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620081"
 ---
 # <a name="selecting-a-collection-class"></a>Výběr třídy kolekce
 Je nutné pečlivě zvolit třídy kolekce. Pomocí nesprávného typu můžete omezit používání kolekce. Obecně platí, vyhněte se použití typů v <xref:System.Collections> obor názvů Pokud jsou specificky cílené na rozhraní .NET Framework verze 1.1. Obecné a souběžné verze kolekce jsou upřednostňovány kvůli jejich vyšší bezpečnost typů a dalších vylepšení.  
@@ -48,13 +48,13 @@ Je nutné pečlivě zvolit třídy kolekce. Pomocí nesprávného typu můžete 
   
 -   Každý element bude obsahovat jednu hodnotu, kombinaci jeden klíč a jednu hodnotu, nebo kombinací jeden klíč a více hodnot?  
   
-    -   Jedna hodnota: použít některý z kolekcí založených na <xref:System.Collections.IList> rozhraní nebo <xref:System.Collections.Generic.IList%601> obecného rozhraní.  
+    -   Jedna hodnota: Použít některý z kolekcí založených na <xref:System.Collections.IList> rozhraní nebo <xref:System.Collections.Generic.IList%601> obecného rozhraní.  
   
-    -   Jeden z klíčů a jedna hodnota: použít některý z kolekcí založených na <xref:System.Collections.IDictionary> rozhraní nebo <xref:System.Collections.Generic.IDictionary%602> obecného rozhraní.  
+    -   Jeden z klíčů a jedna hodnota: Použít některý z kolekcí založených na <xref:System.Collections.IDictionary> rozhraní nebo <xref:System.Collections.Generic.IDictionary%602> obecného rozhraní.  
   
-    -   Jednu hodnotu s vloženým klíčem: použití <xref:System.Collections.ObjectModel.KeyedCollection%602> obecnou třídu.  
+    -   Jednu hodnotu s vloženým klíčem: Použití <xref:System.Collections.ObjectModel.KeyedCollection%602> obecnou třídu.  
   
-    -   Jeden z klíčů a více hodnot: použití <xref:System.Collections.Specialized.NameValueCollection> třídy.  
+    -   Jeden z klíčů a více hodnot: Použití <xref:System.Collections.Specialized.NameValueCollection> třídy.  
   
 -   Je třeba řadí prvky odlišně od jak byly zadány?  
   
@@ -81,7 +81,7 @@ Je nutné pečlivě zvolit třídy kolekce. Pomocí nesprávného typu můžete 
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections>  
-- <xref:System.Collections.Specialized>  
-- <xref:System.Collections.Generic>  
+- <xref:System.Collections>
+- <xref:System.Collections.Specialized>
+- <xref:System.Collections.Generic>
 - [Kolekce se zabezpečenými vlákny](../../../docs/standard/collections/thread-safe/index.md)

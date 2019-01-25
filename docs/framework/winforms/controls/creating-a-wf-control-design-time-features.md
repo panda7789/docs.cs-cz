@@ -10,12 +10,12 @@ helpviewer_keywords:
 - DocumentDesigner class [Windows Forms]
 - walkthroughs [Windows Forms], controls
 ms.assetid: 6f487c59-cb38-4afa-ad2e-95edacb1d626
-ms.openlocfilehash: cb102ec9b3a7eb4673f42c2ca5ad876e049ff59c
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 8c5ab9ac832ebf98584273bb8c4a7de12b3b8085
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146274"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54595276"
 ---
 # <a name="walkthrough-creating-a-windows-forms-control-that-takes-advantage-of-visual-studio-design-time-features"></a>Průvodce: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio Design-Time
 Možnosti času návrhu pro vlastní ovládací prvek může taková instalace vylepšit pro vytváření přidružený vlastní designer.  
@@ -638,9 +638,9 @@ private void stopButton_Click(object sender, System.EventArgs e)
 - <xref:System.Windows.Forms.Design.ParentControlDesigner>
 - <xref:System.Windows.Forms.Design.DocumentDesigner>
 - <xref:System.ComponentModel.Design.IRootDesigner>
-- <xref:System.ComponentModel.Design.DesignerVerb> 
+- <xref:System.ComponentModel.Design.DesignerVerb>
 - <xref:System.Drawing.Design.UITypeEditor>
 - <xref:System.ComponentModel.BackgroundWorker>
 - [Postupy: Vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu aplikace](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120))
-- [Rozšíření podpory během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120)) 
+- [Rozšíření podpory během návrhu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))
 - [Vlastní návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/h51z5c0x(v=vs.120))

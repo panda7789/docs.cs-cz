@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 19a10a527c37d93d00bec799fdaa12bb0ad3fdbd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e427c3919e8b714146fbe630a7e151dff10703de
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423868"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54582407"
 ---
 # <a name="icorpublishprocessenumnext-method"></a>ICorPublishProcessEnum::Next – metoda
-Získá zadaný počet procesů z kolekce, počínaje na aktuální pozici kurzoru.  
+Získá zadaný počet procesů z kolekce, spouští se na aktuální pozici kurzoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ HRESULT Next (
   
 #### <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet procesů, které mají být načteny.  
+ [in] Počet procesů, který se má načíst.  
   
  `objects`  
- [out] Ukazatel na pole načíst [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) objekty, z nichž každý představuje proces.  
+ [out] Načte ukazatel na pole [icorpublishprocess –](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) objektů, z nichž každý představuje proces.  
   
  `pceltFetched`  
- [out] Ukazatel na počet procesů ve skutečnosti vrátila. Tato hodnota může být null. Pokud `celt` je jedna.  
+ [out] Ukazatel na počet skutečně vrácených procesů. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorPub.idl, CorPub.h  
   
@@ -57,5 +57,5 @@ HRESULT Next (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorPublishProcessEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocessenum-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorPublishProcessEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocessenum-interface.md)
