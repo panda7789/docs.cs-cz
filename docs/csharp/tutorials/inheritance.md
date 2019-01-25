@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 07/05/2018
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: 1938876bcf72fccd7582ede332d052fb3d759395
-ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
+ms.openlocfilehash: 6db3db3ebe3e1934a8e74212692f07158b88b1d5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53656190"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54717516"
 ---
 # <a name="inheritance-in-c-and-net"></a>Dědičnost v jazyce C# a .NET
 
@@ -296,7 +296,7 @@ Následující příklad používá objekty odvozené z `Shape`. Vytvoření ins
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Třídy a objekty](../tour-of-csharp/classes-and-objects.md)   
+- [Třídy a objekty](../tour-of-csharp/classes-and-objects.md)
 - [Dědičnost (C# Programming Guide)](../programming-guide/classes-and-structs/inheritance.md)

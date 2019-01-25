@@ -5,12 +5,12 @@ helpviewer_keywords:
 - TileBrush [WPF], size of tilepropertys
 - Viewport property of TileBrush [WPF]
 ms.assetid: 04f41090-1b46-4e36-832f-d27d28708b8c
-ms.openlocfilehash: e1ba1a25281ffdd1cc00e0bed0efe4f8508780be
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 4bfc14693f1714206e89ec50128ad62dd239dbee
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43467832"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54713561"
 ---
 # <a name="how-to-set-the-tile-size-for-a-tilebrush"></a>Postupy: Nastavení velikosti dlaždice pro TileBrush
 Tento příklad ukazuje, jak nastavení velikosti dlaždice pro <xref:System.Windows.Media.TileBrush>. Ve výchozím nastavení <xref:System.Windows.Media.TileBrush> vytváří jednu dlaždici, která úplně vyplňuje oblast, kterou vymalováváte. Toto chování můžete přepsat tak, že nastavíte <xref:System.Windows.Media.TileBrush.Viewport%2A> a <xref:System.Windows.Media.TileBrush.ViewportUnits%2A> vlastnosti.  
@@ -38,7 +38,7 @@ Tento příklad ukazuje, jak nastavení velikosti dlaždice pro <xref:System.Win
   
  I když v tomto příkladu <xref:System.Windows.Media.ImageBrush> třídy, <xref:System.Windows.Media.TileBrush.Viewport%2A> a <xref:System.Windows.Media.TileBrush.ViewportUnits%2A> vlastnosti se chovají stejně jako pro ostatní <xref:System.Windows.Media.TileBrush> objekty, to znamená, pro <xref:System.Windows.Media.DrawingBrush> a <xref:System.Windows.Media.VisualBrush>. Další informace o <xref:System.Windows.Media.ImageBrush> a druhý <xref:System.Windows.Media.TileBrush> objekty, najdete [Malování pomocí obrázků, kreseb a vizuálních](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.TileBrush>  
- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
- [Vytvoření jiných vzorů dlaždic pomocí prvku TileBrush](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-different-tile-patterns-with-a-tilebrush.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.TileBrush>
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+- [Vytvoření jiných vzorů dlaždic pomocí prvku TileBrush](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-different-tile-patterns-with-a-tilebrush.md)

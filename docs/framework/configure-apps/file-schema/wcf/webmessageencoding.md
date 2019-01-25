@@ -2,21 +2,21 @@
 title: '&lt;webMessageEncoding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 892ca485-e21a-4a44-8e40-633161ef6796
-ms.openlocfilehash: e8b45075c7c07efc49f84526382352a5b1a556b1
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 90102c25c1c5b83af8f629d18b790af9297fa88c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54148666"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54640248"
 ---
 # <a name="ltwebmessageencodinggt"></a>&lt;webMessageEncoding&gt;
 Umožňuje prostého textu XML, zpráv kodovaných zápis JSON (JavaScript Object) a "neupravené" binární obsah ke čtení a zápis v vazby Windows Communication Foundation (WCF).  
   
  \<system.serviceModel>  
 \<vazby >  
-\<třídě customBinding >  
+\<customBinding>  
 \<Vytvoření vazby >  
-\<webMessageEncoding >  
+\<webMessageEncoding>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -71,14 +71,14 @@ Umožňuje prostého textu XML, zpráv kodovaných zápis JSON (JavaScript Objec
                     textEncoding="utf-8" />
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.WebMessageEncodingElement>  
- <xref:System.ServiceModel.Channels.CustomBinding>  
- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
- <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>  
- [Kódování zpráv](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
- [Výběr kodéru zprávy](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.WebMessageEncodingElement>
+- <xref:System.ServiceModel.Channels.CustomBinding>
+- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>
+- <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>
+- [Kódování zpráv](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)
+- [Výběr kodéru zprávy](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

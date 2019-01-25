@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Migrace webových služeb ASP.NET s podporou AJAXu na službu WCF'
+title: 'Postupy: Migrace webových služeb ASP.NET s povolenou službou AJAX na WCF'
 ms.date: 03/30/2017
 ms.assetid: 1428df4d-b18f-4e6d-bd4d-79ab3dd5147c
-ms.openlocfilehash: cd630fa8a583b5d1efdaefaf899cb6e345e7c7ad
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: de90f4b89f182c55dec3f6fee6836c64535aa2d4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840911"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54638285"
 ---
-# <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Postupy: Migrace webových služeb ASP.NET s podporou AJAXu na službu WCF
+# <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Postupy: Migrace webových služeb ASP.NET s povolenou službou AJAX na WCF
 Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX do ekvivalentní služby s povoleným AJAX Windows Communication Foundation (WCF). Ukazuje, jak vytvořit funkčně ekvivalentní verzi WCF služby technologie ASP.NET AJAX. Tyto dvě služby je pak možné použít vedle sebe nebo službu WCF je možné nahradit služby technologie ASP.NET AJAX.
 
  Migrace stávající technologie ASP.NET AJAX komunikace mezi službami WCF AJAX poskytuje následující výhody:
@@ -22,11 +22,11 @@ Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX 
 
  Kód, které vyplývají z postupů uvedených v tomto tématu najdete v příkladu následující postupy.
 
- Další informace o vystavení služby WCF přes koncový bod s povoleným AJAX, najdete v článku [postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) tématu.
+ Další informace o vystavení služby WCF přes koncový bod s povoleným AJAX, najdete v článku [jak: Použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) tématu.
 
 ### <a name="to-create-and-test-the-aspnet-web-service-application"></a>Vytvořit a otestovat aplikaci technologie ASP.NET webové služby
 
-1.  Otevřít Visual Studio 2012.
+1.  Open Visual Studio 2012.
 
 2.  Z **souboru** nabídce vyberte možnost **nový**, pak **projektu**, pak **webové**a pak vyberte **aplikaci webové služby ASP.NET** .
 
@@ -212,5 +212,5 @@ d.Add("two", 2);
 |Reprezentace slovníky|Celou řadu komponent\<K, V >, zpracovává typy klíčů, které nejsou řetězce.|Jako skutečné objekty JSON -, ale pouze typy klíčů obslužné rutiny, které jsou řetězce.|
 |Řídicí znaky|Vždy s řídicí sekvence dopředné lomítko (/); nikdy umožňuje uvozeny řídicími znaky neplatné znaky JSON, jako je například "\n".|S řídicí sekvence dopředné lomítko (/) pro hodnoty data a času.|
 
-## <a name="see-also"></a>Viz také
- [Postupy: Použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md)

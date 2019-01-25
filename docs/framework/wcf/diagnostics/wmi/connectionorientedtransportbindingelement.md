@@ -2,12 +2,12 @@
 title: ConnectionOrientedTransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: c1308313-f0e2-49e6-977d-6b4ce9ad35d1
-ms.openlocfilehash: 49f030c05f02280d483ac2a836cbe75716b7b5cc
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 5ec2ae0db7239ff0c376ab4a8f050cc4f1df4f71
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185051"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683965"
 ---
 # <a name="connectionorientedtransportbindingelement"></a>ConnectionOrientedTransportBindingElement
 ConnectionOrientedTransportBindingElement  
@@ -37,56 +37,56 @@ class ConnectionOrientedTransportBindingElement : TransportBindingElement
 ### <a name="channelinitializationtimeout"></a>třídě channelInitializationTimeout  
  Datový typ: datum a čas  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Časový interval, který určuje, jak dlouho inicializace kanálu má ještě před vypršením časového limitu.  
   
 ### <a name="connectionbuffersize"></a>connectionBufferSize  
  Datový typ: sint32  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Velikost vyrovnávací paměti použité k přenosu bloku serializovaných zpráv od klienta nebo služby.  
   
-### <a name="hostnamecomparisonmode"></a>hostNameComparisonMode  
+### <a name="hostnamecomparisonmode"></a>HostNameComparisonMode  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Hodnota, která určuje, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele.  
   
-### <a name="maxbuffersize"></a>Třída maxBufferSize  
+### <a name="maxbuffersize"></a>MaxBufferSize  
  Datový typ: sint32  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Maximální velikost vyrovnávací paměti pro použití.  
   
-### <a name="maxoutputdelay"></a>maxOutputDelay  
+### <a name="maxoutputdelay"></a>MaxOutputDelay  
  Datový typ: datum a čas  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Maximální interval času, který blok zprávy, nebo celá zpráva může zůstat posláním ve vyrovnávací paměti teprve pak ji bude odeslána.  
   
-### <a name="maxpendingaccepts"></a>maxPendingAccepts  
+### <a name="maxpendingaccepts"></a>MaxPendingAccepts  
  Datový typ: sint32  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Maximální počet nevyřízených asynchronních akceptovaných vláken, které jsou k dispozici pro zpracování příchozích připojení ve službě.  
   
-### <a name="maxpendingconnections"></a>maxPendingConnections  
+### <a name="maxpendingconnections"></a>MaxPendingConnections  
  Datový typ: sint32  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Maximální počet nevyřízených připojení.  
   
-### <a name="transfermode"></a>režim přenosu  
+### <a name="transfermode"></a>TransferMode  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Hodnota, která určuje, zda jsou zprávy ukládány do vyrovnávací paměti nebo zpracovány připojením řízenou přepravou.  
   
@@ -96,5 +96,5 @@ class ConnectionOrientedTransportBindingElement : TransportBindingElement
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>

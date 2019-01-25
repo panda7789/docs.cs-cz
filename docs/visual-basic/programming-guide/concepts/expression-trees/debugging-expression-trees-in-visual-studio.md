@@ -2,32 +2,32 @@
 title: Ladění stromů výrazů v sadě Visual Studio (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 492cc28f-b7a2-4c47-b582-b3c437b8a5d5
-ms.openlocfilehash: 2addba2654067eaaf6c621c927e0992308879ae4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b060a65a38c4ab295a54f972678f273ada218d06
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33644235"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54617353"
 ---
 # <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>Ladění stromů výrazů v sadě Visual Studio (Visual Basic)
-Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů. Chcete-li získat rychlý přehled o výraz stromová struktura, můžete použít `DebugView` vlastnost, která je k dispozici pouze v režimu ladění. Další informace o ladění najdete v tématu [ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).  
+Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů. Pokud chcete získat rychlý přehled toho, stromové struktury výrazu, můžete použít `DebugView` vlastnost, která je k dispozici pouze v režimu ladění. Další informace o ladění naleznete v tématu [ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).  
   
- Lépe představují obsah stromů výrazů `DebugView` vlastnost používá vizualizérech Visual Studio. Další informace najdete v tématu [vytvořit vlastní Vizualizérech](/visualstudio/debugger/create-custom-visualizers-of-data).  
+ Pro lepší reprezentaci obsah stromů výrazů `DebugView` vlastnost používá Visual Studio vizualizéry. Další informace najdete v tématu [vytvořit vlastní Vizualizéry](/visualstudio/debugger/create-custom-visualizers-of-data).  
   
-### <a name="to-open-a-visualizer-for-an-expression-tree"></a>Chcete-li otevřít vizualizér pro strom výrazu se nezdařilo  
+### <a name="to-open-a-visualizer-for-an-expression-tree"></a>Chcete-li otevřít vizualizér pro strom výrazu.  
   
-1.  Klikněte na ikonu lupy, který se zobrazí vedle `DebugView` vlastnost strom výrazu v **datatips –**, **sledovat** okně **automobily** okno, nebo **Místní hodnoty –** okno.  
+1.  Klikněte na ikonu lupy, která se zobrazí vedle `DebugView` vlastnost strom výrazu v **DataTips**, **Watch** okně **automatické hodnoty** okna, nebo **Lokální** okna.  
   
-     Zobrazí se seznam vizualizérech.  
+     Zobrazí se seznam vizualizéry.  
   
-2.  Klikněte na tlačítko vizualizér, kterou chcete použít.  
+2.  Klikněte na vizualizaci, kterou chcete použít.  
   
- Každý typ výrazu se zobrazí v vizualizér, jak je popsáno v následujících částech.  
+ Každý typ výrazu se zobrazí ve vizualizátoru, jak je popsáno v následujících částech.  
   
 ## <a name="parameterexpressions"></a>ParameterExpressions  
- <xref:System.Linq.Expressions.ParameterExpression> názvy proměnných jsou zobrazeny symbolem "$" na začátku.  
+ <xref:System.Linq.Expressions.ParameterExpression> názvy proměnných jsou zobrazeny se symbolem "$" na začátku.  
   
- Pokud parametr nemá název, je přiřazen automaticky vygenerovaným názvem, jako například `$var1` nebo `$var2`.  
+ Pokud parametr nemá název, je přiřazen automaticky vygenerovaný název, jako například `$var1` nebo `$var2`.  
   
 ### <a name="examples"></a>Příklady  
   
@@ -54,7 +54,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
      `$var1`  
   
 ## <a name="constantexpressions"></a>ConstantExpressions  
- Pro <xref:System.Linq.Expressions.ConstantExpression> objekty, které představují celočíselné hodnoty řetězce, a `null`, zobrazí se hodnota konstanty.  
+ Pro <xref:System.Linq.Expressions.ConstantExpression> objekty, které představují celočíselných hodnot, řetězce a `null`, zobrazí se hodnota konstanty.  
   
 ### <a name="examples"></a>Příklady  
   
@@ -81,7 +81,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
      10D  
   
 ## <a name="blockexpression"></a>BlockExpression  
- Pokud se typ <xref:System.Linq.Expressions.BlockExpression> objektu se liší od typ poslední výrazu v bloku, typ se zobrazí v `DebugInfo` vlastnost v lomených závorkách (\< a >). Jinak typ <xref:System.Linq.Expressions.BlockExpression> objekt se nezobrazí.  
+ Pokud typ <xref:System.Linq.Expressions.BlockExpression> objektu se liší od typu posledního výrazu v bloku, zobrazí se v typu `DebugInfo` vlastnost v lomených závorkách (\< a >). V opačném případě typu <xref:System.Linq.Expressions.BlockExpression> objekt se nezobrazuje.  
   
 ### <a name="examples"></a>Příklady  
   
@@ -115,9 +115,9 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
      `}`  
   
 ## <a name="lambdaexpression"></a>LambdaExpression  
- <xref:System.Linq.Expressions.LambdaExpression> Zobrazí se objekty, spolu s jejich typů delegátů.  
+ <xref:System.Linq.Expressions.LambdaExpression> objekty se zobrazí spolu s jejich typy delegátů.  
   
- Pokud výrazu lambda nemá název, je přiřazen automaticky vygenerovaným názvem, jako například `#Lambda1` nebo `#Lambda2`.  
+ Pokud výraz lambda nemá název, je přiřazen automaticky vygenerovaný název, jako například `#Lambda1` nebo `#Lambda2`.  
   
 ### <a name="examples"></a>Příklady  
   
@@ -152,11 +152,11 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
      `}`  
   
 ## <a name="labelexpression"></a>LabelExpression  
- Pokud zadáte výchozí hodnotu pro <xref:System.Linq.Expressions.LabelExpression> objektu, tato hodnota se zobrazí před <xref:System.Linq.Expressions.LabelTarget> objektu.  
+ Pokud chcete zadat výchozí hodnotu pro <xref:System.Linq.Expressions.LabelExpression> objektu, zobrazí se tato hodnota před <xref:System.Linq.Expressions.LabelTarget> objektu.  
   
- `.Label` Token označuje začátek popisku. `.LabelTarget` Token označuje cílovým serverem cíl, který má přejít na.  
+ `.Label` Token označuje začátek popisek. `.LabelTarget` Určuje cílové cíl, který chcete přejít na token.  
   
- Pokud štítek nemá název, je přiřazen automaticky vygenerovaným názvem, jako například `#Label1` nebo `#Label2`.  
+ Pokud popisek nemá název, je přiřazen automaticky vygenerovaný název, jako například `#Label1` nebo `#Label2`.  
   
 ### <a name="examples"></a>Příklady  
   
@@ -204,7 +204,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
      `}`  
   
 ## <a name="checked-operators"></a>Checked operátory  
- Checked operátory se zobrazí symbol "#" před operátor. Např. operátor sčítání zaškrtnuté je zobrazen jako `#+`.  
+ Checked operátory se zobrazí symbol "#" před operátor. Například operátor checked sčítání se zobrazí jako `#+`.  
   
 ### <a name="examples"></a>Příklady  
   
@@ -230,7 +230,7 @@ Při ladění aplikace můžete analyzovat struktuře a obsahu stromů výrazů.
   
      `#(System.Int32)10D`  
   
-## <a name="see-also"></a>Viz také  
- [Stromy výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)  
- [Ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)  
- [Vytvořit vlastní Vizualizérech](/visualstudio/debugger/create-custom-visualizers-of-data)
+## <a name="see-also"></a>Viz také:
+- [Stromy výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
+- [Ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)
+- [Vytváření vlastních vizualizérů](/visualstudio/debugger/create-custom-visualizers-of-data)

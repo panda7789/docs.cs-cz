@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: 717e38b15767b744816c0a57c97827a1a35c95b3
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: ea3ff1e8ec4234e75b937cfef81b55bb8f71fa12
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086671"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683963"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation – informace o ochraně osobních údajů
 Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. Při vytvoření aplikace využívající Windows Communication Foundation (WCF), verze 3.0, vaše aplikace může mít vliv na vaše koncové uživatele o ochraně osobních údajů. Například vaše aplikace explicitně shromažďovat informace o uživateli, nebo může požádat o nebo odeslat informace přes Internet k vašemu webovému serveru. Pokud vložíte technologie společnosti Microsoft ve vaší aplikaci, tato technologie může mít svůj vlastní chování, které můžou ovlivnit ochranu osobních údajů. WCF neodešle žádné informace o společnosti Microsoft z vaší aplikace Pokud vy nebo koncový uživatel se rozhodnete odeslat na nás.  
@@ -95,7 +95,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
 ### <a name="tracing"></a>Trasování  
  Funkce Diagnostika služby WCF infrastruktury protokoly zpráv, které procházejí přenos a modelu vrstvy služby a činnosti a události související se tyto zprávy. Tato funkce je ve výchozím nastavení vypnuté. Je povoleno, je používán konfigurační soubor aplikace a chování trasování může být upraveno pomocí poskytovatele služby WMI WCF v době běhu. Při povolení trasování infrastruktury vysílá diagnostickém trasování, která obsahuje zprávy, aktivity a zpracování událostí do nakonfigurovaného naslouchacích procesů. Formát a umístění výstupu se určují podle volby konfigurace naslouchacího procesu na správce, ale je obvykle formátovaného souboru XML. Správce zodpovídá za nastavení seznamu řízení přístupu (ACL) pro trasovací soubory. Zejména když jsou hostované pomocí aktivace systému Windows (WAS), Správce by měl Ujistěte se, že soubory nejsou obsluhovány z veřejné virtuální kořenový adresář Pokud, který není žádoucí.  
   
- Existují dva typy trasování: protokolování zpráv a Model služby diagnostické trasování, je popsáno v následující části. Každý typ je nakonfigurovaná prostřednictvím vlastní zdroj trasování: <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A> a <xref:System.ServiceModel>. Obě tyto zdroje protokolování trasování zaznamenávat data, která je vůči aplikaci lokální.  
+ Existují dva typy trasování: Protokolování zpráv a Model služby diagnostické trasování, je popsáno v následující části. Každý typ je nakonfigurovaná prostřednictvím vlastní zdroj trasování: <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A> a <xref:System.ServiceModel>. Obě tyto zdroje protokolování trasování zaznamenávat data, která je vůči aplikaci lokální.  
   
 ### <a name="message-logging"></a>Protokolování zpráv  
  Protokolování zdroj trasování zpráv (<xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>) umožňuje správci protokolování zprávy tohoto toku prostřednictvím systému. Prostřednictvím konfigurace uživatel může rozhodnout protokolovat celé zprávy nebo pouze hlavičky zpráv, zda chcete protokolovat v modelu vrstvy přenosu a/nebo služba a jestli se mají zahrnout špatně vytvořené zprávy. Uživatel také může konfigurovat filtrování omezit zprávy, které jsou zaznamenány.  
@@ -143,7 +143,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \- Xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" a xmlns:wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
- wsse:username  
+ wsse:Username  
   
  wsse:BinarySecurityToken  
   
@@ -155,23 +155,23 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  MinorVersion="1"  
   
- AssertionId = "[ID]"  
+ AssertionId="[ID]"  
   
- Vystavitel = "[string]"  
+ Issuer="[string]"  
   
- IssueInstant = "[dateTime]"  
+ IssueInstant="[dateTime]"  
   
  >  
   
  \<Podmínky NotBefore = "[dateTime]" NotOnOrAfter = "[dateTime]" >  
   
- \<AudienceRestrictionCondition >  
+ \<AudienceRestrictionCondition>  
   
  \<Audience>[uri]\</Audience>+  
   
- \</ AudienceRestrictionCondition > *  
+ \</AudienceRestrictionCondition>*  
   
- \<DoNotCacheCondition / > *  
+ \<DoNotCacheCondition />*  
   
  <\!--abstraktní základní typ  
   
@@ -213,13 +213,13 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \<SubjectConfirmation >  
   
- \<ConfirmationMethod > [anyUri]\</ConfirmationMethod > +  
+ \<ConfirmationMethod>[anyUri]\</ConfirmationMethod>+  
   
- \<SubjectConfirmationData > [jakýkoli]\</SubjectConfirmationData >?  
+ \<SubjectConfirmationData>[any]\</SubjectConfirmationData>?  
   
  \<ds:KeyInfo>...\</ds:KeyInfo>?  
   
- \</ SubjectConfirmation >?  
+ \</SubjectConfirmation>?  
   
  \</ Předmět >  
   
@@ -229,9 +229,9 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \<AuthenticationStatement  
   
- AuthenticationMethod = "[identifikátor uri]"  
+ AuthenticationMethod="[uri]"  
   
- AuthenticationInstant = "[dateTime]"  
+ AuthenticationInstant="[dateTime]"  
   
  >  
   
@@ -247,7 +247,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  < AuthorityBinding  
   
- AuthorityKind = "[QName]"  
+ AuthorityKind="[QName]"  
   
  Umístění = "[identifikátor uri]"  
   
@@ -255,7 +255,7 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  />*  
   
- \</ AuthenticationStatement > *  
+ \</AuthenticationStatement>*  
   
  \<AttributeStatement >  
   
@@ -263,9 +263,9 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \<Atribut  
   
- AttributeName = "[string]"  
+ AttributeName="[string]"  
   
- AttributeNamespace = "[identifikátor uri]"  
+ AttributeNamespace="[uri]"  
   
  >  
   
@@ -295,9 +295,9 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  \</ Důkazy >?  
   
- \</ AuthorizationDecisionStatement > *  
+ \</AuthorizationDecisionStatement>*  
   
- \</ Kontrolní výraz >  
+ \</Assertion>  
   
 #### <a name="information-removed-from-message-bodies-when-logging-decryptedunencrypted-messages"></a>Informace, které jsou odebrány z těla zprávy při přihlašování bez dešifrovat/šifrování zprávy  
  Jak je uvedeno výše, WCF odebere klíče a známé potenciálně osobními údaji ze záhlaví zpráv pro zprávy zaznamenané dříve dešifrovat/nezašifrované. Kromě toho WCF odebere klíče a známé potenciálně osobní údaje z těla zprávy pro prvky těla a akce v následujícím seznamu, které popisují zabezpečení zprávy, které jsou zahrnuté v výměny klíčů.  
@@ -308,11 +308,11 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  Pro tyto elementy textu, které zahrnují výměny klíčů odebraly informace:  
   
- WSt:RequestSecurityToken  
+ wst:RequestSecurityToken  
   
- WSt:RequestSecurityTokenResponse  
+ wst:RequestSecurityTokenResponse  
   
- WSt:RequestSecurityTokenResponseCollection  
+ wst:RequestSecurityTokenResponseCollection  
   
  Informace o odebrán také pro každou z následujících akcí:  
   
@@ -401,6 +401,6 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
   
  Na webové služby WSDL (Description Language) obsahuje definici portu. Každý z portů má adresu koncového bodu a vazbu, která představuje služby používané aplikace. Vystavení WSDL můžete vypnout pomocí konfigurace. Žádné informace se uchovávají v počítači.  
   
-## <a name="see-also"></a>Viz také  
- [Windows Communication Foundation](https://msdn.microsoft.com/library/fd327ade-0260-4c40-adbe-b74645ba3277)  
- [Zabezpečení](../../../docs/framework/wcf/feature-details/security.md)
+## <a name="see-also"></a>Viz také:
+- [Windows Communication Foundation](https://msdn.microsoft.com/library/fd327ade-0260-4c40-adbe-b74645ba3277)
+- [Zabezpečení](../../../docs/framework/wcf/feature-details/security.md)

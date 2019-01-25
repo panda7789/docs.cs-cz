@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: dotazu na znaky v řetězci (LINQ) (C#)'
+title: 'Postupy: Dotazu na znaky v řetězci (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
-ms.openlocfilehash: c6e5fb14e0be277f53511aaddd362f2f203531e8
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 0c577fc2dc2ae07574580f819a6fb51336107dfb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43741182"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54665627"
 ---
-# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Postupy: dotazu na znaky v řetězci (LINQ) (C#)
+# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Postupy: Dotazu na znaky v řetězci (LINQ) (C#)
 Vzhledem k tomu, <xref:System.String> třída implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, libovolný řetězec může být dotázán jako posloupnost znaků. Ale to není běžné použití odkazu LINQ. Pro komplexní porovnávání vzorů operace, použijte <xref:System.Text.RegularExpressions.Regex> třídy.  
   
 ## <a name="example"></a>Příklad  
@@ -57,7 +57,7 @@ class QueryAString
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
-- [Postupy: kombinace dotazů LINQ s regulárními výrazy (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)
+- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
+- [Postupy: Kombinace dotazů LINQ s regulárními výrazy (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)

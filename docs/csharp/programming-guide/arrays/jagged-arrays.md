@@ -6,12 +6,12 @@ helpviewer_keywords:
 - jagged arrays [C#]
 - arrays [C#], jagged
 ms.assetid: 537c65a6-0e0a-4a00-a2b8-086f38519c70
-ms.openlocfilehash: f517a9a6d6e10f04df70729fb9e641c1f955f28a
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 118e92be724723d4364cf8b40c9ff850fcb1931a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53237854"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698390"
 ---
 # <a name="jagged-arrays-c-programming-guide"></a>Vícenásobná pole (Průvodce programováním v C#)
 
@@ -65,10 +65,10 @@ Vícenásobné pole je pole, jehož prvky jsou pole. Prvky vícenásobného pole
   
  [!code-csharp[csProgGuideArrays#18](../../../csharp/programming-guide/arrays/codesnippet/CSharp/jagged-arrays_10.cs)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Array>  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Pole](../../../csharp/programming-guide/arrays/index.md)  
-- [Jednorozměrná pole](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)  
+- <xref:System.Array>
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Pole](../../../csharp/programming-guide/arrays/index.md)
+- [Jednorozměrná pole](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)
 - [Vícerozměrná pole](../../../csharp/programming-guide/arrays/multidimensional-arrays.md)

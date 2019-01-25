@@ -2,12 +2,12 @@
 title: Podepisování uložených procedur na SQL serveru
 ms.date: 01/05/2018
 ms.assetid: eeed752c-0084-48e5-9dca-381353007a0d
-ms.openlocfilehash: c24edd59992c246c33944e6693ff5ac69311886a
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: da7b21d725d301006288245c940e4367c3ce8568
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865680"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54606819"
 ---
 # <a name="signing-stored-procedures-in-sql-server"></a>Podepisování uložených procedur na SQL serveru
  Digitální podpis je algoritmu digest data zašifrovaná pomocí soukromého klíče podpisu. Privátní klíč zajistí, že digitální podpis je jedinečné pro jeho nosiče nebo vlastníka. Uložené procedury, funkce (s výjimkou vložené funkce vracející tabulku), aktivační události a sestavení se můžete přihlásit.  
@@ -47,19 +47,19 @@ Pokud je nutné modul další oprávnění na úrovni serveru:
 >  Certifikát nelze udělit oprávnění uživateli, který má určitá oprávnění odvolat ODEPŘÍT příkaz using. ODEPŘÍT vždy přednost udělení, brání volajícímu dědí oprávnění udělená uživatelského certifikátu.  
   
 ## <a name="external-resources"></a>Externí zdroje  
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
 |[Modul podepsání](https://go.microsoft.com/fwlink/?LinkId=98590) v Online knihách serveru SQL|Popisuje modul podepisování, vzorový scénář a odkazy na relevantní témata příkazů jazyka Transact-SQL.|  
 |[Podepisování uložených procedur s certifikátem](/sql/relational-databases/tutorial-signing-stored-procedures-with-a-certificate) v Online knihách serveru SQL|Poskytuje návod pro podepisování certifikátem uloženou proceduru.|  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
- [Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
- [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
- [Přizpůsobení oprávnění se zosobněním na SQL Serveru](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)  
- [Úpravy dat pomocí uložených procedur](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
+- [Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)
+- [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)
+- [Přizpůsobení oprávnění se zosobněním na SQL Serveru](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)
+- [Úpravy dat pomocí uložených procedur](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

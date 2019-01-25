@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ae3712f-ef5e-41a1-9ea9-b3d0399439f1
-ms.openlocfilehash: d8fb10d1ad9218d8113c95a4c67dbb32cf87beb1
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 9cad6c798856fb77023bb52c528b9294f5f6d0bc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53131362"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54656177"
 ---
 # <a name="local-transactions"></a>Místní transakce
 Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se používají, když chcete vazby společně více úloh, takže se provést jako jednu jednotku práce. Představte si například, že aplikace provede dvě úlohy. Nejprve aktualizuje tabulku s informacemi o pořadí. Za druhé aktualizuje tabulku, která obsahuje informace o inventáři, připsáním na stranu MD položky seřazeny. Pokud buď úloha selže, pak obě aktualizace jsou vrácena zpět.  
@@ -47,8 +47,8 @@ Transakce v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] se použí
  [!code-csharp[DataWorks SqlTransaction.Local#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlTransaction.Local/CS/source.cs#1)]
  [!code-vb[DataWorks SqlTransaction.Local#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlTransaction.Local/VB/source.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
- [Distribuované transakce](../../../../docs/framework/data/adonet/distributed-transactions.md)  
- [Integrace System.Transactions s SQL Serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)
+- [Distribuované transakce](../../../../docs/framework/data/adonet/distributed-transactions.md)
+- [Integrace System.Transactions s SQL Serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5419d2e6932e08d05c8336d473cf68bd16058a48
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6e8d0c16000c78fab0371b68c3a350bd2018aa1c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417268"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664522"
 ---
 # <a name="icordebugnativeframegetlocalmemoryvalue-method"></a>ICorDebugNativeFrame::GetLocalMemoryValue – metoda
-Získá hodnotu argumentu nebo místní proměnné, která je uložena v umístění zadaná paměťová tato nativní rámce.  
+Získá hodnotu argumentu nebo místní proměnná, která je uložena v zadaném umístění v paměti pro tuto nativní rámce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +40,19 @@ HRESULT GetLocalMemoryValue (
   
 #### <a name="parameters"></a>Parametry  
  `address`  
- [v] A `CORDB_ADDRESS` hodnotu, která určuje umístění v paměti, který obsahuje hodnotu.  
+ [in] A `CORDB_ADDRESS` hodnota, která určuje umístění v paměti, který obsahuje hodnotu.  
   
  `cbSigBlob`  
- [v] Celé číslo, které určuje velikost podpis binární metadat, který se odkazuje `pvSigBlob` parametr.  
+ [in] Celé číslo, které určuje velikost podpisu binární metadat, který se odkazuje `pvSigBlob` parametru.  
   
  `pvSigBlob`  
- [v] A `PCCOR_SIGNATURE` hodnotu, která ukazuje na binární metadata podpis hodnotu typu.  
+ [in] A `PCCOR_SIGNATURE` hodnotu, která odkazuje na podpis metadat binární typ hodnoty.  
   
  `ppValue`  
- [out] Ukazatel na adresu "ICorDebugValue" objekt, který reprezentuje načtené hodnoty, který je uložen v umístění zadaná paměťová.  
+ [out] Ukazatel na adresu "ICorDebugValue" objekt představující získanou hodnotu, která je uložena v zadaném umístění v paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -60,5 +60,5 @@ HRESULT GetLocalMemoryValue (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

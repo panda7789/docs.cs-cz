@@ -12,61 +12,61 @@ helpviewer_keywords:
 ms.assetid: a8347eb1-295f-46b9-8a78-63331f9ecc50
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1016a0c63a85919764271e01771ff8192341725c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 45810390ced8584ea7b37908a9e4af8d3da73f34
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33398232"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54549847"
 ---
 # <a name="specifying-a-character-set"></a>Určení sady znaků
-<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole řídí řetězec zařazování a určuje, jak vyvolání platformy najde názvy funkcí v knihovně DLL. Toto téma popisuje, jak chování.  
+<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole řídí zařazování řetězce a určuje, jak vyvolání platformy najde názvy funkcí v knihovně DLL. Toto téma popisuje, jak chování.  
   
- Některé rozhraní API exportovat dvě verze funkcí, které přijímají argumenty řetězce: úzké (ANSI) a celou (Unicode). Rozhraní API Win32 pro instanci zahrnuje následující názvy vstupní bod **MessageBox** funkce:  
+ Některá rozhraní API exportovat dvě verze funkcí, které přijímají řetězcové argumenty: úzký (ANSI) a celý (Unicode). Rozhraní API systému Win32, zahrnuje následující názvy vstupní bod **MessageBox** funkce:  
   
 -   **MessageBoxA**  
   
-     Poskytuje 1bajtový znak ANSI formátování, rozlišené "A" připojeným k názvu vstupního bodu. Volání **MessageBoxA** vždy zařazování řetězců v ANSI formátu, jako je běžné na platformách systému Windows 95 a Windows 98.  
+     Poskytuje 1bajtový ANSI formátování, odlišené "A" připojenou k názvu vstupního bodu. Volání **MessageBoxA** vždy zařazování řetězců v ANSI formátování, což je běžné na platformách Windows 95 a Windows 98.  
   
--   **Funkce**  
+-   **MessageBoxW**  
   
-     Poskytuje formátování 2bajtová znaků Unicode, rozlišené "W" připojeným k názvu vstupního bodu. Volání **funkce** vždy zařazování řetězce ve formátu Unicode, jako je běžné na platformách systému Windows NT, Windows 2000 a Windows XP.  
+     Obsahuje formátování 2bajtových znaků Unicode, odlišené "W" připojenou k názvu vstupního bodu. Volání **funkce** vždy zařazovat řetězce ve formátu Unicode, což je běžné na platformách Windows NT, Windows 2000 a Windows XP.  
   
-## <a name="string-marshaling-and-name-matching"></a>Zařazování řetězců a odpovídající název  
+## <a name="string-marshaling-and-name-matching"></a>Zařazování řetězců a shoda názvu  
  **CharSet** pole přijímá následující hodnoty:  
   
  **CharSet.Ansi** (výchozí hodnota)  
   
--   Řetězec zařazování  
+-   Zařazování řetězců  
   
-     Vyvolání platformy marshals řetězců z jejich spravovaných formátu (Unicode) do formátu ANSI.  
+     Vyvolání platformy marshals řetězců z jejich spravovaných formátu (Unicode) na ANSI formát.  
   
--   S odpovídajícím názvem  
+-   Shoda názvu  
   
-     Když <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> pole je **true**, protože je ve výchozím nastavení v [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], hledání pouze pro zadaný název vyvolání platformy. Pokud zadáte například **MessageBox**, hledá vyvolání platformy **MessageBox** a selže, když nemůže najít přesnou pravopis.  
+     Když <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> pole je **true**, protože je ve výchozím nastavení v [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], vyhledá pouze zadaný název vyvolání platformy. Pokud zadáte například **MessageBox**, vyhledá vyvolání platformy **MessageBox** a selže, pokud nemůže najít přesnou kontrolu pravopisu.  
   
-     Když **ExactSpelling** pole je **false**, protože je ve výchozím nastavení v jazyce C++ a C#, vyvolání platformy alias nejprve hledá unmangled (**MessageBox**), pak (pozměnění název **MessageBoxA**) Pokud není nalezena unmangled alias. Všimněte si, že ANSI odpovídajícím názvem chování se liší od chování odpovídajícím názvem kódování Unicode.  
+     Když **ExactSpelling** pole je **false**, protože je ve výchozím nastavení v jazyce C++ a C#, nejprve vyhledá unmangled alias vyvolání platformy (**MessageBox**), pak bude rozdělený název (**MessageBoxA**) Pokud se nenajde unmangled alias. Všimněte si, že ANSI shoda názvu chování se liší od chování porovnávání název kódování Unicode.  
   
  **CharSet.Unicode**  
   
--   Řetězec zařazování  
+-   Zařazování řetězců  
   
-     Vyvolání platformy kopie řetězců z jejich spravovaných formátu (Unicode) do formátu Unicode.  
+     Kopie řetězce z jejich spravovaných formátu (Unicode) do Unicode formátu vyvolání platformy.  
   
--   S odpovídajícím názvem  
+-   Shoda názvu  
   
-     Když **ExactSpelling** pole je **true**, protože je ve výchozím nastavení v [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], hledání pouze pro zadaný název vyvolání platformy. Pokud zadáte například **MessageBox**, hledá vyvolání platformy **MessageBox** a selže, pokud nemůže najít přesnou pravopis.  
+     Když **ExactSpelling** pole je **true**, protože je ve výchozím nastavení v [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], vyhledá pouze zadaný název vyvolání platformy. Pokud zadáte například **MessageBox**, vyhledá vyvolání platformy **MessageBox** a selže, pokud nemůže najít přesnou kontrolu pravopisu.  
   
-     Když **ExactSpelling** pole je **false**, protože je ve výchozím nastavení v jazyce C++ a C#, vyvolání platformy nejdřív hledá název pozměnění (**funkce**), pak unmangled alias (**MessageBox**) Pokud pozměnění název nebyl nalezen. Všimněte si, že Unicode s odpovídajícím názvem chování se liší od chování odpovídajícím názvem ANSI.  
+     Když **ExactSpelling** pole je **false**, protože je ve výchozím nastavení v jazyce C++ a C#, nejprve vyhledá pozměněný název vyvolání platformy (**funkce**), pak bude unmangled alias (**MessageBox**) Pokud se nenajde pozměnění názvu. Všimněte si, že Unicode shoda názvu chování se liší od chování porovnávání název ANSI.  
   
  **CharSet.Auto**  
   
--   Vyvolání platformy zvolí formátech ANSI a Unicode v době běhu podle cílové platformy.  
+-   Vyvolání platformy zvolí mezi formáty ANSI a Unicode v době běhu, založené na cílové platformě.  
   
-## <a name="specifying-a-character-set-in-visual-basic"></a>Určení sady znaků v jazyce Visual Basic  
- Následující příklad deklaruje **MessageBox** funkce tři vždy pokaždé, když s jiným chováním znakovou sadu. Můžete určit chování znakové sady v jazyce Visual Basic přidáním **Ansi**, **Unicode**, nebo **automaticky** – klíčové slovo k příkazu deklarace.  
+## <a name="specifying-a-character-set-in-visual-basic"></a>Určení znakové sady v jazyce Visual Basic  
+ Následující příklad deklaruje **MessageBox** funkce tři vícekrát, pokaždé, když s jinou znakovou sadu chování. Znakové sady chování v jazyce Visual Basic můžete zadat tak, že přidáte **Ansi**, **Unicode**, nebo **automaticky** – klíčové slovo do příkazu deklarace.  
   
- Pokud vynecháte – klíčové slovo znaková sada, jak se provádí v první příkaz deklarace <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> pole výchozí znakovou sadu ANSI. Druhý a třetí příkazy v příkladu explicitně zadat znakovou sadu s klíčovým slovem.  
+ Pokud vynecháte – klíčové slovo znakové sady, jak je tomu v prvním příkazu deklarace, <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> pole výchozí znakovou sadu ANSI. Druhý a třetí příkazy v příkladu explicitně zadat znakovou sadu s klíčovým slovem.  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -86,8 +86,8 @@ Public Class Win32
 End Class  
 ```  
   
-## <a name="specifying-a-character-set-in-c-and-c"></a>Určení sady znaků v jazyce C# a C++  
- <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole identifikuje základní znakovou sadu ANSI nebo Unicode. Ovládací prvky, jak by měl být řetězcové argumenty pro metodu zařazen sada znaků. K označení znaková sada, použijte jednu z následujících podob:  
+## <a name="specifying-a-character-set-in-c-and-c"></a>Určení znakové sady v C# a C++  
+ <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole identifikuje základní znakovou sadu ANSI nebo Unicode. Znakové sady, které řídí, jak by měly být zařazeny řetězcové argumenty metody. Použijte jednu z následujících forem udávajících znakové sady:  
   
 ```csharp  
 [DllImport("dllname", CharSet=CharSet.Ansi)]  
@@ -101,7 +101,7 @@ End Class
 [DllImport("dllname", CharSet=CharSet::Auto)]  
 ```  
   
- Následující příklad ukazuje tři spravované definice **MessageBox** funkce s atributy zadat znakovou sadu. V definici první podle jeho vynechání **CharSet** pole výchozí znakovou sadu ANSI.  
+ Následující příklad ukazuje tři spravované definice **MessageBox** funkce s atributy k určení sady znaků. V první definici podle jeho vynechání **CharSet** pole výchozí znakovou sadu ANSI.  
   
 ```csharp  
 [DllImport("user32.dll")]  
@@ -140,8 +140,8 @@ extern "C" int MessageBox(HWND hWnd,
                           unsigned int uType);  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.DllImportAttribute>  
- [Vytváření prototypů ve spravovaném kódu](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)  
- [Příklady vyvolání platformy](../../../docs/framework/interop/platform-invoke-examples.md)  
- [Zařazování dat s voláním platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.DllImportAttribute>
+- [Vytváření prototypů ve spravovaném kódu](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)
+- [Příklady vyvolání platformy](../../../docs/framework/interop/platform-invoke-examples.md)
+- [Zařazování dat s voláním platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)

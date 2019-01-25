@@ -9,15 +9,15 @@ helpviewer_keywords:
 - /quiet compiler option [Visual Basic]
 - quiet compiler option [Visual Basic]
 ms.assetid: 5d77fa23-4c50-4708-8535-649912b098e8
-ms.openlocfilehash: e67fe05507c8cb3edd7f46cad19211ba11e3b054
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dfa85141e791cfcb28cfc6d216781f0cf14c2e4a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33652393"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54624150"
 ---
 # <a name="-quiet"></a>-quiet
-Zabrání zobrazení kódu syntaxe související chyby a upozornění kompilátoru.  
+Zabrání zobrazení kódu pro syntaxi související chyby a upozornění kompilátoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,7 +26,7 @@ Zabrání zobrazení kódu syntaxe související chyby a upozornění kompiláto
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení `-quiet` není funkční. Když kompilátor ohlásí syntaxe související chyby nebo upozornění, také výstupy řádku ze zdrojového kódu. Pro aplikace, které analyzovat výstupu kompilátoru může být pohodlnější kompilátor pro výstup jenom text diagnostiky.  
+ Ve výchozím nastavení `-quiet` není platná. Pokud kompilátor ohlásí syntaxe související chyby nebo upozornění, také výstup řádku ze zdrojového kódu. U aplikací, které parsovat výstup kompilátoru může být vhodnější pro kompilátor výstup jenom text diagnostiky.  
   
  V následujícím příkladu `Module1` výstupy chybu, která obsahuje zdrojový kód při kompilaci bez `-quiet`.  
   
@@ -46,20 +46,20 @@ C:\projects\vb2.vb(3) : error BC30451: 'x' is not declared. It may be inaccessib
         x()
         ~
 ``` 
- Kompilované s `-quiet`, kompilátor výstupy jenom následující:  
+ Zkompilované s `-quiet`, kompilátor uloží jenom následující:  
   
  `E:\test\t2.vb(3) : error BC30451: Name 'x' is not declared.`  
   
 > [!NOTE]
->  `-quiet` Možnost není k dispozici ve vývojovém prostředí sady Visual Studio, je k dispozici pouze při kompilaci z příkazového řádku.  
+>  `-quiet` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici jenom při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `T2.vb` a nezobrazí kód pro diagnostiku související syntaxe kompilátoru:  
+ Následující kód zkompiluje `T2.vb` a nezobrazuje kód pro diagnostiku kompilátoru související syntaxi:  
   
 ```  
 vbc -quiet t2.vb  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+## <a name="see-also"></a>Viz také:
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

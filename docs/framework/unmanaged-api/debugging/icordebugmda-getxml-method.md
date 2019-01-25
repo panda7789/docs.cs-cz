@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 874462e37aa10af589f39ed099de899ff7155d24
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 06eaa77ab655d57ad2cc0a3c5613c05444afd903
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33414642"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54660629"
 ---
 # <a name="icordebugmdagetxml-method"></a>ICorDebugMDA::GetXML – metoda
-Získá úplný datový proud XML přidružené Pomocník spravovaného ladění (MDA) reprezentována [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
+Získá úplný datový proud XML spojené s Pomocník spravovaného ladění (MDA) reprezentována [icordebugmda –](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +40,19 @@ HRESULT GetXML (
   
 #### <a name="parameters"></a>Parametry  
  `cchName`  
- [v] Velikost `szName` pole.  
+ [in] Velikost `szName` pole.  
   
  `pcchName`  
  [out] Ukazatel na délku datového proudu XML.  
   
  `szName`  
- [out] Pole, do které chcete uložit datový proud XML. Pole může být prázdná.  
+ [out] Pole pro uložení datový proud XML. Pole může být prázdný.  
   
 ## <a name="remarks"></a>Poznámky  
  `GetXML` Metoda může potenciálně ovlivnit výkon, v závislosti na velikosti související datový proud XML.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -60,6 +60,6 @@ HRESULT GetXML (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugMDA – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugMDA – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

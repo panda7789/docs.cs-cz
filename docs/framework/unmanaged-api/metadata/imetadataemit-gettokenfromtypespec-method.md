@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b0b7d0364b6f58579ee8573d168d6c8180ac9dff
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d45f818c74204517a238e4c9d40ebd4fcd88b0f2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444574"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54641314"
 ---
 # <a name="imetadataemitgettokenfromtypespec-method"></a>IMetaDataEmit::GetTokenFromTypeSpec – metoda
 Získá token metadat pro typ s podpisem Zadaná metadata.  
@@ -39,23 +39,23 @@ HRESULT GetTokenFromTypeSpec (
   
 #### <a name="parameters"></a>Parametry  
  `pvSig`  
- [v] Podpis definovaný.  
+ [in] Podpis je definována.  
   
  `cbSig`  
- [v] Počet bajtů v `pvSig`.  
+ [in] Počet bajtů v `pvSig`.  
   
  `ptypespec`  
  [out] `mdTypeSpec` Token přiřazený.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

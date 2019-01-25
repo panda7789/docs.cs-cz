@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b905c8bb89e4b163952b9640b53fc3992ba5ca10
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 3677b38854ada67c4f2d30043bf80a83d9268971
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50189547"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54654994"
 ---
 # <a name="icordebugmetadatalocatorgetmetadata-method"></a>ICorDebugMetaDataLocator::GetMetaData – metoda
 Dotaz vrátí úplnou cestu k modulu, jehož metadat je potřeba k dokončení operace, které ladicí program požadovaný ladicí program.  
@@ -76,7 +76,7 @@ HRESULT GetMetaData(
  Pokud `wszImagePath` obsahuje úplnou cestu pro modul z výpis paměti, určuje cestu z počítače, kde byl výpis paměti shromážděn. Soubor neexistuje na tomto místě nebo nesprávný soubor se stejným názvem, mohou být uloženy v cestě.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -84,7 +84,7 @@ HRESULT GetMetaData(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugThread4 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugThread4 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

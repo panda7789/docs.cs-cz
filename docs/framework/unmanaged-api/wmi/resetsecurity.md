@@ -1,6 +1,6 @@
 ---
 title: Funkce ResetSecurity (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce ResetSecurity přiřadí token zosobnění aktuální vlákno.
+description: Funkce ResetSecurity přiřadí token zosobnění pro aktuální vlákno.
 ms.date: 11/06/2017
 api_name:
 - ResetSecurity
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 31e42b9e39ddb43025e18888572c394d742e38cf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2f117b9807d57847d53cf00fbb4983e187798f09
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33457903"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54730851"
 ---
 # <a name="resetsecurity-function"></a>ResetSecurity – funkce
-Přiřadí token poskytnutý zosobnění aktuální vlákno.   
+Přiřadí zadaný zosobnění pro aktuální vlákno.   
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -39,20 +39,20 @@ HRESULT ResetSecurity (
 ## <a name="parameters"></a>Parametry
 
 `token`  
-[v] Token zosobnění pro přidružení aktuální vlákno. Jeho hodnota může být `null`. 
+[in] Token zosobnění pro přidružení k aktuální vlákno. Jeho hodnota může být `null`. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Pokud funkci úspěšné, je vrácenou hodnotu `S_OK` (0).
+Pokud funkce uspěje, vrácená hodnota je `S_OK` (0).
 
-V případě selhání funkce návratovou hodnotu je kód chyby nulová. Chcete-li získat rozšířené informace o chybě, zavolejte [GetErrorInfo –](geterrorinfo.md) funkce.
+Pokud funkce selže, vrácená hodnota je kód chyby. Chcete-li získat rozšířené informace o chybě, zavolejte [GetErrorInfo –](geterrorinfo.md) funkce.
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:
+- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

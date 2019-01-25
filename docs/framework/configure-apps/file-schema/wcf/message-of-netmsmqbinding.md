@@ -2,21 +2,21 @@
 title: '&lt;message&gt; – &lt;netMsmqBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 6ebf0240-d7be-4493-b0fe-f00fd5989d77
-ms.openlocfilehash: 06346ba50b68f43cb2c3f9c92a37a432339126d1
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: b636a22fe7c6bcfae5b8f81c1566ea39c9f8ced5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54151017"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683739"
 ---
 # <a name="ltmessagegt-of-ltnetmsmqbindinggt"></a>&lt;message&gt; – &lt;netMsmqBinding&gt;
 Definuje nastavení založená na protokolu SOAP zprávy zabezpečení v tomto `netMsmqBinding` vazby.  
   
  \<system.ServiceModel>  
 \<vazby >  
-\<netMsmqBinding >  
+\<netMsmqBinding>  
 \<Vytvoření vazby >  
-\<zabezpečení >  
+\<security>  
 \<Zpráva >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,7 +40,7 @@ Definuje nastavení založená na protokolu SOAP zprávy zabezpečení v tomto `
 |Atribut|Popis|  
 |---------------|-----------------|  
 |algorithmSuite|Nastaví zprávu, šifrování a key-wrap algoritmy, které se používají k zajištění zabezpečení na základě zpráv pro zprávy odeslané přes přenosu služby MSMQ.<br /><br /> Výchozí hodnota je `Aes256`. Tento atribut je typu <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.|  
-|Typ clientCredentialType|Určuje typ přihlašovacích údajů pro použití při ověřování klientů pro zprávy odeslané přes přenosu služby MSMQ. Platné hodnoty patří:<br /><br /> -Žádný: To umožňuje službě komunikovat s anonymní klienty. Služby ani klienta vyžaduje přihlašovací údaje.<br />– Windows: To umožňuje výměnu SOAP být pod správou ověřený kontext přihlašovacích údajů Windows. To provádí ověřování pomocí protokolu Kerberos.<br />-Uživatelské jméno: To umožňuje službě tak, aby vyžadovala, ověření klienta pomocí přihlašovacích údajů uživatelského jména. Přihlašovací údaje, které v tomto případě musí být zadaná pomocí `clientCredentials` chování **upozornění:**  Odesílání hodnotou hash hesla nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro zabezpečení zpráv Windows Communication Foundation (WCF) není podporována. Proto WCF vynutí, že při použití pověření uživatelských jmen zabezpečené výměny. Tento režim vyžaduje, aby byl specifikován certifikát služby na straně klienta pomocí `clientCredential` chování a `serviceCertificate`. <br /><br /> -Certifikátu: To umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu. Pověření klienta nejsou v tomto případě musí být zadaná pomocí `clientCredentials` chování. Přihlašovací údaje služby v tomto případě musí být zadaná pomocí `clientCredentials` chování tak, že zadáte `serviceCertificate`.<br />-Služba CardSpace: To umožňuje službě tak, aby vyžadovala, ověření klienta pomocí CardSpace. `serviceCertiifcate` Musí být zřízený v `clientCredential` chování.<br /><br /> Výchozí hodnota je `Windows`. Tento atribut je typu <xref:System.ServiceModel.MessageCredentialType>.|  
+|clientCredentialType|Určuje typ přihlašovacích údajů pro použití při ověřování klientů pro zprávy odeslané přes přenosu služby MSMQ. Platné hodnoty patří:<br /><br /> -Žádný: To umožňuje službě komunikovat s anonymní klienty. Služby ani klienta vyžaduje přihlašovací údaje.<br />– Windows: To umožňuje výměnu SOAP být pod správou ověřený kontext přihlašovacích údajů Windows. To provádí ověřování pomocí protokolu Kerberos.<br />-Uživatelské jméno: To umožňuje službě tak, aby vyžadovala, ověření klienta pomocí přihlašovacích údajů uživatelského jména. Přihlašovací údaje, které v tomto případě musí být zadaná pomocí `clientCredentials` chování **upozornění:**  Odesílání hodnotou hash hesla nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro zabezpečení zpráv Windows Communication Foundation (WCF) není podporována. Proto WCF vynutí, že při použití pověření uživatelských jmen zabezpečené výměny. Tento režim vyžaduje, aby byl specifikován certifikát služby na straně klienta pomocí `clientCredential` chování a `serviceCertificate`. <br /><br /> -Certifikátu: To umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu. Pověření klienta nejsou v tomto případě musí být zadaná pomocí `clientCredentials` chování. Přihlašovací údaje služby v tomto případě musí být zadaná pomocí `clientCredentials` chování tak, že zadáte `serviceCertificate`.<br />-Služba CardSpace: To umožňuje službě tak, aby vyžadovala, ověření klienta pomocí CardSpace. `serviceCertiifcate` Musí být zřízený v `clientCredential` chování.<br /><br /> Výchozí hodnota je `Windows`. Tento atribut je typu <xref:System.ServiceModel.MessageCredentialType>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádná  
@@ -51,14 +51,14 @@ Definuje nastavení založená na protokolu SOAP zprávy zabezpečení v tomto `
 |-------------|-----------------|  
 |[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netmsmqbinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement>  
- <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement.Message%2A>  
- <xref:System.ServiceModel.NetMsmqSecurity.Message%2A>  
- <xref:System.ServiceModel.MessageSecurityOverMsmq>  
- [Fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement>
+- <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement.Message%2A>
+- <xref:System.ServiceModel.NetMsmqSecurity.Message%2A>
+- <xref:System.ServiceModel.MessageSecurityOverMsmq>
+- [Fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

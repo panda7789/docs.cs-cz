@@ -2,12 +2,12 @@
 title: Aktivace protokolem TCP
 ms.date: 03/30/2017
 ms.assetid: bf8c215c-0228-4f4f-85c2-e33794ec09a7
-ms.openlocfilehash: 1939f611067d65d70849748604e0589a8928b09d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 5e7f441873ec4d3ad087d1ff28510d92d87db9b1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50191165"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54677824"
 ---
 # <a name="tcp-activation"></a>Aktivace protokolem TCP
 Tato ukázka předvádí, který je hostitelem služby, které používá služby aktivační procesů Windows (WAS) k aktivaci služby, která komunikuje přes protokol net.tcp. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -205,5 +205,5 @@ Press <ENTER> to terminate client.
         > [!NOTE]
         >  Tento příkaz musí být zadán v jako jeden řádek textu.  
   
-## <a name="see-also"></a>Viz také  
- [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)
+## <a name="see-also"></a>Viz také:
+- [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

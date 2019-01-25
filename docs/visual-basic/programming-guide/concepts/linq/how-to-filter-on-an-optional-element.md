@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: filtru na volitelné elementu (Visual Basic)'
+title: 'Postupy: Filtrování volitelného elementu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a74b76ad-6889-4185-a189-d6ef2c63841e
-ms.openlocfilehash: 2748f2296af78073042d7348cceba6544f2daa10
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: feb7c3fbf40db81835ef132c52a2d9f2af1229be
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643484"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552421"
 ---
-# <a name="how-to-filter-on-an-optional-element-visual-basic"></a>Postupy: filtru na volitelné elementu (Visual Basic)
-Někdy budete chtít filtrovat pro element, i když si nejste jisti, že existuje v dokumentu XML. Hledání se má provést, takže pokud určitý element nemá podřízený element, pomocí filtrování pro něj nespouštějí výjimka odkazu s hodnotou null. V následujícím příkladu `Child5` element nemá `Type` podřízeného elementu, ale dotaz stále provádí správně.  
+# <a name="how-to-filter-on-an-optional-element-visual-basic"></a>Postupy: Filtrování volitelného elementu (Visual Basic)
+Někdy budete chtít filtrovat pro element, i když si nejste jisti, že objekt že existuje v dokumentu XML. Hledání by měl provádět tak, že pokud konkrétní element nemá podřízený element, pomocí filtrování pro něj nespouštějí výjimka nulového odkazu. V následujícím příkladu `Child5` nemá element `Type` podřízený element, ale dotaz stále se provede správně.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá <xref:System.Xml.Linq.Extensions.Elements%2A> metoda rozšíření.  
+ V tomto příkladu <xref:System.Xml.Linq.Extensions.Elements%2A> – metoda rozšíření.  
   
 ```vb  
 Dim root As XElement = _   
@@ -57,7 +57,7 @@ Child Four Text
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro formát XML, který je v oboru názvů. Další informace najdete v tématu [práci s obory názvů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -106,13 +106,13 @@ Child Two Text
 Child Four Text  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType>  
- <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>  
- <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType>  
- [Základní dotazy (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)  
- [Vlastnost osy podřízeného XML](../../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)  
- [Vlastnost osy atributu XML](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)  
- [Vlastnost hodnoty XML](../../../../visual-basic/language-reference/xml-axis/xml-value-property.md)  
- [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- [Operace projekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projection-operations.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType>
+- <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>
+- <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType>
+- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Vlastnost osy podřízeného XML](../../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)
+- [Vlastnost osy atributu XML](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)
+- [Vlastnost hodnoty XML](../../../../visual-basic/language-reference/xml-axis/xml-value-property.md)
+- [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Operace projekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projection-operations.md)

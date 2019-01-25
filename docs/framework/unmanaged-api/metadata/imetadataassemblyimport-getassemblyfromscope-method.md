@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7322b4d0fce36f5dbef7e82f35cf9e2a1cae24a3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7914257d167d0f54d3625d252076576e5e40296b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444327"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54634941"
 ---
 # <a name="imetadataassemblyimportgetassemblyfromscope-method"></a>IMetaDataAssemblyImport::GetAssemblyFromScope – metoda
 Získá ukazatel na sestavení v aktuálním oboru.  
@@ -37,16 +37,16 @@ HRESULT GetAssemblyFromScope (
   
 #### <a name="parameters"></a>Parametry  
  `ptkAssembly`  
- [out] Ukazatel na načtený `mdAssembly` token, který identifikuje sestavení.  
+ [out] Ukazatel na načtené `mdAssembly` token, který identifikuje sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

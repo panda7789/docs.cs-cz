@@ -2,12 +2,12 @@
 title: Vytvoření aktivity za běhu pomocí dynamické aktivity
 ms.date: 03/30/2017
 ms.assetid: 1af85cc6-912d-449e-90c5-c5db3eca5ace
-ms.openlocfilehash: 32a35d5220950d8547b1f934c431bdb9c3627e8e
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 17dda5643f86690c25067e70680a6b797dd172d3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583867"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54733204"
 ---
 # <a name="creating-an-activity-at-runtime-with-dynamicactivity"></a>Vytvoření aktivity za běhu pomocí dynamické aktivity
 <xref:System.Activities.DynamicActivity> je konkrétní zapečetěná třída s veřejným konstruktorem. <xref:System.Activities.DynamicActivity> je možné sestavit funkce aktivity za běhu pomocí aktivity modelu DOM.  
@@ -21,7 +21,7 @@ ms.locfileid: "48583867"
   
 #### <a name="to-create-an-activity-at-runtime-using-imperative-code"></a>Vytvoření aktivity za běhu pomocí imperativního kódu  
   
-1.  Otevřete Visual Studio 2010.  
+1.  OpenVisual Studio 2010.  
   
 2.  Vyberte **souboru**, **nové**, **projektu**. Vyberte **Workflow 4.0** pod **Visual C#** v **typy projektů** okna a vyberte **v2010** uzlu. Vyberte **Konzolová aplikace sekvenčního pracovního postupu** v **šablony** okna. Název nového projektu DynamicActivitySample.  
   
@@ -70,7 +70,7 @@ ms.locfileid: "48583867"
   
 #### <a name="to-create-an-activity-at-runtime-using-xaml"></a>Vytvoření aktivity za běhu pomocí XAML  
   
-1.  Otevřít Visual Studio 2010.  
+1.  Open Visual Studio 2010.  
   
 2.  Vyberte **souboru**, **nové**, **projektu**. Vyberte **Workflow 4.0** pod **Visual C#** v **typy projektů** okna a vyberte **v2010** uzlu. Vyberte **Konzolová aplikace pracovního postupu** v **šablony** okna. Název nového projektu DynamicActivitySample.  
   
@@ -96,6 +96,6 @@ ms.locfileid: "48583867"
   
 8.  Klikněte pravým tlačítkem na soubor Workflow1.xaml v **Průzkumníka řešení** a vyberte **zobrazit kód**. Všimněte si, že třídy activity se vytvoří s `x:Class` a vlastnost se vytvoří s `x:Property`.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)

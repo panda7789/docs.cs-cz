@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: abb2e2902737749fd9dc1f148a340e28da772e59
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7f8e9c91ddddd0e0b14c79bef86c7665ff4e3dcc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33439017"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54723318"
 ---
 # <a name="icorruntimehostnextdomain-method"></a>ICorRuntimeHost::NextDomain – metoda
-Získá ukazatele rozhraní do další domény ve výčtu.  
+Získá ukazatel rozhraní na další doménu ve výčtu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,30 +38,30 @@ HRESULT NextDomain (
   
 #### <a name="parameters"></a>Parametry  
  `hEnum`  
- [v] Enumerátor, který byl získán pomocí volání [enumdomains –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-enumdomains-method.md).  
+ [in] Enumerátor, který byl získán pomocí volání [enumdomains –](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-enumdomains-method.md).  
   
  `pAppDomain`  
- [out] Ukazatele rozhraní na <xref:System._AppDomain?displayProperty=nameWithType> typ, který představuje další domény ve výčtu, nebo hodnota null, pokud neexistuje žádné další domény.  
+ [out] Ukazatel rozhraní k <xref:System._AppDomain?displayProperty=nameWithType> typ, který představuje další domény ve výčtu nebo hodnota null, pokud neexistuje žádné další domény.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Operace byla úspěšná.|  
-|S_FALSE|Nepodařilo se dokončit operaci, nebo nejsou žádné další domény ve výčtu.|  
-|E_FAIL|Došlo k neznámé, závažnou chybu. Pokud metoda vrátí E_FAIL, modul CLR (CLR) již není použitelné v procesu. Následující volání žádné hostování rozhraní API vrací HOST_E_CLRNOTAVAILABLE.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_FALSE|Nepodařilo se dokončit operaci, nebo neexistují žádné další domény ve výčtu.|  
+|E_FAIL|Došlo k neznámé, katastrofických selhání. Pokud metoda vrátí E_FAIL, modul CLR (CLR) už nejsou použitelné v procesu. Následující volání jakékoli hostitelské rozhraní API vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** 1.0, 1.1  
   
-## <a name="see-also"></a>Viz také  
- <xref:System._AppDomain>  
- <xref:System.AppDomain>  
- [ICorRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System._AppDomain>
+- <xref:System.AppDomain>
+- [ICorRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)

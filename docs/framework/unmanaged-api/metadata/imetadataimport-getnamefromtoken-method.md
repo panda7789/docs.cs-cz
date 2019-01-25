@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a39eac88537d47535844d1f05e0741cc94142f0a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 36218fa44f1cb49d8d0193d7c72e6feb2d121050
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447250"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54718842"
 ---
 # <a name="imetadataimportgetnamefromtoken-method"></a>IMetaDataImport::GetNameFromToken – metoda
-Získá název znakové sady UTF-8 objektu odkazuje token Zadaná metadata. Tato metoda je zastaralá.  
+Získá název kódování UTF-8 odkazuje token metadat zadaného objektu. Tato metoda je zastaralá.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,23 +38,23 @@ HRESULT GetNameFromToken (
   
 #### <a name="parameters"></a>Parametry  
  `tk`  
- [v] Token představující objekt, který chcete vrátit pro název.  
+ [in] Token, který představuje objekt, který chcete vrátit pro název.  
   
  `pszUtf8NamePtr`  
  [out] Ukazatel na název objektu UTF-8 v haldě.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetNameFromToken` je zastaralá. Jako alternativu, volejte metodu k získání vlastností konkrétní typ tokenu požadované, například `GetFieldProps` pro pole nebo `GetMethodProps` pro metodu.  
+ `GetNameFromToken` je zastaralý. Jako alternativu volat metodu k získání vlastnosti konkrétního typu, jako například vyžaduje se token `GetFieldProps` pro pole nebo `GetMethodProps` pro metodu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** 1.0  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

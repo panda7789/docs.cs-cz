@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Distinct statement [Visual Basic]
 - queries [Visual Basic], Distinct
 ms.assetid: 86f42614-0d8f-4ffc-b888-ce8a37a8d36a
-ms.openlocfilehash: 18d09d8018303aab6a69801c84c7ec9c6ea19ca9
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 3761f6d6ba97e7f1a824b70b18a50dae820c7e51
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44083829"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54710037"
 ---
 # <a name="distinct-clause-visual-basic"></a>Distinct – klauzule (Visual Basic)
 Omezí hodnoty aktuální proměnnou rozsahu eliminovaly duplicitní hodnoty v klauzulích následné dotazování.  
@@ -32,9 +32,9 @@ Distinct
   
  [!code-vb[VbSimpleQuerySamples#20](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/distinct-clause_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Dotazy](../../../visual-basic/language-reference/queries/index.md)  
- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
- [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)
+## <a name="see-also"></a>Viz také:
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Dotazy](../../../visual-basic/language-reference/queries/index.md)
+- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
+- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
+- [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)

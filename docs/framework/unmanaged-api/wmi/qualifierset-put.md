@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7b2e1b08d1091e482c6b02fe015a58219ff80768
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0e1fc8d9d8c135f9eea8b9451b884ef3b7ba4704
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517558"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54694136"
 ---
 # <a name="qualifiersetput-function"></a>QualifierSet_Put – funkce
 Zapíše s názvem kvalifikátoru a hodnotu. Nový kvalifikátor přepíše předchozí hodnotu se stejným názvem. Pokud kvalifikátor buď neexistuje, vytvoří se. 
@@ -60,8 +60,8 @@ HRESULT QualifierSet_Put (
 | `WBEM_FLAVOR_OVERRIDABLE` | 0 | Kvalifikátor se dá přepsat v odvozené třídě nebo instanci. **Toto je výchozí hodnota.** |
 | `WBEM_FLAVOR_FLAG_PROPAGATE_TO_INSTANCE` | 1 | Kvalifikátor je postoupena do instance. |
 | `WBEM_FLAVOR_GLAG_PROPAGATE_TO_DERIVED_CLASS` | 2 | Kvalifikátor je postoupena do odvozené třídy. |
-| "WBEM_FLAVOR_NOT_OVERRIDABLE | 0x10 | Kvalifikátor nelze přepsat v odvozené třídě nebo instanci. |
-| "WBEM_FLAVOR_AMENDED | 0x80 | Kvalifikátor je lokalizován. |
+| `WBEM_FLAVOR_NOT_OVERRIDABLE | 0x10 | Kvalifikátor nelze přepsat v odvozené třídě nebo instanci. |
+| `WBEM_FLAVOR_AMENDED | 0x80 | Kvalifikátor je lokalizován. |
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -80,11 +80,11 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hl
 Tato funkce zalamuje volání na [IWbemQualifierSet::Put](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-put) metody.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:  
-[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:
+- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

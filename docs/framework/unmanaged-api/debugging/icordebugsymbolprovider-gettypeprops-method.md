@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 35ac4140-91ea-4c77-b1c4-1daf41986ca5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3398e01912309c057cd1e01e8fc0af6c62f976bf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e21273506e91c5ab69b1b0b4a52d6c0f72692dab
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421597"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54712769"
 ---
 # <a name="icordebugsymbolprovidergettypeprops-method"></a>ICorDebugSymbolProvider::GetTypeProps – metoda
-Zadaný relativní virtuální adresy (RVA) v tabulce vtable vrací informace o vlastnosti typ, například počet podpis jeho obecné parametry.  
+Vrátí informace o typu vlastnosti, jako je počet podpis jeho obecné parametry-li zadána relativní virtuální adresu (RVA) v tabulku vtable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,25 +27,25 @@ HRESULT GetTypeProps(
   
 #### <a name="parameters"></a>Parametry  
  `tableRva`  
- [v] Vytvoření relativní virtuální adresy (RVA) vtable.  
+ [in] Relativní virtuální adresu (RVA) v tabulku vtable.  
   
  `cbSignature`  
- [v] Velikost `signature` pole. Najdete v části poznámky.  
+ [in] Velikost `signature` pole. V části poznámky.  
   
  `pcbSignature`  
- [out] [out] Ukazatel na velikost vrácený `signature` pole.  
+ [out] [out] Ukazatel na velikost vráceného `signature` pole.  
   
  `signature`  
- [out] Vyrovnávací paměť, která obsahuje typ typespec signatur všechny obecné parametry.  
+ [out] Vyrovnávací paměti, který obsahuje token typespec podpisy všechny obecné parametry.  
   
 ## <a name="remarks"></a>Poznámky  
- Získat požadovaná velikost typu `signature` pole, nastavte `cbSignature` argument na hodnotu 0 a `signature` k **null**. Po návratu metody `pcbSignature` bude obsahovat počet bajtů požadovaných pro `signature` pole.  
+ Chcete-li získat požadovaná velikost tohoto typu `signature` pole, nastavte `cbSignature` argumentu na hodnotu 0 a `signature` k **null**. Po návratu metody `pcbSignature` bude obsahovat počet bajtů potřebných pro `signature` pole.  
   
 > [!NOTE]
->  Tato metoda je k dispozici s .NET Native jenom.  
+>  Tato metoda je pouze k dispozici s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -53,7 +53,7 @@ HRESULT GetTypeProps(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [GetMethodProps – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-getmethodprops-method.md)  
- [ICorDebugSymbolProvider – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [GetMethodProps – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-getmethodprops-method.md)
+- [ICorDebugSymbolProvider – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 83f6190872ecf4435688f3b7c82a61f5f15d9f62
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f988f95c28e6d2248882fb033b8d8c4d3c629229
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33443323"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744190"
 ---
 # <a name="assemblymetadata-structure"></a>ASSEMBLYMETADATA – struktura
-Obsahuje informace o odkazované sestavení, včetně jeho verzi a jeho úrovně podpory pro národní prostředí, procesory a operační systémy.  
+Obsahuje informace o odkazovaném sestavení, včetně jeho verze a jeho úroveň podpory pro národní prostředí, procesory a operační systémy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,27 +47,27 @@ typedef struct {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`usMajorVersion`|Hlavní číslo verze odkazované sestavení. Tato hodnota nemůže být nula. Pokud všechny bity `usMajorVersion` jsou nastavené, není zadán hlavní verzi.|  
-|`usMinorVersion`|Číslo podverze odkazované sestavení. Tato hodnota nemůže být nula. Pokud všechny bity `usMinorVersion` jsou nastavené na podverzi není zadán.|  
-|`usBuildNumber`|Číslo sestavení odkazované sestavení. Tato hodnota nemůže být nula. Pokud všechny bity `usBuildNumber` jsou nastavené, číslo sestavení není zadán.|  
-|`usRevisionNumber`|Číslo revize odkazované sestavení. Tato hodnota nemůže být nula. Pokud všechny bity `usRevisionNumber` jsou nastavené, číslo revize není zadán.|  
-|`szLocale`|Seznam názvů národní prostředí podle specifikace RFC1766, oddělené středníky, zadání národní prostředí nepodporuje odkazované sestavení. Hodnota null určuje nezávislost národního prostředí. **Poznámka:** v rozhraní .NET Framework verze 1.0 nelze zadat více než jeden národního prostředí.|  
-|`cbLocale`|Velikost v široké znaky `szLocale`.|  
-|`rdwProcessor`|Pole identifikátory, jak jsou definovány v souboru Winnt.h, pro typy procesoru, které jsou podporovány odkazované sestavení. Hodnota NULL určuje nezávislost procesoru.|  
+|`usMajorVersion`|Číslo hlavní verze odkazovaného sestavení. Tato hodnota nemůže být nula. Pokud všechny bity `usMajorVersion` je nastaveno, hlavní verze není zadán.|  
+|`usMinorVersion`|Číslo podverze odkazovaného sestavení. Tato hodnota nemůže být nula. Pokud všechny bity `usMinorVersion` je nastaveno, vedlejší verze není zadán.|  
+|`usBuildNumber`|Číslo sestavení odkazovaného sestavení. Tato hodnota nemůže být nula. Pokud všechny bity `usBuildNumber` je nastaveno, není určeno číslo sestavení.|  
+|`usRevisionNumber`|Číslo revize odkazovaného sestavení. Tato hodnota nemůže být nula. Pokud všechny bity `usRevisionNumber` je nastaveno, není určeno číslo revize.|  
+|`szLocale`|Seznam názvů národních prostředí, který odpovídá specifikaci RFC1766 oddělené středníkem, určení národních prostředí podporovaných odkazovaných sestavení. Hodnota null znamená nezávislost národní prostředí. **Poznámka:**  V rozhraní .NET Framework verze 1.0 nelze zadat více než jedno prostředí.|  
+|`cbLocale`|Velikost v širokých znaků `szLocale`.|  
+|`rdwProcessor`|Pole identifikátory, jak jsou definovány v souboru Winnt.h, pro typy procesorů, které jsou podporovány odkazovaném sestavení. Hodnota NULL znamená nezávislost procesoru.|  
 |`ulProcessor`|Délka `rdwProcessor` pole.|  
-|`rOS`|Pole [osinfo –](../../../../docs/framework/unmanaged-api/metadata/osinfo-structure.md) instance zadání operační systémy, které jsou podporovány odkazované sestavení. Hodnota NULL znamená nezávislost operačního systému.|  
+|`rOS`|Pole [osinfo –](../../../../docs/framework/unmanaged-api/metadata/osinfo-structure.md) instance zadání operační systémy, které jsou podporovány odkazovaném sestavení. Hodnota NULL znamená nezávislost operačního systému.|  
 |`ulOS`|Délka `rOS` pole.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)  
- [OSINFO – struktura](../../../../docs/framework/unmanaged-api/metadata/osinfo-structure.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
+- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [OSINFO – struktura](../../../../docs/framework/unmanaged-api/metadata/osinfo-structure.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: 8a7659cd22dc3f13809663bf3c69b9752e905e8b
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 12c4561e9e2c2a9e3a211351b70fd83b8ca7bccd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53242870"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54640846"
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
 Akce, které přijímá programu jsou vyjádřeny v příkazech. Běžné akce zahrnují deklarování proměnných, přiřazování hodnot, volání metod ve smyčce přes kolekce a vytváření větví do jednoho nebo jiného bloku kódu, v závislosti na danou podmínku. Pořadí, ve kterém jsou spouštěny příkazy v programu v jazyce se nazývá tok řízení toku provádění. Tok řízení se může lišit při každém spuštění programu, v závislosti na tom, jak program reaguje na vstup, že bude dostávat v době běhu.  
@@ -27,7 +27,7 @@ Akce, které přijímá programu jsou vyjádřeny v příkazech. Běžné akce z
 |--------------|---------------------------|  
 |[Příkazy deklarace](#declaration-statements)|Příkazu deklarace zavádí novou proměnnou nebo konstantu. Deklarace proměnné volitelně přiřadit hodnotu k proměnné. V deklaraci konstanty se vyžaduje přiřazení.|  
 |[Příkazy výrazů](expressions.md)|Příkazy výrazů, které vypočítá hodnotu uložit hodnotu do proměnné. Další informace najdete v tématu [příkazy výrazů](#expression-statements).|  
-|[Příkazy výběru](../../../csharp/language-reference/keywords/selection-statements.md)|Příkazy výběru umožňují větve na různé části kódu, v závislosti na jeden nebo více zadaných podmínek. Další informace naleznete v následujících tématech:<br /><br /> [Pokud](../../../csharp/language-reference/keywords/if-else.md), [else](../../../csharp/language-reference/keywords/if-else.md), [přepnout](../../../csharp/language-reference/keywords/switch.md), [případ](../../../csharp/language-reference/keywords/switch.md)|  
+|[Příkazy výběru](../../../csharp/language-reference/keywords/selection-statements.md)|Příkazy výběru umožňují větve na různé části kódu, v závislosti na jeden nebo více zadaných podmínek. Další informace naleznete v následujících tématech:<br /><br /> [if](../../../csharp/language-reference/keywords/if-else.md), [else](../../../csharp/language-reference/keywords/if-else.md), [switch](../../../csharp/language-reference/keywords/switch.md), [case](../../../csharp/language-reference/keywords/switch.md)|  
 |[Příkazy iterace](../../../csharp/language-reference/keywords/iteration-statements.md)|Příkazy iterace vám umožní projít kolekce například pole nebo opakovaně provádět stejnou sadu příkazů, dokud je zadaná podmínka splněna. Další informace naleznete v následujících tématech:<br /><br /> [proveďte](../../../csharp/language-reference/keywords/do.md), [pro](../../../csharp/language-reference/keywords/for.md), [foreach](../../../csharp/language-reference/keywords/foreach-in.md), [v](../../../csharp/language-reference/keywords/foreach-in.md), [při](../../../csharp/language-reference/keywords/while.md)|  
 |[Jump – příkazy](../../../csharp/language-reference/keywords/jump-statements.md)|Přenos řízení příkazy přejděte na jinou část kódu. Další informace naleznete v následujících tématech:<br /><br /> [Konec](../../../csharp/language-reference/keywords/break.md), [pokračovat](../../../csharp/language-reference/keywords/continue.md), [výchozí](../../../csharp/language-reference/keywords/switch.md), [goto](../../../csharp/language-reference/keywords/goto.md), [vrátit](../../../csharp/language-reference/keywords/return.md), [yield](../../../csharp/language-reference/keywords/yield.md)|  
 |[Příkazy zpracování výjimek](../../../csharp/language-reference/keywords/exception-handling-statements.md)|Příkazy zpracování výjimek umožňují elegantně zotavit z výjimečných podmínek, ke kterým dochází za běhu. Další informace naleznete v následujících tématech:<br /><br /> [vyvolat](../../../csharp/language-reference/keywords/throw.md), [bloku try-catch](../../../csharp/language-reference/keywords/try-catch.md), [try-finally](../../../csharp/language-reference/keywords/try-finally.md), [konstrukce try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)|  
@@ -92,6 +92,6 @@ Následující příklady ukazují dvě použití pro prázdný příkaz:
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

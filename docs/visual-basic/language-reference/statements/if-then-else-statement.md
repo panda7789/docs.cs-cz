@@ -21,12 +21,12 @@ helpviewer_keywords:
 - If function [Visual Basic], and If...Then...Else statements
 - Else statement [Visual Basic]
 ms.assetid: 790068a2-1307-4e28-8a72-be5ebda099e9
-ms.openlocfilehash: 08d51326ee0c9f91eec02467ebcb116354b5033f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ceca58b2d69d72e079a9f2e2791f7f586c459167
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604988"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54743644"
 ---
 # <a name="ifthenelse-statement-visual-basic"></a>If...Then...Else – příkaz (Visual Basic)
 Podmíněně spustí skupinu příkazů v závislosti na hodnotě výrazu.  
@@ -49,60 +49,60 @@ If condition Then [ statements ] [ Else [ elsestatements ] ]
 
 ## <a name="quick-links-to-example-code"></a>Rychlé odkazy na ukázkový kód
 
-Tento článek obsahuje několik příkladů, které ilustrují použití `If`... `Then`... `Else` příkaz:
+Tento článek obsahuje několik příkladů, které ilustrují použití `If`... `Then`... `Else` – příkaz:
 
-* [Příklad Víceřádkový syntaxe](#multi-line)
+* [Příklad víceřádkové syntaxe](#multi-line)
 * [Příklad vnořené syntaxe](#nested)
-* [Příklad syntaxe jeden řádek](#single-line)
+* [Příklad syntaxe jedním řádkem](#single-line)
 
 ## <a name="parts"></a>Součásti  
  `condition`  
- Požadováno. Výraz. Se musí vyhodnotit `True` nebo `False`, nebo na datový typ, který je implicitně převést na `Boolean`.  
+ Povinný parametr. výraz. Musí být vyhodnocen `True` nebo `False`, nebo na datový typ, který je implicitně převést na `Boolean`.  
   
- Pokud je ve výrazu [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) `Boolean` proměnné, která vyhodnotí jako [nic](../../../visual-basic/language-reference/nothing.md), podmínka je zpracován jako výraz `False` a `Else` bloku se spustí.  
+ Pokud má výraz hodnotu [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) `Boolean` proměnné, která se vyhodnotí jako [nic](../../../visual-basic/language-reference/nothing.md), podmínka je zpracováván stejně, jako je výraz `False` a `Else` je blok proveden.  
   
  `Then`  
- Požadované v jednom řádku syntaxi; volitelné v Víceřádkový syntaxi.  
+ Vyžaduje v syntaxi jedním řádkem; nepovinné v syntaxi víceřádkový.  
   
  `statements`  
- Volitelné. Jeden nebo více následujících příkazů `If`... `Then` které jsou spouštěny, pokud `condition` vyhodnocuje `True`.  
+ Volitelné. Jeden nebo více následujících příkazů `If`... `Then` , která se spustí, pokud `condition` vyhodnotí jako `True`.  
   
  `elseifcondition`  
- Požadováno pokud `ElseIf` je k dispozici. Výraz. Se musí vyhodnotit `True` nebo `False`, nebo na datový typ, který je implicitně převést na `Boolean`.  
+ Požadováno pokud `ElseIf` je k dispozici. výraz. Musí být vyhodnocen `True` nebo `False`, nebo na datový typ, který je implicitně převést na `Boolean`.  
   
  `elseifstatements`  
- Volitelné. Jeden nebo více následujících příkazů `ElseIf`... `Then` které jsou spouštěny, pokud `elseifcondition` vyhodnocuje `True`.  
+ Volitelné. Jeden nebo více následujících příkazů `ElseIf`... `Then` , která se spustí, pokud `elseifcondition` vyhodnotí jako `True`.  
   
  `elsestatements`  
  Volitelné. Jeden nebo více příkazů, které jsou spouštěny, pokud žádné předchozí `condition` nebo `elseifcondition` výraz vyhodnocen jako `True`.  
   
  `End If`  
- Ukončí Víceřádkový verzi `If`... `Then`... `Else` bloku.  
+ Ukončí víceřádkové verzi `If`... `Then`... `Else` bloku.  
   
 ## <a name="remarks"></a>Poznámky  
   
-### <a name="multiline-syntax"></a>Víceřádkový syntaxe  
- Když `If`... `Then`... `Else` příkaz je zjistil, `condition` testování. Pokud `condition` je `True`, následující příkazy `Then` provedení. Pokud `condition` je `False`, každý `ElseIf` (pokud existují) vyhodnotí v pořadí. Když `True` `elseifcondition` nenajde, příkazy hned za přidruženého `ElseIf` provedení. Pokud žádné `elseifcondition` vyhodnotí jako `True`, nebo pokud nejsou žádné `ElseIf` příkazy, následující příkazy `Else` provedení. Po provedení následující příkazy `Then`, `ElseIf`, nebo `Else`, provádění pokračuje následující příkaz `End If`.  
+### <a name="multiline-syntax"></a>Multiline – syntaxe  
+ Když `If`... `Then`... `Else` příkazu nalezen, `condition` je testován. Pokud `condition` je `True`, příkazy po `Then` provádějí. Pokud `condition` je `False`každá `ElseIf` – příkaz (Pokud tam nějaké jsou) se vyhodnocuje podle pořadí. Když `True` `elseifcondition` se nachází bezprostředně následující přidružené příkazy `ElseIf` provádějí. Pokud ne `elseifcondition` vyhodnotí jako `True`, nebo pokud nejsou žádné `ElseIf` příkazy, příkazy po `Else` provádějí. Po provedení následující příkazy `Then`, `ElseIf`, nebo `Else`, pokračuje se příkaz následující `End If`.  
   
- `ElseIf` a `Else` klauzule jsou obě volitelné. Může mít jako mnoho `ElseIf` klauzule jako je vhodné `If`... `Then`... `Else` příkaz, ale ne `ElseIf` klauzule může vyskytovat po `Else` klauzule. `If`... `Then`... `Else` příkazy můžete začlenit do jiné.  
+ `ElseIf` a `Else` klauzule jsou volitelné. Můžete mít kolik `ElseIf` klauzulí je vhodné `If`... `Then`... `Else` příkazu, ale ne `ElseIf` klauzule může být po `Else` klauzuli. `If`... `Then`... `Else` příkazy mohou být vnořené do jiné.  
   
- Víceřádkový syntaxe `If` příkaz musí být jediným příkazem v prvním řádku. `ElseIf`, `Else`, A `End If` příkazy lze předcházet pouze čáry popisku. `If`... `Then`... `Else` bloku musí končit `End If` příkaz.  
+ Víceřádkový syntaxe `If` příkaz musí být jediným příkazem v prvním řádku. `ElseIf`, `Else`, A `End If` příkazy nesmí následovat pouze po popisku řádku. `If`... `Then`... `Else` bloku musí končit `End If` příkazu.  
   
 > [!TIP]
->  [Vyberte... Příkaz případ](../../../visual-basic/language-reference/statements/select-case-statement.md) může být užitečnější, pokud vyhodnotit jeden výraz, který má několik možných hodnot.  
+>  [Vyberte... Case – příkaz](../../../visual-basic/language-reference/statements/select-case-statement.md) může být užitečnější, pokud vyhodnotíte jediný výraz, který má několik možných hodnot.  
   
 ### <a name="single-line-syntax"></a>Syntaxe jednoho řádku  
- Jeden řádek syntaxe pro jednu podmínku s kódem vám pomůže spustit, pokud to není pravda. Syntaxe více řádků však poskytuje další strukturu a flexibilitu a je jednodušší pro čtení, údržbu a ladění.  
+ Syntaxe jedním řádkem pro jednu podmínku s kódem můžete spustit, pokud je to možné. Více řádků syntaxe však poskytuje další struktury a flexibilitu a je jednodušší pro čtení, spravovat a ladit.  
   
- Jaké způsobem `Then` – klíčové slovo je prověřit, abyste zjistili, zda příkaz je jeden řádek `If`. Pokud jakoukoli jinou hodnotu než komentář se zobrazí po `Then` na stejném řádku příkaz považován za jeden řádek `If` příkaz. Pokud `Then` chybí, musí být spuštění více řádků `If`... `Then`... `Else`.  
+ Jaké způsobem `Then` – klíčové slovo je prověřit, abyste zjistili, zda je příkaz jedním řádkem `If`. Pokud nic jiného než komentář se zobrazí po `Then` na stejném řádku, příkaz je považován za jeden řádek `If` příkazu. Pokud `Then` chybí, musí být začátek řádku více `If`... `Then`... `Else`.  
   
- V syntaxi jeden řádek, může mít více příkazů provést v důsledku `If`... `Then` rozhodnutí. Všechny příkazy musí být na stejném řádku a být oddělené dvojtečkou.  
+ V syntaxi jedním řádkem, může mít více příkazů provést, protože výsledek `If`... `Then` rozhodnutí. Všechny příkazy se musí nacházet na stejném řádku a být odděleny dvojtečkami.  
 
-## <a name="multiline-syntax-example"></a>Příklad Víceřádkový syntaxe
+## <a name="multiline-syntax-example"></a>Příklad víceřádkové syntaxe
 
 <a name="multi-line"></a>
  
- Následující příklad ukazuje použití Víceřádkový syntaxe `If`... `Then`... `Else` příkaz.  
+ Následující příklad ukazuje použití víceřádkové syntaxe `If`... `Then`... `Else` příkazu.  
   
  [!code-vb[VbVbalrStatements#101](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/if-then-else-statement_1.vb?highlight=11,14,17,19)]
 
@@ -114,18 +114,18 @@ Tento článek obsahuje několik příkladů, které ilustrují použití `If`..
   
  [!code-vb[VbVbalrStatements#102](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/if-then-else-statement_2.vb?highlight=14,15,17,19,20,21,23,25,26,28)]
 
-## <a name="single-line-syntax-example"></a>Příklad syntaxe jeden řádek
+## <a name="single-line-syntax-example"></a>Příklad syntaxe jedním řádkem
   
-<a name="single-line"></a> Následující příklad ukazuje použití syntaxe jeden řádek.  
+<a name="single-line"></a> Následující příklad ukazuje použití syntaxe jedním řádkem.  
   
  [!code-vb[VbVbalrStatements#103](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/if-then-else-statement_3.vb?highlight=18)]
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Interaction.Choose%2A>  
- <xref:Microsoft.VisualBasic.Interaction.Switch%2A>  
- [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
- [Příkaz Select...Case](../../../visual-basic/language-reference/statements/select-case-statement.md)  
- [Vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
- [Rozhodovací struktury](../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)  
- [Logické a bitové operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)  
- [Operátor If](../../../visual-basic/language-reference/operators/if-operator.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Interaction.Choose%2A>
+- <xref:Microsoft.VisualBasic.Interaction.Switch%2A>
+- [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)
+- [Příkaz Select...Case](../../../visual-basic/language-reference/statements/select-case-statement.md)
+- [Vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)
+- [Rozhodovací struktury](../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)
+- [Logické a bitové operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Operátor If](../../../visual-basic/language-reference/operators/if-operator.md)

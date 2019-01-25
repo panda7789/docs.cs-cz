@@ -12,12 +12,12 @@ helpviewer_keywords:
 - backing attached events with routed events [WPF]
 - attached events [WPF], definition
 ms.assetid: 2c40eae3-80e4-4a45-ae09-df6c9ab4d91e
-ms.openlocfilehash: c6a8b3b7355d315b83f859e7016018b56ade5484
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: b82af44b1262f4eb2839efef85a4b35eba534524
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196340"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54682953"
 ---
 # <a name="attached-events-overview"></a>Přehled připojených událostí
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] Definuje komponentu jazyka a typu události, volá se, *přidružená událost*. Koncept přidružená událost umožňuje přidání obslužné rutiny při určité události libovolný prvek, nikoli element, který ve skutečnosti definuje nebo dědí události. V takovém případě objekt potenciálně vyvolání události ani cílové zpracování instance definuje nebo jinak "vlastní" události.  
@@ -91,7 +91,7 @@ ms.locfileid: "47196340"
   
  Nicméně pokud definujete vlastní přidružená událost na základě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modelu odvození připojených událostí na <xref:System.Windows.RoutedEvent>, můžete použít <xref:System.Windows.UIElement.RaiseEvent%2A> k vyvolání připojené události z libovolného <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement>. Vyvolání směrovaných událostí (připojené, nebo ne) vyžaduje deklaraci konkrétní element ve stromové struktuře prvek jako zdroj události; Tento zdroj se hlásí jako <xref:System.Windows.UIElement.RaiseEvent%2A> volajícího. Určení, které elementy se ohlásí jako zdroj ve stromové struktuře odpovídá vaší služby  
   
-## <a name="see-also"></a>Viz také  
- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
- [Podrobná syntaxe XAML](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)  
- [XAML a vlastní třídy pro WPF](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+- [Podrobná syntaxe XAML](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)
+- [XAML a vlastní třídy pro WPF](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)

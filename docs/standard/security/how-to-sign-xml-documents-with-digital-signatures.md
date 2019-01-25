@@ -16,19 +16,19 @@ helpviewer_keywords:
 ms.assetid: 99692ac1-d8c9-42d7-b1bf-2737b01037e4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 361dfd8cc9264f86bfc94a150635d9891274c9ac
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 49999ae8b66b01ca71c0027bdf43c13272fbe8a4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664602"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54622621"
 ---
 # <a name="how-to-sign-xml-documents-with-digital-signatures"></a>Postupy: Podepisování dokumentů XML digitálními podpisy
 Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názvů dokumentu XML nebo jeho část dokumentu XML s digitálním podpisem.  XML – digitální podpisy (XMLDSIG) umožňují ověřit, že data nebyla změněna po byla podepsána.  Další informace o standardních XMLDSIG, naleznete v tématu World Wide Web Consortium (W3C) doporučení [podpis syntaxe jazyka XML a zpracování](https://www.w3.org/TR/xmldsig-core/).  
   
  Příklad kódu v tomto postupu ukazuje, jak digitálně podepsat celý dokument XML a připojit k dokumentu v podpis <`Signature`> element.  V příkladu vytvoří podpisový klíč RSA, přidá klíč do zabezpečeného kontejneru klíčů a potom pomocí klíče k digitálnímu podepisování dokumentu XML.  Klíč je pak načíst do ověření digitálního podpisu XML nebo můžete použít k podepsání jiného dokumentu XML.  
   
- Informace o tom, jak ověřit digitální podpis XML, který byl vytvořen pomocí tohoto postupu najdete v tématu [postupy: ověření digitálních podpisů XML dokumenty](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md).  
+ Informace o tom, jak ověřit digitální podpis XML, který byl vytvořen pomocí tohoto postupu najdete v tématu [jak: Ověření digitálních podpisů dokumentů XML](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md).  
   
 ### <a name="to-digitally-sign-an-xml-document"></a>K digitálnímu podepisování dokumentu XML  
   
@@ -120,5 +120,5 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názv�
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Security.Cryptography.Xml>  
+- <xref:System.Security.Cryptography.Xml>
 - [Postupy: Ověření digitálních podpisů dokumentů XML](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md)

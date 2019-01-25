@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dc3a986326f9b47194558ca86bcbeabb61dbaeb3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 832746b911e74790de246b00a364aaec4bda8f67
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33425536"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54739972"
 ---
 # <a name="isymencunmanagedmethodgetsourceextentindocument-method"></a>ISymENCUnmanagedMethod::GetSourceExtentInDocument – metoda
-Získá spusťte nejmenší číslo řádku a největší na konci řádku pro metodu v konkrétní dokumentu.  
+Získá spuštění nejmenší číslo řádku a největší na konci řádku pro metodu v určitého dokumentu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT GetSourceExtentInDocument(
   
 #### <a name="parameters"></a>Parametry  
  `document`  
- [v] Ukazatel na dokumentu.  
+ [in] Ukazatel na dokument.  
   
  `pstartLine`  
- [out] Ukazatel na `ULONG32` která přijme start řádku.  
+ [out] Ukazatel `ULONG32` , která obdrží start řádku.  
   
  `pendLine`  
- [out] Ukazatel na `ULONG32` která přijme na konci řádku.  
+ [out] Ukazatel `ULONG32` , který přijímá na konci řádku.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymENCUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymENCUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)

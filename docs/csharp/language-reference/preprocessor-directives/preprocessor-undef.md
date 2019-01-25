@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#undef directive [C#]'
 ms.assetid: 686c92d2-7194-4be4-b2f4-80091712d513
-ms.openlocfilehash: 5a3658c4e6bb32158e6f81c3ac5014fbedba0713
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 0dedd1480dae15d2c04b47cee132ab3227098f56
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235756"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54739025"
 ---
 # <a name="undef-c-reference"></a>#undef (referenční dokumentace jazyka C#)
 `#undef` můžete nedefinovat symbol, tak, že při použití symbolu jako výraz v [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) direktiv, bude výraz vyhodnocen na `false`.  
@@ -41,8 +41,8 @@ class MyClass
 
 **LADĚNÍ není definován.**
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)

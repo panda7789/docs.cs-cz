@@ -11,56 +11,56 @@ helpviewer_keywords:
 - overloaded operators [Visual Basic], calling
 - operator overloading
 ms.assetid: 0dce42cc-f0b0-4c14-9f62-018b21f33497
-ms.openlocfilehash: b1dc4477daa4ceb9dfc6a9a6ab3f041e68011acd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fc658dd7ef001c8d3ef7761bd2a7889f70e9e4a3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33649965"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54667580"
 ---
 # <a name="how-to-call-an-operator-procedure-visual-basic"></a>Postupy: Volání procedury operátora (Visual Basic)
-Symbol operátoru ve výrazu můžete volání procedury operátora. V případě operátora převodu, zavoláte [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md) převést hodnotu z jednoho datového typu.  
+Volání procedury operátora pomocí symbol operátoru ve výrazu. V případě operátor převodu, volání [funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md) převést hodnotu z jednoho datového typu na jiný.  
   
- Procedury operátoru není volána explicitně. Stačí použít operátor nebo `CType` funkce v příkazu přiřazení nebo výraz, stejně jako běžně použít operátor. Visual Basic umožňuje volání procedury operátora.  
+ Procedury operátoru není explicitně volat. Stačí použít operátor, nebo `CType` funkce v příkazu přiřazení nebo výraz, stejně jako obvykle použijete operátor. Visual Basic je volání procedury operátora.  
   
- Definování operátor na třídu nebo strukturu je také označován *přetížení* operátor.  
+ Definování v třídě nebo struktuře operátor se také nazývá *přetížení* operátor.  
   
-### <a name="to-call-an-operator-procedure"></a>K volání procedury operátora  
+### <a name="to-call-an-operator-procedure"></a>Volání procedury operátora  
   
-1.  Symbol operátoru používejte ve výrazu běžným způsobem.  
+1.  Použijte symbol operátoru ve výrazu běžným způsobem.  
   
-2.  Ujistěte se, že datové typy operandy jsou vhodné pro operátor a ve správném pořadí.  
+2.  Ujistěte se, že datové typy operandů jsou vhodné pro operátor a ve správném pořadí.  
   
-3.  Operátor přispívá k hodnotu výrazu podle očekávání.  
+3.  Operátor, který přispívá k hodnotu výrazu podle očekávání.  
   
-### <a name="to-call-a-conversion-operator-procedure"></a>K volání procedury operátora převodu  
+### <a name="to-call-a-conversion-operator-procedure"></a>Volání procedury operátora převodu  
   
 1.  Použití `CType` uvnitř výrazu.  
   
-2.  Ujistěte se, že datové typy operandy jsou vhodné pro převod a ve správném pořadí.  
+2.  Ujistěte se, že datové typy operandů jsou vhodné pro převod a ve správném pořadí.  
   
 3.  `CType` volání procedury operátora převodu a vrátí převedenou hodnotu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří dvě <xref:System.TimeSpan> struktury, přidá je dohromady a výsledek je uložen ve třetí <xref:System.TimeSpan> struktura. <xref:System.TimeSpan> Struktura definuje postup operátor přetížení několik standardní operátory.  
+ Následující příklad vytvoří dva <xref:System.TimeSpan> struktury, přidá je dohromady a výsledek je uložen na třetí <xref:System.TimeSpan> struktury. <xref:System.TimeSpan> Struktury definuje procedury operátoru přetížení několik standardních operátorů.  
   
  [!code-vb[VbVbcnProcedures#29](./codesnippet/VisualBasic/how-to-call-an-operator-procedure_1.vb)]  
   
- Protože <xref:System.TimeSpan> přetížení standardní `+` operátor, předchozí příklad volání procedury operátora při výpočtu hodnotu `combinedSpan`.  
+ Protože <xref:System.TimeSpan> přetížení standardní `+` operátor v předchozím příkladu volání procedury operátora při výpočtu hodnoty `combinedSpan`.  
   
- Příklad volání procedury operátora konverzace, naleznete v části [postupy: použití třídy, že definuje operátory](./how-to-use-a-class-that-defines-operators.md).  
+ Příklad volání procedury operátora konverzace, naleznete v tématu [jak: Použití třídy, která definuje operátory](./how-to-use-a-class-that-defines-operators.md).  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Ujistěte se, že třídu nebo strukturu, který používáte definuje operátor, který chcete použít.  
+ Ujistěte se, že třídy nebo struktury, které používáte definuje operátor, který chcete použít.  
   
-## <a name="see-also"></a>Viz také  
- [Procedury operátoru](./operator-procedures.md)  
- [Postupy: Definice operátoru](./how-to-define-an-operator.md)  
- [Postupy: Definice operátoru převodu](./how-to-define-a-conversion-operator.md)  
- [Příkaz Operator](../../../../visual-basic/language-reference/statements/operator-statement.md)  
- [Widening](../../../../visual-basic/language-reference/modifiers/widening.md)  
- [Narrowing](../../../../visual-basic/language-reference/modifiers/narrowing.md)  
- [Příkaz Structure](../../../../visual-basic/language-reference/statements/structure-statement.md)  
- [Postupy: Definice struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
- [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
- [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury operátoru](./operator-procedures.md)
+- [Postupy: Definovat operátor](./how-to-define-an-operator.md)
+- [Postupy: Definice operátora převodu](./how-to-define-a-conversion-operator.md)
+- [Příkaz Operator](../../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Widening](../../../../visual-basic/language-reference/modifiers/widening.md)
+- [Narrowing](../../../../visual-basic/language-reference/modifiers/narrowing.md)
+- [Příkaz Structure](../../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Postupy: Deklarace struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
+- [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
+- [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

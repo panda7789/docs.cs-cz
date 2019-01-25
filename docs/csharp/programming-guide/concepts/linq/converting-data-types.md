@@ -2,12 +2,12 @@
 title: Převádění datových typů (C#)
 ms.date: 07/20/2015
 ms.assetid: 46e5682f-77a1-4302-8f93-a2b53c408808
-ms.openlocfilehash: 54ef612ad4e92058d9af4d96b7b3cde9732b2f9c
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: ea1f204ab59ecdd3e3e7e65d12c1be37e9b09f01
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47089721"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54736883"
 ---
 # <a name="converting-data-types-c"></a>Převádění datových typů (C#)
 Převod metody změnit typ objektu, vstupu.  
@@ -74,10 +74,10 @@ static void Cast()
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Linq>  
-- [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
-- [from – klauzule](../../../../csharp/language-reference/keywords/from-clause.md)  
-- [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
-- [Postupy: vytvoření dotazu na ArrayList pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)
+- <xref:System.Linq>
+- [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [from – klauzule](../../../../csharp/language-reference/keywords/from-clause.md)
+- [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)
+- [Postupy: Vytvoření dotazu na ArrayList pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)

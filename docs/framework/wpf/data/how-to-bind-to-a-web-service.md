@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Web service binding [WPF]
 - data binding [WPF], Web service
 ms.assetid: 77e2d373-69ba-4cbd-b6f5-2c83c38fc98b
-ms.openlocfilehash: 84c5aee8d2bc7d31ebcfee98930d9a0847c527d5
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 0a738d52cfb01fff1cb21d0e6ebb8f1b7b28d57f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397082"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54695764"
 ---
 # <a name="how-to-bind-to-a-web-service"></a>Postupy: Připojení k webové službě
 Tento příklad ukazuje, jak svázat objekty vrácené z volání metody webové služby.  
@@ -45,7 +45,7 @@ Tento příklad ukazuje, jak svázat objekty vrácené z volání metody webové
   
  Informace o struktuře **getContentResponse**, naleznete v tématu [dokumentace ke službě Content](https://services.msdn.microsoft.com/ContentServices/ContentService.asmx).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md)  
- [Zpřístupnění dat pro vazbu v jazyku XAML](../../../../docs/framework/wpf/data/how-to-make-data-available-for-binding-in-xaml.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
+- [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md)
+- [Zpřístupnění dat pro vazbu v jazyku XAML](../../../../docs/framework/wpf/data/how-to-make-data-available-for-binding-in-xaml.md)

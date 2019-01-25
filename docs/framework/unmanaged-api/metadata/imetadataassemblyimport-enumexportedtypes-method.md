@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9aef8c40be2456532bd6df6feb8d286cdaeefa7f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1beb76012d5f0351ee644c8dea89cabdbe2c8970
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445628"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555021"
 ---
 # <a name="imetadataassemblyimportenumexportedtypes-method"></a>IMetaDataAssemblyImport::EnumExportedTypes – metoda
-Vytvoří výčet odkazovaných v manifestu sestavení v aktuálním oboru metadata exportovaný typů.  
+Vytvoří výčet exportované typy odkazované v manifestu sestavení v aktuálním oboru metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,32 +40,32 @@ HRESULT EnumExportedTypes (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor. Tato hodnota musí být null hodnotu v případě `EnumExportedTypes` metoda je volána poprvé.  
+ [out v] Ukazatel na enumerátor. Musí se jednat s hodnotou null hodnotu v případě `EnumExportedTypes` je metoda volána poprvé.  
   
  `rExportedTypes`  
- [out] Výčet `mdExportedType` tokenů metadat.  
+ [out] Výčet `mdExportedType` tokeny metadat.  
   
  `cMax`  
- [v] Maximální počet `mdExportedType` tokeny, které může být umístěno `rExportedTypes` pole.  
+ [in] Maximální počet `mdExportedType` tokeny, které je možné umístit `rExportedTypes` pole.  
   
  `pcTokens`  
- [out] Počet `mdExportedType` tokeny umístěna v `rExportedTypes`.  
+ [out] Počet `mdExportedType` tokeny ve skutečnosti umístěny do `rExportedTypes`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumExportedTypes` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokenů pro zobrazení výčtu. V takovém případě `pcTokens` je nastaven na hodnotu nula.|  
+|`S_OK`|`EnumExportedTypes` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny se vytvořit výčet. V takovém případě `pcTokens` je nastavena na hodnotu nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

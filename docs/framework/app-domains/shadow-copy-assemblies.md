@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: de8b8759-fca7-4260-896b-5a4973157672
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 572291fa5674c541136e587bc40818da85f71a65
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: ebec8c880f5b40ed3294585b9be0e83972ac12a7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53125702"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54741702"
 ---
 # <a name="shadow-copying-assemblies"></a>Stínové kopírování sestavení
 Stínové kopírování sestavení umožňuje, které se používají v doméně aplikace aktualizovat bez uvolnění domény aplikace. To je užitečné hlavně pro aplikace, které musí být k dispozici nepřetržitě, jako jsou weby ASP.NET.  
@@ -77,9 +77,9 @@ Stínové kopírování sestavení umožňuje, které se používají v doméně
 ## <a name="obsolete-methods"></a>Zastaralé metody  
  <xref:System.AppDomain> Třída má několik metod, jako například <xref:System.AppDomain.SetShadowCopyFiles%2A> a <xref:System.AppDomain.ClearShadowCopyPath%2A>, který lze použít k řízení stínové kopírování sestavení na doménu aplikace, ale ty jsou označené za zastaralé v rozhraní .NET Framework verze 2.0. Doporučeným způsobem, jak nakonfigurovat doménu aplikace pro stínové kopírování sestavení, je použít vlastnosti <xref:System.AppDomainSetup> třídy.  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.AppDomainSetup.ShadowCopyFiles%2A?displayProperty=nameWithType>  
-- <xref:System.AppDomainSetup.CachePath%2A?displayProperty=nameWithType>  
-- <xref:System.AppDomainSetup.ApplicationName%2A?displayProperty=nameWithType>  
-- <xref:System.AppDomainSetup.ShadowCopyDirectories%2A?displayProperty=nameWithType>  
-- [\<shadowCopyVerifyByTimestamp > – Element](../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.AppDomainSetup.ShadowCopyFiles%2A?displayProperty=nameWithType>
+- <xref:System.AppDomainSetup.CachePath%2A?displayProperty=nameWithType>
+- <xref:System.AppDomainSetup.ApplicationName%2A?displayProperty=nameWithType>
+- <xref:System.AppDomainSetup.ShadowCopyDirectories%2A?displayProperty=nameWithType>
+- [\<shadowCopyVerifyByTimestamp> Element](../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)

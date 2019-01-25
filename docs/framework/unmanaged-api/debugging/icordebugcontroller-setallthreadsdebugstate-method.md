@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8ee396c512dca2bea0a7a9737d5515defce4b2b0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a8d14deae1923e2904818fc01ffa3665fdf5ea6c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415126"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54710570"
 ---
 # <a name="icordebugcontrollersetallthreadsdebugstate-method"></a>ICorDebugController::SetAllThreadsDebugState – metoda
-Nastaví ladění stav všech spravovaných vláken v procesu.  
+Nastaví stav ladění všechna spravovaná vlákna v procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +38,16 @@ HRESULT SetAllThreadsDebugState (
   
 #### <a name="parameters"></a>Parametry  
  `state`  
- [v] Hodnota výčtu "CorDebugThreadState", který určuje stav vláken pro ladění.  
+ [in] Hodnota výčtu "cordebugthreadstate –", která určuje stav vlákna pro ladění.  
   
  `pExceptThisThread`  
- [v] Ukazatel na objekt "ICorDebugThread", který představuje vlákno, aby byla vyjmuta z nastavení stavu ladění. Pokud je tato hodnota null, je vyloučené žádný přístup z více vláken.  
+ [in] Ukazatel na objekt "ICorDebugThread", který představuje vlákno má vyloučit z nastavení stavu ladění. Pokud je tato hodnota null, je vyloučené žádné vlákno.  
   
 ## <a name="remarks"></a>Poznámky  
- `SetAllThreadsDebugState` Metoda může mít vliv na vláken, které nejsou viditelné prostřednictvím [enumeratethreads – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-enumeratethreads-method.md), tak vláken, které byly pozastaveno s `SetAllThreadsDebugState` metoda bude muset být pokračuje s `SetAllThreadsDebugState` metoda.  
+ `SetAllThreadsDebugState` Metoda může mít vliv na vlákna, které nejsou viditelné prostřednictvím [enumeratethreads – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-enumeratethreads-method.md), tak vlákna, které pozastavené s `SetAllThreadsDebugState` metoda muset obnovit s `SetAllThreadsDebugState` metoda.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -55,5 +55,5 @@ HRESULT SetAllThreadsDebugState (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

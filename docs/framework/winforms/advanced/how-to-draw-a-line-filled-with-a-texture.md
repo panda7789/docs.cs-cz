@@ -9,20 +9,20 @@ helpviewer_keywords:
 - lines [Windows Forms], texture
 - drawing lines [Windows Forms], texture
 ms.assetid: dc9118cc-f3c2-42e5-8173-f46d41d18fd5
-ms.openlocfilehash: 1895c752340d8d764205b5a32b9af0861303841a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 65d830ca2d01c63288ef73b6b3a3a94f328fe32b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522185"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54676237"
 ---
 # <a name="how-to-draw-a-line-filled-with-a-texture"></a>Postupy: Kreslení čáry vyplněné texturou
-Místo kreslení čáry s plnou barvou, můžete kreslení čáry texturou. Kreslení čar a křivek texturou, vytvoření <xref:System.Drawing.TextureBrush> objektu a který předat <xref:System.Drawing.TextureBrush> do objektu <xref:System.Drawing.Pen.%23ctor%2A> konstruktor. Rastrový obrázek přidružené štětce texture slouží k dlaždici rovině (tedy bez zásahu uživatele), a když pera nevykresluje řádek nebo křivky, tahu pera umožňuje odhalit určité pixelů vedle sebe texture.  
+Místo kreslení čáry s plnou barvu, můžete kreslení čáry s textury. Kreslení čar a křivek texturou, vytvořit <xref:System.Drawing.TextureBrush> objektu a předat ho <xref:System.Drawing.TextureBrush> do objektu <xref:System.Drawing.Pen.%23ctor%2A> konstruktoru. Rastrový obrázek přidružený k štětce textury se používá k dlaždici rovině (transparentně) a při pera nakreslí čáru nebo křivku, tahů perem získává některé pixely vedle sebe textury.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.Drawing.Bitmap> objektu ze souboru `Texture1.jpg`. Tento rastrový obrázek se používá pro konstrukci <xref:System.Drawing.TextureBrush> objekt a <xref:System.Drawing.TextureBrush> objekt se používá pro konstrukci <xref:System.Drawing.Pen> objektu. Volání <xref:System.Drawing.Graphics.DrawImage%2A> nevykresluje bitmap s jeho levého horního rohu v (0, 0). Volání <xref:System.Drawing.Graphics.DrawEllipse%2A> používá <xref:System.Drawing.Pen> objektu k vykreslení texturou třemi tečkami.  
+ Následující příklad vytvoří <xref:System.Drawing.Bitmap> objektu ze souboru `Texture1.jpg`. Tento rastrový obrázek se používá ke konstrukci <xref:System.Drawing.TextureBrush> objektu a <xref:System.Drawing.TextureBrush> objektu se používá ke konstrukci <xref:System.Drawing.Pen> objektu. Volání <xref:System.Drawing.Graphics.DrawImage%2A> nakreslí rastrového obrázku pomocí jeho levého horního rohu v (0, 0). Volání <xref:System.Drawing.Graphics.DrawEllipse%2A> používá <xref:System.Drawing.Pen> objekt s texturou elipsa nakreslit.  
   
- Následující obrázek znázorňuje bitovou mapu a texturou třemi tečkami.  
+ Následující obrázek znázorňuje rastrového obrázku a texturou elipsy.  
   
  ![Pera](../../../../docs/framework/winforms/advanced/media/pens7.png "pens7")  
   
@@ -30,8 +30,8 @@ Místo kreslení čáry s plnou barvou, můžete kreslení čáry texturou. Kres
  [!code-vb[System.Drawing.UsingAPen#61](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#61)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření formuláře Windows a zpracování formuláře <xref:System.Windows.Forms.Control.Paint> událostí. Předchozí kód vložte do <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nahraďte `Texture.jpg` s bitovou kopií platné ve vašem systému.  
+ Vytvoření formuláře Windows a zpracování formuláře <xref:System.Windows.Forms.Control.Paint> událostí. Předchozí kód vložte do <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nahraďte `Texture.jpg` s bitovou kopii platné ve vašem systému.  
   
-## <a name="see-also"></a>Viz také  
- [Kreslení čar a obrazců pomocí pera](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)  
- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- [Kreslení čar a obrazců pomocí pera](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)
+- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)

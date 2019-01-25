@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - abstract keyword [C#]
 ms.assetid: b0797770-c1f3-4b4d-9441-b9122602a6bb
-ms.openlocfilehash: 43497d3680917917894f1d904852d787fce0888c
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 325be8851b63a252c381d943943937332ec91e6b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53240447"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54638038"
 ---
 # <a name="abstract-c-reference"></a>abstract (Referenční dokumentace jazyka C#)
 `abstract` Modifikátor znamená, že věc, kterou právě upravuje má chybějící či neúplné implementace. Modifikátor abstract jde použít s třídy, metody, vlastnosti, indexery a události. Použití `abstract` modifikátor v deklaraci třídy k označení, že třída je určen pouze k být základní třídou jiné třídy. Členy označené jako abstraktní, nebo součástí abstraktní třídu, musí být implementované třídami, které jsou odvozeny od abstraktní třídy.  
@@ -81,11 +81,11 @@ Zobrazí se chyba s oznámením, že kompilátor nelze vytvořit instanci abstra
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)  
-- [virtual](../../../csharp/language-reference/keywords/virtual.md)  
-- [override](../../../csharp/language-reference/keywords/override.md)  
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)
+- [virtual](../../../csharp/language-reference/keywords/virtual.md)
+- [override](../../../csharp/language-reference/keywords/override.md)
 - [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)

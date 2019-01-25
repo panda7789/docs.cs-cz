@@ -2,12 +2,12 @@
 title: Šíření
 ms.date: 03/30/2017
 ms.assetid: f8181e75-d693-48d1-b333-a776ad3b382a
-ms.openlocfilehash: 1d5ac743e94edd845650a1b550b3e982929d1b32
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 680f732fa4e75eb1eaa82a861f0a0021dc9c974c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50198247"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54686332"
 ---
 # <a name="propagation"></a>Šíření
 Toto téma popisuje šíření aktivity v modelu trasování Windows Communication Foundation (WCF).  
@@ -76,8 +76,8 @@ Toto téma popisuje šíření aktivity v modelu trasování Windows Communicati
 ## <a name="synchronization"></a>Synchronizace  
  Aby synchronizovaly události ve více koncových bodů, které běží na různých počítačích, je ID korelace přidat do záhlaví ID aktivity, který se šíří do zpráv. Toto ID můžete použít nástroje pro synchronizaci události v počítačích se hodiny nesrovnalosti. Konkrétně nástroj prohlížeče trasování služeb používá toto ID pro zobrazení zprávy toky mezi koncovými body.  
   
-## <a name="see-also"></a>Viz také  
- [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
- [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  
- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+## <a name="see-also"></a>Viz také:
+- [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
+- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
+- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)

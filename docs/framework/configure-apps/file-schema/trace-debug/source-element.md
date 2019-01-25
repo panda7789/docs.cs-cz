@@ -9,18 +9,18 @@ helpviewer_keywords:
 - source element
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 818324077322fffb40a192c9197efde6e8ff7591
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 493c6ab72ff5554294279b62af49d311026d6e37
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47231886"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54624012"
 ---
 # <a name="ltsourcegt-element"></a>&lt;Zdroj&gt; – Element
 Určuje zdroj trasování, který iniciuje trasovací zprávy.  
   
  \<Konfigurace >  
-\<System.Diagnostics >  
+\<system.diagnostics>  
 \<zdroje >  
 \<zdroj >  
   
@@ -48,7 +48,7 @@ Určuje zdroj trasování, který iniciuje trasovací zprávy.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<naslouchací procesy >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-source.md)|Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat zprávy.|  
+|[\<listeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-source.md)|Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat zprávy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -84,6 +84,6 @@ Určuje zdroj trasování, který iniciuje trasovací zprávy.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
- [Přepínače trasování](../../../../../docs/framework/debug-trace-profile/trace-switches.md)
+## <a name="see-also"></a>Viz také:
+- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Přepínače trasování](../../../../../docs/framework/debug-trace-profile/trace-switches.md)

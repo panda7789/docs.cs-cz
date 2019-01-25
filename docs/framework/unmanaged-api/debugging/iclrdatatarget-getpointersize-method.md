@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 749ec14af7bffee87afbe5c0705a6ddf68da5fd8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 80ed86526c99c36254f2b9c71f00483095e771ba
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33406491"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54734344"
 ---
 # <a name="iclrdatatargetgetpointersize-method"></a>ICLRDataTarget::GetPointerSize – metoda
-Získá velikost v bajtech je ukazatel typu, který používá tento cílový proces. Tato metoda je volána běžné data přístupu služby modulu runtime jazyka.  
+Získá velikost v bajtech, typu ukazatele, který používá cílového procesu. Tato metoda je volána službami common language runtime přístup k datům.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +37,13 @@ HRESULT GetPointerSize (
   
 #### <a name="parameters"></a>Parametry  
  `pointerSize`  
- [out] Ukazatel na celočíselnou hodnotu, která určuje velikost v bajtech ukazatel na tento cílový proces.  
+ [out] Ukazatel na celočíselnou hodnotu, která určuje velikost v bajtech, ukazatel na cílový proces.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je implementována zapisovačem ladění aplikace.  
+ Tato metoda je implementováno tvůrci ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   
@@ -51,5 +51,5 @@ HRESULT GetPointerSize (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 13498c58c7625edfa4954b8da8837f1bd60c976d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3b5800890a5dfaef40225616f1d661a8e37ed4d6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423413"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661097"
 ---
 # <a name="icordebugprocess5gettypefortypeid-method"></a>ICorDebugProcess5::GetTypeForTypeID – metoda
-Převede identifikátor typ na hodnotu ICorDebugType.  
+Identifikátor typu převede na hodnotu ICorDebugType.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +38,16 @@ HRESULT GetTypeForTypeID(
   
 #### <a name="parameters"></a>Parametry  
  `id`  
- [v] Identifikátor typu.  
+ [in] Identifikátor typu.  
   
  `ppType`  
- [out] Ukazatel na adresu ICorDebugType objektu.  
+ [out] Ukazatel na adresu objektu ICorDebugType.  
   
 ## <a name="remarks"></a>Poznámky  
- V některých případech může metody, které vracejí identifikátor typu vrátit hodnotu null `COR_TYPEID` hodnotu. Pokud tato hodnota se předá jako `id` argument, `GetTypeForTypeID` metoda se nezdaří a vrátí `E_FAIL`.  
+ V některých případech může vrátit metody, které vracejí typu identifikátoru s hodnotou null `COR_TYPEID` hodnotu. Pokud tato hodnota je předán jako `id` argumentu `GetTypeForTypeID` selže a vrátí metoda `E_FAIL`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -55,6 +55,6 @@ HRESULT GetTypeForTypeID(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

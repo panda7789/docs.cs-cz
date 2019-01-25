@@ -1,5 +1,5 @@
 ---
-title: Addimport – Method1
+title: AddImport – metoda1
 ms.date: 03/30/2017
 api_name:
 - AddImport
@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 98fefc0240f6496a3e7bfb491e27a57e98cfea1c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d2daed0450e04137621788e830bbedb467bd57c0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33404063"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54706336"
 ---
-# <a name="addimport-method1"></a>Addimport – Method1
-Přidá importy sestavení.  
+# <a name="addimport-method1"></a>AddImport – metoda1
+Přidá importy do sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,24 +40,24 @@ HRESULT AddImport(
   
 #### <a name="parameters"></a>Parametry  
  `AssemblyID`  
- Jedinečné ID sestavení, které má být rozšířen.  
+ Jedinečné ID sestavení potřeba rozšířit.  
   
  `ImportToken`  
- Jedinečné ID načítají [importfile – metoda](../../../../docs/framework/unmanaged-api/alink/importfile-method.md), souboru určených k importu.  
+ Jedinečné ID získaných [importfile – metoda](../../../../docs/framework/unmanaged-api/alink/importfile-method.md), souboru k importu.  
   
  `dwFlags`  
- Modelu COM + FileDef flags – například `ffContainsNoMetaData` a `ffWriteable`. `dwFlags` Předaný [definefile – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
+ COM + FileDef označí jako `ffContainsNoMetaData` a `ffWriteable`. `dwFlags` je předán [definefile – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
   
  `pFileToken`  
  Ukazatel na token, který přijímá ID pro výsledný soubor.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h  
   
-## <a name="see-also"></a>Viz také  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

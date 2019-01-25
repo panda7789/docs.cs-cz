@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9572a203336aa32f1a37a834b99bf0dac35c7f1c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 8ae7149e1f104863825fdea128729dcc80847c19
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127924"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54679929"
 ---
 # <a name="handling-and-raising-events"></a>Zpracování a generování událostí
 Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model delegáta následuje návrhový vzor pozorovatele, který umožňuje předplatiteli zaregistrovat se a dostávat upozornění od poskytovatele. Odesílatel události posune oznámení, že k události došlo, a příjemce události obdrží toto oznámení a definuje odpověď na ně. Tento článek popisuje hlavní součásti modelu delegáta, zacházení s událostmi v aplikacích a implementaci událostí ve vašem kódu.  
@@ -82,17 +82,17 @@ Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model 
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Jak: Vyvolávání a zpracovávání událostí](../../../docs/standard/events/how-to-raise-and-consume-events.md)|Obsahuje příklady vyvolávajících a spotřebovávajících událostí.|  
-|[Jak: Zpracování více událostí pomocí vlastností událostí](../../../docs/standard/events/how-to-handle-multiple-events-using-event-properties.md)|Ukazuje, jak použít vlastnosti událostí pro zpracování více událostí.|  
+|[Postupy: Vyvolávání a zpracovávání událostí](../../../docs/standard/events/how-to-raise-and-consume-events.md)|Obsahuje příklady vyvolávajících a spotřebovávajících událostí.|  
+|[Postupy: Zpracování více událostí pomocí vlastností událostí](../../../docs/standard/events/how-to-handle-multiple-events-using-event-properties.md)|Ukazuje, jak použít vlastnosti událostí pro zpracování více událostí.|  
 |[Návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern.md)|Popisuje vzor návrhu, který umožňuje předplatiteli zaregistrovat se a dostávat upozornění od poskytovatele.|  
-|[Jak: Zpracování událostí v aplikaci Web Forms](../../../docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)|Ukazuje, jak zpracovat událost vyvolanou ovládacím prvkem webových formulářů.|  
+|[Postupy: Zpracování událostí v aplikaci Web Forms](../../../docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)|Ukazuje, jak zpracovat událost vyvolanou ovládacím prvkem webových formulářů.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.EventHandler>  
-- <xref:System.EventHandler%601>  
-- <xref:System.EventArgs>  
-- <xref:System.Delegate>  
-- [Přehled směrovaných událostí (aplikace pro UPW) a události](/windows/uwp/xaml-platform/events-and-routed-events-overview)  
-- [Události (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)  
+- <xref:System.EventHandler>
+- <xref:System.EventHandler%601>
+- <xref:System.EventArgs>
+- <xref:System.Delegate>
+- [Přehled směrovaných událostí (aplikace pro UPW) a události](/windows/uwp/xaml-platform/events-and-routed-events-overview)
+- [Události (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)
 - [Události (C# Programming Guide)](../../csharp/programming-guide/events/index.md)

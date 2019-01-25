@@ -1,6 +1,6 @@
 ---
 title: Funkce SetSecurity (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce SetSecurity načte token zosobnění aktuální vlákno.
+description: Funkce SetSecurity získá token zosobnění aktuální vlákno.
 ms.date: 11/06/2017
 api_name:
 - SetSecurity
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0fd354e1103832abee7f634eace3dd6defa8b646
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3b3e8ddb34849611daae4dfa1d2762a25ac5cf82
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33458748"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54721136"
 ---
 # <a name="setsecurity-function"></a>SetSecurity – funkce
-Načte token zosobnění přidružené k aktuální vlákno.   
+Získá token zosobnění spojený s aktuálním vláknem.   
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -39,23 +39,23 @@ HRESULT SetSecurity (
 
 ## <a name="parameters"></a>Parametry
 
-`pNeedToReset` [out] Když funkce vrátí, obsahuje odkazy `boolean` určující, zda má být token resetovat voláním [ResetSecurity](resetsecurity.md) funkce.  
+`pNeedToReset` [out] Když funkce vrátí, obsahuje ukazatel na `boolean` , která označuje, zda tento token by se měla obnovit voláním [ResetSecurity](resetsecurity.md) funkce.  
 
 `token`  
-[out] Když funkce vrátí hodnotu, obsahuje ukazatel na popisovač token zosobnění přidružené k aktuální vlákno. Jeho hodnota může být `null` Pokud neexistuje žádné token přidružené k aktuální vlákno. 
+[out] Když funkce vrátí, obsahuje ukazatel na popisovač token zosobnění spojený s aktuálním vláknem. Jeho hodnota může být `null` Pokud neexistuje žádný token spojené s aktuálním vláknem. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Pokud funkci úspěšné, je vrácenou hodnotu `S_OK` (0).
+Pokud funkce uspěje, vrácená hodnota je `S_OK` (0).
 
-V případě selhání funkce návratovou hodnotu je kód chyby nulová. Chcete-li získat rozšířené informace o chybě, zavolejte [GetErrorInfo –](geterrorinfo.md) funkce.
+Pokud funkce selže, vrácená hodnota je kód chyby. Chcete-li získat rozšířené informace o chybě, zavolejte [GetErrorInfo –](geterrorinfo.md) funkce.
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:
+- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

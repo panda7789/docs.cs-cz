@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2fe73bef50a32c3ff03f2a2754f665cc95018a4d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a0381ee61a0128a8ae303d44198f8d391b4531a9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402991"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54660616"
 ---
 # <a name="importfileex-method"></a>ImportFileEx – metoda
-Importy uvedené nevázaný modul nebo sestavení.  
+Importy určili sestavení nebo nevázaného modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,33 +42,33 @@ HRESULT ImportFileEx(
   
 #### <a name="parameters"></a>Parametry  
  `pszFilename`  
- Plně kvalifikovaný název souboru, ze kterých chcete importovat.  
+ Plně kvalifikovaný název souboru, ze kterého se má importovat.  
   
  `pszTargetName`  
- Nepovinný název cílového souboru.  
+ Volitelný název cílového souboru.  
   
  `fSmartImport`  
- V případě hodnoty TRUE je používán importtypes –, jinak se import se musí provádět ručně.  
+ Při hodnotě TRUE se používá importtypes –, jinak se import je nutné provést ručně.  
   
  `dwOpenFlags`  
- Příznaky tak, aby se předají [openscope – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md).  
+ Příznaky, které se mají předat podél [openscope – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md).  
   
  `pImportToken`  
- Získá ID importovaný soubor.  
+ Přijímá ID importovaný soubor.  
   
  `ppAssemblyScope`  
- Obdrží sestavení import oboru [imetadataassemblyimport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) rozhraní. Je nastavena na hodnotu NULL, pokud není soubor sestavení.  
+ Přijímá obor importu sestavení [imetadataassemblyimport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) rozhraní. Je nastavena na hodnotu NULL, pokud není soubor sestavení.  
   
  `pdwCountOfScopes`  
- Získá počet importovaných souborů nebo obory.  
+ Získá počet importovaných souborů a/nebo obory.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h.  
   
-## <a name="see-also"></a>Viz také  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

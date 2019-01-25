@@ -18,17 +18,17 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 21a858c1-3c99-4904-86ee-0d17b49804fa
-ms.openlocfilehash: 4176d1a4cec91c5740b03c10d1a6d2cc263dba28
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 8d2825ff738ffc50ba9a438024db27aff5686a0d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45998809"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661383"
 ---
 # <a name="how-to-implement-a-client-of-the-event-based-asynchronous-pattern"></a>Postupy: Implementace klienta asynchronního vzoru založeného na událostech
-Následující příklad kódu ukazuje, jak použít komponentu, která dodržuje [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md). Formulář pro tento příklad používá `PrimeNumberCalculator` komponenty popsané v [postupy: implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
+Následující příklad kódu ukazuje, jak použít komponentu, která dodržuje [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md). Formulář pro tento příklad používá `PrimeNumberCalculator` komponenty popsané v [jak: Implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
   
- Při spuštění projektu, který se používá v tomto příkladu se zobrazí "Kalkulačka Prime číslo" formulář s mřížky a dvě tlačítka: **spustit novou úlohu** a **zrušit**. Můžete kliknout **spustit novou úlohu** tlačítko několikrát za sebou a pro každou klikněte na asynchronní operace se začne výpočtu k určení, zda je číslo náhodně vygenerovaného testu prime. Formulář zobrazí pravidelně průběh a výsledky přírůstkové. Každá operace se přiřadí ID jedinečné úkolu. Výsledek výpočtu se zobrazí v **výsledek** sloupec; Pokud číslo testu není primární, je označena jako **složené,** a zobrazí se jeho první dělitel.  
+ Při spuštění projektu, který se používá v tomto příkladu se zobrazí "Kalkulačka Prime číslo" formulář s tabulkou a dvě tlačítka: **Spustit novou úlohu** a **zrušit**. Můžete kliknout **spustit novou úlohu** tlačítko několikrát za sebou a pro každou klikněte na asynchronní operace se začne výpočtu k určení, zda je číslo náhodně vygenerovaného testu prime. Formulář zobrazí pravidelně průběh a výsledky přírůstkové. Každá operace se přiřadí ID jedinečné úkolu. Výsledek výpočtu se zobrazí v **výsledek** sloupec; Pokud číslo testu není primární, je označena jako **složené,** a zobrazí se jeho první dělitel.  
   
  Všechny čekající operace může být zrušen pomocí **zrušit** tlačítko. Nelze realizovat více výběrů.  
   
@@ -41,6 +41,6 @@ Následující příklad kódu ukazuje, jak použít komponentu, která dodržuj
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.ComponentModel.AsyncOperation>  
-- <xref:System.ComponentModel.AsyncOperationManager>  
+- <xref:System.ComponentModel.AsyncOperation>
+- <xref:System.ComponentModel.AsyncOperationManager>
 - <xref:System.Windows.Forms.WindowsFormsSynchronizationContext>

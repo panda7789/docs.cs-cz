@@ -6,12 +6,12 @@ helpviewer_keywords:
 - animation [WPF], size changes with key frames
 - size changes [WPF], animating with key frames
 ms.assetid: 86bd2950-d4c9-4ec4-aa8d-7dc3ccadded4
-ms.openlocfilehash: 69845d1d75f81042bbeb20ee6b1015f5c2f53b81
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 9efaaebdf08a6079bff7179e9ec035b4f38bb3ce
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43803750"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54678444"
 ---
 # <a name="how-to-animate-size-changes-by-using-key-frames"></a>Postupy: Animace změn velikosti použitím klíčových snímků
 Tento příklad ukazuje, jak animace změn velikosti použitím klíčových snímků.  
@@ -29,12 +29,12 @@ Tento příklad ukazuje, jak animace změn velikosti použitím klíčových sn�
   
  Úplnou ukázku najdete v tématu [klíčový snímek animace ukázka](https://go.microsoft.com/fwlink/?LinkID=160012).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames>  
- <xref:System.Windows.Media.ArcSegment.Size%2A>  
- <xref:System.Windows.Media.ArcSegment>  
- <xref:System.Windows.Media.Animation.LinearSizeKeyFrame>  
- <xref:System.Windows.Media.Animation.DiscreteSizeKeyFrame>  
- <xref:System.Windows.Media.Animation.SplineSizeKeyFrame>  
- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
- [Témata s postupy ke klíčovým snímkům](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames>
+- <xref:System.Windows.Media.ArcSegment.Size%2A>
+- <xref:System.Windows.Media.ArcSegment>
+- <xref:System.Windows.Media.Animation.LinearSizeKeyFrame>
+- <xref:System.Windows.Media.Animation.DiscreteSizeKeyFrame>
+- <xref:System.Windows.Media.Animation.SplineSizeKeyFrame>
+- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)
+- [Témata s postupy ke klíčovým snímkům](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)

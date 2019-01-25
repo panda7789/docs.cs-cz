@@ -8,12 +8,12 @@ helpviewer_keywords:
 - lines [WPF], connected (see polylines)
 - drawing [WPF], polylines
 ms.assetid: 65db8935-d047-4295-87c4-b427ff3ad293
-ms.openlocfilehash: d065d3cead1ed9746a9615ce2bb6d3ec4cbd614d
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: c4aab17958180710c392491a27cc22fa006f8c5f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43855427"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54688971"
 ---
 # <a name="how-to-draw-a-polyline-by-using-the-polyline-element"></a>Postupy: Vykreslení lomené čáry použitím elementu lomené čáry
 Tento příklad ukazuje způsob vykreslení lomené čáry, která je řada spojené čáry pomocí <xref:System.Windows.Shapes.Polyline> elementu.  
@@ -34,9 +34,9 @@ Tento příklad ukazuje způsob vykreslení lomené čáry, která je řada spoj
   
  V tomto příkladu je součástí větší ukázky; úplnou ukázku najdete v tématu [ukázka prvky tvar](https://go.microsoft.com/fwlink/?LinkID=160037).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Shapes.Polyline>  
- <xref:System.Windows.Shapes.Polygon>  
- <xref:System.Windows.Shapes.Shape>  
- [Ukázka elementy obrazce](https://go.microsoft.com/fwlink/?LinkID=160037)  
- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Shapes.Polyline>
+- <xref:System.Windows.Shapes.Polygon>
+- <xref:System.Windows.Shapes.Shape>
+- [Ukázka elementy obrazce](https://go.microsoft.com/fwlink/?LinkID=160037)
+- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)

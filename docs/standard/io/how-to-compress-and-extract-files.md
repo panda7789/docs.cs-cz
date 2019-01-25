@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: komprese a extrahování souborů'
+title: 'Postupy: Komprese a extrahování souborů'
 ms.date: 06/06/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,14 +12,14 @@ helpviewer_keywords:
 ms.assetid: e9876165-3c60-4c84-a272-513e47acf579
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 669936d15cfe1ea125ed36ffdfcfd093b6aacbe1
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: c35bf549dc4dcd5e12e3580c2357b64dcc42905b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47424425"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54650938"
 ---
-# <a name="how-to-compress-and-extract-files"></a>Postupy: komprese a extrahování souborů
+# <a name="how-to-compress-and-extract-files"></a>Postupy: Komprese a extrahování souborů
 
 <xref:System.IO.Compression> Obor názvů obsahuje následující typy pro kompresi a dekompresi souborů a datových proudů. Můžete také používat tyto typy číst a upravovat obsah komprimovaného souboru:
 
@@ -70,9 +70,9 @@ Můžete také použít <xref:System.IO.Compression.GZipStream> a <xref:System.I
 
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.IO.Compression.ZipArchive>  
-- <xref:System.IO.Compression.ZipFile>  
-- <xref:System.IO.Compression.ZipArchiveEntry>  
-- <xref:System.IO.Compression.DeflateStream>  
-- <xref:System.IO.Compression.GZipStream>  
+- <xref:System.IO.Compression.ZipArchive>
+- <xref:System.IO.Compression.ZipFile>
+- <xref:System.IO.Compression.ZipArchiveEntry>
+- <xref:System.IO.Compression.DeflateStream>
+- <xref:System.IO.Compression.GZipStream>
 - [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)

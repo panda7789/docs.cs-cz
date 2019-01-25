@@ -2,12 +2,12 @@
 title: Sledování SQL
 ms.date: 03/30/2017
 ms.assetid: bcaebeb1-b9e5-49e8-881b-e49af66fd341
-ms.openlocfilehash: 741df337187b2a5fffe63052c9fafbd430f7c2fc
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 240e6ab750b4ef82d2afcf1c2ab26c08369926d6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836378"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54690602"
 ---
 # <a name="sql-tracking"></a>Sledování SQL
 Tato ukázka předvádí, jak napsat vlastní sledování účastník SQL, který zapíše záznamy sledování k databázi SQL. Windows Workflow Foundation (WF) umožňuje získat přehled o spuštění instance pracovního postupu pro sledování pracovního postupu. Modul runtime sledování vysílá pracovního postupu při provádění pracovního postupu pro sledování záznamů. Další informace o sledování pracovního postupu najdete v tématu [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md).
@@ -59,5 +59,5 @@ Tato ukázka předvádí, jak napsat vlastní sledování účastník SQL, kter�
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\SqlTracking`  
   
-## <a name="see-also"></a>Viz také  
- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)
+## <a name="see-also"></a>Viz také:
+- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

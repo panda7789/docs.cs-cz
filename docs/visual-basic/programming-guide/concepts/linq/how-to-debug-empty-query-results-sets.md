@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: ladění sady výsledků dotazu prázdný (Visual Basic)'
+title: 'Postupy: Ladění prázdných sad výsledků dotazu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b242c90a-d2b8-4309-8a1e-e4e70736c727
-ms.openlocfilehash: 33dcfe9b0c0ad41353ca845ed4d8e21ff77292df
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 72233981e6e9a309c3f328041736f3fce71746cf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33642971"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54715449"
 ---
-# <a name="how-to-debug-empty-query-results-sets-visual-basic"></a>Postupy: ladění sady výsledků dotazu prázdný (Visual Basic)
-Jeden z nejběžnějších problémů při dotazování stromy XML je, že pokud stromu XML má výchozí obor názvů, vývojář někdy zapíše dotazu, jako by soubor XML není v oboru názvů.  
+# <a name="how-to-debug-empty-query-results-sets-visual-basic"></a>Postupy: Ladění prázdných sad výsledků dotazu (Visual Basic)
+Jedním z nejběžnějších problémů při dotazování na stromy XML je, že pokud stromu XML má výchozí obor názvů, vývojář někdy zapíše dotaz jakoby nebyly v oboru názvů XML.  
   
- První sadu příklady v tomto tématu ukazuje obvyklým způsobem, že je načteno kód XML v výchozí obor názvů a je dotazován nesprávně.  
+ První sada příklady v tomto tématu ukazuje typické tak, že je načteno XML ve výchozím oboru názvů a dotazuje se nesprávně.  
   
- Druhá sada příklady zobrazit potřebné opravy tak, aby v oboru názvů se můžete dotazovat XML.  
+ Druhá sada příklady ukazují potřebné opravy tak, aby můžete dát dotaz na XML v oboru názvů.  
   
- Další informace najdete v tématu [práci s obory názvů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Další informace najdete v tématu [práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje vytvoření XML v oboru názvů a nastavte dotaz, který vrací prázdný výsledek.  
+ Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který vrací prázdný výsledek sadu.  
   
 ```vb  
 Dim root As XElement = _  
@@ -51,7 +51,7 @@ End of result set
 ## <a name="example"></a>Příklad  
  Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který je zakódovaný správně.  
   
- Řešení je deklarace a inicializace globální výchozí obor názvů. Tato výchozí obor názvů umístí všechny vlastnosti XML. Žádné další úpravy jsou požadovány v příkladu, aby byla správně fungovat.  
+ Řešením je deklarovat a inicializovat globální výchozí obor názvů. To umístí všechny vlastnosti XML ve výchozím oboru názvů. Žádné úpravy jsou požadovány v příkladu, aby to fungovalo správně.  
   
 ```vb  
 Imports <xmlns="http://www.adventure-works.com">  
@@ -89,5 +89,5 @@ Result set follows:
 End of result set  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Základní dotazy (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

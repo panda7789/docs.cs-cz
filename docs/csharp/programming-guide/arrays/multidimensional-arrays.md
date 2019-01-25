@@ -6,12 +6,12 @@ helpviewer_keywords:
 - arrays [C#], multidimensional
 - multidimensional arrays [C#]
 ms.assetid: 020ce02e-7dff-4273-8e53-bf0b33747232
-ms.openlocfilehash: d5663062815f0c85772aa0e30f5edeac654431b8
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 4547bd94a0870dbb3955c4980361c8be0453616d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53242214"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54642409"
 ---
 # <a name="multidimensional-arrays-c-programming-guide"></a>Vícerozměrná pole (Průvodce programováním v C#)
 
@@ -49,9 +49,9 @@ Pole může mít více než jeden rozměr. Například následující deklaraci 
   
  [!code-csharp[csProgGuideArrays#17](../../../csharp/programming-guide/arrays/codesnippet/CSharp/multidimensional-arrays_8.cs)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Pole](../../../csharp/programming-guide/arrays/index.md)  
-- [Jednorozměrná pole](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Pole](../../../csharp/programming-guide/arrays/index.md)
+- [Jednorozměrná pole](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)
 - [Vícenásobná pole](../../../csharp/programming-guide/arrays/jagged-arrays.md)

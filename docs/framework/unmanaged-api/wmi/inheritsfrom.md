@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4784e22d5a3eec031fbee00441958a62d66b52df
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 078950b4e46ea587c2f39986963ec129f4ec1f1e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47199779"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54618380"
 ---
 # <a name="inheritsfrom-function"></a>InheritsFrom – funkce
 Určuje, zda aktuální třídy nebo instance je odvozena od třídy zadaný nadřazený prvek.
@@ -64,11 +64,11 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hl
 Tato funkce zalamuje volání na [IWbemClassObject::InheritsFrom](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-inheritsfrom) metody.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:  
-[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:
+- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - functions [Visual Basic], function expressions
 - lambda expressions [Visual Basic], function expression
 ms.assetid: e8a47a45-4b8a-4f45-a623-7653625dffbc
-ms.openlocfilehash: cfdd17f6f4ee6c4ddb3fa73ab3ec9c5ce46a162f
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: b83bee06a3a001fd362a217907e783cb7ad293ca
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46702995"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54648104"
 ---
 # <a name="function-expression-visual-basic"></a>Function – výraz (Visual Basic)
 Deklaruje parametry a kód, které definují výraz lambda funkce.  
@@ -31,8 +31,8 @@ End Function
 |Termín|Definice|  
 |---|---|  
 |`parameterlist`|Volitelné. Seznam místní názvy proměnných, které představují parametry tohoto postupu. Závorky musí být k dispozici i v případě, že je seznam prázdný. Zobrazit [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).|  
-|`expression`|Požadováno. Jeden výraz. Typ výrazu je návratový typ funkce.|  
-|`statements`|Požadováno. Seznam příkazů, který vrací hodnotu s použitím `Return` příkazu. (Viz [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md).) Typ hodnoty vrácené je návratový typ funkce.|  
+|`expression`|Povinný parametr. Jeden výraz. Typ výrazu je návratový typ funkce.|  
+|`statements`|Povinný parametr. Seznam příkazů, který vrací hodnotu s použitím `Return` příkazu. (Viz [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md).) Typ hodnoty vrácené je návratový typ funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
  A *výraz lambda* je funkce bez názvu, který vypočítává a vrací hodnotu. Výraz lambda můžete použít kdekoli můžete použít typ delegáta, s výjimkou jako argument `RemoveHandler`. Další informace o delegátech a použití výrazů lambda s delegáty, naleznete v tématu [delegáta příkaz](../../../visual-basic/language-reference/statements/delegate-statement.md) a [volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
@@ -87,12 +87,12 @@ Dim londonCusts = db.Customers.
   
  Další informace o metodách dotazu naleznete v tématu [dotazy](../../../visual-basic/language-reference/queries/index.md). Další informace o standardních operátorů pro dotazování, naleznete v tématu [přehled standardních operátorů dotazu](../../programming-guide/concepts/linq/standard-query-operators-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
- [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
- [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
- [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)  
- [Porovnání hodnot](../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)  
- [Logické výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)  
- [Operátor If](../../../visual-basic/language-reference/operators/if-operator.md)  
- [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+- [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+- [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)
+- [Porovnání hodnot](../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)
+- [Logické výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)
+- [Operátor If](../../../visual-basic/language-reference/operators/if-operator.md)
+- [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)

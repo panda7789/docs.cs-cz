@@ -6,12 +6,12 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: 33e3feb874b8ddb13788a2a3a2bb69a199335e54
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 26748902be1c67ed8032fca63ff39f3626a5d673
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245438"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54681811"
 ---
 # <a name="interfaces-c-programming-guide"></a>Rozhraní (Průvodce programováním v C#)
 
@@ -86,7 +86,7 @@ Rozhraní má následující vlastnosti:
 
 [Rozhraní](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652489%28v%3Dorm.10%29) v [učení C# 3.0: Master the Fundamentals of C# 3.0](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652493%28v%253dorm.10%29)
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Dědičnost](../classes-and-structs/inheritance.md)

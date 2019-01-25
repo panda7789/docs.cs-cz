@@ -3,12 +3,12 @@ title: Přehled modulu ověřování WSFederation
 ms.date: 03/30/2017
 ms.assetid: 02c4d5e8-f0a7-49ee-9cf5-3647578510ad
 author: BrucePerlerMS
-ms.openlocfilehash: bff3875b5f2f3ac187796d89fcd6da31ba911362
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: cebdb0e69ae151afd9a1cc422cf48a201176313a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47216952"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54703663"
 ---
 # <a name="wsfederation-authentication-module-overview"></a>Přehled modulu ověřování WSFederation
 Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ověřování v aplikacích ASP.NET prostřednictvím modulu ověřování WS-Federated (WS-FAM). Toto téma vám pomůže pochopit, jak federované ověřování funguje a jak ji používat.  
@@ -35,7 +35,7 @@ Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ov�
   
  Konfiguraci WS-služba FAM k určení služby tokenů zabezpečení, ke kterým by měl být přesměrován neověřenými požadavky. Technologie WIF umožňuje ověření uživatele dvěma způsoby:  
   
-1.  Pasivní přesměrování: když neověřený uživatel pokusí o přístup k chráněnému prostředku a chcete jednoduše přesměruje je to služby tokenů zabezpečení bez nutnosti přihlašovací stránku a pak to je ten správný přístup. Služba tokenů zabezpečení ověří identitu uživatele a vydá token zabezpečení, která obsahuje odpovídající deklarace identity pro tohoto uživatele. Tato možnost vyžaduje FAM WS k přidání do kanálu z modulů HTTP. Můžete upravit konfigurační soubor vaší aplikace k používání WS-FAM a provést federaci se službou STS Identity and Access Tool for Visual Studio 2012. Další informace najdete v tématu [Identity and Access Tool for Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md).  
+1.  Pasivní přesměrování: Když neověřený uživatel pokusí o přístup k chráněnému prostředku a chcete jednoduše přesměruje je to služby tokenů zabezpečení bez nutnosti přihlašovací stránku, to je ten správný přístup. Služba tokenů zabezpečení ověří identitu uživatele a vydá token zabezpečení, která obsahuje odpovídající deklarace identity pro tohoto uživatele. Tato možnost vyžaduje FAM WS k přidání do kanálu z modulů HTTP. Můžete upravit konfigurační soubor vaší aplikace k používání WS-FAM a provést federaci se službou STS Identity and Access Tool for Visual Studio 2012. Další informace najdete v tématu [Identity and Access Tool for Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md).  
   
 2.  Můžete volat <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn%2A?displayProperty=nameWithType> metoda nebo <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider%2A> metodu z modelu code-behind přihlašovací stránku ve vaší aplikaci předávající strany.  
   
@@ -139,7 +139,7 @@ Technologie Windows Identity Foundation (WIF) zahrnuje podpory federovaného ov�
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IdentityModel.Services.SessionAuthenticationModule>  
- <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>  
- [\<federationConfiguration >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.IdentityModel.Services.SessionAuthenticationModule>
+- <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>
+- [\<federationConfiguration>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)

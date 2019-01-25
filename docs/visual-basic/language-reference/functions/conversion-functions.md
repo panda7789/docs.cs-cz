@@ -12,12 +12,12 @@ helpviewer_keywords:
 - functions [Visual Basic], conversion
 - dates [Visual Basic], converting
 ms.assetid: 8a8fb553-a8ac-424e-8103-26eea25eaa71
-ms.openlocfilehash: a5b9c4c4b65f358eb16c76e808f85d1618820836
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6f867742aef5e5a56daa9e4557036d5b17b61f48
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33598137"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643530"
 ---
 # <a name="conversion-functions-visual-basic"></a>Funkce konverze (Visual Basic)
 
@@ -33,7 +33,7 @@ ms.locfileid: "33598137"
 <xref:Microsoft.VisualBasic.Strings.ChrW%2A>   
 [CInt – funkce](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
 [CLng – Funkce](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
-[CObj – Funkce](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
+[Funkce CObj](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
 [Csbyte – funkce](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
 [Funkce CShort](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
 [CSng – funkce](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
@@ -48,7 +48,7 @@ ms.locfileid: "33598137"
 <xref:Microsoft.VisualBasic.Conversion.Str%2A>   
 <xref:Microsoft.VisualBasic.Conversion.Val%2A>
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
-[Převádění datových typů](../../../visual-basic/programming-guide/concepts/linq/converting-data-types.md)
+- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Převádění datových typů](../../../visual-basic/programming-guide/concepts/linq/converting-data-types.md)

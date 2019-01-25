@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ba8bca6d14308284c869b923853f7e27e045bca5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2296f6e386f35aed91a8aea4392a9cd00ec27ccb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402936"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54724356"
 ---
 # <a name="cordebugthreadstate-enumeration"></a>CorDebugThreadState – výčet
-Určuje stav vláken pro ladění.  
+Určuje stav vlákna pro ladění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,16 +39,16 @@ typedef enum CorDebugThreadState {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`THREAD_RUN`|Vlákno spouští volně, pokud dojde k události ladění.|  
-|`THREAD_SUSPEND`|Nelze spustit vlákno.|  
+|`THREAD_RUN`|Vlákno se spustí bez omezení, pokud dojde k události ladění.|  
+|`THREAD_SUSPEND`|Vlákno nelze spustit.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program používá `CorDebugThreadState` výčtu k řízení provádění vlákna. Stav vlákna lze nastavit pomocí [icordebugthread::setdebugstate –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-setdebugstate-method.md) nebo [icordebugcontroller::setallthreadsdebugstate –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md) metoda.  
+ Ladicí program používá `CorDebugThreadState` výčet k řízení provádění vlákna. Stav vlákna lze nastavit pomocí [icordebugthread::setdebugstate –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-setdebugstate-method.md) nebo [icordebugcontroller::setallthreadsdebugstate –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md) metody.  
   
- Zpětné volání poskytnuté [hostující rozhraní API](../../../../docs/framework/unmanaged-api/hosting/index.md) umožňuje čerpání zpráv, takže dojde k přerušení stavu není potřeba.  
+ Zpětné volání k dispozici na [hostování API](../../../../docs/framework/unmanaged-api/hosting/index.md) umožňuje – čerpání zpráv, takže není potřeba přerušené stavu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDegug.h  
   
@@ -56,5 +56,5 @@ typedef enum CorDebugThreadState {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

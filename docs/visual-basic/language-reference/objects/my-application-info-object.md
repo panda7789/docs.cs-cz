@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My.Application.Info object
 - My.Application.AssemblyInfo object
 ms.assetid: 2f4782ed-3da2-4d88-b341-0c6f480fb7bb
-ms.openlocfilehash: dff32eb29e9299274cc137a07fe1b080911ab420
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e262859facfb750d1d6b31740d515cc7e498eafa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513738"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54686514"
 ---
 # <a name="myapplicationinfo-object"></a>My.Application.Info – objekt
 Poskytuje vlastnosti pro získání informací o aplikaci, jako je číslo verze, popis, načtená sestavení a tak dále.  
@@ -26,7 +26,7 @@ Poskytuje vlastnosti pro získání informací o aplikaci, jako je číslo verze
   
  **Třída:** <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>  
   
- **Sestavení:** knihovny prostředí Runtime jazyka Visual Basic (v souboru Microsoft.VisualBasic.dll)  
+ **Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
   
-## <a name="see-also"></a>Viz také  
- [Objekt My.Application](../../../visual-basic/language-reference/objects/my-application-object.md)
+## <a name="see-also"></a>Viz také:
+- [Objekt My.Application](../../../visual-basic/language-reference/objects/my-application-object.md)

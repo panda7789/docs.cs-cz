@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 46daf47e8fd478926ff75fa695f277c692679fb6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 138b557c5479aab2ac5cc1e91e698b096ecb8f4a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424960"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54589462"
 ---
 # <a name="isymunmanagedencupdateinitializeforenc-method"></a>ISymUnmanagedENCUpdate::InitializeForEnc – metoda
-Umožňuje metoda hranice počítaný před prvním volání [isymunmanagedencupdate::updatesymbolstore2 –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-updatesymbolstore2-method.md) metoda.  
+Umožňuje hranice metody vypočítání před prvním volání [isymunmanagedencupdate::updatesymbolstore2 –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-updatesymbolstore2-method.md) metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,10 +34,10 @@ HRESULT InitializeForEnc();
 ```  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedENCUpdate – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedENCUpdate – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)

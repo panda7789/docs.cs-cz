@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML) (C#)'
+title: 'Postupy: Vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: c3133d64-523f-422d-8838-73d36b945ca0
-ms.openlocfilehash: 60b6529f310ccbb02160ff96e1db7870bcc71058
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 562f3a40e1670a76778a64570f980326d946a4c2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43863118"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54584672"
 ---
-# <a name="how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml-c"></a>Postupy: vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML) (C#)
+# <a name="how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml-c"></a>Postupy: Vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML) (C#)
 Toto téma ukazuje, jak najít všechny atributy na stejné úrovni kontextu uzlu. Pouze atributy s konkrétním názvem jsou vráceny v kolekci.  
   
  Výraz XPath je:  
@@ -19,7 +19,7 @@ Toto téma ukazuje, jak najít všechny atributy na stejné úrovni kontextu uzl
 ## <a name="example"></a>Příklad  
  V tomto příkladu nejdříve vyhledá `Book` elementu a najde všechny prvky na stejné úrovni s názvem `Book`a následně vyhledá všechny atributy s názvem `id`. Výsledkem je kolekce atributů.  
   
- Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  
@@ -55,6 +55,6 @@ id="bk101"
 id="bk102"  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

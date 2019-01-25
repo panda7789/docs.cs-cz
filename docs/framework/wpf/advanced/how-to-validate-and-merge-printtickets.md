@@ -10,12 +10,12 @@ helpviewer_keywords:
 - validation of PrintTickets [WPF]
 - PrintTicket [WPF], validation
 ms.assetid: 4fe2d501-d0b0-4fef-86af-6ffe6c162532
-ms.openlocfilehash: 37a1c0600b8429158336968507ddc8cfb6d8f98b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 0b9f7b101ea4f06c86f66f8e4e16d1ffeabaa9e7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43485635"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671938"
 ---
 # <a name="how-to-validate-and-merge-printtickets"></a>Postupy: Ověření a sloučení PrintTickets
 [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] [Tisk schématu](https://go.microsoft.com/fwlink/?LinkId=186397) zahrnuje flexibilní a rozšiřitelné <xref:System.Printing.PrintCapabilities> a <xref:System.Printing.PrintTicket> elementy. Předchozí najdete výčet možností zařízení pro tisk a druhá možnost určuje, jak zařízení používali tyto možnosti s ohledem na konkrétní pořadí dokumentů, jednotlivý dokument nebo jednotlivých stránek.  
@@ -56,14 +56,14 @@ ms.locfileid: "43485635"
  [!code-csharp[PrintTicketManagment#UIForMergeAndValidatePTUtility](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PrintTicketManagment/CSharp/printticket.cs#uiformergeandvalidateptutility)]
  [!code-vb[PrintTicketManagment#UIForMergeAndValidatePTUtility](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PrintTicketManagment/visualbasic/printticket.vb#uiformergeandvalidateptutility)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Printing.PrintCapabilities>  
- <xref:System.Printing.PrintTicket>  
- <xref:System.Printing.PrintServer.GetPrintQueues%2A>  
- <xref:System.Printing.PrintServer>  
- <xref:System.Printing.EnumeratedPrintQueueTypes>  
- <xref:System.Printing.PrintQueue>  
- <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A>  
- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)  
- [Tisk schématu](https://go.microsoft.com/fwlink/?LinkId=186397)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Printing.PrintCapabilities>
+- <xref:System.Printing.PrintTicket>
+- <xref:System.Printing.PrintServer.GetPrintQueues%2A>
+- <xref:System.Printing.PrintServer>
+- <xref:System.Printing.EnumeratedPrintQueueTypes>
+- <xref:System.Printing.PrintQueue>
+- <xref:System.Printing.PrintQueue.GetPrintCapabilities%2A>
+- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)
+- [Tisk schématu](https://go.microsoft.com/fwlink/?LinkId=186397)

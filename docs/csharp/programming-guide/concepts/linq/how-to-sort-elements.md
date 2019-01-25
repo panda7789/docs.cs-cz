@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: řazení elementů (C#)'
+title: 'Postupy: Řazení elementů (C#)'
 ms.date: 07/20/2015
 ms.assetid: aee6fbbc-81fd-4b3e-b40f-6ed7b3bd3fee
-ms.openlocfilehash: 7548f183736ac9ed0ed09d3be775b3ffde6cb255
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 66a41fc018b2df64aa95c24d1d698b6c38fd189a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042605"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54640781"
 ---
-# <a name="how-to-sort-elements-c"></a>Postupy: řazení elementů (C#)
+# <a name="how-to-sort-elements-c"></a>Postupy: Řazení elementů (C#)
 Tento příklad ukazuje, jak napsat dotaz, který Seřadí výsledky.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: numerická Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Číselná Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
   
 ```csharp  
 XElement root = XElement.Load("Data.xml");  
@@ -41,7 +41,7 @@ foreach (decimal el in prices)
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
   
- Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: numerická Data v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Číselná Data ve Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md).  
   
 ```csharp  
 XElement root = XElement.Load("DataInNamespace.xml");  
@@ -67,7 +67,7 @@ foreach (decimal el in prices)
 89.99  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Řazení dat (C#)](../../../../csharp/programming-guide/concepts/linq/sorting-data.md)  
+- [Řazení dat (C#)](../../../../csharp/programming-guide/concepts/linq/sorting-data.md)
 - [Základní dotazy (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

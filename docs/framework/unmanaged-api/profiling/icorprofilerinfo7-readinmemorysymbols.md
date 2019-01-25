@@ -12,17 +12,17 @@ api_type:
 ms.assetid: 1745a0b9-8332-4777-a670-b549bff3b901
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9874c8e567a89fd3977be360666c86406f2cd395
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ca71819214e614af5a0c269ed77b1cf7f9b7d7ee
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33455928"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658673"
 ---
 # <a name="icorprofilerinfo7readinmemorysymbols"></a>ICorProfilerInfo7::ReadInMemorySymbols
-[V podporované [!INCLUDE[net_v461](../../../../includes/net-v461-md.md)] a novější verze]  
+[Podporované v [!INCLUDE[net_v461](../../../../includes/net-v461-md.md)] a novější verze]  
   
- Čte bajtů z datového proudu symbolu v paměti.  
+ Přečte bajtů ze symbolů v paměti datového proudu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,33 +38,33 @@ HRESULT ReadInMemorySymbols(
   
 #### <a name="parameters"></a>Parametry  
  `moduleId`  
- [v] Identifikátor modul, který obsahuje datový proud v paměti.  
+ [in] Identifikátor modulu, který obsahuje datový proud v paměti.  
   
  `symbolsReadOffset`  
- [v] Posun v rámci datového proudu v paměti, pro kterou chcete spustit čtení bajtů.  
+ [in] Posun v rámci datového proudu v paměti od kterého začne číst bajty.  
   
  `pSymbolBytes`  
- [out] Ukazatel do vyrovnávací paměti, ke kterému se zkopírují data. Vyrovnávací paměti by měl mít `countSymbolBytes` množství dostupného místa.  
+ [out] Ukazatel do vyrovnávací paměti, do které se kopírují data. Vyrovnávací paměť by měl mít `countSymbolBytes` volného místa.  
   
  `countSymbolBytes`  
- [v] Počet bajtů ke kopírování.  
+ [in] Počet bajtů, které mají kopírovat.  
   
  `pCountSymbolBytesRead`  
  [out] Po návratu metody obsahuje skutečný počet přečtených bajtů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK`, pokud byla přečtena nenulový počet bajtů.  
+ `S_OK`, pokud byla přečtena nenulové počet bajtů.  
   
  `CORPROF_E_MODULE_IS_DYNAMIC`, pokud modul byl vytvořen pomocí <xref:System.Reflection.Emit>.  
   
 ## <a name="remarks"></a>Poznámky  
- `ReadInMemorySymbols` Metoda se pokusí přečíst `countSymbolBytes` začínající na posunu dat `symbolsReadOffset` v rámci datového proudu v paměti. Data budou zkopírována do `pSymbolBytes`, který by měl být `countSymbolBytes` množství dostupného místa.     `pCountSymbolsBytesRead` obsahuje skutečný počet bajtů přečtených, což může být menší než `countSymbolBytes` Pokud dosažen konec datového proudu.  
+ `ReadInMemorySymbols` Metoda se pokusí přečíst `countSymbolBytes` dat začínající na posunu `symbolsReadOffset` v rámci datového proudu v paměti. Data zkopírována do `pSymbolBytes`, která má mít `countSymbolBytes` volného místa.     `pCountSymbolsBytesRead` obsahuje skutečný počet bajtů, přečtěte si, které mohou být menší než `countSymbolBytes` Pokud je dosaženo konce datového proudu.  
   
 > [!NOTE]
->  Aktuální implementace Reflection.Emit nepodporuje. Pokud modul byl vytvořen pomocí Reflection.Emit, vrátí metoda `CORPROF_E_MODULE_IS_DYNAMIC`.  
+>  Aktuální implementace nepodporuje Reflection.Emit. Pokud modul byl vytvořen pomocí třídy Reflection.Emit, metoda vrátí `CORPROF_E_MODULE_IS_DYNAMIC`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -72,5 +72,5 @@ HRESULT ReadInMemorySymbols(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo7 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo7-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo7 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo7-interface.md)

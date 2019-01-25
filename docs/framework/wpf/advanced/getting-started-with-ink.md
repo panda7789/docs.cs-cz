@@ -9,12 +9,12 @@ helpviewer_keywords:
 - XAML [WPF], procedural code in lieu of
 - InkCanvas (WPF)
 ms.assetid: 760332dd-594a-475d-865b-01659db8cab7
-ms.openlocfilehash: 600d8528125606c6e1af5b031e2fc31aabb79206
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: eaaa8ad5273331941bc6915231460100e8ac24b0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925041"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646237"
 ---
 # <a name="get-started-with-ink-in-wpf"></a>Začínáme s inkoustem v subsystému WPF
 
@@ -22,7 +22,7 @@ Windows Presentation Foundation (WPF) obsahuje funkci rukopisu, se kterou snadno
 
 ## <a name="prerequisites"></a>Požadavky
 
-Chcete-li nejprve použít následující příklady, [instalaci sady Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Pomáhá také vědět, jak zapsat základní aplikace pro WPF. Začínáme s WPF pomoc najdete v tématu [návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).
+Chcete-li nejprve použít následující příklady, [instalaci sady Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Pomáhá také vědět, jak zapsat základní aplikace pro WPF. Začínáme s WPF pomoc najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).
 
 ## <a name="quick-start"></a>Rychlý Start
 
@@ -108,7 +108,7 @@ Všechny funkce WPF můžete přistupovat z kódu procedury. Postupujte podle t�
 
 1. Sestavte aplikaci stisknutím klávesy **F5**.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Rukopis](../../../../docs/framework/wpf/advanced/digital-ink.md)
 - [Shromáždění rukopisu](../../../../docs/framework/wpf/advanced/collecting-ink.md)

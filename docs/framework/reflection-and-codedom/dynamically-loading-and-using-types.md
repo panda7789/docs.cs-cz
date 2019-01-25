@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: db985bec-5942-40ec-b13a-771ae98623dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9795fa411d3b81f9092ddab183c6978ee701ef67
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8254d3de7dc282edb8ebe8bf0dd71ce1c943322d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397972"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689205"
 ---
 # <a name="dynamically-loading-and-using-types"></a>Dynamické načtení a použití typů
-Reflexe poskytuje infrastrukturu, jako používá kompilátory jazyka [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] a JScript implementovat implicitní pozdní vazba. Vazba je proces vyhledávání deklarace (tedy implementace), která odpovídá jednoznačně zadaného typu. Pokud k tomuto procesu dochází za běhu, spíše než v době kompilace, nazývá pozdní vazba. [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] umožňuje používat implicitní pozdní vazba v kódu; Visual Basic – kompilátor volá metodu helper, která používá reflexe získat typ objektu. Argumenty předávané Pomocná metoda způsobit odpovídající metodu, která má být volána v době běhu. Tyto argumenty jsou instance (objekt), na kterém má být vyvolána metoda, název vyvolaná metoda (string) a argumenty předávané vyvolaná metoda (pole objektů).  
+Reflexe poskytuje infrastrukturu pomocí kompilátorů jazyka, jako [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] a JScript implementace implicitní pozdní vazbu. Vazba je proces vyhledání deklarace (to znamená, implementace), která odpovídá jednoznačně zadaného typu. Když tento proces se provádí v době běhu, spíše než v době kompilace, je volána pozdní vazbu. [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] Umožňuje použít implicitní pozdní vazba v kódu; Kompilátor jazyka Visual Basic volá metodu helper, který používá reflexi k získání typu objektu. Argumenty předané do metody helper způsobit vhodná metoda k vyvolání za běhu. Tyto argumenty jsou instance (objekt), na kterém se má vyvolat metodu, název vyvolaná metoda (string) a argumenty předány volané metodě (pole objektů).  
   
- V následujícím příkladu nastavení kompilátoru jazyka Visual Basic používá reflexe implicitně k volání metody na objekt, jehož typ není známý v době kompilace. A **HelloWorld** třída má **PrintHello** metoda, která vytiskne "Hello, World" zřetězen s nějaký text, který je předán **PrintHello** metoda. **PrintHello** metodu s názvem v tomto příkladu je ve skutečnosti <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>; umožňuje kód jazyka Visual Basic **PrintHello** metoda má být volána, jako kdyby byly v kompilaci známý typ objektu (helloObj) čas (časná vazba) a nikoli na běh (pozdní vazba).  
+ V následujícím příkladu kompilátor jazyka Visual Basic pomocí reflexe implicitně zavolá metodu na objekt, jehož typ není znám v době kompilace. A **HelloWorld** třída nemá **PrintHello** metodu, která vytiskne "Hello World" zřetězená s nějaký text, který je předán **PrintHello** metody. **PrintHello** metodu s názvem v tomto příkladu je ve skutečnosti <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>; umožňuje kódu jazyka Visual Basic **PrintHello** metoda k vyvolání, jako by byly při kompilaci známý typ objektu (helloObj) čas (časná vazba) místo za běhu (pozdní vazby).  
   
 ```  
 Imports System  
@@ -42,65 +42,65 @@ End Module
 ```  
   
 ## <a name="custom-binding"></a>Vlastní vazba  
- Kromě používán implicitně kompilátory pro pozdní vazbu, reflexe umožňuje explicitně v kódu provést pozdní vazba.  
+ Kromě používán implicitně kompilátory pozdní vazby, reflexe lze explicitně v kódu k provedení pozdní vazbu.  
   
- [Modul common language runtime](../../../docs/standard/clr.md) podporuje více programovacích jazyků a vazbu pravidla z těchto jazyků lišit. V případě časné vazby generátory kódu zcela řídit tuto vazbu. Pozdní vazba prostřednictvím reflexe, je třeba kontrolovat vazby ve vlastní vazby. <xref:System.Reflection.Binder> Třída poskytuje vlastní ovládací prvek člena výběr a volání.  
+ [Společného jazykového modulu runtime](../../../docs/standard/clr.md) podporuje více programovacích jazyků a pravidel vazby z těchto jazyků se liší. V případě časné vazby můžete generátory kódu úplnou kontrolu nad touto vazbou. Pozdní vazba prostřednictvím reflexe, musí být kontrolován vazby přizpůsobené vazbou. <xref:System.Reflection.Binder> Třída poskytuje vlastní ovládací prvek člena, výběru a vyvolání.  
   
- Vlastní vazby můžete načíst sestavení za běhu, že sestavení, zadejte typ, který chcete a pak vyvolání metody nebo vlastnosti daný typ nebo pole přístup získat informace o typech. Tato metoda je užitečná, pokud neznáte typ objektu při kompilaci, například pokud je typ objektu závislý na vstup uživatele.  
+ Použití vlastní vazby, můžete načíst sestavení v době běhu, získat informace o typech sestavení, zadejte požadovaný typ a poté vyvolat metody nebo přístup pole nebo vlastnosti na typu. Tato technika je užitečná, pokud neznáte typ objektu v době kompilace, jako je například, pokud je typ objektu závislý na vstup uživatele.  
   
- Následující příklad ukazuje jednoduchý vlastní vazač poskytující žádný argument typu převod. Kód `Simple_Type.dll` předchází hlavní příklad. Ujistěte se, k vytvoření `Simple_Type.dll` a poté zahrnout odkaz na projekt v čase vytvoření buildu.  
+ Následující příklad ukazuje jednoduchý vlastní vázací objekt, který obsahuje převod typu argumentu. Kód pro `Simple_Type.dll` předchází hlavní příklad. Je potřeba vytvořit `Simple_Type.dll` a poté zahrnout na ni odkaz v projektu v okamžiku sestavení.  
   
  [!code-cpp[Conceptual.Types.Dynamic#1](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.dynamic/cpp/source1.cpp#1)]
  [!code-csharp[Conceptual.Types.Dynamic#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.dynamic/cs/source1.cs#1)]
  [!code-vb[Conceptual.Types.Dynamic#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.dynamic/vb/source1.vb#1)]  
   
-### <a name="invokemember-and-createinstance"></a>Metodu InvokeMember a CreateInstance –  
- Použití <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType> k vyvolání člena typu. **CreateInstance** různé metody třídy, jako například <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> a <xref:System.Reflection.Assembly.CreateInstance%2A?displayProperty=nameWithType>, jsou specializované formy **metodu InvokeMember** , vytvoření nové instance zadaného typu. **Vazač** třída se používá pro překlad IP adres a argument převod přetížení v těchto metod.  
+### <a name="invokemember-and-createinstance"></a>Metodu InvokeMember a CreateInstance  
+ Použití <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType> se vyvolat člena typu. **CreateInstance** různé metody třídy, jako například <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> a <xref:System.Reflection.Assembly.CreateInstance%2A?displayProperty=nameWithType>, jsou specializované formy **metodu InvokeMember** , vytváření nových instancí zadaného typu. **Vazače** třída se používá pro překlad IP adres a argument vynucení přetížení v těchto metod.  
   
- Následující příklad ukazuje tři možné kombinace argument převod (převod typu) a výběr členů. V případě 1 je potřeba žádný argument převod nebo člen výběr. V případě 2 je potřeba jenom výběr členů. V případě 3 je potřeba pouze argument převod.  
+ Následující příklad ukazuje tři možné kombinace argumentů konverze (převod typu) a výběr členů. V případě 1 je potřeba žádný argument člena nebo konverze za výběr. V případě 2 je potřeba pouze výběr členů. V případě 3 je potřeba pouze argument vynucení.  
   
  [!code-cpp[Conceptual.Types.Dynamic#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.types.dynamic/cpp/source2.cpp#2)]
  [!code-csharp[Conceptual.Types.Dynamic#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.dynamic/cs/source2.cs#2)]
  [!code-vb[Conceptual.Types.Dynamic#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.dynamic/vb/source2.vb#2)]  
   
- Řešení přetížení je potřeba, pokud je k dispozici více než jednoho člena se stejným názvem. <xref:System.Reflection.Binder.BindToMethod%2A?displayProperty=nameWithType> a <xref:System.Reflection.Binder.BindToField%2A?displayProperty=nameWithType> metody slouží k přeložení vazby do jednoho člena. **Binder.BindToMethod** také obsahuje vlastnost řešení prostřednictvím **získat** a **nastavit** přístupové objekty vlastnosti.  
+ Řešení přetížení je nutné, když je k dispozici více než jednoho člena se stejným názvem. <xref:System.Reflection.Binder.BindToMethod%2A?displayProperty=nameWithType> a <xref:System.Reflection.Binder.BindToField%2A?displayProperty=nameWithType> metody se používají k vyřešení vazby na jeden člen. **Binder.BindToMethod** také poskytuje vlastnost řešení prostřednictvím **získat** a **nastavit** přistupující objekty vlastnosti.  
   
- **BindToMethod** vrátí <xref:System.Reflection.MethodBase> k vyvolání, nebo odkaz s hodnotou null (**nic** v jazyce Visual Basic) Pokud žádná taková volání je možné. **MethodBase** vrátit hodnotu nemusí být jedna z nich obsažené v *odpovídat* parametr, který sice obvyklý případ.  
+ **BindToMethod** vrátí <xref:System.Reflection.MethodBase> k vyvolání, nebo odkaz s hodnotou null (**nic** v jazyce Visual Basic) Pokud žádná taková volání je možné. **MethodBase** vrátit hodnota nemusí být jedna z těchto součástí *odpovídat* parametr, i když to je obvyklý případ.  
   
- Když jsou v něm ByRef argumenty, volající chtít získat zpět. Proto **vazač** umožňuje klientovi mapování pole argumentů zpět do původní podobě, pokud **BindToMethod** se s nimi manipulovat, pole argumentů. Chcete-li to provést, musí být zaručena volající, že je pořadí argumentů beze změny. Při předávání argumentů podle názvu, **vazač** změní pole argumentů a který je co vidí volající. Další informace naleznete v tématu <xref:System.Reflection.Binder.ReorderArgumentArray%2A?displayProperty=nameWithType>.  
+ Když jsou k dispozici argumenty ByRef, volající může být vhodné získat zpět. Proto **vazač** umožňuje klientovi mapování pole argumentů zpět do původní podobě, pokud **BindToMethod** má manipulovat pole argumentů. Pokud to chcete udělat, musí být zaručena volajícímu, že pořadí argumentů je beze změny. Pokud argumenty jsou předány podle názvu, **vazače** změní pořadí pole argumentů, který je co uvidí volající. Další informace naleznete v tématu <xref:System.Reflection.Binder.ReorderArgumentArray%2A?displayProperty=nameWithType>.  
   
- Sadu členů k dispozici jsou tyto členy v typ nebo všechny základní typ definovaný. Pokud <xref:System.Reflection.BindingFlags> je zadán, bude vrácen členy jakékoli usnadnění v sadě. Pokud **BindingFlags.NonPublic** není zadán, vazač musí vynucovat pravidla usnadnění přístupu. Při zadávání **veřejné** nebo **NonPublic** příznak vazba, je třeba zadat také **Instance** nebo **statické** vazby příznak nebo ne členy, bude vrácen.  
+ Sada Dostupní členové jsou tyto členy definované podle typu nebo jakékoli základního typu. Pokud <xref:System.Reflection.BindingFlags> není zadán, vrátí se členy jakékoli přístupnosti v sadě. Pokud **BindingFlags.NonPublic** není zadán, vazače musí vynucovat pravidla přístupu. Při zadávání **veřejné** nebo **NonPublic** příznak vazby, musíte zadat také **Instance** nebo **statické** vazby příznak nebo ne Vrátí se členy.  
   
- Pokud existuje jenom jednoho člena se zadaným názvem, bez zpětného volání je nezbytné a vazba se provádí na dané metody. Případ 1 příklad kódu ukazuje tento bod: pouze jeden **PrintBob** metoda je k dispozici, a proto je potřeba bez zpětného volání.  
+ Pokud existuje jenom jeden člen se zadaným názvem, bez zpětného volání je nezbytné a vazbu se provádí v této metodě. Případ 1 příklad kódu to znázorňuje: Pouze jeden **PrintBob** metoda je k dispozici, a proto je potřeba bez zpětného volání.  
   
- Pokud existuje více než jednoho člena v sadě k dispozici, se budou předávat všechny tyto metody **BindToMethod**, který vybere odpovídající metodu a vrátí ji. V případě 2 v příkladu kódu, existují dvě metody s názvem **PrintValue**. Ve volání je vybrán odpovídající metodu **BindToMethod**.  
+ Pokud je k dispozici v sadě více než jednoho člena, všechny tyto metody jsou předány **BindToMethod**, který vybere odpovídající metodu a vrátí jej. V případě 2 příklad kódu, existují dvě metody s názvem **PrintValue**. Ve volání je vybrána odpovídající metodu **BindToMethod**.  
   
- <xref:System.Reflection.Binder.ChangeType%2A> provede převod argument (převod typu), který převádí skutečné argumenty typu formální argumenty vybrané metody. **ChangeType –** je volána pro každý argument i v případě, že typy přesně shodují.  
+ <xref:System.Reflection.Binder.ChangeType%2A> provádí převod argumentu (převod typu), který převádí skutečné argumenty typu formální argumenty vybrané metody. **ChangeType** je volána pro každý argument i v případě, že typy přesně shodovat.  
   
- V případě 3 z příkladu kódu, skutečný argument typu **řetězec** s hodnotou "5.5" předaný metodě s argumentem formální typu **dvojité**. Volání úspěšné musí být řetězcovou hodnotu "5.5" převést na dvojitou hodnotu. **ChangeType –** provádí tento převod.  
+ V případě 3 uvedeném příkladu kódu skutečný argument typu **řetězec** s hodnotou "5.5" je předán metodě s formální argument typu **Double**. Volání úspěšné musí být řetězcovou hodnotu "5.5" převést na dvojitou hodnotu. **ChangeType** provede tento převod.  
   
- **ChangeType –** provádí pouze beze ztrát nebo [rozšiřující coercions](../../../docs/standard/base-types/type-conversion.md), jak je znázorněno v následující tabulce.  
+ **ChangeType** provádí pouze beze ztrát nebo [rozšiřující převody](../../../docs/standard/base-types/type-conversion.md), jak je znázorněno v následující tabulce.  
   
 |Typ zdroje|Cílový typ|  
 |-----------------|-----------------|  
 |Jakýkoli typ|Jeho základní typ|  
 |Jakýkoli typ|Rozhraní se implementuje|  
-|Char|UInt16, UInt32, Int32, UInt64, Int64, jedna Double|  
-|Byte|Char, UInt32, UInt16, Int16, Int32, UInt64, Int64, jedna Double|  
-|SByte|Int16, Int32, Int64, jedna Double|  
-|UInt16|UInt32, Int32, Int64, UInt64 jednotné Double|  
-|Int16|Int32, Int64, jedna Double|  
-|UInt32|UInt64, Int64, jedna Double|  
-|Int32|Int64, jedinou dvakrát|  
+|Char|UInt16, UInt32, Int32, UInt64, Int64, Single, Double|  
+|Byte|Char, UInt16, Int16, UInt32, Int32, UInt64, Int64, Single, Double|  
+|SByte|Int16, Int32, Int64, Single, Double|  
+|UInt16|UInt32, Int32, UInt64, Int64, jednoduché, Double|  
+|Int16|Int32, Int64, Single, Double|  
+|UInt32|UInt64, Int64, Single, Double|  
+|Int32|Int64, Single, dvakrát|  
 |UInt64|Jednoduché, Double|  
 |Int64|Jednoduché, Double|  
 |Single|Double|  
 |Typ nereferenční|Typ odkazu|  
   
- <xref:System.Type> Třída má **získat** metody, které používají parametry typu **vazač** odkazy na konkrétní člena. <xref:System.Type.GetConstructor%2A?displayProperty=nameWithType>, <xref:System.Type.GetMethod%2A?displayProperty=nameWithType>, a <xref:System.Type.GetProperty%2A?displayProperty=nameWithType> vyhledejte konkrétní člen má aktuální typ tím, že poskytuje informace o podpis pro tento člen. <xref:System.Reflection.Binder.SelectMethod%2A?displayProperty=nameWithType> a <xref:System.Reflection.Binder.SelectProperty%2A?displayProperty=nameWithType> se nazývají zpět k vyberte danou podpis informace odpovídající metody.  
+ <xref:System.Type> Třída má **získat** metody, které používají parametry typu **vazače** odkazy na určitého člena. <xref:System.Type.GetConstructor%2A?displayProperty=nameWithType>, <xref:System.Type.GetMethod%2A?displayProperty=nameWithType>, a <xref:System.Type.GetProperty%2A?displayProperty=nameWithType> vyhledejte konkrétní členem aktuální typu tím, že poskytuje informace o podpisu pro tohoto člena. <xref:System.Reflection.Binder.SelectMethod%2A?displayProperty=nameWithType> a <xref:System.Reflection.Binder.SelectProperty%2A?displayProperty=nameWithType> se nazývají zpět k vyberte daným podpisem informace z odpovídající metody.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>  
- <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>  
- [Zobrazení informací o typu](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)  
- [Převod typů v rozhraní .NET Framework](../../../docs/standard/base-types/type-conversion.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>
+- <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>
+- [Zobrazení informací o typu](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)
+- [Převod typů v rozhraní .NET Framework](../../../docs/standard/base-types/type-conversion.md)

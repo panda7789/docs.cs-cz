@@ -6,12 +6,12 @@ helpviewer_keywords:
 - fixed size buffers [C#]
 - unsafe buffers [C#]
 - unsafe code [C#], fixed size buffers
-ms.openlocfilehash: 2d0a4f829f6fe4d9662e25a4d8fd3936d2afd7f1
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 7c83b4819975f63c6fc19e5c4783603f37d2a885
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53242475"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700608"
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>Vyrovnávací paměti pevné velikosti (Průvodce programováním v C#)
 
@@ -49,9 +49,9 @@ Nezabezpečené vyrovnávací paměti se liší od pravidelných polí následuj
 - Deklarace pole by měla obsahovat počet, jako například `char id[8]`. Nemůžete použít `char id[]`.
 - Nezabezpečené vyrovnávací paměti může být pouze pole instancí struktur v nezabezpečeném kontextu.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../index.md)  
-- [Nebezpečný kód a ukazatele](index.md)  
-- [fixed – příkaz](../../language-reference/keywords/fixed-statement.md)  
+- [Průvodce programováním v jazyce C#](../index.md)
+- [Nebezpečný kód a ukazatele](index.md)
+- [fixed – příkaz](../../language-reference/keywords/fixed-statement.md)
 - [Interoperabilita](../interop/index.md)

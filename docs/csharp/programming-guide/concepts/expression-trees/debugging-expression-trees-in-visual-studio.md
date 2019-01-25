@@ -2,12 +2,12 @@
 title: Ladění stromů výrazů v sadě Visual Studio (C#)
 ms.date: 07/20/2015
 ms.assetid: 1369fa25-0fbd-4b92-98d0-8df79c49c27a
-ms.openlocfilehash: dd3008ffd1364eec3938053bd7d37f95b8a1ebc0
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 308b377af00a3d12523f8f8d469c50808f216030
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43509620"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54632150"
 ---
 # <a name="debugging-expression-trees-in-visual-studio-c"></a>Ladění stromů výrazů v sadě Visual Studio (C#)
 Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů. Pokud chcete získat rychlý přehled toho, stromové struktury výrazu, můžete použít `DebugView` vlastnost, která je k dispozici pouze v režimu ladění. Další informace o ladění naleznete v tématu [ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).  
@@ -103,8 +103,8 @@ Při ladění aplikací můžete analyzovat struktuře a obsahu stromy výrazů.
 |`Expression expr = Expression.AddChecked( Expression.Constant(1), Expression.Constant(2));`|`1 #+ 2`|  
 |`Expression expr = Expression.ConvertChecked( Expression.Constant(10.0), typeof(int));`|`#(System.Int32)10D`|  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Stromy výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)  
-- [Ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)  
+- [Stromy výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)
+- [Ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)
 - [Vytváření vlastních vizualizérů](/visualstudio/debugger/create-custom-visualizers-of-data)

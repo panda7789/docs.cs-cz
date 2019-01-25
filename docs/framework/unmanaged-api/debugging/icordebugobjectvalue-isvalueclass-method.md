@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7deab95db2e7ccfd167f3158f0f008c6b077a012
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 932d4ecbf34a636d37a60af0ba11f3fc149ffcea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416436"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54649645"
 ---
 # <a name="icordebugobjectvalueisvalueclass-method"></a>ICorDebugObjectValue::IsValueClass – metoda
-Získá hodnotu, která určuje, zda hodnota tohoto objektu je typ hodnoty.  
+Získá hodnotu, která určuje, zda je hodnota tohoto objektu typu hodnoty.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,10 +37,10 @@ HRESULT IsValueClass (
   
 #### <a name="parameters"></a>Parametry  
  `pbIsValueClass`  
- [out] Ukazatel na logickou hodnotu, která je `true` Pokud hodnoty objektu, která je reprezentována tento "ICorDebugObjectValue", je hodnota typu místo odkazového typu; v opačném `pbIsValueClass` je `false`.  
+ [out] Ukazatel na logickou hodnotu, která je `true` Pokud hodnoty objektu, která je reprezentována tento "ICorDebugObjectValue", je typ hodnoty místo odkazový typ; v opačném případě `pbIsValueClass` je `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -48,6 +48,6 @@ HRESULT IsValueClass (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
-    
- 
+## <a name="see-also"></a>Viz také:
+
+

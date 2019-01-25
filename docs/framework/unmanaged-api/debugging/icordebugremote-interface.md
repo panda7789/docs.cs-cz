@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ab8ed5c4fa3dc0ed77c1948aa6c1b940ecc25c14
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5cb7a3100e1f0839b50e0430c16a02879f1b8988
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421448"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54553474"
 ---
 # <a name="icordebugremote-interface"></a>ICorDebugRemote – rozhraní
 Umožňuje spustit nebo připojit spravovaný ladicí program ke vzdálenému cílovému procesu.  
@@ -62,14 +62,14 @@ interface ICorDebugRemote : IUnknown
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[ICorDebugRemote::CreateProcessEx – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-createprocessex-method.md)|Pro spravované ladění, vytvoří proces ve vzdáleném počítači.|  
-|[ICorDebugRemote::DebugActiveProcessEx – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-debugactiveprocessex-method.md)|Spustí proces ve vzdáleném počítači v rámci ladicího programu.|  
+|[ICorDebugRemote::CreateProcessEx – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-createprocessex-method.md)|Vytvoří proces ve vzdáleném počítači pro spravované ladění.|  
+|[ICorDebugRemote::DebugActiveProcessEx – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-debugactiveprocessex-method.md)|Spustí nějaký proces ve vzdáleném počítači v ladicím programu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce je v současné době podporována pouze pro ladění aplikace založená na technologii Silverlight cíl, který běží na vzdáleném počítači Macintosh.  
+ Tato funkce v současné době je podporována pouze pro ladění aplikace založené na technologii Silverlight cíl, který běží na vzdáleném počítači Macintosh.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -77,8 +77,8 @@ interface ICorDebugRemote : IUnknown
   
  **Verze rozhraní .NET framework:** 4.5, 4, 3.5 SP1  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugRemoteTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)  
- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
-    
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugRemoteTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)
+- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9530f9c9-dd98-4b93-8cdb-40d7f1e8d0ab
-ms.openlocfilehash: 9255615c7786773f1d4f453b910fdccdf191721f
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 5fc987e37d9b33cd1640bb32423f62a7e74937f8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873771"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54723495"
 ---
 # <a name="nesting-datarelations"></a>Vnoření datových relací
 Jednotlivé tabulky v relační znázornění dat, obsahovat řádky, které se vztahují k navzájem pomocí sloupec nebo sadu sloupců. V ADO.NET <xref:System.Data.DataSet>, relace mezi tabulkami se implementuje pomocí <xref:System.Data.DataRelation>. Když vytvoříte **DataRelation**, vztahy nadřazenosti a podřízenosti sloupce, které se spravují jenom do relace. Tabulky a sloupce jsou samostatné entity. V Hierarchická reprezentace dat, které obsahuje XML nadřazené a podřízené vztahy jsou reprezentovány nadřazené elementy, které obsahují vnořené podřízené prvky.  
@@ -131,8 +131,8 @@ customerOrders.Nested = true;
 </CustomerOrders>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
- [Přidání datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md)  
- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
+- [Přidání datových relací](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md)
+- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

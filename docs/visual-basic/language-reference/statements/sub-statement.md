@@ -29,12 +29,12 @@ helpviewer_keywords:
 - ByVal keyword [Visual Basic], Sub statements
 - Visual Basic code, Sub procedures
 ms.assetid: e347d700-d06c-405b-b302-e9b1edb57dfc
-ms.openlocfilehash: 7baa4e25bc876ebfbe03c316b2020e01aedbc88d
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: e7015474a0617b76ca537d2e84e8d7bfc72b6e12
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42924492"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54737660"
 ---
 # <a name="sub-statement-visual-basic"></a>Sub – příkaz (Visual Basic)
 Deklaruje název, parametry a kód, které definují `Sub` postup.  
@@ -72,9 +72,9 @@ End Sub
   
     -   [Private](../modifiers/private.md)  
   
-    - [Chráněné typu Friend](../../language-reference/modifiers/protected-friend.md)
+    - [Protected Friend](../../language-reference/modifiers/protected-friend.md)
 
-    - [Privátní, chráněné](../../language-reference/modifiers/private-protected.md)
+    - [Private Protected](../../language-reference/modifiers/private-protected.md)
   
      Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
@@ -110,7 +110,7 @@ End Sub
   
 -   `name`  
   
-     Požadováno. Název procedury. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md). Chcete-li vytvořit proceduru konstruktor pro třídu, nastavte název `Sub` postup `New` – klíčové slovo. Další informace najdete v tématu [doba života objektu: jak objekty jsou vytvořená a Destroyed](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).  
+     Povinný parametr. Název procedury. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md). Chcete-li vytvořit proceduru konstruktor pro třídu, nastavte název `Sub` postup `New` – klíčové slovo. Další informace najdete v tématu [doba života objektu: Způsob vytváření a zničení objektů](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).  
   
 -   `typeparamlist`  
   
@@ -136,8 +136,8 @@ End Sub
   
     |Část|Popis|  
     |---|---|  
-    |`interface`|Požadováno. Název rozhraní implementovaných tímto postupem obsahující třídy nebo struktury.|  
-    |`definedname`|Požadováno. Název, podle kterého postupu je definován v `interface`.|  
+    |`interface`|Povinný parametr. Název rozhraní implementovaných tímto postupem obsahující třídy nebo struktury.|  
+    |`definedname`|Povinný parametr. Název, podle kterého postupu je definován v `interface`.|  
   
 -   `Handles`  
   
@@ -155,8 +155,8 @@ End Sub
   
     |Část|Popis|  
     |---|---|  
-    |`eventvariable`|Požadováno. Objektová proměnná deklarovaná s datovým typem třídy nebo struktury, která vyvolává událost.|  
-    |`event`|Požadováno. Název události, které zpracovává tento postup.|  
+    |`eventvariable`|Povinný parametr. Objektová proměnná deklarovaná s datovým typem třídy nebo struktury, která vyvolává událost.|  
+    |`event`|Povinný parametr. Název události, které zpracovává tento postup.|  
   
 -   `statements`  
   
@@ -226,14 +226,14 @@ End Sub
   
  [!code-vb[csAsyncMethod#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/VisualBasic/sub-statement_2.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Implements](implements-statement.md)  
- [Příkaz Function](function-statement.md)  
- [Seznam parametrů](parameter-list.md)  
- [Příkaz Dim](dim-statement.md)  
- [Příkaz Call](call-statement.md)  
- [z](of-clause.md)  
- [Pole parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)  
- [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
- [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)  
- [Částečné metody](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Implements](implements-statement.md)
+- [Příkaz Function](function-statement.md)
+- [Seznam parametrů](parameter-list.md)
+- [Příkaz Dim](dim-statement.md)
+- [Příkaz Call](call-statement.md)
+- [z](of-clause.md)
+- [Pole parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)
+- [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
+- [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)
+- [Částečné metody](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)

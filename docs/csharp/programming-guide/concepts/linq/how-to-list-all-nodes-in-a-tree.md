@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: výpis všech uzlů ve stromu (C#)'
+title: 'Postupy: Výpis všech uzlů ve stromu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3e934371-f4c6-458b-9f6b-f9061b596f5b
-ms.openlocfilehash: e014de90935830df3ea5454dcd4d5a840f4d04ad
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 90c92e8390f75e7b7e2c63d809d8a0aca34e2fd0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513681"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744476"
 ---
-# <a name="how-to-list-all-nodes-in-a-tree-c"></a>Postupy: výpis všech uzlů ve stromu (C#)
+# <a name="how-to-list-all-nodes-in-a-tree-c"></a>Postupy: Výpis všech uzlů ve stromu (C#)
 Někdy je užitečné pro výpis všech uzlů ve stromu. To může být užitečné při učení, přesně jak metodu nebo vlastnost ovlivňuje stromu. Jedním z přístupů k výpisu všech uzlů v textové formě je generovat výraz XPath, který právě a konkrétně identifikuje libovolný uzel ve stromu.  
   
  Není velmi užitečné ke spuštění výrazů XPath pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Výrazy XPath jsou horší výkon než [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy, a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy jsou výrazně výkonnější. Nicméně jako způsob, jak identifikovat uzlů ve stromu XML, XPath funguje dobře.  
@@ -348,6 +348,6 @@ class Program
 /Root/aw:ElementInNamespace/aw:ChildInNamespace  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

@@ -1,5 +1,5 @@
 ---
-title: '&gt;&gt; Operátor (Visual Basic)'
+title: '&gt;&gt; – Operátor (Visual Basic)'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.>>
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - operator >>
 - right shift operators [Visual Basic]
 ms.assetid: 054dc6a6-47d9-47ef-82da-cfa2b59fbf8f
-ms.openlocfilehash: 9bb8e82b3f5451417fe1867d08b7601ee1acb036
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e1d2b6569e2bcb3c1516dbc8c78adca0855481e4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33605404"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54668493"
 ---
-# <a name="gtgt-operator-visual-basic"></a>&gt;&gt; Operátor (Visual Basic)
-Provede aritmetický správné posun bitový.  
+# <a name="gtgt-operator-visual-basic"></a>&gt;&gt; – Operátor (Visual Basic)
+Provede aritmetický posunutí doprava bitový vzor.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,68 +28,68 @@ result = pattern >> amount
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Požadováno. Integrální číselná hodnota. Výsledek s posunem vzoru bit. Typ dat je stejný jako u `pattern`.  
+ Povinný parametr. Integrální číselné hodnoty. Výsledek posunu bitový vzor. Datový typ je stejné jako u `pattern`.  
   
  `pattern`  
- Požadováno. Integrální číselný výraz. Bitový posunutí. Datový typ musí být typ integrální (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, nebo `ULong`).  
+ Povinný parametr. Integrální číselný výraz. Bitový vzor posunutí. Datový typ musí být celočíselného typu (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, nebo `ULong`).  
   
  `amount`  
- Požadováno. Číselný výraz. Počet bitů se posunou vzoru bit. Datový typ musí být `Integer` nebo rozšířit do `Integer`.  
+ Povinný parametr. Číselný výraz. Počet bitů, chcete-li posunout bitový vzor. Datový typ musí být `Integer` nebo rozšířit na `Integer`.  
   
 ## <a name="remarks"></a>Poznámky  
- Aritmetické posuny nejsou cyklické, což znamená, že služba bits přesunout mimo jeden element end výsledku nejsou znovu uvedeny na druhém konci. V aritmetické posunutí doprava bits zapuštěno nad rámec nejvíce vpravo bit pozice se zahodí a bit krajní levé (symbol) rozšířena do pozice bit vacated na levé straně. To znamená, že pokud `pattern` má zápornou hodnotu vacated pozic jsou nastavené na jednu; jinak jsou nastaveny na nulu.  
+ Aritmetické staffhubu nejsou cyklické, což znamená, že nejsou na druhém konci znovuzavedeno bity posunuly jeden konec výsledek. V aritmetické posunutí doprava bity posunuta nad rámec úplně vpravo bitová pozice se zahodí a bit nejvíce vlevo (sign) je postoupena do bitové pozice uvolněné na levé straně. To znamená, že pokud `pattern` má zápornou hodnotu uvolněných pozic jsou nastavené na jednu; v opačném případě jsou nastaveny na hodnotu nula.  
   
- Všimněte si, že datové typy `Byte`, `UShort`, `UInteger`, a `ULong` jsou bez znaménka, proto neexistuje žádný přihlašovací bit rozšíření. Pokud `pattern` je všechny nepodepsané typu, vacated pozic jsou vždy nastavená na hodnotu nula.  
+ Všimněte si, že datové typy, které `Byte`, `UShort`, `UInteger`, a `ULong` jsou bez znaménka, takže neexistuje žádný bit znaménka rozšíření. Pokud `pattern` je některý typ bez znaménka, uvolněných pozic jsou vždy nastaveny na hodnotu nula.  
   
- Aby se zabránilo ve více bits, než mohou být uloženy výsledek s posunem, Visual Basic zakrývá hodnotu `amount` s maskou velikost odpovídající datový typ `pattern`. Binární a z těchto hodnot se používá pro velikost shift. Velikost masek jsou následující:  
+ Aby posunutí ve více bitů než výsledek může obsahovat jazyka Visual Basic zakrývá hodnotu `amount` s maskou velikost odpovídající datový typ `pattern`. Binární a tyto hodnoty se používá pro hodnota shift. Velikost masky jsou následující:  
   
-|Datový typ `pattern`|Velikost maska (decimální):|Velikost maska (hexadecimální)|  
+|Datový typ `pattern`|Maska velikost (decimální)|Maska velikost (v šestnáctkové hodnotě)|  
 |----------------------------|---------------------------|-------------------------------|  
-|`SByte`, `Byte`|7|&AMP; H00000007|  
-|`Short`, `UShort`|15|&AMP; H0000000F|  
-|`Integer`, `UInteger`|31|&AMP; H0000001F|  
-|`Long`, `ULong`|63|&AMP; H0000003F|  
+|`SByte`, `Byte`|7|&H00000007|  
+|`Short`, `UShort`|15|&H0000000F|  
+|`Integer`, `UInteger`|31|&H0000001F|  
+|`Long`, `ULong`|63|&H0000003F|  
   
- Pokud `amount` je nula, hodnota `result` je stejná jako hodnota `pattern`. Pokud `amount` je záporná, je jako hodnotu bez znaménka a maskovat s maskou správnou velikost.  
+ Pokud `amount` je nula, hodnota `result` je stejná jako hodnota `pattern`. Pokud `amount` je záporný, je provedena jako hodnoty bez znaménka a maskována pomocí masky odpovídající velikost.  
   
- Aritmetické posuny nikdy generování výjimek přetečení.  
+ Aritmetické staffhubu nikdy generovat výjimky přetečení.  
   
 ## <a name="overloading"></a>Přetížení  
- `>>` Může být operátor *přetížený*, což znamená, že třídu nebo strukturu lze znovu definovat své chování při operand má typ třídy nebo struktura. Pokud váš kód používá tento operátor na takové třídu nebo strukturu, ujistěte se, že rozumíte své Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ `>>` Operátor může být *přetížené*, což znamená, že třídy nebo struktury lze znovu definovat jeho chování při operand má typ této třídě nebo struktuře. Pokud váš kód používá tento operátor na takové třídy nebo struktury, ujistěte se, že rozumíte jeho Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `>>` operátor provést aritmetické posuny doprava na celočíselné hodnoty. Výsledek má vždy stejnou datový typ, který se zapuštěno výrazu.  
+ V následujícím příkladu `>>` operátor aritmetické posuny doprava na integrální hodnoty. Výsledek je vždy stejný datový typ jako, který se posune výrazu.  
   
  [!code-vb[VbVbalrOperators#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/right-shift-operator_1.vb)]  
   
  Výsledky v předchozím příkladu jsou následující:  
   
--   `result1` je 2560 (0000 1010 0000 0000).  
+-   `result1` is 2560 (0000 1010 0000 0000).  
   
 -   `result2` je 160 (0000 0000 1010 0000).  
   
--   `result3` je 2 (0000 0000-0000 0010).  
+-   `result3` is 2 (0000 0000 0000 0010).  
   
--   `result4` je 640 (0000 0010 1000 0000).  
+-   `result4` is 640 (0000 0010 1000 0000).  
   
--   `result5` je 0 (posunuté 15 místech vpravo).  
+-   `result5` je 0 (posunuté 15 míst napravo).  
   
- Velikost posunutí pro `result4` počítá se jako 18 a 15, který se rovná 2.  
+ Hodnota shift pro `result4` se vypočte takto: 18 a 15, které se rovná 2.  
   
- Následující příklad ukazuje aritmetické posuny na zápornou hodnotu.  
+ Následující příklad ukazuje aritmetické staffhubu na zápornou hodnotu.  
   
  [!code-vb[VbVbalrOperators#55](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/right-shift-operator_2.vb)]  
   
  Výsledky v předchozím příkladu jsou následující:  
   
--   `negresult1` je -512 (1111 1110 0000 0000).  
+-   `negresult1` is -512 (1111 1110 0000 0000).  
   
--   `negresult2` je -1 (verze přihlašovací rozšířena).  
+-   `negresult2` je -1 (rozšířeno na bit znaménka).  
   
-## <a name="see-also"></a>Viz také  
- [Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
- [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)  
- [>>= – operátor](../../../visual-basic/language-reference/operators/right-shift-assignment-operator.md)  
- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
- [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+## <a name="see-also"></a>Viz také:
+- [Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)
+- [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
+- [>>= – operátor](../../../visual-basic/language-reference/operators/right-shift-assignment-operator.md)
+- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+- [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

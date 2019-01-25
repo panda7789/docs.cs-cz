@@ -7,17 +7,17 @@ f1_keywords:
 helpviewer_keywords:
 - BC30909
 ms.assetid: ffa7395d-e182-4087-8ce8-079810fdae54
-ms.openlocfilehash: 36add48ebee2d1804921eeeec0b59cdd4cbafecc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 39d316aca5ec306de4b1e43e2eb2d1495f5525d9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33588090"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54672341"
 ---
 # <a name="39ltmembernamegt39-cannot-expose-type-39lttypenamegt39-outside-the-project-through-ltcontainertypegt-39ltcontainertypenamegt39"></a>&#39;&lt;MemberName&gt; &#39; nemůže vystavovat typ &#39; &lt;typename&gt; &#39; mimo projekt prostřednictvím &lt;containertype&gt; &#39; &lt;containertypename&gt;&#39;
-Proměnnou, parametr procedury nebo funkce návratový je nezveřejní jejímu kontejneru, ale je deklarován jako typ, který nesmí být nezveřejní kontejneru.  
+Proměnná, parametr procedury nebo návratová hodnota funkce je vystaven vně svého kontejneru, ale je deklarován jako typ, který nesmí být vystaven vně kontejneru.  
   
- Následující kód kostru ukazuje situaci, který generuje této chybě.  
+ Následující kostrou kód ukazuje situaci, která vygeneruje tuto chybu.  
   
 ```  
 Private Class privateClass  
@@ -27,13 +27,13 @@ Public Class mainClass
 End Class  
 ```  
   
- Typ, který je deklarován `Protected`, `Friend`, `Protected Friend`, nebo `Private` má mít omezený přístup mimo kontext jeho deklaraci. Použití jako data typ proměnné s méně omezený přístup by vůbec nemělo tento účel. V předchozím kostru kódu `exposedVar` je `Public` a by vystavit `privateClass` na kód, který by neměl mít přístup k němu.  
+ Typ, který je deklarován `Protected`, `Friend`, `Protected Friend`, nebo `Private` má omezený přístup mimo jeho deklarace kontextu. Použití jako data typu proměnné s méně omezený přístup by vůbec nemělo tento účel. V předchozím kódu kostru `exposedVar` je `Public` a by vystavovat `privateClass` kódu, který by neměl mít přístup k němu.  
   
  **ID chyby:** BC30909  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Změnit úroveň přístupu proměnnou, parametr procedury nebo funkce vrátí omezující jako úroveň přístupu datového typu.  
+-   Změna úrovně přístupu proměnná, parametr procedury nebo funkce vrátit se nejméně omezující jako úroveň přístupu jeho datového typu.  
   
-## <a name="see-also"></a>Viz také  
- [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+## <a name="see-also"></a>Viz také:
+- [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)

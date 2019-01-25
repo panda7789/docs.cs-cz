@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7e953b43-1374-4bbc-814f-53ca1b6b52bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7e0274b1f1f0bc0ec6de7490c4602e5813e4d46f
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 2284baf7057ec8c0c947325b1efeced7fdd4acbd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221606"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745919"
 ---
 # <a name="certmgrexe-certificate-manager-tool"></a>Certmgr.exe (nástroj Certificate Manager)
 Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy důvěryhodných certifikátů (CTL) a seznamy odvolaných certifikátů (CRL).  
@@ -56,9 +56,9 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
 |**/ add**|Přidá certifikáty, soubory CTL a CRL do úložiště certifikátů.|  
 |**/ all**|Přidá všechny záznamy zadáním možnosti **/ add**. Odstraní všechny záznamy zadáním možnosti **/del**. Zobrazí všechny záznamy zadáním bez **/ add** nebo **/del** možnosti. **/All** možnost nelze použít s **/put**.|  
 |**/c**|Přidá certifikáty zadáním **/ add**. Odstraní certifikáty zadáním **/del**. Uloží certifikáty zadáním **/put**. Zobrazí certifikáty při použití bez **/ add**, **/del**, nebo **/put** možnost.|  
-|**/ CRL**|Přidá soubory CRL zadáním pomocí možnosti **/ add**. Odstraní soubory CRL zadáním pomocí možnosti **/del**. Uloží soubory CRL zadáním pomocí možnosti **/put**. Zobrazí soubory CRL zadáním bez možnosti **/ add**, **/del**, nebo **/put** možnost.|  
-|**/ CTL**|Přidá soubory CTL zadáním **/ add**. Odstraní soubory CTL zadáním **/del**. Uloží soubory CTL zadáním **/put**. Zobrazí soubory CTL zadáním bez **/ add**, **/del**, nebo **/put** možnost.|  
-|**/ del**|Odstraní certifikáty, soubory CTL a CRL z úložiště certifikátů.|  
+|**/CRL**|Přidá soubory CRL zadáním pomocí možnosti **/ add**. Odstraní soubory CRL zadáním pomocí možnosti **/del**. Uloží soubory CRL zadáním pomocí možnosti **/put**. Zobrazí soubory CRL zadáním bez možnosti **/ add**, **/del**, nebo **/put** možnost.|  
+|**/CTL**|Přidá soubory CTL zadáním **/ add**. Odstraní soubory CTL zadáním **/del**. Uloží soubory CTL zadáním **/put**. Zobrazí soubory CTL zadáním bez **/ add**, **/del**, nebo **/put** možnost.|  
+|**/del**|Odstraní certifikáty, soubory CTL a CRL z úložiště certifikátů.|  
 |**/e** *encodingType*|Určuje typ kódování certifikátu. Výchozí hodnota je `X509_ASN_ENCODING`.|  
 |**/f** *dwFlags*|Určuje příznak pro otevření úložiště. Toto je *dwFlags* byl předán parametr **CertOpenStore**. Výchozí hodnota je CERT_SYSTEM_STORE_CURRENT_USER. Tato možnost je zvážena pouze v případě, **/y** možnost se používá.|  
 |**/h**[**elp**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
@@ -66,7 +66,7 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
 |**/ put**|Uloží do souboru certifikát X.509, soubor CTL nebo CRL z úložiště certifikátů. Soubor je uložen ve formátu X.509. Můžete použít **/7** spolu s možností **/put** uložit soubor ve formátu PKCS #7. **/Put** možnost musí být následována buď **/c**, **/CTL**, nebo **/CRL**. **/All** možnost nelze použít s **/put**.|  
 |**/r** *umístění*|Určuje umístění registru v rámci systémového úložiště. Tato možnost je zvážena pouze v případě, že zadáte **/s** možnost. *umístění* musí být jedna z následujících akcí:<br /><br /> -   `currentUser` Označuje, že se úložiště certifikátů nachází pod klíčem HKEY_CURRENT_USER. Toto nastavení je výchozí.<br />-   `localMachine` Označuje, že se úložiště certifikátů nachází pod klíčem HKEY_LOCAL_MACHINE.|  
 |**/s**|Určuje, že je úložiště certifikátů systémovým úložištěm. Pokud tuto možnost nezadáte, bude považován za úložiště **StoreFile**.|  
-|**/SHA1** *sha1Hash*|Určuje hodnotu hash SHA1 certifikátu, souboru CTl nebo CRl, který se má přidat, odstranit nebo uložit.|  
+|**/sha1** *sha1Hash*|Určuje hodnotu hash SHA1 certifikátu, souboru CTl nebo CRl, který se má přidat, odstranit nebo uložit.|  
 |**/v**|Určuje podrobný režim. Zobrazí detailní informace o certifikátech, souborech CTL a CRL. Tento parametr nelze použít s **/ add**, **/del**, nebo **/put** možnosti.|  
 |**/y** *zprostředkovatele*|Určuje název poskytovatele úložiště.|  
 |**/7**|Ukládá cílové úložiště jako objekt PKCS #7.|  
@@ -137,7 +137,7 @@ certmgr /del /all /ctl /s my newStore.str
 certmgr /put /c /s my newFile  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Nástroje](../../../docs/framework/tools/index.md)  
- [MakeCert.exe (nástroj pro vytvoření certifikátu)](/windows/desktop/SecCrypto/makecert)  
- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+## <a name="see-also"></a>Viz také:
+- [Nástroje](../../../docs/framework/tools/index.md)
+- [MakeCert.exe (nástroj pro vytvoření certifikátu)](/windows/desktop/SecCrypto/makecert)
+- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

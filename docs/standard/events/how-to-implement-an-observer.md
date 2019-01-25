@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 8ecfa9f5-b500-473d-bcf0-5652ffb1e53d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6426e8bd138d06d3655562de6384e46a12c09279
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 8b7534843c1f724dc4544b9a5a7062e79e973a34
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583984"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54738050"
 ---
 # <a name="how-to-implement-an-observer"></a>Postupy: Implementace pozorovatele
-Návrhový vzor pozorovatel vyžaduje rozdělení pozorovatele, který registruje upozornění a poskytovatele, který monitoruje dat a odesílání oznámení na jeden nebo více pozorovatelů. Toto téma popisuje, jak vytvořit pozorovatele. Související téma [postupy: implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md), popisuje, jak vytvořit poskytovatele.  
+Návrhový vzor pozorovatel vyžaduje rozdělení pozorovatele, který registruje upozornění a poskytovatele, který monitoruje dat a odesílání oznámení na jeden nebo více pozorovatelů. Toto téma popisuje, jak vytvořit pozorovatele. Související téma [jak: Implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md), popisuje, jak vytvořit poskytovatele.  
   
 ### <a name="to-create-an-observer"></a>Chcete-li vytvořit pozorovatel  
   
@@ -51,7 +51,7 @@ Návrhový vzor pozorovatel vyžaduje rozdělení pozorovatele, který registruj
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.IObserver%601>  
-- [Návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern.md)  
-- [Postupy: Implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md)  
+- <xref:System.IObserver%601>
+- [Návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern.md)
+- [Postupy: Implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md)
 - [Doporučené postupy pro návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern-best-practices.md)

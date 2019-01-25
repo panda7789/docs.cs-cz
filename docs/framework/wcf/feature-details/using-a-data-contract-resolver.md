@@ -2,20 +2,20 @@
 title: Použití překladače kontraktů dat
 ms.date: 03/30/2017
 ms.assetid: 2e68a16c-36f0-4df4-b763-32021bff2b89
-ms.openlocfilehash: 467977374e9e2b4a369be7ce467ced1b0dca1195
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8859a343c5dcc3b88edf4840a759fbed52bbf984
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33499398"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658829"
 ---
 # <a name="using-a-data-contract-resolver"></a>Použití překladače kontraktů dat
-Překladače kontraktů dat umožňuje nakonfigurovat známé typy dynamicky. Známé typy jsou potřeba při serializaci nebo deserializaci typu kontraktu dat není očekávaný. Další informace o známé typy najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md). Známé typy jsou obvykle zadat staticky. To znamená, budete muset znát možné typy operace se může zobrazit při provádění operace. Existují scénáře, ve kterých to není PRAVDA a schopnost určit známé typy dynamicky je důležité.  
+Překladače kontraktů dat umožňuje dynamicky konfigurovat známých typů. Známé typy jsou potřeba při serializaci nebo deserializaci typ není očekávaný datový kontrakt. Další informace o známých typů najdete v tématu [známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md). Známé typy jsou obvykle určeny staticky. To znamená, že budete muset zjistit všechny možné typy, operace se může zobrazit při provádění operace. Existují scénáře, ve kterých to neplatí a schopnost dynamicky určit známých typů není důležité.  
   
 ## <a name="creating-a-data-contract-resolver"></a>Vytváření překladače kontraktů dat  
- Vytvoření překladače kontraktů dat zahrnuje implementace dvě metody, <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> a <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A>. Tyto dvě metody implementovat zpětná volání, které se používají během serializace a deserializace, v uvedeném pořadí. <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> Metoda je volána během serializace a trvá typ kontraktu dat a mapuje jej do `xsi:type` názvem a oborem názvů. <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> Metoda je volána při deserializaci a trvá `xsi:type` názvem a oborem názvů a přeloží na datový typ kontrakt. Mají obě tyto metody `knownTypeResolver` parametr, který je možné použít výchozí překladač typu v implementaci známé.  
+ Vytvoření překladače kontraktů dat zahrnuje implementaci dvou metod <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> a <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A>. Tyto dvě metody implementovat zpětná volání, které se používají během serializace a deserializace, v uvedeném pořadí. <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> Metoda je vyvolána během serializace a přijímá typ kontraktu dat a mapuje na `xsi:type` názvem a oborem názvů. <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> Metoda je vyvolána během deserializace za a má `xsi:type` názvem a oborem názvů a přeloží je pro typ kontraktu dat. Obě tyto metody mají `knownTypeResolver` parametr, který je možné použít výchozí překladač typů ve vaší implementaci známé.  
   
- Následující příklad ukazuje, jak implementovat <xref:System.Runtime.Serialization.DataContractResolver> mapovat do a z typu kontraktu dat s názvem `Customer` odvozen od typu kontraktu dat `Person`.  
+ Následující příklad ukazuje, jak implementovat <xref:System.Runtime.Serialization.DataContractResolver> mapovat do a z typ kontraktu dat s názvem `Customer` odvozen od typu kontraktu dat `Person`.  
   
 ```csharp  
 public class MyCustomerResolver : DataContractResolver  
@@ -49,13 +49,13 @@ public class MyCustomerResolver : DataContractResolver
 }  
 ```  
   
- Jakmile definujete <xref:System.Runtime.Serialization.DataContractResolver> předáním jeho můžete ji použít <xref:System.Runtime.Serialization.DataContractSerializer> konstruktor, jak je znázorněno v následujícím příkladu.  
+ Po definování <xref:System.Runtime.Serialization.DataContractResolver> slouží ji do <xref:System.Runtime.Serialization.DataContractSerializer> konstruktoru, jak je znázorněno v následujícím příkladu.  
   
 ```  
 XmlObjectSerializer serializer = new DataContractSerializer(typeof(Customer), null, Int32.MaxValue, false, false, null, new MyCustomerResolver());  
 ```  
   
- Můžete zadat <xref:System.Runtime.Serialization.DataContractSerializer> v volání <xref:System.Runtime.Serialization.DataContractSerializer.ReadObject%2A> nebo <xref:System.Runtime.Serialization.DataContractSerializer.WriteObject%2A> metod, jak je znázorněno v následujícím příkladu.  
+ Můžete zadat <xref:System.Runtime.Serialization.DataContractSerializer> ve volání <xref:System.Runtime.Serialization.DataContractSerializer.ReadObject%2A> nebo <xref:System.Runtime.Serialization.DataContractSerializer.WriteObject%2A> metod, jak je znázorněno v následujícím příkladu.  
   
 ```  
 MemoryStream ms = new MemoryStream();  
@@ -85,9 +85,9 @@ if (serializerBehavior == null)
 SerializerBehavior.DataContractResolver = new MyCustomerResolver();  
 ```  
   
- Překladače kontraktů dat deklarativně zadáte implementace atribut, který můžete použít ke službě.  Další informace najdete v tématu [KnownAssemblyAttribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md) ukázka. Tato ukázka implementuje atribut nazvaný "KnownAssembly" doplňuje překladače kontraktů dat vlastní chování služby.  
+ Překladače kontraktů dat deklarativně zadáte implementace atribut, který lze použít ke službě.  Další informace najdete v tématu [KnownAssemblyAttribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md) vzorku. Tato ukázka implementuje atribut s názvem "KnownAssembly", který přidá překladače kontraktů dat vlastní chování služby.  
   
-## <a name="see-also"></a>Viz také  
- [Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
- [Ukázka DataContractSerializer](../../../../docs/framework/wcf/samples/datacontractserializer-sample.md)  
- [KnownAssemblyAttribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md)
+## <a name="see-also"></a>Viz také:
+- [Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+- [Ukázka DataContractSerializer](../../../../docs/framework/wcf/samples/datacontractserializer-sample.md)
+- [KnownAssemblyAttribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md)

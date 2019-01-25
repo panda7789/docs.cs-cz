@@ -5,12 +5,12 @@ helpviewer_keywords:
 - typography [WPF], ClearType technology
 - ClearType [WPF], technology
 ms.assetid: 7e2392e0-75dc-463d-a716-908772782431
-ms.openlocfilehash: 236d6dec444c8169c164e9f096c7f81a336fdca4
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 08fb3b7a6d2af4ede27ebeb1454b040d2bd3eb43
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45593182"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54719219"
 ---
 # <a name="cleartype-overview"></a>ClearType – přehled
 Toto téma obsahuje přehled [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] technologie najdete v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -33,7 +33,7 @@ Text zobrazený v dříve a později verzích ClearType
   
  Následující dva příklady porovnávají výstup z dříve [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nástroj pro vykreslování s novou verzi [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] zobrazovací jednotky. Umístění subpixel, zobrazí na pravé straně, se výrazně zlepšuje typu na obrazovce, zejména v malých velikostech, kde představuje rozdíl mezi dílčí pixelů a celý pixel podstatnou část piktogram šířku mezery. Všimněte si, že mezery mezi znaky se víc i v druhý obrázek. Kumulativní výhodu, že dílčí pixel umístění do celkového vzhledu obrazovky textu je výrazně vyšší a představuje významný krok ve vývoji [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] technologie.  
   
- ![Text zobrazený v dřívější verzi ClearType](../../../../docs/framework/wpf/advanced/media/wcpsdk-mmgraphics-text-cleartype-overview-02.png "wcpsdk_mmgraphics_text_cleartype_overview_02")  
+ ![Text displayed with earlier version of ClearType](../../../../docs/framework/wpf/advanced/media/wcpsdk-mmgraphics-text-cleartype-overview-02.png "wcpsdk_mmgraphics_text_cleartype_overview_02")  
 Text s dříve a novějších verzích ClearType  
   
 <a name="y-direction_antialiasing"></a>   
@@ -49,7 +49,7 @@ Text pomocí ostrých hran na bez podstruktury křivky
   
  Následující příklad ukazuje účinek antialiasingu směru osy y. V takovém případě horní a dolní část písmeno zobrazit smooth křivky.  
   
- ![Text s ClearType y&#45;směru spojení anti&#45;aliasing](../../../../docs/framework/wpf/advanced/media/wcpsdk-mmgraphics-text-cleartype-overview-04.png "wcpsdk_mmgraphics_text_cleartype_overview_04")  
+ ![Text with ClearType y&#45;direction anti&#45;aliasing](../../../../docs/framework/wpf/advanced/media/wcpsdk-mmgraphics-text-cleartype-overview-04.png "wcpsdk_mmgraphics_text_cleartype_overview_04")  
 Text s ClearType směru osy y vyhlazení  
   
 <a name="hardware_acceleration"></a>   
@@ -66,5 +66,5 @@ Text s ClearType směru osy y vyhlazení
   
  [PowerToy ClearType Tuner](https://www.microsoft.com/typography/ClearTypePowerToy.mspx)  
   
-## <a name="see-also"></a>Viz také  
- [Nastavení registru ClearType](../../../../docs/framework/wpf/advanced/cleartype-registry-settings.md)
+## <a name="see-also"></a>Viz také:
+- [Nastavení registru ClearType](../../../../docs/framework/wpf/advanced/cleartype-registry-settings.md)

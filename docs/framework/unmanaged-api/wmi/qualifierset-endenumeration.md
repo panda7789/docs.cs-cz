@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dbf47dbfddac7d48b78c9d52969de1ef03385c15
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a9d3f8966f6333487631a0e155c7be49075a6992
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524311"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54734672"
 ---
 # <a name="qualifiersetendenumeration-function"></a>QualifierSet_EndEnumeration – funkce
 Ukončí výčet začal s voláním [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) funkce.  
@@ -61,11 +61,11 @@ Toto volání je doporučené, ale nevyžaduje. Okamžitě uvolní prostředky p
 
 ## <a name="requirements"></a>Požadavky  
 
-**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
 **Záhlaví:** WMINet_Utils.idl  
   
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:  
-[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:
+- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

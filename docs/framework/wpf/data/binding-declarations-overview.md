@@ -12,121 +12,121 @@ helpviewer_keywords:
 - syntax [WPF], object elements
 - binding declarations [WPF]
 ms.assetid: b97fd626-4c0d-4761-872a-2bca5820da2c
-ms.openlocfilehash: a8652648e1ac9da96a027f9aa56f0eee40cbaf09
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f31a13096d8bd3a788e530b480fece448bfe1e6e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33557209"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54704014"
 ---
 # <a name="binding-declarations-overview"></a>Přehled deklarací připojení
-Toto téma popisuje různé způsoby můžou deklarovat vazbu.  
+Toto téma popisuje různé způsoby, jak je možné deklarovat vazbu.  
   
  
   
 <a name="Prereq"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Než si přečtete v tomto tématu, je důležité, že jste obeznámeni s koncept a používání rozšíření značek. Další informace o rozšíření značek najdete v tématu [rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
+ Před čtením tohoto tématu, je důležité, že máte zkušenosti s koncept a používání rozšíření značek. Další informace o rozšíření značek, naleznete v tématu [– rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
   
- Toto téma nepopisuje koncepty vazby data. Informace o konceptech vazby dat, najdete v části [přehled vazby dat](../../../../docs/framework/wpf/data/data-binding-overview.md).  
+ Toto téma nepopisuje koncepty vazeb data. Diskuzi o koncepty vazeb dat, naleznete v tématu [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).  
   
 <a name="BindinginXAML"></a>   
-## <a name="declaring-a-binding-in-xaml"></a>Deklarování vazbu v jazyce XAML  
- Tato část popisuje, jak deklarovat vazbu v jazyce XAML.  
+## <a name="declaring-a-binding-in-xaml"></a>Deklarování vazbu v XAML  
+ Tato část popisuje, jak deklarovat vazbu v XAML.  
   
 <a name="MarkupExtensionSyntax"></a>   
-### <a name="markup-extension-usage"></a>Použití rozšíření značek  
- <xref:System.Windows.Data.Binding> je rozšíření značek. Pokud použijete rozšíření vazby deklarovat vazbu, deklaraci se skládá z řady klauzule následující `Binding` – klíčové slovo a oddělených čárkami (,). Klauzule v deklaraci vazba může být v libovolném pořadí a nejsou počet možných kombinací. Jsou klauzulích *název*=*hodnotu* páry kde *název* je název <xref:System.Windows.Data.Binding> vlastnost a *hodnota* je hodnota, kterou nastavíte pro vlastnost.  
+### <a name="markup-extension-usage"></a>Použití rozšíření značky  
+ <xref:System.Windows.Data.Binding> je rozšíření značek. Při použití rozšíření vazby k deklaraci vazby deklarace se skládá z řady klauzule následující `Binding` – klíčové slovo a oddělených čárkami (,). Klauzule v deklaraci vazby může být v libovolném pořadí a existuje mnoho možných kombinací. Klauzule jsou *název*=*hodnotu* dvojice where *název* je název <xref:System.Windows.Data.Binding> vlastnost a *hodnotu* je hodnota, kterou chcete nastavit pro vlastnost.  
   
- Při vytváření vazby deklarace řetězců v kódu, musí být připojené k konkrétní závislost vlastnosti cílového objektu. Následující příklad ukazuje, jak vytvořit vazbu <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> vlastnost pomocí rozšíření vazby, určení <xref:System.Windows.Data.Binding.Source%2A> a <xref:System.Windows.Data.Binding.Path%2A> vlastnosti.  
+ Při vytváření vazby deklarace řetězců v kódu, musí být připojené k vlastnosti konkrétní závislost cílového objektu. Následující příklad ukazuje, jak vytvořit vazbu <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> vlastnost pomocí rozšíření vazby, určení <xref:System.Windows.Data.Binding.Source%2A> a <xref:System.Windows.Data.Binding.Path%2A> vlastnosti.  
   
  [!code-xaml[SimpleBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#L37-L37)]  
   
- Zadávat lze většinu vlastností <xref:System.Windows.Data.Binding> třída tímto způsobem. Další informace o rozšíření vazby také jako seznam <xref:System.Windows.Data.Binding> najdete v části vlastnosti, které se nedají nastavit pomocí rozšíření vazby [vazba – rozšíření značek](../../../../docs/framework/wpf/advanced/binding-markup-extension.md) Přehled.  
+ Můžete zadat maximálně vlastnosti <xref:System.Windows.Data.Binding> třídy tímto způsobem. Další informace o rozšíření vazby stejně jako u seznamu <xref:System.Windows.Data.Binding> zobrazit vlastnosti, které nelze nastavit pomocí rozšíření vazby [Binding Markup Extension](../../../../docs/framework/wpf/advanced/binding-markup-extension.md) Přehled.  
   
 <a name="ObjectElementSyntax"></a>   
-### <a name="object-element-syntax"></a>Syntaxe objektu – Element  
- Syntaxe objektu element představuje alternativu k vytváření vazby deklaraci. Ve většině případů je pomocí rozšíření značek nebo syntaxe element objektu žádné konkrétní výhody. Však v případech, které rozšíření značek nepodporuje váš scénář, například pokud vaše hodnota vlastnosti je jiné než řetězec typu, pro které žádný typ převodu existuje, budete muset použít syntaxe element objektu.  
+### <a name="object-element-syntax"></a>Syntaxe elementu objektu  
+ Syntaxe elementu objektu se o alternativu k vytvoření vazby deklarace. Ve většině případů není žádnou konkrétní výhodu pomocí rozšíření značek nebo syntaxe elementu objektu. Ale v případech, kdy rozšíření značek nepodporuje váš scénář, například když je hodnota vlastnosti jiné než řetězec typu, pro kterou žádný typ existuje převod, budete muset použít syntaxi elementu objektu.  
   
- Následuje příklad syntaxe element objektu a používání rozšíření značek:  
+ Následuje příklad syntaxe elementu objektu a použití rozšíření značky:  
   
  [!code-xaml[BindConversionMarkup#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversionMarkup/CSharp/Page1.xaml#1)]  
   
- V příkladu váže <xref:System.Windows.Controls.TextBlock.Foreground%2A> vlastnost deklarováním vazbu pomocí syntaxe rozšíření. Vazba deklaraci pro <xref:System.Windows.Controls.TextBlock.Text%2A> vlastnost se používá syntaxe objekt elementu.  
+ V příkladu vytvoří vazbu <xref:System.Windows.Controls.TextBlock.Foreground%2A> vlastnost deklarováním vazby pomocí rozšíření syntaxe. Deklarace vazby <xref:System.Windows.Controls.TextBlock.Text%2A> vlastnost používá syntaxi elementu objektu.  
   
- Další informace o různé podmínky najdete v tématu [XAML syntaxe v podrobností](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md).  
+ Další informace o různých podmínkách, najdete v části [syntaxe XAML v podrobnosti o](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md).  
   
 <a name="MBandPB"></a>   
-### <a name="multibinding-and-prioritybinding"></a>MultiBinding a PriorityBinding  
- <xref:System.Windows.Data.MultiBinding> a <xref:System.Windows.Data.PriorityBinding> nepodporují rozšíření syntaxe jazyka XAML. Proto musíte použít syntaxi element objektu, pokud jsou deklarace <xref:System.Windows.Data.MultiBinding> nebo <xref:System.Windows.Data.PriorityBinding> v jazyce XAML.  
+### <a name="multibinding-and-prioritybinding"></a>MultiBinding a rozhraní PriorityBinding  
+ <xref:System.Windows.Data.MultiBinding> a <xref:System.Windows.Data.PriorityBinding> nepodporují rozšíření syntaxe XAML. Proto musíte použít syntaxi elementu objektu, pokud deklarujete <xref:System.Windows.Data.MultiBinding> nebo <xref:System.Windows.Data.PriorityBinding> v XAML.  
   
 <a name="BindinginCode"></a>   
-## <a name="creating-a-binding-in-code"></a>Vytváření vazby v kódu  
- Jiný způsob zadání vazby je přímo na nastavit vlastnosti <xref:System.Windows.Data.Binding> objektu v kódu. Následující příklad ukazuje, jak vytvořit <xref:System.Windows.Data.Binding> objektu a zadání vlastností v kódu.  V tomto příkladu `TheConverter` je objekt, který implementuje <xref:System.Windows.Data.IValueConverter> rozhraní.  
+## <a name="creating-a-binding-in-code"></a>Vytvoření vazby v kódu  
+ Dalším způsobem určení vazby je můžete nastavit vlastnosti přímo <xref:System.Windows.Data.Binding> objekt v kódu. Následující příklad ukazuje, jak vytvořit <xref:System.Windows.Data.Binding> a určení vlastností v kódu.  V tomto příkladu `TheConverter` je objekt, který implementuje <xref:System.Windows.Data.IValueConverter> rozhraní.  
   
  [!code-csharp[BindConversion#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#1)]
  [!code-vb[BindConversion#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#1)]  
   
- Pokud je objekt, jsou vazby <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> můžete volat `SetBinding` metodu objektu přímo místo použití <xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType>. Příklad, naleznete v části [vytvoření vazby v kódu](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md).  
+ Pokud je objekt, jsou vazby <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> můžete volat `SetBinding` metodu na objekt přímo namísto použití <xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType>. Příklad najdete v tématu [vytvoření vazby v kódu](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md).  
   
 <a name="Path_Syntax"></a>   
 ## <a name="binding-path-syntax"></a>Syntaxe cesty vazby  
- Použití <xref:System.Windows.Data.Binding.Path%2A> vlastnosti k určení zdrojové hodnoty, kterou chcete vytvořit vazbu na:  
+ Použití <xref:System.Windows.Data.Binding.Path%2A> vlastnosti k určení zdroje hodnotu, kterou chcete vytvořit vazbu na:  
   
--   V nejjednodušším případě <xref:System.Windows.Data.Binding.Path%2A> hodnota vlastnosti je název vlastnosti Zdrojový objekt, který má používat pro vazbu, jako třeba `Path=PropertyName`.  
+-   V nejjednodušším případě <xref:System.Windows.Data.Binding.Path%2A> hodnota vlastnosti je názvem vlastnosti zdrojového objektu má použít pro vazbu, například `Path=PropertyName`.  
   
--   Podvlastnosti vlastnosti lze zadat syntaxí podobné jako v C#. Například v klauzuli `Path=ShoppingCart.Order` nastaví vazbu na dílčí vlastnosti `Order` objekt nebo vlastnost `ShoppingCart`.  
+-   Objektu třídy SubProperties vlastnosti je možné zadat tak podobná syntaxe jako v C#. Například v klauzuli `Path=ShoppingCart.Order` nastaví vazbu pro dílčí vlastnosti `Order` objekt nebo vlastnost `ShoppingCart`.  
   
--   Pokud chcete vytvořit vazbu k přidružená vlastnost, umístěte připojená vlastnost v závorkách. Chcete-li například vytvořit vazbu na připojená vlastnost <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>, syntaxe je `Path=(DockPanel.Dock)`.  
+-   K vytvoření vazby připojené vlastnosti umístit závorky kolem připojená vlastnost. Například pro připojení k připojené vlastnosti <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType>, syntaxe je `Path=(DockPanel.Dock)`.  
   
--   Indexery vlastnosti lze zadat v rámci hranaté závorky následující název vlastnosti v případě použití indexeru. Například v klauzuli `Path=ShoppingCart[0]` nastaví vazbu na index, který odpovídá vaší vlastnost interní indexování jak zpracovává řetězcového literálu "0". Vnořené indexery jsou také podporovány.  
+-   Indexery vlastností je možné zadat do hranatých závorek za název vlastnosti, kde se indexer použije. Například v klauzuli `Path=ShoppingCart[0]` nastaví vazbu na index, který odpovídá vaší vlastnost interní indexování způsob, jakým zpracovává řetězcový literál "0". Vnořené indexery jsou také podporovány.  
   
--   Indexery a podvlastnosti můžete kombinované ve `Path` klauzule, např. `Path=ShoppingCart.ShippingInfo[MailingAddress,Street].`  
+-   Indexery a podvlastností lze kombinovat `Path` klauzuli, například `Path=ShoppingCart.ShippingInfo[MailingAddress,Street].`  
   
--   Uvnitř indexery může mít několik parametrů indexer oddělených čárkami (,). Typ každý parametr lze zadat v závorkách. Například můžete mít `Path="[(sys:Int32)42,(sys:Int32)24]"`, kde `sys` je namapována na `System` oboru názvů.  
+-   Uvnitř indexerů může mít více parametrů indexer oddělených čárkami (,). Každý parametr typu se dá nastavit pomocí závorek. Například můžete mít `Path="[(sys:Int32)42,(sys:Int32)24]"`, kde `sys` je namapována na `System` oboru názvů.  
   
--   Pokud je zdroj zobrazení kolekce, lze s aktuální položkou s lomítkem (/). Například v klauzuli `Path=/` nastaví vazby na aktuální položky v zobrazení. Pokud je zdroj kolekce, určuje tato syntaxe s aktuální položkou výchozí zobrazení kolekce.  
+-   Pokud je zdroj zobrazení kolekcí, aktuální položky je možné zadat při lomítka (/). Například v klauzuli `Path=/` nastaví vazbu na aktuální položku v zobrazení. Pokud je zdroj kolekce, určuje tato syntaxe aktuální položky výchozí zobrazení kolekce.  
   
--   Názvy vlastností a lomítka lze spojovat procházení vlastnosti, které jsou kolekce. Například `Path=/Offices/ManagerName` určuje s aktuální položkou zdrojové kolekci, která obsahuje `Offices` vlastnost, která je také kolekce. Jeho aktuální položka je objekt, který obsahuje `ManagerName` vlastnost.  
+-   Názvy vlastností a lomítka, mohou být kombinovány k procházení vlastnosti, které jsou kolekce. Například `Path=/Offices/ManagerName` Určuje aktuální položku zdrojové kolekce, která obsahuje `Offices` vlastnost, která je také kolekce. Jeho aktuální položka je objekt, který obsahuje `ManagerName` vlastnost.  
   
--   Volitelně cestu tečka (.) slouží k vytvoření vazby na aktuální zdroj. Například `Text="{Binding}"` je ekvivalentní `Text="{Binding Path=.}"`.  
+-   Volitelně cesta tečka (.) je možné vytvořit vazbu na aktuálním zdroji. Například `Text="{Binding}"` je ekvivalentní `Text="{Binding Path=.}"`.  
   
-### <a name="escaping-mechanism"></a>Mechanismus uvozovací znaky  
+### <a name="escaping-mechanism"></a>Útěku mechanismus  
   
--   Uvnitř indexery ([]) nastavení řídicí sekvence znaků pomocí kurzoru (^) další znak.  
+-   Uvnitř indexery ([]) řídící znak stříšky (^) další znak.  
   
--   Pokud nastavíte <xref:System.Windows.Data.Binding.Path%2A> v jazyce XAML, budete také muset vyhnuli (s použitím entity XML) určitých znaků, které jsou speciální k definici jazyka XML:  
+-   Pokud nastavíte <xref:System.Windows.Data.Binding.Path%2A> v XAML, budete potřebovat k uvození (s použitím entity XML) určitých znaků, které jsou pro definice jazyka XML:  
   
-    -   Použití `&` řídicí znak "&".  
+    -   Použití `&` znaku "&".  
   
-    -   Použití `>` abyste se vyhnuli koncová značka ">".  
+    -   Použití `>` řídicí koncová značka ">".  
   
--   Kromě toho, pokud jste popisují celý vazby v atributu pomocí rozšíření syntaxe značek, budete muset vyhnuli (pomocí zpětné lomítko \\) znaků, které jsou speciální k [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] analyzátor značek rozšíření:  
+-   Kromě toho pokud popíšete celé vazby v atributu pomocí syntaxe rozšíření značek, budete muset řídicí (pomocí zpětného lomítka \\) znaky, které jsou pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] analyzátor, který rozšíření:  
   
-    -   Zpětné lomítko (\\) je vlastní řídicí znak.  
+    -   Zpětné lomítko (\\) je řídicí znak samotný.  
   
-    -   Rovná se (=) odděluje název vlastnosti z hodnoty vlastnosti.  
+    -   Název vlastnosti rovnítko (=) odděluje od hodnoty vlastnosti.  
   
-    -   Čárkou (,) odděluje vlastnosti.  
+    -   Vlastnosti je oddělen čárkou (,).  
   
-    -   Pravá složená závorka (}) je konci rozšíření značek.  
+    -   Pravá složená závorka (}) je koncem rozšíření značek.  
   
 <a name="Default"></a>   
 ## <a name="default-behaviors"></a>Výchozí chování  
- Výchozí chování je následujícím způsobem, pokud není zadaný v deklaraci.  
+ Výchozí chování následujícím způsobem je, pokud není zadaný v deklaraci.  
   
--   Vytvoří se převaděč výchozí, který se pokouší provést převod typů mezi zdrojové hodnoty vazby a cílová hodnota vazby. Pokud převod nelze provést, vrátí výchozí převaděč `null`.  
+-   Výchozí převaděč se vytvoří, který se pokusí provést převod typu mezi zdrojovou hodnotou vazby a cílovou hodnotu vazby. Pokud převod nelze provést, vrátí výchozí převaděč `null`.  
   
--   Pokud není nastaveno <xref:System.Windows.Data.Binding.ConverterCulture%2A>, použije modul vazby `Language` vlastnost cílového objektu vazby. V jazyce XAML použije se výchozí hodnota "en US" nebo hodnota dědí z kořenového elementu (nebo libovolný element) na stránce, pokud byla explicitně nastavena.  
+-   Pokud nenastavíte <xref:System.Windows.Data.Binding.ConverterCulture%2A>, používá modul vazby `Language` vlastnost cílového objektu vazby. V XAML výchozí hodnota je "en US" nebo dědí z kořenového elementu (nebo libovolný element) na stránce hodnotu, pokud byla explicitně nastavena.  
   
--   Stejně dlouho jako vazby již má kontext dat (například zděděné kontextu dat pocházejících z nadřazeného elementu) a libovolnou položku nebo kolekce vrácený tohoto kontextu je vhodný pro vazbu bez nutnosti další úpravy cestu, Vazba deklarace může mít žádná klauzule vůbec: `{Binding}` je často způsob vazba je zadán pro určení stylu dat, kde funguje vazbu na kolekce. Další informace najdete v části "Celý objekty použít jako vazby zdroji" v [vazby Přehled zdrojů](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
+-   Pokud vazba již má kontext dat (například zděděné datového kontextu pocházející z nadřazeného elementu) a libovolné položky nebo kolekci se vrací v tomto kontextu je vhodná pro vazbu bez nutnosti dalších úprav cesty Vazba deklarace nechat bez klauzule vůbec: `{Binding}` To je často způsob, jakým vazbu je určená pro používání stylů data, kdy vazba postupuje podle kolekce. Další informace najdete v části "Celé objekty použít jako vazbu zdroji" v [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
   
--   Výchozí hodnota <xref:System.Windows.Data.Binding.Mode%2A> liší jednosměrná a obousměrná v závislosti na vlastnost závislosti, který je právě vázaný. Vždy můžou deklarovat vazby režim explicitně zajistěte, aby vaše vazby toto chování žádoucí. Ve vlastnostech řízení Obecné, nelze upravit uživatele jako například <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> a <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A?displayProperty=nameWithType>, výchozí obousměrné vazby, zatímco většina jiných vlastností výchozí jednosměrné vazby.  
+-   Výchozí hodnota <xref:System.Windows.Data.Binding.Mode%2A> se pohybuje mezi jednosměrnou a obousměrnou v závislosti na vlastnosti závislosti svázaný. Vždy je možné deklarovat režimu vazby explicitně, aby se zajistilo, že vaše vazby má požadované chování. Ve vlastnostech ovládacího prvku Obecné, upravovat uživatele jako například <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> a <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A?displayProperty=nameWithType>, ve výchozím nastavení obousměrné vazby, zatímco většina jiných vlastností ve výchozím nastavení jednosměrné vazby.  
   
--   Výchozí hodnota <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnota se liší mezi <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> a <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> v závislosti na vlastnost vázané závislostí. Výchozí hodnota pro většinu vlastností závislostí je <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>, zatímco <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> vlastnost má výchozí hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>.  
+-   Výchozí hodnota <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnota se liší mezi <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> a <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> v závislosti na vlastnost vázané závislosti. Výchozí hodnota pro většinu vlastností závislostí je <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>, zatímco <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> vlastnost má výchozí hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
- [PropertyPath – syntaxe v jazyce XAML](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
+- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
+- [PropertyPath – syntaxe v jazyce XAML](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3809345432b705e4b44700fd6e8231c84bdce6ad
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: bcf1afdadf9294981674d7e007a6bbda2268969d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221619"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54701830"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (Nástroj pro optimalizaci spravovaného kódu na základě profilu)
 
@@ -49,10 +49,10 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
 
 |Povinný parametr|Popis|
 |------------------------|-----------------|
-|`-Scenario` \<*Příkaz*><br /><br /> —nebo—<br /><br /> `-Scenario` \<*Název balíčku*><br /><br /> -nebo-<br /><br /> `-Import` \<*Adresář*>|Pro aplikace klasické pracovní plochy, použijte `–Scenario` k určení příkazu ke spuštění aplikace chcete optimalizovat, včetně jakýchkoli argumentů příkazového řádku. Použití tří párů uvozovek kolem *příkaz* Pokud Určuje cestu, která obsahuje mezery; například: `mpgo.exe -scenario """C:\My App\myapp.exe""" -assemblylist """C:\My App\myapp.exe""" -outdir "C:\optimized files"`. Nepoužívejte dvojitých uvozovek. nebude-li správně fungovat *příkaz* obsahuje mezery.<br /><br /> -nebo-<br /><br /> Pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, použijte `–Scenario` k určení balíčku, který chcete generovat informace o profilu. Při zadání zobrazovaného názvu balíčku nebo názvu řady balíčků namísto kompletního názvu balíčku nástroj Mpgo.exe vybere balíček, který se shoduje se zadaným názvem, pokud existuje pouze jediná shoda. Pokud zadanému názvu odpovídá více balíčků, nástroj Mpgo.exe vyzve k výběru balíčku.<br /><br /> —nebo—<br /><br /> Použití `-Import` k určení, že optimalizační data z dříve optimalizovaných sestavení by měla sloužit k optimalizaci sestavení v `-AssemblyList`. *adresář* Určuje adresář obsahující dříve optimalizované soubory. Sestavení zadaná v `–AssemblyList` nebo `–AssemblyListFile` jsou nové verze sestavení, která se mají optimalizovat pomocí dat z importovaných souborů. Použití optimalizačních dat ze starších verzí sestavení umožňuje optimalizovat novější verze sestavení bez opětovného spuštění scénáře.  Nicméně, pokud importované a cílové sestavení obsahují výrazně odlišný kód, optimalizační data budou neúčinná. Názvy sestavení zadané v `–AssemblyList` nebo `–AssemblyListFile` musí existovat v adresáři určeném argumentem `–Import` *directory*. Použití tří párů uvozovek kolem *directory* Pokud Určuje cestu, která obsahuje mezery.<br /><br /> Musíte zadat buď `–Scenario` nebo `–Import`, ale nikoliv oba parametry.|
+|`-Scenario` \<*Příkaz*><br /><br /> —nebo—<br /><br /> `-Scenario` \<*packageName*><br /><br /> -nebo-<br /><br /> `-Import` \<*Adresář*>|Pro aplikace klasické pracovní plochy, použijte `–Scenario` k určení příkazu ke spuštění aplikace chcete optimalizovat, včetně jakýchkoli argumentů příkazového řádku. Použití tří párů uvozovek kolem *příkaz* Pokud Určuje cestu, která obsahuje mezery; například: `mpgo.exe -scenario """C:\My App\myapp.exe""" -assemblylist """C:\My App\myapp.exe""" -outdir "C:\optimized files"`. Nepoužívejte dvojitých uvozovek. nebude-li správně fungovat *příkaz* obsahuje mezery.<br /><br /> -nebo-<br /><br /> Pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, použijte `–Scenario` k určení balíčku, který chcete generovat informace o profilu. Při zadání zobrazovaného názvu balíčku nebo názvu řady balíčků namísto kompletního názvu balíčku nástroj Mpgo.exe vybere balíček, který se shoduje se zadaným názvem, pokud existuje pouze jediná shoda. Pokud zadanému názvu odpovídá více balíčků, nástroj Mpgo.exe vyzve k výběru balíčku.<br /><br /> —nebo—<br /><br /> Použití `-Import` k určení, že optimalizační data z dříve optimalizovaných sestavení by měla sloužit k optimalizaci sestavení v `-AssemblyList`. *adresář* Určuje adresář obsahující dříve optimalizované soubory. Sestavení zadaná v `–AssemblyList` nebo `–AssemblyListFile` jsou nové verze sestavení, která se mají optimalizovat pomocí dat z importovaných souborů. Použití optimalizačních dat ze starších verzí sestavení umožňuje optimalizovat novější verze sestavení bez opětovného spuštění scénáře.  Nicméně, pokud importované a cílové sestavení obsahují výrazně odlišný kód, optimalizační data budou neúčinná. Názvy sestavení zadané v `–AssemblyList` nebo `–AssemblyListFile` musí existovat v adresáři určeném argumentem `–Import` *directory*. Použití tří párů uvozovek kolem *directory* Pokud Určuje cestu, která obsahuje mezery.<br /><br /> Musíte zadat buď `–Scenario` nebo `–Import`, ale nikoliv oba parametry.|
 |`-OutDir` \<*Adresář*>|Adresář, do kterého se umístí optimalizovaná sestavení. Pokud sestavení již existuje ve výstupní složce adresáře, se vytvoří nová kopie a jeho názvu; se připojí číslo indexu Příklad: *assemblyname*-1.exe. Použít uvozovky kolem *directory* Pokud Určuje cestu, která obsahuje mezery.|
 |`-AssemblyList` \<*assembly1 assembly2...*><br /><br /> —nebo—<br /><br /> `-AssemblyListFile` \<*Soubor*>|Seznam sestavení (včetně souborů .exe a .dll) oddělených mezerami, o kterých je třeba shromáždit profilovací informace. Můžete zadat `C:\Dir\*.dll` nebo `*.dll` vybrat všechna sestavení v zadaném nebo aktuálním pracovním adresáři. Další informace naleznete v části Poznámky.<br /><br /> —nebo—<br /><br /> Textový soubor obsahující seznam sestavení, o kterých je třeba shromáždit profilovací informace. Vždy je uvedeno jedno sestavení na řádku. Pokud název sestavení začíná pomlčkou (-), je třeba použít soubor seznamu sestavení nebo sestavení přejmenovat.|
-|`-AppID` \<*ID aplikace*>|ID aplikace v zadaném balíčku. Pokud používáte zástupný znak (\*), Mpgo.exe pokusí vytvořit výčet AppID v balíčku a použije místo toho \< *package_family_name*>! Aplikace, pokud se nezdaří. Při zadání řetězce, který má předponu vykřičník (!), bude nástroj Mpgo.exe řetězit název řady balíčků s dodaným argumentem.|
+|`-AppID` \<*appId*>|ID aplikace v zadaném balíčku. Pokud používáte zástupný znak (\*), Mpgo.exe pokusí vytvořit výčet AppID v balíčku a použije místo toho \< *package_family_name*>! Aplikace, pokud se nezdaří. Při zadání řetězce, který má předponu vykřičník (!), bude nástroj Mpgo.exe řetězit název řady balíčků s dodaným argumentem.|
 |`-Timeout` \<*sekundy*>|Množství času, aby [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace se spustí před jejím ukončením.|
 
 |Volitelný parametr|Popis|
@@ -126,8 +126,8 @@ mpgo –scenario "C:\MyApp\wav2wma.exe –input song1.wav –output song1.wma" �
 mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyTaxUtil2011.dll" -outdir C:\ReOptimized  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Ngen.exe (generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md)  
- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)  
- [Zlepšení výkonu spouštění pro aplikace klasické pracovní plochy](https://go.microsoft.com/fwlink/p/?LinkId=248943)  
- [Přehled vylepšení výkonu v rozhraní .NET 4.5](https://go.microsoft.com/fwlink/p/?LinkId=249131)
+## <a name="see-also"></a>Viz také:
+- [Ngen.exe (generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md)
+- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Zlepšení výkonu spouštění pro aplikace klasické pracovní plochy](https://go.microsoft.com/fwlink/p/?LinkId=248943)
+- [Přehled vylepšení výkonu v rozhraní .NET 4.5](https://go.microsoft.com/fwlink/p/?LinkId=249131)

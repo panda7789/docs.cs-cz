@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Odstranění klíče z registru v jazyce Visual Basic'
+title: 'Postupy: Odstranění klíče z registru v jazyce Visual Basic'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.DeleteSetting
@@ -11,26 +11,26 @@ helpviewer_keywords:
 - registry [Visual Basic], deleting keys
 - examples [Visual Basic], registry
 ms.assetid: ab9aca0e-42b0-4ff7-8ff9-845a4bfdf9f2
-ms.openlocfilehash: 8a983436b8c7415f0d356d65ae7d6c5ffd1c2db5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 226dc22f42783bec11eb1ddc38f270477bb0fbab
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33583848"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54633960"
 ---
-# <a name="how-to-delete-a-registry-key-in-visual-basic"></a>Postupy: Odstranění klíče z registru v jazyce Visual Basic
+# <a name="how-to-delete-a-registry-key-in-visual-basic"></a>Postupy: Odstranění klíče z registru v jazyce Visual Basic
 <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> a <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> metody slouží k odstranění klíče registru.  
   
 ## <a name="procedure"></a>Postup  
   
-#### <a name="to-delete-a-registry-key"></a>Chcete-li odstranit klíč registru  
+#### <a name="to-delete-a-registry-key"></a>Odstranit klíč registru  
   
--   Použití `DeleteSubKey` metodu za účelem odstranění klíče z registru. Tento příklad odstraní klíče Software/TestApp v podregistru CurrentUser. Můžete to změnit v kódu na příslušným řetězcem nebo vycházet z informací zadaných uživatelem.  
+-   Použití `DeleteSubKey` metodu k odstranění klíče z registru. Tento příklad odstraní klíč softwaru/TestApp v CurrentUser hive. Můžete změnit v kódu na odpovídající řetězec nebo vycházet z uživatelem zadané informace.  
   
      [!code-vb[VbResourceTasks#19](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-delete-a-registry-key_1.vb)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
- `DeleteSubKey` Metoda vrátí prázdný řetězec, pokud neexistuje dvojice klíč/hodnota.  
+ `DeleteSubKey` Metoda vrátí prázdný řetězec, pokud je dvojice klíč/hodnota neexistuje.  
   
  Následující podmínky mohou způsobit výjimku:  
   
@@ -43,11 +43,11 @@ ms.locfileid: "33583848"
 -   Klíč registru je jen pro čtení (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Volání registrů se nezdaří, pokud nejsou udělena buď dostatečná oprávnění pro spuštění (<xref:System.Security.Permissions.RegistryPermission>) nebo pokud uživatel nemá správný přístup (jako seznamy ACL) pro vytvoření nebo zápis k nastavení. Například místní aplikace, který má oprávnění zabezpečení přístupu kódu, nemusí mít oprávnění operačního systému.  
+ Volání registru selhat, pokud nejsou udělena buď dostatečná oprávnění za běhu (<xref:System.Security.Permissions.RegistryPermission>) nebo pokud uživatel nemá správný přístup (jako seznamy ACL) pro vytvoření nebo zápis do nastavení. Místní aplikace, který má oprávnění zabezpečení přístupu kódu například nemusí mít oprávnění operačního systému.  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>  
- <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>  
- <xref:Microsoft.Win32.RegistryKey>  
- [Zabezpečení a registr](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)  
- [Čtení z registru a zápis do něj](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>
+- <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>
+- <xref:Microsoft.Win32.RegistryKey>
+- [Zabezpečení a registr](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)
+- [Čtení z registru a zápis do něj](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)

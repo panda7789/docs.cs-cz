@@ -2,12 +2,12 @@
 title: Šablony Visual Studia pro WCF
 ms.date: 03/30/2017
 ms.assetid: 6a608575-3535-4190-89da-911e24c8374f
-ms.openlocfilehash: 73d2645977381602ef028d091675a22fb933d60b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a7529b14c3c83f0df7b41581ef18e5192209bc5d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43512706"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54624935"
 ---
 # <a name="wcf-visual-studio-templates"></a>Šablony Visual Studia pro WCF
 Šablony sady Visual Studio Windows Communication Foundation (WCF) jsou předdefinované šablony projektů a položek, které můžete použít k rychlému vytvoření služby WCF a okolního aplikace v sadě Visual Studio.  
@@ -82,6 +82,6 @@ ms.locfileid: "43512706"
 > [!NOTE]
 >  Poskytuje služba WCF podporující technologii Silverlight `basicHttpBinding` koncového bodu bez povolení nastavení zabezpečení. Proto je možné získat informace o službě všichni klienti, které se připojují k této službě. Zprávy se vyměňují mezi službou a klienta jsou také není podepsána nebo zašifrována. K zabezpečení koncového bodu správně, měli byste použít ověřování, HTTPS nebo jiných mechanismů technologie ASP.NET.  
   
-## <a name="see-also"></a>Viz také  
- [Hostitel služby WCF (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)  
- [Testovací klient WCF (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)
+## <a name="see-also"></a>Viz také:
+- [Hostitel služby WCF (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)
+- [Testovací klient WCF (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)

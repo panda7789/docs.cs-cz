@@ -2,12 +2,12 @@
 title: Podporované a nepodporované metody LINQ (LINQ to Entities)
 ms.date: 03/30/2017
 ms.assetid: 7f3ffa5f-f819-4730-bcdb-09b23de3b6d0
-ms.openlocfilehash: a57e8facdd0ece7223ec780a9ef22a1be7c53221
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a1a5f9f1789d8c0446a2816c2c07f61b6a373869
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502240"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54710375"
 ---
 # <a name="supported-and-unsupported-linq-methods-linq-to-entities"></a>Podporované a nepodporované metody LINQ (LINQ to Entities)
 Tato část obsahuje informace o standardních dotazovacích operátorů Language-Integrated Query (LINQ), které jsou podporované nebo nepodporované v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy. Řada operátorů standardního dotazu LINQ má přetížené verze, která přebírá celočíselný argument. Argument typu celé číslo odpovídá index založený na nule v sekvenci, která je provozována, <xref:System.Collections.Generic.IEqualityComparer%601>, nebo <xref:System.Collections.Generic.IComparer%601>. Pokud není uvedeno jinak, tyto přetížené verze operátory standardního dotazu LINQ nejsou podporovány a pokus o jejich použití vyvolá výjimku.  
@@ -178,5 +178,5 @@ Tato část obsahuje informace o standardních dotazovacích operátorů Languag
 |<xref:System.Linq.Queryable.TakeWhile%2A>|Nepodporováno|`Function TakeWhile(Of TSource) ( _ source As IQueryable(Of TSource), _ predicate As Expression(Of Func(Of TSource, Boolean)) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> TakeWhile<TSource>( this IQueryable<TSource> source, Expression<Func\<TSource, bool>> predicate )`|  
 |<xref:System.Linq.Queryable.TakeWhile%2A>|Nepodporováno|`Function TakeWhile(Of TSource) ( _ source As IQueryable(Of TSource), _ predicate As Expression(Of Func(Of TSource, Integer, Boolean)) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> TakeWhile<TSource>( this IQueryable<TSource> source, Expression<Func\<TSource, int, bool>> predicate )`|  
   
-## <a name="see-also"></a>Viz také  
- [Standardní operátory dotazů LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md)
+## <a name="see-also"></a>Viz také:
+- [Standardní operátory dotazů LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md)

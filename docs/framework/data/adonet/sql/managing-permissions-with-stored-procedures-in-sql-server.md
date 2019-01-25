@@ -2,12 +2,12 @@
 title: Správa oprávnění pomocí uložených procedur na SQL serveru
 ms.date: 03/30/2017
 ms.assetid: 08fa34e8-2ffa-470d-ba62-e511a5f8558e
-ms.openlocfilehash: e6161195682964ac9063cbee65d26ade601ef66c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 92752df75390c4f672f4a0cc1dd48ec7c07f6265
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43501685"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54546501"
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a>Správa oprávnění pomocí uložených procedur na SQL serveru
 Jedním ze způsobů vytvoření více řádků obrany kolem vaše databáze je k implementaci všech přístup k datům pomocí uložených procedur a uživatelem definované funkce. Odvolat nebo odepřít všechna oprávnění pro příslušné objekty, jako jsou tabulky a udělení oprávnění EXECUTE na uložené procedury. Tím se vytvoří efektivně bezpečnostní hraniční sítě kolem dat a databázových objektů.  
@@ -50,18 +50,18 @@ Jedním ze způsobů vytvoření více řádků obrany kolem vaše databáze je 
 -   Vyhněte dynamic SQL, pokud není nezbytně nutné. Použijte funkci QUOTENAME() příkazů jazyka Transact-SQL k vymezení hodnotu řetězce a escape jakékoli výskyt oddělovače ve vstupním řetězci.  
   
 ## <a name="external-resources"></a>Externí zdroje  
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
 |[Uložené procedury](/sql/relational-databases/stored-procedures/stored-procedures-database-engine) a [útok prostřednictvím injektáže SQL](https://go.microsoft.com/fwlink/?LinkId=98234) v Online knihách serveru SQL|Témata popisují postup vytvoření uložených procedur a jak funguje útok prostřednictvím injektáže SQL.|  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
- [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
- [Podepisování uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
- [Přizpůsobení oprávnění se zosobněním na SQL Serveru](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)  
- [Úpravy dat pomocí uložených procedur](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
+- [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)
+- [Podepisování uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)
+- [Přizpůsobení oprávnění se zosobněním na SQL Serveru](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)
+- [Úpravy dat pomocí uložených procedur](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

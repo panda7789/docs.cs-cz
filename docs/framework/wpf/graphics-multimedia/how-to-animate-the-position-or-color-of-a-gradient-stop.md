@@ -12,12 +12,12 @@ helpviewer_keywords:
 - animation [WPF], color of GradientStop objects
 - GradientStop objects [WPF], animating position of
 ms.assetid: 6f5b8b47-6c32-4b8e-98ee-fdf6515ec843
-ms.openlocfilehash: fcbb546b64810416d3f7dbe052da77b7bc941e7a
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 48f10d418c4f584fd9d24f9292efbca5a941643c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44083982"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54711133"
 ---
 # <a name="how-to-animate-the-position-or-color-of-a-gradient-stop"></a>Postupy: Animace umístění a barvy ukončení přechodu
 Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.GradientStop.Color%2A> a <xref:System.Windows.Media.GradientStop.Offset%2A> z <xref:System.Windows.Media.GradientStop> objekty.  
@@ -39,7 +39,7 @@ Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.GradientStop.Co
   
  Další příklady najdete v článku [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.GradientStop>  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.GradientStop>
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)

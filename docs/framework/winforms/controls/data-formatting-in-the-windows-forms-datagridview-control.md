@@ -6,35 +6,35 @@ helpviewer_keywords:
 - data [Windows Forms], formatting in grids
 - data grids [Windows Forms], formatting data
 ms.assetid: 07bf558d-3748-42ba-8ba0-37fdef924081
-ms.openlocfilehash: ae1947cf7c3825553837fa5f1ee288114988d28f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0016b87add6f20223bdeda72f10ac94b74ec9fcf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33527771"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54737855"
 ---
 # <a name="data-formatting-in-the-windows-forms-datagridview-control"></a>Formátování dat v ovládacím prvku Windows Forms DataGridView
-<xref:System.Windows.Forms.DataGridView> Řízení poskytuje automatický převod mezi hodnoty buněk a typy dat, které se zobrazí nadřazené sloupce. Textové pole sloupce, například zobrazit řetězcové vyjádření datum, čas, číslo a hodnoty výčtu a převést zadanou uživatelem řetězcové hodnoty na typy úložiště dat vyžaduje.  
+<xref:System.Windows.Forms.DataGridView> Řízení poskytuje automatický převod mezi hodnot v buňkách a datové typy, které zobrazují nadřazené sloupce. Textové pole sloupce, například zobrazit řetězcové reprezentace datum, čas, čísla a hodnoty výčtu a převod na typy potřebné v úložišti dat uživatel zadal řetězcové hodnoty.  
   
-## <a name="formatting-with-the-datagridviewcellstyle-class"></a>Formátování s DataGridViewCellStyle – třída  
- <xref:System.Windows.Forms.DataGridView> Řízení poskytuje základní data formátování hodnot v buňkách prostřednictvím <xref:System.Windows.Forms.DataGridViewCellStyle> třídy. Můžete použít <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> vlastnost Formát hodnoty date, time, číslo a výčtu pro výchozí jazykovou verzi použití specifikátorů formátu popsané v [typy formátování](../../../../docs/standard/base-types/formatting-types.md). Můžete také formátovat tyto hodnoty pro konkrétní jazykové verze pomocí <xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A> vlastnost. Zadaný formát slouží k zobrazení dat a analyzovat data, která uživatel zadá v zadaném formátu.  
+## <a name="formatting-with-the-datagridviewcellstyle-class"></a>Formátování pomocí třídy ovládací prvek DataGridViewCellStyle  
+ <xref:System.Windows.Forms.DataGridView> Řízení poskytuje základní data formátování hodnot v buňkách prostřednictvím <xref:System.Windows.Forms.DataGridViewCellStyle> třídy. Můžete použít <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> vlastnost k formátování data, času, čísla a výčet hodnot pro výchozí jazykovou verzi pomocí specifikátorů formátu, je popsáno v [Formatting Types](../../../../docs/standard/base-types/formatting-types.md). Můžete také formátovat tyto hodnoty pro konkrétní jazykovou verzi pomocí <xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A> vlastnost. Zadaný formát se používá k zobrazení dat a analyzovat data, která uživatel zadá v zadaném formátu.  
   
- <xref:System.Windows.Forms.DataGridViewCellStyle> Třída poskytuje další vlastnosti formátování pro zalamování řádků, zarovnání textu a vlastní zobrazení hodnot null databáze. Další informace najdete v tématu [postupy: formátování dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md).  
+ <xref:System.Windows.Forms.DataGridViewCellStyle> Třída poskytuje další vlastnosti formátování pro zalamování řádků, zarovnání textu a vlastní zobrazení hodnot null databáze. Další informace najdete v tématu [jak: Formátování dat v Windows Forms DataGridView – ovládací prvek](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md).  
   
 ## <a name="formatting-with-the-cellformatting-event"></a>Formátování s CellFormatting událostí  
- Pokud základní formátování nevyhovuje vašim potřebám, můžete zadat vlastní formátování dat v obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType> událostí. <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs> Předaný obslužná rutina má <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> vlastnost, která původně obsahuje hodnotu buňky. Za normálních okolností tato hodnota je automaticky převeden na typ zobrazení. Chcete-li převést hodnotu, nastavte <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> vlastnost na hodnotu typu zobrazení.  
+ Pokud základní formátování nevyhovuje vašim potřebám, můžete zadat vlastní formátování dat v obslužné rutiny pro <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType> událostí. <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs> Předaný obslužné rutině má <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> vlastnost, která obsahuje počáteční hodnotu buňky. Za normálních okolností tuto hodnotu automaticky převést na typ zobrazení. Chcete-li převést hodnotu, nastavte <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> vlastnost na hodnotu typu zobrazení.  
   
 > [!NOTE]
->  Pokud se řetězec formátu pro buňky v platnosti, přepíše vaše změna <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> není-li nastavena hodnota vlastnosti <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A> vlastnost `true`.  
+>  Pokud formátovací řetězec je v platnosti pro buňku, přepíše vaše změna <xref:System.Windows.Forms.ConvertEventArgs.Value%2A> hodnota vlastnosti, pokud nenastavíte <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A> vlastnost `true`.  
   
- <xref:System.Windows.Forms.DataGridView.CellFormatting> Událostí je užitečné také, když chcete nastavit <xref:System.Windows.Forms.DataGridViewCellStyle> vlastnosti pro jednotlivé buňky na základě jejich hodnot. Další informace najdete v tématu [postupy: přizpůsobení formátování dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md).  
+ <xref:System.Windows.Forms.DataGridView.CellFormatting> Událostí je užitečné také, když chcete nastavit <xref:System.Windows.Forms.DataGridViewCellStyle> vlastnosti pro jednotlivé buňky na základě jejich hodnot. Další informace najdete v tématu [jak: Přizpůsobení formátování dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md).  
   
- Pokud výchozí analýza zadaného uživatelem hodnot nevyhovuje vašim potřebám, může zpracovávat <xref:System.Windows.Forms.DataGridView.CellParsing> události <xref:System.Windows.Forms.DataGridView> řízení poskytnout vlastní analýze.  
+ Pokud analýza výchozí hodnoty uživatelem zadaného nevyhovuje vašim potřebám, můžete zpracovávat <xref:System.Windows.Forms.DataGridView.CellParsing> událost <xref:System.Windows.Forms.DataGridView> ovládacího prvku poskytnout vlastní analýza kódu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.DataGridView>  
- <xref:System.Windows.Forms.DataGridViewCellStyle>  
- [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)  
- [Styly buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)  
- [Postupy: Formátování dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md)  
- [Postupy: Přizpůsobení formátování dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.DataGridView>
+- <xref:System.Windows.Forms.DataGridViewCellStyle>
+- [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)
+- [Styly buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)
+- [Postupy: Formát dat v Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md)
+- [Postupy: Přizpůsobení formátování dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)

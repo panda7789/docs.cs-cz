@@ -11,16 +11,16 @@ helpviewer_keywords:
 ms.assetid: a24e807b-d7c3-4e93-ac48-80094c4e1c90
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 9f2f5b157d8999cd254d6b389cdf7a2ca8ca1f8f
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 8d7de0ea18adf81d7bcd5b4142e1aa51d6d223ff
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840513"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54743839"
 ---
 # <a name="use-the-automationid-property"></a>Používání vlastnosti AutomationID
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Toto téma obsahuje scénáře a ukázky kódu, které ukazují, jak a kdy <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> je možné najít element v rámci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.  
   
@@ -58,7 +58,7 @@ ms.locfileid: "48840513"
   
 -   V některých případech se vzhledem AutomationID je pouze musí být jedinečný mezi na stejné úrovni, může více prvků ve stromu automatizace uživatelského rozhraní mají stejné hodnoty vlastnosti AutomationID. V těchto situacích prvky lze jedinečně identifikovat podle nadřazenou položku a v případě potřeby, výše nadřazených. Například vývojář může poskytnout panel nabídek několik položek nabídky každý s více podřízených položek nabídky, ve kterém jsou podřízené objekty označeny sekvenční AutomationID například "Item1", "Item2 –" a tak dále. Každá položka nabídky může pak být jednoznačně identifikují pomocí jeho AutomationID spolu s AutomationID svého nadřazeného objektu a v případě potřeby jeho výše nadřazených.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>  
- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
- [Hledání prvku automatizace uživatelského rozhraní na základě podmínky pro vlastnost](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>
+- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
+- [Hledání prvku automatizace uživatelského rozhraní na základě podmínky pro vlastnost](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)

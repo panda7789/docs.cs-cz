@@ -2,22 +2,22 @@
 title: '&lt;issuedTokenParameters&gt;'
 ms.date: 03/30/2017
 ms.assetid: 120b3f37-7331-4816-b712-d6aab39655a4
-ms.openlocfilehash: 2060f98e94cec9e656420ac073204a82bc592b92
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: d3770764e75b3bfd1345ac6a44761861595309d1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54149238"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54627457"
 ---
 # <a name="ltissuedtokenparametersgt"></a>&lt;issuedTokenParameters&gt;
 Určuje parametry pro token zabezpečení vydané ve scénáři federativní zabezpečení.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<třídě customBinding >  
+\<customBinding>  
 \<Vytvoření vazby >  
-\<zabezpečení >  
-\<issuedTokenParameters >  
+\<security>  
+\<issuedTokenParameters>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,37 +51,37 @@ Určuje parametry pro token zabezpečení vydané ve scénáři federativní zab
 |defaultMessageSecurityVersion|Určuje verzi specifikace zabezpečení (WS-Security, WS-Trust, WS-Secure Conversation a WS-Security Policy), který musí být podporovány vazbou. Tato hodnota je typu <xref:System.ServiceModel.MessageSecurityVersion>.|  
 |inclusionMode|Určuje požadavky na zařazení tokenu. Tento atribut je typu <xref:System.ServiceModel.Security.Tokens.SecurityTokenInclusionMode>.|  
 |KeySize|Celé číslo, které určuje velikost klíče tokenu. Výchozí hodnota je 256.|  
-|Typ klíče|Platná hodnota <xref:System.IdentityModel.Tokens.SecurityKeyType> , který určuje typ klíče. Výchozí hodnota je `SymmetricKey`.|  
-|Typ TokenType|Řetězec, který určuje typ tokenu. Ve výchozím nastavení je "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAML".|  
+|keyType|Platná hodnota <xref:System.IdentityModel.Tokens.SecurityKeyType> , který určuje typ klíče. Výchozí hodnota je `SymmetricKey`.|  
+|tokenType|Řetězec, který určuje typ tokenu. Ve výchozím nastavení je "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAML".|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<additionalRequestParameters >](../../../../../docs/framework/configure-apps/file-schema/wcf/additionalrequestparameters-element.md)|Kolekce elementů konfigurace, které určují další parametry požadavku.|  
-|[\<claimTypeRequirements >](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-element.md)|Určuje kolekci požadovaných typů deklarací.<br /><br /> V případě federovaných stavu služby požadavky na příchozí přihlašovací údaje. Například příchozí přihlašovací údaje musí mít sadu typů deklarací identity. Každý prvek v této kolekci Určuje typy požadovaných a volitelných deklarací, očekává se objeví federovaného pověření.|  
-|[\<Issuer >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer-of-issuedtokenparameters.md)|Prvek konfigurace, který určuje koncový bod, který vydá aktuální token.|  
+|[\<additionalRequestParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/additionalrequestparameters-element.md)|Kolekce elementů konfigurace, které určují další parametry požadavku.|  
+|[\<claimTypeRequirements>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-element.md)|Určuje kolekci požadovaných typů deklarací.<br /><br /> V případě federovaných stavu služby požadavky na příchozí přihlašovací údaje. Například příchozí přihlašovací údaje musí mít sadu typů deklarací identity. Každý prvek v této kolekci Určuje typy požadovaných a volitelných deklarací, očekává se objeví federovaného pověření.|  
+|[\<issuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer-of-issuedtokenparameters.md)|Prvek konfigurace, který určuje koncový bod, který vydá aktuální token.|  
 |[\<issuerMetadata>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata-of-issuedtokenparameters.md)|Konfigurace element, který určuje adresu koncového bodu metadat vydavatel tokenu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<secureConversationBootstrap >](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|Určuje výchozí hodnoty pro inicializaci služby zabezpečené konverzace.|  
+|[\<secureConversationBootstrap>](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|Určuje výchozí hodnoty pro inicializaci služby zabezpečené konverzace.|  
 |[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Určuje možnosti zabezpečení pro vlastní vazbu.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters>  
- <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>  
- <xref:System.ServiceModel.Configuration.SecurityElementBase.IssuedTokenParameters%2A>  
- <xref:System.ServiceModel.Channels.CustomBinding>  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
- [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
- [Zabezpečení vlastních vazeb](../../../../../docs/framework/wcf/samples/custom-binding-security.md)  
- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
- [Možnosti zabezpečení u vlastních vazeb](../../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)  
- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters>
+- <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>
+- <xref:System.ServiceModel.Configuration.SecurityElementBase.IssuedTokenParameters%2A>
+- <xref:System.ServiceModel.Channels.CustomBinding>
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Zabezpečení vlastních vazeb](../../../../../docs/framework/wcf/samples/custom-binding-security.md)
+- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
+- [Možnosti zabezpečení u vlastních vazeb](../../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
+- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)

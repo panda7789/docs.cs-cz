@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6400bc71-a858-4ac2-8d5a-caa72d3b5482
-ms.openlocfilehash: 19f61e6e38a5eeb477833b0d5ea94c1b1a8447b4
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 942dea9b745d3dd7cda366ad3e855ddaed0473db
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49121915"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54582549"
 ---
 # <a name="how-to-configure-a-windows-communication-foundation-service-to-use-port-sharing"></a>Postupy: Konfigurace používání sdílení portů ve službě WCF
 Nejjednodušší způsob, jak používat sdílení v aplikaci Windows Communication Foundation (WCF) portu net.tcp:// je zveřejnit službu pomocí <xref:System.ServiceModel.NetTcpBinding>.  
@@ -60,6 +60,6 @@ Nejjednodušší způsob, jak používat sdílení v aplikaci Windows Communicat
 </system.serviceModel>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-* [Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)  
-* [Postupy: Povolení služby sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)
+## <a name="see-also"></a>Viz také:
+- [Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)
+- [Postupy: Povolení služby Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)

@@ -2,12 +2,12 @@
 title: Ukázky rozšíření silného typování
 ms.date: 03/30/2017
 ms.assetid: 02220f11-1a83-441c-9e5a-85f9a9367572
-ms.openlocfilehash: eccb0ce240d01ab8592a44daddcfa7aa3d2023fb
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: c5b135fb46d13ff5599e75cbd1489c0f6affbd78
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196067"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54691395"
 ---
 # <a name="strongly-typed-extensions-sample"></a>Ukázky rozšíření silného typování
 Ukázka používá <xref:System.ServiceModel.Syndication.SyndicationFeed> třídy pro účely tohoto příkladu. Tyto vzory se dají v této ukázce jsme vám ukázali lze však použít se všemi syndikace třídy, které podporují dat rozšíření.  
@@ -287,4 +287,4 @@ public class ThreadedItem : SyndicationItem
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\StronglyTypedExtensions`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

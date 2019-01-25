@@ -10,35 +10,35 @@ helpviewer_keywords:
 - Protected Friend keyword combination
 - Friend keyword [Visual Basic], and Protected
 ms.assetid: b664605e-1c79-4728-b996-aa59c50846bc
-ms.openlocfilehash: d906fc8ada19f22059da44acbd76dd07dacd4801
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: 9be3200300de308a70559536905d1e118a4a5fe4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34234586"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54616196"
 ---
 # <a name="friend-visual-basic"></a>Friend (Visual Basic)
-Určuje, že jeden nebo více deklarované programovací elementy jsou k dispozici pouze v rámci sestavení, které obsahuje jejich deklarace.  
+Určuje, že nejmíň jeden deklarovaný programový prvek je přístupný pouze z v rámci sestavení, které obsahuje jeho deklaraci.  
   
 ## <a name="remarks"></a>Poznámky  
- V řadě případů budete chtít programování elementů, jako jsou třídy a struktury má být používána celý sestavení, ne jenom komponentou, který deklaruje je. Však možné, že chcete, aby být přístupné kód mimo sestavení (například pokud aplikace je Proprietární). Pokud chcete omezit přístup k elementu tímto způsobem, je možné deklarovat pomocí `Friend` modifikátor.  
+ V mnoha případech chcete programovací prvky, jako například třídy a struktury celé sestavení používané výhradně komponenty, který je deklaruje. Však nemusí je chcete být přístupné kódem mimo sestavení (například pokud je vlastní aplikace). Pokud chcete omezit přístup k prvku tímto způsobem, je možné deklarovat s použitím `Friend` modifikátor.  
   
- Kód v jiných tříd, struktur a moduly, které jsou zkompilovány do stejného sestavení přístup k veškerým `Friend` elementů v této sestavě.  
+ Kód v jiné třídy, struktury a moduly, které jsou kompilovány do stejného sestavení můžete přistupovat ke všem `Friend` prvky v tomto sestavení.  
   
- `Friend` přístup je často úroveň elementům programování aplikace v upřednostňované a `Friend` je přístup k výchozí úroveň rozhraní, modul, třídu nebo strukturu.  
+ `Friend` přístup je často upřednostňovanou úroveň pro programovací prvky aplikace, a `Friend` je přístup k výchozím úrovně rozhraní, modulu, třídy nebo struktury.  
   
- Můžete použít `Friend` pouze na úrovni modulu, rozhraní nebo obor názvů. Proto deklarace kontext `Friend` element musí být zdrojový soubor, obor názvů, rozhraní, modul, třídu nebo strukturu; nemůže být procedury.  
+ Můžete použít `Friend` pouze na úrovni modulu, rozhraní nebo oboru názvů. Proto deklarace kontext `Friend` element musí být zdrojový soubor, obor názvů, rozhraní, modulu, třídy nebo struktury; nemůže být procedury.  
 
 > [!NOTE]
-> Můžete také [Protected Friend](protected-friend.md) – modifikátor přístupu, které umožňuje přístup z v rámci třídy, v rámci odvozené třídy a do stejného sestavení, ve kterém je třída definovaná člena třídy. Chcete-li omezit přístup k člena z v rámci své třídy a z odvozené třídy ve stejném sestavení, použijte [privátní chráněné](private-protected.md) – modifikátor přístupu.
+> Můžete také použít [Protected Friend](protected-friend.md) modifikátor přístupu, který zpřístupňuje člen třídy z v rámci této třídy z odvozené třídy a ze stejného sestavení, ve kterém je třída definovaná. Chcete-li omezit přístup ke členovi v rámci své třídy a z odvozených tříd ve stejném sestavení, je použít [Private Protected](private-protected.md) modifikátor přístupu.
 
- Porovnání `Friend` a dalších přístup modifikátory, najdete v části [úrovně v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Porovnání `Friend` a dalších modifikátorů přístupu, najdete v článku [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 > [!NOTE]
->  Můžete určit, že je sestavení přátelského sestavení, která umožňuje přístup všechny typy a členy, které jsou označeny jako `Friend`. Další informace najdete v tématu [přátelských sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).  
+>  Můžete určit, že jiné sestavení je sestavení typu friend, což umožňuje přístup ke všem typy a členy, které jsou označeny jako `Friend`. Další informace najdete v tématu [přátelských sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).  
   
 ## <a name="example"></a>Příklad  
- Následující třídy používá `Friend` modifikátor umožňující ostatní programovací elementy v rámci stejného sestavení pro přístup k určitým členům.  
+ Následující třídy používá `Friend` modifikátor umožňující dalších programovacích prvků v rámci stejného sestavení pro přístup k určitým členům.  
   
  [!code-vb[VbVbalrAccessModifiers#1](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/friend_1.vb)]  
   
@@ -71,14 +71,14 @@ Určuje, že jeden nebo více deklarované programovací elementy jsou k dispozi
   
  [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
- [Public](../../../visual-basic/language-reference/modifiers/public.md)  
- [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
- [Private](../../../visual-basic/language-reference/modifiers/private.md)  
- [Privátní chráněný](./private-protected.md)   
- [Chráněné Friend](./protected-friend.md)   
- [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
- [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
- [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
+- [Public](../../../visual-basic/language-reference/modifiers/public.md)
+- [Protected](../../../visual-basic/language-reference/modifiers/protected.md)
+- [Private](../../../visual-basic/language-reference/modifiers/private.md)
+- [Private Protected](./private-protected.md)
+- [Protected Friend](./protected-friend.md)
+- [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
+- [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
+- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - literal XML serialization
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
-ms.openlocfilehash: ea824dd552d75a2dfd3d8351db36cc05e2942fad
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 52e0314b32c72934396e6be391b2bc656f518598
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43885889"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54642708"
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>Serializace XML pomocí webových služeb XML
 Serializace XML je základní přenos mechanismus použít v architektuře XML webových služeb, prováděné <xref:System.Xml.Serialization.XmlSerializer> třídy. Chcete-li řídit XML generovaných webové služby XML, můžete použít atributy uvedené v obou [atributy, aby ovládací prvek XML serializace](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md) a [atributy, aby ovládací prvek kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md) k třídy, vrácené hodnoty, parametry a pole souboru použitý k vytvoření webové služby XML (.asmx). Další informace o vytváření webové služby XML, naleznete v tématu [vytváření XML webové služby pomocí ASP.NET](https://msdn.microsoft.com/library/01dfc27c-c68e-4910-a0aa-5e4c2a766b0c).  
@@ -259,10 +259,10 @@ public class Order {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
-- [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
-- [Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)  
-- [Postupy: Přepsání serializace XML zakódované v protokolu SOAP](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)  
-- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
-- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)
+- [Postupy: Serializace objektu jako XML kódováním protokolu SOAP Stream](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
+- [Postupy: Přepsat kódovaný protokol SOAP serializace XML](../../../docs/standard/serialization/how-to-override-encoded-soap-xml-serialization.md)
+- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
+- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
 - [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

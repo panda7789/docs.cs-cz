@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c4bc0f44-eba2-4e96-9e03-1cc787461e61
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2af0f82e66da1c8db5e17863dfad861c8a7d195e
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: df928ec6494da6da368b3cef1f1d25a84a692aa2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45742486"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54741779"
 ---
 # <a name="how-to-return-a-value-from-a-task"></a>Postupy: Vrácení hodnoty z úlohy
 Tento příklad znázorňuje používání typu <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> pro vrácení hodnoty z vlastnosti <xref:System.Threading.Tasks.Task%601.Result%2A>. Vyžaduje, aby adresář C:\Users\Public\Pictures\Sample Pictures\ existoval a aby obsahoval soubory.  
@@ -30,5 +30,5 @@ Tento příklad znázorňuje používání typu <xref:System.Threading.Tasks.Tas
   
 ## <a name="see-also"></a>Viz také:
 
-- [Asynchronní programování založené na úlohách](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)  
+- [Asynchronní programování založené na úlohách](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)
 - [Výrazy lambda v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)

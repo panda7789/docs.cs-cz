@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7a96542ab5113311bba79cc552afd7f29e6eafa2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e6fee91146e99ba1f63ecafcbbdaae9d42675848
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33406393"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54731137"
 ---
 # <a name="corarraylayout-structure"></a>COR_ARRAY_LAYOUT – struktura
-Poskytuje informace o rozložení objektu pole v paměti.  
+Poskytuje informace o rozložení objektu array v paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,21 +46,21 @@ typedef struct COR_ARRAY_LAYOUT {
 |Člen|Popis|  
 |------------|-----------------|  
 |`componentID`|Identifikátor typu objektů, které obsahuje pole.|  
-|`componentType`|CorElementType – výčet hodnotu, která určuje, zda je součást odkaz kolekce paměti, – hodnotová třída nebo jednoduchého typu.|  
-|`firstElementOffset`|Posun oproti první prvek v poli.|  
+|`componentType`|Corelementtype – hodnotu výčtu, která určuje, zda je součást odkaz kolekce uvolnění paměti, hodnotová třída nebo jednoduchého typu.|  
+|`firstElementOffset`|Posun na první prvek v poli.|  
 |`elementSize`|Velikost jednotlivých prvků.|  
-|`countOffset`|Posun oproti počet prvků v poli.|  
+|`countOffset`|Posun do počtu prvků v poli.|  
 |`rankSize`|Velikost pořadí, v bajtech.|  
-|`numRanks`|Počet pořadí v poli.|  
+|`numRanks`|Číslo pořadí v poli.|  
 |`rankOffset`|Posun, ve kterém je pořadí spuštění.|  
   
 ## <a name="remarks"></a>Poznámky  
- `rankSize` Pole určuje velikost pořadí v vícerozměrné. Je přesné pro také jednorozměrná pole.  
+ `rankSize` Pole určuje velikost pořadí v vícerozměrné pole. Je přesné pro také jednorozměrná pole.  
   
- Hodnota `numRanks` 1 pro jednorozměrná pole a `N` pro multidimenzionální pole `N` dimenzí.  
+ Hodnota `numRanks` 1 pro jednorozměrné pole a `N` pro vícerozměrná pole `N` dimenze.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -68,6 +68,6 @@ typedef struct COR_ARRAY_LAYOUT {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

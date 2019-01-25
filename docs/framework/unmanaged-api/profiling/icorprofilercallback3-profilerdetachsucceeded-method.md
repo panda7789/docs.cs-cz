@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bffe293f7d29c34a22196336533202996f3fd129
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 52803fc04aa55f40a131e2d53dc4ef7dba70bcde
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33454032"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54727115"
 ---
 # <a name="icorprofilercallback3profilerdetachsucceeded-method"></a>ICorProfilerCallback3::ProfilerDetachSucceeded – metoda
-Upozorní profileru, že modul CLR (CLR) má uvolnit knihovnu DLL profileru.  
+Oznámí profileru, že modul CLR (CLR) se chystá uvolnění knihovny DLL profileru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,17 +34,17 @@ HRESULT ProfilerDetachSucceeded();
 ```  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrácená hodnota z této zpětné volání se ignoruje.  
+ Hodnota vrácená z této zpětné volání se ignoruje.  
   
 ## <a name="remarks"></a>Poznámky  
- `ProfilerDetachSucceeded` Zpětné volání se objeví po všechna vlákna se odpojili profileru kódu. Když tato metoda je volána, proveďte profileru poslední minutu úkoly, které nejsou vhodné pro jeho destruktor, jako je například upozornění jeho uživatelského rozhraní nebo součást protokolování. Ale profileru nesmějí provádět volání funkce na rozhraní, které jsou k dispozici CLR během této zpětného volání (například [icorprofilerinfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) nebo `IMetaData*` rozhraní).  
+ `ProfilerDetachSucceeded` Zpětného volání je vydána po všechna vlákna odpojili profileru kód. Když tato metoda je volána, profiler by měl provádět žádné poslední minuty úlohy, které nejsou vhodné pro jeho destruktor, jako je například upozornění jeho uživatelské rozhraní nebo protokolování součásti. Však nesmí volat funkce rozhraní, které jsou k dispozici v modulu CLR při tomto zpětném volání profileru (například [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) nebo `IMetaData*` rozhraní).  
   
- Modul CLR vytvoří záznam v protokolu událostí aplikace systému Windows k označení, že byla úspěšně dokončena operace odpojení.  
+ Modul CLR vytvoří záznam v protokolu událostí Windows aplikace označující, jestli se operace odpojení úspěšně dokončila.  
   
- Po návratu profileru z této zpětného volání modulu CLR uvolní objekt profileru a uvolní profileru knihovny DLL. Proto profileru nesmí provádět všechny akce, které by způsobily provádění nastat uvnitř profileru DLL po vrátí z této zpětného volání. Například nemůže vytvořit podprocesy ani registrace zpětných volání časovače.  
+ Po profiler vrátí z této zpětné volání, CLR uvolní objekt profileru a uvolní profiler DLL. Proto profiler nesmí provádět všechny akce, které by mohly způsobit provedení dotazu uvnitř knihovny DLL profileru po jeho vrácení z této zpětné volání. Například se nesmí vytvořit vlákna nebo registrace zpětných volání časovače.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -52,8 +52,8 @@ HRESULT ProfilerDetachSucceeded();
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
- [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
+- [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)

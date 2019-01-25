@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vyhledání okamžité předcházející na stejné úrovni (XPath – LINQ to XML) (C#)'
+title: 'Postupy: Najít okamžité předcházející na stejné úrovni (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 74c06201-0b1b-4b5e-b3ac-0092980614e6
-ms.openlocfilehash: c610ce4884e0760a03ec77aae4f38cf9c84a797a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 00b74edd67df65522f9f95e7f48c66a9e17a937c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507130"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54708477"
 ---
-# <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-c"></a>Postupy: vyhledání okamžité předcházející na stejné úrovni (XPath – LINQ to XML) (C#)
+# <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-c"></a>Postupy: Najít okamžité předcházející na stejné úrovni (XPath – LINQ to XML) (C#)
 Někdy budete chtít najít okamžité předcházející na stejné k uzlu. Z důvodu rozdíly v sémantice poziční predikáty. pro předchozí osy na stejné úrovni ve výrazu XPath, nikoli [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], to je jedna z zajímavější porovnání.  
   
 ## <a name="example"></a>Příklad  
@@ -52,6 +52,6 @@ Results are identical
 <Child3 />  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

@@ -8,21 +8,21 @@ helpviewer_keywords:
 - Firefox [WPF], detecting installation
 - detecting whether the WPF plug-in for Firefox is installed [WPF]
 ms.assetid: 5f839373-e3fb-44f1-88ad-4a0761f02189
-ms.openlocfilehash: ba411d662a8e5b0c4727e23c8d507e8924b6e9e3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f017aec8788d9ed38476262bba457f4621217519
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33546985"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54677976"
 ---
 # <a name="how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed"></a>Postupy: Zjištění instalovaného modulu plugin WPF pro Firefox
-Umožňuje systému Windows Presentation Foundation (WPF) modul plug-in pro Firefox [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a ztrátě souborů XAML pro spouštění v prohlížeči Mozilla Firefox. Toto téma obsahuje skript napsaný v HTML a JavaScript, který mohou správci zjistit, zda je nainstalována WPF modulu plug-in pro Firefox.  
+Umožňuje Windows Presentation Foundation (WPF) modul plugin pro Firefox [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a volné soubory XAML pro spuštění v prohlížeči Mozilla Firefox. Toto téma obsahuje skript napsané v HTML a JavaScript, která správcům umožňuje určit, jestli je nainstalovaná modulu Plugin WPF pro Firefox.  
   
 > [!NOTE]
->  Další informace o instalaci, nasazování a zjišťování [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], najdete v části [instalaci rozhraní .NET Framework pro vývojáře](../../../../docs/framework/install/guide-for-developers.md).  
+>  Další informace o instalaci, nasazení a zjištění [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], naleznete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../../../docs/framework/install/guide-for-developers.md).  
   
 ## <a name="example"></a>Příklad  
- Když [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] je nainstalovaná, klientský počítač je nakonfigurován v grafickém subsystému WPF, která se modul plug-in pro Firefox. Následující ukázkový skript kontroluje pro modul plug-in WPF Firefox a poté zobrazí zprávu příslušný stav.  
+ Když [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] je nainstalovaný, klientský počítač je nakonfigurovaný modul plugin WPF pro Firefox. Následující ukázkový skript kontroluje modulu Plugin WPF pro Firefox a zobrazí příslušnou stavovou zprávu.  
   
 ```  
 <HTML>  
@@ -54,15 +54,15 @@ Umožňuje systému Windows Presentation Foundation (WPF) modul plug-in pro Fire
 </HTML>  
 ```  
   
- Pokud kontrolu pro modul plug-in WPF Firefox úspěšné, se zobrazí následující zprávu:  
+ Kontrola modulu Plugin WPF pro Firefox je úspěšný, zobrazí se následující stavová zpráva:  
   
  `The WPF plug-in for Firefox is installed.`  
   
- Jinak se zobrazí následující zprávu:  
+ V opačném případě se zobrazí následující zpráva stavu:  
   
  `The WPF plug-in for Firefox is not installed. Please install or reinstall the .NET Framework 3.5.`  
   
-## <a name="see-also"></a>Viz také  
- [Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)  
- [Zjištění, jestli je nainstalovaná platforma .NET Framework 3.5](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-5-is-installed.md)  
- [Přehled aplikací Prohlížeče WPF XAML](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)
+- [Zjištění, jestli je nainstalovaná platforma .NET Framework 3.5](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-5-is-installed.md)
+- [Přehled aplikací Prohlížeče WPF XAML](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)

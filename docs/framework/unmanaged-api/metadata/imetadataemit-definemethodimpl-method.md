@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2ab66fecfaa66b5c56690950f6b19ecfd7e85e33
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a60d3bfc734480733f621c71a0141bb58a0eb71e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33443986"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745293"
 ---
 # <a name="imetadataemitdefinemethodimpl-method"></a>IMetaDataEmit::DefineMethodImpl – metoda
-Vytvoří definici implementace metody zděděno z rozhraní a vrátí token tuto definici implementace metod.  
+Vytvoří definici pro implementaci metody zděděné z rozhraní a vrátí token k definici této implementace metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,23 +39,23 @@ HRESULT DefineMethodImpl (
   
 #### <a name="parameters"></a>Parametry  
  `td`  
- [v] `mdTypedef` Tokenu z implementující třídu.  
+ [in] `mdTypedef` Token implementující třídu.  
   
  `tkBody`  
- [v] `mdMethodDef` Nebo `mdMethodRef` těla kód tokenu.  
+ [in] `mdMethodDef` Nebo `mdMethodRef` token těla kódu.  
   
  `tkDecl`  
- [v] `mdMethodDef` Nebo `mdMethodRef` tokenu z se implementuje metodu rozhraní.  
+ [in] `mdMethodDef` Nebo `mdMethodRef` token metody rozhraní se implementuje.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

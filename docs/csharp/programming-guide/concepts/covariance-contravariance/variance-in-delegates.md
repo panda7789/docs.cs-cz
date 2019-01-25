@@ -2,12 +2,12 @@
 title: Odchylky v delegátech (C#)
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-ms.openlocfilehash: 3dabac4e532198871cf05d639aa692751ab17ae1
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 75b1f94a3fc7a59393d6a114a2b5346dd0534297
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48027569"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54657204"
 ---
 # <a name="variance-in-delegates-c"></a>Odchylky v delegátech (C#)
 Rozhraní .NET framework 3.5 představil podporu odchylku pro spárování metod podpisů s typy delegáta v Všichni delegáti v jazyce C#. To znamená, že můžete přiřadit delegáty pouze metody, které mají odpovídající podpisy, ale také metody, které vracejí informace odvozené typy (kovariance) nebo, která přijímají parametry, které mají méně odvozené typy (kontravariance), než je určeno typ delegáta . To zahrnuje obecných a neobecných delegátů.  
@@ -196,8 +196,8 @@ public static void Test()
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Obecné typy](~/docs/standard/generics/index.md)  
-- [Použití odchylek pro delegáty Func a Action obecný (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)  
-- [Postupy: kombinování delegátů (vícesměroví delegáti)](../../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)
+- [Obecné typy](~/docs/standard/generics/index.md)
+- [Použití odchylek pro delegáty Func a Action obecný (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+- [Postupy: Kombinování delegátů (vícesměroví delegáti)](../../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)

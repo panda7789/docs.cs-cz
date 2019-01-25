@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: kombinace a porovnávání kolekcí řetězců (LINQ) (Visual Basic)'
+title: 'Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 243cfafc-9eaa-4354-a9df-d329f1d39913
-ms.openlocfilehash: 0e8df8e6e324b2a575fb6232c54a223cb35a4ef2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9948cdb4aa40ca12f7dd058fe12ffcd6462cdaae
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33644443"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54732658"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a>Postupy: kombinace a porovnávání kolekcí řetězců (LINQ) (Visual Basic)
-Tento příklad ukazuje způsob sloučení souborů, které obsahují řádků textu a pak výsledky seřaďte. Konkrétně ukazuje, jak provádět jednoduché zřetězení, spojení a průnik na dvě sady řádků textu.  
+# <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a>Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ) (Visual Basic)
+Tento příklad ukazuje, jak sloučit soubory, které obsahují řádků textu a pak výsledky seřaďte. Konkrétně ukazuje, jak provádět jednoduché zřetězení, sjednocení a průnik dvou sad řádků textu.  
   
 ### <a name="to-set-up-the-project-and-the-text-files"></a>Nastavení projektu a textové soubory  
   
-1.  Zkopírujte tyto názvy do textového souboru s názvem names1.txt a uložit do složky projektu:  
+1.  Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:  
   
     ```  
     Bankov, Peter  
@@ -29,7 +29,7 @@ Tento příklad ukazuje způsob sloučení souborů, které obsahují řádků t
     Garcia, Debra  
     ```  
   
-2.  Zkopírujte tyto názvy do textového souboru s názvem names2.txt a uložit ve složce projektu. Všimněte si, že dva soubory mají společné některé názvy.  
+2.  Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu. Mějte na paměti, že dva soubory mají společnou některé názvy.  
   
     ```  
     Liu, Jinghao  
@@ -163,8 +163,8 @@ End Class
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
+ Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

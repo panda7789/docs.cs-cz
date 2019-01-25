@@ -22,12 +22,12 @@ helpviewer_keywords:
 - server identifiers
 - scheme identifiers
 ms.assetid: 4b48e22d-e4e5-48f0-be80-d549bda97415
-ms.openlocfilehash: 213a714a04c31954b0091071b0625449916d154d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: ebc238f6739f7db23d570688ea3c6e2031f9699f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53146911"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54729129"
 ---
 # <a name="introducing-pluggable-protocols"></a>Úvod k připojitelným protokolům
 Rozhraní Microsoft .NET Framework poskytuje vícevrstvou, rozšiřitelnou a spravovatelnou implementaci internetových služeb, které je možné integrovat se rychle a snadno do svých aplikací. Přístup k Internetu tříd v <xref:System.Net> a <xref:System.Net.Sockets> obory názvů slouží k implementaci založeného na webu i internetových aplikací.  
@@ -66,8 +66,8 @@ Rozhraní Microsoft .NET Framework poskytuje vícevrstvou, rozšiřitelnou a spr
   
  Vývojáři, kteří znají rozhraní Windows Sockets nebo uživatelům, kteří potřebují poskytnuté programování na úrovni soketu ovládací prvek, který najdete **System.Net.Sockets** třídy podle jejich potřeb. **System.Net.Sockets** třídy jsou bod přechod ze spravované do nativního kódu v rámci **System.Net** třídy. Ve většině případů **System.Net.Sockets** třídy zařazování dat do jejich protějšky Windows 32-bit, jakož i zpracování žádné nezbytná bezpečnostní kontroly.  
   
-## <a name="see-also"></a>Viz také  
- [Programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md)  
- [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)  
- [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
- [Ukázky práce se sítí pro .NET v Galerie kódu na webu MSDN](https://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)
+## <a name="see-also"></a>Viz také:
+- [Programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md)
+- [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)
+- [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)
+- [Ukázky práce se sítí pro .NET v Galerie kódu na webu MSDN](https://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)

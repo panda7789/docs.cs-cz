@@ -10,12 +10,12 @@ helpviewer_keywords:
 - <remove> element, webRequestModules
 - <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
-ms.openlocfilehash: 2f787206c503c047a34383e12c5676296e39c1fe
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 380438bbc6e0c93b26d2afb77ff6b04308c61caf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190746"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54547063"
 ---
 # <a name="ltremovegt-element-for-webrequestmodules-network-settings"></a>&lt;Odebrat&gt; – Element pro webRequestModules (nastavení sítě)
 Vlastní modul požadavku webového odstraní z aplikace.  
@@ -23,7 +23,7 @@ Vlastní modul požadavku webového odstraní z aplikace.
  \<Konfigurace >  
 \<system.net>  
 \<webRequestModules>  
-\<Odebrat >  
+\<remove>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -77,6 +77,6 @@ Následující příklad odebere existující webový modul požadavku pro proto
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.WebRequest>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.WebRequest>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

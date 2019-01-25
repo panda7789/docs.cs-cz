@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 76d48b588db17a712ac698b604828520e38776a9
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: f76fb1d52754999c16021f2417aebb8825e46340
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54223153"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700010"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Průvodce: Programování pro Office (C# a Visual Basic)
 Visual Studio nabízí funkce v jazyce C# a Visual Basic, které zlepšují programování pro sadu Microsoft Office. Užitečné funkce jazyka C# zahrnout pojmenované a nepovinné argumenty a návratové hodnoty typu `dynamic`. Programování v modelu COM, můžete vynechat `ref` – klíčové slovo a získat přístup k indexované vlastnosti. Funkce v jazyce Visual Basic zahrnují automaticky implementované vlastnosti příkazy ve výrazech lambda a inicializátory kolekce.
@@ -190,23 +190,23 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 8.  V sadě Visual Studio, klikněte na tlačítko **Vyčistit řešení** na **sestavení** nabídky k vyčištění dokončený projekt.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Automaticky implementované vlastnosti (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)  
-- [Automaticky implementované vlastnosti (C#)](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)  
-- [Inicializátory kolekcí](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)  
-- [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
-- [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)  
-- [Předávání argumentů podle pozice a názvu](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)  
-- [Pojmenované a nepovinné argumenty](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)  
-- [Statické a dynamické vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
-- [dynamic](../../../csharp/language-reference/keywords/dynamic.md)  
-- [Použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)  
-- [Výrazy lambda (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
-- [Výrazy lambda (C#)](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
-- [Postupy: Použití indexovaných vlastností při programování vzájemné spolupráce COM](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md)  
-- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)  
-- [Návod: Vložení typů ze spravovaných sestavení](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
-- [Návod: Vytvoření vašeho prvního doplňku VSTO pro Excel](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)  
-- [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)  
+- [Automaticky implementované vlastnosti (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)
+- [Automaticky implementované vlastnosti (C#)](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)
+- [Inicializátory kolekcí](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
+- [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)
+- [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)
+- [Předávání argumentů podle pozice a názvu](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)
+- [Pojmenované a nepovinné argumenty](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)
+- [Statické a dynamické vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
+- [dynamic](../../../csharp/language-reference/keywords/dynamic.md)
+- [Použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)
+- [Výrazy lambda (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+- [Výrazy lambda (C#)](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
+- [Postupy: Použití indexovaných vlastností při programování vzájemné spolupráce COM](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md)
+- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)
+- [Návod: Vložení typů ze spravovaných sestavení](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)
+- [Návod: Vytvoření vašeho prvního doplňku VSTO pro Excel](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)
+- [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)
 - [Interoperabilita](../../../csharp/programming-guide/interop/index.md)

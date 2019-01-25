@@ -8,15 +8,15 @@ helpviewer_keywords:
 - x:Array [XAML Services]
 - XAML [XAML Services], x:Array markup extension
 ms.assetid: c5358e14-d24c-44c7-b5eb-6062a4fd981c
-ms.openlocfilehash: 7c728b63c16d8f24c4ad68d07e6d174f510204ce
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e94928f17a31cdadae11f69c37a4f148452b5d2f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33565010"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54699737"
 ---
 # <a name="xarray-markup-extension"></a>x:Array – rozšíření značek
-Poskytuje obecné podporu pro pole objektů v jazyce XAML prostřednictvím rozšíření značek. To odpovídá `x:ArrayExtension` typ jazyka XAML v [MS-XAML].  
+Poskytuje obecné podporu pro pole objektů v XAML pomocí rozšíření kódu. To odpovídá `x:ArrayExtension` typ XAML v [MS-XAML].  
   
 ## <a name="xaml-object-element-usage"></a>Použití elementu objektu XAML  
   
@@ -30,30 +30,30 @@ Poskytuje obecné podporu pro pole objektů v jazyce XAML prostřednictvím roz�
   
 |||  
 |-|-|  
-|`typeName`|Název typu, vaše `x:Array` bude obsahovat. `typeName` může být (a často je) předponu pro jazyk XAML zadejte obor názvů, který obsahuje XAML definice.|  
-|`arrayContents`|Obsah položky, který je přiřazen k vnitřní `ArrayExtension.Items` vlastnost. Obvykle jsou tyto položky zadané jako jeden nebo více objektů elementů obsažených v rámci `x:Array` otvírání a zavírání značky. Zadat objekty v tomto poli se měl přiřaditelné k typu XAML zadaný v `typeName`.|  
+|`typeName`|Název typu, který vaše `x:Array` bude obsahovat. `typeName` může být (a často je) předponu pro XAML, obor názvů, který obsahuje XAML definice typů.|  
+|`arrayContents`|Obsah položky, která je přiřazena vnitřní `ArrayExtension.Items` vlastnost. Obvykle tyto položky jsou specifikovány jako jeden nebo více elementů objektu, které jsou obsažené v `x:Array` počátečních a koncových značek. Objekty zadané tady se má být přiřaditelný k typu XAML určeného v `typeName`.|  
   
 ## <a name="remarks"></a>Poznámky  
- `Type` je povinný atribut pro všechny `x:Array` objektu elementy. A `Type` hodnota parametru není nutné používat `x:Type` – rozšíření značek; krátké název typu je typ jazyka XAML, které lze zadat jako řetězec.  
+ `Type` je povinný atribut pro všechny `x:Array` objektu elementy. A `Type` hodnota parametru není nutné používat `x:Type` – rozšíření značek; krátký název typu je typ, XAML, který lze zadat jako řetězec.  
   
- V rozhraní .NET Framework XAML Services implementace, o vztah mezi vstupní typ jazyka XAML a výstup CLR <xref:System.Type> vytvořený pole je ovlivněno kontext služby pro rozšíření značek. Výstup <xref:System.Type> je <xref:System.Xaml.XamlType.UnderlyingType%2A> vstupní typu XAML, po vyhledávání nezbytné <xref:System.Xaml.XamlType> na základě kontextu schématu XAML a <xref:System.Windows.Markup.IXamlTypeResolver> service poskytuje kontext.  
+ V implementaci rozhraní .NET Framework XAML Services, vztah mezi XAML typ vstupu a výstupu CLR <xref:System.Type> vytvořené pole je ovlivněno kontext služby pro rozšíření značek. Výstup <xref:System.Type> je <xref:System.Xaml.XamlType.UnderlyingType%2A> vstupní typ XAML po vyhledání nezbytné <xref:System.Xaml.XamlType> založené na kontext schématu XAML a <xref:System.Windows.Markup.IXamlTypeResolver> service poskytuje kontext.  
   
- Při zpracování, že je obsah pole jsou přiřazeny `ArrayExtension.Items` vnitřní vlastnost. V <xref:System.Windows.Markup.ArrayExtension> implementace, to je reprezentována <xref:System.Windows.Markup.ArrayExtension.Items%2A?displayProperty=nameWithType>.  
+ Při zpracování, že je obsah pole jsou přiřazeny k `ArrayExtension.Items` vnitřní vlastnost. V <xref:System.Windows.Markup.ArrayExtension> implementace, to je reprezentována <xref:System.Windows.Markup.ArrayExtension.Items%2A?displayProperty=nameWithType>.  
   
- Implementace rozhraní .NET Framework XAML Services je definované zpracování pro toto rozšíření značek <xref:System.Windows.Markup.ArrayExtension> třídy. <xref:System.Windows.Markup.ArrayExtension> není zapečetěná a může jako základ pro implementaci rozšíření značek pro typ vlastní pole.  
+ V implementaci rozhraní .NET Framework XAML Services zpracování tohoto rozšíření značek definováno <xref:System.Windows.Markup.ArrayExtension> třídy. <xref:System.Windows.Markup.ArrayExtension> není zapečetěná a může použít jako základ pro implementaci rozšíření značek pro typ vlastního pole.  
   
- `x:Array` je že více určený pro obecné rozšiřitelnosti jazyka v jazyce XAML. Ale `x:Array` může být také užitečná pro zadání hodnoty XAML určité vlastnosti, které provést podporované XAML kolekce jako strukturovaný vlastnost obsah. Například můžete zadat obsah <xref:System.Collections.IEnumerable> vlastnost s `x:Array` využití.  
+ `x:Array` je, že informace určené pro běžné rozšiřitelnost jazyka XAML. Ale `x:Array` může také být vhodné při zadání hodnoty XAML určitých vlastností, které trvat XAML nepodporuje kolekce jako strukturované vlastnost obsah. Můžete například zadat obsah <xref:System.Collections.IEnumerable> vlastnost s `x:Array` využití.  
   
- `x:Array` je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. `x:Array` je částečně výjimkou tohoto pravidla, protože místo zpracování hodnota atributu alternativní, `x:Array` poskytuje alternativní zpracování část jeho obsahu vnitřní text. Toto chování umožňuje typy, které nemusí být podporován pomocí existujícího modelu obsahu seskupeny do pole a odkazuje později v kódu přístup k poli s názvem; můžete volat <xref:System.Array> metody k načtení pole jednotlivých položek.  
+ `x:Array` je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. `x:Array` výjimkou z tohoto pravidla je částečně, protože namísto zadávání alternativní atribut hodnotu zpracování, `x:Array` poskytuje alternativní zpracování její obsah vnitřní text. Díky tomuto chování může typy, které nemusí být podporovány existujícího obsahu modelu seskupeny do pole a odkazuje později v modelu code-behind díky přístupu do pojmenované pole. můžete volat <xref:System.Array> metody k získání položek jednotlivá pole.  
   
- Všechna rozšíření značek v jazyce XAML použít složené závorky ({,} `)` v jejich syntaxi atribut, který je konvence, podle kterého XAML procesor rozpozná, že rozšíření značek musí zpracovat hodnotu atributu. Další informace o rozšíření značek v obecné najdete v tématu [převaděče typů a rozšíření značek pro jazyk XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md).  
+ Všechna rozšíření značek v XAML použít složené závorky ({,} `)` v syntaxi atributu, což je konvence, podle kterého na procesor XAML rozpozná, že rozšíření značek musí zpracovat hodnotu atributu. Další informace o rozšíření značek v obecné najdete v tématu [převaděče typů a rozšíření značek pro XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md).  
   
- V jazyce XAML 2009 `x:Array` je definován jako jazyk primitivní místo rozšíření značek. Další informace najdete v tématu [předdefinované typy obecných primitiv jazyka XAML](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md).  
+ V XAML 2009 `x:Array` je definován jako primitivní místo rozšíření značek jazyka. Další informace najdete v tématu [předdefinované typy obecných primitiv jazyka XAML](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md).  
   
-## <a name="wpf-usage-notes"></a>Poznámky pro použití WPF  
- Obvykle objekt prvky, které naplnit `x:Array` nejsou elementy, které existují v [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] oboru názvů jazyka XAML a vyžadovat předponu mapování do oboru názvů jazyka XAML, jiné než výchozí.  
+## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
+ Obvykle elementů objektu, která naplní `x:Array` nejsou prvky, které existují v [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] oboru názvů XAML a vyžadují mapování předpony oboru názvů XAML jiné než výchozí.  
   
- Například následující je jednoduché pole dva řetězce, pomocí `sys` předpony (a také `x`) definované na úrovni pole.  
+ Například tady je jednoduchý pole dvou řetězců s `sys` předpony (a také `x`) definované na úrovni pole.  
   
  [xaml]  
   
@@ -67,8 +67,8 @@ Poskytuje obecné podporu pro pole objektů v jazyce XAML prostřednictvím roz�
   
  `</x:Array>`  
   
- Pro vlastní typy, které se používají jako elementy pole musí podporovat třídu i požadavky na vytváření instancí v jazyce XAML jako elementy objektu. Další informace najdete v tématu [XAML a vlastní třídy pro grafický subsystém WPF](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md).  
+ Pro vlastní typy, které se používají jako prvky pole musí podporovat třídu také požadavky pro instance v XAML jako elementů objektu. Další informace najdete v tématu [XAML a vlastní třídy pro WPF](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md).  
   
-## <a name="see-also"></a>Viz také  
- [Rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
- [Typy migrované z prostředí WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)
+## <a name="see-also"></a>Viz také:
+- [Rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+- [Typy migrované z prostředí WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 195f311d58f2169d715bb33986ee6e591622f377
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fb73980faa64464c572945fe5ad04e015dc8805b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445040"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720649"
 ---
 # <a name="cvstruct-structure"></a>CVStruct – struktura
-Obsahuje informace, které se používá při instalaci modulu nebo složený bitové kopie.  
+Obsahuje informace, které se použijí při instalaci modulu nebo složený bitové kopie.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,19 +41,19 @@ typedef struct {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|Hlavní|Číslo sestavení hlavní verzi.|  
-|Vedlejší|Číslo sestavení podverze.|  
-|Sub|Číslo dílčí sestavení.|  
+|Hlavní|Číslo hlavní verze sestavení.|  
+|Vedlejší|Číslo podverze sestavení.|  
+|Sub|Dílčí číslo sestavení.|  
 |Sestavení|Číslo sestavení.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)

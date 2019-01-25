@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 88bf5b04-d371-4edb-ba38-01ec7cabaacf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a6c151798c807206cc7f4b2fbeb21e75e9142379
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 3085812f2467c1e73d94335530441d6bb12db6af
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47234676"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54613802"
 ---
 # <a name="generic-interfaces"></a>Obecná rozhraní
 Toto téma obsahuje základní informace o obecných rozhraní, které poskytují společné funkce napříč řady obecných typů.  
@@ -44,9 +44,9 @@ Toto téma obsahuje základní informace o obecných rozhraní, které poskytuj�
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections.Generic?displayProperty=nameWithType>  
-- <xref:System.Collections.ObjectModel?displayProperty=nameWithType>  
-- [Obecné typy](../../../docs/standard/generics/index.md)  
-- [Generování kolekcí v architektuře .NET Framework](../../../docs/standard/generics/collections.md)  
-- [Obecné delegáty pro manipulaci s poli a seznamy](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)  
+- <xref:System.Collections.Generic?displayProperty=nameWithType>
+- <xref:System.Collections.ObjectModel?displayProperty=nameWithType>
+- [Obecné typy](../../../docs/standard/generics/index.md)
+- [Generování kolekcí v architektuře .NET Framework](../../../docs/standard/generics/collections.md)
+- [Obecné delegáty pro manipulaci s poli a seznamy](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)
 - [Kovariance a kontravariance](../../../docs/standard/generics/covariance-and-contravariance.md)

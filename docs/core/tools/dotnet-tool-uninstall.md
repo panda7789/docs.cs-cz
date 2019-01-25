@@ -2,12 +2,12 @@
 title: odinstalační příkaz DotNet
 description: Příkaz odinstalovat nástroj dotnet odinstaluje zadané globální nástroji .NET Core z vašeho počítače.
 ms.date: 05/29/2018
-ms.openlocfilehash: 2ac0046d012fcf4a4be1c9bfa2e942e35b2c7290
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 4d53d305131e3399ab5d9c19f9319f3ba3544c19
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53168348"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54680920"
 ---
 # <a name="dotnet-tool-uninstall"></a>Odinstalace nástrojů DotNet
 
@@ -65,4 +65,4 @@ Odinstaluje [dotnetsay](https://www.nuget.org/packages/dotnetsay/) globální n�
 
 ## <a name="see-also"></a>Viz také:
 
-* [Globální nástroje .NET core](global-tools.md)
+- [.NET Core Global Tools](global-tools.md)

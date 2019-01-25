@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fbe41a3102a61052b2eceae7ccce3b93fd1bef6f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9074d7c46e53ff46e34973cd8143abc9e621fb1e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426098"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683294"
 ---
 # <a name="isymunmanagedscope2getconstantcount-method"></a>ISymUnmanagedScope2::GetConstantCount – metoda
-Získá počet konstanty definované v tomto rozsahu.  
+Získá počet konstanty definované v rámci tohoto oboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,13 +36,13 @@ HRESULT GetConstantCount(
   
 #### <a name="parameters"></a>Parametry  
  `pRetVal`  
- [out] Ukazatel na `ULONG32` velikostí, která přijme ve znacích vyrovnávací paměti musí obsahovat konstanty.  
+ [out] Ukazatel `ULONG32` , která obdrží velikost ve znacích, vyrovnávací paměti musí obsahovat konstanty.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedScope2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedScope2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope2-interface.md)

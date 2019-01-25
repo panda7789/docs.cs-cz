@@ -15,14 +15,14 @@ helpviewer_keywords:
 - writing to files [Visual Basic], walkthroughs
 - I/O [Visual Basic], reading text from files
 ms.assetid: cae77565-9f78-4e46-8e42-eb2f9f8e1ffd
-ms.openlocfilehash: ab1c119d2c5cd9bfa0ff725774144bc65817cad4
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
+ms.openlocfilehash: f199cc8c58dbcbb0fce17dbf3c7b8e198daf0305
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332906"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709722"
 ---
-# <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>Návod: Práce se soubory a adresáři v jazyce Visual Basic
+# <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>Průvodce: Práce se soubory a adresáře v jazyce Visual Basic
 Tento názorný postup obsahuje úvod do základní informace o souboru vstupně-výstupních operací v jazyce Visual Basic. Popisuje postup vytvoření malou aplikaci, která obsahuje seznam a zkoumá textových souborů v adresáři. Pro každý soubor vybraný text aplikace poskytuje atributy souboru a prvního řádku obsahu. Je k dispozici možnost při zápisu informací do souboru protokolu.  
   
  Tento návod používá členy `My.Computer.FileSystem Object`, které jsou k dispozici v jazyce Visual Basic. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.FileIO.FileSystem>. Na konci tohoto průvodce, ekvivalentem příkladu je zadána, který používá třídy z <xref:System.IO> oboru názvů.  
@@ -33,7 +33,7 @@ Tento názorný postup obsahuje úvod do základní informace o souboru vstupně
   
 1.  Na **souboru** nabídky, klikněte na tlačítko **nový projekt**.  
   
-     **Nový projekt** zobrazí se dialogové okno.  
+     Zobrazí se dialogové okno **Nový projekt**.  
   
 2.  V **nainstalované šablony** podokně rozbalte **jazyka Visual Basic**a potom klikněte na tlačítko **Windows**. V **šablony** podokně kliknout prostředním tlačítkem myši, **formulářová aplikace Windows**.  
   
@@ -45,11 +45,11 @@ Tento názorný postup obsahuje úvod do základní informace o souboru vstupně
   
     |Ovládací prvek|Vlastnost|Hodnota|  
     |-------------|--------------|-----------|  
-    |**ListBox**|**Jméno**|`filesListBox`|  
-    |**Tlačítko**|**Jméno**<br /><br /> **Text**|`browseButton`<br /><br /> **Procházet**|  
-    |**Tlačítko**|**Jméno**<br /><br /> **Text**|`examineButton`<br /><br /> **Prozkoumat**|  
-    |**CheckBox**|**Jméno**<br /><br /> **Text**|`saveCheckBox`<br /><br /> **Uložit výsledky**|  
-    |**FolderBrowserDialog**|**Jméno**|`FolderBrowserDialog1`|  
+    |**ListBox**|**Název**|`filesListBox`|  
+    |**Tlačítko**|**Název**<br /><br /> **Text**|`browseButton`<br /><br /> **Procházet**|  
+    |**Tlačítko**|**Název**<br /><br /> **Text**|`examineButton`<br /><br /> **Prozkoumat**|  
+    |**CheckBox**|**Název**<br /><br /> **Text**|`saveCheckBox`<br /><br /> **Uložit výsledky**|  
+    |**FolderBrowserDialog**|**Název**|`FolderBrowserDialog1`|  
   
 ### <a name="to-select-a-folder-and-list-files-in-a-folder"></a>Vyberte složku, a seznam souborů ve složce  
   
@@ -97,7 +97,7 @@ Tento názorný postup obsahuje úvod do základní informace o souboru vstupně
   
      <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A> Přečte obsah souboru do metody <xref:System.IO.StreamReader>. První řádek obsah se získávají z `StreamReader` a je přidán `StringBuilder`.  
   
-4.  Spusťte aplikaci. Klikněte na tlačítko **Procházet**a přejděte do složky obsahující soubory s příponou .txt. Klikněte na tlačítko **OK**.  
+4.  Spusťte aplikaci. Klikněte na tlačítko **Procházet**a přejděte do složky obsahující soubory s příponou .txt. Klikněte na **OK**.  
   
      Vyberte soubor v `ListBox`a potom klikněte na tlačítko **vyhledejte**. A `MessageBox` zobrazuje informace o souboru.  
   
@@ -159,8 +159,8 @@ Tento názorný postup obsahuje úvod do základní informace o souboru vstupně
   
  [!code-vb[VbVbcnMyFileSystem#111](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/walkthrough-manipulating-files-and-directories_9.vb)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IO>  
- <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
- <xref:Microsoft.VisualBasic.FileIO.FileSystem.CurrentDirectory%2A>  
- [Návod: Práce se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.IO>
+- <xref:Microsoft.VisualBasic.FileIO.FileSystem>
+- <xref:Microsoft.VisualBasic.FileIO.FileSystem.CurrentDirectory%2A>
+- [Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)

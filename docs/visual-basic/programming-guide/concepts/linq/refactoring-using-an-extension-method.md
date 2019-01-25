@@ -2,24 +2,24 @@
 title: Refaktoring pomocí metody rozšíření (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: d87ae99a-cfa9-4a31-a5e4-9d6437be6810
-ms.openlocfilehash: e613994651ad33b8e9f4aa78c0c2897431246344
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 429f1fb106eca6b6a9ce0f64ea81c260c10a088a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33647901"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671574"
 ---
 # <a name="refactoring-using-an-extension-method-visual-basic"></a>Refaktoring pomocí metody rozšíření (Visual Basic)
-Tento příklad vychází na předchozí příklad, [načítání textu odstavců (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), podle refaktoring zřetězení řetězců pomocí čistý funkci, která je implementovaná jako metody rozšíření.  
+Tento příklad je založen na předchozím příkladu [načtení textu odstavců (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), refaktoring zřetězení řetězců pomocí čisté funkce, která je implementována jako metody rozšíření.  
   
- Předchozí příklad používá <xref:System.Linq.Enumerable.Aggregate%2A> operátor standardní dotazu k řetězení více řetězců do jednoho řetězce. Je však pohodlnější zápis metody rozšíření Chcete-li to provést, protože výsledná menší a více jednoduchých dotazů.  
+ Předchozí příklad použitý <xref:System.Linq.Enumerable.Aggregate%2A> operátor standardního dotazu pro řetězení více řetězců do jednoho řetězce. Je však pohodlnější zapisovat metodu rozšíření k tomu, protože výsledná menší a více jednoduchých dotazů.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad zpracuje WordprocessingML dokumentu, načítání odstavců, styl jednotlivých odstavců a každý odstavec. Tento příklad vychází v předchozích příkladech v tomto kurzu.  
+ V tomto příkladu zpracovává dokumentu WordprocessingML načtení odstavců, styl k jednotlivým odstavcům a každý odstavec. Tento příklad je založen na předchozí příklady v tomto kurzu.  
   
- V příkladu obsahuje více přetížení `StringConcatenate` metoda.  
+ Tento příklad obsahuje více přetížení `StringConcatenate` metody.  
   
- Pokyny pro vytvoření zdrojový dokument v tomto příkladu můžete najít [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Můžete najít pokyny pro vytvoření zdrojového dokumentu v tomto příkladu v [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
   
  Tento příklad používá třídy z WindowsBase sestavení. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
@@ -65,9 +65,9 @@ End Function
 ```  
   
 ## <a name="example"></a>Příklad  
- Existují čtyři přetížení `StringConcatenate` metoda. Jedním přetížením jednoduše vezme kolekci řetězce a vrátí jeden řetězec. Další přetížení může trvat kolekce libovolného typu a delegáta této projekty z jednotlivý prvek kolekce na řetězec. Existují dva další přetížení, které umožňují určit řetězec oddělovače.  
+ Existují čtyři přetížení `StringConcatenate` metody. Jedním přetížením jednoduše vezme kolekci řetězců a vrátí jeden řetězec. Další přetížení může trvat kolekci libovolného typu a delegáta této projektů z jednotlivý prvek kolekce na řetězec. Existují dvě další přetížení, které vám umožňují určit oddělovacího řetězce.  
   
- Následující kód používá všechny čtyři přetížení.  
+ Následující kód používá všechna čtyři přetížení.  
   
 ```vb  
 Dim numbers As String() = {"one", "two", "three"}  
@@ -90,7 +90,7 @@ one:two:three:
 ```  
   
 ## <a name="example"></a>Příklad  
- V příkladu se teď dají změnit využívat nové metody rozšíření:  
+ V příkladu teď můžete upravit tak, aby využít novou metodu rozšíření:  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -216,7 +216,7 @@ Module Module1
 End Module  
 ```  
   
- Tento příklad vytvoří následující výstup v případě použitého pro dokument popsané v [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Tento příklad vytvoří následující výstup při použití u dokumentu je popsáno v [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -236,13 +236,13 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
- Všimněte si, že tento refaktoring jeho variantě refaktoring do čistého funkce. Další téma vás seznámí myšlenku řešení do čistého funkce podrobněji.  
+ Všimněte si, že tento Refaktoring je varianta refaktoring do čistých funkcí. Další téma vás seznámí představu o které budou zohledňovat do čistých funkcí podrobněji.  
   
 ## <a name="next-steps"></a>Další kroky  
- Další příklad ukazuje, jak Refaktorovat tento kód jiným způsobem, pomocí čistý funkce:  
+ Následující příklad ukazuje, jak Refaktorovat tento kód jiným způsobem pomocí čisté funkce:  
   
--   [Refaktoring pomocí čistý funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
+-   [Refaktoring pomocí čisté funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
   
-## <a name="see-also"></a>Viz také  
- [Kurz: Manipulace se obsah v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
- [Refaktoring do čistého funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Refaktoring do čistých funkcí (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

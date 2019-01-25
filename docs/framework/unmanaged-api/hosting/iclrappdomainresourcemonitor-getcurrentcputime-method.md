@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 53deeab574716a426c1c4617abe279e72f27c04e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 63f5687787a9b0cdb30790b7e80e4160cdf413f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433518"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54737241"
 ---
 # <a name="iclrappdomainresourcemonitorgetcurrentcputime-method"></a>ICLRAppDomainResourceMonitor::GetCurrentCpuTime – metoda
-Získá celkový procesorového času, který byl použit pro všechna vlákna při provádění v aktuální doméně aplikace, že se od vytvoření domény aplikace.  
+Získá celkový procesorový čas, který byl použit pro všemi vlákny při provádění v aktuální doméně aplikace, od vytvoření domény aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,33 +36,33 @@ HRESULT GetCurrentCpuTime([in]  DWORD dwAppDomainId,
   
 #### <a name="parameters"></a>Parametry  
  `dwAppDomainId`  
- [v] ID domény požadovaná aplikace.  
+ [in] ID domény požadované aplikace.  
   
  `pMilliseconds`  
- [out] Ukazatel na celkový procesorový čas, který byl použit pro všechna vlákna při provádění v aktuální doméně aplikace od vytvoření domény aplikace. Tento parametr může být `null`.  
+ [out] Ukazatel na celkový procesorový čas, který byl použit všemi vlákny při provádění v aktuální doméně aplikace, od vytvoření domény aplikace. Tento parametr může být `null`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|COR_E_APPDOMAINUNLOADED|Doména aplikace byl odpojen nebo neexistuje.|  
-|E_FAIL|Sledování prostředků domény aplikace není povoleno.<br /><br /> -nebo-<br /><br /> Jiné chyby.|  
+|COR_E_APPDOMAINUNLOADED|Aplikační domény byl odpojen nebo neexistuje.|  
+|E_FAIL|Sledování prostředků domény aplikace není povoleno.<br /><br /> -nebo-<br /><br /> Všechny ostatní chyby.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je ekvivalentem nespravované spravované <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType> vlastnost.  
+ Tato metoda odpovídá nespravované spravované <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType> vlastnost.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRAppDomainResourceMonitor – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
- [Sledování prostředků domény aplikace](../../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)  
- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRAppDomainResourceMonitor – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Sledování prostředků domény aplikace](../../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)
+- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

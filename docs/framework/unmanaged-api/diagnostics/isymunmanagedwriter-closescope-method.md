@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a11f689f1fa93e1122ffcc78187c4287db7ea534
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e33d69e319d7817a54dca76526b6c3ee9bb6384f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33427021"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54729967"
 ---
 # <a name="isymunmanagedwriterclosescope-method"></a>ISymUnmanagedWriter::CloseScope – metoda
-Zavře aktuální lexikální obor.  
+Zavře aktuální lexikálním rozsahu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,18 +36,18 @@ HRESULT CloseScope(
   
 #### <a name="parameters"></a>Parametry  
  `endOffset`  
- [v] Posun od začátku metodu bodu na konci posledního instrukce v oboru lexikální v bajtech.  
+ [in] Posun od začátku metody bod na konci posledního instrukce v lexikálním rozsahu, v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- Jakmile je uzavřený obor, může být definováno žádné další proměnné v něm.  
+ Po zavření obor žádné další proměnné lze definovat v něm.  
   
- [Isymunmanagedwriter::openscope –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openscope-method.md) vrátí identifikátor neprůhledného obor, který lze použít s [isymunmanagedwriter::setscoperange –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setscoperange-method.md) k definování oboru později je počáteční a koncové posunutí. V takovém případě posunutí předaný `ISymUnmanagedWriter::OpenScope` a `ISymUnmanagedWriter::CloseScope` jsou ignorovány. Identifikátory oboru jsou platné pouze v aktuální metoda.  
+ [Isymunmanagedwriter::openscope –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openscope-method.md) vrátí neprůhledný oboru identifikátor, který lze použít s [isymunmanagedwriter::setscoperange –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setscoperange-method.md) a později určete obor je počáteční a koncové odsazení. V takovém případě posunutí předán `ISymUnmanagedWriter::OpenScope` a `ISymUnmanagedWriter::CloseScope` jsou ignorovány. Identifikátory oboru jsou platné pouze v aktuální metodě.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)

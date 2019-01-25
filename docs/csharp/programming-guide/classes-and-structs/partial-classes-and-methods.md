@@ -7,12 +7,12 @@ helpviewer_keywords:
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 222a47989537f09fd78c4a3b17fa8c1a5478d73f
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: b960bbf0a35a917d9143a0f47ce3219b6cb10ab4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53243462"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54713312"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Částečné třídy a metody (Průvodce programováním v C#)
 Je možné rozdělit definici [třídy](../../../csharp/language-reference/keywords/class.md), [struktura](../../../csharp/language-reference/keywords/struct.md), [rozhraní](../../../csharp/language-reference/keywords/interface.md) nebo metoda přes dvě nebo více zdrojových souborů. Každý zdrojový soubor obsahuje část definice typu nebo metodě a všechny části spolu při kompilaci aplikace.  
@@ -162,10 +162,10 @@ partial void onNameChanged()
 
 Další informace najdete v tématu [částečné typy](~/_csharplang/spec/classes.md#partial-types) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)  
-- [Struktury](../../../csharp/programming-guide/classes-and-structs/structs.md)  
-- [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)
+- [Struktury](../../../csharp/programming-guide/classes-and-structs/structs.md)
+- [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)
 - [partial (typ)](../../../csharp/language-reference/keywords/partial-type.md)

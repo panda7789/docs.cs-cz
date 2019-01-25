@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e55bc18c7a41e235d1ba6274067c45c26dc7262a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 540f9d1a765ff46235f3c3d62f5da4a00b8ab85a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405448"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745477"
 ---
 # <a name="iclrdatatargetwritevirtual-method"></a>ICLRDataTarget::WriteVirtual – metoda
-Zapíše data ze zadané vyrovnávací paměti na adresu zadanou virtuální paměti.  
+Zapisuje data ze zadané vyrovnávací paměti na adresu zadanou virtuální paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,19 +41,19 @@ HRESULT WriteVirtual (
   
 #### <a name="parameters"></a>Parametry  
  `address`  
- [v] CLRDATA_ADDRESS, která ukládá adres virtuální paměti.  
+ [in] CLRDATA_ADDRESS, která ukládá adresu virtuální paměti.  
   
  `buffer`  
- [v] Ukazatel na vyrovnávací paměť, která ukládá data, která mají být zapsána.  
+ [in] Ukazatel do vyrovnávací paměti, která ukládá data, která má být proveden zápis.  
   
  `bytesRequested`  
- [v] Počet bajtů, které mají být zapsána.  
+ [in] Počet bajtů, které mají být zapsána.  
   
  `bytesWritten`  
  [out] Ukazatel na skutečný počet bajtů, které byly vytvořeny.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   
@@ -61,5 +61,5 @@ HRESULT WriteVirtual (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

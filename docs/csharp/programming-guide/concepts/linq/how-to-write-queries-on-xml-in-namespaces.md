@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vytváření dotazů na XML v oborech názvů (C#)'
+title: 'Postupy: Vytváření dotazů na XML v názvových prostorech (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7c54df81-15e4-4091-8c81-a87637029130
-ms.openlocfilehash: 29c4b01bfce75ce71d5214fef0cc55cd82c4e776
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e6b966e90d1f7fc86efaa422ecd8afb030d97163
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525640"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54722091"
 ---
-# <a name="how-to-write-queries-on-xml-in-namespaces-c"></a>Postupy: vytváření dotazů na XML v oborech názvů (C#)
+# <a name="how-to-write-queries-on-xml-in-namespaces-c"></a>Postupy: Vytváření dotazů na XML v názvových prostorech (C#)
 Chcete-li napsat dotaz na XML, který je v oboru názvů, musíte použít <xref:System.Xml.Linq.XName> objekty, které mají správný obor názvů.  
   
  Pro jazyk C#, je nejběžnější přístup k inicializaci <xref:System.Xml.Linq.XNamespace> řetězec, který obsahuje identifikátor URI, pak pomocí přetížení operátoru sčítání zkombinovat s místním názvem oboru názvů.  
@@ -76,6 +76,6 @@ foreach (XElement el in c1)
 3  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)

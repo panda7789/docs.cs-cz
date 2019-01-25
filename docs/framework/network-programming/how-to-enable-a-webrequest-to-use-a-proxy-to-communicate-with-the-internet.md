@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: povolení WebRequest ke komunikaci s Internetem použití proxy serveru'
+title: 'Postupy: Povolit žádosti WebRequest pro komunikaci s Internetem použití proxy serveru'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 63c0ef2c-44b5-4c54-9804-ba0b9b001ac7
-ms.openlocfilehash: 09a50794995b9157504ceff8dd578d709bfee020
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d8bcf20831a806694ab40ed7584365d8109e1460
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190436"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689010"
 ---
-# <a name="how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet"></a>Postupy: povolení WebRequest ke komunikaci s Internetem použití proxy serveru
+# <a name="how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet"></a>Postupy: Povolit žádosti WebRequest pro komunikaci s Internetem použití proxy serveru
 Tento příklad vytvoří instanci globální proxy, které umožní libovolné <xref:System.Net.WebRequest> ke komunikaci s Internetem použití proxy serveru. Příklad předpokládá, že je název proxy serveru `webproxy` a že komunikaci na portu 80, standardní port HTTP.  
   
 ## <a name="example"></a>Příklad  
@@ -30,8 +30,8 @@ GlobalProxySelection.Select = proxyObject
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy **System.Net** oboru názvů.  
+-   A [ `using` směrnice](../../csharp/language-reference/keywords/using-directive.md) pro **System.Net** oboru názvů.  
   
-## <a name="see-also"></a>Viz také  
- [Použití aplikačních protokolů](../../../docs/framework/network-programming/using-application-protocols.md)  
- [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)
+## <a name="see-also"></a>Viz také:
+- [Použití aplikačních protokolů](../../../docs/framework/network-programming/using-application-protocols.md)
+- [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99d7a528-7ae4-4d39-a0f9-3066ea237de0
-ms.openlocfilehash: 7f8a8cd1d9d8524c4bfbf3a7f783a33eee972474
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 51795007b906a6eb71e5e03b4afef2fc83328b28
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183045"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54593339"
 ---
 # <a name="message-security-with-mutual-certificates"></a>Zabezpečení zpráv vzájemnými certifikáty
 Následující scénář ukazuje služby Windows Communication Foundation (WCF) a klient zabezpečené používají režim zabezpečených zpráv. Klient a služba se ověří pomocí certifikátů.  
@@ -158,7 +158,7 @@ Následující scénář ukazuje služby Windows Communication Foundation (WCF) 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)  
- [Postupy: vytvoření a instalace dočasných certifikátů ve službě WCF pro zabezpečení přenosu během vývoje.](https://go.microsoft.com/fwlink/?LinkId=244264)
+## <a name="see-also"></a>Viz také:
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Postupy: Vytvoření a instalace dočasných certifikátů ve službě WCF pro zabezpečení přenosu během vývoje.](https://go.microsoft.com/fwlink/?LinkId=244264)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 837b2142e200e224fe32c2c673be0f317633452a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3bc90a17a0469cd716c1e3e990b5c0fb2ff8bf5a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445355"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54647569"
 ---
 # <a name="imetadataimportgetfieldmarshal-method"></a>IMetaDataImport::GetFieldMarshal – metoda
-Získá ukazatel na nativní, nespravovaný typ pole reprezentována token metadata zadané pole.  
+Získá ukazatel na nativní, nespravovaným typem pole reprezentována token metadat zadaného pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,23 +39,23 @@ HRESULT GetFieldMarshal (
   
 #### <a name="parameters"></a>Parametry  
  `tk`  
- [v] Metadata token, který představuje pole, které chcete získat informace o zařazování spolupráce pro.  
+ [in] Token metadat, který představuje pole mají být získány spolupráce zařazovací informace.  
   
  `ppvNativeType`  
- [out] Ukazatel na metadata podpis nativní typu pole.  
+ [out] Ukazatel na podpis metadat nativního typu pole.  
   
  `pcbNativeType`  
  [out] Velikost v bajtech `ppvNativeType`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

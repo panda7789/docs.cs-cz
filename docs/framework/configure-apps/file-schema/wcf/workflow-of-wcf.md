@@ -2,12 +2,12 @@
 title: '&lt;workflow&gt; služby WCF'
 ms.date: 03/30/2017
 ms.assetid: c0443eba-d3b4-4fae-886e-9878daf77691
-ms.openlocfilehash: 2990cb474e0c874841b69bdef166c2be3f1c857d
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 6c6efe9ee1ad582e25fc2bc578a15d6182eee2a9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54148913"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54639944"
 ---
 # <a name="ltworkflowgt-of-wcf"></a>&lt;workflow&gt; služby WCF
 Nakonfigurujte účastníkem sledování, která naslouchá na sledování záznamy probíhá emitovány přímo z modulu runtime a jejich zpracování libovolné způsobem, který byl nakonfigurován. Jedná se o zápis do konkrétní výstupu (např. soubor, konzoly, ETW), zpracování/agregaci záznamů nebo libovolnou kombinaci, který může být vyžadováno.  
@@ -49,7 +49,7 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<participants >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/participants.md)|Seznam sledování účastníků|  
+|[\<participants>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/participants.md)|Seznam sledování účastníků|  
   
 ## <a name="remarks"></a>Poznámky  
  Sledování účastníci se používají pro získání data sledování vyzařovaného z pracovního postupu a uložit je do různá média. Stejně tak jakýkoli příspěvek zpracování na sledování, které záznamy lze provést také v rámci tohoto sledování.  
@@ -88,9 +88,9 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
 </configuration>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Activities.Tracking.Configuration.TrackingSection>  
- <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior>  
- <xref:System.ServiceModel.Activities.Configuration.EtwTrackingBehaviorElement>  
- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
- [Účastníci sledování](../../../../../docs/framework/windows-workflow-foundation/tracking-participants.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Activities.Tracking.Configuration.TrackingSection>
+- <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior>
+- <xref:System.ServiceModel.Activities.Configuration.EtwTrackingBehaviorElement>
+- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Účastníci sledování](../../../../../docs/framework/windows-workflow-foundation/tracking-participants.md)

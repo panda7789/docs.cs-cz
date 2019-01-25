@@ -16,30 +16,30 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2814f6164f383c36bb5b8e20ce8996b30eef0f1f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b9160b9013481de294e6c8dd032cfa2d0ebb405d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421697"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596836"
 ---
 # <a name="icordebugstringvalue-interface1"></a>ICorDebugStringValue Interface1
-Podtřídou třídy icordebugheapvalue –, která platí pro řetězcové hodnoty.  
+Podtřída ICorDebugHeapValue, které se týkají řetězcové hodnoty.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetLength – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getlength-method.md)|Získá počet znaků v řetězci odkazuje toto `ICorDebugStringValue`.|  
-|[GetString – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getstring-method.md)|Získá řetězec, který odkazuje toto `ICorDebugStringValue`.|  
+|[GetLength – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getlength-method.md)|Získá počet znaků v řetězci odkazovaná tímto objektem `ICorDebugStringValue`.|  
+|[GetString – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-getstring-method.md)|Získá řetězec, který odkazuje tento `ICorDebugStringValue`.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -47,5 +47,5 @@ Podtřídou třídy icordebugheapvalue –, která platí pro řetězcové hodno
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

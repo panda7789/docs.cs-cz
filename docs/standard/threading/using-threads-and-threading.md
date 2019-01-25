@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f4fd57de4c6e65c3c82d0dc71bcaf84d668f28bf
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 15f3aa8d2cd7c21fa2b77660cd668d211f8376a9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864226"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54690615"
 ---
 # <a name="using-threads-and-threading"></a>Použití vláken a dělení na vlákna
 
@@ -24,11 +24,11 @@ Aplikace, které využívají multithreading je rychlejší reakce na uživatele
 > [!NOTE]
 > Pokud potřebujete větší kontrolu nad chováním aplikace vlákna, můžete spravovat vlákna sami. Nicméně od verze rozhraní .NET Framework 4, vícevláknové programování je výrazně usnadněna díky <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> třídy, [paralelní LINQ (PLINQ)](../parallel-programming/parallel-linq-plinq.md), nové souběžných kolekcí tříd v <xref:System.Collections.Concurrent?displayProperty=nameWithType> obor názvů a nové programovací model, který je založen na koncepci úkoly spíše než vlákna. Další informace najdete v tématu [paralelního programování](../parallel-programming/index.md) a [Task Parallel Library (TPL)](../parallel-programming/task-parallel-library-tpl.md).
 
-## <a name="how-to-create-and-start-a-new-thread"></a>Postupy: vytvoření a spuštění nového vlákna
+## <a name="how-to-create-and-start-a-new-thread"></a>Postupy: Vytvořit a spustit nové vlákno
 
 Vytvořit nové vlákno tak, že vytvoříte novou instanci třídy <xref:System.Threading.Thread?displayProperty=nameWithType> třídy a poskytnutí názvu metody, která je třeba spustit v novém vláknu konstruktoru. Chcete-li spustit vytvořeného vlákna, zavolejte <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType> metody. Další informace a příklady najdete v tématu [vytváření vláken a předávání dat při spuštění](creating-threads-and-passing-data-at-start-time.md) článku a <xref:System.Threading.Thread> reference k rozhraní API.
 
-## <a name="how-to-stop-a-thread"></a>Postupy: zastavení vlákna
+## <a name="how-to-stop-a-thread"></a>Postupy: Ukončení vlákna
 
 Chcete-li ukončit provádění vlákna, použijte <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> metody. Tato metoda vyvolá <xref:System.Threading.ThreadAbortException> ve vlákně, na kterém je vyvolána. Další informace najdete v tématu [zničení vláken](destroying-threads.md).
 
@@ -36,7 +36,7 @@ Od verze rozhraní .NET Framework 4, můžete použít <xref:System.Threading.Ca
 
 Použití <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> metoda aby volající vlákno, počkejte ukončení vlákna, na kterém je metoda vyvolána.
 
-## <a name="how-to-pause-or-interrupt-a-thread"></a>Postupy: pozastavení nebo přerušení vlákna
+## <a name="how-to-pause-or-interrupt-a-thread"></a>Postupy: Pozastavení nebo přerušení vlákna
 
 Můžete použít <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> metody pozastaví aktuální vlákno pro určenou dobu. Blokovaná vlákna můžete přerušit voláním <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> metody. Další informace najdete v tématu [pozastavení a přerušení vlákna](pausing-and-resuming-threads.md).
 
@@ -54,6 +54,6 @@ Následující tabulka uvádí některé z <xref:System.Threading.Thread> vlastn
 
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Threading.Thread?displayProperty=nameWithType>  
-- [Vlákna a dělení na vlákna](threads-and-threading.md)  
-- [Paralelní programování](../parallel-programming/index.md)  
+- <xref:System.Threading.Thread?displayProperty=nameWithType>
+- [Vlákna a dělení na vlákna](threads-and-threading.md)
+- [Paralelní programování](../parallel-programming/index.md)

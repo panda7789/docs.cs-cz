@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vyhledání elementů v Namespace (XPath – LINQ to XML) (C#)'
+title: 'Postupy: Vyhledávání elementů v Namespace (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: cae1c4ac-6cd5-46cf-9b1c-bd85bc9b7ea9
-ms.openlocfilehash: a0375641f9f5e75c51fe27936c07c32020e5dc0d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8ba5fc03bbd831cfee0c4fd15e71708c4eafd212
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505742"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646773"
 ---
-# <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-c"></a>Postupy: vyhledání elementů v Namespace (XPath – LINQ to XML) (C#)
+# <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-c"></a>Postupy: Vyhledávání elementů v Namespace (XPath – LINQ to XML) (C#)
 Výrazy XPath najdete konkrétní obor názvů uzly. Výrazy XPath používání předpon oboru názvů pro zadání oborů názvů. Parsovat výraz XPath, který obsahuje předpony oboru názvů, je nutné předat objekt do metody XPath, které implementuje <xref:System.Xml.IXmlNamespaceResolver>. Tento příklad používá <xref:System.Xml.XmlNamespaceManager>.  
   
  Výraz XPath je:  
@@ -74,6 +74,6 @@ Results are identical
   </aw:PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

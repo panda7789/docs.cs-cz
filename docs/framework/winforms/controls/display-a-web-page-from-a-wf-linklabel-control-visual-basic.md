@@ -12,15 +12,15 @@ helpviewer_keywords:
 - Windows Forms, linking to Web pages
 - LinkLabel control [Windows Forms], examples
 ms.assetid: 477a7398-5971-4de3-b24c-f49f32bdb28a
-ms.openlocfilehash: a9964c8d333ea87dd995ec9111acc1a8ac1e79b0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 05b127099b85188b0df2f1f7821ceb147cc41e1d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33524180"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698957"
 ---
 # <a name="how-to-display-a-web-page-from-a-windows-forms-linklabel-control-visual-basic"></a>Postupy: Zobrazení webové stránky z ovládacího prvku Windows Forms LinkLabel (Visual Basic)
-Tento příklad zobrazuje na webové stránce v výchozí prohlížeč, když uživatel klikne na tlačítko Windows Forms <xref:System.Windows.Forms.LinkLabel> ovládacího prvku.  
+Tento příklad zobrazuje webovou stránku ve výchozím prohlížeči, když uživatel klikne na tlačítko Windows Forms <xref:System.Windows.Forms.LinkLabel> ovládacího prvku.  
   
 ## <a name="example"></a>Příklad  
   
@@ -49,6 +49,6 @@ End Sub
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Volání <xref:System.Diagnostics.Process.Start%2A> metoda vyžaduje úplný vztah důvěryhodnosti. Další informace naleznete v tématu <xref:System.Security.SecurityException>.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.LinkLabel>  
- [Ovládací prvek LinkLabel](../../../../docs/framework/winforms/controls/linklabel-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.LinkLabel>
+- [Ovládací prvek LinkLabel](../../../../docs/framework/winforms/controls/linklabel-control-windows-forms.md)

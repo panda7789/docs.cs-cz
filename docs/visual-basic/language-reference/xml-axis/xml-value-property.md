@@ -9,12 +9,12 @@ helpviewer_keywords:
 - XML axis [Visual Basic], Value
 - XML Value property [Visual Basic]
 ms.assetid: 7ddd057a-a195-4e9b-ad8b-2ee0e615a20f
-ms.openlocfilehash: 2b0719320db5843d5d010bfbd70e551646e3ded9
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 54bd18b050ca58c286bfca3972b242348c61fe45
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44086336"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54737608"
 ---
 # <a name="xml-value-property-visual-basic"></a>Vlastnost hodnoty XML (Visual Basic)
 Poskytuje přístup k hodnotě prvního prvku kolekce <xref:System.Xml.Linq.XElement> objekty.  
@@ -29,7 +29,7 @@ object.Value
   
 |Termín|Definice|  
 |---|---|  
-|`object`|Požadováno. Kolekce <xref:System.Xml.Linq.XElement> objekty.|  
+|`object`|Povinný parametr. Kolekce <xref:System.Xml.Linq.XElement> objekty.|  
   
 ## <a name="return-value"></a>Návratová hodnota  
  A `String` , který obsahuje hodnotu elementu první kolekce, nebo `Nothing` Pokud kolekce je prázdná.  
@@ -67,13 +67,13 @@ object.Value
   
  `work`  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XElement>  
- <xref:System.Collections.Generic.IEnumerable%601>  
- [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)  
- [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)  
- [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
- [Rozšiřující metody](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)  
- [Vlastnost indexeru rozšíření](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md)  
- [Vlastnost osy podřízeného XML](../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)  
- [Vlastnost osy atributu XML](../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xml.Linq.XElement>
+- <xref:System.Collections.Generic.IEnumerable%601>
+- [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)
+- [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
+- [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Rozšiřující metody](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)
+- [Vlastnost indexeru rozšíření](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md)
+- [Vlastnost osy podřízeného XML](../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)
+- [Vlastnost osy atributu XML](../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)

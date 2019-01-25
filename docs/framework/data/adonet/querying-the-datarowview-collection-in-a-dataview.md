@@ -1,29 +1,29 @@
 ---
-title: Dotazování na kolekci DataRowView v v zobrazení DataView
+title: Dotazování na kolekci DataRowView v zobrazení dat
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b9070a12-1094-44d6-bb87-a23b50bcb0af
-ms.openlocfilehash: e7c63591baa609e38a70c721ea57a797b7631b97
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1890ab2fcc7e1427d9c74f6c981e232802b0eb1d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33358889"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643738"
 ---
-# <a name="querying-the-datarowview-collection-in-a-dataview"></a>Dotazování na kolekci DataRowView v v zobrazení DataView
-<xref:System.Data.DataView> Zpřístupní vyčíslitelná kolekce <xref:System.Data.DataRowView> objekty. <xref:System.Data.DataRowView> představuje vlastní pohled <xref:System.Data.DataRow> a zobrazí se na konkrétní verzi této <xref:System.Data.DataRow> v ovládacím prvku. Jenom jedna verze nástroje <xref:System.Data.DataRow> lze zobrazit pomocí ovládacího prvku, například <xref:System.Windows.Forms.DataGridView>. Dostanete <xref:System.Data.DataRow> který je zveřejněný prostřednictvím <xref:System.Data.DataRowView> prostřednictvím <xref:System.Data.DataRowView.Row%2A> vlastnost <xref:System.Data.DataRowView>. Při zobrazení hodnoty pomocí <xref:System.Data.DataRowView>, <xref:System.Data.DataView.RowStateFilter%2A> vlastnost určuje, která verze řádku základní <xref:System.Data.DataRow> zpřístupněn. Informace o přístupu k jiné řádek verze, která používá <xref:System.Data.DataRow>, najdete v části [stavy řádků a verze řádku](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md). Protože kolekce <xref:System.Data.DataRowView> objekty, které jsou zveřejněné <xref:System.Data.DataView> je vyčíslitelná, můžete použít [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu nad ním.  
+# <a name="querying-the-datarowview-collection-in-a-dataview"></a>Dotazování na kolekci DataRowView v zobrazení dat
+<xref:System.Data.DataView> Zpřístupňuje vyčíslitelné kolekce <xref:System.Data.DataRowView> objekty. <xref:System.Data.DataRowView> představuje vlastní zobrazení <xref:System.Data.DataRow> a zobrazí konkrétní verzi, která <xref:System.Data.DataRow> v ovládacím prvku. Pouze jednu verzi <xref:System.Data.DataRow> lze zobrazit pomocí ovládacího prvku, například <xref:System.Windows.Forms.DataGridView>. Můžete přistupovat <xref:System.Data.DataRow> , který je zveřejněný prostřednictvím <xref:System.Data.DataRowView> prostřednictvím <xref:System.Data.DataRowView.Row%2A> vlastnost <xref:System.Data.DataRowView>. Při zobrazení hodnoty pomocí <xref:System.Data.DataRowView>, <xref:System.Data.DataView.RowStateFilter%2A> vlastnost rozhodne, kterou verzi řádku základního <xref:System.Data.DataRow> je přístupný. Informace o přístupu k pomocí verze odlišný řádek <xref:System.Data.DataRow>, naleznete v tématu [stavy řádků a verze řádků](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md). Protože kolekce <xref:System.Data.DataRowView> objekty, které jsou vystavené <xref:System.Data.DataView> je vyčíslitelná, můžete použít [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] k dotazu nad ním.  
   
- Následující příklad dotazy `Product` tabulky produktů red stejné barvy a vytvoří tabulku z tohoto dotazu. A <xref:System.Data.DataView> se vytvoří z tabulky a <xref:System.Data.DataView.RowStateFilter%2A> je nastavena na filtrovat odstraněné a upravených řádků. <xref:System.Data.DataView> Se pak použije jako zdroj v dotazu LINQ a <xref:System.Data.DataRowView> objekty, které byly upravit a odstranit je vázána na <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
+ Následující příklady dotazů `Product` tabulky produktů red barevné a vytvoří tabulku z dotazu. A <xref:System.Data.DataView> se vytvoří z tabulky a <xref:System.Data.DataView.RowStateFilter%2A> je nastavena na filtrování odstraněné a upravené řádky. <xref:System.Data.DataView> Se pak použije jako zdroj v dotazu LINQ a <xref:System.Data.DataRowView> objekty, které byly upravit a odstranit je vázána na <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
   
  [!code-csharp[DP DataView Samples#QueryDataView2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#querydataview2)]
  [!code-vb[DP DataView Samples#QueryDataView2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#querydataview2)]  
   
- Následující příklad vytvoří tabulku produktů ze zobrazení, která je vázána <xref:System.Windows.Forms.DataGridView> ovládacího prvku. <xref:System.Data.DataView> Je dotazován na stejné barvy red produkty a seřazené výsledků je vázána na <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
+ Následující příklad vytvoří tabulku produktů ze zobrazení, které je vázán na <xref:System.Windows.Forms.DataGridView> ovládacího prvku. <xref:System.Data.DataView> Dotaz na produkty red barevné a uspořádaný výsledky, které jsou vázány na <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
   
  [!code-csharp[DP DataView Samples#QueryDataView1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#querydataview1)]
  [!code-vb[DP DataView Samples#QueryDataView1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#querydataview1)]  
   
-## <a name="see-also"></a>Viz také  
- [Datová vazba a LINQ to DataSet](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)
+## <a name="see-also"></a>Viz také:
+- [Datová vazba a LINQ to DataSet](../../../../docs/framework/data/adonet/data-binding-and-linq-to-dataset.md)

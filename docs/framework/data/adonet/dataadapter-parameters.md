@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f21e6aba-b76d-46ad-a83e-2ad8e0af1e12
-ms.openlocfilehash: ad0045f926b05b6a73dd64089290f4b8937004ca
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 5d91b6d0a2dc31a80d49f8e033043cf44e5c77e8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53150989"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54679821"
 ---
 # <a name="dataadapter-parameters"></a>Parametry adaptéru dat
 <xref:System.Data.Common.DbDataAdapter> Má čtyři vlastnosti, které slouží k načtení dat z a aktualizovat data do zdroje dat: <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> vlastnost vrací data ze zdroje dat; a <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> , <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>, a <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> vlastnosti se používají ke správě změny ve zdroji dat. `SelectCommand` Vlastnost musí být nastavena dříve než zavoláte `Fill` metodu `DataAdapter`. `InsertCommand`, `UpdateCommand`, Nebo `DeleteCommand` vlastnosti musí být nastavena před `Update` metodu `DataAdapter` je volána, v závislosti na tom, jaké změny byly provedeny s daty v <xref:System.Data.DataTable>. Například, pokud byl přidán počet řádků `InsertCommand` musí být nastavena dříve než zavoláte `Update`. Když `Update` zpracovává vložený, aktualizovaných nebo odstraněných řádků, `DataAdapter` používá funkcím `Command` vlastnost zpracovat akci. Aktuální informace o upravené řádku je předán `Command` objektu `Parameters` kolekce.  
@@ -46,7 +46,7 @@ parameter.SourceVersion = DataRowVersion.Original
   
  Následující tabulka ukazuje <xref:System.Data.DataRowVersion> hodnot výčtu, které jsou k dispozici pro použití s `SourceVersion`.  
   
-|Výčet DataRowVersion|Popis|  
+|DataRowVersion Enumeration|Popis|  
 |--------------------------------|-----------------|  
 |`Current`|Parametr používá aktuální hodnotu sloupce. Toto nastavení je výchozí.|  
 |`Default`|Používá parametr `DefaultValue` sloupce.|  
@@ -164,10 +164,10 @@ adapter.Fill(customers, "Customers");
 > [!NOTE]
 >  Pokud není zadán název parametru pro parametr, parametr je přiřazen přírůstkové výchozí název parametru*N* *,* počínaje "Parametr1". Doporučujeme vám, že byste se vyhnout parametr*N* zásady vytváření názvů při zadání názvu parametru, protože může být název, který zadáte v konfliktu s existujícím názvem výchozí parametr v `ParameterCollection`. Pokud zadaný název již existuje, je vyvolána výjimka.  
   
-## <a name="see-also"></a>Viz také  
- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
- [Úpravy dat pomocí uložených procedur](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)  
- [Mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
+- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
+- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
+- [Úpravy dat pomocí uložených procedur](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)
+- [Mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

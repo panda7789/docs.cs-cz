@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e8e50a018016b885a3513cbd885b8e5115f18113
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f956ed33e0a168dca0c0e5de92d38ba32db3fb05
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33432918"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54703455"
 ---
 # <a name="iclrruntimeinfogetprocaddress-method"></a>ICLRRuntimeInfo::GetProcAddress – metoda
-Získá adresu určenou funkci, která byla exportována z common language runtime (CLR) spojené s tímto rozhraním.  
+Získá adresu zadané funkce, která byla exportována z common language runtime (CLR) přidružené k tomuto rozhraní.  
   
  Tato metoda nahrazuje [getrealprocaddress –](../../../../docs/framework/unmanaged-api/hosting/getrealprocaddress-function.md) funkce.  
   
@@ -39,13 +39,13 @@ HRESULT GetProcAddress(
   
 #### <a name="parameters"></a>Parametry  
  `pszProcName`  
- [v] Název exportované funkce.  
+ [in] Název exportované funkce.  
   
  `ppProc`  
- [out] Adresa exportované funkce.  
+ [out] Adresu exportované funkce.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
@@ -54,18 +54,18 @@ HRESULT GetProcAddress(
 |CLR_E_SHIM_RUNTIMEEXPORT|Zadaná funkce není exportované funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda způsobí, že CLR do být načtena, avšak nebyla inicializována.  
+ Tato metoda způsobí, že modul CLR do načtena, avšak nebyla inicializována.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

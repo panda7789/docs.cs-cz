@@ -2,12 +2,12 @@
 title: ServiceMetadataBehavior
 ms.date: 03/30/2017
 ms.assetid: 0f194476-72f1-467e-bdce-674306316e64
-ms.openlocfilehash: 19a04b6432f1ecc38a3b906b7e677175863134db
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 76e28b18cd595a4a18f573dfe9539b646196c944
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188830"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720337"
 ---
 # <a name="servicemetadatabehavior"></a>ServiceMetadataBehavior
 ServiceMetadataBehavior  
@@ -31,38 +31,38 @@ class ServiceMetadataBehavior : Behavior
 ## <a name="properties"></a>Vlastnosti  
  Třídu ServiceMetadataBehavior má následující vlastnosti:  
   
-### <a name="externalmetadatalocation"></a>externalMetadataLocation  
+### <a name="externalmetadatalocation"></a>ExternalMetadataLocation  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Nastaví umístění, do kterého služba přesměruje požadavky metadat.  
   
-### <a name="httpgetenabled"></a>httpGetEnabled  
+### <a name="httpgetenabled"></a>HttpGetEnabled  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Určuje, zda služba zveřejňuje své WSDL na adrese řídí `HttpGetUrl` atribut.  
   
-### <a name="httpgeturl"></a>Vlastnost httpGetUrl  
+### <a name="httpgeturl"></a>HttpGetUrl  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Nastaví umístění, kde je služba WSDL zveřejněna k získání pomocí HTTP.  
   
-### <a name="httpsgetenabled"></a>httpsGetEnabled  
+### <a name="httpsgetenabled"></a>HttpsGetEnabled  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Určuje, zda služba zveřejňuje své WSDL přes HTTPS na adrese kontrolované pomocí `HttpsGetUrl` atribut.  
   
-### <a name="httpsgeturl"></a>Vlastnost httpsGetUrl  
+### <a name="httpsgeturl"></a>HttpsGetUrl  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Nastaví umístění, kde je služba WSDL zveřejněna k získání pomocí HTTPS.  
   
@@ -72,5 +72,5 @@ class ServiceMetadataBehavior : Behavior
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Description.ServiceMetadataBehavior>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Description.ServiceMetadataBehavior>

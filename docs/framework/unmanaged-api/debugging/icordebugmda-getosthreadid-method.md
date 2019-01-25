@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 20833624b4b853a1a56964e11a25f446c6b39053
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e67e3bc3477e078a4f1d963cdd768676503dc953
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33414710"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54607660"
 ---
 # <a name="icordebugmdagetosthreadid-method"></a>ICorDebugMDA::GetOSThreadId – metoda
-Získá identifikátor operační systém (OS) přístup z více vláken, na kterém reprezentována Pomocník spravovaného ladění (MDA) [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) spouští.  
+Získá identifikátor vlákna operačního systému (OS), na kterém pomocníka spravovaného ladění (MDA) reprezentovaný [icordebugmda –](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) provádí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +37,13 @@ HRESULT GetOSThreadId (
   
 #### <a name="parameters"></a>Parametry  
  `pOsTid`  
- [out] Ukazatel na identifikátor operačního systému.  
+ [out] Ukazatel na identifikátor vlákna operačního systému.  
   
 ## <a name="remarks"></a>Poznámky  
- Vlákno operačního systému se používá namísto ICorDebugThread pro situace, ve kterých je spouštěna MDA nativní vlákno buď spravovaných vláken, který ještě nebyl zadán spravovaného kódu.  
+ Vlákna operačního systému používá místo ICorDebugThread k povolení pro situace, ve kterých se spustí MDA na nativní vlákna nebo na spravovaná vlákna, který ještě nebyl zadaný spravovaný kód.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -51,6 +51,6 @@ HRESULT GetOSThreadId (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugMDA – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugMDA – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

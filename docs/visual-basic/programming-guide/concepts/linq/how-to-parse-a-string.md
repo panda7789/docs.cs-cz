@@ -1,24 +1,24 @@
 ---
-title: 'Postupy: Analýza řetězce (Visual Basic)'
+title: 'Postupy: Analýze řetězce (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 896e1b4b-f9bd-4975-8bc1-55b6badce1ac
-ms.openlocfilehash: da12ec98e03acceae375bbed4fc6ad4c2a71ec2d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 513a82cbed796be42eb8e531ec71221ef0ac267f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33640238"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54652446"
 ---
-# <a name="how-to-parse-a-string-visual-basic"></a>Postupy: Analýza řetězce (Visual Basic)
-Toto téma ukazuje, jak vytvořit strom XML v jazyce C#.  
+# <a name="how-to-parse-a-string-visual-basic"></a>Postupy: Analýze řetězce (Visual Basic)
+Toto téma ukazuje, jak vytvořit stromu XML v C#.  
   
 ## <a name="example"></a>Příklad  
- Řetězec v jazyce Visual Basic můžete analyzovat pomocí `XElement.Parse` metoda. Je však efektivnější použít XML – literály, jak je znázorněno v následujícím kódu, protože XML – literály se nebude vyskytovat ze stejné penalizacím výkonu jako analýzu kódu XML z řetězce.  
+ Řetězec v jazyce Visual Basic můžete analyzovat pomocí `XElement.Parse` metody. Je však efektivnější použijte literály XML, jak je znázorněno v následujícím kódu, protože není literály XML mají stejný snížení výkonu jako analýza kódu XML z řetězce.  
   
- Pomocí XML – literály můžete právě zkopírujte a vložte kód XML do programu jazyka Visual Basic.  
+ Pomocí literálů XML můžete stačí zkopírovat a vložit soubor XML do programu Visual Basic.  
   
 > [!NOTE]
->  Analýza textu nebo načítání dokumentu XML z textového souboru je míň efektivní než funkční konstrukce. Pokud se inicializace strom XML z kódu, zabere to méně času procesoru použít funkční konstrukce, než se analyzovat text.  
+>  Analýza textu nebo načítání dokumentu XML z textového souboru je méně efektivní než funkční konstrukce. Pokud se inicializace stromu XML z kódu, trvá méně času procesoru použít funkční konstrukce, než se analyzovat text.  
   
 ```vb  
 Dim contacts as XElement = _  
@@ -49,5 +49,5 @@ Dim contacts as XElement = _
     </Contacts>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Analýza kódu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Analýza kódu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

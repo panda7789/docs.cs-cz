@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 50d9ac08b01a67df68ff077721ff5421fbc27707
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f7905b3ee83378ed1a27501b082dbfca01d6436c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424271"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54688061"
 ---
 # <a name="isymunmanagedencupdateupdatemethodlines-method"></a>ISymUnmanagedENCUpdate::UpdateMethodLines – metoda
-Umožňuje aktualizaci řádku informace pro metodu, která nebyla překompilovat, ale jejichž řádky byl přesunut nezávisle. Rozdílové každý příkaz je povolen.  
+Umožňuje aktualizovat informace o řádku pro metodu, která nebyla překompilovat, ale jejíž řádky přesunuty nezávisle na sobě. Rozdílové hodnoty pro každý příkaz je povolen.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT UpdateMethodLines(
   
 #### <a name="parameters"></a>Parametry  
  `mdMethodToken`  
- [v] Metadata metoda tokenu.  
+ [in] Metadata token metody.  
   
  `pDeltas`  
- [v] Pole `INT32` hodnoty, které označuje rozdíly pro každý bod pořadí v metodě.  
+ [in] Pole `INT32` hodnoty, které označuje rozdíly pro každý bod sekvence v metodě.  
   
  `cDeltas`  
- [v] A `ULONG` obsahující velikost `pDeltas` parametr.  
+ [in] A `ULONG` obsahující velikost `pDeltas` parametru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedENCUpdate – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedENCUpdate – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)

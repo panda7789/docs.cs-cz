@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b6b01abc16334dbe091e7586efcce1c3e390a64e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b552ef39c7f73aaa5cfeae4a313e329b267abf98
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426972"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643385"
 ---
 # <a name="isymunmanagedwriterdefineparameter-method"></a>ISymUnmanagedWriter::DefineParameter – metoda
-Definuje jeden parametr v aktuální metoda. Typ parametru jsou převzaty z parametru pozici (pořadí) v rámci signatury metody.  
+Definuje jeden parametr v aktuální metodě. Typ parametru je převzata z pozice parametru (pořadí) v podpisu metody.  
   
- Pokud parametry jsou definované v metadatech pro dané metody, nemáte se znovu definovat pomocí této metody. Symbol čtečky musí zkontrolovat běžná metadata pro parametry před zaškrtnutím úložiště symbolů.  
+ Pokud parametry jsou definované v metadatech pro dané metody, není nutné znovu definovat pomocí této metody. Čtenáři symbolu, musíte zaškrtnout běžná metadata pro parametry před vrácením se změnami úložiště symbolů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,31 +44,31 @@ HRESULT DefineParameter(
   
 #### <a name="parameters"></a>Parametry  
  `name`  
- [v] Název parametru.  
+ [in] Název parametru.  
   
  `attributes`  
- [v] Atributy parametru.  
+ [in] Atributy parametru.  
   
  `sequence`  
- [v] Parametr podpis.  
+ [in] Podpis parametru.  
   
  `addrKind`  
- [v] Typ adresy.  
+ [in] Typ adresy.  
   
  `addr1`  
- [v] První adresa pro specifikaci parametru.  
+ [in] První adresa pro specifikaci parametru.  
   
  `addr2`  
- [v] Druhý adresu pro specifikaci parametru.  
+ [in] Druhý adresa pro specifikaci parametru.  
   
  `addr3`  
- [v] Je třetí adresa pro specifikaci parametru.  
+ [in] Je třetí adresa pro specifikaci parametru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)

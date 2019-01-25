@@ -17,14 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 04be252092732296354cfec102cf8fe648ed2dd6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0651609e6d2597336ee42ceae752df7e561cd252
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54692649"
 ---
 # <a name="icorprofilerinfo2getclassfromtokenandtypeargs-method"></a>ICorProfilerInfo2::GetClassFromTokenAndTypeArgs – metoda
-Získá `ClassID` typu pomocí tokenu Zadaná metadata a `ClassID` argumentů hodnoty libovolného typu.  
+Získá `ClassID` typu pomocí tokenu Zadaná metadata a `ClassID` hodnot ve všech argumentů typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,29 +40,29 @@ HRESULT GetClassFromTokenAndTypeArgs(
   
 #### <a name="parameters"></a>Parametry  
  `moduleID`  
- [v] ID modulu, ve které je umístěn typu.  
+ [in] ID modulu, ve kterém se typ nachází.  
   
  `typeDef`  
- [v] `mdTypeDef` Metadata token, který odkazuje na typ.  
+ [in] `mdTypeDef` Token metadat, který odkazuje na typ.  
   
  `cTypeArgs`  
- [v] Počet parametrů typu pro daný typ. Tato hodnota musí být nula pro neobecný typy.  
+ [in] Počet parametrů typu pro daný typ. Tato hodnota musí být nula pro obecné typy.  
   
  `typeArgs`  
- [v] Pole `ClassID` hodnoty, z nichž každý je argumentem typu. Hodnota `typeArgs` může mít hodnotu NULL, pokud `cTypeArgs` je nastaven na hodnotu nula.  
+ [in] Pole `ClassID` hodnot, z nichž každý je argument typu. Hodnota `typeArgs` může mít hodnotu NULL, pokud `cTypeArgs` je nastavena na hodnotu nula.  
   
  `pClassID`  
  [out] Ukazatel `ClassID` zadaného typu.  
   
 ## <a name="remarks"></a>Poznámky  
- Volání `GetClassFromTokenAndTypeArgs` metoda s `mdTypeRef` místo `mdTypeDef` metadata token může mít nepředvídatelné výsledky; volající musí se překládat `mdTypeRef` k `mdTypeDef` při předání.  
+ Volání `GetClassFromTokenAndTypeArgs` metodu s `mdTypeRef` místo `mdTypeDef` tokenu metadat může mít nepředvídatelné výsledky; musí se překládat volající `mdTypeRef` do `mdTypeDef` při předávání ho.  
   
- Pokud dosud není načtený typ, voláním `GetClassFromTokenAndTypeArgs` aktivují načítání, což je nebezpečné operace v mnoha kontextech. Například voláním této metody během načítání moduly nebo jiné typy může vést k nekonečné smyčce jako modul runtime, pokusí se načíst pravidelného věcí.  
+ Pokud dosud není načtený typ, voláním `GetClassFromTokenAndTypeArgs` aktivují načítání, což je nebezpečné operace v mnoha kontextech. Například volání této metody při načítání modulů nebo jiných typů může vést k nekonečné smyčce jak modul runtime pokusí se načíst cyklicky věci.  
   
- Obecně platí, použití `GetClassFromTokenAndTypeArgs` se nedoporučuje. Pokud události pro určitý typ zajímá profilery, měli uložit `ModuleID` a `mdTypeDef` tohoto typu a použití [ICorProfilerInfo2::getclassidinfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md) zkontrolujte zda daný `ClassID` , je požadovaný typ.  
+ Obecně platí, využívání `GetClassFromTokenAndTypeArgs` se nedoporučuje. Pokud profilery zajímají události pro určitý typ, měli uložit `ModuleID` a `mdTypeDef` tohoto typu a použití [ICorProfilerInfo2::GetClassIDInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md) ke kontrole, jestli daný `ClassID` je požadovaného typu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -69,6 +70,6 @@ HRESULT GetClassFromTokenAndTypeArgs(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

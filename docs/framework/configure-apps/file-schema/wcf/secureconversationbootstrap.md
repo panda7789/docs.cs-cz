@@ -2,22 +2,22 @@
 title: '&lt;secureConversationBootstrap&gt;'
 ms.date: 03/30/2017
 ms.assetid: 66b46f95-fa2d-4b5b-b6ce-0572ab0cdd50
-ms.openlocfilehash: a923ca5d695b1b0b8f5362320b11f39f5153e9c8
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: dae0d6c24e50884cf044464209f3a3b9a50079aa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54148510"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744892"
 ---
 # <a name="ltsecureconversationbootstrapgt"></a>&lt;secureConversationBootstrap&gt;
 Určuje výchozí hodnoty pro inicializaci služby zabezpečené konverzace.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<třídě customBinding >  
+\<customBinding>  
 \<Vytvoření vazby >  
-\<zabezpečení >  
-\<secureConversationBootstrap >  
+\<security>  
+\<secureConversationBootstrap>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -63,9 +63,9 @@ Určuje výchozí hodnoty pro inicializaci služby zabezpečené konverzace.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<issuedTokenParameters >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Určuje aktuální vydaný token. Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>.|  
-|[\<localClientSettings >](../../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)|Určuje nastavení zabezpečení místního klienta pro tuto vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement>.|  
-|[\<localServiceSettings >](../../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md)|Určuje nastavení zabezpečení místní služby pro tuto vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>.|  
+|[\<issuedTokenParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Určuje aktuální vydaný token. Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>.|  
+|[\<localClientSettings>](../../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)|Určuje nastavení zabezpečení místního klienta pro tuto vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement>.|  
+|[\<localServiceSettings>](../../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md)|Určuje nastavení zabezpečení místní služby pro tuto vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -73,14 +73,14 @@ Určuje výchozí hodnoty pro inicializaci služby zabezpečené konverzace.
 |-------------|-----------------|  
 |[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Určuje možnosti zabezpečení pro vlastní vazbu.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>  
- <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>  
- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>  
- <xref:System.ServiceModel.Channels.CustomBinding>  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
- [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
- [Zabezpečení vlastních vazeb](../../../../../docs/framework/wcf/samples/custom-binding-security.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>
+- <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>
+- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>
+- <xref:System.ServiceModel.Channels.CustomBinding>
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Zabezpečení vlastních vazeb](../../../../../docs/framework/wcf/samples/custom-binding-security.md)

@@ -2,12 +2,12 @@
 title: Řešení potíží s aplikací pomocí sledování
 ms.date: 03/30/2017
 ms.assetid: 8851adde-c3c2-4391-9523-d8eb831490af
-ms.openlocfilehash: f991533b61705c8d0a1a8e71b632dd53f24dd979
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 1ed95a26f682fcdb609b410251fdb3f8b647016a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45615940"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54734419"
 ---
 # <a name="using-tracking-to-troubleshoot-applications"></a>Řešení potíží s aplikací pomocí sledování
 Windows Workflow Foundation (WF) umožňuje sledovat související pracovní postup informace, které poskytují podrobnosti do spuštění Windows Workflow Foundation aplikace nebo služby. Hostitele Windows Workflow Foundation je možné ji zachytit události pracovního postupu za běhu instance pracovního postupu. Pokud váš pracovní postup generuje chyby nebo výjimky, můžete použít sledování podrobnosti pro řešení potíží s jeho zpracování modelu Windows Workflow Foundation.  
@@ -51,6 +51,6 @@ Windows Workflow Foundation (WF) umožňuje sledovat související pracovní pos
   
  Pokud je povolené sledování účastník sledování ETW pomocí selhání události se vysílají do relace trasování událostí pro Windows. Události lze zobrazit pomocí prohlížeče událostí v prohlížeči událostí. To lze nalézt v uzlu **Prohlížeč událostí -> aplikace a služby protokoly -> Microsoft -> Windows -> aplikace Server-** analytického kanálu.  
   
-## <a name="see-also"></a>Viz také  
- [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)  
- [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)
+## <a name="see-also"></a>Viz také:
+- [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)
+- [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)

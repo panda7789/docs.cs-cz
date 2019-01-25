@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5a4637ac7466a575c94f8244168576c4a5542689
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f7759b0815946301932ca60edaf731313d04a245
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33452085"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54743462"
 ---
 # <a name="icorprofilercallbackmoduleunloadfinished-method"></a>ICorProfilerCallback::ModuleUnloadFinished – metoda
-Aby modul dokončil uvolnění upozorní profileru.  
+Upozorní profiler modulu dokončení uvolnění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +37,18 @@ HRESULT ModuleUnloadFinished(
   
 #### <a name="parameters"></a>Parametry  
  `moduleId`  
- [v] ID modul, který byl odpojen.  
+ [in] ID modulu, který byl odpojen.  
   
  `hrStatus`  
- [v] HRESULT, která určuje, zda byl modul úspěšně odpojen.  
+ [in] HRESULT, která určuje, zda modul byl uvolněn úspěšně.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `moduleId` není platná pro požadavek informace po [icorprofilercallback::moduleunloadstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleunloadstarted-method.md) metoda vrátí.  
+ Hodnota `moduleId` není platná pro požadavek informace po [icorprofilercallback::moduleunloadstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleunloadstarted-method.md) metoda vrátí hodnotu.  
   
- Některé části uvolnění třídy, může pokračovat i po `ModuleUnloadFinished` zpětného volání. Selhání HRESULT v `hrStatus` znamená chybu. Ale úspěšné HRESULT v `hrStatus` pouze označuje, že první část uvolnění modulu proběhl úspěšně.  
+ Některé části uvolnění třídy může pokračovat po `ModuleUnloadFinished` zpětného volání. Selhání hodnoty HRESULT v `hrStatus` naznačuje chybu. Ale úspěch HRESULT v `hrStatus` značí pouze, že první část uvolnění modulu proběhla úspěšně.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -56,5 +56,5 @@ HRESULT ModuleUnloadFinished(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

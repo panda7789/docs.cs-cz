@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření procedury (Visual Basic)'
+title: 'Postupy: Vytvořit procedury (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], defining
@@ -8,60 +8,60 @@ helpviewer_keywords:
 - procedure declarations
 - procedures [Visual Basic], about procedures
 ms.assetid: 4f779247-0b50-47e8-9e5c-ab5cf39ac0d2
-ms.openlocfilehash: da4cc299fbe35702990a62b5bf824e3ac71d5902
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 06fed04a0ebe7a0b3111a94308d15d01bcf47c1e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33649260"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54636531"
 ---
-# <a name="how-to-create-a-procedure-visual-basic"></a>Postupy: Vytvoření procedury (Visual Basic)
-Uzavřete procedury mezi počáteční příkaz deklarace (`Sub` nebo `Function`) a příkazu koncová deklarace (`End Sub` nebo `End Function`). Všechny postup kód je mezi těmito příkazy.  
+# <a name="how-to-create-a-procedure-visual-basic"></a>Postupy: Vytvořit procedury (Visual Basic)
+Použijte postup mezi počáteční příkazu deklarace (`Sub` nebo `Function`) a koncové příkazu deklarace (`End Sub` nebo `End Function`). Kód všechny procedury leží mezi těmito příkazy.  
   
- Procedury nemůže obsahovat jinou proceduru, jeho počáteční a koncovou příkazy musí být mimo jiné procedury.  
+ Postup nemůže obsahovat jinou proceduru, takže jeho počáteční a koncové příkazy musí být mimo všechny procedury.  
   
- Pokud máte kód, který provádí stejnou úlohu na různých místech, můžete napsat úlohy jednou jako proceduru a poté ji volat z různých místech v kódu.  
+ Pokud máte kód, který provádí stejnou úlohu na různých místech, můžete napsat úlohy jednou jako postup a následně ji zavolat z různých míst v kódu.  
   
-### <a name="to-create-a-procedure-that-does-not-return-a-value"></a>K vytvoření procedury, která nevrátí hodnotu  
+### <a name="to-create-a-procedure-that-does-not-return-a-value"></a>Chcete-li vytvořit proceduru, která nevrací hodnotu  
   
-1.  Mimo jiné postup použijte `Sub` prohlášení, za nímž následuje `End Sub` příkaz.  
+1.  Mimo všechny procedury, použijte `Sub` příkazu, za nímž následuje `End Sub` příkazu.  
   
-2.  V `Sub` prohlášení, postupujte podle `Sub` – klíčové slovo s názvem postup, pak se seznam parametrů v závorkách.  
+2.  V `Sub` prohlášení, postupujte `Sub` – klíčové slovo s názvem podle postupu, pak se seznam parametrů v závorkách.  
   
-3.  Umístit postup kód příkazy mezi `Sub` a `End Sub` příkazy.  
+3.  Umístit příkazy kódu podle postupu mezi `Sub` a `End Sub` příkazy.  
   
-### <a name="to-create-a-procedure-that-returns-a-value"></a>K vytvoření procedury, která vrátí hodnotu  
+### <a name="to-create-a-procedure-that-returns-a-value"></a>Chcete-li vytvořit proceduru, která vrací hodnotu  
   
-1.  Mimo jiné postup použijte `Function` prohlášení, za nímž následuje `End Function` příkaz.  
+1.  Mimo všechny procedury, použijte `Function` příkazu, za nímž následuje `End Function` příkazu.  
   
-2.  V `Function` prohlášení, postupujte podle `Function` – klíčové slovo s názvem postup, pak se seznam parametrů v závorkách a potom `As` klauzule určující datový typ vrácené hodnoty.  
+2.  V `Function` příkazu, postupujte `Function` – klíčové slovo s názvem podle postupu, pak se seznam parametrů v závorkách a potom `As` klauzule určující datový typ vrácené hodnoty.  
   
-3.  Umístit postup kód příkazy mezi `Function` a `End Function` příkazy.  
+3.  Umístit příkazy kódu podle postupu mezi `Function` a `End Function` příkazy.  
   
-4.  Použití `Return` příkaz k vrácení hodnoty volání kódu.  
+4.  Použití `Return` příkazu vrátí hodnotu volajícímu kódu.  
   
-### <a name="to-connect-your-new-procedure-with-the-old-repetitive-blocks-of-code"></a>Připojit nový postup s původním, opakovaných bloky kódu  
+### <a name="to-connect-your-new-procedure-with-the-old-repetitive-blocks-of-code"></a>Připojit nový postup se starou, opakované bloky kódu  
   
-1.  Zajistěte, aby že definovat nový postup na místě, kde původní kód k němu má přístup.  
+1.  Zkontrolujte, že můžete definovat nové postupu na místě, kde původní kód má přístup k němu.  
   
-2.  V bloku vaše staré, opakovaných kódu nahraďte příkazy, které provádějí opakované úlohy s jediný příkaz, který volá `Sub` nebo `Function` postupu.  
+2.  V bloku vaše staré, opakované kódu nahraďte příkazy, které provádějí opakované úlohy s jeden příkaz, který volá `Sub` nebo `Function` postup.  
   
-3.  Pokud je vaše postupu `Function` , vrátí hodnotu, ujistěte se, že volání údajů provádí akce s vrácené hodnoty, jako je například ukládání do proměnné, jinak hodnota budou ztraceny.  
+3.  Pokud je vaše postup `Function` , která vrací hodnotu, ujistěte se, že volání příkazu provede akci s vrácenou hodnotu, jako je ukládání do proměnné, jinak hodnota se ztratí.  
   
 ## <a name="example"></a>Příklad  
- Následující `Function` postup vypočítá nejdelší straně nebo přepony trojúhelníku vpravo, pro zbývající dvě strany zadané hodnoty.  
+ Následující `Function` postup vypočítá nejdelší strana nebo přepony pravoúhlého trojúhelníku, pro obě strany zadané hodnoty.  
   
  [!code-vb[VbVbcnProcedures#1](./codesnippet/VisualBasic/how-to-create-a-procedure_1.vb)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
- [Procedury](./index.md)  
- [Procedury Sub](./sub-procedures.md)  
- [Procedury funkce](./function-procedures.md)  
- [Procedury vlastnosti](./property-procedures.md)  
- [Procedury operátoru](./operator-procedures.md)  
- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Rekurzivní procedury](./recursive-procedures.md)  
- [Přetížení procedury](./procedure-overloading.md)  
- [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
- [Objektově orientované programování (Visual Basic)](../../concepts/object-oriented-programming.md)  
+- [Procedury](./index.md)
+- [Procedury Sub](./sub-procedures.md)
+- [Procedury funkce](./function-procedures.md)
+- [Procedury vlastnosti](./property-procedures.md)
+- [Procedury operátoru](./operator-procedures.md)
+- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
+- [Rekurzivní procedury](./recursive-procedures.md)
+- [Přetížení procedury](./procedure-overloading.md)
+- [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Objektově orientované programování (Visual Basic)](../../concepts/object-oriented-programming.md)

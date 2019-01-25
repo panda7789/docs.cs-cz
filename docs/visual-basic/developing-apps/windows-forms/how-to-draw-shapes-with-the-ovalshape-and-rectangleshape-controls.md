@@ -9,37 +9,37 @@ helpviewer_keywords:
 - shapes, drawing
 - RectangleShape control [Visual Basic]
 ms.assetid: 0275b4c6-7a13-46c8-90f3-61db308c6b5d
-ms.openlocfilehash: f87865ba3aebe5739b87d6ae6bfeaa957af726d8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fe937236332591f6065e618c49ca5cf2c54b987c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592272"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54701219"
 ---
 # <a name="how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls-visual-studio"></a>Postupy: Kreslení obrazců pomocí ovládacích prvků OvalShape a RectangleShape (Visual Studio)
-Můžete použít <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> řízení k vykreslení kroužky nebo elips ve formuláři nebo kontejneru, v době návrhu i v době běhu. Můžete použít <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> řízení k vykreslení čtverce, obdélníku nebo obdélníků se zaoblenými hranami ve formuláři nebo kontejneru. Také můžete tento ovládací prvek pro kreslení tvarů v době návrhu i v době běhu.  
+Můžete použít <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> ovládací prvek nakreslit kruhy nebo elipsy ve formuláři nebo kontejneru, v době návrhu i době běhu. Můžete použít <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> ovládací prvek nakreslit čtverce, obdélníku nebo obdélníky zaoblené rohy ve formuláři nebo kontejneru. Tento ovládací prvek lze také použít pro kreslení tvarů v době návrhu i době běhu.  
   
- Vzhled obrazce můžete přizpůsobit tak, že změníte šířku, barvu a styl ohraničení. Na pozadí obrazce je transparentní ve výchozím nastavení; můžete přizpůsobit na pozadí na plnou barvou, vzor, výplň přechodem (přechod z jedné barvy do jiného) nebo bitovou kopii.  
+ Můžete přizpůsobit vzhled tvaru tak, že změníte šířku, barvu a styl ohraničení. Pozadí obrazec je transparentní ve výchozím nastavení; můžete přizpůsobit zobrazení plnou barvu, vzor, přechodovou výplní (přechod z jedné barvy k jinému) nebo obrázek na pozadí.  
   
-### <a name="to-draw-a-simple-shape-at-design-time"></a>Kreslení jednoduchý obrazec v době návrhu  
+### <a name="to-draw-a-simple-shape-at-design-time"></a>Chcete-li nakreslit jednoduchý obrazec v době návrhu  
   
-1.  Přetáhněte <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> nebo <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> řídit z **PowerPacks jazyka Visual Basic** karta (instalaci naleznete v tématu [ovládací prvky jazyka Visual Basic Power Pack](../../../visual-basic/developing-apps/windows-forms/power-packs-controls.md)) v **sada nástrojů** do ovládacího prvku formuláře nebo kontejneru.  
+1.  Přetáhněte <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> nebo <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> ovládacího prvku **sady Visual Basic PowerPack** kartu (instalaci najdete v tématu [ovládací prvky jazyka Visual Basic Power Pack](../../../visual-basic/developing-apps/windows-forms/power-packs-controls.md)) v **nástrojů** do ovládacího prvku formulář nebo kontejneru.  
   
-2.  Přetáhněte velikost a přesuňte velikost a umístění tvaru.  
+2.  Přetažením úchytů a přesunout obslužné rutiny na velikost a umístění obrazce.  
   
-     Můžete také upravit velikost a umístění tvaru změnou `Size` a `Position` vlastnosti v **vlastnosti** okno.  
+     Můžete také změnit velikost a umístění obrazce tak, že změníte `Size` a `Position` vlastnosti **vlastnosti** okna.  
   
-     Chcete-li vytvořit obdélník se zaoblenými hranami, vyberte `CornerRadius` vlastnost v **vlastnosti** okno a nastavte ji na hodnotu, která je větší než 0.  
+     Chcete-li vytvořit obdélník zaoblené rohy, vyberte `CornerRadius` vlastnost v **vlastnosti** okno a nastavte ho na hodnotu, která je větší než 0.  
   
-3.  V **vlastnosti** okno, Volitelně můžete nastavit další vlastnosti změnit vzhled tvaru.  
+3.  V **vlastnosti** okna, Volitelně můžete nastavit další vlastnosti ke změně vzhledu tvar.  
   
-### <a name="to-draw-a-simple-shape-at-run-time"></a>Kreslení obrazce jednoduché za běhu  
+### <a name="to-draw-a-simple-shape-at-run-time"></a>Chcete-li nakreslit jednoduchý obrazec za běhu  
   
-1.  Na **projektu** nabídky, klikněte na tlačítko **přidat odkaz na**.  
+1.  Na **projektu** nabídky, klikněte na tlačítko **přidat odkaz**.  
   
-2.  V **přidat odkaz na** dialogové okno, vyberte **Microsoft.VisualBasic.PowerPacks.VS**a potom klikněte na **OK**.  
+2.  V **přidat odkaz** dialogu **Microsoft.VisualBasic.PowerPacks.VS**a potom klikněte na tlačítko **OK**.  
   
-3.  V **Editor kódu**, přidejte `Imports` nebo `using` příkaz v horní části modulu:  
+3.  V **Editor kódu**, přidejte `Imports` nebo `using` příkazu v horní části modulu:  
   
 ```vb  
 Imports Microsoft.VisualBasic.PowerPacks  
@@ -49,88 +49,88 @@ Imports Microsoft.VisualBasic.PowerPacks
 using Microsoft.VisualBasic.PowerPacks;  
 ```  
   
-4.  Přidejte následující kód v `Event` postup:  
+4.  Přidejte následující kód `Event` postup:  
   
      [!code-csharp[VbPowerpacksShape#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls_1.cs)]
      [!code-vb[VbPowerpacksShape#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls_1.vb)]  
   
-## <a name="customizing-shapes"></a>Přizpůsobení tvarů  
- Pokud použijete výchozí nastavení <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> a <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> ovládací prvky jsou zobrazeny s plnou černé ohraničení, které je jeden pixel široká a průhledné pozadí. Šířky, stylu a barvy ohraničení můžete změnit nastavením vlastnosti. Další vlastnosti umožňují změnit pozadí obrazce plnou barvou, vzor, přechod nebo bitovou kopii.  
+## <a name="customizing-shapes"></a>Přizpůsobení obrazce  
+ Pokud použijete výchozí nastavení <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> a <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> ovládací prvky jsou zobrazeny s plnou černým ohraničením, které je jeden pixel široké a průhledné pozadí. Šířky, stylu a barvy ohraničení můžete změnit nastavením vlastnosti. Další vlastnosti umožňují změnit na pozadí obrazce plnou barvu, vzor, přechod nebo image.  
   
- Než změníte na pozadí obrazce, byste měli vědět, jak několik vlastností komunikovat.  
+ Než změníte na pozadí tvaru, byste měli znát několik vlastností interakci.  
   
 -   <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackColor%2A> Nastavení vlastnost nemá žádný vliv, pokud <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackStyle%2A> je nastavena na <xref:Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque>.  
   
 -   Pokud <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillStyle%2A> je nastavena na <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Solid>, <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillColor%2A> přepsání <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackColor%2A>.  
   
--   Pokud <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillStyle%2A> vlastnost nastavena na hodnotu vzor, jako <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Horizontal> nebo <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Vertical>, vzoru se zobrazí v <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillColor%2A>. Zobrazí se na pozadí v <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackColor%2A>, za předpokladu, že <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackStyle%2A> je nastavena na <xref:Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque>.  
+-   Pokud <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillStyle%2A> je nastavena na hodnotu vzor jako <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Horizontal> nebo <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Vertical>, vzor se zobrazí v <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillColor%2A>. Zobrazí se na pozadí v <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackColor%2A>za předpokladu, že <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackStyle%2A> je nastavena na <xref:Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque>.  
   
--   Aby bylo možné zobrazit výplň přechodem <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillStyle%2A> musí být nastavena na <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Solid> a <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillGradientStyle%2A> vlastnost musí být nastavena na hodnotu než <xref:Microsoft.VisualBasic.PowerPacks.FillGradientStyle.None>.  
+-   Aby bylo možné zobrazit přechodovou výplní <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillStyle%2A> musí být vlastnost nastavena na <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Solid> a <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillGradientStyle%2A> vlastnost musí být nastavena na hodnotu jiné než <xref:Microsoft.VisualBasic.PowerPacks.FillGradientStyle.None>.  
   
--   Nastavení <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackgroundImage%2A> vlastnost pro bitovou kopii přepíše všechna ostatní nastavení pozadí.  
+-   Nastavení <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackgroundImage%2A> vlastností pro bitovou kopii přepíše všechna ostatní nastavení na pozadí.  
   
-#### <a name="to-draw-a-circle-that-has-a-custom-border"></a>Kreslení kruh, který má vlastní ohraničení  
+#### <a name="to-draw-a-circle-that-has-a-custom-border"></a>Chcete-li nakreslit kruh, který má vlastní ohraničení  
   
-1.  Přetáhněte `OvalShape` řídit z **PowerPacks jazyka Visual Basic** ve **sada nástrojů** do ovládacího prvku formuláře nebo kontejneru.  
+1.  Přetáhněte `OvalShape` ovládacího prvku **sady Visual Basic PowerPack** kartu **nástrojů** do ovládacího prvku formulář nebo kontejneru.  
   
-2.  V **vlastnosti** okno v `Size` vlastnost, nastavte `Height` a `Width` na stejné hodnoty.  
+2.  V **vlastnosti** okno v `Size` , nastavit `Height` a `Width` na stejné hodnoty.  
   
 3.  Nastavte `BorderColor` vlastnost na požadovanou barvu.  
   
-4.  Nastavte `BorderStyle` vlastnost na jakoukoli jinou hodnotu než `Solid`.  
+4.  Nastavte `BorderStyle` vlastnost na libovolnou hodnotu jinou než `Solid`.  
   
-5.  Nastavte `BorderWidth` na velikost, které chcete v pixelech.  
+5.  Nastavte `BorderWidth` velikosti, který chcete v pixelech.  
   
-#### <a name="to-draw-a-circle-that-has-a-solid-fill"></a>Kreslení kruh, který má plnou výplň  
+#### <a name="to-draw-a-circle-that-has-a-solid-fill"></a>Chcete-li nakreslit kruh, který má plné barvy  
   
-1.  Přetáhněte `OvalShape` řídit z **PowerPacks jazyka Visual Basic** ve **sada nástrojů** do ovládacího prvku formuláře nebo kontejneru.  
+1.  Přetáhněte `OvalShape` ovládacího prvku **sady Visual Basic PowerPack** kartu **nástrojů** do ovládacího prvku formulář nebo kontejneru.  
   
-2.  V **vlastnosti** okno v `Size` vlastnost, nastavte `Height` a `Width` na stejné hodnoty.  
+2.  V **vlastnosti** okno v `Size` , nastavit `Height` a `Width` na stejné hodnoty.  
   
 3.  Nastavte `BackColor` vlastnost na požadovanou barvu.  
   
 4.  Nastavte `BackStyle` vlastnost `Opaque`.  
   
-#### <a name="to-draw-a-circle-that-has-a-patterned-fill"></a>Kreslení kruh, který má výplň vzorkem  
+#### <a name="to-draw-a-circle-that-has-a-patterned-fill"></a>Chcete-li nakreslit kruh, který má výplň vzorkem  
   
-1.  Přetáhněte `OvalShape` řídit z **PowerPacks jazyka Visual Basic** ve **sada nástrojů** do ovládacího prvku formuláře nebo kontejneru.  
+1.  Přetáhněte `OvalShape` ovládacího prvku **sady Visual Basic PowerPack** kartu **nástrojů** do ovládacího prvku formulář nebo kontejneru.  
   
-2.  V **vlastnosti** okno v `Size` vlastnost, nastavte `Height` a `Width` na stejné hodnoty.  
+2.  V **vlastnosti** okno v `Size` , nastavit `Height` a `Width` na stejné hodnoty.  
   
-3.  Nastavte `BackColor` vlastnost na barvu, která chcete použít pro na pozadí.  
+3.  Nastavte `BackColor` vlastnost na požadovanou barvu má pozadí.  
   
 4.  Nastavte `BackStyle` vlastnost `Opaque`.  
   
-5.  Nastavte `FillColor` vlastnost na barvu, která chcete použít pro vzoru.  
+5.  Nastavte `FillColor` nastavte barvu, která chcete použít pro vzorek.  
   
-6.  Nastavte `FillStyle` vlastnost na jakoukoli jinou hodnotu než `Transparent` nebo `Solid`.  
+6.  Nastavte `FillStyle` vlastnost na libovolnou hodnotu jinou než `Transparent` nebo `Solid`.  
   
-#### <a name="to-draw-a-circle-that-has-a-gradient-fill"></a>Kreslení kruh, který má výplň přechodem  
+#### <a name="to-draw-a-circle-that-has-a-gradient-fill"></a>Chcete-li nakreslit kruh, který má přechodovou výplní  
   
-1.  Přetáhněte `OvalShape` řídit z **PowerPacks jazyka Visual Basic** ve **sada nástrojů** do ovládacího prvku formuláře nebo kontejneru.  
+1.  Přetáhněte `OvalShape` ovládacího prvku **sady Visual Basic PowerPack** kartu **nástrojů** do ovládacího prvku formulář nebo kontejneru.  
   
-2.  V **vlastnosti** okno v `Size` vlastnost, nastavte `Height` a `Width` na stejné hodnoty.  
+2.  V **vlastnosti** okno v `Size` , nastavit `Height` a `Width` na stejné hodnoty.  
   
-3.  Nastavte `FillColor` vlastnost na barvu, která chcete použít pro počáteční barvu.  
+3.  Nastavte `FillColor` nastavte barvu, která chcete použít pro počáteční barvu.  
   
-4.  Nastavte `FillGradientColor` vlastnost na barvu, která chcete použít pro koncovou barvu.  
+4.  Nastavte `FillGradientColor` nastavte barvu, která chcete použít pro koncovou barvu.  
   
 5.  Nastavte `FillGradientStyle` vlastnost na hodnotu jinou než `None`.  
   
-#### <a name="to-draw-a-circle-that-is-filled-with-an-image"></a>Kreslení kruh, který je vyplněn bitovou kopii  
+#### <a name="to-draw-a-circle-that-is-filled-with-an-image"></a>Chcete-li nakreslit kruh, který je vyplněna bitovou kopii  
   
-1.  Přetáhněte `OvalShape` řídit z **PowerPacks jazyka Visual Basic** ve **sada nástrojů** do ovládacího prvku formuláře nebo kontejneru.  
+1.  Přetáhněte `OvalShape` ovládacího prvku **sady Visual Basic PowerPack** kartu **nástrojů** do ovládacího prvku formulář nebo kontejneru.  
   
-2.  V **vlastnosti** okno v `Size` vlastnost, nastavte `Height` a `Width` na stejné hodnoty.  
+2.  V **vlastnosti** okno v `Size` , nastavit `Height` a `Width` na stejné hodnoty.  
   
-3.  Vyberte `BackgroundImage` vlastnost a klikněte na **třemi tečkami** tlačítko (...).  
+3.  Vyberte `BackgroundImage` vlastnosti a kliknutím **tlačítko se třemi tečkami** tlačítko (...).  
   
-4.  V **vyberte prostředek** dialogové okno, vyberte bitovou kopii k zobrazení. Pokud nejsou uvedeny žádné prostředky obrázků, klikněte na tlačítko **Import** a přejděte do umístění bitové kopie.  
+4.  V **vybrat prostředek** dialogové okno, vyberte obrázek, který se zobrazí. Pokud nejsou uvedeny žádné prostředky bitové kopie, klikněte na tlačítko **Import** a přejděte do umístění obrázku.  
   
-5.  Klikněte na tlačítko **OK** vložit bitovou kopii.  
+5.  Klikněte na tlačítko **OK** vložit obrázek.  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.PowerPacks.OvalShape>  
- <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape>  
- [Úvod k ovládacím prvkům Čára a Tvar](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-line-and-shape-controls-visual-studio.md)  
- [Postupy: Kreslení čar pomocí ovládacího prvku LineShape](../../../visual-basic/developing-apps/windows-forms/how-to-draw-lines-with-the-lineshape-control-visual-studio.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.PowerPacks.OvalShape>
+- <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape>
+- [Úvod k ovládacím prvkům Čára a Tvar](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-line-and-shape-controls-visual-studio.md)
+- [Postupy: Kreslení čar pomocí ovládacího prvku LineShape](../../../visual-basic/developing-apps/windows-forms/how-to-draw-lines-with-the-lineshape-control-visual-studio.md)

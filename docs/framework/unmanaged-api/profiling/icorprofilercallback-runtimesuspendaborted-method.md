@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c5726c0a563c8937f6f4fff184b7b924d501fa83
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 63d03e83e1688979e4fffe5d31d1f3c393f60e44
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33451903"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54573575"
 ---
 # <a name="icorprofilercallbackruntimesuspendaborted-method"></a>ICorProfilerCallback::RuntimeSuspendAborted – metoda
-Aby modul runtime přerušil pozastavení runtime, který došlo ke upozorní profileru.  
+Oznámí profileru, že modul runtime byla přerušena pozastavení modulu runtime, které se vyskytují.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,14 +34,14 @@ HRESULT RuntimeSuspendAborted();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Pozastavení běhu může zrušit, pokud dva vláken současně pokusí pozastavit modulu runtime.  
+ Pozastavení běhu může být přerušeno dvěma vlákny současně pokusu o pozastavení modulu runtime.  
   
- Buď [icorprofilercallback::runtimesuspendfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) zpětného volání nebo `RuntimeSuspendAborted` zpětného volání bude provedena v následující jedno vlákno [icorprofilercallback::runtimesuspendstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendstarted-method.md) zpětné volání.  
+ Buď [ICorProfilerCallback::RuntimeSuspendFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) zpětného volání nebo `RuntimeSuspendAborted` zpětného volání dojde u následujících jedno vlákno [icorprofilercallback::runtimesuspendstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendstarted-method.md) zpětné volání.  
   
- `RuntimeSuspendAborted` Zpětného volání záruku, že dojde k ve stejném vlákně, jako `RuntimeSuspendStarted` zpětného volání.  
+ `RuntimeSuspendAborted` Zpětného volání je zaručeno, ke kterým dochází ve stejném vlákně jako `RuntimeSuspendStarted` zpětného volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -49,5 +49,5 @@ HRESULT RuntimeSuspendAborted();
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

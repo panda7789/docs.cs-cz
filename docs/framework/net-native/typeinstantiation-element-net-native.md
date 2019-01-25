@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: a5eada64-075b-4162-9655-ded84e4681f2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5277b056c11de4c3e32d33c72bafc8f64ee17d05
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 818a52ceb1428327c5bcb778f85015458990578f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53154822"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54612560"
 ---
 # <a name="lttypeinstantiationgt-element-net-native"></a>Element &lt;TypeInstantiation&gt; (.NET Native)
 Platí pro Konstruovaný obecný typ zásady reflexe modulu runtime.  
@@ -73,13 +73,13 @@ Platí pro Konstruovaný obecný typ zásady reflexe modulu runtime.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Událost >](../../../docs/framework/net-native/event-element-net-native.md)|Použije zásady reflexe pro událost, které patří k tomuto typu.|  
+|[\<Event>](../../../docs/framework/net-native/event-element-net-native.md)|Použije zásady reflexe pro událost, které patří k tomuto typu.|  
 |[\<pole >](../../../docs/framework/net-native/field-element-net-native.md)|Použije zásady reflexe pro pole, které patří k tomuto typu.|  
-|[\<ImpliesType >](../../../docs/framework/net-native/impliestype-element-net-native.md)|Použije zásady na typ, pokud byl použit tyto zásady na typ zastoupený obsahující `<TypeInstantiation>` elementu.|  
-|[\<Metoda >](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady reflexe pro metody, které patří k tomuto typu.|  
-|[\<MethodInstantiation >](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|Použije zásady reflexe konstruované obecné metody, které patří k tomuto typu.|  
-|[\<Vlastnost >](../../../docs/framework/net-native/property-element-net-native.md)|Použije zásady reflexe pro vlastnosti, které patří k tomuto typu.|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe vnořeného typu.|  
+|[\<ImpliesType>](../../../docs/framework/net-native/impliestype-element-net-native.md)|Použije zásady na typ, pokud byl použit tyto zásady na typ zastoupený obsahující `<TypeInstantiation>` elementu.|  
+|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady reflexe pro metody, které patří k tomuto typu.|  
+|[\<MethodInstantiation>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|Použije zásady reflexe konstruované obecné metody, které patří k tomuto typu.|  
+|[\<Property>](../../../docs/framework/net-native/property-element-net-native.md)|Použije zásady reflexe pro vlastnosti, které patří k tomuto typu.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe vnořeného typu.|  
 |`<TypeInstantiation>`|Použije zásady reflexe pro vnořené Konstruovaný obecný typ.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
@@ -88,9 +88,9 @@ Platí pro Konstruovaný obecný typ zásady reflexe modulu runtime.
 |-------------|-----------------|  
 |[\<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md)|Slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadata jsou k dispozici pro účely reflexe v době běhu.|  
 |[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Použije zásady reflexe pro všechny typy v zadané sestavení.|  
-|[\<Knihovny >](../../../docs/framework/net-native/library-element-net-native.md)|Určuje sestavení, který obsahuje typy a členy typu, jehož metadata jsou k dispozici pro účely reflexe v době běhu.|  
+|[\<Library>](../../../docs/framework/net-native/library-element-net-native.md)|Určuje sestavení, který obsahuje typy a členy typu, jehož metadata jsou k dispozici pro účely reflexe v době běhu.|  
 |[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady reflexe pro všechny typy v oboru názvů.|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
 |`<TypeInstantiation>`|Použije zásady reflexe pro Konstruovaný obecný typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -116,7 +116,7 @@ Platí pro Konstruovaný obecný typ zásady reflexe modulu runtime.
 </Directives>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)  
- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
+## <a name="see-also"></a>Viz také:
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

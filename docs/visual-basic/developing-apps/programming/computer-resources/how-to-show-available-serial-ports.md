@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zobrazení dostupných sériových portů v jazyce Visual Basic'
+title: 'Postupy: Zobrazení dostupných sériových portů v jazyce Visual Basic'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - serial ports, availability
@@ -7,44 +7,44 @@ helpviewer_keywords:
 - My.Computer.Ports object
 - ports, serial port availability
 ms.assetid: eaf2ee5a-8103-4e10-a205-ed1d4db120ba
-ms.openlocfilehash: c13682ddca69d782ea519e0df703c211df8d12c4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 58f4d629500223ccc6690912b5e261eebc17c6b6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33586722"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54603804"
 ---
-# <a name="how-to-show-available-serial-ports-in-visual-basic"></a>Postupy: Zobrazení dostupných sériových portů v jazyce Visual Basic
-Toto téma popisuje postup použití `My.Computer.Ports` k zobrazení dostupných sériových portů počítače v jazyce Visual Basic.  
+# <a name="how-to-show-available-serial-ports-in-visual-basic"></a>Postupy: Zobrazení dostupných sériových portů v jazyce Visual Basic
+Toto téma popisuje způsob použití `My.Computer.Ports` k zobrazení dostupných sériových portů v počítači v jazyce Visual Basic.  
   
- Povolit uživatelům vyberte port, který chcete použít, jsou umístěny názvy sériových portů v <xref:System.Windows.Forms.ListBox> ovládacího prvku.  
+ Umožňuje uživateli vybrat port, který chcete použít názvy sériových portů jsou umístěny v <xref:System.Windows.Forms.ListBox> ovládacího prvku.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad cyklicky prochází přes všechny řetězce, `My.Computer.Ports.SerialPortNames` vrátí vlastnost. Tyto řetězce jsou názvy dostupných sériových portů v počítači.  
+ V tomto příkladu cyklickému všechny řetězce, který `My.Computer.Ports.SerialPortNames` vrátí vlastnost. Tyto řetězce jsou názvy dostupných sériových portů v počítači.  
   
- Obvykle se uživatel vybere ze seznamu dostupných portů sériový port, který by aplikace měla použít. V tomto příkladu jsou uložené názvy sériových portů v <xref:System.Windows.Forms.ListBox> ovládacího prvku. Další informace najdete v tématu [ListBox – ovládací prvek](../../../../framework/winforms/controls/listbox-control-windows-forms.md).  
+ Obvykle uživatel vybere ze seznamu dostupných portů který sériový port aplikace musí používat. V tomto příkladu jsou názvy sériových portů. uložené v <xref:System.Windows.Forms.ListBox> ovládacího prvku. Další informace najdete v tématu [ListBox – ovládací prvek](../../../../framework/winforms/controls/listbox-control-windows-forms.md).  
   
  [!code-vb[VbVbalrMyComputer#45](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-show-available-serial-ports_1.vb)]  
   
- Tento příklad kódu je také k dispozici jako IntelliSense fragment kódu. V Sběrač fragmentů kódu je umístěn v **připojení a sítě**. Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
+ Tento příklad kódu je také dostupný jako fragment kódu technologie IntelliSense. V dialogu pro výběr fragmentu kódu je umístěn v **připojení a sítě**. Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Projekt odkazuje na System.Windows.Forms.dll.  
+-   Odkaz na System.Windows.Forms.dll.  
   
--   Přístup k členům <xref:System.Windows.Forms> oboru názvů. Přidat `Imports` příkaz, pokud jste nejsou kvalifikující plně názvy členů v kódu. Další informace najdete v tématu [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
+-   Přístup k členům <xref:System.Windows.Forms> oboru názvů. Přidat `Imports` příkazu, pokud jste nejsou kvalifikaci plně názvy členů ve vašem kódu. Další informace najdete v tématu [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
--   S svého formuláře <xref:System.Windows.Forms.ListBox> ovládací prvek s názvem `ListBox1`.  
+-   Obsahující formulář <xref:System.Windows.Forms.ListBox> ovládací prvek s názvem `ListBox1`.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Není nutné použít <xref:System.Windows.Forms.ListBox> řízení, pokud chcete zobrazit názvy dostupné sériového portu. Místo toho můžete použít <xref:System.Windows.Forms.ComboBox> nebo jiného ovládacího prvku. Pokud aplikace není nutné odpověď od uživatele, můžete použít <xref:System.Windows.Forms.TextBox> ovládací prvek pro zobrazení informací.  
+ Není nutné používat <xref:System.Windows.Forms.ListBox> ovládací prvek pro zobrazení názvy dostupných sériových portů. Místo toho můžete použít <xref:System.Windows.Forms.ComboBox> nebo jiný ovládací prvek. Pokud aplikace nepotřebuje odpověď od uživatele, můžete použít <xref:System.Windows.Forms.TextBox> ovládací prvek pro zobrazení informací.  
   
 > [!NOTE]
->  Názvy port vrácené `My.Computer.Ports.SerialPortNames` může být nesprávný při spuštění v systému Windows 98. Chcete-li zabránit chybám aplikace, použijte zpracování výjimek, například `Try...Catch...Finally` příkaz nebo `Using` při otevření portů pomocí názvu port.  
+>  Názvy port vrácené `My.Computer.Ports.SerialPortNames` může být nesprávné při spuštění na Windows 98. Chcete-li zabránit chybám aplikace, použijte zpracování výjimek, například `Try...Catch...Finally` příkazu nebo `Using` prohlášení, při použití názvu port otevřít porty.  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Devices.Ports>  
- [Postupy: Vytáčení čísel na modemech připojených k sériovým portům](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)  
- [Postupy: Posílání řetězců na sériové porty](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)  
- [Postupy: Příjem řetězců ze sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Devices.Ports>
+- [Postupy: Vytáčení čísel na modemech připojených k sériovým portům](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)
+- [Postupy: Odesílání řetězců na sériové porty](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)
+- [Postupy: Příjem řetězců ze sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)

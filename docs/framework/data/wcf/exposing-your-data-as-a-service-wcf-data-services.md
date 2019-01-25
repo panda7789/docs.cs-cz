@@ -6,20 +6,20 @@ helpviewer_keywords:
 - getting started, WCF Data Services
 - WCF Data Services, getting started
 ms.assetid: df0bbcee-f66f-4a88-abb4-4e73c8b9c908
-ms.openlocfilehash: ba316aeda0a0a7e80af8e37a6a62e88652b9635b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8e598dde0d85b1d7d4208bf2475a0f6f6eee34a6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520412"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700985"
 ---
 # <a name="expose-your-data-as-a-service-wcf-data-services"></a>Vystavení dat jako služby (WCF Data Services)
 
 Služby WCF Data Services se integruje se sadou Visual Studio umožňuje snadno definovat služby k vystavení dat jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanály. Vytvoření datové služby, která vystavuje kanál OData zahrnuje následující základní kroky:
 
-1.  **Definování datového modelu.** Služby WCF Data Services nativně podporuje datové modely, které jsou založeny na [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md). Další informace najdete v tématu [jak: vytvořit pomocí dat z datového zdroje ADO.NET Entity Framework](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md).
+1.  **Definování datového modelu.** Služby WCF Data Services nativně podporuje datové modely, které jsou založeny na [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md). Další informace najdete v tématu [jak: Vytvoření datové služby pomocí zdroje dat rozhraní ADO.NET Entity Framework](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md).
 
-     Služby WCF Data Services také podporuje datové modely, které jsou založené na common language runtime (CLR) objekty, které vracet instanci <xref:System.Linq.IQueryable%601> rozhraní. To umožňuje nasazení datových služeb, které jsou založeny na seznam, pole a kolekce v rozhraní .NET Framework. Umožňuje vytvářet, aktualizovat a odstraňovat operace nad tyto datové struktury, musí také implementovat <xref:System.Data.Services.IUpdatable> rozhraní. Další informace najdete v tématu [postupy: vytvoření datové služby pomocí zprostředkovatel reflexe](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md).
+     Služby WCF Data Services také podporuje datové modely, které jsou založené na common language runtime (CLR) objekty, které vracet instanci <xref:System.Linq.IQueryable%601> rozhraní. To umožňuje nasazení datových služeb, které jsou založeny na seznam, pole a kolekce v rozhraní .NET Framework. Umožňuje vytvářet, aktualizovat a odstraňovat operace nad tyto datové struktury, musí také implementovat <xref:System.Data.Services.IUpdatable> rozhraní. Další informace najdete v tématu [jak: Vytvoření datové služby pomocí zprostředkovatel reflexe](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md).
 
      Pro pokročilejší scénáře služeb WCF Data Services obsahuje sadu zprostředkovatelů, které vám umožňují definovat datový model na základě typu dat s pozdní vazbou. Další informace najdete v tématu [Vlastní zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md).
 
@@ -29,7 +29,7 @@ Služby WCF Data Services se integruje se sadou Visual Studio umožňuje snadno 
 
 Příklad toho, jak vytvořit jednoduchou datovou službu, která je založena na ukázkové databáze Northwind, naleznete v tématu [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
 - [Přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)

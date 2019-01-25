@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b848c30e824d45f6f619cfdb3d00a2d3cdc4573e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dadfabf1d2507b2bd719b5b73238bb38c9ae7563
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448710"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54602426"
 ---
 # <a name="imetadataimportenumparams-method"></a>IMetaDataImport::EnumParams – metoda
-Vytvoří výčet představující parametry metody odkazuje zadaný token MethodDef tokeny ParamDef.  
+Vytvoří výčet ParamDef tokeny představující parametry metody odkazuje zadaný token MethodDef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,36 +41,36 @@ HRESULT EnumParams (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor. Toto musí mít hodnotu NULL pro první volání této metody.  
+ [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
   
  `mb`  
- [v] MethodDef token představující metodu s parametry, které chcete vytvořit výčet.  
+ [in] Token MethodDef představující metodu s parametry pro vytvoření výčtu.  
   
  `rParams`  
- [out] Pole používá k ukládání ParamDef tokenů.  
+ [out] Pole pro ukládání tokenů ParamDef.  
   
  `cMax`  
- [v] Maximální velikost `rParams` pole.  
+ [in] Maximální velikost `rParams` pole.  
   
  `pcTokens`  
- [out] Počet ParamDef tokeny, vrátí se v `rParams`.  
+ [out] Počet tokenů ParamDef vrácené v `rParams`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumParams` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokenů pro zobrazení výčtu. V takovém případě `pcTokens` je nulová.|  
+|`S_OK`|`EnumParams` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny se vytvořit výčet. V takovém případě `pcTokens` je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

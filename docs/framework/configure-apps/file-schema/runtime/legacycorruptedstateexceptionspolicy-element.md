@@ -1,5 +1,5 @@
 ---
-title: '&lt;legacycorruptedstateexceptionspolicy –&gt; – Element'
+title: '&lt;legacyCorruptedStateExceptionsPolicy&gt; Element'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <legacyCorruptedStateExceptionsPolicy> element
@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: e0a55ddc-bfa8-4f3e-ac14-d1fc3330e4bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bdf2e69b307d55f778a5cb54f8cc77bc3c69a185
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 14b8940fa0c5c7ceb4a14fdd0f40867c7be9f65e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613489"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54737712"
 ---
-# <a name="ltlegacycorruptedstateexceptionspolicygt-element"></a>&lt;legacycorruptedstateexceptionspolicy –&gt; – Element
+# <a name="ltlegacycorruptedstateexceptionspolicygt-element"></a>&lt;legacyCorruptedStateExceptionsPolicy&gt; Element
 Určuje, zda modul common language runtime umožňuje spravovanému kódu zachytit narušení přístupu a ostatní výjimky v poškozeném stavu.  
   
  \<Konfigurace >  
 \<modul runtime >  
-\<legacycorruptedstateexceptionspolicy – >  
+\<legacyCorruptedStateExceptionsPolicy>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -77,7 +77,7 @@ Určuje, zda modul common language runtime umožňuje spravovanému kódu zachyt
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

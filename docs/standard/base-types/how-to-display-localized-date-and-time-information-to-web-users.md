@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 377fe93c-32be-421a-a30a-be639a46ede8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 27e9306164e3d0e008f38f2d94e1f9c11c0d7d3d
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
-ms.translationtype: MT
+ms.openlocfilehash: 0918e1320e04930ae8d9f30246936ef125f9ce82
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44085222"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54686579"
 ---
 # <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>Postupy: Zobrazování lokalizovaných informací data a času webovým uživatelům
 Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, operací, které analyzovat a formátování hodnot data a času, neměli byste tedy spoléhat na výchozí formát (což je nejčastěji formátu jazykové verze místní webový server) při interakci s uživatelem. Webové formuláře, které zpracovávají datum a čas uživatelský vstup řetězce místo toho by se měly analyzovat řetězců pomocí upřednostňované jazykové verze uživatele. Podobně data a času má být zobrazena na uživatele ve formátu, který odpovídá na jazykovou verzi uživatele. Toto téma ukazuje, jak to provést.  
@@ -110,7 +110,7 @@ Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, o
   
 ## <a name="see-also"></a>Viz také:
 
-- [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)  
-- [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
-- [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)  
+- [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)
+- [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
+- [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
 - [Analýza řetězců data a času](../../../docs/standard/base-types/parsing-datetime.md)

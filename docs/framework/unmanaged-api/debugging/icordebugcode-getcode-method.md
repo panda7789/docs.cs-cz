@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d09681f97829f88bedf53af229298d5d57d764df
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d057032f2a46ef29a903ae21ab13af02f9d657f1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402686"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54728762"
 ---
 # <a name="icordebugcodegetcode-method"></a>ICorDebugCode::GetCode – metoda
-Vrátí celý kód pro zadanou funkci, který je formátován pro zpětný překlad. Tato metoda je zastaralá v rozhraní .NET Framework verze 2.0. Použití [icordebugcode2::getcodechunks –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md) místo.  
+Vrátí celý kód pro zadanou funkci, který je formátován pro zpětný překlad. Tato metoda je zastaralá v rozhraní .NET Framework verze 2.0. Použití [ICorDebugCode2::GetCodeChunks](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md) místo.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,13 +42,13 @@ HRESULT GetCode (
   
 #### <a name="parameters"></a>Parametry  
  `startOffset`  
- [v] Posun od funkce.  
+ [in] Posun zahájení funkce.  
   
  `endOffset`  
- [v] Posun konec funkce.  
+ [in] Posun od konce funkce.  
   
  `cBufferAlloc`  
- [v] Velikost `buffer` pole, do které bude vrácen kód.  
+ [in] Velikost `buffer` pole, do které bude vrácen kód.  
   
  `buffer`  
  [out] Pole, do kterého bude vrácen kód.  
@@ -57,10 +57,10 @@ HRESULT GetCode (
  [out] Počet bajtů vrácených.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud kód funkce byl rozdělen do více bloků dat, jsou zřetězeny v pořadí podle zvýšení nativní posun. Instrukce hranice nejsou zaškrtnutí.  
+ Pokud funkce kód byl rozdělen do více bloků dat, jsou spojeny v pořadí podle zvýšení nativní posun. Instrukce hranice nekontrolují.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -68,6 +68,6 @@ HRESULT GetCode (
   
  **Verze rozhraní .NET framework:** 1.1, 1.0  
   
-## <a name="see-also"></a>Viz také  
- [GetCodeChunks – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)  
- 
+## <a name="see-also"></a>Viz také:
+- [GetCodeChunks – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)
+

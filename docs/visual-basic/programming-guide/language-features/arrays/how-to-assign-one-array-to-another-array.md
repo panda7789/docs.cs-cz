@@ -6,21 +6,21 @@ helpviewer_keywords:
 - arrays [Visual Basic], assigning
 - arrays [Visual Basic], covariance
 ms.assetid: 1ae89ea5-f292-4282-bcfc-e9b06b37fbd5
-ms.openlocfilehash: 63c7d187152fcb5ea84378c677aa687f334f63de
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f2617d270caf5ed4ade68934486fee6afb6c413f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33647927"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572718"
 ---
 # <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>Postupy: Přiřazení jednoho pole ke druhému (Visual Basic)
-Vzhledem k tomu, že pole jsou objekty, můžete je používat v příkazech přiřazení jako ostatní typy objektů. Proměnné pole obsahuje ukazatele na data tvořících elementy pole a informace o pořadí a délku a přiřazení zkopíruje pouze tento ukazatel.  
+Protože pole jsou objekty, které lze využít v přiřazovací příkazy jako ostatní typy objektů. Proměnné pole tvořící prvky pole a informace o počet rozměrů a délka dat obsahuje ukazatel a přiřazení zkopíruje pouze tento ukazatel.  
   
 ### <a name="to-assign-one-array-to-another-array"></a>K přiřazení jednoho pole ke druhému  
   
-1.  Zajistěte, aby tato dvě pole element kompatibilní datové typy a stejné pořadí (počet dimenzí).  
+1.  Ujistěte se, že dvě pole mají stejné pořadí (počet rozměrů) a kompatibilní element datové typy.  
   
-2.  Příkaz standardní přiřazení použijte přiřadit zdrojové pole cílového pole. Nepostupujte podle buď název pole v závorkách.  
+2.  Použijte standardní přiřazovací příkaz přiřaďte pole zdrojového do cílového pole. Nepostupujte podle buď název pole v závorkách.  
   
     ```  
     Dim formArray() As System.Windows.Forms.Form  
@@ -28,22 +28,22 @@ Vzhledem k tomu, že pole jsou objekty, můžete je používat v příkazech př
     controlArray = formArray  
     ```  
   
- Při přiřazení jednoho pole do druhého, platí následující pravidla:  
+ Při přiřazení jednoho pole do jiného, platí následující pravidla:  
   
--   **Stejné pořadí.** Pořadí (počet dimenzí) cílového pole musí být stejná jako u zdrojové pole.  
+-   **Stejné rozměry.** Rozměr (počet rozměrů) cílového pole musí být stejné jako u zdrojového pole.  
   
-     Zadané pořadí polí dvě shodné, není potřeba být stejná dimenze. Počet elementů v dané dimenzi lze změnit během přiřazení.  
+     Pokud jsou stejné rozměry dvě pole, není potřeba rovnat dimenze. Během přiřazování můžete změnit počet prvků v dané dimenzi.  
   
--   **Typy elementů.** Musí mít buď obě pole *odkazují na typ* elementy nebo obě pole musí mít *typ hodnoty* elementy. Další informace najdete v tématu [typy hodnot a typy odkazu](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
+-   **Typy elementů.** Buď obě pole musí mít *odkazovat na typ* elementy nebo obě pole musí mít *typ hodnoty* elementy. Další informace najdete v tématu [typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
   
-    -   Pokud obě pole elementy typu hodnotu, datové typy element musí být přesně stejný. Jedinou výjimkou je, že můžete přiřadit pole `Enum` elementy na pole Základní typ, který `Enum`.  
+    -   Pokud obě pole mají prvky typu hodnoty, element datové typy, které musí být přesně stejný. Jedinou výjimkou je, že můžete přiřadit pole `Enum` prvky do pole Základní typ, který `Enum`.  
   
-    -   Pokud obě pole mít odkaz na typ elementů, element typ zdroje musí být odvozený od typu cílového elementu. Pokud to tento případ, dvě pole mají stejný vztah dědičnosti jako jejich elementů. To se označuje jako *kovariance polí*.  
+    -   Pokud obě pole mít odkaz na typ prvků, typ zdrojového prvku musí být odvozen z typu cílového elementu. Pokud tomu tak, máte dvě pole stejné relaci dědičnosti jako jejich prvky. Tento postup se nazývá *kovariance polí*.  
   
- Kompilátor hlásí chybu, pokud výše uvedených pravidel je porušena, například pokud typy dat není kompatibilní nebo je pořadí nerovnají. Můžete přidat do kódu a ujistěte se, že tato pole jsou kompatibilní před pokusem o přiřazení zpracování chyb. Můžete také [TryCast – operátor](../../../../visual-basic/language-reference/operators/trycast-operator.md) – klíčové slovo, pokud chcete, aby se zabránilo došlo k výjimce.  
+ Kompilátor hlásí chybu, pokud se výše uvedených pravidel se poruší, například pokud datové typy, které nejsou kompatibilní, nebo je pořadí nerovnost. Můžete přidat do vašeho kódu, abyste měli jistotu, že tato pole jsou kompatibilní před pokusem o přiřazení pro zpracování chyb. Můžete také použít [TryCast – operátor](../../../../visual-basic/language-reference/operators/trycast-operator.md) – klíčové slovo, pokud chcete, aby se zabránilo došlo k výjimce.  
   
-## <a name="see-also"></a>Viz také  
- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
- [Řešení potíží s poli](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)  
- [Příkaz Enum](../../../../visual-basic/language-reference/statements/enum-statement.md)  
- [Převody polí](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)
+## <a name="see-also"></a>Viz také:
+- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [Řešení potíží s poli](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)
+- [Příkaz Enum](../../../../visual-basic/language-reference/statements/enum-statement.md)
+- [Převody polí](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)

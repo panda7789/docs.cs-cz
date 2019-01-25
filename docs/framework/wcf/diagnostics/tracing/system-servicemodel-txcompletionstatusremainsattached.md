@@ -2,20 +2,20 @@
 title: System.ServiceModel.TxCompletionStatusRemainsAttached
 ms.date: 03/30/2017
 ms.assetid: 60a745f5-85f7-4006-9786-fbbcca678ac9
-ms.openlocfilehash: c9309d6da8adf148398f0749dff437bd173ce45b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9ad4b449cb46228ec2935e6b20f33ed390a284c7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33484601"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54694927"
 ---
 # <a name="systemservicemodeltxcompletionstatusremainsattached"></a>System.ServiceModel.TxCompletionStatusRemainsAttached
-Zadanou transakci pro zadanou operaci zůstane připojena ke kontextu InstanceContext.  
+Zadanou transakci pro zadanou operaci zůstává připojena ke kontextu InstanceContext.  
   
 ## <a name="description"></a>Popis  
- Trasovat při dokončení operace služby, ale transakce není nastaven pro dokončení.  
+ Trasovaná při dokončení operace služby, ale transakce nenastaví na dokončení.  
   
-## <a name="see-also"></a>Viz také  
- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a>Viz také:
+- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

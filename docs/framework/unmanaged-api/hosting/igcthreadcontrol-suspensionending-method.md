@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d0986645a8ce4076c27f39f2ae8004ef20bb4bdb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d77380e35d8f5eee1e50b1030493e0b17cbadfba
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33437749"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54713285"
 ---
 # <a name="igcthreadcontrolsuspensionending-method"></a>IGCThreadControl::SuspensionEnding – metoda
-Upozorní hostitele, že je modul runtime obnovování vláken po uvolnění paměti nebo jiných pozastavení.  
+Upozorňuje hostitele, že modul runtime obnovuje po uvolnění paměti nebo jiných pozastavení vlákna.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +37,19 @@ HRESULT SuspensionEnding (
   
 #### <a name="parameters"></a>Parametry  
  `Generation`  
- [v] Generování, na kterém byla provedena uvolnění paměti.  
+ [in] Generování, na kterém byla provedena uvolňování paměti.  
   
 ## <a name="remarks"></a>Poznámky  
- Není změnit plán žádné podprocesy během `SuspensionEnding` zpětného volání.  
+ Nelze změnit plán žádného vlákna během `SuspensionEnding` zpětného volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IGCThreadControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/igcthreadcontrol-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IGCThreadControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/igcthreadcontrol-interface.md)

@@ -2,12 +2,12 @@
 title: 'Postupy: Použití monikeru služby u kontraktů WSDL'
 ms.date: 03/30/2017
 ms.assetid: a88d9650-bb50-4f48-8c85-12f5ce98a83a
-ms.openlocfilehash: fc8e5d80ec0b1df699ebe9112f364dd69ca3faf6
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: 9e9d4b49904f555d790c4b5fde760c004eb1820a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48266522"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54726569"
 ---
 # <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>Postupy: Použití monikeru služby u kontraktů WSDL
 Pokud chcete úplně nezávislý klient komunikace s objekty COM, existují situace. Na službu, kterou chcete volat nesmí zveřejnit koncový bod MEX a klientský WCF pro spolupráci s COM nelze registrovat knihovnu DLL. V těchto případech můžete vytvořit soubor WSDL, který popisuje službu a předejte ho do monikeru služby WCF. Toto téma popisuje, jak volat získávání WCF spustit ukázku pomocí monikeru WCF WSDL.  
@@ -56,6 +56,6 @@ Pokud chcete úplně nezávislý klient komunikace s objekty COM, existují situ
   
 7.  Spuštění aplikace Visual Basic. Zobrazí se okno se zprávou s výsledky volání odečíst (145, 76.54).  
   
-## <a name="see-also"></a>Viz také  
- [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md)  
- [Přehled integrace s aplikacemi modelu COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md)
+- [Přehled integrace s aplikacemi modelu COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)

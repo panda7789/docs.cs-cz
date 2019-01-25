@@ -10,21 +10,21 @@ helpviewer_keywords:
 - bypasslist, remove element
 - remove element, bypasslist
 ms.assetid: 61dcfb4a-e3d9-4abf-a2cd-7d685fe2f64b
-ms.openlocfilehash: 83449aa2df2b0442f5ba5e1f152232b007bcdc15
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: c9db8cc2cf05987db97f28d7f97967f5bb52404e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50193705"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54625663"
 ---
 # <a name="ltremovegt-element-for-bypasslist-network-settings"></a>&lt;Odebrat&gt; – Element pro bypasslist (nastavení sítě)
 Odebere ze seznamu obcházení proxy IP adresu nebo název DNS.  
   
  \<Konfigurace >  
 \<system.net>  
-\<defaultProxy >  
+\<defaultProxy>  
 \<bypasslist – >  
-\<Odebrat >  
+\<remove>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,7 +50,7 @@ Odebere ze seznamu obcházení proxy IP adresu nebo název DNS.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[atribut bypasslist bude](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.|  
+|[bypasslist](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.|  
   
 ## <a name="remarks"></a>Poznámky  
  `remove` Element odebere regulární výrazy popisující IP adres nebo názvů DNS serverů v seznamu adres, které obcházejí proxy server. Adresy byly dříve definovány v konfiguračním souboru nebo na vyšší úrovni v hierarchii configuration.  
@@ -78,6 +78,6 @@ Odebere ze seznamu obcházení proxy IP adresu nebo název DNS.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.WebProxy?displayProperty=nameWithType>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.WebProxy?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

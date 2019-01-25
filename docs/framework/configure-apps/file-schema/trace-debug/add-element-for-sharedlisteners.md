@@ -10,20 +10,20 @@ helpviewer_keywords:
 ms.assetid: 1595e1bc-2492-421f-8384-7f382eb8eb57
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 9e0a23411f4bc37a1e09460113d15f4861e0a190
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: b8de4fd8a130f93b2ed3e14701c442a65c9ffcd8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151158"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54712467"
 ---
 # <a name="ltaddgt-element-for-ltsharedlistenersgt"></a>&lt;Přidat&gt; – Element pro &lt;sharedListeners&gt;
 Přidá naslouchací proces pro `sharedListeners` kolekce. `sharedListeners` je kolekce naslouchacích procesů, aby každá [ \<zdroj >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md) můžete odkazovat.  Ve výchozím nastavení, moduly pro naslouchání v `sharedListeners` kolekce nejsou umístěny v `Listeners` kolekce. Musí se přidat název, který [ \<zdroj >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md). Není možné získat naslouchacím procesům `sharedListeners` kolekce v kódu v době běhu.  
   
  \<Konfigurace >  
-&nbsp;&nbsp;\<System.Diagnostics >  
+&nbsp;&nbsp;\<system.diagnostics>  
 &nbsp;&nbsp;&nbsp;&nbsp;\<sharedListeners > – Element  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Přidat >  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<add>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -110,8 +110,8 @@ Přidá naslouchací proces pro `sharedListeners` kolekce. `sharedListeners` je 
 </configuration>   
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Diagnostics.TraceSource>  
- <xref:System.Diagnostics.TraceListener>  
- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Diagnostics.TraceSource>
+- <xref:System.Diagnostics.TraceListener>
+- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

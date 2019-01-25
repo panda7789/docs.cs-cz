@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c515a8184e8c01b0e292057f3f66ffef28f2c5fb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 15890bb4052905ef448501ae759669f8a1dfd444
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402878"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54735594"
 ---
 # <a name="iclrdatatargetgetmachinetype-method"></a>ICLRDataTarget::GetMachineType – metoda
-Získá identifikátor pro druh sada instrukcí, která používá tento cílový proces.  
+Získá identifikátor pro typ instrukční sadu, která používá cílového procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,10 +37,10 @@ HRESULT GetMachineType (
   
 #### <a name="parameters"></a>Parametry  
  `machineType`  
- [out] Ukazatel na hodnotu, která znamená, že pokyn nastavit tento cílový proces používá. Vrácený `machineType` je jedním z IMAGE_FILE_MACHINE konstanty, které jsou definovány v souboru WinNT.h hlavičkový soubor.  
+ [out] Ukazatel na hodnotu, která indikuje, že podle pokynů nastavte Cílový proces používá. Vrácený `machineType` je jednou z konstant IMAGE_FILE_MACHINE, které jsou definovány v souboru WinNT.h hlavičkový soubor.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   
@@ -48,5 +48,5 @@ HRESULT GetMachineType (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
