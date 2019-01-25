@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: dotazu na znaky v řetězci (LINQ) (Visual Basic)'
+title: 'Postupy: Dotazu na znaky v řetězci (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 499ebbe0-746c-4235-9dba-ce722c12b50e
-ms.openlocfilehash: 0953ff9152a4af1aa40379e15b2279d23ad0aac1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3a4f3bbca313747e0b16170719b9028e5dc9174f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33642113"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559746"
 ---
-# <a name="how-to-query-for-characters-in-a-string-linq-visual-basic"></a>Postupy: dotazu na znaky v řetězci (LINQ) (Visual Basic)
-Protože <xref:System.String> třída implementuje obecná <xref:System.Collections.Generic.IEnumerable%601> rozhraní, může být dotazován libovolný řetězec jako posloupnosti znaků. Je to ale není běžně se používají LINQ. Pro komplexní vzor odpovídající operace, použijte <xref:System.Text.RegularExpressions.Regex> třídy.  
+# <a name="how-to-query-for-characters-in-a-string-linq-visual-basic"></a>Postupy: Dotazu na znaky v řetězci (LINQ) (Visual Basic)
+Vzhledem k tomu, <xref:System.String> třída implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, libovolný řetězec může být dotázán jako posloupnost znaků. Ale to není běžné použití odkazu LINQ. Pro komplexní porovnávání vzorů operace, použijte <xref:System.Text.RegularExpressions.Regex> třídy.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu se dotazuje řetězec můžete určit počet číslic, které obsahuje. Všimněte si, že dotaz je "opakovaně" po provedení první. To je možné, protože samotný dotaz neukládá skutečné výsledky.  
+ V následujícím příkladu se dotazuje řetězec a chce určit počet číslic, které obsahuje. Všimněte si, že dotaz je "znovu" po provedení první. To je možné, protože samotný dotaz nejsou uložené žádné skutečné výsledky.  
   
 ```vb  
 Class QueryAString  
@@ -55,8 +55,8 @@ End Class
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
+ Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
- [Postupy: kombinace dotazů LINQ s regulárními výrazy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [Postupy: Kombinace dotazů LINQ s regulárními výrazy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)

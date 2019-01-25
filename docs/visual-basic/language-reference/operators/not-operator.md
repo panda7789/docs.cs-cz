@@ -14,12 +14,12 @@ helpviewer_keywords:
 - logical negation
 - operators [Visual Basic], negation
 ms.assetid: 8f2ea83c-d2ed-480a-a474-3042a1cad9b5
-ms.openlocfilehash: 332cee57c8d25d7f51737e01e70ba515d50bd6e6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cd93316ada1fcf0997922f71a8efc5a3cf411d09
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604390"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54614569"
 ---
 # <a name="not-operator-visual-basic"></a>Not – operátor (Visual Basic)
 Provede logickou negaci `Boolean` výrazu nebo bitovou negaci numerického výrazu.  
@@ -32,20 +32,20 @@ result = Not expression
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Požadováno. Všechny `Boolean` nebo číselný výraz.  
+ Povinný parametr. Žádné `Boolean` nebo číselný výraz.  
   
  `expression`  
- Požadováno. Všechny `Boolean` nebo číselný výraz.  
+ Povinný parametr. Žádné `Boolean` nebo číselný výraz.  
   
 ## <a name="remarks"></a>Poznámky  
- Pro `Boolean` výrazy, následující tabulka popisuje, jak `result` je určen.  
+ Pro `Boolean` výrazy, následující tabulka ukazuje, jak `result` je určen.  
   
 |Pokud `expression` je|Hodnota `result` je|  
 |------------------------|------------------------------|  
 |`True`|`False`|  
 |`False`|`True`|  
   
- Pro hodnotu numerické výrazy `Not` operátor Invertuje výběr hodnoty bit žádné číselného výrazu a nastaví odpovídající chvíli v `result` podle následující tabulky.  
+ Pro numerických výrazů `Not` operátor Invertuje bitové hodnoty jakýkoli číselný výraz a nastaví odpovídající bit v `result` podle následující tabulky.  
   
 |Pokud bit v `expression` je|Bit v `result` je|  
 |-------------------------------|----------------------------|  
@@ -53,30 +53,30 @@ result = Not expression
 |0|1|  
   
 > [!NOTE]
->  Vzhledem k tomu, že logické a bitové operátory mít nižší prioritu než ostatní aritmetické a relační operátory, všechny bitové operace by se měla uvádět v závorkách a zajišťují přesné provádění.  
+>  Protože logické a bitové operátory mají nižší prioritu než ostatní aritmetické a relační operátory, všechny bitové operace by měl být uzavřen v závorkách zajistit správné spuštění.  
   
 ## <a name="data-types"></a>Datové typy  
- Logická negace, je datový typ výsledku `Boolean`. Pro bitovou negaci výsledný typ dat je stejný jako u `expression`. Ale pokud je výraz `Decimal`, výsledkem je `Long`.  
+ Logická negace, datový typ výsledku je `Boolean`. Pro bitovou negaci datový typ výsledku je stejný jako u `expression`. Nicméně pokud je výraz `Decimal`, výsledkem je `Long`.  
   
 ## <a name="overloading"></a>Přetížení  
- `Not` Může být operátor *přetížený*, což znamená, že třídu nebo strukturu lze znovu definovat své chování při jeho operand má typ třídy nebo struktura. Pokud váš kód používá tento operátor na takové třídu nebo strukturu, ujistěte se, že rozumíte své Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ `Not` Operátor může být *přetížené*, což znamená, že třídy nebo struktury lze znovu definovat jeho chování při jeho operand má typ této třídě nebo struktuře. Pokud váš kód používá tento operátor na takové třídy nebo struktury, ujistěte se, že rozumíte jeho Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Not` operátor k plnění Logická negace `Boolean` výraz. Výsledkem je, `Boolean` hodnotu, která představuje zpětného hodnota výrazu.  
+ V následujícím příkladu `Not` operátor logické negace na `Boolean` výrazu. Výsledkem je `Boolean` hodnotu, která představuje naopak hodnota výrazu.  
   
  [!code-vb[VbVbalrOperators#33](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/not-operator_1.vb)]  
   
- V předchozím příkladu vytvoří výsledky `False` a `True`, v uvedeném pořadí.  
+ Předchozí příklad vytváří výsledky `False` a `True`v uvedeném pořadí.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Not` operátor provést Logická negace jednotlivých bitů číselného výrazu. Bit ve vzoru výsledek nastaven na naopak odpovídající bit ve vzoru operand, včetně bit přihlášení.  
+ V následujícím příkladu `Not` operátor logické negace jednotlivých bitů číselného výrazu. Bitového vzoru výsledek je nastavena pro stornování odpovídající bit v operandu modelu, včetně bit znaménka.  
   
  [!code-vb[VbVbalrOperators#34](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/not-operator_2.vb)]  
   
- V předchozím příkladu vytvoří výsledky –11, –9 a –7, v uvedeném pořadí.  
+ V předchozím příkladu vytvoří výsledky – 11, –9 a –7, v uvedeném pořadí.  
   
-## <a name="see-also"></a>Viz také  
- [Logické/bitové operátory (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)  
- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
- [Logické a bitové operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+## <a name="see-also"></a>Viz také:
+- [Logické/bitové operátory (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
+- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+- [Logické a bitové operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

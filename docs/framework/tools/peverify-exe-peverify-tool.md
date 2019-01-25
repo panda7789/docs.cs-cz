@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: f4f46f9e-8d08-4e66-a94b-0c69c9b0bbfa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 50513d62ab67afe88a147de9581ae7bbbfd0a417
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: cd1f7679a3c2ecc234724e6417c5b12a78ff7ddc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222906"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54598288"
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (nástroj PEVerify)
 Nástroj PEVerify pomáhá vývojářům generujícím Microsoft Intermediate Language (MSIL) (například autorům kompilátorů a vývojářům skriptovacích modulů) zjistit, zda jejich kód MSIL a přidružená metadata splňují požadavky na bezpečnost typů. Některé kompilátory generují kód ověřitelně bezpečného typu pouze tehdy, když se vyhnete určitým jazykovým konstrukcím. Pokud jako vývojář používáte takový kompilátor, můžete chtít ověřit, že nebyla ohrožena bezpečnost typů vašeho kódu. V této situaci můžete spustit nástroj PEVerify pro soubory ke kontrole jazyka MSIL a metadat.  
@@ -40,13 +40,13 @@ peverify filename [options]
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/ přerušit =** *maxErrorCount*|Přeruší ověřování po *maxErrorCount* chyby.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework verze 2.0 a vyšší.|  
+|**/break=** *maxErrorCount*|Přeruší ověřování po *maxErrorCount* chyby.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework verze 2.0 a vyšší.|  
 |**/Clock**|Změří a oznámí následující časy ověření v milisekundách:<br /><br /> **MD Val. cycle**<br /> Cyklus ověření metadat<br /><br /> **MD Val. pure**<br /> Čisté ověření metadat<br /><br /> **IL Ver. cycle**<br /> Cyklus ověřování Microsoft Intermediate Language (MSIL)<br /><br /> **IL Ver pure**<br /> Čisté ověřování MSIL<br /><br /> **MD Val. cycle** a **IL Ver. cycle** časy zahrnují čas potřebný k provedení potřebné procedur spuštění a vypnutí. **MD Val. pure** a **IL Ver pure** časy odrážet čas potřebný k provedení ověření nebo jenom k ověření.|  
 |**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/HRESULT**|Zobrazí kódy chyb v šestnáctkovém formátu.|  
-|**/ Ignorovat =** *hex.code* [, *hex.code*]|Ignoruje zadané kódy chyb.|  
+|**/ignore=** *hex.code* [, *hex.code*]|Ignoruje zadané kódy chyb.|  
 |**/ Ignorovat = @** *responseFile*|Ignoruje kódy chyb uvedené v zadaném souboru odpovědí.|  
-|**/IL**|Provádí kontroly ověření bezpečnosti typů jazyka MSIL pro metody implementované v sestavení určeném parametrem *filename*. Nástroj Vrátí podrobný popis každého nalezeného problému, pokud zadáte **/quiet** možnost.|  
+|**/il**|Provádí kontroly ověření bezpečnosti typů jazyka MSIL pro metody implementované v sestavení určeném parametrem *filename*. Nástroj Vrátí podrobný popis každého nalezeného problému, pokud zadáte **/quiet** možnost.|  
 |**/md**|Provádí kontroly ověřování metadat na sestavení určeném parametrem *filename*. Prochází kompletní strukturu metadat v souboru a hlásí všechny zaznamenané problémy s ověřením.|  
 |**/nologo**|Potlačí zobrazení informací o verzi a autorských právech produktu.|  
 |**/nosymbols**|V rozhraní .NET Framework verze 2.0 potlačí zobrazování čísel řádků z důvodu zpětné kompatibility.|  
@@ -120,8 +120,8 @@ peverify myAssembly.exe /break=100 /ignore@ignoreErrors.rsp
 0xABCD1234  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Nástroje](../../../docs/framework/tools/index.md)  
- [Psát kód Ověřitelně bezpečného typu](../../../docs/framework/misc/code-access-security-basics.md#typesafe_code)  
- [Bezpečnost typů a zabezpečení](../../../docs/standard/security/key-security-concepts.md#type-safety-and-security)  
- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+## <a name="see-also"></a>Viz také:
+- [Nástroje](../../../docs/framework/tools/index.md)
+- [Psát kód Ověřitelně bezpečného typu](../../../docs/framework/misc/code-access-security-basics.md#typesafe_code)
+- [Bezpečnost typů a zabezpečení](../../../docs/standard/security/key-security-concepts.md#type-safety-and-security)
+- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

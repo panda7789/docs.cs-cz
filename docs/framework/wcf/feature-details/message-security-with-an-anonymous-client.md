@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cad53e1a-b7c9-4064-bc87-508c3d1dce49
-ms.openlocfilehash: e90eeb787fd2141459dfa67f36fda94036cec94f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: b0dbd38e02c2e200796fa4508efc203685026155
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50193874"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596667"
 ---
 # <a name="message-security-with-an-anonymous-client"></a>Zabezpečení zpráv s anonymním klientem
 Následující scénář ukazuje klienta a služby zabezpečuje zabezpečení zpráv Windows Communication Foundation (WCF). Cílem návrhu je použijte zabezpečení zpráv, nikoli zabezpečení přenosu, tak, aby v budoucnu může podporovat modelu podrobnější nezaložené na deklaracích. Další informace o použití bohaté deklarací identity pro autorizaci najdete v tématu [správa deklarací identity a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).  
@@ -24,7 +24,7 @@ Následující scénář ukazuje klienta a služby zabezpečuje zabezpečení zp
 |Režim zabezpečení|Zpráva|  
 |Interoperabilita|Pouze WCF|  
 |Ověření (Server)|Počáteční vyjednávání vyžaduje ověřování serveru, ale ne ověření klienta|  
-|Ověření (klient)|Žádné|  
+|Ověření (klient)|Žádná|  
 |Integrita|Ano, pomocí sdíleného bezpečnostní kontext|  
 |Důvěrnost|Ano, pomocí sdíleného bezpečnostní kontext|  
 |Přenos|HTTP|  
@@ -131,9 +131,9 @@ Následující scénář ukazuje klienta a služby zabezpečuje zabezpečení zp
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)  
- [Zabezpečení zpráv s anonymní metodou](../../../../docs/framework/wcf/samples/message-security-anonymous.md)  
- [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)
+- [Zabezpečení zpráv s anonymní metodou](../../../../docs/framework/wcf/samples/message-security-anonymous.md)
+- [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 07ea8438-7a34-49f0-a7e8-3d6ff7e4a482
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 012f0220afa0e444d68af5998fb2492a03a371d8
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 8989d7695f44b0cd2e8b0ce3ec8bd74a6e802102
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183162"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54534563"
 ---
 # <a name="how-to-configure-an-application-domain"></a>Postupy: Konfigurace domény aplikace
 Modul common language runtime může poskytnout informace o konfiguraci pro novou doménu aplikace pomocí <xref:System.AppDomainSetup> třídy. Při vytváření vlastních domén aplikace, je nejdůležitější vlastnost <xref:System.AppDomainSetup.ApplicationBase%2A>. Druhý **AppDomainSetup** vlastnosti jsou používány především hostitelská prostředí modulu runtime pro konfiguraci domény konkrétní aplikace.  
@@ -33,6 +33,6 @@ Modul common language runtime může poskytnout informace o konfiguraci pro novo
  [!code-csharp[ADApplicationBase#2](../../../samples/snippets/csharp/VS_Snippets_CLR/ADApplicationBase/CS/source2.cs#2)]
  [!code-vb[ADApplicationBase#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/ADApplicationBase/VB/source2.vb#2)]  
   
-## <a name="see-also"></a>Viz také  
-- [Programování pomocí domén aplikace](application-domains.md#programming-with-application-domains)  
+## <a name="see-also"></a>Viz také:
+- [Programování pomocí domén aplikace](application-domains.md#programming-with-application-domains)
 - [Používání domén aplikací](../../../docs/framework/app-domains/use.md)

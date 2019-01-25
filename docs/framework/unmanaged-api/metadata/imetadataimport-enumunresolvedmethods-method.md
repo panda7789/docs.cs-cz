@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cfd53309b2b5e96e28e9e063a8adfda430864115
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2009104d31723b9fed383b7bbb41146127d89bd0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447450"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54611953"
 ---
 # <a name="imetadataimportenumunresolvedmethods-method"></a>IMetaDataImport::EnumUnresolvedMethods – metoda
-Vytvoří výčet MemberDef tokeny představující nerozpoznané metody v aktuálním oboru metadat.  
+Vytvoří výčet MemberDef tokeny představující nevyřešené metody v aktuálním oboru metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,38 +40,38 @@ HRESULT EnumUnresolvedMethods (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor. Toto musí mít hodnotu NULL pro první volání této metody.  
+ [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
   
  `rMethods`  
- [out] Pole používá k ukládání MemberDef tokenů.  
+ [out] Pole pro ukládání tokenů MemberDef.  
   
  `cMax`  
- [v] Maximální velikost `rMethods` pole.  
+ [in] Maximální velikost `rMethods` pole.  
   
  `pcTokens`  
- [out] Počet MemberDef tokeny, vrátí se v `rMethods`.  
+ [out] Počet tokenů MemberDef vrácené v `rMethods`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumUnresolvedMethods` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokenů pro zobrazení výčtu. V takovém případě `pcTokens` je nulová.|  
+|`S_OK`|`EnumUnresolvedMethods` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny se vytvořit výčet. V takovém případě `pcTokens` je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- Nerozpoznané metoda je ten, který byl deklarován, ale není implementováno. Metoda je součástí výčtu, pokud je označena jako metodu `miForwardRef` a buď `mdPinvokeImpl` nebo `miRuntime` je nastaven na hodnotu nula. Jinými slovy, nerozpoznané metoda je třída metoda, která je označena `miForwardRef` , ale která není implementována v nespravovaném kódu (dosaženo pomocí služby PInvoke) ani interně implementované samotný modul runtime  
+ Nerozpoznaná metoda je ten, který byl deklarován, ale není implementován. Metodu je zahrnutá ve výčtu, pokud metoda je označena jako `miForwardRef` a buď `mdPinvokeImpl` nebo `miRuntime` je nastavena na hodnotu nula. Jinými slovy, nerozpoznaná metoda je metoda třídy, která je označena `miForwardRef` , ale které není implementovaná v nespravovaném kódu (kontaktovat prostřednictvím PInvoke) ani implementována interně modulem samotný modul runtime  
   
- Výčet vyloučí všechny metody, které jsou definované v modulu oboru (globals) nebo rozhraní nebo abstraktní třídy.  
+ Výčet vyloučí všechny metody, které jsou definovány v oboru modulu (globals) nebo v rozhraní nebo abstraktní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

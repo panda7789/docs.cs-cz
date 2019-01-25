@@ -2,12 +2,12 @@
 title: Vytvoření dlouhodobé služby pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-ms.openlocfilehash: 5f8f5a0add1ad86683f0348a386b959d81615759
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: b3c5cd8a64f32a199932a40ed2d94b0a545b0dc7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842395"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54585398"
 ---
 # <a name="creating-a-long-running-workflow-service"></a>Vytvoření dlouhodobé služby pracovního postupu
 Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. Dlouho běžící pracovní postup služby může spuštění pro dlouhou dobu. V určitém okamžiku může přejít pracovního postupu nečinnosti čekání na určité další informace. V takovém případě pracovního postupu se ukládají do databáze SQL a bude odebrán z paměti. Jakmile je k dispozici další informace o instanci pracovního postupu je načten do paměti a pokračuje v provádění.  V tomto scénáři při implementaci velmi zjednodušený pořadí systému.  Klient odešle zprávu počáteční spouštění pořadí služby pracovního postupu. Vrátí ID objednávky do klienta. V tomto okamžiku Služba pracovního postupu je čekání na další zprávu od klienta a přejde do stavu nečinnosti a se ukládají do databáze SQL serveru.  Když klient odešle na další zprávu pro objednávky položku, služba pracovního postupu je načten do paměti a ukončí zpracování objednávky. Ve vzorovém kódu vrátí řetězec s informacemi o tom, že položka se přidala pořadí. Vzorový kód neměl být reálné aplikaci technologie, ale spíše jednoduchý příklad, který znázorňuje dlouhodobé služby pracovního postupu. Toto téma předpokládá, že víte, jak vytvořit řešení a projekty Visual Studio 2012.
@@ -91,7 +91,7 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
 
          Tím se vytvoří nové ID objednávky a umístí hodnota v proměnné orderId.
 
-    6.  Vyberte **ReplyToStartOrder** aktivity. V okně Vlastnosti klikněte na tlačítko se třemi tečkami pro **correlationinitializers uveden**. Vyberte **přidat inicializační výraz** propojení, zadejte `orderIdHandle` v textovém poli inicializátor vyberte inicializátor korelace dotazu pro typ korelace a vyberte p_orderId v rozevíracím seznamu dotazy XPATH. Tato nastavení znázorňuje následující obrázek. Klikněte na tlačítko **OK**.  To inicializuje korelaci mezi klientem a tato instance služby pracovního postupu. Když zprávu obsahující tuto objednávku přijata ID se rozšíří do této instance služby pracovního postupu.
+    6.  Vyberte **ReplyToStartOrder** aktivity. V okně Vlastnosti klikněte na tlačítko se třemi tečkami pro **correlationinitializers uveden**. Vyberte **přidat inicializační výraz** propojení, zadejte `orderIdHandle` v textovém poli inicializátor vyberte inicializátor korelace dotazu pro typ korelace a vyberte p_orderId v rozevíracím seznamu dotazy XPATH. Tato nastavení znázorňuje následující obrázek. Klikněte na **OK**.  To inicializuje korelaci mezi klientem a tato instance služby pracovního postupu. Když zprávu obsahující tuto objednávku přijata ID se rozšíří do této instance služby pracovního postupu.
 
          ![Přidání inicializátor korelace](../../../../docs/framework/wcf/feature-details/media/addcorrelationinitializers.png "AddCorrelationInitializers")
 
@@ -198,5 +198,5 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
     Sending add item messageService returned: Item added to orderPress any key to continue . . .
     ```
 
-## <a name="see-also"></a>Viz také
- [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
+## <a name="see-also"></a>Viz také:
+- [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1055366576f45a7ca137b6d8170d1786c2ba4492
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6cb3a2235325533d5bd943a530a0a8e5b77100e3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33455338"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54519941"
 ---
 # <a name="icorprofilerinfo4getrejitids-method"></a>ICorProfilerInfo4::GetReJITIDs – metoda
-Vrátí pole ID, které identifikují všechny překompilovat JIT verze zadaná funkce, které jsou pořád ještě přidělená. To zahrnuje překompilovat JIT verze funkcí, které bylo následně vrátili zpět, ale ještě nebyla uvolněno (například když doméně aplikace, která obsahuje funkci vrácený je stále používáno).  
+Vrátí pole ID, které identifikují všechny překompilován JIT verze zadané funkce, které jsou pořád ještě přidělená. To zahrnuje překompilován JIT verze funkcí, které se později vrátit, ale ještě není uvolněn (například když doménu aplikace, která obsahuje vrácené funkce se stále používá).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +39,22 @@ HRESULT GetReJITIDs (
   
 #### <a name="parameters"></a>Parametry  
  `functionId`  
- [v] `FunctionID` Instance funkce, pro které chcete vytvořit výčet verzí.  
+ [in] `FunctionID` Instance funkce pro kterou chcete získat výčet verzí.  
   
  `cReJitIds`  
- [v] Počet ID překompilovat JIT přidělené v `reJitIds` pole.  
+ [in] Počet přidělených v ID překompilován JIT `reJitIds` pole.  
   
  `pcReJitIds`  
- [out] Skutečný počet překompilovat JIT ID.  
+ [out] Skutečný počet ID překompilován JIT.  
   
  `reJitIds`  
- [out] Volající přidělené pole, která bude obsahovat ID překompilovat JIT pro zadanou funkci.  
+ [out] Pole přidělené volajícímu, který bude obsahovat ID překompilován JIT pro zadanou funkci.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetReJITIDs` Vytvoří výčet active překompilovat JIT ID pro danou funkci instance. Ji používá se stejný vzor využití jako ostatní `ICorProfilerInfo` funkce, které přijímají volající přidělené vyrovnávací paměti.  
+ `GetReJITIDs` Vytvoří výčet aktivní ID překompilován JIT pro instanci dané funkce. Ji používá stejný vzor používání jako ostatní `ICorProfilerInfo` funkce, které přijímají volající – přidělené vyrovnávací paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -62,7 +62,7 @@ HRESULT GetReJITIDs (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)

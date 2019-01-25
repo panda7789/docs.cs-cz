@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: efadf3a0d216197b05d6cd4cfe94ee3eb24bb18e
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: a30d6708b87687ee4d5cdb13452662e264a1b54c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147171"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54532679"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
@@ -165,7 +165,7 @@ public class Startup
 
 Pokud opakované pokusy jsou povolené v EF Core připojení, bude každé operace, které můžete provádět pomocí EF Core vyvolaly provozu. Každý dotaz a každé volání SaveChanges bude zopakován jako celek, pokud dojde k přechodnému selhání.
 
-Ale pokud váš kód zahájí transakci pomocí BeginTransaction, definujete vlastní skupinu operací, které je potřeba za jednotku považuje – všechno, co je uvnitř transakce se vrátila zpět, pokud dojde k chybě. Pokud se pokusíte spustit transakci, při použití strategie provádění EF (zásady opakování) a v ní zahrnete několik SaveChanges z více DbContexts uvidíte výjimku vypadat asi takto.
+Ale pokud váš kód zahájí transakci pomocí BeginTransaction, definujete vlastní skupinu operací, které je třeba zacházet jako celek. všechno, co je uvnitř transakce má být vrácena zpět, pokud dojde k chybě. Pokud se pokusíte spustit transakci, při použití strategie provádění EF (zásady opakování) a v ní zahrnete několik SaveChanges z více DbContexts uvidíte výjimku vypadat asi takto.
 
 System.InvalidOperationException: Strategie provádění nakonfigurované "SqlServerRetryingExecutionStrategy" nepodporuje transakce iniciované uživatelem. Použití strategie provádění vrácený "DbContext.Database.CreateExecutionStrategy()" provádět všechny operace v transakci jako vyvolaly jednotky.
 
@@ -323,7 +323,7 @@ ASP.NET Core podporuje dvě úrovně ukládání odpovědí do mezipaměti. Prvn
 
 V předchozím příkladu bude výsledkem následující záhlaví se přidá do odpovědi, že klienti pro ukládání do mezipaměti výsledek až 60 sekund.
 
-Cache-Control: veřejný, max-age = 60
+Cache-Control: public,max-age=60
 
 Chcete-li přidat ukládání v mezipaměti na straně serveru k aplikaci, musíte odkázat na balíček Microsoft.AspNetCore.ResponseCaching NuGet a pak přidat ukládání odpovědí do mezipaměti middlewaru. Tento middleware je nakonfigurovaný v ConfigureServices a konfigurovat v po spuštění:
 

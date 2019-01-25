@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 263981708af2e40bd3690a3cd344156488eed0dd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 713913fa046fc1bef12b8849ac82e4399a8dc534
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442676"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54577576"
 ---
 # <a name="corpropertyattr-enumeration"></a>CorPropertyAttr – výčet
 Obsahuje hodnoty, které popisují metadata vlastnosti.  
@@ -44,18 +44,18 @@ typedef enum CorPropertyAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`prSpecialName`|Určuje, zda je vlastnost speciální a že její název popisuje jak.|  
+|`prSpecialName`|Určuje, že vlastnost je speciální a který odpovídá názvu jak.|  
 |`prReservedMask`|Modul common language runtime vyhrazené pro interní použití.|  
-|`prRTSpecialName`|Určuje, že běžná metadata modulu runtime jazyka interní rozhraní API měli kontrolovat kódování názvu vlastnosti.|  
-|`prHasDefault`|Určuje, že tato vlastnost nemá výchozí hodnotu.|  
-|`prUnused`|Nepoužívá se.|  
+|`prRTSpecialName`|Určuje, že common language runtime metadata interních rozhraních API by měla kontrolovat kódování názvu vlastnosti.|  
+|`prHasDefault`|Určuje, zda vlastnost má výchozí hodnotu.|  
+|`prUnused`|Nevyužité.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

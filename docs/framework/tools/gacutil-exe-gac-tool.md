@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 4c7be9c8-72ae-481f-a01c-1a4716806e99
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f1dac8aec7f565b82797ba179fc01968e00bf36b
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 779cf36fb10cc3acbefabd6ef90a885cc221f3f6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54223075"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54541219"
 ---
 # <a name="gacutilexe-global-assembly-cache-tool"></a>Gacutil.exe (nástroj globální mezipaměti sestavení)
 Nástroj Global Assembly Cache umožňuje zobrazit a měnit obsah globální mezipaměti sestavení (GAC) a mezipaměti pro stahování.  
@@ -44,7 +44,7 @@ gacutil [options] [assemblyName | assemblyPath | assemblyListFile]
 |Argument|Popis|  
 |--------------|-----------------|  
 |*assemblyName*|Název sestavení. Lze zadat buď částečný název sestavení, například `myAssembly` nebo úplný název sestavení jako `myAssembly, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0038abc9deabfle5`.|  
-|*AssemblyPath*|Název souboru obsahujícího manifest sestavení.|  
+|*assemblyPath*|Název souboru obsahujícího manifest sestavení.|  
 |*assemblyListFile*|Cesta k textovému souboru ANSI obsahujícímu sestavení, která mají být nainstalována nebo odinstalována. Chcete-li použít textový soubor pro instalaci sestavení, zadejte cestu ke každému sestavení na samostatný řádek souboru. Nástroj interpretuje relativní cesty vůči umístění *assemblyListFile*. Chcete-li použít textový soubor k odinstalování sestavení, zadejte plně kvalifikovaný název každého sestavení na samostatném řádku v souboru. Zobrazit *assemblyListFile* obsah příklady dále v tomto tématu.|  
   
 |Možnost|Popis|  
@@ -55,18 +55,18 @@ gacutil [options] [assemblyName | assemblyPath | assemblyListFile]
 |**/i** *assemblyPath*|Nainstaluje sestavení do globální mezipaměti sestavení (GAC).|  
 |**/IF** *assemblyPath*|Nainstaluje sestavení do globální mezipaměti sestavení (GAC). Pokud sestavení se stejným názvem již v globální mezipaměti sestavení (GAC) existuje, nástroj je přepíše.<br /><br /> Zadání této možnosti je ekvivalentní se zadáním **/i** a **/f** najednou.|  
 |**/IL** *assemblyListFile*|Nainstaluje jednu nebo více sestavení zadaných v *assemblyListFile* do globální mezipaměti sestavení.|  
-|**/IR** *assemblyPath*<br /><br /> *Schéma*<br /><br /> *id*<br /><br /> *Popis*|Nainstaluje sestavení do globální mezipaměti sestavení a přidá odkaz pro jeho započítání. Je nutné zadat *assemblyPath*, *schéma*, *id*, a *popis* s touto možností parametry. Popis platných hodnot pro tyto parametry můžete zadat, najdete v článku **/r** možnost.<br /><br /> Zadání této možnosti je ekvivalentní se zadáním **/i** a **/r** najednou.|  
+|**/IR** *assemblyPath*<br /><br /> *scheme*<br /><br /> *id*<br /><br /> *description*|Nainstaluje sestavení do globální mezipaměti sestavení a přidá odkaz pro jeho započítání. Je nutné zadat *assemblyPath*, *schéma*, *id*, a *popis* s touto možností parametry. Popis platných hodnot pro tyto parametry můžete zadat, najdete v článku **/r** možnost.<br /><br /> Zadání této možnosti je ekvivalentní se zadáním **/i** a **/r** najednou.|  
 |**/l** [*assemblyName*]|Zobrazí obsah globální mezipaměti sestavení (GAC). Pokud zadáte *assemblyName* parametr, nástroj vypíše pouze sestavení daného názvu.|  
-|**/Ldl**|Vypíše obsah mezipaměti stažených souborů.|  
-|**/ld** [*assemblyName*]|Vypíše všechna sestavení a jim odpovídající počty odkazů. Pokud zadáte *assemblyName* parametr, nástroj vypíše pouze sestavení daného názvu a jim odpovídající počty odkazů.|  
+|**/ldl**|Vypíše obsah mezipaměti stažených souborů.|  
+|**/lr** [*assemblyName*]|Vypíše všechna sestavení a jim odpovídající počty odkazů. Pokud zadáte *assemblyName* parametr, nástroj vypíše pouze sestavení daného názvu a jim odpovídající počty odkazů.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
-|**/r** [*assemblyName &#124; assemblyPath*]<br /><br /> *Schéma*<br /><br /> *id*<br /><br /> *Popis*|Určuje trasovaný odkaz na sestavení, která mají být nainstalována nebo odinstalována. Tato možnost se **/i**, **/il**, **/u**, nebo **/ul** možnosti.<br /><br /> Chcete-li nainstalovat sestavení, zadejte *assemblyPath*, *schéma*, *id*, a *popis* s touto možností parametry. Chcete-li odinstalovat sestavení, zadejte *assemblyName*, *schéma*, *id*, a *popis* parametry.<br /><br /> Chcete-li odebrat odkaz na sestavení, je nutné zadat stejný *schéma*, *id*, a *popis* parametry, které byly zadány s **/i** a **/r** (nebo **/ir**) možnosti při instalaci sestavení. Provádíte-li odinstalování sestavení, nástroj odstraní sestavení také z globální mezipaměti sestavení (GAC) za předpokladu, že jde o poslední odstraňovaný odkaz a že Instalační služba systému Windows nemá na sestavení žádné zbývající odkazy.<br /><br /> *Schéma* parametr určuje typ instalačního schématu. Můžete určit jednu z následujících hodnot:<br /><br /> -UNINSTALL_KEY: Tuto hodnotu zadejte, pokud instalační program přidá aplikaci do panelu Přidat nebo odebrat programy v Microsoft Windows. Aplikace se přidávají do ovládacího panelu Přidat nebo odebrat programy přidáním klíče registru HKLM\Software\Microsoft\Windows\CurrentVersion.<br />– CESTA K SOUBORU: Tuto hodnotu zadejte, pokud instalační program nepřidá aplikaci do panelu Přidat nebo odebrat programy.<br />-NEPRŮHLEDNÉ: Zadejte tuto hodnotu, pokud dodání klíče registru nebo cesta k souboru se nedá použít u instalačního scénáře. Tato hodnota umožňuje určit vlastní informace pro *id* parametru.<br /><br /> Hodnotu pro *id* parametr závisí na hodnotě zadané pro *schéma* parametr:<br /><br /> – Pokud zadáte hodnotu UNINSTALL_KEY *schéma* parametr, zadejte název aplikace nastavený v klíči registru HKLM\Software\Microsoft\Windows\CurrentVersion. Například pokud je klíč registru HKLM\Software\Microsoft\Windows\CurrentVersion\MyApp, zadejte MyApp *id* parametru.<br />– Pokud zadáte cestu k souboru pro *schéma* parametr, zadejte úplnou cestu ke spustitelnému souboru, který sestavení nainstaluje *id* parametru.<br />– Pokud zadáte OPAQUE *schéma* parametr, můžete zadat nějakou část dat, jako *id* parametru. Zadaná data musí být uzavřena do uvozovek ("").<br /><br /> *Popis* parametrů můžete zadat popisný text o aplikaci pro instalaci. Tyto informace se zobrazují při výčtu odkazů.|  
+|**/r** [*assemblyName &#124; assemblyPath*]<br /><br /> *scheme*<br /><br /> *id*<br /><br /> *description*|Určuje trasovaný odkaz na sestavení, která mají být nainstalována nebo odinstalována. Tato možnost se **/i**, **/il**, **/u**, nebo **/ul** možnosti.<br /><br /> Chcete-li nainstalovat sestavení, zadejte *assemblyPath*, *schéma*, *id*, a *popis* s touto možností parametry. Chcete-li odinstalovat sestavení, zadejte *assemblyName*, *schéma*, *id*, a *popis* parametry.<br /><br /> Chcete-li odebrat odkaz na sestavení, je nutné zadat stejný *schéma*, *id*, a *popis* parametry, které byly zadány s **/i** a **/r** (nebo **/ir**) možnosti při instalaci sestavení. Provádíte-li odinstalování sestavení, nástroj odstraní sestavení také z globální mezipaměti sestavení (GAC) za předpokladu, že jde o poslední odstraňovaný odkaz a že Instalační služba systému Windows nemá na sestavení žádné zbývající odkazy.<br /><br /> *Schéma* parametr určuje typ instalačního schématu. Můžete určit jednu z následujících hodnot:<br /><br /> -UNINSTALL_KEY: Tuto hodnotu zadejte, pokud instalační program přidá aplikaci do panelu Přidat nebo odebrat programy v Microsoft Windows. Aplikace se přidávají do ovládacího panelu Přidat nebo odebrat programy přidáním klíče registru HKLM\Software\Microsoft\Windows\CurrentVersion.<br />– CESTA K SOUBORU: Tuto hodnotu zadejte, pokud instalační program nepřidá aplikaci do panelu Přidat nebo odebrat programy.<br />-NEPRŮHLEDNÉ: Zadejte tuto hodnotu, pokud dodání klíče registru nebo cesta k souboru se nedá použít u instalačního scénáře. Tato hodnota umožňuje určit vlastní informace pro *id* parametru.<br /><br /> Hodnotu pro *id* parametr závisí na hodnotě zadané pro *schéma* parametr:<br /><br /> – Pokud zadáte hodnotu UNINSTALL_KEY *schéma* parametr, zadejte název aplikace nastavený v klíči registru HKLM\Software\Microsoft\Windows\CurrentVersion. Například pokud je klíč registru HKLM\Software\Microsoft\Windows\CurrentVersion\MyApp, zadejte MyApp *id* parametru.<br />– Pokud zadáte cestu k souboru pro *schéma* parametr, zadejte úplnou cestu ke spustitelnému souboru, který sestavení nainstaluje *id* parametru.<br />– Pokud zadáte OPAQUE *schéma* parametr, můžete zadat nějakou část dat, jako *id* parametru. Zadaná data musí být uzavřena do uvozovek ("").<br /><br /> *Popis* parametrů můžete zadat popisný text o aplikaci pro instalaci. Tyto informace se zobrazují při výčtu odkazů.|  
 |**/ silent**|Potlačí zobrazování všech výstupů.|  
 |**/u** *assemblyName*|Odinstaluje sestavení z globální mezipaměti sestavení (GAC).|  
 |**/UF** *assemblyName*|Vynutí odinstalování zadaného sestavení odstraněním všech odkazů na něj.<br /><br /> Zadání této možnosti je ekvivalentní se zadáním **/u** a **/f** najednou. **Poznámka:**  Tuto možnost nelze použít k odstranění sestavení nainstalovaného pomocí Instalační služby systému Windows společnosti Microsoft. Pokud se o tuto operaci pokusíte, nástroj zobrazí chybovou zprávu.|  
 |**/UL** *assemblyListFile*|Odinstaluje jeden nebo více sestavení zadaných v *assemblyListFile* z globální mezipaměti sestavení.|  
 |**/u**[**ngen**] *assemblyName*|Odinstaluje zadané sestavení z globální mezipaměti sestavení (GAC). Existují-li pro zadané sestavení počty odkazů, nástroj tyto počty zobrazí a neodstraní sestavení z globální mezipaměti sestavení (GAC). **Poznámka:**  V rozhraní .NET Framework verze 2.0 `/ungen` se nepodporuje. Místo toho použijte `uninstall` příkaz [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md). <br /><br /> V rozhraní .NET Framework verze 1.0 a 1.1 určení **/ ungen** způsobí, že Gacutil.exe k odebrání sestavení z mezipaměti nativních bitových kopií. Tato mezipaměť ukládá nativní bitové kopie pro sestavení, které byly vytvořeny pomocí [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|  
-|**/UR** *assemblyName*<br /><br /> *Schéma*<br /><br /> *id*<br /><br /> *Popis*|Odinstaluje odkaz na zadané sestavení z globální mezipaměti sestavení (GAC). Chcete-li odebrat odkaz na sestavení, je nutné zadat stejný *schéma*, *id*, a *popis* parametry, které byly zadány s **/i** a **/r** (nebo **/ir)** možnosti při instalaci sestavení. Popis platných hodnot pro tyto parametry můžete zadat, najdete v článku **/r** možnost.<br /><br /> Zadání této možnosti je ekvivalentní se zadáním **/u** a **/r** najednou.|  
+|**/UR** *assemblyName*<br /><br /> *scheme*<br /><br /> *id*<br /><br /> *description*|Odinstaluje odkaz na zadané sestavení z globální mezipaměti sestavení (GAC). Chcete-li odebrat odkaz na sestavení, je nutné zadat stejný *schéma*, *id*, a *popis* parametry, které byly zadány s **/i** a **/r** (nebo **/ir)** možnosti při instalaci sestavení. Popis platných hodnot pro tyto parametry můžete zadat, najdete v článku **/r** možnost.<br /><br /> Zadání této možnosti je ekvivalentní se zadáním **/u** a **/r** najednou.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -165,8 +165,8 @@ gacutil /i /r mydll.dll OPAQUE "Insert custom application details here" "Insert 
 gacutil /l  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Nástroje](../../../docs/framework/tools/index.md)  
- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)  
- [Regasm.exe (nástroj registrace sestavení)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)  
- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+## <a name="see-also"></a>Viz také:
+- [Nástroje](../../../docs/framework/tools/index.md)
+- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)
+- [Regasm.exe (nástroj registrace sestavení)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)
+- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

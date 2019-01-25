@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 318bedf8-7f35-4f00-b34a-2b7b8e3fa315
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 50d601d711579bce2e2651a1efc65d824a50d47a
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: f5ab93ca5cf616bd4a29ab5d297af1f4550623b4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48266643"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54606527"
 ---
 # <a name="application-domain-resource-monitoring"></a>Sledování prostředků domény aplikace
 (ARM) sledování prostředků domény aplikace umožňuje hostitelům k monitorování využití procesoru a paměti doménou aplikace. To je užitečné pro hostitele jako je ASP.NET, které používají mnoha aplikačními doménami v dlouho běžící proces. Hostitel může uvolnění domény aplikace aplikace, které nepříznivě ovlivňuje výkon celého procesu, ale pouze pokud může zjistit problematické aplikace. ARM poskytuje informace, které můžete použít pro pomoc při rozhodování.  
@@ -40,11 +40,11 @@ ms.locfileid: "48266643"
 ## <a name="using-arm"></a>Použití ARM  
  ARM poskytuje celkový procesorový čas, který používá aplikační doméně a tři druhy informací o využití paměti.  
   
--   **Celkový čas procesoru pro doménu aplikace v řádu sekund**: Tento výpočet součtem doby vlákna operačního systému pro všechna vlákna, které spotřebovávají doba provádění v doméně aplikace v průběhu svého životního cyklu. Zablokuje nebo spící vláken nepoužívejte času procesoru. Když vlákno volá do nativního kódu, čas, který stráví vlákna v nativním kódu je součástí počet aplikační domény, ve kterém bylo provedeno volání.  
+-   **Celkový čas procesoru pro doménu aplikace v řádu sekund**: To je vypočítané sečtením vlákno časy uvedeny operačním systému pro všechna vlákna, které spotřebovávají doba provádění v doméně aplikace v průběhu svého životního cyklu. Zablokuje nebo spící vláken nepoužívejte času procesoru. Když vlákno volá do nativního kódu, čas, který stráví vlákna v nativním kódu je součástí počet aplikační domény, ve kterém bylo provedeno volání.  
   
     -   Spravované rozhraní API: <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType> vlastnost.  
   
-    -   Hostování rozhraní API: [iclrappdomainresourcemonitor::getcurrentcputime –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md) metody.  
+    -   Hosting API: [Iclrappdomainresourcemonitor::getcurrentcputime –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md) metody.  
   
     -   Události trasování událostí pro Windows: `ThreadCreated`, `ThreadAppDomainEnter`, a `ThreadTerminated` události. Informace o poskytovatelích a klíčová slova, naleznete v tématu "AppDomain zdroje událostí pro sledování" v [CLR ETW Events](../../../docs/framework/performance/clr-etw-events.md).  
   
@@ -52,7 +52,7 @@ ms.locfileid: "48266643"
   
     -   Spravované rozhraní API: <xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=nameWithType> vlastnost.  
   
-    -   Hostování rozhraní API: [iclrappdomainresourcemonitor::getcurrentallocated –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md) metody.  
+    -   Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentAllocated](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md) method.  
   
     -   Události trasování událostí pro Windows: `AppDomainMemAllocated` události, `Allocated` pole.  
   
@@ -60,15 +60,15 @@ ms.locfileid: "48266643"
   
     -   Spravované rozhraní API: <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> vlastnost.  
   
-    -   Hostování rozhraní API: [iclrappdomainresourcemonitor::getcurrentsurvived –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) metody `pAppDomainBytesSurvived` parametru.  
+    -   Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) method, `pAppDomainBytesSurvived` parameter.  
   
     -   Události trasování událostí pro Windows: `AppDomainMemSurvived` události, `Survived` pole.  
   
--   **Celkový počet spravované paměti v bajtech, na který odkazuje procesu a který zůstat naživu při poslední úplné blokující kolekce**: zachované paměť pro jednotlivé aplikační domény je možné porovnat s tímto číslem.  
+-   **Celkový počet spravované paměti v bajtech, na který odkazuje procesu a který zůstat naživu při poslední úplné blokující kolekce**: Zachované paměť pro jednotlivé aplikační domény je možné porovnat s tímto číslem.  
   
     -   Spravované rozhraní API: <xref:System.AppDomain.MonitoringSurvivedProcessMemorySize%2A?displayProperty=nameWithType> vlastnost.  
   
-    -   Hostování rozhraní API: [iclrappdomainresourcemonitor::getcurrentsurvived –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) metody `pTotalBytesSurvived` parametru.  
+    -   Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) method, `pTotalBytesSurvived` parameter.  
   
     -   Události trasování událostí pro Windows: `AppDomainMemSurvived` události, `ProcessSurvived` pole.  
   
@@ -85,7 +85,7 @@ ms.locfileid: "48266643"
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
-- [ICLRAppDomainResourceMonitor – rozhraní](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  
-- [\<appdomainresourcemonitoring – >](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)  
+- <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>
+- [ICLRAppDomainResourceMonitor – rozhraní](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)
+- [\<appDomainResourceMonitoring>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)
 - [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)

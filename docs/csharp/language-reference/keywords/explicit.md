@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - explicit keyword [C#]
 ms.assetid: cfb8f42a-e411-4db2-af9b-796b05644846
-ms.openlocfilehash: 1b5e03ffa0f956d7404c7c41f04aef1bfd8769df
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 4949b88a32dae2a727e623bb6e4db0a4f9d8418c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53238556"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54557991"
 ---
 # <a name="explicit-c-reference"></a>explicit (Referenční dokumentace jazyka C#)
 
@@ -51,10 +51,10 @@ V následujícím příkladu definuje strukturu, `Digit`, představující jedno
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)  
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
-- [Klíčová slova jazyka C#](index.md)  
-- [implicit](implicit.md)  
-- [– Operátor (referenční dokumentace jazyka C#)](operator.md)  
-- [Postupy: Implementace uživatelem definovaných převodů mezi strukturami](../../programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)  
-- [Zřetězit uživatelem definované explicitní převody v jazyce C#](https://blogs.msdn.microsoft.com/ericlippert/2007/04/16/chained-user-defined-explicit-conversions-in-c/)  
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
+- [implicit](implicit.md)
+- [– Operátor (referenční dokumentace jazyka C#)](operator.md)
+- [Postupy: Implementace uživatelem definovaných převodů mezi strukturami](../../programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)
+- [Zřetězit uživatelem definované explicitní převody v jazyce C#](https://blogs.msdn.microsoft.com/ericlippert/2007/04/16/chained-user-defined-explicit-conversions-in-c/)

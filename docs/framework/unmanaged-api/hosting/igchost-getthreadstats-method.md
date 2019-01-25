@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 74827fac102ee6045965f4ba9d74dd3b1aa0af86
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6c3d71c75527daa9a9c130d5aaa0d6838816c276
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33437567"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559421"
 ---
 # <a name="igchostgetthreadstats-method"></a>IGCHost::GetThreadStats – metoda
-Získá statistiku objektů vlákno pro uvolňování paměti.  
+Získá statistiku vlákno uvolňování paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT GetThreadStats (
   
 #### <a name="parameters"></a>Parametry  
  `pFiberCookie`  
- [v] Ukazatel na fiber souboru cookie, který určuje vlákno, pro které chcete získat statistiku.  
+ [in] Ukazatel na soubor cookie fiber, který určuje vlákna, pro které se mají načíst statistiky.  
   
  `pStats`  
- [ve out] Ukazatel [cor_gc_thread_stats –](../../../../docs/framework/unmanaged-api/hosting/cor-gc-thread-stats-structure.md) struktura, která obsahuje statistiku kolekce uvolňování paměti pro zadanou vlákno.  
+ [out v] Ukazatel [cor_gc_thread_stats –](../../../../docs/framework/unmanaged-api/hosting/cor-gc-thread-stats-structure.md) strukturu, která obsahuje statistiku kolekce uvolnění paměti pro zadaný podproces.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** GCHost.idl, GCHost.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IGCHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IGCHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)

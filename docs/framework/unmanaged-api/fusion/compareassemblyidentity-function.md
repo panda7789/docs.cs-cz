@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1b48adcb8e9de49a312af77c8a9b80a07455ebfe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a523a58a137f8276df854da956b3ab0b75cbcec9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33432983"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54571623"
 ---
 # <a name="compareassemblyidentity-function"></a>CompareAssemblyIdentity – funkce
-Porovná dvě sestavení identity zjistěte, zda jsou ekvivalentní.  
+Porovná dvě identit sestavení pro určení, zda jsou ekvivalentní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,48 +42,48 @@ STDAPI CompareAssemblyIdentity (
   
 #### <a name="parameters"></a>Parametry  
  `pwzAssemblyIdentity1`  
- [v] Textové identita první sestavení v porovnání.  
+ [in] Textovou identitu první sestavení v porovnání.  
   
  `fUnified1`  
- [v] Logický příznak, který označuje sjednocení zadané uživatelem pro `pwzAssemblyIdentity1`.  
+ [in] Příznak logické hodnoty označující sjednocení zadané uživatelem pro `pwzAssemblyIdentity1`.  
   
  `pwzAssemblyIdentity2`  
- [v] Textové identita druhý sestavení v porovnání.  
+ [in] Textovou identitu druhou sestavení v porovnání.  
   
  `fUnified2`  
- [v] Logický příznak, který označuje sjednocení zadané uživatelem pro `pwzAssemblyIdentity2`.  
+ [in] Příznak logické hodnoty označující sjednocení zadané uživatelem pro `pwzAssemblyIdentity2`.  
   
  `pfEquivalent`  
- [out] Logický příznak, který určuje, zda jsou dvě sestavení ekvivalentní.  
+ [out] Logický příznak, který určuje, zda daná dvě sestavení jsou ekvivalentní.  
   
  `pResult`  
- [out] [AssemblyComparisonResult](../../../../docs/framework/unmanaged-api/fusion/assemblycomparisonresult-enumeration.md) výčet, který obsahuje podrobné informace o porovnání.  
+ [out] [Assemblycomparisonresult –](../../../../docs/framework/unmanaged-api/fusion/assemblycomparisonresult-enumeration.md) výčet, který obsahuje podrobné informace o porovnání.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `pfEquivalent` Vrátí logickou hodnotu, která určuje, zda jsou dvě sestavení ekvivalentní. `pResult` Vrátí jednu z `AssemblyComparisonResult` hodnoty uvést podrobnější důvod pro hodnotu `pfEquivalent`.  
+ `pfEquivalent` Vrátí logickou hodnotu, která určuje, zda daná dvě sestavení jsou ekvivalentní. `pResult` Vrátí jednu z `AssemblyComparisonResult` hodnot, které se poskytují podrobnější důvod pro hodnotu vlastnosti `pfEquivalent`.  
   
 ## <a name="remarks"></a>Poznámky  
- `CompareAssemblyIdentity` kontroluje, zda `pwzAssemblyIdentity1` a `pwzAssemblyIdentity2` odpovídají. `pfEquivalent` je nastavena na `true` pod jednou nebo více z následujících podmínek:  
+ `CompareAssemblyIdentity` kontroluje, zda `pwzAssemblyIdentity1` a `pwzAssemblyIdentity2` jsou ekvivalentní. `pfEquivalent` je nastavena na `true` v jedné nebo více z následujících podmínek:  
   
--   Identity dvě sestavení jsou ekvivalentní. Pro sestavení se silným názvem zajištění rovnocennosti vyžaduje název sestavení, verzi, token veřejného klíče a jazykovou verzi, která shodovat. Jednoduše pojmenované sestavení zajištění rovnocennosti vyžaduje shoda s název sestavení a jazykovou verzi.  
+-   Identity dvě sestavení jsou ekvivalentní. Pro sestavení se silným názvem referenčních materiálech o ekvivalenci vyžaduje název sestavení, verzi, token veřejného klíče a jazykovou verzi být identické. Pro sestavení s jednoduchým názvem referenčních materiálech o ekvivalenci vyžaduje shodu v názvu sestavení a jazykovou verzi.  
   
--   Obě sestavení identity naleznete na sestavení, které běží na rozhraní .NET Framework. Tato podmínka vrátí `true` i v případě, že číslo verze sestavení se neshodují.  
+-   Obě identit sestavení odkazovat na sestavení, které běží na rozhraní .NET Framework. Tato podmínka vrátí `true` i v případě, že číslo verze sestavení se neshodují.  
   
--   Dvě sestavení nejsou spravovaná sestavení, ale `fUnified1` nebo `fUnified2` byla nastavena na `true`.  
+-   Tato dvě sestavení nejsou spravovaná sestavení, ale `fUnified1` nebo `fUnified2` byl nastaven na `true`.  
   
- `fUnified` Příznak označuje, že všechna čísla verze až číslo verze sestavení silným názvem jsou považovány za ekvivalentní silně pojmenované sestavení. Například pokud hodnota `pwzAssemblyIndentity1` je "MyAssembly, verze = 3.0.0.0, culture = neutral, publicKeyToken =..." a hodnotu `fUnified1` je `true`, to znamená, že by měl být všechny verze MyAssembly z verze 0.0.0.0 k 3.0.0.0 považovány za ekvivalentní. V takovém případě pokud `pwzAssemblyIndentity2` odkazuje na stejném sestavení jako `pwzAssemblyIndentity1`kromě toho, že má nižší číslo verze, `pfEquivalent` je nastaven na `true`. Pokud `pwzAssemblyIdentity2` odkazuje na vyšší číslo verze, `pfEquivalent` je nastaven na `true` pouze v případě hodnotu `fUnified2` je `true`.  
+ `fUnified` Příznak určuje, že všechna čísla verzí až číslo verze sestavení se silným názvem jsou považovány za ekvivalentní k sestavení se silným názvem. Například pokud hodnota `pwzAssemblyIndentity1` je "MyAssembly, verze = 3.0.0.0, jazyková verze = neutral, publicKeyToken =..." a hodnota `fUnified1` je `true`, to znamená, že by měl být všechny verze MyAssembly z verze 0.0.0.0 k 3.0.0.0 považovány za ekvivalentní. V takovém případě pokud `pwzAssemblyIndentity2` odkazuje na stejné sestavení jako `pwzAssemblyIndentity1`, s tím rozdílem, že má nižší číslo verze, `pfEquivalent` je nastavena na `true`. Pokud `pwzAssemblyIdentity2` odkazuje na vyšší číslo verze `pfEquivalent` je nastavena na `true` pouze tehdy, pokud hodnota `fUnified2` je `true`.  
   
- `pResult` Parametr obsahuje konkrétní informace o proč dvou sestavení jsou považovány za ekvivalentní, nebo není ekvivalentní. Další informace najdete v tématu [AssemblyComparisonResult – výčet](../../../../docs/framework/unmanaged-api/fusion/assemblycomparisonresult-enumeration.md).  
+ `pResult` Parametr obsahuje konkrétní informace o proč dvě sestavení jsou považovány za ekvivalentní, nebo není ekvivalentní. Další informace najdete v tématu [assemblycomparisonresult – výčet](../../../../docs/framework/unmanaged-api/fusion/assemblycomparisonresult-enumeration.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Fusion.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)  
- [AssemblyComparisonResult – výčet](../../../../docs/framework/unmanaged-api/fusion/assemblycomparisonresult-enumeration.md)
+## <a name="see-also"></a>Viz také:
+- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [AssemblyComparisonResult – výčet](../../../../docs/framework/unmanaged-api/fusion/assemblycomparisonresult-enumeration.md)

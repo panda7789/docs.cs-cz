@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ddf1c83c-9d40-45e6-b04d-9828c6cbbfdc
-ms.openlocfilehash: 043f156f96d6ebc9ac5a6487287ad327928d9bf0
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: c168fc2ceddde0f8d104ec5e562f92c9c9e487d7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43776298"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583532"
 ---
 # <a name="enumerating-instances-of-sql-server-adonet"></a>Vytváření výčtu instancí SQL serveru (ADO.NET)
 SQL Server povoluje aplikací, aby našel instance systému SQL Server v rámci aktuální sítě. <xref:System.Data.Sql.SqlDataSourceEnumerator> Třída zpřístupňuje tyto informace pro vývojáře aplikací, poskytování <xref:System.Data.DataTable> obsahující informace o všech serverech viditelné. To vrácena tabulka obsahuje seznam instancí serveru, dostupný v síti, která odpovídá seznamu, pokud uživatel se pokusí vytvořit nové připojení a rozbalí rozevírací seznam obsahující všechny dostupné servery na **připojení Vlastnosti** dialogové okno. Výsledky zobrazené nejsou vždy úplný.  
@@ -48,7 +48,7 @@ System.Data.DataTable dataTable = instance.GetDataSources();
 |**ServerName**|Název serveru.|  
 |**InstanceName**|Název instance serveru. Prázdné, pokud je server spuštěn jako výchozí instanci.|  
 |**IsClustered**|Určuje, zda je server součástí clusteru.|  
-|**Verze**|Verze serveru. Příklad:<br /><br /> -9.00.x ([!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)])<br />-10.0.xx ([!INCLUDE[ssKatmai](../../../../../includes/sskatmai-md.md)])<br />-10.50.x ([!INCLUDE[ssKilimanjaro](../../../../../includes/sskilimanjaro-md.md)])<br />-11.0.xx (SQL Server 2012)|  
+|**Verze**|Verze serveru. Příklad:<br /><br /> -9.00.x ([!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)])<br />-   10.0.xx ([!INCLUDE[ssKatmai](../../../../../includes/sskatmai-md.md)])<br />-10.50.x ([!INCLUDE[ssKilimanjaro](../../../../../includes/sskilimanjaro-md.md)])<br />-   11.0.xx (SQL Server 2012)|  
   
 ## <a name="enumeration-limitations"></a>Výčet omezení  
  Všechny dostupné servery může nebo nemusí být uvedená. Seznam se může lišit v závislosti na faktorech, třeba vypršení časových limitů a síťové přenosy. To může způsobit seznamem, aby se na dvě po sobě jdoucích volání lišit. Zobrazí se pouze servery ve stejné síti. Pakety všesměrového vysílání obvykle nebudete procházet směrovače, proto nemusíte vidět serveru uvedené, ale bude stabilní napříč volání.  
@@ -124,6 +124,6 @@ class Program
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,15 +1,15 @@
 ---
-title: '&lt;System.Runtime.Serialization&gt;'
+title: '&lt;system.runtime.serialization&gt;'
 ms.date: 03/30/2017
 ms.assetid: a8cebf4c-06d2-4667-8f5b-c3e1fc90df6f
-ms.openlocfilehash: 7cda0918ec14f9065ab1aea2479a14c8d224fcf8
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 6321ab192161468142a4cd4d2155d3f787bb0165
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150549"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54600258"
 ---
-# <a name="ltsystemruntimeserializationgt"></a>&lt;System.Runtime.Serialization&gt;
+# <a name="ltsystemruntimeserializationgt"></a>&lt;system.runtime.serialization&gt;
 Představuje kořenový element <xref:System.Runtime.Serialization> části obor názvů a obsahuje prvky pro nastavení voleb <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
  system.runtime.serialization  
@@ -43,7 +43,7 @@ Představuje kořenový element <xref:System.Runtime.Serialization> části obor
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-of-system-runtime-serialization.md)|Umožňuje přidání ze známých typů, který se má použít při deserializaci.|  
+|[\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-of-system-runtime-serialization.md)|Umožňuje přidání ze známých typů, který se má použít při deserializaci.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -51,7 +51,7 @@ Představuje kořenový element <xref:System.Runtime.Serialization> části obor
 |-------------|-----------------|  
 |[\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Element nejvyšší úrovně pro konfiguraci.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization>  
- [Použití kontraktů dat](../../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
- [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization>
+- [Použití kontraktů dat](../../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+- [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)

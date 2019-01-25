@@ -7,19 +7,20 @@ helpviewer_keywords:
 - controls [WPF], FlowDocumentScrollViewer
 - FlowDocumentScrollViewer control [WPF]
 ms.assetid: 727b0a0a-b845-4aa9-9fd4-98f42ed738b4
-ms.openlocfilehash: 6ed1cc33b8b9a694669bb506c81a2c3b4d87fe61
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fa504c1269d6c57607204ea78919517c7d07f3eb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54593989"
 ---
 # <a name="flowdocumentscrollviewer"></a>FlowDocumentScrollViewer
-<xref:System.Windows.Controls.FlowDocumentScrollViewer> Řízení se používá k zobrazení <xref:System.Windows.Documents.FlowDocument> obsahu v posouvání kontejneru. Rozdíl oproti <xref:System.Windows.Controls.FlowDocumentPageViewer>, který zobrazení obsahu na základě na stránce.  
+<xref:System.Windows.Controls.FlowDocumentScrollViewer> Ovládacího prvku se používá k zobrazení <xref:System.Windows.Documents.FlowDocument> obsah v posuvné kontejneru. Rozdíl oproti <xref:System.Windows.Controls.FlowDocumentPageViewer>, který zobrazí obsah na základě na stránku.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.FlowDocumentReader>  
- <xref:System.Windows.Controls.FlowDocumentPageViewer>  
- <xref:System.Windows.Controls.FlowDocumentScrollViewer>  
- <xref:System.Windows.Documents.FlowDocument>  
- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.FlowDocumentReader>
+- <xref:System.Windows.Controls.FlowDocumentPageViewer>
+- <xref:System.Windows.Controls.FlowDocumentScrollViewer>
+- <xref:System.Windows.Documents.FlowDocument>
+- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)

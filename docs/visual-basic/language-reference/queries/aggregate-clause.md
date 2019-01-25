@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Aggregate statement [Visual Basic]
 - queries [Visual Basic], Aggregate
 ms.assetid: 1315a814-5db6-4077-b34b-b141e11cc0eb
-ms.openlocfilehash: e3ce8ff7da647120e5fd9e3b4cd44cc603eb797d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a26ea220a807d3158d6874e2127db9a2f280a10c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519483"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54547089"
 ---
 # <a name="aggregate-clause-visual-basic"></a>Aggregate – klauzule (Visual Basic)
 Použije jeden nebo více agregačních funkcí na kolekci.  
@@ -33,11 +33,11 @@ Aggregate element [As type] In collection _
   
 |Termín|Definice|  
 |---|---|  
-|`element`|Požadováno. Proměnné použité k iteraci v rámci elementů kolekce.|  
+|`element`|Povinný parametr. Proměnné použité k iteraci v rámci elementů kolekce.|  
 |`type`|Volitelné. Typ `element`. Pokud není zadán žádný typ. typ `element` je odvozen z `collection`.|  
-|`collection`|Požadováno. Odkazuje na kolekci, které se má operace provést.|  
+|`collection`|Povinný parametr. Odkazuje na kolekci, které se má operace provést.|  
 |`clause`|Volitelné. Jeden nebo více klauzulemi dotazu, například `Where` klauzule, pro upřesnění výsledků dotazu použití klauzule aggregate nebo klauzule.|  
-|`expressionList`|Požadováno. Jeden nebo více oddělených čárkou výrazů, které identifikují agregační funkce má být použita ke kolekci. Agregační funkce k určení názvu členu výsledku dotazu, můžete použít jako alias. Pokud žádný alias je zadaný, použije se název agregační funkce. Příklady najdete v části o agregačních funkcích dále v tomto tématu.|  
+|`expressionList`|Povinný parametr. Jeden nebo více oddělených čárkou výrazů, které identifikují agregační funkce má být použita ke kolekci. Agregační funkce k určení názvu členu výsledku dotazu, můžete použít jako alias. Pokud žádný alias je zadaný, použije se název agregační funkce. Příklady najdete v části o agregačních funkcích dále v tomto tématu.|  
   
 ## <a name="remarks"></a>Poznámky  
  `Aggregate` Klauzule je možné zahrnout agregačních funkcí v dotazech. Agregační funkce provádět kontroly a výpočty v rámci sady hodnoty a vrátí jednu hodnotu. Vypočítaná hodnota můžete přistupovat pomocí členem typ výsledku dotazu. Jsou standardní agregační funkce, které můžete použít `All`, `Any`, `Average`, `Count`, `LongCount`, `Max`, `Min`, a `Sum` funkce. Tyto funkce jsou zkušenosti vývojáře, kteří znají agregace v SQL. Jsou popsány v následující části tohoto tématu.  
@@ -56,7 +56,7 @@ Vrátí `true` Pokud všechny prvky v kolekci splňují zadanou podmínku; v opa
 
 [!code-vb[VbSimpleQuerySamples#5](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_1.vb)]
 
-### <a name="any"></a>Všechny
+### <a name="any"></a>Jakýkoli
 
 Vrátí `true` Pokud libovolný prvek v kolekci splňuje zadanou podmínku; v opačném případě vrátí `false`. Následuje příklad:
 
@@ -82,13 +82,13 @@ Odkazuje na výsledky dotazu, které jsou seskupeny kvůli `Group By` nebo `Grou
 
 Vrátí počet prvků v kolekci. Můžete zadat volitelný `Boolean` výraz ke zjištění počtu prvků v kolekci, které splňují podmínku. Vrátí výsledek jako `Long`. Příklad najdete v tématu `Count` agregační funkce.
 
-### <a name="max"></a>maximální počet
+### <a name="max"></a>Maximum
 
 Vypočítá maximální hodnotu z kolekce nebo vypočítá zadaný výraz pro všechny elementy v kolekci. Následuje příklad:
 
 [!code-vb[VbSimpleQuerySamples#9](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_5.vb)]
 
-### <a name="min"></a>min
+### <a name="min"></a>Minimum
 
 Vypočítá minimální hodnotu z kolekce nebo vypočítá zadaný výraz pro všechny elementy v kolekci. Následuje příklad:
 
@@ -118,11 +118,11 @@ Následující příklad ukazuje způsob použití `Aggregate` klauzule k aplika
   
  [!code-vb[VbSimpleQuerySamples#19](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_10.vb)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
-- [Dotazy](../../../visual-basic/language-reference/queries/index.md)  
-- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
-- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
-- [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)  
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Dotazy](../../../visual-basic/language-reference/queries/index.md)
+- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
+- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
+- [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)
 - [Klauzule Group By](../../../visual-basic/language-reference/queries/group-by-clause.md)

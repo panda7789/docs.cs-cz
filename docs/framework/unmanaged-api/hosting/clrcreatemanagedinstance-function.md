@@ -19,17 +19,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a375ea586bacc2d3dafe53d493a7467730fae889
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 40a278945dc1a6c84a72221fd55e32f44a146662
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33432318"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564393"
 ---
 # <a name="clrcreatemanagedinstance-function"></a>ClrCreateManagedInstance – funkce
-Vytvoří instanci je určeného spravovaného typu.  
+Vytvoří instanci určeného spravovaného typu.  
   
- Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Použijte aktivace COM vytvořit instanci spravovaného typu, nebo použijte hostování (viz [CLR hostování rozhraní přidaná v rozhraní .NET Framework 4 a 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)).  
+ Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Použít aktivaci modelu COM. k vytvoření instance spravovaného typu, nebo použít hostování (viz [CLR hostování rozhraní přidaná v rozhraní .NET Framework 4 a 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,19 +43,19 @@ STDAPI ClrCreateManagedInstance (
   
 #### <a name="parameters"></a>Parametry  
  `pTypeName`  
- [v] Ukazatel na název požadovaného typu instance.  
+ [in] Ukazatel na název požadovaného typu instance.  
   
  `riid`  
- [v] `IID` Instance typu požadováno.  
+ [in] `IID` Typu instanci požaduje.  
   
  `ppObject`  
- [out] Ukazatel na ukazatel na instanci spravovaného typu, který byl vyžádán volajícího.  
+ [out] Ukazatel na ukazatel na instanci spravovaného typu, který byl vyžádán volajícím.  
   
 ## <a name="remarks"></a>Poznámky  
- Modul common language runtime by měl být již načtena do procesu. Například můžete načíst pomocí volání [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) funkce před `ClrCreateManagedInstance` funkce je volána. Pokud není načteno modul runtime, `ClrCreateManagedInstance` poprvé pokusí načíst v1.0.3705 modulu runtime. Pokud to nepomůže, pokusí se načíst nejnovější verzi modulu runtime.  
+ Modul common language runtime by již načten do procesu. Například můžete načíst pomocí volání [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) fungovaly před `ClrCreateManagedInstance` funkce je volána. Pokud není načten modul runtime, `ClrCreateManagedInstance` poprvé pokusí se načíst v1.0.3705 modulu runtime. Pokud selže, pokusí se načíst nejnovější verzi modulu runtime.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -63,6 +63,6 @@ STDAPI ClrCreateManagedInstance (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)  
- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

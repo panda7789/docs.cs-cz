@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Mapování vlastností použitím elementu WindowsFormsHost'
+title: 'Průvodce: Mapování vlastností použitím elementu WindowsFormsHost'
 ms.date: 08/18/2018
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - mapping properties [WPF]
 - WindowsFormsHost element property mapping [WPF]
 ms.assetid: 74809167-bf8e-48b7-a2e7-b4ea08bc7d8c
-ms.openlocfilehash: 4841ce260adfb5d0c0d4b0f359ac9998521d584b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 943137017dcc1f8b347441669add13c3ab056f7d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43529644"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54493648"
 ---
-# <a name="walkthrough-mapping-properties-using-the-windowsformshost-element"></a>Návod: Mapování vlastností použitím elementu WindowsFormsHost
+# <a name="walkthrough-mapping-properties-using-the-windowsformshost-element"></a>Průvodce: Mapování vlastností použitím elementu WindowsFormsHost
 
 Tento návod ukazuje, jak používat <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A> vlastnost mapovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnosti odpovídající vlastnosti na hostovaný [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacího prvku.
 
@@ -153,7 +153,7 @@ Nastavení mapování vlastností pomocí volání metody bylo popsáno dříve 
 
 2.  Stisknutím klávesy **F5** sestavíte a spustíte aplikaci. Klikněte na zaškrtávací políčko na vliv <xref:System.Windows.FrameworkElement.FlowDirection%2A> mapování. Po kliknutí na zaškrtávací políčko obrátí rozložení zleva doprava orientace.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost.PropertyMap%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A?displayProperty=nameWithType>

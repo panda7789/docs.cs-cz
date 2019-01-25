@@ -18,12 +18,12 @@ helpviewer_keywords:
 - output, network tracing
 - method invocations
 ms.assetid: e993b7c3-087f-45d8-9c02-9dded936d804
-ms.openlocfilehash: 812fbd0a3f12f9b44e419986b5f3198d95d1e3a7
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: e212b2c77a8b0b016e03bfe08f350a0b86ba6ee1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147408"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514696"
 ---
 # <a name="network-tracing-in-the-net-framework"></a>Trasování sítě v rozhraní .NET Framework
 Trasování sítě v rozhraní .NET Framework poskytuje přístup k informacím o vyvoláních metody a přenosech v síti generovaných spravovanou aplikací. Tato funkce je užitečná při ladění aplikací během vývoje a také pro analýzu nasazených aplikací. Výstup poskytovaný trasováním sítě je přizpůsobitelný tak, aby podporoval různé scénáře využití v době vývoje a v produkčním prostředí.  
@@ -35,8 +35,8 @@ Trasování sítě v rozhraní .NET Framework poskytuje přístup k informací
 > [!NOTE]
 >  Tento člen poskytuje trasovací informace, když je ve vaší aplikaci povoleno trasování sítě. Další informace naleznete v tématu Trasování sítě.  
   
-## <a name="see-also"></a>Viz také  
- [Povolení trasování sítě](../../../docs/framework/network-programming/enabling-network-tracing.md)  
- [Jak: Konfigurace trasování sítě](../../../docs/framework/network-programming/how-to-configure-network-tracing.md)  
- [Interpretace trasování sítě](../../../docs/framework/network-programming/interpreting-network-tracing.md)  
-[Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
+## <a name="see-also"></a>Viz také:
+- [Povolení trasování sítě](../../../docs/framework/network-programming/enabling-network-tracing.md)
+- [Postupy: Konfigurace trasování sítě](../../../docs/framework/network-programming/how-to-configure-network-tracing.md)
+- [Interpretace trasování sítě](../../../docs/framework/network-programming/interpreting-network-tracing.md)
+- [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)

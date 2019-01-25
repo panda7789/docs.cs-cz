@@ -7,18 +7,18 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF], validation differences
 ms.assetid: 953a219f-4745-4019-9894-c70704f352e6
-ms.openlocfilehash: 978ef8f0abe3b65110864773a19c15f0c8363236
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: f85b45186c7cbc299e68f6f914f591f337aa3993
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183591"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54517068"
 ---
 # <a name="certificate-validation-differences-between-https-ssl-over-tcp-and-soap-security"></a>Rozdíly v ověřování certifikátů mezi zabezpečeními HTTPS, SSL přes TCP a SOAP
 Můžete certifikátů ve Windows Communication Foundation (WCF) se zabezpečením vrstvy zpráv (protokolu SOAP) kromě zabezpečení přenosové vrstvy (TLS) přes HTTP (HTTPS) nebo TCP. Toto téma popisuje rozdíly v způsob, jakým tyto certifikáty se ověřují.  
   
 ## <a name="validation-of-https-client-certificates"></a>Ověřování klientských certifikátů protokolu HTTPS  
- Při použití protokolu HTTPS pro komunikaci mezi klientem a službou, certifikát, který klient používá k ověření ve službě musí podporovat řetězce důvěryhodnosti. To znamená ho musí být propojeny s důvěryhodné kořenové certifikační autority. Pokud ne, vyvolá vrstvy protokolu HTTP <xref:System.Net.WebException> se zprávou "vzdálený server vrátil chybu: zakázáno (403)." Vyvolá tuto výjimku jako WCF <xref:System.ServiceModel.Security.MessageSecurityException>.  
+ Při použití protokolu HTTPS pro komunikaci mezi klientem a službou, certifikát, který klient používá k ověření ve službě musí podporovat řetězce důvěryhodnosti. To znamená ho musí být propojeny s důvěryhodné kořenové certifikační autority. Pokud ne, vyvolá vrstvy protokolu HTTP <xref:System.Net.WebException> se zprávou "vzdálený server vrátil chybu: (403) zakázán." Vyvolá tuto výjimku jako WCF <xref:System.ServiceModel.Security.MessageSecurityException>.  
   
 ## <a name="validation-of-https-service-certificates"></a>Ověření certifikátů služby protokolu HTTPS  
  Při použití protokolu HTTPS pro komunikaci mezi klientem a službou, certifikát, který se ověřuje na serveru musí podporovat řetězce důvěryhodnosti ve výchozím nastavení. To znamená ho musí být propojeny s důvěryhodné kořenové certifikační autority. Pokud chcete zobrazit, jestli certifikát byl odvolán je provedena žádná kontrola online. Toto chování můžete přepsat tak, že zaregistrujete <xref:System.Net.Security.RemoteCertificateValidationCallback> zpětné volání, jak je znázorněno v následujícím kódu.  
@@ -47,6 +47,6 @@ Můžete certifikátů ve Windows Communication Foundation (WCF) se zabezpečen�
  [!code-csharp[c_CertificateValidationDifferences#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_certificatevalidationdifferences/cs/source.cs#4)]
  [!code-vb[c_CertificateValidationDifferences#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_certificatevalidationdifferences/vb/source.vb#4)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Net.Security.RemoteCertificateValidationCallback>  
- [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.Security.RemoteCertificateValidationCallback>
+- [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

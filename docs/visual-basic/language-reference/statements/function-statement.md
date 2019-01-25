@@ -28,12 +28,12 @@ helpviewer_keywords:
 - End keyword [Visual Basic], Function statements
 - Handles keyword [Visual Basic], Function statements
 ms.assetid: a4497077-0f46-4ede-a27f-9e8670df52b9
-ms.openlocfilehash: b370e92aaab88a7f0d49f1de60b50fa6bbf1e161
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
+ms.openlocfilehash: 5018aebb0401ce5a1c46ecf04a7c65ca676271e7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39323011"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54565901"
 ---
 # <a name="function-statement-visual-basic"></a>Function – příkaz (Visual Basic)
 Deklaruje název, parametry a kód, které definují `Function` postup.  
@@ -67,9 +67,9 @@ End Function
   
     -   [Private](../../../visual-basic/language-reference/modifiers/private.md)  
   
-    -   [Chráněné typu Friend](../../language-reference/modifiers/protected-friend.md)
+    -   [Protected Friend](../../language-reference/modifiers/protected-friend.md)
 
-    - [Privátní, chráněné](../../language-reference/modifiers/private-protected.md)  
+    - [Private Protected](../../language-reference/modifiers/private-protected.md)  
   
      Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
@@ -109,7 +109,7 @@ End Function
   
 -   `name`  
   
-     Požadováno. Název procedury. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+     Povinný parametr. Název procedury. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
 -   `typeparamlist`  
   
@@ -139,8 +139,8 @@ End Function
   
     |Část|Popis|  
     |---|---|  
-    |`interface`|Požadováno. Název rozhraní implementovaných tímto postupem obsahující třídy nebo struktury.|  
-    |`definedname`|Požadováno. Název, podle kterého postupu je definován v `interface`.|  
+    |`interface`|Povinný parametr. Název rozhraní implementovaných tímto postupem obsahující třídy nebo struktury.|  
+    |`definedname`|Povinný parametr. Název, podle kterého postupu je definován v `interface`.|  
   
 -   `Handles`  
   
@@ -158,8 +158,8 @@ End Function
   
     |Část|Popis|  
     |---|---|  
-    |`eventvariable`|Požadováno. Objektová proměnná deklarovaná s datovým typem třídy nebo struktury, která vyvolává událost.|  
-    |`event`|Požadováno. Název události, které zpracovává tento postup.|  
+    |`eventvariable`|Povinný parametr. Objektová proměnná deklarovaná s datovým typem třídy nebo struktury, která vyvolává událost.|  
+    |`event`|Povinný parametr. Název události, které zpracovává tento postup.|  
   
 -   `statements`  
   
@@ -254,15 +254,15 @@ End Function
   
  [!code-vb[csAsyncMethod#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/VisualBasic/function-statement_5.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Sub](sub-statement.md)  
- [Procedury funkce](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)  
- [Seznam parametrů](parameter-list.md)  
- [Příkaz Dim](dim-statement.md)  
- [Příkaz Call](call-statement.md)  
- [z](of-clause.md)  
- [Pole parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)  
- [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
- [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)  
- [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
- [Výraz Function](../../../visual-basic/language-reference/operators/function-expression.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Sub](sub-statement.md)
+- [Procedury funkce](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)
+- [Seznam parametrů](parameter-list.md)
+- [Příkaz Dim](dim-statement.md)
+- [Příkaz Call](call-statement.md)
+- [z](of-clause.md)
+- [Pole parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)
+- [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
+- [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)
+- [Výrazy lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+- [Výraz Function](../../../visual-basic/language-reference/operators/function-expression.md)

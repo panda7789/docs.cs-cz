@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cac9f9db0b7527a80671c825a4435e8ea2d135b8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2aed89008dd2fa86b38f243c8e7cca1bdda901e1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429657"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54497771"
 ---
 # <a name="iinstallreferenceenum-interface"></a>IInstallReferenceEnum – rozhraní
-Představuje enumerátor pro odkazované sestavení nainstalované v globální mezipaměti sestavení.  
+Představuje enumerátor pro odkazovaná sestavení nainstalována v globální mezipaměti sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,12 +45,12 @@ interface IInstallReferenceEnum : IUnknown {
 |[GetNextInstallReferenceItem – metoda](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-getnextinstallreferenceitem-method.md)|Získá ukazatel na další `IInstallReferenceItem` obsažené v tomto `IInstallReferenceEnum`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Fusion.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [IInstallReferenceItem – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [IInstallReferenceItem – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md)

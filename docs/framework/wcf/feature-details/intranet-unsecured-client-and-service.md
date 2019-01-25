@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f450f5d4-3547-47ec-9320-2809e6a12634
-ms.openlocfilehash: eb165b69e1312363a8cc7c1a3ceea66a422d54f7
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 7583eab4673dc14380f18456d1713351dbc74f17
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143464"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54603115"
 ---
 # <a name="intranet-unsecured-client-and-service"></a>Nezabezpečený intranetový klient a služba
 Následující obrázek znázorňuje jednoduchý služby Windows Communication Foundation (WCF) vyvinuta poskytují informace o zabezpečené privátní sítě pro aplikace WCF. Zabezpečení není povinné, protože data jsou s nízkou důležitostí, síť má být ze své podstaty bezpečné nebo poskytuje zabezpečení vrstvy pod infrastruktura WCF.  
@@ -23,8 +23,8 @@ Následující obrázek znázorňuje jednoduchý služby Windows Communication F
 |Přenos|TCP|  
 |Vazba|<xref:System.ServiceModel.NetTcpBinding>|  
 |Interoperabilita|Pouze WCF|  
-|Ověřování|Žádné|  
-|Integrita|Žádné|  
+|Ověřování|Žádná|  
+|Integrita|Žádná|  
 |Důvěrnost|Žádná|  
   
 ## <a name="service"></a>Služba  
@@ -112,7 +112,7 @@ Následující obrázek znázorňuje jednoduchý služby Windows Communication F
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.NetTcpBinding>  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.NetTcpBinding>
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

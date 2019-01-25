@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Vytváření ovládacích prvků pro Windows Forms'
+title: 'Postupy: Autor ovládacích prvků Windows Forms'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], creating
 - UserControl class [Windows Forms], Windows Forms
 - custom controls [Windows Forms], creating
 ms.assetid: 7570e982-545b-4c3a-a7c7-55581d313400
-ms.openlocfilehash: 844e38fc62fc9fb04a723c1a4a8ad834e957c8ce
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: a6ea57dda8f034684e8590ce4c3b6d37ab01230e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44178309"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54579521"
 ---
-# <a name="how-to-author-controls-for-windows-forms"></a>Postupy: Vytváření ovládacích prvků pro Windows Forms
+# <a name="how-to-author-controls-for-windows-forms"></a>Postupy: Autor ovládacích prvků Windows Forms
 Ovládací prvek představuje grafické propojení mezi uživateli a program. Ovládací prvek můžete zadat nebo zpracování dat, přijímají vstup uživatele, reagovat na události nebo provádět spoustu dalších funkcí, které se připojují uživatele a aplikace. Vzhledem k tomu, že ovládací prvek je v podstatě komponent pomocí grafického rozhraní, může sloužit všechny funkce, které nemá komponenty, a poskytnout interakce s uživatelem. Vytvoření ovládacích prvků pro obsluhu zvláštní účely a vytváření ovládacích prvků je jenom další úlohou programování. Následující kroky se na základě těchto skutečností představují Přehled ovládacího prvku proces tvorby. Další informace o odkazech na jednotlivé kroky.  
   
 > [!NOTE]
@@ -41,9 +41,9 @@ Ovládací prvek představuje grafické propojení mezi uživateli a program. Ov
   
 5.  Pokud potřebujete vlastní vykreslování ovládacího prvku, přidejte kód pro něj. Podrobnosti najdete v tématu [vlastní ovládací prvek Malování a vykreslování](../../../../docs/framework/winforms/controls/custom-control-painting-and-rendering.md).  
   
-6.  Pokud váš ovládací prvek dědí z <xref:System.Windows.Forms.UserControl>, můžete otestovat jeho chování za běhu sestavení projektu ovládacího prvku a jeho spuštěním **kontejner testu UserControl**. Další informace najdete v tématu [postupy: testování běhového chování UserControl](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md).  
+6.  Pokud váš ovládací prvek dědí z <xref:System.Windows.Forms.UserControl>, můžete otestovat jeho chování za běhu sestavení projektu ovládacího prvku a jeho spuštěním **kontejner testu UserControl**. Další informace najdete v tématu [jak: Testování běhového chování UserControl](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md).  
   
-7.  Můžete také testování a ladění ovládacího prvku vytvořením nového projektu, jako je například aplikace Windows a že ho umístíte do kontejneru. Tento proces je znázorněn v rámci [návod: Vytvoření složeného ovládacího prvku s jazykem Visual Basic](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md).  
+7.  Můžete také testování a ladění ovládacího prvku vytvořením nového projektu, jako je například aplikace Windows a že ho umístíte do kontejneru. Tento proces je znázorněn v rámci [názorný postup: Vytvoření složeného ovládacího prvku s jazykem Visual Basic](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md).  
   
 8.  Při přidávání jednotlivých funkcí, přidání funkcí do projektu testu vykonávat nové funkce.  
   
@@ -51,11 +51,11 @@ Ovládací prvek představuje grafické propojení mezi uživateli a program. Ov
   
 10. Zabalení a nasazení ovládacího prvku. Podrobnosti najdete v tématu [nasazování aplikací, služeb a komponent](https://msdn.microsoft.com/library/wtzawcsz).  
   
-## <a name="see-also"></a>Viz také  
- [Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  
- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu](../../../../docs/framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)  
- [Postupy: Dědění ze třídy UserControl](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)  
- [Postupy: Dědění ze třídy Control](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-control-class.md)  
- [Postupy: Dědění ze stávajících ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-inherit-from-existing-windows-forms-controls.md)  
- [Postupy: Otestování běhového chování UserControl](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md)  
- [Typy vlastních ovládacích prvků](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)
+## <a name="see-also"></a>Viz také:
+- [Návod: Vytvoření složeného ovládacího prvku s jazykem Visual Basic](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)
+- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basic](../../../../docs/framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
+- [Postupy: Dědit ze třídy UserControl](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)
+- [Postupy: Dědit ze třídy Control](../../../../docs/framework/winforms/controls/how-to-inherit-from-the-control-class.md)
+- [Postupy: Dědění z existujících Windows Forms ovládacích prvků](../../../../docs/framework/winforms/controls/how-to-inherit-from-existing-windows-forms-controls.md)
+- [Postupy: Testování běhového chování UserControl](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md)
+- [Typy vlastních ovládacích prvků](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)

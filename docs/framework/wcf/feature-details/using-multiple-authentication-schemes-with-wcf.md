@@ -2,17 +2,17 @@
 title: Používání více schémat ověřování u WCF
 ms.date: 03/30/2017
 ms.assetid: f32a56a0-e2b2-46bf-a302-29e1275917f9
-ms.openlocfilehash: cdf40d6c0ca25a21cbdac07abab04d2bc144bf69
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8aa593803354628354e5ed3bf02cbcea44505e5e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43521696"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54593807"
 ---
 # <a name="using-multiple-authentication-schemes-with-wcf"></a>Používání více schémat ověřování u WCF
 WCF umožňuje zadat více schémat ověřování v jednom koncovém bodu. Kromě toho hostovaná na webu služby může dědit jejich nastavení ověřování přímo ze služby IIS. V místním prostředí služby můžete zadat ověření je možné schémata. Další informace o nastavení ověřování ve službě IIS najdete v tématu [ověřování služby IIS](https://go.microsoft.com/fwlink/?LinkId=232458)  
   
-## <a name="iis-hosted-services"></a>Služby hostované v IIS  
+## <a name="iis-hosted-services"></a>IIS-Hosted Services  
  Služby hostované v IIS nastavte ověřovací schémata, které chcete použít ve službě IIS. V souboru web.config vaší služby v konfiguraci vazby zadejte typ clientcredential systému jako "InheritedFromHost" jak je znázorněno v následující fragment kódu XML:  
   
 ```xml  
@@ -119,11 +119,11 @@ else
     </binding>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Vazby a zabezpečení](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)  
- [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)  
- [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)  
- [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)  
- [Vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md)
+## <a name="see-also"></a>Viz také:
+- [Vazby a zabezpečení](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)
+- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
+- [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)
+- [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)
+- [Vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md)

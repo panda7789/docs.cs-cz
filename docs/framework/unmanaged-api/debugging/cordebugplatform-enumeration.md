@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7d3b8f1e869e90fd3388cc0844e608b7ff40fc89
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d8cbf09ab4ad0192902a964d55a050685b024284
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407089"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54574297"
 ---
 # <a name="cordebugplatform-enumeration"></a>Výčet CorDebugPlatform
-Poskytuje cílové platformy hodnoty, které jsou používány [icordebugdatatarget::getplatform –](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) metoda.  
+Poskytuje cílové platformy hodnoty, které jsou používány [icordebugdatatarget::getplatform –](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,16 +45,16 @@ typedef enum CorDebugPlatform
   
 |Člen|Popis|  
 |------------|-----------------|  
-|CORDB_PLATFORM_WINDOWS_X86|Cílové platformy je spuštěna na Intel x86 hardwaru systému Windows.|  
-|CORDB_PLATFORM_WINDOWS_AMD64|Cílové platformy je 64bitová verze Windows spuštěná v AMD64 nebo podporou technologie Intel EM64T hardwaru.|  
-|CORDB_PLATFORM_WINDOWS_IA64|Cílové platformy je 32bitový systém Windows systémem hardwaru Intel IA-64.|  
-|CORDB_PLATFORM_MAC_PPC|Cílové platformy je operační systém Macintosh systémem PowerPC hardwaru.|  
-|CORDB_PLATFORM_MAC_X86|Cílové platformy je operační systém Macintosh systémem Intel x86 hardwaru.|  
-|CORDB_PLATFORM_WINDOWS_ARM|Cílové platformy je operační systém Macintosh systémem Windows ARM hardwaru.|  
-|CORDB_PLATFORM_MAC_AMD64|Cílové platformy je operační systém Macintosh systémem AMD64 hardwaru.|  
+|CORDB_PLATFORM_WINDOWS_X86|Cílová platforma je hardware Intel x86 a systémem Windows.|  
+|CORDB_PLATFORM_WINDOWS_AMD64|Cílová platforma je 64bitová verze Windows běží na AMD64 nebo Intel EM64T hardwaru.|  
+|CORDB_PLATFORM_WINDOWS_IA64|Cílová platforma je hardware Intel IA-64 a systémem Windows 32 bitů.|  
+|CORDB_PLATFORM_MAC_PPC|Cílová platforma je operační systém Macintosh na PowerPC hardwaru.|  
+|CORDB_PLATFORM_MAC_X86|Cílová platforma je operační systém Macintosh na Intel x86 hardwaru.|  
+|CORDB_PLATFORM_WINDOWS_ARM|Cílová platforma je operační systém Macintosh běžící na Windows ARM hardwaru.|  
+|CORDB_PLATFORM_MAC_AMD64|Cílová platforma je operační systém Macintosh na hardwaru AMD64.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -62,7 +62,7 @@ typedef enum CorDebugPlatform
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
- `CORDB_PLATFORM_WINDOWS_ARM` a `CORDB_PLATFORM_MAC_AMD64` členové jsou k dispozici v rozhraní .NET Framework 4.5.2 a novějších verzích.  
+ `CORDB_PLATFORM_WINDOWS_ARM` a `CORDB_PLATFORM_MAC_AMD64` členy jsou k dispozici v rozhraní .NET Framework 4.5.2 a novějších verzích.  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

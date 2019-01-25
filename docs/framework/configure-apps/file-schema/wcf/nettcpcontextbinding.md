@@ -2,12 +2,12 @@
 title: '&lt;netTcpContextBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 1d4715e1-5fff-4c3d-a226-18f21d0b30c4
-ms.openlocfilehash: da769e57a44880d5050b06a8e2a3d317daff35d6
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 0f5e4df5a25062ba6454dfc845ba2999ddcc6ca8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146066"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572263"
 ---
 # <a name="ltnettcpcontextbindinggt"></a>&lt;netTcpContextBinding&gt;
 Určuje kontext pro <xref:System.ServiceModel.NetTcpBinding> , která vyžaduje, aby úroveň ochrany byla podepsána. ContextExchangeMechanism pro NetTcpContextBinding je SOAPHeader.  
@@ -72,8 +72,8 @@ Určuje kontext pro <xref:System.ServiceModel.NetTcpBinding> , která vyžaduje,
 |hostnameComparisonMode|Určuje režim porovnání jména hostitele HTTP použít k analýze identifikátoru URI. Tento atribut je typu `System.ServiceModel.HostnameComparisonMode`, což znamená, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele. Výchozí hodnota je `StrongWildcard`, které ignoruje jako název hostitele v porovnávání.|  
 |listenBacklog|Kladné celé číslo, určující maximální počet kanálů čekat na přijetí na naslouchací proces. Připojení překračující tento limit se zařadí do fronty, dokud nebude k dispozici prostor pod limit. `connectionTimeout` Atribut omezuje času, klient bude čekat před vyvolání výjimky připojení připojený k Internetu. Výchozí hodnota je 10.|  
 |maxBufferPoolSize|Celé číslo, které určuje velikost fondu maximální vyrovnávací paměti pro tuto vazbu. Výchozí hodnota je 512 * 1024 bajtů. Mnoho částí Windows Communication Foundation (WCF) použít vyrovnávací paměti. Vytváření a ničení pokaždé, když používají se vyrovnávací paměti je nákladné a uvolňování paměti pro vyrovnávací paměť je také náročné. S fondy vyrovnávací paměti může trvat vyrovnávací paměti z fondu, ho použít a vrátit do fondu, až budete hotovi. Proto je vyloučeno režie při vytváření a ničení vyrovnávací paměti.|  
-|Třída maxBufferSize|Kladné celé číslo, které určuje maximální velikost v bajtech, vyrovnávací paměti používané k ukládání zpráv v paměti. Pokud vyrovnávací paměť je plná, zůstane nadbytečná data řadit v podkladové soketu, dokud znovu místnosti má vyrovnávací paměť. Tato hodnota nemůže být menší než `maxReceivedMessageSize` atribut. Výchozí hodnota je 65536. Další informace naleznete v tématu <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement.MaxBufferSize%2A>.|  
-|MaxConnections|Celé číslo, které určuje maximální počet odchozí a příchozí připojení služby vytvořit/přijme. Příchozí a odchozí připojení se započítávají i samostatné limit specifikovaný pro tento atribut.<br /><br /> Příchozí připojení nad tento limit se zařadí do fronty, dokud nebude k dispozici prostor pod limit.<br /><br /> Odchozí připojení nad tento limit se zařadí do fronty, dokud nebude k dispozici prostor pod limit.<br /><br /> Výchozí hodnota je 10.|  
+|maxBufferSize|Kladné celé číslo, které určuje maximální velikost v bajtech, vyrovnávací paměti používané k ukládání zpráv v paměti. Pokud vyrovnávací paměť je plná, zůstane nadbytečná data řadit v podkladové soketu, dokud znovu místnosti má vyrovnávací paměť. Tato hodnota nemůže být menší než `maxReceivedMessageSize` atribut. Výchozí hodnota je 65536. Další informace naleznete v tématu <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement.MaxBufferSize%2A>.|  
+|maxConnections|Celé číslo, které určuje maximální počet odchozí a příchozí připojení služby vytvořit/přijme. Příchozí a odchozí připojení se započítávají i samostatné limit specifikovaný pro tento atribut.<br /><br /> Příchozí připojení nad tento limit se zařadí do fronty, dokud nebude k dispozici prostor pod limit.<br /><br /> Odchozí připojení nad tento limit se zařadí do fronty, dokud nebude k dispozici prostor pod limit.<br /><br /> Výchozí hodnota je 10.|  
 |maxReceivedMessageSize|Kladné celé číslo, které určuje maximální velikost zprávy, v bajtech, včetně záhlaví, které může být přijata v kanálu nakonfigurovaným s touto vazbou. Odesílatel zprávy překračující tento limit se zobrazí chyba protokolu SOAP. Příjemce zahodí a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536.|  
 |name|Řetězec, který obsahuje konfigurační název vazby. Tato hodnota by měla být jedinečný, protože se používá jako identifikace pro vazbu. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název. Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).|  
 |openTimeout|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
@@ -82,7 +82,7 @@ Určuje kontext pro <xref:System.ServiceModel.NetTcpBinding> , která vyžaduje,
 |SendTimeout|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
 |transactionFlow|Logická hodnota určující, zda vazba podporuje průchodu WS-transakce. Výchozí hodnota je `false`.|  
 |transactionProtocol|Určuje protokol transakce, jenž má být použit s touto vazbou. Platné hodnoty jsou<br /><br /> -OleTransactions<br />-WSAtomicTransactionOctober2004<br /><br /> Výchozí hodnota je OleTransactions. Tento atribut je typu <xref:System.ServiceModel.TransactionProtocol>.|  
-|režim přenosu|A <xref:System.ServiceModel.TransferMode> hodnota, která určuje, zda jsou zprávy ukládány do vyrovnávací paměti nebo prostřednictvím datového proudu nebo požadavek nebo odpověď.|  
+|transferMode|A <xref:System.ServiceModel.TransferMode> hodnota, která určuje, zda jsou zprávy ukládány do vyrovnávací paměti nebo prostřednictvím datového proudu nebo požadavek nebo odpověď.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -96,15 +96,15 @@ Určuje kontext pro <xref:System.ServiceModel.NetTcpBinding> , která vyžaduje,
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.NetTcpBinding>  
- <xref:System.ServiceModel.NetTcpContextBinding>  
- <xref:System.ServiceModel.Configuration.NetTcpContextBindingElement>  
- <xref:System.ServiceModel.Channels.ContextBindingElement>  
- [\<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.NetTcpBinding>
+- <xref:System.ServiceModel.NetTcpContextBinding>
+- <xref:System.ServiceModel.Configuration.NetTcpContextBindingElement>
+- <xref:System.ServiceModel.Channels.ContextBindingElement>
+- [\<netTcpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

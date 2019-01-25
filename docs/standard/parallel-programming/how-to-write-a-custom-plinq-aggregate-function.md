@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Psaní vlastní agregační funkce pro PLINQ'
+title: 'Postupy: Napsat vlastní agregační funkce pro PLINQ'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 5a70dd49-ab2a-4798-b551-196ee7042b1a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 82e4ed0f93d7c41bc36427159442cc88b0a7867d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 03bbb9b7cf33eda1cc479759740e6c5325f635fe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44038830"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580665"
 ---
-# <a name="how-to-write-a-custom-plinq-aggregate-function"></a>Postupy: Psaní vlastní agregační funkce pro PLINQ
+# <a name="how-to-write-a-custom-plinq-aggregate-function"></a>Postupy: Napsat vlastní agregační funkce pro PLINQ
 Tento příklad ukazuje způsob použití <xref:System.Linq.ParallelEnumerable.Aggregate%2A> způsob, jak použít vlastní agregační funkce zdrojové sekvence.  
   
 > [!WARNING]
@@ -35,5 +35,5 @@ Tento příklad ukazuje způsob použití <xref:System.Linq.ParallelEnumerable.A
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Linq.ParallelEnumerable>  
+- <xref:System.Linq.ParallelEnumerable>
 - [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

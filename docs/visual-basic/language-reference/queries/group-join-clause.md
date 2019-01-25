@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Group Join statement [Visual Basic]
 - queries [Visual Basic], Group Join
 ms.assetid: 37dbf79c-7b5c-421b-bbb7-dadfd2b92a1c
-ms.openlocfilehash: f4c0d7fa9f14868404cde6201692e26b919198be
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 19eba101e2a91d1b0549e9e3eb86d0af94f2d1b0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43803662"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54619740"
 ---
 # <a name="group-join-clause-visual-basic"></a>Group Join – klauzule (Visual Basic)
 Kombinuje dvě kolekce do jedné hierarchické kolekce. Operace spojení je založená na shodujících se klíčích.  
@@ -33,11 +33,11 @@ Group Join element [As type] In collection _
   
 |Termín|Definice|  
 |---|---|  
-|`element`|Požadováno. Řídicí proměnná pro kolekci, je připojen.|  
+|`element`|Povinný parametr. Řídicí proměnná pro kolekci, je připojen.|  
 |`type`|Volitelné. Typ `element`. Pokud ne `type` je zadán typ `element` je odvozen z `collection`.|  
-|`collection`|Požadováno. Kolekce, kterou chcete zkombinovat s kolekcí, který je na levé straně `Group Join` operátor. A `Group Join` klauzule může být vnořena v `Join` klauzule nebo v jiném `Group Join` klauzuli.|  
-|`key1` `Equals` `key2`|Požadováno. Určuje klíče pro kolekce, je připojen. Je nutné použít `Equals` operátor porovnání klíčů z kolekcí je připojen. Podmínky připojení můžete kombinovat pomocí `And` operátor k identifikaci více klíčů. `key1` Parametr musí být z kolekce na levé straně `Join` operátor. `key2` Parametr musí být z kolekce na pravé straně `Join` operátor.<br /><br /> Klíče používané v podmínku připojení může být výrazů, které obsahují více než jednu položku z kolekce. Každý výraz klíče však může obsahovat pouze položky z jeho příslušné kolekce.|  
-|`expressionList`|Požadováno. Jeden nebo více výrazů, které určují, jak se agregují skupiny prvků z kolekce. Chcete-li zjistit název člena pro seskupené výsledky, použijte `Group` – klíčové slovo (`<alias> = Group`). Může také obsahovat agregační funkce, které chcete aplikovat ve skupině.|  
+|`collection`|Povinný parametr. Kolekce, kterou chcete zkombinovat s kolekcí, který je na levé straně `Group Join` operátor. A `Group Join` klauzule může být vnořena v `Join` klauzule nebo v jiném `Group Join` klauzuli.|  
+|`key1` `Equals` `key2`|Povinný parametr. Určuje klíče pro kolekce, je připojen. Je nutné použít `Equals` operátor porovnání klíčů z kolekcí je připojen. Podmínky připojení můžete kombinovat pomocí `And` operátor k identifikaci více klíčů. `key1` Parametr musí být z kolekce na levé straně `Join` operátor. `key2` Parametr musí být z kolekce na pravé straně `Join` operátor.<br /><br /> Klíče používané v podmínku připojení může být výrazů, které obsahují více než jednu položku z kolekce. Každý výraz klíče však může obsahovat pouze položky z jeho příslušné kolekce.|  
+|`expressionList`|Povinný parametr. Jeden nebo více výrazů, které určují, jak se agregují skupiny prvků z kolekce. Chcete-li zjistit název člena pro seskupené výsledky, použijte `Group` – klíčové slovo (`<alias> = Group`). Může také obsahovat agregační funkce, které chcete aplikovat ve skupině.|  
   
 ## <a name="remarks"></a>Poznámky  
  `Group Join` Klauzule kombinuje dvě kolekce na základě porovnání hodnoty klíče z kolekcí je připojen. Výsledný kolekce může obsahovat člena, který odkazuje na kolekci elementů z druhé kolekce, která odpovídá hodnotě klíče z první kolekce. Můžete také zadat agregační funkce použít na seskupené prvky z druhé kolekci. Informace o agregačních funkcích naleznete v tématu [Aggregate – klauzule](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
@@ -55,11 +55,11 @@ Group Join element [As type] In collection _
   
  [!code-vb[VbSimpleQuerySamples#14](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/group-join-clause_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Dotazy](../../../visual-basic/language-reference/queries/index.md)  
- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
- [Klauzule Join](../../../visual-basic/language-reference/queries/join-clause.md)  
- [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)  
- [Klauzule Group By](../../../visual-basic/language-reference/queries/group-by-clause.md)
+## <a name="see-also"></a>Viz také:
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Dotazy](../../../visual-basic/language-reference/queries/index.md)
+- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
+- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
+- [Klauzule Join](../../../visual-basic/language-reference/queries/join-clause.md)
+- [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)
+- [Klauzule Group By](../../../visual-basic/language-reference/queries/group-by-clause.md)

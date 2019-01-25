@@ -2,12 +2,12 @@
 title: '&lt;faultPropagationQuery&gt; služby WCF'
 ms.date: 03/30/2017
 ms.assetid: fabafbc8-3e45-4feb-8321-0725e9f4079c
-ms.openlocfilehash: cf582fce4e899e62daa4f34f193a0232ec19a135
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 1da2a95d27756296aab5a205a90fb028508c4b76
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54149030"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54601802"
 ---
 # <a name="ltfaultpropagationquerygt-of-wcf"></a>&lt;faultPropagationQuery&gt; služby WCF
 
@@ -17,11 +17,11 @@ Další informace o sledování profil dotazy naleznete v tématu [sledování p
   
 \<system.serviceModel>  
 \<sledování >  
-\<profily >  
-\<profil trackingProfile >  
+\<profiles>  
+\<trackingProfile>  
 \<pracovní postup >  
-\<faultPropagationQueries >  
-\<faultPropagationQuery >  
+\<faultPropagationQueries>  
+\<faultPropagationQuery>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -61,8 +61,8 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 |-------------|-----------------|  
 |[\<faultPropagationQueries>](faultpropagationqueries-of-wcf.md)|Představuje seznam konfigurační prvky, které se používají ke sledování zpracování chyb, ke kterým dochází v rámci aktivity.  Pokaždé, když FaultHandler zpracovává chyby, dojde k této události.|
   
-## <a name="see-also"></a>Viz také:  
- 
+## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.FaultPropagationQueryElement?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.FaultPropagationQuery?displayProperty=nameWithType>
 - [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)

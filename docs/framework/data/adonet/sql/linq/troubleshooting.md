@@ -2,12 +2,12 @@
 title: Poradce při potížích
 ms.date: 03/30/2017
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
-ms.openlocfilehash: 6fe4f789ca64c0646b77fdb66b0c6e2b73763293
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 62cc7a0567b9eb82c24c329a7ae8fb3e52f0f0c8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47108348"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54586407"
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 Následující informace uvádí některé problémy, může dojít v vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikací a nabízí návrhy k zamezení nebo jinak snižují dopad těchto problémů.  
@@ -37,7 +37,7 @@ Následující informace uvádí některé problémy, může dojít v vaše [!IN
   
  V opačném případě <xref:System.Data.SqlClient.SqlException> je vyvolána výjimka.  
   
- Další informace najdete v tématu [postupy: odstranění řádků z the Database](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md).  
+ Další informace najdete v tématu [jak: Odstranit řádky z databáze](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md).  
   
 ## <a name="expression-not-queryable"></a>Výraz není dotazovatelné  
  Pokud se zobrazí "výraz [výrazu] není dotazovatelné; chybí vám odkaz na sestavení?" Chyba, ujistěte se, že z následujících akcí:  
@@ -69,6 +69,6 @@ Následující informace uvádí některé problémy, může dojít v vaše [!IN
 ## <a name="oncreated-partial-method"></a>Částečná metoda OnCreated()  
  Vytvořena metoda `OnCreated()` je volána pokaždé, když je volána konstruktor objektu, včetně scénář, ve kterém [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] volá konstruktor k vytvoření kopie pro původní hodnoty. Toto chování vzít v úvahu, pokud se rozhodnete implementovat `OnCreated()` metoda ve vlastním částečné třídy.  
   
-## <a name="see-also"></a>Viz také  
- [Podpora ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)  
- [Nejčastější dotazy](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)
+## <a name="see-also"></a>Viz také:
+- [Podpora ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)
+- [Nejčastější dotazy](../../../../../../docs/framework/data/adonet/sql/linq/frequently-asked-questions.md)

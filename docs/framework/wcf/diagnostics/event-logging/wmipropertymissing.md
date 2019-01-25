@@ -2,23 +2,23 @@
 title: WmiPropertyMissing
 ms.date: 03/30/2017
 ms.assetid: 109fa6b4-93dc-4785-bec4-5aa02c434a65
-ms.openlocfilehash: 88987b2d954195680f69d4f4f549e715409af6d5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f981c62f3d56a9b0c66f784bdcb25df8476c1b65
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33467777"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54504571"
 ---
 # <a name="wmipropertymissing"></a>WmiPropertyMissing
-ID: 129  
+Id: 129  
   
  Závažnost: Chyba  
   
  Kategorie: ServiceModel  
   
 ## <a name="description"></a>Popis  
- Tato událost označuje, že došlo k neshodě typů. Pro zadanou třídu CIM nemá zadanou vlastnost konkrétního typu. Události obsahuje název procesu a ID procesu.  
+ Tato událost ukazuje na to, že došlo k neshodě typů. Zadaná třída CIM nemá zadanou vlastnost určitého typu. Události jsou uvedeny, název procesu a ID procesu.  
   
-## <a name="see-also"></a>Viz také  
- [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
- [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+## <a name="see-also"></a>Viz také:
+- [Protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
+- [Události – obecné referenční informace](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

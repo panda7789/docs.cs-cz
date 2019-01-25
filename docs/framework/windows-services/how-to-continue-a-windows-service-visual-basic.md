@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Pokračování služby systému Windows (Visual Basic)'
+title: 'Postupy: Pokračování služby Windows (Visual Basic)'
 ms.date: 03/30/2017
 dev_langs:
 - vb
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - pausing Windows Service applications
 ms.assetid: e5d13760-4c83-4b0d-abef-39852677cd7a
 author: ghogen
-ms.openlocfilehash: 255dccfb74eced63ffbeff7ef567083a504cc6da
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 86c2414fd6ad9c32a37339c553ec80c98426f78a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48027283"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54612707"
 ---
-# <a name="how-to-continue-a-windows-service-visual-basic"></a>Postupy: Pokračování služby systému Windows (Visual Basic)
+# <a name="how-to-continue-a-windows-service-visual-basic"></a>Postupy: Pokračování služby Windows (Visual Basic)
 V tomto příkladu <xref:System.ServiceProcess.ServiceController> komponenty pokračujte služba správy služby IIS v místním počítači.  
   
 ## <a name="example"></a>Příklad  
@@ -49,7 +49,7 @@ V tomto příkladu <xref:System.ServiceProcess.ServiceController> komponenty pok
   
  Přístup k informacím o služby může být omezena pomocí <xref:System.Security.Permissions.PermissionState> nastavení oprávnění ve výčtu <xref:System.Security.Permissions.SecurityPermission> třídy.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceProcess.ServiceController>  
- <xref:System.ServiceProcess.ServiceControllerStatus>  
- [Postupy: Pozastavení služby systému Windows (Visual Basic)](../../../docs/framework/windows-services/how-to-pause-a-windows-service-visual-basic.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceProcess.ServiceController>
+- <xref:System.ServiceProcess.ServiceControllerStatus>
+- [Postupy: Pozastavení služby Windows (Visual Basic)](../../../docs/framework/windows-services/how-to-pause-a-windows-service-visual-basic.md)

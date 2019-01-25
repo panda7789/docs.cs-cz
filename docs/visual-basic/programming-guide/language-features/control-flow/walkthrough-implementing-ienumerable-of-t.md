@@ -7,14 +7,14 @@ helpviewer_keywords:
 - loop structures [Visual Basic], optimizing performance
 - control flow [Visual Basic]
 ms.assetid: c60d7589-51f2-4463-a2d5-22506bbc1554
-ms.openlocfilehash: be2eefdc52d38df3071d457b7a71dbac6eaa2657
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: fb116d91ab7da076f2d883be3350a6d4259482ef
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836995"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499749"
 ---
-# <a name="walkthrough-implementing-ienumerableof-t-in-visual-basic"></a>Návod: Implementace IEnumerable(Of T) v jazyce Visual Basic
+# <a name="walkthrough-implementing-ienumerableof-t-in-visual-basic"></a>Průvodce: Implementace IEnumerable(Of T) v jazyce Visual Basic
 <xref:System.Collections.Generic.IEnumerable%601> Rozhraní je implementováno třídy, které může vrátit posloupnost hodnot položek najednou. Výhodou vracející data, která je jedna položka v čase, že nemáte k načtení úplná sada dat do paměti pro práci s ní. Stačí načtení jednu položku z dat pomocí dostatek paměti. Třídy, které implementují `IEnumerable(T)` rozhraní jde použít s `For Each` smyčky nebo dotazů LINQ.  
   
  Zvažte například aplikaci, která musí číst velkého textového souboru a vracet každý řádek ze souboru, který by odpovídal kritériím hledání konkrétní. Aplikace používá k vrácení řádky ze souboru, které odpovídají zadaným kritériím dotazu LINQ. K dotazu na obsah souboru pomocí dotazu LINQ, může aplikace načítat obsah souboru do pole nebo kolekce. Načítání celého souboru do pole nebo kolekce by využívat mnohem větší paměť, než je povinný. Dotaz LINQ může místo toho dotazu na obsah souboru pomocí vyčíslitelné třídy, vrací pouze hodnoty, které odpovídají kritériím hledání. Dotazy, které vracejí jen několik porovnání hodnot by využívat mnohem méně paměti.  
@@ -93,8 +93,8 @@ ms.locfileid: "48836995"
   
  [!code-vb[VbVbalrIteratorWalkthrough#10](../../../../visual-basic/programming-guide/language-features/control-flow/codesnippet/VisualBasic/walkthrough-implementing-ienumerable-of-t_10.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Tok řízení](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)  
- [Struktury smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
- [Příkaz For Each...Next](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Tok řízení](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)
+- [Struktury smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
+- [Příkaz For Each...Next](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)

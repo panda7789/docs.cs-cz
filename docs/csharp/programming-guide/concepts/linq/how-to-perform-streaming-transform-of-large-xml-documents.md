@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: provedení streamované transformace velkých dokumentů XML (C#)'
+title: 'Postupy: Provedení streamované transformace velkých dokumentů XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 5f16d1f8-5370-4b55-b0c8-e497df163037
-ms.openlocfilehash: f837117bec2bac615e4cbd822c1110f648d32ce8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8ddd7e25cf160526b741db5769a78682970c3724
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514070"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524673"
 ---
-# <a name="how-to-perform-streaming-transform-of-large-xml-documents-c"></a>Postupy: provedení streamované transformace velkých dokumentů XML (C#)
+# <a name="how-to-perform-streaming-transform-of-large-xml-documents-c"></a>Postupy: Provedení streamované transformace velkých dokumentů XML (C#)
 Někdy je nutné transformovat velké soubory XML a zápis aplikace tak, aby nároky na paměť pro aplikace předvídatelné. Pokud se pokusíte naplnění stromu XML pomocí velmi velkých souborů XML, využití paměti bude přímo úměrná velikosti souboru (to znamená, nadměrné). Proto měli používat streamování technika místo.  
   
  Streamování techniky aplikují nejlépe v situacích, kde je potřeba zpracovat zdrojový dokument pouze jednou a může zpracovat prvky v pořadí dokumentů. Některé standardní operátory dotazů, jako například <xref:System.Linq.Enumerable.OrderBy%2A>iterovat jejich zdroj, shromáždit všechna data, seřadit a nakonec yield první položky v sekvenci. Všimněte si, že pokud použijete operátor dotazu, který bude realizována zdrojem před získávání první položka, nebudou zachovány malé paměťové nároky pro vaši aplikaci.  
@@ -322,6 +322,6 @@ static void Main(string[] args)
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Pokročilé technologie LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

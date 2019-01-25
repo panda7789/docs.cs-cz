@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4bd1d098f21a3d5ba43b6251c87c36df4347a924
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5e92a59e42674c184209e9c912e9bb2ead07bdaa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33457558"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54515703"
 ---
 # <a name="strongnamecompareassemblies-function"></a>StrongNameCompareAssemblies – funkce
-Určuje, zda dva sestavení liší pouze jejich podpisy silným názvem.  
+Určuje, zda se dvě sestavení liší pouze v jejich podpisy se silným názvem.  
   
  Tato funkce je zastaralá. Použití [iclrstrongname::strongnamecompareassemblies –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamecompareassemblies-method.md) metoda místo.  
   
@@ -40,37 +40,37 @@ BOOLEAN StrongNameCompareAssemblies (
   
 #### <a name="parameters"></a>Parametry  
  `wszAssembly1`  
- [v] Cesta k první sestavení.  
+ [in] Cesta k sestavení první.  
   
  `wszAssembly2`  
- [v] Cesta k sestavení druhý.  
+ [in] Cesta k druhé sestavení.  
   
  `pdwResult`  
- [out] Jedna z následujících hodnot:  
+ [out] Jeden z následujících hodnot:  
   
--   `SN_CMP_DIFFERENT` (0) - určuje, že sestavení obsahovat různé data.  
+-   `SN_CMP_DIFFERENT` (0) – určuje, zda sestavení obsahovat různé datové.  
   
--   `SN_CMP_IDENTICAL` (1) - určuje, že sestavení jsou stejné, včetně jejich podpisy a kontrolního součtu.  
+-   `SN_CMP_IDENTICAL` (1) – určuje, že sestavení jsou stejné, včetně jejich podpisy a kontrolního součtu.  
   
--   `SN_CMP_SIGONLY` (2) - určuje, že sestavení liší pouze podpisu a kontrolních součtů.  
+-   `SN_CMP_SIGONLY` (2) – určuje, že sestavení liší pouze v podpisu a kontrolního součtu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném `false`.  
+ `true` Při úspěšném dokončení; v opačném případě `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** StrongName.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="remarks"></a>Poznámky  
- Podpis silného názvu sestavení se skládá z textu název sestavení, verzi, jazykovou verzi a tokenu veřejného klíče.  
+ Podpis silného názvu sestavení se skládá z textový název sestavení, verzi, jazykovou verzi a token veřejného klíče.  
   
- Pokud `StrongNameCompareAssemblies` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce načíst poslední generované chyba.  
+ Pokud `StrongNameCompareAssemblies` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
   
-## <a name="see-also"></a>Viz také  
- [StrongNameCompareAssemblies – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamecompareassemblies-method.md)  
- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+## <a name="see-also"></a>Viz také:
+- [StrongNameCompareAssemblies – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamecompareassemblies-method.md)
+- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

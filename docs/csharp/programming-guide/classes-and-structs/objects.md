@@ -6,12 +6,12 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: 439f001450d51885f943cb28752de1689dd4a748
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 12c31db32b2b3ff3da7ed0972ea2cf090701f3e4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235095"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491739"
 ---
 # <a name="objects-c-programming-guide"></a>Objekty (Průvodce programováním v C#)
 Definice třídy nebo struktury je jako matrice, který určuje, co můžete dělat typu. Objekt je v podstatě blok paměti, která byla přidělena a nakonfigurovány podle podrobný plán. Program může vytvořit mnoho objektů stejné třídy. Objekty se také označují jako instance a mohou být uloženy v pojmenované proměnné nebo v poli nebo kolekci. Klientský kód je kód, který používá tyto proměnné pro volání metody a přístup k veřejné vlastnosti objektu. V jazyce objektově orientované jako je C# typický program se skládá z více objektů dynamicky interakci.  
@@ -61,12 +61,12 @@ Definice třídy nebo struktury je jako matrice, který určuje, co můžete dě
   
 -   [Události](../../../csharp/programming-guide/events/index.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [object](../../../csharp/language-reference/keywords/object.md)  
-- [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  
-- [class](../../../csharp/language-reference/keywords/class.md)  
-- [struct](../../../csharp/language-reference/keywords/struct.md)  
-- [new – operátor](../../../csharp/language-reference/keywords/new-operator.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [object](../../../csharp/language-reference/keywords/object.md)
+- [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)
+- [class](../../../csharp/language-reference/keywords/class.md)
+- [struct](../../../csharp/language-reference/keywords/struct.md)
+- [new – operátor](../../../csharp/language-reference/keywords/new-operator.md)
 - [Obecný systém typů](../../../standard/base-types/common-type-system.md)

@@ -2,12 +2,12 @@
 title: Možnosti technologie ADO.NET a pokyny
 ms.date: 03/30/2017
 ms.assetid: c8577281-38e6-4ce5-b036-572039a4c3d8
-ms.openlocfilehash: 7312b2eae0e307fa50c89d37918403ee33412ec3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 2550c286485025a394cf3f8afe6c43a0472b2cd1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507989"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54566278"
 ---
 # <a name="adonet-technology-options-and-guidelines"></a>Možnosti technologie ADO.NET a pokyny
 Datová Platforma ADO.NET je strategie více vydání ke snížení množství kódu a údržba vyžaduje pro vývojáře tak, že programovat proti koncepční entity data model. Tato platforma zahrnuje ADO.NET Entity Framework a souvisejících technologiích.  
@@ -27,7 +27,7 @@ Datová Platforma ADO.NET je strategie více vydání ke snížení množství k
 ### <a name="entity-sql"></a>Entity SQL  
  Entita SQL je navržen pro interakci se Entity Data Model založený na textu dotazovací jazyk. Entita SQL je SQL dialekt obsahující konstrukce pro dotazování z hlediska vyšší úrovně modelování koncepty, jako je dědičnost, komplexní typy a explicitní vztahy. Vývojáři mohou pomocí Entity SQL také přímo pomocí objektů služby. Další informace najdete v tématu [jazyk Entity SQL](../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md).  
   
-### <a name="entityclient"></a>Zprostředkovatel EntityClient  
+### <a name="entityclient"></a>EntityClient  
  Zprostředkovatel EntityClient je nový zprostředkovatel dat .NET Framework používá pro komunikaci s datového modelu Entity. Zprostředkovatel EntityClient následuje vzor poskytovatel dat rozhraní .NET Framework vystavení <xref:System.Data.EntityClient.EntityConnection> a <xref:System.Data.EntityClient.EntityCommand> objektů, který vrací <xref:System.Data.EntityClient.EntityDataReader>. Zprostředkovatel EntityClient funguje s jazykem Entity SQL poskytuje flexibilní mapování na poskytovatele dat pro konkrétní úložiště. Další informace najdete v tématu [zprostředkovatel EntityClient a Entity SQL](https://msdn.microsoft.com/library/49202ab9-ac98-4b4b-a05c-140e422bf527).  
   
 ### <a name="entity-data-model-tools"></a>Nástroje modelu Entity Data  
@@ -39,7 +39,7 @@ Datová Platforma ADO.NET je strategie více vydání ke snížení množství k
 ## <a name="wcf-data-services"></a>WCF Data Services  
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] nasadí datové služby na webu nebo intranetu. Strukturovaná data jako entitami a relacemi podle specifikace modelu Entity Data Model. Data nasazené na tento model je adresovat pomocí standardního protokolu HTTP. Další informace najdete v tématu [4.5 služby WCF Data](../../../../docs/framework/data/wcf/index.md).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
- [Novinky v ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
+- [Novinky v ADO.NET](../../../../docs/framework/data/adonet/whats-new.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

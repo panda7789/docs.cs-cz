@@ -1,5 +1,5 @@
 ---
-title: Vlastnost &#39; &lt;propertyname&gt; &#39; nemá&#39;t vrátit hodnotu na všechny cesty kódu
+title: Vlastnost &#39; &lt;propertyname&gt; &#39; kódu&#39;t vrátí hodnotu ve všech cestách kódu.
 ms.date: 07/20/2015
 f1_keywords:
 - bc42107
@@ -7,39 +7,39 @@ f1_keywords:
 helpviewer_keywords:
 - BC42107
 ms.assetid: 06800966-9c3b-4844-9f13-83ac95607d32
-ms.openlocfilehash: 72bc7e45cadd2528f29c88bf6e80ee5f381052dd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b8059ebc9b6c1de685f2f04c3ee362ab8cf6d05e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33594211"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54611251"
 ---
-# <a name="property-39ltpropertynamegt39-doesn39t-return-a-value-on-all-code-paths"></a>Vlastnost &#39; &lt;propertyname&gt; &#39; nemá&#39;t vrátit hodnotu na všechny cesty kódu
-Vlastnost '\<propertyname >' nevrací hodnotu na všechny cesty kódu. Výjimka odkazu s hodnotou null mohlo dojít v době běhu, když se použije výsledek.  
+# <a name="property-39ltpropertynamegt39-doesn39t-return-a-value-on-all-code-paths"></a>Vlastnost &#39; &lt;propertyname&gt; &#39; kódu&#39;t vrátí hodnotu ve všech cestách kódu.
+Vlastnost "\<propertyname >' nevrací hodnotu ve všech cestách kódu. V době běhu při použití vráceného výsledku může dojít k výjimce odkazem s hodnotou null.  
   
- Vlastnost `Get` procedura nemá alespoň jednu cestu možný prostřednictvím jeho kód, který nevrací hodnotu.  
+ Vlastnost `Get` postup obsahuje alespoň jeden možných cest pomocí jejího kódu, která nevrací hodnotu.  
   
- Můžete vrátit hodnotu z vlastnosti `Get` postup v některém z následujících způsobů:  
+ Může vrátit hodnotu z vlastnosti `Get` postup v některém z následujících způsobů:  
   
--   Přiřadí hodnotu pro název vlastnosti a poté proveďte `Exit Property` příkaz.  
+-   Přiřaďte hodnotu k názvu vlastnosti a pak proveďte `Exit Property` příkazu.  
   
--   Přiřadí hodnotu pro název vlastnosti a poté proveďte `End Get` příkaz.  
+-   Přiřaďte hodnotu k názvu vlastnosti a pak proveďte `End Get` příkazu.  
   
--   Zahrnout hodnotu v [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md).  
+-   Hodnota v [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md).  
   
- Pokud ovládací prvek předává do `Exit Property` nebo `End Get` a nebyly přiřazeny žádnou hodnotu pro název vlastnosti `Get` postup vrátí výchozí hodnota vlastnosti datového typu. Další informace najdete v tématu "Chování" v [funkce příkaz](../../../visual-basic/language-reference/statements/function-statement.md).  
+ Pokud řízení se předá `Exit Property` nebo `End Get` a jste ještě nepřiřadili žádné hodnoty názvu vlastnosti `Get` postup vrátí výchozí hodnotu vlastnosti datového typu. Další informace najdete v tématu "Chování" [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md).  
   
- Ve výchozím nastavení je tato zpráva upozornění. Další informace o zobrazení nebo skrytí upozornění práce upozornění jako chyby najdete v tématu [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ Ve výchozím nastavení tato zpráva je upozornění. Další informace o zobrazení nebo skrytí upozornění zpracování upozornění jako chyby, najdete v části [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
  **ID chyby:** BC42107  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Zkontrolujte logika toku řízení a ujistěte se, že přiřadit hodnotu před každý příkaz, který způsobí, že vrátit.  
+-   Zkontrolujte logiku toku řízení a ujistěte se, že přidělíte hodnotu před každý příkaz, který způsobí, že vrácení.  
   
-     Je snazší zaručit, že každý vrátit v postupu vrací hodnotu, pokud je vždy použít `Return` příkaz. Pokud použijete tento, poslední příkaz před `End Get` by měla být `Return` příkaz.  
+     Je snazší zajistit, že každý návrat z procedury vrací hodnotu, pokud vždy používáte `Return` příkazu. Pokud to provedete, poslední příkaz před `End Get` by měl být `Return` příkazu.  
   
-## <a name="see-also"></a>Viz také  
- [Procedury vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)  
- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
- [Příkaz Get](../../../visual-basic/language-reference/statements/get-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
+- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
+- [Příkaz Get](../../../visual-basic/language-reference/statements/get-statement.md)

@@ -26,12 +26,12 @@ helpviewer_keywords:
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: b27a5dec4483afb0f6c66c3a015c89967483cb61
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: e767218456dd4096939d3f353944cb7aeacb352d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47087499"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54601711"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Konfigurace aplikací pomocí konfiguračních souborů
 Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje vývojářům a správcům kontrolu a flexibilitu nad způsobem aplikace spouštět. Konfigurační soubory jsou soubory XML, které lze změnit podle potřeby. Správce může ovládat, můžete přístup k aplikaci, která chránila prostředky, které verze sestavení může aplikace používat a kde jsou umístěny objekty a vzdálené aplikace. Vývojáři mohou umístit nastavení konfiguračních souborů, takže odpadá potřeba znovu zkompilovat aplikaci pokaždé, když se změní nastavení. Tato část popisuje, co lze konfigurovat a proč konfigurace aplikace může být užitečné.  
@@ -84,7 +84,7 @@ Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje
   
      Pokud má aplikace hostovaná v aplikaci Internet Explorer konfigurační soubor, je v zadané umístění tohoto souboru `<link>` značky s následující syntaxí:  
   
-     \<propojit rel = "*ConfigurationFileName*" href = "*umístění*" >  
+     \<link rel="*ConfigurationFileName*" href="*location*">  
   
      V této značce `location` je adresa URL do konfiguračního souboru. Tím dojde k nastavení základní cesty aplikace. Konfigurační soubor musí být umístěn na stejné webové stránce jako aplikace.  
   
@@ -121,13 +121,13 @@ Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje
  [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)  
  Popisuje hierarchii schématu pro spuštění, runtime, síť a další typy nastavení konfigurace.  
   
-## <a name="see-also"></a>Viz také  
- [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)  
- [Určení umístění sestavení](../../../docs/framework/configure-apps/specify-assembly-location.md)  
- [Přesměrování verzí sestavení](../../../docs/framework/configure-apps/redirect-assembly-versions.md)  
- [Zaregistrovat vzdálené objekty pomocí konfiguračních souborů](https://msdn.microsoft.com/library/bc503ee1-c811-4f82-9525-470343326adc)  
- [Správa webu technologie ASP.NET](https://msdn.microsoft.com/library/1298034b-5f7d-464d-abd1-ad9e6b3eeb7e)  
- [NIB: Správa zásad zabezpečení](https://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)  
- [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)  
- [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
- [Vzdálené objekty](https://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)
+## <a name="see-also"></a>Viz také:
+- [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
+- [Určení umístění sestavení](../../../docs/framework/configure-apps/specify-assembly-location.md)
+- [Přesměrování verzí sestavení](../../../docs/framework/configure-apps/redirect-assembly-versions.md)
+- [Zaregistrovat vzdálené objekty pomocí konfiguračních souborů](https://msdn.microsoft.com/library/bc503ee1-c811-4f82-9525-470343326adc)
+- [Správa webu technologie ASP.NET](https://msdn.microsoft.com/library/1298034b-5f7d-464d-abd1-ad9e6b3eeb7e)
+- [NIB: Správa zásad zabezpečení](https://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)
+- [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)
+- [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+- [Vzdálené objekty](https://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)

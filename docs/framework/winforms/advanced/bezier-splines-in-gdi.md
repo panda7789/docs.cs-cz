@@ -9,38 +9,38 @@ helpviewer_keywords:
 - splines [Windows Forms], Bezier
 - GDI+, Bezier splines
 ms.assetid: 5774ce1e-87d4-4bc7-88c4-4862052781b8
-ms.openlocfilehash: 2e247ec2bcd57c2fb2f5c32f61d38a2e7a267ff1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 440c532aeb4492711fc533023606cb49c661d989
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517570"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54537610"
 ---
 # <a name="b233zier-splines-in-gdi"></a>B&#233;zier křivky v GDI +
-Bézierovy křivky je křivka určeného čtyři body: dva koncové body (p1 a p2) a dva kontrolních bodů (c1 a c2). Křivku začíná na p1 a p2 končí. Křivku nepředává prostřednictvím kontrolní body, ale kontrolní body fungovat jako magnets, stahování křivku v určitých pokynů a ovlivňování způsob, jakým zatáčkách křivku. Následující obrázek znázorňuje Bézierovy křivky spolu s jeho koncových bodů a kontrolní body.  
+Bézierovy křivky je křivka určené čtyři body: dva koncové body (p1 a p2) a dva kontrolních bodů (c1 a c2). Křivky začíná p1 a p2 končí. Křivka neprochází přes kontrolních bodů, ale kontrolní body fungují jako magnets stahování křivky v některých směrech a vliv na způsob, jakým zatáčkách křivky. Následující obrázek znázorňuje Bézierovy křivky spolu s jeho koncových bodů a kontrolní body.  
   
- ![Bézierovy křivky](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art11a.gif "Aboutgdip02_art11a")  
+ ![Bezier Splines](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art11a.gif "Aboutgdip02_art11a")  
   
- Křivku začíná p1 a blíží c1 bodu ovládacího prvku. Tečný čáry na křivku P1 je řádku vykreslovány z p1 c1. Tečný řádek v p2 koncový bod je řádku vykreslovány z c2 p2.  
+ Křivka začíná p1 a blíží c1 bodu ovládacího prvku. Tečný čáry na křivku P1 je linií z p1 c1. Tečný řádek na p2 koncový bod je linií z c2 p2.  
   
 ## <a name="drawing-bzier-splines"></a>Kreslení Bézierovy křivky  
- Kreslení Bézierovy křivky, je třeba instanci <xref:System.Drawing.Graphics> třídy a <xref:System.Drawing.Pen>. Instance <xref:System.Drawing.Graphics> třída poskytuje <xref:System.Drawing.Graphics.DrawBezier%2A> metody a <xref:System.Drawing.Pen> ukládá atributy, jako například šířku a barvu čáry použité k vykreslení křivku. <xref:System.Drawing.Pen> Se předá jako jeden z argumenty, které mají <xref:System.Drawing.Graphics.DrawBezier%2A> metoda. Zbývající argumenty předaný <xref:System.Drawing.Graphics.DrawBezier%2A> metoda jsou koncové body a kontrolní body. Následující příklad nevykresluje Bézierovy křivky s výchozí bod (0, 0), řídit body (40, 20) a (80, 150) a koncový bod (100, 10):  
+ Na kreslení Bézierovy křivky, je třeba instance <xref:System.Drawing.Graphics> třídy a <xref:System.Drawing.Pen>. Instance <xref:System.Drawing.Graphics> třída poskytuje <xref:System.Drawing.Graphics.DrawBezier%2A> metody a <xref:System.Drawing.Pen> uloží atributy, například šířku a barvu čáry použité k vykreslení křivky. <xref:System.Drawing.Pen> Je předán jako argumenty, které mají <xref:System.Drawing.Graphics.DrawBezier%2A> metody. Zbývající argumenty předané <xref:System.Drawing.Graphics.DrawBezier%2A> metody jsou koncové body a body ovládacího prvku. Následující příklad kreslení Bézierovy křivky s počáteční bod (0, 0), řídit body (40, 20) a (80, 150) a koncový bod (100, 10):  
   
  [!code-csharp[LinesCurvesAndShapes#71](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#71)]
  [!code-vb[LinesCurvesAndShapes#71](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#71)]  
   
  Následující obrázek znázorňuje křivku, kontrolní body a tečný dva řádky.  
   
- ![Bézierovy křivky](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art12.gif "Aboutgdip02_art12")  
+ ![Bezier Splines](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art12.gif "Aboutgdip02_art12")  
   
- Bézierovy křivky byly původně vyvinuté Pierre Bézierovy návrh v automobilu odvětví. Tyto ukázaly od jako užitečné v mnoha typech počítačový návrhu a také slouží k určení jsou podrobněji popsány dále písem. Bézierovy křivky přispět širokou škálu tvarů, z nichž některé jsou uvedeny na následujícím obrázku.  
+ Bézierovy křivky byly původně vyvinutý Pierre Bézierovy pro programátory v automobilový průmysl. Se od té doby ukázaly být užitečné v mnoha typech engineeringových návrhu a se také používají k definování obrysy písma. Bézierovy křivky může přinést širokou škálu tvary, z nichž některé jsou zobrazené na následujícím obrázku.  
   
- ![Cesty](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art13.gif "Aboutgdip02_art13")  
+ ![Paths](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art13.gif "Aboutgdip02_art13")  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Drawing.Graphics?displayProperty=nameWithType>  
- <xref:System.Drawing.Pen?displayProperty=nameWithType>  
- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
- [Sestavování a kreslení křivek](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)  
- [Postupy: Vytváření grafických objektů pro kreslení](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)  
- [Postupy: Vytvoření pera](../../../../docs/framework/winforms/advanced/how-to-create-a-pen.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Drawing.Graphics?displayProperty=nameWithType>
+- <xref:System.Drawing.Pen?displayProperty=nameWithType>
+- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)
+- [Sestavování a kreslení křivek](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)
+- [Postupy: Vytváření grafických objektů pro kreslení](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md)
+- [Postupy: Vytvoření pera](../../../../docs/framework/winforms/advanced/how-to-create-a-pen.md)

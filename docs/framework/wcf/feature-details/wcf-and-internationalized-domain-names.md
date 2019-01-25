@@ -2,12 +2,12 @@
 title: WCF a mezinárodní názvy domén
 ms.date: 03/30/2017
 ms.assetid: c8a3e10a-8bc2-4a78-8d86-a562ba6e65fa
-ms.openlocfilehash: a0d4a5b4fe5dd3bc7cf41c8c6ad320dd83861aec
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 83c6f3c2afec0f2b6b8fccca4bd8252e9ab35400
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50187920"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54571584"
 ---
 # <a name="wcf-and-internationalized-domain-names"></a>WCF a mezinárodní názvy domén
 Byla přidána podpora pro služby WCF s mezinárodní názvy domén (IDN). Mezinárodní název domény je název domény, který obsahuje jiné znaky než ASCII. Tato podpora zahrnuje možnost pro hostování služby WCF pomocí názvu IDN a klienta WCF ke komunikaci s webovou službu s názvem IDN.  
@@ -41,5 +41,5 @@ Byla přidána podpora pro služby WCF s mezinárodní názvy domén (IDN). Mezi
 > [!WARNING]
 >  Při přidávání znaky Unicode do applicationHost.exe.config, uložte soubor pomocí kódování UTF-8.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Uri?displayProperty=nameWithType>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Uri?displayProperty=nameWithType>

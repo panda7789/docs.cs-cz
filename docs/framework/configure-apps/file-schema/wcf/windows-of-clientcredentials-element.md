@@ -2,22 +2,22 @@
 title: '&lt;windows&gt; elementu &lt;clientCredentials&gt;'
 ms.date: 03/30/2017
 ms.assetid: 793e41c2-31ea-4159-abbc-2123bf097233
-ms.openlocfilehash: 780d73b747feae5495ad08cb2324e7d8f8de0d7d
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 1331456f6defc24511064684181f615451be5b93
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54147470"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54610744"
 ---
 # <a name="ltwindowsgt-of-ltclientcredentialsgt-element"></a>&lt;windows&gt; elementu &lt;clientCredentials&gt;
 Určuje nastavení pro přihlašovací údaje Windows k provádět reprezentovalo klienta.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<názvy endpointBehaviors >  
+\<endpointBehaviors>  
 \<chování >  
-\<třídu clientCredentials >  
-\<Windows >  
+\<clientCredentials>  
+\<windows>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,16 +43,16 @@ Určuje nastavení pro přihlašovací údaje Windows k provádět reprezentoval
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<třídu clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Určuje pověření pro ověření klienta ke službě.|  
+|[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Určuje pověření pro ověření klienta ke službě.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.WindowsClientElement>  
- <xref:System.ServiceModel.Configuration.ClientCredentialsElement>  
- <xref:System.ServiceModel.Description.ClientCredentials>  
- <xref:System.ServiceModel.Configuration.ClientCredentialsElement.Windows%2A>  
- <xref:System.ServiceModel.Description.ClientCredentials>  
- <xref:System.ServiceModel.Description.ClientCredentials.Windows%2A>  
- <xref:System.ServiceModel.Security.WindowsClientCredential>  
- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)  
- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.WindowsClientElement>
+- <xref:System.ServiceModel.Configuration.ClientCredentialsElement>
+- <xref:System.ServiceModel.Description.ClientCredentials>
+- <xref:System.ServiceModel.Configuration.ClientCredentialsElement.Windows%2A>
+- <xref:System.ServiceModel.Description.ClientCredentials>
+- <xref:System.ServiceModel.Description.ClientCredentials.Windows%2A>
+- <xref:System.ServiceModel.Security.WindowsClientCredential>
+- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
+- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

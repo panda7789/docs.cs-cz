@@ -12,12 +12,12 @@ helpviewer_keywords:
 - brushes [WPF], painting with images
 - brushes [WPF], painting with visuals
 ms.assetid: 779aac3f-8d41-49d8-8130-768244aa2240
-ms.openlocfilehash: 0d860062814a447830e1237f4fc2c1ae0d223e9e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d226ecb6e168a044cd9802b4278c25084d8c84fc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43510021"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54537748"
 ---
 # <a name="painting-with-images-drawings-and-visuals"></a>Kreslení pomocí obrázků, kreseb a vizuálních objektů
 Toto téma popisuje způsob použití <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, a <xref:System.Windows.Media.VisualBrush> objekty k vykreslení oblasti obrázkem, <xref:System.Windows.Media.Drawing>, nebo <xref:System.Windows.Media.Visual>.  
@@ -35,7 +35,7 @@ Toto téma popisuje způsob použití <xref:System.Windows.Media.ImageBrush>, <x
   
  Stejně jako všechny <xref:System.Windows.Media.Brush> objekty, <xref:System.Windows.Media.ImageBrush> slouží k vykreslení objektů, jako je například obrazce, panely, ovládací prvky a text. Následující obrázek znázorňuje některé efekty, které lze nastavit pomocí <xref:System.Windows.Media.ImageBrush>.  
   
- ![Příklady výstup ImageBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-imagebrushexamples.gif "wcpsdk_mmgraphics_imagebrushexamples")  
+ ![ImageBrush output examples](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-imagebrushexamples.gif "wcpsdk_mmgraphics_imagebrushexamples")  
 Objekty kresleno ImageBrush  
   
  Ve výchozím nastavení <xref:System.Windows.Media.ImageBrush> úsecích jeho image pro úplně naplnění oblasti se překreslit, pravděpodobně narušují bitovou kopii, pokud malovaného oblast má odlišný poměr stran než image. Toto chování můžete změnit pomocí změny <xref:System.Windows.Media.TileBrush.Stretch%2A> vlastnost z jeho výchozí hodnotu <xref:System.Windows.Media.Stretch.Fill> k <xref:System.Windows.Media.Stretch.None>, <xref:System.Windows.Media.Stretch.Uniform>, nebo <xref:System.Windows.Media.Stretch.UniformToFill>. Protože <xref:System.Windows.Media.ImageBrush> je typ <xref:System.Windows.Media.TileBrush>, můžete zadat, přesně jak obrázkový štětec vyplní výstupní oblasti a dokonce vytvářet vzorce. Další informace o pokročilých <xref:System.Windows.Media.TileBrush> funkce, najdete v článku [TileBrush – přehled](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md).  
@@ -90,9 +90,9 @@ Objekty kresleno DrawingBrush
   
  Existují dva způsoby, jak zadat <xref:System.Windows.Media.VisualBrush.Visual%2A> obsah <xref:System.Windows.Media.VisualBrush>.  
   
--   Vytvořte nový <xref:System.Windows.Media.Visual> a použít ho nastavit <xref:System.Windows.Media.VisualBrush.Visual%2A> vlastnost <xref:System.Windows.Media.VisualBrush>. Příklad najdete v tématu [příklad: vykreslení vizuálního objektu](#examplevisualbrush1) v následující části.  
+-   Vytvořte nový <xref:System.Windows.Media.Visual> a použít ho nastavit <xref:System.Windows.Media.VisualBrush.Visual%2A> vlastnost <xref:System.Windows.Media.VisualBrush>. Příklad najdete v tématu [příkladu: Vykreslení vizuálního objektu](#examplevisualbrush1) v následující části.  
   
--   Použijte existující <xref:System.Windows.Media.Visual>, která vytvoří duplicitní image cíle <xref:System.Windows.Media.Visual>. Pak můžete použít <xref:System.Windows.Media.VisualBrush> vytvoření zajímavých efektů, jako je například reflexe a zvětšení. Příklad najdete v tématu [příklad: vytvoření reflexe](#examplevisualbrush2) oddílu.  
+-   Použijte existující <xref:System.Windows.Media.Visual>, která vytvoří duplicitní image cíle <xref:System.Windows.Media.Visual>. Pak můžete použít <xref:System.Windows.Media.VisualBrush> vytvoření zajímavých efektů, jako je například reflexe a zvětšení. Příklad najdete v tématu [příkladu: Vytvoření reflexe](#examplevisualbrush2) oddílu.  
   
  Při definování nového <xref:System.Windows.Media.VisualBrush.Visual%2A> pro <xref:System.Windows.Media.VisualBrush> a že <xref:System.Windows.Media.Visual> je <xref:System.Windows.UIElement> (například panel nebo ovládací prvek), poběží systém rozložení <xref:System.Windows.UIElement> a jeho podřízené prvky při <xref:System.Windows.Media.VisualBrush.AutoLayoutContent%2A> je nastavena na `true`. Ale kořenové <xref:System.Windows.UIElement> je v podstatě izolovaný od zbytku systému: styly a externí rozložení nejde navrhovaný pro SVS zahrnuje tuto hranici. Proto by měly explicitně zadat velikost kořenové <xref:System.Windows.UIElement>, protože je jeho nadřazeným pouze <xref:System.Windows.Media.VisualBrush> a proto ji nelze přizpůsobovat svou velikost automaticky do oblasti se překreslit. Další informace o rozložení v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], najdete v článku [rozložení](../../../../docs/framework/wpf/advanced/layout.md).  
   
@@ -126,7 +126,7 @@ Reflektovaný vizuální objekty
   
  A <xref:System.Windows.Media.TileBrush> má tři hlavní komponenty: obsah, dlaždice a výstupní oblasti.  
   
- ![TileBrush – komponenty](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-defaultcontentprojection2.png "wcpsdk_mmgraphics_defaultcontentprojection2")  
+ ![TileBrush components](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-defaultcontentprojection2.png "wcpsdk_mmgraphics_defaultcontentprojection2")  
 Součásti s jednu dlaždici TileBrush  
   
  ![Součástí Objekt TileBrush](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tiledprojection.png "graphicsmm_tiledprojection")  
@@ -134,16 +134,16 @@ Součástí TileBrush s víc dlaždic
   
  Další informace o funkcích dělení do bloků <xref:System.Windows.Media.TileBrush> objekty, najdete [TileBrush – přehled](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.ImageBrush>  
- <xref:System.Windows.Media.DrawingBrush>  
- <xref:System.Windows.Media.VisualBrush>  
- <xref:System.Windows.Media.TileBrush>  
- [TileBrush – přehled](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)  
- [Přehled štětců WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md)  
- [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
- [Přehled nakreslených objektů](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)  
- [Přehled masek neprůhlednosti](../../../../docs/framework/wpf/graphics-multimedia/opacity-masks-overview.md)  
- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)  
- [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.ImageBrush>
+- <xref:System.Windows.Media.DrawingBrush>
+- <xref:System.Windows.Media.VisualBrush>
+- <xref:System.Windows.Media.TileBrush>
+- [TileBrush – přehled](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)
+- [Přehled štětců WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md)
+- [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
+- [Přehled nakreslených objektů](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)
+- [Přehled masek neprůhlednosti](../../../../docs/framework/wpf/graphics-multimedia/opacity-masks-overview.md)
+- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+- [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)
+- [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)

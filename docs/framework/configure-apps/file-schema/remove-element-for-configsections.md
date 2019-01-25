@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
 author: guardrex
 ms.author: mairaw
-ms.openlocfilehash: 11a930120c375616d73faae68a6d6807c2f633cb
-ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
+ms.openlocfilehash: 5e105cbfe0c6db2b9157134ee32c1b353ec794fd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54307224"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596501"
 ---
 # <a name="remove-element-for-configsections"></a>\<Odebrat > – element pro \<configSections >
 
@@ -86,4 +86,4 @@ Tento element lze použít v konfiguračním souboru aplikace, konfiguračním s
 
 ## <a name="see-also"></a>Viz také:
 
-[Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)

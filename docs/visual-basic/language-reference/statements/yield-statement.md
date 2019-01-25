@@ -8,15 +8,15 @@ helpviewer_keywords:
 - iterators [Visual Basic]
 - Yield statement [Visual Basic]
 ms.assetid: f33126c5-d7c4-43e2-8e36-4ae3f0703d97
-ms.openlocfilehash: f938ad29df54ade6722f3de33e931c851ade8c21
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: da01d3f1bdfa3e76afcc28e7b70240beb06f74f7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604863"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506482"
 ---
 # <a name="yield-statement-visual-basic"></a>Yield – příkaz (Visual Basic)
-Na další prvek kolekce, která se odešle `For Each...Next` příkaz.  
+Další prvek kolekce, která se odešle `For Each...Next` příkazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,43 +28,43 @@ Yield expression
   
 |Termín|Definice|  
 |---|---|  
-|`expression`|Požadováno. Výraz, který je implicitně převést na typ funkce iterator nebo `Get` přistupujícího objektu, který obsahuje `Yield` příkaz.|  
+|`expression`|Povinný parametr. Výraz, který je implicitně převést na typ funkce iterátoru nebo `Get` přístupový objekt, který obsahuje `Yield` příkazu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `Yield` Příkaz vrací jeden element v kolekci najednou. `Yield` Příkaz je součástí funkce iterator nebo `Get` přistupujícího objektu, který provádět vlastní iterací v kolekci.  
+ `Yield` Příkaz vrátí jeden element v kolekci najednou. `Yield` Příkazu je součástí funkce iterátoru nebo `Get` přístupový objekt, který provedení vlastní iterace nad kolekcí.  
   
- Využívat funkce iterator pomocí [For Each... Další příkaz](../../../visual-basic/language-reference/statements/for-each-next-statement.md) nebo dotaz LINQ. Každé iteraci `For Each` smyčky volá funkci iterator. Když `Yield` příkaz je dosaženo ve funkci iterator `expression` se vrátí, a se uchovávají aktuální umístění v kódu. Provádění je restartováno ze zmíněného umístění pokaždé, když je zavolána funkce iterátoru.  
+ Funkce iterátoru spotřebujete pomocí [For Each... Další příkaz](../../../visual-basic/language-reference/statements/for-each-next-statement.md) nebo dotazu LINQ. Každá iterace `For Each` smyčky volání funkce iterátoru. Když `Yield` je ve funkci iterátoru dosažen příkaz `expression` dochází, a je zachováno aktuální umístění v kódu. Provádění je restartováno ze zmíněného umístění pokaždé, když je zavolána funkce iterátoru.  
   
- Musí existovat implicitní převod z typu `expression` v `Yield` příkaz, který má návratový typ iteraci.  
+ Musí existovat implicitní převod z typu `expression` v `Yield` příkaz a návratový typ iterátoru.  
   
- Můžete použít `Exit Function` nebo `Return` příkaz k ukončení iterace.  
+ Můžete použít `Exit Function` nebo `Return` příkaz do konce iterace.  
   
- "Výnos" není vyhrazené slovo a má zvláštní význam jenom v případě, že je používán `Iterator` funkce nebo `Get` přistupujícího objektu.  
+ "Yield" není vyhrazené slovo a má zvláštní význam pouze v případě, že se používá `Iterator` funkce nebo `Get` přistupující objekt.  
   
- Další informace o funkcích iterator a `Get` přístupové objekty, najdete v části [iterátory](../../programming-guide/concepts/iterators.md).  
+ Další informace o funkcích iterátoru a `Get` přístupové objekty, najdete v článku [iterátory](../../programming-guide/concepts/iterators.md).  
   
-## <a name="iterator-functions-and-get-accessors"></a>Iterator funkce a Get přístupové objekty  
- Deklarace funkce iterator nebo `Get` přistupujícího objektu musí splňovat následující požadavky:  
+## <a name="iterator-functions-and-get-accessors"></a>Funkce iterátorů a přístupové objekty Get  
+ Deklarace funkce iterátoru nebo `Get` přístupový objekt, musí splňovat následující požadavky:  
   
--   Musí obsahovat [Iterator](../../../visual-basic/language-reference/modifiers/iterator.md) modifikátor.  
+-   Musí obsahovat [iterátoru](../../../visual-basic/language-reference/modifiers/iterator.md) modifikátor.  
   
 -   Návratový typ musí být <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, nebo <xref:System.Collections.Generic.IEnumerator%601>.  
   
--   Nemůže mít žádné `ByRef` parametry.  
+-   Nesmí obsahovat žádné `ByRef` parametry.  
   
- Iterator funkce nemohou být v události, konstruktoru instance, statického konstruktoru nebo statické destruktor.  
+ Funkce iterátoru nelze provést v událost, konstruktor instance, statického konstruktoru nebo destruktoru statické.  
   
- Iterator funkce může být anonymní funkce. Další informace najdete v tématu [iterátory](../../programming-guide/concepts/iterators.md).  
+ Funkce iterátoru, může být anonymní funkce. Další informace najdete v tématu [iterátory](../../programming-guide/concepts/iterators.md).  
   
 ## <a name="exception-handling"></a>Zpracování výjimek  
- A `Yield` příkaz může být uvnitř `Try` blokovat z [zkuste... Catch... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md). A `Try` blok, který má `Yield` příkaz může mít `Catch` blokuje a může mít `Finally` bloku.  
+ A `Yield` příkaz může být v rámci `Try` bloku [zkuste... Catch... Příkaz finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md). A `Try` blok, který má `Yield` může mít příkaz `Catch` a ostatní porty blokuje může mít `Finally` bloku.  
   
- A `Yield` příkaz nemůže být uvnitř `Catch` bloku nebo `Finally` bloku.  
+ A `Yield` příkaz nejde provést uvnitř `Catch` bloku nebo `Finally` bloku.  
   
- Pokud `For Each` textu (mimo funkci iterator) vyvolá výjimku, `Catch` bloku ve funkci iterator není proveden, ale `Finally` bloku ve funkci iterator se spustí. A `Catch` bloku uvnitř funkce iterator zachytí pouze výjimky, které nastat uvnitř funkce iterator.  
+ Pokud `For Each` text (mimo funkce iterátoru) vyvolá výjimku, `Catch` bloku funkce iterátoru není spuštěn, ale `Finally` je proveden blok v funkce iterátoru. A `Catch` bloku funkce iterátoru zachytává pouze výjimky, ke kterým dochází uvnitř funkce iterátoru.  
   
 ## <a name="technical-implementation"></a>Technická implementace  
- Následující kód vrátí `IEnumerable (Of String)` z funkce iterator a pak iteruje v rámci prvků `IEnumerable (Of String)`.  
+ V následujícím kódu vrátí `IEnumerable (Of String)` z funkce iterátoru a poté iteruje skrz prvky `IEnumerable (Of String)`.  
   
 ```vb  
 Dim elements As IEnumerable(Of String) = MyIteratorFunction()  
@@ -73,25 +73,25 @@ For Each element As String In elements
 Next  
 ```  
   
- Volání `MyIteratorFunction` neprovede tělo funkce. Místo toho se volání vrátí `IEnumerable(Of String)` do `elements` proměnné.  
+ Volání `MyIteratorFunction` neprovede tělo funkce. Místo toho volání vrátí `IEnumerable(Of String)` do `elements` proměnné.  
   
- Na iterace `For Each` smyčky, <xref:System.Collections.IEnumerator.MoveNext%2A> metoda je volána pro `elements`. Toto volání provede text `MyIteratorFunction` až do dalšího `Yield` je dosaženo příkaz. `Yield` Příkaz vrací výraz, který určuje, ne jenom hodnotu `element` proměnná pro spotřeba těla smyčky, ale také <xref:System.Collections.Generic.IEnumerator%601.Current%2A> vlastnost elementů, která je `IEnumerable (Of String)`.  
+ Při iteraci `For Each` smyčky, <xref:System.Collections.IEnumerator.MoveNext%2A> metoda je volána pro `elements`. Toto volání provádí tělo `MyIteratorFunction` až do další `Yield` je dosažen příkaz. `Yield` Příkaz vrátí výraz, který určuje nejen hodnotu `element` proměnné k využití v těle smyčky, ale také <xref:System.Collections.Generic.IEnumerator%601.Current%2A> vlastnosti prvků, který je `IEnumerable (Of String)`.  
   
- Při každém opakování následné `For Each` cykly, odkud pokračuje v provádění těla iterator bylo přerušeno, znovu zastavit při dosažení `Yield` příkaz. `For Each` Dokončení smyčky, kdy konec iterator funkce nebo `Return` nebo `Exit Function` je dosaženo příkaz.  
+ Na každé další iteraci `For Each` smyčky, tělo iterátoru pokračuje odkud zastaví se opět tehdy, když se dosáhne `Yield` příkazu. `For Each` Smyčky je dokončen, když na konec funkce iterátoru nebo `Return` nebo `Exit Function` je dosažen příkaz.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu má `Yield` příkaz, který je uvnitř [pro... Další](../../../visual-basic/language-reference/statements/for-next-statement.md) smyčky. Každé iteraci [pro každou](../../../visual-basic/language-reference/statements/for-each-next-statement.md) těla příkazu v `Main` vytvoří volání `Power` iterator funkce. Každé volání funkce iterator pokračuje dalším spuštění `Yield` příkaz, který spadá další iterace `For…Next` smyčky.  
+ Následující příklad obsahuje `Yield` , který se nachází uvnitř [pro... Další](../../../visual-basic/language-reference/statements/for-next-statement.md) smyčky. Každá iterace [pro každou](../../../visual-basic/language-reference/statements/for-each-next-statement.md) tělo s příkazy v `Main` vytváří volání `Power` funkce iterátoru. Každé volání funkce iterátoru pokračuje do dalšího provedení příkazu `Yield` prohlášení, které nastane při další iteraci `For…Next` smyčky.  
   
- Návratový typ metody iterator <xref:System.Collections.Generic.IEnumerable%601>, typu iterator rozhraní. Při volání metody iterátoru je vrácen vyčíslitelný objekt, který obsahuje mocniny čísla.  
+ Návratový typ metody iterátoru je <xref:System.Collections.Generic.IEnumerable%601>, typ rozhraní iterátoru. Při volání metody iterátoru je vrácen vyčíslitelný objekt, který obsahuje mocniny čísla.  
   
  [!code-vb[VbVbalrStatements#98](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/yield-statement_1.vb)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje `Get` přistupujícího objektu, který je iterátor. Obsahuje deklarace vlastnosti `Iterator` modifikátor.  
+ Následující příklad ukazuje `Get` přístupovou metodu iterátoru. Deklarace vlastnosti zahrnuje `Iterator` modifikátor.  
   
  [!code-vb[VbVbalrStatements#99](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/yield-statement_2.vb)]  
   
  Další příklady najdete v tématu [iterátory](../../programming-guide/concepts/iterators.md).  
   
-## <a name="see-also"></a>Viz také  
- [Příkazy](../../../visual-basic/language-reference/statements/index.md)
+## <a name="see-also"></a>Viz také:
+- [Příkazy](../../../visual-basic/language-reference/statements/index.md)

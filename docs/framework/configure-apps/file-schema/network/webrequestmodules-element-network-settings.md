@@ -8,12 +8,12 @@ helpviewer_keywords:
 - webRequestModules element
 - <webRequestModules> element
 ms.assetid: 1263de11-3e0a-4f94-97c9-710b2ae53817
-ms.openlocfilehash: 1d421009e8b2e0d4074679939092180c6037a0c7
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 4e2a37f6829341b33475f91796e8671d867ac151
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200441"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54699789"
 ---
 # <a name="ltwebrequestmodulesgt-element-network-settings"></a>&lt;Element webRequestModules&gt; – Element (nastavení sítě)
 Určuje moduly, které použijte k vyžádání informace z hostitelů v síti.  
@@ -40,14 +40,14 @@ Určuje moduly, které použijte k vyžádání informace z hostitelů v síti.
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
 |[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-webrequestmodules-network-settings.md)|Přidá vlastní modul webové žádosti do aplikace.|  
-|[Vymazat](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-webrequestmodules-network-settings.md)|Odebere všechny registrované moduly webové žádosti z aplikace.|  
+|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-webrequestmodules-network-settings.md)|Odebere všechny registrované moduly webové žádosti z aplikace.|  
 |[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-webrequestmodules-network-settings.md)|Vlastní modul požadavku webového odstraní z aplikace.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[System.NET](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
+|[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
   
 ## <a name="remarks"></a>Poznámky  
  `webRequestModules` Zaregistruje následníky elementu <xref:System.Net.WebRequest> třídy pro zpracování požadavků na informace na síť hostitele. Musí implementovat moduly webové žádosti <xref:System.Net.IWebRequestCreate> rozhraní.  
@@ -73,7 +73,7 @@ Určuje moduly, které použijte k vyžádání informace z hostitelů v síti.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.WebRequest>  
-- <xref:System.Net.IWebRequestCreate>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.WebRequest>
+- <xref:System.Net.IWebRequestCreate>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

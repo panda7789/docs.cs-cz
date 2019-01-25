@@ -8,30 +8,30 @@ helpviewer_keywords:
 - defaultProxy element
 - <defaultProxy> element
 ms.assetid: 9d663c4b-07b4-4f6f-9b12-efbd3630354f
-ms.openlocfilehash: 54185c7cca734ced166fbe0a52b96214321d4469
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 48c5f5a50563cdbea5fa806e7c7524e413ba3712
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200500"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596173"
 ---
 # <a name="ltdefaultproxygt-element-network-settings"></a>&lt;defaultProxy&gt; – Element (nastavení sítě)
 Konfiguruje server proxy protokolu HTTP (Hypertext Transfer).  
   
  \<Konfigurace >  
 \<system.net>  
-\<defaultProxy >  
+\<defaultProxy>  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-      <defaultProxy  
-        enabled="true|false"  
-        useDefaultCredentials="true|false">  
-           <bypasslist> … </bypasslist>  
-           <proxy> … </proxy>  
-           <module> … </module>  
-      </defaultProxy>
+<defaultProxy  
+  enabled="true|false"  
+  useDefaultCredentials="true|false">  
+    <bypasslist>...</bypasslist>  
+    <proxy>...</proxy>  
+    <module>...</module>  
+</defaultProxy>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -48,15 +48,15 @@ Konfiguruje server proxy protokolu HTTP (Hypertext Transfer).
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[atribut bypasslist bude](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.|  
+|[bypasslist](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.|  
 |[module](../../../../../docs/framework/configure-apps/file-schema/network/module-element-network-settings.md)|Přidá nový modul proxy serveru do aplikace.|  
-|[Proxy server](../../../../../docs/framework/configure-apps/file-schema/network/proxy-element-network-settings.md)|Definuje proxy server.|  
+|[proxy](../../../../../docs/framework/configure-apps/file-schema/network/proxy-element-network-settings.md)|Definuje proxy server.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[System.NET](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
+|[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud defaultProxy – element je prázdný, použije se nastavení proxy serveru z aplikace Internet Explorer. Toto chování se liší od verze 1.1 rozhraní .NET Framework.  
@@ -86,6 +86,6 @@ Konfiguruje server proxy protokolu HTTP (Hypertext Transfer).
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.WebProxy?displayProperty=nameWithType>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.WebProxy?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

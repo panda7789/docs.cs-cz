@@ -5,17 +5,17 @@ helpviewer_keywords:
 - WCF [WCF], troubleshooting
 - Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
-ms.openlocfilehash: 368faf0881c5c0073fe8367a051b6c6c802b9110
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 5031538c49da34d0fc89442c1170e30ff56a6eff
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47200851"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54505689"
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>Řešení potíží s WCF – úvodní příručka
-Toto téma uvádí počet známé problémy, které mají zákazníci spouštět do při vývoji klientů WCF a služeb. Pokud se problém, který běží na není v tomto seznamu, doporučujeme že nakonfigurovat trasování pro vaši službu. Tím se vygeneruje soubor trasování, můžete zobrazit pomocí prohlížeče trasování souboru a získat podrobné informace o výjimkách, které může docházet v rámci služby. Další informace o konfiguraci trasování, naleznete v tématu: [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Další informace o souboru prohlížeče trasování, naleznete v tématu: [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
+Toto téma uvádí počet známé problémy, které mají zákazníci spouštět do při vývoji klientů WCF a služeb. Pokud se problém, který běží na není v tomto seznamu, doporučujeme že nakonfigurovat trasování pro vaši službu. Tím se vygeneruje soubor trasování, můžete zobrazit pomocí prohlížeče trasování souboru a získat podrobné informace o výjimkách, které může docházet v rámci služby. Další informace o konfiguraci trasování naleznete v tématu: [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Další informace o souboru prohlížeče trasování naleznete v tématu: [Služba prohlížečem trasování (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
   
-1.  [Po instalaci Windows 7 a IIS se při pokusu přejděte na službu WCF zobrazila tato chybová zpráva: Chyba 404.3 HTTP – nebyl nalezen](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#bkmk_0)  
+1.  [Po instalaci Windows 7 a IIS se při pokusu přejděte na službu WCF zobrazí následující chybová zpráva: Chyba protokolu HTTP 404.3 – nebyl nalezen](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#bkmk_0)  
   
      Chyba protokolu HTTP 404.3 – Not FoundThe stránky, pro který žádáte nelze zpracovat z důvodu konfigurace rozšíření. Pokud na stránce je skript, přidejte obslužnou rutinu. Pokud mají být stažené souboru, přidejte mapování MIME. Iisver InformationModule podrobné informace o chybě.  
   
@@ -37,12 +37,12 @@ Toto téma uvádí počet známé problémy, které mají zákazníci spouštět
   
 10. [Používám jedním z nástrojů Moje trasování a získat endpointnotfoundexception –. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q99)  
   
-11. [Při volání webových služeb HTTP WCF aplikace z aplikace WCF SOAP služby vrátí následující chybu: není povoleno 405 – Metoda](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BK_MK99)  
+11. [Při volání webových služeb HTTP WCF aplikace z aplikace WCF SOAP služba vrátí následující chybu: 405 Metoda není povolena](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BK_MK99)  
   
  [Co je základní adresa? Jak to souvisí adresy koncového bodu?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q10)  
   
 <a name="bkmk_0"></a>   
-## <a name="after-installing-windows-7-and-iis-when-i-attempt-to-browse-to-a-wcf-service-i-get-the-following-error-message-http-error-4043--not-found"></a>Po instalaci Windows 7 a IIS se při pokusu přejděte na službu WCF zobrazila tato chybová zpráva: Chyba 404.3 HTTP – nebyl nalezen  
+## <a name="after-installing-windows-7-and-iis-when-i-attempt-to-browse-to-a-wcf-service-i-get-the-following-error-message-http-error-4043--not-found"></a>Po instalaci Windows 7 a IIS se při pokusu přejděte na službu WCF zobrazí následující chybová zpráva: Chyba protokolu HTTP 404.3 – nebyl nalezen  
  Je úplné chybová zpráva:  
   
  Chyba protokolu HTTP 404.3 – Not FoundThe stránky, pro který žádáte nelze zpracovat z důvodu konfigurace rozšíření. Pokud na stránce je skript, přidejte obslužnou rutinu. Pokud mají být stažené souboru, přidejte mapování MIME. Iisver InformationModule podrobné informace o chybě.  
@@ -51,7 +51,7 @@ Toto téma uvádí počet známé problémy, které mají zákazníci spouštět
   
 <a name="BKMK_q1"></a>   
 ## <a name="sometimes-i-receive-a-messagesecurityexception-on-the-second-request-if-my-client-is-idle-for-a-while-after-the-first-request-what-is-happening"></a>Někdy zobrazila messagesecurityexception – na druhou žádost, pokud klient je nečinný po nějakou dobu od prvního požadavku. Co se děje?  
- Druhou žádost může selhat především pro dva důvody: Vypršel časový limit relace (1) nebo (2) na webový server, který je hostitelem služby recykluje. V prvním případě relace je platné, dokud služba vyprší časový limit. Když služba neobdrží žádost o z klienta v době, zadaná ve vazbě služby (<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>), služba ukončuje relace zabezpečení. Výsledkem zpráv následné klienta <xref:System.ServiceModel.Security.MessageSecurityException>. Klient musí znovu vytvořit relaci zabezpečení ve službě odeslat další zprávy nebo použít token kontextu zabezpečení stavové. Tokeny kontextu zabezpečení stavové umožňují zabezpečenou relaci nezbytné k překonání neumožňovala recyklaci, webový server. Další informace o použití tokenů stavové zabezpečené kontextu v zabezpečené relaci v tématu [jak: vytvořit Token kontextu zabezpečení pro zabezpečenou relaci](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md). Alternativně můžete zakázat zabezpečených relací. Při použití [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) vazby, můžete nastavit `establishSecurityContext` vlastnost `false` zakázání zabezpečených relací. Zakázání zabezpečených relací u jiných vazeb, musíte vytvořit vlastní vazby. Podrobnosti o vytvoření vlastní vazby najdete v tématu [postupy: vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). Než použijete některý z těchto možností, musíte pochopit požadavky na zabezpečení vaší aplikace.  
+ Druhou žádost může selhat primárně dvou důvodů: (1 vypršel časový limit relace) nebo (2) na webový server, který je hostitelem služby recykluje. V prvním případě relace je platné, dokud služba vyprší časový limit. Když služba neobdrží žádost o z klienta v době, zadaná ve vazbě služby (<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>), služba ukončuje relace zabezpečení. Výsledkem zpráv následné klienta <xref:System.ServiceModel.Security.MessageSecurityException>. Klient musí znovu vytvořit relaci zabezpečení ve službě odeslat další zprávy nebo použít token kontextu zabezpečení stavové. Tokeny kontextu zabezpečení stavové umožňují zabezpečenou relaci nezbytné k překonání neumožňovala recyklaci, webový server. Další informace o použití tokenů stavové zabezpečené kontextu v zabezpečené relaci v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md). Alternativně můžete zakázat zabezpečených relací. Při použití [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) vazby, můžete nastavit `establishSecurityContext` vlastnost `false` zakázání zabezpečených relací. Zakázání zabezpečených relací u jiných vazeb, musíte vytvořit vlastní vazby. Podrobnosti o vytvoření vlastní vazby najdete v tématu [jak: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). Než použijete některý z těchto možností, musíte pochopit požadavky na zabezpečení vaší aplikace.  
   
 <a name="BKMK_q2"></a>   
 ## <a name="my-service-starts-to-reject-new-clients-after-about-10-clients-are-interacting-with-it-what-is-happening"></a>Služba začne odmítnout nové klienty po přibližně 10 klientů jsou interakci s ní. Co se děje?  
@@ -162,7 +162,7 @@ public class MyServiceHost : ServiceHost
   
  Pokud je to tento případ, je potřeba předat čtení přístupová oprávnění procesu účtu pro soubor, který obsahuje privátní klíč. Například pokud pracovní proces služby IIS běží pod účtem Bob, pak je potřeba poskytnout oprávnění ke čtení Bob k souboru, který obsahuje privátní klíč.  
   
- Další informace o tom, jak poskytnout přístup k účtu uživatele správný soubor, který obsahuje privátní klíč pro konkrétní certifikát X.509, naleznete v tématu [postup: Ujistěte se, X.509 certifikáty přístupné pro WCF](../../../docs/framework/wcf/feature-details/how-to-make-x-509-certificates-accessible-to-wcf.md).  
+ Další informace o tom, jak poskytnout přístup k účtu uživatele správný soubor, který obsahuje privátní klíč pro konkrétní certifikát X.509, naleznete v tématu [jak: Zpřístupnění certifikátů X.509 pro WCF](../../../docs/framework/wcf/feature-details/how-to-make-x-509-certificates-accessible-to-wcf.md).  
   
 <a name="BKMK_q88"></a>   
 ## <a name="i-changed-the-first-parameter-of-an-operation-from-uppercase-to-lowercase-now-my-client-throws-an-exception-whats-happening"></a>Můžu změnit první parametr operace z velkých písmen na malá písmena; Klient teď dojde k výjimce. Co se děje?  
@@ -176,7 +176,7 @@ public class MyServiceHost : ServiceHost
   
 ```xml
 <endpoint   
-  address=http://localhost:8000/MyServer/  
+  address="http://localhost:8000/MyServer/"  
   binding="wsHttpBinding"  
   bindingConfiguration="WSHttpBinding_IMyContract"  
   behaviorConfiguration="MyClient"   
@@ -224,7 +224,7 @@ public class MyServiceHost : ServiceHost
 </bindings>  
 ```  
   
- Zobrazí se chyba podobný tomuto: neošetřená výjimka: System.ServiceModel.addressalreadyinuseexception –: na již běží naslouchací proces tuto chybu můžete vyřešit tak, že zadáte plně kvalifikovanou adresu URL s jiným portem pro 0.0.0.0:9000 koncový bod IP MEX endpoint, jak je znázorněno v následujícím fragmentu kódu konfigurace:  
+ Zobrazí se chyba vypadat asi takto: Neošetřená výjimka: System.ServiceModel.AddressAlreadyInUseException: Na již běží naslouchací proces IP 0.0.0.0:9000 koncový bod, který tuto chybu můžete vyřešit tak, že zadáte plně kvalifikovanou adresu URL s jiným portem koncového bodu MEX, jak je znázorněno v následujícím fragmentu kódu konfigurace:  
   
 ```xml
 <services>  
@@ -236,8 +236,8 @@ public class MyServiceHost : ServiceHost
 ```  
   
 <a name="BK_MK99"></a>   
-## <a name="when-calling-a-wcf-web-http-application-from-a-wcf-soap-application-the-service-returns-the-following-error-405-method-not-allowed"></a>Při volání webových služeb HTTP WCF aplikace z aplikace WCF SOAP služby vrátí následující chybu: není povoleno 405 – Metoda  
- Volání aplikace webových služeb HTTP WCF (služba, která se používá <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior>) z WCF service může generovat následující výjimku: `Unhandled Exception: System.ServiceModel.FaultException`1[System.ServiceModel.ExceptionDetail]: vzdálený server vrátil neočekávanou odpověď : (405) metoda není povoleno. "touto výjimkou způsobeno WCF přepíše odchozích dat <xref:System.ServiceModel.OperationContext> s příchozí <xref:System.ServiceModel.OperationContext>. Chcete-li vyřešit tento problém vytvořit <xref:System.ServiceModel.OperationContextScope> v rámci operace služby webových služeb HTTP WCF. Příklad:  
+## <a name="when-calling-a-wcf-web-http-application-from-a-wcf-soap-application-the-service-returns-the-following-error-405-method-not-allowed"></a>Při volání webových služeb HTTP WCF aplikace z aplikace WCF SOAP služba vrátí následující chybu: 405 Metoda není povolena  
+ Volání aplikace webových služeb HTTP WCF (služba, která se používá <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior>) z WCF service může generovat následující výjimku: `Unhandled Exception: System.ServiceModel.FaultException`1[System.ServiceModel.ExceptionDetail]: Vzdálený server vrátil neočekávanou odpověď: (405) metoda není povoleno. "touto výjimkou způsobeno WCF přepíše odchozích dat <xref:System.ServiceModel.OperationContext> s příchozí <xref:System.ServiceModel.OperationContext>. Chcete-li vyřešit tento problém vytvořit <xref:System.ServiceModel.OperationContextScope> v rámci operace služby webových služeb HTTP WCF. Příklad:  
   
 ```csharp
 public string Echo(string input)  
@@ -249,5 +249,5 @@ public string Echo(string input)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Ladění chyb u ověřování Windows](../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)
+## <a name="see-also"></a>Viz také:
+- [Ladění chyb u ověřování Windows](../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)

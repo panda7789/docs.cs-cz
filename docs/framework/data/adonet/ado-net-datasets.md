@@ -2,17 +2,17 @@
 title: Datové sady ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 82b641bb-6001-4512-bf1a-2830acdd92ab
-ms.openlocfilehash: e4f2aeca72404379a9cebbfacda77f98a9e85bf3
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: f9821f07aae8a761a3890e93347f9cf727f8bdd0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44178348"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54569424"
 ---
 # <a name="adonet-datasets"></a>Datové sady ADO.NET
 <xref:System.Data.DataSet> Centrální podporuje odpojen, je objekt distribuovaných dat scénáře s [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]. **Datovou sadu** rezidentní reprezentace dat, která poskytuje relační konzistentní programovací model bez ohledu na zdroj dat je. Je možné s několika a odlišných zdrojů dat, s daty XML nebo ke správě dat místní aplikace. **Datovou sadu** představuje ucelenou sadu dat, včetně souvisejících tabulek, omezení a relace mezi tabulkami. Je vidět na následujícím obrázku **datovou sadu** objektový model.  
   
- ![ADO.Net – grafika](../../../../docs/framework/data/adonet/media/ado-1-bpuedev11.png "ado_1_bpuedev11")  
+ ![ADO.Net graphic](../../../../docs/framework/data/adonet/media/ado-1-bpuedev11.png "ado_1_bpuedev11")  
 Model objektu DataSet  
   
  Metody a objektů v **datovou sadu** jsou konzistentní s těmi v modelu relační databáze.  
@@ -45,8 +45,8 @@ Model objektu DataSet
   
  Další informace najdete v tématu [LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset.md).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
- [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
+- [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

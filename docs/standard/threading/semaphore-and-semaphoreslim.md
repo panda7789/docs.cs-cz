@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 7722a333-b974-47a2-a7c0-f09097fb644e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e7d7f791fbc68a526f428f4f79d9b379a23ca771
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: f20ae0b712a5db5cdfb6d5f6a3786af151820294
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199484"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550484"
 ---
 # <a name="semaphore-and-semaphoreslim"></a>Semafor a SemaphoreSlim
 <xref:System.Threading.Semaphore?displayProperty=nameWithType> Třída představuje pojmenované (systémové) nebo místní "Semaphore". Je dynamického zajišťování obálku kolem objektu semafor Win32. Win32 semafory jsou počítání semaforů, které je možné použít k řízení přístupu k fondu zdrojů.  
@@ -48,6 +48,6 @@ ms.locfileid: "50199484"
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Threading.Semaphore>  
-- <xref:System.Threading.SemaphoreSlim>  
+- <xref:System.Threading.Semaphore>
+- <xref:System.Threading.SemaphoreSlim>
 - [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)

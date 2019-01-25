@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 3db215aa-e180-4f70-8d23-6d5a0ffbc8e5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7975ca3da16be10285e618752981249602371c43
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5365b05db58d807cc010b763ca338ce76c8d7632
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418588"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54578767"
 ---
 # <a name="icordebugsymbolprovidergetassemblyimagebytes-method"></a>ICorDebugSymbolProvider::GetAssemblyImageBytes – metoda
-Čte data z sloučené sestavení zadaný relativní virtuální adresy (RVA) v sloučené sestavení.  
+Přečte data ze sloučeného sestavení sloučeného sestavení podle relativní virtuální adresu (RVA).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,21 +26,21 @@ HRESULT GetAssemblyImageBytes(
   
 #### <a name="parameters"></a>Parametry  
  `rva`  
- [v] Relativní virtuální adresu (RVA) v sloučené sestavení.  
+ [in] Relativní virtuální adresu (RVA) ve sloučené sestavení.  
   
  `length`  
- Počet bajtů ke čtení z sloučené sestavení.  
+ Počet bajtů ke čtení ze sloučeného sestavení.  
   
  `ppMemoryBuffer`  
- Ukazatel na adresu [ICorDebugMemoryBuffer](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md) objekt, který obsahuje informace o vyrovnávací paměť s metadaty sloučené sestavení.  
+ Ukazatel na adresu [icordebugmemorybuffer –](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md) objekt, který obsahuje informace o vyrovnávací paměti s metadaty sloučené sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je k dispozici s .NET Native jenom.  
+>  Tato metoda je pouze k dispozici s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -48,6 +48,6 @@ HRESULT GetAssemblyImageBytes(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugSymbolProvider – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugSymbolProvider – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

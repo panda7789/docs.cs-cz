@@ -7,16 +7,16 @@ helpviewer_keywords:
 ms.assetid: 859557b8-51e1-4d15-92e8-318d2dcdb2f7
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 7b4286abdb2e2b5bb3f91f6fa0bbffd6beda8efc
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: f1bbae37ab5f5e8d3219a3d0a41bc8ff0c7b18df
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48914189"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492556"
 ---
 # <a name="ui-automation-providers-overview"></a>Přehled zprostředkovatelů automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Zprostředkovatelé automatizace uživatelského rozhraní povolit ovládací prvky pro komunikaci pomocí automatizace uživatelského rozhraní klientských aplikací. Obecné, každý ovládací prvek nebo odlišné elementu v [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] počítaném od zprostředkovatele. Zprostředkovatel zveřejňuje informace o elementu a volitelně implementuje vzorů ovládacích prvků, které umožňují klientské aplikaci pro interakci s ovládacím prvkem.  
   
@@ -63,7 +63,7 @@ ms.locfileid: "48914189"
   
  Je odpovědností implementace poskytovatele definujte element jako content element nebo ovládací prvek. Ovládací prvek může nebo nemusí být také elementů obsahu, ale všechny prvky obsahu jsou ovládací prvky.  
   
-### <a name="frameworks"></a>Rozhraní  
+### <a name="frameworks"></a>Architektury  
  Architektura je komponenta, která spravuje podřízených ovládacích prvků, spuštění testu a vykreslení v oblasti obrazovky. Například [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] okna, označovaný také jako HWND, může sloužit jako systém, který obsahuje více [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] prvky jako panel nabídek, stavový řádek a tlačítka.  
   
  [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] Určuje kontejner, jako jsou například seznamy a stromové zobrazení jsou považovány za rozhraní, protože obsahují vlastní kód pro vykreslování podřízených položek a provádění spuštění testu na ně. Naopak [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] pole se seznamem není rozhraní .NET framework, protože vykreslování a spuštění testu se zařizuje služba obsahující [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] okna.  
@@ -78,5 +78,5 @@ ms.locfileid: "48914189"
   
  Hostitele fragment hraje důležitou roli při poskytování [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] služby. Umožňuje navigace na fragment kořen a poskytuje některé výchozí vlastnosti tak, aby vlastního zprostředkovatele pro jejich implementaci.  
   
-## <a name="see-also"></a>Viz také  
- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)
+## <a name="see-also"></a>Viz také:
+- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)

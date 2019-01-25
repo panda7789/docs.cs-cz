@@ -5,12 +5,12 @@ helpviewer_keywords:
 - <summary> XML tag
 - summary XML tag
 ms.assetid: 861c847d-dd94-478a-aa23-bf4899cdc848
-ms.openlocfilehash: 5ef9b7a98503ff36174de4418ca7d599c365f5aa
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 899a3343d9758aab79f5aaa77ede26e92f8c07ae
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46000476"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54551005"
 ---
 # <a name="ltsummarygt-visual-basic"></a>&lt;Souhrn&gt; (Visual Basic)
 Určuje souhrn člena.  
@@ -37,5 +37,5 @@ Určuje souhrn člena.
   
  [!code-vb[VbVbcnXmlDocComments#1](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/summary_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
+## <a name="see-also"></a>Viz také:
+- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

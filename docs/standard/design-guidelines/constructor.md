@@ -13,12 +13,12 @@ helpviewer_keywords:
 - static constructors
 ms.assetid: b4496afe-5fa7-4bb0-85ca-70b0ef21e6fc
 author: KrzysztofCwalina
-ms.openlocfilehash: b140be34d9359cfdca1250a924db787563127d19
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 68192e3b75a120c73b82c34005d4dee650540bf3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127781"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54722164"
 ---
 # <a name="constructor-design"></a>Návrh konstruktoru
 Existují dva typy konstruktorů: Zadejte konstruktory a konstruktory instancí.  
@@ -74,11 +74,11 @@ Existují dva typy konstruktorů: Zadejte konstruktory a konstruktory instancí.
   
  **✓ CONSIDER** inicializace statického pole vloženě než explicitně pomocí statické konstruktory, protože modul runtime je schopen optimalizovat výkon typy, které nemají explicitně definovaných statického konstruktoru.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
+- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)
 - [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

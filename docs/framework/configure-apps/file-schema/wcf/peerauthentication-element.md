@@ -2,12 +2,12 @@
 title: Element &lt;peerAuthentication&gt;
 ms.date: 03/30/2017
 ms.assetid: 09a8a9ff-e395-42f6-8ceb-9d44bdc1cbe1
-ms.openlocfilehash: 8937df6a2fcab305a519d566f7d666a3d94b4061
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 0491a175c237bf6dd18b607d8ad99f1057661d76
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54149713"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54610016"
 ---
 # <a name="ltpeerauthenticationgt-element"></a>Element &lt;peerAuthentication&gt;
 Určuje možnosti ověřování klientů peer-to-peer.  
@@ -16,11 +16,11 @@ Určuje možnosti ověřování klientů peer-to-peer.
   
  \<system.ServiceModel>  
 \<chování >  
-\<názvy endpointBehaviors >  
+\<endpointBehaviors>  
 \<chování >  
-\<třídu clientCredentials >  
-\<sdílená >  
-\<peerAuthentication >  
+\<clientCredentials>  
+\<peer>  
+\<PeerAuthentication>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +43,7 @@ Určuje možnosti ověřování klientů peer-to-peer.
 |`revocationMode`|Volitelný výčet. Jeden z režimů pro kontrolu seznamu odvolaných certifikátů (CRL). Výchozí hodnota je `Online`.|  
 |`trustedStoreLocation`|Volitelný výčet. Jeden z umístění dvou systémových úložišť: `LocalMachine` nebo `CurrentUser`. Tato hodnota se používá při certifikát služby se vyjedná do klienta. Ověření se provádí proti **důvěryhodné osoby** uložit do umístění určeného úložiště. Výchozí hodnota je `CurrentUser`.|  
   
-## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType atribut  
+## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType Attribute  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
@@ -100,14 +100,14 @@ Určuje možnosti ověřování klientů peer-to-peer.
 </behaviors>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.PeerCredentialElement>  
- <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>  
- <xref:System.ServiceModel.Security.PeerCredential.PeerAuthentication%2A>  
- <xref:System.ServiceModel.Configuration.PeerCredentialElement.PeerAuthentication%2A>  
- <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>  
- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
- [Ověřování zpráv protokolu peer Channel](https://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
- [Vlastní ověřování protokolu peer Channel](https://msdn.microsoft.com/library/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
- [Zabezpečení aplikací protokolu Peer Channel](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.PeerCredentialElement>
+- <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>
+- <xref:System.ServiceModel.Security.PeerCredential.PeerAuthentication%2A>
+- <xref:System.ServiceModel.Configuration.PeerCredentialElement.PeerAuthentication%2A>
+- <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>
+- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)
+- [Ověřování zpráv protokolu peer Channel](https://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)
+- [Vlastní ověřování protokolu peer Channel](https://msdn.microsoft.com/library/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)
+- [Zabezpečení aplikací protokolu Peer Channel](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)

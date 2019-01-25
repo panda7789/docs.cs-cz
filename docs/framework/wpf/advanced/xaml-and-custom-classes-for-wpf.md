@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML [WPF], custom classes
 - classes [WPF], custom classes in XAML
 ms.assetid: e7313137-581e-4a64-8453-d44e15a6164a
-ms.openlocfilehash: acf3ba12a9a7e6ba9a8e378892098f5f265a23d9
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: f6709cad76ff05c3134c8430b36d5f34019b03ca
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43779757"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54606579"
 ---
 # <a name="xaml-and-custom-classes-for-wpf"></a>XAML a vlastní třídy pro WPF
 Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] architektur podporuje schopnost definovat vlastní třídy nebo struktury v libovolném [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] jazyk a pak přístupu, které třídy pomocí kódu XAML. Můžete použít kombinaci [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]-definované typy a vlastních typů ve stejném souboru kódu, obvykle na předponu oboru názvů XAML mapování vlastních typů. Toto téma popisuje požadavky, které má být použitelná jako prvek XAML musí splňovat vlastní třídy.  
@@ -79,7 +79,7 @@ Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlashar
   
 -   Objekt, který je objekt kolekce není nutné zadat v syntaxi elementu objektu. Pokaždé, když zadáte vlastnosti XAML, která přebírá typ kolekce je implicitní přítomnosti tohoto typu kolekce.  
   
--   Podřízené prvky prvku vlastnost kolekce, ve značkách jsou zpracovány do stanou členy kolekce. Obvykle kód přístup k členům kolekce se provádí prostřednictvím metody seznamu/slovníku jako `Add`, nebo prostřednictvím indexeru. Ale syntaxe XAML nepodporuje metody nebo indexery (výjimka: XAML 2009 může podporovat metody, ale pomocí XAML 2009 omezuje možná použití WPF; viz [funkce jazyka XAML 2009](../../../../docs/framework/xaml-services/xaml-2009-language-features.md)). Kolekce jsou samozřejmě velmi běžné požadavky pro vytváření stromové struktuře prvků a potřebujete způsob, jak naplnit těchto kolekcí v deklarativní XAML. Proto se zpracovávají podřízené prvky prvku vlastnost kolekce jejich přidáním do kolekce, která je typ hodnoty vlastnosti kolekce.  
+-   Podřízené prvky prvku vlastnost kolekce, ve značkách jsou zpracovány do stanou členy kolekce. Obvykle kód přístup k členům kolekce se provádí prostřednictvím metody seznamu/slovníku jako `Add`, nebo prostřednictvím indexeru. Ale syntaxe XAML nepodporuje metody nebo indexery (výjimka: XAML 2009 může podporovat metody, ale pomocí XAML 2009 omezuje možná použití WPF; Zobrazit [funkce jazyka XAML 2009](../../../../docs/framework/xaml-services/xaml-2009-language-features.md)). Kolekce jsou samozřejmě velmi běžné požadavky pro vytváření stromové struktuře prvků a potřebujete způsob, jak naplnit těchto kolekcí v deklarativní XAML. Proto se zpracovávají podřízené prvky prvku vlastnost kolekce jejich přidáním do kolekce, která je typ hodnoty vlastnosti kolekce.  
   
  Implementace rozhraní .NET Framework XAML Services a proto procesor WPF XAML používá následující definici pro co se považuje za vlastnost kolekce. Vlastnost typ vlastnosti musí implementovat jedno z následujících akcí:  
   
@@ -112,9 +112,9 @@ Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlashar
 ## <a name="serializing-xaml"></a>Serializace XAML  
  Pro určité scénáře, jako třeba když se ovládací prvek Autor, můžete chtít také zajistit, že všechny reprezentaci objektu, který se dá vytvořit instance v XAML lze také serializovat zpět na odpovídající kód XAML. Serializace požadavky nejsou popsané v tomto tématu. Zobrazit [řídit vytvoření přehledu](../../../../docs/framework/wpf/controls/control-authoring-overview.md) a [strom prvku a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)  
- [Přehled vytváření ovládacích prvků](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
- [Přehled základních elementů](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
- [Vlastnosti závislostí a načítání XAML](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)
+- [Přehled vytváření ovládacích prvků](../../../../docs/framework/wpf/controls/control-authoring-overview.md)
+- [Přehled základních elementů](../../../../docs/framework/wpf/advanced/base-elements-overview.md)
+- [Vlastnosti závislostí a načítání XAML](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)

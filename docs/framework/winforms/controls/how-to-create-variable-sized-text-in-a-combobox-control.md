@@ -10,15 +10,15 @@ helpviewer_keywords:
 - ComboBox control [Windows Forms], examples [C#]
 - ComboBox control [Windows Forms], drawing custom text
 ms.assetid: ce39b9ea-e626-49fe-bd5a-f567f6d157df
-ms.openlocfilehash: a76e1d78cd9fade550fa846488e8bf4a93a21c31
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2a9f6e8a1c96c2a9bf9e56c1c6acefc4181a18dc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33533228"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54526987"
 ---
 # <a name="how-to-create-variable-sized-text-in-a-combobox-control"></a>Postupy: Vytvoření textu proměnlivé velikosti v ovládacím prvku ComboBox
-Tento příklad ukazuje vlastní kreslení textu v <xref:System.Windows.Forms.ComboBox> ovládacího prvku. Pokud položku splňuje určitá kritéria, je vykreslen větší písmeny a zapnuté red.  
+Tento příklad ukazuje vlastní kreslení textu v <xref:System.Windows.Forms.ComboBox> ovládacího prvku. Pokud položka splňuje určitá kritéria, je vykreslen v větší písma a zapnout červené.  
   
 ## <a name="example"></a>Příklad  
   
@@ -58,19 +58,19 @@ End Sub
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Formuláře systému Windows.  
+-   Formuláře Windows.  
   
--   A <xref:System.Windows.Forms.ComboBox> ovládací prvek s názvem `ListBox1` s tři položky v <xref:System.Windows.Forms.ComboBox.Items%2A> vlastnost. V tomto příkladu jsou tři položky s názvem `"One", Two", and Three"`. <xref:System.Windows.Forms.ComboBox.DrawMode%2A> Vlastnost `ComboBox1` musí být nastavena na <xref:System.Windows.Forms.DrawMode.OwnerDrawVariable>.  
+-   A <xref:System.Windows.Forms.ComboBox> ovládací prvek s názvem `ListBox1` se tři položky v <xref:System.Windows.Forms.ComboBox.Items%2A> vlastnost. V tomto příkladu jsou tři položky s názvem `"One", Two", and Three"`. <xref:System.Windows.Forms.ComboBox.DrawMode%2A> Vlastnost `ComboBox1` musí být nastaveno na <xref:System.Windows.Forms.DrawMode.OwnerDrawVariable>.  
   
     > [!NOTE]
-    >  Tento postup lze také použít <xref:System.Windows.Forms.ListBox> ovládací prvek – můžete nahradit <xref:System.Windows.Forms.ListBox> pro <xref:System.Windows.Forms.ComboBox>.  
+    >  Tento postup se vztahuje také na <xref:System.Windows.Forms.ListBox> ovládacího prvku – můžete nahradit <xref:System.Windows.Forms.ListBox> pro <xref:System.Windows.Forms.ComboBox>.  
   
--   Odkazuje na <xref:System.Windows.Forms?displayProperty=nameWithType> a <xref:System.Drawing?displayProperty=nameWithType> obory názvů.  
+-   Odkazy <xref:System.Windows.Forms?displayProperty=nameWithType> a <xref:System.Drawing?displayProperty=nameWithType> obory názvů.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.ComboBox.DrawItem>  
- <xref:System.Windows.Forms.DrawItemEventArgs>  
- <xref:System.Windows.Forms.ComboBox.MeasureItem>  
- [Ovládací prvky s vestavěnou podporou vykreslování vlastníkem](../../../../docs/framework/winforms/controls/controls-with-built-in-owner-drawing-support.md)  
- [Ovládací prvek ListBox](../../../../docs/framework/winforms/controls/listbox-control-windows-forms.md)  
- [Ovládací prvek ComboBox](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.ComboBox.DrawItem>
+- <xref:System.Windows.Forms.DrawItemEventArgs>
+- <xref:System.Windows.Forms.ComboBox.MeasureItem>
+- [Ovládací prvky s vestavěnou podporou vykreslování vlastníkem](../../../../docs/framework/winforms/controls/controls-with-built-in-owner-drawing-support.md)
+- [Ovládací prvek ListBox](../../../../docs/framework/winforms/controls/listbox-control-windows-forms.md)
+- [Ovládací prvek ComboBox](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md)

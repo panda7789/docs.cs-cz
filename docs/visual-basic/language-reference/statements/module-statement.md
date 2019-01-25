@@ -13,12 +13,12 @@ helpviewer_keywords:
 - classes [Visual Basic], vs. modules
 - declarations [Visual Basic], modules
 ms.assetid: a1243afc-14a5-45df-95d5-51118aeac362
-ms.openlocfilehash: 5628224a08fe5f12cf2a81b179c4998001174354
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: 0503292dca81ef7b249b391f54c0aba2bba2cb10
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49349014"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524179"
 ---
 # <a name="module-statement"></a>Module – příkaz
 Deklaruje název modulu a zavádí definici proměnných, vlastností, událostí a postupů, které se skládá z modulu.  
@@ -45,7 +45,7 @@ End Module
  Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
  `name`  
- Požadováno. Název tohoto modulu. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+ Povinný parametr. Název tohoto modulu. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
  `statements`  
  Volitelné. Příkazy, které definují proměnné, vlastnosti, události, postupy a vnořené typy tohoto modulu.  
@@ -96,10 +96,10 @@ End Module
 ## <a name="example"></a>Příklad  
  [!code-vb[VbVbalrStatements#69](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/module-statement_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
- [Příkaz Namespace](../../../visual-basic/language-reference/statements/namespace-statement.md)  
- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
- [Propagace typu](../../../visual-basic/programming-guide/language-features/declared-elements/type-promotion.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)
+- [Příkaz Namespace](../../../visual-basic/language-reference/statements/namespace-statement.md)
+- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)
+- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
+- [Propagace typu](../../../visual-basic/programming-guide/language-features/declared-elements/type-promotion.md)

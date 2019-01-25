@@ -7,37 +7,37 @@ helpviewer_keywords:
 ms.assetid: f612fa5b-4b62-4593-a19e-85c9b1018dce
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 073622c22b957975ed799cf5b3bc3826473114b1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b0cb166f2753b910465aabb8abd68c31c6f56ff8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33396351"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54497535"
 ---
 # <a name="stack-etw-event"></a>Událost Trasování událostí pro Windows zásobníku
-Událost zásobníku by používána v kombinaci s jinými událostmi ke generování trasování zásobníku po událost se vyvolá. Je zaznamenána, pokud je povolen zprostředkovatel modulu runtime. Toto je velmi vysoká frekvence událost, protože se vyvolá, vždy, když se jiný modul runtime událost se vyvolá. Z tohoto důvodu doporučujeme používat tato událost se zvýšenou opatrností.  
+Událost zásobníku by měl použít ve spojení s jinými událostmi ke generování trasování zásobníku, poté, co je vyvolána událost. Je zaznamenána, pokud je povolen zprostředkovatel běhového prostředí. To je velmi vysoká frekvence událostí, vzhledem k tomu, že je vyvolána pokaždé, když se jiný modul runtime událost se vyvolá. Z tohoto důvodu doporučujeme použít tuto událost opatrně.  
   
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
 |`StackKeyword` (0x40000000)|LogAlways(0)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
-|Událost|ID události|Vyvolá, když|  
+|Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`CLRStackWalk`|82|Ve spojení s jinými událostmi ke generování následující událost trasování zásobníku.|  
+|`CLRStackWalk`|82|Ve spojení s jinými událostmi generovat následující událost trasování zásobníku.|  
   
  Následující tabulka zobrazuje data událostí.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|ClrInstanceID|Win: Uint16|Modul runtime jedinečný identifikátor.|  
-|Reserved1|Win: UInt8|Vyhrazena.|  
-|Vyhrazeno2|Win: UInt8|Vyhrazena.|  
-|FrameCount|Win: UInt32|Počet rámců v trasování zásobníku.|  
-|Rámec|Win: ukazatele|Sloupce ukazatele na instrukce.|  
+|ClrInstanceID|Windows: Uint16|Identifikátor modulu runtime jedinečný.|  
+|Reserved1|win:UInt8|Vyhrazená.|  
+|Vyhrazeno2|win:UInt8|Vyhrazená.|  
+|Hodnoty FrameCount|win:UInt32|Počet rámců v zásobníku.|  
+|Rámec|win:Pointer|Sloupce ukazatele na instrukce.|  
   
-## <a name="see-also"></a>Viz také  
- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+## <a name="see-also"></a>Viz také:
+- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)

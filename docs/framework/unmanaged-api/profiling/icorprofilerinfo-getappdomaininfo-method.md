@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: af83fbeb64ad33910b45d49f987ffae130a2179e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dbf52a352000150766cd9a8277278491ad7d5152
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33455380"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54616729"
 ---
 # <a name="icorprofilerinfogetappdomaininfo-method"></a>ICorProfilerInfo::GetAppDomainInfo – metoda
-Přijímá ID aplikačního domény. Vrátí název domény aplikace a ID procesu, který jej obsahuje.  
+Přijímá identifikátor domény aplikace. Vrátí název domény aplikace a ID procesu, který jej obsahuje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,27 +41,27 @@ HRESULT GetAppDomainInfo(
   
 #### <a name="parameters"></a>Parametry  
  `appDomainId`  
- [v] ID domény aplikace.  
+ [in] ID domény aplikace.  
   
  `cchName`  
- [v] Délka ve znacích, nástroje `szName` návratové vyrovnávací paměti.  
+ [in] Délka ve znacích, nástroje `szName` návratové vyrovnávací paměti.  
   
  `pcchName`  
- [out] Ukazatel na celkový počet znaků z názvu domény aplikace.  
+ [out] Ukazatel na celkový počet znaků názvu domény aplikace.  
   
  `szName`  
- [out] Zadaný volající široká znaková vyrovnávací paměti. Po návratu metody `szName` bude obsahovat název domény celé nebo jeho část aplikace.  
+ [out] Pokud volající širokého znaku vyrovnávací paměti. Po návratu metody `szName` bude obsahovat název domény aplikace celé nebo jeho část.  
   
  `pProcessId`  
- [out] Ukazatel na ID procesu, který obsahuje doménu aplikace.  
+ [out] Ukazatel na ID procesu, která obsahuje doménu aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- Po návratu tato metoda, musíte se ověřit, že `szName` vyrovnávací paměť byla dostatečně velký pro obsahovat úplný název domény aplikace. K tomuto účelu porovnat hodnotu, `pcchName` body s hodnotou `cchName` parametr. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělit větší `szName` vyrovnávací paměti, aktualizujte `cchName` s novou, větší velikost a volání `GetAppDomainInfo` znovu.  
+ Po návratu tato metoda je nutné ověřit, `szName` vyrovnávací paměť je dostatečně velký, aby obsahovat úplný název domény aplikace. K tomuto účelu porovnat hodnoty, které `pcchName` odkazuje na hodnotu `cchName` parametru. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší `szName` vyrovnávací paměti, aktualizujte `cchName` nové, větší velikosti a volání `GetAppDomainInfo` znovu.  
   
- Alternativně můžete nejdřív volat `GetAppDomainInfo` s nulovou délkou `szName` vyrovnávací paměti se získat velikost správné vyrovnávací paměti. Velikost vyrovnávací paměti pak můžete nastavit na hodnotu, vrátí se v `pcchName` a volání `GetAppDomainInfo` znovu.  
+ Alternativně můžete nejprve volat `GetAppDomainInfo` s nulovou délkou `szName` vyrovnávací paměť pro získání správné vyrovnávací paměť. Pak můžete nastavit velikost vyrovnávací paměti pro hodnotu vrácenou v `pcchName` a volat `GetAppDomainInfo` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -69,7 +69,7 @@ HRESULT GetAppDomainInfo(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)

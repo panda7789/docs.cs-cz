@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a2eb894a8bac702c30826d1e965c91cae9b259ee
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 071466858c79fdb74d9055fed09990cdb02a88b6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448557"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54624340"
 ---
 # <a name="imetadataassemblyemitdefineexportedtype-method"></a>IMetaDataAssemblyEmit::DefineExportedType – metoda
-Vytvoří `ExportedType` struktura obsahující metadata pro zadaný typ exportovat a vrátí token přidružených metadat.  
+Vytvoří `ExportedType` struktura obsahující metadata pro zadanou exportovat typ a vrátí token metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,39 +41,39 @@ HRESULT DefineExportedType (
   
 #### <a name="parameters"></a>Parametry  
  `szName`  
- [v] Název typu export. Pro verze 1.1 modul common language runtime, název typu exportovaný musí přesně shodovat s názvem uvedenému v `TypeDef` typu.  
+ [in] Název typu nelze exportovat. Pro verze 1.1 modul common language runtime, název typu exportované musí přesně shodovat s názvem podle `TypeDef` typu.  
   
  `tkImplementation`  
- [v] Token určující, kde je implementováno exportovaný typu. Platné hodnoty a jejich přidružené význam jsou:  
+ [in] Token určující, kde se exportovaný typ implementuje. Platné hodnoty a jejich přidružené vysvětlení jsou:  
   
--   `mdFile` Typ je implementována v jiném souboru v rámci této položky assembly.  
+-   `mdFile` Typ je implementována do jiného souboru v rámci tohoto sestavení.  
   
--   `mdAssemblyRef` Typ je implementovaná v jiném sestavení.  
+-   `mdAssemblyRef` Typ je implementované v jiném sestavení.  
   
--   `mdExportedTYpe` Typ vnořen v rámci některého jiného typu.  
+-   `mdExportedTYpe` Typ je vnořená v rámci některého jiného typu.  
   
--   `mdFileNil` Typ je ve stejném souboru jako manifest a není typu vnořené.  
+-   `mdFileNil` Typ je ve stejném souboru jako manifest a není vnořeného typu.  
   
  `tkTypeDef`  
- [v] Token pro metadata, která určuje typ export. Tato hodnota je zadána v `TypeDef` tabulky v souboru, který implementuje typu a se týkají jenom v případě, že soubor je v tomto sestavení.  
+ [in] Token pro metadata, která určuje typ, který chcete exportovat. Tato hodnota se zadá v `TypeDef` tabulky v souboru, který implementuje typ a je relevantní pouze v případě, že tento soubor je v tomto sestavení.  
   
  `dwExportedTypeFlags`  
- [v] Bitovou kombinaci [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) hodnot výčtu, které definují nastavení vlastností pro exportovaný typu.  
+ [in] Bitová kombinace hodnot [cortypeattr –](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) hodnot výčtu, která definují nastavení vlastností pro exportovaný typ.  
   
  `pmdct`  
- [out] Ukazatel na token vrácený metadata, který určuje typ exportovaný.  
+ [out] Ukazatel na token vrácených metadat, který určuje exportovaný typ.  
   
 ## <a name="remarks"></a>Poznámky  
- `ExportedType` Pro každý typ, který je zveřejněný prostřednictvím toto sestavení a která je implementovaná v modulu než obsahující manifest musí být definován strukturu metadat.  
+ `ExportedType` Struktury metadat musí být definované pro každý typ, který je zveřejněný prostřednictvím tohoto sestavení a je implementována v modulu než ten, který obsahuje manifest.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

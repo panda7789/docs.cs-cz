@@ -1,23 +1,23 @@
 ---
-title: '&lt;System.XML.Serialization&gt; – Element'
+title: '&lt;system.xml.serialization&gt; Element'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - system.xml.serialization element
 - XML serialization, configuration
 - <system.xml.serialization> element
 ms.assetid: 3ce45919-388a-418c-8968-6df0372c73ec
-ms.openlocfilehash: b67c1ec1ec737976e4e50b80b42f34e508dc0224
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 8b85eef0f2c3bbb2d0d4a5548f5cbb4a66b0431d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836216"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54609561"
 ---
-# <a name="ltsystemxmlserializationgt-element"></a>&lt;System.XML.Serialization&gt; – Element
+# <a name="ltsystemxmlserializationgt-element"></a>&lt;system.xml.serialization&gt; Element
 Element nejvyšší úrovně pro řízení serializace XML. Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).  
   
  \<Konfigurace >  
-\<System.XML.Serialization >  
+\<system.xml.serialization>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,7 +37,7 @@ Element nejvyšší úrovně pro řízení serializace XML. Další informace o 
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<dateTimeSerialization > – Element](../../../docs/standard/serialization/datetimeserialization-element.md)|Určuje režim serializace <xref:System.DateTime> objekty.|  
-|[\<schemaImporterExtensions > – Element](../../../docs/standard/serialization/schemaimporterextensions-element.md)|Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.|  
+|[\<schemaImporterExtensions> Element](../../../docs/standard/serialization/schemaimporterextensions-element.md)|Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -64,9 +64,9 @@ Element nejvyšší úrovně pro řízení serializace XML. Další informace o 
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.Serialization.XmlSchemaImporter>  
-- <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>  
-- [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)  
-- [\<dateTimeSerialization > – Element](../../../docs/standard/serialization/datetimeserialization-element.md)  
-- [\<schemaImporterExtensions > – Element](../../../docs/standard/serialization/schemaimporterextensions-element.md)  
+- <xref:System.Xml.Serialization.XmlSchemaImporter>
+- <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
+- [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
+- [\<dateTimeSerialization > – Element](../../../docs/standard/serialization/datetimeserialization-element.md)
+- [\<schemaImporterExtensions> Element](../../../docs/standard/serialization/schemaimporterextensions-element.md)
 - [\<Přidat > – Element pro \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)

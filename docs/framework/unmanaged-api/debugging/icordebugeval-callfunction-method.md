@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 86d48461c601b53d4461331a11a0e0ac7ddc6e7c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 493b4850436b3724287210878992d1d8ce8fe168
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412543"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54589396"
 ---
 # <a name="icordebugevalcallfunction-method"></a>ICorDebugEval::CallFunction – metoda
-Nastaví volání zadanou funkci.  
+Nastaví zadanou funkci volání.  
   
  Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0. Použití [icordebugeval2::callparameterizedfunction –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md) místo.  
   
@@ -41,16 +41,16 @@ HRESULT CallFunction (
   
 #### <a name="parameters"></a>Parametry  
  `pFunction`  
- [v] Ukazatel na ICorDebugFunction objekt, který určuje funkce, která má být volána.  
+ [in] Ukazatel na objekt ICorDebugFunction, který určuje funkci, která se má volat.  
   
  `nArgs`  
- [v] Počet argumentů pro funkci.  
+ [in] Počet argumentů pro funkce.  
   
  `ppArgs`  
- [v] Pole ukazatele, každý z nich odkazuje na objekt ICorDebugValue, který určuje argument mají být předány funkce.  
+ [in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugValue, který určuje argument předaný do funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je virtuální, funkce `CallFunction` provede virtuální odesílání. Pokud je v doméně jinou aplikaci, přechod dojde, pokud jsou všechny argumenty také v této doméně.  
+ Pokud je virtuální, funkce `CallFunction` provede virtuální odeslání. Pokud je funkce v různých aplikační domény, přechod dojde, pokud jsou všechny argumenty také v této doméně aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** WindowSee [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -61,5 +61,5 @@ HRESULT CallFunction (
   
  **Verze rozhraní .NET framework:** 1.1, 1.0  
   
-## <a name="see-also"></a>Viz také  
- [CallParameterizedFunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md)
+## <a name="see-also"></a>Viz také:
+- [CallParameterizedFunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md)

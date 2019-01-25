@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření základního prvku Windows Forms ToolStrip se standardními položkami pomocí Návrháře'
+title: 'Postupy: Vytvoření základní Windows Forms ToolStrip se standardními položkami pomocí návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ToolStrip control [Windows Forms], creating
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - toolbars [Windows Forms], adding items
 - ToolStrip control [Windows Forms], adding standard items
 ms.assetid: 028deb1a-acf8-4911-979a-ba8431cd9d82
-ms.openlocfilehash: 05ca122f425f929264669ca4914f87e850154246
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: f36df117ee7bb7bcdb79ccb134c914288ec6903d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43778357"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54602673"
 ---
-# <a name="how-to-create-a-basic-windows-forms-toolstrip-with-standard-items-using-the-designer"></a>Postupy: Vytvoření základního prvku Windows Forms ToolStrip se standardními položkami pomocí Návrháře
+# <a name="how-to-create-a-basic-windows-forms-toolstrip-with-standard-items-using-the-designer"></a>Postupy: Vytvoření základní Windows Forms ToolStrip se standardními položkami pomocí návrháře
 Následující postup ukazuje, jak vytvořit <xref:System.Windows.Forms.ToolStrip> a přidejte sedm <xref:System.Windows.Forms.ToolStripButton> ovládací prvky, které představují typické úlohy.  
   
 > [!NOTE]
@@ -28,9 +28,9 @@ Následující postup ukazuje, jak vytvořit <xref:System.Windows.Forms.ToolStri
   
 3.  V **ToolStrip – úlohy** podokně zvolte **vložit standardní položky**.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.ToolStrip>  
- [Přehled ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
- [Ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)  
- [Architektura ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)  
- [Shrnutí technologie ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.ToolStrip>
+- [Přehled ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
+- [Ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)
+- [Architektura ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)
+- [Shrnutí technologie ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)

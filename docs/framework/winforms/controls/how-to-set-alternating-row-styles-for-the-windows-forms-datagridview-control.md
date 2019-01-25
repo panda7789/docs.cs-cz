@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení střídavých stylů řádků pro ovládací prvek Windows Forms DataGridView'
+title: 'Postupy: Nastavení stylů střídavých řádků pro ovládací prvek Windows Forms DataGridView'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,19 +9,19 @@ helpviewer_keywords:
 - data grids [Windows Forms], row styles
 - rows [Windows Forms], data grids
 ms.assetid: 699ef759-458c-426d-ac87-7c7e71b018ae
-ms.openlocfilehash: 9d8c926935b879911d1503579c655a1ab6074681
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ba5aaec9e66f1d3c66bb50709f6fbd4afde893ae
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525293"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54562723"
 ---
-# <a name="how-to-set-alternating-row-styles-for-the-windows-forms-datagridview-control"></a>Postupy: Nastavení střídavých stylů řádků pro ovládací prvek Windows Forms DataGridView
+# <a name="how-to-set-alternating-row-styles-for-the-windows-forms-datagridview-control"></a>Postupy: Nastavení stylů střídavých řádků pro ovládací prvek Windows Forms DataGridView
 Tabulková data se často zobrazí uživatelům ve formátu účetní knihy kde střídavé řádky mají různé barvy. Tento formát usnadňuje uživatelům řekněte, buněk, které jsou v jednotlivých řádcích, zejména u širokých tabulek, které mají mnoho sloupců.  
   
  S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, můžete zadat informace o dokončení stylu pro střídavé řádky. To umožňuje použití vlastnosti stylu, jako je barva popředí a písma, kromě barvu pozadí k rozlišení střídavé řádky.  
   
- Není poskytována podpora pro tuto úlohu v sadě Visual Studio.  Viz také [postupy: nastavení střídavých stylů řádků pro ovládací prvek DataGridView formuláře Windows ovládacího prvku pomocí návrháře](https://msdn.microsoft.com/library/3z9sk148\(v=vs.110\)).  
+ Není poskytována podpora pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Nastavení stylů střídavých řádků pro Windows Forms DataGridView pomocí návrháře](https://msdn.microsoft.com/library/3z9sk148\(v=vs.110\)).  
   
 ### <a name="to-set-alternating-row-styles-programmatically"></a>Nastavení stylů střídavých řádků prostřednictvím kódu programu  
   
@@ -43,12 +43,12 @@ Tabulková data se často zobrazí uživatelům ve formátu účetní knihy kde 
 ## <a name="robust-programming"></a>Robustní programování  
  Pro maximální rozšiřitelnost, by měly sdílet <xref:System.Windows.Forms.DataGridViewCellStyle> objektů mezi více řádky, sloupce nebo buňky, které používají stejné styly, spíše než nastavení vlastnosti stylu pro každý prvek samostatně. Další informace najdete v tématu [osvědčené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.DataGridView.AlternatingRowsDefaultCellStyle%2A?displayProperty=nameWithType>  
- <xref:System.Windows.Forms.DataGridView.RowsDefaultCellStyle%2A?displayProperty=nameWithType>  
- <xref:System.Windows.Forms.DataGridView>  
- <xref:System.Windows.Forms.DataGridViewCellStyle>  
- [Základní formátování a práce se styly v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/basic-formatting-and-styling-in-the-windows-forms-datagridview-control.md)  
- [Styly buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)  
- [Doporučené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)  
- [Postupy: Nastavení písma a barevných stylů v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.DataGridView.AlternatingRowsDefaultCellStyle%2A?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.DataGridView.RowsDefaultCellStyle%2A?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.DataGridView>
+- <xref:System.Windows.Forms.DataGridViewCellStyle>
+- [Základní formátování a práce se styly v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/basic-formatting-and-styling-in-the-windows-forms-datagridview-control.md)
+- [Styly buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)
+- [Doporučené postupy pro změnu velikosti ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)
+- [Postupy: Nastavení písma a barevných stylů v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: abf92749e1139a85ea2f49fb5d5caff69ce39c24
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b4383bf8b7369f5906fe4664056f1cd938f04584
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33458458"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54607537"
 ---
 # <a name="icorprofilercallback2rootreferences2-method"></a>ICorProfilerCallback2::RootReferences2 – metoda
-Upozorní profileru o odkazů na kořenový po uvolnění paměti došlo k chybě. Tato metoda je rozšířením [icorprofilercallback::rootreferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) metoda.  
+Oznámí profileru odkazy na kořenové po uvolňování paměti došlo k chybě. Tato metoda je rozšířením [ICorProfilerCallback::RootReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,33 +40,33 @@ HRESULT RootReferences2(
   
 #### <a name="parameters"></a>Parametry  
  `cRootRefs`  
- [v] Počet elementů ve `rootRefIds`, `rootKinds`, `rootFlags`, a `rootIds` pole.  
+ [in] Počet prvků v `rootRefIds`, `rootKinds`, `rootFlags`, a `rootIds` pole.  
   
  `rootRefIds`  
- [v] Pole ID, objektů každý z nich odkazuje na objekt statické nebo objekt v zásobníku. Elementy v `rootKinds` pole obsahují informace, které klasifikovat odpovídající elementů v `rootRefIds` pole.  
+ [in] Pole objektu ID, každý z nich odkazuje na statický objekt nebo objekt v zásobníku. Prvky `rootKinds` pole obsahují informace, které klasifikovat odpovídající elementy ve `rootRefIds` pole.  
   
  `rootKinds`  
- [v] Pole [COR_PRF_GC_ROOT_KIND](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-kind-enumeration.md) hodnoty, které označují typ kořenové kolekce paměti.  
+ [in] Pole [cor_prf_gc_root_kind –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-kind-enumeration.md) hodnoty, které označují typ kořenové kolekce uvolnění paměti.  
   
  `rootFlags`  
- [v] Pole [COR_PRF_GC_ROOT_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-flags-enumeration.md) hodnoty, které popisuje vlastnosti kořenové kolekce paměti.  
+ [in] Pole [cor_prf_gc_root_flags –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-flags-enumeration.md) hodnot, které popisují vlastnosti kořenové kolekce uvolnění paměti.  
   
  `rootIds`  
- [v] Pole UINT_PTR hodnot, které odkazují na celé číslo, které obsahuje další informace o kořenové kolekce paměti, v závislosti na hodnotě `rootKinds` parametr.  
+ [in] Pole UINT_PTR hodnoty, které odkazují na celé číslo, které obsahuje další informace o kořenové kolekce uvolnění paměti, v závislosti na hodnotu `rootKinds` parametru.  
   
- Pokud je typ kořenové zásobníku, kořenové ID je pro tuto funkci, která obsahuje proměnnou. Pokud toto ID kořenové 0, funkce je nepojmenované funkce, která je interní modulu CLR. Je-li typ kořenové popisovač, je kořenový ID pro popisovač kolekce paměti. Pro ostatní typy kořenové ID je neprůhledné hodnoty a třeba ji ignorovat.  
+ Pokud je typ kořenového zásobníku, ID kořenového je pro funkci, která obsahuje proměnnou. Pokud toto ID kořenového je 0, funkce je nepojmenovaný funkce, který je interní modulu CLR. Pokud je typ kořenového popisovač, ID kořenového je pro popisovač kolekce uvolnění paměti. U jiných typů kořenové ID je neprůhledná hodnota a je třeba ignorovat.  
   
 ## <a name="remarks"></a>Poznámky  
- `rootRefIds`, `rootKinds`, `rootFlags`, A `rootIds` pole jsou paralelní pole. To znamená `rootRefIds[i]`, `rootKinds[i]`, `rootFlags[i]`, a `rootIds[i]` všechny týkají stejnou kořenovou.  
+ `rootRefIds`, `rootKinds`, `rootFlags`, A `rootIds` pole jsou paralelní pole. To znamená `rootRefIds[i]`, `rootKinds[i]`, `rootFlags[i]`, a `rootIds[i]` všechny týkají stejným kořenem.  
   
- Obě `RootReferences` a `RootReferences2` se nazývají oznámit profileru. Profilery bude obvykle implementovat jednu metodu nebo dalších, ale ne obojí, protože předaná informace `RootReferences2` je nadmnožinou, je předaná `RootReferences`.  
+ Obě `RootReferences` a `RootReferences2` jsou volány pro oznámení profileru. Profilery obvykle implementuje jednu metodu nebo druhé, ale ne obojí, protože předaným informace `RootReferences2` je nadstavbou jazyka, které předáno `RootReferences`.  
   
- Je možné pro položky v `rootRefIds` být nula, což znamená, že odkaz na odpovídající kořenové má hodnotu null a není odkaz na objekt v haldě spravované.  
+ Je možné pro položky v `rootRefIds` rovno nule, což znamená, že odpovídající kořenový odkaz má hodnotu null a neodkazuje na objekt na spravované haldě.  
   
- Vrácený objekt ID `RootReferences2` nejsou platné během zpětného volání sebe, protože kolekce paměti může být uprostřed přesun objektů z původní adresy na nové adresy. Proto profilery neměli zkontrolovat objekty během `RootReferences2` volání. Když [icorprofilercallback2::garbagecollectionfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) je volána, všechny objekty byly přesunuty do nového umístění a může být prověřovány bezpečně.  
+ ID objektů vrácených `RootReferences2` nejsou platné během zpětného volání, protože kolekce uvolnění paměti může být uvnitř přesun objektů ze staré adresy k nové adresy. Proto by se neměly pokoušet profilery pro kontrolu objektů během `RootReferences2` volání. Když [ICorProfilerCallback2::GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) je volána, všechny objekty se přesunuly na jejich nových umístění a můžete ho bezpečně zkontrolovat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -74,6 +74,6 @@ HRESULT RootReferences2(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [ICorProfilerCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)

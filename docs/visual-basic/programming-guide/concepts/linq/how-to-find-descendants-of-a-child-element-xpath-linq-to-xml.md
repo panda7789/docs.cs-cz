@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: vyhledání následníků podřízený Element (XPath-technologie LINQ to XML) (Visual Basic)'
+title: 'Postupy: Vyhledání potomků podřízeného elementu (XPath – LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a958af40-f754-4409-85f9-7746978d4cb3
-ms.openlocfilehash: c29e8badd757b41d765e7d68f7ecd45c8dea8a14
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5d5ccd46a595a7ec7477246dd9a9cd351614fdf8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643144"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54520955"
 ---
-# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-visual-basic"></a>Postupy: vyhledání následníků podřízený Element (XPath-technologie LINQ to XML) (Visual Basic)
-Toto téma ukazuje, jak získat následnickým elementům podřízeného prvku s konkrétním názvem.  
+# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání potomků podřízeného elementu (XPath – LINQ to XML) (Visual Basic)
+Toto téma ukazuje, jak získat následnickým elementům podřízeného elementu s konkrétním názvem.  
   
  Výraz XPath je:  
   
  `./Paragraph//Text/text()`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad simuluje problémy extrahování text z reprezentaci XML zpracování textu dokumentu. První vybere všechny `Paragraph` prvky a poté vyberou se všechny `Text` následnickým elementům jednotlivých `Paragraph` elementu. Toto není vyberte následníka `Text` prvky `Comment` elementu.  
+ Tento příklad napodobuje problémy s extrahují text z reprezentace XML textovém dokumentu. První vybere všechny `Paragraph` elementy a pak ji vybere všechny `Text` následnickým elementům jednotlivých `Paragraph` elementu. To nevybere následníka `Text` prvky `Comment` elementu.  
   
 ```vb  
 Dim root As XElement = _  
@@ -69,5 +69,5 @@ Results are identical
 This is the start of a sentence.  This is a second sentence.  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

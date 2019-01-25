@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: 81e804a3-ef11-4d39-bbde-bfa012c179e2
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: fd8ddf5daec4ab7e4de636a2f14cf413aedaa99a
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: 3a5dfffa7892cb0cec837a2492e1a4ecdfe60be0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261430"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54520968"
 ---
 # <a name="ltaddgt-element-for-ltlistenersgt-for-lttracegt"></a>&lt;Přidat&gt; – Element pro &lt;naslouchacích procesů&gt; pro &lt;trasování&gt;
 Přidá naslouchací proces pro **naslouchacích procesů** kolekce.  
   
  \<Konfigurace >  
-\<System.Diagnostics >  
+\<system.diagnostics>  
 \<trasování >  
 \<naslouchací procesy >  
 \<add>  
@@ -41,7 +41,7 @@ Přidá naslouchací proces pro **naslouchacích procesů** kolekce.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**Typ**|Požadovaný atribut.<br /><br /> Určuje typ naslouchací proces. Je nutné použít řetězec, který splňuje požadavky uvedené v [zadání plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|**type**|Požadovaný atribut.<br /><br /> Určuje typ naslouchací proces. Je nutné použít řetězec, který splňuje požadavky uvedené v [zadání plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
 |**initializeData**|Nepovinný atribut.<br /><br /> Řetězec předaný konstruktoru pro zadanou třídu.|  
 |**Jméno**|Nepovinný atribut.<br /><br /> Určuje název naslouchacího procesu.|  
   
@@ -103,11 +103,11 @@ Přidá naslouchací proces pro **naslouchacích procesů** kolekce.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Diagnostics.Trace>  
- <xref:System.Diagnostics.Debug>  
- <xref:System.Diagnostics.EventLogTraceListener>  
- <xref:System.Diagnostics.ConsoleTraceListener>  
- <xref:System.Diagnostics.TextWriterTraceListener>  
- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Diagnostics.Trace>
+- <xref:System.Diagnostics.Debug>
+- <xref:System.Diagnostics.EventLogTraceListener>
+- <xref:System.Diagnostics.ConsoleTraceListener>
+- <xref:System.Diagnostics.TextWriterTraceListener>
+- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

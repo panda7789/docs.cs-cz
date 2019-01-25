@@ -17,21 +17,21 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-ms.openlocfilehash: 5bf1a0e1d4d8f620f83aab50aa50009a0f6a6cf4
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 4a99f4826a34ff3ab022686b6615f199558d7af4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43855969"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54606293"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
 [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] aplikace jsou často závislé na souborech, které obsahují data – spustitelný soubor, například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuku. Windows Presentation Foundation (WPF) nabízí zvláštní podporu pro konfiguraci, identifikaci a použití těchto typů datových souborů, které se nazývají datových souborů aplikací. Tato podpora zásadní kolem konkrétní sadu typů souborů dat aplikace, včetně:  
   
--   **Soubory prostředků**: datové soubory, které jsou kompilovány do spustitelný soubor nebo knihovna [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
+-   **Soubory prostředků**: Datové soubory, které jsou kompilovány do spustitelný soubor nebo knihovna [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
   
--   **Obsah souborů**: samostatné datové soubory, které mají přidružený spustitelný soubor k explicitní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
+-   **Obsah souborů**: Samostatné datové soubory, které mají přidružený spustitelný soubor k explicitní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
   
--   **Lokality původu souborů**: samostatné datové soubory, které mají žádné jejich spojení se spustitelný soubor [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
+-   **Lokality původu souborů**: Samostatné datové soubory, které mají žádné jejich spojení se spustitelný soubor [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
   
  Jeden rozlišení, aby se mezi tyto tři typy souborů je, že jsou zdrojové soubory a soubory obsahu v okamžiku sestavení; známé sestavení má explicitní znalosti z nich. Ke stránce původu soubory, ale sestavení můžou nemají žádné informace o jejich vůbec, nebo implicitní znalosti prostřednictvím sadu [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] odkazu; v případě, není zaručeno, že odkazované web zdrojový soubor skutečně existuje.  
   
@@ -59,7 +59,7 @@ ms.locfileid: "43855969"
  V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], soubor prostředků je soubor, který je součástí [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] projektu jako `Resource` položky.  
   
 ```xml  
-<Project "xmlns=http://schemas.microsoft.com/developer/msbuild/2003" ... >  
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
   ...  
   <ItemGroup>  
     <Resource Include="ResourceFile.xaml" />  
@@ -238,5 +238,5 @@ ms.locfileid: "43855969"
 ## <a name="rebuilding-after-changing-build-type"></a>Znovu sestavit po změně typ sestavení  
  Po změně sestavení typu datového souboru aplikace, budete muset znovu vytvořit celé aplikace, ujistěte se, že tyto změny se použijí. Pokud vytváříte pouze aplikace, nepoužijí se změny.  
   
-## <a name="see-also"></a>Viz také  
- [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)
+## <a name="see-also"></a>Viz také:
+- [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)

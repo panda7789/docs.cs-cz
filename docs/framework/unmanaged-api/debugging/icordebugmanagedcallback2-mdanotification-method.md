@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 64b09c173e2f66d4c650083cc12f8a0ac2c92007
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 90c805a5f1f1da990564034fc292562d5f933d71
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417225"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54608086"
 ---
 # <a name="icordebugmanagedcallback2mdanotification-method"></a>ICorDebugManagedCallback2::MDANotification – metoda
-Poskytuje oznámení, že provádění kódu se vyskytla spravované ladění pomocníka (MDA) v aplikaci, která je právě laděn.  
+Poskytuje oznámení, že spuštění kódu došlo k Pomocník spravovaného ladění (MDA) v aplikaci, která je právě laděna.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,31 +39,31 @@ HRESULT MDANotification(
   
 #### <a name="parameters"></a>Parametry  
  `pController`  
- [v] Ukazatel na ICorDebugController rozhraní, které zpřístupňuje proces nebo doménu aplikace, ve kterém MDA došlo.  
+ [in] Ukazatel na icordebugcontroller – rozhraní, která zveřejňuje proces nebo doménu aplikace, ve kterém MDA došlo.  
   
- Ladicí program neprovádějte žádné předpoklady o tom, zda je řadič procesu nebo doménu aplikace, i když může se vždy dotázat rozhraní pro určení.  
+ Ladicí program by neměla provést nevyvozujte předpoklady o tom, jestli je kontroler proces nebo doménu aplikace, i když ho vždy dotazování rozhraní pro určení.  
   
  `pThread`  
- [v] Ukazatel na ICorDebugThread rozhraní, které vystavuje spravovaných vláken, na kterém došlo k události ladění.  
+ [in] Ukazatel na icordebugthread – rozhraní, která zveřejňuje spravované vlákno, na kterém došlo k události ladění.  
   
- Pokud MDA došlo k chybě na nespravované vláken, hodnota `pThread` bude mít hodnotu null.  
+ Pokud MDA došlo k chybě na nespravované vlákna, hodnota `pThread` bude mít hodnotu null.  
   
- ID vlákna operační systém (OS), musíte si z samotného objektu (mda).  
+ ID vlákna operačního systému (OS) musí získat od samotného objektu MDA.  
   
  `pMDA`  
- [v] Ukazatel na [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) rozhraní, která zveřejňuje informace (mda).  
+ [in] Ukazatel [icordebugmda –](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) rozhraní, které zveřejňuje informace o MDA.  
   
 ## <a name="remarks"></a>Poznámky  
- MDA je Heuristická upozornění a nevyžaduje žádné explicitní ladicí program akce s výjimkou volání [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) Chcete-li pokračovat v provádění aplikace, která je právě laděn.  
+ MDA heuristické upozornění a nevyžaduje žádnou akci explicitní ladicího programu s výjimkou volání [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) pokračovat provádění aplikace, která je právě laděna.  
   
- Modul CLR (CLR) můžete určit, který při vyvolání mda a data, která je v jakékoli dané MDA v libovolném bodě. Proto by nemělo ladicí programy sestavení žádné funkce, které vyžadují určité vzory (mda).  
+ Modul CLR (CLR) můžete určit, které jsou vyvolávány mda a která data se v jakékoli dané MDA v libovolném bodě. Proto by neměl ladicí programy sestavení všechny funkce, které vyžadují specifické vzory MDA.  
   
- Mda mohou být zařazeny do fronty a aktivováno krátce po narazí (mda). Toto může nastat, pokud modul runtime musí počkat, dokud nebude dosaženo bod bezpečné pro ohlásí MDA, místo aktivuje MDA, když se zjistí. Taky to znamená, že modul runtime může aktivovat počet mda v jedné sadě zařazených do fronty zpětných volání (podobně jako událost operace "připojit").  
+ Mda mohou být zařazeny do fronty a krátce po narazí MDA aktivuje. Může k tomu dojít, pokud modul runtime musí čekat, dokud nedosáhne bod bezpečné pro aktivaci MDA, místo spouštění MDA, pokud se setká. Také znamená, že modul runtime může vyvolat počet mda v jediné sady kontrolních zařazených do fronty zpětná volání (podobné události operace "připojit").  
   
- Ladicí program by měl verze odkaz na `ICorDebugMDA` instance ihned po vrácení z `MDANotification` zpětné volání, chcete-li povolit modul CLR recyklace paměťové nároky (mda). Uvolnění instance může zvýšit výkon, pokud se aktivuje mnoho mda.  
+ Ladicí program by měla uvolnit odkaz na `ICorDebugMDA` instance ihned po vrácení z `MDANotification` zpětné volání, chcete-li povolit modul CLR recyklace paměti používané MDA. Uvolnění instance může zvýšit výkon, pokud se ohlásí mnoho mda.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -71,7 +71,7 @@ HRESULT MDANotification(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

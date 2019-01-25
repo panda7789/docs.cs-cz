@@ -1,5 +1,5 @@
 ---
-title: ICorDebugObjectEnum Interface1
+title: ICorDebugObjectEnum – rozhraní 1
 ms.date: 03/30/2017
 api_name:
 - ICorDebugObjectEnum
@@ -16,29 +16,29 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3674643d5590c320bddd5a0e6f1f95814e07ecf1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3a9f10301db488e4ca68ce5fdaf0ba767053d7d4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420200"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54546998"
 ---
-# <a name="icordebugobjectenum-interface1"></a>ICorDebugObjectEnum Interface1
-Implementuje metody ICorDebugEnum a zobrazí pole objektů podle jejich relativní virtuální adresy (RVAs).  
+# <a name="icordebugobjectenum-interface1"></a>ICorDebugObjectEnum – rozhraní 1
+Implementuje metody ICorDebugEnum a vytváří výčet polí objektů podle jejich relativních virtuálních adres (RVA).  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectenum-next-method.md)|Získá RVAs o zadaný počet objektů z výčtu, počínaje na aktuální pozici.|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectenum-next-method.md)|Získá RVA zadané počty objektů z výčtu od aktuální pozice.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -46,5 +46,5 @@ Implementuje metody ICorDebugEnum a zobrazí pole objektů podle jejich relativn
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 96352ec5eaba67489dbef999925c56475611746c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b5a1ae284b4f2474cb824ee9dbff2eb82c5a0ead
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33435965"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54568787"
 ---
 # <a name="iclrruntimehostexecuteinappdomain-method"></a>ICLRRuntimeHost::ExecuteInAppDomain – metoda
-Určuje <xref:System.AppDomain> ve kterém se má provést zadanou spravovaného kódu.  
+Určuje, <xref:System.AppDomain> v, který se má spustit zadaný spravovaný kód.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,36 +39,36 @@ HRESULT ExecuteInAppDomain(
   
 #### <a name="parameters"></a>Parametry  
  `AppDomainId`  
- [v] Číselné ID <xref:System.AppDomain> ve kterém se má provést zadanou metodu.  
+ [in] Číselné ID <xref:System.AppDomain> ve kterém chcete provést zadanou metodu.  
   
  `pCallback`  
- [v] Ukazatel na funkci provést v rámci zadaného <xref:System.AppDomain>.  
+ [in] Ukazatele na funkce pro spuštění v rámci zadaného <xref:System.AppDomain>.  
   
  `cookie`  
- [v] Ukazatel na neprůhledné paměti přidělené volajícího. Tento parametr je modul CLR (CLR) předaná funkci zpětného volání domény. Není paměť haldy spravovaného modulu runtime; přidělení i životnost tuto paměť jsou řízeny volající.  
+ [in] Ukazatel na neprůhledné paměť přidělenou volajícímu. Tento parametr je předáván modulem common language runtime (CLR) pro zpětné volání domény. Není runtime spravované haldy paměti. přidělování a životnosti tato paměť se řídí volající.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`ExecuteInAppDomain` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|`ExecuteInAppDomain` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Pokud metoda vrátí E_FAIL, modul CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Pokud metoda vrátí E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ExecuteInAppDomain` Umožňuje kontrolu využití hostiteli over, který spravuje <xref:System.AppDomain> zadanou metodu spravované se má provést v. Hodnota identifikátoru doménu aplikace, který odpovídá hodnotě můžete získat <xref:System.AppDomain.Id%2A> vlastnost voláním [getcurrentappdomainid – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-getcurrentappdomainid-method.md).  
+ `ExecuteInAppDomain` umožňuje hostiteli pro kontrolu využití selhání, který spravuje <xref:System.AppDomain> zadané spravované metody by měly být provedeny v. Hodnota identifikátoru doménu aplikace, která odpovídá hodnotě lze získat <xref:System.AppDomain.Id%2A> vlastnost voláním [getcurrentappdomainid – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-getcurrentappdomainid-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)

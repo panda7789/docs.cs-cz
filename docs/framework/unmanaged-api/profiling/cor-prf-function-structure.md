@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1bc8d588641163ccf98054fdf1930a72a04c770c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 098aaca8ec318b08c87e30c2a9558b7e64494a4c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33452059"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54581999"
 ---
 # <a name="corprffunction-structure"></a>COR_PRF_FUNCTION – struktura
-Poskytuje jedinečný reprezentace funkce kombinací jeho ID s ID jeho Rekompilované verze.  
+Poskytuje reprezentaci jedinečné funkce kombinací jeho ID, identifikátorem její překompilovanou verzi.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,12 +37,12 @@ typedef struct _COR_PRF_FUNCTION {    FunctionID functionId;    ReJITID    reJit
 |Člen|Popis|  
 |------------|-----------------|  
 |`functionId`|ID funkce.|  
-|`reJitId`|ID Rekompilované funkce. Hodnota 0 (nula) představuje původní verze funkce.|  
+|`reJitId`|ID znovu kompilovaný funkce. Hodnota 0 (nula) představuje původní verzi funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl  
   
@@ -50,5 +50,5 @@ typedef struct _COR_PRF_FUNCTION {    FunctionID functionId;    ReJITID    reJit
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)

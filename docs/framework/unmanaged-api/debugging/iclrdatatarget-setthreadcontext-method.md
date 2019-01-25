@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 73697fdd19f2492aabdc0d76e8c1a27c917c85f1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9018ccc27d0afc35b9dfa2d2ebad323c9150ae60
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405535"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580691"
 ---
 # <a name="iclrdatatargetsetthreadcontext-method"></a>ICLRDataTarget::SetThreadContext – metoda
-Nastaví aktuální kontext zadaný vlákno v tento cílový proces. Tato metoda je volána běžné data přístupu služby modulu runtime (CLR) jazyk.  
+Nastaví aktuální kontext ze zadaného vlákna v cílovém procesu. Tato metoda je volána službami common language runtime (CLR) přístup k datům.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +40,21 @@ HRESULT SetThreadContext (
   
 #### <a name="parameters"></a>Parametry  
  `threadID`  
- [v] Identifikátor operačního systému vlákna v tento cílový proces.  
+ [in] Operační systém identifikátor vlákna v cílovém procesu.  
   
  `contextSize`  
- [v] Velikost kontextu.  
+ [in] Velikost kontext.  
   
  `context`  
- [v] Ukazatel na vyrovnávací paměť obsahující kontext.  
+ [in] Ukazatel do vyrovnávací paměti, který obsahuje kontext.  
   
- Data v `context` vyrovnávací paměti bude ve formátu Win32 `CONTEXT` struktura. Kontext určuje data registrace specifické pro procesor, takže definice Win32 `CONTEXT` struktura závisí na architektuře procesoru. Naleznete v souboru WinNT.h hlavičky souboru pro danou definici Win32 `CONTEXT` struktura.  
+ Data v `context` vyrovnávací paměť bude ve formátu Win32 `CONTEXT` struktury. Kontext určuje data registru specifické pro procesor, takže definice Win32 `CONTEXT` struktura závisí na architektuře procesoru. Najdete v souboru WinNT.h hlavičkový soubor pro definici Win32 `CONTEXT` struktury.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je implementována zapisovačem ladění aplikace.  
+ Tato metoda je implementováno tvůrci ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   
@@ -62,5 +62,5 @@ HRESULT SetThreadContext (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

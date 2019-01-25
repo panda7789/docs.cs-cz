@@ -8,12 +8,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: c80d6598540700fdb8559497f10c66726c384519
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 86da57c0f8ecca7e5dada3ae6756739197c3f206
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53239680"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54618971"
 ---
 # <a name="await-c-reference"></a>await – – operátor (Referenční dokumentace jazyka C#)
 `await` Operátor je použít pro úkol v asynchronní metodě vložte bodu pozastavení provádění metody až do dokončení očekávané úlohy. Úloha představuje probíhající práci.  
@@ -68,7 +68,7 @@ Následující příklad vrátí celkový počet znaků na stránkách, jejichž
 
 V předchozím příkladu C# 7.1, která podporuje [ `async` `Main` metoda](../../programming-guide/main-and-command-args/index.md). Protože starší C# verze nepodporují vstupní body aplikace, které vracejí <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>, nelze použít `async` modifikátor `Main` metoda a operátoru await `GetPageLengthsAsync` volání metody. V takovém případě můžete zajistit, aby `Main` metoda čeká na dokončení načtením hodnoty asynchronní operace <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> vlastnost. Pro úlohy, které nesmí vracet hodnotu, můžete volat <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metody. Informace o tom, jak vyberte verzi jazyka najdete v tématu [vyberte C# jazykovou verzi](../configure-language-version.md).
 
-## <a name="see-also"></a>Viz také:  
-- [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/index.md)   
-- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
+## <a name="see-also"></a>Viz také:
+- [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/index.md)
+- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [async](../../../csharp/language-reference/keywords/async.md)

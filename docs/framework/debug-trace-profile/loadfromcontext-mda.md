@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: a9b14db1-d3a9-4150-a767-dcf3aea0071a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3ee575cacbc51fc910770cca145a4280f97b66db
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 43fe2c3bd7d4e1c90fc52997a123d5dbbb297a02
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53144430"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54591338"
 ---
 # <a name="loadfromcontext-mda"></a>loadFromContext – pomocník spravovaného ladění (MDA)
 `loadFromContext` Pomocníka spravovaného ladění (MDA) se aktivuje, pokud je sestavení načteno do `LoadFrom` kontextu. Tato situace může nastat v důsledku volání <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> nebo další podobné metody.  
@@ -22,7 +22,7 @@ ms.locfileid: "53144430"
 ## <a name="symptoms"></a>Příznaky  
  Pomocí některé metody zavaděč může vést k načítání v sestavení `LoadFrom` kontextu. Použití tohoto kontextu může způsobit neočekávané chování pro serializaci, přetypování a řešení závislostí. Obecně je vhodné, že sestavení načtena do `Load` kontext k těmto problémům vyhnout. Je obtížné určit kontext sestavení bylo načteno do bez toto MDA.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  Obecně platí, bylo načteno do sestavení `LoadFrom` kontextu, pokud byl načten z cesty `Load` kontextu, jako je například globální mezipaměti sestavení nebo <xref:System.AppDomainSetup.ApplicationBase%2A?displayProperty=nameWithType> vlastnost.  
   
 ## <a name="resolution"></a>Rozlišení  
@@ -72,5 +72,5 @@ namespace ConsoleApplication1
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>Viz také:
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

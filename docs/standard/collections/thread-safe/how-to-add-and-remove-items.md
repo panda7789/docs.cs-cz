@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidávání a odebírání položek v ConcurrentDictionary'
+title: 'Postupy: Přidání a odebrání položek v ConcurrentDictionary'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 98d30cd89114aa4aa3d4f7f71f5174c54d3fcecb
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 9d8b1c63f10d1d79c3fec6cad87c9a82f03716c8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45677835"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543419"
 ---
-# <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postupy: Přidávání a odebírání položek v ConcurrentDictionary
+# <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postupy: Přidání a odebrání položek v ConcurrentDictionary
 Tento příklad ukazuje, jak přidat, načíst, aktualizovat a odebírat položky z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>. Tato kolekce třída je implementace bezpečné pro vlákna. Doporučujeme vám použít ho pokaždé, když se více vláken může být pokus o přístup k prvkům.  
   
  <xref:System.Collections.Concurrent.ConcurrentDictionary%602> nabízí několik metod pohodlí, které není nutné, aby kód nejprve zkontrolujte, jestli existuje klíč předtím, než se pokusí přidat nebo odebrat data. Následující tabulka uvádí tyto metody pohodlí a popisuje jejich použití.  
@@ -50,5 +50,5 @@ Tento příklad ukazuje, jak přidat, načíst, aktualizovat a odebírat položk
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
+- <xref:System.Collections.Concurrent?displayProperty=nameWithType>
 - [Kolekce se zabezpečenými vlákny](../../../../docs/standard/collections/thread-safe/index.md)

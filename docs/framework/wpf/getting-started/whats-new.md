@@ -1,129 +1,129 @@
 ---
-title: Co&#39;s nové ve verzi WPF 4.5
+title: Co&#39;nového ve verzi 4.5 grafického subsystému WPF
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Presentation Foundation [WPF], what's new
 - WPF [WPF], what's new
 ms.assetid: db086ae4-70bb-4862-95db-2eaca5216bc3
-ms.openlocfilehash: 4e022f75808de36666e53d3e58a0806e4f6d15ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ac389d947417851309c388dd195b1400a20041ca
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33558093"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54544338"
 ---
-# <a name="what39s-new-in-wpf-version-45"></a>Co&#39;s nové ve verzi WPF 4.5
-<a name="introduction"></a> Toto téma obsahuje informace o nových a vylepšených funkcích v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] verze 4.5.  
+# <a name="what39s-new-in-wpf-version-45"></a>Co&#39;nového ve verzi 4.5 grafického subsystému WPF
+<a name="introduction"></a> Toto téma obsahuje informace o nových a vylepšených funkcích [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] verze 4.5.  
   
  Toto téma obsahuje následující oddíly:  
   
 -   [Ovládací prvek pásu karet](#ribbon_control)  
   
--   [Lepší výkon při zobrazení velkého nastaví seskupené dat](#grouped_virtualization)  
+-   [Vylepšili jsme výkon při zobrazování velkých sad seskupených dat](#grouped_virtualization)  
   
--   [Nové funkce VirtualizingPanel](#VirtualizingPanel)  
+-   [Nové funkce pro VirtualizingPanel](#VirtualizingPanel)  
   
 -   [Vytvoření vazby na statické vlastnosti](#static_properties)  
   
--   [Přístup k kolekce na uživatelského rozhraní vláken](#xthread_access)  
+-   [Přístupem ke kolekcím v uživatelském rozhraní vláken](#xthread_access)  
   
--   [Synchronně a asynchronně ověřování dat](#INotifyDataErrorInfo)  
+-   [Synchronní a asynchronní ověření dat.](#INotifyDataErrorInfo)  
   
--   [Automaticky aktualizuje zdroj datová vazba](#delay)  
+-   [Automatické aktualizace zdrojové datové vazby](#delay)  
   
--   [Vytvoření vazby na typy této ICustomTypeProvider implementace](#ICustomTypeProvider)  
+-   [Vytvoření vazby na typy ICustomTypeProvider této implementace](#ICustomTypeProvider)  
   
--   [Načítání informace o vazbě dat z výrazu vazby](#binding_state)  
+-   [Načítání informací o vázání dat z vazbového výrazu](#binding_state)  
   
--   [Kontrola platný objekt DataContext](#DisconnectedSource)  
+-   [Kontrolují se platný objekt kontextu DataContext](#DisconnectedSource)  
   
--   [Přemístění dat, jak změnit hodnoty data (shaping za provozu)](#live_shaping)  
+-   [Přemístění dat při změně dat hodnot (živé tvarování)](#live_shaping)  
   
--   [Vylepšená podpora pro zřízení slabé odkaz na událost](#weak_event_pattern)  
+-   [Vylepšená podpora pro stanovení Slabý odkaz na událost](#weak_event_pattern)  
   
--   [Nové metody pro třídu dispečera](#async)  
+-   [Nové metody pro třídu dispečer](#async)  
   
 -   [Rozšíření značek pro události](#events_markup_extenions)  
   
 <a name="ribbon_control"></a>   
 ## <a name="ribbon-control"></a>Ovládací prvek pásu karet  
- WPF 4.5 se dodává s <xref:System.Windows.Controls.Ribbon.Ribbon> ovládací prvek, který je hostitelem nástrojů Rychlý přístup, nabídku aplikace a karty.  Další informace najdete v tématu [přehled pásu karet](/visualstudio/vsto/ribbon-overview).  
+ WPF 4.5 je součástí <xref:System.Windows.Controls.Ribbon.Ribbon> ovládací prvek, který je hostitelem panelu nástrojů Rychlý přístup, nabídky aplikace a karet.  Další informace najdete v tématu [přehled pásu karet](/visualstudio/vsto/ribbon-overview).  
   
 <a name="grouped_virtualization"></a>   
-## <a name="improved-performance-when-displaying-large-sets-of-grouped-data"></a>Lepší výkon při zobrazení velkého nastaví seskupené dat  
- Virtualizace uživatelského rozhraní nastane, když podmnožinu uživatelského rozhraní (UI) elementy generují z větší počet datových položek, podle které položky se viditelný na obrazovce. <xref:System.Windows.Controls.VirtualizingPanel> Definuje <xref:System.Windows.Controls.VirtualizingPanel.IsVirtualizingWhenGrouping%2A> přidružená vlastnost umožňující virtualizace uživatelského rozhraní pro seskupené data.  Další informace o seskupení dat najdete v tématu Postupy: řazení a skupinu dat pomocí zobrazení v jazyce XAML.  Další informace o virtualizaci seskupené data, najdete v části <xref:System.Windows.Controls.VirtualizingPanel.IsVirtualizingWhenGrouping%2A> přidružená vlastnost.  
+## <a name="improved-performance-when-displaying-large-sets-of-grouped-data"></a>Vylepšili jsme výkon při zobrazování velkých sad seskupených dat  
+ Virtualizace uživatelského rozhraní nastane, pokud se část uživatelského rozhraní (UI) jsou generovány elementy z větší počet datových položek podle položky, které jsou viditelné na obrazovce. <xref:System.Windows.Controls.VirtualizingPanel> Definuje <xref:System.Windows.Controls.VirtualizingPanel.IsVirtualizingWhenGrouping%2A> přidružená vlastnost, která umožňuje virtualizace uživatelského rozhraní pro seskupené data.  Další informace o seskupování dat, naleznete v tématu Postupy: Řazení a seskupení dat použitím zobrazení XAML.  Další informace o virtualizaci seskupená data, najdete v článku <xref:System.Windows.Controls.VirtualizingPanel.IsVirtualizingWhenGrouping%2A> přidružená vlastnost.  
   
 <a name="VirtualizingPanel"></a>   
-## <a name="new-features-for-the-virtualizingpanel"></a>Nové funkce VirtualizingPanel  
+## <a name="new-features-for-the-virtualizingpanel"></a>Nové funkce pro VirtualizingPanel  
   
-1.  Můžete zadat zda <xref:System.Windows.Controls.VirtualizingPanel>, jako <xref:System.Windows.Controls.VirtualizingStackPanel>, zobrazí částečné položky pomocí <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> přidružená vlastnost. Pokud <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> je nastaven na <xref:System.Windows.Controls.ScrollUnit.Item>, <xref:System.Windows.Controls.VirtualizingPanel> zobrazí pouze položky, které jsou zcela viditelné. Pokud <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> je nastaven na <xref:System.Windows.Controls.ScrollUnit.Pixel>, <xref:System.Windows.Controls.VirtualizingPanel> částečně viditelné položky lze zobrazit.  
+1.  Můžete určit, jestli <xref:System.Windows.Controls.VirtualizingPanel>, například <xref:System.Windows.Controls.VirtualizingStackPanel>, zobrazí částečných položek pomocí <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> přidružená vlastnost. Pokud <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> je nastavena na <xref:System.Windows.Controls.ScrollUnit.Item>, <xref:System.Windows.Controls.VirtualizingPanel> zobrazí pouze položky, které jsou zcela viditelné. Pokud <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> je nastavena na <xref:System.Windows.Controls.ScrollUnit.Pixel>, <xref:System.Windows.Controls.VirtualizingPanel> částečně viditelné položky lze zobrazit.  
   
-2.  Můžete zadat velikost mezipaměti před a po zobrazení při <xref:System.Windows.Controls.VirtualizingPanel> je virtualizace pomocí <xref:System.Windows.Controls.VirtualizingPanel.CacheLength%2A> přidružená vlastnost.  Mezipaměť je množství místa nad nebo pod zobrazovacího okna, ve které nejsou virtualizované položky.  Aby nedošlo ke generování prvky uživatelského rozhraní, jako jste přešli do zobrazení pomocí mezipaměti může zlepšit výkon. Mezipaměti se naplní s nižší prioritou, takže aplikace se nestane reagovat během operace. <xref:System.Windows.Controls.VirtualizingPanel.CacheLengthUnit%2A?displayProperty=nameWithType> Vlastnost určuje jednotky měření, který je používán <xref:System.Windows.Controls.VirtualizingPanel.CacheLength%2A?displayProperty=nameWithType>.  
+2.  Můžete zadat velikost mezipaměti před a po zobrazení při <xref:System.Windows.Controls.VirtualizingPanel> virtualizace pomocí <xref:System.Windows.Controls.VirtualizingPanel.CacheLength%2A> přidružená vlastnost.  Mezipaměť je množství místa nad nebo pod zobrazení, ve kterém nejsou virtualizovány položek.  Použití mezipaměti pro zabránění generování prvků uživatelského rozhraní, jako jste přešli do zobrazení může zlepšit výkon. Tak, aby aplikace není přestane během operace se mezipaměť naplní s nižší prioritou. <xref:System.Windows.Controls.VirtualizingPanel.CacheLengthUnit%2A?displayProperty=nameWithType> Vlastnost určuje, který používá měrné jednotky <xref:System.Windows.Controls.VirtualizingPanel.CacheLength%2A?displayProperty=nameWithType>.  
   
 <a name="static_properties"></a>   
 ## <a name="binding-to-static-properties"></a>Vytvoření vazby na statické vlastnosti  
- Statické vlastnosti můžete použít jako zdroj dat vazby. Modul vazby dat rozpozná při změně hodnoty vlastnosti Pokud statické událost se vyvolá.  Například pokud třída `SomeClass` definuje statickou vlastnost s názvem `MyProperty`, `SomeClass` můžete definovat statické událost, která se vyvolá, když hodnota `MyProperty` změny.  Statické událostí můžete použít některý z následujících podpisů.  
+ Statické vlastnosti můžete použít jako zdroj datové vazby. Modul vazby dat rozpozná při změně hodnoty vlastnosti Pokud statické událost se vyvolá.  Například pokud třída `SomeClass` definuje statickou vlastnost s názvem `MyProperty`, `SomeClass` můžete definovat statické události, která se vyvolá se, když hodnota `MyProperty` změny.  Statické události můžete použít kteroukoli z následující signatury.  
   
 -   `public static event EventHandler MyPropertyChanged;`  
   
 -   `public static event EventHandler<PropertyChangedEventArgs> StaticPropertyChanged;`  
   
- Všimněte si, že v prvním případě zpřístupní třídy statických událostí s názvem *PropertyName* `Changed` , předá <xref:System.EventArgs> k obslužné rutině událostí.  V druhém případě zpřístupní třída statické událost s názvem `StaticPropertyChanged` , předá <xref:System.ComponentModel.PropertyChangedEventArgs> k obslužné rutině událostí. Můžete zvolit třídu, která implementuje statickou vlastnost vyvolat změnu vlastnosti oznámení pomocí těchto metod.  
+ Všimněte si, že v prvním případě zpřístupní třídu statické událost s názvem *PropertyName* `Changed` , který předá <xref:System.EventArgs> obslužné rutiny události.  V druhém případě třída zveřejňuje statické událost s názvem `StaticPropertyChanged` , který předá <xref:System.ComponentModel.PropertyChangedEventArgs> obslužné rutiny události. Třídu, která implementuje statickou vlastnost můžete zvolit vytváření vlastnost – oznámení o změnách pomocí některé z metod.  
   
 <a name="xthread_access"></a>   
-## <a name="accessing-collections-on-non-ui-threads"></a>Přístup k kolekce na uživatelského rozhraní vláken  
- WPF umožňuje přístup a úpravy kolekcí dat na vláken než ten, který vytvořil kolekce.  To umožňuje použití vlákna na pozadí a přijímat data z externího zdroje, jako je například databáze, zobrazení dat ve vlákně UI.  Pomocí jiné vlákno k úpravě kolekce, uživatelské rozhraní stále poměrně rychle reaguje na interakci s uživatelem.  
+## <a name="accessing-collections-on-non-ui-threads"></a>Přístupem ke kolekcím v uživatelském rozhraní vláken  
+ WPF umožňuje přístup a úpravy dat kolekce na vláknech než ten, který vytvoří kolekci.  To umožňuje použití vlákna na pozadí pro příjem dat z externího zdroje, jako je například databáze a zobrazení dat na vlákně UI.  S použitím jiného vlákna k úpravě kolekce, uživatelské rozhraní stále poměrně rychle reaguje na interakci uživatele.  
   
 <a name="INotifyDataErrorInfo"></a>   
-## <a name="synchronously-and-asynchronously-validating-data"></a>Synchronně a asynchronně ověřování dat  
- <xref:System.ComponentModel.INotifyDataErrorInfo> Rozhraní umožňuje data entity třídy k implementaci vlastních ověřovacích pravidel a vystavit výsledky ověření asynchronně. Toto rozhraní podporuje také objekty vlastní chyby, několik chyb na vlastnost, mezi vlastnost chyb a chyb na úrovni entit.  Další informace naleznete v tématu <xref:System.ComponentModel.INotifyDataErrorInfo>.  
+## <a name="synchronously-and-asynchronously-validating-data"></a>Synchronní a asynchronní ověření dat.  
+ <xref:System.ComponentModel.INotifyDataErrorInfo> Rozhraní umožňuje datové entity třídy k implementaci vlastních ověřovacích pravidel a zpřístupňují výsledky ověření asynchronně. Toto rozhraní podporuje také objekty vlastní chyby, více chyb na vlastnost, různé vlastnosti chyb a chyb na úrovni entity.  Další informace naleznete v tématu <xref:System.ComponentModel.INotifyDataErrorInfo>.  
   
 <a name="delay"></a>   
-## <a name="automatically-updating-the-source-of-a-data-binding"></a>Automaticky aktualizuje zdroj datová vazba  
- Pokud používáte datové vazby k aktualizaci zdroje dat, můžete použít <xref:System.Windows.Data.BindingBase.Delay%2A> vlastnosti a určit tak množství času předat po provedení změn vlastnosti v cílovém před aktualizací zdroje.  Předpokládejme například, že máte <xref:System.Windows.Controls.Slider> s jeho <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> vlastnost data obousměrný vázány na vlastnost objekt dat a <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> je nastavena na <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>.  V tomto příkladu, když se uživatel přesune <xref:System.Windows.Controls.Slider>, zdroj aktualizace pro každý pixelů, <xref:System.Windows.Controls.Slider> přesune.  Zdrojový objekt obvykle musí hodnota posuvník pouze tehdy, když posuvníku <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> zastaví změna.  Aby zdroj aktualizace příliš často, použijte <xref:System.Windows.Data.BindingBase.Delay%2A> zdroj nesmí aktualizace, dokud množství času uplyne po úchytu zastaví přesunutí.  
+## <a name="automatically-updating-the-source-of-a-data-binding"></a>Automatické aktualizace zdrojové datové vazby  
+ Pokud používáte datové vazby k aktualizaci zdroje dat, můžete použít <xref:System.Windows.Data.BindingBase.Delay%2A> vlastnosti a určit dobu, jakou předat po změně vlastnosti na cíli před aktualizací zdroje.  Předpokládejme například, že máte <xref:System.Windows.Controls.Slider> , který má jeho <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> data vlastnosti obousměrný svázanou s vlastností datového objektu a <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> je nastavena na <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>.  V tomto příkladu, když uživatel přesune <xref:System.Windows.Controls.Slider>, zdroj aktualizace pro každý pixel, který <xref:System.Windows.Controls.Slider> přesouvá.  Zdrojový objekt obvykle musí hodnota posuvníku pouze tehdy, když posuvníku <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> zastaví změna.  Chcete-li zabránit, aktualizaci zdroje příliš často, použijte <xref:System.Windows.Data.BindingBase.Delay%2A> zadat zdroj by neměly být aktualizovány, až uplyne množství času po jezdce zastaví přesunutí.  
   
 <a name="ICustomTypeProvider"></a>   
-## <a name="binding-to-types-that-implement-icustomtypeprovider"></a>Vytvoření vazby na typy této ICustomTypeProvider implementace  
- WPF podporuje datovou vazbu na objekty, které implementují <xref:System.Reflection.ICustomTypeProvider>, označované také jako vlastní typy.  V následujících případech můžete použít vlastní typy.  
+## <a name="binding-to-types-that-implement-icustomtypeprovider"></a>Vytvoření vazby na typy ICustomTypeProvider této implementace  
+ WPF podporuje datovou vazbu pro objekty, které implementují <xref:System.Reflection.ICustomTypeProvider>, označovaný také jako vlastní typy.  V následujících případech můžete použít vlastní typy.  
   
-1.  Jako <xref:System.Windows.PropertyPath> v datové vazbě. Například <xref:System.Windows.Data.Binding.Path%2A> vlastnost <xref:System.Windows.Data.Binding> vlastností vlastního typu, můžete odkazovat.  
+1.  Jako <xref:System.Windows.PropertyPath> v datové vazbě. Například <xref:System.Windows.Data.Binding.Path%2A> vlastnost <xref:System.Windows.Data.Binding> může odkazovat na vlastnost vlastního typu.  
   
 2.  Jako hodnotu <xref:System.Windows.DataTemplate.DataType%2A> vlastnost.  
   
-3.  Jako typ, který určuje automaticky generované sloupců v <xref:System.Windows.Controls.DataGrid>.  
+3.  Jako typ, který určuje automaticky generované sloupce v <xref:System.Windows.Controls.DataGrid>.  
   
 <a name="binding_state"></a>   
-## <a name="retrieving-data-binding-information-from-a-binding-expression"></a>Načítání informace o vazbě dat z výrazu vazby  
- V některých případech se mohou objevit <xref:System.Windows.Data.BindingExpression> z <xref:System.Windows.Data.Binding> a potřebujete informace o zdrojové a cílové objekty vazby.  Přibyla nová rozhraní API umožňují získat zdrojový nebo cílový objekt nebo přidružené vlastnosti.  Pokud máte <xref:System.Windows.Data.BindingExpression>, použijte následující rozhraní API a získat informace o zdrojové a cílové.  
+## <a name="retrieving-data-binding-information-from-a-binding-expression"></a>Načítání informací o vázání dat z vazbového výrazu  
+ V některých případech se mohou zobrazovat <xref:System.Windows.Data.BindingExpression> z <xref:System.Windows.Data.Binding> a potřebujete informace o zdrojové a cílové objektů vazby.  Přibyla nová rozhraní API vám umožní získat zdrojové nebo cílové objektů nebo přidružené vlastnosti.  Pokud máte <xref:System.Windows.Data.BindingExpression>, použijte následující rozhraní API a získat informace o zdrojové a cílové.  
   
-|Tuto hodnotu najdete vazby|Použít toto rozhraní API|  
+|Tuto hodnotu najdete vazby|Pomocí tohoto rozhraní API|  
 |---------------------------------------|------------------|  
 |Cílový objekt|<xref:System.Windows.Data.BindingExpressionBase.Target%2A?displayProperty=nameWithType>|  
 |Vlastnost target|<xref:System.Windows.Data.BindingExpressionBase.TargetProperty%2A?displayProperty=nameWithType>|  
 |Zdrojový objekt|<xref:System.Windows.Data.BindingExpression.ResolvedSource%2A?displayProperty=nameWithType>|  
-|Zdrojová vlastnost|<xref:System.Windows.Data.BindingExpression.ResolvedSourcePropertyName%2A?displayProperty=nameWithType>|  
-|Jestli <xref:System.Windows.Data.BindingExpression> patří <xref:System.Windows.Data.BindingGroup>|<xref:System.Windows.Data.BindingExpressionBase.BindingGroup%2A?displayProperty=nameWithType>|  
-|Vlastník <xref:System.Windows.Data.BindingGroup>|<xref:System.Windows.Data.BindingGroup.Owner%2A>|  
+|Vlastnost source|<xref:System.Windows.Data.BindingExpression.ResolvedSourcePropertyName%2A?displayProperty=nameWithType>|  
+|Zda <xref:System.Windows.Data.BindingExpression> patří do <xref:System.Windows.Data.BindingGroup>|<xref:System.Windows.Data.BindingExpressionBase.BindingGroup%2A?displayProperty=nameWithType>|  
+|Vlastníka <xref:System.Windows.Data.BindingGroup>|<xref:System.Windows.Data.BindingGroup.Owner%2A>|  
   
 <a name="DisconnectedSource"></a>   
-## <a name="checking-for-a-valid-datacontext-object"></a>Kontrola platný objekt DataContext  
- Existují případy, kdy <xref:System.Windows.FrameworkElement.DataContext%2A> z kontejner položek v <xref:System.Windows.Controls.ItemsControl> dojde k odpojení.  Kontejner položek je element uživatelského rozhraní, který zobrazí položky v <xref:System.Windows.Controls.ItemsControl>.  Když <xref:System.Windows.Controls.ItemsControl> data vázaná na kolekci kontejner položek se generuje pro každou položku. V některých případech jsou kontejnery položek vyřazeny z vizuálním stromu. Jsou dvě typickými případy, kde se odebere kontejner položek při odebrání položky ze zdrojové kolekce a když je povolena virtualizace na <xref:System.Windows.Controls.ItemsControl>. V těchto případech <xref:System.Windows.FrameworkElement.DataContext%2A> položky kontejneru je možnost sentinel objekt, který je vrácený <xref:System.Windows.Data.BindingOperations.DisconnectedSource%2A?displayProperty=nameWithType> statickou vlastnost.  Byste měli zkontrolovat, zda <xref:System.Windows.FrameworkElement.DataContext%2A> rovná <xref:System.Windows.Data.BindingOperations.DisconnectedSource%2A> objekt před přístupem k <xref:System.Windows.FrameworkElement.DataContext%2A> k položky kontejneru.  
+## <a name="checking-for-a-valid-datacontext-object"></a>Kontrolují se platný objekt kontextu DataContext  
+ Existují případy, kdy <xref:System.Windows.FrameworkElement.DataContext%2A> položky kontejneru v <xref:System.Windows.Controls.ItemsControl> se odpojí.  Kontejner položek je prvek uživatelského rozhraní, které zobrazuje položky v <xref:System.Windows.Controls.ItemsControl>.  Když <xref:System.Windows.Controls.ItemsControl> data vazbou na určitou kolekci, kontejner položek se generuje pro každou položku. V některých případech kontejnery položky budou odebrány z vizuálního stromu. Jsou dva typické případy, ve kterém je kontejner položek odebrána po odebrání položky ze zdrojové kolekce a když je povolena virtualizace na <xref:System.Windows.Controls.ItemsControl>. V těchto případech <xref:System.Windows.FrameworkElement.DataContext%2A> nastavíte vlastnost kontejner položek sentinel objekt, který je vrácený <xref:System.Windows.Data.BindingOperations.DisconnectedSource%2A?displayProperty=nameWithType> statickou vlastnost.  Byste měli zkontrolovat, zda <xref:System.Windows.FrameworkElement.DataContext%2A> rovná <xref:System.Windows.Data.BindingOperations.DisconnectedSource%2A> objektu před přístupem k <xref:System.Windows.FrameworkElement.DataContext%2A> položky kontejneru.  
   
 <a name="live_shaping"></a>   
-## <a name="repositioning-data-as-the-datas-values-change-live-shaping"></a>Přemístění dat, jak změnit hodnoty data (shaping za provozu)  
- Kolekce dat můžete seskupené, seřadit nebo filtrovat. WPF 4.5 umožňuje data k uspořádání změnit, pokud se mění data. Předpokládejme například, že aplikace používá <xref:System.Windows.Controls.DataGrid> seznam na trhu stock a populací jsou seřazené podle uložené hodnoty. Pokud za provozu řazení je povolená na se stavy <xref:System.Windows.Data.CollectionView>, stock pozice v <xref:System.Windows.Controls.DataGrid> přesune, když se stane hodnota skladových větší nebo menší než jiné stock hodnotu.   Další informace najdete v tématu <xref:System.ComponentModel.ICollectionViewLiveShaping> rozhraní.  
+## <a name="repositioning-data-as-the-datas-values-change-live-shaping"></a>Přemístění dat při změně dat hodnot (živé tvarování)  
+ Shromažďování dat můžete seskupené, řazení nebo filtrovat. WPF 4.5 umožňuje data, která mají být změnit jejich uspořádání, když se změní data. Předpokládejme například, že aplikace používá <xref:System.Windows.Controls.DataGrid> na seznamu v burzovního trhu a populací jsou seřazeny podle uložené hodnoty. Pokud řazení za provozu je zapnutá zásob <xref:System.Windows.Data.CollectionView>, pozice skladě v <xref:System.Windows.Controls.DataGrid> přesune, když se stane hodnota stock větší nebo menší než jiný akcie hodnotu.   Další informace najdete v tématu <xref:System.ComponentModel.ICollectionViewLiveShaping> rozhraní.  
   
 <a name="weak_event_pattern"></a>   
-## <a name="improved-support-for-establishing-a-weak-reference-to-an-event"></a>Vylepšená podpora pro zřízení slabé odkaz na událost  
- Implementace vzoru slabé událostí je teď jednodušší, protože odběratele, kteří mají události mohou být součástí ho bez implementace navíc rozhraní.  Obecná <xref:System.Windows.WeakEventManager> třída taky umožňuje odběratelům nechat účastnit vzoru slabé událostí, pokud je vyhrazená <xref:System.Windows.WeakEventManager> neexistuje určité události.  Další informace najdete v tématu [slabé vzory událostí](../../../../docs/framework/wpf/advanced/weak-event-patterns.md).  
+## <a name="improved-support-for-establishing-a-weak-reference-to-an-event"></a>Vylepšená podpora pro stanovení Slabý odkaz na událost  
+ Implementace vzoru slabých událostí je teď jednodušší, protože Odběratelé událostí mohl podílet na to bez implementace rozhraní navíc.  Obecné <xref:System.Windows.WeakEventManager> tříd také umožňuje předplatitelům se účastnit slabý vzor událostí, je-li to vyhrazené <xref:System.Windows.WeakEventManager> pro určitou událost neexistuje.  Další informace najdete v tématu [slabé vzory událostí](../../../../docs/framework/wpf/advanced/weak-event-patterns.md).  
   
 <a name="async"></a>   
-## <a name="new-methods-for-the-dispatcher-class"></a>Nové metody pro třídu dispečera  
- Třída dispečera definuje nové metody pro synchronní a asynchronní operace.  Synchronní <xref:System.Windows.Threading.Dispatcher.Invoke%2A> metoda definuje přetížení, které provést <xref:System.Action> nebo <xref:System.Func%601> parametr. Nový asynchronní metody <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A>, také trvá <xref:System.Action> nebo <xref:System.Func%601> jako parametr pro zpětné volání a vrátí <xref:System.Windows.Threading.DispatcherOperation> nebo <xref:System.Windows.Threading.DispatcherOperation%601>.   <xref:System.Windows.Threading.DispatcherOperation> a <xref:System.Windows.Threading.DispatcherOperation%601> třídy definují <xref:System.Threading.Tasks.Task> vlastnost.  Při volání <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A>, můžete použít `await` – klíčové slovo s buď <xref:System.Windows.Threading.DispatcherOperation> nebo s přiřazenou třídou <xref:System.Threading.Tasks.Task>. Pokud potřebujete synchronně čekat <xref:System.Threading.Tasks.Task> , je vrácen rutinou <xref:System.Windows.Threading.DispatcherOperation> nebo <xref:System.Windows.Threading.DispatcherOperation%601>, volání <xref:System.Windows.Threading.TaskExtensions.DispatcherOperationWait%2A> metoda rozšíření. Volání metody <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> bude mít za následek zablokování Pokud operaci ve frontě na volající vlákno. Další informace o používání <xref:System.Threading.Tasks.Task> k provedení asynchronních operací, najdete v části [paralelismus (Task Parallel Library)](../../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md).  
+## <a name="new-methods-for-the-dispatcher-class"></a>Nové metody pro třídu dispečer  
+ Dispečer třída definuje nové metody pro synchronní a asynchronní operace.  Synchronní <xref:System.Windows.Threading.Dispatcher.Invoke%2A> přetížení, která přijímají definuje metody <xref:System.Action> nebo <xref:System.Func%601> parametru. Nový asynchronní metody <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A>, využívá taky <xref:System.Action> nebo <xref:System.Func%601> jako parametru zpětného volání a vrátí <xref:System.Windows.Threading.DispatcherOperation> nebo <xref:System.Windows.Threading.DispatcherOperation%601>.   <xref:System.Windows.Threading.DispatcherOperation> a <xref:System.Windows.Threading.DispatcherOperation%601> třídy definují <xref:System.Threading.Tasks.Task> vlastnost.  Při volání <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A>, můžete použít `await` – klíčové slovo se buď <xref:System.Windows.Threading.DispatcherOperation> nebo přidružené <xref:System.Threading.Tasks.Task>. Pokud budete muset počkat synchronně <xref:System.Threading.Tasks.Task> , který je vrácen <xref:System.Windows.Threading.DispatcherOperation> nebo <xref:System.Windows.Threading.DispatcherOperation%601>, volání <xref:System.Windows.Threading.TaskExtensions.DispatcherOperationWait%2A> – metoda rozšíření. Volání <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> způsobí zablokování, pokud operace je zařazeno do fronty v volajícího vlákna. Další informace o používání <xref:System.Threading.Tasks.Task> provádět asynchronní operace, najdete v článku [funkční paralelismus (Task Parallel Library)](../../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md).  
   
 <a name="events_markup_extenions"></a>   
 ## <a name="markup-extensions-for-events"></a>Rozšíření značek pro události  
- WPF 4.5 podporuje rozšíření značek pro události.  Při WPF nedefinuje rozšíření značek pro události, budou moci vytvořit rozšíření značek, které je možné s událostmi třetím stranám.  
+ WPF 4.5 podporuje – rozšíření značek pro události.  Zatímco WPF nedefinuje rozšíření značek, který má být použit pro události, budou moct vytvořit rozšíření značek, který lze použít s událostmi třetím stranám.  
   
-## <a name="see-also"></a>Viz také  
- [Novinky v rozhraní .NET Framework](../../../../docs/framework/whats-new/index.md)
+## <a name="see-also"></a>Viz také:
+- [Novinky v rozhraní .NET Framework](../../../../docs/framework/whats-new/index.md)

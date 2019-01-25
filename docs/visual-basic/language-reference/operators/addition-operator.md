@@ -10,12 +10,12 @@ helpviewer_keywords:
 - strings [Visual Basic], concatenating
 - sum operator [Visual Basic]
 ms.assetid: 5694778f-0a2c-4539-8009-f66f318fb46d
-ms.openlocfilehash: 91806c204c313956b292eb9c9be078991f733b4e
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: da0c6f492b068c9caa50468ead47cdc08559bfce
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47231476"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576353"
 ---
 # <a name="-operator-visual-basic"></a>+ – operátor (Visual Basic)
 Přidá dvou čísel nebo kladnou hodnotu číselného výrazu. Můžete také použít ke zřetězení dvou výrazů řetězec.  
@@ -32,7 +32,7 @@ expression1 + expression2
   
 |Termín|Definice|  
 |---|---|  
-|`expression1`|Požadováno. Číselné nebo řetězcové výrazu.|  
+|`expression1`|Povinný parametr. Číselné nebo řetězcové výrazu.|  
 |`expression2`|Vyžaduje se, pokud `+` operátor je výpočet zápornou hodnotu. Číselné nebo řetězcové výrazu.|  
   
 ## <a name="result"></a>Výsledek  
@@ -108,11 +108,11 @@ expression1 + expression2
   
  Chcete-li odstranit nejednoznačnost, používejte `&` namísto `+` pro zřetězení.  
   
-## <a name="see-also"></a>Viz také  
- [& – operátor](../../../visual-basic/language-reference/operators/concatenation-operator.md)  
- [Operátory zřetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)  
- [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
- [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)  
- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+## <a name="see-also"></a>Viz také:
+- [& – operátor](../../../visual-basic/language-reference/operators/concatenation-operator.md)
+- [Operátory zřetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)
+- [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
+- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)

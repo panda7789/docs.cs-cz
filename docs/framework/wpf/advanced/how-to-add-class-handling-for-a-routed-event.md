@@ -9,31 +9,31 @@ helpviewer_keywords:
 - task_core_add_class_handling_routed_properties [WPF]
 - class handlers [WPF], routed events
 ms.assetid: 15b7b06c-9112-4ee5-b30a-65d10c5c5df6
-ms.openlocfilehash: 85c3491c9035d807b4c654659a8641121bb5709f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 10ef6354a426bc43731ca3711a533f26a4bd27b1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33545360"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54619513"
 ---
 # <a name="how-to-add-class-handling-for-a-routed-event"></a>Postupy: Přidání zpracování třídy pro směrovanou událost
-Směrované události mohou být zpracovány, obslužné rutiny třídy nebo instance obslužné rutiny v každém uzlu dané trasy. Obslužné rutiny třídy jsou vyvolány nejprve a lze implementace třídy potlačit události z instance zpracování nebo zavést další události konkrétní chování na události, které jsou vlastněny základní třídy. Tento příklad ukazuje dva úzce související techniky pro implementaci třídy obslužné rutiny.  
+Směrované události mohou být zpracovávány obslužné rutiny třídy nebo instance obslužné rutiny na libovolném daného uzlu v této trase. Obslužné rutiny třídy jsou vyvolány nejprve a je možné pomocí implementace třídy potlačení událostí z instance zpracování nebo zavést další události konkrétní chování na události, které jsou vlastněny základní třídy. Tento příklad ukazuje dva úzce související postupy pro implementaci obslužné rutiny třídy.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá vlastní třídu na základě <xref:System.Windows.Controls.Canvas> panelu. Základním předpokladem aplikace je, že vlastní třídu zavádí chování na její podřízené elementy, včetně zachycení, které klikne na možnost žádné levým tlačítkem myši a označování, které je zpracovat, než bude volána třída podřízeného prvku nebo všechny instance obslužné rutiny na něm.  
+ Tento příklad používá vlastní třídu založenou na <xref:System.Windows.Controls.Canvas> panel. Základní premisu aplikace je, že vlastní třídu zavádí chování na jeho podřízené prvky, včetně zachycení, která klikne jakékoli levým tlačítkem myši a označování, které je zpracována, předtím, než bude vyvolána Třída podřízeného prvku nebo všechny instance obslužné rutiny na něm.  
   
- <xref:System.Windows.UIElement> Třída zpřístupní virtuální metodu, která umožňuje třída zpracování na <xref:System.Windows.UIElement.PreviewMouseLeftButtonDown> událostí, jednoduše přepsáním události. Toto je nejjednodušší způsob, jak implementovat třídu zpracování, pokud virtuální metoda je k dispozici někde v hierarchii vlastní třídy. Následující kód ukazuje <xref:System.Windows.UIElement.OnPreviewMouseLeftButtonDown%2A> implementace v "MyEditContainer" odvozený z <xref:System.Windows.Controls.Canvas>. Implementace označí událost jako zpracována v argumenty, pak přidá určitý kód umožnit source element základní viditelné změny.  
+ <xref:System.Windows.UIElement> Třída zveřejňuje virtuální metody, která umožňuje zpracování na třídy <xref:System.Windows.UIElement.PreviewMouseLeftButtonDown> událost, jednoduše přepsáním události. Toto je nejjednodušší způsob, jak implementovat třídu zpracování, pokud je k dispozici někde v hierarchii vaší třídy virtuální metody. Následující kód ukazuje <xref:System.Windows.UIElement.OnPreviewMouseLeftButtonDown%2A> implementace "MyEditContainer", který je odvozen z <xref:System.Windows.Controls.Canvas>. Implementace označí události jako zpracované v argumentech a pak přidá určitý kód poskytnout source element základní viditelné změny.  
   
  [!code-csharp[ClassHandling#OnStarClassHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ClassHandling/CSharp/SDKSampleLibrary/class1.cs#onstarclasshandler)]
  [!code-vb[ClassHandling#OnStarClassHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ClassHandling/visualbasic/sdksamplelibrary/class1.vb#onstarclasshandler)]  
   
- Žádné virtuální je k dispozici na základní třídy, nebo pro tuto konkrétní metodu, třídu zpracování mohou být přidány přímo pomocí metoda nástroj <xref:System.Windows.EventManager> třídy <xref:System.Windows.EventManager.RegisterClassHandler%2A>. Tato metoda by měla být volána pouze v rámci statických inicializaci třídy, které přidáváte třída zpracování. Tento příklad přidá jinou obslužnou rutinu pro <xref:System.Windows.UIElement.PreviewMouseLeftButtonDown> , a v takovém případě registrované třídy je třída, která vlastní. Naproti tomu při použití virtuals, registrované třídy je ve skutečnosti <xref:System.Windows.UIElement> základní třídy. V případech, kde základní třídy a podtřídy registrovat třídu zpracování jsou vyvolány nejprve podtřídami obslužné rutiny. Chování v aplikaci bude, že nejprve by tato obslužná rutina zobrazit její okno se zprávou a potom by visual změnu v hodnotě obslužná rutina virtuální metoda zobrazí.  
+ Pokud ne virtuální je k dispozici na základní třídy nebo pro konkrétní metody, třídy zpracování lze přidat přímo pomocí metody nástroj <xref:System.Windows.EventManager> třídy, <xref:System.Windows.EventManager.RegisterClassHandler%2A>. Tuto metodu lze volat pouze v rámci Statická inicializace třídy, které jsou přidání zpracování třídy. V tomto příkladu přidá jinou obslužnou rutinu pro <xref:System.Windows.UIElement.PreviewMouseLeftButtonDown> , a v tomto případě registrované třídy je vlastní třídy. Naopak při použití virtuální, registrované třídy je ve skutečnosti <xref:System.Windows.UIElement> základní třídy. V případech, kdy základních tříd a podtříd zaregistrovat zpracování třídy jsou vyvolány nejprve podtřídy obslužné rutiny. Chování v aplikaci bude, že nejprve tuto obslužnou rutinu by zobrazil jeho okno se zprávou a pak by se zobrazovat vizuální změny v obslužné rutině virtuální metody.  
   
  [!code-csharp[ClassHandling#StaticAndRegisterClassHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ClassHandling/CSharp/SDKSampleLibrary/class1.cs#staticandregisterclasshandler)]
  [!code-vb[ClassHandling#StaticAndRegisterClassHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ClassHandling/visualbasic/sdksamplelibrary/class1.vb#staticandregisterclasshandler)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.EventManager>  
- [Označení směrovaných událostí jako zpracovaných a zpracování tříd](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
- [Zpracování směrované události](../../../../docs/framework/wpf/advanced/how-to-handle-a-routed-event.md)  
- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.EventManager>
+- [Označení směrovaných událostí jako zpracovaných a zpracování tříd](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)
+- [Zpracování směrované události](../../../../docs/framework/wpf/advanced/how-to-handle-a-routed-event.md)
+- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)

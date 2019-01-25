@@ -5,39 +5,39 @@ helpviewer_keywords:
 - Dim statement [Visual Basic]
 - variables [Visual Basic], creating
 ms.assetid: 35300be3-77b0-4bef-a156-034d3cdedde0
-ms.openlocfilehash: f2e6a97e78bc42ebea9519eb0aa4411e9aec24cf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: db317b160a27c7e38bddba82eb4eac3088886705
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33651541"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506885"
 ---
 # <a name="how-to-create-a-new-variable-visual-basic"></a>Postupy: Vytvoření nové proměnné (Visual Basic)
-Vytvořte proměnnou s [Dim – příkaz](../../../../visual-basic/language-reference/statements/dim-statement.md).  
+Vytvořte proměnnou s [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).  
   
 ### <a name="to-create-a-new-variable"></a>Chcete-li vytvořit nové proměnné  
   
-1.  Deklarace proměnné v `Dim` příkaz.  
+1.  Deklarujte proměnnou v `Dim` příkazu.  
   
     ```  
     Dim newCustomer  
     ```  
   
-2.  Zahrnout specifikace charakteristik proměnné, jako například [privátní](../../../../visual-basic/language-reference/modifiers/private.md), [statické](../../../../visual-basic/language-reference/modifiers/static.md), [stínů](../../../../visual-basic/language-reference/modifiers/shadows.md), nebo [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md). Další informace najdete v tématu [deklarované charakteristiky elementu](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md).  
+2.  Zahrnout specifikace vlastnosti proměnné, třeba [privátní](../../../../visual-basic/language-reference/modifiers/private.md), [statické](../../../../visual-basic/language-reference/modifiers/static.md), [stíny](../../../../visual-basic/language-reference/modifiers/shadows.md), nebo [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md). Další informace najdete v tématu [deklarované charakteristiky elementu](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md).  
   
     ```  
     Public Static newCustomer  
     ```  
   
-     Není nutné `Dim` – klíčové slovo, pokud používáte žádná jiná klíčová slova v deklaraci.  
+     Není nutné `Dim` – klíčové slovo použití dalších klíčových slovech v deklaraci.  
   
-3.  Postupujte podle specifikace s název proměnné, která musí odpovídat Visual Basic – pravidla a pravidla týkající se. Další informace najdete v tématu [deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+3.  Postupujte podle specifikace s názvem proměnné, které musí následovat Visual Basic – pravidla a pravidla týkající se. Další informace najdete v tématu [deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
     ```  
     Public Static newCustomer  
     ```  
   
-4.  Postupujte podle názvu s [jako](../../../../visual-basic/language-reference/statements/as-clause.md) klauzule zadat datový typ proměnné.  
+4.  Postupujte podle názvu se [jako](../../../../visual-basic/language-reference/statements/as-clause.md) klauzule zadejte datový typ proměnné.  
   
     ```  
     Public Static newCustomer As Customer  
@@ -45,22 +45,22 @@ Vytvořte proměnnou s [Dim – příkaz](../../../../visual-basic/language-refe
   
      Pokud nezadáte datový typ, použije výchozí hodnota: `Object`.  
   
-5.  Postupujte podle `As` klauzule symbol rovná se (`=`) a postupujte podle pokynů rovná s počáteční hodnota proměnné.  
+5.  Postupujte podle `As` klauzule znaménko rovná se (`=`) a postupujte podle pokynů znaménka rovnosti s počáteční hodnotou proměnné.  
   
-     Visual Basic přiřadí zadaná hodnota proměnné pokaždé, když ji spustí `Dim` příkaz. Pokud má počáteční hodnotu nezadáte, Visual Basic po jej nejprve zadá kód, který obsahuje přiřadí výchozí počáteční hodnota pro datový typ proměnné `Dim` příkaz.  
+     Visual Basic přiřadí zadanou hodnotu k proměnné pokaždé, když ji spustí `Dim` příkazu. Pokud počáteční hodnotu nezadáte, Visual Basic přiřadí výchozí počáteční hodnotu pro datový typ proměnné, když poprvé vstoupí kód, který obsahuje `Dim` příkazu.  
   
-     Pokud je proměnná typu odkazu, můžete vytvořit instanci její třídy zahrnutím [operátor New](../../../../visual-basic/language-reference/operators/new-operator.md) – klíčové slovo v `As` klauzule. Pokud nepoužijete `New`, je počáteční hodnota proměnné [nic](../../../../visual-basic/language-reference/nothing.md).  
+     Pokud je proměnná typu odkazu, můžete vytvořit instanci její třídy zahrnutím [operátor New](../../../../visual-basic/language-reference/operators/new-operator.md) – klíčové slovo v `As` klauzuli. Pokud nepoužijete `New`, je počáteční hodnota proměnné [nic](../../../../visual-basic/language-reference/nothing.md).  
   
     ```  
     Public Static newCustomer As New Customer  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)  
- [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)  
- [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
- [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
- [Příkazy](../../../../visual-basic/language-reference/statements/index.md)  
- [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
- [Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
+- [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
+- [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
+- [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)
+- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Příkazy](../../../../visual-basic/language-reference/statements/index.md)
+- [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)

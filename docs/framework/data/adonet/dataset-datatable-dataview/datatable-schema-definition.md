@@ -2,12 +2,12 @@
 title: Definice schématu datové tabulky
 ms.date: 03/30/2017
 ms.assetid: efbcdda4-f5a9-421d-8be2-4c194c74552f
-ms.openlocfilehash: 60e7f6a13bd7fd10398d300690bd73c3abc0d700
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: aa275e0a9cbd4f8fb3e851865b9de49eca327727
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43748856"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54545381"
 ---
 # <a name="datatable-schema-definition"></a>Definice schématu datové tabulky
 Schéma a struktura tabulky je reprezentován sloupců a omezení. Definujete schéma <xref:System.Data.DataTable> pomocí <xref:System.Data.DataColumn> objekty stejně jako <xref:System.Data.ForeignKeyConstraint> a <xref:System.Data.UniqueConstraint> objekty. Sloupce v tabulce můžete mapovat na sloupce ve zdroji dat, obsahují vypočítané hodnoty z výrazů, automaticky zvýšit jejich hodnoty nebo obsahovat hodnoty primárního klíče.  
@@ -35,6 +35,6 @@ Schéma a struktura tabulky je reprezentován sloupců a omezení. Definujete sc
  [Omezení datových tabulek](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md)  
  Popisuje, jak definovat cizího klíče a unikátních omezení pro sloupce v tabulce.  
   
-## <a name="see-also"></a>Viz také  
- [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

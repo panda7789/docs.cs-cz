@@ -1,12 +1,12 @@
 ---
 title: Atributy (C#)
 ms.date: 04/26/2018
-ms.openlocfilehash: c33d93a4af91e0c61546e8d51ab470f2889c095c
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: f211e8af48bdfef0bb9bf4341c7a5911b5695101
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44214144"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54573339"
 ---
 # <a name="attributes-c"></a>Atributy (C#)
 
@@ -21,7 +21,7 @@ Atributy mají následující vlastnosti:
 
 ## <a name="using-attributes"></a>Pomocí atributů
 
-Atributy je možné použít u libovolného deklarace, když konkrétního atributu můžete narazit na omezení typů deklarace, na kterých je platný. V jazyce C# zadejte atribut tak, že název atributu uzavřeny do hranatých závorek ([]) nad deklarací entit, ke kterému se vztahuje.
+Atributy je možné použít u libovolného deklarace, když konkrétního atributu můžete narazit na omezení typů deklarace, na kterých je platný. V C#, atribut určíte tak, že název atributu uzavřeny do hranatých závorek ([]) nad deklarací entit, ke kterému se vztahuje.
 
 V tomto příkladu <xref:System.SerializableAttribute> atribut se používá k aplikování konkrétní charakteristiku pro třídu:
 
@@ -119,13 +119,13 @@ Další informace naleznete v tématu:
 
 - [Vytváření vlastních atributů (C#)](creating-custom-attributes.md)  
 - [Přístup k atributům pomocí reflexe (C#)](accessing-attributes-by-using-reflection.md)  
-- [Postupy: vytváření sjednocení C/C++ pomocí atributů (C#)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
+- [Postupy: Vytváření sjednocení C/C++ pomocí atributů (C#)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
 - [Běžné atributy (C#)](common-attributes.md)  
 - [Informace o volajícím (C#)](../caller-information.md)  
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../index.md)  
-- [Reflexe (C#)](../reflection.md)  
-- [Atributy](../../../../standard/attributes/index.md)  
-- [Použití atributů v jazyce C#](../../../tutorials/attributes.md)  
+- [Průvodce programováním v jazyce C#](../../index.md)
+- [Reflexe (C#)](../reflection.md)
+- [Atributy](../../../../standard/attributes/index.md)
+- [Použití atributů v jazyce C#](../../../tutorials/attributes.md)

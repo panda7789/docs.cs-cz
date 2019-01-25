@@ -3,12 +3,12 @@ title: Technologie WIF a webové farmy
 ms.date: 03/30/2017
 ms.assetid: fc3cd7fa-2b45-4614-a44f-8fa9b9d15284
 author: BrucePerlerMS
-ms.openlocfilehash: 8d1d3d67dd578957b5d7f4dc70cd2710143b699d
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 85fbebcd210e7df17212d39b8e3aca9bf76bfb67
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54029460"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543052"
 ---
 # <a name="wif-and-web-farms"></a>Technologie WIF a webové farmy
 Při použití technologie Windows Identity Foundation (WIF) k zabezpečení prostředků aplikace předávající stranu, která je nasazená ve webové farmě, musíte provést určité kroky k zajištění, že technologie WIF zpracovávat tokeny z instancí aplikace předávající strany, který běží na různých počítače ve farmě. Dané zpracování zahrnuje ověřování podpisů tokenu relace, šifrování a dešifrování tokenů relace, ukládání do mezipaměti relace tokeny a zjišťování, odesílal tokeny zabezpečení.  
@@ -250,8 +250,8 @@ namespace CacheLibrary
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>  
- <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>  
- <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>  
- [Správa relací WIF](../../../docs/framework/security/wif-session-management.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>
+- <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>
+- <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>
+- [Správa relací WIF](../../../docs/framework/security/wif-session-management.md)

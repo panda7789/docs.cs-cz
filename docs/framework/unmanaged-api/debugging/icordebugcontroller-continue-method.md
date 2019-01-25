@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 529a65285203ac831e1bcab9dc1bea69ac28a282
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 115a998f8be233c38efac1a301b4b24b7d861662
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412562"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540179"
 ---
 # <a name="icordebugcontrollercontinue-method"></a>ICorDebugController::Continue – metoda
-Pokračuje v provádění spravovaných vláknech po volání [Metoda Stop](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md).  
+Pokračuje v provádění spravovaná vlákna po volání [Metoda Stop](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +37,19 @@ HRESULT Continue (
   
 #### <a name="parameters"></a>Parametry  
  `fIsOutOfBand`  
- [v] Nastavte na `true` Pokud budete pokračovat z události out-of-band; jinak hodnota nastavena na `false`.  
+ [in] Nastavte na `true` Pokud budete pokračovat z události out-of-band; v opačném případě nastavte na `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- `Continue` pokračuje v procesu po volání `ICorDebugController::Stop` metoda.  
+ `Continue` pokračuje v procesu po volání `ICorDebugController::Stop` metody.  
   
- Při provádění modulu ladění ve smíšeném režimu, nevolejte `Continue` na Win32 událostí vláken, pokud jsou pokračováním z out-of-band události.  
+ Při ladění ve smíšeném režimu, nevolejte `Continue` na Win32 události vlákna, pokud se dál pokračuje z out-of-band události.  
   
- *Integrované událostí* spravované události nebo normální nespravované událostí, během které ladicí program podporuje interakci s spravované stavu procesu. V takovém případě obdrží ladicí program [icordebugunmanagedcallback::debugevent –](../../../../docs/framework/unmanaged-api/debugging/icordebugunmanagedcallback-debugevent-method.md) zpětné volání s jeho `fOutOfBand` parametr nastaven na `false`.  
+ *Integrovaných událostí* je spravovaná událost nebo normální nespravované události, během které ladicí program podporuje interakci s spravovaného stavu zpracování. V takovém případě ladicí program přijímá [icordebugunmanagedcallback::debugevent –](../../../../docs/framework/unmanaged-api/debugging/icordebugunmanagedcallback-debugevent-method.md) zpětného volání s jeho `fOutOfBand` parametr nastaven na `false`.  
   
- *Out-of-band událostí* je událost nespravované, během kterého není možné interakci s spravované stav procesu, když je ukončen z důvodu události. V takovém případě obdrží ladicí program `ICorDebugUnmanagedCallback::DebugEvent` zpětné volání s jeho `fOutOfBand` parametr nastaven na `true`.  
+ *Out-of-band události* nespravované události během které je možné interakce s spravované stav procesu, zatímco je ukončen z důvodu události. V takovém případě ladicí program přijímá `ICorDebugUnmanagedCallback::DebugEvent` zpětného volání s jeho `fOutOfBand` parametr nastaven na `true`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -57,5 +57,5 @@ HRESULT Continue (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

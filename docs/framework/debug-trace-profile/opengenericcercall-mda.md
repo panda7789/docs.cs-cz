@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: da3e4ff3-2e67-4668-9720-fa776c97407e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c2cb99a1bda8223ddece4b4aff4a87d95357d90e
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 92528a2cf2227520327b9be2dca70be4c238ff61
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153693"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564679"
 ---
 # <a name="opengenericcercall-mda"></a>openGenericCERCall – pomocník spravovaného ladění (MDA)
 `openGenericCERCall` Upozornit, oblast (CER) graf omezeného provádění s proměnnými obecného typu v metodě kořenové je zpracovávána v kompilaci JIT nebo nativní bitové kopie generování a alespoň jeden z obecného se aktivuje pomocníka spravovaného ladění Typ proměnné je odkaz na typ objektu.  
@@ -25,7 +25,7 @@ ms.locfileid: "53153693"
 ## <a name="symptoms"></a>Příznaky  
  CER kód nejde spustit, když je přerušeno vlákno nebo když je doména aplikace uvolněna.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  V době kompilace JIT je instance obsahující odkaz na typ objektu, který pouze zástupce, protože výsledný kód je sdílet, a každý typ proměnné odkazu na objekt může být libovolný typ objektu odkaz. To může zabránit přípravy několik zdrojů informací za běhu, předem.  
   
  Zejména metody s proměnnými obecného typu laxně přidělení prostředků na pozadí. Tyto jsou označovány jako položky generický slovník. Například pro příkaz `List<T> list = new List<T>();` kde `T` je obecný typem proměnné modul runtime musí vyhledat a případně také mohli vytvářet přesné vytváření instancí v době běhu, třeba `List<Object>, List<String>`a tak dále. To může selhat z různých důvodů mimo kontrolu vývojáře, jako je například spuštění nedostatek paměti.  
@@ -106,7 +106,7 @@ class Program
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>  
- <xref:System.Runtime.ConstrainedExecution>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>
+- <xref:System.Runtime.ConstrainedExecution>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

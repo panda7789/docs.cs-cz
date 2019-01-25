@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3407fcac420b8129dd39eabf84aec84b58651944
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b460c2c4b0d38ec46ee9d7341de9b320a2ecaa7e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442829"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54594639"
 ---
 # <a name="corthreadsafetyoptions-enumeration"></a>CorThreadSafetyOptions – výčet
-Určuje příznaky výběr možností pro bezpečný přístup z více vláken.  
+Určuje příznaky a možnosti pro bezpečný přístup z více vláken.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,15 +41,15 @@ typedef enum CorThreadSafetyOptions {
 |Člen|Popis|  
 |------------|-----------------|  
 |`MDThreadSatetyDefault`|Výchozí hodnota. Stejné jako `MDThreadSatetyOff`.|  
-|`MDThreadSatetyOff`|Označuje, že nelze nastavit zámek pro čtečky nebo zápis.|  
-|`MDThreadSatetyOn`|Označuje, zda lze nastavit zámek pro čtečky nebo zápis.|  
+|`MDThreadSatetyOff`|Označuje, že zámek čtení/zápis nelze nastavit.|  
+|`MDThreadSatetyOn`|Označuje, že můžete nastavit zámek čtení/zápis.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

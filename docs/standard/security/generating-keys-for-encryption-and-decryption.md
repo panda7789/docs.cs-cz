@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c197dfc9-a453-4226-898d-37a16638056e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 349324cabc999bac3bd0c247d3614dfc503b8b61
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 32f9a5f92ae580839ce46476de9f9c7edcd54685
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153524"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54573397"
 ---
 # <a name="generating-keys-for-encryption-and-decryption"></a>Generování klíčů pro šifrování a dešifrování
 Vytváření a správa klíčů je důležitou součástí procesu šifrování. Symetrické algoritmy vyžadují vytvoření klíče a inicializačního vektoru (IV). Klíč musí být udržen v tajnosti před kýmkoli, kdo by neměl data dešifrovat. Vektor IV nemusí být tajný, ale měli byste jej pro jednotlivé relace změnit. Asymetrické algoritmy vyžadují vytvoření veřejného klíče a soukromého klíče. Veřejný klíč se může zveřejnit všem uživatelům, zatímco soukromý klíč smí být znám pouze osobě, která bude dešifrovat data zašifrovaná pomocí veřejného klíče. V této části je popsán způsob vytváření a správy klíčů pro symetrické i asymetrické algoritmy.  
@@ -90,7 +90,7 @@ RSAParameters RSAKeyInfo = RSA.ExportParameters(false);
   
 ## <a name="see-also"></a>Viz také:
 
-- [Šifrování dat](../../../docs/standard/security/encrypting-data.md)  
-- [Dešifrování dat](../../../docs/standard/security/decrypting-data.md)  
-- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)  
-- [Jak: Store asymetrického klíče v kontejneru klíčů](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md)
+- [Šifrování dat](../../../docs/standard/security/encrypting-data.md)
+- [Dešifrování dat](../../../docs/standard/security/decrypting-data.md)
+- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)
+- [Postupy: Store asymetrického klíče v kontejneru klíčů](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md)

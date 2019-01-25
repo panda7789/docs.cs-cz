@@ -1,5 +1,5 @@
 ---
-title: -pdb (možnosti kompilátoru C#)
+title: -pdb (C# Compiler Options)
 ms.date: 07/20/2015
 f1_keywords:
 - /pdb
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - pdb compiler option [C#]
 - /pdb compiler option [C#]
 ms.assetid: e9d0f96a-5b75-45d6-9765-92538dd5f823
-ms.openlocfilehash: dc7ea6aae6aa429efdf1a2dca23a3d679cb21fb7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b0a566931ac76a3adb191f423a497bc446e280c8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526578"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54575499"
 ---
-# <a name="-pdb-c-compiler-options"></a>-pdb (možnosti kompilátoru C#)
+# <a name="-pdb-c-compiler-options"></a>-pdb (C# Compiler Options)
 **- Pdb** – možnost kompilátoru Určuje název a umístění souboru pro symboly ladění.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,7 +42,7 @@ ms.locfileid: "43526578"
 csc -debug -pdb:tt t.cs  
 ```  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

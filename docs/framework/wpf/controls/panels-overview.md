@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Panel control [WPF], about Panel control
 - controls [WPF], Panel
 ms.assetid: f73644af-9941-4611-8754-6d4cef03fc44
-ms.openlocfilehash: f8fd3237d71bc1960678565192c7ef9ddcb2c366
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 77f8fc5057b8f31e684941b742f2cf696afd6b07
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196626"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54525206"
 ---
 # <a name="panels-overview"></a>Přehled panelů
 <xref:System.Windows.Controls.Panel> prvky jsou komponenty, které řídí vykreslování elementů, jejich velikost a rozměry, jejich pozice a uspořádání jejich podřízený obsah. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Poskytuje řadu předdefinovaných <xref:System.Windows.Controls.Panel> elementy jakož i možnost vytvořit vlastní <xref:System.Windows.Controls.Panel> elementy.  
@@ -81,7 +81,7 @@ ms.locfileid: "47196626"
   
  Každý odvozené <xref:System.Windows.Controls.Panel> element zpracovává omezení velikosti odlišně. Vysvětlení jak <xref:System.Windows.Controls.Panel> omezení obslužné rutiny ve vodorovném nebo svislém směru mohli rozložení předvídatelnější.  
   
-|**Název panelu**|**x dimenze**|**Dimenze y**|  
+|**Název panelu**|**x-Dimension**|**Dimenze y**|  
 |--------------------|----------------------|----------------------|  
 |<xref:System.Windows.Controls.Canvas>|Omezené na obsah|Omezené na obsah|  
 |<xref:System.Windows.Controls.DockPanel>|Omezené|Omezené|  
@@ -174,7 +174,7 @@ ms.locfileid: "47196626"
   
  Rozdíl v chování vykreslování uvidíte na tomto obrázku.  
   
- ![Snímek obrazovky: StackPanel vs. DockPanel – snímek obrazovky](../../../../docs/framework/wpf/controls/media/layout-smiley-stackpanel.PNG "layout_smiley_stackpanel")  
+ ![Snímek obrazovky: StackPanel – vs. DockPanel – snímek obrazovky](../../../../docs/framework/wpf/controls/media/layout-smiley-stackpanel.PNG "layout_smiley_stackpanel")  
   
 #### <a name="defining-and-using-a-stackpanel"></a>Definování a použití objektu StackPanel  
  Následující příklad ukazuje, jak používat <xref:System.Windows.Controls.StackPanel> vytvořit sadu tlačítek ve svislém směru umístěn. Vodorovné umístění, nastavte <xref:System.Windows.Controls.StackPanel.Orientation%2A> vlastnost <xref:System.Windows.Controls.Orientation.Horizontal>.  
@@ -252,13 +252,13 @@ ms.locfileid: "47196626"
   
  Další informace o vytváření [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací s lokalizovatelné [!INCLUDE[TLA#tla_ui#plural](../../../../includes/tlasharptla-uisharpplural-md.md)]s, najdete v článku [přehled automatického rozložení pomocí](../../../../docs/framework/wpf/advanced/use-automatic-layout-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
- [Ukázky WPF rozložení galerie](https://go.microsoft.com/fwlink/?LinkID=160054)  
- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)  
- [Ukázková galerie ovládacích prvků WPF](https://go.microsoft.com/fwlink/?LinkID=160053)  
- [Přehled zarovnání, okrajů a odsazení](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)  
- [Vytvoření vlastního panelu ukázky zabalení obsahu](https://go.microsoft.com/fwlink/?LinkID=159979)  
- [Přehled přidružených vlastností](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)  
- [Přehled automatického rozložení](../../../../docs/framework/wpf/advanced/use-automatic-layout-overview.md)  
- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)
+## <a name="see-also"></a>Viz také:
+- [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)
+- [Ukázky WPF rozložení galerie](https://go.microsoft.com/fwlink/?LinkID=160054)
+- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)
+- [Ukázková galerie ovládacích prvků WPF](https://go.microsoft.com/fwlink/?LinkID=160053)
+- [Přehled zarovnání, okrajů a odsazení](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)
+- [Vytvoření vlastního panelu ukázky zabalení obsahu](https://go.microsoft.com/fwlink/?LinkID=159979)
+- [Přehled přidružených vlastností](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)
+- [Přehled automatického rozložení](../../../../docs/framework/wpf/advanced/use-automatic-layout-overview.md)
+- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)

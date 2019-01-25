@@ -2,12 +2,12 @@
 title: 'Průvodce: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)'
 ms.date: 07/20/2015
 ms.assetid: 55ed13c9-c5bb-4bc2-bcd8-0587eb568864
-ms.openlocfilehash: 33686dcfee90db2d0a99339a728eb6e2bd7139f5
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: 39452702a3e757456ff00ee22e6eb1f90160ef38
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415712"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54500626"
 ---
 # <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-c"></a>Průvodce: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)
 Pokud jste pro vložení informací o typu ze spravovaných sestavení se silným názvem, můžete volně zkombinujte typy v aplikaci dosáhnout nezávislosti na verzi. To znamená váš program může zapisovat používat typy z více verzí aplikace spravované knihovny aniž byste museli překompilují. pro každou verzi.  
@@ -232,9 +232,9 @@ Pokud jste pro vložení informací o typu ze spravovaných sestavení se silný
   
 6.  V Průzkumníku souborů otevřete složku výstupu cestu (například C:\TypeEquivalenceSample). Dvakrát klikněte na panel TypeEquivalenceClient.exe ke spuštění programu. Program bude odrážet nové verze sestavení TypeEquivalenceRuntime bez nutnosti znovu zkompilovat.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [/ Link (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)  
-- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
-- [Programování se sestaveními](../../../../framework/app-domains/programming-with-assemblies.md)  
+- [/ Link (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)
+- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
+- [Programování se sestaveními](../../../../framework/app-domains/programming-with-assemblies.md)
 - [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)

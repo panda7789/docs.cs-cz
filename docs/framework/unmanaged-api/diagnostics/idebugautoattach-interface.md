@@ -16,24 +16,24 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9a88f8b2ad1ac59cf7044ca5d7ace5a468510b6f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3492cac305370c8b9aa969dbb0a88e1d9c45af34
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424752"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550653"
 ---
 # <a name="idebugautoattach-interface"></a>IDebugAutoAttach – rozhraní
-Definuje rozhraní pro připojení serveru vyvolá ladicí program automaticky.  
+Definuje rozhraní pro server vyvolá ladicí program automaticky připojit.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[AutoAttach – metoda](../../../../docs/framework/unmanaged-api/diagnostics/idebugautoattach-autoattach-method.md)|Provede server volá ladicí program automaticky připojit.|  
+|[AutoAttach – metoda](../../../../docs/framework/unmanaged-api/diagnostics/idebugautoattach-autoattach-method.md)|Provede automaticky serveru vyvolá ladicí program připojit.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** DbgAutoAttach.idl  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

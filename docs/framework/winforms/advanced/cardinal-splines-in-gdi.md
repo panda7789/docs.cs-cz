@@ -9,32 +9,32 @@ helpviewer_keywords:
 - GDI+, cardinal splines
 - cardinal splines
 ms.assetid: 09b3797a-6294-422d-9adf-a5a0a7695c0c
-ms.openlocfilehash: 93ae09c72415fa489e62f753e51e5a3ffcfb2425
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f7d04f59e2424b71eb5bd0015f9496e6e67edbfa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517962"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54589529"
 ---
 # <a name="cardinal-splines-in-gdi"></a>Základní křivky v GDI+
-Spojnice křivky je pořadí jednotlivých křivek připojený k formuláři větší křivky. Pole bodů a parametr pnutí je určena křivky. Spojnice křivky plynule projdou každý bod v poli; neexistují žádné sharp rozích a žádné náhlému změny v těsnost křivku. Následující obrázek znázorňuje sadu body a křivky mohutnosti, které procházejí každý bod v sadě.  
+Křivky mohutnosti je posloupnost jednotlivých křivky připojené k formuláři větší křivky. Pole bodů a napětí parametr je zadaný křivky. Křivky mohutnosti plynule prochází každý bod v poli; neexistují žádné sharp rohů a žádné náhlé změny v těsnost křivky. Následující obrázek znázorňuje sadu body a vyhlazení prochází každý bod v sadě.  
   
- ![Křivkový základních](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art09.gif "Aboutgdip02_art09")  
+ ![Cardinal Spline](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art09.gif "Aboutgdip02_art09")  
   
-## <a name="physical-and-mathematical-splines"></a>Fyzické a matematickém křivky vyhlazení  
- Fyzické křivkový je dynamické dřeva nebo jiného materiálu flexibilní. Před nástupem matematickém křivky Designer použít fyzické křivky kreslení křivek. Návrhář by umístit křivky na papír a ukotvení na danou sadu body. Návrhář může potom vytvořit křivka kreslení podél křivky pomocí pera nebo tužky. Danou sadu bodů může yield celou řadu křivek, v závislosti na vlastnosti fyzické křivkový. Křivkový s vysokou odolností vůči ohybu například byste mohli vytvořit různé křivky než velmi flexibilní křivkový.  
+## <a name="physical-and-mathematical-splines"></a>Fyzická a matematické křivek  
+ Fyzické křivky je dynamického zajišťování wood nebo jiného materiálu flexibilní. Před nástupem matematické křivek návrháři použili fyzické křivky kreslení křivek. Návrhář by umístit na papír křivky a ukotvení na danou sadu body. Návrhář může potom vytvořit křivky kreslení podél křivky perem nebo tužky. Daný sady bodů může přinést řadu křivky v závislosti na vlastnosti fyzické křivky. Křivkový s vysokou odolností vůči ohyb například byste mohli vytvořit různé křivky než velmi flexibilní křivky.  
   
- Vzorce pro matematické křivky jsou založené na vlastnosti flexibilní tyče tak křivek vyprodukované matematickém křivky jsou podobná křivek jednou vydaných společností fyzické křivky. Stejně jako fyzický křivky různých pnutí vytvoří různé křivek prostřednictvím danou sadu body, vygeneruje matematickém křivky vyhlazení s různými hodnotami pro parametr pnutí různých křivek prostřednictvím danou sadu body. Následující obrázek znázorňuje čtyři základní křivky vyhlazení prošla stejnou sadu body. Pro každý křivkový se zobrazuje hodnotu napětí. Pnutí 0 odpovídá nekonečné fyzické pnutí vynucení křivku provést nejkratší způsob (přímky) mezi body. Žádné fyzické pnutí povolení křivkový provést cestu alespoň celkový ohybem odpovídá pnutí 1. S hodnotami pnutí větší než 1 křivku chová jako komprimovaný pružiny, instaluje do použít delší cestu.  
+ Křivky matematické vzorce jsou založené na vlastnosti flexibilní tyče křivky vytvářených matematické křivky jsou podobné křivky jednou vydaných společností fyzickou křivky. Stejně jako fyzické křivky různých napětí vytvoří jiné křivky prostřednictvím daný sady bodů, vytvoří matematické křivky s různými hodnotami pro parametr napětí různých křivky prostřednictvím daný sady bodů. Následující obrázek znázorňuje čtyři základní křivky vyhlazení stejnou sadu body prošla. Napětí se zobrazí pro každou křivky. Napětí 0 odpovídá nekonečné fyzické napětí vynucení křivky provést nejkratší způsob (rovné čáry) mezi body. Žádné fyzické napětí povolení křivka procházel nejméně celkový ohyb odpovídá napětí 1. S hodnotami napětí větší než 1 křivka se chová jako komprimovaný spring nahrány do použít delší cestu.  
   
  ![Základní křivky](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art10.gif "Aboutgdip02_art10")  
   
- Čtyři křivky v předchozí ilustraci sdílet stejnou tečný řádku na počáteční bod. Tangens je řádku čerpají z výchozí bod pro další bod podél křivku. Sdílené tangens na koncový bod, je na řádku čerpají z koncový bod předchozího bodu na křivku.  
+ Čtyři křivky v předchozí ilustraci sdílí stejnou tečný linku počátečního bodu. Tangens je linií od počátečního bodu na další bod podél křivky. Obdobně sdílené tangens na koncový bod je řádek je cílem vykreslování z koncového bodu na předchozí bod křivky.  
   
- Kreslení křivky mohutnosti, je třeba instanci <xref:System.Drawing.Graphics> třída, <xref:System.Drawing.Pen>a pole <xref:System.Drawing.Point> objekty instanci <xref:System.Drawing.Graphics> třída poskytuje <xref:System.Drawing.Graphics.DrawCurve%2A> metodu, která nevykresluje křivky, a <xref:System.Drawing.Pen> uloží atributy křivkový, jako je například šířka čáry a barvy. Pole <xref:System.Drawing.Point> objekty ukládá body, které budou předány křivku. Následující příklad kódu ukazuje, jak k vykreslení křivky mohutnosti, které procházejí body v `myPointArray`. Třetí parametr není hodnotu napětí.  
+ K nakreslení křivky mohutnosti, je třeba instance <xref:System.Drawing.Graphics> třídy, <xref:System.Drawing.Pen>a celou řadu <xref:System.Drawing.Point> objekty instance <xref:System.Drawing.Graphics> třída poskytuje <xref:System.Drawing.Graphics.DrawCurve%2A> metodu, která vykreslí křivky a <xref:System.Drawing.Pen> uloží atributy křivky, například šířku čáry a barvu. Pole <xref:System.Drawing.Point> objekty ukládá body, které budou předány křivky. Následující příklad kódu ukazuje, jak nakreslení křivky mohutnosti, který prochází body v `myPointArray`. Třetí parametr je napětí.  
   
  [!code-csharp[LinesCurvesAndShapes#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#31)]
  [!code-vb[LinesCurvesAndShapes#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#31)]  
   
-## <a name="see-also"></a>Viz také  
- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
- [Sestavování a kreslení křivek](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)
+## <a name="see-also"></a>Viz také:
+- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)
+- [Sestavování a kreslení křivek](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)

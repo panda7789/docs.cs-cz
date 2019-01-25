@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 5c14867c-9a99-45bc-ae7f-2686700d377a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 099e2de40458e42c9df34e74dee8d9fc7c425dea
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 2f18bdfaee1d79ce84a5b2822d52231f4bed098c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44197311"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620055"
 ---
 # <a name="using-the-stringbuilder-class-in-net"></a>Používání třídy StringBuilder v .NET
 <xref:System.String> Objektu je neměnný. Pokaždé, když používáte jednu z metod v <xref:System.String?displayProperty=nameWithType> třídy, můžete vytvořit nový objekt řetězce v paměti, která vyžaduje nové přidělení místa pro tento nový objekt. V situacích, kdy je potřeba provést opakované změny na řetězec, režie spojené s vytvořením nového <xref:System.String> objekt může být nákladné. <xref:System.Text.StringBuilder?displayProperty=nameWithType> Třídu lze použít, pokud chcete upravit řetězec bez vytvoření nového objektu. Například použití <xref:System.Text.StringBuilder> třída může zvýšit výkon při zřetězení řetězců mnoho společně ve smyčce.  
@@ -70,7 +70,7 @@ ms.locfileid: "44197311"
 |<xref:System.Text.StringBuilder.Remove%2A?displayProperty=nameWithType>|Odebere zadaný počet znaků z aktuální **StringBuilder**.|  
 |<xref:System.Text.StringBuilder.Replace%2A?displayProperty=nameWithType>|Nahradí zadaný znak na zadaném indexu.|  
   
-### <a name="append"></a>Připojení  
+### <a name="append"></a>Připojit  
  **Append** metodu je možné do konce řetězce reprezentované aktuální přidat text nebo řetězcová reprezentace objektu **StringBuilder**. Následující příklad inicializuje **StringBuilder** na "Hello World" a potom připojí na konec objektu nějaký text. Automaticky podle potřeby není přiděleno místo.  
   
  [!code-cpp[Conceptual.StringBuilder#4](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#4)]
@@ -98,7 +98,7 @@ ms.locfileid: "44197311"
  [!code-csharp[Conceptual.StringBuilder#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#7)]
  [!code-vb[Conceptual.StringBuilder#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/Example.vb#7)]  
   
-### <a name="replace"></a>nahradit  
+### <a name="replace"></a>Nahradit  
  **Nahradit** metodu lze použít k nahrazení znaků v rámci <xref:System.Text.StringBuilder> objekt s jiným zadaný znak. V následujícím příkladu **nahradit** metody na hledání <xref:System.Text.StringBuilder> objektu pro všemi instancemi vykřičník znak (!) a nahraďte znak otazníku (?).  
   
  [!code-cpp[Conceptual.StringBuilder#8](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#8)]
@@ -113,6 +113,6 @@ ms.locfileid: "44197311"
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Text.StringBuilder?displayProperty=nameWithType>  
-- [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)  
+- <xref:System.Text.StringBuilder?displayProperty=nameWithType>
+- [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)
 - [Typy formátování](../../../docs/standard/base-types/formatting-types.md)

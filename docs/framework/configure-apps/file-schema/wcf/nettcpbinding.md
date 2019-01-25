@@ -1,23 +1,23 @@
 ---
-title: '&lt;NetTcpBinding&gt;'
+title: '&lt;netTcpBinding&gt;'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - netTcpBinding Element
 ms.assetid: 5c5104a7-8754-4335-8233-46a45322503e
-ms.openlocfilehash: 0849120edf7d4b8948b3632cfe2fc81f1bdff1eb
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 0dc07bfb7b26e433fd3ff2b004253d8d2d90bf62
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54148185"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54573427"
 ---
-# <a name="ltnettcpbindinggt"></a>&lt;NetTcpBinding&gt;
+# <a name="ltnettcpbindinggt"></a>&lt;netTcpBinding&gt;
 
 Určuje zabezpečená, spolehlivá a optimalizovaná vazby vhodné pro komunikaci mezi počítači. Ve výchozím nastavení vygeneruje zásobník modulu runtime komunikace s Windows zabezpečení pro zabezpečení zpráv a ověřování protokolu TCP pro doručování zpráv a kódování binární zprávy.
 
 \<system.ServiceModel>  
 \<vazby >  
-\<netTcpBinding >  
+\<netTcpBinding>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -92,7 +92,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<vazby >](bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<bindings>](bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky
 
@@ -146,11 +146,11 @@ Vazba je zadán v konfiguračních souborech pro klienta a služby. Typ vazby je
 </bindings>
 ```  
   
-## <a name="see-also"></a>Viz také:  
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.ServiceModel.NetTcpBinding>  
-- <xref:System.ServiceModel.Configuration.NetTcpBindingElement>  
-- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
-- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
-- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
+- <xref:System.ServiceModel.NetTcpBinding>
+- <xref:System.ServiceModel.Configuration.NetTcpBindingElement>
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

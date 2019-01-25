@@ -9,16 +9,16 @@ helpviewer_keywords:
 ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 1b7dbc8dffb15485ec035049d2da7aac6915eb58
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: f8dfe0520e0db676a208dcd46a45db8fefe98703
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036211"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54603739"
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)] byl starší řešení pro zpřístupnění aplikace. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] je nový model usnadnění pro [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)] má sloužit k řešení potřeb produktů využívajících technologie usnadnění a automatizované testovací nástroje. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nabízí mnoho vylepšení [!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)].  
   
@@ -251,5 +251,5 @@ ms.locfileid: "48036211"
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Modelu eliminuje potřebu poskytovatelé volání prostřednictvím jiného poskytovatele kódu. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Základní služba nemá potřebné agregace.  
   
-## <a name="see-also"></a>Viz také  
- [Principy automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/index.md)
+## <a name="see-also"></a>Viz také:
+- [Principy automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/index.md)

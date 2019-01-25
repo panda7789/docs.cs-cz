@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: f769a271-8aff-4bea-bfab-6160217ce23d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e874d593a18be352e7053a15525f3168e7fcc9db
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 8c75d0631b05e4db53308efde8fe4c70a0778ebe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397852"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540565"
 ---
 # <a name="dynamic-language-runtime-overview"></a>Přehled DLR (Dynamic Language Runtime)
 
@@ -51,7 +51,7 @@ Stejně jako modul CLR DLR je součástí rozhraní .NET Framework a je součás
 
 Příklady vyvinuté pomocí DLR jazyky patří:
 
--   Ironpythonu. K dispozici jako open source softwaru z [Githubu](https://github.com/IronLanguages/ironpython2) webu.
+-   IronPython. K dispozici jako open source softwaru z [Githubu](https://github.com/IronLanguages/ironpython2) webu.
 
 -   IronRuby. K dispozici jako open source softwaru z [RubyForge](https://go.microsoft.com/fwlink/?LinkId=141044) webu.
 
@@ -91,7 +91,7 @@ DLR používá vazače lokalit volání komunikovat pouze s použitím rozhraní
 ## <a name="dlr-documentation"></a>Dokumentace ke službě DLR
  Další informace o tom, jak používat open source verze DLR přidat dynamické chování pro jazyk, nebo o tom, jak povolit použití dynamické jazyce s využitím rozhraní .NET Framework naleznete v dokumentaci na [IronLanguages/dlr](https://github.com/IronLanguages/dlr/tree/master/Docs) úložiště na Githubu.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Dynamic.ExpandoObject>
 - <xref:System.Dynamic.DynamicObject>

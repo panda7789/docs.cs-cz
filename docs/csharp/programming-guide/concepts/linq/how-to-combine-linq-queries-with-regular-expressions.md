@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: kombinace dotazů LINQ s regulárními výrazy (C#)'
+title: 'Postupy: Kombinace dotazů LINQ s regulárními výrazy (C#)'
 ms.date: 07/20/2015
 ms.assetid: 6b003b65-20a4-4ca2-929e-2ee3f215aecc
-ms.openlocfilehash: c535620f2dee1ec9cd1b6ee994fbf860629601ba
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: e9aa8378fb6b4bbfbfca280e1a9fc73adc108d81
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48033308"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54558758"
 ---
-# <a name="how-to-combine-linq-queries-with-regular-expressions-c"></a>Postupy: kombinace dotazů LINQ s regulárními výrazy (C#)
+# <a name="how-to-combine-linq-queries-with-regular-expressions-c"></a>Postupy: Kombinace dotazů LINQ s regulárními výrazy (C#)
 Tento příklad ukazuje způsob použití <xref:System.Text.RegularExpressions.Regex> třídy za účelem vytvoření regulárního výrazu pro složitější porovnávání v textových řetězců. Dotaz LINQ umožňuje snadno můžete filtrovat podle přesně soubory, které chcete hledat s regulárním výrazem a obrazce výsledky.  
   
 ## <a name="example"></a>Příklad  
@@ -98,7 +98,7 @@ class QueryWithRegEx
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
+- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
 - [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)

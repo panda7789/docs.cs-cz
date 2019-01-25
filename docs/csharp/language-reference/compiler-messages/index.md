@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Visual C# compiler, errors
 - errors [C#]
 ms.assetid: 57262ab1-6c50-4f9c-81ad-9fba48477416
-ms.openlocfilehash: 2edd47682223dd94fc8dd7448465613236e67e27
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: c4ece5ccf8c31beb2847a50f9cf894959acf23b2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46706395"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54617289"
 ---
 # <a name="c-compiler-errors"></a>Chyby kompilátoru jazyka C#
 
@@ -29,10 +29,10 @@ Některé chyby kompilátoru jazyka C# mají odpovídající témata s vysvětle
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
-- [Je nám líto, ale nemáme podrobnosti o této chybě C#](../../../csharp/misc/sorry-we-don-t-have-specifics-on-this-csharp-error.md)  
-- [Stránka Sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)  
-- [/ warn (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/warn-compiler-option.md)  
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Je nám líto, ale nemáme podrobnosti o této chybě C#](../../../csharp/misc/sorry-we-don-t-have-specifics-on-this-csharp-error.md)
+- [Stránka Sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)
+- [/ warn (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/warn-compiler-option.md)
 - [/ nowarn (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md)

@@ -1,5 +1,5 @@
 ---
-title: '&lt;cryptoNameMapping&gt; – Element'
+title: '&lt;cryptoNameMapping&gt; Element'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#cryptoNameMapping
@@ -10,20 +10,20 @@ helpviewer_keywords:
 ms.assetid: c59c9494-149b-4ce6-b38d-371f896ae85c
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 3909b9cd012ef47f5a191dbc1e7978a5852e62fe
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: ef916b0950e179f6782ce8d4d6fa380fd3804aa0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50184163"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54577163"
 ---
-# <a name="ltcryptonamemappinggt-element"></a>&lt;cryptoNameMapping&gt; – Element
+# <a name="ltcryptonamemappinggt-element"></a>&lt;cryptoNameMapping&gt; Element
 Obsahuje mapování tříd pro popisné názvy.  
   
  \<Konfigurace >  
-\<mscorlib >  
-\<cryptographySettings – >  
-\<cryptoNameMapping >  
+\<mscorlib>  
+\<cryptographySettings>  
+\<cryptoNameMapping>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -76,8 +76,8 @@ Obsahuje mapování tříd pro popisné názvy.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
-- [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
-- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)  
+## <a name="see-also"></a>Viz také:
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
+- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
 - [Konfigurace šifrovacích tříd](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)

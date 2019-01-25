@@ -7,73 +7,73 @@ dev_langs:
 helpviewer_keywords:
 - queues [WCF]. grouping messages
 ms.assetid: 63b23b36-261f-4c37-99a2-cc323cd72a1a
-ms.openlocfilehash: 62aa269d138d436824d3c825de9f722490d3b5bd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 260e8b38f110ffc2c2fdc5e2768db8c95fb01860
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33491898"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564120"
 ---
 # <a name="grouping-queued-messages-in-a-session"></a>Seskupování zpráv zařazených do fronty v relaci
-Windows Communication Foundation (WCF) poskytuje relaci, která umožňuje seskupení sady souvisejících zpráv společně pro zpracování jedné přijímající aplikací. Zprávy, které jsou součástí relace musí být součástí stejné transakci. Vzhledem k tomu, že všechny zprávy jsou součástí stejné transakci, pokud se nepodaří jednu zprávu zpracovat celé relace je vrácena zpět. Relace mají podobné chování s ohledem na fronty nedoručených zpráv a poškozených fronty. Čas potřebný k Live (TTL) vlastnost nastavte u vazbu zařazených do fronty, nakonfigurované pro relace je použita v relaci jako celek. Pokud jen některé zprávy v relaci se odesílají než hodnota TTL nevyprší, celé relace je umístěna do fronty nedoručených zpráv. Podobně když zprávy v relaci se nepodařilo odeslat do aplikace z fronty aplikace, celé relace je umístěny v poškozených frontu (Pokud je k dispozici).  
+Windows Communication Foundation (WCF) poskytuje relaci, která umožňuje seskupit sadu souvisejících zpráv pro zpracování jedné přijímající aplikace. Zprávy, které jsou součástí relace musí být součástí stejné transakce. Protože všechny zprávy jsou součástí stejné transakce, pokud se nepodaří zpracovat celou relaci jednu zprávu se vrátí zpět. Relace mají podobné chování s ohledem na fronty nedoručených zpráv a nezpracovatelných fronty. Time to Live (TTL) nastavenou na vazbu s frontou nakonfigurované pro relace se použijí pro relaci jako celek. Pokud jen některé zprávy v relaci odeslány předtím, než hodnota TTL nevyprší, je umístěn celou relaci ve frontě nedoručených zpráv. Podobně když dojde k selhání zprávy v relaci k odeslání do aplikace z fronty aplikace, celá relace nachází ve nezpracovatelných frontu (Pokud je k dispozici).  
   
-## <a name="message-grouping-example"></a>Příklad seskupení zpráv  
- Jedním z příkladů kde seskupování zpráv je užitečné, je při implementaci pořadí zpracování aplikace jako služby WCF. Například klient odešle pořadí do této aplikace, který obsahuje počet položek. Pro každou položku klient zavolá službu, což vede k samostatné zprávy při odesílání. Je možné, používat A přijímat první položka a server B, aby přijímal druhou položku. Pokaždé, když je položka přidána, má server zpracování daná položka k vyhledání příslušné pořadí a přidejte položku, což je velmi neefektivní. Pořád se spustit do takové umožňuje zvýšit efektivitu s pouze jedním serverem zpracování všech požadavků, protože server musí sledovat všechny objednávky právě zpracovávána a určení, která patří novou položku. Seskupování všechny požadavky pro jednoduché řazení výrazně zjednodušuje implementace takové aplikace. Klientská aplikace odešle pro jednoduché řazení všechny položky v relaci, takže Jakmile služba zpracovává pořadí, zpracuje celý relace najednou. \  
+## <a name="message-grouping-example"></a>Ukázková zpráva seskupení  
+ Jedním z příkladů kde seskupování zpráv je užitečné, je při implementaci zpracování objednávky aplikace jako služba WCF. Například klient odešle objednávku k této aplikaci, která obsahuje celou řadu položek. Pro každou položku klient zavolá službu, která vede samostatné odeslání zprávy. Je možné, používat A na první položku a server B pro příjem druhé položky. Pokaždé, když se přidá položka zpracování této položky na serveru má vyhledat správné místo v pořadí a do něj přidat položku, což je velmi neefektivní. Stále dochází k takové nedostatečnou s pouze jedním serverem zpracování všech požadavků, protože server musí udržovat přehled o všech objednávek, které se právě zpracovává a určit, která z nich se nová položka patří. Seskupení všech požadavků na jednu objednávku výrazně zjednodušuje provádění takové aplikace. Klientská aplikace odešle všechny položky na jednu objednávku v relaci, takže když službu objednávku zpracovává, zpracuje najednou celou relaci. \  
   
 ## <a name="procedures"></a>Procedury  
   
-#### <a name="to-set-up-a-service-contract-to-use-sessions"></a>Nastavit kontraktu služby pro použití relací  
+#### <a name="to-set-up-a-service-contract-to-use-sessions"></a>K nastavení kontraktu služby pro použití relací  
   
-1.  Definování kontraktu služby, který vyžaduje relaci. To provést pomocí <xref:System.ServiceModel.OperationContractAttribute> atribut a seznam zadáním:  
+1.  Definování kontraktu služby vyžadující relace. K tomu <xref:System.ServiceModel.OperationContractAttribute> atribut a zadáním:  
   
     ```  
     SessionMode=SessionMode.Required  
     ```  
   
-2.  Označte operace v kontraktu jako jednosměrné, protože tyto metody nic nevrátí. To lze provést pomocí <xref:System.ServiceModel.OperationContractAttribute> atribut a seznam zadáním:  
+2.  Označte operace v kontraktu jako jednosměrná, protože tyto metody nic nevrátí. Používá se k tomu <xref:System.ServiceModel.OperationContractAttribute> atribut a zadáním:  
   
     ```  
     [OperationContract(IsOneWay = true)]  
     ```  
   
-3.  Implementace kontraktu služby a zadejte `InstanceContextMode` z `PerSession`. To vytvoří služba jenom jednou pro každou relaci.  
+3.  Implementace kontraktu služby a zadejte `InstanceContextMode` z `PerSession`. To vytvoří instanci služby pouze jednou pro každou relaci.  
   
     ```  
     [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]  
     ```  
   
-4.  Každé operace služby vyžaduje transakce. Zadejte o <xref:System.ServiceModel.OperationBehaviorAttribute> atribut. Nastavte také operaci, která se dokončí transakci `TransactionAutoComplete` k `true`.  
+4.  Každá služba operace vyžaduje transakci. S tuto verzi uveďte <xref:System.ServiceModel.OperationBehaviorAttribute> atribut. Tato operace provede transakce nastavte také `TransactionAutoComplete` k `true`.  
   
     ```  
     [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]   
     ```  
   
-5.  Nakonfigurujte koncový bod, který používá zadaný systému `NetMsmqBinding` vazby.  
+5.  Konfigurace koncového bodu, který používá poskytovaných systémem `NetMsmqBinding` vazby.  
   
-6.  Vytvoření transakční fronty pomocí <xref:System.Messaging>. Fronty můžete vytvořit také pomocí služby Řízení front zpráv (MSMQ) nebo konzoly MMC. Pokud vytvoříte, transakční fronty.  
+6.  Vytvoření transakční fronty pomocí <xref:System.Messaging>. Fronty můžete vytvořit také pomocí služby Řízení front zpráv (MSMQ) nebo konzoly MMC. Pokud tak učiníte, vytvoření transakční fronty.  
   
-7.  Vytvořit hostitele služby pro službu pomocí <xref:System.ServiceModel.ServiceHost>.  
+7.  Vytvoření hostitele služby pro službu pomocí <xref:System.ServiceModel.ServiceHost>.  
   
-8.  Otevření hostitele služby chcete zpřístupnit službu.  
+8.  Otevření hostitele služby, aby tato služba k dispozici.  
   
 9. Zavřete hostitele služby.  
   
 #### <a name="to-set-up-a-client"></a>Nastavení klienta  
   
-1.  Vytvoření oboru transakce k zápisu do transakční fronty.  
+1.  Vytvoření oboru transakce k zápisu transakční fronty.  
   
-2.  Vytvoření klienta WCF pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj.  
+2.  Vytvoření pomocí klienta WCF [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj.  
   
-3.  Místní pořadí.  
+3.  Objednávku.  
   
 4.  Zavřete klienta WCF.  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad obsahuje kód pro `IProcessOrder` služby a pro klienta, který tato služba používá. Ukazuje, jak WCF se používá ve frontě relace k poskytnutí chování seskupení.  
+ Následující příklad uvádí kód `IProcessOrder` služby a pro klienta, která využívá tuto službu. To ukazuje, jak WCF používá relace ve frontě poskytnout chování seskupení.  
   
-### <a name="code-for-the-service"></a>Kód pro službu  
+### <a name="code-for-the-service"></a>Kód služby  
  [!code-csharp[S_Msmq_Session#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_session/cs/service.cs#1)]
  [!code-vb[S_Msmq_Session#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_session/vb/service.vb#1)]  
   
@@ -85,6 +85,6 @@ Windows Communication Foundation (WCF) poskytuje relaci, která umožňuje sesku
   
   
   
-## <a name="see-also"></a>Viz také  
- [Relace a fronty](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
- [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Relace a fronty](../../../../docs/framework/wcf/samples/sessions-and-queues.md)
+- [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)

@@ -2,12 +2,12 @@
 title: Programování s uzly (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: d8422a9b-dd37-44a3-8aac-2237ed9561e0
-ms.openlocfilehash: 871755ef0293513f07c60b1d5735c47692163b78
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 1cd9792905c1816094d9bbd12e0648c5a4d7c4f6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39244007"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527403"
 ---
 # <a name="programming-with-nodes-visual-basic"></a>Programování s uzly (Visual Basic)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vývojářům, kteří potřebují psát programy, jako je například XML editor, systém transformace nebo Autor sestavy často potřeba psát programy, které fungují na jemnější úrovni členitosti než elementů a atributů. Často potřebují pracovat na úrovni uzlu manipulace s uzly text, instrukce ke zpracování a komentáře. Toto téma obsahuje podrobnosti o programování na úrovni uzlu.  
@@ -171,5 +171,5 @@ Console.WriteLine(doc.Nodes().Count())
 1  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé technologie LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+## <a name="see-also"></a>Viz také:
+- [Pokročilé technologie LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 468ad1acf55c4d1b4fc2b53730f16ee8630cf19b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4c27669c8473bd52d3b82a14d570340ac38d1e07
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444012"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54523243"
 ---
 # <a name="corcallingconvention-enumeration"></a>CorCallingConvention – výčet
-Obsahuje hodnoty, které popisují typy pravidel pro volání, které jsou vytvářeny ve spravovaném kódu.  
+Obsahuje hodnoty, které popisují typy konvence volání, které probíhají ve spravovaném kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -55,25 +55,25 @@ typedef enum CorCallingConvention
 |Člen|Popis|  
 |------------|-----------------|  
 |`IMAGE_CEE_CS_CALLCONV_DEFAULT`|Určuje výchozí konvenci volání.|  
-|`IMAGE_CEE_CS_CALLCONV_VARARG`|Označuje, že metoda přijímá proměnný počet parametrů.|  
-|`IMAGE_CEE_CS_CALLCONV_FIELD`|Označuje, že volání je pro pole.|  
-|`IMAGE_CEE_CS_CALLCONV_LOCAL_SIG`|Označuje, že volání je místní metodě.|  
-|`IMAGE_CEE_CS_CALLCONV_PROPERTY`|Označuje, že volání je na vlastnost.|  
-|`IMAGE_CEE_CS_CALLCONV_UNMGD`|Označuje, že je volání nespravovaného.|  
-|`IMAGE_CEE_CS_CALLCONV_GENERICINST`|Určuje, vytváření instancí obecná metoda.|  
-|`IMAGE_CEE_CS_CALLCONV_NATIVEVARARG`|Označuje volání PInvoke 64-bit metodu, která přebírá proměnné počet parametrů.|  
-|`IMAGE_CEE_CS_CALLCONV_MAX`|Popisuje neplatnou hodnotu 4 bitů.|  
-|`IMAGE_CEE_CS_CALLCONV_MASK`|Označuje, že konvence volání je popsán dolní čtyři bits.|  
-|`IMAGE_CEE_CS_CALLCONV_HASTHIS`|Určuje, zda popisuje hlavní verze `this` parametr.|  
-|`IMAGE_CEE_CS_CALLCONV_EXPLICITTHIS`|Určuje, že `this` parametr je explicitně popsáno v podpis.|  
-|`IMAGE_CEE_CS_CALLCONV_GENERIC`|Určuje podpis obecná metoda s explicitní počet argumentů typu. To předchází počet obyčejnou parametrů.|  
+|`IMAGE_CEE_CS_CALLCONV_VARARG`|Označuje, že tato metoda přebírá proměnný počet parametrů.|  
+|`IMAGE_CEE_CS_CALLCONV_FIELD`|Označuje, že volání je k poli.|  
+|`IMAGE_CEE_CS_CALLCONV_LOCAL_SIG`|Označuje, že volání místní metody.|  
+|`IMAGE_CEE_CS_CALLCONV_PROPERTY`|Označuje, že volání na vlastnost.|  
+|`IMAGE_CEE_CS_CALLCONV_UNMGD`|Označuje, že je volání nespravovaných.|  
+|`IMAGE_CEE_CS_CALLCONV_GENERICINST`|Určuje instance obecné metody.|  
+|`IMAGE_CEE_CS_CALLCONV_NATIVEVARARG`|Označuje volání PInvoke 64-bit na metodu, která přijímá proměnný počet parametrů.|  
+|`IMAGE_CEE_CS_CALLCONV_MAX`|Popisuje neplatnou hodnotu 4-bit.|  
+|`IMAGE_CEE_CS_CALLCONV_MASK`|Určuje, zda konvence volání je popsán dolní čtyři bity.|  
+|`IMAGE_CEE_CS_CALLCONV_HASTHIS`|Označuje, že popisuje hlavní verze `this` parametru.|  
+|`IMAGE_CEE_CS_CALLCONV_EXPLICITTHIS`|Označuje, že `this` parametr je explicitně je popsáno v podpisu.|  
+|`IMAGE_CEE_CS_CALLCONV_GENERIC`|Označuje signaturu obecné metody pomocí explicitní počet argumentů typu. To předchází počet běžných parametrů.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

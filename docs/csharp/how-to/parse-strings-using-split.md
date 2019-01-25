@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Analýza řetězců metodou String.Split (Průvodce v C#)'
+title: 'Postupy: Analýza řetězců metodou String.Split (C# průvodce)'
 description: String.Split vrátí pole řetězců oddělit od sadu oddělovačů. Je snadný způsob, jak parsovat řetězce.
 ms.date: 01/03/2018
 helpviewer_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
-ms.openlocfilehash: b6170be2dbb3f11906bbaa6e5c3be3e48a976246
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: a8cb3a62497379f60e9cc6dec3d342192361f865
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45746362"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54603716"
 ---
-# <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Postupy: Analýza řetězců metodou String.Split (Průvodce v C#)
+# <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Postupy: Analýza řetězců metodou String.Split (C# průvodce)
 
 <xref:System.String.Split%2A?displayProperty=nameWithType> Metoda vytvoří pole podřetězců rozdělení vstupního řetězce podle jednoho nebo více oddělovačů. Často je nejjednodušším způsobem rozdělení řetězce na hranicích slov. Používá se také k rozdělení řetězců na jiné určitých znaků nebo řetězce.
 
@@ -50,8 +50,8 @@ Po sobě jdoucích instancí žádné oddělovače způsobit prázdný řetězec
 
 Tyto ukázky můžete zkusit pohledem na kód v našich [úložiště GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako soubor zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../programming-guide/index.md)  
-- [Řetězce](../programming-guide/strings/index.md)  
+- [Průvodce programováním v jazyce C#](../programming-guide/index.md)
+- [Řetězce](../programming-guide/strings/index.md)
 - [Regulárních výrazů .NET](../../standard/base-types/regular-expressions.md)

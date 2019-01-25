@@ -2,23 +2,23 @@
 title: Chování zabezpečení ve WCF
 ms.date: 03/30/2017
 ms.assetid: 513232c0-39fd-4409-bda6-5ebd5e0ea7b0
-ms.openlocfilehash: 221e9cb23e05378b68e4b53bc9d678c119738af5
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 3040f2af2f9db030d8434e977167810ac83f09dd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127417"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592806"
 ---
 # <a name="security-behaviors-in-wcf"></a>Chování zabezpečení ve WCF
 Ve Windows Communication Foundation (WCF), chování změnit chování za běhu na úrovni služby, nebo na úrovni koncového bodu. (Další informace o chování obecné naleznete v tématu [určení chování za běhu služby](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md).) *Chování zabezpečení* povolit kontrolu nad přihlašovacími údaji, ověřování, autorizace a auditování protokoly. Můžete použít chování programování nebo prostřednictvím konfigurace. Toto téma se zaměřuje na konfiguraci následujících chování související s funkcemi zabezpečení:  
   
--   [\<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
+-   [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
   
 -   [\<třídu clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md).  
   
 -   [\<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md).  
   
--   [\<serviceSecurityAudit >](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md).  
+-   [\<serviceSecurityAudit>](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md).  
   
 -   [\<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md), který také umožňuje určit zabezpečení koncového bodu, který klienti mají přístup k pro metadata.  
   
@@ -61,7 +61,7 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
 ### <a name="authentication-of-clientcertificate-element"></a>\<ověřování > z \<clientCertificate > – Element  
  [ \<Ověřování >](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) element umožňuje přizpůsobit, jak se budou ověřovat klienti. Můžete nastavit `CertificateValidationMode` atribut `None`, `ChainTrust`, `PeerOrChainTrust`, `PeerTrust`, nebo `Custom`. Ve výchozím nastavení, úroveň je nastavena `ChainTrust`, která určuje, že každý certifikát musí být nalezena v hierarchii certifikátů končí na *kořenová autorita* na začátku řetězce. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu `PeerOrChainTrust`, která určuje, že jsou přijímány samostatně vydané certifikáty (peer vztahu důvěryhodnosti) a také certifikáty, které jsou v důvěryhodným řetězem. Tato hodnota se používá při vývoji a ladění klientů a služeb, protože samostatně vydané certifikáty nemusí být zakoupenému od důvěryhodné autority. Při nasazování klienta, použijte `ChainTrust` místo hodnoty. Můžete také nastavit hodnotu `Custom`. Pokud je nastavena na `Custom` hodnotu, je nutné nastavit také `CustomCertificateValidatorType` atribut na sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní vlastní validátor, musí dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy.  
   
-### <a name="issuedtokenauthentication-element"></a>\<issuedTokenAuthentication > – Element  
+### <a name="issuedtokenauthentication-element"></a>\<issuedTokenAuthentication> Element  
  Vydaný token scénář má tři fáze. V první fázi se klient pokouší o přístup ke službě označuje *služby tokenů zabezpečení* (STS). Služba tokenů zabezpečení pak ověří klienta a následně vydá klienta token, obvykle token zabezpečení kontrolní výrazy SAML (Markup Language). Klient pak vrátí ke službě s tokenem. Služba zkontroluje token pro data, která umožňuje službě ověření tokenu a proto klienta. Pokud chcete ověřit token, musí být známo certifikát, který používá služba tokenů zabezpečení ve službě. [ \<IssuedTokenAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md) element je úložiště pro tyto certifikáty služba tokenů zabezpečení. Chcete-li přidat certifikáty použít [ \<knownCertificates >](../../../../docs/framework/configure-apps/file-schema/wcf/knowncertificates.md). Vložit [ \<Přidat >](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-knowncertificates.md) pro každý certifikát, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
@@ -117,16 +117,16 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
 #### <a name="clientcertifictate-element"></a>\<clientCertifictate > – Element  
  Nastavte certifikát používaný k ověření klienta s tímto elementem. Další informace najdete v tématu [jak: Zadání hodnot přihlašovacích údajů klienta](../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
   
-#### <a name="httpdigest"></a>\<httpDigest >  
+#### <a name="httpdigest"></a>\<httpDigest>  
  Musí být povolena tato funkce se službou Active Directory na Windows a Internetové informační služby (IIS). Další informace najdete v tématu [ověřování algoritmem Digest ve službě IIS 6.0](https://go.microsoft.com/fwlink/?LinkId=88443).  
   
 #### <a name="issuedtoken-element"></a>\<třídy issuedToken > – Element  
  [ \<Třídy issuedToken >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md) obsahuje prvků, které slouží ke konfiguraci místního vystavitele tokeny nebo chování používaná službou tokenu zabezpečení. Pokyny ke konfiguraci klienta pro použití místního vystavitele, naleznete v tématu [jak: Konfigurace místního vystavitele](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md).  
   
-#### <a name="localissueraddress"></a>\<localIssuerAddress >  
+#### <a name="localissueraddress"></a>\<localIssuerAddress>  
  Určuje výchozí adresu služby tokenů zabezpečení. Používá se při <xref:System.ServiceModel.WSFederationHttpBinding> neposkytuje adresu URL pro službu tokenů zabezpečení, nebo když je adresa vystavitele federované vazby `http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous` nebo `null`. V takovém případě <xref:System.ServiceModel.Description.ClientCredentials> musí mít nakonfigurovanou adresu místního vystavitele a vazbu používají ke komunikaci s tohoto vydavatele.  
   
-#### <a name="issuerchannelbehaviors"></a>\<issuerChannelBehaviors >  
+#### <a name="issuerchannelbehaviors"></a>\<issuerChannelBehaviors>  
  Použití [ \<issuerChannelBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md) přidat chování klienta WCF pro komunikaci se službou tokenu zabezpečení. Definování chování klienta v [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) oddílu. Chcete-li použít chování definované, přidejte <`add`> element `<issuerChannelBehaviors>` element s dva atributy. Nastavte `issuerAddress` na adresu URL služby tokenů zabezpečení a nastavte `behaviorConfiguration` atribut název chování definované koncového bodu, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
@@ -217,6 +217,6 @@ Ve Windows Communication Foundation (WCF), chování změnit chování za běhu 
 </behaviors>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

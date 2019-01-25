@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: seskupování souborů podle přípony (LINQ) (C#)'
+title: 'Postupy: Seskupování souborů podle přípony (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 21a98320-a5a1-4981-82d8-6a637e7d9018
-ms.openlocfilehash: 320d89c78a317f49d98d4dc139aaa3df05fcd6f3
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: bad4df9009a40cede04438063b2d30916d0e68b2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857885"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54575146"
 ---
-# <a name="how-to-group-files-by-extension-linq-c"></a>Postupy: seskupování souborů podle přípony (LINQ) (C#)
+# <a name="how-to-group-files-by-extension-linq-c"></a>Postupy: Seskupování souborů podle přípony (LINQ) (C#)
 Tento příklad ukazuje, jak lze provádět pokročilé seskupování a řazení v seznamech soubory nebo složky LINQ. Také ukazuje, jak pomocí stránky výstup v okně konzoly <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A> metody.  
   
 ## <a name="example"></a>Příklad  
@@ -107,7 +107,7 @@ class GroupByExtension
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
+- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
 - [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)

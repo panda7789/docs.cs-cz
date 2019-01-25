@@ -5,37 +5,37 @@ helpviewer_keywords:
 - Windows Forms, data binding
 - Windows Forms, adding change notification for data binding
 ms.assetid: b5b10f90-0585-41d9-a377-409835262a92
-ms.openlocfilehash: 79ad52b6db8cb7be7f4e3162b8f726e8cbe22dcf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 533bda1e08d2ed7d15160318e75f2c1b7224d989
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33527729"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54505897"
 ---
 # <a name="change-notification-in-windows-forms-data-binding"></a>Oznámení změn v datové vazbě rozhraní Windows Forms
-Jedním z nejdůležitějších konceptů Windows Forms – datová vazba je *upozornění na změnu*. Aby se zajistilo, že zdroj dat a vázané ovládací prvky vždy mít nejnovější data, je nutné přidat oznámení o změně pro datovou vazbu. Konkrétně chcete zajistit, že jsou vázané ovládací prvky upozorněni na změny, které byly provedeny k jejich zdroji dat a zdroj dat je upozornění na změny, které byly provedeny na vázané vlastnosti ovládacího prvku.  
+Jednou z nejdůležitějších pojmů Windows Forms – datová vazba je *oznámení o změně*. Pokud chcete mít jistotu, že zdroj dat a ovládací prvky vázané vždy mít nejnovější data, je nutné přidat oznámení o změně pro datovou vazbu. Konkrétně chcete mít jistotu, že vázané ovládací prvky se zobrazí oznámení o změnách, které byly provedeny na jejich zdroj dat a zdroj dat je oznámení o změnách, které byly provedeny vázané vlastnosti ovládacího prvku.  
   
  Existují různé druhy oznámení o změně, v závislosti na druhu datové vazby:  
   
--   Jednoduchá vazba, ve kterém jeden řídicí vlastnost je vázána na jednu instanci objektu.  
+-   Jednoduchá vazba, ve kterém je vlastnost jeden ovládací prvek vázán na jednu instanci objektu.  
   
--   Vazba na základě seznamu, která může zahrnovat vlastnost jeden ovládací prvek vázán vlastnost položky v seznamu nebo vlastnost ovládací prvek vázán na seznam objektů.  
+-   Vazba založený na seznamu, který může obsahovat jeden ovládací prvek vlastnost vázána na vlastnost položky v seznamu nebo vlastnosti ovládacího prvku vázán na seznam objektů.  
   
- Kromě toho při vytváření ovládacích prvků Windows Forms, které chcete použít pro datovou vazbu, musíte použít *PropertyName*změnilo vzor ovládacích prvků, tak, že změny vázané vlastnosti ovládacího prvku rozšířeny zdroj dat.  
+ Kromě toho při vytváření ovládacích prvků Windows Forms, který chcete použít pro datové vazby, musíte použít *PropertyName*změnit vzor k ovládacím prvkům tak, aby změny vázané vlastnosti ovládacího prvku se rozšíří na zdroj dat.  
   
-## <a name="change-notification-for-simple-binding"></a>Oznámení o změně pro jednoduchá vazba  
- Jednoduchá vazba obchodní objekty musí zadejte oznámení o změně při změně hodnoty vázané vlastnosti. Můžete to provést pomocí vystavení *PropertyName*změněno událost pro každou vlastnost objektu vaší firmy a objekt obchodní vytvoření vazby na ovládací prvky s <xref:System.Windows.Forms.BindingSource> nebo upřednostňovanou metodou, ve kterém se implementuje obchodní objekt <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní a vyvolá <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> události při změně hodnoty vlastnosti. Další informace najdete v tématu [postupy: implementace rozhraní INotifyPropertyChanged](../../../docs/framework/winforms/how-to-implement-the-inotifypropertychanged-interface.md). Při použití objektů implementujících <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní, není nutné použít <xref:System.Windows.Forms.BindingSource> o vázání objektu do ovládacího prvku, ale pomocí <xref:System.Windows.Forms.BindingSource> se doporučuje.  
+## <a name="change-notification-for-simple-binding"></a>Oznámení o změně pro jednoduchých připojení  
+ Pro jednoduché vazby, musí pro obchodní objekty poskytují oznámení o změně při změně hodnoty vázané vlastnosti. Uděláte to tak vystavení *PropertyName*změněné události pro každou vlastnost objektu vaší firmy a obchodní objekt vazeb k ovládacím prvkům s <xref:System.Windows.Forms.BindingSource> nebo upřednostňovanou metodou, ve kterém se implementuje obchodní objekt <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní a vyvolá <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> události při změně hodnoty vlastnosti. Další informace najdete v tématu [jak: Implementace rozhraní INotifyPropertyChanged](../../../docs/framework/winforms/how-to-implement-the-inotifypropertychanged-interface.md). Při použití objektů implementujících <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní, není nutné používat <xref:System.Windows.Forms.BindingSource> pro vazbu objektu do ovládacího prvku, ale pomocí <xref:System.Windows.Forms.BindingSource> se doporučuje.  
   
-## <a name="change-notification-for-list-based-binding"></a>Oznámení o změně pro vazbu na základě seznamu  
- Windows Forms závisí na změnit a vázané seznam zajistit změnu vlastnosti (změní hodnotu vlastnosti položky seznamu) (položka je odstranit nebo přidat do seznamu) informace, které vázané ovládací prvky. Proto musí implementovat seznamy použitá k vazbě dat <xref:System.ComponentModel.IBindingList>, který poskytuje oba typy oznámení o změně. <xref:System.ComponentModel.BindingList%601> Je obecnou implementaci <xref:System.ComponentModel.IBindingList> a je určená pro použití s Windows Forms – datová vazba. Můžete vytvořit <xref:System.ComponentModel.BindingList%601> obsahující obchodní typ objektu, který implementuje <xref:System.ComponentModel.INotifyPropertyChanged> a seznamu automaticky převede <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> události <xref:System.ComponentModel.IBindingList.ListChanged> události. Pokud není seznam vázané <xref:System.ComponentModel.IBindingList>, je třeba svázat seznam objektů k ovládacím prvkům Windows Forms pomocí <xref:System.Windows.Forms.BindingSource> součásti. <xref:System.Windows.Forms.BindingSource> Součást poskytne seznam vlastností převod podobná <xref:System.ComponentModel.BindingList%601>. Další informace najdete v tématu [postupy: vytváření oznámení o změnách pomocí BindingSource a INotifyPropertyChanged rozhraní](../../../docs/framework/winforms/controls/raise-change-notifications--bindingsource.md).  
+## <a name="change-notification-for-list-based-binding"></a>Oznámení o změně pro vazbu založenou na seznam  
+ Windows Forms závisí na změnit a vazby seznam poskytnout změnu vlastnosti (změně hodnoty vlastnosti položky seznamu) (položku se odstraní nebo přidat do seznamu) informace, které vázané ovládací prvky. Proto musí implementovat seznamů používané pro vytváření datových vazeb <xref:System.ComponentModel.IBindingList>, která obsahuje oba typy oznámení o změně. <xref:System.ComponentModel.BindingList%601> Je obecnou implementaci <xref:System.ComponentModel.IBindingList> a je určený k použití pomocí Windows Forms – datová vazba. Můžete vytvořit <xref:System.ComponentModel.BindingList%601> obsahující obchodní typ objektu, který implementuje <xref:System.ComponentModel.INotifyPropertyChanged> a v seznamu se automaticky převede <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> události <xref:System.ComponentModel.IBindingList.ListChanged> události. Pokud není vázaná seznam <xref:System.ComponentModel.IBindingList>, je třeba svázat seznam objektů k ovládacím prvkům Windows Forms s použitím <xref:System.Windows.Forms.BindingSource> komponenty. <xref:System.Windows.Forms.BindingSource> Komponenty poskytne seznam vlastností převod podobný <xref:System.ComponentModel.BindingList%601>. Další informace najdete v tématu [jak: Vytváření oznámení o změnách pomocí BindingSource a INotifyPropertyChanged – rozhraní](../../../docs/framework/winforms/controls/raise-change-notifications--bindingsource.md).  
   
 ## <a name="change-notification-for-custom-controls"></a>Oznámení o změně pro vlastní ovládací prvky  
- Nakonec ze strany řízení musí vystavit *PropertyName*změněno událost pro každou vlastnost navržený tak, aby se vázané na data. Změny vlastností ovládacího prvku rozšířeny pak vázaný datový zdroj. Další informace najdete v tématu [postupy: použití vzoru PropertyNameChanged](../../../docs/framework/winforms/how-to-apply-the-propertynamechanged-pattern.md)  
+ Nakonec na straně ovládacího prvku musí vystavit *PropertyName*změněné události pro každou vlastnost navržené tak, aby vázán na data. Změny vlastnosti ovládacího prvku se pak rozšíří ke zdroji dat vázaná. Další informace najdete v tématu [jak: Použití vzoru PropertyNameChanged](../../../docs/framework/winforms/how-to-apply-the-propertynamechanged-pattern.md)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.BindingSource>  
- <xref:System.ComponentModel.INotifyPropertyChanged>  
- <xref:System.ComponentModel.BindingList%601>  
- [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)  
- [Zdroje dat podporované rozhraním Windows Forms](../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md)  
- [Datové vazby a Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.BindingSource>
+- <xref:System.ComponentModel.INotifyPropertyChanged>
+- <xref:System.ComponentModel.BindingList%601>
+- [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)
+- [Zdroje dat podporované rozhraním Windows Forms](../../../docs/framework/winforms/data-sources-supported-by-windows-forms.md)
+- [Datové vazby a Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - literals [Visual Basic], Date
 - '# specifier for Date literals'
 ms.assetid: d9edf5b0-e85e-438b-a1cf-1f321e7c831b
-ms.openlocfilehash: 32bd0912b0bae3340cffed010fc67431d0efb376
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 528e63e6b7d978b3bbdfcb78e4260b4590db6d7f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48033529"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54520019"
 ---
 # <a name="date-data-type-visual-basic"></a>Date – datový typ (Visual Basic)
 IEEE – 64bitová (8 bajtů) hodnoty, které představují data od 1. ledna 0001 roku do 31. prosince 9999 roku a časy od 12:00:00: 00 (půlnoc) obsahuje prostřednictvím 11:59:59.9999999 PM. Každý přírůstek představuje 100 nanosekund uplynulý čas od začátku 1. ledna roku 1 v gregoriánském kalendáři. Maximální hodnota představuje 100 nanosekund před začátkem 1. ledna roku 10000.  
@@ -74,11 +74,11 @@ Dim dateInMay As New System.DateTime(1993, 5, 31, 12, 14, 0)
 Dim someDateAndTime As Date = #8/13/2002 12:14 PM#  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.DateTime?displayProperty=nameWithType>  
- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
- [Standardní řetězce formátu data a času](../../../standard/base-types/standard-date-and-time-format-strings.md)  
- [Vlastní řetězce formátu data a času](../../../standard/base-types/custom-date-and-time-format-strings.md)  
- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.DateTime?displayProperty=nameWithType>
+- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
+- [Standardní řetězce formátu data a času](../../../standard/base-types/standard-date-and-time-format-strings.md)
+- [Vlastní řetězce formátu data a času](../../../standard/base-types/custom-date-and-time-format-strings.md)
+- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
+- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

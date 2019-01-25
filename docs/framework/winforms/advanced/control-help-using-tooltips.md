@@ -7,18 +7,18 @@ helpviewer_keywords:
 - tooltips [Windows Forms], for controls
 - Help [Windows Forms], adding to dialog boxes
 ms.assetid: 03263f94-e539-440b-a67c-8b9110c96dcd
-ms.openlocfilehash: d20d3d9a6939abea8b3c09823f2a8cbaeda25ec6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3eb06a1cf672e7938d41cbeb1bfeeb9eec3edf87
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520562"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527299"
 ---
 # <a name="control-help-using-tooltips"></a>Nápověda ovládacího prvku pomocí ToolTips
-Můžete použít <xref:System.Windows.Forms.ToolTip> součást, kterou Struèné, specializuje nápovědu pro jednotlivé ovládacích prvků ve Windows Forms. <xref:System.Windows.Forms.ToolTip> Součást poskytuje vlastnosti, která určuje text, který zobrazí pro každý ovládací prvek na formuláři. Další informace o práci s <xref:System.Windows.Forms.ToolTip> součást tímto způsobem, najdete v části [postupy: nastavení ToolTips pro ovládací prvky na formuláři Windows v době návrhu](../../../../docs/framework/winforms/controls/how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time.md). Kromě toho můžete nakonfigurovat <xref:System.Windows.Forms.ToolTip> součásti tak, aby předtím, než se zobrazí, dochází ke zpoždění. Další informace najdete v tématu [postupy: Změna zpoždění součásti Windows Forms ToolTip](../../../../docs/framework/winforms/controls/how-to-change-the-delay-of-the-windows-forms-tooltip-component.md).  
+Můžete použít <xref:System.Windows.Forms.ToolTip> komponenty, chcete-li zobrazit stručný, specializované nápovědu pro jednotlivé ovládacích prvků ve Windows Forms. <xref:System.Windows.Forms.ToolTip> Komponenta obsahuje vlastnost, která určuje text zobrazený pro každého ovládacího prvku na formuláři. Další informace o práci s <xref:System.Windows.Forms.ToolTip> komponenty tímto způsobem, naleznete v tématu [jak: Nastavení ToolTips pro ovládací prvky ve formuláři Windows Forms v době návrhu](../../../../docs/framework/winforms/controls/how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time.md). Kromě toho můžete nakonfigurovat <xref:System.Windows.Forms.ToolTip> komponentu tak, že dochází ke zpoždění, než se zobrazí. Další informace najdete v tématu [jak: Změna zpoždění komponenty Windows Forms ToolTip](../../../../docs/framework/winforms/controls/how-to-change-the-delay-of-the-windows-forms-tooltip-component.md).  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Zobrazení místní nápovědy](../../../../docs/framework/winforms/advanced/how-to-display-pop-up-help.md)  
- [Komponenta ToolTip](../../../../docs/framework/winforms/controls/tooltip-component-windows-forms.md)  
- [Integrace uživatelské nápovědy v modelu Windows Forms](../../../../docs/framework/winforms/advanced/integrating-user-help-in-windows-forms.md)  
- [Windows Forms](../../../../docs/framework/winforms/index.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Zobrazení místní nápovědy](../../../../docs/framework/winforms/advanced/how-to-display-pop-up-help.md)
+- [Komponenta ToolTip](../../../../docs/framework/winforms/controls/tooltip-component-windows-forms.md)
+- [Integrace uživatelské nápovědy v modelu Windows Forms](../../../../docs/framework/winforms/advanced/integrating-user-help-in-windows-forms.md)
+- [Windows Forms](../../../../docs/framework/winforms/index.md)
