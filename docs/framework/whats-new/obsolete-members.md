@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8a0679dafda7935034d3a3ab0f4c43656ab5668b
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: f63d5213ac8544b41d79ccb78d96b232c7c66936
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151405"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54635972"
 ---
 # <a name="obsolete-members-in-the-net-framework"></a>Zastaralé členy v rozhraní .NET Framework
 Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhraní .NET Framework 4.5 a novějších verzích uspořádané podle sestavení. Pokud chcete zobrazit seznam zastaralé členy a doporučené alternativy v každé sestavení pomocí následujících odkazů. Toto téma neobsahuje členy zastaralých typů. Seznam zastaralých typů najdete v tématu [zastaralých typů](../../../docs/framework/whats-new/obsolete-types.md).  
@@ -25,7 +25,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
   
     -   [PresentationCore.dll](#PresentationCore)  
   
-    -   [Knihovně PresentationFramework.dll](#PresFW)  
+    -   [PresentationFramework.dll](#PresFW)  
   
     -   [System.Activities.dll](#Act)  
   
@@ -291,7 +291,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Windows.Media.Media3D.Viewport3DVisual?displayProperty=nameWithType>|<xref:System.Windows.Media.Media3D.Viewport3DVisual.BitmapEffectInput%2A>|Bitmapové efekty jsou zastaralé a už se funkce. Zvažte použití <xref:System.Windows.Media.Effects.Effect?displayProperty=nameWithType> příslušné místo.|  
   
 <a name="PresFW"></a>   
-### <a name="assembly-presentationframeworkdll"></a>Sestavení: Knihovně PresentationFramework.dll  
+### <a name="assembly-presentationframeworkdll"></a>Sestavení: PresentationFramework.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -389,7 +389,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Data.SqlClient.SqlParameterCollection?displayProperty=nameWithType>|<xref:System.Data.SqlClient.SqlParameterCollection.Add%28System.String%2CSystem.Object%29>|<xref:System.Data.SqlClient.SqlParameterCollection.Add%28System.String%2CSystem.Object%29> se už nepoužívá. Použití <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A?displayProperty=nameWithType>.|  
   
 <a name="entity"></a>   
-### <a name="assembly-systemdataentitydll"></a>Sestavení: Knihovně System.Data.Entity.dll  
+### <a name="assembly-systemdataentitydll"></a>Sestavení: System.Data.Entity.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -798,6 +798,6 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:Microsoft.VisualBasic.CompilerServices.Operators?displayProperty=nameWithType>|<xref:Microsoft.VisualBasic.CompilerServices.Operators.FallbackInvokeUserDefinedOperator%2A>|Použití tohoto členu vygeneruje chybu kompilátoru.<br /><br /> Nepoužívejte tuto metodu.|  
 |<xref:Microsoft.VisualBasic.MyServices.RegistryProxy?displayProperty=nameWithType>|<xref:Microsoft.VisualBasic.MyServices.RegistryProxy.DynData%2A>|`DynData` Klíč registru funguje pouze na systémy Win9x, která není podporována touto verzí rozhraní .NET Framework. Použití `PerformanceData` místo klíč registru. Tato vlastnost se odebere z budoucí verze rozhraní Framework.|  
   
-## <a name="see-also"></a>Viz také  
- [Zastaralé položky v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md)  
- [Zastaralé typy](../../../docs/framework/whats-new/obsolete-types.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé položky v knihovně tříd](../../../docs/framework/whats-new/whats-obsolete.md)
+- [Zastaralé typy](../../../docs/framework/whats-new/obsolete-types.md)

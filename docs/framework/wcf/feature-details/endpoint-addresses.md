@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], addresses
 - WCF [WCF], addresses
 ms.assetid: 13f269e3-ebb1-433c-86cf-54fbd866a627
-ms.openlocfilehash: 59b3aa87056cc2d32512c8b9ea68c0a6d5935814
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 816b4138f395298e2fbf8b4de4cac63c0794657b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48847402"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54730942"
 ---
 # <a name="endpoint-addresses"></a>Adresy koncových bodů
 Každý koncový bod má adresu přidruženo, který se používá k vyhledání a identifikaci koncového bodu. Tato adresa sestává především z identifikátor URI (Uniform Resource), která určuje umístění koncového bodu. Adresa koncového bodu je vyjádřena v programovacím modelu pomocí rozhraní Windows Communication Foundation (WCF) <xref:System.ServiceModel.EndpointAddress> třídu, která obsahuje volitelný <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost, která umožňuje ověření koncového bodu jiné koncové body, které vyměňovat zprávy a sadu volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A> vlastnosti, které definují další hlavičky SOAP, vyžaduje ke zpřístupnění služby. Poskytují další volitelné záhlaví a podrobnější informace o adresách k vaší identifikaci nebo interakci s koncový bod služby. Adresa koncového bodu je reprezentována na lince jako referenci koncového bodu WS-Addressing (EPR).  
@@ -48,7 +48,7 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledání
   
 -   Vazba protokolu: HTTP  
   
--   Informace o vazbě: IP adresa, Port, Hlavička hostitele  
+-   Informace o vazbě: IP adresu, Port, Hlavička hostitele  
   
  Služba IIS můžete určit víc vazeb pro každou lokalitu, což vede k více bázové adresy pro každé schéma. Před verzí [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)], WCF nepodporují více adres pro schéma a pokud byl zadán, vyvolala <xref:System.ArgumentException> během aktivace.  
   
@@ -137,6 +137,6 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledání
   
  V některých scénářích, koncový bod přijímá všechny zprávy, které přicházejí na základní přenos a nejen ti s odpovídající `To` záhlaví. Chcete-li povolit, může uživatel použít <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> třídy.  
   
-## <a name="see-also"></a>Viz také  
- [Zadání adresy koncového bodu](../../../../docs/framework/wcf/specifying-an-endpoint-address.md)  
- [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+## <a name="see-also"></a>Viz také:
+- [Zadání adresy koncového bodu](../../../../docs/framework/wcf/specifying-an-endpoint-address.md)
+- [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)

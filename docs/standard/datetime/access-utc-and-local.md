@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: přístup k předdefinované objekty UTC a lokálního časového pásma'
+title: 'Postupy: Přístup k předdefinované objekty UTC a lokálního časového pásma'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -15,14 +15,14 @@ helpviewer_keywords:
 ms.assetid: 961fb70b-83f0-4dab-a042-cb5fcd817cf5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f074e6f6d9b11cc7d7405adced3a4523a31676fa
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: c10c07c08a4e676cf3c84a5722814eaed85f74a9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44086910"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658023"
 ---
-# <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>Postupy: přístup k předdefinované objekty UTC a lokálního časového pásma
+# <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>Postupy: Přístup k předdefinované objekty UTC a lokálního časového pásma
 
 <xref:System.TimeZoneInfo> Třída poskytuje dvě vlastnosti <xref:System.TimeZoneInfo.Utc%2A> a <xref:System.TimeZoneInfo.Local%2A>, který kód přístup k předdefinované objekty časového pásma. Toto téma popisuje, jak získat přístup k <xref:System.TimeZoneInfo> objektů vrácených podle vlastností.
 
@@ -57,6 +57,6 @@ Tento příklad vyžaduje:
 
 ## <a name="see-also"></a>Viz také:
 
-* [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-* [Hledání časových pásem definovaných v lokálním systému](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md)
-* [Postupy: Vytvoření instance objektu TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md)
+- [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
+- [Hledání časových pásem definovaných v lokálním systému](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md)
+- [Postupy: Vytvoření instance objektu TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md)

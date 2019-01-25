@@ -2,19 +2,19 @@
 title: Použití výchozí Instance třídy v konstruktoru třídy může vést k nekonečné rekurzivní volání
 ms.date: 07/20/2015
 ms.assetid: 9645b47f-7de5-46d0-bb45-d5fdaa8aaa2a
-ms.openlocfilehash: cf5d3e16c43920a90b69c815f91601c6d33c845d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b4cae7802019cba569cf15517b1e948266a576f5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33638368"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631435"
 ---
 # <a name="use-of-default-instance-of-a-class-in-the-class-constructor-could-lead-to-infinite-recursive-call"></a>Použití výchozí Instance třídy v konstruktoru třídy může vést k nekonečné rekurzivní volání
-Výchozí instance třídy se používá v konstruktoru třídy. To může vést k nekonečné rekurzivní volání, také známé jako nekonečné smyčce.  
+Byla použita výchozí instance třídy v konstruktoru třídy. To může vést k nekonečné rekurzivní volání, označované také jako nekonečná smyčka.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Výchozí instance odeberte z konstruktoru třídy.  
+-   Odebrání výchozí instanci konstruktoru třídy.  
   
-## <a name="see-also"></a>Viz také  
- [Konstruktory](~/docs/visual-basic/programming-guide/concepts/object-oriented-programming.md#constructors)
+## <a name="see-also"></a>Viz také:
+- [Konstruktory](~/docs/visual-basic/programming-guide/concepts/object-oriented-programming.md#constructors)

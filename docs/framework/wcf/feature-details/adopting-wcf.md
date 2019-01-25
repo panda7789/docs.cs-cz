@@ -2,12 +2,12 @@
 title: Přijetí WCF
 ms.date: 03/30/2017
 ms.assetid: 49ba71e2-9468-4082-84c5-cf8daf95e34a
-ms.openlocfilehash: 5773d2687eb06cfc562dbe25fa9b94864b1b3a49
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 58a51f7ea0db2297c7151a752de3f54307e0c5fd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47232960"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643348"
 ---
 # <a name="adopting-windows-communication-foundation"></a>Přijetí WCF
 
@@ -21,6 +21,6 @@ Klienti WCF pomocí webové služby ASP.NET. Služby WCF, které mají nakonfigu
 
 I v několika případech, kdy je nezbytné je migrace kódu z jedné technologie do jiného zřídka správný přístup. Důvod pro přijetí nové technologie je splnit nové požadavky, které nelze splnit dřívějších technologií a v takovém případě je správnou věc udělat pro návrh nové řešení, které vyhoví nově rozšířit sadu požadavků. Nových návrhu výhodách z vašich zkušeností s ve stávajícím systému a při získané od takového systému byla navržena. Nový design můžete také použít všechny funkce nové technologie a ne reprodukce původního návrhu na nové platformě. Po vytváření prototypů klíčové prvky nového návrhu máme snadnější k opakovanému použití kódu z existujících systému v rámci nového.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Postupy: Načítání metadat a implementace kompatibilní služby](../../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md)

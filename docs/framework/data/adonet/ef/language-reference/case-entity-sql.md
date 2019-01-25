@@ -1,16 +1,16 @@
 ---
-title: PŘÍPAD (entita SQL)
+title: PŘÍPAD (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 26a47873-e87d-4ba2-9e2c-3787c21efe89
-ms.openlocfilehash: ee878409e7698300b7bebbdac760422013f3b7de
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 9f41c99ab40a74a2c17e8dac207cc7887c77ba91
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32761461"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54638921"
 ---
-# <a name="case-entity-sql"></a>PŘÍPAD (entita SQL)
-Vyhodnotí sadu `Boolean` výrazy k určení výsledku.  
+# <a name="case-entity-sql"></a>PŘÍPAD (Entity SQL)
+Vyhodnotí sadu `Boolean` výrazy k určení výsledků.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,34 +29,34 @@ END
  Je zástupný symbol, který označuje, že více při `Boolean_expression` pak `result_expression` klauzule můžete použít.  
   
  POTOM `result_expression`  
- Výraz dochází při `Boolean_expression` vyhodnocuje `true`. `result expression` Je jakýkoli platný výraz.  
+ Výraz dochází při `Boolean_expression` vyhodnotí jako `true`. `result expression` Je libovolný platný výraz.  
   
  ELSE `else_result_expression`  
- Je výraz vrácena, pokud žádná operace porovnání vyhodnocen `true`. Pokud je tento argument vynechán a žádná operace porovnání se vyhodnocuje `true`, případě vrátí hodnotu null. `else_result_expression` Je jakýkoli platný výraz. Datové typy `else_result_expression` a jakýkoli `result_expression` musí být stejné nebo musí být implicitní převod.  
+ Se výraz vrátí, pokud žádná operace porovnání vyhodnocen `true`. Pokud je tento argument vynechán a žádná operace porovnání vyhodnocen jako `true`, případě vrátí hodnotu null. `else_result_expression` Je libovolný platný výraz. Datové typy `else_result_expression` a jakékoli `result_expression` musí být stejný nebo musí být proveden implicitní převod.  
   
  KDY `Boolean_expression`  
- Je `Boolean` výrazu vyhodnoceného při použití vyhledávaná případu formátu. `Boolean_expression` je libovolný platný `Boolean` výraz.  
+ Je `Boolean` výraz vyhodnocen při použití hledaný případu formátu. `Boolean_expression` je libovolný platný `Boolean` výrazu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí typ nejvyšší prioritu ze sady typy v `result_expression` a volitelné `else_result_expression`.  
+ Vrátí nejvyšší prioritu typ ze sady typů v `result_expression` a volitelné `else_result_expression`.  
   
 ## <a name="remarks"></a>Poznámky  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Případu výraz vypadá takto: [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] případ výraz. Výraz case použijete k provedení řady podmíněného testů, abyste zjistili, výrazu, který předá odpovídající výsledek. Tento formulář případu výrazu se vztahují na řadu jeden nebo více `Boolean` výrazy k určení správné výsledný výraz.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Výraz case vypadá podobně jako [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] výraz malá a velká. Výraz case můžete provádět řadu podmíněné testů, abyste zjistili výrazu, který předá odpovídající výsledek. Tato forma výraz case se vztahuje na řadu jeden nebo více `Boolean` výrazy k určení správné výsledný výraz.  
   
- Funkce CASE vyhodnotí `Boolean_expression` pro každou klauzuli WHEN v pořadí zadané a vrátí `result_expression` prvního `Boolean_expression` , jehož výsledkem `true`. Zbývající výrazy nejsou vyhodnocena. Pokud žádné `Boolean_expression` vyhodnotí jako `true`, vrátí databázového stroje `else_result_expression` -li zadána klauzule ELSE, nebo hodnotu null, pokud není zadána žádná klauzule ELSE.  
+ Funkce CASE se vyhodnotí `Boolean_expression` pro každou klauzuli WHEN v pořadí zadané a vrátí `result_expression` prvního `Boolean_expression` vyhodnocenou nečíselnou `true`. Zbývající výrazy se nevyhodnocují. Pokud ne `Boolean_expression` vyhodnotí jako `true`, vrátí databázový stroj `else_result_expression` Pokud není zadána klauzule ELSE, nebo hodnotu null, pokud není zadána žádná klauzule ELSE.  
   
- Příkaz CASE nemůže vrátit multimnožina.  
+ CASE – příkaz nemůže vrátit použita třída multiset.  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz Entity SQL používá případu výraz k vyhodnocení sadu `Boolean` výrazy, aby bylo možné zjistit výsledek. Dotaz je založen na modelu prodej AdventureWorks. Pro zkompilování a spuštění tohoto dotazu, postupujte takto:  
+ Následující dotaz Entity SQL používá k vyhodnocení sady výraz CASE `Boolean` výrazů, aby bylo možné zjistit výsledek. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
   
-1.  Postupujte podle pokynů v [postup: provedení dotazu tohoto vrátí výsledky PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1.  Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
   
-2.  Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metoda:  
+2.  Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
   
  [!code-csharp[DP EntityServices Concepts 2#CASE_WHEN_THEN_ELSE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#case_when_then_else)]  
   
-## <a name="see-also"></a>Viz také  
- [THEN](../../../../../../docs/framework/data/adonet/ef/language-reference/then-entity-sql.md)  
- [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)  
- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+## <a name="see-also"></a>Viz také:
+- [THEN](../../../../../../docs/framework/data/adonet/ef/language-reference/then-entity-sql.md)
+- [SELECT](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)
+- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

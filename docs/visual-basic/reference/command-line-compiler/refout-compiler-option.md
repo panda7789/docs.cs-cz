@@ -7,12 +7,12 @@ helpviewer_keywords:
 - refout compiler option [Visual Basic]
 - /refout compiler option [Visual Basic]
 - -refout compiler option [Visual Basic]
-ms.openlocfilehash: 8a8068c467f9066af3153434187749fa80d254ca
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 3d7f5f9065ba53bd037d7307f62c9acad913b8e9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50048395"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54638701"
 ---
 # <a name="-refout-visual-basic"></a>-refout (Visual Basic)
 
@@ -40,8 +40,8 @@ Zahrnout odkaz na sestavení úrovni sestavení [ReferenceAssembly](xref:System.
 
 `-refout` a [ `-refonly` ](refonly-compiler-option.md) možnosti se vzájemně vylučují.
 
-## <a name="see-also"></a>Viz také
-[-refout](refonly-compiler-option.md)   
-[Kompilátor příkazového řádku jazyka Visual Basic](index.md)  
-[Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)  
+## <a name="see-also"></a>Viz také:
+- [-refonly](refonly-compiler-option.md)
+- [Visual Basic Command-Line Compiler](index.md)
+- [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)
 

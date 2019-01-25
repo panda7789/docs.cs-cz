@@ -6,12 +6,12 @@ helpviewer_keywords:
 - brushes [WPF], painting with solid colors
 - painting [WPF], with solid colors
 ms.assetid: 5d27d8a7-4bd7-4063-bdf3-2c5c0f19f9d3
-ms.openlocfilehash: 017c685139979ec3aa411be6e6b5fdf0e91657de
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: db1ff6048ab30554767459863c0fd5e261851f59
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44213511"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54647808"
 ---
 # <a name="how-to-paint-an-area-with-a-solid-color"></a>Postupy: Vykreslení oblasti plnou barvou
 K vykreslení oblasti plnou barvou, můžete použít předdefinovaný systémový štětce, jako například <xref:System.Windows.Media.Brushes.Red%2A> nebo <xref:System.Windows.Media.Brushes.Blue%2A>, nebo můžete vytvořit nový <xref:System.Windows.Media.SolidColorBrush> a popsat její <xref:System.Windows.Media.SolidColorBrush.Color%2A> pomocí hodnoty alfa, červené, zelené a modré. V XAML může také pomocí zápisu hexadecimální vykreslení oblasti plnou barvou.  
@@ -49,5 +49,5 @@ K vykreslení oblasti plnou barvou, můžete použít předdefinovaný systémov
   
  Tento příklad kódu je součástí většího příkladu určeného pro <xref:System.Windows.Media.SolidColorBrush> třídy. Úplnou ukázku najdete v tématu [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Brushes>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Brushes>

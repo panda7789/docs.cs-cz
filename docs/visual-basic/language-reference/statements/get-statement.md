@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Get keyword [Visual Basic]
 - property procedures [Visual Basic], Get statements
 ms.assetid: 56b05cdc-bd64-4dfd-bb12-824eacec6f94
-ms.openlocfilehash: 32b89caf56c010f9e6ed7b78309ef30b56b682ea
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
+ms.openlocfilehash: ade54b2f00c540a1bf4ede311e1631b2c5d7e3ef
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332893"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54742390"
 ---
 # <a name="get-statement"></a>Get – příkaz
 Deklaruje `Get` vlastnost postup použitý k načtení hodnoty vlastnosti.  
@@ -34,9 +34,9 @@ End Get
 |Termín|Definice|  
 |---|---|  
 |`attributelist`|Volitelné. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).|  
-|`accessmodifier`|Volitelné na nanejvýš jeden z `Get` a `Set` příkazy v této vlastnosti. Může být jedna z následujících akcí:<br /><br /> -   [chráněný](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend –](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
+|`accessmodifier`|Volitelné na nanejvýš jeden z `Get` a `Set` příkazy v této vlastnosti. Může být jedna z následujících akcí:<br /><br /> -   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend –](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
 |`statements`|Volitelné. Jeden nebo více příkazů, které při spuštění `Get` volání procedury vlastnosti.|  
-|`End Get`|Požadováno. Ukončí definici `Get` procedura property.|  
+|`End Get`|Povinný parametr. Ukončí definici `Get` procedura property.|  
   
 ## <a name="remarks"></a>Poznámky  
  Každou vlastnost musí mít `Get` procedura property Pokud je vlastnost označena `WriteOnly`. `Get` Postup se používá k vrácení aktuální hodnoty vlastnosti.  
@@ -82,9 +82,9 @@ End Get
   
  [!code-vb[VbVbalrStatements#30](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/get-statement_4.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Set](../../../visual-basic/language-reference/statements/set-statement.md)  
- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
- [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)  
- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
- [Návod: Definování tříd](../../../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Set](../../../visual-basic/language-reference/statements/set-statement.md)
+- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
+- [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)
+- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Návod: Definování tříd](../../../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)

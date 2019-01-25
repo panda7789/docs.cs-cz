@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vytvoření vlastní objekt Identity'
+title: 'Postupy: Vytvoření vlastní identity objektu zabezpečení'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,17 +10,17 @@ helpviewer_keywords:
 - PrincipalPermissionMode
 - PrincipalPermissionAttribute
 ms.assetid: c4845fca-0ed9-4adf-bbdc-10812be69b61
-ms.openlocfilehash: e3ecee7be32cef7fc5371e56cfc32e2d0ef7ae6f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8f957419bcb12b0dbe735240df3cd38fa7d16e76
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33488036"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54739677"
 ---
-# <a name="how-to-create-a-custom-principal-identity"></a>Postupy: vytvoření vlastní objekt Identity
-<xref:System.Security.Permissions.PrincipalPermissionAttribute> Je deklarativní způsob řízení přístupu metod služby. Při použití tohoto atributu <xref:System.ServiceModel.Description.PrincipalPermissionMode> výčet Určuje režim pro provedení kontroly autorizace. Když tento režim je nastaven na <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom>, umožní uživateli zadat vlastní <xref:System.Security.Principal.IPrincipal> třída vrácený <xref:System.Threading.Thread.CurrentPrincipal%2A> vlastnost. Toto téma ukazuje scénář při <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom> se používá v kombinaci s vlastní zásady autorizace a vlastní objekt.  
+# <a name="how-to-create-a-custom-principal-identity"></a>Postupy: Vytvoření vlastní identity objektu zabezpečení
+<xref:System.Security.Permissions.PrincipalPermissionAttribute> Je deklarativní způsob řízení přístupu k metodám služby. Při použití tohoto atributu <xref:System.ServiceModel.Description.PrincipalPermissionMode> výčet Určuje režim pro provedení kontroly autorizace. Když tento režim je nastaven na <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom>, umožňuje uživateli zadat vlastní <xref:System.Security.Principal.IPrincipal> třídy vrácené <xref:System.Threading.Thread.CurrentPrincipal%2A> vlastnost. Toto téma ukazuje scénář při <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom> se používá v kombinaci s vlastní zásady autorizace a vlastní objekt zabezpečení.  
   
- Další informace o používání <xref:System.Security.Permissions.PrincipalPermissionAttribute>, najdete v části [postupy: omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md).  
+ Další informace o používání <xref:System.Security.Permissions.PrincipalPermissionAttribute>, naleznete v tématu [jak: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[PrincipalPermissionMode#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/principalpermissionmode/cs/source.cs#8)]
@@ -49,9 +49,9 @@ ms.locfileid: "33488036"
   
 -   <xref:System.IdentityModel.Policy>  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Description.PrincipalPermissionMode>  
- <xref:System.ServiceModel.Description.PrincipalPermissionMode>  
- <xref:System.Security.Permissions.PrincipalPermissionAttribute>  
- [Postupy: Použití zprostředkovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)  
- [Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Description.PrincipalPermissionMode>
+- <xref:System.ServiceModel.Description.PrincipalPermissionMode>
+- <xref:System.Security.Permissions.PrincipalPermissionAttribute>
+- [Postupy: Použití zprostředkovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)
+- [Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)

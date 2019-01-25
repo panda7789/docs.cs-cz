@@ -3,12 +3,12 @@ title: Použít zavřít a přerušení k uvolnění prostředků klienta WCF
 description: Dispose může selhat a vyvolání výjimky, pokud se nezdaří v síti. To může způsobit nežádoucí chování. Místo toho použijte zavřít a přerušení k uvolnění prostředků klienta, když k chybě sítě.
 ms.date: 11/12/2018
 ms.assetid: aff82a8d-933d-4bdc-b0c2-c2f7527204fb
-ms.openlocfilehash: d37ad9d2277fea2656311a5a1f57d51343d10d89
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 4996ccba955d7946bb76b8124b8b28d803b6f3e1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147213"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54736426"
 ---
 # <a name="close-and-abort-release-resources-safely-when-network-connections-have-dropped"></a>Zavřít a přerušení uvolnění prostředků bezpečně vynechali síťová připojení
 Tento příklad ukazuje použití `Close` a `Abort` metody pro vyčištění prostředků při použití typu klienta. `using` Příkaz způsobí, že výjimky při připojení k síti není robustní. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje. V této ukázce je konzolová aplikace (.exe) klient a služba je hostována v Internetové informační služby (IIS).  
@@ -119,4 +119,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\UsingUsing`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

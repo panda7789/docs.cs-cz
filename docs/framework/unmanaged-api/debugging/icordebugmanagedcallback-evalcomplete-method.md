@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 688c5a4b5a18cea444ebf1d63f3ea012a5d815c1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3243429f52bda58953296c4bb32624440792ad02
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415207"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54636466"
 ---
 # <a name="icordebugmanagedcallbackevalcomplete-method"></a>ICorDebugManagedCallback::EvalComplete – metoda
-Upozorní ladicí program dokončí zkušební verzi.  
+Upozorní ladicího programu, že zkušební verzi bylo dokončeno.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,16 +39,16 @@ HRESULT EvalComplete (
   
 #### <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [v] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace, ve kterém byla provedena vyhodnocení.  
+ [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, ve kterém se provedla hodnocení.  
   
  `pThread`  
- [v] Ukazatel na ICorDebugThread objekt, který reprezentuje vláken, ve kterém byla provedena vyhodnocení.  
+ [in] Ukazatel na objekt icordebugthread –, který představuje vlákno, ve kterém se provedla hodnocení.  
   
  `pEval`  
- [v] Ukazatel na ICorDebugEval objekt, který představuje kód, který provádí vyhodnocení.  
+ [in] Ukazatel na objekt icordebugeval –, který představuje kód, který provádí hodnocení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -56,5 +56,5 @@ HRESULT EvalComplete (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

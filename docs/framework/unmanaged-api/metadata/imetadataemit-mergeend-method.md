@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b794a62a0ac0d253f1431be29b43101816dc7233
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 45d85be4e4987e5a5234ca2d57c85a56f9f544bc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449439"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54657022"
 ---
 # <a name="imetadataemitmergeend-method"></a>IMetaDataEmit::MergeEnd – metoda
-Sloučení do aktuální obor všechny obory metadata určeného jeden nebo více předchozích volání [imetadataemit::merge –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-merge-method.md).  
+Sloučení do aktuální obor oborů metadat zadán jeden nebo více předchozích volání [imetadataemit::merge –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-merge-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,42 +34,42 @@ HRESULT MergeEnd ();
 ```  
   
 #### <a name="parameters"></a>Parametry  
- Tato metoda nepřijímá žádné parametry.  
+ Tato metoda nemá žádné parametry.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato rutina aktivuje skutečné sloučení metadat, všechny importovat rozsahy určené tak, že před volání `IMetaDataEmit::Merge`, do aktuálního oboru výstup.  
+ Tato rutina spustí skutečné sloučení metadat, všech importovat obory zadané před volání `IMetaDataEmit::Merge`, do aktuálního oboru výstup.  
   
- Následující zvláštní podmínky platí pro sloučení:  
+ Sloučení platí následující zvláštní podmínky:  
   
--   Identifikátor verze modulu (identifikátoru MVID) je nikdy importován, protože je jedinečné pro metadata v oboru importu.  
+-   Identifikátor verze modulu (identifikátor MVID) je nikdy importován, protože je jedinečný v oboru importu metadat.  
   
--   Žádné existující vlastnosti modulu celou se přepíší.  
+-   Žádné existující vlastnosti celý modul přepsány.  
   
-     Pokud modul vlastnosti byly nastaveny pro aktuální obor, žádné vlastnosti modulu importují. Nicméně pokud nebyly nastaveny vlastnosti modulu v aktuálním oboru, jsou importované jen jednou, pokud se při prvním výskytu. Pokud tyto vlastnosti modulu nedojde k znovu, jsou duplicitní. Pokud porovnání hodnot všech vlastností modulu (s výjimkou identifikátoru MVID) a jsou nalezeny žádné duplicitní hodnoty, je vyvolána k chybě.  
+     Pokud již nebyly nastaveny vlastnosti modulu pro aktuální obor, žádné vlastnosti modulu importují. Nicméně pokud nebyly nastaveny vlastnosti modulu v aktuálním oboru, jejich importování pouze jednou, při jejich prvním výskytu. Pokud tyto vlastnosti modulu nedojde k znovu, jsou duplicitní položky. Pokud jsou porovnány hodnoty všech vlastností modulu (s výjimkou identifikátor MVID) a nenajdou žádné duplicity, je vyvolána k chybě.  
   
--   Pro definice typů (`TypeDef`), neobsahuje žádné duplikáty jsou sloučeny do aktuálního oboru. `TypeDef` objekty jsou kontrolovány duplikátů proti jednotlivým *objekt plně kvalifikovaný název* + *GUID* + *číslo verze*. Pokud není nalezena shoda na název nebo identifikátor GUID, a všechny další dva elementy se liší, je vyvolána k chybě. Jinak, pokud se všechny tři položky shodují, `MergeEnd` provede zběžnou kontrolu, ujistěte se, pak jsou skutečně duplikáty; v opačném případě se vyvolá chybu. Kontrola zběžnou vyhledá:  
+-   Typ definice (`TypeDef`), žádné duplicitní hodnoty jsou sloučeny do aktuálního oboru. `TypeDef` objekty jsou zkontrolovat duplicitu jednotlivá *objekt plně kvalifikovaný název* + *GUID* + *číslo verze*. Pokud není nalezena shoda pro název nebo identifikátor GUID a některý další dva elementy se liší, je vyvolána k chybě. Jinak, pokud se shodují všechny tři položky `MergeEnd` provede zběžné kontrolu, aby položky jsou ve skutečnosti duplicitní; v opačném případě dojde k chybě. Zběžné Kontrola vyhledá:  
   
-    -   Stejném deklarace členů, ke kterým dochází ve stejném pořadí. Členové, které jsou označeny jako `mdPrivateScope` (najdete v článku [CorMethodAttr](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md) – výčet) nejsou součástí této kontroly; se speciálně sloučí.  
+    -   Stejný člen prohlášení, ke kterým dochází ve stejném pořadí. Členy, které jsou označeny jako `mdPrivateScope` (najdete v článku [cormethodattr –](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md) výčet) nejsou součástí této kontroly; jsou speciálně sloučeny.  
   
-    -   Se stejné rozvržení třídy.  
+    -   Stejné rozložení třídy.  
   
-     To znamená, že `TypeDef` objekt musí vždy být plně a konzistentně definován v oboru každých metadata ve kterém je deklarovaná; pokud jeho implementace člen (pro třídu) jsou rozloženy několika kompilačních jednotek, se považuje za úplné definice v každé oboru a ne přírůstkové do každého oboru. Například pokud názvy parametrů jsou relevantní pro kontrakt, se musí být vygenerované stejným způsobem jako do každé oboru; Pokud nejsou relevantní, by neměl být vložen do metadat.  
+     To znamená, že `TypeDef` objektu musí vždy plně a konzistentně definovat v každé metadata rozsahu ve kterém je deklarována, pokud jeho implementace členů (pro třídu) jsou rozděleny mezi několika kompilačních jednotek, úplná definice se předpokládá se, že k dispozici v každé oboru, ne přírůstková k jednotlivým oborům. Například pokud názvy parametrů jsou relevantní pro kontrakt, se musí emitovat stejným způsobem jako do každé obor; Pokud nejsou relevantní, by neměly být vložen do metadat.  
   
-     Výjimkou je, že `TypeDef` objekt může mít přírůstkové členy označení `mdPrivateScope`. Na tyto zjištění `MergeEnd` přírůstkově se přidají do aktuálního oboru bez ohledu na duplicitní položky. Protože kompilátor rozumí oboru privátní, musí být kompilátor zodpovědný za vynucení pravidel.  
+     Výjimkou je, že `TypeDef` , může být označený jako přírůstkové členy `mdPrivateScope`. Na tyto, zjištění `MergeEnd` postupně se přidají do aktuálního oboru bez ohledu na duplicitní položky. Protože kompilátor rozpozná oboru privátní, kompilátor musí být za vynucování pravidel.  
   
--   Relativní virtuální adresy (RVAs) nejsou importovány nebo sloučit; Kompilátor očekává se znovu generuje tato informace.  
+-   Relativních virtuálních adres (RVA) nejsou importovány nebo sloučit; Kompilátor by měl znovu vygenerovat tyto informace.  
   
--   Vlastní atributy jsou sloučeny jenom v případě, že je sloučen položku, ke kterému jsou připojené. Například vlastní atributy přidružené třídy jsou sloučeny, pokud je třída při prvním výskytu. Pokud jsou vlastní atributy přidružené `TypeDef` nebo `MemberDef` týkající se jednotka kompilace (například časové razítko kompilace člen), není sloučeno a je maximálně kompilátoru odebrat nebo aktualizovat takové metadat.  
+-   Vlastní atributy jsou sloučeny pouze v případě, že se sloučí položku, ke kterému jsou připojené. Například vlastní atributy přidružené třídy jsou sloučeny při prvním výskytu třídy se. Pokud uživatelských atributů, které jsou přidruženy `TypeDef` nebo `MemberDef` , která je specifická pro kompilační jednotky (například časové razítko člen kompilace), nejsou sloučené a je kompilátor odebrat nebo aktualizovat tato metadata.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

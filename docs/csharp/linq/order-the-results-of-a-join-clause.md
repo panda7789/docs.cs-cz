@@ -1,14 +1,14 @@
 ---
 title: Řazení výsledků klauzule join (LINQ v JAZYKU C#)
 description: Zjistěte, jak řazení výsledků klauzule join LINQ v jazyce C#.
-ms.date: 12/1/2016
+ms.date: 12/01/2016
 ms.assetid: a7458901-1201-4c25-b8d9-c04ca52e0eb9
-ms.openlocfilehash: 7ab9c2ade4029e64d47840ef8dece8e1280d5669
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: f60000b83bf378dd8740b7255d421dd4335614c4
+ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54589292"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54857885"
 ---
 # <a name="order-the-results-of-a-join-clause"></a>Řazení výsledků klauzule join
 

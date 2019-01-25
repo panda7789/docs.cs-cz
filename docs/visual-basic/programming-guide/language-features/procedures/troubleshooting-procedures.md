@@ -8,18 +8,18 @@ helpviewer_keywords:
 - troubleshooting procedures
 - procedures [Visual Basic], about procedures
 ms.assetid: 525721e8-2e02-4f75-b5d8-6b893462cf2b
-ms.openlocfilehash: f66e7f7444f2d3b1bb58bae6008f8896c81c2f76
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ef0a485a0b114f465aac694970ec3350b26f35a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33655516"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54648544"
 ---
 # <a name="troubleshooting-procedures-visual-basic"></a>Řešení potíží s procedurami (Visual Basic)
-Tato stránka obsahuje některé běžné problémy, ke kterým dochází při práci s postupy.  
+Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout při práci s postupy.  
   
 ## <a name="returning-an-array-type-from-a-function-procedure"></a>Vrací typ pole z procedury – funkce  
- Pokud `Function` postup vrátí datového typu pole, nelze použít `Function` název pro uložení hodnot v elementech pole. Pokud se pokusíte k tomu, kompilátor ji interpretuje jako volání `Function`. Následující příklad generuje chyby kompilátoru.  
+ Pokud `Function` procedura vrací datový typ pole, nelze použít `Function` název pro ukládání hodnot prvků pole. Pokud se pokusíte k tomu, kompilátor ji interpretuje jako volání `Function`. Následující příklad generuje chyby kompilátoru.  
   
  `Function allOnes(ByVal n As Integer) As Integer()`  
   
@@ -37,99 +37,99 @@ Tato stránka obsahuje některé běžné problémy, ke kterým dochází při p
   
  `End Function`  
   
- Příkaz `allOnes(i) = 1` vygeneruje Chyba kompilátoru, protože se zdá, že volání `allOnes` s chybným datovým typem argument (jednotlivý prvek `Integer` místo `Integer` pole). Příkaz `Return allOnes()` vygeneruje Chyba kompilátoru, protože se zdá, že volání `allOnes` s žádný argument.  
+ Příkaz `allOnes(i) = 1` vygeneruje chybu kompilátoru, protože to vypadá, volání `allOnes` s argumentem typu chybná data (jednotlivý prvek `Integer` místo `Integer` pole). Příkaz `Return allOnes()` vygeneruje chybu kompilátoru, protože to vypadá, volání `allOnes` s žádný argument.  
   
- **Správný způsob:** mohli upravit prvky pole, které se vrátí, definovat interní pole jako místní proměnné. V následujícím příkladu se zkompiluje bez chyby.  
+ **Správný způsob:** Aby bylo možné upravit prvky pole, které má být vrácena, definujte interní pole jako místní proměnná. Následující příklad se zkompiluje bez chyb.  
   
  [!code-vb[VbVbcnProcedures#66](./codesnippet/VisualBasic/troubleshooting-procedures_1.vb)]  
   
-## <a name="argument-not-being-modified-by-procedure-call"></a>Argument není upravována voláním procedury  
- Pokud máte v úmyslu povolit postup, chcete-li změnit programovací element základní argument ve volání kódu, musí se splnit odkazem. Ale procedury přístup i v případě, že jí předáte hodnotu elementy argument typu odkaz.  
+## <a name="argument-not-being-modified-by-procedure-call"></a>Argument není právě upravuje voláním procedury  
+ Pokud chcete povolit postup, chcete-li změnit programovací element základní argumentu ve volajícím kódu, musíte jí předat podle odkazu. Ale postup může přistupovat k prvkům argument typu odkazu, i v případě, předat podle hodnoty.  
   
--   **Základní proměnné**. Povolit postup nahraďte hodnotu základní proměnné elementu samotného, musí deklarovat postup parametr [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md). Navíc volající kód nesmí uzavřete jej v závorkách, vzhledem k tomu, který by se mělo přepsat `ByRef` předávání mechanismus.  
+-   **Základní proměnná**. Povolit postup k nahrazení hodnoty základní proměnné elementu samotného, procedura musí deklarovat parametr [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md). Navíc volající kód nesmí uvést argument v závorkách, protože, který by se mělo přepsat `ByRef` předávání mechanismus.  
   
--   **Referenční elementy typu**. Pokud je parametr deklarovat [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md), postup nelze upravit základní proměnné elementu samotného. Ale pokud argument typu odkazu, postup můžete upravit členy objektu, na kterou odkazuje, i když ho nelze nahradit hodnota proměnné. Například pokud je argumentem proměnná typu pole, postup nelze přiřadit nové pole do ní, ale můžete změnit, nejméně jeden z jejích elementů. Změněné elementy se projeví v podkladové proměnné pole v volající kód.  
+-   **Odkazovat na prvky typu**. Pokud deklarujete parametr [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md), postup nelze změnit základní proměnné elementu samotného. Ale pokud je argumentem Typ odkazu, postupu můžete upravit členy objektu, na kterou odkazuje, i když ho nelze nahradit hodnotu proměnné. Například pokud má argument hodnotu proměnné pole, postup nelze přiřadit nové pole do ní, ale můžete změnit jednu nebo více z jeho prvků. Změněné prvky se projeví v základní proměnné pole ve volajícím kódu.  
   
- V následujícím příkladu definuje dva postupy, které provádějí proměnné pole podle hodnoty a pracovat na jeho elementy. Postup `increase` jednoduše přidá jeden na každý element. Postup `replace` přiřadí nové pole do parametru `a()` a potom přidá jeden na každý element. Však opětovné přiřazení neovlivňuje základní proměnné pole v kód volání, protože `a()` je deklarovaná `ByVal`.  
+ Následující příklad definuje dva postupy, které v této proměnné pole hodnota a provozují na jeho prvků. Postup `increase` jednoduše přidá jednu na každý prvek. Postup `replace` přiřadí nové pole parametru `a()` a pak přidá jednu na každý prvek. Ale přeřazení neovlivní základní proměnné pole ve volajícím kódu, protože `a()` je deklarován `ByVal`.  
   
  [!code-vb[VbVbcnProcedures#35](./codesnippet/VisualBasic/troubleshooting-procedures_2.vb)]  
   
  [!code-vb[VbVbcnProcedures#38](./codesnippet/VisualBasic/troubleshooting-procedures_3.vb)]  
   
- Následující příklad provádí volání na `increase` a `replace`.  
+ Následující příklad provede volání `increase` a `replace`.  
   
  [!code-vb[VbVbcnProcedures#37](./codesnippet/VisualBasic/troubleshooting-procedures_4.vb)]  
   
- První `MsgBox` volání zobrazí "po increase(n): 11, 21, 31, 41". Protože `n` je typu odkazu `increase` můžete změnit její členy, i když je předán `ByVal`.  
+ První `MsgBox` volání zobrazí "po increase(n): 11, 21, 31, 41". Protože `n` je typem odkazu `increase` lze měnit její členy, i když je jí předán `ByVal`.  
   
- Druhý `MsgBox` volání zobrazí "po replace(n): 11, 21, 31, 41". Protože `n` je předán `ByVal`, `replace` nelze upravit proměnnou `n` přiřazením nové pole. Když `replace` vytvoří novou instanci pole `k` a přiřadí ji k místní proměnné `a`, se ztratí odkaz na `n` předaná volající kódem. Když se zvýší členů `a`, pouze místní pole `k` má vliv.  
+ Druhá `MsgBox` volání zobrazí "po replace(n): 11, 21, 31, 41". Protože `n` je předán `ByVal`, `replace` nelze upravit proměnnou `n` přiřazením nového pole. Když `replace` vytvoří novou instanci pole `k` a přiřadí ji na místní proměnnou `a`, ztratí odkaz na `n` předaných v volající kód. Když zvýší členy `a`, pouze místní pole `k` má vliv.  
   
- **Správný způsob:** mohli upravit základní proměnné elementu samotného, předání odkazem. Následující příklad ukazuje změnu v deklaraci `replace` umožňuje jej nahradit jiným v kód volání jedno pole.  
+ **Správný způsob:** Abyste mohli upravovat základní prvek proměnné samotné, předávání odkazem. Následující příklad ukazuje změnu v deklaraci `replace` , který umožňuje jedno pole nahradit jiným ve volajícím kódu.  
   
  [!code-vb[VbVbcnProcedures#64](./codesnippet/VisualBasic/troubleshooting-procedures_5.vb)]  
   
-## <a name="unable-to-define-an-overload"></a>Nelze definovat přetížení  
- Pokud chcete definovat přetížené verzi postup, musíte použít stejný název, ale jiný podpis. Pokud kompilátor nelze rozlišit vaší deklaraci ze přetížení se stejným podpisem, vygeneruje se chyba.  
+## <a name="unable-to-define-an-overload"></a>Nelze definovat přetíženou  
+ Pokud chcete definovat přetížené verze procedury, musíte použít stejný název, ale jiným podpisem. Pokud kompilátor nemůže rozlišit vaše deklarace z přetížení se stejným podpisem, dojde k chybě.  
   
- *Podpis* procedury je dáno tím název procedury a seznam parametrů. Každé přetížení musí mít stejný název jako všechny ostatní přetížení ale se musí lišit od všech těchto alespoň v jedné další komponenty podpis. Další informace najdete v tématu [přetížení procedury](./procedure-overloading.md).  
+ *Podpis* procedury je určen název procedury a seznamu parametrů. Jednotlivá přetížení, musí mít stejný název jako všechna přetížení ale se musí lišit od všechny z nich alespoň v jedné další komponenty podpisu. Další informace najdete v tématu [přetížení procedury](./procedure-overloading.md).  
   
- Následující položky, i když se týkají do seznamu parametrů nejsou součástí podpisu postup:  
+ Následující položky, i v případě, že jde o jejich vztah k seznamu parametrů nejsou součástí podpis postupem:  
   
 -   Postup modifikátor klíčová slova, jako například `Public`, `Shared`, a `Static`  
   
 -   Názvy parametrů  
   
--   Klíčová slova – modifikátor parametrů, jako například `ByRef` a `Optional`  
+-   Klíčová slova modifikátor parametru, jako například `ByRef` a `Optional`  
   
--   datový typ vrácené hodnoty (s výjimkou operátora převodu)  
+-   Datový typ vrácené hodnoty (s výjimkou operátoru převodu)  
   
- Pomocí různých pouze jeden nebo více předchozí položky nelze přetížení procedury.  
+ Pomocí různých pouze jeden nebo více předchozích položek nelze přetížení procedury.  
   
- **Správný způsob:** mohli definovat přetížení procedury, musí být podpis. Protože je nutné použít stejný název, musí se liší čísla, pořadí nebo datové typy parametrů. Obecný postup můžete měnit počet parametrů typu. V operátora převodu ([CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md)), návratový typ se může lišit.  
+ **Správný způsob:** Aby bylo možné definovat přetížení procedury, musí se liší podpis. Protože je nutné použít stejný název, musí se liší počet, pořadí nebo datové typy parametrů. V obecný postup je popsán můžete měnit počet parametrů typu. V operátoru převodu ([funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md)), návratový typ se může lišit.  
   
-### <a name="overload-resolution-with-optional-and-paramarray-arguments"></a>Přetížení řešení s volitelné a ParamArray – argumenty  
- Pokud jsou přetížení procedury s jedním nebo více [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) parametry nebo [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) parametr, je nutné se neduplikovaly některé z *implicitní přetížení*. Informace najdete v tématu [aspekty přetížení procedur](./considerations-in-overloading-procedures.md).  
+### <a name="overload-resolution-with-optional-and-paramarray-arguments"></a>Přetížení překlad IP adres s volitelným a ParamArray – argumenty  
+ Pokud jsou přetížení procedury s jednou nebo více [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) parametry nebo [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) parametr, je třeba se vyvarovat duplikování všech *implicitní přetížení*. Informace najdete v tématu [aspekty přetížení procedur](./considerations-in-overloading-procedures.md).  
   
-## <a name="calling-a-wrong-version-of-an-overloaded-procedure"></a>Volání nesprávný verzi přetížené procedury  
- Pokud procedury má několik přetížené verzí, by měl být obeznámeni s jejich seznamy parametrů a pochopit, jak Visual Basic přeloží volání mezi přetížení. V opačném případě může volat přetížení než zamýšlené.  
+## <a name="calling-a-wrong-version-of-an-overloaded-procedure"></a>Volání nesprávné verze třídy přetížené procedury  
+ Pokud procedura má několik přetížené verze, by měl být obeznámeni s jejich seznamy parametrů a pochopit, jak Visual Basic přeloží volání mezi přetížení. Jinak lze volat přetížení než zamýšlené.  
   
- Pokud zjistíte, které přetížení, které chcete volat, pečlivě dodržujte přitom následující pravidla:  
+ Pokud jste určili přetížení, které chcete volat, dejte pozor, dodržovat následující pravidla:  
   
 -   Zadejte správný počet argumentů a ve správném pořadí.  
   
--   V ideálním případě by měli vaší argumenty přesně stejnou typy dat, jako odpovídající parametry. Datový typ jednotlivých argumentu musí v žádném případě rozšíří do u jeho odpovídající parametr. To platí to i [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md) nastavena na `Off`. Pokud přetížení vyžaduje, aby všechny zužující převod ze seznamu argument, který přetížení nejsou způsobilé k volání.  
+-   V ideálním případě by vaše argumenty by měly obsahovat přesně stejné datové typy jako odpovídající parametry. Datový typ každého argumentu musí v každém případě rozšířit na u jeho odpovídajícího parametru. To platí i v případě [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md) nastavena na `Off`. Pokud jakýkoli zužující převod seznam argumentů, které přetížení vyžaduje přetížení nemá oprávnění volat.  
   
--   Pokud zadáte argumenty, které vyžadují rozšíření, zkontrolujte své datové typy jak nejblíže k odpovídající datové typy parametrů. Pokud dva nebo více přetížení přijmout svým datovým typům argument, kompilátor přeloží volání přetížení, které žádá minimem rozšíření.  
+-   Pokud zadáte argumenty, které vyžadují rozšíření, ujistěte se, co nejblíže k odpovídající datové typy parametrů jejich datové typy. Pokud dva nebo více přetížení přijmout vaší datové typy argumentů, kompilátor překládá volání přetížení, které vyžaduje minimální množství rozšíření.  
   
- Můžete snížit riziko neshody typu dat pomocí [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md) – klíčové slovo převodu při přípravě vašeho argumenty.  
+ Můžete snížit pravděpodobnost svého neshody typů dat pomocí [funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md) – klíčové slovo převodu při přípravě vaše argumenty.  
   
 ### <a name="overload-resolution-failure"></a>Chybě rozlišení přetížení  
- Při volání přetížené procedury, pokusí se kompilátor odstranit všechny kromě jednoho z přetížení. Pokud se aktivace podaří, přeloží volání této přetížení. Pokud eliminuje všechny přetížení, nebo ho nelze zmenšit oprávněné přetížení do jediného kandidáta, vygeneruje se chyba.  
+ Při volání přetížené procedury, kompilátor se pokusí odstranit všechny kromě jednoho z přetížení. Pokud se aktivace podaří, přeloží volání tohoto přetížení. Pokud eliminuje všechna přetížení, nebo pokud ji nemůžete zmenšit oprávněné přetížení k jedné Release candidate, dojde k chybě.  
   
- Následující příklad znázorňuje proces rozlišení přetížení.  
+ Následující příklad znázorňuje proces řešení přetížení.  
   
  [!code-vb[VbVbcnProcedures#62](./codesnippet/VisualBasic/troubleshooting-procedures_6.vb)]  
   
  [!code-vb[VbVbcnProcedures#63](./codesnippet/VisualBasic/troubleshooting-procedures_7.vb)]  
   
- Při prvním volání do kompilátoru eliminuje první přetížení, protože typ prvního argumentu (`Short`) zmenší tak, aby typ odpovídající parametru (`Byte`). Protože každý argument typ v druhé přetížení pak eliminuje třetí přetížení (`Short` a `Single`) rozšiřuje odpovídající typ v třetí přetížení (`Integer` a `Single`). Druhý přetížení vyžaduje méně rozšíření, kompilátor použije pro volání.  
+ Při prvním volání, kompilátor eliminuje první přetížení, protože typ prvního argumentu (`Short`) zužuje na typ odpovídající parametru (`Byte`). Eliminuje pak třetí přetížení, protože typ každého argumentu ve druhé přetížení (`Short` a `Single`) rozšiřuje na odpovídající typ v třetí přetížení (`Integer` a `Single`). Druhé přetížení vyžaduje méně rozšíření, takže kompilátor používá volání.  
   
- V druhé volání do kompilátoru nelze eliminovat žádné přetížení na základě zužující. Eliminuje třetí přetížení ze stejného důvodu jako první volání, protože ji můžete volat druhý přetížení s menší rozšiřující s typy argumentů. Kompilátor však nelze vyřešit mezi prvním a druhém přetížení. Každá z nich má jeden typ definované parametru, která rozšiřuje odpovídající typ v dalších (`Byte` k `Short`, ale `Single` k `Double`). Kompilátor proto vygeneruje chybu rozlišení přetížení.  
+ V druhém volání nelze odstranit kompilátor některý z přetížení na základě zužující. Eliminuje třetí přetížení ze stejného důvodu jako první volání, vzhledem k tomu, že může volat druhé přetížení s méně rozšiřující typy argumentů. Kompilátor však nelze rozlišit mezi první a druhé přetížení. Každá má jeden typ definovaný parametr, který rozšiřuje na odpovídající typ v jiném (`Byte` k `Short`, ale `Single` k `Double`). Kompilátor tedy dojde k chybě rozlišení přetížení.  
   
- **Správný způsob:** Pokud chcete mít možnost volání přetížené procedury bez nejednoznačnost, použijte [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md) tak, aby odpovídaly argument datové typy pro typy parametrů. Následující příklad ukazuje volání `z` který vynutí řešení druhý přetížení.  
+ **Správný způsob:** Aby bylo možné volání přetížené procedury bez nejednoznačnost, použijte [funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md) tak, aby odpovídaly datové typy argumentů na typy parametrů. Následující příklad ukazuje volání `z` druhé přetížení, která vynutí řešení.  
   
  [!code-vb[VbVbcnProcedures#65](./codesnippet/VisualBasic/troubleshooting-procedures_8.vb)]  
   
-### <a name="overload-resolution-with-optional-and-paramarray-arguments"></a>Přetížení řešení s volitelné a ParamArray – argumenty  
- Pokud dva přetížení procedury mít identické podpisy s tím rozdílem, že je deklarovaná poslední parametr [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) v jednom a [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) do druhé kompilátor přeloží volání této procedury podle nejblíže shoda. Další informace najdete v tématu [rozlišení přetížení](./overload-resolution.md).  
+### <a name="overload-resolution-with-optional-and-paramarray-arguments"></a>Přetížení překlad IP adres s volitelným a ParamArray – argumenty  
+ Pokud dvě přetížení procedury, mají stejné podpisy, s tím rozdílem, že je deklarován poslední parametr [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) v jednom a [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) , ve druhém přeloží kompilátor volání této procedury podle nejvíce odpovídá. Další informace najdete v tématu [rozlišení přetížení](./overload-resolution.md).  
   
-## <a name="see-also"></a>Viz také  
- [Procedury](./index.md)  
- [Procedury Sub](./sub-procedures.md)  
- [Procedury funkce](./function-procedures.md)  
- [Procedury vlastnosti](./property-procedures.md)  
- [Procedury operátoru](./operator-procedures.md)  
- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Přetížení procedury](./procedure-overloading.md)  
- [Aspekty přetížení procedur](./considerations-in-overloading-procedures.md)  
- [Řešení přetížení](./overload-resolution.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury](./index.md)
+- [Procedury Sub](./sub-procedures.md)
+- [Procedury funkce](./function-procedures.md)
+- [Procedury vlastnosti](./property-procedures.md)
+- [Procedury operátoru](./operator-procedures.md)
+- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
+- [Přetížení procedury](./procedure-overloading.md)
+- [Aspekty přetížení procedur](./considerations-in-overloading-procedures.md)
+- [Řešení přetížení](./overload-resolution.md)

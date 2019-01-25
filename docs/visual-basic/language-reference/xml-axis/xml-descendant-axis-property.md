@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XML axis [Visual Basic], descendant
 - XML [Visual Basic], accessing
 ms.assetid: a178f85b-5d54-438f-8479-40b62af6fe76
-ms.openlocfilehash: 6040401ce3e98c835677be3c4cc7698013348f37
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 3b8d13e606f28896cae88162d572470e49af3739
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582566"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54730279"
 ---
 # <a name="xml-descendant-axis-property-visual-basic"></a>Vlastnost osy nástupce XML (Visual Basic)
 Poskytuje přístup k následníky z následujících akcí: <xref:System.Xml.Linq.XElement> objektu, <xref:System.Xml.Linq.XDocument> object, kolekce <xref:System.Xml.Linq.XElement> objekty nebo kolekci <xref:System.Xml.Linq.XDocument> objekty.  
@@ -28,21 +28,21 @@ object...<descendant>
   
 ## <a name="parts"></a>Součásti  
  `object`  
- Požadováno. <xref:System.Xml.Linq.XElement> Objekt, <xref:System.Xml.Linq.XDocument> object, kolekce <xref:System.Xml.Linq.XElement> objekty nebo kolekci <xref:System.Xml.Linq.XDocument> objekty.  
+ Povinný parametr. <xref:System.Xml.Linq.XElement> Objekt, <xref:System.Xml.Linq.XDocument> object, kolekce <xref:System.Xml.Linq.XElement> objekty nebo kolekci <xref:System.Xml.Linq.XDocument> objekty.  
   
  ...<  
- Požadováno. Označuje začátek vlastnost Následnické osy.  
+ Povinný parametr. Označuje začátek vlastnost Následnické osy.  
   
  `descendant`  
- Požadováno. Název podřízených uzlů pro přístup k ve tvaru [`prefix``:`]`name`.  
+ Povinný parametr. Název podřízených uzlů pro přístup k ve tvaru [`prefix``:`]`name`.  
   
 |Část|Popis|  
 |----------|-----------------|  
 |`prefix`|Volitelné. Předpona oboru názvů XML pro uzel potomka. Musí být globální obor názvů XML, který je definován s použitím `Imports` příkazu.|  
-|`name`|Požadováno. Místní název uzel potomka. Zobrazit [názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
+|`name`|Povinný parametr. Místní název uzel potomka. Zobrazit [názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
   
  \>  
- Požadováno. Označuje konec vlastnost Následnické osy.  
+ Povinný parametr. Označuje konec vlastnost Následnické osy.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Kolekce <xref:System.Xml.Linq.XElement> objekty.  
@@ -75,9 +75,9 @@ object...<descendant>
   
  `Name: Patrick Hines`  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XElement>  
- [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)  
- [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)  
- [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
- [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xml.Linq.XElement>
+- [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)
+- [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
+- [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)

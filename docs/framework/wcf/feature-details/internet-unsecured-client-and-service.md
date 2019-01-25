@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97a10d79-3e7d-4bd1-9a99-fd9807fd70bc
-ms.openlocfilehash: 7f4a5fada6c2c17563796ae634ee742285551160
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: e8aa8d66e667036f09bd5670e779f14fa9401450
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181482"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643803"
 ---
 # <a name="internet-unsecured-client-and-service"></a>Nezabezpečený internetový klient a služba
 Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta Windows Communication Foundation (WCF) a služby.  
@@ -19,13 +19,13 @@ Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta 
   
 |Vlastnost|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Žádné|  
+|Režim zabezpečení|Žádná|  
 |Přenos|HTTP|  
 |Vazba|<xref:System.ServiceModel.BasicHttpBinding> v kódu nebo [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element v konfiguraci.|  
 |Interoperabilita|Stávající klienty webové služby a služby|  
-|Ověřování|Žádné|  
-|Integrita|Žádné|  
-|Důvěrnost|Žádné|  
+|Ověřování|Žádná|  
+|Integrita|Žádná|  
+|Důvěrnost|Žádná|  
   
 ## <a name="service"></a>Služba  
  Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
@@ -109,7 +109,7 @@ Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ec6472a33c49d9345793d73ac2f78f8896dc218b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b77dcbb1acffe47524aee3cd7761e342175dcd34
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33454815"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54733694"
 ---
 # <a name="icorprofilercallback4rejiterror-method"></a>ICorProfilerCallback4::ReJITError – metoda
-Aby kompilátoru za běhu (JIT) došlo k chybě při procesu rekompilace upozorní profileru.  
+Oznámí profileru, že kompilátor just-in-time (JIT) došlo k chybě v procesu opětovnou kompilaci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,33 +39,33 @@ HRESULT ReJITError(
   
 #### <a name="parameters"></a>Parametry  
  `moduleID`  
- [v] `ModuleID` Ve které byl proveden pokus o rekompilace se nezdařilo.  
+ [in] `ModuleID` Ve které byl proveden pokus o opětovnou kompilaci se nezdařilo.  
   
  `methodId`  
- [v] `MethodDef` Metody, na kterém byl proveden pokus o rekompilace se nezdařilo.  
+ [in] `MethodDef` Metody, na kterém byl proveden pokus o opětovnou kompilaci se nezdařilo.  
   
  `functionId`  
- [v] Instance funkce, která se Rekompilované nebo označený pro opětovnou kompilaci. Tato hodnota může být `NULL` -li k chybě došlo na základě za metoda místo základ pro vytvoření instance (například pokud profileru zadaný token neplatná metadata metodu zopakovat).  
+ [in] Instance funkce, která se znovu kompilovaný nebo metodu označenou pro opětovnou kompilaci. Tato hodnota může být `NULL` -li k selhání došlo na základě za metoda místo základ instance (například pokud profiler zadaný token neplatná metadata pro metodu překompilovat).  
   
  `hrStatus`  
- [v] HRESULT, která určuje podstatu tohoto selhání. Najdete v části hodnoty stavu HRESULT seznam hodnot.  
+ [in] HRESULT označující podstatu tohoto selhání. V části stav HRESULTS seznam hodnot.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Návratové hodnoty z této zpětné volání se ignorují.  
+ Návratové hodnoty v tomto zpětném volání jsou ignorovány.  
   
-## <a name="status-hresults"></a>Stav hodnoty HRESULT  
+## <a name="status-hresults"></a>HRESULT – stav  
   
 |Stav pole HRESULT|Popis|  
 |--------------------------|-----------------|  
 |E_INVALIDARG|`moduleID` Nebo `methodDef` token je `NULL`.|  
-|CORPROF_E_DATAINCOMPLETE|Modul ještě není úplným načtením nebo je právě odpojení.|  
-|CORPROF_E_MODULE_IS_DYNAMIC|Zadaný modul dynamicky vygenerovalo (například `Reflection.Emit`) a proto nepodporuje tuto metodu.|  
-|CORPROF_E_FUNCTION_IS_COLLECTIBLE|Metoda vytvoření instance do collectible sestavení a není proto schopna zopakovat. Všimněte si, že typy a funkcí definovaných v kontextu jiných reflexe (například `List<MyCollectibleStruct>`) se dá vytvořit instance do collectible sestavení.|  
-|E_OUTOFMEMORY|Modul CLR nedostatku paměti při pokusu označit zadanou metodu pro opětovnou kompilaci JIT.|  
-|Ostatní|Operační systém vrátil chybu mimo kontrolu modulu CLR. Například pokud selže volání systému změnit ochranu přístupu ke stránce paměti, se zobrazí chyba operačního systému.|  
+|CORPROF_E_DATAINCOMPLETE|Modul dosud není zcela načteno, nebo je právě uvolňován.|  
+|CORPROF_E_MODULE_IS_DYNAMIC|Zadaný modul se generuje dynamicky (třeba podle `Reflection.Emit`) a proto není podporována touto metodou.|  
+|CORPROF_E_FUNCTION_IS_COLLECTIBLE|Metoda je vytvořena instance na kolekční sestavení a není tedy možné zopakovat. Všimněte si, že typy a funkce definované v kontextu jiných reflexe (například `List<MyCollectibleStruct>`) může být vytvořena na kolekční sestavení.|  
+|E_OUTOFMEMORY|Modul CLR má nedostatek paměti při pokusu označit zadanou metodu pro rekompilace JIT.|  
+|Ostatní|Operační systém vrátil chybu mimo ovládací prvek CLR. Například pokud selže volání systému ke změně ochrany přístupu k paměti stránky, se zobrazí chyba operačního systému.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -73,6 +73,6 @@ HRESULT ReJITError(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [ICorProfilerCallback4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)

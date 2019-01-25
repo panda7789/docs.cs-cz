@@ -8,12 +8,12 @@ helpviewer_keywords:
 - files [C#]
 - creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
-ms.openlocfilehash: aa5c6782b11ac89b418ac84faafaa8409ad65049
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 8f0b375a2e2ed7304c43a27309dbdde5a2f5a476
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53240200"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54731878"
 ---
 # <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Postupy: Vytvoření souboru nebo složky (C# Průvodce programováním v)
 Můžete prostřednictvím kódu programu vytvořte složku v počítači, vytvořte podsložku, vytvořit soubor v podsložce a zapisovat data do souboru.  
@@ -68,8 +68,8 @@ Můžete prostřednictvím kódu programu vytvořte složku v počítači, vytvo
   
  Pokud nemáte oprávnění k vytvoření složky, příklad vyvolá instanci <xref:System.UnauthorizedAccessException> třídy.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.IO?displayProperty=nameWithType>  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- <xref:System.IO?displayProperty=nameWithType>
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Systém souborů a registr (C# Programming Guide)](../../../csharp/programming-guide/file-system/index.md)

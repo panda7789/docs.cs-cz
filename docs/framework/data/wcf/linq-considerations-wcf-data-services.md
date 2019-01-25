@@ -1,5 +1,5 @@
 ---
-title: Aspekty LINQ (WCF Data Services)
+title: LINQ Considerations (WCF Data Services)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - querying the data service [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: cc4ec9e9-348f-42a6-a78e-1cd40e370656
-ms.openlocfilehash: 92b3444f81f00ee709c22836126073d342c6fa05
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b73f1063c83d61e02a01cb31932d93c468996598
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526814"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54741493"
 ---
-# <a name="linq-considerations-wcf-data-services"></a>Aspekty LINQ (WCF Data Services)
+# <a name="linq-considerations-wcf-data-services"></a>LINQ Considerations (WCF Data Services)
 Toto téma obsahuje informace o způsobu, jakým skládá a spustí se, když používáte dotazů LINQ, který [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta a omezeními pomocí jazyka LINQ k datové služby, který implementuje dotazování [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. Další informace o vytváření a spouštění dotazů vůči [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě dat služby, najdete v článku [dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
   
 ## <a name="composing-linq-queries"></a>Vytváření dotazů LINQ  
@@ -165,7 +165,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |Projekce a filtrování operátory|Následující projekce a filtrování operátory, které přijímají poziční argument nejsou podporovány proti <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> -   <xref:System.Linq.Enumerable.Join%60%604%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%2CSystem.Func%7B%60%600%2C%60%602%7D%2CSystem.Func%7B%60%601%2C%60%602%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%603%7D%2CSystem.Collections.Generic.IEqualityComparer%7B%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2C%60%601%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.Where%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Boolean%7D%29>|  
 |Seskupení operátory|Všechny operátory seskupení nepodporované proti <xref:System.Data.Services.Client.DataServiceQuery%601>, včetně následujících:<br /><br /> -   <xref:System.Linq.Enumerable.GroupBy%2A><br />-   <xref:System.Linq.Enumerable.GroupJoin%2A><br /><br /> Operace seskupení musí provést u klienta.|  
 |Agregační operátory|Všechny agregační operace nejsou podporovány proti <xref:System.Data.Services.Client.DataServiceQuery%601>, včetně následujících:<br /><br /> -   <xref:System.Linq.Enumerable.Aggregate%2A><br />-   <xref:System.Linq.Enumerable.Average%2A><br />-   <xref:System.Linq.Enumerable.Count%2A><br />-   <xref:System.Linq.Enumerable.LongCount%2A><br />-   <xref:System.Linq.Enumerable.Max%2A><br />-   <xref:System.Linq.Enumerable.Min%2A><br />-   <xref:System.Linq.Enumerable.Sum%2A><br /><br /> Agregační operace musí být provedeny buď na straně klienta nebo zapouzdřená pomocí operace služby.|  
-|Operátory stránkování|Nejsou podporovány následující operátory stránkování <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> -   <xref:System.Linq.Enumerable.ElementAt%2A><br />-   <xref:System.Linq.Enumerable.Last%2A><br />-   <xref:System.Linq.Enumerable.LastOrDefault%2A><br />-   <xref:System.Linq.Enumerable.SkipWhile%2A><br />-   <xref:System.Linq.Enumerable.TakeWhile%2A> **Poznámka:** stránkování operátory, které se provádějí v prázdné sekvenci vrátit hodnotu null.|  
+|Operátory stránkování|Nejsou podporovány následující operátory stránkování <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> -   <xref:System.Linq.Enumerable.ElementAt%2A><br />-   <xref:System.Linq.Enumerable.Last%2A><br />-   <xref:System.Linq.Enumerable.LastOrDefault%2A><br />-   <xref:System.Linq.Enumerable.SkipWhile%2A><br />-   <xref:System.Linq.Enumerable.TakeWhile%2A> **Poznámka:**  Stránkování operátory, které jsou spouštěny na vrácení prázdné sekvenci, která je null.|  
 |Ostatní operátory|Následující další operátory nejsou podporovány u <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> 1.  <xref:System.Linq.Enumerable.Empty%2A><br />2.  <xref:System.Linq.Enumerable.Range%2A><br />3.  <xref:System.Linq.Enumerable.Repeat%2A><br />4.  <xref:System.Linq.Enumerable.ToDictionary%2A><br />5.  <xref:System.Linq.Enumerable.ToLookup%2A>|  
   
 <a name="supportedExpressions"></a>   
@@ -212,8 +212,8 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
   
  Klient může být také moci vyhodnocovat další funkce CLR na straně klienta. A <xref:System.NotSupportedException> se vyvolá pro libovolný výraz, který nelze vyhodnotit na straně klienta a nelze přeložit na platný žádost o identifikátor URI pro vyhodnocení na serveru.  
   
-## <a name="see-also"></a>Viz také  
- [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
- [Projekce dotazů](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)  
- [Materializace objektů](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)  
- [Prostředí OData: Konvence identifikátor URI](https://go.microsoft.com/fwlink/?LinkID=185564)
+## <a name="see-also"></a>Viz také:
+- [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
+- [Projekce dotazů](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)
+- [Materializace objektů](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)
+- [OData: Identifikátor URI konvence](https://go.microsoft.com/fwlink/?LinkID=185564)

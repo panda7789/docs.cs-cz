@@ -11,21 +11,21 @@ helpviewer_keywords:
 - text boxes [Windows Forms], drag-and-drop operations
 - RichTextBox control [Windows Forms], drag-and-drop operations
 ms.assetid: ca167d1c-2014-4cf0-96a0-20598470be3b
-ms.openlocfilehash: 3adafd9b821dd9366a3ad5080154ab7eb5a2d2f8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ccf98ee1afe82b2e76679406a08e98e6f4e6fb15
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529763"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54637463"
 ---
 # <a name="how-to-enable-drag-and-drop-operations-with-the-windows-forms-richtextbox-control"></a>Postupy: Povolení operací přetažení myší pomocí ovládacího prvku Windows Forms RichTextBox
-Operace přetažení myší pomocí Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek, provádí zpracování <xref:System.Windows.Forms.RichTextBox.DragEnter> a <xref:System.Windows.Forms.RichTextBox.DragDrop> události. Proto jsou velmi jednoduché s operací přetažení myší <xref:System.Windows.Forms.RichTextBox> ovládacího prvku.  
+Operace přetažení myší pomocí Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek provádí zpracování <xref:System.Windows.Forms.RichTextBox.DragEnter> a <xref:System.Windows.Forms.RichTextBox.DragDrop> události. Proto jsou velmi jednoduché pomocí operace přetažení myší <xref:System.Windows.Forms.RichTextBox> ovládacího prvku.  
   
-### <a name="to-enable-drag-operations-in-a-richtextbox-control"></a>Pro povolení operací přetažení v ovládacím prvku RichTextBox  
+### <a name="to-enable-drag-operations-in-a-richtextbox-control"></a>Povolení operací přetažení v ovládacím prvku RichTextBox  
   
-1.  Nastavte <xref:System.Windows.Forms.RichTextBox.AllowDrop%2A> vlastnost <xref:System.Windows.Forms.RichTextBox> řídit k `true`.  
+1.  Nastavte <xref:System.Windows.Forms.RichTextBox.AllowDrop%2A> vlastnost <xref:System.Windows.Forms.RichTextBox> mít pod kontrolou `true`.  
   
-2.  Psaní kódu v obslužné rutině události z <xref:System.Windows.Forms.RichTextBox.DragEnter> událostí. Použijte `if` příkaz a zkontrolujte, zda data přetažen přijatelné typu (v tomto případě text). <xref:System.Windows.Forms.DragEventArgs.Effect%2A?displayProperty=nameWithType> Může být nastavena na jakoukoli hodnotu z <xref:System.Windows.Forms.DragDropEffects> výčtu.  
+2.  Napište kód v obslužné rutině události <xref:System.Windows.Forms.RichTextBox.DragEnter> událostí. Použití `if` příkaz, ujistěte se, že data jsou kvůli usnadnění použití vypsány přijatelné typ (v tomto případě text). <xref:System.Windows.Forms.DragEventArgs.Effect%2A?displayProperty=nameWithType> Vlastnost lze nastavit na libovolnou hodnotu z <xref:System.Windows.Forms.DragDropEffects> výčtu.  
   
     ```vb  
     Private Sub RichTextBox1_DragEnter(ByVal sender As Object, _   
@@ -76,9 +76,9 @@ Operace přetažení myší pomocí Windows Forms <xref:System.Windows.Forms.Ric
        (this, &Form1::richTextBox1_DragEnter);  
     ```  
   
-3.  Napsat kód pro zpracování <xref:System.Windows.Forms.RichTextBox.DragDrop> událostí. Použití <xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType> metoda pro načtení dat přetažen.  
+3.  Napište kód pro zpracování <xref:System.Windows.Forms.RichTextBox.DragDrop> událostí. Použití <xref:System.Windows.Forms.DataObject.GetData%2A?displayProperty=nameWithType> metodu pro načtení dat se přetáhnout.  
   
-     V příkladu níže kód nastaví <xref:System.Windows.Forms.RichTextBox.Text%2A> vlastnost <xref:System.Windows.Forms.RichTextBox> řízení rovna přetažen data. Pokud je již v text <xref:System.Windows.Forms.RichTextBox> je vložen ovládací prvek, taženou text na pozici kurzoru.  
+     V následujícím příkladu kódu nastaví <xref:System.Windows.Forms.RichTextBox.Text%2A> vlastnost <xref:System.Windows.Forms.RichTextBox> řídit rovna data jsou kvůli usnadnění použití vypsány. Pokud je již v textu <xref:System.Windows.Forms.RichTextBox> ovládací prvek, přetažené text vložíte na pozici kurzoru.  
   
     ```vb  
     Private Sub RichTextBox1_DragDrop(ByVal sender As Object, _   
@@ -152,20 +152,20 @@ Operace přetažení myší pomocí Windows Forms <xref:System.Windows.Forms.Ric
        (this, &Form1::richTextBox1_DragDrop);  
     ```  
   
-### <a name="to-test-the-drag-and-drop-functionality-in-your-application"></a>K testování funkcí přetahování myší v aplikaci  
+### <a name="to-test-the-drag-and-drop-functionality-in-your-application"></a>K testování a přetažení funkce ve vaší aplikaci  
   
-1.  Uložit a sestavit aplikaci. Když je spuštěná, spusťte WordPad.  
+1.  Uložit a sestavit aplikaci. Když je spuštěn, spusťte program WordPad.  
   
-     WordPad je textový editor, nainstalovaná v systému Windows, který umožňuje operací přetažení myší. Je přístupný kliknutím **spustit** tlačítko výběru **spustit**, zadáním `WordPad` v textovém poli **spustit** dialogové okno a potom kliknutím na tlačítko  **OK**.  
+     WordPad je textový editor a nainstalované ve Windows, který umožňuje operace přetažení myší. Je přístupná po kliknutí **Start** tlačítka, výběr **spustit**, zadáním `WordPad` v textovém poli **spustit** dialogové okno a potom kliknete na  **OK**.  
   
-2.  Jakmile WordPad je otevřený, zadejte řetězec textu v ní. Pomocí myši, vyberte text a poté přetáhněte vybraný text přes k <xref:System.Windows.Forms.RichTextBox> ovládací prvek v aplikaci pro Windows.  
+2.  Jakmile WordPad otevře, zadejte v něm textového řetězce. Pomocí myši, vyberte text a pak přetáhněte vybraný text na <xref:System.Windows.Forms.RichTextBox> ovládacího prvku v aplikaci Windows.  
   
-     Všimněte si, že když přejděte myší na <xref:System.Windows.Forms.RichTextBox> ovládací prvek (a v důsledku toho vyvolat <xref:System.Windows.Forms.RichTextBox.DragEnter> událostí), aby se změnil a mohou vyřadit vybraný text do <xref:System.Windows.Forms.RichTextBox> ovládací prvek.  
+     Všimněte si, že když umístíte ukazatel myši na <xref:System.Windows.Forms.RichTextBox> ovládacího prvku (a v důsledku toho vyvolat <xref:System.Windows.Forms.RichTextBox.DragEnter> událostí), ukazatel myši se změní a budete lze přetáhnout do vybraného textu <xref:System.Windows.Forms.RichTextBox> ovládacího prvku.  
   
-     Po uvolnění tlačítka myši se ukončí vybraný text (tedy <xref:System.Windows.Forms.RichTextBox.DragDrop> událost se vyvolá) a je vložen v rámci <xref:System.Windows.Forms.RichTextBox> ovládacího prvku.  
+     Po uvolnění tlačítka myši se zahodí vybraný text (to znamená, <xref:System.Windows.Forms.RichTextBox.DragDrop> událost je aktivována) a vložení v rámci <xref:System.Windows.Forms.RichTextBox> ovládacího prvku.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.RichTextBox>  
- [Postupy: Provádění operací přetažení mezi aplikacemi](../../../../docs/framework/winforms/advanced/how-to-perform-drag-and-drop-operations-between-applications.md)  
- [Ovládací prvek RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.RichTextBox>
+- [Postupy: Provádění operací přetažení myší mezi aplikacemi](../../../../docs/framework/winforms/advanced/how-to-perform-drag-and-drop-operations-between-applications.md)
+- [Ovládací prvek RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)
+- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

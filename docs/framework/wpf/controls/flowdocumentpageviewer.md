@@ -7,18 +7,18 @@ helpviewer_keywords:
 - FlowDocumentPageViewer control [WPF]
 - controls [WPF], FlowDocumentPageViewer
 ms.assetid: 1ed5a30e-f415-4c26-a52f-9f028a68f66f
-ms.openlocfilehash: bad83378863cbc8b05fd3b74fe126e8147a20494
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4f58ebbb3f0876c8c1aa23bae04fb46573bc234f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551222"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54653759"
 ---
 # <a name="flowdocumentpageviewer"></a>FlowDocumentPageViewer
-<xref:System.Windows.Controls.FlowDocumentPageViewer> Řízení se používá k zobrazení <xref:System.Windows.Documents.FlowDocument> obsahu na základě na stránce. Rozdíl oproti <xref:System.Windows.Controls.FlowDocumentScrollViewer>, která uvede <xref:System.Windows.Documents.FlowDocument> obsahu v prohlížeči posouvání.  
+<xref:System.Windows.Controls.FlowDocumentPageViewer> Ovládacího prvku se používá k zobrazení <xref:System.Windows.Documents.FlowDocument> obsahu na základě na stránku. Rozdíl oproti <xref:System.Windows.Controls.FlowDocumentScrollViewer>, která představuje <xref:System.Windows.Documents.FlowDocument> obsahu v prohlížeči posouvání.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Documents.FlowDocument>  
- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/advanced/flow-content-elements-how-to-topics.md)  
- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Documents.FlowDocument>
+- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
+- [Témata s postupy](../../../../docs/framework/wpf/advanced/flow-content-elements-how-to-topics.md)
+- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Odkázání na objekt nebo webovou stránku pomocí ovládacího prvku Windows Forms LinkLabel'
+title: 'Postupy: Odkaz na objekt nebo webovou stránku pomocí ovládacího prvku Windows Forms LinkLabel'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,23 +15,23 @@ helpviewer_keywords:
 - LinkLabel control [Windows Forms], linking to object or Web page
 - LinkLabel control [Windows Forms], examples
 ms.assetid: 6c91c975-3cb7-4504-82f0-fc6255f8fb85
-ms.openlocfilehash: 9957eae7e15c99ec259574b435402420c6bcf5f5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fd397f9a6462ad9da06b1cc258a51b3cccf5d21c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33539630"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54628445"
 ---
-# <a name="how-to-link-to-an-object-or-web-page-with-the-windows-forms-linklabel-control"></a>Postupy: Odkázání na objekt nebo webovou stránku pomocí ovládacího prvku Windows Forms LinkLabel
-Windows Forms <xref:System.Windows.Forms.LinkLabel> řízení vám umožní vytvořit odkazy ve stylu webového formuláře. Při kliknutí na odkaz, můžete změnit její barvu, která indikuje, že navštívil odkaz. Další informace o změně barvu najdete v tématu [postupy: Změna vzhledu ovládacího prvku Windows Forms LinkLabel](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-linklabel-control.md).  
+# <a name="how-to-link-to-an-object-or-web-page-with-the-windows-forms-linklabel-control"></a>Postupy: Odkaz na objekt nebo webovou stránku pomocí ovládacího prvku Windows Forms LinkLabel
+Windows Forms <xref:System.Windows.Forms.LinkLabel> ovládacího prvku umožňuje vytvořit webových odkazů na formuláři. Při kliknutí na odkaz můžete změnit jeho barvu označující, že uživatel odkaz. Další informace o změně barvy, naleznete v tématu [jak: Změna vzhledu ovládacího prvku Windows Forms LinkLabel](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-linklabel-control.md).  
   
-## <a name="linking-to-another-form"></a>Propojování do jiného formátu  
+## <a name="linking-to-another-form"></a>Propojování do jiného formuláře  
   
-#### <a name="to-link-to-another-form-with-a-linklabel-control"></a>Propojit s jinou formuláře s linklabel – ovládací prvek  
+#### <a name="to-link-to-another-form-with-a-linklabel-control"></a>Odkaz na jiný formulář pomocí ovládacího prvku LinkLabel  
   
-1.  Nastavte <xref:System.Windows.Forms.LinkLabel.Text%2A> vlastnost, která má odpovídající titulek.  
+1.  Nastavte <xref:System.Windows.Forms.LinkLabel.Text%2A> vlastnosti k odpovídající titulek.  
   
-2.  Nastavte <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> vlastnosti k určení, které části titulek bude uveden jako odkaz. Jak je uvedeno, závisí na vlastnosti týkající se vzhledu odkaz popisku. <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> Hodnota je reprezentována <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> objekt obsahující dvou čísel, počáteční pozice znaku a počet znaků. <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> Vlastnost lze nastavit v okně Vlastnosti nebo v kódu podobné následujícím způsobem:  
+2.  Nastavte <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> a určí, které části popisek bude uveden jako odkaz. Jak je uvedeno, závisí na vlastnostech související vzhled popisku odkazu. <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> Hodnotu je reprezentována <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> objekt, který obsahuje dvě čísla, počáteční pozici znaku a počet znaků. <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> Vlastnost lze nastavit v okně Vlastnosti nebo v kódu podobně jako následujícím způsobem:  
   
     ```vb  
     ' In this code example, the link area has been set to begin  
@@ -54,10 +54,10 @@ Windows Forms <xref:System.Windows.Forms.LinkLabel> řízení vám umožní vytv
     linkLabel1->LinkArea = LinkArea(0,8);  
     ```  
   
-3.  V <xref:System.Windows.Forms.LinkLabel.LinkClicked> obslužné rutiny události, vyvolání <xref:System.Windows.Forms.Form.Show%2A> má metoda otevřít nový formulář v projektu a nastavte <xref:System.Windows.Forms.LinkLabel.LinkVisited%2A> vlastnost `true`.  
+3.  V <xref:System.Windows.Forms.LinkLabel.LinkClicked> obslužná rutina události vyvolat <xref:System.Windows.Forms.Form.Show%2A> metoda otevřít nový formulář v projektu, a nastavit <xref:System.Windows.Forms.LinkLabel.LinkVisited%2A> vlastnost `true`.  
   
     > [!NOTE]
-    >  Instance <xref:System.Windows.Forms.LinkLabelLinkClickedEventArgs> třída přenáší odkaz na <xref:System.Windows.Forms.LinkLabel> ovládací prvek, který označeného, takže není nutné přetypovat `sender` objektu.  
+    >  Instance <xref:System.Windows.Forms.LinkLabelLinkClickedEventArgs> třída představuje odkaz na <xref:System.Windows.Forms.LinkLabel> ovládací prvek, který bylo kliknuto, takže není nutné přetypovat `sender` objektu.  
   
     ```vb  
     Protected Sub LinkLabel1_LinkClicked(ByVal Sender As System.Object, _  
@@ -93,18 +93,18 @@ Windows Forms <xref:System.Windows.Forms.LinkLabel> řízení vám umožní vytv
     ```  
   
 ## <a name="linking-to-a-web-page"></a>Propojení na webovou stránku  
- <xref:System.Windows.Forms.LinkLabel> Řízení slouží také k zobrazení webové stránky s výchozí prohlížeč.  
+ <xref:System.Windows.Forms.LinkLabel> Ovládací prvek slouží také k zobrazení webové stránky s výchozím prohlížeči.  
   
-#### <a name="to-start-internet-explorer-and-link-to-a-web-page-with-a-linklabel-control"></a>Spusťte Internet Explorer a odkaz na webovou stránku s linklabel – ovládací prvek  
+#### <a name="to-start-internet-explorer-and-link-to-a-web-page-with-a-linklabel-control"></a>Chcete-li spustit aplikaci Internet Explorer a odkaz na webovou stránku pomocí ovládacího prvku LinkLabel  
   
-1.  Nastavte <xref:System.Windows.Forms.LinkLabel.Text%2A> vlastnost, která má odpovídající titulek.  
+1.  Nastavte <xref:System.Windows.Forms.LinkLabel.Text%2A> vlastnosti k odpovídající titulek.  
   
-2.  Nastavte <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> vlastnosti k určení, které části titulek bude uveden jako odkaz.  
+2.  Nastavte <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> a určí, které části popisek bude uveden jako odkaz.  
   
-3.  V <xref:System.Windows.Forms.LinkLabel.LinkClicked> druhý postup, který nastavuje volání obslužné rutiny události in the midst of bloku zpracování výjimek <xref:System.Windows.Forms.LinkLabel.LinkVisited%2A> vlastnost `true` a používá <xref:System.Diagnostics.Process.Start%2A> metoda spuštění výchozího prohlížeče s adresou URL. Použít <xref:System.Diagnostics.Process.Start%2A> metoda budete muset přidat odkaz na <xref:System.Diagnostics?displayProperty=nameWithType> oboru názvů.  
+3.  V <xref:System.Windows.Forms.LinkLabel.LinkClicked> obslužná rutina události, uprostřed z bloku zpracování výjimek, volání druhý postup, který nastaví <xref:System.Windows.Forms.LinkLabel.LinkVisited%2A> vlastnost `true` a používá <xref:System.Diagnostics.Process.Start%2A> metodu spustit výchozí prohlížeč s adresou URL. Použít <xref:System.Diagnostics.Process.Start%2A> budete muset přidat odkaz na metodu <xref:System.Diagnostics?displayProperty=nameWithType> oboru názvů.  
   
     > [!IMPORTANT]
-    >  Pokud následující kód běží v prostředí s částečným vztahem důvěryhodnosti (například na sdílenou jednotku), JIT kompilátoru selže, když `VisitLink` metoda je volána. `System.Diagnostics.Process.Start` Příkaz způsobí, že požadavek na propojení, který selže. Podle výjimku při `VisitLink` metoda je volána, následující kód zajistí, že v případě selhání kompilátoru za běhu je chyba řádně zpracována.  
+    >  Pokud následující kód se spustí v prostředí částečné důvěryhodnosti (například na sdílené jednotky), kompilátor JIT není úspěšné při `VisitLink` metoda je volána. `System.Diagnostics.Process.Start` Příkaz způsobí, že požadavek na propojení, které se nedaří. Podle výjimku při `VisitLink` metoda je volána, následující kód zajistí, že pokud se kompilátor JIT nezdaří, je chyba řádně zpracována.  
   
     ```vb  
     Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, _  
@@ -178,8 +178,8 @@ Windows Forms <xref:System.Windows.Forms.LinkLabel> řízení vám umožní vytv
        }  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType>  
- [Přehled ovládacího prvku LinkLabel](../../../../docs/framework/winforms/controls/linklabel-control-overview-windows-forms.md)  
- [Postupy: Změna vzhledu ovládacího prvku Windows Forms LinkLabel](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-linklabel-control.md)  
- [Ovládací prvek LinkLabel](../../../../docs/framework/winforms/controls/linklabel-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType>
+- [Přehled ovládacího prvku LinkLabel](../../../../docs/framework/winforms/controls/linklabel-control-overview-windows-forms.md)
+- [Postupy: Změna vzhledu ovládacího prvku Windows Forms LinkLabel](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-linklabel-control.md)
+- [Ovládací prvek LinkLabel](../../../../docs/framework/winforms/controls/linklabel-control-windows-forms.md)

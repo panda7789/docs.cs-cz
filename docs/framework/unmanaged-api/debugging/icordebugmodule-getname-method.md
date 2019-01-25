@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bebee019595143d25e950719ad62d9e10b76a3e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2ae9bc5925634f8bba71731a0c51eb19cf9eec04
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418903"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54663950"
 ---
 # <a name="icordebugmodulegetname-method"></a>ICorDebugModule::GetName – metoda
 Získá název souboru modulu.  
@@ -39,19 +39,19 @@ HRESULT GetName(
   
 #### <a name="parameters"></a>Parametry  
  `cchname`  
- [v] Velikost `szName` pole.  
+ [in] Velikost `szName` pole.  
   
  `pcchName`  
- [v] Ukazatel na délku vrácený název.  
+ [in] Ukazatel na vrácený název.  
   
  `szName`  
- [out] Pole, které ukládá vrácený název.  
+ [out] Pole, která ukládá vrácený název.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetName` Metoda vrátí S_OK HRESULT, pokud název souboru modulu odpovídá názvu na disku. `GetName` Vrátí S_FALSE HRESULT, pokud je název kovodělných, například pro modul dynamické nebo v paměti.  
+ `GetName` Metoda vrátí hodnotu S_OK HRESULT, pokud název souboru modulu odpovídá názvu na disku. `GetName` Vrátí S_FALSE HRESULT, pokud je název kovodělných, například pro modul dynamické nebo v paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -59,6 +59,6 @@ HRESULT GetName(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
-    
- 
+## <a name="see-also"></a>Viz také:
+
+

@@ -7,16 +7,16 @@ helpviewer_keywords:
 ms.assetid: e6d5cd98-21a3-4b01-999c-fb953556d0e6
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: a7f3a13d05b8a3c4554810655bbda670efb2b3fd
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 0f33fb559bb4bf47beebc836a093f4b784559609
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50191074"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54674809"
 ---
 # <a name="accessibility-best-practices"></a>Usnadnění – doporučené postupy
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Implementace následujících osvědčených postupů v ovládacích prvcích nebo aplikace zvýší jejich přístupnost pro uživatelé, kteří používají [!INCLUDE[TLA#tla_at](../../../includes/tlasharptla-at-md.md)] zařízení. Mnohé z těchto osvědčených postupů zaměřit na funkční [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] návrhu. Každý osvědčený postup zahrnuje informace o implementaci pro [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] ovládací prvky nebo aplikace. V mnoha případech je práce, která musí splňovat tyto osvědčené postupy již součástí [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] ovládacích prvků.  
   
@@ -132,7 +132,7 @@ ms.locfileid: "50191074"
 ### <a name="use-standard-input-apis-with-device-independent-calls"></a>Standardní vstupní rozhraní API pomocí volání nezávislých na zařízení  
  Volání nezávislých na zařízení zkontrolujte funkci rovnosti klávesnici a myš, při poskytování [!INCLUDE[TLA2#tla_at](../../../includes/tla2sharptla-at-md.md)] s potřebné informace o [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Automation.Peers>  
- [Ovládací prvek NumericUpDown vlastní motiv a ukázka podpora automatizace uživatelského rozhraní](https://msdn.microsoft.com/library/9aed3c10-68eb-419e-a57f-1d2af15a8253)  
- [Pokyny pro návrh uživatelského rozhraní klávesnice](https://docs.microsoft.com/previous-versions/windows/desktop/dnacc/guidelines-for-keyboard-user-interface-design)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Automation.Peers>
+- [Ovládací prvek NumericUpDown vlastní motiv a ukázka podpora automatizace uživatelského rozhraní](https://msdn.microsoft.com/library/9aed3c10-68eb-419e-a57f-1d2af15a8253)
+- [Pokyny pro návrh uživatelského rozhraní klávesnice](https://docs.microsoft.com/previous-versions/windows/desktop/dnacc/guidelines-for-keyboard-user-interface-design)

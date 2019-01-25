@@ -10,12 +10,12 @@ helpviewer_keywords:
 - typography [WPF], packaging fonts with applications
 - packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
-ms.openlocfilehash: 0ad8d071a91edaef184c4cc1fa28298f8ec3d71a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 52ed421ee92eed29bf16815d22e3ec7a8b718a84
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43391763"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54632345"
 ---
 # <a name="packaging-fonts-with-applications"></a>Balení písem s aplikacemi
 Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
@@ -166,16 +166,16 @@ Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE
   
 -   **Absolutní identifikátor URI pomocí balíčku: zápis:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace vytvářet neumožňují <xref:System.Windows.Media.FontFamily> prostřednictvím kódu programu pomocí "aktualizací Service pack:" jako součást absolutní [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] odkaz na písmo. Například `"pack://application:,,,/resources/#Pericles Light"` je odkaz na neplatné písmo.  
   
--   **Vložení písma Automatické:** v době návrhu, neexistuje žádná podpora pro vyhledávání aplikace použití písem a automaticky vložení písma do aplikace prostředků.  
+-   **Vkládání automatické písma:** V době návrhu není dostupná podpora pro vyhledávání aplikace použití písem a automaticky vložení písma do aplikace prostředků.  
   
 -   **Podsady písma:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace nepodporují vytváření podsady písma pro nepevnou dokumenty.  
   
 -   V případech, kde je nesprávný odkaz, aplikace přejde k použití dostupné písmo.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Documents.Typography>  
- <xref:System.Windows.Media.FontFamily>  
- [Typografie společnosti Microsoft: Odkazy, zpráv a kontakty](https://www.microsoft.com/typography/links/)  
- [Specifikace OpenType](https://www.microsoft.com/typography/otspec/)  
- [Funkce písma OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
- [Ukázková sada písem OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Documents.Typography>
+- <xref:System.Windows.Media.FontFamily>
+- [Typografie společnosti Microsoft: Odkazy, zprávy a kontaktů](https://www.microsoft.com/typography/links/)
+- [Specifikace OpenType](https://www.microsoft.com/typography/otspec/)
+- [Funkce písma OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)
+- [Ukázková sada písem OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)

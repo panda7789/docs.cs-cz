@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f4735103f277d710dd23adfa19c475c425feaa36
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 078820649543479e65ec35daa6e1cc2876581ddc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403328"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54693198"
 ---
 # <a name="addfile2-method"></a>AddFile2 – metoda
-Přidá soubory do sestavení. Můžete také použít k vytvoření nepřipojeného moduly.  
+Přidá soubory do sestavení. Lze použít také k vytvoření nevázaného moduly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,27 +41,27 @@ HRESULT AddFile2(
   
 #### <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID pro sestavení, ke kterému se přidá soubor.  
+ ID pro sestavení, do kterého se přidá soubor.  
   
  `pszFilename`  
- Název souboru, který se má přidat.  
+ Název souboru, který má být přidána.  
   
  `dwFlags`  
- Modelu COM + `FileDef` flags – například `ffContainsNoMetaData` a `ffWriteable`. `dwFlags` Předaný [definefile – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
+ COM + `FileDef` označí jako `ffContainsNoMetaData` a `ffWriteable`. `dwFlags` je předán [definefile – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
   
  `pEmitter`  
  Rozhraní pro [imetadataemit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md) rozhraní.  
   
  `pFileToken`  
- Získá ID pro soubor, který chcete přidat.  
+ Přijímá ID souboru přidán.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h.  
   
-## <a name="see-also"></a>Viz také  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

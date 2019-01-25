@@ -2,12 +2,12 @@
 title: Trasování pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 18737989-0502-4367-b5f6-617ebfb77c96
-ms.openlocfilehash: 27e56933043c9eb955500cdd1c5bbd06cb33bde8
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: f8b454437631b4711360ddf0c1196cafca13b5ff
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45591246"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54627171"
 ---
 # <a name="workflow-tracing"></a>Trasování pracovních postupů
 Trasování pracovních postupů nabízí způsob, jak k zaznamenání diagnostických informací s použitím rozhraní .NET Framework naslouchacích procesů trasování. Trasování může povolit, pokud byl zjištěn problém s aplikací a zakázané znovu, až se problém vyřeší. Existují dva způsoby, jak může povolit trasování ladění pracovních postupů. Můžete je nakonfigurovat pomocí prohlížeče událostí trasování nebo můžete použít <xref:System.Diagnostics> k odesílání trasování událostí do souboru.  
@@ -69,6 +69,6 @@ Trasování pracovních postupů nabízí způsob, jak k zaznamenání diagnosti
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)  
- [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)
+## <a name="see-also"></a>Viz také:
+- [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)
+- [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)

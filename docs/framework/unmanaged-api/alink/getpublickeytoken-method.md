@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 94a473d00110c07615ccdfc98bb8944e40dc30e3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 851ff82a539ce354d5507e829d8c461a0f2494ad
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405470"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54729470"
 ---
 # <a name="getpublickeytoken-method"></a>GetPublicKeyToken – metoda
-Načte token veřejného klíče pro danou keyfile nebo kontejneru klíčů.  
+Načte token veřejného klíče pro daný parametr keyfile nebo kontejneru klíčů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,18 +45,18 @@ HRESULT GetPublicKeyToken(
  Název kontejneru klíčů.  
   
  `pvPublicKeyToken`  
- Adresa, kde má být uložena token veřejného klíče.  
+ Adresa, kde má být uložen token klíče.  
   
  `pcbPublicKeyToken`  
- Určuje velikost v bajtech vyrovnávací paměti indikován `pvPublicKeyToken`. Po návratu obsahuje skutečný počet bajtů použitých.  
+ Určuje velikost v bajtech, vyrovnávací paměti indikován `pvPublicKeyToken`. Po návratu obsahuje skutečný počet bajtů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h.  
   
-## <a name="see-also"></a>Viz také  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

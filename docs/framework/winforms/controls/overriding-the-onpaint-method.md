@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Paint event [Windows Forms], handling in Windows Forms custom control
 - OnPaint method [Windows Forms], overriding in Windows Forms custom controls
 ms.assetid: e9ca2723-0107-4540-bb21-4f5ffb4a9906
-ms.openlocfilehash: fbc0a82f82afcc59384246b58437d521d56d708b
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: d688818e24084dbb3db81f418e37d724e9f48512
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838517"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54666248"
 ---
 # <a name="overriding-the-onpaint-method"></a>Přepsání metody OnPaint
 Základní kroky pro přepsání jakékoli události definované v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] jsou shodné a jsou shrnuty v následujícím seznamu.  
@@ -26,7 +26,7 @@ Základní kroky pro přepsání jakékoli události definované v [!INCLUDE[dnp
   
  <xref:System.Windows.Forms.Control.Paint> Událostí je popsáno Zde podrobně vzhledem k tomu, že každý ovládací prvek Windows Forms musí přepsat <xref:System.Windows.Forms.Control.Paint> událost, která dědí z <xref:System.Windows.Forms.Control>. Základní <xref:System.Windows.Forms.Control> není známo, jak je potřeba vykreslit ovládací prvek odvozené třídy a neposkytuje žádnou logiku vykreslování v <xref:System.Windows.Forms.Control.OnPaint%2A> metody. <xref:System.Windows.Forms.Control.OnPaint%2A> Metodu <xref:System.Windows.Forms.Control> jednoduše odešle zprávu <xref:System.Windows.Forms.Control.Paint> události registrované události příjemcům.  
   
- Pokud jste již dříve pracovali prostřednictvím ukázka v [postup: vývoj jednoduchého ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md), jste viděli příklad přepsání <xref:System.Windows.Forms.Control.OnPaint%2A> metody. Následující fragment kódu je převzat z této ukázky.  
+ Pokud jste již dříve pracovali prostřednictvím ukázka v [jak: Vývoj jednoduchého ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md), jste viděli příklad přepsání <xref:System.Windows.Forms.Control.OnPaint%2A> metody. Následující fragment kódu je převzat z této ukázky.  
   
 ```vb  
 Public Class FirstControl  
@@ -86,7 +86,7 @@ public class PaintEventArgs : EventArgs {
   
  Ovládací prvek vyvolá jeho <xref:System.Windows.Forms.Control.OnPaint%2A> metoda pokaždé, když je potřeba změnit jeho vizuální zobrazení. Tato metoda vyvolá zase <xref:System.Windows.Forms.Control.Paint> událostí.  
   
-## <a name="see-also"></a>Viz také  
- [Události](../../../../docs/standard/events/index.md)  
- [Vykreslení ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/rendering-a-windows-forms-control.md)  
- [Definování události](../../../../docs/framework/winforms/controls/defining-an-event-in-windows-forms-controls.md)
+## <a name="see-also"></a>Viz také:
+- [Události](../../../../docs/standard/events/index.md)
+- [Vykreslení ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/rendering-a-windows-forms-control.md)
+- [Definování události](../../../../docs/framework/winforms/controls/defining-an-event-in-windows-forms-controls.md)

@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1060ca140db0304c8e5667f7fdf9624b3ac2b64a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 39223e10b0f75eefb83f3b9a83c5f030318cd715
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429280"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54738927"
 ---
 # <a name="callfunctionshim-function"></a>CallFunctionShim – funkce
-Zavolá funkci, která má zadaný název a parametry v určené knihovně.  
+Provede volání funkce, která má zadaný název a parametry v určené knihovně.  
   
  Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
@@ -43,25 +43,25 @@ HRESULT CallFunctionShim (
   
 #### <a name="parameters"></a>Parametry  
  `szDllName`  
- [v] Název knihovny obsahující danou funkci.  
+ [in] Název knihovny obsahující tuto funkci.  
   
  `szFunctionName`  
- [v] Název funkce.  
+ [in] Název funkce.  
   
  `lpvArgument1`  
- [v] První argument předat funkce.  
+ [in] První argument předat do funkce.  
   
  `lpvArgument2`  
- [v] Druhý argument funkce předávání.  
+ [in] Druhý argument předat do funkce.  
   
  `szVersion`  
- [v] Verze knihovny, která obsahuje funkci.  
+ [in] Verzi knihovny, který obsahuje funkci.  
   
  `pvReserved`  
- [v] Vyhrazeno pro budoucí použití. Předejte nula v tomto parametru.  
+ [in] Vyhrazeno pro budoucí použití. Předání nuly v tomto parametru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -69,5 +69,5 @@ HRESULT CallFunctionShim (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

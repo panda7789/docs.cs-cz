@@ -2,12 +2,12 @@
 title: OperationContextScope
 ms.date: 03/30/2017
 ms.assetid: 11c11108-8eb4-4d49-95a0-83285a812262
-ms.openlocfilehash: 499d3e9824ede493043b996d581b079ec23938f8
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 46180c47512fd4bdb5955ed0febb63892fc27b19
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190824"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54656788"
 ---
 # <a name="operationcontextscope"></a>OperationContextScope
 Ukázka OperationContextScope ukazuje, jak odeslat další informace o používání hlaviček volání Windows Communication Foundation (WCF). V této ukázce serverů i klientů jsou konzolové aplikace.  
@@ -130,4 +130,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\OperationContextScope`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

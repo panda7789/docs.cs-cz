@@ -14,12 +14,12 @@ helpviewer_keywords:
 - classes [WPF], mapping namespaces to
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
-ms.openlocfilehash: 9e93d3cd417d0d075fcebb8327ec51799884f8d6
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: a484ba1e5d0c7a51e7e4c3edbf341bf40345fd2d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664641"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54633910"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Obor názvů XAML mapování oboru názvů pro WPF XAML
 Dále toto téma vysvětluje přítomnost a účel dvě tak často, nenašla v kořenovém tagu souboru WPF XAML mapování oboru názvů XAML. Také popisuje, jak vytvořit podobná mapování pro elementy, které jsou definovány ve svém vlastním kódu a/nebo v rámci samostatné sestavení pomocí.  
@@ -136,6 +136,6 @@ End Namespace
   
  Kompilované BAML (vygenerovali přes PresentationBuildTask) používá všechny kroky, i když BAML také by neměly obsahovat názvy nekvalifikované sestavení.  
   
-## <a name="see-also"></a>Viz také  
- [Obory názvů XML](https://go.microsoft.com/fwlink/?LinkId=98069)  
- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+## <a name="see-also"></a>Viz také:
+- [Obory názvů XML](https://go.microsoft.com/fwlink/?LinkId=98069)
+- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

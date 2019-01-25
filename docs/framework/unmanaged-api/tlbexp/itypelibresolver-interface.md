@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: baff7dac7f1ddc8546bcb52627eeee992921a395
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: bbd8e15b7f708df628f75dc9812eca0f84f36434
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925880"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54672991"
 ---
 # <a name="itypelibresolver-interface"></a>ITypeLibResolver – rozhraní
 Poskytuje [resolvetypelib – metoda](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md), která se přeloží cestu k souboru knihovny typů.  
@@ -33,7 +33,7 @@ Poskytuje [resolvetypelib – metoda](../../../../docs/framework/unmanaged-api/t
 |[ResolveTypeLib – metoda](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md)|Přeloží jednoduchý název knihovny typů tak, že vrací jeho úplnou cestu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** TlbRef.idl, TlbRef.h  
   
@@ -41,6 +41,6 @@ Poskytuje [resolvetypelib – metoda](../../../../docs/framework/unmanaged-api/t
   
  **Verze rozhraní .NET framework:** 4, 3.5, 3.0, 2.0  
   
-## <a name="see-also"></a>Viz také  
- [Pomocné funkce Tlbexp](../../../../docs/framework/unmanaged-api/tlbexp/index.md)  
- [LoadTypeLibEx – funkce](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)
+## <a name="see-also"></a>Viz také:
+- [Pomocné funkce Tlbexp](../../../../docs/framework/unmanaged-api/tlbexp/index.md)
+- [LoadTypeLibEx – funkce](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

@@ -1,20 +1,20 @@
 ---
-title: Kolekce schémat SQL serveru
+title: SQL Server Schema Collections
 ms.date: 03/30/2017
 ms.assetid: c6403cc3-d78b-4f85-bab1-ada7a3446ec5
-ms.openlocfilehash: 7f710af5c05942d2ff1718c9d59d4d776f45c6e7
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 2445ab2ffbe30b647e256e223f712300bcf19931
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123862"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54635036"
 ---
-# <a name="sql-server-schema-collections"></a>Kolekce schémat SQL serveru
+# <a name="sql-server-schema-collections"></a>SQL Server Schema Collections
 Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje další schéma kolekce kromě společné kolekce schémat. Kolekce schémat mírně lišit podle verze SQL serveru, který používáte. Pokud chcete určit seznam kolekcí nepodporuje schéma, zavolejte **GetSchema** metody bez argumentů nebo názvem kolekce schématu "MetaDataCollections". Vrátí <xref:System.Data.DataTable> seznam kolekcí nepodporuje schéma, počet omezení, které každá podporují a počet identifikátor částí, které používají.  
   
 ## <a name="databases"></a>Databáze  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |Název databáze database_name|String|Název databáze.|  
 |DBID|Int16|ID databáze.|  
@@ -22,7 +22,7 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
   
 ## <a name="foreign-keys"></a>Cizí klíče  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |CONSTRAINT_CATALOG|String|Katalog omezení patří.|  
 |CONSTRAINT_SCHEMA|String|Schéma, které obsahuje omezení.|  
@@ -36,7 +36,7 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
   
 ## <a name="indexes"></a>Indexy  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |constraint_catalog|String|Katalog, který patří indexu.|  
 |constraint_schema|String|Schéma, které obsahuje index.|  
@@ -49,13 +49,13 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
 ### <a name="indexes-sql-server-2008"></a>Indexes (SQL Server 2008)  
  Od verze rozhraní .NET Framework verze 3.5 SP1 a SQL Server 2008, tyto sloupce se přidaly do kolekce schémat indexů pro podporu nových prostorových typů filestream a zhuštěné sloupce. Tyto sloupce nejsou podporovány v dřívějších verzích rozhraní .NET Framework a systému SQL Server.  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
-|type_desc|String|Typ indexu bude jeden z následujících akcí:<br /><br /> -HEAP<br />– V CLUSTERU<br />-NECLUSTEROVANÝ<br />– XML<br />– PROSTOROVÝ|  
+|type_desc|String|Typ indexu bude jeden z následujících akcí:<br /><br /> -HEAP<br />– V CLUSTERU<br />-NECLUSTEROVANÝ<br />-   XML<br />– PROSTOROVÝ|  
   
 ## <a name="indexcolumns"></a>IndexColumns  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |constraint_catalog|String|Katalog, který patří indexu.|  
 |constraint_schema|String|Schéma, které obsahuje index.|  
@@ -65,12 +65,12 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
 |TABLE_NAME|String|Název tabulky.|  
 |COLUMN_NAME|String|Název sloupce indexu je přidružený.|  
 |ordinal_position|Int32|Pořadí sloupců.|  
-|Typ klíče|Byte|Typ objektu.|  
+|KeyType|Byte|Typ objektu.|  
 |index_name|String|Název indexu.|  
   
 ## <a name="procedures"></a>Procedury  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |SPECIFIC_CATALOG|String|Konkrétní název katalogu.|  
 |SPECIFIC_SCHEMA|String|Konkrétní název schématu.|  
@@ -84,7 +84,7 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
   
 ## <a name="procedure-parameters"></a>Parametry procedur  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |SPECIFIC_CATALOG|String|Název procedury, pro kterou je toto parametr katalogu.|  
 |SPECIFIC_SCHEMA|String|Schéma, který obsahuje postup, pro které tento parametr je součástí.|  
@@ -112,7 +112,7 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
   
 ## <a name="tables"></a>Tabulky  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Katalog tabulky.|  
 |TABLE_SCHEMA|String|Schéma, které obsahuje tabulku.|  
@@ -121,7 +121,7 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
   
 ## <a name="columns"></a>Sloupce  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Katalog tabulky.|  
 |TABLE_SCHEMA|String|Schéma, které obsahuje tabulku.|  
@@ -142,10 +142,10 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
 |CHARACTER_SET_NAME|String|Vrátí jedinečný název pro znak nastavte, pokud je tento sloupec znaková data nebo textová data typu. V opačném případě je vrácena hodnota NULL.|  
 |COLLATION_CATALOG|String|Vrátí hlavní, určující databáze, ve kterém je definována kolaci, pokud je ve sloupci znaková data nebo textová data typu. V tomto sloupci, jinak má hodnotu NULL.|  
   
-### <a name="columns-sql-server-2008"></a>Sloupce (SQL Server 2008)  
+### <a name="columns-sql-server-2008"></a>Columns (SQL Server 2008)  
  Od verze rozhraní .NET Framework verze 3.5 SP1 a SQL Server 2008, tyto sloupce se přidaly do kolekce schémat sloupců pro podporu nových prostorových typů filestream a zhuštěné sloupce. Tyto sloupce nejsou podporovány v dřívějších verzích rozhraní .NET Framework a systému SQL Server.  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |IS_FILESTREAM|String|Ano, pokud se tento sloupec měl atributem FILESTREAM.<br /><br /> Ne, pokud sloupec neobsahuje atribut FILESTREAM.|  
 |IS_SPARSE|String|Ano, pokud je ve sloupci sadu zhuštěných sloupců.<br /><br /> Ne, pokud sloupec není sadu zhuštěných sloupců.|  
@@ -156,7 +156,7 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
   
  AllColumns má stejná omezení a výsledný schéma objektu DataTable jako kolekce schémat sloupců. Jediným rozdílem je, že AllColumns obsahuje sloupec sady sloupců, které nejsou zahrnuty v kolekci schémat sloupců. Následující tabulka popisuje tyto sloupce.  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Katalog tabulky.|  
 |TABLE_SCHEMA|String|Schéma, které obsahuje tabulku.|  
@@ -183,7 +183,7 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
 ### <a name="columnsetcolumns-sql-server-2008"></a>ColumnSetColumns (SQL Server 2008)  
  Od verze rozhraní .NET Framework verze 3.5 SP1 a SQL Server 2008, přidala se ColumnSetColumns kolekci schémat pro podporu zhuštěné sloupce. ColumnSetColumns není podporované v dřívějších verzích rozhraní .NET Framework a systému SQL Server. Kolekce schémat ColumnSetColumns vrací schéma pro všechny sloupce v sadě sloupců. Následující tabulka popisuje tyto sloupce.  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Katalog tabulky.|  
 |TABLE_SCHEMA|String|Schéma, které obsahuje tabulku.|  
@@ -209,16 +209,16 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
   
 ## <a name="users"></a>Uživatelé  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
-|UID|Int16|ID uživatele, v této databázi jedinečné. 1 je vlastníkem databáze.|  
+|uid|Int16|ID uživatele, v této databázi jedinečné. 1 je vlastníkem databáze.|  
 |uživatelské_jméno|String|Uživatelské jméno nebo název skupiny, v této databázi jedinečné.|  
 |CREATEDATE formát|DateTime|Datum, kdy byl přidán účet.|  
 |updatedate|DateTime|Datum, kdy byl naposled změněn účet.|  
   
 ## <a name="views"></a>Zobrazení  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Katalog zobrazení.|  
 |TABLE_SCHEMA|String|Schéma, která obsahuje zobrazení.|  
@@ -228,7 +228,7 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
   
 ## <a name="viewcolumns"></a>ViewColumns  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VIEW_CATALOG|String|Katalog zobrazení.|  
 |VIEW_SCHEMA|String|Schéma, která obsahuje zobrazení.|  
@@ -240,7 +240,7 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
   
 ## <a name="userdefinedtypes"></a>UserDefinedTypes  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |název_sestavení|String|Název souboru pro sestavení.|  
 |udt_name|String|Název třídy pro sestavení.|  
@@ -255,6 +255,6 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
 |Create_Date|DateTime|Datum bylo sestavení vytvořen a zaregistrován.|  
 |Permission_set_desc|String|Popisný název pro oprávnění set a – úroveň zabezpečení pro sestavení.|  
   
-## <a name="see-also"></a>Viz také  
- [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

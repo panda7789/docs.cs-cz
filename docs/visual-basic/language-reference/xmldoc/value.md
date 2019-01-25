@@ -1,18 +1,18 @@
 ---
-title: '&lt;Hodnota&gt; (Visual Basic)'
+title: <value> (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - <value> XML tag
 - value XML tag
 ms.assetid: 0b84b02e-9e6d-41b5-a926-0d5dc76dacb5
-ms.openlocfilehash: 92c8c2ac7b95e97b37c907e3837bc90dac384b33
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 5aab2307a1967ea660282c7b324eaddfe798a155
+ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54558940"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54857876"
 ---
-# <a name="ltvaluegt-visual-basic"></a>&lt;Hodnota&gt; (Visual Basic)
+# <a name="value-visual-basic"></a>\<Hodnota > (Visual Basic)
 Určuje popis vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  

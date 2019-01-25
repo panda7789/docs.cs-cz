@@ -2,12 +2,12 @@
 title: Důležité informace o nasazení (rozhraní Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 3a847a22-4eb8-4565-b18b-453bbca070db
-ms.openlocfilehash: 628e0787e0e586a901c0ba24ccf5d63822c884b6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b240b7da1d05e1bf02e31acc3c99b16a908a6add
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511034"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689874"
 ---
 # <a name="deployment-considerations-entity-framework"></a>Důležité informace o nasazení (rozhraní Entity Framework)
 Toto téma obsahuje informace o nasazení aplikace, které používají rozhraní ADO.NET Entity Framework pro přístup k datům. Další informace o rozhraní Entity Framework naleznete v tématu [Začínáme](../../../../../docs/framework/data/adonet/ef/getting-started.md).  
@@ -20,7 +20,7 @@ Toto téma obsahuje informace o nasazení aplikace, které používají rozhran�
   
 -   Entity Framework je součástí rozhraní .NET Framework počínaje .NET Framework 3.5 Service Pack 1 (SP1). Ujistěte se, že při nasazení aplikace založené na rozhraní Entity Framework je nainstalované rozhraní .NET Framework 3.5 SP1 nebo novější verze.  
   
--   Když konceptuálního modelu je generován Průvodce datovým modelem Entity, vytvoří se připojovací řetězec v konfiguračním souboru aplikace. Modelu a souborů mapování, může být vložen jako prostředek aplikace nebo je možné zkopírovat do výstupního adresáře. Ve výchozím nastavení jsou nasazené jako prostředky vložené aplikace. Použití `Metadata Artifact Processing` vlastnost souboru návrháře entit vyberte jednu z těchto možností. Další informace najdete v tématu [postupy: kopírování modelu a mapování souborů do výstupního adresáře](https://msdn.microsoft.com/library/e2c9820f-1705-457e-9fdb-8b289f3179b4).  
+-   Když konceptuálního modelu je generován Průvodce datovým modelem Entity, vytvoří se připojovací řetězec v konfiguračním souboru aplikace. Modelu a souborů mapování, může být vložen jako prostředek aplikace nebo je možné zkopírovat do výstupního adresáře. Ve výchozím nastavení jsou nasazené jako prostředky vložené aplikace. Použití `Metadata Artifact Processing` vlastnost souboru návrháře entit vyberte jednu z těchto možností. Další informace najdete v tématu [jak: Kopírování modelu a mapování souborů do výstupního adresáře](https://msdn.microsoft.com/library/e2c9820f-1705-457e-9fdb-8b289f3179b4).  
   
 -   Ujistěte se, že modelu a mapování informace (vyjádřených v Konceptuální schéma definici jazyka (CSDL), store schema definition language (SSDL) a mapování specification language (MSL)) je nasazen spolu s aplikací a v umístění Zadaný připojovací řetězec. Další informace najdete v tématu [připojovací řetězce](../../../../../docs/framework/data/adonet/ef/connection-strings.md).  
   
@@ -28,6 +28,6 @@ Toto téma obsahuje informace o nasazení aplikace, které používají rozhran�
   
 -   Protože Entity Framework je součástí rozhraní .NET Framework, můžete znovu distribuovat s vaší aplikací podle licenční smlouvy rozhraní .NET Framework.  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)  
- [Důležité informace o vývoji a nasazení](../../../../../docs/framework/data/adonet/ef/development-and-deployment-considerations.md)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)
+- [Důležité informace o vývoji a nasazení](../../../../../docs/framework/data/adonet/ef/development-and-deployment-considerations.md)

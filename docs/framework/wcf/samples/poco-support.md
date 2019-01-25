@@ -2,12 +2,12 @@
 title: Podpora objektů POCO
 ms.date: 03/30/2017
 ms.assetid: 3846ca73-2819-4ca2-8367-dc739dde5a5b
-ms.openlocfilehash: bb4f8b0a5eb20be50a2d3ba9a15d66fd7fc573f8
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: 8d94d6a9700c38014aa53ee9910b53239fc28b0a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49452807"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54640027"
 ---
 # <a name="poco-support"></a>Podpora objektů POCO
 Tato ukázka předvádí, podpora serializaci zrušeno označení typy; To znamená typy, na které nebyly použity atributy serializace, někdy označovány jako obyčejný staré CLR objektů POCO typy. <xref:System.Runtime.Serialization.DataContractSerializer> Odvodí kontraktu dat pro všechny veřejné zrušeno označení typy, které mají výchozí konstruktor. Kontrakty dat umožňuje předání strukturovaná data do a ze služby. Další informace o typech zrušeno označení, naleznete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
@@ -56,6 +56,6 @@ public class ComplexNumber
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\POCO`  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute>  
- [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute>
+- [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 613a8bc7-6a28-4795-bd6c-1abd9050478f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cbbf7055a250ae7fa630097f3014a6420228fed3
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 1e09f1464a5df751034639d8bc1cb5d79faacd0f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397004"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54714188"
 ---
 # <a name="barrier"></a>Bariéra
 
@@ -40,7 +40,7 @@ A <xref:System.Threading.Barrier?displayProperty=nameWithType> je primitiv synch
 
  Pokud po fázi delegáta vyvolá výjimku, je obalen <xref:System.Threading.BarrierPostPhaseException> objekt, který je pak šířený do všichni účastníci.  
   
-## <a name="barrier-versus-continuewhenall"></a>Barrier oproti ContinueWhenAll
+## <a name="barrier-versus-continuewhenall"></a>Barrier versus ContinueWhenAll
 
  Vlákna provádění více fázích ve smyčkách jsou zvláště užitečné překážek. Pokud váš kód vyžaduje pouze jednu nebo dvě fáze práce, zvažte, jestli se má použít <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> objekty s jakýmkoli implicitní spojení, včetně:  
   
@@ -56,5 +56,5 @@ A <xref:System.Threading.Barrier?displayProperty=nameWithType> je primitiv synch
   
 ## <a name="see-also"></a>Viz také:
 
-- [Práce s vlákny funkce a objekty](threading-objects-and-features.md)  
+- [Práce s vlákny funkce a objekty](threading-objects-and-features.md)
 - [Postupy: synchronizace souběh operací pomocí bariéry](how-to-synchronize-concurrent-operations-with-a-barrier.md)

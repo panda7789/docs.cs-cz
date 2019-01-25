@@ -6,115 +6,115 @@ helpviewer_keywords:
 - masks [WPF], opacity
 - opacity [WPF], masks
 ms.assetid: 22367fab-5f59-4583-abfd-db2bf86eaef7
-ms.openlocfilehash: 680d7441301b425c088d549f9e0e0d2b976cc69f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: da8ffb77391129814e64613e17ea9f4d10cdca98
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33566230"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54746205"
 ---
 # <a name="opacity-masks-overview"></a>Přehled masek krytí
-Masky krytí umožňují provést části elementu nebo visual průhledných nebo částečně transparentní. Chcete-li vytvořit masky krytí, je použít <xref:System.Windows.Media.Brush> k <xref:System.Windows.UIElement.OpacityMask%2A> vlastnost elementu nebo <xref:System.Windows.Media.Visual>.  Štětec se mapuje na element nebo visual a hodnota neprůhlednosti každého obrazového bodu štětce slouží k určení výsledného krytí jednotlivých odpovídající pixelů, elementu nebo visual.  
+Masky krytí umožňují vytvářet elementu nebo vizuální části transparentní nebo částečně transparentní. Vytvoření masky krytí, můžete použít <xref:System.Windows.Media.Brush> k <xref:System.Windows.UIElement.OpacityMask%2A> vlastnost elementu nebo <xref:System.Windows.Media.Visual>.  Štětec mapován na prvek nebo vizuální a hodnotu neprůhlednosti každý pixel štětce se používá k určení výsledného krytí pixel odpovídající element nebo visual.  
   
 <a name="prereqs"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Tento přehled předpokládá, že jste obeznámeni s <xref:System.Windows.Media.Brush> objekty. Úvod do používání štětce, najdete v části [vykreslování s plnou barvy a přechody přehled](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md). Informace o <xref:System.Windows.Media.ImageBrush> a <xref:System.Windows.Media.DrawingBrush>, najdete v části [vykreslování s obrázky, kresby a vizuální prvky](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
+ Tento přehled předpokládá, že máte zkušenosti s <xref:System.Windows.Media.Brush> objekty. Úvod do používání štětce, naleznete v tématu [Malování plnými barvami a přechody přehled](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md). Informace o <xref:System.Windows.Media.ImageBrush> a <xref:System.Windows.Media.DrawingBrush>, naleznete v tématu [Malování pomocí obrázků, kreseb a vizuálních](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
   
 <a name="opacitymasks"></a>   
 ## <a name="creating-visual-effects-with-opacity-masks"></a>Vytváření vizuálních efektů pomocí masky krytí  
- Maska krytí funguje tak, že do elementu nebo visual mapování její obsah. Alfa kanálu jednotlivých pixelů štětce pak slouží k určení výsledného krytí element nebo na visual odpovídající pixelů; skutečné barvu štětce se ignoruje. Pokud je danou část stopy transparentní, odpovídající část elementu nebo visual viditelný. Pokud je danou část stopy neprůhledné, krytí odpovídající část elementu nebo visual se nezmění. Krytí určeného maska krytí spolu s nastavení krytí v prvku nebo visual. Například pokud je element 25 procent neprůhledných a masky krytí platí, která přejde z plně neprůhledného do zcela průhledné, výsledkem je element, který přechází z 25 procent krytí do zcela průhledná.  
+ Masky krytí funguje tak, že do elementu nebo visual mapování jeho obsah. Alfa kanál jednotlivých pixelů na stopu se následně použijí k určení výsledného krytí elementu nebo pixelech odpovídající vizuálu; vlastní Barva štětce se ignoruje. Pokud danou část štětec je transparentní, odpovídající část element nebo vizuál viditelný. Pokud danou část štětec je neprůhledný, krytí elementu nebo vizuál odpovídající část je beze změny. Neprůhlednost určené masky krytí číslo zkombinuje s krytí nastavení k dispozici v elementu nebo visual. Například pokud prvek je neprůhledný 25 procent a masku neprůhlednosti se použije, která přejde z úplně neprůhledná do zcela transparentní, výsledkem je element, který změní z 25 procent krytí na zcela průhledná.  
   
 > [!NOTE]
->  I když tento přehled příkladech masek krytí u elementů bitové kopie, masky krytí mohou být použity u libovolného elementu nebo <xref:System.Windows.Media.Visual>, včetně panelů a ovládací prvky.  
+>  I když se v příkladech v tomto přehledu ukazují použití masky krytí v prvcích obrázek, masky krytí může použít u libovolného elementu nebo <xref:System.Windows.Media.Visual>, včetně panely a ovládací prvky.  
   
- Masky krytí slouží k vytváření zajímavé vizuální efekty, například vytvoření bitové kopie nebo tlačítka, která zmizí ze zobrazení, přidat textury na elementy nebo kombinovat přechody k vytvoření povrchy jako pohotovostní. Následující obrázek ukazuje použití masky krytí. Šachovnicová mřížka pozadí se používá k zobrazení části transparentní masky.  
+ Masky krytí umožňují vytvářet zajímavé vizuální efekty, jako například vytvoření imagí nebo tlačítka, která má vyblednout ze zobrazení, přidat textury na elementy nebo kombinovat přechody k vytvoření povrchy skla jako. Následující obrázek znázorňuje použití masku neprůhlednosti. Šachovnicová mřížka na pozadí se používá k zobrazení transparentní části masky.  
   
  ![Objekt s maskou neprůhlednosti LinearGradientBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-opacitymask-imageexample.png "wcpsdk_graphicsmm_opacitymask_imageexample")  
-Příklad maskování neprůhlednost.  
+Příklad masky krytí  
   
 <a name="creatingopacitymasks"></a>   
 ## <a name="creating-an-opacity-mask"></a>Vytvoření masky krytí  
- Chcete-li vytvořit masky krytí, je vytvořit <xref:System.Windows.Media.Brush> a použijte ho k <xref:System.Windows.UIElement.OpacityMask%2A> vlastnosti element nebo visual. Můžete použít jakýkoli typ <xref:System.Windows.Media.Brush> jako masky krytí.  
+ Vytvoření masky krytí, vytvoříte <xref:System.Windows.Media.Brush> a použít ji k <xref:System.Windows.UIElement.OpacityMask%2A> vlastnost elementu nebo vizuál. Můžete použít libovolný typ <xref:System.Windows.Media.Brush> jako masku neprůhlednosti.  
   
--   <xref:System.Windows.Media.LinearGradientBrush>, <xref:System.Windows.Media.RadialGradientBrush>: Používají k vytvoření prvku nebo visual Objevování ze zobrazení.  
+-   <xref:System.Windows.Media.LinearGradientBrush>, <xref:System.Windows.Media.RadialGradientBrush>: Použít k vytvoření elementu nebo visual fade ze zobrazení.  
   
-     Na následujícím obrázku <xref:System.Windows.Media.LinearGradientBrush> použít jako masky krytí.  
+     Následující obrázek znázorňuje <xref:System.Windows.Media.LinearGradientBrush> použít jako masku neprůhlednosti.  
   
      ![Objekt s neprůhlednosti LinearGradientBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-lineagradientopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_lineagradientopacitymasksingle")  
-Příklad LinearGradientBrush krytí maskování  
+Příklad maskování LinearGradientBrush krytí  
   
--   <xref:System.Windows.Media.ImageBrush>: Použít k vytvoření texture a logicky nebo vytržená edge účinky.  
+-   <xref:System.Windows.Media.ImageBrush>: Použít k vytvoření textury a obnovitelně nebo vytržená edge účinky.  
   
-     Následující obrázek znázorňuje <xref:System.Windows.Media.ImageBrush> použít jako masky krytí.  
+     Následující obrázek znázorňuje <xref:System.Windows.Media.ImageBrush> použít jako masku neprůhlednosti.  
   
-     ![Objekt, který má maskou neprůhlednosti ImageBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-imageasopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_imageasopacitymasksingle")  
-Příklad maskování krytí LinearGradientBrush  
+     ![Objekt, který má masky krytí ImageBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-imageasopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_imageasopacitymasksingle")  
+Příklad maskování LinearGradientBrush krytí  
   
--   <xref:System.Windows.Media.DrawingBrush>: Použít k vytvoření komplexní krytí masky od tvarů, bitové kopie a přechody.  
+-   <xref:System.Windows.Media.DrawingBrush>: Použitý k vytvoření masky krytí komplexní na vzory tvarů, obrázky a přechody.  
   
-     Na následujícím obrázku <xref:System.Windows.Media.DrawingBrush> použít jako masky krytí.  
+     Následující obrázek znázorňuje <xref:System.Windows.Media.DrawingBrush> použít jako masku neprůhlednosti.  
   
-     ![Objekt s maskou neprůhlednosti DrawingBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-drawingbrushasopacitymask-single.jpg "wcpsdk_drawingbrushasopacitymask_single")  
-Příklad maskování krytí DrawingBrush  
+     ![Objekt s masky krytí DrawingBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-drawingbrushasopacitymask-single.jpg "wcpsdk_drawingbrushasopacitymask_single")  
+Příklad maskování neprůhlednosti objektu DrawingBrush  
   
- Štětce přechodu (<xref:System.Windows.Media.LinearGradientBrush> a <xref:System.Windows.Media.RadialGradientBrush>) jsou zvlášť vhodné pro použití jako masky krytí. Protože <xref:System.Windows.Media.SolidColorBrush> výplněmi na oblast s jednotné barvy, provádění nízký krytí zakrývá; pomocí <xref:System.Windows.Media.SolidColorBrush> je ekvivalentní nastavení elementu nebo na visual <xref:System.Windows.UIElement.OpacityMask%2A> vlastnost.  
+ Štětce přechodu (<xref:System.Windows.Media.LinearGradientBrush> a <xref:System.Windows.Media.RadialGradientBrush>) je zvlášť vhodné pro použití jako masku neprůhlednosti. Protože <xref:System.Windows.Media.SolidColorBrush> výplně některou oblast s jednotné barvy, získávají nízký krytí zakrývá; pomocí <xref:System.Windows.Media.SolidColorBrush> je ekvivalentní nastavení prvku nebo vizuálu <xref:System.Windows.UIElement.OpacityMask%2A> vlastnost.  
   
 <a name="creatingopacitymaskswithgradients"></a>   
 ## <a name="using-a-gradient-as-an-opacity-mask"></a>Použití přechod jako masky krytí  
- K vytvoření přechodu výplně, zadejte dva nebo více Přechodové zarážky. Obsahuje každou Přechodové zarážky popisuje barvu a pozice (najdete v části [vykreslování s plnou barvy a přechody přehled](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md) Další informace o vytváření a používání přechody). Proces je stejný při použití přechod jako masky krytí s tím rozdílem, že místo prolnutí barvy, přechodu maska krytí smíchá hodnoty alfa kanálu. Proto není důležité barvu skutečný obsah má barevný přechod; záleží jenom alfa kanálu, nebo krytí jednotlivých barev. Následuje příklad.  
+ K vytvoření přechodu výplně, zadejte dva nebo více Přechodové zarážky. Obsahuje každou přechodové popisuje barvy a pozice (naleznete v tématu [Malování plnými barvami a přechody přehled](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md) Další informace o vytváření a používání přechody). Proces je stejný při použití přechod jako masky krytí s tím rozdílem, že místo prolnutí barvy, přechod masky krytí prolnutí alfa kanál hodnoty. Vlastní barva přechod na obsah, proto není důležitá; pouze alfa kanálu, a krytí každá barva záleží. Následuje příklad.  
   
  [!code-xaml[OpacityMasksSnippet#LinearGradientOpacityMaskonImage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/GradientBrushExample.xaml#lineargradientopacitymaskonimage)]  
   
 <a name="specifyinggradientcolors"></a>   
-## <a name="specifying-gradient-stops-for-an-opacity-mask"></a>Určení ukončení přechodu pro masku krytí  
- V předchozím příkladu, barvu definovaná systémem <xref:System.Windows.Media.Colors.Black%2A> slouží jako počáteční barvu barevného přechodu. Protože všechny barvy v <xref:System.Windows.Media.Colors> třída, s výjimkou <xref:System.Windows.Media.Colors.Transparent%2A>, jsou plně neprůhledné, lze jednoduše zadat počáteční barvu pro masku krytí přechodu.  
+## <a name="specifying-gradient-stops-for-an-opacity-mask"></a>Zadání masky krytí Přechodové zarážky  
+ V předchozím příkladu se barva definovaných systémem <xref:System.Windows.Media.Colors.Black%2A> slouží jako počáteční barva přechodu. Protože všechny barvy v <xref:System.Windows.Media.Colors> třídy, s výjimkou <xref:System.Windows.Media.Colors.Transparent%2A>, jsou zcela neprůhledný, lze jednoduše definovat počáteční barvu barevného přechodu neprůhlednosti masky.  
   
- Pro další kontrolu nad hodnoty alfa při definování masky krytí, můžete zadat alfa kanálu pomocí barev [!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)] šestnáctkové soustavě v kódu nebo pomocí <xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=nameWithType> metoda.  
+ Pro větší kontrolu nad hodnoty alfa při definování masky krytí, můžete zadat alfa kanál barvy s použitím [!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)] šestnáctkové soustavě v kódu nebo použití <xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=nameWithType> metody.  
   
 <a name="argbsyntax"></a>   
-### <a name="specifying-color-opacity-in-xaml"></a>Určení krytí barev v "XAML"  
- V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], použijete [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě k určení krytí jednotlivých barev. [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě používá následující syntaxe:  
+### <a name="specifying-color-opacity-in-xaml"></a>Určení barvy krytí v "XAML"  
+ V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], použijete [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě k určení krytí jednotlivé barvy. [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě používá následující syntaxi:  
   
  `#` **aa** *rrggbb*  
   
- *Aa* v předchozí řádek představuje letopočty šestnáctkové hodnoty slouží k zadání krytí barvy. *Rr*, *gg*, a *bb* každý představují dvoumístné šestnáctkové hodnoty používaný k zadání množství červená, zelená a modrá v barvu. Každý šestnáctková číslice může mít hodnotu od 0 – 9 nebo A-F. 0 je nejmenší hodnota a F je největší. Při použití hodnoty alfa 00 určuje barvu, která je zcela transparentní, zatímco při použití hodnoty alfa FF vytvoří barvu, která je plně neprůhledný.  V následujícím příkladu, hexadecimální [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] zápis slouží k určení dvě barvy. První je zcela neprůhledné, zatímco druhý je zcela transparentní.  
+ *Aa* v předchozí řádek představuje dvěma číslicemi šestnáctková hodnota používá k určení krytí barvu. *Rr*, *gg*, a *bb* každý představují dvě číslice šestnáctková hodnota používá k určení množství červené, zelené a modré v barvu. Každý šestnáctková číslice může mít hodnotu od 0 – 9 nebo A – F. nejmenší hodnota je 0 a F je nejvyšší. Alfa hodnotu 00 určuje barvu, která je zcela transparentní, zatímco alfa hodnotu FF vytvoří barvu, která je úplně neprůhledná.  V následujícím příkladu, hexadecimální [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] zápisu se používá k určení dvěma barvami. První je úplně neprůhledná, zatímco druhá je dokonale transparentní.  
   
  [!code-xaml[OpacityMasksSnippet#AARRGGBBValueonOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/GradientBrushExample.xaml#aarrggbbvalueonopacitymask)]  
   
 <a name="usingimageasopacitymask"></a>   
-## <a name="using-an-image-as-an-opacity-mask"></a>Použití bitovou kopii jako masky krytí  
- Obrázky lze použít také jako masky krytí. Následující obrázek ukazuje příklad. Šachovnicová mřížka pozadí se používá k zobrazení části transparentní masky.  
+## <a name="using-an-image-as-an-opacity-mask"></a>Pomocí Image jako masky krytí  
+ Image můžete použít také jako masky krytí. Příklad ukazuje následující obrázek. Šachovnicová mřížka na pozadí se používá k zobrazení transparentní části masky.  
   
- ![Objekt s maskou neprůhlednosti ImageBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-imageasopacitymask.png "wcpsdk_graphicsmm_imageasopacitymask")  
-Příklad maskování neprůhlednost.  
+ ![Objekt s masky krytí ImageBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-imageasopacitymask.png "wcpsdk_graphicsmm_imageasopacitymask")  
+Příklad masky krytí  
   
- Chcete-li použít bitovou kopii jako masky krytí, použijte <xref:System.Windows.Media.ImageBrush> tak, aby obsahovala bitovou kopii. Při vytváření obrázek, který se použije jako masky krytí, uložit obrázek ve formátu, který podporuje více úrovní transparentnosti, například [!INCLUDE[TLA#tla_png](../../../../includes/tlasharptla-png-md.md)]. Následující příklad ukazuje kód používaný k vytvoření na předchozím obrázku.  
+ Chcete-li použít obraz jako masky krytí, použijte <xref:System.Windows.Media.ImageBrush> obsahovat obrázek. Při vytváření image se použije jako masky krytí, uložit obrázek ve formátu, který podporuje více úrovní průhlednosti, jako například [!INCLUDE[TLA#tla_png](../../../../includes/tlasharptla-png-md.md)]. Následující příklad ukazuje kód používaný k vytvoření na předchozím obrázku.  
   
  [!code-xaml[OpacityMasksSnippet#UIElementOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/ImageBrushExample.xaml#uielementopacitymask)]  
   
 <a name="tilingimageopacitymask"></a>   
-### <a name="using-a-tiled-image-as-an-opacity-mask"></a>Pomocí obrázků vedle sebe jako masky krytí  
- V následujícím příkladu se používá stejnou bitovou kopii s jinou <xref:System.Windows.Media.ImageBrush>, ale funkce stopy dlaždice se používají k vytvoření dlaždice druhou mocninu image 50 pixelů.  
+### <a name="using-a-tiled-image-as-an-opacity-mask"></a>Pomocí bitové kopie vedle sebe jako masky krytí  
+ V následujícím příkladu se používá stejná image s jiným <xref:System.Windows.Media.ImageBrush>, ale funkce dělení do bloků na stopu se používají k vytvoření dlaždice čtverec image 50 pixelů.  
   
  [!code-xaml[OpacityMasksSnippet#TiledImageasOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/ImageBrushExample.xaml#tiledimageasopacitymask)]  
   
 <a name="drawingbrushasopacitymask"></a>   
-## <a name="creating-an-opacity-mask-from-a-drawing"></a>Vytváření masky krytí z výkresu  
- Kresby lze použít masky krytí. Obsažené v kreslení obrazce můžete sami vyplněn přechody plné barvy, Image nebo i další výkresy. Následující obrázek znázorňuje příklad výkresu použít jako masky krytí. Šachovnicová mřížka pozadí se používá k zobrazení části transparentní masky.  
+## <a name="creating-an-opacity-mask-from-a-drawing"></a>Vytvoření masky krytí z kresby  
+ Čára lze použít masku neprůhlednosti. Obsažené v kreslení tvarů můžete sami zaplněny přechody, plnými barvami, Image nebo dokonce i v dalších kreslení. Následující obrázek ukazuje příklad vykreslování používá jako masku neprůhlednosti. Šachovnicová mřížka na pozadí se používá k zobrazení transparentní části masky.  
   
- ![Objekt s maskou neprůhlednosti DrawingBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-drawingbrushasopacitymask.png "wcpsdk_drawingbrushasopacitymask")  
-Příklad maskování krytí DrawingBrush  
+ ![Objekt s masky krytí DrawingBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-drawingbrushasopacitymask.png "wcpsdk_drawingbrushasopacitymask")  
+Příklad maskování neprůhlednosti objektu DrawingBrush  
   
- Pokud chcete použít jako masky krytí výkresu, použijte <xref:System.Windows.Media.DrawingBrush> tak, aby obsahovala kreslení. Následující příklad ukazuje kód používaný k vytvoření na předchozím obrázku:  
+ Použití kresby jako masky krytí, použijte <xref:System.Windows.Media.DrawingBrush> tak, aby obsahovala výkresu. Následující příklad ukazuje kód používaný k vytvoření na předchozím obrázku:  
   
  [!code-xaml[OpacityMasksSnippet#OpacityMaskfromDrawing](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/DrawingBrushExample.xaml#opacitymaskfromdrawing)]  
   
 <a name="tileddrawingbrush"></a>   
-### <a name="using-a-tiled-drawing-as-an-opacity-mask"></a>Použití vedle sebe kreslení jako masky krytí  
- Podobně jako <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush> můžete provedeny na dlaždici jeho kreslení. V následujícím příkladu se kreslení štětce používá k vytvoření masku krytí vedle sebe.  
+### <a name="using-a-tiled-drawing-as-an-opacity-mask"></a>Použití kresby vedle sebe jako masky krytí  
+ Podobně jako <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush> můžete provést na dlaždici jeho vykreslování. V následujícím příkladu kreslicího štětce slouží k vytvoření masky krytí vedle sebe.  
   
  [!code-xaml[OpacityMasksSnippet#TiledDrawingasOpacityMask](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpacityMasksSnippet/CS/DrawingBrushExample.xaml#tileddrawingasopacitymask)]  
   
-## <a name="see-also"></a>Viz také  
- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)

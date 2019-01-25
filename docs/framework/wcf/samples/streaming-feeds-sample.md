@@ -2,12 +2,12 @@
 title: Ukázka informačních kanálů streamování
 ms.date: 03/30/2017
 ms.assetid: 1f1228c0-daaa-45f0-b93e-c4a158113744
-ms.openlocfilehash: 17639273ece804dc531cbbc3ab9135c814ea632d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: a2bbc51593b4f1c3655d2e1d0df7f14d0005d68c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44041545"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631356"
 ---
 # <a name="streaming-feeds-sample"></a>Ukázka informačních kanálů streamování
 Tento příklad ukazuje, jak spravovat informační kanály syndikace, které obsahují velký počet položek. Na serveru, ukázka ukazuje, jak pozdržet jednotlivých <xref:System.ServiceModel.Syndication.SyndicationItem> objekty v rámci kanálu až do bezprostředně před položky jsou zapsána do datového proudu sítě.  
@@ -118,5 +118,5 @@ private IEnumerable<SyndicationItem> DelayReadItems(XmlReader reader, Syndicatio
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\StreamingFeeds`  
   
-## <a name="see-also"></a>Viz také  
- [Samostatný diagnostický informační kanál](../../../../docs/framework/wcf/samples/stand-alone-diagnostics-feed-sample.md)
+## <a name="see-also"></a>Viz také:
+- [Samostatný diagnostický informační kanál](../../../../docs/framework/wcf/samples/stand-alone-diagnostics-feed-sample.md)

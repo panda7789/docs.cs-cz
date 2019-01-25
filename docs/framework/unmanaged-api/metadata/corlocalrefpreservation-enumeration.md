@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ee808ba403a513b897134420b45ebe8cd3537571
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e9ed3cdac726fbdbf9ee2b33f42565d8594bc36e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442242"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54669676"
 ---
 # <a name="corlocalrefpreservation-enumeration"></a>CorLocalRefPreservation – výčet
-Obsahuje hodnot příznaku pro zpracování místní odkazy.  
+Obsahuje příznak hodnoty pro zacházení s místní odkazy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,15 +42,15 @@ typedef enum CorLocalRefPreservation
 |Člen|Popis|  
 |------------|-----------------|  
 |`MDPreserveLocalRefsNone`|Zachovat žádné místní odkazy.|  
-|`MDPreserveLocalTypeRef`|Zachovejte místního typu odkazy.|  
-|`MDPreserveLocalMemberRef`|Zachovejte odkazy na místní členy.|  
+|`MDPreserveLocalTypeRef`|Zachovat místní typ reference.|  
+|`MDPreserveLocalMemberRef`|Zachovat místní člen odkazy.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

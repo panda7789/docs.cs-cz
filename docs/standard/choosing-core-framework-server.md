@@ -4,12 +4,12 @@ description: Průvodce, na kterou implementaci rozhraní .NET, měli byste zvá�
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: 01e7222ccd4a764f75481e58d4ac305daadfe1a8
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: fe6aa28b456d3a83b15dfcb3a65147e77b9d5f85
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50202234"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54699503"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -85,15 +85,15 @@ Proto pouze v případech, kdy knihoven nebo balíčků NuGet používat technol
 
 Některé technologie rozhraní .NET Framework nejsou k dispozici v .NET Core. Některé z nich může být k dispozici v pozdějších verzích .NET Core. Ostatní se nevztahují na nové modely aplikace cílí na .NET Core a může být nikdy k dispozici. Následující seznam uvádí nejběžnější technologie nebyl nalezen v .NET Core:
 
-* Aplikace webových formulářů ASP.NET: webové formuláře ASP.NET jsou dostupné pouze v rozhraní .NET Framework. ASP.NET Core nelze použít pro webové formuláře ASP.NET. Nejsou žádné plány zpřístupnit webových formulářů ASP.NET pro .NET Core.
+* Aplikace webových formulářů ASP.NET: Webové formuláře ASP.NET jsou dostupné pouze v rozhraní .NET Framework. ASP.NET Core nelze použít pro webové formuláře ASP.NET. Nejsou žádné plány zpřístupnit webových formulářů ASP.NET pro .NET Core.
 
-* Aplikace webové stránky ASP.NET: webové stránky ASP.NET nejsou zahrnuty v ASP.NET Core. 
+* Aplikace webové stránky ASP.NET: ASP.NET Web Pages nejsou zahrnuty v ASP.NET Core. 
 
 * Implementace služby WCF. I když dojde [knihovna klienta WCF](https://github.com/dotnet/wcf) k využívání služeb WCF v .NET Core, implementaci serveru WCF je momentálně dostupný jenom v rozhraní .NET Framework. Tento scénář není součástí aktuální plán pro .NET Core, ale je nepovažoval v budoucnosti.
 
-* Služby související s pracovního postupu: Windows Workflow Foundation (WF), služby pracovních postupů (WCF a WF v jedné službě) a služby WCF Data Services (dříve označované jako "Služby ADO.NET Data Services") jsou dostupné pouze v rozhraní .NET Framework.  Nejsou žádné plány zpřístupnit WF/WCF + WF/WCF Data Services pro .NET Core.
+* Související pracovní postup služby: Windows Workflow Foundation (WF), služby pracovních postupů (WCF a WF v jedné službě) a služby WCF Data Services (dříve označované jako "Služby ADO.NET Data Services") jsou k dispozici pouze v rozhraní .NET Framework.  Nejsou žádné plány zpřístupnit WF/WCF + WF/WCF Data Services pro .NET Core.
 
-* Podpora jazyků: Visual Basic a F # jsou aktuálně podporované v .NET Core, ale ne pro všechny typy projektů. Seznam podporovaných projektu šablony najdete v tématu [možnosti šablony pro dotnet nové](../core/tools/dotnet-new.md#arguments).
+* Podpora jazyků: Visual Basic a F# se aktuálně podporují v .NET Core, ale ne pro všechny typy projektů. Seznam podporovaných projektu šablony najdete v tématu [možnosti šablony pro dotnet nové](../core/tools/dotnet-new.md#arguments).
 
 Kromě oficiální plán jsou k dispozici další architektury přenést až po .NET Core. Úplný seznam, podívejte se na problémy CoreFX označen jako [port core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core). Tento seznam nepředstavuje závazek zpřístupnit tyto komponenty pro .NET Core od společnosti Microsoft. Jednoduše zachycujete přání od komunity Uděláte to tak. Pokud vás zajímají libovolné součásti označeny jako `port-to-core`, zúčastnit se diskuzí na Githubu. A pokud se domníváte něco chybí, vytvoří nový problém v souboru [CoreFX úložiště](https://github.com/dotnet/corefx/issues/new).
 
@@ -103,11 +103,11 @@ Některé společnosti Microsoft nebo třetích stran platformy .NET Core nepodp
 
 ## <a name="see-also"></a>Viz také:
 
-* [Zvolte mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)
-* [ASP.NET Core, které cílí na rozhraní .NET Framework](/aspnet/core#aspnet-core-targeting-net-framework)
-* [Cílové verze rozhraní .NET Framework](frameworks.md)
-* [Průvodce platformou .NET Core](../core/index.md)  
-* [Portování z rozhraní .NET Framework do .NET Core](../core/porting/index.md)  
-* [Průvodce rozhraním .NET Framework v Dockeru](../framework/docker/index.md)  
-* [.NET – přehled komponenty](components.md)  
-* [Mikroslužby .NET. Architektura pro Kontejnerizované aplikace .NET](microservices-architecture/index.md)
+- [Zvolte mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)
+- [ASP.NET Core, které cílí na rozhraní .NET Framework](/aspnet/core#aspnet-core-targeting-net-framework)
+- [Cílové verze rozhraní .NET Framework](frameworks.md)
+- [Průvodce platformou .NET Core](../core/index.md)
+- [Portování z rozhraní .NET Framework do .NET Core](../core/porting/index.md)
+- [Průvodce rozhraním .NET Framework v Dockeru](../framework/docker/index.md)
+- [.NET – přehled komponenty](components.md)
+- [Mikroslužby .NET. Architektura pro kontejnerizované aplikace .NET](microservices-architecture/index.md)

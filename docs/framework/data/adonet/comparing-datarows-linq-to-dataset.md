@@ -1,19 +1,19 @@
 ---
-title: Porovnání DataRows (LINQ na DataSet)
+title: Porovnání datových řádků (LINQ to DataSet)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8fe0eadf-297b-487c-8d4b-7816753c2883
-ms.openlocfilehash: 79fc91092badfd871a1409e2ee602272f3eae100
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 546b877dc9eb1e7422505b710690d92937cf2b42
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32756277"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54659186"
 ---
-# <a name="comparing-datarows-linq-to-dataset"></a>Porovnání DataRows (LINQ na DataSet)
-[!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] definuje různé operátory set k porovnání zdrojové elementy, které chcete zobrazit, pokud jsou stejné. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] poskytuje následující sadu operátory:  
+# <a name="comparing-datarows-linq-to-dataset"></a>Porovnání datových řádků (LINQ to DataSet)
+[!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] definuje různé sady operátory porovnání zdrojové elementy, pokud chcete zobrazit, pokud jsou shodné. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] poskytuje následující sadu operátorů:  
   
 -   <xref:System.Linq.Enumerable.Distinct%2A>  
   
@@ -23,9 +23,9 @@ ms.locfileid: "32756277"
   
 -   <xref:System.Linq.Enumerable.Except%2A>  
   
- Tyto operátory porovnání zdrojové elementy voláním <xref:System.Collections.Generic.IEqualityComparer%601.GetHashCode%2A> a <xref:System.Collections.Generic.IEqualityComparer%601.Equals%2A> metody pro každou kolekci elementů. U <xref:System.Data.DataRow>, proveďte tyto operátory porovnání odkaz, který není obecně ideální chování množinové operace přes tabulková data. Pro sadu operací obvykle chcete určit, jestli jsou stejné hodnoty elementu a není odkazuje element. Proto <xref:System.Data.DataRowComparer> třída byla přidána do [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. Tato třída slouží k porovnání hodnot řádků.  
+ Tyto operátory porovnávají zdrojové prvky pomocí volání <xref:System.Collections.Generic.IEqualityComparer%601.GetHashCode%2A> a <xref:System.Collections.Generic.IEqualityComparer%601.Equals%2A> v každé kolekci prvků metody. V případě třídy <xref:System.Data.DataRow>, proveďte tyto operátory porovnání odkaz, který není obecně ideální chování množinové operace přes tabulková data. Pro sadu operací obvykle chcete určit, zda jsou stejné hodnoty prvků a není element odkazy. Proto <xref:System.Data.DataRowComparer> třídy je přidaný do [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. Tato třída slouží k porovnání hodnoty řádků.  
   
- <xref:System.Data.DataRowComparer> Třída obsahuje implementace porovnání hodnota <xref:System.Data.DataRow>, takže tato třída slouží pro sadu operací, jako <xref:System.Linq.Enumerable.Distinct%2A>. Tato třída nemůže být přímo vytvořeny instance; Místo toho <xref:System.Data.DataRowComparer.Default%2A> vlastnost je nutné použít vrátit instanci <xref:System.Data.DataRowComparer%601>. <xref:System.Data.DataRowComparer%601.Equals%2A> Metoda je volána poté a dvě <xref:System.Data.DataRow> předávání objektů, který se má porovnat v jako vstupní parametry. <xref:System.Data.DataRowComparer%601.Equals%2A> Metoda vrátí `true` Pokud sadu seřazený sloupec hodnoty v obou <xref:System.Data.DataRow> objekty jsou stejné, jinak hodnota `false`.  
+ <xref:System.Data.DataRowComparer> Třída obsahuje implementaci porovnání hodnoty <xref:System.Data.DataRow>, takže tuto třídu můžete použít sadu operací, jako <xref:System.Linq.Enumerable.Distinct%2A>. Tato třída nemůže být přímo vytvořeny instance; Místo toho <xref:System.Data.DataRowComparer.Default%2A> vlastnost je nutné použít k vrácení instance <xref:System.Data.DataRowComparer%601>. <xref:System.Data.DataRowComparer%601.Equals%2A> Metoda je volána poté a dva <xref:System.Data.DataRow> jsou objekty, který se má porovnat předaný jako vstupní parametry. <xref:System.Data.DataRowComparer%601.Equals%2A> Vrátí metoda `true` Pokud uspořádané sady sloupec hodnoty v obou <xref:System.Data.DataRow> jsou objekty stejné; jinak `false`.  
   
 ## <a name="example"></a>Příklad  
  Tento příklad používá `Intersect` vrátit kontakty, které se zobrazují v obou tabulkách.  
@@ -34,11 +34,11 @@ ms.locfileid: "32756277"
  [!code-vb[DP LINQ to DataSet Examples#Intersect2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#intersect2)]  
   
 ### <a name="example"></a>Příklad  
- Následující příklad porovná dva řádky a získá jejich hash.  
+ Následující příklad porovná dva řádky a získá jejich kódů hash.  
   
  [!code-vb[DP LINQ to DataSet Examples#CompareDifferentRows](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#comparedifferentrows)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Data.DataRowComparer>  
- [Načtení dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)  
- [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Data.DataRowComparer>
+- [Načtení dat do datové sady](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)
+- [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)

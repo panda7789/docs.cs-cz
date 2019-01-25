@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9a79133b117f3a718dd84af6c2144a6098bc79f2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2ef46c066512caac93f5f0cb189152d2cac6dada
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407226"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54633840"
 ---
 # <a name="iclrdatatargetgetimagebase-method"></a>ICLRDataTarget::GetImageBase – metoda
-Získá základní paměti adresu zadanou bitovou kopii.  
+Získá adresu základní paměti zadané bitové kopie.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +38,16 @@ HRESULT GetImageBase (
   
 #### <a name="parameters"></a>Parametry  
  `imagePath`  
- [v] Název souboru obrázku, včetně jeho cesty.  
+ [in] Název souboru obrázku, včetně jeho cesty.  
   
  `baseAddress`  
- [out] Ukazatel na CLRDATA_ADDRESS, uchovávající základní adresu bitové kopie.  
+ [out] Ukazatel na CLRDATA_ADDRESS, která ukládá adresu základní Image.  
   
 ## <a name="remarks"></a>Poznámky  
- Název souboru obrázku může nebo nemusí mít cestu. Pokud je cesta zadána, odpovídající se provádí na celou cestu. v ostatních případech porovnávání se provádí pouze na název souboru.  
+ Název souboru obrázku může nebo nemusí mít cestu. Pokud je zadána cesta, odpovídající se provádí na celou cestu. v opačném případě odpovídající se provádí pouze na název souboru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   
@@ -55,5 +55,5 @@ HRESULT GetImageBase (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

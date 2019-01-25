@@ -2,17 +2,17 @@
 title: 'Postupy: Hostování služby WCF ve WAS'
 ms.date: 03/30/2017
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-ms.openlocfilehash: fd48957f7f8410b4b0df39fe125c35e4fc98cb8e
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 9094cf04ed1bc9fabe8d9df11b876007f322679a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43746805"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54651172"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>Postupy: Hostování služby WCF ve WAS
 Toto téma ukazuje základní kroky potřebné k vytvoření služby Aktivace procesu Windows (WAS) hostovaná služba Windows Communication Foundation (WCF). BYL je nová aktivační služba procesů, který je generalizace funkcí Internetové informační služby (IIS), které pracují s jiným protokolem než HTTP přenosové protokoly. WCF rozhraní adaptér naslouchací proces používá ke komunikaci žádosti o aktivaci, které jsou přijímány prostřednictvím protokolů jiným protokolem než HTTP nepodporuje WCF, jako je například TCP, pojmenované kanály a služby Řízení front zpráv.  
   
- Tato možnost hostování vyžaduje, aby komponenty aktivace WAS správně nainstalován a nakonfigurován, ale nevyžaduje žádné hostování kódu má být zapsán jako součást aplikace. Další informace o instalaci a konfiguraci služby WAS najdete v tématu [postupy: instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).  
+ Tato možnost hostování vyžaduje, aby komponenty aktivace WAS správně nainstalován a nakonfigurován, ale nevyžaduje žádné hostování kódu má být zapsán jako součást aplikace. Další informace o instalaci a konfiguraci služby WAS najdete v tématu [jak: Instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).  
   
 > [!WARNING]
 >  BYLA aktivace není podporována, pokud kanál pro zpracování požadavku webový server je nastavená na klasickém režimu. Kanál pro zpracování požadavku webový server musí být nastavena na integrovaný režim, který se má použít při aktivaci WAS.  
@@ -23,11 +23,11 @@ Toto téma ukazuje základní kroky potřebné k vytvoření služby Aktivace pr
   
 -   třídě channelInitializationTimeout  
   
--   maxPendingConnections  
+-   MaxPendingConnections  
   
--   maxOutputDelay  
+-   MaxOutputDelay  
   
--   maxPendingAccepts  
+-   MaxPendingAccepts  
   
 -   ConnectionPoolSettings.IdleTimeout  
   
@@ -98,6 +98,6 @@ Toto téma ukazuje základní kroky potřebné k vytvoření služby Aktivace pr
   
 6.  Kompilace a spuštění klienta.  
   
-## <a name="see-also"></a>Viz také  
- [Aktivace protokolu TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)  
- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+## <a name="see-also"></a>Viz také:
+- [Aktivace protokolu TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)
+- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-ms.openlocfilehash: f171a6380840fe2cb828ee06985317f002b353de
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 7d617400fe5c07e8c9754e322960f31a350f62e5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397251"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54657412"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vazby ve Windows Communication Foundation – přehled
 Vazby jsou objekty, které se používají k určení detaily komunikace, které jsou vyžadovány pro připojení ke koncovému bodu služby Windows Communication Foundation (WCF). Každý koncový bod služby WCF vyžaduje vazbu být správně zadaný. Toto téma popisuje typy komunikace – podrobnosti, které definují vazby elementy vazby, které vazby jsou součástí WCF a jak vazbu se dá nastavit pro koncový bod.  
@@ -32,7 +32,7 @@ Vazby jsou objekty, které se používají k určení detaily komunikace, které
 ## <a name="system-provided-bindings"></a>Vazby poskytované systémem  
  Informace v vazbu může být složité a některá nastavení nemusí být kompatibilní s ostatními. Z tohoto důvodu WCF obsahuje sadu vazeb poskytovaných systémem. Tyto vazby jsou navržené tak, aby pokryl většinu požadavků aplikace. Následující třídy představují některé příklady vazeb poskytovaných systémem:  
   
--   <xref:System.ServiceModel.BasicHttpBinding>: Celé protokolu HTTP vazby vhodné pro připojení k webovým službám, který odpovídá WS-I Basic Profile specification (například webové služby technologie ASP.NET na základě služby).  
+-   <xref:System.ServiceModel.BasicHttpBinding>: Protokol HTTP vazby vhodné pro připojení k webovým službám, který odpovídá WS-I Basic Profile specification (například webové služby technologie ASP.NET na základě služby).  
   
 -   <xref:System.ServiceModel.WSHttpBinding>: Interoperabilní vazbu vhodný pro připojení ke koncovým bodům, které odpovídají WS-* protokoly.  
   
@@ -57,5 +57,5 @@ Vazby jsou objekty, které se používají k určení detaily komunikace, které
 ## <a name="code-and-configuration"></a>Kódu a konfigurace  
  Můžete definovat vazby dvěma způsoby: prostřednictvím kódu nebo konfigurace. Tyto dva přístupy nebyly závislé na tom, jestli používáte vazeb poskytovaných systémem nebo vlastní vazby. Obecně platí pomocí kódu vám plnou kontrolu nad definice vazby v době návrhu. Použití konfigurace, umožňuje na druhé straně může správce systému nebo uživatele služby WCF nebo klienta můžete změnit parametry vazby bez nutnosti znovu kompilovat aplikace služby. Díky této flexibilitě je často žádoucí, protože neexistuje žádný způsob, jak předvídat požadavky na konkrétní počítač, na kterých aplikace WCF je k nasazení. Vazba (a adresování) informace z kódu umožňuje změnit bez nutnosti rekompilace nebo opětovného nasazení aplikace. Všimněte si, že se po vazby zadaný v konfiguraci, umožňuje kódu definované vazby pro přepsání jakékoli konfigurace definované vazby vytvoří vazeb definovaných v kódu.  
   
-## <a name="see-also"></a>Viz také  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+## <a name="see-also"></a>Viz také:
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)

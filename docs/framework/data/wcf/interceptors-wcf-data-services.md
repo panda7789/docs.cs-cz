@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, customizing
 - query interceptors [WCF Data Services]
 ms.assetid: e33ae8dc-8069-41d0-99a0-75ff28db7050
-ms.openlocfilehash: c2086d451af72157785796052af123cd210ee036
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 14212c9993d936138df70160e4e49152cd5ff958
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47202721"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54626755"
 ---
 # <a name="interceptors-wcf-data-services"></a>Sběrače (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje aplikaci tak, že můžete přidat vlastní logiku na operaci zachycení zpráv požadavků. Můžete použít tuto vlastní logiku pro ověření dat v příchozí zprávy. Také vám pomůže ho dál omezit obor dotazu požadavku, například vložit vlastní zásady autorizace na základě žádosti.  
@@ -23,7 +23,7 @@ ms.locfileid: "47202721"
  [!code-csharp[Astoria Northwind Service#QueryInterceptorDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#queryinterceptordef)]
  [!code-vb[Astoria Northwind Service#QueryInterceptorDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#queryinterceptordef)]  
   
- Další informace najdete v tématu [jak na: Intercept Data Service Messages](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md).  
+ Další informace najdete v tématu [jak: Zachycování zpráv datové služby](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md).  
   
  Změna zachycovacích dotazů, které se volají, pokud operace bez dotazů zpracování, musí vracet `void` (`Nothing` v jazyce Visual Basic). Metody pro zachycování změnu nutné přijmout následující dva parametry:  
   
@@ -36,17 +36,17 @@ ms.locfileid: "47202721"
  [!code-csharp[Astoria Northwind Service#ChangeInterceptorDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#changeinterceptordef)]
  [!code-vb[Astoria Northwind Service#ChangeInterceptorDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#changeinterceptordef)]  
   
- Další informace najdete v tématu [jak na: Intercept Data Service Messages](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md).  
+ Další informace najdete v tématu [jak: Zachycování zpráv datové služby](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md).  
   
  Následující atributy jsou podporovány pro zachycení.  
   
- **[QueryInterceptor (** *EntitySetName* **)]**  
+ **[QueryInterceptor(** *EntitySetName* **)]**  
  Metody s <xref:System.Data.Services.QueryInterceptorAttribute> atribut jsou volány při přijetí požadavku HTTP GET pro cílové entity sadu prostředků. Tyto metody musí vracet vždycky, výraz lambda ve formě `Expression<Func<T,bool>>`.  
   
- **[ChangeInterceptor (** *EntitySetName* **)]**  
+ **[ChangeInterceptor(** *EntitySetName* **)]**  
  Metody s <xref:System.Data.Services.ChangeInterceptorAttribute> atribut jsou volány při přijetí požadavku HTTP než požadavek HTTP GET pro cílové entity sadu prostředků. Tyto metody musí vracet vždycky `void` (`Nothing` v jazyce Visual Basic).  
   
- Další informace najdete v tématu [jak na: Intercept Data Service Messages](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md).  
+ Další informace najdete v tématu [jak: Zachycování zpráv datové služby](../../../../docs/framework/data/wcf/how-to-intercept-data-service-messages-wcf-data-services.md).  
   
-## <a name="see-also"></a>Viz také  
- [Operace služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md)
+## <a name="see-also"></a>Viz také:
+- [Operace služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 26dfaa15-9ddb-4b0a-b6da-999bba664fa6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fdbad4a5eb9a9d0c81ae8d29394652e9f6df136e
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 43404ba24f6308d8da17b03df9997e893799c8d5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44214430"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643140"
 ---
 # <a name="contextswitchdeadlock-mda"></a>contextSwitchDeadlock – pomocník spravovaného ladění (MDA)
 
@@ -29,7 +29,7 @@ ms.locfileid: "44214430"
 
 Nejběžnější symptomem je, že volání nespravovaného komponenty modelu COM ze spravovaného kódu nevrací.  Dalším symptomem je využití paměti v průběhu času zvětšuje.
 
-## <a name="cause"></a>příčina
+## <a name="cause"></a>Příčina
 
 Nejvíce nejpravděpodobnější příčinou je, že vlákno jednovláknový apartment (STA) není – čerpání zpráv. Vlákna STA je buď čekání bez čerpání zpráv nebo provádění operací zdlouhavé a nepovoluje žádná fronta zpráv čerpadla.
 
@@ -72,7 +72,7 @@ Zpráva popisující aktuální kontext a cílový kontext.
 </mdaConfig>
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

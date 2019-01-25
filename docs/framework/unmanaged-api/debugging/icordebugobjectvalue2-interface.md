@@ -1,5 +1,5 @@
 ---
-title: Icordebugobjectvalue2 – Interface1
+title: ICorDebugObjectValue2 Interface1
 ms.date: 03/30/2017
 api_name:
 - ICorDebugObjectValue2
@@ -16,36 +16,36 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 145b4d00f5ceac621274b010e8220a63319e1425
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 63fc2001f611bc4c199d2a8800af8e5210f37c38
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420918"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54653226"
 ---
-# <a name="icordebugobjectvalue2-interface1"></a>Icordebugobjectvalue2 – Interface1
-Rozšiřuje rozhraní "ICorDebugObjectValue" pro podporu dědičnosti a přepíše.  
+# <a name="icordebugobjectvalue2-interface1"></a>ICorDebugObjectValue2 Interface1
+Rozšiřuje rozhraní "ICorDebugObjectValue" pro podporu dědičnosti a přepsání.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetVirtualMethodAndType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue2-getvirtualmethodandtype-method.md)|`GetVirtualMethodAndType` není dosud implementována.|  
+|[GetVirtualMethodAndType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue2-getvirtualmethodandtype-method.md)|`GetVirtualMethodAndType` ještě není naimplementovaný.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
  **Knihovna:** CorGuids.lib  
   
- **NET Framework verze:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze rozhraní .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- 
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+

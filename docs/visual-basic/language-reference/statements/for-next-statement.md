@@ -23,15 +23,15 @@ helpviewer_keywords:
 - Exit statement [Visual Basic], For...Next statements
 - For statement [Visual Basic]
 ms.assetid: f5fc0d51-67ce-4c36-9f09-31c9a91c94e9
-ms.openlocfilehash: 8c54189499b7d5b52cf93b4a0ae6cc47356bf57e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 703a30a558067b386c6bb5288012094418d61ca7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33605326"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54746270"
 ---
 # <a name="fornext-statement-visual-basic"></a>For...Next – příkaz (Visual Basic)
-Opakuje skupinu příkazy zadaného počtu opakování.  
+Opakuje skupinu příkazů zadaného počtu opakování.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,101 +49,101 @@ Next [ counter ]
   
 |Část|Popis|  
 |----------|-----------------|  
-|`counter`|V požadované `For` příkaz. Číselné proměnné. Řídicí proměnná smyčky. Další informace najdete v tématu [čítač Argument](#BKMK_Counter) dál v tomto tématu.|  
-|`datatype`|Volitelné. Datový typ `counter`. Další informace najdete v tématu [čítač Argument](#BKMK_Counter) dál v tomto tématu.|  
-|`start`|Požadováno. Číselný výraz. Počáteční hodnota `counter`.|  
-|`end`|Požadováno. Číselný výraz. Konečná hodnota `counter`.|  
-|`step`|Volitelné. Číselný výraz. Hodnota, o kterou `counter` se zvýší pokaždé, když pomocí smyčky.|  
-|`statements`|Volitelné. Jeden nebo více příkazů mezi `For` a `Next` , na kterých běží zadaného počtu opakování.|  
-|`Continue For`|Volitelné. Přenosy ovládacího prvku do další iterace smyčky.|  
-|`Exit For`|Volitelné. Přenosy ovládacího prvku mimo `For` smyčky.|  
-|`Next`|Požadováno. Ukončí definice `For` smyčky.|  
+|`counter`|Vyžaduje `For` příkazu. Číselné proměnné. Řídicí proměnná smyčky. Další informace najdete v tématu [čítač Argument](#BKMK_Counter) dále v tomto tématu.|  
+|`datatype`|Volitelné. Datový typ `counter`. Další informace najdete v tématu [čítač Argument](#BKMK_Counter) dále v tomto tématu.|  
+|`start`|Povinný parametr. Číselný výraz. Počáteční hodnota `counter`.|  
+|`end`|Povinný parametr. Číselný výraz. Konečná hodnota `counter`.|  
+|`step`|Volitelné. Číselný výraz. Rozsah, pomocí kterého `counter` se zvýší pokaždé, když pomocí smyčky.|  
+|`statements`|Volitelné. Jeden nebo více příkazů mezi `For` a `Next` , na kterých běží zadaný počet.|  
+|`Continue For`|Volitelné. Předá řízení další iteraci smyčky.|  
+|`Exit For`|Volitelné. Přenese ovládací prvek z celkového počtu `For` smyčky.|  
+|`Next`|Povinný parametr. Ukončí definici `For` smyčky.|  
   
 > [!NOTE]
->  `To` – Klíčové slovo v tomto příkazu slouží k určení rozsahu čítače. Můžete také použít toto klíčové slovo v [vyberte... Příkaz případ](../../../visual-basic/language-reference/statements/select-case-statement.md) a v deklaracích pole. Další informace o deklaracích pole najdete v tématu [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md).  
+>  `To` – Klíčové slovo se používá v tomto prohlášení k určení rozsahu čítače. Můžete také použít toto klíčové slovo v [vyberte... Case – příkaz](../../../visual-basic/language-reference/statements/select-case-statement.md) a v deklaracích pole. Další informace o deklarace pole najdete v tématu [příkazu Dim](../../../visual-basic/language-reference/statements/dim-statement.md).  
   
 ## <a name="simple-examples"></a>Jednoduché příklady  
- Můžete použít `For`... `Next` struktury, pokud má být opakován sadu příkazy set stanovený počet.  
+ Můžete použít `For`... `Next` struktury, pokud má být opakován sadu příkazů do sady počtu opakování.  
   
- V následujícím příkladu `index` proměnnou začíná na hodnotu 1 a je zvýšen při každé iteraci smyčky, končí po hodnotu `index` dosáhne 5.  
+ V následujícím příkladu `index` proměnné začíná určitou hodnotou 1 a se zvýší při každé iteraci smyčky, končí po hodnotu `index` dosáhne 5.  
   
  [!code-vb[VbVbalrStatements#111](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_1.vb)]  
   
- V následujícím příkladu `number` proměnnou spustí na 2 a je snížit 0,25 na každé iteraci smyčky, končí po hodnotu `number` dosáhne 0. `Step` Argument `-.25` snižuje hodnotu podle 0,25 na každé iteraci smyčky.  
+ V následujícím příkladu `number` proměnné začíná na 2 a je sníží 0,25 při každé iteraci smyčky, končí po hodnotu `number` dosáhne hodnoty 0. `Step` Argument `-.25` snižuje hodnotu podle 0,25 při každé iteraci smyčky.  
   
  [!code-vb[VbVbalrStatements#112](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_2.vb)]  
   
 > [!TIP]
->  A [při... End While – příkaz](../../../visual-basic/language-reference/statements/while-end-while-statement.md) nebo [provést... Příkaz LOOP](../../../visual-basic/language-reference/statements/do-loop-statement.md) funguje dobře, pokud neznáte předem jak často má spustit příkazy ve smyčce. Ale očekáváte-li spustit konkrétní počet opakování, smyčky `For`... `Next` smyčka je lepší volbou. Když poprvé vstoupíte smyčky určíte počet iterací.  
+>  A [během... End While – příkaz](../../../visual-basic/language-reference/statements/while-end-while-statement.md) nebo [udělat... Příkaz LOOP](../../../visual-basic/language-reference/statements/do-loop-statement.md) dobře funguje i když nevíte předem jak často Pokud chcete spouštět příkazy ve smyčce. Ale očekáváte-li spustit s konkrétním počtem opakování, smyčky `For`... `Next` smyčky je lepší volbou. Když poprvé vstoupíte smyčky určíte počet iterací.  
   
 ## <a name="nesting-loops"></a>Vnoření smyčky  
- Lze vnořit `For` smyčky umístěním jednoho smyčky v rámci jiného. Následující příklad ukazuje vnořené `For`... `Next` struktury, které mají různé krok hodnoty. Vnější smyčky vytvoří řetězec pro každou iteraci smyčky. Vnitřní smyčka snižuje proměnnou smyčky čítače pro každou iteraci smyčky.  
+ Je možné vnořovat `For` smyčky vložením v jednom průchodu v rámci jiného. Následující příklad ukazuje vnořené `For`... `Next` struktury, které mají různé krok hodnoty. Vnější smyčka vytvoří řetězec pro každou iteraci smyčky. Jako vnitřní smyčka dekrementuje proměnnou čítače smyčky pro každou iteraci smyčky.  
   
  [!code-vb[VbVbalrStatements#113](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_3.vb)]  
   
- Při vnoření smyčky, musí mít jedinečnou každou smyčku `counter` proměnné.  
+ Při vnoření smyčky, každé smyčce musí mít jedinečný `counter` proměnné.  
   
- Můžete také vnořovat různých druhů řídicí struktury v rámci navzájem. Další informace najdete v tématu [vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
+ Lze také vnořit různé druhy řídicích struktur do jiné. Další informace najdete v tématu [vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
   
 ## <a name="exit-for-and-continue-for"></a>Pro ukončení a pokračovat pro  
- `Exit For` Příkazu se okamžitě ukončí `For`...`Next` smyčky a přenosy ovládacího prvku do příkazu, který odpovídá `Next` příkaz.  
+ `Exit For` Příkazu se okamžitě ukončí `For`...`Next` řízení smyčky a přenosy příkazu, který následuje `Next` příkazu.  
   
- `Continue For` Řízení příkaz okamžitě přenese do další iterace smyčky. Další informace najdete v tématu [pokračovat příkaz](../../../visual-basic/language-reference/statements/continue-statement.md).  
+ `Continue For` Ovládací prvek příkaz okamžitě přenese na další iteraci smyčky. Další informace najdete v tématu [pokračovat příkaz](../../../visual-basic/language-reference/statements/continue-statement.md).  
   
  Následující příklad ukazuje použití `Continue For` a `Exit For` příkazy.  
   
  [!code-vb[VbVbalrStatements#115](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_4.vb)]  
   
- Můžete použít a zadat libovolný počet `Exit For` příkazy v `For`...`Next` Smyčky. Při použití uvnitř vnořené `For`...`Next` smyčky, `Exit For` ukončí nejvnitřnější smyčky a předá řízení další vyšší úroveň vnoření.  
+ Můžete vložit libovolný počet `Exit For` příkazů v `For`...`Next` Smyčka. Při použití v rámci vnořené `For`...`Next` smyčky, `Exit For` ukončení vnitřní smyčky a přenese ovládací prvek na další vyšší úroveň vnoření.  
   
- `Exit For` Po vyhodnocení nějaká podmínka se často používá (například v `If`... `Then`... `Else` struktura). Můžete chtít použít `Exit For` byly splněny následující podmínky:  
+ `Exit For` často se používá po vyhodnocení některé podmínky (třeba v `If`... `Then`... `Else` struktura). Můžete chtít použít `Exit For` byly splněny následující podmínky:  
   
--   Pokračovat v procházení je zbytečné nebo dokonce znemožňují. Chybná hodnota nebo žádost o ukončení může vytvořit tuto podmínku.  
+-   Pokračování k iteraci je zbytečné nebo nemožné. K tomuto stavu může vytvořit chybnou hodnotu nebo žádost o ukončení.  
   
 -   A `Try`... `Catch`... `Finally` příkaz zachytí výjimku. Můžete použít `Exit For` na konci `Finally` bloku.  
   
--   Máte nekonečnou smyčku, což je smyčku, který by mohl spustit velký, nebo i nekonečné stanovený počet. Pokud zjistíte takové podmínky, můžete použít `Exit For` abyste se vyhnuli smyčky. Další informace najdete v tématu [provést... Cykly příkaz](../../../visual-basic/language-reference/statements/do-loop-statement.md).  
+-   Máte nekonečné smyčky, což je smyčku, která může běžet velká, nebo dokonce neomezený počet pokusů. Pokud zjistíte takové podmínky, můžete použít `Exit For` dostala mimo smyčku. Další informace najdete v tématu [udělat... Smyčky příkaz](../../../visual-basic/language-reference/statements/do-loop-statement.md).  
   
 ## <a name="technical-implementation"></a>Technická implementace  
- Když `For`... `Next` spuštění cyklu, vyhodnotí jazyka Visual Basic `start`, `end`, a `step`. Visual Basic vyhodnotí tyto hodnoty pouze v tento čas a potom přiřadí `start` k `counter`. Před příkaz bloku spustí, Visual Basic porovná `counter` k `end`. Pokud `counter` je větší než `end` hodnotu (nebo menší, pokud `step` záporné), `For` cykly končí a řídit předává do příkazu, který odpovídá `Next` příkaz. Jinak spustí příkaz bloku.  
+ Když `For`... `Next` spuštění cyklu, Visual Basic vyhodnotí `start`, `end`, a `step`. Visual Basic vyhodnotí tyto hodnoty pouze v této době a pak přiřadí `start` k `counter`. Před příkazem blok spustí, Visual Basic porovná `counter` k `end`. Pokud `counter` je větší než `end` hodnotu (nebo menší, pokud `step` záporné), `For` skončení smyčky a řízení se předá příkazu, který následuje `Next` příkazu. V opačném případě spouští blok příkazů.  
   
- Pokaždé, když komunikaci jazyka Visual Basic `Next` prohlášení, navýší `counter` podle `step` a vrátí do `For` příkaz. Znovu porovná `counter` k `end`, a znovu ji buď běží bloku nebo ukončení smyčky, v závislosti na výsledku. Tento proces pokračuje, dokud `counter` předá `end` nebo `Exit For` příkaz je zjistil.  
+ Pokaždé, když zjistí jazyka Visual Basic `Next` prohlášení, zvýší `counter` podle `step` a vrátí `For` příkazu. Znovu porovná `counter` k `end`, a znovu ho spouští bloku nebo ukončení smyčky, v závislosti na výsledek. Tento proces pokračuje, dokud `counter` předá `end` nebo `Exit For` příkaz dochází.  
   
- Dokud nebude zastavit smyčky `counter` uplynutí `end`. Pokud `counter` rovná `end`, že opakování ve smyčce bude pokračovat. Porovnání, které určuje, jestli se má spustit blok je `counter`  <=  `end` Pokud `step` kladné a `counter`  >=  `end` Pokud `step` záporné.  
+ Smyčky nezastaví až do `counter` uplynutí `end`. Pokud `counter` rovná `end`, pokračuje smyčky. Porovnání, která určuje, jestli se má spustit blok `counter`  <=  `end` Pokud `step` kladné a `counter`  >=  `end` Pokud `step` je záporný.  
   
- Pokud změníte hodnotu `counter` při uvnitř smyčku, může být obtížné číst a ladění kódu. Změna hodnoty `start`, `end`, nebo `step` nemá vliv iterace hodnoty, které se zjistilo, že při prvním zadání smyčky.  
+ Pokud se změní hodnota `counter` uvnitř smyčka, může být obtížnější ke čtení a ladění kódu. Změna hodnoty `start`, `end`, nebo `step` nemá vliv na hodnoty iterace, které byly určeny při prvním zadání smyčky.  
   
- Pokud je vnořovat smyčky, kompilátor signály chybu pokud zjistí `Next` příkaz vnější úroveň vnoření před `Next` prohlášení o informacích o vnitřní úroveň. Ale kompilátor to zjistit překrývající se chyby pouze v případě, že zadáte `counter` v každé `Next` příkaz.  
+ Pokud byste vnořit smyčky, kompilátor signály chybě pokud narazí `Next` příkazu vnější úroveň vnoření před `Next` příkaz vnitřní úroveň. Však kompilátor to zjistit překrývající se chyby pouze v případě, že zadáte `counter` v každé `Next` příkazu.  
   
-### <a name="step-argument"></a>Argument krok  
- Hodnota `step` může být kladná nebo záporná. Tento parametr určuje zpracování smyčky podle následující tabulky:  
+### <a name="step-argument"></a>Argument kroku  
+ Hodnota `step` může být pozitivní nebo negativní. Tento parametr určuje zpracování smyčky podle následující tabulky:  
   
-|**Hodnota kroku**|**Smyčky provede Pokud**|  
+|**Hodnota kroku**|**Cyklus se opakuje, pokud**|  
 |--------------------|--------------------------|  
-|Kladné nebo nula.|`counter` <= `end`|  
+|Kladná nebo nula.|`counter` <= `end`|  
 |Záporný|`counter` >= `end`|  
   
- Výchozí hodnota `step` je 1.  
+ Výchozí hodnota `step` 1.  
   
 ###  <a name="BKMK_Counter"></a> Argument čítače  
- Následující tabulka udává, zda `counter` definuje novou místní proměnné, která je vymezen na celou `For…Next` smyčky. Toto rozhodnutí závisí na tom, zda `datatype` je k dispozici a zda `counter` je již definován.  
+ Následující tabulka uvádí, zda `counter` definuje nová místní proměnná, které budou platit pro celou `For…Next` smyčky. Toto rozhodnutí závisí na tom, zda `datatype` existuje a zda `counter` je již definován.  
   
-|Je `datatype` přítomen?|Je `counter` již definována?|Výsledek (jestli `counter` definuje novou místní proměnné, která je vymezen na celou `For...Next` smyčky)|  
+|Je `datatype` k dispozici?|Je `counter` již definována?|Výsledek (ať už `counter` definuje nová místní proměnná, které budou platit pro celou `For...Next` smyčky)|  
 |----------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------|  
 |Ne|Ano|Ne, protože `counter` je již definován. Pokud obor `counter` není místní k postupu, dojde k upozornění kompilace.|  
-|Ne|Ne|Ano. Datový typ je odvozeno z `start`, `end`, a `step` výrazy. Informace o odvození typu najdete v tématu [Option Infer – příkaz](../../../visual-basic/language-reference/statements/option-infer-statement.md) a [odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).|  
-|Ano|Ano|Ano, ale jenom v případě existující `counter` proměnná je definována mimo proces. Tuto proměnnou zůstane samostatné. Pokud obor existující `counter` proměnné je místní k postupu, dojde k chybě kompilace.|  
+|Ne|Ne|Ano. Datový typ je odvozen z `start`, `end`, a `step` výrazy. Informace o odvození typu, najdete v části [Option Infer – příkaz](../../../visual-basic/language-reference/statements/option-infer-statement.md) a [odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).|  
+|Ano|Ano|Ano, ale pouze tehdy, pokud existující `counter` proměnná je definována mimo proces. Tato proměnná zůstane samostatnou. Pokud obor existující `counter` proměnná je lokální vzhledem k postupu, dojde k chybě kompilace.|  
 |Ano|Ne|Ano.|  
   
- Datový typ `counter` Určuje typ iterace, které musí mít jednu z následujících typů:  
+ Datový typ `counter` Určuje typ iterace, který musí být jeden z následujících typů:  
   
 -   A `Byte`, `SByte`, `UShort`, `Short`, `UInteger`, `Integer`, `ULong`, `Long`, `Decimal`, `Single`, nebo `Double`.  
   
--   Výčet, který je deklarovat pomocí [Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md).  
+-   Výčet, který je deklarovat s použitím [Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md).  
   
 -   `Object`.  
   
--   Typ `T` má následující operátory, kde `B` je typ, který lze použít v `Boolean` výraz.  
+-   Typ `T` , který má následující operátory, kde `B` je typ, který lze použít v `Boolean` výrazu.  
   
      `Public Shared Operator >= (op1 As T, op2 As T) As B`  
   
@@ -153,30 +153,30 @@ Next [ counter ]
   
      `Public Shared Operator + (op1 As T, op2 As T) As T`  
   
- Volitelně můžete zadat `counter` proměnné v `Next` příkaz. Tuto syntaxi zlepšuje čitelnost vašeho programu, zejména v případě, že budete mít člověk vnořené `For` smyčky. Musíte zadat proměnné, která se zobrazí v odpovídající `For` příkaz.  
+ Volitelně můžete zadat `counter` proměnné v `Next` příkazu. Tato syntaxe zlepšuje čitelnost programu, zejména v případě, že budete mít člověk vnořené `For` smyčky. Je nutné zadat proměnné, která se zobrazí v odpovídající `For` příkazu.  
   
- `start`, `end`, A `step` výrazy lze vyhodnotit na datový typ, který rozšiřuje typu `counter`. Pokud používáte uživatelsky definovaný typ. pro `counter`, možná budete muset definovat `CType` operátor převodu převést typy `start`, `end`, nebo `step` typu `counter`.  
+ `start`, `end`, A `step` výrazy lze vyhodnotit na libovolný typ dat, která rozšiřuje na typ `counter`. Pokud používáte uživatelem definovaný typ pro `counter`, možná budete muset definovat `CType` operátor převodu k převedení typů `start`, `end`, nebo `step` typu `counter`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad odebere všechny elementy obecné seznamu. Místo [pro každou... Další příkaz](../../../visual-basic/language-reference/statements/for-each-next-statement.md), příklad ukazuje `For`... `Next` příkaz, který iteruje v sestupném pořadí. Tento příklad používá tato technika, protože `removeAt` metoda způsobí, že prvky po odebrané elementu, který chcete mít nižší hodnotu indexu.  
+ Následující příklad odebere všechny prvky z obecného seznamu. Místo [For Each... Další příkaz](../../../visual-basic/language-reference/statements/for-each-next-statement.md), ukazuje příklad `For`... `Next` itinerací v sestupném pořadí. V příkladu používá tuto techniku, protože `removeAt` metoda způsobí, že prvky po odebraném prvku mají nižší hodnotu indexu.  
   
  [!code-vb[VbVbalrStatements#114](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_5.vb)]  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu prochází výčet, který je deklarovaný s použitím [Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md).  
+ Následující příklad provede iteraci výčet, který je deklarován s použitím [Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md).  
   
  [!code-vb[VbVbalrStatements#116](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_6.vb)]  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu příkaz parametry použití třídy, která má přetížení operátoru pro `+`, `-`, `>=`, a `<=` operátory.  
+ V následujícím příkladu, použijte parametry příkazu, který má přetížení operátoru pro třídu `+`, `-`, `>=`, a `<=` operátory.  
   
  [!code-vb[VbVbalrStatements#117](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_7.vb)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Collections.Generic.List%601>  
- [Struktury smyčky](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
- [Příkaz While...End While](../../../visual-basic/language-reference/statements/while-end-while-statement.md)  
- [Příkaz Do...Loop](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
- [Vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
- [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)  
- [Kolekce](../../programming-guide/concepts/collections.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Collections.Generic.List%601>
+- [Struktury smyčky](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
+- [Příkaz While...End While](../../../visual-basic/language-reference/statements/while-end-while-statement.md)
+- [Příkaz Do...Loop](../../../visual-basic/language-reference/statements/do-loop-statement.md)
+- [Vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)
+- [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)
+- [Kolekce](../../programming-guide/concepts/collections.md)

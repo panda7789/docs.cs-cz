@@ -2,19 +2,19 @@
 title: 'Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď'
 ms.date: 03/30/2017
 ms.assetid: 7e10d3a5-fcf4-4a4b-a8d6-92ee2c988b3b
-ms.openlocfilehash: 7a60d11432e95f56e8479d853e31895ba3fb266b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f74f874d43698955cce0ae14791a9d6b748ef919
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33494319"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54639167"
 ---
 # <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a>Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď
-Následující postupy popisují, jak pro přístup ke službě Windows Communication Foundation (WCF), který definuje jednosměrného kontraktu a kontraktu požadavku a odpovědi a která nepoužívá vzoru duplexní komunikace.  
+Následující postupy popisují, jak získat přístup ke službě Windows Communication Foundation (WCF), který definuje jednosměrného kontraktu a kontraktů požadavek odpověď a, který nepoužívá model duplexní komunikaci.  
   
 ### <a name="to-define-the-service"></a>Chcete-li definovat službu  
   
-1.  Deklarujte kontrakt služby. Operace, které mají být jednosměrná musí mít `IsOneWay` nastavena na `true` v rámci <xref:System.ServiceModel.OperationContractAttribute>. Následující kód deklaruje `IOneWayCalculator` smlouvu, která má jednosměrný operací pro `Add`, `Subtract`, `Multiply`, a `Divide`. Definuje také operace odpovědi žádost o názvem `SayHello`.  
+1.  Deklarujte kontrakt služby. Musí mít operace, které mají být jednosměrné `IsOneWay` nastavena na `true` v rámci <xref:System.ServiceModel.OperationContractAttribute>. Následující kód deklaruje `IOneWayCalculator` kontrakt, který má Jednosměrná operace pro `Add`, `Subtract`, `Multiply`, a `Divide`. Definuje také operace odpovědi na požadavek s názvem `SayHello`.  
   
     ```csharp  
     [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -33,7 +33,7 @@ Následující postupy popisují, jak pro přístup ke službě Windows Communic
     }  
     ```  
   
-2.  Implementujte kontrakt služby. Následující kód implementuje `IOnewayCalculator` rozhraní.  
+2.  Implementace kontraktu služby. Následující kód implementuje `IOnewayCalculator` rozhraní.  
   
     ```csharp  
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.PerCall)]  
@@ -71,7 +71,7 @@ Následující postupy popisují, jak pro přístup ke službě Windows Communic
     }  
     ```  
   
-3.  Hostovat službu v konzolové aplikaci. Následující kód ukazuje, jak k hostování služby.  
+3.  Hostovat službu v konzolové aplikaci. Následující kód ukazuje, jak hostovat službu.  
   
     ```csharp  
     // Host the service within this EXE console application.  
@@ -107,9 +107,9 @@ Následující postupy popisují, jak pro přístup ke službě Windows Communic
     }  
     ```  
   
-### <a name="to-access-the-service"></a>Přístup ke službě  
+### <a name="to-access-the-service"></a>Přístup k této službě  
   
-1.  Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí adresa koncového bodu metadat systému exchange pro vytvoření třídy klienta pro službu pomocí následující příkazový řádek: `Svcutil http://localhost:8000/Service` [ServiceModel Nástroj pro metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generuje sadu rozhraní a třídy, jak je znázorněno v následujícím ukázkovém kódu.  
+1.  Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí adresu koncového bodu metadat systému exchange pro vytvoření třídy klienta pro službu pomocí příkazového řádku následující: `Svcutil http://localhost:8000/Service` [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generuje sadu rozhraní a třídy, jak je znázorněno v následujícím ukázkovém kódu.  
   
     ```csharp  
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]  
@@ -194,9 +194,9 @@ Následující postupy popisují, jak pro přístup ke službě Windows Communic
     }  
     ```  
   
-     Všimněte si v `IOneWayCalculator` rozhraní, které mají operací jednosměrné služby <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> atribut nastaven na `true` a operace služby požadavku a odpovědi má nastaven na výchozí hodnotu, atribut `false`. Všimněte si také `OneWayCalculatorClient` třídy. Toto je třída, která budete používat pro volání služby.  
+     Všimněte si, že v `IOneWayCalculator` rozhraní, které mají operací jednosměrné služby <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> atribut nastaven na `true` a operace požadavek odpověď služby má atribut nastaven na výchozí hodnotu `false`. Všimněte si také `OneWayCalculatorClient` třídy. Toto je třída, kterou použijete k vyvolání služby.  
   
-2.  Vytvořte objekt klienta.  
+2.  Vytvoření objektu klienta.  
   
     ```csharp  
     // Create a client  
@@ -239,7 +239,7 @@ Následující postupy popisují, jak pro přístup ke službě Windows Communic
     Console.WriteLine("SayHello() returned: " + response);  
     ```  
   
-4.  Zavřete klientovi ukončit připojení a vyčištění prostředků.  
+4.  Ukončete klienta zavřít připojení a vyčištění prostředků.  
   
     ```csharp  
     //Closing the client gracefully closes the connection and cleans up resources  
@@ -247,7 +247,7 @@ Následující postupy popisují, jak pro přístup ke službě Windows Communic
     ```  
   
 ## <a name="example"></a>Příklad  
- Níže je úplný seznam všech kód použitý v tomto tématu.  
+ Tady je úplný seznam všech kód použitý v tomto tématu.  
   
 ```csharp  
 // Service.cs  
@@ -400,5 +400,5 @@ namespace Microsoft.ServiceModel.Samples
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Jednosměrné služby](../../../../docs/framework/wcf/feature-details/one-way-services.md)
+## <a name="see-also"></a>Viz také:
+- [Jednosměrné služby](../../../../docs/framework/wcf/feature-details/one-way-services.md)

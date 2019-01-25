@@ -9,12 +9,12 @@ helpviewer_keywords:
 - controls [WPF], layout system
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
-ms.openlocfilehash: 869780f2b6a625923ce869bcaafbbd2319f6cb23
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: d6326ae34b53ca4f68bc58b85e395c10726a377d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46703021"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54738823"
 ---
 # <a name="layout"></a>Rozložení
 Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systém rozložení. Vysvětlení, jak a kdy probíhá výpočet rozložení je nezbytné pro vytváření uživatelských rozhraní v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -146,11 +146,11 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
 <a name="LayoutSystem_whatsnext"></a>   
 ## <a name="whats-next"></a>Co se chystá  
- Vysvětlení, jak prvky se měří a uspořádat je prvním krokem při Principy rozložení. Další informace o dostupných <xref:System.Windows.Controls.Panel> prvky, naleznete v tématu [přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md). Chcete-li lépe pochopit různé vlastnosti umístění, které můžou ovlivnit rozložení, naleznete v tématu [zarovnání, okrajů a odsazení přehled](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md). Příklad vlastní <xref:System.Windows.Controls.Panel> prvku, naleznete v tématu [paprskového ukázková Panel](https://go.microsoft.com/fwlink/?LinkID=159982). Až budete připravení na všech součástí dohromady v aplikaci s nižšími nároky, naleznete v tématu [návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).  
+ Vysvětlení, jak prvky se měří a uspořádat je prvním krokem při Principy rozložení. Další informace o dostupných <xref:System.Windows.Controls.Panel> prvky, naleznete v tématu [přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md). Chcete-li lépe pochopit různé vlastnosti umístění, které můžou ovlivnit rozložení, naleznete v tématu [zarovnání, okrajů a odsazení přehled](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md). Příklad vlastní <xref:System.Windows.Controls.Panel> prvku, naleznete v tématu [paprskového ukázková Panel](https://go.microsoft.com/fwlink/?LinkID=159982). Až budete připravení na všech součástí dohromady v aplikaci s nižšími nároky, naleznete v tématu [názorný postup: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.FrameworkElement>  
- <xref:System.Windows.UIElement>  
- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [Přehled zarovnání, okrajů a odsazení](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)  
- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.FrameworkElement>
+- <xref:System.Windows.UIElement>
+- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)
+- [Přehled zarovnání, okrajů a odsazení](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)
+- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)

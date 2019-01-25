@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - XmlSerializer [WCF], using
 ms.assetid: c680602d-39d3-44f1-bf22-8e6654ad5069
-ms.openlocfilehash: abb679971771f6bff5bd1c84ff744e2fcbb9c45a
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 084a31ec008d1651bb66f7d59731a21d4ef0ece7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47188723"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54732853"
 ---
 # <a name="using-the-xmlserializer-class"></a>Používání třídy XmlSerializer
 Windows Communication Foundation (WCF) můžete použít dva různé serializace technologií Chcete-li data ve vaší aplikaci do souboru XML, která se přenášejí mezi klienty a služeb, proces s názvem serializace.  
@@ -87,7 +87,7 @@ Windows Communication Foundation (WCF) můžete použít dva různé serializace
  <xref:System.ServiceModel.MessageHeaderArrayAttribute> Atribut není podporováno při použití <xref:System.Xml.Serialization.XmlSerializer>.  
   
 > [!NOTE]
->  V takovém případě <xref:System.Xml.Serialization.XmlSerializer> následující výjimku, který je vydaný před WCF: "nemůže mít element deklarovaný v nejvyšší úrovni schématu `maxOccurs` > 1. Uveďte element obálky pro další s využitím `XmlArray` nebo `XmlArrayItem` místo `XmlElementAttribute`, nebo s použitím stylu parametru Wrapped. "  
+>  V takovém případě <xref:System.Xml.Serialization.XmlSerializer> následující výjimku, který je vydaný před WCF: "Nemůže mít element deklarovaný v nejvyšší úrovni schématu `maxOccurs` > 1. Uveďte element obálky pro další s využitím `XmlArray` nebo `XmlArrayItem` místo `XmlElementAttribute`, nebo s použitím stylu parametru Wrapped. "  
 >   
 >  Pokud se zobrazí takové výjimky, zjistěte, jestli tato situace se týká.  
   
@@ -205,11 +205,11 @@ Windows Communication Foundation (WCF) můžete použít dva různé serializace
 > [!NOTE]
 >  `<xmlSerializer useLegacySerializerGeneration="true"/>` Přepínač funguje jenom na počítači se systémem rozhraní .NET Framework 4.5 nebo vyšší verze. Výše uvedené `appSettings` přístup funguje ve všech verzích rozhraní .NET Framework.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.DataContractFormatAttribute>  
- <xref:System.Runtime.Serialization.DataContractSerializer>  
- <xref:System.Xml.Serialization.XmlSerializer>  
- <xref:System.ServiceModel.MessageHeaderArrayAttribute>  
- [Určování přenosu dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)  
- [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
- [Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí XmlSerializer](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.DataContractFormatAttribute>
+- <xref:System.Runtime.Serialization.DataContractSerializer>
+- <xref:System.Xml.Serialization.XmlSerializer>
+- <xref:System.ServiceModel.MessageHeaderArrayAttribute>
+- [Určování přenosu dat v kontraktech služby](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
+- [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+- [Postupy: Vylepšení spuštění čas z klientských aplikací WCF pomocí třídy XmlSerializer](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)

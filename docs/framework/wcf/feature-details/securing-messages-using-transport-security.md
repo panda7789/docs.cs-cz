@@ -2,12 +2,12 @@
 title: Zabezpečení zpráv pomocí zabezpečení přenosu
 ms.date: 03/30/2017
 ms.assetid: 9029771a-097e-448a-a13a-55d2878330b8
-ms.openlocfilehash: 660c3c002f1892a91a5c0eaefb2cc5c16bb460a3
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 4a67cc8265254741a58c9b86bc45eff9c9366bcf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50187751"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54747944"
 ---
 # <a name="securing-messages-using-transport-security"></a>Zabezpečení zpráv pomocí zabezpečení přenosu
 Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ), který můžete použít k zabezpečení zprávy odeslané do fronty.  
@@ -33,7 +33,7 @@ Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ
   
  Služby MSMQ nezávisle na ověřování, cílová fronta má seznam řízení přístupu (ACL), chcete-li zkontrolovat, zda klient má oprávnění k odeslání zprávy do cílové fronty. Přijímající aplikace je také kontroluje oprávnění přijímat zprávy z cílové fronty.  
   
-## <a name="wcf-msmq-transport-security-properties"></a>Vlastnosti zabezpečení přenosu služby MSMQ WCF  
+## <a name="wcf-msmq-transport-security-properties"></a>WCF MSMQ Transport Security Properties  
  Zabezpečení Windows používaný službou MSMQ pro ověřování. Identifikátor zabezpečení Windows (SID) používá k identifikaci klienta a služby Active Directory jako certifikační autorita používá při ověřování klienta. To vyžaduje služba MSMQ nainstalovaná s integrací služby Active Directory. SID domény Windows, protože se používají k identifikaci klienta tato možnost zabezpečení je jenom smysluplné když klient a služba jsou součástí stejné domény Windows.  
   
  MSMQ také nabízí možnost připojit certifikát se zpráva, která není zaregistrované v Active Directory. V tomto případě zajišťuje, že zpráva byla podepsána pomocí certifikátu, který připojené.  
@@ -96,7 +96,7 @@ Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ
   
  Jsou podporované algoritmy `MD5`, `SHA1`, `SHA256`, a `SHA512`. Výchozí hodnota je `SHA1`.  
   
-## <a name="see-also"></a>Viz také  
- [Služba Řízení front zpráv](https://msdn.microsoft.com/library/ff917e87-05d5-478f-9430-0f560675ece1)  
- [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a>Viz také:
+- [Služba Řízení front zpráv](https://msdn.microsoft.com/library/ff917e87-05d5-478f-9430-0f560675ece1)
+- [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)
+- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

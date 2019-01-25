@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9e888b2359336c68ea6fdf52f798145fda12002e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 06c9119a2b842a0efcd4af752ba72dbfda03bf13
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33440866"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54653854"
 ---
 # <a name="stackoverflowtype-enumeration"></a>StackOverflowType – výčet
-Obsahuje hodnoty, které označují základní příčinu události přetečení zásobníku.  
+Obsahuje hodnoty, které označují základní příčiny událost přetečení zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,15 +40,15 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`SO_ClrEngine`|Spouštěcí modul způsobila přetečení zásobníku.|  
+|`SO_ClrEngine`|Prováděcí modul způsobila přetečení zásobníku.|  
 |`SO_Managed`|Spravovaný kód způsobila přetečení zásobníku.|  
 |`SO_Other`|Nespravovaný kód způsobila přetečení zásobníku.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato informace je předána na hostitele pomocí volání [iactiononclrevent::ONEVENT –](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) metoda.  
+ Tyto informace se předává k hostiteli volání [iactiononclrevent::ONEVENT –](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md) metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -56,5 +56,5 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

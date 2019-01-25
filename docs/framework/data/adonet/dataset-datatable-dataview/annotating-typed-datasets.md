@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
-ms.openlocfilehash: c66a11e0662cd007797243c136ec0617ce5be47c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 737f98dd11d6172bb79aaa925ac153c64728e9ff
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513144"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54629605"
 ---
 # <a name="annotating-typed-datasets"></a>Zadávání poznámek k typové datové sady
 Anotace umožňují změnit názvy prvků v váš zadaný <xref:System.Data.DataSet> beze změny podkladového schématu. Úprava názvy prvků v podkladové schéma by způsobilo zadaného **datovou sadu** k odkazování na objekty, které nejsou existují ve zdroji dat, jakož i odkazovaly, ztratily odkaz na objekty, které existují ve zdroji dat.  
@@ -64,11 +64,11 @@ Anotace umožňují změnit názvy prvků v váš zadaný <xref:System.Data.Data
   
 |Objekt nebo metoda/událost|Výchozí|Poznámka|  
 |---------------------------|-------------|----------------|  
-|**Objekt DataTable**|TableNameDataTable|typedPlural|  
+|**DataTable**|TableNameDataTable|typedPlural|  
 |**Objekt DataTable** metody|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|TypedName služby Active Directory|  
-|**Kolekci DataRowCollection**|TableName|typedPlural|  
-|**Objekt DataRow**|TableNameRow|TypedName služby Active Directory|  
-|**Objekt DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|TypedName služby Active Directory|  
+|**DataRowCollection**|TableName|typedPlural|  
+|**DataRow**|TableNameRow|TypedName služby Active Directory|  
+|**DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|TypedName služby Active Directory|  
 |**Vlastnost**|Vlastnost PropertyName|TypedName služby Active Directory|  
 |**Podřízené** přístupového objektu|GetChildTableNameRows|typedChildren|  
 |**Nadřazené** přístupového objektu|TableNameRow|typedParent|  
@@ -222,9 +222,9 @@ protected static void OnCustomerChanged(object sender, CustomerDataSet.CustomerC
     }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Data.DataColumnCollection>  
- <xref:System.Data.DataSet>  
- [Typové datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)  
- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Data.DataColumnCollection>
+- <xref:System.Data.DataSet>
+- [Typové datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)
+- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

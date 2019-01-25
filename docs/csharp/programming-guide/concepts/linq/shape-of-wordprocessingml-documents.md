@@ -2,12 +2,12 @@
 title: Tvar dokumentů WordprocessingML (C#)
 ms.date: 07/20/2015
 ms.assetid: 3791b5e0-c502-469b-bb75-a7bf6fdd0a94
-ms.openlocfilehash: dee799583eae6bcc1660388e0b6a15185a33707c
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 4c034950006b7ce09ad03e4579cc298f0b2dd218
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145767"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54739242"
 ---
 # <a name="shape-of-wordprocessingml-documents-c"></a>Tvar dokumentů WordprocessingML (C#)
 Toto téma popisuje nastavení tvaru XML dokumentu WordprocessingML.  
@@ -94,6 +94,6 @@ using (Package wdPackage = Package.Open("SampleDoc.docx", FileMode.Open, FileAcc
  [Úvod do WordprocessingML](https://ericwhite.com/blog/introduction-to-wordprocessingml-series/)  
  [Office 2003: Stránku položek ke stažení schémata referenční dokumentace XML](https://www.microsoft.com/en-us/download/details.aspx?id=101)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

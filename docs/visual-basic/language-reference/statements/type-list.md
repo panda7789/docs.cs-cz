@@ -24,15 +24,15 @@ helpviewer_keywords:
 - type parameters
 - constraints, Class keyword
 ms.assetid: 56db947a-2ae8-40f2-a70a-960764e9d0db
-ms.openlocfilehash: 5fbb07154fce27feb257b431c1726446b42fbfe0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dd50435b7cbb5d3d25c0e30618e8733b4eddfe91
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33605287"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54655072"
 ---
 # <a name="type-list-visual-basic"></a>Seznam typů (Visual Basic)
-Určuje, *parametry typu* pro *Obecné* programovací element. Několik parametrů jsou oddělené čárkami. Toto je syntaxe pro jeden typ parametru.  
+Určuje *parametry typu* pro *obecný* programovací element. Více parametrů jsou odděleny čárkami. Následuje syntaxe pro parametr jednoho typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,46 +44,46 @@ Určuje, *parametry typu* pro *Obecné* programovací element. Několik parametr
   
 |Termín|Definice|  
 |---|---|  
-|`genericmodifier`|Volitelné. Lze použít pouze v obecných rozhraní a delegáti. Je možné deklarovat typu kovariantní pomocí [se](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md) – klíčové slovo nebo kontravariant pomocí [v](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md) – klíčové slovo. V tématu [kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md).|  
-|`typename`|Požadováno. Název typu parametru. Toto je zástupný symbol, budou nahrazeny určitého typu poskytl argument typu.|  
-|`constraintlist`|Volitelné. Seznam požadavků, které určují datový typ, který můžete zadat pro `typename`. Pokud máte více omezení, uzavřete je do složených závorek (`{ }`) a oddělte je čárkami. Je nutné zavést seznamu omezení s [jako](../../../visual-basic/language-reference/statements/as-clause.md) – klíčové slovo. Používáte `As` pouze jednou na začátku seznamu.|  
+|`genericmodifier`|Volitelné. Je možné jenom v obecných rozhraních a delegátech. Je možné deklarovat typ kovariantního pomocí [si](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md) – klíčové slovo nebo kontravariantní pomocí [v](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md) – klíčové slovo. Zobrazit [kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md).|  
+|`typename`|Povinný parametr. Název parametru typu. Toto je zástupný symbol bude nahrazen určitého typu poskytl argument typu.|  
+|`constraintlist`|Volitelné. Seznam všech požadavků, které datový typ, který může být zadán pro `typename`. Pokud máte více omezení, je uzavřete do složených závorek (`{ }`) a oddělit je čárkami. Musí zavést seznamu omezení [jako](../../../visual-basic/language-reference/statements/as-clause.md) – klíčové slovo. Použijete `As` jenom jednou na začátku seznamu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Každý obecný programovací element vyžaduje alespoň jeden parametr typu. Parametr typu je zástupný symbol pro konkrétní typ ( *vytvořený element*), kód klienta Určuje, kdy se vytvoří instance obecného typu. Můžete definovat obecné třídy, struktury, rozhraní, postupu nebo delegovat.  
+ Každý obecný programovací prvek přijme aspoň jeden parametr typu. Parametr typu je zástupný symbol pro konkrétní typ ( *vytvořený element*), určuje kód klienta při vytváření instance obecného typu. Můžete definovat obecnou třídu, strukturu, rozhraní, postupu nebo delegovat.  
   
- Další informace o při definování obecného typu, najdete v části [obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md). Další informace o typu názvy parametrů najdete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+ Další informace o při definování obecného typu, najdete v části [obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md). Další informace o názvy parametrů typů naleznete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
-## <a name="rules"></a>Pravidla  
+## <a name="rules"></a>pravidla  
   
--   **Závorky.** Pokud zadáte seznam parametrů typu, je nutné uzavřít do závorek a je nutné zavést seznamu pomocí [z](../../../visual-basic/language-reference/statements/of-clause.md) – klíčové slovo. Používáte `Of` pouze jednou na začátku seznamu.  
+-   **Závorky.** Pokud zadáte seznam parametrů typu, je nutné uzavřít do závorek a musí zavést seznamu [z](../../../visual-basic/language-reference/statements/of-clause.md) – klíčové slovo. Použijete `Of` jenom jednou na začátku seznamu.  
   
--   **Omezení.** Seznam *omezení* parametr pro typ může obsahovat následující položky v libovolné kombinace:  
+-   **Omezení.** Seznam *omezení* typu parametr může obsahovat následující položky v libovolné kombinaci:  
   
     -   Libovolný počet rozhraní. Zadaný typ musí implementovat každé rozhraní v tomto seznamu.  
   
-    -   Maximálně jednu třídu. Zadaný typ musí dědit z této třídy.  
+    -   Nejvýše jednu třídu. Zadaný typ musí dědit z této třídy.  
   
-    -   `New` – Klíčové slovo. Zadaný typ musí vystavit konstruktor bez parametrů, kterým může přistupovat obecného typu. To je užitečné, pokud omezit parametr typu pomocí jednoho nebo více rozhraní. Typ, který implementuje rozhraní nevystavuje nutně konstruktor, a v závislosti na úroveň přístupu tohoto konstruktoru, nemusí být možné pro přístup k ní kód v rámci obecného typu.  
+    -   `New` – Klíčové slovo. Zadaný typ musí vystavit konstruktor bez parametrů, s přístupem k obecného typu. To je užitečné, pokud omezení parametru typu jeden nebo více rozhraní. Typ, který implementuje rozhraní nevystavuje nutně konstruktor a v závislosti na úrovni přístupu konstruktor nemusí být kód v rámci obecného typu k němu mít přístup.  
   
-    -   Buď `Class` – klíčové slovo nebo `Structure` – klíčové slovo. `Class` – Klíčové slovo omezí parametr obecného typu, který se požadovat, aby některý typ argument předaný být odkazového typu, například řetězce, pole nebo delegáta, nebo vytvořen objekt ze třídy. `Structure` – Klíčové slovo omezí parametr obecného typu, který se vyžadují, aby některý typ argument předaný typ hodnoty, například strukturu, výčet nebo základní datového typu. Nemůže současně obsahovat `Class` a `Structure` ve stejné `constraintlist`.  
+    -   Buď `Class` – klíčové slovo nebo `Structure` – klíčové slovo. `Class` – Klíčové slovo omezuje parametr obecného typu tak, aby vyžadovala, aby libovolný do něho předaný argument typu být typ odkazu, například řetězce, pole nebo delegáta, nebo vytvoří objekt ze třídy. `Structure` – Klíčové slovo omezí vyžadují, aby libovolný do něho předaný argument typu typ hodnoty, parametr obecného typu, například strukturu, výčet nebo základní datového typu. Nemůže obsahovat oba `Class` a `Structure` ve stejném `constraintlist`.  
   
-     Zadaný typ musí splňovat každý požadavek, můžete zahrnout `constraintlist`.  
+     Zadaný typ musí splňovat každý požadavek zahrnete `constraintlist`.  
   
-     Omezení pro každý parametr typu jsou nezávislé na omezení dalších parametrů typu.  
+     U každého parametru typu omezení jsou nezávislé omezení na jiné parametry typu.  
   
 ## <a name="behavior"></a>Chování  
   
--   **Nahrazení kompilaci.** Při vytváření typu vytvořený z obecné programovací element, můžete zadat určitého typu pro každý parametr typu. Visual Basic – kompilátor nahradí zadaný typu pro každý výskyt `typename` v rámci obecné elementu.  
+-   **Náhrada za kompilace.** Při vytváření konstruovaný typ z obecného programovací element je zadat typu definované pro každý parametr typu. Kompilátor jazyka Visual Basic nahradí zadaného typu pro všechny výskyty `typename` v rámci obecného prvku.  
   
--   **Neexistence omezení.** Pokud nezadáte žádné omezení pro parametr typu, je omezený na operace a členy nepodporuje kódu [Object – datový typ](../../../visual-basic/language-reference/data-types/object-data-type.md) pro tento parametr typu.  
+-   **Neexistence omezení.** Pokud nezadáte žádné omezení pro parametr typu, je omezený na konzole operations Console a členy, nepodporuje váš kód [datový typ objektu](../../../visual-basic/language-reference/data-types/object-data-type.md) za parametr daného typu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje definici kostru obecné slovník třídy, včetně kostru funkci, kterou chcete přidat novou položku do slovníku.  
+ Následující příklad ukazuje definici kostru třídy generický slovník, včetně kostru funkci, kterou chcete přidat novou položku do slovníku.  
   
  [!code-vb[VbVbalrStatements#3](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/type-list_1.vb)]  
   
 ## <a name="example"></a>Příklad  
- Protože `dictionary` je obecný, kód, který používá ji můžete vytvořit různé objekty z něj, každý s stejné funkce, ale funguje na jiný datový typ. Následující příklad ukazuje řádek kódu, který vytvoří `dictionary` objektu s `String` položky a `Integer` klíče.  
+ Protože `dictionary` je obecný, kód, který používá ho můžete vytvořit různé objekty z něj, každý s stejné funkce, ale funguje na jiný datový typ. Následující příklad ukazuje řádek kódu, který vytváří `dictionary` objekt s `String` položky a `Integer` klíče.  
   
  [!code-vb[VbVbalrStatements#4](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/type-list_2.vb)]  
   
@@ -92,15 +92,15 @@ Určuje, *parametry typu* pro *Obecné* programovací element. Několik parametr
   
  [!code-vb[VbVbalrStatements#5](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/type-list_3.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [z](../../../visual-basic/language-reference/statements/of-clause.md)  
- [Operátor New](../../../visual-basic/language-reference/operators/new-operator.md)  
- [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
- [Datový typ Object](../../../visual-basic/language-reference/data-types/object-data-type.md)  
- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
- [Kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md)  
- [V](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)  
- [na více systémů](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)
+## <a name="see-also"></a>Viz také:
+- [z](../../../visual-basic/language-reference/statements/of-clause.md)
+- [Operátor New](../../../visual-basic/language-reference/operators/new-operator.md)
+- [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Datový typ Object](../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
+- [Kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md)
+- [V](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)
+- [navýšení kapacity](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)

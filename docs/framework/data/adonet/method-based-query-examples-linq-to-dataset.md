@@ -2,12 +2,12 @@
 title: Příklady dotazů založených na volání metody (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: d340775c-7f39-4087-a290-5cbec6cfa68e
-ms.openlocfilehash: 569292cc03f7cbcbaff2d8625849285ff6e2146e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0e904d975860dad6bf11344435b249c3bad84b76
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500795"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54632852"
 ---
 # <a name="method-based-query-examples-linq-to-dataset"></a>Příklady dotazů založených na volání metody (LINQ to DataSet)
 Tato část obsahuje [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] programování příklady syntaxe dotazů založených na volání metody, které používají operátory standardního dotazu. <xref:System.Data.DataSet> Používá v těchto příkladech je vyplněna pomocí `FillDataSet` metodu, která je zadána v [načítání dat do datová sada](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md). Další informace najdete v tématu [přehled standardních operátorů dotazu](https://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  
@@ -37,7 +37,7 @@ Tato část obsahuje [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-m
  [Spojení](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-join-linq-to-dataset.md)  
  Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.GroupJoin%2A> a <xref:System.Linq.Enumerable.Join%2A> metody pro dotazování <xref:System.Data.DataSet>.  
   
-## <a name="see-also"></a>Viz také  
- [Příklady výrazů dotazů](../../../../docs/framework/data/adonet/query-expression-examples-linq-to-dataset.md)  
- [Příklady operátorů specifických pro datovou sadu](../../../../docs/framework/data/adonet/dataset-specific-operator-examples-linq-to-dataset.md)  
- [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
+## <a name="see-also"></a>Viz také:
+- [Příklady výrazů dotazů](../../../../docs/framework/data/adonet/query-expression-examples-linq-to-dataset.md)
+- [Příklady operátorů specifických pro datovou sadu](../../../../docs/framework/data/adonet/dataset-specific-operator-examples-linq-to-dataset.md)
+- [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)

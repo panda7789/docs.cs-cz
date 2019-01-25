@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c3fd130759ab11b54b597d5c099c33dab93070ae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3e231c4fa51e6e66cba6227233cf73dd1cd4ebbe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429247"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54733919"
 ---
 # <a name="isframeworkassembly-function"></a>IsFrameworkAssembly – funkce
-Získá hodnotu, která určuje, jestli je zadané sestavení spravovaný.  
+Získá hodnotu, která určuje, zda se spravuje zadané sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +39,26 @@ HRESULT IsFrameworkAssembly (
   
 #### <a name="parameters"></a>Parametry  
  `pwzAssemblyReference`  
- [v] Název sestavení, které chcete zkontrolovat.  
+ [in] Název sestavení ke kontrole.  
   
  `pbIsFrameworkAssembly`  
- [out] Logická hodnota, která určuje, jestli je sestavení spravuje.  
+ [out] Logická hodnota, která určuje, jestli je spravované sestavení.  
   
  `pwzFrameworkAssemblyIdentity`  
- [v] Uncanonicalized řetězec, který obsahuje jedinečné identity sestavení.  
+ [in] Uncanonicalized řetězec, který obsahuje jedinečné identity sestavení.  
   
  `pccSize`  
- [v] Velikost `pwzFrameworkAssemblyIdentity`.  
+ [in] Velikost `pwzFrameworkAssemblyIdentity`.  
   
 ## <a name="remarks"></a>Poznámky  
- `pwzAssemblyReference` Parametr je ukazatel na řetězec znaků, který obsahuje název sestavení.  
+ `pwzAssemblyReference` Parametrem je ukazatel na řetězec znaků, který obsahuje název sestavení.  
   
- Pokud je toto sestavení součástí rozhraní .NET Framework `pbIsFrameworkAssembly` parametr bude obsahovat logickou hodnotu z `true`.  
+ Pokud je toto sestavení součástí .NET Framework `pbIsFrameworkAssembly` parametr bude obsahovat hodnotu typu Boolean `true`.  
   
- Pokud pojmenovaný sestavení není součástí rozhraní .NET Framework, nebo pokud `pwzAssemblyReference` parametr není název sestavení, `pbIsFrameworkAssembly` bude obsahovat logickou hodnotu z `false`.  
+ Pokud pojmenované sestavení není součástí rozhraní .NET Framework, nebo pokud `pwzAssemblyReference` sestavení, nikoli název parametru `pbIsFrameworkAssembly` bude obsahovat hodnotu typu Boolean `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
-## <a name="see-also"></a>Viz také  
- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)

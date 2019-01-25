@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-ms.openlocfilehash: 3094c82382292be3295238ef9cf2687f6eeb98f8
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 5c87b0f411c187e1497c8ec55771b80bb94c3629
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149884"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54635674"
 ---
 # <a name="configuring-http-and-https"></a>Konfigurace HTTP a HTTPS
 Služby WCF a klienti mohou komunikovat prostřednictvím protokolu HTTP a HTTPS. Nastavení HTTP/HTTPS se konfigurují pomocí Internetové informační služby (IIS) nebo pomocí nástroje příkazového řádku. Když je služba WCF hostované na nastavení služby IIS protokolu HTTP nebo HTTPS lze nastavit v rámci služby IIS (pomocí nástroje inetmgr.exe). Pokud je služba WCF v místním prostředí, HTTP nebo HTTPS je nakonfigurováno pomocí nástroje příkazového řádku.  
@@ -90,6 +90,6 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
 ## <a name="issues-specific-to-windows-xp"></a>Problémy specifické pro Windows XP  
  Služba IIS nepodporuje sdílení portů ve [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. Pokud je spuštěna služba IIS a služby WCF se pokusí použít obor názvů se stejný port, nepodaří spustit službu WCF. Služba IIS a WCF, které oba ve výchozím nastavení používá port 80. Změňte přiřazení portů pro jednu ze služeb nebo pomocí seznamu naslouchání IP k přiřazení služby WCF na síťový adaptér není používaný službou IIS. Služba IIS 6.0 a novějším mají upravený tak, aby pomocí rozhraní API serveru HTTP.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.WSDualHttpBinding>  
- [Jak: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.WSDualHttpBinding>
+- [Postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
