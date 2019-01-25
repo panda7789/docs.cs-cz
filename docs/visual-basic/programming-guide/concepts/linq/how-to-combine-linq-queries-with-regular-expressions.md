@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: kombinace dotazů LINQ s regulárními výrazy (Visual Basic)'
+title: 'Postupy: Kombinace dotazů LINQ s regulárními výrazy (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 3da1bd10-b0d8-4d5b-a637-966891c13592
-ms.openlocfilehash: 8e58e2c65ad8ea0e3d3a8f454b894e556b349428
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 35d82b562211a9dd7fa035fe878bcdee769b8a85
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643049"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54652472"
 ---
-# <a name="how-to-combine-linq-queries-with-regular-expressions-visual-basic"></a><span data-ttu-id="52cf1-102">Postupy: kombinace dotazů LINQ s regulárními výrazy (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="52cf1-102">How to: Combine LINQ Queries with Regular Expressions (Visual Basic)</span></span>
-<span data-ttu-id="52cf1-103">Tento příklad ukazuje způsob použití <xref:System.Text.RegularExpressions.Regex> třídy za účelem vytvoření regulární výraz pro složitější párování v textové řetězce.</span><span class="sxs-lookup"><span data-stu-id="52cf1-103">This example shows how to use the <xref:System.Text.RegularExpressions.Regex> class to create a regular expression for more complex matching in text strings.</span></span> <span data-ttu-id="52cf1-104">Dotaz LINQ usnadňuje filtru na přesně soubory, které chcete hledat s regulárnímu výrazu a utvářejí výsledky.</span><span class="sxs-lookup"><span data-stu-id="52cf1-104">The LINQ query makes it easy to filter on exactly the files that you want to search with the regular expression, and to shape the results.</span></span>  
+# <a name="how-to-combine-linq-queries-with-regular-expressions-visual-basic"></a><span data-ttu-id="dd179-102">Postupy: Kombinace dotazů LINQ s regulárními výrazy (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="dd179-102">How to: Combine LINQ Queries with Regular Expressions (Visual Basic)</span></span>
+<span data-ttu-id="dd179-103">Tento příklad ukazuje způsob použití <xref:System.Text.RegularExpressions.Regex> třídy za účelem vytvoření regulárního výrazu pro složitější porovnávání v textových řetězců.</span><span class="sxs-lookup"><span data-stu-id="dd179-103">This example shows how to use the <xref:System.Text.RegularExpressions.Regex> class to create a regular expression for more complex matching in text strings.</span></span> <span data-ttu-id="dd179-104">Dotaz LINQ umožňuje snadno můžete filtrovat podle přesně soubory, které chcete hledat s regulárním výrazem a obrazce výsledky.</span><span class="sxs-lookup"><span data-stu-id="dd179-104">The LINQ query makes it easy to filter on exactly the files that you want to search with the regular expression, and to shape the results.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="52cf1-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="52cf1-105">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="dd179-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="dd179-105">Example</span></span>  
   
 ```vb  
 Class LinqRegExVB  
@@ -79,11 +79,11 @@ Class LinqRegExVB
 End Class  
 ```  
   
- <span data-ttu-id="52cf1-106">Všimněte si, že se můžete dotazovat i <xref:System.Text.RegularExpressions.MatchCollection> objekt, který je vrácen `RegEx` vyhledávání.</span><span class="sxs-lookup"><span data-stu-id="52cf1-106">Note that you can also query the <xref:System.Text.RegularExpressions.MatchCollection> object that is returned by a `RegEx` search.</span></span> <span data-ttu-id="52cf1-107">V tomto příkladu se vytvoří pouze hodnotu každé shody ve výsledcích.</span><span class="sxs-lookup"><span data-stu-id="52cf1-107">In this example only the value of each match is produced in the results.</span></span> <span data-ttu-id="52cf1-108">Je však také možné používat LINQ k provádění nejrůznějších druhy filtrování, řazení a seskupování v dané kolekci.</span><span class="sxs-lookup"><span data-stu-id="52cf1-108">However, it is also possible to use LINQ to perform all kinds of filtering, sorting, and grouping on that collection.</span></span> <span data-ttu-id="52cf1-109">Protože <xref:System.Text.RegularExpressions.MatchCollection> je není obecný <xref:System.Collections.IEnumerable> kolekci, je nutné explicitně stavu druh proměnné rozsahu v dotazu.</span><span class="sxs-lookup"><span data-stu-id="52cf1-109">Because <xref:System.Text.RegularExpressions.MatchCollection> is a non-generic <xref:System.Collections.IEnumerable> collection, you have to explicitly state the type of the range variable in the query.</span></span>  
+ <span data-ttu-id="dd179-106">Všimněte si, že můžete také zadávat dotazy <xref:System.Text.RegularExpressions.MatchCollection> objekt, který je vrácen `RegEx` vyhledávání.</span><span class="sxs-lookup"><span data-stu-id="dd179-106">Note that you can also query the <xref:System.Text.RegularExpressions.MatchCollection> object that is returned by a `RegEx` search.</span></span> <span data-ttu-id="dd179-107">V tomto příkladu je vytvořen pouze hodnotu jednotlivé shody ve výsledcích.</span><span class="sxs-lookup"><span data-stu-id="dd179-107">In this example only the value of each match is produced in the results.</span></span> <span data-ttu-id="dd179-108">Je však také možné použít k provádění nejrůznějších filtrování, řazení a seskupování v dané kolekci LINQ.</span><span class="sxs-lookup"><span data-stu-id="dd179-108">However, it is also possible to use LINQ to perform all kinds of filtering, sorting, and grouping on that collection.</span></span> <span data-ttu-id="dd179-109">Protože <xref:System.Text.RegularExpressions.MatchCollection> není obecná <xref:System.Collections.IEnumerable> kolekce, je nutné explicitně uvést typ rozsahu proměnných v dotazu.</span><span class="sxs-lookup"><span data-stu-id="dd179-109">Because <xref:System.Text.RegularExpressions.MatchCollection> is a non-generic <xref:System.Collections.IEnumerable> collection, you have to explicitly state the type of the range variable in the query.</span></span>  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="52cf1-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="52cf1-110">Compiling the Code</span></span>  
- <span data-ttu-id="52cf1-111">Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.</span><span class="sxs-lookup"><span data-stu-id="52cf1-111">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="dd179-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="dd179-110">Compiling the Code</span></span>  
+ <span data-ttu-id="dd179-111">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.</span><span class="sxs-lookup"><span data-stu-id="dd179-111">Create a project that targets the .NET Framework version 3.5 or higher with a reference to System.Core.dll and a `Imports` statement for the System.Linq namespace.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="52cf1-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="52cf1-112">See Also</span></span>  
- [<span data-ttu-id="52cf1-113">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="52cf1-113">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
- [<span data-ttu-id="52cf1-114">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="52cf1-114">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="dd179-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dd179-112">See also</span></span>
+- [<span data-ttu-id="dd179-113">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="dd179-113">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [<span data-ttu-id="dd179-114">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="dd179-114">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

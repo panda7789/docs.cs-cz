@@ -14,25 +14,25 @@ helpviewer_keywords:
 - color palettes [Windows Forms], showing in ColorDialog component
 - colors [Windows Forms], showing palettes
 ms.assetid: ee050f61-dbc8-4436-ba22-51360981ab48
-ms.openlocfilehash: ea12fe19b6c8c7464f0820267face8a1d66de784
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 34da70280ff6e5b850469e7ba041cc7c7aaf1f47
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33536924"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54637122"
 ---
-# <a name="how-to-show-a-color-palette-with-the-colordialog-component"></a><span data-ttu-id="d8663-102">Postupy: Zobrazení palety barev pomocí součásti ColorDialog</span><span class="sxs-lookup"><span data-stu-id="d8663-102">How to: Show a Color Palette with the ColorDialog Component</span></span>
-<span data-ttu-id="d8663-103">[ColorDialog](../../../../docs/framework/winforms/controls/colordialog-component-windows-forms.md) součást Zobrazí paletu barev a vrátí vlastnost obsahující barvu uživatel vybral.</span><span class="sxs-lookup"><span data-stu-id="d8663-103">The [ColorDialog](../../../../docs/framework/winforms/controls/colordialog-component-windows-forms.md) component displays a palette of colors and returns a property containing the color the user has selected.</span></span>  
+# <a name="how-to-show-a-color-palette-with-the-colordialog-component"></a><span data-ttu-id="4657b-102">Postupy: Zobrazení palety barev pomocí součásti ColorDialog</span><span class="sxs-lookup"><span data-stu-id="4657b-102">How to: Show a Color Palette with the ColorDialog Component</span></span>
+<span data-ttu-id="4657b-103">[ColorDialog](../../../../docs/framework/winforms/controls/colordialog-component-windows-forms.md) komponenty paletu barev zobrazí a vrátí vlastnost obsahující barvu uživatel vybral.</span><span class="sxs-lookup"><span data-stu-id="4657b-103">The [ColorDialog](../../../../docs/framework/winforms/controls/colordialog-component-windows-forms.md) component displays a palette of colors and returns a property containing the color the user has selected.</span></span>  
   
-### <a name="to-choose-a-color-using-the-colordialog-component"></a><span data-ttu-id="d8663-104">Vybrat barvu pomocí součásti ColorDialog</span><span class="sxs-lookup"><span data-stu-id="d8663-104">To choose a color using the ColorDialog component</span></span>  
+### <a name="to-choose-a-color-using-the-colordialog-component"></a><span data-ttu-id="4657b-104">Vybrat barvu pomocí komponenty ColorDialog</span><span class="sxs-lookup"><span data-stu-id="4657b-104">To choose a color using the ColorDialog component</span></span>  
   
-1.  <span data-ttu-id="d8663-105">Zobrazí dialogové okno pole pomocí <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metoda.</span><span class="sxs-lookup"><span data-stu-id="d8663-105">Display the dialog box using the <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> method.</span></span>  
+1.  <span data-ttu-id="4657b-105">Zobrazit dialog box pomocí <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="4657b-105">Display the dialog box using the <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> method.</span></span>  
   
-2.  <span data-ttu-id="d8663-106">Použití <xref:System.Windows.Forms.DialogResult> vlastnosti k určení, jak bylo ukončeno dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="d8663-106">Use the <xref:System.Windows.Forms.DialogResult> property to determine how the dialog box was closed.</span></span>  
+2.  <span data-ttu-id="4657b-106">Použití <xref:System.Windows.Forms.DialogResult> a určí, jak bylo ukončeno dialogových oken.</span><span class="sxs-lookup"><span data-stu-id="4657b-106">Use the <xref:System.Windows.Forms.DialogResult> property to determine how the dialog box was closed.</span></span>  
   
-3.  <span data-ttu-id="d8663-107">Použití <xref:System.Windows.Forms.ColorDialog.Color%2A> vlastnost <xref:System.Windows.Forms.ColorDialog> součást, kterou nastavení vybrané barvy.</span><span class="sxs-lookup"><span data-stu-id="d8663-107">Use the <xref:System.Windows.Forms.ColorDialog.Color%2A> property of the <xref:System.Windows.Forms.ColorDialog> component to set the chosen color.</span></span>  
+3.  <span data-ttu-id="4657b-107">Použití <xref:System.Windows.Forms.ColorDialog.Color%2A> vlastnost <xref:System.Windows.Forms.ColorDialog> součást pro nastavení vybrané barvy.</span><span class="sxs-lookup"><span data-stu-id="4657b-107">Use the <xref:System.Windows.Forms.ColorDialog.Color%2A> property of the <xref:System.Windows.Forms.ColorDialog> component to set the chosen color.</span></span>  
   
-     <span data-ttu-id="d8663-108">V následujícím příkladu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> otevře obslužné rutiny události <xref:System.Windows.Forms.ColorDialog> součásti.</span><span class="sxs-lookup"><span data-stu-id="d8663-108">In the example below, the <xref:System.Windows.Forms.Button> control's <xref:System.Windows.Forms.Control.Click> event handler opens a <xref:System.Windows.Forms.ColorDialog> component.</span></span> <span data-ttu-id="d8663-109">Pokud barvu, která je zvolená a uživatel klikne na tlačítko **OK**, <xref:System.Windows.Forms.Button> barvu pozadí ovládacího prvku nastavena na vybrané barvy.</span><span class="sxs-lookup"><span data-stu-id="d8663-109">When a color is chosen and the user clicks **OK**, the <xref:System.Windows.Forms.Button> control's background color is set to the chosen color.</span></span> <span data-ttu-id="d8663-110">Příklad předpokládá, že má formulář <xref:System.Windows.Forms.Button> řízení a <xref:System.Windows.Forms.ColorDialog> součásti.</span><span class="sxs-lookup"><span data-stu-id="d8663-110">The example assumes your form has a <xref:System.Windows.Forms.Button> control and a <xref:System.Windows.Forms.ColorDialog> component.</span></span>  
+     <span data-ttu-id="4657b-108">V následujícím příkladu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> otevře obslužné rutiny události <xref:System.Windows.Forms.ColorDialog> komponenty.</span><span class="sxs-lookup"><span data-stu-id="4657b-108">In the example below, the <xref:System.Windows.Forms.Button> control's <xref:System.Windows.Forms.Control.Click> event handler opens a <xref:System.Windows.Forms.ColorDialog> component.</span></span> <span data-ttu-id="4657b-109">Pokud barvu je zvolená a uživatel klikne na tlačítko **OK**, <xref:System.Windows.Forms.Button> barva pozadí ovládacího prvku nastavená na vybrané barvy.</span><span class="sxs-lookup"><span data-stu-id="4657b-109">When a color is chosen and the user clicks **OK**, the <xref:System.Windows.Forms.Button> control's background color is set to the chosen color.</span></span> <span data-ttu-id="4657b-110">Příklad předpokládá, že váš formulář má <xref:System.Windows.Forms.Button> ovládacího prvku a <xref:System.Windows.Forms.ColorDialog> komponenty.</span><span class="sxs-lookup"><span data-stu-id="4657b-110">The example assumes your form has a <xref:System.Windows.Forms.Button> control and a <xref:System.Windows.Forms.ColorDialog> component.</span></span>  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  
@@ -65,7 +65,7 @@ ms.locfileid: "33536924"
        }  
     ```  
   
-     <span data-ttu-id="d8663-111">(Visual C#, [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="d8663-111">(Visual C#, [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Place the following code in the form's constructor to register the event handler.</span></span>  
+     <span data-ttu-id="4657b-111">(Visual C#, [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="4657b-111">(Visual C#, [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Place the following code in the form's constructor to register the event handler.</span></span>  
   
     ```csharp  
     this.button1.Click += new System.EventHandler(this.button1_Click);  
@@ -76,6 +76,6 @@ ms.locfileid: "33536924"
        gcnew System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="d8663-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="d8663-112">See Also</span></span>  
- <xref:System.Windows.Forms.ColorDialog>  
- [<span data-ttu-id="d8663-113">Komponenta ColorDialog</span><span class="sxs-lookup"><span data-stu-id="d8663-113">ColorDialog Component</span></span>](../../../../docs/framework/winforms/controls/colordialog-component-windows-forms.md)
+## <a name="see-also"></a><span data-ttu-id="4657b-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4657b-112">See also</span></span>
+- <xref:System.Windows.Forms.ColorDialog>
+- [<span data-ttu-id="4657b-113">Komponenta ColorDialog</span><span class="sxs-lookup"><span data-stu-id="4657b-113">ColorDialog Component</span></span>](../../../../docs/framework/winforms/controls/colordialog-component-windows-forms.md)

@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: generování textových souborů z XML (C#)'
+title: 'Postupy: Generování textových souborů ze souboru XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 9ad283f7-7cac-42ff-bf32-92aa866e6883
-ms.openlocfilehash: 1e0c57b1fa16bb1b92cabaf4afa7ff7bf40824bd
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 2890128e4dacbac5279b928d9b9bcc097cbe669a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45591348"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530447"
 ---
-# <a name="how-to-generate-text-files-from-xml-c"></a><span data-ttu-id="200be-102">Postupy: generování textových souborů z XML (C#)</span><span class="sxs-lookup"><span data-stu-id="200be-102">How to: Generate Text Files from XML (C#)</span></span>
-<span data-ttu-id="200be-103">Tento příklad ukazuje, jak vygenerovat soubor hodnot oddělených čárkami (CSV) ze souboru XML.</span><span class="sxs-lookup"><span data-stu-id="200be-103">This example shows how to generate a comma-separated values (CSV) file from an XML file.</span></span>  
+# <a name="how-to-generate-text-files-from-xml-c"></a><span data-ttu-id="1a8e1-102">Postupy: Generování textových souborů ze souboru XML (C#)</span><span class="sxs-lookup"><span data-stu-id="1a8e1-102">How to: Generate Text Files from XML (C#)</span></span>
+<span data-ttu-id="1a8e1-103">Tento příklad ukazuje, jak vygenerovat soubor hodnot oddělených čárkami (CSV) ze souboru XML.</span><span class="sxs-lookup"><span data-stu-id="1a8e1-103">This example shows how to generate a comma-separated values (CSV) file from an XML file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="200be-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="200be-104">Example</span></span>  
- <span data-ttu-id="200be-105">Verze jazyka C# v tomto příkladu používá syntaxe využívající metody a `Aggregate` operátor vygenerovat soubor CSV z dokumentu XML v jednom výrazu.</span><span class="sxs-lookup"><span data-stu-id="200be-105">The C# version of this example uses method syntax and the `Aggregate` operator to generate a CSV file from an XML document in a single expression.</span></span> <span data-ttu-id="200be-106">Další informace najdete v tématu [syntaxi dotazů a syntaxe využívající metody v jazyce LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).</span><span class="sxs-lookup"><span data-stu-id="200be-106">For more information, see [Query Syntax and Method Syntax in LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="1a8e1-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="1a8e1-104">Example</span></span>  
+ <span data-ttu-id="1a8e1-105">Verze jazyka C# v tomto příkladu používá syntaxe využívající metody a `Aggregate` operátor vygenerovat soubor CSV z dokumentu XML v jednom výrazu.</span><span class="sxs-lookup"><span data-stu-id="1a8e1-105">The C# version of this example uses method syntax and the `Aggregate` operator to generate a CSV file from an XML document in a single expression.</span></span> <span data-ttu-id="1a8e1-106">Další informace najdete v tématu [syntaxi dotazů a syntaxe využívající metody v jazyce LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).</span><span class="sxs-lookup"><span data-stu-id="1a8e1-106">For more information, see [Query Syntax and Method Syntax in LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).</span></span>  
   
- <span data-ttu-id="200be-107">Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span><span class="sxs-lookup"><span data-stu-id="200be-107">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>  
+ <span data-ttu-id="1a8e1-107">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span><span class="sxs-lookup"><span data-stu-id="1a8e1-107">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>  
   
 ```csharp  
 XElement custOrd = XElement.Load("CustomersOrders.xml");  
@@ -44,7 +44,7 @@ string csv =
 Console.WriteLine(csv);  
 ```  
   
- <span data-ttu-id="200be-108">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="200be-108">This code produces the following output:</span></span>  
+ <span data-ttu-id="1a8e1-108">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="1a8e1-108">This code produces the following output:</span></span>  
   
 ```  
 GREAL,Great Lakes Food Market,Howard Snyder,Marketing Manager,(503) 555-7555,2732 Baker Blvd.,Eugene,OR,97403,USA  
@@ -53,6 +53,6 @@ LAZYK,Lazy K Kountry Store,John Steel,Marketing Manager,(509) 555-7969,12 Orches
 LETSS,Let's Stop N Shop,Jaime Yorres,Owner,(415) 555-5938,87 Polk St. Suite 5,San Francisco,CA,94117,USA  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="200be-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="200be-109">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1a8e1-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1a8e1-109">See also</span></span>
 
-- [<span data-ttu-id="200be-110">Projekce a transformace (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="200be-110">Projections and Transformations (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [<span data-ttu-id="1a8e1-110">Projekce a transformace (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="1a8e1-110">Projections and Transformations (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

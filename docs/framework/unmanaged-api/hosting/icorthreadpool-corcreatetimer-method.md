@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7dfa1dd15f38263ffdfef594ab030867b3fed1de
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 53b44a265e6bb4a2836b4ec053a5bc052afa6b1d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33436774"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527000"
 ---
-# <a name="icorthreadpoolcorcreatetimer-method"></a><span data-ttu-id="aacbc-102">ICorThreadpool::CorCreateTimer – metoda</span><span class="sxs-lookup"><span data-stu-id="aacbc-102">ICorThreadpool::CorCreateTimer Method</span></span>
-<span data-ttu-id="aacbc-103">Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo z vašeho kódu.</span><span class="sxs-lookup"><span data-stu-id="aacbc-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
+# <a name="icorthreadpoolcorcreatetimer-method"></a><span data-ttu-id="1da8f-102">ICorThreadpool::CorCreateTimer – metoda</span><span class="sxs-lookup"><span data-stu-id="1da8f-102">ICorThreadpool::CorCreateTimer Method</span></span>
+<span data-ttu-id="1da8f-103">Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="1da8f-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="aacbc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="aacbc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1da8f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1da8f-104">Syntax</span></span>  
   
 ```  
 HRESULT CorCreateTimer (  
@@ -40,14 +40,14 @@ HRESULT CorCreateTimer (
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="aacbc-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="aacbc-105">Requirements</span></span>  
- <span data-ttu-id="aacbc-106">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="aacbc-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1da8f-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1da8f-105">Requirements</span></span>  
+ <span data-ttu-id="1da8f-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1da8f-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="aacbc-107">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="aacbc-107">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="1da8f-107">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="1da8f-107">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="aacbc-108">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="aacbc-108">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="1da8f-108">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="1da8f-108">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="aacbc-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="aacbc-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="1da8f-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1da8f-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="aacbc-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="aacbc-110">See Also</span></span>  
- [<span data-ttu-id="aacbc-111">ICorThreadpool – rozhraní</span><span class="sxs-lookup"><span data-stu-id="aacbc-111">ICorThreadpool Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-interface.md)
+## <a name="see-also"></a><span data-ttu-id="1da8f-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1da8f-110">See also</span></span>
+- [<span data-ttu-id="1da8f-111">ICorThreadpool – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1da8f-111">ICorThreadpool Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-interface.md)

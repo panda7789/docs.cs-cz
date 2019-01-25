@@ -17,40 +17,40 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1197f066332ee131e4ee18fee6487b78b36e5081
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 29d57f4ff2584ca6444f09d4e66c4ba36e3fff67
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33452768"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54517796"
 ---
-# <a name="icorprofilercallbackruntimesuspendstarted-method"></a><span data-ttu-id="c0f45-102">ICorProfilerCallback::RuntimeSuspendStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="c0f45-102">ICorProfilerCallback::RuntimeSuspendStarted Method</span></span>
-<span data-ttu-id="c0f45-103">Upozorní profileru, že běhové prostředí se chystá pozastavit všechna vlákna modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="c0f45-103">Notifies the profiler that the runtime is about to suspend all runtime threads.</span></span>  
+# <a name="icorprofilercallbackruntimesuspendstarted-method"></a><span data-ttu-id="32b7a-102">ICorProfilerCallback::RuntimeSuspendStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="32b7a-102">ICorProfilerCallback::RuntimeSuspendStarted Method</span></span>
+<span data-ttu-id="32b7a-103">Oznámí profileru, že modul runtime Chystáte se pozastavit všechna vlákna modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="32b7a-103">Notifies the profiler that the runtime is about to suspend all runtime threads.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c0f45-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c0f45-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="32b7a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="32b7a-104">Syntax</span></span>  
   
 ```  
 HRESULT RuntimeSuspendStarted(  
     [in] COR_PRF_SUSPEND_REASON suspendReason);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="c0f45-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c0f45-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="32b7a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="32b7a-105">Parameters</span></span>  
  `suspendReason`  
- <span data-ttu-id="c0f45-106">[v] Hodnota [COR_PRF_SUSPEND_REASON](../../../../docs/framework/unmanaged-api/profiling/cor-prf-suspend-reason-enumeration.md) výčet, který označuje důvod pro pozastavení.</span><span class="sxs-lookup"><span data-stu-id="c0f45-106">[in] A value of the [COR_PRF_SUSPEND_REASON](../../../../docs/framework/unmanaged-api/profiling/cor-prf-suspend-reason-enumeration.md) enumeration that indicates the reason for the suspension.</span></span>  
+ <span data-ttu-id="32b7a-106">[in] Hodnota [cor_prf_suspend_reason –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-suspend-reason-enumeration.md) výčet, který označuje důvod pro pozastavení.</span><span class="sxs-lookup"><span data-stu-id="32b7a-106">[in] A value of the [COR_PRF_SUSPEND_REASON](../../../../docs/framework/unmanaged-api/profiling/cor-prf-suspend-reason-enumeration.md) enumeration that indicates the reason for the suspension.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="c0f45-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c0f45-107">Remarks</span></span>  
- <span data-ttu-id="c0f45-108">Všechna vlákna modulu runtime, které jsou v nespravovaném kódu budou moci pokračovat, spuštění, dokud se snaží znovu zadat modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="c0f45-108">All runtime threads that are in unmanaged code are allowed to continue running until they try to re-enter the runtime.</span></span> <span data-ttu-id="c0f45-109">V tomto bodě se bude také pozastavuje, dokud nebude obnoví modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="c0f45-109">At that point they will also be suspended until the runtime resumes.</span></span> <span data-ttu-id="c0f45-110">To platí také pro nové vláken, která zadejte modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="c0f45-110">This also applies to new threads that enter the runtime.</span></span> <span data-ttu-id="c0f45-111">Všechna vlákna v modulu runtime jsou že buď pozastaveno okamžitě, pokud jsou již v přerušitelné kódu, nebo jsou vyzváni k pozastavení po uplynutí přerušitelné kódu.</span><span class="sxs-lookup"><span data-stu-id="c0f45-111">All threads in the runtime are either suspended immediately if they are already in interruptible code, or they are asked to suspend when they reach interruptible code.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="32b7a-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="32b7a-107">Remarks</span></span>  
+ <span data-ttu-id="32b7a-108">Všechna vlákna modulu runtime, které jsou v nespravovaném kódu se může pokračovat, spuštění, dokud se pokusí znovu zadat modul runtime.</span><span class="sxs-lookup"><span data-stu-id="32b7a-108">All runtime threads that are in unmanaged code are allowed to continue running until they try to re-enter the runtime.</span></span> <span data-ttu-id="32b7a-109">V tomto okamžiku se bude také být pozastaveno, dokud modul runtime bude pokračovat.</span><span class="sxs-lookup"><span data-stu-id="32b7a-109">At that point they will also be suspended until the runtime resumes.</span></span> <span data-ttu-id="32b7a-110">To platí i pro nová vlákna, které zadejte modul runtime.</span><span class="sxs-lookup"><span data-stu-id="32b7a-110">This also applies to new threads that enter the runtime.</span></span> <span data-ttu-id="32b7a-111">Všechna vlákna v modulu runtime jsou že buď pozastaveno okamžitě, pokud jsou již v paralelní kód, nebo mu zobrazit výzva k pozastavení, když dosáhnou paralelní kód.</span><span class="sxs-lookup"><span data-stu-id="32b7a-111">All threads in the runtime are either suspended immediately if they are already in interruptible code, or they are asked to suspend when they reach interruptible code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c0f45-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c0f45-112">Requirements</span></span>  
- <span data-ttu-id="c0f45-113">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c0f45-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="32b7a-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="32b7a-112">Requirements</span></span>  
+ <span data-ttu-id="32b7a-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="32b7a-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c0f45-114">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="c0f45-114">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="32b7a-114">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="32b7a-114">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="c0f45-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c0f45-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="32b7a-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="32b7a-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="c0f45-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c0f45-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="32b7a-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="32b7a-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c0f45-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="c0f45-117">See Also</span></span>  
- [<span data-ttu-id="c0f45-118">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c0f45-118">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [<span data-ttu-id="c0f45-119">RuntimeSuspendAborted – metoda</span><span class="sxs-lookup"><span data-stu-id="c0f45-119">RuntimeSuspendAborted Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendaborted-method.md)  
- [<span data-ttu-id="c0f45-120">RuntimeSuspendFinished – metoda</span><span class="sxs-lookup"><span data-stu-id="c0f45-120">RuntimeSuspendFinished Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md)
+## <a name="see-also"></a><span data-ttu-id="32b7a-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="32b7a-117">See also</span></span>
+- [<span data-ttu-id="32b7a-118">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="32b7a-118">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [<span data-ttu-id="32b7a-119">RuntimeSuspendAborted – metoda</span><span class="sxs-lookup"><span data-stu-id="32b7a-119">RuntimeSuspendAborted Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendaborted-method.md)
+- [<span data-ttu-id="32b7a-120">RuntimeSuspendFinished – metoda</span><span class="sxs-lookup"><span data-stu-id="32b7a-120">RuntimeSuspendFinished Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md)

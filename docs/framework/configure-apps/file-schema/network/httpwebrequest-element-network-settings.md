@@ -8,22 +8,22 @@ helpviewer_keywords:
 - <httpWebRequest> element
 - httpWebRequest element
 ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
-ms.openlocfilehash: 0d3feb168acbd623270a2038bf06a3c97126bd05
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 1a883b2e57d0f055237d68e4f69651ef496795ab
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50205149"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54590026"
 ---
-# <a name="lthttpwebrequestgt-element-network-settings"></a><span data-ttu-id="60467-102">&lt;httpWebRequest&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="60467-102">&lt;httpWebRequest&gt; Element (Network Settings)</span></span>
-<span data-ttu-id="60467-103">Přizpůsobí parametrů webové žádosti.</span><span class="sxs-lookup"><span data-stu-id="60467-103">Customizes Web request parameters.</span></span>  
+# <a name="lthttpwebrequestgt-element-network-settings"></a><span data-ttu-id="d9673-102">&lt;httpWebRequest&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="d9673-102">&lt;httpWebRequest&gt; Element (Network Settings)</span></span>
+<span data-ttu-id="d9673-103">Přizpůsobí parametrů webové žádosti.</span><span class="sxs-lookup"><span data-stu-id="d9673-103">Customizes Web request parameters.</span></span>  
   
- <span data-ttu-id="60467-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="60467-104">\<configuration></span></span>  
-<span data-ttu-id="60467-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="60467-105">\<system.net></span></span>  
-<span data-ttu-id="60467-106">\<Nastavení ></span><span class="sxs-lookup"><span data-stu-id="60467-106">\<settings></span></span>  
-<span data-ttu-id="60467-107">\<httpWebRequest ></span><span class="sxs-lookup"><span data-stu-id="60467-107">\<httpWebRequest></span></span>  
+ <span data-ttu-id="d9673-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="d9673-104">\<configuration></span></span>  
+<span data-ttu-id="d9673-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="d9673-105">\<system.net></span></span>  
+<span data-ttu-id="d9673-106">\<settings></span><span class="sxs-lookup"><span data-stu-id="d9673-106">\<settings></span></span>  
+<span data-ttu-id="d9673-107">\<httpWebRequest></span><span class="sxs-lookup"><span data-stu-id="d9673-107">\<httpWebRequest></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="60467-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="60467-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d9673-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d9673-108">Syntax</span></span>  
   
 ```xml  
 <httpWebRequest  
@@ -34,35 +34,35 @@ ms.locfileid: "50205149"
 />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="60467-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="60467-109">Attributes and Elements</span></span>  
- <span data-ttu-id="60467-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="60467-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="d9673-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="d9673-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="d9673-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="d9673-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="60467-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="60467-111">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="d9673-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="d9673-111">Attributes</span></span>  
   
-|<span data-ttu-id="60467-112">**Atribut**</span><span class="sxs-lookup"><span data-stu-id="60467-112">**Attribute**</span></span>|<span data-ttu-id="60467-113">**Popis**</span><span class="sxs-lookup"><span data-stu-id="60467-113">**Description**</span></span>|  
+|<span data-ttu-id="d9673-112">**Atribut**</span><span class="sxs-lookup"><span data-stu-id="d9673-112">**Attribute**</span></span>|<span data-ttu-id="d9673-113">**Popis**</span><span class="sxs-lookup"><span data-stu-id="d9673-113">**Description**</span></span>|  
 |-------------------|---------------------|  
-|`maximumResponseHeadersLength`|<span data-ttu-id="60467-114">Určuje v kilobajtech maximální délka hlavičky odpovědi.</span><span class="sxs-lookup"><span data-stu-id="60467-114">Specifies the maximum length of a response header, in kilobytes.</span></span> <span data-ttu-id="60467-115">Výchozí hodnota je 64.</span><span class="sxs-lookup"><span data-stu-id="60467-115">The default is 64.</span></span> <span data-ttu-id="60467-116">Hodnota -1 znamená, že žádné omezení velikosti se nevyžaduje v hlavičkách odpovědi.</span><span class="sxs-lookup"><span data-stu-id="60467-116">A value of -1 indicates that no size limit will be imposed on the response headers.</span></span>|  
-|`maximumErrorResponseLength`|<span data-ttu-id="60467-117">Určuje maximální délku reakce na chybu, v kilobajtech.</span><span class="sxs-lookup"><span data-stu-id="60467-117">Specifies the maximum length of an error response, in kilobytes.</span></span> <span data-ttu-id="60467-118">Výchozí hodnota je 64.</span><span class="sxs-lookup"><span data-stu-id="60467-118">The default is 64.</span></span> <span data-ttu-id="60467-119">Hodnota -1 znamená, že žádné omezení velikosti se nevyžaduje v odpovědi na chybu.</span><span class="sxs-lookup"><span data-stu-id="60467-119">A value of -1 indicates that no size limit will be imposed on the error response.</span></span>|  
-|`maximumUnauthorizedUploadLength`|<span data-ttu-id="60467-120">Určuje maximální délku nahrání v reakci na neautorizovaný chybový kód, v bajtech.</span><span class="sxs-lookup"><span data-stu-id="60467-120">Specifies the maximum length of an upload in response to an unauthorized error code, in bytes.</span></span> <span data-ttu-id="60467-121">Výchozí hodnota je -1.</span><span class="sxs-lookup"><span data-stu-id="60467-121">The default is -1.</span></span> <span data-ttu-id="60467-122">Hodnota -1 znamená, že žádné omezení velikosti bude vynucená pro nahrávání.</span><span class="sxs-lookup"><span data-stu-id="60467-122">A value of -1 indicates that no size limit will be imposed on the upload.</span></span>|  
-|`useUnsafeHeaderParsing`|<span data-ttu-id="60467-123">Určuje, zda je povolena analýza nebezpečné záhlaví.</span><span class="sxs-lookup"><span data-stu-id="60467-123">Specifies whether unsafe header parsing is enabled.</span></span> <span data-ttu-id="60467-124">Výchozí hodnota je `false`.</span><span class="sxs-lookup"><span data-stu-id="60467-124">The default value is `false`.</span></span>|  
+|`maximumResponseHeadersLength`|<span data-ttu-id="d9673-114">Určuje v kilobajtech maximální délka hlavičky odpovědi.</span><span class="sxs-lookup"><span data-stu-id="d9673-114">Specifies the maximum length of a response header, in kilobytes.</span></span> <span data-ttu-id="d9673-115">Výchozí hodnota je 64.</span><span class="sxs-lookup"><span data-stu-id="d9673-115">The default is 64.</span></span> <span data-ttu-id="d9673-116">Hodnota -1 znamená, že žádné omezení velikosti se nevyžaduje v hlavičkách odpovědi.</span><span class="sxs-lookup"><span data-stu-id="d9673-116">A value of -1 indicates that no size limit will be imposed on the response headers.</span></span>|  
+|`maximumErrorResponseLength`|<span data-ttu-id="d9673-117">Určuje maximální délku reakce na chybu, v kilobajtech.</span><span class="sxs-lookup"><span data-stu-id="d9673-117">Specifies the maximum length of an error response, in kilobytes.</span></span> <span data-ttu-id="d9673-118">Výchozí hodnota je 64.</span><span class="sxs-lookup"><span data-stu-id="d9673-118">The default is 64.</span></span> <span data-ttu-id="d9673-119">Hodnota -1 znamená, že žádné omezení velikosti se nevyžaduje v odpovědi na chybu.</span><span class="sxs-lookup"><span data-stu-id="d9673-119">A value of -1 indicates that no size limit will be imposed on the error response.</span></span>|  
+|`maximumUnauthorizedUploadLength`|<span data-ttu-id="d9673-120">Určuje maximální délku nahrání v reakci na neautorizovaný chybový kód, v bajtech.</span><span class="sxs-lookup"><span data-stu-id="d9673-120">Specifies the maximum length of an upload in response to an unauthorized error code, in bytes.</span></span> <span data-ttu-id="d9673-121">Výchozí hodnota je -1.</span><span class="sxs-lookup"><span data-stu-id="d9673-121">The default is -1.</span></span> <span data-ttu-id="d9673-122">Hodnota -1 znamená, že žádné omezení velikosti bude vynucená pro nahrávání.</span><span class="sxs-lookup"><span data-stu-id="d9673-122">A value of -1 indicates that no size limit will be imposed on the upload.</span></span>|  
+|`useUnsafeHeaderParsing`|<span data-ttu-id="d9673-123">Určuje, zda je povolena analýza nebezpečné záhlaví.</span><span class="sxs-lookup"><span data-stu-id="d9673-123">Specifies whether unsafe header parsing is enabled.</span></span> <span data-ttu-id="d9673-124">Výchozí hodnota je `false`.</span><span class="sxs-lookup"><span data-stu-id="d9673-124">The default value is `false`.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="60467-125">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="60467-125">Child Elements</span></span>  
- <span data-ttu-id="60467-126">Žádné</span><span class="sxs-lookup"><span data-stu-id="60467-126">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="d9673-125">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="d9673-125">Child Elements</span></span>  
+ <span data-ttu-id="d9673-126">Žádné</span><span class="sxs-lookup"><span data-stu-id="d9673-126">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="60467-127">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="60467-127">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="d9673-127">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="d9673-127">Parent Elements</span></span>  
   
-|<span data-ttu-id="60467-128">**Element**</span><span class="sxs-lookup"><span data-stu-id="60467-128">**Element**</span></span>|<span data-ttu-id="60467-129">**Popis**</span><span class="sxs-lookup"><span data-stu-id="60467-129">**Description**</span></span>|  
+|<span data-ttu-id="d9673-128">**Element**</span><span class="sxs-lookup"><span data-stu-id="d9673-128">**Element**</span></span>|<span data-ttu-id="d9673-129">**Popis**</span><span class="sxs-lookup"><span data-stu-id="d9673-129">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="60467-130">Nastavení</span><span class="sxs-lookup"><span data-stu-id="60467-130">settings</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<span data-ttu-id="60467-131">Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="60467-131">Configures basic network options for the <xref:System.Net> namespace.</span></span>|  
+|[<span data-ttu-id="d9673-130">settings</span><span class="sxs-lookup"><span data-stu-id="d9673-130">settings</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<span data-ttu-id="d9673-131">Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="d9673-131">Configures basic network options for the <xref:System.Net> namespace.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="60467-132">Poznámky</span><span class="sxs-lookup"><span data-stu-id="60467-132">Remarks</span></span>  
- <span data-ttu-id="60467-133">Ve výchozím nastavení rozhraní .NET Framework přísně dokumentu RFC 2616 k analýze identifikátoru URI.</span><span class="sxs-lookup"><span data-stu-id="60467-133">By default, the .NET Framework strictly enforces RFC 2616 for URI parsing.</span></span> <span data-ttu-id="60467-134">Některé odpovědi serveru může obsahovat řídicí znaky zakázaných polí, které způsobí, že <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> metoda k vyvolání <xref:System.Net.WebException>.</span><span class="sxs-lookup"><span data-stu-id="60467-134">Some server responses may include control characters in prohibited fields, which will cause the <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> method to throw a <xref:System.Net.WebException>.</span></span> <span data-ttu-id="60467-135">Pokud **useUnsafeHeaderParsing** je nastavena na **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> nezpůsobí výjimku v tomto případě; nicméně, vaše aplikace bude zranitelný vůči několik tvarů útoky parsování identifikátorů URI.</span><span class="sxs-lookup"><span data-stu-id="60467-135">If **useUnsafeHeaderParsing** is set to **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> will not throw in this case; however, your application will be vulnerable to several forms of URI parsing attacks.</span></span> <span data-ttu-id="60467-136">Nejlepším řešením je změnit server tak, aby odpovědi neobsahuje řídicí znaky.</span><span class="sxs-lookup"><span data-stu-id="60467-136">The best solution is to change the server so that the response does not include control characters.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="d9673-132">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d9673-132">Remarks</span></span>  
+ <span data-ttu-id="d9673-133">Ve výchozím nastavení rozhraní .NET Framework přísně dokumentu RFC 2616 k analýze identifikátoru URI.</span><span class="sxs-lookup"><span data-stu-id="d9673-133">By default, the .NET Framework strictly enforces RFC 2616 for URI parsing.</span></span> <span data-ttu-id="d9673-134">Některé odpovědi serveru může obsahovat řídicí znaky zakázaných polí, které způsobí, že <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> metoda k vyvolání <xref:System.Net.WebException>.</span><span class="sxs-lookup"><span data-stu-id="d9673-134">Some server responses may include control characters in prohibited fields, which will cause the <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> method to throw a <xref:System.Net.WebException>.</span></span> <span data-ttu-id="d9673-135">Pokud **useUnsafeHeaderParsing** je nastavena na **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> nezpůsobí výjimku v tomto případě; nicméně, vaše aplikace bude zranitelný vůči několik tvarů útoky parsování identifikátorů URI.</span><span class="sxs-lookup"><span data-stu-id="d9673-135">If **useUnsafeHeaderParsing** is set to **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> will not throw in this case; however, your application will be vulnerable to several forms of URI parsing attacks.</span></span> <span data-ttu-id="d9673-136">Nejlepším řešením je změnit server tak, aby odpovědi neobsahuje řídicí znaky.</span><span class="sxs-lookup"><span data-stu-id="d9673-136">The best solution is to change the server so that the response does not include control characters.</span></span>  
   
-## <a name="configuration-files"></a><span data-ttu-id="60467-137">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="60467-137">Configuration Files</span></span>  
- <span data-ttu-id="60467-138">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="60467-138">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+## <a name="configuration-files"></a><span data-ttu-id="d9673-137">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="d9673-137">Configuration Files</span></span>  
+ <span data-ttu-id="d9673-138">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="d9673-138">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="60467-139">Příklad</span><span class="sxs-lookup"><span data-stu-id="60467-139">Example</span></span>  
- <span data-ttu-id="60467-140">Následující příklad ukazuje, jak určit větší než normální záhlaví maximální délku.</span><span class="sxs-lookup"><span data-stu-id="60467-140">The following example shows how to specify a larger than normal maximum header length.</span></span>  
+## <a name="example"></a><span data-ttu-id="d9673-139">Příklad</span><span class="sxs-lookup"><span data-stu-id="d9673-139">Example</span></span>  
+ <span data-ttu-id="d9673-140">Následující příklad ukazuje, jak určit větší než normální záhlaví maximální délku.</span><span class="sxs-lookup"><span data-stu-id="d9673-140">The following example shows how to specify a larger than normal maximum header length.</span></span>  
   
 ```xml  
 <configuration>  
@@ -76,6 +76,6 @@ ms.locfileid: "50205149"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="60467-141">Viz také</span><span class="sxs-lookup"><span data-stu-id="60467-141">See Also</span></span>  
-- <xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>  
-- [<span data-ttu-id="60467-142">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="60467-142">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+## <a name="see-also"></a><span data-ttu-id="d9673-141">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d9673-141">See also</span></span>
+- <xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>
+- [<span data-ttu-id="d9673-142">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="d9673-142">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

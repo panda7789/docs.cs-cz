@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e9dfd97ce5b9b192b9a2e88e3d7e4f963d929f47
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0702a7a58e6bd8c13254da5adce17c9adf6fa0cf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449257"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54569453"
 ---
-# <a name="imetadataemit2savedeltatostream-method"></a><span data-ttu-id="d1424-102">IMetaDataEmit2::SaveDeltaToStream – metoda</span><span class="sxs-lookup"><span data-stu-id="d1424-102">IMetaDataEmit2::SaveDeltaToStream Method</span></span>
-<span data-ttu-id="d1424-103">Uloží změny do zadaného datového proudu z aktuální relace upravit a pokračovat.</span><span class="sxs-lookup"><span data-stu-id="d1424-103">Saves changes from the current edit-and-continue session to the specified stream.</span></span>  
+# <a name="imetadataemit2savedeltatostream-method"></a><span data-ttu-id="17691-102">IMetaDataEmit2::SaveDeltaToStream – metoda</span><span class="sxs-lookup"><span data-stu-id="17691-102">IMetaDataEmit2::SaveDeltaToStream Method</span></span>
+<span data-ttu-id="17691-103">Uloží změny z aktuální relace edit-and-continue do zadaného datového proudu.</span><span class="sxs-lookup"><span data-stu-id="17691-103">Saves changes from the current edit-and-continue session to the specified stream.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d1424-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d1424-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="17691-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="17691-104">Syntax</span></span>  
   
 ```  
 HRESULT SaveDeltaToStream (  
@@ -36,22 +36,22 @@ HRESULT SaveDeltaToStream (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="d1424-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d1424-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="17691-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="17691-105">Parameters</span></span>  
  `pIStream`  
- <span data-ttu-id="d1424-106">[v] Ukazatel rozhraní s možností zápisu datového proudu, do které chcete uložit změny.</span><span class="sxs-lookup"><span data-stu-id="d1424-106">[in] An interface pointer to the writable stream to which to save changes.</span></span>  
+ <span data-ttu-id="17691-106">[in] Ukazatel rozhraní k zapisovatelné proud, do kterého chcete uložit změny.</span><span class="sxs-lookup"><span data-stu-id="17691-106">[in] An interface pointer to the writable stream to which to save changes.</span></span>  
   
  `dwSaveFlags`  
- <span data-ttu-id="d1424-107">[v] Vyhrazena.</span><span class="sxs-lookup"><span data-stu-id="d1424-107">[in] Reserved.</span></span> <span data-ttu-id="d1424-108">Tato hodnota musí být nula.</span><span class="sxs-lookup"><span data-stu-id="d1424-108">This value must be zero.</span></span>  
+ <span data-ttu-id="17691-107">[in] Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="17691-107">[in] Reserved.</span></span> <span data-ttu-id="17691-108">Tato hodnota musí být nula.</span><span class="sxs-lookup"><span data-stu-id="17691-108">This value must be zero.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d1424-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d1424-109">Requirements</span></span>  
- <span data-ttu-id="d1424-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d1424-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="17691-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="17691-109">Requirements</span></span>  
+ <span data-ttu-id="17691-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="17691-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d1424-111">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="d1424-111">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="17691-111">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="17691-111">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="d1424-112">**Knihovna:** používat jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="d1424-112">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="17691-112">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="17691-112">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="d1424-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d1424-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="17691-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="17691-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d1424-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="d1424-114">See Also</span></span>  
- [<span data-ttu-id="d1424-115">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d1424-115">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)  
- [<span data-ttu-id="d1424-116">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d1424-116">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+## <a name="see-also"></a><span data-ttu-id="17691-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="17691-114">See also</span></span>
+- [<span data-ttu-id="17691-115">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="17691-115">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="17691-116">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="17691-116">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

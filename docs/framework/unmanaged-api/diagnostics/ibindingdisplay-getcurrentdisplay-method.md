@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 889456f08c967c807b4d3d09508af000035ebdaf
-ms.sourcegitcommit: bd4fa78f5a46133efdead1bc692a9aa2811d7868
+ms.openlocfilehash: 992626fb3fa085c85d61b9bdd25c985436e96aea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42755077"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550562"
 ---
-# <a name="ibindingdisplaygetcurrentdisplay-method"></a><span data-ttu-id="12700-102">IBindingDisplay::GetCurrentDisplay – metoda</span><span class="sxs-lookup"><span data-stu-id="12700-102">IBindingDisplay::GetCurrentDisplay Method</span></span>
-<span data-ttu-id="12700-103">Vrátí informace o zobrazení aktuální vazby.</span><span class="sxs-lookup"><span data-stu-id="12700-103">Returns the current binding display information.</span></span>  
+# <a name="ibindingdisplaygetcurrentdisplay-method"></a><span data-ttu-id="6cd56-102">IBindingDisplay::GetCurrentDisplay – metoda</span><span class="sxs-lookup"><span data-stu-id="6cd56-102">IBindingDisplay::GetCurrentDisplay Method</span></span>
+<span data-ttu-id="6cd56-103">Vrátí informace o zobrazení aktuální vazby.</span><span class="sxs-lookup"><span data-stu-id="6cd56-103">Returns the current binding display information.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="12700-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="12700-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6cd56-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6cd56-104">Syntax</span></span>  
   
 ```  
 HRESULT GetCurrentDisplay (  
@@ -35,24 +35,24 @@ HRESULT GetCurrentDisplay (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="12700-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="12700-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="6cd56-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6cd56-105">Parameters</span></span>  
  `display`  
- <span data-ttu-id="12700-106">[out, retval] Ukazatel na safearray obsahující informace o vazbě zobrazení.</span><span class="sxs-lookup"><span data-stu-id="12700-106">[out, retval] A pointer to a safearray containing the binding display information.</span></span>  
+ <span data-ttu-id="6cd56-106">[out, retval] Ukazatel na safearray obsahující informace o vazbě zobrazení.</span><span class="sxs-lookup"><span data-stu-id="6cd56-106">[out, retval] A pointer to a safearray containing the binding display information.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="12700-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="12700-107">Remarks</span></span>  
- <span data-ttu-id="12700-108">[Ibindingdisplay::initializeforprocess –](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md) metoda musí mít dříve byla úspěšná, a program je nutné zastavit pomocí ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="12700-108">The [IBindingDisplay::InitializeForProcess](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md) method must have previously succeeded, and the program must be stopped by a debugger.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="6cd56-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6cd56-107">Remarks</span></span>  
+ <span data-ttu-id="6cd56-108">[Ibindingdisplay::initializeforprocess –](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md) metoda musí mít dříve byla úspěšná, a program je nutné zastavit pomocí ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="6cd56-108">The [IBindingDisplay::InitializeForProcess](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md) method must have previously succeeded, and the program must be stopped by a debugger.</span></span>  
   
- <span data-ttu-id="12700-109">Volající musí uvolnit vráceného `SAFEARRAY` paměti pomocí [SafeArrayDestroy](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-safearraydestroy).</span><span class="sxs-lookup"><span data-stu-id="12700-109">The caller must deallocate the returned `SAFEARRAY` memory by using [SafeArrayDestroy](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-safearraydestroy).</span></span>  
+ <span data-ttu-id="6cd56-109">Volající musí uvolnit vráceného `SAFEARRAY` paměti pomocí [SafeArrayDestroy](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-safearraydestroy).</span><span class="sxs-lookup"><span data-stu-id="6cd56-109">The caller must deallocate the returned `SAFEARRAY` memory by using [SafeArrayDestroy](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-safearraydestroy).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="12700-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="12700-110">Requirements</span></span>  
- <span data-ttu-id="12700-111">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="12700-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="6cd56-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6cd56-110">Requirements</span></span>  
+ <span data-ttu-id="6cd56-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6cd56-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="12700-112">**Záhlaví:** BindingDisplay.h</span><span class="sxs-lookup"><span data-stu-id="12700-112">**Header:** BindingDisplay.h</span></span>  
+ <span data-ttu-id="6cd56-112">**Záhlaví:** BindingDisplay.h</span><span class="sxs-lookup"><span data-stu-id="6cd56-112">**Header:** BindingDisplay.h</span></span>  
   
- <span data-ttu-id="12700-113">**Knihovna:** BindingDisplay.idl</span><span class="sxs-lookup"><span data-stu-id="12700-113">**Library:** BindingDisplay.idl</span></span>  
+ <span data-ttu-id="6cd56-113">**Knihovna:** BindingDisplay.idl</span><span class="sxs-lookup"><span data-stu-id="6cd56-113">**Library:** BindingDisplay.idl</span></span>  
   
- <span data-ttu-id="12700-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="12700-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="6cd56-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6cd56-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="12700-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="12700-115">See Also</span></span>  
- [<span data-ttu-id="12700-116">IBindingDisplay – rozhraní</span><span class="sxs-lookup"><span data-stu-id="12700-116">IBindingDisplay Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-interface.md)  
- [<span data-ttu-id="12700-117">InitializeForProcess – metoda</span><span class="sxs-lookup"><span data-stu-id="12700-117">InitializeForProcess Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md)
+## <a name="see-also"></a><span data-ttu-id="6cd56-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6cd56-115">See also</span></span>
+- [<span data-ttu-id="6cd56-116">IBindingDisplay – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6cd56-116">IBindingDisplay Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-interface.md)
+- [<span data-ttu-id="6cd56-117">InitializeForProcess – metoda</span><span class="sxs-lookup"><span data-stu-id="6cd56-117">InitializeForProcess Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md)

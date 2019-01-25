@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 67e1d20f7faf38fa37083f1a5b1cc0c1060b7a32
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5262ba6ef0d2d36372326df24b519072e2aa6fc6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33461565"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54587512"
 ---
-# <a name="icorprofilerinfo3getruntimeinformation-method"></a><span data-ttu-id="82b5c-102">ICorProfilerInfo3::GetRuntimeInformation – metoda</span><span class="sxs-lookup"><span data-stu-id="82b5c-102">ICorProfilerInfo3::GetRuntimeInformation Method</span></span>
-<span data-ttu-id="82b5c-103">Poskytuje informace o verzi o common language runtime (CLR), který je profilovaný.</span><span class="sxs-lookup"><span data-stu-id="82b5c-103">Provides version information about the common language runtime (CLR) that is being profiled.</span></span>  
+# <a name="icorprofilerinfo3getruntimeinformation-method"></a><span data-ttu-id="c1c5a-102">ICorProfilerInfo3::GetRuntimeInformation – metoda</span><span class="sxs-lookup"><span data-stu-id="c1c5a-102">ICorProfilerInfo3::GetRuntimeInformation Method</span></span>
+<span data-ttu-id="c1c5a-103">Poskytuje informace o verzi o common language runtime (CLR), která je právě profilována.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-103">Provides version information about the common language runtime (CLR) that is being profiled.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="82b5c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="82b5c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c1c5a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c1c5a-104">Syntax</span></span>  
   
 ```  
 HRESULT GetRuntimeInformation(  
@@ -43,47 +43,47 @@ HRESULT GetRuntimeInformation(
                    WCHAR  szVersionString[]);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="82b5c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="82b5c-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="c1c5a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c1c5a-105">Parameters</span></span>  
  `pClrInstanceId`  
- <span data-ttu-id="82b5c-106">[out] ID zástupce spuštěné instance CLR v procesu.</span><span class="sxs-lookup"><span data-stu-id="82b5c-106">[out] The representative ID of a running CLR instance in a process.</span></span> <span data-ttu-id="82b5c-107">Je to stejné jako `ClrInstanceID` , sestavy trasování událostí pro událost spuštění systému Windows (ETW).</span><span class="sxs-lookup"><span data-stu-id="82b5c-107">This is the same as the `ClrInstanceID` that the event tracing for Windows (ETW) startup event reports.</span></span>  
+ <span data-ttu-id="c1c5a-106">[out] Identifikátor zástupce spuštěné instance modulu CLR v procesu.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-106">[out] The representative ID of a running CLR instance in a process.</span></span> <span data-ttu-id="c1c5a-107">To je stejný jako `ClrInstanceID` , že sestavy trasování událostí pro Windows (ETW) spouštěcí událost.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-107">This is the same as the `ClrInstanceID` that the event tracing for Windows (ETW) startup event reports.</span></span>  
   
  `pRuntimeType`  
- <span data-ttu-id="82b5c-108">[out] Typ modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="82b5c-108">[out] The runtime type.</span></span> <span data-ttu-id="82b5c-109">Tento parametr vrátí `COR_PRF_DESKTOP_CLR` pro plochy verzi modulu CLR, nebo `COR_PRF_CORE_CLR` pro základní verzi modulu CLR použít v programu Silverlight.</span><span class="sxs-lookup"><span data-stu-id="82b5c-109">This parameter returns `COR_PRF_DESKTOP_CLR` for the desktop version of the CLR, or `COR_PRF_CORE_CLR` for the core version of the CLR used in Silverlight.</span></span>  
+ <span data-ttu-id="c1c5a-108">[out] Typ modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-108">[out] The runtime type.</span></span> <span data-ttu-id="c1c5a-109">Tento parametr vrátí `COR_PRF_DESKTOP_CLR` pro desktopovou verzi modulu CLR, nebo `COR_PRF_CORE_CLR` základní verze CLR použít v programu Silverlight.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-109">This parameter returns `COR_PRF_DESKTOP_CLR` for the desktop version of the CLR, or `COR_PRF_CORE_CLR` for the core version of the CLR used in Silverlight.</span></span>  
   
  `pMajorVersion`  
- <span data-ttu-id="82b5c-110">[out] Hlavní číslo verze modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="82b5c-110">[out] The major version number of the CLR.</span></span>  
+ <span data-ttu-id="c1c5a-110">[out] Číslo hlavní verze modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-110">[out] The major version number of the CLR.</span></span>  
   
  `pMinorVersion`  
- <span data-ttu-id="82b5c-111">[out] Číslo podverze modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="82b5c-111">[out] The minor version number of the CLR.</span></span>  
+ <span data-ttu-id="c1c5a-111">[out] Číslo podverze modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-111">[out] The minor version number of the CLR.</span></span>  
   
  `pBuildVersion`  
- <span data-ttu-id="82b5c-112">[out] Číslo verze sestavení CLR.</span><span class="sxs-lookup"><span data-stu-id="82b5c-112">[out] The build version number of the CLR.</span></span>  
+ <span data-ttu-id="c1c5a-112">[out] Číslo verze sestavení CLR.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-112">[out] The build version number of the CLR.</span></span>  
   
  `pQFEVersion`  
- <span data-ttu-id="82b5c-113">[out] Číslo verze modulu CLR, který je přidružen aktualizace softwaru.</span><span class="sxs-lookup"><span data-stu-id="82b5c-113">[out] The version number of the CLR that is associated with a software update.</span></span>  
+ <span data-ttu-id="c1c5a-113">[out] Číslo verze modulu CLR, který je přiřazen k aktualizaci softwaru.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-113">[out] The version number of the CLR that is associated with a software update.</span></span>  
   
  `cchVersionString`  
- <span data-ttu-id="82b5c-114">[v] Délka ve znacích vyrovnávací paměti, `szVersionString` odkazuje na.</span><span class="sxs-lookup"><span data-stu-id="82b5c-114">[in] The length, in characters, of the buffer that `szVersionString` points to.</span></span>  
+ <span data-ttu-id="c1c5a-114">[in] Délka ve znacích, vyrovnávací paměti, která `szVersionString` odkazuje na.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-114">[in] The length, in characters, of the buffer that `szVersionString` points to.</span></span>  
   
  `pcchVersionString`  
- <span data-ttu-id="82b5c-115">[out] Délka ve znacích, z `szVersionString`.</span><span class="sxs-lookup"><span data-stu-id="82b5c-115">[out] The length, in characters, of `szVersionString`.</span></span>  
+ <span data-ttu-id="c1c5a-115">[out] Délka ve znacích, z `szVersionString`.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-115">[out] The length, in characters, of `szVersionString`.</span></span>  
   
  `szVersionString`  
- <span data-ttu-id="82b5c-116">[out] Řetězec verze CLR.</span><span class="sxs-lookup"><span data-stu-id="82b5c-116">[out] The CLR version string.</span></span>  
+ <span data-ttu-id="c1c5a-116">[out] Řetězec verze modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-116">[out] The CLR version string.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="82b5c-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="82b5c-117">Remarks</span></span>  
- <span data-ttu-id="82b5c-118">Vám může předat hodnotu null pro libovolný parametr.</span><span class="sxs-lookup"><span data-stu-id="82b5c-118">You may pass null for any parameter.</span></span> <span data-ttu-id="82b5c-119">Ale `pcchVersionString` nemůže být null. Pokud `szVersionString` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="82b5c-119">However, `pcchVersionString` cannot be null unless `szVersionString` is also null.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c1c5a-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c1c5a-117">Remarks</span></span>  
+ <span data-ttu-id="c1c5a-118">Můžete předat hodnotu null pro žádné parametry.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-118">You may pass null for any parameter.</span></span> <span data-ttu-id="c1c5a-119">Ale `pcchVersionString` nemůže být null. Pokud `szVersionString` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="c1c5a-119">However, `pcchVersionString` cannot be null unless `szVersionString` is also null.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="82b5c-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="82b5c-120">Requirements</span></span>  
- <span data-ttu-id="82b5c-121">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="82b5c-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c1c5a-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c1c5a-120">Requirements</span></span>  
+ <span data-ttu-id="c1c5a-121">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c1c5a-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="82b5c-122">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="82b5c-122">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="c1c5a-122">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="c1c5a-122">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="82b5c-123">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="82b5c-123">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c1c5a-123">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c1c5a-123">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="82b5c-124">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="82b5c-124">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="c1c5a-124">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c1c5a-124">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="82b5c-125">Viz také</span><span class="sxs-lookup"><span data-stu-id="82b5c-125">See Also</span></span>  
- [<span data-ttu-id="82b5c-126">ICorProfilerInfo3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="82b5c-126">ICorProfilerInfo3 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  
- [<span data-ttu-id="82b5c-127">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="82b5c-127">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [<span data-ttu-id="82b5c-128">Profilace</span><span class="sxs-lookup"><span data-stu-id="82b5c-128">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a><span data-ttu-id="c1c5a-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c1c5a-125">See also</span></span>
+- [<span data-ttu-id="c1c5a-126">ICorProfilerInfo3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c1c5a-126">ICorProfilerInfo3 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
+- [<span data-ttu-id="c1c5a-127">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="c1c5a-127">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [<span data-ttu-id="c1c5a-128">Profilace</span><span class="sxs-lookup"><span data-stu-id="c1c5a-128">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)
