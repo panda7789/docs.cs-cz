@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2d45cf41-d8ae-4409-af3e-a96a7e476d85
-ms.openlocfilehash: ccf95ff250cc7c23b1ff981087de0f1310472880
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: cda8693ad4f061d2260d4629b774c401b0daac26
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47424360"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535941"
 ---
 # <a name="creating-a-datatable-from-a-dataview"></a>Vytvoření datové tabulky ze zobrazení dat
 Po načtení dat ze zdroje dat a vyplnili <xref:System.Data.DataTable> s daty, můžete chtít řadit, filtrovat nebo jinak omezit vrácená data bez načtení znovu. <xref:System.Data.DataView> Třídy to kvůli tomu je to možné. Kromě toho, pokud je potřeba vytvořit nový <xref:System.Data.DataTable> z <xref:System.Data.DataView>, můžete použít <xref:System.Data.DataView.ToTable%2A> metoda zkopírovat všechny řádky a sloupce nebo podmnožinu dat do nového <xref:System.Data.DataTable>. <xref:System.Data.DataView.ToTable%2A> Metoda poskytuje přetížení:  
@@ -205,7 +205,7 @@ Console.WriteLine();
   
  }  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Data.DataView.ToTable%2A>  
- [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Data.DataView.ToTable%2A>
+- [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, binary data
 - WCF Data Services, streams
 ms.assetid: aeccc45c-d5c5-4671-ad63-a492ac8043ac
-ms.openlocfilehash: 9f7ee114a5a480d470c2c32b5b83e287b07e9537
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 44507d8e746584ecf8efaa0b361d1707eae50156
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43515552"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54570587"
 ---
 # <a name="working-with-binary-data-wcf-data-services"></a>Práce s binárními daty (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna umožňuje načíst a aktualizovat binární data ze [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu v jednom z následujících způsobů:  
@@ -25,7 +25,7 @@ ms.locfileid: "43515552"
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] implementuje streamování binární data pomocí protokolu HTTP, jak jsou definovány v [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Binární data v tento mechanismus je považován za mediální zdroj, který je oddělený od ale souvisejících s entitou, která se nazývá položku media link entry. Další informace najdete v tématu [streamování poskytovatele](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md).  
   
 > [!TIP]
->  Podrobný příklad toho, jak vytvořit klientskou aplikaci Windows Presentation Foundation (WPF), která stahuje soubory binární obrázků ze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služba, která ukládá fotografie, najdete v příspěvku [dat služby streamování poskytovatele –. část 2: přístup k Stream zdroj média z klienta](https://go.microsoft.com/fwlink/?LinkId=201637). Stáhněte si ukázkový kód pro službu datového proudu fotografií dat vybrané v blogovém příspěvku, najdete v článku [streamování fotek ukázková Data pro služby](https://go.microsoft.com/fwlink/?LinkId=198988) v Galerie kódu na webu MSDN.  
+>  Podrobný příklad toho, jak vytvořit klientskou aplikaci Windows Presentation Foundation (WPF), která stahuje soubory binární obrázků ze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služba, která ukládá fotografie, najdete v příspěvku [dat služby streamování poskytovatele –. část 2: Přístup k Stream zdroj média z klienta](https://go.microsoft.com/fwlink/?LinkId=201637). Stáhněte si ukázkový kód pro službu datového proudu fotografií dat vybrané v blogovém příspěvku, najdete v článku [streamování fotek ukázková Data pro služby](https://go.microsoft.com/fwlink/?LinkId=198988) v Galerie kódu na webu MSDN.  
   
 ## <a name="entity-metadata"></a>Metadata entit  
  Entita, která má související datový proud prostředků je podle metadat datové služby pomocí `HasStream` atribut použitý pro typ entity, která je položka s odkazem na médium. V následujícím příkladu `PhotoInfo` entita je položku media link entry, která má související zdroje média, indikován `HasStream` atribut.  
@@ -38,7 +38,7 @@ ms.locfileid: "43515552"
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna poskytuje metody pro přístup k datové proudy binární prostředek ze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě dat služby. Při stahování prostředku média, můžete použít buď identifikátor URI prostředku média nebo můžete získat binární datový proud, který obsahuje vlastní data zdroj média. Můžete také nahrát data prostředku média jako binárního datového proudu.  
   
 > [!TIP]
->  Podrobný příklad toho, jak vytvořit klientskou aplikaci Windows Presentation Foundation (WPF), která stahuje soubory binární obrázků ze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služba, která ukládá fotografie, najdete v příspěvku [dat služby streamování poskytovatele –. část 2: přístup k Stream zdroj média z klienta](https://go.microsoft.com/fwlink/?LinkId=201637). Stáhněte si ukázkový kód pro službu datového proudu fotografií dat vybrané v blogovém příspěvku, najdete v článku [streamování fotek ukázková Data pro služby](https://go.microsoft.com/fwlink/?LinkId=198988) v Galerie kódu na webu MSDN.  
+>  Podrobný příklad toho, jak vytvořit klientskou aplikaci Windows Presentation Foundation (WPF), která stahuje soubory binární obrázků ze [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služba, která ukládá fotografie, najdete v příspěvku [dat služby streamování poskytovatele –. část 2: Přístup k Stream zdroj média z klienta](https://go.microsoft.com/fwlink/?LinkId=201637). Stáhněte si ukázkový kód pro službu datového proudu fotografií dat vybrané v blogovém příspěvku, najdete v článku [streamování fotek ukázková Data pro služby](https://go.microsoft.com/fwlink/?LinkId=198988) v Galerie kódu na webu MSDN.  
   
 ### <a name="getting-the-uri-of-the-binary-stream"></a>Získání identifikátoru URI binární Stream  
  Při načítání určitých typů prostředků média, jako jsou obrázky a další soubory médií, často je jednodušší použít identifikátor URI prostředku médií ve vaší aplikaci než zpracování samotný datový proud binárních dat. Chcete-li získat identifikátor URI přidružený k položku dávající media link entry datový proud prostředku, musí volat <xref:System.Data.Services.Client.DataServiceContext.GetReadStreamUri%2A> metodu na <xref:System.Data.Services.Client.DataServiceContext> instanci, která se sleduje subjekt. Následující příklad ukazuje, jak volat <xref:System.Data.Services.Client.DataServiceContext.GetReadStreamUri%2A> metodu k získání identifikátoru URI datový proud prostředku média, který se používá k vytvoření nové bitové kopie na straně klienta:  
@@ -66,6 +66,6 @@ ms.locfileid: "43515552"
 > [!NOTE]
 >  Při volání <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A>, datový proud není odeslána do služby data do <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> je volána.  
   
-## <a name="see-also"></a>Viz také  
- [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
- [Vazba dat k ovládacím prvkům](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)
+## <a name="see-also"></a>Viz také:
+- [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+- [Vazba dat k ovládacím prvkům](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md)

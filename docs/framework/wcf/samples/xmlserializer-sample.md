@@ -2,12 +2,12 @@
 title: Ukázka třídy XMLSerializer
 ms.date: 03/30/2017
 ms.assetid: 7d134453-9a35-4202-ba77-9ca3a65babc3
-ms.openlocfilehash: 46f3d10305a244d23be19c87566edacfaf7bff46
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d85080ce9aec47b2ffb0d4dc255001901f722ae4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188401"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572757"
 ---
 # <a name="xmlserializer-sample"></a>Ukázka třídy XMLSerializer
 Tato ukázka předvádí, jak k serializaci a deserializaci typy, které jsou kompatibilní s <xref:System.Xml.Serialization.XmlSerializer>. Výchozí formátování Windows Communication Foundation (WCF) je <xref:System.Runtime.Serialization.DataContractSerializer> třídy. <xref:System.Xml.Serialization.XmlSerializer> Třídy lze použít k serializaci a deserializaci typy, jestliže <xref:System.Runtime.Serialization.DataContractSerializer> třída se nedá použít. To je často případ, kdy mít naprostou kontrolu nad XML se vyžaduje – například pokud část dat musí být atribut XML a není platný element XML. Také <xref:System.Xml.Serialization.XmlSerializer> často získá automaticky vybrán při vytváření klientů služby bez WCF.  
@@ -134,4 +134,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\Interop\XmlSerializer`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

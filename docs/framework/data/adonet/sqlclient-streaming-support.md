@@ -2,12 +2,12 @@
 title: Podpora streamování SqlClient
 ms.date: 03/30/2017
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-ms.openlocfilehash: eeec8f2a88894762fd8dab93bf0b3b11941ba17a
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 5d376a29646ce7ca391637522de7878853e7d5a8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612995"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555424"
 ---
 # <a name="sqlclient-streaming-support"></a>Podpora streamování SqlClient
 Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) podporuje nestrukturovaných dat na serveru (dokumenty, obrázky a mediální soubory). Databáze SQL serveru můžete ukládat rozsáhlé binární objekty (objekty BLOB), ale načítají se objekty BLOB můžete použít velké množství paměti.  
@@ -516,5 +516,5 @@ namespace StreamingFromServerToAnother {
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+## <a name="see-also"></a>Viz také:
+- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)

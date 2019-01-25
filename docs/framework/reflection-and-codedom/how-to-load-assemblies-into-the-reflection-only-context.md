@@ -14,45 +14,45 @@ helpviewer_keywords:
 ms.assetid: 9818b660-52f5-423d-a9af-e75163aa7068
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7aa7f8a158a851baf76455da685059f02c69cb6c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7eeef33745ebc8209fc7f69a9337af4093c1e8a1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33398723"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54567045"
 ---
 # <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>Postupy: Načtení sestavení do kontextu pouze pro reflexi
-Kontext načítání pouze pro reflexi umožňuje zkontrolovat sestavení zkompilovat pro jiné platformy, nebo pro jiné verze rozhraní .NET Framework. Kód načtený do tohoto kontextu mohou být hodnoceny pouze; nelze provést. To znamená, že objekty nelze vytvořit, protože konstruktory nelze provést. Protože kód nelze provést, nejsou automaticky načíst závislosti. Pokud potřebujete posoudit, je nutné načíst je sami.  
+Kontext načítání pouze pro reflexi umožňuje zkoumat sestavení zkompilován pro jiné platformy nebo u jiných verzí rozhraní .NET Framework. Jenom se dají prozkoumat kód načtený do tohoto kontextu; nelze provést. To znamená, že nelze vytvořit objekty, protože konstruktory nemůže být proveden. Protože kód nelze provést, nejsou automaticky nahrány závislosti. Pokud je potřeba je prozkoumat, je nutné načíst je sami.  
   
 ### <a name="to-load-an-assembly-into-the-reflection-only-load-context"></a>Načtení sestavení do kontextu pouze pro reflexi zatížení  
   
-1.  Použití <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.String%29> přetížení metody se načíst sestavení zadaný zobrazovaný název, nebo <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metoda načíst sestavení zadané cesty. Pokud je sestavení binární bitovou kopii, použijte <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.Byte%5B%5D%29> přetížení metody.  
+1.  Použití <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.String%29> přetížení metody se načíst sestavení zadané zobrazované jméno, nebo <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metodu pro načtení sestavení zadané cestě. Pokud je sestavení binárního obrazu, použijte <xref:System.Reflection.Assembly.ReflectionOnlyLoad%28System.Byte%5B%5D%29> přetížení metody.  
   
     > [!NOTE]
-    >  Kontext pouze pro reflexi nelze použít k načtení verzi mscorlib.dll z verze rozhraní .NET Framework, než verze v kontextu spuštění.  
+    >  Načíst verzi souboru mscorlib.dll z verze rozhraní .NET Framework než verze v kontextu spuštění nelze použít kontext pouze pro reflexi.  
   
-2.  Pokud má sestavení závislosti, <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> metoda je nenačte. Pokud potřebujete posoudit, je nutné načíst je sami.  
+2.  Pokud sestavení obsahuje závislosti, <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> je metoda nenačte. Pokud je potřeba je prozkoumat, je nutné načíst je sami.  
   
-3.  Určit, zda je sestavení do kontextu pouze pro reflexi načíst pomocí sestavení <xref:System.Reflection.Assembly.ReflectionOnly%2A> vlastnost.  
+3.  Určení, zda je sestavení načteno do kontextu pouze pro reflexi pomocí sestavení <xref:System.Reflection.Assembly.ReflectionOnly%2A> vlastnost.  
   
-4.  Pokud atributy se používají k sestavení nebo typy v sestavení, zkontrolujte pomocí těchto atributů <xref:System.Reflection.CustomAttributeData> třída zajistit, že žádné pokusu o spuštění kódu v kontextu pouze pro reflexi. Použijte odpovídající přetížení <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> metoda získat <xref:System.Reflection.CustomAttributeData> objekty, které představují atributy použité na sestavení, člen, modul nebo parametr.  
+4.  Pokud se atributy se použily k sestavení a typy v sestavení, prozkoumejte tyto atributy s použitím <xref:System.Reflection.CustomAttributeData> třídu zajistíte, že je proveden žádný pokus o spouštění kódu v kontextu pouze pro reflexi. Použijte odpovídající přetížení <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A?displayProperty=nameWithType> metodu k získání <xref:System.Reflection.CustomAttributeData> reprezentují atributy použité na sestavení, člen, modul nebo parametr.  
   
     > [!NOTE]
-    >  Atributy použité na sestavení nebo na jeho obsah může být definovaná v sestavení, nebo může být definovaná v jiném sestavení do kontextu pouze pro reflexi načteno. Neexistuje žádný způsob, jak předem říct, kde jsou definovány atributy.  
+    >  Atributy použité na sestavení nebo k jejímu obsahu může být definované v sestavení nebo mohou být definovány v jiném sestavení načtena do kontextu pouze pro reflexi. Neexistuje žádný způsob, jak předem říct, kde jsou definovány atributy.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak prozkoumat atributy použité k sestavení do kontextu pouze pro reflexi načteno.  
+ Následující příklad kódu ukazuje, jak prozkoumat atributy použité u sestavení načtena do kontextu pouze pro reflexi.  
   
- Příklad kódu definuje vlastní atribut s dva konstruktory a jednu vlastnost. Atribut se použije na sestavení, typu deklarován v sestavení, metoda typu a do parametru metody. Po provedení sestavení načte samotné do kontextu pouze pro reflexi a zobrazí informace o vlastních atributů, které byly použity k němu a typy a členy, které obsahuje.  
+ Příklad kódu definuje vlastní atribut s dva konstruktory a jednu vlastnost. Atribut je použit k sestavení, typ deklarovaný v sestavení, metoda typu a parametru metody. Při spuštění sestavení samotné načte do kontextu pouze pro reflexi a zobrazí informace o vlastních atributů, které byly použity k němu a k typům a členům, které obsahuje.  
   
 > [!NOTE]
->  Pro zjednodušení příkladu kódu, sestavení načte a prověří sám sebe. Za normálních okolností by byste měli najít do stejného sestavení do kontextu spuštění a kontext pouze pro reflexi načteno.  
+>  Pro zjednodušení příkladu kódu, sestavení načte a zkoumá samotný. Za normálních okolností by měli očekávat najít stejné sestavení načtena do kontextu spuštění a kontextu pouze pro reflexi.  
   
  [!code-cpp[CustomAttributeData#1](../../../samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
  [!code-csharp[CustomAttributeData#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
  [!code-vb[CustomAttributeData#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A>  
- <xref:System.Reflection.Assembly.ReflectionOnly%2A>  
- <xref:System.Reflection.CustomAttributeData>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A>
+- <xref:System.Reflection.Assembly.ReflectionOnly%2A>
+- <xref:System.Reflection.CustomAttributeData>

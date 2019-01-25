@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3249ad76c428752c91540e135bc978d3fe835de1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 69af794d5405894d24f0d7545613a0e85ca3ec6a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448130"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54574011"
 ---
 # <a name="imetadataimport2getmethodspecprops-method"></a>IMetaDataImport2::GetMethodSpecProps – metoda
-Získá metadata podpis metody odkazuje zadaný MethodSpec token.  
+Získá metadata podpis metody odkazuje zadaný token MethodSpec token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,26 +40,26 @@ HRESULT GetMethodSpecProps (
   
 #### <a name="parameters"></a>Parametry  
  `mi`  
- [v] MethodSpec token, který představuje instance metody.  
+ [in] Token MethodSpec, který představuje instanci metody.  
   
  `tkParent`  
- [out] Ukazatel na MethodDef nebo MethodRef token, který představuje definici metody.  
+ [out] Ukazatel na token MethodDef nebo MethodRef, který představuje definici metody.  
   
  `ppvSigBlob`  
- [out] Ukazatel na binární metadata podpis metody.  
+ [out] Ukazatel na binární metadat podpis metody.  
   
  `pcbSigBlob`  
- [out] Velikost v bajtech z `ppvSigBlob`.  
+ [out] Velikost v bajtech, z `ppvSigBlob`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ServiceInstaller class, security context
 ms.assetid: 02187c7b-dbf2-45f2-96c2-e11010225a22
 author: ghogen
-ms.openlocfilehash: a5a437af90f29bc601215176ad5c4fec702ddbc0
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 9adcb39504cc2b5189f0c65cc5603c149d1483f7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036075"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572614"
 ---
 # <a name="how-to-specify-the-security-context-for-services"></a>Postupy: Určení kontextu zabezpečení pro služby
 Ve výchozím nastavení služby jsou spuštěny v kontextu zabezpečení než přihlášeným uživatelem. Volá se spouštějí v kontextu systému výchozí účet služby `LocalSystem`, která jim udělí různá přístupová oprávnění k systémových prostředků, než uživatel. Toto chování k určení jiného uživatelského účtu, pod kterým se vaše služba spouštět můžete změnit.  
@@ -35,7 +35,7 @@ Ve výchozím nastavení služby jsou spuštěny v kontextu zabezpečení než p
   
 ### <a name="to-specify-the-security-context-for-a-service"></a>K určení kontextu zabezpečení pro službu  
   
-1.  Po vytvoření vaší služby, přidejte nezbytné instalační programy pro něj. Další informace najdete v tématu [postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+1.  Po vytvoření vaší služby, přidejte nezbytné instalační programy pro něj. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
   
 2.  V návrháři pro přístup `ProjectInstaller` třídy a klikněte na instalační program služby procesu pro službu pracujete.  
   
@@ -44,7 +44,7 @@ Ve výchozím nastavení služby jsou spuštěny v kontextu zabezpečení než p
   
 3.  V **vlastnosti** okno, nastaveno <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> na odpovídající hodnotu.  
   
-## <a name="see-also"></a>Viz také  
- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
- [Postupy: Vytváření služeb systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+## <a name="see-also"></a>Viz také:
+- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
+- [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
+- [Postupy: Vytvoření služeb Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)

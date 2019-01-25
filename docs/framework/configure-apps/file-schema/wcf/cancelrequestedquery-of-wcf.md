@@ -2,12 +2,12 @@
 title: '&lt;cancelRequestedQuery&gt; služby WCF'
 ms.date: 03/30/2017
 ms.assetid: b690d870-02eb-4c56-8bc3-e5ca99d7097b
-ms.openlocfilehash: 6b41721dcc0c489377c59bfccdd0b1a617f551b0
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 72fd23097760375738c2116b4535940873436986
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54149069"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54498265"
 ---
 # <a name="ltcancelrequestedquerygt-of-wcf"></a>&lt;cancelRequestedQuery&gt; služby WCF
 
@@ -17,11 +17,11 @@ Další informace o sledování profil dotazy naleznete v tématu [sledování p
   
 \<system.serviceModel>  
 \<sledování >  
-\<profily >  
-\<profil trackingProfile >  
+\<profiles>  
+\<trackingProfile>  
 \<pracovní postup >  
-\<cancelRequestedQueries >  
-\<cancelRequestedQuery >  
+\<cancelRequestedQueries>  
+\<cancelRequestedQuery>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -59,9 +59,9 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<cancelRequestedQueries >](cancelrequestedqueries-of-wcf.md)|Představuje kolekci dotazů, které se používají ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita.|  
+|[\<cancelRequestedQueries>](cancelrequestedqueries-of-wcf.md)|Představuje kolekci dotazů, které se používají ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita.|  
   
-## <a name="see-also"></a>Viz také:  
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.CancelRequestedQueryElement?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.CancelRequestedQuery?displayProperty=nameWithType>

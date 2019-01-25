@@ -2,12 +2,12 @@
 title: Doladění aplikace s modifikátorem Async (C#)
 ms.date: 07/20/2015
 ms.assetid: 97696eb9-81fc-4940-9655-84daa8eb4d5c
-ms.openlocfilehash: 23557c0c920fbd858e9bdf8ae629bd5ef5f0355b
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: f33a06a181b44fc15ed2de81c4ceb385023a6fe5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47197926"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54601945"
 ---
 # <a name="fine-tuning-your-async-application-c"></a>Doladění aplikace s modifikátorem Async (C#)
 Přidáte přesnost a flexibilitu asynchronním aplikací pomocí metody a vlastnosti, která <xref:System.Threading.Tasks.Task> typu bude k dispozici. Témata v této části obsahují příklady používající <xref:System.Threading.CancellationToken> a důležité `Task` metody jako <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>.  
@@ -20,7 +20,7 @@ Přidáte přesnost a flexibilitu asynchronním aplikací pomocí metody a vlast
   
 -   `WhenAll` Vrátí úlohu, která se dokončí po dokončení všech úloh v kolekci.  
   
-     Další informace a příklad použití `WhenAll`, naleznete v tématu [postupy: rozšíření návodu úloh pomocí metody Task.whenall (C#) asynchronních](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).  
+     Další informace a příklad použití `WhenAll`, naleznete v tématu [jak: Rozšíření návodu úloh pomocí metody Task.whenall asynchronních (C#)](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).  
   
  Tato část obsahuje následující příklady.  
   
@@ -39,8 +39,8 @@ Přidáte přesnost a flexibilitu asynchronním aplikací pomocí metody a vlast
   
  ![Okno WPF s tlačítkem Storno](../../../../csharp/programming-guide/concepts/async/media/cancellation.png "zrušení")  
   
- Můžete si stáhnout kompletní projektů Windows Presentation Foundation (WPF) z [asynchronní vzorek: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).  
+ Můžete si stáhnout kompletní projektů Windows Presentation Foundation (WPF) z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)

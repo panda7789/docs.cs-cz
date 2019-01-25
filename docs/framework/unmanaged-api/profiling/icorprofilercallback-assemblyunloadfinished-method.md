@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0d757a0455992bc82ead922a5fbf4c71f11a9085
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a6a9fe86d6160ebac084625ef94013cce9a27a3d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450866"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54501877"
 ---
 # <a name="icorprofilercallbackassemblyunloadfinished-method"></a>ICorProfilerCallback::AssemblyUnloadFinished – metoda
-Upozorní profileru sestavení byl odpojen.  
+Oznámí profileru, že sestavení byl uvolněn.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +37,18 @@ HRESULT AssemblyUnloadFinished(
   
 #### <a name="parameters"></a>Parametry  
  `assemblyId`  
- [v] Identifikuje sestavení, které odpojení.  
+ [in] Určuje sestavení, které uvolňován.  
   
  `hrStatus`  
- [v] HRESULT, která určuje, zda byla sestavení úspěšně odpojen.  
+ [in] HRESULT, která určuje, zda bylo sestavení úspěšně odpojen.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `assemblyId` není platná pro požadavek informace po [icorprofilercallback::assemblyunloadstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-assemblyunloadstarted-method.md) metoda vrátí.  
+ Hodnota `assemblyId` není platná pro požadavek informace po [icorprofilercallback::assemblyunloadstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-assemblyunloadstarted-method.md) metoda vrátí hodnotu.  
   
- Některé části uvolnění sestavení může pokračovat po `AssemblyUnloadFinished` zpětného volání. Selhání HRESULT v `hrStatus` znamená chybu. Ale úspěšné HRESULT v `hrStatus` pouze označuje, že první část uvolnění sestavení proběhl úspěšně.  
+ Některé části uvolňování sestavení může pokračovat po `AssemblyUnloadFinished` zpětného volání. Selhání hodnoty HRESULT v `hrStatus` naznačuje chybu. Ale úspěch HRESULT v `hrStatus` značí pouze, že první část uvolňování sestavení byla úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -56,5 +56,5 @@ HRESULT AssemblyUnloadFinished(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

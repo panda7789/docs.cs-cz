@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e5fca698adc4d08d805fec2ff80af377366674b6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a830a4cc881912d52ec33959104957d0b858b16a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445952"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54539464"
 ---
 # <a name="imetadataimportenummemberswithname-method"></a>IMetaDataImport::EnumMembersWithName – metoda
 Vytvoří výčet MemberDef tokeny představující členů zadaného typu se zadaným názvem.  
@@ -42,42 +42,42 @@ HRESULT EnumMembersWithName (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor.  
+ [out v] Ukazatel na enumerátor.  
   
  `cl`  
- [v] TypeDef token představující typ se členy do zobrazení výčtu.  
+ [in] Token TypeDef představující typ s členy výčtu.  
   
  `szName`  
- [v] Název člena, který omezuje obor enumerátor.  
+ [in] Název člena, který omezuje rozsah výčtu.  
   
  `rMembers`  
- [out] Pole používá k ukládání MemberDef tokenů.  
+ [out] Pole pro ukládání tokenů MemberDef.  
   
  `cMax`  
- [v] Maximální velikost `rMembers` pole.  
+ [in] Maximální velikost `rMembers` pole.  
   
  `pcTokens`  
- [out] Skutečný počet MemberDef tokeny, vrátí se v `rMembers`.  
+ [out] Skutečný počet tokenů MemberDef vrácené v `rMembers`.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda zobrazí pole a metody, ale ne vlastnosti nebo události. Na rozdíl od [imetadataimport::enummembers –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummembers-method.md), `EnumMembersWithName` zahodí všechny pole a člen tokeny, které nemají zadaný název.  
+ Tato metoda vytváří výčet polí a metod, ale nikoli vlastnosti nebo události. Na rozdíl od [imetadataimport::enummembers –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummembers-method.md), `EnumMembersWithName` zahodí všechny pole a člen tokeny, které nemají se zadaným názvem.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeDefs` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné MemberDef tokenů pro zobrazení výčtu. V takovém případě `pcTokens` je nulová.|  
+|`S_OK`|`EnumTypeDefs` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny MemberDef výčet. V takovém případě `pcTokens` je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Join statement [Visual Basic]
 - Join clause [Visual Basic]
 ms.assetid: 6dd37936-b27c-4e00-98ad-154b23f4de64
-ms.openlocfilehash: b1551583079c66d1bf5f6963a42d5d24e518fff3
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 2017e8edbb4d1bd25a3669b92553f2905b567594
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46003318"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514682"
 ---
 # <a name="join-clause-visual-basic"></a>Join – klauzule (Visual Basic)
 Kombinuje dvě kolekce do jedné kolekce. Operace spojení je založená na shodujících se klíčích a používá `Equals` operátor.  
@@ -31,10 +31,10 @@ On key1 Equals key2 [ And key3 Equals key4 [... ]
   
 ## <a name="parts"></a>Součásti  
  `element`  
- Požadováno. Řídicí proměnná pro kolekci, je připojen.  
+ Povinný parametr. Řídicí proměnná pro kolekci, je připojen.  
   
  `collection`  
- Požadováno. Kolekce, kterou chcete v kombinaci s kolekce vymezených na levé straně `Join` operátor. A `Join` klauzule může být vnořena v jiné `Join` klauzuli, nebo `Group Join` klauzuli.  
+ Povinný parametr. Kolekce, kterou chcete v kombinaci s kolekce vymezených na levé straně `Join` operátor. A `Join` klauzule může být vnořena v jiné `Join` klauzuli, nebo `Group Join` klauzuli.  
   
  `joinClause`  
  Volitelné. Jeden nebo více dalších `Join` klauzule pro další upřesnění dotazu.  
@@ -43,7 +43,7 @@ On key1 Equals key2 [ And key3 Equals key4 [... ]
  Volitelné. Jeden nebo více dalších `Group Join` klauzule pro další upřesnění dotazu.  
   
  `key1` `Equals` `key2`  
- Požadováno. Určuje klíče pro kolekce, je připojen. Je nutné použít `Equals` operátor porovnání klíčů z kolekcí je připojen. Podmínky připojení můžete kombinovat pomocí `And` operátor k identifikaci více klíčů. `key1` musí být z kolekce na levé straně `Join` operátor. `key2` musí být z kolekce na pravé straně `Join` operátor.  
+ Povinný parametr. Určuje klíče pro kolekce, je připojen. Je nutné použít `Equals` operátor porovnání klíčů z kolekcí je připojen. Podmínky připojení můžete kombinovat pomocí `And` operátor k identifikaci více klíčů. `key1` musí být z kolekce na levé straně `Join` operátor. `key2` musí být z kolekce na pravé straně `Join` operátor.  
   
  Klíče používané v podmínku připojení může být výrazů, které obsahují více než jednu položku z kolekce. Každý výraz klíče však může obsahovat pouze položky z jeho příslušné kolekce.  
   
@@ -87,10 +87,10 @@ On key1 Equals key2 [ And key3 Equals key4 [... ]
   
  `explorer (2424), File Explorer, Priority = 8`  
   
-## <a name="see-also"></a>Viz také  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Dotazy](../../../visual-basic/language-reference/queries/index.md)  
- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
- [Klauzule Group Join](../../../visual-basic/language-reference/queries/group-join-clause.md)  
- [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)
+## <a name="see-also"></a>Viz také:
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Dotazy](../../../visual-basic/language-reference/queries/index.md)
+- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
+- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
+- [Klauzule Group Join](../../../visual-basic/language-reference/queries/group-join-clause.md)
+- [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)

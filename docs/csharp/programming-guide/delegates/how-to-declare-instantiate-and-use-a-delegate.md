@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
-ms.openlocfilehash: bc9fc81a74d438aca57779fa565fdbeba3968087
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 8ecbac4608cfd42aa099a0cd66d7d22241a93265
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53237061"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54557705"
 ---
 # <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>Postupy: Deklarování, vytváření instancí a použití delegáta (C# Průvodce programováním v)
 V jazyce C# 1.0 nebo novější delegáty lze deklarovat, jak je znázorněno v následujícím příkladu.  
@@ -72,8 +72,8 @@ V jazyce C# 1.0 nebo novější delegáty lze deklarovat, jak je znázorněno v 
   
      Delegát může být buď volat synchronně, jako v následujícím příkladu, nebo asynchronně pomocí `BeginInvoke` a `EndInvoke` metody.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Události](../../../csharp/programming-guide/events/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Události](../../../csharp/programming-guide/events/index.md)
 - [Delegáti](../../../csharp/programming-guide/delegates/index.md)

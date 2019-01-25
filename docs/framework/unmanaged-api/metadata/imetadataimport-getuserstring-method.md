@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 474338ff1780ce9b442208cd06f8b14bc411be5e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e806bae1911ea6ffc5bb6e9af76d99524636d39e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447739"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491142"
 ---
 # <a name="imetadataimportgetuserstring-method"></a>IMetaDataImport::GetUserString – metoda
-Získá reprezentována Zadaná metadata token řetězcového literálu.  
+Získá reprezentována token metadat zadaného řetězcového literálu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,26 +40,26 @@ HRESULT GetUserString (
   
 #### <a name="parameters"></a>Parametry  
  `stk`  
- [v] Token řetězec vrátit text přidružený k.  
+ [in] Řetězec s tokenem pro vrácení přidružené řetězce pro.  
   
  `szString`  
  [out] Kopie požadovaný řetězec.  
   
  `cchString`  
- [v] Maximální velikost v široké znaky požadované `szString`.  
+ [in] Maximální velikost v širokých znaků požadovaných `szString`.  
   
  `pchString`  
- [out] Velikost v široké znaky vrácený `szString`.  
+ [out] Velikost v široké znaky vráceného `szString`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

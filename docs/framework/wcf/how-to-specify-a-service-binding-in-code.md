@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 67ab5dd8-79c1-4e62-aa75-828ea918a53a
-ms.openlocfilehash: ad8986537d0132bf61fe9eb2da2a13f8789ee4ba
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f39b9d7bfdc1a5d8bf33c20f047738be1e41f226
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33499285"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54531201"
 ---
 # <a name="how-to-specify-a-service-binding-in-code"></a>Postupy: Zadání vazby služby v kódu
-V tomto příkladu `ICalculator` kontrakt je definována pro službu kalkulačky, služba se implementuje v `CalculatorService` třídě a následně svůj koncový bod je definována v kódu, kde je zadán, že musí používat službu <xref:System.ServiceModel.BasicHttpBinding> třídy.  
+V tomto příkladu `ICalculator` smlouvy je definován pro službu kalkulačky, služba se implementuje v `CalculatorService` třídě a následně svůj koncový bod je definováno v kódu, kde je zadán, že musíte použít službu <xref:System.ServiceModel.BasicHttpBinding> třídy.  
   
- Obvykle je osvědčeným postupem zadejte vazby a informace o adrese deklarativně v konfiguraci, nikoli imperativní v kódu. Definování koncové body v kódu obvykle není praktické protože jsou obvykle liší od těch, které používá při služby je vyvíjen vazeb a adresy pro v nasazené službě. Obecně platí udržování vazby a adresování informace mimo kód jim umožňuje změnit bez nutnosti znovu zkompiluje nebo znovu nasadit aplikaci.  
+ Obvykle je osvědčeným postupem určete vazbu a informace o adrese deklarativně v konfiguraci, nikoli imperativně v kódu. Definování koncových bodů v kódu není obvykle praktické protože vazeb a adresy pro službu nasazenou se obvykle liší od nastavení použít, je vyvíjena služby. Obecně platí udržování vazby a adresování informace mimo kód jim umožňuje změnit bez nutnosti znovu kompilovat nebo znovu nasadit aplikaci.  
   
- Popis toho, jak nakonfigurovat tuto službu pomocí konfigurace – elementy místo kód, najdete v části [postupy: zadání vazby služby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
+ Popis, jak nakonfigurovat tuto službu, pomocí elementů konfigurace namísto kódu najdete v tématu [jak: Zadání vazby služby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
   
 ### <a name="to-specify-in-code-to-use-the-basichttpbinding-for-the-service"></a>Pokud chcete zadat do kódu pro použití BasicHttpBinding pro službu  
   
@@ -26,28 +26,28 @@ V tomto příkladu `ICalculator` kontrakt je definována pro službu kalkulačky
      [!code-csharp[C_HowTo_CodeServiceBinding#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeservicebinding/cs/source.cs#1)]
      [!code-vb[C_HowTo_CodeServiceBinding#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeservicebinding/vb/source.vb#1)]  
   
-2.  Implementujte kontrakt služby v třídě služby.  
+2.  Implementace kontraktu služby ve třídě služby.  
   
      [!code-csharp[C_HowTo_CodeServiceBinding#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeservicebinding/cs/source.cs#2)]
      [!code-vb[C_HowTo_CodeServiceBinding#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeservicebinding/vb/source.vb#2)]  
   
-3.  V hostitelských aplikaci vytvořte základní adresu pro tuto službu a vazby pro použití se službou.  
+3.  V hostitelské aplikace vytvořte základní adresa služby a vazby pro použití se službou.  
   
      [!code-csharp[C_HowTo_CodeServiceBinding#3](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeservicebinding/cs/source.cs#3)]
      [!code-vb[C_HowTo_CodeServiceBinding#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeservicebinding/vb/source.vb#3)]  
   
-4.  Vytvořte hostitele služby, přidat koncový bod a pak otevřete hostitele.  
+4.  Vytvoření hostitele pro službu, přidat koncový bod a poté otevřete hostitele.  
   
      [!code-csharp[C_HowTo_CodeServiceBinding#4](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeservicebinding/cs/source.cs#4)]
      [!code-vb[C_HowTo_CodeServiceBinding#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeservicebinding/vb/source.vb#4)]  
   
 ### <a name="to-modify-the-default-values-of-the-binding-properties"></a>Chcete-li změnit výchozí hodnoty vlastností vazby  
   
-1.  K úpravě jeden z výchozí hodnoty vlastností <xref:System.ServiceModel.BasicHttpBinding> třídy, nastavte hodnotu vlastnosti o vazbě na novou hodnotu před vytvořením hostitele. Například změnit výchozí časový limit pro otevření a zavření hodnoty 1 minuta na 2 minuty, použijte následující příkaz.  
+1.  Chcete-li změnit jeden z výchozí hodnoty vlastností <xref:System.ServiceModel.BasicHttpBinding> třídy, nastavte hodnotu vlastností pro vazbu na novou hodnotu před vytvořením hostitele. Například pokud chcete změnit výchozí časový limit otevření a zavření hodnoty 1 minuta 2 minuty, použijte následující.  
   
      [!code-csharp[C_HowTo_CodeServiceBinding#5](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_codeservicebinding/cs/source.cs#5)]
      [!code-vb[C_HowTo_CodeServiceBinding#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_codeservicebinding/vb/source.vb#5)]  
   
-## <a name="see-also"></a>Viz také  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [Zadání adresy koncového bodu](../../../docs/framework/wcf/specifying-an-endpoint-address.md)
+## <a name="see-also"></a>Viz také:
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [Zadání adresy koncového bodu](../../../docs/framework/wcf/specifying-an-endpoint-address.md)

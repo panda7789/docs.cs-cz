@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3d31c5c1b95d250f90b202b391d908f9c12afb84
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e22ed258390f7adc9bbf8cd425afe208b2f9b12c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444474"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54607040"
 ---
 # <a name="ihosttaskmanagerleaveruntime-method"></a>IHostTaskManager::LeaveRuntime – metoda
-Upozorní hostitele, aktuálně prováděné úlohy je nechte common language runtime (CLR) a zadejte nespravovaného kódu.  
+Upozorňuje hostitele, že právě prováděnou úlohu se chystá nechte common language runtime (CLR) a zadejte nespravovaného kódu.  
   
 > [!IMPORTANT]
->  Odpovídající volání [ihosttaskmanager::enterruntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md) upozorní hostitele aktuálně prováděné úlohy je nutnosti opětovného zadávání spravovaného kódu.  
+>  Odpovídající volání [ihosttaskmanager::enterruntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md) upozorňuje hostitele, že je právě prováděnou úlohu pokuste spravovaného kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,43 +40,43 @@ HRESULT LeaveRuntime (
   
 #### <a name="parameters"></a>Parametry  
  `target`  
- [v] Adresa v rámci namapované přenosné spustitelný soubor nespravované funkce, která se má volat.  
+ [in] Adresa v mapovaných přenosný spustitelný soubor nespravovanou funkci, která se má volat.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`LeaveRuntime` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|`LeaveRuntime` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
-|E_OUTOFMEMORY|Je k dispozici k dokončení požadované přidělení není dostatek paměti.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|E_OUTOFMEMORY|Nedostatek paměti je k dispozici k dokončení požadované přidělení.|  
   
 ## <a name="remarks"></a>Poznámky  
- Mohou být vnořené pořadí volání do a z nespravovaného kódu. Například následující seznam popisuje hypotetický situace, ve kterém je pořadí volání `LeaveRuntime`, [ihosttaskmanager::reverseenterruntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md), [ihosttaskmanager::reverseleaveruntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseleaveruntime-method.md), a `IHostTaskManager::EnterRuntime` umožňuje hostitele k identifikaci vnořené vrstvy.  
+ Mohou být vnořené sekvence volání do a z nespravovaného kódu. Například následující seznam popisuje hypotetické situace, ve kterém pořadí volání `LeaveRuntime`, [ihosttaskmanager::reverseenterruntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md), [ihosttaskmanager::reverseleaveruntime –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseleaveruntime-method.md), a `IHostTaskManager::EnterRuntime` umožňuje tak hostitele kvůli identifikaci vnořených vrstev.  
   
 |Akce|Odpovídající volání metody|  
 |------------|-------------------------------|  
-|Vyvolání nespravované funkce napsané v jazyce C pomocí platformy spravované spustitelné volání jazyka Visual Basic.|`IHostTaskManager::LeaveRuntime`|  
-|Nespravované funkce C volá metodu v spravovanou knihovnu DLL napsané v C#.|`IHostTaskManager::ReverseEnterRuntime`|  
-|Spravované funkce jazyka C# volá jinou funkci nespravované napsané v jazyce C, také pomocí platformy vyvolání.|`IHostTaskManager::LeaveRuntime`|  
-|Nespravované funkce second vrátí provádění funkce jazyka C#.|`IHostTaskManager::EnterRuntime`|  
-|Funkce jazyka C# vrací provádění první nespravované funkce.|`IHostTaskManager::ReverseLeaveRuntime`|  
-|První nespravované funkce vrátí provádění programu jazyka Visual Basic.|`IHostTaskManager::EnterRuntime`|  
+|Spravované spustitelný soubor volá jazyka Visual Basic vyvolat nespravovanou funkci napsané v jazyce C s použitím platformy.|`IHostTaskManager::LeaveRuntime`|  
+|Nespravovaná funkce C volá metodu v spravovaná knihovna DLL, napsaný v C#.|`IHostTaskManager::ReverseEnterRuntime`|  
+|Spravovanou C# funkce volá jinou nespravované funkci napsané v jazyce C, také pomocí platformy vyvolat.|`IHostTaskManager::LeaveRuntime`|  
+|Druhá nespravované funkce vrátí provádění C# funkce.|`IHostTaskManager::EnterRuntime`|  
+|C# Funkce vrátí vykonávání do první nespravované funkci.|`IHostTaskManager::ReverseLeaveRuntime`|  
+|První nespravované funkce vrátí vykonávání do programu Visual Basic.|`IHostTaskManager::EnterRuntime`|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  
- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  
- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
+- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
+- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
+- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)

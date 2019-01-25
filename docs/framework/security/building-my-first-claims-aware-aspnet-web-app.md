@@ -3,12 +3,12 @@ title: Vytváření Moje první aplikace s deklaracemi identity v prostředí AS
 ms.date: 03/30/2017
 ms.assetid: 3ee8ee7f-caba-4267-9343-e313fae2876d
 author: BrucePerlerMS
-ms.openlocfilehash: 76b02a0e6869b0d4de181b59296a0858aa80948c
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 67489b2bb93719d8182159fbc91703399d5e8bc7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840846"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54588961"
 ---
 # <a name="building-my-first-claims-aware-aspnet-web-application"></a>Vytváření Moje první aplikace s deklaracemi identity v prostředí ASP.NET
 ## <a name="applies-to"></a>Platí pro  
@@ -41,11 +41,11 @@ ms.locfileid: "48840846"
   
  Pokud chcete pomocí technologie WIF vytvořit svou první aplikaci ASP.NET pracující s deklaracemi, postupujte podle pokynů v jednom z následujících témat:  
   
--   [Postupy: Sestavení webové aplikace ASP.NET MVC pracující s deklaracemi pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-mvc-web-app-using-wif.md)  
+-   [Postupy: Vytvoření webové aplikace ASP.NET MVC s deklaracemi identity pomocí technologie WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-mvc-web-app-using-wif.md)  
   
--   [Postupy: Sestavení aplikace Webových formulářů ASP.NET pracující s deklaracemi pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)  
+-   [Postupy: Sestavení s deklaracemi identity aplikace webových formulářů ASP.NET pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)  
   
--   [Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi s ověřováním pomocí formulářů](../../../docs/framework/security/claims-aware-aspnet-app-forms-authentication.md)  
+-   [Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi identity pomocí ověřování pomocí formulářů](../../../docs/framework/security/claims-aware-aspnet-app-forms-authentication.md)  
   
-## <a name="see-also"></a>Viz také  
- [Začínáme s WIF](../../../docs/framework/security/getting-started-with-wif.md)
+## <a name="see-also"></a>Viz také:
+- [Začínáme s WIF](../../../docs/framework/security/getting-started-with-wif.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 0ec1c227196e9118f9174feb103a3ecbf5bcb7c4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b4cfec6dd1b732729f32abd65c6e69ca53e2ad82
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43528081"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54547482"
 ---
 # <a name="typography-in-wpf"></a>Typografie v rozhraní WPF
 Toto téma popisuje hlavní funkce typografickém [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tyto funkce patří vylepšení kvality a výkonu při vykreslování textu [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Typografie support, rozšířené mezinárodní text, vylepšená podpora písma a rozhraní (API) nové application programming text.  
@@ -167,12 +167,12 @@ Interakce mezi aplikací a objektu TextFormatter
   
  Další informace o vytváření rozložení vlastního textu, naleznete v tématu [pokročilé formátování textu](../../../../docs/framework/wpf/advanced/advanced-text-formatting.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.FormattedText>  
- <xref:System.Windows.Media.TextFormatting.TextFormatter>  
- [ClearType – přehled](../../../../docs/framework/wpf/advanced/cleartype-overview.md)  
- [Funkce písma OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)  
- [Kreslení formátovaného textu](../../../../docs/framework/wpf/advanced/drawing-formatted-text.md)  
- [Pokročilé formátování textu](../../../../docs/framework/wpf/advanced/advanced-text-formatting.md)  
- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
- [Typografie Microsoft](https://www.microsoft.com/typography/default.mspx)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.FormattedText>
+- <xref:System.Windows.Media.TextFormatting.TextFormatter>
+- [ClearType – přehled](../../../../docs/framework/wpf/advanced/cleartype-overview.md)
+- [Funkce písma OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)
+- [Kreslení formátovaného textu](../../../../docs/framework/wpf/advanced/drawing-formatted-text.md)
+- [Pokročilé formátování textu](../../../../docs/framework/wpf/advanced/advanced-text-formatting.md)
+- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)
+- [Microsoft Typography](https://www.microsoft.com/typography/default.mspx)

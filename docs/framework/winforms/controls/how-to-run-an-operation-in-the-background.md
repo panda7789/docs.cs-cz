@@ -13,12 +13,12 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 5b56e2aa-dc05-444f-930c-2d7b23f9ad5b
-ms.openlocfilehash: 94abd36affdccec1d01c030fcff4c6de93ca6c72
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 99567897c90244c2768dfbcfe36762d1ec54a070
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43773496"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54510634"
 ---
 # <a name="how-to-run-an-operation-in-the-background"></a>Postupy: Spuštění operace na pozadí
 Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete způsobit prodlevy v uživatelském rozhraní, můžete použít <xref:System.ComponentModel.BackgroundWorker> má třída spustit operaci v jiném vlákně.  
@@ -27,7 +27,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
  Není k dispozici rozsáhlou podporu pro tuto úlohu v sadě Visual Studio.  
   
- Viz také [názorný postup: spuštění operace na pozadí](walkthrough-running-an-operation-in-the-background.md).  
+ Viz také [názorný postup: Spuštění operace na pozadí](walkthrough-running-an-operation-in-the-background.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.ComponentModel.BackgroundWorker.Example#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker.Example/CS/Form1.cs#1)]
@@ -38,10 +38,10 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 -   Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ComponentModel.BackgroundWorker>  
- <xref:System.ComponentModel.DoWorkEventArgs>  
- [Postupy: Implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
- [Komponenta BackgroundWorker](../../../../docs/framework/winforms/controls/backgroundworker-component.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ComponentModel.BackgroundWorker>
+- <xref:System.ComponentModel.DoWorkEventArgs>
+- [Postupy: Implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
+- [Komponenta BackgroundWorker](../../../../docs/framework/winforms/controls/backgroundworker-component.md)

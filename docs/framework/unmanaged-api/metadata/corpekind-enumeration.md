@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b5869eb16bd768d58a6f27a83f2d8d51914a8aed
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3ab94bf7c55d4c19a4f3672ed86808575b8a2239
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33443112"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54536909"
 ---
 # <a name="corpekind-enumeration"></a>CorPEKind – výčet
-Obsahuje hodnoty, které popisují souboru přenosné spustitelný soubor (PE), jak ho vrátila volání [imetadataimport2::getpekind –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md).  
+Obsahuje hodnoty, které popisují soubor (PE portable executable) vrácená z volání [imetadataimport2::getpekind –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,22 +45,22 @@ typedef enum CorPEKind {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`peNot`|Označuje, že se nejedná o soubor PE.|  
-|`peILOnly`|Označuje, že tento soubor PE obsahuje pouze spravovaného kódu.|  
-|`pe32BitRequired`|Označuje, že tento soubor PE provádí volání Win32.|  
-|`pe32Plus`|Udává, že tento PE soubor spouští na 64bitové platformě.|  
+|`peNot`|Označuje, že to není přenositelný Spustitelný soubor.|  
+|`peILOnly`|Označuje, že tento soubor PE obsahuje pouze pro spravovaný kód.|  
+|`pe32BitRequired`|Označuje, že tento soubor PE provede volání Win32.|  
+|`pe32Plus`|Označuje, že tento soubor PE poběží na 64bitové platformě.|  
 |`pe32Unmanaged`|Označuje, že je tento soubor PE nativního kódu.|  
-|pe32BitPreferred|Označuje, že tento soubor PE je platforma jazykově neutrální a upřednostní pro otevření v prostředí s 32-bit.|  
+|pe32BitPreferred|Označuje, že tento soubor PE je nezávislá na platformě a dává přednost mají být načteny v 32bitovém prostředí.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tyto hodnoty lze v bitové kombinace.  
+ Tyto hodnoty je možné v bitové kombinace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

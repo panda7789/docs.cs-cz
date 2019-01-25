@@ -3,12 +3,12 @@ title: Dokumentace kódu pomocí komentářů XML
 description: Zjistěte, jak váš kód, který se dokumentační komentáře XML dokumentu a generovat soubor dokumentace XML v době kompilace.
 ms.date: 02/14/2017
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 70da976861a9bca024d41dd329dc7be043d67c94
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 15bdd65b96159b4c9b6eb45016f8bdde58c1efe3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54151004"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576197"
 ---
 # <a name="documenting-your-code-with-xml-comments"></a>Dokumentace kódu pomocí komentářů XML
 
@@ -106,7 +106,7 @@ Umožňuje aktualizovat dokumentaci pro `Math` třídy.
 
 [!code-csharp[C Tag](../../samples/snippets/csharp/concepts/codedoc/c-tag.cs)]
 
-### <a name="ltexceptiongt"></a>&lt;Výjimka&gt;
+### <a name="ltexceptiongt"></a>&lt;exception&gt;
 
 S použitím `<exception>` značky, informovat vaše vývojáře, metoda může vyvolat specifických výjimek.
 Na vaše `Math` knihovny, vidíme, že oba `Add` metody vyvolání výjimky, pokud je splněna určitá podmínka. Není to zřejmé, je však tento celé číslo `Divide` metoda vyvolá také, pokud `b` parametru je nula. Nyní přidáte výjimky dokumentace v této metodě.
@@ -125,7 +125,7 @@ To může být libovolný typ definovaný v projektu nebo v odkazovaném sestave
 `cref` Je **požadované** atribut, který představuje odkaz na typ nebo jeho člen, který je k dispozici z prostředí aktuální kompilace.
 To může být libovolný typ definovaný v projektu nebo v odkazovaném sestavení.
 
-### <a name="ltseealsogt"></a>&lt;Viz také&gt;
+### <a name="ltseealsogt"></a>&lt;seealso&gt;
 
 Můžete použít `<seealso>` značka stejným způsobem provedete `<see>` značky. Jediným rozdílem je, že jeho obsah je obvykle umístěn v části "V části Viz také". Tady přidáme `seealso` značku na celé číslo `Add` metoda odkazovat na jiné metody ve třídě, které přijímají celočíselné parametry:
 
@@ -134,7 +134,7 @@ Můžete použít `<seealso>` značka stejným způsobem provedete `<see>` znač
 `cref` Atributu představuje odkaz na typ nebo jeho člen, který je k dispozici z prostředí aktuální kompilace.
 To může být libovolný typ definovaný v projektu nebo v odkazovaném sestavení.
 
-### <a name="ltparamgt"></a>&lt;Param&gt;
+### <a name="ltparamgt"></a>&lt;param&gt;
 
 Můžete použít `<param>` značka, které popisují parametry metody. Tady je příklad, double `Add` metody: Je zadán parametr popisuje značky v **požadované** `name` atribut.
 
@@ -222,5 +222,5 @@ Dokumentace kódu se doporučuje pro mnoho důvodů, proč. Následují někter�
 
 ## <a name="see-also"></a>Viz také:
 
-* [XML – dokumentační komentáře (C# Programming Guide)](programming-guide/xmldoc/xml-documentation-comments.md)
-* [Doporučené značky pro dokumentační komentáře (C# Programming Guide)](programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+- [XML – dokumentační komentáře (C# Programming Guide)](programming-guide/xmldoc/xml-documentation-comments.md)
+- [Doporučené značky pro dokumentační komentáře (C# Programming Guide)](programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

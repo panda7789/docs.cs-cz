@@ -2,12 +2,12 @@
 title: TransactionFlowBindingElement
 ms.date: 03/30/2017
 ms.assetid: 0a9656fe-2400-45ca-ad79-92715c8cf190
-ms.openlocfilehash: 027ace6ea9fc2a0e5ce63efa84e1a49c0ed2cd0a
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d0311837ebb8112d9492fb548492bcd3e10230e7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188024"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514567"
 ---
 # <a name="transactionflowbindingelement"></a>TransactionFlowBindingElement
 TransactionFlowBindingElement  
@@ -32,21 +32,21 @@ class TransactionFlowBindingElement : BindingElement
 ### <a name="issuedtokens"></a>IssuedTokens  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Určuje požadavek pro hlavičku tokeny vydané zabezpečení (IssuedTokens z WS-Trust).  
   
 ### <a name="transactionprotocol"></a>transactionProtocol  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Protokol transakce použitý službou pro tok transakcí.  
   
 ### <a name="transactions"></a>Transakce  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Označuje, zda je příchozí transakce.  
   
@@ -56,5 +56,5 @@ class TransactionFlowBindingElement : BindingElement
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>

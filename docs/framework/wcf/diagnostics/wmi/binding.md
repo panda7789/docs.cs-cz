@@ -2,12 +2,12 @@
 title: Binding2
 ms.date: 03/30/2017
 ms.assetid: 09511c6c-5749-4bb0-874e-0f0be36bfe04
-ms.openlocfilehash: 84e304f3dedcbd785d6238e6cb5eb142c288b995
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: aaf0dd9d6918f2c248942cee3773eee8332adda9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149702"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552837"
 ---
 # <a name="binding"></a>Vazba
 rozhraní WMI vazby  
@@ -96,5 +96,5 @@ class Binding
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.Binding>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.Binding>

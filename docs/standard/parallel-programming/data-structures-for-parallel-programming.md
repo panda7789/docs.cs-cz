@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bdc82f2f-4754-45a1-a81e-fe2e9c30cef9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6453e9983086dcb5b97ec134db9d74160d7a47cf
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: b346da9174d77fbc6a861a8b12f2cc5035b6c291
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836469"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54517614"
 ---
 # <a name="data-structures-for-parallel-programming"></a>Datové struktury pro paralelní programování
 Rozhraní .NET Framework verze 4 přináší několik nových typů, které jsou užitečné pro paralelní programování, včetně sady souběžných kolekcí tříd, zjednodušené synchronizace primitiv a typy pro opožděnou inicializaci. Můžete použít tyto typy s jakýmkoli jiným kódem aplikace s více vlákny, včetně Task Parallel Library a PLINQ.  
@@ -48,9 +48,9 @@ Rozhraní .NET Framework verze 4 přináší několik nových typů, které jsou
   
  Další informace naleznete v tématu:  
   
--   [Postupy: Použití struktury SpinLock pro synchronizaci nízké úrovně](../../../docs/standard/threading/how-to-use-spinlock-for-low-level-synchronization.md)  
+-   [Postupy: Použití SpinLock nízké úrovně synchronizace](../../../docs/standard/threading/how-to-use-spinlock-for-low-level-synchronization.md)  
   
--   [Postupy: synchronizace souběh operací pomocí bariéry](../../../docs/standard/threading/how-to-synchronize-concurrent-operations-with-a-barrier.md).  
+-   [Postupy: Synchronizace souběh operací pomocí bariéry](../../../docs/standard/threading/how-to-synchronize-concurrent-operations-with-a-barrier.md).  
   
 ## <a name="lazy-initialization-classes"></a>Opožděná inicializace třídy  
  Pomocí opožděné inicializace není přidělena paměť pro objekt, dokud nebude potřeba. Opožděná inicializace lze vylepšit výkon rovnoměrně rozprostírá přidělení objektů na dobu životnosti programu. Můžete povolit pro všechny vlastní typy opožděná inicializace obalením typ <xref:System.Lazy%601>.  
@@ -66,10 +66,10 @@ Rozhraní .NET Framework verze 4 přináší několik nových typů, které jsou
  Další informace najdete v tématu [opožděné inicializace](../../../docs/framework/performance/lazy-initialization.md).  
   
 ## <a name="aggregate-exceptions"></a>Agregační výjimky  
- <xref:System.AggregateException?displayProperty=nameWithType> Typ lze použít k zachycení výjimky, které jsou vyvolány souběžně v samostatných vláknech a vrátit je do spojovacího vlákna jako jednu výjimku. <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> typy a PLINQ používat <xref:System.AggregateException> výrazně pro tento účel. Další informace najdete v tématu [zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md) a [postupy: zpracování výjimek v dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md).  
+ <xref:System.AggregateException?displayProperty=nameWithType> Typ lze použít k zachycení výjimky, které jsou vyvolány souběžně v samostatných vláknech a vrátit je do spojovacího vlákna jako jednu výjimku. <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> typy a PLINQ používat <xref:System.AggregateException> výrazně pro tento účel. Další informace najdete v tématu [zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md) a [jak: Zpracování výjimek v dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
-- <xref:System.Threading?displayProperty=nameWithType>  
+- <xref:System.Collections.Concurrent?displayProperty=nameWithType>
+- <xref:System.Threading?displayProperty=nameWithType>
 - [Paralelní programování](../../../docs/standard/parallel-programming/index.md)

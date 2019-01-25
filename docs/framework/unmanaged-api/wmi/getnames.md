@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f53174bf060938d5a55cbd196944ac11916d59cd
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: b0065b2cbbd17c5bb3dca6773951cdb8729e59fa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43778052"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583558"
 ---
 # <a name="getnames-function"></a>Funkce GetNames
 Načte podmnožinu nebo všechny názvy vlastností objektu. 
@@ -105,11 +105,11 @@ Příznaky, které mohou být předány jako `lEnumFlags` argument jsou bitová 
 Funkce vždy přidělí novou `SAFEARRAY` vrátí-li `WBEM_S_NO_ERROR`, a `pstrNames` je vždycky nastavený tak, aby odkazoval na ni. Vrácené pole může obsahovat 0 elementy, pokud určenému filtru neodpovídají žádné vlastnosti. Pokud funkce vrátí hodnotu jiné než `WBM_S_NO_ERROR`, nový `SAFEARRAY` struktura nevrátí.
  
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:  
-[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:
+- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

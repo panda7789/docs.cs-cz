@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - claims [WCF], and tokens
 ms.assetid: eff167f3-33f8-483d-a950-aa3e9f97a189
-ms.openlocfilehash: f640372504658c8f7935d3d219cd373f19ebf31f
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 21172ccda5f5f8070d81726d5f4dc6f9d80ab071
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837531"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54568998"
 ---
 # <a name="claims-and-tokens"></a>Deklarace a tokeny
 Toto téma popisuje různé typy deklarací identity, které Windows Communication Foundation (WCF) vytvoří z výchozí tokeny, které podporuje.  
@@ -64,9 +64,9 @@ Toto téma popisuje různé typy deklarací identity, které Windows Communicati
 ## <a name="identity-claims-and-servicesecuritycontextisanonymous"></a>Deklarace identity a ServiceSecurityContext.IsAnonymous  
  Pokud žádná z `ClaimSet` objekty vyplývající z přihlašovacích údajů klienta obsahují deklaraci identity `Right` z `Identity,` pak bude <xref:System.ServiceModel.ServiceSecurityContext.IsAnonymous%2A> vrátí vlastnost `true`. Pokud takové deklarace jsou k dispozici, `IsAnonymous` vrátí vlastnost `false`.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IdentityModel.Claims.ClaimSet>  
- <xref:System.IdentityModel.Claims.Claim>  
- <xref:System.IdentityModel.Claims.Rights>  
- <xref:System.IdentityModel.Claims.ClaimTypes>  
- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.IdentityModel.Claims.ClaimSet>
+- <xref:System.IdentityModel.Claims.Claim>
+- <xref:System.IdentityModel.Claims.Rights>
+- <xref:System.IdentityModel.Claims.ClaimTypes>
+- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)

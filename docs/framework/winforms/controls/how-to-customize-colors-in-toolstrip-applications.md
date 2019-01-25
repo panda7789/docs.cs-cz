@@ -9,12 +9,12 @@ helpviewer_keywords:
 - colors [Windows Forms], customizing in ToolStrip controls [Windows Forms]
 - ToolStrip control [Windows Forms], custom colors
 ms.assetid: e2752fe2-1afb-489e-ab96-b7805acd96bc
-ms.openlocfilehash: 9a3f712a4d729452ac0d2d4755a5fba59ca102ed
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 0a7679624d375fac610f6c74f124881d7235eab8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43858730"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54585429"
 ---
 # <a name="how-to-customize-colors-in-toolstrip-applications"></a>Postupy: Přizpůsobení barev v aplikacích ToolStrip
 Můžete přizpůsobit vzhled vašich <xref:System.Windows.Forms.ToolStrip> pomocí <xref:System.Windows.Forms.ToolStripProfessionalRenderer> třídu použít vlastní barvy.  
@@ -30,11 +30,11 @@ Můžete přizpůsobit vzhled vašich <xref:System.Windows.Forms.ToolStrip> pomo
   
 -   Odkazy na sestavení System.Design System.Drawing a System.Windows.Forms.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.ToolStripManager>  
- <xref:System.Windows.Forms.ProfessionalColorTable>  
- <xref:System.Windows.Forms.MenuStrip>  
- <xref:System.Windows.Forms.ToolStrip>  
- <xref:System.Windows.Forms.ToolStripProfessionalRenderer>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.ToolStripManager>
+- <xref:System.Windows.Forms.ProfessionalColorTable>
+- <xref:System.Windows.Forms.MenuStrip>
+- <xref:System.Windows.Forms.ToolStrip>
+- <xref:System.Windows.Forms.ToolStripProfessionalRenderer>

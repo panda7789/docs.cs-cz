@@ -15,15 +15,15 @@ helpviewer_keywords:
 - logical disjunction
 - disjunction operator [Visual Basic]
 ms.assetid: 41ed6905-bf3d-468a-9e3b-03c10d461891
-ms.openlocfilehash: 9e02f619a81ee3c15321dfd44963c1a7d29843ab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c2af3864ef19dbf835397968af0913cd62994305
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604767"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54494428"
 ---
 # <a name="or-operator-visual-basic"></a>Or – operátor (Visual Basic)
-Provede logické disjunkce dvou `Boolean` výrazů nebo bitovou disjunkci dvou numerických výrazů.  
+Provede logickou disjunkci dvou `Boolean` výrazů nebo bitovou disjunkci dvou numerických výrazů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,16 +33,16 @@ result = expression1 Or expression2
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Požadováno. Všechny `Boolean` nebo číselný výraz. Pro `Boolean` porovnání, `result` je včetně logické disjunkce dvou `Boolean` hodnoty. Pro bitové operace `result` je číselná hodnota představující včetně bitovou disjunkci dvou bit číselná vzory.  
+ Povinný parametr. Žádné `Boolean` nebo číselný výraz. Pro `Boolean` porovnání, `result` je inkluzivní logickou disjunkci dvou `Boolean` hodnoty. Pro bitové operace `result` číselná hodnota představující včetně bitovou disjunkci dvou číselných bitové vzory.  
   
  `expression1`  
- Požadováno. Všechny `Boolean` nebo číselný výraz.  
+ Povinný parametr. Žádné `Boolean` nebo číselný výraz.  
   
  `expression2`  
- Požadováno. Všechny `Boolean` nebo číselný výraz.  
+ Povinný parametr. Žádné `Boolean` nebo číselný výraz.  
   
 ## <a name="remarks"></a>Poznámky  
- Pro `Boolean` porovnání, `result` je `False` případě a pouze v případě obou `expression1` a `expression2` vyhodnocení `False`. Následující tabulka popisuje, jak `result` je určen.  
+ Pro `Boolean` porovnání, `result` je `False` Pokud a pouze pokud oba `expression1` a `expression2` vyhodnotit `False`. Následující tabulka ukazuje, jak `result` je určen.  
   
 |Pokud `expression1` je|A `expression2` je|Hodnota `result` je|  
 |-------------------------|--------------------------|------------------------------|  
@@ -52,11 +52,11 @@ result = expression1 Or expression2
 |`False`|`False`|`False`|  
   
 > [!NOTE]
->  V `Boolean` porovnání, `Or` operátor vždy vyhodnotí oba výrazy, které mohou zahrnovat volání procedury. [Orelse – operátor](../../../visual-basic/language-reference/operators/orelse-operator.md) provede *krátká smyčka*, což znamená, že pokud `expression1` je `True`, pak `expression2` , nebude hodnocen.  
+>  V `Boolean` porovnání, `Or` operátor vždy vyhodnotí oba výrazy, které mohou zahrnovat volání procedury. [OrElse – operátor](../../../visual-basic/language-reference/operators/orelse-operator.md) provádí *zkrácenou*, což znamená, že pokud `expression1` je `True`, pak `expression2` , nebude hodnocen.  
   
- Pro bitové operace `Or` operátor provádí bitové porovnání stejně umístěných bitů ve dvou numerických výrazů a nastaví odpovídající chvíli v `result` podle následující tabulky.  
+ Pro bitové operace `Or` operátor provádí porovnání bitového stejně umístěných bitů ve dvou numerických výrazů a nastaví odpovídající bit v `result` podle následující tabulky.  
   
-|Pokud bit v `expression1` je|A chvíli v `expression2` je|Bit v `result` je|  
+|Pokud bit v `expression1` je|A bitu v `expression2` je|Bit v `result` je|  
 |--------------------------------|---------------------------------|----------------------------|  
 |1|1|1|  
 |1|0|1|  
@@ -64,33 +64,33 @@ result = expression1 Or expression2
 |0|0|0|  
   
 > [!NOTE]
->  Vzhledem k tomu, že logické a bitové operátory mít nižší prioritu než ostatní aritmetické a relační operátory, všechny bitové operace by se měla uvádět v závorkách a zajišťují přesné provádění.  
+>  Protože logické a bitové operátory mají nižší prioritu než ostatní aritmetické a relační operátory, všechny bitové operace by měl být uzavřen v závorkách zajistit správné spuštění.  
   
 ## <a name="data-types"></a>Datové typy  
- Pokud operandy skládá z jedné `Boolean` výraz a jeden číselného výrazu jazyka Visual Basic převede `Boolean` výraz na číselnou hodnotu (-1 pro `True` a 0 pro `False`) a provede se bitová operace.  
+ Pokud operandy se skládá z jedné `Boolean` výraz a jeden číselný výraz jazyka Visual Basic převede `Boolean` výraz na číselnou hodnotu (– 1 pro `True` a 0 pro `False`) a provádí logické bitové operace.  
   
- Pro `Boolean` je datový typ výsledku porovnání, `Boolean`. Bitové porovnání, výsledek datový typ je vhodný pro datové typy číselného typu `expression1` a `expression2`. Podívejte se na tabulku "Relační bitový porovnání a" v [typy výsledků operátoru Data](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).  
+ Pro `Boolean` porovnání, datový typ výsledku je `Boolean`. Bitové porovnání, datový typ výsledku je vhodný pro datové typy číselného typu `expression1` a `expression2`. Viz tabulka "Relační a bitový operátor porovnání" [typy výsledků operátoru Data](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).  
   
 ## <a name="overloading"></a>Přetížení  
- `Or` Může být operátor *přetížený*, což znamená, že třídu nebo strukturu lze znovu definovat své chování při operand má typ třídy nebo struktura. Pokud váš kód používá tento operátor na takové třídu nebo strukturu, ujistěte se, že rozumíte své Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ `Or` Operátor může být *přetížené*, což znamená, že třídy nebo struktury lze znovu definovat jeho chování při operand má typ této třídě nebo struktuře. Pokud váš kód používá tento operátor na takové třídy nebo struktury, ujistěte se, že rozumíte jeho Předefinovaná chování. Další informace najdete v tématu [procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Or` operátor provést včetně logické disjunkce dvou výrazů. Výsledkem je, `Boolean` hodnotu, která představuje zda je jedna ze dvou výrazů `True`.  
+ V následujícím příkladu `Or` operátor inkluzivní logickou disjunkci dvou výrazů. Výsledkem je `Boolean` hodnotu, která udává, zda je jedna ze dvou výrazů `True`.  
   
  [!code-vb[VbVbalrOperators#35](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/or-operator_1.vb)]  
   
- V předchozím příkladu vytvoří výsledky `True`, `True`, a `False`, v uvedeném pořadí.  
+ Předchozí příklad vytváří výsledky `True`, `True`, a `False`v uvedeném pořadí.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Or` operátor provést včetně logické disjunkce na jednotlivé bity dvou numerických výrazů. Pokud je buď odpovídající bity operandy nastavená na hodnotu 1, je nastaven bit ve vzoru výsledek.  
+ V následujícím příkladu `Or` operátor inkluzivní logickou disjunkci na jednotlivé bity dvou numerických výrazů. Pokud některý z odpovídající bitů v operandů je nastavená na 1, je nastaven bit vzoru výsledek.  
   
  [!code-vb[VbVbalrOperators#36](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/or-operator_2.vb)]  
   
  V předchozím příkladu vytvoří výsledky 10, 14 a 14, v uvedeném pořadí.  
   
-## <a name="see-also"></a>Viz také  
- [Logické/bitové operátory (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)  
- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
- [Operátor OrElse](../../../visual-basic/language-reference/operators/orelse-operator.md)  
- [Logické a bitové operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+## <a name="see-also"></a>Viz také:
+- [Logické/bitové operátory (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
+- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+- [Operátor OrElse](../../../visual-basic/language-reference/operators/orelse-operator.md)
+- [Logické a bitové operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

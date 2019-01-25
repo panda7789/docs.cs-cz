@@ -2,12 +2,12 @@
 title: Čísla s plovoucí desetinnou čárkou
 ms.date: 03/30/2017
 ms.assetid: 73c218c6-1c44-4402-a167-4f6262629a91
-ms.openlocfilehash: 2ab583a07c78cfa06ac597c369486f89e19ca66e
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 8f5985576e966f1a853c9ee8d7bfef4b9bf6fc40
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042348"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54589370"
 ---
 # <a name="floating-point-numbers"></a>Čísla s plovoucí desetinnou čárkou
 Toto téma popisuje některé z problémů, které vývojáři často dojde při práci s čísly s plovoucí desetinnou čárkou v [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]. Tyto jsou způsobené tím, že počítače ukládána čísla s plovoucí desetinnou čárkou a nejsou specifická pro konkrétního poskytovatele, jako <xref:System.Data.SqlClient> nebo <xref:System.Data.OracleClient>.  
@@ -18,6 +18,6 @@ Toto téma popisuje některé z problémů, které vývojáři často dojde při
   
  Chcete-li vyřešit problémy s porovnání rovnosti, vezměte v úvahu kódování aplikace tak, aby se ignorují odchylky v nejmenších platných číslicích. Například namísto porovnání najdete v článku, zda jsou stejné dvě čísla, odečte jednu číslici od jiné číslo. Pokud rozdíl je v rámci přijatelných okraji zaokrouhlení, můžete aplikace řešte čísel jakoby se shodují.  
   
-## <a name="see-also"></a>Viz také  
- [Proč čísla s plovoucí desetinnou čárkou můžou ztratit přesnost](https://msdn.microsoft.com/library/1acb1add-ac06-4134-a2fd-aff13d8c4c15)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Proč čísla s plovoucí desetinnou čárkou můžou ztratit přesnost](https://msdn.microsoft.com/library/1acb1add-ac06-4134-a2fd-aff13d8c4c15)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

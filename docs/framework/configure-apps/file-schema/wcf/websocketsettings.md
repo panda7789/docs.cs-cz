@@ -2,19 +2,19 @@
 title: '&lt;webSocketSettings&gt;'
 ms.date: 03/30/2017
 ms.assetid: bbf97e02-8dd1-4922-acac-3cd33397b249
-ms.openlocfilehash: 134a233a337c40d21f7547fe385ec788cef2165b
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 00c6bc45f06d97d4f95bd6be1515d16141be4e1d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150055"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54565914"
 ---
 # <a name="ltwebsocketsettingsgt"></a>&lt;webSocketSettings&gt;
 Prvek konfigurace určuje nastavení Websocket.  
   
 \<system.ServiceModel>  
 \<vazby >  
-\<netHttpBinding >  
+\<netHttpBinding>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +42,7 @@ Prvek konfigurace určuje nastavení Websocket.
 |---------------|-----------------|  
 |createNotificationOnConnection|Určuje, zda jsou oznámení odesílána při připojení.|  
 |disablePayloadMasking|Určuje, zda je zakázaný maskování Websocket.|  
-|nastavení KeepAliveInterval protokolu|Určuje keep alive interval.|  
+|keepAliveInterval|Určuje keep alive interval.|  
 |maxPendingConnections|Určuje maximální počet připojení čeká na odeslání ve službě.|  
 |receiveBufferSize|Určuje velikost vyrovnávací paměti pro příjem.|  
 |sendBufferSize|Určuje velikost vyrovnávací paměti pro odesílání.|  
@@ -64,7 +64,7 @@ Prvek konfigurace určuje nastavení Websocket.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|\<netHttpBinding >|Určuje vazeb NetHttpBinding|  
+|\<netHttpBinding>|Určuje vazeb NetHttpBinding|  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje způsob použití \<webSocketSettings > element.  
@@ -84,12 +84,12 @@ Prvek konfigurace určuje nastavení Websocket.
 </netHttpBinding>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.Binding>  
- <xref:System.ServiceModel.Channels.BindingElement>  
- <xref:System.ServiceModel.BasicHttpBinding>  
- <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.Binding>
+- <xref:System.ServiceModel.Channels.BindingElement>
+- <xref:System.ServiceModel.BasicHttpBinding>
+- <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

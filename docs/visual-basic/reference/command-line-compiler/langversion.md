@@ -6,14 +6,15 @@ helpviewer_keywords:
 - langversion compiler option [Visual Basic]
 - -langversion compiler option [Visual Basic]
 ms.assetid: 59b7b0c8-2dde-4e9b-94e7-0237f7e0bafb
-ms.openlocfilehash: 82a7114027451d1342e6dc0846799933ce44d968
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6fffe264377474bba14f6f086b521ccf9bd04adf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54534456"
 ---
 # <a name="-langversion-visual-basic"></a>-langversion (Visual Basic)
-Způsobí, že kompilátor tak, aby přijímal pouze syntaxi, která je součástí zadaná verze jazyka Visual Basic.  
+Způsobí, že kompilátor tak, aby přijímal pouze syntaxi, která je zahrnutá v zadané verzi jazyka Visual Basic.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,23 +24,27 @@ Způsobí, že kompilátor tak, aby přijímal pouze syntaxi, která je součás
   
 ## <a name="arguments"></a>Arguments  
  `version`  
- Požadováno. Jazyková verze, která mají být použity během kompilace. Platné hodnoty jsou `9`, `9.0`, `10`, a `10.0`.  
+ Povinný parametr. Jazykovou verzi používané během kompilace. Platné hodnoty jsou `9`, `10`, `11`, `12`, `14`, `15`, `15.3`, `15.5`, `default` a `latest`.
+
+ Libovolné celé číslo můžete také zadat pomocí `.0` jako vedlejší verze, například `11.0`.
+
+ Zobrazí seznam všech možných hodnot tak, že zadáte `-langversion:?` na příkazovém řádku.  
   
 ## <a name="remarks"></a>Poznámky  
- `-langversion` Možnost určuje, jaké syntaxe kompilátor přijímá. Například pokud jste určili, zda je verze jazyka 9.0, kompilátor generuje chyby syntaxe, která je platná pouze ve verzi 10.0 a novější.  
+ `-langversion` Možnost určuje, jaké syntaxe kompilátor přijímá. Například pokud chcete zadat, že je jazyková verze 9.0, kompilátor vygeneruje chyby syntaxe, která je platná pouze ve verzi 10.0 a novější.  
   
- Tuto možnost můžete použít při vývoji aplikací tento cíl různé verze rozhraní .NET Framework. Například pokud cílíte na rozhraní .NET Framework 3.5, můžete použít tuto možnost k zajištění nepoužívejte syntaxe z jazyková verze 10.0.  
+ Tuto možnost můžete použít při vývoji aplikací, které jiné cílové verze rozhraní .NET Framework. Například pokud se zaměřujete na rozhraní .NET Framework 3.5, můžete použít tuto možnost k zajištění, že je velmi riskantní používat syntaxi z jazykové verze 10.0.  
   
- Můžete nastavit `-langversion` přímo jen pomocí příkazového řádku. Další informace najdete v tématu [cílení na konkrétní verzi rozhraní .NET Framework](/visualstudio/ide/targeting-a-specific-dotnet-framework-version).  
+ Můžete nastavit `-langversion` přímo pouze pomocí příkazového řádku. Další informace najdete v tématu [cílení na konkrétní verzi rozhraní .NET Framework](/visualstudio/ide/targeting-a-specific-dotnet-framework-version).  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `sample.vb` pro 9.0 Visual Basic.  
+ Následující kód zkompiluje `sample.vb` 9.0 jazyka Visual Basic.  
   
 ```console  
 vbc -langversion:9.0 sample.vb  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
- [Cílení na konkrétní verzi rozhraní .NET Framework](/visualstudio/ide/targeting-a-specific-dotnet-framework-version)
+## <a name="see-also"></a>Viz také:
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Cílení na konkrétní verzi rozhraní .NET Framework](/visualstudio/ide/targeting-a-specific-dotnet-framework-version)

@@ -7,64 +7,64 @@ dev_langs:
 helpviewer_keywords:
 - animation [WPF], changing property values after
 ms.assetid: 79466556-4dbf-40bd-9c1e-a77613b07077
-ms.openlocfilehash: b8e9c08075b13f8d6f701d5ac6ae4f8ea8949184
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e150a576ed6edb365e9e1468becc1a9e55b5aacc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33562258"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54532775"
 ---
 # <a name="how-to-set-a-property-after-animating-it-with-a-storyboard"></a>Postupy: Nastavení vlastnosti po animaci pomocí scénáře
-V některých případech může vypadat, že po byla animovaný nelze změnit hodnotu vlastnosti.  
+V některých případech se může zobrazit, že po jeho animovat nelze změnit hodnotu vlastnosti.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu <xref:System.Windows.Media.Animation.Storyboard> se používá k animace barva <xref:System.Windows.Media.SolidColorBrush>. Při kliknutí na tlačítko, aktivuje se scénáři. <xref:System.Windows.Media.Animation.Timeline.Completed> Událost je zpracovávána tak, aby program obdrží oznámení při <xref:System.Windows.Media.Animation.ColorAnimation> dokončení.  
+ V následujícím příkladu <xref:System.Windows.Media.Animation.Storyboard> slouží k animace barvy <xref:System.Windows.Media.SolidColorBrush>. Scénář se aktivuje, když dojde ke kliknutí na tlačítko. <xref:System.Windows.Media.Animation.Timeline.Completed> Událost je zpracovávána tak, aby program obdrží oznámení při <xref:System.Windows.Media.Animation.ColorAnimation> dokončí.  
   
  [!code-xaml[timingbehaviors_snip#GraphicsMMButton1Declaration](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/AnimateThenSetPropertyExample.xaml#graphicsmmbutton1declaration)]  
   
 ## <a name="example"></a>Příklad  
- Po <xref:System.Windows.Media.Animation.ColorAnimation> dokončí, program se pokusí změnit barvu stopy na modrou.  
+ Po <xref:System.Windows.Media.Animation.ColorAnimation> dokončí, program se pokusí změnit přebarvení na modrou.  
   
  [!code-csharp[timingbehaviors_snip#GraphicsMMButton1Handler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/AnimateThenSetPropertyExample.xaml.cs#graphicsmmbutton1handler)]
  [!code-vb[timingbehaviors_snip#GraphicsMMButton1Handler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_snip/visualbasic/animatethensetpropertyexample.xaml.vb#graphicsmmbutton1handler)]  
   
- Předchozí kód nezobrazí žádnou: poskytl žlutý, štětce zůstanou, které je hodnota <xref:System.Windows.Media.Animation.ColorAnimation> který animovaný stopy. Základní hodnota vlastnosti (základní hodnota) je ve skutečnosti změnit na modrou. Ale zůstává žlutý hodnota efektivní nebo aktuální, protože <xref:System.Windows.Media.Animation.ColorAnimation> stále přepisují základní hodnota. Pokud chcete hodnotu opět efektivní hodnota, je nutné zastavit animace z ovlivňující vlastnost. Existují tři způsoby, jak to provést pomocí animací scénáře:  
+ Předchozí kód nezobrazí žádné akce: poskytnutých žlutý, štětce zůstane, což je hodnota <xref:System.Windows.Media.Animation.ColorAnimation> , který animovat štětec. Základní hodnota vlastnosti (základní hodnoty) se ve skutečnosti změní na modrou. Ale zůstává žlutý hodnota efektivní nebo aktuální, protože <xref:System.Windows.Media.Animation.ColorAnimation> stále přepisuje základní hodnoty. Pokud chcete základní hodnota opět platnou hodnotu, je nutné zastavit animace z vliv na vlastnost. Existují tři způsoby, jak to provést s animacemi scénáře:  
   
--   Nastavení animace <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> vlastnosti <xref:System.Windows.Media.Animation.FillBehavior.Stop>  
+-   Nastavení se animace <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> vlastnost <xref:System.Windows.Media.Animation.FillBehavior.Stop>  
   
--   Odeberte celý scénáře.  
+-   Odeberte celý scénář.  
   
--   Odeberte animace z dané vlastnosti.  
+-   Odstranit animaci jednotlivých vlastností.  
   
-## <a name="set-the-animations-fillbehavior-property-to-stop"></a>Nastavte vlastnost FillBehavior má animace na zastavení  
- Nastavením <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> k <xref:System.Windows.Media.Animation.FillBehavior.Stop>, řekněte animace zastavit, které mají vliv na jeho vlastnost target po ukončení jeho aktivní období.  
+## <a name="set-the-animations-fillbehavior-property-to-stop"></a>Nastavte vlastnost FillBehavior animace Stop  
+ Nastavením <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> k <xref:System.Windows.Media.Animation.FillBehavior.Stop>, dáte animace zastavit po dosažení konce jeho aktivního období by to ovlivnilo její vlastnost target.  
   
  [!code-xaml[timingbehaviors_snip#GraphicsMMButton2Declaration](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/AnimateThenSetPropertyExample.xaml#graphicsmmbutton2declaration)]  
   
  [!code-csharp[timingbehaviors_snip#GraphicsMMButton2Handler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/AnimateThenSetPropertyExample.xaml.cs#graphicsmmbutton2handler)]
  [!code-vb[timingbehaviors_snip#GraphicsMMButton2Handler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_snip/visualbasic/animatethensetpropertyexample.xaml.vb#graphicsmmbutton2handler)]  
   
-## <a name="remove-the-entire-storyboard"></a>Odeberte celý scénáře  
- Pomocí <xref:System.Windows.Media.Animation.RemoveStoryboard> aktivační události nebo <xref:System.Windows.Media.Animation.Storyboard.Remove%2A?displayProperty=nameWithType> metoda, řekněte animací storyboard zastavit, které mají vliv na jejich vlastnosti cíle. Rozdíl mezi tento přístup a nastavení <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> vlastnost je, že můžete odebrat scénáři v kdykoli, při <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> vlastnost má vliv pouze v případě animace dosáhne konce své aktivní období.  
+## <a name="remove-the-entire-storyboard"></a>Odeberte celý scénář  
+ Pomocí <xref:System.Windows.Media.Animation.RemoveStoryboard> aktivační události nebo <xref:System.Windows.Media.Animation.Storyboard.Remove%2A?displayProperty=nameWithType> metoda, dáte animacemi scénáře zastavit by to mělo dopad jejich vlastnosti cíle. Rozdíl mezi tento přístup a nastavení <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> vlastnost je, že můžete odebrat scénáře v kdykoli, zatímco <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> vlastnost má vliv pouze v případě animace dosáhne konce jeho aktivní období.  
   
  [!code-xaml[timingbehaviors_snip#GraphicsMMButton3Declaration](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/AnimateThenSetPropertyExample.xaml#graphicsmmbutton3declaration)]  
   
  [!code-csharp[timingbehaviors_snip#GraphicsMMButton3Handler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/AnimateThenSetPropertyExample.xaml.cs#graphicsmmbutton3handler)]
  [!code-vb[timingbehaviors_snip#GraphicsMMButton3Handler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_snip/visualbasic/animatethensetpropertyexample.xaml.vb#graphicsmmbutton3handler)]  
   
-## <a name="remove-an-animation-from-an-individual-property"></a>Odebrání animace jednotlivé vlastnosti  
- Jiné technik zastavit animace neovlivňovaly vlastnost je použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29> metodu objektu se animace. Určete vlastnost probíhá animovaný jako první parametr a `null` jako druhý.  
+## <a name="remove-an-animation-from-an-individual-property"></a>Odebrat z jednotlivých vlastností animace  
+ Další technikou zastavit animaci vlastnosti výstrahy neovlivňovaly je použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29> metodu objektu animované. Zadejte vlastnost animované jako první parametr a `null` jako druhý.  
   
  [!code-xaml[timingbehaviors_snip#GraphicsMMButton4Declaration](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/AnimateThenSetPropertyExample.xaml#graphicsmmbutton4declaration)]  
   
  [!code-csharp[timingbehaviors_snip#GraphicsMMButton4Handler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/AnimateThenSetPropertyExample.xaml.cs#graphicsmmbutton4handler)]
  [!code-vb[timingbehaviors_snip#GraphicsMMButton4Handler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/timingbehaviors_snip/visualbasic/animatethensetpropertyexample.xaml.vb#graphicsmmbutton4handler)]  
   
- Tento postup funguje i pro jiné scénáře animace.  
+ Tento postup funguje i pro animace mimo scénář.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>  
- <xref:System.Windows.Media.Animation.Storyboard.Remove%2A?displayProperty=nameWithType>  
- <xref:System.Windows.Media.Animation.RemoveStoryboard>  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>
+- <xref:System.Windows.Media.Animation.Storyboard.Remove%2A?displayProperty=nameWithType>
+- <xref:System.Windows.Media.Animation.RemoveStoryboard>
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)

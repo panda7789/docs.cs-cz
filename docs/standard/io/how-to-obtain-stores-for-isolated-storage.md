@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: fcb6b178-d526-47c4-b029-e946f880f9db
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1e2f87bfe1e3e7f3a1c8135c047b25a998793453
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 0968443af28e2d403b08a1af50846e7a1369db49
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44084067"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524569"
 ---
 # <a name="how-to-obtain-stores-for-isolated-storage"></a>Postupy: Získávání úložišť pro izolované úložiště
 Izolované úložiště poskytuje virtuální systém souborů v rámci datové přihrádky. <xref:System.IO.IsolatedStorage.IsolatedStorageFile> Třída poskytuje několik metod pro interakci s izolované úložiště. K vytvoření a načtení úložišť, <xref:System.IO.IsolatedStorage.IsolatedStorageFile> poskytuje tři statické metody:  
@@ -58,8 +58,8 @@ Izolované úložiště poskytuje virtuální systém souborů v rámci datové 
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
-- <xref:System.IO.IsolatedStorage.IsolatedStorageScope>  
-- [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)  
-- [Typy izolace](../../../docs/standard/io/types-of-isolation.md)  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFile>
+- <xref:System.IO.IsolatedStorage.IsolatedStorageScope>
+- [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)
+- [Typy izolace](../../../docs/standard/io/types-of-isolation.md)
 - [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)

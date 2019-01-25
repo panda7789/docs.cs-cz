@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 55c4b175-3170-4071-9d60-dd5a42f79b54
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c24fe637514ba773cecc7824de276b1707a4e90c
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: e56680a74bc6800242ff56d27bcf179ee372df74
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582551"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54579586"
 ---
 # <a name="xmlschemaset-for-schema-compilation"></a>XmlSchemaSet pro kompilaci schématu
 Popisuje <xref:System.Xml.Schema.XmlSchemaSet>, mezipaměti, kde můžete ukládat a ověření schématu XML definice jazyk (XSD) schémata.  
@@ -27,7 +27,7 @@ Popisuje <xref:System.Xml.Schema.XmlSchemaSet>, mezipaměti, kde můžete uklád
   
  Tady je porovnání mezi službou <xref:System.Xml.Schema.XmlSchemaCollection> třídy a <xref:System.Xml.Schema.XmlSchemaSet> třídy.  
   
-|Třídou XmlSchemaCollection|Třída XmlSchemaSet|  
+|XmlSchemaCollection|XmlSchemaSet|  
 |-------------------------|------------------|  
 |Podporuje schémata Microsoft XDR a W3C XML.|Podporuje se jenom schémata W3C XML.|  
 |Schémata jsou zkompilovány při <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metoda je volána.|Schémata nejsou při kompilaci <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metoda je volána. To poskytuje vylepšení výkonu při vytváření knihovny schémat.|  
@@ -253,12 +253,12 @@ foreach (XmlSchema schema in schemaSet.Schemas())
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.Schema.XmlSchemaSet.Add%2A>  
-- <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A>  
-- <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A>  
-- <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A>  
-- <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>  
-- <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A>  
-- <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A>  
-- [Třída XmlSchemaSet jako mezipaměť schémat](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
+- <xref:System.Xml.Schema.XmlSchemaSet.Add%2A>
+- <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A>
+- <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A>
+- <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A>
+- <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>
+- <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A>
+- <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A>
+- [Třída XmlSchemaSet jako mezipaměť schémat](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
 - [Ověření schématu XML (XSD) s třídou XmlSchemaSet](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemaset.md)

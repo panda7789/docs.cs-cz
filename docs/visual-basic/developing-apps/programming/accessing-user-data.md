@@ -11,25 +11,25 @@ helpviewer_keywords:
 - login names [Visual Basic]
 - examples [Visual Basic], accessing user data
 ms.assetid: 32492a15-ee59-4a63-a1f1-9b24cc13140a
-ms.openlocfilehash: 097006caf56072d5a6e9f2945f5969eed249849e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ff071aadb189cec839b9cb41d510764a9187363
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33582841"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54605486"
 ---
 # <a name="accessing-user-data-visual-basic"></a>Přístup k uživatelským datům (Visual Basic)
-Tato část obsahuje témata zabývající se `My.User` objekt a úkoly, které můžete provádět s ním.  
+Tento oddíl obsahuje témata týkající se `My.User` objektu a úlohy, které můžete provádět s ním.  
   
- `My.User` Objekt poskytuje přístup k informacím o přihlášeného uživatele a vrátila objekt, který implementuje <xref:System.Security.Principal.IPrincipal> rozhraní.  
+ `My.User` Objekt poskytuje přístup k informacím o přihlášeného uživatele tak, že vrací objekt, který implementuje <xref:System.Security.Principal.IPrincipal> rozhraní.  
   
 ## <a name="tasks"></a>Úlohy  
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
 |Získat přihlašovací jméno uživatele|<xref:Microsoft.VisualBasic.ApplicationServices.User.Name%2A>|  
-|Získat název domény uživatele, pokud aplikace používá ověřování systému Windows|<xref:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal>|  
+|Získat název domény uživatele, pokud aplikace používá ověřování Windows|<xref:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal>|  
 |Určení role uživatele|<xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A>|  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.ApplicationServices.User>
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.ApplicationServices.User>

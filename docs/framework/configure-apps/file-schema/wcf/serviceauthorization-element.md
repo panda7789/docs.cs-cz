@@ -2,21 +2,21 @@
 title: Element &lt;serviceAuthorization&gt;
 ms.date: 03/30/2017
 ms.assetid: 18cddad5-ddcb-4839-a0ac-1d6f6ab783ca
-ms.openlocfilehash: 6c69d10eb2f6cdf4546dd5895d196723417f5494
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 49b89c17f9858c111791276fe15e4a418845c8e8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146001"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54622569"
 ---
 # <a name="ltserviceauthorizationgt-element"></a>Element &lt;serviceAuthorization&gt;
 Určuje nastavení, které povolují přístup k operacím služby  
   
  \<system.ServiceModel>  
 \<chování >  
-\<serviceBehaviors >  
+\<serviceBehaviors>  
 \<chování >  
-\<serviceAuthorization >  
+\<serviceAuthorization>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,10 +38,10 @@ Určuje nastavení, které povolují přístup k operacím služby
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|ImpersonateCallerForAllOperations|Logická hodnota určující, pokud všechny operace služby zosobňují volajícího. Výchozí hodnota je `false`.<br /><br /> Když konkrétní operaci služby zosobňuje volajícího, kontext vlákna přepnutí na kontext volající před provedením zadaná služba.|  
-|PrincipalPermissionMode|Nastaví objekt zabezpečení použitý k provádění operací na serveru. Následující hodnoty:<br /><br /> -Žádný<br />-UseWindowsGroups<br />-UseAspNetRoles<br />– Vlastní<br /><br /> Výchozí hodnota je UseWindowsGroups. Hodnota je typu <xref:System.ServiceModel.Description.PrincipalPermissionMode>. Další informace o použití tohoto atributu naleznete v tématu [jak: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md).|  
+|impersonateCallerForAllOperations|Logická hodnota určující, pokud všechny operace služby zosobňují volajícího. Výchozí hodnota je `false`.<br /><br /> Když konkrétní operaci služby zosobňuje volajícího, kontext vlákna přepnutí na kontext volající před provedením zadaná služba.|  
+|principalPermissionMode|Nastaví objekt zabezpečení použitý k provádění operací na serveru. Následující hodnoty:<br /><br /> -Žádný<br />-   UseWindowsGroups<br />-UseAspNetRoles<br />– Vlastní<br /><br /> Výchozí hodnota je UseWindowsGroups. Hodnota je typu <xref:System.ServiceModel.Description.PrincipalPermissionMode>. Další informace o použití tohoto atributu naleznete v tématu [jak: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md).|  
 |roleProviderName|Řetězec určující název poskytovatele rolí, který poskytuje informace o rolích pro aplikace Windows Communication Foundation (WCF). Výchozí hodnota je prázdný řetězec.|  
-|Třída ServiceAuthorizationManagerType|Řetězec obsahující typ správce autorizace služby. Další informace naleznete v tématu <xref:System.ServiceModel.ServiceAuthorizationManager>.|  
+|ServiceAuthorizationManagerType|Řetězec obsahující typ správce autorizace služby. Další informace naleznete v tématu <xref:System.ServiceModel.ServiceAuthorizationManager>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -53,7 +53,7 @@ Určuje nastavení, které povolují přístup k operacím služby
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Obsahuje kolekci nastavení pro chování služby.|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Obsahuje kolekci nastavení pro chování služby.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tato část obsahuje prvky, které by to ovlivnilo autorizace, vlastní roli zprostředkovatele a zosobnění.  
@@ -95,11 +95,11 @@ Určuje nastavení, které povolují přístup k operacím služby
   
  Podrobný příklad použití tento prvek konfigurace, najdete v části [autorizace přístupu k operacím služby](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md) a [zásad autorizace](../../../../../docs/framework/wcf/samples/authorization-policy.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.ServiceAuthorizationElement>  
- <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>  
- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- [Autorizace přístupu k operacím služby](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)  
- [Postupy: Vytvoření vlastního Správce autorizací pro službu](../../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)  
- [Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)  
- [Zásady autorizace](../../../../../docs/framework/wcf/samples/authorization-policy.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.ServiceAuthorizationElement>
+- <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>
+- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
+- [Autorizace přístupu k operacím služby](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)
+- [Postupy: Vytvoření vlastního Správce autorizací pro službu](../../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
+- [Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)
+- [Zásady autorizace](../../../../../docs/framework/wcf/samples/authorization-policy.md)

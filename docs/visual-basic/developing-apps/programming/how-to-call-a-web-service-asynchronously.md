@@ -5,12 +5,12 @@ helpviewer_keywords:
 - asynchronous calls [Visual Basic]
 - Web services [Visual Basic], accessing
 ms.assetid: ff8046f4-f1f2-4d8b-90b7-95e3f7415418
-ms.openlocfilehash: bf109780f26ce2fa4d5dbaa63832e765970b5cb4
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 9127b0edce029f8b2944ddf692e85166ee8c89b8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842688"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54616144"
 ---
 # <a name="how-to-call-a-web-service-asynchronously-visual-basic"></a>Postupy: Asynchronní volání webové služby (Visual Basic)
 Tento příklad připojí obslužnou rutinu pro webovou službu asynchronní obslužné rutiny událostí, tak, aby bylo možné získat výsledku volání asynchronní metody. Tento příklad používá DemoTemperatureService webová služba na `http://www.xmethods.net`.  
@@ -65,6 +65,6 @@ Tento příklad připojí obslužnou rutinu pro webovou službu asynchronní obs
   
      Volání `getTemp` webovou metodu asynchronně, zavolejte `CallGetTempAsync` metody. Po dokončení metody webové služby, vrácená hodnota předána `getTempCompletedHandler` obslužné rutiny události.  
   
-## <a name="see-also"></a>Viz také  
- [Přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)  
- [Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+## <a name="see-also"></a>Viz také:
+- [Přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)
+- [Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)

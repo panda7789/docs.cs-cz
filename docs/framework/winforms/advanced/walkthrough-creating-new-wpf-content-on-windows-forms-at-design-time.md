@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Vytvoření nového obsahu WPF ve Windows Forms během návrhu'
+title: 'Průvodce: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu'
 ms.date: 08/18/2018
 helpviewer_keywords:
 - interoperability [Windows Forms], WPF and Windows Forms
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - ElementHost control
 - WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: 2e92d8e8-f0e4-4df7-9f07-2acf35cd798c
-ms.openlocfilehash: dc72b86a69d44ad282e30b000313b73211cad09c
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 9414eb8edc839b109aafa0c98fa3ed74a34a7d62
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45653267"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54500496"
 ---
-# <a name="walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time"></a>Návod: Vytvoření nového obsahu WPF ve Windows Forms během návrhu
+# <a name="walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time"></a>Průvodce: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu
 
 Toto téma ukazuje, jak vytvořit ovládací prvek Windows Presentation Foundation (WPF) pro použití ve svých aplikacích pomocí formulářů Windows.
 
@@ -61,7 +61,7 @@ Vytvoření nového ovládacího prvku WPF a jeho přidání do projektu je stej
 
     - Soubor UserControl1.xaml otevře [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)].
 
-2. V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [postupy: výběr a přesunutí prvků na návrhové ploše](https://msdn.microsoft.com/library/54cb70b6-b35b-46e4-a0cc-65189399c474).
+2. V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [jak: Vyberte a přesuňte prvků na návrhové ploše](https://msdn.microsoft.com/library/54cb70b6-b35b-46e4-a0cc-65189399c474).
 
 3. V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastností **200**.
 
@@ -102,13 +102,13 @@ Nový ovládací prvek WPF je připravená k použití ve formuláři. Windows F
 
 Windows Forms a WPF jsou různé technologie, ale jsou určené ke úzce spolupracovat. K poskytování bohatších vzhled a chování ve svých aplikacích, zkuste následující:
 
-- Hostování ovládacího prvku Windows Forms na stránce WPF. Další informace najdete v tématu [návod: hostování ovládacího prvku Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md).
+- Hostování ovládacího prvku Windows Forms na stránce WPF. Další informace najdete v tématu [názorný postup: Ovládací prvek hostování Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md).
 
-- Použití vizuálních stylů Windows Forms k vašemu obsahu WPF. Další informace najdete v tématu [postupy: povolení vizuálních stylů v hybridní aplikaci](../../../../docs/framework/wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application.md).
+- Použití vizuálních stylů Windows Forms k vašemu obsahu WPF. Další informace najdete v tématu [jak: Povolení vizuálních stylů v hybridní aplikaci](../../../../docs/framework/wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application.md).
 
-- Změna stylu obsahu WPF. Další informace najdete v tématu [návod: používání stylů pro obsah WPF](../../../../docs/framework/winforms/advanced/walkthrough-styling-wpf-content.md).
+- Změna stylu obsahu WPF. Další informace najdete v tématu [názorný postup: Určení stylu obsahu WPF](../../../../docs/framework/winforms/advanced/walkthrough-styling-wpf-content.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>

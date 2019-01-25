@@ -16,12 +16,12 @@ helpviewer_keywords:
 - naming conventions [Visual Basic], naming conflicts
 - namespaces
 ms.assetid: cffac744-ab8c-4f1f-ba50-732c22ab4b88
-ms.openlocfilehash: 6b320d21c33fa798ca2fd3ef5a04363d141f99f2
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: b56644cdf44ac5bd9c755d1ee7ba7013c0245293
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48030441"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492309"
 ---
 # <a name="namespaces-in-visual-basic"></a>Obory názvů v jazyce Visual Basic
 Obory názvů uspořádávají objekty definované v sestavení. Sestavení může obsahovat více oborů názvů, který pak může obsahovat další obory názvů. Obory názvů zabránilo nejednoznačnosti a při použití velké skupiny objektů, jako je například knihovny tříd zjednodušení odkazy.  
@@ -39,7 +39,7 @@ Obory názvů uspořádávají objekty definované v sestavení. Sestavení mů�
   
  Následující obrázek znázorňuje dvěma hierarchiemi obor názvů, obě obsahující objekt s názvem `ListBox`.  
   
- ![Hierarchie Namespace](../../../visual-basic/programming-guide/program-structure/media/vanamespacehierarchy.gif "vaNamespaceHierarchy")  
+ ![Namespace Hierarchy](../../../visual-basic/programming-guide/program-structure/media/vanamespacehierarchy.gif "vaNamespaceHierarchy")  
   
  Ve výchozím nastavení obsahuje každý spustitelného souboru, který vytvoříte pomocí jazyka Visual Basic obor názvů se stejným názvem jako váš projekt. Například pokud definujete objekt v rámci projektu s názvem `ListBoxProject`, obsahuje obor názvů s názvem spustitelného souboru ListBoxProject.exe `ListBoxProject`.  
   
@@ -121,10 +121,10 @@ End Namespace
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Windows.Forms.ListBox>  
-- <xref:System.Windows.Forms?displayProperty=nameWithType>  
-- [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
-- [Postupy: Vytváření a použití sestavení s pomocí příkazového řádku](../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md)  
-- [Odkazy a příkaz Imports](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)  
-- [Příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
+- <xref:System.Windows.Forms.ListBox>
+- <xref:System.Windows.Forms?displayProperty=nameWithType>
+- [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)
+- [Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku](../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md)
+- [Odkazy a příkaz Imports](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)
+- [Příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
 - [Psaní kódu v řešeních pro systém Office](/visualstudio/vsto/writing-code-in-office-solutions)

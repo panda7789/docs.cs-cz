@@ -11,21 +11,21 @@ helpviewer_keywords:
 - logs, trace
 - destination for tracing output
 ms.assetid: 5fff458c-51a6-4134-ba47-8a6137ddc41e
-ms.openlocfilehash: b289aa2a60deb10ebda0ca8efc3e172caf2df8a6
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 29d0f33960534e8a5521b36eb6cc11655ab89c6d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50202065"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540248"
 ---
 # <a name="enabling-network-tracing"></a>Povolení trasování sítě
 Trasování sítě poskytuje přístup k informacím o vyvoláních metody a přenosech v síti generovaných spravovanou aplikací. Je nutné dokončit následující úlohy, jak povolit trasování sítě ve vaší aplikaci:  
   
--   Kompilace kódu s povoleným trasováním. Zobrazit [postupy: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md) pro další informace o přepínačích kompilátoru vyžadovaného k povolení trasování.  
+-   Kompilace kódu s povoleným trasováním. Zobrazit [jak: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md) pro další informace o přepínačích kompilátoru vyžadovaného k povolení trasování.  
   
 -   Zadejte cíl výstupu trasování.  
   
--   Konfigurace chování trasování sítě. Zobrazit [postupy: Konfigurace trasování sítě](../../../docs/framework/network-programming/how-to-configure-network-tracing.md) podrobné informace.  
+-   Konfigurace chování trasování sítě. Zobrazit [jak: Konfigurace trasování sítě](../../../docs/framework/network-programming/how-to-configure-network-tracing.md) podrobné informace.  
   
  Nejčastěji používané cíle trasování také označuje jako naslouchacími procesy trasování, jsou výchozí naslouchací proces a soubor protokolu.  
   
@@ -45,7 +45,7 @@ Trasování sítě poskytuje přístup k informacím o vyvoláních metody a př
 </system.diagnostics>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Interpretace trasování sítě](../../../docs/framework/network-programming/interpreting-network-tracing.md)  
- [Trasování sítě v rozhraní .NET Framework](../../../docs/framework/network-programming/network-tracing.md)  
- [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
+## <a name="see-also"></a>Viz také:
+- [Interpretace trasování sítě](../../../docs/framework/network-programming/interpreting-network-tracing.md)
+- [Trasování sítě v rozhraní .NET Framework](../../../docs/framework/network-programming/network-tracing.md)
+- [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)

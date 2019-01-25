@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0b57d04a8a49371872c679a331b5ae9c45dce797
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 843236243563ce3dff82726aaab05845fa295b9d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433070"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54518134"
 ---
 # <a name="getversionfromprocess-function"></a>GetVersionFromProcess – funkce
-Získá číslo verze common language runtime (CLR), která souvisí s popisovačem určený proces.  
+Získá číslo verze common language runtime (CLR), který je spojen s obslužnou rutinou určeného procesu.  
   
  Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
@@ -42,29 +42,29 @@ HRESULT GetVersionFromProcess (
   
 #### <a name="parameters"></a>Parametry  
  `hProcess`  
- [v] Popisovač pro proces.  
+ [in] Popisovač procesu.  
   
  `pVersion`  
- [out] Vyrovnávací paměť, která obsahuje řetězec číslo verze po úspěšném dokončení metody.  
+ [out] Vyrovnávací paměť, která obsahuje řetězec, číslo verze po úspěšném dokončení metody.  
   
  `cchBuffer`  
- [v] Délka vyrovnávací paměti verze.  
+ [in] Délka vyrovnávací paměti verze.  
   
  `pdwLength`  
  [out] Ukazatel na délku řetězce číslo verze.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí standardní kódy chyb modelu COM (Component Object), jak jsou definovány v WinError.h, kromě následující hodnoty.  
+ Tato metoda vrací standardní kódy chyb modelu COM (Component Object), jak je definovaný ve WinError.h, kromě následujících hodnot.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_INVALIDARG|`pVersion` má hodnotu null a `cchBuffer` nemá hodnotu null, nebo naopak.<br /><br /> -nebo-<br /><br /> `hProcess` není platný popisovač procesu.<br /><br /> -nebo-<br /><br /> Modul CLR není načtená.|  
-|ERROR_INSUFFICIENT_BUFFER|`cchBuffer` je null nebo být menší než délka řetězec verze.|  
+|E_INVALIDARG|`pVersion` má hodnotu null a `cchBuffer` nemá hodnotu null, nebo naopak.<br /><br /> -nebo-<br /><br /> `hProcess` není platný popisovač procesu.<br /><br /> -nebo-<br /><br /> Není načten modul CLR.|  
+|ERROR_INSUFFICIENT_BUFFER|`cchBuffer` je null nebo je menší než délka řetězce verze.|  
 |E_NOTIMPL|Tato metoda není k dispozici v operačním systému Microsoft Windows 95, Microsoft Windows 98 nebo Microsoft Windows Millennium Edition.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -72,7 +72,7 @@ HRESULT GetVersionFromProcess (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [GetRequestedRuntimeInfo – funkce](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)  
- [GetRequestedRuntimeVersion – funkce](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [GetRequestedRuntimeInfo – funkce](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)
+- [GetRequestedRuntimeVersion – funkce](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

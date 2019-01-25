@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 130ba2864537f017bd3037412d742d887df1ae68
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 676f3fe9aa9ad7de1499bb42ff23d446b1cb73d8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405724"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535486"
 ---
 # <a name="iclrdatatargetgettlsvalue-method"></a>ICLRDataTarget::GetTLSValue – metoda
-Získá hodnotu z úložiště thread local (TLS) zadaný vlákna v tento cílový proces. Tato metoda je volána běžné data přístupu služby modulu runtime (CLR) jazyk.  
+Získá hodnotu z úložiště thread local (TLS) ze zadaného vlákna v cílovém procesu. Tato metoda je volána službami common language runtime (CLR) přístup k datům.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +39,19 @@ HRESULT GetTLSValue (
   
 #### <a name="parameters"></a>Parametry  
  `threadID`  
- [v] Identifikátor operačního systému vlákna v tento cílový proces.  
+ [in] Operační systém identifikátor vlákna v cílovém procesu.  
   
  `index`  
- [v] Index umístění. Tato hodnota musí být platný index v místním úložišti zadaný vlákno.  
+ [in] Index umístění. Tato hodnota musí být platný index v místním úložišti ze zadaného vlákna.  
   
  `value`  
- [out] Ukazatel na `CLRDATA_ADDRESS` hodnotu, která určuje hodnota vrácená z daného umístění TLS.  
+ [out] Ukazatel `CLRDATA_ADDRESS` vrátil hodnotu, která určuje hodnotu z daného umístění protokolu TLS.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je implementována zapisovačem ladění aplikace.  
+ Tato metoda je implementováno tvůrci ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   
@@ -59,5 +59,5 @@ HRESULT GetTLSValue (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

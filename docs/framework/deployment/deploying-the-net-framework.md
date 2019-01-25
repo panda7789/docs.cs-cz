@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 19df26c5-4008-461d-a7d7-18f4506312d2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ac17993a4980e96cbd05fc2523567138e7b56262
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: c2eb1898f03a52306a8a2763059cf198208b7b88
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50196438"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54551836"
 ---
 # <a name="deploying-the-net-framework"></a>Nasazení rozhraní .NET Framework
 Tato část dokumentace k rozhraní .NET Framework obsahuje informace pro vývojáře, kteří chtějí nainstalovat rozhraní .NET Framework pomocí svých aplikací a správce, kteří chtějí nasadit rozhraní .NET Framework přes síť. Také popisuje aktivace a restartujte problémy spojené s nasazením a jak monitorovat průběh instalace rozhraní .NET Framework.  
@@ -30,11 +30,11 @@ Tato část dokumentace k rozhraní .NET Framework obsahuje informace pro vývoj
  [Postupy: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)  
  Popisuje, jak spustit bez upozornění a sledovat proces instalace rozhraní .NET Framework při vlastním zobrazením průběhu instalace.  
   
- [.NET Framework – chyby inicializace: správa zkušeností uživatele](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md)  
+ [Rozhraní .NET framework – chyby inicializace: Správa zkušeností uživatele](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md)  
  Vysvětluje, co se stane, když aplikace rozhraní .NET Framework požaduje verzi CLR, která je neplatná nebo není nainstalovaná na počítači uživatele, jak tyto chyby vyřešit a jak řídit zobrazí uživateli chybovou zprávu.  
   
  [Postupy: Ladění problémů aktivace CLR](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md)  
  Vysvětluje, jak lze zobrazit a ladění CLR aktivace protokoly k řešení potíží, které můžete narazit při získávání aplikace na spouštění se správnou verzí modulu CLR.  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 - [Průvodce vývojem](../../../docs/framework/development-guide.md)

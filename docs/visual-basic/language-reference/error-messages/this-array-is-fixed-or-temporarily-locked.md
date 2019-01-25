@@ -4,29 +4,29 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID10
 ms.assetid: de6713a6-51d7-4edb-8515-d5fb544e2091
-ms.openlocfilehash: e912bd202603d9a0f427418708ad584c7d6203e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f70b984fc493e79d7a83b33236615a3220405786
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33593561"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54516990"
 ---
 # <a name="this-array-is-fixed-or-temporarily-locked-visual-basic"></a>Toto pole nelze upravovat nebo je dočasně uzamčeno (Visual Basic).
 Tato chyba má následující možné příčiny:  
   
--   Pomocí `ReDim` Chcete-li změnit počet elementů pole pevné velikosti.  
+-   Pomocí `ReDim` Chcete-li změnit počet elementů pole s pevnou velikostí.  
   
--   Redimensioning úroveň modulu dynamická pole, ve kterém jeden element. byl předán jako argument procedury. Pokud není předán element pole je pevně nastavené zabránit rušení přidělení paměti pro parametr odkaz v rámci procesu.  
+-   Redimensioning úrovni modulu dynamické pole, ve kterém jeden prvek byl předán jako argument procedury. Pokud je předán element, aby se zabránilo je uzamčen pole zrušení přidělení paměti pro referenční parametr v rámci procesu.  
   
--   Probíhá pokus o přiřazení hodnoty k `Variant` Proměnná obsahující pole, ale `Variant` je aktuálně uzamčena.  
+-   Pokus o přiřazení hodnoty k `Variant` proměnnou obsahující pole, ale `Variant` je aktuálně uzamčen.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Zkontrolujte pole původní dynamické místo opravených deklarace její `ReDim` (Pokud pole deklarované v rámci postupu), nebo deklarováním bez určující počet elementů (je-li toto pole je deklarovaná na úrovni modulu.  
+1.  Ujistěte se, původní pole dynamické spíše než Pevná deklarováním s `ReDim` (Pokud deklaraci pole v rámci procedury), nebo deklarací bez zadání počtu elementů (je-li deklaraci pole na úrovni modulu.  
   
 2.  Určete, jestli je skutečně potřeba předat elementu, protože je viditelné v rámci všechny postupy v modulu.  
   
 3.  Zjistit, co je uzamčení `Variant` a napravit.  
   
-## <a name="see-also"></a>Viz také  
- [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)
+## <a name="see-also"></a>Viz také:
+- [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)

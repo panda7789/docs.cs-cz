@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f742d219d603488bbade091f7a8192785d3e84f6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 930d56fcfe7cf0d2a128c2068e724b85a224b3fd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433093"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54568917"
 ---
 # <a name="customdumpitem-structure"></a>CustomDumpItem – struktura
-Popisuje položku, kterou chcete přidat do vlastní výpis v zasílání zpráv o chybách.  
+Popisuje položku, kterou chcete přidat do vlastní výpisu stavu systému v hlášení chyb.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,20 +41,20 @@ struct {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`itemKind`|[ECustomDumpItemKind](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md) hodnotu, která určuje druh položky, které chcete přidat.|  
-|`pReserved`|Není právě používána. Všechny položky přidány do sjednocení nesmí být větší než velikost ukazatele. Pokud `struct` je potřeba, musí přidělení samostatně a přejděte k němu.|  
+|`itemKind`|[Ecustomdumpitemkind –](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md) hodnotu, která určuje typ přidávané položky.|  
+|`pReserved`|Není v současné době nepoužívá. Všechny položky přidané do sjednocení nesmí být větší než velikost ukazatele. Pokud `struct` je potřeba, musí přidělit samostatně a přejděte na to.|  
   
 ## <a name="remarks"></a>Poznámky  
  [Iclrerrorreportingmanager::begincustomdump –](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-begincustomdump-method.md) přebírá parametr typu `CustomDumpItem`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.idl  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)

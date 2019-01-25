@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f8824ce004cac8bc2ad675c83dc6b5f167f183e6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bf3d362902eb338e5d797b66c5fe2af4f3e1ae9b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421044"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54508324"
 ---
 # <a name="icordebugprocess5getgcheapinformation-method"></a>ICorDebugProcess5::GetGCHeapInformation – metoda
-Poskytuje obecné informace o kolekci halda paměti, včetně toho, jestli je aktuálně vyčíslitelná.  
+Obsahuje obecné informace o haldě uvolňování paměti kolekce, včetně toho, jestli je aktuálně vyčíslitelná.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +37,13 @@ HRESULT GetGCHeapInformation(
   
 #### <a name="parameters"></a>Parametry  
  `pHeapInfo`  
- [out] Ukazatel [cor_heapinfo –](../../../../docs/framework/unmanaged-api/debugging/cor-heapinfo-structure.md) hodnotu, která poskytuje obecné informace o kolekci halda paměti.  
+ [out] Ukazatel [cor_heapinfo –](../../../../docs/framework/unmanaged-api/debugging/cor-heapinfo-structure.md) hodnotu, která poskytuje obecné informace o haldě uvolňování paměti.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugProcess5::GetGCHeapInformation` Před vytváření výčtu halda musí být volána metoda nebo jednotlivé haldy oblasti zajistit, že kolekce paměti struktur v procesu jsou aktuálně platná. Kolekce halda paměti nelze proveden vaši firmu, když probíhá kolekce. Jinak hodnota výčtu může zachytit struktury kolekce paměti, které jsou neplatné.  
+ `ICorDebugProcess5::GetGCHeapInformation` Metoda musí být volána před výčet haldy nebo jednotlivé haldy oblastech a ujistěte se, že uvolňování paměti kolekce struktur v procesu jsou aktuálně platná. Haldě uvolňování paměti nelze vás, když probíhá kolekce. V opačném případě výčet může zachytit struktury kolekce uvolnění paměti, které jsou neplatné.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -51,6 +51,6 @@ HRESULT GetGCHeapInformation(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugProcess5 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

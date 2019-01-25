@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strings [Visual Basic], Visual Basic
 - strings [Visual Basic], regular expressions
 ms.assetid: 5674418d-f00d-4f72-9f98-d15897793350
-ms.openlocfilehash: 7d2477070dce558aa932c822852ac8ac9c6721e4
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
+ms.openlocfilehash: 2a7dd80d141ff5945bcce71fead1bb5bc24ad737
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332658"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552377"
 ---
 # <a name="string-basics-in-visual-basic"></a>Základní informace o řetězcích v jazyce Visual Basic
 `String` Datový typ představuje posloupnost znaků (nichž každý představuje zase instance `Char` datový typ). Toto téma představuje základní koncepty řetězců v jazyce Visual Basic.  
@@ -71,8 +71,8 @@ World]]></xml>.Value
   
  Na rozdíl od jiných vnitřních datových typů `String` je typem odkazu. Když proměnné typu odkazu je předán jako argument funkce nebo podprogramu, je předána odkazem na adresu paměti, kde jsou data uložená namísto skutečné hodnoty řetězce. Takže v předchozím příkladu název proměnné zůstala stejná, ale odkazuje na jiný instanci `String` třídu, která obsahuje novou hodnotu.  
   
-## <a name="see-also"></a>Viz také  
- [Úvod do řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
- [Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md)  
- [Datový typ Char](../../../../visual-basic/language-reference/data-types/char-data-type.md)  
- [Základní operace s řetězci](../../../../standard/base-types/basic-string-operations.md)
+## <a name="see-also"></a>Viz také:
+- [Úvod do řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
+- [Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md)
+- [Datový typ Char](../../../../visual-basic/language-reference/data-types/char-data-type.md)
+- [Základní operace s řetězci](../../../../standard/base-types/basic-string-operations.md)

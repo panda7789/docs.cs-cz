@@ -12,12 +12,12 @@ helpviewer_keywords:
 - x:Null markup extension [XAML Services]
 - XAML [XAML Services], x:Null markup extension
 ms.assetid: 2e3ccc21-4996-481d-91b5-3910d8b3bfa3
-ms.openlocfilehash: 94cfaee9a0a9a9f3892b9df50ac59103709a3b14
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5f0856f50e73a090d0ef624e2fb894d68b73c07e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33562346"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54553318"
 ---
 # <a name="xnull-markup-extension"></a>x:Null – rozšíření značek
 Určuje `null` jako hodnotu pro člena XAML.  
@@ -29,22 +29,22 @@ Určuje `null` jako hodnotu pro člena XAML.
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Klíčové slovo pro odkaz s hodnotou null v jazyce C# a [!INCLUDE[TLA#tla_cpp](../../../includes/tlasharptla-cpp-md.md)] má hodnotu null. Microsoft Visual Basic – klíčové slovo pro odkaz s hodnotou null je `Nothing`, ale vždy používají `{x:Null}` jako bez ohledu na to XAML využití jazyk kódu, který přidružíte XAML.  
+ Klíčové slovo pro odkaz s hodnotou null v C# a [!INCLUDE[TLA#tla_cpp](../../../includes/tlasharptla-cpp-md.md)] má hodnotu null. Microsoft Visual Basic klíčové slovo pro odkaz s hodnotou null je `Nothing`, ale vždy používají `{x:Null}` jako bez ohledu na to XAML použití modelu code-behind jazyk, který přidružíte k XAML.  
   
- `x:Null` – Rozšíření značek nemá žádné nastavit vlastnosti.  
+ `x:Null` Nemá žádné nastavitelné vlastnosti rozšíření značek.  
   
- Použití null je často přidružen expozici člen XAML CLR <xref:System.Nullable%601> hodnotu.  
+ Null využití je často přidružený vystavení člena XAML CLR <xref:System.Nullable%601> hodnotu.  
   
- `x:Null` – Rozšíření značek, například všechny XAML – rozšíření značek, používá složené závorky (`{,}`) pro zpracování hodnot atributu být jiné než literály nebo obslužná rutina události odkazy uvozovací znaky. Atribut syntaxe je syntaxe nejčastěji používá u tohoto rozšíření značek. Syntaxe elementu objektu `<x:Null />` je technicky možné, ale se používá zřídka, protože `x:Null` – rozšíření značek neobsahuje poziční parametry ani argumenty konstrukce.  
+ `x:Null` – Rozšíření značek, stejně jako všechna rozšíření značek XAML, používá složené závorky (`{,}`) pro uvození zpracování hodnoty atributů, aby byla jiná než literály nebo odkazy na obslužnou rutinu události. Syntaxe atributu je syntaxe nejčastěji používané u tohoto rozšíření značek. Syntaxi elementu objektu `<x:Null />` je technicky možné, ale je použita jen zřídka, protože `x:Null` – rozšíření značek nemá žádné poziční parametry a argumenty konstrukce.  
   
- Informace o rozšíření značek najdete v tématu [rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
+ Informace o rozšíření značek, naleznete v tématu [– rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
   
- V rozhraní .NET Framework XAML Services je definované zpracování pro toto rozšíření značek <xref:System.Windows.Markup.NullExtension> třídy.  
+ V rozhraní .NET Framework XAML Services zpracování tohoto rozšíření značek definováno <xref:System.Windows.Markup.NullExtension> třídy.  
   
-## <a name="wpf-usage-notes"></a>Poznámky pro použití WPF  
- Všimněte si, že `null` není nutně počáteční nenastavenou hodnotu pro vlastnost závislosti typu odkazu. Počáteční výchozí hodnota pro každou vlastnost závislosti se může lišit a může být založené na metadata specifická pro vlastnost. Mnoho vlastností závislostí nepřijímají `null` jako hodnotu, buď prostřednictvím kód z důvodu jejich implementace zpětného volání pro ověření. Další informace o vlastnostech závislostí v tématu [přehled vlastností závislostí](../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
+## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
+ Všimněte si, že `null` není nutně zrušit nastavení počáteční hodnotu pro vlastnost závislosti typu odkazu. Počáteční výchozí hodnota pro každou vlastnost závislostí se může lišit a může být založen na metadata specifická pro vlastnost. Mnoho vlastností závislostí nepřijímají `null` jako hodnotu, buď prostřednictvím značek nebo kódu z důvodu jejich implementace zpětného volání pro ověření. Další informace o vlastnosti závislosti, naleznete v tématu [přehled vlastností závislosti](../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.DependencyProperty.UnsetValue>  
- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [Rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.DependencyProperty.UnsetValue>
+- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [Rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)

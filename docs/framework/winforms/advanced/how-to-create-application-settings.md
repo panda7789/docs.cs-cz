@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytváření nastavení aplikace'
+title: 'Postupy: Vytvořit nastavení aplikace'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,19 +8,19 @@ helpviewer_keywords:
 - application settings [Windows Forms], Windows Forms
 - application settings [Windows Forms], creating
 ms.assetid: 1e7aa347-af75-41e5-89ca-f53cab704f72
-ms.openlocfilehash: 7a84fc85b42f2b78ccafcae3c815847633b9916d
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: ac89851ce9c655ebef3acf2d55ef6659815ca4c9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48581872"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54558953"
 ---
-# <a name="how-to-create-application-settings"></a>Postupy: Vytváření nastavení aplikace
+# <a name="how-to-create-application-settings"></a>Postupy: Vytvořit nastavení aplikace
 Pomocí spravovaného kódu, můžete vytvořit nové nastavení aplikace a svázat ho s vlastnostmi na formulář nebo ovládací prvky do formuláře, takže tato nastavení jsou načtena a za běhu automaticky uloženy.  
   
  V následujícím postupu vytvoříte ručně obálkovou třídu, která je odvozena z <xref:System.Configuration.ApplicationSettingsBase>. Do této třídy přidat vlastnost veřejně přístupné pro každé nastavení aplikace, kterou chcete zveřejnit.  
   
- Můžete také provést tento postup pomocí minimálního psaní kódu v návrháři aplikace Visual Studio.  Viz také [postupy: vytvoření aplikace nastavení pomocí návrháře](https://msdn.microsoft.com/library/wabtadw6\(v=vs.110\)).  
+ Můžete také provést tento postup pomocí minimálního psaní kódu v návrháři aplikace Visual Studio.  Viz také [jak: Vytvořit nastavení aplikace pomocí návrháře](https://msdn.microsoft.com/library/wabtadw6\(v=vs.110\)).  
   
 ### <a name="to-create-new-application-settings-programmatically"></a>Chcete-li vytvořit nové nastavení aplikace prostřednictvím kódu programu  
   
@@ -46,8 +46,8 @@ Pomocí spravovaného kódu, můžete vytvořit nové nastavení aplikace a svá
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Ve výchozím nastavení <xref:System.Configuration.LocalFileSettingsProvider>, opakuje informace ke konfiguračním souborům jako prostý text. Toto omezení zabezpečení k zabezpečení přístupu k souboru v operačním systému k dispozici pro aktuálního uživatele. Z tohoto důvodu musíte věnovat pozornost s informacemi uloženými v konfiguračních souborech. Jeden běžně používá pro nastavení aplikace je například ukládání připojovacích řetězců, které odkazují na úložiště dat aplikace. Kvůli zajištění zabezpečení, ale tyto řetězce by neměl obsahovat hesla. Další informace o připojovacích řetězcích najdete v tématu <xref:System.Configuration.SpecialSetting>.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Configuration.SpecialSettingAttribute>  
- <xref:System.Configuration.LocalFileSettingsProvider>  
- [Přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md)  
- [Postupy: Ověření nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-validate-application-settings.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Configuration.SpecialSettingAttribute>
+- <xref:System.Configuration.LocalFileSettingsProvider>
+- [Přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md)
+- [Postupy: Ověření nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-validate-application-settings.md)

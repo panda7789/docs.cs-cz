@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: fe1b4a11-37f4-4e1a-93c9-239f4fe736c0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b26ebfa327d849f75b1ac5295b66600aeb377e1e
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 78dff5dca159b3e714a027bd2d2ebe86d2b414dd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47082614"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54626001"
 ---
 # <a name="including-or-importing-xml-schemas"></a>Zahrnutí nebo import schémat XML
 Schéma XML může obsahovat `<xs:import />`, `<xs:include />`, a `<xs:redefine />` elementy. Tyto prvky schématu odkazují na jiná schémata XML, které lze použít k doplnění struktura schéma, které zahrnuje nebo importuje. <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> a <xref:System.Xml.Schema.XmlSchemaRedefine> třídy, mapování na tyto prvky v schématu objektu modelu (SOM) rozhraní API.  
@@ -52,8 +52,7 @@ Schéma XML může obsahovat `<xs:import />`, `<xs:include />`, a `<xs:redefine 
         <xs:element name="FirstName" type="xs:string" />  
         <xs:element name="LastName" type="tns:LastNameType" />  
       </xs:sequence>  
-      <xs:attribute name="CustomerId" type="xs:positiveInteger" use="required" /  
->  
+      <xs:attribute name="CustomerId" type="xs:positiveInteger" use="required" />  
     </xs:complexType>  
   </xs:element>  
   <xs:simpleType name="LastNameType">  
@@ -102,9 +101,9 @@ Schéma XML může obsahovat `<xs:import />`, `<xs:include />`, a `<xs:redefine 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled Modelu objektu schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
-- [Čtení ze schémat XML a zápis do nich](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)  
-- [Sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md)  
-- [Procházení schémat XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
-- [Úpravy schémat XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
+- [Přehled Modelu objektu schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
+- [Čtení ze schémat XML a zápis do nich](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)
+- [Sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md)
+- [Procházení schémat XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
+- [Úpravy schémat XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)
 - [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)

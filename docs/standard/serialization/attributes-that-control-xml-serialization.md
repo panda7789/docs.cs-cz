@@ -9,12 +9,12 @@ helpviewer_keywords:
 - serialization, attributes
 - XML Schema, serializing
 ms.assetid: 414b820f-a696-4206-b576-2711d85490c7
-ms.openlocfilehash: 4acc17db83817d5aa78c9a91bfdac4e775de3743
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 0d1aee4650ea29083348af482e445011289e9581
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44076537"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580678"
 ---
 # <a name="attributes-that-control-xml-serialization"></a>Seznam atributů řídících serializaci XML
 Můžete použít atributy v následující tabulce do třídy a třídy členy lze řídit způsob, ve kterém <xref:System.Xml.Serialization.XmlSerializer> serializuje a deserializuje instance třídy. Abyste pochopili, jak tyto atributy řídí serializace XML, naleznete v tématu [řízení XML serializace pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md).  
@@ -45,9 +45,9 @@ Můžete použít atributy v následující tabulce do třídy a třídy členy 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
-- <xref:System.Xml.Serialization.XmlSerializer>  
-- [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
-- [Postupy: Zadání alternativního názvu elementu pro XML stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
-- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- <xref:System.Xml.Serialization.XmlSerializer>
+- [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)
+- [Postupy: Určení alternativního názvu elementu pro Stream XML](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
 - [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

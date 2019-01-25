@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: ce2a63a8-c829-4742-a6ea-72ee5d89f169
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: b77ead51b4e064d223735ca52affdec434e5c818
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: fa11cea7e78a56c3f5cbfd9d0678e1ed671f6f3c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50198182"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506040"
 ---
 # <a name="ltaddgt-element-for-ltnamedcachesgt"></a>&lt;Přidat&gt; – Element pro &lt;namedCaches&gt;
 Přidá `namedCache` položku a `namedCaches` kolekce pro mezipaměť.  
   
  \<system.runtime.caching>  
-\<memoryCache >  
-\<namedcaches – >  
+\<memoryCache>  
+\<namedCaches>  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -78,5 +78,5 @@ Přidá `namedCache` položku a `namedCaches` kolekce pro mezipaměť.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 - [\<namedcaches – > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)

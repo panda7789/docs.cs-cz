@@ -2,12 +2,12 @@
 title: Zabezpečení zprávy pomocí služby Řízení front zpráv
 ms.date: 03/30/2017
 ms.assetid: 329aea9c-fa80-45c0-b2b9-e37fd7b85b38
-ms.openlocfilehash: ddb06e4c85d3fa6db3df14ce15813adb8ae2fc99
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 7303db0e7553e7365d83dfadc377ec265a71891a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181537"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583295"
 ---
 # <a name="message-security-over-message-queuing"></a>Zabezpečení zprávy pomocí služby Řízení front zpráv
 Tento příklad ukazuje, jak implementovat aplikaci, která používá WS-Security x.509 v3 s ověřováním pomocí certifikátu klienta a vyžaduje ověření serveru pomocí služby MSMQ na server certifikát x.509 v3. Zpráva, že zabezpečení je někdy další žádoucí, ujistěte se, že zprávy v úložišti služby MSMQ zůstanou šifrovaná a aplikací můžete provést vlastní ověřování zprávy.
@@ -80,7 +80,7 @@ Tento příklad ukazuje, jak implementovat aplikaci, která používá WS-Securi
 -   Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
     > [!NOTE]
-    >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
+    >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
 
 ## <a name="requirements"></a>Požadavky
  Tato ukázka vyžaduje, že je služba MSMQ nainstalovaná a spuštěná.
@@ -345,4 +345,4 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\MessageSecurity`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

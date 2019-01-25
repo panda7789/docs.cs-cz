@@ -2,12 +2,12 @@
 title: '&lt;wsHttpContextBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 1e40b5c9-0df2-4d66-afc5-a99d0e4ae7a4
-ms.openlocfilehash: a35012cbc075268fad5b371148c0fa276ffdad61
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 8445829e0253d66723c3bcaf7416885cde6d9271
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150588"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559005"
 ---
 # <a name="ltwshttpcontextbindinggt"></a>&lt;wsHttpContextBinding&gt;
 Poskytuje kontext pro <xref:System.ServiceModel.WSHttpBinding> , která vyžaduje, aby úroveň ochrany byla podepsána.  
@@ -96,15 +96,15 @@ Poskytuje kontext pro <xref:System.ServiceModel.WSHttpBinding> , která vyžaduj
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.WSHttpBinding>  
- <xref:System.ServiceModel.WSHttpContextBinding>  
- <xref:System.ServiceModel.Configuration.WSHttpContextBindingElement>  
- <xref:System.ServiceModel.Channels.ContextBindingElement>  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)  
- [\<wsHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.WSHttpBinding>
+- <xref:System.ServiceModel.WSHttpContextBinding>
+- <xref:System.ServiceModel.Configuration.WSHttpContextBindingElement>
+- <xref:System.ServiceModel.Channels.ContextBindingElement>
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+- [\<wsHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)

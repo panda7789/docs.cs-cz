@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0d62b9be1bef16014e2870c15a232bb46d4daf10
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ac0d77b1d8d35a7753d3a501f147bd5ac53750c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448745"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583727"
 ---
 # <a name="imetadataimportgetmemberrefprops-method"></a>IMetaDataImport::GetMemberRefProps – metoda
-Získá metadata spojených se členem odkazuje zadaný token.  
+Získá metadata přidružená k členu odkazuje zadaný token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,35 +43,35 @@ HRESULT GetMemberRefProps (
   
 #### <a name="parameters"></a>Parametry  
  `mr`  
- [v] Token MemberRef vrátit související metadata pro.  
+ [in] Token MemberRef vrátit související metadata pro.  
   
  `ptk`  
- [out] TypeDef nebo Odkaz TypeRef nebo typ TypeSpec token, který představuje třídu, který deklaruje člena nebo Odkaz ModuleRef token, který představuje třídu modul, který deklaruje člena nebo MethodDef, který představuje člen.  
+ [out] Token TypeDef nebo TypeRef nebo token TypeSpec, který představuje třídu, která deklaruje člen, nebo Odkaz ModuleRef token, který představuje třídu modulu, který deklaruje člen nebo typu MethodDef, který představuje člena.  
   
  `szMember`  
- [out] Vyrovnávací paměti řetězců pro název člena.  
+ [out] Vyrovnávací paměti řetězce pro název člena.  
   
  `cchMember`  
- [v] Požadovaná velikost v široké znaky `szMember`.  
+ [in] Požadovaná velikost v širokých znaků `szMember`.  
   
  `pchMember`  
- [out] Vrácený velikost v široké znaky `szMember`.  
+ [out] Velikost vrácené v širokých znaků `szMember`.  
   
  `ppvSibBlob`  
- [out] Ukazatel na binární metadata podpis pro člena.  
+ [out] Ukazatel na binární metadat podpis pro člena.  
   
  `pbSig`  
  [out] Velikost v bajtech `ppvSigBlob`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

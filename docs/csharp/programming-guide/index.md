@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: 3827ebfe401938e4fa1b530672352123ae2ac826
-ms.sourcegitcommit: 0fbd677fcdc5bf46c4d827f492eaaa970edc07b6
+ms.openlocfilehash: d09b350e959544bc15cc6f7a646ae85e155c1108
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235736"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54495978"
 ---
 # <a name="c-programming-guide"></a>Průvodce programovacího jazyka C#
 Tato část obsahuje podrobné informace o klíčových jazyka C#, funkce a funkce přístupné pro C# pomocí rozhraní .NET Framework.  
@@ -85,7 +85,7 @@ Tato část obsahuje podrobné informace o klíčových jazyka C#, funkce a funk
   
  [Reflexe](../../csharp/programming-guide/concepts/reflection.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../csharp/language-reference/index.md)  
+- [Referenční dokumentace jazyka C#](../../csharp/language-reference/index.md)
 - [C#](../../csharp/index.md)

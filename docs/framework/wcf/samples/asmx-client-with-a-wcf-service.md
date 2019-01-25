@@ -2,12 +2,12 @@
 title: Klient ASMX se službou WCF
 ms.date: 03/30/2017
 ms.assetid: 3ea381ee-ac7d-4d62-8c6c-12dc3650879f
-ms.openlocfilehash: 8b8ebebbcb2c95555605ebd1d8e164b8babb7e3e
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: d526bc01d7809aa2672dcfcf194ad9c7d2e7baa5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49347835"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527508"
 ---
 # <a name="asmx-client-with-a-wcf-service"></a>Klient ASMX se službou WCF
 Tento příklad ukazuje, jak vytvořit službu pomocí Windows Communication Foundation (WCF) a potom z klienta bez WCF, jako je například klient ASMX se přístup ke službě.  
@@ -138,7 +138,7 @@ Press <ENTER> to terminate client.
 3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!NOTE]
->  Další informace o předávání a vracení komplexní datové typy naleznete v tématu: [datové vazby v klientovi Windows Forms](../../../../docs/framework/wcf/samples/data-binding-in-a-windows-forms-client.md), [datové vazby v klientovi Windows Presentation Foundation](../../../../docs/framework/wcf/samples/data-binding-in-a-wpf-client.md), a [dat Vazby v klientovi ASP.NET](../../../../docs/framework/wcf/samples/data-binding-in-an-aspnet-client.md)  
+>  Další informace o předávání a vracení komplexní datové typy naleznete v tématu: [Datové vazby v Windows Forms klienta](../../../../docs/framework/wcf/samples/data-binding-in-a-windows-forms-client.md), [datové vazby v klientovi Windows Presentation Foundation](../../../../docs/framework/wcf/samples/data-binding-in-a-wpf-client.md), a [datové vazby v klientovi ASP.NET](../../../../docs/framework/wcf/samples/data-binding-in-an-aspnet-client.md)  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
@@ -149,4 +149,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Interop\ASMX`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

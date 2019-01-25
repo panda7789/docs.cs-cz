@@ -12,12 +12,12 @@ helpviewer_keywords:
 - w compiler option [C#]
 - warn compiler option [C#]
 ms.assetid: 5f80ff59-4991-4382-9f9a-77da18446e71
-ms.openlocfilehash: 14656fa25ea1d01339bd63efb999e938e1243db8
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 5a4ecd1fbe5bb79a67d9df07d8f1a93830b03880
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865605"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499866"
 ---
 # <a name="-warn-c-compiler-options"></a>-warn (možnosti kompilátoru C#)
 **-Warn** určuje úroveň upozornění kompilátoru k zobrazení.  
@@ -30,7 +30,7 @@ ms.locfileid: "43865605"
   
 ## <a name="arguments"></a>Arguments  
  `option`  
- Úroveň pro upozornění, které chcete zobrazit pro kompilaci: nižší číslice zobrazit pouze vysokou závažností upozornění; vyšší čísla popisují další varování. Platné hodnoty jsou 0-4:  
+ Úroveň pro upozornění, které má být zobrazen pro kompilace: Nižší číslice zobrazit pouze vysokou závažností upozornění; vyšší čísla popisují další varování. Platné hodnoty jsou 0-4:  
   
 |Úroveň upozornění|Význam|  
 |-------------------|-------------|  
@@ -64,7 +64,7 @@ ms.locfileid: "43865605"
 csc -warn:1 in.cs  
 ```  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

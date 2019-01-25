@@ -14,12 +14,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 83928696fc7fdfaf2eb944f4cdb9eebecdece0b3
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: be5d580c28a15a58cad6c5a2231d3a87e25c0e7a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49452911"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54495342"
 ---
 # <a name="cordebugehclause-structure"></a>Struktura CorDebugEHClause
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
@@ -55,7 +55,7 @@ typedef struct _CorDebugEHClause {
 ## <a name="remarks"></a>Poznámky  
  Pole `CoreDebugEHClause` hodnoty vrácené [GetEHClauses](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md) metody.  
   
- Klauzule informace EH je definován specifikací CLI. Další informace najdete v tématu [Standard ECMA-355: společné jazykové infrastruktury (CLI), 6 Edition](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
+ Klauzule informace EH je definován specifikací CLI. Další informace najdete v tématu [Standard ECMA-355: Common Language Infrastructure (CLI), 6 Edition](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
   
  `flags` Pole může obsahovat následující příznaky. Všimněte si, že nejsou definovány v CorDebug.idl nebo CorDebug.h.  
   
@@ -67,7 +67,7 @@ typedef struct _CorDebugEHClause {
 |`COR_ILEXCEPTION_CLAUSE_FAULT`|0x00000004|Klauzule fault ( `finally` klauzuli, která je volána, pouze když je vyvolána výjimka).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -75,6 +75,6 @@ typedef struct _CorDebugEHClause {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [GetEHClauses – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md)  
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+## <a name="see-also"></a>Viz také:
+- [GetEHClauses – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md)
+- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)

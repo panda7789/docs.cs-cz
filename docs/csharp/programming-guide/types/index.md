@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 74362642a57bcdffc51a447ef044dc899cc83b71
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: ed666208c3d9bf2e9eb7d7f316cac3767e1bc718
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53237217"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54604311"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 ## <a name="types-variables-and-values"></a>Typy, proměnných a hodnot  
@@ -184,9 +184,9 @@ stringList.Add(4);
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Převod datových typů XML](../../../standard/data/xml/conversion-of-xml-data-types.md)  
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Převod datových typů XML](../../../standard/data/xml/conversion-of-xml-data-types.md)
 - [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)

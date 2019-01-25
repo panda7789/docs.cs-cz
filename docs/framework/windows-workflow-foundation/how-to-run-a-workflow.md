@@ -1,29 +1,29 @@
 ---
-title: 'Postupy: spuštění pracovního postupu'
+title: 'Postupy: Spuštění pracovního postupu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: f814ff82-fe2b-4614-aebb-b768c3e61179
-ms.openlocfilehash: 3b2081cee307e80396a9af4b9cfdbdea001113e6
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: e609c2b1a24ba01bf23226187b6d87e56395ff99
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836935"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530399"
 ---
-# <a name="how-to-run-a-workflow"></a>Postupy: spuštění pracovního postupu
-Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started a popisuje, jak vytvořit hostitele pracovního postupu a spustit pracovní postup definovaný v předchozím [postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md) tématu.
+# <a name="how-to-run-a-workflow"></a>Postupy: Spuštění pracovního postupu
+Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started a popisuje, jak vytvořit hostitele pracovního postupu a spustit pracovní postup definovaný v předchozím [jak: Vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md) tématu.
 
 > [!NOTE]
->  Každé téma v kurzu Začínáme závisí na předchozí témata. K dokončení tohoto tématu, musíte nejdřív Dokončit [postupy: vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md) a [postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md).
+>  Každé téma v kurzu Začínáme závisí na předchozí témata. K dokončení tohoto tématu, musíte nejdřív Dokončit [jak: Vytvořit aktivitu](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md) a [jak: Vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md).
 
 > [!NOTE]
 >  Chcete-li stáhnout úplnou verzi tohoto kurzu, přečtěte si téma [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
   
 ### <a name="to-create-the-workflow-host-project"></a>Chcete-li vytvořit projekt hostitele pracovního postupu  
   
-1.  Otevřete řešení od předchozího [postupy: vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md) tématu pomocí sady Visual Studio 2012.  
+1.  Otevřete řešení od předchozího [jak: Vytvořit aktivitu](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md) tématu pomocí sady Visual Studio 2012.  
   
 2.  Klikněte pravým tlačítkem myši **WF45GettingStartedTutorial** řešení v **Průzkumníka řešení** a vyberte **přidat**, **nový projekt**.  
   
@@ -77,7 +77,7 @@ Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started 
      Nahraďte řádků kódu, které používají <xref:System.Activities.WorkflowInvoker> s následující basic <xref:System.Activities.WorkflowApplication> hostování kódu. Tato ukázka hostování kód ukazuje základní kroky pro hostování a volání pracovního postupu, ale ještě neobsahuje funkce k úspěšnému spuštění pracovního postupu v tomto tématu. V následujících krocích se upraví tento základní kód a další funkce se přidají, dokud se nedokončí aplikace.
 
     > [!NOTE]
-    >  Nahraďte prosím `Workflow1` v těchto příkladech s `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, nebo `StateMachineNumberGuessWorkflow`podle toho, které pracovní postup můžete dokončit v předchozím [postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md) kroku. Pokud jste nenahrazují `Workflow1` pak při akci a vytvářet nebo spouštět pracovní postup bude docházet k chybám sestavení.
+    >  Nahraďte prosím `Workflow1` v těchto příkladech s `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, nebo `StateMachineNumberGuessWorkflow`podle toho, které pracovní postup můžete dokončit v předchozím [jak: Vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md) kroku. Pokud jste nenahrazují `Workflow1` pak při akci a vytvářet nebo spouštět pracovní postup bude docházet k chybám sestavení.
 
      [!code-csharp[CFX_WF_GettingStarted#4](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/extrasnippets.cs#4)]
      [!code-vb[CFX_WF_GettingStarted#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/extrasnippets.vb#4)]
@@ -94,7 +94,7 @@ Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started 
 2.  Nahraďte řádek kódu, který vytvoří nový <xref:System.Activities.WorkflowApplication> následujícím kódem, které vytváří a předává slovník parametrů do pracovního postupu při jeho vytvoření.
 
     > [!NOTE]
-    >  Nahraďte prosím `Workflow1` v těchto příkladech s `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, nebo `StateMachineNumberGuessWorkflow`podle toho, které pracovní postup můžete dokončit v předchozím [postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md) kroku. Pokud jste nenahrazují `Workflow1` pak při akci a vytvářet nebo spouštět pracovní postup bude docházet k chybám sestavení.
+    >  Nahraďte prosím `Workflow1` v těchto příkladech s `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, nebo `StateMachineNumberGuessWorkflow`podle toho, které pracovní postup můžete dokončit v předchozím [jak: Vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md) kroku. Pokud jste nenahrazují `Workflow1` pak při akci a vytvářet nebo spouštět pracovní postup bude docházet k chybám sestavení.
 
      [!code-csharp[CFX_WF_GettingStarted#6](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#6)]
      [!code-vb[CFX_WF_GettingStarted#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#6)]
@@ -148,24 +148,24 @@ Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started 
      [!code-csharp[CFX_WF_GettingStarted#6](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#6)]
      [!code-vb[CFX_WF_GettingStarted#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#6)]
 
-     Pokyny ohledně toho, jak přidat do aplikace pracovního postupu, trvalosti najdete v dalším tématu s názvem [postupy: vytváření a spouštění dlouhém pracovním postupu spuštění](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md).
+     Pokyny ohledně toho, jak přidat do aplikace pracovního postupu, trvalosti najdete v dalším tématu s názvem [jak: Vytvoření a spuštění dlouhodobého spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md).
 
 ## <a name="example"></a>Příklad
  V následujícím příkladu je kompletní kód pro výpis `Main` metody.
 
 > [!NOTE]
->  Nahraďte prosím `Workflow1` v těchto příkladech s `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, nebo `StateMachineNumberGuessWorkflow`podle toho, které pracovní postup můžete dokončit v předchozím [postupy: vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md) kroku. Pokud jste nenahrazují `Workflow1` pak při akci a vytvářet nebo spouštět pracovní postup bude docházet k chybám sestavení.
+>  Nahraďte prosím `Workflow1` v těchto příkladech s `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, nebo `StateMachineNumberGuessWorkflow`podle toho, které pracovní postup můžete dokončit v předchozím [jak: Vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md) kroku. Pokud jste nenahrazují `Workflow1` pak při akci a vytvářet nebo spouštět pracovní postup bude docházet k chybám sestavení.
 
  [!code-csharp[CFX_WF_GettingStarted#12](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#12)]
  [!code-vb[CFX_WF_GettingStarted#12](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#12)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Activities.WorkflowApplication>
 - <xref:System.Activities.Bookmark>
 - [Programování Windows Workflow Foundation](../../../docs/framework/windows-workflow-foundation/programming.md)
 - [Kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md)
 - [Postupy: Vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md)
-- [Postupy: Vytvoření a spuštění dlouhodobého pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md)
+- [Postupy: Vytvoření a spuštění dlouhodobého spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md)
 - [Čekání na zadání v pracovním postupu](../../../docs/framework/windows-workflow-foundation/waiting-for-input-in-a-workflow.md)
 - [Hostování pracovních postupů](../../../docs/framework/windows-workflow-foundation/hosting-workflows.md)

@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <httpWebRequest> element
 - httpWebRequest element
 ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
-ms.openlocfilehash: 0d3feb168acbd623270a2038bf06a3c97126bd05
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 1a883b2e57d0f055237d68e4f69651ef496795ab
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50205149"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54590026"
 ---
 # <a name="lthttpwebrequestgt-element-network-settings"></a>&lt;httpWebRequest&gt; – Element (nastavení sítě)
 Přizpůsobí parametrů webové žádosti.  
   
  \<Konfigurace >  
 \<system.net>  
-\<Nastavení >  
-\<httpWebRequest >  
+\<settings>  
+\<httpWebRequest>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,7 +53,7 @@ Přizpůsobí parametrů webové žádosti.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[Nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
+|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  Ve výchozím nastavení rozhraní .NET Framework přísně dokumentu RFC 2616 k analýze identifikátoru URI. Některé odpovědi serveru může obsahovat řídicí znaky zakázaných polí, které způsobí, že <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> metoda k vyvolání <xref:System.Net.WebException>. Pokud **useUnsafeHeaderParsing** je nastavena na **true**, <xref:System.Net.HttpWebRequest.GetResponse?displayProperty=nameWithType> nezpůsobí výjimku v tomto případě; nicméně, vaše aplikace bude zranitelný vůči několik tvarů útoky parsování identifikátorů URI. Nejlepším řešením je změnit server tak, aby odpovědi neobsahuje řídicí znaky.  
@@ -76,6 +76,6 @@ Přizpůsobí parametrů webové žádosti.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

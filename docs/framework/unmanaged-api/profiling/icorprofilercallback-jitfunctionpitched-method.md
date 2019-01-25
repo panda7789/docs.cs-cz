@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cf51d2a0e7381cd495da8f3846302ec806c34774
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 91bc626e2c75cd7eb2eafad0fc26d343e5b278e0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33451409"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530723"
 ---
 # <a name="icorprofilercallbackjitfunctionpitched-method"></a>ICorProfilerCallback::JITFunctionPitched – metoda
-Upozorní profileru, funkci, která byla v běhu (JIT)-zkompilovat byl odebrán z paměti.  
+Oznámí profileru, který funkci, která byla just-in-time (JIT)-zkompilovány se odebral z paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,15 +36,15 @@ HRESULT JITFunctionPitched(
   
 #### <a name="parameters"></a>Parametry  
  `functionId`  
- [v] ID funkce, která byla odebrána.  
+ [in] ID funkce, které se odstranily.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud odebrané funkce je volána, obdrží profileru nové události JIT – kompilace při znovu zkompiluje funkce. V současné době běžné language runtime (CLR) JIT kompilátoru neodebere funkce z paměti, tak, aby tento zpětného volání není aktuálně používá a nebude přijatých profileru.  
+ Odebrané funkce je volána, profiler obdrží nové kompilace JIT události při nové kompilaci funkce. V současné době kompilátor JIT společného jazyka runtime (CLR) neodebere funkce z paměti, tak tato zpětné volání se aktuálně nepoužívá a nebude přijímat pomocí profileru.  
   
- Hodnota `functionId` není platná, dokud nebude znovu zkompiluje funkce. Když znovu zkompiluje funkce stejné `functionId` bude použita hodnota.  
+ Hodnota `functionId` není platná, dokud je znovu zkompilovat funkci. Při nové kompilaci funkci stejné `functionId` bude použita hodnota.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -52,5 +52,5 @@ HRESULT JITFunctionPitched(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 67e1d20f7faf38fa37083f1a5b1cc0c1060b7a32
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5262ba6ef0d2d36372326df24b519072e2aa6fc6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33461565"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54587512"
 ---
 # <a name="icorprofilerinfo3getruntimeinformation-method"></a>ICorProfilerInfo3::GetRuntimeInformation – metoda
-Poskytuje informace o verzi o common language runtime (CLR), který je profilovaný.  
+Poskytuje informace o verzi o common language runtime (CLR), která je právě profilována.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,13 +45,13 @@ HRESULT GetRuntimeInformation(
   
 #### <a name="parameters"></a>Parametry  
  `pClrInstanceId`  
- [out] ID zástupce spuštěné instance CLR v procesu. Je to stejné jako `ClrInstanceID` , sestavy trasování událostí pro událost spuštění systému Windows (ETW).  
+ [out] Identifikátor zástupce spuštěné instance modulu CLR v procesu. To je stejný jako `ClrInstanceID` , že sestavy trasování událostí pro Windows (ETW) spouštěcí událost.  
   
  `pRuntimeType`  
- [out] Typ modulu runtime. Tento parametr vrátí `COR_PRF_DESKTOP_CLR` pro plochy verzi modulu CLR, nebo `COR_PRF_CORE_CLR` pro základní verzi modulu CLR použít v programu Silverlight.  
+ [out] Typ modulu runtime. Tento parametr vrátí `COR_PRF_DESKTOP_CLR` pro desktopovou verzi modulu CLR, nebo `COR_PRF_CORE_CLR` základní verze CLR použít v programu Silverlight.  
   
  `pMajorVersion`  
- [out] Hlavní číslo verze modulu CLR.  
+ [out] Číslo hlavní verze modulu CLR.  
   
  `pMinorVersion`  
  [out] Číslo podverze modulu CLR.  
@@ -60,22 +60,22 @@ HRESULT GetRuntimeInformation(
  [out] Číslo verze sestavení CLR.  
   
  `pQFEVersion`  
- [out] Číslo verze modulu CLR, který je přidružen aktualizace softwaru.  
+ [out] Číslo verze modulu CLR, který je přiřazen k aktualizaci softwaru.  
   
  `cchVersionString`  
- [v] Délka ve znacích vyrovnávací paměti, `szVersionString` odkazuje na.  
+ [in] Délka ve znacích, vyrovnávací paměti, která `szVersionString` odkazuje na.  
   
  `pcchVersionString`  
  [out] Délka ve znacích, z `szVersionString`.  
   
  `szVersionString`  
- [out] Řetězec verze CLR.  
+ [out] Řetězec verze modulu CLR.  
   
 ## <a name="remarks"></a>Poznámky  
- Vám může předat hodnotu null pro libovolný parametr. Ale `pcchVersionString` nemůže být null. Pokud `szVersionString` má hodnotu null.  
+ Můžete předat hodnotu null pro žádné parametry. Ale `pcchVersionString` nemůže být null. Pokud `szVersionString` má hodnotu null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -83,7 +83,7 @@ HRESULT GetRuntimeInformation(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)

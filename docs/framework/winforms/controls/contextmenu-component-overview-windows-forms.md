@@ -8,25 +8,25 @@ helpviewer_keywords:
 - context menus [Windows Forms], ContextMenu component
 - shortcut menus [Windows Forms], ContextMenu component
 ms.assetid: 49d6398f-d3c4-4679-84fa-1de07b68b05e
-ms.openlocfilehash: 5d548815533e8f9bb37ad00129a5ae526612ea08
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7da0522dae00608ead356484a31d219a67ec4ba9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33526120"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54545670"
 ---
 # <a name="contextmenu-component-overview-windows-forms"></a>ContextMenu – přehled komponenty (Windows Forms)
 > [!IMPORTANT]
->  I když <xref:System.Windows.Forms.MenuStrip> a <xref:System.Windows.Forms.ContextMenuStrip> nahradit a přidání funkce do <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> ovládací prvky předchozí verze, <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud si zvolíte.  
+>  I když <xref:System.Windows.Forms.MenuStrip> a <xref:System.Windows.Forms.ContextMenuStrip> nahradit a přidání funkce, které <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> ovládací prvky z předchozích verzí <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud se rozhodnete.  
   
- S Windows Forms <xref:System.Windows.Forms.ContextMenu> součásti, můžete poskytnout uživatelům snadno dostupný místní nabídce často používané příkazy, které jsou přidruženy vybraný objekt. Položky v místní nabídce jsou často podmnožinou položky z hlavní nabídky, které se zobrazují jinde v aplikaci. Místní nabídky moct uživatel přistupovat obvykle kliknutím pravým tlačítkem myši. V rozhraní Windows Forms jsou spojeny s ovládacími prvky místní nabídky.  
+ Pomocí Windows Forms <xref:System.Windows.Forms.ContextMenu> součásti, můžete poskytnout uživatelům snadno k dispozici nabídku s často používanými příkazy, které jsou spojeny s vybraným objektem. Položky v místní nabídce jsou často podmnožinou položky z hlavní nabídky, které jsou zobrazeny jinde v aplikaci. Uživatel obvykle můžete přistupovat k místní nabídce kliknutím pravým tlačítkem myši. Ve Windows Forms jsou spojeny s ovládacími prvky místní nabídky.  
   
-## <a name="key-properties"></a>Klíčové vlastnosti  
- Místní nabídky můžete přidružit s ovládacím prvkem nastavením ovládacího prvku <xref:System.Windows.Forms.Control.ContextMenu%2A> vlastnost, která má <xref:System.Windows.Forms.ContextMenu> součásti. Jeden místní nabídky může být přidružen více ovládacích prvků, ale každý ovládací prvek může mít pouze jeden místní nabídky.  
+## <a name="key-properties"></a>Vlastnosti klíče  
+ Můžete přidružit místní nabídku ovládacího prvku tak, že nastavíte ovládacího prvku <xref:System.Windows.Forms.Control.ContextMenu%2A> vlastnost <xref:System.Windows.Forms.ContextMenu> komponenty. Jeden místní nabídky můžou být spojené s více ovládacích prvků, ale každý ovládací prvek může mít pouze jednu nabídku.  
   
- Klíčové vlastnosti <xref:System.Windows.Forms.ContextMenu> součást je <xref:System.Windows.Forms.Menu.MenuItems%2A> vlastnost. Položky nabídky můžete přidat prostřednictvím kódu programu vytvořením <xref:System.Windows.Forms.MenuItem> objekty a jejich přidání <xref:System.Windows.Forms.Menu.MenuItemCollection> z místní nabídky. Protože položky v místní nabídce jsou obvykle čerpají z jiných nabídek, budou nejčastěji přidejte položky do místní nabídky zkopírováním.  
+ Klíčové vlastnosti <xref:System.Windows.Forms.ContextMenu> komponenta je <xref:System.Windows.Forms.Menu.MenuItems%2A> vlastnost. Můžete přidat položky nabídky programové vytvoření <xref:System.Windows.Forms.MenuItem> objekty a jejich přidání na <xref:System.Windows.Forms.Menu.MenuItemCollection> v místní nabídce. Protože položek v místní nabídce jsou obvykle nakreslen z jiných nabídek, nejčastěji přidáte položky místní nabídky jejich zkopírováním.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.ContextMenu>  
- <xref:System.Windows.Forms.MenuStrip>  
- <xref:System.Windows.Forms.ContextMenuStrip>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.ContextMenu>
+- <xref:System.Windows.Forms.MenuStrip>
+- <xref:System.Windows.Forms.ContextMenuStrip>

@@ -20,91 +20,91 @@ helpviewer_keywords:
 - abstract classes [Visual Basic], inheritance
 - overriding, Overrides keyword
 ms.assetid: dfc8deba-f5b3-4d1d-a937-7cb826446fc5
-ms.openlocfilehash: 9225e5fd9fa35ae06414018a109f66515f99363f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ae6b53db3a2cdcefa2b05d68ed953c5e17b279dc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33655186"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54551784"
 ---
 # <a name="inheritance-basics-visual-basic"></a>Základní informace o dědičnosti (Visual Basic)
-`Inherits` Příkaz se používá k deklaraci novou třídu, s názvem *odvozené třídy*na stávající třídě, označuje jako základě *základní třída*. Odvozené třídy dědí a můžete rozšířit, vlastnosti, metody, události, pole a konstanty definované v základní třídě. Následující část popisuje některé z pravidel pro dědičnosti a modifikátory, které můžete změnit způsob třídy dědí nebo jsou děděné:  
+`Inherits` Prohlášení se používá k deklaraci nové třídy, nazvané *odvozené třídy*založená na stávající třídě, označované jako *základní třída*. Odvozené třídy dědit a můžete rozšířit, vlastnosti, metody, události, polí a konstanty definované v základní třídě. Následující část popisuje některé z pravidel pro dědičnost a modifikátory, které vám umožní změnit způsob, jak třídy dědit nebo jsou zděděny:  
   
--   Ve výchozím nastavení, všechny třídy lze dědit, pokud označené jako `NotInheritable` – klíčové slovo. Třídy lze dědit z jiné třídy v projektu nebo z třídy v ostatních sestavení, které váš projekt odkazuje.  
+-   Ve výchozím nastavení, všechny třídy lze dědit, pokud označené `NotInheritable` – klíčové slovo. Třídy mohou dědit z jiné třídy v projektu nebo z třídy v jiných sestavení, na které odkazuje váš projekt.  
   
--   Na rozdíl od jazyky, které umožňují vícenásobná dědičnost Visual Basic, umožňuje pouze jedna dědičnost v třídách; odvozené třídy tedy může mít pouze jeden základní třídy. I když vícenásobná dědičnost není povolena v třídách, můžete implementovat třídy více rozhraní, které můžete efektivně provádět stejné elementy end.  
+-   Na rozdíl od jazyky, které umožňují vícenásobná dědičnost Visual Basic umožňuje pouze jedna dědičnost tříd; To znamená, že odvozené třídy mohou mít pouze jednu základní třídu. I když vícenásobná dědičnost není povolený ve třídách, třídy můžou implementovat více rozhraní, které můžete efektivně provádět stejné elementy end.  
   
--   Pokud chcete zabránit vystavení s omezeným přístupem položky v základní třídě, musí být typ přístupu odvozené třídy rovna nebo více omezující než její základní třída. Například `Public` třída nemůže Zdědit `Friend` nebo `Private` třída a `Friend` třída nemůže Zdědit `Private` – třída.  
+-   Pokud chcete zabránit zveřejnění položky s omezeným přístupem v základní třídě, musí být typ přístupu odvozené třídy rovná nebo je více omezující než její základní třídě. Například `Public` třída nemůže dědit `Friend` nebo `Private` třídy a `Friend` třída nemůže dědit `Private` třídy.  
   
 ## <a name="inheritance-modifiers"></a>Modifikátory dědičnosti  
- Visual Basic představuje následující příkazy úrovni třídy a modifikátory pro podporu dědičnosti:  
+ Visual Basic představuje následující příkazy na úrovni třídy a modifikátory pro podporu dědičnosti:  
   
--   `Inherits` příkaz – určuje základní třídy.  
+-   `Inherits` příkaz – určuje základní třídu.  
   
--   `NotInheritable` Modifikátor – programátory bránit v použití třídy jako základní třída.  
+-   `NotInheritable` Modifikátor – zbavuje programátory horizontálních oddílů pomocí třídy jako základní třídu.  
   
--   `MustInherit` Modifikátor – Určuje, že třída je určena pro použití jako základní třída. Instance `MustInherit` třídy nelze vytvořit přímo; jejich lze vytvořit pouze jako základní instancí třídy odvozené třídy. (Jinými programovací jazyky, jako je například C++ a C#, použijte termín *abstraktní třída* k popisu taková třída.)  
+-   `MustInherit` Modifikátor – Určuje, že třída je určena pro použití jako základní třídu. Instance `MustInherit` třídy nelze vytvořit přímo, mohou být vytvořeny pouze jako základní třída instance odvozené třídy. (Jiných programovacích jazycích, jako je například C++ a C#, použijte termín *abstraktní třídu* k popisu takové třídy.)  
   
 ## <a name="overriding-properties-and-methods-in-derived-classes"></a>Přepsání vlastností a metod v odvozených třídách  
- Ve výchozím nastavení odvozené třídy dědí vlastnosti a metody ze své základní třídy. Pokud zděděnou vlastnost nebo metoda obsahuje chovat jinak v odvozené třídě může být *přepsat*. To znamená můžete definovat nové implementace metody v odvozené třídě. Následující modifikátory je možné určit, jak jsou přepsaná vlastnosti a metody:  
+ Ve výchozím nastavení dědí odvozená třída vlastnosti a metody ze své základní třídy. Pokud zděděnou vlastnost nebo metoda mají chovat jinak než v odvozené třídě může být *přepsat*. To znamená můžete definovat novou implementaci metody v odvozené třídě. Následující modifikátory umožňují určit, jak přepsat vlastnosti a metody:  
   
--   `Overridable` – Umožňuje vlastnosti nebo metody ve třídě k přepsání v odvozené třídě.  
+-   `Overridable` – Povoluje vlastnosti nebo metody ve třídě k přepsání v odvozené třídě.  
   
--   `Overrides` – Přepsání `Overridable` vlastnosti nebo metody definované v základní třídě.  
+-   `Overrides` – Přepíše `Overridable` vlastnosti nebo metody definované v základní třídě.  
   
--   `NotOverridable` – Brání vlastnosti nebo metody přepsání dědičných třídy. Ve výchozím nastavení `Public` metody jsou `NotOverridable`.  
+-   `NotOverridable` – Brání vlastnosti nebo metody v přepsání v dědičné třídě. Ve výchozím nastavení `Public` metody jsou `NotOverridable`.  
   
--   `MustOverride` – Vyžaduje, aby odvozené třídě přepsat vlastnosti nebo metody. Když `MustOverride` – klíčové slovo se používá, definici metody se skládá z jenom na `Sub`, `Function`, nebo `Property` příkaz. Jsou povoleny žádné jiné příkazy a konkrétně neexistuje žádné `End Sub` nebo `End Function` příkaz. `MustOverride` metody musí být deklarován v `MustInherit` třídy.  
+-   `MustOverride` – Vyžaduje, aby odvozená třída přepsat vlastnosti nebo metody. Když `MustOverride` klíčové slovo se používá, se skládá z definice metody jenom `Sub`, `Function`, nebo `Property` příkaz. Jsou povoleny žádné jiné příkazy a konkrétně neexistuje žádné `End Sub` nebo `End Function` příkazu. `MustOverride` metody musí být deklarována v `MustInherit` třídy.  
   
- Předpokládejme, že chcete definovat pro zpracování mzdy třídy. Můžete třeba definovat obecný `Payroll` třídu, která obsahuje `RunPayroll` metoda, která by vypočítala mzdy typické týden. Poté můžete použít `Payroll` jako základní třída pro více specializované `BonusPayroll` třídy, který může být použit při distribuci bonusy zaměstnanců.  
+ Předpokládejme, že chcete definovat třídy pro zpracování mezd. Můžete například definovat obecnou `Payroll` třídu, která obsahuje `RunPayroll` metodu, která vypočítá mezd typické týden. Můžete pak použít `Payroll` jako základní třída pro více specializované `BonusPayroll` třídy, který může být použit při distribuci bonusy zaměstnance.  
   
- `BonusPayroll` Třída může dědit a přepsat, `PayEmployee` metoda definované v základní `Payroll` třídy.  
+ `BonusPayroll` Třída může dědit a přepsat, `PayEmployee` metodu definovanou v základní třídě `Payroll` třídy.  
   
- V následujícím příkladu definuje základní třídu, `Payroll,` a odvozené třídy `BonusPayroll`, který přepíše metodu zděděné `PayEmployee`. A postup `RunPayroll`, vytvoří a pak předá `Payroll` objektu a `BonusPayroll` objekt, který má funkci, `Pay`, který provede `PayEmployee` metoda oba objekty.  
+ Následující příklad definuje základní třídu, `Payroll,` a odvozené třídy `BonusPayroll`, která přepíše metodu zděděné `PayEmployee`. Proceduře `RunPayroll`, vytvoří a pak předá `Payroll` objektu a `BonusPayroll` objekt funkce, `Pay`, který se spustí `PayEmployee` metoda oba objekty.  
   
  [!code-vb[VbVbalrOOP#28](../../../../visual-basic/misc/codesnippet/VisualBasic/inheritance-basics_1.vb)]  
   
 ## <a name="the-mybase-keyword"></a>MyBase – klíčové slovo  
- `MyBase` – Klíčové slovo chová jako objektová proměnná, která odkazuje na základní třídu aktuální instance třídy. `MyBase` často se používá pro přístup k členy základní třídy, které jsou přepsat nebo Stínovaný v odvozené třídě. Konkrétně `MyBase.New` se používá k explicitně volání konstruktoru základní třídy z konstruktoru odvozené třídy.  
+ `MyBase` – Klíčové slovo se chová jako proměnné objektu, který odkazuje na základní třídu aktuální instance třídy. `MyBase` často se používá pro přístup ke členům základní třídy, přepsat nebo Stínovaný v odvozené třídě. Zejména `MyBase.New` se používá explicitně volat konstruktor základní třídy v konstruktoru odvozené třídy.  
   
- Předpokládejme například, že navrhujete odvozené třídy, který přepíše metodu zděděn ze základní třídy. Přepsaná metoda můžete volat metodu v základní třídě a jak je znázorněno v následující fragment kódu upravit návratovou hodnotu:  
+ Předpokládejme například, že při návrhu odvozenou třídu, která přepíše metodu zděděné ze základní třídy. Přepsané metody lze volat metodu v základní třídě a vrácenou hodnotu změnit, jak je znázorněno v následujícím fragmentu kódu:  
   
  [!code-vb[VbVbalrOOP#109](../../../../visual-basic/misc/codesnippet/VisualBasic/inheritance-basics_2.vb)]  
   
- Následující seznam popisuje omezení týkající se použití `MyBase`:  
+ Následující seznam popisuje omezení pro používání `MyBase`:  
   
--   `MyBase` odkazuje na přímé základní třídy a její zděděné členy. Nelze použít pro přístup k `Private` členy ve třídě.  
+-   `MyBase` odkazuje na přímé základní třídy a jejích zděděných členů. Nedá se použít pro přístup k `Private` členy třídy.  
   
--   `MyBase` je klíčové slovo, nikoli skutečné objektu. `MyBase` nelze přiřazený k proměnné, předaný postupy nebo používány `Is` porovnání.  
+-   `MyBase` je klíčové slovo, nikoli skutečný objekt. `MyBase` nelze přiřadit k proměnné, předány do procedury nebo použít v `Is` porovnání.  
   
--   Metoda, `MyBase` vyfiltrování nemá být definován ve třídě okamžitou základní; se místo toho mohou být definovány v nepřímo zděděné základní třídy. Aby odkaz kvalifikovaný `MyBase` pro správnou kompilaci některé základní třída musí obsahovat odpovídající název a typy parametrů, které se zobrazují v volání metody.  
+-   Metoda, která `MyBase` kvalifikuje nemusí být definován v přímé základní třídy je místo toho mohou být definovány v nepřímo zděděné základní třídy. Aby odkaz kvalifikována `MyBase` pro správnou kompilaci některé základní třída musí obsahovat odpovídající název a typy parametrů, které se zobrazí při volání metody.  
   
 -   Nemůžete použít `MyBase` volat `MustOverride` základní metody třídy.  
   
--   `MyBase` nelze použít k vyfiltrování sám sebe. Následující kód, proto není platný:  
+-   `MyBase` nelze použít k vyfiltrování samotný. Následující kód proto není platná:  
   
      `MyBase.MyBase.BtnOK_Click()`  
   
 -   `MyBase` nelze použít v modulech.  
   
--   `MyBase` nelze použít pro přístup k členy základní třídy, které jsou označeny jako `Friend` Pokud základní třída je v jiném sestavení.  
+-   `MyBase` nelze použít pro přístup k členům základní třídy, které jsou označeny jako `Friend` Pokud základní třída je v jiném sestavení.  
   
- Další informace a další příklad najdete v tématu [postupy: přístup k proměnné skryté odvozenou třídou](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md).  
+ Další informace a další příklad naleznete v tématu [jak: Přístup k proměnné skryté odvozenou třídou](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md).  
   
 ## <a name="the-myclass-keyword"></a>MyClass – klíčové slovo  
- `MyClass` – Klíčové slovo chová jako objektová proměnná, která odkazuje na aktuální instanci třídy v původním implementována. `MyClass` podobá `Me`, ale každý metod a vlastností volání na `MyClass` je zpracováván jako by byly metody nebo vlastnosti [NotOverridable](../../../../visual-basic/language-reference/modifiers/notoverridable.md). Proto metody nebo vlastnosti nemá vliv přepsání v odvozené třídě.  
+ `MyClass` – Klíčové slovo se chová jako proměnné objektu, který odkazuje na aktuální instanci třídy, jak byly původně implementované. `MyClass` se podobá `Me`, ale každé metody a vlastnosti volat na `MyClass` je zacházeno, jako kdyby byly metody nebo vlastnosti [NotOverridable](../../../../visual-basic/language-reference/modifiers/notoverridable.md). Proto že metoda nebo vlastnost nemá vliv přepsání v odvozené třídě.  
   
--   `MyClass` je klíčové slovo, nikoli skutečné objektu. `MyClass` nelze přiřazený k proměnné, předaný postupy nebo používány `Is` porovnání.  
+-   `MyClass` je klíčové slovo, nikoli skutečný objekt. `MyClass` nelze přiřadit k proměnné, předány do procedury nebo použít v `Is` porovnání.  
   
--   `MyClass` odkazuje na třídu obsahující a jeho zděděné členy.  
+-   `MyClass` odkazuje na třídu obsahující a jejích zděděných členů.  
   
 -   `MyClass` lze použít jako kvalifikátory pro `Shared` členy.  
   
--   `MyClass` nelze použít uvnitř `Shared` metoda, ale dá se použít uvnitř metody instance přístup sdíleného člena třídy.  
+-   `MyClass` nelze použít uvnitř `Shared` metody, ale můžou se používat pro přístup ke sdílenému členu třídy uvnitř metody instance.  
   
--   `MyClass` nelze použít v standardní moduly.  
+-   `MyClass` nelze použít standardní moduly.  
   
--   `MyClass` lze použít k vyfiltrování metoda, která je definovaná v základní třídě a která nemá žádnou implementaci metody uvedené v této třídě. Takový odkaz má stejný význam jako `MyBase.` *metoda*.  
+-   `MyClass` lze použít k vyfiltrování metodu, která je definována v základní třídě a, který nemá žádnou implementaci metody, které jsou k dispozici v dané třídě. Takový odkaz má stejný význam jako `MyBase.` *metoda*.  
   
  Následující příklad porovnává `Me` a `MyClass`.  
   
@@ -140,8 +140,8 @@ Class testClasses
 End Class  
 ```  
   
- I když `derivedClass` přepsání `testMethod`, `MyClass` – klíčové slovo v `useMyClass` nichž účinnost přepsání a překládá kompilátoru volání základní třída verzi `testMethod`.  
+ I když `derivedClass` přepíše `testMethod`, `MyClass` – klíčové slovo v `useMyClass` nichž účinky přepsání a odstraňuje kompilátoru volání základní třídy verzi `testMethod`.  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Inherits](../../../../visual-basic/language-reference/statements/inherits-statement.md)  
- [Me, My, MyBase a MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Inherits](../../../../visual-basic/language-reference/statements/inherits-statement.md)
+- [Me, My, MyBase a MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)

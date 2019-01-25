@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute'
+title: 'Průvodce: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,17 +11,17 @@ helpviewer_keywords:
 - collections [Windows Forms], serializing
 - collections [Windows Forms], standard types
 ms.assetid: 020c9df4-fdc5-4dae-815a-963ecae5668c
-ms.openlocfilehash: 54859b3065e8e9bb9680d8b6bf7946b393f73b9f
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 5c9bb0bc16517ba3ffe6621cdf53b1685e8730e1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43788078"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54533543"
 ---
-# <a name="walkthrough-serializing-collections-of-standard-types-with-the-designerserializationvisibilityattribute"></a>Návod: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute
+# <a name="walkthrough-serializing-collections-of-standard-types-with-the-designerserializationvisibilityattribute"></a>Průvodce: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute
 Vlastní ovládací prvky se někdy vystavit kolekci jako vlastnost. Tento návod ukazuje, jak používat <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> třídy řídit, jak je kolekce serializovat v době návrhu. Použití <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content> hodnota k vaší kolekci vlastností zajišťuje, že vlastnost bude serializována.  
   
- V tomto tématu jako jeden seznam zkopírovat kód, naleznete v tématu [postupy: serializace kolekcí ze standardních typů s DesignerSerializationVisibilityAttribute](https://msdn.microsoft.com/library/7829fcdd-8205-405f-8231-a1282a9835c9).  
+ Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [jak: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](https://msdn.microsoft.com/library/7829fcdd-8205-405f-8231-a1282a9835c9).  
   
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
@@ -38,7 +38,7 @@ Vlastní ovládací prvky se někdy vystavit kolekci jako vlastnost. Tento návo
   
 1.  Vytvořit projekt Knihovna ovládacích prvků Windows s názvem `SerializationDemoControlLib`. Další informace najdete v tématu [šablonu ovládacího prvku knihovny Windows](https://msdn.microsoft.com/library/722f4e2d-1310-4ed5-8f33-593337ab66b4).  
   
-2.  Přejmenovat `UserControl1` k `SerializationDemoControl`. Další informace najdete v tématu [postupy: přejmenování identifikátorů](https://msdn.microsoft.com/library/2430f732-2b70-4516-8cf6-a7bb71cc9724).  
+2.  Přejmenovat `UserControl1` k `SerializationDemoControl`. Další informace najdete v tématu [jak: Přejmenování identifikátorů](https://msdn.microsoft.com/library/2430f732-2b70-4516-8cf6-a7bb71cc9724).  
   
 3.  V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.Forms.Padding.All%2A?displayProperty=nameWithType> vlastnost `10`.  
   
@@ -50,7 +50,7 @@ Vlastní ovládací prvky se někdy vystavit kolekci jako vlastnost. Tento návo
     |--------------|---------------|  
     |**Multiline**|`true`|  
     |**Ukotvení**|<xref:System.Windows.Forms.DockStyle.Fill>|  
-    |**Posuvníky**|<xref:System.Windows.Forms.ScrollBars.Vertical>|  
+    |**ScrollBars**|<xref:System.Windows.Forms.ScrollBars.Vertical>|  
     |**ReadOnly**|`true`|  
   
 6.  V **Editor kódu**, deklarace pole pole řetězce s názvem `stringsValue` v `SerializationDemoControl`.  
@@ -84,7 +84,7 @@ Vlastní ovládací prvky se někdy vystavit kolekci jako vlastnost. Tento návo
   
 1.  Přidáte do řešení projekt aplikace Windows. Pojmenujte projekt `SerializationDemoControlTest`.  
   
-2.  V **nástrojů**, najít na kartě s názvem **SerializationDemoControlLib komponenty**. Na této kartě můžete najít `SerializationDemoControl`. Další informace najdete v tématu [návod: Automatické vyplnění sady nástrojů pomocí vlastních komponent](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md).  
+2.  V **nástrojů**, najít na kartě s názvem **SerializationDemoControlLib komponenty**. Na této kartě můžete najít `SerializationDemoControl`. Další informace najdete v tématu [názorný postup: Automatické vyplnění nástrojů vlastními komponentami](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md).  
   
 3.  Místo `SerializationDemoControl` na formuláři.  
   
@@ -135,10 +135,10 @@ Vlastní ovládací prvky se někdy vystavit kolekci jako vlastnost. Tento návo
   
 -   [Přehled serializace návrháře](https://msdn.microsoft.com/library/c342635a-aa5f-4281-915b-b013738af15a)  
   
--   [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio pro dobu návrhu](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
+-   [Návod: Vytvoření ovládacího prvku Windows Forms, který využívá funkce sady Visual Studio Design-Time](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>  
- [Přehled serializace návrháře](https://msdn.microsoft.com/library/c342635a-aa5f-4281-915b-b013738af15a)  
- [Postupy: serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](https://msdn.microsoft.com/library/7829fcdd-8205-405f-8231-a1282a9835c9)  
- [Návod: Automatické vyplnění sady nástrojů vlastními komponentami](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>
+- [Přehled serializace návrháře](https://msdn.microsoft.com/library/c342635a-aa5f-4281-915b-b013738af15a)
+- [Postupy: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](https://msdn.microsoft.com/library/7829fcdd-8205-405f-8231-a1282a9835c9)
+- [Návod: Automatické vyplnění nástrojů vlastními komponentami](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md)

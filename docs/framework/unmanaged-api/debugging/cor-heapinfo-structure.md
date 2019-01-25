@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8fb1ae367c30bb038bfe25961e91f02f172f486c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ffca8e076fe6fe966a9a07ed915a7e76ea06f37c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405753"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54518069"
 ---
 # <a name="corheapinfo-structure"></a>COR_HEAPINFO – struktura
-Poskytuje obecné informace o kolekci halda paměti, včetně toho, jestli je vyčíslitelná.  
+Obsahuje obecné informace o haldě uvolňování paměti kolekce, včetně toho, zda je vyčíslitelná.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,19 +42,19 @@ typedef struct _COR_HEAPINFO {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`areGCStructuresValid`|`true` Pokud jsou platné struktury kolekce paměti a mohou být uvedené halda; v opačném `false`.|  
-|`pointerSize`|Velikost v bajtech, ukazatelů na cílové architektury.|  
-|`numHeaps`|Počet logických uvolňování paměti haldách v procesu.|  
-|`concurrent`|`TRUE` Pokud je to souběžné uvolňování paměti (pozadí) je povoleno; v opačném `FALSE`.|  
-|`gcType`|Člen [CorDebugGCType](../../../../docs/framework/unmanaged-api/debugging/cordebuggctype-enumeration.md) výčtu, která určuje, zda má systém uvolňování běží na pracovní stanici nebo na serveru.|  
+|`areGCStructuresValid`|`true` Pokud se uvolňování paměti kolekce struktur jsou platné a jsou uvedené haldy; v opačném případě `false`.|  
+|`pointerSize`|Velikost v bajtech, ukazatelů na cílové architektuře.|  
+|`numHeaps`|Počet logických uvolňování paměti haldy v procesu.|  
+|`concurrent`|`TRUE` Pokud souběžné uvolňování paměti (pozadí) je povoleno; v opačném případě `FALSE`.|  
+|`gcType`|Člen [cordebuggctype –](../../../../docs/framework/unmanaged-api/debugging/cordebuggctype-enumeration.md) výčet, který označuje, zda systému uvolňování paměti běží na serveru nebo pracovní stanice.|  
   
 ## <a name="remarks"></a>Poznámky  
- Instance `COR_HEAPINFO` struktura vrátí volání [icordebugprocess5::getgcheapinformation –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) metoda.  
+ Instance `COR_HEAPINFO` struktura je vrácený voláním [icordebugprocess5::getgcheapinformation –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) metody.  
   
- Před vytváření výčtu objektů v haldě kolekce paměti, je nutné vždy zkontrolovat `areGCStructuresValid` pole zajistit, že halda je ve stavu vyčíslitelná. Další informace najdete v tématu [icordebugprocess5::getgcheapinformation –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) metoda.  
+ Před vytváření výčtu objektů na haldě uvolňování paměti, musí vždy zkontrolujte `areGCStructuresValid` pole tak, aby byl haldy ve výčtu stavu. Další informace najdete v tématu [icordebugprocess5::getgcheapinformation –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getgcheapinformation-method.md) metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -62,6 +62,6 @@ typedef struct _COR_HEAPINFO {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

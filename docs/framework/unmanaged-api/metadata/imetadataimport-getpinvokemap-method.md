@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2174537e9605ad35e4f6f878954e318c7032b080
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2aed3367e20e32a387c8a1c58ead2899fbf0dcb9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448345"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54521436"
 ---
 # <a name="imetadataimportgetpinvokemap-method"></a>IMetaDataImport::GetPinvokeMap – metoda
-Získá odkaz ModuleRef token představující cíl sestavení volání PInvoke.  
+Získá token představující cílové sestavení volání PInvoke Odkaz ModuleRef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,32 +42,32 @@ HRESULT GetPinvokeMap (
   
 #### <a name="parameters"></a>Parametry  
  `tk`  
- [v] Token FieldDef nebo MethodDef získat metadata PInvoke mapování.  
+ [in] FieldDef nebo MethodDef token pro získání metadat PInvoke mapování.  
   
  `pdwMappingFlags`  
- [out] Ukazatel na příznaky použité pro mapování. Tato hodnota je bitová maska z [CorPinvokeMap](../../../../docs/framework/unmanaged-api/metadata/corpinvokemap-enumeration.md) výčtu.  
+ [out] Ukazatel na příznaky použité pro mapování. Tato hodnota je bitová maska z [corpinvokemap –](../../../../docs/framework/unmanaged-api/metadata/corpinvokemap-enumeration.md) výčtu.  
   
  `szImportName`  
- [out] Název nespravované cílový DLL.  
+ [out] Název nespravovanému cílovému knihovny DLL.  
   
  `cchImportName`  
- [v] Velikost v široké znaky `szImportName`.  
+ [in] Velikost v širokých znaků `szImportName`.  
   
  `pchImportName`  
- [out] Počet široké znaky, vrátí se v `szImportName`.  
+ [out] Počet širokých znaků, které jsou vráceny v `szImportName`.  
   
  `pmrImportDLL`  
  [out] Ukazatel na odkaz ModuleRef token, který představuje nespravovaný cíl objektu knihovny.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

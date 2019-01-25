@@ -2,22 +2,22 @@
 title: '&lt;connectionPoolSettings&gt;'
 ms.date: 03/30/2017
 ms.assetid: 6fa7fa65-2c6e-4eab-b8cf-7690112c0be5
-ms.openlocfilehash: 2d79b3e28d1a80011cba7c515d979ae0037785a5
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 1e3001f60ae0f18fee88678cae1e9e55d90822c9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54149524"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54526757"
 ---
 # <a name="ltconnectionpoolsettingsgt"></a>&lt;connectionPoolSettings&gt;
 Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<třídě customBinding >  
+\<customBinding>  
 \<Vytvoření vazby >  
 \<namePipeTransport >  
-\<connectionPoolSettings >  
+\<connectionPoolSettings>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,17 +45,17 @@ Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<namedPipeTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/namedpipetransport.md)|Definuje přenos, který způsobí přenos zpráv pomocí pojmenovaných kanálů.|  
+|[\<namedPipeTransport>](../../../../../docs/framework/configure-apps/file-schema/wcf/namedpipetransport.md)|Definuje přenos, který způsobí přenos zpráv pomocí pojmenovaných kanálů.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.NamedPipeConnectionPoolSettingsElement>  
- <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement.ConnectionPoolSettings%2A>  
- <xref:System.ServiceModel.Channels.NamedPipeConnectionPoolSettings>  
- <xref:System.ServiceModel.Channels.TransportBindingElement>  
- <xref:System.ServiceModel.Channels.CustomBinding>  
- [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)  
- [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.NamedPipeConnectionPoolSettingsElement>
+- <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement.ConnectionPoolSettings%2A>
+- <xref:System.ServiceModel.Channels.NamedPipeConnectionPoolSettings>
+- <xref:System.ServiceModel.Channels.TransportBindingElement>
+- <xref:System.ServiceModel.Channels.CustomBinding>
+- [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
+- [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

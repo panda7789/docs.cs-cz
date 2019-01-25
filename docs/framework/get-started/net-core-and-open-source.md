@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: e6bd4655-ce37-4003-8462-468a6fe2c40f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 90dd72fae71f4283e6eefeb7c878b32e9c155cff
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: a3c48182ab5a864228fd1d2ccf32d714ebccf60a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49454392"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54494558"
 ---
 # <a name="net-core-and-open-source"></a>.NET Core a open source
 Toto téma nabízí stručný přehled o co .NET Core se a ukazuje, jak můžete najít další informace. Úplný seznam témat pro .NET Core, najdete v tématu [Průvodce platformou .NET Core](../../core/index.md).
@@ -37,15 +37,15 @@ Toto téma nabízí stručný přehled o co .NET Core se a ukazuje, jak můžete
   
 -   [CoreFX – základní knihovny .NET Core](https://github.com/dotnet/corefx)  
   
--   [CoreCLR – modul runtime .NET Core](https://github.com/dotnet/coreclr)  
+-   [CoreCLR - .NET Core runtime](https://github.com/dotnet/coreclr)  
   
 -   [Rozhraní příkazového řádku – nástroje příkazového řádku .NET Core](https://github.com/dotnet/cli)  
   
--   [Roslyn – sada .NET Compiler Platform](https://github.com/dotnet/roslyn)  
+-   [Roslyn - .NET Compiler Platform](https://github.com/dotnet/roslyn)  
   
 -   [ASP.NET Core](https://github.com/aspnet/home)  
   
-## <a name="see-also"></a>Viz také  
-- [Domovská stránka .NET core](https://www.microsoft.com/net/core)  
-- [Průvodce platformou .NET Core](../../core/index.md)  
+## <a name="see-also"></a>Viz také:
+- [Domovská stránka .NET core](https://www.microsoft.com/net/core)
+- [Průvodce platformou .NET Core](../../core/index.md)
 - [Dokumentace k ASP.NET Core](/aspnet/core/)

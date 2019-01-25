@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 112ddcf51a5637bb89df9479850c2a4a70d2e1d8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5e041efed929255d4ce3af2d051a391bc4179cda
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448723"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54630915"
 ---
 # <a name="imetadataimport2getversionstring-method"></a>IMetaDataImport2::GetVersionString – metoda
-Získá číslo verze modulu runtime, který byl použit k vytvoření sestavení.  
+Získá číslo verze modulu runtime, která byla použita k vytvoření sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +39,26 @@ HRESULT GetVersionString (
   
 #### <a name="parameters"></a>Parametry  
  `pwzBuf`  
- [out] Pole pro uložení řetězec, který určuje verzi.  
+ [out] Pole pro uložení řetězce, který určuje verzi.  
   
  `ccBufSize`  
- [v] Velikost v široké znaky z `pwzBuf` pole.  
+ [in] Velikost v širokých znaků, z `pwzBuf` pole.  
   
  `pccBufSize`  
- [out] Počet široké znaky, včetně zakončením hodnotu null, vrátí se v `pwzBuf` pole.  
+ [out] Vrátí počet širokých znaků, včetně null zakončení, v `pwzBuf` pole.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetVersionString` Metoda získá vytvořené pro verzi aktuální obor metadat. Pokud ještě nebyla uložena oboru, nebude mít vytvořené pro verzi a vrátí prázdný řetězec.  
+ `GetVersionString` Metoda získá vytvořené pro verzi aktuální obor metadat. Pokud obor nebyl uložen, nebude mít vytvořené pro verzi a bude vrácen prázdný řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7ab93b89-1221-427c-84ad-04803b3c64b4
-ms.openlocfilehash: 6c6ea41b9da9c98f8c4ee45ca1e223a29712729a
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: e067e5c6e108a27ecaf9e4b0e3e6a33938ad0b59
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43742491"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54562988"
 ---
 # <a name="getschema-and-schema-collections"></a>Příkaz GetSchema a kolekce schémat
 **Připojení** třídami implementace spravovaného zprostředkovatele .NET Framework **GetSchema** metodu, která se používá k načtení informací o schématu databáze, která je aktuálně připojena, a informace o schématu vrácených **GetSchema** metoda je k dispozici ve formě <xref:System.Data.DataTable>. **GetSchema** je metoda přetížená metoda, která poskytuje volitelných parametrů pro určení kolekce schématu pro vrácení a omezit množství vrácených informací.  
@@ -104,6 +104,6 @@ class Program
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

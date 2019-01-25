@@ -2,12 +2,12 @@
 title: Filtrování
 ms.date: 03/30/2017
 ms.assetid: 4002946c-e34a-4356-8cfb-e25912a4be63
-ms.openlocfilehash: 49813ac0f493d628a941b3060be93ef19bb1e802
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 735fd4252bb1740c149659f6c6fe81f18285914a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836064"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54626105"
 ---
 # <a name="filtering"></a>Filtrování
 Windows Communication Foundation (WCF) filtrování systému můžete použít filtry deklarativní podle zpráv a provozní rozhodování. Filtry můžete použít k určení, co dělat, a zobrazí se zpráva prozkoumáním část zprávy. Proces řazení do fronty, například můžete použít k dotazu XPath 1.0 ke kontrole element priority známé hlavičky. Chcete-li zjistit, jestli se má přesunout na začátek fronty zprávu.  
@@ -83,5 +83,5 @@ Windows Communication Foundation (WCF) filtrování systému můžete použít f
   
 -   Zbytek parametrů koncový bod v `EndpointAddress` podle <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter>.  
   
-## <a name="see-also"></a>Viz také  
- [Přenos a serializace dat](../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)
+## <a name="see-also"></a>Viz také:
+- [Přenos a serializace dat](../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)

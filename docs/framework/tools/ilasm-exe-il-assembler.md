@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0b149f21a2cb51740f0027f6b01984c628723939
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: f043fa541073402bee9fc4cf84e8151e6e0192f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221753"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54549207"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (IL Assembler)
 
@@ -44,31 +44,31 @@ ilasm [options] filename [[options]filename...]
 | ------ | ----------- |
 |**/32bitpreferred**|Vytvoří bitovou kopii s upřednostněním 32bitového kódu (PE32).|
 |**/ Alignment:** `integer`|Nastaví hodnotu FileAlignment na hodnotu zadanou pomocí `integer` ve volitelné hlavičce NT. Je-li v souboru zadána direktiva IL .alignment, tato možnost ji přepisuje.|
-|**/ appcontainer**|Vytvoří *.dll* nebo *.exe* soubor, který běží v kontejneru pro aplikace Windows, jako výstup.|
+|**/appcontainer**|Vytvoří *.dll* nebo *.exe* soubor, který běží v kontejneru pro aplikace Windows, jako výstup.|
 |**/arm**|Určí jako cílový procesor architekturu Advanced RISC Machine (ARM).<br /><br /> Pokud není zadán žádný počet bitů bitové kopie, výchozí hodnota je **/32bitpreferred**.|
 |**propojovacího:** `integer`|Nastaví hodnotu ImageBase na hodnotu zadanou pomocí `integer` ve volitelné hlavičce NT. Je-li v souboru zadána direktiva IL .imagebase, tato možnost ji přepisuje.|
-|**/Clock**|Měří a oznamuje následující časy kompilace v milisekundách pro zadaný zdrojový soubor .il:<br /><br /> **Total Run**: Celkový čas strávený provádění určitých operací, které následují.<br /><br /> **Po spuštění**: Načtení a otevírání souboru.<br /><br /> **Emitting MD**: Generování metadat.<br /><br /> **REF to Def Resolution**: Vyhodnocování odkazů na definice v souboru.<br /><br /> **CEE File Generation**: Generuje se bitová kopie souboru v paměti.<br /><br /> **PE File Writing**: Zápis bitové kopie do souboru PE.|
-|**/ debug**[:**IMPL**&#124;**OPT**]|Zahrnuje informace o ladění (názvy místních proměnných a argumentů a čísla řádků). Vytvoří soubor PDB.<br /><br /> **/ debug** bez dalších hodnot zakáže optimalizaci JIT a použije body posloupnosti ze souboru PDB.<br /><br /> **IMPL** zakáže optimalizaci JIT a použije implicitní body posloupnosti.<br /><br /> **OPT** povolí optimalizaci JIT a použije implicitní body posloupnosti.|
-|**/ DLL**|Vytvoří *.dll* soubor jako výstup.|
+|**/Clock**|Měří a oznamuje následující časy kompilace v milisekundách pro zadaný zdrojový soubor .il:<br /><br /> **Total Run**: Celkový čas strávený provádění určitých operací, které následují.<br /><br /> **Startup**: Načtení a otevírání souboru.<br /><br /> **Emitting MD**: Generování metadat.<br /><br /> **REF to Def Resolution**: Vyhodnocování odkazů na definice v souboru.<br /><br /> **CEE File Generation**: Generuje se bitová kopie souboru v paměti.<br /><br /> **PE File Writing**: Zápis bitové kopie do souboru PE.|
+|**/debug**[:**IMPL**&#124;**OPT**]|Zahrnuje informace o ladění (názvy místních proměnných a argumentů a čísla řádků). Vytvoří soubor PDB.<br /><br /> **/ debug** bez dalších hodnot zakáže optimalizaci JIT a použije body posloupnosti ze souboru PDB.<br /><br /> **IMPL** zakáže optimalizaci JIT a použije implicitní body posloupnosti.<br /><br /> **OPT** povolí optimalizaci JIT a použije implicitní body posloupnosti.|
+|**/dll**|Vytvoří *.dll* soubor jako výstup.|
 |**/ENC:** `file`|Vytvoří ze zadaného zdrojového souboru rozdíly pro funkci Upravit a pokračovat.<br /><br /> Tento argument slouží pouze k akademickému použití a při komerčním použití není podporován.|
 |**/exe**|Vytvoří jako výstup spustitelný soubor. Toto nastavení je výchozí.|
 |**Flags:** `integer`|Nastaví hodnotu ImageFlags na hodnotu zadanou pomocí `integer` v hlavičce modulu CLR. Je-li v souboru zadána direktiva IL .corflags, tato možnost ji přepisuje. Zobrazit Comimage_flags corhdr.h seznam platných hodnot pro *celé číslo*.|
 |**/fold**|Sloučí identická těla metod do jednoho.|
 |/**highentropyva**|Vytvoří výstupní spustitelný soubor podporující funkci ASLR s vysokou entropií. (Výchozí pro **/appcontainer**.)|
 |**/ include:** `includePath`|Nastavuje cestu pro vyhledávání souborů zahrnutých v `#include`.|
-|**/Itanium**|Určí jako cílový procesor Intel Itanium.<br /><br /> Pokud není zadán žádný počet bitů bitové kopie, výchozí hodnota je **/pe64**.|
+|**/itanium**|Určí jako cílový procesor Intel Itanium.<br /><br /> Pokud není zadán žádný počet bitů bitové kopie, výchozí hodnota je **/pe64**.|
 |**uveden:** `keyFile`|Zkompiluje `filename` se silným podpisem za použití soukromého klíče obsaženého v `keyFile`.|
 |**uveden:** @`keySource`|Zkompiluje `filename` se silným podpisem pomocí soukromého klíče vytvořeného ve `keySource`.|
 |**/ výpis**|Vytvoří na standardním výstupu soubor výpisu. Vynecháte-li tuto možnost, není vytvořen žádný soubor výpisu.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework 2.0 a vyšším.|
-|**/MDV:** `versionString`|Nastaví řetězec verze metadat.|
-|**/mSv:** `major`.`minor`|Nastaví verzi datového proudu metadat, kam `major` a `minor` jsou celá čísla.|
+|**/mdv:** `versionString`|Nastaví řetězec verze metadat.|
+|**/msv:** `major`.`minor`|Nastaví verzi datového proudu metadat, kam `major` a `minor` jsou celá čísla.|
 |**/noautoinherit**|Zakáže výchozí dědění ze <xref:System.Object> Pokud je zadaný žádnou základní třídu.|
 |**/nocorstub**|Potlačí generování zástupné procedury CORExeMain.|
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|
 |**/ output:** `file.ext`|Určuje název výstupního souboru a příponu. Ve výchozím nastavení je název výstupního souboru shodný s názvem prvního zdrojového souboru. Výchozí příponou je *.exe*. Pokud zadáte **/dll** možnost, je výchozí příponou *.dll*. **Poznámka:** Určení **/output**: myfile.dll není nastavený **/dll** možnost. Pokud nezadáte **/dll**, výsledkem bude spustitelný soubor s názvem *soubor.dll*.|
 |**/optimize**|Optimalizuje dlouhé instrukce na krátké. Například `br` k `br.s`.|
 |**/pe64**|Vytvoří 64bitovou kopii (PE32+).<br /><br /> Pokud není zadán žádný cílový procesor, výchozí hodnota je `/itanium`.|
-|**/ pdb**|Vytvoří soubor PDB bez povolení sledování informací o ladění.|
+|**/pdb**|Vytvoří soubor PDB bez povolení sledování informací o ladění.|
 |**/quiet**|Určuje tichý režim, který neoznamuje průběh sestavení.|
 |**/ Resource:** `file.res`|Zahrnuje soubor zadaný prostředek v \*res formátu ve výsledné *.exe* nebo *.dll* souboru. Je možné zadat jenom jeden soubor. res při **/Resource** možnost.|
 |**/ssver:** `int`.`int`|Nastaví číslo verze podsystému ve volitelné hlavičce NT. Pro **/appcontainer** a **/arm** je minimálním číslem verze 6.02.|
@@ -229,7 +229,7 @@ Následující příklad kódu IL odpovídá předchozí ukázce kódu C#. Tento
 
 ## <a name="see-also"></a>Viz také:
 
-[Nástroje](../../../docs/framework/tools/index.md)  
-[*Ildasm.exe* (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)  
-[Proces spravovaného spuštění](../../../docs/standard/managed-execution-process.md)  
-[Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Nástroje](../../../docs/framework/tools/index.md)
+- [*Ildasm.exe* (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)
+- [Proces spravovaného spuštění](../../../docs/standard/managed-execution-process.md)
+- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

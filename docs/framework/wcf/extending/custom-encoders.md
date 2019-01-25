@@ -2,17 +2,17 @@
 title: Vlastní kodéry
 ms.date: 03/30/2017
 ms.assetid: fa0e1d7f-af36-4bf4-aac9-cd4eab95bc4f
-ms.openlocfilehash: 036cbff9046df2d1179c5cc0921dd8d89757558b
-ms.sourcegitcommit: 8145ad08288bf141d68e3256cb1f7a3ad842ca33
+ms.openlocfilehash: a438ad327cdd75e981af2ef8ca3999a2f482a2b3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "50034342"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54509360"
 ---
 # <a name="custom-encoders"></a>Vlastní kodéry
 Toto téma popisuje, jak vytvořit vlastní kodéry.  
   
- Ve Windows Communication Foundation (WCF), je použít *vazby* určete, jak přenášet data přes síť mezi koncovými body. Vazba se skládá z posloupnosti *elementů vazby*. Vazba obsahuje volitelné protokol vazby prvky jako je zabezpečení, požadované *kodéru zpráv* element vazby a element vazby přenosu vyžaduje. Kodér zprávy je reprezentován element vazby kódování zprávy. Tři kodérů zprávy jsou součástí WCF: binární soubor, zpráv přenosu optimalizace mechanismus (MTOM) a Text.  
+ Ve Windows Communication Foundation (WCF), je použít *vazby* určete, jak přenášet data přes síť mezi koncovými body. Vazba se skládá z posloupnosti *elementů vazby*. Vazba obsahuje volitelné protokol vazby prvky jako je zabezpečení, požadované *kodéru zpráv* element vazby a element vazby přenosu vyžaduje. Kodér zprávy je reprezentován element vazby kódování zprávy. Tři kodérů zprávy jsou součástí WCF: Binární soubor, mechanismus optimalizaci přenosu zprávu (MTOM) a Text.  
   
  Element vazby kódování serializuje odchozí zprávu <xref:System.ServiceModel.Channels.Message> a předá ji do přenosu, nebo přijímá serializovanou formu zpráva z přenosu a předá ji do vrstvy protokolu, pokud jsou k dispozici, nebo k aplikaci, pokud není k dispozici.  
   
@@ -30,7 +30,7 @@ Toto téma popisuje, jak vytvořit vlastní kodéry.
   
  Poskytuje následující typy odvozené z elementů vazby WCF <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> třídu, která můžete zadat text, binárního souboru a kódování zpráv přenosu optimalizace mechanismus (MTOM):  
   
--   <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>: Nejvíce interoperabilní, ale nejméně efektivní kodéru zpráv XML. Webová služba nebo klient webové služby obecně by rozuměla textové XML. Ale přenosu velkých bloků binárních dat jako text není efektivní.  
+-   <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>: Většina interoperabilní, ale nejméně efektivní kodéru zpráv XML. Webová služba nebo klient webové služby obecně by rozuměla textové XML. Ale přenosu velkých bloků binárních dat jako text není efektivní.  
   
 -   <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>: Představuje element vazby, který určuje kódování znaků a verzování zprávy použité pro binární soubor založené zprávy XML. Toto je nejefektivnější možnosti kódování, ale nejméně interoperabilní, protože je podporován pouze pomocí koncových bodů WCF.  
   
@@ -89,12 +89,12 @@ Toto téma popisuje, jak vytvořit vlastní kodéry.
   
  Připojte své vlastní <xref:System.ServiceModel.Channels.MessageEncoderFactory> na zásobník element vazby, který se používá ke konfiguraci služby ani klienta tak, že přepíšete <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A> metoda vrátí instanci tento objekt pro vytváření.  
   
- Existují dvě ukázky součástí WCF, které ilustrují tento proces se vzorovým kódem: [vlastní kodér zpráv: vlastní kodér textu](../../../../docs/framework/wcf/samples/custom-message-encoder-custom-text-encoder.md) a [vlastní kodér zpráv: kompresní kodér](../../../../docs/framework/wcf/samples/custom-message-encoder-compression-encoder.md).  
+ Existují dvě ukázky součástí WCF, které ilustrují tento proces se vzorovým kódem: [Vlastní kodér zpráv: Vlastní kodér textu](../../../../docs/framework/wcf/samples/custom-message-encoder-custom-text-encoder.md) a [vlastní kodér zpráv: Kompresní kodér](../../../../docs/framework/wcf/samples/custom-message-encoder-compression-encoder.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
- <xref:System.ServiceModel.Channels.MessageEncoderFactory>  
- <xref:System.ServiceModel.Channels.MessageEncoder>  
- [Strukturální přehled přenosu dat](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)  
- [Výběr kodéru zprávy](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
- [Volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>
+- <xref:System.ServiceModel.Channels.MessageEncoderFactory>
+- <xref:System.ServiceModel.Channels.MessageEncoder>
+- [Strukturální přehled přenosu dat](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)
+- [Výběr kodéru zprávy](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)
+- [Volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)

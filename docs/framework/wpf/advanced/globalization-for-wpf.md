@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: d2bb4c9a00f31cb87ad8890591aa190fac6384f9
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: d7b544fcb308960ff86b83655d60cb1453b6571a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261534"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543812"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 Toto téma popisuje problémy, které byste měli vědět při zápisu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací na globálním trhu. Globalizace programovací prvky, které jsou definovány v [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] v `System.Globalization`.
@@ -73,7 +73,7 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
 
 -   Arabština
 
--   Bengálština
+-   bengálština
 
 -   Devanágarí
 
@@ -89,17 +89,17 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
 
 -   Znakový skriptů
 
--   Kannada
+-   Kannadština
 
 -   Lao
 
 -   Latinská
 
--   Malajalámština
+-   Malajálamština
 
 -   Mongolština
 
--   Udijština
+-   Odia
 
 -   Syrská
 
@@ -107,7 +107,7 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
 
 -   Telugština
 
--   Thána
+-   Thaana
 
 -   Thajština *
 
@@ -117,7 +117,7 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
 
  Následující skripty se momentálně nepodporují:
 
--   Khmerština
+-   Khmer
 
 -   Korejské staré písmo
 
@@ -180,5 +180,5 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
     "de" , UltimateResourceFallbackLocation.Satellite)]
 ```
 
-## <a name="see-also"></a>Viz také
- [Přehled globalizace a lokalizace WPF](../../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled globalizace a lokalizace WPF](../../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)

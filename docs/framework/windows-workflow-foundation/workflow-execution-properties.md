@@ -2,12 +2,12 @@
 title: Vlastnosti spuštění pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: a50e088e-3a45-4267-bd51-1a3e6c2d246d
-ms.openlocfilehash: 2b72782b4b9fef127e61bb22b7800740af1d8d2b
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 96f5057986e256f485f60221d1c6ad3d2494be55
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582067"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54566720"
 ---
 # <a name="workflow-execution-properties"></a>Vlastnosti spuštění pracovního postupu
 Pomocí úložiště thread local (TLS) CLR udržuje kontext spuštění pro každé vlákno. Tento kontext spuštění se řídí vlákno dobře známé vlastnosti, jako je identitu vlákna okolí transakce a sadou kromě vlákna uživatelem definované vlastnosti, jako je aktuální oprávnění s názvem sloty.  
@@ -161,7 +161,7 @@ End default text.
   
  Vlastnosti spuštění pracovního postupu je možné autory vlastní aktivitu, a také poskytují mechanismus pro Správa popisovačů pro aktivity, jako <xref:System.ServiceModel.Activities.CorrelationScope> a <xref:System.Activities.Statements.TransactionScope> aktivity.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Activities.IExecutionProperty>  
- <xref:System.Activities.IPropertyRegistrationCallback>  
- <xref:System.Activities.RegistrationContext>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Activities.IExecutionProperty>
+- <xref:System.Activities.IPropertyRegistrationCallback>
+- <xref:System.Activities.RegistrationContext>

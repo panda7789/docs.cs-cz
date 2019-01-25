@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b0017cff43f7a1b1bdd90806f50abb374a96dadf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 48d43d9107d010b12167b977acd2e500437c039f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450421"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54501709"
 ---
 # <a name="icorprofilercallbackappdomaincreationfinished-method"></a>ICorProfilerCallback::AppDomainCreationFinished – metoda
-Upozorní profileru vytvořený domény aplikace.  
+Upozornění profileru vytvoření domény aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +37,18 @@ HRESULT AppDomainCreationFinished(
   
 #### <a name="parameters"></a>Parametry  
  `appDomainId`  
- [v] Určuje doménu, která byla vytvořena.  
+ [in] Určuje doménu, která byla vytvořena.  
   
  `hrStatus`  
- [v] HRESULT, která určuje, zda vytváření domény aplikace byla úspěšně dokončena.  
+ [in] HRESULT, která určuje, zda vytváření domény aplikace byla úspěšně dokončena.  
   
 ## <a name="remarks"></a>Poznámky  
- ID aplikace není platný pro všechny informace požadavek, dokud `AppDomainCreationFinished` metoda je volána.  
+ ID aplikace není platná pro všechny žádost o informace, dokud `AppDomainCreationFinished` metoda je volána.  
   
- Některé části načítání doménu aplikace, může pokračovat i po `AppDomainCreationFinished` zpětného volání. Selhání HRESULT v `hrStatus` znamená chybu. Ale úspěšné HRESULT v `hrStatus` pouze označuje, že první část vytváření domény aplikace byl úspěšný.  
+ Některé části načtení domény aplikace může pokračovat po `AppDomainCreationFinished` zpětného volání. Selhání hodnoty HRESULT v `hrStatus` naznačuje chybu. Ale úspěch HRESULT v `hrStatus` značí pouze, že první část vytváření domény aplikace proběhla úspěšně.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -56,5 +56,5 @@ HRESULT AppDomainCreationFinished(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

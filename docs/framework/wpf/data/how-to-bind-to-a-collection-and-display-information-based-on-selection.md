@@ -10,18 +10,18 @@ helpviewer_keywords:
 - data binding [WPF], selecting data for views
 - data binding [WPF], binding to collections
 ms.assetid: 952a7d76-dd29-49e5-86f5-32c4530e70eb
-ms.openlocfilehash: 154f4b9b6024d064e73d64c44e2398a5da47052c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 549f4e7af1a9aa623c7f8ff12b528f771a8ff806
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33557405"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54504770"
 ---
 # <a name="how-to-bind-to-a-collection-and-display-information-based-on-selection"></a>Postupy: Připojení ke kolekci a zobrazení informací podle výběru
-V jednoduchém scénáři seznam podrobnosti máte vázané na data <xref:System.Windows.Controls.ItemsControl> například <xref:System.Windows.Controls.ListBox>. Na základě výběru, můžete zobrazit další informace o vybrané položce. Tento příklad ukazuje, jak implementovat tento scénář.  
+V jednoduchém scénáři hlavní podrobnosti máte vázaný na data <xref:System.Windows.Controls.ItemsControl> například <xref:System.Windows.Controls.ListBox>. Na základě výběru uživatelem, zobrazíte další informace o vybrané položce. Tento příklad ukazuje, jak tento scénář implementovat.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `People` je <xref:System.Collections.ObjectModel.ObservableCollection%601> z `Person` třídy. To `Person` třída obsahuje tři vlastnosti: `FirstName`, `LastName`, a `HomeTown`, všechny typu `string`.  
+ V tomto příkladu `People` je <xref:System.Collections.ObjectModel.ObservableCollection%601> z `Person` třídy. To `Person` třída obsahuje tři vlastnosti: `FirstName`, `LastName`, a `HomeTown`, typu `string`.  
   
  [!code-xaml[CollectionBinding#Source](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CollectionBinding/CSharp/Window1.xaml#source)]  
 [!code-xaml[CollectionBinding#UI](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CollectionBinding/CSharp/Window1.xaml#ui)]  
@@ -30,24 +30,24 @@ V jednoduchém scénáři seznam podrobnosti máte vázané na data <xref:System
   
  [!code-xaml[CollectionBinding#DetailTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CollectionBinding/CSharp/Window1.xaml#detailtemplate)]  
   
- Zde je snímek obrazovky co vytváří v příkladu. <xref:System.Windows.Controls.ContentControl> Zobrazí vlastnosti vybrané osoby.  
+ Zde je snímek obrazovky vzorové postupy. <xref:System.Windows.Controls.ContentControl> Jsou uvedeny vlastnosti osoby vybrali.  
   
- ![Vazby ke kolekci](../../../../docs/framework/wpf/data/media/databinding-collectionbindingsample.png "DataBinding_CollectionBindingSample")  
+ ![Vytvoření vazby ke kolekci](../../../../docs/framework/wpf/data/media/databinding-collectionbindingsample.png "DataBinding_CollectionBindingSample")  
   
- Dvě věci Všimněte v tomto příkladu jsou:  
+ Jsou dvě věci v tomto příkladu si všimněte:  
   
-1.  <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ContentControl> vytvořit vazbu ke stejnému zdroji. <xref:System.Windows.Data.Binding.Path%2A> Vlastnosti obou vazby nejsou zadané, protože oba ovládací prvky jsou vazby k objektu celou kolekci.  
+1.  <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ContentControl> vytvoření vazby ke stejnému zdroji. <xref:System.Windows.Data.Binding.Path%2A> Vlastnosti obou vazby nejsou zadané, protože oba ovládací prvky jsou vazby objektu celou kolekci.  
   
-2.  Je nutné nastavit <xref:System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItem%2A> vlastnost `true` pro tento postup. Nastavení této vlastnosti zajistí, že vybraná položka je vždycky nastavený jako <xref:System.Windows.Controls.ItemCollection.CurrentItem%2A>. Případně pokud <xref:System.Windows.Controls.ListBox> ho načte data z <xref:System.Windows.Data.CollectionViewSource>, automaticky synchronizuje výběr a měny.  
+2.  Je nutné nastavit <xref:System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItem%2A> vlastnost `true` aby to fungovalo. Nastavení této vlastnosti se zajistí, že je vybraná položka vždy nastavena jako <xref:System.Windows.Controls.ItemCollection.CurrentItem%2A>. Případně pokud <xref:System.Windows.Controls.ListBox> ho načte data z <xref:System.Windows.Data.CollectionViewSource>, automaticky synchronizuje výběr a Měna.  
   
- Všimněte si, že `Person` třídy přepsání `ToString` metoda následujícím způsobem. Ve výchozím nastavení <xref:System.Windows.Controls.ListBox> volání `ToString` a zobrazí řetězcovou reprezentaci jednotlivých objektů v vázané kolekce. To je důvod, proč každý `Person` se zobrazí jako první název v <xref:System.Windows.Controls.ListBox>.  
+ Všimněte si, že `Person` třídy přepsání `ToString` metodu následujícím způsobem. Ve výchozím nastavení <xref:System.Windows.Controls.ListBox> volání `ToString` a zobrazí řetězec představující jednotlivých objektů v vázané kolekce. To je důvod, proč každý `Person` se zobrazí jako první název v <xref:System.Windows.Controls.ListBox>.  
   
  [!code-csharp[CollectionBinding#ToString](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CollectionBinding/CSharp/Data.cs#tostring)]
  [!code-vb[CollectionBinding#ToString](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CollectionBinding/VisualBasic/Person.vb#tostring)]  
   
-## <a name="see-also"></a>Viz také  
- [Použití vzoru seznam-podrobnosti s hierarchickými daty](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md)  
- [Použití vzoru seznam-podrobnosti s hierarchickými daty XML](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)  
- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- [Použití vzoru seznam-podrobnosti s hierarchickými daty](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md)
+- [Použití vzoru seznam-podrobnosti s hierarchickými daty XML](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)
+- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
+- [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)
+- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

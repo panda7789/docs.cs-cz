@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu'
+title: 'Postupy: Zápis smyčky Parallel.for pomocí proměnných v místním vláknu'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 68384064-7ee7-41e2-90e3-71f00bde01bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 18458e52c6cf38b2900036613676adea3f3b2d0b
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 6ffac3df82268399aa35ff494e462e2b23c3894b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44188121"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54610796"
 ---
-# <a name="how-to-write-a-parallelfor-loop-with-thread-local-variables"></a>Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu
+# <a name="how-to-write-a-parallelfor-loop-with-thread-local-variables"></a>Postupy: Zápis smyčky Parallel.for pomocí proměnných v místním vláknu
 Tento příklad ukazuje způsob použití místní proměnné vlákna k ukládání a načítání stavu v každé samostatné úlohy, který je vytvořen pomocí <xref:System.Threading.Tasks.Parallel.For%2A> smyčky. Pomocí dat thread local se můžete vyhnout nároky na velký počet přístupů na sdílený stav synchronizace. Místo psaní ke sdíleným prostředkům při každé iteraci, compute a uložte hodnotu, dokud nejsou dokončeny všechny iterace pro úlohu. Můžete napsat konečný výsledek jednou ke sdílenému prostředku nebo předávat na jinou metodu.  
   
 ## <a name="example"></a>Příklad  
@@ -46,7 +46,7 @@ Function() new MyClass()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datový paralelismus](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)  
-- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)  
-- [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)  
+- [Datový paralelismus](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
+- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)
+- [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
 - [Výrazy lambda v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)

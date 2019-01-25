@@ -18,12 +18,12 @@ helpviewer_keywords:
 - String literals [Visual Basic]
 - identifier type characters [Visual Basic], $
 ms.assetid: 15ac03f5-cabd-42cc-a754-1df3893c25d9
-ms.openlocfilehash: 54f7dcd7de28e8aaa5376bb4ddd67fd53518511e
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: d841eaab8b09c9a2c126c40a1f846876f3e88601
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861734"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54598812"
 ---
 # <a name="string-data-type-visual-basic"></a>String – datový typ (Visual Basic)
 Obsahuje pořadí bodů kódu (2bajtových) bez znaménka 16bitové tohoto rozsahu v rozmezí 0 až 65535. Každý *kódu bodu*, nebo kód znaku, představuje jeden znak Unicode. Řetězec se může skládat z 0 až přibližně dvě miliardy (2 ^ 31) znaků Unicode.  
@@ -78,11 +78,11 @@ S = Microsoft.VisualBasic.Left(S, 4)
   
 -   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.String?displayProperty=nameWithType> třídy.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.String?displayProperty=nameWithType>  
- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
- [Datový typ Char](../../../visual-basic/language-reference/data-types/char-data-type.md)  
- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.String?displayProperty=nameWithType>
+- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
+- [Datový typ Char](../../../visual-basic/language-reference/data-types/char-data-type.md)
+- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
+- [Postupy: Volání funkce Windows, která přebírá typy bez znaménka](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
+- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

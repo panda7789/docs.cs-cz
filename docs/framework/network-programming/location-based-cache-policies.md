@@ -15,15 +15,15 @@ helpviewer_keywords:
 - Cache Or Next Cache Only policy
 - Refresh policy
 ms.assetid: e41d7f1a-0a6a-4dee-97d1-c6a8b6a07fc2
-ms.openlocfilehash: 1bbaf4fc85fe4d7e3d3737cf62cb63d8e09927cd
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 594aef9feee81d026abd6313f1e75cb518479688
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194407"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499827"
 ---
 # <a name="location-based-cache-policies"></a>Zásady mezipaměti na základě polohy
-Zásady mezipaměti na základě umístění definují aktuálnosti platné položky uložené v mezipaměti založené na požadovaný prostředek mohou být odkud. Prostředek v mezipaměti je platný pokud jeho použití není porušovat požadavky na zadaný server opětovné ověření. Zásady mezipaměti na základě umístění je vytvořená prostřednictvím kódu programu pomocí <xref:System.Net.Cache.RequestCachePolicy> nebo <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru třídy. Je předán typ zásady založená na poloze pomocí konstruktoru <xref:System.Net.Cache.RequestCacheLevel> nebo <xref:System.Net.Cache.HttpRequestCacheLevel> hodnota výčtu. Příklady kódu, které vytvářejí zásady mezipaměti na základě polohy, naleznete v tématu [postupy: nastavení zásad mezipaměti na základě umístění pro aplikaci](../../../docs/framework/network-programming/how-to-set-a-location-based-cache-policy-for-an-application.md). Následující části popisují jednotlivé typy zásad mezipaměti na základě umístění pro prostředky protokol HTTP (http a https).  
+Zásady mezipaměti na základě umístění definují aktuálnosti platné položky uložené v mezipaměti založené na požadovaný prostředek mohou být odkud. Prostředek v mezipaměti je platný pokud jeho použití není porušovat požadavky na zadaný server opětovné ověření. Zásady mezipaměti na základě umístění je vytvořená prostřednictvím kódu programu pomocí <xref:System.Net.Cache.RequestCachePolicy> nebo <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru třídy. Je předán typ zásady založená na poloze pomocí konstruktoru <xref:System.Net.Cache.RequestCacheLevel> nebo <xref:System.Net.Cache.HttpRequestCacheLevel> hodnota výčtu. Příklady kódu, které vytvářejí zásady mezipaměti na základě polohy, naleznete v tématu [jak: Nastavení zásad mezipaměti na základě polohy pro aplikaci](../../../docs/framework/network-programming/how-to-set-a-location-based-cache-policy-for-an-application.md). Následující části popisují jednotlivé typy zásad mezipaměti na základě umístění pro prostředky protokol HTTP (http a https).  
   
 ## <a name="cache-if-available-policy"></a>Pokud je k dispozici do mezipaměti zásad  
  Pokud platné požadovaný prostředek je v místní mezipaměti, se používá v mezipaměti prostředků; v opačném případě je vyslána žádost pro prostředek serveru. Pokud požadovaný prostředek je k dispozici v libovolné mezipaměti mezi klientem a serverem, je možné splnit žádost zprostředkující mezipaměti.  
@@ -46,9 +46,9 @@ Zásady mezipaměti na základě umístění definují aktuálnosti platné polo
 ## <a name="revalidate-policy"></a>Znovu ověřit zásady  
  Porovná kopie prostředku v mezipaměti s kopií na serveru. Pokud je novější kopie na serveru, se používá ke zpracování požadavku a nahradí kopii v mezipaměti. Pokud je kopie v mezipaměti je stejný jako kopii na serveru, použije se kopie v mezipaměti. Ukládání do mezipaměti protokolu HTTP toho můžete dosáhnout použitím Podmíněný požadavek.  
   
-## <a name="see-also"></a>Viz také  
- [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
- [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)  
- [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)  
- [Konfigurace mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)  
- [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+## <a name="see-also"></a>Viz také:
+- [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
+- [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)
+- [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)
+- [Konfigurace mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
+- [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

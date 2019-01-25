@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Povolení přetahování pomocí myši na uživatelském ovládacím prvku'
+title: 'Průvodce: Povolení přetahování na uživatelský ovládací prvek'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - walkthrough [WPF], drag-and-drop
 - drag-and-drop [WPF], walkthrough
 ms.assetid: cc844419-1a77-4906-95d9-060d79107fc7
-ms.openlocfilehash: 7ca4987da8422c00e3fc34ff4605ddd13e4091b6
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 9ffaab4115edec1fc0115b27b8904970854f79d9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193710"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54600671"
 ---
-# <a name="walkthrough-enabling-drag-and-drop-on-a-user-control"></a>Návod: Povolení přetahování pomocí myši na uživatelském ovládacím prvku
+# <a name="walkthrough-enabling-drag-and-drop-on-a-user-control"></a>Průvodce: Povolení přetahování na uživatelský ovládací prvek
 
 Tento návod ukazuje, jak vytvořit vlastní uživatelský ovládací prvek, který se můžete podílet přenos dat a přetahování v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].
 
@@ -38,9 +38,9 @@ Visual Studio k dokončení tohoto návodu potřebujete.
 ## <a name="create-the-application-project"></a>Vytvoření projektu aplikace
  V této části vytvoříte aplikační infrastruktury, který obsahuje hlavní stránka s dva panely a <xref:System.Windows.Controls.TextBox>.
 
-1.  Vytvoření nového projektu aplikace WPF v jazyce Visual Basic nebo Visual C# s názvem `DragDropExample`. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace WPF](https://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82).
+1.  Vytvoření nového projektu aplikace WPF v jazyce Visual Basic nebo Visual C# s názvem `DragDropExample`. Další informace najdete v tématu [jak: Vytvoření nového projektu aplikace WPF](https://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82).
 
-2.  Otevřete soubor MainWindow.xaml.
+2.  Open MainWindow.xaml.
 
 3.  Přidejte následující kód mezi otevírací a zavírací <xref:System.Windows.Controls.Grid> značky.
 
@@ -76,7 +76,7 @@ Visual Studio k dokončení tohoto návodu potřebujete.
 
 ## <a name="add-the-user-control-to-the-main-window"></a>Přidat uživatelský ovládací prvek do hlavního okna
 
-1.  Otevřete soubor MainWindow.xaml.
+1.  Open MainWindow.xaml.
 
 2.  Přidejte následující XAML do otevíracího <xref:System.Windows.Window> značku k vytvoření oboru názvů XML odkaz na aktuální aplikace.
 
@@ -281,13 +281,13 @@ Když data je přetažený na ovládací prvek uživatele kruh, ovládací prvek
 
 V této části povolíte panely, které jsou hostiteli uživatelské ovládací prvky kruh tak, aby fungoval jako cíle přetažení pro Přetahované data kruh. Budete implementovat kód, který umožňuje přesunout kruh z jednoho panelu na jiný nebo vytvořit kopii ovládacího prvku kruh současným **Ctrl** klíče při přetahování kruh.
 
-1.  Otevřete soubor MainWindow.xaml.
+1.  Open MainWindow.xaml.
 
 2.  Jak je znázorněno v následující XAML v každém <xref:System.Windows.Controls.StackPanel> přidat obslužné rutiny pro ovládací prvky, <xref:System.Windows.UIElement.DragOver> a <xref:System.Windows.UIElement.Drop> události. Název <xref:System.Windows.UIElement.DragOver> obslužná rutina události `panel_DragOver`a pojmenujte <xref:System.Windows.UIElement.Drop> obslužná rutina události, `panel_Drop`.
 
      [!code-xaml[DragDropWalkthrough#PanelsXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/MainWindow.xaml#panelsxaml)]
 
-3.  Otevřete MainWindows.xaml.cs nebo soubor MainWindow.xaml.vb.
+3.  Open MainWindows.xaml.cs or MainWindow.xaml.vb.
 
 4.  Přidejte následující kód <xref:System.Windows.UIElement.DragOver> obslužné rutiny události.
 
@@ -331,6 +331,6 @@ V této části povolíte panely, které jsou hostiteli uživatelské ovládací
 
      ![Přetažení kruh při stisknutí klávesy CTRL](../../../../docs/framework/wpf/advanced/media/dragdrop-paneldrop.png "DragDrop_PanelDrop")
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Přehled přetažení](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)

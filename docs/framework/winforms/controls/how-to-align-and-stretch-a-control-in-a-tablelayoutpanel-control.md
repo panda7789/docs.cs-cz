@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [Windows Forms], stretching
 - controls [Windows Forms], aligning
 ms.assetid: 7dc1a157-6fee-4995-8ebc-b65bdc0909a8
-ms.openlocfilehash: 06e152058337955164bd526e20e023d759340f01
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 91464108a6ac4600c14a06b4a7dcea200d7f0254
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43504150"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535928"
 ---
 # <a name="how-to-align-and-stretch-a-control-in-a-tablelayoutpanel-control"></a>Postupy: Zarovnání a roztažení ovládacího prvku v ovládacím prvku TableLayoutPanel
 Můžete zarovnání a roztažení ovládacích prvků <xref:System.Windows.Forms.TableLayoutPanel> s <xref:System.Windows.Forms.Control.Anchor%2A> a <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti.  
@@ -39,5 +39,5 @@ Můžete zarovnání a roztažení ovládacích prvků <xref:System.Windows.Form
   
 8.  Nastavte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Anchor%2A> vlastnost <xref:System.Windows.Forms.AnchorStyles.None>. <xref:System.Windows.Forms.Button> Ovládacího prvku přesune na střed buňku.  
   
-## <a name="see-also"></a>Viz také  
- [Ovládací prvek TableLayoutPanel](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- [Ovládací prvek TableLayoutPanel](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-windows-forms.md)

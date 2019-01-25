@@ -8,12 +8,12 @@ helpviewer_keywords:
 - CompositionTarget objects [WPF], rendering per frame
 - rendering per frame using CompositionTarget objects [WPF]
 ms.assetid: 701246cd-66b7-4d69-ada9-17b3b433d95d
-ms.openlocfilehash: cc043e6d225ad3dbe57a0924593fac0f68af7eb1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: afbaf6652351e056fb0ce31ffd9e69cf98a90e85
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526438"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54511222"
 ---
 # <a name="how-to-render-on-a-per-frame-interval-using-compositiontarget"></a>Postupy: Vykreslení intervalu podle snímků pomocí CompositionTarget
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Animace modul obsahuje řadu funkcí pro vytváření založených na snímcích animace. Existují však aplikačních scénářů, ve kterých je nutné citlivější kontrolu nad vykreslování na základě na rámce. <xref:System.Windows.Media.CompositionTarget> Objekt poskytuje možnost vytvářet vlastní animace založené na zpětné volání na rámce.  
@@ -40,6 +40,6 @@ ms.locfileid: "43526438"
   
  Přidání nebo odebrání vykreslení <xref:System.EventHandler> delegáta, když událost je vyvolávána, bude odložena až do po dokončení události ohlásí. To je konzistentní s jak <xref:System.MulticastDelegate>– na základě události jsou zpracovávány v Common Language Runtime (CLR). Všimněte si také, že události vykreslování nemusí být volána v libovolném pořadí. Pokud máte více <xref:System.EventHandler> delegáty, které jsou závislé na určitém pořadí, byste měli zaregistrovat jediné <xref:System.Windows.Media.CompositionTarget.Rendering> událostí a multiplexovaný do delegátů ve správné pořadí sami.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.CompositionTarget>  
- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.CompositionTarget>
+- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)

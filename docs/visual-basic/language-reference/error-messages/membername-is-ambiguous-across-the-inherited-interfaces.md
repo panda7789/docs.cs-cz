@@ -1,5 +1,5 @@
 ---
-title: '&#39;&lt;MemberName&gt; &#39; je nejednoznačný přes rozhraní zděděné &#39; &lt;interfacename1&gt; &#39; a &#39; &lt;interfacename2&gt;&#39;'
+title: '&#39;&lt;MemberName&gt; &#39; je dvojznačný ve zděděných rozhraních &#39; &lt;interfacename1&gt; &#39; a &#39; &lt;interfacename2&gt;&#39;'
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30685
@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC30685
 ms.assetid: 756add7a-23d5-4b4f-a48d-8297d6459c73
-ms.openlocfilehash: 23d1a11bcee2a4faae40f2683d109d5820ee5f9c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e6d6a82331185060d6f08c3375dc5a628b65df1a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33585298"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506292"
 ---
-# <a name="39ltmembernamegt39-is-ambiguous-across-the-inherited-interfaces-39ltinterfacename1gt39-and-39ltinterfacename2gt39"></a>&#39;&lt;MemberName&gt; &#39; je nejednoznačný přes rozhraní zděděné &#39; &lt;interfacename1&gt; &#39; a &#39; &lt;interfacename2&gt;&#39;
-Rozhraní dědí z více rozhraní dvě nebo více členů se stejným názvem.  
+# <a name="39ltmembernamegt39-is-ambiguous-across-the-inherited-interfaces-39ltinterfacename1gt39-and-39ltinterfacename2gt39"></a>&#39;&lt;MemberName&gt; &#39; je dvojznačný ve zděděných rozhraních &#39; &lt;interfacename1&gt; &#39; a &#39; &lt;interfacename2&gt;&#39;
+Dva nebo více členů se stejným názvem rozhraní dědí z více rozhraní.  
   
  **ID chyby:** BC30685  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Převést hodnotu na základní rozhraní, které chcete použít; například:  
+-   Přetypujte hodnotu na základní rozhraní, které chcete použít; Příklad:  
   
     ```  
     Interface Left  
@@ -46,5 +46,5 @@ Rozhraní dědí z více rozhraní dvě nebo více členů se stejným názvem.
     End Module  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)

@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - accessibility domain [C#]
 ms.assetid: 8af779c1-275b-44be-a864-9edfbca71bcc
-ms.openlocfilehash: 6028ec3184d7b9e61a62bf185fd37072636c6bc5
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 241fe7714bfd3dd3fd37f7ac83a836f89b4951bf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235684"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54605575"
 ---
 # <a name="accessibility-domain-c-reference"></a>Doména přístupnosti (Referenční dokumentace jazyka C#)
 Doména přístupnosti člena určuje, ve které části programu může být odkazováno člena. Pokud člen je vnořená v rámci jiného typu, jak je určen jeho doméně přístupnosti [úrovni přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md) z člena a doménou přístupnosti bezprostředně nadřazeného typu.  
@@ -25,15 +25,15 @@ Doména přístupnosti člena určuje, ve které části programu může být od
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
-- [Modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md)  
-- [Úrovně přístupnosti](../../../csharp/language-reference/keywords/accessibility-levels.md)  
-- [Omezení používání úrovní přístupu](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md)  
-- [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)  
-- [public](../../../csharp/language-reference/keywords/public.md)  
-- [private](../../../csharp/language-reference/keywords/private.md)  
-- [protected](../../../csharp/language-reference/keywords/protected.md)  
+## <a name="see-also"></a>Viz také:
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
+- [Modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md)
+- [Úrovně přístupnosti](../../../csharp/language-reference/keywords/accessibility-levels.md)
+- [Omezení používání úrovní přístupu](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md)
+- [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)
+- [public](../../../csharp/language-reference/keywords/public.md)
+- [private](../../../csharp/language-reference/keywords/private.md)
+- [protected](../../../csharp/language-reference/keywords/protected.md)
 - [internal](../../../csharp/language-reference/keywords/internal.md)

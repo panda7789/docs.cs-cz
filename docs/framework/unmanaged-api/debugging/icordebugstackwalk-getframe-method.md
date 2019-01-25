@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 548a8a7743c02be5734b677010627f847c5bc4b0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 09a5d44e2f09c0a9ad87d590bb6d7330241143ce
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421984"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54666239"
 ---
 # <a name="icordebugstackwalkgetframe-method"></a>ICorDebugStackWalk::GetFrame – metoda
 Získá aktuální rámec v [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) objektu.  
@@ -35,26 +35,26 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
   
 #### <a name="parameters"></a>Parametry  
  `pFrame`  
- [v] Ukazatel na adresu objektu vytvořené rámce, který představuje aktuální rámečku v zásobníku.  
+ [in] Ukazatel na adresu vytvořeného orámovat objekt, který představuje aktuální rámec v zásobníku.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Modul runtime byla úspěšně vrácena aktuální snímek.|  
-|E_FAIL|Aktuální snímek nebyla vrácena.|  
-|S_FALSE|Aktuální snímek je nativní zásobníku.|  
+|S_OK|Modul runtime byla úspěšně vrácena aktuální rámec.|  
+|E_FAIL|Aktuální rámec nebyl vrácen.|  
+|S_FALSE|Aktuální rámec je příkaz nativní zásobníku.|  
 |E_INVALIDARG|`pFrame` má hodnotu null.|  
-|CORDBG_E_PAST_END_OF_STACK|Ukazatel na rámec je již na konec zásobníku; Proto je přístupná žádné další snímky.|  
+|CORDBG_E_PAST_END_OF_STACK|Už na konec zásobníku; ukazatel na rámec Proto je možný žádné další rámce.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugStackWalk` Vrátí pouze rámce skutečné zásobníku. Použití [icordebugthread3::getactiveinternalframes –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread3-getactiveinternalframes-method.md) metoda vrátí interní rámce. (Interní rámce jsou vloženy do zásobníku modulem runtime pro uložení dočasných dat datové struktury).  
+ `ICorDebugStackWalk` Vrátí pouze skutečné rámců. Použití [icordebugthread3::getactiveinternalframes –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread3-getactiveinternalframes-method.md) metoda vrátí interní snímků. (Vnitřních rámcích datové struktury jsou vloženy do zásobníku modulem runtime k uložení dočasných dat..)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -62,7 +62,7 @@ HRESULT GetFrame([out] ICorDebugFrame ** pFrame);
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugStackWalk – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugStackWalk – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

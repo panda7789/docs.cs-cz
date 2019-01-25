@@ -5,12 +5,12 @@ helpviewer_keywords:
 - returns XML tag
 - <returns> XML tag
 ms.assetid: a03a6469-d907-425d-882f-083187950e7e
-ms.openlocfilehash: 47debcef2c6ce56fda4c4a0818c8e813b41ebad1
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 4dcf8e9aee6edecbda2874a6e07fbe6e3772b18b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925015"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580522"
 ---
 # <a name="ltreturnsgt-visual-basic"></a>&lt;Vrátí&gt; (Visual Basic)
 Určuje návratovou hodnotu vlastnosti nebo funkce.  
@@ -35,5 +35,5 @@ Určuje návratovou hodnotu vlastnosti nebo funkce.
   
  [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/returns_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
+## <a name="see-also"></a>Viz také:
+- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

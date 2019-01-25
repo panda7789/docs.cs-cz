@@ -7,12 +7,12 @@ helpviewer_keywords:
 - WPF [WPF], creating Direct3D9 content
 - Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 286e98bc-1eaa-4b5e-923d-3490a9cca5fc
-ms.openlocfilehash: 192036836dfb010274944006feea44e5d81ff4e3
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 8e598b557381bf82b42ea87e2f020ebba4450929
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53168745"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54520292"
 ---
 # <a name="walkthrough-creating-direct3d9-content-for-hosting-in-wpf"></a>Průvodce: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF
 Tento návod ukazuje, jak k vytvoření obsahu Direct3D9, který je vhodný pro hostování v aplikaci Windows Presentation Foundation (WPF). Další informace o hostování obsahu Direct3D9 v aplikaci WPF, naleznete v tématu [WPF a systému Direct3D9 vzájemná spolupráce grafického subsystému](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md).
@@ -41,7 +41,7 @@ Tento návod ukazuje, jak k vytvoření obsahu Direct3D9, který je vhodný pro 
 
      Průvodce aplikací Win32 otevře a zobrazí se úvodní obrazovka.
 
-2.  Klikněte na tlačítko **Další**.
+2.  Klikněte na **Další**.
 
      Obrazovka nastavení aplikace se zobrazí.
 
@@ -139,7 +139,7 @@ Tento návod ukazuje, jak k vytvoření obsahu Direct3D9, který je vhodný pro 
 
 -   Hostování obsahu Direct3D9 v aplikaci WPF. Další informace najdete v tématu [názorný postup: Hostování obsahu Direct3D9 v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Interop.D3DImage>
 - [Předpoklady výkonu pro Direct3D9 a interoperabilitu WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)

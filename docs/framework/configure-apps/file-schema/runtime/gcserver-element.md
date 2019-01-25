@@ -1,5 +1,5 @@
 ---
-title: '&lt;gcServer&gt; – Element'
+title: '&lt;gcServer&gt; Element'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/gcServer
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 8d25b80e-2581-4803-bd87-a59528e3cb03
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 80421a66a3ace4970324fb295e167b7d4875063f
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: dc54b8554d788cacf48aeeda31f8ed300c469b92
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53610675"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506846"
 ---
-# <a name="ltgcservergt-element"></a>&lt;gcServer&gt; – Element
+# <a name="ltgcservergt-element"></a>&lt;gcServer&gt; Element
 Určuje, zda modul common language runtime spustí uvolnění paměti serveru.  
   
  \<Konfigurace >  
@@ -78,8 +78,8 @@ Určuje, zda modul common language runtime spustí uvolnění paměti serveru.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType>  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType>
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
 - [Postupy: Zakázat souběžné uvolňování paměti](https://msdn.microsoft.com/library/ba2c6c67-5778-497c-9fac-5f793b5500c7)

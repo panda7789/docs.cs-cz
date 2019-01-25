@@ -3,12 +3,12 @@ title: Struktury – průvodce v C#
 description: Další informace o typu Struktura a jak vytvořit
 ms.date: 10/12/2016
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.openlocfilehash: 26b7b075dbe159d43fd7f84e9599d2d8d6a8332c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0db9ebca8a3b0be1d380128f7802e30a41c34a37
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513083"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506976"
 ---
 # <a name="structs"></a>Struktury
 A *struktura* je typ hodnoty. Když se vytvoří struktura, obsahuje proměnné, ke kterému je přiřazena struktura, obsahovat skutečná data. Když je struktura přiřazena nové proměnné, zkopíruje se. Nové proměnné a původní proměnné proto obsahují dvě oddělené kopie stejných dat. Změny provedené v jedné kopii neovlivní druhou kopii.
@@ -65,7 +65,7 @@ Ukazuje, druhý *binární literály:*, které vám umožňují určit bitové v
 ## <a name="nullable-types"></a>Typy s povolenou hodnotou Null  
 Typy běžných hodnot nemohou mít hodnotu [null](./language-reference/keywords/null.md). Můžete však vytvořit typy s možnou hodnotou Null přidáním **?** Po vytvoření typu. Například **int?** je **int** typ, který může mít také hodnotu [null](./language-reference/keywords/null.md). V CTS jsou typy připouštějící hodnotu Null instancemi obecného typu struktury <xref:System.Nullable%601>. Typy s možnou hodnotou Null jsou zvláště užitečné při předávání dat do a z databáze, ve kterých mohou být číselné hodnoty null. Další informace najdete v tématu [typy s možnou hodnotou Null (C# Programming Guide)](./programming-guide/nullable-types/index.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Třídy](classes.md)
 - [Základní typy](basic-types.md)

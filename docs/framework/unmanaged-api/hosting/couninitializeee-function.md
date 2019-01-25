@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 73fa281d28e9b5362ff386b55b07dd431f1915f4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ef5faff6682ed6c043e81212f2cb27d4cfbd813d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429179"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54601854"
 ---
 # <a name="couninitializeee-function"></a>CoUninitializeEE – funkce
 `CoUninitializeEE` je zastaralá a poskytuje žádné funkce.  
@@ -35,8 +35,8 @@ void CoUninitializeEE (
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Modul provádění běžných runtime jazyka nemůže být uvolněna z procesu. Vypnout hovoru stroj provádění [corexitprocess –](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md).  
+ Common language runtime prováděcí modul nemůže být uvolněna z procesu. Vypnout volání modulu provádění [corexitprocess –](../../../../docs/framework/unmanaged-api/hosting/corexitprocess-function.md).  
   
-## <a name="see-also"></a>Viz také  
- [CoInitializeEE – funkce](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md)  
- [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+## <a name="see-also"></a>Viz také:
+- [CoInitializeEE – funkce](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md)
+- [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

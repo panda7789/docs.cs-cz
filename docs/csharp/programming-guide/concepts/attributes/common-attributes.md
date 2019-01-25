@@ -2,12 +2,12 @@
 title: Běžné atributy (C#)
 ms.date: 07/20/2015
 ms.assetid: 785a0526-6c0e-4599-8c61-ccdc88dd9965
-ms.openlocfilehash: 3b02b750ad4801177cb2ee4e2ef4bf51ecb2f20f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 4a1dd6200f7eb9e69caefe62d9e9defd90856ce1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43504392"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54558582"
 ---
 # <a name="common-attributes-c"></a>Běžné atributy (C#)
 Toto téma popisuje atributy, které se běžně používají v aplikacích jazyka C#.  
@@ -229,11 +229,11 @@ class SampleClass
   
  Další informace o atributech informace o volajícím, naleznete v tématu [informace o volajícím (C#)](../../../../csharp/programming-guide/concepts/caller-information.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Reflection>  
-- <xref:System.Attribute>  
-- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
-- [Atributy](../../../../../docs/standard/attributes/index.md)  
-- [Reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
+- <xref:System.Reflection>
+- <xref:System.Attribute>
+- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
+- [Atributy](../../../../../docs/standard/attributes/index.md)
+- [Reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md)
 - [Přístup k atributům pomocí reflexe (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)

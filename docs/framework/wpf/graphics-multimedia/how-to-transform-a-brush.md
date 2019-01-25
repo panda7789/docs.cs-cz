@@ -9,12 +9,12 @@ helpviewer_keywords:
 - brushes [WPF], Transform property
 - rotating contents of brushes [WPF]
 ms.assetid: ebada2f9-f01f-4863-9ea2-c2e4e51610f1
-ms.openlocfilehash: ebc8d4c6cb36d76b70691cce183f9e6070d19822
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a90e17fa8bb4fec339fda8acbcdff5c0916d61bf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507044"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54529957"
 ---
 # <a name="how-to-transform-a-brush"></a>Postupy: Transformace štětce
 Tento příklad ukazuje, jak transformovat <xref:System.Windows.Media.Brush> objektů pomocí jejich transformaci dvě vlastnosti: <xref:System.Windows.Media.Brush.RelativeTransform%2A> a <xref:System.Windows.Media.Brush.Transform%2A>.  
@@ -44,7 +44,7 @@ Tento příklad ukazuje, jak transformovat <xref:System.Windows.Media.Brush> obj
   
  Úplnou ukázku najdete v tématu [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973). Další informace o štětcích najdete v tématu [Malování plnými barvami a přechody přehled](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled transformace štětce](../../../../docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)  
- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
- [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled transformace štětce](../../../../docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)
+- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
+- [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)

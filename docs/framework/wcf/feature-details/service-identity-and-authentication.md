@@ -7,117 +7,117 @@ dev_langs:
 helpviewer_keywords:
 - authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-ms.openlocfilehash: 21184098f90be3b64cfccd5ab98a1824cee50e48
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: def49bc4264f2cae8e17d5f00ff12ad41674da2d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33508189"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540608"
 ---
 # <a name="service-identity-and-authentication"></a>Identita a ověřování služby
-Služby *identitu koncového bodu*je hodnota vygenerovaná ze služby webové služby popis Language (WSDL). Tato hodnota, rozšíří do libovolného klienta se používá k ověřování. Jakmile klient inicializuje komunikaci pro koncový bod a služby se ověří na klienta, klient porovná hodnotu identitu koncového bodu se proces ověřování koncového bodu vrácená hodnota. Pokud se shodují, klient jistotu, že nekontaktoval koncový bod očekávanou službu. To funguje jako ochrana proti *phishing* tak, že zabrání se přesměruje na koncový bod hostitelem škodlivý služba klienta.  
+Služby *identitě koncového bodu*je hodnota vygenerovaná ze služby webové služby WSDL (Description Language). Tato hodnota, rozšíří na všechny klienty, se používá k ověřování. Poté, co klient inicializuje komunikaci na koncový bod a služby se ověří na klienta, klient porovná hodnotu identity koncový bod s skutečná hodnota vrácená v procesu ověřování koncového bodu. Pokud se shodují, klient jistotu, že kontaktoval koncový bod služby očekávané. Tato operace funguje jako ochranu proti *phishing* zabraňuje klient se přesměrovává na koncový bod hostitelem škodlivé služby.  
   
- Ukázkovou aplikaci, která demonstruje nastavení identity, najdete v části [ukázka Identity služby](../../../../docs/framework/wcf/samples/service-identity-sample.md). Další informace o koncových bodů a adresy koncových bodů najdete v tématu [adresy](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md).  
+ Ukázková aplikace, který ukazuje nastavení identity, najdete v části [ukázka Identity služby](../../../../docs/framework/wcf/samples/service-identity-sample.md). Další informace o koncových bodech a adresy koncových bodů najdete v tématu [adresy](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md).  
   
 > [!NOTE]
->  Použijete-li LanMan NT (NTLM) pro ověřování, identita služby není zkontrolovat, protože v rámci protokolu NTLM, klient nelze provést ověření serveru. NTLM se používá, když počítače jsou součástí pracovní skupiny systému Windows, nebo když se používá starší verzi systému Windows, který nepodporuje ověřování pomocí protokolu Kerberos.  
+>  Když LanMan NT (NTLM) se používají k ověřování, identity služby není kontrolovat, protože v protokolu NTLM, klient se nemůže ověřit server. Je použit protokol NTLM, když se počítače pracovní skupiny Windows nebo při spuštění starší verzi Windows, který nepodporuje ověřování pomocí protokolu Kerberos.  
   
- Když klient zahájí zabezpečený kanál k odeslání zprávy do služby nad ním, ověřuje službu infrastrukturu Windows Communication Foundation (WCF) a pouze odešle zprávu, pokud identita služby odpovídá identita zadaná v koncovém bodě Adresa, kterou klient používá.  
+ Když klient zahájí zabezpečený kanál pro odeslání zprávy do služby přes něj, ověřuje služby infrastruktury Windows Communication Foundation (WCF) a pouze odešle zprávu, pokud služba identity odpovídá identitě zadané v koncovém bodě Adresa, kterou klient používá.  
   
- Zpracování identity se skládá z těchto fází:  
+ Zpracování identity se skládá z následujících fází:  
   
--   V době návrhu určuje vývojáře klienta služby Identita z metadata pro koncový bod (vystavený prostřednictvím WSDL).  
+-   V době návrhu vývojáře klienta určuje identitu služby z koncového bodu metadat (vystavené prostřednictvím WSDL).  
   
--   Klientské aplikace za běhu, zkontroluje deklarace identity služby zabezpečovací pověření před odesláním všechny zprávy ve službě.  
+-   Klientská aplikace za běhu, zkontroluje deklarací zabezpečovací přihlašovací údaje služby před odesláním jakýchkoli zpráv do služby.  
   
- Identita, zpracování na straně klienta je obdobou ověřování klientů na službu. Služba Zabezpečené nespustí kód, dokud po ověření pověření klienta. Podobně klient neodesílá podle zprávy a pokuste se službu až po ověření přihlašovacích údajů služby, která se označuje předem z metadat služby.  
+ Identita zpracování na straně klienta je obdobou ověřování klientů na službu. Služba Zabezpečené nespustí kódu až po ověření pověření klienta. Podobně klient nezasílal zprávy do služby až po ověření přihlašovacích údajů služby založené na co předem známý z metadat služby.  
   
- <xref:System.ServiceModel.EndpointAddress.Identity%2A> Vlastnost <xref:System.ServiceModel.EndpointAddress> třída reprezentuje identitu služby nazvaná klientem. Publikuje službu <xref:System.ServiceModel.EndpointAddress.Identity%2A> ve svých metadatech. Při spuštění klienta Vývojář [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) na koncový bod služby vygenerované konfigurace obsahuje hodnotu služby <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost. WCF infrastruktury (Pokud je nakonfigurovaná s zabezpečení) ověří, zda má služba identita zadaná.  
+ <xref:System.ServiceModel.EndpointAddress.Identity%2A> Vlastnost <xref:System.ServiceModel.EndpointAddress> třída reprezentuje identitu služby volána klientem. Služba zveřejňuje <xref:System.ServiceModel.EndpointAddress.Identity%2A> ve svých metadatech. Při spuštění klienta pro vývojáře [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) na koncový bod služby vygenerovanou konfiguraci obsahuje hodnotu služby <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost. Infrastruktura WCF (Pokud je nakonfigurovaná s zabezpečení) ověřuje, že služba má identita zadaná.  
   
 > [!IMPORTANT]
->  Metadata obsahuje Očekávaná identita služby, proto se doporučuje vystavit metadata služby prostřednictvím zabezpečené prostředky, například tak, že vytvoříte koncový bod HTTPS pro službu. Další informace najdete v tématu [postupy: zabezpečené koncové body metadat](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md).  
+>  Metadata obsahuje Očekávaná identita služby, proto se doporučuje zpřístupňují metadata služby prostřednictvím zabezpečené prostředky, třeba tak, že vytvoříte koncový bod HTTPS pro službu. Další informace najdete v tématu [jak: Zabezpečené koncové body metadat](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md).  
   
 ## <a name="identity-types"></a>Typy identity  
- Služba může poskytnout šest typů identit. Každý typ identity odpovídá element, který může být obsažený uvnitř `<identity>` element v konfiguraci. Typ použitý závisí na scénáře a požadavky na zabezpečení služby. Následující tabulka popisuje každý typ identity.  
+ Služba může poskytnout šest typů identit. Každý typ identity odpovídá elementu, který může být obsažena uvnitř `<identity>` element v konfiguraci. Typ použitý závisí na scénáře a požadavky na zabezpečení služby. Následující tabulka popisuje každý typ identity.  
   
 |Typ identity|Popis|Typický scénář|  
 |-------------------|-----------------|----------------------|  
-|Domain Name System (DNS)|Pomocí tohoto prvku s certifikáty X.509 nebo účty v systému Windows. Porovná název DNS zadaný v přihlašovacích údajích s hodnotou zadanou v tomto elementu.|Kontrolu DNS můžete použít certifikáty s DNS nebo názvy předmětu. Pokud certifikát je znova vydat se stejnou službou DNS nebo název subjektu, kontrola identity je stále platný. Pokud je znova certifikát vydat, získá nový klíč RSA, ale zachová stejné DNS nebo název subjektu. To znamená, že klienti nemusí aktualizovat své identity informace o službě.|  
-|Certifikát. Výchozí hodnota při `ClientCredentialType` je nastavena na certifikát.|Tento element určuje hodnotu certifikát X.509 s kódováním Base64 má být porovnán s klientem.<br /><br /> Při použití také použít tento prvek [!INCLUDE[infocard](../../../../includes/infocard-md.md)] jako pověření pro ověřování.|Tento element omezuje ověřování na základě jeho hodnota kryptografického otisku jeden certifikát. To umožňuje přísnější ověřování, protože jsou hodnoty kryptografického otisku jedinečné. Příčinou jeden přímý přístup paměti: Pokud se stejným názvem subjektu je znova vydat certifikát, je také nový kryptografický otisk. Proto nejsou schopný ověřit službu, pokud je známý nový kryptografický otisk pro klienty. Další informace o hledání kryptografický otisk certifikátu najdete v tématu [postupy: načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).|  
-|Odkaz na certifikát|Stejné možnosti certifikátů popsané. Tento element však umožňuje zadejte název certifikátu a umístění, ze kterého chcete načíst certifikát úložiště.|Stejné jako certifikát scénář popsaný dřív.<br /><br /> Výhodou je, že můžete změnit umístění úložiště certifikátů.|  
-|RSA|Tento element určuje hodnotu klíče RSA k porovnání s klientem. To se podobá možnost certifikátů, ale místo pomocí kryptografický otisk certifikátu, se místo toho používá klíč RSA certifikátu.|Kontrolu RSA umožňuje konkrétně omezit ověření na jeden certifikát na základě jeho klíče RSA. To umožňuje přísnější ověřování konkrétního klíče RSA za cenu službu, která již pracuje se stávající klienty, pokud se změní hodnota klíče RSA.|  
-|Hlavní název uživatele (UPN). Výchozí hodnota při `ClientCredentialType` je nastaven pro Windows a služba není proces spuštěn pod jeden z účtů systému.|Tento element určuje názvu UPN, které služba běží pod. Najdete v části protokolu Kerberos a Identity [přepsání Identity služby kvůli ověřování](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md).|Tím se zajistí, že služba běží v rámci konkrétní uživatelský účet systému Windows. Uživatelský účet může být aktuální přihlášeného uživatele nebo služby spuštěné v rámci určitého uživatelského účtu.<br /><br /> Toto nastavení využívá výhod zabezpečení systému Windows pomocí protokolu Kerberos, pokud služba běží pod účtem domény v prostředí služby Active Directory.|  
-|Hlavní název služby (SPN). Výchozí hodnota při `ClientCredentialType` je nastaven pro systém Windows a službu proces běží v rámci jednoho z účty systému – LocalService, LocalSystem nebo NetworkService.|Tento element určuje hlavní název služby přidružené k účtu služby. Najdete v části protokolu Kerberos a Identity [přepsání Identity služby kvůli ověřování](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md).|Tím se zajistí, že hlavní název služby a konkrétní účet systému Windows, které jsou přidružené k názvu SPN identifikaci služby.<br /><br /> Nástroje Setspn.exe můžete přidružit účet počítače pro uživatelský účet služby.<br /><br /> Toto nastavení využívá Windows protokolu Kerberos, zabezpečení, pokud je služba spuštěna pod jeden z účtů system nebo pod účtem domény, který má odpovídající název SPN se ho a počítač je členem domény v prostředí služby Active Directory.|  
+|Domain Name System (DNS)|Tento prvek pomocí certifikátů X.509 nebo účty Windows. Porovná název DNS zadaný v přihlašovacích údajích s hodnotou zadanou v tomto elementu.|Kontrola DNS umožňuje používat certifikáty s DNS nebo názvy subjektu. Pokud je ho znova vydat certifikát se stejným DNS nebo názvu subjektu, kontrola identity je stále platný. Když se ho znova vydat certifikát, získá nový klíč RSA, ale zachováte stejný DNS nebo názvu subjektu. To znamená, že klienti, není nutné aktualizovat své identity informace o službě.|  
+|certifikát. Výchozí hodnota při `ClientCredentialType` je nastavena na certifikát.|Tento prvek Určuje certifikát X.509 s kódováním Base64 hodnotu k porovnání s klientem.<br /><br /> Tento prvek použít také při použití [!INCLUDE[infocard](../../../../includes/infocard-md.md)] jako přihlašovací údaj k ověřování.|Tento prvek omezuje ověřování na základě jeho hodnotu kryptografického otisku jeden certifikát. To umožňuje přísnější ověřování, protože jsou jedinečné hodnoty kryptografického otisku. Součástí jednoho výstrahou: Pokud se ho znova vydat certifikát se stejným názvem subjektu, má také nový kryptografický otisk. Proto klienti nebudou se moct k ověření služby, pokud je známý nový kryptografický otisk. Další informace o vyhledání kryptografický otisk certifikátu najdete v tématu [jak: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).|  
+|Odkaz na certifikát|Stejné možnosti certifikátů je popsáno výše. Tento element však umožňuje zadat název certifikátu a umístění, ze kterého se má načíst certifikát uložit.|Stejné jako certifikát scénář je popsáno výše.<br /><br /> Výhodou je, že můžete změnit umístění úložiště certifikátů.|  
+|RSA|Tento prvek určuje hodnotu klíče RSA k porovnání s klientem. Je to podobné možnosti certifikátů, ale místo použití kryptografického otisku certifikátu, se místo toho používá klíč RSA certifikátu.|Kontrolu RSA umožňuje konkrétně omezit ověření na základě jeho klíč RSA jeden certifikát. To umožňuje přísnější ověřování z určitého klíče RSA za cenu službu, která už funguje s existující klienty, pokud se změní hodnota klíče RSA.|  
+|Hlavní název uživatele (UPN). Výchozí hodnota při `ClientCredentialType` nastavena Windows a proces není spuštěn v rámci jednoho systémové účty.|Tento prvek určuje, na kterém běží služba v rámci hlavní název uživatele. Najdete v části protokol Kerberos a Identity [přepsání Identity služby kvůli ověřování](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md).|Tím se zajistí, že služba běží v rámci konkrétní uživatelský účet Windows. Uživatelský účet může být aktuální přihlášeného uživatele nebo služby spuštěné v rámci určitého uživatelského účtu.<br /><br /> Toto nastavení využívá výhod zabezpečení Windows protokolu Kerberos, pokud je služba spuštěna pod účtem domény v prostředí služby Active Directory.|  
+|Hlavní název služby (SPN). Výchozí hodnota při `ClientCredentialType` je nastavena na Windows a služby je proces spuštěn pod jeden z účtů systému – LocalService, LocalSystem nebo NetworkService.|Tento prvek určuje hlavní název služby přidružené k účtu služby. Najdete v části protokol Kerberos a Identity [přepsání Identity služby kvůli ověřování](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md).|Tím se zajistí, že hlavní název služby a konkrétní Windows účet spojený s hlavní název služby identifikaci služby.<br /><br /> Chcete-li přidružit účet počítače pro uživatelský účet služby můžete použít nástroje Setspn.exe.<br /><br /> Toto nastavení využívá Windows protokolu Kerberos, zabezpečení, pokud je služba spuštěná v jednom ze systémové účty nebo pod účtem domény, který má odpovídající název SPN se ho a počítač je členem domény v prostředí služby Active Directory.|  
   
 ## <a name="specifying-identity-at-the-service"></a>Určení Identity na službu  
- Obvykle nemáte nastavit identitu u služby, protože výběr typu pověření klienta Určuje typ identity vystavené v metadatech služby. Další informace o tom, jak přepsat nebo zadejte identitu služby najdete v tématu [přepsání Identity služby kvůli ověřování](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md).  
+ Standardně nastavit identitu ve službě, protože výběr typu pověření klienta Určuje typ identity v metadatech služby není nutné. Další informace o tom, jak přepsat nebo zadejte identitu služby najdete v tématu [přepsání Identity služby kvůli ověřování](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md).  
   
-## <a name="using-the-identity-element-in-configuration"></a>Pomocí \<identity > Element v konfiguraci  
- Pokud změníte typ pověření klienta vazba dříve zobrazené `Certificate,` pak generovaného WSDL obsahuje Base64 serializovat certifikátů X.509 pro hodnotu identity, jak je znázorněno v následujícím kódu. Toto je výchozí nastavení pro všechny typy pověření klienta než Windows.  
+## <a name="using-the-identity-element-in-configuration"></a>Použití \<identity > v elementu konfigurace  
+ Pokud změníte typ přihlašovacích údajů klienta ve vazbě bylo dříve uvedeno na `Certificate,` generovaného WSDL obsahuje Base64 serializovat certifikátů X.509 pro hodnotu identity, jak je znázorněno v následujícím kódu. Toto je výchozí pro všechny typy přihlašovacích údajů klienta jiné než Windows.  
   
   
   
- Můžete změnit hodnotu výchozí identitu služby nebo změňte typ identity pomocí `<identity>` element v konfiguraci nebo nastavení identity v kódu. Následující kód konfigurace nastaví identitu domain name system (DNS) s hodnotou `contoso.com`.  
+ Můžete změnit hodnotu výchozí identitu služby nebo změňte typ identity pomocí `<identity>` element v konfiguraci nebo nastavením identita v kódu. Následující kód konfigurace nastaví identitou system (DNS) název domény s hodnotou `contoso.com`.  
   
   
   
 ## <a name="setting-identity-programmatically"></a>Nastavení Identity prostřednictvím kódu programu  
- Služby není nutné explicitně zadat svou identitu, protože WCF automaticky určuje. Však WCF umožňuje zadat identity na koncový bod, pokud je to nutné. Následující kód přidá nový koncový bod služby s konkrétní identity DNS.  
+ Vaše služba není nutné explicitně určit identitu, protože WCF automaticky určuje. Ale WCF umožňuje určit identitu, která v koncovém bodě, podle potřeby. Následující kód přidá nový koncový bod služby s konkrétní identitu DNS.  
   
  [!code-csharp[C_Identity#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#5)]
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  
   
-## <a name="specifying-identity-at-the-client"></a>Určení Identity na straně klienta  
- V době návrhu se většinou používá vývojář klienta [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování konfigurace klienta. Vygenerovaný konfigurační soubor (určený pro použití klientem) obsahuje identitu serveru. Například následující kód se generují z služba, která určuje identitu DNS, jak je znázorněno v předchozím příkladu. Všimněte si, že hodnotu koncového bodu identity klienta se shoduje s službu. V takovém případě, když klient obdrží pověření systému Windows (Kerberos) do služby, se očekává, že hodnota, která má být `contoso.com`.  
+## <a name="specifying-identity-at-the-client"></a>Určení Identity klienta  
+ V době návrhu, vývojáři klientského programu obvykle používá [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování konfigurace klienta. Vygenerovaný konfigurační soubor (určené pro použití klientem) obsahuje identitu serveru. Například následující kód je generován ze služby, která určuje identitu DNS, jak je znázorněno v předchozím příkladu. Všimněte si, že hodnota identity klienta koncový bod odpovídá služby. V tomto případě, když klient obdrží pověření Windows (Kerberos) pro službu, očekává hodnota, která má být `contoso.com`.  
   
   
   
- Pokud, místo systému Windows, službu Určuje certifikát jako typ pověření klienta, pak vlastnost DNS certifikátu musí být hodnota `contoso.com`. (Nebo pokud je vlastnost DNS `null`, musí být název subjektu certifikátu `contoso.com`.)  
+ Pokud, místo Windows, tato služba Určuje certifikát jako typ pověření klienta, pak vlastnost DNS tento certifikát má být hodnota `contoso.com`. (Nebo pokud je vlastnost DNS `null`, musí být název subjektu certifikátu `contoso.com`.)  
   
 #### <a name="using-a-specific-value-for-identity"></a>Pomocí konkrétní hodnoty pro identitu  
- Následující konfigurační soubor klienta ukazuje, jak identity služby musí být konkrétní hodnotu. V následujícím příkladu klient může komunikovat s dva koncové body. První je identifikován s kryptografický otisk certifikátu a druhý s klíčem RSA certifikátu. To znamená certifikát, který obsahuje pouze veřejný klíč nebo privátní klíče dvojice, ale nebyl vydán důvěryhodnou autoritou.  
+ Následující konfigurační soubor klienta ukazuje, jak služby identita má být konkrétní hodnotu. V následujícím příkladu klient může komunikovat s dva koncové body. První je označena kryptografický otisk certifikátu a druhý s klíčem RSA certifikátu. To znamená, že certifikát, který obsahuje pouze veřejný klíč nebo privátní pár klíčů, ale není vydán důvěryhodnou autoritou.  
   
   
   
-## <a name="identity-checking-at-run-time"></a>Identity kontrola za běhu  
- V době návrhu vývojář klienta určuje identitu serveru prostřednictvím jeho metadata. Za běhu se provádí kontrola identity před voláním žádné koncové body služby.  
+## <a name="identity-checking-at-run-time"></a>Identita kontrolu za běhu  
+ V době návrhu vývojáře klienta určuje identitu serveru pomocí jeho metadata. V době běhu je provedena kontrola identity před voláním žádné koncové body služby.  
   
- Hodnota identity je vázaný na typ ověřování určeného metadata; jinými slovy typ pověření použitá pro službu.  
+ Hodnota identity je vázán na typ ověřování určené metadata; jinými slovy zadejte přihlašovací údaje použité pro službu.  
   
- Pokud chcete ověřit pomocí zprávy nebo transportní vrstvy SSL (Secure Sockets) pro ověřování pomocí certifikátů X.509 je nakonfigurovaný kanál, jsou platné tyto hodnoty identity:  
+ Pokud kanál je nakonfigurován k ověření zprávy nebo transportní vrstvy SSL (Secure Sockets) pomocí certifikátů X.509 pro ověřování, platí následující hodnoty identity:  
   
--   DNS. WCF zajišťuje, že má certifikát zadaný během metody handshake SSL obsahuje DNS nebo `CommonName` (CN) atribut rovna hodnotě zadané v identity DNS na klientovi. Všimněte si, že tyto kontroly se provádějí kromě k určení platnost certifikátu serveru. Ve výchozím nastavení WCF ověří, že certifikát serveru je vydán důvěryhodnou kořenovou autoritou.  
+-   DNS. WCF zajišťuje, že obsahuje položku certifikátu poskytnutého během metody handshake SSL DNS nebo `CommonName` (CN) atributu rovná hodnotě zadané v identitu DNS na klientovi. Všimněte si, že tyto kontroly se provádějí kromě toho pro určení platnosti certifikátu serveru. Ve výchozím nastavení WCF ověří, že je certifikát serveru vydané důvěryhodnou kořenovou autoritou.  
   
--   Certifikát. Během metody handshake SSL WCF zajistí, že vzdálený koncový bod poskytuje přesnou certifikát hodnota zadaná v identitě.  
+-   certifikát. Během metody handshake SSL WCF zajistí, že vzdálený koncový bod poskytuje přesnou certifikátu hodnotu zadanou v identitě.  
   
 -   Odkaz na certifikát. Stejné jako certifikát.  
   
--   RSA. Během metody handshake SSL WCF zajistí, že vzdálený koncový bod poskytuje přesnou RSA klíč zadaný v identitě.  
+-   RSA. Během metody handshake SSL WCF zajistí, že vzdálený koncový bod poskytuje přesnou klíč RSA zadaný v identitě.  
   
- Pokud službu ověřuje zpráva nebo transportní SSL pomocí pověření systému Windows pro ověřování a vyjedná přihlašovacích údajů, jsou platné tyto hodnoty identity:  
+ Pokud služba se ověřuje pomocí SSL na úrovni zprávy nebo přenosu pomocí přihlašovacích údajů Windows pro ověřování a vyjedná přihlašovací údaje, platí následující hodnoty identity:  
   
--   DNS. Vyjednávání předá SPN služby, aby bylo možné kontrolovat název DNS. Hlavní název služby je ve formátu `host/<dns name>`.  
+-   DNS. Vyjednávání předá SPN služby tak, aby název DNS můžete kontrolovat. Hlavní název služby je ve formě `host/<dns name>`.  
   
--   HLAVNÍ NÁZEV SLUŽBY. Explicitní služby SPN vrátí, například `host/myservice`.  
+-   HLAVNÍ NÁZEV SLUŽBY. Explicitní služby se vrátí hlavní název služby, například `host/myservice`.  
   
--   HLAVNÍ NÁZEV UŽIVATELE. Hlavní název uživatele účtu služby. Hlavní název uživatele je ve formátu `username` @ `domain`. Například pokud služba je spuštěna v uživatelském účtu, může být `username@contoso.com`.  
+-   HLAVNÍ NÁZEV UŽIVATELE. Hlavní název uživatele účtu služby. Hlavní název uživatele je ve formě `username` @ `domain`. Například pokud služba je spuštěna v uživatelském účtu, může být `username@contoso.com`.  
   
- Určení identity prostřednictvím kódu programu (pomocí <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost) je volitelný. Pokud je zadána žádná identita a typu pověření klienta je systém Windows, výchozí hodnota je hodnota nastavena na název hostitele součástí předponu adresa koncového bodu služby SPN "hostitel nebo" literálu. Pokud je zadána žádná identita a typu pověření klienta je certifikát, výchozí hodnota je `Certificate`. To platí pro obě zabezpečení na úrovni zpráv a přenosu.  
+ Programové určení identity (pomocí <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost) je volitelný. Pokud je zadána žádná identita a je typu pověření klienta Windows, výchozí hodnota je hodnota nastavena na název hostitele součástí adresu koncového bodu služby s předponou hlavního názvu služby "hostitele /" literál. Pokud je zadána žádná identita a typu pověření klienta je certifikát, výchozí hodnota je `Certificate`. To platí pro obě zprávy a přenos úroveň zabezpečení.  
   
-## <a name="identity-and-custom-bindings"></a>Identity a vlastní vazby  
- Protože identity služby závisí na používá typ vazby, ujistěte se, že příslušné identity je vystaven při vytváření vlastní vazby. Například v následujícím příkladu kódu identity vystavené není kompatibilní s typem zabezpečení, protože identita bootstrap vazby zabezpečené konverzaci neodpovídá identitě pro vazbu na koncovém bodu. Zabezpečené konverzace vazby nastaví identitu DNS, zatímco <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement> nastaví identitu (UPN) nebo hlavní název služby.  
+## <a name="identity-and-custom-bindings"></a>Identita a vlastních vazeb  
+ Protože identity služby závisí na typu vazbu použít, ujistěte se, že je přístupný správnou identitu, při vytváření vlastní vazby. Například v následujícím příkladu kódu identity vystavit není kompatibilní s typem zabezpečení, protože identita pro zaváděcí vazbu zabezpečené konverzace neodpovídá identitě pro vazbu v koncovém bodě. Vazbu zabezpečené konverzace nastaví identitu DNS, zatímco <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement> nastaví identitu (UPN) nebo hlavní název služby.  
   
  [!code-csharp[C_Identity#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#8)]
  [!code-vb[C_Identity#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#8)]  
   
- Další informace o tom, jak zásobníku vazby elementy správně vlastní vazby, najdete v části [Creating User-Defined vazby](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md). Další informace o vytvoření vlastní vazby s <xref:System.ServiceModel.Channels.SecurityBindingElement>, najdete v části [postupy: vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
+ Další informace o tom, jak zásobníku vazby prvky správně pro vlastní vazbu, naleznete v tématu [Creating User-Defined vazby](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md). Další informace o vytvoření vlastní vazby s <xref:System.ServiceModel.Channels.SecurityBindingElement>, naleznete v tématu [jak: Vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md).  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
- [Postupy: Vytvoření SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)  
- [Postupy: Vytvoření vlastního ověřovatele identity klientů](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
- [Výběr typu přihlašovacích údajů](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
- [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
- [Vytváření uživatelem definovaných vazeb](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)  
- [Postupy: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Postupy: Vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
+- [Postupy: Vytvoření vlastního ověřovatele Identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)
+- [Výběr typu přihlašovacích údajů](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
+- [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Vytváření uživatelem definovaných vazeb](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)
+- [Postupy: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)

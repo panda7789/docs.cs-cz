@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d141d23f02b2abc92e3d4455aebe1a4057b6bb85
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ee68533e95deb4b6efaa9226c047599f233b3954
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426470"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54494753"
 ---
 # <a name="isymunmanagedreaderinitialize-method"></a>ISymUnmanagedReader::Initialize – metoda
-Inicializuje čtečky symbol s rozhraním program pro import metadat, které bude tato čtečky spojený s, spolu s názvem souboru modulu.  
+Inicializuje modul pro načítání symbolů rozhraní programu pro import metadat, která tento čtecí bude spojená s, spolu s názvem souboru modulu.  
   
 > [!NOTE]
->  Tuto metodu lze volat pouze jednou a musí být volána před provedením další metody čtečky.  
+>  Tuto metodu lze volat pouze jednou a musí být volána před všechny ostatní metody čtečky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,25 +42,25 @@ HRESULT Initialize (
   
 #### <a name="parameters"></a>Parametry  
  `importer`  
- [v] Rozhraní – Importér metadata, pomocí kterého bude tento čtečky spojený.  
+ [in] Rozhraní programu pro import metadat se kterým bude tento čtecí spojená.  
   
  `filename`  
- [v] Název souboru modulu. Můžete použít `pIStream` parametr místo.  
+ [in] Název souboru modulu. Můžete použít `pIStream` parametr místo.  
   
  `searchPath`  
- [v] Cesta k vyhledávání. Tento parametr je volitelný.  
+ [in] Cesta pro vyhledávání. Tento parametr je volitelný.  
   
  `pIStream`  
- [v] Proud souboru použít jako alternativu k parametr filename.  
+ [in] Soubor datového proudu, používá jako alternativu k parametr filename.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- Je třeba zadat pouze jeden z `filename` nebo `pIStream` parametry, nikoli oba dva. `searchPath` Parametr je nepovinný.  
+ Je třeba zadat pouze jeden z `filename` nebo `pIStream` parametrů, ne obojí. `searchPath` Parametr je nepovinný.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

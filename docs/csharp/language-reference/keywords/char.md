@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: 6acb40117c4f59deb084965cb3db9e4a96f7f61a
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: b0aaf6c0b2f614fa5ff8611407cea567da1faafb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53242344"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54616312"
 ---
 # <a name="char-c-reference"></a>char (Referenční dokumentace jazyka C#)
 
@@ -43,13 +43,13 @@ Další informace najdete v tématu [integrální typy](~/_csharplang/spec/types
 
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Char>  
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
-- [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
-- [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  
-- [Tabulka implicitních číselných převodů](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
-- [Tabulka explicitních číselných převodů](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)  
-- [Typy s povolenou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md)  
+- <xref:System.Char>
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
+- [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)
+- [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)
+- [Tabulka implicitních číselných převodů](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)
+- [Tabulka explicitních číselných převodů](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
+- [Typy s povolenou hodnotou Null](../../../csharp/programming-guide/nullable-types/index.md)
 - [Řetězce](../../../csharp/programming-guide/strings/index.md)

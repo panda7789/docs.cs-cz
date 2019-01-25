@@ -4,34 +4,34 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID35
 ms.assetid: 661fdb90-ee7d-40ce-b30b-5e7267bd957a
-ms.openlocfilehash: 58e90d769d5a7f2d88b5c27d1ec7d0d28c8d7b03
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4627f8ddb979780481feadbef06225baf6a7c0ca
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33593698"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54532172"
 ---
 # <a name="sub-or-function-not-defined-visual-basic"></a>Příkaz Sub nebo funkce není definována (Visual Basic)
-A `Sub` nebo `Function` musí být definován, aby bylo možné volat. Možné příčiny této chyby patří:  
+A `Sub` nebo `Function` musí být definován, aby bylo možné volat. Mezi možné příčiny této chyby patří:  
   
 -   Chyba v pravopisu název procedury.  
   
--   Při pokusu o volání procedury z jiného projektu bez explicitně přidat odkaz na tohoto projektu v **odkazy** dialogové okno.  
+-   Při pokusu o volání procedury z jiného projektu bez nutnosti explicitně přidávat odkaz na tento projekt v **odkazy** dialogové okno.  
   
--   Zadání procedury, která není viditelná pro volání procedury.  
+-   Určení procedury, která není viditelná pro volání procedury.  
   
--   Deklarování Windows dynamická knihovna (DLL) rutina nebo rutiny Macintosh kód prostředků, který není v zadaný prostředek knihovny nebo kód.  
+-   Deklarování rutiny Windows dynamická knihovna (DLL) nebo Macintosh kód prostředků rutiny, která není v zadané zdroje knihovny nebo kód.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Ujistěte se, že název postupu je napsán správně.  
+1.  Ujistěte se, jestli název procedury je napsaný správně.  
   
-2.  Najít název projektu, který obsahuje postup, který chcete použít **odkazy** dialogové okno. Pokud se nezobrazí, klikněte **Procházet** tlačítko ji najít. Zaškrtněte políčko nalevo od názvu projektu a pak klikněte na **OK**.  
+2.  Vyhledání názvu projektu, který obsahuje postup, chcete volat **odkazy** dialogové okno. Pokud se nezobrazí, klikněte na tlačítko **Procházet** tlačítko ji najít. Zaškrtněte políčko nalevo od názvu projektu a potom klikněte na tlačítko **OK**.  
   
 3.  Zkontrolujte název rutiny.  
   
-## <a name="see-also"></a>Viz také  
- [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)  
- [Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project)  
- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)
+- [Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project)
+- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)

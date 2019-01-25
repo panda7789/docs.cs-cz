@@ -2,12 +2,12 @@
 title: DotNet příkazu pro publikování
 description: Dotnet publikovat příkaz publikuje do adresáře projektu .NET Core.
 ms.date: 05/29/2018
-ms.openlocfilehash: 353adfcbb0479e4a951b900f06327e23a3414225
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 40ce31073ee3f6f94e110f3a4e1eeda0c7b2e48d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169778"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559298"
 ---
 # <a name="dotnet-publish"></a>publikování DotNet
 
@@ -19,19 +19,19 @@ ms.locfileid: "53169778"
 
 ## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 ```
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-build] [--no-dependencies]
     [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
 dotnet publish [-h|--help]
 ```
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 ```
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-dependencies]
     [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
 dotnet publish [-h|--help]
 ```
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 ```
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity]
     [--version-suffix]
@@ -60,7 +60,7 @@ Projekt pro publikování. Je cestu a název souboru [ C# ](csproj.md), F#, nebo
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
 `-c|--configuration {Debug|Release}`
 
@@ -115,7 +115,7 @@ Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[i
 
 Definuje verze příponu, která má nahradit hvězdičku (`*`) v poli verze souboru projektu.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 
 `-c|--configuration {Debug|Release}`
 
@@ -166,7 +166,7 @@ Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[i
 
 Definuje verze příponu, která má nahradit hvězdičku (`*`) v poli verze souboru projektu.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `-c|--configuration {Debug|Release}`
 
@@ -227,5 +227,5 @@ Aktuální aplikaci publikovat, ale nechcete obnovit odkazy na projekt na projek
 
 ## <a name="see-also"></a>Viz také:
 
-* [Cílové verze rozhraní .NET Framework](../../standard/frameworks.md)
-* [Identifikátor modulu runtime (RID) katalogu](../rid-catalog.md)
+- [Cílové verze rozhraní .NET Framework](../../standard/frameworks.md)
+- [Identifikátor modulu runtime (RID) katalogu](../rid-catalog.md)

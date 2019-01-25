@@ -6,18 +6,18 @@ f1_keywords:
 helpviewer_keywords:
 - In keyword [Visual Basic]
 ms.assetid: 2f003a85-8fb6-4280-822b-6ac12839b915
-ms.openlocfilehash: 47eb90c9c89c7114c40b8a2caeb0e99f3ceccccb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9e96cb9e8c67075a229c97f11ec7127a4afb75a7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33597393"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54567227"
 ---
 # <a name="in-clause-visual-basic"></a>In – klauzule (Visual Basic)
-Určuje skupinu, která je proměnná smyčky v procházení `For Each` cykly, nebo určuje kolekci, která dotaz `From`, `Join`, nebo `Group Join` klauzule.  
+Určuje skupinu, která je proměnná smyčky projít v `For Each` smyčku, nebo určuje kolekci, která v dotazu `From`, `Join`, nebo `Group Join` klauzuli.  
   
 ## <a name="remarks"></a>Poznámky  
- `In` – Klíčové slovo lze použít v kontextech následující:  
+ `In` – Klíčové slovo lze použít v následujících kontextů:  
   
  [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
   
@@ -27,5 +27,5 @@ Určuje skupinu, která je proměnná smyčky v procházení `For Each` cykly, n
   
  [Klauzule Group Join](../../../visual-basic/language-reference/queries/group-join-clause.md)  
   
-## <a name="see-also"></a>Viz také  
- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
+## <a name="see-also"></a>Viz také:
+- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

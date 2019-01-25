@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 53e8180fb55336eb05d0737110fd2fe07a4c5894
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a94891b91f6ac14469e18ed6840a083ce5e9d64d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33441598"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54516913"
 ---
 # <a name="imanagedobjectgetserializedbuffer-method"></a>IManagedObject::GetSerializedBuffer – metoda
 Získá řetězcovou reprezentaci tohoto spravovaného objektu.  
@@ -40,16 +40,16 @@ HRESULT GetSerializedBuffer (
  [out] Ukazatel na řetězec, který je serializovaný objekt.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetSerializedBuffer` Metoda serializuje objekt tak můžou být zařazené do klienta.  
+ `GetSerializedBuffer` Metoda serializuje objekt tak může být zařazována do klienta.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IManagedObject – rozhraní](../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IManagedObject – rozhraní](../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md)

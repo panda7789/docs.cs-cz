@@ -1,5 +1,5 @@
 ---
-title: '&lt;Throwunobservedtaskexceptions –&gt; – Element'
+title: '&lt;ThrowUnobservedTaskExceptions&gt; Element'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,19 +10,19 @@ helpviewer_keywords:
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: edf3fd9a4561677813adbfb970a9d6be43d7c83d
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 7cd3a7a4305dc60beb73b20580049e40780f95c9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612573"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54515651"
 ---
-# <a name="ltthrowunobservedtaskexceptionsgt-element"></a>&lt;Throwunobservedtaskexceptions –&gt; – Element
+# <a name="ltthrowunobservedtaskexceptionsgt-element"></a>&lt;ThrowUnobservedTaskExceptions&gt; Element
 Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěnému procesu.  
   
  \<Konfigurace >  
 \<modul runtime >  
-\<Throwunobservedtaskexceptions – >  
+\<ThrowUnobservedTaskExceptions>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -90,6 +90,6 @@ Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěnému proces
  [!code-csharp[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/throwunobservedtaskexceptions/cs/program.cs#1)]
  [!code-vb[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR/throwunobservedtaskexceptions/vb/program.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+## <a name="see-also"></a>Viz také:
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d0ed1dc09e8dcee8a4c67e01279c6e13661e252d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2741f2f1a6c5f92c3d15ba7d0127cd69494afdce
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33459824"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54545131"
 ---
 # <a name="icorprofilercallback2survivingreferences-method"></a>ICorProfilerCallback2::SurvivingReferences – metoda
-Sestavy rozložení objektů v haldě v důsledku uvolnění paměti kompresi.  
+Ohlásí rozložení objektů v haldě v důsledku uvolnění nekompaktním.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,39 +40,39 @@ HRESULT SurvivingReferences(
   
 #### <a name="parameters"></a>Parametry  
  `cSurvivingObjectIDRanges`  
- [v] Počet bloků souvislý objektů, které zůstal naživu v důsledku uvolnění paměti kompresi. To znamená, hodnota `cSurvivingObjectIDRanges` je velikost `objectIDRangeStart` a `cObjectIDRangeLength` maticových, které úložiště `ObjectID` a délky, v uvedeném pořadí, pro každý blok objektů.  
+ [in] Počet bloků souvislých objektů, které zůstat naživu při uvolňování nekompaktním v důsledku. To znamená, že hodnota `cSurvivingObjectIDRanges` je velikost `objectIDRangeStart` a `cObjectIDRangeLength` pole, které úložiště `ObjectID` a délku, pro každý blok objektů.  
   
- Následující dva argumenty `SurvivingReferences` jsou paralelní pole. Jinými slovy `objectIDRangeStart` a `cObjectIDRangeLength` na stejný blok souvislý objektů, které se týkají.  
+ Následující dva argumenty `SurvivingReferences` jsou paralelní pole. Jinými slovy `objectIDRangeStart` a `cObjectIDRangeLength` týkají stejný blok souvislé objektů.  
   
  `objectIDRangeStart`  
- [v] Pole `ObjectID` hodnoty, z nichž každý je adresa počáteční blok souvislý, live objekty v paměti.  
+ [in] Pole `ObjectID` hodnot, z nichž každý je počáteční adresa blok souvislé, živé objekty v paměti.  
   
  `cObjectIDRangeLength`  
- [v] Pole celých čísel, z nichž každý je velikost bloku hostujícího souvislý objektů v paměti.  
+ [in] Pole celých čísel, z nichž každý je velikost bloku zbývající souvislých objektů v paměti.  
   
- Velikost je zadán pro každý blok, který se odkazuje v `objectIDRangeStart` pole.  
+ Zadat velikost pro každý blok, na který odkazuje `objectIDRangeStart` pole.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!IMPORTANT]
->  Tato metoda sestavy velikosti jako `MAX_ULONG` pro objekty, které jsou větší než 4 GB na 64bitových platformách. Pro objekty, které jsou větší než 4 GB, použijte [icorprofilercallback4::survivingreferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-survivingreferences2-method.md) metoda místo.  
+>  Tato metoda oznamuje velikosti jako `MAX_ULONG` pro objekty, které jsou větší než 4 GB na 64bitových platformách. Pro objekty, které jsou větší než 4 GB, použijte [icorprofilercallback4::survivingreferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-survivingreferences2-method.md) metoda místo.  
   
- Elementy `objectIDRangeStart` a `cObjectIDRangeLength` pole by měl být interpretován následujícím způsobem určit, zda objekt zůstal naživu uvolnění paměti. Předpokládáme, že `ObjectID` hodnotu (`ObjectID`) v rozmezí následující:  
+ Prvky `objectIDRangeStart` a `cObjectIDRangeLength` pole by měl být interpretován takto k určení, zda objekt zůstat naživu kolekce uvolnění paměti. Předpokládejme, že `ObjectID` hodnotu (`ObjectID`) najdete v následujícím rozsahu:  
   
  `ObjectIDRangeStart[i]` <= `ObjectID` < `ObjectIDRangeStart[i]` + `cObjectIDRangeLength[i]`  
   
- Pro všechny hodnotu `i` , je v následujícím rozsahu, objekt má zůstal naživu uvolnění paměti:  
+ Jakoukoli hodnotu z `i` , který je v následujícím rozsahu, objekt má zůstat naživu při uvolňování paměti kolekce:  
   
  0 <= `i` < `cSurvivingObjectIDRanges`  
   
- Uvolnění paměti kompresi získá paměť obsazená "neaktivní" objekty, ale není compact toto uvolněné místo. V důsledku toho se vrátí halda paměti, ale žádné "živé" objekty přesunou.  
+ Uvolnění nekompaktním uvolňuje paměť obsazenou neživými "" objekty, ale ne compact toto uvolněné místo. V důsledku toho paměti se vrátí do haldy, ale žádné objekty "živé" přesunou.  
   
- Modul CLR (CLR) volá `SurvivingReferences` pro kompresi jiné kolekce. Pro komprimaci kolekce [icorprofilercallback::movedreferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md) nazývá místo. Uvolňování paměti jednom může být komprimaci pro jedna generace a bez kompresi pro jinou. Pro kolekci paměti na žádné konkrétní generování profileru obdrží, buď `SurvivingReferences` zpětného volání nebo `MovedReferences` zpětného volání, ale ne obojí.  
+ Common language runtime (CLR) zavolá `SurvivingReferences` pro nekompaktním kolekce uvolnění paměti. Pro uvolnění komprimaci [icorprofilercallback::movedreferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md) je použita místo ní. Jeden uvolňování paměti může být komprimaci pro jeden generování a nekompaktním dalších. Pro uvolnění paměti na žádné konkrétní generování, profiler obdrží, buď `SurvivingReferences` zpětného volání nebo `MovedReferences` zpětné volání, ale ne obojí.  
   
- Více `SurvivingReferences` zpětná volání může být přijata během konkrétní uvolňování kvůli omezené interní ukládání do vyrovnávací paměti, více vláken, vytváření sestav v případě uvolňování paměti serveru a z jiných důvodů. V případě více zpětných volání během uvolňování paměti, je kumulativní informace – všechny odkazy, které jsou hlášeny v žádném `SurvivingReferences` zpětného volání, zůstanou platné i po uvolnění paměti.  
+ Více `SurvivingReferences` zpětná volání může přijmout během konkrétní uvolňování paměti, z důvodu omezené vnitřní vyrovnávací paměť, více vláken reporting v případě uvolnění paměti serveru a z jiných důvodů. V případě více zpětných volání během uvolňování paměti je kumulativní informace – všechny odkazy, které jsou hlášeny v libovolném `SurvivingReferences` zpětného volání byly zachovány při uvolnění paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -80,7 +80,7 @@ HRESULT SurvivingReferences(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [ICorProfilerCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)  
- [SurvivingReferences2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-survivingreferences2-method.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
+- [SurvivingReferences2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-survivingreferences2-method.md)

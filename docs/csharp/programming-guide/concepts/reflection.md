@@ -2,12 +2,12 @@
 title: Reflexe (C#)
 ms.date: 07/20/2015
 ms.assetid: f80a2362-953b-4e8e-9759-cd5f334190d4
-ms.openlocfilehash: d04fb15add465d0a04ac6b38b1c47aa408c81eaa
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8cdfe00a09d340d8b77f1f5582a3a3ad82c496b1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43521669"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54537644"
 ---
 # <a name="reflection-c"></a>Reflexe (C#)
 Reflexe poskytuje objekty (typu <xref:System.Type>), které popisují sestavení, modulů a typů. Vám pomůže odrazu dynamicky vytvořit instanci typu, navázat na existující objekt, nebo získat typ z existujícího objektu a volat jeho metody nebo přístup k vlastnostem a polím. Pokud používáte atributy ve vašem kódu, reflexe umožňuje přistupovat k nim. Další informace najdete v tématu [atributy](../../../../docs/standard/attributes/index.md).  
@@ -64,7 +64,7 @@ System.Console.WriteLine(info);
   
 -   [Načítání informací uložených v atributech](../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Sestavení v modulu CLR (Common Language Runtime)](../../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)

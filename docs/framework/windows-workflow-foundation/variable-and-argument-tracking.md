@@ -2,12 +2,12 @@
 title: Proměnné a sledování Argument
 ms.date: 03/30/2017
 ms.assetid: 8f3d9d30-d899-49aa-b7ce-a8d0d32c4ff0
-ms.openlocfilehash: 45ed3761cd7ead82650023b93a2f32a43e847339
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 4e59a6838d93a57302f0c894445ab9da5d4252ac
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47195872"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54625208"
 ---
 # <a name="variable-and-argument-tracking"></a>Proměnné a sledování Argument
 Při sledování provádění pracovního postupu, je často užitečné extrahovat data. Tímto způsobem další kontext při přístupu k sledování záznamů příspěvek provádění. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], můžete extrahovat všechny viditelné proměnné nebo argumentu v rámci oboru žádnou aktivitu v pracovním postupu pomocí sledování. Sledování profily umožňují snadno extrahovat data.  
@@ -46,6 +46,6 @@ Při sledování provádění pracovního postupu, je často užitečné extraho
   
 3.  Pro vlastní sledování účastníci Ujistěte se, že kód WF nesmí vyzradit citlivé informace, které je uložený v proměnných nebo argumentů.  
   
-## <a name="see-also"></a>Viz také  
- [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)  
- [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)
+## <a name="see-also"></a>Viz také:
+- [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)
+- [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)
