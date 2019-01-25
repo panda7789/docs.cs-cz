@@ -9,27 +9,27 @@ helpviewer_keywords:
 - Grid control [WPF], ColumnDefinitionCollection class
 - Grid control [WPF], RowDefinitionCollection class
 ms.assetid: bfc7160a-45f2-4e17-9961-df414dfb13c5
-ms.openlocfilehash: 6ff5ad4825bd9f683d895341dd084c00f68aa27b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e8bca3ed4ecd15e200fcab9e604119df2bb9c105
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33553072"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720740"
 ---
 # <a name="how-to-manipulate-columns-and-rows-by-using-columndefinitionscollections-and-rowdefinitionscollections"></a>Postupy: Práce se sloupci a řádky pomocí objektů ColumnDefinitionsCollections a RowDefinitionsCollections
-Tento příklad ukazuje, jak používat metody v <xref:System.Windows.Controls.ColumnDefinitionCollection> a <xref:System.Windows.Controls.RowDefinitionCollection> třídy k provádění akcí, jako je přidání, vymazání nebo počítání obsah řádků a sloupců. Například můžete <xref:System.Windows.Controls.ColumnDefinitionCollection.Add%2A>, <xref:System.Windows.Controls.ColumnDefinitionCollection.Clear%2A>, nebo <xref:System.Windows.Controls.ColumnDefinitionCollection.Count%2A> položky, které jsou součástí <xref:System.Windows.Controls.ColumnDefinition> nebo <xref:System.Windows.Controls.RowDefinition>.  
+Tento příklad ukazuje způsob použití metody v <xref:System.Windows.Controls.ColumnDefinitionCollection> a <xref:System.Windows.Controls.RowDefinitionCollection> třídy, které provádějí akce, jako je přidání, mazání nebo počítání obsah řádků nebo sloupců. Například můžete <xref:System.Windows.Controls.ColumnDefinitionCollection.Add%2A>, <xref:System.Windows.Controls.ColumnDefinitionCollection.Clear%2A>, nebo <xref:System.Windows.Controls.ColumnDefinitionCollection.Count%2A> položky, které jsou součástí <xref:System.Windows.Controls.ColumnDefinition> nebo <xref:System.Windows.Controls.RowDefinition>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.Windows.Controls.Grid> element s <xref:System.Windows.FrameworkElement.Name%2A> z `grid1`. <xref:System.Windows.Controls.Grid> Obsahuje <xref:System.Windows.Controls.StackPanel> , obsahuje <xref:System.Windows.Controls.Button> elementy, každý řídí metoda jinou kolekci. Když kliknete <xref:System.Windows.Controls.Button>, aktivuje volání metody v souboru kódu na pozadí.  
+ Následující příklad vytvoří <xref:System.Windows.Controls.Grid> křížkem <xref:System.Windows.FrameworkElement.Name%2A> z `grid1`. <xref:System.Windows.Controls.Grid> Obsahuje <xref:System.Windows.Controls.StackPanel> obsahující <xref:System.Windows.Controls.Button> prvky, každý řídí metodu jinou kolekci. Když kliknete <xref:System.Windows.Controls.Button>, aktivuje volání metody v souboru kódu na pozadí.  
   
  [!code-xaml[ColumnDefinitionsGrid#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ColumnDefinitionsGrid/CSharp/Window1.xaml#1)]  
   
- Tento příklad definuje řadu vlastních metod, každý odpovídající <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] souboru. Můžete změnit počet sloupců a řádků v <xref:System.Windows.Controls.Grid> několika způsoby, což zahrnuje přidání nebo odebrání řádků a sloupců; a poté celkový počet řádků a sloupců. Aby se zabránilo <xref:System.ArgumentOutOfRangeException> a <xref:System.ArgumentException> výjimky, můžete použít funkci chyb, <xref:System.Windows.Controls.ColumnDefinitionCollection.RemoveRange%2A> poskytuje metoda.  
+ Tento příklad definuje řadu vlastních metod odpovídající jednotlivým <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] souboru. Můžete změnit počet sloupců a řádků v <xref:System.Windows.Controls.Grid> několika způsoby, které zahrnuje přidání nebo odebrání řádků a sloupců; a monitorovat celkový počet řádků a sloupců. Aby se zabránilo <xref:System.ArgumentOutOfRangeException> a <xref:System.ArgumentException> výjimky, můžete použít funkci kontroly chyb, který <xref:System.Windows.Controls.ColumnDefinitionCollection.RemoveRange%2A> metoda poskytuje.  
   
  [!code-csharp[ColumnDefinitionsGrid#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ColumnDefinitionsGrid/CSharp/Window1.xaml.cs#2)]
  [!code-vb[ColumnDefinitionsGrid#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ColumnDefinitionsGrid/VisualBasic/Window1.xaml.vb#2)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.Grid>  
- <xref:System.Windows.Controls.ColumnDefinitionCollection>  
- <xref:System.Windows.Controls.RowDefinitionCollection>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.Grid>
+- <xref:System.Windows.Controls.ColumnDefinitionCollection>
+- <xref:System.Windows.Controls.RowDefinitionCollection>

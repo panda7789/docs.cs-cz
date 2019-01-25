@@ -4,25 +4,25 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID424
 ms.assetid: afdc660b-81a5-4c92-ac7e-9c3a3105fc16
-ms.openlocfilehash: 72febe4e161ee4c19f07816445757a730cec6edf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9a617c9f2982fe251ff95426938b9800b201df53
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33593711"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54718286"
 ---
 # <a name="object-required-visual-basic"></a>Vyžadován objekt (Visual Basic)
-Odkazy na vlastnosti a metody často vyžadují, aby kvalifikátor explicitní objektu. Toto je takovém případě.  
+Odkazy na vlastnosti a metody často vyžadují explicitní Objektový kvalifikátor. Toto je takový případ.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Zkontrolujte, zda odkazy na vlastnost nebo metoda kvalifikátor platný objekt. Zadejte kvalifikátor k objektu, pokud jeden neposkytli.  
+1.  Zkontrolujte, zda odkazuje na vlastnost nebo metoda mají platný objekt kvalifikátoru. Zadejte kvalifikátor objektu, pokud jeden neposkytli.  
   
-2.  Zkontrolujte, zda objekt kvalifikátor a ujistěte se, zda je objekt viditelný pro část program, ve kterém můžete na něj odkazují.  
+2.  Zkontrolujte, zda objekt kvalifikátor a ujistěte se, že je objekt viditelný v části programu, ve kterém jste na něj odkazují.  
   
-3.  Pokud je zadaný cestu do hostitelskou aplikaci **otevřít soubor** příkazu, zkontrolujte, zda jsou argumenty v ní jsou správné.  
+3.  Pokud je zadán cestu pro hostitelskou aplikaci **otevřít soubor** příkazu, zkontrolujte, že argumenty v něm jsou správné.  
   
-4.  Podívejte se do dokumentace objektu a ujistěte se, že tato akce je platná.  
+4.  Dokumentaci k objektu a ujistěte se, že je tato akce platná.  
   
-## <a name="see-also"></a>Viz také  
- [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a>Viz také:
+- [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)

@@ -1,5 +1,5 @@
 ---
-title: Typ &#39; &lt;NázevProměnné&gt; &#39; nelze odvodit, protože hranice smyčky a proměnná krok není rozšíří do stejného typu
+title: Typ &#39; &lt;NázevProměnné&gt; &#39; nejde odvodit, protože omezení cyklu a klauzuli kroku nejde rozšířit na stejný typ.
 ms.date: 07/20/2015
 f1_keywords:
 - bc30982
@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC30982
 ms.assetid: 741e85d9-a747-42ad-a1e1-a3f1928aaff5
-ms.openlocfilehash: d6fdd9445b5336773d150c643c7bf1ca58a0c87a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1ae14426181778a78254db8a5cd968d60bbdc8f1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33597146"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631256"
 ---
-# <a name="type-of-39ltvariablenamegt39-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>Typ &#39; &lt;NázevProměnné&gt; &#39; nelze odvodit, protože hranice smyčky a proměnná krok není rozšíří do stejného typu
-Jste napsali `For...Next` smyčky, ve kterém kompilátor nelze odvodit typ dat pro řídicí proměnná smyčky vzhledem k tomu, že jsou splněné následující podmínky:  
+# <a name="type-of-39ltvariablenamegt39-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>Typ &#39; &lt;NázevProměnné&gt; &#39; nejde odvodit, protože omezení cyklu a klauzuli kroku nejde rozšířit na stejný typ.
+Jste napsali `For...Next` smyčku, ve kterém kompilátor nemůže odvodit typ dat pro řídicí proměnná smyčky for vzhledem k tomu, že jsou splněny následující podmínky:  
   
--   Datový typ řídicí proměnná smyčky není zadaný s `As` klauzule.  
+-   Není zadaný datový typ řídicí proměnná smyčky s `As` klauzuli.  
   
--   Rozsah smyčky a proměnnou krok obsahovat aspoň dva datové typy.  
+-   Omezení cyklu a klauzuli kroku obsahovat aspoň dva datové typy.  
   
--   Neexistují žádné standardní převody mezi datovými typy.  
+-   Neexistuje žádný standardní převod mezi datovými typy.  
   
- Kompilátor proto nelze odvodit typ dat řídicí proměnná.  
+ Proto kompilátor nelze odvodit datový typ řídicí proměnná smyčky.  
   
- V následujícím příkladu proměnnou krok je znak a hranice smyčky jsou obě celých čísel. Protože neexistuje žádný standardní převod mezi znaky a celá čísla, tato chyba se nahlásí.  
+ V následujícím příkladu krok proměnná je znak, a omezení cyklu jsou obě celá čísla. Protože neexistuje žádný standardní převod mezi znaky a celá čísla, tato chyba se nahlásí.  
   
 ```vb  
 Dim stepVar = "1"c  
@@ -42,7 +42,7 @@ Dim n = 20
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Typy hranice smyčky a proměnná krok podle potřeby změňte tak, aby aspoň jeden z nich je typ, který ostatní rozšíří do. V předchozím příkladu změnit typ `stepVar` k `Integer`.  
+-   Změňte typy omezení cyklu a klauzuli kroku podle potřeby tak, aby aspoň jeden z nich je typ, který ostatní rozšířit na. V předchozím příkladu, změňte typ `stepVar` k `Integer`.  
   
     ```  
     Dim stepVar = 1  
@@ -54,7 +54,7 @@ Dim n = 20
     Dim stepVar As Integer = 1  
     ```  
   
--   Pomocí funkce pro explicitní převod můžete převést rozsah smyčky a proměnná krok na odpovídající typy. V předchozím příkladu platí `Val` funkci, aby se `stepVar`.  
+-   Převést na odpovídající typy omezení cyklu a klauzuli kroku pomocí funkce pro explicitní převod. V předchozím příkladu platí `Val` funkce `stepVar`.  
   
     ```  
     For i = 1 To 10 Step Val(stepVar)  
@@ -62,11 +62,11 @@ Dim n = 20
     Next  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Conversion.Val%2A>  
- [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)  
- [Implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
- [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
- [Příkaz Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md)  
- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Conversion.Val%2A>
+- [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)
+- [Implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
+- [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [Příkaz Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md)
+- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

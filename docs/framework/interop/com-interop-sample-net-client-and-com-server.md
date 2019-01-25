@@ -11,20 +11,20 @@ helpviewer_keywords:
 ms.assetid: a3f752bb-8945-4e1b-8163-71def6e9f137
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 85e7213342984276d8509fca8caefb2661865733
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0c7e2f0f239ffded3d9f16a32b1f8e6601e27d06
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33387101"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54685852"
 ---
 # <a name="com-interop-sample-net-client-and-com-server"></a>Ukázka zprostředkovatele s objekty COM: klient .NET a server COM
-Tento příklad znázorňuje jak [klient .NET](#cpconcominteropsamplenetclientcomserveranchor1), vytvořené pro přístup k [COM server](#cpconcominteropsamplenetclientcomserveranchor2), vytvoří instanci COM coclass a volá členy třídy, provádění výpočtů hypotéky.  
+Tato ukázka předvádí, jak [klienta .NET](#cpconcominteropsamplenetclientcomserveranchor1)připravené k přístupu [serveru COM](#cpconcominteropsamplenetclientcomserveranchor2), vytvoří instanci třídy typu COM coclass a volá členy třídy k provádění výpočtů na dům.  
   
- V tomto příkladu klient vytvoří a volá instance **úvěr** coclass, předá čtyři argumenty (jedna z těchto čtyř se rovná nule) na instance a zobrazí výpočtů. Fragmenty kódu z této ukázce se zobrazí v této části.  
+ V tomto příkladu vytvoří klienta a volá instance **půjčky** coclass –, předá čtyři argumenty (jednu z těchto čtyř se rovná nule) instance a zobrazí výpočtů. Fragmenty kódu od této ukázky se mají v této části.  
   
 <a name="cpconcominteropsamplenetclientcomserveranchor1"></a>   
-## <a name="net-client"></a>Klient .NET  
+## <a name="net-client"></a>.NET client  
   
 ```vb  
 Imports System  
@@ -299,5 +299,5 @@ static double Round(double value, short digits)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Vystavení komponent COM pro rozhraní .NET Framework](../../../docs/framework/interop/exposing-com-components.md)
+## <a name="see-also"></a>Viz také:
+- [Vystavení komponent COM pro rozhraní .NET Framework](../../../docs/framework/interop/exposing-com-components.md)

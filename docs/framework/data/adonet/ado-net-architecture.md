@@ -2,17 +2,17 @@
 title: Architektura ADO.NET
 ms.date: 03/30/2017
 ms.assetid: fcd45b99-ae8f-45ab-8b97-d887beda734e
-ms.openlocfilehash: 4c2299951202794112ea66c1f20025777c68e356
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 2af1d6339b17871d56b949d845534479380c46ab
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44195514"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623180"
 ---
 # <a name="adonet-architecture"></a>Architektura ADO.NET
 Zpracování dat tradičně spoléhalo především v rámci modelu založeného na připojení, dvě vrstvy. Zpracování dat stále používá vícevrstvé architektury, programátoři přepnutí na odpojeném přístup k poskytování lepšího škálování pro své aplikace.  
   
-## <a name="adonet-components"></a>Komponenty technologie ADO.NET  
+## <a name="adonet-components"></a>ADO.NET Components  
  Dvě hlavní součásti [!INCLUDE[ado_orcas_long](../../../../includes/ado-orcas-long-md.md)] pro přístup k a manipulaci s daty [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat a <xref:System.Data.DataSet>.  
   
 ### <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET framework  
@@ -23,7 +23,7 @@ Zpracování dat tradičně spoléhalo především v rámci modelu založeného
   
  Následující diagram znázorňuje vztah mezi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatele dat a `DataSet`.  
   
- ![ADO.Net – grafika](../../../../docs/framework/data/adonet/media/ado-1-bpuedev11.png "ado_1_bpuedev11")  
+ ![ADO.Net graphic](../../../../docs/framework/data/adonet/media/ado-1-bpuedev11.png "ado_1_bpuedev11")  
 Architektura ADO.NET  
   
 ### <a name="choosing-a-datareader-or-a-dataset"></a>Výběr čtečky dat nebo datové sady  
@@ -56,6 +56,6 @@ Architektura ADO.NET
   
  [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] a třídy XML v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] sloučit v `DataSet` objektu. `DataSet` Může být načtena data z XML použitého jako zdroj, ať už jde o souboru nebo datový proud XML. `DataSet` Lze zapsat jako kompatibilní s XML World Wide Web Consortium (W3C), který obsahuje schématem jako XML definice jazyk (XSD) schématu, bez ohledu na zdroj dat v `DataSet`. Z důvodu formát nativní serializace `DataSet` je XML, je skvělé médium pro přesun dat mezi vrstvami, což `DataSet` optimální volbou pro kontext dat a schématu vzdálené komunikace do a z webové služby XML. Další informace najdete v tématu [XML dokumenty a Data](../../../../docs/standard/data/xml/index.md).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

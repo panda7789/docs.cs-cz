@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-ms.openlocfilehash: 8b516bb4603f33828069b5356676d8b35dc961d2
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 0bc624bcacf5ab85a5ae0e833ea6b7a979946a27
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47088331"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54726894"
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>Postupy: Instalace a konfigurace aktivačních komponent WCF
 Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windows (WAS) na [!INCLUDE[wv](../../../../includes/wv-md.md)] k hostování Windows Communication Foundation (WCF) služby, které nekomunikují přes protokol HTTP síťových protokolů. Následující oddíly popisují kroky pro tuto konfiguraci:  
@@ -18,7 +18,7 @@ Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windo
   
 -   Konfigurace WAS pro podporu protokolu jiným protokolem než HTTP. Následující postup umožňuje konfiguraci [!INCLUDE[wv](../../../../includes/wv-md.md)] pro Aktivace protokolem TCP.  
   
- Po instalaci a konfiguraci služby WAS, naleznete v tématu [postupy: hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) postupy k vytvoření služby WCF, který zpřístupňuje koncový bod jiným protokolem než HTTP, která používá WAS.  
+ Po instalaci a konfiguraci služby WAS, naleznete v tématu [jak: Hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) postupy k vytvoření služby WCF, který zpřístupňuje koncový bod jiným protokolem než HTTP, která používá WAS.  
   
 ### <a name="to-install-the-wcf-non-http-activation-components"></a>Chcete-li nainstalovat jiným protokolem než HTTP aktivačních komponent WCF  
   
@@ -100,8 +100,8 @@ Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windo
     > [!NOTE]
     >  Tento příkaz je jeden řádek textu.  
   
-## <a name="see-also"></a>Viz také  
- [Aktivace protokolu TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)  
- [Aktivace služby MSMQ](../../../../docs/framework/wcf/samples/msmq-activation.md)  
- [Aktivace pojmenovaného kanálu](../../../../docs/framework/wcf/samples/namedpipe-activation.md)  
- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+## <a name="see-also"></a>Viz také:
+- [Aktivace protokolu TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)
+- [Aktivace služby MSMQ](../../../../docs/framework/wcf/samples/msmq-activation.md)
+- [Aktivace pojmenovaného kanálu](../../../../docs/framework/wcf/samples/namedpipe-activation.md)
+- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

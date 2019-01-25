@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5caf432b5de7cb0c8ff0e6f53b3e79a64ecf802e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a54b20ecf34ecf1824420fcbb3d45fba64017b76
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33443310"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54657191"
 ---
 # <a name="correftodefcheck-enumeration"></a>CorRefToDefCheck – výčet
-Určuje příznaky tak, aby řízení odkazované položek, které jsou převedeny na jejich definice k optimalizaci kód.  
+Určuje příznaky do ovládacího prvku odkazované položky, které jsou převedeny na jejich definice, aby bylo možné optimalizovat kód.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,18 +42,18 @@ typedef enum CorRefToDefCheck {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`MDRefToDefDefault`|Určuje, že odkazy na typ a odkazy na členy mají být převedeny na definice. Toto je výchozí hodnota (`MDTypeRefToDef` &#124; `MDMemberRefToDef`).|  
+|`MDRefToDefDefault`|Určuje typ odkazy a odkazy na členy mají být převedeny do definic. Toto je výchozí hodnota (`MDTypeRefToDef` &#124; `MDMemberRefToDef`).|  
 |`MDRefToDefAll`|Určuje, zda všechny odkazované položky mají být převedeny na definice.|  
-|`MDRefToDefNone`|Určuje, že žádné odkazované položky mají být převedeny na definice.|  
-|`MDTypeRefToDef`|Určuje, že pouze odkazy na typ měli převést na typ definice.|  
-|`MDMemberRefToDef`|Určuje, že mají být převedeny pouze člen odkazy na definice. To znamená odkazy na členy, které mají být převedeny na metoda definice nebo definice polí.|  
+|`MDRefToDefNone`|Určuje, že žádné odkazované položky, které mají být převedeny na definice.|  
+|`MDTypeRefToDef`|Určuje, že by měl pouze odkazy na typ převést na typ definice.|  
+|`MDMemberRefToDef`|Určuje, že pouze odkazy na členy mají být převedeny na definice. To znamená odkazy na členy mají být převedeny na definice metod nebo definice pole.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

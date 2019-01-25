@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: faefff879142d66c4c596f1b30a25e349a4014b9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d46dcd43ffe6963d1177a395b855a287182cdff0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421798"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54685630"
 ---
 # <a name="icordebugmanagedcallback2exception-method"></a>ICorDebugManagedCallback2::Exception – metoda
-Aby bylo zahájeno hledání pro obslužnou rutinu výjimky upozorní ladicího programu.  
+Upozorní ladicího programu, že bylo zahájeno hledání pro obslužnou rutinu výjimky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,39 +42,39 @@ HRESULT Exception (
   
 #### <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [v] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace obsahující vláken, na kterém byla výjimka vydána.  
+ [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující vlákno, na kterém byla výjimka vydána.  
   
  `pThread`  
- [v] Ukazatel na ICorDebugThread objekt, který reprezentuje vláken, na kterém byla výjimka vydána.  
+ [in] Ukazatel na objekt icordebugthread –, který představuje vlákno, na kterém byla výjimka vydána.  
   
  `pFrame`  
- [v] Ukazatel na ICorDebugFrame objekt, který reprezentuje rámce, počítáno od `dwEventType` parametr. Další informace najdete v tabulce v oddílu Poznámky.  
+ [in] Ukazatel na objekt ICorDebugFrame, který představuje rámec, počítáno od `dwEventType` parametru. Další informace najdete v tabulce v oddílu Poznámky.  
   
  `nOffset`  
- [v] Celé číslo, které určuje posun, počítáno od `dwEventType` parametr. Další informace najdete v tabulce v oddílu Poznámky.  
+ [in] Celé číslo, které určuje prodlevu, počítáno od `dwEventType` parametru. Další informace najdete v tabulce v oddílu Poznámky.  
   
  `dwEventType`  
- [v] Hodnota CorDebugExceptionCallbackType – výčet, který určuje typ této výjimky zpětného volání.  
+ [in] Hodnota cordebugexceptioncallbacktype – výčet, který určuje typ této výjimky zpětného volání.  
   
  `dwFlags`  
- [v] Hodnota [CorDebugExceptionFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md) výčet, který určuje další informace o výjimce  
+ [in] Hodnota [cordebugexceptionflags –](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md) výčet, který určuje další informace o výjimce  
   
 ## <a name="remarks"></a>Poznámky  
- `Exception` Zpětné volání je volána v různých okamžicích v průběhu vyhledávání fáze procesu zpracování výjimek. To znamená, že ho lze volat více než jednou při unwinding výjimku.  
+ `Exception` Zpětného volání je volána v různých fázích v průběhu fáze hledání procesu zpracování výjimek. To znamená ho může být volána více než jednou při uvolnění výjimku.  
   
- Výjimka zpracovává mohou být načteny z objektu ICorDebugThread odkazuje `pThread` parametr.  
+ Zpracovává výjimky můžete získat z objekt ICorDebugThread, na který odkazuje `pThread` parametru.  
   
- Určitého snímku a posun jsou určeny `dwEventType` parametr následujícím způsobem:  
+ Konkrétní rámce a posun jsou určeny `dwEventType` parametr následujícím způsobem:  
   
 |Hodnota `dwEventType`|Hodnota `pFrame`|Hodnota `nOffset`|  
 |----------------------------|-----------------------|------------------------|  
-|DEBUG_EXCEPTION_FIRST_CHANCE|Rámečku, která vrátila výjimku.|Ukazatel instrukce v rámečku.|  
-|DEBUG_EXCEPTION_USER_FIRST_CHANCE|Na uživatelském kódu rámce nejbližší bod vyvolaná výjimka.|Ukazatel instrukce v rámečku.|  
-|DEBUG_EXCEPTION_CATCH_HANDLER_FOUND|Rámce, který obsahuje obslužná rutina catch.|Posun Microsoft (MSIL intermediate language) na začátek obslužná rutina catch.|  
-|DEBUG_EXCEPTION_UNHANDLED|NULL|Není definována.|  
+|DEBUG_EXCEPTION_FIRST_CHANCE|Rámce, který vyvolal výjimku.|Ukazatele na instrukci v rámci.|  
+|DEBUG_EXCEPTION_USER_FIRST_CHANCE|Snímek uživatelského kódu co nejblíž koncovým bodem vyvolané výjimky.|Ukazatele na instrukci v rámci.|  
+|DEBUG_EXCEPTION_CATCH_HANDLER_FOUND|Rámce, který obsahuje obslužné rutiny catch.|Posun Microsoft intermediate language (MSIL) od obslužné rutiny catch.|  
+|DEBUG_EXCEPTION_UNHANDLED|NULL|Nedefinovaný.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -82,6 +82,6 @@ HRESULT Exception (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

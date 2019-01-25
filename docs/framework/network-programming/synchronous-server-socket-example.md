@@ -9,12 +9,12 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, synchronous server sockets
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
-ms.openlocfilehash: 51fe16b3e0859a9ab39dcd34a55e51bd4bcad86d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: c908568f2297d5f4f6e8c3d1c924a4a0f653d5a5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50201987"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54669065"
 ---
 # <a name="synchronous-server-socket-example"></a>Příklad synchronního serverového soketu
 Následující ukázkový program vytvoří server, která bude přijímat žádosti o připojení z klientů. Server je sestavován soket synchronního spuštění serverové aplikace je pozastaven, když se čeká na připojení z klienta. Aplikace přijímá řetězec z klienta, zobrazí řetězec v konzole a potom vrátí řetězec zpět na klienta. Řetězec z klienta musí obsahovat řetězec "\<EOF >" který signalizuje, že konec zprávy.  
@@ -155,7 +155,7 @@ public class SynchronousSocketListener {
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Příklad synchronního klientského soketu](../../../docs/framework/network-programming/synchronous-client-socket-example.md)  
- [Použití synchronního serverového soketu](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
- [Příklady kódu soketu](../../../docs/framework/network-programming/socket-code-examples.md)
+## <a name="see-also"></a>Viz také:
+- [Příklad synchronního klientského soketu](../../../docs/framework/network-programming/synchronous-client-socket-example.md)
+- [Použití synchronního serverového soketu](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)
+- [Příklady kódu soketu](../../../docs/framework/network-programming/socket-code-examples.md)

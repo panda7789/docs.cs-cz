@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 09c80fc9-1ba5-4192-89f7-3a79b2e4b024
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a5b9be3050da21c0a99931ca70cf990b0b8bf1fe
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 711903656d8bcce3a2d213af68160707a55a48e4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612299"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54699997"
 ---
 # <a name="ltprobinggt-element"></a>&lt;zjišťování&gt; – Element
 Určuje základní podadresářích aplikace pro modul common language runtime pro hledání při načítání sestavení.  
@@ -65,8 +65,8 @@ Určuje základní podadresářích aplikace pro modul common language runtime p
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
-- [Určení umístění sestavení](../../../../../docs/framework/configure-apps/specify-assembly-location.md)  
+## <a name="see-also"></a>Viz také:
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Určení umístění sestavení](../../../../../docs/framework/configure-apps/specify-assembly-location.md)
 - [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

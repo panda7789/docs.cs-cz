@@ -2,12 +2,12 @@
 title: Aktivace UDP
 ms.date: 03/30/2017
 ms.assetid: 4b0ccd10-0dfb-4603-93f9-f0857c581cb7
-ms.openlocfilehash: c64540db555d7cac56dd46c6ffb63ec95ca81f91
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.openlocfilehash: 09b208f88b456b6d98e45fc34db3857f8938cd6b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46562345"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54715514"
 ---
 # <a name="udp-activation"></a>Aktivace UDP
 Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku. Rozšiřuje [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku pro podporu proces aktivace pomocí služby Aktivace procesu Windows (WAS).  
@@ -107,9 +107,9 @@ Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samp
   
 -   UDPActivation.dll: knihovnu, která obsahuje všechny hlavní implementace UDP.  
   
--   Service.dll: Kódu služby. K adresáři \bin sady ServiceModelSamples virtuální aplikace je zkopírován. Soubor služby je Service.svc a konfigurační soubor je soubor Web.config. Po kompilaci se zkopírují do následujícího umístění: % SystemDrive%\Inetpub\wwwroot\ServiceModelSamples.  
+-   Service.dll: Kód služby. K adresáři \bin sady ServiceModelSamples virtuální aplikace je zkopírován. Soubor služby je Service.svc a konfigurační soubor je soubor Web.config. Po kompilaci se zkopírují do následujícího umístění: % SystemDrive%\Inetpub\wwwroot\ServiceModelSamples.  
   
--   WasNetActivator: UDP Aktivátor program.  
+-   WasNetActivator: Aktivátor program UDP.  
   
 -   Ujistěte se, že všechny požadované údaje jsou správně nainstalovány. Následující kroky ukazují, jak ke spuštění ukázky:  
   
@@ -162,4 +162,4 @@ Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samp
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transport\UdpActivation`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

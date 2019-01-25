@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 428c68b6-a7b4-44be-b280-75905f46612c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5eb67e9b9f8f972075a98415de63d50585974823
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 50a29800d3c5ff22845a16aabb10af7365c62474
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50193952"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54722592"
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a>Silné názvy (referenční dokumentace nespravovaného rozhraní API)
 Rozhraní API pro silné pojmenovávání umožňuje klientovi spravovat podepisování sestavení silným názvem.  
@@ -111,6 +111,6 @@ Rozhraní API pro silné pojmenovávání umožňuje klientovi spravovat podepis
  [PublicKeyBlob – struktura](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)  
  Představuje veřejného klíče dvojice veřejného/soukromého klíče v binárním formátu.  
   
-## <a name="see-also"></a>Viz také  
- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)  
- [Referenční informace o nespravovaném rozhraní API](../../../../docs/framework/unmanaged-api/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [Referenční informace o nespravovaném rozhraní API](../../../../docs/framework/unmanaged-api/index.md)

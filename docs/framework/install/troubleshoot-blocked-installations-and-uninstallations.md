@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c3fdfbc1-ed99-4202-a2b0-8c4f1646385d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c8717d00b706edf37ce1112bc6d96048d6daa9cd
-ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
+ms.openlocfilehash: ae6cb54d73c56db7c118b617e070ea86944adeaf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53781073"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720207"
 ---
 # <a name="troubleshoot-blocked-net-framework-installations-and-uninstallations"></a>Řešení potíží s blokované rozhraní .NET Framework instalacemi a odinstalacemi
 
@@ -77,6 +77,6 @@ Instalační program rozhraní .NET Framework nelze spouštět v režimu kompati
 
 ## <a name="see-also"></a>Viz také:
 
-[Instalace rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md)   
-[Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)   
-[Verze a závislosti](../../../docs/framework/migration-guide/versions-and-dependencies.md)
+- [Instalace rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md)
+- [Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)
+- [Verze a závislosti](../../../docs/framework/migration-guide/versions-and-dependencies.md)

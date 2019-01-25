@@ -7,12 +7,12 @@ helpviewer_keywords:
 - caching [ASP.NET]
 ms.assetid: c4b47ee0-4b82-4124-9bce-818088385e34
 author: tdykstra
-ms.openlocfilehash: 4d9451f99b0253d0a4de6550b64fedd7fdfeda77
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 9fc63f860bad96d7dd304de31dd6e9b6626c90b6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43862014"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54721073"
 ---
 # <a name="caching-in-net-framework-applications"></a>Ukládání do vyrovnávací paměti v aplikacích .NET Framework
 Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikacím můžete získat data z mezipaměti namísto načítání z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc umožňuje ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.  
@@ -42,7 +42,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 > [!NOTE]
 >  <xref:System.Runtime.Caching.MemoryCache> Třídy je modelovaná objektu mezipaměti ASP.NET, která je definována v <xref:System.Web.Caching> oboru názvů. Proto interní ukládání do mezipaměti logiku podobnou logiku, která byla k dispozici v předchozích verzích technologie ASP.NET.  
   
- Příklad, jak používat ukládání do mezipaměti v aplikaci WPF, naleznete v tématu [návod: ukládání dat aplikací v aplikaci WPF](../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md).  
+ Příklad, jak používat ukládání do mezipaměti v aplikaci WPF, naleznete v tématu [názorný postup: Ukládání dat aplikací v aplikaci WPF](../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md).  
   
 ## <a name="caching-in-aspnet-applications"></a>Ukládání do mezipaměti v aplikacích ASP.NET  
  Ukládání do mezipaměti v třídy <xref:System.Runtime.Caching> obor názvů poskytuje funkce pro ukládání dat v ASP.NET do mezipaměti.  
@@ -51,7 +51,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 >  Pokud vaše aplikace cílí [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] nebo starší, musí používat ukládání do mezipaměti tříd, které jsou definovány v <xref:System.Web.Caching> oboru názvů. Další informace najdete v tématu [přehled ukládání do mezipaměti ASP.NET](https://msdn.microsoft.com/library/5ec28012-4972-4dc3-b3e8-9d20401fe11d).  
   
 > [!NOTE]
->  Při vývoji nových aplikací, doporučujeme použít <xref:System.Runtime.Caching.MemoryCache> třídy. Rozhraní API, která je součástí <xref:System.Runtime.Caching> obor názvů je jako rozhraní API, která je součástí <xref:System.Web.Caching.Cache> oboru názvů. Rozhraní API proto bude známé, pokud jste použili v předchozích verzích technologie ASP.NET do mezipaměti. Příklad, jak používat ukládání do mezipaměti v aplikacích ASP.NET, naleznete v tématu [návod: ukládání dat aplikací v ASP.NET](https://msdn.microsoft.com/library/942236f6-0138-4aaf-af71-a5ea451a1e23).  
+>  Při vývoji nových aplikací, doporučujeme použít <xref:System.Runtime.Caching.MemoryCache> třídy. Rozhraní API, která je součástí <xref:System.Runtime.Caching> obor názvů je jako rozhraní API, která je součástí <xref:System.Web.Caching.Cache> oboru názvů. Rozhraní API proto bude známé, pokud jste použili v předchozích verzích technologie ASP.NET do mezipaměti. Příklad, jak používat ukládání do mezipaměti v aplikacích ASP.NET, naleznete v tématu [názorný postup: Ukládání dat aplikací v ASP.NET do mezipaměti](https://msdn.microsoft.com/library/942236f6-0138-4aaf-af71-a5ea451a1e23).  
   
 ### <a name="output-caching"></a>Ukládání výstupu do mezipaměti  
  Ručně aplikace ukládat data do mezipaměti, můžete použít <xref:System.Runtime.Caching.MemoryCache> třídy v prostředí ASP.NET. Technologie ASP.NET také podporuje ukládání výstupu do mezipaměti, který uloží vygenerovaný výstup stránky, ovládací prvky a odpovědi protokolu HTTP v paměti. Můžete konfigurovat ukládání výstupu do mezipaměti deklarativně v webová stránka ASP.NET nebo pomocí nastavení v souboru Web.config. Další informace najdete v tématu [outputCache – Element pro ukládání do mezipaměti (schéma nastavení technologie ASP.NET)](https://msdn.microsoft.com/library/47cd2b47-316f-4dfd-bbf8-539be3066fee).  
@@ -76,8 +76,8 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
   
  Další informace naleznete v příspěvku [Extensible ukládání výstupu do mezipaměti ASP.NET 4 (VS 2010 a řady rozhraní .NET 4.0)](https://go.microsoft.com/fwlink/?LinkId=185772) v blogu Scotta Guthrie.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Caching.ObjectCache>  
- <xref:System.Runtime.Caching.MemoryCache>  
- [Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF](../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)  
- [Návod: Ukládání dat aplikací v ASP.NET](https://msdn.microsoft.com/library/942236f6-0138-4aaf-af71-a5ea451a1e23)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Caching.ObjectCache>
+- <xref:System.Runtime.Caching.MemoryCache>
+- [Návod: Ukládání dat aplikací v aplikaci WPF](../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
+- [Návod: Ukládání dat aplikací v ASP.NET do mezipaměti](https://msdn.microsoft.com/library/942236f6-0138-4aaf-af71-a5ea451a1e23)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-ms.openlocfilehash: c37a273b4091d98ccc202f7d98859333658ccf7f
-ms.sourcegitcommit: 882a2f56bf6afdcb40d468e4ae9371296822b68c
+ms.openlocfilehash: 473109100c14f26d0e31b9f57513997044c5b2f6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53451206"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54676819"
 ---
 # <a name="properties-c-programming-guide"></a>Vlastnosti (Průvodce programováním v C#)
 
@@ -74,10 +74,10 @@ Pokud je vlastnost i `get` a `set` přístupový objekt, musí být automaticky 
 
 Další informace najdete v tématu [vlastnosti](~/_csharplang/spec/classes.md#properties) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
-- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
-- [Get – klíčové slovo](../../../csharp/language-reference/keywords/get.md)    
-- [klíčové slovo Set](../../../csharp/language-reference/keywords/set.md)    
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)
+- [Indexery](../../../csharp/programming-guide/indexers/index.md)
+- [Get – klíčové slovo](../../../csharp/language-reference/keywords/get.md)
+- [set keyword](../../../csharp/language-reference/keywords/set.md)

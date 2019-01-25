@@ -10,15 +10,15 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
-ms.openlocfilehash: d53892f9823474ea14640e352548b55432e7744b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 2cd39355fec310bc33a3d02524a4d4cc060dba6a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526685"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646078"
 ---
 # <a name="query-projections-wcf-data-services"></a>Projekce dotazů (WCF Data Services)
-Poskytuje mechanismus v projekci [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] snížit objem dat v informačním kanálu vrácených dotazem tak, že určíte, které jsou vráceny pouze určité vlastnosti entity v odpovědi. Další informace najdete v tématu [OData: Vyberte možností dotazu systému ($select)](https://go.microsoft.com/fwlink/?LinkId=186076).  
+Poskytuje mechanismus v projekci [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] snížit objem dat v informačním kanálu vrácených dotazem tak, že určíte, které jsou vráceny pouze určité vlastnosti entity v odpovědi. Další informace najdete v tématu [OData: Výběr možností dotazu systému ($select)](https://go.microsoft.com/fwlink/?LinkId=186076).  
   
  Toto téma popisuje, jak k definici projekce dotazů, jaké požadavky jsou pro entitu a nonentity typy, což aktualizuje na předpokládané výsledky, vytváření předpokládané typů a jsou uvedeny některé důležité informace o projekci.  
   
@@ -65,9 +65,9 @@ Následující část popisuje chování při projekci výsledků do entity a no
    [!code-csharp[Astoria Northwind Client#ProjectWithInitializer](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#projectwithinitializer)]
    [!code-vb[Astoria Northwind Client#ProjectWithInitializer](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#projectwithinitializer)]
 
-- Typ entity: podporováno
+- Typ entity: Podporováno
 
-- Typ entity bez: podporováno
+- Typ bez entity: Podporováno
 
 **Vytvoření nové instance předpokládané pomocí konstruktorů**
 
@@ -78,7 +78,7 @@ Následující část popisuje chování při projekci výsledků do entity a no
 
 - Typ entity: A <xref:System.NotSupportedException> je vyvolána.
 
-- Typ entity bez: podporováno
+- Typ bez entity: Podporováno
 
 **Použití projekce transformace hodnoty vlastnosti**
 
@@ -87,9 +87,9 @@ Následující část popisuje chování při projekci výsledků do entity a no
    [!code-csharp[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#projectwithtransform)]
    [!code-vb[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#projectwithtransform)]
    
-- Typ entity: Tato transformace není podporována pro typy entity, protože to může vést k záměně a potenciálně přepisovat data ve zdroji dat, který patří do jiné entity. A <xref:System.NotSupportedException> je vyvolána.
+- Typ entity: Tato transformace není podporována pro typy entit, protože to může vést k záměně a potenciálně přepisovat data ve zdroji dat, který patří do jiné entity. A <xref:System.NotSupportedException> je vyvolána.
 
-- Typ entity bez: podporováno  
+- Typ bez entity: Podporováno  
   
 <a name="considerations"></a>   
 ## <a name="projection-considerations"></a>Důležité informace o projekce  
@@ -107,7 +107,7 @@ Následující část popisuje chování při projekci výsledků do entity a no
   
 -   Dotaz projekce dotazů na straně klienta jsou přeloženy na použití `$select` možnosti v identifikátoru URI požadavku dotazu. Při spouštění dotazů s projekce se oproti předchozí verzi [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] , který není podporován `$select` povolena možnost dotazu, je vrácena chyba. K tomu může dojít také při <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> z <xref:System.Data.Services.DataServiceBehavior> dat služby je nastavena na hodnotu <xref:System.Data.Services.Common.DataServiceProtocolVersion.V1>. Další informace najdete v tématu [Správa verzí datové služby](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).  
   
- Další informace najdete v tématu [postupy: výsledky dotazu projektu](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md).  
+ Další informace najdete v tématu [jak: Výsledky dotazů na projekt](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md).  
   
-## <a name="see-also"></a>Viz také  
- [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
+## <a name="see-also"></a>Viz také:
+- [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)

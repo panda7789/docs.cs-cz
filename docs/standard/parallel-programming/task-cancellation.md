@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 3ecf1ea9-e399-4a6a-a0d6-8475f48dcb28
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 79350178300dde2896f6b22c68d6062bbb57f700
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 84da3e1e896397b4e5dacec9d7dd0eeeed96d1c9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865628"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54690836"
 ---
 # <a name="task-cancellation"></a>Zrušení úlohy
 <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> třídy podporují zrušení prostřednictvím použití tokenů zrušení v rozhraní .NET Framework. Další informace najdete v tématu [zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md). Ve třídách úloh zahrnuje zrušení spolupráci mezi uživatelským delegátem, který představuje zrušitelnou operaci, a kódem, který požaduje zrušení.  Úspěšné zrušení zahrnuje, aby žádající kód volal <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metoda a uživatelský delegát operaci včas. Operace může být ukončena pomocí jedné z těchto možností:  
@@ -30,7 +30,7 @@ ms.locfileid: "43865628"
  [!code-csharp[TPL_Cancellation#02](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_cancellation/cs/snippet02.cs#02)]
  [!code-vb[TPL_Cancellation#02](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_cancellation/vb/module1.vb#02)]  
   
- Podrobnější příklad naleznete v tématu [postupy: zrušení úlohy a její podřízené položky](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
+ Podrobnější příklad naleznete v tématu [jak: Zrušení úlohy a jejích potomků](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
   
  Když instance úlohy spatří <xref:System.OperationCanceledException> vyvolanou v uživatelském kódu, porovná token této výjimky se svým přiřazeným tokenem (ten, který byl předán rozhraní API, jež vytvořilo úlohu). Pokud se shodují a tokenu <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost vrátí hodnotu PRAVDA, úloha to interpretuje jako potvrzení zrušení a přejde do stavu zrušeno. Pokud použijete <xref:System.Threading.Tasks.Task.Wait%2A> nebo <xref:System.Threading.Tasks.Task.WaitAll%2A> metodu pro čekání na úlohu, potom úloha pouze nastaví svůj stav <xref:System.Threading.Tasks.TaskStatus.Canceled>.  
   
@@ -42,5 +42,5 @@ ms.locfileid: "43865628"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md)  
-- [Postupy: Zrušení úlohy a podřízených elementů](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)
+- [Zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md)
+- [Postupy: Zrušení úlohy a jejích potomků](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)

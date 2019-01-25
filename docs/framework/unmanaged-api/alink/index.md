@@ -8,15 +8,15 @@ helpviewer_keywords:
 ms.assetid: f4a84be2-309c-439c-b686-6facb85f4654
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a1056e1b8d544e514063c6c1ad20b447815960ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0a57d8f8da0431e6d3dcc9042d310cc70c6a27f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403952"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689023"
 ---
 # <a name="alink-api-unmanaged-api-reference"></a>Rozhraní API ALink (referenční dokumentace nespravovaného rozhraní API)
-Podporuje vytváření sestavení rozhraní .NET Framework a nevázaný moduly.  
+Podporuje vytvoření nevázaného modulů a sestavení rozhraní .NET Framework.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [AssemblyAttributesGoHere](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgohere.md)  
@@ -39,5 +39,5 @@ Podporuje vytváření sestavení rozhraní .NET Framework a nevázaný moduly.
   
  [IALink3 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink3-interface.md)  
   
-## <a name="see-also"></a>Viz také  
- [Referenční informace o nespravovaném rozhraní API](../../../../docs/framework/unmanaged-api/index.md)
+## <a name="see-also"></a>Viz také:
+- [Referenční informace o nespravovaném rozhraní API](../../../../docs/framework/unmanaged-api/index.md)

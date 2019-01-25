@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e64eeff8ef80aa264c9c49bd12a0cc45e0da18a9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9fc10344757d4dd9f9df7d4931eb339b652303f9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33461884"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683726"
 ---
 # <a name="icorprofilercallbackobjectreferences-method"></a>ICorProfilerCallback::ObjectReferences – metoda
-Upozorní profileru o objektech v paměti, které se odkazuje zadaný objekt.  
+Upozornění profileru o objektech v paměti, které se odkazuje zadaný objekt.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT ObjectReferences(
   
 #### <a name="parameters"></a>Parametry  
  `objectId`  
- [v] ID objektu, která odkazují objekty.  
+ [in] ID objektu, který odkazuje na objekty.  
   
  `classId`  
- [v] ID třídy, která představuje instanci zadaného objektu.  
+ [in] ID třídy, která je instance zadaného objektu.  
   
  `cObjectRefs`  
- [v] Počet objektů, které odkazuje zadaný objekt (který je počet elementů ve `objectRefIds` pole).  
+ [in] Počet objektů, které odkazuje zadaný objekt (to znamená, počet prvků v `objectRefIds` pole).  
   
  `objectRefIds`  
- [v] Pole ID objektů, které se odkazuje `objectId`.  
+ [in] Pole ID objektů, které se neodkazuje `objectId`.  
   
 ## <a name="remarks"></a>Poznámky  
- `ObjectReferences` Metoda je volána pro každý objekt v haldě zbývající po dokončení uvolnění paměti. Pokud profileru vrátí chybu z této zpětné volání, bude zastaveno profilování služby vyvolání tento zpětného volání až do další uvolnění paměti.  
+ `ObjectReferences` Metoda je volána pro každý objekt zbývajících v haldě, po dokončení procesu uvolnění paměti. Pokud profiler vrátí chybu z této zpětné volání, bude profilování služby přestat vyvolání této zpětné volání až do dalšího uvolnění.  
   
- `ObjectReferences` Zpětného volání lze použít ve spojení s [icorprofilercallback::rootreferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) zpětné volání pro vytvoření grafu odkaz dokončení objektu pro modul runtime. Modul CLR (CLR) zajišťuje, že každý odkaz na objekt je hlášen jenom jednou `ObjectReferences` metoda.  
+ `ObjectReferences` Zpětného volání lze použít ve spojení s [ICorProfilerCallback::RootReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) zpětné volání pro vytvoření grafu odkaz na kompletní objekt pro modul runtime. Modul CLR (CLR) zajišťuje, že každý odkaz na objekt je ohlášena jenom jednou `ObjectReferences` metody.  
   
- Vrácený objekt ID `ObjectReferences` nejsou platné během zpětného volání sebe, protože kolekce paměti může být uprostřed přesun objektů. Proto se profilery nesmíte pokoušet zkontrolovat objekty během `ObjectReferences` volání. Když [icorprofilercallback2::garbagecollectionfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) je volána paměti kolekce je úplný a kontroly lze bezpečně provést.  
+ ID objektů vrácených `ObjectReferences` nejsou platné během zpětného volání, protože kolekce uvolnění paměti může být uvnitř přesouvání objektů. Proto se nesmíte pokoušet profilery pro kontrolu objektů během `ObjectReferences` volání. Když [ICorProfilerCallback2::GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) je volána, uvolňování paměti kolekce je kompletní a kontroly lze bezpečně provést.  
   
- Null `ClassId` znamená, že `objectId` má typ, který je uvolnění.  
+ S hodnotou null `ClassId` znamená, že `objectId` má typ, který je uvolnění.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -68,5 +68,5 @@ HRESULT ObjectReferences(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

@@ -2,17 +2,17 @@
 title: Objekty DiscoveryClient a DynamicEndpoint
 ms.date: 03/30/2017
 ms.assetid: 7cd418f0-0eab-48d1-a493-7eb907867ec3
-ms.openlocfilehash: ff8cc071b13123a8d04162a2c52a8c3fb486d6db
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 6e7b1cf13309ba6fc1da424649c667efe255278e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48579748"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709985"
 ---
 # <a name="discoveryclient-and-dynamicendpoint"></a>Objekty DiscoveryClient a DynamicEndpoint
 <xref:System.ServiceModel.Discovery.DiscoveryClient> a <xref:System.ServiceModel.Discovery.DynamicEndpoint> jsou dvě třídy použitá k vyhledání služby na straně klienta. <xref:System.ServiceModel.Discovery.DiscoveryClient> poskytuje seznam služeb, které odpovídají konkrétní sadu kritérií a umožňuje vám umožní připojit se ke službám. <xref:System.ServiceModel.Discovery.DynamicEndpoint> provede stejné operace a kromě toho se automaticky připojí k jedné ze služeb, které se nacházejí. Lze je převést libovolný koncový bod <xref:System.ServiceModel.Discovery.DynamicEndpoint>, kritéria hledání je možné přidat i v konfiguraci, proto <xref:System.ServiceModel.Discovery.DynamicEndpoint> je užitečné, když potřebujete zjišťování ve vašem řešení, ale nechcete, aby k úpravě klienta logiky – je potřeba jenom změnit koncových bodů. <xref:System.ServiceModel.Discovery.DiscoveryClient> na druhé straně může použít k získání lepší kontrolu nad vyhledávací operace. Použití a výhodami každého z nich jsou rozpracovaného níže.  
   
-## <a name="discoveryclient"></a>Objekt DiscoveryClient  
+## <a name="discoveryclient"></a>DiscoveryClient  
  <xref:System.ServiceModel.Discovery.DiscoveryClient> Definuje synchronní a asynchronní metody najít <xref:System.ServiceModel.Discovery.DiscoveryClient.FindCompleted> a <xref:System.ServiceModel.Discovery.DiscoveryClient.FindProgressChanged> události.  Také definuje synchronní a asynchronní metody řešení a <xref:System.ServiceModel.Discovery.DiscoveryClient.ResolveCompleted> událostí. Použití <xref:System.ServiceModel.Discovery.DiscoveryClient.Find%2A> nebo <xref:System.ServiceModel.Discovery.DiscoveryClient.FindAsync%2A> metod pro vyhledání služeb. Obě tyto metody trvat <xref:System.ServiceModel.Discovery.FindCriteria> instanci, která umožňuje zadat názvy typů kontraktu, obory, maximální počet výsledků požadované a pravidel oboru. <xref:System.ServiceModel.Discovery.DiscoveryClient.FindCompleted> a <xref:System.ServiceModel.Discovery.DiscoveryClient.FindProgressChanged> události lze použít při volání <xref:System.ServiceModel.Discovery.DiscoveryClient.FindAsync%2A> metody. <xref:System.ServiceModel.Discovery.DiscoveryClient.FindProgressChanged> se aktivuje vždy, když <xref:System.ServiceModel.Discovery.DiscoveryClient> obdrží odpověď ze služby. Slouží k zobrazení průběhu zobrazuje průběh operace find. To lze také tak, aby fungoval na najít odpovědi přijaté. <xref:System.ServiceModel.Discovery.DiscoveryClient.FindCompleted> Událost je aktivována po dokončení operace find. K tomu může dojít, protože maximální počet odpovědi byla přijata nebo pokud <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> uplynul. Po dokončení operace find výsledky jsou vráceny v <xref:System.ServiceModel.Discovery.FindResponse> instance. <xref:System.ServiceModel.Discovery.FindResponse> Obsahuje kolekci <xref:System.ServiceModel.Discovery.EndpointDiscoveryMetadata> obsahující adresy, názvy typů kontraktu, rozšíření, vlastností listenurimode nastavenou na identifikátory URI a obory odpovídající služby. Pak můžete tyto informace k připojení a volání jednoho z odpovídající služby. Následující příklad ukazuje, jak volat metodu System.ServiceModel.Discovery.DiscoveryClient.Find(System.ServiceModel.Discovery.FindCriteria) a použití vrácených metadat pro volání nalezené služby. Výhodou použití <xref:System.ServiceModel.Discovery.DiscoveryClient.Find(System.ServiceModel.Discovery.FindCriteria)> je, že můžete ukládat do mezipaměti seznamu koncových bodů našli a využít později. S touto mezipamětí můžete vytvořit vlastní logiky, která by různé podmínky při selhání.  
   
 ```  
@@ -105,6 +105,6 @@ double result = client.Add(value1, value2);
 Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result);  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Zjišťování pomocí oborů](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)  
- [Základy](../../../../docs/framework/wcf/samples/basic-sample.md)
+## <a name="see-also"></a>Viz také:
+- [Zjišťování pomocí oborů](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)
+- [Základy](../../../../docs/framework/wcf/samples/basic-sample.md)

@@ -11,54 +11,54 @@ helpviewer_keywords:
 ms.assetid: 28876047-58bd-4fed-9452-c7da346d67c0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7240692e35c97f3efbc33ca27a0221da1d250149
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4dc09f3e8cb926d31b21f0cc2a6442c7a6b8dec9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33386854"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54714776"
 ---
 # <a name="invalidoverlappedtopinvoke-mda"></a>invalidOverlappedToPinvoke – pomocník spravovaného ladění (MDA)
-`invalidOverlappedToPinvoke` Pomocník spravovaného ladění (MDA) se aktivuje, když překrytý ukazatel, jež nebyla vytvořena v haldě kolekce paměti předána ke konkrétním funkcím Win32.  
+`invalidOverlappedToPinvoke` Pomocníka spravovaného ladění (MDA) se aktivuje, když překrytý ukazatel, který nebyl vytvořen na haldě uvolňování paměti je předán konkrétním funkcím Win32.  
   
 > [!NOTE]
->  Ve výchozím nastavení tento MDA je aktivována, jenom Pokud platformou vyvolat volání je definována v kódu a ladicí program hlásí stav JustMyCode každé metody. Ladicí program, který nerozumí JustMyCode (například MDbg.exe bez přípony) nebudou aktivovat tuto (mda). Tento MDA lze povolit pro tyto ladicí programy pomocí konfiguračního souboru a explicitně settting `justMyCode="false"` v. soubor mda.config `(<invalidOverlappedToPinvoke enable="true" justMyCode="false"/>`).  
+>  Ve výchozím nastavení toto MDA aktivováno, pouze pokud platforma volání je definováno v kódu a ladicí program hlásí stav JustMyCode každé metody. Ladicí program, který nerozumí JustMyCode (například MDbg.exe bez přípon), neaktivuje toto MDA. Tento MDA lze povolit pro ty ladící programy pomocí konfiguračního souboru a explicitně nastavit `justMyCode="false"` v. mda.config souboru `(<invalidOverlappedToPinvoke enable="true" justMyCode="false"/>`).  
   
 ## <a name="symptoms"></a>Příznaky  
- Poškození haldy unexplainable nebo dojde k chybě.  
+ Selhání nebo nevysvětlitelné poškození haldy.  
   
-## <a name="cause"></a>příčina  
- Překryté ukazatele, jež nebyla vytvořena v haldě kolekce paměti se předají funkcím konkrétní operační systém.  
+## <a name="cause"></a>Příčina  
+ Překrytý ukazatel, který nebyl vytvořen na haldě uvolňování paměti je předán konkrétním funkcím operačního systému.  
   
- Následující tabulka uvádí funkce, že tento MDA sleduje.  
+ V následující tabulce jsou uvedeny funkce, že toto MDA sleduje.  
   
 |Modul|Funkce|  
 |------------|--------------|  
 |HttpApi.dll|`HttpReceiveHttpRequest`|  
 |IpHlpApi.dll|`NotifyAddrChange`|  
-|Kernel32.dll|`ReadFile`|  
-|Kernel32.dll|`ReadFileEx`|  
-|Kernel32.dll|`WriteFile`|  
-|Kernel32.dll|`WriteFileEx`|  
-|Kernel32.dll|`ReadDirectoryChangesW`|  
-|Kernel32.dll|`PostQueuedCompletionStatus`|  
-|Mswsock.dll –|`ConnectEx`|  
-|Ws2_32.dll|`WSASend`|  
-|Ws2_32.dll|`WSASendTo`|  
-|Ws2_32.dll|`WSARecv`|  
-|Ws2_32.dll|`WSARecvFrom`|  
+|kernel32.dll|`ReadFile`|  
+|kernel32.dll|`ReadFileEx`|  
+|kernel32.dll|`WriteFile`|  
+|kernel32.dll|`WriteFileEx`|  
+|kernel32.dll|`ReadDirectoryChangesW`|  
+|kernel32.dll|`PostQueuedCompletionStatus`|  
+|MSWSock.dll|`ConnectEx`|  
+|WS2_32.dll|`WSASend`|  
+|WS2_32.dll|`WSASendTo`|  
+|WS2_32.dll|`WSARecv`|  
+|WS2_32.dll|`WSARecvFrom`|  
 |MQRT.dll|`MQReceiveMessage`|  
   
- Tato podmínka, protože je vysoká potenciální poškození haldy <xref:System.AppDomain> provádění volání může mít za následek uvolnění. Pokud <xref:System.AppDomain> uvolní, kódu aplikace bude buď volné paměti pro překrytý ukazatel způsobuje poškození při dokončení operace nebo kód bude úniku paměť, způsobuje problémy později.  
+ Potenciál pro poškození haldy je vysoký pro tuto podmínku, protože <xref:System.AppDomain> provádění volání se může uvolnit. Pokud <xref:System.AppDomain> uvolní, kód aplikace uvolní paměť pro překrývající ukazatel, což způsobí poškození při dokončení operace nebo kód způsobí přetečení paměti, což povede k potížím později.  
   
 ## <a name="resolution"></a>Rozlišení  
- Použijte <xref:System.Threading.Overlapped> objektu, volání <xref:System.Threading.Overlapped.Pack%2A> metodu za účelem získání <xref:System.Threading.NativeOverlapped> struktura, která může být předaný funkci. Pokud <xref:System.AppDomain> uvolní, modul CLR čeká na dokončení asynchronní operace před uvolnění ukazatele.  
+ Použití <xref:System.Threading.Overlapped> objektu, volání <xref:System.Threading.Overlapped.Pack%2A> metodu k získání <xref:System.Threading.NativeOverlapped> struktura, která může být předán funkci. Pokud <xref:System.AppDomain> uvolní, CLR čeká na dokončení asynchronní operace před uvolněním ukazatele.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Tato MDA nemělo žádný vliv na modulu CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Toto MDA nemělo žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- Následuje příklad výstupu z této (mda).  
+ Následuje příklad výstupu z tohoto MDA.  
   
  `An overlapped pointer (0x00ea3430) that was not allocated on the GC heap was passed via Pinvoke to the Win32 function 'WriteFile' in module 'KERNEL32.DLL'. If the AppDomain is shut down, this can cause heap corruption when the async I/O completes. The best solution is to pass a NativeOverlapped structure retrieved from a call to System.Threading.Overlapped.Pack(). If the AppDomain exits, the CLR will keep this structure alive and pinned until the I/O completes.`  
   
@@ -72,7 +72,7 @@ ms.locfileid: "33386854"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.MarshalAsAttribute>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

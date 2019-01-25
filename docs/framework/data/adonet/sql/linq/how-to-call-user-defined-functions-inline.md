@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: volání vnořené funkce definované uživatelem'
+title: 'Postupy: Volat uživatelsky definovaných funkcí'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: f80d4327-b6a5-4aa8-a743-e95d09a2a02e
-ms.openlocfilehash: 39eeab06952e1d8a1128580a2be79ed4711d58d5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 76a41ded52ac29b4a8b597188171333a888be5cd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33359397"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54692766"
 ---
-# <a name="how-to-call-user-defined-functions-inline"></a>Postupy: volání vnořené funkce definované uživatelem
-I když bude možné volat vložené uživatelem definované funkce, funkce, které jsou zahrnuty v dotazu, jejichž spuštění je odložení nejsou provést, dokud se spustí dotaz. Další informace najdete v tématu [Úvod do dotazů LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).  
+# <a name="how-to-call-user-defined-functions-inline"></a>Postupy: Volat uživatelsky definovaných funkcí
+I když bude možné volat vložené uživatelem definované funkce, funkce, které jsou zahrnuty v dotazu, jehož spuštění je odloženo nejsou udělat, dokud je dotaz proveden. Další informace najdete v tématu [Úvod do dotazů LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).  
   
- Při volání stejnou funkci mimo dotazu, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvoří jednoduchý dotaz z výrazu volání metody. Toto je syntaxe SQL (parametr `@p0` je vázána na konstantu předaná):  
+ Při volání stejné funkce mimo dotazu, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvoří jednoduchý dotaz z výrazu volání metody. Tady je syntaxe jazyka SQL (parametr `@p0` je vázán na konstantu předaný):  
   
 ```  
 SELECT dbo.ReverseCustName(@p0)  
@@ -27,7 +27,7 @@ SELECT dbo.ReverseCustName(@p0)
  [!code-vb[DLinqUDFS#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqUDFS/vb/Module1.vb#4)]  
   
 ## <a name="example"></a>Příklad  
- V následujícím [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotaz, zobrazí se o vložený volání do metody generované uživatelem definované funkce `ReverseCustName`. Funkce není okamžitě spustit, protože spuštění dotazu je odložen. SQL sestavených pro tento dotaz přeloží volání uživatelem definované funkce v databázi (viz následující dotaz SQL kód).  
+ V následujícím [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazu, můžete zobrazit vložený volání metody generované uživatelem definovanou funkci `ReverseCustName`. Funkce není okamžitě provést, protože provádění dotazu je odloženo. SQL sestavena pro tento dotaz se přeloží na volání funkce definované uživatelem v databázi (viz kód SQL následující dotaz).  
   
  [!code-csharp[DLinqUDFS#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqUDFS/cs/Program.cs#5)]
  [!code-vb[DLinqUDFS#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqUDFS/vb/Module1.vb#5)]  
@@ -38,5 +38,5 @@ SELECT [t0].[ContactName],
 FROM [Customers] AS [t0]  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Uživatelem definované funkce](../../../../../../docs/framework/data/adonet/sql/linq/user-defined-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Uživatelem definované funkce](../../../../../../docs/framework/data/adonet/sql/linq/user-defined-functions.md)

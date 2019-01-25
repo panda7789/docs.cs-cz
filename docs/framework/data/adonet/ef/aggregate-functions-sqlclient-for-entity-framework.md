@@ -2,12 +2,12 @@
 title: Agregační funkce (SqlClient pro Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 03303f01-b591-4efc-9875-f9c608edff0b
-ms.openlocfilehash: 8ed9a58da9914724fe312876d6594cb526f2e0e9
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 55a10b82ffc189f5cf4118cb225a96963226256e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43856514"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54724184"
 ---
 # <a name="aggregate-functions-sqlclient-for-entity-framework"></a>Agregační funkce (SqlClient pro Entity Framework)
 Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje agregační funkce. Agregační funkce provádění výpočtů na sadě vstupní hodnoty a vrátí hodnotu. Tyto funkce jsou v oboru názvů systému SQL Server, která je k dispozici, když použijete SqlClient. Vlastnost oboru názvů poskytovatele umožňuje zjistit, která předpona je používána tohoto poskytovatele pro konkrétní konstrukce, jako jsou typy a funkce Entity Framework.  
@@ -68,7 +68,7 @@ Kolekce\<T >, kde T je jedním z následujících typů:
 **Příklad**
 
 [!code-csharp[DP EntityServices Concepts#SQLSERVER_COUNT](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#sqlserver_count)]
-[! code-sql[SQLSERVER_COUNT # koncepty EntityServices distribučního bodu](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#sqlserver_count)
+[!code-sql[DP EntityServices Concepts#SQLSERVER_COUNT](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#sqlserver_count)
  
 ## <a name="countbigexpression"></a>COUNT_BIG(Expression)
  
@@ -224,8 +224,8 @@ A `Double`.
 ## <a name="see-also"></a>Viz také:
 
 Další informace o použití agregačních funkcí, které SqlClient podporuje najdete v dokumentaci pro verzi systému SQL Server, který jste zadali v manifestu zprostředkovatele, SqlClient:  
-  
-**SQL Server 2005**: [agregační funkce (Transact-SQL)](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms173454(v=sql.90))  
-**SQL Server 2008 a novější**: [agregační funkce (Transact-SQL)](/sql/t-sql/functions/aggregate-functions-transact-sql)  
-[Jazyk Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
-[Agregační kanonické funkce](../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)
+
+**SQL Server 2005**: [Aggregate Functions (Transact-SQL)](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms173454(v=sql.90))  
+**SQL Server 2008 a novější**:  [Aggregate Functions (Transact-SQL)](/sql/t-sql/functions/aggregate-functions-transact-sql)  
+- [Jazyk Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)
+- [Agregační kanonické funkce](../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)

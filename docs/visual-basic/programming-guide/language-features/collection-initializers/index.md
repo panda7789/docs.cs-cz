@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - collection initializers [Visual Basic]
 ms.assetid: a9290329-77b0-4fdf-ae75-8fc17287f469
-ms.openlocfilehash: c22599f50ac071245a1381d267f3f7cb66806174
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 4183d974dd39caf0ca8a14ff98ab5652c0375906
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45991620"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54691408"
 ---
 # <a name="collection-initializers-visual-basic"></a>Inicializátory kolekcí (Visual Basic)
 *Inicializátory kolekcí* poskytují zkrácený syntaxi, která vám umožní vytvořit kolekci a přidejte do ní počáteční sadu hodnot. Inicializátory kolekcí jsou užitečné při vytváření kolekce na základě sady známé hodnoty, například seznam možností v nabídce nebo kategorie, počáteční sadu číselných hodnot, statický seznam řetězců, jako je například den nebo měsíc názvy nebo zeměpisné umístění, jako seznam stavů, který se používá k ověření.  
@@ -54,7 +54,7 @@ ms.locfileid: "45991620"
   
  [!code-vb[VbVbalrCollectionInitializers#10](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#10)]  
   
- Pokud má kolekce `Add` metodu, která obsahuje parametry, které odpovídají konstruktor pro `Customer` objektu, může vnořené hodnoty parametrů pro `Add` metody v rámci kolekce inicializátory, jak je popsáno v další části. Pokud například kolekce nemá `Add` metodu, můžete si ho vytvořit jako metody rozšíření. Příklad toho, jak vytvořit `Add` metody jako metody rozšíření pro kolekci, najdete v článku [postupy: vytvoření přidat rozšíření metoda používá inicializátor kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md). Příklad toho, jak vytvořit vlastní kolekce, která je možné pomocí inicializátoru kolekce, naleznete v tématu [postupy: vytvoření kolekce používané Inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md).  
+ Pokud má kolekce `Add` metodu, která obsahuje parametry, které odpovídají konstruktor pro `Customer` objektu, může vnořené hodnoty parametrů pro `Add` metody v rámci kolekce inicializátory, jak je popsáno v další části. Pokud například kolekce nemá `Add` metodu, můžete si ho vytvořit jako metody rozšíření. Příklad toho, jak vytvořit `Add` metody jako metody rozšíření pro kolekci, najdete v článku [jak: Vytvoření metody přidání rozšíření používané Inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md). Příklad toho, jak vytvořit vlastní kolekce, která je možné pomocí inicializátoru kolekce, naleznete v tématu [jak: Vytvoření kolekce používané Inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md).  
   
 ## <a name="nesting-collection-initializers"></a>Inicializátory kolekcí vnoření  
  Je možné vnořovat hodnotami v inicializátoru kolekce k identifikaci na konkrétní přetížení `Add` metodu pro kolekci, která se vytváří. Hodnot předaných `Add` metoda musí být oddělené čárkami a uzavřeny ve složených závorkách (`{}`), stejně jako by v inicializátoru pole literálu nebo kolekci.  
@@ -73,18 +73,18 @@ ms.locfileid: "45991620"
   
 |Název|Popis|  
 |---|---|  
-|[Postupy: Vytvoření metody přidání rozšíření používané inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|Ukazuje, jak vytvořit rozšiřující metoda volá `Add` , který slouží k naplnění kolekce s hodnotami z inicializátoru kolekce.|  
-|[Postupy: Vytvoření kolekce používané inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|Ukazuje, jak povolit používání inicializátoru kolekce zahrnutím `Add` metody ve třídě kolekce, která implementuje `IEnumerable`.|  
+|[Postupy: Vytvoření metody přidání rozšíření používané Inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|Ukazuje, jak vytvořit rozšiřující metoda volá `Add` , který slouží k naplnění kolekce s hodnotami z inicializátoru kolekce.|  
+|[Postupy: Vytvoření kolekce používané Inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|Ukazuje, jak povolit používání inicializátoru kolekce zahrnutím `Add` metody ve třídě kolekce, která implementuje `IEnumerable`.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kolekce](../../../../visual-basic/programming-guide/concepts/collections.md)  
-- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
-- [Inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
-- [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)  
-- [Automaticky implementované vlastnosti](../../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)  
-- [Postupy: Inicializace proměnné pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)  
-- [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
-- [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+- [Kolekce](../../../../visual-basic/programming-guide/concepts/collections.md)
+- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [Inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
+- [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)
+- [Automaticky implementované vlastnosti](../../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)
+- [Postupy: Inicializace proměnné pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)
+- [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Postupy: Vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)

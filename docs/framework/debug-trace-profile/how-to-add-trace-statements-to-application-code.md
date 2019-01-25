@@ -15,23 +15,23 @@ helpviewer_keywords:
 ms.assetid: f3a93fa7-1717-467d-aaff-393e5c9828b4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ed85c73182da5d911c6cc84fba26c658412ac158
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8a347919617e495ace19ca12eebc9b9a77f613ff
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33391365"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54684370"
 ---
 # <a name="how-to-add-trace-statements-to-application-code"></a>Postupy: Přidání příkazů trasování do kódu aplikace
-Metody nejčastěji používají pro trasování jsou metody pro zápis výstupu do naslouchací procesy: **zápisu**, **writeif –**, **WriteLine**, **writelineif –**, **Assert**, a **nezdaří**. Tyto metody lze rozdělit do dvou kategorií: **zápisu**, **WriteLine**, a **nezdaří** všechny bezpodmínečně, emitování výstup zatímco **writeif –**, **Writelineif –**, a **Assert** testů podmínce logické a zápisu nebo Nezapisovat závislosti na hodnotě podmínky. **Writeif –** a **writelineif –** emitování výstupu, pokud je podmínka vyhodnocena `true`, a **Assert** vysílá výstupu, pokud je podmínka vyhodnocena `false`.  
+Nejčastěji používá pro trasování metody jsou metody pro zápis výstupu do naslouchacích procesů: **Zápis**, **writeif –**, **WriteLine**, **writelineif –**, **vyhodnocení**, a **selhání**. Tyto metody je možné rozdělit do dvou kategorií: **Zápis**, **WriteLine**, a **selhání** všechny bezpodmínečně, vygeneruje výstup vzhledem k tomu **writeif –**, **writelineif –** a  **Assert –** testu je logická podmínka a zapisovat nebo Nezapisovat závislosti na hodnotě podmínky. **Writeif –** a **writelineif –** vygeneruje výstup, pokud je podmínka `true`, a **Assert** generuje výstup, pokud je podmínka `false`.  
   
- Při navrhování vaší trasování a ladění strategie, musí si myslíte o tom, jak chcete výstup k vypadat. Více **zápisu** příkazy, naplní se nesouvisejícími informace vytvoří protokolu, které je obtížné číst. Na druhé straně pomocí **WriteLine** uvést související příkazy samostatné řádky může být obtížné rozlišit, jaké informace patří společně. Obecně použít více **zápisu** příkazy, pokud chcete kombinovat informace z více zdrojů k vytvoření jedné informativní zprávy a použít **WriteLine** příkaz, pokud chcete vytvořit jeden, dokončení zpráva.  
+ Při navrhování vaší trasování a ladění strategie, byste uvažovat o tom, jak chcete výstup vás pod rouškou. Více **zápisu** příkazy vyplněna informacemi nesouvisejících vytvoří protokol, který je obtížné číst. Na druhé straně pomocí **WriteLine** umístění související příkazy na samostatných řádcích může být obtížné k rozlišení, jaké informace patří k sobě. Obecně platí, použijte více **zápisu** příkazy, pokud chcete kombinovat informace z různých zdrojů k vytvoření jedné informativní zprávy a použití **WriteLine** příkazu, pokud chcete vytvořit jediné, dokončení zprávy.  
   
-### <a name="to-write-a-complete-line"></a>K zápisu dokončení řádku  
+### <a name="to-write-a-complete-line"></a>Napsat úplný řádek  
   
 1.  Volání <xref:System.Diagnostics.Trace.WriteLine%2A> nebo <xref:System.Diagnostics.Trace.WriteLineIf%2A> metody.  
   
-     Návrat je připojen na konec zprávy, tato metoda vrátí hodnotu, tak, aby na další zprávu vrácený **zápisu**, **writeif –**, **WriteLine**, nebo  **Writelineif –** zahájíte na následující řádek:  
+     Zalomení řádku je připojen na konec zprávy návratu tato metoda tak, aby další zprávy vrácené **zápisu**, **writeif –**, **WriteLine**, nebo  **Writelineif –** začne na následující řádek:  
   
     ```vb  
     Dim errorFlag As Boolean = False  
@@ -46,11 +46,11 @@ Metody nejčastěji používají pro trasování jsou metody pro zápis výstupu
        "Error in AppendData procedure.");  
     ```  
   
-### <a name="to-write-a-partial-line"></a>K zápisu částečné řádku  
+### <a name="to-write-a-partial-line"></a>Zápis částečný řádek  
   
 1.  Volání <xref:System.Diagnostics.Trace.Write%2A> nebo <xref:System.Diagnostics.Trace.WriteIf%2A> metody.  
   
-     Na další zprávu put **zápisu**, **writeif –**, **WriteLine**, nebo **writelineif –** zahájíte na stejném řádku jako zprávu, která umístí **zápisu** nebo **writeif –** příkaz:  
+     Další zprávu vložit navýšení kapacity **zápisu**, **writeif –**, **WriteLine**, nebo **writelineif –** začne na stejném řádku jako zprávu vložit navýšení kapacity **zápisu** nebo **writeif –** – příkaz:  
   
     ```vb  
     Dim errorFlag As Boolean = False  
@@ -67,9 +67,9 @@ Metody nejčastěji používají pro trasování jsou metody pro zápis výstupu
     Trace.Write("Invalid value for data request");  
     ```  
   
-### <a name="to-verify-that-certain-conditions-exist-either-before-or-after-you-execute-a-method"></a>Chcete-li ověřit to existují před i po provedení metody  
+### <a name="to-verify-that-certain-conditions-exist-either-before-or-after-you-execute-a-method"></a>Chcete-li ověřit určitých podmínek před nebo po provedení metody  
   
-1.  Volání <xref:System.Diagnostics.Trace.Assert%2A> metoda.  
+1.  Volání <xref:System.Diagnostics.Trace.Assert%2A> metody.  
   
     ```vb  
     Dim i As Integer = 4  
@@ -82,14 +82,14 @@ Metody nejčastěji používají pro trasování jsou metody pro zápis výstupu
     ```  
   
     > [!NOTE]
-    >  Můžete použít **Assert** s trasování a ladění. Tento příklad výstupu pro všechny naslouchací proces v zásobníku volání **naslouchací procesy** kolekce. Další informace najdete v tématu [kontrolní výrazy ve spravovaného kódu](/visualstudio/debugger/assertions-in-managed-code) a <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>.  
+    >  Můžete použít **Assert** pomocí trasování a ladění. Zásobník volání pro všechny posluchače v tomto příkladu je výstupem **naslouchacích procesů** kolekce. Další informace najdete v tématu [kontrolní výrazy ve spravovaného kódu](/visualstudio/debugger/assertions-in-managed-code) a <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Diagnostics.Debug.WriteIf%2A?displayProperty=nameWithType>  
- <xref:System.Diagnostics.Debug.WriteLineIf%2A?displayProperty=nameWithType>  
- <xref:System.Diagnostics.Trace.WriteIf%2A?displayProperty=nameWithType>  
- <xref:System.Diagnostics.Trace.WriteLineIf%2A?displayProperty=nameWithType>  
- [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)  
- [Postupy: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)  
- [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)  
- [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Diagnostics.Debug.WriteIf%2A?displayProperty=nameWithType>
+- <xref:System.Diagnostics.Debug.WriteLineIf%2A?displayProperty=nameWithType>
+- <xref:System.Diagnostics.Trace.WriteIf%2A?displayProperty=nameWithType>
+- <xref:System.Diagnostics.Trace.WriteLineIf%2A?displayProperty=nameWithType>
+- [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
+- [Postupy: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)
+- [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)
+- [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)

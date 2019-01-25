@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6195d9666afa8fba3f77322366e4709634e53bb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dfa4db00662ed3abffbfd01e6e36005cd272a271
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405241"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664587"
 ---
 # <a name="efngetmanagedobjectfieldinfo-function"></a>_EFN_GetManagedObjectFieldInfo – funkce
-Získá posun od začátku objekt pole a hodnotu pole pomocí ukazatele zadaného objektu a název pole.  
+Získá posun od začátku objekt pole a hodnota pole pomocí ukazatele zadaného objektu a název pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +40,31 @@ HRESULT _EFN_GetManagedObjectFieldInfo(
   
 #### <a name="parameters"></a>Parametry  
  `Client`  
- [v] Ukazatel na klientské ladění.  
+ [in] Ukazatel na klientovi ladění.  
   
  `objAddr`  
- [v] Ukazatel spravovaného objektu.  
+ [in] Ukazatel spravovaného objektu.  
   
  szFieldName  
- [v] Ukazatel spravovaného objektu na název pole.  
+ [in] Spravovaný objekt ukazatel na název pole.  
   
  `pValue`  
  [out] Hodnota pole. Tento parametr může mít hodnotu null.  
   
  `pOffset`  
- [out] Posun od `objAddr` na pole. Tento parametr může mít hodnotu null.  
+ [out] Posun od `objAddr` do příslušného pole. Tento parametr může mít hodnotu null.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud posun 0, je zapsán posunutí.  
+ Pokud posun je 0, je zapsán bez posunutí.  
   
- Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a chybový kód 0x1000.  
+ Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a 0x1000 kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** SOS_Stacktrace.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)

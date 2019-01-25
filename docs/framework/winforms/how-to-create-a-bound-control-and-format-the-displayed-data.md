@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Vytvoření připojeného ovládacího prvku a formátování zobrazených dat'
+title: 'Postupy: Vytvoření vazby ovládacího prvku a formátování zobrazených dat'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data [Windows Forms], formatting
 - bound controls [Windows Forms], creating
 - bound controls [Windows Forms], formatting data
 ms.assetid: d5a56228-899d-41d9-8af8-87b3f4ec2f94
-ms.openlocfilehash: 8f4d3c4c738e31ab83d506dc7afb4e49b142765b
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 2e9dabe12e3f4eda590cec26a70c6becb0e2b7a3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45614995"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689728"
 ---
-# <a name="how-to-create-a-bound-control-and-format-the-displayed-data"></a>Postupy: Vytvoření připojeného ovládacího prvku a formátování zobrazených dat
+# <a name="how-to-create-a-bound-control-and-format-the-displayed-data"></a>Postupy: Vytvoření vazby ovládacího prvku a formátování zobrazených dat
 Pomocí Windows Forms – datová vazba, lze formátovat data zobrazená v ovládací prvek vázaný na data pomocí **formátování a rozšířené vazby** dialogové okno.  
   
 > [!NOTE]
@@ -46,15 +46,15 @@ Pomocí Windows Forms – datová vazba, lze formátovat data zobrazená v ovlá
     |Typ formátu|Možnost formátování|  
     |-----------------|-----------------------|  
     |Žádné formátování|Žádné možnosti.|  
-    |Číselné|Zadejte počet desetinných míst s použitím **desetinných míst** číselníku.|  
+    |Čísla|Zadejte počet desetinných míst s použitím **desetinných míst** číselníku.|  
     |Měna|Zadejte počet desetinných míst s použitím **desetinných míst** číselníku.|  
     |Datum a čas|Vyberte datum a čas by měl být zobrazení tak, že vyberete jednu z položek v **typ** výběru.|  
     |vědecké|Zadejte počet desetinných míst s použitím **desetinných míst** číselníku.|  
-    |Vlastní|Zadejte řetězec vlastního formátu pomocí.<br /><br /> Další informace najdete v tématu [Formatting Types](../../../docs/standard/base-types/formatting-types.md). **Poznámka:** vlastních formátovacích řetězců není zaručeno úspěšně odezvy komunikace mezi zdrojem dat a vázaného ovládacího prvku. Místo toho zpracovat <xref:System.Windows.Forms.Binding.Parse> nebo <xref:System.Windows.Forms.Binding.Format> události pro vazbu a použití vlastního formátování v kódu pro zpracování událostí.|  
+    |Vlastní|Zadejte řetězec vlastního formátu pomocí.<br /><br /> Další informace najdete v tématu [Formatting Types](../../../docs/standard/base-types/formatting-types.md). **Poznámka:**  Vlastních formátovacích řetězců není zaručeno úspěšně odezvy komunikace mezi zdrojem dat a vázaného ovládacího prvku. Místo toho zpracovat <xref:System.Windows.Forms.Binding.Parse> nebo <xref:System.Windows.Forms.Binding.Format> události pro vazbu a použití vlastního formátování v kódu pro zpracování událostí.|  
   
 8.  Klikněte na tlačítko **OK** zavřete **formátování a rozšířené vazby** dialogové okno a vraťte se do okna Vlastnosti.  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Vytvoření jednoduše vázaného ovládacího prvku na formuláři Windows Forms](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)  
- [Ověřování uživatelského vstupu ve Windows Forms](../../../docs/framework/winforms/user-input-validation-in-windows-forms.md)  
- [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)
+- [Ověřování uživatelského vstupu ve Windows Forms](../../../docs/framework/winforms/user-input-validation-in-windows-forms.md)
+- [Windows Forms – datová vazba](../../../docs/framework/winforms/windows-forms-data-binding.md)

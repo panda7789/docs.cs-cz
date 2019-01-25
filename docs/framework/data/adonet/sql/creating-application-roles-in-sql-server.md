@@ -2,12 +2,12 @@
 title: Vytváření rolí aplikací na SQL serveru
 ms.date: 03/30/2017
 ms.assetid: 27442435-dfb2-4062-8c59-e2960833a638
-ms.openlocfilehash: 811654b73cd1cc0b8c17565b45613253de3c0e81
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 4d3ee759a11417d5f4d36a295f20c7f7886d30d9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43522010"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54638129"
 ---
 # <a name="creating-application-roles-in-sql-server"></a>Vytváření rolí aplikací na SQL serveru
 Aplikační role poskytují způsob, jak přiřadit oprávnění k aplikaci místo na uživatele nebo role databáze. Uživatelům můžete připojit k databázi, aktivace aplikační role a předpokládají oprávnění udělených aplikaci. Oprávnění udělená aplikaci role jsou platné po dobu trvání připojení.  
@@ -52,14 +52,14 @@ Aplikační role poskytují způsob, jak přiřadit oprávnění k aplikaci mís
 -   Podepisování uložených procedur s certifikáty, poskytování pouze oprávnění ke spuštění procedury. Další informace najdete v tématu [podepisování uložených procedur na SQL serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md).  
   
 ## <a name="external-resources"></a>Externí zdroje  
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
 |[Aplikační role](/sql/relational-databases/security/authentication-access/application-roles)|Popisuje, jak vytvořit a používat aplikačních rolí v systému SQL Server 2008.|  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

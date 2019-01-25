@@ -8,34 +8,34 @@ helpviewer_keywords:
 - Public keyword [Visual Basic], syntax
 - Public access modifier
 ms.assetid: 284c9e1b-ed23-499b-9bc9-ad87c11485a5
-ms.openlocfilehash: a5e9161132ba6d571daa30ce82e1bfb1dd2b064f
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: 062d6276ab91705a4554da2afa8459a26453906f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34235915"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54703611"
 ---
 # <a name="public-visual-basic"></a>Public (Visual Basic)
-Určuje, že jeden nebo více deklarované programovací elementy žádná omezení přístupu.  
+Určuje, že nejmíň jeden deklarovaný programový prvek nemá žádné omezení přístupu.  
   
 ## <a name="remarks"></a>Poznámky  
- Při publikování komponenty nebo sadu součástí, například knihovny tříd, chcete obvykle programovací prvky, které mají být přístupné kód, který bude spolupracovat s vaší sestavení. Přenést takové neomezený přístup na element, můžou deklarovat její `Public`.  
+ Pokud publikujete komponenta nebo sadu komponent, jako je například knihovny tříd, obvykle vhodné programovací prvky, které mají být přístupné pro jakýkoli kód, který spolupracuje s vaší sestavení. Přenést taková neomezený přístup elementu, je možné deklarovat s `Public`.  
   
- Veřejný přístup je úroveň programovací element v normální, pokud nepotřebujete omezit přístup k němu. Všimněte si, že úroveň přístupu tohoto elementu deklarované v rámci rozhraní, modulu, třídu nebo strukturu výchozí `Public` Pokud neprovedete deklaraci ho jinak.  
+ Veřejný přístup je normální úroveň pro programovací prvek, pokud nepotřebujete omezit přístup k němu. Všimněte si, že úroveň přístupu elementu deklarované v rámci rozhraní, modulu, třídy nebo struktury výchozí hodnota je `Public` je-li ho jinak není deklarována.  
   
-## <a name="rules"></a>Pravidla  
+## <a name="rules"></a>pravidla  
   
--   **Kontext deklarace.** Můžete použít `Public` pouze na úrovni modulu, rozhraní nebo obor názvů. To znamená kontext deklarace `Public` element musí být zdrojový soubor, obor názvů, rozhraní, modulu, třídu nebo strukturu a nemůže být procedury.  
+-   **Místní deklarace.** Můžete použít `Public` pouze na úrovni modulu, rozhraní nebo oboru názvů. To znamená, že deklarace kontext `Public` elementu musí být zdrojový soubor, obor názvů, rozhraní, modulu, třídy nebo struktury a nemůže být procedurou.  
   
 ## <a name="behavior"></a>Chování  
   
--   **Úroveň přístupu.** Všechny kód, který můžete získat přístup k modulu, třídu nebo strukturu můžete přístup k jeho `Public` elementy.  
+-   **Úroveň přístupu.** Veškerý kód, který může přistupovat k modulu, třídy nebo struktury lze přistupovat k jeho `Public` elementy.  
   
--   **Výchozí úroveň přístupu.** Lokální proměnné uvnitř procedury výchozí veřejný přístup, a nelze použít žádné modifikátory přístupu na ně.  
+-   **Výchozí přístup.** Místní proměnná uvnitř procedury výchozí veřejný přístup, a nemůže používat žádné modifikátory přístupu na nich.  
   
--   **Modifikátory přístupu.** Klíčová slova, které určují úroveň přístupu, se nazývají *přístup modifikátory*. Porovnání modifikátory přístupu najdete v tématu [úrovně v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+-   **Modifikátory přístupu.** Klíčová slova, které určují úroveň přístupu se nazývají *modifikátorů přístupu*. Porovnání přístupu modifikátory přístupu najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
- `Public` Modifikátor lze použít v těchto kontexty:  
+ `Public` Modifikátor lze použít v těchto kontextech:  
   
  [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
@@ -65,13 +65,13 @@ Určuje, že jeden nebo více deklarované programovací elementy žádná omeze
   
  [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## <a name="see-also"></a>Viz také  
- [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
- [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
- [Private](../../../visual-basic/language-reference/modifiers/private.md)  
- [Privátní chráněný](private-protected.md)   
- [Chráněné Friend](protected-friend.md)   
- [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
- [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
- [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+## <a name="see-also"></a>Viz také:
+- [Protected](../../../visual-basic/language-reference/modifiers/protected.md)
+- [Friend](../../../visual-basic/language-reference/modifiers/friend.md)
+- [Private](../../../visual-basic/language-reference/modifiers/private.md)
+- [Private Protected](private-protected.md)
+- [Protected Friend](protected-friend.md)
+- [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
+- [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
+- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

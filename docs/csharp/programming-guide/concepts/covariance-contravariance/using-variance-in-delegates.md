@@ -2,17 +2,17 @@
 title: Použití odchylek v delegátech (C#)
 ms.date: 07/20/2015
 ms.assetid: 1638c95d-dc8b-40c1-972c-c2dcf84be55e
-ms.openlocfilehash: 5be4f786d2e1b8a0ead3fd58fe056e188faa916a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 44a6153a9a1c0aa0aebb18710ea9e770fd4e57fe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43501721"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54667269"
 ---
 # <a name="using-variance-in-delegates-c"></a>Použití odchylek v delegátech (C#)
 Když přiřadíte metody delegáta *kovariance* a *kontravariance* poskytují flexibilitu pro odpovídající typ delegáta se podpis metody. Kovariance povoluje metoda může mít návratový typ, který je odvozený víc než který definované v delegátu. Kontravariance umožní metodu, která má typy parametrů, které jsou méně odvozený než ty, které v typu delegáta.  
   
-## <a name="example-1-covariance"></a>Příklad 1: kovariance  
+## <a name="example-1-covariance"></a>Příklad 1: Kovariance  
   
 ### <a name="description"></a>Popis  
  Tento příklad ukazuje, jak delegáty lze provádět pomocí metod, které mají návratové typy, které jsou odvozeny z návratového typu v signatuře delegátu. Datový typ vracený `DogsHandler` je typu `Dogs`, která je odvozena z `Mammals` typ, který je definován v delegátu.  
@@ -48,7 +48,7 @@ class Program
 }  
 ```  
   
-## <a name="example-2-contravariance"></a>Příklad 2: kontravariance  
+## <a name="example-2-contravariance"></a>Příklad 2: Kontravariance  
   
 ### <a name="description"></a>Popis  
  Tento příklad ukazuje, jak lze pomocí metody, které mají parametry typu, které jsou uvedeny základní typy typ parametru signatury delegáta delegátů. S kontravariance místo samostatných obslužné rutiny můžete použít jednu obslužnou rutinu události. Můžete například vytvořit obslužnou rutinu události, která přijímá `EventArgs` vstupní parametr a použít je s `Button.MouseClick` událost, která odesílá `MouseEventArgs` typ jako parametr a také s `TextBox.KeyDown` událost, která odesílá `KeyEventArgs` parametr.  
@@ -77,7 +77,7 @@ public Form1()
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Odchylky v delegátech (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)  
+- [Odchylky v delegátech (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)
 - [Použití odchylek pro delegáty Func a Action obecný (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)

@@ -7,16 +7,16 @@ helpviewer_keywords:
 ms.assetid: 3770ea8a-2655-4add-9c59-fe0610ad5084
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 68fa7753be76b0681c40e540e86b11c89e7a8ca1
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 9c5e4133a3bc1f019ada00299df929c2e3915880
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48037336"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54726582"
 ---
 # <a name="ui-automation-support-for-standard-controls"></a>Podpora automatizace uživatelského rozhraní pro standardní ovládací prvky
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Toto téma obsahuje informace o [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] podporu pro aplikace vyvinuté pro standardní ovládací prvky [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], a [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] architektur.  
   
@@ -119,13 +119,13 @@ ms.locfileid: "48037336"
 |MonthCalendar|  
 |NotifyIcon|  
 |OpenFileDialog|  
-|Objekt PageSetupDialog|  
+|PageSetupDialog|  
 |PrintDialog|  
 |ProgressBar|  
 |RadioButton|  
 |RichTextBox|  
 |SaveFileDialog|  
-|Ovládací prvek ScrollableControl|  
+|ScrollableControl|  
 |SoundPlayer|  
 |StatusBar|  
 |TabControl – / TabPage –|  
@@ -156,18 +156,18 @@ ms.locfileid: "48037336"
 |MenuStrip – / ContextMenuStrip|  
 |NumericUpDown|  
 |Panel|  
-|Ovládací prvek PictureBox|  
+|PictureBox|  
 |PrintDocument|  
-|Printpreview – ovládací prvek|  
-|Printpreview – dialogové okno|  
+|PrintPreview-Control|  
+|PrintPreview-Dialog|  
 |PropertyGrid|  
-|Uživatelský ovládací prvek|  
+|UserControl|  
 |ToolStrip|  
 |Kontejner TableLayoutPanel|  
 |SplitContainer – / SplitterPanel|  
 |Rozdělovač|  
-|Prvku RaftingContainer|  
+|RaftingContainer|  
 |StatusStrip|  
   
-## <a name="see-also"></a>Viz také  
- [Typy ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types.md)
+## <a name="see-also"></a>Viz také:
+- [Typy ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types.md)

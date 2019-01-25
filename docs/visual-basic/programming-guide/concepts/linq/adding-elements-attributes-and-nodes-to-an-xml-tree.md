@@ -1,36 +1,36 @@
 ---
-title: Přidání prvky, atributy a uzly na strom XML (Visual Basic)
+title: Přidání elementů, atributů a uzlů do stromu XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: e243e694-c987-43aa-8b22-1e33dace582c
-ms.openlocfilehash: 86d28f5974e30a9b7f1a1e830cd40c3cd916e8ae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5b15a3a943425a7443ad0986d8d91973d0090ed3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643010"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54669338"
 ---
-# <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-visual-basic"></a>Přidání prvky, atributy a uzly na strom XML (Visual Basic)
-Obsah (elementy, atributy, komentáře, pokyny pro zpracování, text a CDATA) můžete přidat na stávající strom XML.  
+# <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-visual-basic"></a>Přidání elementů, atributů a uzlů do stromu XML (Visual Basic)
+Obsah (elementy, atributy, komentáře, pokyny pro zpracování, text a CDATA) můžete přidat do existující stromu XML.  
   
 ## <a name="methods-for-adding-content"></a>Metody pro přidávání obsahu  
- Následující metody přidat podřízené obsah tak, aby <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>:  
+ Podřízený obsah k přidání následujících metod <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>:  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XContainer.Add%2A>|Přidá obsah na konci obsahu z podřízené <xref:System.Xml.Linq.XContainer>.|  
-|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|Přidá obsah na začátku podřízené obsah <xref:System.Xml.Linq.XContainer>.|  
+|<xref:System.Xml.Linq.XContainer.Add%2A>|Přidá obsah na konci podřízený obsah <xref:System.Xml.Linq.XContainer>.|  
+|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|Přidá obsah na začátku podřízený obsah <xref:System.Xml.Linq.XContainer>.|  
   
- Následující metody přidat jako uzly na stejné úrovni jako obsah <xref:System.Xml.Linq.XNode>. Nejběžnější uzel, do níž přidáváte obsah na stejné úrovni jako je <xref:System.Xml.Linq.XElement>, i když na stejné úrovni jako platný obsah na jiné typy uzlů můžete přidat například <xref:System.Xml.Linq.XText> nebo <xref:System.Xml.Linq.XComment>.  
+ Následující metody přidat jako uzly na stejné úrovni obsah <xref:System.Xml.Linq.XNode>. Nejběžnější uzel, do které přidáte na stejné úrovni obsah je <xref:System.Xml.Linq.XElement>, i když přidáte na stejné úrovni platný obsah na jiné typy uzlů, jako <xref:System.Xml.Linq.XText> nebo <xref:System.Xml.Linq.XComment>.  
   
 |Metoda|Popis|  
 |------------|-----------------|  
 |<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|Přidá obsah po <xref:System.Xml.Linq.XNode>.|  
-|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|Přidá obsahu před <xref:System.Xml.Linq.XNode>.|  
+|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|Přidá obsah před <xref:System.Xml.Linq.XNode>.|  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad vytvoří dvě stromy XML a pak upravením mezi stromy.  
+ Následující příklad vytvoří dvě stromů XML a pak jednu z stromy upraví.  
   
 ### <a name="code"></a>Kód  
   
@@ -80,5 +80,5 @@ Console.WriteLine(xmlTree)
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Úprava XML stromů (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Změna stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

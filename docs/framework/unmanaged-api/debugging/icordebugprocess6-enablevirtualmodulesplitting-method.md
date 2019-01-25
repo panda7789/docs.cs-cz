@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: e7733bd3-68da-47f9-82ef-477db5f2e32d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b4565deddee2e7714d937bf61574243cc07a4602
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8674fc7f079bd67ea95ac9d2a9891267b315098e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423469"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54694730"
 ---
 # <a name="icordebugprocess6enablevirtualmodulesplitting-method"></a>ICorDebugProcess6::EnableVirtualModuleSplitting – metoda
 Povolí nebo zakáže virtuální modulu rozdělení.  
@@ -24,87 +24,87 @@ HRESULT EnableVirtualModuleSplitting(
   
 #### <a name="parameters"></a>Parametry  
  `enableSplitting`  
- `true` Chcete-li povolit modul virtuální rozdělení; `false` ji zakázat.  
+ `true` Povolit virtuální modulu rozdělení; `false` ho zakážete.  
   
 ## <a name="remarks"></a>Poznámky  
- Virtuální modulu rozdělení příčiny [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) moduly, které byly během sestavení společně sloučit zpracovat a prezentovat jako skupina samostatné moduly spíše než jeden modul velké rozpoznat. Tato funkce změní chování různých [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) metod popsaných níže.  
+ Rozdělení způsobí, že virtuální modulu [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) rozpoznat moduly, které byly sloučeny během sestavení zpracovávat a prezentovat jako skupina samostatných modulů spíše než jeden modul velké. Tím se změní chování různých [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) metod popsaných níže.  
   
 > [!NOTE]
->  Tato metoda je k dispozici s .NET Native jenom.  
+>  Tato metoda je pouze k dispozici s .NET Native.  
   
- Tuto metodu lze volat a hodnotu `enableSplitting` lze kdykoli změnit. Nezpůsobí žádné stavové funkčních změn v [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) objekt, než změny chování metody uvedené v [virtuální modulu rozdělení a nespravované rozhraní API pro ladění](#APIs) oddíl v době, kdy jsou volány. Pomocí virtuální moduly způsobit snížení výkonu při volání těchto metod. Kromě toho významné do mezipaměti v paměti virtualizované metadat může být nutné správně implementovat [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) rozhraní API a tyto mezipaměti může být zachována i po rozdělení virtuální modul byl vypnut.  
+ Tuto metodu lze volat a hodnota `enableSplitting` můžete kdykoli změnit. Nezpůsobí žádné stavové funkční změny v [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) objektu, než se změna chování metody uvedené v [virtuální modulu rozdělení a nespravované ladění rozhraní API](#APIs) část v době, kdy jsou volány. Používání virtuální modulů mít za následek snížení výkonu při volání těchto metod. Kromě toho, ukládání v mezipaměti významné virtualizované metadat může být vyžadováno pro správnou implementaci [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) rozhraní API a mezipamětí nemusí být zachovány i po rozdělení virtuální modul byl vypnut.  
   
 ## <a name="terminology"></a>Terminologie  
- Při popisu rozdělení virtuální modul, se používají následující termíny:  
+ Při popisu rozdělení virtuální modulu se používají následující termíny:  
   
- kontejner moduly nebo kontejnerů  
+ kontejner moduly nebo kontejnery  
  Agregační moduly.  
   
- dílčí, nebo moduly virtuální  
- Moduly najít v kontejneru.  
+ dílčí moduly nebo virtuální moduly  
+ Moduly v kontejneru.  
   
- regulární moduly  
- Moduly, které nebyly sloučit v čase vytvoření buildu. Jsou moduly kontejner ani dílčí moduly.  
+ pravidelné moduly  
+ Moduly, které nebyly sloučeny v okamžiku sestavení. Jsou moduly kontejneru ani dílčích modulů.  
   
- Kontejner moduly a dílčí moduly jsou reprezentované pomocí objektů ICorDebugModule rozhraní. Chování rozhraní se však mírně liší v každém případě jako \<x-ref sekci > část popisuje.  
+ Kontejner moduly a dílčích modulů jsou reprezentované pomocí objektů icordebugmodule – rozhraní. Chování rozhraní je ale mírně liší v každém případě jako \<x odkaz na oddíl > část popisuje.  
   
 ## <a name="modules-and-assemblies"></a>Moduly a sestavení  
- Více modul sestavení nejsou podporovány pro sestavení slučování scénářů, takže není relace mezi modul a sestavení. Každý objekt ICorDebugModule, bez ohledu na to, jestli představuje modul kontejneru nebo dílčí modul, má odpovídající ICorDebugAssembly objektu. [Icordebugmodule::getassembly –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md) metoda převede z modulu sestavení. Pro mapování v jiných směru, [icordebugassembly::enumeratemodules –](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly-enumeratemodules-method.md) metoda zobrazí pouze 1 modulu. Protože sestavení a modul formuláři pár úzce párované v tomto případě podmínky sestavení a modul budou z velké části zaměnitelné.  
+ Vícemodulová sestavení nejsou podporována pro sestavení sloučení scénářů, takže vztah 1: 1 mezi modulu a sestavení. Každý objekt ICorDebugModule, bez ohledu na to, zda představuje kontejner modulu nebo dílčí modul, má odpovídající objekt ICorDebugAssembly. [Icordebugmodule::getassembly –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md) metoda převede z modulu na sestavení. K mapování v opačném směru, [icordebugassembly::enumeratemodules –](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly-enumeratemodules-method.md) metoda výčet pouze 1 modulu. Protože sestavení a modul formuláře v tomto případě dvojici těsně vázaných, podmínky sestavení a modul stát zaměnitelná.  
   
-## <a name="behavioral-differences"></a>Rozdíly v chování  
- Kontejner modulů se na následující chování a vlastnosti:  
+## <a name="behavioral-differences"></a>Behaviorální rozdíly  
+ Kontejner moduly mají následující charakteristiky a chování:  
   
--   Jejich metadata pro všechny základní dílčí moduly je sloučen společně.  
+-   Jejich metadata pro všechny základní dílčí moduly sloučení dohromady.  
   
--   Může být pozměněny jejich názvy typů.  
+-   Jejich názvy typů mohou pozměněny.  
   
--   [Icordebugmodule::getName –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md) metoda vrací cestu na modul na disku.  
+-   [Icordebugmodule::getName –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md) metoda vrátí cestu k modulu na disku.  
   
--   [Icordebugmodule::getsize –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) metoda vrátí velikost této bitové kopie.  
+-   [Icordebugmodule::getsize –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) metoda vrátí velikost tohoto obrázku.  
   
--   Metoda ICorDebugAssembly3.EnumerateContainedAssemblies seznam dílčí modulů.  
+-   Metoda ICorDebugAssembly3.EnumerateContainedAssemblies seznam dílčích modulů.  
   
 -   Vrátí metodu ICorDebugAssembly3.GetContainerAssembly `S_FALSE`.  
   
- Dílčí modulů se na následující chování a vlastnosti:  
+ Dílčí moduly mají následující charakteristiky a chování:  
   
--   Mají omezenou sadu metadata, která odpovídá pouze původní sestavení, které se sloučit.  
+-   Mají omezenou sadu metadata, která pouze odpovídá původní sestavení, která se slučuje.  
   
--   Názvy metadat nejsou pozměněny.  
+-   Metadata názvy nejsou pozměněny.  
   
--   Tokeny metadat je nepravděpodobné, že aby byla sloučit v procesu sestavení tokenů v původní sestavení.  
+-   Tokeny metadat by problém nahlásili shodovat s tokeny v původní sestavení předtím, než se nesloučila v procesu sestavení.  
   
 -   [Icordebugmodule::getName –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md) metoda vrátí název sestavení, ne cestu k souboru.  
   
--   [Icordebugmodule::getsize –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) metoda vrátí původní velikost obrázku nejsou sloučeny.  
+-   [Icordebugmodule::getsize –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) metoda vrátí původní velikost nesloučené bitové kopie.  
   
 -   Vrátí metodu ICorDebugModule3.EnumerateContainedAssemblies `S_FALSE`.  
   
--   Metoda ICorDebugAssembly3.GetContainerAssembly vrátí obsahující modulu.  
+-   Metoda ICorDebugAssembly3.GetContainerAssembly vrátí obsahující modul.  
   
 ## <a name="interfaces-retrieved-from-modules"></a>Rozhraní načíst z modulů  
- Celou řadu rozhraní můžou vytvořit nebo načíst z modulů. Mezi ty patří:  
+ Širokou škálu rozhraní můžou vytvořit nebo načíst z modulů. Některé z nich patří:  
   
--   ICorDebugClass objekt, který je vrácen rutinou [icordebugmodule::getclassfromtoken –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getclassfromtoken-method.md) metoda.  
+-   Icordebugclass – objekt, který je vrácený [icordebugmodule::getclassfromtoken –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getclassfromtoken-method.md) metody.  
   
--   ICorDebugAssembly objekt, který je vrácen rutinou [icordebugmodule::getassembly –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md) metoda.  
+-   Icordebugassembly – objekt, který je vrácený [icordebugmodule::getassembly –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md) metody.  
   
- Tyto objekty jsou vždy mezipaměti [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md), a budou mít stejnou identitu ukazatel bez ohledu na to, zda byly vytvořeny nebo získaných z dílčí modul nebo modul kontejneru. Dílčí modul poskytuje filtrované zobrazení tyto objekty uložené v mezipaměti není samostatné mezipaměti s vlastní kopie.  
+ Tyto objekty jsou vždy v mezipaměti [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md), a budou mít stejnou identitu ukazatele bez ohledu na to, zda byly vytvořeny nebo posílat dotaz z kontejnerů modulu nebo dílčí modul. Dílčí modul obsahuje filtrované zobrazení těchto objektů uložených v mezipaměti, samostatné mezipaměti s vlastní kopie.  
   
 <a name="APIs"></a>   
-## <a name="virtual-module-splitting-and-the-unmanaged-debugging-apis"></a>Rozdělení virtuální modulu a nespravované rozhraní API pro ladění  
- Následující tabulka uvádí virtuálních modulu rozdělení ovlivňuje chování jiné metody v nespravované rozhraní API pro ladění.  
+## <a name="virtual-module-splitting-and-the-unmanaged-debugging-apis"></a>Nespravované ladění rozhraní API a rozdělení virtuální modulu  
+ Následující tabulka uvádí virtuálních modulu rozdělení ovlivní chování jiné metody v rozhraní API pro nespravované ladění.  
   
 |Metoda|`enableSplitting` = `true`|`enableSplitting` = `false`|  
 |------------|---------------------------------|----------------------------------|  
-|[Icordebugfunction::getmodule –](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getmodule-method.md)|Vrátí dílčí modul, který tato funkce byla původně definována v|Vrátí modul kontejneru, který tato funkce se sloučí.|  
-|[Icordebugclass::getmodule –](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-getmodule-method.md)|Vrátí dílčí modul, který tato třída byla původně definována v.|Vrátí kontejner modul, který tato třída se sloučí.|  
-|ICorDebugModuleDebugEvent::GetModule|Vrátí kontejner modul, který byl načten. Dílčí moduly nejsou zadané události zatížení bez ohledu na toto nastavení.|Vrátí kontejner modul, který byl načten.|  
-|[Icordebugappdomain::enumerateassemblies –](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain-enumerateassemblies-method.md)|Vrátí seznam sestavení dílčí a regulární sestavení; žádné kontejneru sestavení jsou zahrnuty. **Poznámka:** Pokud žádné kontejneru sestavení chybí symboly, žádný z jeho dílčí sestavení bude možné provést výčet. Pokud žádné regulární sestavení chybí symboly, může nebo nemusí být ve výčtu.|Vrátí seznam sestavení kontejneru a regulární sestavení; žádné dílčí sestavení jsou zahrnuty. **Poznámka:** Pokud žádné regulární sestavení chybí symboly, může nebo nemusí být ve výčtu.|  
-|[Icordebugcode::getcode –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md) (k odkazování na kód IL pouze)|Vrátí IL, která by byla platná v bitové kopii před sloučení sestavení. Konkrétně tokenů metadat vložené správně bude odkaz TypeRef nebo MemberRef tokeny při typy odkazovaného nejsou definované v virtuální modul, který obsahuje IL. Tyto tokeny Odkaz TypeRef nebo MemberRef lze vyhledávat [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) objektu pro objekt odpovídající ICorDebugModule virtuální.|Vrátí IL v bitové kopii po sloučení sestavení.|  
+|[Icordebugfunction::getmodule –](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getmodule-method.md)|Vrátí dílčí modul, který tato funkce byla původně definována v|Vrátí kontejner modul, který tato funkce se nesloučila do|  
+|[ICorDebugClass::GetModule](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-getmodule-method.md)|Vrátí dílčí modul, který tato třída byla původně definována v.|Vrátí kontejner modul, který tato třída se nesloučila do.|  
+|ICorDebugModuleDebugEvent::GetModule|Vrátí kontejner modulu, který byl načten. Dílčí moduly nejsou uvedeny zatížení událostí bez ohledu na toto nastavení.|Vrátí kontejner modulu, který byl načten.|  
+|[ICorDebugAppDomain::EnumerateAssemblies](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain-enumerateassemblies-method.md)|Vrátí seznam hodnot dílčí sestavení a regulárního sestavení; žádná kontejneru sestavení nejsou zahrnuty. **Poznámka:**  Pokud žádné sestavení kontejneru chybí symboly, žádný z jeho dílčích sestavení se vytvořil výčet. Pokud žádné regulárního sestavení chybí symboly, může nebo nemusí být ve výčtu.|Vrátí seznam sestavení kontejneru a regulárního sestavení; žádná dílčí sestavení nejsou zahrnuty. **Poznámka:**  Pokud žádné regulárního sestavení chybí symboly, může nebo nemusí být ve výčtu.|  
+|[Icordebugcode::getcode –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md) (k odkazování na pouze kód IL)|Vrátí IL, která by byla platná v bitové kopii předběžného sloučení sestavení. Konkrétně všechny vložené tokeny metadat správně bude odkaz TypeRef nebo MemberRef tokeny při typů, který se odkazuje nejsou definované v modulu virtuální obsahující IL. Tyto tokeny TypeRef nebo MemberRef lze vyhledávat [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) objekt pro odpovídající virtuální ICorDebugModule objekt.|Vrátí image po sloučení sestavení IL.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -112,6 +112,6 @@ HRESULT EnableVirtualModuleSplitting(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugProcess6 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugProcess6 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

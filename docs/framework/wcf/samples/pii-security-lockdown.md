@@ -2,12 +2,12 @@
 title: Bezpečnostní uzamčení PII
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: 48b62ed5c27463b863ff585520a4b42fc4c83f88
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 3537f50c8695838b69d1920cfd953c8b1196d830
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195135"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54699776"
 ---
 # <a name="pii-security-lockdown"></a>Bezpečnostní uzamčení PII
 Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpečením pomocí služby Windows Communication Foundation (WCF):  
@@ -47,7 +47,7 @@ Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpe
   
 3.  Nastavení konfigurace appSettings ve složce Web.config šifrovat pomocí následujícího příkazu: `aspnet_regiis -pe "appSettings" -app "/servicemodelsamples" -prov "DataProtectionConfigurationProvider"`.  
   
- Další informace o šifrování oddíly konfiguračních souborů můžete zobrazit tak čtení postupy na rozhraní DPAPI v konfiguraci technologie ASP.NET ([vytváření bezpečných aplikací technologie ASP.NET: ověřování, autorizaci a zabezpečená komunikace](https://go.microsoft.com/fwlink/?LinkId=95137)) a postupy v RSA v konfiguraci technologie ASP.NET ([postupy: šifrování konfigurační oddíly funkce v ASP.NET 2.0 pomocí RSA](https://go.microsoft.com/fwlink/?LinkId=95138)).  
+ Další informace o šifrování oddíly konfiguračních souborů můžete zobrazit tak čtení postupy na rozhraní DPAPI v konfiguraci technologie ASP.NET ([vytváření bezpečných aplikací technologie ASP.NET: Ověřování, autorizaci a zabezpečená komunikace](https://go.microsoft.com/fwlink/?LinkId=95137)) a postupy v RSA v konfiguraci technologie ASP.NET ([How To: Zašifrovat konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí technologie RSA](https://go.microsoft.com/fwlink/?LinkId=95138)).  
   
 ## <a name="locking-configuration-file-elements"></a>Zamykání souborů elementy konfigurace  
  V hostované Web scénářích je možné mít služby v podadresářích služeb. V těchto situacích se počítají hodnoty konfigurace pro službu v podadresáři kontrolou hodnoty v souboru Machine.config a postupně se žádné soubory Web.config v nadřazené adresáře přesunutí dolů ve stromu adresáře a nakonec slučování sloučení Soubor Web.config v adresáře, který obsahuje službu. Výchozí chování pro většinu prvků konfigurace je umožnit konfiguračních souborů v podadresářích přepisují hodnoty nastavené v nadřazené adresáře. V některých situacích může být žádoucí konfiguračních souborů v podadresářích zabránit potlačení hodnot nastavených v konfiguraci nadřazené adresáře.  
@@ -124,9 +124,9 @@ Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpe
   
  Je také možné šifrovat konfigurační prvky souboru pomocí DPAPI a RSA. Další informace najdete v následujících tématech:  
   
--   [Vytváření aplikací ASP.NET zabezpečené: Ověřování, autorizaci a zabezpečenou komunikaci](https://go.microsoft.com/fwlink/?LinkId=95137)  
+-   [Vytváření aplikací ASP.NET zabezpečení: Ověřování, autorizaci a zabezpečenou komunikaci](https://go.microsoft.com/fwlink/?LinkId=95137)  
   
--   [Postupy: Šifrování konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí technologie RSA](https://go.microsoft.com/fwlink/?LinkId=95138)  
+-   [Postupy: Zašifrovat konfigurační oddíly funkce v technologii ASP.NET 2.0 pomocí technologie RSA](https://go.microsoft.com/fwlink/?LinkId=95138)  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
@@ -142,5 +142,5 @@ Tento příklad ukazuje, jak řídit několik funkcí souvisejících se zabezpe
   
 1.  Upravit soubor Machine.config nastavit `enableLoggingKnownPii` atribut `false`.  
   
-## <a name="see-also"></a>Viz také  
- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)
+## <a name="see-also"></a>Viz také:
+- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

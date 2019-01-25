@@ -5,12 +5,12 @@ helpviewer_keywords:
 - programming [Visual Basic], Visual Basic
 - programming
 ms.assetid: bc45a3de-ea36-46e6-a106-309a413d7804
-ms.openlocfilehash: 5ffe44545e60bb74563180a6a5c87c78526ab566
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 5c5f105a573cd783348a41dc3f4897f2e04ca5c1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45990021"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709864"
 ---
 # <a name="programming-in-visual-basic"></a>Programování v jazyce Visual Basic
 Tato část popisuje programovacích úloh, které můžete zobrazit další informace o vytváření aplikace Visual Basic.  
@@ -37,8 +37,8 @@ Tato část popisuje programovacích úloh, které můžete zobrazit další inf
  [Zpracování jednotek, adresářů a souborů](../../../visual-basic/developing-apps/programming/drives-directories-files/processing.md)  
  Obsahuje dokumentaci, jak získat přístup k systému souborů pomocí `My.Computer.FileSystem` objektu.  
   
-## <a name="see-also"></a>Viz také  
- [Funkce jazyka Visual Basic](../../../visual-basic/programming-guide/language-features/index.md)  
- [Koncepty programování](../../../visual-basic/programming-guide/concepts/index.md)  
- [Kolekce](../../../visual-basic/programming-guide/concepts/collections.md)  
- [Vývoj aplikací v jazyce Visual Basic](../../../visual-basic/developing-apps/index.md)
+## <a name="see-also"></a>Viz také:
+- [Funkce jazyka Visual Basic](../../../visual-basic/programming-guide/language-features/index.md)
+- [Koncepty programování](../../../visual-basic/programming-guide/concepts/index.md)
+- [Kolekce](../../../visual-basic/programming-guide/concepts/collections.md)
+- [Vývoj aplikací v jazyce Visual Basic](../../../visual-basic/developing-apps/index.md)

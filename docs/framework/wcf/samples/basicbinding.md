@@ -2,12 +2,12 @@
 title: BasicBinding
 ms.date: 03/30/2017
 ms.assetid: 86fbeb87-4d89-4b61-9577-867e0ac12945
-ms.openlocfilehash: c54c31bab1182bbd812992f3897e001cdae85f56
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 15fdf3efb953810a5f4b2f9fe544cb3bc7114c4e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44041366"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54696513"
 ---
 # <a name="basicbinding"></a>BasicBinding
 Tato ukázka demonstruje použití `basicHttpBinding` poskytující HTTP komunikace a maximální vzájemná funkční spolupráce s první – a second - generation webové služby.  
@@ -94,4 +94,4 @@ Press <ENTER> to terminate client.
   
 4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

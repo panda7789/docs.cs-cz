@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f1dd657c004c58480ea2f603ad4494753463c79b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 920c768523e422220862b04fa069fc8cbea8960a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33428442"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54677703"
 ---
 # <a name="isymunmanagedwriterdefineglobalvariable-method"></a>ISymUnmanagedWriter::DefineGlobalVariable – metoda
 Definuje jeden globální proměnné.  
@@ -43,36 +43,36 @@ HRESULT DefineGlobalVariable(
   
 #### <a name="parameters"></a>Parametry  
  `name`  
- [v] Ukazatel na `WCHAR` , který definuje název globální proměnné.  
+ [in] Ukazatel `WCHAR` , který definuje název globální proměnné.  
   
  `attributes`  
- [v] Globální proměnné atributy.  
+ [in] Globální proměnné atributy.  
   
  `cSig`  
- [v] A `ULONG32` určující velikost v znaků, z `signature` vyrovnávací paměti.  
+ [in] A `ULONG32` , který označuje velikost ve znacích, nástroje `signature` vyrovnávací paměti.  
   
  `signature`  
- [v] Globální proměnné podpis.  
+ [in] Globální proměnné podpis.  
   
  `addrKind`  
- [v] Typ adresy.  
+ [in] Typ adresy.  
   
  `addr1`  
- [v] První adresa pro specifikaci parametru.  
+ [in] První adresa pro specifikaci parametru.  
   
  `addr2`  
- [v] Druhý adresu pro specifikaci parametru.  
+ [in] Druhý adresa pro specifikaci parametru.  
   
  `addr3`  
- [v] Je třetí adresa pro specifikaci parametru.  
+ [in] Je třetí adresa pro specifikaci parametru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)  
- [DefineLocalVariable – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-definelocalvariable-method.md)  
- [DefineGlobalVariable2 – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-defineglobalvariable2-method.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [DefineLocalVariable – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-definelocalvariable-method.md)
+- [DefineGlobalVariable2 – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-defineglobalvariable2-method.md)

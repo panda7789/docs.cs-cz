@@ -8,15 +8,15 @@ helpviewer_keywords:
 ms.assetid: 50abd02d-6488-4815-999b-4fb89af4d568
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1eae19d592dcf5243139e11bb6662953436e45a8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b93dd3b1d08a939e03ccfa52f7fb2e97c97d7e96
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33408590"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54600086"
 ---
 # <a name="ialink-interface"></a>IALink – rozhraní
-Pomáhá při vytváření sestavení rozhraní .NET Framework. Kromě jiných věcí rozhraní obsahuje metody, které pomáhají při psaní manifesty sestavení pro více modul sestavení, podepisování sestavení se silnými názvy a vytváření netmodules.  
+Pomáhá při konstrukci sestavení rozhraní .NET Framework. Mimo jiné rozhraní obsahuje metody, které pomáhají při psaní manifesty sestavení pro sestavení s víc moduly, podepisování sestavení se silnými názvy a vytváření netmodules.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [AddFile – metoda1](../../../../docs/framework/unmanaged-api/alink/addfile-method.md)  
@@ -63,7 +63,7 @@ Pomáhá při vytváření sestavení rozhraní .NET Framework. Kromě jiných v
   
  [ImportTypes – metoda](../../../../docs/framework/unmanaged-api/alink/importtypes-method.md)  
   
- "Metoda Init"  
+ "Metody Init"  
   
  [LinkResource – metoda](../../../../docs/framework/unmanaged-api/alink/linkresource-method.md)  
   
@@ -75,7 +75,7 @@ Pomáhá při vytváření sestavení rozhraní .NET Framework. Kromě jiných v
   
  [SetNonAssemblyFlags – metoda](../../../../docs/framework/unmanaged-api/alink/setnonassemblyflags-method.md)  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)

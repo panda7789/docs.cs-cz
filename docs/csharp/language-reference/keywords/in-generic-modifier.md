@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - contravariance, in keyword [C#]
 - in keyword [C#]
-ms.openlocfilehash: d43640cbde856ac1df8b5034f904da75de6b077c
-ms.sourcegitcommit: 8598d446303b545eed2d520a6ccd061c1a7d00cb
+ms.openlocfilehash: f736540a37d3226bccfc07749dcf06ca018663e8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53334779"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54694566"
 ---
 # <a name="in-generic-modifier-c-reference"></a>in (generický modifikátor) (Referenční dokumentace jazyka C#)
 
@@ -44,6 +44,6 @@ Následující příklad ukazuje, jak deklarovat, vytváření instancí a vyvol
 
 ## <a name="see-also"></a>Viz také:
 
-- [out](out-generic-modifier.md)  
-- [Kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md)  
-- [Modifikátory](modifiers.md)  
+- [out](out-generic-modifier.md)
+- [Kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md)
+- [Modifikátory](modifiers.md)

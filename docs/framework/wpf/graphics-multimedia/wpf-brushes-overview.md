@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - brushes [WPF], about brushes
 ms.assetid: ecea1955-420b-45c6-bf43-c1404c072c41
-ms.openlocfilehash: 47a795fa63c4d143689804cd5b3d36ac34d141be
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 967d0e67ed0ce106de291e1e47b7d72e06560342
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43521682"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54655956"
 ---
 # <a name="wpf-brushes-overview"></a>Přehled štětců WPF
 Všechno, co viditelný na obrazovce je viditelné, protože byl kresleno štětce. Například štětce slouží k popisu tlačítka, text popředí a vyplnění obrazce na pozadí. Toto téma představuje koncepty Malování [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] stopy a příklady. Štětce umožňují vykreslení [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] objekty se vše od jednoduchých, plné barvy pro komplexní sady vzorce a Image.  
@@ -160,14 +160,14 @@ Obdélník překreslit pomocí VisualBrush
   
  Další informace o důvod, proč <xref:System.Windows.Media.VisualBrush> objekty nelze zmrazené, najdete v článku <xref:System.Windows.Media.VisualBrush> typ stránky.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Brush>  
- <xref:System.Windows.Media.Brushes>  
- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
- [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973)  
- [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)  
- [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)  
- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/brushes-how-to-topics.md)  
- [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Brush>
+- <xref:System.Windows.Media.Brushes>
+- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)
+- [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973)
+- [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)
+- [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)
+- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/brushes-how-to-topics.md)
+- [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)

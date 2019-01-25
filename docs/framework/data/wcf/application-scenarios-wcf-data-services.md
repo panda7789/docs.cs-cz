@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, learn more
 - WCF Data Services, scenarios
 ms.assetid: 7c82658f-e7c0-46b6-834d-6592f67ab5ea
-ms.openlocfilehash: 5446ab5fe65bd6e2b5244e135c0723f3cb28e81a
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 2efa46abf5a1fcedee4a4055331f7a59963be794
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43803327"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709153"
 ---
 # <a name="application-scenarios-wcf-data-services"></a>Scénáře aplikací (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje základní sadu scénáře pro vystavení a použití dat jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanály. Toto téma odkazuje na témata, které jsou relevantní pro tyto scénáře.  
@@ -20,7 +20,7 @@ ms.locfileid: "43803327"
   
 -   [Vystavení dat jako služby](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)  
   
--   [Postupy: Vytvoření datové služby pomocí zdroje dat ADO.NET Entity Framework](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md)  
+-   [Postupy: Vytvoření datové služby pomocí zdroje dat rozhraní ADO.NET Entity Framework](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md)  
   
  Zveřejnit libovolné datových tříd CLR jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu.  
  -   [Vystavení dat jako služby](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)  
@@ -41,14 +41,14 @@ ms.locfileid: "43803327"
   
 -   [Asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
   
--   [Postupy: vytvoření vazby dat služby dat k ovládacím prvkům (WCF Data Services/Silverlight)](https://msdn.microsoft.com/library/bda7d82e-7b1f-4690-8a33-c6297465bdd5)  
+-   [Postupy: Vytvoření vazby dat služby dat k ovládacím prvkům (WCF Data Services/Silverlight)](https://msdn.microsoft.com/library/bda7d82e-7b1f-4690-8a33-c6297465bdd5)  
   
  Využívání [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu v aplikaci klienta na základě AJAX.  
  -   [Použití datové služby v klientské aplikaci](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
   
--   [Prostředí OData: Konvence identifikátor URI](https://go.microsoft.com/fwlink/?LinkId=185564)  
+-   [OData: Identifikátor URI konvence](https://go.microsoft.com/fwlink/?LinkId=185564)  
   
--   [OData: Formátu JavaScript Object Notation (JSON)](https://go.microsoft.com/fwlink/?LinkId=185790)  
+-   [OData: Formát JavaScript Object Notation (JSON)](https://go.microsoft.com/fwlink/?LinkId=185790)  
   
  Tvorba řešení data začátku do konce, který používá [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] k přenosu dat mezi klientem a serverem.  
  -   [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)  
@@ -58,7 +58,7 @@ ms.locfileid: "43803327"
 -   [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
   
  Vytvoření aplikace klienta na základě rozhraní .NET Framework, která využívá [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanál asynchronně, aby se zabránilo problémům latence na straně klienta.  
- -   [Postupy: Provádění asynchronních dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-asynchronous-data-service-queries-wcf-data-services.md)  
+ -   [Postupy: Provádění dotazů v asynchronní datové služby](../../../../docs/framework/data/wcf/how-to-execute-asynchronous-data-service-queries-wcf-data-services.md)  
   
 -   [Asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
   
@@ -86,6 +86,6 @@ ms.locfileid: "43803327"
   
 -   [Operace služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md)  
   
-## <a name="see-also"></a>Viz také  
- [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)  
- [Prostředky](../../../../docs/framework/data/wcf/wcf-data-services-resources.md)
+## <a name="see-also"></a>Viz také:
+- [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
+- [Prostředky](../../../../docs/framework/data/wcf/wcf-data-services-resources.md)

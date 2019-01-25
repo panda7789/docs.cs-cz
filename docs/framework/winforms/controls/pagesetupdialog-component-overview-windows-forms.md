@@ -7,21 +7,21 @@ helpviewer_keywords:
 - Page Setup dialog box [Windows Forms], displaying
 - PageSetupDialog component
 ms.assetid: 791caacb-a5ca-4fca-bad9-1a5721ad697c
-ms.openlocfilehash: 4e7b4548f5a178ed7b819dbc2edc37bb95e3e0f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3f864bb986401a5d1498f2c5c8dbb8484dfaad39
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33534222"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54674048"
 ---
 # <a name="pagesetupdialog-component-overview-windows-forms"></a>PageSetupDialog – přehled komponenty (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.PageSetupDialog> součást je předem nakonfigurovaný dialogové okno, použije se k nastavení stránky podrobnosti pro tisk v aplikacích založených na systému Windows. Použijte je v rámci aplikace systému Windows jako jednoduchým řešením pro uživatele k nastavení předvoleb stránky místo dialogové okno Vlastní konfigurace. Můžete povolit uživatelům nastavit okraj a okraj úpravy, záhlaví a zápatí stránky a výšku nebo na šířku. Podle standardní dialogová okna Windows, můžete vytvořit aplikace, jehož základní funkce je dobře obeznámeni uživatele.  
+Windows Forms <xref:System.Windows.Forms.PageSetupDialog> komponenta je předem nakonfigurované dialogové okno používá k nastavení stránky podrobností pro tisk v aplikacích založených na Windows. Použití v rámci aplikace založené na Windows jako jednoduché řešení pro uživatele nastavit předvolby stránky namísto dialogové okno Vlastní konfigurace. Můžete povolit uživatelům nastavit okraj a okraj úpravy, záhlaví a zápatí a orientaci na výšku nebo na šířku. Pomocí standardní dialogová okna Windows, můžete vytvořit aplikace, jejichž základní funkce je okamžitě uživatelé znají.  
   
 ## <a name="key-properties-and-methods"></a>Klíčové vlastnosti a metody  
- Použití <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metodu pro zobrazení dialogu za běhu. Tato součást obsahuje vlastnosti lze nastavit, které se vztahují k buď na jedné stránce (<xref:System.Drawing.Printing.PrintDocument> třída) nebo dokumentu (<xref:System.Drawing.Printing.PageSettings> třídy). Kromě toho <xref:System.Windows.Forms.PageSetupDialog> součást lze použít k určení konkrétní nastavení tiskárny, které jsou uloženy v <xref:System.Drawing.Printing.PrinterSettings> třídy.  
+ Použití <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metodu pro zobrazení dialogového okna v době běhu. Tato součást oznámila vlastnosti můžete nastavit, které se týkají buď jednu stránku (<xref:System.Drawing.Printing.PrintDocument> třídy) nebo jakýkoliv dokument (<xref:System.Drawing.Printing.PageSettings> třídy). Kromě toho <xref:System.Windows.Forms.PageSetupDialog> součást je možné určit konkrétní nastavení tiskárny, které jsou uloženy v <xref:System.Drawing.Printing.PrinterSettings> třídy.  
   
- Při jejím přidání do formuláře <xref:System.Windows.Forms.PageSetupDialog> součást se zobrazí na hlavním panelu v dolní části Návrhář formulářů Windows.  
+ Když se přidá do formuláře, <xref:System.Windows.Forms.PageSetupDialog> součást se zobrazí v hlavním panelu v dolní části Návrháře formulářů Windows.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.PageSetupDialog>  
- [Komponenta PageSetupDialog](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.PageSetupDialog>
+- [Komponenta PageSetupDialog](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)

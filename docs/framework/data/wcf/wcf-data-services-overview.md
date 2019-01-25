@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services
 - WCF Data Services, about
 ms.assetid: 7924cf94-c9a6-4015-afc9-f5d22b1743bb
-ms.openlocfilehash: 0cbb3b3906ad83349f02cf6a345f2e3d5336a2e6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 3d5e02d092489e01975037c811fedb2727e2041f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43523134"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54566655"
 ---
 # <a name="wcf-data-services-overview"></a>Přehled služby WCF Data Services
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje vytváření a spotřebě datových služeb webu nebo intranetu pomocí [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] umožňuje zpřístupnění vašich dat ve formě prostředky, které jsou adresovat pomocí identifikátorů URI. Umožňuje získat přístup k a data změny pomocí sémantiky representational state Transfer (REST), konkrétně standardní příkazy HTTP z GET, PUT, POST a odstranění. Toto téma obsahuje přehled vzory a postupy určené [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] a také zařízení poskytovaných [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] výhod [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] v aplikacích založených na rozhraní .NET Framework.  
@@ -25,7 +25,7 @@ ms.locfileid: "43523134"
 ## <a name="interoperable-data-access"></a>Interoperabilní Data Access  
  [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] navazuje na standardních protokolů sítě Internet, aby vzájemná spolupráce s aplikací, které nepoužívají rozhraní .NET Framework datové služby. Vzhledem k tomu můžete použít standardní identifikátory URI adresu dat, vaše aplikace získá přístup k a data změny pomocí sémantiky representational state Transfer (REST), konkrétně standardní příkazy HTTP z GET, PUT, POST a odstranění. Umožňuje získat přístup k těmto službám z jakéhokoli klienta, který můžete analyzovat a přístup k datům, která se přenášejí pomocí standardních protokolů HTTP.  
   
- [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] definuje sadu rozšíření protokolu publikování Atom (AtomPub). Požadavky a odpovědi HTTP podporuje ve více než jeden formát dat tak, aby vyhovovaly různé klientské aplikace a platformy. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Informačního kanálu může představovat data v Atom, zápis JSON (JavaScript Object) a jako prostého jazyka XML. Přestože je výchozí formát Atom, formát informačního kanálu je určen v záhlaví požadavku HTTP. Další informace najdete v tématu [OData: formát Atom](https://go.microsoft.com/fwlink/?LinkID=185794) a [OData: formát JSON](https://go.microsoft.com/fwlink/?LinkID=185795).  
+ [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] definuje sadu rozšíření protokolu publikování Atom (AtomPub). Požadavky a odpovědi HTTP podporuje ve více než jeden formát dat tak, aby vyhovovaly různé klientské aplikace a platformy. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Informačního kanálu může představovat data v Atom, zápis JSON (JavaScript Object) a jako prostého jazyka XML. Přestože je výchozí formát Atom, formát informačního kanálu je určen v záhlaví požadavku HTTP. Další informace najdete v tématu [OData: Formát Atom](https://go.microsoft.com/fwlink/?LinkID=185794) a [OData: Formát JSON](https://go.microsoft.com/fwlink/?LinkID=185795).  
   
  Při publikování dat jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] závisí na dalších stávajících zařízení Internetu pro tyto operace jako ukládání do mezipaměti a ověřování. K tomu [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] integruje do stávající hostování aplikací a služeb, jako je ASP.NET, Windows Communication Foundation (WCF) a Internetové informační služby (IIS).  
   
@@ -55,10 +55,10 @@ ms.locfileid: "43523134"
   
  ![Diagram architektury služeb WCF Data Services](../../../../docs/framework/data/wcf/media/astoriaservicearch.gif "AstoriaServiceArch")  
   
-## <a name="see-also"></a>Viz také  
- [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md)  
- [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)  
- [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
- [Přístup k datové služby (WCF Data Services)](https://msdn.microsoft.com/library/1e54a2b9-2ec6-4002-b8f8-c1d8df37c350)  
- [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
- [Representational State Transfer (REST)](https://go.microsoft.com/fwlink/?LinkId=113919)
+## <a name="see-also"></a>Viz také:
+- [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md)
+- [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
+- [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
+- [Přístup k datové služby (WCF Data Services)](https://msdn.microsoft.com/library/1e54a2b9-2ec6-4002-b8f8-c1d8df37c350)
+- [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+- [Representational State Transfer (REST)](https://go.microsoft.com/fwlink/?LinkId=113919)

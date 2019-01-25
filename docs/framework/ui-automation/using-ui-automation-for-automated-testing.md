@@ -8,16 +8,16 @@ helpviewer_keywords:
 ms.assetid: 3a0435c0-a791-4ad7-ba92-a4c1d1231fde
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 4a43b33c1faf123ce05be70db102bc9b2ac541f3
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 023c85591ba484e0b8f97a8ef71a4f65a2f05ffb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47200838"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54691785"
 ---
 # <a name="using-ui-automation-for-automated-testing"></a>Použití automatizace uživatelského rozhraní pro automatizované testování
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Tento přehled popisuje jak [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] může být užitečné jako rozhraní pro programový přístup v automatizované testování scénářů.  
   
@@ -97,7 +97,7 @@ ms.locfileid: "47200838"
 |Přidejte odkazy na automatizaci uživatelského rozhraní.|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Knihovny dll je nezbytné pro klienty automatizace uživatelského rozhraní jsou zde uvedeny.<br /><br /> -UIAutomationClient.dll poskytuje přístup k [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] rozhraní API na straně klienta.<br />-UIAutomationClientSideProvider.dll poskytuje možnost automatizovat [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] ovládacích prvků. Zobrazit [podpora automatizace uživatelského rozhraní pro standardní ovládací prvky](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md).<br />-UIAutomationTypes.dll poskytuje přístup ke konkrétní typy definované v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
 |Přidat <xref:System.Windows.Automation> oboru názvů.|Tento obor názvů obsahuje všechno, co klienti automatizace uživatelského rozhraní se musí využívat možnosti [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s výjimkou zpracování textu.|  
 |Přidat <xref:System.Windows.Automation.Text> oboru názvů.|Tento obor názvů obsahuje všechno, co třeba klienti automatizace uživatelského rozhraní pro využití funkcí aplikace [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] zpracování textu.|  
-|Najít ovládací prvky, které vás zajímají|Automatizované testovací skripty vyhledejte pohyb mezi elementy automatizace uživatelského rozhraní, které představují ovládací prvky, které vás zajímají v rámci stromu automatizace.<br /><br /> Získání elementů automatizace uživatelského rozhraní s kódem několika způsoby.<br /><br /> -Dotazování [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] pomocí <xref:System.Windows.Automation.Condition> příkazu. To je obvykle kde neutrální jazyk <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> se používá. **Poznámka:** <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> lze zjistit pomocí nástroje, jako je Inspect.exe, aby bylo možné vytvořit seznam [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastností ovládacího prvku. <br /><br /> – Použijte <xref:System.Windows.Automation.TreeWalker> třídy k procházení celého [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu nebo její podmnožinu.<br />-Sledovat fokus.<br />– Použijte hWnd ovládacího prvku.<br />– Použijte umístění na obrazovce, jako je například umístění kurzoru myši.<br /><br /> Zobrazit [získání elementů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/obtaining-ui-automation-elements.md)|  
+|Najít ovládací prvky, které vás zajímají|Automatizované testovací skripty vyhledejte pohyb mezi elementy automatizace uživatelského rozhraní, které představují ovládací prvky, které vás zajímají v rámci stromu automatizace.<br /><br /> Získání elementů automatizace uživatelského rozhraní s kódem několika způsoby.<br /><br /> -Dotazování [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] pomocí <xref:System.Windows.Automation.Condition> příkazu. To je obvykle kde neutrální jazyk <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> se používá. **Poznámka:**  <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> Lze zjistit pomocí nástroje, jako je Inspect.exe, aby bylo možné vytvořit seznam [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastností ovládacího prvku. <br /><br /> – Použijte <xref:System.Windows.Automation.TreeWalker> třídy k procházení celého [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu nebo její podmnožinu.<br />-Sledovat fokus.<br />– Použijte hWnd ovládacího prvku.<br />– Použijte umístění na obrazovce, jako je například umístění kurzoru myši.<br /><br /> Zobrazit [získání elementů automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/obtaining-ui-automation-elements.md)|  
 |Získat vzorů ovládacích prvků|Vzory ovládacích prvků vystavit společné chování pro funkce podobné ovládací prvky.<br /><br /> Po nalezení ovládací prvky, které vyžadují testování, automatizované testovací skripty získat vzorů ovládacích prvků, které vás zajímají z těchto elementů automatizace uživatelského rozhraní. Například <xref:System.Windows.Automation.InvokePattern> – vzor ovládacích prvků pro tlačítka typické funkce nebo <xref:System.Windows.Automation.WindowPattern> – vzor ovládacích prvků pro okno funkce.<br /><br /> Zobrazit [přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).|  
 |Automatizace uživatelského rozhraní|Automatizované skripty můžete ovládat některé [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] z oblastí zájmu, od [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] framework pomocí informace a funkce [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] řídit vzory.|  
   
@@ -113,5 +113,5 @@ ms.locfileid: "47200838"
 ## <a name="security"></a>Zabezpečení  
  Informace o zabezpečení, najdete v části [Přehled zabezpečení automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-security-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- [Principy automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/index.md)
+## <a name="see-also"></a>Viz také:
+- [Principy automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/index.md)

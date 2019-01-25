@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 29267d032f5e38e352592edc50dbded68aaa9f61
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8f4e25cfabbf18a9f0733d245259d9bb8f9c7757
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33435939"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54715541"
 ---
 # <a name="iclrtaskreset-method"></a>ICLRTask::Reset – metoda
-Modul CLR (CLR) informuje, že byla dokončena úloha hostitele a umožňuje CLR znovu použít aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance představují jiná úloha.  
+Informuje o tom common language runtime (CLR), že byla dokončena úloha hostitele a umožňuje modulu CLR pro opětovné použití aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance k reprezentování jiného úkolu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,49 +37,49 @@ HRESULT Reset (
   
 #### <a name="parameters"></a>Parametry  
  `fFull`  
- [v] `true`, pokud by se modul runtime obnovit všechny statické hodnoty související s vlákno plody kromě a informace o zabezpečení a národního prostředí aktuálního `ICLRTask` instanci, jinak hodnota `false`.  
+ [in] `true`, pokud modul runtime by měl obnovit všechny statické hodnoty související vlákna plody kromě a informace o zabezpečení a národní prostředí aktuálního `ICLRTask` instance; v opačném případě `false`.  
   
- Pokud je hodnota `true`, modul runtime obnoví data, která byla uložená pomocí <xref:System.Threading.Thread.AllocateDataSlot%2A> nebo <xref:System.Threading.Thread.AllocateNamedDataSlot%2A>.  
+ Pokud je hodnota `true`, modul runtime obnoví data, která byla uložena pomocí <xref:System.Threading.Thread.AllocateDataSlot%2A> nebo <xref:System.Threading.Thread.AllocateNamedDataSlot%2A>.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Reset` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže spustit spravovaného kódu nebo zpracovat volání. úspěšně|  
+|S_OK|`Reset` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nemůže spouštět spravovaný kód a zpracovat volání. úspěšně|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR provést recyklaci vytvořili `ICLRTask` instancí, aby se zabránilo režii opakovaně vytváření nových instancí pokaždé, když potřebuje novou úlohu. Hostitele povolí tuto funkci voláním `ICLRTask::Reset` místo [iclrtask::exittask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-exittask-method.md) po jeho dokončení úlohy. Následující seznam shrnuje normální životní cyklus `ICLRTask` instance:  
+ Modul CLR recykluje dříve vytvořili `ICLRTask` instancí, aby režijní náklady na opakované vytváření nové instance pokaždé, když potřebuje novou úlohu. Hostitele povolí tuto funkci voláním `ICLRTask::Reset` místo [iclrtask::exittask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-exittask-method.md) po jeho dokončení úkolu. Následující seznam shrnuje běžné životní cyklus `ICLRTask` instance:  
   
 1.  Vytvoří nový modul runtime `ICLRTask` instance.  
   
-2.  Volání modulu runtime [ihosttaskmanager::getcurrenttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-getcurrenttask-method.md) získat odkaz na aktuální úlohy hostitele.  
+2.  Modul runtime zavolá [ihosttaskmanager::getcurrenttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-getcurrenttask-method.md) získat odkaz na aktuální úlohu na hostiteli.  
   
-3.  Volání modulu runtime [ihosttask::setclrtask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setclrtask-method.md) přidružit nové instance hostitele úloh.  
+3.  Modul runtime zavolá [ihosttask::setclrtask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setclrtask-method.md) přidružit nové instance hostitele úloh.  
   
-4.  Úloha se spustí a dokončení.  
+4.  Úloha spustí a dokončí.  
   
-5.  Hostitel zničí úlohy voláním `ICLRTask::ExitTask`.  
+5.  Hostitele odstraní úlohu voláním `ICLRTask::ExitTask`.  
   
- `Reset` mění tento scénář dvěma způsoby. V kroku 5 výše, volání hostitele `Reset` resetovat úlohu do čistého stavu a potom odpojí `ICLRTask` instance z jeho přidružených [ihosttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance. V případě potřeby můžete také mezipaměti hostitele `IHostTask` instance pro opakované použití. V kroku 1 výše, modul runtime vrátí recykluje `ICLRTask` z mezipaměti místo vytvoření nové instance.  
+ `Reset` upravuje tento scénář dvěma způsoby. V kroku 5 výše volání hostitele `Reset` resetovat úlohy do čistého stavu a potom odpojí `ICLRTask` instanci z jeho přidruženého [ihosttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance. V případě potřeby hostitele lze také ukládat do mezipaměti `IHostTask` instance pro opakované použití. V kroku 1 výše, modul runtime si vyžádá recyklovat `ICLRTask` z mezipaměti místo vytvoření nové instance.  
   
- Tento postup funguje dobře, pokud hostitel má také fond znovu použitelné pracovní úkoly. Když hostitel zničí jeden z jeho `IHostTask` instancí ho zničí odpovídající `ICLRTask` voláním `ExitTask`.  
+ Tento přístup funguje dobře, když se hostitel má také fondu úkolů opakovaně použitelného pracovního procesu. Když hostitel odstraní jeden z jeho `IHostTask` instancí, zlikvidují odpovídající `ICLRTask` voláním `ExitTask`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  
- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  
- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
+- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
+- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
+- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)

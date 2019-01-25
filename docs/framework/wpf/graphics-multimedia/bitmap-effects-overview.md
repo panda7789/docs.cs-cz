@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bitmap effects [WPF]
 ms.assetid: 23cb338e-4b59-4b52-b294-96431f9c9568
-ms.openlocfilehash: 97b878621d5aa1860cd955755d9bbc344b95b993
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: c0c5019eb122f30ad25fa86164b4ead6db8c83c2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261258"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54715813"
 ---
 # <a name="bitmap-effects-overview"></a>Přehled efektů bitmap
 Bitmapové efekty povolit návrháři a vývojáři použít vizuální efekty k vykreslení obsahu Windows Presentation Foundation (WPF). Například bitmapových efektů umožňují snadno použít <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> vliv nebo rozostření mohou mít vliv na bitovou kopii nebo tlačítko.  
@@ -60,12 +60,12 @@ Bitmapové efekty povolit návrháři a vývojáři použít vizuální efekty k
 ## <a name="creating-custom-effects"></a>Vytvoření vlastních efektů  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] také poskytuje nespravovaná rozhraní k vytvoření vlastních efektů, které lze použít ve spravované [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací. Další referenční materiál pro vytvoření vlastní bitmapových efektů, naleznete v tématu [nespravované WPF rastrový efekt](https://docs.microsoft.com/previous-versions/windows/desktop/wibe/-wibe-lh) dokumentaci.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Effects.BitmapEffectGroup>  
- <xref:System.Windows.Media.Effects.BitmapEffectInput>  
- <xref:System.Windows.Media.Effects.BitmapEffectCollection>  
- [Bitmapový efekt nespravované WPF](https://docs.microsoft.com/previous-versions/windows/desktop/wibe/-wibe-lh)  
- [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
- [Zabezpečení](../../../../docs/framework/wpf/security-wpf.md)  
- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Effects.BitmapEffectGroup>
+- <xref:System.Windows.Media.Effects.BitmapEffectInput>
+- <xref:System.Windows.Media.Effects.BitmapEffectCollection>
+- [Bitmapový efekt nespravované WPF](https://docs.microsoft.com/previous-versions/windows/desktop/wibe/-wibe-lh)
+- [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
+- [Zabezpečení](../../../../docs/framework/wpf/security-wpf.md)
+- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)

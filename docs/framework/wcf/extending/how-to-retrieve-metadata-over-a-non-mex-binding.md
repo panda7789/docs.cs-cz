@@ -2,19 +2,19 @@
 title: 'Postupy: Načítání metadat přes vazbu jiného typu než MEX'
 ms.date: 03/30/2017
 ms.assetid: 2292e124-81b2-4317-b881-ce9c1ec66ecb
-ms.openlocfilehash: 198c343aa6f25d55e518990dc1dbd2667a8c17ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ac0a7d979e6b86933c4acd88b1a2fa11ba5bc991
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33488085"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689548"
 ---
 # <a name="how-to-retrieve-metadata-over-a-non-mex-binding"></a>Postupy: Načítání metadat přes vazbu jiného typu než MEX
-Toto téma popisuje, jak načíst metadata z koncového bodu MEX přes jiný MEX vazby. Kód v této ukázce je založen na [koncový bod metadat zabezpečení vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) ukázka.  
+Toto téma popisuje, jak načíst metadata z koncového bodu MEX nad bez MEX vazby. Kód v této ukázce je založený na [koncový bod metadat zabezpečení vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) vzorku.  
   
-### <a name="to-retrieve-metadata-over-a-non-mex-binding"></a>Pro načtení metadat přes vazbu bez MEX  
+### <a name="to-retrieve-metadata-over-a-non-mex-binding"></a>Načítání metadat přes vazbu než MEX  
   
-1.  Určení vazba použitá v MEX koncovém bodě. Pro služby Windows Communication Foundation (WCF) můžete určit vazby MEX pomocí přístupu k souboru konfigurace služby. V takovém případě MEX vazba je definována v následující konfiguraci služby.  
+1.  Určení vazby používá koncový bod MEX. Pro služby Windows Communication Foundation (WCF) můžete určit vazby MEX díky přístupu do konfiguračního souboru služby. V takovém případě vazby MEX je definován v následující konfiguraci služby.  
   
     ```xml  
     <services>  
@@ -48,7 +48,7 @@ Toto téma popisuje, jak načíst metadata z koncového bodu MEX přes jiný MEX
      </bindings>  
     ```  
   
-2.  V konfiguračním souboru klienta nakonfigurujte stejné vlastní vazby. Zde také definuje klienta `clientCredentials` chování poskytnutí certifikátu sloužící k ověření služby při požaduje metadata z koncového bodu MEX. Při použití Svcutil.exe k vyžádání metadat prostřednictvím vlastní vazby, měli byste přidat konfiguraci koncového bodu MEX do konfiguračního souboru pro Svcutil.exe (Svcutil.exe.config) a název konfigurace koncového bodu musí odpovídat schéma identifikátoru URI adresy MEX koncového bodu, jak je znázorněno v následujícím kódu.  
+2.  V konfiguračním souboru klienta nakonfigurujte stejné vlastní vazby. Zde také definuje klienta `clientCredentials` chování, jak poskytnout certifikát má použít k ověření ve službě, pokud se požaduje metadata z koncového bodu MEX. Při použití Svcutil.exe k vyžádání metadat prostřednictvím vlastní vazby, měli byste přidat konfigurace koncového bodu MEX do konfiguračního souboru pro Svcutil.exe (Svcutil.exe.config) a název konfigurace koncového bodu by měl odpovídat schéma identifikátoru URI adresy MEX koncový bod, jak je znázorněno v následujícím kódu.  
   
     ```xml  
     <system.serviceModel>  
@@ -83,7 +83,7 @@ Toto téma popisuje, jak načíst metadata z koncového bodu MEX přes jiný MEX
     </system.serviceModel>  
     ```  
   
-3.  Vytvoření `MetadataExchangeClient` a volání `GetMetadata`. Existují dva způsoby, jak to udělat: můžete zadat vlastní vazby v konfiguraci, nebo můžete zadat vlastní vazby v kódu, jak je znázorněno v následujícím příkladu.  
+3.  Vytvoření `MetadataExchangeClient` a volat `GetMetadata`. Chcete-li to provést dvěma způsoby: můžete zadat vlastní vazby v konfiguraci, nebo můžete zadat vlastní vazby v kódu, jak je znázorněno v následujícím příkladu.  
   
     ```  
     // The custom binding is specified in configuration.  
@@ -114,14 +114,14 @@ Toto téma popisuje, jak načíst metadata z koncového bodu MEX přes jiný MEX
     MetadataSet mexSet2 = mexClient2.GetMetadata(mexAddress);  
     ```  
   
-4.  Vytvoření `WsdlImporter` a volání `ImportAllEndpoints`, jak je znázorněno v následujícím kódu.  
+4.  Vytvoření `WsdlImporter` a volat `ImportAllEndpoints`, jak je znázorněno v následujícím kódu.  
   
     ```  
     WsdlImporter importer = new WsdlImporter(mexSet);  
     ServiceEndpointCollection endpoints = importer.ImportAllEndpoints();  
     ```  
   
-5.  V tuto chvíli máte kolekci koncové body služby. Další informace o importu metadat najdete v tématu [postupy: Import metadat do koncových bodů služby](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md).  
+5.  V tomto okamžiku máte kolekce koncových bodů služby. Další informace o importu metadat najdete v tématu [jak: Import metadat do koncových bodů služby](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md).  
   
-## <a name="see-also"></a>Viz také  
- [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)
+## <a name="see-also"></a>Viz také:
+- [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)

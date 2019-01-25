@@ -2,12 +2,12 @@
 title: Iterovat kolekcí v jazyce C#
 ms.date: 08/14/2018
 ms.assetid: c93f6dd4-e72a-4a06-be1c-a98b3255b734
-ms.openlocfilehash: 2b358e8272820bf6fb5bcb45763bae980b91962f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 386f4145c38e3a573ec04d2a0b8e260bcdc63491
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50191191"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720795"
 ---
 # <a name="iterators-c"></a>Iterátory (C#)
 
@@ -354,7 +354,7 @@ Iterátory umožňují udržovat jednoduchost `foreach` smyčky, když budete ch
 
 - Zapouzdření vytváření seznamu v iterátoru. V metodě iterátoru můžete vytvořit seznam a potom yield každého výsledku ve smyčce.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Collections.Generic>
 - <xref:System.Collections.Generic.IEnumerable%601>

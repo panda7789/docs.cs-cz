@@ -10,18 +10,18 @@ helpviewer_keywords:
 - ListView controls [WPF], sorting GridView columns
 - GridView controls [WPF], ListView control
 ms.assetid: 4865d720-d147-40ed-83a7-af7587f8aad8
-ms.openlocfilehash: 30bcbd8b7cdd4c184560aaa4a2799137da51fc8a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2d0cca89d906a60a3f7072de27bc54b7a869a01e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33554895"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54694084"
 ---
 # <a name="how-to-sort-a-gridview-column-when-a-header-is-clicked"></a>Postupy: Řazení sloupce GridView při kliknutí na záhlaví
-Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.ListView> ovládací prvek, který implementuje <xref:System.Windows.Controls.GridView> zobrazení režimu a řazení dat obsahu, když uživatel klikne záhlaví sloupce.  
+Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.ListView> ovládací prvek, který implementuje <xref:System.Windows.Controls.GridView> zobrazit režimu a seřadí data obsahu, když uživatel klikne na záhlaví sloupce.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu definuje <xref:System.Windows.Controls.GridView> s tři sloupce, které vytvořit vazbu <xref:System.DateTime.Year%2A>, <xref:System.DateTime.Month%2A>, a <xref:System.DateTime.Day%2A>, vlastnosti <xref:System.DateTime> struktura.  
+ Následující příklad definuje <xref:System.Windows.Controls.GridView> se třemi sloupci, kteří jsou navázáni na <xref:System.DateTime.Year%2A>, <xref:System.DateTime.Month%2A>, a <xref:System.DateTime.Day%2A>, vlastnosti <xref:System.DateTime> struktury.  
   
 ```xaml  
 <GridView>  
@@ -37,7 +37,7 @@ Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.ListView> o
 </GridView>  
 ```  
   
- Následující příklad ukazuje datových položek, které jsou definovány jako <xref:System.Collections.ArrayList> z <xref:System.DateTime> objekty. <xref:System.Collections.ArrayList> Je definován jako <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> pro <xref:System.Windows.Controls.ListView> ovládacího prvku.  
+ Následující příklad ukazuje datové položky, které jsou definovány jako <xref:System.Collections.ArrayList> z <xref:System.DateTime> objekty. <xref:System.Collections.ArrayList> Je definován jako <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> pro <xref:System.Windows.Controls.ListView> ovládacího prvku.  
   
 ```xaml  
 <ListView.ItemsSource>  
@@ -58,7 +58,7 @@ Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.ListView> o
 </ListView.ItemsSource>  
 ```  
   
- `s` a `p` identifikátory v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značky odkazovat na mapování oboru názvů, které jsou definované v metadatech [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky. Následující příklad ukazuje definici metadat.  
+ `s` a `p` identifikátory v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek najdete mapování oboru názvů, které jsou definované v metadatech [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky. Následující příklad ukazuje definici metadat.  
   
 ```xaml  
 <Window        
@@ -69,7 +69,7 @@ Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.ListView> o
     xmlns:p="clr-namespace:System;assembly=mscorlib">  
 ```  
   
- Seřadit podle obsahu sloupce dat, v příkladu definuje obslužnou rutinu pro zpracování <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost, která nastane po stisknutí tlačítka záhlaví sloupce. Následující příklad ukazuje, jak určit obslužné rutiny události pro <xref:System.Windows.Controls.GridViewColumnHeader> ovládacího prvku.  
+ Řazení dat podle obsahu sloupce, příklad definuje obslužnou rutinu události pro zpracování <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost, která nastane po stisknutí tlačítka záhlaví sloupce. Následující příklad ukazuje, jak určit obslužnou rutinu události pro <xref:System.Windows.Controls.GridViewColumnHeader> ovládacího prvku.  
   
 ```xaml  
 <ListView x:Name='lv' Height="150" HorizontalAlignment="Center"   
@@ -78,7 +78,7 @@ Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.ListView> o
  >  
 ```  
   
- V příkladu definuje obslužnou rutinu události tak, aby směr řazení změny mezi vzestupné pořadí a sestupném pořadí pokaždé, když stisknutí tlačítka záhlaví sloupce. Následující příklad ukazuje obslužné rutiny události.  
+ Příklad definuje obslužnou rutinu události tak, aby směr řazení mění mezi vzestupném a sestupném pořadí pokaždé, když stisknete tlačítko záhlaví sloupce. Následující příklad ukazuje obslužné rutiny události.  
   
 ```csharp  
 public partial class Window1 : Window  
@@ -197,7 +197,7 @@ Partial Public Class Window1
 End Class
 ```  
   
- Následující příklad ukazuje algoritmus řazení, která je volána obslužná rutina události k řazení dat. Řazení se provádí tak, že vytvoříte novou <xref:System.ComponentModel.SortDescription> struktura.  
+ Následující příklad ukazuje algoritmus řazení, která je volána k řazení dat. obslužnou rutinou události. Řazení se provádí tak, že vytvoříte nový <xref:System.ComponentModel.SortDescription> struktury.  
   
 ```csharp  
 private void Sort(string sortBy, ListSortDirection direction)  
@@ -223,9 +223,9 @@ Private Sub Sort(ByVal sortBy As String, ByVal direction As ListSortDirection)
 End Sub  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.ListView>  
- <xref:System.Windows.Controls.GridView>  
- [ListView – přehled](../../../../docs/framework/wpf/controls/listview-overview.md)  
- [GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.ListView>
+- <xref:System.Windows.Controls.GridView>
+- [ListView – přehled](../../../../docs/framework/wpf/controls/listview-overview.md)
+- [GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)
+- [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)

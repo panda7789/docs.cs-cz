@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: a5e5826dddbf60e92a50fd4f83322e7c1062f636
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: fcba4ea556d1f5036c2bbd0beaeb5f349dec4e36
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53144868"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54688103"
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu kódu a ADO.NET
 Rozhraní .NET Framework poskytuje zabezpečení na základě rolí stejně jako zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí společnou infrastrukturu pro zadaný modulem common language runtime (CLR). Většina aplikace na světě nespravovaného kódu jsou spouštěny s oprávnění uživatele nebo instanční objekt. V důsledku toho počítačových systémů může být poškozený a privátních dat dojde k ohrožení bezpečnosti při škodlivý nebo plný chyb softwaru je spuštěna uživatelem, se zvýšenými oprávněními.  
@@ -194,8 +194,8 @@ Failed, as expected: Request failed.
   
  Rozhraní .NET Framework podporuje také zpětnou kompatibilitu pro existující komponenty modelu COM s přístupem prostřednictvím zprostředkovatele komunikace s objekty COM. Komponenty modelu COM můžete začlenit do aplikace rozhraní .NET Framework pomocí nástroje vzájemné spolupráce COM k importování odpovídajících typů modelu COM. Po importu, typy modelu COM jsou připravené k použití. Komunikace s objekty COM také umožňuje klientům modelu COM pro export metadat sestavení na knihovnu typů a registraci spravované komponenty jako součást COM přístup k spravovaného kódu. Další informace najdete v tématu [rozšířená interoperabilita modelů COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx).  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [PAVE zabezpečení v nativním a kódu rozhraní .NET Framework](https://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)  
- [Zabezpečení na základě rolí](../../../../docs/standard/security/role-based-security.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [PAVE zabezpečení v nativním a kódu rozhraní .NET Framework](https://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)
+- [Zabezpečení na základě rolí](../../../../docs/standard/security/role-based-security.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

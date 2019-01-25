@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 93e96d6f8570e6aef7bfc18ef2859dc1e86ec8fb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: acc4da79796e975d349d1cb33c301c25c4791cb6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429028"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709075"
 ---
 # <a name="userthread-structure"></a>USER_THREAD – struktura
-Poskytuje informace o ladicí program o vlákna. Další informace najdete v tématu [inotifysource2::setnotifyfilter –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) metoda.  
+Poskytuje informace o vlákno ladicího programu. Další informace najdete v tématu [inotifysource2::setnotifyfilter –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,13 +41,13 @@ typedef struct tagUSER_THREAD
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`pSidBuffer`|Adresa vyrovnávací paměti pro přístup z více vláken.|  
-|`dwSidLen`|Délka vyrovnávací paměti přístup z více vláken v bajtech.|  
+|`pSidBuffer`|Adresa vyrovnávací paměti pro vlákno.|  
+|`dwSidLen`|Délka vyrovnávací paměti vlákna, v bajtech.|  
 |`dwTid`|ID vlákna.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** ProtocolNotify2.idl  
   
-## <a name="see-also"></a>Viz také  
- [SetNotifyFilter – metoda](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md)  
- [Struktury pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)
+## <a name="see-also"></a>Viz také:
+- [SetNotifyFilter – metoda](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md)
+- [Struktury pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)

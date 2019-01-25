@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d963a478ee7ae42159a0eb8a4b41cf20ae663aa5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bbb2bf681ed05728a015456e0e4c37157a55f755
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405447"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54699750"
 ---
 # <a name="cordebugexceptionflags-enumeration"></a>CorDebugExceptionFlags – výčet
 Poskytuje další informace o výjimce.  
@@ -39,14 +39,14 @@ typedef enum CorDebugExceptionFlags {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`DEBUG_EXCEPTION_NONE`|Neexistuje žádná výjimka.|  
-|`DEBUG_EXCEPTION_CAN_BE_INTERCEPTED`|Výjimkou je interceptable.<br /><br /> Načasování výjimky stále může být tak, aby ladicí program nemůže zachytit ho. Například pokud není žádný spravovaný kód pod aktuální zpětného volání nebo události výjimky je výsledkem přílohy za běhu (JIT), nelze výjimka zachycena.|  
+|`DEBUG_EXCEPTION_NONE`|Není žádná výjimka.|  
+|`DEBUG_EXCEPTION_CAN_BE_INTERCEPTED`|Výjimkou je interceptable.<br /><br /> Načasování výjimky může být stále tak, aby ladicí program nemůže zachytit. Například pokud neexistuje žádný spravovaný kód pod aktuální zpětného volání nebo událost výjimky je výsledkem přílohy k just-in-time (JIT), nelze zachytit výjimku.|  
   
 ## <a name="remarks"></a>Poznámky  
- Nové hodnoty mohou být přidány do tento výčet v novějších verzích, měli byste kód, který používá `CorDebugExceptionFlags` neočekávané hodnoty.  
+ Nové hodnoty lze přidat na tento výčet v novějších verzích, připravte si kód, který používá `CorDebugExceptionFlags` pro neočekávané hodnoty.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -54,5 +54,5 @@ typedef enum CorDebugExceptionFlags {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

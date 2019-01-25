@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - endpoints [WCF], addressing
 ms.assetid: ac24f5ad-9558-4298-b168-c473c68e819b
-ms.openlocfilehash: 718a0c086181546ba7b7fb3b31fce0732dd99382
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ff01c21481e2265a82cb9788beb8abd7b213af63
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517113"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709218"
 ---
 # <a name="specifying-an-endpoint-address"></a>Zadání adresy koncového bodu
 Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane prostřednictvím jeho koncových bodů. Každý <xref:System.ServiceModel.Description.ServiceEndpoint> obsahuje <xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A>, <xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A>a <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A>. Kontrakt určuje operace, které jsou k dispozici. Určuje vazbu, jak komunikovat se službou a určuje adresu, kde najít službu. Každý koncový bod musí mít jedinečnou adresu. Adresa koncového bodu je reprezentována <xref:System.ServiceModel.EndpointAddress> třídu, která obsahuje identifikátor URI (Uniform Resource), který představuje adresu služby, <xref:System.ServiceModel.EndpointAddress.Identity%2A>, která představuje zabezpečení identity služby a kolekce volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A>. Volitelná záhlaví poskytují podrobnější informace o adresování k identifikaci a k interakci s koncovým bodem. Záhlaví může například signalizovat zpracování příchozí zprávy, kde koncový bod má odeslat zpráva s odpovědí nebo které instanci služby pro použití ke zpracování příchozí zprávy z konkrétního uživatele, když jsou k dispozici více instancí.  
@@ -45,7 +45,7 @@ Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane 
   
  Když <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> metoda je volána (to znamená, když hostitelské aplikace došlo k pokusu o spuštění služby), hledá v systému [ \<služby >](../../../docs/framework/configure-apps/file-schema/wcf/service.md) element s názvem atribut, který určuje "UE. Samples.HelloService". Pokud [ \<služby >](../../../docs/framework/configure-apps/file-schema/wcf/service.md) nalezen element, načte zadanou třídu systému a vytvoří koncových bodů pomocí definic koncových bodů, které jsou k dispozici v konfiguračním souboru. Tento mechanismus umožňuje načtení a spuštění služby se dvěma řádky kódu při zachování vazby a adresování informace z vašeho kódu. Výhodou tohoto přístupu je, že tyto změny je možné provádět bez nutnosti znovu kompilovat nebo znovu nasadit aplikaci.  
   
- Volitelná záhlaví jsou deklarovány v [ \<záhlaví >](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md). Následuje příklad z prvků, které slouží k určení koncových bodů služby v konfiguračním souboru, který rozlišuje mezi dvě záhlaví: "Zlatá" klienti z `http://tempuri1.org/` a "Standardní" klienti z `http://tempuri2.org/`. Volání této služby Klient musí mít odpovídající [ \<záhlaví >](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md) v jeho konfiguračnímu souboru.  
+ Volitelná záhlaví jsou deklarovány v [ \<záhlaví >](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md). Následuje příklad prvků, které slouží k určení koncových bodů služby v konfiguračním souboru, který rozlišuje mezi dvě záhlaví: "Zlatá" klienti z `http://tempuri1.org/` a "Standardní" klienti z `http://tempuri2.org/`. Volání této služby Klient musí mít odpovídající [ \<záhlaví >](../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md) v jeho konfiguračnímu souboru.  
   
  [!code-xml[S_UEHelloWorld#1](../../../samples/snippets/common/VS_Snippets_CFX/s_uehelloworld/common/serviceapp.config#1)]  
   
@@ -82,8 +82,8 @@ Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane 
   
  Pokud koncové body jsou explicitně zadán, výchozí koncové body může být přidána voláním <xref:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints%2A> na <xref:System.ServiceModel.ServiceHost> před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.EndpointAddress>  
- [Identita a ověřování služby](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
- [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md)  
- [Hostování](../../../docs/framework/wcf/feature-details/hosting.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.EndpointAddress>
+- [Identita a ověřování služby](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+- [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md)
+- [Hostování](../../../docs/framework/wcf/feature-details/hosting.md)

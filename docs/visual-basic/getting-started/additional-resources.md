@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Help, Visual Basic Web sites
 - Visual Basic, videos
 ms.assetid: 9bfb42e9-327f-439b-935e-8884f6aca80c
-ms.openlocfilehash: a0ff04bf67faea4c834570e8faa4197369289fb7
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 25d18b4e362481dfde8fb440911bac67f27eab40
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195668"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54636232"
 ---
 # <a name="additional-resources"></a>Další zdroje
 
@@ -28,7 +28,7 @@ Na následujících webech pokyny a vám může pomoci najít odpovědi na běž
 |[Návrh jazyka Visual Basic .NET](https://github.com/dotnet/vblang)|Oficiální úložišti na Githubu pro návrh jazyka Visual Basic .NET.|
 |[Blog týmu Microsoft Visual Basic](https://blogs.msdn.microsoft.com/vbteam/)|Poskytuje přístup k na blogu týmu Visual Basic.|
 
-### <a name="code-samples"></a>Ukázky kódu
+### <a name="code-samples"></a>Ukázky kódů
 
 |Termín|Definice|
 |----------|----------------|
@@ -60,9 +60,9 @@ Na následujících webech pokyny a vám může pomoci najít odpovědi na běž
 |----------|----------------|
 |[VBForums](http://www.vbforums.com/)|Poskytuje diskusní fórum o jazyce Visual Basic, .NET a další.|
 |[vbCity](http://vbcity.com/)|Web komunity pro uživatele, přečtěte si a klást otázky týkající se jazyka Visual Basic a .NET.|
-|[Přetečení zásobníku](https://stackoverflow.com/questions/tagged/vb.net)|Přetečení zásobníku je web otázek a odpovědí pro vývojáře.|
+|[Stack Overflow](https://stackoverflow.com/questions/tagged/vb.net)|Přetečení zásobníku je web otázek a odpovědí pro vývojáře.|
 
 ## <a name="see-also"></a>Viz také:
 
-[Začínáme s jazykem Visual Basic](../../visual-basic/getting-started/index.md)  
-[Kontaktujte nás](/visualstudio/ide/talk-to-us)  
+- [Začínáme s jazykem Visual Basic](../../visual-basic/getting-started/index.md)
+- [Kontaktujte nás](/visualstudio/ide/talk-to-us)

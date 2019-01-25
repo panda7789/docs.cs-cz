@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ToolTip control [WPF], about ToolTip control
 - controls [WPF], ToolTip
 ms.assetid: f06c1603-e9cb-4809-8a62-234607fc52f7
-ms.openlocfilehash: a11dcfc9030944365adda3656a8895912b0ef0d4
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 9db511579e273a19c18800f2e0861ef4e9c00ab0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43805218"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700569"
 ---
 # <a name="tooltip-overview"></a>ToolTip – přehled
 Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení ukazatele myši nad prvkem, například jako více než je ovládací prvek tooltip <xref:System.Windows.Controls.Button>. Toto téma představuje popisek a popisuje, jak vytvořit a přizpůsobit obsah popisku.  
@@ -67,7 +67,7 @@ Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení uk
 ## <a name="using-the-time-interval-properties-of-tooltipservice"></a>Pomocí vlastnosti Interval doby ToolTipService  
  <xref:System.Windows.Controls.ToolTipService> Třída poskytuje následující vlastnosti lze nastavit popisek zobrazí časy: <xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A>, <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A>, a <xref:System.Windows.Controls.ToolTipService.ShowDuration%2A>.  
   
- Použití <xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A> a <xref:System.Windows.Controls.ToolTipService.ShowDuration%2A> vlastnosti k určení zpoždění, obvykle (BRIEF), než <xref:System.Windows.Controls.ToolTip> se zobrazí a také k určení, jak dlouho <xref:System.Windows.Controls.ToolTip> zůstává viditelná. Další informace najdete v tématu [postupy: zobrazení popisu](https://msdn.microsoft.com/library/618e05ef-f2bf-4a53-a0f4-aacb49918bd7).  
+ Použití <xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A> a <xref:System.Windows.Controls.ToolTipService.ShowDuration%2A> vlastnosti k určení zpoždění, obvykle (BRIEF), než <xref:System.Windows.Controls.ToolTip> se zobrazí a také k určení, jak dlouho <xref:System.Windows.Controls.ToolTip> zůstává viditelná. Další informace najdete v tématu [jak: Prodleva zobrazení popisu](https://msdn.microsoft.com/library/618e05ef-f2bf-4a53-a0f4-aacb49918bd7).  
   
  <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A> Vlastnost určuje, pokud popisky dat pro různé ovládací prvky se zobrazí počáteční neprodleně při přesunutí ukazatele myši rychle mezi nimi. Další informace o <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A> vlastnost, naleznete v tématu [používání vlastnosti BetweenShowDelay](../../../../docs/framework/wpf/controls/how-to-use-the-betweenshowdelay-property.md).  
   
@@ -75,9 +75,9 @@ Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení uk
   
  [!code-xaml[ToolTipService#ToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.ToolTipService>  
- <xref:System.Windows.Controls.ToolTip>  
- <xref:System.Windows.Controls.ToolTipEventArgs>  
- <xref:System.Windows.Controls.ToolTipEventHandler>  
- [Témata s postupy](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.ToolTipService>
+- <xref:System.Windows.Controls.ToolTip>
+- <xref:System.Windows.Controls.ToolTipEventArgs>
+- <xref:System.Windows.Controls.ToolTipEventHandler>
+- [Témata s postupy](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)

@@ -2,12 +2,12 @@
 title: Distribuované transakce
 ms.date: 03/30/2017
 ms.assetid: 718b257c-bcb2-408e-b004-a7b0adb1c176
-ms.openlocfilehash: 1f45f572b4336e52f7eee224ec80d9b7f423f991
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 002ed52b0f760376e813b15d0344a349da669f4b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43486324"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54660330"
 ---
 # <a name="distributed-transactions"></a>Distribuované transakce
 Transakce je sadu související úlohy, která buď (potvrzení) úspěšná nebo neúspěšná (přerušit) jako celek, mimo jiné. A *distribuované transakce* je transakce, která ovlivňuje několik prostředků. Pro distribuovanou transakci potvrdit musí všichni účastníci zaručit, že změny dat bude trvalé. Změny musíte zachovat navzdory zhroucení systému nebo jiné nepředvídatelné události. Pokud ještě jeden účastník neprovede této záruky, celá transakce nezdaří a všechny změny dat v rámci oboru transakce jsou vrácena zpět.  
@@ -47,7 +47,7 @@ Transakce je sadu související úlohy, která buď (potvrzení) úspěšná neb
 ## <a name="configuring-distributed-transactions"></a>Konfigurace distribuované transakce  
  Budete muset povolit MS DTC v síti, abyste mohli používat distribuované transakce. Pokud jste Windows povolena brána Firewall, musíte také povolit službě MS DTC a používat síť a neotevírejte port MS DTC.  
   
-## <a name="see-also"></a>Viz také  
- [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
- [Integrace System.Transactions s SQL Serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)
+- [Integrace System.Transactions s SQL Serverem](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

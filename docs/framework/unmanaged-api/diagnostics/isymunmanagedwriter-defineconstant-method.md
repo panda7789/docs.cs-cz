@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0c7cf800dafa9f3e213a012f49c73d51c78e7074
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e03339ff2c1205f66281bd31c3ef67439feea39c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33427402"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54726481"
 ---
 # <a name="isymunmanagedwriterdefineconstant-method"></a>ISymUnmanagedWriter::DefineConstant – metoda
 Definuje název pro konstantní hodnotu.  
@@ -39,23 +39,23 @@ HRESULT DefineConstant(
   
 #### <a name="parameters"></a>Parametry  
  `name`  
- [v] Ukazatel na `WCHAR` , který definuje název konstantní.  
+ [in] Ukazatel `WCHAR` , který definuje název konstantní.  
   
  `value`  
- [v] Hodnota konstanty.  
+ [in] Hodnota konstanty.  
   
  `cSig`  
- [v] Velikost `signature` pole.  
+ [in] Velikost `signature` pole.  
   
  `signature`  
- [v] Typ podpis pro konstanta.  
+ [in] Podpis typu pro konstantu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)  
- [DefineConstant2 – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-defineconstant2-method.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [DefineConstant2 – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-defineconstant2-method.md)

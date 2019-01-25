@@ -11,63 +11,63 @@ helpviewer_keywords:
 - sounds, background
 - playing sounds
 ms.assetid: f0d9e4ab-57c7-47b6-86d3-99ff07078040
-ms.openlocfilehash: decd845fde5bd4fad702cfe05fd63fcc180b63a6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f303687fb86e23191727df769af52811a93fe71e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33588455"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54715787"
 ---
 # <a name="playing-sounds-visual-basic"></a>Přehrávání zvuků (Visual Basic)
-`My.Computer.Audio` Objekt poskytuje metody pro přehrávání zvuku.  
+`My.Computer.Audio` Objekt, který poskytuje metody pro přehrávání zvuku.  
   
 ## <a name="playing-sounds"></a>Přehrávání zvuků  
- Přehrávání pozadí umožní aplikaci provést jiný kód, během přehrávání zvuku. `My.Computer.Audio.Play` Metoda umožňuje aplikaci přehrát zvuk pouze jeden pozadí najednou; aplikace na nové pozadí přehrává zvuk, zastaví, přehrávání zvuku předchozí pozadí. Také můžete přehrát zvuk a počkejte na její dokončení.  
+ Přehrávání na pozadí umožňuje aplikaci spustit další kód během přehrávání zvuku. `My.Computer.Audio.Play` Metody umožňuje, aby aplikace k přehrání zvuku pozadí pouze jeden po druhém, když aplikace přehraje zvuk nové na pozadí, zastaví přehrávání zvuku na pozadí předchozí. Můžete přehrát zvuk a počkejte na její dokončení.  
   
- V následujícím příkladu `My.Computer.Audio.Play` metoda hraje zvuku. Když `AudioPlayMode.WaitToComplete` není zadaný, `My.Computer.Audio.Play` čeká, až do dokončení zvuk než volání kódu dál. Při použití v tomto příkladu, by měl zajistěte, že název souboru odkazovala na zvukový soubor ve formátu WAV, který je v počítači  
+ V následujícím příkladu `My.Computer.Audio.Play` metoda přehraje zvuk. Když `AudioPlayMode.WaitToComplete` není zadána, `My.Computer.Audio.Play` počká, dokud nebudou zvuk až po dokončení předchozího volání kódu pokračuje. Při použití v tomto příkladu, měli byste zajistit, že název souboru odkazuje na WAV zvukový soubor, který je v počítači  
   
  [!code-vb[VbVbalrMyComputer#15](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_1.vb)]  
   
- V následujícím příkladu `My.Computer.Audio.Play` metoda hraje zvuku. Při použití v tomto příkladu, ujistěte se, že prostředky aplikace obsahují zvukový soubor ve formátu WAV s názvem vodopádu.  
+ V následujícím příkladu `My.Computer.Audio.Play` metoda přehraje zvuk. Při použití v tomto příkladu, měli byste zajistit, že prostředky aplikace obsahují WAV zvukový soubor, který je pojmenován vodopádu.  
   
  [!code-vb[VbVbalrMyComputer#16](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_2.vb)]  
   
-## <a name="playing-looping-sounds"></a>Přehrávání zvuků ve smyčce  
- V následujícím příkladu `My.Computer.Audio.Play` metoda přehraje určený zvuk na pozadí při `PlayMode.BackgroundLoop` je zadán. Při použití v tomto příkladu, ujistěte se, že název souboru odkazuje na zvukový soubor ve formátu WAV, který je ve vašem počítači.  
+## <a name="playing-looping-sounds"></a>Přehrávání zvuků opakování ve smyčce  
+ V následujícím příkladu `My.Computer.Audio.Play` metoda přehraje zvuk zadaný na pozadí při `PlayMode.BackgroundLoop` je zadán. Při použití v tomto příkladu, měli byste zajistit, že název souboru odkazuje na WAV zvukový soubor, který je ve vašem počítači.  
   
  [!code-vb[VbVbalrMyComputer#11](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_3.vb)]  
   
- V následujícím příkladu `My.Computer.Audio.Play` metoda přehraje určený zvuk na pozadí při `PlayMode.BackgroundLoop` je zadán. Při použití v tomto příkladu, ujistěte se, že prostředky aplikace obsahují zvukový soubor ve formátu WAV s názvem vodopádu.  
+ V následujícím příkladu `My.Computer.Audio.Play` metoda přehraje zvuk zadaný na pozadí při `PlayMode.BackgroundLoop` je zadán. Při použití v tomto příkladu, měli byste zajistit, že prostředky aplikace obsahují WAV zvukový soubor, který je pojmenován vodopádu.  
   
  [!code-vb[VbVbalrMyComputer#12](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_4.vb)]  
   
- V předchozím příkladu kódu je také k dispozici jako IntelliSense fragment kódu. V Sběrač fragmentů kódu je umístěn v **aplikacích Windows Forms > Zvuk**. Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
+ V předchozím příkladu kódu je také dostupný jako fragment kódu technologie IntelliSense. V dialogu pro výběr fragmentu kódu je umístěn v **formulářových aplikací Windows > Zvuk**. Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
- Obecně platí když aplikace přehraje opakování zvuk, měla by nakonec zastavit zvuk.  
+ Obecně platí když aplikace přehrává ve smyčce zvuk, měla by nakonec zastavit zvuk.  
   
 ## <a name="stopping-the-playing-of-sounds-in-the-background"></a>Zastavení přehrávání zvuků na pozadí  
- Použití `My.Computer.Audio.Stop` metoda zastavení aplikace aktuálně přehrávání pozadí nebo opakování ve smyčce zvuku.  
+ Použití `My.Computer.Audio.Stop` metoda zastavení aplikace přehrávaný na pozadí nebo opakování ve smyčce zvuk.  
   
- Obecně platí když aplikace přehraje opakování zvuk, by se měla zastavit zvuk v určitém okamžiku.  
+ Obecně platí když aplikace přehrává ve smyčce zvuk, by se měla zastavit zvuk v určitém okamžiku.  
   
  Následující příklad zastaví zvuk, který je přehrávání na pozadí.  
   
  [!code-vb[VbVbalrMyComputer#18](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_5.vb)]  
   
- V předchozím příkladu kódu je také k dispozici jako IntelliSense fragment kódu. V Sběrač fragmentů kódu je umístěn v **aplikacích Windows Forms > Zvuk**. Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
+ V předchozím příkladu kódu je také dostupný jako fragment kódu technologie IntelliSense. V dialogu pro výběr fragmentu kódu je umístěn v **formulářových aplikací Windows > Zvuk**. Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
 ## <a name="playing-system-sounds"></a>Přehrávání zvuků systému  
- Použití `My.Computer.Audio.PlaySystemSound` metoda přehrát zvuk zadaný systém.  
+ Použití `My.Computer.Audio.PlaySystemSound` metodu pro zadaný systém přehrávat zvuk.  
   
- `My.Computer.Audio.PlaySystemSound` Metoda přebírá jako parametr jednoho sdíleného člena z <xref:System.Media.SystemSound> třídy. Systémového zvuku <xref:System.Media.SystemSounds.Asterisk%2A> obvykle označuje chybu.  
+ `My.Computer.Audio.PlaySystemSound` Metoda přebírá jako parametr jeden sdílené členy z <xref:System.Media.SystemSound> třídy. Systémového zvuku <xref:System.Media.SystemSounds.Asterisk%2A> obvykle označuje chybu.  
   
- Následující příklad používá `My.Computer.Audio.PlaySystemSound` metoda přehrát zvuk systému.  
+ V následujícím příkladu `My.Computer.Audio.PlaySystemSound` metoda přehrát zvuk systému.  
   
  [!code-vb[VbVbalrMyComputer#17](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/playing-sounds_6.vb)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Devices.Audio>  
- <xref:Microsoft.VisualBasic.Devices.Audio.Play%2A>  
- <xref:Microsoft.VisualBasic.Devices.Audio.PlaySystemSound%2A>  
- <xref:Microsoft.VisualBasic.Devices.Audio.Stop%2A>  
- <xref:Microsoft.VisualBasic.AudioPlayMode>
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Devices.Audio>
+- <xref:Microsoft.VisualBasic.Devices.Audio.Play%2A>
+- <xref:Microsoft.VisualBasic.Devices.Audio.PlaySystemSound%2A>
+- <xref:Microsoft.VisualBasic.Devices.Audio.Stop%2A>
+- <xref:Microsoft.VisualBasic.AudioPlayMode>

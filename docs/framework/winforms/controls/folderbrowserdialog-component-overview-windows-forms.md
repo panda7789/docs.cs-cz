@@ -8,24 +8,24 @@ helpviewer_keywords:
 - directories [Windows Forms], enabling browsing in applications
 - folders [Windows Forms], enabling browsing in applications
 ms.assetid: 796b622c-3ba9-4356-93bb-e217fc52f2c7
-ms.openlocfilehash: a735749698266ac20e2ea9ee5569fd210ee9977b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ce449937b89c686c868dcf337f46f1816d08d191
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33525005"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54717659"
 ---
 # <a name="folderbrowserdialog-component-overview-windows-forms"></a>FolderBrowserDialog – přehled komponenty (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.FolderBrowserDialog> součást je modální dialogové okno, které se používá k procházení a výběru složek. V nástroji lze také vytvořit nové složky <xref:System.Windows.Forms.FolderBrowserDialog> součásti.  
+Windows Forms <xref:System.Windows.Forms.FolderBrowserDialog> komponenta je modální dialogové okno, které slouží k procházení a výběr složky. V rámci lze také vytvořit nové složky <xref:System.Windows.Forms.FolderBrowserDialog> komponenty.  
   
 > [!NOTE]
->  Pokud chcete vybrat soubory místo složek, použijte [OpenFileDialog](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md) součásti.  
+>  Vyberte soubory, místo složky, použijte [OpenFileDialog](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md) komponenty.  
   
- <xref:System.Windows.Forms.FolderBrowserDialog> Součást se zobrazí za běhu pomocí <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metoda. Nastavte <xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A> vlastnost určit složku nejvyšší a jakýmkoliv podsložkám, které se zobrazí ve stromovém zobrazení dialogového okna. Po dialogové okno se zobrazí, můžete <xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A> vlastnost k získání cestu složky, která byla vybrána.  
+ <xref:System.Windows.Forms.FolderBrowserDialog> Součást se zobrazí v době běhu pomocí <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metody. Nastavte <xref:System.Windows.Forms.FolderBrowserDialog.RootFolder%2A> vlastnosti k určení složky úplně nahoře a jakýmkoliv podsložkám, které se zobrazí ve stromovém zobrazení dialogového okna. Jakmile se zobrazí dialogové okno, můžete použít <xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A> vlastnost k získání cesty ke složce, která byla vybrána.  
   
- Při jejím přidání do formuláře <xref:System.Windows.Forms.FolderBrowserDialog> součást se zobrazí na hlavním panelu v dolní části Návrhář formulářů Windows.  
+ Když se přidá do formuláře, <xref:System.Windows.Forms.FolderBrowserDialog> součást se zobrazí v hlavním panelu v dolní části Návrháře formulářů Windows.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.FolderBrowserDialog>  
- [Postupy: Výběr složek pomocí komponenty Windows Forms FolderBrowserDialog](../../../../docs/framework/winforms/controls/how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component.md)  
- [Komponenta FolderBrowserDialog](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.FolderBrowserDialog>
+- [Postupy: Zvolte složky s komponentou Windows Forms FolderBrowserDialog](../../../../docs/framework/winforms/controls/how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component.md)
+- [Komponenta FolderBrowserDialog](../../../../docs/framework/winforms/controls/folderbrowserdialog-component-windows-forms.md)

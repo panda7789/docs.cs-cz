@@ -2,12 +2,12 @@
 title: Společné kolekce schémat
 ms.date: 03/30/2017
 ms.assetid: 50127ced-2ac8-4d7a-9cd1-5c98c655ff03
-ms.openlocfilehash: 157330304ac656ddbdbb18408ca5144566746808
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.openlocfilehash: dfd1e28a117ca71cac6c792058c1aeb17a0c4f69
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44260266"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700959"
 ---
 # <a name="common-schema-collections"></a>Společné kolekce schémat
 Společné kolekce schémat jsou kolekce schémat, které jsou implementovány ve všech zprostředkovatelů spravovaným rozhraním .NET Framework. Můžete dát dotaz na zprostředkovatele rozhraní .NET Framework spravované určit seznam kolekcí nepodporuje schéma voláním **GetSchema** metody bez argumentů nebo názvem kolekce schématu "MetaDataCollections". Vrátí <xref:System.Data.DataTable> seznam kolekcí nepodporuje schéma, počet omezení, které každá podporují a počet identifikátor částí, které používají. Tyto kolekce popisují všechny požadované sloupce. Poskytovatelé jsou zdarma Pokud chtějí přidat i další sloupce. Například `SqlClient` a `OracleClient` přidejte název parametru kolekce omezení.  
@@ -19,7 +19,7 @@ Společné kolekce schémat jsou kolekce schémat, které jsou implementovány v
 ## <a name="metadatacollections"></a>MetaDataCollections  
  Tato kolekce schémat zveřejňuje informace o všech kolekce schémat podporován spravovaného zprostředkovatele .NET Framework, který se aktuálně používá pro připojení k databázi.  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |collectionName|odkazy řetězců|Název kolekce, kterou chcete předat **GetSchema** metoda vrátí kolekci.|  
 |NumberOfRestrictions|int|Počet omezení, která může být zadáno pro kolekci.|  
@@ -28,7 +28,7 @@ Společné kolekce schémat jsou kolekce schémat, které jsou implementovány v
 ## <a name="datasourceinformation"></a>DataSourceInformation  
  Tato kolekce schémat zveřejňuje informace o zdroji dat, který rozhraní .NET Framework spravovaného poskytovatele je aktuálně připojení k.  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |CompositeIdentifierSeparatorPattern|odkazy řetězců|Regulární výraz tak, aby odpovídaly složené oddělovače ve složených identifikátor. Například "\\." (pro SQL Server) nebo "\@&#124;\\." (pro Oracle).<br /><br /> Složený identifikátor má zpravidla co se používá pro název databázového objektu, například: pubs.dbo.authors nebo pubs\@dbo.authors.<br /><br /> SQL Server, použijte regulární výraz "\\.". OracleClient, použijte "\@&#124;\\.".<br /><br /> Pro ODBC použijte Catalog_name_seperator.<br /><br /> Pro OLE DB pomocí DBLITERAL_CATALOG_SEPARATOR nebo DBLITERAL_SCHEMA_SEPARATOR.|  
 |DataSourceProductName|odkazy řetězců|Název produktu přístup poskytovateli, jako je například "Oracle" nebo "Systému SQL Server".|  
@@ -48,21 +48,21 @@ Společné kolekce schémat jsou kolekce schémat, které jsou implementovány v
 |StringLiteralPattern|odkazy řetězců|Regulární výraz, který odpovídá řetězcový literál a má hodnotu shody literálu samotný. Například pokud zdroj dat používá k identifikaci řetězců nabídek jedním, jde: "('([^']&#124;'') *") ".|  
 |SupportedJoinOperators|<xref:System.Data.Common.SupportedJoinOperators>|Určuje, jaké typy příkazů SQL spojení jsou podporovány ve zdroji dat.|  
   
-## <a name="datatypes"></a>Datové typy  
+## <a name="datatypes"></a>DataTypes  
  Tato kolekce zveřejňuje informace o schématu o datových typech, které jsou podporovány v databázi, že rozhraní .NET Framework spravovaný zprostředkovatel je aktuálně připojena k.  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |TypeName|odkazy řetězců|Název typu dat specifickým pro zprostředkovatele.|  
 |ProviderDbType|int|Hodnota typu specifickým pro zprostředkovatele, který se má použít při zadávání parametr typu. Například SqlDbType.Money nebo OracleType.Blob.|  
 |ColumnSize|long|Délka nečíselným sloupcem nebo parametr odkazuje na maximální nebo délka definované pro tento typ zprostředkovatele.<br /><br /> Znaková data je maximální počet nebo délka definované v jednotkách, definovaný ve zdroji dat. Oracle nemá koncept určující délku a potom zadáte velikost skutečné úložiště pro některé znakové datové typy. Definuje pouze délky v jednotkách pro Oracle.<br /><br /> Pro datum a čas datové typy Toto je délka řetězcové vyjádření (za předpokladu, že maximální povolenou přesnost součást zlomků sekund).<br /><br /> Pokud je číselný datový typ, je to horní mez na maximální přesnost datového typu.|  
 |CreateFormat|odkazy řetězců|Formátovací řetězec, který představuje, jak přidat příkaz pro definici dat, jako je například vytvoření tabulky v tomto sloupci. Každý prvek v poli pomocí metody CreateParameter by měla být reprezentovaná "značky parametr" v řetězci formátu.<br /><br /> Například SQL datový typ DECIMAL musí přesnost a měřítko. V takovém případě by být formátovací řetězec "DECIMAL ({0},{1})".|  
 |CreateParameters|odkazy řetězců|Vytvoření parametry, které se musí zadat při vytváření sloupce datového typu. Každý parametr vytváření je uveden v řetězci, oddělte čárkami v pořadí, ve kterém se nemusí zadávat.<br /><br /> Například SQL datový typ DECIMAL musí přesnost a měřítko. Parametry vytvoření v tomto případě by měl obsahovat řetězec "přesnost, měřítko".<br /><br /> V textovém příkazu k vytvoření DESÍTKOVÉ sloupce s přesností na 10 a škálování 2, může být hodnota sloupce CreateFormat desetinné číslo ({0},{1}) "a specifikaci úplný typ by DECIMAL(10,2).|  
-|Datový typ|odkazy řetězců|Název typu rozhraní .NET Framework datového typu.|  
+|DataType|odkazy řetězců|Název typu rozhraní .NET Framework datového typu.|  
 |IsAutoincrementable|bool|true – hodnoty tohoto typu dat mohou být automatické zvyšování.<br /><br /> false – automatické zvyšování nemusí být hodnoty datového typu.<br /><br /> Všimněte si, že to pouze znamená, zda může být sloupec datového typu auto-zvyšování hodnoty, ne to, jestli jsou všechny sloupce tohoto typu zvyšování hodnoty automaticky.|  
 |IsBestMatch|bool|true – datový typ je nejlepší shodu mezi všech typů dat v úložišti dat a datový typ rozhraní .NET Framework určeno hodnotou ve sloupci datového typu.<br /><br /> false – datový typ není nejlepší shodu.<br /><br /> Pro každou sadu řádků, ve kterých je hodnota datového typu sloupce stejný sloupec IsBestMatch je nastaven na hodnotu true pouze v jednom řádku.|  
 |IsCaseSensitive|bool|true – datový typ je typ znak a je velká a malá písmena.<br /><br /> false – datový typ není typem znaku nebo není malá a velká písmena.|  
-|Isfixedlength atributu Sqlfacetattribute|bool|true – sloupce tento typ dat, které jsou vytvořené pomocí jazyka pro definici dat (DDL) bude mít pevnou délku.<br /><br /> NEPRAVDA – tento typ dat vytvořené jazyka DDL sloupců bude s proměnnou délkou.<br /><br /> DBNull.Value—It není znám, zda zprostředkovatel bude mapovat tato pole s pevnou délkou nebo proměnné délky sloupce.|  
+|IsFixedLength|bool|true – sloupce tento typ dat, které jsou vytvořené pomocí jazyka pro definici dat (DDL) bude mít pevnou délku.<br /><br /> NEPRAVDA – tento typ dat vytvořené jazyka DDL sloupců bude s proměnnou délkou.<br /><br /> DBNull.Value—It není znám, zda zprostředkovatel bude mapovat tato pole s pevnou délkou nebo proměnné délky sloupce.|  
 |IsFixedPrecisionScale|bool|true – datový typ má pevnou hodnot precision a scale.<br /><br /> false – datový typ, nemá pevnou hodnot precision a scale.|  
 |IsLong|bool|true – datový typ obsahuje velmi dlouhá data. Definice velmi dlouhý dat závisí na konkrétním zprostředkovateli.<br /><br /> false – datový typ neobsahuje velmi dlouhá data.|  
 |IsNullable|bool|true – datový typ může mít hodnotu Null.<br /><br /> false – datový typ není s možnou hodnotou Null.<br /><br /> DBNull.Value—It není znám, zda je datový typ s možnou hodnotou Null.|  
@@ -80,7 +80,7 @@ Společné kolekce schémat jsou kolekce schémat, které jsou implementovány v
 ## <a name="restrictions"></a>Omezení  
  Tato kolekce schémat zpřístupnit informace o omezení, které jsou podporovány spravovaného zprostředkovatele .NET Framework, který se aktuálně používá pro připojení k databázi.  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |collectionName|odkazy řetězců|Název kolekce, která tato omezení platí pro.|  
 |RestrictionName|odkazy řetězců|Název omezení v kolekci.|  
@@ -90,11 +90,11 @@ Společné kolekce schémat jsou kolekce schémat, které jsou implementovány v
 ## <a name="reservedwords"></a>ReservedWords  
  Tato kolekce schémat zveřejňuje informace o slova, která jsou vyhrazené databázi, kterou rozhraní .NET Framework spravovaný zprostředkovatel, který je aktuálně připojený k.  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |ReservedWord|odkazy řetězců|Specifické pro zprostředkovatele vyhrazené slovo.|  
   
-## <a name="see-also"></a>Viz také  
- [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
- [Příkaz GetSchema a kolekce schémat](../../../../docs/framework/data/adonet/getschema-and-schema-collections.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)
+- [Příkaz GetSchema a kolekce schémat](../../../../docs/framework/data/adonet/getschema-and-schema-collections.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

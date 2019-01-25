@@ -13,30 +13,30 @@ helpviewer_keywords:
 ms.assetid: 99ae44f1-783e-49a9-9009-24f54bbd0f09
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 847ec4d861136b46383ce7d3801764f3d962049e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ff026ddd9f9dc7c1556c55b285958dad7139e8eb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33390871"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54699308"
 ---
 # <a name="invalidfunctionpointerindelegate-mda"></a>invalidFunctionPointerInDelegate – pomocník spravovaného ladění (MDA)
-`invalidFunctionPointerInDelegate` Pomocník spravovaného ladění (MDA) je aktivovat, pokud je předaná neplatný ukazatel funkce vytvořit delegáta přes nativní funkce ukazatel.  
+`invalidFunctionPointerInDelegate` Pomocníka spravovaného ladění (MDA) je aktivován, když je neplatný ukazatel na funkci předaný k vytvoření delegáta přes ukazatel na funkci nativní.  
   
 ## <a name="symptoms"></a>Příznaky  
- Narušení přístupu nebo poškození neočekávané paměti při použití delegáta přes ukazatel na funkci.  
+ Narušení přístupu nebo neočekávaným paměťovým poškození při používání delegáta přes ukazatel na funkci.  
   
-## <a name="cause"></a>příčina  
- Byl zadán neplatný ukazatel funkce.  
+## <a name="cause"></a>Příčina  
+ Byl zadán neplatný ukazatel na funkci.  
   
 ## <a name="resolution"></a>Rozlišení  
- Zadejte platnou funkcí ukazatele  
+ Zadejte platný ukazatel  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Tato MDA nemá žádný vliv na modulu CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Toto MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- Ukazatel neplatná funkce.  
+ Ukazatel funkce je neplatný.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -48,7 +48,7 @@ ms.locfileid: "33390871"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.MarshalAsAttribute>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

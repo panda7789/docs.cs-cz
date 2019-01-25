@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aedc7b1941268184b71713d31913dbfbd8b74643
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 587ae32c27a3c779f5f2e4f27bf521e2ca557106
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43504256"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54688997"
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Zařazování spolupráce funguje v pravidlech této diktování chování data související s parametry metody během mezi spravovanými a nespravovanými paměti. Tato integrovaná pravidla takové zařazování aktivity jako typ transformace dat, řízení, zda volaný můžete změnit data předaná do ní a tyto změny vrátit volající a pod kterým okolností, aby zařazování odvozovalo poskytuje optimalizace výkonu.  
@@ -440,9 +440,9 @@ interface IValueTypes : IDispatch {
 };  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Přenositelné a nepřenositelné typy](blittable-and-non-blittable-types.md)  
- [Kopírování a přichycování](copying-and-pinning.md)  
- [Výchozí zařazování pro pole](default-marshaling-for-arrays.md)  
- [Výchozí zařazování pro objekty](default-marshaling-for-objects.md)  
- [Výchozí zařazování pro řetězce](default-marshaling-for-strings.md)
+## <a name="see-also"></a>Viz také:
+- [Přenositelné a nepřenositelné typy](blittable-and-non-blittable-types.md)
+- [Kopírování a přichycování](copying-and-pinning.md)
+- [Výchozí zařazování pro pole](default-marshaling-for-arrays.md)
+- [Výchozí zařazování pro objekty](default-marshaling-for-objects.md)
+- [Výchozí zařazování pro řetězce](default-marshaling-for-strings.md)

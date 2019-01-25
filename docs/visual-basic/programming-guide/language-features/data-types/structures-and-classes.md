@@ -9,88 +9,88 @@ helpviewer_keywords:
 - structures [Visual Basic], structure variables
 - structure variables [Visual Basic]
 ms.assetid: a221e74a-ffcf-4bdc-a0f6-a088a9bf26cc
-ms.openlocfilehash: e64b54b93463845dd9afd0c0efd0e39f20cab1ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 78c1d529053a10fc208ee5499b759623c227cb25
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33654119"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54681807"
 ---
 # <a name="structures-and-classes-visual-basic"></a>Struktury a třídy (Visual Basic)
-Visual Basic kombinuje syntaxe struktury a třídy, s tím výsledkem, že obě entity podporují většinu stejné funkce. Existují však také důležité rozdíly mezi struktury a třídy.  
+Visual Basic sjednocuje syntaxe struktur a tříd, s tím, že obě entity podporuje většinu stejné funkce. Existují však i důležité rozdíly mezi strukturami a třídami.  
   
- Výhodou se odkazové typy jsou třídy – předáním odkazu na je efektivnější než předávání proměnná struktura s jeho data. Na druhé straně struktury nevyžadují přidělení paměti v haldě globální.  
+ Třídy mají výhodou odkazové typy – předáním odkazu je efektivnější než předání proměnnou struktury obsahující všechna jeho data. Na druhé straně struktury nevyžadují přidělení paměti v haldě globální.  
   
- Protože nelze dědí strukturou, struktury slouží pouze pro objekty, které není potřeba rozšířit. Struktury použijte, pokud má velikost malých instance objektu, který chcete vytvořit a vezměte v úvahu charakteristiky výkonu už třídy a struktury.  
+ Protože nemůže dědit ze struktury, struktury by měla sloužit pouze pro objekty, které není potřeba prodloužit. Struktury použijte, pokud objekt, který chcete vytvořit má velikost malých instancí a vezměte v úvahu charakteristiky výkonu třídy a struktury.  
   
 ## <a name="similarities"></a>Podobnosti  
- Struktury a třídy jsou podobné v těchto ohledech:  
+ Třídy a struktury jsou podobné jako u těchto ohledech:  
   
--   Jsou obě *kontejneru* typy, což znamená, že obsahují jiné typy jako členy.  
+-   Obě jsou *kontejneru* typy, což znamená, že sloupce obsahují další typy jako členy.  
   
--   Mají obě členy, které mohou zahrnovat konstruktory, metody, vlastnosti, pole, konstanty, výčty, události a obslužné rutiny událostí. Nezaměňujte však tito členové s deklarovaný *elementy* struktury.  
+-   Obě mají členy, které může obsahovat konstruktory, metody, vlastnosti, pole, konstanty, výčty, události a obslužné rutiny událostí. Nezaměňujte však tito členové s deklarovaný *prvky* struktury.  
   
--   Členové těchto dvou možností můžete své úrovně přístupu. Například lze deklarovat jednoho člena `Public` a jiné `Private`.  
+-   Členy obou můžete své úrovně přístupu. Například lze deklarovat jeden člen `Public` a další `Private`.  
   
 -   Jak můžete implementovat rozhraní.  
   
--   Jak může mít sdílené konstruktory, s nebo bez parametrů.  
+-   Obojí může mít sdílené konstruktory, s nebo bez parametrů.  
   
--   Jak můžou zpřístupnit *výchozí vlastnost*, za předpokladu, že má vlastnost minimálně jeden parametr.  
+-   Jak můžete zveřejnit *výchozí vlastnost*za předpokladu, že vlastnost používá nejméně jeden parametr.  
   
--   Obě deklarace a vyvolávání událostí a obě můžou deklarovat delegáti.  
+-   Obě deklarace a vyvolávání událostí, a obě deklarování delegátů.  
   
 ## <a name="differences"></a>Rozdíly  
- Struktury a třídy se liší v tyto údaje:  
+ Struktury a třídy se liší v následující údaje:  
   
--   Struktury jsou *typů hodnot*; třídy jsou *odkazové typy*. Proměnné typu struktura obsahuje data struktura, nikoli obsahující odkaz na data jako typ třídy nemá.  
+-   Struktury jsou *typů hodnot*; třídy jsou *referenční typy*. Proměnné typu struktura obsahuje data struktury, spíše než obsahující odkaz na data jako typ třídy nemá.  
   
--   Struktury použijte přidělení zásobníku; třídy pomocí přidělení haldy.  
+-   Struktury použijte přidělení zásobníku; třídy použijte přidělení haldy.  
   
--   Všechny prvky struktura jsou `Public` ve výchozím nastavení; třídy proměnných a konstant jsou `Private` ve výchozím nastavení jsou členy jiné třídy `Public` ve výchozím nastavení. Toto chování pro členy třídy zajišťuje kompatibilitu s Visual Basic 6.0 systému výchozí hodnoty.  
+-   Všechny prvky struktury jsou `Public` ve výchozím nastavení; třída proměnné a konstanty jsou `Private` ostatních členů třídy jsou standardně `Public` ve výchozím nastavení. Toto chování pro členy třídy zajišťuje kompatibilitu se systémem Visual Basic 6.0 výchozích hodnot.  
   
--   Struktury musí mít alespoň jeden sdíleném proměnnou nebo sdíleném, noncustom event element; Třída může být zcela prázdný.  
+-   Struktura musí mít aspoň jeden nesdílené proměnné nebo nesdílené, noncustom element události. Třída může být úplně prázdná.  
   
 -   Elementy struktury nelze deklarovat jako `Protected`; můžete členy třídy.  
   
--   Struktura postupu můžete zpracování událostí, pouze pokud je [sdílené](../../../../visual-basic/language-reference/modifiers/shared.md) `Sub` postupu a pouze pomocí Řešitele [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md); všechny třídy postupu dokáže zpracovat události, s použitím buď [ Zpracovává](../../../../visual-basic/language-reference/statements/handles-clause.md) – klíčové slovo nebo `AddHandler` příkaz. Další informace najdete v tématu [události](../../../../visual-basic/programming-guide/language-features/events/index.md).  
+-   Proceduru struktury můžete zpracovávat události, pouze pokud je [sdílené](../../../../visual-basic/language-reference/modifiers/shared.md) `Sub` postupu a pouze pomocí Řešitele [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md); všechny třídy procedury můžete zpracovávat události, pomocí buď [ Zpracovává](../../../../visual-basic/language-reference/statements/handles-clause.md) – klíčové slovo nebo `AddHandler` příkazu. Další informace najdete v tématu [události](../../../../visual-basic/programming-guide/language-features/events/index.md).  
   
--   Deklarace proměnných struktura nelze zadat inicializátory nebo počáteční velikosti pole; deklarace proměnných třídy můžete.  
+-   Deklarace proměnné struktury nelze zadat inicializátory nebo počáteční velikosti pole; deklarace proměnných třídy můžete.  
   
--   Struktury implicitně dědí <xref:System.ValueType?displayProperty=nameWithType> třídy a nemůže Zdědit z libovolného typu; třídy můžete dědí všechny třídy nebo třídy jiné než <xref:System.ValueType?displayProperty=nameWithType>.  
+-   Struktury implicitně dědí z <xref:System.ValueType?displayProperty=nameWithType> třídu a nemůže dědit z žádného jiného typu; třídy mohou dědit z libovolné třídy nebo tříd jiných než <xref:System.ValueType?displayProperty=nameWithType>.  
   
--   Struktury nejsou zděditelné; třídy jsou.  
+-   Struktury nejsou odvoditelný; třídy jsou.  
   
--   Struktury se nikdy ukončeno, takže modul CLR (CLR) nikdy nevolá <xref:System.Object.Finalize%2A> metodu na všechny struktura; třídy jsou ukončena modulem garbage collector (GC), který volá <xref:System.Object.Finalize%2A> na třídu, když zjistí neexistují žádné aktivní odkazy Zbývající.  
+-   Struktury jsou nikdy ukončena, takže nikdy nevolá common language runtime (CLR) <xref:System.Object.Finalize%2A> metody na jinou strukturu; třídy jsou ukončeny systému uvolňování paměti (GC), která volá <xref:System.Object.Finalize%2A> ve třídě, když zjistí, že neexistují žádné aktivní odkazy Zbývající.  
   
--   Struktury nevyžaduje konstruktor; Třída nepodporuje.  
+-   Struktura nevyžaduje konstruktor; Třída nemá.  
   
--   Může mít struktury sdíleném konstruktory pouze v případě, že jejich trvat parametry; třídy lze nastavit s nebo bez parametrů.  
+-   Struktury mohou mít nesdílené konstruktory pouze v případě, že přijímají parametry; třídy mohou mít je s nebo bez parametrů.  
   
- Každý struktura má implicitní veřejný konstruktor bez parametrů. Tento konstruktor inicializuje všechna struktura datové prvky na výchozí hodnoty. Toto chování nelze znovu definovat.  
+ Každá konstrukce má implicitní veřejný konstruktor bez parametrů. Tento konstruktor inicializuje všechny struktury datové prvky, aby jejich výchozí hodnoty. Toto chování nelze předefinovat.  
   
 ## <a name="instances-and-variables"></a>Instance a proměnné  
- Protože struktury jsou typy hodnot, každá proměnná struktura je trvale vázána instance jednotlivých struktura. Ale třídy jsou odkazové typy a proměnné objektu mohou odkazovat na různých instancí třídy v různých časech. Tento rozdíl ovlivní vaše použití třídy a struktury následujícími způsoby:  
+ Protože struktury jsou typy hodnot, každou proměnnou struktury je trvale svázána s instancí jednotlivých struktury. Ale třídy jsou odkazové typy a proměnné objektu mohou odkazovat na různé instance třídy v různých časech. Toto rozlišení ovlivňuje využití struktury a třídy následujícími způsoby:  
   
--   **Inicializace.** Proměnné struktury zahrnuje implicitně inicializaci elementů pomocí struktura konstruktor bez parametrů. Proto `Dim s As struct1` je ekvivalentní `Dim s As struct1 = New struct1()`.  
+-   **Inicializace.** Proměnné struktury implicitně obsahuje inicializaci prvků pomocí konstrukcí konstruktor bez parametrů. Proto `Dim s As struct1` je ekvivalentní `Dim s As struct1 = New struct1()`.  
   
--   **Přiřazení proměnné.** Pokud přiřadit jednu proměnnou struktura do jiné nebo struktura instance předat argumentu procedury, aktuálních hodnot všech proměnných elementů se zkopírují do nové struktury. Když přiřadit jednu proměnnou objekt do jiné nebo předání proceduře proměnné objektu, se zkopírují pouze odkaz na ukazatel.  
+-   **Přiřazení proměnné.** Při přiřazení jednu proměnnou struktury do jiné nebo předat instanci struktury argumentu procedury, aktuální hodnoty prvků všechny proměnné zkopírují do novou strukturu. Při přiřadit jednu proměnnou objekt do jiné nebo předání proměnné objektu proceduře, zkopíruje pouze odkaz na ukazatel.  
   
--   **Nic přiřazení.** Můžete přiřadit hodnotu [nic](../../../../visual-basic/language-reference/nothing.md) pro strukturu proměnné, ale instance nadále přidružená k proměnné. Můžete volat jeho metody a přístup k jeho datové prvky, i když proměnné elementy jsou opětovně inicializovány podle přiřazení.  
+-   **Přiřazení žádnou akci.** Přiřadíte hodnotu [nic](../../../../visual-basic/language-reference/nothing.md) na strukturu proměnnou, ale instance nadále být spojen s proměnnou. Stále můžete volat jeho metody a přístup k jeho prvkům data, i když proměnné prvky jsou opětovně inicializovány pomocí přiřazení.  
   
-     Pokud nastavíte proměnné objektu na oproti tomu `Nothing`, zrušíte přidružení z jakékoli instance třídy a prostřednictvím proměnnou nelze přístup žádné členy, dokud přiřadit jiná instance.  
+     Naopak pokud nastavíte proměnné objektu na `Nothing`oddělit z libovolné instance třídy a žádné členy nelze přistupovat prostřednictvím proměnné dokud přiřadit jinou instancí.  
   
--   **Více instancí.** Objektová proměnná může mít jinou třídu instance přiřazen v různou dobu a několik objektové proměnné mohou odkazovat na stejnou instanci třídy ve stejnou dobu. Změny provedené na hodnoty členů tříd ovlivňují těmto členům přistupováno pomocí jiné proměnné odkazující na stejnou instanci.  
+-   **Více instancí.** Objektová proměnná může mít jinou třídu instancí přiřazená v různou dobu a několik objektových proměnných mohou odkazovat na stejnou instanci třídy ve stejnou dobu. Změny provedené na hodnoty členů třídy. ovlivňují tyto členy, když přistupuje prostřednictvím jiné proměnné odkazující na stejné instanci.  
   
-     Elementy struktury, ale jsou izolovány. v rámci své vlastní instanci. Změny jejich hodnoty se neprojeví v žádné jiné proměnné struktury, i v jiných instance stejné `Structure` deklarace.  
+     Prvky struktury, ale jsou izolované v rámci své vlastní instance. Změny jejich hodnoty se neprojeví v jakékoli jiné proměnné struktury, dokonce i v dalších instancí stejného `Structure` deklarace.  
   
--   **Rovnosti.** Testování rovnosti dvou struktur musí provést test pomocí elementu. Dvě proměnné objektu je možné porovnávat pomocí <xref:System.Object.Equals%2A> metoda. <xref:System.Object.Equals%2A> Označuje, zda dvě proměnné, které bodu na stejnou instanci.  
+-   **Rovnost.** Testování rovnosti dvou struktur, je nutné provést s testu prvek po prvku. Dvě proměnné objektu lze porovnat pomocí <xref:System.Object.Equals%2A> metody. <xref:System.Object.Equals%2A> Určuje, zda dvě proměnné odkazovat na stejné instanci.  
   
-## <a name="see-also"></a>Viz také  
- [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
- [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)  
- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
- [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- [Struktury a ostatní programovací elementy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md)  
- [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+## <a name="see-also"></a>Viz také:
+- [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
+- [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)
+- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)
+- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
+- [Struktury a ostatní programovací elementy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md)
+- [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

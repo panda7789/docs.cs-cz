@@ -5,51 +5,51 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99030386-43b0-4f7b-866d-17ea307f5cbd
-ms.openlocfilehash: 4182007d32ea857aa333542b4df29da18b8062df
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0fe97e381bea19458df50e1eb94f2027a6a95d4e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33488215"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54721266"
 ---
 # <a name="how-to-export-custom-policy-assertions"></a>Postupy: Export kontrolních výrazů vlastních zásad
-Kontrolní výrazy zásad jsou popsány možnosti a požadavky koncového bodu služby. Aplikace služby můžete pomocí kontrolních výrazů vlastních zásad metadata služby komunikovat koncový bod, vazba nebo kontrakt informace o přizpůsobení do klientské aplikace. Windows Communication Foundation (WCF) můžete exportovat kontrolní výrazy ve výrazech zásad připojena v WSDL vazby na koncový bod, operace nebo zpráva tématům, v závislosti na možnosti nebo požadavků, které budou komunikovat.  
+Kontrolní výrazy zásad popisují funkce a požadavky koncového bodu služby. Aplikace služby můžete použít kontrolních výrazů vlastních zásad v metadata služby pro komunikaci koncový bod, informace o přizpůsobení vazby nebo smlouvy do klientské aplikace. Export kontrolních výrazů ve výrazech zásad připojena v vazby WSDL na koncový bod, operace nebo zprávy témata, v závislosti na možnosti nebo požadavky, které komunikují se můžete použít Windows Communication Foundation (WCF).  
   
- Exportují se implementací kontrolních výrazů vlastních zásad <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> rozhraní na <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> a buď vložení prvku vazby přímo do vazby koncového bodu služby nebo tím, že zaregistrujete prvku vazby v aplikaci konfigurační soubor. Export implementaci zásad měli přidat vaše vlastní zásady assertion jako <xref:System.Xml.XmlElement?displayProperty=nameWithType> instance na příslušné <xref:System.ServiceModel.Description.PolicyAssertionCollection?displayProperty=nameWithType> na <xref:System.ServiceModel.Description.PolicyConversionContext?displayProperty=nameWithType> předaný do <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A> metoda.  
+ Kontrolních výrazů vlastních zásad jsou exportovány implementací <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> na rozhraní <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> a buď vložení elementu vazby přímo do vazby koncového bodu služby nebo si zaregistrujte ve vaší aplikaci prvku vazby konfigurační soubor. Implementace export zásad by měl přidat vaše vlastní zásady pro kontrolní výraz jako <xref:System.Xml.XmlElement?displayProperty=nameWithType> instance na příslušné <xref:System.ServiceModel.Description.PolicyAssertionCollection?displayProperty=nameWithType> na <xref:System.ServiceModel.Description.PolicyConversionContext?displayProperty=nameWithType> předán <xref:System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy%2A> – metoda.  
   
- Kromě toho je nutné zkontrolovat <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> vlastnost <xref:System.ServiceModel.Description.WsdlExporter> třídy a export výrazy vnořené zásad a zásad framework atributy ve správný obor názvů na základě zásad verze zadané.  
+ Kromě toho je nutné zkontrolovat <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> vlastnost <xref:System.ServiceModel.Description.WsdlExporter> třídy a export zásad vnořených výrazů a atributů framework zásad v správný obor názvů na základě zadané verze zásad.  
   
- Chcete-li import kontrolních výrazů vlastních zásad, přečtěte si téma <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> a [postupy: Import kontrolních výrazů vlastních zásad](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md).  
+ Import kontrolních výrazů vlastních zásad, najdete v článku <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> a [jak: Import kontrolních výrazů vlastních zásad](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md).  
   
 ### <a name="to-export-custom-policy-assertions"></a>Export kontrolních výrazů vlastních zásad  
   
-1.  Implementace <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> rozhraní na <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>. Následující příklad kódu ukazuje implementaci assertion vlastní zásady na úrovni vazby.  
+1.  Implementace <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> na rozhraní <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>. Následující příklad kódu ukazuje implementaci kontrolní výraz vlastní zásady na úrovni vazby.  
   
      [!code-csharp[CustomPolicySample#14](../../../../samples/snippets/csharp/VS_Snippets_CFX/custompolicysample/cs/policyexporter.cs#14)]
      [!code-vb[CustomPolicySample#14](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/custompolicysample/vb/policyexporter.vb#14)]  
   
-2.  Vložení prvku vazby do koncového bodu vazba buď programově, nebo pomocí konfiguračního souboru aplikace. Postupujte podle následujících pokynů.  
+2.  Vložte element vazby do koncového bodu vazba buď programově, nebo pomocí konfiguračního souboru aplikace. Podívejte se na následující postupy.  
   
-### <a name="to-insert-a-binding-element-using-an-application-configuration-file"></a>Chcete-li vložit element vazby pomocí konfiguračního souboru aplikace  
+### <a name="to-insert-a-binding-element-using-an-application-configuration-file"></a>Chcete-li vložit prvek vazby, který je používán konfigurační soubor aplikace  
   
-1.  Implementace <xref:System.ServiceModel.Configuration.BindingElementExtensionElement?displayProperty=nameWithType> pro vaše vlastní zásady assertion vazby element.  
+1.  Implementace <xref:System.ServiceModel.Configuration.BindingElementExtensionElement?displayProperty=nameWithType> pro element vazby vaše vlastní zásady pro kontrolní výraz.  
   
-2.  Přidejte rozšíření element vazby do souboru konfigurace pomocí [ \<bindingElementExtensions >](../../../../docs/framework/configure-apps/file-schema/wcf/bindingelementextensions.md) element.  
+2.  Přidat do souboru pomocí konfigurace rozšíření elementu vazby [ \<bindingElementExtensions >](../../../../docs/framework/configure-apps/file-schema/wcf/bindingelementextensions.md) elementu.  
   
 3.  Vytvoření vlastní vazby pomocí <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType>.  
   
-### <a name="to-insert-a-binding-element-programmatically"></a>Vložení prvku vazby prostřednictvím kódu programu  
+### <a name="to-insert-a-binding-element-programmatically"></a>Chcete-li vložit element vazby prostřednictvím kódu programu  
   
-1.  Vytvořte novou <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> a přidejte ho do <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType>.  
+1.  Vytvořte nový <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> a přidejte ji tak <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType>.  
   
-2.  Přidáte vlastní vazby z kroku 1. na nový koncový bod a přidejte tento nový koncový bod služby k <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> voláním <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> metoda.  
+2.  Přidáte vlastní vazbu z kroku 1. Nový koncový bod a přidejte tento nový koncový bod služby <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> voláním <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> metoda.  
   
-3.  Otevřete <xref:System.ServiceModel.ServiceHost>. Následující příklad kódu ukazuje vytvoření vlastní vazby a programové vkládání elementů vazby.  
+3.  Otevřít <xref:System.ServiceModel.ServiceHost>. Následující příklad kódu ukazuje vytvoření vlastní vazby a programové vkládání elementů vazby.  
   
      [!code-csharp[s_imperative#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_imperative/cs/service.cs#1)]
      [!code-vb[s_imperative#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_imperative/vb/service.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Description.IPolicyImportExtension>  
- <xref:System.ServiceModel.Description.IPolicyExportExtension>  
- [Postupy: Import kontrolních výrazů vlastních zásad](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Description.IPolicyImportExtension>
+- <xref:System.ServiceModel.Description.IPolicyExportExtension>
+- [Postupy: Import kontrolních výrazů vlastních zásad](../../../../docs/framework/wcf/extending/how-to-import-custom-policy-assertions.md)

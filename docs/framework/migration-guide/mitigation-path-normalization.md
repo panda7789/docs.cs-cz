@@ -1,17 +1,17 @@
 ---
-title: 'Omezení rizik: Cesta normalizace'
+title: 'Omezení rizik: Normalizace cesta'
 ms.date: 03/30/2017
 ms.assetid: 158d47b1-ba6d-4fa6-8963-a012666bdc31
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aa31641cc325f15b9afe677038deb33c57e77fd1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: addbeeab6f5b3544a7ed1b86b7da0f7d09be7ffb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508810"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54701102"
 ---
-# <a name="mitigation-path-normalization"></a>Omezení rizik: Cesta normalizace
+# <a name="mitigation-path-normalization"></a>Omezení rizik: Normalizace cesta
 Počínaje aplikací cíl [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], došlo ke změně normalizace cestu v rozhraní .NET Framework.  
   
 ## <a name="what-is-path-normalization"></a>Co je cesta normalizace?  
@@ -60,5 +60,5 @@ Počínaje aplikací cíl [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]
 </runtime>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Odlišnosti ve změnách cílení](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-2.md)
+## <a name="see-also"></a>Viz také:
+- [Odlišnosti ve změnách cílení](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-2.md)

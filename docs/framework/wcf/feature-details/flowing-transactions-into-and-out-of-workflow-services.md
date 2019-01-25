@@ -2,12 +2,12 @@
 title: Tok transakcí do služeb pracovních postupů a mimo ně
 ms.date: 03/30/2017
 ms.assetid: 03ced70e-b540-4dd9-86c8-87f7bd61f609
-ms.openlocfilehash: f53bfa3c745a0d487a8daf23f399c1420e36c8ec
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 4a5cde045c6c676c2efc694c67fd049b6eb611b2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036049"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54708633"
 ---
 # <a name="flowing-transactions-into-and-out-of-workflow-services"></a>Tok transakcí do služeb pracovních postupů a mimo ně
 Služby pracovních postupů a klienti mohou účastnit transakce.  Operace služeb se stanou součástí okolí transakce, umístěte <xref:System.ServiceModel.Activities.Receive> aktivitu v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity. Všechna volání prováděných <xref:System.ServiceModel.Activities.Send> nebo <xref:System.ServiceModel.Activities.SendReply> aktivitu v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> bude také možné v rámci ambientní transakce. Klientská aplikace pracovního postupu můžete vytvořit pomocí okolí transakce <xref:System.Activities.Statements.TransactionScope> aktivity a volání operací služby pomocí okolí transakce. Toto téma vás provede procesem vytvoření služby pracovních postupů a pracovních postupů klienta, který se podílet na transakcích.  
@@ -103,7 +103,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
     |--------------|-----------|  
     |CanCreateInstance|True (zaškrtávací políčko)|  
     |OperationName|StartSample|  
-    |Názvy ServiceContractName|ITransactionSample|  
+    |ServiceContractName|ITransactionSample|  
   
      Pracovní postup by měl vypadat nějak takto:  
   
@@ -118,7 +118,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
     |Aktivita|Hodnota|  
     |--------------|-----------|  
     |1. WriteLine|"Service: Zobrazit dokončené"|  
-    |2. WriteLine|"Service: přijatá =" + requestMessage|  
+    |2. WriteLine|"Service: Přijata = "+ requestMessage|  
   
      Pracovní postup by teď měl vypadat takto:  
   
@@ -133,9 +133,9 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
     |Vlastnost|Hodnota|  
     |--------------|-----------|  
     |Chcete-li|replyMessage|  
-    |Hodnota|"Service: odesílání odpovědi."|  
+    |Hodnota|"Service: Odeslání odpovědi."|  
   
-11. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po <xref:System.Activities.Statements.Assign> aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Service: začít odpověď."  
+11. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po <xref:System.Activities.Statements.Assign> aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Service: Začněte odpověď."  
   
      Pracovní postup by teď měl vypadat takto:  
   
@@ -145,9 +145,9 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
      ![Odpovědět nastavení zpráv](../../../../docs/framework/wcf/feature-details/media/replymessagesettings.JPG "ReplyMessageSettings")  
   
-13. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po `SendReplyToReceive` aktivity a nastavte má <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Service: byla odeslána odpověď."  
+13. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po `SendReplyToReceive` aktivity a nastavte má <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Service: Byla odeslána odpověď."  
   
-14. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity v dolní části pracovního postupu a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Service: ukončení pracovního postupu, stisknutím klávesy ENTER ukončete."  
+14. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity v dolní části pracovního postupu a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Service: Pracovní postup skončí, stisknutím klávesy ENTER ukončete."  
   
      Pracovní postup dokončený služby by měl vypadat nějak takto:  
   
@@ -173,7 +173,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
 6.  Přetáhnout myší `PrintTransactionInfo` aktivitu v rámci <xref:System.Activities.Statements.Sequence>  
   
-7.  Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po `PrintTransactionInfo` aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Klienta: začátek odeslat". Pracovní postup by teď měl vypadat takto:  
+7.  Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po `PrintTransactionInfo` aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "klienta: Od odeslání". Pracovní postup by teď měl vypadat takto:  
   
      ![Přidání aktivity](../../../../docs/framework/wcf/feature-details/media/clientaddcbswriteline.JPG "ClientAddCBSWriteLine")  
   
@@ -183,7 +183,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
     |--------------|-----------|  
     |EndpointConfigurationName|workflowServiceEndpoint|  
     |OperationName|StartSample|  
-    |Názvy ServiceContractName|ITransactionSample|  
+    |ServiceContractName|ITransactionSample|  
   
      Pracovní postup by teď měl vypadat takto:  
   
@@ -199,9 +199,9 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
      ![Nastavení zpráv ReceiveForSend](../../../../docs/framework/wcf/feature-details/media/clientreplymessagesettings.JPG "ClientReplyMessageSettings")  
   
-12. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity mezi <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.ReceiveReply> aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "klienta: odeslat kompletní."  
+12. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity mezi <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.ReceiveReply> aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "klienta: Odeslat kompletní."  
   
-13. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po <xref:System.ServiceModel.Activities.ReceiveReply> aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "na straně klienta: přijatá odpověď =" + replyMessage  
+13. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po <xref:System.ServiceModel.Activities.ReceiveReply> aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "na straně klienta: Přijatá odpověď = "+ replyMessage  
   
 14. Přetáhnout myší `PrintTransactionInfo` aktivity po <xref:System.Activities.Statements.WriteLine> aktivity.  
   
@@ -312,7 +312,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
         }  
     ```  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 
-- [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+- [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
 - [Přehled transakcí ve Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/transactions-overview.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: 543d095c88670024a53fad7c865883ecaab1c6e0
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: b7a2cd6ec3be6d2a572e96e37032b3dec8a5a741
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45747054"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54697345"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Zprostředkovatel streamování (WCF Data Services)
 Datové služby může vystavit data binárního rozsáhlého objektu. Tento binární data mohou představovat video a audiostreamů, obrázky, soubory dokumentů nebo jiných typů médií binární. Pokud entita v datovém modelu obsahuje jeden nebo více binárních vlastností, datové služby vrátí tato binární data kódováním base-64 uvnitř položky v odpovědi informačního kanálu. Protože načítání a serializaci velkému objemu binárních dat tímto způsobem může ovlivnit výkon, [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] definuje mechanismus pro načítání binárních dat, které jsou nezávislé na entitu, do které patří. Toho dosahuje oddělením binární data z entity do jednoho nebo více datových proudů.  
@@ -38,7 +38,7 @@ Datové služby může vystavit data binárního rozsáhlého objektu. Tento bin
   
 5.  Povolení přístupu k binární prostředky na serveru nebo ve zdroji dat.  
   
- Příklady v tomto tématu jsou založené na vzorku služba pro streamování fotek, která je podrobně popsané v příspěvku [datové služby streamování poskytovatele řady: implementace poskytovatele datových proudů (část 1)](https://go.microsoft.com/fwlink/?LinkID=198989). Zdrojový kód pro tuto službu ukázka je k dispozici na [streamování fotek ukázková Data pro službu stránky](https://go.microsoft.com/fwlink/?LinkID=198988) Galerie kódu MSDN.  
+ Příklady v tomto tématu jsou založené na vzorku služba pro streamování fotek, která je podrobně popsané v příspěvku [datové služby streamování řady zprostředkovatele: Implementace zprostředkovatele datových proudů (část 1)](https://go.microsoft.com/fwlink/?LinkID=198989). Zdrojový kód pro tuto službu ukázka je k dispozici na [streamování fotek ukázková Data pro službu stránky](https://go.microsoft.com/fwlink/?LinkID=198988) Galerie kódu MSDN.  
   
 ## <a name="defining-a-media-link-entry-in-the-data-model"></a>Definování položku Media Link Entry v datovém modelu  
  Zprostředkovatel zdroje dat určuje způsob, jakým, že entita je definován jako položku media link entry v datovém modelu.  
@@ -50,7 +50,7 @@ Datové služby může vystavit data binárního rozsáhlého objektu. Tento bin
   
  Musíte taky přidat obor názvů `xmlns:m=http://schemas.microsoft.com/ado/2007/08/dataservices/metadata` k entitě nebo do kořenového adresáře souboru .edmx nebo .csdl, který definuje datový model.  
   
- Příklad z datové služby, který používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele a zveřejňuje mediální zdroj, najdete v příspěvku [datové služby streamování poskytovatele řady: implementace poskytovatele datových proudů (část 1)](https://go.microsoft.com/fwlink/?LinkID=198989).  
+ Příklad z datové služby, který používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele a zveřejňuje prostředkem média, najdete v příspěvku [datové služby streamování poskytovatele řady: Implementace zprostředkovatele datových proudů (část 1)](https://go.microsoft.com/fwlink/?LinkID=198989).  
   
  **Zprostředkovatel reflexe**  
  Označuje, že entita položkou odkazu na média, přidejte <xref:System.Data.Services.Common.HasStreamAttribute> do třídy, která definuje typ entity v zprostředkovatel reflexe.  
@@ -129,7 +129,7 @@ Datové služby může vystavit data binárního rozsáhlého objektu. Tento bin
   
  Další informace najdete v tématu [Správa verzí datové služby](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).  
   
-## <a name="see-also"></a>Viz také  
- [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)  
- [Vlastní zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)  
- [Práce s binárními daty](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)
+## <a name="see-also"></a>Viz také:
+- [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)
+- [Vlastní zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/custom-data-service-providers-wcf-data-services.md)
+- [Práce s binárními daty](../../../../docs/framework/data/wcf/working-with-binary-data-wcf-data-services.md)

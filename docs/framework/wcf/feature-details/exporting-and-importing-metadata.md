@@ -4,70 +4,70 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - metadata [WCF], exporting and importing
 ms.assetid: 614a75bb-e0b0-4c95-b6d8-02cb5e5ddb38
-ms.openlocfilehash: 497feb80d5930a784022877cfaa6e6c76a3047a1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f99b8626ca4a89bf94e44652e8277f8b2c147fe3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33495421"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54706375"
 ---
 # <a name="exporting-and-importing-metadata"></a>Export a import metadat
-Ve Windows Communication Foundation (WCF), Export metadat je proces popisující koncové body služby a projekce je do znázornění paralelní, standardizované, který můžou klienti používat pochopit, jak používat službu. Import metadat služby je proces generování <xref:System.ServiceModel.Description.ServiceEndpoint> instance nebo části z metadat služby.  
+Ve Windows Communication Foundation (WCF), Export metadat je proces popisující koncové body služby a projekci na paralelní standardizované reprezentaci, který můžou klienti použít k vysvětlení použití služby. Import metadat služby je procesem generování <xref:System.ServiceModel.Description.ServiceEndpoint> instance nebo části z metadat služby.  
   
 ## <a name="exporting-metadata"></a>Export metadat  
- Pro export metadat z <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> instance slouží provádění <xref:System.ServiceModel.Description.MetadataExporter> abstraktní třídy. <xref:System.ServiceModel.Description.WsdlExporter> Typ je implementace <xref:System.ServiceModel.Description.MetadataExporter> abstraktní třídy součástí WCF.  
+ Pro export metadat z <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> instance slouží provádění <xref:System.ServiceModel.Description.MetadataExporter> abstraktní třídy. <xref:System.ServiceModel.Description.WsdlExporter> Typ je provádění <xref:System.ServiceModel.Description.MetadataExporter> abstraktní třída součástí WCF.  
   
- <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> Typ generuje metadata webové služby popis Language (WSDL) s výrazy připojené zásad zapouzdřené v <xref:System.ServiceModel.Description.MetadataSet> instance. Můžete použít <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> instance interaktivně vyexportujte metadata pro <xref:System.ServiceModel.Description.ContractDescription> objekty a <xref:System.ServiceModel.Description.ServiceEndpoint> objekty. Můžete také exportovat kolekce <xref:System.ServiceModel.Description.ServiceEndpoint> objekty a jejich přidružení s názvem konkrétní služby.  
+ <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> Typ generuje metadata služby popis jazyka WSDL (Web) pomocí výrazů zásad připojené zapouzdřené v <xref:System.ServiceModel.Description.MetadataSet> instance. Můžete použít <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> instance pro iterativní export metadat pro <xref:System.ServiceModel.Description.ContractDescription> objekty a <xref:System.ServiceModel.Description.ServiceEndpoint> objekty. Můžete také exportovat kolekci <xref:System.ServiceModel.Description.ServiceEndpoint> objektů a přidružit je k název konkrétní služby.  
   
 > [!NOTE]
->  Lze použít pouze `WsdlExporter` pro export metadat z `ContractDescription` instancí, které obsahují modul common language runtime (CLR) zadejte informace, například `ContractDescription` instance vytvořené pomocí `ContractDescription.GetContract` metoda nebo vytvořené jako součást `ServiceDescription` pro `ServiceHost` instance. Nelze použít `WsdlExporter` pro export metadat z `ContractDescription` instance importovat z metadat služby nebo sestavený bez informací o typu.  
+>  Lze použít pouze `WsdlExporter` pro export metadat z `ContractDescription` instancí, které obsahují common language runtime (CLR) zadejte informace, například `ContractDescription` instance vytvořené pomocí `ContractDescription.GetContract` metoda nebo vytvořen jako součást `ServiceDescription` pro `ServiceHost` instance. Nelze použít `WsdlExporter` pro export metadat z `ContractDescription` instance naimportované z metadat služby nebo vytvořen bez informací o typu.  
   
 ## <a name="importing-metadata"></a>Import metadat  
   
-### <a name="importing-wsdl-documents"></a>Import dokumentů WSDL  
- Chcete-li importovat metadata služby ve službě WCF, použijte implementace <xref:System.ServiceModel.Description.MetadataImporter> abstraktní třídy. <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> Typ je implementace <xref:System.ServiceModel.Description.MetadataImporter> abstraktní třídy součástí WCF. <xref:System.ServiceModel.Description.WsdlImporter> Zadejte importy WSDL metadata připojené zásadám dodávat v <xref:System.ServiceModel.Description.MetadataSet> objektu.  
+### <a name="importing-wsdl-documents"></a>Import dokumenty WSDL  
+ Při importu metadat služby ve službě WCF použijte implementace <xref:System.ServiceModel.Description.MetadataImporter> abstraktní třídy. <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> Typ je provádění <xref:System.ServiceModel.Description.MetadataImporter> abstraktní třída součástí WCF. <xref:System.ServiceModel.Description.WsdlImporter> Typu WSDL metadat připojené zásadami spojeny v příkazu imports <xref:System.ServiceModel.Description.MetadataSet> objektu.  
   
- <xref:System.ServiceModel.Description.WsdlImporter> Typ umožňuje určit, jak importovat metadata. Můžete importovat všechny koncové body, všechny vazby, nebo všechny smluv. Můžete importovat všechny koncové body přidružené k specifické WSDL služby, vazba nebo typ portu. Můžete také importovat koncový bod pro specifického portu WSDL, vazby pro konkrétní vazbu WSDL nebo kontrakt pro konkrétní typ portu WSDL.  
+ <xref:System.ServiceModel.Description.WsdlImporter> Typ umožňuje určit, jak importovat metadata. Můžete importovat všechny koncové body, všechny vazby, nebo všechny kontrakty. Můžete importovat všechny koncové body přidružené k určité službě WSDL, vazby nebo typ portu. Můžete také importovat koncový bod pro konkrétní port WSDL, vazby pro konkrétní Vazba WSDL nebo smlouvy pro konkrétní typ portu WSDL.  
   
- <xref:System.ServiceModel.Description.WsdlImporter> Taky zpřístupňuje <xref:System.ServiceModel.Description.MetadataImporter.KnownContracts%2A> vlastnost, která vám umožní určit sadu smlouvy, které není potřeba importovat. <xref:System.ServiceModel.Description.WsdlImporter> Používá kontrakty v <xref:System.ServiceModel.Description.MetadataImporter.KnownContracts%2A> vlastnost místo import kontraktu se stejným názvem kvalifikovaný z metadat.  
+ <xref:System.ServiceModel.Description.WsdlImporter> Taky zpřístupňuje <xref:System.ServiceModel.Description.MetadataImporter.KnownContracts%2A> vlastnost, která vám umožní určit sadu smluv, které nemusí být importován. <xref:System.ServiceModel.Description.WsdlImporter> Používá smlouvy v <xref:System.ServiceModel.Description.MetadataImporter.KnownContracts%2A> vlastnost neimportujete kontrakt se stejným názvem kvalifikovaný z metadat.  
   
 ### <a name="importing-policies"></a>Import zásady  
- <xref:System.ServiceModel.Description.WsdlImporter> Typ shromažďuje výrazy zásad připojeného ke zprávě, operace, a koncového bodu předměty a použije je <xref:System.ServiceModel.Description.IPolicyImportExtension> implementace v <xref:System.ServiceModel.Description.MetadataImporter.PolicyImportExtensions%2A> kolekce k importu výrazy zásad.  
+ <xref:System.ServiceModel.Description.WsdlImporter> Typ shromažďuje výrazy zásad, který je připojen ke zprávě, operace, a zásady koncového bodu Predmety a použije je <xref:System.ServiceModel.Description.IPolicyImportExtension> implementace v <xref:System.ServiceModel.Description.MetadataImporter.PolicyImportExtensions%2A> kolekce pro import výrazy zásad.  
   
- Logika zásad import automaticky zpracovává zásady odkazy na výrazy zásad do jednoho dokumentu WSDL a je označena `wsu:Id` nebo `xml:id` atribut. Logika zásad import chrání aplikace pro zásady cyklické odkazy omezením velikosti výraz zásad do 4096 uzlů, které je jeden z následujících prvků uzel: `wsp:Policy`, `wsp:All`, `wsp:ExactlyOne`, `wsp:policyReference`.  
+ Logika importu zásad automaticky zpracovává zásady odkazy na výrazy zásad ve stejném dokumentu WSDL a přiřazen `wsu:Id` nebo `xml:id` atribut. Logika zásad import chrání aplikace proti zásad cyklické odkazy omezením velikosti výraz zásad do 4096 uzlů, kde uzel je jedním z následujících elementů: `wsp:Policy`, `wsp:All`, `wsp:ExactlyOne`, `wsp:policyReference`.  
   
- Logika zásad import také automaticky normalizuje výrazy zásad. Vnořené výrazy zásad a `wsp:Optional` nejsou normalized atribut. Objem zpracování normalizaci se provádí je omezený na 4096 kroky, kde každý krok vypočítá výraz zásad nebo podřízený prvek `wsp:ExactlyOne` elementu.  
+ Logika zásad import také automaticky normalizuje výrazy zásad. Vnořené výrazy zásad a `wsp:Optional` atribut není normalizovaná. Velikost normalizace zpracování dokončení je omezená na 4096 kroků, kdy každý krok provede kontrolní výraz zásad, nebo podřízený prvek `wsp:ExactlyOne` elementu.  
   
- <xref:System.ServiceModel.Description.WsdlImporter> Typ pokusí až 32 kombinace alternativy zásady připojené k jiné zásady témata WSDL. Pokud žádné kombinace importuje řádně, první kombinace slouží k vytvoření částečné vlastní vazby.  
+ <xref:System.ServiceModel.Description.WsdlImporter> Typ pokusí až 32 kombinací alternativy zásad, které jsou připojené k jiné zásady předměty WSDL. Pokud žádná kombinace importuje čistě, první kombinace slouží k vytvoření částečné vlastní vazby.  
   
 ## <a name="error-handling"></a>Zpracování chyb  
- Jak <xref:System.ServiceModel.Description.MetadataExporter> a <xref:System.ServiceModel.Description.MetadataImporter> typy vystavit `Errors` vlastnost obsahující kolekci chybové zprávy a upozornění došlo během procesů exportu a importu v uvedeném pořadí, které lze použít při implementaci nástroje.  
+ Jak <xref:System.ServiceModel.Description.MetadataExporter> a <xref:System.ServiceModel.Description.MetadataImporter> vystavit typy `Errors` vlastnosti, které obsahují kolekci chybové zprávy a upozornění došlo k během procesu exportu a importu v uvedeném pořadí, který může být použit při implementaci nástrojů.  
   
- <xref:System.ServiceModel.Description.WsdlImporter> Typ obecně vyvolá výjimku, výjimka zachycena během procesu importu a přidá odpovídající chyba k jeho `Errors` vlastnost. <xref:System.ServiceModel.Description.WsdlImporter.ImportAllContracts%2A>, <xref:System.ServiceModel.Description.WsdlImporter.ImportAllBindings%2A>, <xref:System.ServiceModel.Description.WsdlImporter.ImportAllEndpoints%2A>, A <xref:System.ServiceModel.Description.WsdlImporter.ImportEndpoints%2A> metody, ale nevyvolá výjimku tyto výjimky, takže je nutné zkontrolovat, `Errors` vlastnosti k určení, pokud všechny problémy došlo k chybě při volání těchto metod.  
+ <xref:System.ServiceModel.Description.WsdlImporter> Typ obvykle vyvolá výjimku, výjimka zachycena během procesu importu a přidá odpovídající chybu k jeho `Errors` vlastnost. <xref:System.ServiceModel.Description.WsdlImporter.ImportAllContracts%2A>, <xref:System.ServiceModel.Description.WsdlImporter.ImportAllBindings%2A>, <xref:System.ServiceModel.Description.WsdlImporter.ImportAllEndpoints%2A>, A <xref:System.ServiceModel.Description.WsdlImporter.ImportEndpoints%2A> metody, ale nevyvolají výjimku těchto výjimek, musíte zkontrolovat, `Errors` a určí, pokud došlo k nějaké problémy při volání těchto metod.  
   
- <xref:System.ServiceModel.Description.WsdlExporter> Typ znovu vyvolá všechny výjimky zachycené během procesu exportu. Tyto výjimky nejsou zaznamená jako chyby v `Errors` vlastnost. Jednou <xref:System.ServiceModel.Description.WsdlExporter> vyvolá výjimku, je v chybovém stavu a nelze znovu použít. <xref:System.ServiceModel.Description.WsdlExporter> Přidání upozornění k jeho `Errors` při operaci nelze exportovat, protože používá zástupný znak akcí a když se vyskytují duplicitní vazbu názvy.  
+ <xref:System.ServiceModel.Description.WsdlExporter> Typ znovu vyvolá všechny výjimky zachycené během procesu exportu. Tyto výjimky nejsou zaznamenat jako chyby v `Errors` vlastnost. Jakmile <xref:System.ServiceModel.Description.WsdlExporter> vyvolá výjimku, je v chybovém stavu a nejde použít znovu. <xref:System.ServiceModel.Description.WsdlExporter> Přidá upozornění na jeho `Errors` při operaci nejde exportovat, protože používá akce zástupný znak a když se vyskytují duplicitní vazbu názvy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Import metadat do koncových bodů služby](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md)  
- Popisuje, jak naimportujte stažené metadata do popis objektů.  
+ Popisuje, jak importovat metadata stažený do popisu objektů.  
   
  [Postupy: Export metadat z koncových bodů služby](../../../../docs/framework/wcf/feature-details/how-to-export-metadata-from-service-endpoints.md)  
  Popisuje, jak exportovat objekty popis do metadat.  
   
  [ServiceDescription a referenční informace pro WSDL](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md)  
- Popisuje mapování mezi objekty popis a WSDL.  
+ Popisuje mapování mezi objekty, popis a WSDL.  
   
- [Postupy: Použití nástroje Svcutil.exe k exportu metadat z kompilovaného kódu služby](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)  
- Popisuje použití nástroje Svcutil.exe pro export metadat pro služby, smlouvy a datových typů v sestaveních kompilované.  
+ [Postupy: Použití Svcutil.exe pro Export metadat z kompilovaného kódu služby](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)  
+ Popisuje použití nástroje Svcutil.exe pro export metadat pro služby, kontrakty a datové typy v kompilovaných sestavení.  
   
  [Schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
- Popisuje některé z schéma XML (XSD) používané <xref:System.Runtime.Serialization.DataContractSerializer> k popisu common language runtime (CLR) typy pro serializaci XML.  
+ Popisuje podmnožinu z schématu XML (XSD) používá <xref:System.Runtime.Serialization.DataContractSerializer> k popisu common language runtime (CLR) typy pro serializaci kódu XML.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.ServiceModel.Description.WsdlExporter>  
   
  <xref:System.ServiceModel.Description.WsdlImporter>  
   
-## <a name="see-also"></a>Viz také  
- [Export vlastních metadat pro rozšíření WCF](../../../../docs/framework/wcf/extending/exporting-custom-metadata-for-a-wcf-extension.md)  
- [Import vlastních metadat pro rozšíření WCF](../../../../docs/framework/wcf/extending/importing-custom-metadata-for-a-wcf-extension.md)
+## <a name="see-also"></a>Viz také:
+- [Export vlastních metadat pro rozšíření WCF](../../../../docs/framework/wcf/extending/exporting-custom-metadata-for-a-wcf-extension.md)
+- [Import vlastních metadat pro rozšíření WCF](../../../../docs/framework/wcf/extending/importing-custom-metadata-for-a-wcf-extension.md)

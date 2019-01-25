@@ -5,12 +5,12 @@ helpviewer_keywords:
 - certificates [WCF], specifying the certificate authority certificate chain
 - certificates [WCF], verifying signatures
 ms.assetid: 7c719355-aa41-4567-80d0-5115a8cf73fd
-ms.openlocfilehash: 9e2ba9f3550442602cab217fec329e6c19efd3b3
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 8d44e9f9278a212813fca5e77ebfca72734c60d6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47200097"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54648781"
 ---
 # <a name="how-to-specify-the-certificate-authority-certificate-chain-used-to-verify-signatures-wcf"></a>Postupy: Zadání řetězu certifikátů certifikační autority používaného k ověřování podpisů (WCF)
 Přijetí Windows Communication Foundation (WCF) protokolu SOAP zprávy podepsány pomocí certifikátu X.509, ve výchozím nastavení ověřuje, že certifikát X.509 byl vydán důvěryhodnou certifikační autoritou. To se provádí vyhledávání v úložišti certifikátů a určení, pokud certifikát u této certifikační autoritě je určený jako důvěryhodné. Aby WCF za účelem určení musí být nainstalována řetěz certifikátů certifikační autority v úložišti certifikátů správné.  
@@ -31,7 +31,7 @@ Přijetí Windows Communication Foundation (WCF) protokolu SOAP zprávy podepsá
   
          V Microsoft Management Console (MMC), otevřete modul snap-in Certifikáty. Úložiště certifikátů je nakonfigurovaný tento WCF načíst certifikáty X.509 z vyberte **důvěryhodné kořenové** **certifikačních autorit** složky. V části **důvěryhodných kořenových certifikačních autorit** složky, klikněte pravým tlačítkem na **certifikáty** složku, přejděte na příkaz **všechny úkoly**a potom klikněte na tlačítko **Import** . Zadejte soubor exportovali v kroku.  
   
-         Další informace o pomocí modulu snap-in Certifikáty konzoly MMC, naleznete v tématu [postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
+         Další informace o pomocí modulu snap-in Certifikáty konzoly MMC, naleznete v tématu [jak: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
   
-## <a name="see-also"></a>Viz také  
- [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+## <a name="see-also"></a>Viz také:
+- [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

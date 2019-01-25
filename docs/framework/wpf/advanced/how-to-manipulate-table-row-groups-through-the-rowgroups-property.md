@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: manipulace s tabulku&#39;skupin řádků s prostřednictvím vlastnosti RowGroups'
+title: 'Postupy: Pracovat s tabulkou&#39;s skupinami řádků prostřednictvím vlastnosti RowGroups'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,24 +10,24 @@ helpviewer_keywords:
 - documents [WPF], manipulating row groups through RowGroups property
 - properties [WPF], RowGroups [WPF], manipulating row groups
 ms.assetid: ea61440f-08ae-44ed-b314-5716aaaae3ed
-ms.openlocfilehash: 8cdf3b74fa5bf5a566c541ba035a1c7da7dd6949
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 233ae0e76d175f4ce20a573aa2aa29d39106562e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33545162"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700455"
 ---
-# <a name="how-to-manipulate-a-table39s-row-groups-through-the-rowgroups-property"></a>Postupy: manipulace s tabulku&#39;skupin řádků s prostřednictvím vlastnosti RowGroups
-Tento příklad ukazuje některé z nejčastěji operací, které lze provést na skupiny řádků tabulky prostřednictvím <xref:System.Windows.Documents.Table.RowGroups%2A> vlastnost.  
+# <a name="how-to-manipulate-a-table39s-row-groups-through-the-rowgroups-property"></a>Postupy: Pracovat s tabulkou&#39;s skupinami řádků prostřednictvím vlastnosti RowGroups
+Tento příklad ukazuje některé běžné operace, které lze provést u skupinami řádků tabulky <xref:System.Windows.Documents.Table.RowGroups%2A> vlastnost.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří novou tabulku a potom pomocí <xref:System.Windows.Documents.TableRowGroupCollection.Add%2A> metody přidat sloupce do tabulky <xref:System.Windows.Documents.Table.RowGroups%2A> kolekce.  
+ Následující příklad vytvoří novou tabulku a poté použije <xref:System.Windows.Documents.TableRowGroupCollection.Add%2A> metodu pro přidání sloupce do tabulky <xref:System.Windows.Documents.Table.RowGroups%2A> kolekce.  
   
  [!code-csharp[TableSnippets2#_Table_RowGroups_Add](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_rowgroups_add)]
  [!code-vb[TableSnippets2#_Table_RowGroups_Add](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_rowgroups_add)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vloží novou <xref:System.Windows.Documents.TableRowGroup>.  Je na pozici indexu 0, což nový první řádek vložit nový sloupec v tabulce.  
+ V následujícím příkladu vloží nový <xref:System.Windows.Documents.TableRowGroup>.  Nový sloupec je vložené na pozici indexu 0, takže nové první řádek v tabulce skupiny.  
   
 > [!NOTE]
 >  <xref:System.Windows.Documents.TableRowGroupCollection> Kolekce používá standardní indexování od nuly.  
@@ -36,54 +36,54 @@ Tento příklad ukazuje některé z nejčastěji operací, které lze provést n
  [!code-vb[TableSnippets2#_Table_RowGroups_Insert](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_rowgroups_insert)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad přidá několik řádků ke konkrétní <xref:System.Windows.Documents.TableRowGroup> (zadán indexem) v tabulce.  
+ Následující příklad přidá několik řádků ke konkrétní <xref:System.Windows.Documents.TableRowGroup> (specifikované indexem) v tabulce.  
   
  [!code-csharp[TableSnippets2#_Table_RowGroups_AddRows](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_rowgroups_addrows)]
  [!code-vb[TableSnippets2#_Table_RowGroups_AddRows](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_rowgroups_addrows)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá některé libovolné vlastnosti v řádcích ve skupině první řádek v tabulce.  
+ Následující příklad přistupuje k některé vlastnosti libovolné řádky v první skupina řádků v tabulce.  
   
  [!code-csharp[TableSnippets2#_Table_RowGroups_ManipRows](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_rowgroups_maniprows)]
  [!code-vb[TableSnippets2#_Table_RowGroups_ManipRows](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_rowgroups_maniprows)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad přidá několika buněk ke konkrétní <xref:System.Windows.Documents.TableRow> (zadán indexem) v tabulce.  
+ Následující příklad přidá několik buňky ke konkrétní <xref:System.Windows.Documents.TableRow> (specifikované indexem) v tabulce.  
   
  [!code-csharp[TableSnippets2#_Table_RowGroups_AddCells](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_rowgroups_addcells)]
  [!code-vb[TableSnippets2#_Table_RowGroups_AddCells](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_rowgroups_addcells)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad přístup některé libovolné metody a vlastnosti buněk v první řádek v první skupiny řádků.  
+ V následujícím příkladu přístup k některé libovolné metody a vlastnosti buněk v prvním řádku v první skupinu řádků.  
   
  [!code-csharp[TableSnippets2#_Table_RowGroups_ManipCells](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_rowgroups_manipcells)]
  [!code-vb[TableSnippets2#_Table_RowGroups_ManipCells](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_rowgroups_manipcells)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vrátí počet <xref:System.Windows.Documents.TableRowGroup> elementy, které jsou hostované v tabulce.  
+ Následující příklad vrátí počet <xref:System.Windows.Documents.TableRowGroup> prvky, které jsou hostovány v tabulce.  
   
  [!code-csharp[TableSnippets2#_Table_RowGroups_Count](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_rowgroups_count)]
  [!code-vb[TableSnippets2#_Table_RowGroups_Count](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_rowgroups_count)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad odebere skupinu konkrétního řádku odkazem.  
+ Následující příklad odebere skupinu konkrétního řádku podle odkazu.  
   
  [!code-csharp[TableSnippets2#_Table_RowGroups_DelRef](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_rowgroups_delref)]
  [!code-vb[TableSnippets2#_Table_RowGroups_DelRef](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_rowgroups_delref)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad odebere skupinu konkrétního řádku index.  
+ Následující příklad odebere skupinu konkrétního řádku podle indexu.  
   
  [!code-csharp[TableSnippets2#_Table_RowGroups_DelIndex](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_rowgroups_delindex)]
  [!code-vb[TableSnippets2#_Table_RowGroups_DelIndex](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_rowgroups_delindex)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad odebere všechny skupiny řádků z kolekce skupin řádků v tabulce.  
+ Následující příklad odebere všechny skupiny řádku z kolekce skupin řádků v tabulce.  
   
  [!code-csharp[TableSnippets2#_Table_RowGroups_Clear](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml.cs#_table_rowgroups_clear)]
  [!code-vb[TableSnippets2#_Table_RowGroups_Clear](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TableSnippets2/visualbasic/window1.xaml.vb#_table_rowgroups_clear)]  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Manipulace s prvky toku obsahu prostřednictvím vlastnosti Inlines](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)  
- [Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
- [Zpracování sloupců tabulky prostřednictvím vlastnosti Columns](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Zpracování elementů obsahu toku prostřednictvím vlastnosti Inlines](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)
+- [Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)
+- [Zpracování sloupců tabulky prostřednictvím vlastnosti Columns](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)

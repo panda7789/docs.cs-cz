@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: generování textové soubory ze souboru XML (Visual Basic)'
+title: 'Postupy: Generování textových souborů z XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 3b33f191-4abe-4419-b81b-3cb81d9a317f
-ms.openlocfilehash: 6b9e816fc61a583e8ea07045127b895480c03147
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bd3c8b0f9faf0b465d9b0f6a5c17ceef62ddb285
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33642776"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54687715"
 ---
-# <a name="how-to-generate-text-files-from-xml-visual-basic"></a>Postupy: generování textové soubory ze souboru XML (Visual Basic)
-Tento příklad ukazuje, jak můžete vytvořit soubor hodnot oddělených čárkami (CSV) ze souboru XML.  
+# <a name="how-to-generate-text-files-from-xml-visual-basic"></a>Postupy: Generování textových souborů z XML (Visual Basic)
+Tento příklad ukazuje, jak vygenerovat soubor hodnot oddělených čárkami (CSV) ze souboru XML.  
   
 ## <a name="example"></a>Příklad  
- Verze jazyka Visual Basic procedurální kód používá k agregaci kolekce řetězce do jednoho řetězce.  
+ Verze jazyka Visual Basic používá kódu procedury k agregaci kolekce řetězce do jednoho řetězce.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Dim custOrd As XElement = XElement.Load("CustomersOrders.xml")  
@@ -51,5 +51,5 @@ LAZYK,Lazy K Kountry Store,John Steel,Marketing Manager,(509) 555-7969,12 Orches
 LETSS,Let's Stop N Shop,Jaime Yorres,Owner,(415) 555-5938,87 Polk St. Suite 5,San Francisco,CA,94117,USA  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Projekce a transformace (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

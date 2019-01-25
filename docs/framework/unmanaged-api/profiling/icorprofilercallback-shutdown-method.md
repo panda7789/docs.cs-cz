@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 83e32b2b69d53772f8a4ebaabe1c025b95d1da47
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bb2bfe927eddaf6812b0185a586135e76f649c1b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33453724"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54728119"
 ---
 # <a name="icorprofilercallbackshutdown-method"></a>ICorProfilerCallback::Shutdown – metoda
-Aby se aplikace vypíná upozorní profileru.  
+Oznámí profileru, že se aplikace vypíná.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,14 +34,14 @@ HRESULT Shutdown();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Kód profileru nelze bezpečně volat metody [icorprofilerinfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) rozhraní po `Shutdown` metoda je volána. Volání `ICorProfilerInfo` metody za následek nedefinované chování po `Shutdown` metoda vrátí. Určité neměnné události může stále dojít po vypnutí; vrátit okamžitě v takovém případě by měl postará profileru.  
+ Profiler kódu nelze bezpečně volat metody [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) rozhraní po `Shutdown` metoda je volána. Všechna volání do `ICorProfilerInfo` metody za následek nedefinované chování po `Shutdown` metoda vrátí hodnotu. Určité neměnné události může stále dojít po vypnutí; profiler byste měli věnovat pozornost k vrácení okamžitě, pokud k tomu dojde.  
   
- `Shutdown` Volání metody pouze v případě, že spravované aplikace, která je vytvořený profil spustit jako spravovaného kódu (to znamená, je spravován na počáteční rámce v zásobníku proces). Pokud aplikace spustit jako nespravovaný kód, ale později přešli do spravovaného kódu, čímž vytvoření instance common language runtime (CLR), pak `Shutdown` nebude volána. Pro tyto případy by měla obsahovat profileru své knihovny `DllMain` rutiny, která používá DLL_PROCESS_DETACH hodnotu uvolněte všechny prostředky a provést čištění zpracování svá data, jako je například, abyste vyprázdnili trasování na disk a tak dále.  
+ `Shutdown` Metoda bude volána pouze v případě, že spravovaná aplikace, která je právě profilována spuštěn jako spravovaný kód (to znamená, je spravovaný počáteční rámec v zásobníku proces). Pokud aplikace spustil jako nespravovaný kód, ale později vstupovat do spravovaného kódu, a tím vytvoření instance modulu common language runtime (CLR), pak `Shutdown` nebude volána. Pro tyto případy, by měl obsahovat profileru v jeho knihovně `DllMain` rutiny, které používají DLL_PROCESS_DETACH hodnota uvolněte veškeré prostředky a provádět čištění zpracování nad svými daty, jako je vyprazdňování trasování na disk a tak dále.  
   
- Obecně platí musí profileru zvládl neočekávané vypnutí systému. Například může být proces byl zastaven na Win32 `TerminateProcess` – metoda (deklarované v Winbase.h). V ostatních případech se modulu CLR zastaví určité spravovaných vláknech (vlákna na pozadí) bez doručování zpráv řádné odstraňování pro ně.  
+ Obecně platí profiler musí zvládnout neočekávané vypnutí. Například může být proces zastavení na Win32 `TerminateProcess` – metoda (deklarované v Winbase.h). V jiných případech zastaví CLR bez doručováním zpráv řádné zničení pro ně určité spravovaná vlákna (vláken na pozadí).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -49,6 +49,6 @@ HRESULT Shutdown();
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [Initialize – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [Initialize – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md)

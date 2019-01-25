@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2f3bf29b9b4d216483ea0c81cc787c80fc8b9e6f
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: 84e44f0112a5d1b5fd38daf488d865f6e228f82b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453356"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54713938"
 ---
 # <a name="globalization"></a>Globalizace
 Globalizace zahrnuje návrh a vývoj globalizovaných aplikace, která podporuje lokalizovaná uživatelská rozhraní a regionální data pro uživatele ve více jazykových verzích. Před zahájením fáze návrhu, byste měli určit jazykové verze, které bude aplikace podporovat. Přestože aplikace cílí na jednu kulturu nebo oblast jako výchozí, můžete navrhnout a napsat ji tak, aby ho snadno rozšířitelná na uživatele v jiné jazykové verze nebo regiony.  
@@ -99,7 +99,7 @@ Globalizace zahrnuje návrh a vývoj globalizovaných aplikace, která podporuje
 > [!TIP]
 >  Můžete použít <xref:System.Globalization.StringInfo> tříd pro práci s elementy textu místo jednotlivých znaků v řetězci.  
   
- V řetězec hledání a porovnávání řetězců je obvyklou chybou považovat řetězec za kolekci znaků, z nichž každý je reprezentován <xref:System.Char> objektu. Ve skutečnosti může jeden znak tvořen jeden, dva nebo více <xref:System.Char> objekty. Tyto znaky jsou nejčastěji součástí řetězce z kultur, jejichž písmena abecedy jsou tvořena znaky mimo rozsah znaků základní latinky Unicode (U + 0021 až U + 007E). Následující příklad se pokusí vyhledat index znaku velké znak LATIN velké písmeno A s čárkou nad vlevo (U + 00C 0) v řetězci. Nicméně, tento znak může být reprezentován dvěma různými způsoby: jako jedna znaková jednotka (U + 00C 0) nebo jako složený znak (dvě znakové jednotky: U + 0021 a U + 007E). V takovém případě je znak reprezentován v instanci řetězce dvěma <xref:System.Char> objektů, U + 0021 a U + 007E. Příklad kódu volá <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> a <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> přetížení pro hledání pozice tohoto znaku v instanci řetězce, ale tyto vrací odlišné výsledky. První metoda volání má <xref:System.Char> argument; provádí řadové porovnání a proto nemůže nalézt shodu. Druhé volání má <xref:System.String> argument; provádí porovnání citlivé na jazykovou verzi a proto najde shodu.  
+ V řetězec hledání a porovnávání řetězců je obvyklou chybou považovat řetězec za kolekci znaků, z nichž každý je reprezentován <xref:System.Char> objektu. Ve skutečnosti může jeden znak tvořen jeden, dva nebo více <xref:System.Char> objekty. Tyto znaky jsou nejčastěji součástí řetězce z kultur, jejichž písmena abecedy jsou tvořena znaky mimo rozsah znaků základní latinky Unicode (U + 0021 až U + 007E). Následující příklad se pokusí vyhledat index znaku velké znak LATIN velké písmeno A s čárkou nad vlevo (U + 00C 0) v řetězci. Nicméně, tento znak může být reprezentován dvěma různými způsoby: jako jedna znaková jednotka (U + 00C 0) nebo jako složený znak (dvě znakové jednotky: U+ 0021 a U + 007E). V takovém případě je znak reprezentován v instanci řetězce dvěma <xref:System.Char> objektů, U + 0021 a U + 007E. Příklad kódu volá <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> a <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> přetížení pro hledání pozice tohoto znaku v instanci řetězce, ale tyto vrací odlišné výsledky. První metoda volání má <xref:System.Char> argument; provádí řadové porovnání a proto nemůže nalézt shodu. Druhé volání má <xref:System.String> argument; provádí porovnání citlivé na jazykovou verzi a proto najde shodu.  
   
  [!code-csharp[Conceptual.Globalization#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/search1.cs#18)]
  [!code-vb[Conceptual.Globalization#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/search1.vb#18)]  
@@ -371,5 +371,5 @@ Globalizace zahrnuje návrh a vývoj globalizovaných aplikace, která podporuje
   
 ## <a name="see-also"></a>Viz také:
 
-- [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)  
+- [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)
 - [Doporučené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md)

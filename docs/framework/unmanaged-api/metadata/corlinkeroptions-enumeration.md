@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0d154985e9c1614e6b8f13a55410ead0cb5e861b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0a072e124343641c9f75fb9f924a6409efc8e1d4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33441052"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54719934"
 ---
 # <a name="corlinkeroptions-enumeration"></a>CorLinkerOptions – výčet
-Určuje příznaky výběr možností pro metadata linkeru.  
+Určuje příznaky a možnosti pro linker metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,15 +39,15 @@ typedef enum CorLinkerOptions {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`MDAssembly`|Privátní typy a globální funkce nejsou zachována.|  
-|`MDNetModule`|Privátní typy a globální funkce se zachovají.|  
+|`MDAssembly`|Privátní typy a globální funkce není zachováno.|  
+|`MDNetModule`|Privátní typy a globální funkce jsou zachovány.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

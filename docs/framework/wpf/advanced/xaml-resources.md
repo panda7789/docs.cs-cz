@@ -7,12 +7,12 @@ helpviewer_keywords:
 - reusing commonly defined objects [WPF]
 - XAML [WPF], reusing resources
 ms.assetid: 91580b89-a0a8-4889-aecb-fddf8e63175f
-ms.openlocfilehash: e02c80f4c1fdacbfdcb50ed57d89cc9df1f277f9
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 5898d3236f58cd40c5e1ccd446b756b94e3fb113
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126395"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54718660"
 ---
 # <a name="xaml-resources"></a>Zdroje XAML
 Prostředek je objekt, který je možné využít v různých míst ve své aplikaci. Příklady prostředků: štětce a styly. Tento přehled popisuje, jak použít zdroje v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Můžete také vytvořit a přístup k prostředkům pomocí kódu nebo Zaměnitelně mezi kódem a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Další informace najdete v tématu [zdroje a kód](../../../../docs/framework/wpf/advanced/resources-and-code.md).  
@@ -153,12 +153,12 @@ Prostředek je objekt, který je možné využít v různých míst ve své apli
   
  <xref:System.Windows.DataTemplate> má také implicitní klíč. Implicitní klíč pro <xref:System.Windows.DataTemplate> je <xref:System.Windows.DataTemplate.DataType%2A> hodnotu vlastnosti. <xref:System.Windows.DataTemplate.DataType%2A> Můžete taky možné specifikovat jako název typu, nikoli explicitně pomocí [{x: Type...} ](../../../../docs/framework/xaml-services/x-type-markup-extension.md). Podrobnosti najdete v tématu [přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.ResourceDictionary>  
- [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
- [Prostředky a kód](../../../../docs/framework/wpf/advanced/resources-and-code.md)  
- [Definice a odkaz prostředku](../../../../docs/framework/wpf/advanced/how-to-define-and-reference-a-resource.md)  
- [Přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
- [x:Type – rozšíření značek](../../../../docs/framework/xaml-services/x-type-markup-extension.md)  
- [Rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)  
- [Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.ResourceDictionary>
+- [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)
+- [Prostředky a kód](../../../../docs/framework/wpf/advanced/resources-and-code.md)
+- [Definice a odkaz prostředku](../../../../docs/framework/wpf/advanced/how-to-define-and-reference-a-resource.md)
+- [Přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md)
+- [x:Type – rozšíření značek](../../../../docs/framework/xaml-services/x-type-markup-extension.md)
+- [Rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)
+- [Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)

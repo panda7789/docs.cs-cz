@@ -7,61 +7,61 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], about BindingSource component
 - data binding [Windows Forms], BindingSource component
 ms.assetid: be838caf-fcb0-4b68-827f-58b2c04b747f
-ms.openlocfilehash: 047df677ade3837e167845ace2bdc6ca14738c3c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6fbd089cef6f014979cf8bbdf376b2f76ac9bcf9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529601"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54686943"
 ---
 # <a name="bindingsource-component-overview"></a>BindingSource – přehled komponenty
-<xref:System.Windows.Forms.BindingSource> Součásti je určen ke zjednodušení procesu vytvoření vazby ovládacích prvků pro příslušný zdroj dat. <xref:System.Windows.Forms.BindingSource> Součást funguje jako kanál a zdroj dat pro další ovládací prvky pro vazbu. Poskytuje abstrakci svého formuláře datové připojení při předávání pomocí příkazů do seznamu základní data. Kromě toho můžete data přidat do něj tak, aby sám komponentou funguje jako zdroj dat.  
+<xref:System.Windows.Forms.BindingSource> Komponenta je navržené pro zjednodušení procesu vytvoření vazby ovládacích prvků do podkladového zdroje dat. <xref:System.Windows.Forms.BindingSource> Komponenty funguje jako kanál a zdroj dat pro další ovládací prvky k vytvoření vazby. Poskytuje abstrakci připojení dat formuláře při předání prostřednictvím příkazů do seznamu podkladová data. Kromě toho můžete přidat data přímo do ní, tak, aby sám komponentou funguje jako zdroj dat.  
   
 ## <a name="bindingsource-component-as-an-intermediary"></a>BindingSource – komponenta jako prostředník  
- <xref:System.Windows.Forms.BindingSource> Součást funguje jako zdroj dat pro některé nebo všechny ovládací prvky na formuláři. V sadě Visual Studio <xref:System.Windows.Forms.BindingSource> může být svázán s ovládacím prostřednictvím `DataBindings` vlastnosti, která je přístupná ze **vlastnosti** okno. Viz také [postupy: vytvoření vazby ovládacích prvků Windows Forms s BindingSource součást pomocí návrháře](../../../../docs/framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md).  
+ <xref:System.Windows.Forms.BindingSource> Komponenty slouží jako zdroj dat pro některé nebo všechny ovládací prvky ve formuláři. V sadě Visual Studio <xref:System.Windows.Forms.BindingSource> mohou být vázány na ovládací prvek prostřednictvím `DataBindings` vlastnost, která je přístupná **vlastnosti** okna. Viz také [jak: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí návrháře](../../../../docs/framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md).  
   
- Můžete vázat <xref:System.Windows.Forms.BindingSource> součásti na obou jednoduché datové zdroje, jako jedinou vlastnost objektu nebo kolekci základní jako <xref:System.Collections.ArrayList>a složitých datových zdrojů, například databázové tabulky. <xref:System.Windows.Forms.BindingSource> Součást slouží jako prostředník, který poskytuje služby správy vazbu a měny. V době návrhu nebo dobu spuštění, můžete vázat <xref:System.Windows.Forms.BindingSource> součásti ke zdroji dat komplexní nastavením jeho <xref:System.Windows.Forms.BindingSource.DataSource%2A> a <xref:System.Windows.Forms.BindingSource.DataMember%2A> vlastností databáze a tabulky, v uvedeném pořadí. Následující obrázek ukazuje, kde <xref:System.Windows.Forms.BindingSource> součást zapadá do stávající architektura datové vazby.  
+ Můžete vytvořit vazbu <xref:System.Windows.Forms.BindingSource> komponentu obou jednoduché datové zdroje, jako je jedinou vlastností objektu nebo kolekci základní, jako je <xref:System.Collections.ArrayList>a komplexních datových zdrojů, jako jsou databázové tabulky. <xref:System.Windows.Forms.BindingSource> Komponenty slouží jako zprostředkovatel, který poskytuje služby pro správu vazeb a měny. V době návrhu nebo běhu, můžete vytvořit vazbu <xref:System.Windows.Forms.BindingSource> komponentu ke zdroji dat komplexní nastavením jeho <xref:System.Windows.Forms.BindingSource.DataSource%2A> a <xref:System.Windows.Forms.BindingSource.DataMember%2A> vlastnosti do databáze a tabulky, v uvedeném pořadí. Následující obrázek ukazuje, kde <xref:System.Windows.Forms.BindingSource> komponenty zapadá do se stávající architekturou datové vazby.  
   
- ![Vytvoření vazby zdroje a architektura datové vazby](../../../../docs/framework/winforms/controls/media/net-bindsrcdatabindarch.gif "NET_BindSrcDataBindArch")  
+ ![Vytvoření vazby zdroje a datové vazby architektura](../../../../docs/framework/winforms/controls/media/net-bindsrcdatabindarch.gif "NET_BindSrcDataBindArch")  
   
 > [!NOTE]
->  V době návrhu jsou některé akce, například databázové tabulky přetažení z okna data do prázdného formuláře, vytvoří <xref:System.Windows.Forms.BindingSource> součást navázat jej na podkladový zdroj dat a přidejte data ovládacích prvcích všechny v rámci jedné operace. Viz také [vazby Windows Forms – ovládací prvky k datům v sadě Visual Studio](/visualstudio/data-tools/bind-windows-forms-controls-to-data-in-visual-studio).  
+>  V době návrhu, se některé akce, jako jsou databázové tabulce přetažení z okna data do prázdného formuláře, vytvoří <xref:System.Windows.Forms.BindingSource> komponenty, vázat na podkladový zdroj dat a přidání ovládacích prvků s ohledem na data v rámci jedné operace. Viz také [ovládací prvky vazby Windows Forms k datům v sadě Visual Studio](/visualstudio/data-tools/bind-windows-forms-controls-to-data-in-visual-studio).  
   
 ## <a name="bindingsource-component-as-a-data-source"></a>BindingSource – komponenta jako zdroj dat  
- Pokud spustíte přidávání položek do <xref:System.Windows.Forms.BindingSource> součást bez první zadat seznam bylo vázané na komponentu bude fungovat stejně jako zdroj dat styl seznamu a přijmout tyto přidat položky.  
+ Pokud začnete přidávat položky, které chcete <xref:System.Windows.Forms.BindingSource> komponenty bez první zadaného seznamu vázaný na komponentu bude fungovat jako zdroj dat list-style a přijmout tyto přidali položky.  
   
- Kromě toho můžete napsat kód pro poskytují vlastní funkce "AddNew" prostřednictvím <xref:System.Windows.Forms.BindingSource.AddingNew> událost, která se vyvolá, když <xref:System.Windows.Forms.BindingSource.AddNew%2A> metoda je volána před položku přidávanou do seznamu. Další informace najdete v tématu [architektura součásti BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component-architecture.md).  
+ Kromě toho můžete napsat kód k zajištění vlastní funkce "Funkce operací AddNew" prostřednictvím <xref:System.Windows.Forms.BindingSource.AddingNew> událost, která je vyvolána při <xref:System.Windows.Forms.BindingSource.AddNew%2A> metoda je volána před položku přidávanou do seznamu. Další informace najdete v tématu [architektura komponenty BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component-architecture.md).  
   
 ## <a name="navigation"></a>Navigace  
- Pro uživatele, kteří potřebují data ve formuláři, přejděte <xref:System.Windows.Forms.BindingNavigator> součást umožňuje přejděte a pracovat s daty v koordinaci s <xref:System.Windows.Forms.BindingSource> součásti. Další informace najdete v tématu [BindingNavigator – ovládací prvek](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md).  
+ Pro uživatele, kteří potřebují data ve formuláři, přejděte <xref:System.Windows.Forms.BindingNavigator> komponenty umožňuje navigaci a manipulaci s daty ve spolupráci s <xref:System.Windows.Forms.BindingSource> komponenty. Další informace najdete v tématu [BindingNavigator – ovládací prvek](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md).  
   
 ## <a name="data-manipulation"></a>Manipulace s daty  
- Na: <xref:System.Windows.Forms.BindingSource> funguje jako <xref:System.Windows.Forms.CurrencyManager> pro všechny jeho vazby a můžete je tedy poskytnout přístup k měny a pozice informace o zdroji dat. Následující tabulka uvádí členy, který <xref:System.Windows.Forms.BindingSource> součást poskytuje pro přístup k informacím a manipulace s základní data.  
+ Na: <xref:System.Windows.Forms.BindingSource> funguje jako <xref:System.Windows.Forms.CurrencyManager> pro všemi jeho vazby a může proto poskytnout přístup k měn a pozice informace týkající se zdroji dat. Následující tabulka uvádí členy, které <xref:System.Windows.Forms.BindingSource> součást poskytuje přístup k a manipulaci s podkladová data.  
   
 |Člen|Popis|  
 |------------|-----------------|  
 |<xref:System.Windows.Forms.BindingSource.Current%2A> Vlastnost|Získá aktuální položku datového zdroje.|  
-|<xref:System.Windows.Forms.BindingSource.Position%2A> Vlastnost|Získá nebo nastaví aktuální pozici v podkladový seznam.|  
-|<xref:System.Windows.Forms.BindingSource.List%2A> Vlastnost|Získá seznam, který je vyhodnocení <xref:System.Windows.Forms.BindingSource.DataSource%2A> a <xref:System.Windows.Forms.BindingSource.DataMember%2A> vyhodnocení. Pokud <xref:System.Windows.Forms.BindingSource.DataMember%2A> není nastavený, vrátí seznam určeného <xref:System.Windows.Forms.BindingSource.DataSource%2A>.|  
-|<xref:System.Windows.Forms.BindingSource.Insert%2A> – Metoda|Vloží položku v seznamu v zadaném indexu.|  
-|<xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A> – Metoda|Odebere aktuální položku ze seznamu.|  
-|<xref:System.Windows.Forms.BindingSource.EndEdit%2A> – Metoda|Platí pro daný zdroj dat. změny čekající na zpracování.|  
-|<xref:System.Windows.Forms.BindingSource.CancelEdit%2A> – Metoda|Zruší aktuální operace upravit.|  
-|<xref:System.Windows.Forms.BindingSource.AddNew%2A> – Metoda|Přidá novou položku do podkladový seznam. Pokud zdroj dat implementuje <xref:System.ComponentModel.IBindingList> a vrátí položku z <xref:System.Windows.Forms.BindingSource.AddingNew> událostí, přidá tato položka. V opačném požadavek je předán do seznamu <xref:System.ComponentModel.IBindingList.AddNew%2A> metoda. Pokud není podkladový seznam <xref:System.ComponentModel.IBindingList>, položky se automaticky vytvoří přes jeho veřejné výchozí konstruktor.|  
+|<xref:System.Windows.Forms.BindingSource.Position%2A> Vlastnost|Získá nebo nastaví aktuální pozici v nadřízeném seznamu.|  
+|<xref:System.Windows.Forms.BindingSource.List%2A> Vlastnost|Získá seznam, který je po vyhodnocení <xref:System.Windows.Forms.BindingSource.DataSource%2A> a <xref:System.Windows.Forms.BindingSource.DataMember%2A> hodnocení. Pokud <xref:System.Windows.Forms.BindingSource.DataMember%2A> není nastavena, vrací seznam určené <xref:System.Windows.Forms.BindingSource.DataSource%2A>.|  
+|<xref:System.Windows.Forms.BindingSource.Insert%2A> – Metoda|Vloží položku v seznamu na zadaném indexu.|  
+|<xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A> – Metoda|Odebere aktuální položky ze seznamu.|  
+|<xref:System.Windows.Forms.BindingSource.EndEdit%2A> – Metoda|Podkladový zdroj dat se týká čekající změny.|  
+|<xref:System.Windows.Forms.BindingSource.CancelEdit%2A> – Metoda|Zruší aktuální operaci úprav.|  
+|<xref:System.Windows.Forms.BindingSource.AddNew%2A> – Metoda|Přidá novou položku do seznamu základní. Pokud zdroj dat implementuje <xref:System.ComponentModel.IBindingList> a vrátí položku ze <xref:System.Windows.Forms.BindingSource.AddingNew> události, přidá tuto položku. V opačném případě požadavek je předán do seznamu <xref:System.ComponentModel.IBindingList.AddNew%2A> metody. Pokud je podkladový seznam <xref:System.ComponentModel.IBindingList>, položka je automaticky vytvořená prostřednictvím jeho veřejný výchozí konstruktor.|  
   
 ## <a name="sorting-and-filtering"></a>Řazení a filtrování  
- By měl obvykle, pracovat seřazené nebo filtrované zobrazení zdroje dat. Následující tabulka uvádí členy, který <xref:System.Windows.Forms.BindingSource> poskytuje zdroj dat součástí.  
+ Obvykle byste měli spolupracovat s zobrazení zdroje dat o seřazený a filtrovaný. Následující tabulka uvádí členy, které <xref:System.Windows.Forms.BindingSource> poskytuje zdroj dat součástí.  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|<xref:System.Windows.Forms.BindingSource.Sort%2A> Vlastnost|Pokud je zdroj dat <xref:System.ComponentModel.IBindingList>, získá nebo nastaví název sloupce sloužící k řazení a informace o pořadí řazení. Pokud je zdroj dat <xref:System.ComponentModel.IBindingListView> a podporuje rozšířené, řazení, získá více názvů sloupců použít pro řazení a informace o pořadí řazení|  
-|<xref:System.Windows.Forms.BindingSource.Filter%2A> Vlastnost|Pokud je zdroj dat <xref:System.ComponentModel.IBindingListView>, získá nebo nastaví výraz použitý pro filtrování, jsou-li zobrazit řádky.|  
+|<xref:System.Windows.Forms.BindingSource.Sort%2A> Vlastnost|Pokud je zdroj dat <xref:System.ComponentModel.IBindingList>, získá nebo nastaví název sloupce pro řazení a informace o pořadí řazení. Pokud je zdroj dat <xref:System.ComponentModel.IBindingListView> a podporuje rozšířené řazení, získá více názvů sloupců použité pro řazení a informace o pořadí řazení|  
+|<xref:System.Windows.Forms.BindingSource.Filter%2A> Vlastnost|Pokud je zdroj dat <xref:System.ComponentModel.IBindingListView>, získá nebo nastaví výraz určený k filtrování, které řádky jsou zobrazeny.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.BindingSource>  
- <xref:System.Windows.Forms.BindingNavigator>  
- [Architektura komponenty BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component-architecture.md)  
- [Komponenta BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
- [Ovládací prvek BindingNavigator](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)  
- [Windows Forms – datová vazba](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.BindingSource>
+- <xref:System.Windows.Forms.BindingNavigator>
+- [Architektura komponenty BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component-architecture.md)
+- [Komponenta BindingSource](../../../../docs/framework/winforms/controls/bindingsource-component.md)
+- [Ovládací prvek BindingNavigator](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)
+- [Windows Forms – datová vazba](../../../../docs/framework/winforms/windows-forms-data-binding.md)
+- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

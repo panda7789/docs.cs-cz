@@ -7,12 +7,12 @@ helpviewer_keywords:
 - properties [.NET Framework], design guidelines
 ms.assetid: 127cbc0c-cbed-48fd-9c89-7c5d4f98f163
 author: KrzysztofCwalina
-ms.openlocfilehash: 1d119b48f0524b3e997aa2cb9ea2cbbd855afdf0
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: e4ed4fd39a9ebd63b9d5dbff38dc15647d65934f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53131453"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54708984"
 ---
 # <a name="property-design"></a>Návrh vlastnosti
 Přestože jsou vlastnosti technicky velmi podobné metody, jsou značně odlišná z hlediska jejich scénáře použití. Měla by se zobrazit jako inteligentní pole. Mají volání syntaxe pole a flexibilitu metody.  
@@ -83,11 +83,11 @@ Přestože jsou vlastnosti technicky velmi podobné metody, jsou značně odliš
   
  Pokud se změní hodnota vlastnosti prostřednictvím některé externí platnost (způsobem jinak než pomocí volání metody na objektu), vyvolat události znamenat pro vývojáře, že hodnota se mění a došlo ke změně. Dobrým příkladem je `Text` vlastnost ovládacího prvku textového pole. Když uživatel zadá text `TextBox`, automaticky změní hodnotu vlastnosti.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
+- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)
 - [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

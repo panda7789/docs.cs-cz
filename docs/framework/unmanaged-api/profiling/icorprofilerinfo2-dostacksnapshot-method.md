@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3c65e48595f2b49abe06e649898649d76a0668a0
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: d107653d34689814ae97ca4012d0fd2e2c4190dc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45969782"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54727271"
 ---
 # <a name="icorprofilerinfo2dostacksnapshot-method"></a>ICorProfilerInfo2::DoStackSnapshot – metoda
 Provede spravované rámce zásobníku pro zadaný podproces a odešle informace prostřednictvím zpětné volání profileru.  
@@ -73,7 +73,7 @@ HRESULT DoStackSnapshot(
   
  Pořadí, ve kterém je šel zásobníku je opakem jak snímky byly vloženy do zásobníku: listové poslední (naposledy vloženo) rámce první, hlavní (první vloženo) rámce.  
   
- Další informace o tom, jak programovat profiler, aby procházel spravované zásobníky, viz [Profiler procházení zásobníku v rozhraní .NET Framework 2.0: základy a další](https://go.microsoft.com/fwlink/?LinkId=73638).  
+ Další informace o tom, jak programovat profiler, aby procházel spravované zásobníky, viz [Profiler procházení zásobníku v rozhraní .NET Framework 2.0: Základy i mimo ně](https://go.microsoft.com/fwlink/?LinkId=73638).  
   
  Procházení zásobníku může být synchronní nebo asynchronní, jak je popsáno v následujících částech.  
   
@@ -100,7 +100,7 @@ HRESULT DoStackSnapshot(
  K dispozici je také riziku zablokování při volání `DoStackSnapshot` z vlákna, které váš profiler byl vytvořen tak, aby vás provedou zásobníku vlákna samostatný cílový. První vlákno, které jste vytvořili přejde do určité `ICorProfilerInfo*` metod (včetně `DoStackSnapshot`), modul CLR provede inicializaci jednotlivých vláken, specifická pro modul CLR v daném vláknu. Pokud váš profiler byla pozastavena cílové vlákno, jehož zásobníku se snažíte procházení a vlastnit zámek potřebný k provedení této vlákno inicializace došlo k této cílové vlákno, dojde k zablokování. Abyste zabránili tomuto vzájemnému zablokování, provést počáteční volání do `DoStackSnapshot` z vašeho vlákna profiler vytvořeného procesem samostatné cílové vlákno, ale ne pozastavit nejprve cílové vlákno. Tento počáteční volání zajišťuje, vlákno inicializace dokončit bez zablokování. Pokud `DoStackSnapshot` je úspěšné a aspoň jeden snímek sestavy od této chvíle bude bezpečný pro toto vlákno profileru vytvořili pozastavit všechny cílové vlákno a volání `DoStackSnapshot` procesem zásobníku bylo cílové vlákno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -108,6 +108,6 @@ HRESULT DoStackSnapshot(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

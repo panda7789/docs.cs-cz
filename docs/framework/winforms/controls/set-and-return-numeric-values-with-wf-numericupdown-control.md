@@ -11,19 +11,19 @@ helpviewer_keywords:
 - Windows Forms controls, NumericUpDown
 - NumericUpDown control [Windows Forms], setting and returning values
 ms.assetid: 5bd8f8cd-4c12-49ea-9cc3-2a647d064689
-ms.openlocfilehash: e214f556224577c3029b2b742784e58932d792f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4fd995e5f7694616d7b6be7aa9a2eab6611997b0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33535558"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54688958"
 ---
 # <a name="how-to-set-and-return-numeric-values-with-the-windows-forms-numericupdown-control"></a>Postupy: Nastavení a vracení číselných hodnot pomocí ovládacího prvku Windows Forms NumericUpDown
-Číselná hodnota modelu Windows Forms <xref:System.Windows.Forms.NumericUpDown> ovládací prvek je dáno jeho <xref:System.Windows.Forms.NumericUpDown.Value%2A> vlastnost. Můžete napsat podmíněného testů pro hodnotu ovládacího prvku stejně jako v žádné jiné vlastnosti. Jednou <xref:System.Windows.Forms.NumericUpDown.Value%2A> vlastnost nastavena, můžete jej přizpůsobit přímo z psaní kódu k provádění operací na něm nebo můžete volat <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> a <xref:System.Windows.Forms.NumericUpDown.DownButton%2A> metody.  
+Číselná hodnota prvku modelu Windows Forms <xref:System.Windows.Forms.NumericUpDown> ovládací prvek je dáno jeho <xref:System.Windows.Forms.NumericUpDown.Value%2A> vlastnost. Stejně jako u jakékoli jiné vlastnosti můžete psát podmíněného testy pro hodnotu ovládacího prvku. Jednou <xref:System.Windows.Forms.NumericUpDown.Value%2A> je hodnota nastavena, můžete upravit přímo napsáním kódu k provádění operací na něj nebo můžete volat <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> a <xref:System.Windows.Forms.NumericUpDown.DownButton%2A> metody.  
   
-### <a name="to-set-the-numeric-value"></a>Chcete-li nastavit číselná hodnota  
+### <a name="to-set-the-numeric-value"></a>Chcete-li nastavit číselnou hodnotu  
   
-1.  Přiřazení hodnoty k <xref:System.Windows.Forms.NumericUpDown.Value%2A> vlastností v kódu nebo v okně Vlastnosti.  
+1.  Přiřaďte hodnotu <xref:System.Windows.Forms.NumericUpDown.Value%2A> vlastností v kódu nebo v okně Vlastnosti.  
   
     ```vb  
     NumericUpDown1.Value = 55  
@@ -39,7 +39,7 @@ ms.locfileid: "33535558"
   
      -nebo-  
   
-2.  Volání <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> nebo <xref:System.Windows.Forms.NumericUpDown.DownButton%2A> metodou zvyšte nebo snižte hodnotu zadanou v velikost <xref:System.Windows.Forms.NumericUpDown.Increment%2A> vlastnost.  
+2.  Volání <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> nebo <xref:System.Windows.Forms.NumericUpDown.DownButton%2A> metoda chcete zvýšit nebo snížit hodnotu zadanou v <xref:System.Windows.Forms.NumericUpDown.Increment%2A> vlastnost.  
   
     ```vb  
     NumericUpDown1.UpButton()  
@@ -89,11 +89,11 @@ ms.locfileid: "33535558"
     }  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.NumericUpDown>  
- <xref:System.Windows.Forms.NumericUpDown.Value%2A?displayProperty=nameWithType>  
- <xref:System.Windows.Forms.NumericUpDown.Increment%2A?displayProperty=nameWithType>  
- <xref:System.Windows.Forms.NumericUpDown.UpButton%2A?displayProperty=nameWithType>  
- <xref:System.Windows.Forms.NumericUpDown.DownButton%2A?displayProperty=nameWithType>  
- [Ovládací prvek NumericUpDown](../../../../docs/framework/winforms/controls/numericupdown-control-windows-forms.md)  
- [Přehled ovládacího prvku NumericUpDown](../../../../docs/framework/winforms/controls/numericupdown-control-overview-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.NumericUpDown>
+- <xref:System.Windows.Forms.NumericUpDown.Value%2A?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.NumericUpDown.Increment%2A?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.NumericUpDown.UpButton%2A?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.NumericUpDown.DownButton%2A?displayProperty=nameWithType>
+- [Ovládací prvek NumericUpDown](../../../../docs/framework/winforms/controls/numericupdown-control-windows-forms.md)
+- [Přehled ovládacího prvku NumericUpDown](../../../../docs/framework/winforms/controls/numericupdown-control-overview-windows-forms.md)

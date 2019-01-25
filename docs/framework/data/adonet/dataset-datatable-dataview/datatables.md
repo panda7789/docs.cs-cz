@@ -2,12 +2,12 @@
 title: DataTables
 ms.date: 03/30/2017
 ms.assetid: 52ff0e32-3e5a-41de-9a3b-7b04ea52b83e
-ms.openlocfilehash: 2849d159fbfdb0c0739b76fd288a987d4ce3d02f
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: f0f429d7f28360fd76dfff0e7d4a4eba019e5acf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43786058"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54653243"
 ---
 # <a name="datatables"></a>DataTables
 A <xref:System.Data.DataSet> se skládá z kolekce tabulky, relace a omezení. V ADO.NET <xref:System.Data.DataTable> objekty se používají k vyjádření tabulky v **datovou sadu**. A **DataTable** představuje jedné tabulky v paměti relačních dat; je pro místní data. Aplikace založené na sítě, ve kterém se nachází, ale je možné importovat ze zdroje dat, jako je například Microsoft SQL serveru pomocí **DataAdapter** Další informace najdete v tématu [naplnění datové sady z adaptéru dat](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md) .  
@@ -55,5 +55,5 @@ A <xref:System.Data.DataSet> se skládá z kolekce tabulky, relace a omezení. V
  [Přehled knihovny tříd](../../../../../docs/standard/class-library-overview.md)  
  Najdete zde přehled knihovny tříd rozhraní .NET Framework, včetně **systému** obor názvů a také svůj obor názvů druhé úrovně **System.Data**.  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

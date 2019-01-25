@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, learn more
 ms.assetid: e63a9baf-699c-42e2-b11f-fba57bcc14df
-ms.openlocfilehash: 790fe629ae709a9fcb57d5b551e9fa7aecfb04f5
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 9b1db3b3628719eca178ababd0dc9728b491e7b5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44177057"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658153"
 ---
 # <a name="wcf-data-services-resources"></a>Zdroje služeb WCF Data Services
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] úvodní témata najdete v následujících umístěních. Mnohé z těchto témat také obsahují odkazy na související témata, které obsahují podrobnější informace.  
@@ -47,7 +47,7 @@ ms.locfileid: "44177057"
  [Středisko pro vývojáře úložiště a přístup k datům](https://go.microsoft.com/fwlink/?LinkId=91903)  
  Centrální umístění pro hledání informací a materiály pro práci s daty.  
   
- [Datová platforma jak na to? Videa: WCF Data Services – řady](https://go.microsoft.com/fwlink/?LinkId=124600)  
+ [Datová platforma jak na to? Videa: Řada služeb WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=124600)  
  Obsahuje sadu obrazovka přetypování, které ukazují, jak sestavit a přístup k datové služby.  
   
  [Přehled: WCF Data Services](https://go.microsoft.com/fwlink/?LinkID=131074)  
@@ -59,5 +59,5 @@ ms.locfileid: "44177057"
  [Relace Entity Model: Směrem k jednotný pohled na Data](https://go.microsoft.com/fwlink/?LinkId=91909) tak Peter Pin Shan Svoboda, Massachusetts Institute of Technology  
  Popisuje základ pro entity relační model, který je implementováno [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Napsané v 1976, toto je jeden z nejčastěji zmiňovanou dokumentů do pole počítače.  
   
-## <a name="see-also"></a>Viz také  
- [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
+## <a name="see-also"></a>Viz také:
+- [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)

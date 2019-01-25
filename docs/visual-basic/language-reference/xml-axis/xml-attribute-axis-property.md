@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XML axis [Visual Basic], attribute
 - XML [Visual Basic], accessing
 ms.assetid: 7a4777e1-0618-4de9-9510-fb9ace2bf4db
-ms.openlocfilehash: 9107b946394ab70980e4865364fc1ba9683e2025
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: cfc18df4487488bd90d7b0250a9053f55305d8a8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43785157"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631491"
 ---
 # <a name="xml-attribute-axis-property-visual-basic"></a>Vlastnost osy atributu XML (Visual Basic)
 Poskytuje přístup k hodnotě atributu pro <xref:System.Xml.Linq.XElement> objekt nebo na první prvek v kolekci <xref:System.Xml.Linq.XElement> objekty.  
@@ -30,21 +30,21 @@ object.@<attribute>
   
 ## <a name="parts"></a>Součásti  
  `object`  
- Požadováno. <xref:System.Xml.Linq.XElement> Objektu nebo kolekci <xref:System.Xml.Linq.XElement> objekty.  
+ Povinný parametr. <xref:System.Xml.Linq.XElement> Objektu nebo kolekci <xref:System.Xml.Linq.XElement> objekty.  
   
  .@  
- Požadováno. Označuje začátek vlastnost osy atributu.  
+ Povinný parametr. Označuje začátek vlastnost osy atributu.  
   
  <  
  Volitelné. Označuje začátek název atributu při `attribute` není platný identifikátor v jazyce Visual Basic.  
   
  `attribute`  
- Požadováno. Název atributu pro přístup k ve tvaru [`prefix`:]`name`.  
+ Povinný parametr. Název atributu pro přístup k ve tvaru [`prefix`:]`name`.  
   
 |Část|Popis|  
 |----------|-----------------|  
 |`prefix`|Volitelné. Předpona oboru názvů XML pro atribut. Musí se definovat globální obor názvů XML `Imports` příkazu.|  
-|`name`|Požadováno. Local – atribut názvu. Zobrazit [názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
+|`name`|Povinný parametr. Local – atribut názvu. Zobrazit [názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
   
  \>  
  Volitelné. Označuje konec názvu atributu při `attribute` není platný identifikátor v jazyce Visual Basic.  
@@ -106,9 +106,9 @@ object.@<attribute>
   
  `Phone type: home`  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XElement>  
- [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)  
- [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)  
- [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
- [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xml.Linq.XElement>
+- [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)
+- [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
+- [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)

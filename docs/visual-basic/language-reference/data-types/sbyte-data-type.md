@@ -14,12 +14,12 @@ helpviewer_keywords:
 - data types [Visual Basic], integral
 - SByte data type
 ms.assetid: 5c38374a-18a1-4cc2-b493-299e3dcaa60f
-ms.openlocfilehash: b2ef4f083cd9b6f38dc91bf8bf0eac9cd21c2618
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 1da5de4971928ca23a23c4dcfc5f338c4d7a3875
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54148081"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54719570"
 ---
 # <a name="sbyte-data-type-visual-basic"></a>SByte – datový typ (Visual Basic)
 
@@ -74,11 +74,11 @@ Pokud celočíselný literál je mimo rozsah `SByte` (tj. Pokud je menší než 
   
 ## <a name="see-also"></a>Viz také:
 
- <xref:System.SByte?displayProperty=nameWithType>  
- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)  
- [Datový typ Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)  
- [Datový typ Long](../../../visual-basic/language-reference/data-types/long-data-type.md)  
- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- <xref:System.SByte?displayProperty=nameWithType>
+- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
+- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
+- [Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)
+- [Datový typ Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)
+- [Datový typ Long](../../../visual-basic/language-reference/data-types/long-data-type.md)
+- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

@@ -15,17 +15,17 @@ helpviewer_keywords:
 - names [.NET Framework], acronyms
 ms.assetid: d3a77ea1-75d2-4969-a8c3-3e1e3e1aaedc
 author: KrzysztofCwalina
-ms.openlocfilehash: 9febc7eed7d6dedad6655b51a96694b72b78711b
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: ae1b7ce83f6698cef470aabf07a12d89042ab8a3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147278"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54667684"
 ---
 # <a name="general-naming-conventions"></a>Obecné zásady vytváření názvů
 Tato část popisuje obecné zásady vytváření názvů, které se týkají podle vlastní volby slov, pokyny na pomocí zkratky a zkratky a doporučení o tom, abyste se vyhnuli použití názvů specifických pro jazyk.  
   
-## <a name="word-choice"></a>Volba aplikace Word  
+## <a name="word-choice"></a>Word Choice  
  **✓ DO** zvolte snadno čitelné identifikátor názvy.  
   
  Například vlastnost s názvem `HorizontalAlignment` je angličtina čitelnější než `AlignmentHorizontal`.  
@@ -64,7 +64,7 @@ Tato část popisuje obecné zásady vytváření názvů, které se týkají po
 |**byte**|**Bajtů**|**unsigned char**|**Bajtů**|  
 |**short**|**krátké**|**short**|**Int16**|  
 |**ushort**|**UInt16**|**short bez znaménka**|**UInt16**|  
-|**int**|**celé číslo**|**int**|**Datový typ Int32**|  
+|**int**|**Integer**|**int**|**Int32**|  
 |**uint**|**UInt32**|**unsigned int**|**UInt32**|  
 |**long**|**Long**|**__int64**|**Int64**|  
 |**ulong**|**UInt64**|**unsigned __int64**|**UInt64**|  
@@ -94,11 +94,11 @@ Tato část popisuje obecné zásady vytváření názvů, které se týkají po
   
  **✓ DO** používají "64" příponu zaváděné verze rozhraní API, která pracovat 64bitové celé číslo (dlouhých celých čísel) namísto 32bitové celé číslo. Budete muset provést tento postup, pokud existuje stávající rozhraní API 32-bit; Neprovádějte to pro úplně nová rozhraní API s 64bitovou verzi.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)

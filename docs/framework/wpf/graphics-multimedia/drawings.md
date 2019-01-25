@@ -13,23 +13,23 @@ helpviewer_keywords:
 - Drawing objects [WPF]
 - DrawingGroup objects [WPF]
 ms.assetid: 6ab1fe6b-3eed-4432-a248-b487e7234e5b
-ms.openlocfilehash: 8b142cfc65e39e48502cde263fea51378c47f43e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e70367d199ece207589d67ee38cb71f0cdda5b11
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33556032"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54684105"
 ---
 # <a name="drawings"></a>Kreslení
-<xref:System.Windows.Media.Drawing> objekty se používají k efektivní kreslení tvarů, Image nebo text. Kresby se používají při vykreslování s <xref:System.Windows.Media.DrawingBrush> nebo programování s <xref:System.Windows.Media.Visual> objekty.  
+<xref:System.Windows.Media.Drawing> objekty se používají k efektivnímu kreslení tvarů, Image nebo text. Kreslení se používají, když se Malování <xref:System.Windows.Media.DrawingBrush> nebo programování s <xref:System.Windows.Media.Visual> objekty.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled nakreslených objektů](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)  
   [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/drawings-how-to-topics.md)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Drawing>  
- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Drawing>
+- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
+- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)

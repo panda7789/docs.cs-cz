@@ -19,12 +19,12 @@ ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: e35ddc0346f73eafaece1bd17ab52e1b847e8e11
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: ff1ba3563249cda786a12894c5e4b37442ed9d21
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151223"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54722663"
 ---
 # <a name="common-type-system"></a>Obecný systém typů
 Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravovány v modulu common language runtime a také je důležitou součástí modulu runtime podpory mezi jazykové integrace. Obecný systém typů provádí následující funkce:  
@@ -324,6 +324,6 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Prohlížeč rozhraní API .NET](/dotnet/api)  
-- [Modul Common Language Runtime](../../../docs/standard/clr.md)  
+- [Prohlížeč rozhraní API .NET](/dotnet/api)
+- [Modul Common Language Runtime](../../../docs/standard/clr.md)
 - [Převod typů v rozhraní .NET](../../../docs/standard/base-types/type-conversion.md)

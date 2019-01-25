@@ -2,12 +2,12 @@
 title: Vytváření asynchronních aktivit v WF
 ms.date: 03/30/2017
 ms.assetid: 497e81ed-5eef-460c-ba55-fae73c05824f
-ms.openlocfilehash: 31c0d5a87a7979bc59c3e1d942ed0594d128c80a
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 1b7fe1c5c998660f054d2ca060c108c758e36db7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48266556"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54650925"
 ---
 # <a name="creating-asynchronous-activities-in-wf"></a>Vytváření asynchronních aktivit v WF
 <xref:System.Activities.AsyncCodeActivity> poskytuje základní třídu použít, že umožňuje odvozené aktivity implementovat logiku spouštění asynchronní autoři aktivity. To je užitečné pro vlastní aktivity, které musíte provést asynchronní práce bez podržení Plánovač vlákna pracovního postupu a blokuje veškeré aktivity, které může být možné spouštět paralelně. Toto téma obsahuje přehled o tom, jak vytvořit vlastní asynchronních aktivit pomocí <xref:System.Activities.AsyncCodeActivity>.  
@@ -44,9 +44,9 @@ ms.locfileid: "48266556"
  [!code-csharp[CFX_ActivityExample#9](../../../samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#9)]  
   
 ### <a name="scheduling-actions-or-child-activities-using-asynccodeactivity"></a>Plánování akce nebo podřízené aktivity pomocí AsyncCodeActivity  
- <xref:System.Activities.AsyncCodeActivity> odvozené vlastních aktivit poskytují způsob provedení práce asynchronně s ohledem na vlákna pracovního postupu, ale neposkytuje možnosti plánovat podřízené aktivity nebo akce. Asynchronní chování však být použity s plánováním podřízených aktivit prostřednictvím složení. Asynchronní aktivita vytvořili a potom utvořený za použití <xref:System.Activities.Activity> nebo <xref:System.Activities.NativeActivity> odvozené aktivity k poskytování asynchronní chování a plánováním podřízených aktivit nebo akce. Například aktivita může vytvořit, která je odvozena z <xref:System.Activities.Activity>a jako jeho implementace <xref:System.Activities.Statements.Sequence> obsahující asynchronní aktivitu jako také další činnosti, které implementují logiku aktivity. Další příklady vytváření aktivit pomocí <xref:System.Activities.Activity> a <xref:System.Activities.NativeActivity>, naleznete v tématu [postupy: vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md) a [možnosti vytváření aktivit](../../../docs/framework/windows-workflow-foundation/activity-authoring-options-in-wf.md).  
+ <xref:System.Activities.AsyncCodeActivity> odvozené vlastních aktivit poskytují způsob provedení práce asynchronně s ohledem na vlákna pracovního postupu, ale neposkytuje možnosti plánovat podřízené aktivity nebo akce. Asynchronní chování však být použity s plánováním podřízených aktivit prostřednictvím složení. Asynchronní aktivita vytvořili a potom utvořený za použití <xref:System.Activities.Activity> nebo <xref:System.Activities.NativeActivity> odvozené aktivity k poskytování asynchronní chování a plánováním podřízených aktivit nebo akce. Například aktivita může vytvořit, která je odvozena z <xref:System.Activities.Activity>a jako jeho implementace <xref:System.Activities.Statements.Sequence> obsahující asynchronní aktivitu jako také další činnosti, které implementují logiku aktivity. Další příklady vytváření aktivit pomocí <xref:System.Activities.Activity> a <xref:System.Activities.NativeActivity>, naleznete v tématu [jak: Vytvořit aktivitu](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md) a [aktivity vytváření možnosti](../../../docs/framework/windows-workflow-foundation/activity-authoring-options-in-wf.md).  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Action>  
-- <xref:System.Func%602>  
+- <xref:System.Action>
+- <xref:System.Func%602>

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
-ms.openlocfilehash: a38b4202ba3402c2dff3884c1560752d0353e0ba
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 8d138bae794cac00b1542f63153f343fb95a24c7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54029668"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54717399"
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
 Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním souborem dává možnost poskytovat koncový bod a data o chování služby Přejme během nasazení místo v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  
@@ -69,7 +69,7 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
 ### <a name="the-services-element"></a>\<Services > – Element  
  `services` Prvek obsahuje specifikace pro všechny služby hostitelů aplikací. Počínaje zjednodušené konfigurační model v [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], tato část je nepovinná.  
   
- [\<služby >](../../../docs/framework/configure-apps/file-schema/wcf/services.md)  
+ [\<services>](../../../docs/framework/configure-apps/file-schema/wcf/services.md)  
   
 ### <a name="the-service-element"></a>\<Služby > – Element  
  Každá služba má tyto atributy:  
@@ -96,7 +96,7 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
 ### <a name="the-bindings-element"></a>\<Vazby > – Element  
  `bindings` Prvek obsahuje specifikace pro všechny vazby, které může používat libovolný koncový bod definovaný v libovolnou službu.  
   
- [\<vazby >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)  
+ [\<bindings>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)  
   
 ### <a name="the-binding-element"></a>\<Vazby > – Element  
  `binding` Elementů obsažených v `bindings` element může být buď jeden vazeb poskytovaných systémem (naleznete v tématu [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md)) nebo vlastní vazby (naleznete v tématu [vlastních vazeb](../../../docs/framework/wcf/extending/custom-bindings.md)). `binding` Element má `name` atributů, které souvisí s koncového bodu určeného v vazbu `bindingConfiguration` atribut `endpoint` elementu. Pokud není zadán žádný název, pak je, že vazba odpovídá na výchozí hodnotu tohoto typu vazby.  
@@ -108,12 +108,12 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
 ### <a name="the-behaviors-element"></a>\<Chování > – Element  
  Toto je prvek kontejneru pro `behavior` prvky, které definují chování pro službu.  
   
- [\<chování >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
+ [\<behaviors>](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
   
 ### <a name="the-behavior-element"></a>\<Chování > – Element  
  Každý `behavior` element je identifikován `name` atribut a poskytuje buď poskytnuté systémem chování, například <`throttling`>, nebo vlastní chování. Pokud není zadán název prvku chování odpovídá výchozí chování služby nebo koncového bodu.  
   
- [\<chování >](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
+ [\<behavior>](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
   
 ## <a name="how-to-use-binding-and-behavior-configurations"></a>Jak používat vazby a chování konfigurace  
  WCF umožňuje snadno sdílet konfigurace mezi koncovými body pomocí referenčního systému v konfiguraci. Místo toho přímo konfigurační hodnoty pro koncový bod, související vazby konfigurační hodnoty jsou seskupené ve `bindingConfiguration` prvky `<binding>` části. Konfigurace vazby je pojmenovaná skupina nastavení na vazbu. Koncové body můžete odkázat `bindingConfiguration` podle názvu.  
@@ -262,8 +262,8 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
   
  Pokud podřízená kolekce chování obsahuje chování, které je již v kolekci chování nadřazeného, podřízené chování potlačuje nadřazené. Ano, pokud kolekce chování nadřazených `<serviceMetadata httpGetEnabled="False" />` a podřízené kolekce chování měli `<serviceMetadata httpGetEnabled="True" />`podřízené chování by se mělo přepsat chování nadřazené v kolekci chování a httpGetEnabled by být "true".  
   
-## <a name="see-also"></a>Viz také  
- [Zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md)  
- [Konfigurace aplikací Windows Communication Foundation](https://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a)  
- [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
- [\<Vytvoření vazby >](../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- [Zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md)
+- [Konfigurace aplikací Windows Communication Foundation](https://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a)
+- [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)
+- [\<Vytvoření vazby >](../../../docs/framework/misc/binding.md)

@@ -12,18 +12,18 @@ helpviewer_keywords:
 ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: e8c5021b00de503783adb3f1b1dc11964639afbf
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 40bba9f89801a75ac8c9d15e67e060714d1a29d7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50193529"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54680764"
 ---
 # <a name="ltcompilergt-element"></a>&lt;Kompilátor&gt; – Element
 
 Určuje kompilátor – konfigurační atributy pro poskytovatele jazyka.
 
-\<Konfigurace Element > \<System.CodeDom – Element > \<kompilátory Element > \<kompilátoru > – Element
+\<configuration Element> \<system.codedom Element> \<compilers Element> \<compiler> Element
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -99,7 +99,7 @@ Následující příklad ukazuje prvek typické kompilátoru konfigurace:
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.CodeDom.Compiler.CompilerInfo>
 - <xref:System.CodeDom.Compiler.CodeDomProvider>

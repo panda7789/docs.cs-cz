@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
-ms.openlocfilehash: edbc67ddf20eee6ebbe9091faa43bc1de91809d2
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: b4cb2ae3b2db8cdfab962c61ead387baf1bb7158
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46000762"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54613819"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Postupy: Hostování služby WCF ve spravované službě Windows
 
@@ -133,7 +133,7 @@ Tady je úplný seznam všech kód použitý v tomto tématu:
 
 Podobně jako možnost "Samoobslužné hostování" hostitelským prostředím služby Windows vyžaduje, že některé kód hostování se zapisují jako součást aplikace. Služba se implementuje jako konzolovou aplikaci a obsahuje vlastní kód hostování. V jiných hostitelských prostředích, jako je například Windows Process Activation Service (WAS) hostování v Internetové informační služby (IIS), není nutné pro vývojářům umožňuje psát kód hostování.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md)
 - [Hostování ve spravované aplikaci](../../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)

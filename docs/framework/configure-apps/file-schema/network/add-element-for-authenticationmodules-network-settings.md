@@ -10,19 +10,19 @@ helpviewer_keywords:
 - <authenticationModules>, add element
 - <add> element, authenticationModules
 ms.assetid: 333c5fb0-a2ab-4db8-8531-a7fe37bb9b5b
-ms.openlocfilehash: 0d7be1d525ff0f4d1e23155f350155837394297a
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: ae89ded216f3c9dbfe21070ac4a98c58290ef907
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181079"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54641028"
 ---
 # <a name="ltaddgt-element-for-authenticationmodules-network-settings"></a>&lt;Přidat&gt; – Element pro authenticationModules (nastavení sítě)
 Přidá modul ověřování do aplikace.  
   
  \<Konfigurace >  
 \<system.net>  
-\<authenticationModules – >  
+\<authenticationModules>  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -49,7 +49,7 @@ Přidá modul ověřování do aplikace.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[authenticationModules –](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověření síťové požadavky.|  
+|[authenticationModules](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověření síťové požadavky.|  
   
 ## <a name="remarks"></a>Poznámky  
  `add` Element přidá ověřovací modul na konec seznamu registrovaných ověřování modulů. Ověřovací moduly jsou volány v pořadí, ve kterém byly přidány do seznamu.  
@@ -81,7 +81,7 @@ Přidá modul ověřování do aplikace.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.IAuthenticationModule>  
-- <xref:System.Net.AuthenticationManager>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.IAuthenticationModule>
+- <xref:System.Net.AuthenticationManager>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Omezení rizik: Nové 64-bit JIT kompilátoru'
+title: 'Omezení rizik: Nový kompilátor JIT 64-bit'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - JIT compiler, 64-bit
@@ -8,51 +8,51 @@ helpviewer_keywords:
 ms.assetid: 0332dabc-72c5-4bdc-8975-20d717802b17
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4edce9558cdbdd5937aa12866077210a91ee8494
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9d3eb82cf9bac1e40947fb78882d18c5f09b0092
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33391937"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54690082"
 ---
-# <a name="mitigation-new-64-bit-jit-compiler"></a>Omezení rizik: Nové 64-bit JIT kompilátoru
-Od verze rozhraní .NET Framework 4.6, modul runtime zahrnuje nové kompilátoru JIT 64-bit pro kompilaci za běhu. Tato změna nemá vliv kompilace s 32-bit kompilátoru za běhu.  
+# <a name="mitigation-new-64-bit-jit-compiler"></a>Omezení rizik: Nový kompilátor JIT 64-bit
+Od verze rozhraní .NET Framework 4.6, modul runtime obsahuje nové 64-bit kompilátor JIT kompilace just-in-time. Tato změna neovlivní kompilace s kompilátorem JIT 32-bit.  
   
 ## <a name="unexpected-behavior-or-exceptions"></a>Neočekávané chování nebo výjimky  
- V některých případech výsledky kompilace pomocí nové 64bitový kompilátor JIT v výjimku modulu runtime nebo v chování, které není dodržen při provádění kódu starší 64bitový kompilátor JIT zkompilují. Známé rozdíly zahrnují následující:  
+ V některých případech se výsledky kompilace pomocí nového 64bitového kompilátoru JIT v výjimku při běhu nebo chování, které není dodržena při provádění kódu, které jsou kompilovány pomocí kompilátoru JIT starší 64-bit. Známé rozdíly patří následující:  
   
 > [!IMPORTANT]
->  Všechny tyto známé problémy mít byly řešeny v nové 64bitový kompilátor vydané s rozhraním .NET Framework 4.6.2. Většina mít také vyřeší ve vydáních služby rozhraní .NET Framework 4.6 a 4.6.1, které jsou součástí služby Windows Update. Můžete vyloučit tyto problémy zajištěním, které vaši verzi systému Windows je aktuální, nebo po upgradu na rozhraní .NET Framework 4.6.2.  
+>  Vyřeší všechny tyto známé problémy v nového 64bitového kompilátoru vydané s použitím rozhraní .NET Framework 4.6.2. Většina také vyřeší služba verze rozhraní .NET Framework 4.6 a 4.6.1, které jsou součástí Windows Update. Můžete vyloučit tyto problémy tím, že zajišťuje, které vaši verzi systému Windows je aktuální, nebo po upgradu na rozhraní .NET Framework 4.6.2.  
   
--   Za určitých podmínek může vyvolat operace rozbalení <xref:System.NullReferenceException> v sestavení pro vydání s optimalizací zapnutý.  
+-   Za určitých podmínek může vyvolat operace rozbalení <xref:System.NullReferenceException> v sestaveních pro vydání s optimalizací zapnuté.  
   
--   V některých případech může spuštění produkčním kódu v textu obsáhlou metodu throw <xref:System.StackOverflowException>.  
+-   V některých případech se může vyvolat provádění kódu v těle metody velké <xref:System.StackOverflowException>.  
   
--   Za určitých podmínek struktury předána metodě, jsou považovány za odkazové typy místo typy hodnot v verzi sestavení. Jedním z projevů tohoto problému je, že jednotlivé položky v kolekci se objeví v neočekávaném pořadí.  
+-   Za určitých podmínek struktury předáno metodě, jsou považovány za typy odkazů spíše než typy hodnot ve verzi sestavení. Jedním z projevy tento problém je, že jednotlivé položky v kolekci se zobrazí v neočekávaném pořadí.  
   
--   Za určitých podmínek, při porovnání <xref:System.UInt16> hodnoty sadou jejich rozšířené je nesprávný, pokud je povolená optimalizace.  
+-   Za určitých podmínek, porovnání <xref:System.UInt16> hodnoty s jejich rozšířené nastavení je nesprávné v případě, že je povolena optimalizace.  
   
--   Za určitých podmínek, zejména při inicializaci pole hodnot, inicializace paměti pomocí <xref:System.Reflection.Emit.OpCodes.Initblk?displayProperty=nameWithType> IL instrukce může inicializovat paměť s nesprávnou hodnotu. To může způsobit buď v neošetřené výjimky nebo nesprávné výstup.  
+-   Za určitých podmínek, zejména při inicializaci pole hodnot, inicializace paměti <xref:System.Reflection.Emit.OpCodes.Initblk?displayProperty=nameWithType> instrukce IL může inicializovat paměť s nesprávnou hodnotu. To může vést neošetřené výjimce nebo nesprávný výstup.  
   
--   Za určitých výjimečných podmínek, může vrátit testu podmíněného bit nesprávném <xref:System.Boolean> hodnotu nebo vyvolána výjimka, pokud jsou povolené optimalizace kompilátoru.  
+-   Za určitých podmínek výjimečných bit podmíněný test může vrátit nesprávná <xref:System.Boolean> hodnotu nebo vyvolat výjimku, pokud jsou povolené optimalizace kompilátoru.  
   
--   Za určitých podmínek Pokud `if` příkaz se používá k testování pro podmínku před vstupem `try` bloku a ve výstupu z `try` bloku a stejné podmínku vyhodnotí v `catch` nebo `finally` bloku, nové 64bitový kompilátor JIT odebere `if` podmínky z `catch` nebo `finally` blokovat, když optimalizuje kódu. V důsledku toho code uvnitř `if` příkaz v `catch` nebo `finally` bezpodmínečně vykonání bloku.  
+-   Za určitých podmínek Pokud `if` příkaz slouží k otestování pro podmínku před vstupem `try` bloku a ve výstupu z `try` bloku a stejná podmínka je vyhodnocena v `catch` nebo `finally` bloku, nové Odebere 64bitového JIT kompilátoru `if` podmínky z `catch` nebo `finally` blokovat, pokud optimalizuje kód. V důsledku toho kód `if` příkaz v `catch` nebo `finally` bloku je bezpodmínečně provedeny.  
   
 <a name="General"></a>   
 ## <a name="mitigation-of-known-issues"></a>Zmírnění dopadů známých problémů  
- Pokud narazíte na problémy uvedené výše, můžete je vyřešit pomocí některého z následujících akcí:  
+ Pokud narazíte na problémy uvedené výše, abyste mohli vyřešit pomocí některého z následujících akcí:  
   
--   Upgrade na rozhraní .NET Framework 4.6.2. Nové 64bitový kompilátor součástí rozhraní .NET Framework 4.6.2 řeší každý z těchto známých problémů.  
+-   Upgrade na rozhraní .NET Framework 4.6.2. Nový 64bitový kompilátor rozhraní .NET Framework 4.6.2 je součástí adresy každé z těchto známých problémů.  
   
--   Zajistěte, aby byl vaši verzi systému Windows aktuální spuštěním služby Windows Update. Aktualizace služby rozhraní .NET Framework 4.6 a 4.6.1 se vztahují na všechny tyto problémy s výjimkou <xref:System.NullReferenceException> v rozbalení operace.  
+-   Ujistěte se, že je vaše verze Windows aktuální spuštěním aktualizace Windows. Aktualizace služeb rozhraní .NET Framework 4.6 a 4.6.1 se vztahují na všechny tyto problémy s výjimkou <xref:System.NullReferenceException> v operace rozbalení.  
   
--   Kompilace s starší 64bitový kompilátor JIT. Najdete v článku [zmírnění další problémy](#Other) části Další informace o tom, jak to udělat.  
+-   Kompilovat s starší 64bitovým kompilátorem JIT. Zobrazit [zmírnění problémů s jinými problémy](#Other) části Další informace o tom, jak to provést.  
   
 <a name="Other"></a>   
-## <a name="mitigation-of-other-issues"></a>Zmírnění dopadů jiné problémy  
- Pokud narazíte na žádné jiné rozdíl v chování mezi kódem kompilovat s starší 64bitový kompilátor a nové 64bitový kompilátor JIT, nebo mezi ladění a vydání verze aplikace, které jsou kompilovat s novou 64bitový kompilátor JIT, můžete provést následující sestavovat aplikace pomocí starší 64bitový kompilátor JIT:  
+## <a name="mitigation-of-other-issues"></a>Zmírnění problémů s jinými problémy  
+ Pokud narazíte na jakékoli další rozdíl v chování mezi kód zkompilovaný s starší 64bitovým kompilátorem a nového 64bitového kompilátoru JIT, nebo ladění a verze vydání aplikace, které jsou kompilovány pomocí nového 64bitového kompilátoru JIT, vám pomůžou následující aplikace s využitím starší 64bitového kompilátoru JIT kompilace:  
   
--   Na základě jednotlivých aplikací, můžete přidat [ \<useLegacyJit >](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md) element konfiguračního souboru aplikace. Následující zakáže kompilaci s novou 64bitový kompilátor JIT a místo toho používá starší verze 64bitový kompilátor JIT.  
+-   Na základě jednotlivých aplikací, můžete přidat [ \<useLegacyJit >](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md) prvku do konfiguračního souboru aplikace. Následující zakazuje kompilaci pomocí nového 64bitového kompilátoru JIT a místo toho používá starší verzi 64bitového kompilátoru JIT.  
   
     ```xml  
     <?xml version ="1.0"?>  
@@ -63,12 +63,12 @@ Od verze rozhraní .NET Framework 4.6, modul runtime zahrnuje nové kompilátoru
     </configuration>  
     ```  
   
--   U každého uživatele zvlášť, můžete přidat `REG_DWORD` hodnotu s názvem `useLegacyJit` k `HKEY_CURRENT_USER\SOFTWARE\Microsoft\.NETFramework` klíče registru. Hodnota 1 povolí starší verze kompilátoru JIT 64-bit; Hodnota 0 zakáže ho a umožňuje nové 64bitový kompilátor JIT.  
+-   Na základě jednotlivých uživatelů můžete přidat `REG_DWORD` hodnotu s názvem `useLegacyJit` k `HKEY_CURRENT_USER\SOFTWARE\Microsoft\.NETFramework` klíče registru. Hodnota 1 povolí starší verzi kompilátoru JIT 64-bit; Hodnota 0 zakáže a umožňuje nové 64bitovým kompilátorem JIT.  
   
--   U jednotlivých počítačů, můžete přidat `REG_DWORD` hodnotu s názvem `useLegacyJit` k `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework` klíče registru. Hodnota 1 povolí starší verze kompilátoru JIT 64-bit; Hodnota 0 zakáže ho a umožňuje nové 64bitový kompilátor JIT.  
+-   Na základě vázaná na počítač, můžete přidat `REG_DWORD` hodnotu s názvem `useLegacyJit` k `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework` klíče registru. Hodnota 1 povolí starší verzi kompilátoru JIT 64-bit; Hodnota 0 zakáže a umožňuje nové 64bitovým kompilátorem JIT.  
   
  Vám může také dejte nám vědět o problému pomocí hlášení chyby na [Microsoft Connect](https://connect.microsoft.com/VisualStudio).  
   
-## <a name="see-also"></a>Viz také  
- [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)  
- [\<useLegacyJit > elementu](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md)
+## <a name="see-also"></a>Viz také:
+- [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
+- [\<useLegacyJit> Element](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md)

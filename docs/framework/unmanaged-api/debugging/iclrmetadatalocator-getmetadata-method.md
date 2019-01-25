@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4338619414c9c9ac8c5fe85479562410d1678698
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7758e61635bf6611cf83d2d66d0b62a28fac97d0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403855"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54647683"
 ---
 # <a name="iclrmetadatalocatorgetmetadata-method"></a>ICLRMetadataLocator::GetMetadata – metoda
-Voláno rozhraním běžné jazyk služby modulu runtime (CLR) data přístup pro načtení metadat bitové kopie.  
+Volá se službami common language runtime (CLR) přístup k datům pro načtení metadat bitovou kopii.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,37 +46,37 @@ HRESULT GetMetadata(
   
 #### <a name="parameters"></a>Parametry  
  `imagePath`  
- [v] Řetězec, který určuje cestu k souboru bitové kopie.  
+ [in] Řetězec, který určuje cestu k souboru bitové kopie.  
   
  `imageTimestamp`  
- [v] Časové razítko souboru bitové kopie.  
+ [in] Časové razítko souboru bitové kopie.  
   
  `imageSize`  
- [v] Velikost souboru bitové kopie.  
+ [in] Velikost souboru obrázku.  
   
  `mvid`  
- [v] Globálně jedinečný identifikátor bitové kopie.  
+ [in] Globálně jedinečný identifikátor používaného obrázku.  
   
  `mdRva`  
- [v] Relativní virtuální adresy (RVA) metadata. Adresa je relativní vzhledem k základní adresu bitové kopie.  
+ [in] Relativní virtuální adresu (RVA) metadat. Adresa je relativní vzhledem k základní adrese image.  
   
  `flags`  
- [v] Vyhrazeno pro budoucí použití.  
+ [in] Vyhrazeno pro budoucí použití.  
   
  `bufferSize`  
- [v] Velikost vyrovnávací paměti, do níž umístíte metadata.  
+ [in] Velikost vyrovnávací paměti, do které se má umístit metadata.  
   
  `buffer`  
- [out] Vyrovnávací paměť, do níž umístíte metadata.  
+ [out] Vyrovnávací paměť, ve které chcete umístit metadata.  
   
  `dataSize`  
  [out] Velikost metadat, která je vrácena.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je implementována zapisovačem ladění aplikace.  
+ Tato metoda je implementováno tvůrci ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   
@@ -84,5 +84,5 @@ HRESULT GetMetadata(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRMetadataLocator – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrmetadatalocator-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRMetadataLocator – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrmetadatalocator-interface.md)

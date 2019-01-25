@@ -7,12 +7,12 @@ helpviewer_keywords:
 - RFC 3066 standard [XAML Services]
 - standards [XAML Services], RFC 3066
 ms.assetid: 7aac0078-a1c5-41f8-b8b0-975510d9dca0
-ms.openlocfilehash: 025e4b2865fe3938e5f1454f87e90bae7a85bcfd
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 508c1151b1b196a84b7c3a576e18d10c0a706fad
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43747967"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54692393"
 ---
 # <a name="xmllang-handling-in-xaml"></a>Práce s atributem xml:lang v jazyce XAML
 `xml:lang` Atribut je [!INCLUDE[TLA2#tla_xml](../../../includes/tla2sharptla-xml-md.md)]-definovaný atribut, který deklaruje informace o jazyk a jazykovou verzi pro element v XML. Tento stejný význam atributu přetrvává v XAML; však použít několik dalších důležitých informací.  
@@ -43,5 +43,5 @@ ms.locfileid: "43747967"
 ## <a name="wpf-usage-nodes"></a>Využití uzlů WPF  
  Pro prvky, které jsou odvozené třídy <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>, můžete ekvivalentní <xref:System.Windows.FrameworkElement.Language%2A> vlastnost závislosti místo `xml:lang` atribut. Ve výchozím nastavení <xref:System.Windows.FrameworkElement.Language%2A> vlastnost používá "en US", pokud není jinak nastavena, prostřednictvím vlastnosti nebo prostřednictvím zpracování `xml:lang` atribut.  
   
-## <a name="see-also"></a>Viz také  
- [Globalizace pro WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)
+## <a name="see-also"></a>Viz také:
+- [Globalizace pro WPF](../../../docs/framework/wpf/advanced/globalization-for-wpf.md)
