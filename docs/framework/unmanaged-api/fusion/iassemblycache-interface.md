@@ -16,33 +16,33 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4302a73f9f077c2e1bf4f66c2b80ab025ae4a62c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 157cc9f5f520f376c0c055ab49b116bc7961f421
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430580"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54641067"
 ---
-# <a name="iassemblycache-interface"></a><span data-ttu-id="8f6df-102">IAssemblyCache – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8f6df-102">IAssemblyCache Interface</span></span>
-<span data-ttu-id="8f6df-103">Představuje globální mezipaměti sestavení pro použití technologie fusion.</span><span class="sxs-lookup"><span data-stu-id="8f6df-103">Represents the global assembly cache for use by the fusion technology.</span></span>  
+# <a name="iassemblycache-interface"></a><span data-ttu-id="bebf1-102">IAssemblyCache – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bebf1-102">IAssemblyCache Interface</span></span>
+<span data-ttu-id="bebf1-103">Reprezentuje globální mezipaměti sestavení pro použití technologií fusion.</span><span class="sxs-lookup"><span data-stu-id="bebf1-103">Represents the global assembly cache for use by the fusion technology.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="8f6df-104">Metody</span><span class="sxs-lookup"><span data-stu-id="8f6df-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="bebf1-104">Metody</span><span class="sxs-lookup"><span data-stu-id="bebf1-104">Methods</span></span>  
   
-|<span data-ttu-id="8f6df-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="8f6df-105">Method</span></span>|<span data-ttu-id="8f6df-106">Popis</span><span class="sxs-lookup"><span data-stu-id="8f6df-106">Description</span></span>|  
+|<span data-ttu-id="bebf1-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="bebf1-105">Method</span></span>|<span data-ttu-id="bebf1-106">Popis</span><span class="sxs-lookup"><span data-stu-id="bebf1-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="8f6df-107">CreateAssemblyCacheItem – metoda</span><span class="sxs-lookup"><span data-stu-id="8f6df-107">CreateAssemblyCacheItem Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-createassemblycacheitem-method.md)|<span data-ttu-id="8f6df-108">Získá odkaz na novou [iassemblycacheitem –](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md).</span><span class="sxs-lookup"><span data-stu-id="8f6df-108">Gets a reference to a new [IAssemblyCacheItem](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md).</span></span>|  
-|[<span data-ttu-id="8f6df-109">CreateAssemblyScavenger – metoda</span><span class="sxs-lookup"><span data-stu-id="8f6df-109">CreateAssemblyScavenger Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-createassemblyscavenger-method.md)|<span data-ttu-id="8f6df-110">Technologie fusion vyhrazené pro interní použití.</span><span class="sxs-lookup"><span data-stu-id="8f6df-110">Reserved for internal use by the fusion technology.</span></span>|  
-|[<span data-ttu-id="8f6df-111">InstallAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="8f6df-111">InstallAssembly Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-installassembly-method.md)|<span data-ttu-id="8f6df-112">Nainstaluje zadaný sestavení v globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="8f6df-112">Installs the specified assembly in the global assembly cache.</span></span>|  
-|[<span data-ttu-id="8f6df-113">QueryAssemblyInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="8f6df-113">QueryAssemblyInfo Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-queryassemblyinfo-method.md)|<span data-ttu-id="8f6df-114">Získá požadovaná data o zadaném sestavení.</span><span class="sxs-lookup"><span data-stu-id="8f6df-114">Gets the requested data about the specified assembly.</span></span>|  
-|[<span data-ttu-id="8f6df-115">UninstallAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="8f6df-115">UninstallAssembly Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-uninstallassembly-method.md)|<span data-ttu-id="8f6df-116">Odinstaluje zadaný sestavení z globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="8f6df-116">Uninstalls the specified assembly from the global assembly cache.</span></span>|  
+|[<span data-ttu-id="bebf1-107">CreateAssemblyCacheItem – metoda</span><span class="sxs-lookup"><span data-stu-id="bebf1-107">CreateAssemblyCacheItem Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-createassemblycacheitem-method.md)|<span data-ttu-id="bebf1-108">Získá odkaz na novou [iassemblycacheitem –](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md).</span><span class="sxs-lookup"><span data-stu-id="bebf1-108">Gets a reference to a new [IAssemblyCacheItem](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md).</span></span>|  
+|[<span data-ttu-id="bebf1-109">CreateAssemblyScavenger – metoda</span><span class="sxs-lookup"><span data-stu-id="bebf1-109">CreateAssemblyScavenger Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-createassemblyscavenger-method.md)|<span data-ttu-id="bebf1-110">Vyhrazené pro interní použití technologie fusion.</span><span class="sxs-lookup"><span data-stu-id="bebf1-110">Reserved for internal use by the fusion technology.</span></span>|  
+|[<span data-ttu-id="bebf1-111">InstallAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="bebf1-111">InstallAssembly Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-installassembly-method.md)|<span data-ttu-id="bebf1-112">Nainstaluje zadané sestavení v globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="bebf1-112">Installs the specified assembly in the global assembly cache.</span></span>|  
+|[<span data-ttu-id="bebf1-113">QueryAssemblyInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="bebf1-113">QueryAssemblyInfo Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-queryassemblyinfo-method.md)|<span data-ttu-id="bebf1-114">Získá požadovaná data o zadané sestavení.</span><span class="sxs-lookup"><span data-stu-id="bebf1-114">Gets the requested data about the specified assembly.</span></span>|  
+|[<span data-ttu-id="bebf1-115">UninstallAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="bebf1-115">UninstallAssembly Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-uninstallassembly-method.md)|<span data-ttu-id="bebf1-116">Odinstaluje zadané sestavení z globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="bebf1-116">Uninstalls the specified assembly from the global assembly cache.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="8f6df-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8f6df-117">Requirements</span></span>  
- <span data-ttu-id="8f6df-118">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8f6df-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bebf1-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bebf1-117">Requirements</span></span>  
+ <span data-ttu-id="bebf1-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bebf1-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="8f6df-119">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="8f6df-119">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="bebf1-119">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="bebf1-119">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="8f6df-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8f6df-120">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="bebf1-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bebf1-120">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8f6df-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="8f6df-121">See Also</span></span>  
- [<span data-ttu-id="8f6df-122">Rozhraní pro fúze</span><span class="sxs-lookup"><span data-stu-id="8f6df-122">Fusion Interfaces</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [<span data-ttu-id="8f6df-123">Globální mezipaměť sestavení</span><span class="sxs-lookup"><span data-stu-id="8f6df-123">Global Assembly Cache</span></span>](../../../../docs/framework/app-domains/gac.md)
+## <a name="see-also"></a><span data-ttu-id="bebf1-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bebf1-121">See also</span></span>
+- [<span data-ttu-id="bebf1-122">Rozhraní pro fúze</span><span class="sxs-lookup"><span data-stu-id="bebf1-122">Fusion Interfaces</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [<span data-ttu-id="bebf1-123">Globální mezipaměť sestavení</span><span class="sxs-lookup"><span data-stu-id="bebf1-123">Global Assembly Cache</span></span>](../../../../docs/framework/app-domains/gac.md)

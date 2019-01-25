@@ -4,41 +4,41 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - managed HTML DOM
 ms.assetid: a017dd5c-cd7b-47e4-952c-f4f54cb48409
-ms.openlocfilehash: 7800311895d1c0fac43577076226a68712164f60
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 1405bb43e971f02bafa892de84a6b8acde2e319b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47081757"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54691421"
 ---
-# <a name="using-the-managed-html-document-object-model"></a><span data-ttu-id="8a859-102">Použití modelu spravovaného objektu dokumentu HTML</span><span class="sxs-lookup"><span data-stu-id="8a859-102">Using the Managed HTML Document Object Model</span></span>
-<span data-ttu-id="8a859-103">Spravovaný model (DOM) objektu dokumentu HTML poskytuje obálku na základě [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pro třídy HTML vystavené aplikace Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="8a859-103">The managed HTML document object model (DOM) provides a wrapper based on the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] for the HTML classes exposed by Internet Explorer.</span></span> <span data-ttu-id="8a859-104">Použít tyto třídy manipulovat s HTML stránek hostovaných v <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, nebo vytvářet nové stránky od začátku.</span><span class="sxs-lookup"><span data-stu-id="8a859-104">Use these classes to manipulate HTML pages hosted in the <xref:System.Windows.Forms.WebBrowser> control, or to build new pages from the beginning.</span></span>  
+# <a name="using-the-managed-html-document-object-model"></a><span data-ttu-id="8eb93-102">Použití modelu spravovaného objektu dokumentu HTML</span><span class="sxs-lookup"><span data-stu-id="8eb93-102">Using the Managed HTML Document Object Model</span></span>
+<span data-ttu-id="8eb93-103">Spravovaný model (DOM) objektu dokumentu HTML poskytuje obálku na základě [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pro třídy HTML vystavené aplikace Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="8eb93-103">The managed HTML document object model (DOM) provides a wrapper based on the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] for the HTML classes exposed by Internet Explorer.</span></span> <span data-ttu-id="8eb93-104">Použít tyto třídy manipulovat s HTML stránek hostovaných v <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, nebo vytvářet nové stránky od začátku.</span><span class="sxs-lookup"><span data-stu-id="8eb93-104">Use these classes to manipulate HTML pages hosted in the <xref:System.Windows.Forms.WebBrowser> control, or to build new pages from the beginning.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="8a859-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="8a859-105">In This Section</span></span>  
- [<span data-ttu-id="8a859-106">Postupy: Přístup ke spravovanému modelu DOM (Document Object Model) HTML</span><span class="sxs-lookup"><span data-stu-id="8a859-106">How to: Access the Managed HTML Document Object Model</span></span>](../../../../docs/framework/winforms/controls/how-to-access-the-managed-html-document-object-model.md)  
- <span data-ttu-id="8a859-107">Popisuje, jak získat platnou instanci <xref:System.Windows.Forms.HtmlDocument> z aplikace Windows Forms nebo <xref:System.Windows.Forms.UserControl> hostované v aplikaci Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="8a859-107">Describes how to obtain a valid instance of <xref:System.Windows.Forms.HtmlDocument> from either a Windows Forms application or a <xref:System.Windows.Forms.UserControl> hosted in Internet Explorer.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="8eb93-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="8eb93-105">In This Section</span></span>  
+ [<span data-ttu-id="8eb93-106">Postupy: Přístup k modelu objektu spravovaného dokumentu HTML</span><span class="sxs-lookup"><span data-stu-id="8eb93-106">How to: Access the Managed HTML Document Object Model</span></span>](../../../../docs/framework/winforms/controls/how-to-access-the-managed-html-document-object-model.md)  
+ <span data-ttu-id="8eb93-107">Popisuje, jak získat platnou instanci <xref:System.Windows.Forms.HtmlDocument> z aplikace Windows Forms nebo <xref:System.Windows.Forms.UserControl> hostované v aplikaci Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="8eb93-107">Describes how to obtain a valid instance of <xref:System.Windows.Forms.HtmlDocument> from either a Windows Forms application or a <xref:System.Windows.Forms.UserControl> hosted in Internet Explorer.</span></span>  
   
- [<span data-ttu-id="8a859-108">Postupy: Přístup ke zdroji HTML ve spravovaném modelu DOM (Document Object Model) HTML</span><span class="sxs-lookup"><span data-stu-id="8a859-108">How to: Access the HTML Source in the Managed HTML Document Object Model</span></span>](../../../../docs/framework/winforms/controls/how-to-access-the-html-source-in-the-managed-html-document-object-model.md)  
- <span data-ttu-id="8a859-109">Popisuje, jak získat zdrojový kód HTML původní, bez úprav a tom, jak získat zdroje "živé", který odráží aktuální stav modelu DOM.</span><span class="sxs-lookup"><span data-stu-id="8a859-109">Describes how to obtain the original, unmodified HTML source, and how to obtain the "live" source that reflects the current state of the DOM.</span></span>  
+ [<span data-ttu-id="8eb93-108">Postupy: Přístup ke zdroji HTML v objektovém modelu spravovaného dokumentu HTML</span><span class="sxs-lookup"><span data-stu-id="8eb93-108">How to: Access the HTML Source in the Managed HTML Document Object Model</span></span>](../../../../docs/framework/winforms/controls/how-to-access-the-html-source-in-the-managed-html-document-object-model.md)  
+ <span data-ttu-id="8eb93-109">Popisuje, jak získat zdrojový kód HTML původní, bez úprav a tom, jak získat zdroje "živé", který odráží aktuální stav modelu DOM.</span><span class="sxs-lookup"><span data-stu-id="8eb93-109">Describes how to obtain the original, unmodified HTML source, and how to obtain the "live" source that reflects the current state of the DOM.</span></span>  
   
- [<span data-ttu-id="8a859-110">Postupy: Změna stylů v elementu ve spravovaném modelu DOM (Document Object Model) HTML</span><span class="sxs-lookup"><span data-stu-id="8a859-110">How to: Change Styles on an Element in the Managed HTML Document Object Model</span></span>](../../../../docs/framework/winforms/controls/how-to-change-styles-on-an-element-in-the-managed-html-document-object-model.md)  
- <span data-ttu-id="8a859-111">Popisuje, jak pracovat s styly, které se používají k řízení vizuální zobrazení elementů.</span><span class="sxs-lookup"><span data-stu-id="8a859-111">Describes how to manipulate styles, which are used to control the visual display of elements.</span></span>  
+ [<span data-ttu-id="8eb93-110">Postupy: Změna stylů v elementu v modelu objektu spravovaného dokumentu HTML</span><span class="sxs-lookup"><span data-stu-id="8eb93-110">How to: Change Styles on an Element in the Managed HTML Document Object Model</span></span>](../../../../docs/framework/winforms/controls/how-to-change-styles-on-an-element-in-the-managed-html-document-object-model.md)  
+ <span data-ttu-id="8eb93-111">Popisuje, jak pracovat s styly, které se používají k řízení vizuální zobrazení elementů.</span><span class="sxs-lookup"><span data-stu-id="8eb93-111">Describes how to manipulate styles, which are used to control the visual display of elements.</span></span>  
   
- [<span data-ttu-id="8a859-112">Přístup k rámcům ve spravovaném modelu DOM (Document Object Model) HTML</span><span class="sxs-lookup"><span data-stu-id="8a859-112">Accessing Frames in the Managed HTML Document Object Model</span></span>](../../../../docs/framework/winforms/controls/accessing-frames-in-the-managed-html-document-object-model.md)  
- <span data-ttu-id="8a859-113">Popisuje, co jsou snímky a sady rámců a jak získat přístup k modelu DOM rámce.</span><span class="sxs-lookup"><span data-stu-id="8a859-113">Describes what frames and framesets are, and how to access the DOM of a frame.</span></span>  
+ [<span data-ttu-id="8eb93-112">Přístup k rámcům ve spravovaném modelu DOM (Document Object Model) HTML</span><span class="sxs-lookup"><span data-stu-id="8eb93-112">Accessing Frames in the Managed HTML Document Object Model</span></span>](../../../../docs/framework/winforms/controls/accessing-frames-in-the-managed-html-document-object-model.md)  
+ <span data-ttu-id="8eb93-113">Popisuje, co jsou snímky a sady rámců a jak získat přístup k modelu DOM rámce.</span><span class="sxs-lookup"><span data-stu-id="8eb93-113">Describes what frames and framesets are, and how to access the DOM of a frame.</span></span>  
   
- [<span data-ttu-id="8a859-114">Přístup k nevystaveným členům ve spravovaném modelu DOM (Document Object Model) HTML</span><span class="sxs-lookup"><span data-stu-id="8a859-114">Accessing Unexposed Members on the Managed HTML Document Object Model</span></span>](../../../../docs/framework/winforms/controls/accessing-unexposed-members-on-the-managed-html-document-object-model.md)  
- <span data-ttu-id="8a859-115">Popisuje, jak pro přístup ke členům základní modelu DOM, které nemají ekvivalent spravované.</span><span class="sxs-lookup"><span data-stu-id="8a859-115">Describes how to access members of the underlying DOM that do not have a managed equivalent.</span></span>  
+ [<span data-ttu-id="8eb93-114">Přístup k nevystaveným členům ve spravovaném modelu DOM (Document Object Model) HTML</span><span class="sxs-lookup"><span data-stu-id="8eb93-114">Accessing Unexposed Members on the Managed HTML Document Object Model</span></span>](../../../../docs/framework/winforms/controls/accessing-unexposed-members-on-the-managed-html-document-object-model.md)  
+ <span data-ttu-id="8eb93-115">Popisuje, jak pro přístup ke členům základní modelu DOM, které nemají ekvivalent spravované.</span><span class="sxs-lookup"><span data-stu-id="8eb93-115">Describes how to access members of the underlying DOM that do not have a managed equivalent.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="8a859-116">Odkaz</span><span class="sxs-lookup"><span data-stu-id="8a859-116">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="8eb93-116">Odkaz</span><span class="sxs-lookup"><span data-stu-id="8eb93-116">Reference</span></span>  
  <xref:System.Windows.Forms.HtmlDocument>  
   
  <xref:System.Windows.Forms.HtmlElement>  
   
  <xref:System.Windows.Forms.HtmlWindow>  
   
-## <a name="related-sections"></a><span data-ttu-id="8a859-117">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="8a859-117">Related Sections</span></span>  
- [<span data-ttu-id="8a859-118">Ovládací prvek WebBrowser</span><span class="sxs-lookup"><span data-stu-id="8a859-118">WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/webbrowser-control-windows-forms.md)  
+## <a name="related-sections"></a><span data-ttu-id="8eb93-117">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="8eb93-117">Related Sections</span></span>  
+ [<span data-ttu-id="8eb93-118">Ovládací prvek WebBrowser</span><span class="sxs-lookup"><span data-stu-id="8eb93-118">WebBrowser Control</span></span>](../../../../docs/framework/winforms/controls/webbrowser-control-windows-forms.md)  
   
-## <a name="see-also"></a><span data-ttu-id="8a859-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="8a859-119">See Also</span></span>  
- [<span data-ttu-id="8a859-120">O objektovém modelu DHTML</span><span class="sxs-lookup"><span data-stu-id="8a859-120">About the DHTML Object Model</span></span>](https://msdn.microsoft.com/library/default.asp?url=/workshop/author/om/doc_object.asp)
+## <a name="see-also"></a><span data-ttu-id="8eb93-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8eb93-119">See also</span></span>
+- [<span data-ttu-id="8eb93-120">O objektovém modelu DHTML</span><span class="sxs-lookup"><span data-stu-id="8eb93-120">About the DHTML Object Model</span></span>](https://msdn.microsoft.com/library/default.asp?url=/workshop/author/om/doc_object.asp)

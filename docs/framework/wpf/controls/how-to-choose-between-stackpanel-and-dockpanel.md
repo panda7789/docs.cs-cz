@@ -11,27 +11,27 @@ helpviewer_keywords:
 - StackPanel control [WPF], DockPanel control compared to
 - controls [WPF], StackPanel
 ms.assetid: f9239086-451f-42e6-81f7-ef89ef349742
-ms.openlocfilehash: c9bfb8d29051a9cfa61d3fcb93b8bb9a68d14e00
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 458ba2fe23ecde28b3eb15400e7a9fa49c4cca68
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551931"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54622530"
 ---
-# <a name="how-to-choose-between-stackpanel-and-dockpanel"></a><span data-ttu-id="3fad7-102">Postupy: Výběr mezi StackPanel a DockPanel</span><span class="sxs-lookup"><span data-stu-id="3fad7-102">How to: Choose Between StackPanel and DockPanel</span></span>
-<span data-ttu-id="3fad7-103">Tento příklad ukazuje, jak si vybrat mezi pomocí <xref:System.Windows.Controls.StackPanel> nebo <xref:System.Windows.Controls.DockPanel> při zásobníku obsah <xref:System.Windows.Controls.Panel>.</span><span class="sxs-lookup"><span data-stu-id="3fad7-103">This example shows how to choose between using a <xref:System.Windows.Controls.StackPanel> or a <xref:System.Windows.Controls.DockPanel> when you stack content in a <xref:System.Windows.Controls.Panel>.</span></span>  
+# <a name="how-to-choose-between-stackpanel-and-dockpanel"></a><span data-ttu-id="0511d-102">Postupy: Výběr mezi StackPanel a DockPanel</span><span class="sxs-lookup"><span data-stu-id="0511d-102">How to: Choose Between StackPanel and DockPanel</span></span>
+<span data-ttu-id="0511d-103">Tento příklad ukazuje, jak si vybrat mezi pomocí <xref:System.Windows.Controls.StackPanel> nebo <xref:System.Windows.Controls.DockPanel> při zásobníku obsah <xref:System.Windows.Controls.Panel>.</span><span class="sxs-lookup"><span data-stu-id="0511d-103">This example shows how to choose between using a <xref:System.Windows.Controls.StackPanel> or a <xref:System.Windows.Controls.DockPanel> when you stack content in a <xref:System.Windows.Controls.Panel>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3fad7-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="3fad7-104">Example</span></span>  
- <span data-ttu-id="3fad7-105">I když můžete použít buď <xref:System.Windows.Controls.DockPanel> nebo <xref:System.Windows.Controls.StackPanel> do zásobníku podřízené elementy, dvou ovládacích prvků vždy nevedou stejné výsledky.</span><span class="sxs-lookup"><span data-stu-id="3fad7-105">Although you can use either <xref:System.Windows.Controls.DockPanel> or <xref:System.Windows.Controls.StackPanel> to stack child elements, the two controls do not always produce the same results.</span></span> <span data-ttu-id="3fad7-106">Například pořadí umístit podřízené elementy může ovlivnit velikost podřízených elementů v <xref:System.Windows.Controls.DockPanel> , ale ne v <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="3fad7-106">For example, the order that you place child elements can affect the size of child elements in a <xref:System.Windows.Controls.DockPanel> but not in a <xref:System.Windows.Controls.StackPanel>.</span></span> <span data-ttu-id="3fad7-107">Různé chování dochází, protože <xref:System.Windows.Controls.StackPanel> míry ve směru překrývání v <xref:System.Double>.<xref:System.Double.PositiveInfinity>, nicméně <xref:System.Windows.Controls.DockPanel> měří pouze dostupné velikosti.</span><span class="sxs-lookup"><span data-stu-id="3fad7-107">This different behavior occurs because <xref:System.Windows.Controls.StackPanel> measures in the direction of stacking at <xref:System.Double>.<xref:System.Double.PositiveInfinity>; however, <xref:System.Windows.Controls.DockPanel> measures only the available size.</span></span>  
+## <a name="example"></a><span data-ttu-id="0511d-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="0511d-104">Example</span></span>  
+ <span data-ttu-id="0511d-105">I když můžete použít buď <xref:System.Windows.Controls.DockPanel> nebo <xref:System.Windows.Controls.StackPanel> do zásobníku podřízené prvky dvou ovládacích prvků vždy nevytváří stejné výsledky.</span><span class="sxs-lookup"><span data-stu-id="0511d-105">Although you can use either <xref:System.Windows.Controls.DockPanel> or <xref:System.Windows.Controls.StackPanel> to stack child elements, the two controls do not always produce the same results.</span></span> <span data-ttu-id="0511d-106">Například pořadí umístit podřízené prvky mohou ovlivnit velikost podřízených elementů v <xref:System.Windows.Controls.DockPanel> , ale ne v <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="0511d-106">For example, the order that you place child elements can affect the size of child elements in a <xref:System.Windows.Controls.DockPanel> but not in a <xref:System.Windows.Controls.StackPanel>.</span></span> <span data-ttu-id="0511d-107">Důvodem tohoto chování různých <xref:System.Windows.Controls.StackPanel> míry ve směru překrývání na <xref:System.Double>.<xref:System.Double.PositiveInfinity>, nicméně <xref:System.Windows.Controls.DockPanel> měří pouze dostupné velikosti.</span><span class="sxs-lookup"><span data-stu-id="0511d-107">This different behavior occurs because <xref:System.Windows.Controls.StackPanel> measures in the direction of stacking at <xref:System.Double>.<xref:System.Double.PositiveInfinity>; however, <xref:System.Windows.Controls.DockPanel> measures only the available size.</span></span>  
   
- <span data-ttu-id="3fad7-108">Následující příklad ukazuje tento spočívá hlavní rozdíl mezi <xref:System.Windows.Controls.DockPanel> a <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="3fad7-108">The following example demonstrates this key difference between <xref:System.Windows.Controls.DockPanel> and <xref:System.Windows.Controls.StackPanel>.</span></span>  
+ <span data-ttu-id="0511d-108">Následující příklad ukazuje tento klíčovým rozdílem mezi <xref:System.Windows.Controls.DockPanel> a <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="0511d-108">The following example demonstrates this key difference between <xref:System.Windows.Controls.DockPanel> and <xref:System.Windows.Controls.StackPanel>.</span></span>  
   
  [!code-cpp[StackPanelOvw4#1](../../../../samples/snippets/cpp/VS_Snippets_Wpf/StackPanelOvw4/CPP/StackPanel_Ovw_Sample4.cpp#1)]
  [!code-csharp[StackPanelOvw4#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/StackPanelOvw4/CSharp/StackPanel_Ovw_Sample4.cs#1)]
  [!code-vb[StackPanelOvw4#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/StackPanelOvw4/VisualBasic/StackPanelSamp.vb#1)]
  [!code-xaml[StackPanelOvw4#1](../../../../samples/snippets/xaml/VS_Snippets_Wpf/StackPanelOvw4/XAML/default.xaml#1)]  
   
-## <a name="see-also"></a><span data-ttu-id="3fad7-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="3fad7-109">See Also</span></span>  
- <xref:System.Windows.Controls.StackPanel>  
- <xref:System.Windows.Controls.DockPanel>  
- [<span data-ttu-id="3fad7-110">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="3fad7-110">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)
+## <a name="see-also"></a><span data-ttu-id="0511d-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0511d-109">See also</span></span>
+- <xref:System.Windows.Controls.StackPanel>
+- <xref:System.Windows.Controls.DockPanel>
+- [<span data-ttu-id="0511d-110">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="0511d-110">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)

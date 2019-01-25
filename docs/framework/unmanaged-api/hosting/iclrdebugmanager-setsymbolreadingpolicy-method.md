@@ -18,17 +18,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1ee21861ed3911303d4661721b65e9e147c6953a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 330501e67e3f19fbdb24c200deacad68de1b6c03
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433816"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54710287"
 ---
-# <a name="iclrdebugmanagersetsymbolreadingpolicy-method"></a><span data-ttu-id="27387-102">ICLRDebugManager::SetSymbolReadingPolicy – metoda</span><span class="sxs-lookup"><span data-stu-id="27387-102">ICLRDebugManager::SetSymbolReadingPolicy Method</span></span>
-<span data-ttu-id="27387-103">Nastavení zásad pro soubory databáze (PDB) program pro čtení.</span><span class="sxs-lookup"><span data-stu-id="27387-103">Sets the policy for reading program database (PDB) files.</span></span> <span data-ttu-id="27387-104">Zásady určuje, zda je informace o čísla řádků a soubory součástí zásobníky volání.</span><span class="sxs-lookup"><span data-stu-id="27387-104">The policy determines whether information about line numbers and files is included in call stacks.</span></span>  
+# <a name="iclrdebugmanagersetsymbolreadingpolicy-method"></a><span data-ttu-id="15521-102">ICLRDebugManager::SetSymbolReadingPolicy – metoda</span><span class="sxs-lookup"><span data-stu-id="15521-102">ICLRDebugManager::SetSymbolReadingPolicy Method</span></span>
+<span data-ttu-id="15521-103">Nastavit zásady pro čtení souborů databáze (PDB) programu.</span><span class="sxs-lookup"><span data-stu-id="15521-103">Sets the policy for reading program database (PDB) files.</span></span> <span data-ttu-id="15521-104">Zásady určuje, zda informace o čísla řádků a souborů je součástí zásobníky volání.</span><span class="sxs-lookup"><span data-stu-id="15521-104">The policy determines whether information about line numbers and files is included in call stacks.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="27387-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="27387-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="15521-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="15521-105">Syntax</span></span>  
   
 ```  
 HRESULT SetSymbolReadingPolicy (  
@@ -36,26 +36,26 @@ HRESULT SetSymbolReadingPolicy (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="27387-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="27387-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="15521-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="15521-106">Parameters</span></span>  
  `policy`  
- <span data-ttu-id="27387-107">[v] Člen [ESymbolReadingPolicy](../../../../docs/framework/unmanaged-api/hosting/esymbolreadingpolicy-enumeration.md) výčtu.</span><span class="sxs-lookup"><span data-stu-id="27387-107">[in] A member of the [ESymbolReadingPolicy](../../../../docs/framework/unmanaged-api/hosting/esymbolreadingpolicy-enumeration.md) enumeration.</span></span>  
+ <span data-ttu-id="15521-107">[in] Člen [esymbolreadingpolicy –](../../../../docs/framework/unmanaged-api/hosting/esymbolreadingpolicy-enumeration.md) výčtu.</span><span class="sxs-lookup"><span data-stu-id="15521-107">[in] A member of the [ESymbolReadingPolicy](../../../../docs/framework/unmanaged-api/hosting/esymbolreadingpolicy-enumeration.md) enumeration.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="27387-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="27387-108">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="15521-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="15521-108">Return Value</span></span>  
   
-|<span data-ttu-id="27387-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="27387-109">HRESULT</span></span>|<span data-ttu-id="27387-110">Popis</span><span class="sxs-lookup"><span data-stu-id="27387-110">Description</span></span>|  
+|<span data-ttu-id="15521-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="15521-109">HRESULT</span></span>|<span data-ttu-id="15521-110">Popis</span><span class="sxs-lookup"><span data-stu-id="15521-110">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="27387-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="27387-111">S_OK</span></span>|<span data-ttu-id="27387-112">`SetSymbolReadingPolicy` úspěšně vrácena.</span><span class="sxs-lookup"><span data-stu-id="27387-112">`SetSymbolReadingPolicy` returned successfully.</span></span>|  
-|<span data-ttu-id="27387-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="27387-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="27387-114">Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="27387-114">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="27387-115">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="27387-115">E_FAIL</span></span>|<span data-ttu-id="27387-116">Došlo k neznámému závažné selhání.</span><span class="sxs-lookup"><span data-stu-id="27387-116">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="27387-117">Po návratu metoda E_FAIL modulu CLR již není použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="27387-117">After a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="27387-118">Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="27387-118">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="15521-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="15521-111">S_OK</span></span>|<span data-ttu-id="15521-112">`SetSymbolReadingPolicy` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="15521-112">`SetSymbolReadingPolicy` returned successfully.</span></span>|  
+|<span data-ttu-id="15521-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="15521-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="15521-114">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="15521-114">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="15521-115">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="15521-115">E_FAIL</span></span>|<span data-ttu-id="15521-116">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="15521-116">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="15521-117">Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="15521-117">After a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="15521-118">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="15521-118">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="27387-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="27387-119">Requirements</span></span>  
- <span data-ttu-id="27387-120">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="27387-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="15521-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="15521-119">Requirements</span></span>  
+ <span data-ttu-id="15521-120">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="15521-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="27387-121">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="27387-121">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="15521-121">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="15521-121">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="27387-122">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="27387-122">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="15521-122">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="15521-122">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="27387-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="27387-123">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="15521-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="15521-123">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="27387-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="27387-124">See Also</span></span>  
- [<span data-ttu-id="27387-125">ICLRDebugManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="27387-125">ICLRDebugManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md)
+## <a name="see-also"></a><span data-ttu-id="15521-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="15521-124">See also</span></span>
+- [<span data-ttu-id="15521-125">ICLRDebugManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="15521-125">ICLRDebugManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md)
