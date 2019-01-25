@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vytváření časových pásem s pravidly úpravy'
+title: 'Postupy: Vytváření časových pásem s pravidly úpravy'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,14 +12,14 @@ helpviewer_keywords:
 ms.assetid: c52ef192-13a9-435f-8015-3b12eae8c47c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 80a5c04f7807638a4a8b114828083835f348ac08
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 83905c97f37a0e49f6219da47e2f640ecfb8edfb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46004111"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54721172"
 ---
-# <a name="how-to-create-time-zones-with-adjustment-rules"></a>Postupy: vytváření časových pásem s pravidly úpravy
+# <a name="how-to-create-time-zones-with-adjustment-rules"></a>Postupy: Vytváření časových pásem s pravidly úpravy
 
 Informace přesné časové pásmo, který vyžaduje aplikace nemusí být k dispozici na konkrétní systém z několika důvodů:
 
@@ -34,7 +34,7 @@ V těchto případech můžete volat <xref:System.TimeZoneInfo.CreateCustomTimeZ
 > [!IMPORTANT]
 > Vlastní časové pásmo vytvořených voláním <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> metoda nejsou přidány do registru. Místo toho jsou dostupné jenom prostřednictvím odkazu na objekt vrácený <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> volání metody.
 
-Toto téma ukazuje, jak vytváření časových pásem s pravidly úpravy. Vytvoření časového pásma, která nepodporuje pravidly úpravy letního času, najdete v tématu [postupy: vytváření časových pásem bez pravidel úpravy](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md).
+Toto téma ukazuje, jak vytváření časových pásem s pravidly úpravy. Vytvoření časového pásma, která nepodporuje pravidly úpravy letního času, najdete v tématu [jak: Vytváření časových pásem bez pravidel úpravy](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md).
 
 ### <a name="to-create-a-time-zone-with-floating-adjustment-rules"></a>Chcete-li vytvořit časové pásmo s plovoucí pravidly úpravy
 
@@ -95,6 +95,6 @@ Tento příklad vyžaduje:
 
 ## <a name="see-also"></a>Viz také:
 
-* [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-* [Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md)
-* [Postupy: Vytváření časových pásem bez pravidel úpravy](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md)
+- [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
+- [Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md)
+- [Postupy: Vytváření časových pásem bez pravidel úpravy](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md)

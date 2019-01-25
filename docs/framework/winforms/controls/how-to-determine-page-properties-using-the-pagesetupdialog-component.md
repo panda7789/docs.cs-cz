@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení vlastností stránky pomocí součásti PageSetupDialog'
+title: 'Postupy: Určení vlastností stránky pomocí komponenty PageSetupDialog'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,27 +10,27 @@ helpviewer_keywords:
 - page setup
 - PageSetupDialog component
 ms.assetid: 6dae05bc-c0fd-4357-bb93-841a1631d98f
-ms.openlocfilehash: 4b1acef216e4f8eca078d47a8cde87fb8f95ee0b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c72ed5e6db6149f2161e0586c783e041eb0b731b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33532724"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54713535"
 ---
-# <a name="how-to-determine-page-properties-using-the-pagesetupdialog-component"></a>Postupy: Určení vlastností stránky pomocí součásti PageSetupDialog
-[PageSetupDialog –](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md) součást uvede rozložení, velikost papíru a další možnosti rozložení stránky pro uživatele pro dokument.  
+# <a name="how-to-determine-page-properties-using-the-pagesetupdialog-component"></a>Postupy: Určení vlastností stránky pomocí komponenty PageSetupDialog
+[PageSetupDialog](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md) součást se zobrazí rozložení, formát papíru a jiné možnosti rozložení stránky pro uživatele pro dokument.  
   
- Musíte zadat instanci <xref:System.Drawing.Printing.PrintDocument> – třída – Toto je dokumentu, který má být vytisknout. Kromě toho uživatelé musí mít tiskárnu místně nebo přes síť s nainstalován v počítači, protože se jedná částečně jak <xref:System.Windows.Forms.PageSetupDialog> součást určuje formátování volby uživateli stránky.  
+ Je třeba zadat instanci <xref:System.Drawing.Printing.PrintDocument> třídy – jedná o dokument, které se mají vytisknout. Kromě toho uživatelé musí mít tiskárny nainstalované v počítači, místně nebo prostřednictvím sítě, protože je částečně jak <xref:System.Windows.Forms.PageSetupDialog> komponenty Určuje stránky se uživateli zobrazí možnosti formátování.  
   
- Důležitým aspektem práce <xref:System.Windows.Forms.PageSetupDialog> součást je, jak pracuje s <xref:System.Drawing.Printing.PageSettings> – třída. <xref:System.Drawing.Printing.PageSettings> Třída se používá k určení nastavení, které určuje způsob, jak na stránce budou vytištěny, jako je například orientace papíru, velikosti stránky a pravého okraje. Každé z těchto nastavení je reprezentován jako vlastnost <xref:System.Drawing.Printing.PageSettings> třídy. <xref:System.Windows.Forms.PageSetupDialog> Třída upraví tyto hodnoty vlastností pro dané instanci systému <xref:System.Drawing.Printing.PageSettings> třídu, která souvisí s dokumentu (a je reprezentována jako <xref:System.Drawing.Printing.PrintDocument.DefaultPageSettings%2A> vlastnosti).  
+ Důležitou součástí práce s <xref:System.Windows.Forms.PageSetupDialog> komponenta je, jak komunikuje se službou <xref:System.Drawing.Printing.PageSettings> třídy. <xref:System.Drawing.Printing.PageSettings> Třída se používá k určení nastavení, které určuje způsob, jak na stránce budou zobrazeny, jako je orientace papíru, velikost stránky a okraje. Každé z těchto nastavení je reprezentována jako vlastnost <xref:System.Drawing.Printing.PageSettings> třídy. <xref:System.Windows.Forms.PageSetupDialog> Třídy změní hodnoty těchto vlastností pro danou instanci <xref:System.Drawing.Printing.PageSettings> třídy, který je přidružený dokument (a je vyjádřena jako <xref:System.Drawing.Printing.PrintDocument.DefaultPageSettings%2A> vlastnost).  
   
-### <a name="to-set-page-properties-using-the-pagesetupdialog-component"></a>Nastavení vlastností stránky pomocí součásti PageSetupDialog  
+### <a name="to-set-page-properties-using-the-pagesetupdialog-component"></a>Nastavení vlastností stránky pomocí komponenty PageSetupDialog  
   
-1.  Použít <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metodu pro zobrazení dialogu určení <xref:System.Drawing.Printing.PrintDocument> používat.  
+1.  Použít <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metodu pro zobrazení dialogu zadání <xref:System.Drawing.Printing.PrintDocument> používat.  
   
-     V následujícím příkladu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> obslužné rutiny události otevře instanci <xref:System.Windows.Forms.PageSetupDialog> součásti. Stávající dokument je uveden v <xref:System.Windows.Forms.PageSetupDialog.Document%2A> vlastnost a jeho <xref:System.Drawing.Printing.PageSettings.Color%2A?displayProperty=nameWithType> je nastavena na `false`.  
+     V následujícím příkladu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> obslužná rutina události otevírá instanci <xref:System.Windows.Forms.PageSetupDialog> komponenty. Existující dokument je určen v <xref:System.Windows.Forms.PageSetupDialog.Document%2A> vlastnost a jeho <xref:System.Drawing.Printing.PageSettings.Color%2A?displayProperty=nameWithType> je nastavena na `false`.  
   
-     Příklad předpokládá, že má formulář <xref:System.Windows.Forms.Button> řízení, <xref:System.Drawing.Printing.PrintDocument> součást s názvem `myDocument`a <xref:System.Windows.Forms.PageSetupDialog> součásti.  
+     Příklad předpokládá, že váš formulář má <xref:System.Windows.Forms.Button> ovládací prvek, <xref:System.Drawing.Printing.PrintDocument> součást s názvem `myDocument`a <xref:System.Windows.Forms.PageSetupDialog> komponenty.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  
@@ -87,7 +87,7 @@ ms.locfileid: "33532724"
        System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.PageSetupDialog>  
- [Postupy: Vytváření standardních tiskových úloh modelu Windows Forms](../../../../docs/framework/winforms/advanced/how-to-create-standard-windows-forms-print-jobs.md)  
- [Komponenta PageSetupDialog](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.PageSetupDialog>
+- [Postupy: Vytvoření tiskových úloh standardní Windows Forms](../../../../docs/framework/winforms/advanced/how-to-create-standard-windows-forms-print-jobs.md)
+- [Komponenta PageSetupDialog](../../../../docs/framework/winforms/controls/pagesetupdialog-component-windows-forms.md)

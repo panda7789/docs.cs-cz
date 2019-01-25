@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: e8f7be3b-88de-4f33-ab14-dc008e76c1ba
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0652f5f3f3629257f8f67c6b4a0b9551ef547b62
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 06f772b8d26ec87519efdaae7b621f3fd2d321c5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45648067"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54714734"
 ---
 # <a name="merge-options-in-plinq"></a>Možnosti sloučení v PLINQ
 Při provádění dotazu jako paralelně, PLINQ rozdělí zdrojovou sekvenci tak, aby více vláken může pracovat na různých částech souběžně, obvykle v samostatných vláknech. Výsledky jsou-li využívat v jednom vlákně, například v `foreach` (`For Each` v jazyce Visual Basic) smyčce, pak výsledky z každé vlákno musí být sloučeny zpět do jedné sekvence. Druh sloučení, který provádí PLINQ závisí na subjekty, které se nacházejí v dotazu. Například operátory, které zavádí novou objednávku na výsledcích musí uložit do vyrovnávací paměti všechny prvky ze všech vláken. Z pohledu konzumním vlákně (která je také, že uživatel aplikace) může plně ve vyrovnávací paměti dotaz spusťte znatelný dobu vypršení vytváří výsledek první. Ostatní operátory ve výchozím nastavení, se částečně uložená do vyrovnávací paměti; dávají výsledky v dávkách. Jeden operátor <xref:System.Linq.ParallelEnumerable.ForAll%2A> nemá vyrovnávací paměť ve výchozím nastavení. Bude vrácen všechny prvky ze všech vláken okamžitě.  
@@ -25,7 +25,7 @@ Při provádění dotazu jako paralelně, PLINQ rozdělí zdrojovou sekvenci tak
  [!code-csharp[PLINQ#26](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#26)]
  [!code-vb[PLINQ#26](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#26)]  
   
- Kompletní příklad naleznete v tématu [postupy: určení možností sloučení v PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md).  
+ Kompletní příklad naleznete v tématu [jak: Určení možností sloučení v PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md).  
   
  Pokud konkrétní dotaz nepodporuje požadované možnosti, klikněte možnost bude ignorována. Ve většině případů není nutné zadat možnost sloučení pro PLINQ dotazu. Nicméně v některých případech může být pro vás z testování a měření, které dotaz provádí nejlépe v jiné než výchozí režim. Běžné použití této možnosti je vynutit operátor sloučení bloků dat do datového proudu negace rychleji reagující uživatelské rozhraní.  
   
@@ -49,17 +49,17 @@ Při provádění dotazu jako paralelně, PLINQ rozdělí zdrojovou sekvenci tak
   
 |Operátor|Omezení|  
 |--------------|------------------|  
-|<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|Žádné|  
-|<xref:System.Linq.ParallelEnumerable.Cast%2A>|Žádné|  
+|<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|Žádná|  
+|<xref:System.Linq.ParallelEnumerable.Cast%2A>|Žádná|  
 |<xref:System.Linq.ParallelEnumerable.Concat%2A>|Seřazené bez dotazy, které mají seznamu nebo pole pouze zdroj.|  
-|<xref:System.Linq.ParallelEnumerable.DefaultIfEmpty%2A>|Žádné|  
-|<xref:System.Linq.ParallelEnumerable.OfType%2A>|Žádné|  
+|<xref:System.Linq.ParallelEnumerable.DefaultIfEmpty%2A>|Žádná|  
+|<xref:System.Linq.ParallelEnumerable.OfType%2A>|Žádná|  
 |<xref:System.Linq.ParallelEnumerable.Reverse%2A>|Seřazené bez dotazy, které mají seznamu nebo pole pouze zdroj.|  
-|<xref:System.Linq.ParallelEnumerable.Select%2A>|Žádné|  
-|<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|Žádné|  
-|<xref:System.Linq.ParallelEnumerable.Skip%2A>|Žádné|  
-|<xref:System.Linq.ParallelEnumerable.Take%2A>|Žádné|  
-|<xref:System.Linq.ParallelEnumerable.Where%2A>|Žádné|  
+|<xref:System.Linq.ParallelEnumerable.Select%2A>|Žádná|  
+|<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|Žádný|  
+|<xref:System.Linq.ParallelEnumerable.Skip%2A>|Žádný|  
+|<xref:System.Linq.ParallelEnumerable.Take%2A>|Žádný|  
+|<xref:System.Linq.ParallelEnumerable.Where%2A>|Žádná|  
   
  Všechny ostatní operátory dotazu PLINQ může ignorovat zadané uživatelské možnosti sloučení. Některé operátory dotazů, třeba <xref:System.Linq.ParallelEnumerable.Reverse%2A> a <xref:System.Linq.ParallelEnumerable.OrderBy%2A>, žádné elementy nelze pozastavit, dokud všechny vytvořené a přeuspořádány. Proto když <xref:System.Linq.ParallelMergeOptions> se používá v dotazu, který také obsahuje operátor <xref:System.Linq.ParallelEnumerable.Reverse%2A>, sloučení chování se neprojeví v dotazu, dokud po operátor vytvořil jeho výsledky.  
   
@@ -67,5 +67,5 @@ Při provádění dotazu jako paralelně, PLINQ rozdělí zdrojovou sekvenci tak
   
 ## <a name="see-also"></a>Viz také:
 
-- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
+- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
 - [Postupy: Určení možností sloučení v PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md)

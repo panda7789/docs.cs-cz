@@ -2,116 +2,116 @@
 title: Atributy ServiceModel a odkazy ServiceDescription
 ms.date: 03/30/2017
 ms.assetid: 4ab86b17-eab9-4846-a881-0099f9a7cc64
-ms.openlocfilehash: cc7c36ff7a1c81227f118ee7113be8f7f9eb2e9f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3b1b10f34e300d77943a93d180b5be9e4a3366c2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33505967"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54726621"
 ---
 # <a name="servicemodel-attributes-and-servicedescription-reference"></a>Atributy ServiceModel a odkazy ServiceDescription
-*Popis stromu* je hierarchie typů (počínaje <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> třída) společně popisují všechny aspekty služby. Windows Communication Foundation (WCF) používá k vytvoření platný služby modulu runtime Publikovat Web Services Description Language (WSDL), jazyk definice schématu XML (XSD) a výrazy zásad (metadata) o službě, který můžou klienti používat pro popis stromu připojení k a používat službu a ke generování různé kódu a konfigurace souborů reprezentace strom hodnot popis.  
+*Popis stromu* je hierarchie typů (počínaje <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> třídy), které popisují společně všechny aspekty služby. Windows Communication Foundation (WCF) používá k vytvoření modul runtime platný Publikovat Web Services Description Language (WSDL), schéma XML definice jazyk (XSD) a kontrolní výrazy zásad (metadata) o služby, který můžou klienti použít k popisu stromu Připojte se k a službu používat a generovat různé kódu a konfigurace souboru reprezentace hodnot stromu popis.  
   
- Toto téma popisuje, jak kontrakt související vlastnosti jsou získávány z kontrakt služby, a jak jsou implementované a přidány do stromu popis. V některých případech hodnoty atributu se převedou na chování vlastnosti a chování se pak vloží do stromu popis. Další informace o tom, jak jsou hodnoty stromu popis převést do metadat najdete v tématu [ServiceDescription a referenční dokumentace schématu WSDL](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md).  
+ Toto téma popisuje, jak smlouvy související vlastnosti jsou získávány z kontrakt služby a jak jsou implementované a přidán do stromové struktury popis. V některých případech hodnoty atributů jsou převedena na vlastnosti chování a chování se potom vložen do stromu popis. Další informace o jak popis stromu hodnoty se převedou na metadata, najdete v části [ServiceDescription a referenční informace pro WSDL](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md).  
   
 ## <a name="mapping-operations-to-the-description-tree"></a>Operace mapování do stromu popis  
- V aplikacích WCF, jsou modelovány kontraktů služby pomocí rozhraní (nebo třídy) k označení rozhraní nebo třídy a její metody jako seskupení operací, použijte atributy. Když <xref:System.ServiceModel.ServiceHost> třída je otevřen, všechny kontraktů služby a implementace jsou projeví přes a sloučit s informace o konfiguraci do stromu popis.  
+ Aplikace WCF, kontrakty služeb jsou modelovány pomocí rozhraní (nebo třídy), který použít atributy k označení seskupení operací rozhraní nebo třídu a její metody. Když <xref:System.ServiceModel.ServiceHost> třída se otevře, všechny kontrakty služeb a implementace se projeví za a sloučí s informacemi o konfiguraci do stromu popis.  
   
- Existují dva typy modelů operace: *parametr* modelu a *kontrakt zprávy* modelu. Parametr model používá spravované metody, které nemají parametru nebo typu návratovou hodnotu, která je označena kvalifikátorem <xref:System.ServiceModel.MessageContractAttribute?displayProperty=nameWithType> třídy. V tomto modelu vývojáři řídit serializace parametry a návratové hodnoty, ale WCF generuje hodnoty, které slouží k naplnění stromu popis pro tuto službu a její smlouvy.  
+ Existují dva typy modelů operace: *parametr* modelu a *kontraktu zprávy* modelu. Parametr model používá spravované metody, které nemají parametr nebo návratovou hodnotu typu, která je označena <xref:System.ServiceModel.MessageContractAttribute?displayProperty=nameWithType> třídy. V tomto modelu vývojáři řídit serializace parametry a návratové hodnoty, ale WCF generuje hodnoty, které se používají k naplnění stromu popis služby a její smlouvy.  
   
- Jsou zadány v konfiguračních souborech vazby načíst přímo do <xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A?displayProperty=nameWithType> vlastnost.  
+ Přímo do se načtou vazbách určených v konfiguračních souborech <xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A?displayProperty=nameWithType> vlastnost.  
   
-|Vlastnost ServiceBehaviorAttribute|Hodnota stromu popis vliv|  
+|Vlastnost atributu ServiceBehaviorAttribute|Hodnota Popis stromu vliv|  
 |---------------------------------------|-------------------------------------|  
 |Název|<xref:System.ServiceModel.Description.ServiceDescription.Name%2A>|  
 |Obor názvů|<xref:System.ServiceModel.Description.ServiceDescription.Namespace%2A>|  
 |ConfigurationName|<xref:System.ServiceModel.Description.ServiceDescription.ConfigurationName%2A>|  
-|IgnoreExtensionDataObject|Nastaví <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.IgnoreExtensionDataObject%2A> vlastnost pro všechny operace.|  
-|maxItemsInObjectGraph|Nastaví <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.MaxItemsInObjectGraph%2A> vlastnost pro všechny operace.|  
+|IgnoreExtensionDataObject|Nastaví <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.IgnoreExtensionDataObject%2A> vlastnosti pro všechny operace.|  
+|MaxItemsInObjectGraph|Nastaví <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.MaxItemsInObjectGraph%2A> vlastnosti pro všechny operace.|  
   
-|Vlastnost ServiceContractAttribute|Hodnota stromu popis vliv|  
+|Vlastnost ServiceContractAttribute|Hodnota Popis stromu vliv|  
 |---------------------------------------|-------------------------------------|  
-|Třída CallbackContract|<xref:System.ServiceModel.Description.ContractDescription.CallbackContractType%2A>, <xref:System.ServiceModel.Description.MessageDescription> přidán ke všem operacím <xref:System.ServiceModel.Description.OperationDescription.Messages%2A>.|  
+|CallbackContract|<xref:System.ServiceModel.Description.ContractDescription.CallbackContractType%2A>, <xref:System.ServiceModel.Description.MessageDescription> přidán ke všem operacím <xref:System.ServiceModel.Description.OperationDescription.Messages%2A>.|  
 |ConfigurationName|<xref:System.ServiceModel.Description.ContractDescription.ConfigurationName%2A>|  
-|ProtectionLevel|<xref:System.ServiceModel.Description.ContractDescription.ProtectionLevel%2A> a které by mohly mít podřízených úrovních ochrany. Další informace o hierarchii úroveň ochrany najdete v tématu [úroveň ochrany Principy](../../../../docs/framework/wcf/understanding-protection-level.md).|  
+|Třída protectionLevel|<xref:System.ServiceModel.Description.ContractDescription.ProtectionLevel%2A> a pravděpodobně podřazených úrovních ochrany. Další informace o hierarchii úroveň ochrany, naleznete v tématu [úroveň ochrany Principy](../../../../docs/framework/wcf/understanding-protection-level.md).|  
 |SessionMode|<xref:System.ServiceModel.Description.ContractDescription.SessionMode%2A>|  
   
-|Hodnota ServiceKnownTypesAttribute|Hodnota stromu popis vliv|  
+|Hodnota ServiceKnownTypesAttribute|Hodnota Popis stromu vliv|  
 |--------------------------------------|-------------------------------------|  
-|MethodName|<xref:System.ServiceModel.Description.OperationDescription.KnownTypes%2A>|  
+|methodName|<xref:System.ServiceModel.Description.OperationDescription.KnownTypes%2A>|  
   
-|Hodnota OperationContractAttribute|Hodnota stromu popis vliv|  
+|Atribut OperationContractAttribute hodnota|Hodnota Popis stromu vliv|  
 |--------------------------------------|-------------------------------------|  
-|Akce|<xref:System.ServiceModel.Description.MessageDescription.Action%2A> pro výstup zpráv nebo vstupní zprávy, v závislosti na kontrakt kontrakt/zpětného volání.|  
-|Parametru AsyncPattern|V případě hodnoty true <xref:System.ServiceModel.Description.OperationDescription.BeginMethod%2A> a <xref:System.ServiceModel.Description.OperationDescription.EndMethod%2A>|  
-|IsOneWay|Mapy na jednu <xref:System.ServiceModel.Description.MessageDescription> v <xref:System.ServiceModel.Description.OperationDescription.Messages%2A>|  
+|Akce|<xref:System.ServiceModel.Description.MessageDescription.Action%2A> pro výstupní zprávu nebo zprávu, v závislosti na smlouvy/zpětného volání kontraktu.|  
+|AsyncPattern|Při hodnotě true se <xref:System.ServiceModel.Description.OperationDescription.BeginMethod%2A> a <xref:System.ServiceModel.Description.OperationDescription.EndMethod%2A>|  
+|IsOneWay|Mapuje se na jediného <xref:System.ServiceModel.Description.MessageDescription> v <xref:System.ServiceModel.Description.OperationDescription.Messages%2A>|  
 |IsInitiating|<xref:System.ServiceModel.Description.OperationDescription.IsInitiating%2A>|  
 |IsTerminating|<xref:System.ServiceModel.Description.OperationDescription.IsTerminating%2A>|  
 |Název|<xref:System.ServiceModel.Description.OperationDescription.Name%2A>|  
-|ProtectionLevel|<xref:System.ServiceModel.Description.OperationDescription.ProtectionLevel%2A> a které by mohly mít podřízených úrovních ochrany. Další informace o hierarchii úroveň ochrany najdete v tématu [úroveň ochrany Principy](../../../../docs/framework/wcf/understanding-protection-level.md).|  
-|ReplyAction|<xref:System.ServiceModel.Description.MessageDescription.Action%2A> pro výstup zpráv nebo vstupní zprávy, v závislosti na kontrakt kontrakt/zpětného volání.|  
+|Třída protectionLevel|<xref:System.ServiceModel.Description.OperationDescription.ProtectionLevel%2A> a pravděpodobně podřazených úrovních ochrany. Další informace o hierarchii úroveň ochrany, naleznete v tématu [úroveň ochrany Principy](../../../../docs/framework/wcf/understanding-protection-level.md).|  
+|Třídu ReplyAction|<xref:System.ServiceModel.Description.MessageDescription.Action%2A> pro výstupní zprávu nebo zprávu, v závislosti na smlouvy/zpětného volání kontraktu.|  
   
-|Hodnota FaultContractAttribute|Hodnota stromu popis vliv|  
+|Hodnota FaultContractAttribute|Hodnota Popis stromu vliv|  
 |----------------------------------|-------------------------------------|  
-|Akce|<xref:System.ServiceModel.Description.FaultDescription.Action%2A> v závislosti na kontrakt kontrakt/zpětného volání.|  
+|Akce|<xref:System.ServiceModel.Description.FaultDescription.Action%2A> v závislosti na smlouvy/zpětného volání kontraktu.|  
 |DetailType|<xref:System.ServiceModel.Description.FaultDescription.DetailType%2A>|  
 |Název|<xref:System.ServiceModel.Description.FaultDescription.Name%2A>|  
 |Obor názvů|<xref:System.ServiceModel.Description.FaultDescription.Namespace%2A>|  
-|ProtectionLevel|<xref:System.ServiceModel.Description.FaultDescription.ProtectionLevel%2A>|  
+|Třída protectionLevel|<xref:System.ServiceModel.Description.FaultDescription.ProtectionLevel%2A>|  
   
-|Hodnota atributu DataContractFormatAttribute|Hodnota stromu popis vliv|  
+|Hodnota atributu DataContractFormatAttribute|Hodnota Popis stromu vliv|  
 |---------------------------------------|-------------------------------------|  
-|Použití|<xref:System.ServiceModel.DataContractFormatAttribute.Style%2A> Hodnota se nastavuje na <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> pro operaci.|  
+|Použití|<xref:System.ServiceModel.DataContractFormatAttribute.Style%2A> Je hodnota nastavena na <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> pro operaci.|  
   
-|Hodnota XmlSerializerFormatAttribute|Hodnota stromu popis vliv|  
+|Atribut XmlSerializerFormatAttribute hodnota|Hodnota Popis stromu vliv|  
 |----------------------------------------|-------------------------------------|  
 |Styl|To <xref:System.ServiceModel.XmlSerializerFormatAttribute> je nastavena na <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> pro operaci.|  
-|Použití|<xref:System.ServiceModel.XmlSerializerFormatAttribute> Je nastavený na <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> pro operaci.|  
+|Použití|<xref:System.ServiceModel.XmlSerializerFormatAttribute> Je nastavena na <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> pro operaci.|  
   
-|Hodnota TransactionFlowAttribute|Hodnota stromu popis vliv|  
+|Hodnota TransactionFlowAttribute|Hodnota Popis stromu vliv|  
 |------------------------------------|-------------------------------------|  
-|TransactionFlowOption|<xref:System.ServiceModel.TransactionFlowAttribute> Se přidá jako chování, operaci <xref:System.ServiceModel.Description.OperationDescription.Behaviors%2A> vlastnost.|  
+|TransactionFlowOption|<xref:System.ServiceModel.TransactionFlowAttribute> Se přidá jako chování operaci <xref:System.ServiceModel.Description.OperationDescription.Behaviors%2A> vlastnost.|  
   
-|Hodnota MessageContractAttribute|Hodnota stromu popis vliv|  
+|Hodnota MessageContractAttribute|Hodnota Popis stromu vliv|  
 |------------------------------------|-------------------------------------|  
-|ProtectionLevel|<xref:System.ServiceModel.Description.MessageDescription.ProtectionLevel%2A>|  
+|Třída protectionLevel|<xref:System.ServiceModel.Description.MessageDescription.ProtectionLevel%2A>|  
 |WrapperName|<xref:System.ServiceModel.Description.MessageBodyDescription.WrapperName%2A>|  
 |WrapperNamespace|<xref:System.ServiceModel.Description.MessageBodyDescription.WrapperNamespace%2A>|  
   
-|Hodnota MessageHeaderAttribute|Hodnota stromu popis vliv|  
+|Hodnota třídě MessageHeaderAttribute|Hodnota Popis stromu vliv|  
 |----------------------------------|-------------------------------------|  
-|Objektu actor|<xref:System.ServiceModel.Description.MessageHeaderDescription.Actor%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
-|Atribut MustUnderstand|<xref:System.ServiceModel.Description.MessageHeaderDescription.MustUnderstand%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
+|objekt actor|<xref:System.ServiceModel.Description.MessageHeaderDescription.Actor%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
+|MustUnderstand|<xref:System.ServiceModel.Description.MessageHeaderDescription.MustUnderstand%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
 |Název|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
 |Obor názvů|<xref:System.ServiceModel.Description.MessagePartDescription.Namespace%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
-|ProtectionLevel|<xref:System.ServiceModel.Description.MessagePartDescription.ProtectionLevel%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
-|Předávání|<xref:System.ServiceModel.Description.MessageHeaderDescription.Relay%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
+|Třída protectionLevel|<xref:System.ServiceModel.Description.MessagePartDescription.ProtectionLevel%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
+|Propojení|<xref:System.ServiceModel.Description.MessageHeaderDescription.Relay%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
   
-|Hodnota MessageBodyMemberAttribute|Hodnota stromu popis vliv|  
+|Třídu MessageBodyMemberAttribute hodnota|Hodnota Popis stromu vliv|  
 |--------------------------------------|-------------------------------------|  
-|Název|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A> pro odpovídající součástí <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
-|Obor názvů|<xref:System.ServiceModel.Description.MessagePartDescription.Namespace%2A> pro odpovídající součástí <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
-|Pořadí|<xref:System.ServiceModel.Description.MessagePartDescription.Index%2A> pro odpovídající součástí <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
-|ProtectionLevel|<xref:System.ServiceModel.Description.MessagePartDescription.ProtectionLevel%2A> pro odpovídající součástí <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
+|Název|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A> pro odpovídající část v <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
+|Obor názvů|<xref:System.ServiceModel.Description.MessagePartDescription.Namespace%2A> pro odpovídající část v <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
+|Objednání|<xref:System.ServiceModel.Description.MessagePartDescription.Index%2A> pro odpovídající část v <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
+|Třída protectionLevel|<xref:System.ServiceModel.Description.MessagePartDescription.ProtectionLevel%2A> pro odpovídající část v <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
   
-|Hodnota MessageHeaderArrayAttribute|Hodnota stromu popis vliv|  
+|Hodnota MessageHeaderArrayAttribute|Hodnota Popis stromu vliv|  
 |---------------------------------------|-------------------------------------|  
-|Objektu actor|<xref:System.ServiceModel.Description.MessageHeaderDescription.Actor%2A>|  
-|Atribut MustUnderstand|<xref:System.ServiceModel.Description.MessageHeaderDescription.MustUnderstand%2A>|  
+|objekt actor|<xref:System.ServiceModel.Description.MessageHeaderDescription.Actor%2A>|  
+|MustUnderstand|<xref:System.ServiceModel.Description.MessageHeaderDescription.MustUnderstand%2A>|  
 |Název|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>|  
 |Obor názvů|<xref:System.ServiceModel.Description.MessagePartDescription.Namespace%2A>|  
-|ProtectionLevel|<xref:System.ServiceModel.Description.MessagePartDescription.ProtectionLevel%2A>|  
-|Předávání|<xref:System.ServiceModel.Description.MessageHeaderDescription.Relay%2A>|  
+|Třída protectionLevel|<xref:System.ServiceModel.Description.MessagePartDescription.ProtectionLevel%2A>|  
+|Propojení|<xref:System.ServiceModel.Description.MessageHeaderDescription.Relay%2A>|  
   
-|Hodnota MessagePropertyAttribute|Hodnota stromu popis vliv|  
+|Hodnota MessagePropertyAttribute|Hodnota Popis stromu vliv|  
 |------------------------------------|-------------------------------------|  
 |Název|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>|  
   
-|Hodnota MessageParameterAttribute|Hodnota stromu popis vliv|  
+|Hodnota MessageParameterAttribute|Hodnota Popis stromu vliv|  
 |-------------------------------------|-------------------------------------|  
-|Název|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A> pro odpovídající součástí <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
+|Název|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A> pro odpovídající část v <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
   
- Další informace o tom, jak jsou hodnoty stromu popis převést do metadat najdete v tématu [ServiceDescription a referenční dokumentace schématu WSDL](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md).  
+ Další informace o jak popis stromu hodnoty se převedou na metadata, najdete v části [ServiceDescription a referenční informace pro WSDL](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md).  
   
-## <a name="see-also"></a>Viz také  
- [ServiceDescription a referenční informace pro WSDL](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md)
+## <a name="see-also"></a>Viz také:
+- [ServiceDescription a referenční informace pro WSDL](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md)
