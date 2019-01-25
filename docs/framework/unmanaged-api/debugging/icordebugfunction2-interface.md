@@ -1,5 +1,5 @@
 ---
-title: ICorDebugFunction2 Interface1
+title: ICorDebugFunction2 – rozhraní 1
 ms.date: 03/30/2017
 api_name:
 - ICorDebugFunction2
@@ -16,38 +16,38 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d765f87e36c98b5f664e84d85b883bc949fccf54
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 190e2323fb07dbca6e156d7a24397997e54b6da9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415331"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540790"
 ---
-# <a name="icordebugfunction2-interface1"></a><span data-ttu-id="6fa11-102">ICorDebugFunction2 Interface1</span><span class="sxs-lookup"><span data-stu-id="6fa11-102">ICorDebugFunction2 Interface1</span></span>
-<span data-ttu-id="6fa11-103">Logicky rozšiřuje rozhraní ICorDebugFunction kvůli zajištění podpory pro pouze můj kód procházení po kroku ladění, který přeskočí bez uživatelského kódu.</span><span class="sxs-lookup"><span data-stu-id="6fa11-103">Logically extends the ICorDebugFunction interface to provide support for Just My Code step-through debugging, which skips non-user code.</span></span>  
+# <a name="icordebugfunction2-interface1"></a><span data-ttu-id="86ccc-102">ICorDebugFunction2 – rozhraní 1</span><span class="sxs-lookup"><span data-stu-id="86ccc-102">ICorDebugFunction2 Interface1</span></span>
+<span data-ttu-id="86ccc-103">Logicky rozšiřuje rozhraní ICorDebugFunction pro poskytnutí podpory pro volbu pouze vlastní kód krokové ladění, který přeskočí neuživatelský kód.</span><span class="sxs-lookup"><span data-stu-id="86ccc-103">Logically extends the ICorDebugFunction interface to provide support for Just My Code step-through debugging, which skips non-user code.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="6fa11-104">Metody</span><span class="sxs-lookup"><span data-stu-id="6fa11-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="86ccc-104">Metody</span><span class="sxs-lookup"><span data-stu-id="86ccc-104">Methods</span></span>  
   
-|<span data-ttu-id="6fa11-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="6fa11-105">Method</span></span>|<span data-ttu-id="6fa11-106">Popis</span><span class="sxs-lookup"><span data-stu-id="6fa11-106">Description</span></span>|  
+|<span data-ttu-id="86ccc-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="86ccc-105">Method</span></span>|<span data-ttu-id="86ccc-106">Popis</span><span class="sxs-lookup"><span data-stu-id="86ccc-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="6fa11-107">EnumerateNativeCode – metoda</span><span class="sxs-lookup"><span data-stu-id="6fa11-107">EnumerateNativeCode Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-enumeratenativecode-method.md)|<span data-ttu-id="6fa11-108">(Ještě nebyla implementována.) Získá ukazatele rozhraní umožňuje icordebugcodeenum –, který obsahuje příkazy nativního kódu ve funkci odkazuje tento objekt ICorDebugFunction2.</span><span class="sxs-lookup"><span data-stu-id="6fa11-108">(Not yet implemented.) Gets an interface pointer to an ICorDebugCodeEnum that contains the native code statements in the function referenced by this ICorDebugFunction2 object.</span></span>|  
-|[<span data-ttu-id="6fa11-109">GetJMCStatus – metoda</span><span class="sxs-lookup"><span data-stu-id="6fa11-109">GetJMCStatus Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getjmcstatus-method.md)|<span data-ttu-id="6fa11-110">Získá hodnotu, která určuje, zda tato funkce je označen jako uživatelského kódu.</span><span class="sxs-lookup"><span data-stu-id="6fa11-110">Gets a value that indicates whether this function is marked as user code.</span></span>|  
-|[<span data-ttu-id="6fa11-111">GetVersionNumber – metoda</span><span class="sxs-lookup"><span data-stu-id="6fa11-111">GetVersionNumber Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getversionnumber-method.md)|<span data-ttu-id="6fa11-112">Získá verzi aplikace upravit a pokračovat v této funkce.</span><span class="sxs-lookup"><span data-stu-id="6fa11-112">Gets the Edit and Continue version of this function.</span></span>|  
-|[<span data-ttu-id="6fa11-113">SetJMCStatus – metoda</span><span class="sxs-lookup"><span data-stu-id="6fa11-113">SetJMCStatus Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-setjmcstatus-method.md)|<span data-ttu-id="6fa11-114">Tato funkce se pro pouze můj kód označí krokování s.</span><span class="sxs-lookup"><span data-stu-id="6fa11-114">Marks this function for Just My Code stepping.</span></span>|  
+|[<span data-ttu-id="86ccc-107">EnumerateNativeCode – metoda</span><span class="sxs-lookup"><span data-stu-id="86ccc-107">EnumerateNativeCode Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-enumeratenativecode-method.md)|<span data-ttu-id="86ccc-108">(Ještě nebyla implementována.) Získá ukazatel rozhraní icordebugcodeenum –, který obsahuje příkazy nativního kódu ve funkci odkazuje tento objekt icordebugfunction2 –.</span><span class="sxs-lookup"><span data-stu-id="86ccc-108">(Not yet implemented.) Gets an interface pointer to an ICorDebugCodeEnum that contains the native code statements in the function referenced by this ICorDebugFunction2 object.</span></span>|  
+|[<span data-ttu-id="86ccc-109">GetJMCStatus – metoda</span><span class="sxs-lookup"><span data-stu-id="86ccc-109">GetJMCStatus Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getjmcstatus-method.md)|<span data-ttu-id="86ccc-110">Získá hodnotu, která indikuje, jestli tato funkce je označený jako uživatelského kódu.</span><span class="sxs-lookup"><span data-stu-id="86ccc-110">Gets a value that indicates whether this function is marked as user code.</span></span>|  
+|[<span data-ttu-id="86ccc-111">GetVersionNumber – metoda</span><span class="sxs-lookup"><span data-stu-id="86ccc-111">GetVersionNumber Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getversionnumber-method.md)|<span data-ttu-id="86ccc-112">Získá verzi této funkce upravit a pokračovat.</span><span class="sxs-lookup"><span data-stu-id="86ccc-112">Gets the Edit and Continue version of this function.</span></span>|  
+|[<span data-ttu-id="86ccc-113">SetJMCStatus – metoda</span><span class="sxs-lookup"><span data-stu-id="86ccc-113">SetJMCStatus Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-setjmcstatus-method.md)|<span data-ttu-id="86ccc-114">Označí tato funkce pro volbu pouze vlastní kód krokování.</span><span class="sxs-lookup"><span data-stu-id="86ccc-114">Marks this function for Just My Code stepping.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="6fa11-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6fa11-115">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="86ccc-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="86ccc-115">Remarks</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="6fa11-116">Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.</span><span class="sxs-lookup"><span data-stu-id="6fa11-116">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
+>  <span data-ttu-id="86ccc-116">Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.</span><span class="sxs-lookup"><span data-stu-id="86ccc-116">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="6fa11-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6fa11-117">Requirements</span></span>  
- <span data-ttu-id="6fa11-118">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6fa11-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="86ccc-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="86ccc-117">Requirements</span></span>  
+ <span data-ttu-id="86ccc-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="86ccc-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6fa11-119">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="6fa11-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="86ccc-119">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="86ccc-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="6fa11-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6fa11-120">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="86ccc-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="86ccc-120">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="6fa11-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6fa11-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="86ccc-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="86ccc-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6fa11-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="6fa11-122">See Also</span></span>  
- [<span data-ttu-id="6fa11-123">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="6fa11-123">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="86ccc-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="86ccc-122">See also</span></span>
+- [<span data-ttu-id="86ccc-123">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="86ccc-123">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

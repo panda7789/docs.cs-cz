@@ -1,29 +1,29 @@
 ---
-title: 'Postupy: generování objektový Model jako externí soubor'
+title: 'Postupy: Generování objektového modelu jako externího souboru'
 ms.date: 03/30/2017
 ms.assetid: 2496fa06-3df4-4ecb-86c4-70a49ea08565
-ms.openlocfilehash: 00e8563b361a36de6c31e9ff0c0fd8f3b6f46b4d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 44b123130b79026ed7638ccc7abeb13d8a5f55ef
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33364932"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499168"
 ---
-# <a name="how-to-generate-the-object-model-as-an-external-file"></a><span data-ttu-id="24900-102">Postupy: generování objektový Model jako externí soubor</span><span class="sxs-lookup"><span data-stu-id="24900-102">How to: Generate the Object Model as an External File</span></span>
-<span data-ttu-id="24900-103">Jako alternativu k mapování na základě atributů můžete pomocí nástroje příkazového řádku na SQLMetal vygenerovat objektový model jako externí soubor XML.</span><span class="sxs-lookup"><span data-stu-id="24900-103">As an alternative to attribute-based mapping, you can generate your object model as an external XML file by using the SQLMetal command-line tool.</span></span> <span data-ttu-id="24900-104">Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span><span class="sxs-lookup"><span data-stu-id="24900-104">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span></span> <span data-ttu-id="24900-105">Pomocí externího souboru XML mapování snížit zbytečné soubory do vašeho kódu.</span><span class="sxs-lookup"><span data-stu-id="24900-105">By using an external XML mapping file, you reduce clutter in your code.</span></span> <span data-ttu-id="24900-106">Můžete také změnit chování změnou externího souboru bez nutnosti rekompilace binární soubory aplikace.</span><span class="sxs-lookup"><span data-stu-id="24900-106">You can also change behavior by modifying the external file without recompiling the binaries of your application.</span></span> <span data-ttu-id="24900-107">Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).</span><span class="sxs-lookup"><span data-stu-id="24900-107">For more information, see [External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).</span></span>  
+# <a name="how-to-generate-the-object-model-as-an-external-file"></a><span data-ttu-id="40ca2-102">Postupy: Generování objektového modelu jako externího souboru</span><span class="sxs-lookup"><span data-stu-id="40ca2-102">How to: Generate the Object Model as an External File</span></span>
+<span data-ttu-id="40ca2-103">Jako alternativu k mapování založených na atributech můžete vygenerovat objektového modelu jako externího souboru XML s použitím nástroje příkazového řádku SQLMetal.</span><span class="sxs-lookup"><span data-stu-id="40ca2-103">As an alternative to attribute-based mapping, you can generate your object model as an external XML file by using the SQLMetal command-line tool.</span></span> <span data-ttu-id="40ca2-104">Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span><span class="sxs-lookup"><span data-stu-id="40ca2-104">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).</span></span> <span data-ttu-id="40ca2-105">S použitím externí soubor mapování XML, snížíte nepořádku v kódu.</span><span class="sxs-lookup"><span data-stu-id="40ca2-105">By using an external XML mapping file, you reduce clutter in your code.</span></span> <span data-ttu-id="40ca2-106">Chování můžete také změnit úpravou souboru externí bez opětovné kompilace binární soubory vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="40ca2-106">You can also change behavior by modifying the external file without recompiling the binaries of your application.</span></span> <span data-ttu-id="40ca2-107">Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).</span><span class="sxs-lookup"><span data-stu-id="40ca2-107">For more information, see [External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="24900-108">[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] Nepodporuje vzniku souboru externí mapování.</span><span class="sxs-lookup"><span data-stu-id="24900-108">The [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] does not support generation of an external mapping file.</span></span>  
+>  <span data-ttu-id="40ca2-108">[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] Nepodporuje generování souboru mapování externí.</span><span class="sxs-lookup"><span data-stu-id="40ca2-108">The [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] does not support generation of an external mapping file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="24900-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="24900-109">Example</span></span>  
- <span data-ttu-id="24900-110">Následující příkaz vytvoří soubor externí mapování z ukázková databáze Northwind.</span><span class="sxs-lookup"><span data-stu-id="24900-110">The following command generates an external mapping file from the Northwind sample database.</span></span>  
+## <a name="example"></a><span data-ttu-id="40ca2-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="40ca2-109">Example</span></span>  
+ <span data-ttu-id="40ca2-110">Následující příkaz vygeneruje soubor mapování externí z ukázkové databáze Northwind.</span><span class="sxs-lookup"><span data-stu-id="40ca2-110">The following command generates an external mapping file from the Northwind sample database.</span></span>  
   
 ```  
 sqlmetal /server:myserver /database:northwind /map:externalfile.xml  
 ```  
   
-## <a name="example"></a><span data-ttu-id="24900-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="24900-111">Example</span></span>  
- <span data-ttu-id="24900-112">Následující výňatek ze souboru externí mapování zobrazuje v ukázková databáze Northwind mapování pro tabulku zákazníků.</span><span class="sxs-lookup"><span data-stu-id="24900-112">The following excerpt from an external mapping file shows the mapping for the Customers table in the Northwind sample database.</span></span> <span data-ttu-id="24900-113">Tato výňatek ze byl vygenerován spuštěním na SQLMetal s **/map** možnost.</span><span class="sxs-lookup"><span data-stu-id="24900-113">This excerpt was generated by executing SQLMetal with the **/map** option.</span></span>  
+## <a name="example"></a><span data-ttu-id="40ca2-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="40ca2-111">Example</span></span>  
+ <span data-ttu-id="40ca2-112">Následující úryvek z externí mapování souboru ukazuje mapování pro tabulku Customers v ukázkové databázi Northwind.</span><span class="sxs-lookup"><span data-stu-id="40ca2-112">The following excerpt from an external mapping file shows the mapping for the Customers table in the Northwind sample database.</span></span> <span data-ttu-id="40ca2-113">Tento výpis vygeneroval SQLMetal pomocí provádí **/map** možnost.</span><span class="sxs-lookup"><span data-stu-id="40ca2-113">This excerpt was generated by executing SQLMetal with the **/map** option.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -48,7 +48,7 @@ sqlmetal /server:myserver /database:northwind /map:externalfile.xml
 </Database>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="24900-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="24900-114">See Also</span></span>  
- [<span data-ttu-id="24900-115">Vytvoření objektového modelu</span><span class="sxs-lookup"><span data-stu-id="24900-115">Creating the Object Model</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)  
- [<span data-ttu-id="24900-116">Externí mapování</span><span class="sxs-lookup"><span data-stu-id="24900-116">External Mapping</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
- [<span data-ttu-id="24900-117">Postupy: Generování objektového modelu v jazyce Visual Basic nebo C#</span><span class="sxs-lookup"><span data-stu-id="24900-117">How to: Generate the Object Model in Visual Basic or C#</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
+## <a name="see-also"></a><span data-ttu-id="40ca2-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="40ca2-114">See also</span></span>
+- [<span data-ttu-id="40ca2-115">Vytvoření objektového modelu</span><span class="sxs-lookup"><span data-stu-id="40ca2-115">Creating the Object Model</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
+- [<span data-ttu-id="40ca2-116">Externí mapování</span><span class="sxs-lookup"><span data-stu-id="40ca2-116">External Mapping</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
+- [<span data-ttu-id="40ca2-117">Postupy: Generování objektového modelu v jazyce Visual Basic neboC#</span><span class="sxs-lookup"><span data-stu-id="40ca2-117">How to: Generate the Object Model in Visual Basic or C#</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)

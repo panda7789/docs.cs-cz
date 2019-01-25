@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9ed65181abab58117d539d23fcfeffe71ac19388
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b69aa42fc2ebb9f59cbf699d83b521704805ea5f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430567"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54519746"
 ---
-# <a name="assemblyinfo-structure"></a><span data-ttu-id="5196c-102">ASSEMBLY_INFO – struktura</span><span class="sxs-lookup"><span data-stu-id="5196c-102">ASSEMBLY_INFO Structure</span></span>
-<span data-ttu-id="5196c-103">Obsahuje informace o sestavení, které je zaregistrován v globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="5196c-103">Contains information about an assembly that is registered in the global assembly cache.</span></span>  
+# <a name="assemblyinfo-structure"></a><span data-ttu-id="88ef7-102">ASSEMBLY_INFO – struktura</span><span class="sxs-lookup"><span data-stu-id="88ef7-102">ASSEMBLY_INFO Structure</span></span>
+<span data-ttu-id="88ef7-103">Obsahuje informace o sestavení, který je zaregistrován v globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="88ef7-103">Contains information about an assembly that is registered in the global assembly cache.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5196c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5196c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="88ef7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="88ef7-104">Syntax</span></span>  
   
 ```  
 typedef struct _ASSEMBLY_INFO {  
@@ -38,23 +38,23 @@ typedef struct _ASSEMBLY_INFO {
 } ASSEMBLY_INFO;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="5196c-105">Členové</span><span class="sxs-lookup"><span data-stu-id="5196c-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="88ef7-105">Členové</span><span class="sxs-lookup"><span data-stu-id="88ef7-105">Members</span></span>  
   
-|<span data-ttu-id="5196c-106">Člen</span><span class="sxs-lookup"><span data-stu-id="5196c-106">Member</span></span>|<span data-ttu-id="5196c-107">Popis</span><span class="sxs-lookup"><span data-stu-id="5196c-107">Description</span></span>|  
+|<span data-ttu-id="88ef7-106">Člen</span><span class="sxs-lookup"><span data-stu-id="88ef7-106">Member</span></span>|<span data-ttu-id="88ef7-107">Popis</span><span class="sxs-lookup"><span data-stu-id="88ef7-107">Description</span></span>|  
 |------------|-----------------|  
-|`cbAssemblyInfo`|<span data-ttu-id="5196c-108">Velikost v bajtech, struktury.</span><span class="sxs-lookup"><span data-stu-id="5196c-108">The size, in bytes, of the structure.</span></span> <span data-ttu-id="5196c-109">Toto pole je vyhrazený pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="5196c-109">This field is reserved for future extensibility.</span></span>|  
-|`dwAssemblyFlags`|<span data-ttu-id="5196c-110">Příznaky, které indikují instalace podrobnosti o sestavení.</span><span class="sxs-lookup"><span data-stu-id="5196c-110">Flags that indicate installation details about the assembly.</span></span> <span data-ttu-id="5196c-111">Podporovány jsou následující hodnoty:</span><span class="sxs-lookup"><span data-stu-id="5196c-111">The following values are supported:</span></span><br /><br /> <span data-ttu-id="5196c-112">Hodnota-ASSEMBLYINFO_FLAG_INSTALLED, která označuje, že je nainstalován sestavení.</span><span class="sxs-lookup"><span data-stu-id="5196c-112">-   The ASSEMBLYINFO_FLAG_INSTALLED value, which indicates that the assembly is installed.</span></span> <span data-ttu-id="5196c-113">Aktuální verze rozhraní .NET Framework vždy nastaví `dwAssemblyFlags` na tuto hodnotu.</span><span class="sxs-lookup"><span data-stu-id="5196c-113">The current version of the .NET Framework always sets `dwAssemblyFlags` to this value.</span></span><br /><span data-ttu-id="5196c-114">Hodnota-ASSEMBLYINFO_FLAG_PAYLOADRESIDENT, která označuje, že je sestavení trvalé datové části.</span><span class="sxs-lookup"><span data-stu-id="5196c-114">-   The ASSEMBLYINFO_FLAG_PAYLOADRESIDENT value, which indicates that the assembly is a payload resident.</span></span> <span data-ttu-id="5196c-115">Aktuální verze rozhraní .NET Framework nikdy nastaví `dwAssemblyFlags` na tuto hodnotu.</span><span class="sxs-lookup"><span data-stu-id="5196c-115">The current version of the .NET Framework never sets `dwAssemblyFlags` to this value.</span></span>|  
-|`uliAssemblySizeInKB`|<span data-ttu-id="5196c-116">Celková velikost v kilobajtech, soubory, které obsahuje sestavení.</span><span class="sxs-lookup"><span data-stu-id="5196c-116">The total size, in kilobytes, of the files that the assembly contains.</span></span>|  
-|`pszCurrentAssemblyPathBuf`|<span data-ttu-id="5196c-117">Ukazatel na řetězec vyrovnávací paměť, která obsahuje aktuální cestu k souboru manifestu.</span><span class="sxs-lookup"><span data-stu-id="5196c-117">A pointer to a string buffer that holds the current path to the manifest file.</span></span> <span data-ttu-id="5196c-118">Cesta musí končit znak hodnoty null.</span><span class="sxs-lookup"><span data-stu-id="5196c-118">The path must end with a null character.</span></span>|  
-|`cchBuf`|<span data-ttu-id="5196c-119">Počet široké znaky, včetně null ukončovací znak, který `pszCurrentAssemblyPathBuf` obsahuje.</span><span class="sxs-lookup"><span data-stu-id="5196c-119">The number of wide characters, including the null terminator, that `pszCurrentAssemblyPathBuf` contains.</span></span>|  
+|`cbAssemblyInfo`|<span data-ttu-id="88ef7-108">Velikost v bajtech struktury.</span><span class="sxs-lookup"><span data-stu-id="88ef7-108">The size, in bytes, of the structure.</span></span> <span data-ttu-id="88ef7-109">Toto pole je vyhrazený pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="88ef7-109">This field is reserved for future extensibility.</span></span>|  
+|`dwAssemblyFlags`|<span data-ttu-id="88ef7-110">Příznaky, které označují podrobné informace o instalaci o sestavení.</span><span class="sxs-lookup"><span data-stu-id="88ef7-110">Flags that indicate installation details about the assembly.</span></span> <span data-ttu-id="88ef7-111">Podporovány jsou následující hodnoty:</span><span class="sxs-lookup"><span data-stu-id="88ef7-111">The following values are supported:</span></span><br /><br /> <span data-ttu-id="88ef7-112">-ASSEMBLYINFO_FLAG_INSTALLED hodnotu, která označuje, že je nainstalována sestavení.</span><span class="sxs-lookup"><span data-stu-id="88ef7-112">-   The ASSEMBLYINFO_FLAG_INSTALLED value, which indicates that the assembly is installed.</span></span> <span data-ttu-id="88ef7-113">Aktuální verze rozhraní .NET Framework vždy nastavuje `dwAssemblyFlags` na tuto hodnotu.</span><span class="sxs-lookup"><span data-stu-id="88ef7-113">The current version of the .NET Framework always sets `dwAssemblyFlags` to this value.</span></span><br /><span data-ttu-id="88ef7-114">-ASSEMBLYINFO_FLAG_PAYLOADRESIDENT hodnotu, která označuje, že je sestavení rezidenční datovou část.</span><span class="sxs-lookup"><span data-stu-id="88ef7-114">-   The ASSEMBLYINFO_FLAG_PAYLOADRESIDENT value, which indicates that the assembly is a payload resident.</span></span> <span data-ttu-id="88ef7-115">Aktuální verze rozhraní .NET Framework nikdy nastaví `dwAssemblyFlags` na tuto hodnotu.</span><span class="sxs-lookup"><span data-stu-id="88ef7-115">The current version of the .NET Framework never sets `dwAssemblyFlags` to this value.</span></span>|  
+|`uliAssemblySizeInKB`|<span data-ttu-id="88ef7-116">Celková velikost v kilobajtech, soubory, které obsahuje sestavení.</span><span class="sxs-lookup"><span data-stu-id="88ef7-116">The total size, in kilobytes, of the files that the assembly contains.</span></span>|  
+|`pszCurrentAssemblyPathBuf`|<span data-ttu-id="88ef7-117">Ukazatel do vyrovnávací paměti pro řetězec, který obsahuje aktuální cesta k souboru manifestu.</span><span class="sxs-lookup"><span data-stu-id="88ef7-117">A pointer to a string buffer that holds the current path to the manifest file.</span></span> <span data-ttu-id="88ef7-118">Cesta musí být ukončen znakem null.</span><span class="sxs-lookup"><span data-stu-id="88ef7-118">The path must end with a null character.</span></span>|  
+|`cchBuf`|<span data-ttu-id="88ef7-119">Počet širokých znaků, včetně ukončovacího znaku null, který `pszCurrentAssemblyPathBuf` obsahuje.</span><span class="sxs-lookup"><span data-stu-id="88ef7-119">The number of wide characters, including the null terminator, that `pszCurrentAssemblyPathBuf` contains.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="5196c-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5196c-120">Requirements</span></span>  
- <span data-ttu-id="5196c-121">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5196c-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="88ef7-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="88ef7-120">Requirements</span></span>  
+ <span data-ttu-id="88ef7-121">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="88ef7-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5196c-122">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="5196c-122">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="88ef7-122">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="88ef7-122">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="5196c-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5196c-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="88ef7-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="88ef7-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5196c-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="5196c-124">See Also</span></span>  
- [<span data-ttu-id="5196c-125">Struktury pro fúze</span><span class="sxs-lookup"><span data-stu-id="5196c-125">Fusion Structures</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)  
- [<span data-ttu-id="5196c-126">Globální mezipaměť sestavení</span><span class="sxs-lookup"><span data-stu-id="5196c-126">Global Assembly Cache</span></span>](../../../../docs/framework/app-domains/gac.md)
+## <a name="see-also"></a><span data-ttu-id="88ef7-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="88ef7-124">See also</span></span>
+- [<span data-ttu-id="88ef7-125">Struktury pro fúze</span><span class="sxs-lookup"><span data-stu-id="88ef7-125">Fusion Structures</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)
+- [<span data-ttu-id="88ef7-126">Globální mezipaměť sestavení</span><span class="sxs-lookup"><span data-stu-id="88ef7-126">Global Assembly Cache</span></span>](../../../../docs/framework/app-domains/gac.md)

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5da2936a46dcf3d8f69acc3367db64712165b0cb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eb1268d9fd892a4400491aca7966d81a3e23f9c6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444051"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54515349"
 ---
-# <a name="iceegengetsectionblock-method"></a><span data-ttu-id="aeeb8-102">ICeeGen::GetSectionBlock – metoda</span><span class="sxs-lookup"><span data-stu-id="aeeb8-102">ICeeGen::GetSectionBlock Method</span></span>
-<span data-ttu-id="aeeb8-103">Získá blok část základu kódu.</span><span class="sxs-lookup"><span data-stu-id="aeeb8-103">Gets a section block of the code base.</span></span>  
+# <a name="iceegengetsectionblock-method"></a><span data-ttu-id="24bce-102">ICeeGen::GetSectionBlock – metoda</span><span class="sxs-lookup"><span data-stu-id="24bce-102">ICeeGen::GetSectionBlock Method</span></span>
+<span data-ttu-id="24bce-103">Získá blok části základu kódu.</span><span class="sxs-lookup"><span data-stu-id="24bce-103">Gets a section block of the code base.</span></span>  
   
- <span data-ttu-id="aeeb8-104">Tato metoda je zastaralá a by se neměla používat.</span><span class="sxs-lookup"><span data-stu-id="aeeb8-104">This method is obsolete and should not be used.</span></span>  
+ <span data-ttu-id="24bce-104">Tato metoda je zastaralý a neměl by se používat.</span><span class="sxs-lookup"><span data-stu-id="24bce-104">This method is obsolete and should not be used.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="aeeb8-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="aeeb8-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="24bce-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="24bce-105">Syntax</span></span>  
   
 ```  
 HRESULT GetSectionBlock (  
@@ -40,30 +40,30 @@ HRESULT GetSectionBlock (
 );   
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="aeeb8-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="aeeb8-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="24bce-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="24bce-106">Parameters</span></span>  
  `section`  
- <span data-ttu-id="aeeb8-107">[v] V části, ze kterého chcete načíst blok základu kódu.</span><span class="sxs-lookup"><span data-stu-id="aeeb8-107">[in] The section from which to retrieve a block of the code base.</span></span>  
+ <span data-ttu-id="24bce-107">[in] Části, ze kterého se má načíst blok základu kódu.</span><span class="sxs-lookup"><span data-stu-id="24bce-107">[in] The section from which to retrieve a block of the code base.</span></span>  
   
  `len`  
- <span data-ttu-id="aeeb8-108">[v] Délka bloku mají být načteny.</span><span class="sxs-lookup"><span data-stu-id="aeeb8-108">[in] The length of the block to be retrieved.</span></span>  
+ <span data-ttu-id="24bce-108">[in] Délka bloku, který se má načíst.</span><span class="sxs-lookup"><span data-stu-id="24bce-108">[in] The length of the block to be retrieved.</span></span>  
   
  `align`  
- <span data-ttu-id="aeeb8-109">[v] Byte relativně k začátku části, se kterým chcete-li zarovnat prvním bajtem bloku.</span><span class="sxs-lookup"><span data-stu-id="aeeb8-109">[in] The byte, relative to the beginning of the section, with which to align the first byte of the block.</span></span> <span data-ttu-id="aeeb8-110">Toto je umístění bloku v rámci oddílu.</span><span class="sxs-lookup"><span data-stu-id="aeeb8-110">This is the position of the block within the section.</span></span>  
+ <span data-ttu-id="24bce-109">[in] Byte, vzhledem k začátku části, pomocí kterého se má zarovnání prvního bajtu bloku.</span><span class="sxs-lookup"><span data-stu-id="24bce-109">[in] The byte, relative to the beginning of the section, with which to align the first byte of the block.</span></span> <span data-ttu-id="24bce-110">Toto je umístění bloku v rámci oddílu.</span><span class="sxs-lookup"><span data-stu-id="24bce-110">This is the position of the block within the section.</span></span>  
   
  `ppBytes`  
- <span data-ttu-id="aeeb8-111">[out] Ukazatel na umístění, která přijímá adresu načtené bloku.</span><span class="sxs-lookup"><span data-stu-id="aeeb8-111">[out] A pointer to a location that receives the address of the retrieved block.</span></span>  
+ <span data-ttu-id="24bce-111">[out] Ukazatel na umístění, která bude přijímat adresy načtený bloku.</span><span class="sxs-lookup"><span data-stu-id="24bce-111">[out] A pointer to a location that receives the address of the retrieved block.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="aeeb8-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="aeeb8-112">Remarks</span></span>  
- <span data-ttu-id="aeeb8-113">Volání `GetSectionBlock` pouze v případě, že máte speciální části požadavky, které nejsou zpracovány jinými metodami.</span><span class="sxs-lookup"><span data-stu-id="aeeb8-113">Call `GetSectionBlock` only if you have special section requirements that are not handled by other methods.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="24bce-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="24bce-112">Remarks</span></span>  
+ <span data-ttu-id="24bce-113">Volání `GetSectionBlock` pouze v případě, že máte zvláštní oddíl s požadavky, které nejsou zpracovány jinými metodami.</span><span class="sxs-lookup"><span data-stu-id="24bce-113">Call `GetSectionBlock` only if you have special section requirements that are not handled by other methods.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="aeeb8-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="aeeb8-114">Requirements</span></span>  
- <span data-ttu-id="aeeb8-115">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="aeeb8-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="24bce-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="24bce-114">Requirements</span></span>  
+ <span data-ttu-id="24bce-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="24bce-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="aeeb8-116">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="aeeb8-116">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="24bce-116">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="24bce-116">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="aeeb8-117">**Knihovna:** používat jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="aeeb8-117">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="24bce-117">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="24bce-117">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="aeeb8-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="aeeb8-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="24bce-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="24bce-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="aeeb8-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="aeeb8-119">See Also</span></span>  
- [<span data-ttu-id="aeeb8-120">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="aeeb8-120">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+## <a name="see-also"></a><span data-ttu-id="24bce-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="24bce-119">See also</span></span>
+- [<span data-ttu-id="24bce-120">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="24bce-120">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

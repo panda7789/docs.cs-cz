@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c3847ec6df2e4c6f0cd7116e8219f194792c8b78
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7d1c3edd15ce1994c43a5c9419f7c0edb9421fca
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433044"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54509217"
 ---
-# <a name="iclrdebugmanagersetdacl-method"></a><span data-ttu-id="73f6d-102">ICLRDebugManager::SetDacl – metoda</span><span class="sxs-lookup"><span data-stu-id="73f6d-102">ICLRDebugManager::SetDacl Method</span></span>
-<span data-ttu-id="73f6d-103">Tato metoda není implementována.</span><span class="sxs-lookup"><span data-stu-id="73f6d-103">This method is not implemented.</span></span>  
+# <a name="iclrdebugmanagersetdacl-method"></a><span data-ttu-id="e246b-102">ICLRDebugManager::SetDacl – metoda</span><span class="sxs-lookup"><span data-stu-id="e246b-102">ICLRDebugManager::SetDacl Method</span></span>
+<span data-ttu-id="e246b-103">Tato metoda není implementována.</span><span class="sxs-lookup"><span data-stu-id="e246b-103">This method is not implemented.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="73f6d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="73f6d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e246b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e246b-104">Syntax</span></span>  
   
 ```  
 HRESULT SetDacl (  
@@ -35,27 +35,27 @@ HRESULT SetDacl (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="73f6d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="73f6d-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="e246b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e246b-105">Parameters</span></span>  
  `pacl`  
- <span data-ttu-id="73f6d-106">[v] Ukazatel na seznamu řízení přístupu (ACL).</span><span class="sxs-lookup"><span data-stu-id="73f6d-106">[in] A pointer to the Access Control List (ACL).</span></span>  
+ <span data-ttu-id="e246b-106">[in] Ukazatel na seznam řízení přístupu (ACL).</span><span class="sxs-lookup"><span data-stu-id="e246b-106">[in] A pointer to the Access Control List (ACL).</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="73f6d-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="73f6d-107">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="e246b-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e246b-107">Return Value</span></span>  
   
-|<span data-ttu-id="73f6d-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="73f6d-108">HRESULT</span></span>|<span data-ttu-id="73f6d-109">Popis</span><span class="sxs-lookup"><span data-stu-id="73f6d-109">Description</span></span>|  
+|<span data-ttu-id="e246b-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="e246b-108">HRESULT</span></span>|<span data-ttu-id="e246b-109">Popis</span><span class="sxs-lookup"><span data-stu-id="e246b-109">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="73f6d-110">E_NOTIMPL</span><span class="sxs-lookup"><span data-stu-id="73f6d-110">E_NOTIMPL</span></span>|<span data-ttu-id="73f6d-111">Metoda není implementována.</span><span class="sxs-lookup"><span data-stu-id="73f6d-111">The method is not implemented.</span></span>|  
+|<span data-ttu-id="e246b-110">E_NOTIMPL</span><span class="sxs-lookup"><span data-stu-id="e246b-110">E_NOTIMPL</span></span>|<span data-ttu-id="e246b-111">Metoda není implementována.</span><span class="sxs-lookup"><span data-stu-id="e246b-111">The method is not implemented.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="73f6d-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="73f6d-112">Requirements</span></span>  
- <span data-ttu-id="73f6d-113">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="73f6d-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e246b-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e246b-112">Requirements</span></span>  
+ <span data-ttu-id="e246b-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e246b-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="73f6d-114">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="73f6d-114">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="e246b-114">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="e246b-114">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="73f6d-115">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="73f6d-115">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="e246b-115">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e246b-115">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="73f6d-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="73f6d-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="e246b-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e246b-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="73f6d-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="73f6d-117">See Also</span></span>  
- [<span data-ttu-id="73f6d-118">ICLRControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="73f6d-118">ICLRControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
- [<span data-ttu-id="73f6d-119">ICLRDebugManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="73f6d-119">ICLRDebugManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md)  
- [<span data-ttu-id="73f6d-120">GetDacl – metoda</span><span class="sxs-lookup"><span data-stu-id="73f6d-120">GetDacl Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-getdacl-method.md)  
- [<span data-ttu-id="73f6d-121">IHostControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="73f6d-121">IHostControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)
+## <a name="see-also"></a><span data-ttu-id="e246b-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e246b-117">See also</span></span>
+- [<span data-ttu-id="e246b-118">ICLRControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e246b-118">ICLRControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
+- [<span data-ttu-id="e246b-119">ICLRDebugManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e246b-119">ICLRDebugManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md)
+- [<span data-ttu-id="e246b-120">GetDacl – metoda</span><span class="sxs-lookup"><span data-stu-id="e246b-120">GetDacl Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-getdacl-method.md)
+- [<span data-ttu-id="e246b-121">IHostControl – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e246b-121">IHostControl Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)

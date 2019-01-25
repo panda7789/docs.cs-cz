@@ -12,17 +12,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9f2f5af86e210493cd8ba0eb8afe10d22b84b18c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a45929c3eef5e9127e89dd88346c6207f3f1bc65
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33408005"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559489"
 ---
-# <a name="cordebugdebugeventkind-enumeration"></a><span data-ttu-id="29196-102">Výčet CorDebugDebugEventKind</span><span class="sxs-lookup"><span data-stu-id="29196-102">CorDebugDebugEventKind Enumeration</span></span>
-<span data-ttu-id="29196-103">Určuje typ události, jejichž informace dekóduje ji [DecodeEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="29196-103">Indicates the type of event whose information is decoded by the [DecodeEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md) method.</span></span>  
+# <a name="cordebugdebugeventkind-enumeration"></a><span data-ttu-id="e0fd2-102">Výčet CorDebugDebugEventKind</span><span class="sxs-lookup"><span data-stu-id="e0fd2-102">CorDebugDebugEventKind Enumeration</span></span>
+<span data-ttu-id="e0fd2-103">Určuje typ události, jejichž informace je dekódováno pomocí [DecodeEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="e0fd2-103">Indicates the type of event whose information is decoded by the [DecodeEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md) method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="29196-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="29196-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e0fd2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e0fd2-104">Syntax</span></span>  
   
 ```  
 typedef enum CorDebugDebugEventKind {  
@@ -35,31 +35,31 @@ typedef enum CorDebugDebugEventKind {
 } CorDebugRecordFormat;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="29196-105">Členové</span><span class="sxs-lookup"><span data-stu-id="29196-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="e0fd2-105">Členové</span><span class="sxs-lookup"><span data-stu-id="e0fd2-105">Members</span></span>  
   
-|<span data-ttu-id="29196-106">Člen</span><span class="sxs-lookup"><span data-stu-id="29196-106">Member</span></span>|<span data-ttu-id="29196-107">Popis</span><span class="sxs-lookup"><span data-stu-id="29196-107">Description</span></span>|  
+|<span data-ttu-id="e0fd2-106">Člen</span><span class="sxs-lookup"><span data-stu-id="e0fd2-106">Member</span></span>|<span data-ttu-id="e0fd2-107">Popis</span><span class="sxs-lookup"><span data-stu-id="e0fd2-107">Description</span></span>|  
 |------------|-----------------|  
-|`DEBUG_EVENT_KIND_MODULE_LOADED`|<span data-ttu-id="29196-108">O modulu zatížení událost.</span><span class="sxs-lookup"><span data-stu-id="29196-108">A module load event.</span></span>|  
-|`DEBUG_EVENT_KIND_MODULE_UNLOADED`|<span data-ttu-id="29196-109">O událost uvolnění modulu.</span><span class="sxs-lookup"><span data-stu-id="29196-109">A module unload event.</span></span>|  
-|`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_FIRST_CHANCE`|<span data-ttu-id="29196-110">První odpovídající výjimce.</span><span class="sxs-lookup"><span data-stu-id="29196-110">A first-chance exception.</span></span>|  
-|`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_USER_FIRST_CHANCE`|<span data-ttu-id="29196-111">Uživatel první odpovídající výjimce.</span><span class="sxs-lookup"><span data-stu-id="29196-111">A first-chance user exception.</span></span>|  
-|`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_CATCH_HANDLER_FOUND`|<span data-ttu-id="29196-112">Výjimku, pro který `catch` obslužná rutina existuje.</span><span class="sxs-lookup"><span data-stu-id="29196-112">An exception for which a `catch` handler exists.</span></span>|  
-|`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_UNHANDLED`|<span data-ttu-id="29196-113">K neošetřené výjimce.</span><span class="sxs-lookup"><span data-stu-id="29196-113">An unhandled exception.</span></span>|  
+|`DEBUG_EVENT_KIND_MODULE_LOADED`|<span data-ttu-id="e0fd2-108">Události načtení modulu.</span><span class="sxs-lookup"><span data-stu-id="e0fd2-108">A module load event.</span></span>|  
+|`DEBUG_EVENT_KIND_MODULE_UNLOADED`|<span data-ttu-id="e0fd2-109">Vytvoření události uvolnění modulu.</span><span class="sxs-lookup"><span data-stu-id="e0fd2-109">A module unload event.</span></span>|  
+|`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_FIRST_CHANCE`|<span data-ttu-id="e0fd2-110">První odpovídající výjimce.</span><span class="sxs-lookup"><span data-stu-id="e0fd2-110">A first-chance exception.</span></span>|  
+|`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_USER_FIRST_CHANCE`|<span data-ttu-id="e0fd2-111">Výjimka první příležitosti uživatele.</span><span class="sxs-lookup"><span data-stu-id="e0fd2-111">A first-chance user exception.</span></span>|  
+|`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_CATCH_HANDLER_FOUND`|<span data-ttu-id="e0fd2-112">Výjimka pro kterou `catch` obslužná rutina existuje.</span><span class="sxs-lookup"><span data-stu-id="e0fd2-112">An exception for which a `catch` handler exists.</span></span>|  
+|`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_UNHANDLED`|<span data-ttu-id="e0fd2-113">Neošetřená výjimka.</span><span class="sxs-lookup"><span data-stu-id="e0fd2-113">An unhandled exception.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="29196-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="29196-114">Remarks</span></span>  
- <span data-ttu-id="29196-115">Členem `CorDebugDebugEventKind` výčtu vrátí volání [icordebugdebugevent::geteventkind –](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md) metoda.</span><span class="sxs-lookup"><span data-stu-id="29196-115">A member of the `CorDebugDebugEventKind` enumeration is returned by calling the [ICorDebugDebugEvent::GetEventKind](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md) method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="e0fd2-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e0fd2-114">Remarks</span></span>  
+ <span data-ttu-id="e0fd2-115">Členem `CorDebugDebugEventKind` výčtu je vrácený voláním [icordebugdebugevent::geteventkind –](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="e0fd2-115">A member of the `CorDebugDebugEventKind` enumeration is returned by calling the [ICorDebugDebugEvent::GetEventKind](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md) method.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="29196-116">Tento výčet je určena pro použití v rozhraní .NET nativní ladění pouze scénáře.</span><span class="sxs-lookup"><span data-stu-id="29196-116">This enumeration is intended for use in .NET Native debugging scenarios only.</span></span>  
+>  <span data-ttu-id="e0fd2-116">Tento výčet je určena pro použití v .NET Native ladění pouze scénáře.</span><span class="sxs-lookup"><span data-stu-id="e0fd2-116">This enumeration is intended for use in .NET Native debugging scenarios only.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="29196-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="29196-117">Requirements</span></span>  
- <span data-ttu-id="29196-118">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="29196-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e0fd2-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e0fd2-117">Requirements</span></span>  
+ <span data-ttu-id="e0fd2-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e0fd2-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="29196-119">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="29196-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="e0fd2-119">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e0fd2-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="29196-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="29196-120">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="e0fd2-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e0fd2-120">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="29196-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span><span class="sxs-lookup"><span data-stu-id="29196-121">**.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span></span>  
+ <span data-ttu-id="e0fd2-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e0fd2-121">**.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="29196-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="29196-122">See Also</span></span>  
- [<span data-ttu-id="29196-123">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="29196-123">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="e0fd2-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e0fd2-122">See also</span></span>
+- [<span data-ttu-id="e0fd2-123">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="e0fd2-123">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
