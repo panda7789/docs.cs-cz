@@ -5,14 +5,12 @@ helpviewer_keywords:
 - <clear> element for <namedCaches>
 - clear element for <namedCaches>
 ms.assetid: ea01a858-65da-4348-800f-5e3df59d4d79
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: ea860c185d68a24c31ec24de4a087b9b98fe791f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d71c5de42104961bc096b786dfe50bb4097bc4fc
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54727804"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083558"
 ---
 # <a name="ltcleargt-element-for-ltnamedcachesgt"></a>&lt;Vymazat&gt; – Element pro &lt;namedCaches&gt;
 Vymaže všechny `namedCache` položky `namedCaches` kolekce pro mezipaměť.  

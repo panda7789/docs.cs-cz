@@ -9,14 +9,12 @@ helpviewer_keywords:
 - container tags, <bindingRedirect> element
 - bindingRedirect element
 ms.assetid: 67784ecd-9663-434e-bd6a-26975e447ac0
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 7fb610357772b3c74129074096c53bf3f149501a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3d877c642afd5075c374657287bdf305a302c00c
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54714747"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55084377"
 ---
 # <a name="ltbindingredirectgt-element"></a>&lt;bindingRedirect&gt; – Element
 Přesměruje jednu verzi sestavení k jiné.  

@@ -6,14 +6,12 @@ helpviewer_keywords:
 - schema startup settings
 - configuration schema [.NET Framework], startup settings
 ms.assetid: 03de6972-442a-4648-9f3e-efa654e3b949
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 12f91a1c74e85cbce0c8f641f202a181beb7412c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e5f9c9af64ff38e7c0f1f26ccab039261b052e30
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54728905"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083415"
 ---
 # <a name="startup-settings-schema"></a>Schéma nastavení spouštění
 

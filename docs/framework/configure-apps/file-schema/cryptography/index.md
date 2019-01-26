@@ -10,14 +10,12 @@ helpviewer_keywords:
 - configuration sections [.NET Framework]
 - configuration settings [.NET Framework], cryptography
 ms.assetid: 1f55050a-b2a3-4868-a3c0-da20826150f3
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 3cd3ed8ab5005116971a79ad04d249ff14637f08
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2958ab01cb92872026437e31d2225d12d8606e97
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54577081"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083376"
 ---
 # <a name="cryptography-settings-schema"></a>Schéma nastavení šifrování
 Schéma nastavení šifrování obsahuje elementy, které určují způsob mapování popisné názvy algoritmů tříd, které implementují algoritmy šifrování.  

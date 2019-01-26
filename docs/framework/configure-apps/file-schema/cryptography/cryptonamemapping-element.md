@@ -8,14 +8,12 @@ helpviewer_keywords:
 - <cryptoNameMapping> element
 - cryptoNameMapping element
 ms.assetid: c59c9494-149b-4ce6-b38d-371f896ae85c
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: ef916b0950e179f6782ce8d4d6fa380fd3804aa0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b9daa1c11a151d905af934b62f386a1229ece4ed
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54577163"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083779"
 ---
 # <a name="ltcryptonamemappinggt-element"></a>&lt;cryptoNameMapping&gt; Element
 Obsahuje mapování tříd pro popisné názvy.  

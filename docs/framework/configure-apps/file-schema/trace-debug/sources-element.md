@@ -9,14 +9,12 @@ helpviewer_keywords:
 - trace sources
 - <sources> element
 ms.assetid: c727b2e2-423a-4463-a223-013f40ff16a3
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 2d97bd3175de5d0c0587e27c375f2d2bae378a6b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c34ca1a47910f4255951be041d97f92ea7fd46ad
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600399"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083311"
 ---
 # <a name="ltsourcesgt-element"></a>&lt;zdroje&gt; – Element
 Určuje zdrojů trasování, které se zahájí trasovací zprávy.  

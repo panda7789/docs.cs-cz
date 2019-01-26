@@ -9,14 +9,12 @@ helpviewer_keywords:
 - runtime element
 - container tags, <runtime> element
 ms.assetid: 1eb2fae3-de4b-45b6-852f-517c39b751bd
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 10cc81bee24fb757e4d826eb42d4ccf2324e6dab
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e97af56530d3d805dd7945e8514bb8f7209da86d
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54659524"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55084468"
 ---
 # <a name="ltruntimegt-element"></a>&lt;modul runtime&gt; – Element
 Poskytuje informace, které slouží ke konfiguraci aplikací modulem common language runtime.  

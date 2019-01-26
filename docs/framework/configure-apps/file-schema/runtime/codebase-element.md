@@ -9,14 +9,12 @@ helpviewer_keywords:
 - container tags, <codeBase> element
 - codeBase element
 ms.assetid: d48a3983-2297-43ff-a14d-1f29d3995822
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 295b2c5dd3eb17ca9ba19e52d9f8e51cf108162d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0c4856085574792f567ff0e4bce34fc76a9c1565
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683148"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083298"
 ---
 # <a name="ltcodebasegt-element"></a>&lt;základ kódu&gt; – Element
 Určuje, kde najít sestavení modulu common language runtime.  

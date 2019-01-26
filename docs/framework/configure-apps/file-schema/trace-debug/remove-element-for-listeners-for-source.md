@@ -7,14 +7,12 @@ helpviewer_keywords:
 - remove element for <listeners> for <source>
 - <remove> element for <listeners> for <source>
 ms.assetid: 3ff6b578-273d-407f-b07f-8251f1f9f5d0
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 8beb3ef041b153535afcb8bd92e1c29787e1f161
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9f3d8eefdf74f0960f3fe530f77a67c0706e4585
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54654409"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083480"
 ---
 # <a name="ltremovegt-element-for-ltlistenersgt-for-ltsourcegt"></a>&lt;Odebrat&gt; – Element pro &lt;naslouchacích procesů&gt; pro &lt;zdroje&gt;
 Odebere z naslouchacího procesu `Listeners` kolekci pro zdroj trasování.  

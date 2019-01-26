@@ -11,12 +11,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: 7e48783c01a5b94f51f89d25f465f22358e7aa8f
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: df4ccde0a9a377b06b8efc64cc78936a983c66cc
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53240018"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083922"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (Referenční dokumentace jazyka C#)
 
@@ -163,7 +163,7 @@ Následující příklad ukazuje zpracování výjimek pro asynchronní metody. 
 
 Zrušením komentáře u `throw new Exception` řádek v příkladu předvést zpracování výjimek. Úkolu `IsFaulted` je nastavena na `True`, úkolu `Exception.InnerException` je nastavena na výjimky a výjimky je zachycena v `catch` bloku.
 
-Zrušením komentáře u `throw new OperationCancelledException` řádku předvést, co se stane, když zrušíte asynchronní proces. Úkolu `IsCanceled` je nastavena na `true`, která je zachycena výjimka v `catch` bloku. Za určitých podmínek, které se nevztahují na tohoto příkladu, úloha `IsFaulted` je nastavena na `true` a `IsCanceled` je nastavena na `false`.
+Zrušením komentáře u `throw new OperationCanceledException` řádku předvést, co se stane, když zrušíte asynchronní proces. Úkolu `IsCanceled` je nastavena na `true`, která je zachycena výjimka v `catch` bloku. Za určitých podmínek, které se nevztahují na tohoto příkladu, úloha `IsFaulted` je nastavena na `true` a `IsCanceled` je nastavena na `false`.
 
 [!code-csharp[csAsyncExceptions#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csasyncexceptions/cs/class1.cs#2)]  
 

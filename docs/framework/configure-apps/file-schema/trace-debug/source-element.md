@@ -7,14 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - <source> element
 - source element
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 493c6ab72ff5554294279b62af49d311026d6e37
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1e2fadc823c806077f69cd837c5d8443a2090e9f
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54624012"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083861"
 ---
 # <a name="ltsourcegt-element"></a>&lt;Zdroj&gt; – Element
 Určuje zdroj trasování, který iniciuje trasovací zprávy.  

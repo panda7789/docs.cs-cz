@@ -9,14 +9,12 @@ helpviewer_keywords:
 - system.codedom element
 - <system.codedom> element
 ms.assetid: 672a68f7-e69f-4479-ac30-e980085ec4fe
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 235f3c2474acb488fecf34a64515973b45409e1b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1a97b20ae1f4e5c85d678f559cf0f7d69cfff4e1
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54649424"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083948"
 ---
 # <a name="ltsystemcodedomgt-element"></a>&lt;system.codedom&gt; Element
 Určuje konfigurační nastavení kompilátoru pro zprostředkovatele dostupných poskytovatelů jazyka.  

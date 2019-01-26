@@ -21,14 +21,12 @@ helpviewer_keywords:
 - configuration settings [.NET Framework], applications
 - configuration file reference [.NET Framework]
 ms.assetid: 69003d39-dc8a-460c-a6be-e6d93e690b38
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 4543802c3918a4761daa5a4fbbab366695823f73
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 37600331ac52add60a98c9fd573591dc34b94f5f
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48839026"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083961"
 ---
 # <a name="configuration-file-schema-for-the-net-framework"></a>Schéma konfiguračního souboru pro rozhraní .NET Framework
 

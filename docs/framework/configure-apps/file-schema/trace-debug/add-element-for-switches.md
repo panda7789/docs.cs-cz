@@ -7,14 +7,12 @@ helpviewer_keywords:
 - <add> element for <switches>
 - add element for <switches>
 ms.assetid: 712ac3a7-7abf-4a9e-8db4-acd241c2f369
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: b0ac45c9d2c5b7ff9630bbeaed4bfcee5ec46fcd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3b15cd7759eb36f95b93f2885151e2f6075d92d9
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54609986"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083337"
 ---
 # <a name="ltaddgt-element-for-ltswitchesgt"></a>&lt;Přidat&gt; – Element pro &lt;přepínače&gt;
 Určuje úroveň, kde je nastaven přepínač trasování.  

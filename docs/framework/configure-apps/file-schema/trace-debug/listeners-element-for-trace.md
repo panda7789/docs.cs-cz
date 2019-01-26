@@ -7,14 +7,12 @@ helpviewer_keywords:
 - <listeners> element
 - listeners element
 ms.assetid: 1394c2c3-6304-46db-87c1-8e8b16f5ad5b
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 20d6a0e221b7e9e1c2647098ef8bae25f7cd4d43
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d98c286a49aa6439b6b82b5982a2ea4690c98b43
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54596823"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083818"
 ---
 # <a name="ltlistenersgt-element-for-lttracegt"></a>&lt;naslouchací procesy&gt; – Element pro &lt;trasování&gt;
 Určuje naslouchací proces, který shromažďuje, ukládá a provádí směrování zpráv. Posluchači přímý výstup trasování příslušný cíli.  

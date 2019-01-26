@@ -4,12 +4,12 @@ description: Podporované verze systému Linux a závislosti .NET Core pro vývo
 author: thraka
 ms.author: adegeo
 ms.date: 12/14/2018
-ms.openlocfilehash: 7a2b0b3af97500ab0988e5de7a44713a8c05ccb9
-ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
+ms.openlocfilehash: 5ef1737185ad41de7bd5e7a9b8db048ff577811f
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53656047"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083883"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Požadavky pro .NET Core v Linuxu
 
@@ -23,7 +23,7 @@ Tento článek popisuje závislosti, které potřebujete pro vývoj aplikací .N
 
 ## <a name="supported-linux-versions"></a>Podporované verze Linuxu
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 .NET core 2.x považuje Linux jako jeden operační systém. Existuje jedno sestavení Linux (za architektura procesoru) podporované distribuce systému Linux. 
 
@@ -44,7 +44,7 @@ Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení 
 
 Zobrazit [podporované verze operačního systému .NET Core 2.1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md) a [podporované verze operačního systému .NET Core 2.2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md) úplný seznam .NET Core 2.1 a .NET Core 2.2 podporované operační systémy, distribuce a verze, z celkového počtu Podpora verze operačního systému a propojení zásad životního cyklu.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení rozhraní .NET Core 1.1](https://www.microsoft.com/net/download/dotnet-core/1.1) nebo [.NET Core 1.0 stáhne](https://www.microsoft.com/net/download/dotnet-core/1.0).
 
@@ -53,9 +53,9 @@ Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení 
 * Red Hat Enterprise Linux 7
 * CentOS 7
 * Oracle Linux 7
-* Fedora 28 (.NET Core 1.1), z 27.
+* Fedora 28 (.NET Core 1.1), 27
 * Debian 8.2 nebo novější verze
-* 18.04 (.NET Core 1.1), Ubuntu 16.04, 14.04
+* Ubuntu 18.04 (.NET Core 1.1), 16.04, 14.04
 * Linux Mint 17
 * openSUSE 42.3 nebo novější verze (.NET Core 1.1)
 
@@ -74,12 +74,12 @@ Operační systém                            | Version               | Architek
 Red Hat Enterprise Linux      | 6                     | x64
 Red Hat Enterprise Linux<br>CentOS<br>Oracle Linux  | 7                     | x64
 Fedora                        | 28                    | x64
-Debian                        | 9                     | x64 ARM32\*, ARM64\*
-Ubuntu                        | 16.04 +, 18.04 +        | x64 ARM32\*, ARM64\*
+Debian                        | 9                     | x64, ARM32\*, ARM64\*
+Ubuntu                        | 16.04+, 18.04+        | x64, ARM32\*, ARM64\*
 Linux Mint                    | 18                    | x64
-openSUSE                      | 42.3 +                 | x64
-SUSE Linux Enterprise (SLES)  | 12 SP2 +               | x64
-Nástroj Alpine Linuxu                  | 3.8 +                  | x64 ARM64
+openSUSE                      | 42.3+                 | x64
+SUSE Linux Enterprise (SLES)  | 12 SP2+               | x64
+Nástroj Alpine Linuxu                  | 3.8+                  | x64, ARM64
 
 \* Podpora ARM32 a ARM64 začíná Debian 9 a Ubuntu 16.04. Starší verze těchto distribuce nejsou podporovány na čipech ARM.
 
@@ -99,8 +99,9 @@ Následující jsou určeny jako příklady. Přesné verze a názvy se mohou m�
 
 Ubuntu distribuce vyžaduje nainstalované následující knihovny:
 
-* liblttng ust0
-* libcurl3
+* liblttng-ust0
+* libcurl3 (pro 14.x a 16.x)
+* libcurl4 (pro 18.x)
 * libssl1.0.0
 * libkrb5-3
 * zlib1g
@@ -121,7 +122,7 @@ CentOS distribuce vyžaduje nainstalované následující knihovny:
 * lttng tým ust
 * libcurl
 * knihovny OpenSSL
-* krb5 knihovny
+* krb5-libs
 * libicu
 * zlib
 

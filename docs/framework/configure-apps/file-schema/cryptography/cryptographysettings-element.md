@@ -8,14 +8,12 @@ helpviewer_keywords:
 - cryptographySettings element
 - <cryptographySettings> element
 ms.assetid: 6201b7da-bcb7-49f7-b9f5-ba1fe05573b9
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 0d1dfe5cadf59122994f1a751f985e186c6cf5b0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e0ef409e119d4ccaba44b22d78959bf80117c80f
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54602504"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55084455"
 ---
 # <a name="ltcryptographysettingsgt-element"></a>&lt;cryptographySettings&gt; – Element
 Obsahuje nastavení šifrování.  

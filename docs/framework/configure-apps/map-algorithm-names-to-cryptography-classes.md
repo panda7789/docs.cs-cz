@@ -7,14 +7,12 @@ helpviewer_keywords:
 - cryptographic algorithms
 - names [.NET Framework], algorithm mapping
 ms.assetid: 01327c69-c5e1-4ef6-b73f-0a58351f0492
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 87b428fffac98b4490a67e4713b56ec6e8fdcfe9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6bf6e79923f0b3119c516ed97e0e86971368a34c
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54569190"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083652"
 ---
 # <a name="mapping-algorithm-names-to-cryptography-classes"></a>Mapování názvů algoritmů na třídy šifrování
 Existují čtyři způsoby Vývojář můžete vytvořit pomocí objektu kryptografie [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]:  

@@ -8,14 +8,12 @@ helpviewer_keywords:
 - <add> element for <sharedListeners>
 - add element for <sharedListeners>
 ms.assetid: 1595e1bc-2492-421f-8384-7f382eb8eb57
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: b8de4fd8a130f93b2ed3e14701c442a65c9ffcd8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 645b5beca2f65ad54b194d656309d850e1ff9fa7
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54712467"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083545"
 ---
 # <a name="ltaddgt-element-for-ltsharedlistenersgt"></a>&lt;Přidat&gt; – Element pro &lt;sharedListeners&gt;
 Přidá naslouchací proces pro `sharedListeners` kolekce. `sharedListeners` je kolekce naslouchacích procesů, aby každá [ \<zdroj >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md) můžete odkazovat.  Ve výchozím nastavení, moduly pro naslouchání v `sharedListeners` kolekce nejsou umístěny v `Listeners` kolekce. Musí se přidat název, který [ \<zdroj >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md). Není možné získat naslouchacím procesům `sharedListeners` kolekce v kódu v době běhu.  

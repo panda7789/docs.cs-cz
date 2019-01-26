@@ -10,14 +10,12 @@ helpviewer_keywords:
 - trace element
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 86cd4e7db5aa79ff85e5079813844d2af1598f4f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 668e69b534617dbe05bbefde6e85b905601961fc
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54642802"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083519"
 ---
 # <a name="lttracegt-element"></a>&lt;trasování&gt; – Element
 Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.  

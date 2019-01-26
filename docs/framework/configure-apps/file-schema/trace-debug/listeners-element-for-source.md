@@ -7,14 +7,12 @@ helpviewer_keywords:
 - listeners element for <source>
 - <listeners> element for <source>
 ms.assetid: a2991f43-b4d3-4614-a8e7-da392de9697f
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 949b6c7272b39900698b618760f5e5bad11ccc3d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8378d34ffc2fea22fb5d16ed0b727da54ca74503
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54670638"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083987"
 ---
 # <a name="ltlistenersgt-element-for-ltsourcegt"></a>&lt;naslouchací procesy&gt; – Element pro &lt;zdroje&gt;
 Přidá nebo odebere naslouchacích procesů v <xref:System.Diagnostics.TraceSource.Listeners%2A> kolekce <xref:System.Diagnostics.TraceSource>. Naslouchací proces bude směrovat výstup trasování příslušný cíli, jako je protokol, okno nebo textový soubor.  

@@ -9,14 +9,12 @@ helpviewer_keywords:
 - <compilers> element
 - compilers element
 ms.assetid: d40fba59-98f9-4783-ae0c-2ebea27ce77b
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: e51298e86c1b3167f822e060693d0a2ee4193b67
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7d9deda5e0ffeb95483eebbbb0a63831db08ac0b
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54723469"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083363"
 ---
 # <a name="ltcompilersgt-element"></a>&lt;Kompilátory&gt; – Element
 Kontejner pro kompilátor – elementy konfigurace; obsahuje nulu nebo více [ \<kompilátoru >](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) elementy.  

@@ -11,14 +11,12 @@ helpviewer_keywords:
 - configuration sections [.NET Framework]
 - elements [.NET Framework], trace and debug settings
 ms.assetid: 277ca5f6-e1c4-41b6-a47f-3a67ce5b94ac
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 93c9e03842a4dc629833bb5b4a3b80ca735dd6df
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0ea53f0c9a209d9bcbcc1e758cdcf957cde095dc
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54511618"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083493"
 ---
 # <a name="trace-and-debug-settings-schema"></a>Trasování a ladění schématu nastavení
 Nastavení trasování a ladění zadejte naslouchací procesy trasování, které shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.  

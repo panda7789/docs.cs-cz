@@ -2,15 +2,19 @@
 title: Schéma nastavení webu
 ms.date: 03/30/2017
 helpviewer_keywords:
-  - 'Web.config configuration file [ASP.NET]'
-  - 'ASP.NET configuration system, Web settings schema'
-  - schema Web settings
-  - 'Web settings, schema [ASP.NET]'
-  - 'configuration files [ASP.NET]'
-  - 'configuration schema [.NET Framework], Web settings'
+- Web.config configuration file [ASP.NET]
+- ASP.NET configuration system, Web settings schema
+- schema Web settings
+- Web settings, schema [ASP.NET]
+- configuration files [ASP.NET]
+- configuration schema [.NET Framework], Web settings
 ms.assetid: ae1ac356-267d-4753-8d7a-7a04eb45a9be
-author: mcleblanc
-ms.author: markl
+ms.openlocfilehash: 4bde008661e78fc85c428fa5100f81483936b460
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083597"
 ---
 # <a name="web-settings-schema"></a>Schéma nastavení webu
 Nastavení webu zadejte procesoru a úroveň spuštění ASP.NET nastavení platná pro celého procesu chování spravuje hostování vrstvy technologie ASP.NET. Tato nastavení se liší od nastavení typ domény aplikace, která jsou uvedeny v souboru Web.config aplikace technologie ASP.NET.  

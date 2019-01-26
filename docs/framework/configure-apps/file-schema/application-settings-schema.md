@@ -7,14 +7,12 @@ helpviewer_keywords:
 - Windows Forms, application settings schema
 - configuration schema [.NET Framework], application settings
 ms.assetid: 5797fcff-6081-4e8c-bebf-63d9c70cf14b
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 7a4f60571fb4d30793f64c57317bf0b372ae4812
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a74716bcdf3c85c08d0ff3bf66407dce30ee91cc
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54701908"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083467"
 ---
 # <a name="application-settings-schema"></a>Schéma nastavení aplikace
 

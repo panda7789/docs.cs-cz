@@ -8,14 +8,12 @@ helpviewer_keywords:
 - <oidMap> element
 - oidMap element
 ms.assetid: 7f0c2246-c070-4748-b96a-2f66a296c539
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 19983e4d17ac2843385685a6b8b247d16f4cc081
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 130e0d6184f24c5d26efa8497775955f8d602819
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54700456"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083623"
 ---
 # <a name="ltoidmapgt-element"></a>&lt;oidmap –&gt; – Element
 Obsahuje ASN.1 objekt identifikátor (OID), mapování na třídy.  

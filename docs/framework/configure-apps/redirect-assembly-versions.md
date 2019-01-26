@@ -8,14 +8,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 88fb1a17-6ac9-4b57-8028-193aec1f727c
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: bc193402120780c605f6139feac6f0d60a34118e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 68169063c9cf152942ff8a7757a1b3d97886002a
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54674155"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083935"
 ---
 # <a name="redirecting-assembly-versions"></a>Přesměrování verzí sestavení
 

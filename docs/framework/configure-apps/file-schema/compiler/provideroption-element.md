@@ -8,14 +8,12 @@ helpviewer_keywords:
 - providerOptions
 - provideroption element
 ms.assetid: 014f2e0b-c0b5-4fc4-92d3-73f02978b2a1
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 7f4394afe81b03e44ea98514c15fb4bacafa49c4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: da3dc807d3d30b6b45e34ccf7d328344ca580327
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54707576"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55084169"
 ---
 # <a name="ltprovideroptiongt-element"></a>&lt;Hodnota providerOption&gt; – Element
 Určuje atributy verze kompilátoru poskytovatele jazyka.  

@@ -2,12 +2,12 @@
 title: Protokol spolehlivého zasílání zpráv verze 1.0
 ms.date: 03/30/2017
 ms.assetid: a5509a5c-de24-4bc2-9a48-19138055dcce
-ms.openlocfilehash: cff07ae23e83a68c4cafa1ca122d84db98163d0d
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 02a0815f62999c27507ed5e1610f090e944c135a
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583949"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55073210"
 ---
 # <a name="reliable-messaging-protocol-version-10"></a>Protokol spolehlivého zasílání zpráv verze 1.0
 Toto téma obsahuje podrobné informace o nasazení Windows Communication Foundation (WCF) pro posílání WS-Reliable February 2005 (verze 1.0) protokolu, které jsou nezbytné pro spolupráci pomocí přenos pomocí protokolu HTTP. WCF dodržuje specifikaci WS-Reliable zasílání zpráv s omezením a vyjasnění je vysvětleno v tomto tématu. Všimněte si, že protokol WS-ReliableMessaging verze 1.0 se implementuje počínaje [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
@@ -24,7 +24,7 @@ Toto téma obsahuje podrobné informace o nasazení Windows Communication Founda
   
 |Předpona|Obor názvů|  
 |------------|---------------|  
-|Správce systémových prostředků|http://schemas.xmlsoap.org/ws/2005/02/rm|  
+|wsrm|http://schemas.xmlsoap.org/ws/2005/02/rm|  
 |netrm|http://schemas.microsoft.com/ws/2006/05/rm|  
 |s|http://www.w3.org/2003/05/soap-envelope|  
 |wsa|http://schemas.xmlsoap.org/ws/2005/08/addressing|  
@@ -35,13 +35,13 @@ Toto téma obsahuje podrobné informace o nasazení Windows Communication Founda
 ### <a name="sequence-establishment-messages"></a>Pořadí zpráv zařízení  
  Implementuje WCF `CreateSequence` a `CreateSequenceResponse` zprávy k navázání spolehlivé zprávy sekvence. Platí následující omezení:  
   
--   B1101: WCF iniciátoru negeneruje Volitelný element platnost vyprší v `CreateSequence` zprávy nebo v případech při `CreateSequence` zpráva obsahuje `Offer` elementu, volitelný `Expires` element v `Offer` elementu.  
+-   B1101: Iniciátor WCF negeneruje Volitelný element platnost vyprší v `CreateSequence` zprávy nebo v případech při `CreateSequence` zpráva obsahuje `Offer` elementu, volitelný `Expires` element v `Offer` elementu.  
   
 -   B1102: Při přístupu k `CreateSequence` zpráv WCF`Responder` odesílá a přijímá obě `Expires` elementů, pokud existují, ale nepoužívá jejich hodnoty.  
   
  Zasílání zpráv WS-Reliable zavádí `Offer` mechanismus k navázání dvou komunikaci korelační sekvence, které tvoří relace.  
   
--   R1103: Pokud `CreateSequence` obsahuje `Offer` element spolehlivé zasílání zpráv respondér musí přijmout sekvenci a odpoví `CreateSequenceResponse` , která obsahuje `wsrm:Accept` elementu, které tvoří dvě korelační komunikaci pořadí nebo odmítnout `CreateSequence` požadavku.  
+-   R1103: Pokud `CreateSequence` obsahuje `Offer` element spolehlivé zasílání zpráv respondér musí přijmout sekvenci a odpoví `CreateSequenceResponse` , která obsahuje `wsrm:Accept` elementu, které tvoří dvě korelační komunikaci pořadí nebo odmítnout `CreateSequence`požadavku.  
   
 -   R1104: `SequenceAcknowledgement` a zprávy aplikace směřující na první sekvenci se musí odeslat na `ReplyTo` odkaz na koncový bod `CreateSequence`.  
   
@@ -53,11 +53,11 @@ Toto téma obsahuje podrobné informace o nasazení Windows Communication Founda
   
      WCF nevynucuje, ale předpokládá, že [odkaz na parametry] `AcksTo` a `ReplyTo` na `CreateSequence` jsou identické a používá [odkaz na parametry] z `ReplyTo` reference koncového bodu pro potvrzení a konverzace pořadí zpráv.  
   
--   R1107: Při komunikaci dvě pořadí jsou vytvořena pomocí `Offer` mechanismus, `SequenceAcknowledgement` a zasílají zprávy aplikace směřující na pořadí konverzace `ReplyTo` odkaz na koncový bod `CreateSequence`.  
+-   R1107: Při dvou sekvencí konverzace jsou vytvořena pomocí `Offer` mechanismus, `SequenceAcknowledgement` a tok na pořadí první zprávy aplikace se musí odeslat na `ReplyTo` odkaz na koncový bod `CreateSequence`.  
   
--   R1108: Při komunikaci dvě pořadí jsou vytvořena pomocí mechanismu nabídku `[address]` vlastnost `wsrm:AcksTo` podřízený element Reference koncového bodu `wsrm:Accept` elementu `CreateSequenceResponse` musí odpovídat byte-wise cílový identifikátor URI z `CreateSequence`.  
+-   R1108: Při dvou sekvencí konverzace jsou vytvořena pomocí mechanismu nabídku `[address]` vlastnost `wsrm:AcksTo` podřízený element Reference koncového bodu `wsrm:Accept` elementu `CreateSequenceResponse` musí odpovídat byte-wise určení identifikátoru URI `CreateSequence`.  
   
--   R1109: Při komunikaci dvě pořadí jsou vytvořena pomocí `Offer` mechanismus, zprávy odeslané iniciátoru a potvrzení do zprávy podle respondér se musí odeslat na stejné Reference koncového bodu.  
+-   R1109: Při dvou sekvencí konverzace jsou vytvořena pomocí `Offer` mechanismus, zprávy odeslané iniciátoru a potvrzení do zprávy podle respondér se musí odeslat na stejné Reference koncového bodu.  
   
      WCF používá k navázání spolehlivé relace mezi iniciátor i respondér zasílání zpráv WS-Reliable. Implementace zasílání zpráv WS-Reliable WCF poskytuje spolehlivé relace pro jednosměrný požadavek odpověď a plně duplexní způsobů zasílání zpráv. Posílání WS-Reliable `Offer` mechanismus `CreateSequence` / `CreateSequenceResponse` umožňuje vytvoření dvou sekvencí korelační konverzace a poskytuje protokol relace, který je vhodný pro všechny koncové body zprávy. Protože WCF poskytuje záruku zabezpečení pro relaci, včetně začátku do konce ochranu integrity relace, je potřeba Ujistěte se, že stejný cíl přicházejí zprávy určené stejné osobě. Díky tomu také Prasátko zálohováním pořadí potvrzení na zprávy aplikace. Proto platí omezení R1104 R1105 a R1108 pro WCF.  
   
@@ -167,9 +167,9 @@ Toto téma obsahuje podrobné informace o nasazení Windows Communication Founda
 ### <a name="sequenceacknowledgement-header"></a>Záhlaví SequenceAcknowledgement do důvěryhodné  
  WCF používá Prasátko back mechanismus pro potvrzení pořadí součástí zasílání zpráv WS-Reliable.  
   
--   R1401: Při komunikaci dvě pořadí jsou vytvořena pomocí `Offer` mechanismus, `SequenceAcknowledgement` záhlaví mohou být zahrnuty do jakékoli aplikace zprávy odesílané informace zamýšlený příjemce.  
+-   R1401: Po dvou sekvencí konverzace jsou vytvořena pomocí `Offer` mechanismus, `SequenceAcknowledgement` záhlaví mohou být zahrnuty do jakékoli aplikace zprávy odesílané informace zamýšlený příjemce.  
   
--   B1402: Při WCF musíte vygenerovat potvrzení před obdržením všechny zprávy sekvence (například splňují `AckRequested` zpráva), vygeneruje WCF `SequenceAcknowledgement` hlavičku, která obsahuje rozsah 0-0, jak je znázorněno v následujícím příkladu.  
+-   B1402: WCF musí při generování potvrzení před obdržením všechny zprávy sekvence (například splňují `AckRequested` zpráva), vygeneruje WCF `SequenceAcknowledgement` hlavičku, která obsahuje rozsah 0-0, jak je znázorněno v následujícím příkladu.  
   
     ```xml  
     <wsrm:SequenceAcknowledgement>  
@@ -243,7 +243,7 @@ Toto téma obsahuje podrobné informace o nasazení Windows Communication Founda
 ## <a name="protocol-composition"></a>Protokol sestavení  
   
 ### <a name="composition-with-ws-addressing"></a>Kompozice s WS-Addressing  
- Podporuje dvě verze WS-Addressing WCF: WS-Addressing 2004/08 [WS-ADDR] a 1.0 doporučení W3C WS-Addressing [WS-ADDR – CORE] a [WS-ADDR SOAP].  
+ WCF podporuje dvě verze WS-Addressing: WS-Addressing 2004/08 [WS-ADDR] a W3C WS-Addressing 1.0 doporučení [WS-ADDR – CORE] a [WS-ADDR SOAP].  
   
  While zmínky o zasílání zpráv WS-Reliable specifikace WS-Addressing 2004/08 pouze neomezuje verze WS-Addressing má být použit. Následuje seznam omezení, které se vztahují na WCF:  
   
@@ -261,7 +261,7 @@ Toto téma obsahuje podrobné informace o nasazení Windows Communication Founda
   
 -   R2302:awS-zabezpečenou konverzací relace musí být vytvořen před navazování sequence(s) zasílání zpráv WS-Reliable.  
   
--   R2303: Pokud posílání WS-Reliable pořadí životnost překročí WS-Secure Conversation životnost relace `SecurityContextToken` lze navázat pomocí WS-Secure Conversation musí obnovovat pomocí odpovídající vazby WS-Secure obnovení konverzace.  
+-   R2303: Pokud pořadí životnost zasílání zpráv WS-Reliable překročí WS-Secure Conversation životnost relace `SecurityContextToken` lze navázat pomocí WS-Secure Conversation musí obnovovat pomocí odpovídající vazby WS-Secure obnovení konverzace.  
   
 -   B2304:ws – pořadí spolehlivé zasílání zpráv nebo dvojice posloupností korelační konverzace jsou vždy vázány na jedné relace WS-SecureConversation.  
   
@@ -292,11 +292,11 @@ Toto téma obsahuje podrobné informace o nasazení Windows Communication Founda
 ## <a name="flow-control-ws-reliable-messaging-extension"></a>Tok řízení zasílání zpráv WS-Reliable rozšíření  
  K zajištění volitelné další přesnější kontrolu nad tok pořadí zpráv WCF používá rozšíření zasílání zpráv WS-Reliable.  
   
- Řízení toku se povoluje nastavením `ReliableSessionBindingElement`společnosti `FlowControlEnabled``bool` vlastnost `true`. Následuje seznam omezení, které se vztahují na WCF:  
+ Řízení toku se povoluje nastavením <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.FlowControlEnabled?displayProperty=nameWithType> vlastnost `true`. Následuje seznam omezení, které se vztahují na WCF:  
   
--   B4001: WCF generuje když je povolené spolehlivé zasílání zpráv řízení toku, `netrm:BufferRemaining` element v elementu rozšiřitelnost `SequenceAcknowledgement` záhlaví.  
+-   B4001: Pokud spolehlivé zasílání zpráv řízení toku je povolena, vygeneruje WCF `netrm:BufferRemaining` element v elementu rozšiřitelnost `SequenceAcknowledgement` záhlaví.  
   
--   B4002: Když je povolené spolehlivé zasílání zpráv řízení toku, WCF nevyžaduje, aby `netrm:BufferRemaining` prvek nacházet v `SequenceAcknowledgement` záhlaví, jak je znázorněno v následujícím příkladu.  
+-   B4002: Pokud je povoleno spolehlivé zasílání zpráv řízení toku, WCF nevyžaduje `netrm:BufferRemaining` prvek nacházet v `SequenceAcknowledgement` záhlaví, jak je znázorněno v následujícím příkladu.  
   
     ```xml  
     <wsrm:SequenceAcknowledgement>  
@@ -319,7 +319,7 @@ Toto téma obsahuje podrobné informace o nasazení Windows Communication Founda
 ## <a name="message-exchange-patterns"></a>Vzorky serveru Exchange zprávu  
  Tato část popisuje WCF na chování při zasílání zpráv WS-Reliable se používá pro různé vzorce výměny zpráv. Pro každý vzoru výměny zpráv se považují následující scénáře dvě nasazení:  
   
--   Bez bajtově Adresovatelného iniciátor: Iniciátor je za bránou firewall; Respondér doručovat zprávy do iniciátoru jenom v odpovědi protokolu HTTP.  
+-   Bajtově Adresovatelného iniciátor: Iniciátor je za bránou firewall; Respondér doručovat zprávy do iniciátoru jenom v odpovědi protokolu HTTP.  
   
 -   Adresovatelný iniciátor: Iniciátor i respondér mohou být odesílány požadavky HTTP; jinými slovy je možné navázat připojení prostřednictvím protokolu HTTP dvě konverzace.  
   
