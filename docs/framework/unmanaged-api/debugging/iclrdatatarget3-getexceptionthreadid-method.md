@@ -14,12 +14,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d9b53bb7e34f037f3a165cc8bb59d25ff34ba7da
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d59bd3b8c427996fe5e44e95aeff51deb1da984a
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54507145"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066373"
 ---
 # <a name="iclrdatatarget3getexceptionthreadid-method"></a>ICLRDataTarget3::GetExceptionThreadID – metoda
 Je voláno common language runtime (CLR) data access services k získání ID vlákna, které vyvolalo výjimku.  
@@ -54,7 +54,7 @@ HRESULT GetExceptionThreadID(
   
  **Knihovna:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[v451_update](../../../../includes/v451-update-md.md)]  
+ **Verze rozhraní .NET framework:** [!INCLUDE[v451_update](../../../../includes/net-current-v451-nov-plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
 - [ICLRDataTarget3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-interface.md)

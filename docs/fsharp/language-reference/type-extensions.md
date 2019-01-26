@@ -1,13 +1,13 @@
 ---
 title: Rozšíření typů
 description: Zjistěte, jak F# rozšíření typu umožňují přidat nové členy do dříve definovaného objektu typu.
-ms.date: 07/20/2018
-ms.openlocfilehash: 9c0c6247eb5b94e9f42377859026ba7b466eb2e4
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.date: 01/23/2019
+ms.openlocfilehash: d52bc38850219a142ff4f5d840e418ea4bd50cca
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53614048"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066152"
 ---
 # <a name="type-extensions"></a>Rozšíření typů
 
@@ -121,7 +121,7 @@ Neexistuje žádný způsob, jak získat tento kód pro práci s rozšíření v
 
 * Je, `Sum` člen má jiné omezení `'T` (`static member get_Zero` a `static member (+)`) než co definuje typ rozšíření.
 * Úprava rozšíření typu mít stejné omezení jako `Sum` už nebude odpovídat definované omezení na `IEnumerable<'T>`.
-* Provádění změna členu, který chcete `member inline Sum` vám poskytne chybu, že se neshodují omezení typu.
+* Změna `member this.Sum` k `member inline this.Sum` vám poskytne chybu, že se neshodují omezení typu.
 
 Co je žádoucí jsou statické metody, které "float v prostoru" a lze zobrazit, jako by se při rozšiřování typu. To je, kde budou nezbytné metody rozšíření.
 

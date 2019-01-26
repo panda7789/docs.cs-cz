@@ -21,12 +21,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 242dd2a6-86c4-4ce7-83f2-f2661803f752
-ms.openlocfilehash: cd2e48ad9ee5e6266fff676cf109cdf6b0136f32
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4f60c0c07c0270b94dbb018b9423e210f16269d6
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54573904"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55065801"
 ---
 # <a name="how-to-use-a-generic-class-visual-basic"></a>Postupy: Použití obecné třídy (Visual Basic)
 Třída, která přebírá *parametry typu* se volá *obecnou třídu*. Pokud používáte obecnou třídu, můžete vygenerovat *vytvořená třída* z něj zadáním *argument typu* pro každou z těchto parametrů. Pak může deklarovat proměnnou typu vytvořeného třídy, a můžete vytvořit instanci třídy konstruovaný a přiřaďte ho k proměnné.  
@@ -39,7 +39,7 @@ Třída, která přebírá *parametry typu* se volá *obecnou třídu*. Pokud po
   
 1.  Na začátku zdrojového souboru, patří [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) import <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. To umožňuje odkazovat <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> třídy bez nutnosti k plnému určení ho, aby ho odlišil od jiných tříd fronty jako <xref:System.Collections.Queue?displayProperty=nameWithType>.  
   
-2.  Vytvořte objekt běžným způsobem, ale přidat `(Of` `type``)` bezprostředně za název třídy.  
+2.  Vytvořte objekt běžným způsobem, ale přidat `(Of type)` bezprostředně za název třídy.  
   
      Následující příklad používá stejnou třídu (<xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>) vytvořte dva objekty fronty, které obsahují položky z různých datových typů. Přidá položky do konce každou frontu a následně odebere a zobrazí položky z přední části každou frontu.  
   

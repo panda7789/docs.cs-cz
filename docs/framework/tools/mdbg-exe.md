@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 28a3f509-07e2-4dbe-81df-874c5e969cc4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0993de6ebc56198a36bd3644c4352ec7380e844e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c0a9f76852652ff5cfe0ff0049c2669441dbf51c
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600376"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066399"
 ---
 # <a name="mdbgexe-net-framework-command-line-debugger"></a>MDbg.exe (ladicí program z příkazového řádku .NET Framework)
 Aplikace .NET Framework Command-Line Debugger pomáhá výrobcům nástrojů a vývojářům aplikací najít a opravit chyby v programech, které využívají .NET Framework Common Language Runtime. Tento nástroj používá API ladění za běhu k poskytování služeb ladění. Pomocí MDbg.exe můžete ladit pouze spravovaný kód; ladění nespravovaného kódu není podporováno.  
@@ -77,7 +77,7 @@ MDbg [ProgramName[arguments]] [options]
 |**TV**[**ak**] [*řádky*]|Určuje počet řádků, které chcete zobrazit.|  
 |**s**[**rok**]|Přesune spuštění do další funkce na aktuálním řádku, nebo přejde na další řádek, pokud neexistuje žádná funkce, do které by se dalo přejít.|  
 |**su**[**věnovat**] [\* &#124; [~]*Číslovlákna*]|Pozastaví aktuální vlákno nebo vlákno určené parametrem *Číslovlákna* parametru.  Pokud *Číslovlákna* je zadán jako `*`, příkaz se vztahuje na všechna vlákna. Pokud číslo vlákna začíná znakem `~`, příkaz se vztahuje na všechna vlákna kromě vlákna zadaného parametrem *Číslovlákna*. Pozastavená vlákna jsou vypuštěna ze spuštění, jestliže je proces spuštěn buď **Přejít** nebo **krok** příkazu. Pokud neexistují žádná pozastavená vlákna v procesu a vydat **Přejít** příkazu, proces nebude pokračovat. V takovém případě se stiskem kláves CTRL-C vrátíte zpět do procesu.|  
-|**sy**[**mbol**] *commandName* [*Hodnotapříkazu*]|Určuje jeden z následujících příkazů:<br /><br /> -   `symbol path` [`"``value``"`] – Zobrazí nebo nastaví cestu k aktuálnímu symbolu.<br />-   `symbol addpath` `"` `value` `"` – Přidá do vaší cesty k symbolu.<br />-   `symbol reload` [`"``module``"`] – Znovu načte všechny symboly nebo symboly pro zadaný modul.<br />-   `symbol list` [`module`] – Zobrazí aktuálně načtené symboly pro všechny moduly nebo zadaný modul.|  
+|**sy**[**mbol**] *commandName* [*Hodnotapříkazu*]|Určuje jeden z následujících příkazů:<br /><br /> -   `symbol path` [`"value"`] – Zobrazí nebo nastaví cestu k aktuálnímu symbolu.<br />-   `symbol addpath` `"value"` – Přidá do vaší cesty k symbolu.<br />-   `symbol reload` [`"module"`] – Znovu načte všechny symboly nebo symboly pro zadaný modul.<br />-   `symbol list` [`module`] – Zobrazí aktuálně načtené symboly pro všechny moduly nebo zadaný modul.|  
 |**t**[**hread**] [*Novévlákno*] [-*nick pojmenování*`]`|Příkaz vlákna bez parametrů zobrazí všechna spravovaná vlákna v aktuálním procesu. Vlákna jsou zpravidla identifikována číslem vlákna; pokud je však vlákno pojmenováno, zobrazí se místo čísla toto pojmenování. Můžete použít `-nick` parametr pojmenovat vlákno.<br /><br /> -   **vlákno** `-nick` *threadName* přiřadí pojmenování aktuálně běžícímu vláknu.<br /><br /> Pojmenování nesmí být číselné hodnoty. Pokud aktuální vlákno má již přiděleno pojmenování, staré pojmenování se nahradí novým. Pokud je nové pojmenování prázdný řetězec (""), pojmenování pro aktuální vlákno se odstraní a vláknu se nepřidělí další pojmenování.|  
 |**u**[**p**]|Přesune aktivní rámec zásobníku směrem nahoru.|  
 |**uwgc**[**zpracování**] [*var*] &#124; [*adresu*]|Vytiskne proměnnou sledovanou popisovačem. Popisovač lze zadat pomocí názvu nebo adresy.|  

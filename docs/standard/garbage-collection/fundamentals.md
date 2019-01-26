@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a7fa240ea42fe1bee4011a228595e48eb163e1a9
-ms.sourcegitcommit: 296183dbe35077b5c5e5e74d5fbe7f399bc507ee
+ms.openlocfilehash: a3eae9ea2c5a776d702d0868bdc858f8489f8f78
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50982864"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066319"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základy kolekce paměti
 <a name="top"></a> V modulu common language runtime (CLR) slouží systému uvolňování paměti jako automatický správce paměti. Poskytuje následující výhody:  
@@ -98,7 +98,7 @@ ms.locfileid: "50982864"
   
  Existuje spravovaná halda pro každý spravovaný proces. Všechna vlákna v procesu přidělují paměť objektům ve stejné haldě.  
   
- Pro vyhrazení paměti, uvolňování paměti volá Win32 [VirtualAlloc](https://msdn.microsoft.com/library/aa366887.aspx) funkce a rezervuje jeden segment paměti pro spravované aplikace. Uvolňování také rezervuje segmentů podle potřeby a uvolní segmenty zpět do operačního systému (po jejich vymazání ze všech objektů) voláním rozhraní Win32 [VirtualFree](https://msdn.microsoft.com/library/aa366892.aspx) funkce.  
+ Pro vyhrazení paměti, uvolňování paměti volá Win32 [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) funkce a rezervuje jeden segment paměti pro spravované aplikace. Uvolňování také rezervuje segmentů podle potřeby a uvolní segmenty zpět do operačního systému (po jejich vymazání ze všech objektů) voláním rozhraní Win32 [VirtualFree](/windows/desktop/api/memoryapi/nf-memoryapi-virtualfree) funkce.  
   
 > [!IMPORTANT]
 >  Velikost segmentů přidělaná systému uvolňování paměti je specifický pro implementaci a může se změnit kdykoli, včetně v pravidelné aktualizace. Vaše aplikace by nikdy vytvořit předpoklady o nebo závisí na velikosti konkrétního segmentu, ani snažit konfigurace množství paměti k přidělení segmentu.  

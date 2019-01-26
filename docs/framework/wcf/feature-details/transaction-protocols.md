@@ -2,12 +2,12 @@
 title: Protokoly transakcí
 ms.date: 03/30/2017
 ms.assetid: 2820b0ec-2f32-430c-b299-1f0e95e1f2dc
-ms.openlocfilehash: 559b7ec1539a43ec27010031320be144d6f5e24b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 60b9da567e8c82edf505a974c9884f6f1738747b
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54533764"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066233"
 ---
 # <a name="transaction-protocols"></a>Protokoly transakcí
 Windows Communication Foundation (WCF) implementuje WS-koordinaci a WS-Atomic Transactions protokoly.  
@@ -118,7 +118,7 @@ Windows Communication Foundation (WCF) implementuje WS-koordinaci a WS-Atomic Tr
   
  R1232: Odchozí `wscoor:Register` musí používat zprávy `IssuedTokenOverTransport` režim ověřování je popsáno v [protokoly zabezpečení](../../../../docs/framework/wcf/feature-details/security-protocols.md).  
   
- `wsse:Timestamp` Elementu musí být podepsané pomocí `SecurityContextToken``STx` vydané. Tento podpis je doklad o vlastnictví tokenu přidružený k konkrétní transakce a slouží k ověřování účastníka uvedení v transakci. RegistrationResponse zpráva se pošle zpět prostřednictvím protokolu HTTPS.  
+ `wsse:Timestamp` Elementu musí být podepsané pomocí `SecurityContextToken STx` vydané. Tento podpis je doklad o vlastnictví tokenu přidružený k konkrétní transakce a slouží k ověřování účastníka uvedení v transakci. RegistrationResponse zpráva se pošle zpět prostřednictvím protokolu HTTPS.  
   
 #### <a name="2pc-protocol-binding-configuration"></a>Konfigurace vazeb protokolu 2PC  
  WCF podporuje zprávy jednosměrné (datagram) přes protokol HTTPS. Korelace mezi zprávy je ponechané jako podrobnost implementace.  

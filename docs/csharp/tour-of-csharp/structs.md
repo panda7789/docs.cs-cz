@@ -3,12 +3,12 @@ title: C# struktury – prohlídka jazyka C#
 description: Přečtěte si, že se že se základy C# hodnoty typů nazývaných struktury
 ms.date: 08/10/2016
 ms.assetid: 88a74571-f741-4a31-a2b5-1ccf165535b8
-ms.openlocfilehash: 6b165dd040213b33f91d1baf1b0fb4909101666d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: d22cb23fe095874f24d7c002dfdb3eefdde66722
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53142733"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55065957"
 ---
 # <a name="structs"></a>Struktury
 
@@ -30,7 +30,7 @@ Pomocí třídy je možné pro dvě proměnné odkazovat na stejný objekt a pro
 
 [!code-csharp[PointUse](../../../samples/snippets/csharp/tour/structs/Program.cs#L19-L22)]
 
-Pokud `Point` je třída, výstup je 20, protože a b odkazovat na stejný objekt. Pokud bod je struktura, výstup je 10, protože přiřazení `a` k `b` vytvoří kopii hodnoty, a tuto kopii není ovlivněn následné přiřazení `a.x`.
+Pokud `Point` je třída, výstup je 20, protože `a` a `b` odkazovat na stejný objekt. Pokud `Point` je struktura, výstup je 10, protože přiřazení `a` k `b` vytvoří kopii hodnoty, a tuto kopii není ovlivněn následné přiřazení `a.x`.
 
 Předchozí příklad ukazuje dvě omezení struktury. Kopírování celé struktury je poprvé, obvykle méně efektivní než odkaz na objekt, kopírování, předávání přiřazení a hodnota parametru může být dražší s struktury než s typy odkazů. Druhý, s výjimkou `in`, `ref`, a `out` parametry, není možné vytvořit odkazy na struktury, který vylučuje jejich použití v mnoha situacích.
 

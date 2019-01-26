@@ -2,12 +2,12 @@
 title: Zabezpečení vlastních vazeb
 ms.date: 03/30/2017
 ms.assetid: a6383dff-4308-46d2-bc6d-acd4e18b4b8d
-ms.openlocfilehash: 5ed4b124fb5150974bcbe334e3fec627e027498f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 49e14fd783fa89f25750aeb00efc105a850c0d3e
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54584896"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066127"
 ---
 # <a name="custom-binding-security"></a>Zabezpečení vlastních vazeb
 Tento příklad ukazuje, jak nakonfigurovat zabezpečení a použití vlastní vazby. Ukazuje, jak povolit zabezpečení na úrovni zprávy spolu s zabezpečeného přenosu pomocí vlastní vazby. To je užitečné, když zabezpečeného přenosu je potřebná pro přenos zpráv mezi klientem a službou a současně zprávy musí být zabezpečení na úrovni zprávy. Tato konfigurace není podporována vazeb poskytovaných systémem.
@@ -57,7 +57,7 @@ Tento příklad ukazuje, jak nakonfigurovat zabezpečení a použití vlastní v
 </behaviors>
 ```
 
- Kromě toho používá vlastní vazby zabezpečení zpráv s typ přihlašovacích údajů Windows – jedná se o výchozí typ přihlašovacích údajů. Toho lze dosáhnout `security` element vazby. Klient a služba ověření pomocí zabezpečení na úrovni zprávy, když mechanismus ověřování protokolu Kerberos je k dispozici. To se stane, když spuštění ukázky v prostředí služby Active Directory. Pokud mechanismus ověřování protokolu Kerberos není k dispozici, bude použito ověřování NTLM. NTLM ověřuje klienta pro službu, ale neověří služby ke klientovi. `security` Element vazby je nakonfigurován na použití `SecureConversation``authenticationType`, což vede k vytvoření relace zabezpečení klienta a služby. To je nutné povolit duplexního kontraktu služby pro práci.
+ Kromě toho používá vlastní vazby zabezpečení zpráv s typ přihlašovacích údajů Windows – jedná se o výchozí typ přihlašovacích údajů. Toho lze dosáhnout `security` element vazby. Klient a služba ověření pomocí zabezpečení na úrovni zprávy, když mechanismus ověřování protokolu Kerberos je k dispozici. To se stane, když spuštění ukázky v prostředí služby Active Directory. Pokud mechanismus ověřování protokolu Kerberos není k dispozici, bude použito ověřování NTLM. NTLM ověřuje klienta pro službu, ale neověří služby ke klientovi. `security` Element vazby je nakonfigurován na použití `SecureConversation` `authenticationType`, což vede k vytvoření relace zabezpečení klienta a služby. To je nutné povolit duplexního kontraktu služby pro práci.
 
  Při spuštění ukázky operace žádosti a odpovědi jsou zobrazeny v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.
 

@@ -2,12 +2,12 @@
 title: Kanál s dělením dat do bloků
 ms.date: 03/30/2017
 ms.assetid: e4d53379-b37c-4b19-8726-9cc914d5d39f
-ms.openlocfilehash: 3e98e4be3c5ad9d6d18990feeae86369775972b8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: db14ceb956202bee06ff5e6b37b21fb837c6f1d9
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54624236"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066412"
 ---
 # <a name="chunking-channel"></a>Kanál s dělením dat do bloků
 Při odesílání velkých zpráv pomocí služby Windows Communication Foundation (WCF), je často žádoucí omezit množství paměti pro zprávy ve vyrovnávací paměti. Jedním z možných řešení je do datového proudu zprávy (za předpokladu, že hromadných dat je v textu). Ale některé protokoly vyžadují celé zprávy do vyrovnávací paměti. Spolehlivé zasílání zpráv a zabezpečení jsou tyto dva příklady. Další možnou příčinou je zdola nahoru objemné zprávy do menších zprávy označované jako bloky dat, odesílání jednoho bloku tyto bloky dat najednou a znovuvytvoření velkých zpráv na straně příjmu. Zrušení bloků nebo ho může používat vlastní kanál k tomu a samotná aplikace udělat tento bloků. Vytváření bloků kanál příklad ukazuje, jak vlastní protokol nebo vrstvami kanálu lze provést bloků a zrušení bloků libovolně velkých zpráv.  
@@ -271,7 +271,7 @@ interface ITestService
  `OnOpen` volání `innerChannel.Open` vnitřního kanálu otevřít.  
   
 ### <a name="onclose"></a>Při zavření  
- `OnClose` nejprve nastaví `stopReceive` k `true` který signalizuje, že čeká na `ReceiveChunkLoop` zastavit. Pak čeká `receiveStopped``ManualResetEvent`, která je nastavena, když `ReceiveChunkLoop` zastaví. Za předpokladu, že `ReceiveChunkLoop` zastaví v rámci zadaného časového limitu, `OnClose` volání `innerChannel.Close` s zbývající časový limit.  
+ `OnClose` nejprve nastaví `stopReceive` k `true` který signalizuje, že čeká na `ReceiveChunkLoop` zastavit. Pak čeká `receiveStopped` <xref:System.Threading.ManualResetEvent>, která je nastavena, když `ReceiveChunkLoop` zastaví. Za předpokladu, že `ReceiveChunkLoop` zastaví v rámci zadaného časového limitu, `OnClose` volání `innerChannel.Close` s zbývající časový limit.  
   
 ### <a name="onabort"></a>OnAbort  
  `OnAbort` volání `innerChannel.Abort` přerušit vnitřního kanálu. Pokud je na čekající `ReceiveChunkLoop` získá výjimku z na čekající `innerChannel.Receive` volání.  

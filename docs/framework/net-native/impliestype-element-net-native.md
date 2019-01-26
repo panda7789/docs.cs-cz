@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 3abd2071-0f28-40ba-b9a0-d52bd94cd2f6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fe590022f1354b3a41c709e4fed30f89e865fa0c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 867a11eae14c3e7b2fb09acac5849698119e72c7
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54548047"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55065970"
 ---
 # <a name="ltimpliestypegt-element-net-native"></a>Element &lt;ImpliesType&gt; (.NET Native)
 Použije zásady na typ, pokud tyto zásady se nastavily pro nadřazený typ nebo metoda.  
@@ -99,7 +99,7 @@ Použije zásady na typ, pokud tyto zásady se nastavily pro nadřazený typ neb
 </Type>  
 ```  
   
- `<ImpliesType>` Element se může zobrazit i v rámci `<Method>` element, protože v některých případech vytváření instancí obecné metody zahrnuje vytvoření instance typu reflexi. Představte si například obecné metody `IEnumerable<T> MakeEnumerable<T>(string` `spelling``, T` `defaultValue``)` , který danou knihovnu bude mít přístup k dynamicky spolu s přidruženou <xref:System.Collections.Generic.List%601> a <xref:System.Array> typy. Tento rozdíl lze vyjádřit jako:  
+ `<ImpliesType>` Element se může zobrazit i v rámci `<Method>` element, protože v některých případech vytváření instancí obecné metody zahrnuje vytvoření instance typu reflexi. Představte si například obecné metody `IEnumerable<T> MakeEnumerable<T>(string spelling, T defaultValue)` , který danou knihovnu bude mít přístup k dynamicky spolu s přidruženou <xref:System.Collections.Generic.List%601> a <xref:System.Array> typy. Tento rozdíl lze vyjádřit jako:  
   
 ```xml  
 <Type Name="MyType">  

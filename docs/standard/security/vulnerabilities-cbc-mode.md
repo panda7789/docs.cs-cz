@@ -4,12 +4,12 @@ description: Zjistěte, jak k detekování a zmírnění chyby zabezpečení ča
 ms.date: 06/12/2018
 author: blowdart
 ms.author: mairaw
-ms.openlocfilehash: 4f1d6df3c0368fa0273d871ff32564c159e62a2c
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 0f5f7d2032981d28445abe27f87a678ce2c74600
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123641"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066169"
 ---
 # <a name="timing-vulnerabilities-with-cbc-mode-symmetric-decryption-using-padding"></a>Časování chybami zabezpečení pomocí režimu CBC Symetrické dešifrování pomocí odsazení
 
@@ -29,7 +29,7 @@ Blokový šifry mají jiné vlastnosti volá režimu, který určuje vztah data 
 
 Útočník může použít odsazení oracle, v kombinaci s jak CBC data strukturovaná, odesílat zprávy o něco změněné kódu, který zpřístupňuje oracle a posílat data, dokud oracle dozví se, je správná data. Z odpovědi může útočník dešifrování zprávy bajt po bajtu.
 
-Moderní počítačových sítí jsou tyto vysoce kvalitní, že útočník může zjistit, velmi malý (méně než 0,1 ms) rozdíly v provádění čas na vzdálených systémů. Aplikace, které jsou za předpokladu, že úspěšná dešifrování může dojít pouze v případě dat nebylo manipulováno se může být zranitelný vůči útokům z nástrojů, které jsou určeny k sledujte rozdíly v úspěšné a neúspěšné dešifrování. Tento rozdíl časování může být v některých jazycích a knihovnách mnohem závažnější než jiné, je nyní předpokládá, že toto je praktické před internetovými útoky pro všechny jazyky a knihovny, když je aplikace odpovědi na chybu vzít v úvahu.
+Moderní počítačových sítí jsou tyto vysoce kvalitní, že útočník může zjistit, velmi malý (méně než 0,1 ms) rozdíly v provádění čas na vzdálených systémů. Aplikace, které jsou za předpokladu, že úspěšná dešifrování může dojít pouze v případě dat nebylo manipulováno se může být zranitelný vůči útokům z nástrojů, které jsou určeny k sledujte rozdíly v úspěšné a neúspěšné dešifrování. Tento rozdíl časování může být v některých jazycích a knihovnách mnohem závažnější než jiné, je nyní předpokládá, že toto je praktické před internetovými útoky pro všechny jazyky a knihovny, když je aplikace odpovědi na chybu vzít v úvahu.
 
 Tento útok spoléhá na schopnost změnit šifrovaná data a výsledek s oracle testu. Jediný způsob, jak plně zmírnění tohoto útoku je zjištění změn k šifrovaným datům a provádět všechny akce na něm odmítnout. K vytvoření podpisu pro data a ověřit podpis před provedením jakékoli operace, které je standardní způsob. Podpis musí být možné ověřit, nemůže být vytvořen uživatelem zlými úmysly, jinak, by přejít šifrovaná data, a potom compute nový podpis podle změněná data. Jeden běžný typ odpovídajícím podpisem se označuje jako ověřovací kód zprávy s klíči hash (metoda HMAC). V tom, že trvá tajný klíč známý jenom na osobu, vytváření HMAC a osobě, ověřování, se liší od kontrolní součet kódu HMAC s. Bez vlastnictví klíče nejde produkovat správné HMAC. Když se zobrazí vaše data, by trvat šifrovaná data, jste a sdílené složky odesílatele, a pak porovnat HMAC odeslali proti ten je vypočítán nezávisle na sobě výpočetní HMAC pomocí tajného klíče. Toto porovnání musí být konstantní čas, jinak jste přidali další zjistitelná oracle, povolení jiného typu útoku.
 
@@ -100,7 +100,7 @@ Aplikace, které nelze změnit jejich formát zasílání zpráv, ale neověřen
 
 ## <a name="finding-vulnerable-code---native-applications"></a>Hledání zranitelné kód – nativní aplikace
 
-Pro programy, které jsou vytvořeny šifrování Windows: Knihovna generace (CNG):
+Pro programy vytvořena šifrování Windows: Další knihovny služby nové generace (CNG):
 
 - Volání dešifrování [BCryptDecrypt](/windows/desktop/api/bcrypt/nf-bcrypt-bcryptdecrypt), zadání `BCRYPT_BLOCK_PADDING` příznak.
 - Popisovač klíče byl inicializován pomocí volání [BCryptSetProperty](/windows/desktop/api/bcrypt/nf-bcrypt-bcryptsetproperty) s [BCRYPT_CHAINING_MODE](https://msdn.microsoft.com/library/windows/desktop/aa376211.aspx#BCRYPT_CHAINING_MODE) nastavena na `BCRYPT_CHAIN_MODE_CBC`.
@@ -109,7 +109,7 @@ Pro programy, které jsou vytvořeny šifrování Windows: Knihovna generace (CN
 Pro programy vytvořené starší kryptografické rozhraní API Windows:
 
 - Volání dešifrování [CryptDecrypt](/windows/desktop/api/wincrypt/nf-wincrypt-cryptdecrypt) s `Final=TRUE`.
-- Popisovač klíče byl inicializován pomocí volání [CryptSetKeyParam](/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetkeyparam) s [KP_MODE](https://msdn.microsoft.com/library/windows/desktop/aa379949.aspx#KP_MODE) nastavena na `CRYPT_MODE_CBC`.
+- Popisovač klíče byl inicializován pomocí volání [CryptSetKeyParam](/windows/desktop/api/wincrypt/nf-wincrypt-cryptsetkeyparam) s [KP_MODE](/windows/desktop/api/wincrypt/nf-wincrypt-cryptgetkeyparam) nastavena na `CRYPT_MODE_CBC`.
   - Protože `CRYPT_MODE_CBC` je výchozí nastavení, která měla vliv na kód nemusí mít přiřazené libovolnou hodnotu pro `KP_MODE`.
 
 ## <a name="finding-vulnerable-code---managed-applications"></a>Hledání kódu zranitelné – spravované aplikace

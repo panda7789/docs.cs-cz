@@ -3,12 +3,12 @@ title: Třídy a objekty – Úvod do C# kurz
 description: Vytvořte svůj první program C# a seznamte se s koncepty objektově orientované
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: 8b823e05ea5e51bb3096d6a0611630c996f56b33
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6ce0c86a4b746b8ea2db82899a82734a68e46957
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50205374"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066064"
 ---
 # <a name="explore-object-oriented-programming-with-classes-and-objects"></a>Prozkoumejte objektově orientované programování pomocí třídy a objekty
 
@@ -16,7 +16,7 @@ V tomto kurzu očekává, že máte počítač, který používáte pro vývoj. 
 
 ## <a name="create-your-application"></a>Vytvoření aplikace
 
-Pomocí okna terminálu vytvořte adresář s názvem **třídy**. Vytvoříte aplikaci existuje. Tento adresář a zadejte `dotnet new console` v okně konzoly. Tento příkaz vytvoří vaší aplikace. Otevřít **Program.cs**. By měl vypadat nějak takto:
+Pomocí okna terminálu vytvořte adresář s názvem **třídy**. Vytvoříte aplikaci existuje. Tento adresář a zadejte `dotnet new console` v okně konzoly. Tento příkaz vytvoří vaší aplikace. Otevřít **Program.cs**. Mělo by to vypadat takto:
 
 ```csharp
 using System;
@@ -106,7 +106,7 @@ Přidejte následující deklaraci člena `BankAccount` třídy:
 private static int accountNumberSeed = 1234567890;
 ```
 
-Toto je datový člen. Má `private`, což znamená, že je přístupný pouze kódu uvnitř `BankAccount` třídy. Jedná se o způsob oddělení veřejného odpovědnosti (jako číslo účtu) z privátní implementace (jak čísla účtů jsou generovány.) Je také `static`, což znamená, že je sdílené všemi ``BankAccount`` objekty. Hodnota nestatické proměnné je jedinečné pro každé instance ``BankAccount`` objektu. Přidejte následující dva řádky konstruktoru přiřadit číslo účtu:
+Toto je datový člen. Má `private`, což znamená, že je přístupný pouze kódu uvnitř `BankAccount` třídy. Jedná se o způsob oddělení veřejného odpovědnosti (jako číslo účtu) z privátní implementace (jak čísla účtů jsou generovány.) Je také `static`, což znamená, že je sdílené všemi `BankAccount` objekty. Hodnota nestatické proměnné je jedinečné pro každé instance `BankAccount` objektu. Přidejte následující dva řádky konstruktoru přiřadit číslo účtu:
 
 ```csharp
 this.Number = accountNumberSeed.ToString();

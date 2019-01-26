@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XML axis [Visual Basic], descendant
 - XML [Visual Basic], accessing
 ms.assetid: a178f85b-5d54-438f-8479-40b62af6fe76
-ms.openlocfilehash: 3b8d13e606f28896cae88162d572470e49af3739
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 862a9177d9e10e9561da389fdbffa3e35aa3b51a
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54730279"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55065931"
 ---
 # <a name="xml-descendant-axis-property-visual-basic"></a>Vlastnost osy nástupce XML (Visual Basic)
 Poskytuje přístup k následníky z následujících akcí: <xref:System.Xml.Linq.XElement> objektu, <xref:System.Xml.Linq.XDocument> object, kolekce <xref:System.Xml.Linq.XElement> objekty nebo kolekci <xref:System.Xml.Linq.XDocument> objekty.  
@@ -34,7 +34,7 @@ object...<descendant>
  Povinný parametr. Označuje začátek vlastnost Následnické osy.  
   
  `descendant`  
- Povinný parametr. Název podřízených uzlů pro přístup k ve tvaru [`prefix``:`]`name`.  
+ Povinný parametr. Název podřízených uzlů pro přístup k ve tvaru [`prefix:]name`.  
   
 |Část|Popis|  
 |----------|-----------------|  

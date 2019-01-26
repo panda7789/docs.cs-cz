@@ -2,12 +2,12 @@
 title: Aktivity přístupu k databázi
 ms.date: 03/30/2017
 ms.assetid: 174a381e-1343-46a8-a62c-7c2ae2c4f0b2
-ms.openlocfilehash: efcdd25ee3e6b86d87d551623b166eab4fa76845
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: db79f2d7605a71997ede134152b12395b9193f95
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850397"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066087"
 ---
 # <a name="database-access-activities"></a>Aktivity přístupu k databázi
 Aktivity přístupu k databázi umožňují přístup k databázi v rámci pracovního postupu. Tyto aktivity umožňují přístup k databázím nebo upravte informace a použití [ADO.NET](https://go.microsoft.com/fwlink/?LinkId=166081) pro přístup k databázi.  
@@ -88,7 +88,7 @@ Public class DbUpdate: AsyncCodeActivity
 
  Provedení dotazu je nakonfigurovaný v jeho `Sql` vlastnost a parametry jsou předány prostřednictvím `Parameters` kolekce.
 
- Po `DbQueryScalar` se provedl a vytvořil skalárních se vrátí v `Result``out` argument (typu `TResult`, která je definována v základní třídě <xref:System.Activities.AsyncCodeActivity%601>).
+ Po `DbQueryScalar` se provedl a vytvořil skalárních se vrátí v `Result out` argument (typu `TResult`, která je definována v základní třídě <xref:System.Activities.AsyncCodeActivity%601>).
 
 ```
 public class DbQueryScalar<TResult> : AsyncCodeActivity<TResult>
@@ -200,7 +200,7 @@ public class DbQuery<TResult> : AsyncCodeActivity<IList<TResult>> where TResult 
 
  Provedení dotazu je nakonfigurovaný v jeho `Sql` vlastnost a parametry jsou předány prostřednictvím `Parameters` kolekce.
 
- Po `DbQueryDataSet` provádí `DataSet` se vrátí v `Result``out` argument (typu `TResult`, která je definována v základní třídě <xref:System.Activities.AsyncCodeActivity%601>).
+ Po `DbQueryDataSet` provádí `DataSet` se vrátí v `Result out` argument (typu `TResult`, která je definována v základní třídě <xref:System.Activities.AsyncCodeActivity%601>).
 
 ```
 public class DbQueryDataSet : AsyncCodeActivity<DataSet>
@@ -247,7 +247,7 @@ public class DbQueryDataSet : AsyncCodeActivity<DataSet>
 ## <a name="configuring-connection-information"></a>Konfigurace informací o připojení
  Všechny DbActivities sdílet stejné parametry konfigurace. Se dají konfigurovat dvěma způsoby:
 
--   `ConnectionString + InvariantName`: Nastavte zprostředkovatele ADO.NET neutrální název a připojovací řetězec.
+-   `ConnectionString + InvariantName`: Nastavení poskytovatele ADO.NET neutrální název a připojovací řetězec.
 
     ```
     Activity dbSelectCount = new DbQueryScalar<DateTime>()

@@ -7,12 +7,12 @@ dev_langs:
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/10/2018
-ms.openlocfilehash: 96f592799c42e96a5607489f18ee584264b167e1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 589d268e937cc9cbd37e88a53fb9e00935d19f55
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54693675"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066347"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
@@ -91,28 +91,35 @@ V .NET Core SDK 2.1 a použít všechny operace nástroje `dotnet tool` příkaz
 
 ## <a name="roll-forward"></a>Posunout vpřed
 
-Všechny aplikace .NET Core od verze rozhraní příkazového řádku .NET Core 2.0 automaticky posunout vpřed na nejnovější verzi *podverze* nainstalované v systému.
+Všechny aplikace .NET Core od verze rozhraní .NET Core 2.0 automaticky posunout vpřed na nejnovější verzi *podverze* nainstalované v systému.
 
 Počínaje .NET Core 2.0, pokud není k dispozici za běhu verze .NET Core, která byla aplikace vytvořena, aplikace automaticky spouští nainstaluje *podverze* .NET Core. Jinými slovy Pokud je aplikace sestavena s .NET Core 2.0 a .NET Core 2.0 není k dispozici v hostitelském systému, ale je .NET Core 2.1, aplikace bude spuštěna s .NET Core 2.1.
 
 > [!IMPORTANT]
-> Toto chování vpřed neplatí pro verze preview. Ani se nevztahuje na hlavní verze. Aplikace .NET Core 1.0 by například posunout vpřed a .NET Core 2.0, .NET Core 2.1.
+> Toto chování vpřed neplatí pro verze preview. Ve výchozím nastavení také informace neplatí pro hlavní verze, ale dá se změnit na nastavení uvedená níže.
 
-Můžete také zakázat podverze Posunutí vpřed v libovolné ze tří způsobů:
+Toto chování můžete upravit tak, že změníte nastavení vpřed v žádné sdílené architektuře Release candidate. Jsou k dispozici nastavení:
+- `0` -podverze vpřed chování zakázat. S tímto nastavením aplikace sestavené pro .NET Core 2.0.0 se posunout vpřed až po .NET Core 2.0.1, ale ne k .NET Core 2.2.0 nebo .NET Core 3.0.0.
+- `1` -povolit chování vpřed podverze. Toto je výchozí hodnota pro nastavení. S tímto nastavením aplikace sestavené pro .NET Core 2.0.0 bude vrácen předat buď .NET Core 2.0.1 nebo .NET Core 2.2.0, podle toho, která je nainstalovaná jedna, ale nebude až po .NET Core 3.0.0 posunout vpřed.
+- `2` -povolit chování vpřed vedlejší a hlavní verze. Pokud jsou považovány za nastaveno, dokonce i jiné hlavní verze, takže aplikace vytvořené pro .NET Core 2.0.0 se posunout vpřed až po .NET Core 3.0.0.
 
-- Nastavte `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX` proměnné prostředí na hodnotu 0.
+Můžete upravit toto nastavení v libovolné ze tří způsobů:
 
-- Přidejte následující řádek do souboru runtimeconfig.json:
+- Nastavte `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX` proměnné prostředí na požadovanou hodnotu.
+
+- Přidejte následující řádek s hodnotou požadované do `runtimeconfig.json` souboru:
 
    ```json
    "rollForwardOnNoCandidateFx" : 0
    ```
 
-- Při použití [nástroje rozhraní příkazového řádku .NET Core](../tools/index.md), patří například následující možnost pomocí příkazu .NET Core `run`:
+- Při použití [nástroje rozhraní příkazového řádku .NET Core](../tools/index.md), jako například přidat následující možnost s požadovanou hodnotu příkazu .NET Core `run`:
 
    ```console
    dotnet run --rollForwardOnNoCandidateFx=0
    ```
+
+Vrácení verze opravy vpřed je nezávislý na toto nastavení a je proveden po menších potenciální nebo pokud je použita hlavní verze Posunutí vpřed.
 
 ## <a name="deployment"></a>Nasazení
 

@@ -7,15 +7,15 @@ helpviewer_keywords:
 - statements [Visual Basic], structure
 - structures [Visual Basic], declaring
 ms.assetid: d5e98381-eb81-47d4-af83-48cc534a2572
-ms.openlocfilehash: bfed5c969466cb427e6c94d39bfcc6a6e007c320
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cee2768d0e7475d2df123491e2b506bf5c08785f
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54672042"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066113"
 ---
 # <a name="how-to-declare-a-structure-visual-basic"></a>Postupy: Definice struktury (Visual Basic)
-Začnete deklaraci struktury s [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md), a to s `End` `Structure` příkazu. Mezi tyto dva příkazy musí deklarovat alespoň jeden *element*. Prvků může být libovolného datového typu, ale alespoň jedna musí být nesdílené proměnné nebo nesdílených, nevlastních událostí.  
+Začnete deklaraci struktury s [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md), a to s `End Structure` příkazu. Mezi tyto dva příkazy musí deklarovat alespoň jeden *element*. Prvků může být libovolného datového typu, ale alespoň jedna musí být nesdílené proměnné nebo nesdílených, nevlastních událostí.  
   
  Nelze inicializovat prvky struktury v deklaraci struktury. Když deklarujete proměnnou typu Struktura, přiřadit hodnoty k elementům díky přístupu prostřednictvím proměnné.  
   

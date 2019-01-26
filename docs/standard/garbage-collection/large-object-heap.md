@@ -8,12 +8,12 @@ helpviewer_keywords:
 - GC [.NET ], large object heap
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 822aedd3e08ad3f8950f6531fe687ec26df4622a
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: df8559dc5a09b65eb388808363bb0352bc8ed398
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415530"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066425"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Haldy velkých objektů v systémech Windows
 
@@ -34,7 +34,7 @@ Malé objekty jsou vždy přiděleny v generaci 0 a v závislosti na jejich živ
 
 Velké objekty patří do 2. generace, protože jsou shromažďovány pouze během shromažďování generace 2. Pokud generace jsou shromažďovány, shromažďují se také všech mladších generation(s). Například při uvolnění GC 1. generace dojde, se shromažďují i generace 1 a 0. A při uvolnění GC 2. generace dojde, celý haldy jsou shromažďovány. Z tohoto důvodu se také nazývá uvolnění GC 2. generace *úplné uvolňování paměti*. Tento článek odkazuje na 2. generace uvolňování paměti namísto úplný úklid GC, ale podmínky jsou zaměnitelné.
 
-Generace poskytují logické zobrazení haldy uvolňování paměti. Fyzicky živé objekty ve spravované haldě segmenty. A *spravované haldě segmentu* se považuje blok paměti, která rezervuje GC z operačního systému pomocí volání [VirtualAlloc funkce](https://msdn.microsoft.com/library/windows/desktop/aa366887(v=vs.85).aspx) jménem spravovaného kódu. Při načtení modulu CLR uvolňování paměti přiděluje dva segmenty počáteční haldy: jeden pro malé objekty (haldy malých objektů, nebo SOH) a jeden pro velké objekty (haldy pro velké objekty).
+Generace poskytují logické zobrazení haldy uvolňování paměti. Fyzicky živé objekty ve spravované haldě segmenty. A *spravované haldě segmentu* se považuje blok paměti, která rezervuje GC z operačního systému pomocí volání [VirtualAlloc funkce](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) jménem spravovaného kódu. Při načtení modulu CLR uvolňování paměti přiděluje dva segmenty počáteční haldy: jeden pro malé objekty (haldy malých objektů, nebo SOH) a jeden pro velké objekty (haldy pro velké objekty).
 
 Přidělení požadavky splněny pak vložením spravované objekty v těchto segmentech spravované haldě. Pokud je objekt menší než o velikosti 85 000 bajtů, přejde na segment pro SOH; v opačném případě přejde LOH segmentu. Segmenty usilujeme o to (do menších bloků) jako další a další objekty přidělovány na ně.
 Pro prohlášení o stavu objekty, které byly zachovány při uvolnění GC jsou povýšeny do příští generace. Objekty, které byly zachovány při shromažďování generace 0 jsou nyní považovány za objekty generace 1 a tak dále. Ale objekty, které byly zachovány při generování nejstarší jsou stále považovány za nejstarší generování. Jinými slovy jsou zachované objekty z 2. generace 2. generace objekty; a jsou zachované objekty z LOH LOH objekty, (které jsou shromážděné pomocí gen2).
@@ -57,9 +57,9 @@ Obrázek 2: Po uvolnění GC 2. generace
 
 Pokud není k dispozici dostatek volného místa pro plnění požadavků na přidělení velké objekty, uvolňování paměti se nejprve pokusí získat další segmenty z operačního systému. Pokud selže, spustí 2. generace uvolňování paměti v naději, uvolněte nějaké místo.
 
-Během 1. generace nebo 2. generace uvolňování paměti, uvolňování paměti uvolní segmenty, které mají na ně žádné živé objekty zpět do operačního systému pomocí volání [funkce VirtualFree](https://msdn.microsoft.com/library/windows/desktop/aa366892(v=vs.85).aspx). Mezera za poslední živé objekt na konec segmentu je zrušeny (s výjimkou na dočasný segment, ve kterém gen0/gen1 za provozu, ve kterém systému uvolňování paměti zachovat některé potvrzené, protože se být přidělování vaší aplikace v něm hned). A bezplatný prostory stále potvrdit, když dojde k jejich vynulování, což znamená, že není nutné zapisovat data v nich zpět na disk operačního systému.
+Během 1. generace nebo 2. generace uvolňování paměti, uvolňování paměti uvolní segmenty, které mají na ně žádné živé objekty zpět do operačního systému pomocí volání [funkce VirtualFree](/windows/desktop/api/memoryapi/nf-memoryapi-virtualfree). Mezera za poslední živé objekt na konec segmentu je zrušeny (s výjimkou na dočasný segment, ve kterém gen0/gen1 za provozu, ve kterém systému uvolňování paměti zachovat některé potvrzené, protože se být přidělování vaší aplikace v něm hned). A bezplatný prostory stále potvrdit, když dojde k jejich vynulování, což znamená, že není nutné zapisovat data v nich zpět na disk operačního systému.
 
-Vzhledem k tomu, LOH se shromažďují, pouze během GC 2. generace, můžete segmentu LOH uvolněna pouze během těchto uvolňování paměti. Obrázek 3 ukazuje scénář, ve kterém systému uvolňování paměti uvolní jeden segment (segment 2) zpět do operačního systému a rozváže více místa na zbývající segmenty. Pokud je třeba použít zrušeny místa na konci segmentu pro splnění požadavků na přidělení velkého objektu, potvrzení paměti znovu. (Vysvětlení rozvázání/potvrzení, naleznete v dokumentaci k [VirtualAlloc](https://msdn.microsoft.com/library/windows/desktop/aa366887(v=vs.85).aspx).
+Vzhledem k tomu, LOH se shromažďují, pouze během GC 2. generace, můžete segmentu LOH uvolněna pouze během těchto uvolňování paměti. Obrázek 3 ukazuje scénář, ve kterém systému uvolňování paměti uvolní jeden segment (segment 2) zpět do operačního systému a rozváže více místa na zbývající segmenty. Pokud je třeba použít zrušeny místa na konci segmentu pro splnění požadavků na přidělení velkého objektu, potvrzení paměti znovu. (Vysvětlení rozvázání/potvrzení, naleznete v dokumentaci k [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc).
 
 ![Obrázek 3: LOH po uvolňování paměti generace 2](media/loh/loh-figure-3.jpg)  
 Obrázek 3: LOH po 2. generace GC
@@ -302,13 +302,13 @@ Vzhledem k tomu, že není setřepána LOH, někdy LOH je thoought zdroj fragmen
 
 Je běžné zobrazíte fragmentace virtuálního počítače, způsobené dočasné velké objekty, které vyžadují systému uvolňování paměti se často získat nové spravované haldy segmenty z operačního systému a verze prázdných zpět do operačního systému.
 
-Pokud chcete ověřit, zda LOH způsobuje fragmentaci na virtuální počítač, můžete nastavit zarážku na [VirtualAlloc](https://msdn.microsoft.com/library/windows/desktop/aa366887(v=vs.85).aspx) a [VirtualFree](https://msdn.microsoft.com/library/windows/desktop/aa366892(v=vs.85).aspx) zobrazíte jejich volání. Například pokud chcete zjistit, kdo se pokusil přidělení virtuální paměti bloky dat větší než 8MBB z operačního systému, můžete nastavit zarážku takto:
+Pokud chcete ověřit, zda LOH způsobuje fragmentaci na virtuální počítač, můžete nastavit zarážku na [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) a [VirtualFree](/windows/desktop/api/memoryapi/nf-memoryapi-virtualfree) zobrazíte jejich volání. Například pokud chcete zjistit, kdo se pokusil přidělení virtuální paměti bloky dat větší než 8MBB z operačního systému, můžete nastavit zarážku takto:
 
 ```console
 bp kernel32!virtualalloc "j (dwo(@esp+8)>800000) 'kb';'g'"
 ```
 
-Tento příkaz do ladicího programu a zásobník volání pouze tehdy, pokud se zobrazí [VirtualAlloc](https://msdn.microsoft.com/library/windows/desktop/aa366887(v=vs.85).aspx) se nazývá velikost alokační větší než 8 MB (0x800000).
+Tento příkaz do ladicího programu a zásobník volání pouze tehdy, pokud se zobrazí [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) se nazývá velikost alokační větší než 8 MB (0x800000).
 
 Funkci přidali CLR 2.0 *VM Hoarding* , může být užitečné pro scenarious kde segmenty (včetně velkých i malých objektů haldy) jsou často získaných a vydání. K určení Hoarding virtuálního počítače, zadejte po spuštění příznak, který volá `STARTUP_HOARD_GC_VM` prostřednictvím hostujícího rozhraní API. Místo vydání prázdné segmenty zpět do operačního systému, CLR rozváže paměti v těchto segmentech a umístí na seznam pohotovostním režimu. (Všimněte si, že modul CLR nebude provést pro segmenty, které jsou moc velká.) Modul CLR později použije tyto segmenty splňovat nové požadavky segmentu. Příště, že vaše aplikace potřebuje nový segment CLR používá jednu z tohoto seznamu pohotovostní Pokud nemůže najít takový, který je dostatečně velký.
 

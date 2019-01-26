@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d4b2bab09d9ac9f14ae9d1bf78254c9c6a376677
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8ad7c9aba84a769cb4ea16a2d288b1a9b4f17ca5
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54691473"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066009"
 ---
 # <a name="securing-method-access"></a>Zabezpečení přístupu k metodě
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -234,7 +234,7 @@ class Implemented : ICanCastToMe
 ## <a name="virtual-internal-overrides-or-overloads-overridable-friend"></a>Virtuální interní přepisy nebo přetížení přepsatelného přítele  
   
 > [!NOTE]
->  V této části upozorní potíže se zabezpečením při deklaraci metody jako `virtual` a `internal` (`Overloads``Overridable``Friend` v jazyce Visual Basic). Toto upozornění se vztahuje pouze na rozhraní .NET Framework verze 1.0 a 1.1, nevztahuje se na novější verze.  
+>  V této části upozorní potíže se zabezpečením při deklaraci metody jako `virtual` a `internal` (`Overloads` `Overridable` `Friend` v jazyce Visual Basic). Toto upozornění se vztahuje pouze na rozhraní .NET Framework verze 1.0 a 1.1, nevztahuje se na novější verze.  
   
  V rozhraní .NET Framework verze 1.0 a 1.1 musíte být vědomi nuance typ – usnadnění systému při potvrzení, že váš kód je k dispozici pro jiná sestavení. Metoda, která je deklarována **virtuální** a **interní** (**přetížení přepsatelného přítele** v jazyce Visual Basic) můžete přepsat položku vtable nadřazené třídy a lze použít pouze v v rámci stejného sestavení vzhledem k tomu, že je interní. Ale je určená pro usnadnění pro přepsání **virtuální** – klíčové slovo a to může být přepsána z jiného sestavení za předpokladu, že kód má přístup k samotné třídě. Pokud možnost přepsat představuje problém, používejte deklarativní zabezpečení a opravit ho nebo odebrat **virtuální** – klíčové slovo, pokud to není nezbytně nutné.  
   

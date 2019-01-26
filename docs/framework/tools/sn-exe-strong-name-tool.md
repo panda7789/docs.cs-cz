@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d6db5b3d56c9dd4998625098b9868b276238a978
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 02568de0a1cc5cec6b92e646e000e69ae79b1646
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54558641"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066386"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (nástroj pro silný název)
 Nástroj Strong Name (Sn.exe) pomáhá podepsat sestavení se [silných názvů](../../../docs/framework/app-domains/strong-named-assemblies.md). Nástroj Sn.exe poskytuje možnosti pro správu klíčů, generování podpisů a ověřování podpisů.  
@@ -65,7 +65,7 @@ sn [-quiet][option [parameter(s)]]
 |**-t**[**p**] *infile*|Zobrazí token pro veřejný klíč uložený ve *infile*. Obsah *infile* musí být veřejný klíč dříve vygenerovaný z páru klíčů pomocí souboru **-p**.  Nepoužívejte **-t [p]** možnost extrahovat token přímo ze souboru páru klíčů.<br /><br /> Nástroj Sn.exe počítá token z veřejného klíče pomocí funkce hash. Z důvodu šetření místem ukládá modul CLR tokeny veřejných klíčů do manifestů jako součást odkazů na jiné sestavení ve chvíli, kdy je do sestavení se silným názvem zaznamenána závislost. **- Tp** možnost se zobrazí spolu s tokenem také veřejný klíč. Pokud <xref:System.Reflection.AssemblySignatureKeyAttribute> atributu byl použit k sestavení, je token klíči identity a zobrazí se název hashovacího algoritmu a klíč identity.<br /><br /> Tato možnost neověřuje popis sestavení a neměla by být použita pro rozhodování o důvěryhodnosti.  Tato možnost zobrazuje pouze nezpracovaná data tokenu veřejného klíče.|  
 |**-T**[**p**] *sestavení*|Zobrazí token veřejného klíče pro *sestavení.* *Sestavení* musí být název souboru obsahujícího manifest sestavení.<br /><br /> Nástroj Sn.exe počítá token z veřejného klíče pomocí funkce hash. Z důvodu šetření místem ukládá modul runtime tokeny veřejných klíčů do manifestů jako součást odkazů na jiné sestavení ve chvíli, kdy je do sestavení se silným názvem zaznamenána závislost. **- Tp** možnost se zobrazí spolu s tokenem také veřejný klíč. Pokud <xref:System.Reflection.AssemblySignatureKeyAttribute> atributu byl použit k sestavení, je token klíči identity a zobrazí se název hashovacího algoritmu a klíč identity.<br /><br /> Tato možnost neověřuje popis sestavení a neměla by být použita pro rozhodování o důvěryhodnosti.  Tato možnost zobrazuje pouze nezpracovaná data tokenu veřejného klíče.|  
 |`-TS` `assembly` `infile`|Vyzkouší podepsaného nebo částečně podepsaného `assembly` párem klíčů v `infile`.|  
-|-`TSc``assembly``container`|Vyzkouší podepsaného nebo částečně podepsaného `assembly` párem klíčů v kontejneru klíčů `container`.|  
+|-`TSc` `assembly` `container`|Vyzkouší podepsaného nebo částečně podepsaného `assembly` párem klíčů v kontejneru klíčů `container`.|  
 |**-v** *sestavení*|Ověří silný název v *sestavení*, kde *sestavení* je název souboru obsahujícího manifest sestavení.|  
 |**-vf**  *sestavení*|Ověří silný název v *sestavení.* Na rozdíl od **- v** možnost **-vf** vynutí ověření i v případě, že je zakázané, pomocí **- Vr** možnost.|  
 |**-Vk**  *regfile.reg* *sestavení* [*userlist*] [*infile*]|Vytvoří soubor registračních položek (.reg), které lze použít k registraci zadaného sestavení pro vynechání ověření. Pravidla pojmenovávání sestavení, které se vztahují **- Vr** možnost použít **– Vk** také. Informace o *userlist* a *infile* možnosti, najdete v článku **– Vr** možnost.|  

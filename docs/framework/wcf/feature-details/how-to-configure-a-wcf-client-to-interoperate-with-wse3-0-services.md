@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3dadd7f1-d207-4ea5-a73b-3e8aa44407f8
-ms.openlocfilehash: 52793b6d077f1da33d2d675be3284ce134beb2d3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 345677f992491022a12fb03981f644343e405dfe
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54730955"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066451"
 ---
 # <a name="how-to-configure-a-wcf-client-to-interoperate-with-wse30-services"></a>Postupy: Konfigurace klienta WCF na vzájemnou spolupráci se službami WSE3.0
 Klientů Windows Communication Foundation (WCF) jsou přenosový kompatibilní s Web Services vylepšení 3.0 služby rozhraní Microsoft .NET (Najít), když klienti WCF umožňují použít verzi specifikace WS-Addressing ze srpna 2004.  
@@ -36,7 +36,7 @@ Klientů Windows Communication Foundation (WCF) jsou přenosový kompatibilní s
   
     2.  Přidání vlastností do třídy, která zadejte výraz na klíč WSE, určuje, zda jsou požadovány odvozené klíče, určuje, zda se používají zabezpečené relace, určuje, zda jsou požadovány nacházejí potvrzení podpisů a nastavení ochrany zprávy.  
   
-         Následující příklad kódu definuje `SecurityAssertion,``RequireDerivedKeys, EstablishSecurityContext, MessageProtectionOrder` vlastnosti, které určují kontrolního výrazu WSE na klíč, určuje, zda jsou požadovány odvozené klíče, určuje, zda se používají zabezpečené relace, určuje, zda jsou požadovány nacházejí potvrzení podpisů a nastavení ochrany zprávy v uvedeném pořadí.  
+         Následující příklad kódu definuje `SecurityAssertion`, `RequireDerivedKeys`, `EstablishSecurityContext`, a `MessageProtectionOrder` vlastnosti. Určí kontrolního výrazu WSE na klíč, určuje, zda jsou požadovány odvozené klíče, určuje, zda se používají zabezpečené relace, určuje, zda jsou požadovány nacházejí potvrzení podpisů a nastavení ochrany zprávy, v uvedeném pořadí.  
   
          [!code-csharp[c_WCFClientToWSEService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/wsehttpbinding.cs#3)]
          [!code-vb[c_WCFClientToWSEService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/wsehttpbinding.vb#3)]  

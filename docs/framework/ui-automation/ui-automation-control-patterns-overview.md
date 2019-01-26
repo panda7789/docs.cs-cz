@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 40ea9b6d8ad88683ef0b3d75907fe645e9f2e3e3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 74e373610a78cbed5d31ff408e3c4ef8f11216f6
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54679068"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066239"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -43,7 +43,7 @@ ms.locfileid: "54679068"
   
  Klienti automatizace uživatelského rozhraní přístup k metodám a vlastnostem [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] řídit vzor třídy a využít k získání informací [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)], nebo k manipulaci s [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Tyto třídy vzor ovládacích prvků se nacházejí v <xref:System.Windows.Automation> obor názvů (například <xref:System.Windows.Automation.InvokePattern> a <xref:System.Windows.Automation.SelectionPattern>).  
   
- Klienti používají <xref:System.Windows.Automation.AutomationElement> metod (například <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> nebo <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType>) nebo [!INCLUDE[TLA#tla_clr](../../../includes/tlasharptla-clr-md.md)] přístupové objekty pro přístup k [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnostem vzorce. Každá třída vzor ovládací prvek má člena pole (například <xref:System.Windows.Automation.InvokePattern.Pattern?displayProperty=nameWithType>"nebo <xref:System.Windows.Automation.SelectionPattern.Pattern?displayProperty=nameWithType>), který identifikuje tento – vzor ovládacích prvků a mohou být předány jako parametr <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A> nebo <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> načíst tento vzor pro <xref:System.Windows.Automation.AutomationElement>.  
+ Klienti používají <xref:System.Windows.Automation.AutomationElement> metod (například <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A?displayProperty=nameWithType> nebo <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A?displayProperty=nameWithType>) nebo [!INCLUDE[TLA#tla_clr](../../../includes/tlasharptla-clr-md.md)] přístupové objekty pro přístup k [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnostem vzorce. Každá třída vzor ovládací prvek má člena pole (například <xref:System.Windows.Automation.InvokePattern.Pattern?displayProperty=nameWithType> nebo <xref:System.Windows.Automation.SelectionPattern.Pattern?displayProperty=nameWithType>), který identifikuje tento – vzor ovládacích prvků a mohou být předány jako parametr <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A> nebo <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> načíst tento vzor pro <xref:System.Windows.Automation.AutomationElement>.  
   
 <a name="uiautomation_control_patterns_dynamic"></a>   
 ## <a name="dynamic-control-patterns"></a>Vzory dynamických ovládacích prvků  

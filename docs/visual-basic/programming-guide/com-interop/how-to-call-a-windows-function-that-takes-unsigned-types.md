@@ -14,12 +14,12 @@ helpviewer_keywords:
 - data types [Visual Basic], numeric
 - unsigned types [Visual Basic], using
 ms.assetid: c2c0e712-8dc2-43b9-b4c6-345fbb02e7ce
-ms.openlocfilehash: 092f1acf6e6a8468890a371836979db4e0692d1e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dbe73ed5574261f1aab6134a15a5aeb5fbb8596c
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54669312"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55065853"
 ---
 # <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>Postupy: Volání funkce Windows, která přebírá nepřiřazené typy (Visual Basic)
 Pokud spotřebovávají třídy, modulu nebo struktura, která obsahuje členy typů celé číslo bez znaménka, získáte přístup k těmto členům s jazykem Visual Basic.  
@@ -32,7 +32,7 @@ Pokud spotřebovávají třídy, modulu nebo struktura, která obsahuje členy t
   
 3.  V dokumentaci pro funkci Windows, ke kterému se připojujete k vyhledání názvy a hodnoty konstant, které používá. Mnohé z nich jsou definovány v souboru WINUSER.  
   
-4.  Deklarujte nezbytné konstanty ve vašem kódu. Řada Windows konstanty jsou 32bitové hodnoty bez znaménka a by měla deklarovat tyto `As``UInteger`.  
+4.  Deklarujte nezbytné konstanty ve vašem kódu. Řada Windows konstanty jsou 32bitové hodnoty bez znaménka a by měla deklarovat tyto `As UInteger`.  
   
 5.  Volání funkce běžným způsobem. Následující příklad volá funkci Windows `MessageBox`, která přebírá argument, celé číslo bez znaménka.  
   

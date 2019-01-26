@@ -5,16 +5,16 @@ author: rlander
 ms.author: mairaw
 ms.date: 04/10/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: 08f2640613335b0ba54a4ff970b7d105d52b92c7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3897b3acd06d4dbe8b61f4c12686a365bd17662a
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54743475"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066308"
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016"></a>Instalace rozhraní .NET Framework v systému Windows 10 a Windows Server 2016
 
-Rozhraní .NET Framework je nutná k provozování spoustu aplikací na Windows. Pokyny v tomto článku by vám pomůžou nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863255) je na nejnovější dostupnou verzi.
+Rozhraní .NET Framework je nutná k provozování spoustu aplikací na Windows. Pokyny v tomto článku by vám pomůžou nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework-runtime/net472) je na nejnovější dostupnou verzi.
 
 Vám může objevit na této stránce po pokusu o spuštění aplikace a zobrazuje dialogové okno na svém počítači, který je podobný následujícímu:
 
@@ -29,11 +29,11 @@ Rozhraní .NET Framework 4.7.2 je součástí:
 * [Aktualizace Windows 10. dubna 2018](https://www.microsoft.com/software-download/windows10)
 
 > [!div class="button"]
-> [Stáhnout rozhraní .NET Framework 4.7.2](https://www.microsoft.com/net/download/thank-you/net472?utm_source=ms-docs&utm_medium=referral)
+> [Stáhnout rozhraní .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework-runtime/net472)
 
-[Rozhraní .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863255) je možné ke spouštění aplikací vytvořených pro rozhraní .NET Framework 4.0 prostřednictvím 4.7.1.
+[Rozhraní .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework-runtime/net472) je možné ke spouštění aplikací vytvořených pro rozhraní .NET Framework 4.0 prostřednictvím 4.7.1.
 
-Můžete nainstalovat [rozhraní .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863255) na:
+Můžete nainstalovat [rozhraní .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework-runtime/net472) na:
 
 * Windows 10 Fall Creators Update (verze 1709)
 * Windows 10 Creators Update (verze 1703)

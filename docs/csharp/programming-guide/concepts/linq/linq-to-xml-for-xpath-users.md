@@ -2,12 +2,12 @@
 title: LINQ to XML pro uživatele jazyka XPath (C#)
 ms.date: 07/20/2015
 ms.assetid: 91774511-1dca-4f06-ac0b-913746f104fe
-ms.openlocfilehash: 5059181e89cf9da6bd617c8f1898f4c7d1b404e3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 79894aa0f7ba6b64119de6fa8e82be369299e361
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54724002"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066327"
 ---
 # <a name="linq-to-xml-for-xpath-users-c"></a>LINQ to XML pro uživatele jazyka XPath (C#)
 Tato sada témat zobrazit počet výrazů XPath a jejich [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ekvivalenty.  
@@ -31,7 +31,7 @@ Tato sada témat zobrazit počet výrazů XPath a jejich [!INCLUDE[sqltecxlinq](
 |[Postupy: Vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml.md)|Použití operátoru sjednocení, porovná <code>&#124;</code>, ve výrazu XPath s <xref:System.Linq.Enumerable.Concat%2A> operátor standardního dotazu v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].<br /><br /> Je přidružený výraz XPath:<code>"//Category&#124;//Price"</code>|  
 |[Postupy: Vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-sibling-nodes-xpath-linq-to-xml.md)|Jak najít všechny na stejné úrovni uzlu, které mají konkrétní název, jejichž výraz XPath porovná a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].<br /><br /> Je přidružený výraz XPath:`"../Book"`|  
 |[Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml.md)|Přejděte do nadřazeného elementu a najít přidružený atribut pomocí XPath porovná a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].<br /><br /> Je přidružený výraz XPath:`"../@id"`|  
-|[Postupy: Vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml.md)|Vyhledání konkrétních atributů na stejné úrovni kontextu uzlu, jejichž výraz XPath porovná a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].<br /><br /> Je přidružený výraz XPath:`"``../Book/@id``"`|  
+|[Postupy: Vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml.md)|Vyhledání konkrétních atributů na stejné úrovni kontextu uzlu, jejichž výraz XPath porovná a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].<br /><br /> Je přidružený výraz XPath:`"../Book/@id"`|  
 |[Postupy: Vyhledání elementů s konkrétním atributem (XPath – LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml.md)|Jak najít al elementy, které obsahují konkrétní atribut, pomocí XPath porovná a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].<br /><br /> Je přidružený výraz XPath:`"./*[@Select]"`|  
 |[Postupy: Vyhledání podřízených elementů na základě pozice (XPath – LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-child-elements-based-on-position-xpath-linq-to-xml.md)|Postup k zjištění prvek na základě jeho relativní pozice pomocí XPath porovná a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].<br /><br /> Je přidružený výraz XPath:`"Test[position() >= 2 and position() <= 4]"`|  
 |[Postupy: Najít okamžité předcházející na stejné úrovni (XPath – LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml.md)|Jak najít okamžité předchozí úrovni uzlu pomocí XPath porovná a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].<br /><br /> Je přidružený výraz XPath:`"preceding-sibling::*[1]"`|  

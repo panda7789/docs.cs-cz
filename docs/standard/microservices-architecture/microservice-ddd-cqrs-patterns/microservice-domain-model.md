@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: d98d0f0fee0692bb447779e7f62750931a9773ba
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: fa0e81f6eb54ad01b3f2f84a37499302ff9abd06
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143601"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066261"
 ---
 # <a name="design-a-microservice-domain-model"></a>Návrh doménového modelu mikroslužby
 
@@ -57,7 +57,7 @@ Někteří lidé říkají, že je anemic doménový model proti vzor. Tato skut
 
 #### <a name="additional-resources"></a>Další zdroje
 
-- **DevIQ. Entita domény** \
+- **DevIQ. Domain Entity** \
   [*https://deviq.com/entity/*](https://deviq.com/entity/)
 
 - **Martina Fowlera. Doménový Model** \
@@ -82,16 +82,17 @@ EF Core 2.0 obsahuje [vlastní entity](https://blogs.msdn.microsoft.com/dotnet/2
 
 #### <a name="additional-resources"></a>Další zdroje
 
-- **Martina Fowlera. Vzor hodnota objektu**
+- **Martina Fowlera. Vzor hodnota objektu** \
   [*https://martinfowler.com/bliki/ValueObject.html*](https://martinfowler.com/bliki/ValueObject.html)
 
-- **Hodnota objektu**
+- **Hodnota objektu** \
   [*https://deviq.com/value-object/*](https://deviq.com/value-object/)
 
-- **Hodnota objektů v vývoj řízený testováním**
+- **Hodnota objektů v vývoj řízený testováním** \
   [*https://leanpub.com/tdd-ebook/read\#leanpub-auto-value-objects*](https://leanpub.com/tdd-ebook/read#leanpub-auto-value-objects)
 
-- **Eric Evans. Návrhy řízené doménou: Použití složitosti srdce softwaru.** (Kniha; obsahuje diskusi hodnotu objektů) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
+- **Eric Evans. Návrhy řízené doménou: Použití složitosti srdce softwaru.** (Kniha; obsahuje diskusi hodnotu objektů) \
+  [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
 ### <a name="the-aggregate-pattern"></a>Agregační vzor
 
@@ -134,14 +135,14 @@ Identifikace a práce s agregacemi vyžaduje výzkum a prostředí. Další info
 
 #### <a name="additional-resources"></a>Další zdroje
 
-- **Vaughn Vernon. Efektivní návrh agregace – část I: Modelování jedné agregace** \
-  [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD\_COMMUNITY\_ESSAY\_AGGREGATES\_PART\_1.pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_1.pdf)
+- **Vaughn Vernon. Efektivní návrh agregace – část I: Modelování jedné agregace** (z <http://dddcommunity.org/>) \
+  <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf>
 
-- **Vaughn Vernon. Efektivní agregační návrh – část II: Provádění agregací spolupracují** \
-  [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_2.pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_2.pdf)
+- **Vaughn Vernon. Efektivní agregační návrh – část II: Provádění agreguje pracovní společně** (z <http://dddcommunity.org/>) \
+  <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf>
 
-- **Vaughn Vernon. Efektivní agregační návrh – část III: Získání přehled díky zjišťování** \
-  [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_3.pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_3.pdf)
+- **Vaughn Vernon. Efektivní agregační návrh – část III: Získání přehled díky zjišťování** (z <http://dddcommunity.org/>) \
+  <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_3.pdf>
 
 - **Sergeje Grybniak. Návrh taktických vzorů DDD** \
   [*https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part*](https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part)

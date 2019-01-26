@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
-ms.openlocfilehash: d96be73fc63856e317b129c1fdd8c381c9df6c07
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 529b7094ad36861cacc4009ea8faf152f056c20e
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54627262"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066217"
 ---
 # <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET framework
 A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatel dat slouží k připojení k databázi, provádění příkazů a načíst výsledky. Tyto výsledky se buď zpracovávají přímo, umístí do <xref:System.Data.DataSet> aby bylo možné vystavit uživateli podle potřeby, kombinované s daty z více zdrojů nebo vzdálený mezi vrstvami. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatelé dat jsou zjednodušené, vytvoření minimální vrstvy mezi zdrojem dat a kódu, aniž byste museli obětovat funkčnost zvýšit výkon.  
@@ -151,8 +151,8 @@ using System.Data.OracleClient;
 |--------------|-----------|  
 |[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro SQL Server|Doporučuje se pro aplikace střední vrstvy, které používají Microsoft SQL Server.<br /><br /> Doporučuje se pro jednovrstvou aplikace, které používají Microsoft Database Engine (MSDE) nebo SQL Server.<br /><br /> Doporučuje namísto použití zprostředkovatele OLE DB pro SQL Server (SQLOLEDB) s používat [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro OLE DB.|  
 |[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro OLE DB|Pro SQL Server [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server se doporučuje namísto tohoto zprostředkovatele.<br /><br /> Doporučuje se pro jednovrstvou aplikace, které používají databáze aplikace Microsoft Access. Použití databáze aplikace Access pro aplikace střední vrstvy se nedoporučuje.|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] "Zprostředkovatel dat pro ODBC|Doporučuje se pro střední a jedné vrstvy aplikace, které používají zdroje dat ODBC.|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] "Zprostředkovatel dat pro Oracle|Doporučuje se pro střední a jedné vrstvy aplikace, které používají Oracle datového zdroje.|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro ODBC|Doporučuje se pro střední a jedné vrstvy aplikace, které používají zdroje dat ODBC.|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro Oracle|Doporučuje se pro střední a jedné vrstvy aplikace, které používají Oracle datového zdroje.|  
   
 ## <a name="entityclient-provider"></a>Zprostředkovatel EntityClient  
  Zprostředkovatel EntityClient se používá pro přístup k datům na základě na Entity Data Model (EDM). Na rozdíl od jiných rozhraní .NET Framework data zprostředkovatele nelze pracovat přímo se zdrojem dat. Místo toho používá Entity SQL ke komunikaci se příslušný prostředkovatel data. Další informace najdete v tématu [zprostředkovatel EntityClient a Entity SQL](https://msdn.microsoft.com/library/49202ab9-ac98-4b4b-a05c-140e422bf527).  

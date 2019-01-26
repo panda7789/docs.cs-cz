@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 3a29d185-65d8-42e3-bcc3-7f43e96f40c5
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: d58ac91f42e07e3f556389a818d8118d846653c4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e476674e99f0951148dc7cfc95deeeaede3862ae
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54518160"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066295"
 ---
 # <a name="ui-automation-support-for-the-spinner-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku číselník
 > [!NOTE]
@@ -41,7 +41,7 @@ ms.locfileid: "54518160"
 |------------------|------------------|  
 |Číselník<br /><br /> -Upravit (0 nebo 1)<br />-Tlačítko (2)<br />-Položka list (0 nebo více)|Číselník<br /><br /> -ListItem (0 nebo více)|  
   
- Chcete-li mít jistotu, že dají rozlišovat podle nástroje pro automatizované testování dvě tlačítka v připojeném podstromu zobrazení ovládacího prvku, přiřaďte `SmallIncrement` nebo `SmallDecrement``AutomationId` podle potřeby. Pro některé implementace může být přidružený ovládací prvek pro úpravy peer ovládacího prvku číselník.  
+ Chcete-li mít jistotu, že dají rozlišovat podle nástroje pro automatizované testování dvě tlačítka v připojeném podstromu zobrazení ovládacího prvku, přiřaďte `SmallIncrement` nebo `SmallDecrement` `AutomationId` podle potřeby. Pro některé implementace může být přidružený ovládací prvek pro úpravy peer ovládacího prvku číselník.  
   
 <a name="Required_UI_Automation_Properties"></a>   
 ## <a name="required-ui-automation-properties"></a>Vlastnosti automatizace uživatelského rozhraní vyžaduje  

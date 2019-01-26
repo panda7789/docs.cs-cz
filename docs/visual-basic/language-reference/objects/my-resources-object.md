@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - My.Resources object
 ms.assetid: 34c3f2dc-7b87-432c-9d5f-17ea666bb266
-ms.openlocfilehash: df9538bfb778d6838b51d3b0c525a433812d8131
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2bd120c11e42648d1ca0304bbf9338f1cf569c48
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54571818"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55065866"
 ---
 # <a name="myresources-object"></a>My.Resources – objekt
 Poskytuje třídy a vlastnosti pro přístup k prostředkům aplikace.  
@@ -26,9 +26,9 @@ Poskytuje třídy a vlastnosti pro přístup k prostředkům aplikace.
  Soubory prostředků specifické pro jazykovou verzi aplikace z dostanete `My.Resources` objektu. Ve výchozím nastavení `My.Resources` vyhledá prostředky ze zdrojového souboru, který odpovídá jazykové verze v objektu <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.UICulture%2A> vlastnost. Však můžete přepsat toto chování a určit konkrétní jazykové verze určený pro prostředky. Další informace najdete v tématu [prostředky v desktopových aplikací](../../../framework/resources/index.md).  
   
 ## <a name="properties"></a>Vlastnosti  
- Vlastnosti `My.Resources` objekt poskytují přístup jen pro čtení k prostředkům vaší aplikace. Chcete-li přidat nebo odebrat prostředky, použijte **Návrháře projektu**. Můžete mít přístup k prostředkům, které jsou přidány prostřednictvím **Návrháře projektu** pomocí `My.Resources.``resourceName`.  
+ Vlastnosti `My.Resources` objekt poskytují přístup jen pro čtení k prostředkům vaší aplikace. Chcete-li přidat nebo odebrat prostředky, použijte **Návrháře projektu**. Můžete mít přístup k prostředkům, které jsou přidány prostřednictvím **Návrháře projektu** pomocí `My.Resources.` *resourceName*.  
   
- Můžete také přidat nebo odebrat soubory prostředků tak, že vyberete projekt v **Průzkumníka řešení** a kliknete na **přidat novou položku** nebo **přidat existující položku** z  **Projekt** nabídky. Budete mít přístup k prostředkům přidat tímto způsobem s využitím `My.Resources.``resourceFileName`.`resourceName`.  
+ Můžete také přidat nebo odebrat soubory prostředků tak, že vyberete projekt v **Průzkumníka řešení** a kliknete na **přidat novou položku** nebo **přidat existující položku** z  **Projekt** nabídky. Budete mít přístup k prostředkům přidat tímto způsobem s využitím `My.Resources.` *resourceFileName*`.`*resourceName*.  
   
  Každý prostředek má název, kategorie a hodnoty a tato nastavení prostředků určují, jak se zobrazí vlastnosti, která má přístup k prostředku v `My.Resources` objektu. Pro prostředky, přidá **Návrháře projektu**:  
   

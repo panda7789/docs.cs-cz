@@ -2,12 +2,12 @@
 title: příkaz DotNet
 description: Další informace o příkazu dotnet (obecný ovladač pro nástroje .NET Core CLI) a jeho použití.
 ms.date: 06/04/2018
-ms.openlocfilehash: 081f295cc71c3cd46de465efb12f131e7b2d36d9
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 53eb96ee6fe809b2e6e42eec4e7e9b5f7c5edf2a
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170838"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066438"
 ---
 # <a name="dotnet-command"></a>příkaz DotNet
 
@@ -19,17 +19,17 @@ ms.locfileid: "53170838"
 
 ## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 ```
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics] [--fx-version]
     [-h|--help] [--info] [--list-runtimes] [--list-sdks] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
 ```
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 ```
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics]
     [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
 ```
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 ```
 dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-version]
     [-h|--help] [--info] [-v|--verbosity] [--version]
@@ -44,7 +44,7 @@ dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
 `--additional-deps <PATH>`
 
@@ -78,9 +78,14 @@ Zobrazuje nainstalované moduly runtime .NET Core.
 
 Zobrazí nainstalovaný .NET Core SDK.
 
-`--roll-forward-on-no-candidate-fx`
+`--roll-forward-on-no-candidate-fx <N>`
 
- Zakáže podverze Posunutí vpřed, pokud nastavit `0`. Další informace najdete v tématu [posunout vpřed](../whats-new/dotnet-core-2-1.md#roll-forward).
+Definuje chování, pokud není k dispozici požadované sdílené architektuře. `N` může být:
+ * `0` – Zakažte dopředné posunutí i podverze.
+ * `1` -Posunout vpřed vedlejší verze aktualizace, ale ne hlavní verze. Toto je výchozí chování.
+ * `2` -Posunout vpřed na vedlejší a hlavní verze.
+
+ Další informace najdete v tématu [posunout vpřed](../whats-new/dotnet-core-2-1.md#roll-forward).
 
 `-v|--verbosity <LEVEL>`
 
@@ -90,7 +95,7 @@ Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[i
 
 Vytiskne na verzi .NET Core SDK používá.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 
 `--additional-deps <PATH>`
 
@@ -128,7 +133,7 @@ Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[i
 
 Vytiskne na verzi .NET Core SDK používá.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `--additionalprobingpath <PATH>`
 
@@ -164,7 +169,7 @@ Vytiskne na verzi .NET Core SDK používá.
 
 ### <a name="general"></a>Obecné
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
 | Příkaz                                       | Funkce                                                            |
 | --------------------------------------------- | ------------------------------------------------------------------- |
@@ -183,7 +188,7 @@ Vytiskne na verzi .NET Core SDK používá.
 | [dotnet restore](dotnet-store.md)               | Sestavení se ukládá do úložiště balíčků modulu runtime.                     |
 | [dotnet test](dotnet-test.md)                 | Spustí testy pomocí nástroje test runner.                                     |
 
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 
 | Příkaz                             | Funkce                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
@@ -201,7 +206,7 @@ Vytiskne na verzi .NET Core SDK používá.
 | [dotnet restore](dotnet-store.md)     | Sestavení se ukládá do úložiště balíčků modulu runtime.                     |
 | [dotnet test](dotnet-test.md)       | Spustí testy pomocí nástroje test runner.                                     |
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 | Příkaz                             | Funkce                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
@@ -261,8 +266,8 @@ Počínaje řadou nástrojů, které byly k dispozici pouze v jednotlivých proj
 | ------------------------------------------------- | ------------------------------------------------------------ |
 | dev-certs                                         | Vytváří a spravuje certifikáty vývoje.                |
 | [EF](/ef/core/miscellaneous/cli/dotnet)           | Nástroje příkazového řádku Entity Framework Core.                    |
-| SQL-cache                                         | Nástroje příkazového řádku systému SQL Server mezipaměti.                         |
-| [tajné klíče uživatelů](/aspnet/core/security/app-secrets) | Slouží ke správě tajných kódů uživatelů vývoje.                            |
+| sql-cache                                         | Nástroje příkazového řádku systému SQL Server mezipaměti.                         |
+| [user-secrets](/aspnet/core/security/app-secrets) | Slouží ke správě tajných kódů uživatelů vývoje.                            |
 | [Sledování](/aspnet/core/tutorials/dotnet-watch)      | Spustí se soubor sledování, které se spustí příkaz, když se změní soubory. |
 
 Další informace o jednotlivých nástrojích, zadejte `dotnet <tool-name> --help`.
@@ -289,7 +294,7 @@ Spustit aplikaci knihovny DLL, jako například `myapp.dll`:
 
 ## <a name="environment-variables"></a>Proměnné prostředí
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
 `DOTNET_PACKAGES`
 
@@ -311,7 +316,7 @@ Určuje, zda modul runtime .NET Core, sdílené architektuře nebo sady SDK jsou
 
 Zakáže podverze Posunutí vpřed, pokud nastavit `0`. Další informace najdete v tématu [posunout vpřed](../whats-new/dotnet-core-2-1.md#roll-forward).
 
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 
 `DOTNET_PACKAGES`
 
@@ -329,7 +334,7 @@ Určuje, zda data o využití nástroje .NET Core je shromažďovat a odesílat 
 
 Určuje, zda modul runtime .NET Core, sdílené architektuře nebo sady SDK jsou vyřešené z globálního místa. Pokud není nastavená, použije se výchozí `true`. Nastavte na `false` se vyřešit z globálního místa a mají izolované instalace .NET Core (hodnoty `0` nebo `false` jsou přijímány). Další informace o víceúrovňových vyhledávání najdete v tématu [víceúrovňovými SharedFX vyhledávání](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `DOTNET_PACKAGES`
 

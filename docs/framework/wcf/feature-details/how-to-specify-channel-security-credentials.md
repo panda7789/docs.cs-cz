@@ -2,12 +2,12 @@
 title: 'Postupy: Určení zabezpečovacích pověření kanálu'
 ms.date: 03/30/2017
 ms.assetid: f8e03f47-9c4f-4dd5-8f85-429e6d876119
-ms.openlocfilehash: b24178b9810d9ab4cde3190ab372a2c342823ca1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dac85a31a3194af3dff8a14461591d0f1a97399f
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54495198"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066192"
 ---
 # <a name="how-to-specify-channel-security-credentials"></a>Postupy: Určení zabezpečovacích pověření kanálu
 Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikace modelu COM pro volání služeb WCF. Většina služeb WCF vyžaduje klienta a zadejte přihlašovací údaje pro ověřování a autorizaci. Při volání služby WCF z klienta WCF, můžete zadat tyto přihlašovací údaje ve spravovaném kódu nebo konfiguračního souboru aplikace. Při volání služby WCF z aplikace COM, můžete použít <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní a zadat přihlašovací údaje. Toto téma popisuje různé způsoby, jak zadat přihlašovací údaje pomocí <xref:System.ServiceModel.ComIntegration.IChannelCredentials> rozhraní.  
@@ -23,9 +23,9 @@ Monikeru služby Windows Communication Foundation (WCF) umožňuje aplikace mode
   
 2.  Otevřete projekt zabezpečení zpráv.  
   
-3.  Přidat `[ServiceBehavior(Namespace=``http://Microsoft.ServiceModel.Samples``)]` k `ICalculator` definici rozhraní.  
+3.  Přidat `[ServiceBehavior(Namespace="http://Microsoft.ServiceModel.Samples")]` k `ICalculator` definici rozhraní.  
   
-4.  Přidat `bindingNamespace=``http://Microsoft.ServiceModel.Samples` ke značce koncového bodu v souboru App.config pro službu.  
+4.  Přidat `bindingNamespace="http://Microsoft.ServiceModel.Samples"` ke značce koncového bodu v souboru App.config pro službu.  
   
 5.  Ukázka zabezpečení zpráv sestavíte a spustíte Service.exe. Pomocí aplikace Internet Explorer a přejděte na identifikátor URI služby (http://localhost:8000/ServiceModelSamples/Service) zajistit, služba funguje.  
   

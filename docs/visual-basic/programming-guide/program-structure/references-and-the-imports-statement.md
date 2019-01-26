@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Imports statement [Visual Basic], referencing assemblies
 - assemblies [Visual Basic], references
 ms.assetid: 38149bd4-0a6f-4b31-b5f8-94a8c33f1600
-ms.openlocfilehash: bd08940ac04d0218f3d3936514a72c12449b34ff
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c50a25dc0802f275e5cd4e0068e1a68bf559abc1
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54505559"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55066035"
 ---
 # <a name="references-and-the-imports-statement-visual-basic"></a>Odkazy a příkaz Imports (Visual Basic)
 Můžete zpřístupnit externí objekty do vašeho projektu výběrem **přidat odkaz** příkaz **projektu** nabídky. Odkazy v jazyce Visual Basic se může odkazovat na sestavení, které jsou podobné, ale obsahují další informace o knihovnách typů.  
@@ -24,7 +24,7 @@ Můžete zpřístupnit externí objekty do vašeho projektu výběrem **přidat 
   
  `Imports` Příkaz má následující syntaxi:  
   
- `Imports` [`|``Aliasname` =] `Namespace`  
+ `Imports [Aliasname =] Namespace`  
   
  `Aliasname` odkazuje na krátký název, který můžete použít v kódu k odkazování na importované oboru názvů. `Namespace` je k dispozici prostřednictvím obor názvů odkazu na projekt, prostřednictvím definice v rámci projektu, nebo předchozí `Imports` příkazu.  
   

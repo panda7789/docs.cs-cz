@@ -5,12 +5,12 @@ helpviewer_keywords:
 - events [Visual Basic], about events
 - events [Visual Basic]
 ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
-ms.openlocfilehash: b69615a5cf05427a2bfde82af976cfafb41171b0
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
+ms.openlocfilehash: 08bd3b3c7ff5608193de0cdc1a869e0918c9e96e
+ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332870"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "55065788"
 ---
 # <a name="events-visual-basic"></a>Události (Visual Basic)
 Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou spouštěny v pořadí, ve skutečnosti, většina programů jsou řízené událostmi – to znamená toku provádění se určuje podle externí výskyty volá *události*.  
@@ -87,7 +87,7 @@ Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou
  [!code-vb[VbVbalrEvents#38](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_7.vb)]  
   
 ## <a name="handling-events-inherited-from-a-base-class"></a>Zpracování událostí zděděné ze základní třídy  
- *Odvozené třídy*– třídy, které dědí vlastnosti ze základní třídy – můžete zpracovávat události vyvolané službou své základní třídy pomocí `Handles``MyBase` příkazu.  
+ *Odvozené třídy*– třídy, které dědí vlastnosti ze základní třídy – můžete zpracovávat události vyvolané službou své základní třídy pomocí `Handles MyBase` příkazu.  
   
 #### <a name="to-handle-events-from-a-base-class"></a>Zpracování událostí ze základní třídy  
   
