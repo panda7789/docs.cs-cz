@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d1bd9a8c-0e29-40e3-bda8-d89176b72fb1
-ms.openlocfilehash: b8e082b98870a59e8fb6f42fa7bedb86c2832d33
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 6989204fac64fc18cae547e272f6d52004c3af69
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245623"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54728827"
 ---
 # <a name="updating-data-sources-with-dataadapters"></a>Aktualizace zdrojů dat pomocí adaptérů dat
 `Update` Metodu <xref:System.Data.Common.DataAdapter> je volána k vyřešení změn z <xref:System.Data.DataSet> zpět do zdroje dat. `Update` Metoda, třeba `Fill` metoda, přebírá jako argumenty instance `DataSet`a volitelně <xref:System.Data.DataTable> objektu nebo `DataTable` název. `DataSet` Instance je `DataSet` , která obsahuje změny, které byly provedeny, a `DataTable` identifikuje tabulky, ze kterých se mají obnovit změny. Pokud ne `DataTable` je zadán první `DataTable` v `DataSet` se používá.  
@@ -32,7 +32,7 @@ ms.locfileid: "53245623"
   
  Následující tabulka popisuje různé hodnoty `UpdateRowSource` výčet a způsob, jakým ovlivňují chování použít s příkaz `DataAdapter`.  
   
-|Výčet UpdatedRowSource|Popis|  
+|UpdatedRowSource Enumeration|Popis|  
 |----------------------------------|-----------------|  
 |<xref:System.Data.UpdateRowSource.Both>|Výstupní parametry a první řádek je sada výsledků dotazu vrácená může mapovat na změněný řádek v `DataSet`.|  
 |<xref:System.Data.UpdateRowSource.FirstReturnedRecord>|Změněný řádek v lze mapovat pouze data v prvním řádku je sada výsledků dotazu vrácená `DataSet`.|  
@@ -368,10 +368,10 @@ class Program {
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- [Stavy řádků a verze řádků](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)  
- [Metody AcceptChanges a RejectChanges](../../../../docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)  
- [Slučování obsahu datové sady](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md)  
- [Načítání hodnot identity nebo automatického číslování](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
+- [Stavy řádků a verze řádků](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)
+- [Metody AcceptChanges a RejectChanges](../../../../docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)
+- [Slučování obsahu datové sady](../../../../docs/framework/data/adonet/dataset-datatable-dataview/merging-dataset-contents.md)
+- [Načítání hodnot identity nebo automatického číslování](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

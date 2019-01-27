@@ -7,12 +7,12 @@ helpviewer_keywords:
 - fundamentals [WCF]
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
-ms.openlocfilehash: 9957b937dd59f82a5d1962fee33593d7a0c1b7c1
-ms.sourcegitcommit: d6e419f9d9cd7e8f21ebf5acde6d016c16332579
+ms.openlocfilehash: 66aa257c0d7f0e66e69d83ddeba48c33ea7a5ff5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53286556"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664009"
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Základní koncepty služby Windows Communication Foundation
 Tento dokument obsahuje podrobný pohled na architekturu Windows Communication Foundation (WCF). Jeho účelem je vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verzi klienta a služby WCF, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další programování WCF najdete v tématu [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
@@ -152,7 +152,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  WS-*  
  Sdružená hodnota stále početnější sadu Web Service (WS) specifikace, jako je WS-Security, WS-ReliableMessaging a tak dále, které jsou implementovány ve službě WCF.  
   
-## <a name="see-also"></a>Viz také  
- [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)  
- [Architektura Windows Communication Foundation](../../../docs/framework/wcf/architecture.md)  
- [Architektura zabezpečení](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)
+## <a name="see-also"></a>Viz také:
+- [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
+- [Architektura Windows Communication Foundation](../../../docs/framework/wcf/architecture.md)
+- [Architektura zabezpečení](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

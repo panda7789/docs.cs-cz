@@ -2,12 +2,12 @@
 title: Kolekce (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-ms.openlocfilehash: 4163a87c04e280ed19f53d1f715df49b65d02f6f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1f73081cacbc08fdaaca3cbc57dfe731eddab7ee
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54620601"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55084117"
 ---
 # <a name="collections-c"></a>Kolekce (C#)
 U mnoha aplikací chcete vytvářet a spravovat skupiny souvisejících objektů. Existují dva způsoby, jak seskupit objekty: vytvořením polí objektů a vytvořením kolekcí objektů.  
@@ -49,7 +49,7 @@ U mnoha aplikací chcete vytvářet a spravovat skupiny souvisejících objektů
 ## <a name="using-a-simple-collection"></a>Používání jednoduché kolekce  
  Příklady v této části použít obecný <xref:System.Collections.Generic.List%601> třídu, která umožňuje pracovat s výrazným seznamem objektů.  
   
- Následující příklad vytvoří seznam řetězců a provede iteraci řetězců pomocí nebo [foreach](../../../csharp/language-reference/keywords/foreach-in.md) příkazu.  
+ Následující příklad vytvoří seznam řetězců a provede iteraci řetězců pomocí [foreach](../../../csharp/language-reference/keywords/foreach-in.md) příkazu.  
   
 ```csharp  
 // Create a list of strings.  

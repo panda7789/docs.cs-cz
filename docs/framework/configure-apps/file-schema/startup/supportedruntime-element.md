@@ -9,14 +9,12 @@ helpviewer_keywords:
 - supportedRuntime element
 - <supportedRuntime> element
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 93084b34e5795ef35e8c433f50646e5da088adfd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3fdc3bae488fe47732fe91cbb2ac23aae3e33b81
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600515"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55084390"
 ---
 # <a name="ltsupportedruntimegt-element"></a>&lt;supportedRuntime&gt; – Element
 

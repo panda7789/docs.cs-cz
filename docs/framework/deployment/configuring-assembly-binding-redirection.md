@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d266cbd8-bf91-41d1-baf0-afbc481a741f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 37ff2b42ec338d31242a2391cea002fbe582c6dd
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 3d2552b71ac13ef6d352b229d2ad965d0f989c7d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54029577"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583574"
 ---
 # <a name="configuring-assembly-binding-redirection"></a>Konfigurace přesměrování vazby sestavení
 Ve výchozím nastavení aplikace použijte sadu sestavení rozhraní .NET Framework, která jsou součástí modulu runtime verze použitá pro kompilaci aplikace. Můžete použít **appliesTo** atribut na [ \<assemblyBinding >](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) prvku v konfiguračním souboru aplikace přesměrovat odkazy vazby sestavení na konkrétní verzi rozhraní .NET Sestavení rozhraní. Tento volitelný atribut používá k označení, která verze se vztahuje na číslo verze rozhraní .NET Framework. Pokud ne **appliesTo** atribut zadán,  **\<assemblyBinding >** element platí pro všechny verze rozhraní .NET Framework.  
@@ -34,7 +34,7 @@ Ve výchozím nastavení aplikace použijte sadu sestavení rozhraní .NET Frame
 </runtime>  
 ```  
   
- **\<AssemblyBinding >** prvky jsou citlivé na pořadí. Měli byste zadat informace o přesměrování vazby sestavení pro všechna sestavení rozhraní .NET Framework verze 1.0 nejprve, za nímž následuje informace o přesměrování vazby sestavení pro všechna sestavení rozhraní .NET Framework verze 1.1. Nakonec je třeba zadat informace o přesměrování vazby sestavení pro všechny přesměrování sestavení rozhraní .NET Framework, která nepoužívá **appliesTo** atribut a tedy platí pro všechny verze rozhraní .NET Framework. V případě konfliktu při přesměrování je použit první odpovídající příkaz přesměrování konfiguračního souboru.  
+  **\<AssemblyBinding >** prvky jsou citlivé na pořadí. Měli byste zadat informace o přesměrování vazby sestavení pro všechna sestavení rozhraní .NET Framework verze 1.0 nejprve, za nímž následuje informace o přesměrování vazby sestavení pro všechna sestavení rozhraní .NET Framework verze 1.1. Nakonec je třeba zadat informace o přesměrování vazby sestavení pro všechny přesměrování sestavení rozhraní .NET Framework, která nepoužívá **appliesTo** atribut a tedy platí pro všechny verze rozhraní .NET Framework. V případě konfliktu při přesměrování je použit první odpovídající příkaz přesměrování konfiguračního souboru.  
   
  Například pro přesměrování jednoho odkazu na sestavení rozhraní .NET Framework verze 1.0 a jiného odkazu na sestavení rozhraní .NET Framework verze 1.1, by použít vzor, uvedený v následujícím pseudokódu.  
   
@@ -57,5 +57,5 @@ Ve výchozím nastavení aplikace použijte sadu sestavení rozhraní .NET Frame
   
  Můžete určit, zda konfigurační soubor se používá tak, že určíte, zda dochází k přesměrování vazby sestavení. Použití [Assembly Binding Log Viewer (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) zobrazíte, která sestavení jsou načítány. Pokud chcete zobrazit všechny vazby sestavení, je nutné nastavit položku pro **ForceLog** v registru.  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 - [Postupy: Povolení a zákaz automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)

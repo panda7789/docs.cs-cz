@@ -9,67 +9,67 @@ helpviewer_keywords:
 - brushes [WPF], painting with gradients
 - painting with solid colors [WPF]
 ms.assetid: f5b182f3-c5c7-4cbe-9f2f-65e690d08255
-ms.openlocfilehash: cea4b2dbd17178a6943b0f4a84182e65232330fb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 72131780744e08d820f0aa05fdedd36b5458fa84
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33566779"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54733932"
 ---
 # <a name="painting-with-solid-colors-and-gradients-overview"></a>Přehled malování plnými barvami a přechody
-Toto téma popisuje postup použití <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.LinearGradientBrush>, a <xref:System.Windows.Media.RadialGradientBrush> objekty k malování plné barvy, lineární přechody a paprskového přechody.  
+Toto téma popisuje způsob použití <xref:System.Windows.Media.SolidColorBrush>, <xref:System.Windows.Media.LinearGradientBrush>, a <xref:System.Windows.Media.RadialGradientBrush> objekty pro malování plnými barvami, lineární přechody a radiálními přechody.  
   
 
   
 <a name="solidcolor"></a>   
-## <a name="painting-an-area-with-a-solid-color"></a>Vykreslování oblast plnou barvou  
- Některé z nejběžnějších operací v libovolné platformě je k vyplnění oblast s ucelený <xref:System.Windows.Media.Color>. K provedení této úlohy [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje <xref:System.Windows.Media.SolidColorBrush> třídy. Následující části popisují různé způsoby, jak Malování <xref:System.Windows.Media.SolidColorBrush>.  
+## <a name="painting-an-area-with-a-solid-color"></a>Malování oblasti plnou barvou  
+ Jedním z nejběžnějších operací v libovolné platformě je vykreslení oblasti ucelený <xref:System.Windows.Media.Color>. Tento úkol provést [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje <xref:System.Windows.Media.SolidColorBrush> třídy. Následující části popisují různé způsoby, jak Malování <xref:System.Windows.Media.SolidColorBrush>.  
   
 <a name="solidcolorinxaml"></a>   
-### <a name="using-a-solidcolorbrush-in-xaml"></a>Pomocí objektu SolidColorBrush v "XAML"  
- K vyplnění oblast plnou barvou v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijte jednu z následujících možností.  
+### <a name="using-a-solidcolorbrush-in-xaml"></a>Použití štětce SolidColorBrush v "XAML"  
+ K vykreslení oblasti plnou barvou v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijte jednu z následujících možností.  
   
--   Vyberte předdefinované plnobarevné štětce podle názvu.  Například můžete nastavit na tlačítko <xref:System.Windows.Controls.Control.Background%2A> "Red" nebo "Středně modrá".  Seznam dalších předdefinované plnobarevné štětce, najdete v části statické vlastnosti <xref:System.Windows.Media.Brushes> třídy. Následuje příklad.  
+-   Vyberte předdefinované barvy štětce podle názvu.  Například můžete nastavit tlačítka <xref:System.Windows.Controls.Control.Background%2A> "Red" nebo "Středně modrá".  Seznam dalších předdefinovaných plnobarevné štětce, najdete v části statické vlastnosti <xref:System.Windows.Media.Brushes> třídy. Následuje příklad.  
   
      [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushNamedColor1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushnamedcolor1xaml)]  
   
--   Vyberte barvu z palety 32-bit zadáním množství červená, zelená a modrá se zkombinovat do jednoho plnou barvou.  Formát pro zadání barvu z palety 32-bit je "*#rrggbb*", kde *rr* dva hexadecimální číslice určující relativní množství červené, *gg* Určuje množství zelené, a *bb* určuje množství blue.  Kromě toho lze zadat barvu jako "#*aarrggbb*" kde *aa* Určuje *alpha* hodnotu, nebo průhlednost barvy. Tento přístup umožňuje vytvořit barev, které jsou částečně transparentní.  V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button> nastavený na plně neprůhledné červený pomocí šestnáctkové soustavě.  
+-   Zvolte barvu z palety barev 32-bit zadáním množství červené, zelené a modré zkombinovat do jedné plnou barvu.  Formát pro zadávání barvu z palety 32 bitů je "*#rrggbb*", kde *rr* je dvoumístné šestnáctkové číslo určující relativní červené, *gg* Určuje dobu, zelenou a *bb* určuje množství modrá.  Kromě toho lze zadat barvu jako "#*aarrggbb*" kde *aa* Určuje *alfa* hodnotu nebo průhlednost barvy. Tento přístup umožňuje vytvářet barvy, které jsou částečně transparentní.  V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button> je nastavena na hodnotu red úplně neprůhledné pomocí šestnáctkové soustavě.  
   
      [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushHex1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushhex1xaml)]  
   
--   Použití syntaxe značek vlastnost k popisu <xref:System.Windows.Media.SolidColorBrush>. Tato syntaxe je podrobnější ale můžete určit další nastavení, jako štětce krytí. V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> vlastnosti dva <xref:System.Windows.Controls.Button> elementy jsou nastaveny na plně neprůhledné červený. Barva první štětce je popsán pomocí názvu předdefinované barvy. Barva druhý štětce je popsán pomocí šestnáctkové soustavě.  
+-   Syntaxe značek vlastnost použít k podrobnému popisu <xref:System.Windows.Media.SolidColorBrush>. Tato syntaxe je podrobnější ale umožňuje určit další nastavení, jako je například neprůhlednost štětce. V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> vlastnosti dvou <xref:System.Windows.Controls.Button> prvky jsou nastaveny na hodnotu red úplně neprůhledné. Barva štětce první je popsána pomocí názvu předdefinované barvy. Barva štětce druhý je popsána pomocí šestnáctkové soustavě.  
   
      [!code-xaml[BrushOverviewExamples_snip#SolidColorBrushPropertyTag1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/SolidColorBrushExample.xaml#solidcolorbrushpropertytag1xaml)]  
   
 <a name="solidcolorsincode"></a>   
-### <a name="painting-with-a-solidcolorbrush-in-code"></a>Malování s SolidColorBrush v kódu  
- Malovat oblast plnou barvou v kódu, použijte jednu z následujících možností.  
+### <a name="painting-with-a-solidcolorbrush-in-code"></a>Kreslení pomocí štětce SolidColorBrush v kódu  
+ K vykreslení oblasti plnou barvou v kódu, použijte jednu z následujících možností.  
   
--   Použijte jeden z předdefinovaných štětce poskytované <xref:System.Windows.Media.Brushes> třídy. V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button> je nastaven na <xref:System.Windows.Media.Brushes.Red%2A>.  
+-   Použijte jednu z předdefinovaných štětce poskytované <xref:System.Windows.Media.Brushes> třídy. V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button> je nastavena na <xref:System.Windows.Media.Brushes.Red%2A>.  
   
      [!code-csharp[BrushOverviewExamples_snip#SolidColorBrushPredefinedBrush1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushpredefinedbrush1csharp)]  
   
--   Vytvoření <xref:System.Windows.Media.SolidColorBrush> a nastavit jeho <xref:System.Windows.Media.SolidColorBrush.Color%2A> pomocí vlastnosti <xref:System.Windows.Media.Color> struktury. Můžete použít předdefinované barvu ze <xref:System.Windows.Media.Colors> třídy nebo můžete vytvořit <xref:System.Windows.Media.Color> pomocí statické <xref:System.Windows.Media.Color.FromArgb%2A> metoda.  
+-   Vytvoření <xref:System.Windows.Media.SolidColorBrush> a nastavte jeho <xref:System.Windows.Media.SolidColorBrush.Color%2A> pomocí vlastnosti <xref:System.Windows.Media.Color> struktury. Můžete použít předdefinované barvy z <xref:System.Windows.Media.Colors> třídy nebo můžete vytvořit <xref:System.Windows.Media.Color> pomocí statické <xref:System.Windows.Media.Color.FromArgb%2A> metody.  
   
-     Následující příklad ukazuje, jak nastavit <xref:System.Windows.Media.SolidColorBrush.Color%2A> vlastnost <xref:System.Windows.Media.SolidColorBrush> pomocí předdefinovaných barev.  
+     Následující příklad ukazuje, jak nastavit <xref:System.Windows.Media.SolidColorBrush.Color%2A> vlastnost <xref:System.Windows.Media.SolidColorBrush> použití předdefinované barvy.  
   
      [!code-csharp[BrushOverviewExamples_snip#SolidColorBrushPredefinedColor1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushpredefinedcolor1csharp)]  
   
- Statické <xref:System.Windows.Media.Color.FromArgb%2A> umožňuje určit hodnoty alfa, červené, zelené a modré barvy. Typické rozsah pro každou z těchto hodnot je 0 až 255. Například při použití hodnoty alfa 0 označuje, že je barvu, která je zcela transparentní, při hodnotu 255 značí, že je zcela neprůhledný barvu. Podobně red hodnota 0 značí, že barvu, která má žádné red v něm, zatímco hodnota 255 znamená, že barvu, která má maximální množství red možné.  V následujícím příkladu je popsána štětce barvu zadáním hodnoty alfa, červené, zelené a modré.  
+ Statické <xref:System.Windows.Media.Color.FromArgb%2A> vám umožní zadat hodnoty alfa, červené, zelené a modré barvy. Typický rozsah pro každou z těchto hodnot je 0-255. Například alfa hodnotu 0 označuje, že je barvu zcela transparentní, zatímco hodnota 255 znamená, že barva se stane zcela neprůhledný. Obdobně red hodnota 0 znamená, že barvu nemá žádné red, zatímco hodnota 255 znamená, že barvu má maximální množství red je to možné.  V následujícím příkladu je popsána barvy štětce zadáním hodnoty alfa, červené, zelené a modré.  
   
  [!code-csharp[BrushOverviewExamples_snip#SolidColorBrushfromArgbExample1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/SolidColorBrushExample.cs#solidcolorbrushfromargbexample1csharp)]  
   
- Další způsoby, jak zadat barvu, najdete v článku <xref:System.Windows.Media.Color> referenční téma.  
+ Další způsoby, jak zadat barvu, najdete v článku <xref:System.Windows.Media.Color> téma referenčních informací.  
   
 <a name="gradient"></a>   
-## <a name="painting-an-area-with-a-gradient"></a>Vykreslování oblast s přechodem  
- Štětce přechodu vybarví oblast s více barev, které slučují do sebe navzájem podél osy. Můžete je používat vytvořit možnost vytvořit dojem světlým a shadow, udělíte vaše ovládací prvky trojrozměrné chování. Můžete je také použít k simulaci skla, chrome, horních a jiné technologie smooth plochy.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nabízí dva typy štětce přechodu: <xref:System.Windows.Media.LinearGradientBrush> a <xref:System.Windows.Media.RadialGradientBrush>.  
+## <a name="painting-an-area-with-a-gradient"></a>Vykreslování v oblasti gradientu  
+ Štětec přechodu jsou vykreslovány oblast, která má více barvy, které se navzájem prolínají společně osu. Můžete využít k vytvoření dojmy světla a stínové, poskytuje trojrozměrný vzhled ovládacích prvků. Můžete také využít k simulaci skla, chrome, vody a jiné technologie smooth plochy.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje dva typy štětce přechodu: <xref:System.Windows.Media.LinearGradientBrush> a <xref:System.Windows.Media.RadialGradientBrush>.  
   
 <a name="lineargradientbrush"></a>   
 ## <a name="linear-gradients"></a>Lineární přechody  
- A <xref:System.Windows.Media.LinearGradientBrush> vybarví oblast s přechodem definována na řádek, *přechodu osy*.  Zadejte barvy má barevný přechod a jejich umístění podél osy přechodu pomocí <xref:System.Windows.Media.GradientStop> objekty.  Může také upravit ose přechodu, který umožňuje vytvořit vodorovně a svisle přechody a obrátit směr přechodu. Osa přechodu je popsaná v další části. Ve výchozím nastavení se vytvoří diagonálních přechodu.  
+ A <xref:System.Windows.Media.LinearGradientBrush> jsou vykreslovány oblasti definované podél řádku, přechodem *Osa přechodu*.  Zadat barvy přechodu a jejich umístění podél osy přechodu použitím <xref:System.Windows.Media.GradientStop> objekty.  Můžete také upravit Osa přechodu, který vám umožní vytvořit vodorovné a svislé barevné přechody a obrátit směr stupnice. Osa přechodu je popsané v další části. Ve výchozím nastavení je vytvořen diagonální přechod.  
   
- Následující příklad ukazuje kód, který vytvoří lineárního přechodu s čtyři barvy.  
+ Následující příklad ukazuje kód, který vytvoří čtyři barvy lineárního přechodu.  
   
  [!code-xaml[GradientBrushExamples_snip#DiagonalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#diagonalgradient1xaml)]  
   
@@ -77,102 +77,102 @@ Toto téma popisuje postup použití <xref:System.Windows.Media.SolidColorBrush>
   
  Tento kód vytvoří následující přechodu:  
   
- ![Diagonálních lineárního přechodu](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-diaglgradient-nolabel.jpg "wcpsdk_graphicsmm_diaglgradient_nolabel")  
+ ![Úhlopříčný lineárního přechodu](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-diaglgradient-nolabel.jpg "wcpsdk_graphicsmm_diaglgradient_nolabel")  
   
- **Poznámka:** přechodu příklady v tomto tématu použijte výchozí souřadnicový systém pro nastavení body počáteční a koncové body. Systém souřadnic výchozí je relativní vzhledem ke ohraničující pole: 0 označuje 0 procent rámečku a 1 označuje 100 procent ohraničujícího rámečku. Tento systém souřadnic můžete změnit nastavením <xref:System.Windows.Media.GradientBrush.MappingMode%2A> vlastnost na hodnotu <xref:System.Windows.Media.BrushMappingMode.Absolute>. Absolutní souřadnicový systém není relativně k ohraničující pole. Hodnoty se interpretují přímo v místním prostoru.  
+ **Poznámka:** Přechodu příklady v tomto tématu použijte výchozí souřadnicový systém pro nastavení bodů počáteční a koncové body. Systém souřadnic výchozí je relativní vzhledem k ohraničujícího rámečku: Hodnota 0 označuje procento 0 ohraničující rámeček a 1 značí 100 procent ohraničujícího rámečku. Tento systém souřadnic můžete změnit nastavením <xref:System.Windows.Media.GradientBrush.MappingMode%2A> k hodnotě <xref:System.Windows.Media.BrushMappingMode.Absolute>. Absolutní souřadnicový systém není vzhledem k ohraničujícího rámečku. Hodnoty jsou interpretovány přímo v místním prostoru.  
   
- <xref:System.Windows.Media.GradientStop> Je základním stavebním blokem štětce přechodu.  Určuje Přechodové zarážky <xref:System.Windows.Media.GradientStop.Color%2A> v <xref:System.Windows.Media.GradientStop.Offset%2A> přechodu osy.  
+ <xref:System.Windows.Media.GradientStop> Je základním stavebním blokem štětce přechodu.  Určuje Přechodové zarážky <xref:System.Windows.Media.GradientStop.Color%2A> na <xref:System.Windows.Media.GradientStop.Offset%2A> společně osu přechodu.  
   
--   Přechodové zarážky <xref:System.Windows.Media.GradientStop.Color%2A> vlastnost určuje barvu Přechodové zarážky. Barva může nastavit pomocí předdefinovaných barvu (poskytované <xref:System.Windows.Media.Colors> třída) nebo zadáním hodnot ScRGB nebo ARGB. V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete také používat šestnáctkové soustavě k popisu barvy. Další informace najdete v tématu <xref:System.Windows.Media.Color> struktura.  
+-   Ukončení přechodu <xref:System.Windows.Media.GradientStop.Color%2A> vlastnost určuje barvy ukončení přechodu. Může nastavit barvu pomocí předdefinované barvy (poskytované <xref:System.Windows.Media.Colors> třídy), nebo zadáním ScRGB nebo ARGB hodnot. V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], šestnáctkové soustavě můžete také použít k popisu barvu. Další informace najdete v tématu <xref:System.Windows.Media.Color> struktury.  
   
--   Přechodové zarážky <xref:System.Windows.Media.GradientStop.Offset%2A> vlastnost určuje pozici Přechodové zarážky barvy na ose přechodu. Posun je <xref:System.Double> , rozsah od 0 do 1. Čím bližší Přechodové zarážky posunutí hodnota je 0, že Čím bližší je barvu spuštění barevného přechodu. Čím bližší má barevný přechod posunutí hodnota je 1, že Čím bližší je barva barevného přechodu na konec.  
+-   Ukončení přechodu <xref:System.Windows.Media.GradientStop.Offset%2A> vlastnost určuje pozici barvy ukončení přechodu na ose přechodu. Posun je <xref:System.Double> , od 0 do 1. Užší hodnotu posunu ukončení přechodu je 0, čím blíž je barva na začátek přechodu. Užší hodnotu posunu přechodu je 1, čím blíž je barva na konci přechodu.  
   
- Barva každý bod mezi zarážkami je lineárně interpolované jako kombinace barvu uvedené ve dvou ohraničujícího Přechodové zarážky. Na následujícím obrázku jsou vysvětlené Přechodové zarážky v předchozím příkladu. Kroužky označte pozici přechodu zastaví a na přerušovanou čáru ukazuje osy přechodu.  
+ Barva jednotlivých bodů mezi Přechodové zarážky se lineárně interpolované jako kombinace barvu uvedené ve dvou funkcí ohraničování Přechodové zarážky. Následujícím obrázku jsou zvýrazněny ukončení přechodu v předchozím příkladu. Kruhy označení umístění Přechodové zarážky a přerušovaná čára ukazuje Osa přechodu.  
   
- ![Přechodové zarážky v lineárního přechodu](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-4gradientstops.png "wcpsdk_graphicsmm_4gradientstops")  
+ ![Přechodové zarážky v lineárním přechodem](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-4gradientstops.png "wcpsdk_graphicsmm_4gradientstops")  
   
- Určuje barvu žlutý v posunem první Přechodové zarážky `0.0`.  Druhý Přechodové zarážky určuje v posunem červenou barvu `0.25`.  Body mezi těmito dvěma zastaví postupně změnit z žlutý na červený jako přesunout zleva doprava přechodu osy.  Třetí Přechodové zarážky Určuje barvu blue v posunem `0.75`.  Body mezi ukončení přechodu druhý a třetí postupně z červené na modrou změnit. Čtvrtý Přechodové zarážky určuje v posunem zelenou barvu vápna `1.0`. Body mezi třetí a čtvrtý Přechodové zarážky postupně změnit z modré na vápna zeleně.  
+ První přechodové určuje barvy žlutý na posun `0.0`.  Určuje druhý ukončení přechodu na posun červenou barvu `0.25`.  Body mezi těmito dvěma zastaví postupně měnit z žlutá na červenou při přesunu zleva doprava na ose přechodu.  Určuje třetí ukončení přechodu na posun modrou barvu `0.75`.  Body mezi druhý a třetí přechodové z red blue postupně měnit. Čtvrtý přechodové Určuje barvu Limetkově zeleného na posun `1.0`. Body mezi třetí a čtvrtá přechodové z modré Limetkově zelená postupně měnit.  
   
 <a name="gradientaxis"></a>   
 ### <a name="the-gradient-axis"></a>Osa přechodu  
- Jak jsme uvedli jsou lineárního přechodu štětce přechodu zastaví umístěné společně řádek přechodu osy. Můžete změnit orientaci a velikost řádku pomocí štětce <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> a <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> vlastnosti. Manipulací stopy <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> a <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>, můžete vytvořit vodorovné a přechody vertikální, změnit směr přechodu, zúžit přechodu šíření a další.  
+ Jak už jsme zmínili Přechodové zarážky lineárního přechodu štětce umístěné podél řádku Osa přechodu. Můžete změnit orientaci a velikost řádku pomocí stopy <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> a <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> vlastnosti. Manipulací stopy <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> a <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>, můžete vytvořit vodorovné a svislé přechody obrátit směr stupnice, zúžit gradientu rozšíření a další.  
   
- Ve výchozím nastavení, lineární štětce přechodu na <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> a <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> jsou relativní vzhledem k oblasti se vykresluje. Bod (0,0) představuje oblasti se malovaného a (1,1) představuje pravém dolním rohu oblasti se vykresluje levém horním rohu. Výchozí <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> z <xref:System.Windows.Media.LinearGradientBrush> je (0,0) a jeho výchozí <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> je (1,1), která vytvoří diagonálních přechodu od levého horního rohu a rozšíření na pravém dolním rohu oblasti se vykresluje. Následující obrázek ukazuje na přechodu ose lineární štětce přechodu na výchozích <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> a <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>.  
+ Ve výchozím nastavení, štětec lineárního přechodu od <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> a <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> jsou relativní k oblasti se překreslit. Levém horním rohu oblasti se malovaného a (1,1) představuje pravém dolním rohu oblasti se překreslit představuje bod (0; 0). Výchozí <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> z <xref:System.Windows.Media.LinearGradientBrush> je (0; 0) a jeho výchozí <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A> (1,1), se vytváří diagonální přechod od levého horního rohu a rozšíření do pravého dolního rohu oblasti se překreslit. Následující obrázek znázorňuje přechodu osy štětec lineárního přechodu s výchozí <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> a <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>.  
   
- ![Osa přechodu pro diagonálních lineárního přechodu](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-diagonalgradientaxis.png "wcpsdk_graphicsmm_diagonalgradientaxis")  
+ ![Osa přechodu pro Úhlopříčný lineární přechod](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-diagonalgradientaxis.png "wcpsdk_graphicsmm_diagonalgradientaxis")  
   
- Následující příklad ukazuje postup vytvoření vodorovných přechodu zadáním stopy <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> a <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>. Všimněte si, že Přechodové zarážky jsou stejné jako v předchozích příkladech; jednoduše změnou <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> a <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>, má barevný přechod byl změněn z diagonálních na vodorovné.  
+ Následující příklad ukazuje postup vytvoření vodorovnou přechodu zadáním stopy <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> a <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>. Všimněte si, že Přechodové zarážky jsou stejné jako v předchozích příkladech; jednoduše změnou <xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A> a <xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>, přechodu se změnil z diagonálních na vodorovné.  
   
  [!code-xaml[GradientBrushExamples_snip#HorizontalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#horizontalgradient1xaml)]  
   
  [!code-csharp[GradientBrushExamples_snip#HorizontalGradient1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/LinearGradientBrushExample.cs#horizontalgradient1csharp)]  
   
- Následující obrázek znázorňuje přechodu, který je vytvořen. Osa přechodu je označené jako přerušovaná čára a Přechodové zarážky jsou označené kroužky.  
+ Následující obrázek znázorňuje přechodu, který je vytvořen. Osa přechodu je označené na přerušovanou čáru a Přechodové zarážky jsou označené kruzích.  
   
- ![Osa přechodu pro vodorovné lineárního přechodu](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-horizontalgradient.jpg "wcpsdk_graphicsmm_horizontalgradient")  
+ ![Osa přechodu pro vodorovné lineární přechod](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-horizontalgradient.jpg "wcpsdk_graphicsmm_horizontalgradient")  
   
- Další příklad ukazuje, jak vytvořit svislý přechod.  
+ Následující příklad ukazuje, jak vytvořit svislý přechod.  
   
  [!code-xaml[GradientBrushExamples_snip#VerticalGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/LinearGradientBrushExample.xaml#verticalgradient1xaml)]  
   
  [!code-csharp[GradientBrushExamples_snip#VerticalGradient1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/LinearGradientBrushExample.cs#verticalgradient1csharp)]  
   
- Následující obrázek znázorňuje přechodu, který je vytvořen. Osa přechodu je označené jako přerušovaná čára a Přechodové zarážky jsou označené kroužky.  
+ Následující obrázek znázorňuje přechodu, který je vytvořen. Osa přechodu je označené na přerušovanou čáru a Přechodové zarážky jsou označené kruzích.  
   
  ![Osa přechodu pro svislý přechod](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-verticalgradient.jpg "wcpsdk_graphicsmm_verticalgradient")  
   
 <a name="radialgradients"></a>   
-## <a name="radial-gradients"></a>Kruhové přechody  
- Podobně jako <xref:System.Windows.Media.LinearGradientBrush>, <xref:System.Windows.Media.RadialGradientBrush> vybarví oblast s barev, které mísí podél osy. V předchozích příkladech vám ukázal, jak lineárního přechodu štětce osy je přímka. Paprskového přechodu štětce osy je definována kruh; jeho barvy "radiate" i z původu.  
+## <a name="radial-gradients"></a>Radiálními přechody  
+ Podobně jako <xref:System.Windows.Media.LinearGradientBrush>, <xref:System.Windows.Media.RadialGradientBrush> jsou vykreslovány v oblasti barev, které mísí společně osu. V předchozích příkladech jsme si ukázali, jak se rovné čáry osy lineárního přechodu štětce. Paprskového přechodu štětce osy je definován kruh; jeho barvy "radiate" ven z původu.  
   
- V následujícím příkladu se používá paprskového štětce přechodu k vyplnění vnitřku obdélníku.  
+ V následujícím příkladu se používá štětec paprskového přechodu k vyplnění vnitřku obdélníku.  
   
  [!code-xaml[GradientBrushExamples_snip#RadialGradient1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/RadialGradientBrushExample.xaml#radialgradient1xaml)]  
   
  [!code-csharp[GradientBrushExamples_snip#RadialGradient1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/RadialGradientBrushExample.cs#radialgradient1csharp)]  
   
- Následující obrázek znázorňuje přechodu vytvořili v předchozím příkladu. Zdůraznily štětce přechodu zastaví. Všimněte si, že i když výsledky se liší, Přechodové zarážky v tomto příkladu jsou shodné s Přechodové zarážky v předchozích příkladech lineární štětce přechodu.  
+ Následující obrázek znázorňuje přechodu vytvořili v předchozím příkladu. Zdůraznily stopy Přechodové zarážky. Všimněte si, že i když jsou různé výsledky, ukončení přechodu v tomto příkladu jsou stejné jako ukončení přechodu v předchozích příkladech štětec lineárního přechodu.  
   
- ![Přechodové zarážky v kruhového přechodu](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-4gradientstops-rg.png "wcpsdk_graphicsmm_4gradientstops_rg")  
+ ![Přechodové zarážky v paprskového přechodu](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-4gradientstops-rg.png "wcpsdk_graphicsmm_4gradientstops_rg")  
   
- <xref:System.Windows.Media.RadialGradientBrush.GradientOrigin%2A> Určuje počáteční bod paprskového přechodu štětce přechodu osy. Osa přechodu vycházející ze přechodu počátek k přechodu kruhu. Je definované štětce přechodu kruh jeho <xref:System.Windows.Media.RadialGradientBrush.Center%2A>, <xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A>, a <xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A> vlastnosti.  
+ <xref:System.Windows.Media.RadialGradientBrush.GradientOrigin%2A> Určuje počáteční bod osa paprskového přechodu štětce přechodu. Osa přechodu vychází ze přechodu počátek přechodu kruh. Je definován štětce přechodu kruh jeho <xref:System.Windows.Media.RadialGradientBrush.Center%2A>, <xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A>, a <xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A> vlastnosti.  
   
- Následující obrázek znázorňuje několik paprskového přechody jiné <xref:System.Windows.Media.RadialGradientBrush.GradientOrigin%2A>, <xref:System.Windows.Media.RadialGradientBrush.Center%2A>, <xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A>, a <xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A> nastavení.  
+ Následující obrázek znázorňuje několik radiálními přechody s různými <xref:System.Windows.Media.RadialGradientBrush.GradientOrigin%2A>, <xref:System.Windows.Media.RadialGradientBrush.Center%2A>, <xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A>, a <xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A> nastavení.  
   
- ![RadialGradientBrush – nastavení](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-originscirclesandradii.gif "wcpsdk_graphicsmm_originscirclesandradii")  
-RadialGradientBrushes s jiným nastavením GradientOrigin, Center, RadiusX a RadiusY.  
+ ![Nastavení RadialGradientBrush –](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-originscirclesandradii.gif "wcpsdk_graphicsmm_originscirclesandradii")  
+RadialGradientBrushes s různými nastaveními GradientOrigin, System Center, RadiusX a RadiusY.  
   
 <a name="specifyinggradientcolors"></a>   
-## <a name="specifying-transparent-or-partially-transparent-gradient-stops"></a>Určení průhledných nebo částečně transparentní Přechodové zarážky  
- Protože Přechodové zarážky neposkytují ve vlastnosti krytí, je nutné zadat alfa kanálu pomocí barev [!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)] šestnáctkové soustavě v kódu nebo použití <xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=nameWithType> metodu pro vytvoření přechodu zastaví, které jsou transparentní nebo částečně transparentní. Následující části popisují postup vytvoření částečně transparentní Přechodové zarážky v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kód.  
+## <a name="specifying-transparent-or-partially-transparent-gradient-stops"></a>Určení průhledného nebo částečně Přechodové zarážky  
+ Protože Přechodové zarážky se neposkytuje na vlastnost krytí, je nutné zadat alfa kanál barvy s použitím [!INCLUDE[TLA#tla_argb](../../../../includes/tlasharptla-argb-md.md)] šestnáctkové soustavě v kódu nebo použití <xref:System.Windows.Media.Color.FromScRgb%2A?displayProperty=nameWithType> metodu pro vytvoření Přechodové zarážky, které jsou průhledného nebo částečně. Následující části popisují, jak vytvořit částečně transparentní Přechodové zarážky v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kódu.  
   
 <a name="argbsyntax"></a>   
-### <a name="specifying-color-opacity-in-xaml"></a>Určení krytí barev v "XAML"  
- V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijete [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě k určení krytí jednotlivých barev. [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě používá následující syntaxe:  
+### <a name="specifying-color-opacity-in-xaml"></a>Určení barvy krytí v "XAML"  
+ V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], použijete [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě k určení krytí jednotlivé barvy. [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] šestnáctkové soustavě používá následující syntaxi:  
   
  `#` **aa** *rrggbb*  
   
- *Aa* v předchozí řádek představuje letopočty šestnáctkové hodnoty slouží k zadání krytí barvy. *Rr*, *gg*, a *bb* každý představují dvoumístné šestnáctkové hodnoty používaný k zadání množství červená, zelená a modrá v barvu. Každý šestnáctková číslice může mít hodnotu od 0 – 9 nebo A-F. 0 je nejmenší hodnota a F je největší. Při použití hodnoty alfa 00 určuje barvu, která je zcela transparentní, zatímco při použití hodnoty alfa FF vytvoří barvu, která je plně neprůhledný.  V následujícím příkladu, hexadecimální [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] zápis slouží k určení dvě barvy. První je částečně transparentní (má při použití hodnoty alfa x20), zatímco druhý je zcela neprůhledný.  
+ *Aa* v předchozí řádek představuje dvěma číslicemi šestnáctková hodnota používá k určení krytí barvu. *Rr*, *gg*, a *bb* každý představují dvě číslice šestnáctková hodnota používá k určení množství červené, zelené a modré v barvu. Každý šestnáctková číslice může mít hodnotu od 0 – 9 nebo A – F. nejmenší hodnota je 0 a F je nejvyšší. Alfa hodnotu 00 určuje barvu, která je zcela transparentní, zatímco alfa hodnotu FF vytvoří barvu, která je úplně neprůhledná.  V následujícím příkladu, hexadecimální [!INCLUDE[TLA2#tla_argb](../../../../includes/tla2sharptla-argb-md.md)] zápisu se používá k určení dvěma barvami. První je částečně transparentní (má hodnotu alfa x20), zatímco druhá je úplně neprůhledná.  
   
  [!code-xaml[GradientBrushExamples_snip#TransparentGradientStopExample1XAML](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GradientBrushExamples_snip/XAML/GradientStopsExample.xaml#transparentgradientstopexample1xaml)]  
   
 <a name="fromscrgbsyntax"></a>   
-### <a name="specifying-color-opacity-in-code"></a>Určení krytí barev v kódu  
- Při použití kódu statických <xref:System.Windows.Media.Color.FromArgb%2A> metoda umožňuje určit hodnotu alfa při vytváření barvy. Metoda přebírá čtyři parametry typu <xref:System.Byte>. První parametr určuje alfa kanálu barvy; ostatní tři parametry zadejte hodnoty červené, zelené a modré barvy. Každá hodnota by měla být mezi 0 až 255. Při použití hodnoty alfa 0 určuje, že je barvu zcela transparentní, při hodnotu alfa 255 Určuje, že je zcela neprůhledný barvu. V následujícím příkladu <xref:System.Windows.Media.Color.FromArgb%2A> metoda se používá k vytvoření dvě barvy. První barvu je částečně transparentní (obsahuje alfa hodnotu 32), zatímco druhý je zcela neprůhledné.  
+### <a name="specifying-color-opacity-in-code"></a>Určení krytí barvy v kódu  
+ Při použití kódu, statické <xref:System.Windows.Media.Color.FromArgb%2A> metoda vám umožňuje určit hodnotu alfa při vytváření barvu. Tato metoda přebírá čtyři parametry typu <xref:System.Byte>. První parametr určuje alfa kanál barvu. tři parametry zadejte červené, zelené a modré hodnoty barvy. Každá hodnota by měla být mezi 0 až 255. Alfa hodnota 0 určuje, zda barva zcela transparentní, zatímco alfa hodnotu 255 Určuje, že barva se stane zcela neprůhledný. V následujícím příkladu <xref:System.Windows.Media.Color.FromArgb%2A> metoda se používá k vytvoření dvou barev. První barva je částečně transparentní (má alfa hodnotu 32), zatímco druhá je úplně neprůhledná.  
   
  [!code-csharp[GradientBrushExamples_snip#TransparentGradientStopExample1CSharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GradientBrushExamples_snip/CSharp/GradientStopsExample.cs#transparentgradientstopexample1csharp)]  
   
- Alternativně můžete použít <xref:System.Windows.Media.Color.FromScRgb%2A> metoda, která umožňuje použít k vytvoření barvu ScRGB hodnoty.  
+ Alternativně můžete použít <xref:System.Windows.Media.Color.FromScRgb%2A> metodu, která vám umožní použít ScRGB hodnoty pro vytvoření barvy.  
   
 <a name="otherbrushes"></a>   
-## <a name="painting-with-images-drawings-visuals-and-patterns"></a>Malování s obrázky, kresby, Vizuály a vzory  
- <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, a <xref:System.Windows.Media.VisualBrush> třídy umožňují malovat oblast s obrázky, kresby nebo vizuální prvky. Informace o Malování s obrázky, kresby a vzory najdete v tématu [vykreslování s obrázky, kresby a vizuální prvky](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
+## <a name="painting-with-images-drawings-visuals-and-patterns"></a>Malování pomocí obrázků, kreseb, Vizuály a vzory  
+ <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, a <xref:System.Windows.Media.VisualBrush> třídy umožňují vykreslení oblasti obrázků, kreseb nebo vizuály. Informace o Malování pomocí obrázků, kreseb a vzory najdete v tématu [Malování pomocí obrázků, kreseb a vizuálních](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Brush>  
- <xref:System.Windows.Media.SolidColorBrush>  
- <xref:System.Windows.Media.LinearGradientBrush>  
- <xref:System.Windows.Media.RadialGradientBrush>  
- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
- [Přehled transformace štětce](../../../../docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)  
- [Vrstvy vykreslování grafiky](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Brush>
+- <xref:System.Windows.Media.SolidColorBrush>
+- <xref:System.Windows.Media.LinearGradientBrush>
+- <xref:System.Windows.Media.RadialGradientBrush>
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+- [Přehled transformace štětce](../../../../docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)
+- [Vrstvy vykreslování grafiky](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)

@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4718dadddb2ad88ece05312b2f2b7232271d5b0e
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: b7ccee788a00e56da16d1e78597815553d3c6212
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221385"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54678262"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kvantifikátory v regulárních výrazech
 Kvantifikátory zadejte, kolik instancí znak, skupina nebo třída znaků musí být k dispozici ve vstupu pro shodu, která se má najít.  V následující tabulce jsou uvedeny kvantifikátory podporované rozhraním .NET.  
@@ -31,8 +31,8 @@ Kvantifikátory zadejte, kolik instancí znak, skupina nebo třída znaků musí
 |`*`|`*?`|Porovná nulakrát nebo vícekrát.|  
 |`+`|`+?`|Shodovat s jednou nebo vícekrát.|  
 |`?`|`??`|Porovná žádný nebo jeden čas.|  
-|`{` *N* `}`|`{` *N* `}?`|Přesně odpovídat *n* časy.|  
-|`{` *N* `,}`|`{` *N* `,}?`|Odpovídá alespoň *n* časy.|  
+|`{` *n* `}`|`{` *n* `}?`|Přesně odpovídat *n* časy.|  
+|`{` *n* `,}`|`{` *n* `,}?`|Odpovídá alespoň *n* časy.|  
 |`{` *n* `,` *m* `}`|`{` *n* `,` *m* `}?`|Porovná *n* k *m* časy.|  
   
  Množství `n` a `m` jsou konstanty typu integer. Obvykle jsou greedy; kvantifikátory modul regulárních výrazů odpovídá počtu výskytů určité vzory nejvíce způsobují. Přidávání `?` znak kvantifikátor díky opožděné; způsobí, že modul regulárních výrazů odpovídá co nejméně opakování nejvíce. Úplný popis rozdíl mezi metodou greedy a opožděných kvantifikátory, najdete v části [vlastnost Greedy a líné kvantifikátory](#Greedy) dále v tomto tématu.  
@@ -273,5 +273,5 @@ Kvantifikátory zadejte, kolik instancí znak, skupina nebo třída znaků musí
   
 ## <a name="see-also"></a>Viz také:
 
-- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
+- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
 - [Zpětné navracení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)

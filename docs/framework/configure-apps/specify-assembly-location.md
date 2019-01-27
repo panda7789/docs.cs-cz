@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 8fedec60b6152e77d6f99bf55cf11ec909fa8f80
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
-ms.translationtype: MT
+ms.openlocfilehash: f15111fbd65896cc42ab3d1462dc567133a7b4ea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48848046"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54566343"
 ---
 # <a name="specifying-an-assembly39s-location"></a>Určení sestavení&#39;s umístění
 Existují dva způsoby, jak zadat umístění sestavení:  
@@ -45,7 +45,7 @@ Existují dva způsoby, jak zadat umístění sestavení:
 </configuration>  
 ```  
   
- **Verze** atribut je vyžadován pro všechna sestavení se silným názvem, ale musí být vynechána pro sestavení, které se silným názvem. **\<CodeBase >** element vyžaduje **href** atribut. Nelze určit verzi rozsahů v  **\<codeBase >** elementu.  
+ **Verze** atribut je vyžadován pro všechna sestavení se silným názvem, ale musí být vynechána pro sestavení, které se silným názvem.  **\<CodeBase >** element vyžaduje **href** atribut. Nelze určit verzi rozsahů v  **\<codeBase >** elementu.  
   
 > [!NOTE]
 >  Pokud pro sestavení, který není silným názvem jsou zadání pomocného parametru základní kód, pomocný parametr musí ukazovat na základ cesty aplikace nebo o podadresář základního adresáře aplikace.  
@@ -67,8 +67,8 @@ Existují dva způsoby, jak zadat umístění sestavení:
   
  **PrivatePath** atribut obsahuje adresáře, které by měl modul runtime vyhledat sestavení. Pokud je umístěna na C:\Program Files\MyApp aplikace, modul runtime vyhledá sestavení, která v C:\Program Files\MyApp\Bin C:\Program Files\MyApp\Bin2\Subbin a C:\Program Files\MyApp\Bin3 neurčí základ kódu. Adresáře určené v **privatePath** musí být základního adresáře aplikace.  
   
-## <a name="see-also"></a>Viz také  
- [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
- [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)  
- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- [Konfigurace aplikací .NET Framework](https://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)
+## <a name="see-also"></a>Viz také:
+- [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+- [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)
+- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Konfigurace aplikací .NET Framework](https://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)

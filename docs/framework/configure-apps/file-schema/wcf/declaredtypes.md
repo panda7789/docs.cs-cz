@@ -8,12 +8,12 @@ helpviewer_keywords:
 - KnownTypes
 - <declaredTypes> element
 ms.assetid: f35184e4-9d9e-4d37-8fb4-d5b58220eb3e
-ms.openlocfilehash: 0fadb13d4fcfbe87eb2c08fc35323c726c0ac2a6
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 405a6f21af1cb3508b7b88625101ed75f198bbaa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146417"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54682664"
 ---
 # <a name="ltdeclaredtypesgt"></a>&lt;declaredTypes&gt;
 Obsahuje známé typy, které <xref:System.Runtime.Serialization.DataContractSerializer> používá při deserializaci.  
@@ -21,8 +21,8 @@ Obsahuje známé typy, které <xref:System.Runtime.Serialization.DataContractSer
  Další informace o kontraktech dat a známých typech najdete v tématu [známé typy kontraktů dat.](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
   
  system.runtime.serialization  
-\<dataContractSerializer >  
-\<declaredTypes >  
+\<dataContractSerializer>  
+\<declaredTypes>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -58,7 +58,7 @@ Obsahuje známé typy, které <xref:System.Runtime.Serialization.DataContractSer
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-of-system-runtime-serialization.md)|Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>.|  
+|[\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-of-system-runtime-serialization.md)|Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>.|  
   
 ## <a name="remarks"></a>Poznámky  
  Další informace o známých typů najdete v tématu [známé typy kontraktů dat.](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) a <xref:System.Runtime.Serialization.DataContractSerializer>.  
@@ -88,8 +88,8 @@ Obsahuje známé typy, které <xref:System.Runtime.Serialization.DataContractSer
 </configuration>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.DataContractSerializer>  
- [\<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)  
- [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
- [\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.DataContractSerializer>
+- [\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)
+- [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+- [\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)

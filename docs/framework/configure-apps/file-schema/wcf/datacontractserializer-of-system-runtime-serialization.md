@@ -2,18 +2,18 @@
 title: '&lt;dataContractSerializer&gt; – &lt;system.runtime.serialization&gt;'
 ms.date: 03/30/2017
 ms.assetid: d9b3d625-be3f-4768-8e0d-1b7e6929f6a8
-ms.openlocfilehash: f31dd8479f3bd6b36915b3ff00ff53babe3c0248
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 3a959c9a4e2b1cbbbb6a52a1438261037704d244
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150172"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54557965"
 ---
 # <a name="ltdatacontractserializergt-of-ltsystemruntimeserializationgt"></a>&lt;dataContractSerializer&gt; – &lt;system.runtime.serialization&gt;
 Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
- \<System.Runtime.Serialization >  
-\<dataContractSerializer >  
+ \<system.runtime.serialization>  
+\<dataContractSerializer>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,14 +42,14 @@ Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContract
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|IgnoreExtensionDataObject|Logická hodnota, která určuje, jestli se má ignorovat data dodaná nástrojem koncový bod, když je serializován nebo deserializován. Tento atribut je nastavit pouze v `<dataContractSerializer>` pod `<behavior>` elementu.|  
-|MaxItemsInObjectGraph|Celé číslo, které určuje maximální počet položek k serializaci nebo deserializaci. Tento atribut je 65536.|  
+|ignoreExtensionDataObject|Logická hodnota, která určuje, jestli se má ignorovat data dodaná nástrojem koncový bod, když je serializován nebo deserializován. Tento atribut je nastavit pouze v `<dataContractSerializer>` pod `<behavior>` elementu.|  
+|maxItemsInObjectGraph|Celé číslo, které určuje maximální počet položek k serializaci nebo deserializaci. Tento atribut je 65536.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<declaredTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/declaredtypes.md)|Obsahuje známé typy, které <xref:System.Runtime.Serialization.DataContractSerializer> používá při deserializaci.<br /><br /> Další informace o kontraktech dat a známých typech najdete v tématu [známé typy kontraktů dat.](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).|  
+|[\<declaredTypes>](../../../../../docs/framework/configure-apps/file-schema/wcf/declaredtypes.md)|Obsahuje známé typy, které <xref:System.Runtime.Serialization.DataContractSerializer> používá při deserializaci.<br /><br /> Další informace o kontraktech dat a známých typech najdete v tématu [známé typy kontraktů dat.](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -60,7 +60,7 @@ Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContract
 ## <a name="remarks"></a>Poznámky  
  Další informace o známých typů najdete v tématu <xref:System.Runtime.Serialization.DataContractSerializer> a [známé typy kontraktů dat.](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.DataContractSerializer>  
- <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>  
- [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.DataContractSerializer>
+- <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>
+- [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)

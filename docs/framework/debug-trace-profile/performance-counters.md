@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 39472662cd26799e9adbbbd199129e2c83dd0d93
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 5c9bf5d138be250d1dfeee012368153bac96b067
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155363"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54672393"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Čítače výkonu v rozhraní .NET Framework
 Toto téma obsahuje seznam čítačů výkonu najdete v [Windows Performance Monitor](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249%28v=ws.11%29).  
@@ -251,6 +251,6 @@ for (int i = 0; i < Array.Length; i++)
 |**Hloubka procházení zásobníku**|Zobrazuje hloubku zásobníku během poslední kontroly zabezpečení kód přístup k modulu runtime. Kontroly zabezpečení přístupu kódu za běhu jsou prováděny procházení zásobníku. Hodnota čítače nepředstavuje průměr; Zobrazí se pouze o poslední zjištěnou hodnotu.|  
 |**Celková doba běhu kontroly**|Zobrazí celkový počet kód modulu runtime přístup k zabezpečení provedených od spuštění aplikace. Modul runtime kód získat přístup k zabezpečení, které jsou provedeny kontroly, když volající požaduje konkrétní oprávnění. Kontroly za běhu se provádí při každém volání volajícího a zkoumá aktuálního zásobníku vláken volajícího. Při použití s **hloubka procházení zásobníku** čítače, tento čítač označuje snížení výkonu, ke které dochází ke kontrolám zabezpečení.|  
   
-## <a name="see-also"></a>Viz také  
- [Čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md)  
- [Běhová profilace](../../../docs/framework/debug-trace-profile/runtime-profiling.md)
+## <a name="see-also"></a>Viz také:
+- [Čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md)
+- [Běhová profilace](../../../docs/framework/debug-trace-profile/runtime-profiling.md)

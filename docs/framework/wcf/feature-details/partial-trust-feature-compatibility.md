@@ -2,12 +2,12 @@
 title: Kompatibilita funkcí s částečnou důvěryhodností
 ms.date: 03/30/2017
 ms.assetid: a36a540b-1606-4e63-88e0-b7c59e0e6ab7
-ms.openlocfilehash: 97a51fe29677f46f9d3053250b65b3d818ca47dc
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 404fe1a7fb14f28d264d4a97981eade8404141ee
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864521"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564721"
 ---
 # <a name="partial-trust-feature-compatibility"></a>Kompatibilita funkcí s částečnou důvěryhodností
 Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce při spouštění v částečně důvěryhodném prostředí. Funkce podporované v částečném vztahu důvěryhodnosti jsou navržená kolem konkrétní škálu scénářů, jak je popsáno v [Podporované scénáře nasazení](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) tématu.  
@@ -65,7 +65,7 @@ Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce p�
   
 -   Všechny serializovatelný `[DataMember]` pole nebo vlastnosti v `[DataContract]` typ musí být veřejný a čtení a zápisu. Serializace a deserializace [jen pro čtení](https://go.microsoft.com/fwlink/?LinkID=98854) polí není podporováno při spouštění v částečně důvěryhodné aplikaci WCF.  
   
--   `[Serializable]` /ISerializable programovacího modelu není podporován v částečném vztahu důvěryhodnosti prostředí.  
+-    `[Serializable]` /ISerializable programovacího modelu není podporován v částečném vztahu důvěryhodnosti prostředí.  
   
 -   Známé typy je třeba zadat v kódu nebo konfigurace na úrovni počítače (machine.config). Známé typy nelze zadat v konfigurace na úrovni aplikace z bezpečnostních důvodů.  
   
@@ -92,7 +92,7 @@ Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce p�
   
 -   Ujistěte se, že pokud je aplikace nasazená jako plně důvěryhodné aplikace, uživatelé nemohou upravovat nastavení zabezpečení přístupu kódu a spusťte aplikaci v prostředí s částečnou důvěryhodností. Pokud můžete, chování se nespustí a není vyvolána žádná výjimka. Aby se zajistilo to, najdete v článku **levelfinal** možnost použití [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md).  
   
- Příklad běžné chování najdete v tématu [jak: zámek dolů koncových bodů v podniku](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md).  
+ Příklad běžné chování najdete v tématu [jak: Uzamknutí koncových bodů v podniku](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md).  
   
 ## <a name="configuration"></a>Konfigurace  
  S jednou výjimkou může částečně důvěryhodným kódem načíst jenom WCF konfigurační oddíly funkce v místním `app.config` souboru. Načíst WCF konfigurační oddíly funkce, které odkazují na části WCF v souboru machine.config nebo kořenového souboru web.config vyžaduje ConfigurationPermission(Unrestricted). Bez tohoto oprávnění odkazy na WCF konfigurační oddíly (chování, vazby) mimo místní konfigurační soubor výsledkem výjimku při načtení konfigurace.  
@@ -159,10 +159,10 @@ Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce p�
 ## <a name="unlisted-features"></a>Neuvedené v seznamu funkcí  
  Nejlepší způsob, jak zjistit, že část informací nebo akce není k dispozici při spuštění v prostředí s částečnou důvěryhodností pro pokus o přístup k prostředku nebo provedení akce uvnitř `try` bloku a potom `catch` selhání. Aby nedošlo k zaplavení trasovací soubory s duplicitní chyby, zakáže WCF sledování prostředku nebo akce po prvním selhání zabezpečení. Existuje jedna výjimka trasování pro každý přístup k problémovému prostředku poprvé, který je proveden pokus o přístup k prostředku nebo provedení akce.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
- <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
- <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>  
- [Podporované scénáře nasazení](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md)  
- [Osvědčené postupy pro částečnou důvěryhodnost](../../../../docs/framework/wcf/feature-details/partial-trust-best-practices.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.HttpTransportBindingElement>
+- <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>
+- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>
+- <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>
+- [Podporované scénáře nasazení](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md)
+- [Osvědčené postupy pro částečnou důvěryhodnost](../../../../docs/framework/wcf/feature-details/partial-trust-best-practices.md)

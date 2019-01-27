@@ -15,12 +15,12 @@ ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: c82d4aac75fb31ec7741338fde046daefc754394
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 079cb3e969ee2c6d4e0163106769765cd96e96b7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53131466"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54622946"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Třídy znaků v regulárních výrazech
 <a name="Top"></a> Třída znaků definuje množinu znaků, které může dojít ve vstupním řetězci pro úspěšné vyhledání shody. Jazyk regulárních výrazů v .NET podporuje následující třídy znaků:  
@@ -594,6 +594,6 @@ ms.locfileid: "53131466"
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Char.GetUnicodeCategory%2A>  
-- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
+- <xref:System.Char.GetUnicodeCategory%2A>
+- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
 - [Možnosti regulárních výrazů](../../../docs/standard/base-types/regular-expression-options.md)

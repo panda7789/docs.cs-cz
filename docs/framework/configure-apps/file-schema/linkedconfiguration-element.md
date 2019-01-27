@@ -11,14 +11,12 @@ helpviewer_keywords:
 - linked configuration files
 - linkedConfiguration Element
 ms.assetid: 8eb34f3b-427e-4288-a7ff-c73f489deb45
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: e5c8449e72414775c40ced2c344e12d5137ac03f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2fd504fff161caaff147b203ab66cec04a6414ef
+ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54546410"
+ms.lasthandoff: 01/26/2019
+ms.locfileid: "55083444"
 ---
 # <a name="linkedconfiguration-element"></a>\<linkedconfiguration – > – element
 
