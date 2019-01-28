@@ -7,32 +7,32 @@ f1_keywords:
 helpviewer_keywords:
 - WithEvents keyword [Visual Basic]
 ms.assetid: 19d461f5-d72f-4de9-8c1d-0a6650316990
-ms.openlocfilehash: 240058a534456ae20c9c129a068bae575ac45eda
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e1a6cecdf724603b8f4617fe4e8b5ef2c0acdeff
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33596005"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54624558"
 ---
 # <a name="withevents-visual-basic"></a>WithEvents (Visual Basic)
-Určuje, že jeden nebo více deklarované členské proměnné odkazovat na instanci třídy, který může vyvolat události.  
+Určuje, že nejméně jedna deklarovaná členská proměnná odkazuje na instanci třídy, která může vyvolat události.  
   
 ## <a name="remarks"></a>Poznámky  
- Když je proměnná definovaná pomocí `WithEvents`, deklarativně můžete určit, že metoda zpracovává události proměnné pomocí `Handles` – klíčové slovo.  
+ Pokud je proměnná definována pomocí `WithEvents`, pomocí deklarace můžete určit, že metoda zpracovává události proměnné pomocí `Handles` – klíčové slovo.  
   
- Můžete použít `WithEvents` jenom na úrovni třídy nebo modulu. To znamená kontext deklarace `WithEvents` proměnná musí být třída nebo modul a nemůže být zdrojový soubor, obor názvů, struktura nebo postupu.  
+ Můžete použít `WithEvents` pouze na úrovni třídy nebo modulu. To znamená, že deklarace kontext `WithEvents` proměnná musí být třídu nebo modul a nemůže být zdrojový soubor, obor názvů, struktury nebo proceduru.  
   
- Nemůžete použít `WithEvents` na struktura člena.  
+ Nemůžete použít `WithEvents` na člena struktury.  
   
- Lze deklarovat pouze jednotlivé proměnné – není maticových – s `WithEvents`.  
+ Můžete deklarovat pouze proměnné, jednotlivým – není pole – s `WithEvents`.  
   
-## <a name="rules"></a>Pravidla  
+## <a name="rules"></a>pravidla  
   
--   **Typy elementů.** Je potřeba deklarovat `WithEvents` instancí třídy proměnné, které chcete být proměnné objektu tak, aby se může přijmout. Však nelze deklarovat je jako `Object`. Je třeba deklarovat jako určité třídy, který může vyvolat události.  
+-   **Typy elementů.** Je třeba deklarovat `WithEvents` proměnné na proměnné objektu tak, aby může přijmout třídu instance. Však nelze deklarovat jako `Object`. Je třeba je deklarovat jako konkrétní třídy, která může vyvolat události.  
   
- `WithEvents` Modifikátor lze použít v tomto kontextu: [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ `WithEvents` Modifikátor lze použít v tomto kontextu: [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
-## <a name="see-also"></a>Viz také  
- [Obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md)  
- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)  
- [Události](../../../visual-basic/programming-guide/language-features/events/index.md)
+## <a name="see-also"></a>Viz také:
+- [Obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md)
+- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
+- [Události](../../../visual-basic/programming-guide/language-features/events/index.md)
