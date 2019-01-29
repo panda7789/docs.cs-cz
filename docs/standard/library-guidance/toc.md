@@ -4,7 +4,7 @@
 ## [Vytváření silných názvů](strong-naming.md)
 ## [NuGet](nuget.md)
 ### [Závislosti](dependencies.md)
-### [SourceLink](sourcelink.md)
+### [Odkaz na zdroj](sourcelink.md)
 ### [Publikování](publish-nuget-package.md)
 ## [Správa verzí](versioning.md)
 ### [Změny způsobující chyby](breaking-changes.md)
