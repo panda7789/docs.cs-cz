@@ -2,12 +2,12 @@
 title: DotNet – instalačních skriptů
 description: Další informace o dotnet instalačních skriptů k instalaci nástroje rozhraní příkazového řádku .NET Core a sdílený modul runtime.
 ms.date: 01/16/2019
-ms.openlocfilehash: f796ac494c0be5458b3ea192e809a4d875bcc6dc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6404a8332a7196f0e6fdfe649c2c180970390775
+ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54608786"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55204792"
 ---
 # <a name="dotnet-install-scripts-reference"></a>odkazovat na DotNet instalačních skriptů
 
@@ -36,7 +36,7 @@ Doporučujeme použít stabilní verzi, která je hostována na [hlavní webové
 
 Hlavní užitečnost tyto skripty se scénáře automatizace a zařízení bez oprávnění správce. Existují dva skripty: jeden je skript prostředí PowerShell, který funguje ve Windows a druhá je skript bash, která funguje v systému Linux nebo macOS. Skripty mají stejné chování. Skriptu bash také přečte přepínače prostředí PowerShell, takže přepínače prostředí PowerShell můžete použít skript v systémech Linux nebo macOS s.
 
-Instalační skripty stáhne soubor ZIP/tarballu z buildů rozhraní příkazového řádku a pokračovat v instalaci je ve výchozím umístění nebo v umístění určeném `-InstallDir|--install-dir`. Ve výchozím nastavení instalační skripty stáhnout sadu SDK a nainstalujte ho. Pokud chcete jen získat sdílený modul runtime, zadejte `--shared-runtime` argument.
+Instalační skripty stáhne soubor ZIP/tarballu z buildů rozhraní příkazového řádku a pokračovat v instalaci je ve výchozím umístění nebo v umístění určeném `-InstallDir|--install-dir`. Ve výchozím nastavení instalační skripty stáhnout sadu SDK a nainstalujte ho. Pokud chcete jen získat sdílený modul runtime, zadejte `--runtime` argument.
 
 Ve výchozím nastavení přidá skript umístění instalace $PATH pro aktuální relaci. Toto výchozí chování přepsat tak, že zadáte `--no-path` argument.
 
@@ -168,13 +168,13 @@ Můžete nainstalovat konkrétní verzi pomocí `--version` argument. Verze mus�
   Windows:
 
   ```powershell
-  ./dotnet-install.ps1 -SharedRuntime -Version 1.1.0
+  ./dotnet-install.ps1 -Runtime dotnet -Version 1.1.0
   ```
 
   macOS/Linux:
 
   ```bash
-  ./dotnet-install.sh --shared-runtime --version 1.1.0
+  ./dotnet-install.sh --runtime dotnet --version 1.1.0
   ```
 
 * Získat skript a nainstalovat 2.1.2 verze za firemním proxy (jenom Windows):

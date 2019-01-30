@@ -4,12 +4,12 @@ description: Doporučené osvědčené postupy pro vytváření balíčků nuget
 author: jamesnk
 ms.author: mairaw
 ms.date: 01/15/2019
-ms.openlocfilehash: 2ad8d2ed77610a3acead69b7c864785261ea5e7f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a721c642dd92eb299eef3b62fc845afa99f81ddc
+ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54724301"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55204610"
 ---
 # <a name="nuget"></a>NuGet
 
@@ -69,9 +69,9 @@ Balíček NuGet podporuje mnoho [vlastnosti metadat](/nuget/reference/nuspec). N
 
 **PROVEĎTE ✔️** použít bitovou kopii balíčku ikonu, která je 64 x 64 a má průhledné pozadí nejlepšího zobrazení výsledků.
 
-**✔️ ZVAŽTE** nastavení [SourceLink](./sourcelink.md) přidat metadata ovládací prvek zdroje k sestavení a balíček NuGet.
+**✔️ ZVAŽTE** nastavení [odkazu na zdroj](./sourcelink.md) přidat metadata ovládací prvek zdroje k sestavení a balíček NuGet.
 
-> Automaticky přidá SourceLink `RepositoryUrl` a `RepositoryType` metadata balíčku NuGet. SourceLink přidá také informace o kódu konkrétním použitém zdroji balíčku byla vytvořena z. Hodnota hash zápisu přidán jako metadata bude mít například balíček vytvořen z úložiště Git.
+> Zdrojový odkaz automaticky přidá `RepositoryUrl` a `RepositoryType` metadata balíčku NuGet. Odkaz na zdroj přidá také informace o kódu konkrétním použitém zdroji balíčku byla vytvořena z. Hodnota hash zápisu přidán jako metadata bude mít například balíček vytvořen z úložiště Git.
 
 ## <a name="pre-release-packages"></a>Balíčky v předběžné verzi
 

@@ -3,12 +3,12 @@ title: Třídy a objekty – Úvod do C# kurz
 description: Vytvořte svůj první program C# a seznamte se s koncepty objektově orientované
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: 6ce0c86a4b746b8ea2db82899a82734a68e46957
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: 6b4c135b7adf96de3a234cde02485a1e84fc9fd3
+ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066064"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55204779"
 ---
 # <a name="explore-object-oriented-programming-with-classes-and-objects"></a>Prozkoumejte objektově orientované programování pomocí třídy a objekty
 
@@ -156,14 +156,14 @@ Konstruktor by měl získat jednu změnu, tak, aby přidá počáteční transak
 ```csharp
 account.MakeWithdrawal(500, DateTime.Now, "Rent payment");
 Console.WriteLine(account.Balance);
-account.MakeDeposit(100, DateTime.Now, "friend paid me back");
+account.MakeDeposit(100, DateTime.Now, "Friend paid me back");
 Console.WriteLine(account.Balance);
 ```
 
 V dalším kroku otestujte, že jsou zachycení chybové podmínky pokusu o vytvoření účtu pomocí záporný zůstatek:
 
 ```csharp
-// Test that the initial balances must be positive:
+// Test that the initial balances must be positive.
 try
 {
     var invalidAccount = new BankAccount("invalid", -55);
@@ -178,7 +178,7 @@ catch (ArgumentOutOfRangeException e)
 Můžete použít [ `try` a `catch` příkazy](../../language-reference/keywords/try-catch.md) jak označit bloku kódu, který může vyvolat výjimky a k zachytávání těchto chyb, které očekáváte. Stejný postup můžete použít k testování kódu, který vrací chybovou výjimku záporný zůstatek:
 
 ```csharp
-// Test for a negative balance
+// Test for a negative balance:
 try
 {
     account.MakeWithdrawal(750, DateTime.Now, "Attempt to overdraw");

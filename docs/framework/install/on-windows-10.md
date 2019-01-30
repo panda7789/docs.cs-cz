@@ -5,14 +5,14 @@ author: rlander
 ms.author: mairaw
 ms.date: 04/10/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: 3897b3acd06d4dbe8b61f4c12686a365bd17662a
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: db5c6a45db299d716b2fdd115086e0dbc5952a59
+ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066308"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55204298"
 ---
-# <a name="install-the-net-framework-on-windows-10-and-windows-server-2016"></a>Instalace rozhraní .NET Framework v systému Windows 10 a Windows Server 2016
+# <a name="install-the-net-framework-on-windows-10-and-windows-server-2016-and-later"></a>Instalace rozhraní .NET Framework v systému Windows 10 a Windows Server 2016 nebo novější
 
 Rozhraní .NET Framework je nutná k provozování spoustu aplikací na Windows. Pokyny v tomto článku by vám pomůžou nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework-runtime/net472) je na nejnovější dostupnou verzi.
 
@@ -27,6 +27,12 @@ Rozhraní .NET Framework 4.7.2 je součástí:
 * [Windows 10. října 2018 Update](https://support.microsoft.com/help/4028685/windows-10-get-the-update)
 
 * [Aktualizace Windows 10. dubna 2018](https://www.microsoft.com/software-download/windows10)
+
+* Windows Server. 2019
+
+* Windows Server verze 1809
+
+* Windows Server, version 1803
 
 > [!div class="button"]
 > [Stáhnout rozhraní .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework-runtime/net472)

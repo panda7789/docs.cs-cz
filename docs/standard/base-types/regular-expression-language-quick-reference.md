@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0b191a01995b7c36d733b225672a3d79f488a276
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cedabbfff10b89f9755b14b963fd1d1a143cb0f0
+ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54531418"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55204883"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Jazyk regulárních výrazů – stručná referenční dokumentace
 <a name="top"></a> Regulární výraz je vzor, který modul regulárních výrazů pokusí shodovat se vstupním textem. Vzor sestává z jednoho nebo více znakových literálů, operátorů nebo konstrukcí.  Stručný úvod naleznete zde [regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md).  
@@ -58,10 +58,10 @@ ms.locfileid: "54531418"
 |`\f`|Odpovídá znaku posunu strany \u000C.|`[\f]{2,}`|"\f\f\f" ve výrazu "\f\f\f"|  
 |`\n`|Odpovídá znaku nového řádku \u000A.|`\r\n(\w+)`|"\r\nToto" ve větě "\r\nToto jsou\ndva řádky."|  
 |`\e`|Odpovídá řídicímu znaku \u001B.|`\e`|"\x001B" ve výrazu "\x001B"|  
-|`\` *nnn*|Používá osmičkové vyjádření k určení znaku (*nnn* obsahuje dvě nebo tři číslice).|`\w\040\w`|"a b", "c d" ve výrazu<br /><br /> "a bc d"|  
-|`\x` *nn*|Používá šestnáctkové vyjádření k určení znaku (*nn* obsahuje přesně dvě číslice).|`\w\x20\w`|"a b", "c d" ve výrazu<br /><br /> "a bc d"|  
+|`\` *nnn*|Používá osmičkové vyjádření k určení znaku (*nnn* obsahuje dvě nebo tři číslice).|`\w\040\w`|"a b", "c d" v "bc d"|  
+|`\x` *nn*|Používá šestnáctkové vyjádření k určení znaku (*nn* obsahuje přesně dvě číslice).|`\w\x20\w`|"a b", "c d" v "bc d"|  
 |`\c` *X*<br /><br /> `\c` *x*|Odpovídá řídicímu znaku ASCII, která je zadána *X* nebo *x*, kde *X* nebo *x* je písmeno kontrolního znaku.|`\cC`|"\x0003" ve výrazu "\x0003" (Ctrl-C)|  
-|`\u` *nnnn*|Odpovídá znaku Unicode pomocí šestnáctkového vyjádření (přesně čtyři číslice představované výrazem *nnnn*).|`\w\u0020\w`|"a b", "c d" ve výrazu<br /><br /> "a bc d"|  
+|`\u` *nnnn*|Odpovídá znaku Unicode pomocí šestnáctkového vyjádření (přesně čtyři číslice představované výrazem *nnnn*).|`\w\u0020\w`|"a b", "c d" v "bc d"|  
 |`\`|V případě, že následuje znak, který není rozpoznán jako řídicí znak v této a dalších tabulkách v tomto tématu, odpovídá tomuto znaku. Například `\*` je stejný jako `\x2A`, a `\.` je stejný jako `\x2E`. To umožňuje modulu regulárních výrazů rozpoznat prvky jazyka (například \* nebo?) a znakové literály (představované `\*` nebo `\?`).|`\d+[\+-x\*]\d+`|"2 + 2" a "3\*9" ve "(2+2) \* 3\*9"|  
   
  [Zpět na začátek](#top)  
@@ -92,11 +92,11 @@ ms.locfileid: "54531418"
   
 |Kontrolní výraz|Popis|Vzor|Shody|  
 |---------------|-----------------|-------------|-------------|  
-|`^`|Ve výchozím nastavení porovnání musí začít na začátku řetězce; v víceřádkový režim musíte spustit na začátku řádku.|`^\d{3}`|"901" ve výrazu<br /><br /> "901-333-"|  
-|`$`|Ve výchozím nastavení, ke shodě musí dojít na konci řetězce nebo před `\n` na konci řetězce; v víceřádkový režim, musí dojít před koncem řádku nebo před `\n` na konci řádku.|`-\d{3}$`|"-333" v<br /><br /> "-901-333"|  
-|`\A`|Ke shodě musí dojít na začátku řetězce.|`\A\d{3}`|"901" ve výrazu<br /><br /> "901-333-"|  
-|`\Z`|Ke shodě musí dojít na konci řetězce nebo před `\n` na konci řetězce.|`-\d{3}\Z`|"-333" v<br /><br /> "-901-333"|  
-|`\z`|Ke shodě musí dojít na konci řetězce.|`-\d{3}\z`|"-333" v<br /><br /> "-901-333"|  
+|`^`|Ve výchozím nastavení porovnání musí začít na začátku řetězce; v víceřádkový režim musíte spustit na začátku řádku.|`^\d{3}`|"901" v "901 - 333-"|  
+|`$`|Ve výchozím nastavení, ke shodě musí dojít na konci řetězce nebo před `\n` na konci řetězce; v víceřádkový režim, musí dojít před koncem řádku nebo před `\n` na konci řádku.|`-\d{3}$`|"-333" v "-901-333"|  
+|`\A`|Ke shodě musí dojít na začátku řetězce.|`\A\d{3}`|"901" v "901 - 333-"|  
+|`\Z`|Ke shodě musí dojít na konci řetězce nebo před `\n` na konci řetězce.|`-\d{3}\Z`|"-333" v "-901-333"|  
+|`\z`|Ke shodě musí dojít na konci řetězce.|`-\d{3}\z`|"-333" v "-901-333"|  
 |`\G`|Ke shodě musí dojít v místě, kde byla ukončena předchozí shoda.|`\G\(\d\)`|"(1)", "(3)", "(5)" v "(1) [3] [5] [7] (9\)"|  
 |`\b`|Ke shodě musí dojít na hranici mezi `\w` (alfanumerický) a `\W` (nealfanumerický znak).|`\b\w+\s\w+\b`|"them theme", "them them" ve výrazu "them theme them them"|  
 |`\B`|Ke shodě nesmí dojít na `\b` hranic.|`\Bend\w*\b`|"ends", "ender" ve výrazu "end sends endure lender"|  
@@ -218,7 +218,7 @@ ms.locfileid: "54531418"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>
-- <xref:System.Text.RegularExpressions.Regex>
+- <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>
 - [Regulární výrazy](regular-expressions.md)
 - [Třídy regulárních výrazů](the-regular-expression-object-model.md)
 - [Příklady regulárních výrazů](regular-expression-examples.md)

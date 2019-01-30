@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 765dac0a6cf8a3403880bead1716b8477662052c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d2655cf5d5fb211149bdbe09179707ec53c737d3
+ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54529525"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55204558"
 ---
 # <a name="net-framework-system-requirements"></a>Požadavky na systém rozhraní .NET framework
 
@@ -78,12 +78,14 @@ Rozhraní .NET Framework vyžaduje oprávnění správce pro instalaci. Pokud ne
 
 - Pro všechny platformy, doporučujeme upgradovat na nejnovější aktualizaci Service Pack pro Windows a instalovat důležité aktualizace, které jsou k dispozici [webu Windows Update](https://go.microsoft.com/fwlink/?LinkId=168461) k zajištění nejlepší kompatibility a zabezpečení.
 
-- V 64bitových operačních systémech rozhraní .NET Framework podporuje obě WOW64 (32bitová verze zpracování na 64bitovém počítači) a nativní 64bitové zpracování.
+- V 64bitových operačních systémech rozhraní .NET Framework podporuje obě WOW64 (32bitová verze zpracování na 64bitovém počítači) a | nativní 64bitové zpracování.
 
 ## <a name="supported-server-operating-systems"></a>Podporované serverové operační systémy
 
 | Operační systém | Podporované edice | Předinstalované s operačním systémem | Instalovat samostatně |
 | ---------------- | ------------------ | ------------------------ | ---------------------- |
+| Windows Server. 2019 | 64bitových | .NET Framework 4.7.2 | -- |
+| Windows Server verze 1809 | 64bitových | .NET Framework 4.7.2 | -- |
 | Windows Server, version 1803 | 64bitových | .NET Framework 4.7.2 | -- |
 | Windows Server verze 1709 | 64bitových | .NET Framework 4.7.1 | .NET Framework 4.7.2 | 
 | Windows Server 2016 | 64bitových | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] | Rozhraní .NET framework 4.7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2 |

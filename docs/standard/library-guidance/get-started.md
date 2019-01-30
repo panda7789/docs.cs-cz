@@ -4,12 +4,12 @@ description: Začínáme vytvářet knihovny .NET.
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: 05466de1469fc765570b8250301e8404cd5df173
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: e26c6632252257ab8cb5598f1b201559b760dc6b
+ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145722"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55204639"
 ---
 # <a name="get-started"></a>Začínáme
 
@@ -29,9 +29,9 @@ Nejlepší způsob, jak vytvořit balíčky NuGet pro open source knihovny .NET,
 
 NuGet umožňuje snadno se používá existující balíčky při sestavování knihovny .NET. Další informace o běžných zdrojů závislostí NuGet třecí plochy a jak se jim vyhnout.
 
-### <a name="sourcelinksourcelinkmd"></a>[SourceLink](./sourcelink.md)
+### <a name="source-linksourcelinkmd"></a>[Odkaz na zdroj](./sourcelink.md)
 
-SourceLink je skvělý nástroj, který umožňuje uživatelům vaší knihovny .NET Krokovat s vnořením jeho zdrojový kód během ladění. Tento článek představuje přehled co SourceLink je a proč byste měli používat.
+Odkaz na zdroj je skvělý nástroj, který umožňuje uživatelům vaší knihovny .NET Krokovat s vnořením jeho zdrojový kód během ladění. Tento článek představuje přehled odkazu na zdroj a proč byste měli používat.
 
 ### <a name="publishingpublish-nuget-packagemd"></a>[Publikování](./publish-nuget-package.md)
 

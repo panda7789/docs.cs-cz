@@ -3,12 +3,12 @@ title: Návrh s typy s možnou hodnotou Null odkazů
 description: V tomto kurzu pokročilé obsahuje úvod do typy s možnou hodnotou Null odkazů. Se dozvíte, jak vyjádřit svůj návrh úmyslem při může mít hodnotu null referenční hodnoty a nechat kompilátor vynucovat, když nemohou být null.
 ms.date: 12/03/2018
 ms.custom: mvc
-ms.openlocfilehash: 7e4cb423658287e5260770a680f189c227b9cd01
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: eec0c54c041db98595202ab982494df6ae3f743c
+ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53156492"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55204766"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Kurz: Máte v úmyslu návrhu Express jasněji s typy s možnou hodnotou Null a Null reference
 
@@ -190,7 +190,7 @@ Hlavní zodpovědností této třídy je generují odpovědi účastníka na ot�
 1. Požádejte o účast na průzkumu. Pokud není souhlas uživatele, vrátí odpověď chybí (nebo null).
 1. Každý dotaz a odpověď si poznamenejte. Každou odpověď může být také chybí (nebo null).
 
-Přidejte následující kód, který vaše `SurveyRespondent` třídy:
+Přidejte následující kód, který vaše `SurveyResponse` třídy:
 
 [!code-csharp[AnswerSurvey](../../../samples/csharp/NullableIntroduction/NullableIntroduction/SurveyResponse.cs#AnswerSurvey)]
 
@@ -212,7 +212,7 @@ Posledním krokem je zobrazit výsledky zjišťování. Přidáte kód pro vět�
 
 [!code-csharp[ReportResponses](../../../samples/csharp/NullableIntroduction/NullableIntroduction/SurveyResponse.cs#SurveyStatus)]
 
-Protože `surveyResponses` se zakázanou odkaz, typ žádné kontroly jsou nezbytné před zrušením odkazu. `Answer` Metoda vrátí řetězec null, proto zvolte přetížení `GetValueOrDefault` , který přijímá jako druhý argument pro výchozí hodnotu.
+Protože `surveyResponses` je typem odkazu Null před zrušením odkazu nevzniká žádné kontroly. `Answer` Metoda vrátí řetězec null, proto zvolte přetížení `GetValueOrDefault` , který přijímá jako druhý argument pro výchozí hodnotu.
 
 V dalším kroku přidejte tyto tři členy s výrazem v těle k `SurveyRun` třídy:
 
@@ -228,7 +228,7 @@ Není potřeba vybírat žádnou `null` kontroluje v tomto kódu, protože zákl
 
 ## <a name="get-the-code"></a>Získat kód
 
-Můžete získat kód pro dokončení kurzu z našich [ukázky](https://github.com/dotnet/samples) úložiště v [csharp/IntroToNullables](https://github.com/dotnet/samples/tree/master/csharp/NullableIntroduction) složky.
+Můžete získat kód pro dokončení kurzu z našich [ukázky](https://github.com/dotnet/samples) úložiště v [csharp/NullableIntroduction](https://github.com/dotnet/samples/tree/master/csharp/NullableIntroduction) složky.
 
 Experimentujte změnou deklarace typů mezi typy s možnou hodnotou Null a Null odkazů. Naleznete v tématu Jak, který generuje upozornění jinou zajistit Nepřistupujte omylem `null`.
 

@@ -4,12 +4,12 @@ description: Doporučené osvědčené postupy pro správu verzí knihovny .NET.
 author: jamesnk
 ms.author: mairaw
 ms.date: 12/10/2018
-ms.openlocfilehash: e47b8a5ccad7c57d125e16f6e1d37fb91de31161
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: e6f811039f74649564cbfb42ef67e0a406e4cd70
+ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169596"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55204740"
 ---
 # <a name="versioning"></a>Správa verzí
 
@@ -75,7 +75,7 @@ Verze souboru sestavení se používá k zobrazení verze souboru ve Windows a n
 <FileVersion>11.0.2.21924</FileVersion>
 ```
 
-![Průzkumník Windows](./media/versioning/win-properties.png "Průzkumníka Windows")
+![Windows Explorer](./media/versioning/win-properties.png "Windows Explorer")
 
 **✔️ ZVAŽTE** číslo jako revize AssemblyFileVersion včetně kontinuální integrace sestavení.
 
@@ -87,7 +87,7 @@ Verze souboru sestavení se používá k zobrazení verze souboru ve Windows a n
 
 ### <a name="assembly-informational-version"></a>Informační verze sestavení
 
-Informační verze sestavení se používá k zaznamenání Další informace o verzi a nemá žádný vliv na chování modulu runtime. Nastavení této verze je volitelný. Pokud používáte SourceLink, tato verze se nastaví na sestavení se verze balíčku NuGet a verze ovládacího prvku zdroje. Například `1.0.0-beta1+204ff0a` obsahuje hodnotu hash potvrzení sestavení byla vytvořena z zdrojového kódu. Další informace najdete v tématu [SourceLink](./sourcelink.md).
+Informační verze sestavení se používá k zaznamenání Další informace o verzi a nemá žádný vliv na chování modulu runtime. Nastavení této verze je volitelný. Pokud používáte odkazu na zdroj, tato verze se nastaví na sestavení se verze balíčku NuGet a verze ovládacího prvku zdroje. Například `1.0.0-beta1+204ff0a` obsahuje hodnotu hash potvrzení sestavení byla vytvořena z zdrojového kódu. Další informace najdete v tématu [odkazu na zdroj](./sourcelink.md).
 
 ```xml
 <AssemblyInformationalVersion>The quick brown fox jumped over the lazy dog.</AssemblyInformationalVersion>
