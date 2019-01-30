@@ -6,10 +6,10 @@ ms.custom: seodec18
 ms.topic: overview
 ms.date: 11/06/2018
 ms.openlocfilehash: fb0ece94d77c76fddc667070a8aaef154fd2053a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
+ms.lasthandoff: 01/30/2019
 ms.locfileid: "53131573"
 ---
 # <a name="what-is-mlnet-and-how-do-i-understand-machine-learning-basics"></a>Co je ML.NET a jak pochopit základní informace o Machine Learning?
