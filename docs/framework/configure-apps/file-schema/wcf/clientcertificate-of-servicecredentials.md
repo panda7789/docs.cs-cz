@@ -1,26 +1,26 @@
 ---
-title: '&lt;clientCertificate&gt; – &lt;serviceCredentials&gt;'
+title: <clientCertificate> z <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: 90ad03aa-2317-43dd-8a72-6d24cdcad15c
-ms.openlocfilehash: e1334e42149de29c4fc7534863f02ede93c638ad
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: aceb30b6354bac5c327a5f4367344e5c9608b689
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54536825"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55286894"
 ---
-# <a name="ltclientcertificategt-of-ltservicecredentialsgt"></a><span data-ttu-id="187a8-102">&lt;clientCertificate&gt; – &lt;serviceCredentials&gt;</span><span class="sxs-lookup"><span data-stu-id="187a8-102">&lt;clientCertificate&gt; of &lt;serviceCredentials&gt;</span></span>
-<span data-ttu-id="187a8-103">Určuje certifikát X.509 použitý k podepisování a šifrování zpráv do formuláře klienta služby v duplexním komunikačním režimu.</span><span class="sxs-lookup"><span data-stu-id="187a8-103">Defines an X.509 certificate used to sign and encrypt messages to a client form a service in a duplex communication pattern.</span></span>  
+# <a name="clientcertificate-of-servicecredentials"></a><span data-ttu-id="c212a-102">\<clientCertificate> of \<serviceCredentials></span><span class="sxs-lookup"><span data-stu-id="c212a-102">\<clientCertificate> of \<serviceCredentials></span></span>
+<span data-ttu-id="c212a-103">Určuje certifikát X.509 použitý k podepisování a šifrování zpráv do formuláře klienta služby v duplexním komunikačním režimu.</span><span class="sxs-lookup"><span data-stu-id="c212a-103">Defines an X.509 certificate used to sign and encrypt messages to a client form a service in a duplex communication pattern.</span></span>  
   
- <span data-ttu-id="187a8-104">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="187a8-104">\<system.ServiceModel></span></span>  
-<span data-ttu-id="187a8-105">\<chování ></span><span class="sxs-lookup"><span data-stu-id="187a8-105">\<behaviors></span></span>  
-<span data-ttu-id="187a8-106">\<serviceBehaviors></span><span class="sxs-lookup"><span data-stu-id="187a8-106">\<serviceBehaviors></span></span>  
-<span data-ttu-id="187a8-107">\<serviceBehaviors></span><span class="sxs-lookup"><span data-stu-id="187a8-107">\<serviceBehaviors></span></span>  
-<span data-ttu-id="187a8-108">\<chování ></span><span class="sxs-lookup"><span data-stu-id="187a8-108">\<behavior></span></span>  
-<span data-ttu-id="187a8-109">\<serviceCredentials></span><span class="sxs-lookup"><span data-stu-id="187a8-109">\<serviceCredentials></span></span>  
-<span data-ttu-id="187a8-110">\<clientCertificate></span><span class="sxs-lookup"><span data-stu-id="187a8-110">\<clientCertificate></span></span>  
+ <span data-ttu-id="c212a-104">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="c212a-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="c212a-105">\<chování ></span><span class="sxs-lookup"><span data-stu-id="c212a-105">\<behaviors></span></span>  
+<span data-ttu-id="c212a-106">\<serviceBehaviors></span><span class="sxs-lookup"><span data-stu-id="c212a-106">\<serviceBehaviors></span></span>  
+<span data-ttu-id="c212a-107">\<serviceBehaviors></span><span class="sxs-lookup"><span data-stu-id="c212a-107">\<serviceBehaviors></span></span>  
+<span data-ttu-id="c212a-108">\<chování ></span><span class="sxs-lookup"><span data-stu-id="c212a-108">\<behavior></span></span>  
+<span data-ttu-id="c212a-109">\<serviceCredentials></span><span class="sxs-lookup"><span data-stu-id="c212a-109">\<serviceCredentials></span></span>  
+<span data-ttu-id="c212a-110">\<clientCertificate></span><span class="sxs-lookup"><span data-stu-id="c212a-110">\<clientCertificate></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="187a8-111">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="187a8-111">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c212a-111">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c212a-111">Syntax</span></span>  
   
 ```xml  
 <clientCertificate>
@@ -29,36 +29,36 @@ ms.locfileid: "54536825"
 </clientCertificate>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="187a8-112">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="187a8-112">Attributes and Elements</span></span>  
- <span data-ttu-id="187a8-113">Následující části popisují atributy, podřízené prvky a nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="187a8-113">The following sections describe attributes, child elements, and parent elements</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="c212a-112">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="c212a-112">Attributes and Elements</span></span>  
+ <span data-ttu-id="c212a-113">Následující části popisují atributy, podřízené prvky a nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="c212a-113">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="187a8-114">Atributy</span><span class="sxs-lookup"><span data-stu-id="187a8-114">Attributes</span></span>  
- <span data-ttu-id="187a8-115">Žádné</span><span class="sxs-lookup"><span data-stu-id="187a8-115">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="c212a-114">Atributy</span><span class="sxs-lookup"><span data-stu-id="c212a-114">Attributes</span></span>  
+ <span data-ttu-id="c212a-115">Žádné</span><span class="sxs-lookup"><span data-stu-id="c212a-115">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="187a8-116">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="187a8-116">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="c212a-116">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="c212a-116">Child Elements</span></span>  
   
-|<span data-ttu-id="187a8-117">Prvek</span><span class="sxs-lookup"><span data-stu-id="187a8-117">Element</span></span>|<span data-ttu-id="187a8-118">Popis</span><span class="sxs-lookup"><span data-stu-id="187a8-118">Description</span></span>|  
+|<span data-ttu-id="c212a-117">Prvek</span><span class="sxs-lookup"><span data-stu-id="c212a-117">Element</span></span>|<span data-ttu-id="c212a-118">Popis</span><span class="sxs-lookup"><span data-stu-id="c212a-118">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="187a8-119">\<authentication></span><span class="sxs-lookup"><span data-stu-id="187a8-119">\<authentication></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)|<span data-ttu-id="187a8-120">Určuje možnosti ověřování klientského certifikátu.</span><span class="sxs-lookup"><span data-stu-id="187a8-120">Specifies authentication options for the client certificate.</span></span>|  
-|[<span data-ttu-id="187a8-121">\<certificate></span><span class="sxs-lookup"><span data-stu-id="187a8-121">\<certificate></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-of-clientcertificate-element.md)|<span data-ttu-id="187a8-122">Určuje certifikát, který chcete použít.</span><span class="sxs-lookup"><span data-stu-id="187a8-122">Specifies the certificate to use.</span></span>|  
+|[<span data-ttu-id="c212a-119">\<authentication></span><span class="sxs-lookup"><span data-stu-id="c212a-119">\<authentication></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)|<span data-ttu-id="c212a-120">Určuje možnosti ověřování klientského certifikátu.</span><span class="sxs-lookup"><span data-stu-id="c212a-120">Specifies authentication options for the client certificate.</span></span>|  
+|[<span data-ttu-id="c212a-121">\<certificate></span><span class="sxs-lookup"><span data-stu-id="c212a-121">\<certificate></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-of-clientcertificate-element.md)|<span data-ttu-id="c212a-122">Určuje certifikát, který chcete použít.</span><span class="sxs-lookup"><span data-stu-id="c212a-122">Specifies the certificate to use.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="187a8-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="187a8-123">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="c212a-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="c212a-123">Parent Elements</span></span>  
   
-|<span data-ttu-id="187a8-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="187a8-124">Element</span></span>|<span data-ttu-id="187a8-125">Popis</span><span class="sxs-lookup"><span data-stu-id="187a8-125">Description</span></span>|  
+|<span data-ttu-id="c212a-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="c212a-124">Element</span></span>|<span data-ttu-id="c212a-125">Popis</span><span class="sxs-lookup"><span data-stu-id="c212a-125">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="187a8-126">\<serviceCredentials></span><span class="sxs-lookup"><span data-stu-id="187a8-126">\<serviceCredentials></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|<span data-ttu-id="187a8-127">Určuje přihlašovací údaje, který se má použít při ověřování služby, a nastavení příslušného ověřování přihlašovacích údajů klienta.</span><span class="sxs-lookup"><span data-stu-id="187a8-127">Specifies the credentials to be used in authenticating the service, and the client credential validation related settings.</span></span>|  
+|[<span data-ttu-id="c212a-126">\<serviceCredentials></span><span class="sxs-lookup"><span data-stu-id="c212a-126">\<serviceCredentials></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|<span data-ttu-id="c212a-127">Určuje přihlašovací údaje, který se má použít při ověřování služby, a nastavení příslušného ověřování přihlašovacích údajů klienta.</span><span class="sxs-lookup"><span data-stu-id="c212a-127">Specifies the credentials to be used in authenticating the service, and the client credential validation related settings.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="187a8-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="187a8-128">Remarks</span></span>  
- <span data-ttu-id="187a8-129">Tento element se používá při služba musí mít certifikát klienta předem k bezpečné komunikaci s klientem.</span><span class="sxs-lookup"><span data-stu-id="187a8-129">This element is used when the service must have the client's certificate in advance to communicate securely with the client.</span></span> <span data-ttu-id="187a8-130">Vyvolá se při použití vzoru duplexní komunikaci.</span><span class="sxs-lookup"><span data-stu-id="187a8-130">This occurs when using the duplex communication pattern.</span></span> <span data-ttu-id="187a8-131">Ve vzoru obvyklejší žádostí a odpovědí klient zahrne svůj certifikát v požadavku, který službu používá k šifrování a podepisování odpověď zpět klientovi.</span><span class="sxs-lookup"><span data-stu-id="187a8-131">In the more typical request/response pattern, the client includes its certificate in the request, which the service uses to encrypt and sign its response back to the client.</span></span> <span data-ttu-id="187a8-132">Ve vzoru duplexní komunikaci ale služba nemá žádosti z klienta a proto potřebuje certifikát klienta předem pro zabezpečené zprávy do klienta.</span><span class="sxs-lookup"><span data-stu-id="187a8-132">In the duplex communication pattern, however, the service does not have a request from the client and therefore it needs the client's certificate in advance to secure the message to the client.</span></span> <span data-ttu-id="187a8-133">Proto musíte získat certifikát klienta v vyjednávání out-of-band a vyberte certifikát pro použití tohoto prvku.</span><span class="sxs-lookup"><span data-stu-id="187a8-133">Therefore you must obtain the client's certificate in an out-of-band negotiation, and specify the certificate using this element.</span></span> <span data-ttu-id="187a8-134">Další informace o duplexní služby najdete v tématu [jak: Vytvoření duplexního kontraktu](../../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md).</span><span class="sxs-lookup"><span data-stu-id="187a8-134">For more information about duplex services, see [How to: Create a Duplex Contract](../../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c212a-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c212a-128">Remarks</span></span>  
+ <span data-ttu-id="c212a-129">Tento element se používá při služba musí mít certifikát klienta předem k bezpečné komunikaci s klientem.</span><span class="sxs-lookup"><span data-stu-id="c212a-129">This element is used when the service must have the client's certificate in advance to communicate securely with the client.</span></span> <span data-ttu-id="c212a-130">Vyvolá se při použití vzoru duplexní komunikaci.</span><span class="sxs-lookup"><span data-stu-id="c212a-130">This occurs when using the duplex communication pattern.</span></span> <span data-ttu-id="c212a-131">Ve vzoru obvyklejší žádostí a odpovědí klient zahrne svůj certifikát v požadavku, který službu používá k šifrování a podepisování odpověď zpět klientovi.</span><span class="sxs-lookup"><span data-stu-id="c212a-131">In the more typical request/response pattern, the client includes its certificate in the request, which the service uses to encrypt and sign its response back to the client.</span></span> <span data-ttu-id="c212a-132">Ve vzoru duplexní komunikaci ale služba nemá žádosti z klienta a proto potřebuje certifikát klienta předem pro zabezpečené zprávy do klienta.</span><span class="sxs-lookup"><span data-stu-id="c212a-132">In the duplex communication pattern, however, the service does not have a request from the client and therefore it needs the client's certificate in advance to secure the message to the client.</span></span> <span data-ttu-id="c212a-133">Proto musíte získat certifikát klienta v vyjednávání out-of-band a vyberte certifikát pro použití tohoto prvku.</span><span class="sxs-lookup"><span data-stu-id="c212a-133">Therefore you must obtain the client's certificate in an out-of-band negotiation, and specify the certificate using this element.</span></span> <span data-ttu-id="c212a-134">Další informace o duplexní služby najdete v tématu [jak: Vytvoření duplexního kontraktu](../../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md).</span><span class="sxs-lookup"><span data-stu-id="c212a-134">For more information about duplex services, see [How to: Create a Duplex Contract](../../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md).</span></span>  
   
- <span data-ttu-id="187a8-135">Certifikát, nastavte v tomto elementu se používá k šifrování zpráv klienta jenom u vazeb, které jsou nakonfigurovány s `MutualCertificateDuplex` režim ověřování zabezpečení zprávy.</span><span class="sxs-lookup"><span data-stu-id="187a8-135">The certificate set in this element is used to encrypt messages to the client only for bindings that are configured with `MutualCertificateDuplex` message security authentication mode.</span></span>  
+ <span data-ttu-id="c212a-135">Certifikát, nastavte v tomto elementu se používá k šifrování zpráv klienta jenom u vazeb, které jsou nakonfigurovány s `MutualCertificateDuplex` režim ověřování zabezpečení zprávy.</span><span class="sxs-lookup"><span data-stu-id="c212a-135">The certificate set in this element is used to encrypt messages to the client only for bindings that are configured with `MutualCertificateDuplex` message security authentication mode.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="187a8-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="187a8-136">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c212a-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c212a-136">See also</span></span>
 - <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement>
 - <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.ClientCertificate%2A>
 - <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement>
 - <xref:System.ServiceModel.Description.ServiceCredentials.ClientCertificate%2A>
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential>
-- [<span data-ttu-id="187a8-137">Postupy: Vytvoření duplexního kontraktu</span><span class="sxs-lookup"><span data-stu-id="187a8-137">How to: Create a Duplex Contract</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)
-- [<span data-ttu-id="187a8-138">Chování zabezpečení</span><span class="sxs-lookup"><span data-stu-id="187a8-138">Security Behaviors</span></span>](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
-- [<span data-ttu-id="187a8-139">Práce s certifikáty</span><span class="sxs-lookup"><span data-stu-id="187a8-139">Working with Certificates</span></span>](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [<span data-ttu-id="c212a-137">Postupy: Vytvoření duplexního kontraktu</span><span class="sxs-lookup"><span data-stu-id="c212a-137">How to: Create a Duplex Contract</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)
+- [<span data-ttu-id="c212a-138">Chování zabezpečení</span><span class="sxs-lookup"><span data-stu-id="c212a-138">Security Behaviors</span></span>](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
+- [<span data-ttu-id="c212a-139">Práce s certifikáty</span><span class="sxs-lookup"><span data-stu-id="c212a-139">Working with Certificates</span></span>](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

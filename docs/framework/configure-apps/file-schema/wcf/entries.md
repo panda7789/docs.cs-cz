@@ -1,24 +1,24 @@
 ---
-title: '&lt;Položky&gt;'
+title: <entries>
 ms.date: 03/30/2017
 ms.assetid: 202e430c-c1b9-4343-abe2-ac78c181a3b7
-ms.openlocfilehash: 33f98cb4b138307622a14463ce5a3008058b6e31
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9c4c7fa4f778642d549deebce6e7476f4da13a0d
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587057"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55283683"
 ---
-# <a name="ltentriesgt"></a><span data-ttu-id="9c607-102">&lt;Položky&gt;</span><span class="sxs-lookup"><span data-stu-id="9c607-102">&lt;entries&gt;</span></span>
-<span data-ttu-id="9c607-103">Směrování položky, které obsahují mapování mezi směrovacími filtry a cílovými koncovými body pro odesílání zpráv do pokud bod odpovídá filtru.</span><span class="sxs-lookup"><span data-stu-id="9c607-103">A routing entry that contain mappings between the routing filters and the target endpoints to send messages to when the filter matches.</span></span>  
+# <a name="entries"></a><span data-ttu-id="eb4f1-101">\<položky ></span><span class="sxs-lookup"><span data-stu-id="eb4f1-101">\<entries></span></span>
+<span data-ttu-id="eb4f1-102">Směrování položky, které obsahují mapování mezi směrovacími filtry a cílovými koncovými body pro odesílání zpráv do pokud bod odpovídá filtru.</span><span class="sxs-lookup"><span data-stu-id="eb4f1-102">A routing entry that contain mappings between the routing filters and the target endpoints to send messages to when the filter matches.</span></span>  
   
- <span data-ttu-id="9c607-104">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="9c607-104">\<system.serviceModel></span></span>  
-<span data-ttu-id="9c607-105">\<směrování ></span><span class="sxs-lookup"><span data-stu-id="9c607-105">\<routing></span></span>  
-<span data-ttu-id="9c607-106">\<routingTables></span><span class="sxs-lookup"><span data-stu-id="9c607-106">\<routingTables></span></span>  
-<span data-ttu-id="9c607-107">\<Tabulka ></span><span class="sxs-lookup"><span data-stu-id="9c607-107">\<table></span></span>  
-<span data-ttu-id="9c607-108">\<položky ></span><span class="sxs-lookup"><span data-stu-id="9c607-108">\<entries></span></span>  
+ <span data-ttu-id="eb4f1-103">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="eb4f1-103">\<system.serviceModel></span></span>  
+<span data-ttu-id="eb4f1-104">\<směrování ></span><span class="sxs-lookup"><span data-stu-id="eb4f1-104">\<routing></span></span>  
+<span data-ttu-id="eb4f1-105">\<routingTables></span><span class="sxs-lookup"><span data-stu-id="eb4f1-105">\<routingTables></span></span>  
+<span data-ttu-id="eb4f1-106">\<Tabulka ></span><span class="sxs-lookup"><span data-stu-id="eb4f1-106">\<table></span></span>  
+<span data-ttu-id="eb4f1-107">\<položky ></span><span class="sxs-lookup"><span data-stu-id="eb4f1-107">\<entries></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9c607-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9c607-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="eb4f1-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="eb4f1-108">Syntax</span></span>  
   
 ```xml  
 <routing>
@@ -35,24 +35,24 @@ ms.locfileid: "54587057"
 </routing>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="9c607-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="9c607-110">Attributes and Elements</span></span>  
- <span data-ttu-id="9c607-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="9c607-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="eb4f1-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="eb4f1-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="eb4f1-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="eb4f1-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="9c607-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="9c607-112">Attributes</span></span>  
- <span data-ttu-id="9c607-113">Žádné</span><span class="sxs-lookup"><span data-stu-id="9c607-113">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="eb4f1-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="eb4f1-111">Attributes</span></span>  
+ <span data-ttu-id="eb4f1-112">Žádné</span><span class="sxs-lookup"><span data-stu-id="eb4f1-112">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="9c607-114">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="9c607-114">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="eb4f1-113">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="eb4f1-113">Child Elements</span></span>  
   
-|<span data-ttu-id="9c607-115">Prvek</span><span class="sxs-lookup"><span data-stu-id="9c607-115">Element</span></span>|<span data-ttu-id="9c607-116">Popis</span><span class="sxs-lookup"><span data-stu-id="9c607-116">Description</span></span>|  
+|<span data-ttu-id="eb4f1-114">Prvek</span><span class="sxs-lookup"><span data-stu-id="eb4f1-114">Element</span></span>|<span data-ttu-id="eb4f1-115">Popis</span><span class="sxs-lookup"><span data-stu-id="eb4f1-115">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="9c607-117">\<Filtry></span><span class="sxs-lookup"><span data-stu-id="9c607-117">\<filters></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md)|<span data-ttu-id="9c607-118">Filtr se mapuje na koncový bod klienta, který byl dříve definován.</span><span class="sxs-lookup"><span data-stu-id="9c607-118">Maps a filter to a client endpoint that was previously defined.</span></span> <span data-ttu-id="9c607-119">Tomuto filtru odpovídá zprávy se odešlou do tohoto cílového místa.</span><span class="sxs-lookup"><span data-stu-id="9c607-119">Messages matching this filter will be sent to this destination.</span></span>|  
+|[<span data-ttu-id="eb4f1-116">\<Filtry></span><span class="sxs-lookup"><span data-stu-id="eb4f1-116">\<filters></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md)|<span data-ttu-id="eb4f1-117">Filtr se mapuje na koncový bod klienta, který byl dříve definován.</span><span class="sxs-lookup"><span data-stu-id="eb4f1-117">Maps a filter to a client endpoint that was previously defined.</span></span> <span data-ttu-id="eb4f1-118">Tomuto filtru odpovídá zprávy se odešlou do tohoto cílového místa.</span><span class="sxs-lookup"><span data-stu-id="eb4f1-118">Messages matching this filter will be sent to this destination.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="9c607-120">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="9c607-120">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="eb4f1-119">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="eb4f1-119">Parent Elements</span></span>  
   
-|<span data-ttu-id="9c607-121">Prvek</span><span class="sxs-lookup"><span data-stu-id="9c607-121">Element</span></span>|<span data-ttu-id="9c607-122">Popis</span><span class="sxs-lookup"><span data-stu-id="9c607-122">Description</span></span>|  
+|<span data-ttu-id="eb4f1-120">Prvek</span><span class="sxs-lookup"><span data-stu-id="eb4f1-120">Element</span></span>|<span data-ttu-id="eb4f1-121">Popis</span><span class="sxs-lookup"><span data-stu-id="eb4f1-121">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="9c607-123">\<směrování ></span><span class="sxs-lookup"><span data-stu-id="9c607-123">\<routing></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|<span data-ttu-id="9c607-124">Konfigurační oddíl, který obsahuje směrovací tabulky.</span><span class="sxs-lookup"><span data-stu-id="9c607-124">A configuration section that contains a routing table.</span></span>|  
+|[<span data-ttu-id="eb4f1-122">\<směrování ></span><span class="sxs-lookup"><span data-stu-id="eb4f1-122">\<routing></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|<span data-ttu-id="eb4f1-123">Konfigurační oddíl, který obsahuje směrovací tabulky.</span><span class="sxs-lookup"><span data-stu-id="eb4f1-123">A configuration section that contains a routing table.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="9c607-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9c607-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="eb4f1-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="eb4f1-124">See also</span></span>
 - <xref:System.ServiceModel.Routing.Configuration.RoutingSection?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement?displayProperty=nameWithType>
