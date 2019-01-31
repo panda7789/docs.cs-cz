@@ -1,17 +1,17 @@
 ---
-title: Element &lt;AttributeImplies&gt; (.NET Native)
+title: <AttributeImplies> – Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 82db7193-a860-418b-84fc-fff2fdf2e025
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7f4e12f690d685f58b69483631aa0e93c9902636
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: be5412e323b1c4930d7e17d09faa174885611884
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54696812"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55254974"
 ---
-# <a name="ltattributeimpliesgt-element-net-native"></a>Element &lt;AttributeImplies&gt; (.NET Native)
+# <a name="attributeimplies-element-net-native"></a>\<AttributeImplies > – Element (.NET Native)
 Definuje zásady pro prvky kódu, nadřazený atribut se používá k.  
   
 ## <a name="syntax"></a>Syntaxe  

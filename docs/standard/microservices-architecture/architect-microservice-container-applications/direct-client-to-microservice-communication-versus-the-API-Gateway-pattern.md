@@ -3,13 +3,13 @@ title: Vzor brány rozhraní API a přímá komunikace klienta mikroslužeb
 description: Pochopení rozdílů a používá model brány rozhraní API a přímá komunikace klienta mikroslužeb.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/20/2018
-ms.openlocfilehash: eebbfa6579de4cd24f58371ed1c7ab9a5f2e1c00
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.date: 01/07/2019
+ms.openlocfilehash: 7e81b46c2dbcee3b3658ab3c2e576644f0e7b372
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030539"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55479890"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Vzor brány rozhraní API a přímá komunikace klienta mikroslužeb
 
@@ -134,7 +134,7 @@ Může existovat mnoho další vyskytující aspekty nabízených produktů brá
 
 **Obrázek 4 – 14**. Pomocí Azure API Management pro vaši bránu rozhraní API
 
-V takovém případě při použití produktů, jako je Azure API Management, skutečnost, že může mít jednu bránu rozhraní API není tak rizikové, protože tyto druhy brány rozhraní API se "tenčí", což znamená, že nemusíte implementovat vlastní kód jazyka C#, který by mohl vyvíjet monolitické komponenta. Tyto produkty fungovat jako reverzní proxy server pro příchozí komunikaci, kde můžete také filtrovat rozhraní API z interní mikroslužeb a autorizace publikovaných rozhraní API na této jedné úrovni.
+V takovém případě při použití produktů, jako je Azure API Management, skutečnost, že může mít jednu bránu rozhraní API není tak rizikové, protože tyto druhy brány rozhraní API se "tenčí", což znamená, že nemusíte implementovat vlastní kód jazyka C#, který by mohl vyvíjet monolitické komponenta. 
 
 Brána rozhraní API produktů obvykle fungují jako reverzní proxy server pro příchozí komunikaci, kde můžete taky filtrovat rozhraní API z interní mikroslužeb získat autorizace publikovaných rozhraní API na této úrovni jednoho.
 

@@ -3,13 +3,13 @@ title: Implementace úloh na pozadí v mikroslužbách s IHostedService a Backgr
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Zjistěte, nové možnosti použití IHostedService a BackgroundService implementace úloh na pozadí v mikroslužby .NET Core.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/02/2018
-ms.openlocfilehash: 3fe1f4bdf80943394688941c17d3041ea90256da
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 01/07/2019
+ms.openlocfilehash: 721a3129a00867279846bc44155b307f5e97ae39
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126079"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55479776"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>Implementace úloh na pozadí v mikroslužbách s IHostedService a BackgroundService třídy
 
@@ -27,11 +27,11 @@ Všimněte si rozdílu mezi `WebHost` a `Host`.
 
 A `WebHost` (základní třídy implementující `IWebHost`) v ASP.NET Core 2.0 je artefaktů infrastruktury vám poskytují HTTP server s funkcí pro váš proces, třeba když implementujete MVC webové aplikace nebo služba webového rozhraní API. Poskytuje všechny nové infrastruktury přesnosti v ASP.NET Core, která vám umožní pomocí vkládání závislostí, vložit middlewares v požadavku kanálu atd a pomocí nich přesně `IHostedServices` pro úlohy na pozadí.
 
-A `Host` (základní třídy implementující `IHost`), ale něco nového v .NET Core 2.1. V podstatě `Host` umožňuje mít podobné infrastruktury, než máte s `WebHost` (injektáž závislostí, hostovaných služeb atd.), ale v tomto případě chcete mít jednoduchou a lehčí proces jako hostitele, není nic související s MVC , Webové rozhraní API nebo HTTP funkce serveru.
+A `Host` (základní třídy implementující `IHost`) byla zavedena v rozhraní .NET Core 2.1. V podstatě `Host` umožňuje mít podobné infrastruktury, než máte s `WebHost` (injektáž závislostí, hostovaných služeb atd.), ale v tomto případě chcete mít jednoduchou a lehčí proces jako hostitele, není nic související s MVC , Webové rozhraní API nebo HTTP funkce serveru.
 
 Proto můžete použít a buď vytvořte specializované hostitelský proces s IHost hostovaným službám a nic jiného, mikroslužby, vytvořená speciálně pro hostování `IHostedServices`, nebo můžete případně rozšířit stávající ASP.NET Core `WebHost` , jako je například existující aplikaci webového rozhraní API ASP.NET Core nebo MVC. 
 
-Každý přístup má výhody a nevýhody v závislosti na potřebách vaší firmy a škálovatelnost. Dolní řádek je v podstatě, že pokud vaše úlohy na pozadí nemají co dělat s protokolem HTTP (IWebHost) byste měli použít IHost (s .NET Core 2.1).
+Každý přístup má výhody a nevýhody v závislosti na potřebách vaší firmy a škálovatelnost. Dolní řádek je v podstatě, že pokud vaše úlohy na pozadí nemají co dělat s protokolem HTTP (IWebHost) byste měli použít IHost.
 
 ## <a name="registering-hosted-services-in-your-webhost-or-host"></a>Registrace hostovaných služeb v webového hostitele nebo hostitele
 
@@ -47,7 +47,7 @@ SignalR je jeden příklad artefakt pomocí hostovaných služeb, ale můžete h
 
 V podstatě můžete přesměrovat některou z těchto akcí pro úlohu na pozadí podle IHostedService.
 
-Způsob, jak přidat jeden nebo více `IHostedServices` do vaší `WebHost` nebo `Host` je tak, že je zaregistrujete si prostřednictvím standardních DI (injektáž závislostí) v ASP.NET Core `WebHost` (nebo `Host` v .NET Core 2.1). V podstatě, je nutné provést registraci hostovaných služeb v rámci známé `ConfigureServices()` metodu `Startup` třídy, jako v následujícím kódu z typických tomuto webovému hostiteli technologie ASP.NET. 
+Způsob, jak přidat jeden nebo více `IHostedServices` do vaší `WebHost` nebo `Host` je tak, že je zaregistrujete si prostřednictvím standardních DI (injektáž závislostí) v ASP.NET Core `WebHost` (nebo `Host` v .NET Core 2.1 a vyšší). V podstatě, je nutné provést registraci hostovaných služeb v rámci známé `ConfigureServices()` metodu `Startup` třídy, jako v následujícím kódu z typických tomuto webovému hostiteli technologie ASP.NET. 
 
 ```csharp
 public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -101,11 +101,11 @@ Jako vývojář je zodpovědná za zpracování akce zastavení nebo služby př
 
 Můžete pokračovat a vytvoření zcela nové třídě vlastní hostovanou službu a implementovat `IHostedService`, jako je třeba provést při použití .NET Core 2.0. 
 
-Nicméně protože většina úloh na pozadí mají podobné potřeby správy tokeny zrušení a další běžné operace, .NET Core 2.1 poskytuje příliš pohodlné abstraktní základní třída, kterou lze odvodit z, s názvem BackgroundService.
+Protože většina úloh na pozadí mají podobné potřeby správy tokeny zrušení a další běžné operace, neexistuje však vhodné abstraktní základní třídu lze odvodit z, s názvem `BackgroundService` (dostupné od verze rozhraní .NET Core 2.1).
 
 Tuto třídu poskytuje hlavní práce potřebné k nastavení úlohy na pozadí.
 
-Následující kód je abstraktní základní třída BackgroundService, jak je implementován v .NET Core 2.1.
+Následující kód je abstraktní základní třída BackgroundService, jak je implementován v .NET Core.
 
 ```csharp
 // Copyright (c) .NET Foundation. Licensed under the Apache License, Version 2.0. 
@@ -249,7 +249,7 @@ Ale i pro `WebHost` nasazené do fondu aplikací, jsou scénáře, jako jsou op�
 -   **Implementace IHostedService v ASP.NET Core 2.0** <br/>
     [*https://www.stevejgordon.co.uk/asp-net-core-2-ihostedservice*](https://www.stevejgordon.co.uk/asp-net-core-2-ihostedservice)
 
--   **ASP.NET Core 2.1 hostování ukázky** <br/>
+-   **Ukázka GenericHost pomocí ASP.NET Core 2.1** <br/>
     [*https://github.com/aspnet/Hosting/tree/release/2.1/samples/GenericHostSample*](https://github.com/aspnet/Hosting/tree/release/2.1/samples/GenericHostSample)
 
 >[!div class="step-by-step"]

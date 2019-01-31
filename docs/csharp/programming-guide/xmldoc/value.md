@@ -1,5 +1,5 @@
 ---
-title: '&lt;Hodnota&gt; - C# Průvodce programováním pro službu'
+title: <value> - C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <value> C# XML tag
 - value C# XML tag
 ms.assetid: 08dbadaf-9ab6-43d9-9493-98e43bed199a
-ms.openlocfilehash: 28c07331931450f41f8c93d24e119f8a981ae9ae
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1a1a4beb4a3412fe7739a69ecd0fed650b332fb2
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54500600"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55263936"
 ---
-# <a name="ltvaluegt-c-programming-guide"></a>&lt;Hodnota&gt; (C# Programming Guide)
+# <a name="value-c-programming-guide"></a>\<Hodnota > (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  

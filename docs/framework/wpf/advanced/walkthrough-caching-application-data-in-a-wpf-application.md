@@ -9,12 +9,12 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-ms.openlocfilehash: c9602599be0dd9fc262a7809348ef2642d6b4ebe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e7083c4b15e2693c0c76e6ca7c9a00e4c4dab56c
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54513721"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55480059"
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Průvodce: Ukládání dat aplikací v aplikaci WPF
 Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikacím můžete získat data z mezipaměti namísto načítání z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc umožňuje ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.
@@ -218,7 +218,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
     policy.AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(10.0);
     ```
 
-     Pokud je k dispozici žádné informace o vyřazení nebo vypršení platnosti, výchozí hodnota je <xref:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration>, což znamená, že položky mezipaměti nikdy nevyprší závislosti pouze na absolutním čase. Místo toho platnost položky mezipaměti pouze v případě nedostatku paměti. Jako osvědčený postup byste měli vždy explicitně poskytnout buď absolutní, nebo vedlejší vypršení platnosti.
+     Pokud je k dispozici žádné informace o vyřazení nebo vypršení platnosti, výchozí hodnota je <xref:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration>, což znamená, že položky mezipaměti nikdy nevyprší závislosti pouze na absolutním čase. Místo toho platnost položky mezipaměti pouze v případě nedostatku paměti. Jako osvědčený postup byste měli vždy explicitně poskytnout buď absolutní, nebo klouzavé vypršení platnosti.
 
 7.  Uvnitř `if/then` blokovat a následující kód, kterou jste přidali v předchozím kroku, přidejte následující kód k vytvoření kolekce pro cesty k souborům, které chcete monitorovat a přidejte cestu k souboru text do kolekce:
 
@@ -254,7 +254,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
     ```
 
     ```csharp
-    fileContents = File.ReadAllText("c:\\cache\\cacheText.txt") + + "\n" + DateTime.Now;
+    fileContents = File.ReadAllText("c:\\cache\\cacheText.txt") + "\n" + DateTime.Now;
     ```
 
      Časové razítko data a času je přidán, takže budete moci zobrazit, když vyprší platnost položky mezipaměti.
@@ -296,7 +296,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 
      Obsah uložený v mezipaměti z textového souboru se zobrazí v okně se zprávou. Všimněte si, že časové razítko souboru.
 
-3.  Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu **.**
+3.  Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu.
 
      Časové razítko je beze změny. To znamená, že je zobrazen obsah uložený v mezipaměti.
 
@@ -306,7 +306,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 
 5.  V textovém editoru otevřete textový soubor, který jste vytvořili. Ještě neprovádějte žádné změny.
 
-6.  Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu **.**
+6.  Zavřete okno se zprávou a pak klikněte na tlačítko **získat mezipaměti** znovu.
 
      Všimněte si, že časové razítko znovu.
 

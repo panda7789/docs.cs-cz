@@ -3,13 +3,13 @@ title: Implementace opakování volání HTTP pomocí exponenciálního omezení
 description: Zjistěte, jak pro zpracování chyb HTTP pomocí knihovny Polly a HttpClientFactory.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/16/2018
-ms.openlocfilehash: 25b816cb56c30545b8d67986817f51e17b2ff770
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.date: 01/07/2019
+ms.openlocfilehash: d0c3042f2831e5f256f43e32e70645213054f247
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362753"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55479643"
 ---
 # <a name="implement-http-call-retries-with-exponential-backoff-with-httpclientfactory-and-polly-policies"></a>Implementace opakování volání HTTP pomocí exponenciálního omezení rychlosti zásadám HttpClientFactory a Polly
 
@@ -21,9 +21,9 @@ Pomocí knihovny Polly společnosti s vlastním kódem s HttpClient však může
 
 Následující kroky ukazují, jak můžete pomocí protokolu Http opakování pomocí knihovny Polly integrovaná HttpClientFactory, což je vysvětleno v předchozí části.
 
-**Referenční dokumentace technologie ASP.NET Core 2.1 balíčky**
+**Balíčky odkaz 2.2 technologie ASP.NET Core**
 
-Váš projekt musí být pomocí ASP.NET Core 2.1 balíčků z NuGet. Je obvykle třeba `AspNetCore` Microsoft.aspnetcore.all a balíček rozšíření `Microsoft.Extensions.Http.Polly`.
+`HttpClientFactory` je k dispozici od verze rozhraní .NET Core 2.1 ale doporučujeme, abyste používali nejnovější balíčky 2.2 technologie ASP.NET Core z Nugetu ve vašem projektu. Je obvykle třeba `AspNetCore` Microsoft.aspnetcore.all a balíček rozšíření `Microsoft.Extensions.Http.Polly`.
 
 **Konfigurace klienta díky zásadám opakování pro Polly, při spuštění**
 

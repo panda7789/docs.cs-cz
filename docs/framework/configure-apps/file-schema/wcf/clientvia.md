@@ -1,15 +1,15 @@
 ---
-title: '&lt;clientVia&gt;'
+title: <clientVia>
 ms.date: 03/30/2017
 ms.assetid: c27ee94e-babd-459b-9574-2a6d67d11314
-ms.openlocfilehash: 6491411d8cfe5c7a5a944f3b1cd728c9f0a4b852
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 063dbee71a91e098e26026ea78c74642115c7955
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54641210"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55266660"
 ---
-# <a name="ltclientviagt"></a>&lt;clientVia&gt;
+# <a name="clientvia"></a>\<clientVia>
 Určuje identifikátor URI, pro který by měl být vytvořen přenosový kanál. Další informace naleznete v tématu <xref:System.ServiceModel.Description.ClientViaBehavior>.  
   
  \<system.ServiceModel>  

@@ -3,13 +3,13 @@ title: Kdy pro kontejnery Dockeru zvolit .NET Framework
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Kdy pro kontejnery Dockeru zvolit .NET Framework
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/11/2018
-ms.openlocfilehash: 1a91f645aa6f9ce8652fb18243c2e2775abe87d1
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 01/07/2019
+ms.openlocfilehash: a4da138540d8a2b8c1ac322c00904cff2b329aea
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53128749"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55479903"
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Framework
 
@@ -31,7 +31,7 @@ Nicméně i v případě této mimořádné průběh od .NET Standard 2.0 a .NET
 
 ## <a name="using-net-technologies-not-available-for-net-core"></a>Pomocí technologií .NET, není k dispozici pro .NET Core 
 
-Některé technologie rozhraní .NET Framework nejsou k dispozici v aktuální verzi .NET Core (verze 2.1 v době psaní tohoto textu). Některé z nich bude k dispozici v pozdějších verzích .NET Core (.NET Core 2.x), ale ostatní se nevztahují na novou aplikaci vzory cílí na .NET Core a mohou být nikdy k dispozici.
+Některé technologie rozhraní .NET Framework nejsou k dispozici v aktuální verzi .NET Core (verze 2.2 v době psaní tohoto textu). Některé z nich bude k dispozici v pozdějších verzích .NET Core (.NET Core 2.x), ale ostatní se nevztahují na novou aplikaci vzory cílí na .NET Core a mohou být nikdy k dispozici.
 
 Následující seznam obsahuje většinu technologie, které nejsou k dispozici v .NET Core 2.x:
 

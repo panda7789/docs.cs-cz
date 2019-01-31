@@ -1,15 +1,15 @@
 ---
-title: '&lt;backupList&gt;'
+title: <backupList>
 ms.date: 03/30/2017
 ms.assetid: a3d9d1f9-4a53-45e9-a880-86c8bee0b833
-ms.openlocfilehash: c11fd38e7c40f740d4c1c36ab87c44744ed0daab
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1e2b3eacbc845ad40030f3a48be2ef93c4ddbd8c
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54627980"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55262423"
 ---
-# <a name="ltbackuplistgt"></a>&lt;backupList&gt;
+# <a name="backuplist"></a>\<backupList>
 Představuje konfigurační oddíl pro definování zálohování seznamu, který uvádí sady koncových bodů, které byste chtěli směrovací služba použít v případě, že nelze dosáhnout primárního koncového bodu. Pokud je první koncový bod v seznamu dolů, směrovací služba se automaticky převzetí služby při selhání k dalším objektem v seznamu.  To umožňuje rychlé přidání spolehlivosti do aplikace bez nutnosti představuje klientskou aplikaci, jak zpracovávat složité vzory nebo všechny služby, ve které jsou nasazené.  
   
  \<system.serviceModel>  

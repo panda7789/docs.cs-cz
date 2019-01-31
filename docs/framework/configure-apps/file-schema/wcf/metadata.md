@@ -1,15 +1,15 @@
 ---
-title: '&lt;metadata&gt;'
+title: <metadata>
 ms.date: 03/30/2017
 ms.assetid: d09653eb-e355-4c73-b87b-28f93d56480d
-ms.openlocfilehash: 017a58c7e48a1c4c5b4abdcb7cc603e95f6516a1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1ff59a3a1a075be4f8024a2a78921d1d50311327
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54723963"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55270794"
 ---
-# <a name="ltmetadatagt"></a>&lt;metadata&gt;
+# <a name="metadata"></a>\<metadata >
 Určuje způsob zpracování metadat služby.  
   
  \<system.ServiceModel>  

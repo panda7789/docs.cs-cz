@@ -1,17 +1,17 @@
 ---
-title: Řádek &lt;číslo&gt; nelze analyzovat pomocí aktuální hodnoty parametru Delimiters.
+title: Řádek <number> nelze analyzovat pomocí aktuální hodnoty parametru Delimiters.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrTextFieldParser_MalFormedDelimitedLine
 ms.assetid: 1f8d4c2d-0334-4da8-acff-5460159835b3
-ms.openlocfilehash: a5e4f5f5127322f4160ea73f627f59436bc83a3f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 776cf7ed231f63ec9ad4308305fe77d500a4fc1b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54652342"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257336"
 ---
-# <a name="line-ltnumbergt-cannot-be-parsed-using-the-current-delimiters"></a>Řádek &lt;číslo&gt; nelze analyzovat pomocí aktuální hodnoty parametru Delimiters.
+# <a name="line-number-cannot-be-parsed-using-the-current-delimiters"></a>Řádek \<číslo > nelze analyzovat pomocí aktuální hodnoty parametru Delimiters.
 Zadaný řádek nelze analyzovat, protože používá oddělovače, než je zadaný.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

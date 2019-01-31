@@ -1,5 +1,5 @@
 ---
-title: '&lt;dependentAssembly&gt; – Element'
+title: Element <dependentAssembly>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly
@@ -11,14 +11,14 @@ helpviewer_keywords:
 ms.assetid: 14e95627-dd79-4b82-ac85-e682aa3a31d8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b2cf4d9940873c04ee6f0ab2d378a3d1253be4ee
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4b1ee9c3c19c0a3e86b6761f95ccab0292b5e15c
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54729194"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55273946"
 ---
-# <a name="ltdependentassemblygt-element"></a>&lt;dependentAssembly&gt; – Element
+# <a name="dependentassembly-element"></a>\<dependentAssembly > – Element
 Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Použijte jednu `dependentAssembly` – element pro každé sestavení.  
   
  \<Konfigurace >  

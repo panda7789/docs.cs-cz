@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, structs
 - structs [C#]
 ms.assetid: b7cf4ff2-0eb7-4e5c-93d5-b2196b4f5d89
-ms.openlocfilehash: 3f19d0485939e1923c479c1c9fdeb06572a11e14
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 609169d4624802f679f9661b7aa0596403cc48e7
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53240382"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55261617"
 ---
 # <a name="structs-c-programming-guide"></a>Struktury (Průvodce programováním v C#)
 
@@ -28,8 +28,8 @@ Struktury sdílet většina podle stejné syntaxe jako třídy. Název struktury
 - Na rozdíl od tříd, struktur dá vytvořit instance bez použití `new` operátor.  
 - Struktury můžete deklarovat konstruktory, které mají parametry. 
 - Struktura nemůže dědit z jiné třídy nebo struktury a nemůže být základní třídy. Všechny struktury dědí přímo z <xref:System.ValueType>, který dědí z <xref:System.Object>.  
-- Struktury můžou implementovat rozhraní.  
-- Struktura může sloužit jako typ připouštějící hodnotu Null a je možné přiřadit hodnotu null.  
+- Struktury můžou implementovat rozhraní. 
+- Struktura nemůže být `null`, a proměnnou struktury nelze přiřadit `null` Pokud je proměnná deklarována jako typ s možnou hodnotou Null.
   
 ## <a name="related-sections"></a>Související oddíly  
 

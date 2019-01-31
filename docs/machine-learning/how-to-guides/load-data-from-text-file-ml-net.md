@@ -1,14 +1,14 @@
 ---
 title: Načtení dat z textového souboru pro machine learning zpracování – ML.NET
 description: Objevte, jak načíst data z textového souboru pro použití v modelu strojového učení, vytváření, trénování a vyhodnocování s ML.NET
-ms.date: 11/07/2018
+ms.date: 01/29/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 7b1e8d3fb6047059c14ec3db8450364a84497219
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 6a8f74cc5324050ca94e60592f083c35afc68377
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155456"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55479669"
 ---
 # <a name="load-data-from-a-text-file-for-machine-learning-processing---mlnet"></a>Načtení dat z textového souboru pro machine learning zpracování – ML.NET
 
@@ -17,7 +17,8 @@ ms.locfileid: "53155456"
 Všimněte si, že se nemusíte zajistit dokonalou přijatelné číst některé sloupce souboru, nebo stejný sloupec více než jednou.
 
 [Příklad souboru](https://github.com/dotnet/machinelearning/blob/master/test/data/adult.tiny.with-schema.txt):
-```
+
+```console
 Label   Workclass   education   marital-status
 0   Private 11th    Never-married
 0   Private HS-grad Married-civ-spouse
@@ -31,26 +32,21 @@ Chcete načíst data z textového souboru:
 // Create a new context for ML.NET operations. It can be used for exception tracking and logging, 
 // as a catalog of available operations and as the source of randomness.
 var mlContext = new MLContext();
-TextLoader textLoader;
 
 // Create the reader: define the data columns and where to find them in the text file.
-textLoader = mlContext.Data.TextReader(new TextLoader.Arguments()
-{
-    Separator = ",",
-    HasHeader = true,
-    Column = new[]
-                {
-                    new TextLoader.Column("VendorId", DataKind.Text, 0),
-                    new TextLoader.Column("RateCode", DataKind.Text, 1),
-                    new TextLoader.Column("PassengerCount", DataKind.R4, 2),
-                    new TextLoader.Column("TripTime", DataKind.R4, 3),
-                    new TextLoader.Column("TripDistance", DataKind.R4, 4),
-                    new TextLoader.Column("PaymentType", DataKind.Text, 5),
-                    new TextLoader.Column("FareAmount", DataKind.R4, 6)
-                }
-}
+var reader = mlContext.Data.CreateTextReader(
+    columns: new TextLoader.Column[]
+    {
+        // A boolean column depicting the 'target label'.
+        new TextLoader.Column("IsOver50k",DataKind.BL,0),
+        // Three text columns.
+        new TextLoader.Column("WorkClass",DataKind.TX,1),
+        new TextLoader.Column("Education",DataKind.TX,2),
+        new TextLoader.Column("MaritalStatus",DataKind.TX,3)
+    },
+    hasHeader: true
 );
 
-// Now read the file (remember though, readers are lazy, so the reading will happen when the data is accessed).
-var data = textLoader.Read(dataPath);
+// Now read the file (remember though, readers are lazy, so the actual reading will happen when the data is accessed).
+var data = reader.Read(dataPath);
 ```

@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bdc82f2f-4754-45a1-a81e-fe2e9c30cef9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b346da9174d77fbc6a861a8b12f2cc5035b6c291
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7eb79aaf1f207d8d5ec175f32dc9a47170d604f8
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517614"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55479695"
 ---
 # <a name="data-structures-for-parallel-programming"></a>Datové struktury pro paralelní programování
 Rozhraní .NET Framework verze 4 přináší několik nových typů, které jsou užitečné pro paralelní programování, včetně sady souběžných kolekcí tříd, zjednodušené synchronizace primitiv a typy pro opožděnou inicializaci. Můžete použít tyto typy s jakýmkoli jiným kódem aplikace s více vlákny, včetně Task Parallel Library a PLINQ.  
@@ -41,7 +41,7 @@ Rozhraní .NET Framework verze 4 přináší několik nových typů, které jsou
 |----------|-----------------|  
 |<xref:System.Threading.Barrier?displayProperty=nameWithType>|Umožňuje více vláken pro práci na algoritmus paralelně tím, že poskytuje bod, ve kterém každý úkol signalizuje, že jeho doručení a potom blokovat, dokud se objevit některé nebo všechny úlohy. Další informace najdete v tématu [bariéry](../../../docs/standard/threading/barrier.md).|  
 |<xref:System.Threading.CountdownEvent?displayProperty=nameWithType>|Tím, že poskytuje mechanismus pro snadné potkávací zjednodušuje scénáře rozvětvení a spojení. Další informace najdete v tématu [CountdownEvent](../../../docs/standard/threading/countdownevent.md).|  
-|<xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>|Synchronizace primitiv podobný <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType>. <xref:System.Threading.ManualResetEventSlim> je míň náročné, ale jde použít jenom pro komunikace uvnitř procesu. Další informace najdete v tématu [ManualResetEvent a ManualResetEventSlim](../../../docs/standard/threading/manualresetevent-and-manualreseteventslim.md).|  
+|<xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>|Synchronizace primitiv podobný <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType>. <xref:System.Threading.ManualResetEventSlim> je míň náročné, ale jde použít jenom pro komunikace uvnitř procesu.|  
 |<xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType>|Synchronizace primitiv, která omezuje počet vláken, která může současně přistupovat k prostředku nebo fond prostředků. Další informace najdete v tématu [Semaphore a SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md).|  
 |<xref:System.Threading.SpinLock?displayProperty=nameWithType>|Vzájemné vyloučení zámek jednoduchého typu, který způsobí, že vlákno, které se pokouší získat zámek čekat ve smyčce, nebo *typu číselník*, dobu před tím, než získávání jeho kvantové doby. Ve scénářích, kde je očekávána čekání na uzamčení krátkodobé <xref:System.Threading.SpinLock> nabízí vyšší výkon než jiné formy uzamčení. Další informace najdete v tématu [SpinLock](../../../docs/standard/threading/spinlock.md).|  
 |<xref:System.Threading.SpinWait?displayProperty=nameWithType>|Malé, jednoduchý typ, který bude aktivovat určitou dobu a nakonec umístit vlákno do stavu čekání, pokud je překročen počet typu číselník.  Další informace najdete v tématu [objektu SpinWait](../../../docs/standard/threading/spinwait.md).|  

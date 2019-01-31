@@ -3,19 +3,19 @@ title: Mikroslužby .NET. Architektura pro Kontejnerizované aplikace .NET
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Mikroslužby jsou modulární a umožňují nezávislé nasazení služby. Kontejnery dockeru (pro systémy Linux a Windows) zjednodušit nasazování a testování seskupí služby a jeho závislosti do jedné jednotky, které je potom spouštět v izolovaném prostředí.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 08/31/2018
-ms.openlocfilehash: 52435c31e77e7139b982829ae4ab33a5e0f9f045
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.date: 01/07/2019
+ms.openlocfilehash: 6b75485d34b90b4807e82f629bbb05979add8eea
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030435"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55479942"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET: Architektura pro Kontejnerizované aplikace .NET
 
 ![Titulní knihy](./media/cover-small.png)
 
-**EDICE v2.1.03** – aktualizováno, aby ASP.NET Core 2.1
+**EDICE v2.2.00** – aktualizováno, aby ASP.NET Core 2.2
 
 Tato příručka slouží jako úvod k vývoji aplikací založených na mikroslužbách a správu kontejnerů. Tento článek popisuje kontrol architektonického návrhu a implementace přístupy pomocí .NET Core a kontejnery Dockeru. 
 
@@ -49,7 +49,7 @@ Po zkoumali této příručce, bude dalším krokem je další informace o mikro
 
 ## <a name="version"></a>Version
 
-Tento průvodce byl změněn na pokrytí **.NET Core 2.1** verze a mnoho dalších aktualizace související s stejné "wave" technologií (tj. Azure a další 3. stran technologie) okamžiku v čase s .NET Core 2.1. To je důvod, proč verze knihy se také aktualizovala na verzi **2.1**. 
+Tento průvodce byl změněn na pokrytí **.NET Core 2.2** verze a mnoho dalších aktualizace související s stejné "wave" technologií (tj. Azure a další 3. stran technologie) okamžiku v čase s nástroji .NET Core 2.2. To je důvod, proč verze knihy se také aktualizovala na verzi **2.2**. 
 
 ## <a name="what-this-guide-does-not-cover"></a>Co tato příručka nepopisuje
 
@@ -124,6 +124,8 @@ Editory:
 >
 > **Scott Hunter**, Partner Director oddělení PM, týmu .NET, Microsoft
 >
+> **Dokončení Anil**, hlavní programový manažer týmu .NET, Microsoft
+>
 > **Dylan Reisenberger**, architekt a vedoucí vývoje v Polly
 >
 > **Steve Smith**, Tvůrce softwaru & Trainer na ASPSmith Ltd.
@@ -140,14 +142,13 @@ Editory:
 >
 > **Javier Valero**, hlavní, provozní ředitel ve Grupo řešení
 >
-> **Pierre proso**, Senior konzultant, Microsoft
+> **Pierre Millet**, Sr. Consultant, Microsoft
 >
 > **Michael Friis**, správce produktu, Inc Dockeru
 >
 > **Charles Lowell**, softwarový inženýr, týmu VS CAT, Microsoft
 >
 > **Miguel Veloso**, Senior konzultant na Turing výzvy
-
 
 ## <a name="copyright"></a>Copyright
 
@@ -157,13 +158,13 @@ PUBLIKOVAL(A)
 
 Microsoft Developer Division, .NET a Visual Studio produktových týmů
 
-Divize Microsoft Corporation.
+A division of Microsoft Corporation
 
 One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright © 2018 Microsoft Corporation
+Copyright © 2018 by Microsoft Corporation
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy může reprodukovat nebo v libovolné formě nebo jakýmikoli prostředky bez písemného souhlasu vydavatele.
 

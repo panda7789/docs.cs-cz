@@ -1,15 +1,15 @@
 ---
-title: '&lt;channelPoolSettings&gt;'
+title: <channelPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 4755f3d3-4213-4c68-ae7f-45b67d744459
-ms.openlocfilehash: 666602bde75cd21b5b3d16bd4d5e6cf63c12d593
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dd6cf74560694e7e16103c624b33a4c590ce5d50
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54554956"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55266920"
 ---
-# <a name="ltchannelpoolsettingsgt"></a>&lt;channelPoolSettings&gt;
+# <a name="channelpoolsettings"></a>\<channelPoolSettings>
 Určuje nastavení fondu kanálu pro vlastní vazbu.  
   
  \<system.serviceModel>  

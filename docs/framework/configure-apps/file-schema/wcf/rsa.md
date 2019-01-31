@@ -1,15 +1,15 @@
 ---
-title: '&lt;rsa&gt;'
+title: <rsa>
 ms.date: 03/30/2017
 ms.assetid: ae1f2267-e40d-42ff-8abf-06ab7067bdb9
-ms.openlocfilehash: 74da1e2ae02f151f928afec24d6af3adf703bdcd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 126a6923469580d2d9481ab4b999560d9beda398
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54612794"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55273566"
 ---
-# <a name="ltrsagt"></a>&lt;rsa&gt;
+# <a name="rsa"></a>\<rsa>
 Zabezpečené klienta WCF, která se připojuje k koncový bod s tuto identitu ověří, deklarací identity předkládaných server obsahovat deklaraci identity, který obsahuje veřejný klíč RSA použitý k vytvoření této identity.  
   
  \<identity>  

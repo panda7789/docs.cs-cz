@@ -1,15 +1,15 @@
 ---
-title: '&lt;privacyNoticeAt&gt;'
+title: <privacyNoticeAt>
 ms.date: 03/30/2017
 ms.assetid: 4cc96942-4eb9-4241-b2fd-45aa239915e8
-ms.openlocfilehash: bf694911e0715275991084604ce44535d9183eff
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b1de2a304a5dc4295497ea1f3b395240cb5ca9bc
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683713"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55254910"
 ---
-# <a name="ltprivacynoticeatgt"></a>&lt;privacyNoticeAt&gt;
+# <a name="privacynoticeat"></a>\<privacyNoticeAt>
 Představuje prvek konfigurace, který určuje oznámení o ochraně osobních údajů používané `wsFederationHttp` vazby.  
   
  \<system.serviceModel>  

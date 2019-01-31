@@ -1,18 +1,18 @@
 ---
-title: '&lt;Vrátí&gt; (Visual Basic)'
+title: <returns> (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - returns XML tag
 - <returns> XML tag
 ms.assetid: a03a6469-d907-425d-882f-083187950e7e
-ms.openlocfilehash: 4dcf8e9aee6edecbda2874a6e07fbe6e3772b18b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0463d1b489fdad5e6af2d8eb20a1e68c77f57b4d
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580522"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55254961"
 ---
-# <a name="ltreturnsgt-visual-basic"></a>&lt;Vrátí&gt; (Visual Basic)
+# <a name="returns-visual-basic"></a>\<Vrátí > (Visual Basic)
 Určuje návratovou hodnotu vlastnosti nebo funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
