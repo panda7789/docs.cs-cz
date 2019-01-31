@@ -1,5 +1,5 @@
 ---
-title: '&lt;naslouchací procesy&gt; – Element pro &lt;trasování&gt;'
+title: <listeners> – element pro element <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners
@@ -7,22 +7,22 @@ helpviewer_keywords:
 - <listeners> element
 - listeners element
 ms.assetid: 1394c2c3-6304-46db-87c1-8e8b16f5ad5b
-ms.openlocfilehash: d98c286a49aa6439b6b82b5982a2ea4690c98b43
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: cc6ba06127703fbda5d9edf8211b4b206127cbda
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55083818"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55271668"
 ---
-# <a name="ltlistenersgt-element-for-lttracegt"></a><span data-ttu-id="eba8b-102">&lt;naslouchací procesy&gt; – Element pro &lt;trasování&gt;</span><span class="sxs-lookup"><span data-stu-id="eba8b-102">&lt;listeners&gt; Element for &lt;trace&gt;</span></span>
-<span data-ttu-id="eba8b-103">Určuje naslouchací proces, který shromažďuje, ukládá a provádí směrování zpráv.</span><span class="sxs-lookup"><span data-stu-id="eba8b-103">Specifies a listener that collects, stores, and routes messages.</span></span> <span data-ttu-id="eba8b-104">Posluchači přímý výstup trasování příslušný cíli.</span><span class="sxs-lookup"><span data-stu-id="eba8b-104">Listeners direct the tracing output to an appropriate target.</span></span>  
+# <a name="listeners-element-for-trace"></a><span data-ttu-id="bc76c-102">\<naslouchací procesy > – Element pro \<trasování ></span><span class="sxs-lookup"><span data-stu-id="bc76c-102">\<listeners> Element for \<trace></span></span>
+<span data-ttu-id="bc76c-103">Určuje naslouchací proces, který shromažďuje, ukládá a provádí směrování zpráv.</span><span class="sxs-lookup"><span data-stu-id="bc76c-103">Specifies a listener that collects, stores, and routes messages.</span></span> <span data-ttu-id="bc76c-104">Posluchači přímý výstup trasování příslušný cíli.</span><span class="sxs-lookup"><span data-stu-id="bc76c-104">Listeners direct the tracing output to an appropriate target.</span></span>  
   
- <span data-ttu-id="eba8b-105">\<Konfigurace > – Element</span><span class="sxs-lookup"><span data-stu-id="eba8b-105">\<configuration> Element</span></span>  
-<span data-ttu-id="eba8b-106">\<System.Diagnostics > – Element</span><span class="sxs-lookup"><span data-stu-id="eba8b-106">\<system.diagnostics> Element</span></span>  
-<span data-ttu-id="eba8b-107">\<trasování > – Element</span><span class="sxs-lookup"><span data-stu-id="eba8b-107">\<trace> Element</span></span>  
-<span data-ttu-id="eba8b-108">\<naslouchací procesy > – Element pro \<trasování ></span><span class="sxs-lookup"><span data-stu-id="eba8b-108">\<listeners> Element for \<trace></span></span>  
+ <span data-ttu-id="bc76c-105">\<Konfigurace > – Element</span><span class="sxs-lookup"><span data-stu-id="bc76c-105">\<configuration> Element</span></span>  
+<span data-ttu-id="bc76c-106">\<System.Diagnostics > – Element</span><span class="sxs-lookup"><span data-stu-id="bc76c-106">\<system.diagnostics> Element</span></span>  
+<span data-ttu-id="bc76c-107">\<trasování > – Element</span><span class="sxs-lookup"><span data-stu-id="bc76c-107">\<trace> Element</span></span>  
+<span data-ttu-id="bc76c-108">\<naslouchací procesy > – Element pro \<trasování ></span><span class="sxs-lookup"><span data-stu-id="bc76c-108">\<listeners> Element for \<trace></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="eba8b-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="eba8b-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bc76c-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bc76c-109">Syntax</span></span>  
   
 ```xml  
 <listeners>   
@@ -32,36 +32,36 @@ ms.locfileid: "55083818"
 </listeners>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="eba8b-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="eba8b-110">Attributes and Elements</span></span>  
- <span data-ttu-id="eba8b-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="eba8b-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="bc76c-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="bc76c-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="bc76c-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="bc76c-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="eba8b-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="eba8b-112">Attributes</span></span>  
- <span data-ttu-id="eba8b-113">Žádné</span><span class="sxs-lookup"><span data-stu-id="eba8b-113">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="bc76c-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="bc76c-112">Attributes</span></span>  
+ <span data-ttu-id="bc76c-113">Žádné</span><span class="sxs-lookup"><span data-stu-id="bc76c-113">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="eba8b-114">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="eba8b-114">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="bc76c-114">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="bc76c-114">Child Elements</span></span>  
   
-|<span data-ttu-id="eba8b-115">Prvek</span><span class="sxs-lookup"><span data-stu-id="eba8b-115">Element</span></span>|<span data-ttu-id="eba8b-116">Popis</span><span class="sxs-lookup"><span data-stu-id="eba8b-116">Description</span></span>|  
+|<span data-ttu-id="bc76c-115">Prvek</span><span class="sxs-lookup"><span data-stu-id="bc76c-115">Element</span></span>|<span data-ttu-id="bc76c-116">Popis</span><span class="sxs-lookup"><span data-stu-id="bc76c-116">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="eba8b-117">\<add></span><span class="sxs-lookup"><span data-stu-id="eba8b-117">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-listeners-for-trace.md)|<span data-ttu-id="eba8b-118">Přidá naslouchací proces pro `Listeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="eba8b-118">Adds a listener to the `Listeners` collection.</span></span>|  
-|[<span data-ttu-id="eba8b-119">\<clear></span><span class="sxs-lookup"><span data-stu-id="eba8b-119">\<clear></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md)|<span data-ttu-id="eba8b-120">Vymaže `Listeners` kolekce pro trasování.</span><span class="sxs-lookup"><span data-stu-id="eba8b-120">Clears the `Listeners` collection for trace.</span></span>|  
-|[<span data-ttu-id="eba8b-121">\<remove></span><span class="sxs-lookup"><span data-stu-id="eba8b-121">\<remove></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)|<span data-ttu-id="eba8b-122">Odebere z naslouchacího procesu `Listeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="eba8b-122">Removes a listener from the `Listeners` collection.</span></span>|  
+|[<span data-ttu-id="bc76c-117">\<add></span><span class="sxs-lookup"><span data-stu-id="bc76c-117">\<add></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-listeners-for-trace.md)|<span data-ttu-id="bc76c-118">Přidá naslouchací proces pro `Listeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="bc76c-118">Adds a listener to the `Listeners` collection.</span></span>|  
+|[<span data-ttu-id="bc76c-119">\<clear></span><span class="sxs-lookup"><span data-stu-id="bc76c-119">\<clear></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md)|<span data-ttu-id="bc76c-120">Vymaže `Listeners` kolekce pro trasování.</span><span class="sxs-lookup"><span data-stu-id="bc76c-120">Clears the `Listeners` collection for trace.</span></span>|  
+|[<span data-ttu-id="bc76c-121">\<remove></span><span class="sxs-lookup"><span data-stu-id="bc76c-121">\<remove></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)|<span data-ttu-id="bc76c-122">Odebere z naslouchacího procesu `Listeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="bc76c-122">Removes a listener from the `Listeners` collection.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="eba8b-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="eba8b-123">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="bc76c-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="bc76c-123">Parent Elements</span></span>  
   
-|<span data-ttu-id="eba8b-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="eba8b-124">Element</span></span>|<span data-ttu-id="eba8b-125">Popis</span><span class="sxs-lookup"><span data-stu-id="eba8b-125">Description</span></span>|  
+|<span data-ttu-id="bc76c-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="bc76c-124">Element</span></span>|<span data-ttu-id="bc76c-125">Popis</span><span class="sxs-lookup"><span data-stu-id="bc76c-125">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="eba8b-126">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="eba8b-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`system.diagnostics`|<span data-ttu-id="eba8b-127">Určuje kořenový element části o konfiguraci technologie ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="eba8b-127">Specifies the root element for the ASP.NET configuration section.</span></span>|  
-|`trace`|<span data-ttu-id="eba8b-128">Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.</span><span class="sxs-lookup"><span data-stu-id="eba8b-128">Contains listeners that collect, store, and route tracing messages.</span></span>|  
+|`configuration`|<span data-ttu-id="bc76c-126">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="bc76c-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`system.diagnostics`|<span data-ttu-id="bc76c-127">Určuje kořenový element části o konfiguraci technologie ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="bc76c-127">Specifies the root element for the ASP.NET configuration section.</span></span>|  
+|`trace`|<span data-ttu-id="bc76c-128">Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.</span><span class="sxs-lookup"><span data-stu-id="bc76c-128">Contains listeners that collect, store, and route tracing messages.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="eba8b-129">Poznámky</span><span class="sxs-lookup"><span data-stu-id="eba8b-129">Remarks</span></span>  
- <span data-ttu-id="eba8b-130"><xref:System.Diagnostics.Debug> a <xref:System.Diagnostics.Trace> třídy sdílet stejný **naslouchacích procesů** kolekce.</span><span class="sxs-lookup"><span data-stu-id="eba8b-130">The <xref:System.Diagnostics.Debug> and <xref:System.Diagnostics.Trace> classes share the same **Listeners** collection.</span></span> <span data-ttu-id="eba8b-131">Pokud chcete přidat objekt naslouchacího procesu do kolekce v jednom z těchto tříd, jiná třída používá stejný naslouchací proces.</span><span class="sxs-lookup"><span data-stu-id="eba8b-131">If you add a listener object to the collection in one of these classes, the other class uses the same listener.</span></span> <span data-ttu-id="eba8b-132">Naslouchací proces třídy součástí rozhraní .NET Framework jsou odvozeny od <xref:System.Diagnostics.TraceListener> třídy.</span><span class="sxs-lookup"><span data-stu-id="eba8b-132">The listener classes shipped with the .NET Framework derive from the <xref:System.Diagnostics.TraceListener> class.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="bc76c-129">Poznámky</span><span class="sxs-lookup"><span data-stu-id="bc76c-129">Remarks</span></span>  
+ <span data-ttu-id="bc76c-130"><xref:System.Diagnostics.Debug> a <xref:System.Diagnostics.Trace> třídy sdílet stejný **naslouchacích procesů** kolekce.</span><span class="sxs-lookup"><span data-stu-id="bc76c-130">The <xref:System.Diagnostics.Debug> and <xref:System.Diagnostics.Trace> classes share the same **Listeners** collection.</span></span> <span data-ttu-id="bc76c-131">Pokud chcete přidat objekt naslouchacího procesu do kolekce v jednom z těchto tříd, jiná třída používá stejný naslouchací proces.</span><span class="sxs-lookup"><span data-stu-id="bc76c-131">If you add a listener object to the collection in one of these classes, the other class uses the same listener.</span></span> <span data-ttu-id="bc76c-132">Naslouchací proces třídy součástí rozhraní .NET Framework jsou odvozeny od <xref:System.Diagnostics.TraceListener> třídy.</span><span class="sxs-lookup"><span data-stu-id="bc76c-132">The listener classes shipped with the .NET Framework derive from the <xref:System.Diagnostics.TraceListener> class.</span></span>  
   
-## <a name="configuration-file"></a><span data-ttu-id="eba8b-133">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="eba8b-133">Configuration File</span></span>  
- <span data-ttu-id="eba8b-134">Tento element lze použít v konfiguračním souboru počítače (Machine.config) a konfigurační soubor aplikace.</span><span class="sxs-lookup"><span data-stu-id="eba8b-134">This element can be used in the machine configuration file (Machine.config) and the application configuration file.</span></span>  
+## <a name="configuration-file"></a><span data-ttu-id="bc76c-133">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="bc76c-133">Configuration File</span></span>  
+ <span data-ttu-id="bc76c-134">Tento element lze použít v konfiguračním souboru počítače (Machine.config) a konfigurační soubor aplikace.</span><span class="sxs-lookup"><span data-stu-id="bc76c-134">This element can be used in the machine configuration file (Machine.config) and the application configuration file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="eba8b-135">Příklad</span><span class="sxs-lookup"><span data-stu-id="eba8b-135">Example</span></span>  
- <span data-ttu-id="eba8b-136">Následující příklad ukazuje způsob použití  **\<naslouchacích procesů >** prvku pro přidání posluchače `MyListener` a `MyEventListener` k **naslouchacích procesů** kolekce.</span><span class="sxs-lookup"><span data-stu-id="eba8b-136">The following example shows how to use the **\<listeners>** element to add the listeners `MyListener` and `MyEventListener` to the **Listeners** collection.</span></span> <span data-ttu-id="eba8b-137">`MyListener` Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru.</span><span class="sxs-lookup"><span data-stu-id="eba8b-137">`MyListener` creates a file called `MyListener.log` and writes the output to the file.</span></span> <span data-ttu-id="eba8b-138">`MyEventListener` vytvoří záznam v protokolu událostí.</span><span class="sxs-lookup"><span data-stu-id="eba8b-138">`MyEventListener` creates an entry in the event log.</span></span>  
+## <a name="example"></a><span data-ttu-id="bc76c-135">Příklad</span><span class="sxs-lookup"><span data-stu-id="bc76c-135">Example</span></span>  
+ <span data-ttu-id="bc76c-136">Následující příklad ukazuje způsob použití  **\<naslouchacích procesů >** prvku pro přidání posluchače `MyListener` a `MyEventListener` k **naslouchacích procesů** kolekce.</span><span class="sxs-lookup"><span data-stu-id="bc76c-136">The following example shows how to use the **\<listeners>** element to add the listeners `MyListener` and `MyEventListener` to the **Listeners** collection.</span></span> <span data-ttu-id="bc76c-137">`MyListener` Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru.</span><span class="sxs-lookup"><span data-stu-id="bc76c-137">`MyListener` creates a file called `MyListener.log` and writes the output to the file.</span></span> <span data-ttu-id="bc76c-138">`MyEventListener` vytvoří záznam v protokolu událostí.</span><span class="sxs-lookup"><span data-stu-id="bc76c-138">`MyEventListener` creates an entry in the event log.</span></span>  
   
 ```xml  
 <configuration>  
@@ -84,6 +84,6 @@ ms.locfileid: "55083818"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="eba8b-139">Viz také:</span><span class="sxs-lookup"><span data-stu-id="eba8b-139">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bc76c-139">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bc76c-139">See also</span></span>
 - <xref:System.Diagnostics.TraceListener>
-- [<span data-ttu-id="eba8b-140">Trasování a ladění schématu nastavení</span><span class="sxs-lookup"><span data-stu-id="eba8b-140">Trace and Debug Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [<span data-ttu-id="bc76c-140">Trasování a ladění schématu nastavení</span><span class="sxs-lookup"><span data-stu-id="bc76c-140">Trace and Debug Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
