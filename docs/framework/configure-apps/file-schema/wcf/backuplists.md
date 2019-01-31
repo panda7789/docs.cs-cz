@@ -1,15 +1,15 @@
 ---
-title: '&lt;backupLists&gt;'
+title: <backupLists>
 ms.date: 03/30/2017
 ms.assetid: 593b3390-f65b-4684-ad40-0596b62f0954
-ms.openlocfilehash: fc9c697aff2e9c26c7922a0acaf5577b0dea2dc1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6ac7ff19c76097cb54e7b77db21cad50b49513c0
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54532367"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55280745"
 ---
-# <a name="ltbackuplistsgt"></a>&lt;backupLists&gt;
+# <a name="backuplists"></a>\<backupLists>
 Představuje konfigurační oddíl pro definování sady záložních služeb použitých při zpracování chyb. Každý podřízený prvek je záložní seznam, který uvádí sady koncových bodů, které byste chtěli směrovací služba použít v případě, že nelze dosáhnout primárního koncového bodu. Pokud je první koncový bod v seznamu dolů, směrovací služba se automaticky převzetí služby při selhání k dalším objektem v seznamu.  To umožňuje rychlé přidání spolehlivosti do aplikace bez nutnosti představuje klientskou aplikaci, jak zpracovávat složité vzory nebo všechny služby, ve které jsou nasazené.  
   
  \<system.serviceModel>  

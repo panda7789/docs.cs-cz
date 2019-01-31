@@ -1,15 +1,15 @@
 ---
-title: '&lt;ws2007FederationHttpBinding&gt;'
+title: <ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9af4ec79-cdef-457e-9dca-09d5eb821594
-ms.openlocfilehash: 7869737f1e3d8c7a9ba569991ead6f7f759e6c58
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 26d0b6dbf950a32fabd5ac3c3aeb2546a0744863
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54616885"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55280979"
 ---
-# <a name="ltws2007federationhttpbindinggt"></a>&lt;ws2007FederationHttpBinding&gt;
+# <a name="ws2007federationhttpbinding"></a>\<ws2007FederationHttpBinding>
 Zabezpečená a interoperabilní vazbu, která je odvozena z [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a podporuje zabezpečení.  
   
  \<system.ServiceModel>  

@@ -1,14 +1,14 @@
 ---
 title: Načtení dat pomocí mnoho sloupců ze souboru CSV pro machine learning zpracování – ML.NET
 description: Zjistěte, jak načíst data data s mnoha sloupci ze souboru CSV pro použití v modelu strojového učení, vytváření, trénování a vyhodnocování s ML.NET
-ms.date: 11/07/2018
+ms.date: 01/28/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 3b87231f8e5a4ce39761d1ec71398b5295666d07
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 2ac672cf0d8c8906164c17d74c0214adeca360a9
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155450"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55289403"
 ---
 # <a name="load-data-with-many-columns-from-a-csv-file-for-machine-learning-processing---mlnet"></a>Načtení dat pomocí mnoho sloupců ze souboru CSV pro machine learning zpracování – ML.NET
 
@@ -33,15 +33,19 @@ Pokud vstupní soubor obsahuje mnoho sloupců stejného typu a vždy použít so
 var mlContext = new MLContext();
 
 // Create the reader: define the data columns and where to find them in the text file.
-var reader = mlContext.Data.TextReader(new[] {
-        // We read the first 10 values as a single float vector.
-        new TextLoader.Column("FeatureVector", DataKind.R4, 0, 9),
+var reader = mlContext.Data.CreateTextReader(
+    columns: new TextLoader.Column[]
+    {
+    // We read the first 10 values as a single float vector.
+        new TextLoader.Column("FeatureVector",DataKind.R4,0,9),
         // Separately, read the target variable.
-        new TextLoader.Column("Target", DataKind.R4, 10)
+        new TextLoader.Column("Target",DataKind.R4,10)
     },
-    // Default separator is tab, but we need a comma.
-    Separator = ",");
+    // Default separator is tab, but we need a semicolon.
+    separatorChar: ';',
+    hasHeader: true
+);
 
 // Now read the file (remember though, readers are lazy, so the actual reading will happen when the data is accessed).
 var data = reader.Read(dataPath);
-```
+```    

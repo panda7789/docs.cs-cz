@@ -1,15 +1,15 @@
 ---
-title: Co&#39;nového v ADO.NET
+title: Co je nového v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 3bb65d38-cce2-46f5-b979-e5c505e95e10
-ms.openlocfilehash: cfb1546ccddc6a4f6f3668210832db3d7a88f632
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: efba4d3f0822aa6654eb55bd0aff059dbf84d02e
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54501592"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55283696"
 ---
-# <a name="what39s-new-in-adonet"></a>Co&#39;nového v ADO.NET
+# <a name="whats-new-in-adonet"></a>Co je nového v ADO.NET
 Následující funkce jsou novinkou [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
 ## <a name="sqlclient-data-provider"></a>Zprostředkovatel dat SqlClient  

@@ -1,5 +1,5 @@
 ---
-title: '&lt;Usesmallinternalthreadstacks –&gt; – Element'
+title: Element <UseSmallInternalThreadStacks>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UseSmallInternalThreadStacks element
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: 1e3f6ec0-1cac-4e1c-9c81-17d948ae5874
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ed128cc2ddec3c599932cd5a82364d1cf6642cde
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d78d03956db3f50b4d01f06c9a6438afd62fac5d
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54505234"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55289793"
 ---
-# <a name="ltusesmallinternalthreadstacksgt-element"></a>&lt;Usesmallinternalthreadstacks –&gt; – Element
+# <a name="usesmallinternalthreadstacks-element"></a>\<Usesmallinternalthreadstacks – > – Element
 Požadavky, že modul CLR (CLR) snížit velikost paměti, používat tak, že zadáte zásobníku explicitní velikost při vytváření příslušná vlákna, které se používá interně, místo použití výchozí velikost zásobníku pro tato vlákna.  
   
  \<Konfigurace > – Element  

@@ -3,12 +3,12 @@ title: Dokumentace kódu pomocí komentářů XML
 description: Zjistěte, jak váš kód, který se dokumentační komentáře XML dokumentu a generovat soubor dokumentace XML v době kompilace.
 ms.date: 02/14/2017
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 15bdd65b96159b4c9b6eb45016f8bdde58c1efe3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4e5efacbb3dcc9121a5ef52ae437af263fd86cff
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576197"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55271353"
 ---
 # <a name="documenting-your-code-with-xml-comments"></a>Dokumentace kódu pomocí komentářů XML
 
@@ -53,7 +53,7 @@ Ukázka knihovny podporuje čtyři hlavní aritmetické operace `add`, `subtract
 Nyní chcete být schopni vytvořit dokument referenční dokumentace rozhraní API z kódu pro vývojáře třetích stran, kteří používají knihovny ale nemají přístup ke zdrojovému kódu.
 Jak už bylo zmíněno dříve dokumentační značky XML slouží k dosažení tohoto cíle. Nyní jste se seznámili s standardních tagů XML C# kompilátor podporuje.
 
-### <a name="ltsummarygt"></a>&lt;Souhrn&gt;
+### <a name="summary"></a>\<summary>
 
 `<summary>` Značka přidá stručné informace o typu nebo členu.
 Vám předvedu jeho použití tak, že ji přidáte `Math` třídy definice a první `Add` metody. Můžete použít i pro zbývající část kódu.
@@ -62,27 +62,27 @@ Vám předvedu jeho použití tak, že ji přidáte `Math` třídy definice a pr
 
 `<summary>` Značka je velmi důležité, a doporučujeme, abyste ho použili protože obsah není primární zdroj informací pro typ nebo člen v IntelliSense nebo dokument referenční dokumentace rozhraní API.
 
-### <a name="ltremarksgt"></a>&lt;Poznámky&gt;
+### <a name="remarks"></a>\<REMARKS >
 
 `<remarks>` Značky doplňuje informace o typech nebo členech, který `<summary>` poskytuje značky. V tomto příkladu budete stačí přidat jej do třídy.
 
 [!code-csharp[Remarks Tag](../../samples/snippets/csharp/concepts/codedoc/remarks-tag.cs)]
 
-### <a name="ltreturnsgt"></a>&lt;Vrátí&gt;
+### <a name="returns"></a>\<Vrátí >
 
 `<returns>` Značky popisuje vrácenou hodnotu deklarace metody.
 Jak předtím následující příklad ukazuje `<returns>` značky na první `Add` metoda. Můžete provést stejný na jiné metody.
 
 [!code-csharp[Returns Tag](../../samples/snippets/csharp/concepts/codedoc/returns-tag.cs)]
 
-### <a name="ltvaluegt"></a>&lt;value&gt;
+### <a name="value"></a>\<Hodnota >
 
 `<value>` Značka je podobný `<returns>` značku, s tím rozdílem, že ji použijete k vlastnosti.
 Za předpokladu, že vaše `Math` knihovny měl statickou vlastnost s názvem `PI`, zde je, jak můžete využít tuto značku:
 
 [!code-csharp[Value Tag](../../samples/snippets/csharp/concepts/codedoc/value-tag.cs)]
 
-### <a name="ltexamplegt"></a>&lt;Příklad&gt;
+### <a name="example"></a>\<Příklad >
 
 Můžete použít `<example>` značka, které zahrnují příklad v dokumentaci XML.
 To zahrnuje použití podřízených `<code>` značky.
@@ -91,14 +91,14 @@ To zahrnuje použití podřízených `<code>` značky.
 
 `code` Zachová značka konce řádků a odsazení delší příklady.
 
-### <a name="ltparagt"></a>&lt;para&gt;
+### <a name="para"></a>\<para>
 
 Můžete použít `<para>` značku k naformátování obsahu v rámci své nadřazené značky. `<para>` obvykle slouží uvnitř značky, například `<remarks>` nebo `<returns>`, k rozdělení textového na odstavcích.
 Obsah můžete naformátovat `<remarks>` značky pro vaší definice třídy.
 
 [!code-csharp[Para Tag](../../samples/snippets/csharp/concepts/codedoc/para-tag.cs)]
 
-### <a name="ltcgt"></a>&lt;c&gt;
+### <a name="c"></a>\<c>
 
 Stále na téma formátování, použijte `<c>` značky pro označení část textu jako kód.
 Je třeba `<code>` značky, ale vložená. To je užitečné, pokud chcete zobrazit příklad rychlý kód jako součást obsahu na značku.
@@ -106,7 +106,7 @@ Umožňuje aktualizovat dokumentaci pro `Math` třídy.
 
 [!code-csharp[C Tag](../../samples/snippets/csharp/concepts/codedoc/c-tag.cs)]
 
-### <a name="ltexceptiongt"></a>&lt;exception&gt;
+### <a name="exception"></a>\<exception>
 
 S použitím `<exception>` značky, informovat vaše vývojáře, metoda může vyvolat specifických výjimek.
 Na vaše `Math` knihovny, vidíme, že oba `Add` metody vyvolání výjimky, pokud je splněna určitá podmínka. Není to zřejmé, je však tento celé číslo `Divide` metoda vyvolá také, pokud `b` parametru je nula. Nyní přidáte výjimky dokumentace v této metodě.
@@ -116,7 +116,7 @@ Na vaše `Math` knihovny, vidíme, že oba `Add` metody vyvolání výjimky, pok
 `cref` Atributu představuje odkaz na výjimku, která je k dispozici z prostředí aktuální kompilace.
 To může být libovolný typ definovaný v projektu nebo v odkazovaném sestavení. Kompilátor vydá upozornění, pokud jeho hodnotu nelze přeložit.
 
-### <a name="ltseegt"></a>&lt;V tématu&gt;
+### <a name="see"></a>\<see>
 
 `<see>` Značky vám umožní vytvářet prokliknutelný odkaz na stránku dokumentace pro jiný element kódu. V našem dalším příkladu vytvoříme prokliknutelný odkaz mezi těmito dvěma `Add` metody.
 
@@ -125,7 +125,7 @@ To může být libovolný typ definovaný v projektu nebo v odkazovaném sestave
 `cref` Je **požadované** atribut, který představuje odkaz na typ nebo jeho člen, který je k dispozici z prostředí aktuální kompilace.
 To může být libovolný typ definovaný v projektu nebo v odkazovaném sestavení.
 
-### <a name="ltseealsogt"></a>&lt;seealso&gt;
+### <a name="seealso"></a>\<SeeAlso >
 
 Můžete použít `<seealso>` značka stejným způsobem provedete `<see>` značky. Jediným rozdílem je, že jeho obsah je obvykle umístěn v části "V části Viz také". Tady přidáme `seealso` značku na celé číslo `Add` metoda odkazovat na jiné metody ve třídě, které přijímají celočíselné parametry:
 
@@ -134,33 +134,33 @@ Můžete použít `<seealso>` značka stejným způsobem provedete `<see>` znač
 `cref` Atributu představuje odkaz na typ nebo jeho člen, který je k dispozici z prostředí aktuální kompilace.
 To může být libovolný typ definovaný v projektu nebo v odkazovaném sestavení.
 
-### <a name="ltparamgt"></a>&lt;param&gt;
+### <a name="param"></a>\<Param >
 
 Můžete použít `<param>` značka, které popisují parametry metody. Tady je příklad, double `Add` metody: Je zadán parametr popisuje značky v **požadované** `name` atribut.
 
 [!code-csharp[Param Tag](../../samples/snippets/csharp/concepts/codedoc/param-tag.cs)]
 
-### <a name="lttypeparamgt"></a>&lt;typeparam&gt;
+### <a name="typeparam"></a>\<typeparam >
 
 Použijete `<typeparam>` označit stejně jako `<param>` značky, ale pro obecný typ nebo metoda deklarace k popisu obecný parametr.
 Přidat rychlé obecnou metodu pro vaše `Math` třídy zkontrolujte, jestli jedna množství je větší než druhý.
 
 [!code-csharp[Typeparam Tag](../../samples/snippets/csharp/concepts/codedoc/typeparam-tag.cs)]
 
-### <a name="ltparamrefgt"></a>&lt;paramref&gt;
+### <a name="paramref"></a>\<paramref>
 
 V některých případech může být uprostřed popisující, co dělá metodu v co může být `<summary>` značku a budete chtít vytvořit odkaz na parametr. `<paramref>` Značky se skvěle hodí pro právě to. Pojďme na základě aktualizace souhrn naše double `Add` metody. Podobně jako `<param>` značky název parametru je zadán v **požadované** `name` atribut.
 
 [!code-csharp[Paramref Tag](../../samples/snippets/csharp/concepts/codedoc/paramref-tag.cs)]
 
-### <a name="lttypeparamrefgt"></a>&lt;typeparamref&gt;
+### <a name="typeparamref"></a>\<typeparamref >
 
 Použijete `<typeparamref>` označit stejně jako `<paramref>` značky, ale pro obecný typ nebo metoda deklarace k popisu obecný parametr.
 Můžete použít stejné obecné metody, které jste dříve vytvořili.
 
 [!code-csharp[Typeparamref Tag](../../samples/snippets/csharp/concepts/codedoc/typeparamref-tag.cs)]
 
-### <a name="ltlistgt"></a>&lt;list&gt;
+### <a name="list"></a>\<list>
 
 Můžete použít `<list>` značku a informací o formátování dokumentaci jako uspořádaného seznamu, neuspořádaný seznam nebo tabulku.
 Ujistěte se, Neseřazený seznam všech matematické operace vaše `Math` knihovna podporuje.
@@ -179,7 +179,7 @@ V kódu můžete vygenerovat kompletní s křížovými odkazy kliknout, čímž
 Existuje mnoho informace probrat se, že to bude připomínající každý vývojář, který chce, abyste mohli přispívat na tento kód.
 Naštěstí je značky XML, které vám to vyřešit:
 
-### <a name="ltincludegt"></a>&lt;include&gt;
+### <a name="include"></a>\<Zahrnout >
 
 `<include>` Značky umožňuje odkazovat na komentáře v samostatném souboru jazyka XML, které popisují typy a členy ve zdrojovém kódu, na rozdíl od uvedení dokumentační komentáře přímo v souboru zdrojového kódu.
 

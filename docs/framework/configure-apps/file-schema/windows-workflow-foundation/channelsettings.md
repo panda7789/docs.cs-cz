@@ -1,16 +1,16 @@
 ---
-title: '&lt;channelSettings&gt;'
+title: <channelSettings>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 94a4457f-f43f-458d-a47e-2d11103ee75e
-ms.openlocfilehash: 0d48955c7e8f872504514c270ffe02867f507b47
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 38b2ddc0134ea8c0e0f75db093b440788c5409aa
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731787"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55272835"
 ---
-# <a name="ltchannelsettingsgt"></a>&lt;channelSettings&gt;
+# <a name="channelsettings"></a>\<channelSettings>
 Určuje nastavení mezipaměti kanálu.  
   
 \<system.ServiceModel>  

@@ -1,5 +1,5 @@
 ---
-title: Název &lt;membername&gt; není kompatibilní se Specifikací CLS
+title: Název <membername> není kompatibilní se specifikací CLS.
 ms.date: 07/20/2015
 f1_keywords:
 - bc40031
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC40031
 ms.assetid: e2b885dc-cbf9-49ff-bbbe-531657ea99f7
-ms.openlocfilehash: b950be530eb80fd1c65b48e1625eb344c642d260
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 74b625cc3a60e591417530c6a6229c01666038e2
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54626365"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55271249"
 ---
-# <a name="name-ltmembernamegt-is-not-cls-compliant"></a>Název &lt;membername&gt; není kompatibilní se Specifikací CLS
+# <a name="name-membername-is-not-cls-compliant"></a>Název \<membername > není kompatibilní se Specifikací CLS
 Sestavení je označen jako `<CLSCompliant(True)>` ale zpřístupňuje člen s názvem, který začíná podtržítkem (`_`).  
   
  Programovací element může obsahovat jeden nebo více podtržítka, ale chcete-li být kompatibilní s [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS), se nesmí začínat podtržítkem. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  

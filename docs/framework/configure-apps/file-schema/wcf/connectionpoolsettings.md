@@ -1,15 +1,15 @@
 ---
-title: '&lt;connectionPoolSettings&gt;'
+title: <connectionPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 6fa7fa65-2c6e-4eab-b8cf-7690112c0be5
-ms.openlocfilehash: 1e3001f60ae0f18fee88678cae1e9e55d90822c9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 76b8a0feaf51b39c9c988d853db7e3bf96244905
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54526757"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55284580"
 ---
-# <a name="ltconnectionpoolsettingsgt"></a>&lt;connectionPoolSettings&gt;
+# <a name="connectionpoolsettings"></a>\<connectionPoolSettings>
 Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.  
   
  \<system.serviceModel>  

@@ -1,18 +1,18 @@
 ---
-title: '&lt;Param&gt; (Visual Basic)'
+title: <param> (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - param XML tag
 - <param> XML tag
 ms.assetid: 4e32e86f-f6f3-4301-b7fc-2f321fb54368
-ms.openlocfilehash: cc9ceccef8123d49d6267276e9dcb7be84f78a01
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 476b3f4f6b85908897e15f73bc23d2b060e337c3
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54670677"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55283644"
 ---
-# <a name="ltparamgt-visual-basic"></a>&lt;Param&gt; (Visual Basic)
+# <a name="param-visual-basic"></a>\<Param > (Visual Basic)
 Definuje parametr název a popis.  
   
 ## <a name="syntax"></a>Syntaxe  

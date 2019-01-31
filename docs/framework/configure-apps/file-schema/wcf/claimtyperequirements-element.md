@@ -1,15 +1,15 @@
 ---
-title: Element &lt;claimTypeRequirements&gt;
+title: <claimTypeRequirements> – element
 ms.date: 03/30/2017
 ms.assetid: a26efe73-4bad-4731-8cad-27f00d54354b
-ms.openlocfilehash: 32eafa3ce235b2087012bd5810a685ad5276e09d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 95cc1adf7ab37475e8d3eeb01750531a7f8ab249
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54632882"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55279627"
 ---
-# <a name="ltclaimtyperequirementsgt-element"></a>Element &lt;claimTypeRequirements&gt;
+# <a name="claimtyperequirements-element"></a>\<claimTypeRequirements> element
 Určuje kolekci požadovaných typů deklarací.  
   
  V případě federovaných stavu služby požadavky na příchozí přihlašovací údaje. Například příchozí přihlašovací údaje musí mít sadu typů deklarací identity. Každý podřízený prvek v této kolekci Určuje typy požadovaných a volitelných deklarací, očekává se objeví federovaného pověření.  

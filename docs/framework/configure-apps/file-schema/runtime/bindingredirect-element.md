@@ -1,5 +1,5 @@
 ---
-title: '&lt;bindingRedirect&gt; – Element'
+title: Element <bindingRedirect>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly/bindingRedirect
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - container tags, <bindingRedirect> element
 - bindingRedirect element
 ms.assetid: 67784ecd-9663-434e-bd6a-26975e447ac0
-ms.openlocfilehash: 3d877c642afd5075c374657287bdf305a302c00c
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: 1db46d4eb4418682613624182cca133980206ea6
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55084377"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55281200"
 ---
-# <a name="ltbindingredirectgt-element"></a>&lt;bindingRedirect&gt; – Element
+# <a name="bindingredirect-element"></a>\<bindingRedirect> Element
 Přesměruje jednu verzi sestavení k jiné.  
   
  \<Konfigurace >  

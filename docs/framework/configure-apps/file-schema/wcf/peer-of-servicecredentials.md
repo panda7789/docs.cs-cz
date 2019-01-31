@@ -1,15 +1,15 @@
 ---
-title: '&lt;peer&gt; – &lt;serviceCredentials&gt;'
+title: <peer> z <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: b134e21d-e5b5-458e-9309-626dbf8db4ed
-ms.openlocfilehash: 132c001de02e223375453c91832f461b96b57dfe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2090e79e6affe8ade6e2e52b94d2c4e1dafe8fa1
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54741254"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55266023"
 ---
-# <a name="ltpeergt-of-ltservicecredentialsgt"></a>&lt;peer&gt; – &lt;serviceCredentials&gt;
+# <a name="peer-of-servicecredentials"></a>\<sdílené > z \<serviceCredentials >
 Určuje aktuální pověření pro partnerský uzel.  
   
  \<system.ServiceModel>  

@@ -1,5 +1,5 @@
 ---
-title: Vlastnost &#39; &lt;propertyname&gt; &#39; kódu&#39;t vrátí hodnotu ve všech cestách kódu.
+title: Ve vlastnosti '<propertyname>' existují cesty kódu, které nevrací žádnou hodnotu.
 ms.date: 07/20/2015
 f1_keywords:
 - bc42107
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC42107
 ms.assetid: 06800966-9c3b-4844-9f13-83ac95607d32
-ms.openlocfilehash: b8059ebc9b6c1de685f2f04c3ee362ab8cf6d05e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1788d06aa5236d4cfc33999df86ad72c420b41df
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54611251"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55269000"
 ---
-# <a name="property-39ltpropertynamegt39-doesn39t-return-a-value-on-all-code-paths"></a>Vlastnost &#39; &lt;propertyname&gt; &#39; kódu&#39;t vrátí hodnotu ve všech cestách kódu.
+# <a name="property-propertyname-doesnt-return-a-value-on-all-code-paths"></a>Vlastnost "\<propertyname >' nevrací hodnotu ve všech cestách kódu.
 Vlastnost "\<propertyname >' nevrací hodnotu ve všech cestách kódu. V době běhu při použití vráceného výsledku může dojít k výjimce odkazem s hodnotou null.  
   
  Vlastnost `Get` postup obsahuje alespoň jeden možných cest pomocí jejího kódu, která nevrací hodnotu.  

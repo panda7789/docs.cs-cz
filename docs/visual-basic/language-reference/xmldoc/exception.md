@@ -1,18 +1,18 @@
 ---
-title: '&lt;výjimka&gt; (Visual Basic)'
+title: <exception> (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - <exception> XML tag
 - exception XML tag
 ms.assetid: c0517549-171e-4dae-ab88-a9c1700b6eee
-ms.openlocfilehash: c2b6e13059e3b309e4734c56bf9fd5eb7b82daa7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b2475bd5eaeadc12e4c8c9b0fb77a2fa5cb88911
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540894"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55283931"
 ---
-# <a name="ltexceptiongt-visual-basic"></a>&lt;výjimka&gt; (Visual Basic)
+# <a name="exception-visual-basic"></a>\<exception> (Visual Basic)
 Určuje, jaké výjimky mohou být vyvolány.  
   
 ## <a name="syntax"></a>Syntaxe  

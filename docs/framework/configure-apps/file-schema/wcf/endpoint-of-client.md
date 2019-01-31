@@ -1,15 +1,15 @@
 ---
-title: '&lt;endpoint&gt; – &lt;client&gt;'
+title: <endpoint> z <client>
 ms.date: 03/30/2017
 ms.assetid: de6238ae-bbf8-48e9-a1b5-e24c0bea8afa
-ms.openlocfilehash: a7d95ee819c911d80178e38a37aeaccc5b1f1764
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e3c934ac26a648eea4822cc7ae782dfbbfe0d99e
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54598302"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55287765"
 ---
-# <a name="ltendpointgt-of-ltclientgt"></a>&lt;endpoint&gt; – &lt;client&gt;
+# <a name="endpoint-of-client"></a>\<koncový bod > z \<klienta >
 Určuje kontrakt vazby a vlastnosti adresy koncového bodu kanálu, který používají klienti pro připojení ke koncovým bodům služby na serveru.  
   
  \<system.ServiceModel>  

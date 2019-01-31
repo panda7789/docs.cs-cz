@@ -1,15 +1,15 @@
 ---
-title: '&lt;transport&gt; – &lt;netMsmqBinding&gt;'
+title: <transport> z <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: 72e1b338-39f0-4af1-a5d9-7a2fb79f6a0b
-ms.openlocfilehash: 7eac5c7a0da71e2d06929322ac5c702d83a1ea65
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c82a786fe8e4a2b2e3243db007f4f705d9fbd79a
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54597434"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55277144"
 ---
-# <a name="lttransportgt-of-ltnetmsmqbindinggt"></a>&lt;transport&gt; – &lt;netMsmqBinding&gt;
+# <a name="transport-of-netmsmqbinding"></a>\<přenos > z \<netMsmqBinding >
 Definuje nastavení zabezpečení přenosu.  
   
  \<system.ServiceModel>  

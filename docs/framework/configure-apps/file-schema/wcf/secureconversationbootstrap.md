@@ -1,15 +1,15 @@
 ---
-title: '&lt;secureConversationBootstrap&gt;'
+title: <secureConversationBootstrap>
 ms.date: 03/30/2017
 ms.assetid: 66b46f95-fa2d-4b5b-b6ce-0572ab0cdd50
-ms.openlocfilehash: dae0d6c24e50884cf044464209f3a3b9a50079aa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c4e9ad3845f8ceef51cd4474b5f3f61b85f12754
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54744892"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55279887"
 ---
-# <a name="ltsecureconversationbootstrapgt"></a>&lt;secureConversationBootstrap&gt;
+# <a name="secureconversationbootstrap"></a>\<secureConversationBootstrap>
 Určuje výchozí hodnoty pro inicializaci služby zabezpečené konverzace.  
   
  \<system.serviceModel>  

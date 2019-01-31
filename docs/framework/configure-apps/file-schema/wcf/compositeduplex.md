@@ -1,15 +1,15 @@
 ---
-title: '&lt;compositeDuplex&gt;'
+title: <compositeDuplex>
 ms.date: 03/30/2017
 ms.assetid: 725004d1-ce88-4405-a220-78e89844f81f
-ms.openlocfilehash: e00cc6f3214dc9a040a9b6170271b1f4188d1631
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f8615637a0fa6d0fff594ef1970711ac408f02f3
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54601620"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55264502"
 ---
-# <a name="ltcompositeduplexgt"></a>&lt;compositeDuplex&gt;
+# <a name="compositeduplex"></a>\<compositeDuplex>
 Definuje prvek vazby, který se používá, když klient musí vystavit koncový bod služby umožňující odesílání zpráv zpět klientovi.  
   
  \<system.serviceModel>  

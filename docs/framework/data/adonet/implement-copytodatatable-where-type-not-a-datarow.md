@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Implementace CopyToDataTable&lt;T&gt; kde obecný typ není DataRow'
+title: 'Postupy: Implementace CopyToDataTable<T> kde obecný typ není DataRow'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b27b52cf-6172-485f-a75c-70ff9c5a2bd4
-ms.openlocfilehash: 9303fd36bc9a50c34c8fb045c69a7a25e8915610
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1f79bd421d4c504556074468f8ab7e032d3eca43
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54663082"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55288155"
 ---
-# <a name="how-to-implement-copytodatatablelttgt-where-the-generic-type-t-is-not-a-datarow"></a>Postupy: Implementace CopyToDataTable&lt;T&gt; kde obecný typ není DataRow
+# <a name="how-to-implement-copytodatatablet-where-the-generic-type-t-is-not-a-datarow"></a>Postupy: Implementace CopyToDataTable\<T > kde obecný typ není DataRow
 <xref:System.Data.DataTable> Objektu se často používá k vytváření datových vazeb. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda přijímá výsledky dotazu a zkopíruje data do <xref:System.Data.DataTable>, který potom slouží pro vytváření datových vazeb. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metody, ale pracovat pouze s <xref:System.Collections.Generic.IEnumerable%601> zdroje kde obecný parametr `T` je typu <xref:System.Data.DataRow>. I když to je užitečné, neumožňuje tabulky, který se má vytvořit ze sekvence Skalární typy, dotazy, které anonymní typy projektů nebo dotazy, které provádějí spoje tabulky platná.  
   
  Toto téma popisuje, jak implementovat dvě vlastní `CopyToDataTable<T>` rozšiřující metody, které přijímají obecný parametr `T` typu jiného než <xref:System.Data.DataRow>. Logiku pro vytvoření <xref:System.Data.DataTable> z <xref:System.Collections.Generic.IEnumerable%601> je součástí zdroje `ObjectShredder<T>` třídu, která je následně zabalené v dvě přetížené `CopyToDataTable<T>` metody rozšíření. `Shred` Metodu `ObjectShredder<T>` třída vrací vyplněné <xref:System.Data.DataTable> a přijímá tři vstupní parametry: <xref:System.Collections.Generic.IEnumerable%601> zdroje, <xref:System.Data.DataTable>a <xref:System.Data.LoadOption> výčtu. Počáteční schématu vráceného <xref:System.Data.DataTable> je na základě schématu typu `T`. Pokud je existující tabulky je zadán jako vstup, musí být konzistentní se schématem typu schématu `T`. Každé veřejné vlastnosti a pole typu `T` je převedena na <xref:System.Data.DataColumn> ve vrácené tabulce. Pokud zdrojové sekvence obsahuje typ odvozený z `T`, se rozšířit schéma vrácené tabulky pro všechny další veřejné vlastnosti nebo pole.  

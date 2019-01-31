@@ -1,16 +1,16 @@
 ---
-title: '&lt;wsFederation&gt;'
+title: <wsFederation>
 ms.date: 03/30/2017
 ms.assetid: c537f770-68bd-4f82-96ad-6424ad91369f
 author: BrucePerlerMS
-ms.openlocfilehash: fced46560263a030430c04bd550c9ad66f2e1972
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 801970ec05fc88587a5b45b5bb3a855d1a81afb3
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54521894"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55285867"
 ---
-# <a name="ltwsfederationgt"></a>&lt;wsFederation&gt;
+# <a name="wsfederation"></a>\<wsFederation>
 Poskytuje konfiguraci pro <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM).  
   
 \<system.identityModel.services>  

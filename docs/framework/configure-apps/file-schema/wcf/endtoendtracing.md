@@ -1,15 +1,15 @@
 ---
-title: '&lt;endToEndTracing&gt;'
+title: <endToEndTracing>
 ms.date: 03/30/2017
 ms.assetid: 5034f5de-bb60-4157-9ad4-58aaade094e0
-ms.openlocfilehash: c2f5e33eff4fdc6dfa85bcc10b59a7c1436cabb6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1867e307ba004af821045e7d1b5775c470d8a3e8
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54519368"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55266751"
 ---
-# <a name="ltendtoendtracinggt"></a>&lt;endToEndTracing&gt;
+# <a name="endtoendtracing"></a>\<endToEndTracing>
 Konfigurace element, který umožňuje povolit nebo zakázat různé aspekty začátku do konce trasování za běhu aplikace služby.  
   
  \<system.ServiceModel>  

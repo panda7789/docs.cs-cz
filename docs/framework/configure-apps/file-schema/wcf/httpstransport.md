@@ -1,15 +1,15 @@
 ---
-title: '&lt;httpsTransport&gt;'
+title: <httpsTransport>
 ms.date: 03/30/2017
 ms.assetid: f6ed4bc0-7e38-4348-9259-30bf61eb9435
-ms.openlocfilehash: 8a2c76fd6d657a4b86909469296e3b4c6b47a926
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: efc568990c6af87f24f93790886388e4c505456c
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54624571"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55289780"
 ---
-# <a name="lthttpstransportgt"></a>&lt;httpsTransport&gt;
+# <a name="httpstransport"></a>\<httpsTransport>
 Určuje přenos pomocí protokolu HTTP při odesílání zpráv SOAP pro vlastní vazbu.  
   
  \<system.serviceModel>  

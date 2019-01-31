@@ -1,15 +1,15 @@
 ---
-title: '&lt;discoveryClientSettings&gt;'
+title: <discoveryClientSettings>
 ms.date: 03/30/2017
 ms.assetid: 02e1b823-a8bb-4074-90d5-8599f71e8f9d
-ms.openlocfilehash: dd02f6bb7674015d1c153b2dce38e7e29181d25f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5b60c7281b92a487ba3ee275f7405cb82bd6cd87
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54599917"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55282240"
 ---
-# <a name="ltdiscoveryclientsettingsgt"></a>&lt;discoveryClientSettings&gt;
+# <a name="discoveryclientsettings"></a>\<discoveryClientSettings>
 Obsahuje nastavení potřeby aplikací a součástí procesu zjišťování služby jako klient.  
   
 \<system.ServiceModel>  

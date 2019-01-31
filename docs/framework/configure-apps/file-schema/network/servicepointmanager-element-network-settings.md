@@ -1,5 +1,5 @@
 ---
-title: '&lt;servicePointManager&gt; Element (Network Settings)'
+title: <servicePointManager> – element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#servicePointManager
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - servicePointManager element
 - <servicePointManager> element
 ms.assetid: 6e5def51-3646-4ef6-a7bd-c69151321bec
-ms.openlocfilehash: e30d38e3b925283b6048730aef2acc865be755b6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3a18f9eb3d38ef272b7a4df58d8588b622662184
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54651614"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55277547"
 ---
-# <a name="ltservicepointmanagergt-element-network-settings"></a>&lt;servicePointManager&gt; Element (Network Settings)
+# <a name="servicepointmanager-element-network-settings"></a>\<Třída servicePointManager > – Element (nastavení sítě)
 Nakonfiguruje připojení k síťovým prostředkům.  
   
  \<Konfigurace >  

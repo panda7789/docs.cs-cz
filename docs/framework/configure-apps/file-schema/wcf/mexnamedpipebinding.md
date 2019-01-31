@@ -1,15 +1,15 @@
 ---
-title: '&lt;mexNamedPipeBinding&gt;'
+title: <mexNamedPipeBinding>
 ms.date: 03/30/2017
 ms.assetid: 193412fa-3260-414c-92c6-b32ed3b94a34
-ms.openlocfilehash: 90e0a5afc1f1fa4315eab1cd8abdd8840bfe49b0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f9f6186cc88f2cc0fed8404f9e4d5776d41e2818
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54677056"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55284857"
 ---
-# <a name="ltmexnamedpipebindinggt"></a>&lt;mexNamedPipeBinding&gt;
+# <a name="mexnamedpipebinding"></a>\<mexNamedPipeBinding>
 Určuje nastavení pro vazby používané k výměně zpráv WS-MetadataExchange (WS-MEX) přes pojmenované kanály.  
   
  \<system.ServiceModel>  

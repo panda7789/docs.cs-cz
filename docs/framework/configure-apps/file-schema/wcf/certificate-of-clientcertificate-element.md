@@ -1,15 +1,15 @@
 ---
-title: '&lt;certificate&gt; elementu &lt;clientCertificate&gt;'
+title: <certificate> z <clientCertificate> – Element
 ms.date: 03/30/2017
 ms.assetid: 00297efb-a7f2-4e03-bc2b-943d545610fc
-ms.openlocfilehash: 37eef7a435447d22b56e865ac72ef5d4c1ff0674
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 94241d022e8a97253100a67e2a779593861c093c
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708893"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55286452"
 ---
-# <a name="ltcertificategt-of-ltclientcertificategt-element"></a>&lt;certificate&gt; elementu &lt;clientCertificate&gt;
+# <a name="certificate-of-clientcertificate-element"></a>\<certifikát > z \<clientCertificate > – Element
 Určuje certifikát X.509 certifikát používaný k podepisování a šifrování zpráv.  
   
  \<system.ServiceModel>  

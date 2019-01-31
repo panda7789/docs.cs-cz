@@ -1,5 +1,5 @@
 ---
-title: '&lt;Vymazat&gt; – element pro NameValueSectionHandler a DictionarySectionHandler'
+title: <clear> – element pro NameValueSectionHandler a DictionarySectionHandler
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/clear
@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: ff2294ec-fb82-4b0c-933e-ae185433fc7b
 author: guardrex
 ms.author: mairaw
-ms.openlocfilehash: 55925ee5e9c5a17f14bd199125dbaacbadb9d928
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ad3ac93b2a7f92cd33787620fc0caa2b632aa072
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54720938"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55281872"
 ---
 # <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Vymazat > – element pro NameValueSectionHandler a DictionarySectionHandler
 

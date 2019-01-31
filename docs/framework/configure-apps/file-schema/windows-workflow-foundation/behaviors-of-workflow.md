@@ -1,16 +1,16 @@
 ---
-title: '&lt;chování&gt; pracovního postupu'
+title: <behaviors> pracovního postupu
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 3c6017b6-0c4f-4192-bd67-9515f5d1ec82
-ms.openlocfilehash: b4ad7fb54cc8a03f5dd698055da5a29e719775c4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e61a2078c5989a3b100e77e6b2f753b0ee5dd934
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731670"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55271783"
 ---
-# <a name="ltbehaviorsgt-of-workflow"></a>&lt;chování&gt; pracovního postupu
+# <a name="behaviors-of-workflow"></a>\<chování > pracovního postupu
 Tento prvek obsahuje **serviceBehaviors** kolekce.  Každý prvek v kolekci definuje chování elementů používané služby pracovního postupu. Každý prvek chování je identifikován jeho jedinečné **název** atribut.  
   
  \<system.ServiceModel>  

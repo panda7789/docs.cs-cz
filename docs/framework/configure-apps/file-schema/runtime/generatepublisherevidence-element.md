@@ -1,5 +1,5 @@
 ---
-title: '&lt;generatePublisherEvidence&gt; Element'
+title: Element <generatePublisherEvidence>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - generatePublisherEvidence element
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: 7d208f50-e8d5-4a42-bc1a-1cf3590706a8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 33d4c023b7a649fd2aa3d9d52a90bb7111c59743
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9f029131f5b10cc487021ee15e72552a26c0b04e
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683031"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55275844"
 ---
-# <a name="ltgeneratepublisherevidencegt-element"></a>&lt;generatePublisherEvidence&gt; Element
+# <a name="generatepublisherevidence-element"></a>\<generatePublisherEvidence> Element
 Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> důkazy pro zabezpečení přístupu kódu (CAS).  
   
  \<Konfigurace >  

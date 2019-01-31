@@ -1,15 +1,15 @@
 ---
-title: '&lt;security&gt; – &lt;msmqIntegrationBinding&gt;'
+title: <security> z <msmqIntegrationBinding>
 ms.date: 03/30/2017
 ms.assetid: ae5c68a8-14a2-4c6e-b9e0-3e94e3e9135e
-ms.openlocfilehash: db263148a5a0993b546ffdd565ae7cf2edef580c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ceda00615ae579edb0360006bb70acd11716ce6a
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493778"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55275168"
 ---
-# <a name="ltsecuritygt-of-ltmsmqintegrationbindinggt"></a>&lt;security&gt; – &lt;msmqIntegrationBinding&gt;
+# <a name="security-of-msmqintegrationbinding"></a>\<security> of \<msmqIntegrationBinding>
 Definuje nastavení zabezpečení přenosu pro kanál integrace služby Řízení front zpráv (MSMQ).  
   
  \<system.ServiceModel>  

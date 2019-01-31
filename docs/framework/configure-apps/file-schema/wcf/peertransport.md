@@ -1,15 +1,15 @@
 ---
-title: '&lt;peerTransport&gt;'
+title: <peerTransport>
 ms.date: 03/30/2017
 ms.assetid: c1a5013a-9dd4-4a27-b114-795b8b323177
-ms.openlocfilehash: c8ca9f37b799087337f7dff6be48744f4f9dea6a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8962a0c018442ed590b62e53ea8323d80e334df7
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54703624"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55290092"
 ---
-# <a name="ltpeertransportgt"></a>&lt;peerTransport&gt;
+# <a name="peertransport"></a>\<peerTransport >
 Definuje rovnocenný přenos pro vlastní vazbu.  
   
  \<system.serviceModel>  

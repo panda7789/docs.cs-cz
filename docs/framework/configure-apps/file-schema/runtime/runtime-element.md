@@ -1,5 +1,5 @@
 ---
-title: '&lt;modul runtime&gt; – Element'
+title: Element <runtime>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#runtime
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - runtime element
 - container tags, <runtime> element
 ms.assetid: 1eb2fae3-de4b-45b6-852f-517c39b751bd
-ms.openlocfilehash: e97af56530d3d805dd7945e8514bb8f7209da86d
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: 05a94116d3b3cc662036b2ed15e255d4f8eda2c4
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55084468"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55285945"
 ---
-# <a name="ltruntimegt-element"></a>&lt;modul runtime&gt; – Element
+# <a name="runtime-element"></a>\<modul runtime > – Element
 Poskytuje informace, které slouží ke konfiguraci aplikací modulem common language runtime.  
   
  \<Konfigurace >  

@@ -1,15 +1,15 @@
 ---
-title: '&lt;udpBinding&gt;'
+title: <udpBinding>
 ms.date: 03/30/2017
 ms.assetid: fa291901-8340-45c6-9c44-5d9281c70bc3
-ms.openlocfilehash: c8e77eae52352a4ed5167a43386ec933afffa1fc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b0945169c5fb237bbc937fca54c4d321156cd2dd
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54592416"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55269507"
 ---
-# <a name="ltudpbindinggt"></a>&lt;udpBinding&gt;
+# <a name="udpbinding"></a>\<udpBinding >
 Konfigurace element, který se používá ke konfiguraci <xref:System.ServiceModel.UdpBinding> vazby.  
   
  \<system.ServiceModel>  

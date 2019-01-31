@@ -1,16 +1,16 @@
 ---
-title: '&lt;workflowIdle&gt;'
+title: <workflowIdle>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: b2ef703c-3e01-4213-9d2e-c14c7dba94d2
-ms.openlocfilehash: 9d9eb45090367fb2cc18fc357c219e74d63fb667
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: af8a2568eb13bb3007065c4b4a3564aae27de7ac
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628094"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55280927"
 ---
-# <a name="ltworkflowidlegt"></a>&lt;workflowIdle&gt;
+# <a name="workflowidle"></a>\<workflowIdle >
 Chování služby, která určuje, kdy jsou instance nečinných pracovních postupů odpojeno a zachována.  
   
 \<system.ServiceModel>  

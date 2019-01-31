@@ -1,16 +1,16 @@
 ---
-title: '&lt;Vytvoření vazby&gt;'
+title: <binding>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 666183d6-4d1f-45c7-ac64-bdf93ee8f36f
-ms.openlocfilehash: fb4fafda31205e2ce5efd01ab265fcacfa70bdf6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fb51eb1962603439b89a203eb668dfb543049170
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54539191"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55271470"
 ---
-# <a name="ltbindinggt"></a>&lt;Vytvoření vazby&gt;
+# <a name="binding"></a>\<Vytvoření vazby >
 Můžete použít `binding` element ke konfiguraci různých typů předdefinovaných vazeb, poskytnutých technologií Windows Communication Foundation (WCF).  
   
 ## <a name="system-provided-binding"></a>Vazeb poskytovaných systémem  

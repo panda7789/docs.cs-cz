@@ -1,15 +1,15 @@
 ---
-title: '&lt;clientCredentials&gt;'
+title: <clientCredentials>
 ms.date: 03/30/2017
 ms.assetid: 1e6eef0d-a34e-4d74-b0f7-f65d2181858d
-ms.openlocfilehash: d8171254fed64a2d9ba526d5714d5707aa1b1c1e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7ee49d6960864826dc74fbff629f502fcc70b4bf
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54646052"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55254805"
 ---
-# <a name="ltclientcredentialsgt"></a>&lt;clientCredentials&gt;
+# <a name="clientcredentials"></a>\<clientCredentials>
 Určuje pověření pro ověření klienta ke službě.  
   
  \<system.ServiceModel>  

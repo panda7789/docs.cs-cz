@@ -1,5 +1,5 @@
 ---
-title: '&lt;configSections&gt; – element pro &lt;konfigurace&gt;'
+title: <configSections> – element pro element <configuration>
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections
@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
 author: guardrex
 ms.author: mairaw
-ms.openlocfilehash: f46c84a1674a3e9352d0a4ccda23d44e650a70ed
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dc2bb949c7db4f70c20c3c0b687cacafed8696df
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54629485"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55266765"
 ---
 # <a name="configsections-element-for-configuration"></a>\<configSections > – element pro \<configuration >
 

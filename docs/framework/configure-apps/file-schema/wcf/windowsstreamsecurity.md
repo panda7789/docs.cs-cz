@@ -1,15 +1,15 @@
 ---
-title: '&lt;windowsStreamSecurity&gt;'
+title: <windowsStreamSecurity>
 ms.date: 03/30/2017
 ms.assetid: 926bea29-90c7-4a26-9cf0-fb4aa44f6f70
-ms.openlocfilehash: 4218072f63cabe511ca9d30c77395f734d961eca
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: aff415bb75cf719ce19fb2189cc69c2c159af6cf
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745178"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55281005"
 ---
-# <a name="ltwindowsstreamsecuritygt"></a>&lt;windowsStreamSecurity&gt;
+# <a name="windowsstreamsecurity"></a>\<windowsStreamSecurity>
 Zadejte nastavení zabezpečení datového proudu Windows pro vlastní vazbu.  
   
  \<system.serviceModel>  
