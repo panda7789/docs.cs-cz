@@ -1,29 +1,29 @@
 ---
-title: '&lt;Proměnné&gt;'
+title: <variables>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: da0fd144-dda9-4613-b650-fe6325076513
-ms.openlocfilehash: c3861eb02d7b19bde6932c67c3d5d19b82fd8fcf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3ff568c267331538fb9be0e6cb40eebbca44d882
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54520535"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55276546"
 ---
-# <a name="ltvariablesgt"></a><span data-ttu-id="20b35-102">&lt;Proměnné&gt;</span><span class="sxs-lookup"><span data-stu-id="20b35-102">&lt;variables&gt;</span></span>
-<span data-ttu-id="20b35-103">Představuje kolekci proměnných spojených s Tento dotaz aktivity.</span><span class="sxs-lookup"><span data-stu-id="20b35-103">Represents a collection of variables associated with this activity query.</span></span>  
+# <a name="variables"></a><span data-ttu-id="dcadc-101">\<proměnné ></span><span class="sxs-lookup"><span data-stu-id="dcadc-101">\<variables></span></span>
+<span data-ttu-id="dcadc-102">Představuje kolekci proměnných spojených s Tento dotaz aktivity.</span><span class="sxs-lookup"><span data-stu-id="dcadc-102">Represents a collection of variables associated with this activity query.</span></span>  
   
- <span data-ttu-id="20b35-104">Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).</span><span class="sxs-lookup"><span data-stu-id="20b35-104">For more information on tracking profile queries, see [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).</span></span>  
+ <span data-ttu-id="dcadc-103">Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).</span><span class="sxs-lookup"><span data-stu-id="dcadc-103">For more information on tracking profile queries, see [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).</span></span>  
   
-<span data-ttu-id="20b35-105">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="20b35-105">\<system.serviceModel></span></span>  
-<span data-ttu-id="20b35-106">\<sledování ></span><span class="sxs-lookup"><span data-stu-id="20b35-106">\<tracking></span></span>  
-<span data-ttu-id="20b35-107">\<trackingProfile></span><span class="sxs-lookup"><span data-stu-id="20b35-107">\<trackingProfile></span></span>  
-<span data-ttu-id="20b35-108">\<pracovní postup ></span><span class="sxs-lookup"><span data-stu-id="20b35-108">\<workflow></span></span>  
-<span data-ttu-id="20b35-109">\<activityStateQueries></span><span class="sxs-lookup"><span data-stu-id="20b35-109">\<activityStateQueries></span></span>  
-<span data-ttu-id="20b35-110">\<activityStateQuery></span><span class="sxs-lookup"><span data-stu-id="20b35-110">\<activityStateQuery></span></span>  
-<span data-ttu-id="20b35-111">\<proměnné ></span><span class="sxs-lookup"><span data-stu-id="20b35-111">\<variables></span></span>  
+<span data-ttu-id="dcadc-104">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="dcadc-104">\<system.serviceModel></span></span>  
+<span data-ttu-id="dcadc-105">\<sledování ></span><span class="sxs-lookup"><span data-stu-id="dcadc-105">\<tracking></span></span>  
+<span data-ttu-id="dcadc-106">\<trackingProfile></span><span class="sxs-lookup"><span data-stu-id="dcadc-106">\<trackingProfile></span></span>  
+<span data-ttu-id="dcadc-107">\<pracovní postup ></span><span class="sxs-lookup"><span data-stu-id="dcadc-107">\<workflow></span></span>  
+<span data-ttu-id="dcadc-108">\<activityStateQueries></span><span class="sxs-lookup"><span data-stu-id="dcadc-108">\<activityStateQueries></span></span>  
+<span data-ttu-id="dcadc-109">\<activityStateQuery></span><span class="sxs-lookup"><span data-stu-id="dcadc-109">\<activityStateQuery></span></span>  
+<span data-ttu-id="dcadc-110">\<proměnné ></span><span class="sxs-lookup"><span data-stu-id="dcadc-110">\<variables></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="20b35-112">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="20b35-112">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="dcadc-111">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dcadc-111">Syntax</span></span>  
   
 ```xml  
 <tracking>
@@ -40,26 +40,26 @@ ms.locfileid: "54520535"
 </tracking>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="20b35-113">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="20b35-113">Attributes and Elements</span></span>  
- <span data-ttu-id="20b35-114">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="20b35-114">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="dcadc-112">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="dcadc-112">Attributes and Elements</span></span>  
+ <span data-ttu-id="dcadc-113">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="dcadc-113">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="20b35-115">Atributy</span><span class="sxs-lookup"><span data-stu-id="20b35-115">Attributes</span></span>  
- <span data-ttu-id="20b35-116">Žádné</span><span class="sxs-lookup"><span data-stu-id="20b35-116">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="dcadc-114">Atributy</span><span class="sxs-lookup"><span data-stu-id="dcadc-114">Attributes</span></span>  
+ <span data-ttu-id="dcadc-115">Žádné</span><span class="sxs-lookup"><span data-stu-id="dcadc-115">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="20b35-117">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="20b35-117">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="dcadc-116">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="dcadc-116">Child Elements</span></span>  
   
-|<span data-ttu-id="20b35-118">Prvek</span><span class="sxs-lookup"><span data-stu-id="20b35-118">Element</span></span>|<span data-ttu-id="20b35-119">Popis</span><span class="sxs-lookup"><span data-stu-id="20b35-119">Description</span></span>|  
+|<span data-ttu-id="dcadc-117">Prvek</span><span class="sxs-lookup"><span data-stu-id="dcadc-117">Element</span></span>|<span data-ttu-id="dcadc-118">Popis</span><span class="sxs-lookup"><span data-stu-id="dcadc-118">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="20b35-120">\<Proměnná ></span><span class="sxs-lookup"><span data-stu-id="20b35-120">\<variable></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/variable.md)|<span data-ttu-id="20b35-121">Proměnná přidruženého k dotazu stavu aktivity.</span><span class="sxs-lookup"><span data-stu-id="20b35-121">A variable associated with an activity state query.</span></span>|  
+|[<span data-ttu-id="dcadc-119">\<Proměnná ></span><span class="sxs-lookup"><span data-stu-id="dcadc-119">\<variable></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/variable.md)|<span data-ttu-id="dcadc-120">Proměnná přidruženého k dotazu stavu aktivity.</span><span class="sxs-lookup"><span data-stu-id="dcadc-120">A variable associated with an activity state query.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="20b35-122">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="20b35-122">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="dcadc-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="dcadc-121">Parent Elements</span></span>  
   
-|<span data-ttu-id="20b35-123">Prvek</span><span class="sxs-lookup"><span data-stu-id="20b35-123">Element</span></span>|<span data-ttu-id="20b35-124">Popis</span><span class="sxs-lookup"><span data-stu-id="20b35-124">Description</span></span>|  
+|<span data-ttu-id="dcadc-122">Prvek</span><span class="sxs-lookup"><span data-stu-id="dcadc-122">Element</span></span>|<span data-ttu-id="dcadc-123">Popis</span><span class="sxs-lookup"><span data-stu-id="dcadc-123">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="20b35-125">\<activityStateQuery></span><span class="sxs-lookup"><span data-stu-id="20b35-125">\<activityStateQuery></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/activitystatequery.md)|<span data-ttu-id="20b35-126">Představuje konfiguraci elementu, který se používá ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita.</span><span class="sxs-lookup"><span data-stu-id="20b35-126">Represents a configuration element that is used to track requests to cancel a child activity by the parent activity.</span></span> <span data-ttu-id="20b35-127">Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru zrušit požadavek záznam objekty.</span><span class="sxs-lookup"><span data-stu-id="20b35-127">The query is necessary for a tracking participant to subscribe to cancel request record objects.</span></span>|  
+|[<span data-ttu-id="dcadc-124">\<activityStateQuery></span><span class="sxs-lookup"><span data-stu-id="dcadc-124">\<activityStateQuery></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/activitystatequery.md)|<span data-ttu-id="dcadc-125">Představuje konfiguraci elementu, který se používá ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita.</span><span class="sxs-lookup"><span data-stu-id="dcadc-125">Represents a configuration element that is used to track requests to cancel a child activity by the parent activity.</span></span> <span data-ttu-id="dcadc-126">Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru zrušit požadavek záznam objekty.</span><span class="sxs-lookup"><span data-stu-id="dcadc-126">The query is necessary for a tracking participant to subscribe to cancel request record objects.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="20b35-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="20b35-128">Remarks</span></span>  
- <span data-ttu-id="20b35-129">Jeden jedinečné funkce ActivityStateQuery je schopnost extrahování dat při sledování provádění pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="20b35-129">One unique feature of an ActivityStateQuery is the ability to extract data when tracking the execution of a workflow.</span></span> <span data-ttu-id="20b35-130">Tímto způsobem další kontext při přístupu k sledování záznamů příspěvek provádění.</span><span class="sxs-lookup"><span data-stu-id="20b35-130">This provides additional context when accessing the tracking records post execution.</span></span> <span data-ttu-id="20b35-131">Můžete použít [ \<argumenty >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/arguments.md), [ \<stavy >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md) a [ \<stavy >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md) prvků, které mají extrahovat všechny proměnné nebo argumentu v jakékoli aktivitě v pracovním postupu.</span><span class="sxs-lookup"><span data-stu-id="20b35-131">You can use the [\<arguments>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/arguments.md), [\<states>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md) and [\<states>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md) elements to extract any variable or argument from any activity in a workflow.</span></span> <span data-ttu-id="20b35-132">Následující příklad ukazuje k dotazu stavu aktivity, který extrahuje proměnné a argumenty při aktivity `Closed` sledování záznam je vygenerován.</span><span class="sxs-lookup"><span data-stu-id="20b35-132">The following example shows an activity state query that extracts variables and arguments when the activity’s `Closed` tracking record is emitted.</span></span> <span data-ttu-id="20b35-133">Proměnné a argumenty může být extrahována pouze pomocí ActivityStateRecord a tedy přihlášení k odběru v rámci sledovacích profilu pomocí [ \<activityStateQuery >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/activitystatequery.md).</span><span class="sxs-lookup"><span data-stu-id="20b35-133">Variables and arguments can be extracted only with an ActivityStateRecord and thus are subscribed to within a tracking profile using [\<activityStateQuery>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/activitystatequery.md).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="dcadc-127">Poznámky</span><span class="sxs-lookup"><span data-stu-id="dcadc-127">Remarks</span></span>  
+ <span data-ttu-id="dcadc-128">Jeden jedinečné funkce ActivityStateQuery je schopnost extrahování dat při sledování provádění pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="dcadc-128">One unique feature of an ActivityStateQuery is the ability to extract data when tracking the execution of a workflow.</span></span> <span data-ttu-id="dcadc-129">Tímto způsobem další kontext při přístupu k sledování záznamů příspěvek provádění.</span><span class="sxs-lookup"><span data-stu-id="dcadc-129">This provides additional context when accessing the tracking records post execution.</span></span> <span data-ttu-id="dcadc-130">Můžete použít [ \<argumenty >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/arguments.md), [ \<stavy >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md) a [ \<stavy >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md) prvků, které mají extrahovat všechny proměnné nebo argumentu v jakékoli aktivitě v pracovním postupu.</span><span class="sxs-lookup"><span data-stu-id="dcadc-130">You can use the [\<arguments>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/arguments.md), [\<states>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md) and [\<states>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md) elements to extract any variable or argument from any activity in a workflow.</span></span> <span data-ttu-id="dcadc-131">Následující příklad ukazuje k dotazu stavu aktivity, který extrahuje proměnné a argumenty při aktivity `Closed` sledování záznam je vygenerován.</span><span class="sxs-lookup"><span data-stu-id="dcadc-131">The following example shows an activity state query that extracts variables and arguments when the activity’s `Closed` tracking record is emitted.</span></span> <span data-ttu-id="dcadc-132">Proměnné a argumenty může být extrahována pouze pomocí ActivityStateRecord a tedy přihlášení k odběru v rámci sledovacích profilu pomocí [ \<activityStateQuery >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/activitystatequery.md).</span><span class="sxs-lookup"><span data-stu-id="dcadc-132">Variables and arguments can be extracted only with an ActivityStateRecord and thus are subscribed to within a tracking profile using [\<activityStateQuery>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/activitystatequery.md).</span></span>  
   
 ```xml  
 <activityStateQuery activityName="SendEmailActivity">  
@@ -75,8 +75,8 @@ ms.locfileid: "54520535"
 </activityStateQuery>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="20b35-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="20b35-134">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="dcadc-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dcadc-133">See also</span></span>
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.VariableElementCollection?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.ActivityStateQuery?displayProperty=nameWithType>
-- [<span data-ttu-id="20b35-135">Sledování a trasování pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="20b35-135">Workflow Tracking and Tracing</span></span>](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [<span data-ttu-id="20b35-136">Sledování profilů</span><span class="sxs-lookup"><span data-stu-id="20b35-136">Tracking Profiles</span></span>](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [<span data-ttu-id="dcadc-134">Sledování a trasování pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="dcadc-134">Workflow Tracking and Tracing</span></span>](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [<span data-ttu-id="dcadc-135">Sledování profilů</span><span class="sxs-lookup"><span data-stu-id="dcadc-135">Tracking Profiles</span></span>](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

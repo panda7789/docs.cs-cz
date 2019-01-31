@@ -1,25 +1,25 @@
 ---
-title: '&lt;Filtry&gt;'
+title: <filters>
 ms.date: 03/30/2017
 ms.assetid: 37a87222-ec78-4728-8105-9ca1bd961f0c
-ms.openlocfilehash: 5f50b1ad4abfa77022a17d6497b614721382ec1e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b840e17c2dccabce9e58cb658d757b0a98e1ffcf
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600190"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55254259"
 ---
-# <a name="ltfiltersgt"></a><span data-ttu-id="b8143-102">&lt;Filtry&gt;</span><span class="sxs-lookup"><span data-stu-id="b8143-102">&lt;filters&gt;</span></span>
+# <a name="filters"></a><span data-ttu-id="c4d68-101">\<Filtry ></span><span class="sxs-lookup"><span data-stu-id="c4d68-101">\<filters></span></span>
 
-<span data-ttu-id="b8143-103">`filters` Element obsahuje kolekci filtrů XPath umožňují určit, jaký druh zprávy se protokoluje.</span><span class="sxs-lookup"><span data-stu-id="b8143-103">The `filters` element holds a collection of XPath filters used to control what kind of message is logged.</span></span>
+<span data-ttu-id="c4d68-102">`filters` Element obsahuje kolekci filtrů XPath umožňují určit, jaký druh zprávy se protokoluje.</span><span class="sxs-lookup"><span data-stu-id="c4d68-102">The `filters` element holds a collection of XPath filters used to control what kind of message is logged.</span></span>
 
-<span data-ttu-id="b8143-104">Filtry se použijí pouze na transportní vrstvě, určené `logMessagesAtTransportLevel` je `true`.</span><span class="sxs-lookup"><span data-stu-id="b8143-104">Filters are applied only at the transport layer, specified by `logMessagesAtTransportLevel` is `true`.</span></span> <span data-ttu-id="b8143-105">Protokolování úrovně a poškozené zprávy služby nejsou ovlivněny filtry.</span><span class="sxs-lookup"><span data-stu-id="b8143-105">Service level and malformed message logging are not affected by filters.</span></span>
+<span data-ttu-id="c4d68-103">Filtry se použijí pouze na transportní vrstvě, určené `logMessagesAtTransportLevel` je `true`.</span><span class="sxs-lookup"><span data-stu-id="c4d68-103">Filters are applied only at the transport layer, specified by `logMessagesAtTransportLevel` is `true`.</span></span> <span data-ttu-id="c4d68-104">Protokolování úrovně a poškozené zprávy služby nejsou ovlivněny filtry.</span><span class="sxs-lookup"><span data-stu-id="c4d68-104">Service level and malformed message logging are not affected by filters.</span></span>
 
-<span data-ttu-id="b8143-106">Chcete-li přidat filtr do kolekce, použijte `add` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="b8143-106">To add a filter to the collection, use the `add` keyword.</span></span> <span data-ttu-id="b8143-107">Když jsou definovány jeden nebo více filtrů, jsou protokolovány jen zprávy, které odpovídají alespoň jeden z filtrů.</span><span class="sxs-lookup"><span data-stu-id="b8143-107">When one or more filters are defined, only messages that match at least one of the filters are logged.</span></span> <span data-ttu-id="b8143-108">Pokud není definován žádný filtr, všechny zprávy předávání.</span><span class="sxs-lookup"><span data-stu-id="b8143-108">If no filter is defined, all messages pass through.</span></span>
+<span data-ttu-id="c4d68-105">Chcete-li přidat filtr do kolekce, použijte `add` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="c4d68-105">To add a filter to the collection, use the `add` keyword.</span></span> <span data-ttu-id="c4d68-106">Když jsou definovány jeden nebo více filtrů, jsou protokolovány jen zprávy, které odpovídají alespoň jeden z filtrů.</span><span class="sxs-lookup"><span data-stu-id="c4d68-106">When one or more filters are defined, only messages that match at least one of the filters are logged.</span></span> <span data-ttu-id="c4d68-107">Pokud není definován žádný filtr, všechny zprávy předávání.</span><span class="sxs-lookup"><span data-stu-id="c4d68-107">If no filter is defined, all messages pass through.</span></span>
 
-<span data-ttu-id="b8143-109">Filtry podporuje úplnou syntaxi XPath a nastavení se použijí v pořadí, ve kterém se zobrazují v konfiguračním souboru.</span><span class="sxs-lookup"><span data-stu-id="b8143-109">Filters support the full XPath syntax, and are applied in the order they appear in the configuration file.</span></span> <span data-ttu-id="b8143-110">Filtr syntakticky nesprávný výsledkem výjimka v konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="b8143-110">A syntactically incorrect filter results in a configuration exception.</span></span>
+<span data-ttu-id="c4d68-108">Filtry podporuje úplnou syntaxi XPath a nastavení se použijí v pořadí, ve kterém se zobrazují v konfiguračním souboru.</span><span class="sxs-lookup"><span data-stu-id="c4d68-108">Filters support the full XPath syntax, and are applied in the order they appear in the configuration file.</span></span> <span data-ttu-id="c4d68-109">Filtr syntakticky nesprávný výsledkem výjimka v konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="c4d68-109">A syntactically incorrect filter results in a configuration exception.</span></span>
 
-<span data-ttu-id="b8143-111">Následuje příklad, jak nakonfigurovat filtr, který zaznamenává pouze zprávy, které mají oddíl hlavičky SOAP.</span><span class="sxs-lookup"><span data-stu-id="b8143-111">The following is an example of how to configure a filter that records only messages that have a SOAP Header section.</span></span>
+<span data-ttu-id="c4d68-110">Následuje příklad, jak nakonfigurovat filtr, který zaznamenává pouze zprávy, které mají oddíl hlavičky SOAP.</span><span class="sxs-lookup"><span data-stu-id="c4d68-110">The following is an example of how to configure a filter that records only messages that have a SOAP Header section.</span></span>
   
 ```xml  
 <messageLogging logEntireMessage="true"
@@ -35,7 +35,7 @@ ms.locfileid: "54600190"
 </messageLogging>
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="b8143-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b8143-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c4d68-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c4d68-111">See also</span></span>
 
 - <xref:System.ServiceModel.Configuration.DiagnosticSection>
 - <xref:System.ServiceModel.Diagnostics>
@@ -45,5 +45,5 @@ ms.locfileid: "54600190"
 - <xref:System.ServiceModel.Configuration.XPathMessageFilterElementCollection>
 - <xref:System.ServiceModel.Configuration.XPathMessageFilterElement>
 - <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>
-- [<span data-ttu-id="b8143-113">Konfigurace protokolování zpráv</span><span class="sxs-lookup"><span data-stu-id="b8143-113">Configuring Message Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)
-- [<span data-ttu-id="b8143-114">\<messageLogging></span><span class="sxs-lookup"><span data-stu-id="b8143-114">\<messageLogging></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)
+- [<span data-ttu-id="c4d68-112">Konfigurace protokolování zpráv</span><span class="sxs-lookup"><span data-stu-id="c4d68-112">Configuring Message Logging</span></span>](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)
+- [<span data-ttu-id="c4d68-113">\<messageLogging></span><span class="sxs-lookup"><span data-stu-id="c4d68-113">\<messageLogging></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)

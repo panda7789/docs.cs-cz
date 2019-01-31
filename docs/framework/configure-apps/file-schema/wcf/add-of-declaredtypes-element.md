@@ -1,5 +1,5 @@
 ---
-title: '&lt;add&gt; elementu &lt;declaredTypes&gt;'
+title: <add> z <declaredTypes> – Element
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts
@@ -7,22 +7,22 @@ helpviewer_keywords:
 - DataContractSerializer
 - DataContractAttribute
 ms.assetid: c3d37ae4-8f1c-463f-b195-658c5a7e90a1
-ms.openlocfilehash: dd5972c2bb25367f2566bcf77e53e7a3341d89b4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e6aab0b1eca340e212c34e2d25b9b84984dcc7a0
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54519460"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55255507"
 ---
-# <a name="ltaddgt-of-ltdeclaredtypesgt-element"></a><span data-ttu-id="3841f-102">&lt;add&gt; elementu &lt;declaredTypes&gt;</span><span class="sxs-lookup"><span data-stu-id="3841f-102">&lt;add&gt; of &lt;declaredTypes&gt; Element</span></span>
-<span data-ttu-id="3841f-103">Přidá typ používaný <xref:System.Runtime.Serialization.DataContractSerializer> během deserializace.</span><span class="sxs-lookup"><span data-stu-id="3841f-103">Adds a type used by the <xref:System.Runtime.Serialization.DataContractSerializer> during deserialization.</span></span> <span data-ttu-id="3841f-104">Každý deklarovaný typ obsahuje známé typy, které budou vráceny jako pole nebo vlastnost deklarovaného typu.</span><span class="sxs-lookup"><span data-stu-id="3841f-104">Each declared type includes the known types that will be returned as a field or property of the declared type.</span></span>  
+# <a name="add-of-declaredtypes-element"></a><span data-ttu-id="80d17-102">\<Přidat > z \<declaredTypes > – Element</span><span class="sxs-lookup"><span data-stu-id="80d17-102">\<add> of \<declaredTypes> Element</span></span>
+<span data-ttu-id="80d17-103">Přidá typ používaný <xref:System.Runtime.Serialization.DataContractSerializer> během deserializace.</span><span class="sxs-lookup"><span data-stu-id="80d17-103">Adds a type used by the <xref:System.Runtime.Serialization.DataContractSerializer> during deserialization.</span></span> <span data-ttu-id="80d17-104">Každý deklarovaný typ obsahuje známé typy, které budou vráceny jako pole nebo vlastnost deklarovaného typu.</span><span class="sxs-lookup"><span data-stu-id="80d17-104">Each declared type includes the known types that will be returned as a field or property of the declared type.</span></span>  
   
- <span data-ttu-id="3841f-105">system.runtime.serialization</span><span class="sxs-lookup"><span data-stu-id="3841f-105">system.runtime.serialization</span></span>  
-<span data-ttu-id="3841f-106">\<dataContractSerializer></span><span class="sxs-lookup"><span data-stu-id="3841f-106">\<dataContractSerializer></span></span>  
-<span data-ttu-id="3841f-107">\<declaredTypes></span><span class="sxs-lookup"><span data-stu-id="3841f-107">\<declaredTypes></span></span>  
-<span data-ttu-id="3841f-108">\<Přidat > z \<declaredTypes ></span><span class="sxs-lookup"><span data-stu-id="3841f-108">\<add> of \<declaredTypes></span></span>  
+ <span data-ttu-id="80d17-105">system.runtime.serialization</span><span class="sxs-lookup"><span data-stu-id="80d17-105">system.runtime.serialization</span></span>  
+<span data-ttu-id="80d17-106">\<dataContractSerializer></span><span class="sxs-lookup"><span data-stu-id="80d17-106">\<dataContractSerializer></span></span>  
+<span data-ttu-id="80d17-107">\<declaredTypes></span><span class="sxs-lookup"><span data-stu-id="80d17-107">\<declaredTypes></span></span>  
+<span data-ttu-id="80d17-108">\<Přidat > z \<declaredTypes ></span><span class="sxs-lookup"><span data-stu-id="80d17-108">\<add> of \<declaredTypes></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3841f-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3841f-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="80d17-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="80d17-109">Syntax</span></span>  
   
 ```xml  
 <add type="String">
@@ -33,36 +33,36 @@ ms.locfileid: "54519460"
 </add>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="3841f-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="3841f-110">Attributes and Elements</span></span>  
- <span data-ttu-id="3841f-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="3841f-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="80d17-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="80d17-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="80d17-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="80d17-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="3841f-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="3841f-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="80d17-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="80d17-112">Attributes</span></span>  
   
-|<span data-ttu-id="3841f-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="3841f-113">Attribute</span></span>|<span data-ttu-id="3841f-114">Popis</span><span class="sxs-lookup"><span data-stu-id="3841f-114">Description</span></span>|  
+|<span data-ttu-id="80d17-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="80d17-113">Attribute</span></span>|<span data-ttu-id="80d17-114">Popis</span><span class="sxs-lookup"><span data-stu-id="80d17-114">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="3841f-115">– typ</span><span class="sxs-lookup"><span data-stu-id="3841f-115">type</span></span>|<span data-ttu-id="3841f-116">Požadovaný atribut typu string.</span><span class="sxs-lookup"><span data-stu-id="3841f-116">Required string attribute.</span></span><br /><br /> <span data-ttu-id="3841f-117">Určuje název typu (včetně oboru názvů), název sestavení, číslo verze, jazykovou verzi a token veřejného klíče.</span><span class="sxs-lookup"><span data-stu-id="3841f-117">Specifies the type name (including namespace), assembly name, version number, culture, and public key token.</span></span>|  
+|<span data-ttu-id="80d17-115">– typ</span><span class="sxs-lookup"><span data-stu-id="80d17-115">type</span></span>|<span data-ttu-id="80d17-116">Požadovaný atribut typu string.</span><span class="sxs-lookup"><span data-stu-id="80d17-116">Required string attribute.</span></span><br /><br /> <span data-ttu-id="80d17-117">Určuje název typu (včetně oboru názvů), název sestavení, číslo verze, jazykovou verzi a token veřejného klíče.</span><span class="sxs-lookup"><span data-stu-id="80d17-117">Specifies the type name (including namespace), assembly name, version number, culture, and public key token.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="3841f-118">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="3841f-118">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="80d17-118">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="80d17-118">Child Elements</span></span>  
   
-|<span data-ttu-id="3841f-119">Prvek</span><span class="sxs-lookup"><span data-stu-id="3841f-119">Element</span></span>|<span data-ttu-id="3841f-120">Popis</span><span class="sxs-lookup"><span data-stu-id="3841f-120">Description</span></span>|  
+|<span data-ttu-id="80d17-119">Prvek</span><span class="sxs-lookup"><span data-stu-id="80d17-119">Element</span></span>|<span data-ttu-id="80d17-120">Popis</span><span class="sxs-lookup"><span data-stu-id="80d17-120">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="3841f-121">\<knownType></span><span class="sxs-lookup"><span data-stu-id="3841f-121">\<knownType></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/knowntype.md)|<span data-ttu-id="3841f-122">Určuje známý typ deklarovaný typ, který je přidáván.</span><span class="sxs-lookup"><span data-stu-id="3841f-122">Specifies the known type for the declared type that is being added.</span></span> <span data-ttu-id="3841f-123">Pokud je deklarovaný typ obecného typu, pak musíte taky přidat prvek parametru, který se `<knownType>` element k určení, které obecný parametr se používá k vrácení známého typu.</span><span class="sxs-lookup"><span data-stu-id="3841f-123">If the declared type is a generic type, then you must also add a parameter element to the `<knownType>` element to specify which generic parameter is used to return the known type.</span></span>|  
+|[<span data-ttu-id="80d17-121">\<knownType></span><span class="sxs-lookup"><span data-stu-id="80d17-121">\<knownType></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/knowntype.md)|<span data-ttu-id="80d17-122">Určuje známý typ deklarovaný typ, který je přidáván.</span><span class="sxs-lookup"><span data-stu-id="80d17-122">Specifies the known type for the declared type that is being added.</span></span> <span data-ttu-id="80d17-123">Pokud je deklarovaný typ obecného typu, pak musíte taky přidat prvek parametru, který se `<knownType>` element k určení, které obecný parametr se používá k vrácení známého typu.</span><span class="sxs-lookup"><span data-stu-id="80d17-123">If the declared type is a generic type, then you must also add a parameter element to the `<knownType>` element to specify which generic parameter is used to return the known type.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="3841f-124">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="3841f-124">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="80d17-124">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="80d17-124">Parent Elements</span></span>  
   
-|<span data-ttu-id="3841f-125">Prvek</span><span class="sxs-lookup"><span data-stu-id="3841f-125">Element</span></span>|<span data-ttu-id="3841f-126">Popis</span><span class="sxs-lookup"><span data-stu-id="3841f-126">Description</span></span>|  
+|<span data-ttu-id="80d17-125">Prvek</span><span class="sxs-lookup"><span data-stu-id="80d17-125">Element</span></span>|<span data-ttu-id="80d17-126">Popis</span><span class="sxs-lookup"><span data-stu-id="80d17-126">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="3841f-127">\<declaredTypes></span><span class="sxs-lookup"><span data-stu-id="3841f-127">\<declaredTypes></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/declaredtypes.md)|<span data-ttu-id="3841f-128">Obsahuje typy, které vyžadují během deserializace za pomocí známých typů <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="3841f-128">Contains the types that require known types during deserialization by the <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>|  
+|[<span data-ttu-id="80d17-127">\<declaredTypes></span><span class="sxs-lookup"><span data-stu-id="80d17-127">\<declaredTypes></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/declaredtypes.md)|<span data-ttu-id="80d17-128">Obsahuje typy, které vyžadují během deserializace za pomocí známých typů <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="80d17-128">Contains the types that require known types during deserialization by the <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="3841f-129">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3841f-129">Remarks</span></span>  
- <span data-ttu-id="3841f-130">Další informace o známých typů najdete v tématu [známé typy kontraktů dat.](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) a <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="3841f-130">For more information about known types, see [Data Contract Known Types](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) and <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="80d17-129">Poznámky</span><span class="sxs-lookup"><span data-stu-id="80d17-129">Remarks</span></span>  
+ <span data-ttu-id="80d17-130">Další informace o známých typů najdete v tématu [známé typy kontraktů dat.](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) a <xref:System.Runtime.Serialization.DataContractSerializer>.</span><span class="sxs-lookup"><span data-stu-id="80d17-130">For more information about known types, see [Data Contract Known Types](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) and <xref:System.Runtime.Serialization.DataContractSerializer>.</span></span>  
   
- <span data-ttu-id="3841f-131">Zobrazit [ \<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md) příklad použití tohoto prvku.</span><span class="sxs-lookup"><span data-stu-id="3841f-131">See the [\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md) for an example of using this element.</span></span>  
+ <span data-ttu-id="80d17-131">Zobrazit [ \<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md) příklad použití tohoto prvku.</span><span class="sxs-lookup"><span data-stu-id="80d17-131">See the [\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md) for an example of using this element.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="3841f-132">Pokud chcete přidat <xref:System.Object> jako typ `<declaredType>`, <xref:System.Configuration.ConfigurationErrorsException> je vyvolána výjimka.</span><span class="sxs-lookup"><span data-stu-id="3841f-132">If you add the <xref:System.Object> type as a `<declaredType>`, a <xref:System.Configuration.ConfigurationErrorsException> is thrown.</span></span> <span data-ttu-id="3841f-133">Je to proto, <xref:System.Object> typ nelze použít jako deklarovaný typ v konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="3841f-133">This is because the <xref:System.Object> type cannot be used as a declared type in configuration.</span></span>  
+>  <span data-ttu-id="80d17-132">Pokud chcete přidat <xref:System.Object> jako typ `<declaredType>`, <xref:System.Configuration.ConfigurationErrorsException> je vyvolána výjimka.</span><span class="sxs-lookup"><span data-stu-id="80d17-132">If you add the <xref:System.Object> type as a `<declaredType>`, a <xref:System.Configuration.ConfigurationErrorsException> is thrown.</span></span> <span data-ttu-id="80d17-133">Je to proto, <xref:System.Object> typ nelze použít jako deklarovaný typ v konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="80d17-133">This is because the <xref:System.Object> type cannot be used as a declared type in configuration.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3841f-134">Příklad</span><span class="sxs-lookup"><span data-stu-id="3841f-134">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="80d17-134">Příklad</span><span class="sxs-lookup"><span data-stu-id="80d17-134">Example</span></span>  
   
 ```xml  
 <add type="MyCompany.Library.Shape,
@@ -75,8 +75,8 @@ ms.locfileid: "54519460"
 </add>
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3841f-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3841f-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="80d17-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="80d17-135">See also</span></span>
 - <xref:System.Runtime.Serialization.DataContractSerializer>
-- [<span data-ttu-id="3841f-136">Známé typy kontraktů dat</span><span class="sxs-lookup"><span data-stu-id="3841f-136">Data Contract Known Types</span></span>](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
-- [<span data-ttu-id="3841f-137">\<dataContractSerializer></span><span class="sxs-lookup"><span data-stu-id="3841f-137">\<dataContractSerializer></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)
-- [<span data-ttu-id="3841f-138">\<Přidat > z \<declaredTypes ></span><span class="sxs-lookup"><span data-stu-id="3841f-138">\<add> of \<declaredTypes></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)
+- [<span data-ttu-id="80d17-136">Známé typy kontraktů dat</span><span class="sxs-lookup"><span data-stu-id="80d17-136">Data Contract Known Types</span></span>](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+- [<span data-ttu-id="80d17-137">\<dataContractSerializer></span><span class="sxs-lookup"><span data-stu-id="80d17-137">\<dataContractSerializer></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)
+- [<span data-ttu-id="80d17-138">\<Přidat > z \<declaredTypes ></span><span class="sxs-lookup"><span data-stu-id="80d17-138">\<add> of \<declaredTypes></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)
