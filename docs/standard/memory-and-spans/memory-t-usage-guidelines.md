@@ -1,17 +1,17 @@
 ---
-title: Paměť&lt;T&gt; a rozpětí&lt;T&gt; pokyny k používání
+title: Paměť<T> a rozpětí<T> pokyny k používání
 ms.date: 10/01/2018
 helpviewer_keywords:
 - Memory&lt;T&gt; and Span&lt;T&gt; best practices
 - using Memory&lt;T&gt; and Span&lt;T&gt;
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ab447358ab8ace801a13e835ed9e0e5ca7924df2
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: e9c5f25d6dbffc26d30843dcd9ced36e9175e7c1
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53156498"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55273836"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Paměť\<T > a rozpětí\<T > Pokyny k používání
 

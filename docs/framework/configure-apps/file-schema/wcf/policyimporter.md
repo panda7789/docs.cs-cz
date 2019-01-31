@@ -1,15 +1,15 @@
 ---
-title: '&lt;policyImporter&gt;'
+title: <policyImporter>
 ms.date: 03/30/2017
 ms.assetid: b0d03456-546f-44bb-ab12-1b2ce7f98fca
-ms.openlocfilehash: 4075f7fcb1c65da3d9e2e5e5dab52452ca2c9b60
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ab9193d5974ccffcbfa3e741ac4d32ff357ed372
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54632163"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55269234"
 ---
-# <a name="ltpolicyimportergt"></a>&lt;policyImporter&gt;
+# <a name="policyimporter"></a>\<policyImporter>
 Určuje programu pro import zásady, které řídí import kontrolních výrazů vlastních zásad o vazbách.  
   
  \<system.ServiceModel>  

@@ -1,15 +1,15 @@
 ---
-title: '&lt;transactedBatching&gt;'
+title: <transactedBatching>
 ms.date: 03/30/2017
 ms.assetid: 2f790a0d-8f03-4b86-81b5-ce1bc1a6c575
-ms.openlocfilehash: 2f89a1a6c2cc110a4695b792c5aa801b516393be
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1e8ce41a27bd328c861f2f376a89c57bcd035389
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54565992"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55281291"
 ---
-# <a name="lttransactedbatchinggt"></a>&lt;transactedBatching&gt;
+# <a name="transactedbatching"></a>\<transactedBatching >
 Určuje, zda jsou podporovány dávkové transakce pro operace příjmu.  
   
  \<system.ServiceModel>  

@@ -1,5 +1,5 @@
 ---
-title: Přetížení rozpoznání s pozdní vazbou nelze použít pro &#39; &lt;název_procedury&gt; &#39; protože přistupující instance je typu rozhraní
+title: Rozpoznání přetížené procedury s pozdní vazbou nelze použít pro '<procedurename>', protože přistupující instance je typu rozhraní.
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30933
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - overload resolution [Visual Basic], with late-bound argument
 - BC30933
 ms.assetid: 8182eea0-dd34-4d6e-9ca0-41d8713e9dc4
-ms.openlocfilehash: db0ce88f63be8d58cc1c1abf91eda6a0e56456c6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7215be3f454f4a799124620fb5db520282988035
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54651512"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55272630"
 ---
-# <a name="latebound-overload-resolution-cannot-be-applied-to-39ltprocedurenamegt39-because-the-accessing-instance-is-an-interface-type"></a>Přetížení rozpoznání s pozdní vazbou nelze použít pro &#39; &lt;název_procedury&gt; &#39; protože přistupující instance je typu rozhraní
+# <a name="latebound-overload-resolution-cannot-be-applied-to-procedurename-because-the-accessing-instance-is-an-interface-type"></a>Přetížení rozpoznání s pozdní vazbou nelze použít pro '\<název_procedury >' protože přistupující instance je typu rozhraní
 Kompilátor se pokouší rozpoznat odkaz na přetížená vlastnost nebo procedura, ale odkaz se nezdaří, protože argument je typu `Object` a odkazující objekt má datový typ rozhraní. `Object` Argument vynutí, aby kompilátor přeložit odkaz na jako s pozdní vazbou.  
   
  Za těchto okolností přeloží kompilátor přetížení prostřednictvím implementující třídu namísto prostřednictvím základní rozhraní. Pokud třída přejmenuje některou z přetížených verzí, kompilátor nebere v úvahu tuto verzi si přetížení, protože se její název liší. To pak způsobí, že kompilátor bude ignorovat přejmenované verze, když ho mohla se přeložit odkaz na správnou volbu.  

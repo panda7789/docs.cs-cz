@@ -1,15 +1,15 @@
 ---
-title: '&lt;unrecognizedPolicyAssertion&gt;'
+title: <unrecognizedPolicyAssertion>
 ms.date: 03/30/2017
 ms.assetid: 043c3c8f-f263-4ac7-a1af-945d03413f0b
-ms.openlocfilehash: 28459303d041436a804c77b1b56e47def3b1b30b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6fdfa696890459e92aabd4bdf24e0c3a1b0e17f2
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54656671"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55267245"
 ---
-# <a name="ltunrecognizedpolicyassertiongt"></a>&lt;unrecognizedPolicyAssertion&gt;
+# <a name="unrecognizedpolicyassertion"></a>\<unrecognizedPolicyAssertion>
 Představuje prvek vazby, který určuje kontrolního výrazu zásad. Tento element nemá žádný atribut a je k dispozici jako prázdný přepínač.  
   
  \<system.serviceModel>  

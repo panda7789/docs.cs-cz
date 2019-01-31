@@ -1,5 +1,5 @@
 ---
-title: 'Řešení potíží: Služba aplikace získané&#39;t instalace'
+title: 'Řešení potíží: Aplikace služby se nenainstaluje.'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - troubleshooting service applications
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - Windows Service applications, troubleshooting
 ms.assetid: 45c48e2e-b97d-44bc-8896-14f328e0ce33
 author: ghogen
-ms.openlocfilehash: 998c7a3f5ca405b3bd66b877d027126f6c76cc15
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ecbaa3b2fb0e0fc85ed383385368617bf361f497
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54494415"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55289424"
 ---
-# <a name="troubleshooting-service-application-won39t-install"></a>Řešení potíží: Služba aplikace získané&#39;t instalace
+# <a name="troubleshooting-service-application-wont-install"></a>Řešení potíží: Aplikace služby se nenainstaluje.
 Pokud vaše aplikace služby se nenainstaluje správně, zkontrolujte, ujistěte se, že <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> pro třídu služby je nastavena na stejnou hodnotu uvedené v instalačním programu pro danou službu. Hodnota musí být stejné v obou případech v pořadí pro vaši službu nenainstaluje správně.  
   
 > [!NOTE]

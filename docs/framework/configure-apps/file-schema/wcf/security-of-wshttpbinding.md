@@ -1,15 +1,15 @@
 ---
-title: '&lt;security&gt; – &lt;wsHttpBinding&gt;'
+title: <security> z <wsHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 8658b162-2ddf-4162-a869-aa517a42288a
-ms.openlocfilehash: dd3ff1b1b00be376abc5f8d3c44cb0aabc49a230
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0de9ade585a2170aa1def9898581aedddc651bd7
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54688815"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55258445"
 ---
-# <a name="ltsecuritygt-of-ltwshttpbindinggt"></a>&lt;security&gt; – &lt;wsHttpBinding&gt;
+# <a name="security-of-wshttpbinding"></a>\<zabezpečení > z \<wsHttpBinding >
 Představuje možnosti zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
   
  \<system.ServiceModel>  

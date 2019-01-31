@@ -1,18 +1,18 @@
 ---
-title: '&lt;Viz také&gt; (Visual Basic)'
+title: <seealso> (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - <seealso> XML tag
 - seealso XML tag
 ms.assetid: 36050c95-1af2-4284-b9b6-1a70691ed978
-ms.openlocfilehash: 8a7b663368cab917cbabfc5ca089b266c47c5ee8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ca0b298c0c95e018febbcfac95de7db05bffedb8
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54662371"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55287882"
 ---
-# <a name="ltseealsogt-visual-basic"></a>&lt;Viz také&gt; (Visual Basic)
+# <a name="seealso-visual-basic"></a>\<SeeAlso > (Visual Basic)
 Určuje odkaz, který se zobrazí v části Viz také.  
   
 ## <a name="syntax"></a>Syntaxe  

@@ -1,15 +1,15 @@
 ---
-title: '&lt;add&gt; – &lt;filters&gt;'
+title: <add> z <filters>
 ms.date: 03/30/2017
 ms.assetid: e3bf437c-dd99-49f3-9792-9a8721e6eaad
-ms.openlocfilehash: 43898485ea5730e958cbc4e9968d25c0e7f0d951
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0e42766cd94b58562bc5728d517e65e80f558cda
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54709452"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55288792"
 ---
-# <a name="ltaddgt-of-ltfiltersgt"></a>&lt;add&gt; – &lt;filters&gt;
+# <a name="add-of-filters"></a>\<Přidat > z \<filtry >
 Filtr XPath určující druh zaznamenávané zprávy.  
   
  \<system.ServiceModel>  

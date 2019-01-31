@@ -1,15 +1,15 @@
 ---
-title: '&lt;message&gt; – &lt;wsHttpBinding&gt;'
+title: <message> z <wsHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 621abbde-590b-454d-90ac-68dc3c69c720
-ms.openlocfilehash: c114c75391e3c2e56be6b711ff04eaefb3fd05fc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 88149fd1df7679a51cc9cad449d020f29c1709eb
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54651016"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55260850"
 ---
-# <a name="ltmessagegt-of-ltwshttpbindinggt"></a>&lt;message&gt; – &lt;wsHttpBinding&gt;
+# <a name="message-of-wshttpbinding"></a>\<message> of \<wsHttpBinding>
 Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
   
  \<system.ServiceModel>  

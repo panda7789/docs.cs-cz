@@ -1,18 +1,18 @@
 ---
-title: '&lt;c&gt; (Visual Basic)'
+title: <c> (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - c XML tag
 - <c> XML tag
 ms.assetid: 36ad5d1b-11f7-4012-8932-41962ac327d1
-ms.openlocfilehash: 0e3ed08a62e9a52efa231c573a8061ff92d3cee0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2fa6e66771ac854421d07a5f33e116f12516dad6
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54604154"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55260194"
 ---
-# <a name="ltcgt-visual-basic"></a>&lt;c&gt; (Visual Basic)
+# <a name="c-visual-basic"></a>\<c > (Visual Basic)
 Označuje, že je text v rámci popis kódu.  
   
 ## <a name="syntax"></a>Syntaxe  

@@ -1,5 +1,5 @@
 ---
-title: Typ &#39; &lt;NázevProměnné&gt; &#39; nejde odvodit, protože omezení cyklu a klauzuli kroku nejde rozšířit na stejný typ.
+title: Typ '<variablename>' nelze odvodit, protože omezení cyklu a proměnnou kroku nelze rozšířit na stejný typ.
 ms.date: 07/20/2015
 f1_keywords:
 - bc30982
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30982
 ms.assetid: 741e85d9-a747-42ad-a1e1-a3f1928aaff5
-ms.openlocfilehash: 1ae14426181778a78254db8a5cd968d60bbdc8f1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1f1df0c7391c027994caabadc4b857bec55f5938
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54631256"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55287492"
 ---
-# <a name="type-of-39ltvariablenamegt39-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>Typ &#39; &lt;NázevProměnné&gt; &#39; nejde odvodit, protože omezení cyklu a klauzuli kroku nejde rozšířit na stejný typ.
+# <a name="type-of-variablename-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>Typ '\<NázevProměnné >' nelze odvodit, protože omezení cyklu a klauzuli kroku nejde rozšířit na stejný typ.
 Jste napsali `For...Next` smyčku, ve kterém kompilátor nemůže odvodit typ dat pro řídicí proměnná smyčky for vzhledem k tomu, že jsou splněny následující podmínky:  
   
 -   Není zadaný datový typ řídicí proměnná smyčky s `As` klauzuli.  

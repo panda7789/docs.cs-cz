@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna zprostředkovatele kryptografických služeb pro certifikát X.509&#39;s privátním klíčem'
+title: 'Postupy: Změna zprostředkovatele kryptografických služeb pro privátní klíč certifikátu X.509'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - cryptographic provider [WCF], changing
 - cryptographic provider [WCF]
 ms.assetid: b4254406-272e-4774-bd61-27e39bbb6c12
-ms.openlocfilehash: 40c98d17a52643f451ec01bc8b97c60f2b011b36
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ce2ce082f41700b1b86786abfa2dfe4a673fd6e0
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54498970"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55265945"
 ---
-# <a name="how-to-change-the-cryptographic-provider-for-an-x509-certificate39s-private-key"></a>Postupy: Změna zprostředkovatele kryptografických služeb pro certifikát X.509&#39;s privátním klíčem
+# <a name="how-to-change-the-cryptographic-provider-for-an-x509-certificates-private-key"></a>Postupy: Změna zprostředkovatele kryptografických služeb pro privátní klíč certifikátu X.509
 Toto téma ukazuje, jak změnit zprostředkovatele kryptografických služeb používají k zajištění privátní klíč certifikátu X.509 a jak integrovat zprostředkovatele do architektury zabezpečení Windows Communication Foundation (WCF). Další informace o používání certifikátů najdete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
  Zabezpečení rozhraní WCF poskytuje způsob, jak zavést nové typy tokenů zabezpečení, jak je popsáno v [jak: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md). Je také možné použít vlastní token nahradit existující typy tokenů poskytované systémem.  

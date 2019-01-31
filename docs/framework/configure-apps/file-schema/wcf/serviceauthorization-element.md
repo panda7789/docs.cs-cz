@@ -1,15 +1,15 @@
 ---
-title: Element &lt;serviceAuthorization&gt;
+title: <serviceAuthorization> – element
 ms.date: 03/30/2017
 ms.assetid: 18cddad5-ddcb-4839-a0ac-1d6f6ab783ca
-ms.openlocfilehash: 49b89c17f9858c111791276fe15e4a418845c8e8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c967993c3a3f7276cd3a9076741de202e1f4c343
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54622569"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257847"
 ---
-# <a name="ltserviceauthorizationgt-element"></a>Element &lt;serviceAuthorization&gt;
+# <a name="serviceauthorization-element"></a>\<serviceAuthorization > – element
 Určuje nastavení, které povolují přístup k operacím služby  
   
  \<system.ServiceModel>  

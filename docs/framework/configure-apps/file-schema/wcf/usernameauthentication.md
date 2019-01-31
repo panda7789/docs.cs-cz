@@ -1,15 +1,15 @@
 ---
-title: '&lt;userNameAuthentication&gt;'
+title: <userNameAuthentication>
 ms.date: 03/30/2017
 ms.assetid: 24d8b398-770f-418f-ba23-c4325419cfa6
-ms.openlocfilehash: 1b8a85a3b2699aa88db24d1f7afee3de67dbf39b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 05aa326c50823810caee5d6552af4d50424251dd
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54656637"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55274004"
 ---
-# <a name="ltusernameauthenticationgt"></a>&lt;userNameAuthentication&gt;
+# <a name="usernameauthentication"></a>\<userNameAuthentication>
 Určuje pověření služby na základě uživatelského jména a hesla.  
   
  \<system.ServiceModel>  

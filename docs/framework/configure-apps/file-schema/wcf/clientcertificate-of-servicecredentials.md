@@ -1,15 +1,15 @@
 ---
-title: '&lt;clientCertificate&gt; – &lt;serviceCredentials&gt;'
+title: <clientCertificate> z <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: 90ad03aa-2317-43dd-8a72-6d24cdcad15c
-ms.openlocfilehash: e1334e42149de29c4fc7534863f02ede93c638ad
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: aceb30b6354bac5c327a5f4367344e5c9608b689
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54536825"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55286894"
 ---
-# <a name="ltclientcertificategt-of-ltservicecredentialsgt"></a>&lt;clientCertificate&gt; – &lt;serviceCredentials&gt;
+# <a name="clientcertificate-of-servicecredentials"></a>\<clientCertificate> of \<serviceCredentials>
 Určuje certifikát X.509 použitý k podepisování a šifrování zpráv do formuláře klienta služby v duplexním komunikačním režimu.  
   
  \<system.ServiceModel>  

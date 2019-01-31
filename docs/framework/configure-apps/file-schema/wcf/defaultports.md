@@ -1,15 +1,15 @@
 ---
-title: '&lt;defaultPorts&gt;'
+title: <defaultPorts>
 ms.date: 03/30/2017
 ms.assetid: 725d4ee5-bd46-4f0e-9c20-30ba75d6eb2c
-ms.openlocfilehash: 2c742f98315c0e497ac4117953424bae913cb5b9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 595970a56e05c4fc1c9b2c0eb669ec3b3a120fe1
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54614494"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55262375"
 ---
-# <a name="ltdefaultportsgt"></a>&lt;defaultPorts&gt;
+# <a name="defaultports"></a>\<defaultPorts>
 Kolekce výchozích portů obsahující seznam výchozích komunikačních koncových bodů, které naslouchá klientská aplikace.  
   
 \<system.ServiceModel>  

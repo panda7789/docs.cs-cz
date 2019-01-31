@@ -1,5 +1,5 @@
 ---
-title: Eventwaithandle – CountdownEvent, ManualResetEvent
+title: Eventwaithandle – CountdownEvent
 ms.date: 09/14/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 ms.assetid: cd94fc34-ac15-427f-b723-a1240a4fab7d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c682fbcc09609a9a4e59b29d5c8997a5ae21d2bc
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: fafdc2a360038021217d9a42406c971b1094678b
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55266518"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55479929"
 ---
-# <a name="eventwaithandle-countdownevent-manualresetevent"></a>Eventwaithandle – CountdownEvent, ManualResetEvent
+# <a name="eventwaithandle-countdownevent"></a>Eventwaithandle – CountdownEvent
 
 Obslužné rutiny události čekání povolit vláken pro synchronizaci činností signalizace mezi sebou a čeká se na druhé strany signálů. Tyto události synchronizace jsou založeny na obslužné rutiny čekání operačního systému a je možné rozdělit do dvou typů: ty, které obnovit automaticky, když se signál a ty, které jsou ručně obnovit.  
   
@@ -26,9 +26,6 @@ Obslužné rutiny čekání události jsou užitečné v mnoha stejné synchroni
 
  [EventWaitHandle](eventwaithandle.md)  
  <xref:System.Threading.EventWaitHandle?displayProperty=nameWithType> Může představovat buď automatické nebo ruční resetování buď místní události a události nebo pojmenována jako událost systému.  
-  
- [ManualResetEvent a ManualResetEventSlim](manualresetevent-and-manualreseteventslim.md)  
- <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> Třída odvozena z <xref:System.Threading.EventWaitHandle> a představuje místní událost, která musí být v továrním ručně. <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> Třída je jednoduché a rychlejší verzi, která lze použít pro události v rámci stejného procesu.  
   
  [CountdownEvent](countdownevent.md)  
  <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> Třída poskytuje zjednodušený způsob, jak implementovat rozvětvení/spojení paralelismu vzorů v kódu, že používá obslužné rutiny čekání.  

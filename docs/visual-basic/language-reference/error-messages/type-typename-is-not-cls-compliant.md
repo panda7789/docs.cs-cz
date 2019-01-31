@@ -1,5 +1,5 @@
 ---
-title: Typ &lt;typename&gt; není kompatibilní se specifikací CLS
+title: Typ <typename> není kompatibilní se specifikací CLS.
 ms.date: 07/20/2015
 f1_keywords:
 - bc40041
@@ -7,19 +7,19 @@ f1_keywords:
 helpviewer_keywords:
 - BC40041
 ms.assetid: 634132c2-5646-44aa-98c6-f773e2e63882
-ms.openlocfilehash: 9911b4fe7b88996f17cb5e9eec7d4a5f2c254b76
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 243f51b3e6c798c82fdbe7b28557c4f96c728bf2
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33594605"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55281720"
 ---
-# <a name="type-lttypenamegt-is-not-cls-compliant"></a>Typ &lt;typename&gt; není kompatibilní se specifikací CLS
-Proměnná, vlastnost nebo funkce návratový je deklarovaný s datovým typem, který není kompatibilní se specifikací CLS.  
+# <a name="type-typename-is-not-cls-compliant"></a>Typ \<typename > není kompatibilní se Specifikací CLS
+Proměnná, vlastnost nebo návratová hodnota funkce je deklarována s datovým typem, který není kompatibilní se Specifikací CLS.  
   
- Pro aplikace splňovat [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS), musí používat pouze typy kompatibilní se specifikací CLS.  
+ Aplikace má být zajištěn soulad [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS), musí používat jenom typy kompatibilní se Specifikací CLS.  
   
- Následující typy dat jazyka Visual Basic nejsou kompatibilní se specifikací CLS:  
+ Následující datové typy jazyka Visual Basic nejsou kompatibilní se Specifikací CLS:  
   
 -   [Datový typ SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
   
@@ -33,6 +33,6 @@ Proměnná, vlastnost nebo funkce návratový je deklarovaný s datovým typem, 
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud vaše aplikace musí být kompatibilní se specifikací CLS, změňte datový typ tohoto elementu na nejbližší typ kompatibilní se specifikací CLS. Například v místě z `UInteger` je možné použít `Integer` Pokud nepotřebujete rozsah hodnot výše 2 147 483 647. Pokud potřebujete rozšířené rozsahu, můžete nahradit `UInteger` s `Long`.  
+-   Pokud vaše aplikace musí být kompatibilní se Specifikací CLS, změňte datový typ tohoto elementu na nejbližší typ. kompatibilní se Specifikací CLS. Například místo hodnoty `UInteger` je možné použít `Integer` Pokud nepotřebujete rozsah hodnot nad 2 147 483 647. Pokud budete potřebovat delší rozsah, můžete nahradit `UInteger` s `Long`.  
   
--   Pokud vaše aplikace nemusí být kompatibilní se specifikací CLS, není potřeba nic nezmění. Je třeba věnovat pozornost jeho nekompatibilitu, ale.
+-   Pokud vaše aplikace nemusí být kompatibilní se Specifikací CLS, není potřeba nic měnit. Měli byste vědět, jeho nedodržování předpisů, ale.

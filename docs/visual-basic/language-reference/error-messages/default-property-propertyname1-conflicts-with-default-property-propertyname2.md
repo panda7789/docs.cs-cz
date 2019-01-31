@@ -1,5 +1,5 @@
 ---
-title: Výchozí vlastnost &#39; &lt;propertyname1&gt; &#39; je v konfliktu s výchozí vlastností &#39; &lt;Název_vlastnosti2&gt; &#39; v &#39; &lt;classname&gt; &#39;a je třeba ji deklarovat &#39;stíny&#39;
+title: Výchozí vlastnost '<propertyname1>' je v konfliktu s výchozí vlastností '<propertyname2>' ve třídě '<classname>' a je ji třeba deklarovat jako 'Shadows'.
 ms.date: 07/20/2015
 f1_keywords:
 - vbc40007
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC40007
 ms.assetid: 692ccf76-5715-4f11-a972-84cf9de30bc1
-ms.openlocfilehash: 3099467fa3c5a162c13c9235fb8d55375953ba3a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bc75b01532ffb112622d7f9bc837490c627883b3
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54521423"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55270381"
 ---
-# <a name="default-property-39ltpropertyname1gt39-conflicts-with-default-property-39ltpropertyname2gt39-in-39ltclassnamegt39-and-so-should-be-declared-39shadows39"></a>Výchozí vlastnost &#39; &lt;propertyname1&gt; &#39; je v konfliktu s výchozí vlastností &#39; &lt;Název_vlastnosti2&gt; &#39; v &#39; &lt;classname&gt; &#39;a je třeba ji deklarovat &#39;stíny&#39;
+# <a name="default-property-propertyname1-conflicts-with-default-property-propertyname2-in-classname-and-so-should-be-declared-shadows"></a>Výchozí vlastnost '\<propertyname1 >' je v konfliktu s výchozí vlastností '\<Název_vlastnosti2 >' v '\<classname > "a je třeba ji deklarovat 'Shadows'
 Vlastnost je deklarována se stejným názvem jako vlastnost definována v základní třídě. V takovém případě by měl stínové vlastnosti v této třídě vlastnost základní třídy.  
   
  Tato zpráva je upozornění. `Shadows` předpokládá se ve výchozím nastavení. Další informace o zobrazení nebo skrytí upozornění zpracování upozornění jako chyby, najdete v části [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  

@@ -1,15 +1,15 @@
 ---
-title: '&lt;ws2007HttpBinding&gt;'
+title: <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 8586ecc9-bdaa-44d6-8d4d-7038e4ea1741
-ms.openlocfilehash: 05ab5c772a27c7e00e56701c6626ae8657265b36
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9638d808c7d5b8c6f058df629991fb10cd354b97
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54502660"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55272003"
 ---
-# <a name="ltws2007httpbindinggt"></a>&lt;ws2007HttpBinding&gt;
+# <a name="ws2007httpbinding"></a>\<ws2007HttpBinding>
 Definuje interoperabilní vazbu, která poskytuje podporu pro správné verze prvků <xref:System.ServiceModel.WSHttpBinding.Security%2A>, <xref:System.ServiceModel.ReliableSession>, a <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> elementů vazby.  
   
  \<system.serviceModel>  

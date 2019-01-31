@@ -1,5 +1,5 @@
 ---
-title: Název &lt;namespacename&gt; v kořenovém oboru názvů &lt;fullnamespacename&gt; není kompatibilní se Specifikací CLS
+title: Název <namespacename> v kořenovém oboru názvů <fullnamespacename> není kompatibilní se specifikací.
 ms.date: 07/20/2015
 f1_keywords:
 - vbc40039
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC40039
 ms.assetid: c5bd5914-ae71-416a-8bed-f76f644f78be
-ms.openlocfilehash: 8d35268891711ca7f2a7f5ec47be425e342dccd7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c5afdcc98b7acb1927c9b0735a69fbe64c3d8e60
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54642526"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55268714"
 ---
-# <a name="name-ltnamespacenamegt-in-the-root-namespace-ltfullnamespacenamegt-is-not-cls-compliant"></a>Název &lt;namespacename&gt; v kořenovém oboru názvů &lt;fullnamespacename&gt; není kompatibilní se Specifikací CLS
+# <a name="name-namespacename-in-the-root-namespace-fullnamespacename-is-not-cls-compliant"></a>Název \<namespacename > v kořenovém oboru názvů \<fullnamespacename > není kompatibilní se Specifikací CLS
 Sestavení je označen jako `<CLSCompliant(True)>`, ale element název kořenového oboru názvů začíná podtržítkem (`_`).  
   
  Programovací element může obsahovat jeden nebo více podtržítka, ale chcete-li být kompatibilní s [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS), se nesmí začínat podtržítkem. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  

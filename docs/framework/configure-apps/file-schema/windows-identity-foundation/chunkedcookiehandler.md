@@ -1,16 +1,16 @@
 ---
-title: '&lt;chunkedCookieHandler&gt;'
+title: <chunkedCookieHandler>
 ms.date: 03/30/2017
 ms.assetid: 7220de45-1d14-4aec-a29e-4a2ea8ac861f
 author: BrucePerlerMS
-ms.openlocfilehash: 1726d4ade9405543bdfdb4e4803f87f258de791e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 383ce39816ec7d3f2567765549b537073ee7e081
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54691278"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55277027"
 ---
-# <a name="ltchunkedcookiehandlergt"></a>&lt;chunkedCookieHandler&gt;
+# <a name="chunkedcookiehandler"></a>\<chunkedCookieHandler>
 Konfiguruje <xref:System.IdentityModel.Services.ChunkedCookieHandler>. Tento element může být pouze přítomen, pokud `mode` atribut `<cookieHandler>` elementu je "Výchozí" nebo "Rozdělený do bloků dat".  
   
  \<system.identityModel.services>  

@@ -1,15 +1,15 @@
 ---
-title: '&lt;serviceDebug&gt;'
+title: <serviceDebug>
 ms.date: 03/30/2017
 ms.assetid: 6d7ea986-f232-49fe-842c-f934d9966889
-ms.openlocfilehash: 26a84f035246c02898deacfb8fcb2c2101fddf7d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1ab7058d8667344197e8bc1ddc59cc7200f22270
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54524270"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55268558"
 ---
-# <a name="ltservicedebuggt"></a>&lt;serviceDebug&gt;
+# <a name="servicedebug"></a>\<serviceDebug>
 Určuje funkce informace nápovědy a ladění pro službu Windows Communication Foundation (WCF).  
   
  \<system.ServiceModel>  

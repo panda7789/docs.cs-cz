@@ -1,5 +1,5 @@
 ---
-title: '&lt; Operator - C# odkaz'
+title: < – Operátor - C# odkaz
 ms.custom: seodec18
 ms.date: 12/18/2018
 f1_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - less than operator (<) [C#]
 - < operator [C#]
 ms.assetid: 38cb91e6-79a6-48ec-9c1e-7b71fd8d2b41
-ms.openlocfilehash: bb0f590bb547c4e632bd14c773f095435c8986f0
-ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
+ms.openlocfilehash: ab21e32b7609bc0c8753b42ccf8b6091bf3ad57b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655943"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55286634"
 ---
-# <a name="lt-operator-c-reference"></a>&lt; – Operátor (referenční dokumentace jazyka C#)
+# <a name="-operator-c-reference"></a>\< – Operátor (referenční dokumentace jazyka C#)
 
 "Menší než" relační operátor `<` vrátí `true` Pokud svůj první operand je menší než svým druhým operandem, `false` jinak. Všechny typy číselné a výčet podporují `<` operátor. Pro operandy stejného [výčtu](../keywords/enum.md) porovnání typu hodnoty odpovídající základní celočíselného typu.
 

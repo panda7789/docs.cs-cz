@@ -1,21 +1,21 @@
 ---
-title: '&lt;claimsAuthorizationManager&gt;'
+title: <claimsAuthorizationManager>
 ms.date: 03/30/2017
 ms.assetid: 9354eee3-f692-4ad6-8427-3169686b8bcc
 author: BrucePerlerMS
-ms.openlocfilehash: a745339cffdada56a9b7f27f3f879b9d437c2da2
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 59d47eda97e97629408ece12a1d1dfbe804feb3e
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195551"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55268091"
 ---
-# <a name="ltclaimsauthorizationmanagergt"></a>&lt;claimsAuthorizationManager&gt;
+# <a name="claimsauthorizationmanager"></a>\<claimsAuthorizationManager>
 Zaregistruje Správce autorizací deklarace identity pro příchozí deklarace identity.  
   
  \<system.identityModel>  
-\<identityConfiguration >  
-\<claimsAuthorizationManager >  
+\<identityConfiguration>  
+\<claimsAuthorizationManager>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,7 +45,7 @@ Zaregistruje Správce autorizací deklarace identity pro příchozí deklarace i
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Určuje nastavení identit na úrovni služby.|  
+|[\<identityConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Určuje nastavení identit na úrovni služby.|  
   
 ## <a name="remarks"></a>Poznámky  
  Výchozí chování zajišťována <xref:System.Security.Claims.ClaimsAuthorizationManager> třídy vždy povolí příchozí deklarace identity. Pokud ne `type` je zadán atribut nebo, pokud `type` Určuje atribut <xref:System.Security.Claims.ClaimsAuthorizationManager> třídy, `<claimsAuthorizationManager>` element nepřijímá podřízené prvky. Můžete zadat `type` atribut zaregistrovat typ odvozený z <xref:System.Security.Claims.ClaimsAuthorizationManager> třídu pro implementaci vlastního chování. Odvozené třídy může podporovat konfiguraci prostřednictvím podřízených elementů `<claimsAuthorizationManager>` element tak, že přepíšete <xref:System.Security.Claims.ClaimsAuthorizationManager.LoadCustomConfiguration%2A> metodu ke zpracování těchto elementů. Schéma definice pro podřízené prvky je až návrháře třídy.  

@@ -1,16 +1,16 @@
 ---
-title: '&lt;faultPropagationQuery&gt;'
+title: <faultPropagationQuery>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 4fb5c2b1-3dad-4eca-9c7f-3efb51899813
-ms.openlocfilehash: a91a6f61b39a780ed48ad8d5f5e0dfb9ef60da39
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1a6899eaa04ad16192e07f4bc2ad1abe6e4aedd5
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54538333"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257363"
 ---
-# <a name="ltfaultpropagationquerygt"></a>&lt;faultPropagationQuery&gt;
+# <a name="faultpropagationquery"></a>\<faultPropagationQuery>
 Představuje dotaz, který se používá ke sledování zpracování chyb, ke kterým dochází v rámci aktivity.  Pokaždé, když FaultHandler zpracovává chyby, dojde k této události. Takový dotaz byste měli používat ke sledování zpracování chyb, k nimž došlo v rámci aktivity. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru chyby šíření hodnoty záznamů.  
   
  Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).  

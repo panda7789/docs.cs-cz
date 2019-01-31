@@ -1,5 +1,5 @@
 ---
-title: '&lt;Odebrat&gt; – element pro NameValueSectionHandler a DictionarySectionHandler'
+title: <remove> – element pro NameValueSectionHandler a DictionarySectionHandler
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/remove
@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 8d8af7f5-26c9-4db9-bbe4-b2a4e6949568
 author: guardrex
 ms.author: mairaw
-ms.openlocfilehash: ece76f06f5ecbf47302b62a5e546cc13298106bb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c86d231a4e3e8e15df94017a6ca461b365643ea5
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54535577"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55267414"
 ---
 # <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Odebrat > – element pro NameValueSectionHandler a DictionarySectionHandler
 

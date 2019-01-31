@@ -1,21 +1,21 @@
 ---
-title: '&lt;certificateReference&gt;'
+title: <certificateReference>
 ms.date: 03/30/2017
 ms.assetid: 2ac8bc14-e9f1-48fb-b662-f5991558fbe4
 author: BrucePerlerMS
-ms.openlocfilehash: e04dc90134aadfb8af7b0800c7144963d267f513
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 6c9c77f96ff6032de43d9b5a257bc0796a19b858
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47206888"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55269338"
 ---
-# <a name="ltcertificatereferencegt"></a>&lt;certificateReference&gt;
+# <a name="certificatereference"></a>\<certificateReference >
 Určuje nastavení, které se používají k vyhledání a ověřit certifikát X.509 v úložišti certifikátů.  
   
- \<system.identityModel.services >  
-\<federationConfiguration >  
-\<serviceCertificate >  
+ \<system.identityModel.services>  
+\<federationConfiguration>  
+\<serviceCertificate>  
 \<certificateReference >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,18 +45,18 @@ Určuje nastavení, které se používají k vyhledání a ověřit certifikát 
 |---------------|-----------------|  
 |storeName|Název úložiště certifikátu X.509. Výchozí hodnota je "Moje". Volitelné.|  
 |storeLocation|A <xref:System.Security.Cryptography.X509Certificates.StoreLocation> hodnota, která určuje umístění úložiště certifikátu X.509. Výchozí hodnota je "LocalMachine". Volitelné.|  
-|X509FindType|<xref:System.Security.Cryptography.X509Certificates.X509FindType> Hodnotu, která určuje typ hledání, které má být provedena. Výchozí hodnota je "FindBySubjectDistinguishedName". Volitelné.|  
+|x509FindType|<xref:System.Security.Cryptography.X509Certificates.X509FindType> Hodnotu, která určuje typ hledání, které má být provedena. Výchozí hodnota je "FindBySubjectDistinguishedName". Volitelné.|  
 |findValue|Hodnotu vyhledávání v úložišti certifikátů X.509. Volitelné.|  
 |isChainIncluded|Určuje, zda by měl provádět ověření pomocí řetězu certifikátů. Výchozí hodnota je "true"; ověření se provádí na základě řetězu certifikátů. Volitelné.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicecertificate.md)|Nakonfiguruje certifikát používaný k šifrování a dešifrování tokenů.|  
+|[\<serviceCertificate>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicecertificate.md)|Nakonfiguruje certifikát používaný k šifrování a dešifrování tokenů.|  
   
 ## <a name="remarks"></a>Poznámky  
  `<certificateReference>` Prvek určuje nastavení, které se používají k vyhledání a ověřit certifikát X.509 v úložišti certifikátů. Pokud je zadán jako podřízený prvek `<serviceCertficate>` elementu, určuje umístění a ověření nastavení certifikátu X.509, který se používá k šifrování a dešifrování tokenů. `<certificateReference>` Prvek je reprezentován <xref:System.ServiceModel.Configuration.CertificateReferenceElement> třídy.

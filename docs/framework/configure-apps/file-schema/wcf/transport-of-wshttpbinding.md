@@ -1,15 +1,15 @@
 ---
-title: '&lt;transport&gt; – &lt;wsHttpBinding&gt;'
+title: <transport> z <wsHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 21e38acf-450a-4bda-82b6-de305e1f7cd8
-ms.openlocfilehash: a759f74e923c9d81391abf82fa08491f3b31c990
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1c25ffd70ae83f14d5e596b1ee32d05abcc95184
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517946"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55267674"
 ---
-# <a name="lttransportgt-of-ltwshttpbindinggt"></a>&lt;transport&gt; – &lt;wsHttpBinding&gt;
+# <a name="transport-of-wshttpbinding"></a>\<přenos > z \<wsHttpBinding >
 Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.  
   
  \<system.serviceModel>  

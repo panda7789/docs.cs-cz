@@ -1,16 +1,16 @@
 ---
-title: '&lt;activityScheduledQuery&gt;'
+title: <activityScheduledQuery>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: a8bcd6d4-b389-4daf-86bf-1ade85fec114
-ms.openlocfilehash: 0e69c32a7c292fda90828396c402c95e4899600a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2199e66342c6fa3afca9d8ccd3b620560b123ede
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54687437"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55260837"
 ---
-# <a name="ltactivityscheduledquerygt"></a>&lt;activityScheduledQuery&gt;
+# <a name="activityscheduledquery"></a>\<activityScheduledQuery>
 Představuje kolekci dotazů, které se používají ke sledování aktivitu naplánovat provedení podle aktivity jako nadřazený. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru záznamů aktivit naplánována.  
   
  Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  

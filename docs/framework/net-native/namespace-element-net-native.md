@@ -1,17 +1,17 @@
 ---
-title: Element &lt;Namespace&gt; (.NET Native)
+title: <Namespace> – Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 57c614e5-18a9-4e87-bfd5-d0fe3396a192
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f89c9edf47edcb5089e094529b8e8108271518d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 647b1807957b611b9ba75ee90a7ac2257246d14c
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590571"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55261578"
 ---
-# <a name="ltnamespacegt-element-net-native"></a>Element &lt;Namespace&gt; (.NET Native)
+# <a name="namespace-element-net-native"></a>\<Namespace > – Element (.NET Native)
 Zásady reflexe modulu runtime se vztahuje na všechny typy v určeném oboru názvů.  
   
 ## <a name="syntax"></a>Syntaxe  

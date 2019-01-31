@@ -1,5 +1,5 @@
 ---
-title: Namespace nebo typ zadaný v příkazu Imports na úrovni projektu &#39; &lt;qualifiedelementname&gt; &#39; kódu&#39;t obsahovat žádný veřejný člen nebo nebyl nalezen
+title: Obor názvů nebo typ zadaný v příkazu Imports '<qualifiedelementname>' na úrovni projektu neobsahuje žádného veřejného člena nebo nebyl nalezen.
 ms.date: 07/20/2015
 f1_keywords:
 - vbc40057
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC40057
 ms.assetid: 4ae3506e-2ebe-4ff3-995d-14ac60db5e9f
-ms.openlocfilehash: 215d8d301317f711aecb88167030e70ed01408aa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 12d20a88179a3d0c93c18f0aed65ca46b001059a
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54552460"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55283306"
 ---
-# <a name="namespace-or-type-specified-in-the-project-level-imports-39ltqualifiedelementnamegt39-doesn39t-contain-any-public-member-or-cannot-be-found"></a>Namespace nebo typ zadaný v příkazu Imports na úrovni projektu &#39; &lt;qualifiedelementname&gt; &#39; kódu&#39;t obsahovat žádný veřejný člen nebo nebyl nalezen
+# <a name="namespace-or-type-specified-in-the-project-level-imports-qualifiedelementname-doesnt-contain-any-public-member-or-cannot-be-found"></a>Namespace nebo typ zadaný v příkazu Imports na úrovni projektu'\<qualifiedelementname >' neobsahuje žádný veřejný člen nebo nebyl nalezen
 Namespace nebo typ zadaný v příkazu Imports na úrovni projektu'\<qualifiedelementname >' neobsahuje žádný veřejný člen nebo nebyl nalezen. Ujistěte se, že obor názvů nebo typ definován a obsahuje nejméně jeden veřejný člen. Ujistěte se, že název aliasu neobsahuje další aliasy.  
   
  Vlastnost importu projektu určuje nadřazeného elementu, který nemůže být nalezen nebo nedefinuje žádné `Public` členy.  

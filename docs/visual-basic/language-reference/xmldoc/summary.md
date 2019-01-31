@@ -1,18 +1,18 @@
 ---
-title: '&lt;Souhrn&gt; (Visual Basic)'
+title: <summary> (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - <summary> XML tag
 - summary XML tag
 ms.assetid: 861c847d-dd94-478a-aa23-bf4899cdc848
-ms.openlocfilehash: 899a3343d9758aab79f5aaa77ede26e92f8c07ae
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3f40177b717452f316672c29c6455faf33e01b4d
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54551005"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55282708"
 ---
-# <a name="ltsummarygt-visual-basic"></a>&lt;Souhrn&gt; (Visual Basic)
+# <a name="summary-visual-basic"></a>\<Souhrn > (Visual Basic)
 Určuje souhrn člena.  
   
 ## <a name="syntax"></a>Syntaxe  

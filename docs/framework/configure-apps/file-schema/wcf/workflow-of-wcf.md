@@ -1,15 +1,15 @@
 ---
-title: '&lt;workflow&gt; služby WCF'
+title: <workflow> služby WCF
 ms.date: 03/30/2017
 ms.assetid: c0443eba-d3b4-4fae-886e-9878daf77691
-ms.openlocfilehash: 6c6efe9ee1ad582e25fc2bc578a15d6182eee2a9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9920a9b75a033515584f4108503faa45687b7203
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54639944"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55255377"
 ---
-# <a name="ltworkflowgt-of-wcf"></a>&lt;workflow&gt; služby WCF
+# <a name="workflow-of-wcf"></a>\<Workflow > služby WCF
 Nakonfigurujte účastníkem sledování, která naslouchá na sledování záznamy probíhá emitovány přímo z modulu runtime a jejich zpracování libovolné způsobem, který byl nakonfigurován. Jedná se o zápis do konkrétní výstupu (např. soubor, konzoly, ETW), zpracování/agregaci záznamů nebo libovolnou kombinaci, který může být vyžadováno.  
   
  Další informace v sledování pracovních postupů a sledování účastníci naleznete v tématu [pracovního postupu pro sledování a trasování](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md) a [sledování účastníci](../../../../../docs/framework/windows-workflow-foundation/tracking-participants.md).  

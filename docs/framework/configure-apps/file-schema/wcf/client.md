@@ -1,18 +1,18 @@
 ---
-title: '&lt;Klienta&gt;'
+title: <client>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.ServiceModel/client
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#client
 ms.assetid: bf0f7031-76c8-4e7e-a6c6-9ad9119134be
-ms.openlocfilehash: 32fcd9792f674d4ded466f26641690c8ae4328b9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 93365c109f015b2ec72b5216dcb8c46258d022e2
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540400"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55280901"
 ---
-# <a name="ltclientgt"></a>&lt;Klienta&gt;
+# <a name="client"></a>\<client>
 `client` Element definuje seznam koncových bodů, které se klient může připojit k.  
   
  \<system.ServiceModel>  

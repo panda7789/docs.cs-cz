@@ -1,15 +1,15 @@
 ---
-title: '&lt;endpointDiscovery&gt;'
+title: <endpointDiscovery>
 ms.date: 03/30/2017
 ms.assetid: 70812717-888a-4748-9640-0df6715ff029
-ms.openlocfilehash: 4611d529c1854ee456585ad3f7aac339ff771bce
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: effceee30abdaa1725b8c8718df22632961871e8
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54556441"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55266413"
 ---
-# <a name="ltendpointdiscoverygt"></a>&lt;endpointDiscovery&gt;
+# <a name="endpointdiscovery"></a>\<endpointDiscovery>
 Určuje různá nastavení zjišťování pro koncový bod, například jeho rozpoznatelnost, rozsahy a všechny vlastní rozšíření jeho metadat.  
   
 \<system.ServiceModel>  

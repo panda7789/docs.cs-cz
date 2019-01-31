@@ -4,12 +4,12 @@ description: Vysvětlení procesu přenosem a zjišťování nástroje, které v
 author: cartermp
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 5c7cd8b01672e71b0db7255dad23d994a95ce532
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: e29750340cf272c2e05287482bcbeca703d8720a
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170038"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55266569"
 ---
 # <a name="port-your-code-from-net-framework-to-net-core"></a>Přeneste kód z rozhraní .NET Framework do .NET Core
 
@@ -41,7 +41,7 @@ To je proces, doporučujeme že je provést při přenášení projektu .NET Cor
 
 Následující seznam obsahuje nástroje že mohou být užitečné používat během procesu přenosem:
 
-* .NET portability Analyzeru - [nástroj příkazového řádku](https://github.com/Microsoft/dotnet-apiport/releases) nebo [rozšíření sady Visual Studio](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b), sada nástrojů, který může vygenerovat sestavu jak přenosného kódu je mezi rozhraní .NET Framework a .NET Core pomocí Rozpis sestavení podle problémů. Další informace najdete v tématu [.NET Portability Analyzeru](../../standard/analyzers/portability-analyzer.md).
+* .NET portability Analyzeru - [nástroj příkazového řádku](https://github.com/Microsoft/dotnet-apiport/releases) nebo [rozšíření sady Visual Studio](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer), sada nástrojů, který může vygenerovat sestavu jak přenosného kódu je mezi rozhraní .NET Framework a .NET Core pomocí Rozpis sestavení podle problémů. Další informace najdete v tématu [.NET Portability Analyzeru](../../standard/analyzers/portability-analyzer.md).
 * Analyzátor rozhraní API .NET – A Roslyn analyzátor, který hledá potenciální rizika kompatibility pro C# rozhraní API na různých platformách a detekuje volání rozhraní API nepoužívané. Další informace najdete v tématu [analyzátor rozhraní .NET API](../../standard/analyzers/api-analyzer.md).
 * Reverzního vyhledávání balíčků – A [užitečné webová služba](https://packagesearch.azurewebsites.net) , který umožňuje hledat typ a vyhledat balíčky obsahující tohoto typu.
 

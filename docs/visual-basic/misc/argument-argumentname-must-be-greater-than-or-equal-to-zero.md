@@ -1,17 +1,17 @@
 ---
-title: Argument '&lt;název argumentu argumentname&gt;' musí být větší než nebo rovna hodnotě nula.
+title: Argument '<argumentname>' musí být větší než nebo rovna hodnotě nula.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrFinancial_ArgGEZero1
 ms.assetid: 7b901c2a-3447-4afc-91f8-8fa5f6f961d7
-ms.openlocfilehash: 5be8eee5383a2a9f80dfb258719a89d23402ca27
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c1987958e463ade5d1d8caead99d801b0a076c77
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54524634"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257917"
 ---
-# <a name="argument-ltargumentnamegt-must-be-greater-than-or-equal-to-zero"></a>Argument '&lt;název argumentu argumentname&gt;' musí být větší než nebo rovna hodnotě nula.
+# <a name="argument-argumentname-must-be-greater-than-or-equal-to-zero"></a>Argument '\<název argumentu argumentname >' musí být větší než nebo rovna hodnotě nula.
 Argument není platný, protože je menší než nula.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

@@ -1,17 +1,17 @@
 ---
-title: Délka argumentu '&lt;název argumentu argumentname&gt;' musí být větší než nula.
+title: Délka argumentu '<argumentname>' musí být větší než nula.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_LengthGTZero1
 ms.assetid: 709bc232-f8fe-4864-9842-e064795da0f5
-ms.openlocfilehash: 1c028f515017a1afc092e5c5f16705a0503441d8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d8758e24b7fa76b8d53f1ef0cf80af68cc5643a8
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54505871"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55276494"
 ---
-# <a name="length-of-argument-ltargumentnamegt-must-be-greater-than-zero"></a>Délka argumentu '&lt;název argumentu argumentname&gt;' musí být větší než nula.
+# <a name="length-of-argument-argumentname-must-be-greater-than-zero"></a>Délka argumentu '\<název argumentu argumentname >' musí být větší než nula.
 Argument má hodnotu, která je rovna nebo menší než nula.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

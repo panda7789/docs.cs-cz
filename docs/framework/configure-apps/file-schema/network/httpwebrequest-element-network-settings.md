@@ -1,5 +1,5 @@
 ---
-title: '&lt;httpWebRequest&gt; – Element (nastavení sítě)'
+title: <httpWebRequest> – element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/httpWebRequest
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <httpWebRequest> element
 - httpWebRequest element
 ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
-ms.openlocfilehash: 1a883b2e57d0f055237d68e4f69651ef496795ab
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f19c39922105cebe179dd9f26fdc6beac8ddc0ef
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590026"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55268272"
 ---
-# <a name="lthttpwebrequestgt-element-network-settings"></a>&lt;httpWebRequest&gt; – Element (nastavení sítě)
+# <a name="httpwebrequest-element-network-settings"></a>\<httpWebRequest > – Element (nastavení sítě)
 Přizpůsobí parametrů webové žádosti.  
   
  \<Konfigurace >  

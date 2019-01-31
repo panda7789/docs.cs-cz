@@ -3,13 +3,13 @@ title: Použití HttpClientFactory k implementaci odolných požadavky HTTP
 description: Další informace o použití HttpClientFactory dostupné od verze rozhraní .NET Core 2.1 pro vytvoření `HttpClient` instancí, usnadňuje použít ve svých aplikacích.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/16/2018
-ms.openlocfilehash: 6af30ae3b5111e026be6ec89d266338b88cf22b2
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.date: 01/07/2019
+ms.openlocfilehash: 73faa847dae2f844784ae5d85ce905b7e1e64cd0
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362638"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55479812"
 ---
 # <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavky HTTP
 
@@ -25,7 +25,7 @@ Proto `HttpClient` by se měly vytvořit jednou a opětovně používat v rámci
 
 Druhý problém s, ale `HttpClient` mají při použití jako singleton nebo statický objekt. V tomto případě, typu singleton nebo statické `HttpClient` nerespektuje změny DNS, jak je popsáno v tomto [problém na úložiště .NET Core GitHub](https://github.com/dotnet/corefx/issues/11224). 
 
-Pro vyřešení těchto problémů jsme už zmínili a správu `HttpClient` instance jednodušší, .NET Core 2.1 nabízí nový `HttpClientFactory` také, který lze použít k implementaci odolných volání HTTP integrací Polly s ním.   
+Pro vyřešení těchto problémů jsme už zmínili a správu `HttpClient` instance jednodušší, .NET Core 2.1 zavedl nový `HttpClientFactory` také, který lze použít k implementaci odolných volání HTTP integrací Polly s ním.   
 
 ## <a name="what-is-httpclientfactory"></a>Co je HttpClientFactory
 
@@ -157,7 +157,7 @@ Do této chvíle právě uvedeném kódu provádí pravidelné požadavky Http, 
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **Použití HttpClientFactory v .NET Core 2.1**\
+- **Použití HttpClientFactory v .NET Core**\
   [*https://docs.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1*](/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1)
 
 - **Úložiště HttpClientFactory GitHub**\

@@ -1,16 +1,16 @@
 ---
-title: '&lt;Stav&gt; z &lt;stavy&gt;'
+title: <state> z <states>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: ab483c7f-a091-4933-ba6b-708d96846d38
-ms.openlocfilehash: 1ddf7e0ed2849764f3b21e8cf1c31d98762c0d5e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 657814eb120878cdc71cd7603d0499ff65ca50e8
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54696240"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55271431"
 ---
-# <a name="ltstategt-of-ltstatesgt"></a>&lt;Stav&gt; z &lt;stavy&gt;
+# <a name="state-of-states"></a>\<Stav > z \<stavy >
 Konfigurace element, který obsahuje informace o stavu předplacenému aktivity, pro který by měl vyzařovaného záznamem sledování.  
   
  Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).  

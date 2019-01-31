@@ -1,5 +1,5 @@
 ---
-title: '&lt;supportPortability&gt; – Element'
+title: Element <supportPortability>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - supportPortability element
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: 6453ef66-19b4-41f3-b712-52d0c2abc9ca
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4f1ceae32445fb350f6fcc98f3a1eec044fa7885
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e2295ebd919a91ae9942ec225f2bfe784e5ee151
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54655501"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55267791"
 ---
-# <a name="ltsupportportabilitygt-element"></a>&lt;supportPortability&gt; – Element
+# <a name="supportportability-element"></a>\<supportPortability > – Element
 Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých implementacích rozhraní .NET Framework zakázáním výchozího chování, které považuje za ekvivalent pro účely přenositelnosti aplikace sestavení.  
   
  \<Konfigurace > – Element  

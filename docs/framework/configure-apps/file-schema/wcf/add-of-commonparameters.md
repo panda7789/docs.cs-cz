@@ -1,15 +1,15 @@
 ---
-title: '&lt;add&gt; – &lt;commonParameters&gt;'
+title: <add> z <commonParameters>
 ms.date: 03/30/2017
 ms.assetid: 3713bf25-20c8-455f-bb85-de46b6487932
-ms.openlocfilehash: a5de8104b23de37144cb99ef2b90a4161a0396b4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 63ff98d91db7c8c112b0b00e9bd37c3262bcad6d
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54670209"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55258617"
 ---
-# <a name="ltaddgt-of-ltcommonparametersgt"></a>&lt;add&gt; – &lt;commonParameters&gt;
+# <a name="add-of-commonparameters"></a>\<Přidat > z \<commonParameters >
 Určuje dvojice název hodnota parametrů, které jsou používány globálně u více služeb. Obvykle tento parametr obsahuje připojovací řetězec databáze, kterou může sdílet trvalé služby.  
   
  \<system.ServiceModel>  

@@ -1,18 +1,18 @@
 ---
-title: Co&#39;nového ve verzi 4.5 grafického subsystému WPF
+title: Novinky ve verzi 4.5 grafického subsystému WPF
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Presentation Foundation [WPF], what's new
 - WPF [WPF], what's new
 ms.assetid: db086ae4-70bb-4862-95db-2eaca5216bc3
-ms.openlocfilehash: ac389d947417851309c388dd195b1400a20041ca
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6dc833ce3dc88b61ed6966c7b5ca2756f5012308
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54544338"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55265347"
 ---
-# <a name="what39s-new-in-wpf-version-45"></a>Co&#39;nového ve verzi 4.5 grafického subsystému WPF
+# <a name="whats-new-in-wpf-version-45"></a>Novinky ve verzi 4.5 grafického subsystému WPF
 <a name="introduction"></a> Toto téma obsahuje informace o nových a vylepšených funkcích [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] verze 4.5.  
   
  Toto téma obsahuje následující oddíly:  

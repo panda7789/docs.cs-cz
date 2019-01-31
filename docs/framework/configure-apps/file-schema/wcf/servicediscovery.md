@@ -1,15 +1,15 @@
 ---
-title: '&lt;serviceDiscovery&gt;'
+title: <serviceDiscovery>
 ms.date: 03/30/2017
 ms.assetid: a3c68a4a-fc95-43c5-aacb-785936c0cf39
-ms.openlocfilehash: 73943f5f962a6963809e2c65ce8593f6181559f7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 564410fdc4085cc3ed14c394006551cddb028910
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587330"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55267869"
 ---
-# <a name="ltservicediscoverygt"></a>&lt;serviceDiscovery&gt;
+# <a name="servicediscovery"></a>\<serviceDiscovery>
 Určuje zjistitelnost koncových bodů služby.  
   
  \<system.ServiceModel>  

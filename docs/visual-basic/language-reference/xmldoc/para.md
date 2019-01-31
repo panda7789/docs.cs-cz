@@ -1,18 +1,18 @@
 ---
-title: '&lt;para&gt; (Visual Basic)'
+title: <para> (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - <para> XML tag
 - para XML tag
 ms.assetid: a3a18b6c-6416-4358-94ec-37b22675fd37
-ms.openlocfilehash: 5932ddb55a4dab48267cdd9b9f321cec8660d77a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: de0387298f6ff505b286db35047065ef88541a62
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54662319"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55280446"
 ---
-# <a name="ltparagt-visual-basic"></a>&lt;para&gt; (Visual Basic)
+# <a name="para-visual-basic"></a>\<para> (Visual Basic)
 Určuje, že obsah je formátován jako odstavce.  
   
 ## <a name="syntax"></a>Syntaxe  

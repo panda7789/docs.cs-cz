@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 11ee0b38-d663-4617-b793-35eb6c64e9fc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 20050eb3eb5fe41778d7a979f94cdd258650b33e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d410470a6722901f52e80be1b45527abbb464f9f
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54588922"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55479825"
 ---
 # <a name="eventwaithandle"></a>EventWaitHandle
 <xref:System.Threading.EventWaitHandle> Třída umožňuje vlákna ke komunikaci mezi sebou signalizace a čeká na signál. Obslužné rutiny události čekání (také označované jednoduše jako události) jsou obslužné rutiny čekání, které mohou být signalizovanými, aby verze jednoho nebo více čekajících vláken. Po to bylo signalizováno, popisovače čekání události se vynuluje, ručně nebo automaticky. <xref:System.Threading.EventWaitHandle> Může představovat buď místní události popisovač čekání (místní události), nebo událost s názvem systému počkat popisovač (s názvem události nebo viditelné pro všechny procesy systémové události).  
@@ -68,4 +68,4 @@ ms.locfileid: "54588922"
 - <xref:System.Threading.WaitHandle>
 - <xref:System.Threading.AutoResetEvent>
 - <xref:System.Threading.ManualResetEvent>
-- [EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)
+- [Eventwaithandle – CountdownEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)

@@ -1,5 +1,5 @@
 ---
-title: '&lt;&lt; – Operátor (Visual Basic)'
+title: << – Operátor (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.<<
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - << operator [Visual Basic]
 - operator <<, Visual Basic left shift operator
 ms.assetid: fdb93d25-81ba-417f-b808-41207bfb8440
-ms.openlocfilehash: d39a134390591e3c72887a38e8aacb4631c71d87
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 494a56ec186bdb82d6794fb5c225789b23cddd0c
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54539035"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55259979"
 ---
-# <a name="ltlt-operator-visual-basic"></a>&lt;&lt; – Operátor (Visual Basic)
+# <a name="-operator-visual-basic"></a>\<\< – Operátor (Visual Basic)
 Provede aritmetický operátor posunu vlevo bitový vzor.  
   
 ## <a name="syntax"></a>Syntaxe  

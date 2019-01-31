@@ -1,15 +1,15 @@
 ---
-title: '&lt;serviceSecurityAudit&gt;'
+title: <serviceSecurityAudit>
 ms.date: 03/30/2017
 ms.assetid: ba517369-a034-4f8e-a2c4-66517716062b
-ms.openlocfilehash: 91fe14c22dce45a89b91d9d4c20e30928acd60c4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 05579f1c2a0d0c0637530c524c37b141a9d37b5b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54630694"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55287752"
 ---
-# <a name="ltservicesecurityauditgt"></a>&lt;serviceSecurityAudit&gt;
+# <a name="servicesecurityaudit"></a>\<serviceSecurityAudit>
 Určuje nastavení, které povoluje auditování událostí zabezpečení během operací služby.  
   
  \<system.ServiceModel>  

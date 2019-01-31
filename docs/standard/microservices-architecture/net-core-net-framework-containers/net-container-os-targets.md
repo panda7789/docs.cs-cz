@@ -3,13 +3,13 @@ title: Jaký operační systém mají cílit kontejnery .NET
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Jaký operační systém mají cílit kontejnery .NET
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/11/2018
-ms.openlocfilehash: f6a5cf8d5e32e527977b7c142f5686310e88a068
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 01/07/2019
+ms.openlocfilehash: bef268a180584c47486a16960ca13fd63201fbe2
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147197"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "55479864"
 ---
 # <a name="what-os-to-target-with-net-containers"></a>Jaký operační systém mají cílit kontejnery .NET
 
@@ -38,21 +38,21 @@ Když přidáte název bitové kopie do souboru Dockerfile, můžete vybrat oper
 </thead>
 <tbody>
 <tr>
-<td>Microsoft / dotnet:2.1 – modul runtime</td>
-<td>Více architektury .NET core 2.1: Podporuje Linux a Windows Nano serveru v závislosti na hostitele Dockeru.</td>
+<td>Microsoft / dotnet:2.2 – modul runtime</td>
+<td>Více architektury .NET core 2.2: Podporuje Linux a Windows Nano serveru v závislosti na hostitele Dockeru.</td>
 </tr>
 <tr class="odd">
-<td>Microsoft / dotnet:2.1-aspnetcore-modulu runtime</td>
-<td><p>Architektura ASP.NET Core 2.1 více: Podporuje Linux a Windows Nano serveru v závislosti na hostitele Dockeru.</p>
+<td>Microsoft / dotnet:2.2-aspnetcore-modulu runtime</td>
+<td><p>Architektura ASP.NET Core 2.2 více: Podporuje Linux a Windows Nano serveru v závislosti na hostitele Dockeru.</p>
 <p>Aspnetcore image má několik optimalizací pro ASP.NET Core.</p></td>
 </tr>
 <tr class="even">
-<td>Microsoft / dotnet:2.1-aspnetcore-runtime – alpine</td>
-<td>.NET core 2.1 pouze modul runtime na Alpine distribuce Linuxu</td>
+<td>Microsoft / dotnet:2.2-aspnetcore-runtime – alpine</td>
+<td>.NET core 2.2 pouze modul runtime na Alpine distribuce Linuxu</td>
 </tr>
 <tr class="odd">
-<td>Microsoft / dotnet:2.1-aspnetcore-runtime-nanoserver-1803</td>
-<td>.NET core 2.1 pouze modul runtime Windows Nano Server (Windows Server verze 1803)</td>
+<td>microsoft/dotnet:2.2-aspnetcore-runtime-nanoserver-1803</td>
+<td>.NET core 2.2 pouze modul runtime Windows Nano Server (Windows Server verze 1803)</td>
 </tr>
 </tbody>
 </table>

@@ -4,12 +4,12 @@ description: Zjistěte, jak používat ML.NET ve scénáři klasifikace víc tř
 ms.date: 01/24/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 6f01357906fd4398f68dadfb35dbce816f4302c0
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: a951e884a7494b0dcc808fc3dafbfadebc5577dc
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066202"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55254987"
 ---
 # <a name="tutorial-use-mlnet-in-a-multiclass-classification-scenario-to-classify-github-issues"></a>Kurz: Použijte ML.NET ve scénáři klasifikace víc tříd ke klasifikaci problémy s úložištěm GitHub.
 
@@ -106,6 +106,8 @@ Klasifikace je úloha strojového učení, který používá data **určit** kat
 
 * Binární soubor: buď A a B.
 * Multiclass: více kategorií, které lze předpovídat pomocí jednoho modelu.
+
+Pro tento typ problému pomocí Multiclass zařazení úlohy, protože predikci kategorii problému může být jeden z více kategorií (multiclass) místo jen dvou (binární).
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 

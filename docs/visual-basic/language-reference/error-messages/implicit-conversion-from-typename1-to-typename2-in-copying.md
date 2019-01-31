@@ -1,5 +1,5 @@
 ---
-title: Implicitní převod z &#39; &lt;NázevTypu1&gt; &#39; k &#39; &lt;NázevTypu2&gt; &#39; při kopírování hodnoty z &#39;ByRef&#39; parametr &#39; &lt; Název parametru&gt; &#39; zpět do odpovídajícího argumentu.
+title: Implicitní převod z '<typename1>' na '<typename2>' při kopírování hodnoty 'ByRef' parametru '<parametername> zpět na odpovídající argument
 ms.date: 07/20/2015
 f1_keywords:
 - vbc41999
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC41999
 ms.assetid: ae48c738-dff8-4c0f-8931-bbb70b2c8b03
-ms.openlocfilehash: 9f05a5fbcbef828b4ffa920d8cade475cedb64d5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f875206b15ee048311e43624e197e78413de522e
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54537231"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55279614"
 ---
-# <a name="implicit-conversion-from-39lttypename1gt39-to-39lttypename2gt39-in-copying-the-value-of-39byref39-parameter-39ltparameternamegt39-back-to-the-matching-argument"></a>Implicitní převod z &#39; &lt;NázevTypu1&gt; &#39; k &#39; &lt;NázevTypu2&gt; &#39; při kopírování hodnoty z &#39;ByRef&#39; parametr &#39; &lt; Název parametru&gt; &#39; zpět do odpovídajícího argumentu.
+# <a name="implicit-conversion-from-typename1-to-typename2-in-copying-the-value-of-byref-parameter-parametername-back-to-the-matching-argument"></a>Implicitní převod z '\<NázevTypu1 > "k"\<NázevTypu2 >' při kopírování hodnoty 'ByRef' parametru '\<parametername > "zpět do odpovídajícího argumentu.
 Postup se nazývá se [ByRef](../../../visual-basic/language-reference/modifiers/byref.md) argument jiného typu než jeho odpovídající parametr.  
   
  Pokud předáte argument `ByRef`, Visual Basic někdy kopíruje hodnotu argumentu do místní proměnné v postupu namísto předávání odkazem. V takovém případě se po návratu podle postupu Visual Basic musí potom zkopírujte hodnotu lokální proměnné zpět do argumentu ve volajícím kódu.  

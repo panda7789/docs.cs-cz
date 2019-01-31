@@ -1,5 +1,5 @@
 ---
-title: Co&#39;s zastaralé v knihovně tříd rozhraní .NET Framework
+title: Zastaralé položky v knihovně tříd rozhraní .NET Framework
 ms.custom: updateeachrelease
 ms.date: 04/10/2018
 helpviewer_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8af9d0f3c31e9178e815dc8fb00f192b8da3e5de
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 86928c734583cfc8cae0be53458a0d5c1769f292
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54541258"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55287817"
 ---
-# <a name="what39s-obsolete-in-the-net-framework-class-library"></a>Co&#39;s zastaralé v knihovně tříd rozhraní .NET Framework
+# <a name="whats-obsolete-in-the-net-framework-class-library"></a>Zastaralé položky v knihovně tříd rozhraní .NET Framework
 Rozhraní .NET Framework mění v průběhu času. Každá nová verze přidá nové typy a členy typů, které přinášejí nové funkce. Existující typy a členové také v průběhu času měnit. Například některé typy se stanou méně důležité technologie, které podporují je nahrazena novou technologii a některé metody jsou nahrazena novější metody, které jsou vhodnější nebo více plně funkční.  
   
  Rozhraní .NET Framework a modulu common language runtime usilují o podporu zpětné kompatibility (povolení aplikace, které byly vyvinuty s jednu verzi rozhraní .NET Framework pro spuštění na další verzi rozhraní .NET Framework). Díky tomu je obtížné odebrat typ nebo člen typu. Místo toho rozhraní .NET Framework označuje, že typ nebo člen typu by už použita označením jako zastaralé nebo zastaralé. Ukončení podpory pro typ nebo člen zahrnuje označíte, aby vývojáři povědomí bude odchází a dostatek času reagovat na jeho odstranění. Existující kód, který používá typ nebo člen však nadále spuštěna v nové verzi rozhraní .NET Framework.  

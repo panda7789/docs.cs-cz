@@ -1,19 +1,19 @@
 ---
-title: '&lt;dateTimeSerialization&gt; – Element'
+title: Element <dateTimeSerialization>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - dateTimeSerialization element
 - XML serialization, configuration
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
-ms.openlocfilehash: b915a1e310d8375f70a09a9cd1f0e3051bda7895
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: af0d8eeb36e023b4d38f9ad5831de3d392a487fd
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54564952"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55288259"
 ---
-# <a name="ltdatetimeserializationgt-element"></a>&lt;dateTimeSerialization&gt; – Element
+# <a name="datetimeserialization-element"></a>\<dateTimeSerialization > – Element
 Určuje režim serializace <xref:System.DateTime> objekty.  
   
  \<Konfigurace >  

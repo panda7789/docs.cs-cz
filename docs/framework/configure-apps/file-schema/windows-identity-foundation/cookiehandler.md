@@ -1,16 +1,16 @@
 ---
-title: '&lt;cookieHandler&gt;'
+title: <cookieHandler>
 ms.date: 03/30/2017
 ms.assetid: bfdc127f-8d94-4566-8bef-f583c6ae7398
 author: BrucePerlerMS
-ms.openlocfilehash: 58c258bd20ce6b69a73b37a61a4d26f1efbb117a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dc0613bb727f9ed061c3b5d494bdc279515b56e9
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717100"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55285848"
 ---
-# <a name="ltcookiehandlergt"></a>&lt;cookieHandler&gt;
+# <a name="cookiehandler"></a>\<cookieHandler>
 Konfiguruje <xref:System.IdentityModel.Services.CookieHandler> , který <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) používá ke čtení a zápis souborů cookie.  
   
  \<system.identityModel.services>  

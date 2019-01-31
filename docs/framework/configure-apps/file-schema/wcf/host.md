@@ -1,15 +1,15 @@
 ---
-title: '&lt;host&gt;'
+title: <host>
 ms.date: 03/30/2017
 ms.assetid: be566d55-9d50-4b2e-985d-52a5cc26cbbb
-ms.openlocfilehash: 1fb35058d407d0fbae78092bb4ccd45b0aaa40e6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8a8f9db96281d8d775ff5c2923018228b3a9c1e5
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54702025"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55269026"
 ---
-# <a name="lthostgt"></a>&lt;host&gt;
+# <a name="host"></a>\<host>
 Určuje nastavení pro hostitele služby.  
   
  \<system.ServiceModel>  

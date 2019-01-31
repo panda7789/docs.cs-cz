@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Volba tiskáren připojených k uživateli&#39;s počítači v modelu Windows Forms'
+title: 'Postupy: Volba tiskáren připojených k počítači uživatele v modelu Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - printing [Windows Forms], choosing printers
 - printers [Windows Forms], choosing
 ms.assetid: 63c1172b-2931-4ac0-953f-37f629494bbf
-ms.openlocfilehash: 10f45fadab0f3480d4c475ff8ee448b8d1cddb13
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9b206030b87aad5df40e518dc36ee198838e51b9
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54572809"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55276767"
 ---
-# <a name="how-to-choose-the-printers-attached-to-a-user39s-computer-in-windows-forms"></a>Postupy: Volba tiskáren připojených k uživateli&#39;s počítači v modelu Windows Forms
+# <a name="how-to-choose-the-printers-attached-to-a-users-computer-in-windows-forms"></a>Postupy: Volba tiskáren připojených k počítači uživatele v modelu Windows Forms
 Uživatelé často chtějí vybrat tiskárnu jiné než výchozí tiskárna pro tisk. Můžete umožnit uživatelům si vybrat tiskárnu z aktuálně nainstalované pomocí <xref:System.Windows.Forms.PrintDialog> komponenty. Prostřednictvím <xref:System.Windows.Forms.PrintDialog> komponenty, <xref:System.Windows.Forms.DialogResult> z <xref:System.Windows.Forms.PrintDialog> komponenta je zachycena a umožňuje vybrat tiskárnu.  
   
  V následujícím postupu je textový soubor vybraný které se mají vytisknout, použije se výchozí tiskárna. <xref:System.Windows.Forms.PrintDialog> Pak vytvoření instance třídy.  

@@ -1,15 +1,15 @@
 ---
-title: '&lt;IDN&gt; – Element (nastavení Uri)'
+title: <idn> – element (nastavení URI)
 ms.date: 03/30/2017
 ms.assetid: 16c8e869-1791-4cf5-9244-3d3c738f60ec
-ms.openlocfilehash: 21950beeefb23e81066623534774148e1f5d92ae
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6abbc70e16a6c9ff8e4a7b52df7a7c3d74c7498a
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580733"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55288909"
 ---
-# <a name="ltidngt-element-uri-settings"></a>&lt;IDN&gt; – Element (nastavení Uri)
+# <a name="idn-element-uri-settings"></a>\<IDN > – Element (nastavení Uri)
 Určuje, pokud analýza mezinárodních názvů domén (IDN) se použije na název domény.  
   
 ## <a name="schema-hierarchy"></a>Schema Hierarchy  

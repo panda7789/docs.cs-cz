@@ -1,25 +1,25 @@
 ---
-title: '&lt;activityStateQuery&gt; služby WCF'
+title: <activityStateQuery> služby WCF
 ms.date: 03/30/2017
 ms.assetid: d6cdc04b-6f3a-4097-a623-ee4a1be3b5c4
-ms.openlocfilehash: 6d55a53a6344922cee0d42c26102d5f0bbf46f67
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 97fce512415ad6ae165b29c7e8eff3394d5e675a
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54151785"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55254792"
 ---
-# <a name="ltactivitystatequerygt-of-wcf"></a>&lt;activityStateQuery&gt; služby WCF
+# <a name="activitystatequery-of-wcf"></a>\<activityStateQuery > služby WCF
 
 Představuje dotaz, který se používá ke sledování změn životního cyklu aktivit, které tvoří instance pracovního postupu. Můžete například sledovat, pokaždé, když dokončí "Odeslat E-Mail" aktivity v rámci instance pracovního postupu. Tento dotaz je nezbytné pro sledování účastníka přihlásit k odběru objekty záznam stavu aktivity. Dostupné stavy přihlásit k odběru jsou uvedeny v ActivityStates.  
   
 Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).
 
-\<system.serviceModel > \<sledování >  
-\<profily > \<trackingProfile >  
+\<system.serviceModel> \<tracking>  
+\<profiles> \<trackingProfile>  
 \<pracovní postup >  
-\<activityStateQueries >  
-\<activityStateQuery >  
+\<activityStateQueries>  
+\<activityStateQuery>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -61,15 +61,15 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<argumenty >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/arguments.md)|Kolekce argumenty přidružené k tomuto dotazu aktivity.|  
-|[\<stavy >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md)|Kolekce elementů konfigurace, které obsahují stavy předplacenému aktivity, pro který by měl vyzařovaného záznamem sledování.|  
-|[\<stavy >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md)|Kolekce proměnných spojených s Tento dotaz aktivity.|  
+|[\<arguments>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/arguments.md)|Kolekce argumenty přidružené k tomuto dotazu aktivity.|  
+|[\<states>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md)|Kolekce elementů konfigurace, které obsahují stavy předplacenému aktivity, pro který by měl vyzařovaného záznamem sledování.|  
+|[\<states>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md)|Kolekce proměnných spojených s Tento dotaz aktivity.|  
   
 ### <a name="parent-elements"></a>Nadřazené prvky  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<faultPropagationQuery >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/faultpropagationquery.md)|Představuje seznam konfigurační prvky, které se používají ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru zrušit požadavek záznam objekty.|  
+|[\<faultPropagationQuery>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/faultpropagationquery.md)|Představuje seznam konfigurační prvky, které se používají ke sledování požadavků pro zrušení podřízené aktivity Nadřazená aktivita. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru zrušit požadavek záznam objekty.|  
   
 ## <a name="remarks"></a>Poznámky
 

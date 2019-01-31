@@ -1,15 +1,15 @@
 ---
-title: '&gt; (Větší než) (Entity SQL)'
+title: '> (Větší než) (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: 4cea865c-677c-4b06-99a1-010f2ae2394a
-ms.openlocfilehash: 1449af09022a9e11be1f3627023318270adf0121
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c4a0f60f6dcaf503dca0b16ed80bc05884922b34
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54736926"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55277391"
 ---
-# <a name="gt-greater-than-entity-sql"></a>&gt; (Větší než) (Entity SQL)
+# <a name="-greater-than-entity-sql"></a>> (Větší) (Entity SQL)
 Porovná dva výrazy k určení, zda levý výraz má hodnotu větší než pravý výraz.  
   
 ## <a name="syntax"></a>Syntaxe  

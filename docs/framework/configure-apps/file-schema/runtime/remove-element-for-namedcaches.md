@@ -1,18 +1,18 @@
 ---
-title: '&lt;Odebrat&gt; – Element pro &lt;namedCaches&gt;'
+title: <remove> – element pro element <namedCaches>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - remove element for namedCaches
 - <remove> element for namedCaches
 ms.assetid: 24211ea5-163e-4fe5-aed8-004d8499760c
-ms.openlocfilehash: ceeef00cb688c725cc595582fb6845b9e3fa9b92
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: 22d06ab1df0d5ed74073772302421a680f1665ef
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55083389"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257016"
 ---
-# <a name="ltremovegt-element-for-ltnamedcachesgt"></a>&lt;Odebrat&gt; – Element pro &lt;namedCaches&gt;
+# <a name="remove-element-for-namedcaches"></a>\<Odebrat > – Element pro \<namedcaches – >
 Odebere položku pojmenovanou mezipaměť z `namedCaches` kolekce pro mezipaměť.  
   
  \<system.runtime.caching>  

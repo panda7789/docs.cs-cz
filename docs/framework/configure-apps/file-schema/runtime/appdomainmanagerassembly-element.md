@@ -1,5 +1,5 @@
 ---
-title: '&lt;appDomainManagerAssembly&gt; Element'
+title: Element <appDomainManagerAssembly>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <appDomainManagerAssembly> element
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: c7c56e39-a700-44f5-b94e-411bfce339d9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4e2c43a5cfba89df3ae90950f09a7a947729f51b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 66b2e6a3ef73b70a7ce78e3d6f32ba48f8cba980
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54746593"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55269702"
 ---
-# <a name="ltappdomainmanagerassemblygt-element"></a>&lt;appDomainManagerAssembly&gt; Element
+# <a name="appdomainmanagerassembly-element"></a>\<appDomainManagerAssembly> Element
 Určuje sestavení, které poskytuje správce domény aplikace ve výchozí doméně aplikace v procesu.  
   
  \<Konfigurace >  

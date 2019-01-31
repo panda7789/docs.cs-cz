@@ -1,17 +1,17 @@
 ---
-title: Soubor '&lt;filename&gt;"nejde odstranit, protože je otevřen
+title: Soubor '<filename>"nejde odstranit, protože je otevřen
 ms.date: 07/20/2015
 f1_keywords:
 - vbrFileSystem_FileAlreadyOpen1
 ms.assetid: e1cbc46a-1db0-412d-8109-31342ec9d327
-ms.openlocfilehash: ed2b24c3a4419d3dd269f20444e1feeff48627c1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c8c6cbf9682a1b46d44edb94dea8a092e74216e8
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54746257"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55254337"
 ---
-# <a name="file-ltfilenamegt-cannot-be-deleted-because-it-is-open"></a>Soubor '&lt;filename&gt;"nejde odstranit, protože je otevřen
+# <a name="file-filename-cannot-be-deleted-because-it-is-open"></a>Soubor '\<název souboru > "nejde odstranit, protože je otevřen
 Na otevřený soubor Probíhá pokus o odstranění.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

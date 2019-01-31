@@ -1,15 +1,15 @@
 ---
-title: '&lt;net.tcp&gt;'
+title: <net.tcp>
 ms.date: 03/30/2017
 ms.assetid: 8bc2f2be-11c1-4bab-9018-1d21ae568d94
-ms.openlocfilehash: 7df24d816b4eed8ceed542e14261413fbe7651a4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 85a9112def77fc31c8e4b826454894fe7372b31b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54728723"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257652"
 ---
-# <a name="ltnettcpgt"></a>&lt;net.tcp&gt;
+# <a name="nettcp"></a>\<net.tcp>
 Určuje nastavení konfigurace sítě. TCP služba Sdílení portů, která umožňuje sdílet stejný port TCP mezi více procesy.  
   
  \<system.serviceModel.activation>  

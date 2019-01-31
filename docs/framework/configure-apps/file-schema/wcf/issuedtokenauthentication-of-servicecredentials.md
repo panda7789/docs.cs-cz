@@ -1,15 +1,15 @@
 ---
-title: '&lt;issuedTokenAuthentication&gt; – &lt;serviceCredentials&gt;'
+title: <issuedTokenAuthentication> z <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: 5c2e288f-f603-4d13-839a-0fd6d1981bec
-ms.openlocfilehash: 4a9087e319c278ea396b5611b2f7f923bd00b6d0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c195791250831897b8bc9d09782d17609272e146
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54509334"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55260279"
 ---
-# <a name="ltissuedtokenauthenticationgt-of-ltservicecredentialsgt"></a>&lt;issuedTokenAuthentication&gt; – &lt;serviceCredentials&gt;
+# <a name="issuedtokenauthentication-of-servicecredentials"></a>\<issuedTokenAuthentication> of \<serviceCredentials>
 Určuje vlastní token vydaný jako pověření služby.  
   
  \<system.ServiceModel>  

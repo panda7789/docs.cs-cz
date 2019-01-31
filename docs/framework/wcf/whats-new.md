@@ -1,16 +1,16 @@
 ---
-title: Co&#39;nového ve Windows Communication Foundation 4.5
+title: Co je nového ve WCF 4.5
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-ms.openlocfilehash: 1fe3ea53be6305553e789f8644e378d95bfac71b
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 8d079613d1970d2a50ddb3449c2a3072010b2c55
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873515"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55280004"
 ---
 # <a name="whats-new-in-windows-communication-foundation-45"></a>Co je nového ve WCF 4.5
 
@@ -58,7 +58,7 @@ Toto téma popisuje funkce nového na Windows Communication Foundation (WCF) ver
  Některé balíčky třetích stran zpracování WSDL, nebudou se moct ke zpracování dokumentů WSDL, které mají závislosti na jiných dokumentů prostřednictvím příkazu.  WCF teď umožňuje určit, že všechny informace o WSDL vrátit v jednom dokumentu. Požádat o jediný dokument WSDL připojit "? singleWSDL" na identifikátor URI, pokud se požaduje metadata ze služby.
 
 ## <a name="websocket-support"></a>Podpora protokolu WebSocket
- Protokoly Websocket je technologie, která poskytuje skutečnou obousměrnou komunikaci přes porty 80 a 443 s charakteristikami výkonu, podobně jako na TCP. Aby mohly podporovat komunikaci pomocí protokolu WebSocket přenosového byly přidány dva nové vazby. <xref:System.ServiceModel.NetHttpBinding> a <xref:System.ServiceModel.NetHttpsBinding>. Další informace naleznete v tématu: [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md).
+ Protokoly Websocket je technologie, která poskytuje skutečnou obousměrnou komunikaci přes porty 80 a 443 s charakteristikami výkonu, podobně jako na TCP. Aby mohly podporovat komunikaci pomocí protokolu WebSocket přenosového byly přidány dva nové vazby. <xref:System.ServiceModel.NetHttpBinding> a <xref:System.ServiceModel.NetHttpsBinding>. Další informace najdete v tématu: [Vazby poskytované systémem](../../../docs/framework/wcf/system-provided-bindings.md).
 
 ## <a name="new-transport-default-values"></a>Nové výchozí hodnoty přenosu
  Následující tabulka popisuje nastavení, které se změnily a kde najít další informace.

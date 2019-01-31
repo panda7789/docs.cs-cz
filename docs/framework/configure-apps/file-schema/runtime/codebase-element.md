@@ -1,5 +1,5 @@
 ---
-title: '&lt;základ kódu&gt; – Element'
+title: Element <codeBase>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#codeBase
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - container tags, <codeBase> element
 - codeBase element
 ms.assetid: d48a3983-2297-43ff-a14d-1f29d3995822
-ms.openlocfilehash: 0c4856085574792f567ff0e4bce34fc76a9c1565
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: ebf7e2624cc36fb6a758afef38e2054669061dff
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55083298"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55269650"
 ---
-# <a name="ltcodebasegt-element"></a>&lt;základ kódu&gt; – Element
+# <a name="codebase-element"></a>\<codeBase > – Element
 Určuje, kde najít sestavení modulu common language runtime.  
   
  \<Konfigurace >  

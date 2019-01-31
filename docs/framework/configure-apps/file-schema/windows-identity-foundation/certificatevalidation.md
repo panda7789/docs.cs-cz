@@ -1,21 +1,21 @@
 ---
-title: '&lt;certificateValidation&gt;'
+title: <certificateValidation>
 ms.date: 03/30/2017
 ms.assetid: 6c54c704-b55e-4631-88ff-4d4a5621554c
 author: BrucePerlerMS
-ms.openlocfilehash: 29881be43f02d275ad135efd97dc8b25a7409beb
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 7b8823d792e3f15846a9483d670994be4b368980
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838328"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55273894"
 ---
-# <a name="ltcertificatevalidationgt"></a>&lt;certificateValidation&gt;
+# <a name="certificatevalidation"></a>\<certificateValidation>
 Určuje nastavení, které obslužné rutiny tokenů používat ověřování certifikátů. Tato nastavení jsou přepsány, pokud jsou nakonfigurované vlastní validátor konkrétní obslužnou rutinou.  
   
  \<system.identityModel>  
-\<identityConfiguration >  
-\<certificateValidation >  
+\<identityConfiguration>  
+\<certificateValidation>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,14 +46,14 @@ Určuje nastavení, které obslužné rutiny tokenů používat ověřování ce
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<certificateValidator >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidator.md)|Určuje vlastní typ pro ověření certifikátu. Tento typ se používá jenom v případě, `certificateValidationMode` atribut [ \<certificateValidation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md) prvek je nastaven na "Vlastní".|  
+|[\<certificateValidator>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidator.md)|Určuje vlastní typ pro ověření certifikátu. Tento typ se používá jenom v případě, `certificateValidationMode` atribut [ \<certificateValidation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md) prvek je nastaven na "Vlastní".|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Určuje nastavení identit na úrovni služby.|  
-|[\<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Konfigurace pro kolekci zabezpečení poskytuje obslužné rutiny tokenů.|  
+|[\<identityConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Určuje nastavení identit na úrovni služby.|  
+|[\<securityTokenHandlerConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Konfigurace pro kolekci zabezpečení poskytuje obslužné rutiny tokenů.|  
   
 ## <a name="remarks"></a>Poznámky  
  A `<certificateValidation>` element se dá nastavit na úrovni služby v rámci `<identityConfiguration>` element nebo na úrovni kolekce obslužné rutiny tokenů zabezpečení v rámci `<securityTokenHandlerConfiguration>` elementu. Nastavení kolekce obslužné rutiny tokenů přepíšou nastavení zadané ve službě. Některé obslužné rutiny tokenů vám umožňují určit nastavení ověření certifikátu v konfiguraci. Nastavení na jednotlivých obslužné rutiny tokenů přepsat zadaný na úrovni služby a na kolekci obslužné rutiny tokenů zabezpečení.  

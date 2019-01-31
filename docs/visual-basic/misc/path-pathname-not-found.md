@@ -1,17 +1,17 @@
 ---
-title: Cesta "&lt;cesta&gt;' nebyl nalezen
+title: Cesta "<pathname>' nebyl nalezen
 ms.date: 07/20/2015
 f1_keywords:
 - vbrFileSystem_PathNotFound1
 ms.assetid: 184d09ab-771f-4298-bd71-94b33efc325b
-ms.openlocfilehash: 544fa64b584b5d1bc0a4293aae879033c1135dea
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 84f4b8dbc5636fb9e0bee24a2f7be0b129cb4399
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613880"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55280862"
 ---
-# <a name="path-ltpathnamegt-not-found"></a>Cesta "&lt;cesta&gt;' nebyl nalezen
+# <a name="path-pathname-not-found"></a>Cesta "\<cesta >' nebyl nalezen
 Nepovedlo se najít zadanou cestu cesta během operace přístupu k souborům nebo přístup k disku je operační systém. Cesta k souboru musí obsahovat specifikaci jednotky, adresářů a podadresářů, které musí procházet a vyhledejte soubor. Cesta může být relativní nebo absolutní.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

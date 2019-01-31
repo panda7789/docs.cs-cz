@@ -1,15 +1,15 @@
 ---
-title: '&lt;sslStreamSecurity&gt;'
+title: <sslStreamSecurity>
 ms.date: 03/30/2017
 ms.assetid: 430a378b-a742-4858-8a12-9f9b235fd627
-ms.openlocfilehash: fe633aa1ed2b165a83f415748b70b6a66bbb0130
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f66569f36dc61a063b79a088dcbc405126a074d8
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540912"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55284593"
 ---
-# <a name="ltsslstreamsecuritygt"></a>&lt;sslStreamSecurity&gt;
+# <a name="sslstreamsecurity"></a>\<sslStreamSecurity>
 Představuje vlastní prvek vazby, který podporuje zabezpečení kanálu pomocí datového proudu protokolu SSL.  
   
  \<system.serviceModel>  

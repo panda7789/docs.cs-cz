@@ -1,5 +1,5 @@
 ---
-title: '&gt;&gt;= – operátor - C# odkaz'
+title: '>>= – operátor - C# odkaz'
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - right shift assignment operator (>>=) [C#]
 - '>>= operator (right-shift assignment) [C#]'
 ms.assetid: b593778c-b9b4-440d-8b29-c1ac22cb81c0
-ms.openlocfilehash: 02a9559a5c4086eeed09094c15c3620366ffad8c
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
+ms.openlocfilehash: 8cc341c14ee1b90fde2abb369c187e57b4ce5c00
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333682"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55278977"
 ---
-# <a name="gtgt-operator-c-reference"></a>&gt;&gt;= – operátor (C# odkaz)
+# <a name="-operator-c-reference"></a>>> = – operátor (C# odkaz)
 
 Operátor přiřazení posunutí doprava.
 

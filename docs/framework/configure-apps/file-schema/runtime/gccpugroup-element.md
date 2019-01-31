@@ -1,5 +1,5 @@
 ---
-title: '&lt;Gccpugroup –&gt; – Element'
+title: Element <GCCpuGroup>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - GCCpuGroup element
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: c1fc7d6c-7220-475c-a312-5b8b201f66e0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6f4d135bc74a753b3968baaccf3e35633c8ba253
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a389403d58bb0b4fb4f98e25d2c9a6b2cf337281
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54535798"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55264627"
 ---
-# <a name="ltgccpugroupgt-element"></a>&lt;Gccpugroup –&gt; – Element
+# <a name="gccpugroup-element"></a>\<GCCpuGroup> Element
 Určuje, zda uvolňování podporuje více skupin procesorů.  
   
  \<Konfigurace >  

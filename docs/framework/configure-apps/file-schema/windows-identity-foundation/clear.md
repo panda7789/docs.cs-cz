@@ -1,22 +1,22 @@
 ---
-title: '&lt;Vymazat&gt;'
+title: <clear>
 ms.date: 03/30/2017
 ms.assetid: 54dcd1d1-038f-4fc8-a3a4-56ba7a1ca0fd
 author: BrucePerlerMS
-ms.openlocfilehash: 8f5d2e2b580d6a2824fd885f9b08cb2b2f0b244e
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: b7320b6504c252770bed803666201df633e161a1
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47205446"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55280459"
 ---
-# <a name="ltcleargt"></a>&lt;Vymazat&gt;
+# <a name="clear"></a>\<clear>
 Vymaže všechny obslužné rutiny tokenů zabezpečení z aktuální kolekce obslužné rutiny tokenů.  
   
  \<system.identityModel>  
-\<identityConfiguration >  
-\<securityTokenHandlers >  
-\<Vymazat >  
+\<identityConfiguration>  
+\<securityTokenHandlers>  
+\<clear>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,13 +35,13 @@ Vymaže všechny obslužné rutiny tokenů zabezpečení z aktuální kolekce ob
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádná  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<securityTokenHandlers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Určuje kolekci obslužné rutiny tokenů zabezpečení, které jsou registrované na koncový bod.|
+|[\<securityTokenHandlers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Určuje kolekci obslužné rutiny tokenů zabezpečení, které jsou registrované na koncový bod.|

@@ -1,15 +1,15 @@
 ---
-title: '&lt;workflowInstanceQueries&gt; služby WCF'
+title: <workflowInstanceQueries> služby WCF
 ms.date: 03/30/2017
 ms.assetid: b0852f77-16e4-4d55-8eb7-a19feb0e8fc4
-ms.openlocfilehash: e3ad1139781c54cc1ca4e2d2b264f3f375b49108
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 544ca868485a409554ece9d9b000beb1a472d344
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145559"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55255299"
 ---
-# <a name="ltworkflowinstancequeriesgt-of-wcf"></a>&lt;workflowInstanceQueries&gt; služby WCF
+# <a name="workflowinstancequeries-of-wcf"></a>\<workflowInstanceQueries > služby WCF
 
 Představuje kolekci elementů konfigurace, které sledovat změny životního cyklu instance pracovního postupu, jako je spuštěna nebo dokončené události.  
   
@@ -17,10 +17,10 @@ Další informace o sledování profil dotazy naleznete v tématu [sledování p
   
 \<system.serviceModel>  
 \<sledování >  
-\<profily >  
-\<profil trackingProfile >  
+\<profiles>  
+\<trackingProfile>  
 \<pracovní postup >  
-\<workflowInstanceQueries >  
+\<workflowInstanceQueries>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,13 +54,13 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<workflowInstanceQuery >](workflowinstancequery-of-wcf.md)|Dotaz, který se používá ke sledování změny životního cyklu instance pracovního postupu.|  
+|[\<workflowInstanceQuery>](workflowinstancequery-of-wcf.md)|Dotaz, který se používá ke sledování změny životního cyklu instance pracovního postupu.|  
   
 ### <a name="parent-elements"></a>Nadřazené prvky  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<pracovní postup >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Konfigurace element, který obsahuje všechny dotazy týkající se konkrétního pracovního postupu identifikovaný [ID definice aktivity](https://msdn.microsoft.com/library/system.servicemodel.activities.tracking.configuration.profileworkflowelement.activitydefinitionid(VS.100).aspx) vlastnost.|  
+|[\<workflow>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Konfigurace element, který obsahuje všechny dotazy týkající se konkrétního pracovního postupu identifikovaný [ID definice aktivity](https://msdn.microsoft.com/library/system.servicemodel.activities.tracking.configuration.profileworkflowelement.activitydefinitionid(VS.100).aspx) vlastnost.|  
   
 ## <a name="remarks"></a>Poznámky
 

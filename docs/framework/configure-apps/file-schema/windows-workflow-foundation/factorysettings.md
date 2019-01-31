@@ -1,16 +1,16 @@
 ---
-title: '&lt;factorySettings&gt;'
+title: <factorySettings>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 202aad17-1b8b-4c87-ad57-4ca5de18ed35
-ms.openlocfilehash: bb57378ab692d3ddb0728a7f6c4e5bf039e59d15
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 99320b2b9c93df06ffd1e0d8dd3e3db656548b3f
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54637843"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55274180"
 ---
-# <a name="ltfactorysettingsgt"></a>&lt;factorySettings&gt;
+# <a name="factorysettings"></a>\<factorySettings >
 Určuje nastavení mezipaměti objekt pro vytváření kanálu.  
   
 \<system.ServiceModel>  

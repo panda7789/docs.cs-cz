@@ -1,15 +1,15 @@
 ---
-title: '&lt;system.runtime.serialization&gt;'
+title: <system.runtime.serialization>
 ms.date: 03/30/2017
 ms.assetid: a8cebf4c-06d2-4667-8f5b-c3e1fc90df6f
-ms.openlocfilehash: 6321ab192161468142a4cd4d2155d3f787bb0165
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5aa5d75e12852fe6a0e4e9a2eb4ae57d25d1022c
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600258"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55272676"
 ---
-# <a name="ltsystemruntimeserializationgt"></a>&lt;system.runtime.serialization&gt;
+# <a name="systemruntimeserialization"></a>\<system.runtime.serialization>
 Představuje kořenový element <xref:System.Runtime.Serialization> části obor názvů a obsahuje prvky pro nastavení voleb <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
  system.runtime.serialization  

@@ -1,19 +1,19 @@
 ---
-title: '&lt;schemaImporterExtensions&gt; Element'
+title: Element <schemaImporterExtensions>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - XML serialization, configuration
 - schemaImporterExtensions element
 - <schemaImporterExtensions> element
 ms.assetid: 465ef2a0-f909-4ac1-9a56-0ead5c849698
-ms.openlocfilehash: dbe85ea817a597db84ddad530d67b1c2b7953f75
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 43f8439708c73e8e5241a923360caf549bf09d8b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54535365"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55265299"
 ---
-# <a name="ltschemaimporterextensionsgt-element"></a>&lt;schemaImporterExtensions&gt; Element
+# <a name="schemaimporterextensions-element"></a>\<schemaImporterExtensions> Element
 Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework. Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).  
   
 ## <a name="syntax"></a>Syntaxe  

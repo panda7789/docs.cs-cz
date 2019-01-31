@@ -1,15 +1,15 @@
 ---
-title: '&lt;mexHttpBinding&gt;'
+title: <mexHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: e50b2e1f-9668-41a5-8077-dee7abff9f0f
-ms.openlocfilehash: f22ac3beb5ee90a543e65734bd89123293c2dd3e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9d37a4918101b18c3002f2dcb926b9a03e0057a2
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54680409"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55266325"
 ---
-# <a name="ltmexhttpbindinggt"></a>&lt;mexHttpBinding&gt;
+# <a name="mexhttpbinding"></a>\<mexHttpBinding>
 Určuje nastavení pro vazby používané k výměně zpráv WS-MetadataExchange (WS-MEX) přes protokol HTTP.  
   
  \<system.ServiceModel>  

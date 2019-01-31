@@ -1,18 +1,18 @@
 ---
-title: '&lt;paramref&gt; (Visual Basic)'
+title: <paramref> (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - paramref XML tag
 - <paramref> XML tag
 ms.assetid: 8979d53b-beb1-41b7-b41e-6bbea1c17a03
-ms.openlocfilehash: 44b8124068a8cfb507fcbe389c19ff0c9168b5db
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1ef8d76699534a7408912424bcdea651d8314364
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54700244"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55283982"
 ---
-# <a name="ltparamrefgt-visual-basic"></a>&lt;paramref&gt; (Visual Basic)
+# <a name="paramref-visual-basic"></a>\<paramref > (Visual Basic)
 Formátuje slova jako parametr.  
   
 ## <a name="syntax"></a>Syntaxe  

@@ -1,18 +1,18 @@
 ---
-title: '&lt;Přidat&gt; – Element pro &lt;namedCaches&gt;'
+title: <add> – element pro element <namedCaches>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - add element for <namedCaches>
 - <add> element for <namedCaches>
 ms.assetid: ce2a63a8-c829-4742-a6ea-72ee5d89f169
-ms.openlocfilehash: 0a292d5bdde019c4c01385a2126de29c3eea7afb
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: cbe7c98e9603e51aa381f07ea35ffe46e6d3adfb
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55084078"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257353"
 ---
-# <a name="ltaddgt-element-for-ltnamedcachesgt"></a>&lt;Přidat&gt; – Element pro &lt;namedCaches&gt;
+# <a name="add-element-for-namedcaches"></a>\<Přidat > – Element pro \<namedcaches – >
 Přidá `namedCache` položku a `namedCaches` kolekce pro mezipaměť.  
   
  \<system.runtime.caching>  

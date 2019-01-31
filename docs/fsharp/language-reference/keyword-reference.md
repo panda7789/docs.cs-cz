@@ -3,10 +3,10 @@ title: Referenční dokumentace klíčových slov
 description: Odkazy na informace o všech F# klíčová slova jazyka.
 ms.date: 05/16/2016
 ms.openlocfilehash: 5a94a30ca0f73538cc22e76fa75bd76741b70d99
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2019
+ms.lasthandoff: 01/31/2019
 ms.locfileid: "54857902"
 ---
 # <a name="keyword-reference"></a>Referenční dokumentace klíčových slov
@@ -64,7 +64,7 @@ V následující tabulce jsou uvedeny všechny F# klíčová slova v abecedním 
 |`null`|[Hodnoty Null](values/null-values.md)<br /><br />[Omezení](generics/constraints.md)|Označuje absenci objektu.<br /><br />Používá se také v omezeních obecných parametrů.|
 |`of`|[Rozlišovaná sjednocení](discriminated-unions.md)<br /><br />[Delegáti](delegates.md)<br /><br />[Typy výjimek](exception-handling/exception-types.md)|Použít v rozlišovaných sjednoceních k označení typu kategorií hodnot a v deklaracích delegování a výjimek.|
 |`open`|[Deklarace importu: Klíčové slovo `open`](import-declarations-the-open-keyword.md)|Umožňuje zpřístupnění obsahu oboru názvů nebo modulu bez kvalifikace.|
-|`or`|[Referenční dokumentace symbolů a operátorů](symbol-and-operator-reference/index.md)<br /><br />[Omezení](generics/constraints.md)|Používá se v logických podmínkách jako logická hodnota `or` operátor. Ekvivalentní.||`.<br /><br />Používá se také v omezeních členů.|
+|`or`|[Referenční dokumentace symbolů a operátorů](symbol-and-operator-reference/index.md)<br /><br />[Omezení](generics/constraints.md)|Používá se v logických podmínkách jako logická hodnota `or` operátor. Ekvivalentní `||`.<br /><br />Používá se také v omezeních členů.|
 |`override`|[Členové](members/index.md)|Používaný k implementaci verze abstraktní nebo virtuální metody, která se liší od základní verze.|
 |`private`|[Řízení přístupu](access-control.md)|Omezení přístupu k členovi na kód ve stejném typu nebo modulu.|
 |`public`|[Řízení přístupu](access-control.md)|Umožňuje přístup ke členovi zvnějška typu.|

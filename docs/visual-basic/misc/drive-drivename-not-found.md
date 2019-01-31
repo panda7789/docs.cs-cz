@@ -1,17 +1,17 @@
 ---
-title: Jednotka "&lt;drivename&gt;' nebyl nalezen
+title: Jednotka "<drivename>' nebyl nalezen
 ms.date: 07/20/2015
 f1_keywords:
 - vbrFileSystem_DriveNotFound1
 ms.assetid: 0250e9f2-3470-4fe4-8fda-be4fbf2e2a30
-ms.openlocfilehash: 25a4492ee0edd57d2d173ce8dc1735ba483cf2ed
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 95d9c0d23d9159758c1dbf9719ed64e6786fa427
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54631175"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55288818"
 ---
-# <a name="drive-ltdrivenamegt-not-found"></a>Jednotka "&lt;drivename&gt;' nebyl nalezen
+# <a name="drive-drivename-not-found"></a>Jednotka "\<drivename >' nebyl nalezen
 Na jednotce se nenašel. Bylo ztraceno připojení k síti, nebo jednotku, kterou se pokoušíte získat přístup v režimu offline nebo neexistuje.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

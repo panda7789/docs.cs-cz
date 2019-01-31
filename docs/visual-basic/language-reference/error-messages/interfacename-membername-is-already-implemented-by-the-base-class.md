@@ -1,5 +1,5 @@
 ---
-title: '&#39;&lt;InterfaceName&gt;.&lt; MemberName&gt; &#39; je již implementováno prostřednictvím základní třídy &#39; &lt;baseclassname&gt;&#39;. Opětovná implementace &lt;typ&gt; předpokládá, že'
+title: "'<interfacename>. <membername>'je již implementováno prostřednictvím základní třídy'<baseclassname>\". Opětovná implementace <type> předpokládá, že"
 ms.date: 07/20/2015
 f1_keywords:
 - vbc42015
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC42015
 ms.assetid: 658c070a-113e-4bd8-b294-12c243191160
-ms.openlocfilehash: 22a3bd4e8c09c0d070e7fa5e75571a7215c3a274
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5d5d9f21069c7b9aa54940525b7678bc3987b77c
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54507197"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55264148"
 ---
-# <a name="39ltinterfacenamegtltmembernamegt39-is-already-implemented-by-the-base-class-39ltbaseclassnamegt39-re-implementation-of-lttypegt-assumed"></a>&#39;&lt;InterfaceName&gt;.&lt; MemberName&gt; &#39; je již implementováno prostřednictvím základní třídy &#39; &lt;baseclassname&gt;&#39;. Opětovná implementace &lt;typ&gt; předpokládá, že
+# <a name="interfacenamemembername-is-already-implemented-by-the-base-class-baseclassname-re-implementation-of-type-assumed"></a>"\<interfacename >. \<membername >' je již implementováno prostřednictvím základní třídy\<baseclassname >'. Opětovná implementace \<typ > předpokládá, že
 Vlastnost, procedura nebo události v odvozené třídě používá `Implements` klauzule určující člena rozhraní, která je již implementováno základní třídy.  
   
  Odvozená třída může znovu implementovat člen rozhraní, která je implementována ve své základní třídy. Nejedná se stejně jako přepsání implementaci základní třídy. Další informace najdete v tématu [implementuje](../../../visual-basic/language-reference/statements/implements-clause.md).  

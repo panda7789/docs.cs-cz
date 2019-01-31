@@ -1,15 +1,15 @@
 ---
-title: '&lt;standardEndpoints&gt;'
+title: <standardEndpoints>
 ms.date: 03/30/2017
 ms.assetid: d62153d7-a6e6-462a-a784-cca61e9c2ba1
-ms.openlocfilehash: f3851ed4d6a166cf698a5acf18f92e29bb7545cc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7677d7f4c0ef7927fd50885bb887dccaa62a27b4
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54666693"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55286784"
 ---
-# <a name="ltstandardendpointsgt"></a>&lt;standardEndpoints&gt;
+# <a name="standardendpoints"></a>\<standardEndpoints>
 Tento konfigurační oddíl umožňuje definovat kolekci standardních koncových bodů, které jsou opakovaně použitelnými koncovými body. Standardní koncový bod bude mít jednu nebo více adresa, vazba a kontrakt atributy nastavit na pevnou hodnotu. Například v koncový bod zjišťování vyřešen kontrakt. Standardní koncové body můžete použít také k rozšíření koncového bodu služby s novou vlastností k definování vlastních vazeb.  
   
  \<system.ServiceModel>  

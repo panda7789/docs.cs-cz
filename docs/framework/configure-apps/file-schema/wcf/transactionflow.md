@@ -1,15 +1,15 @@
 ---
-title: '&lt;transactionFlow&gt;'
+title: <transactionFlow>
 ms.date: 03/30/2017
 ms.assetid: 8c7b4c5b-ace3-4fe3-89ff-7b13c9aacd13
-ms.openlocfilehash: d8597a71a9b7afadba7565290085f491052e04d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ef3d92e07aaf4d4ba9d90e381017db104f2cc8fe
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54622117"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55276988"
 ---
-# <a name="lttransactionflowgt"></a>&lt;transactionFlow&gt;
+# <a name="transactionflow"></a>\<transactionFlow>
 Určuje podporu toku transakcí vlastní vazby.  
   
  \<system.serviceModel>  

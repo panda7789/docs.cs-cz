@@ -1,15 +1,15 @@
 ---
-title: '&lt;msmqIntegration&gt;'
+title: <msmqIntegration>
 ms.date: 03/30/2017
 ms.assetid: ab677405-1ffe-457a-803f-00c1770e51e2
-ms.openlocfilehash: 42197706a0c3f0f1940f8815fe0e41bb609a457a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8412862237ccf4c0f5b880d8ae33e0a55f9557f3
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54603050"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55284996"
 ---
-# <a name="ltmsmqintegrationgt"></a>&lt;msmqIntegration&gt;
+# <a name="msmqintegration"></a>\<msmqIntegration>
 Určuje přenos služby MSMQ pro vlastní vazbu.  
   
  \<system.serviceModel>  
