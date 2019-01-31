@@ -1,20 +1,20 @@
 ---
-title: '&lt;Chování&gt;'
+title: <behaviors>
 ms.date: 03/30/2017
 ms.assetid: 0e5da4e6-1aa5-466c-924e-f10efee57f0b
-ms.openlocfilehash: a6786efb289ee66da3f0635e1a86e23f9b7302d9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b9d30d7e1c9d211cd57982a0f03fe855a6b53c12
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54528430"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257915"
 ---
-# <a name="ltbehaviorsgt"></a><span data-ttu-id="7897b-102">&lt;Chování&gt;</span><span class="sxs-lookup"><span data-stu-id="7897b-102">&lt;behaviors&gt;</span></span>
-<span data-ttu-id="7897b-103">Tento prvek definuje dvě podkolekce s `endpointBehaviors` a `serviceBehaviors`.</span><span class="sxs-lookup"><span data-stu-id="7897b-103">This element defines two child collections named `endpointBehaviors` and `serviceBehaviors`.</span></span>  <span data-ttu-id="7897b-104">Každou kolekci definuje chování elementů používané koncové body a služby.</span><span class="sxs-lookup"><span data-stu-id="7897b-104">Each collection defines behavior elements consumed by endpoints and services respectively.</span></span> <span data-ttu-id="7897b-105">Každý prvek chování je identifikován jeho jedinečné `name` atributu.</span><span class="sxs-lookup"><span data-stu-id="7897b-105">Each behavior element is identified by its unique `name` attribute.</span></span> <span data-ttu-id="7897b-106">Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název.</span><span class="sxs-lookup"><span data-stu-id="7897b-106">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="7897b-107">Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span><span class="sxs-lookup"><span data-stu-id="7897b-107">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>  
+# <a name="behaviors"></a><span data-ttu-id="46373-101">\<chování ></span><span class="sxs-lookup"><span data-stu-id="46373-101">\<behaviors></span></span>
+<span data-ttu-id="46373-102">Tento prvek definuje dvě podkolekce s `endpointBehaviors` a `serviceBehaviors`.</span><span class="sxs-lookup"><span data-stu-id="46373-102">This element defines two child collections named `endpointBehaviors` and `serviceBehaviors`.</span></span>  <span data-ttu-id="46373-103">Každou kolekci definuje chování elementů používané koncové body a služby.</span><span class="sxs-lookup"><span data-stu-id="46373-103">Each collection defines behavior elements consumed by endpoints and services respectively.</span></span> <span data-ttu-id="46373-104">Každý prvek chování je identifikován jeho jedinečné `name` atributu.</span><span class="sxs-lookup"><span data-stu-id="46373-104">Each behavior element is identified by its unique `name` attribute.</span></span> <span data-ttu-id="46373-105">Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název.</span><span class="sxs-lookup"><span data-stu-id="46373-105">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="46373-106">Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span><span class="sxs-lookup"><span data-stu-id="46373-106">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>  
   
- <span data-ttu-id="7897b-108">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="7897b-108">\<system.ServiceModel></span></span>  
+ <span data-ttu-id="46373-107">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="46373-107">\<system.ServiceModel></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7897b-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7897b-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="46373-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="46373-108">Syntax</span></span>  
   
 ```xml  
 <behaviors>
@@ -25,36 +25,36 @@ ms.locfileid: "54528430"
 </behaviors>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="7897b-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="7897b-110">Attributes and Elements</span></span>  
- <span data-ttu-id="7897b-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="7897b-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="46373-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="46373-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="46373-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="46373-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="7897b-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="7897b-112">Attributes</span></span>  
- <span data-ttu-id="7897b-113">Žádná</span><span class="sxs-lookup"><span data-stu-id="7897b-113">None</span></span>  
+### <a name="attributes"></a><span data-ttu-id="46373-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="46373-111">Attributes</span></span>  
+ <span data-ttu-id="46373-112">Žádná</span><span class="sxs-lookup"><span data-stu-id="46373-112">None</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="7897b-114">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="7897b-114">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="46373-113">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="46373-113">Child Elements</span></span>  
   
-|<span data-ttu-id="7897b-115">Prvek</span><span class="sxs-lookup"><span data-stu-id="7897b-115">Element</span></span>|<span data-ttu-id="7897b-116">Popis</span><span class="sxs-lookup"><span data-stu-id="7897b-116">Description</span></span>|  
+|<span data-ttu-id="46373-114">Prvek</span><span class="sxs-lookup"><span data-stu-id="46373-114">Element</span></span>|<span data-ttu-id="46373-115">Popis</span><span class="sxs-lookup"><span data-stu-id="46373-115">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="7897b-117">\<endpointBehaviors></span><span class="sxs-lookup"><span data-stu-id="7897b-117">\<endpointBehaviors></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)|<span data-ttu-id="7897b-118">Tento konfigurační oddíl představuje všechna chování definovaná pro určitý koncový bod.</span><span class="sxs-lookup"><span data-stu-id="7897b-118">This configuration section represents all the behaviors defined for a specific endpoint.</span></span>|  
-|[<span data-ttu-id="7897b-119">\<serviceBehaviors></span><span class="sxs-lookup"><span data-stu-id="7897b-119">\<serviceBehaviors></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)|<span data-ttu-id="7897b-120">Tento oddíl konfigurace představuje všechny chování, které jsou definovány pro konkrétní službu.</span><span class="sxs-lookup"><span data-stu-id="7897b-120">This configuration section represents all the behaviors defined for a specific service.</span></span>|  
+|[<span data-ttu-id="46373-116">\<endpointBehaviors></span><span class="sxs-lookup"><span data-stu-id="46373-116">\<endpointBehaviors></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)|<span data-ttu-id="46373-117">Tento konfigurační oddíl představuje všechna chování definovaná pro určitý koncový bod.</span><span class="sxs-lookup"><span data-stu-id="46373-117">This configuration section represents all the behaviors defined for a specific endpoint.</span></span>|  
+|[<span data-ttu-id="46373-118">\<serviceBehaviors></span><span class="sxs-lookup"><span data-stu-id="46373-118">\<serviceBehaviors></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)|<span data-ttu-id="46373-119">Tento oddíl konfigurace představuje všechny chování, které jsou definovány pro konkrétní službu.</span><span class="sxs-lookup"><span data-stu-id="46373-119">This configuration section represents all the behaviors defined for a specific service.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="7897b-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="7897b-121">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="46373-120">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="46373-120">Parent Elements</span></span>  
   
-|<span data-ttu-id="7897b-122">Prvek</span><span class="sxs-lookup"><span data-stu-id="7897b-122">Element</span></span>|<span data-ttu-id="7897b-123">Popis</span><span class="sxs-lookup"><span data-stu-id="7897b-123">Description</span></span>|  
+|<span data-ttu-id="46373-121">Prvek</span><span class="sxs-lookup"><span data-stu-id="46373-121">Element</span></span>|<span data-ttu-id="46373-122">Popis</span><span class="sxs-lookup"><span data-stu-id="46373-122">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="7897b-124">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="7897b-124">\<system.serviceModel></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)|<span data-ttu-id="7897b-125">Kořenový element všechny elementy konfigurace Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="7897b-125">The root element of all Windows Communication Foundation (WCF) configuration elements.</span></span>|  
+|[<span data-ttu-id="46373-123">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="46373-123">\<system.serviceModel></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)|<span data-ttu-id="46373-124">Kořenový element všechny elementy konfigurace Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="46373-124">The root element of all Windows Communication Foundation (WCF) configuration elements.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="7897b-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7897b-126">Remarks</span></span>  
- <span data-ttu-id="7897b-127">Můžete použít `<remove>` prvek, který chcete odebrat konkrétní chování z kolekce.</span><span class="sxs-lookup"><span data-stu-id="7897b-127">You can use the `<remove>` element to remove a particular behavior from the collection.</span></span> <span data-ttu-id="7897b-128">Uděláte to tak, stačí zadat název chování pro odebrání v `name` atribut `<remove>` elementu.</span><span class="sxs-lookup"><span data-stu-id="7897b-128">To do so, simply supply the name of the behavior to remove in the `name` attribute of the `<remove>` element.</span></span>  <span data-ttu-id="7897b-129">Můžete také použít `<clear>` element – pomáhat zajistit, že kolekce chování začne tím, že zrušíte všechny obsah kolekce prázdný.</span><span class="sxs-lookup"><span data-stu-id="7897b-129">You can also use the `<clear>` element to insure that a behavior collection starts empty by clearing out all the content of the collection.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="46373-125">Poznámky</span><span class="sxs-lookup"><span data-stu-id="46373-125">Remarks</span></span>  
+ <span data-ttu-id="46373-126">Můžete použít `<remove>` prvek, který chcete odebrat konkrétní chování z kolekce.</span><span class="sxs-lookup"><span data-stu-id="46373-126">You can use the `<remove>` element to remove a particular behavior from the collection.</span></span> <span data-ttu-id="46373-127">Uděláte to tak, stačí zadat název chování pro odebrání v `name` atribut `<remove>` elementu.</span><span class="sxs-lookup"><span data-stu-id="46373-127">To do so, simply supply the name of the behavior to remove in the `name` attribute of the `<remove>` element.</span></span>  <span data-ttu-id="46373-128">Můžete také použít `<clear>` element – pomáhat zajistit, že kolekce chování začne tím, že zrušíte všechny obsah kolekce prázdný.</span><span class="sxs-lookup"><span data-stu-id="46373-128">You can also use the `<clear>` element to insure that a behavior collection starts empty by clearing out all the content of the collection.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7897b-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7897b-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="46373-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="46373-129">See also</span></span>
 - <xref:System.ServiceModel.Configuration.BehaviorsSection>
 - <xref:System.ServiceModel.Configuration.EndpointBehaviorElementCollection>
 - <xref:System.ServiceModel.Configuration.EndpointBehaviorElement>
 - <xref:System.ServiceModel.Configuration.ServiceBehaviorElementCollection>
 - <xref:System.ServiceModel.Configuration.ServiceBehaviorElement>
-- [<span data-ttu-id="7897b-131">Konfigurace a rozšíření modulu runtime pomocí chování</span><span class="sxs-lookup"><span data-stu-id="7897b-131">Configuring and Extending the Runtime with Behaviors</span></span>](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
-- [<span data-ttu-id="7897b-132">Konfigurace chování klienta</span><span class="sxs-lookup"><span data-stu-id="7897b-132">Configuring Client Behaviors</span></span>](../../../../../docs/framework/wcf/configuring-client-behaviors.md)
-- [<span data-ttu-id="7897b-133">Nastavení chování klienta za běhu</span><span class="sxs-lookup"><span data-stu-id="7897b-133">Specifying Client Run-Time Behavior</span></span>](../../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
-- [<span data-ttu-id="7897b-134">Určování chování služby za běhu</span><span class="sxs-lookup"><span data-stu-id="7897b-134">Specifying Service Run-Time Behavior</span></span>](../../../../../docs/framework/wcf/specifying-service-run-time-behavior.md)
-- [<span data-ttu-id="7897b-135">Chování zabezpečení</span><span class="sxs-lookup"><span data-stu-id="7897b-135">Security Behaviors</span></span>](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
+- [<span data-ttu-id="46373-130">Konfigurace a rozšíření modulu runtime pomocí chování</span><span class="sxs-lookup"><span data-stu-id="46373-130">Configuring and Extending the Runtime with Behaviors</span></span>](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+- [<span data-ttu-id="46373-131">Konfigurace chování klienta</span><span class="sxs-lookup"><span data-stu-id="46373-131">Configuring Client Behaviors</span></span>](../../../../../docs/framework/wcf/configuring-client-behaviors.md)
+- [<span data-ttu-id="46373-132">Nastavení chování klienta za běhu</span><span class="sxs-lookup"><span data-stu-id="46373-132">Specifying Client Run-Time Behavior</span></span>](../../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
+- [<span data-ttu-id="46373-133">Určování chování služby za běhu</span><span class="sxs-lookup"><span data-stu-id="46373-133">Specifying Service Run-Time Behavior</span></span>](../../../../../docs/framework/wcf/specifying-service-run-time-behavior.md)
+- [<span data-ttu-id="46373-134">Chování zabezpečení</span><span class="sxs-lookup"><span data-stu-id="46373-134">Security Behaviors</span></span>](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
