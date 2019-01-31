@@ -1,18 +1,18 @@
 ---
-title: '&lt;typeparam&gt; (Visual Basic)'
+title: <typeparam> (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - typeparam XML tag
 - <typeparam> XML tag
 ms.assetid: 1bb5ba78-f060-478c-905c-77a2e43639af
-ms.openlocfilehash: 73ffb1319e6724a13a80b3cd1ca6985e4cbac05c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f84a5194551a718ff4ca512839a937f786740ca9
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54567058"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55259225"
 ---
-# <a name="lttypeparamgt-visual-basic"></a>&lt;typeparam&gt; (Visual Basic)
+# <a name="typeparam-visual-basic"></a>\<typeparam > (Visual Basic)
 Definuje typu parametru názvu a popisu.  
   
 ## <a name="syntax"></a>Syntaxe  

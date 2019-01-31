@@ -1,5 +1,5 @@
 ---
-title: '&lt;NetFx45_CultureAwareComparerGetHashCode_LongStrings&gt; Element'
+title: <NetFx45_CultureAwareComparerGetHashCode_LongStrings> Element
 ms.date: 03/30/2017
 helpviewer_keywords:
 - NetFx45_CultureAwareComparerGetHashCode_LongStrings element
@@ -9,14 +9,14 @@ helpviewer_keywords:
 ms.assetid: 3a5f38d1-ebc8-44de-aaeb-2929f6e6b48f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 67dae26733527a85f4fc13734da896193e53db8a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 11ae76a31480cf63a70738c6e416381fdfddbb78
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576886"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55271158"
 ---
-# <a name="ltnetfx45cultureawarecomparergethashcodelongstringsgt-element"></a>&lt;NetFx45_CultureAwareComparerGetHashCode_LongStrings&gt; Element
+# <a name="netfx45cultureawarecomparergethashcodelongstrings-element"></a>\<NetFx45_CultureAwareComparerGetHashCode_LongStrings> Element
 Určuje, zda modul runtime používá pro výpočet kódů hash pro pevnou velikost paměti <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> metody.  
   
  \<Konfigurace >  

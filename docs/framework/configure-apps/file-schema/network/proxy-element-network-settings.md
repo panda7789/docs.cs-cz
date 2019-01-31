@@ -1,5 +1,5 @@
 ---
-title: '&lt;proxy&gt; – Element (nastavení sítě)'
+title: <proxy> – element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/proxy
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <proxy> element
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
-ms.openlocfilehash: 4bec5422165a1795fd2442d95b2dd27ac1b4bc8b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a6c6d85d8ec1b79f6b3ddf53af0a4b289289dd6a
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54685981"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55256860"
 ---
-# <a name="ltproxygt-element-network-settings"></a>&lt;proxy&gt; – Element (nastavení sítě)
+# <a name="proxy-element-network-settings"></a>\<proxy server > – Element (nastavení sítě)
 Definuje proxy server.  
   
  \<Konfigurace >  

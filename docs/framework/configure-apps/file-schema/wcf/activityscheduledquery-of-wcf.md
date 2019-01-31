@@ -1,15 +1,15 @@
 ---
-title: '&lt;activityScheduledQuery&gt; služby WCF'
+title: <activityScheduledQuery> služby WCF
 ms.date: 03/30/2017
 ms.assetid: 25f6eee1-3d98-4c39-b517-c0813f03f106
-ms.openlocfilehash: fd7830bc178de0693f0632cea3b390d792408ec1
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 5087d56092296f8c68b719ec0945993adeb3de0a
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54147873"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55272900"
 ---
-# <a name="ltactivityscheduledquerygt-of-wcf"></a>&lt;activityScheduledQuery&gt; služby WCF
+# <a name="activityscheduledquery-of-wcf"></a>\<activityScheduledQuery > služby WCF
 
 Představuje kolekci dotazů, které se používají ke sledování aktivitu naplánovat provedení podle aktivity jako nadřazený. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru záznamů aktivit naplánována.  
   
@@ -17,11 +17,11 @@ Další informace o sledování profil dotazy naleznete v tématu [sledování p
   
 \<system.serviceModel>  
 \<sledování >  
-\<profily >  
-\<profil trackingProfile >  
+\<profiles>  
+\<trackingProfile>  
 \<pracovní postup >  
-\<activityScheduledQueries >  
-\<activityScheduledQuery >  
+\<activityScheduledQueries>  
+\<activityScheduledQuery>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -59,7 +59,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<activityScheduledQueries >](activityscheduledqueries-of-wcf.md)|Kolekce dotazů, které se používají ke sledování aktivitu naplánovat provedení podle aktivity jako nadřazený.|  
+|[\<activityScheduledQueries>](activityscheduledqueries-of-wcf.md)|Kolekce dotazů, které se používají ke sledování aktivitu naplánovat provedení podle aktivity jako nadřazený.|  
   
 ## <a name="see-also"></a>Viz také:
 

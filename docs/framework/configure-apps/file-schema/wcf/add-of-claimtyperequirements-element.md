@@ -1,15 +1,15 @@
 ---
-title: '&lt;add&gt; elementu &lt;claimTypeRequirements&gt;'
+title: <add> z <claimTypeRequirements> – element
 ms.date: 03/30/2017
 ms.assetid: 3234cd45-1478-468e-8b19-5c50815c4786
-ms.openlocfilehash: fb5e723f6cff9f6e573a45a1dabe008beb9399e6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6971837ef2e68de54179daaf225394b9de769987
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54687310"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55275584"
 ---
-# <a name="ltaddgt-of-ltclaimtyperequirementsgt-element"></a>&lt;add&gt; elementu &lt;claimTypeRequirements&gt;
+# <a name="add-of-claimtyperequirements-element"></a>\<add> of \<claimTypeRequirements> element
 Určuje typy požadovaných a volitelných deklarací, které se zobrazí ve federativním pověření. Například služby stavu požadavky na příchozí přihlašovací údaje, které musí obsahovat sadu typů deklarací identity.  
   
  \<system.ServiceModel>  

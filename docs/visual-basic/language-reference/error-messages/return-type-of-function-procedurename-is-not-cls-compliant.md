@@ -1,5 +1,5 @@
 ---
-title: Návratový typ funkce &#39; &lt;název_procedury&gt; &#39; není kompatibilní se Specifikací CLS
+title: Návratový typ funkce '<procedurename>' není kompatibilní se specifikací CLS.
 ms.date: 07/20/2015
 f1_keywords:
 - bc40027
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC40027
 ms.assetid: 33c088c7-48e7-400c-920e-6d8967e1f3fc
-ms.openlocfilehash: b7704ee63031c38f708a2243e84b880c25fcf819
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 5e746981d10ba8e662aebf86f67f08856ba37199
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39243778"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55260512"
 ---
-# <a name="return-type-of-function-39ltprocedurenamegt39-is-not-cls-compliant"></a>Návratový typ funkce &#39; &lt;název_procedury&gt; &#39; není kompatibilní se Specifikací CLS
+# <a name="return-type-of-function-procedurename-is-not-cls-compliant"></a>Návratový typ funkce '\<název_procedury >' není kompatibilní se Specifikací CLS
 A `Function` postup je označen jako `<CLSCompliant(True)>` , ale vrací typ, který je označen jako `<CLSCompliant(False)>`, není označena nebo nesplňuje, protože se jedná o nekompatibilní typ.  
   
  Postup, který má být zajištěn soulad [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS), musí používat jenom typy kompatibilní se Specifikací CLS. To platí pro typy parametrů, návratový typ a typy všech místních proměnných.  

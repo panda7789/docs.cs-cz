@@ -1,5 +1,5 @@
 ---
-title: '&gt;= – Operátor - C# odkaz'
+title: '>= – Operátor - C# odkaz'
 ms.custom: seodec18
 ms.date: 12/18/2018
 f1_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - greater than or equal to operator (>=) [C#]
 - '>= operator [C#]'
 ms.assetid: 0db4dcaf-56a3-4884-a7ad-35f64978a58d
-ms.openlocfilehash: 34437742d33cff97e53c6dfb163df083e80d41f3
-ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
+ms.openlocfilehash: 821369734e64648714bf89efb0c02d12d4d816e3
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655930"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55256550"
 ---
-# <a name="gt-operator-c-reference"></a>&gt;= – Operátor (referenční dokumentace jazyka C#)
+# <a name="-operator-c-reference"></a>>= – operátor (Referenční dokumentace jazyka C#)
 
 Relační operátor "větší než nebo rovno" `>=` vrátí `true` Pokud svůj první operand je větší než nebo rovna hodnotě svým druhým operandem, `false` jinak. Všechny typy číselné a výčet podporují `>=` operátor. Pro operandy stejného [výčtu](../keywords/enum.md) porovnání typu hodnoty odpovídající základní celočíselného typu.
 

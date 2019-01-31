@@ -1,15 +1,15 @@
 ---
-title: '&lt;mexTcpBinding&gt;'
+title: <mexTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 01baba8d-d784-4255-9ea2-7afff1482bf0
-ms.openlocfilehash: 4c3858ee0dc7fd20bd1269c74a4499998d530f03
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7b351865fde94f9663323af80581dc62bc092e0a
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54733984"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55261793"
 ---
-# <a name="ltmextcpbindinggt"></a>&lt;mexTcpBinding&gt;
+# <a name="mextcpbinding"></a>\<mexTcpBinding>
 Určuje nastavení pro vazby používané k výměně zpráv WS-MetadataExchange (WS-MEX) přes protokol TCP.  
   
  \<system.ServiceModel>  

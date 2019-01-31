@@ -1,5 +1,5 @@
 ---
-title: '&lt;Kompilátory&gt; – Element'
+title: Element <compilers>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#compilers
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <compilers> element
 - compilers element
 ms.assetid: d40fba59-98f9-4783-ae0c-2ebea27ce77b
-ms.openlocfilehash: 7d9deda5e0ffeb95483eebbbb0a63831db08ac0b
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: 15beb15d7927d616cc09c7e318ef26a6627926af
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55083363"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55260603"
 ---
-# <a name="ltcompilersgt-element"></a>&lt;Kompilátory&gt; – Element
+# <a name="compilers-element"></a>\<Kompilátory > – Element
 Kontejner pro kompilátor – elementy konfigurace; obsahuje nulu nebo více [ \<kompilátoru >](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) elementy.  
   
  \<Konfigurace >  

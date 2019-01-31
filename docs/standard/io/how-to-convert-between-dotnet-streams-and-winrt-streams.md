@@ -1,6 +1,6 @@
 ---
-title: 'Postupy: Převod mezi streamy rozhraní .NET Framework a datovými proudy Windows Runtime'
-ms.date: 03/30/2017
+title: 'Postupy: Převod mezi rozhraní .NET Framework a prostředí Windows Runtime datové proudy (jenom Windows)'
+ms.date: 01/14/2019
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -8,77 +8,69 @@ dev_langs:
 ms.assetid: 23a763ea-8348-4244-9f8c-a4280b870b47
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6a006d739b6fa9a31ad238702dd0b2d26254deca
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dc38e69a79af7c7220b8e3b55d4cb1f4ca3695f6
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54492757"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55255195"
 ---
-# <a name="how-to-convert-between-net-framework-streams-and-windows-runtime-streams"></a>Postupy: Převod mezi streamy rozhraní .NET Framework a datovými proudy Windows Runtime
+# <a name="how-to-convert-between-net-framework-and-windows-runtime-streams-windows-only"></a>Postupy: Převod mezi rozhraní .NET Framework a prostředí Windows Runtime datové proudy (jenom Windows)
 
-Rozhraní .NET Framework pro aplikace Windows Store je podmnožinou kompletního rozhraní .NET Framework. Z důvodu bezpečnosti a vzhledem k jiným požadavkům na aplikace pro Windows Store nelze použít úplnou sadu API rozhraní .NET Framework pro otevírání a čtení souborů. Další informace najdete v tématu [.NET pro Windows Store apps – přehled](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)). Rozhraní API pro .NET Framework však můžete použít pro jiné operace manipulace s datovým proudem. K práci s těmito proudy, možná bude nutné převést mezi typem datového proudu rozhraní .NET Framework, jako <xref:System.IO.MemoryStream> nebo <xref:System.IO.FileStream>a datový proud Windows Runtime, jako <xref:Windows.Storage.Streams.IInputStream>, <xref:Windows.Storage.Streams.IOutputStream>, nebo <xref:Windows.Storage.Streams.IRandomAccessStream>.
+Rozhraní .NET Framework pro aplikace pro UPW je podmnožinou úplné rozhraní .NET Framework. Z důvodu zabezpečení a další požadavky pro aplikace pro UPW nelze použít úplnou sadu API rozhraní .NET Framework pro otevírání a čtení souborů. Další informace najdete v tématu [.NET pro aplikace UPW – přehled](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)). Rozhraní API pro .NET Framework však můžete použít pro jiné operace manipulace s datovým proudem. K práci s těmito proudy, je možné převádět mezi typem datového proudu rozhraní .NET Framework, jako <xref:System.IO.MemoryStream> nebo <xref:System.IO.FileStream>a datový proud Windows Runtime, jako <xref:Windows.Storage.Streams.IInputStream>, <xref:Windows.Storage.Streams.IOutputStream>, nebo <xref:Windows.Storage.Streams.IRandomAccessStream>.
 
-[System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx) třída obsahuje metody, které tyto převody usnadňují. Existují však základní rozdíly mezi datovými proudy v rozhraní .NET Framework a Windows Runtime, které ovlivní výsledky použití těchto metod. Podrobnosti jsou uvedeny v následujících částech.
+[System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx) třída obsahuje metody, které tyto převody usnadňují. Však základní rozdíly mezi proudy rozhraní .NET Framework a prostředí Windows Runtime ovlivní výsledky použití těchto metod, jak je popsáno v následujících částech:
 
-## <a name="converting-from-a-windows-runtime-stream-to-a-net-framework-stream"></a>Převod z datového proudu Windows Runtime na datový proud v rozhraní .NET Framework
+## <a name="convert-from-a-windows-runtime-to-a-net-framework-stream"></a>Převod z modulu Windows Runtime na datový proud v rozhraní .NET Framework
+Pro převod z datového proudu Windows Runtime na datový proud v rozhraní .NET Framework, použijte jednu z následujících [System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx) metody:
 
-Můžete převést z datového proudu Windows Runtime na datový proud v rozhraní .NET Framework pomocí jedné z následujících [System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx) metody:
+- [System.IO.WindowsRuntimeStreamExtensions.AsStream](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asstream.aspx) převede proud s náhodným přístupem v modulu Windows Runtime na spravovaný datový proud v rozhraní .NET pro aplikace pro UPW.
+  
+- [System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) převede výstupní datový proud Windows Runtime na spravovaný datový proud v rozhraní .NET pro aplikace pro UPW.
+  
+- [System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asstreamforread.aspx) převede vstupní datový proud Windows Runtime na spravovaný datový proud v rozhraní .NET pro aplikace pro UPW.
 
-[System.IO.WindowsRuntimeStreamExtensions.AsStream](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asstream.aspx)  
-Převede datový proud Windows Runtime s náhodným přístupem na spravovaný datový proud v podmnožině rozhraní .NET pro aplikace Windows Store.
+Modul Windows Runtime nabízí datové proudy, které podporují pouze pro čtení, zápis, nebo čtení a zápis. Tyto možnosti jsou spravovány při převodu datového proudu Windows Runtime na datový proud v rozhraní .NET Framework. Dále platí, že pokud převedete datový proud Windows Runtime na datový proud rozhraní .NET Framework a zpět, získáte původní instanci Windows Runtime. 
 
-[System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx)  
-Převede výstupní datový proud Windows Runtime na spravovaný datový proud v podmnožině rozhraní .NET pro aplikace Windows Store.
+Je vhodné používat metodu převodu, který odpovídá možnostem datového proudu Windows Runtime, který chcete převést. Nicméně od <xref:Windows.Storage.Streams.IRandomAccessStream> je čtení a zápisu (implementuje oba <xref:Windows.Storage.Streams.IOutputStream> a <xref:Windows.Storage.Streams.IInputStream>), metody převodu Udržovat možnosti původního datového proudu. Například použití [System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asstreamforread.aspx) převést <xref:Windows.Storage.Streams.IRandomAccessStream> neomezuje převedený datový proud rozhraní .NET Framework ke. Je také zapisovat.
 
-[System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asstreamforread.aspx)  
-Převede vstupní datový proud Windows Runtime na spravovaný datový proud v podmnožině rozhraní .NET pro aplikace Windows Store.
+## <a name="example-convert-windows-runtime-random-access-to-net-framework-stream"></a>Příklad: Převést náhodného modulu Windows Runtime přístupu do datového proudu rozhraní .NET Framework
+Chcete-li převést z datového proudu Windows Runtime náhodným přístupem na datový proud v rozhraní .NET Framework, použijte [System.IO.WindowsRuntimeStreamExtensions.AsStream](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asstream.aspx) metody.
 
-Prostředí Windows Runtime nabízí datové proudy, které podporují pouze čtení, pouze zápis, nebo čtení a zápis. Tyto možnosti jsou spravovány při převodu datového proudu Windows Runtime do datového proudu rozhraní .NET Framework. Dále platí, že pokud převedete datový proud Windows Runtime na datový proud rozhraní .NET Framework a zpět, získáte původní instanci Windows Runtime. Doporučujeme používat metodu převodu, která odpovídá možnostem datového proudu Windows Runtime, který chcete převést. Nicméně od <xref:Windows.Storage.Streams.IRandomAccessStream> je čtení a zápisu (implementuje oba <xref:Windows.Storage.Streams.IOutputStream> a <xref:Windows.Storage.Streams.IInputStream>, můžete použít libovolnou metodu převodu a možnosti původního datového proudu jsou spravovány. Například použití [System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asstreamforread.aspx) převést <xref:Windows.Storage.Streams.IRandomAccessStream> neomezí převedený datový proud rozhraní .NET Framework pouze ke; bude také zapisovat.
+Následující příklad kódu vás vyzve k výběru souboru, otevře se rozhraní API Windows Runtime a převede ho na datový proud v rozhraní .NET Framework. Načte datový proud a uloží jej do bloku textu. Můžete pracovat většinou s datovým proudem s rozhraním API .NET Framework před vytvářením výsledků výstupu.
 
-### <a name="to-convert-from-a-windows-runtime-random-access-stream-to-a-net-framework-stream"></a>Převod z datového proudu Windows Runtime s náhodným přístupem na datový proud v rozhraní .NET Framework
+Chcete-li spustit tento příklad, vytvořit aplikaci UPW XAML, která obsahuje blok textu s názvem `TextBlock1` a tlačítko s názvem `Button1`. Přidružení tlačítko klikněte na událost s `button1_Click` metoda ukazuje příklad.
 
-- Použití [System.IO.WindowsRuntimeStreamExtensions.AsStream](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asstream.aspx) metody.
+  [!code-csharp[System.IO.WindowsRuntimeStreamExtensionsEx#Imports](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/cs/mainpage1.xaml.cs)]
+  [!code-vb[System.IO.WindowsRuntimeStreamExtensionsEx#Imports](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/vb/mainpage1.xaml.vb)]
 
-  Následující příklad kódu znázorňuje, jakým způsobem můžete uživatele vyzvat, aby vybral konkrétní soubor, otevřel jej pomocí rozhraní API Windows Runtime a poté jej převedl na proud rozhraní .NET Framework, který je přečten a převeden do bloku textu. V tomto scénáři budete před vytvářením výsledků výstupu pracovat většinou s datovým proudem s rozhraním API .NET Framework.
+## <a name="convert-from-a-net-framework-to-a-windows-runtime-stream"></a>Převést na rozhraní .NET Framework na datový proud Windows Runtime
+Pro převod z datového proudu rozhraní .NET Framework na datový proud Windows Runtime, použijte jednu z následujících [System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx) metody:
 
-  Chcete-li spustit tento příklad, musíte vytvořit aplikaci Windows Store XAML, která obsahuje blok textu s názvem `TextBlock1` a tlačítko s názvem `Button1`. Kliknutí na tlačítko musí být přidružené k události `button1_Click` metoda ukazuje příklad.
+- [System.IO.WindowsRuntimeStreamExtensions.AsInputStream](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asinputstream.aspx) převede spravovaný datový proud v rozhraní .NET pro aplikace pro UPW pro vstupní datový proud Windows Runtime.
+  
+- [System.IO.WindowsRuntimeStreamExtensions.AsOutputStream](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asoutputstream.aspx) převede spravovaný datový proud v rozhraní .NET pro aplikace pro UPW do výstupního datového proudu Windows Runtime.
+  
+- [AsRandomAccessStream](../../../docs/standard/cross-platform/windowsruntimestreamextensions-asrandomaccessstream-method.md) převede spravovaný datový proud v rozhraní .NET pro aplikace pro UPW do datového proudu náhodný přístup, můžete použít modul Windows Runtime pro čtení nebo zápis.
 
-  [!code-csharp[System.IO.WindowsRuntimeStreamExtensionsEx#Imports](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/cs/mainpage.xaml.cs#imports)]
-  [!code-vb[System.IO.WindowsRuntimeStreamExtensionsEx#Imports](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/vb/mainpage.xaml.vb#imports)]
-  [!code-csharp[System.IO.WindowsRuntimeStreamExtensionsEx#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/cs/mainpage.xaml.cs#1)]
-  [!code-vb[System.IO.WindowsRuntimeStreamExtensionsEx#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/vb/mainpage.xaml.vb#1)]
+Při převodu datového proudu rozhraní .NET Framework na datový proud Windows Runtime závisí možnosti převedeného datového proudu na původního datového proudu. Například, pokud původní datový proud podporuje čtení i zápis a zavoláte [System.IO.WindowsRuntimeStreamExtensions.AsInputStream](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asinputstream.aspx) k převedení datového proudu, je vrácený typ `IRandomAccessStream`. `IRandomAccessStream` implementuje `IInputStream` a `IOutputStream`a podporuje čtení a zápis.
 
-## <a name="converting-from-a-net-framework-stream-to-a-windows-runtime-stream"></a>Převod z datového proudu rozhraní .NET Framework na datový proud Windows Runtime
+Datové proudy rozhraní .NET framework nepodporují klonování, dokonce i po převodu. Pokud převedete datový proud rozhraní .NET Framework na datový proud prostředí Windows Runtime a volání <xref:Windows.Storage.Streams.InMemoryRandomAccessStream.GetInputStreamAt%2A> nebo <xref:Windows.Storage.Streams.IRandomAccessStream.GetOutputStreamAt%2A>, která volá <xref:Windows.Storage.Streams.RandomAccessStreamOverStream.CloneStream%2A>, nebo pokud zavoláte <xref:Windows.Storage.Streams.RandomAccessStreamOverStream.CloneStream%2A> přímo, dojde k výjimce.
 
-Můžete převést z datového proudu rozhraní .NET Framework na datový proud Windows Runtime pomocí jedné z následujících [System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx) metody:
+## <a name="example-convert-net-framework-to-windows-runtime-random-access-stream"></a>Příklad: Převést rozhraní .NET Framework na datový proud Windows Runtime náhodný přístup
 
-[System.IO.WindowsRuntimeStreamExtensions.AsInputStream](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asinputstream.aspx) převede spravovaný datový proud v podmnožině rozhraní aplikace .NET pro Windows Store na vstupní datový proud Windows Runtime.
+Chcete-li převést z datového proudu rozhraní .NET Framework na datový proud Windows Runtime náhodný přístup, použijte [AsRandomAccessStream](../../../docs/standard/cross-platform/windowsruntimestreamextensions-asrandomaccessstream-method.md) způsob, jak je znázorněno v následujícím příkladu:
 
-[System.IO.WindowsRuntimeStreamExtensions.AsOutputStream](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asoutputstream.aspx) převede spravovaný datový proud v podmnožině rozhraní aplikace .NET pro Windows Store na výstupní datový proud Windows Runtime.
+> [!IMPORTANT]
+> Ujistěte se, že datový proud rozhraní .NET Framework, které používáte podporuje vyhledávání nebo ho zkopírujte do datového proudu, který provede. Můžete použít <xref:System.IO.Stream.CanSeek%2A?displayProperty=nameWithType> vlastnost ke zjištění.
 
-[AsRandomAccessStream](../../../docs/standard/cross-platform/windowsruntimestreamextensions-asrandomaccessstream-method.md) převede spravovaný datový proud v podmnožině rozhraní .NET pro Windows Store aplikace proud s náhodným přístupem, který lze použít pro čtení nebo zápis v modulu Windows Runtime.
+Chcete-li spustit tento příklad, vytvořit aplikaci UPW XAML, který cílí na .NET Framework 4.5.1 a obsahuje blok textu s názvem `TextBlock2` a tlačítko s názvem `Button2`. Přidružení tlačítko klikněte na událost s `button2_Click` metoda ukazuje příklad.
 
-Při převodu datového proudu rozhraní .NET Framework na datový proud v modulu Windows Runtime závisí možnosti převedeného datového proudu na původním datovém proudu. Například, pokud původní datový proud podporuje čtení i zápis a zavoláte[System.IO.WindowsRuntimeStreamExtensions.AsInputStream](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.asinputstream.aspx) pro převod datového proudu, vrácený typ bude `IRandomAccessStream`, která implementuje `IInputStream` a `IOutputStream`a podporuje čtení a zápis.
-
-Datové proudy .NET Framework nepodporují klonování, a to ani po dokončení převodu. To znamená, že pokud převedete datový proud rozhraní .NET Framework na datový proud prostředí Windows Runtime a volání <xref:Windows.Storage.Streams.InMemoryRandomAccessStream.GetInputStreamAt%2A> nebo <xref:Windows.Storage.Streams.IRandomAccessStream.GetOutputStreamAt%2A>, která volá <xref:Windows.Storage.Streams.RandomAccessStreamOverStream.CloneStream%2A> nebo volání <xref:Windows.Storage.Streams.RandomAccessStreamOverStream.CloneStream%2A> přímo, dojde k výjimce.
-
-### <a name="to-convert-from-a-net-framework-stream-to-a-windows-runtime-random-access-stream"></a>Převod z datového proudu rozhraní .NET Framework na datový proud Windows Runtime s náhodným přístupem
-
-- Použití [AsRandomAccessStream](../../../docs/standard/cross-platform/windowsruntimestreamextensions-asrandomaccessstream-method.md) způsob, jak je znázorněno v následujícím příkladu:
-
-  > [!IMPORTANT]
-  > Ověřte, zda požadovaný datový proud rozhraní .NET Framework podporuje vyhledávání nebo kopírování do datového proudu, který tyto operace podporuje. Můžete použít <xref:System.IO.Stream.CanSeek%2A?displayProperty=nameWithType> vlastnost ke zjištění.
-
-  Chcete-li spustit tento příklad, musíte vytvořit aplikaci Windows Store XAML, který cílí na .NET Framework 4.5.1 a obsahuje blok textu s názvem `TextBlock2` a tlačítko s názvem `Button2`. Kliknutí na tlačítko musí být přidružené k události `button2_Click` metodu uvedenou v tomto příkladu.
-
-  [!code-csharp[System.IO.WindowsRuntimeStreamExtensionsEx#Imports](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/cs/mainpage.xaml.cs#imports)]
-  [!code-vb[System.IO.WindowsRuntimeStreamExtensionsEx#Imports](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/vb/mainpage.xaml.vb#imports)]
-  [!code-csharp[System.IO.WindowsRuntimeStreamExtensionsEx#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/cs/mainpage.xaml.cs#2)]
-  [!code-vb[System.IO.WindowsRuntimeStreamExtensionsEx#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/vb/mainpage.xaml.vb#2)]
+  [!code-csharp[System.IO.WindowsRuntimeStreamExtensionsEx#Imports](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/cs/mainpage2.xaml.cs)]
+  [!code-vb[System.IO.WindowsRuntimeStreamExtensionsEx#Imports](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/vb/mainpage2.xaml.vb)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rychlý start: Čtení a zápis do souboru (Windows)](https://msdn.microsoft.com/library/windows/apps/hh464978.aspx)
-- [.NET pro Windows Store apps – přehled](https://msdn.microsoft.com/library/windows/apps/br230302.aspx)
-- [Aplikace .NET pro Windows Store – podporována rozhraní API](https://msdn.microsoft.com/library/windows/apps/br230232.aspx)
+- [Rychlý start: Čtení a zápis do souboru (Windows)](https://msdn.microsoft.com/library/windows/apps/hh464978.aspx)  
+- [.NET pro Windows Store apps – přehled](https://msdn.microsoft.com/library/windows/apps/br230302.aspx)  
+- [Aplikace .NET pro Windows Store: Podporované rozhraní API](https://msdn.microsoft.com/library/windows/apps/br230232.aspx)  

@@ -1,15 +1,15 @@
 ---
-title: '&lt;vypršení časových limitů&gt;'
+title: <timeOuts>
 ms.date: 03/30/2017
 ms.assetid: 7fccd436-b326-48ec-8de1-c16817a09e0d
-ms.openlocfilehash: 42f4db1d954834cbfa3c526328cca45443751506
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8a8a352380fe6eedb41ead089405e7b79fad29fe
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54629654"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55272771"
 ---
-# <a name="lttimeoutsgt"></a>&lt;vypršení časových limitů&gt;
+# <a name="timeouts"></a>\<vypršení časových limitů >
 Představuje prvek konfigurace, který určuje dobu hostitel služby otevřít nebo zavřít.  
   
  \<system.ServiceModel>  

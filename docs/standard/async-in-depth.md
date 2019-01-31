@@ -6,18 +6,18 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
-ms.openlocfilehash: 7aa2bcdad9584ecf05dfee35e0887ed70737795d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 24b2792d1e48eb213c047cb589c52016e11c631d
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54492830"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55285022"
 ---
 # <a name="async-in-depth"></a>Asynchronní do hloubky
 
 Zápis vázané na vstupně-výstupní operace a procesor asynchronní kód je jednoduchý pomocí modelu .NET úkolově orientovanou asynchronní. Model je zveřejněný prostřednictvím `Task` a `Task<T>` typy a `async` a `await` klíčová slova v jazyce C# a Visual Basic. (Specifické pro jazyk prostředky se nacházejí v [viz také](#see-also) části.) Tento článek vysvětluje, jak použít operátory async .NET a poskytuje podrobné informace o asynchronní framework použitá na pozadí.
 
-## <a name="task-and-tasklttgt"></a>Úlohy a úkolů&lt;T&gt;
+## <a name="task-and-taskt"></a>Úlohy a úkolů\<T >
 
 Úkoly jsou konstrukce používaný k implementaci, která se označuje jako [Promise modelu Concurrency](https://en.wikipedia.org/wiki/Futures_and_promises).  Stručně řečeno nabízejí, že jste "příslib", které pracují se dokončit později, umožňuje zajistěte ve spolupráci se příslib pomocí rozhraní API pro vyčištění.
 
@@ -114,7 +114,7 @@ Důležitější je protože pracovní vstupně-výstupní stráví prakticky ž
 
 Kromě toho, kterému dodává práci na vlákno uživatelského rozhraní (např. aktualizace uživatelského rozhraní) je velmi jednoduchý s `async` metody a nevyžaduje další práce (jako je například volání delegáta bezpečným pro vlákno).
 
-## <a name="deeper-dive-into-task-and-tasklttgt-for-a-cpu-bound-operation"></a>Dozvědět více o úkolu a úkolu&lt;T&gt; pro operace vázané na procesor
+## <a name="deeper-dive-into-task-and-taskt-for-a-cpu-bound-operation"></a>Dozvědět více o úkolu a úkolu\<T > pro operace vázané na procesor
 
 Vázané na procesor `async` kód je trochu jiná než vstupně-výstupní `async` kódu.  Protože práce se provádí na CPU, neexistuje žádný způsob, jak překonat vyhradíte vlákno k výpočtu.  Použití `async` a `await` poskytuje čistý způsob, jak pracovat s pozadí vlákna a zachovat responzivní volajícímu asynchronní metody.  Všimněte si, že to neposkytuje ochranu pro sdílená data.  Pokud používáte sdílených dat, je stále potřeba použití strategie příslušné synchronizace.
 

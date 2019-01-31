@@ -1,15 +1,15 @@
 ---
-title: '&lt;add&gt; – &lt;baseAddressPrefixFilter&gt;'
+title: <add> z <baseAddressPrefixFilter>
 ms.date: 03/30/2017
 ms.assetid: b226bede-8459-4de9-b2ac-3d39604ce2bc
-ms.openlocfilehash: cc9ef6c8712ff764240c4c2f0322bd94b1aaccc8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9179abfb26229a845d9618afe30b088252c9c2db
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54698437"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55267652"
 ---
-# <a name="ltaddgt-of-ltbaseaddressprefixfiltergt"></a>&lt;add&gt; – &lt;baseAddressPrefixFilter&gt;
+# <a name="add-of-baseaddressprefixfilter"></a>\<add> of \<baseAddressPrefixFilter>
 Představuje prvek konfigurace, který určuje průchozí filtr, který poskytuje mechanismus pro výběr příslušné vazby Internetové informační služby (IIS) při hostování aplikace Windows Communication Foundation (WCF) ve službě IIS.  
   
  \<system.ServiceModel>  

@@ -1,5 +1,5 @@
 ---
-title: '&lt;Souhrn&gt; - C# Průvodce programováním pro službu'
+title: <summary> - C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <summary> C# XML tag
 - summary C# XML tag
 ms.assetid: b4c43d92-2067-4eac-a59a-d32f5248c08b
-ms.openlocfilehash: 8db34f23b1dfeccad22991879e98258fbc2b62dd
-ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
+ms.openlocfilehash: c4f05e80fff386a5b0628c01605784c32d7ddaf5
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55204688"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55261309"
 ---
-# <a name="ltsummarygt-c-programming-guide"></a>&lt;Souhrn&gt; (C# Programming Guide)
+# <a name="summary-c-programming-guide"></a>\<Souhrn > (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  

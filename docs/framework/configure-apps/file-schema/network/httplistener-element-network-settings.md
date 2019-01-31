@@ -1,15 +1,15 @@
 ---
-title: '&lt;httpListener&gt; – Element (nastavení sítě)'
+title: <httpListener> – element (nastavení sítě)
 ms.date: 03/30/2017
 ms.assetid: 62f121fd-3f2e-4033-bb39-48ae996bfbd9
-ms.openlocfilehash: 896b6633ef4a741b9a7460d8ce3d879253d542da
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ff5e4ad2788ab3df621beb52b1703647df068a7f
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54577695"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257990"
 ---
-# <a name="lthttplistenergt-element-network-settings"></a>&lt;httpListener&gt; – Element (nastavení sítě)
+# <a name="httplistener-element-network-settings"></a>\<httpListener > – Element (nastavení sítě)
 Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.  
   
  \<Konfigurace >  

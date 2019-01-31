@@ -1,15 +1,15 @@
 ---
-title: '&lt;comContract&gt;'
+title: <comContract>
 ms.date: 03/30/2017
 ms.assetid: 3f8e1c0c-cfdf-4c79-ac65-c64e9323a51c
-ms.openlocfilehash: 2cab52b09b5cc8455531b5f76b088fd4d835ee3e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 63383fbd711f3725748e85fcf12e06b185bf30d1
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54734893"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257597"
 ---
-# <a name="ltcomcontractgt"></a>&lt;comContract&gt;
+# <a name="comcontract"></a>\<comContract>
 Určuje kontrakt služby integrace modelu COM +.  
   
  \<system.ServiceModel>  

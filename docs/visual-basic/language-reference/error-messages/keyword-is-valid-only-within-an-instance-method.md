@@ -1,5 +1,5 @@
 ---
-title: '&#39;&lt;klíčové slovo&gt; &#39; je platný pouze v rámci metody instance'
+title: Klíčové slovo '<keyword>' je platné pouze v rámci metody instance.
 ms.date: 07/20/2015
 f1_keywords:
 - bc30043
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30043
 ms.assetid: 7973aa82-a681-440c-9bca-242627d7ba86
-ms.openlocfilehash: a464a059aa2d13e3472b9770960384b6be398092
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: af3bc95e2db88577c7c53e4b58fb60aed8a83453
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595939"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55267639"
 ---
-# <a name="39ltkeywordgt39-is-valid-only-within-an-instance-method"></a>&#39;&lt;klíčové slovo&gt; &#39; je platný pouze v rámci metody instance
+# <a name="keyword-is-valid-only-within-an-instance-method"></a>"\<– klíčové slovo >' je platný pouze v rámci metody instance
 `Me`, `MyClass`, A `MyBase` klíčová slova označování instancí určité třídy. Nelze je použít uvnitř sdílené `Function` nebo `Sub` postup.  
   
  **ID chyby:** BC30043  

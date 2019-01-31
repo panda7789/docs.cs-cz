@@ -1,15 +1,15 @@
 ---
-title: '&lt;DNS&gt;'
+title: <dns>
 ms.date: 03/30/2017
 ms.assetid: 81819dae-4825-43b7-bccd-f16d2d3d2f06
-ms.openlocfilehash: 68cbb25b79bbda301c29d72800a125c7a6ba0b6f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: eb5459625cf58feeef5ba29d76e74691a4f87cc8
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54616456"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55278418"
 ---
-# <a name="ltdnsgt"></a>&lt;DNS&gt;
+# <a name="dns"></a>\<dns>
 Určuje očekávanou identitu serveru. Tato identita je platný pro X509 režim ověřování certifikátu, pokud certifikát serveru obsahuje DNS se stejnou hodnotou. Platí také pro režim ověřování systému Windows Pokud hlavní název služby má stejnou hodnotu.  
   
  Další informace o nastavení hodnoty prvku naleznete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  

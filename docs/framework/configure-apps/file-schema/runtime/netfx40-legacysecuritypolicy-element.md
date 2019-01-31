@@ -1,5 +1,5 @@
 ---
-title: '&lt;NetFx40_LegacySecurityPolicy&gt; Element'
+title: <NetFx40_LegacySecurityPolicy> Element
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <NetFx40_LegacySecurityPolicy> element
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: 07132b9c-4a72-4710-99d7-e702405e02d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 44120491756d467da94ce1f8557d9f71f70b306e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0d0a3f7c0ae3a6c4a8c1518e7dd6bad9b2473374
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54500324"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55264736"
 ---
-# <a name="ltnetfx40legacysecuritypolicygt-element"></a>&lt;NetFx40_LegacySecurityPolicy&gt; Element
+# <a name="netfx40legacysecuritypolicy-element"></a>\<NetFx40_LegacySecurityPolicy> Element
 Určuje, zda modul runtime používá starší verzi kódu zásady zabezpečení přístupu (CAS).  
   
  \<Konfigurace >  

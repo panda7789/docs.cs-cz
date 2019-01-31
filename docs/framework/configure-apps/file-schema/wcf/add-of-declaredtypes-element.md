@@ -1,5 +1,5 @@
 ---
-title: '&lt;add&gt; elementu &lt;declaredTypes&gt;'
+title: <add> z <declaredTypes> – Element
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - DataContractSerializer
 - DataContractAttribute
 ms.assetid: c3d37ae4-8f1c-463f-b195-658c5a7e90a1
-ms.openlocfilehash: dd5972c2bb25367f2566bcf77e53e7a3341d89b4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e6aab0b1eca340e212c34e2d25b9b84984dcc7a0
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54519460"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55255507"
 ---
-# <a name="ltaddgt-of-ltdeclaredtypesgt-element"></a>&lt;add&gt; elementu &lt;declaredTypes&gt;
+# <a name="add-of-declaredtypes-element"></a>\<Přidat > z \<declaredTypes > – Element
 Přidá typ používaný <xref:System.Runtime.Serialization.DataContractSerializer> během deserializace. Každý deklarovaný typ obsahuje známé typy, které budou vráceny jako pole nebo vlastnost deklarovaného typu.  
   
  system.runtime.serialization  

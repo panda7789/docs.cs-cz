@@ -1,16 +1,16 @@
 ---
-title: '&lt;tokenReplayCache&gt;'
+title: <tokenReplayCache>
 ms.date: 03/30/2017
 ms.assetid: 1572ab23-6933-41b5-bfb4-0c4548145500
 author: BrucePerlerMS
-ms.openlocfilehash: 1e89afc5764dbdb86e87d2307425299dff57c686
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dfa6c0d84582d55595f00f149adfdcaa9d554d6b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54525154"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55271947"
 ---
-# <a name="lttokenreplaycachegt"></a>&lt;tokenReplayCache&gt;
+# <a name="tokenreplaycache"></a>\<tokenReplayCache>
 Registruje mezipaměti opětovného přehrání tokenu služby nebo kolekci obslužné rutiny tokenů zabezpečení.  
   
  \<system.identityModel>  

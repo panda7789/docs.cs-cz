@@ -1,23 +1,23 @@
 ---
-title: '&lt;audienceUris&gt;'
+title: <audienceUris>
 ms.date: 03/30/2017
 ms.assetid: 7a3d8515-d756-4afe-a22d-07cbe2217ee3
 author: BrucePerlerMS
-ms.openlocfilehash: af138a4da49a48ed43e1bc8f2c2c81c56892feed
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 556c444d5e48e27036c4b49338f6e70de7ef5c5d
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48034477"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55267271"
 ---
-# <a name="ltaudienceurisgt"></a>&lt;audienceUris&gt;
+# <a name="audienceuris"></a>\<audienceUris>
 Určuje sadu identifikátorů URI, které jsou přípustné identifikátory předávající strany (RP). Tokeny nebudou přijímány, pokud jsou určená pro jeden z identifikátorů URI povolená cílová skupina.  
   
  \<system.identityModel>  
-\<identityConfiguration >  
-\<securityTokenHandlers >  
-\<securityTokenHandlerConfiguration >  
-\<audienceUris >  
+\<identityConfiguration>  
+\<securityTokenHandlers>  
+\<securityTokenHandlerConfiguration>  
+\<audienceUris>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -58,7 +58,7 @@ Určuje sadu identifikátorů URI, které jsou přípustné identifikátory pře
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Konfigurace pro kolekci zabezpečení poskytuje obslužné rutiny tokenů.|  
+|[\<securityTokenHandlerConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Konfigurace pro kolekci zabezpečení poskytuje obslužné rutiny tokenů.|  
   
 ## <a name="remarks"></a>Poznámky  
  Ve výchozím nastavení je kolekce prázdná. použít `<add>`, `<clear>`, a `<remove>` prvků, které se změnit kolekci. <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> a <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> objektů použijte hodnoty v cílové skupině identifikátor URI kolekce ke konfiguraci libovolné povolené cílové skupiny omezení identifikátor URI v <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> objekty.  

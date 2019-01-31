@@ -1,18 +1,18 @@
 ---
-title: '&lt;zahrnout&gt; (Visual Basic)'
+title: <include> (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - include XML tag
 - <include> XML tag
 ms.assetid: ba8e9173-82cd-460b-8938-a075a2dfb36d
-ms.openlocfilehash: 1cd992ae12e21b3d7fe29aff5a15b280c663d13b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ea14cc8182b8917a0805fbc509a0000c6df67462
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54693065"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55267037"
 ---
-# <a name="ltincludegt-visual-basic"></a>&lt;zahrnout&gt; (Visual Basic)
+# <a name="include-visual-basic"></a>\<Zahrnout > (Visual Basic)
 Odkazuje na jiný soubor, který popisuje typy a členy ve zdrojovém kódu.  
   
 ## <a name="syntax"></a>Syntaxe  

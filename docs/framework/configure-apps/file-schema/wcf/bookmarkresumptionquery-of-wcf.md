@@ -1,15 +1,15 @@
 ---
-title: '&lt;bookmarkResumptionQuery&gt; služby WCF'
+title: <bookmarkResumptionQuery> služby WCF
 ms.date: 03/30/2017
 ms.assetid: 755a34f0-87c9-4a1e-ae4d-0fb8a6fbdc0e
-ms.openlocfilehash: 6463404e17edff8eb1efe3f96e44b5b9997ffca3
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 38c87cefc49821b03d119299ef60e3fbbad21d7e
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54147808"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55255113"
 ---
-# <a name="ltbookmarkresumptionquerygt-of-wcf"></a>&lt;bookmarkResumptionQuery&gt; služby WCF
+# <a name="bookmarkresumptionquery-of-wcf"></a>\<bookmarkResumptionQuery> of WCF
 
 Představuje dotaz, který se používá ke sledování obnovení záložku v instanci pracovního postupu. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru záložku obnovení záznamů.  
   
@@ -17,11 +17,11 @@ Další informace o sledování profil dotazy naleznete v tématu [sledování p
   
 \<system.serviceModel>  
 \<sledování >  
-\<profily >  
-\<profil trackingProfile >  
+\<profiles>  
+\<trackingProfile>  
 \<pracovní postup >  
-\<bookmarkResumptionQueries >  
-\<bookmarkResumptionQuery >  
+\<bookmarkResumptionQueries>  
+\<bookmarkResumptionQuery>  
   
 ## <a name="syntax"></a>Syntaxe  
   

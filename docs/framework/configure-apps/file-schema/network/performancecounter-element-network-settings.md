@@ -1,5 +1,5 @@
 ---
-title: '&lt;performanceCounter&gt; – Element (nastavení sítě)'
+title: <performanceCounter> – element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/performanceCounters
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - performanceCounter element
 - <performanceCounter> element
 ms.assetid: 3afa1586-e1b8-473d-8985-c3fc90cf561b
-ms.openlocfilehash: ea0eba097505741aba31bce4f23e0cc9ca1d4608
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4603a942788d31a049196fb699d07a13551fa443
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54712480"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55279757"
 ---
-# <a name="ltperformancecountergt-element-network-settings"></a>&lt;performanceCounter&gt; – Element (nastavení sítě)
+# <a name="performancecounter-element-network-settings"></a>\<performanceCounter > – Element (nastavení sítě)
 Povolí nebo zakáže čítače výkonu sítě.  
   
  \<Konfigurace >  

@@ -1,5 +1,5 @@
 ---
-title: Třída &#39; &lt;classname&gt; &#39; nebyl nalezen
+title: Třídu '<classname>' nelze nalézt.
 ms.date: 07/20/2015
 f1_keywords:
 - bc31098
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC31098
 ms.assetid: 72528d02-77b7-4b4c-8b9e-d12f666f92ef
-ms.openlocfilehash: 5f08fdb67611fe5fcee8b13f08162a62f6db59b3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cdc610bf70480981442d6de08975dc1cafddd8d0
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54744983"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55271600"
 ---
-# <a name="class-39ltclassnamegt39-cannot-be-found"></a>Třída &#39; &lt;classname&gt; &#39; nebyl nalezen
+# <a name="class-classname-cannot-be-found"></a>Třídy\<classname >' nebyl nalezen
 Třídy\<classname >' nebyl nalezen. Tento stav je zpravidla výsledkem neodpovídající "Microsoft.VisualBasic.dll".  
   
  Definovaný člen nebyl nalezen.  

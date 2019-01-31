@@ -1,15 +1,15 @@
 ---
-title: '&lt;webMessageEncoding&gt;'
+title: <webMessageEncoding>
 ms.date: 03/30/2017
 ms.assetid: 892ca485-e21a-4a44-8e40-633161ef6796
-ms.openlocfilehash: 90102c25c1c5b83af8f629d18b790af9297fa88c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e263062d47708983e7771a8db63ba20d2193ece3
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54640248"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55260031"
 ---
-# <a name="ltwebmessageencodinggt"></a>&lt;webMessageEncoding&gt;
+# <a name="webmessageencoding"></a>\<webMessageEncoding>
 Umožňuje prostého textu XML, zpráv kodovaných zápis JSON (JavaScript Object) a "neupravené" binární obsah ke čtení a zápis v vazby Windows Communication Foundation (WCF).  
   
  \<system.serviceModel>  

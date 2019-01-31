@@ -1,5 +1,5 @@
 ---
-title: 'Chyba při vytváření prostředků Win32: &lt;chybová zpráva&gt;'
+title: 'Při vytváření prostředků Win32 došlo k chybě: <error message>'
 ms.date: 07/20/2015
 f1_keywords:
 - bc30136
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30136
 ms.assetid: 05a813e4-9d65-4ce8-be8f-7ca20bbba2af
-ms.openlocfilehash: 00ad9b30a354794647f9b4c097732cd572c100b0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 56de1554480fdb31f64859da2d94a81618f01c50
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54566760"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55270460"
 ---
-# <a name="error-creating-win32-resources-lterror-messagegt"></a>Chyba při vytváření prostředků Win32: &lt;chybová zpráva&gt;
+# <a name="error-creating-win32-resources-error-message"></a>Chyba při vytváření prostředků Win32: \<chybová zpráva >
 Kompilátor jazyka Visual Basic volá Assembly Linker (Al.exe, označované také jako Alink) ke generování sestavení s manifestem. Linkeru ohlásil chybu při vytváření prostředku v paměti. Může se jednat problém s prostředím nebo počítač může být nedostatek paměti.  
   
  **ID chyby:** BC30136  

@@ -1,21 +1,21 @@
 ---
-title: '&lt;sessionTokenRequirement&gt;'
+title: <sessionTokenRequirement>
 ms.date: 03/30/2017
 ms.assetid: 496a1735-cbb7-49d5-a6aa-dd5550462073
 author: BrucePerlerMS
-ms.openlocfilehash: 4d5d2348f04ace7596a3a513c5106ea612dc17b7
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 0c575e02862884e8f7ecf062138c36fe731f8e19
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840885"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55271899"
 ---
-# <a name="ltsessiontokenrequirementgt"></a>&lt;sessionTokenRequirement&gt;
+# <a name="sessiontokenrequirement"></a>\<sessionTokenRequirement >
 Poskytuje konfiguraci pro <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> třídy nebo odvozené třídy.  
   
  \<system.identityModel>  
-\<identityConfiguration >  
-\<securityTokenHandlers >  
+\<identityConfiguration>  
+\<securityTokenHandlers>  
 \<add>  
 \<sessionTokenRequirement >  
   
@@ -44,7 +44,7 @@ Poskytuje konfiguraci pro <xref:System.IdentityModel.Tokens.SessionSecurityToken
 |doba platnosti|Určuje životnost relace tokenů.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

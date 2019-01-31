@@ -1,15 +1,15 @@
 ---
-title: '&lt;udpTransportSettings&gt;'
+title: <udpTransportSettings>
 ms.date: 03/30/2017
 ms.assetid: 842d92e9-6199-4ec5-b2d1-58533054e1f0
-ms.openlocfilehash: 58931cb70f83378740093615adf89a437e32ff2e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f0f58b9c93d00d300d4a81b443b7013203484136
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54667190"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55258185"
 ---
-# <a name="ltudptransportsettingsgt"></a>&lt;udpTransportSettings&gt;
+# <a name="udptransportsettings"></a>\<udpTransportSettings>
 Tento prvek konfigurace zpřístupňuje nastavení přenosu UDP pro [ \<udpDiscoveryEndpoint >](../../../../../docs/framework/configure-apps/file-schema/wcf/udpdiscoveryendpoint.md).  
   
 \<system.ServiceModel>  

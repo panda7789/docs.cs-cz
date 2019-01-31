@@ -1,15 +1,15 @@
 ---
-title: '&lt;transport&gt; – &lt;msmqIntegrationBinding&gt;'
+title: <transport> z <msmqIntegrationBinding>
 ms.date: 03/30/2017
 ms.assetid: 054579e3-7fdd-47df-99ca-952706ba5c8e
-ms.openlocfilehash: 6cd930a2ab097e50edfb9bc4eba5c8d29484ad29
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c266d751ff3e89f653763ed83c78041d89e22517
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54550549"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55290144"
 ---
-# <a name="lttransportgt-of-ltmsmqintegrationbindinggt"></a>&lt;transport&gt; – &lt;msmqIntegrationBinding&gt;
+# <a name="transport-of-msmqintegrationbinding"></a>\<přenos > z \<msmqIntegrationBinding >
 Definuje nastavení zabezpečení pro přenos integrace služby Řízení front zpráv.  
   
  \<system.ServiceModel>  

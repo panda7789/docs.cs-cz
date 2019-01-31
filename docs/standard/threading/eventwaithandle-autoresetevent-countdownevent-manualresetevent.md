@@ -1,5 +1,5 @@
 ---
-title: EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent
+title: Eventwaithandle – CountdownEvent, ManualResetEvent
 ms.date: 09/14/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 ms.assetid: cd94fc34-ac15-427f-b723-a1240a4fab7d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: be9c858d7c76fdcc1b3e02485eb0b459f4e7555c
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: c682fbcc09609a9a4e59b29d5c8997a5ae21d2bc
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583149"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55266518"
 ---
-# <a name="eventwaithandle-autoresetevent-countdownevent-manualresetevent"></a>EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent
+# <a name="eventwaithandle-countdownevent-manualresetevent"></a>Eventwaithandle – CountdownEvent, ManualResetEvent
 
 Obslužné rutiny události čekání povolit vláken pro synchronizaci činností signalizace mezi sebou a čeká se na druhé strany signálů. Tyto události synchronizace jsou založeny na obslužné rutiny čekání operačního systému a je možné rozdělit do dvou typů: ty, které obnovit automaticky, když se signál a ty, které jsou ručně obnovit.  
   
@@ -26,9 +26,6 @@ Obslužné rutiny čekání události jsou užitečné v mnoha stejné synchroni
 
  [EventWaitHandle](eventwaithandle.md)  
  <xref:System.Threading.EventWaitHandle?displayProperty=nameWithType> Může představovat buď automatické nebo ruční resetování buď místní události a události nebo pojmenována jako událost systému.  
-  
- [AutoResetEvent](autoresetevent.md)  
- <xref:System.Threading.AutoResetEvent?displayProperty=nameWithType> Třída odvozena z <xref:System.Threading.EventWaitHandle> a představuje místní události, které se automaticky obnoví.  
   
  [ManualResetEvent a ManualResetEventSlim](manualresetevent-and-manualreseteventslim.md)  
  <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> Třída odvozena z <xref:System.Threading.EventWaitHandle> a představuje místní událost, která musí být v továrním ručně. <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> Třída je jednoduché a rychlejší verzi, která lze použít pro události v rámci stejného procesu.  

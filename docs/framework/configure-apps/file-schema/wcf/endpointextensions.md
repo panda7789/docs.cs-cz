@@ -1,15 +1,15 @@
 ---
-title: '&lt;endpointExtensions&gt;'
+title: <endpointExtensions>
 ms.date: 03/30/2017
 ms.assetid: 33396e0a-1fae-4616-b822-923584eebfd1
-ms.openlocfilehash: 3883a23c679abc83d7cfe9011b7cdb7e4154adfe
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 746f98b54285f95bb63e15136508909327c0d140
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146443"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55264606"
 ---
-# <a name="ltendpointextensionsgt"></a>&lt;endpointExtensions&gt;
+# <a name="endpointextensions"></a>\<endpointExtensions>
 Tento oddíl registruje nový standardní koncový bod v oddílu rozšíření, na počítači nebo konfiguračního souboru aplikace. Standardní koncový bod můžete přidat do této kolekce pomocí `add` – klíčové slovo a nastavení `type` atribut elementu na koncový bod typu, stejně jako `name` atribut název standardního koncového bodu.  
   
  Následující příklad používá `add` element, stejně jako `name` atribut pro standardní koncový bod pro přidání `<endpointExtensions>` oddílu konfiguračního souboru.  

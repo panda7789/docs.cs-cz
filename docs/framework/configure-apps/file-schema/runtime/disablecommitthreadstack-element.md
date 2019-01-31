@@ -1,5 +1,5 @@
 ---
-title: '&lt;disableCommitThreadStack&gt; Element'
+title: Element <disableCommitThreadStack>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/disableCommitThreadStack
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 3559d46a-7640-4c72-9a11-7e980768929e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3b02a5365aa2dc2292b0917820782405ba35ad92
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5071b2c23b25d6368c84582b76c1f8d18e2a3dff
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54534066"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257509"
 ---
-# <a name="ltdisablecommitthreadstackgt-element"></a>&lt;disableCommitThreadStack&gt; Element
+# <a name="disablecommitthreadstack-element"></a>\<disableCommitThreadStack> Element
 Určuje, zda je zásobníku úplného vlákna potvrzeny při spuštění vlákna.  
   
  \<Konfigurace >  

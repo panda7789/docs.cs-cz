@@ -1,5 +1,5 @@
 ---
-title: Výraz má typ &#39; &lt;typename&gt; &#39; což je omezený typ a nejde používat pro přistupující členy zděděné z &#39;objekt&#39; nebo &#39;ValueType&#39;
+title: Výraz má typ '<typename>', což je omezený typ a nelze jej používat pro přístup ke členům zděděným z typu 'Object' nebo 'ValueType'.
 ms.date: 07/20/2015
 f1_keywords:
 - bc31393
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC31393
 ms.assetid: 2963cf3f-c527-4aa7-b67c-ee80b6d23186
-ms.openlocfilehash: d44b9a29f0848508d8cd814e857d9b01819ce7ab
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6d366ec750ea5a4505ae5ea618e27f47406ba959
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54535954"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55274009"
 ---
-# <a name="expression-has-the-type-39lttypenamegt39-which-is-a-restricted-type-and-cannot-be-used-to-access-members-inherited-from-39object39-or-39valuetype39"></a>Výraz má typ &#39; &lt;typename&gt; &#39; což je omezený typ a nejde používat pro přistupující členy zděděné z &#39;objekt&#39; nebo &#39;ValueType&#39;
+# <a name="expression-has-the-type-typename-which-is-a-restricted-type-and-cannot-be-used-to-access-members-inherited-from-object-or-valuetype"></a>Výraz má typ "\<typename >' který je omezený typ a nelze použít pro přístup ke členům zděděným z 'Object' nebo 'ValueType'
 Výraz je vyhodnocen jako typ, který nemůže být pevně určený modulem common language runtime (CLR), ale zpřístupňuje člen, který vyžaduje přetypování pomocí boxingu.  
   
  *Zabalení* odkazuje na zpracování potřebné pro převod na typ `Object` nebo v některých případech k <xref:System.ValueType>. Modul common language runtime nelze například pole určité typy struktur <xref:System.ArgIterator>, <xref:System.RuntimeArgumentHandle>, a <xref:System.TypedReference>.  

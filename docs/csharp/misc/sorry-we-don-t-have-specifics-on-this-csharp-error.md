@@ -1,5 +1,5 @@
 ---
-title: Je nám líto, ale můžeme zadávat&#39;nemá podrobnosti o této chybě C#
+title: Omlouváme se, ale k téhle chybě C# nemáme podrobnosti.
 ms.date: 07/20/2015
 f1_keywords:
 - CS1583
@@ -882,14 +882,14 @@ f1_keywords:
 helpviewer_keywords:
 - errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-ms.openlocfilehash: f172d9579e18bffdde98756bd3acf471a80e6211
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5b6cf68ea2e08c63abd5c093d9ffc6ed24131cd9
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576022"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55262774"
 ---
-# <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>Je nám líto, ale můžeme zadávat&#39;nemá podrobnosti o této chybě C#
+# <a name="sorry-we-dont-have-specifics-on-this-c-error"></a>Omlouváme se, ale k téhle chybě C# nemáme podrobnosti.
 Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete vyhledat text chyby číslo a zprávou k nalezení informací o na webu. Nebo můžete požádat o další vývojáři pomocí jedné z těchto fór:  
   
  [Visual C# Language](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharplanguage)  

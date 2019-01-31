@@ -1,15 +1,15 @@
 ---
-title: '&lt;persistableType&gt;'
+title: <persistableType>
 ms.date: 03/30/2017
 ms.assetid: e5425fe6-523a-4076-aab4-2c2515b1d830
-ms.openlocfilehash: b9d61a736a2f8650c543433931d57e156d115018
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3ea99d360ceb1e3fe6e97cbf9c8827dd7c853f63
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54706849"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55256521"
 ---
-# <a name="ltpersistabletypegt"></a>&lt;persistableType&gt;
+# <a name="persistabletype"></a>\<persistableType>
 Určuje trvalé typy.  
   
  \<system.ServiceModel>  

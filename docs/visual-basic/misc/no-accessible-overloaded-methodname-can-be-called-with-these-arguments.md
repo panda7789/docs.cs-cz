@@ -1,17 +1,17 @@
 ---
-title: Žádná dostupná přetížení "&lt;methodname&gt;" nelze volat s těmito argumenty bez zužujícího převodu
+title: Žádná dostupná přetížení "<methodname>" nelze volat s těmito argumenty bez zužujícího převodu
 ms.date: 07/20/2015
 f1_keywords:
 - vbrAmbiguousMatch_NarrowingConversion1
 ms.assetid: 2fdbadb9-8ef1-404a-a2ed-ce5f5e55cfcb
-ms.openlocfilehash: 40a88ef091a73d3165278ccda33452d3866af535
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e82a66c4c8885653b81a879ffd8afd3e6bfbaa49
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54639572"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55260395"
 ---
-# <a name="no-accessible-overloaded-ltmethodnamegt-can-be-called-with-these-arguments-without-a-narrowing-conversion"></a>Žádná dostupná přetížení "&lt;methodname&gt;" nelze volat s těmito argumenty bez zužujícího převodu
+# <a name="no-accessible-overloaded-methodname-can-be-called-with-these-arguments-without-a-narrowing-conversion"></a>Žádná dostupná přetížení "\<methodname >" nelze volat s těmito argumenty bez zužujícího převodu
 Byla volána přetížená metoda, ale žádná metoda byla shoda se seznamem zadané argumenty bez zužujícího převodu.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

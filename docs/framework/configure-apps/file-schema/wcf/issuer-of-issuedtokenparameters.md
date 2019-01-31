@@ -1,15 +1,15 @@
 ---
-title: '&lt;issuer&gt; – &lt;issuedTokenParameters&gt;'
+title: <issuer> z <issuedTokenParameters>
 ms.date: 03/30/2017
 ms.assetid: d6a95f32-d58c-40fc-8658-dd92564d3c90
-ms.openlocfilehash: 58fdd93eb4f69e48783873df26bf1c35a2a849e7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 411fd1addb41822043d72de1edffee9f8733bc08
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54539152"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55256638"
 ---
-# <a name="ltissuergt-of-ltissuedtokenparametersgt"></a>&lt;issuer&gt; – &lt;issuedTokenParameters&gt;
+# <a name="issuer-of-issuedtokenparameters"></a>\<Issuer > z \<issuedTokenParameters >
 Určuje Token služba zabezpečení (STS), která vydává tokeny zabezpečení.  
   
  \<system.serviceModel>  

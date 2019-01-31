@@ -1,15 +1,15 @@
 ---
-title: '&lt;system.serviceModel.activation&gt;'
+title: <system.serviceModel.activation>
 ms.date: 03/30/2017
 ms.assetid: c0cae85f-56cb-4030-8807-6f96edff8d2d
-ms.openlocfilehash: 10496b9624e1edb044187c08c9dfac0b852fe490
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ddb9c03c2d4ec17198719544fba9da989a6b0eb4
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54666345"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55271145"
 ---
-# <a name="ltsystemservicemodelactivationgt"></a>&lt;system.serviceModel.activation&gt;
+# <a name="systemservicemodelactivation"></a>\<system.serviceModel.activation>
 Tento konfigurační oddíl představuje nastavení konfigurace pro nástroj SMSvcHost.exe. Konfigurační prvky můžete nakonfigurovat v souboru konfigurace SMSvcHost.exe.config. Konkrétně obsahuje všechna nastavení celý počítač, musí být nakonfigurované.  
   
 ## <a name="sample-configuration-file"></a>Ukázkový konfigurační soubor  

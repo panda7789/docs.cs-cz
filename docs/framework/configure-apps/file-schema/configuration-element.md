@@ -1,5 +1,5 @@
 ---
-title: '&lt;konfigurace&gt; – element'
+title: <configuration> – element
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - configuration element
 - container tags, <configuration> element
 ms.assetid: 2ec1c9dc-2e5c-4ef0-9958-81670ab88449
-ms.openlocfilehash: 92d4a4dacddcce3e3b12337f0c55ff49c3c8e6ae
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: 980eb93a66de51250ac190cd44cfd32769ef5b8e
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55084442"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55284697"
 ---
 # <a name="configuration-element"></a>\<Konfigurace > – element
 

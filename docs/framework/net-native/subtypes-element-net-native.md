@@ -1,17 +1,17 @@
 ---
-title: Element &lt;Subtypes&gt; (.NET Native)
+title: <Subtypes> – Element (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: fb854070-248b-46cf-9dab-c322e2b4d624
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a5503e89006411887de9b0def929ac1155df5aa4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 712282153b79edc480ec387aa746e375ddd30d27
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54537251"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55273125"
 ---
-# <a name="ltsubtypesgt-element-net-native"></a>Element &lt;Subtypes&gt; (.NET Native)
+# <a name="subtypes-element-net-native"></a>\<Subtypes > – Element (.NET Native)
 Zásady modulu runtime se vztahuje na všechny třídy dědí z nadřazeného typu.  
   
 ## <a name="syntax"></a>Syntaxe  

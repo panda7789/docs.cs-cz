@@ -1,15 +1,15 @@
 ---
-title: '&lt;behaviorExtensions&gt;'
+title: <behaviorExtensions>
 ms.date: 03/30/2017
 ms.assetid: 59f2791a-c78f-40d7-aa80-0d9cd10135d9
-ms.openlocfilehash: 6698da198c4e1798af4a63e72e1d7ef9e09a5d92
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b3554db2ee037eceb43126968a02e826b65928a0
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54599020"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55285901"
 ---
-# <a name="ltbehaviorextensionsgt"></a>&lt;behaviorExtensions&gt;
+# <a name="behaviorextensions"></a>\<behaviorExtensions>
 Rozšíření chování povolují uživateli vytvořit uživatelem definované chování elementů. Tyto prvky lze použít společně s standardní prvky chování Windows Communication Foundation (WCF). `behaviorExtensions` Oddíl definuje element tak, že je možné v konfiguraci. Tady je příklad obvyklé chování rozšíření.  
   
 ```xml  

@@ -1,15 +1,15 @@
 ---
-title: '&lt;exposedMethod&gt;'
+title: <exposedMethod>
 ms.date: 03/30/2017
 ms.assetid: 61c938cd-4ee9-4b06-ab28-922ef491ab11
-ms.openlocfilehash: 0bfb56395217283eeba69c2f3b7569a89f576423
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 151929cd99df08b705bee94eb6fd6f10c254a660
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54702038"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55259849"
 ---
-# <a name="ltexposedmethodgt"></a>&lt;exposedMethod&gt;
+# <a name="exposedmethod"></a>\<exposedMethod >
 Představuje metodu COM +, která je vystavena při vystavení rozhraní komponenty COM + jako webovou službu.  
   
  \<system.ServiceModel>  

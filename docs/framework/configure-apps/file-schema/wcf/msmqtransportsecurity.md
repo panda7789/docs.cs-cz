@@ -1,15 +1,15 @@
 ---
-title: '&lt;msmqTransportSecurity&gt;'
+title: <msmqTransportSecurity>
 ms.date: 03/30/2017
 ms.assetid: 092e911b-ab1b-4069-a26e-6134c3299e06
-ms.openlocfilehash: 2a4daea50e1b6c24d923e01a6bc7ae913c241001
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: eb7ff953fcb61232fad16a99ac80cb98dbd83186
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54593482"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55259966"
 ---
-# <a name="ltmsmqtransportsecuritygt"></a>&lt;msmqTransportSecurity&gt;
+# <a name="msmqtransportsecurity"></a>\<msmqTransportSecurity>
 Určuje nastavení zabezpečení přenosu služby MSMQ pro vlastní vazbu.  
   
  \<system.serviceModel>  

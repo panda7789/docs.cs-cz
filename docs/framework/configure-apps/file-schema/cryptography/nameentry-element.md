@@ -1,5 +1,5 @@
 ---
-title: '&lt;nameEntry&gt; – Element'
+title: Element <nameEntry>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#nameEntry
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <nameEntry> element
 - nameEntry element
 ms.assetid: 7d7535e9-4b4a-4b8c-82e2-e40dff5a7821
-ms.openlocfilehash: 97d622b2480f7e4aad738c77350b1d99ecd2c1b0
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: b5f92ca2956f32382b12c9a1dec4e5d41ea4ee2a
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55084429"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55285921"
 ---
-# <a name="ltnameentrygt-element"></a>&lt;nameEntry&gt; – Element
+# <a name="nameentry-element"></a>\<nameEntry – > – Element
 Název třídy mapuje na algoritmus popisný název, který umožňuje jedna třída má mnoho popisné názvy.  
   
  \<Konfigurace >  

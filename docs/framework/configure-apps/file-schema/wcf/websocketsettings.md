@@ -1,15 +1,15 @@
 ---
-title: '&lt;webSocketSettings&gt;'
+title: <webSocketSettings>
 ms.date: 03/30/2017
 ms.assetid: bbf97e02-8dd1-4922-acac-3cd33397b249
-ms.openlocfilehash: 00c6bc45f06d97d4f95bd6be1515d16141be4e1d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 298bf27b171772bb039b11b5e5de70e7d45b061d
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54565914"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55258437"
 ---
-# <a name="ltwebsocketsettingsgt"></a>&lt;webSocketSettings&gt;
+# <a name="websocketsettings"></a>\<webSocketSettings>
 Prvek konfigurace určuje nastavení Websocket.  
   
 \<system.ServiceModel>  

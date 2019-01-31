@@ -1,21 +1,21 @@
 ---
-title: '&lt;komponenty claimsAuthenticationManager&gt;'
+title: <claimsAuthenticationManager>
 ms.date: 03/30/2017
 ms.assetid: 6d30a450-6d13-4671-81a8-77e0204500c5
 author: BrucePerlerMS
-ms.openlocfilehash: b0cee2fedb5f90ca2a1f7e379e199cfee66ee745
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: ecf26263bf47e8b4609e7adc208f0a59a2fa795b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190967"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55255182"
 ---
-# <a name="ltclaimsauthenticationmanagergt"></a>&lt;komponenty claimsAuthenticationManager&gt;
+# <a name="claimsauthenticationmanager"></a>\<claimsAuthenticationManager>
 Zaregistruje manažera ověřování deklarací identity pro příchozí deklarace identity.  
   
  \<system.identityModel>  
-\<identityConfiguration >  
-\<komponenty claimsAuthenticationManager >  
+\<identityConfiguration>  
+\<claimsAuthenticationManager>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,7 +45,7 @@ Zaregistruje manažera ověřování deklarací identity pro příchozí deklara
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Určuje nastavení identit na úrovni služby.|  
+|[\<identityConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Určuje nastavení identit na úrovni služby.|  
   
 ## <a name="remarks"></a>Poznámky  
  Výchozí chování zajišťována <xref:System.Security.Claims.ClaimsAuthenticationManager> třídy vypisuje příchozí deklarace identity. Pokud ne `type` je zadán atribut nebo, pokud `type` Určuje atribut <xref:System.Security.Claims.ClaimsAuthenticationManager> třídy, `<claimsAuthenticationManager>` element nepřijímá podřízené prvky. Můžete zadat `type` atribut zaregistrovat typ odvozený z <xref:System.Security.Claims.ClaimsAuthenticationManager> třídu pro implementaci vlastního chování. Odvozené třídy může podporovat konfiguraci prostřednictvím podřízených elementů `<claimsAuthenticationManager>` element tak, že přepíšete <xref:System.Security.Claims.ClaimsAuthenticationManager.LoadCustomConfiguration%2A> metodu ke zpracování těchto elementů. Schéma definice pro podřízené prvky je až návrháře třídy.  

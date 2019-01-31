@@ -1,17 +1,17 @@
 ---
-title: Argument '&lt;název argumentu argumentname&gt;' musí být větší než nula.
+title: Argument '<argumentname>' musí být větší než nula.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_GTZero1
 ms.assetid: f9939fbd-6c4f-4871-9452-9ea0267e948e
-ms.openlocfilehash: 4ef17a10a90515956e9bdf02873fd80fdf8e8892
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3b998ee6acfbb945bbe8134af68bcf820737f7e5
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54605253"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55286465"
 ---
-# <a name="argument-ltargumentnamegt-must-be-greater-than-zero"></a>Argument '&lt;název argumentu argumentname&gt;' musí být větší než nula.
+# <a name="argument-argumentname-must-be-greater-than-zero"></a>Argument '\<název argumentu argumentname >' musí být větší než nula.
 Argument není platný, protože je menší než nebo rovna nule.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

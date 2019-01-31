@@ -1,15 +1,15 @@
 ---
-title: '&lt;issuerMetadata&gt;'
+title: <issuerMetadata>
 ms.date: 03/30/2017
 ms.assetid: e7eae2c0-cc17-4281-af59-e4eb8d54f92a
-ms.openlocfilehash: 22e30e0962ec8d2eb0f7e52f4db143fba9bbf703
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c557bd903462ccf4029b7317cbd45610e3fba165
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54491555"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55264450"
 ---
-# <a name="ltissuermetadatagt"></a>&lt;issuerMetadata&gt;
+# <a name="issuermetadata"></a>\<issuerMetadata>
 \<system.serviceModel>  
 \<vazby >  
 \<wsFederationHttpBinding>  

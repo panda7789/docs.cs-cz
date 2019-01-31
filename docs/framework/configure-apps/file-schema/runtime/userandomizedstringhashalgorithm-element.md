@@ -1,5 +1,5 @@
 ---
-title: '&lt;UseRandomizedStringHashAlgorithm&gt; Element'
+title: Element <UseRandomizedStringHashAlgorithm>
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: c08125d6-56cc-4b23-b482-813ff85dc630
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3bb4286ea6055d2df9111b2222b137f2668bfdfe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3545938d8f9a59c8f3c6d03e5e67bb5f545a4981
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681037"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55260590"
 ---
-# <a name="ltuserandomizedstringhashalgorithmgt-element"></a>&lt;UseRandomizedStringHashAlgorithm&gt; Element
+# <a name="userandomizedstringhashalgorithm-element"></a>\<UseRandomizedStringHashAlgorithm > – Element
 Určuje, zda modul common language runtime vypočítá hash kódy pro řetězce na základě domény aplikace.  
   
  \<Konfigurace >  

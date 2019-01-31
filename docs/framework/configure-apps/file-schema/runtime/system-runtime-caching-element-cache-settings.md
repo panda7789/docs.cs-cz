@@ -1,5 +1,5 @@
 ---
-title: '&lt;System.Runtime.Caching –&gt; – Element (nastavení mezipaměti)'
+title: < System.Runtime.Caching > – Element (nastavení mezipaměti)
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <system.runtime.caching> element
@@ -8,14 +8,14 @@ helpviewer_keywords:
 ms.assetid: 9b44daee-874a-4bd1-954e-83bf53565590
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4e5dba0269a5a368e40965b40e502c0627c76930
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a68af0727e6f2fc92f9c6875ec6566dc969bd65d
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590666"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55275792"
 ---
-# <a name="ltsystemruntimecachinggt-element-cache-settings"></a>&lt;System.Runtime.Caching –&gt; – Element (nastavení mezipaměti)
+# <a name="systemruntimecaching-element-cache-settings"></a>\<System.Runtime.Caching > – Element (nastavení mezipaměti)
 Poskytuje konfiguraci pro výchozí v paměťově <xref:System.Runtime.Caching.ObjectCache> implementaci prostřednictvím `memoryCache` záznam v konfiguračním souboru.  
   
  \<Konfigurace >  

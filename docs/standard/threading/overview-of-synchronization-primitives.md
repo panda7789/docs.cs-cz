@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: b782bcb8-da6a-4c6a-805f-2eb46d504309
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 37ab502277cb413a116aa1301d1127f700097a45
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 9faac620c98362c5f9f650121bb88b207ed4863b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53146573"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55270756"
 ---
 # <a name="overview-of-synchronization-primitives"></a>Přehled primitiv synchronizace
 
@@ -112,7 +112,7 @@ Chování <xref:System.Threading.EventWaitHandle> , který má byl signalizován
 
 Na Windows, můžete použít <xref:System.Threading.EventWaitHandle> synchronizace mezi procesy. K tomuto účelu vytvořte <xref:System.Threading.EventWaitHandle> instanci, která představuje událost synchronizace s názvem systému pomocí jedné z [eventwaithandle – konstruktory](<xref:System.Threading.EventWaitHandle.%23ctor%2A>) , který určuje název nebo <xref:System.Threading.EventWaitHandle.OpenExisting%2A?displayProperty=nameWithType> metoda.
 
-Další informace najdete v tématu [eventwaithandle –](eventwaithandle.md), [autoresetevent –](autoresetevent.md), a [ManualResetEvent a ManualResetEventSlim](manualresetevent-and-manualreseteventslim.md) článků. Reference k rozhraní API, najdete v části <xref:System.Threading.EventWaitHandle>, <xref:System.Threading.AutoResetEvent>, <xref:System.Threading.ManualResetEvent>, a <xref:System.Threading.ManualResetEventSlim>.
+Další informace najdete v tématu [eventwaithandle –](eventwaithandle.md) a [ManualResetEvent a ManualResetEventSlim](manualresetevent-and-manualreseteventslim.md) článků. Reference k rozhraní API, najdete v části <xref:System.Threading.EventWaitHandle>, <xref:System.Threading.AutoResetEvent>, <xref:System.Threading.ManualResetEvent>, a <xref:System.Threading.ManualResetEventSlim>.
 
 ### <a name="countdownevent-class"></a>Třída CountdownEvent
 

@@ -1,5 +1,5 @@
 ---
-title: '&lt;para&gt; - C# Průvodce programováním pro službu'
+title: <para> - C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <para> C# XML tag
 - para C# XML tag
 ms.assetid: c74b8705-29df-40b1-bff5-237492b0e978
-ms.openlocfilehash: e37f1b47ae1f45b29697fee220d99e6698a8c96d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e97ee59817ec0b60ac85d20199c9219c3e0014a3
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54498330"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55261358"
 ---
-# <a name="ltparagt-c-programming-guide"></a>&lt;para&gt; (C# Programming Guide)
+# <a name="para-c-programming-guide"></a>\<para > (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  

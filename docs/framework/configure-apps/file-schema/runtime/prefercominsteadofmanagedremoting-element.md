@@ -1,5 +1,5 @@
 ---
-title: '&lt;PreferComInsteadOfManagedRemoting&gt; Element'
+title: Element <PreferComInsteadOfManagedRemoting>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <PreferComInsteadOfManagedRemoting> element
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: a279a42a-c415-4e79-88cf-64244ebda613
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9292a0973df100acbffa341d7c0ca2604455f7fa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f143429c1f579ae98a03fd69a8cf3dcdd26ad2c2
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54522333"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55260357"
 ---
-# <a name="ltprefercominsteadofmanagedremotinggt-element"></a>&lt;PreferComInsteadOfManagedRemoting&gt; Element
+# <a name="prefercominsteadofmanagedremoting-element"></a>\<PreferComInsteadOfManagedRemoting> Element
 Určuje, zda modul runtime použijí komunikace s objekty COM místo vzdálené komunikace pro všechna volání napříč hranicemi domény aplikace.  
   
  \<Konfigurace >  

@@ -1,5 +1,5 @@
 ---
-title: '&lt;CompatSortNLSVersion&gt; Element'
+title: Element <CompatSortNLSVersion>
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 782cc82e-83f7-404a-80b7-6d3061a8b6e3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a40a9e7ad5eb0b6e978054b5e7edcf35e53c42c7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f670bd2030e914cc4431c3325215428570ad46cf
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54578504"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55256605"
 ---
-# <a name="ltcompatsortnlsversiongt-element"></a>&lt;CompatSortNLSVersion&gt; Element
+# <a name="compatsortnlsversion-element"></a>\<CompatSortNLSVersion > – Element
 Určuje, zda by modul runtime měl při porovnávání řetězců použít starší pořadí řazení.  
   
  \<Konfigurace >  

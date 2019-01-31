@@ -1,5 +1,5 @@
 ---
-title: -&gt; Operator - C# odkaz
+title: -> – Operátor - C# odkaz
 ms.custom: seodec18
 ms.date: 11/26/2018
 f1_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - member access operator (->) [C#]
 - -> operator [C#]
 ms.assetid: e39ccdc1-f1ff-4a92-bf1d-ac2c8c11316a
-ms.openlocfilehash: bb1ccd026f403e68565c5c7681943d8017578d01
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: be74f02a85aa05cdab32768ed38222fc4d9289b1
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53234887"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55255364"
 ---
-# <a name="-gt-operator-c-reference"></a>-&gt; – Operátor (referenční dokumentace jazyka C#)
+# <a name="--operator-c-reference"></a>-> – operátor (Referenční dokumentace jazyka C#)
 
 Operátor přístupu členů ukazatel `->` kombinuje ukazatel nepřímý odkaz a členské přístup.
 

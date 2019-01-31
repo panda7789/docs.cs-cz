@@ -1,15 +1,15 @@
 ---
-title: '&lt;bindingElementExtensions&gt;'
+title: <bindingElementExtensions>
 ms.date: 03/30/2017
 ms.assetid: bb597fc0-c947-451c-afda-bf23d42f4f4d
-ms.openlocfilehash: 1b843f2986a0020b8ce079e58bf9865a0b3d402d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9a2a3af093949c1d724fdea13655bbb80fe71048
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54569898"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55270459"
 ---
-# <a name="ltbindingelementextensionsgt"></a>&lt;bindingElementExtensions&gt;
+# <a name="bindingelementextensions"></a>\<bindingElementExtensions >
 Tato část umožňuje používat vlastní prvek vazby z počítače nebo konfiguračního souboru aplikace. Vlastní prvek vazby můžete přidat do této kolekce pomocí `add` – klíčové slovo a nastavení `type` atribut elementu, který chcete rozšíření elementu vazby, stejně jako `name` atribut na prvek vlastní vazby.  
   
  Rozšíření vazby umožňují uživateli vytvořit uživatelem definované vazby prvky pro použití jako součást vlastní vazby. Prostřednictvím kódu programu, rozšíření vazby je typ, který implementuje abstraktní třídu <xref:System.ServiceModel.Channels.BindingElement>. V konfiguračním souboru `bindingElementExtensions` oddíl se používá k definování element rozšíření.  

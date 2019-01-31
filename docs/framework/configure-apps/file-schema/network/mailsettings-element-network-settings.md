@@ -1,5 +1,5 @@
 ---
-title: '&lt;mailSettings&gt; – Element (nastavení sítě)'
+title: <mailSettings> – element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#mailSettings
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - mailSettings element
 - <mailSettings> element
 ms.assetid: 54f0f153-17e5-4f49-afdc-deadb940c9c1
-ms.openlocfilehash: 954755c7576e0ca4dd7946926c77e1e7e18055e5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0e71284e914dac2d28448f3d8bd4bdc7a9f6b325
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54713951"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55277612"
 ---
-# <a name="ltmailsettingsgt-element-network-settings"></a>&lt;mailSettings&gt; – Element (nastavení sítě)
+# <a name="mailsettings-element-network-settings"></a>\<mailSettings – > – Element (nastavení sítě)
 Konfiguruje možnosti pro odesílání pošty.  
 
 \<Konfigurace >  

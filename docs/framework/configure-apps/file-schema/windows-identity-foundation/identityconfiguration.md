@@ -1,16 +1,16 @@
 ---
-title: '&lt;identityConfiguration&gt;'
+title: <identityConfiguration>
 ms.date: 03/30/2017
 ms.assetid: 1db76253-07da-447b-9e7a-3705c7228cf4
 author: BrucePerlerMS
-ms.openlocfilehash: 7c20f3d00b71eacbf8409c3f848d550445468e5b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2614dc5812c44a4e123f582d6b3a5639380ebfe4
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54513097"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55263040"
 ---
-# <a name="ltidentityconfigurationgt"></a>&lt;identityConfiguration&gt;
+# <a name="identityconfiguration"></a>\<identityConfiguration>
 Určuje nastavení identit na úrovni služby.  
   
  \<system.identityModel>  

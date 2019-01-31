@@ -1,15 +1,15 @@
 ---
-title: '&lt;message&gt; – &lt;ws2007HttpBinding&gt;'
+title: <message> z <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9ffd8db6-84a8-4b38-a9fe-2cb1a87a1c97
-ms.openlocfilehash: 6a6010399d0dd884e5c921829395531f1133e439
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7447c41d991561bc98540b6fb8ea3ad93a42192b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54677612"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55281850"
 ---
-# <a name="ltmessagegt-of-ltws2007httpbindinggt"></a>&lt;message&gt; – &lt;ws2007HttpBinding&gt;
+# <a name="message-of-ws2007httpbinding"></a>\<Zpráva > z \<ws2007HttpBinding >
 Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) elementu.  
   
  \<system.ServiceModel>  

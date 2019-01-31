@@ -1,15 +1,15 @@
 ---
-title: '&lt;comContracts&gt;'
+title: <comContracts>
 ms.date: 03/30/2017
 ms.assetid: 42e74148-223d-4888-a8ed-1d928527eb09
-ms.openlocfilehash: 2374155011b98822d47998cd1e4b8935db234752
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3e3e4bf18b204db5a4068cc3f6cbb1337d5f611d
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731518"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55254311"
 ---
-# <a name="ltcomcontractsgt"></a>&lt;comContracts&gt;
+# <a name="comcontracts"></a>\<comContracts>
 `comContracts` Oddíl konfigurace obsahuje prvky, které vám umožňují určit různé vlastnosti kontraktu služby integrace modelu COM +.  
   
 ## <a name="specifying-namespace-and-contract"></a>Určení Namespace a smlouvy  

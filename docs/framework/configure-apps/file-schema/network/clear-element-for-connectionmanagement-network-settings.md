@@ -1,5 +1,5 @@
 ---
-title: '&lt;Vymazat&gt; – Element pro connectionManagement (nastavení sítě)'
+title: <clear> – element pro element connectionManagement (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/connectionManagement/clear
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - clear element, connectionManagement
 - <connectionManagement>, clear element
 ms.assetid: fb259282-84c4-4dc4-a226-78d904a6edc3
-ms.openlocfilehash: 0816a334e751d609b9c0735884d9682f7c1a087d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b90bdacc962eba1cd449f347f958f04cd72225d4
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54596407"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55273920"
 ---
-# <a name="ltcleargt-element-for-connectionmanagement-network-settings"></a>&lt;Vymazat&gt; – Element pro connectionManagement (nastavení sítě)
+# <a name="clear-element-for-connectionmanagement-network-settings"></a>\<Vymazat > – Element pro connectionManagement (nastavení sítě)
 Zruší připojení seznamu pro správu.  
   
  \<Konfigurace >  

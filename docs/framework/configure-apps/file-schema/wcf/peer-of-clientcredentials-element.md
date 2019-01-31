@@ -1,15 +1,15 @@
 ---
-title: '&lt;peer&gt; elementu &lt;clientCredentials&gt;'
+title: <peer> z <clientCredentials> – Element
 ms.date: 03/30/2017
 ms.assetid: 505bd987-0042-4622-b68e-94f439729d53
-ms.openlocfilehash: f933e4c6719437d530e0cf90e3aa1da3a8143060
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8970100b1ad3019ff4a639d835d1db1430968008
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54616209"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55275138"
 ---
-# <a name="ltpeergt-of-ltclientcredentialsgt-element"></a>&lt;peer&gt; elementu &lt;clientCredentials&gt;
+# <a name="peer-of-clientcredentials-element"></a>\<sdílené > z \<clientCredentials > – Element
 Určuje pověření používaný při ověřování klientů peer-to-peer.  
   
  \<system.ServiceModel>  

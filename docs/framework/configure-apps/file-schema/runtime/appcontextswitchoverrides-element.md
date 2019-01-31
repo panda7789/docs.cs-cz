@@ -1,5 +1,5 @@
 ---
-title: '&lt;AppContextSwitchOverrides&gt; Element'
+title: Element <AppContextSwitchOverrides>
 ms.custom: updateeachrelease
 ms.date: 09/19/2018
 helpviewer_keywords:
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cc68ba1d87a6dcb638eae5bfa041baeaf0846800
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d78909c3529bb96b973b914742e9b83bc2e21d0f
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54699932"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55288051"
 ---
-# <a name="ltappcontextswitchoverridesgt-element"></a>&lt;AppContextSwitchOverrides&gt; Element
+# <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides> Element
 Definuje jeden nebo více přepínačů používané <xref:System.AppContext> třídě poskytnout mechanismus výslovného nesouhlasu pro nové funkce.  
   
  \<Konfigurace >  

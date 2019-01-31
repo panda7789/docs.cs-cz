@@ -1,19 +1,19 @@
 ---
-title: '&lt;system.identityModel.services&gt;'
+title: <system.identityModel.services>
 ms.date: 03/30/2017
 ms.assetid: fa1624dd-2d74-4ae3-942e-498cee261ac5
 author: BrucePerlerMS
-ms.openlocfilehash: c7261d20ae2379ad33679cadecdef484f2afdecf
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 9728f3caee4dba367e4fc4a3e68213b1055cc3d1
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873398"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55273972"
 ---
-# <a name="ltsystemidentitymodelservicesgt"></a>&lt;system.identityModel.services&gt;
+# <a name="systemidentitymodelservices"></a>\<system.identityModel.services>
 Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.  
   
- \<system.identityModel.services >  
+ \<system.identityModel.services>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,16 +28,16 @@ Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádné  
+ Žádná  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<federationConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|Obsahuje nastavení, která konfigurace <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> z modulů HTTP (SAM).|  
+|[\<federationConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|Obsahuje nastavení, která konfigurace <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> z modulů HTTP (SAM).|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
- Žádné  
+ Žádná  
   
 ## <a name="remarks"></a>Poznámky  
  Přidat `<system.identityModel.services>` části do konfiguračního souboru aplikace k poskytování nastavení SAM a WSFAM.  

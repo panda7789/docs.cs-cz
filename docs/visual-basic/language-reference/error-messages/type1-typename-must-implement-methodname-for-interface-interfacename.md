@@ -1,5 +1,5 @@
 ---
-title: '&lt;Type1&gt;&#39;&lt;typename&gt; &#39; musí implementovat &#39; &lt;methodname&gt; &#39; rozhraní &#39; &lt;interfacename&gt;&#39;'
+title: <type1> <typename> musí implementovat člena <methodname> pro rozhraní <interfacename>.
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30149
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30149
 ms.assetid: 29d1b7f4-dca7-478c-bbe7-c657f342c183
-ms.openlocfilehash: ff9ffd50f7f21814d5e4c23fd8df50b12bf746f5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c5dd7c6889a3fb5344142ee9914f98e8922d748b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54642438"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55264428"
 ---
-# <a name="lttype1gt39lttypenamegt39-must-implement-39ltmethodnamegt39-for-interface-39ltinterfacenamegt39"></a>&lt;Type1&gt;&#39;&lt;typename&gt; &#39; musí implementovat &#39; &lt;methodname&gt; &#39; rozhraní &#39; &lt;interfacename&gt;&#39;
+# <a name="type1typename-must-implement-methodname-for-interface-interfacename"></a>\<Type1 >'\<typename >' musí implementovat '\<methodname > "rozhraní"\<interfacename > "
 Třída nebo struktura, deklarací identity pro implementaci rozhraní, ale neimplementuje postupu definované rozhraní. Musíte implementovat každého člena rozhraní.  
   
  **ID chyby:** BC30149  

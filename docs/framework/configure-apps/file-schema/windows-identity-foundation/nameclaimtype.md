@@ -1,16 +1,16 @@
 ---
-title: '&lt;nameClaimType&gt;'
+title: <nameClaimType>
 ms.date: 03/30/2017
 ms.assetid: 17514d95-f0f5-4789-8e28-346640dc227c
 author: BrucePerlerMS
-ms.openlocfilehash: 502fc5dd14d7bc3d979153607e1eeeb9354031bb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: aab76949d9c31ac003b8afd519c2ad66529cbf26
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54737426"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55254855"
 ---
-# <a name="ltnameclaimtypegt"></a>&lt;nameClaimType&gt;
+# <a name="nameclaimtype"></a>\<nameClaimType>
 Nastaví typ deklarace identity, která určuje, <xref:System.Security.Principal.IIdentity.Name%2A> vlastnost. Typ deklarace identity se používá k hledání <xref:System.Security.Claims.Claim> v kolekci <xref:System.Security.Claims.ClaimsIdentity> objektů vrácených podle <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> metoda této obslužné rutiny tokenů. Hodnota odpovídající deklarace identity je nastavili jako název <xref:System.Security.Principal.IIdentity> vygenerované z této obslužné rutiny tokenů.  
   
  \<system.identityModel>  

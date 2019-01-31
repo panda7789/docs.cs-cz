@@ -1,15 +1,15 @@
 ---
-title: '&lt;security&gt; – &lt;wsDualHttpBinding&gt;'
+title: <security> z <wsDualHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 869c05e7-4ebe-467d-95ab-c8f8de4e6b9e
-ms.openlocfilehash: 56755ec62c6e2c35ecdb94e4aa58903ed1216378
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8bc35b3bc8f0cbe1a51ceab63d876d5859d6b325
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54555934"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55270846"
 ---
-# <a name="ltsecuritygt-of-ltwsdualhttpbindinggt"></a>&lt;security&gt; – &lt;wsDualHttpBinding&gt;
+# <a name="security-of-wsdualhttpbinding"></a>\<zabezpečení > z \<wsDualHttpBinding >
 Definuje možnosti zabezpečení [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
   
  \<system.ServiceModel>  

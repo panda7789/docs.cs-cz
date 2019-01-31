@@ -1,15 +1,15 @@
 ---
-title: '&lt;serviceAuthenticationManager&gt;'
+title: <serviceAuthenticationManager>
 ms.date: 03/30/2017
 ms.assetid: 5d69e64f-f325-4d55-8e2d-0fb30f222dda
-ms.openlocfilehash: fd04b10c0ac0bef4087daa1012a1b8bd3a5880e6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7708dd8a572dd24c2852410b1781fce2807efab9
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493635"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55263482"
 ---
-# <a name="ltserviceauthenticationmanagergt"></a>&lt;serviceAuthenticationManager&gt;
+# <a name="serviceauthenticationmanager"></a>\<serviceAuthenticationManager>
 Poskytuje pracovní postup konfigurace element, který vytváří platnosti přenosu, původce nebo zpráv na úrovni služby.  
   
 \<system.ServiceModel>  

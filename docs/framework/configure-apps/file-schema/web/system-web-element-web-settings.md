@@ -1,5 +1,5 @@
 ---
-title: '&lt;System.Web&gt; – Element (nastavení webu)'
+title: < System.web > – Element (nastavení webu)
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Web.config configuration file [ASP.NET]
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - ASP.NET configuration system
 - configuration files [ASP.NET]
 ms.assetid: 24c4cf4f-ad32-42b2-b040-8e4549e2855e
-ms.openlocfilehash: 29aa97808f3595313b68072a910afb1354d45c6d
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: a8d0905dc64ae3e3c4977639ccf881a677de73a9
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55084416"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55272809"
 ---
-# <a name="ltsystemwebgt-element-web-settings"></a>&lt;System.Web&gt; – Element (nastavení webu)
+# <a name="systemweb-element-web-settings"></a>\<System.Web > – Element (nastavení webu)
 Obsahuje informace o jak spravuje chování v celém procesu vrstvy hostování technologie ASP.NET.  
   
  \<Konfigurace >  

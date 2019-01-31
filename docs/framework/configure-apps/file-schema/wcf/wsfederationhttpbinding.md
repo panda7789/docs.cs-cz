@@ -1,17 +1,17 @@
 ---
-title: '&lt;wsFederationHttpBinding&gt;'
+title: <wsFederationHttpBinding>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - wsFederationBinding element
 ms.assetid: 9c3312b4-2137-4e71-bf3f-de1cf8e9be79
-ms.openlocfilehash: 5457acd38a0fa1a52d5819516b88d9682076b458
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0f4a0c03d0bb69eeb61efacdd2b1e9fe64d2adce
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54671457"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55262738"
 ---
-# <a name="ltwsfederationhttpbindinggt"></a>&lt;wsFederationHttpBinding&gt;
+# <a name="wsfederationhttpbinding"></a>\<wsFederationHttpBinding>
 Definuje vazbu, která podporuje WS-Federation.  
   
  \<system.ServiceModel>  

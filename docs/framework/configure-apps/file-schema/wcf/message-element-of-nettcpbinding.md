@@ -1,15 +1,15 @@
 ---
-title: element &lt;message&gt; – &lt;netTcpBinding&gt;
+title: <message> Element <netTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 1d71edd9-c085-4c2e-b6d3-980c313366f9
-ms.openlocfilehash: 018cd6797b730bc5469cc68dd23fcf8315716588
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 09ff567e73791151350288f6e5ddb5f9aff36e80
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54677389"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55276923"
 ---
-# <a name="ltmessagegt-element-of-ltnettcpbindinggt"></a>element &lt;message&gt; – &lt;netTcpBinding&gt;
+# <a name="message-element-of-nettcpbinding"></a>\<Zpráva > prvek \<netTcpBinding >
 Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfigurovaným s [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).  
   
  \<system.ServiceModel>  

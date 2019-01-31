@@ -1,5 +1,5 @@
 ---
-title: '&lt;část&gt; – element'
+title: <section> – element
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/section
@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: ec7d4110-2403-47ac-8218-499bfe9d5ddb
 author: guardrex
 ms.author: mairaw
-ms.openlocfilehash: 295cb8ee77c3042dc5742fb23cf4bbcd085b4d36
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 58f823ce0c128f30e361b4a631d41286533b5f0f
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54659212"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55259212"
 ---
 # <a name="section-element"></a>\<část > – element
 

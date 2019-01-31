@@ -1,15 +1,15 @@
 ---
-title: Element &lt;scopedCertificates&gt;
+title: Element <scopedCertificates>
 ms.date: 03/30/2017
 ms.assetid: c7b6fc35-d4b2-4c18-98bd-83e09591f1d3
-ms.openlocfilehash: c6236093eada1b7be5244d98eabd99482017a395
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: de85b3230461e876ec48e98887805d767e981e0f
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54556493"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55270377"
 ---
-# <a name="ltscopedcertificatesgt-element"></a>Element &lt;scopedCertificates&gt;
+# <a name="scopedcertificates-element"></a>\<scopedCertificates > – Element
 Představuje kolekci certifikátů X.509 poskytnuty konkrétní službou pro ověřování. Tato kolekce se obvykle používá k určení certifikáty služeb pro služby tokenu zabezpečení v případě federovaných.  
   
  \<system.ServiceModel>  

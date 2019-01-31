@@ -1,5 +1,5 @@
 ---
-title: '&lt;zahrnout&gt; - C# Průvodce programováním pro službu'
+title: <include> - C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <include> C# XML tag
 - include C# XML tag
 ms.assetid: a8a70302-6196-4643-bd09-ef33f411f18f
-ms.openlocfilehash: 4ca6ccb24dce48243558cf1b2a9c1d297f961b81
-ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
+ms.openlocfilehash: 1e933647487f966e9f8448cf60a2bdecdd29cdff
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55204640"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55286258"
 ---
-# <a name="ltincludegt-c-programming-guide"></a>&lt;zahrnout&gt; (C# Programming Guide)
+# <a name="include-c-programming-guide"></a>\<Zahrnout > (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  

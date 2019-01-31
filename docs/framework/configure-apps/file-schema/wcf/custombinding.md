@@ -1,15 +1,15 @@
 ---
-title: '&lt;customBinding&gt;'
+title: <customBinding>
 ms.date: 03/30/2017
 ms.assetid: 9da4f960-f64e-4d8a-894d-2b09eba5ce4b
-ms.openlocfilehash: c67161ddd0698a74f073b10e79674529b198e9f7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d7203aa5695690bfc46c22e87b59f7dfcbd281fa
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54500512"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55275805"
 ---
-# <a name="ltcustombindinggt"></a>&lt;customBinding&gt;
+# <a name="custombinding"></a>\<customBinding>
 Poskytuje plnou kontrolu nad zásobníkem zpráv pro daného uživatele.  
   
  \<system.serviceModel>  

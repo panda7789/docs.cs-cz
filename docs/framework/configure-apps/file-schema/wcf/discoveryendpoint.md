@@ -1,15 +1,15 @@
 ---
-title: '&lt;discoveryEndpoint&gt;'
+title: <discoveryEndpoint>
 ms.date: 03/30/2017
 ms.assetid: fae2f48b-a635-4e4b-859d-a1432ac37e1c
-ms.openlocfilehash: b3254a1c3d7fa581b4f7573d693261f5a224515d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d1a3371872f5587a682b8242c29b71808508ca3d
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54524166"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55274780"
 ---
-# <a name="ltdiscoveryendpointgt"></a>&lt;discoveryEndpoint&gt;
+# <a name="discoveryendpoint"></a>\<discoveryEndpoint>
 
 Tento prvek konfigurace definuje standardní koncový bod s pevným kontraktem zjišťování. Po přidání do konfigurace služby, se určuje, kde naslouchat zprávám zjišťování. Po přidání do konfigurace klienta Určuje, kam má odesílat dotazy zjišťování.  
   

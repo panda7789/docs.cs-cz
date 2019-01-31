@@ -1,5 +1,5 @@
 ---
-title: '&lt;výjimka&gt; - C# Průvodce programováním pro službu'
+title: <exception> - C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - <exception> C# XML tag
 - exception C# XML tag
 ms.assetid: dd73aac5-3c74-4fcf-9498-f11bff3a2f3c
-ms.openlocfilehash: 1d48d9c05e23154ee98d077af5f43c80b4dbe2fe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fe304b9c6631591cf7a3d62fcecd2ed3ca05db9c
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54588105"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257288"
 ---
-# <a name="ltexceptiongt-c-programming-guide"></a>&lt;výjimka&gt; (C# Programming Guide)
+# <a name="exception-c-programming-guide"></a>\<Výjimka > (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  

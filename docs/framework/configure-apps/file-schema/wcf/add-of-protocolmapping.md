@@ -1,15 +1,15 @@
 ---
-title: '&lt;add&gt; – &lt;protocolMapping&gt;'
+title: <add> z <protocolMapping>
 ms.date: 03/30/2017
 ms.assetid: 08e62249-1641-41d1-91b1-66d7b46244e4
-ms.openlocfilehash: ce970b9ef71e2a28de680926f96f83500948619b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 18b50ec2d848bc6bb920fb8f630ac7703654b286
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54632813"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55280732"
 ---
-# <a name="ltaddgt-of-ltprotocolmappinggt"></a>&lt;add&gt; – &lt;protocolMapping&gt;
+# <a name="add-of-protocolmapping"></a>\<Přidat > z \<protocolMapping >
 Představuje výchozí mapování protokolů mezi schématem přenosového protokolu (např. http, net.tcp, net.pipe atd.) a vazbou Windows Communication Foundation (WCF). Při vytváření výchozí koncové body za běhu, WCF zabývá nakonfigurované mapování a určuje, na které vazby pro konkrétní základě adresu.  
   
  \<system.serviceModel>  

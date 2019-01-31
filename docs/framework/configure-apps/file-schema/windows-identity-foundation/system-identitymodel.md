@@ -1,16 +1,16 @@
 ---
-title: '&lt;system.identityModel&gt;'
+title: <system.identityModel>
 ms.date: 03/30/2017
 ms.assetid: 210ce7e9-d07b-400c-800f-5f525dcf95e8
 author: BrucePerlerMS
-ms.openlocfilehash: d0a29b572b71cd714f41eafe35096450e27ea33f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fd17c0318480f5e157c8c9114116735b82bbfcef
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54491269"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257496"
 ---
-# <a name="ltsystemidentitymodelgt"></a>&lt;system.identityModel&gt;
+# <a name="systemidentitymodel"></a>\<system.identityModel>
 Poskytuje konfiguraci pro povolení technologie Windows Identity Foundation (WIF) možnosti v aplikacích.  
   
  \<system.identityModel>  

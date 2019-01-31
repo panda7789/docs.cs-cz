@@ -1,15 +1,15 @@
 ---
-title: '&lt;netMsmqBinding&gt;'
+title: <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: a68b44d7-7799-43a3-9e63-f07c782810a6
-ms.openlocfilehash: c94674daa48069c1783e6378f913960d49bf7606
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5e2bf7fc95df085718729cf0a217ae3b8c7ece9b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54575473"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55277677"
 ---
-# <a name="ltnetmsmqbindinggt"></a>&lt;netMsmqBinding&gt;
+# <a name="netmsmqbinding"></a>\<netMsmqBinding>
 Definuje vazbu s frontou vhodnou pro komunikaci mezi počítači.  
   
  \<system.ServiceModel>  

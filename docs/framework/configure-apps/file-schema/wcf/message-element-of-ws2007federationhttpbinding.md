@@ -1,15 +1,15 @@
 ---
-title: Element &lt;message&gt; – &lt;ws2007FederationHttpBinding&gt;
+title: <message> Element <ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 52cd941d-e230-4c82-8b29-333a7d20eca8
-ms.openlocfilehash: 280d92978dba44d3347699959fb2cab3b98faca1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9150b6f1ab821f7d062f389c3dbd7fa9119fd0db
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493804"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55289702"
 ---
-# <a name="ltmessagegt-element-of-ltws2007federationhttpbindinggt"></a>Element &lt;message&gt; – &lt;ws2007FederationHttpBinding&gt;
+# <a name="message-element-of-ws2007federationhttpbinding"></a>\<Zpráva > prvek \<ws2007FederationHttpBinding >
 Definuje nastavení pro zprávy úroveň zabezpečení pro [ \<ws2007FederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) elementu.  
   
  \<system.ServiceModel>  

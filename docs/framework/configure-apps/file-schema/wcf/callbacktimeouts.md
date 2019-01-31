@@ -1,15 +1,15 @@
 ---
-title: '&lt;callbackTimeouts&gt;'
+title: <callbackTimeouts>
 ms.date: 03/30/2017
 ms.assetid: d7fcfc5f-6d35-491e-8fa6-2f964c1e792f
-ms.openlocfilehash: 01932fe2b7b7e699311e2c65ec8adaf0aef82dc5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 269500324ad1beaa0b519fa17d251ee942276faa
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54557900"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55269065"
 ---
-# <a name="ltcallbacktimeoutsgt"></a>&lt;callbackTimeouts&gt;
+# <a name="callbacktimeouts"></a>\<callbackTimeouts>
 Určuje maximální dobu proudění transakcí ze serveru do zpětně volaném scénáři kontraktu duplexního zpětného volání.  
   
  \<system.ServiceModel>  

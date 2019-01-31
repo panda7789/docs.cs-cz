@@ -1,15 +1,15 @@
 ---
-title: Element &lt;additionalRequestParameters&gt;
+title: <additionalRequestParameters> – element
 ms.date: 03/30/2017
 ms.assetid: da8109fb-581c-48f4-b718-3bbda1edc47d
-ms.openlocfilehash: 20faab16f5f3cd728eef5bc04654411c49f561fb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5077ea343bd49ceff3994ce639eeb8a5d0a01693
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54594431"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55259527"
 ---
-# <a name="ltadditionalrequestparametersgt-element"></a>Element &lt;additionalRequestParameters&gt;
+# <a name="additionalrequestparameters-element"></a>\<additionalRequestParameters > – element
 Obsahuje kolekci prvků konfigurace, které určují další parametry požadavku.  
   
 ## <a name="see-also"></a>Viz také:

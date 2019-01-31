@@ -1,16 +1,16 @@
 ---
-title: Co&#39;nového ve Windows Workflow Foundation 4.5
+title: Co je nového ve Windows Workflow Foundation 4.5
 ms.date: 03/30/2017
 ms.assetid: 3b381f04-593b-471f-bd33-0362be1aade5
 author: BrucePerlerMS
-ms.openlocfilehash: deb75494b2813aac3182270b027391b87fdeb0f7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9009f3bd6e782aefdeca0f071dc70d6247c3987b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54619607"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55275415"
 ---
-# <a name="what39s-new-in-windows-identity-foundation-45"></a>Co&#39;nového ve Windows Workflow Foundation 4.5
+# <a name="whats-new-in-windows-identity-foundation-45"></a>Co je nového ve Windows Workflow Foundation 4.5
 První verze technologie Windows Identity Foundation (WIF) byla uvedena na trh jako samostatný produkt ke stažení a je známa pod označením WIF 3.5, protože byla uvedena ve stejném období jako technologie .NET 3.5 SP1. Počínaje verzí .NET 4.5 je technologie WIF součástí rozhraní .NET Framework. Tříd WIF přímo k dispozici v rozhraní umožňuje mnohem hlubší integraci deklarovaných identit v .NET, což usnadňuje používání deklarací. Aplikace napsané pro technologie WIF 3.5 bude nutné upravit tak, aby mohli využít nový model; informace najdete v tématu [pokyny k migraci Application Built Using WIF 3.5 to WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md).  
   
  Následuje přehled některých hlavních změn.  

@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Dotazování sestavení&#39;s Metadata s reflexí (LINQ) (Visual Basic)'
+title: 'Postupy: Dotazu na Metadata sestavení s reflexí (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 53caa336-ab83-4181-b0f6-5c87c5f9e4ee
-ms.openlocfilehash: fb46cef7eb9b4827cb5e4b7ca7366c0910fcef26
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7966b85172af48c7762027877a03b12dd6e2b62d
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54609821"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55255156"
 ---
-# <a name="how-to-query-an-assembly39s-metadata-with-reflection-linq-visual-basic"></a>Postupy: Dotazování sestavení&#39;s Metadata s reflexí (LINQ) (Visual Basic)
+# <a name="how-to-query-an-assemblys-metadata-with-reflection-linq-visual-basic"></a>Postupy: Dotazu na Metadata sestavení s reflexí (LINQ) (Visual Basic)
 Následující příklad ukazuje, jak LINQ lze pomocí reflexe k načtení metadat konkrétní metody, které odpovídají zadanému vyhledávacímu kritériu. Dotaz v tomto případě se vyhledat názvy všechny metody v sestavení, které vrací vyčíslitelné typy například pole.  
   
 ## <a name="example"></a>Příklad  

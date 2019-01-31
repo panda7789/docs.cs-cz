@@ -1,15 +1,15 @@
 ---
-title: '&lt;msmqTransport&gt;'
+title: <msmqTransport>
 ms.date: 03/30/2017
 ms.assetid: 19d89f35-76ac-49dc-832b-e8bec2d5e33b
-ms.openlocfilehash: 523f2fd030f40a6d55080a48773159ab4b5887ec
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7f60fd43cb05749bf4b6ce31d4571e120c498235
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54660577"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55279991"
 ---
-# <a name="ltmsmqtransportgt"></a>&lt;msmqTransport&gt;
+# <a name="msmqtransport"></a>\<msmqTransport >
 Způsobí, že přenos zpráv kanálu službou MSMQ při je součástí vlastní vazby.  
   
  \<system.serviceModel>  

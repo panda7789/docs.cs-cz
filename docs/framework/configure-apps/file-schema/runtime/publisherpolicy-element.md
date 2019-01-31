@@ -1,5 +1,5 @@
 ---
-title: '&lt;publisherPolicy&gt; – Element'
+title: Element <publisherPolicy>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/publisherPolicy
@@ -12,14 +12,14 @@ helpviewer_keywords:
 ms.assetid: 4613407e-d0a8-4ef2-9f81-a6acb9fdc7d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cc33405d8fbb3e5f66be9ea2deb4545bd4ca0971
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: be87c91b798256f3913779bdbe36f3548066018b
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54620588"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55253935"
 ---
-# <a name="ltpublisherpolicygt-element"></a>&lt;publisherPolicy&gt; – Element
+# <a name="publisherpolicy-element"></a>\<publisherPolicy > – Element
 Určuje, zda modul runtime použije zásady vydavatele.  
   
  \<Konfigurace >  

@@ -1,5 +1,5 @@
 ---
-title: '&lt;requiredRuntime&gt; – element'
+title: <requiredRuntime> – element
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#requiredRuntime
@@ -9,18 +9,18 @@ helpviewer_keywords:
 - <requiredRuntime> element
 - container tags, <requiredRuntime> element
 ms.assetid: 9fa1639e-beb8-43be-b7a4-12f7b229c34b
-ms.openlocfilehash: 66de3e30ce862cd317e80ea267bf22ce728aca82
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 5e528a8b81fa3d9abc4f345d18f01e33f483a4a9
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222126"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55254727"
 ---
-# <a name="ltrequiredruntimegt-element"></a>&lt;requiredRuntime&gt; – element
+# <a name="requiredruntime-element"></a>\<requiredRuntime > – element
 
 Určuje, že aplikace podporuje pouze verze 1.0 modulu common language runtime. Tento element je zastaralá a již by nelze použít. [ `supportedRuntime` ](supportedruntime-element.md) Element by měl místo toho použít.
 
-\<Konfigurace > \<spuštění > \<requiredRuntime >
+\<configuration> \<startup> \<requiredRuntime>
 
 ## <a name="syntax"></a>Syntaxe
 

@@ -1,5 +1,5 @@
 ---
-title: '&lt;Přidat&gt; – Element pro connectionManagement (nastavení sítě)'
+title: <add> – element pro element connectionManagement (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#add
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - add element, connectionManagement
 - connectionManagement, add element
 ms.assetid: 856bf57d-1c63-46c7-a178-03d97b0a4149
-ms.openlocfilehash: 32b84412edf2d7c9943391909659dc91d8060cc1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a7a4cfe952a32c859a113f0903696fec3681f800
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54625745"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55267616"
 ---
-# <a name="ltaddgt-element-for-connectionmanagement-network-settings"></a>&lt;Přidat&gt; – Element pro connectionManagement (nastavení sítě)
+# <a name="add-element-for-connectionmanagement-network-settings"></a>\<Přidat > – Element pro connectionManagement (nastavení sítě)
 Přidá do seznamu pro správu připojení IP adresu nebo název DNS.  
   
  \<Konfigurace >  

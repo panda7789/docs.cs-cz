@@ -1,5 +1,5 @@
 ---
-title: Typ nepovinné hodnoty pro nepovinný parametr &lt;parametername&gt; není kompatibilní se Specifikací CLS
+title: Typ nepovinné hodnoty pro volitelný parametr <parametername> není kompatibilní se specifikací CLS.
 ms.date: 07/20/2015
 f1_keywords:
 - BC40042
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC40042
 ms.assetid: 1d6eae29-4ad3-4434-bde4-a53b6051adf5
-ms.openlocfilehash: dd77cd8cbd36f7681e2597d908dd8e55bf249392
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 39054fb6bf82a344cb38613164cb42968aa632f7
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37960346"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55261418"
 ---
-# <a name="type-of-optional-value-for-optional-parameter-ltparameternamegt-is-not-cls-compliant"></a>Typ nepovinné hodnoty pro nepovinný parametr &lt;parametername&gt; není kompatibilní se Specifikací CLS
+# <a name="type-of-optional-value-for-optional-parameter-parametername-is-not-cls-compliant"></a>Typ nepovinné hodnoty pro nepovinný parametr \<parametername > není kompatibilní se Specifikací CLS
 Postup je označen jako `<CLSCompliant(True)>` deklaruje, ale [volitelné](../../../visual-basic/language-reference/modifiers/optional.md) parametr s výchozí hodnotou typu nedodržující předpisy.  
   
  Postup, který má být zajištěn soulad [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS), musí používat jenom typy kompatibilní se Specifikací CLS. To platí pro typy parametrů, návratový typ a typy všech místních proměnných. Platí také pro výchozími hodnotami nepovinných parametrů.  

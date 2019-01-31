@@ -1,5 +1,5 @@
 ---
-title: '&lt;qualifyassembly –&gt; – Element'
+title: Element <qualifyAssembly>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#qualifyAssembly
@@ -11,14 +11,14 @@ helpviewer_keywords:
 ms.assetid: ad6442f6-1a9d-43b6-b733-04ac1b7f9b82
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b84ebe43c55e2a32e24206d875c65984b8c946b8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e862c52235c3836c79506dc2e80a264ceceddab3
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54501548"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55267821"
 ---
-# <a name="ltqualifyassemblygt-element"></a>&lt;qualifyassembly –&gt; – Element
+# <a name="qualifyassembly-element"></a>\<qualifyassembly – > – Element
 Určuje úplný název sestavení, které se mají dynamicky načíst při použití částečný název.  
   
  \<Konfigurace >  

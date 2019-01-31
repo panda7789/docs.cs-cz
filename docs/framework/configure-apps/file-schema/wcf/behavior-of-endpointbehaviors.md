@@ -1,20 +1,20 @@
 ---
-title: '&lt;behavior&gt; – &lt;endpointBehaviors&gt;'
+title: <behavior> z <endpointBehaviors>
 ms.date: 03/30/2017
 ms.assetid: b90ca3bc-3c22-4174-b903-e3a39898bd27
-ms.openlocfilehash: 73ba25cd2f4fe588aa620bfe566a979c08a83e22
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 34306f99f2343c987700e964aaa9800aa3f488fa
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54148198"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55283939"
 ---
-# <a name="ltbehaviorgt-of-ltendpointbehaviorsgt"></a>&lt;behavior&gt; – &lt;endpointBehaviors&gt;
+# <a name="behavior-of-endpointbehaviors"></a>\<chování > z \<endpointBehaviors >
 `behavior` Prvek obsahuje soubor nastavení chování koncového bodu. Každý chování je indexované podle jeho `name`. Koncové body můžete propojit s každou chování prostřednictvím tento název. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název. Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
  \<system.ServiceModel>  
 \<chování >  
-\<názvy endpointBehaviors >  
+\<endpointBehaviors>  
 \<chování >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,21 +42,21 @@ ms.locfileid: "54148198"
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<třídu clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Určuje pověření pro ověření klienta ke službě.|  
+|[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Určuje pověření pro ověření klienta ke službě.|  
 |[\<callbackDebug >](../../../../../docs/framework/configure-apps/file-schema/wcf/callbackdebug.md)|Určuje ladění služby pro objekt zpětného volání Windows Communication Foundation (WCF).|  
-|[\<callbackTimeouts >](../../../../../docs/framework/configure-apps/file-schema/wcf/callbacktimeouts.md)|Určuje časový limit pro zpětné volání klienta.|  
-|[\<clientVia >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientvia.md)|Určuje, že by neměl zabrat trasy zprávu.|  
-|[\<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer.md)|Obsahuje konfigurační data pro objektu DataContractSerializer.|  
-|[\<dispatcherSynchronization >](../../../../../docs/framework/configure-apps/file-schema/wcf/dispatchersynchronization.md)|Určuje chování koncového bodu umožňující službě odeslání asynchronních odpovědí.|  
-|[\<enableWebScript >](../../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md)|Umožňuje chování koncového bodu, který umožňuje využívat služby z webových stránek ASP.NET AJAX. Chování byste měli použít pouze ve spojení s buď \<webHttpBinding > standardní vazbu, nebo \<webMessageEncoding > element vazby.|  
-|[\<endpointDiscovery >](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointdiscovery.md)|Určuje různá nastavení zjišťování pro koncový bod, například jeho rozpoznatelnost, rozsahy a všechny vlastní rozšíření jeho metadat.|  
-|[\<soapProcessing >](../../../../../docs/framework/configure-apps/file-schema/wcf/soapprocessing.md)|Definuje chování koncového bodu klient použitý k zařazování zpráv mezi jinou vazbou typy a verze zpráv.|  
+|[\<callbackTimeouts>](../../../../../docs/framework/configure-apps/file-schema/wcf/callbacktimeouts.md)|Určuje časový limit pro zpětné volání klienta.|  
+|[\<clientVia>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientvia.md)|Určuje, že by neměl zabrat trasy zprávu.|  
+|[\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer.md)|Obsahuje konfigurační data pro objektu DataContractSerializer.|  
+|[\<dispatcherSynchronization>](../../../../../docs/framework/configure-apps/file-schema/wcf/dispatchersynchronization.md)|Určuje chování koncového bodu umožňující službě odeslání asynchronních odpovědí.|  
+|[\<enableWebScript>](../../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md)|Umožňuje chování koncového bodu, který umožňuje využívat služby z webových stránek ASP.NET AJAX. Chování byste měli použít pouze ve spojení s buď \<webHttpBinding > standardní vazbu, nebo \<webMessageEncoding > element vazby.|  
+|[\<endpointDiscovery>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointdiscovery.md)|Určuje různá nastavení zjišťování pro koncový bod, například jeho rozpoznatelnost, rozsahy a všechny vlastní rozšíření jeho metadat.|  
+|[\<soapProcessing>](../../../../../docs/framework/configure-apps/file-schema/wcf/soapprocessing.md)|Definuje chování koncového bodu klient použitý k zařazování zpráv mezi jinou vazbou typy a verze zpráv.|  
 |[\<synchronousReceive >](../../../../../docs/framework/configure-apps/file-schema/wcf/synchronousreceive-element.md)|Určuje chování za běhu pro příjem zpráv v aplikaci klienta nebo službě. Nemá žádné atributy nebo podřízené prvky.|  
-|[\<transactedBatching >](../../../../../docs/framework/configure-apps/file-schema/wcf/transactedbatching.md)|Určuje, zda jsou podporovány dávkové transakce pro operace příjmu.|  
-|[\<webHttp >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)|Určuje, WebHttpBehavior koncového bodu prostřednictvím konfigurace. Toto chování při použití ve spojení s \<webHttpBinding > standardní vazbu, umožňuje programovacího modelu webové služby WCF.|  
+|[\<transactedBatching>](../../../../../docs/framework/configure-apps/file-schema/wcf/transactedbatching.md)|Určuje, zda jsou podporovány dávkové transakce pro operace příjmu.|  
+|[\<webHttp>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)|Určuje, WebHttpBehavior koncového bodu prostřednictvím konfigurace. Toto chování při použití ve spojení s \<webHttpBinding > standardní vazbu, umožňuje programovacího modelu webové služby WCF.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<názvy endpointBehaviors >](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)|Kolekce elementů chování koncového bodu.|
+|[\<endpointBehaviors>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)|Kolekce elementů chování koncového bodu.|

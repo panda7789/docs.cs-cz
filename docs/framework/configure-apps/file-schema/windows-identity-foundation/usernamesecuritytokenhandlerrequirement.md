@@ -1,23 +1,23 @@
 ---
-title: '&lt;userNameSecurityTokenHandlerRequirement&gt;'
+title: <userNameSecurityTokenHandlerRequirement>
 ms.date: 03/30/2017
 ms.assetid: 6ec3bac1-b014-49ae-843c-c54518cb709a
 author: BrucePerlerMS
-ms.openlocfilehash: dfcaad8b150321fda2a86e601bf57204cbdc1a0e
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 18769794da8528f085c567264827db5aa6b214f1
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123381"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55271886"
 ---
-# <a name="ltusernamesecuritytokenhandlerrequirementgt"></a>&lt;userNameSecurityTokenHandlerRequirement&gt;
+# <a name="usernamesecuritytokenhandlerrequirement"></a>\<userNameSecurityTokenHandlerRequirement>
 Poskytuje konfiguraci pro <xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler> třídy nebo odvozené třídy.  
   
  \<system.identityModel>  
-\<identityConfiguration >  
-\<securityTokenHandlers >  
+\<identityConfiguration>  
+\<securityTokenHandlers>  
 \<add>  
-\<userNameSecurityTokenHandlerRequirement >  
+\<userNameSecurityTokenHandlerRequirement>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,7 +44,7 @@ Poskytuje konfiguraci pro <xref:System.IdentityModel.Services.Tokens.MembershipU
 |membershipProviderName|Určuje, <xref:System.Web.Security.MembershipProvider> , který by měly být používány obslužnou rutinu tokenu zabezpečení.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

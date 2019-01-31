@@ -1,5 +1,5 @@
 ---
-title: '&lt;gcServer&gt; Element'
+title: Element <gcServer>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/gcServer
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 8d25b80e-2581-4803-bd87-a59528e3cb03
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dc54b8554d788cacf48aeeda31f8ed300c469b92
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4c5cfe52d37c3ce2e78d07886b0856be46bfaadc
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54506846"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55287557"
 ---
-# <a name="ltgcservergt-element"></a>&lt;gcServer&gt; Element
+# <a name="gcserver-element"></a>\<gcServer> Element
 Určuje, zda modul common language runtime spustí uvolnění paměti serveru.  
   
  \<Konfigurace >  

@@ -1,15 +1,15 @@
 ---
-title: '&lt;messageSenderAuthentication&gt;'
+title: <messageSenderAuthentication>
 ms.date: 03/30/2017
 ms.assetid: ea62fc06-55fb-42e0-aa2b-8867bdf4b415
-ms.openlocfilehash: 848c46e4a9144b4fa0827b40818c544f1e5d35ec
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4749aeebedd9f918c2ed1a119767681f4c3ded37
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54688841"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55263664"
 ---
-# <a name="ltmessagesenderauthenticationgt"></a>&lt;messageSenderAuthentication&gt;
+# <a name="messagesenderauthentication"></a>\<messageSenderAuthentication>
 Určuje nastavení ověřování pro sdílené certifikát používaný službou odesílatele zprávy.  
   
  \<system.ServiceModel>  

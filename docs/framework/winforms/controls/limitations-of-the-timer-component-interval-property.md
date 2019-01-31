@@ -1,5 +1,5 @@
 ---
-title: Omezení součásti Windows Forms Timer&#39;vlastnosti Interval s
+title: Omezení vlastnosti intervalu součásti Windows Forms Timer
 ms.date: 03/30/2017
 helpviewer_keywords:
 - timers [Windows Forms], event intervals
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - timers [Windows Forms], Windows-based
 - Timer component [Windows Forms], limitations of Interval property
 ms.assetid: 7e5fb513-77e7-4046-a8e8-aab94e61ca0f
-ms.openlocfilehash: 86cfcce65998d19aea8592ae33c5baf58e1ff0fc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2d8e25d9d27c0908f2d794a0c3c9646024984764
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54516951"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55269667"
 ---
-# <a name="limitations-of-the-windows-forms-timer-component39s-interval-property"></a>Omezení součásti Windows Forms Timer&#39;vlastnosti Interval s
+# <a name="limitations-of-the-windows-forms-timer-components-interval-property"></a>Omezení vlastnosti intervalu součásti Windows Forms Timer
 Windows Forms <xref:System.Windows.Forms.Timer> komponenta má <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost, která určuje počet milisekund, které prochází mezi jeden časovače událostí a dalších. Pokud součást je zakázáno, časovač bude dál přijímat <xref:System.Windows.Forms.Timer.Tick> událost v intervalech přibližně stejnou dobu.  
   
  Tato součást je určená pro prostředí Windows Forms. Pokud potřebujete časovač, který je vhodný pro prostředí serveru, přečtěte si [Úvod do serverových časovače](https://msdn.microsoft.com/library/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).  

@@ -1,15 +1,15 @@
 ---
-title: '&lt;httpTransport&gt;'
+title: <httpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8b30c065-b32a-4fa3-8eb4-5537a9c6b897
-ms.openlocfilehash: 1e6cb812d68d5f26a837ff3e1124034a8a648be4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c7f34933331d2ba5d04fb338f553ffd662e8cac9
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54541076"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55275103"
 ---
-# <a name="lthttptransportgt"></a>&lt;httpTransport&gt;
+# <a name="httptransport"></a>\<httpTransport>
 Určuje přenos pomocí protokolu HTTP při odesílání zpráv SOAP pro vlastní vazbu.  
   
  \<system.serviceModel>  

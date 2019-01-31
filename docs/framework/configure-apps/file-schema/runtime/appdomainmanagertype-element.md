@@ -1,5 +1,5 @@
 ---
-title: '&lt;appDomainManagerType&gt; Element'
+title: Element <appDomainManagerType>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - appDomainManagerType element
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: ae8d5a7e-e7f7-47f7-98d9-455cc243a322
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b5ce973abc92080ec24fe909948f03f58eb05dec
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 25a3bf60986b571b473561d4258a76624bbfc982
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54679081"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55262475"
 ---
-# <a name="ltappdomainmanagertypegt-element"></a>&lt;appDomainManagerType&gt; Element
+# <a name="appdomainmanagertype-element"></a>\<appDomainManagerType> Element
 Určuje typ, který slouží jako správce domény aplikace pro výchozí domény aplikace.  
   
  \<Konfigurace >  

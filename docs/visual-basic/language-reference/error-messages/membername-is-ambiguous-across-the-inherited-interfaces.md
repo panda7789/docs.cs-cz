@@ -1,5 +1,5 @@
 ---
-title: '&#39;&lt;MemberName&gt; &#39; je dvojznačný ve zděděných rozhraních &#39; &lt;interfacename1&gt; &#39; a &#39; &lt;interfacename2&gt;&#39;'
+title: Název '<membername>' je dvojznačný ve zděděných rozhraních '<interfacename1>' a '<interfacename2>'.
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30685
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30685
 ms.assetid: 756add7a-23d5-4b4f-a48d-8297d6459c73
-ms.openlocfilehash: e6d6a82331185060d6f08c3375dc5a628b65df1a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1548c9894d476cc4b92d6581362d309e7b4d00d4
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54506292"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55264987"
 ---
-# <a name="39ltmembernamegt39-is-ambiguous-across-the-inherited-interfaces-39ltinterfacename1gt39-and-39ltinterfacename2gt39"></a>&#39;&lt;MemberName&gt; &#39; je dvojznačný ve zděděných rozhraních &#39; &lt;interfacename1&gt; &#39; a &#39; &lt;interfacename2&gt;&#39;
+# <a name="membername-is-ambiguous-across-the-inherited-interfaces-interfacename1-and-interfacename2"></a>"\<membername >' je dvojznačný ve zděděných rozhraních\<interfacename1 >' a '\<interfacename2 >"
 Dva nebo více členů se stejným názvem rozhraní dědí z více rozhraní.  
   
  **ID chyby:** BC30685  
