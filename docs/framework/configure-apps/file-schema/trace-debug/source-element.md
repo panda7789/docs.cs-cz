@@ -1,5 +1,5 @@
 ---
-title: '&lt;Zdroj&gt; – Element'
+title: Element <source>
 ms.date: 09/29/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source
@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - <source> element
 - source element
-ms.openlocfilehash: 1e2fadc823c806077f69cd837c5d8443a2090e9f
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: a528e0f77efea6df7379a0f01495bc09d2ed0b24
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55083861"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55254480"
 ---
-# <a name="ltsourcegt-element"></a>&lt;Zdroj&gt; – Element
+# <a name="source-element"></a>\<zdroj > – Element
 Určuje zdroj trasování, který iniciuje trasovací zprávy.  
   
  \<Konfigurace >  
