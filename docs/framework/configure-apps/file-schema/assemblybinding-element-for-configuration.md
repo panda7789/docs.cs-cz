@@ -1,5 +1,5 @@
 ---
-title: '&lt;assemblybinding –&gt; – element pro &lt;konfigurace&gt;'
+title: <assemblyBinding> – element pro element <configuration>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/assemblyBinding
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - assemblyBinding Element
 - <assemblyBinding> Element
 ms.assetid: 6cc55983-b894-449b-8e26-b258e53939cd
-ms.openlocfilehash: 12065d8bc484f7bbf77ae18c67df1de0845167b2
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: f5992a6085c32d37f56319cf8b2c361542c441e7
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55083896"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55257326"
 ---
 # <a name="assemblybinding-element-for-configuration"></a>\<assemblybinding – > – element pro \<configuration >
 
@@ -52,7 +52,7 @@ Určuje zásady vazeb sestavení na úrovni konfigurace.
 [  **\<Linkedconfiguration – >** ](~/docs/framework/configure-apps/file-schema/linkedconfiguration-element.md) element zjednodušuje správu sestavení komponent tím, že konfigurační soubory v konfiguračních souborech aplikace, které chcete zahrnout sestavení dobře známé umístění, spíše než duplikace nastavení konfigurace sestavení.
 
 > [!NOTE]
->  **\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.
+> **\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.
 
 ## <a name="example"></a>Příklad
 

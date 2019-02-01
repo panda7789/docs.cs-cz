@@ -1,5 +1,5 @@
 ---
-title: '&lt;declaredTypes&gt;'
+title: <declaredTypes>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - dataContractSerializer element
@@ -8,17 +8,17 @@ helpviewer_keywords:
 - KnownTypes
 - <declaredTypes> element
 ms.assetid: f35184e4-9d9e-4d37-8fb4-d5b58220eb3e
-ms.openlocfilehash: 405a6f21af1cb3508b7b88625101ed75f198bbaa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d347afb183b23410359a0972d7fd3b1f851971bd
+ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54682664"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "55264986"
 ---
-# <a name="ltdeclaredtypesgt"></a>&lt;declaredTypes&gt;
+# <a name="declaredtypes"></a>\<declaredTypes>
 Obsahuje známé typy, které <xref:System.Runtime.Serialization.DataContractSerializer> používá při deserializaci.  
   
- Další informace o kontraktech dat a známých typech najdete v tématu [známé typy kontraktů dat.](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
+ Další informace o kontraktech dat a známých typech najdete v tématu [známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
   
  system.runtime.serialization  
 \<dataContractSerializer>  
