@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 940bd8b7fe0be79ea6448b1eab69359bdb92fdc9
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: fc90bedeee2d04c28a3860713ca5952a4564d3bd
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50198169"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55674734"
 ---
 # <a name="64-bit-applications"></a>64bitové aplikace
 Když kompilujete aplikace, můžete určit, že se má spustit v operačním systému Windows 64-bit buď jako nativní aplikaci nebo v modulu WOW64 (Windows 32-bit na Windows 64-bit). Subsystém WOW64 je prostředí kompatibility, která umožňuje 32-bit aplikaci pro spuštění v 64bitovém systému. Subsystém WOW64 je součástí všech 64bitové verze operačního systému Windows.  
@@ -38,7 +38,7 @@ Když kompilujete aplikace, můžete určit, že se má spustit v operačním sy
   
 -   Kód, který přetypování `IntPtr` k `Int32`.  
   
- Další informace o vytvoření portu 32bitové aplikace ke spuštění v 64bitovém modulu CLR najdete v tématu [přenesení 32bitového spravovaného kódu na 64bitovou verzi](https://msdn.microsoft.com/library/ms973190.aspx).  
+ Další informace o vytvoření portu 32bitové aplikace ke spuštění v 64bitovém modulu CLR najdete v tématu [přenesení 32bitového spravovaného kódu na 64bitovou verzi](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973190(v=msdn.10)).  
   
 ## <a name="general-64-bit-programming-information"></a>Obecné informace o 64bitovém programování  
  Obecné informace o 64bitové programování najdete v následujících dokumentech:  

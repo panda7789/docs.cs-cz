@@ -5,12 +5,12 @@ helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 24a5cdff-7ed9-4195-93f3-edf6899019fc
-ms.openlocfilehash: 25b74de66fbf053b4d9129ab6ca0bef1530bf228
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: ba4e7e790860696f4489e9ef7b73bddcb8c4e399
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55083753"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55674435"
 ---
 # <a name="assembly-binding-redirection-security-permission"></a>Bezpečnostní oprávnění k přesměrování vazby sestavení
 Explicitní přesměrování vazeb sestavení v konfiguračním souboru aplikace vyžaduje oprávnění zabezpečení. To platí pro přesměrování sestavení rozhraní .NET Framework a sestavení třetích stran. Oprávnění je udělován nastavením <xref:System.Security.Permissions.SecurityPermissionFlag> příznaku <xref:System.Security.Permissions.SecurityPermission>. Spravovaná sestavení nemají žádná oprávnění ve výchozím nastavení.  
@@ -31,6 +31,7 @@ Explicitní přesměrování vazeb sestavení v konfiguračním souboru aplikac
  Správce může změnit nastavení zabezpečení pro podporu nebo omezit určité scénáře na daný počítač. Nejsou žádné nástroje pro změnu **BindingRedirects** příznak nastavení z výchozí hodnoty; správce musíte ručně upravit soubor Security.config na počítači uživatele.  
   
 ## <a name="see-also"></a>Viz také:
-- [Soubory zásad vydavatele a spuštění vedle sebe](https://msdn.microsoft.com/library/97a042be-4d72-40c3-91c0-76fd36bdf133)
+
+- [Soubory zásad vydavatele a spuštění vedle sebe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/06d2bae3(v=vs.100))
 - [Postupy: Povolení a zákaz automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)
 - [Souběžné spouštění](../../../docs/framework/deployment/side-by-side-execution.md)

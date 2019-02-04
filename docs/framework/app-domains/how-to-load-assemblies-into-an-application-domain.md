@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 1432aa2d-bd83-4346-bf3b-a1b7920e2aa9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6b816c3a2c4f684993117deb38b40f4436a627c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: df3fa60c4fcacc84be36e49e40933d195a9e43e5
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54653798"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55674929"
 ---
 # <a name="how-to-load-assemblies-into-an-application-domain"></a>Postupy: Načtení sestavení do domény aplikace
 Existuje několik způsobů, jak načíst sestavení do domény aplikace. Doporučeným způsobem je použít `static` (`Shared` v jazyce Visual Basic) <xref:System.Reflection.Assembly.Load%2A> metodu <xref:System.Reflection.Assembly?displayProperty=nameWithType> třídy. Další způsoby, které lze načíst sestavení patří:  
@@ -37,7 +37,7 @@ Existuje několik způsobů, jak načíst sestavení do domény aplikace. Doporu
 > [!NOTE]
 >  Od verze rozhraní .NET Framework verze 2.0, nenačte modul runtime, který byl zkompilován s verzí rozhraní .NET Framework, která má vyšší číslo verze než aktuálně zavedený modul runtime sestavení. To platí pro kombinaci hlavní a vedlejší součásti číslo verze.  
   
- Můžete zadat tak, jak just-in-time (JIT) kompilaci kódu z načtených sestavení jsou sdílena mezi doménami aplikace. Další informace najdete v tématu [doménám a sestavením aplikací](https://msdn.microsoft.com/library/433b04ae-4ba8-4849-9dbd-79194f240346).  
+ Můžete zadat tak, jak just-in-time (JIT) kompilaci kódu z načtených sestavení jsou sdílena mezi doménami aplikace. Další informace najdete v tématu [doménám a sestavením aplikací](application-domains.md#application-domains-and-assemblies).  
   
 ## <a name="example"></a>Příklad  
  Následující kód načte sestavení do aktuální domény aplikace s názvem "example.exe" nebo "example.dll" získá typ s názvem `Example` ze sestavení, získá konstruktor bez parametrů metodu s názvem `MethodA` u tohoto typu a provede metodu. Úplné informace o získání informací z načtené sestavení, naleznete v tématu [dynamické načtení a použití typů](../../../docs/framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
@@ -52,4 +52,4 @@ Existuje několik způsobů, jak načíst sestavení do domény aplikace. Doporu
 - [Reflexe](../../../docs/framework/reflection-and-codedom/reflection.md)
 - [Používání domén aplikací](../../../docs/framework/app-domains/use.md)
 - [Postupy: Načtení sestavení do kontextu pouze pro reflexi](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)
-- [Domény a sestavení aplikací](https://msdn.microsoft.com/library/433b04ae-4ba8-4849-9dbd-79194f240346)
+- [Doménám a sestavením aplikací](application-domains.md#application-domains-and-assemblies)

@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: fc71e661a5fd2de2a69da36df0fc60616b149802
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 84ab1a67aca30aa1967ef2fb11f930bf14ec45e3
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127846"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55675475"
 ---
 # <a name="domain-events-design-and-implementation"></a>Domény události: návrh a implementace
 
@@ -31,7 +31,7 @@ Stručně řečeno události domény můžete vyjádřit explicitně, pravidla d
 
 Je důležité zajistit, že stejně jako databázové transakce buď všechny operace související s událostí domény úspěšně dokončit nebo žádná z nich proveďte.
 
-Domény události jsou podobné událostem zasílání zpráv ve stylu s jeden důležitý rozdíl. S skutečné zasílání zpráv služby Řízení front zpráv, zprostředkovatele zpráv a service bus pomocí AMPQ zprávu vždy odeslán asynchronně a předávat v rámci procesy a počítače. To je užitečné pro integraci více ohraničených kontextech, mikroslužby nebo dokonce během různých aplikací. S událostmi domény chcete vyvolat událost z operace domény, které jsou aktuálně spuštěné, ale chcete, aby všechny vedlejší účinky na výskyt ve stejné doméně.
+Domény události jsou podobné událostem zasílání zpráv ve stylu s jeden důležitý rozdíl. S skutečné zasílání zpráv služby Řízení front zpráv, zprostředkovatele zpráv a služby Service bus pomocí protokolu AMQP zprávu vždy odeslán asynchronně a předávat v rámci procesy a počítače. To je užitečné pro integraci více ohraničených kontextech, mikroslužby nebo dokonce během různých aplikací. S událostmi domény chcete vyvolat událost z operace domény, které jsou aktuálně spuštěné, ale chcete, aby všechny vedlejší účinky na výskyt ve stejné doméně.
 
 Události domény a jejich vedlejších účinků (akce aktivuje později, které se spravují přes obslužné rutiny událostí) se budou objevovat téměř okamžitě, obvykle v rámci procesu a ve stejné doméně. Události domény může proto být synchronní nebo asynchronní. Integrace událostí, ale musí být vždy asynchronní.
 
@@ -358,7 +358,7 @@ Jak jsme uvedli, používejte události domény o explicitní implementaci vedle
 - **Vaughn Vernon. Efektivní návrh agregace část II: Provádění agregací spolupracují** \
   [*https://dddcommunity.org/wp-content/uploads/files/pdf\_articles/Vernon\_2011\_2.pdf*](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
 
-- **Jimmy Bogard. Posílení vaší domény: Události domény** \
+- **Jimmy Bogard. Posílení vaší domény: Domain Events** \
   [*https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/*](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)
 
 - **ADAM Truong. Příklad události modelu domény** \
@@ -376,7 +376,7 @@ Jak jsme uvedli, používejte události domény o explicitní implementaci vedle
 - **Jan Kronquist. Není publikovat události domény, vraťte je!** \
   [*https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/*](https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/)
 
-- **De la Torre Cesarovi. Domény události vs. Integrace událostí v architektur mikroslužeb a DDD** \
+- **De la Torre Cesarovi. Domain Events vs. Integrace událostí v architektur mikroslužeb a DDD** \
   [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/)
 
 >[!div class="step-by-step"]

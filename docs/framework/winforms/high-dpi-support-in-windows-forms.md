@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 075ea4c3-900c-4f8a-9dd2-13ea6804346b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2c591aa19a13af2f5b38c46a886b8e0ee2f76c38
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8b5ad28fbfd668819b0bcab30c33892679b4bd8c
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540647"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55674916"
 ---
 # <a name="high-dpi-support-in-windows-forms"></a>Podpora vysoké DPI ve Windows Forms
 
@@ -39,7 +39,7 @@ Kromě toho Konfigurace vysoké rozlišení DPI podpory ve vaší aplikaci Windo
   Chcete-li to provést, přidejte následující do souboru manifestu:
 
   ```xml
-  <compatibility xmlns="urn:schemas-microsoft.com:compatibility.v1">
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
     <application>
       <!-- Windows 10 compatibility -->
       <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />

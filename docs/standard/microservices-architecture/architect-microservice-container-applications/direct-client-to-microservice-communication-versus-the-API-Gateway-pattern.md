@@ -4,12 +4,12 @@ description: Pochopení rozdílů a používá model brány rozhraní API a př�
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: 7e81b46c2dbcee3b3658ab3c2e576644f0e7b372
-ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
+ms.openlocfilehash: 35bebd9429dabbe0e3ddc3549a504719321e47e1
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55479890"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55675449"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Vzor brány rozhraní API a přímá komunikace klienta mikroslužeb
 
@@ -25,7 +25,7 @@ Možných způsobů je použít architekturu přímá komunikace klienta mikrosl
 
 V takovém případě jednotlivých mikroslužeb má veřejný koncový bod, někdy s jiným portem TCP u jednotlivých mikroslužeb. Příkladem adresy URL pro konkrétní službu, může být následující adresy URL v Azure:
 
-<http://eshoponcontainers.westus.cloudapp.azure.com:88/>
+`http://eshoponcontainers.westus.cloudapp.azure.com:88/`
 
 V produkčním prostředí založené na clusteru, která umožní mapování adresy URL pro vyrovnávání zatížení používá v clusteru, který pak distribuuje požadavky mezi mikroslužby. V produkčním prostředí můžete mít Application Delivery Controller (ADC) jako [Azure Application Gateway](https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction) mezi mikroslužby a Internetem. To slouží jako transparentní vrstvy, který nejen provede Vyrovnávání zatížení, ale chrání služby tím, že nabízí ukončení protokolu SSL. To zvyšuje zatížení hostitelů přesměrováním ukončení protokolu SSL náročnou na procesor a další směrování úkoly ke službě Azure Application Gateway. V každém případě jsou transparentní z hlediska of Architektura logické aplikační nástroje pro vyrovnávání zatížení a ADC.
 

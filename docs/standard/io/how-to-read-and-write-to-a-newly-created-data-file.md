@@ -1,6 +1,6 @@
 ---
 title: 'Postupy: Čtení a zápis do nově vytvořeného datového souboru'
-ms.date: 03/30/2017
+ms.date: 01/21/2019
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -15,35 +15,36 @@ helpviewer_keywords:
 ms.assetid: e209d949-31e8-44ea-8e38-87f9093f3093
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4f51042564158cfd7924164ce2b1a0fcc9d2658d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 065907ae0d4a38ff2ef68de6025251e28220ee96
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54562827"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55674617"
 ---
 # <a name="how-to-read-and-write-to-a-newly-created-data-file"></a>Postupy: Čtení a zápis do nově vytvořeného datového souboru
-Třídy <xref:System.IO.BinaryWriter> a <xref:System.IO.BinaryReader?displayProperty=nameWithType> se používají spíše pro zápis a čtení dat než řetězců znaků. Následující příklad znázorňuje, jakým způsobem lze zapisovat a číst data z nového prázdného datového proudu souboru nazvaného `Test.data`. Po vytvoření datového souboru v aktuálním adresáři jsou vytvořeny přidružené objekty <xref:System.IO.BinaryWriter> a <xref:System.IO.BinaryReader> a objekt <xref:System.IO.BinaryWriter> se používá k zápisu celých čísel 0 až 10 do `Test.data`, čímž je ukazatel souboru ponechán na konci souboru. Po nastavení ukazatele souboru zpět na začátek přečte objekt <xref:System.IO.BinaryReader> zadaný obsah.  
+<xref:System.IO.BinaryWriter?displayProperty=nameWithType> a <xref:System.IO.BinaryReader?displayProperty=nameWithType> třídy se používají pro zápis a čtení dat než řetězců znaků. Následující příklad ukazuje, jak vytvořit prázdný soubor proud, zápis dat do a z něj číst data. 
+
+V příkladu se vytvoří datový soubor s názvem *Test.data* v aktuálním adresáři vytvoří přidružený <xref:System.IO.BinaryWriter> a <xref:System.IO.BinaryReader> objekty a používá <xref:System.IO.BinaryWriter> objekt k zápisu celých čísel 0 až 10 *Test.data*, které nechá ukazatel na soubor na konci souboru. <xref:System.IO.BinaryReader> Objekt pak nastaví ukazatele souboru zpět k původu a přečte zadaný obsah.  
+  
+> [!NOTE]
+> Pokud *Test.data* již existuje v aktuálním adresáři <xref:System.IO.IOException> je vyvolána výjimka. Použijte volbu režimu souboru <xref:System.IO.FileMode.Create?displayProperty=nameWithType> spíše než <xref:System.IO.FileMode.CreateNew?displayProperty=nameWithType> vždy vytvořit nový soubor bez vyvolání výjimky.  
   
 ## <a name="example"></a>Příklad  
- [!code-cpp[System.IO.BinaryReaderWriter#7](../../../samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/CPP/source6.cpp#7)]
  [!code-csharp[System.IO.BinaryReaderWriter#7](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/CS/source6.cs#7)]
  [!code-vb[System.IO.BinaryReaderWriter#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.BinaryReaderWriter/VB/source6.vb#7)]  
   
-## <a name="robust-programming"></a>Robustní programování  
- Pokud data `Test.data` již v aktuálním adresáři existují, je vyvolána výjimka <xref:System.IO.IOException>. Chcete-li vytvořit nový soubor bez vyvolání výjimky, je třeba při inicializaci datového proudu souboru použít vždy volbu režimu souboru <xref:System.IO.FileMode.Create?displayProperty=nameWithType>.  
-  
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.IO.BinaryReader>
-- <xref:System.IO.BinaryWriter>
-- <xref:System.IO.FileStream>
-- <xref:System.IO.FileStream.Seek%2A?displayProperty=nameWithType>
-- <xref:System.IO.SeekOrigin>
-- [Postupy: Vytvoření výčtu adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)
-- [Postupy: Otevření a připojení k souboru protokolu](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)
-- [Postupy: Čtení textu ze souboru](../../../docs/standard/io/how-to-read-text-from-a-file.md)
-- [Postupy: Zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md)
-- [Postupy: Čtení znaků z řetězce](../../../docs/standard/io/how-to-read-characters-from-a-string.md)
-- [Postupy: Zápis znaků do řetězce](../../../docs/standard/io/how-to-write-characters-to-a-string.md)
-- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)
+- <xref:System.IO.BinaryReader>  
+- <xref:System.IO.BinaryWriter>  
+- <xref:System.IO.FileStream>  
+- <xref:System.IO.FileStream.Seek%2A?displayProperty=nameWithType>  
+- <xref:System.IO.SeekOrigin>  
+- [Postupy: Vytvoření výčtu adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)  
+- [Postupy: Otevření a připojení k souboru protokolu](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)  
+- [Postupy: Čtení textu ze souboru](../../../docs/standard/io/how-to-read-text-from-a-file.md)  
+- [Postupy: Zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md)  
+- [Postupy: Čtení znaků z řetězce](../../../docs/standard/io/how-to-read-characters-from-a-string.md)  
+- [Postupy: Zápis znaků do řetězce](../../../docs/standard/io/how-to-write-characters-to-a-string.md)  
+- [Vstupně-výstupních operací souborů a datových proudů](../../../docs/standard/io/index.md)

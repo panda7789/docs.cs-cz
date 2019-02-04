@@ -2,12 +2,12 @@
 title: <add> z <commonParameters>
 ms.date: 03/30/2017
 ms.assetid: 3713bf25-20c8-455f-bb85-de46b6487932
-ms.openlocfilehash: 63ff98d91db7c8c112b0b00e9bd37c3262bcad6d
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: e0ca00911577f9f210def9326df261f772f9c26d
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55258617"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55674422"
 ---
 # <a name="add-of-commonparameters"></a>\<Přidat > z \<commonParameters >
 Určuje dvojice název hodnota parametrů, které jsou používány globálně u více služeb. Obvykle tento parametr obsahuje připojovací řetězec databáze, kterou může sdílet trvalé služby.  
@@ -47,7 +47,7 @@ Určuje dvojice název hodnota parametrů, které jsou používány globálně u
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<commonParameters>](https://msdn.microsoft.com/library/d0e1e6fc-985a-4713-b7da-194e30dfab4c)|Kolekce společných parametrů, které jsou používané službami. Tato kolekce bude obvykle obsahují řetězec připojení k databázi, kterou může sdílet trvalé služby.|  
+|[\<commonParameters>](commonparameters.md)|Kolekce společných parametrů, které jsou používané službami. Tato kolekce bude obvykle obsahují řetězec připojení k databázi, kterou může sdílet trvalé služby.|  
   
 ## <a name="remarks"></a>Poznámky  
  `<commonParameters>` Všechny parametry, které jsou používány globálně u více služeb, například definuje element `ConnectionString` při použití <xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService>.  
@@ -92,4 +92,4 @@ Určuje dvojice název hodnota parametrů, které jsou používány globálně u
 - <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService>
 - <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>
 - [Konfigurační soubory pracovního postupu](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))
-- [\<commonParameters>](https://msdn.microsoft.com/library/d0e1e6fc-985a-4713-b7da-194e30dfab4c)
+- [\<commonParameters>](commonparameters.md)

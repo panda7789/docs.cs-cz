@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: f04816ab-110d-4e28-9283-845d6d9a4a68
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4289f013123796badcaedac2f89e1560397a0aa4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b6c0ead0715221354970ddee90e89bae7c583266
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54659001"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55675423"
 ---
 # <a name="runtime-settings-schema"></a>Schéma nastavení běhového prostředí
 Nastavení modulu runtime se používají modulem common language runtime ke konfiguraci aplikací využívajících rozhraní .NET Framework.  
@@ -133,5 +133,5 @@ Nastavení modulu runtime se používají modulem common language runtime ke kon
   
 ## <a name="see-also"></a>Viz také:
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Postupy: Zakázat souběžné uvolňování paměti](https://msdn.microsoft.com/library/ba2c6c67-5778-497c-9fac-5f793b5500c7)
+- [Chcete-li zakázat souběžné uvolňování paměti](gcconcurrent-element.md#to-disable-background-garbage-collection)
 - [Přesměrování verzí sestavení](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

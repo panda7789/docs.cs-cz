@@ -10,12 +10,12 @@ ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
 author: mairaw
 ms.author: mairaw
 ms.topic: conceptual
-ms.openlocfilehash: 84e2d07275194683661a75e422847bbe0ebf1383
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: a48a145cd337a18c4ce63b281e1c82032d0532e7
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50198364"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55674409"
 ---
 # <a name="additional-class-libraries-and-apis"></a>Další knihovny tříd a rozhraní API
 
@@ -29,7 +29,7 @@ Kromě toho některé knihovny cílit na konkrétní platformy nebo implementace
 | ------- | ----------- |  
 | <xref:System.Collections.Immutable> | Obsahuje kolekce, které jsou vlákna bezpečné a zaručené nikdy nezmění jejich obsah. |
 | <xref:System.Net.Http.WinHttpHandler> | Poskytuje obslužné rutiny zpráv pro <xref:System.Net.Http.HttpClient> podle WinHTTP rozhraní Windows. |
-| [System.Numerics.Vectors](https://msdn.microsoft.com/library/mt452176.aspx) | Poskytuje knihovnu vektorové typy, které můžete využít výhod SIMD hardwarové akcelerace.| 
+| <xref:System.Numerics> | Poskytuje knihovnu vektorové typy, které můžete využít výhod SIMD hardwarové akcelerace.| 
 | <xref:System.Threading.Tasks.Dataflow> | Knihovna TPL datového toku poskytuje součásti toku dat a pomáhá tak zvýšit odolnost aplikace pro práci s souběžnosti. |  
 
 ## <a name="platform-specific-libraries"></a>Knihovny pro konkrétní platformu
@@ -57,8 +57,8 @@ Tato rozhraní API podporují produktovou infrastrukturu a nejsou určené nebo 
 | [System.Net.ServicePoint.m\_ConnectionGroupList Field](../../../docs/framework/additional-apis/m_connectiongrouplist.md) |
 | [System.Net.ServicePointManager.s\_ServicePointTable Field](../../../docs/framework/additional-apis/s_servicepointtable.md) |
 | [System.Windows.Diagnostics.VisualDiagnostics.s\_isDebuggerCheckDisabledForTestPurposes Field](../../../docs/framework/additional-apis/s-isdebuggercheckdisabledfortestpurposes-field.md) |
-| [Třída System.Windows.Forms.Design.DataMemberFieldEditor](../../../docs/framework/additional-apis/datamemberfieldeditor-class.md) |
-| [Třída System.Windows.Forms.Design.DataMemberListEditor](../../../docs/framework/additional-apis/datamemberlisteditor-class.md) |
+| [System.Windows.Forms.Design.DataMemberFieldEditor Class](../../../docs/framework/additional-apis/datamemberfieldeditor-class.md) |
+| [System.Windows.Forms.Design.DataMemberListEditor Class](../../../docs/framework/additional-apis/datamemberlisteditor-class.md) |
   
 ## <a name="see-also"></a>Viz také:
 

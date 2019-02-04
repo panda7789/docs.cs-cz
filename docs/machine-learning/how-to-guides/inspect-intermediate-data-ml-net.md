@@ -1,14 +1,14 @@
 ---
 title: Zkontrolovat hodnoty dočasných dat během zpracování kanálu ML.NET
 description: Zjistěte, jak zkontrolovat hodnoty skutečné dočasných dat během ML.NET strojového učení zpracování kanálu
-ms.date: 11/07/2018
+ms.date: 01/30/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: cd229c120f7599c9a304a84a1669947e613fc917
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: b3a554bf7cd88219a66f91a18b9d983bb91c0f0e
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151535"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55675007"
 ---
 # <a name="inspect-intermediate-data-values-during-mlnet-pipeline-processing"></a>Zkontrolovat hodnoty dočasných dat během zpracování kanálu ML.NET
 
@@ -31,13 +31,16 @@ Label   Workclass   education   marital-status
 Naše třída je definována takto:
 
 ```csharp
-private class InspectedRow
+public class InspectedRow
 {
-    public bool IsOver50K;
-    public string Workclass;
-    public string Education;
-    public string MaritalStatus;
-    public string[] AllFeatures;
+    [LoadColumn(0)]
+    public bool IsOver50K { get; set; }
+    [LoadColumn(1)]
+    public string WorkClass { get; set; }
+    [LoadColumn(2)]
+    public string Education { get; set; }
+    [LoadColumn(3)]
+    public string MaritalStatus { get; set; }
 }
 ```
 
@@ -46,43 +49,23 @@ private class InspectedRow
 // as a catalog of available operations and as the source of randomness.
 var mlContext = new MLContext();
 
-// Create the reader: define the data columns and where to find them in the text file.
-var reader = mlContext.Data.TextReader(new TextLoader.Arguments
-{
-    Column = new[] {
-        // A boolean column depicting the 'label'.
-        new TextLoader.Column("IsOver50K", DataKind.BL, 0),
-        // Three text columns.
-        new TextLoader.Column("Workclass", DataKind.TX, 1),
-        new TextLoader.Column("Education", DataKind.TX, 2),
-        new TextLoader.Column("MaritalStatus", DataKind.TX, 3)
-    },
-    // First line of the file is a header, not a data row.
-    HasHeader = true
-});
+// Read the data into a data view.
+var data = mlContext.Data.ReadFromTextFile<InspectedRow>(dataPath, hasHeader: true);
 
 // Start creating our processing pipeline. For now, let's just concatenate all the text columns
 // together into one.
-var pipeline = mlContext.Transforms.Concatenate("AllFeatures", "Education", "MaritalStatus");
-
-// Let's verify that the data has been read correctly. 
-// First, we read the data file.
-var data = reader.Read(dataPath);
+var pipeline = mlContext.Transforms.Concatenate("AllFeatures", "WorkClass", "Education", "MaritalStatus");
 
 // Fit our data pipeline and transform data with it.
 var transformedData = pipeline.Fit(data).Transform(data);
-
-// 'transformedData' is a 'promise' of data. Let's actually read it.
-var someRows = transformedData
-    // Convert to an enumerable of user-defined type. 
-    .AsEnumerable<InspectedRow>(mlContext, reuseRowObject: false)
-    // Take a couple values as an array.
-    .Take(4).ToArray();
 
 // Extract the 'AllFeatures' column.
 // This will give the entire dataset: make sure to only take several row
 // in case the dataset is huge. The is similar to the static API, except
 // you have to specify the column name and type.
-var featureColumns = transformedData.GetColumn<string[]>(mlContext, "AllFeatures")
-    .Take(20).ToArray();
+var featureColumns =
+    transformedData
+        .GetColumn<string[]>(mlContext, "AllFeatures")
+        .Take(20)
+        .ToArray();
 ```
