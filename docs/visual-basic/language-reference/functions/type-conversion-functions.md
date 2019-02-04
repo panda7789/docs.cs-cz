@@ -81,12 +81,12 @@ helpviewer_keywords:
 - rounding numbers [Visual Basic], banker's rounding
 - type conversion [Visual Basic], Visual Basic vs. .NET Framework
 ms.assetid: d9d8d165-f967-44ff-a6cd-598e4740a99e
-ms.openlocfilehash: ea20569b207100886ddd4b40c8d4c86c55d5ddf1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: be5e1b5fff1feb8ef4cc2ff7fcbca193aafcd781
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54743540"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55674877"
 ---
 # <a name="type-conversion-functions-visual-basic"></a>Funkce pro převod typů (Visual Basic)
 Tyto funkce jsou zkompilovaný vloženě, což znamená, že kód převodu je součástí kódu, který se vyhodnotí výraz. Někdy není žádná volání procedury k provedení převodu, což zvyšuje výkon. Každá funkce převede výraz na určitý datový typ.  
@@ -128,7 +128,7 @@ CUShort(expression)
 |`CDbl`|[Datový typ Double](../../../visual-basic/language-reference/data-types/double-data-type.md)|-1.79769313486231570E + 308 do - 4.94065645841246544E-324 pro záporné hodnoty. 4.94065645841246544E-324 prostřednictvím 1.79769313486231570E + 308 pro kladné hodnoty.|  
 |`CDec`|[Datový typ Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|+/-79,228,162,514,264,337,593,543,950,335 škálovaných nula čísel, tedy čísla bez desetinných míst. Pro 28 desetinná čísla jsou v rozsahu +/-7,9228162514264337593543950335. Nejmenší možný počet nenulové je 0,0000000000000000000000000001 (+/-1E-28).|  
 |`CInt`|[Datový typ Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md)|<xref:System.Int32.MinValue?displayProperty=nameWithType> (-2,147,483,648) prostřednictvím <xref:System.Int32.MaxValue?displayProperty=nameWithType> (2 147 483 647); jsou zaokrouhleny zlomkové části.<sup> 1</sup> <br/><br/>Počínaje 15.8 jazyka Visual Basic, Visual Basic optimalizuje výkon pro převod celého čísla s plovoucí desetinnou čárkou `CInt` funkce, najdete v článku [poznámky](#remarks) části Další informace. Zobrazit [CInt příklad](#cint-example) oddílu příklad. |  
-|`CLng`|[Datový typ Long](../../../visual-basic/language-reference/data-types/long-data-type.md)|<xref:System.Int64.MaxValue?displayProperty=nameWithType> (-9,223,372,036,854,775,808) prostřednictvím <xref:System.Int64.MaxValue?displayProperty=nameWithType> (9,223,372,036,854,775,807); jsou zaokrouhleny zlomkové části.<sup> 1</sup><br/><br/>Počínaje 15.8 jazyka Visual Basic, Visual Basic optimalizuje výkon pro převod 64bitové celé číslo s plovoucí desetinnou čárkou `CLng` funkce, najdete v článku [poznámky](#remarks) části Další informace. Zobrazit [CInt příklad](#cint-example) oddílu příklad.|  
+|`CLng`|[Datový typ Long](../../../visual-basic/language-reference/data-types/long-data-type.md)|<xref:System.Int64.MinValue?displayProperty=nameWithType> (-9,223,372,036,854,775,808) prostřednictvím <xref:System.Int64.MaxValue?displayProperty=nameWithType> (9,223,372,036,854,775,807); jsou zaokrouhleny zlomkové části.<sup> 1</sup><br/><br/>Počínaje 15.8 jazyka Visual Basic, Visual Basic optimalizuje výkon pro převod 64bitové celé číslo s plovoucí desetinnou čárkou `CLng` funkce, najdete v článku [poznámky](#remarks) části Další informace. Zobrazit [CInt příklad](#cint-example) oddílu příklad.|  
 |`CObj`|[Datový typ Object](../../../visual-basic/language-reference/data-types/object-data-type.md)|Libovolný platný výraz.|  
 |`CSByte`|[Datový typ SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|<xref:System.SByte.MinValue?displayProperty=nameWithType> (-128) prostřednictvím <xref:System.SByte.MaxValue?displayProperty=nameWithType> (127); jsou zaokrouhleny zlomkové části.<sup> 1</sup><br/><br/>Počínaje 15.8 jazyka Visual Basic, Visual Basic optimalizuje výkon pro převod na bajty se znaménkem s plovoucí desetinnou čárkou `CSByte` funkce, najdete v článku [poznámky](#remarks) části Další informace. Zobrazit [CInt příklad](#cint-example) oddílu příklad.|  
 |`CShort`|[Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)|<xref:System.Int16.MinValue?displayProperty=nameWithType> (-32 768) prostřednictvím <xref:System.Int16.MaxValue?displayProperty=nameWithType> (32 767); jsou zaokrouhleny zlomkové části.<sup> 1</sup><br/><br/>Počínaje 15.8 jazyka Visual Basic, Visual Basic optimalizuje výkon pro převod 16bitové celé číslo s plovoucí desetinnou čárkou `CShort` funkce, najdete v článku [poznámky](#remarks) části Další informace. Zobrazit [CInt příklad](#cint-example) oddílu příklad.|  

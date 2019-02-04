@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <startup> element
 - startup element
 ms.assetid: 536acfd8-f827-452f-838a-e14fa3b87621
-ms.openlocfilehash: cc261097593150583072ab796df9de8edea5ca6e
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 5047cb0ab1c8206abd88dc795e50272d69f1fd3f
+ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55280199"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55674565"
 ---
 # <a name="startup-element"></a>\<Po spuštění > – element
 
@@ -61,7 +61,7 @@ Určuje informace o spuštění modulu runtime jazyka common.
 
 ## <a name="remarks"></a>Poznámky
 
- **\<SupportedRuntime >** element by měl být použit všemi aplikacemi sestavenými pomocí verze 1.1 nebo novější modul runtime. Aplikace sestavené s podporou pouze verze 1.0 modulu runtime musí použít  **\<requiredRuntime >** elementu.
+  **\<SupportedRuntime >** element by měl být použit všemi aplikacemi sestavenými pomocí verze 1.1 nebo novější modul runtime. Aplikace sestavené s podporou pouze verze 1.0 modulu runtime musí použít  **\<requiredRuntime >** elementu.
 
  Ignoruje při spuštění kódu pro aplikace hostované v aplikaci Internet Explorer  **\<spuštění >** elementu a jeho podřízené prvky.
 
@@ -70,7 +70,7 @@ Určuje informace o spuštění modulu runtime jazyka common.
  Tento atribut je užitečné, pokud vaše aplikace používá starší verzi aktivační cesty, jako [CorBindToRuntimeEx – funkce](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), a chcete, aby tyto cesty k aktivaci místo starší verzi modulu CLR verze 4 nebo pokud je vaše aplikace sestavován [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] ale má závislost na sestavení ve smíšeném režimu, vytvořené ve starší verzi rozhraní .NET Framework. V těchto scénářích, nastavte atribut na `true`.
 
 > [!NOTE]
-> Nastavením atributu na `true` brání načtení do stejného procesu efektivně zákaz funkce vedle sebe v procesu CLR verze 1.1 nebo CLR verze 2.0 (viz [spuštění vedle sebe pro spolupráci s COM](https://msdn.microsoft.com/library/4302318c-3586-49bf-8620-b9a39cdf4a32)).
+> Nastavením atributu na `true` brání načtení do stejného procesu efektivně zákaz funkce vedle sebe v procesu CLR verze 1.1 nebo CLR verze 2.0 (viz [spuštění vedle sebe pro spolupráci s COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))).
 
 ## <a name="example"></a>Příklad
 
@@ -97,5 +97,5 @@ Určuje informace o spuštění modulu runtime jazyka common.
 - [Schéma nastavení spouštění](index.md)
 - [Schéma konfiguračního souboru](../index.md)
 - [Postupy: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo novější verze](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
-- [Spuštění vedle sebe pro zprostředkovatele komunikace s objekty COM](https://msdn.microsoft.com/library/4302318c-3586-49bf-8620-b9a39cdf4a32)
+- [Spuštění vedle sebe pro zprostředkovatele komunikace s objekty COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8t8td04t(v=vs.100))
 - [Vnitroprocesové souběžné provádění](../../../deployment/in-process-side-by-side-execution.md)
