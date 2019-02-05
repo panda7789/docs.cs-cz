@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: vytváření dočasných certifikátů pro použití během vývoje.'
+title: 'Postupy: Vytváření dočasných certifikátů pro použití během vývoje'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: 2d0301b040d0fd9865eaf5c3f96fe320ccfd8488
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 609b142c5dd1cac92acf0f1c0a62d17a9b5c957e
+ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46698581"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55738627"
 ---
-# <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Postupy: vytváření dočasných certifikátů pro použití během vývoje.
+# <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Postupy: Vytváření dočasných certifikátů pro použití během vývoje
 
 Při vývoji zabezpečenou službu nebo klienta s použitím Windows Communication Foundation (WCF), je často nutné zadat certifikát X.509, které se použijí jako přihlašovací údaje. Certifikát je obvykle součástí řetěz certifikátů s kořenovou autoritou nalezen v úložišti důvěryhodných kořenových certifikačních autorit počítače. S řetěz certifikátů umožňuje určit obor sady certifikátů, kdy obvykle kořenová autorita je z vaší organizace nebo organizační jednotka. Pro emulaci to při vývoji, vytvoříte dva certifikáty splňovat požadavky na zabezpečení. První je certifikát podepsaný svým držitelem, který je umístěn v úložišti Důvěryhodné kořenové certifikační autority, a druhý certifikát je vytvořený z první a je umístěn v osobním úložišti umístění místního počítače nebo osobním úložišti Aktuální umístění uživatele. Toto téma vás provede kroky k vytvoření těchto dvou certifikátů pomocí Powershellu [New-SelfSignedCertificate)](/powershell/module/pkiclient/new-selfsignedcertificate) rutiny.
 
@@ -62,7 +62,7 @@ Jakmile se vytvoří certifikát podepsaný svým držitelem, můžete nainstalo
 
 ### <a name="to-install-a-self-signed-certificate-in-the-trusted-root-certification-authorities"></a>Chcete-li nainstalovat certifikát podepsaný svým držitelem v důvěryhodných kořenových certifikačních autorit
 
-1. Otevřete modul snap-in certifikátu. Další informace najdete v tématu [postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](how-to-view-certificates-with-the-mmc-snap-in.md).
+1. Otevřete modul snap-in certifikátu. Další informace najdete v tématu [jak: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](how-to-view-certificates-with-the-mmc-snap-in.md).
 
 2. Otevřete složku, která se má certifikát uložit buď **místního počítače** nebo **aktuálního uživatele**.
 
@@ -70,7 +70,7 @@ Jakmile se vytvoří certifikát podepsaný svým držitelem, můžete nainstalo
 
 4. Klikněte pravým tlačítkem na **certifikáty** složky a klikněte na tlačítko **všechny úkoly**, pak klikněte na tlačítko **Import**.
 
-5. Na obrazovce průvodce podle pokynů TempCa.cer naimportujte do úložiště.
+5. Na obrazovce průvodce podle pokynů RootCA.pfx naimportujte do úložiště.
 
 ## <a name="using-certificates-with-wcf"></a>Použití certifikátů s WCF
 
@@ -115,5 +115,5 @@ Nezapomeňte odstranit všechny dočasné kořenových certifikátů úřadu z *
 ## <a name="see-also"></a>Viz také:
 
 - [Práce s certifikáty](working-with-certificates.md)
-- [Postupy: Zobrazení certifikátů pomocí modulu snap-in konzoly MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
+- [Postupy: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
 - [Zabezpečení služeb a klientů](securing-services-and-clients.md)

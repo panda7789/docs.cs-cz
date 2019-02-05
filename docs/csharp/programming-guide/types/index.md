@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: ed666208c3d9bf2e9eb7d7f316cac3767e1bc718
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5d24e28b6a685cf4934c06c72ffbc8aa29748faa
+ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54604311"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55739313"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 ## <a name="types-variables-and-values"></a>Typy, proměnných a hodnot  
@@ -88,8 +88,8 @@ Typy hodnot a odkazové typy v CTS
  Předdefinované číselné typy jsou struktury a mají vlastnosti a metody, které dostanete:  
   
 ```csharp  
-// Static method on type Byte.  
-byte b = Byte.MaxValue;  
+// Static method on type byte.  
+byte b = byte.MaxValue;
 ```  
   
  Ale deklarujete je a přiřadit jim hodnoty tak jako by byly jednoduché neagregované typy:  

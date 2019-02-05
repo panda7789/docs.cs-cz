@@ -4,12 +4,12 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: e67febba-bacf-4e1f-a143-c141e063f90e
-ms.openlocfilehash: 8c16cf910546dcbe0a19efa13b552ffd4d9b6411
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 66c576df7499c90ae29399ab9b0bd93f0fda6cb2
+ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580967"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55738978"
 ---
 # <a name="visual-basic-compiler-options-listed-alphabetically"></a>Abecedně seřazené možnosti kompilátoru jazyka Visual Basic
 Kompilátor příkazového řádku jazyka Visual Basic se poskytuje jako alternativu ke kompilaci programů z integrovaného vývojového prostředí (IDE) sady Visual Studio. Následuje seznam možností příkazového řádku kompilátoru jazyka Visual Basic, seřazená podle abecedy.  
@@ -82,6 +82,4 @@ Kompilátor příkazového řádku jazyka Visual Basic se poskytuje jako alterna
   
 ## <a name="see-also"></a>Viz také:
 - [Možnosti kompilátoru jazyka Visual Basic uvedené podle kategorie](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)
-- [Úvod do Návrháře projektu](https://msdn.microsoft.com/library/898dd854-c98d-430c-ba1b-a913ce3c73d7)
-- [Možnosti kompilátoru jazyka C# (abecední pořadí)](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)
-- [Možnosti kompilátoru jazyka C# uvedené podle kategorie](../../../csharp/language-reference/compiler-options/listed-by-category.md)
+- [Správa vlastností projektu a řešení](/visualstudio/ide/managing-project-and-solution-properties?view=vs-2017)

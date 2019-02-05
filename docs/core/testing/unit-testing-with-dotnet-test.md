@@ -5,12 +5,12 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 11/29/2017
 ms.custom: seodec18
-ms.openlocfilehash: af2ae5e1b0f9e6146975c6838cca8b22837bb012
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 556da93d6237836dc32fc3f6715909593907ba74
+ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53168985"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55738731"
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>Testování jednotek C# v .NET Core pomocí příkazu dotnet test a xUnit
 
@@ -66,7 +66,7 @@ Dále vytvořte *PrimeService.Tests* adresáře. Zobrazí následující osnova 
     /PrimeService.Tests
 ```
 
-Ujistěte se, *PrimeService.Tests* adresář aktuálního adresáře a vytvořte nový projekt pomocí [ `dotnet new xunit` ](../tools/dotnet-new.md). Tento příkaz vytvoří testovací projekt, který používá xUnit jako knihovna testu. Nakonfiguruje nástroj test runner v vygenerovanou šablonu *PrimeServiceTests.csproj* souboru podobně jako následující kód:
+Ujistěte se, *PrimeService.Tests* adresář aktuálního adresáře a vytvořte nový projekt pomocí [ `dotnet new xunit` ](../tools/dotnet-new.md). Tento příkaz vytvoří testovací projekt, který používá [xUnit](https://xunit.github.io/) jako knihovna testu. Nakonfiguruje nástroj test runner v vygenerovanou šablonu *PrimeServiceTests.csproj* souboru podobně jako následující kód:
 
 ```xml
 <ItemGroup>
@@ -172,4 +172,5 @@ Pokračujte k iteraci tak, že přidáte další testy, další teorií a dalš�
 
 ### <a name="additional-resources"></a>Další zdroje
 
+- [xUnit.net oficiální web](https://xunit.github.io)
 - [Testování logice kontroleru v ASP.NET Core](/aspnet/core/mvc/controllers/testing)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework [Visual Basic], reference
 - .NET Framework class library [Visual Basic], reference information
 ms.assetid: 8b202505-608b-4223-bbd9-2ace3d73e6cd
-ms.openlocfilehash: 7e1370ad27072bcbdd4b80125f94a0cc0aaac8f9
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 36603b7d517e0c6576e9b70fad2cbee8027acad0
+ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511074"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55739108"
 ---
 # <a name="net-framework-reference-information-visual-basic"></a>Referenční dokumentace rozhraní .NET Framework (Visual Basic)
 Toto téma obsahuje odkazy na informace o tom, jak pracovat [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] knihovny tříd.  
@@ -28,9 +28,6 @@ Toto téma obsahuje odkazy na informace o tom, jak pracovat [!INCLUDE[dnprdnshor
   
  [Nástroje](../../framework/tools/index.md)  
  Popisuje nástroje, které můžete použít k vývoji, konfigurovat a nasazovat aplikace s použitím technologií rozhraní .NET Framework.  
-  
- [.NET framework – ukázky](https://msdn.microsoft.com/library/177055f8-4a1f-43e7-aee6-995c196079b1)  
- Obsahuje odkazy na ukázkové aplikace, které demonstrují technologie rozhraní .NET Framework.  
   
  [Prohlížeč rozhraní API .NET](../../../api/index.md)  
  Poskytuje syntaxi, příklady kódu a související informace pro jednotlivé třídy v oborech názvů rozhraní .NET Framework.

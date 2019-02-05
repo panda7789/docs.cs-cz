@@ -11,12 +11,12 @@ helpviewer_keywords:
 - operator overloading
 - operator procedures
 ms.assetid: 8c513d38-246b-4fb7-8b75-29e1364e555b
-ms.openlocfilehash: 611195143fd216caab0b5f89badefb93d7dea017
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6b9912f5206633a45d5d5d2d9c8c25ffab94ed9b
+ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54589107"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55739563"
 ---
 # <a name="operator-procedures-visual-basic"></a>Procedury operátoru (Visual Basic)
 Procedury operátoru je řada příkazů jazyka Visual Basic, které definují chování standardní – operátor (například `*`, `<>`, nebo `And`) na třídy nebo struktury, které jste definovali. To se také nazývá *přetížení operátoru*.  
@@ -44,7 +44,7 @@ Procedury operátoru je řada příkazů jazyka Visual Basic, které definují c
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
  Syntaxe pro deklaraci procedury operátora vypadá takto:  
   
- `Public Shared`   `[Widening | Narrowing]`   `Operator`  *operatorsymbol* `(` *operand1*`[,`*operand2* `]) As` *datový typ*   
+ `Public Shared`   `[Widening | Narrowing]`   `Operator`  *operatorsymbol* `(` *operand1*`[,`*operand2* `]) As` *datový typ*  
   
  `' Statements of the operator procedure.`  
   
@@ -68,7 +68,7 @@ Procedury operátoru je řada příkazů jazyka Visual Basic, které definují c
   
  `Dim testStruct As`  *%{structurename/*  
   
- `Dim testNewStruct As`  *%{structurename/*`= testStruct`*operatorsymbol*   `10`  
+ `Dim testNewStruct As`  *%{structurename/*`= testStruct`*operatorsymbol*  `10`  
   
 ### <a name="illustration-of-declaration-and-call"></a>Obrázek deklarace a volání  
  Následující strukturu uloží hodnotu se znaménkem 128-bit jako základní části nejvyšším a nižšího řádu. Definuje `+` operátor přidejte dva `veryLong` hodnoty a generovat výsledném `veryLong` hodnotu.  
@@ -79,7 +79,6 @@ Procedury operátoru je řada příkazů jazyka Visual Basic, které definují c
   
  [!code-vb[VbVbcnProcedures#24](./codesnippet/VisualBasic/operator-procedures_2.vb)]  
   
- Další informace a příklady najdete v tématu [přetížení operátoru v jazyce Visual Basic 2005](https://msdn.microsoft.com/library/ms379613(v=vs.80).aspx).  
   
 ## <a name="see-also"></a>Viz také:
 - [Procedury](./index.md)

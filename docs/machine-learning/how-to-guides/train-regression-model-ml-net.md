@@ -1,14 +1,14 @@
 ---
 title: Trénování regresní model k predikci hodnotu pomocí ML.NET
 description: Dozvíte se, jak pro trénování regresní model k predikci hodnotu pomocí ML.NET strojového učení
-ms.date: 11/07/2018
+ms.date: 02/01/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: e6cd62876f6ac9497e7485b93d4dbd8f95ccc1bb
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: febf12565b9ae5509efec9f350f413df99ba1c05
+ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155444"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55739446"
 ---
 # <a name="train-a-regression-model-to-predict-a-value-using-mlnet"></a>Trénování regresní model k predikci hodnotu pomocí ML.NET
 
@@ -33,33 +33,39 @@ feature_0;feature_1;feature_2;feature_3;feature_4;feature_5;feature_6;feature_7;
 var mlContext = new MLContext();
 
 // Step one: read the data as an IDataView.
-// First, we define the reader: specify the data columns and where to find them in the text file.
-var reader = mlContext.Data.TextReader(new TextLoader.Arguments
-{
-    Column = new[] {
-        // We read the first 11 values as a single float vector.
-        new TextLoader.Column("FeatureVector", DataKind.R4, 0, 10),
 
-        // Separately, read the target variable.
-        new TextLoader.Column("Target", DataKind.R4, 11),
-    },
-    // First line of the file is a header, not a data row.
-    HasHeader = true,
-    Separator = ";"
-});
+// First, we define the reader: specify the data columns and where to find them in the text file.
+var reader = mlContext.Data.CreateTextReader(
+        columns: new TextLoader.Column[]
+        {
+            // We read the first 11 values as a single float vector.
+            new TextLoader.Column("FeatureVector",DataKind.R4,0,10),
+            // Separately, read the target variable.
+            new TextLoader.Column("Target",DataKind.R4,11)
+        },
+        // Default separator is tab, but the dataset has semicolon.
+        separatorChar: ';',
+        // First line of the file is a header, not a data row.
+        hasHeader: true
+);
 
 // Now read the file (remember though, readers are lazy, so the actual reading will happen when the data is accessed).
-var trainData = reader.Read(trainDataPath);
+var trainData = reader.Read(dataPath);
 
 // Step two: define the learning pipeline.
 
 // We 'start' the pipeline with the output of the reader.
 var pipeline =
-    // First 'normalize' the data (rescale to be
-    // between -1 and 1 for all examples)
-    mlContext.Transforms.Normalize("FeatureVector")
-    // Add the SDCA regression trainer.
-    .Append(mlContext.Regression.Trainers.StochasticDualCoordinateAscent(label: "Target", features: "FeatureVector"));
+        // First 'normalize' the data (rescale to be
+        // between -1 and 1 for all examples)
+        mlContext.Transforms.Normalize("FeatureVector")
+        // Cache data in memory so that SDCA trainer will be able to randomly access training examples without
+        // reading data from disk multiple times. Data will be cached at its first use in any downstream step.
+        // Notice that unused part in the data may not be cached.
+        .AppendCacheCheckpoint(mlContext)
+        // First 'normalize' the data (rescale to be
+        // between -1 and 1 for all examples)
+        .Append(mlContext.Regression.Trainers.StochasticDualCoordinateAscent("Target", "FeatureVector"));
 
 // Step three. Fit the pipeline to the training data.
 var model = pipeline.Fit(trainData);

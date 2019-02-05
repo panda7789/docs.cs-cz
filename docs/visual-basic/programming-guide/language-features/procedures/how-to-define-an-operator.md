@@ -13,12 +13,12 @@ helpviewer_keywords:
 - return values [Visual Basic], Operator procedures
 - operator overloading
 ms.assetid: d4b0e253-092a-4e6e-9fe2-01f562140a29
-ms.openlocfilehash: fb150298562c1ec91f73f3c8075f4f8a4fc20b27
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6ced9e2ab71ccb00c9ce3495e38d895a7104fdde
+ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54679523"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55738653"
 ---
 # <a name="how-to-define-an-operator-visual-basic"></a>Postupy: Definice operátora (Visual Basic)
 Pokud jste definovali třídy nebo struktury, můžete definovat chování standardní – operátor (například `*`, `<>`, nebo `And`) Pokud je jeden nebo oba operandy typu třídy nebo struktury.  
@@ -36,7 +36,6 @@ Pokud jste definovali třídy nebo struktury, můžete definovat chování stand
   
  [!code-vb[VbVbcnProcedures#26](./codesnippet/VisualBasic/how-to-define-an-operator_2.vb)]  
   
- Další informace a příklady najdete v tématu [přetížení operátoru v jazyce Visual Basic 2005](https://msdn.microsoft.com/library/ms379613(v=vs.80).aspx).  
   
 ## <a name="see-also"></a>Viz také:
 - [Procedury operátoru](./operator-procedures.md)

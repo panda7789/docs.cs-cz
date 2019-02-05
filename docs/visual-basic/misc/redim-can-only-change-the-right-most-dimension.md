@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrArray_TypeMismatch
 ms.assetid: d53cf41b-7a7a-466c-a29a-920d99698fa9
-ms.openlocfilehash: 97eedabd550be397f9cdffc5fd864d7a88c30c31
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d20d0374cd5183b6216d1c6e5b138256cf0a4f17
+ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54714201"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55738952"
 ---
 # <a name="redim-can-only-change-the-right-most-dimension"></a>'ReDim' lze měnit pouze rozměr nejvíce vpravo
 A `ReDim` příkaz pokusil použít `Preserve` – klíčové slovo Chcete-li změnit dimenze pole, která není poslední dimenze. Při použití `Preserve`, změníte velikost jenom poslední dimenze pole. Pro všechny ostatní dimenze je nutné zadat stejnou velikost jako u existujícího pole.  
@@ -23,4 +23,3 @@ A `ReDim` příkaz pokusil použít `Preserve` – klíčové slovo Chcete-li zm
 - [Rozměry pole v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/arrays/array-dimensions.md)
 - [Příkaz ReDim](../../visual-basic/language-reference/statements/redim-statement.md)
 - [Příkaz Dim](../../visual-basic/language-reference/statements/dim-statement.md)
-- [Zachovat – odstranit](https://msdn.microsoft.com/library/91badeab-b4e0-48b6-92c9-9f0c8f995d81)

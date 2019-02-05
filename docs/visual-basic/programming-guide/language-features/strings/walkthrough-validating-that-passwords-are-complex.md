@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - String data type [Visual Basic], validation
 ms.assetid: 5d9a918f-6c1f-41a3-a019-b5c2b8ce0381
-ms.openlocfilehash: fd1cfa8c3391861b87e8aec718b63287c1225263
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7bb0e3ff0d021e9923f2e1bd8ced882c6a263d15
+ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54733945"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "55738562"
 ---
 # <a name="walkthrough-validating-that-passwords-are-complex-visual-basic"></a>Průvodce: Ověření, že hesla jsou složitá (Visual Basic)
 Tato metoda zkontroluje některé vlastnosti silné heslo a aktualizuje řetězcový parametr s informacemi o tom, které kontroluje heslo selže.  
@@ -31,7 +31,7 @@ Tato metoda zkontroluje některé vlastnosti silné heslo a aktualizuje řetězc
 -   Přístup k členům <xref:System.Text.RegularExpressions> oboru názvů. Přidat `Imports` příkazu, pokud jste nejsou kvalifikaci plně názvy členů ve vašem kódu. Další informace najdete v tématu [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
 ## <a name="security"></a>Zabezpečení  
- Pokud přesouváte hesla přes síť, budete muset použít zabezpečený přenos dat. Další informace najdete v tématu [ASP.NET Web Application Security](https://msdn.microsoft.com/library/330a99hc).  
+ Pokud přesouváte hesla přes síť, budete muset použít bezpečnou metodu pro přenášení dat. Další informace najdete v tématu [ASP.NET Web Application Security](https://docs.microsoft.com/previous-versions/aspnet/330a99hc(v=vs.100)).
   
  Můžete zvýšit jeho přesnost `ValidatePassword` funkce tak, že přidáte další složitosti kontroly:  
   
@@ -45,4 +45,4 @@ Tato metoda zkontroluje některé vlastnosti silné heslo a aktualizuje řetězc
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Text.RegularExpressions.Regex>
-- [Zabezpečení webové aplikace ASP.NET](https://msdn.microsoft.com/library/330a99hc)
+- [Zabezpečení webové aplikace ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/330a99hc(v=vs.100))
