@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 239b2e8d-581b-4ca3-992b-0e8525b9321c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 745cd1e17e2c06a513c6fdafe8f6b5f464b95d5f
-ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
+ms.openlocfilehash: f25609bc3c4dd829c66a1a4514b7f1121f9c0909
+ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55479656"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55759025"
 ---
 # <a name="threading-objects-and-features"></a>Práce s vlákny funkce a objekty
 
@@ -24,10 +24,11 @@ Spolu s <xref:System.Threading.Thread?displayProperty=nameWithType> třídy .NET
 |[Spravovaný fond vláken](the-managed-thread-pool.md)|Popisuje <xref:System.Threading.ThreadPool?displayProperty=nameWithType> třídu, která poskytuje fondu pracovních vláken, které se spravují přes rozhraní .NET.|  
 |[Časovače](timers.md)|Popisuje .NET časovače, které lze použít v prostředí s více vlákny.|
 |[Přehled primitiv synchronizace](overview-of-synchronization-primitives.md)|Popisuje typy, které slouží k synchronizaci přístupu k sdíleného prostředku nebo vlákna interakce ovládacího prvku.|
-|[Eventwaithandle – CountdownEvent](eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)|Popisuje obslužné rutiny čekání spravované události, které se používají k synchronizaci aktivity vláken signalizace a čeká na signál.|
-|[Mutex – třídy](mutexes.md)|Popisuje <xref:System.Threading.Mutex?displayProperty=nameWithType>, která uděluje exkluzivní přístup ke sdíleným prostředkům.|
+|[EventWaitHandle](eventwaithandle.md)|Popisuje <xref:System.Threading.EventWaitHandle?displayProperty=nameWithType> třídu, která představuje událost synchronizace vlákna.|
+|[CountdownEvent](countdownevent.md)|Popisuje <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> třídu, která představuje událost synchronizace podproces, který bude nastaven při její vlastnosti count je nula.|
+|[Mutex – třídy](mutexes.md)|Popisuje <xref:System.Threading.Mutex?displayProperty=nameWithType> třídu, která udělí se výhradní přístup ke sdíleným prostředkům.|
 |[Semaphore a SemaphoreSlim](semaphore-and-semaphoreslim.md)|Popisuje <xref:System.Threading.Semaphore?displayProperty=nameWithType> třídu, která omezuje počet vláken, které můžete přístup ke sdílenému prostředku nebo fond prostředků současně.|
-|[Barrier](barrier.md)|Popisuje <xref:System.Threading.Barrier?displayProperty=nameWithType> třídu, která implementuje vzor barrier koordinace vláken v postupné operacích.|
+|[Barrier](barrier.md)|Popisuje <xref:System.Threading.Barrier?displayProperty=nameWithType> třídy, která implementuje vzor barrier koordinace vláken v postupné operacích.|
 |[SpinLock](spinlock.md)|Popisuje <xref:System.Threading.SpinLock?displayProperty=nameWithType> strukturu, která představuje jednoduché alternativa <xref:System.Threading.Monitor?displayProperty=nameWithType> třídy pro určité scénáře nízké úrovně zamykání.|
 |[SpinWait](spinwait.md)|Popisuje <xref:System.Threading.SpinWait?displayProperty=nameWithType> strukturu, která poskytuje podporu pro čekání na základě typu číselník.|
 

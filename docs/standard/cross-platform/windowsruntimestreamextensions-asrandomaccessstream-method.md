@@ -12,12 +12,12 @@ api_location:
 ms.assetid: dcc72283-caed-49ee-b45d-ccaf94e97129
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8935a8c282bbe812ad76ac6d4228c38ab12626a4
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: d5dd2829a9a00f869af3d7f370f99361979b8106
+ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44193585"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55758791"
 ---
 # <a name="windowsruntimestreamextensionsasrandomaccessstreamsystemiostream-method"></a>WindowsRuntimeStreamExtensions.AsRandomAccessStream(System.IO.Stream) – metoda
 
@@ -25,8 +25,8 @@ ms.locfileid: "44193585"
 
 Převede zadaný datový proud na datový proud s náhodným přístupem.
 
-**Namespace:** <xref:System.IO?displayProperty=nameWithType> 
- **sestavení:** System.Runtime.WindowsRuntime (v souboru System.Runtime.WindowsRuntime.dll)
+**Namespace:** <xref:System.IO?displayProperty=nameWithType>
+**Sestavení:** System.Runtime.WindowsRuntime (v souboru System.Runtime.WindowsRuntime.dll)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -72,9 +72,8 @@ Tato metoda rozšíření je k dispozici pouze v případě, že vyvíjíte apl
 
 **.NET pro aplikace Windows Store**
 
-Podporováno v systému: Windows 8.1
+Podporované v: Windows 8.1
 
 ## <a name="see-also"></a>Viz také:
 
--[System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions(v=vs.110).aspx)
--[postupy: převádění mezi streamy rozhraní .NET Framework a datovými proudy Windows Runtime](../io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)
+- [Postupy: Převod mezi streamy rozhraní .NET Framework a datovými proudy Windows Runtime](../io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)

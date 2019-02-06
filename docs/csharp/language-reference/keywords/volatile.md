@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - volatile keyword [C#]
 ms.assetid: 78089bc7-7b38-4cfd-9e49-87ac036af009
-ms.openlocfilehash: f96b450eea5f2b45d256bfe00a18aa616d501d69
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: e523f7b25e28b41030edd4dc86a1fa144e961950
+ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612176"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55758297"
 ---
 # <a name="volatile-c-reference"></a>volatile (Referenční dokumentace jazyka C#)
 
@@ -56,4 +56,4 @@ S `volatile` modifikátor přidána do deklarace `_shouldStop` na místě, vždy
 - [Klíčová slova jazyka C#](index.md)
 - [Modifikátory](modifiers.md)
 - [Příkaz Lock](lock-statement.md)
-- <xref:System.Threading.Interlocked> Třída
+- <xref:System.Threading.Interlocked>

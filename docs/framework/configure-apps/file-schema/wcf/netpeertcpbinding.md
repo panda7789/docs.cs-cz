@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - netPeerBinding element
 ms.assetid: 2dd77ada-a176-47c7-a740-900b279f1aad
-ms.openlocfilehash: a039e805bc4378582d7a7bcf6ef84591ec3d2b6b
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 3a41cb85ac2917f34bd7e5f33e241853777f045f
+ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55261435"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "55759168"
 ---
 # <a name="netpeertcpbinding"></a>\<netPeerTcpBinding>
 Definuje vazbu pro peer channel zprávy TCP.  
@@ -59,7 +59,7 @@ Definuje vazbu pro peer channel zprávy TCP.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<readerQuotas>](https://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
 |[\<resolver>](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|Určuje mechanismus rozpoznávání partnera použité v této vazbě partnerské sítě ID na koncový bod IP adresy uzlů v rámci sdílené sítě.|  
 |[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netpeerbinding.md)|Definuje nastavení zabezpečení pro zprávu. Tento prvek je typu <xref:System.ServiceModel.Configuration.PeerSecurityElement>.|  
   
@@ -73,7 +73,7 @@ Definuje vazbu pro peer channel zprávy TCP.
  Tato vazba poskytuje podporu pro vytváření aplikací peer-to-peer nebo více uživatelů pomocí rovnocenný přenos přes protokol TCP. Každý partnerský uzel může hostovat více kanálů peer definované s tímto typem vazby.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje použití NetPeerTcpBinding vazeb, které poskytuje éře komunikaci pomocí protokolu peer channel. Podrobné scénář použití tuto vazbu, najdete v článku [Net Peer TCP](https://msdn.microsoft.com/library/31f4db66-edb2-40a6-b92a-14098e92acae).  
+ Následující příklad ukazuje použití NetPeerTcpBinding vazeb, které poskytuje éře komunikaci pomocí protokolu peer channel. Podrobné scénář použití tuto vazbu, najdete v článku [Net Peer TCP](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751426(v=vs.90)).  
   
 ```xml  
 <configuration>
@@ -107,5 +107,5 @@ Definuje vazbu pro peer channel zprávy TCP.
 - [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
 - [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
-- [NET Peer TCP](https://msdn.microsoft.com/library/31f4db66-edb2-40a6-b92a-14098e92acae)
+- [NET Peer TCP](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751426(v=vs.90))
 - [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)
