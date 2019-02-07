@@ -3,10 +3,10 @@ title: F#Pokyny k návrhu komponenty
 description: Přečtěte si pokyny pro zápis F# součásti určené pro využití dalších volajícími.
 ms.date: 05/14/2018
 ms.openlocfilehash: c61e4cd9098388b356c71c325d66c760fa866cf0
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
+ms.lasthandoff: 02/07/2019
 ms.locfileid: "55066022"
 ---
 # <a name="f-component-design-guidelines"></a>F#Pokyny k návrhu komponenty
@@ -74,7 +74,7 @@ V následující tabulce dodržovat konvence pojmenování a malá a velká pís
 |-----------|------|------|----------|-------|
 | Konkrétní typy | PascalCase | Podstatné jméno / tvary přídavných jmen | Seznam, Double, komplexní | Konkrétní typy jsou struktury, třídy, výčty, delegáti, záznamů a sjednocení. I když jsou tradičně malá písmena v OCaml, názvy typů F# přijala schéma pojmenování .NET pro typy.
 | knihovny DLL           | PascalCase |                 | Fabrikam.Core.dll |  |
-| Sjednocení značky     | PascalCase | Podstatné jméno | Některé, přidat, úspěch | Nepoužívejte předponu ve veřejných rozhraní API. Volitelně použít předponu, když je to interní, jako například `Zadejte týmů = TAlpha | TBeta | TDelta.` |
+| Sjednocení značky     | PascalCase | Podstatné jméno | Některé, přidat, úspěch | Nepoužívejte předponu ve veřejných rozhraní API. Volitelně použijte předponu, když je to interní, jako například `type Teams = TAlpha | TBeta | TDelta.` |
 | Událost          | PascalCase | Příkaz | ValueChanged / ValueChanging |  |
 | Výjimky     | PascalCase |      | WebException | Název by měl končit "Výjimek". |
 | Pole          | PascalCase | Podstatné jméno | CurrentName  | |
