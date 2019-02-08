@@ -1189,7 +1189,7 @@
 ## [Kurzy](machine-learning/tutorials/index.md)
 ### [Analýza mínění (binární klasifikace)](machine-learning/tutorials/sentiment-analysis.md)
 ### [Klasifikace problémů (vícetřídová klasifikace)](machine-learning/tutorials/github-issue-classification.md)
-### [Předpověď ceny jízdy taxíkem (regrese)](machine-learning/tutorials/taxi-fare.md)
+### [Predikce ceny (regrese)](machine-learning/tutorials/taxi-fare.md)
 ### [Datové sady Iris flower (clustering)](machine-learning/tutorials/iris-clustering.md)
 ## [Praktičtí průvodci](machine-learning/how-to-guides/index.md)
 ### Příprava dat
@@ -1200,7 +1200,7 @@
 #### [Načtení dat z textového souboru](machine-learning/how-to-guides/load-data-from-text-file-ml-net.MD)
 #### [Předběžné zpracování dat pomocí normalizátorů](machine-learning/how-to-guides/normalizers-preprocess-data-ml-net.md)
 ### Trénování, vyhodnocení a vysvětlení modelu
-#### [Trénování modelu s daty, která nejsou v textovém souboru](machine-learning/how-to-guides/load-non-file-training-data-ml-net.md)
+#### [Trénování modelu pomocí zdrojů dat v reálném čase](machine-learning/how-to-guides/load-non-file-training-data-ml-net.md)
 #### [Trénování modelu pomocí křížového ověření](machine-learning/how-to-guides/train-cross-validation-ml-net.md)
 #### [Kontrola přechodných hodnot dat v kanálu](machine-learning/how-to-guides/inspect-intermediate-data-ml-net.md)
 #### [Trénování regresního modelu](machine-learning/how-to-guides/train-regression-model-ml-net.md)
