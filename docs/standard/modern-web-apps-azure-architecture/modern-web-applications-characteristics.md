@@ -3,13 +3,13 @@ title: Vlastnosti moderních webových aplikací
 description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | Vlastnosti moderních webových aplikací
 author: ardalis
 ms.author: wiwagn
-ms.date: 06/28/2018
-ms.openlocfilehash: 6c416432f10bb93ff5012d716b2d92f13efdcd9b
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 01/30/2019
+ms.openlocfilehash: eacc66ff5d2c4bfb8d8645bc6bd319eab52437a3
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147333"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55828121"
 ---
 # <a name="characteristics-of-modern-web-applications"></a>Vlastnosti moderních webových aplikací
 
@@ -39,25 +39,25 @@ ASP.NET Core je optimalizováno pro cloudové prostředí (veřejném cloudu, pr
 
 ## <a name="cross-platform"></a>Různé platformy
 
-ASP.NET Core je multiplatformní a můžete spustit na Linuxu a MacOS, jakož i Windows. Otevře spousta nových možností pro vývoj a nasazení aplikace vytvořené pomocí ASP.NET Core. Kontejnery dockeru, které zpravidla běží Linux ještě dnes, můžete hostovat aplikace ASP.NET Core, což jim umožní využít výhody [kontejnery a mikroslužby](../microservices-architecture/index.md).
+ASP.NET Core je multiplatformní a můžou běžet na systému Linux, macOS a Windows. Otevře spousta nových možností pro vývoj a nasazení aplikace vytvořené pomocí ASP.NET Core. Kontejnery docker - Linux i Windows - může hostovat aplikace ASP.NET Core, což jim umožní využít výhody [kontejnery a mikroslužby](../microservices-architecture/index.md).
 
 ## <a name="modular-and-loosely-coupled"></a>Modulární a volně svázané
 
 Balíčky NuGet jsou prvotřídní občanům v .NET Core a aplikace ASP.NET Core se skládají z mnoha knihoven prostřednictvím balíčku NuGet. Členitost tato funkce pomáhá zajistit pouze závisí na aplikace a nasazení funkce, které skutečně potřebují, omezení jejich nároky na místo a zabezpečení ohrožení zabezpečení plochy.
 
-ASP.NET Core také podporuje vkládání závislostí interně i na úrovni aplikace. Rozhraní může mít několik implementací, které mohou být odloženy podle potřeby. Injektáž závislostí umožňuje aplikacím několik volně do těchto rozhraní, takže se jednodušeji rozšířit, údržbu a testování.
+ASP.NET Core také plně podporuje [injektáž závislostí](https://deviq.com/dependency-injection/), interně i na úrovni aplikace, úroveň. Rozhraní může mít několik implementací, které mohou být odloženy podle potřeby. Injektáž závislostí umožňuje aplikacím volně spojit do těchto rozhraní, spíše než konkrétní implementace, takže se jednodušeji rozšířit, údržbu a testování.
 
 ## <a name="easily-tested-with-automated-tests"></a>Snadno testovat pomocí automatizovaných testů
 
-Podpora aplikací ASP.NET Core pro testování částí a jejich volné párování a podpory pro závislost injektáže umožňuje snadno přepínat starostí o infrastrukturu s falešnou implementace pro účely testování. ASP.NET Core se také dodává TestServer, který slouží k hostování aplikací v paměti. Funkční testy lze pak proveďte požadavky na tento server v paměti, výkonu zásobníku celou aplikaci (včetně middleware, směrování, model vazby, filtry atd.) a získat odpověď, všechny za zlomek času by to obnášelo pro hostování aplikace skutečný serveru a vytvářet požadavky přes síťové vrstvy. Tyto testy jsou obzvláště usnadňují zápis a cenné pro rozhraní API, které jsou nabývá na důležitosti v moderních webových aplikací.
+Podpora aplikací ASP.NET Core pro testování částí a jejich volné párování a podpora pro vkládání závislostí umožňuje snadno přepínat starostí o infrastrukturu s falešnou implementace pro účely testování. ASP.NET Core se také dodává TestServer, který slouží k hostování aplikací v paměti. Funkční testy lze pak proveďte požadavky na tento server v paměti, výkonu zásobníku celou aplikaci (včetně middleware, směrování, model vazby, filtry atd.) a získat odpověď, všechny za zlomek času by to obnášelo pro hostování aplikace skutečný serveru a vytvářet požadavky přes síťové vrstvy. Tyto testy jsou obzvláště usnadňují zápis a cenné pro rozhraní API, které jsou nabývá na důležitosti v moderních webových aplikací.
 
 ## <a name="traditional-and-spa-behaviors-supported"></a>Tradiční i SPA chování podporována
 
-Tradiční webových aplikací zahrnovaly trochu chování na straně klienta, ale místo toho mají spoléhal na serveru pro navigaci, dotazů a aktualizace, které aplikace může být nutné provést. Každé nové operace provedené uživatelem by byl přeložen do webového požadavku, s výsledkem se znova načíst celou stránku v prohlížeči koncového uživatele. Klasické architektury Model-View-Controller (MVC) obvykle použijte tento přístup se každý nový požadavek na odpovídající akce jiný kontroler, který pak bude pracovat s modelem a vrátit zobrazení. Některé jednotlivé operace na dané stránce může rozšířeného s funkcí AJAX (asynchronní JavaScript a XML), ale architektury aplikace používá mnoho různých zobrazení MVC a koncové body adres URL.
+Tradiční webových aplikací zahrnovaly trochu chování na straně klienta, ale místo toho mají spoléhal na serveru pro navigaci, dotazů a aktualizace, které aplikace může být nutné provést. Každé nové operace provedené uživatelem by byl přeložen do webového požadavku, s výsledkem se znova načíst celou stránku v prohlížeči koncového uživatele. Klasické architektury Model-View-Controller (MVC) obvykle použijte tento přístup se každý nový požadavek na odpovídající akce jiný kontroler, který pak bude pracovat s modelem a vrátit zobrazení. Některé jednotlivé operace na dané stránce může rozšířeného s funkcí AJAX (asynchronní JavaScript a XML), ale architektury aplikace používá mnoho různých zobrazení MVC a koncové body adres URL. ASP.NET Core MVC dále podporuje také stránky Razor, jednodušší způsob, jak uspořádat stránky MVC – vizuální styl.
 
-Jednostránkové aplikace (SPA), oproti tomu obsahují velmi málo načtení dynamicky generované stránky na straně serveru (pokud existuje). Mnoho SPA jsou inicializovány v rámci statický soubor HTML, který načte potřebné knihovny jazyka JavaScript a spustíte aplikaci. Tyto aplikace vytvořit silná využití webových rozhraní API pro potřeby svých dat a může poskytnout že mnohem bohatší uživatelské prostředí.
+Jednostránkové aplikace (SPA), oproti tomu obsahují velmi málo načtení dynamicky generované stránky na straně serveru (pokud existuje). Mnoho SPA jsou inicializovány v rámci statický soubor HTML, který načítá potřebné knihovny jazyka JavaScript a spustíte aplikaci. Tyto aplikace vytvořit silná využití webových rozhraní API pro potřeby svých dat a může poskytnout že mnohem bohatší uživatelské prostředí.
 
-Mnoho webových aplikací zahrnují kombinaci tradiční aplikace chování (obvykle pro obsah) a webových SPA (pro interaktivitu). ASP.NET Core podporuje MVC (zobrazení a/nebo stránky Razor) a webových rozhraní API ve stejné aplikaci pomocí stejné sady nástrojů a základní knihovny rozhraní.
+Mnoho webových aplikací zahrnují kombinaci tradiční aplikace chování (obvykle pro obsah) a webových SPA (pro interaktivitu). ASP.NET Core podporuje obě MVC (zobrazení nebo stránku na základě) a webová rozhraní API ve stejné aplikaci, pomocí stejné sady nástrojů a základní knihovny rozhraní.
 
 ## <a name="simple-development-and-deployment"></a>Jednoduchý vývoj a nasazení
 

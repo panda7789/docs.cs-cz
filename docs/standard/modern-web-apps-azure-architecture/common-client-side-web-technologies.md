@@ -3,18 +3,18 @@ title: Běžné webové technologie na straně klienta
 description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | Běžné webové technologie na straně klienta
 author: ardalis
 ms.author: wiwagn
-ms.date: 6/28/2018
-ms.openlocfilehash: eb5612e0cbdc52e397ba367b4cc744796174d06c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 01/30/2019
+ms.openlocfilehash: 36bb18d21740f406d33306c212195fa5dbb25ee1
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153888"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55828329"
 ---
 # <a name="common-client-side-web-technologies"></a>Běžné webové technologie na straně klienta
 
 > "Webů by měla vypadat dobře zevnitř a out."  
-> _– Paul Cookson_
+> _- Paul Cookson_
 
 Webové aplikace jsou aplikace ASP.NET Core a obvykle spoléhají na straně klienta webových technologiích jako HTML, CSS a JavaScriptu. Oddělením obsah stránka (HTML) od její rozložení a stylů (CSS) a její chování (prostřednictvím JavaScriptu) složité aplikace můžou využívat Princip oddělení obavy. Budoucí změny struktury, návrhu nebo chování aplikace můžete provést další snadno při tyto problémy nejsou vzájemně propojeny.
 
@@ -71,7 +71,7 @@ Představte si například, že pokud do textového pole hodnota přesahuje 10, 
 | Vazby deklarativní Data | **Ne** | **Ano** |
 | MVC – vizuální styl směrování | **Ne** | **Ano** |
 | Šablon | **Ne** | **Ano** |
-| Směrování přímým odkazem | **Ne** | **Ano** |
+| Deep-Link Routing | **Ne** | **Ano** |
 
 Většina funkcí, které jQuery chybí vnitřně je možné přidat přidání dalších knihoven. Ale SPA architekturu jako třeba Angular nabízí tyto funkce integrálnější způsobem, protože je navržen s všechny v úvahu od začátku. JQuery je také velmi imperativní knihovny, což znamená, že je potřeba volat funkce jQuery, aby bylo možné provádět pomocí jQuery. Velká část práce a funkce, které poskytují rozhraní SPA lze provést pomocí deklarace, nevyžadují žádný skutečný kód má být proveden zápis.
 
@@ -102,7 +102,7 @@ Angular je také vynikající možnosti využití nástrojů rozhraní příkazo
 
 Společnost Microsoft vyvinula referenční aplikace [aplikaci eShopOnContainers](https://aka.ms/MicroservicesArchitecture), což zahrnuje implementace Angular jednostránková aplikace. Tato aplikace obsahuje Angular moduly ke správě nákupního košíku, načtení a zobrazení položky z katalogu online úložiště a zpracování vytvoření objednávky. Můžete zobrazit a stáhnout ukázkovou aplikaci z [Githubu](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Web/WebSPA).
 
-### <a name="react"></a>react
+### <a name="react"></a>React
 
 Na rozdíl od Angular, které nabízí úplnou implementaci vzor Model-View-Controller, React se týká pouze zobrazení. To není rozhraní .NET framework, právě knihovny, tak vytvářet SPA budete muset využít další knihovny.
 

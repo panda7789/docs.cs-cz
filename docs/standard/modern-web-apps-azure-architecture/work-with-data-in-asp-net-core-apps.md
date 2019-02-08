@@ -3,13 +3,13 @@ title: Práce s daty v aplikace v ASP.NET Core
 description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | Práce s daty v aplikacích ASP.NET Core
 author: ardalis
 ms.author: wiwagn
-ms.date: 06/28/2018
-ms.openlocfilehash: a30d6708b87687ee4d5cdb13452662e264a1b54c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.date: 01/30/2019
+ms.openlocfilehash: 914a10724c416f453d93f6efc16f9ad192798264
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54532679"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827172"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
@@ -123,13 +123,82 @@ var brandsWithItems = await _context.CatalogBrands
     .ToListAsync();
 ```
 
-Může obsahovat více vztahů a může také obsahovat dílčí vztahy pomocí ThenInclude. EF Core se spustit jeden dotaz pro načtení výslednou sadu entit.
+Může obsahovat více vztahů a může také obsahovat dílčí vztahy pomocí ThenInclude. EF Core se spustit jeden dotaz pro načtení výslednou sadu entit. Případně můžete zahrnout navigační vlastnosti navigační vlastnosti předáním "." -oddělený řetězec, který má `.Include()` rozšiřující metoda takto:
+
+```csharp
+    .Include(“Items.Products”)
+```
+
+Kromě zapouzdření logiku filtrování, specifikace určit tvar dat, který se má vrátit, včetně vlastnosti, které chcete vyplnit. Ukázka eShopOnWeb zahrnuje několik specifikace, které ukazují zapouzdření nemůžou dočkat, až načítání informací o ve specifikaci. Uvidíte jak specifikaci slouží jako součást dotazu tady:
+
+```csharp
+// Includes all expression-based includes
+query = specification.Includes.Aggregate(query,
+            (current, include) => current.Include(include));
+
+// Include any string-based include statements
+query = specification.IncludeStrings.Aggregate(query,
+            (current, include) => current.Include(include));
+```
 
 Další možností pro načítání souvisejících dat je použití _explicitní načtení_. Explicitní načtení umožňuje načtení dalších dat do entity, která již byla načtena. Protože to vyžaduje samostatnou žádost do databáze, se nedoporučuje pro webové aplikace, které byste minimalizovat počet databáze má zpáteční převod vytvářejí pro jednotlivé žádosti.
 
 _Opožděné načtení_ je funkce, která automaticky načte související data, jak se odkazuje aplikaci. EF Core má přidanou podporu pro opožděné načtení ve verzi 2.1. Opožděné načtení není ve výchozím nastavení povolené a vyžaduje instalaci `Microsoft.EntityFrameworkCore.Proxies`. Stejně jako u explicitní načtení opožděné načtení obvykle je třeba zakázat pro webové aplikace, protože její použití způsobí další databázových dotazů prováděných v rámci každého webového požadavku. Režie vzniklé opožděné načtení často přejde bohužel bez povšimnutí při vývoji, kdy latence je malý a často jsou malé datové sady, používá se pro testování. Ale v produkčním prostředí s více uživateli, víc dat a další latence požadavky další databáze můžete často za následek nízký výkon pro webové aplikace, které se hojně používají opožděné načtení.
 
 [Vyhněte se opožděné načtení entit ve webových aplikacích](https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications)
+
+### <a name="encapsulating-data"></a>Zapouzdření dat
+
+EF Core podporuje několik funkcí, které umožňují váš model k zapouzdření správně svůj stav. Běžným problémem v doménových modelů je, aby zveřejňovaly navigační vlastnosti kolekce jako seznam veřejně přístupné typy. To umožňuje libovolné spolupracovníků k manipulaci s obsahem tyto kolekce typů, které mohou obejít důležitá obchodní pravidla pro kolekci, možná byste museli opustit objektu v neplatném stavu. Řešení, aby to je vystavovat přístup jen pro čtení k souvisejících kolekcích a explicitně zadali způsoby definování způsoby, ve které klienty můžete s nimi manipulovat, jako v následujícím příkladu:
+
+```csharp
+public class Basket : BaseEntity
+{
+    public string BuyerId { get; set; }
+    private readonly List<BasketItem> _items = new List<BasketItem>();
+    public IReadOnlyCollection<BasketItem> Items => _items.AsReadOnly();
+
+    public void AddItem(int catalogItemId, decimal unitPrice, int quantity = 1)
+    {
+        if (!Items.Any(i => i.CatalogItemId == catalogItemId))
+        {
+            _items.Add(new BasketItem()
+            {
+                CatalogItemId = catalogItemId,
+                Quantity = quantity,
+                UnitPrice = unitPrice
+            });
+            return;
+        }
+        var existingItem = Items.FirstOrDefault(i => i.CatalogItemId == catalogItemId);
+        existingItem.Quantity += quantity;
+    }
+}
+```
+
+Všimněte si, že tento typ entity nezveřejňuje veřejnou `List` nebo `ICollection` vlastností, ale místo toho poskytuje `IReadOnlyCollection` typ, který zabalí základní typ seznamu. Při použití tohoto modelu, použijte pomocné pole můžete určit pro Entity Framework Core takto:
+
+```csharp
+private void ConfigureBasket(EntityTypeBuilder<Basket> builder)
+{
+    var navigation = builder.Metadata.FindNavigation(nameof(Basket.Items));
+
+    navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
+}
+```
+
+Dalším způsobem, ve kterém můžete vylepšit doménový model je prostřednictvím hodnotu objektů pro typy, které nemají identit a se pouze rozlišují výhradně podle jejich vlastností. Pomocí těchto typů jako vlastnosti vaší entity můžete zachovat logiky konkrétní hodnotu objektu, kam patří a duplicitní logiky mezi více entit, které používají stejný koncept se lze vyhnout. V Entity Framework Core, je možné zachovat hodnotu objekty ve stejné tabulce jako jejich vlastnící entitu tím, že nakonfigurujete typ jako vlastní entity, například takto:
+
+```csharp
+private void ConfigureOrder(EntityTypeBuilder<Order> builder)
+{
+    builder.OwnsOne(o => o.ShipToAddress);
+}
+```
+
+V tomto příkladu `ShipToAddress` vlastnost je typu `Address`. `Address` objekt hodnoty pomocí několik vlastností, jako je `Street` a `City`. EF Core mapuje `Order` objektu na jeho tabulku s jedním sloupcem za `Address` vlastnosti jsou názvy jednotlivých sloupců s názvem vlastnosti. V tomto příkladu `Order` tabulka by obsahovat sloupce jako `ShipToAddress_Street` a `ShipToAddress_City`.
+
+[EF Core 2.2 zavádí podporu pro kolekce entit vlastněná podnikem](https://docs.microsoft.com/ef/core/what-is-new/ef-core-2.2#collections-of-owned-entities)
 
 ### <a name="resilient-connections"></a>Odolnost připojení
 
@@ -253,7 +322,7 @@ var data = connection.Query<Post, User, Post>(sql,
 (post, user) => { post.Owner = user; return post;});
 ```
 
-Vzhledem k tomu, že nabízí méně zapouzdření, vyžaduje Dapperem vývojáři dozvědět víc o tom, jak jejich data uložená, jak efektivní dotazování a napsat další kód, který jej načíst. Když se změní model, místo jednoduše vytvářet novou migraci (Další EF Core funkcí) a/nebo aktualizace informací o mapování na jednom místě v DbContext, musí aktualizovat každý dotaz, který má vliv. Tyto dotazy obsahovat není záruky čas kompilace, tak se může přerušit za běhu v reakci na změny modelu nebo databáze, provádění obtížnější rychle detekovat chyby. Výměnou za tyto nevýhody Dapperem nabízí velmi rychlý výkon.
+Vzhledem k tomu, že nabízí méně zapouzdření, vyžaduje Dapperem vývojáři dozvědět víc o tom, jak jejich data uložená, jak efektivní dotazování a napsat další kód, který jej načíst. Když se změní model, místo jednoduše vytvářet novou migraci (Další EF Core funkcí) a/nebo aktualizace informací o mapování na jednom místě v DbContext, musí aktualizovat každý dotaz, který má vliv. Tyto dotazy obsahovat žádné záruky v době kompilace, proto se může přerušit za běhu v reakci na změny modelu nebo databáze, provádění obtížnější rychle detekovat chyby. Výměnou za tyto nevýhody Dapperem nabízí velmi rychlý výkon.
 
 Pro většinu aplikací a většina součástí téměř všechny aplikace nabízí EF Core přijatelný výkon. Díky tomu se budou pravděpodobně nároky na výkon převažují nad jeho výhody produktivity pro vývojáře. Pro dotazy, které mohou těžit z ukládání do mezipaměti, samotný dotaz může spustit pouze velmi malé procento doby provádění poměrně málo početnému dotazování výkonu moot rozdíly.
 

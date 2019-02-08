@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
-ms.openlocfilehash: 529b7094ad36861cacc4009ea8faf152f056c20e
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: c4b656d1ee7edcdc7e0e5cd41f7d57266ad5ad26
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066217"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55828355"
 ---
 # <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET framework
 A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatel dat slouží k připojení k databázi, provádění příkazů a načíst výsledky. Tyto výsledky se buď zpracovávají přímo, umístí do <xref:System.Data.DataSet> aby bylo možné vystavit uživateli podle potřeby, kombinované s daty z více zdrojů nebo vzdálený mezi vrstvami. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatelé dat jsou zjednodušené, vytvoření minimální vrstvy mezi zdrojem dat a kódu, aniž byste museli obětovat funkčnost zvýšit výkon.  
@@ -24,7 +24,7 @@ A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkova
 |[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro ODBC|Pro zdroje dat vystavena s použitím ODBC. Používá <xref:System.Data.Odbc> oboru názvů.|  
 |[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro Oracle|Pro Oracle datového zdroje. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro Oracle podporuje software klienta Oracle version 8.1.7 a novější a používá <xref:System.Data.OracleClient> oboru názvů.|  
 |Zprostředkovatel EntityClient|Poskytuje přístup k datům pro Entity Data Model (EDM) aplikace. Používá <xref:System.Data.EntityClient> oboru názvů.|  
-|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro SQL Server Compact 4.0.|Poskytuje přístup k datům pro Microsoft SQL Server Compact 4.0. Používá [System.Data.SqlServerCe](https://msdn.microsoft.com/library/system.data.sqlserverce.aspx) oboru názvů.|  
+|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro SQL Server Compact 4.0.|Poskytuje přístup k datům pro Microsoft SQL Server Compact 4.0. Používá [System.Data.SqlServerCe](https://docs.microsoft.com/previous-versions/sql/compact/sql-server-compact-4.0/ec4st0e3(v=vs.100)) oboru názvů.|  
   
 ## <a name="core-objects-of-net-framework-data-providers"></a>Základní objekty zprostředkovatele dat .NET Framework  
  Následující tabulka uvádí čtyři základní objekty, které tvoří [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatele dat služeb.  

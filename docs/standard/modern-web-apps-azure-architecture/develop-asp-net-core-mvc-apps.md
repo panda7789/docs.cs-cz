@@ -3,13 +3,13 @@ title: Vývoj aplikace ASP.NET Core MVC aplikace
 description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | vývoj aplikací ASP.NET Core MVC
 author: ardalis
 ms.author: wiwagn
-ms.date: 06/28/2018
-ms.openlocfilehash: aed0ba4621eab91dd47df9ef760fdf8c39ff1103
-ms.sourcegitcommit: deb9225a55485a5a6e6c7914deb30ccfceb69d3f
+ms.date: 01/30/2019
+ms.openlocfilehash: a56b7ba047499842a9b76612df17d22c64491301
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2019
-ms.locfileid: "54058500"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827874"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikace ASP.NET Core MVC aplikace
 
@@ -17,6 +17,24 @@ ms.locfileid: "54058500"
 > _– Andrew Hunt a David Thomas_
 
 ASP.NET Core je různé platformy, open source architektura pro vytváření moderních optimalizovaných cloudů webových aplikací. Aplikace ASP.NET Core je Odlehčená a modulární a s integrovanou podporou pro vkládání závislostí, umožní větší testovatelnost a udržovatelnost. V kombinaci s MVC, která podporuje vytváření moderních webových rozhraní API kromě aplikace založené na zobrazení, ASP.NET Core je výkonnou architekturu, pomocí kterého se má tvorbu podnikových webových aplikací.
+
+## <a name="mvc-and-razor-pages"></a>MVC a stránky Razor
+
+ASP.NET Core MVC nabízí mnoho funkcí, které jsou užitečné pro vytváření webových rozhraní API a aplikace. Výraz MVC zastupuje "Model-View-Controller", vzoru uživatelského rozhraní, které rozdělí odpovědnosti reagování na žádosti uživatele do několika částí. Kromě dodržení tohoto modelu, můžete taky implementovat funkce v aplikacích ASP.NET Core jako stránky Razor. Stránky Razor jsou integrované do ASP.NET Core MVC a použít stejné funkce pro směrování, vazby modelu atd. Namísto nutnosti samostatné složky a soubory pro Kontrolery, zobrazení a podobně a používající směrování na základě atributů, ale pro stránky Razor jsou umístěny v jedné složce ("/ stránky"), směrování na základě jejich relativní umístění v této složce a popisovač požadavků s obslužnými rutinami místo akce kontroleru.
+
+Při vytváření nové aplikace ASP.NET Core, měli byste mít plán v úvahu pro typ aplikace, kterou chcete sestavit. V sadě Visual Studio budete vybírat několik šablon. Tři nejběžnější šablony projektu jsou webové rozhraní API, webové aplikace a webové aplikace (Model-View-Controller). I když toto rozhodnutí lze vytvořit pouze při prvním vytvoření projektu, není nezvratná rozhodnutí. Projekt webového rozhraní API používá standardní Model-View-Controller řadiče – stačí chybí zobrazení ve výchozím nastavení. Výchozí šablony webové aplikace podobně, používá Razor Pages a proto také nemá zobrazení složky. Zobrazení složky můžete přidat později k podpoře chování na základě zobrazení těchto projektů. Projekty webového rozhraní API a Model-View-Controller nezahrnují složce stránky ve výchozím nastavení, ale můžete přidat později k podpoře chování na základě stránky Razor. Si můžete představit jako podporuje tři různé druhy interakci s uživatelem výchozí tyto tři šablony: data (webového rozhraní API), na stránce a na základě zobrazení. Můžete však kombinovat a párovat některé nebo všechny z nich v rámci jednoho projektu, pokud chcete.
+
+### <a name="why-razor-pages"></a>Proč pro stránky Razor?
+
+Stránky Razor je výchozí metoda pro nové webové aplikace v sadě Visual Studio. Stránky Razor nabízí jednodušší způsob, jak vytvářet aplikace založené na stránce funkce, jako jsou formuláře – jednostránková aplikace. Použití kontrolerů a zobrazení, je běžné, že aplikace má velmi velké řadiče ve spolupráci s mnoha různých závislostí a Zobrazit modely a vrátí mnoho různých zobrazení. To vedlo spoustu složitost a často za následek řadiče, které nebyly postupujte podle jednoho zásady odpovědnosti nebo zásady Open/uzavřeno efektivně. Stránky Razor řeší tento problém zapouzdřením logiku na straně serveru pro danou logickou "stránku" ve webové aplikaci s jeho kód Razor. Stránka Razor, která nemá žádné logiku na straně serveru se může skládat jednoduše Razor souboru (například "Index.cshtml"). Většina netriviální Razor Pages však bude mít třídu modelu stránku, který bude pojmenován stejně jako Razor soubor s příponou "cs" (například "Index.cshtml.cs").
+
+Stránka Razor model stránky kombinuje odpovědnosti kontroler MVC a viewmodel. Namísto zpracování požadavků pomocí metody akce kontroleru, jsou spouštěny obslužných rutin modelu stránky jako "OnGet()" vykreslování jejich přidružené stránky ve výchozím nastavení. Stránky Razor zjednodušuje proces vytváření jednotlivé stránky v aplikaci ASP.NET Core, současně stále zajišťuje všechny funkce architektury ASP.NET Core MVC. Jsou to dobrá výchozí volba pro nové funkce založené na stránce.
+
+### <a name="when-to-use-mvc"></a>Kdy použít MVC
+
+Pokud vytváříte webové rozhraní API, vzor MVC vhodnější než pokusu o použití stránek Razor. Pokud váš projekt bude vystavovat jenom koncové body webové rozhraní API, měli byste v ideálním případě začít ze šablony projektu webového rozhraní API, ale jinak je jednoduše přidávat řadiče a přidružené koncové body rozhraní API pro jakoukoli aplikaci ASP.NET Core. Také byste měli použít přístup založený na zobrazení MVC, pokud migrujete existující aplikace v ASP.NET MVC 5 nebo dříve k ASP.NET Core MVC a chcete provést s minimální množství úsilí. Po počáteční migraci, můžete si vyzkoušet, zda je vhodné přijmout stránky Razor pro nové funkce nebo dokonce i jako velkoobchodního migrace.
+
+Jestli si sestavení webové aplikace pomocí nástroje Razor Pages a zobrazení MVC, vaše aplikace bude mít podobným výkonem a bude zahrnovat podporu pro vkládání závislostí, filtry, vazby modelu a ověření atd.
 
 ## <a name="mapping-requests-to-responses"></a>Mapování požadavků na reakce
 
@@ -58,6 +76,18 @@ public class ProductsController : Controller
 }
 ```
 
+Stránky Razor nepoužívá směrováním atributů. Informace o šabloně další trasy pro stránky Razor můžete zadat jako součást jeho `@page` – direktiva:
+
+```csharp
+@page "{id:int}"
+```
+
+V předchozím příkladu by odpovídala příslušná stránka trasu s celým číslem `id` parametru. Například *Products.cshtml* stránky umístěný v kořenovém adresáři `/Pages` bude mít tato trasa:
+
+```csharp
+"/Products/123"
+```
+
 Jakmile danou žádost pravá složená závorka k trase, ale před akci, metoda je volána, ASP.NET Core MVC provede [vazby modelu](/aspnet/core/mvc/models/model-binding) a [ověření modelu](/aspnet/core/mvc/models/validation) v požadavku. Vazby modelu je zodpovědný za převod příchozích dat protokolu HTTP na typy .NET zadány jako parametry metody akce má být volána. Například pokud metoda akce očekává parametr id int, vazby modelu se pokusí zadejte tento parametr z hodnoty zadané jako součást požadavku. Uděláte to tak, vazby modelu hledá hodnoty v odeslaného formuláře, hodnoty v trase, samotného a hodnoty řetězce dotazu. Za předpokladu, že je hodnota id nenajde, převede se na celé před předáním do metody akce.
 
 Po vytvoření vazby modelu, ale před voláním metody akce dojde k ověření modelu. Ověření modelu používá volitelné atributy typu modelu a pomáhají zajistit, že objekt zadaného modelu vyhovuje určitým požadavkům data. Některé hodnoty lze zadat jako povinné, nebo jsou omezena na konkrétní délku nebo číselného rozsahu, atd. Pokud jsou zadané atributy ověřování, ale model není v souladu s jejich požadavky, vlastnost ModelState.IsValid bude mít hodnotu false a sadu ověřovacích pravidel selhání bude možné odeslat klientovi provádějícímu žádost.
@@ -65,6 +95,8 @@ Po vytvoření vazby modelu, ale před voláním metody akce dojde k ověření 
 Pokud používáte ověření modelu, byste měli vždy zkontrolujte, zda je model platný před provedením jakékoli změny stavu příkazů, ujistěte se, že vaše aplikace není poškozený neplatnými daty. Můžete použít [filtr](/aspnet/core/mvc/controllers/filters) aby se zabránilo nutnosti přidat kód pro tuto v každé akce. Filtry ASP.NET Core MVC nabízí způsob, jak zachycování skupiny požadavků, tak, aby se běžných zásad a převeďte společné aspekty lze použít na základě cílové. Filtry lze použít k jednotlivým akcím, celý řadiče, nebo globálně pro aplikaci.
 
 Pro webová rozhraní API ASP.NET Core MVC podporuje [ _vyjednávání obsahu_](/aspnet/core/mvc/models/formatting), povolíte požadavky k určení, jak by měly být formátovány odpovědi. Založen na záhlavích zadaný v požadavku, bude akce vrácení dat formátu odpovědi v XML, JSON nebo jiný podporovaný formát. Tato funkce umožňuje využívat víc klientů s požadavky na jiný datový formát stejného rozhraní API.
+
+Projekty webového rozhraní API byste zvážit použití `[ApiController]` atribut, který je možné použít k jednotlivým řadičům, třída base kontroleru nebo celé sestavení. Tento atribut přidá ověřování automatické model a všechny akce s neplatný model vrátí chybného požadavku s podrobnostmi chyb ověřování. Atribut vyžaduje taky mít atribut trasy, spíše než použití konvenční trasy všechny akce a vrátí podrobné informace ProblemDetails v reakci na chyby.
 
 > ### <a name="references--mapping-requests-to-responses"></a>Odkazy – mapování vyžádá, aby odpovědi
 >
@@ -76,6 +108,8 @@ Pro webová rozhraní API ASP.NET Core MVC podporuje [ _vyjednávání obsahu_](
  > <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
 > - **Filtry**
  > <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
+> - **Atribut objektu ApiController**
+ > <https://docs.microsoft.com/aspnet/core/web-api/?view=aspnetcore-2.2>
 
 ## <a name="working-with-dependencies"></a>Práce se závislostmi
 
@@ -132,13 +166,13 @@ Objektový model aplikace a rozhraní musí být umístěné ve ApplicationCore 
 
 Podrobnosti implementace, například jak se provádí trvalého nebo jak může být odeslána oznámení pro uživatele, jsou uloženy v projektu infrastruktury. Tento projekt bude odkazovat na specifický pro implementaci balíčků, jako jsou Entity Framework Core, ale by neměly zveřejňovat informace o těchto implementacích mimo projekt. Služby infrastruktury a úložiště by měly implementovat rozhraní, které jsou definovány v projektu ApplicationCore a jeho implementace trvalost zodpovídají za načítání a ukládání entit, které jsou definovány v ApplicationCore.
 
-Projekt uživatelského rozhraní ASP.NET Core je zodpovědný za jakékoli obavy úrovni uživatelského rozhraní, ale by neměly obsahovat podrobnosti o obchodní logiku nebo infrastruktury. Ve skutečnosti v ideálním případě nemůže i mít závislost na projektu infrastrukturu, která vám pomůže zajistit, že se omylem zavedeny žádné závislosti mezi dva projekty. Toho lze dosáhnout pomocí kontejneru DI třetích stran stejně jako StructureMap, který umožňuje definovat DI pravidla v registru třídy v každém projektu.
+Projekt uživatelského rozhraní ASP.NET Core je zodpovědný za jakékoli obavy úrovni uživatelského rozhraní, ale by neměly obsahovat podrobnosti o obchodní logiku nebo infrastruktury. Ve skutečnosti v ideálním případě nemůže i mít závislost na projektu infrastrukturu, která vám pomůže zajistit, že se omylem zavedeny žádné závislosti mezi dva projekty. Toho lze dosáhnout pomocí kontejneru DI třetích stran stejně jako Autofac, který umožňuje definovat DI pravidla v modulu třídy v každém projektu.
 
 Dalším přístupem k oddělení aplikace od podrobností implementace je mikroslužby volání aplikace, možná nasazený v jednotlivých kontejnerech Dockeru. To poskytuje ještě větší oddělení otázky a oddělení než využitím DI mezi dva projekty, ale má další složitosti.
 
 ### <a name="feature-organization"></a>Funkce organizace
 
-Aplikace ASP.NET Core ve výchozím nastavení, uspořádejte jejich strukturu složek Kontrolerů a zobrazení a často modely ViewModel. Kód na straně klienta pro podporu těchto struktur na straně serveru jsou obvykle uložená samostatně ve složce wwwroot. Však velké aplikace setkat s problémy u této organizace, protože pracující na jakékoli dané funkce často vyžaduje přechod mezi tyto složky. Načte mnohem obtížnější, roste počet souborů a podsložek v každé složky, což vede k spoustu posouvání se v Průzkumníku řešení. Jedním řešením tohoto problému, je uspořádat kód aplikace podle _funkce_ místo podle typu souboru. Tento styl organizace se obvykle označuje jako složky funkce nebo funkce řezů (viz také: [Svislé řezy](https://deviq.com/vertical-slices/)).
+Aplikace ASP.NET Core ve výchozím nastavení, uspořádejte jejich strukturu složek Kontrolerů a zobrazení a často modely ViewModel. Kód na straně klienta pro podporu těchto struktur na straně serveru jsou obvykle uložená samostatně ve složce wwwroot. Však velké aplikace setkat s problémy u této organizace, protože pracující na jakékoli dané funkce často vyžaduje přechod mezi tyto složky. Načte mnohem obtížnější, roste počet souborů a podsložek v každé složky, což vede k spoustu posouvání se v Průzkumníku řešení. Jedním řešením tohoto problému, je uspořádat kód aplikace podle _funkce_ místo podle typu souboru. Tento styl organizace se obvykle označuje jako funkce složky nebo [funkce řezy](https://msdn.microsoft.com/en-us/magazine/mt763233.aspx) (viz také: [Svislé řezy](https://deviq.com/vertical-slices/)).
 
 ASP.NET Core MVC podporuje oblasti pro tento účel. Pomocí oblastí, můžete vytvořit samostatné sady Kontrolerů a zobrazení složek (stejně jako jakékoli přidružených modelech) v každé oblasti složky. Obrázek 7-1 znázorňuje strukturu složky příklad používat.
 
@@ -220,7 +254,7 @@ Filtry jsou obvykle implementovány jako atributy, takže je lze následně pou�
 public class AccountController : Controller
 
 {
-    [AllowAnonymous]
+    [AllowAnonymous] // overrides the Authorize attribute
     public async Task<IActionResult> Login() {}
     public async Task<IActionResult> ForgotPassword() {}
 }
@@ -262,6 +296,8 @@ public class ValidateModelAttribute : ActionFilterAttribute
     }
 }
 ```
+
+Můžete přidat `ValidateModelAttribute` do projektu jako závislost NuGet zahrnutím [Ardalis.ValidateModel](https://www.nuget.org/packages/Ardalis.ValidateModel) balíčku. Pro rozhraní API, můžete použít `ApiController` atribut k vynucení tohoto chování bez nutnosti samostatné `ValidateModel` filtru.
 
 Filtr lze, zkontrolujte, zda existuje záznam a vrátit kód 404, před provedením akce, takže odpadá potřeba k provedení těchto kontrol v akci. Po výseče běžné konvence a uspořádané řešení k oddělení infrastruktury kódu a obchodní logiku z vašeho uživatelského rozhraní, by měla být velmi dynamicky vaše metody akce MVC:
 
@@ -384,6 +420,13 @@ Většina webových rozhraní API by měla implementovat systém ověřování z
 
 **Obrázek 7 – 4.** Ověřování založené na tokenech pro webová rozhraní API.
 
+Můžete vytvořit vlastní ověřovací službu, integrace s Azure AD a OAuth, nebo implementace služby pomocí open source nástroj jako [IdentityServer](https://github.com/IdentityServer).
+
+#### <a name="custom-security"></a>Vlastní zabezpečení
+
+Buďte opatrní hlavně o implementaci šifrování, členství uživatele nebo systému generování tokenů "se zajištěním provozu vlastní". Existuje mnoho obchodní a open source alternativy k dispozici, které se mají téměř jistě lepší zabezpečení než vlastní implementaci.
+
+
 > ### <a name="references--security"></a>Odkazy – zabezpečení
 >
 > - **Přehled dokumentace zabezpečení**  
@@ -396,12 +439,14 @@ Většina webových rozhraní API by měla implementovat systém ověřování z
 >   <https://docs.microsoft.com/aspnet/core/security/authorization/introduction>
 > - **Ověřování a autorizace API Apps ve službě Azure App Service**  
 >   <https://docs.microsoft.com/azure/app-service-api/app-service-api-authentication>
+> - **Serveru identit**  
+>   <https://github.com/IdentityServer>
 
 ## <a name="client-communication"></a>Komunikace klienta
 
 Kromě poskytování stránky a reagování na žádosti o data prostřednictvím webových rozhraní API, aplikace ASP.NET Core může komunikovat přímo s připojenými klienty. Tato odchozí komunikaci, můžete použít širokou škálu technologií přenosu nejčastěji používané jsou objekty Websocket. Funkce SignalR technologie ASP.NET Core je knihovna, která umožňuje snadno přidat funkce komunikaci v reálném čase klient a server pro vaše aplikace. Funkce SignalR, podporuje různé přenosové technologií, včetně protokoly Websocket a abstrahuje tokeny n Podrobnosti implementace od vývojáře.
 
-Funkce SignalR technologie ASP.NET Core je k dispozici s ASP.NET Core 2.1.
+Funkce SignalR technologie ASP.NET Core je k dispozici s ASP.NET Core od verze 2.1.
 
 Komunikace v reálném čase klienta, jestli přes WebSockets přímo nebo jinými technikami, jsou užitečné v různých scénářích aplikací. Možné příklady:
 
@@ -455,9 +500,9 @@ Vezměte v úvahu, že prostředí způsoby, ve kterých vaše aplikace komuniko
 
 > ### <a name="references--client-communication"></a>Odkazy – komunikace klienta
 >
-> - **Funkce SignalR technologie ASP.NET Core**  
+> - **ASP.NET Core SignalR**  
 >   <https://github.com/aspnet/SignalR>
-> - **Správce protokolu WebSocket**  
+> - **WebSocket Manager**  
 >   https://github.com/radu-matei/websocket-manager
 
 ## <a name="domain-driven-design--should-you-apply-it"></a>Návrhy řízené doménou – by je použijete?

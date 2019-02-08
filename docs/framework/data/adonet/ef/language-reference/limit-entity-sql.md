@@ -2,12 +2,12 @@
 title: LIMIT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: c22ffede-0a52-44d1-99b9-4a91e651e1b9
-ms.openlocfilehash: 3c38fd3fc20ad19bdeeca5c02c25de6c8269def6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 945aec734f7e71c2a2f24c9bb3632030cede15ec
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493817"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55826296"
 ---
 # <a name="limit-entity-sql"></a>LIMIT (Entity SQL)
 Fyzické stránkování lze provést pomocí dílčí klauzuli LIMIT v klauzuli ORDER by. OMEZENÍ nemůže být použita samostatně z klauzule ORDER by.  
@@ -38,6 +38,6 @@ Fyzické stránkování lze provést pomocí dílčí klauzuli LIMIT v klauzuli 
   
 ## <a name="see-also"></a>Viz také:
 - [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)
-- [Postupy: Stránkovat výsledky dotazu](https://msdn.microsoft.com/library/ffc0f920-e7de-42e0-9b12-ef356421d030)
+- [Postupy: Stránkovat výsledky dotazu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))
 - [Stránkování](../../../../../../docs/framework/data/adonet/ef/language-reference/paging-entity-sql.md)
 - [TOP](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)

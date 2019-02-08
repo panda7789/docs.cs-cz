@@ -4,16 +4,16 @@ description: Popisuje, jak vytvořit globální nástroj. Nástroj globální je
 author: Thraka
 ms.author: adegeo
 ms.date: 08/22/2018
-ms.openlocfilehash: e544ab51920015e0f1ea48ad83ba9b637d98aa0c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 045b8f7707b8ee36ea9674bba3974197a57c482d
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53144576"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55826418"
 ---
 # <a name="create-a-net-core-global-tool-using-the-net-core-cli"></a>Vytvoření globální nástroje .NET Core pomocí rozhraní příkazového řádku .NET Core
 
-V tomto článku se naučíte, jak vytvořit a balíček globální nástroje .NET Core. Rozhraní příkazového řádku .NET Core umožňuje vytvořit konzolovou aplikaci jako globální nástroj, který ostatní snadno nainstalovat a spustit. Globální nástroje .NET core jsou balíčky NuGet, které jsou instalovány z rozhraní příkazového řádku .NET Core. Další informace o těchto nástrojích, globální, naleznete v tématu [globální nástroje .NET Core přehled][global-tool-info].
+V tomto článku se naučíte, jak vytvořit a balíček globální nástroje .NET Core. Rozhraní příkazového řádku .NET Core umožňuje vytvořit konzolovou aplikaci jako globální nástroj, který ostatní snadno nainstalovat a spustit. Globální nástroje .NET core jsou balíčky NuGet, které jsou instalovány z rozhraní příkazového řádku .NET Core. Další informace o těchto nástrojích, globální, naleznete v tématu [globální nástroje .NET Core přehled](global-tools.md).
 
 [!INCLUDE [topic-appliesto-net-core-21plus.md](../../../includes/topic-appliesto-net-core-21plus.md)]
 
@@ -170,7 +170,7 @@ Teď, když máte balíček, nainstalujte nástroj z tohoto balíčku:
 dotnet tool install --global --add-source ./nupkg botsay
 ```
 
-`--add-source` Určuje parametr příkazového řádku .NET Core pro dočasně použití `./nupkg` složky (naše `<PackageOutputPath>` složky) jako další zdroj datového kanálu pro balíčky NuGet. Další informace o instalaci nástrojů pro globální, naleznete v tématu [globální nástroje .NET Core přehled][global-tool-info].
+`--add-source` Určuje parametr příkazového řádku .NET Core pro dočasně použití `./nupkg` složky (naše `<PackageOutputPath>` složky) jako další zdroj datového kanálu pro balíčky NuGet. Další informace o instalaci nástrojů pro globální, naleznete v tématu [globální nástroje .NET Core přehled](global-tools.md).
 
 Pokud je instalace úspěšná, zobrazí se zpráva zobrazující příkazu používaný k volání nástroje a verze nainstalovaná, podobně jako v následujícím příkladu:
 
@@ -191,5 +191,3 @@ Jakmile budete mít experimentování s nástroji, můžete ho odebrat pomocí n
 ```console
 dotnet tool uninstall -g botsay
 ```
-
-[global-tool-info]: global-tools.md

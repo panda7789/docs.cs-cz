@@ -2,12 +2,12 @@
 title: Skládání dotazů vnořené Entity SQL
 ms.date: 03/30/2017
 ms.assetid: 685d4cd3-2c1f-419f-bb46-c9d97a351eeb
-ms.openlocfilehash: 87a9877b7c865fbe393d91365d03bab8f56377c1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b5fc39a25b5b8592117348b150da9d82454a1562
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54589473"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827315"
 ---
 # <a name="composing-nested-entity-sql-queries"></a>Skládání dotazů vnořené Entity SQL
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je bohatou jazykovou funkční. Základním pilířem pracovního [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je výraz. Na rozdíl od běžných SQL [!INCLUDE[esql](../../../../../../includes/esql-md.md)] není omezena pouze na sadu tabulkovém výsledku: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje vytváření složitých výrazů, které můžou mít literály, parametry nebo vnořené výrazy. Hodnotu ve výrazu můžete s parametry nebo vytvořit další výrazu.  
@@ -46,7 +46,7 @@ UNION ALL
 FROM … );  
 ```  
   
- Následující příklad ukazuje, jak správně vnořovat výrazy v [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [Postupy: Pořadí sjednocení dva dotazy](https://msdn.microsoft.com/library/853c583a-eaba-4400-830d-be974e735313).  
+ Následující příklad ukazuje, jak správně vnořovat výrazy v [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [Postupy: Pořadí sjednocení dva dotazy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896299(v=vs.100)).  
   
 ## <a name="nested-queries-in-projection"></a>Vnořené dotazy v projekci  
  Vnořené dotazy v klauzuli projektu může získat přeloženy do kartézský součin dotazy na serveru. V některých back-end serverů, včetně serveru SQL Server to může způsobit TempDB tabulka, která má být velmi rozsáhlé, což nepříznivě ovlivnit výkon serveru.  

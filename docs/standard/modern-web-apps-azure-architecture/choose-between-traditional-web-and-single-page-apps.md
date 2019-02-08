@@ -3,17 +3,17 @@ title: Volba mezi tradičními webovými aplikacemi a jednostránkové aplikace
 description: Zjistěte, jak si vybrat mezi tradičními webovými aplikacemi a jednostránkové aplikace (SPA) při vytváření webových aplikací.
 author: ardalis
 ms.author: wiwagn
-ms.date: 6/28/2018
-ms.openlocfilehash: abeee719c15263fea04a3bcf80a6e41c43b640d2
-ms.sourcegitcommit: 82a3f7882bc03ed733af91fc2a0b113195bf5dc7
+ms.date: 01/30/2019
+ms.openlocfilehash: 5b8569f2abd5160fa8a080c06441a963fb455f6b
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "52745300"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55825742"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Volba mezi tradičními webovými aplikacemi a jednostránkové aplikace (SPA)
 
-> "Zákony vaší Atwoodem: všechny aplikace, které je možné psát v jazyce JavaScript, nakonec se zapíše v jazyce JavaScript."  
+> "Od Atwoodem práva: Všechny aplikace, které je možné psát v jazyce JavaScript, bude nakonec napsán v jazyce JavaScript."  
 > _\- Jeffem Atwoodem_
 
 Existují dva hlavní přístupy k vytváření webových aplikací ještě dnes: tradiční webových aplikací, které provádějí většinu aplikací logiky na serveru a jednostránkové aplikace (SPA), které provádějí většinu logiku uživatelského rozhraní ve webovém prohlížeči komunikuje s webovým serverem, primárně prostřednictvím webového rozhraní API. S hybridním přístupem je také možné, je nejjednodušší hostovat jeden nebo více bohaté SPA jako dílčí aplikace v rámci větší tradiční webové aplikace.
@@ -38,9 +38,13 @@ Navíc vyžadují větší architektury jednostránková aplikace architektury a
 
 Vylepšení činnost koncového uživatele umožněno SPA modelu musí porovnat tyto aspekty.
 
+## <a name="razor-components"></a>Komponenty Razor
+
+ASP.NET Core 3.0 zavádí nový model pro vytváření bohatých, interaktivních a uživatelského rozhraní rozšiřitelných nazývané jako komponenty Razor. Razor komponenty umožňují vývojářům vytvářet uživatelské rozhraní s jádrem Razor na serveru a pro tento kód, který bude doručen do prohlížeče a provést pomocí knihovny JavaScript volat WebAssembly klientů. ASP.NET Core 3.0 je stále ve vývoji, ale měli byste očekávat zobrazíte další informace o této technologii v 3.0 aktualizaci pro tuto elektronickou příručku. Další informace o součástech Razor (s názvem Blazor kódu), najdete v části [vám umožní začít Blazor](https://blazor.net/docs/get-started.html).
+
 ## <a name="when-to-choose-traditional-web-apps"></a>Kdy zvolit tradičními webovými aplikacemi
 
-Tady je podrobnější vysvětlení důvodů dříve uvedeno pro výběr tradiční webových aplikací.
+Tady je podrobnější vysvětlení výše uvedená důvody pro výběr tradiční webových aplikací.
 
 **Vaše aplikace má požadavky na jednoduché, může být jen pro čtení a na straně klienta**
 
@@ -85,8 +89,8 @@ Následující rozhodnutí tabulka shrnuje některé základní faktory ke zvá�
 
 | **faktor**                                           | **Tradiční webové aplikace** | **Jednostránková aplikace** |
 | ---------------------------------------------------- | ----------------------- | --------------------------- |
-| Požadované týmu znalost jazyka JavaScript/TypeScript | **Minimální**             | **Vyžaduje**                |
-| Podpora prohlížeče bez skriptování                   | **Podporované**           | **Nepodporuje se**           |
+| Požadované týmu znalost jazyka JavaScript/TypeScript | **Minimální**             | **Požadováno**                |
+| Podpora prohlížeče bez skriptování                   | **Podporuje se**           | **Nepodporuje se**           |
 | Chování minimální aplikace na straně klienta             | **Well-Suited**         | **Přehnaně**                |
 | Požadavky na bohatě vybaveným a komplexní uživatelské rozhraní            | **Limited**             | **Well-Suited**             |
 

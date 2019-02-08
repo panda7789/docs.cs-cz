@@ -3,20 +3,20 @@ title: ASP.NET Core MVC testování aplikace
 description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | Test ASP.NET Core MVC aplikace
 author: ardalis
 ms.author: wiwagn
-ms.date: 06/28/2018
-ms.openlocfilehash: 96a004cc49773346eeb8f88e2ba99beebf8598bf
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 01/30/2019
+ms.openlocfilehash: e3edec65fd10b0a7c05d1865703f2e0a591d8b03
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53154200"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827549"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>ASP.NET Core MVC testování aplikace
 
 > *"Pokud se vám testování produktu, pravděpodobně vaši zákazníci nebudou, jako je a otestovat ho, buď."*
  > \_-Anonymní-
 
-Software jakékoli složitosti, může selhat neočekávaným způsobem v reakci na změny. Proto testování po provedení změn je potřeba u všech aplikací nejvíce triviální (nebo nejméně důležité). Manuální testování je nejpomalejší, nejméně spolehlivé a nejdražší způsob testování softwaru. Bohužel Pokud aplikace nejsou navržena jako možností intenzivního testování, může být k dispozici pouze prostředky. Aplikace napsané v kapitole X následující architektonických principů rozloženy by měl být možností intenzivního testování jednotek a aplikace ASP.NET Core podporují automatizované integraci a také funkční testování.
+Software jakékoli složitosti, může selhat neočekávaným způsobem v reakci na změny. Proto testování po provedení změn je potřeba u všech aplikací nejvíce triviální (nebo nejméně důležité). Manuální testování je nejpomalejší, nejméně spolehlivé a nejdražší způsob testování softwaru. Bohužel Pokud aplikace nejsou navržena jako možností intenzivního testování, může být k dispozici pouze prostředky. Aplikace vytvořené po architektonických principů nastíněny v [kapitoly 4](architectural-principles.md) by měl být jednotka možností intenzivního testování a aplikace ASP.NET Core podporují automatizované integraci a také funkční testování.
 
 ## <a name="kinds-of-automated-tests"></a>Druhy automatizované testy
 
@@ -147,7 +147,7 @@ public IActionResult GetImage(int id)
 }
 ```
 
-Testování tato metoda provádí složité s přímým přístupem je závislá na System.IO.File, kterou používá ke čtení ze systému souborů. Toto chování zajistit funguje podle očekávání, ale to skutečné souborech se o test integrace můžete otestovat. Je vhodné poznamenat nelze otestovat tuto metodu směrování – uvidíte, jak na to používat funkční testy za chvíli.
+Testování tato metoda provádí složité s přímým přístupem je závislá na System.IO.File, kterou používá ke čtení ze systému souborů. Toto chování zajistit funguje podle očekávání, ale to skutečné souborech se o test integrace můžete otestovat. Je vhodné poznamenat, nejde jednotku testování této metody směrování – uvidíte, jak na to používat funkční testy za chvíli.
 
 Pokud nelze přímo Jednotkový test chování systému souborů a nelze otestovat trasu, co má k testování? Po refaktoring provádět testování částí je to možné, může také zjistit některé testovací případy a chybějící chování, jako je zpracování chyb. Co metodu dělat, když nebyl nalezen soubor? Co to dělat? V tomto příkladu refaktorovaný metoda vypadá například takto:
 
@@ -171,53 +171,15 @@ public IActionResult GetImage(int id)
 
 \_Protokolovací nástroj a \_obě imageService jsou vloženy jako závislosti. Nyní můžete otestovat, že je předán stejné id, který je předán metodě akce \_imageService, a že výsledný počet bajtů se vrátí jako součást FileResult. Můžete také otestovat, protokolování chyb dochází podle očekávání, a, pokud chybí bitovou kopii, vrátí se výsledek NotFound za předpokladu, že toto je chování důležité aplikace (to znamená, jenom dočasné kód pro vývojáře, přidá k diagnostice problému). Logika skutečný soubor přesunul do samostatné implementace služby a je rozšířený vrátit výjimku specifické pro aplikaci pro případ chybí soubor. Tato implementace můžete otestovat nezávisle na sobě pomocí o test integrace.
 
+Ve většině případů budete chtít použít obslužné rutiny globálních výjimek ve vašich kontrolerech, by tak měly být minimální množství logiku v nich a pravděpodobně není vhodné testování částí. Byste měli dělat většina testování používat funkční testy akce kontroleru a `TestServer` třídy je popsáno níže.
+
 ## <a name="integration-testing-aspnet-core-apps"></a>Aplikace ASP.NET Core pro testování integrace
 
-Pokud chcete otestovat, LocalFileImageService funguje správně pomocí testu integraiton, budete muset vytvořit známý testovací soubor image a ověřte, že tato služba vrátí ho zadaný specifický vstup. Které byste měli věnovat pozornost nepoužívat mock objektů na chování, které chcete skutečně testovat (v tomto případě čtení ze systému souborů). Však mock objektů může být stále užitečné nastavit testy integrace. V takovém případě můžete napodobení IHostingEnvironment, tak, aby jeho ContentRootPath odkazuje na složku, kterou se chystáte použít pro testovací obrázek. Dokončení testovací třídě integrace pracovních je znázorněna zde:
-
-```csharp
-public class LocalFileImageServiceGetImageBytesById
-{
-    private byte[] _testBytes = new byte[] { 0x01, 0x02, 0x03 };
-    private readonly Mock<IHostingEnvironment> _mockEnvironment = new Mock<IHostingEnvironment>();
-    private int _testImageId = 123;
-    private string _testFileName = "123.png";
-
-    public LocalFileImageServiceGetImageBytesById()
-    {
-        // create folder if necessary
-        Directory.CreateDirectory(Path.Combine(GetFileDirectory(), "Pics"));
-        string filePath = GetFilePath(_testFileName);
-        System.IO.File.WriteAllBytes(filePath, _testBytes);
-        _mockEnvironment.SetupGet<string>(m => m.ContentRootPath).Returns(GetFileDirectory());
-    }
-
-    private string GetFilePath(string fileName)
-    {
-        return Path.Combine(GetFileDirectory(), "Pics", fileName);
-        }
-            private string GetFileDirectory()
-        {
-        var location = System.Reflection.Assembly.GetEntryAssembly().Location;
-        return Path.GetDirectoryName(location);
-    }
-
-    [Fact]
-    public void ReturnsFileContentResultGivenValidId()
-    {
-        var fileService = new LocalFileImageService(_mockEnvironment.Object);
-        var result = fileService.GetImageBytesById(_testImageId);
-        Assert.Equal(_testBytes, result);
-    }
-}
-```
-
-> [!NOTE]
-> Samotný test je velmi jednoduché – větší část kódu je potřebné ke konfiguraci systému a vytvořit testovací infrastruktury (v tomto případě skutečný soubor ke čtení z disku). Toto je typický pro integrační testy, které často vyžadují složitější nastavení práce než testování částí.
+Většinu testů integrace do svých aplikací ASP.NET Core by měl testování služeb a jiné implementace typy definované v projektu infrastruktury. Funkční testy, které spustit pro vaše aplikace spuštěná v hostiteli testů je nejlepší způsob, jak otestovat, že váš projekt ASP.NET Core MVC nepracuje správně. Příklad o test integrace třídy datového přístupu se zobrazí v části Testování integrace dříve v této kapitole.
 
 ## <a name="functional-testing-aspnet-core-apps"></a>Funkční testování aplikací ASP.NET Core
 
-Pro aplikace ASP.NET Core třída TestServer usnadňuje funkční testy poměrně pro zápis. Konfigurace TestServer přímo pomocí WebHostBuilder (pouze pro vaši aplikaci obvyklým způsobem), nebo s typem WebApplicationFactory (k dispozici v 2.1). Měli byste vyzkoušet, co nejpřesněji souhlasit s hostitelem vašeho testu na produkční hostitele tak, že testy budou vykonávat chování podobné co aplikace provádět v produkčním prostředí. Třída WebApplicationFactory je užitečné pro konfiguraci objekt TestServer ContentRoot, který používá ASP.NET Core najít jako zobrazení statických prostředků.
+Pro aplikace ASP.NET Core `TestServer` třída provede funkční testy poměrně snadné k zápisu. Nakonfigurujete `TestServer` pomocí `WebHostBuilder` přímo (běžným způsobem pro vaše aplikace), nebo se `WebApplicationFactory` typ (k dispozici od verze 2.1). Doporučujeme co nejpřesněji souhlasit s hostitelem vašeho testu na produkční hostitele tak, že testy budou vykonávat chování podobné co aplikace provádět v produkčním prostředí. `WebApplicationFactory` Třída je užitečné pro konfiguraci objekt TestServer ContentRoot, který používá ASP.NET Core najít jako zobrazení statických prostředků.
 
 Vytvoříte jednoduchou funkční testy tak, že vytvoříte testovací třídě, která implementuje IClassFixture\<WebApplicationFactory\<TEntry >> kde TEntry je třída při spuštění vaší webové aplikace. S tímto na místě můžete vytvořit testovací přípravek klienta pomocí metody CreateClient factory pro:
 
@@ -238,19 +200,19 @@ public class BasicWebTests : IClassFixture<WebApplicationFactory<Startup>>
 Často, bude potřeba provést další konfiguraci vašeho webu, před spuštěním každého testu, jako je například konfigurace aplikace pro použití v paměti úložiště dat a pak synchronizace replik indexů aplikace s daty testu. Proto byste měli vytvořit vlastní podtřídy WebApplicationFactory<TEntry> a přepsat její ConfigureWebHost metodu. Následující příklad je z projektu FunctionalTests eShopOnWeb a slouží jako součást testy na hlavní webové aplikace.
 
 ```cs
-using Infrastructure.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.eShopWeb;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.eShopWeb.Infrastructure.Data;
+using Microsoft.eShopWeb.Infrastructure.Identity;
+using Microsoft.eShopWeb.Web;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
-using Microsoft.EntityFrameworkCore;
-using Infrastructure.Identity;
 
-namespace FunctionalTests.WebRazorPages
+namespace Microsoft.eShopWeb.FunctionalTests.Web.Controllers
 {
-    public class CustomWebRazorPagesApplicationFactory<TStartup>
+    public class CustomWebApplicationFactory<TStartup>
     : WebApplicationFactory<Startup>
     {
         protected override void ConfigureWebHost(IWebHostBuilder builder)
@@ -262,7 +224,7 @@ namespace FunctionalTests.WebRazorPages
                     .AddEntityFrameworkInMemoryDatabase()
                     .BuildServiceProvider();
 
-                // Add a database context (ApplicationDbContext) using an in-memory
+                // Add a database context (ApplicationDbContext) using an in-memory 
                 // database for testing.
                 services.AddDbContext<CatalogContext>(options =>
                 {
@@ -288,7 +250,7 @@ namespace FunctionalTests.WebRazorPages
                     var loggerFactory = scopedServices.GetRequiredService<ILoggerFactory>();
 
                     var logger = scopedServices
-                        .GetRequiredService<ILogger<CustomWebRazorPagesApplicationFactory<TStartup>>>();
+                        .GetRequiredService<ILogger<CustomWebApplicationFactory<TStartup>>>();
 
                     // Ensure the database is created.
                     db.Database.EnsureCreated();
@@ -310,19 +272,20 @@ namespace FunctionalTests.WebRazorPages
 }
 ```
 
-Testy můžete využít tuto vlastní WebApplicationFactory tak, že použijete k vytvoření klienta a pak zasílání požadavků na aplikaci pomocí instance tohoto klienta. Aplikace bude mít nasazený data, která slouží jako část testu kontrolní výrazy. Tento test ověřuje, že na domovskou stránku eShopOnWeb aplikace Razor Pages načte správně a obsahuje seznam produktů, která byla přidána k aplikaci jako součást počáteční hodnoty data.
+Testy můžete využít tuto vlastní WebApplicationFactory tak, že použijete k vytvoření klienta a pak zasílání požadavků na aplikaci pomocí instance tohoto klienta. Aplikace bude mít nasazený data, která slouží jako část testu kontrolní výrazy. Následující test ověří, zda domovskou stránku aplikace eShopOnWeb načte správně a obsahuje seznam produktů, která byla přidána k aplikaci jako součást počáteční hodnoty data.
 
 ```cs
-using Microsoft.eShopWeb.RazorPages;
+using Microsoft.eShopWeb.FunctionalTests.Web.Controllers;
+using Microsoft.eShopWeb.Web;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace FunctionalTests.WebRazorPages
+namespace Microsoft.eShopWeb.FunctionalTests.WebRazorPages
 {
-    public class HomePageOnGet : IClassFixture<CustomWebRazorPagesApplicationFactory<Startup>>
+    public class HomePageOnGet : IClassFixture<CustomWebApplicationFactory<Startup>>
     {
-        public HomePageOnGet(CustomWebRazorPagesApplicationFactory<Startup> factory)
+        public HomePageOnGet(CustomWebApplicationFactory<Startup> factory)
         {
             Client = factory.CreateClient();
         }
@@ -338,7 +301,7 @@ namespace FunctionalTests.WebRazorPages
             var stringResponse = await response.Content.ReadAsStringAsync();
 
             // Assert
-            Assert.Contains(".NET Bot Black Sweatshirt", stringResponse); // from seed data
+            Assert.Contains(".NET Bot Black Sweatshirt", stringResponse);
         }
     }
 }

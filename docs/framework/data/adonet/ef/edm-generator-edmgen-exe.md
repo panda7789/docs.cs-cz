@@ -2,12 +2,12 @@
 title: EDM Generator (EdmGen.exe)
 ms.date: 03/30/2017
 ms.assetid: fe8297a1-1fc3-48ce-8eeb-f70f63f857aa
-ms.openlocfilehash: cd43b6ca31eea2cc4265c7f2e1a045f0f12a256c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6c3d3ce58770999d7b4a02194cdcac2b3d0dd07a
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54722114"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827757"
 ---
 # <a name="edm-generator-edmgenexe"></a>EDM Generator (EdmGen.exe)
 EdmGen.exe je nástroj příkazového řádku pro práci s [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] modelování a mapování souborů. Nástroje EdmGen.exe můžete provádět následující akce:  
@@ -18,7 +18,7 @@ EdmGen.exe je nástroj příkazového řádku pro práci s [!INCLUDE[adonet_ef](
   
 -   Generovat soubor jazyka C# nebo Visual Basic kódu, obsahuje objekt třídy vygenerované ze souboru koncepčního modelu (.csdl). Další informace najdete v tématu [jak: Použití EdmGen.exe pro generování kódu na objektové vrstvě](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-object-layer-code.md).  
   
--   Generovat soubor kódu jazyka C# nebo Visual Basic, který obsahuje předem vygenerovaných zobrazení pro existující model. Další informace najdete [jak: Předběžně generovat zobrazení pro zlepšení výkonu dotazů](https://msdn.microsoft.com/library/b18a9d16-e10b-4043-ba91-b632f85a2579).  
+-   Generovat soubor kódu jazyka C# nebo Visual Basic, který obsahuje předem vygenerovaných zobrazení pro existující model. Další informace najdete [jak: Předběžně generovat zobrazení pro zlepšení výkonu dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100)).  
   
  Nástroj EdmGen.exe je nainstalován v [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] adresáře. V mnoha případech je umístěn v C:\windows\Microsoft.NET\Framework\v4.0. Pro 64bitové systémy je umístěn v C:\windows\Microsoft.NET\Framework64\v4.0. Nástroje EdmGen.exe dá dostat taky z příkazového řádku sady Visual Studio (klikněte na tlačítko **Start**, přejděte na **všechny programy**, přejděte na **sadu Microsoft Visual Studio 2010**, přejděte na **Visual Studio Tools**a potom klikněte na tlačítko **příkazový řádek sady Visual Studio 2010**).  
   
@@ -72,6 +72,6 @@ EdmGen /mode:choice [options]
  [Postupy: Použití EdmGen.exe pro ověření modelu a souborů mapování](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)  
   
 ## <a name="see-also"></a>Viz také:
-- [Datový Model Entity ADO.NET nástroje](https://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)
+- [Datový Model Entity ADO.NET nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
 - [Model EDM (Entity Data Model)](../../../../../docs/framework/data/adonet/entity-data-model.md)
 - [Specifikace CSDL, SSDL a MSL](../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)

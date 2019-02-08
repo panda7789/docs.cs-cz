@@ -3,18 +3,18 @@ title: Proces vývoje pro Azure
 description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | Proces vývoje pro Azure
 author: ardalis
 ms.author: wiwagn
-ms.date: 06/28/2018
-ms.openlocfilehash: 932d3869483b6c96f2394ec308d3aa014b8650d4
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 01/30/2019
+ms.openlocfilehash: 72e6f468cc55ea344d53b4342fb7d9c776a1a16c
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152596"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827471"
 ---
 # <a name="development-process-for-azure"></a>Proces vývoje pro Azure
 
 > _"S cloudem, jednotlivce a malé firmy můžete Přichytit jejich prsty a okamžitě nastavit služby na podnikové úrovni."_  
-> _-Roy Stephan_
+> _- Roy Stephan_
 
  ## <a name="vision"></a>Obraz
 
@@ -88,11 +88,11 @@ Vývoj aplikace ASP.NET Core pro nasazení do Azure se nijak neliší od vývoje
 
 Pokaždé, když budete připraveni sdílet svůj kód se svým týmem, by měl své změny odeslat z místního zdroje úložiště do úložiště sdílené zdrojového kódu vašeho týmu. Pokud jste pracovali na vlastní větvi, tento krok obvykle zahrnuje, sloučení kódu do větve sdílené (třeba podle zprávy z [žádosti o přijetí změn](https://docs.microsoft.com/azure/devops/git/pull-requests)).
 
-#### <a name="step-3-build-server-continuous-integration-build-test-package"></a>Krok 3. Buildovací Server: Průběžná integrace. sestavení, testování, balíček
+#### <a name="step-3-build-server-continuous-integration-build-test-package"></a>Krok 3. Build Server: Průběžná integrace. sestavení, testování, balíček
 
 Nové sestavení se aktivuje na server sestavení pokaždé, když je do úložiště kódu sdílené aplikace provede nové potvrzení. Jako součást procesu CI musí toto sestavení plně který aplikaci zkompiluje a spuštění automatizovaných testů, abychom potvrdili, že vše funguje podle očekávání. Konečný výsledek procesu CI by měl být zabalené verze webové aplikace připravené na nasazení.
 
-#### <a name="step-4-build-server-continuous-delivery"></a>Krok 4. Buildovací Server: Průběžné doručování
+#### <a name="step-4-build-server-continuous-delivery"></a>Krok 4. Build Server: Průběžné doručování
 
 Po úspěšném sestavení proces průběžného Doručování vyzvedne, až bude vytvořen artefaktů sestavení. Bude se jednat webové nasazení balíčku. Server sestavení se nasadí do služby Azure App Service, nahradí všechny existující služby nově vytvořené sadou tento balíček. Obvykle tento krok, zaměřuje přípravné prostředí, ale některé aplikace nasadit přímo do produkčního prostředí prostřednictvím proces průběžného Doručování.
 

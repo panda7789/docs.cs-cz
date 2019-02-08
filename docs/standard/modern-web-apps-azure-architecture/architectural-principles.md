@@ -3,13 +3,13 @@ title: Zásady architektury
 description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | Zásady architektury
 author: ardalis
 ms.author: wiwagn
-ms.date: 06/28/2018
-ms.openlocfilehash: fb854b89b9f8e425d594545b9ad61cbd334b7b2f
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.date: 01/30/2019
+ms.openlocfilehash: b7edfc8d0cb3460bb33fb4e54cc93dd18ce2f385
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54151880"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55828095"
 ---
 # <a name="architectural-principles"></a>Zásady architektury
 
@@ -102,7 +102,7 @@ Minimálně přiklonit jednotlivých webových aplikací na jejich vlastní ohra
 > ### <a name="references--modern-web-applications"></a>Odkazy – moderních webových aplikací
 > - **Oddělení oblastí zájmu**  
 > <https://deviq.com/separation-of-concerns/>
-> - **Zapouzdření**  
+> - **Encapsulation**  
 > <https://deviq.com/encapsulation/>
 > - **Princip inverzi závislostí**  
 > <https://deviq.com/dependency-inversion-principle/>

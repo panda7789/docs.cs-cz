@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: dfb99681ba363f23d742ac83940f1ce3e5e78bb1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cac6215afb34b5b2864284763eea59b33feb35fe
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54503999"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55826457"
 ---
 # <a name="publish-net-core-apps-with-the-cli"></a>Publikování .NET Core aplikací pomocí rozhraní příkazového řádku
 
@@ -38,11 +38,11 @@ Hledáte rychlý pomoc pomocí rozhraní příkazového řádku? Následující 
 
 ## <a name="publishing-basics"></a>Základní informace o publikování
 
-`<TargetFramework>` Nastavení souboru projektu určuje výchozí Cílová architektura, která při publikování vaší aplikace. Můžete změnit cílovou architekturu na libovolný platný [cílové rozhraní Framework Moniker (TFM)](../../standard/frameworks.md). Například, pokud váš projekt používá `<TargetFramework>netcoreapp2.2</TargetFramework>`, se vytvoří binární soubor, který cílí na .NET Core 2.2. TFM zadané v tomto nastavení je výchozí cíl používané [ `dotnet publish` ] [ dotnet-publish] příkazu.
+`<TargetFramework>` Nastavení souboru projektu určuje výchozí Cílová architektura, která při publikování vaší aplikace. Můžete změnit cílovou architekturu na libovolný platný [cílové rozhraní Framework Moniker (TFM)](../../standard/frameworks.md). Například, pokud váš projekt používá `<TargetFramework>netcoreapp2.2</TargetFramework>`, se vytvoří binární soubor, který cílí na .NET Core 2.2. TFM zadané v tomto nastavení je výchozí cíl používané [ `dotnet publish` ](../tools/dotnet-publish.md) příkazu.
 
 Pokud chcete cílit na více než jedno rozhraní, můžete nastavit `<TargetFrameworks>` nastavení k více než jednu hodnotu TFM oddělené středníkem. Jedno z rozhraní s publikováním `dotnet publish -f <TFM>` příkazu. Pokud máte například `<TargetFrameworks>netcoreapp2.1;netcoreapp2.2</TargetFrameworks>` a spusťte `dotnet publish -f netcoreapp2.1`, se vytvoří binární soubor, který cílí na .NET Core 2.1.
 
-Není-li jinak nastavit výstupní adresář [ `dotnet publish` ] [ dotnet-publish] příkaz je `./bin/<BUILD-CONFIGURATION>/<TFM>/publish/`. Výchozí hodnota **konfiguraci sestavení** režim je **ladění** není-li změnit `-c` parametr. Například `dotnet publish -c Release -f netcoreapp2.1` publikuje do `myfolder/bin/Release/netcoreapp2.1/publish/`. 
+Není-li jinak nastavit výstupní adresář [ `dotnet publish` ](../tools/dotnet-publish.md) příkaz je `./bin/<BUILD-CONFIGURATION>/<TFM>/publish/`. Výchozí hodnota **konfiguraci sestavení** režim je **ladění** není-li změnit `-c` parametr. Například `dotnet publish -c Release -f netcoreapp2.1` publikuje do `myfolder/bin/Release/netcoreapp2.1/publish/`. 
 
 Pokud používáte .NET Core SDK 3.0, výchozí režim pro aplikace, že cílová verze .NET Core 2.1, 2.2 nebo 3.0 je spustitelný soubor závisí na architektuře publikování.
 
@@ -95,7 +95,7 @@ Module Program
 End Module
 ```
 
-Při spuštění aplikace ([`dotnet run`][dotnet-run]), se zobrazí následující výstup:
+Při spuštění aplikace ([`dotnet run`](../tools/dotnet-run.md)), se zobrazí následující výstup:
 
 ```terminal
   _   _      _ _         __        __         _     _ _
@@ -163,6 +163,3 @@ Je nutné použít následující přepínače s `dotnet publish` příkaz pro p
 
 - [Přehled nasazení aplikací .NET core](index.md)
 - [.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)
-
-[dotnet-publish]: ../tools/dotnet-publish.md
-[dotnet-run]: ../tools/dotnet-run.md

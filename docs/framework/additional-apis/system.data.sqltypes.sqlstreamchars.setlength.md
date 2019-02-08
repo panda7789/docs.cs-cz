@@ -1,7 +1,7 @@
 ---
 title: Metoda SqlStreamChars.SetLength(Int64) (System.Data.SqlTypes)
-author: douglaslMS
-ms.author: douglasl
+author: stevestein
+ms.author: sstein
 ms.date: 12/20/2018
 ms.technology:
 - dotnet-data
@@ -13,12 +13,12 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: c7199cbd08e62b1f0391437a0c1864cb9036fe1f
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 750b46c2050228f630eaa6be31922869bff15e0a
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222692"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827341"
 ---
 # <a name="sqlstreamcharssetlengthint64-method"></a>SqlStreamChars.SetLength(Int64) – metoda
 

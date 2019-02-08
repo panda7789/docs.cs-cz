@@ -1,7 +1,7 @@
 ---
-title: Metoda SqlStreamChars.Close (System.Data.SqlTypes)
-author: douglaslMS
-ms.author: douglasl
+title: SqlStreamChars.Close Method (System.Data.SqlTypes)
+author: stevestein
+ms.author: sstein
 ms.date: 12/20/2018
 ms.technology:
 - dotnet-data
@@ -13,12 +13,12 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 5b7ba05b0659bfd2cad165826469c0c8f0674797
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 634b2262ce3262b2c5971fb995b7c988f50924ed
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221164"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55826886"
 ---
 # <a name="sqlstreamcharsclose-method"></a>SqlStreamChars.Close – metoda
 

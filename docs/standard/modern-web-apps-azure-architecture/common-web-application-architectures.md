@@ -3,13 +3,13 @@ title: Běžné architektury webových aplikací
 description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | Prozkoumejte běžné architektury webových aplikací
 author: ardalis
 ms.author: wiwagn
-ms.date: 06/28/2018
-ms.openlocfilehash: 3b0b109b0910eb5763ecab228115b7bc932d4a10
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 01/30/2019
+ms.openlocfilehash: 05d696f5cbceaedb35e3e4e97f8c4e89124d43dc
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129932"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55826730"
 ---
 # <a name="common-web-application-architectures"></a>Běžné architektury webových aplikací
 
@@ -87,7 +87,7 @@ Jak rostou potřeby aplikace, může být složité a robustní řešení nasaze
 
 Tento projekt organizace do více projekty založené na odpovědnost interně, zvyšuje udržovatelnost aplikace.
 
-Tato jednotka je možné škálovat směrem nahoru nebo navýšení kapacity využívat škálovatelnost na vyžádání založené na cloudu. Vertikální navýšení kapacity znamená, že přidáte další procesor, paměť, místo na disku nebo další prostředky na serverech, které hostují vaši aplikaci. Horizontální navýšení kapacity znamená, že přidávání dalších instancí těchto serverů, ať už jde o fyzických serverech nebo virtuálních počítačů. Když aplikace běží na několika instancích, nástroj pro vyrovnávání zatížení slouží k přiřazení požadavků k instance jednotlivých aplikací.
+Tato jednotka je možné škálovat směrem nahoru nebo navýšení kapacity využívat škálovatelnost na vyžádání založené na cloudu. Vertikální navýšení kapacity znamená, že přidáte další procesor, paměť, místo na disku nebo další prostředky na serverech, které hostují vaši aplikaci. Horizontální navýšení kapacity znamená, že přidávání dalších instancí těchto serverů, ať už jde o fyzické servery, virtuální počítače nebo kontejnerů. Když aplikace běží na několika instancích, nástroj pro vyrovnávání zatížení slouží k přiřazení požadavků k instance jednotlivých aplikací.
 
 Nejjednodušším přístupem při škálování webové aplikace v Azure je nakonfigurovat ručně škálování v plánu služby vaší aplikace App Service. Obrázek 5 – 6 se zobrazuje obrazovka odpovídající řídicí panel Azure nakonfigurovat, kolik instancí má aplikace.
 
@@ -120,7 +120,7 @@ Všimněte si, že solid šipky představují závislosti za kompilace, zatímco
 
 Obrázek 5 až 9 ukazuje podrobnější zobrazení architektury aplikace ASP.NET Core při sestavení po těchto doporučení.
 
-![Architektura jádra ASPNET](./media/image5-9.png)
+![ASPNET Core Architecture](./media/image5-9.png)
 
 **Obrázek 5 až 9.** Diagram architektury ASP.NET Core po vyčištění architektury.
 
@@ -212,9 +212,9 @@ Nasazení aktualizací, je mnohem rychlejší imagí Dockeru a efektivní sítě
 
 Kontejnery jsou ze své podstaty neměnné záměrné, je nikdy potřeba starat o poškozená virtuálních počítačů, zatímco zapomenout skripty pro aktualizaci. aby se zohlednily některé konkrétní konfiguraci nebo doleva souboru na disku.
 
-_Kontejnery Dockeru můžete použít pro monolitické nasazení jednodušší webových aplikací. Tím se zlepšuje průběžnou integraci a průběžné nasazování kanálů a pomáhá dosahovat úspěšnosti nasazení do produkčního prostředí. Už to funguje"v počítači, proč to nebude fungovat v produkčním prostředí?"_
+Kontejnery Dockeru můžete použít pro monolitické nasazení jednodušší webových aplikací. Tím se zlepšuje průběžnou integraci a průběžné nasazování kanálů a pomáhá dosahovat úspěšnosti nasazení do produkčního prostředí. Už to funguje"v počítači, proč to nebude fungovat v produkčním prostředí?"
 
-Architektura založená na mikroslužbách má spoustu výhod, ale tyto výhody pocházet za cenu zvýšení složitosti. V některých případech se náklady převažují nad přínosy, je lepší volbou monolitické nasazení aplikace s jedním kontejnerem nebo v několika kontejnerů.
+Architektura založená na mikroslužbách má spoustu výhod, ale tyto výhody pocházet za cenu zvýšení složitosti. V některých případech se náklady převažují nad přínosy, takže monolitické nasazení aplikace s jedním kontejnerem nebo v několika nádobách je lepší volbou.
 
 Monolitické aplikace nemusí být snadno decomposable do jasně oddělené mikroslužeb. Mikroslužby by měla fungovat nezávisle na sobě zajistit odolnost aplikace. Pokud nelze doručit řezy nezávislé funkce aplikace, oddělení pouze zvyšuje složitost.
 
@@ -224,7 +224,7 @@ Již v rané fázi při vývoji aplikace se nemusí mít jasno, kde jsou přiroz
 
 Oddělení aplikace do mnoha samostatné procesy také zavádí režijní náklady. Rozdělení funkcí do různých procesů je složitější. Komunikační protokoly budou složitější. Namísto volání metody je nutné použít asynchronní komunikace mezi službami. Při přesunu na architekturu mikroslužeb, budete muset přidat řadu stavební bloky implementované v mikroslužbách verze aplikace aplikaci eShopOnContainers: zpracování událostí Service bus, zprávy odolnost proti chybám a opakovaných pokusů, konečnou konzistenci a další.
 
-Mnohem jednodušší [eShopOnWeb referenční aplikace](https://github.com/dotnet-architecture/eShopOnWeb) podporuje použití monolitického kontejneru jeden kontejner. Aplikace obsahuje dvě webové aplikace: jednu pomocí tradiční MVC a další pomocí stránky Razor. Obojí se dají spustit pomocí kořenového řešení `docker-compose build` a `docker-compose up` příkazy. Tento příkaz nakonfiguruje samostatný kontejnery pro každé webové instance, pomocí `Dockerfile` najít v kořenovém adresáři každé webový projekt a spustí každý kontejner v samostatných portů. Můžete zdroj pro tuto aplikaci stáhnout z webu GitHub a spustit ho místně. Tato monolitické aplikace využívá výhod nasazení v prostředí kontejneru.
+Mnohem jednodušší [eShopOnWeb referenční aplikace](https://github.com/dotnet-architecture/eShopOnWeb) podporuje použití monolitického kontejneru jeden kontejner. Aplikace zahrnuje jednu webovou aplikaci, která zahrnuje tradiční zobrazení MVC, webové rozhraní API a stránky Razor. Tuto aplikaci můžete spustit pomocí kořenového řešení `docker-compose build` a `docker-compose up` příkazy. Tento příkaz nastaví kontejner pro webové instance, pomocí `Dockerfile` najít v kořenovém adresáři webový projekt a spustí kontejner na zadaném portu. Můžete zdroj pro tuto aplikaci stáhnout z webu GitHub a spustit ho místně. Tato monolitické aplikace využívá výhod nasazení v prostředí kontejneru.
 
 Za prvé nasazení kontejnerizované znamená, že každá instance aplikace běží ve stejném prostředí. Jedná se o prostředí pro vývojáře, kde vývoj a testování již v rané fázi probíhat. Vývojový tým můžete spustit aplikaci v kontejnerizovaných prostředí, která odpovídá produkčního prostředí.
 
@@ -236,24 +236,14 @@ Nakonec se uzavření aplikace do kontejneru vynutí oddělení mezi obchodní l
 
 `eShopOnWeb` Projekt poběží v .NET Core. Proto můžete spustit v kontejnerech založených na Linuxu nebo založené na Windows. Všimněte si, že pro nasazení prostředí Docker, chcete použít stejný typ hostitele pro SQL Server. Kontejnery založené na Linuxu povolit menší nároky na místo a jsou upřednostňované.
 
-Visual Studio 2017 můžete použít k přidání podpory Dockeru k existující aplikaci kliknutím pravým tlačítkem myši na projekt v **Průzkumníka řešení** a zvolíte **přidat** > **podporu Dockeru** . To přidá potřebné soubory a změní projekt, k jejich použití. Aktuální `eShopOnWeb` ukázka již má tyto soubory na místě.
+Můžete použít Visual Studio 2017 nebo novější do existující aplikace přidat podporu Dockeru kliknutím pravým tlačítkem myši na projekt v **Průzkumníka řešení** a zvolíte **přidat** > **Dockeru Podpora**. To přidá potřebné soubory a změní projekt, k jejich použití. Aktuální `eShopOnWeb` ukázka již má tyto soubory na místě.
 
-Úroveň řešení `docker-compose.yml` soubor obsahuje informace o co k sestavení Image a jaké kontejnery ke spuštění. Soubor umožňuje používat `docker-compose` příkaz spustit obě verze webové aplikace ve stejnou dobu. Také ho můžete použít ke konfiguraci závislostí, jako je například kontejner samostatné databáze.
+Úroveň řešení `docker-compose.yml` soubor obsahuje informace o co k sestavení Image a jaké kontejnery ke spuštění. Soubor umožňuje používat `docker-compose` příkaz ke spuštění více aplikací ve stejnou dobu. V takovém případě se spouští pouze webového projektu. Také ho můžete použít ke konfiguraci závislostí, jako je například kontejner samostatné databáze.
 
 ```yml
 version: '3'
 
 services:
-  eshopwebrazor:
-    image: eshopwebrazor
-    build:
-      context: .
-      dockerfile: src/WebRazorPages/Dockerfile
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "5107:5107"
-
   eshopwebmvc:
     image: eshopwebmvc
     build:
@@ -270,28 +260,27 @@ networks:
       name: nat
 ```
 
-`docker-compose.yml` Souboru odkazy `Dockerfile` v `Web` a `WebRazorPages` projekty. `Dockerfile` Slouží k určení, které základní kontejneru se použije a konfiguraci aplikace na ní. `WebRazorPages`" `Dockerfile`:
+`docker-compose.yml` Souboru odkazy `Dockerfile` v `Web` projektu. `Dockerfile` Slouží k určení, které základní kontejneru se použije a konfiguraci aplikace na ní. `Web`" `Dockerfile`:
 
 ```
-FROM microsoft/dotnet:2.1-aspnetcore-runtime AS base
+FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /app
-EXPOSE 80
 
-FROM microsoft/aspnetcore-build:2.1.300-preview1 AS build
-RUN npm install -g bower@1.8.4
-WORKDIR /src
+COPY *.sln .
 COPY . .
-WORKDIR /src/src/WebRazorPages
-RUN dotnet restore -nowarn:msb3202,nu1503
-RUN dotnet build --no-restore -c Release -o /app
+WORKDIR /app/src/Web
+RUN dotnet restore
 
-FROM build AS publish
-RUN dotnet publish --no-restore -c Release -o /app
+RUN dotnet publish -c Release -o out
 
-FROM base AS final
+FROM microsoft/dotnet:2.2-aspnetcore-runtime AS runtime
 WORKDIR /app
-COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "Microsoft.eShopWeb.RazorPages.dll"]
+COPY --from=build /app/src/Web/out ./
+
+# Optional: Set this here if not setting it from docker-compose.yml
+# ENV ASPNETCORE_ENVIRONMENT Development
+
+ENTRYPOINT ["dotnet", "Web.dll"]
 ```
 
 ### <a name="troubleshooting-docker-problems"></a>Řešení potíží s Dockerem
@@ -300,10 +289,9 @@ Po spuštění kontejnerizované aplikace pokračuje v běhu až po ukončení. 
 
 Všimněte si, že spuštěné kontejnery Docker může být vázaný na porty, které může být jinak pokusu o použití ve vašem vývojovém prostředí. Pokud se pokusíte spustit nebo ladit aplikaci používající stejný port jako spuštěný kontejner Dockeru, získáte chybu s informacemi o tom, že server nejde vytvořit vazbu k tomuto portu. Zastavování kontejneru znovu, by měla vyřešit problém.
 
-Pokud chcete přidat podporu Dockeru do vaší aplikace pomocí sady Visual Studio, ujistěte se, jestli že je spuštěný Docker, pokud tak učiníte. Průvodce nespustí správně, pokud Docker není spuštěn, když spustíte průvodce. Kromě toho Průvodce zkontroluje zvoleného aktuálního kontejneru pro přidání správné podpory Dockeru. Pokud chcete přidat podporu pro kontejnery Windows, musíte spustit průvodce, dokud máte Docker s kontejnery Windows nakonfigurovaný. Pokud chcete přidat podporu pro Linuxové kontejnery, spusťte Průvodce mají Dockeru s kontejnery Linuxu, které jsou nakonfigurované.
+Pokud chcete přidat podporu Dockeru do vaší aplikace pomocí sady Visual Studio, ujistěte se, že je spuštěná Desktopu Dockeru, pokud tak učiníte. Průvodce nespustí správně, pokud Docker Desktop není spuštěn, když spustíte průvodce. Kromě toho Průvodce zkontroluje zvoleného aktuálního kontejneru pro přidání správné podpory Dockeru. Pokud chcete přidat podporu pro kontejnery Windows, musíte spustit průvodce, dokud máte Docker plochu se spuštěným s kontejnery Windows nakonfigurovaný. Pokud chcete přidat podporu pro Linuxové kontejnery, spusťte Průvodce mají Dockeru s kontejnery Linuxu, které jsou nakonfigurované.
 
-> ### <a name="references--common-web-architectures"></a>Odkazy – běžné architektury webových
->
+### <a name="references--common-web-architectures"></a>Odkazy – běžné architektury webových
 > - **Vyčištění architektury**  
 >   <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
 > - **Architektura průsvitek**  

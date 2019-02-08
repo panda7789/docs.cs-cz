@@ -1,7 +1,7 @@
 ---
 title: Metoda SqlStreamChars.Flush (System.Data.SqlTypes)
-author: douglaslMS
-ms.author: douglasl
+author: stevestein
+ms.author: sstein
 ms.date: 12/20/2018
 ms.technology:
 - dotnet-data
@@ -13,12 +13,12 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 13c4b9424b5fc16648628e2b1022a7f1621dee88
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 6de892572691a016b7bb0eb2a28c0163380bcd03
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221359"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827702"
 ---
 # <a name="sqlstreamcharsflush-method"></a>SqlStreamChars.Flush – metoda
 

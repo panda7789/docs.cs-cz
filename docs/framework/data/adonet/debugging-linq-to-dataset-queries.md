@@ -2,12 +2,12 @@
 title: Ladění dotazech LINQ to DataSet
 ms.date: 03/30/2017
 ms.assetid: f4c54015-8ce2-4c5c-8d18-7038144cc66d
-ms.openlocfilehash: 6c7b8c6cec39adfd5b7456d94cfae5622649e5a3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 636d42566275f042f82f939e160c7fec5f180e96
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54680504"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55825506"
 ---
 # <a name="debugging-linq-to-dataset-queries"></a>Ladění dotazech LINQ to DataSet
 
@@ -16,7 +16,7 @@ Visual Studio podporuje ladění [!INCLUDE[linq_dataset](../../../../includes/li
 ## <a name="viewing-results"></a>Zobrazení výsledků  
  Můžete zobrazit výsledek [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] příkaz pomocí datových tipů, okna kukátka a dialogového okna rychlého kukátka. Pomocí okna zdroje můžete pozastavíte ukazatel myši na dotazu v okně zdroje a zobrazí se datatip. Můžete zkopírovat [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] proměnné a vložte ho do okna kukátka nebo dialogového okna rychlého kukátka. V [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], dotaz není vyhodnocen při vytváření nebo deklaraci, ale pouze při spuštění dotazu. Tento postup se nazývá *odložené provedení*. Proměnné dotazu, proto nemá hodnotu, dokud není vyhodnocen. Další informace najdete v tématu [dotazy v LINQ to DataSet](../../../../docs/framework/data/adonet/queries-in-linq-to-dataset.md).  
   
- Ladicí program se musí vyhodnotit dotazu pro zobrazení výsledků dotazu. Toto implicitní hodnocení vyvolá se při zobrazení [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] výsledek dotazu v ladicím programu který má některé efekty, měli byste zvážit. Každé vyhodnocení dotazu trvá určitou dobu. Rozbalení uzlu výsledků trvá určitou dobu. U některých dotazů opakované hodnocení může způsobit znatelné penalizace. Vyhodnocení dotazu může také způsobit vedlejší účinky, které znamenají změnu hodnoty dat nebo stavu programu. Ne všechny dotazy mají vedlejší účinky. Pokud chcete zjistit, zda dotaz může být bezpečně zhodnocen bez vedlejších účinků, je třeba pochopit kód, který implementuje dotaz. Další informace najdete v tématu [vedlejší efekty a výrazy](https://msdn.microsoft.com/library/e1f8a6ea-9e19-481d-b6bd-df120ad3bf4e).  
+ Ladicí program se musí vyhodnotit dotazu pro zobrazení výsledků dotazu. Toto implicitní hodnocení vyvolá se při zobrazení [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] výsledek dotazu v ladicím programu který má některé efekty, měli byste zvážit. Každé vyhodnocení dotazu trvá určitou dobu. Rozbalení uzlu výsledků trvá určitou dobu. U některých dotazů opakované hodnocení může způsobit znatelné penalizace. Vyhodnocení dotazu může také způsobit vedlejší účinky, které znamenají změnu hodnoty dat nebo stavu programu. Ne všechny dotazy mají vedlejší účinky. Pokud chcete zjistit, zda dotaz může být bezpečně zhodnocen bez vedlejších účinků, je třeba pochopit kód, který implementuje dotaz. Další informace najdete v tématu [vedlejší efekty a výrazy](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/a7a250bs(v=vs.120)).  
   
 ## <a name="edit-and-continue"></a>Upravit a pokračovat  
  Upravit a pokračovat nepodporuje změny [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazy. Je-li přidat, odebrat nebo změnit [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] příkaz během relace ladění, zobrazí se dialogové okno s oznámením, tato změna není podporována možností upravit a pokračovat. V tomto okamžiku můžete buď vrátit zpět změny nebo zastavit ladicí relaci a znovu spustit novou relaci s upraveným kódem.  

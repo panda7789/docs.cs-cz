@@ -1,8 +1,14 @@
 ---
 title: Průvodce ML.NET obsahem
-description: 'Zjistěte, jak vytvářet vlastní řešení AI a integrovat do aplikací .NET pomocí ML.NET.'
+description: Zjistěte, jak vytvářet vlastní řešení AI a integrovat do aplikací .NET pomocí ML.NET.
 ms.date: 01/18/2019
 ms.custom: seodec18
+ms.openlocfilehash: 37496adb20cfe38e731c9c8364b6f9cff319f6c4
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55826260"
 ---
 # <a name="mlnet-content-guide"></a>Průvodce ML.NET obsahem
 
@@ -25,7 +31,7 @@ Základní informace najdete v tématu [základní koncepty k tréninku modelu v
 
 [Klasifikaci problémy s úložištěm GitHub pomocí klasifikace víc tříd modelu](tutorials/github-issue-classification.md) ukazuje, jak vytvořit aplikaci, která určuje popisek oblasti pro problém na Githubu.
 
-[Předpověď taxislužby tarif pomocí regresní model](tutorials/taxi-fare.md) se dozvíte, jak vytvořit prediktivní aplikaci, která používá mnoho faktorů, z historických dat. Chcete-li zjistit odpověď.
+[Předvídání cen pomocí regresní model](tutorials/taxi-fare.md) se dozvíte, jak vytvořit prediktivní aplikaci, která používá mnoho faktorů, z historických dat. Chcete-li zjistit odpověď.
 
 [Klasifikace iris květin funkcemi](tutorials/iris-clustering.md) se dozvíte, jak analyzovat datové sady iris pomocí model clusteringu. 
 

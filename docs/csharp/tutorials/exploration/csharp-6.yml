@@ -8,12 +8,12 @@ metadata:
   ms.date: 12/11/2018
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: d782899c3b29851f020cd9fc07cde8f408bf2ac5
-  ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+  ms.openlocfilehash: c44d16e543f85852cee39106688fd3870dff7c4d
+  ms.sourcegitcommit: c3cf1ace8a1d403aeae76d8976d01995893d2536
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/23/2019
-  ms.locfileid: "54634256"
+  ms.lasthandoff: 02/07/2019
+  ms.locfileid: "55807041"
 items:
 - durationInMinutes: 1
   content: >
@@ -51,7 +51,7 @@ items:
     ```
 
 
-    Zkuste stejné až `Caps` metody. Toto je malá vylepšení, ale při použití uvážlivě vytvoří mnohem čitelnější kód, zejména pro objekty přenosu dat (DTO) a dalších typů s minimálními chování.
+    Zkuste stejné až `AllCaps` metody. Toto je malá vylepšení, ale při použití uvážlivě vytvoří mnohem čitelnější kód, zejména pro objekty přenosu dat (DTO) a dalších typů s minimálními chování.
 - title: Import jednu třídu
   durationInMinutes: 2
   content: "Pokud opakovaně používají statické metody jednu třídu v rámci kódu, včetně názvu třídy pokaždé, když zakrývá význam kódu. `Person` Třídy aktuálně importy `System` obor názvů, i když jediný <xref:System.Console?displayProperty=nameWithType> se používá. Upravit `using` příkaz následujícím způsobem:\n\n[!code-csharp[MiddleName](../../../../samples/csharp/tutorials/exploration/csharp6-finished/Program.cs#UsingStatic)]  \n\n`static using` Příkazu stane další užitečné ve větších programů, které usnadňují příliš často používá jednu třídu s mnoha statické metody, stejně jako [ `string` ](xref:System.String) třídy nebo <xref:System.Math?displayProperty=nameWithType> třídy.\n"

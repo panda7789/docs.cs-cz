@@ -4,12 +4,12 @@ description: Zjistěte, jak fungují atributy v jazyce C#.
 author: mgroves
 ms.date: 03/06/2017
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
-ms.openlocfilehash: 38d22e707dd8c9877183feb8446407c20a21b416
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 254c408e854bdf6e923d64a4e8cca42b7a3b11cc
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54029824"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55826821"
 ---
 # <a name="using-attributes-in-c"></a>Použití atributů v jazyce C# #
 
@@ -137,7 +137,7 @@ Tady je pár významné atributy, které jsou součástí knihovny základních 
 * `[Obsolete]`. Tohle byl použit v předchozích příkladech a nachází `System` oboru názvů. To je užitečné poskytují deklarativní dokumentaci o změnu základu kódu. Zprávy lze zadat v podobě řetězce a další logický parametr je možné předat z upozornění kompilátoru chybu kompilátoru.
 
 * `[Conditional]`. Tento atribut je `System.Diagnostics` oboru názvů. Tento atribut lze použít u metody (nebo třídy atributů). Je nutné předat řetězec do konstruktoru.
-Pokud, který řetězce shody `#define` direktiv, pak všechna volání do metody (ale ne metodu) se odeberou kompilátorem jazyka C#. To je obvykle používá pro účely (Diagnostika) ladění.
+Pokud se tento řetězec se neshoduje `#define` direktiv, pak všechna volání do metody (ale ne metodu) budou odebrány podle C# kompilátoru. To je obvykle používá pro účely (Diagnostika) ladění.
 
 * `[CallerMemberName]`. Tento atribut lze použít parametry a odpovídající `System.Runtime.CompilerServices` oboru názvů. Toto je atribut, který slouží k vložení název metody, která volá jinou metodu. To se obvykle používá jako způsob, jak eliminovat "magic řetězce" při implementaci v různých architektury uživatelského rozhraní INotifyPropertyChanged. Jako příklad:
 

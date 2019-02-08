@@ -1,7 +1,7 @@
 ---
-title: Vlastnost SqlChars.Stream (System.Data.SqlTypes)
-author: douglaslMS
-ms.author: douglasl
+title: SqlChars.Stream Property (System.Data.SqlTypes)
+author: stevestein
+ms.author: sstein
 ms.date: 12/19/2018
 ms.technology:
 - dotnet-data
@@ -15,14 +15,14 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: d756b78a7cdbc12562e474ca3d2c9a1f3529f6bf
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 36a6b3f45f0832ed651dc0a613f50e7170517497
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54223049"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827679"
 ---
-# <a name="sqlcharsstream-property"></a>Vlastnost SqlChars.Stream
+# <a name="sqlcharsstream-property"></a>SqlChars.Stream Property
 
 Získá nebo nastaví datového proudu znaků. Sestavení, který obsahuje tato vlastnost má relaci typu friend s SQLAccess.dll. Je určena pro použití systémem SQL Server. U jiných databází pomocí mechanismu hostování poskytuje tuto databázi.
 

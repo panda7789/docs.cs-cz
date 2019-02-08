@@ -24,12 +24,12 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: 30e9e768ceef3e75d383232fcca1ea01c60199c6
-ms.sourcegitcommit: b351b0781a035616c90c68ccae6dd60aae66a953
+ms.openlocfilehash: 184be04c963116906c1dc2c0a5803814402ea8e0
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55083766"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55826431"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Konfigurace aplikací pomocí konfiguračních souborů
 Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje vývojářům a správcům kontrolu a flexibilitu nad způsobem aplikace spouštět. Konfigurační soubory jsou soubory XML, které lze změnit podle potřeby. Správce může ovládat, můžete přístup k aplikaci, která chránila prostředky, které verze sestavení může aplikace používat a kde jsou umístěny objekty a vzdálené aplikace. Vývojáři mohou umístit nastavení konfiguračních souborů, takže odpadá potřeba znovu zkompilovat aplikaci pokaždé, když se změní nastavení. Tato část popisuje, co lze konfigurovat a proč konfigurace aplikace může být užitečné.  
@@ -52,7 +52,7 @@ Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje
 ```  
   
 ## <a name="machine-configuration-files"></a>Konfigurační soubory počítače  
- Konfigurační soubor počítače Machine.config obsahuje nastavení, které platí pro celý počítač. Tento soubor je umístěn ve složce %*cesta pro instalaci modulu runtime*%\Config adresáře. Machine.config obsahuje nastavení konfigurace pro celý počítač sestavení vazby, integrované [kanálů řízení vzdálené komunikace](https://msdn.microsoft.com/library/6e9b60e0-9bc0-47b4-a8ef-3b78585f9a18)a technologií ASP.NET.  
+ Konfigurační soubor počítače Machine.config obsahuje nastavení, které platí pro celý počítač. Tento soubor je umístěn ve složce %*cesta pro instalaci modulu runtime*%\Config adresáře. Machine.config obsahuje nastavení konfigurace pro celý počítač sestavení vazby, integrované [kanálů řízení vzdálené komunikace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100))a technologií ASP.NET.  
   
  Konfigurační systém nejprve hledá v konfiguračním souboru počítače [  **\<appSettings >** element](~/docs/framework/configure-apps/file-schema/appsettings/index.md) a další oddíly konfigurace, které může vývojář definovat. Poté hledá v konfiguračním souboru aplikace. Pro zachování udržovatelnosti souboru konfigurace počítače je vhodné umístit tato nastavení do konfiguračního souboru aplikace. Avšak díky vložení nastavení do konfiguračního souboru počítače lze provádět jednodušší údržbu vašeho systému. Například při použití komponenty třetí strany, kterou používá aplikace klienta i serveru, je jednodušší umístit nastavení této komponenty do jednoho místa. V tomto případě je konfigurační soubor počítače vhodným místem pro umístění nastavení, jelikož nebudete mít stejné nastavení ve dvou různých souborech.  
   
@@ -76,7 +76,7 @@ Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje
   
 -   Aplikace hostovaná technologií ASP.NET.  
   
-     Další informace o konfiguračních souborech technologie ASP.NET najdete v tématu [nastavení konfigurace ASP.NET](https://msdn.microsoft.com/library/116608f3-c03d-4413-9fc7-978703e18b0f(v=vs.100))  
+     Další informace o konfiguračních souborech technologie ASP.NET najdete v tématu [nastavení konfigurace ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)).
   
 -   Aplikace hostovaná pomocí prohlížeče Internet Explorer.  
   
@@ -123,9 +123,7 @@ Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje
 - [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
 - [Určení umístění sestavení](../../../docs/framework/configure-apps/specify-assembly-location.md)
 - [Přesměrování verzí sestavení](../../../docs/framework/configure-apps/redirect-assembly-versions.md)
-- [Zaregistrovat vzdálené objekty pomocí konfiguračních souborů](https://msdn.microsoft.com/library/bc503ee1-c811-4f82-9525-470343326adc)
-- [Správa webu technologie ASP.NET](https://msdn.microsoft.com/library/1298034b-5f7d-464d-abd1-ad9e6b3eeb7e)
-- [NIB: Správa zásad zabezpečení](https://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)
+- [Správa webu technologie ASP.NET](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/6hy1xzbw(v=vs.90))
+- [Správa zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))
 - [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)
 - [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
-- [Vzdálené objekty](https://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)

@@ -1,7 +1,7 @@
 ---
 title: Metoda SqlStreamChars.Dispose(Boolean) (System.Data.SqlTypes)
-author: douglaslMS
-ms.author: douglasl
+author: stevestein
+ms.author: sstein
 ms.date: 12/20/2018
 ms.technology:
 - dotnet-data
@@ -13,12 +13,12 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 930a4a69c6c44269e728fbcef62e561ab165ea22
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 4e6cfd6d4c04b1a2835b6e34b82c95b564dea588
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222360"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55826860"
 ---
 # <a name="sqlstreamcharsdisposeboolean-method"></a>SqlStreamChars.Dispose(Boolean) – metoda
 

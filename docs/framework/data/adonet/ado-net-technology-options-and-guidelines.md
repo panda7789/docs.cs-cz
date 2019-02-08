@@ -2,12 +2,12 @@
 title: Možnosti technologie ADO.NET a pokyny
 ms.date: 03/30/2017
 ms.assetid: c8577281-38e6-4ce5-b036-572039a4c3d8
-ms.openlocfilehash: 2550c286485025a394cf3f8afe6c43a0472b2cd1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e43fa3ae893a8a18e35693cde364d227e7959398
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54566278"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55828472"
 ---
 # <a name="adonet-technology-options-and-guidelines"></a>Možnosti technologie ADO.NET a pokyny
 Datová Platforma ADO.NET je strategie více vydání ke snížení množství kódu a údržba vyžaduje pro vývojáře tak, že programovat proti koncepční entity data model. Tato platforma zahrnuje ADO.NET Entity Framework a souvisejících technologiích.  
@@ -19,7 +19,7 @@ Datová Platforma ADO.NET je strategie více vydání ke snížení množství k
  Entity Data Model (EDM) je specifikace návrhu, který definuje data aplikací podle sad entit a vztahů. Data v tomto modelu podporuje objektově relační mapování a data programovatelnosti přes hranice aplikace.  
   
 ### <a name="object-services"></a>Objekt služby  
- Objekt služby umožňuje programátorům k interakci s Koncepční model pomocí sady common language runtime (CLR) třídy. Tyto třídy je možné vygenerovat automaticky z konceptuálního modelu nebo mohou být vytvořeny nezávisle tak, aby odrážely struktura konceptuálního modelu. Objekt služby také poskytuje podporu infrastruktury pro Entity Framework, včetně služeb, jako je správa stavů, řešení change tracking, rozlišení identity, načítání a navigace v relacích, šíření změn objektu tak změny databáze a vytváření podporu pro Entity SQL dotazu. Další informace najdete v tématu [Přehled služby objektů (Entity Framework)](https://msdn.microsoft.com/library/43014cf9-c9cb-4538-bfbb-197820b60038).  
+ Objekt služby umožňuje programátorům k interakci s Koncepční model pomocí sady common language runtime (CLR) třídy. Tyto třídy je možné vygenerovat automaticky z konceptuálního modelu nebo mohou být vytvořeny nezávisle tak, aby odrážely struktura konceptuálního modelu. Objekt služby také poskytuje podporu infrastruktury pro Entity Framework, včetně služeb, jako je správa stavů, řešení change tracking, rozlišení identity, načítání a navigace v relacích, šíření změn objektu tak změny databáze a vytváření podporu pro Entity SQL dotazu. Další informace najdete v tématu [Přehled služby objektů (Entity Framework)](https://docs.microsoft.com/previous-versions/bb386871(v=vs.100)).  
   
 ### <a name="linq-to-entities"></a>LINQ to Entities  
  Technologie LINQ to Entities je implementace jazyka integrované dotazu (LINQ), který umožňuje vývojářům vytvářet dotazy silného typu na objektu kontextu Entity Framework pomocí LINQ – výrazy a operátory standardního dotazu LINQ. Technologie LINQ to Entities umožňuje vývojářům pracovat s konceptuálního modelu s velmi flexibilní objektově relační mapování mezi Microsoft SQL serveru a databází výrobců. Další informace najdete v tématu [technologii LINQ to Entities](../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md).  
@@ -31,7 +31,7 @@ Datová Platforma ADO.NET je strategie více vydání ke snížení množství k
  Zprostředkovatel EntityClient je nový zprostředkovatel dat .NET Framework používá pro komunikaci s datového modelu Entity. Zprostředkovatel EntityClient následuje vzor poskytovatel dat rozhraní .NET Framework vystavení <xref:System.Data.EntityClient.EntityConnection> a <xref:System.Data.EntityClient.EntityCommand> objektů, který vrací <xref:System.Data.EntityClient.EntityDataReader>. Zprostředkovatel EntityClient funguje s jazykem Entity SQL poskytuje flexibilní mapování na poskytovatele dat pro konkrétní úložiště. Další informace najdete v tématu [zprostředkovatel EntityClient a Entity SQL](https://msdn.microsoft.com/library/49202ab9-ac98-4b4b-a05c-140e422bf527).  
   
 ### <a name="entity-data-model-tools"></a>Nástroje modelu Entity Data  
- Entity Framework poskytuje nástroje příkazového řádku, průvodci a návrháři usnadnit vytváření EDM aplikací. Ovládací prvek EntityDataSource podporuje scénáře datových vazeb založené na modelu EDM. Programovací plochu ovládacího prvku EntityDataSource je podobně jako jiné ovládací prvky zdroje dat v sadě Visual Studio. Další informace najdete v tématu [ADO.NET Entity Data Model Tools](https://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527).  
+ Entity Framework poskytuje nástroje příkazového řádku, průvodci a návrháři usnadnit vytváření EDM aplikací. Ovládací prvek EntityDataSource podporuje scénáře datových vazeb založené na modelu EDM. Programovací plochu ovládacího prvku EntityDataSource je podobně jako jiné ovládací prvky zdroje dat v sadě Visual Studio. Další informace najdete v tématu [ADO.NET Entity Data Model Tools](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100)).  
   
 ## <a name="linq-to-sql"></a>Technologie LINQ to SQL  
  Technologie LINQ to SQL je relační mapování objektů (nebo / M) implementace, která umožňuje modelovat do databáze SQL serveru s použitím tříd rozhraní .NET Framework. Technologie LINQ to SQL umožňuje dotazy na databázi pomocí jazyka LINQ, jakož i aktualizovat, vložení a odstranění dat z něj. Technologie LINQ to SQL podporuje transakce, zobrazení a uložených procedur, poskytuje snadný způsob, jak integrovat ověřování dat a obchodní logiky pravidla do datového modelu. Návrhář relací objektů (O/R Designer) slouží k modelování tříd entit a přidružení, které jsou založené na objektech v databázi. Další informace najdete v tématu [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  

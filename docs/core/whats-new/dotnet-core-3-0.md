@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 12/31/2018
-ms.openlocfilehash: e31f4391a057d0863f9dcdca00c90f9e591bc5e8
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: 9a43f9407d530224b5ad4775ef3a8c0ef2a9fe27
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55739134"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55828407"
 ---
 # <a name="whats-new-in-net-core-30-preview-2"></a>Co je nového v .NET Core 3.0 (ve verzi Preview 2)
 
@@ -20,11 +20,12 @@ Tento článek popisuje, co je nového v .NET Core 3.0 (ve verzi preview 2). Jed
 
 Přidává podporu pro .NET core 3.0 C# 8.0.
 
-[Stáhnout a začít pracovat s .NET Core 3 ve verzi Preview 2](https://aka.ms/netcore3download) teď na Windows, Mac a Linux. Zobrazí se podrobné informace o verzi v [poznámky k verzi .NET Core 3 ve verzi Preview 2](https://aka.ms/netcore3releasenotes).
+[Stáhnout a začít pracovat s .NET Core 3.0 ve verzi Preview 2](https://aka.ms/netcore3download) teď na Windows, Mac a Linux. Zobrazí se podrobné informace o verzi v [poznámky k verzi .NET Core 3.0 ve verzi Preview 2](https://aka.ms/netcore3releasenotes).
 
-Další informace o co bylo vydáno se sadou 1 ve verzi Preview, najdete v článku [.NET Core 3.0 ve verzi Preview 1 oznámení](https://blogs.msdn.microsoft.com/dotnet/2018/12/04/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/).
+Další informace o co bylo vydáno se sadou jednotlivé verze najdete v následující oznámení:
 
-Další informace o co bylo vydáno se sadou 2 ve verzi Preview, najdete v článku [.NET Core 3.0 ve verzi Preview 1 oznámení]().
+- [.NET core 3.0 ve verzi Preview 1 oznámení](https://blogs.msdn.microsoft.com/dotnet/2018/12/04/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/)
+- [.NET core 3.0 ve verzi Preview 2 oznámení](https://blogs.msdn.microsoft.com/dotnet/2019/01/29/announcing-net-core-3-preview-2/)
 
 ## <a name="c-8"></a>C# 8
 

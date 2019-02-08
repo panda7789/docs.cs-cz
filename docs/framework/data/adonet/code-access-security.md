@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: fcba4ea556d1f5036c2bbd0beaeb5f349dec4e36
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5712b0f7ef67e0a925207858e17d256dbf50cc60
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54688103"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55826255"
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu kódu a ADO.NET
 Rozhraní .NET Framework poskytuje zabezpečení na základě rolí stejně jako zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí společnou infrastrukturu pro zadaný modulem common language runtime (CLR). Většina aplikace na světě nespravovaného kódu jsou spouštěny s oprávnění uživatele nebo instanční objekt. V důsledku toho počítačových systémů může být poškozený a privátních dat dojde k ohrožení bezpečnosti při škodlivý nebo plný chyb softwaru je spuštěna uživatelem, se zvýšenými oprávněními.  
@@ -23,7 +23,7 @@ Rozhraní .NET Framework poskytuje zabezpečení na základě rolí stejně jako
  Modul CLR umožňuje provádět jenom operace, které kód má oprávnění k provedení. Kód můžete požádat o oprávnění, a tyto žádosti se uplatní na základě zásad zabezpečení nastavených správcem.  
   
 > [!NOTE]
->  Kód spuštění v modulu CLR nelze udělit oprávnění na sebe sama. Například kód můžete vyžádat a méně oprávnění než zásady zabezpečení umožňuje, ale nikdy získá další oprávnění. Při udělování oprávnění začínat vůbec žádná oprávnění a pak přidejte nejužší oprávnění pro konkrétní úkol právě probíhá. Počínaje všechna oprávnění a pak zamítnutí jednotlivých ty vede k nezabezpečené aplikace, které mohou obsahovat neúmyslnému bezpečnostní díry poskytnout větší oprávnění než nezbytné. Další informace najdete v tématu [NIB: Konfigurace zásad zabezpečení](https://msdn.microsoft.com/library/0f130bcd-1bba-4346-b231-0bcca7dab1a4) a [NIB: Správa zásad zabezpečení](https://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9).  
+>  Kód spuštění v modulu CLR nelze udělit oprávnění na sebe sama. Například kód můžete vyžádat a méně oprávnění než zásady zabezpečení umožňuje, ale nikdy získá další oprávnění. Při udělování oprávnění začínat vůbec žádná oprávnění a pak přidejte nejužší oprávnění pro konkrétní úkol právě probíhá. Počínaje všechna oprávnění a pak zamítnutí jednotlivých ty vede k nezabezpečené aplikace, které mohou obsahovat neúmyslnému bezpečnostní díry poskytnout větší oprávnění než nezbytné. Další informace najdete v tématu [konfigurace zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7c9c2y1w(v=vs.100)) a [Správa zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100)).  
   
  Existují tři typy oprávnění přístupu ke kódu:  
   
@@ -38,14 +38,14 @@ Rozhraní .NET Framework poskytuje zabezpečení na základě rolí stejně jako
 ### <a name="requesting-permissions"></a>Vyžadování oprávnění  
  Účelem o oprávnění je informovat modul runtime oprávnění, která vaše aplikace vyžaduje, aby bylo možné spustit a ujistěte se, že bude dostávat pouze oprávnění, které skutečně potřebuje. Například pokud vaše aplikace potřebuje k zápisu dat do místního disku, vyžaduje <xref:System.Security.Permissions.FileIOPermission>. Pokud nebylo uděleno oprávnění, aplikace selže, pokud chcete zapsat na disk. Nicméně pokud aplikace požaduje `FileIOPermission` a nebylo uděleno oprávnění, vygeneruje výjimku zaměřeným na aplikaci a nenačte.  
   
- V případě, kdy aplikace potřebuje pouze ke čtení dat z disku můžete požádat, aby nikdy nebylo uděleno oprávnění pro zápis. V případě chyby nebo napadením se zlými úmysly váš kód nelze poškození dat, na kterém běží. Další informace najdete v tématu [NIB: Vyžadování oprávnění](https://msdn.microsoft.com/library/0447c49d-8cba-45e4-862c-ff0b59bebdc2).  
+ V případě, kdy aplikace potřebuje pouze ke čtení dat z disku můžete požádat, aby nikdy nebylo uděleno oprávnění pro zápis. V případě chyby nebo napadením se zlými úmysly váš kód nelze poškození dat, na kterém běží. Další informace najdete v tématu [požaduje oprávnění](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/yd267cce(v=vs.100)).  
   
 ## <a name="role-based-security-and-cas"></a>Na základě rolí zabezpečení a certifikační Autority  
  Implementace zabezpečení na základě rolí a zabezpečení zřídka kódu (CAS) zvyšuje celkovou zabezpečení pro vaši aplikaci. Na základě rolí zabezpečení může být založen na účtu Windows nebo vlastní identity, zpřístupnění informací o objektu zabezpečení pro aktuální vlákno. Aplikace jsou navíc často potřeba k poskytnutí přístupu k datům nebo prostředkům na základě přihlašovacích údajů zadaných uživatelem. Tyto aplikace obvykle zkontrolovat roli uživatele a poskytovat přístup k prostředkům na základě těchto rolí.  
   
  Zabezpečení na základě rolí umožňuje komponentě k identifikaci aktuálního uživatele a jejich přidružené role v době běhu. Tyto informace se pak namapuje pomocí zásad CAS určit sadu oprávnění udělená v době běhu. Hostitele zadané aplikační domény, můžete změnit výchozí zásady na základě rolí zabezpečení a nastavit výchozí zaregistrovaný objekt zabezpečení, představující uživatele a role přidružené k tomuto uživateli.  
   
- K implementaci jeho mechanismus pro vynucení omezení pro spravovaný kód používá modul CLR oprávnění. Oprávnění na základě role zabezpečení poskytují mechanismus pro zjištění, zda má konkrétní identitu uživatele (nebo agenta jménem uživatele), nebo je členem zadané roli. Další informace najdete v tématu [oprávnění zabezpečení](https://msdn.microsoft.com/library/b03757b4-e926-4196-b738-3733ced2bda0).  
+ K implementaci jeho mechanismus pro vynucení omezení pro spravovaný kód používá modul CLR oprávnění. Oprávnění na základě role zabezpečení poskytují mechanismus pro zjištění, zda má konkrétní identitu uživatele (nebo agenta jménem uživatele), nebo je členem zadané roli. Další informace najdete v tématu [oprávnění zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5ba4k1c5(v=vs.100)).  
   
  V závislosti na typu aplikace, kterou vytváříte měli byste také zvážit implementaci oprávnění na základě role v databázi. Další informace o zabezpečení na základě rolí v systému SQL Server najdete v tématu [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md).  
   
@@ -139,7 +139,7 @@ Rozhraní .NET Framework poskytuje zabezpečení na základě rolí stejně jako
  Chcete-li povolit použití <xref:System.Data.SqlClient> oprávnění pro konkrétní zónu, může správce systému musíte vytvořit vlastní oprávnění, nastavení a nastavte ji jako sady oprávnění pro konkrétní zónu. Výchozí sady oprávnění, jako například `LocalIntranet`, nelze změnit. Například chcete zahrnout <xref:System.Data.SqlClient> oprávnění pro kód, který má <xref:System.Security.Policy.Zone> z `LocalIntranet`, zkopírovat sadu oprávnění pro správce systému `LocalIntranet`, přejmenujte ho na "CustomLocalIntranet", přidejte <xref:System.Data.SqlClient> oprávnění, import CustomLocalIntranet oprávnění nastavit pomocí [Caspol.exe (nástroj zásad zabezpečení přístupu kódu)](../../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)a nastavit oprávnění sadu `LocalIntranet_Zone` k CustomLocalIntranet.  
   
 ### <a name="sample-permission-set"></a>Ukázková sada oprávnění  
- Tady je ukázka oprávnění nastavena pro zprostředkovatele dat .NET Framework pro SQL Server ve scénáři částečně důvěryhodné. Informace o vytváření vlastních sad oprávnění najdete v tématu [NIB: Konfigurace oprávnění nastaví pomocí Caspol.exe](https://msdn.microsoft.com/library/94e2625e-21ad-4038-af36-6d1f9df40a57).  
+ Tady je ukázka oprávnění nastavena pro zprostředkovatele dat .NET Framework pro SQL Server ve scénáři částečně důvěryhodné. Informace o vytváření vlastních sad oprávnění najdete v tématu [konfigurace oprávnění nastaví pomocí Caspol.exe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4ybs46y6(v=vs.100)).  
   
 ```xml  
 <PermissionSet class="System.Security.NamedPermissionSet"  
@@ -160,7 +160,7 @@ AllowBlankPassword="False">
 ```  
   
 ## <a name="verifying-adonet-code-access-using-security-permissions"></a>Ověřování pomocí oprávnění zabezpečení přístupu kódu ADO.NET  
- Pro scénáře částečné důvěryhodnosti, můžete vyžadovat, aby certifikační Autority oprávnění pro konkrétní metody v kódu tak, že zadáte <xref:System.Data.SqlClient.SqlClientPermissionAttribute>. Pokud tato oprávnění není povolena zásadami zabezpečení s omezeným přístupem v platnosti, je vyvolána výjimka, před spuštěním kódu. Další informace o zásadách zabezpečení najdete v tématu [NIB: Správa zásad zabezpečení](https://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9) a [NIB: Doporučené postupy zabezpečení pro zásady](https://msdn.microsoft.com/library/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05).  
+ Pro scénáře částečné důvěryhodnosti, můžete vyžadovat, aby certifikační Autority oprávnění pro konkrétní metody v kódu tak, že zadáte <xref:System.Data.SqlClient.SqlClientPermissionAttribute>. Pokud tato oprávnění není povolena zásadami zabezpečení s omezeným přístupem v platnosti, je vyvolána výjimka, před spuštěním kódu. Další informace o zásadách zabezpečení najdete v tématu [Správa zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100)) a [doporučené postupy zabezpečení pro zásady](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sa4se9bc(v=vs.100)).  
   
 ### <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak napsat kód, který vyžaduje konkrétní připojovací řetězec. Simuluje neomezená oprávnění k odepření <xref:System.Data.SqlClient>, které správce systému může implementovat pomocí zásad CAS v reálném světě.  
@@ -196,6 +196,6 @@ Failed, as expected: Request failed.
   
 ## <a name="see-also"></a>Viz také:
 - [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [PAVE zabezpečení v nativním a kódu rozhraní .NET Framework](https://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)
+- [Zabezpečení v nativním kódu a kódu rozhraní .NET Framework](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/1787tk12(v=vs.100))
 - [Zabezpečení na základě rolí](../../../../docs/standard/security/role-based-security.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,6 +1,6 @@
 ---
 title: ISOSDacInterface rozhraní
-ms.date: 01/16/2019
+ms.date: 02/01/2019
 api.name:
 - ISOSDacInterface Interface
 api.location:
@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 5e037cf6fb88fff4886733ff4152dca0a827e0a3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ccaf479fc4fb90007b4999e95ee03bdd0529321e
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54491025"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827926"
 ---
 # <a name="isosdacinterface-interface"></a>ISOSDacInterface rozhraní
 
@@ -32,7 +32,9 @@ Poskytuje pomocné metody pro přístup k datům z `SOS`.
 
 | Metoda                                                                                                               | Popis                                                                                                                   |
 | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| [GetMethodDescData](../../../../docs/framework/unmanaged-api/debugging/isosdacinterface-getmethoddescdata-method.md) | Získá data dané [MethodDesc](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md). |
+| [GetMethodDescData](../../../../docs/framework/unmanaged-api/debugging/isosdacinterface-getmethoddescdata-method.md) | Získá data pro danou MethodDesc ukazatele. |
+| [GetMethodDescPtrFromIP](../../../../docs/framework/unmanaged-api/debugging/isosdacinterface-getmethoddescptrfromip-method.md) | Načte ukazatel MethodDesc odpovídající metodu obsahující uvedené instrukce nativní adresu. |
+| [GetModuleData](../../../../docs/framework/unmanaged-api/debugging/isosdacinterface-getmoduledata-method.md)| Načte data odpovídající modul načíst na dané adrese. |
 
 ## <a name="remarks"></a>Poznámky
 

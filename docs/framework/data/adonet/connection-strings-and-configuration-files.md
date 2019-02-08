@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-ms.openlocfilehash: 990e82aa6b4f85458979adfa25965cbd16b7893e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5de30627d6d0e1209b12912437ae3403890f1678
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54707476"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55828342"
 ---
 # <a name="connection-strings-and-configuration-files"></a>Připojovací řetězce a konfigurační soubory
 Vkládání připojovacích řetězců v kódu vaší aplikace může vést k ohrožení zabezpečení a problémy s údržbou. Nešifrované připojovací řetězce, které jsou kompilovány do zdrojového kódu aplikace lze zobrazit pomocí [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nástroj. Kromě toho pokud připojovací řetězec neustále mění, musí aplikace zopakovat. Z těchto důvodů doporučujeme ukládání připojovacích řetězců do konfiguračního souboru aplikace.  
@@ -70,7 +70,7 @@ Vkládání připojovacích řetězců v kódu vaší aplikace může vést k oh
  Od verze rozhraní .NET Framework 2.0, <xref:System.Configuration.ConfigurationManager> se používá při práci s konfigurační soubory v místním počítači, nahraďte zastaralá <xref:System.Configuration.ConfigurationSettings>. <xref:System.Web.Configuration.WebConfigurationManager> slouží k práci s konfiguračních souborů ASP.NET. Je navržena pro práci s konfigurační soubory na webovém serveru a umožňuje programový přístup k souboru konfigurační oddíly funkce, jako **system.web**.  
   
 > [!NOTE]
->  Přístup k konfigurační soubory v době běhu vyžaduje udělení oprávnění volajícího požadovaná oprávnění závisí na typu aplikace, konfiguračním souboru a umístění. Další informace najdete v tématu [pomocí tříd konfigurace](https://msdn.microsoft.com/library/98d2b386-baf6-4a17-974b-76e3b4c87acc) a <xref:System.Web.Configuration.WebConfigurationManager> pro aplikace ASP.NET a <xref:System.Configuration.ConfigurationManager> pro aplikace Windows.  
+>  Přístup k konfigurační soubory v době běhu vyžaduje udělení oprávnění volajícího požadovaná oprávnění závisí na typu aplikace, konfiguračním souboru a umístění. Další informace najdete v tématu [pomocí tříd konfigurace](https://docs.microsoft.com/previous-versions/aspnet/ms228063(v=vs.100)) a <xref:System.Web.Configuration.WebConfigurationManager> pro aplikace ASP.NET a <xref:System.Configuration.ConfigurationManager> pro aplikace Windows.  
   
  Můžete použít <xref:System.Configuration.ConnectionStringSettingsCollection> načíst připojovací řetězce z konfiguračních souborů aplikace. Obsahuje kolekci <xref:System.Configuration.ConnectionStringSettings> objektů, z nichž každý představuje jednu položku v **connectionStrings** oddílu. Vlastností namapovat na atributy řetězce připojení, umožňuje získat připojovací řetězec tak, že zadáte jméno nebo název poskytovatele.  
   
@@ -102,7 +102,7 @@ Vkládání připojovacích řetězců v kódu vaší aplikace může vést k oh
  [!code-vb[DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider/VB/source.vb#1)]  
   
 ## <a name="encrypting-configuration-file-sections-using-protected-configuration"></a>Šifrování pomocí konfigurační soubor oddíly chráněné konfigurace  
- ASP.NET 2.0 zavedli novou funkci, volá *chráněné konfigurace*, která umožňuje šifrování citlivých informací v konfiguračním souboru. I když primárně určený pro technologii ASP.NET, chráněné konfigurace lze také k šifrování souborů konfigurační oddíly funkce v aplikacích Windows. Podrobný popis možností chráněné konfigurace najdete v tématu [šifrování konfigurační informace pomocí Protected Configuration](https://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1).  
+ ASP.NET 2.0 zavedli novou funkci, volá *chráněné konfigurace*, která umožňuje šifrování citlivých informací v konfiguračním souboru. I když primárně určený pro technologii ASP.NET, chráněné konfigurace lze také k šifrování souborů konfigurační oddíly funkce v aplikacích Windows. Podrobný popis možností chráněné konfigurace najdete v tématu [šifrování konfigurační informace pomocí Protected Configuration](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100)).  
   
  Následující konfigurační soubor fragmentu ukazuje **connectionStrings** části po byla dříve zašifrována. **ConfigProtectionProvider** určuje chráněné konfigurace zprostředkovatele, který používá k šifrování a dešifrování řetězce připojení. **EncryptedData** oddíl obsahuje šifrovaného textu.  
   
@@ -136,16 +136,16 @@ Vkládání připojovacích řetězců v kódu vaší aplikace může vést k oh
   
 |Poskytovatel|Popis|  
 |--------------|-----------------|  
-|<xref:System.Configuration.RsaProtectedConfigurationProvider>|K šifrování a dešifrování dat používá šifrovací algoritmus RSA. Algoritmus RSA lze použít pro šifrování s veřejným klíčem a digitálním podpisům. Je také známý jako "veřejný klíč" nebo asymetrické šifrování protože využívá dva různé klíče. Můžete použít [registrační nástroj služby IIS technologie ASP.NET (Aspnet_regiis.exe)](https://msdn.microsoft.com/library/6491c41e-e2b0-481f-9863-db3614d5f96b) pro šifrování oddílů v souboru Web.config a správu šifrovacích klíčů. ASP.NET dešifruje konfigurační soubor při zpracování souboru. Identita aplikace technologie ASP.NET musí mít přístup pro čtení k šifrovacímu klíči, který se používá k šifrování a dešifrování šifrovaných oddílů.|  
+|<xref:System.Configuration.RsaProtectedConfigurationProvider>|K šifrování a dešifrování dat používá šifrovací algoritmus RSA. Algoritmus RSA lze použít pro šifrování s veřejným klíčem a digitálním podpisům. Je také známý jako "veřejný klíč" nebo asymetrické šifrování protože využívá dva různé klíče. Můžete použít [registrační nástroj služby IIS technologie ASP.NET (Aspnet_regiis.exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/k6h9cz8h(v=vs.90)) pro šifrování oddílů v souboru Web.config a správu šifrovacích klíčů. ASP.NET dešifruje konfigurační soubor při zpracování souboru. Identita aplikace technologie ASP.NET musí mít přístup pro čtení k šifrovacímu klíči, který se používá k šifrování a dešifrování šifrovaných oddílů.|  
 |<xref:System.Configuration.DpapiProtectedConfigurationProvider>|Windows Data Protection API (DPAPI) používá k šifrování konfigurační oddíly funkce. Používá Windows vestavěné kryptografické služby a může být nakonfigurována pro ochranu specifické pro počítač nebo konkrétního uživatele účtu. Je užitečné pro více aplikací na stejném serveru, potřebujete sdílet informace specifické pro počítač ochrany. Uživatelská účet ochrany je možné pomocí služeb, které fungují s specifická identita uživatele, jako jsou sdílené hostitelského prostředí. Každá aplikace běží pod samostatnou identitu, která omezuje přístup k prostředkům, například soubory a databáze.|  
   
- Oba poskytovatelé nabízejí silné šifrování data. Nicméně pokud máte v úmyslu použít stejný soubor zašifrovanou konfiguraci na více serverech, jako jsou webové farmy, pouze `RsaProtectedConfigurationProvider` umožňuje exportovat šifrovací klíče použité k šifrování dat a import na jiném serveru. Další informace najdete v tématu [import a export chráněné konfigurace RSA kontejnery klíčů](https://msdn.microsoft.com/library/f3022b39-f17f-48c1-b067-025eab0ce8bc).  
+ Oba poskytovatelé nabízejí silné šifrování data. Nicméně pokud máte v úmyslu použít stejný soubor zašifrovanou konfiguraci na více serverech, jako jsou webové farmy, pouze `RsaProtectedConfigurationProvider` umožňuje exportovat šifrovací klíče použité k šifrování dat a import na jiném serveru. Další informace najdete v tématu [import a export chráněné konfigurace RSA kontejnery klíčů](https://docs.microsoft.com/previous-versions/aspnet/yxw286t2(v=vs.100)).  
   
 ### <a name="using-the-configuration-classes"></a>Použití tříd konfigurace  
  <xref:System.Configuration> Obor názvů obsahuje třídy pro práci s nastavením konfigurace prostřednictvím kódu programu. <xref:System.Configuration.ConfigurationManager> Třídě poskytuje přístup ke konfigurační soubory počítače, aplikace a uživatele. Pokud vytváříte aplikaci ASP.NET, můžete použít <xref:System.Web.Configuration.WebConfigurationManager> třídu, která poskytuje stejné funkce, zatímco služba také umožňuje přístup k nastavení, které jsou jedinečné pro aplikace ASP.NET, jako jsou ty součástí  **\< System.Web >**.  
   
 > [!NOTE]
->  <xref:System.Security.Cryptography> Obor názvů obsahuje třídy, které poskytují další možnosti pro šifrování a dešifrování dat. Použití těchto tříd, pokud budete potřebovat chránit kryptografické služby, které nejsou k dispozici pomocí konfigurace. Některé z těchto tříd jsou obálky pro nespravované CryptoAPI Microsoft jiné implementace čistě spravovaná. Další informace najdete v tématu [šifrovacím službám](https://msdn.microsoft.com/library/68a1e844-c63c-44af-9247-f6716eb23781).  
+>  <xref:System.Security.Cryptography> Obor názvů obsahuje třídy, které poskytují další možnosti pro šifrování a dešifrování dat. Použití těchto tříd, pokud budete potřebovat chránit kryptografické služby, které nejsou k dispozici pomocí konfigurace. Některé z těchto tříd jsou obálky pro nespravované CryptoAPI Microsoft jiné implementace čistě spravovaná. Další informace najdete v tématu [šifrovacím službám](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/93bskf9z(v=vs.90)).  
   
 ### <a name="appconfig-example"></a>App.config Example  
  Tento příklad ukazuje, jak přepnout šifrování **connectionStrings** v tématu **app.config** soubor pro aplikaci Windows. V tomto příkladu, které procedura používá název aplikace jako argument, například "MyApplication.exe". **App.config** soubor pak bude zašifrovaný a zkopírovány do složky, která obsahuje spustitelný soubor pod názvem "MyApplication.exe.config".  
@@ -167,12 +167,12 @@ Vkládání připojovacích řetězců v kódu vaší aplikace může vést k oh
  [!code-csharp[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/VB/source.vb#1)]  
   
- Další informace o zabezpečení aplikací ASP.NET, naleznete v tématu [NIB: Zabezpečení technologie ASP.NET](https://msdn.microsoft.com/library/04b37532-18d9-40b4-8e5f-ee09a70b311d) a [postupy zabezpečení pro technologii ASP.NET 2.0 na první pohled](https://go.microsoft.com/fwlink/?LinkId=59997) v Centru pro vývojáře ASP.NET.  
+ Další informace o zabezpečení aplikace ASP.NET najdete v tématu [webů ASP.NET zabezpečení](https://docs.microsoft.com/previous-versions/aspnet/91f66yxt(v=vs.100)).  
   
 ## <a name="see-also"></a>Viz také:
 - [Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)
 - [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)
-- [Použití tříd konfigurace](https://msdn.microsoft.com/library/98d2b386-baf6-4a17-974b-76e3b4c87acc)
+- [Použití tříd konfigurace](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms228063(v=vs.90))
 - [Konfigurace aplikací](../../../../docs/framework/configure-apps/index.md)
-- [Správa webu technologie ASP.NET](https://msdn.microsoft.com/library/1298034b-5f7d-464d-abd1-ad9e6b3eeb7e)
+- [Správa webu technologie ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/6hy1xzbw(v=vs.100))
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

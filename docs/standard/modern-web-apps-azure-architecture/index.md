@@ -3,13 +3,13 @@ title: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
 description: Průvodce, který obsahuje pokyny k začátku do konce vytváření monolitické webových aplikací pomocí ASP.NET Core a Azure.
 author: ardalis
 ms.author: wiwagn
-ms.date: 06/28/2018
-ms.openlocfilehash: 0d59a07e01897400a53f48799383d1670a468d73
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 01/30/2019
+ms.openlocfilehash: 5e85126cbec23bdebd510b103478b3c362ef71fa
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53148103"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827861"
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
 
@@ -19,13 +19,13 @@ PUBLIKOVAL(A)
 
 Microsoft Developer Division, .NET a Visual Studio produktových týmů
 
-Divize Microsoft Corporation.
+A division of Microsoft Corporation
 
 One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright © 2018 Microsoft Corporation
+Copyright © 2019 by Microsoft Corporation
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy může reprodukovat nebo v libovolné formě nebo jakýmikoli prostředky bez písemného souhlasu vydavatele.
 
@@ -43,7 +43,7 @@ Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.
 
 Autor:
 
-> **Steve Smith (@ardalis)**, Poradce pro architekturu softwaru, [Ardalis.com](https://ardalis.com)
+> **Steve "ardalis" Smith** - softwarový architekt a Trainer - [Ardalis.com](https://ardalis.com)
 
 Editory:
 
@@ -63,11 +63,11 @@ Editory:
 
 - Správa verzí vedle sebe verzí rozhraní .NET v aplikaci na stejném serveru.
 
-Tradiční aplikace rozhraní .NET můžete a dělat vyhovění těmto požadavkům, ale v ASP.NET Core a .NET Core byly optimalizovány a nabídnout Vylepšená podpora pro výše zmíněné situace umožnili.
+Tradiční aplikace rozhraní .NET můžete a dělat podporují mnohé z těchto požadavků, ale v ASP.NET Core a .NET Core byly optimalizovány a nabídnout Vylepšená podpora pro výše zmíněné situace umožnili.
 
 Více organizací volí k hostování webových aplikací v cloudu pomocí služeb, jako je Microsoft Azure. Měli byste zvážit hostování vaší aplikace v cloudu, pokud tady jsou důležité pro vaše aplikace nebo organizace:
 
-- Snížení investice do datového centra náklady (hardware, software, místa, nástroje atd.)
+- Snížení investice do datového centra náklady (hardware, software, místa, nástroje, Správa serveru atd.)
 
 - Flexibilní ceny (placené podle používání, ne za nevyužitou kapacitu).
 
@@ -81,7 +81,7 @@ Vytváření webových aplikací pomocí ASP.NET Core, hostované v Azure, nabí
 
 ## <a name="purpose"></a>Účel
 
-Tato příručka obsahuje pokyny k začátku do konce vytváření monolitické webových aplikací pomocí ASP.NET Core a Azure.
+Tato příručka obsahuje pokyny k začátku do konce vytváření *monolitické* webové aplikace pomocí ASP.NET Core a Azure. V tomto kontextu "monolitické" odkazuje na skutečnost, že jsou tyto aplikace nasadit jako celek, ne jako kolekci komunikující služeb a aplikací.
 
 Tento průvodce je pouze doplnění ["_Mikroslužby .NET. Architektura pro Kontejnerizovaných aplikací .NET_"](../microservices-architecture/index.md) který se zaměřuje další on Docker, Mikroslužby a nasazení kontejnerů pro hostování podnikových aplikací.
 

@@ -2,12 +2,12 @@
 title: Asynchronní programování
 ms.date: 10/18/2018
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-ms.openlocfilehash: 8069ff646a124c6922358dda57de3e598ef62262
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 774a6d3476c8e3b310ffe67bb56fc5a4d5c45bb0
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54692883"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55826873"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -176,7 +176,7 @@ class A {
 ### <a name="using-the-base-provider-model-and-the-new-asynchronous-feature"></a>Pomocí nové asynchronní funkce a základní zprostředkovatel modelu  
  Budete muset vytvořit nástroj, který je možné se připojit k jiné databáze a spouštění dotazů. Můžete použít základní zprostředkovatel modelu a nové asynchronní funkce.  
   
- Řadič služby Microsoft distribuované transakce (MSDTC) musí být povoleno na serveru pro distribuované transakce. Informace o tom, jak povolit MSDTC, naleznete v tématu [jak povolit MSDTC na webovém serveru](https://msdn.microsoft.com/library/dd327979.aspx).  
+ Řadič služby Microsoft distribuované transakce (MSDTC) musí být povoleno na serveru pro distribuované transakce. Informace o tom, jak povolit MSDTC, naleznete v tématu [jak povolit MSDTC na webovém serveru](https://docs.microsoft.com/previous-versions/commerce-server/dd327979(v=cs.90)).  
   
 ```csharp
 using System;  

@@ -1,7 +1,7 @@
 ---
 title: Vlastnost SmiOrderProperty.Item (Microsoft.SqlServer.Server)
-author: douglaslMS
-ms.author: douglasl
+author: stevestein
+ms.author: sstein
 ms.date: 12/20/2018
 ms.technology:
 - dotnet-data
@@ -14,12 +14,12 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 5453167e16e2658b3546b7114201b04d481a0c79
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: cb2f6cb956f9571f9bd2ba7f86d79c5df6e72a15
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222999"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827731"
 ---
 # <a name="smiorderpropertyitem-property"></a>Vlastnost SmiOrderProperty.Item
 

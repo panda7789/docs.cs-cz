@@ -2,12 +2,12 @@
 title: Trasování data v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: a6a752a5-d2a9-4335-a382-b58690ccb79f
-ms.openlocfilehash: ac9e290d4c9209cbf8ccf5eb3acdeceb68f9021b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4f1191396c8e5a68d613c403d260d15d26fa929f
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54721876"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55826574"
 ---
 # <a name="data-tracing-in-adonet"></a>Trasování data v ADO.NET
 ADO.NET obsahuje předdefinované datové funkce sledování, je podporován zprostředkovatele dat .NET pro SQL Server, Oracle, OLE DB a rozhraní ODBC, jakož i ADO.NET <xref:System.Data.DataSet>a protokoly sítě systému SQL Server.  
@@ -26,10 +26,10 @@ ADO.NET obsahuje předdefinované datové funkce sledování, je podporován zpr
   
  Pro podporu různých trasování technologií, je rozšiřitelný, trasování, takže vývojáři můžou sledovat potíže na libovolné úrovni zásobníku aplikací. I když trasování není funkce jen pro ADO.NET, poskytovatelé Microsoftu využít výhod zobecněný trasování a instrumentace rozhraní API.  
   
- Další informace o nastavení a konfigurace spravovaných trasování v ADO.NET, naleznete v tématu [přístup k datům trasování](https://msdn.microsoft.com/library/hh880086.aspx).  
+ Další informace o nastavení a konfigurace spravovaných trasování v ADO.NET, naleznete v tématu [přístup k datům trasování](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh880086(v=msdn.10)).  
   
 ## <a name="accessing-diagnostic-information-in-the-extended-events-log"></a>Přístup k diagnostickým informacím v rozšířené události protokolu  
- V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server, pro přístup k datům trasování ([trasování Data Access](https://msdn.microsoft.com/library/hh880086.aspx)) byl aktualizován, aby bylo snazší usnadňuje korelaci událostí klienta s diagnostickými informacemi, jako jsou selhání připojení z připojení k serveru na cyklické vyrovnávací paměti a výkonu informace o aplikacích v rozšířené události protokolu. Informace o čtení rozšířené události protokolu najdete v tématu [zobrazit Data relace události](https://msdn.microsoft.com/library/hh710068\(SQL.110\).aspx).  
+ V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server, pro přístup k datům trasování ([trasování Data Access](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh880086(v=msdn.10))) byl aktualizován, aby bylo snazší usnadňuje korelaci událostí klienta s diagnostickými informacemi, jako jsou selhání připojení z připojení k serveru na cyklické vyrovnávací paměti a výkonu informace o aplikacích v rozšířené události protokolu. Informace o čtení rozšířené události protokolu najdete v tématu [zobrazit Data relace události](https://docs.microsoft.com/previous-versions/sql/sql-server-2012/hh710068(v=sql.110)).  
   
  Pro operace připojení ADO.NET pošle klient ID připojení. Pokud se nepovede, může přístup k připojení k cyklické vyrovnávací paměti ([v systému SQL Server 2008 s cyklické vyrovnávací paměti připojení k řešení potíží s připojením](https://go.microsoft.com/fwlink/?LinkId=207752)) a najděte `ClientConnectionID` pole a získání diagnostických informací připojení se nezdařilo. ID připojení klientů jsou protokolovány v cyklické vyrovnávací paměti pouze v případě, že dojde k chybě. (Neúspěšné připojení před odesláním paketu hodnoty ID připojení klienta nevygeneruje.) ID připojení klienta je identifikátor GUID 16 bajtů. Můžete také vyhledat připojení klienta ID v výstup cíle rozšířeného počtu událostí, pokud `client_connection_id` akce se přidá na události v relaci rozšířených událostí. Můžete povolit trasování data access a znovu spusťte příkaz připojení a sledujte `ClientConnectionID` pole přístup do dat trasování, pokud potřebujete další pomoc diagnostických ovladače klienta.  
   

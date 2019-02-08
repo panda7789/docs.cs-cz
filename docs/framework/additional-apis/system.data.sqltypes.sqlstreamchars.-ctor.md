@@ -1,7 +1,7 @@
 ---
-title: Konstruktor SqlStreamChars (System.Data.SqlTypes)
-author: douglaslMS
-ms.author: douglasl
+title: SqlStreamChars Constructor (System.Data.SqlTypes)
+author: stevestein
+ms.author: sstein
 ms.date: 12/20/2018
 ms.technology:
 - dotnet-data
@@ -13,14 +13,14 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 7162719c2b7732d44afde79b5a864841d5646e5c
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 9ae990830b748f642290581d29b76284edd41e4f
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222691"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55827133"
 ---
-# <a name="sqlstreamchars-constructor"></a>SqlStreamChars konstruktor
+# <a name="sqlstreamchars-constructor"></a>SqlStreamChars Constructor
 
 Inicializuje novou instanci třídy `SqlStreamChars` třídy. Sestavení obsahující tento konstruktor má relaci typu friend s SQLAccess.dll. Je určena pro použití systémem SQL Server. U jiných databází pomocí mechanismu hostování poskytuje tuto databázi.
 
