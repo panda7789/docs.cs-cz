@@ -6,12 +6,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], specifying location
 ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
-ms.openlocfilehash: b76537a347cdf30c65bfd6e56f274108e796a315
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 328fe08872a2b57d0bdf87ea9be9224795ca9ad9
+ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55258987"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55825404"
 ---
 # <a name="specifying-an-assemblys-location"></a>Určení umístění sestavení
 Existují dva způsoby, jak zadat umístění sestavení:  
@@ -20,7 +20,7 @@ Existují dva způsoby, jak zadat umístění sestavení:
   
 -   Použití [ \<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) elementu.  
   
- Můžete také použít [konfiguračního nástroje rozhraní .NET Framework (Mscorcfg.msc)](https://msdn.microsoft.com/library/a7106c52-68da-490e-b129-971b2c743764) zadat umístění sestavení nebo určit umístění pro modul common language runtime pro sběr dat pro sestavení.  
+ Můžete také použít [konfiguračního nástroje rozhraní .NET Framework (Mscorcfg.msc)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100)) zadat umístění sestavení nebo určit umístění pro modul common language runtime pro sběr dat pro sestavení.  
   
 ## <a name="using-the-codebase-element"></a>Použití \<codeBase > – Element  
  Můžete použít  **\<codeBase >** element pouze v počítači konfigurace nebo vydavatele zásad souborů, které také přesměrování verze sestavení. Když modul runtime určuje verzi sestavení, která se má použít, bude se vztahovat základní nastavení kódu ze souboru, který určuje verzi. Pokud je uveden žádný základní kód, testy se modul runtime pro sestavení běžným způsobem. Podrobnosti najdete v tématu [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
@@ -43,7 +43,7 @@ Existují dva způsoby, jak zadat umístění sestavení:
 </configuration>  
 ```  
   
- **Verze** atribut je vyžadován pro všechna sestavení se silným názvem, ale musí být vynechána pro sestavení, které se silným názvem. **\<CodeBase >** element vyžaduje **href** atribut. Nelze určit verzi rozsahů v  **\<codeBase >** elementu.  
+ **Verze** atribut je vyžadován pro všechna sestavení se silným názvem, ale musí být vynechána pro sestavení, které se silným názvem.  **\<CodeBase >** element vyžaduje **href** atribut. Nelze určit verzi rozsahů v  **\<codeBase >** elementu.  
   
 > [!NOTE]
 >  Pokud pro sestavení, který není silným názvem jsou zadání pomocného parametru základní kód, pomocný parametr musí ukazovat na základ cesty aplikace nebo o podadresář základního adresáře aplikace.  
@@ -69,4 +69,4 @@ Existují dva způsoby, jak zadat umístění sestavení:
 - [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
 - [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)
 - [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
-- [Konfigurace aplikací .NET Framework](https://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)
+- [Konfigurace aplikací pomocí konfiguračních souborů](index.md)
