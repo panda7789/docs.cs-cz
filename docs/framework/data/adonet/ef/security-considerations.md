@@ -2,12 +2,12 @@
 title: Důležité informace o zabezpečení (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: 41812dab1f92e20e3742661d13c9f0e4fb81b46e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 114da13e9939131f4799dc8a3565167f516eb697
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54612824"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55904133"
 ---
 # <a name="security-considerations-entity-framework"></a>Důležité informace o zabezpečení (Entity Framework)
 Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikací. Měli postupovat také podle doporučení pro vytváření zabezpečených [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikací. Další informace najdete v tématu [Přehled zabezpečení](../../../../../docs/framework/data/adonet/security-overview.md).  
@@ -38,7 +38,7 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
   
 -   Šifrování pomocí chráněné konfigurace oddíly konfiguračního souboru.  
   
-     Technologie ASP.NET poskytuje funkci s názvem chráněné konfigurace, která umožňuje šifrování citlivých informací v konfiguračním souboru. Přestože primárně určený pro technologii ASP.NET, můžete také použít chráněné konfigurace šifrování oddíly konfiguračních souborů aplikace Windows. Podrobný popis nových funkcí chráněné konfigurace najdete v tématu [šifrování konfigurační informace pomocí Protected Configuration](https://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1).  
+     Technologie ASP.NET poskytuje funkci s názvem chráněné konfigurace, která umožňuje šifrování citlivých informací v konfiguračním souboru. Přestože primárně určený pro technologii ASP.NET, můžete také použít chráněné konfigurace šifrování oddíly konfiguračních souborů aplikace Windows. Podrobný popis nových funkcí chráněné konfigurace najdete v tématu [šifrování konfigurační informace pomocí Protected Configuration](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100)).  
   
 -   Store připojovací řetězce v zabezpečené konfigurační soubory.  
   
@@ -98,7 +98,7 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
   
      Útoky prostřednictvím injektáže SQL lze provádět v [!INCLUDE[esql](../../../../../includes/esql-md.md)] zadáním škodlivého zadání hodnoty, které se používají v predikátu dotazu a názvy parametrů. Aby nedošlo k ohrožení útok prostřednictvím injektáže SQL, byste nikdy neměli kombinovat vstupu uživatele s [!INCLUDE[esql](../../../../../includes/esql-md.md)] text příkazu.  
   
-     [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy přijímají parametry všude, že se přijímají literály. Parametrizované dotazy byste měli použít místo vloženého literály z externí agenta přímo do dotazu. Měli byste také zvážit použití metody Tvůrce dotazů bezpečně vytvořit [Entity SQL](https://msdn.microsoft.com/library/05685434-05e6-41c2-8d5e-8933b88a40b0).  
+     [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy přijímají parametry všude, že se přijímají literály. Parametrizované dotazy byste měli použít místo vloženého literály z externí agenta přímo do dotazu. Měli byste také zvážit použití [metody Tvůrce dotazu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896238(v=vs.100)) bezpečně vytvořit Entity SQL.  
   
 -   [!INCLUDE[linq_entities](../../../../../includes/linq-entities-md.md)] útoky prostřednictvím injektáže:  
   
@@ -132,7 +132,7 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
  Při vytváření a práci s typy entit, platí následující aspekty zabezpečení.  
   
 #### <a name="do-not-share-an-objectcontext-across-application-domains"></a>Nesdílejte objektu ObjectContext napříč doménami aplikace.  
- Sdílení <xref:System.Data.Objects.ObjectContext> více než jedné aplikace domény může zveřejnit informace v připojovacím řetězci. Místo toho by měl přenos Serializované objekty nebo grafů objektů do jiné domény aplikace a pak připojte těchto objektů do <xref:System.Data.Objects.ObjectContext> v této doméně aplikace. Další informace najdete v tématu [serializaci objektů](https://msdn.microsoft.com/library/06c77f9b-5b2e-4c78-b3e3-8c148ba0ea99).  
+ Sdílení <xref:System.Data.Objects.ObjectContext> více než jedné aplikace domény může zveřejnit informace v připojovacím řetězci. Místo toho by měl přenos Serializované objekty nebo grafů objektů do jiné domény aplikace a pak připojte těchto objektů do <xref:System.Data.Objects.ObjectContext> v této doméně aplikace. Další informace najdete v tématu [serializaci objektů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738446(v=vs.100)).  
   
 #### <a name="prevent-type-safety-violations"></a>Zabraňte porušení bezpečnosti typu.  
  Pokud je porušena bezpečnost typů, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] nemůže zaručit integritu dat v objektech. Typ bezpečný přístup z více narušením by mohlo dojít, pokud je povoleno nedůvěryhodné aplikace, které poběží s zabezpečení přístupu kódu úplného vztahu důvěryhodnosti.  

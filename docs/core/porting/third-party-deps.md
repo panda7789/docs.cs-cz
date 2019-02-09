@@ -2,14 +2,14 @@
 title: Analýza závislosti port kódu až po .NET Core
 description: Zjistěte, jak analyzovat externích závislostí k portu projektu z rozhraní .NET Framework do .NET Core.
 author: cartermp
-ms.date: 12/04/2018
+ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 6451099bfc7f3afa5c9c1585862403a0a9fb2186
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: 6c0f55150a4a1c4d0fb8b3125565c9ab8ade3117
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415218"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55904337"
 ---
 # <a name="analyze-your-dependencies-to-port-code-to-net-core"></a>Analýza závislostí do portu kódu až po .NET Core
 
@@ -93,13 +93,13 @@ Chcete-li potlačit upozornění úpravou souboru projektu, vyhledejte `PackageR
 
 Další informace o tom, jak potlačení upozornění kompilátoru v sadě Visual Studio najdete v tématu [potlačení upozornění pro balíčky NuGet](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages).
 
-### <a name="port-your-packages-to-packagereference"></a>Přenést své balíčky do `PackageReference`
+## <a name="port-your-packages-to-packagereference"></a>Přenést své balíčky do `PackageReference`
 
 .NET core používá [PackageReference](/nuget/consume-packages/package-references-in-project-files) postup určení závislostí balíčku. Pokud používáte [souboru packages.config](/nuget/reference/packages-config) k určení balíčků, budete muset převést přes `PackageReference`.
 
 Další informace na [migrace ze souboru packages.config na PackageReference](/nuget/reference/migrate-packages-config-to-package-reference).
 
-### <a name="what-to-do-when-your-nuget-package-dependency-doesnt-run-on-net-core"></a>Co dělat, když vaše závislost balíčku NuGet není spuštěna v rozhraní .NET Core
+## <a name="what-to-do-when-your-nuget-package-dependency-doesnt-run-on-net-core"></a>Co dělat, když vaše závislost balíčku NuGet není spuštěna v rozhraní .NET Core
 
 Existuje několik věcí, které můžete provést, pokud závisí na balíčku NuGet není spuštěna v rozhraní .NET Core:
 
@@ -119,6 +119,5 @@ Tým .NET chcete zjistit, které knihovny jsou nejdůležitější pro podporu s
 
 Může mít závislost, která není balíček NuGet, jako je například knihovny DLL v systému souborů. Jediný způsob, jak určit přenositelnost dané závislosti je spustit [.NET Portability Analyzeru](https://github.com/Microsoft/dotnet-apiport) nástroj. Nástroj můžete analyzovat sestavení, které jsou cíleny rozhraní .NET Framework a identifikovat rozhraní API, která nejsou přenositelnost na jiné platformy .NET, jako je .NET Core. Nástroj můžete spustit jako konzolové aplikace v jazyce nebo [rozšíření sady Visual Studio](../../standard/analyzers/portability-analyzer.md).
 
-## <a name="next-steps"></a>Další kroky
-
-Pokud jste přenesení do knihovny, přečtěte si [přenos knihoven](libraries.md).
+>[!div class="step-by-step"]
+>[Next](libraries.md)

@@ -2,14 +2,14 @@
 title: Port knihoven pro .NET Core
 description: Zjistěte, jak přenést projekty knihovny z rozhraní .NET Framework do .NET Core.
 author: cartermp
-ms.date: 07/14/2017
+ms.date: 12/7/2018
 ms.custom: seodec18
-ms.openlocfilehash: 4002f7d0f98398163df1c4d02ff0e157584c2655
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 8190dcfd3ffed9051c7724752a19d88e7bef4f4d
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169676"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55904704"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>Port knihovny rozhraní .NET Framework do .NET Core
 
@@ -26,7 +26,7 @@ Tento článek předpokládá, že jste:
 
 Měli byste si také se seznámit s obsahem v následujících tématech:
 
-[.NET standard](~/docs/standard/net-standard.md)   
+[.NET Standard](~/docs/standard/net-standard.md)   
 Toto téma popisuje formální specifikaci rozhraní API .NET, která mají být k dispozici na všech implementace .NET.
 
 [Balíčky, Metabalíčky a architektury](~/docs/core/packages.md)   
@@ -40,38 +40,6 @@ Tento článek popisuje změny, které byly přidány do souboru projektu jako s
 
 [Přenos aplikací .NET Core – analýza závislostí třetích stran strany](~/docs/core/porting/third-party-deps.md)   
 Toto téma popisuje přenositelnost závislostí třetích stran a co dělat, když závislost balíčku NuGet není spuštěna v rozhraní .NET Core.
-
-## <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologií rozhraní .NET framework není k dispozici v rozhraní .NET Core
-
-Několik technologií, které jsou k dispozici pro knihovny rozhraní .NET Framework nejsou k dispozici pro použití s .NET Core, jako je například objektů třídy AppDomains, vzdálené komunikace, zabezpečení přístupu kódu (CAS) a transparentnost zabezpečení. Pokud vaše knihovny spoléhat na jeden nebo více z těchto technologií, vezměte v úvahu alternativních přístupů popsaných níže. Další informace o kompatibilitě rozhraní API CoreFX tým udržuje [seznam konce změny/compat chování a zastaralé nebo starší verze rozhraní API](https://github.com/dotnet/corefx/wiki/ApiCompat) v Githubu.
-
-To, že rozhraní API nebo technologie v současnosti není implementovaná nebude neznamená, že má nepodporovanou záměrně. Založte problém v [úložišti dotnet/corefx problémy](https://github.com/dotnet/corefx/issues) v Githubu o konkrétní rozhraní API a technologií. [Portování požadavky otázky](https://github.com/dotnet/corefx/labels/port-to-core) jsou označené `port-to-core` popisek.
-
-### <a name="appdomains"></a>AppDomains
-
-Objektů třídy AppDomains izolace aplikace od sebe. Objektů třídy AppDomains vyžadují podpora modulu CLR a obvykle jsou dost drahé. Nejsou implementované v .NET Core. Plánujeme není na přidání této funkce v budoucnu. Izolace kódu, doporučujeme samostatné procesy nebo pomocí kontejnerů jako alternativu. Pro dynamické načítání sestavení, doporučujeme vám nový <xref:System.Runtime.Loader.AssemblyLoadContext> třídy.
-
-Pro usnadnění migrace kódu z rozhraní .NET Framework, jsme jste některé z vystavené <xref:System.AppDomain> rovinu rozhraní API v .NET Core. Některé z rozhraní API pracuje normálně (například <xref:System.AppDomain.UnhandledException?displayProperty=nameWithType>), některé členy Neprovádět žádnou akci (třeba <xref:System.AppDomain.SetCachePath%2A>), a některé z nich výjimku <xref:System.PlatformNotSupportedException> (například <xref:System.AppDomain.CreateDomain%2A>). Zkontrolujte typy použít proti [ `System.AppDomain` zdroj odkazu](https://github.com/dotnet/corefx/blob/master/src/System.Runtime.Extensions/src/System/AppDomain.cs) v [úložiště GitHub dotnet/corefx](https://github.com/dotnet/corefx) nezapomeňte vybrat větev, která odpovídá verzi implementovaná.
-
-### <a name="remoting"></a>Vzdálená komunikace
-
-Vzdálené komunikace .NET byla identifikována jako problematické architektury. Používá se pro komunikaci mezi domény aplikace, které se už nepodporuje. Vzdálená komunikace také vyžaduje podpora modulu CLR, které je náročné na údržbu. Z těchto důvodů se nepodporuje vzdálené komunikace .NET na .NET Core a není plánujeme v budoucnu doplnění podpory pro něj.
-
-Komunikace mezi procesy, vezměte v úvahu mechanismus meziprocesové komunikace (IPC) jako alternativu k vzdálené komunikace, jako <xref:System.IO.Pipes> nebo <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> třídy.
-
-V počítačích použijte jako alternativu řešení založené na síti. Pokud možno použijte protokol s nízkou režií prostého textu, jako je například HTTP. [Kestrel webový server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), webový server používá ASP.NET Core, je možnost tady. Také zvážit použití <xref:System.Net.Sockets> pro scénáře založené na síti, mezi počítači. Další možnosti najdete v tématu [.NET Open Source projektů pro vývojáře: Zasílání zpráv](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging).
-
-### <a name="code-access-security-cas"></a>Zabezpečení přístupu kódu (CAS)
-
-Izolace (sandbox), která se spoléhá na modul runtime nebo rozhraní, chcete-li omezit které prostředky spravované aplikace nebo knihovna používá nebo běží, [není podporován v rozhraní .NET Framework](~/docs/framework/misc/code-access-security.md) a proto se taky nepodporuje v rozhraní .NET Core. Věříme, že existují moc velký počet případů v rozhraní .NET Framework a modulu runtime kde dojde k zvýšení oprávnění pokračovat zpracování certifikační Autority jako hranice zabezpečení. Certifikační Autority navíc díky implementaci složitější a často má vliv na správnost výkon pro aplikace, které nechcete použít.
-
-Volit raději hranice zabezpečení poskytované operačního systému, například virtualizace, kontejnerů nebo uživatelské účty pro spouštění procesů s nejmenší sadu oprávnění.
-
-### <a name="security-transparency"></a>Transparentnost zabezpečení
-
-Podobně jako u certifikační Autority, transparentnost zabezpečení umožňuje oddělení kódu v izolovaném prostoru z zabezpečení kritického kódu deklarativní způsobem, ale je [již nejsou podporovány jako hranice zabezpečení](~/docs/framework/misc/security-transparent-code.md). Tato funkce je nejčastěji používá program Silverlight. 
-
-Volit raději hranice zabezpečení poskytované operačního systému, například virtualizace, kontejnerů nebo uživatelské účty pro spouštění procesů s nejmenší sadu oprávnění.
 
 ## <a name="retargeting-your-net-framework-code-to-net-framework-472"></a>Mění se cílení na rozhraní .NET Framework 4.7.2 kódu rozhraní .NET Framework
 
@@ -163,3 +131,6 @@ Nakonec přenosem úsilí závisí do značné míry na strukturování kódu ro
 1. Vyberte další vrstvu kódu na port a opakujte předchozí kroky.
 
 Je-li začít se základnou knihovny a přesunout ven ze základní třídy a otestovat každou vrstvu podle potřeby, přenos provádí systematické kde problémy jsou izolované na jednu vrstvu kódu v čase.
+
+>[!div class="step-by-step"]
+>[Next](project-structure.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3af512f3-87d9-4005-9e2f-abb1060ff43f
-ms.openlocfilehash: 6e3a88f7b34c64480d69df1a06a113e392d8fe53
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 97cae018f8cdf19da390b9586334f7c8b7f1c239
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54619380"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55903820"
 ---
 # <a name="establishing-the-connection"></a>Navazování připojení
 Pro připojení k serveru Microsoft SQL Server, použijte <xref:System.Data.SqlClient.SqlConnection> objektu zprostředkovatele dat .NET Framework pro SQL Server. Pro připojení ke zdroji dat OLE DB, použijte <xref:System.Data.OleDb.OleDbConnection> objektu zprostředkovatele dat .NET Framework pro OLE DB. Chcete-li se připojit ke zdroji dat rozhraní ODBC, použijte <xref:System.Data.Odbc.OdbcConnection> objektu zprostředkovatele dat .NET Framework pro ODBC. Chcete-li se připojit ke zdroji dat Oracle, použijte <xref:System.Data.OracleClient.OracleConnection> objektu zprostředkovatele dat .NET Framework pro Oracle. Bezpečné ukládání a načítání připojovacích řetězců najdete v tématu [chrání informace o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md).  
@@ -51,7 +51,7 @@ using (SqlConnection connection = new SqlConnection(connectionString))
 ### <a name="integrated-security-and-aspnet"></a>Integrované zabezpečení a ASP.NET  
  Integrované zabezpečení (označované také jako důvěryhodná připojení) pomáhá zajistit ochranu při připojování k serveru SQL Server jako jeho systému SQL Server nemůže vystavovat ID uživatele a heslo v připojovacím řetězci a je doporučenou metodou pro ověřování připojení. Integrované zabezpečení používá aktuální identita zabezpečení, nebo token spuštěného procesu. Pro desktopové aplikace je to obvykle identitu aktuálně přihlášeného uživatele.  
   
- Identita zabezpečení pro aplikace ASP.NET můžete nastavit na jedno z několika různých možností. Abyste lépe pochopili identita zabezpečení, který používá aplikace ASP.NET při připojování k serveru SQL Server, naleznete v tématu [zosobnění technologie ASP.NET](https://msdn.microsoft.com/library/a0cb3024-562f-4184-9d3c-095504787d3d), [ověřování ASP.NET](https://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1), a [jak: Přístup k SQL serveru pomocí Windows integrované zabezpečení](https://msdn.microsoft.com/library/683f9c9f-4375-4de6-8111-943c4423fde5).  
+ Identita zabezpečení pro aplikace ASP.NET můžete nastavit na jedno z několika různých možností. Abyste lépe pochopili identita zabezpečení, který používá aplikace ASP.NET při připojování k serveru SQL Server, naleznete v tématu [zosobnění technologie ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/xh507fc5(v=vs.100)), [ověřování ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/eeyk640h(v=vs.100)), a [jak: Přístup k SQL serveru pomocí Windows integrované zabezpečení](https://docs.microsoft.com/previous-versions/aspnet/bsz5788z(v=vs.100)).  
   
 ## <a name="connecting-to-an-ole-db-data-source"></a>Připojení ke zdroji dat OLE DB  
  Zprostředkovatel dat .NET Framework pro OLE DB poskytuje připojení ke zdrojům dat, které jsou přístupné přes OLE DB (pomocí SQLOLEDB, OLE DB Provider pro SQL Server), pomocí **OleDbConnection –** objektu.  

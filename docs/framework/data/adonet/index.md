@@ -2,6 +2,12 @@
 title: ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
+ms.openlocfilehash: 86d4d4628313ff248618f37637b0a25e80820b06
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55903625"
 ---
 # <a name="adonet"></a>ADO.NET
 ADO.NET je sada tříd, které zprostředkovávají služby data access services pro programátory v rozhraní .NET Framework. ADO.NET obsahuje bohatou sadu komponent pro vytváření aplikací pro distribuované, sdílení dat. Je nedílnou součástí rozhraní .NET Framework poskytuje přístup k relační, XML a data aplikací. ADO.NET podporuje nejrůznější potřeby vývoje, včetně vytvoření front-endu databáze klientů a střední vrstvy obchodní objekty používané aplikace, nástroje, jazyky nebo webových prohlížečů.  
@@ -38,23 +44,20 @@ ADO.NET je sada tříd, které zprostředkovávají služby data access services
  Popisuje funkce a chování, které jsou specifické pro zprostředkovatele dat .NET Framework pro Oracle.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [PAVE zabezpečení v nativním a kódu rozhraní .NET Framework](https://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)  
- Obsahuje odkazy na témata o zabezpečení pro Visual Studio, .NET Framework a kryptografie.  
+ [Language-Integrated Query (LINQ) –C#](../../../csharp/programming-guide/concepts/linq/index.md)  
+ Obsahuje odkazy na témata LINQ a ukázky použití C#.  
   
- [LINQ (Language-Integrated Query)](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d)  
- Obsahuje odkazy na témata LINQ a ukázky.  
+ [Language-Integrated Query (LINQ) – Visual Basic](../../../visual-basic/programming-guide/concepts/linq/index.md)  
+ Obsahuje odkazy na témata LINQ a ukázky jazyka Visual Basic.  
   
  [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md)  
  Popisuje způsob použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pro nasazení datových služeb na webu nebo intranetu, které implementují Open Data Protocol (OData).  
   
- [Základní technologie vývoje](https://msdn.microsoft.com/library/csxbhtye.aspx)  
+ [Příručka pro vývojáře v rozhraní .NET framework](../../development-guide.md)  
  Obsahuje odkazy na informace o úkolech vývoje ve standardu v rozhraní .NET Framework.  
   
- [Pokročilé vývojovým technologiím](https://msdn.microsoft.com/library/a493kdy6.aspx)  
- Obsahuje odkazy na informace o sofistikované vývojářské úlohy a techniky v rozhraní .NET Framework.  
-  
- [Ukázky a šablony rychlý start](https://msdn.microsoft.com/library/ms184422.aspx)  
- Poskytuje úplné výpisy všech ukázek a ukázky QuickStart, které jsou přidružené k rozhraní .NET Framework.  
+ [Ukázky a kurzy](../../../samples-and-tutorials/index.md)  
+ Obsahuje seznam .NET ukázky a kurzy.
   
 ## <a name="see-also"></a>Viz také:
 - [Přístup k datům v sadě Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)

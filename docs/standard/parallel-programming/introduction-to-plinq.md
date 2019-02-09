@@ -10,16 +10,16 @@ helpviewer_keywords:
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cf9b842243cd7b9ae244688b0da348f63b68f08a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1a1cf3ea782752f750f3545a28699a8bc325e4a5
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54492036"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55903888"
 ---
 # <a name="introduction-to-plinq"></a>Úvod do PLINQ
 ## <a name="what-is-a-parallel-query"></a>Co je paralelní dotaz?  
- Language Integrated Query (LINQ) byl zaveden v [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)].  Nabízí jednotný model pro dotazování libovolného <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> zdroj dat v podobě typově bezpečné. LINQ to Objects je název pro LINQ dotazy, které jsou spouštěny proti kolekci v paměť, jako <xref:System.Collections.Generic.List%601> a pole. Tento článek předpokládá, že máte základní znalosti o LINQ. Další informace najdete v tématu [LINQ (Language-Integrated Query)](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d).  
+ Language Integrated Query (LINQ) byl zaveden v [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)].  Nabízí jednotný model pro dotazování libovolného <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> zdroj dat v podobě typově bezpečné. LINQ to Objects je název pro LINQ dotazy, které jsou spouštěny proti kolekci v paměť, jako <xref:System.Collections.Generic.List%601> a pole. Tento článek předpokládá, že máte základní znalosti o LINQ. Další informace najdete v tématu [Language-Integrated Query (LINQ) - C# ](../../csharp/programming-guide/concepts/linq/index.md) nebo [Language-Integrated Query (LINQ) - jazyka Visual Basic](../../visual-basic/programming-guide/concepts/linq/index.md).  
   
  Paralelní LINQ (PLINQ) je implementace LINQ vzoru. PLINQ dotaz ve spoustě ohledů podobá neparalelní LINQ to Objects dotazům. PLINQ dotazy, stejně jako sekvenční [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)] dotazy, pracují na všech paměťových <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> datového zdroje a mají odložené spouštění, což znamená, že nezačíná dříve, než je vypočten dotaz. Hlavní rozdíl je, že PLINQ se pokouší plně využívat všechny procesory systému. Toto je realizováno rozdělením zdrojových dat do segmentů a spouštěním dotazu na všech segmentech v samostatných pracovních vláknech na více procesorů. V mnoha případech paralelní provádění znamená, že spuštění dotazu výrazně rychlejší.  
   

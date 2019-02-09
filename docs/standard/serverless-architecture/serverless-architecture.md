@@ -4,16 +4,16 @@ description: Zkoumání různých architekturách a aplikace, které podporuje a
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 5f22f8b9894a23e5920adb2af3fdf02bce2877d7
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 60d225d9794d5c15b0cd8e42800ccad4d7872756
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53150300"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55904785"
 ---
 # <a name="serverless-architecture"></a>Architektura bez serveru
 
-Existuje celá řada přístupů k použití architektury bez serveru. Tato kapitola popisuje, příklady běžných architektur, které se integrují bez serveru. Věnuje se také, se kterými můžou představovat další výzvy, nebo vyžadují zvláštní pozornost při provádění bez serveru. Nakonec několik příkladů návrhu jsou k dispozici, které znázorňují různé případy použití bez serveru.
+Existuje celá řada přístupů k použití [bez serveru](http://azure.com/serverless) architektury. Tato kapitola popisuje, příklady běžných architektur, které se integrují bez serveru. Věnuje se také, se kterými můžou představovat další výzvy, nebo vyžadují zvláštní pozornost při provádění bez serveru. Nakonec několik příkladů návrhu jsou k dispozici, které znázorňují různé případy použití bez serveru.
 
 Bez serveru hostitele často používají stávající založených na kontejnerech nebo vrstvu PaaS pro správu instancí bez serveru. Například je Azure Functions na základě [služby Azure App Service](https://docs.microsoft.com/azure/app-service/). App Service umožňuje horizontálně navýšit kapacitu instancí a spravovat modul runtime, která spustí kód Azure Functions. Spuštění hostitele jako PaaS a škálování pro funkce založené na Windows out modul .NET runtime. Pro funkce založené na Linuxu využívá hostitele kontejnery.
 

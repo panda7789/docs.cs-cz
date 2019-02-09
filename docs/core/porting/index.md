@@ -2,14 +2,14 @@
 title: Port kód z rozhraní .NET Framework do .NET Core
 description: Vysvětlení procesu přenosem a zjišťování nástroje, které vám můžou pomoct při přenášení do rozhraní .NET Framework projektu .NET Core.
 author: cartermp
-ms.date: 12/04/2018
+ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: e29750340cf272c2e05287482bcbeca703d8720a
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 870320c8467237e87a2675ec5cfb57647026d8ec
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55266569"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55903565"
 ---
 # <a name="port-your-code-from-net-framework-to-net-core"></a>Přeneste kód z rozhraní .NET Framework do .NET Core
 
@@ -37,8 +37,6 @@ To je proces, doporučujeme že je provést při přenášení projektu .NET Cor
 
 5. Spuštění vašeho plánu pro přenos!
 
-## <a name="tools-to-help"></a>Nástroje, které pomáhají
-
 Následující seznam obsahuje nástroje že mohou být užitečné používat během procesu přenosem:
 
 * .NET portability Analyzeru - [nástroj příkazového řádku](https://github.com/Microsoft/dotnet-apiport/releases) nebo [rozšíření sady Visual Studio](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer), sada nástrojů, který může vygenerovat sestavu jak přenosného kódu je mezi rozhraní .NET Framework a .NET Core pomocí Rozpis sestavení podle problémů. Další informace najdete v tématu [.NET Portability Analyzeru](../../standard/analyzers/portability-analyzer.md).
@@ -51,4 +49,4 @@ Kromě toho se můžete pokusit port menší řešení nebo na formát souboru p
 > CsprojToVs2017 je nástroj třetí strany. Neexistuje žádná záruka, že bude fungovat pro všemi svými projekty a může to způsobit drobné změny v chování, které nejvíc potřebujete. CsprojToVs2017 by měla sloužit jako _počáteční bod_ , který automatizuje základní akce, které je možné automatizovat. Není zaručené řešení migrace formáty souborů projektu.
 
 >[!div class="step-by-step"]
->[Next](third-party-deps.md)
+>[Next](net-framework-tech-unavailable.md)

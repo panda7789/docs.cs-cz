@@ -2,12 +2,12 @@
 title: WCF Test Client (WcfTestClient.exe)
 ms.date: 03/30/2017
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
-ms.openlocfilehash: d48caebed857a3a61842b1ea1d3e8b2977d749ab
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: edce9d2eb2d0bcd915beae0c75d3474d93d8fd51
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54611381"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55903990"
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF Test Client (WcfTestClient.exe)
 Windows Communication Foundation (WCF) testovacího klienta (WcfTestClient.exe) je nástroj grafického uživatelského rozhraní, který umožňuje uživatelům vstupní parametry testu, odeslat tento vstup do služby a zobrazovat odpovědi, které služba odesílá zpět. Poskytuje bezproblémové službu testování prostředí v kombinaci s hostitel služby WCF.  
@@ -125,7 +125,7 @@ Windows Communication Foundation (WCF) testovacího klienta (WcfTestClient.exe) 
  Během proxy serveru jsou zakázána. generace, binární kompilace nebo vyvolání služby položek nabídky, které podporují aktualizaci služby. Volání služby se vypne taky.  
   
 ## <a name="location-of-files-generated-by-the-test-client"></a>Umístění souborů generovaných testovacího klienta  
- Ve výchozím nastavení generovány testovací klient WCF úložišť kódu a konfiguračních souborů klienta ve složce "%appdata%\Local\temp\Test klientské projekty". Tato složka je odstraněn po ukončení klienta testu WCF. Pokud je testovací klient WCF upravením konfiguračního souboru a **vždy znovu vygenerovat konfigurace při spouštění služby** možnost je vypnuta, upravený soubor je zkopírován do složky "Konfigurace v mezipaměti" v části "Documents\Test klientské projekty Klientské projekty Documents\Test"pomocí mapování souboru XML (metadata adresa na název souboru-) jako index.  
+ Ve výchozím nastavení generovány testovací klient WCF úložišť kódu a konfiguračních souborů klienta ve složce "%appdata%\Local\temp\Test klientské projekty". Tato složka je odstraněn po ukončení klienta testu WCF. Pokud je testovací klient WCF upravením konfiguračního souboru a **vždy znovu vygenerovat konfigurace při spouštění služby** možnost je vypnuta, upravený soubor je zkopírován do složky "Konfigurace v mezipaměti" v části "Documents\Test klientské projekty" mapování souboru XML (metadata adresa na název souboru-) jako index.  
   
  Můžete také spustit klienta testu WCF v příkazovém řádku, použijte `/ProjectPath` přepnout na zadat novou požadovanou cestu pro ukládání generovaných souborů, nebo použít `/RestoreProjectPath` přepnout na výchozí umístění pro obnovení. Syntaxe vypadá takto:  
   

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ec50083d-44f4-4093-9b23-5eacd601f96e
-ms.openlocfilehash: 25d7f49644996d87ddb5d191dc313916c0ca6fbb
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 9ca3732de5e4cfa07fe08dec78edc9de23a1a036
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45748628"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55904379"
 ---
 # <a name="working-with-data-definition-language"></a>Práce s jazyk pro definování dat
 Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] verze 4, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje jazyk pro definování dat (DDL). To umožňuje vytvořit nebo odstranit instanci databáze na základě připojovacího řetězce a metadata modelu úložiště (SSDL).  
@@ -40,11 +40,11 @@ Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] ve
   
 2.  Přidáte existující model pro vaši aplikaci.  
   
-    1.  Přidat prázdný model s názvem `SchoolModel`. Pokud chcete vytvořit prázdný model, najdete v článku [postupy: vytvoření nové edmx soubor](https://msdn.microsoft.com/library/beb8189e-e51c-4051-839c-9902c224abf2) tématu.  
+    1.  Přidat prázdný model s názvem `SchoolModel`. Chcete-li vytvořit prázdný model, najdete v článku [jak: Vytvořit nový edmx soubor](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100)) tématu.  
   
      Soubor SchoolModel.edmx je přidán do projektu.  
   
-    1.  Zkopírujte koncepční, úložiště a mapování obsahu pro model školní ze [školní modelu](https://msdn.microsoft.com/library/859a9587-81ea-4a45-9bc0-f8d330e1adac) tématu.  
+    1.  Zkopírujte koncepční, úložiště a mapování obsahu pro model školní ze [školní modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)) tématu.  
   
     2.  Otevřete soubor SchoolModel.edmx a vložte obsah v rámci `edmx:Runtime` značky.  
   

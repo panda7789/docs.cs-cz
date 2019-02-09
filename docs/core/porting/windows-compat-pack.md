@@ -2,14 +2,14 @@
 title: Použití sady Windows Compatibility Pack port kódu až po .NET Core
 description: Další informace o Windows Compatibility Pack a jak můžete pomocí jeho port existujícího kódu rozhraní .NET Framework do .NET Core
 author: terrajobst
-ms.date: 11/13/2017
+ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 0a409c953ce38ed4c2959adaf4de9d3730ce37f4
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 09c5533dbc46d16585b7f3cbfd2a3a70819ceb75
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169934"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55903752"
 ---
 # <a name="use-the-windows-compatibility-pack-to-port-code-to-net-core"></a>Použití sady Windows Compatibility Pack port kódu až po .NET Core
 
@@ -35,8 +35,8 @@ Poskytuje informace o 20 000 rozhraní API, včetně jen pro Windows i multiplat
 * Porty
 * Windows seznamy řízení přístupu (ACL)
 * Windows Communication Foundation (WCF)
-* Šifrování Windows
-* Protokol událostí Windows
+* Windows Cryptography
+* Windows EventLog
 * Windows Management Instrumentation (WMI)
 * Čítače výkonu Windows
 * Registru Windows
@@ -78,4 +78,3 @@ Další informace najdete v tématu [specifikace sady kompatibility](https://git
     ```
 
 Předváděcí akci, podívejte se [videa Channel 9 sady Windows Compatibility Pack](https://channel9.msdn.com/Events/Connect/2017/T123).
-

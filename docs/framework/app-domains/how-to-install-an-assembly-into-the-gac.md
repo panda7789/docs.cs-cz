@@ -11,16 +11,16 @@ helpviewer_keywords:
 ms.assetid: a7e6f091-d02c-49ba-b736-7295cb0eb743
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: adeaaa6626a1c9e9e4543613a8fa9e94d2b67e89
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 233a7803cb59f9bfeac15d293dc3fb5a0db449c9
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826834"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55903765"
 ---
 # <a name="how-to-install-an-assembly-into-the-global-assembly-cache"></a>Postupy: Instalace sestavení do globální mezipaměti sestavení
 
-Globální mezipaměti sestavení (GAC) ukládá sestavení, které sdílí několik aplikací. Instalace sestavení do [globální mezipaměti sestavení](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/gac) s jedním z následujících součástí: 
+Globální mezipaměti sestavení (GAC) ukládá sestavení, které sdílí několik aplikací. Instalace sestavení do [globální mezipaměti sestavení](gac.md) s jedním z následujících součástí: 
 - [Windows Installer](#windows-installer)
 - [Nástroj globální mezipaměti sestavení](#global-assembly-cache-tool)
 
@@ -29,7 +29,7 @@ Globální mezipaměti sestavení (GAC) ukládá sestavení, které sdílí něk
 
 ## <a name="windows-installer"></a>Instalační služba systému Windows
 
-[Instalační program Windows](https://docs.microsoft.com/en-us/windows/desktop/Msi/installation-of-assemblies-to-the-global-assembly-cache), instalace modulu Windows je doporučený způsob přidávání sestavení do globální mezipaměti sestavení. Instalační služby systému Windows poskytuje možnost počítání odkazů sestavení v globální mezipaměti sestavení a další výhody. Vytvoření instalačního balíčku pro Instalační služby systému Windows, použijte [WiX toolset rozšíření pro Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=RobMensching.WixToolsetVisualStudio2017Extension).
+[Instalační program Windows](/windows/desktop/Msi/installation-of-assemblies-to-the-global-assembly-cache), instalace modulu Windows je doporučený způsob přidávání sestavení do globální mezipaměti sestavení. Instalační služby systému Windows poskytuje možnost počítání odkazů sestavení v globální mezipaměti sestavení a další výhody. Vytvoření instalačního balíčku pro Instalační služby systému Windows, použijte [WiX toolset rozšíření pro Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=RobMensching.WixToolsetVisualStudio2017Extension).
 
 ## <a name="global-assembly-cache-tool"></a>Nástroj globální mezipaměti sestavení
 
@@ -46,7 +46,7 @@ gacutil -i <assembly name>
 
 V tomto příkazu  *\<název sestavení >* je název sestavení, můžete nainstalovat v globální mezipaměti sestavení.
 
-Pokud *gacutil.exe* není v systémové cestě, použijte [Developer Command Prompt for VS  *\<verze >*](https://docs.microsoft.com/en-us/dotnet/framework/tools/developer-command-prompt-for-vs).
+Pokud *gacutil.exe* není v systémové cestě, použijte [Developer Command Prompt for VS  *\<verze >*](../tools/developer-command-prompt-for-vs.md).
 
 Následující příklad nainstaluje sestavení s názvem souboru *hello.dll* do globální mezipaměti sestavení.
 
