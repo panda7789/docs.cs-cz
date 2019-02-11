@@ -2,12 +2,12 @@
 title: Specifikace manifestu zprostředkovatele
 ms.date: 03/30/2017
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
-ms.openlocfilehash: 592d435dd0da3a66fb3bbd278a53facb6cf08cb7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 409653fa415e62ff0591e09ad4771c5951689b24
+ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54734049"
+ms.lasthandoff: 02/08/2019
+ms.locfileid: "55904603"
 ---
 # <a name="provider-manifest-specification"></a>Specifikace manifestu zprostředkovatele
 Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporují typy a funkce v úložišti.  
@@ -91,7 +91,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 ```  
   
 #### <a name="using-a-provider-manifest-token"></a>Pomocí tokenu manifestu zprostředkovatele  
- Token scénáři offline, je odebrána ze souborů SSDL reprezentace. SSDL můžete zadat ProviderManifestToken (viz [Element schématu (SSDL)](https://msdn.microsoft.com/library/fec75ae4-7f16-4421-9265-9dac61509222) Další informace). Například pokud připojení nelze otevřít, SSDL má token manifestu zprostředkovatele, který určuje informace o manifestu.  
+ Token scénáři offline, je odebrána ze souborů SSDL reprezentace. SSDL můžete zadat ProviderManifestToken (viz [Element schématu (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#schema-element-ssdl) Další informace). Například pokud připojení nelze otevřít, SSDL má token manifestu zprostředkovatele, který určuje informace o manifestu.  
   
 ```  
 public DbProviderManifest GetProviderManifest(string manifestToken);  
