@@ -191,9 +191,11 @@
 ### [dotnet-svcutil.xmlserializer](core/additional-tools/dotnet-svcutil.xmlserializer-guide.md)
 ### [XML Serializer Generator](core/additional-tools/xml-serializer-generator.md)
 ## [Přenos z rozhraní .NET Framework](core/porting/index.md)
-### [Uspořádání projektů pro .NET Core](core/porting/project-structure.md)
+### [Technologie .NET Framework nedostupné pro .NET Core](core/porting/net-framework-tech-unavailable.md)
 ### [Analýza závislostí třetích stran](core/porting/third-party-deps.md)
 ### [Přenos knihoven](core/porting/libraries.md)
+### [Uspořádání projektů pro .NET Core](core/porting/project-structure.md)
+### [Nástroje pro pomoc s přenosem aplikací do .NET Core](core/porting/tools.md)
 ### [Použití sady Windows Compatibility Pack](core/porting/windows-compat-pack.md)
 <!--### [🔧 NuGet packages](core/porting/nuget-packages.md)-->
 ## [Sestavení .NET Core ze zdroje](core/build/index.md)
