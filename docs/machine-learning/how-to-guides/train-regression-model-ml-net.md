@@ -1,24 +1,24 @@
 ---
 title: Trénování regresní model k predikci hodnotu pomocí ML.NET
 description: Dozvíte se, jak pro trénování regresní model k predikci hodnotu pomocí ML.NET strojového učení
-ms.date: 02/01/2019
+ms.date: 02/06/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: febf12565b9ae5509efec9f350f413df99ba1c05
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: faee51550250f08443d4d9349fa2f1c92bf411dc
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55739446"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092901"
 ---
-# <a name="train-a-regression-model-to-predict-a-value-using-mlnet"></a><span data-ttu-id="a36ad-103">Trénování regresní model k predikci hodnotu pomocí ML.NET</span><span class="sxs-lookup"><span data-stu-id="a36ad-103">Train a regression model to predict a value using ML.NET</span></span>
+# <a name="train-a-regression-model-to-predict-a-value-using-mlnet"></a><span data-ttu-id="f15f6-103">Trénování regresní model k predikci hodnotu pomocí ML.NET</span><span class="sxs-lookup"><span data-stu-id="f15f6-103">Train a regression model to predict a value using ML.NET</span></span>
 
-<span data-ttu-id="a36ad-104">Existují obecně tři kroky k tréninku modelu v ML.NET:</span><span class="sxs-lookup"><span data-stu-id="a36ad-104">Generally, there are three steps for model training in ML.NET:</span></span>
+<span data-ttu-id="f15f6-104">Existují obecně tři kroky k tréninku modelu v ML.NET:</span><span class="sxs-lookup"><span data-stu-id="f15f6-104">Generally, there are three steps for model training in ML.NET:</span></span>
 
-1. <span data-ttu-id="a36ad-105">Získat trénovacích dat ve formě `IDataView`</span><span class="sxs-lookup"><span data-stu-id="a36ad-105">Get the training data in a form of an `IDataView`</span></span>
-2. <span data-ttu-id="a36ad-106">Sestavení kanálu learning jako posloupnost základních operátorů (odhady).</span><span class="sxs-lookup"><span data-stu-id="a36ad-106">Build the 'learning pipeline' as a sequence of elementary 'operators' (estimators).</span></span>
-3. <span data-ttu-id="a36ad-107">Volání `Fit` ke kanálu zobrazíte trénovaného modelu.</span><span class="sxs-lookup"><span data-stu-id="a36ad-107">Call `Fit` on the pipeline to obtain the trained model.</span></span>
+1. <span data-ttu-id="f15f6-105">Získat trénovacích dat ve formě `IDataView`</span><span class="sxs-lookup"><span data-stu-id="f15f6-105">Get the training data in a form of an `IDataView`</span></span>
+2. <span data-ttu-id="f15f6-106">Sestavení kanálu learning jako posloupnost základních operátorů (odhady).</span><span class="sxs-lookup"><span data-stu-id="f15f6-106">Build the 'learning pipeline' as a sequence of elementary 'operators' (estimators).</span></span>
+3. <span data-ttu-id="f15f6-107">Volání `Fit` ke kanálu zobrazíte trénovaného modelu.</span><span class="sxs-lookup"><span data-stu-id="f15f6-107">Call `Fit` on the pipeline to obtain the trained model.</span></span>
 
-<span data-ttu-id="a36ad-108">V tomto [ukázkový soubor](https://github.com/dotnet/machinelearning/tree/master/test/data/generated_regression_dataset.csv), předpokládanou popisek (`target`) je poslední sloupec (12.) a všechny ostatní jsou funkce:</span><span class="sxs-lookup"><span data-stu-id="a36ad-108">In this [Example file](https://github.com/dotnet/machinelearning/tree/master/test/data/generated_regression_dataset.csv),the predicted label (`target`) is the last column (12th) and all the rest are features:</span></span>
+<span data-ttu-id="f15f6-108">V tomto [ukázkový soubor](https://github.com/dotnet/machinelearning/tree/master/test/data/generated_regression_dataset.csv), předpokládanou popisek (`target`) je poslední sloupec (12.) a všechny ostatní jsou funkce:</span><span class="sxs-lookup"><span data-stu-id="f15f6-108">In this [Example file](https://github.com/dotnet/machinelearning/tree/master/test/data/generated_regression_dataset.csv),the predicted label (`target`) is the last column (12th) and all the rest are features:</span></span>
 
 ```console
 feature_0;feature_1;feature_2;feature_3;feature_4;feature_5;feature_6;feature_7;feature_8;feature_9;feature_10;target
@@ -35,7 +35,7 @@ var mlContext = new MLContext();
 // Step one: read the data as an IDataView.
 
 // First, we define the reader: specify the data columns and where to find them in the text file.
-var reader = mlContext.Data.CreateTextReader(
+var reader = mlContext.Data.CreateTextLoader(
         columns: new TextLoader.Column[]
         {
             // We read the first 11 values as a single float vector.

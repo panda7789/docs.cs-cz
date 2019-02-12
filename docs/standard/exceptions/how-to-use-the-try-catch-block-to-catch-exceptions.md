@@ -1,11 +1,10 @@
 ---
-title: 'Postupy: používání bloku Try-Catch k zachycování výjimek'
-ms.date: 03/30/2017
+title: 'Postupy: Používání bloku Try-Catch k zachycování výjimek'
+ms.date: 02/06/2019
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
-- cpp
 helpviewer_keywords:
 - exceptions, try/catch blocks
 - try blocks
@@ -14,28 +13,32 @@ helpviewer_keywords:
 ms.assetid: a3ce6dfd-1f64-471b-8ad8-8cfaf406275d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 852df5cb3eeea2ee5fa44ddce2f97e9c4f8d8b5a
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 5183a854ee2b7462ecc27786a5fc0697565194c0
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842382"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092745"
 ---
-# <a name="how-to-use-the-trycatch-block-to-catch-exceptions"></a><span data-ttu-id="ac53c-102">Postup používání bloku try/catch k zachycování výjimek</span><span class="sxs-lookup"><span data-stu-id="ac53c-102">How to use the try/catch block to catch exceptions</span></span>
+# <a name="how-to-use-the-trycatch-block-to-catch-exceptions"></a><span data-ttu-id="26949-102">Postup používání bloku try/catch k zachycování výjimek</span><span class="sxs-lookup"><span data-stu-id="26949-102">How to use the try/catch block to catch exceptions</span></span>
 
-<span data-ttu-id="ac53c-103">Umístit na části kódu, který může vyvolat výjimky v `try` bloku a místo kód, který zpracovává výjimky v `catch` bloku.</span><span class="sxs-lookup"><span data-stu-id="ac53c-103">Place the sections of code that might throw exceptions in a `try` block and place code that handles exceptions in a `catch` block.</span></span> <span data-ttu-id="ac53c-104">`catch` Blok je řada příkazů pomocí klíčového slova začínající `catch`následovaný typ výjimky a akce, jež mají být provedeny.</span><span class="sxs-lookup"><span data-stu-id="ac53c-104">The `catch` block is a series of statements beginning with the keyword `catch`, followed by an exception type and an action to be taken.</span></span>
+<span data-ttu-id="26949-103">Umístěte všechny příkazy, které mohou vyvolat nebo vyvolat výjimku `try` bloku a používá ke zpracování výjimky nebo výjimky v jednom nebo více příkazů místo `catch` níže uvedených bloků `try` bloku.</span><span class="sxs-lookup"><span data-stu-id="26949-103">Place any code statements that might raise or throw an exception in a `try` block, and place statements used to handle the exception or exceptions in one or more `catch` blocks below the `try` block.</span></span> <span data-ttu-id="26949-104">Každý `catch` blok obsahuje typ výjimky a může obsahovat další příkazy potřebné ke zpracování tohoto typu výjimky.</span><span class="sxs-lookup"><span data-stu-id="26949-104">Each `catch` block includes the exception type and can contain additional statements needed to handle that exception type.</span></span>
 
-<span data-ttu-id="ac53c-105">Následující příklad kódu používá `try` / `catch` bloku catch možnou výjimkou.</span><span class="sxs-lookup"><span data-stu-id="ac53c-105">The following code example uses a `try`/`catch` block to catch a possible exception.</span></span> <span data-ttu-id="ac53c-106">`Main` Obsahuje metodu `try` blokovat s <xref:System.IO.StreamReader> volá příkaz, který otevře soubor dat `data.txt` a zapíše řetězec ze souboru.</span><span class="sxs-lookup"><span data-stu-id="ac53c-106">The `Main` method contains a `try` block with a <xref:System.IO.StreamReader> statement that opens a data file called `data.txt` and writes a string from the file.</span></span> <span data-ttu-id="ac53c-107">Následující `try` blok je `catch` blok, který zachytí jakoukoli výjimku, která je výsledkem `try` bloku.</span><span class="sxs-lookup"><span data-stu-id="ac53c-107">Following the `try` block is a `catch` block that catches any exception that results from the `try` block.</span></span>
+<span data-ttu-id="26949-105">V následujícím příkladu <xref:System.IO.StreamReader> otevře soubor s názvem *data.txt* a načte řádek ze souboru.</span><span class="sxs-lookup"><span data-stu-id="26949-105">In the following example, a <xref:System.IO.StreamReader> opens a file called *data.txt* and retrieves a line from the file.</span></span> <span data-ttu-id="26949-106">Protože kód může vyvolat výjimky tři, je umístěný v `try` bloku.</span><span class="sxs-lookup"><span data-stu-id="26949-106">Since the code might throw any of three exceptions, it's placed in a `try` block.</span></span> <span data-ttu-id="26949-107">Tři `catch` bloky catch výjimky a mohli je zpracovat zobrazením výsledků do konzoly.</span><span class="sxs-lookup"><span data-stu-id="26949-107">Three `catch` blocks catch the exceptions and handle them by displaying the results to the console.</span></span>
 
- [!code-cpp[CatchException#3](../../../samples/snippets/cpp/VS_Snippets_CLR/CatchException/CPP/catchexception2.cpp#3)]
- [!code-csharp[CatchException#3](../../../samples/snippets/csharp/VS_Snippets_CLR/CatchException/CS/catchexception2.cs#3)]
- [!code-vb[CatchException#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CatchException/VB/catchexception2.vb#3)]  
+[!code-csharp[CatchException#3](~/samples/snippets/csharp/VS_Snippets_CLR/CatchException/CS/catchexception2.cs#3)]
+[!code-vb[CatchException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CatchException/VB/catchexception2.vb#3)]  
 
-<span data-ttu-id="ac53c-108">Modul common language runtime zachytí výjimky, které nejsou zachyceny v bloku catch.</span><span class="sxs-lookup"><span data-stu-id="ac53c-108">The common language runtime catches exceptions that are not caught by a catch block.</span></span> <span data-ttu-id="ac53c-109">V závislosti na konfiguraci modulu runtime se zobrazí dialogové okno ladění, program se zastaví provádění a zobrazí se dialogové okno s informací o výjimce nebo chybu je tisknout do STDERR.</span><span class="sxs-lookup"><span data-stu-id="ac53c-109">Depending on how the runtime is configured, a debug dialog box appears, or the program stops executing and a dialog box with exception information appears, or an error is printed out to STDERR.</span></span>
+<span data-ttu-id="26949-108">Common Language Runtime (CLR) zachytává výjimky není zpracována `catch` bloky.</span><span class="sxs-lookup"><span data-stu-id="26949-108">The Common Language Runtime (CLR) catches exceptions not handled by `catch` blocks.</span></span> <span data-ttu-id="26949-109">Pokud je výjimka zachycena platformou CLR, jednu z následujících výsledků může dojít v závislosti na vaší konfiguraci modulu CLR:</span><span class="sxs-lookup"><span data-stu-id="26949-109">If an exception is caught by the CLR, one of the following results may occur depending on your CLR configuration:</span></span>
 
-> [!NOTE] 
-> <span data-ttu-id="ac53c-110">Téměř libovolném řádku kódu může způsobit výjimku, zejména výjimky vyvolané modulem common language runtime, jako například <xref:System.OutOfMemoryException>.</span><span class="sxs-lookup"><span data-stu-id="ac53c-110">Almost any line of code can cause an exception, particularly exceptions that are thrown by the common language runtime itself, such as <xref:System.OutOfMemoryException>.</span></span> <span data-ttu-id="ac53c-111">Většina aplikací nemusíte řešit tyto výjimky, ale byste měli vědět tuto možnost při zápisu knihoven a využívat další uživatelé.</span><span class="sxs-lookup"><span data-stu-id="ac53c-111">Most applications don't have to deal with these exceptions, but you should be aware of this possibility when writing libraries to be used by others.</span></span> <span data-ttu-id="ac53c-112">Návrhy toho, kdy k nastavení kódu v bloku Try, najdete v části [osvědčené postupy pro výjimky](best-practices-for-exceptions.md).</span><span class="sxs-lookup"><span data-stu-id="ac53c-112">For suggestions on when to set code in a Try block, see [Best Practices for Exceptions](best-practices-for-exceptions.md).</span></span>
+- <span data-ttu-id="26949-110">A **ladění** zobrazí se dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="26949-110">A **Debug** dialog box appears.</span></span>
+- <span data-ttu-id="26949-111">Program se zastaví provádění a zobrazí se dialogové okno s informací o výjimce.</span><span class="sxs-lookup"><span data-stu-id="26949-111">The program stops execution and a dialog box with exception information appears.</span></span>
+- <span data-ttu-id="26949-112">Chyba vytiskne na [standardní chybový proud výstup](xref:System.Console.Error).</span><span class="sxs-lookup"><span data-stu-id="26949-112">An error prints out to the [standard error output stream](xref:System.Console.Error).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="ac53c-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ac53c-113">See also</span></span>
+> [!NOTE]
+> <span data-ttu-id="26949-113">Většinu kódu může vyvolat výjimku a výjimkami, jako je třeba <xref:System.OutOfMemoryException>, mohou být vyvolány pomocí modulu CLR, samotný kdykoli.</span><span class="sxs-lookup"><span data-stu-id="26949-113">Most code can throw an exception, and some exceptions, like <xref:System.OutOfMemoryException>, can be thrown by the CLR itself at any time.</span></span> <span data-ttu-id="26949-114">Když aplikace není nutné zacházet s těmito výjimkami, mějte na paměti možnost při zápisu knihoven a využívat další uživatelé.</span><span class="sxs-lookup"><span data-stu-id="26949-114">While applications aren't required to deal with these exceptions, be aware of the possibility when writing libraries to be used by others.</span></span> <span data-ttu-id="26949-115">Pro návrhy toho, kdy k nastavení kódu v `try` blokovat, najdete v článku [osvědčené postupy pro výjimky](best-practices-for-exceptions.md).</span><span class="sxs-lookup"><span data-stu-id="26949-115">For suggestions on when to set code in a `try` block, see [Best Practices for Exceptions](best-practices-for-exceptions.md).</span></span>
 
-- [<span data-ttu-id="ac53c-114">Výjimky</span><span class="sxs-lookup"><span data-stu-id="ac53c-114">Exceptions</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="26949-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="26949-116">See also</span></span>
+
+[<span data-ttu-id="26949-117">Výjimky</span><span class="sxs-lookup"><span data-stu-id="26949-117">Exceptions</span></span>](index.md)  
+[<span data-ttu-id="26949-118">Zpracování chyb vstupně-výstupní operace v rozhraní .NET</span><span class="sxs-lookup"><span data-stu-id="26949-118">Handling I/O errors in .NET</span></span>](../io/handling-io-errors.md)
