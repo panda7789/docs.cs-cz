@@ -2,12 +2,12 @@
 title: Výpočetní výrazy
 description: Zjistěte, jak vytvořit pohodlné syntaxe pro zápis výpočty v F# , můžete být sekvencované a kombinované pomocí řídit tok konstrukcí a vazby.
 ms.date: 07/27/2018
-ms.openlocfilehash: 79159146e24dc50f851c29e3cf7fffe892c6d196
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 7524a42f8efb951be255ca6cc285740ef1fa12c3
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53610694"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093512"
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 
@@ -218,6 +218,7 @@ Následující tabulka popisuje metody, které je možné ve třídě Tvůrce pr
 |`Yield`|`'T -> M<'T>`|Volá se pro `yield` výrazy ve výrazech výpočtu.|
 |`YieldFrom`|`M<'T> -> M<'T>`|Volá se pro `yield!` výrazy ve výrazech výpočtu.|
 |`Zero`|`unit -> M<'T>`|Volá se pro prázdný `else` větve z `if...then` výrazy ve výrazech výpočtu.|
+|`Quote`|`Quotations.Expr<'T> -> Quotations.Expr<'T>`|Označuje, že je předán výrazu výpočtu `Run` člena jako do uvozovek. Převádí všechny výskyty výpočet do nabídky.|
 
 Mnoho metod ve třídě Tvůrce používat a vrátit `M<'T>` konstrukce, která je obvykle samostatně definovaný typ, který charakterizuje druh výpočty se kombinovat, například, `Async<'T>` pro asynchronní pracovní postupy a `Seq<'T>` pro pracovní postupy pořadí. Podpisy z těchto metod je kombinovat a vnořené s kolegy a povolit tak, aby pracovní postup objekt vrácený z jednoho konstrukce mohou být předány Další. Kompilátor při analýze výrazu výpočtu, převede výraz na sérii volání vnořené funkce pomocí metod v předchozí tabulce a kódu ve výrazu výpočtu.
 

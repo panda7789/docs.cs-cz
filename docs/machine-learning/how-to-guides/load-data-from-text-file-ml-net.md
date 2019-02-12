@@ -1,14 +1,14 @@
 ---
 title: Načtení dat z textového souboru pro machine learning zpracování – ML.NET
 description: Objevte, jak načíst data z textového souboru pro použití v modelu strojového učení, vytváření, trénování a vyhodnocování s ML.NET
-ms.date: 01/29/2019
+ms.date: 02/06/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 6a8f74cc5324050ca94e60592f083c35afc68377
-ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
+ms.openlocfilehash: 70c7ccdeaa27b78a412c2bc82f524d4bf42a740a
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55479669"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56091705"
 ---
 # <a name="load-data-from-a-text-file-for-machine-learning-processing---mlnet"></a>Načtení dat z textového souboru pro machine learning zpracování – ML.NET
 
@@ -34,7 +34,7 @@ Chcete načíst data z textového souboru:
 var mlContext = new MLContext();
 
 // Create the reader: define the data columns and where to find them in the text file.
-var reader = mlContext.Data.CreateTextReader(
+var reader = mlContext.Data.CreateTextLoader(
     columns: new TextLoader.Column[]
     {
         // A boolean column depicting the 'target label'.

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data access [.NET Framework], about .NET Framework data access
 - data [.NET Framework], accessing
 ms.assetid: 8c37635d-e2c1-4b64-a258-61d9e87405e6
-ms.openlocfilehash: 0db71fd7e48515ad6be3641786fc180f62aacf33
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 86250d974a4f85e5ccbe2ac636dc252beff0d485
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44198150"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56091718"
 ---
 # <a name="data-and-modeling-in-the-net-framework"></a>Data a modelování v rozhraní .NET Framework
 Tato část obsahuje informace o tom, jak získat přístup k datům pomocí technologie ADO.NET, Language Integrated Query (LINQ), služeb WCF Data Services a XML.  
@@ -20,8 +20,11 @@ Tato část obsahuje informace o tom, jak získat přístup k datům pomocí tec
  [ADO.NET](../../../docs/framework/data/adonet/index.md)  
  Popisuje architekturu ADO.NET a tom, jak použít třídy rozhraní ADO.NET ke správě dat aplikací a interakci se zdroji dat, včetně Microsoft SQL Server, zdroje dat OLE DB a XML.  
   
- [Portál LINQ](https://msdn.microsoft.com/library/6eb15c76-4ee6-4146-981e-b3429a945e6f)  
- Obsahuje odkazy na relevantní dokumentaci pro Language Integrated Query (LINQ).  
+ [LINQ (Language Integrated Query)](../../csharp/programming-guide/concepts/linq/index.md)  
+ Obsahuje odkazy na relevantní dokumentaci pro používání Language Integrated Query (LINQ) C#.  
+  
+ [Language-Integrated Query (LINQ) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/index.md)  
+ Obsahuje odkazy na relevantní dokumentaci pro Language Integrated Query (LINQ) pomocí jazyka Visual Basic.  
   
  [Zpracování transakcí](../../../docs/framework/data/transactions/index.md)  
  Tento článek popisuje podporu rozhraní .NET Framework pro transakce.  

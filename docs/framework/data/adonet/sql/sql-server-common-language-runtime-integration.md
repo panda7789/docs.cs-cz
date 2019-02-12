@@ -2,12 +2,12 @@
 title: SQL Server Common Language Runtime integrace
 ms.date: 03/30/2017
 ms.assetid: c7a324c4-160d-44c2-b593-641af06eca61
-ms.openlocfilehash: 7d291e5ab715638217c024302c36188d63b20239
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6f8e16ecec1f99a0d7df6224f542eb03506528e3
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493960"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092875"
 ---
 # <a name="sql-server-common-language-runtime-integration"></a>SQL Server Common Language Runtime integrace
 SQL Server 2005 zavedené integraci běžné součásti modulu runtime (CLR) jazyk rozhraní .NET Framework pro Microsoft Windows. To znamená, že můžete napsat uložené procedury, aktivační události, uživatelem definovaných typů, uživatelem definované funkce, uživatelem definovaných agregacích a datových proudů funkce vracející tabulku pomocí libovolného jazyka, rozhraní .NET Framework, včetně Microsoft Visual Basic .NET a Microsoft Visual C#. <xref:Microsoft.SqlServer.Server> Obor názvů obsahuje sadu nových aplikačních programovacích rozhraní (API) tak, aby spravovaný kód může spolupracovat s prostředím Microsoft SQL Server.  
@@ -44,5 +44,4 @@ SQL Server 2005 zavedené integraci běžné součásti modulu runtime (CLR) jaz
   
 ## <a name="see-also"></a>Viz také:
 - [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
-- [Vytváření objektů serveru SQL Server 2005 ve spravovaném kódu](https://msdn.microsoft.com/library/5358a825-e19b-49aa-8214-674ce5fed1da)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

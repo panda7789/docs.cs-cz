@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8ae7149e1f104863825fdea128729dcc80847c19
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d692f440354583e645606def4303f0c7c8f1e777
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54679929"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093590"
 ---
 # <a name="handling-and-raising-events"></a>Zpracování a generování událostí
 Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model delegáta následuje návrhový vzor pozorovatele, který umožňuje předplatiteli zaregistrovat se a dostávat upozornění od poskytovatele. Odesílatel události posune oznámení, že k události došlo, a příjemce události obdrží toto oznámení a definuje odpověď na ně. Tento článek popisuje hlavní součásti modelu delegáta, zacházení s událostmi v aplikacích a implementaci událostí ve vašem kódu.  
@@ -45,7 +45,7 @@ Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model 
   
  Delegáti jsou vícesměroví, což znamená, že mohou obsahovat odkazy na více než jednu metodu zpracování událostí. Podrobnosti najdete v tématu <xref:System.Delegate> referenční stránce. Delegáti poskytují pružnost a jemnou kontrolu ve zpracování událostí. Delegát funguje jako dispečer události pro třídu, která se vyvolá událost udržováním seznamu registrovaných obslužných rutin události pro událost.  
   
- Pro scénáře, ve kterém <xref:System.EventHandler> a <xref:System.EventHandler%601> delegáti nefungují, můžete definovat delegáta. Scénáře, které od vás vyžadují definování delegáta jsou velmi vzácné, jako je například, když musíte pracovat s kódem, který nerozpoznává obecné typy. Označíte delegáta klíčovým `delegate` v (C#) a `Delegate` (v jazyce Visual Basic) – klíčové slovo v deklaraci. Následující příklad ukazuje, jak deklarovat delegáta s názvem `ThresholdReachedEventHandler`.  
+ Pro scénáře, ve kterém <xref:System.EventHandler> a <xref:System.EventHandler%601> delegáti nefungují, můžete definovat delegáta. Scénáře, které od vás vyžadují definování delegáta jsou velmi vzácné, jako je například, když musíte pracovat s kódem, který nerozpoznává obecné typy. Označíte delegáta klíčovým `delegate` (v C#) a `Delegate` (v jazyce Visual Basic) – klíčové slovo v deklaraci. Následující příklad ukazuje, jak deklarovat delegáta s názvem `ThresholdReachedEventHandler`.  
   
  [!code-csharp[EventsOverview#4](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#4)]
  [!code-vb[EventsOverview#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  
@@ -71,7 +71,7 @@ Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model 
  [!code-vb[EventsOverview#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#2)]  
   
 ## <a name="static-and-dynamic-event-handlers"></a>Statické a dynamické obslužné rutiny událostí  
- Rozhraní .NET umožňuje odběratelům registraci k oznamování události staticky nebo dynamicky. Statické obslužné rutiny jsou platné po celou dobu životnosti třídy, jejíž události zpracovávají. Dynamické obslužné rutiny událostí jsou explicitně aktivovat a deaktivovat během provádění programu, obvykle v reakci na podmíněnou logiku programu. Například můžete používají Pokud jsou oznámení událostí potřebná pouze za určitých podmínek nebo pokud aplikace poskytuje více obslužných rutin událostí a podmínky za běhu určí vhodnou rutinu, chcete-li použít. Příklad v předchozím oddílu ukazuje, jak dynamicky přidat obslužnou rutinu události. Další informace najdete v tématu [události](../../visual-basic/programming-guide/language-features/events/index.md) a [události](../../csharp/programming-guide/events/index.md).  
+ Rozhraní .NET umožňuje odběratelům registraci k oznamování události staticky nebo dynamicky. Statické obslužné rutiny jsou platné po celou dobu životnosti třídy, jejíž události zpracovávají. Dynamické obslužné rutiny událostí jsou explicitně aktivovat a deaktivovat během provádění programu, obvykle v reakci na podmíněnou logiku programu. Například můžete používají Pokud jsou oznámení událostí potřebná pouze za určitých podmínek nebo pokud aplikace poskytuje více obslužných rutin událostí a podmínky za běhu určí vhodnou rutinu, chcete-li použít. Příklad v předchozím oddílu ukazuje, jak dynamicky přidat obslužnou rutinu události. Další informace najdete v tématu [události](../../visual-basic/programming-guide/language-features/events/index.md) (v jazyce Visual Basic) a [události](../../csharp/programming-guide/events/index.md) (v C#).  
   
 ## <a name="raising-multiple-events"></a>Vyvolání více událostí  
  Pokud vaše třída vyvolá více událostí, kompilátor vygeneruje jedno pole pro každou instanci delegáta události. Pokud je počet událostí velký, nemusí být přijatelné náklady na uložení jednoho pole pro každého delegáta. Pro tyto situace rozhraní .NET Framework poskytuje vlastnosti událostí, můžete použít s jinou datovou strukturou vašeho výběru k ukládání delegátů událostí.  

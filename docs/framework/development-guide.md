@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a21f4cd8657a9d2c26ac481e7f2b00e6a2f502c9
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 894895331c2444a8e52a09e3de9d5a47daa87e5d
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123758"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092953"
 ---
 # <a name="net-framework-development-guide"></a>Průvodce vývojem s použitím rozhraní .NET Framework
 Tato část vysvětluje, jak vytvořit, konfigurovat, ladění, zabezpečení a nasazení aplikací rozhraní .NET Framework. V části také obsahuje informace o oblastech technologií, jako jsou dynamické programování, interoperabilita, rozšiřitelnost, správa paměti a dělení na vlákna.  
@@ -79,5 +79,5 @@ Tato část vysvětluje, jak vytvořit, konfigurovat, ladění, zabezpečení a 
  [Nástroje](../../docs/framework/tools/index.md)  
  Popisuje nástroje, které vám pomohou vyvíjet, konfigurovat a nasazovat aplikace s použitím technologií rozhraní .NET Framework.  
   
- [.NET framework – ukázky](https://msdn.microsoft.com/library/177055f8-4a1f-43e7-aee6-995c196079b1)  
- Obsahuje odkazy na galerii ukázek kódu na webu MSDN pro ukázkové aplikace, které demonstrují technologie rozhraní .NET Framework.
+ [.NET ukázky a kurzy](../samples-and-tutorials/index.md)  
+ Poskytuje odkazy na ukázky a kurzy, které vám pomůžou informace o rozhraní .NET.

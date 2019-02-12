@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, learn more
 ms.assetid: e63a9baf-699c-42e2-b11f-fba57bcc14df
-ms.openlocfilehash: 9b1db3b3628719eca178ababd0dc9728b491e7b5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f6f0e51319da8c2edcb914170aa14837229163c1
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54658153"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093668"
 ---
 # <a name="wcf-data-services-resources"></a>Zdroje služeb WCF Data Services
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] úvodní témata najdete v následujících umístěních. Mnohé z těchto témat také obsahují odkazy na související témata, které obsahují podrobnější informace.  
@@ -23,7 +23,7 @@ ms.locfileid: "54658153"
  [Scénáře aplikací](../../../../docs/framework/data/wcf/application-scenarios-wcf-data-services.md)  
  Poskytuje přístup založený na úlohách vytvoření [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a aplikace přistupující k [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanály.  
   
- [Visual Studio a .NET Framework – glosář](https://msdn.microsoft.com/library/6529d7c6-7e25-4426-a120-d57b239ca4eb)  
+ [Slovníček k technologii .NET](../../../standard/glossary.md)  
  Zahrnuje termínů používaných v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] dokumentaci.  
   
 ## <a name="external-resources"></a>Externí zdroje  

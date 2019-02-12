@@ -1,13 +1,13 @@
 ---
 title: Referenční dokumentace symbolů a operátorů
 description: Další informace o symbolů a operátorů, které se používají v F# programovací jazyk.
-ms.date: 04/04/2018
-ms.openlocfilehash: 385ddbef2a3519d26dd7ad6abe90da1368f0a2a4
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.date: 02/11/2019
+ms.openlocfilehash: 11a02792dc949b0a7a0a6e7bb59786c489b3aa9d
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613801"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092940"
 ---
 # <a name="symbol-and-operator-reference"></a>Referenční dokumentace symbolů a operátorů
 
@@ -133,12 +133,12 @@ V následující tabulce jsou uvedeny pořadí podle priority operátorů a dal�
 |`or`, <code>&#124;&#124;</code>|doleva|
 |`&`, `&&`|doleva|
 |`:>`, `:?>`|Pravé|
-|`!=`*op*, `<` *op*, `>` *op*, `=`, <code>&#124;</code> *op*, `&` *op* , `&`<br /><br />(včetně `<<<`, `>>>`, <code>&#124;&#124;&#124;</code>, `&&&`)|doleva|
+|`<`*op*, `>`*op*, `=`, <code>&#124;</code>*op*, `&`*op*, `&`<br /><br />(včetně `<<<`, `>>>`, <code>&#124;&#124;&#124;</code>, `&&&`)|doleva|
 |`^`*OP*<br /><br />(včetně `^^^`)|Pravé|
 |`::`|Pravé|
 |`:?`|Není asociativní|
-|`-`*op*, `+` *op*|Platí pro infix používá tyto symboly|
-|`*`*op*, `/` *op*, `%` *op*|doleva|
+|`-`*op*, `+`*op*|Platí pro infix používá tyto symboly|
+|`*`*op*, `/`*op*, `%`*op*|doleva|
 |`**`*OP*|Pravé|
 |`f x` (použití funkce)|doleva|
 |<code>&#124;</code> (Porovnávací)|Pravé|

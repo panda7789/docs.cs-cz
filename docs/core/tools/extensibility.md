@@ -4,12 +4,12 @@ description: Zjistěte, jak můžete rozšířit nástroje rozhraní příkazov�
 author: blackdwarf
 ms.date: 04/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: 3aedd1d507fde1cd7402ef97fa00d0c7f13005e3
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: e93c9c85383d7c541b8ef55a74045307810cbb05
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170233"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093005"
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>Model rozšiřitelnosti nástrojů rozhraní příkazového řádku .NET core
 
@@ -79,7 +79,7 @@ Tyto druhy nástroje mají graf závislostí, který je zcela oddělená od graf
 Najdete podrobnější příklady a to v různých kombinacích [úložiště .NET Core CLI](https://github.com/dotnet/cli/tree/release/2.1/TestAssets/TestProjects).
 Můžete zobrazit také [implementace nástroje používané](https://github.com/dotnet/cli/tree/release/2.1/TestAssets/TestPackages) ve stejném úložišti.
 
-### <a name="custom-targets"></a>Vlastní cíle
+## <a name="custom-targets"></a>Vlastní cíle
 NuGet má schopnost [balíček vlastní MSBuild cíle a soubory vlastností](/nuget/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package). S přechodem na nástroje rozhraní příkazového řádku .NET Core pro použití nástroje MSBuild stejný mechanismus rozšiřitelnosti teď platí pro projekty .NET Core. Tento typ rozšíření byste použili, když chcete rozšíření procesu sestavení, nebo když chcete získat přístup k žádnému artefaktů v procesu sestavení, jako je například generované soubory, nebo chcete provést kontrolu konfigurace, pod kterým je vyvolán sestavení , atd.
 
 V následujícím příkladu vidíte cílový projekt pomocí souborů `csproj` syntaxe. Tím se nastaví [ `dotnet pack` ](dotnet-pack.md) příkaz co do balíčku, uvedení soubory cíle a také sestavení do *sestavení* složky uvnitř balíčku. Všimněte si, že `<ItemGroup>` element, který má `Label` nastavenou na `dotnet pack instructions`, a cíl definovaný pod ním.
@@ -137,7 +137,7 @@ Použití vlastní cíle závisí výhradně na tom, jak nakonfigurovat. Protož
 
 Nicméně pokud chcete poskytovat lepší výkon pro vaše uživatele, můžete kombinovat jednotlivých projektů nástroje a vlastní cíle. V tomto scénáři nástroj jednotlivých projektů by v podstatě stačí přijmout cokoli, co potřebné parametry a, která převedla do požadované [ `dotnet msbuild` ](dotnet-msbuild.md) volání, které by se spustit cíl. Můžete zobrazit ukázku, tento druh synergii na [MVP Summit 2016 Hackathon ukázky](https://github.com/dotnet/MVPSummitHackathon2016) úložiště v [ `dotnet-packer` ](https://github.com/dotnet/MVPSummitHackathon2016/tree/master/dotnet-packer) projektu.
 
-### <a name="path-based-extensibility"></a>Na základě cest rozšiřitelnosti
+## <a name="path-based-extensibility"></a>Na základě cest rozšiřitelnosti
 Na základě cest rozšíření se obvykle používá pro vývoj počítače tam, kde potřebujete nástroj, který koncepčně zahrnuje více než jeden projekt. Tento mechanismus rozšíření Hlavní nevýhodou je, že je spojený s počítači tam, kde existuje nástroj. Pokud je nutné ji na jiném počítači, je třeba ho nasadit.
 
 Tento model rozšiřitelnosti nástrojů rozhraní příkazového řádku je velmi snadné. Jak je popsáno v [přehled rozhraní příkazového řádku .NET Core](index.md), `dotnet` ovladač lze spustit jakýkoli příkaz, který má stejný název `dotnet-<command>` konvence. Výchozí logika řešení nejprve sondy několika míst a nakonec spadne zpět na CESTU systému. Pokud požadovaný příkaz, existuje v systémové CESTĚ a je binární soubor, který může být vyvolána, `dotnet` ovladač vyvolá.

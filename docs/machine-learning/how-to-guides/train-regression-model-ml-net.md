@@ -1,14 +1,14 @@
 ---
 title: Trénování regresní model k predikci hodnotu pomocí ML.NET
 description: Dozvíte se, jak pro trénování regresní model k predikci hodnotu pomocí ML.NET strojového učení
-ms.date: 02/01/2019
+ms.date: 02/06/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: febf12565b9ae5509efec9f350f413df99ba1c05
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: faee51550250f08443d4d9349fa2f1c92bf411dc
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55739446"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092901"
 ---
 # <a name="train-a-regression-model-to-predict-a-value-using-mlnet"></a>Trénování regresní model k predikci hodnotu pomocí ML.NET
 
@@ -35,7 +35,7 @@ var mlContext = new MLContext();
 // Step one: read the data as an IDataView.
 
 // First, we define the reader: specify the data columns and where to find them in the text file.
-var reader = mlContext.Data.CreateTextReader(
+var reader = mlContext.Data.CreateTextLoader(
         columns: new TextLoader.Column[]
         {
             // We read the first 11 values as a single float vector.

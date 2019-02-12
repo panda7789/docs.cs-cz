@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: f91fc5f7-de5a-4f23-b6ac-f450e63c662e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3e74fc1e4ab48e73365d41594a7a84cbad6ec044
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d4630e6d02b0137021765f954ab0dae19f2f6199
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496111"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093980"
 ---
 # <a name="enabling-jit-attach-debugging"></a>Povolení JIT – ladění Attach 
 JIT – ladění attach je frázi používají k popisu připojení ladicího programu k procesu, pokud narazíte na chyby, nebo se dá spouštět podle konkrétní metody nebo funkce.  
@@ -38,4 +38,3 @@ JIT – ladění attach je frázi používají k popisu připojení ladicího pr
 ## <a name="see-also"></a>Viz také:
 - [Ladění, trasování a profilace](../../../docs/framework/debug-trace-profile/index.md)
 - [Usnadnění ladění obrázku](../../../docs/framework/debug-trace-profile/making-an-image-easier-to-debug.md)
-- [Povolení profilace](https://msdn.microsoft.com/library/3b669676-f0e0-4ebf-8674-68986dd2020d)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a5333e19-8e55-4aa9-82dc-ca8745e516ed
-ms.openlocfilehash: be9cae6f702b72306875246e874b99e7c79eb113
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2a711ad4779b8c932436ce1886b1a93dda849a94
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54743033"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093954"
 ---
 # <a name="enabling-query-notifications"></a>Povolení oznámení dotazů
 Aplikace, které využívají oznámení dotazů mají společnou sadu požadavků. Zdroj dat musí být správně nakonfigurované pro podporu oznámení dotazů SQL a uživatel musí mít správná oprávnění na straně klienta i stranu serveru.  
@@ -28,25 +28,25 @@ Aplikace, které využívají oznámení dotazů mají společnou sadu požadavk
 ## <a name="query-notifications-requirements"></a>Požadavky na oznámení dotazů  
  Oznámení dotazů jsou podporována pouze pro příkazy SELECT, které splňují specifické požadavky. Následující tabulka obsahuje odkazy na dokumentaci služby Service Broker a oznámení dotazů v SQL Server Books Online.  
   
- **SQL Server Books Online**  
+ **Dokumentaci k SQL serveru**  
   
--   [Vytvoření dotazu pro oznámení](https://msdn.microsoft.com/library/ms181122.aspx)  
+-   [Vytvoření dotazu pro oznámení](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms181122(v=sql.105))  
   
--   [Důležité informace o zabezpečení pro službu Service Broker](https://msdn.microsoft.com/library/ms166059.aspx)  
+-   [Důležité informace o zabezpečení pro službu Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms166059(v=sql.90))  
   
--   [Zabezpečení a ochranu (Service Broker)](https://msdn.microsoft.com/library/bb522911.aspx)  
+-   [Zabezpečení a ochranu (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522911(v=sql.105))  
   
--   [Důležité informace o zabezpečení pro oznámení služby](https://msdn.microsoft.com/library/ms172604.aspx)  
+-   [Důležité informace o zabezpečení pro oznámení služby](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms172604(v=sql.90))  
   
--   [Oprávnění pro dotaz oznámení](https://msdn.microsoft.com/library/ms188311.aspx)  
+-   [Oprávnění pro dotaz oznámení](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms188311(v=sql.105))  
   
--   [Mezinárodní důležité informace týkající se služby Service Broker](https://msdn.microsoft.com/library/ms166028.aspx)  
+-   [Mezinárodní důležité informace týkající se služby Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms166028(v=sql.90))  
   
--   [Aspekty návrhu řešení (Service Broker)](https://msdn.microsoft.com/library/bb522899.aspx)  
+-   [Aspekty návrhu řešení (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522899(v=sql.105))  
   
--   [Informační středisko pro vývojáře služby Service Broker](https://msdn.microsoft.com/library/ms166100.aspx)  
+-   [Informační středisko pro vývojáře služby Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms166100(v=sql.105))  
   
--   [Příručka pro vývojáře (Service Broker)](https://msdn.microsoft.com/library/bb522908.aspx)  
+-   [Příručka pro vývojáře (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522908(v=sql.105))  
   
 ## <a name="enabling-query-notifications-to-run-sample-code"></a>Povolení oznámení dotazů pro spuštění vzorového kódu  
  Povolí službu Service Broker na **AdventureWorks** databáze pomocí SQL Server Management Studio, spusťte následující příkaz jazyka Transact-SQL:  

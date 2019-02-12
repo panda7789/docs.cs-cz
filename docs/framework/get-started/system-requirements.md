@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d2655cf5d5fb211149bdbe09179707ec53c737d3
-ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
+ms.openlocfilehash: 7cbc639c9fed90b25c034964b5a504e880876b54
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55204558"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56091835"
 ---
 # <a name="net-framework-system-requirements"></a>Požadavky na systém rozhraní .NET framework
 
@@ -45,7 +45,7 @@ Informace na životní cyklus podpory verzí rozhraní .NET Framework najdete v 
 | **PAMĚŤ RAM**                  | 512 MB |
 | **Místo na disku (minimální)** |        |
 | 32bitová                   | 4.5 GB |
-| 64bitových                   | 4.5 GB |
+| 64bitová                   | 4.5 GB |
 
 ## <a name="installation-requirements"></a>Požadavky na instalaci
 
@@ -84,21 +84,21 @@ Rozhraní .NET Framework vyžaduje oprávnění správce pro instalaci. Pokud ne
 
 | Operační systém | Podporované edice | Předinstalované s operačním systémem | Instalovat samostatně |
 | ---------------- | ------------------ | ------------------------ | ---------------------- |
-| Windows Server. 2019 | 64bitových | .NET Framework 4.7.2 | -- |
-| Windows Server verze 1809 | 64bitových | .NET Framework 4.7.2 | -- |
-| Windows Server, version 1803 | 64bitových | .NET Framework 4.7.2 | -- |
-| Windows Server verze 1709 | 64bitových | .NET Framework 4.7.1 | .NET Framework 4.7.2 | 
-| Windows Server 2016 | 64bitových | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] | Rozhraní .NET framework 4.7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2 |
-| Windows Server 2012 R2 | 64bitových | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] | [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2 |
-| Windows Server 2012 (64-bit edition) | 64bitových| [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2 |
-| Windows Server 2008 R2 SP1|64bitových | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2 |
+| Windows Server. 2019 | 64bitová | .NET Framework 4.7.2 | -- |
+| Windows Server verze 1809 | 64bitová | .NET Framework 4.7.2 | -- |
+| Windows Server, version 1803 | 64bitová | .NET Framework 4.7.2 | -- |
+| Windows Server verze 1709 | 64bitová | .NET Framework 4.7.1 | .NET Framework 4.7.2 | 
+| Windows Server 2016 | 64bitová | [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] | Rozhraní .NET framework 4.7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2 |
+| Windows Server 2012 R2 | 64bitová | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] | [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/> .NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2 |
+| Windows Server 2012 (64-bit edition) | 64bitová| [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] | [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2 |
+| Windows Server 2008 R2 SP1|64bitová | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]<br /><br /> [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]<br /><br /> [!INCLUDE[net_v462](../../../includes/net-v462-md.md)]<br /><br />Rozhraní .NET framework 4.7<br/><br/>.NET Framework 4.7.1<br/><br/>.NET Framework 4.7.2 |
 | Windows Server 2008 SP2|32bitová verze a 64bitová verze | -- | .NET Framework 4<br /><br /> [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]<br /><br /> [!INCLUDE[net_v451](../../../includes/net-v451-md.md)]<br /><br /> [!INCLUDE[net_v452](../../../includes/net-v452-md.md)]<br /><br /> [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] |
 
  **Poznámky:**
 
 - [!INCLUDE[winserver8](../../../includes/winserver8-md.md)] zahrnuje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], takže není nutné instalovat samostatně. Obdobně [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] zahrnuje [!INCLUDE[net_v451](../../../includes/net-v451-md.md)].
 
-- Rozhraní .NET Framework má omezenou podporu pro roli Server Core v systému Windows Server 2008 R2 SP1 nebo novější. Zobrazit [funkce rozhraní .NET Core Server](https://msdn.microsoft.com/library/ee391632.aspx) seznam nepodporované rozhraní API.
+- Rozhraní .NET Framework má omezenou podporu pro roli Server Core v systému Windows Server 2008 R2 SP1 nebo novější. Zobrazit [funkce rozhraní .NET Core Server](https://docs.microsoft.com/previous-versions//dd745015(v=vs.85)) seznam nepodporované rozhraní API.
 
 - Rozhraní .NET Framework není podporováno v systému Windows Server 2008 R2 pro procesory Itanium.
 

@@ -2,12 +2,12 @@
 title: Příklady dotazů
 ms.date: 03/30/2017
 ms.assetid: 137f8677-494c-4d49-95ce-c17742f2d01f
-ms.openlocfilehash: 38454890e05b00cd92bca909ce0c7975f5ef1f6e
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 74664dd98ac067153894edc934c8f15eec407261
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44211863"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093759"
 ---
 # <a name="query-examples"></a>Příklady dotazů
 Tato část obsahuje příklady jazyka Visual Basic a C# z typických [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazy. Vývojářům používajícím Visual Studio můžete najít mnoho dalších příkladů v ukázkovém řešení, která je k dispozici v části Ukázky. Další informace najdete v tématu [ukázky](../../../../../../docs/framework/data/adonet/sql/linq/samples.md).  
@@ -65,8 +65,11 @@ Tato část obsahuje příklady jazyka Visual Basic a C# z typických [!INCLUDE[
  Obsahuje příklady kombinování `select` s jinými funkcemi (například *anonymní typy*) do formuláře projekce dotazů.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled standardních operátorů dotazu](https://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)  
- Vysvětluje pojem standardních operátorů pro dotazování.  
+ [Přehled standardních operátorů dotazu (C#)](../../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ Vysvětluje pojem standardních operátorů dotazu pomocí C#.  
+  
+ [Přehled standardních operátorů dotazu (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ Vysvětluje pojem standardních operátorů pro dotazování pomocí jazyka Visual Basic.  
   
  [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
  Vysvětluje, jak [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] používá koncepty, které se vztahují na dotazy.  

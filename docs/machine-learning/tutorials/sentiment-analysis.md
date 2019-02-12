@@ -1,15 +1,15 @@
 ---
 title: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 description: Objevte, jak používat ML.NET ve scénáři binární klasifikace pochopit, jak pomocí mínění předpovědi proveďte příslušnou akci.
-ms.date: 01/15/2019
+ms.date: 02/15/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 47cf9deb9452d15aee8cf4c1ebc5e3d0f1aa10ae
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d6d5cae107e25000add5c8430a35131a79696bc2
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628000"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092758"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>Kurz: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 
@@ -21,18 +21,19 @@ Tento ukázkový kurz ukazuje použití ML.NET vytvoření klasifikátoru míně
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
 > * Pochopení problému
-> * Vyberte úlohu odpovídající machine learning
+> * Vyberte algoritmus učení příslušný počítač
 > * Příprava dat
-> * Vytvoření kanálu učení
-> * Načíst třídění
+> * Transformace dat
 > * Trénování modelu
-> * Vyhodnocení modelu s jinou datovou sadu
-> * Předpověď jednu instanci data výsledek testu s modelem
-> * Předpověď výsledků dat testu se načíst model
+> * Vyhodnocení modelu
+> * Predikce v trénovaného modelu
+> * Nasazení a predikce v načíst model
 
 ## <a name="sentiment-analysis-sample-overview"></a>Přehled ukázky analýzy mínění
 
 Vzorek je konzolová aplikace, které používá ML.NET pro trénování modelu, která klasifikuje a predikuje mínění jako kladné nebo záporné. Vyhodnocuje také model s druhou datové sady pro analýzy kvality. Datové sady subjektivního hodnocení jsou z WikiDetox projektu.
+
+Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) úložiště.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -54,8 +55,8 @@ Fáze pracovního postupu jsou následující:
 3. **Sestavení a trénování** 
    * **Trénování modelu**
    * **Vyhodnocení modelu**
-4. **Spuštění**
-   * **Využití modelu**
+4. **Nasazení modelu**
+   * **Použijte Model k predikci**
 
 ### <a name="understand-the-problem"></a>Pochopení problému
 
@@ -67,7 +68,7 @@ Problém můžete rozdělit mínění textu a mínění hodnotu pro data chcete 
 
 Potom budete potřebovat **určit** subjektivního hodnocení, které vám pomůžou s strojového učení výběr úkolů.
 
-## <a name="select-the-appropriate-machine-learning-task"></a>Vyberte úlohu odpovídající machine learning
+## <a name="select-the-appropriate-machine-learning-algorithm"></a>Vyberte algoritmus učení příslušný počítač
 
 Tento problém víte, k následujícím skutečnostem:
 
@@ -77,18 +78,18 @@ Předpověď **mínění** nový web komentáře, toxické nebo není toxické, 
 * Nepřidávejte nesmysl na wikipedii.
 * Je to nejlepší a článek, který by mělo být uvedeno.
 
-Úloha klasifikace machine learning je nejvhodnější pro tento scénář.
+Algoritmu strojového učení klasifikace je nejvhodnější pro tento scénář.
 
 ### <a name="about-the-classification-task"></a>O úloze klasifikace
 
-Klasifikace je úloha strojového učení, který používá data **určit** kategorie, typ nebo třída řádek dat nebo položky. Například můžete použít klasifikace:
+Klasifikace je algoritmus strojového učení, který používá data **určit** kategorie, typ nebo třída řádek dat nebo položky. Například můžete použít klasifikace:
 
 * Zjistit mínění jako kladné nebo záporné.
 * E-mailu klasifikujte jako spam nevyžádané nebo funkční.
 * Zjistit, zda je cancerous ukázka pacienta testovacího prostředí.
 * Kategorizace zákazníci podle svých tendence k reakci na prodejní kampaně.
 
-Úlohy klasifikace jsou často jedním z následujících typů:
+Algoritmy klasifikace jsou často jedním z následujících typů:
 
 * Binární soubor: buď A a B.
 * Multiclass: více kategorií, které lze předpovídat pomocí jednoho modelu.
@@ -107,7 +108,7 @@ Klasifikace je úloha strojového učení, který používá data **určit** kat
 
 ### <a name="prepare-your-data"></a>Příprava dat
 
-1. Stáhněte si [WikiPedia detox – 250řádku data.tsv](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv) a [wikipedia – detox – 250řádku test.tsv](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-test.tsv) dat nastaví a uloží je do *Data* dříve vytvořená složka. První datovou sadu trénovat modelu strojového učení a druhý je možné vyhodnotit, jak přesný je váš model.
+1. Stáhněte si [Wikipedia detox – 250řádku data.tsv](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv) a [wikipedia – detox – 250řádku test.tsv](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-test.tsv) dat nastaví a uloží je do *Data* dříve vytvořená složka. První datovou sadu trénovat modelu strojového učení a druhý je možné vyhodnotit, jak přesný je váš model.
 
 2. V Průzkumníku řešení klikněte pravým tlačítkem na jednotlivé \*TSV souborů a vyberte **vlastnosti**. V části **Upřesnit**, změňte hodnotu vlastnosti **kopírovat do výstupního adresáře** k **kopírovat, pokud je novější**.
 
@@ -152,14 +153,14 @@ Vytvořte proměnnou s názvem `mlContext` a inicializujte novou instanci tříd
 
 [!code-csharp[CreateMLContext](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#3 "Create the ML Context")]
 
-Další nastavení pro načítání inicializace dat `_textLoader` globální proměnné, aby bylo možné znovu použít.  Všimněte si, že používáte `TextReader`. Při vytváření `TextLoader` pomocí `TextReader`, předáte v souvislosti potřebné a <xref:Microsoft.ML.Data.TextLoader.Arguments> třída, která umožňuje přizpůsobení.
+Další nastavení pro načítání inicializace dat `_textLoader` globální proměnné, aby bylo možné znovu použít.  Při vytváření `TextLoader` pomocí `MLContext.Data.CreateTextLoader`, předáte v souvislosti potřebné a <xref:Microsoft.ML.Data.TextLoader.Arguments> třída, která umožňuje přizpůsobení.
 
  Zadejte schéma dat předáním pole <xref:Microsoft.ML.Data.TextLoader.Column> zavaděč obsahující všechny názvy sloupců a jejich typy objektů. Definujete schéma dat dříve při vytváření naše `SentimentData` třídy. Pro naše schéma z prvního sloupce (popisek) je <xref:System.Boolean> (předpověď) a druhý sloupec (SentimentText) je funkce typu text/řetězec použitý pro predikci mínění.
-`TextReader` Třídy vrátí plně inicializován <xref:Microsoft.ML.Data.TextLoader>  
+`TextLoader` Třídy vrátí plně inicializován <xref:Microsoft.ML.Data.TextLoader>  
 
 Inicializovat `_textLoader` globální proměnné, aby bylo možné znovu použít pro potřeby datové sady, přidejte následující kód za `mlContext` inicializace:
 
-[!code-csharp[initTextReader](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#4 "Initialize the TextReader")]
+[!code-csharp[initTextLoader](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#4 "Initialize the TextLoader")]
 
 Přidejte následující položky jako další řádek kódu `Main` metody:
 
@@ -186,7 +187,7 @@ Všimněte si, že dva parametry jsou předány do metody trénování; `MLConte
 
 ## <a name="load-the-data"></a>Načtení dat
 
-Budete nahrajte data s využitím `_textLoader` globální proměnné `dataPath` parametru. Vrátí <xref:Microsoft.ML.Data.IDataView>. Jako vstup a výstup `Transforms`, `DataView` je základní datový kanál typ, srovnatelná s hodnotou `IEnumerable` pro `LINQ`.
+Budete nahrajte data s využitím `_textLoader` globální proměnné `dataPath` parametru. Vrátí <xref:Microsoft.Data.DataView.IDataView>. Jako vstup a výstup `Transforms`, `DataView` je základní datový kanál typ, srovnatelná s hodnotou `IEnumerable` pro `LINQ`.
 
 Data jsou v ML.NET, podobně jako zobrazení SQL. Je laxně Vyhodnocená schematizovanými a heterogenní. Objekt představuje první část kanálu a načte data. Pro účely tohoto kurzu načte datovou sadu s komentáři a odpovídající toxické nebo jiných toxické mínění. Slouží k vytvoření modelu a jeho trénování.
 
@@ -216,7 +217,7 @@ Přidejte následující kód, který `Train` metody:
 
 ## <a name="train-the-model"></a>Trénování modelu
 
-Trénování modelu, <xref:Microsoft.ML.Data.TransformerChain%601>založená na datovou sadu, která má načíst a transformovat. Po definování odhadu tréninku modelu pomocí <xref:Microsoft.ML.Data.EstimatorChain`1.Fit*> současně už načtený trénovací data. Vrátí model pro předpovědi. `pipeline.Fit()` trénovat kanálu a vrátí `Transformer` na základě `DataView` předán. Experiment není spuštěn, dokud k tomu dojde.
+Trénování modelu, <xref:Microsoft.ML.Data.TransformerChain%601>založená na datovou sadu, která má načíst a transformovat. Po definování odhadu tréninku modelu pomocí <xref:Microsoft.ML.Data.EstimatorChain%601.Fit*> současně už načtený trénovací data. Vrátí model pro předpovědi. `pipeline.Fit()` trénovat kanálu a vrátí `Transformer` na základě `DataView` předán. Experiment není spuštěn, dokud k tomu dojde.
 
 Přidejte následující kód, který `Train` metody:
 
@@ -290,14 +291,13 @@ private static void SaveModelAsFile(MLContext mlContext, ITransformer model)
 Dále vytvořte metodu k uložit model, takže můžete opakovaně používat a využívat v jiných aplikacích. `ITransformer` Má <xref:Microsoft.ML.Data.TransformerChain%601.SaveTo(Microsoft.ML.IHostEnvironment,System.IO.Stream)> metodu, která přijímá `_modelPath` globální pole a <xref:System.IO.Stream>. Uložit jako soubor zip, vytvoříte `FileStream` bezprostředně před volání `SaveTo` metody. Přidejte následující kód, který `SaveModelAsFile` metody jako další řádek:
 
 [!code-csharp[SaveToMethod](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#24 "Add the SaveTo Method")]
-
-Může také zobrazit, kde soubor byl zapsán napsáním zprávu konzoly `_modelPath`, pomocí následujícího kódu:
+Nasazení a predikce v načíst model může také zobrazit, kde soubor byl zapsán napsáním zprávu konzoly `_modelPath`, pomocí následujícího kódu:
 
 ```csharp
 Console.WriteLine("The model is saved to {0}", _modelPath);
 ```
 
-## <a name="predict-the-test-data-outcome-with-the-model-and-a-single-comment"></a>Předpověď data výsledek testu s modelem a jednoho komentáře
+## <a name="predict-the-test-data-outcome-with-the-saved-model"></a>Předpověď data výsledek testu s modelem uložené
 
 Vytvořte `Predict` metoda, hned za `Evaluate` metodu, pomocí následujícího kódu:
 
@@ -321,7 +321,7 @@ Přidejte volání do nové metody z `Main` metody, v rámci `Evaluate` volání
 
 Zatímco `model` je `transformer` , který pracuje na mnoho řádky dat, je potřeba k předpovědím na jednotlivé příklady o velmi běžný scénář produkčního prostředí. <xref:Microsoft.ML.PredictionEngine%602> Představuje obálku, která je vrácena z `CreatePredictionEngine` metody. Přidejte následující kód k vytvoření `PredictionEngine` jako první řádek `Predict` metody:
 
-[!code-csharp[CreatePredictionFunction](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#17 "Create the PredictionFunction")]
+[!code-csharp[CreatePredictionEngine](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#17 "Create the PredictionEngine")]
   
 Přidejte komentář k otestování trénovaného modelu předpovědi v `Predict` metodu tak, že vytvoříte instanci `SentimentData`:
 
@@ -331,13 +331,13 @@ Přidejte komentář k otestování trénovaného modelu předpovědi v `Predict
 
 [!code-csharp[Predict](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#19 "Create a prediction of sentiment")]
 
-### <a name="model-operationalization-prediction"></a>Operacionalizace modelu: předpověď
+### <a name="using-the-model-prediction"></a>Pomocí modelu: předpověď
 
 Zobrazení `SentimentText` a odpovídající mínění předpovědí, aby bylo možné sdílet výsledky a příslušně na ně reagovat na ně. Tomu se říká operacionalizace, pomocí vrácená data jako součást zkontrolovala zásady. Vytvoření zobrazení pro výsledky pomocí následujících <xref:System.Console.WriteLine?displayProperty=nameWithType> kódu:
 
 [!code-csharp[OutputPrediction](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#20 "Display prediction output")]
 
-## <a name="predict-the-test-data-outcomes-with-the-saved-model"></a>Předpověď výsledků dat testu s modelem uložené
+## <a name="deploy-and-predict-with-a-loaded-model"></a>Nasazení a predikce v načíst model
 
 Vytvořte `PredictWithModelLoadedFromFile` metoda, těsně před `SaveModelAsFile` metodu, pomocí následujícího kódu:
 
@@ -367,11 +367,11 @@ Načíst model
 
 [!code-csharp[LoadTheModel](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#27 "Load the model")]
 
-Teď, když máte model, vám pomůže, která předvídat toxické nebo jiných toxické mínění komentář dat pomocí <xref:Microsoft.ML.Core.Data.ITransformer.Transform(Microsoft.ML.Data.IDataView)> metody. Chcete-li získat predikcí, použijte `Predict` na nová data. Poznamenat, že vstupní data na řetězec a tento model zahrnuje snadné. Kanálu se synchronizuje během trénování a predikcí. Nemáte psát kód předzpracování/snadné speciálně pro předpovědi a stejného rozhraní API se postará o batch i jednorázové předpovědi. Přidejte následující kód, který `PredictWithModelLoadedFromFile` metodu předpovědí:
+Teď, když máte model, vám pomůže, která předvídat toxické nebo jiných toxické mínění komentář dat pomocí <xref:Microsoft.ML.Core.Data.ITransformer.Transform%2A> metody. Chcete-li získat predikcí, použijte `Predict` na nová data. Poznamenat, že vstupní data na řetězec a tento model zahrnuje snadné. Kanálu se synchronizuje během trénování a predikcí. Nemáte psát kód předzpracování/snadné speciálně pro předpovědi a stejného rozhraní API se postará o batch i jednorázové předpovědi. Přidejte následující kód, který `PredictWithModelLoadedFromFile` metodu předpovědí:
 
 [!code-csharp[Predict](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#28 "Create predictions of sentiments")]
 
-### <a name="model-operationalization-prediction"></a>Operacionalizace modelu: předpověď
+### <a name="using-the-loaded-model-for-prediction"></a>Použití načíst model pro předpověď
 
 Zobrazení `SentimentText` a odpovídající mínění předpovědí, aby bylo možné sdílet výsledky a příslušně na ně reagovat na ně. Tomu se říká operacionalizace, pomocí vrácená data jako součást zkontrolovala zásady. Vytvořit hlavičku pro výsledky pomocí následujících <xref:System.Console.WriteLine?displayProperty=nameWithType> kódu:
 
@@ -410,12 +410,12 @@ Sentiment: This is a very rude movie | Prediction: Toxic | Probability: 0.529704
 =============== End of training ===============
 
 
-The model is saved to: C:\Tutorial\SentimentAnalysis\bin\Debug\netcoreapp2.0\Data\Model.zip
+The model is saved to: C:\Tutorial\SentimentAnalysis\bin\Debug\netcoreapp2.1\Data\Model.zip
 
 =============== Prediction Test of loaded model with a multiple sample ===============
 
 Sentiment: This is a very rude movie | Prediction: Toxic | Probability: 0.4585565
-Sentiment: He is the best, and the article should say that. | Prediction: Not Toxic | Probability: 0.9924279
+Sentiment: I love this article. | Prediction: Not Toxic | Probability: 0.09454837
 
 ```
 
@@ -426,13 +426,13 @@ Blahopřejeme! Teď jste úspěšně sestaven model strojového učení pro klas
 V tomto kurzu jste se naučili:
 > [!div class="checklist"]
 > * Pochopení problému
-> * Vyberte úlohu odpovídající machine learning
+> * Vyberte algoritmus učení příslušný počítač
 > * Příprava dat
-> * Vytvoření kanálu učení
-> * Načíst třídění
+> * Transformace dat
 > * Trénování modelu
-> * Vyhodnocení modelu s jinou datovou sadu
-> * Předpověď výsledků dat testu s modelem
+> * Vyhodnocení modelu
+> * Predikce v trénovaného modelu
+> * Nasazení a predikce v načíst model
 
 Přejděte k dalšímu kurzu, kde Další informace
 > [!div class="nextstepaction"]

@@ -1,13 +1,13 @@
 ---
 title: F#pravidla formátování kódu
 description: Přečtěte si pokyny pro formátování F# kódu.
-ms.date: 11/26/2018
-ms.openlocfilehash: b80a66f582d9fb8a2ec940ab565823483e7e4eea
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.date: 02/08/2019
+ms.openlocfilehash: 7cbd8e4dd1f58cd974a8a12fc8a8c9ee92c546b4
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55254819"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093616"
 ---
 # <a name="f-code-formatting-guidelines"></a>F#pravidla formátování kódu
 
@@ -354,7 +354,7 @@ type PostalAddress =
     }
 ```
 
-Uvedení na nový řádek a pravou token na nový řádek levou token je preferrable, pokud deklarujete implementace rozhraní nebo členy v záznamu:
+Uvedení na nový řádek a pravou token na nový řádek levou token je vhodnější, pokud deklarujete implementace rozhraní nebo členy v záznamu:
 
 ```fsharp
 // Declaring additional members on PostalAddress
@@ -389,7 +389,7 @@ let rainbow =
       Lackeys = ["Zippy"; "George"; "Bungle"] }
 ```
 
-Uvedení otevírání token na nový řádek, obsah s kartami více než jeden obor a pravou token na nový řádek je preferrable, pokud jste:
+Uvedení otevírání token na nový řádek, obsah s kartami více než jeden obor a pravou token na nový řádek je vhodnější, pokud jste:
 
 * Záznamy pohyb v kódu s obory odlišné odsazení
 * Přesměrujete do funkce
@@ -423,6 +423,42 @@ let foo a =
 ```
 
 Stejná pravidla platí i pro seznam a pole prvků.
+
+## <a name="formatting-copy-and-update-record-expressions"></a>Formátování záznam kopírování a aktualizace výrazů
+
+Výrazu kopírování a aktualizace záznamu je stále záznam, takže platí podobné pokyny.
+
+Krátký výrazy vejde na jednom řádku:
+
+```fsharp
+let point2 = { point with X = 1; Y = 2 }
+```
+
+Výrazy delší dobu používali nové řádky:
+
+```fsharp
+let rainbow2 =
+    { rainbow with
+        Boss = "Jeffrey"
+        Lackeys = ["Zippy"; "George"; "Bungle"] }
+```
+
+A jako s pokyny k záznamu, můžete chtít vyhradit samostatné řádky pro složené závorky a odsazovat jeden obor vpravo s výrazem. Všimněte si, že v některých případech speciální, jako je například obtékání hodnotu s volitelným bez závorek, budete muset zachovat složenou závorku na jednom řádku:
+
+```fsharp    
+type S = { F1: int; F2: string }
+type State = { F:  S option }
+
+let state = { F = Some { F1 = 1; F2 = "Hello" } }
+let newState = 
+    {
+        state with
+            F = Some {
+                    F1 = 0
+                    F2 = ""
+                }
+    }
+```
 
 ## <a name="formatting-lists-and-arrays"></a>Formátování seznamy a pole
 
@@ -759,7 +795,7 @@ Při použití parametru, musí být na stejném řádku a oddělené `;` odděl
 
 ## <a name="formatting-literals"></a>Formátování literály
 
-[F#literály](../language-reference/literals.md) pomocí `Literal` atribut by měl by měl umístit atribut na samostatném řádku a pomocí camelCase pojmenování:
+[F#literály](../language-reference/literals.md) pomocí `Literal` atribut by měl umístit atribut na samostatném řádku a pomocí camelCase pojmenování:
 
 ```fsharp
 [<Literal>]

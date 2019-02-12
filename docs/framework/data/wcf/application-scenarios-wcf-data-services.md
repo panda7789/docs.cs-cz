@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, learn more
 - WCF Data Services, scenarios
 ms.assetid: 7c82658f-e7c0-46b6-834d-6592f67ab5ea
-ms.openlocfilehash: 2efa46abf5a1fcedee4a4055331f7a59963be794
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 380ebeaa4c6265cccfe0e264884f509292b31eab
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54709153"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093291"
 ---
 # <a name="application-scenarios-wcf-data-services"></a>Scénáře aplikací (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje základní sadu scénáře pro vystavení a použití dat jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanály. Toto téma odkazuje na témata, které jsou relevantní pro tyto scénáře.  
@@ -37,11 +37,11 @@ ms.locfileid: "54709153"
 -   [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
   
  Využívání [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu v aplikaci klienta založeného na technologii Silverlight.  
- -   [Datové služby WCF (Silverlight)](https://msdn.microsoft.com/library/c0cd9f4b-1372-48e4-9935-c8421239da30)  
+ -   [Datové služby WCF (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))  
   
 -   [Asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
   
--   [Postupy: Vytvoření vazby dat služby dat k ovládacím prvkům (WCF Data Services/Silverlight)](https://msdn.microsoft.com/library/bda7d82e-7b1f-4690-8a33-c6297465bdd5)  
+-   [Postupy: Vytvoření vazby dat služby dat k ovládacím prvkům (klienta Silverlight)](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee681614(v=vs.103))  
   
  Využívání [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu v aplikaci klienta na základě AJAX.  
  -   [Použití datové služby v klientské aplikaci](../../../../docs/framework/data/wcf/using-a-data-service-in-a-client-application-wcf-data-services.md)  
@@ -62,7 +62,7 @@ ms.locfileid: "54709153"
   
 -   [Asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
   
--   [Datové služby WCF (Silverlight)](https://msdn.microsoft.com/library/c0cd9f4b-1372-48e4-9935-c8421239da30)  
+-   [Datové služby WCF (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))  
   
  Vystavení a spotřebování [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu binární rozsáhlý objekt, který se často a změnit jako datový proud.  
  -   [Zprostředkovatel streamování](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md)  

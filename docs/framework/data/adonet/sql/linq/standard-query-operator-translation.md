@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a60c30fa-1e68-45fe-b984-f6abb9ede40e
-ms.openlocfilehash: a94c2e2ffc3ae3fa5406daeae97e31cfc3fdd1bd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0b962df58092dc0d410bff4559180a5d77580545
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54588571"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093928"
 ---
 # <a name="standard-query-operator-translation"></a>Převod standardních operátorů dotazů
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Standardní operátory dotazu se přeloží na příkazy jazyka SQL. Procesor dotazů databáze určuje sémantika provádění SQL překladu.  
   
- Standardní operátoři dotazu jsou definováni proti *pořadí*. Sekvence je *seřazené* a spoléhá na referenční identitě pro každý prvek pořadí. Další informace najdete v tématu [přehled standardních operátorů dotazu](https://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  
+ Standardní operátoři dotazu jsou definováni proti *pořadí*. Sekvence je *seřazené* a spoléhá na referenční identitě pro každý prvek pořadí. Další informace najdete v tématu [přehled standardních operátorů dotazu (C#)](../../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md) nebo [přehled operátory standardního dotazu (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).  
   
  SQL se především se týká *neuspořádaná sady hodnot*. Řazení je obvykle výslovně uvedeno, následné zpracování operace, která se použije na výsledek dotazu, nikoli mezilehlých výsledků. Identita je definovaná pomocí hodnoty. Z tohoto důvodu jsou dotazy SQL pochopitelné řešit multisets (*kontejnery objektů a dat*) namísto *nastaví*.  
   

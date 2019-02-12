@@ -1,14 +1,14 @@
 ---
 title: Použití PredictionEngine předpověď jeden po druhém - ML.NET
 description: Další informace o použití ML.NET PredictionEngine předpověď jeden po druhém
-ms.date: 01/15/2019
+ms.date: 02/06/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 0b3f60038fe7f49ffbff3c63fd2862ba67adb506
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
+ms.openlocfilehash: 328067816be37c9490ae71974e3f6da4ae079f25
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333639"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092030"
 ---
 # <a name="use-the-predictionengine-to-make-one-prediction-at-a-time---mlnet"></a>Použití PredictionEngine předpověď jeden po druhém - ML.NET 
 
@@ -27,19 +27,20 @@ var mlContext = new MLContext();
 
 // Step one: read the data as an IDataView.
 // First, we define the reader: specify the data columns and where to find them in the text file.
-var reader = mlContext.Data.CreateTextReader(new TextLoader.Arguments
-{
-    Column = new[] {
-        new TextLoader.Column("SepalLength", DataKind.R4, 0),
-        new TextLoader.Column("SepalWidth", DataKind.R4, 1),
-        new TextLoader.Column("PetalLength", DataKind.R4, 2),
-        new TextLoader.Column("PetalWidth", DataKind.R4, 3),
+var reader = mlContext.Data.CreateTextLoader(
+    columns: new TextLoader.Column[]
+    {
+        // The four features of the Iris dataset will be grouped together as one Features column.
+        new TextLoader.Column("SepalLength",DataKind.R4,0),
+        new TextLoader.Column("SepalWidth",DataKind.R4,1),
+        new TextLoader.Column("PetalLength",DataKind.R4,2),
+        new TextLoader.Column("PetalWidth",DataKind.R4,3),
         // Label: kind of iris.
-        new TextLoader.Column("Label", DataKind.TX, 4),
+        new TextLoader.Column("Label",DataKind.TX,4)
     },
-    // Default separator is tab, but the dataset has comma.
-    Separator = ","
-});
+    separatorChar: ',',
+    hasHeader: true
+);
 
 // Retrieve the training data.
 var trainData = reader.Read(irisDataPath);
@@ -53,7 +54,7 @@ var pipeline =
     // Use the multi-class SDCA model to predict the label using features.
     .Append(mlContext.MulticlassClassification.Trainers.StochasticDualCoordinateAscent())
     // Apply the inverse conversion from 'PredictedLabel' column back to string value.
-    .Append(mlContext.Transforms.Conversion.MapKeyToValue(("PredictedLabel", "Data")));
+    .Append(mlContext.Transforms.Conversion.MapKeyToValue(("Data", "PredictedLabel")));
 
 // Train the model.
 var model = pipeline.Fit(trainData);

@@ -1,13 +1,13 @@
 ---
 title: Literály
 description: Seznamte se s typy literálu v F# programovací jazyk.
-ms.date: 05/16/2016
-ms.openlocfilehash: dfc02f0ff8ac3ad8600be5f3b6c9359f02bd25be
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.date: 02/08/2019
+ms.openlocfilehash: 28ce34dee3c3c3d4d0cfd4107e8cbc375a23032c
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612449"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092160"
 ---
 # <a name="literals"></a>Literály
 
@@ -24,15 +24,15 @@ Následující tabulka uvádí typy literálu v F#. Znaky, které představují 
 |----|-----------|----------------|--------|
 |sbyte|8bitové celé číslo se znaménkem|y|`86y`<br /><br />`0b00000101y`|
 |byte|přirozené číslo bez znaménka 8 bitů|UY|`86uy`<br /><br />`0b00000101uy`|
-|Int16|16bitové celé číslo se znaménkem|s|`86s`|
-|UInt16|přirozené číslo bez znaménka 16 bitů|USA|`86us`|
+|int16|16bitové celé číslo se znaménkem|s|`86s`|
+|uint16|přirozené číslo bez znaménka 16 bitů|USA|`86us`|
 |int<br /><br />int32|32bitové celé číslo se znaménkem|l nebo žádný|`86`<br /><br />`86l`|
-|uint<br /><br />UInt32|přirozené číslo bez znaménka 32-bit|u nebo ul|`86u`<br /><br />`86ul`|
+|uint<br /><br />uint32|přirozené číslo bez znaménka 32-bit|u nebo ul|`86u`<br /><br />`86ul`|
 |unativeint –|Nativní ukazatel jako přirozené číslo bez znaménka|zrušení|`0x00002D3Fun`|
 |int64|64bitové celé číslo se znaménkem|L|`86L`|
-|UInt64|přirozené číslo bez znaménka 64-bit|UL|`86UL`|
+|uint64|přirozené číslo bez znaménka 64-bit|UL|`86UL`|
 |jeden, float32.|32bitové číslo s plovoucí desetinnou|F nebo f|`4.14F` Nebo `4.14f`|
-|||LF|`0x00000000lf`|
+|||lf|`0x00000000lf`|
 |plovoucí; Double|64bitové číslo s plovoucí desetinnou|žádná|`4.14` nebo `2.3E+32` nebo `2.3e+32`|
 |||LF|`0x0000000000000000LF`|
 |bigint|celé číslo, ne pouze 64bitové znázornění|I|`9999999999999999999999999999I`|
@@ -51,16 +51,16 @@ Od verze F# 3.1, můžete použít `+` přihlásit ke kombinování řetězcový
 
 ```fsharp
 [<Literal>]
-let literal1 = "a" + "b"
+let Literal1 = "a" + "b"
 
 [<Literal>]
-let fileLocation =   __SOURCE_DIRECTORY__ + "/" + __SOURCE_FILE__
+let FileLocation =   __SOURCE_DIRECTORY__ + "/" + __SOURCE_FILE__
 
 [<Literal>]
-let literal2 = 1 ||| 64
+let Literal2 = 1 ||| 64
 
 [<Literal>]
-let literal3 = System.IO.FileAccess.Read ||| System.IO.FileAccess.Write
+let Literal3 = System.IO.FileAccess.Read ||| System.IO.FileAccess.Write
 ```
 
 Použití jiných operátorů bitového typu není povoleno.
@@ -76,8 +76,8 @@ Ve vzoru porovnávání výrazů identifikátory, které začínají malými pí
 Je taky možné specifikovat podepsaný 32bitová celá čísla v šestnáctkové soustavě, osmičkové nebo binární pomocí `0x`, `0o` nebo `0b` předpony v uvedeném pořadí.
 
 ```fsharp
-let Numbers = (0x9F, 0o77, 0b1010)
-// Result: Numbers : int * int * int = (159, 63, 10)
+let numbers = (0x9F, 0o77, 0b1010)
+// Result: numbers : int * int * int = (159, 63, 10)
 ```
 
 ## <a name="underscores-in-numeric-literals"></a>Podtržítka v numerických literálech

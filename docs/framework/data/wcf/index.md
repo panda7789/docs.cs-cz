@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Astoria
 - WCF Data Services, getting started
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
-ms.openlocfilehash: e203e872ac0dce10fa7119388bae2472cb7e6b44
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6fd81a6bd4449cc0ef11b68320f366368d5edb7e
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54588236"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092485"
 ---
 # <a name="wcf-data-services-45"></a>WCF Data Services 4.5
 
@@ -118,7 +118,7 @@ Potřebuji ještě nějaké další informace...
 
  Poskytuje přehled funkcí a možností, které jsou k dispozici ve službě WCF Data Services.
 
- [Co je nového ve službě WCF Data Services](https://msdn.microsoft.com/library/cf22cad5-b8d9-472b-8d7c-b863b64eaae8)
+ [Co je nového ve službě WCF Data Services 5.0](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee373845(v=vs.103))
 
  Popisuje nové funkce služeb WCF Data Services a podpora pro nové funkce OData.
 

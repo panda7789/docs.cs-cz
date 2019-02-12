@@ -3,15 +3,15 @@ title: Předvídání cen pomocí learner regrese ML.NET
 description: Předvídání cen pomocí ML.NET learner regrese.
 author: aditidugar
 ms.author: johalex
-ms.date: 01/15/2019
+ms.date: 02/08/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: e838d5b3b42ffec6648c67b4669a438dbd9e2c34
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 10e0fa2cedff3e31575ad2b9c8bc2d9ecc81f3e8
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828394"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092537"
 ---
 # <a name="tutorial-predict-prices-using-a-regression-learner-with-mlnet"></a>Kurz: Předvídání cen pomocí learner regrese ML.NET
 
@@ -122,9 +122,9 @@ Vytvořte proměnnou s názvem `mlContext` a inicializujte novou instanci tříd
 
 [!code-csharp[CreateMLContext](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#3 "Create the ML Context")]
 
-Další nastavení pro načítání inicializace dat `_textLoader` globální proměnné, aby bylo možné znovu použít.  Všimněte si, že se používá `TextReader`. Při vytváření `TextLoader` pomocí `TextReader`, předáte v souvislosti potřebné a <xref:Microsoft.ML.Data.TextLoader.Arguments> třída, která umožňuje přizpůsobení. Zadejte schéma dat předáním pole <xref:Microsoft.ML.Data.TextLoader.Column> objektů `TextReader` obsahující všechny názvy sloupců a jejich typy. Jsme dříve definovali schéma dat když jsme vytvořili naši `TaxiTrip` třídy.
+Další nastavení pro načítání inicializace dat `_textLoader` globální proměnné, aby bylo možné znovu použít. Při vytváření `TextLoader`, předáte v souvislosti potřebné a <xref:Microsoft.ML.Data.TextLoader.Arguments> třída, která umožňuje přizpůsobení. Zadejte schéma dat předáním pole <xref:Microsoft.ML.Data.TextLoader.Column> objektů `TextLoader` obsahující všechny názvy sloupců a jejich typy. Jsme dříve definovali schéma dat když jsme vytvořili naši `TaxiTrip` třídy.
 
-`TextReader` Třídy vrátí plně inicializován <xref:Microsoft.ML.Data.TextLoader>  
+`TextLoader` Třídy vrátí plně inicializován <xref:Microsoft.ML.Data.TextLoader>  
 
 Inicializovat `_textLoader` globální proměnné, aby bylo možné znovu použít pro potřeby datové sady, přidejte následující kód za `mlContext` inicializace:
 
@@ -155,7 +155,7 @@ Jsme prochází dva parametry do `Train` metoda; `MLContext` kontextu (`mlContex
 
 ## <a name="load-and-transform-data"></a>Načítání a transformace dat.
 
-Budete načteme data s využitím `_textLoader` globální proměnné `dataPath` parametru. Vrátí <xref:Microsoft.ML.Data.IDataView>. Jako vstup a výstup transformací `DataView` je základní datový kanál typ, srovnatelná s hodnotou `IEnumerable` pro `LINQ`.
+Budete načteme data s využitím `_textLoader` globální proměnné `dataPath` parametru. Vrátí <xref:Microsoft.Data.DataView.IDataView>. Jako vstup a výstup transformace `IDataView` je základní datový kanál typ, srovnatelná s hodnotou `IEnumerable` pro `LINQ`.
 
 Data jsou v ML.NET, podobně jako zobrazení SQL. Je laxně Vyhodnocená schematizovanými a heterogenní. Objekt představuje první část kanálu a načte data. Pro účely tohoto kurzu načte datovou sadu s informacemi o jízdách taxislužby užitečné k předpovědi tarify. Slouží k vytvoření modelu a jeho trénování.
 

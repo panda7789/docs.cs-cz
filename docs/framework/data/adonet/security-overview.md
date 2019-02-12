@@ -2,12 +2,12 @@
 title: Overview2 zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
-ms.openlocfilehash: 24da83af6876e9bbb23c7978db6b9413ec00d8ba
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0b5b86aad2365c76351ff748228826ba703223dc
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54570483"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56091796"
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
 Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář může zaručit, že je aplikace bezpečné útoky, protože není možné předpovědět, jaké druhy nové technologie budoucím útokům přinese. Naopak pouze z důvodu nemá nikdo chybám zabezpečení ještě zjištěných (nebo publikovaná) v systému neznamená, že žádný neexistuje, nebo může existovat. Budete muset plánování zabezpečení během fáze návrhu projektu, jakož i plánování, jak se zachová zabezpečení během životního cyklu aplikace.  
@@ -89,7 +89,7 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
 |Prostředek|Popis|  
 |--------------|-----------------|  
 |[SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)|Poskytuje přehled zabezpečení systému SQL Server s aplikačními scénáři, které poskytují pokyny pro vytváření zabezpečených aplikací ADO.NET, které cílí na systém SQL Server.|  
-|[Doporučení pro strategií přístupu dat](https://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
+|[Doporučení pro strategií přístupu dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
   
 ## <a name="security-policy-and-administration"></a>Zásady zabezpečení a Správa  
  Nesprávně správu zásad zabezpečení (CAS) pro přístup kód by mohl vytvořit slabé stránky zabezpečení. Jakmile je aplikace nasazená, se má použít techniky pro monitorování zabezpečení a tom rizika vyhodnotí jako nové hrozby.  
@@ -98,11 +98,11 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[NIB: Správa zásad zabezpečení](https://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)|Obsahuje informace o vytváření a správě zásad zabezpečení.|  
-|[NIB: Doporučené postupy zabezpečení pro zásady](https://msdn.microsoft.com/library/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05)|Obsahuje odkazy, které popisují, jak spravovat zásady zabezpečení.|  
+|[Správa zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))|Obsahuje informace o vytváření a správě zásad zabezpečení.|  
+|[Doporučené postupy zabezpečení pro zásady](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sa4se9bc(v=vs.100))|Obsahuje odkazy, které popisují, jak spravovat zásady zabezpečení.|  
   
 ## <a name="see-also"></a>Viz také:
 - [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [PAVE zabezpečení v nativním a kódu rozhraní .NET Framework](https://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)
+- [Zabezpečení v rozhraní .NET](../../../standard/security/index.md)
 - [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

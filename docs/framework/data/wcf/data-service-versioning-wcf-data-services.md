@@ -6,12 +6,12 @@ helpviewer_keywords:
 - versioning [WCF Data Services]
 - WCF Data Services, versioning
 ms.assetid: e3e899cc-7f25-4f67-958f-063f01f79766
-ms.openlocfilehash: aef4c98390d1fda4828bea8b6b2e482cb0071c32
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 818495cd2f7100f416280ce019321fed3f26aee8
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54558524"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092914"
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>Správa verzí datové služby (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Umožňuje vytvoření datové služby tak, aby klienti můžou přistupovat k datům jako prostředky pomocí identifikátorů URI, které jsou založeny na datovém modelu. OData podporuje také definice operace služby. Po počátečním nasazení a potenciálně několikrát během jejich životního cyklu mohou tyto datové služby musí změnit pro celou řadu důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiných problémů. Pokud provedete změny do existující služby data, musíte zvážit, jestli se má definovat novou verzi vaše data služby a jak nejlepší k minimalizaci vlivu na existující klientské aplikace. Toto téma obsahuje pokyny pro kdy a jak vytvořit novou verzi datové služby. Také popisuje, jak služeb WCF Data Services zpracovává výměny mezi klienty a datových služeb, které podporují různé verze protokolu OData.
@@ -69,7 +69,7 @@ ms.locfileid: "54558524"
 |verze 3|-Můžete stáhnout a nainstalovat verzi předběžné verze, která podporuje OData verze 3 z [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=203885).|
 
 ### <a name="metadata-versions"></a>Verze metadat
- Ve výchozím nastavení používá služeb WCF Data Services verze 1.1 CSDL k reprezentaci datový model. To platí vždy pro datové modely, které jsou založeny na zprostředkovatel reflexe nebo poskytovatel služeb vlastní data. Pokud je však datového modelu definován pomocí [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)], verze CSDL vrátil, je shodná s verzí, který je používán [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]. Verze CSDL je určeno obor názvů [element schématu](https://msdn.microsoft.com/library/396074d8-f99c-4f50-a073-68bce848224f). Další informace najdete v tématu specifikace [ \[MC CSDL\]: Formát souboru pro definici konceptuálního schématu](https://go.microsoft.com/fwlink/?LinkId=159072).
+ Ve výchozím nastavení používá služeb WCF Data Services verze 1.1 CSDL k reprezentaci datový model. To platí vždy pro datové modely, které jsou založeny na zprostředkovatel reflexe nebo poskytovatel služeb vlastní data. Pokud je však datového modelu definován pomocí [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)], verze CSDL vrátil, je shodná s verzí, který je používán [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]. Verze CSDL je určeno obor názvů [element schématu (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#schema-element-csdl).
 
  `DataServices` Také obsahuje element vrácených metadat `DataServiceVersion` atribut, který má stejnou hodnotu jako `DataServiceVersion` záhlaví ve zprávě s odpovědí. Klientské aplikace, jako **přidat odkaz na službu** dialogové okno v sadě Visual Studio, tyto informace slouží ke generování tříd klientské datové služby, které fungují správně s verzí datové služby WCF, který hostitelem datové služby. Další informace najdete v tématu [OData: Protokol správy verzí](https://go.microsoft.com/fwlink/?LinkId=186071).
 

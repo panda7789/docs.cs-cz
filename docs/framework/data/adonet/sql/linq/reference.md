@@ -2,12 +2,12 @@
 title: Odkaz
 ms.date: 03/30/2017
 ms.assetid: 312c3935-a947-4220-a837-0039d9fc458b
-ms.openlocfilehash: b474530cd9c45ef16d004bb2445c349fdd418394
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: 467bc9f482fa24e679814de3be0fdb7d9363320c
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904715"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093356"
 ---
 # <a name="reference"></a>Odkaz
 Tato část obsahuje referenční informace pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vývojáři.  
@@ -44,5 +44,5 @@ Tato část obsahuje referenční informace pro [!INCLUDE[vbtecdlinq](../../../.
  [Language-Integrated Query (LINQ) – Visual Basic](../../../../../visual-basic/programming-guide/concepts/linq/index.md)  
  Poskytuje portálů pro [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] témata.  
   
- [Přehled technologie zdroj LinqDataSource](https://msdn.microsoft.com/library/104cfc3f-7385-47d3-8a51-830dfa791136)  
+ [Přehled ovládacího prvku zdroje dat LinqDataSource webového serveru](https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100))  
  Popisuje, jak <xref:System.Web.UI.WebControls.LinqDataSource> řídit zpřístupňuje [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] pro webové vývojáře prostřednictvím [!INCLUDE[vstecasp](../../../../../../includes/vstecasp-md.md)] architektura ovládacího prvku zdroje dat.

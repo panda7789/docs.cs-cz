@@ -1,11 +1,10 @@
 ---
-title: 'Postupy: používání bloku Try-Catch k zachycování výjimek'
-ms.date: 03/30/2017
+title: 'Postupy: Používání bloku Try-Catch k zachycování výjimek'
+ms.date: 02/06/2019
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
-- cpp
 helpviewer_keywords:
 - exceptions, try/catch blocks
 - try blocks
@@ -14,28 +13,32 @@ helpviewer_keywords:
 ms.assetid: a3ce6dfd-1f64-471b-8ad8-8cfaf406275d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 852df5cb3eeea2ee5fa44ddce2f97e9c4f8d8b5a
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 5183a854ee2b7462ecc27786a5fc0697565194c0
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842382"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092745"
 ---
 # <a name="how-to-use-the-trycatch-block-to-catch-exceptions"></a>Postup používání bloku try/catch k zachycování výjimek
 
-Umístit na části kódu, který může vyvolat výjimky v `try` bloku a místo kód, který zpracovává výjimky v `catch` bloku. `catch` Blok je řada příkazů pomocí klíčového slova začínající `catch`následovaný typ výjimky a akce, jež mají být provedeny.
+Umístěte všechny příkazy, které mohou vyvolat nebo vyvolat výjimku `try` bloku a používá ke zpracování výjimky nebo výjimky v jednom nebo více příkazů místo `catch` níže uvedených bloků `try` bloku. Každý `catch` blok obsahuje typ výjimky a může obsahovat další příkazy potřebné ke zpracování tohoto typu výjimky.
 
-Následující příklad kódu používá `try` / `catch` bloku catch možnou výjimkou. `Main` Obsahuje metodu `try` blokovat s <xref:System.IO.StreamReader> volá příkaz, který otevře soubor dat `data.txt` a zapíše řetězec ze souboru. Následující `try` blok je `catch` blok, který zachytí jakoukoli výjimku, která je výsledkem `try` bloku.
+V následujícím příkladu <xref:System.IO.StreamReader> otevře soubor s názvem *data.txt* a načte řádek ze souboru. Protože kód může vyvolat výjimky tři, je umístěný v `try` bloku. Tři `catch` bloky catch výjimky a mohli je zpracovat zobrazením výsledků do konzoly.
 
- [!code-cpp[CatchException#3](../../../samples/snippets/cpp/VS_Snippets_CLR/CatchException/CPP/catchexception2.cpp#3)]
- [!code-csharp[CatchException#3](../../../samples/snippets/csharp/VS_Snippets_CLR/CatchException/CS/catchexception2.cs#3)]
- [!code-vb[CatchException#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CatchException/VB/catchexception2.vb#3)]  
+[!code-csharp[CatchException#3](~/samples/snippets/csharp/VS_Snippets_CLR/CatchException/CS/catchexception2.cs#3)]
+[!code-vb[CatchException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CatchException/VB/catchexception2.vb#3)]  
 
-Modul common language runtime zachytí výjimky, které nejsou zachyceny v bloku catch. V závislosti na konfiguraci modulu runtime se zobrazí dialogové okno ladění, program se zastaví provádění a zobrazí se dialogové okno s informací o výjimce nebo chybu je tisknout do STDERR.
+Common Language Runtime (CLR) zachytává výjimky není zpracována `catch` bloky. Pokud je výjimka zachycena platformou CLR, jednu z následujících výsledků může dojít v závislosti na vaší konfiguraci modulu CLR:
 
-> [!NOTE] 
-> Téměř libovolném řádku kódu může způsobit výjimku, zejména výjimky vyvolané modulem common language runtime, jako například <xref:System.OutOfMemoryException>. Většina aplikací nemusíte řešit tyto výjimky, ale byste měli vědět tuto možnost při zápisu knihoven a využívat další uživatelé. Návrhy toho, kdy k nastavení kódu v bloku Try, najdete v části [osvědčené postupy pro výjimky](best-practices-for-exceptions.md).
+- A **ladění** zobrazí se dialogové okno.
+- Program se zastaví provádění a zobrazí se dialogové okno s informací o výjimce.
+- Chyba vytiskne na [standardní chybový proud výstup](xref:System.Console.Error).
+
+> [!NOTE]
+> Většinu kódu může vyvolat výjimku a výjimkami, jako je třeba <xref:System.OutOfMemoryException>, mohou být vyvolány pomocí modulu CLR, samotný kdykoli. Když aplikace není nutné zacházet s těmito výjimkami, mějte na paměti možnost při zápisu knihoven a využívat další uživatelé. Pro návrhy toho, kdy k nastavení kódu v `try` blokovat, najdete v článku [osvědčené postupy pro výjimky](best-practices-for-exceptions.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Výjimky](index.md)
+[Výjimky](index.md)  
+[Zpracování chyb vstupně-výstupní operace v rozhraní .NET](../io/handling-io-errors.md)

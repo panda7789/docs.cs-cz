@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7e1227cbf85e72570bcb08f7f13168392b7c7b60
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b4aad615df6db5a29b9af21b585ea2b0dfbdedf4
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54592572"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093681"
 ---
 # <a name="overview-of-the-net-framework"></a>Přehled rozhraní .NET Framework
 
@@ -87,7 +87,7 @@ Jak by jste očekávali od objektově orientované třídy knihovny, typy rozhra
 
 - Aplikace orientované na služby s využitím Windows Communication Foundation (WCF). Zobrazit [aplikace orientované na služby s použitím technologie WCF](../../../docs/framework/wcf/index.md).
 
-- Aplikace podporující pracovní postupy s využitím Windows Workflow Foundation (WF). Zobrazit [vytváření pracovních postupů v rozhraní .NET Framework](https://msdn.microsoft.com/library/cbf3880f-dc7b-466d-b808-1109b1223f4a).
+- Aplikace podporující pracovní postupy s využitím Windows Workflow Foundation (WF). Zobrazit [Windows Workflow Foundation](../windows-workflow-foundation/index.md).
 
 Třídy modelu Windows Forms jsou komplexní sadou opakovaně použitelných typů, které obrovsky zjednodušují vývoj grafického uživatelského rozhraní Windows. Pokud píšete aplikaci technologie ASP.NET webové formuláře, můžete použít třídy webového formuláře.
 
@@ -97,5 +97,5 @@ Třídy modelu Windows Forms jsou komplexní sadou opakovaně použitelných typ
 - [Průvodce instalací](../../../docs/framework/install/index.md)
 - [Průvodce vývojem](../../../docs/framework/development-guide.md)
 - [Nástroje](../../../docs/framework/tools/index.md)
-- [.NET framework – ukázky](https://msdn.microsoft.com/library/177055f8-4a1f-43e7-aee6-995c196079b1)
+- [.NET ukázky a kurzy](../../samples-and-tutorials/index.md)
 - [Knihovna tříd rozhraní .NET framework](https://go.microsoft.com/fwlink/?LinkID=227195)

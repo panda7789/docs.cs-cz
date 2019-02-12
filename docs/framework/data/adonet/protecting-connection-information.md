@@ -2,12 +2,12 @@
 title: Ochrana informací o připojení
 ms.date: 03/30/2017
 ms.assetid: 1471f580-bcd4-4046-bdaf-d2541ecda2f4
-ms.openlocfilehash: 4c96861afc47c67c8e8c1f3721b09672ca3f48ec
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4c8992abc30690be8e9ef9c208b0a0bd3ddf6116
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54662215"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56091952"
 ---
 # <a name="protecting-connection-information"></a>Ochrana informací o připojení
 Zabezpečení přístupu ke zdroji dat je jedním z nejdůležitějších cílů při zabezpečování aplikace. Připojovací řetězec představuje potenciální ohrožení zabezpečení, není-li zabezpečena. Ukládání informací o připojení ve formátu prostého textu nebo uchování v paměti rizika porušení zabezpečení celého systému. Připojovací řetězce vloženy do zdrojového kódu, lze jej číst pomocí [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) zobrazíte jazyk Microsoft intermediate language (MSIL) v kompilovaném sestavení.  
@@ -41,6 +41,6 @@ Zabezpečení přístupu ke zdroji dat je jedním z nejdůležitějších cílů
   
 ## <a name="see-also"></a>Viz také:
 - [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Informace o konfiguraci chráněných konfigurace šifrování](https://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)
-- [PAVE zabezpečení v nativním a kódu rozhraní .NET Framework](https://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)
+- [Informace o konfiguraci chráněných konfigurace šifrování](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100))
+- [Zabezpečení v rozhraní .NET](../../../standard/security/index.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

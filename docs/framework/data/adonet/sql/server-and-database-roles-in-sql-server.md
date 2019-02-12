@@ -2,12 +2,12 @@
 title: Serverové a databázové role v systému SQL Server
 ms.date: 03/30/2017
 ms.assetid: 5482dfdb-e498-4614-8652-b174829eed13
-ms.openlocfilehash: 57570d1879efa91dc98e41203eac9464c547af77
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c7fdac92c2d980669a3cc3bf67119bdbb42509a4
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643075"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56091809"
 ---
 # <a name="server-and-database-roles-in-sql-server"></a>Serverové a databázové role v systému SQL Server
 Všechny verze SQL serveru použít zabezpečení na základě rolí, které vám umožní přiřadit oprávnění pro roli nebo skupinu uživatelů, nikoli pro jednotlivé uživatele. Pevného serveru a pevné databázové role mají pevnou sadu oprávnění, které jsou jim přiřazeny.  
@@ -27,8 +27,8 @@ Všechny verze SQL serveru použít zabezpečení na základě rolí, které vá
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Role na úrovni serveru](/sql/relational-databases/security/authentication-access/server-level-roles) a [oprávnění role pevného serveru](https://msdn.microsoft.com/library/ms175892.aspx) v Online knihách serveru SQL|Popisuje role pevného serveru a oprávnění k nim má přiřazené v systému SQL Server.|  
-|[Role na úrovni databáze](/sql/relational-databases/security/authentication-access/database-level-roles) a [oprávnění pevné databázové role](https://msdn.microsoft.com/library/ms189612.aspx) v Online knihách serveru SQL|Popisuje pevné databázové role a oprávnění k nim má přiřazené|  
+|[Role na úrovni serveru](/sql/relational-databases/security/authentication-access/server-level-roles)|Popisuje role pevného serveru a oprávnění k nim má přiřazené v systému SQL Server.|  
+|[Role na úrovni databáze](/sql/relational-databases/security/authentication-access/database-level-roles)|Popisuje pevné databázové role a oprávnění k nim má přiřazené|  
   
 ## <a name="database-roles-and-users"></a>Databázové role a uživatele  
  Přihlašovací jména musí být namapována na uživatelské účty v databázích za účelem práce s databázovými objekty. Uživatelé databáze je potom možné přidat do databázových rolí dědění jakékoli sady oprávnění přidružené k těmto rolím. Všechna oprávnění lze udělit.  
@@ -58,8 +58,8 @@ Všechny verze SQL serveru použít zabezpečení na základě rolí, které vá
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Řízení identit a přístupu](https://msdn.microsoft.com/library/bb510418.aspx) v Online knihách serveru SQL|Obsahuje odkazy na témata popisující objekty zabezpečení, role, přihlašovací údaje, zabezpečitelné objekty a oprávnění.|  
-|[Objekty zabezpečení](/sql/relational-databases/security/authentication-access/principals-database-engine) v Online knihách serveru SQL|Popisuje objekty zabezpečení a obsahuje odkazy na témata popisující role serveru a databáze.|  
+|[Začínáme s oprávněními modul databáze](/sql/relational-databases/security/authentication-access/getting-started-with-database-engine-permissions)|Obsahuje odkazy na témata popisující objekty zabezpečení, role, přihlašovací údaje, zabezpečitelné objekty a oprávnění.|  
+|[Objekty zabezpečení](/sql/relational-databases/security/authentication-access/principals-database-engine)|Popisuje objekty zabezpečení a obsahuje odkazy na témata popisující role serveru a databáze.|  
   
 ## <a name="see-also"></a>Viz také:
 - [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)

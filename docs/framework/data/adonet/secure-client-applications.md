@@ -2,12 +2,12 @@
 title: Zabezpečené klientské aplikace
 ms.date: 03/30/2017
 ms.assetid: 6239592e-fa7d-4dea-9f00-d296d0048b01
-ms.openlocfilehash: 4233ce4edc788f3129043c5a1ef1acb26dd1d899
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c8efdf4c4baceb22ee60bdcf333ad1fec9ebd2d0
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54599610"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56092706"
 ---
 # <a name="secure-client-applications"></a>Zabezpečené klientské aplikace
 Aplikace se obvykle skládají z mnoho částí, které musí ochránit před chybami zabezpečení, které by mohly způsobit ztrátu dat nebo jinak ohrozit zabezpečení systému. Vytváření zabezpečených uživatelské rozhraní může zabránit mnoho problémů zákonné zodpovědnosti organizací blokováním útočníci před získáním přístupu dat nebo dostatek systémových prostředků.  
@@ -21,7 +21,7 @@ Aplikace se obvykle skládají z mnoho částí, které musí ochránit před ch
  [Zabezpečení a uživatelský vstup](../../../../docs/standard/security/security-and-user-input.md)  
  Popisuje způsob zpracování chyb potenciálně nebezpečné a současně lákavé zahrnující vstup uživatele.  
   
- [Ověřování uživatelského vstupu v ASP.NET Web Pages](https://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)  
+ [Ověřování uživatelského vstupu v ASP.NET Web Pages](https://docs.microsoft.com/previous-versions/aspnet/7kh55542(v=vs.100))  
  Přehled ověřování vstupu uživatele s použitím validačních ovládacích prvků technologie ASP.NET.  
   
  [Uživatelský vstup ve Windows Forms](../../../../docs/framework/winforms/user-input-in-windows-forms.md)  
@@ -39,7 +39,7 @@ Aplikace se obvykle skládají z mnoho částí, které musí ochránit před ch
  [Model Windows Forms a nespravované aplikace](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  
  Popisuje, jak pracovat s nespravovanými aplikacemi v aplikaci Windows Forms.  
   
- [ClickOnce – nasazení pro Windows Forms aplikací](https://msdn.microsoft.com/library/34d8c770-48f2-460c-8d67-4ea5684511df)  
+ [ClickOnce – nasazení pro Windows Forms](../../winforms/clickonce-deployment-for-windows-forms.md)  
  Popisuje způsob použití `ClickOnce` nasazení v aplikaci Windows Forms a probírá důsledky zabezpečení.  
   
 ## <a name="aspnet-and-xml-web-services"></a>ASP.NET a webových služeb XML  
@@ -51,23 +51,23 @@ Aplikace se obvykle skládají z mnoho částí, které musí ochránit před ch
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[NIB: Zabezpečení technologie ASP.NET](https://msdn.microsoft.com/library/04b37532-18d9-40b4-8e5f-ee09a70b311d)|Popisuje, jak zabezpečené aplikace ASP.NET.|  
-|[Zabezpečení webových služeb XML vytvořených pomocí technologie ASP.NET](https://msdn.microsoft.com/library/354b2ab1-2782-4542-b32a-dc560178b90c)|Popisuje, jak implementovat zabezpečení pro webovou službu ASP.NET.|  
-|[Přehled zneužití skriptu](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)|Popisuje, jak pro ochranu proti útoku zneužití skriptu, která se pokusí vložit škodlivé znaky do webové stránky.|  
-|[NIB: základní postupy zabezpečení pro webové aplikace ASP.NET](https://msdn.microsoft.com/library/94a52ab8-731d-417e-b997-721baf43df38)|Obecné informace zabezpečení a odkazy na další informace|  
+|[Zabezpečení webových stránek ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/91f66yxt(v=vs.100))|Popisuje, jak zabezpečené aplikace ASP.NET.|  
+|[Zabezpečení webových služeb XML vytvořených pomocí technologie ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w67h0dw7(v=vs.100))|Popisuje, jak implementovat zabezpečení pro webovou službu ASP.NET.|  
+|[Přehled zneužití skriptu](https://docs.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100))|Popisuje, jak pro ochranu proti útoku zneužití skriptu, která se pokusí vložit škodlivé znaky do webové stránky.|  
+|[Základní postupy zabezpečení pro webové aplikace](https://docs.microsoft.com/previous-versions/aspnet/zdh19h94(v=vs.100))|Obecné informace zabezpečení a odkazy na další informace|  
   
 ## <a name="remoting"></a>Vzdálená komunikace  
  Vzdálené komunikace .NET vám umožní sestavovat široce distribuovaných aplikací, ať už součástí aplikace jsou všechny na jednom počítači nebo rozloženy na světě. Můžete vytvořit klientské aplikace, které používají objekty v jiných procesů ve stejném počítači nebo na jiný počítač, který je dostupný prostřednictvím své sítě. Vzdálené komunikace .NET můžete použít také ke komunikaci s dalšími doménami aplikace v rámci stejného procesu.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Konfigurace vzdálené aplikace](https://msdn.microsoft.com/library/92c0c097-d984-4315-835b-7490ecdf1097)|Tento článek popisuje postup konfigurace aplikací vzdálené komunikace, aby se zabránilo běžné problémy.|  
-|[Zabezpečení vzdálené komunikace](https://msdn.microsoft.com/library/9574262c-d4b1-41c5-8600-24ff147c0add)|Popisuje, ověřování a šifrování, jakož i další bezpečnostní témata, které jsou relevantní pro vzdálenou komunikaci.|  
+|[Konfigurace vzdálené aplikace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b8tysty8(v=vs.100))|Tento článek popisuje postup konfigurace aplikací vzdálené komunikace, aby se zabránilo běžné problémy.|  
+|[Zabezpečení vzdálené komunikace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/9hwst9th(v=vs.100))|Popisuje, ověřování a šifrování, jakož i další bezpečnostní témata, které jsou relevantní pro vzdálenou komunikaci.|  
 |[Zabezpečení a důležité informace o vzdálené komunikace](../../../../docs/framework/misc/security-and-remoting-considerations.md)|Popisuje problémy se zabezpečením pomocí chráněných objektů a křížení domén aplikace.|  
   
 ## <a name="see-also"></a>Viz také:
 - [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Doporučení pro strategií přístupu dat](https://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)
+- [Doporučení pro strategií přístupu dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))
 - [Zabezpečování aplikací](/visualstudio/ide/securing-applications)
 - [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

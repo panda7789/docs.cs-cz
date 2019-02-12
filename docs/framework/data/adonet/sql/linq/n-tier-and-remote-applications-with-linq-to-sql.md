@@ -2,12 +2,12 @@
 title: N-vrstvé a vzdálené aplikace s LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 854a1cdd-53cb-45f5-83ca-63962a9b3598
-ms.openlocfilehash: 614adf9e00f912e0dddb6674fe4c4ab329f652c5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 32035720992a679457f11414ab282f949b450082
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54734539"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56094071"
 ---
 # <a name="n-tier-and-remote-applications-with-linq-to-sql"></a>N-vrstvé a vzdálené aplikace s LINQ to SQL
 Můžete vytvářet n vrstvá nebo vícevrstvé aplikace, které používají [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Obvykle [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kontext dat, tříd entit a logiky konstrukce dotazů jsou umístěny ve střední vrstvě jako vrstva přístupu k datům (DAL). Obchodní logika a veškerých dat, dočasné je zcela implementovat v částečné třídy a metody entity a kontext dat, nebo se dá implementovat v samostatné třídy.
@@ -16,7 +16,7 @@ Můžete vytvářet n vrstvá nebo vícevrstvé aplikace, které používají [!
 
  Ve střední vrstvě entity jsou vytvořeny pomocí kontext dat, který sleduje jejich stavu a spravuje pro odložené načítání z a odeslání změn do databáze. Tyto entity jsou "připojené" k `DataContext`. Ale po entity, které se odesílají na jinou vrstvu prostřednictvím serializace, budou odpojená, což znamená, že `DataContext` se už ke sledování jejich stavu. Entity, které klient posílá zpět aktualizací musíte znova připojit ke kontextu dat před [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] můžete odeslat změny do databáze. Klient je odpovědný za poskytnutí původní hodnoty a/nebo časová razítka zpět do střední vrstvy, pokud jsou požadované kontroly optimistické souběžnosti.
 
- V aplikacích ASP.NET <xref:System.Web.UI.WebControls.LinqDataSource> spravuje většinu Tato složitost. Další informace najdete v tématu [NIB: Přehled ovládacího prvku zdroje dat LinqDataSource webového serveru](https://msdn.microsoft.com/library/104cfc3f-7385-47d3-8a51-830dfa791136).
+ V aplikacích ASP.NET <xref:System.Web.UI.WebControls.LinqDataSource> spravuje většinu Tato složitost. Další informace najdete v tématu [Přehled ovládacího prvku webového serveru zdroje dat LinqDataSource](https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100)).
 
 ## <a name="additional-resources"></a>Další prostředky
  Další informace o tom, jak implementovat n vrstvé aplikace, které používají [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], naleznete v následujících tématech:

@@ -2,12 +2,12 @@
 title: Zabezpečený přístup k datům
 ms.date: 03/30/2017
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
-ms.openlocfilehash: 600ab092d1ae7c890a5d50f3beed52eb8b4110b3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6fad9145cde499d7f0fc1b158810b75ff85c039b
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54494636"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56094032"
 ---
 # <a name="secure-data-access"></a>Zabezpečený přístup k datům
 Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezpečení k dispozici v základní úložiště dat nebo databázi. Také je potřeba zvážit důsledky zabezpečení jiných funkcích nebo komponenty, které vaše aplikace může obsahovat.  
@@ -24,7 +24,7 @@ Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezp
 |Prostředek|Popis|  
 |--------------|-----------------|  
 |[Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)|Popisuje osvědčené postupy zabezpečení a techniky pro ochranu informací o připojení, jako je třeba použití chráněné konfigurace šifrování připojovací řetězce.|  
-|[Doporučení pro strategií přístupu dat](https://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
+|[Doporučení pro strategií přístupu dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
 |[Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)|Popisuje, jak sestavit připojovací řetězce ze vstupu uživatele v době běhu.|  
 |[Přehled zabezpečení SQL Serveru](../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)|Popisuje architekturu zabezpečení systému SQL Server.|  
   
@@ -46,7 +46,7 @@ Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezp
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Přehled zneužití skriptu](https://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)|Popisuje, jak můžete chránit proti skriptování a příkazu jazyka SQL zneužití.|  
+|[Přehled zneužití skriptu](https://docs.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100))|Popisuje, jak můžete chránit proti skriptování a příkazu jazyka SQL zneužití.|  
   
 ## <a name="probing-attacks"></a>Zjišťování útoků  
  Informace z výjimky, jako je například název serveru, databáze nebo tabulky, útočníci často používají k připojení útoku na systém. Protože výjimky může obsahovat specifické informace o aplikaci nebo zdroj dat, můžete pomoct chránit vaše aplikace a zdroj dat lépe chráněné zveřejněním pouze základní informace o klientovi.  
@@ -75,7 +75,7 @@ Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezp
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Na základě rolí zabezpečení COM + a rozhraní .NET Framework](https://msdn.microsoft.com/library/02ab22ef-e5e2-4d29-b33a-6e03d94c4981)|Tento článek popisuje postup pro integraci spravovaného kódu zabezpečení služby COM +.|  
+|[Zabezpečení na základě rolí](https://docs.microsoft.com/previous-versions/dotnet/netframework-1.1/s6y8k15h(v=vs.71))|Tento článek popisuje postup pro integraci spravovaného kódu zabezpečení služby COM +.|  
   
 ## <a name="interoperating-with-unmanaged-code"></a>Spolupráce s nespravovaným kódem  
  Rozhraní .NET Framework poskytuje pro interakci s nespravovaným kódem, včetně modelu COM komponenty modelu COM + služby, externí knihovny typů a řadě služeb operačního systému. Práce s nespravovaným kódem zahrnuje přejít mimo zónu zabezpečení pro spravovaný kód. Váš kód a jakýkoli kód, který volá musí mít povolení pro nespravovaný kód (<xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> příznak zadán). Nespravovaný kód můžou představovat ohrožení zabezpečení nežádoucí na vaší aplikace. Proto byste se měli vyhnout spolupráce s nespravovaným kódem, pokud to není nezbytně nutné.  
@@ -90,7 +90,7 @@ Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezp
 ## <a name="see-also"></a>Viz také:
 - [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)
-- [Doporučení pro strategií přístupu dat](https://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)
+- [Doporučení pro strategií přístupu dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))
 - [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)
 - [Tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00c12376-cb26-4317-86ad-e6e9c089be57
-ms.openlocfilehash: d7ab6694ec467f957228bfde0a044c577bc2f923
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4546ce2a08fc2ac20717bbaa55d4688b43d34b47
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54664080"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093811"
 ---
 # <a name="sql-server-express-user-instances"></a>SQL Server Express User Instances
 Microsoft SQL Server Express Edition (SQL Server Express) podporuje funkci instance uživatele, která je dostupná jenom při použití zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`). Uživatelské instance se samostatnou instanci SQL serveru Express databázového stroje, který je generován nadřazená instance. Uživatelské instance povolit uživatelům, kteří nejsou správci na svých místních počítačích k připojení a připojení k databázím SQL Server Express. Každá instance spouští v kontextu zabezpečení jednotlivých uživatelů, na jednu instanci každého uživatele zvlášť.  
@@ -146,7 +146,7 @@ private static void OpenSqlConnection()
   
 -   Všechny aplikace jednoho uživatele, kde sdílení dat se nevyžaduje.  
   
--   ClickOnce – nasazení. Pokud jsou na cílovém počítači již nainstalovány rozhraní .NET Framework 2.0 (nebo novější) a SQL Server Express, instalační balíček stáhli jako výsledek akce ClickOnce lze nainstalovat a používat uživatelé bez oprávnění správce. Mějte na paměti, musí správce nainstalovat systém SQL Server Express Pokud, který je součástí instalace. Další informace najdete v tématu [nasazení pro Windows Forms aplikací ClickOnce](https://msdn.microsoft.com/library/34d8c770-48f2-460c-8d67-4ea5684511df).  
+-   ClickOnce – nasazení. Pokud jsou na cílovém počítači již nainstalovány rozhraní .NET Framework 2.0 (nebo novější) a SQL Server Express, instalační balíček stáhli jako výsledek akce ClickOnce lze nainstalovat a používat uživatelé bez oprávnění správce. Mějte na paměti, musí správce nainstalovat systém SQL Server Express Pokud, který je součástí instalace. Další informace najdete v tématu [ClickOnce – nasazení pro Windows Forms](../../../winforms/clickonce-deployment-for-windows-forms.md).
   
 -   Vyhrazené hostování v technologii ASP.NET pomocí ověřování Windows. Jedna instance systému SQL Server Express je možné hostovat na intranetu. Aplikace se připojí pomocí účtu Windows ASPNET, nikoli pomocí zosobnění. Uživatelské instance není vhodné používat pro třetí strany nebo sdílené hostování situacích, kdy všechny aplikace bude sdílet stejnou instanci uživatele a by už zůstat izolované od sebe navzájem.  
   

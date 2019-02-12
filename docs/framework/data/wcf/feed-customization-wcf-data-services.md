@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-ms.openlocfilehash: c54ea70049544e5205613ab76eb810798513fab2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cea3d57442d330b662335326c5b8ffd78d276ef2
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54680215"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56093746"
 ---
 # <a name="feed-customization-wcf-data-services"></a>Přizpůsobení informačního kanálu (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] používá [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] k vystavení dat jako informační kanál. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Pokud používáte informační kanál, Atom [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] poskytuje standardní metodu k serializaci dat, jako je například entit a vztahů do formátu XML, které mohou být součástí těla zprávy HTTP. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Definuje výchozí vlastnost entity mapování mezi elementy Atom a data, která je obsažená v entitách. Další informace najdete v tématu [OData: Formát Atom](https://go.microsoft.com/fwlink/?LinkID=185794).  
@@ -42,7 +42,7 @@ ms.locfileid: "54680215"
  Další informace najdete v tématu [jak: Přizpůsobení informačních kanálů prostřednictvím zprostředkovatele Entity Framework](../../../../docs/framework/data/wcf/how-to-customize-feeds-with-ef-provider-wcf-data-services.md).  
   
 > [!NOTE]
->  Vzhledem k tomu, že rozšíření do datového modelu v návrháři entit nejsou podporovány, je nutné ručně upravit soubor XML, který obsahuje datový model. Další informace o soubor EDMX, který je generován [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] nástroje, viz [edmx soubor přehled](https://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4).  
+>  Vzhledem k tomu, že rozšíření do datového modelu v návrháři entit nejsou podporovány, je nutné ručně upravit soubor XML, který obsahuje datový model. Další informace o soubor EDMX, který je generován [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] nástroje, viz [edmx soubor přehled (Entity Framework)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)).  
   
 ### <a name="custom-feed-attributes"></a>Vlastní informační kanál atributy  
  V následující tabulce jsou uvedeny atributy XML, které přizpůsobení informačních kanálů, které můžete přidat Konceptuální schéma definici jazyka (CSDL), který definuje datový model. Tyto atributy jsou rovnocenné vlastností <xref:System.Data.Services.Common.EntityPropertyMappingAttribute> použít prostřednictvím zprostředkovatele reflexe.  

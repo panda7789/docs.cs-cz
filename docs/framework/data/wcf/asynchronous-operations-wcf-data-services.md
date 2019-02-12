@@ -6,12 +6,12 @@ helpviewer_keywords:
 - asynchronous operations [WCF Data Services]
 - WCF Data Services, client library
 ms.assetid: 679644c7-e3fc-422c-b14a-b44b683900d0
-ms.openlocfilehash: 5db2d918dfddd1ee62dccbf43eadccf265a265e7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1aa51d07be6073a75ef40ade83eba13371db3a69
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54701492"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56094149"
 ---
 # <a name="asynchronous-operations-wcf-data-services"></a>Asynchronní operace (WCF Data Services)
 Webové aplikace musí zohlednit vyšší latence mezi klientem a serverem než aplikace, které běží uvnitř interní sítě. Pokud chcete optimalizovat výkon a uživatelské prostředí aplikace, doporučujeme používat asynchronní metody <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601> třídy při přístupu k [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] servery prostřednictvím webu.  
@@ -34,7 +34,7 @@ Webové aplikace musí zohlednit vyšší latence mezi klientem a serverem než 
 |Ukládají se změny objektů v <xref:System.Data.Services.Client.DataServiceContext>|-   <xref:System.Data.Services.Client.DataServiceContext.BeginSaveChanges%2A><br />-   <xref:System.Data.Services.Client.DataServiceContext.EndSaveChanges%2A>|  
   
 ## <a name="threading-considerations-for-asynchronous-operations"></a>Důležité informace pro asynchronní operace dělení na vlákna  
- Vícevláknové aplikace, není nutně vyvolán delegát, který je registrovaný jako zpětné volání pro asynchronní operaci ve stejném vlákně, která byla použita k volání *začít* metodu, která vytvoří počáteční požadavek. V aplikaci, ve kterém musí být zpětné volání vyvolat na konkrétním vlákně, musí explicitně zařazování provádění *End* metodu, která zpracuje odpověď do požadovaného vlákna. Například aplikace pro systém Windows Presentation Foundation WPF a aplikací založených na technologii Silverlight, odpověď musí zařadit zpět do vlákna uživatelského rozhraní pomocí <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> metodu <xref:System.Windows.Threading.Dispatcher> objektu. Další informace najdete v tématu [dotazování v datové službě (WCF Data Services/Silverlight)](https://msdn.microsoft.com/library/3a7cdc07-c37e-4da2-b98b-c3763fd0970b).  
+ Vícevláknové aplikace, není nutně vyvolán delegát, který je registrovaný jako zpětné volání pro asynchronní operaci ve stejném vlákně, která byla použita k volání *začít* metodu, která vytvoří počáteční požadavek. V aplikaci, ve kterém musí být zpětné volání vyvolat na konkrétním vlákně, musí explicitně zařazování provádění *End* metodu, která zpracuje odpověď do požadovaného vlákna. Například aplikace pro systém Windows Presentation Foundation WPF a aplikací založených na technologii Silverlight, odpověď musí zařadit zpět do vlákna uživatelského rozhraní pomocí <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> metodu <xref:System.Windows.Threading.Dispatcher> objektu. Další informace najdete v tématu [dotazování v datové službě (WCF Data Services/Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc903932(v=vs.95)).  
   
 ## <a name="see-also"></a>Viz také:
 - [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
