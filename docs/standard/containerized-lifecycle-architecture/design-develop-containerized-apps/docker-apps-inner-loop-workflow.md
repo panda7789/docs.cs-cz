@@ -1,15 +1,15 @@
 ---
 title: Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
-description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
+description: Přečtěte si pracovní postup "vnitřní smyčky" pro vývoj aplikací Dockeru.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/22/2017
-ms.openlocfilehash: f7acb60e6136c0250d18bdce23ac21fb6aa80b34
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 11/23/2018
+ms.openlocfilehash: 03eb4662e55551678105fa9ef25b42cc05c132a5
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53148855"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219085"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 

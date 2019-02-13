@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f39f793d3d0a2cf815028ccdb49253c46dac2ec4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 286399a7049f47640ccef07e834ee47a0761b963
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54631305"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219020"
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (importér knihovny typů)
 Nástroj Type Library Importer převádí definice typu nalezené v knihovně typů modelu COM na ekvivalentní definice v sestavení Common Language Runtime. Výstupem nástroje Tlbimp.exe je binární soubor (sestavení) obsahující metadata modulu runtime pro typy definované v rámci původní knihovny typů. Tento soubor s nástroji můžete zkontrolovat, jako [Ildasm.exe](ildasm-exe-il-disassembler.md).  
@@ -52,7 +52,7 @@ tlbimp tlbFile [options]
 |**/noclassmembers**|Zabraňuje nástroji Tlbimp.exe v přidávání členů do tříd. Tím se vyhnete případné <xref:System.TypeLoadException>.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |**/ out:** *název souboru*|Určuje název výstupního souboru, sestavení a oboru názvů, do kterých chcete zapsat definice metadat. **/Out** možnost nemá žádný vliv na obor názvů sestavení, pokud typ knihovny určuje vlastní atribut Interface Definition Language (IDL), který explicitně kontroluje obor názvů sestavení. Pokud tuto možnost nezadáte, nástroj Tlbimp.exe zapíše metadata do souboru se stejným názvem, jaký má skutečná knihovna typů definovaná v rámci vstupního souboru, a přiřadí mu příponu .dll. Pokud má výstupní soubor stejný název jako vstupní soubor, nástroj vygeneruje chybu bránící přepsání knihovny typů.|  
-|**/ primární**|Vytvoří primární sestavení zprostředkovatele komunikace pro zadanou knihovnu typů. Do sestavení jsou vloženy informace o tom, že toto sestavení vytvořil vydavatel knihovny typů. Zadáním primárního sestavení zprostředkovatele komunikace odlišíte sestavení vydavatele od ostatních sestavení vytvořených z knihovny typů používající nástroj Tlbimp.exe. Byste měli používat jenom **/primary** možnost, pokud jste vydavatel knihovny typů, kterou importujete pomocí Tlbimp.exe. Všimněte si, že primární sestavení zprostředkovatele komunikace s musíte podepsat [silným názvem](../app-domains/strong-named-assemblies.md). Další informace najdete v tématu [Primary Interop Assemblies](https://msdn.microsoft.com/library/b977a8be-59a0-40a0-a806-b11ffba5c080(v=vs.100)).|  
+|**/ primární**|Vytvoří primární sestavení zprostředkovatele komunikace pro zadanou knihovnu typů. Do sestavení jsou vloženy informace o tom, že toto sestavení vytvořil vydavatel knihovny typů. Zadáním primárního sestavení zprostředkovatele komunikace odlišíte sestavení vydavatele od ostatních sestavení vytvořených z knihovny typů používající nástroj Tlbimp.exe. Byste měli používat jenom **/primary** možnost, pokud jste vydavatel knihovny typů, kterou importujete pomocí Tlbimp.exe. Všimněte si, že primární sestavení zprostředkovatele komunikace s musíte podepsat [silným názvem](../app-domains/strong-named-assemblies.md). Další informace najdete v tématu [Primary Interop Assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).|  
 |**/Product:** `productinformation`|Přidá informace o produktu do výstupního sestavení. Tyto informace můžete zobrazit v **vlastnosti souboru** dialogové okno pro sestavení.|  
 |**/ProductVersion:** `productversioninformation`|Přidá informace o verzi produktu do výstupního sestavení. Neexistují žádná omezení formátu. Tyto informace můžete zobrazit v **vlastnosti souboru** dialogové okno pro sestavení.|  
 |**/publicKey:** *název souboru*|Určuje soubor obsahující veřejný klíč pro použití k podepsání výsledného sestavení. Pokud zadáte **/keyfile:** nebo **/keycontainer:** možnost místo **/publickey:**, Tlbimp.exe vygeneruje veřejný klíč z dvojice veřejného/soukromého klíče, součástí **/keyfile:** nebo **/keycontainer:**. **/Publickey:** možnost podporuje testovací klíč a scénáře se zpožděným podepisováním. Soubor má formát generovaný nástrojem Sn.exe. Další informace najdete v tématu **-p** – možnost nástroje Sn.exe v [nástroj Strong Name (Sn.exe)](sn-exe-strong-name-tool.md).|  
@@ -129,9 +129,9 @@ void SomeMethod(out bool x);
 - [Nástroje](index.md)
 - [Tlbexp.exe (exportér knihovny typů)](tlbexp-exe-type-library-exporter.md)
 - [Import knihovny typů ve formě sestavení](../interop/importing-a-type-library-as-an-assembly.md)
-- [Souhrn převodu sestavení knihovny typů na](https://msdn.microsoft.com/library/bf3f90c5-4770-4ab8-895c-3ba1055cc958(v=vs.100))
+- [Souhrn převodu sestavení knihovny typů na](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Ildasm.exe (IL Disassembler)](ildasm-exe-il-disassembler.md)
 - [Sn.exe (nástroj pro silný název)](sn-exe-strong-name-tool.md)
 - [Sestavení se silným názvem](../app-domains/strong-named-assemblies.md)
-- [Atributy pro import knihoven typů do sestavení vzájemné spolupráce](https://msdn.microsoft.com/library/81e587b8-393f-43e1-9add-c4b05e65cbfd(v=vs.100))
+- [Atributy pro import knihoven typů do sestavení vzájemné spolupráce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/y6a7ak23(v=vs.100))
 - [Příkazové řádky](developer-command-prompt-for-vs.md)

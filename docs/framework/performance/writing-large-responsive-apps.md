@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 03c2620913aff2ef2934e7c07574c130923c7139
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f2f2bff0d86d3c3fed443628a5c437fe1ebdcc15
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540660"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219838"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Psaní velkých a pohotově reagujících aplikací .NET Framework
 Tento článek poskytuje tipy pro zvýšení výkonu velkých aplikací rozhraní .NET Framework nebo aplikace, které zpracovávají velké množství dat, jako jsou soubory nebo databáze. Tyto tipy pocházejí z přepsání kompilátory C# i Visual Basic ve spravovaném kódu a tento článek obsahuje několik skutečné příklady z kompilátoru jazyka C#. 
@@ -37,7 +37,7 @@ Tento článek poskytuje tipy pro zvýšení výkonu velkých aplikací rozhran�
  By měl nastavit prostředí nebo scénáře výkonnostních cílů pro zákazníků ve vaší aplikaci a psaní testů k měření výkonu. Prozkoumat selhání testů s použitím vědecké metody: použití profilů na vás, co může být problém, vyslovují hypotézy o jejich a testovat vaše hypotézu s experiment nebo změny kódu. Vytvořte standardní hodnoty měření výkonu v čase s pravidelné testování tak může izolovat změny, které způsobují regrese výkonu. Výkon pracovních blíží přísné způsobem, budete vyhnete plýtvání časem se aktualizace kódu, které nepotřebujete. 
   
 ### <a name="fact-3-good-tools-make-all-the-difference"></a>Fakt 3: Vhodné nástroje vytvářejí všechny rozdíl  
- Vhodné nástroje umožňují rychle přejít k největší problémy s výkonem (procesor, paměť nebo disk) a pomohou vyhledat kód, který způsobí, že tyto kritické body. Microsoft se dodává s celou řadou nástrojů výkonu, jako [Visual Studio Profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling), [nástroj pro analýzu Windows Phone](https://msdn.microsoft.com/library/e67e3199-ea43-4d14-ab7e-f7f19266253f), a [PerfView](https://www.microsoft.com/download/details.aspx?id=28567). 
+ Vhodné nástroje umožňují rychle přejít k největší problémy s výkonem (procesor, paměť nebo disk) a pomohou vyhledat kód, který způsobí, že tyto kritické body. Microsoft se dodává s celou řadou nástrojů výkonu, jako [Visual Studio Profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling) a [PerfView](https://www.microsoft.com/download/details.aspx?id=28567). 
   
  PerfView je zadarmo. je neuvěřitelně výkonné nástroj, který pomůže zaměřit se na podrobné problémy, jako je / v disku, GC – události a paměti. Můžete zaznamenat související s výkonem [události trasování pro Windows](../../../docs/framework/wcf/samples/etw-tracing.md) událostí (ETW) a zobrazení snadno na aplikaci, proces, na zásobníku a na informace o vlákně. PerfView ukazuje, kolik a jaký druh paměti přidělí vaši aplikaci a které funkce nebo volání zásobníků přispívat množství služeb pro přidělení paměti. Podrobnosti najdete v tématu bohaté témata nápovědy, ukázky a videa, které jsou součástí nástroje (například [PerfView kurzy](https://channel9.msdn.com/Series/PerfView-Tutorial) na webu Channel 9). 
   
@@ -466,9 +466,8 @@ class Compilation { /*...*/
 - [Video prezentace v tomto tématu](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B333)
 - [Průvodce začátečníka profilací výkonu](/visualstudio/profiling/beginners-guide-to-performance-profiling)
 - [Výkon](../../../docs/framework/performance/index.md)
-- [Tipy ke zvýšení výkonu rozhraní .NET](https://msdn.microsoft.com/library/ms973839.aspx)
+- [Tipy ke zvýšení výkonu rozhraní .NET](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973839(v%3dmsdn.10))
 - [Nástroj pro analýzu výkonu Windows Phone](https://msdn.microsoft.com/magazine/hh781024.aspx)
-- [Vyhledat problémová místa aplikace pomocí sady Visual Studio Profiler](https://msdn.microsoft.com/magazine/cc337887.aspx)
 - [Na webu Channel 9 kurzů PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial)
 - [The .NET Compiler Platform SDK](../../csharp/roslyn-sdk/index.md)
 - [DotNet/roslyn úložišti na Githubu](https://github.com/dotnet/roslyn)

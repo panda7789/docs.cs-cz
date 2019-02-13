@@ -13,19 +13,19 @@ helpviewer_keywords:
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6cda11a99211c6f797159b6d6bcbc78fe2e13c26
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e42255378e4a2fdd50d9c1539e3bcee43012e56c
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613945"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56221040"
 ---
 # <a name="resources-in-net-apps"></a>Prostředky v aplikacích .NET
 Téměř každá aplikace produkční kvality musí používat prostředky. Prostředek je jakákoli nespustitelná část dat, která je logicky nasazována s aplikací. Prostředek může zobrazit v aplikaci jako chybové zprávy nebo jako součást uživatelského rozhraní. Prostředky mohou obsahovat data v různých formách, včetně řetězců, obrázků a trvale uložených objektů. (K zápisu do souboru prostředků trvalé objekty, objekty musí být serializovatelné.) Ukládání dat do souboru prostředků vám umožní měnit data bez opětovné kompilace celou aplikaci. Také umožňuje ukládat data na jednom místě a eliminuje nutnost využívají pevně zakódované data, která je uložena v několika umístěních.  
   
  Rozhraní .NET Framework a .NET Core poskytují komplexní podporu pro vytváření a lokalizace prostředků. Kromě toho .NET podporuje jednoduchý model pro vytváření balíčků a nasazení lokalizované prostředky.  
   
- Informace o prostředcích v technologii ASP.NET, naleznete v tématu [webové stránky ASP.NET: Přehled prostředků](https://msdn.microsoft.com/library/0936b3b2-9e6e-4abe-9c06-364efef9dbbd).  
+ Informace o prostředcích v technologii ASP.NET, naleznete v tématu [webové stránky ASP.NET: Přehled prostředků](https://docs.microsoft.com/previous-versions/aspnet/ms227427(v=vs.100)).  
   
  ## <a name="creating-and-localizing-resources"></a>Vytváření a lokalizace prostředků  
  V aplikaci nelokalizovaný můžete použít zdrojové soubory jako úložiště pro data aplikací, zejména pro řetězce, která se můžou v opačném případě pevně zakódované v několika umístěních ve zdrojovém kódu. Nejčastěji, můžete vytvářet prostředky jako text (TXT) nebo soubory XML (.resx) a použít [Resgen.exe (Generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) pro jejich zkompilování do binárních souborů .resources. Tyto soubory může být potom vložen do spustitelného souboru aplikace pomocí kompilátoru jazyka. Další informace o vytváření prostředků najdete v tématu [Creating Resource Files](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).  

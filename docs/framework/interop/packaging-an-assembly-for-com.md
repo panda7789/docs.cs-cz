@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 453ace4af7ce07c8d81b6d7ece71140e04bfa9bc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d51fcbdeeaa1fe30bbdeff5eb85a1c15fa9b4847
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54531509"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56221079"
 ---
 # <a name="packaging-an-assembly-for-com"></a>Zabalení sestavení pro model COM
 Následující informace o spravované typy, že chtějí začlenit ve svých aplikacích využívat vývojáři COM:  
@@ -60,7 +60,7 @@ Následující informace o spravované typy, že chtějí začlenit ve svých ap
   
      Bez ohledu na to mechanismus, který zvolíte jsou pouze veřejné typy definované v sestavení, ve kterém zadáte součástí vygenerovanou knihovnu typů.  
   
-     Můžete zabalit jako samostatný soubor knihovny typů nebo ji vložit jako soubor prostředků Win32 v rámci. Aplikace založené na síť. Microsoft Visual Basic 6.0 provést tuto úlohu pro vás automaticky. ale při použití [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)], je nutné ručně vložit vaše knihovna typů. Pokyny najdete v tématu [jak: Vložte jako prostředky systému Win32 v knihovny typů. Aplikace založené na NET](https://msdn.microsoft.com/library/c97b4b8c-2ab7-4ac7-8fc8-0ba5c5d59c44(v=vs.100)).  
+     Můžete zabalit jako samostatný soubor knihovny typů nebo ji vložit jako soubor prostředků Win32 v rámci. Aplikace založené na síť. Microsoft Visual Basic 6.0 provést tuto úlohu pro vás automaticky. ale při použití [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)], je nutné ručně vložit vaše knihovna typů. Pokyny najdete v tématu [jak: Vložte jako prostředky systému Win32 v knihovny typů. Aplikace založené na NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100)).  
   
 <a name="cpconpackagingassemblyforcomanchor1"></a>   
 ## <a name="type-library-exporter"></a>knihovna typů – exportér  
@@ -89,4 +89,4 @@ Následující informace o spravované typy, že chtějí začlenit ve svých ap
 - [Důležité informace o zabezpečení sestavení](../app-domains/assembly-security-considerations.md)
 - [Tlbexp.exe (exportér knihovny typů)](../tools/tlbexp-exe-type-library-exporter.md)
 - [Registrování sestav pomocí modelu COM](registering-assemblies-with-com.md)
-- [Postupy: Knihovny typů vkládání jako prostředky systému Win32 do aplikací](https://msdn.microsoft.com/library/c97b4b8c-2ab7-4ac7-8fc8-0ba5c5d59c44(v=vs.100))
+- [Postupy: Knihovny typů vkládání jako prostředky systému Win32 do aplikací](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))

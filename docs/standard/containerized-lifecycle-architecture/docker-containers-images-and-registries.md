@@ -1,15 +1,15 @@
 ---
 title: Kontejnery dockeru, obrázky a registry
-description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
+description: Další klíčovou roli, že registry přehrát celkové Docker způsobem nasazení aplikace.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/22/2017
-ms.openlocfilehash: af235280c985d20f9e6a2ee6096edbe6c3aad63a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 11/23/2018
+ms.openlocfilehash: 7a2e20e09561a5cc91aa29059fb8d19a14205bb5
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53142746"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56221196"
 ---
 # <a name="docker-containers-images-and-registries"></a>Kontejnery dockeru, obrázky a registry
 
@@ -35,4 +35,4 @@ Privátní image registrů, hostovaný místně nebo v cloudu, se doporučuje v 
 
 >[!div class="step-by-step"]
 >[Předchozí](docker-terminology.md)
->[další](Docker-application-lifecycle/index.md)
+>[další](road-to-modern-applications-based-on-containers.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3d3e26c835a96bba3c97e471075f5d02b5330461
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: f5667d55b8a49ba7b32570ad6a230b220ac8953b
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50201566"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56221170"
 ---
 # <a name="net-framework-performance"></a>.NET Framework – výkon
 Pokud chcete vytvářet aplikace s vynikajícím výkonem, měli byste navrhnout a naplánovat výkon stejně jako byste navrhovali libovolnou jinou funkci aplikace. Můžete použít nástroje poskytované společností Microsoft k měření výkonu vaší aplikace a, v případě potřeby zdokonalení využití paměti, propustnosti kódování a rychlost odezvy. Toto téma uvádí analytické nástroje výkonu, poskytuje Microsoft a obsahuje odkazy na další témata, která pokrývají výkon pro konkrétní oblasti vývoje aplikací.  
@@ -32,8 +32,8 @@ Pokud chcete vytvářet aplikace s vynikajícím výkonem, měli byste navrhnout
   
 |Nástroj|Popis|  
 |----------|-----------------|  
-|Analýza výkonu sady Visual Studio|Slouží k analýze využití procesoru aplikací rozhraní .NET Framework, které se nasadí na počítače, na kterých běží operační systém Windows.<br /><br /> Tento nástroj je k dispozici **ladění** nabídky v aplikaci Visual Studio po otevření projektu. Další informace najdete v tématu [prohlížeč výkonu](/visualstudio/profiling/performance-explorer). **Poznámka:** analýza aplikace použijte Windows Phone (viz další řádek) při cílení na Windows Phone.|  
-|Analýza pro aplikace Windows Phone|Slouží k analýze procesoru a paměti, přenosové rychlosti síťových dat, rychlost odezvy aplikace a spotřeby baterie v aplikacích pro Windows Phone.<br /><br /> Tento nástroj je k dispozici **ladění** nabídku pro projekt Windows Phone v sadě Visual Studio po instalaci [Windows Phone SDK](https://go.microsoft.com/fwlink/?LinkId=265773). Další informace najdete v tématu [profilování aplikací pro Windows Phone](https://msdn.microsoft.com/library/windowsphone/develop/jj215908\(v=vs.105\).aspx).|  
+|Analýza výkonu sady Visual Studio|Slouží k analýze využití procesoru aplikací rozhraní .NET Framework, které se nasadí na počítače, na kterých běží operační systém Windows.<br /><br /> Tento nástroj je k dispozici **ladění** nabídky v aplikaci Visual Studio po otevření projektu. Další informace najdete v tématu [prohlížeč výkonu](/visualstudio/profiling/performance-explorer). **Poznámka:**  Použijte analýzu aplikací Windows Phone (viz další řádek) při cílení na Windows Phone.|  
+|Analýza pro aplikace Windows Phone|Slouží k analýze procesoru a paměti, přenosové rychlosti síťových dat, rychlost odezvy aplikace a spotřeby baterie v aplikacích pro Windows Phone.<br /><br /> Tento nástroj je k dispozici **ladění** nabídku pro projekt Windows Phone v sadě Visual Studio po instalaci [Windows Phone SDK](https://go.microsoft.com/fwlink/?LinkId=265773). Další informace najdete v tématu [profilování aplikací pro Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj215908(v=vs.105)).|  
 |[PerfView](https://www.microsoft.com/download/details.aspx?id=28567)|Slouží k identifikaci procesoru a problémy s výkonem souvisejících s pamětí. Tento nástroj používá trasování událostí pro Windows (ETW) a rozhraní API profilování CLR k poskytování rozšířené paměti a procesoru vyšetřování, jakož i informace o uvolňování paměti a kompilace JIT. Další informace o tom, jak pomocí nástroje PerfView naleznete kurzu a souborech nápovědy, které jsou součástí aplikace, [video kurzy kanál 9](https://channel9.msdn.com/Series/PerfView-Tutorial), a [blogové příspěvky](https://blogs.msdn.com/b/vancem/archive/tags/perfview/).<br /><br /> Problémy specifické pro paměť naleznete v tématu [použití PerfView pro zkoumání paměti](https://channel9.msdn.com/Series/PerfView-Tutorial/PerfView-Tutorial-9-NET-Memory-Investigation-Basics-of-GC-Heap-Snapshots).|  
 |[Analyzátor výkonu Windows](https://www.microsoft.com/download/details.aspx?id=30652)|Použijte k určení celkového výkonu systému, jako je využití paměti a úložiště vaší aplikace při spuštění více aplikací ve stejném počítači. Tento nástroj je k dispozici ze služby Stažení softwaru jako součást sady Windows Assessment and Deployment Kit (ADK) pro [!INCLUDE[win8](../../../includes/win8-md.md)]. Další informace najdete v tématu [Analyzátor výkonu Windows](/windows-hardware/test/wpt/windows-performance-analyzer).|  
   
@@ -47,10 +47,8 @@ Pokud chcete vytvářet aplikace s vynikajícím výkonem, měli byste navrhnout
 |--------------|---------|  
 |Aplikace rozhraní .NET framework pro všechny platformy|[Kolekce paměti a výkon](../../../docs/standard/garbage-collection/performance.md)<br /><br /> [Tipy pro zvýšení výkonu](../../../docs/framework/performance/performance-tips.md)|  
 |[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace napsané v jazyce C++, C# a Visual Basic|[Osvědčené postupy z hlediska výkonu pro aplikace Windows Store pomocí jazyka C++, C# a Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh750313%28v=win.10%29)|  
-|Windows Phone|[Důležité informace o výkonu aplikací pro Windows Phone](https://msdn.microsoft.com/library/windowsphone/develop/ff967560\(v=vs.105\).aspx)<br /><br /> [Analýza pro aplikace Windows Phone](https://msdn.microsoft.com/library/windowsphone/develop/hh202934\(v=vs.105\).aspx)<br /><br /> [Zprovozněte své aplikace pro Windows Phone z webu Marketplace rychleji](https://msdn.microsoft.com/magazine/hh781024.aspx)|  
-|Windows Presentation Foundation (WPF)|[WPF – výkonnostní sada](https://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e)|  
-|Silverlight|[Tipy ke zvýšení výkonu](https://msdn.microsoft.com/library/cc189071\(v=vs.95\).aspx)|  
-|ASP.NET|[ASP.NET: přehled výkonu](https://msdn.microsoft.com/library/f882bf1b-a009-4312-ac06-74370ffabc0b)|  
+|Windows Presentation Foundation (WPF)|[WPF – výkonnostní sada](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100))|  
+|ASP.NET|[ASP.NET: přehled výkonu](https://docs.microsoft.com/previous-versions/aspnet/cc668225(v=vs.100))|  
 |Windows Forms|[Praktické tipy pro zvýšení výkonu aplikací Windows Forms](https://msdn.microsoft.com/magazine/cc163630.aspx)|  
   
 ## <a name="related-topics"></a>Související témata  

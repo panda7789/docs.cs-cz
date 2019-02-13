@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: 0444ddf3-c3f6-44ed-a999-f710d9c3e0cf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 50ff6e2baaee683674f82cff178eeef7b7e43de4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 73810330c1ec44aa3a5edf47b3062bc2df267008
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43486209"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219591"
 ---
 # <a name="using-the-codedom"></a>Použití modelu CodeDOM
 CodeDOM obsahuje typy, které představují běžné typy prvků zdrojového kódu. Můžete navrhnout program, který vytváří model zdrojového kódu pomocí prvků CodeDOM k sestavení grafu objektu. Tento graf objektu lze vykreslit jako zdrojový kód pomocí generátoru kódu CodeDOM pro podporovaný programovací jazyk. CodeDOM lze použít také ke kompilaci zdrojového kódu do binárního sestavení.  
@@ -127,4 +127,4 @@ CodeDOM obsahuje typy, které představují běžné typy prvků zdrojového kó
   
  Dokumentace pro každý z typů CodeDOM naleznete v tématu v referenční dokumentaci <xref:System.CodeDom> oboru názvů.  
   
- Rychlý graf pro nalezení prvku CodeDOM, který představuje určitý typ prvku kódu, najdete v článku [CodeDOM – Stručná referenční příručka](https://msdn.microsoft.com/library/c77b8bfd-0a32-4e36-b59a-4f687f32c524).
+ Rychlý graf pro nalezení prvku CodeDOM, který představuje určitý typ prvku kódu, najdete v článku [CodeDOM – Stručná referenční příručka](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100)).

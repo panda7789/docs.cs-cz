@@ -1,15 +1,15 @@
 ---
 title: Úvod do Microsoft platformu a nástroje pro kontejnerizované aplikace
-description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
+description: Seznamte se nabídky společnosti Microsoft pro podporu životního cyklu aplikace Dockeru.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/21/2017
-ms.openlocfilehash: fe65e9036c1e0bdf2afe05426c01e75d48f93439
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 11/23/2018
+ms.openlocfilehash: 0e883041624f99d51b49994f02f3a42fc945a96d
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152332"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219578"
 ---
 # <a name="introduction-to-the-microsoft-platform-andtools-for-containerized-apps"></a>Úvod do Microsoft platformu a nástroje pro kontejnerizované aplikace
 

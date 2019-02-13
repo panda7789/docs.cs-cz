@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d6ef2e11efe858c03d1cf4e7167ae856ec4d690a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b1136dd3220b189d60b4972410ce0ce6657d07cd
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54596134"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56218980"
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>Postupy: Generování primárních sestavení vzájemné spolupráce pomocí Tlbimp.exe
 Existují dva způsoby, jak vygenerovat primární spolupracující sestavení:  
@@ -38,7 +38,7 @@ Existují dva způsoby, jak vygenerovat primární spolupracující sestavení:
   
 1.  V příkazovém řádku zadejte příkaz:  
   
-     **Tlbimp** *tlbfile***/primary/keyfile:** *filename* **/out:** *assemblyname*   
+     **Tlbimp** *tlbfile***/primary/keyfile:** *filename* **/out:** *assemblyname*  
   
      V tomto příkazu *tlbfile* je soubor, který obsahuje knihovnu typů modelu COM *filename* je název kontejneru nebo souboru, který obsahuje pár klíčů a *assemblyname* je název sestavení podepsáno pomocí silného názvu.  
   
@@ -46,7 +46,7 @@ Existují dva způsoby, jak vygenerovat primární spolupracující sestavení:
   
  Závislé primárního spolupracujícího sestavení s číslem verze, která se liší od původní knihovna typů není zjistitelné při instalaci v aktuálním adresáři. Musíte zaregistrovat závislé sestavení primární spolupráce v registru Windows nebo použít **/reference** možnost, abyste měli jistotu, že Tlbimp.exe najde závislá knihovna DLL.  
   
- Můžete také zabalit několik verzí knihovny typů. Pokyny najdete v tématu [jak: Sbalení více verzí knihoven typů](https://msdn.microsoft.com/library/79eefe04-a770-4bc3-8ea2-e90ddb8ec31f(v=vs.100)).  
+ Můžete také zabalit několik verzí knihovny typů. Pokyny najdete v tématu [jak: Sbalení více verzí knihoven typů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1565h6hc(v=vs.100)).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad importuje knihovna typů COM `LibUtil.tlb` a podepíše sestavení `LibUtil.dll` se silným názvem pomocí souboru s klíči `CompanyA.snk`. Vynecháním názvu konkrétní obor názvů, tento příklad vytvoří výchozí obor názvů `LibUtil`.  

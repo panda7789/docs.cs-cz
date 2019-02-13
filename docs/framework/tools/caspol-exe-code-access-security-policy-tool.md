@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: d2bf6123-7b0c-4e60-87ad-a39a1c3eb2e0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c2ae67b79559b0966ba0b36bbf420febbcb1672
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 74d2f9df5f9a9d34baa6a487730d5a1614d2d142
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54693315"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219929"
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (nástroj zásad zabezpečení přístupu kódu)
 Nástroj Code Access Security (CAS) Policy (Caspol.exe) umožňuje uživatelům a správcům měnit zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad podniku.  
@@ -105,7 +105,7 @@ caspol [options]
 ## <a name="remarks"></a>Poznámky  
  Zásada zabezpečení je vyjádřena pomocí tří úrovní zásad: počítačová, uživatelská a podniková. Sada oprávnění, kterou sestavení přijímá, je určena průnikem sad oprávnění povolených těmito třemi úrovněmi zásad. Každá úroveň zásad je reprezentována hierarchickou strukturou skupin kódu. Každá skupina kódu má podmínku členství, která určuje, který kód je členem této skupiny. Sada pojmenovaných oprávnění je rovněž asociována s každou skupinou kódu. Tato sada oprávnění určuje oprávnění, která modul runtime povoluje kódu splňujícímu podmínku členství. Hierarchie skupin kódu, společně se souvisejícími pojmenovanými sadami oprávnění, definuje a spravuje každou úroveň zásad zabezpečení. Můžete použít **– uživatel**, **- customuser**, **– počítače** a **– enterprise** možnosti nastavení úrovně zásady zabezpečení.  
   
- Další informace o zásadách zabezpečení a jak modul runtime určuje, jaká oprávnění udělit kódu najdete v tématu [Správa zásad zabezpečení](https://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9).  
+ Další informace o zásadách zabezpečení a jak modul runtime určuje, jaká oprávnění udělit kódu najdete v tématu [Správa zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100)).  
   
 ## <a name="referencing-code-groups-and-permission-sets"></a>Odkazování na skupiny kódu a sady oprávnění  
  Pro usnadnění odkazování na skupiny kódu v hierarchii, **– seznam** možnost zobrazí odsazený seznam skupin kódu společně s jejich číselnými popisky (1, 1.1, 1.1.1 atd.). Další operace příkazového řádku zaměřené na skupiny kódu využívají k odkazování na specifické skupiny kódu také číselné popisky.  

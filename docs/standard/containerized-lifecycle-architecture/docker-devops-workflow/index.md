@@ -1,15 +1,15 @@
 ---
-title: Pracovní postup devops aplikací dockeru pomocí nástrojů Microsoftu
-description: Kontejnerizované životní cyklus aplikace Dockeru s platformy Microsoft a Toolsdevops pracovního postupu pomocí nástrojů Microsoftu
+title: Pracovní postup DevOps aplikací dockeru pomocí nástrojů Microsoftu
+description: Kontejnerizované životní cyklus aplikace Dockeru s pracovním postupem platformy Microsoft a nástrojů DevOps s nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/22/2017
-ms.openlocfilehash: a78b6cbae88dcc39d7452a67a2bc5239135dedf9
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 11/23/2018
+ms.openlocfilehash: a2d88dda9f3560675fcb6826960c6e76fa7daf92
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53128437"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219072"
 ---
 # <a name="docker-application-devops-workflow-with-microsoft-tools"></a>Pracovní postup DevOps aplikací dockeru pomocí nástrojů Microsoftu
 
@@ -34,5 +34,5 @@ Složitost vývoje kontejnerizovaných aplikací zvyšuje neustále podle potře
 -   Organizace můžou snadno zřídit kontejnery Dockeru z privátních imagí uložená spolu s všechny závislosti v komponentách Azure (Data, PaaS, atd.) ve službě Azure Container Registry pomocí šablon Azure Resource Manageru pomocí nástrojů, se kterými jsou již pohodlné práce.
 
 >[!div class="step-by-step"]
->[Předchozí](../design-develop-containerized-apps/set-up-windows-containers-with-powershell.md)
+>[Předchozí](../design-develop-containerized-apps/build-aspnet-core-applications-linux-containers-aks-kubernetes.md)
 >[další](docker-application-outer-loop-devops-workflow.md)

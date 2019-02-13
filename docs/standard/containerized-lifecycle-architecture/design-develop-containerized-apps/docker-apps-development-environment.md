@@ -1,15 +1,15 @@
 ---
 title: Vývojové prostředí pro aplikace Dockeru
-description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
+description: Seznámení s nejdůležitějších možností nástroj pro vývoj, které podporují Docker vývojového cyklu.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/22/2017
-ms.openlocfilehash: 471b52fd577e5560bd93e6da50f2032d63eb2e6f
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 11/23/2018
+ms.openlocfilehash: 1d22b45a8eee9198d337df9f0b8b4b78371fa31a
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152407"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219994"
 ---
 # <a name="development-environment-for-docker-apps"></a>Vývojové prostředí pro aplikace Dockeru
 
@@ -47,5 +47,5 @@ Můžete vyvíjet Docker aplikacím a nástrojům společnosti Microsoft s vět�
 V podstatě můžete použít libovolný moderní jazyk podporuje Docker v Linuxu nebo Windows.
 
 >[!div class="step-by-step"]
->[Předchozí](orchestrate-high-scalability-availability.md)
+>[Předchozí](deploy-azure-kubernetes-service.md)
 >[další](docker-apps-inner-loop-workflow.md)

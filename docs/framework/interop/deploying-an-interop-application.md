@@ -16,19 +16,19 @@ helpviewer_keywords:
 ms.assetid: ea8a403e-ae03-4faa-9d9b-02179ec72992
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8e74e4784d295e46972e10c5b9e1d4cc4bafa944
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c265b583b74ac9d7df128e3343bbc368e3cf9c4e
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496764"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56220808"
 ---
 # <a name="deploying-an-interop-application"></a>Nasazení aplikace spolupráce
 Spolupráce aplikace obvykle obsahují sestavení klienta .NET, jeden nebo více sestavení vzájemné spolupráce představující odlišné COM knihoven typů a jedna nebo více komponent COM registrovány. Visual Studio a [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] poskytují nástroje pro import a převod knihovny typů do sestavení vzájemné spolupráce, jak je popsáno v [importování knihovny typů jako sestavení](importing-a-type-library-as-an-assembly.md). Nasazení aplikace spolupráce dvěma způsoby:  
   
 -   Pomocí vestavěné typy spolupráce: Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete dát pokyn kompilátoru k vložení informací o typu ze sestavení vzájemné spolupráce do spustitelného souboru. Kompilátor vloží jenom informace o typu, který vaše aplikace používá. Není nutné k nasazení sestavení vzájemné spolupráce s vaší aplikací. Toto je doporučený postup.  
   
--   Nasazením sestavení vzájemné spolupráce: Můžete vytvořit standardní odkaz na sestavení vzájemné spolupráce. V takovém případě musí být nasazeny sestavení zprostředkovatele komunikace s vaší aplikací. Pokud nepoužijete tento postup a nepoužíváte Soukromá komponenta modelu COM, vždycky odkazujte na sestavení primární spolupráce (PIA) publikoval Autor komponenty modelu COM, které chcete začlenit ve spravovaném kódu. Další informace o vytváření a používání sestavení primární spolupráce naleznete v tématu [Primary Interop Assemblies](https://msdn.microsoft.com/library/b977a8be-59a0-40a0-a806-b11ffba5c080(v=vs.100)).  
+-   Nasazením sestavení vzájemné spolupráce: Můžete vytvořit standardní odkaz na sestavení vzájemné spolupráce. V takovém případě musí být nasazeny sestavení zprostředkovatele komunikace s vaší aplikací. Pokud nepoužijete tento postup a nepoužíváte Soukromá komponenta modelu COM, vždycky odkazujte na sestavení primární spolupráce (PIA) publikoval Autor komponenty modelu COM, které chcete začlenit ve spravovaném kódu. Další informace o vytváření a používání sestavení primární spolupráce naleznete v tématu [Primary Interop Assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
   
  Pokud používáte vestavěné typy spolupráce, nasazení je jednoduché a nekomplikované. Není nic zvláštního, že je třeba provést. Zbývající část tohoto článku popisuje scénáře pro nasazení sestavení vzájemné spolupráce s vaší aplikací.  
   
@@ -44,10 +44,10 @@ Adresář položky struktury a registru pro privátní nasazení
  Všechny komponenty modelu COM, které jsou přidružené k aplikaci musí být nainstalován v registru Windows. Pokud Client1.exe a Client2.exe na obrázku jsou nainstalované na různých počítačích, budete muset zaregistrovat komponenty modelu COM na obou počítačích.  
   
 ### <a name="shared-assemblies"></a>Sdílená sestavení  
- Sestavení, které jsou sdíleny více aplikací musí být nainstalován v centrálním úložišti názvem do globální mezipaměti sestavení. .NET klienti mají přístup k stejnou kopii definiční sestavení, která je podepsaná a nainstalované v globální mezipaměti sestavení. Další informace o vytváření a používání sestavení primární spolupráce naleznete v tématu [Primary Interop Assemblies](https://msdn.microsoft.com/library/b977a8be-59a0-40a0-a806-b11ffba5c080(v=vs.100)).  
+ Sestavení, které jsou sdíleny více aplikací musí být nainstalován v centrálním úložišti názvem do globální mezipaměti sestavení. .NET klienti mají přístup k stejnou kopii definiční sestavení, která je podepsaná a nainstalované v globální mezipaměti sestavení. Další informace o vytváření a používání sestavení primární spolupráce naleznete v tématu [Primary Interop Assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
   
 ## <a name="see-also"></a>Viz také:
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)
 - [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)
-- [Používání typů modelu COM ve spravovaném kódu](https://msdn.microsoft.com/library/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66(v=vs.100))
+- [Používání typů modelu COM ve spravovaném kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Kompilace projektu interoperability](compiling-an-interop-project.md)

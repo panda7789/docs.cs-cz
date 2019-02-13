@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 208dc3048b52cc895a5142a7686829390d1d4503
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 11525c2a98ceee3115fe789dbb106347c0201ecd
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44041483"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56220101"
 ---
 # <a name="net-framework-tools"></a>.NET Framework – nástroje
 Nástroje .NET Framework usnadňují vývoj, nasazení a správu aplikací a komponent určených pro rozhraní .NET Framework.  
@@ -129,7 +129,7 @@ Většina nástrojů rozhraní .NET Framework popsaná v této části je automa
  Pomáhá lokalizovat prostředky (soubory .resx nebo .resources) uživatelského rozhraní (UI), které jsou používány modelem Windows Forms. Je možné přeložit řetězce a změnit velikost, přesunout a skrýt ovládací prvky pro přizpůsobení lokalizovaných řetězců.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Nástroje](https://msdn.microsoft.com/library/f533241c-317c-445e-88ca-c80c8d078fca)  
+ [WPF – nástroje](https://docs.microsoft.com/previous-versions/ms742404(v=vs.110))  
  Obsahuje nástroje, jako je například nástroj isxps pro kontrolu shody (isXPS.exe) a nástroje pro profilaci výkonu.  
   
  [Nástroje Windows Communication Foundation](../../../docs/framework/wcf/tools.md)  

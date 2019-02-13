@@ -1,15 +1,15 @@
 ---
 title: Monolitické aplikace
-description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
+description: Základní koncepce pro kontejnerizování monolitických aplikací.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/22/2017
-ms.openlocfilehash: 17dabb143a1948cbcfa748b4c3bbcff5a57d2c24
-ms.sourcegitcommit: 82a3f7882bc03ed733af91fc2a0b113195bf5dc7
+ms.date: 11/23/2018
+ms.openlocfilehash: 056f4bd8abf5c482855f38e45435b67b487769fb
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "52743266"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56221352"
 ---
 # <a name="monolithic-applications"></a>Monolitické aplikace
 
@@ -21,7 +21,7 @@ Následující objekt zabezpečení, že kontejner provádí pouze jednu věc a 
 
 ![](./media/image1.png)
 
-Obrázek 4-1: Příklad architektura monolitické aplikace
+Obrázek 4-1: Příklad architektury monolitické aplikace
 
 Nevýhodou tento přístup se dodává spolu Pokud nebo když aplikace poroste, požadují škálování. Pokud v celé aplikaci škálovat, není ve skutečnosti k problému. Ve většině případů několik částí aplikace ale potlačení body, které vyžadují škálování, zatímco ostatní součásti jsou méně používaná.
 
@@ -35,13 +35,13 @@ Každý server z hlediska infrastruktury, můžete spustit mnoho aplikací v rá
 
 ![](./media/image2.png)
 
-Obrázek 4 – 2: hostitele se více aplikací nebo kontejnerů
+Obrázek 4 – 2: Hostitele se více aplikací nebo kontejnerů
 
 Monolitické aplikace v Azure můžete nasadit pomocí vyhrazených virtuálních počítačů pro každou instanci. Pomocí [Azure VM Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/), je možné snadno škálovat virtuální počítače. [Služba Azure App Services](https://azure.microsoft.com/services/app-service/) můžete spustit monolitické aplikace a snadno škálovat instance, aniž byste museli spravovat virtuální počítače. Od verze 2016 Azure App Services spuštění jedné instance kontejnerů Dockeru, také zjednodušení nasazení. A pomocí Dockeru, můžete nasadit jeden virtuální počítač jako hostitele Dockeru a spouštět více instancí. Pomocí nástroje Azure pro vyrovnávání, jak je znázorněno v obrázek 4-3, můžete spravovat škálování.
 
 ![](./media/image3.png)
 
-Obrázek 4-3: více hostitelů škálování na více instancí jednu aplikaci aplikace/kontejnery Dockeru
+Obrázek 4-3: Více hostitelů škálování na více instancí jednu aplikaci aplikace/kontejnery Dockeru
 
 Můžete spravovat na různých hostitelích prostřednictvím nasazení tradiční techniky nasazení. Hostitele Docker můžete spravovat pomocí příkazů, jako jsou `docker run` ručně, pomocí automatizace, jako jsou průběžné doručování (CD) kanálů, které vám vysvětlíme, dále v této e knihy.
 
@@ -65,7 +65,7 @@ Teď, ale (bylo ohlášená na Microsoft Connect 2016 v listopadu 2016) a jak je
 
 ![](./media/image4.png)
 
-Obrázek 4-4: publikování kontejneru do služby Azure App Service ze sady Visual Studio. aplikace/kontejnery
+Obrázek 4-4: Publikování z aplikace Visual Studio/kontejnery kontejneru do služby Azure App Service
 
 Obrázek 4-4 také ukazuje, že tok publikovat nabízených oznámení image do registru kontejneru, který může být Azure Container Registry (registr téměř svá nasazení v Azure a zabezpečené pomocí skupin Azure Active Directory a účty) nebo jiné registru Dockeru například Docker Hub nebo v místním Registry.
 

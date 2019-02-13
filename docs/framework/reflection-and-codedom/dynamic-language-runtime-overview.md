@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: f769a271-8aff-4bea-bfab-6160217ce23d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8c75d0631b05e4db53308efde8fe4c70a0778ebe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7dd67ea312f3677b9010dfea7f14fa366259bcd6
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540565"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56220975"
 ---
 # <a name="dynamic-language-runtime-overview"></a>Přehled DLR (Dynamic Language Runtime)
 
@@ -80,7 +80,7 @@ Příklady vyvinuté pomocí DLR jazyky patří:
 
  DLR přidá sadu služeb pro modul CLR pro lepší podporuje dynamické jazyky. Tyto služby patří:
 
--   Stromy výrazů. DLR používá stromů výrazů k reprezentaci sémantiku jazyka. Pro tento účel DLR má rozšířené stromům výrazů LINQ tok řízení, přiřazení a ostatní uzly jazykové modelování. Další informace najdete v tématu [stromů výrazů](https://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b).
+-   Stromy výrazů. DLR používá stromů výrazů k reprezentaci sémantiku jazyka. Pro tento účel DLR má rozšířené stromům výrazů LINQ tok řízení, přiřazení a ostatní uzly jazykové modelování. Další informace najdete v tématu [stromů výrazů (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md) nebo [stromů výrazů (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md).
 
 -   Volání, ukládání do mezipaměti webu. A *dynamického volání webu* je místo, kde v kódu, kde provádět operace jako `a + b` nebo `a.b()` na dynamické objekty. DLR ukládá do mezipaměti charakteristiky `a` a `b` (obvykle typy tyto objekty) a informace o operaci. Pokud tato operace byla provedena dříve DLR načte všechny potřebné informace z mezipaměti pro odesílání rychlá.
 
@@ -96,5 +96,6 @@ DLR používá vazače lokalit volání komunikovat pouze s použitím rozhraní
 - <xref:System.Dynamic.ExpandoObject>
 - <xref:System.Dynamic.DynamicObject>
 - [Modul Common Language Runtime](../../../docs/standard/clr.md)
-- [Stromy výrazů](https://msdn.microsoft.com/library/fb1d3ed8-d5b0-4211-a71f-dd271529294b)
+- [Stromy výrazů (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md)
+- [Stromy výrazů (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md)
 - [Návod: Vytváření a používání dynamických objektů](~/docs/csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)

@@ -1,16 +1,16 @@
 ---
 title: v modifikátor parametru - C# odkaz
 ms.custom: seodec18
-ms.date: 03/06/2018
+ms.date: 02/12/2019
 helpviewer_keywords:
 - parameters [C#], in
 - in parameters [C#]
-ms.openlocfilehash: c3644b82a180fe6ed376938c9ff86db900db440e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5a765a330e4d9efe22943538503c0822e1c9dfdb
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54631405"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219552"
 ---
 # <a name="in-parameter-modifier-c-reference"></a>v parametru modifikátor (referenční dokumentace jazyka C#)
 
@@ -20,11 +20,14 @@ ms.locfileid: "54631405"
 
 Předchozí příklad ukazuje, že `in` Modifikátor je obvykle zbytečné na lokalitu volání. Je potřeba jenom v deklaraci metody.
 
+
 > [!NOTE] 
 > `in` – Klíčové slovo je také možné pomocí parametru obecného typu k určení, že parametr typu je kontravariant, jako součást `foreach` příkazu, nebo jako součást `join` klauzule v dotazu LINQ. Další informace týkající se použití `in` – klíčové slovo v těchto kontextech najdete v článku [v](in.md), který obsahuje odkazy na tato použití.
   
  Proměnné se předaly jako `in` argumenty musí být inicializován před předáním ve volání metody. Volané metody však nelze přiřadit hodnotu nebo upravujete argument.  
-  
+
+`in` Modifikátor parametru je k dispozici v C# 7.2 nebo novější. Chyba kompilátoru generovat předchozí verze `CS8107` ("funkce"odkazů jen pro čtení"není k dispozici v C# 7.0. Použijte prosím jazyk verze 7.2 nebo novější.") Verze jazyka kompilátoru nakonfigurovat, najdete v části [vyberte C# jazykovou verzi](../configure-language-version.md).
+
  I když `in`, `ref`, a `out` klíčová slova způsobit různé chování za běhu, nejsou považovány za součást podpisu metody v době kompilace. Proto metody nemohou být přetíženy, pokud je jediným rozdílem je, že jedna metoda má `ref` nebo `in` argument a druhý bere `out` argument. Například následující kód, nebude kompilovat:  
   
 ```csharp

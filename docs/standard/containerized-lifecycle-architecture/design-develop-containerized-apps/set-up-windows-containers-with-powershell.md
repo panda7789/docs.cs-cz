@@ -1,15 +1,15 @@
 ---
 title: Pomocí příkazů prostředí Windows PowerShell v souboru DockerFile k nastavení kontejnery Windows (založeno na standardu Dockeru)
-description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
+description: Zjistěte, jak pomocí prostředí PowerShell při práci s Dockerem v kontejnerech Windows
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/19/2017
-ms.openlocfilehash: 5e85beea0efbee6a2b6594e3a49d705505a36e1c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 11/23/2018
+ms.openlocfilehash: df9e98e3f963b6492e1008455251b61a8cb6e771
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149390"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219968"
 ---
 # <a name="using-windows-powershell-commands-in-a-dockerfile-to-set-up-windows-containers-docker-standard-based"></a>Pomocí příkazů prostředí Windows PowerShell v souboru DockerFile k nastavení kontejnery Windows (založeno na standardu Dockeru)
 
@@ -34,4 +34,4 @@ RUN powershell add-windowsfeature web-asp-net45
 
 >[!div class="step-by-step"]
 >[Předchozí](visual-studio-tools-for-docker.md)
->[další](../docker-devops-workflow/index.md)
+>[další](build-aspnet-core-applications-linux-containers-aks-kubernetes.md)

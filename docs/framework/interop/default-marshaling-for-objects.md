@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c2ef0284-b061-4e12-b6d3-6a502b9cc558
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 84a3ea24120a9548c9d1cd2b7b83997a2c849cde
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c226960373783c45594e4a41dfaff353bf0b9db4
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54528016"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219604"
 ---
 # <a name="default-marshaling-for-objects"></a>Výchozí zařazování pro objekty
 Parametry a pole typu <xref:System.Object?displayProperty=nameWithType> daly vystavit do nespravovaného kódu jako jeden z následujících typů:  
@@ -323,15 +323,15 @@ Varianty předán podle hodnoty a podle reference
   
 |From|Chcete-li|Změny šířeny zpět|  
 |----------|--------|-----------------------------|  
-|**Varianty***v* |**Objekt***o* |Nikdy|  
-|**Objekt***o* |**Varianty***v* |Nikdy|  
-|**Varianty*****\*****pv* |**Objekt REF***o* |Vždy|  
-|**Objekt REF***o* |**Varianty*****\*****pv* |Vždy|  
-|**Varianty***v* **(VT_BYREF** *&#124;* **typ VT_\*)** |**Objekt***o* |Nikdy|  
-|**Varianty***v* **(VT_BYREF** *&#124;* **typ VT_)** |**Objekt REF***o* |Pouze v případě, že nedošlo ke změně typu.|  
+|**Varianty***v*|**Objekt***o*|Nikdy|  
+|**Objekt***o*|**Varianty***v*|Nikdy|  
+|**Varianty*****\*****pv*|**Objekt REF***o*|Vždy|  
+|**Objekt REF***o*|**Varianty*****\*****pv*|Vždy|  
+|**Varianty***v* **(VT_BYREF** *&#124;* **typ VT_\*)** |**Objekt***o*|Nikdy|  
+|**Varianty***v* **(VT_BYREF** *&#124;* **typ VT_)** |**Objekt REF***o*|Pouze v případě, že nedošlo ke změně typu.|  
   
 ## <a name="see-also"></a>Viz také:
 - [Výchozí chování zařazování](default-marshaling-behavior.md)
 - [Přenositelné a nepřenositelné typy](blittable-and-non-blittable-types.md)
-- [Směrové atributy](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))
+- [Směrové atributy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
 - [Kopírování a přichycování](copying-and-pinning.md)

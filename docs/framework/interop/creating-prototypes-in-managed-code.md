@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ae4dd9adbdad313afa53721e83d7b7d5212df91e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6ad93144dcb56d60f9aa688400918218ef8171df
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54564289"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219565"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Vytváření prototypů ve spravovaném kódu
 Toto téma popisuje, jak získat přístup k nespravovaným funkcím a zavádí několik polí atributů, které opatřit poznámkami definici metody ve spravovaném kódu. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace pro použití s platformu vyvolání, naleznete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
@@ -226,7 +226,7 @@ interface IDemandStubsItf
 - [Určení vstupního bodu](specifying-an-entry-point.md)
 - [Určení znakové sady](specifying-a-character-set.md)
 - [Příklady vyvolání platformy](platform-invoke-examples.md)
-- [Důležité informace o zabezpečení vyvolání platformy](https://msdn.microsoft.com/library/bbcc67f7-50b5-4917-88ed-cb15470409fb(v=vs.100))
+- [Důležité informace o zabezpečení vyvolání platformy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb397754(v=vs.100))
 - [Identifikace funkcí ve knihovnách DLL](identifying-functions-in-dlls.md)
 - [Vytvoření třídy k umístění funkcí DLL](creating-a-class-to-hold-dll-functions.md)
 - [Volání funkce DLL](calling-a-dll-function.md)

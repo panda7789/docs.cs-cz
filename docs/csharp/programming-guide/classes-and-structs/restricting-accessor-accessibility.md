@@ -10,12 +10,12 @@ helpviewer_keywords:
 - asymmetric accessor accesibility [C#]
 - indexers [C#], read-only
 ms.assetid: 6e655798-e112-4301-a680-6310a6e012e1
-ms.openlocfilehash: 2f9580e018684f65762bc40e131a19215e9690c2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3e097b2208b69f21347c49e253e59a9c14f30e51
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54544663"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219409"
 ---
 # <a name="restricting-accessor-accessibility-c-programming-guide"></a>Omezení přístupnosti přístupového objektu (Průvodce programováním v C#)
 [Získat](../../../csharp/language-reference/keywords/get.md) a [nastavit](../../../csharp/language-reference/keywords/set.md) části vlastnost nebo indexer, se nazývají *přistupující objekty*. Ve výchozím nastavení tyto přístupové objekty mít stejnou úroveň viditelnosti nebo přístup k vlastnosti nebo indexeru, ke kterému patří. Další informace najdete v tématu [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). Někdy je však užitečný k omezení přístupu k jednomu z těchto přístupových objektů. Obvykle to zahrnuje omezení přístupnost `set` přístupového objektu při zachování `get` přistupující objekt veřejně přístupná. Příklad:  
@@ -29,7 +29,7 @@ ms.locfileid: "54544663"
   
 -   Přístupový objekt Modifikátory nelze použít na rozhraní nebo explicitní [rozhraní](../../../csharp/language-reference/keywords/interface.md) implementace členu.  
   
--   Modifikátory přístupového objektu můžete použít pouze v případě, že vlastnost nebo indexovací člen jsou obě `set` a `get` přistupující objekty. V takovém případě modifikátor můžou běžet na jedné ze dvou přístupových objektů.  
+-   Modifikátory přístupového objektu můžete použít pouze v případě, že vlastnost nebo indexovací člen jsou obě `set` a `get` přistupující objekty. V takovém případě modifikátor smí obsahovat pouze pro jednu ze dvou přístupových objektů.  
   
 -   Pokud má vlastnost nebo indexer [přepsat](../../../csharp/language-reference/keywords/override.md) modifikátor, modifikátor přístupového objektu musí odpovídat přistupující objekt přepsané přístupového objektu, případné.  
   

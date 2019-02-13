@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 38894f57ec93fd44610b5c612326b399d477b723
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 35dcabcf65af1634533edfba1e300a8746bc97ec
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54531181"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56221365"
 ---
 # <a name="net-native-reflection-api-reference"></a>Informace o rozhraní API reflexe .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] zahrnuje tři nové typy výjimek: [System.Runtime.CompilerServices.MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), [System.Reflection.MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), a [System.Reflection.MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) . Mějte na paměti následující skutečnosti související všechny výjimky tři typy:  
@@ -25,7 +25,7 @@ ms.locfileid: "54531181"
 -   [Poradce při potížích MissingMetadataException](https://dotnet.github.io/native/troubleshooter/method.html) pro metody.  
   
 > [!NOTE]
->  Tento odkaz na dokumenty tři typy výjimek, které jsou jedinečné pro [!INCLUDE[net_native](../../../includes/net-native-md.md)]. Referenční dokumentace pro rozhraní API reflexe .NET Framework core, najdete v části [obory názvů System.Reflection](https://msdn.microsoft.com/library/gg145033.aspx). Referenční dokumentace pro rozhraní API vzájemné spolupráce pro rozhraní .NET Framework core, najdete v části <xref:System.Runtime.InteropServices>.  
+>  Tento odkaz na dokumenty tři typy výjimek, které jsou jedinečné pro [!INCLUDE[net_native](../../../includes/net-native-md.md)]. Referenční dokumentace pro rozhraní API reflexe .NET Framework core, najdete v článku <xref:System.Reflection>, <xref:System.Reflection.Context> a <xref:System.Reflection.Emit> obory názvů. Referenční dokumentace pro rozhraní API vzájemné spolupráce pro rozhraní .NET Framework core, najdete v části <xref:System.Runtime.InteropServices>.  
   
 ## <a name="systemreflection-namespace"></a>Obor názvů System.Reflection  
  <xref:System.Reflection> Obor názvů obsahuje základní typy použité pro účely reflexe v rozhraní .NET Framework. Pro [!INCLUDE[net_native](../../../includes/net-native-md.md)], zahrnuje také dva nové typy výjimek:  

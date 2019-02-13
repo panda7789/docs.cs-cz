@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 9baea3ce-27b3-4b4f-af98-9ad0f9467e6f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0a91fd9d06e93813d440d6243ad42ea6dd70e739
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: df65f54a9a7408a22f8b558f99ab42d6c37ae55b
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54523087"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56221066"
 ---
 # <a name="default-marshaling-for-strings"></a>Výchozí zařazování pro řetězce
 Jak <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídy mají podobné chování zařazování.  
@@ -266,5 +266,5 @@ public class Window {
 ## <a name="see-also"></a>Viz také:
 - [Výchozí chování zařazování](default-marshaling-behavior.md)
 - [Přenositelné a nepřenositelné typy](blittable-and-non-blittable-types.md)
-- [Směrové atributy](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))
+- [Směrové atributy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
 - [Kopírování a přichycování](copying-and-pinning.md)

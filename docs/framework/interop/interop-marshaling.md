@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 115f7a2f-d422-4605-ab36-13a8dd28142a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a70548231454991060098908ce954bf699eff838
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: b7dbba5161c1eeecef41e93c908752410acbd956
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453252"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56221248"
 ---
 # <a name="interop-marshaling"></a>Zařazování spolupráce
 <a name="top"></a> Zařazování spolupráce řídí, jak se data předaná v metoda argumentů a vrácené hodnoty mezi spravovaným a nespravovaným paměti během volání. Zařazování spolupráce je za běhu aktivity prováděné common language runtime zařazovací služby.  
@@ -77,7 +77,7 @@ Proces zařazování stejného objektu apartment
   
  Autor součásti nastaví spřažení vláken COM serveru. V následující tabulce jsou uvedeny kombinace nastavení objektu apartment pro klienty .NET a serverů modelu COM. Profil také ukazuje, výsledná zařazování požadavky pro všechny kombinace.  
   
-|.NET client|COM server|Požadavky zařazování|  
+|Klient .NET|COM server|Požadavky zařazování|  
 |-----------------|----------------|-----------------------------|  
 |MTA (výchozí)|MTA<br /><br /> STA|Zařazování spolupráce.<br /><br /> Zprostředkovatel komunikace s objekty a modelu COM zařazování.|  
 |STA|MTA<br /><br /> STA|Zprostředkovatel komunikace s objekty a modelu COM zařazování.<br /><br /> Zařazování spolupráce.|  
@@ -148,12 +148,12 @@ Vzdálená volání přes brány firewall pomocí protokolu SOAP nebo TcpChannel
 |[Výchozí chování zařazování](default-marshaling-behavior.md)|Popisuje pravidla, která používá službu zařazování interop zařazování dat.|  
 |[Zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md)|Popisuje, jak deklarovat parametry metody a předání argumentů funkcí exportovaných knihovnou nespravovaných knihoven.|  
 |[Zařazování dat se spoluprací COM](marshaling-data-with-com-interop.md)|Popisuje, jak přizpůsobit COM – obálky změnit chování zařazování.|  
-|[Postup: Migrace spravovaného kódu DCOM do WCF](how-to-migrate-managed-code-dcom-to-wcf.md)|Popisuje postup migrace z modelu DCOM do WCF.|  
+|[Postupy: Migrace spravovaného kódu DCOM do WCF](how-to-migrate-managed-code-dcom-to-wcf.md)|Popisuje postup migrace z modelu DCOM do WCF.|  
 |[Postupy: Mapování výsledků HRESULT a výjimek](how-to-map-hresults-and-exceptions.md)|Popisuje, jak namapovat vlastní výjimky výsledků HRESULT a poskytuje úplné mapování z každé HRESULT na jeho třída srovnatelné výjimek v rozhraní .NET Framework.|  
-|[Spolupráce pomocí obecných typů](https://msdn.microsoft.com/library/26b88e03-085b-4b53-94ba-a5a9c709ce58(v=vs.100))|Popisuje akce, které jsou podporovány při použití obecných typů pro interoperabilitu COM.|  
+|[Spolupráce pomocí obecných typů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))|Popisuje akce, které jsou podporovány při použití obecných typů pro interoperabilitu COM.|  
 |[Spolupráce s nespravovaným kódem](index.md)|Popisuje interoperability poskytované modulem common language runtime.|  
 |[Rozšířená interoperabilita modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|Obsahuje odkazy na další informace o začlenění komponenty modelu COM do vaší aplikace rozhraní .NET Framework.|  
-|[Aspekty návrhu pro spolupráci](https://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689(v=vs.100))|Poskytuje tipy pro psaní integrované komponenty modelu COM.|  
+|[Aspekty návrhu pro spolupráci](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))|Poskytuje tipy pro psaní integrované komponenty modelu COM.|  
   
  [Zpět na začátek](#top)  
   

@@ -1,15 +1,15 @@
 ---
 title: Návrh a vývoj kontejnerizovaných aplikací pomocí Dockeru a Microsoft Azure
-description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
+description: Pojďme si do úlohy pro vývoj a návrh v Dockeru aplikace životního cyklu.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/21/2017
-ms.openlocfilehash: 2f8e969ce48a448a293efafccbce1d62b059640d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 11/23/2018
+ms.openlocfilehash: a65f3b59df32c16c0985c8b74ba6a438490e3317
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155220"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219415"
 ---
 # <a name="designing-and-developing-containerized-apps-using-docker-and-microsoft-azure"></a>Návrh a vývoj kontejnerizovaných aplikací pomocí Dockeru a Microsoft Azure
 

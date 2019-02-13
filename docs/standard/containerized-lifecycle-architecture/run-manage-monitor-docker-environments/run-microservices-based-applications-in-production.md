@@ -1,15 +1,15 @@
 ---
 title: Spouštění skládá a mikroslužbových aplikací v produkčním prostředí
-description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
+description: Poznejte klíčové komponenty pro spouštění kontejnerových aplikací v produkčním prostředí
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/22/2017
-ms.openlocfilehash: 003bf794f5427e7b2f10d1e04fd27605b980cdfe
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 11/23/2018
+ms.openlocfilehash: bd8b84f788ce013dfe25199dac34e3c59aa35284
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126299"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56220962"
 ---
 # <a name="run-composed-and-microservices-based-applications-in-production-environments"></a>Spouštění skládá a mikroslužbových aplikací v produkčním prostředí
 
@@ -25,7 +25,7 @@ Když aplikace jsou horizontálním navýšením kapacity napříč více hostit
 
    Plánovač clusteru má více cílů: efektivní využívání prostředků clusteru, práce s omezeními uživatelem zadané umístění, plánování aplikacím rychle nesmí zůstat je ve stavu čekání, s určitý stupeň "rovnost," se na chyby, robustní a mít vždycky k dispozici.
 
-- **Orchestrace**. Platformy rozšířit možnosti správy životního cyklu složité a vícekontejnerových úlohám, které jsou nasazené na clusteru hostitelů. Podle abstrahovat hostitelské infrastruktury, nástroji pro orchestraci uživatelům poskytnout způsob, jak celý cluster považovat za cíl jedno nasazení.
+- **Orchestration**. Platformy rozšířit možnosti správy životního cyklu složité a vícekontejnerových úlohám, které jsou nasazené na clusteru hostitelů. Podle abstrahovat hostitelské infrastruktury, nástroji pro orchestraci uživatelům poskytnout způsob, jak celý cluster považovat za cíl jedno nasazení.
 
    Proces Orchestrace zahrnuje nástroje a platformy, která můžete automatizovat všechny aspekty správy aplikací z počáteční umístění nebo nasazení na kontejneru; Přesunutí kontejnery na různých hostitelích v závislosti na jeho hostitel stavu nebo výkonu. Správa verzí a kumulativní aktualizace a funkce, které podporují škálování a převzetí služeb při selhání, sledování stavu a mnoho dalších.
 

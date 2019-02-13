@@ -1,15 +1,15 @@
 ---
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
-description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
+description: Skutečné produkční aplikace muset nasazují a spravují s orchestrátory, které zpracovávají stavu, úlohy a životní cykly všechny kontejnery.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/19/2017
-ms.openlocfilehash: fa64562808bba9c9dea5a5eedc367af7decf83b7
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 11/23/2018
+ms.openlocfilehash: 749b613ac847c57eb993bff90b36f02a0b39477f
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126897"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56221157"
 ---
 # <a name="orchestrating-microservices-and-multicontainer-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -181,4 +181,4 @@ Všimněte si, že kontejnery Dockeru jsou bezstavové sami. Pokud chcete implem
 
 >[!div class="step-by-step"]
 >[Předchozí](soa-applications.md)
->[další](docker-apps-development-environment.md)
+>[další](deploy-azure-kubernetes-service.md)

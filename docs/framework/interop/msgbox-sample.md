@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 9e0edff6-cc0d-4d5c-a445-aecf283d9c3a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bef8ce86a3dba5449e50c890b09acdee1375317c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3393adf5beed02a5a4bda2e07bd26e29e47fae2f
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54719544"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219305"
 ---
 # <a name="msgbox-sample"></a>MsgBox – ukázka
 Tento příklad znázorňuje, jakým způsobem lze předávat typy řetězců pomocí hodnoty jako parametry In a kdy lze použít pole <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>, <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> a <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>.  
@@ -46,7 +46,6 @@ Tento příklad znázorňuje, jakým způsobem lze předávat typy řetězců po
   
 ## <a name="see-also"></a>Viz také:
 - [Zařazování řetězců](marshaling-strings.md)
-- [Datové typy vyvolání platformy](https://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f(v=vs.100))
 - [Výchozí zařazování pro řetězce](default-marshaling-for-strings.md)
 - [Vytváření prototypů ve spravovaném kódu](creating-prototypes-in-managed-code.md)
 - [Určení znakové sady](specifying-a-character-set.md)

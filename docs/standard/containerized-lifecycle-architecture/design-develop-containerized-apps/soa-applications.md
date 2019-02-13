@@ -1,15 +1,15 @@
 ---
 title: Aplikace SOA
-description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
+description: Berte v úvahu, že kontejnery můžou být také možnost užitečné nasazení pro aplikace SOA.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/22/2017
-ms.openlocfilehash: 7f88daaf0787cf780e7ab9602f35ae4e6ab8308c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 11/23/2018
+ms.openlocfilehash: 4fd39e075c5730cf7fddb0138cdb5267a914c91f
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155311"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56221261"
 ---
 # <a name="soa-applications"></a>Aplikace SOA
 

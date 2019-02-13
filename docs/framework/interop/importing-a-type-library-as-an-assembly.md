@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3e346b326255ea46babc2e4c9101a1724671514d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 133d70058cc8151b22d31a3211d48188095e5f07
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517565"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56218904"
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>Import knihovny typů ve formě sestavení
 Definice typů modelu COM jsou obvykle umístěny v knihovně typů. Naproti tomu kompatibilní se Specifikací CLS kompilátory vytvářejí metadat typu v sestavení. Dva zdroje informací o typu se značně liší. Toto téma popisuje postupy pro generování metadat z knihovny typů. Výsledné sestavení se nazývá definiční sestavení a, které obsahuje informace o typu umožňuje používat typy modelu COM aplikacemi rozhraní .NET Framework.  
@@ -31,7 +31,7 @@ Definice typů modelu COM jsou obvykle umístěny v knihovně typů. Naproti tom
   
 -   Použití pouze pro návrh definiční sestavení: Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete dát pokyn kompilátoru k vložení informací o typu ze sestavení vzájemné spolupráce do spustitelného souboru. Kompilátor vloží jenom informace o typu, který vaše aplikace používá. Není nutné k nasazení sestavení vzájemné spolupráce s vaší aplikací. Toto je doporučený postup.  
   
--   Nasazení sestavení vzájemné spolupráce: Můžete vytvořit standardní odkaz na sestavení vzájemné spolupráce. V takovém případě musí být nasazeny sestavení zprostředkovatele komunikace s vaší aplikací. Pokud nepoužijete tento postup a nepoužíváte Soukromá komponenta modelu COM, vždycky odkazujte na sestavení primární spolupráce (PIA) publikoval Autor komponenty modelu COM, které chcete začlenit ve spravovaném kódu. Další informace o vytváření a používání sestavení primární spolupráce naleznete v tématu [Primary Interop Assemblies](https://msdn.microsoft.com/library/b977a8be-59a0-40a0-a806-b11ffba5c080(v=vs.100)).  
+-   Nasazení sestavení vzájemné spolupráce: Můžete vytvořit standardní odkaz na sestavení vzájemné spolupráce. V takovém případě musí být nasazeny sestavení zprostředkovatele komunikace s vaší aplikací. Pokud nepoužijete tento postup a nepoužíváte Soukromá komponenta modelu COM, vždycky odkazujte na sestavení primární spolupráce (PIA) publikoval Autor komponenty modelu COM, které chcete začlenit ve spravovaném kódu. Další informace o vytváření a používání sestavení primární spolupráce naleznete v tématu [Primary Interop Assemblies](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).  
   
  Pokud používáte pouze pro návrh sestavení vzájemné spolupráce, můžete vložit informací o typu ze sestavení primární spolupráce publikoval Autor komponenty modelu COM. Ale není potřeba nasazovat primární sestavení zprostředkovatele komunikace s vaší aplikací.  
   
@@ -44,7 +44,7 @@ Definice typů modelu COM jsou obvykle umístěny v knihovně typů. Naproti tom
   
 -   Visual Studio  
   
-     Visual Studio automaticky převede typy modelu COM v knihovně typů na metadata do sestavení. Pokyny najdete v tématu [jak: Přidání odkazů do knihoven typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md) a [názorný postup: Vložení informací o typu ze sestavení sady Microsoft Office](https://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3(v=vs.100)).  
+     Visual Studio automaticky převede typy modelu COM v knihovně typů na metadata do sestavení. Pokyny najdete v tématu [jak: Přidání odkazů do knihoven typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md), [názorný postup: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)](../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies.md), a [názorný postup: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-vs.md).  
   
 -   [Importér knihovny typů (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
   
@@ -66,19 +66,20 @@ Definice typů modelu COM jsou obvykle umístěny v knihovně typů. Naproti tom
   
     -   Znalost pravidla sestavení knihovny převodu typu.  
   
-     Psaní vlastních obálky je pokročilé techniky. Další informace o tom, jak generovat vlastní obálku najdete v tématu [přizpůsobení standardních obálek](https://msdn.microsoft.com/library/c40d089b-6a3c-41b5-a20d-d760c215e49d(v=vs.100)).  
+     Psaní vlastních obálky je pokročilé techniky. Další informace o tom, jak generovat vlastní obálku najdete v tématu [přizpůsobení standardních obálek](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100)).  
   
- Další informace o importu vzájemné spolupráce COM, naleznete v tématu [sestavení souhrn převodu knihovny typů na](https://msdn.microsoft.com/library/bf3f90c5-4770-4ab8-895c-3ba1055cc958(v=vs.100)).  
+ Další informace o importu vzájemné spolupráce COM, naleznete v tématu [sestavení souhrn převodu knihovny typů na](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100)).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Runtime.InteropServices.TypeLibConverter>
 - [Vystavení komponent COM pro rozhraní .NET Framework](../../../docs/framework/interop/exposing-com-components.md)
-- [Souhrn převodu sestavení knihovny typů na](https://msdn.microsoft.com/library/bf3f90c5-4770-4ab8-895c-3ba1055cc958(v=vs.100))
+- [Souhrn převodu sestavení knihovny typů na](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Tlbimp.exe (importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)
-- [Přizpůsobení standardních obálek](https://msdn.microsoft.com/library/c40d089b-6a3c-41b5-a20d-d760c215e49d(v=vs.100))
-- [Používání typů modelu COM ve spravovaném kódu](https://msdn.microsoft.com/library/1a95a8ca-c8b8-4464-90b0-5ee1a1135b66(v=vs.100))
+- [Přizpůsobení standardních obálek](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
+- [Používání typů modelu COM ve spravovaném kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [Kompilace projektu interoperability](../../../docs/framework/interop/compiling-an-interop-project.md)
 - [Nasazení aplikace spolupráce](../../../docs/framework/interop/deploying-an-interop-application.md)
 - [Postupy: Přidání odkazů do knihoven typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)
 - [Postupy: Generování sestavení vzájemné spolupráce z knihoven typů](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md)
-- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office](https://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3(v=vs.100))
+- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)](../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)
+- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-vs.md)

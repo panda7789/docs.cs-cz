@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 587ae32c27a3c779f5f2e4f27bf521e2ca557106
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8c9716193c3429d5dd3aff1734415105713d2538
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54688997"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56221287"
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Zařazování spolupráce funguje v pravidlech této diktování chování data související s parametry metody během mezi spravovanými a nespravovanými paměti. Tato integrovaná pravidla takové zařazování aktivity jako typ transformace dat, řízení, zda volaný můžete změnit data předaná do ní a tyto změny vrátit volající a pod kterým okolností, aby zařazování odvozovalo poskytuje optimalizace výkonu.  
@@ -24,7 +24,7 @@ Zařazování spolupráce funguje v pravidlech této diktování chování data 
  Tato část popisuje výchozí chování vlastnosti zprostředkovatele komunikace s objekty zařazování služby. Představuje podrobné informace o zařazování polí, logické typy, typy char, delegátů, tříd, objektů, řetězce a struktury.  
   
 > [!NOTE]
->  Zařazování obecných typů není podporováno. Další informace najdete v tématu [spolupráce pomocí obecných typů](https://msdn.microsoft.com/library/26b88e03-085b-4b53-94ba-a5a9c709ce58(v=vs.100)).  
+>  Zařazování obecných typů není podporováno. Další informace najdete v tématu [spolupráce pomocí obecných typů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100)).  
   
 ## <a name="memory-management-with-the-interop-marshaler"></a>Správa paměti zařazovacím modulem spolupráce  
  Interoperační zařazovač se vždy pokusí uvolnit paměť přidělaná nespravovaného kódu. Toto chování v souladu s pravidly správy paměti modelu COM, ale liší se od pravidel, kterými se řídí nativní kód C++.  
@@ -41,7 +41,7 @@ BSTR MethodOne (BSTR b) {
   
  Nicméně pokud definujete metodu jako prototyp vyvolání platformy, nahraďte, každé **BSTR** typ s <xref:System.String> zadejte a volat `MethodOne`, modul common language runtime pokusí uvolnit `b` dvakrát. Můžete změnit chování zařazování pomocí <xref:System.IntPtr> typy spíše než **řetězec** typy.  
   
- Vždy používá modul runtime **CoTaskMemFree** metodu pro uvolnění paměti. Pokud nebyla přidělena paměť pracujete s **CoTaskMemAlloc** metoda, je nutné použít **IntPtr** a uvolňují paměť ručně pomocí odpovídající metodu. Podobně můžete vyhnout automatické paměti uvolnění v situacích, kde by nikdy být uvolnit paměť, například jako při použití **GetCommandLine** funkce ze souboru Kernel32.dll, které vrací ukazatel na paměť jádra. Podrobnosti o ručně uvolnění paměti, najdete v článku [vyrovnávací paměti – ukázka](https://msdn.microsoft.com/library/e30d36e8-d7c4-4936-916a-8fdbe4d9ffd5(v=vs.100)).  
+ Vždy používá modul runtime **CoTaskMemFree** metodu pro uvolnění paměti. Pokud nebyla přidělena paměť pracujete s **CoTaskMemAlloc** metoda, je nutné použít **IntPtr** a uvolňují paměť ručně pomocí odpovídající metodu. Podobně můžete vyhnout automatické paměti uvolnění v situacích, kde by nikdy být uvolnit paměť, například jako při použití **GetCommandLine** funkce ze souboru Kernel32.dll, které vrací ukazatel na paměť jádra. Podrobnosti o ručně uvolnění paměti, najdete v článku [vyrovnávací paměti – ukázka](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100)).  
   
 ## <a name="default-marshaling-for-classes"></a>Výchozí zařazování pro třídy  
  Třídy lze zařadit pouze pomocí zprostředkovatele komunikace s objekty COM a jsou vždy zařadit jako rozhraní. V některých případech rozhraní použitý k zařazování třídy se nazývá třídy rozhraní. Informace o přepsání rozhraní třídy s rozhraním podle vašeho výběru, najdete v části [představení rozhraní třídy](com-callable-wrapper.md#introducing-the-class-interface).  

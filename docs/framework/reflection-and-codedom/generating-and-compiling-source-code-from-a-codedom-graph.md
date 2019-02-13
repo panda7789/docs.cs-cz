@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: 6c864c8e-6dd3-4a65-ace0-36879d9a9c42
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 40bbf0cfab8044d582490ed0890501d6b123d18e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b0218f74f5aa66921104fd36c085aaed04c9b435
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54631240"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219515"
 ---
 # <a name="generating-and-compiling-source-code-from-a-codedom-graph"></a>Generování a kompilace zdrojového kódu z grafu modelu CodeDOM
 <xref:System.CodeDom.Compiler> Obor názvů poskytuje rozhraní pro generování zdrojového kódu z grafu modelu CodeDOM objekt a pro správu kompilace s podporované kompilátory. Zdrojový kód v konkrétním programovacím jazyce podle grafu CodeDOM může vytvořit poskytovatele kódu. Třída, která je odvozena z <xref:System.CodeDom.Compiler.CodeDomProvider> lze obvykle poskytují metody pro generování a kompilace kódu pro jazyk zprostředkovatel podporuje.  
@@ -97,4 +97,4 @@ ms.locfileid: "54631240"
 - <xref:System.CodeDom>
 - <xref:System.CodeDom.Compiler>
 - [Dynamické vytváření a kompilování zdrojového kódu](../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)
-- [CodeDOM – Stručná referenční příručka](https://msdn.microsoft.com/library/c77b8bfd-0a32-4e36-b59a-4f687f32c524)
+- [CodeDOM – Stručná referenční příručka](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))

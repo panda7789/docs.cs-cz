@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: a487d61b-d166-467b-a7ca-d8b52fbff42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d10e93af4172e6759cbe04f88e54b6e1db995efa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 76a4a3b91e88e1532e79eea256621ee149c320ea
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54679003"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219474"
 ---
 # <a name="tlbexpexe-type-library-exporter"></a>Tlbexp.exe (exportér knihovny typů)
 Exportér knihovny typů generuje knihovny typů, které popisují typy definované v sestavení Common Language Runtime.  
@@ -90,7 +90,7 @@ HRESULT StructDispSafe([out, retval] SAFEARRAY(IDispatch*)* pRetVal);
   
  Všimněte si, že Tlbexp.exe ignoruje <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType> pole.  
   
- Vzhledem k tomu, že knihovny typů nemohou pojmout všechny informace, které jsou součástí sestavení, nástroj Tlbexp.exe může zrušit některá data během exportu. Vysvětlení procesu transformace a identifikace zdroje každé dílčí informace, které jsou emitovány do knihovny typů, najdete v článku [sestavení pro souhrn převodu knihovny typů](https://msdn.microsoft.com/library/3a37eefb-a76c-4000-9080-7dbbf66a4896).  
+ Vzhledem k tomu, že knihovny typů nemohou pojmout všechny informace, které jsou součástí sestavení, nástroj Tlbexp.exe může zrušit některá data během exportu. Vysvětlení procesu transformace a identifikace zdroje každé dílčí informace, které jsou emitovány do knihovny typů, najdete v článku [sestavení pro souhrn převodu knihovny typů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100)).  
   
  Všimněte si, že Exportér knihovny typů exportuje metody, které mají <xref:System.TypedReference> parametry jako `VARIANT`, i když <xref:System.TypedReference> objekt nemá v nespravovaném kódu žádný význam. Při exportu metod, které mají <xref:System.TypedReference> parametry, Exportér knihovny typů nebude generovat upozornění nebo chyby a nespravovaný kód využívající výslednou knihovnu typů nebude fungovat správně.  
   
@@ -133,6 +133,6 @@ tlbexp Sample.dll
 - <xref:System.Runtime.InteropServices.TypeLibExporterFlags>
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [Regasm.exe (nástroj registrace sestavení)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)
-- [Sestavení zadejte souhrn převodu knihovny](https://msdn.microsoft.com/library/3a37eefb-a76c-4000-9080-7dbbf66a4896)
+- [Sestavení zadejte souhrn převodu knihovny](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))
 - [Tlbimp.exe (importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

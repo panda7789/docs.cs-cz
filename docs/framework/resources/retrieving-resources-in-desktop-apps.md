@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0c58fe8aeeb9acdb886cb224046c68af0577eae7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9cbfd608f52a11f267ade25f80bc60bdfcd89364
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54539750"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56221222"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Načítání prostředků v aplikacích klasické pracovní plochy
 Při práci s lokalizované prostředky v desktopových aplikacích rozhraní .NET Framework by měl v ideálním případě balíček prostředků pro výchozí nebo neutrální jazykovou verzi s hlavním sestavením a vytvořte samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, která vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídy, jak je popsáno v další části a přístup k pojmenovaným prostředkům. Pokud se rozhodnete vložit prostředky do hlavního sestavení a satelitní sestavení, se dá dostat taky binárních souborů .resources přímo, jak je popsáno v části [načítání prostředků ze souborů .resources](#from_file) dále v tomto článek.  Pro načtení prostředků v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, najdete v článku [vytváření a načítání prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674) Windows Dev Center.  
@@ -158,7 +158,7 @@ Struktura adresářů a konvence pojmenování pro soubory .resources
  Poté, co jste vytvořili prostředky a umístí je do příslušného adresáře, vytváření <xref:System.Resources.ResourceManager> objektu, který chcete používat prostředky voláním <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%28System.String%2CSystem.String%2CSystem.Type%29> metody. První parametr určuje název kořenového souboru .resources výchozí aplikace (jde "řetězce", například v předchozí části). Druhý parametr určuje umístění prostředků ("Resources" předchozího příkladu). Třetí parametr určuje, <xref:System.Resources.ResourceSet> implementace. Pokud třetí parametr je `null`, výchozí modul runtime <xref:System.Resources.ResourceSet> se používá.  
   
 > [!NOTE]
->  Nenasazujte aplikace pro ASP.NET pomocí samostatné soubory .resources. To může způsobit zamykání problémy a zalomení nasazení XCOPY. Doporučujeme nasadit prostředky technologie ASP.NET v satelitním sestavení. Další informace najdete v tématu [webové stránky ASP.NET: Přehled prostředků](https://msdn.microsoft.com/library/0936b3b2-9e6e-4abe-9c06-364efef9dbbd).  
+>  Nenasazujte aplikace pro ASP.NET pomocí samostatné soubory .resources. To může způsobit zamykání problémy a zalomení nasazení XCOPY. Doporučujeme nasadit prostředky technologie ASP.NET v satelitním sestavení. Další informace najdete v tématu [webové stránky ASP.NET: Přehled prostředků](https://docs.microsoft.com/previous-versions/aspnet/ms227427(v=vs.100)).  
   
  Jakmile vytvoříte instanci <xref:System.Resources.ResourceManager> objektu, je použít <xref:System.Resources.ResourceManager.GetString%2A>, <xref:System.Resources.ResourceManager.GetObject%2A>, a <xref:System.Resources.ResourceManager.GetStream%2A> metod, jak je popsáno dříve k načtení prostředků. Načítání prostředků přímo ze souborů .resources se však liší od načtení vložených prostředků v sestavení. Při načtení prostředků ze souborů .resources <xref:System.Resources.ResourceManager.GetString%28System.String%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%29>, a <xref:System.Resources.ResourceManager.GetStream%28System.String%29> metody vždy načíst výchozí jazykové prostředky bez ohledu na aktuální jazykové verze. Chcete-li načíst prostředky buď aplikaci pro aktuální jazykovou verzi nebo konkrétní jazykové verze, musíte volat <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%2CSystem.Globalization.CultureInfo%29>, nebo <xref:System.Resources.ResourceManager.GetStream%28System.String%2CSystem.Globalization.CultureInfo%29> metoda a zadat jazykovou verzi, jehož prostředky se mají načíst. K načtení prostředků aktuální jazykové verze, zadejte hodnotu <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost jako `culture` argument. Pokud správce prostředků nelze načíst z prostředků `culture`, používá záložní pravidla standardních prostředků k načtení příslušných prostředků.  
   

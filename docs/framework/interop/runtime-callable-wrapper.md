@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 7e542583-1e31-4e10-b523-8cf2f29cb4a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0832489d74abc3aec78218f87d2bce72e6e68f75
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d3abce6ef7cb1d3287d9c8b7ceb9333f209e75ad
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54632787"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56219518"
 ---
 # <a name="runtime-callable-wrapper"></a>Obálka volatelná za běhu
 Modul common language runtime poskytuje objekty modelu COM přes proxy server volá obálka volatelná za běhu (RCW). I když objekt RCW se zdá být běžný objekt pro klienty .NET, jeho primární funkce je zařadit volání mezi klient .NET a COM objekty.  
@@ -58,7 +58,6 @@ Rozhraní COM a obálka volatelná za běhu
   
 ## <a name="see-also"></a>Viz také:
 - [COM – obálky](com-wrappers.md)
-- [Zařazování vybraných rozhraní](https://msdn.microsoft.com/library/fdb97fd0-f694-4832-bf15-a4e7cf413840(v=vs.100))
 - [Obálka volatelná aplikacemi COM](com-callable-wrapper.md)
-- [Souhrn převodu sestavení knihovny typů na](https://msdn.microsoft.com/library/bf3f90c5-4770-4ab8-895c-3ba1055cc958(v=vs.100))
+- [Souhrn převodu sestavení knihovny typů na](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)
