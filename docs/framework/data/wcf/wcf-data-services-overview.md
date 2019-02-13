@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services
 - WCF Data Services, about
 ms.assetid: 7924cf94-c9a6-4015-afc9-f5d22b1743bb
-ms.openlocfilehash: 3d5e02d092489e01975037c811fedb2727e2041f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: eb9adf5ff66a8b45bea79a9abaa139a46abb5b39
+ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54566655"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56094019"
 ---
 # <a name="wcf-data-services-overview"></a>Přehled služby WCF Data Services
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje vytváření a spotřebě datových služeb webu nebo intranetu pomocí [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] umožňuje zpřístupnění vašich dat ve formě prostředky, které jsou adresovat pomocí identifikátorů URI. Umožňuje získat přístup k a data změny pomocí sémantiky representational state Transfer (REST), konkrétně standardní příkazy HTTP z GET, PUT, POST a odstranění. Toto téma obsahuje přehled vzory a postupy určené [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] a také zařízení poskytovaných [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] výhod [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] v aplikacích založených na rozhraní .NET Framework.  
@@ -59,6 +59,6 @@ ms.locfileid: "54566655"
 - [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md)
 - [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
 - [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
-- [Přístup k datové služby (WCF Data Services)](https://msdn.microsoft.com/library/1e54a2b9-2ec6-4002-b8f8-c1d8df37c350)
+- [Přístup k prostředkům datové služby (WCF Data Services)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd728283(v=vs.100))
 - [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
 - [Representational State Transfer (REST)](https://go.microsoft.com/fwlink/?LinkId=113919)
