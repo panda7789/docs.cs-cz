@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření transakční služby'
 ms.date: 03/30/2017
 ms.assetid: 1bd2e4ed-a557-43f9-ba98-4c70cb75c154
-ms.openlocfilehash: c4d2db0ca912be8840788bc363f86d621fa76e34
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 98346c0fd8990d3122ceb7c25950dc815bd5bed5
+ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245636"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56261138"
 ---
 # <a name="how-to-create-a-transactional-service"></a>Postupy: Vytvoření transakční služby
 Tento příklad ukazuje různé aspekty vytvoření transakční služby a použití klientem iniciované transakci ke koordinaci operací služby.  
@@ -65,7 +65,7 @@ Tento příklad ukazuje různé aspekty vytvoření transakční služby a použ
     }  
     ```  
   
-3.  Nakonfigurujte vazby v konfiguračním souboru, určení, že by měl být předávány kontext transakce a protokolů, který se má použít k tomu. Další informace najdete v tématu [konfigurace transakcí ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md). Konkrétně je typ vazby zadaný v elementu koncového bodu `binding` atribut. [ \<Koncový bod >](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) obsahuje element `bindingConfiguration` atribut, který odkazuje na vazbu konfigurace s názvem `transactionalOleTransactionsTcpBinding`, jak je znázorněno v následující ukázkové konfiguraci.  
+3.  Nakonfigurujte vazby v konfiguračním souboru, určení, že by měl být předávány kontext transakce a protokolů, který se má použít k tomu. Další informace najdete v tématu [konfigurace transakcí ServiceModel](servicemodel-transaction-configuration.md). Konkrétně je typ vazby zadaný v elementu koncového bodu `binding` atribut. [ \<Koncový bod >](../../configure-apps/file-schema/wcf/endpoint-element.md) obsahuje element `bindingConfiguration` atribut, který odkazuje na vazbu konfigurace s názvem `transactionalOleTransactionsTcpBinding`, jak je znázorněno v následující ukázkové konfiguraci.  
   
     ```xml  
     <service name="CalculatorService">  

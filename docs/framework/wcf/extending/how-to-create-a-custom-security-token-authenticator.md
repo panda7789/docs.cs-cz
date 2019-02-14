@@ -7,17 +7,17 @@ dev_langs:
 helpviewer_keywords:
 - WCF, authentication
 ms.assetid: 10e245f7-d31e-42e7-82a2-d5780325d372
-ms.openlocfilehash: acf2e02479e66c6b2304b47340f19b665922cf5d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: df45f943da62624b92d483851e788dad0e240f47
+ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54638740"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56261125"
 ---
 # <a name="how-to-create-a-custom-security-token-authenticator"></a>Postupy: vytvoření vlastní bezpečnostní ověřovací data tokenu
 Toto téma ukazuje, jak vytvořit ověřovací data tokenu zabezpečení vlastní a jak ji integrovat s Správce tokenů zabezpečení vlastní. Ověřovací data tokenu zabezpečení ověří obsah token zabezpečení, opatřeného příchozí zprávy. Pokud je ověření úspěšné, ověřovacích vrátí kolekci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> instancí, které, při vyhodnocování, vrátí sadu deklarací identity.  
   
- Určený ověřovací data tokenu zabezpečení vlastní ve Windows Communication Foundation (WCF), musíte nejprve vytvořit vlastní přihlašovací údaje a zabezpečení implementace Správce tokenů. Další informace o vytváření vlastních přihlašovacích údajů a zabezpečení Správce tokenů najdete v tématu [názorný postup: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md). Další informace o pověření, Správce tokenů zabezpečení a třídy zprostředkovatele a ověřovací data, najdete v části [architektury zabezpečení](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
+ Určený ověřovací data tokenu zabezpečení vlastní ve Windows Communication Foundation (WCF), musíte nejprve vytvořit vlastní přihlašovací údaje a zabezpečení implementace Správce tokenů. Další informace o vytváření vlastních přihlašovacích údajů a zabezpečení Správce tokenů najdete v tématu [názorný postup: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).
   
 ## <a name="procedures"></a>Procedury  
   
@@ -65,4 +65,3 @@ Toto téma ukazuje, jak vytvořit ověřovací data tokenu zabezpečení vlastn�
 - <xref:System.IdentityModel.Tokens.UserNameSecurityToken>
 - [Návod: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)
 - [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)
-- [Architektura zabezpečení](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

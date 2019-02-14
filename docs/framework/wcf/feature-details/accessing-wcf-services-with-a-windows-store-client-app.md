@@ -2,12 +2,12 @@
 title: Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 ms.date: 03/30/2017
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-ms.openlocfilehash: 95a717f139983be8291c2d156d8dd1626a43372a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 484fad33614ca2b9507ed88aadfc1a41bb216c28
+ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613659"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56261112"
 ---
 # <a name="accessing-wcf-services-with-a-windows-store-client-app"></a>Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 Systém Windows 8 zavádí nový typ aplikace s názvem aplikace Windows Store. Tyto aplikace jsou navržené s ohledem dotykové obrazovce rozhraní. Rozhraní .NET framework 4.5 umožňuje aplikacím Windows Store pro volání služeb WCF.  
@@ -55,7 +55,7 @@ Systém Windows 8 zavádí nový typ aplikace s názvem aplikace Windows Store. 
  Textové a binární kódování jsou podporovány. Podporují se všechny režimy přenos WCF. Další informace najdete v tématu [streamování přenosu zpráv](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md).  
   
 ### <a name="add-service-reference"></a>Přidání odkazu na službu  
- K volání služby WCF z aplikace pro Windows Store, použijte funkci Přidat odkaz na službu sady Visual Studio 2012. Uvidíte několik změn ve funkcionalitě přidat odkaz na službu po dokončení aplikace pro Windows Store. Nejprve je generován žádný konfigurační soubor. Aplikace Windows Store nepoužívejte konfiguračních souborů, takže musí být nakonfigurovány v kódu. Tento kód konfigurace najdete v souboru References.cs generovaných přidat odkaz na službu. Pokud chcete zobrazit tento soubor, ujistěte se, že v Průzkumníku řešení vyberte "Zobrazit všechny soubory". Soubor se nachází v odkazy na služby a potom Reference.svcmap uzly v rámci projektu. Všechny operace, které jsou generovány pro služby WCF v rámci aplikace Windows Store bude asynchronní pomocí asynchronní vzor založený na úlohách. Další informace najdete v tématu [Task-based Asynchronous Pattern](https://msdn.microsoft.com/magazine/ff959203.aspx).  
+ K volání služby WCF z aplikace pro Windows Store, použijte funkci Přidat odkaz na službu sady Visual Studio 2012. Uvidíte několik změn ve funkcionalitě přidat odkaz na službu po dokončení aplikace pro Windows Store. Nejprve je generován žádný konfigurační soubor. Aplikace Windows Store nepoužívejte konfiguračních souborů, takže musí být nakonfigurovány v kódu. Tento kód konfigurace najdete v souboru References.cs generovaných přidat odkaz na službu. Pokud chcete zobrazit tento soubor, ujistěte se, že v Průzkumníku řešení vyberte "Zobrazit všechny soubory". Soubor se nachází v odkazy na služby a potom Reference.svcmap uzly v rámci projektu. Všechny operace, které jsou generovány pro služby WCF v rámci aplikace Windows Store bude asynchronní pomocí asynchronní vzor založený na úlohách. Další informace najdete v tématu [úloh s modifikátorem Async - zjednodušit Asynchronous Programming with úlohy](https://msdn.microsoft.com/magazine/ff959203.aspx).  
   
  Vzhledem k tomu, že konfigurace je nyní generována v kódu, všechny změny provedené v souboru Reference.cs přepsána pokaždé, když se aktualizuje odkaz na službu. Chcete tuto situaci napravit generování kódu konfigurace v rámci částečné metody, které můžete implementovat ve své třídě proxy serveru klienta. Částečné metody je deklarována následovně:  
   

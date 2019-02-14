@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2b5ba5c3-0c6c-48e9-9e46-54acaec443ba
-ms.openlocfilehash: a21c32547b1bd612196daf8be54cf85c373a7ff3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5688fbbe2c40e7cd30517fb53fe21ae3d0630f22
+ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681739"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56261530"
 ---
 # <a name="walkthrough-creating-custom-client-and-service-credentials"></a>Průvodce: Vytvoření vlastního klienta a pověření služby
 Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a jak pomocí vlastních přihlašovacích údajů z kódu aplikace.  
@@ -23,8 +23,6 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
 -   Provést jako objekt factory pro <xref:System.IdentityModel.Selectors.SecurityTokenManager> implementace.  
   
  Jak <xref:System.ServiceModel.Description.ClientCredentials> a <xref:System.ServiceModel.Description.ServiceCredentials> třídy dědí z abstraktní <xref:System.ServiceModel.Security.SecurityCredentialsManager> třídu, která definuje smlouvu pro návrat <xref:System.IdentityModel.Selectors.SecurityTokenManager>.  
-  
- Další informace o třídách přihlašovací údaje a jak se vešly do architektury security WCF najdete v tématu [architektury zabezpečení](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
   
  Výchozí implementace k dispozici ve službě WCF podporují typy poskytované systémem přihlašovacích údajů a vytvoření zabezpečení Správce tokenů, který je schopen zpracování těchto typů přihlašovacích údajů.  
   

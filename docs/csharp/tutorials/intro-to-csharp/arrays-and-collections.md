@@ -3,12 +3,12 @@ title: Práce s kolekcí – Úvod do C# kurz
 description: Přečtěte si C# prozkoumáním kolekce seznamu v tomto kurzu.
 ms.date: 10/13/2017
 ms.custom: mvc
-ms.openlocfilehash: eaf921be2bd50b6e346f57f42e17f151ff336821
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 9a910ccd6265011fc0e5540b461ba089dbd3e7ba
+ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50205279"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56261268"
 ---
 # <a name="learn-to-manage-data-collections-using-the-generic-list-type"></a>Naučte se spravovat pomocí typ obecný seznam kolekcí dat
 
@@ -19,9 +19,6 @@ V tomto kurzu se očekává, že budete mít počítač, který používáte pro
 ## <a name="a-basic-list-example"></a>Příklad základního seznamu
 
 Vytvořte adresář **list-tutorial**. Zkontrolujte, zda aktuální adresář a spusťte `dotnet new console`.
-
-> [!NOTE]
-> Pokud jste právě dokončili [Začínáme s .NET během 10 minut](https://www.microsoft.com/net), můžete dál používat aplikace myApp, který jste právě vytvořili.
 
 Otevřít **Program.cs** ve svém oblíbeném editoru a nahraďte existující kód následujícím kódem:
 

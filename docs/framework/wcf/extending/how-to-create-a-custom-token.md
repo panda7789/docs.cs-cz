@@ -10,12 +10,12 @@ helpviewer_keywords:
 - WSSecurityTokenSerializer class
 - SecurityToken class
 ms.assetid: 6d892973-1558-4115-a9e1-696777776125
-ms.openlocfilehash: 20c462f811be86d52ec6f06700326f0e949a76d1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3367a75fc0532e3eaa312400221c662bb35146bf
+ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54637908"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56261164"
 ---
 # <a name="how-to-create-a-custom-token"></a>Postupy: Vytvoření vlastního tokenu
 Toto téma ukazuje, jak vytvořit vlastní bezpečnostní token pomocí <xref:System.IdentityModel.Tokens.SecurityToken> třídy a jak ji integrovat s vlastního zprostředkovatele tokenů zabezpečení a ověřovací data. Příklad úplného kódu najdete v článku [vlastní Token](../../../../docs/framework/wcf/samples/custom-token.md) vzorku.  
@@ -29,8 +29,6 @@ Toto téma ukazuje, jak vytvořit vlastní bezpečnostní token pomocí <xref:Sy
  Další informace o vlastní přihlašovací údaje a Správce tokenů zabezpečení najdete v tématu [názorný postup: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
   
  Zobrazit <xref:System.IdentityModel.Tokens> obor názvů pro další třídy, které představují tokeny zabezpečení.  
-  
- Další informace o pověření, Správce tokenů zabezpečení a třídy zprostředkovatele a ověřovací data, najdete v části [architektury zabezpečení](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
   
 ## <a name="procedures"></a>Procedury  
  Klientská aplikace musí být součástí způsob, jak určit informace o platební kartě pro zabezpečení infrastruktury. Tyto informace je k dispozici pro aplikaci pomocí vlastních klientských přihlašovacích údajů třídy. Prvním krokem je vytvoření třídy představující informace o platební kartě pro vlastní klientské přihlašovací údaje.  
@@ -165,4 +163,3 @@ Toto téma ukazuje, jak vytvořit vlastní bezpečnostní token pomocí <xref:Sy
 - [Návod: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)
 - [Postupy: Vytvořit vlastní bezpečnostní ověřovací data tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)
 - [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)
-- [Architektura zabezpečení](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

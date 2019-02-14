@@ -4,19 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WCF], extending
 ms.assetid: a015a040-9fdf-4147-9ea9-f83b570be1d4
-ms.openlocfilehash: 798a1d1cd21fd9a0bc21c6ccaa42c478379cc7a3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 698d65d951ed7adad5aa32e874befb15a3b24d12
+ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54511534"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56261424"
 ---
 # <a name="extending-security"></a>Rozšíření zabezpečení
 Tak, aby vyhovovaly nové typy deklarací identity a vlastní tokeny, můžete rozšířit Infrastruktura zabezpečení Windows Communication Foundation (WCF). Témata v této části ukazují, jak to lze provést.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Architektura zabezpečení](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)  
- Provede architekturu jako systém zabezpečení WCF.  
   
  [Vlastní přihlašovací údaje a jejich ověřování](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  
  Vysvětluje, jak modelem Identity se používá při ověřování vlastní přihlašovací údaje.  

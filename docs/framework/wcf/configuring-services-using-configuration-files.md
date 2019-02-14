@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
-ms.openlocfilehash: 8d138bae794cac00b1542f63153f343fb95a24c7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 92c86980f3276054dbcd41c1cd796e2bc2c0df23
+ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717399"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56261357"
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
 Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním souborem dává možnost poskytovat koncový bod a data o chování služby Přejme během nasazení místo v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  
@@ -91,7 +91,7 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
   
 -   `contract`. Určuje rozhraní definuje kontrakt. Toto je rozhraní implementované v společný typ language runtime (CLR) určené `name` atribut `service` elementu.  
   
--   [\<koncový bod > referenční dokumentace elementu](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)  
+-   [\<endpoint>](../configure-apps/file-schema/wcf/endpoint-element.md)  
   
 ### <a name="the-bindings-element"></a>\<Vazby > – Element  
  `bindings` Prvek obsahuje specifikace pro všechny vazby, které může používat libovolný koncový bod definovaný v libovolnou službu.  
@@ -101,7 +101,7 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
 ### <a name="the-binding-element"></a>\<Vazby > – Element  
  `binding` Elementů obsažených v `bindings` element může být buď jeden vazeb poskytovaných systémem (naleznete v tématu [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md)) nebo vlastní vazby (naleznete v tématu [vlastních vazeb](../../../docs/framework/wcf/extending/custom-bindings.md)). `binding` Element má `name` atributů, které souvisí s koncového bodu určeného v vazbu `bindingConfiguration` atribut `endpoint` elementu. Pokud není zadán žádný název, pak je, že vazba odpovídá na výchozí hodnotu tohoto typu vazby.  
   
- Další informace o konfiguraci služeb a klientů najdete v tématu [konfigurace Windows Communication Foundation aplikací](https://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
+Další informace o konfiguraci služeb a klientů najdete v tématu [konfigurace WCF services](configuring-services.md).
   
  [\<Vytvoření vazby >](../../../docs/framework/misc/binding.md)  
   
@@ -264,6 +264,6 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
   
 ## <a name="see-also"></a>Viz také:
 - [Zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md)
-- [Konfigurace aplikací Windows Communication Foundation](https://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a)
+- [Konfigurace služeb WCF](configuring-services.md)
 - [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)
 - [\<Vytvoření vazby >](../../../docs/framework/misc/binding.md)

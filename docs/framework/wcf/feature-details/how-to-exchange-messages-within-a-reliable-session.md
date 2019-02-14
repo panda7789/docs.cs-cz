@@ -2,18 +2,18 @@
 title: 'Postupy: Výměna zpráv ve spolehlivých relacích'
 ms.date: 03/30/2017
 ms.assetid: 87cd0e75-dd2c-44c1-8da0-7b494bbdeaea
-ms.openlocfilehash: 0b03845f9638a3646c72b1210de12dd94cf4cc9f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 145224655d1ec76c9deb5afc3c1a8ec9a1975f4f
+ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54720051"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56260683"
 ---
 # <a name="how-to-exchange-messages-within-a-reliable-session"></a>Postupy: Výměna zpráv ve spolehlivých relacích
 
 Toto téma popisuje kroky potřebné k povolení stabilní relace pomocí jedné vazby poskytované systémem, které podporují tyto relace, ale není ve výchozím nastavení. Povolit stabilní relace imperativně pomocí kódu nebo deklarativně v konfiguračním souboru. Tento postup používá konfiguračních souborů klienta a služby, pokud chcete povolit ve stabilní relaci a stanovit, že zprávy dorazí ve stejném pořadí, ve kterém byly odeslány.
 
-Klíčovou součástí tohoto postupu je, že obsahují element konfigurace koncového bodu `bindingConfiguration` atribut, který odkazuje na vazbu konfigurace s názvem `Binding1`. [  **\<Vazby >** ](../../../../docs/framework/misc/binding.md) element konfigurace odkazuje na tento název a povolit tak, že nastavíte spolehlivé relace `enabled` atribut [  **\<reliableSession >** ](https://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) elementu `true`. Zadejte záruky doručení pro spolehlivé relace tak, že nastavíte `ordered` atribut `true`.
+Klíčovou součástí tohoto postupu je, že obsahují element konfigurace koncového bodu `bindingConfiguration` atribut, který odkazuje na vazbu konfigurace s názvem `Binding1`. [  **\<Vazby >** ](../../../../docs/framework/misc/binding.md) element konfigurace odkazuje na tento název a povolit tak, že nastavíte spolehlivé relace `enabled` atribut [  **\<reliableSession >** ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731302(v=vs.100)) elementu `true`. Zadejte záruky doručení pro spolehlivé relace tak, že nastavíte `ordered` atribut `true`.
 
 Pro zdrojovou kopii tohoto příkladu, naleznete v tématu [spolehlivá relace WS](../../../../docs/framework/wcf/samples/ws-reliable-session.md).
 
