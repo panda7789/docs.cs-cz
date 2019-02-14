@@ -1,63 +1,55 @@
 ---
-title: 'Postupy: Vytvoření vazby dat na ovládacím prvku Windows Forms DataGridView'
-ms.date: 03/30/2017
+title: 'Postupy: Vytvoření vazby dat na ovládací prvek Windows Forms DataGridView'
+ms.date: 02/08/2019
 dev_langs:
 - csharp
 - vb
-- cpp
 helpviewer_keywords:
 - data binding [Windows Forms], grids
 - data binding [Windows Forms], DataGridView control
 - DataGridView control [Windows Forms], data binding
 ms.assetid: 1660f69c-5711-45d2-abc1-e25bc6779124
-ms.openlocfilehash: eefc588ef8f637e91bfcad1bcc24d88bb0078fdc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+author: rpetrusha
+ms.author: ronpet
+ms.openlocfilehash: 0d9b72766ce2e93472a07eebdf7bf59cc7b0328d
+ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54744385"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "56220570"
 ---
-# <a name="how-to-bind-data-to-the-windows-forms-datagridview-control"></a>Postupy: Vytvoření vazby dat na ovládacím prvku Windows Forms DataGridView
-<xref:System.Windows.Forms.DataGridView> Ovládací prvek podporuje standardní Windows Forms datový model vazby, proto vytvoří vazbu k řadě zdrojů dat. Ve většině případů však můžete vytvoří vazbu <xref:System.Windows.Forms.BindingSource> komponenta, která bude spravovat podrobnosti o práci se zdrojem dat. <xref:System.Windows.Forms.BindingSource> Součásti může představovat libovolný zdroj dat Windows Forms a poskytuje flexibilitu při výběru nebo změně umístění vaše data. Další informace o zdrojích dat podporovaných službou <xref:System.Windows.Forms.DataGridView> řídí, najdete v článku [Přehled ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md).  
+# <a name="how-to-bind-data-to-the-windows-forms-datagridview-control"></a>Postupy: Vytvoření vazby dat na ovládací prvek Windows Forms DataGridView
+
+<xref:System.Windows.Forms.DataGridView> Ovládací prvek podporuje standardní Windows Forms datový model vazby, aby mohl vytvořit vazbu k řadě zdrojů dat. Obvykle můžete svázat <xref:System.Windows.Forms.BindingSource> , který spravuje interakci se zdroji dat. <xref:System.Windows.Forms.BindingSource> Může být libovolný zdroj dat Windows Forms, který dává velkou flexibilitu při výběru nebo úpravách umístění vašich dat. Další informace o zdrojích dat <xref:System.Windows.Forms.DataGridView> podporuje ovládací prvek, najdete v článku [Přehled ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md).  
+
+Visual Studio poskytuje rozsáhlou podporu pro vytváření datových vazeb k ovládacím prvku DataGridView. Další informace najdete v tématu [jak: Vytvoření vazby dat na ovládací prvek Windows Forms DataGridView pomocí návrháře](https://msdn.microsoft.com/library/33w255ac\(v=vs.110\)).  
+
+Ovládací prvek DataGridView připojení k datům:
+
+1. Implementujte metodu ke zpracování detaily o načtení data. Následující příklad kódu implementuje `GetData` metodu, která inicializuje <xref:System.Data.SqlClient.SqlDataAdapter>a použije ho k vyplnění <xref:System.Data.DataTable>. Potom naváže <xref:System.Data.DataTable> k <xref:System.Windows.Forms.BindingSource>. 
+
+2. Do formuláře <xref:System.Windows.Forms.Form.Load> obslužná rutina události, vazba <xref:System.Windows.Forms.DataGridView> ovládací prvek <xref:System.Windows.Forms.BindingSource>a volat `GetData` metody, aby se načetla data.  
+
+## <a name="example"></a>Příklad
+
+Tento příklad úplného kódu načte data z databáze k naplnění ovládacího prvku DataGridView ve formuláři Windows. Formulář obsahuje také tlačítek na hodnotu znovu načte data a odeslání změn do databáze.  
+
+Tento příklad vyžaduje: 
+
+- Přístup k ukázkové databázi Northwind SQL Server. Další informace o instalaci ukázkové databáze Northwind naleznete v tématu [získat ukázkových databází pro ukázky kódu ADO.NET](../../data/adonet/sql/linq/downloading-sample-databases.md). 
+
+- Odkazy na sestavení systému, System.Windows.Forms, System.Data a System.Xml.  
+
+Chcete-li sestavit a spustit tento příklad, vložte kód do *Form1* soubor kódu v novém projektu Windows Forms.  Další informace najdete v tématu [jak: Kompilace a spuštění kompletního příkladu kódu Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)). Informace o vytváření z C# nebo příkazového řádku jazyka Visual Basic, naleznete v tématu [příkazového řádku pomocí csc.exe](/csharp/language-reference/compiler-options/command-line-building-with-csc-exe) nebo [sestavení z příkazového řádku](/visual-basic/reference/command-line-compiler/building-from-the-command-line).  
   
- Není k dispozici rozsáhlou podporu pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Vytvoření vazby dat k Windows Forms DataGridView pomocí návrháře](https://msdn.microsoft.com/library/33w255ac\(v=vs.110\)).  
-  
-## <a name="procedure"></a>Postup  
-  
-#### <a name="to-connect-a-datagridview-control-to-data"></a>Pro připojení k datům ovládacího prvku DataGridView  
-  
-1.  Implementujte metodu ke zpracování detaily o načtení dat z databáze. Následující příklad kódu implementuje `GetData` metodu, která inicializuje <xref:System.Data.SqlClient.SqlDataAdapter> komponenty a použije ho k vyplnění <xref:System.Data.DataTable>. <xref:System.Data.DataTable> Pak je vázán <xref:System.Windows.Forms.BindingSource> komponenty. Nezapomeňte nastavit `connectionString` proměnných na hodnotu, která je vhodná pro vaši databázi. Budete potřebovat přístup k serveru s ukázkovou databází Northwind SQL Server nainstalovaný.  
-  
-     [!code-cpp[System.Windows.Forms.DataGridViewBoundEditable#20](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/cpp/datagridviewboundeditable.cpp#20)]
-     [!code-csharp[System.Windows.Forms.DataGridViewBoundEditable#20](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/CS/datagridviewboundeditable.cs#20)]
-     [!code-vb[System.Windows.Forms.DataGridViewBoundEditable#20](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/VB/datagridviewboundeditable.vb#20)]  
-  
-2.  Do formuláře <xref:System.Windows.Forms.Form.Load> obslužná rutina události, vazba <xref:System.Windows.Forms.DataGridView> ovládací prvek <xref:System.Windows.Forms.BindingSource> součást a volání `GetData` metodu pro načtení dat z databáze.  
-  
-     [!code-cpp[System.Windows.Forms.DataGridViewBoundEditable#10](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/cpp/datagridviewboundeditable.cpp#10)]
-     [!code-csharp[System.Windows.Forms.DataGridViewBoundEditable#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/CS/datagridviewboundeditable.cs#10)]
-     [!code-vb[System.Windows.Forms.DataGridViewBoundEditable#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/VB/datagridviewboundeditable.vb#10)]  
-  
-## <a name="example"></a>Příklad  
- Následující příklad kompletní kód obsahuje tlačítka pro opětovné načtení dat z databáze a odeslání změn do databáze.  
-  
- [!code-cpp[System.Windows.Forms.DataGridViewBoundEditable#00](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/cpp/datagridviewboundeditable.cpp#00)]
- [!code-csharp[System.Windows.Forms.DataGridViewBoundEditable#00](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/CS/datagridviewboundeditable.cs#00)]
- [!code-vb[System.Windows.Forms.DataGridViewBoundEditable#00](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/VB/datagridviewboundeditable.vb#00)]  
-  
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Tento příklad vyžaduje:  
-  
--   Odkazy na sestavení systému, System.Windows.Forms, System.Data a System.XML.  
-  
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
-  
-## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Ukládání citlivých informací, jako jsou hesla, v rámci připojovací řetězec může ovlivnit zabezpečení aplikace. Bezpečnější způsob, jak řídit přístup k databázi, je ověřování systému Windows (označované také jako integrované zabezpečení). Další informace najdete v tématu [chrání informace o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md).  
+Naplnění `connectionString` proměnné v příkladu nahraďte hodnoty pro připojení ukázkové databáze Northwind SQL Server. Ověřování Windows, nazývané také integrovaného zabezpečení, je bezpečnější způsob, jak se připojit k databázi než uložení hesla v připojovacím řetězci. Další informace o zabezpečení připojení najdete v tématu [chránit informace o připojení](../../data/adonet/protecting-connection-information.md).  
+
+[!code-csharp[System.Windows.Forms.DataGridViewBoundEditable](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/CS/datagridviewboundeditable.cs)]
+[!code-vb[System.Windows.Forms.DataGridViewBoundEditable](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewBoundEditable/VB/datagridviewboundeditable.vb)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.BindingSource>
-- [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/displaying-data-in-the-windows-forms-datagridview-control.md)
-- [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)
+- [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](displaying-data-in-the-windows-forms-datagridview-control.md)
+- [Chránit informace o připojení](../../data/adonet/protecting-connection-information.md)
