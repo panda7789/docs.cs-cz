@@ -2,12 +2,12 @@
 title: Zpracování chyb
 ms.date: 03/30/2017
 ms.assetid: c948841a-7db9-40ae-9b78-587d216cbcaf
-ms.openlocfilehash: 396ad7ba6f690cedf783adcf180c92a88427a959
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ddc3921fbb6b453db43ed3939134650395ade670
+ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54695553"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56261149"
 ---
 # <a name="error-handling"></a>Zpracování chyb
 ## <a name="error-handling-in-windows-communication-foundation"></a>Zpracování chyb v Windows Communication Foundation  
@@ -22,7 +22,7 @@ ms.locfileid: "54695553"
   
  Bloky aplikace cílem začlenění běžně používaných osvědčené postupy a poskytují běžný postup pro zpracování v rámci aplikace výjimek. Na druhé straně obslužné rutiny vlastních chyb a selhání kontraktů vyvinuté v vlastního může také být velmi užitečné. Například obslužné rutiny vlastních chyb poskytuje skvělou příležitost se automaticky zvýšit úroveň všech výjimek FaultExceptions a také pro přidání možností protokolování do vaší aplikace.  
   
- Další informace najdete v tématu [Microsoft Enterprise Library](https://msdn.microsoft.com/library/ff632023.aspx).  
+ Další informace najdete v tématu [Microsoft Enterprise Library](https://docs.microsoft.com/previous-versions/msp-n-p/ff632023(v=pandp.10)).  
   
 ### <a name="dealing-with-expected-exceptions"></a>Práce s očekávané výjimky  
  Správný kurz akce má zachytit očekávané výjimky v každé operace nebo bod relevantní rozšiřitelnosti, rozhodnout, zda je možné obnovit z a vrátí správné vlastní chyby v FaultException\<T >  
