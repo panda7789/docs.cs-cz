@@ -2,12 +2,12 @@
 title: Zprostředkovatel tokenu
 ms.date: 03/30/2017
 ms.assetid: 947986cf-9946-4987-84e5-a14678d96edb
-ms.openlocfilehash: ba611b3701c5bcd3ef073f43567d847a6d6dab64
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dd27566886db62a6f06502749212ed4109c17a28
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54569489"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304983"
 ---
 # <a name="token-provider"></a>Zprostředkovatel tokenu
 Tento příklad ukazuje, jak implementovat vlastní zprostředkovatele tokenu. Poskytovatel tokenu ve Windows Communication Foundation (WCF) slouží k poskytnutí přihlašovacích údajů k zabezpečení infrastruktury. Poskytovatel tokenu obecně zkontroluje cíl a problémů příslušné přihlašovací údaje tak, aby infrastruktura zabezpečení se dají zabezpečit zprávy. WCF se dodává s výchozí poskytovatel tokenu přihlašovacích údajů správce. WCF se také dodává se [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:
@@ -265,7 +265,7 @@ static void DisplayIdentityInformation()
   
 5.  Na výzvu k zadání hesla použijte stejný řetězec, který byl zadán pro řádek uživatelské jméno.  
   
-6.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+6.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
   
@@ -287,7 +287,7 @@ static void DisplayIdentityInformation()
   
 9. Na klientském počítači spusťte `Client.exe` z okna příkazového řádku.  
   
-10. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   

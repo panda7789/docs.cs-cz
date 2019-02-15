@@ -1,15 +1,15 @@
 ---
 title: Základní koncepty k tréninku modelu v ML.NET
 description: Tento článek vysvětluje základní koncepty pokrývající *model školení* scénáře v ML.NET. Ne všechny koncepty jsou relevantní pro více jednoduchého scénáře *půjček s využitím existující model*.
-ms.date: 11/06/2018
+ms.date: 02/13/2019
 ms.topic: overview
 ms.custom: mvc
-ms.openlocfilehash: cff833b45583bc752bb42616820a95ca6c5c6b12
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: c47d5832527dca1416abfc55756dca48f1daf493
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155438"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56303657"
 ---
 # <a name="basic-concepts-for-model-training-in-mlnet"></a>Základní koncepty k tréninku modelu v ML.NET
 
@@ -25,14 +25,14 @@ Tento dokument popisuje tyto koncepty související s cvičení modelu v ML.NET:
 - [*Transformer* ](#transformer) reprezentovaná jako `ITransformer` rozhraní.
   - Transformátoru je komponenta, která přijímá data, některé funguje na něj a vrátí nový Transformovaná data.
   - Můžete například představit model strojového učení jako transformátoru, která přijímá funkce a vrátí předpovědi.
-  - Další příklad, text tokenizátor přijímá jeden textový sloupec a výstupní sloupce vektoru s jednotlivá slova extrahovaná z texty.
+  - Další příklad, text tokenizátor přijímá jeden textový sloupec a vypíše vektoru sloupec s jednotlivá slova extrahovaná z texty.
 - [*Čtecí modul dat* ](#data-reader) reprezentovaná jako `IDataReader<T>` rozhraní.
   - Čtecí modul dat není ML.NET komponentu data vytváří. Použije instanci `T` a vrátí data z ní. 
-  - Například *TextLoader* je `IDataReader<FileSource>`. Vezme zdrojového souboru a vytvoří data. 
+  - Například *TextLoader* je `IDataReader<IMultiStreamSource>`. Vezme zdroji a vytvoří data. 
 - [*Odhad* ](#estimator) reprezentovaná jako `IEstimator<T>` rozhraní.
   - Toto je objekt, který zjistí od data. Výsledek Learning *transformer*.
   - Si můžete představit služby machine learning *algoritmus* jako odhad, který učí s daty a machine learningu vytváří *modelu*.
-- [*Funkce předpovědi* ](#prediction-function) vyjádřené `PredictionFunction<TSrc, TDst>` třídy.
+- [*Funkce předpovědi* ](#prediction-function) vyjádřené `PredictionEngine<TSrc, TDst>` třídy.
   - Funkce předpovědi se dají považovat za počítač, který se vztahuje na jeden řádek, transformátoru, jako v době předpovědi.
 
 ## <a name="data"></a>Data
@@ -48,13 +48,13 @@ Data jsou v ML.NET, podobně jako zobrazení SQL: Jde laxně Vyhodnocená, schem
 
 ## <a name="transformer"></a>Transformer
 
-Transformátoru je komponenta, která přijímá data, některé s ní pracují a vrátí nový Transformovaná data.
+Transformátoru je komponenta, která přijímá data, některé funguje na něj a vrátí nový Transformovaná data.
 
-Většina transformátory v ML.NET mají tendenci provozovat na jednom *vstupní sloupec* v době a vytvoří *výstupní sloupec*. Například `new HashTransformer("foo", "bar")` přijímá hodnoty ze sloupce "foo", je pomocí algoritmu hash a umístit je do sloupce "panel". 
+Většina transformátory v ML.NET mají tendenci provozovat na jednom *vstupní sloupec* v době a vytvoří *výstupní sloupec*. Například `new HashTransformer("bar", "foo")` vezme hodnoty ze sloupce "foo", hash je a umístí je do sloupce "panel". 
 
-Také je běžné, že názvy sloupců vstupních a výstupních jsou stejné. V takovém případě staré sloupce se nahradí novým. Například `new HashTransformer("foo")` vezme hodnoty ze sloupce "foo", hodnota hash je a put je zpět do "foo". 
+Také je běžné, že názvy sloupců vstupních a výstupních jsou stejné. V takovém případě staré sloupce se nahradí novým. Například `new HashTransformer("foo")` vezme hodnoty ze sloupce "foo", je hash a vrátí zpět do "foo". 
 
-Všechny transformace, samozřejmě, vytváří nová data zobrazit při `Transform` je volána. Mějte na paměti, data zobrazení jsou neměnné.
+Všechny transformace, vytvoří nová data zobrazit při `Transform` je volána. Mějte na paměti, data zobrazení jsou neměnné.
 
 Další důležitý aspekt spočívá, protože laxně vyhodnocení dat *transformátory jsou příliš opožděné*. V podstatě po volání
 
@@ -62,29 +62,29 @@ Další důležitý aspekt spočívá, protože laxně vyhodnocení dat *transfo
 var newData = transformer.Transform(oldData)
 ```
 
-žádný skutečný výpočtu se stane. Až poté, co se zobrazí kurzor z `newData` a provede počáteční hodnota využívání `newData` vyvolat `transformer` logiku transformace (a ještě, že pouze pokud `transformer` dotyčný je potřeba k vytvoření požadované sloupce).
+žádný skutečný výpočtu se stane. Až poté, co se zobrazí kurzor z `newData` a provede počáteční hodnota využívání `newData` vyvolat `transformer` logiku transformace (a dokonce i pak ji pouze se stane, když `transformer` dotyčný je potřeba k vytvoření požadované sloupce).
 
 ### <a name="transformer-chains"></a>Transformace řetězců
 
-Je užitečné vlastnost transformátoru *sekvenční provádění transformátory můžete frázi zatím jiné transformer*:
+Je užitečné vlastnost transformátoru *můžete vytvářet aplikace sekvenčního transformátorů zatím jiné transformer*:
 
 ```csharp
 var fullTransformer = transformer1.Append(transformer2).Append(transformer3);
 ```
 
-Tato vlastnost se běžně používá v ML.NET: obvykle trénovaného modelu ML.NET je řetězec transformátory, což je pro veškeré záměry a úmysly, *transformer*. 
+Tato vlastnost se běžně používá v ML.NET: obvykle trénovaného modelu ML.NET je řetězec transformátory, což je pro veškeré záměry a úmysly, *transformer*.
 
 ## <a name="data-reader"></a>Čtecí modul dat
 
-Čtecí modul dat není ML.NET součást pro vytváření dat: použije instanci `T` a vrátí data z ní.
+Čtecí modul dat je ML.NET součást pro vytváření dat: použije instanci `T` a vrátí data z ní.
 
 Zajímavé vlastnost si je, že můžete vytvořit čtecí modul dat transformátoru připojením k existující čtecí modul dat. Tímto způsobem může mít čtečku s vloženými chování transformace:
 
-```c#
+```csharp
 var newReader = reader.Append(transformer1).Append(transformer2)
 ```
 
-Jiné podobnosti transformátory je, že od laxně vyhodnocení dat *čtenáři jsou opožděná*: žádný (nebo minimální) skutečné "čtení" se stane, když voláte `dataReader.Read()`: pouze pokud je požadováno kurzor na Výsledná data se Čtečka začít pracovat.
+Jiné podobnosti transformátory je, že od laxně vyhodnocení dat *čtenáři jsou opožděná*: žádný (nebo minimální) skutečné "čtení" se stane, když voláte `reader.Read()`: pouze pokud je požadováno kurzor na Výsledná data se Čtečka začít pracovat.
 
 ## <a name="estimator"></a>Odhad
 
@@ -95,12 +95,12 @@ V ML.NET lze tuto vlastnost použijte k vytvoření kanálů učení, které zř
 ```csharp
 MLContext mlContext = new MLContext(seed: 0);
 
-var pipeline = new CopyColumnsEstimator(mlContext, "FareAmount", "Label")
-.Append(mlContextml.Transforms.Categorical.OneHotEncoding(mlContext, "VendorId"))
-.Append(mlContextml.Transforms.Categorical.OneHotEncoding(mlContext, "RateCode"))
-.Append(mlContextml.Transforms.Categorical.OneHotEncoding(mlContext, "PaymentType"))
-.Append(new ColumnConcatenatingEstimator(mlContext, "Features", "VendorId", "RateCode", "PassengerCount", "TripTime", "TripDistance", "PaymentType"))
-.Append(mlContext.Regression.Trainers.FastTree("Label", "Features"));
+var pipeline = mlContext.Transforms.CopyColumns("Label","FareAmount")
+    .Append(mlContext.Transforms.Categorical.OneHotEncoding("VendorId"))
+    .Append(mlContext.Transforms.Categorical.OneHotEncoding("RateCode"))
+    .Append(mlContext.Transforms.Categorical.OneHotEncoding("PaymentType"))
+    .Append(mlContext.Transforms.Concatenate("Features","VendorId","RateCode","PassengerCount","TripTime","TripDistance","PaymentType"))
+    .Append(mlContext.Regression.Trainers.FastTree("Label","Features"));
 
 var model = pipeline.Fit(dataView);
 ```
@@ -109,7 +109,7 @@ Důležité vlastnictví odhady je, že *odhady se nemůžou dočkat, až, ne op
 
 ## <a name="prediction-function"></a>Funkce předpovědi
 
-Funkce předpovědi se dají považovat za počítač, který transformátoru se vztahuje na jeden řádek.
+Funkce předpovědi se dají považovat za součást, která transformátoru se vztahuje na jeden řádek.
 
 Po načtení modelu ( *transformer* buď školení prostřednictvím `Fit()`, nebo načíst z oblasti), ve kterém můžete vytvářet predikce na normální volání `model.Transform(data)`. Ale při použití tohoto modelu v reálné situaci často není nutné mnoho příkladů k předpovědi na. Místo toho jste jedním z příkladů v čase a je třeba provést včas predikcí okamžitě s nimi.
 
@@ -123,17 +123,17 @@ Samozřejmě to můžete snížit na predikce služby batch:
 
 Předchozí algoritmus je možné implementovat pomocí [pochopení schématu](https://github.com/dotnet/machinelearning/blob/master/docs/code/SchemaComprehension.md), s dvěma uživatelem definované objekty `InputExample` a `OutputPrediction` následujícím způsobem:
 
-```c#
-var inputData = env.CreateDataView(new InputExample[] { example });
+```csharp
+var inputData = mlContext.Data.ReadFromEnumerable(new InputExample[] { example });
 var outputData = model.Transform(inputData);
-var output = outputData.AsDynamic.AsEnumerable<OutputPrediction>(env, reuseRowObject: false).Single();
+var output = mlContext.CreateEnumerable<OutputPrediction>(outputData,reuseRowObject:false).First();
 ```
 
-Ale to je náročné a má za následek nákladů na výkon. Místo toho objekt funkce předpovědi provádí stejný pracovní, ale rychleji a efektivněji pomocí metody rozšíření `MakePredictionFunction`:
+Ale to je náročné a má za následek nákladů na výkon. Místo toho objekt funkce předpovědi provádí stejný pracovní, ale rychleji a efektivněji pomocí metody rozšíření `CreatePredictionEngine`:
 
-```c#
-var predictionFunc = model.MakePredictionFunction<InputExample, OutputPrediction>(env);
-var output = predictionFunc.Predict(example);
+```csharp
+var predictionEngine = model.CreatePredictionEngine<InputExample,OutputPrediction>(mlContext);
+var prediction = predictionEngine.Predict(example);
 ```
 
 Funkce předpovědi je *není vícenásobně / bezpečné pro vlákna*. Pokud chcete provádět předpovědi současně s více vlákny, musíte mít funkci předpovědi na vlákno.

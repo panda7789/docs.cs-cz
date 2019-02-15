@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: d4c3801e81efc7af1afbf15d882a9d13ad552524
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8de1d1b1f2bfe385a815eb6147b79a1dc2be0206
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717555"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304892"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Automatizace uživatelského rozhraní a změna velikosti obrazovky
 > [!NOTE]
@@ -65,7 +65,7 @@ ms.locfileid: "54717555"
      [!code-csharp[Highlighter#101](../../../samples/snippets/csharp/VS_Snippets_Wpf/Highlighter/CSharp/NativeMethods.cs#101)]
      [!code-vb[Highlighter#101](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Highlighter/VisualBasic/NativeMethods.vb#101)]  
   
-     Celý proces díky této funkci [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]-vědět, což znamená, že jsou všechny systémy windows, které patří do procesu bez měřítka. V [zvýrazňovači nepoužívaného ukázka](https://msdn.microsoft.com/library/19ba4577-753e-4efd-92cc-c02ee67c1b69), například čtyři windows, které tvoří obdélník zvýraznění se nacházejí ve fyzické souřadnice získané z [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], ne logické souřadnice. V případě ukázky nebyly [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]-vědět, zvýraznění by být vykreslovat logické souřadnice ve stolním počítači, což by vytvořilo nesprávné umístění v non-96 - [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)] prostředí.  
+     Díky této funkci celý proces rozlišením DPI, což znamená, že jsou všechny systémy windows, které patří do procesu bez měřítka. V [zvýrazňovači nepoužívaného ukázka](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/Highlighter), například se nacházejí ve fyzické souřadnice získané z automatizace uživatelského rozhraní, není logický souřadnice čtyři windows, které tvoří zvýraznění obdélník. V případě ukázky nebyly rozlišením DPI, zvýraznění by být vykreslovat logické souřadnice ve stolním počítači, což by vytvořilo nesprávné umístění v prostředí 96 dpi.  
   
 2.  Chcete-li získat souřadnice kurzoru, zavolejte [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] funkce `GetPhysicalCursorPos`. Následující příklad ukazuje, jak deklarace a používání této funkce.  
   
@@ -78,4 +78,4 @@ ms.locfileid: "54717555"
  Pokud vaše aplikace provádí přímou komunikaci mezi procesy s jinou hodnotu než [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]– aplikace používající, může mít převádění mezi logické a fyzické souřadnice pomocí [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] funkce `PhysicalToLogicalPoint` a `LogicalToPhysicalPoint`.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ukázka zvýrazňovači nepoužívaného](https://msdn.microsoft.com/library/19ba4577-753e-4efd-92cc-c02ee67c1b69)
+- [Ukázka zvýrazňovači nepoužívaného](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/Highlighter)

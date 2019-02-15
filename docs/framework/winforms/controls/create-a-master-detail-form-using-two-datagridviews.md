@@ -9,12 +9,12 @@ helpviewer_keywords:
 - parent-child tables [Windows Forms], displaying on Windows Forms
 - master-details lists [Windows Forms], creating
 ms.assetid: 99f6e876-3f7f-4139-9063-e36587c95b02
-ms.openlocfilehash: 4d6ea3d22919d8407d881e60993f9fe920d446d0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e6bfaa932415251d975149dab469d52de209c24b
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54640728"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56303579"
 ---
 # <a name="how-to-create-a-masterdetail-form-using-two-windows-forms-datagridview-controls"></a>Postupy: Vytvoření hlavního/podrobného formuláře pomocí dvou prvkům Windows Forms DataGridView
 Následující příklad kódu vytvoří hlavního/podrobného formuláře pomocí dvou <xref:System.Windows.Forms.DataGridView> ovládací prvky vázané na dva <xref:System.Windows.Forms.BindingSource> komponenty. Zdroj dat je <xref:System.Data.DataSet> obsahující `Customers` a `Orders` tabulek z ukázkové databáze Northwind SQL Server spolu s <xref:System.Data.DataRelation> , který se týká obou prostřednictvím `CustomerID` sloupec.  
@@ -32,7 +32,7 @@ Následující příklad kódu vytvoří hlavního/podrobného formuláře pomoc
   
  Odkazy na sestavení systému, System.Data, System.Windows.Forms a System.XML.  
   
--   Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+-   Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Ukládání citlivých informací, jako jsou hesla, v rámci připojovací řetězec může ovlivnit zabezpečení aplikace. Bezpečnější způsob, jak řídit přístup k databázi, je ověřování systému Windows (označované také jako integrované zabezpečení). Další informace najdete v tématu [chrání informace o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md).  

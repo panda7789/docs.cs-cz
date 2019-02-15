@@ -9,12 +9,12 @@ helpviewer_keywords:
 - icons [Windows Forms], toolbar buttons
 - ToolBar control [Windows Forms], adding icons to buttons
 ms.assetid: d848f38e-67f2-49d4-8e88-01c845c06c02
-ms.openlocfilehash: bfd84913015eaf45674b3cd0c7a3d53a202874c6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ba24cb13b80a90bbf309ae23de15b33caf14735b
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527065"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56303371"
 ---
 # <a name="how-to-define-an-icon-for-a-toolbar-button-using-the-designer"></a>Postupy: Definování ikony pro tlačítko ToolBar pomocí návrháře
 > [!NOTE]
@@ -22,7 +22,7 @@ ms.locfileid: "54527065"
   
  <xref:System.Windows.Forms.ToolBar> tlačítka budou moct zobrazit ikony v nich pro snadnou identifikaci uživatelů. Toho můžete dosáhnout přidávání obrázků na <xref:System.Windows.Forms.ImageList> komponenty a přidružíte ho <xref:System.Windows.Forms.ToolBar> ovládacího prvku.  
   
- Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.ToolBar> ovládacího prvku a <xref:System.Windows.Forms.ImageList> komponenty. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows](https://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  
+ Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.ToolBar> ovládacího prvku a <xref:System.Windows.Forms.ImageList> komponenty. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  
   
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  

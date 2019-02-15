@@ -13,12 +13,12 @@ helpviewer_keywords:
 - composite controls [Windows Forms], creating
 - custom controls [Windows Forms], creating
 ms.assetid: f50e270e-4db2-409a-8319-6db6ca5c7daf
-ms.openlocfilehash: e961826f4c33edf59934597734aec36ce301194e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ddc18c571d65d95b8ffc84f9b7d84213e527689b
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694383"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56305815"
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-basic"></a>Průvodce: Vytvoření složeného ovládacího prvku s jazykem Visual Basic
 Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní grafické rozhraní a znovu použít. Složený ovládací prvek je v podstatě komponent pomocí vizuální reprezentace. V důsledku toho může obsahovat jeden nebo více Windows Forms ovládací prvky, komponenty nebo bloky kódu, který můžete rozšířit funkce ověřování uživatelského vstupu, změnou zobrazení vlastností nebo provádění jiných úloh vyžaduje autorem. Složené ovládací prvky mohou být umístěny ve Windows Forms stejným způsobem jako ostatní ovládací prvky. V první části tohoto návodu vytvoříte jednoduchou složeného ovládacího prvku volá `ctlClock`. V druhé části tohoto průvodce, které rozšiřují funkce nástroje `ctlClock` prostřednictvím dědičnosti.  
@@ -356,7 +356,7 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 11. Následujícím způsobem nastavte vlastnosti těchto ovládacích prvků.  
   
-    |Ovládací prvek|Vlastnost|Hodnota|  
+    |Control|Vlastnost|Hodnota|  
     |-------------|--------------|-----------|  
     |`label1`|**Text**|`(blank space)`|  
     ||**Název**|`lblTest`|  
@@ -399,4 +399,3 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
 - [Typy vlastních ovládacích prvků](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)
 - [Postupy: Vytváření složených ovládacích prvků](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md)
 - [Postupy: Zobrazení ovládacího prvku v zvolit položky panelu nástrojů – dialogové okno](../../../../docs/framework/winforms/controls/how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
-- [Návody pro vytváření součástí](https://msdn.microsoft.com/library/c414cca9-2489-4208-8b38-954586d91c13)

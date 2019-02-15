@@ -2,12 +2,12 @@
 title: Spouštění ukázek Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: db8a83da-95c1-4a21-a9d2-48caeb6398ea
-ms.openlocfilehash: 3ae982b49a0d54d59d889166375938560c0d0d1b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: aec7d7f9ce0a6db5d20bce47ab313f4248e86c88
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54535877"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304671"
 ---
 # <a name="running-the-windows-communication-foundation-samples"></a>Spouštění ukázek Windows Communication Foundation
 Ukázky Windows Communication Foundation (WCF) můžete spustit v konfiguraci jednoho počítače nebo mezi počítači. Jako zadán, ukázky jsou připravené ke spuštění na jednom počítači. V konfiguraci mezi počítači je nutné upravit nastavení tohoto příkladu konfiguračního souboru. Následující postupy popisují, jak ve stejném počítači a mezi počítači konfiguracích spuštění ukázky. Všimněte si, že jsou změny v postupu pro služby hostované v Internetové informační služby (IIS) a ukázky v místním prostředí. Většina ukázek, které jsou hostované ve službě IIS; Podívejte se ukázkovými informacemi o souboru readme k určení, jak je hostovaná.  
@@ -19,13 +19,13 @@ Ukázky Windows Communication Foundation (WCF) můžete spustit v konfiguraci je
   
 ### <a name="to-run-the-sample-on-the-same-machine"></a>Ke spuštění ukázky ve stejném počítači  
   
-1.  Pokud je služba hostována službou IIS, ujistěte se, že jste přístup ke službě pomocí prohlížeče zadáním následující adresy: `http://localhost/servicemodelsamples/service.svc`. Stránka s potvrzením má být zobrazena v odpovědi. Pokud se nezobrazí na stránce potvrzení, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+1.  Pokud je služba hostována službou IIS, ujistěte se, že jste přístup ke službě pomocí prohlížeče zadáním následující adresy: `http://localhost/servicemodelsamples/service.svc`. Stránka s potvrzením má být zobrazena v odpovědi. Pokud se nezobrazí na stránce potvrzení, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 2.  Pokud služba je samoobslužně hostovaná, spusťte Service.exe z \service\bin ze složky specifické pro jazyk. Aktivita služby se zobrazí v okně konzoly služby.  
   
 3.  Spustit Client.exe z \client\bin\\, ze složky specifické pro jazyk. Činnost klienta se zobrazí v okně konzoly klienta.  
   
-4.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-machines"></a>Ke spuštění ukázky v počítačích  
   
@@ -81,5 +81,4 @@ Ukázky Windows Communication Foundation (WCF) můžete spustit v konfiguraci je
   
 ## <a name="see-also"></a>Viz také:
 - [Ukázky vytváření Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md)
-- [Spouštění ukázek v pracovní skupině a v počítačích](https://msdn.microsoft.com/library/a451a525-e7ce-452d-9da9-620221260113)
-- [Tipy pro odstraňování potíží](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b)
+- [Řešení potíží s tipy pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))

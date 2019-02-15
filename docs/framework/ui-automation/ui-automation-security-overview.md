@@ -7,16 +7,16 @@ helpviewer_keywords:
 ms.assetid: 1d853695-973c-48ae-b382-4132ae702805
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: b35014993f10c3a60c16f784e7dd11b9a20f4f4c
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: d86293e2d8fedab1d9ed8a5dc0ad59bd1f386d93
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582132"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56303865"
 ---
 # <a name="ui-automation-security-overview"></a>Přehled zabezpečení automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Tento přehled popisuje model zabezpečení pro [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] v [!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)].  
   
@@ -60,4 +60,4 @@ ms.locfileid: "48582132"
   
  `UIAccess` je ve výchozím nastavení; "false" To znamená, pokud atribut vynecháte nebo pokud neexistuje žádný manifest sestavení, aplikace nebude schopen získat přístup k chráněné [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
   
- Další informace o [!INCLUDE[TLA#tla_longhorn2](../../../includes/tlasharptla-longhorn2-md.md)] zabezpečení, o podepisování aplikací a o vytváření manifest sestavení, naleznete v tématu "Pro vývojáře osvědčené postupy a pokyny pro aplikace v prostředí nejnižšího" na [MSDN](https://msdn.microsoft.com/library/default.asp?url=/library/dnlong/html/AccProtVista.asp).
+ Další informace o [!INCLUDE[TLA#tla_longhorn2](../../../includes/tlasharptla-longhorn2-md.md)] najdete v článku o podepisování aplikací a k vytvoření sestavení manifesty zabezpečení [Developer doporučené postupy a pokyny pro aplikace v prostředí s nejméně privilegovaný](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480150(v=msdn.10)).

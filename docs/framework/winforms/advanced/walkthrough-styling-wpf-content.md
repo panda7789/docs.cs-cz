@@ -6,12 +6,12 @@ helpviewer_keywords:
 - interoperability [WDF]
 - styles [Windows Forms], WPF content
 ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
-ms.openlocfilehash: 45009f865589d040b0076fe0b115863d475ec488
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ef81d9272acdddfc7d547de6f44725481e55dc3e
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54725399"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56303722"
 ---
 # <a name="walkthrough-styling-wpf-content"></a>Průvodce: Určení stylu obsahu WPF
 Tento názorný postup ukazují, jak použít používání stylů pro ovládací prvek Windows Presentation Foundation (WPF) hostovaného ve formuláři Windows.
@@ -49,7 +49,7 @@ Tento názorný postup ukazují, jak použít používání stylů pro ovládac�
   
 1.  Přidat nový WPF <xref:System.Windows.Controls.UserControl> projektu do řešení. Použití výchozího názvu pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [názorný postup: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).  
   
-2.  V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [jak: Vyberte a přesuňte prvků na návrhové ploše](https://msdn.microsoft.com/library/54cb70b6-b35b-46e4-a0cc-65189399c474).  
+2.  V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [jak: Vyberte a přesuňte prvků na návrhové ploše](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100)).  
   
 3.  V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastností `200`.  
   

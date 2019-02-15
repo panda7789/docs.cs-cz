@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 428c68b6-a7b4-44be-b280-75905f46612c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 50a29800d3c5ff22845a16aabb10af7365c62474
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 230a5e3e3231ad6675d214d370f74eb37405c89c
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54722592"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56305636"
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a>Silné názvy (referenční dokumentace nespravovaného rozhraní API)
 Rozhraní API pro silné pojmenovávání umožňuje klientovi spravovat podepisování sestavení silným názvem.  
@@ -21,8 +21,6 @@ Rozhraní API pro silné pojmenovávání umožňuje klientovi spravovat podepis
  Podepisování sestavení silným názvem přidá veřejný šifrovací klíče do souboru, který obsahuje manifest sestavení. Podepisování se silným názvem pomáhají ověřit jedinečnost názvu brání falšování a poskytne volající jedinečnou identitu při odkaz je vyřešený. Žádná úroveň důvěryhodnosti je však přidružená silným názvem.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Silných názvů globálních statických funkcí](https://msdn.microsoft.com/library/efa715df-e8cc-48f2-9ec4-26586f0dc8d0)  
- Popisuje nespravované globální statické funkce, které využívá silné pojmenovávání rozhraní API.  
   
 > [!NOTE]
 >  Všechny tyto funkce jsou zastaralé od verze [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Doporučené alternativy, najdete v článku [iclrstrongname –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md) rozhraní.  
@@ -104,9 +102,6 @@ Rozhraní API pro silné pojmenovávání umožňuje klientovi spravovat podepis
   
  [StrongNameTokenFromPublicKey – funkce](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfrompublickey-function.md)  
  Získá token představující veřejný klíč. Zastaralé od verze [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
-  
- [Struktury pro silné názvy](https://msdn.microsoft.com/library/4b041a2f-fd12-4b91-aacd-bc3b34a5124d)  
- Popisuje nespravované struktury, která používá rozhraní API pro silné pojmenovávání spravovat podepisování sestavení silným názvem...  
   
  [PublicKeyBlob – struktura](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)  
  Představuje veřejného klíče dvojice veřejného/soukromého klíče v binárním formátu.  

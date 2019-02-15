@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 938e7825-f63a-4c3d-b603-63772fabfdb3
-ms.openlocfilehash: 9ee071eb88be504f7fde29b61d3a39327f0b467f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 11435dc6f941a566427c0e0cb797e84f33dd66a2
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54693435"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56303644"
 ---
 # <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF
 Fronty Ujistěte se, že může dojít spolehlivé zasílání zpráv, mezi klientem a službou Windows Communication Foundation (WCF), i v případě, že služba není k dispozici v době komunikace. Následující postupy ukazují, jak zajistit ve frontě trvalý komunikace mezi klientem a službou pomocí standardní připojení, při implementaci služby WCF.  
@@ -41,7 +41,7 @@ Fronty Ujistěte se, že může dojít spolehlivé zasílání zpráv, mezi klie
      [!code-csharp[S_Msmq_Transacted#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/hostapp.cs#4)]
      [!code-vb[S_Msmq_Transacted#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/hostapp.vb#4)]  
   
-5.  Definování <xref:System.ServiceModel.Description.ServiceEndpoint> v konfiguraci, která určuje adresu služby a využívá standardní <xref:System.ServiceModel.NetMsmqBinding> vazby. Další informace o použití konfigurace WCF najdete v tématu [konfigurace Windows Communication Foundation aplikací](https://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
+5.  Definování <xref:System.ServiceModel.Description.ServiceEndpoint> v konfiguraci, která určuje adresu služby a využívá standardní <xref:System.ServiceModel.NetMsmqBinding> vazby. Další informace o použití konfigurace WCF najdete v tématu [konfigurace WCF services](../configuring-services.md).  
   
   
   
@@ -90,6 +90,5 @@ Fronty Ujistěte se, že může dojít spolehlivé zasílání zpráv, mezi klie
 - [Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
 - [Z Windows Communication Foundation do služby Řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)
 - [Instalace služby Řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)
-- [Ukázky vazby integrace služby Řízení front zpráv](https://msdn.microsoft.com/library/997d11cb-f2c5-4ba0-9209-92843d4d0e1a)
 - [Ze služby Řízení front zpráv do Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)
 - [Zabezpečení zprávy pomocí služby Řízení front zpráv](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)

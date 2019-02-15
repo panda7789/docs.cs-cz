@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics [WPF], animation
 - animation [WPF], PointAnimation
 ms.assetid: 42310977-cc90-438a-8a47-0345898e01be
-ms.openlocfilehash: e359e712f533c861a694c53848ca0eaeb289eb21
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: db0551ba7c22e6c13ef2875e5f4ba681fc6df14d
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54495550"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304788"
 ---
 # <a name="how-to-animate-the-position-of-an-object-by-using-pointanimation"></a>Postupy: Animace umístění objektu použitím PointAnimation
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.PointAnimation> třídy animace objektu podél <xref:System.Windows.Shapes.Path>.  
@@ -31,6 +31,5 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.P
 - <xref:System.Windows.Media.EllipseGeometry.Center%2A>
 - [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
 - [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
-- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/graphics-how-to-topics.md)
-- [Animace a časování](https://msdn.microsoft.com/library/7d83765b-d5ae-41b1-b423-80206e1124aa)
-- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)
+- [Postupy: témata grafiky](graphics-how-to-topics.md)
+- [Animace a časování témata s postupy](animation-and-timing-how-to-topics.md)

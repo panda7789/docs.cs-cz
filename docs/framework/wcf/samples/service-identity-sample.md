@@ -2,12 +2,12 @@
 title: Ukázka identity služby
 ms.date: 03/30/2017
 ms.assetid: 79fa8c1c-85bb-4b67-bc67-bfaf721303f8
-ms.openlocfilehash: 1efa354f62e1b28ad6cec02d9879448205791e4a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 33d3344e6a74e2afa9ad36f9df2e36eb8e1cb17b
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54707632"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56303891"
 ---
 # <a name="service-identity-sample"></a>Ukázka identity služby
 Tato ukázka identity služby ukazuje, jak nastavit identitu služby. V době návrhu klient může načíst identitu pomocí metadat služby a za běhu pak se klient může ověřit identitu služby. Koncept identitu služby je umožnit klient k ověření služby před voláním některé z jeho operace, a tím chrání před neověřená volání klienta. Na zabezpečeném připojení služby také ověří přihlašovací údaje klienta před povolením přístupu, ale nejedná se o fokus této ukázky. Zobrazit ukázky [klienta](../../../../docs/framework/wcf/samples/client.md) , které zobrazí ověřování serveru.
@@ -126,7 +126,7 @@ class CustomIdentityVerifier : IdentityVerifier
   
 4.  Spusťte Client.exe z adresáře \client\bin nebo stisknutím klávesy F5 v sadě Visual Studio k vytvoření a spuštění. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-5.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+5.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
   
@@ -150,7 +150,7 @@ class CustomIdentityVerifier : IdentityVerifier
   
 10. Na počítači se službou spusťte Service.exe z příkazového řádku.  
   
-11. Na klientském počítači spusťte Client.exe z příkazového řádku. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+11. Na klientském počítači spusťte Client.exe z příkazového řádku. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   

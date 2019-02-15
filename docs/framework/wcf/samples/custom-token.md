@@ -2,12 +2,12 @@
 title: Vlastní token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: 93de9ae8d1d0604efbbc07fae61463599a8b9acf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d00ae6eceb00ce53ad2b0bba2c14d9c4816b12e7
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54572705"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56305624"
 ---
 # <a name="custom-token"></a>Vlastní token
 Tento příklad ukazuje, jak přidat vlastní implementaci token do aplikace Windows Communication Foundation (WCF). V příkladu se používá `CreditCardToken` bezpečně předat informace o kreditní karty klienta ke službě. Token je předán do záhlaví zprávy WS-Security je podepsaný a zašifrovaný pomocí elementu vazby zabezpečení symetrický spolu s textem zprávy a další záhlaví zpráv. To je užitečné v případech, kdy jsou předdefinované tokeny není dostatečná. Tato ukázka předvádí, jak poskytnout vlastní bezpečnostní token pro službu namísto pomocí jedné z předdefinovaných tokeny. Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.
@@ -601,7 +601,7 @@ string GetCallerCreditCardNumber()
   
 1.  Spusťte Client.exe z client\bin adresáře. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-2.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+2.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-computer"></a>Ke spuštění ukázky napříč počítači  
   
@@ -623,7 +623,7 @@ string GetCallerCreditCardNumber()
   
 9. Na klientském počítači spusťte Client.exe z okna příkazového řádku.  
   
-10. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   

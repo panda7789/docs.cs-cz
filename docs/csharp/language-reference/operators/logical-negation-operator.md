@@ -1,7 +1,7 @@
 ---
 title: '! Operator - C# odkaz'
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 02/14/2019
 f1_keywords:
 - '!_CSharpKeyword'
 helpviewer_keywords:
@@ -9,24 +9,26 @@ helpviewer_keywords:
 - logical negation operator (!) [C#]
 - NOT operator [C#]
 ms.assetid: f5ae133f-8f64-4560-b34f-cd9cd5eed4ad
-ms.openlocfilehash: 6b6d1796032f536aac0be49d4f101c1380b4e98f
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
+ms.openlocfilehash: 464bd658c9bf430191d84d3d5ad8d57173ab87c5
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333223"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56303709"
 ---
 # <a name="-operator-c-reference"></a>! operator (Referenční dokumentace jazyka C#)
 
-Operátor logické negace (`!`) je unární operátor, který Neguje svého operandu. Je definována pro `bool` a vrátí `true` pouze v případě jeho operand hodnotu `false`.
+Operátor logické negace `!` je unární operátor, který vypočítává Logická negace z jeho [bool](../keywords/bool.md) operand. To znamená, vytvoří `true`, je-li operand `false`, a `false`, je-li operand `true`:
 
-## <a name="remarks"></a>Poznámky
+[!code-csharp-interactive[logical negation](~/samples/snippets/csharp/language-reference/operators/LogicalNegationExamples.cs#Example)]
 
-Lze přetěžovat uživatelsky definované typy `!` – operátor (viz [operátor](../keywords/operator.md)).
+## <a name="operator-overloadability"></a>Overloadability – operátor
 
-## <a name="example"></a>Příklad
+Uživatelem definované typy lze [přetížení](../keywords/operator.md) `!` operátor.
 
-[!code-csharp[csRefOperators#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#7)]
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+Další informace najdete v tématu [logický operátor negace](~/_csharplang/spec/expressions.md#logical-negation-operator) část [ C# specifikace jazyka](../language-specification/index.md).
 
 ## <a name="see-also"></a>Viz také:
 

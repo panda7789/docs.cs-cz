@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Storyboards [WPF], handoff behavior between animations
 - animation [WPF], handoff behavior between
 ms.assetid: 97bd6842-929b-49d9-813e-46553ae46472
-ms.openlocfilehash: 01c652e170e27da0be9b1ab5f7659d7089aee6f8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9a27c377e2993c1e67ada508071698a541cec660
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54677736"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56305438"
 ---
 # <a name="how-to-specify-handoffbehavior-between-storyboard-animations"></a>Postupy: Určení HandoffBehavior mezi animacemi scénáře
 Tento příklad ukazuje, jak určit chování při předání mezi animacemi scénáře. <xref:System.Windows.Media.Animation.BeginStoryboard.HandoffBehavior%2A> Vlastnost <xref:System.Windows.Media.Animation.BeginStoryboard> Určuje, jak nové animace interakci s všechny existující dokumenty, které jsou již přidruženy k vlastnosti.  
@@ -25,4 +25,4 @@ Tento příklad ukazuje, jak určit chování při předání mezi animacemi sc�
 - <xref:System.Windows.Media.Animation.BeginStoryboard.HandoffBehavior%2A>
 - [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
 - [Animace a časování](https://msdn.microsoft.com/library/7d83765b-d5ae-41b1-b423-80206e1124aa)
-- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)
+- [Animace a časování témata s postupy](animation-and-timing-how-to-topics.md)

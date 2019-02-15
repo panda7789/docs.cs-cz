@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 41dc37751e2dcf26eea887e84423179512c53614
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f0182de9b998b7eb88a3bd003543bee876398633
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54653512"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304645"
 ---
 # <a name="icorruntimehost-interface"></a>ICorRuntimeHost – rozhraní
 Poskytuje metody, které umožní hostitele ke spouštění a zastavování common language runtime (CLR) explicitně, vytvoření a konfigurace domény aplikace, pro přístup k výchozí doménu a chcete získat výčet všech doménách spuštěných v rámci procesu.  
@@ -65,6 +65,6 @@ Poskytuje metody, které umožní hostitele ke spouštění a zastavování comm
 - <xref:System.AppDomain>
 - [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
 - [ICLRRuntimeHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)
-- [Hostitelská prostředí modulu runtime](https://msdn.microsoft.com/library/99d9246a-b994-4fe5-985c-8588d1d59998)
+- [Hostitelská prostředí modulu runtime](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))
 - [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
 - [CorRuntimeHost – třída typu coclass](../../../../docs/framework/unmanaged-api/hosting/corruntimehost-coclass.md)

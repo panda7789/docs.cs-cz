@@ -9,12 +9,12 @@ helpviewer_keywords:
 - printing [Windows Forms], with print preview
 - print preview
 ms.assetid: 4a16f7e2-ae10-4485-b0ae-3d558334d0fe
-ms.openlocfilehash: f412e5cbcf3014f57bc2632752a6d1ecbcf46dbc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: abdcd3a85f9e175aaea9aaaa6a25cc55ea20fb27
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54596082"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304632"
 ---
 # <a name="how-to-print-in-windows-forms-using-print-preview"></a>Postupy: Tisk ve Windows Forms pomocí náhledu tisku
 Je velmi běžné ve Windows Forms programování nabízí náhled tisku kromě tiskové služby. Snadný způsob, jak přidat do svojí aplikace náhledu služby, je použít <xref:System.Windows.Forms.PrintPreviewDialog> ovládacího prvku v kombinaci s <xref:System.Drawing.Printing.PrintDocument.PrintPage> logiku zpracování událostí pro tisk souboru.  
@@ -62,7 +62,7 @@ Je velmi běžné ve Windows Forms programování nabízí náhled tisku kromě 
   
 -   Odkazy na systém, System.Windows.Forms, System.Drawing sestavení.  
   
--   Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+-   Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
 - [Postupy: Tisk vícestránkového textového souboru ve Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)

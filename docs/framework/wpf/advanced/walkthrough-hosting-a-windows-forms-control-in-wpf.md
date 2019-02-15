@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - hosting Windows Forms control in WPF [WPF]
 ms.assetid: 9cb88415-39b0-4c46-80c4-ff325b674286
-ms.openlocfilehash: 2bbc3d249504bf8bb80dd29de3110002f0fd87e8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fd47f2a0bdbb724b9b789bd17f2814f792980374
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54548817"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56305802"
 ---
 # <a name="walkthrough-hosting-a-windows-forms-control-in-wpf"></a>Průvodce: Hostování ovládacího prvku Windows Forms v subsystému WPF
 

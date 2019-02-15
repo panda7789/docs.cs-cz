@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], column fill mode
 - data grids [Windows Forms], column fill mode
 ms.assetid: b4ef7411-ebf4-4e26-bb33-aecec90de80c
-ms.openlocfilehash: 79ef0310e5f134c09c9bbf0c0403ea6aa7cd7059
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 823d3c06648ed37003176eab9df538d95f1ced69
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595146"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304307"
 ---
 # <a name="column-fill-mode-in-the-windows-forms-datagridview-control"></a>Režim vyplnění sloupce v ovládacím prvku Windows Forms DataGridView
 V režim vyplnění sloupce <xref:System.Windows.Forms.DataGridView> ovládací prvek změní její sloupce automaticky tak, aby Šířka oblasti k dispozici zobrazení. Ovládací prvek nezobrazí vodorovný posuvník, kromě případů, kdy je také k zachování konzistence každý sloupec, rovna nebo větší než jeho <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> hodnotu vlastnosti.  
@@ -60,7 +60,7 @@ V režim vyplnění sloupce <xref:System.Windows.Forms.DataGridView> ovládací 
   
 -   Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
   
--   Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+-   Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.DataGridView>

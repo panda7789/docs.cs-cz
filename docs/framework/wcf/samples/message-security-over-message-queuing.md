@@ -2,12 +2,12 @@
 title: Zabezpečení zprávy pomocí služby Řízení front zpráv
 ms.date: 03/30/2017
 ms.assetid: 329aea9c-fa80-45c0-b2b9-e37fd7b85b38
-ms.openlocfilehash: 7303db0e7553e7365d83dfadc377ec265a71891a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 67cd3fa90f0c5686b40fa3569ba33b842f10609e
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583295"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304359"
 ---
 # <a name="message-security-over-message-queuing"></a>Zabezpečení zprávy pomocí služby Řízení front zpráv
 Tento příklad ukazuje, jak implementovat aplikaci, která používá WS-Security x.509 v3 s ověřováním pomocí certifikátu klienta a vyžaduje ověření serveru pomocí služby MSMQ na server certifikát x.509 v3. Zpráva, že zabezpečení je někdy další žádoucí, ujistěte se, že zprávy v úložišti služby MSMQ zůstanou šifrovaná a aplikací můžete provést vlastní ověřování zprávy.
@@ -45,7 +45,7 @@ Tento příklad ukazuje, jak implementovat aplikaci, která používá WS-Securi
   
 4.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-5.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+5.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
   
@@ -73,7 +73,7 @@ Tento příklad ukazuje, jak implementovat aplikaci, která používá WS-Securi
   
 12. Na počítači se službou spusťte z příkazového řádku Service.exe.  
   
-13. Na klientském počítači spusťte Client.exe z příkazového řádku. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+13. Na klientském počítači spusťte Client.exe z příkazového řádku. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   

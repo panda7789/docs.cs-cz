@@ -6,12 +6,12 @@ helpviewer_keywords:
 - tables [Windows Forms], adding to DataGrid control
 - DataGrid control [Windows Forms], adding tables and columns
 ms.assetid: 4a6d1b34-b696-476b-bf8a-57c6230aa9e1
-ms.openlocfilehash: c130dac068ee4866f44fd12398202e21d91fcf48
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 079b4121c3f9e5c55e003b089f85cd08a5bae5d2
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54536217"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304411"
 ---
 # <a name="how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Přidávání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid pomocí návrháře
 
@@ -20,7 +20,7 @@ ms.locfileid: "54536217"
   
  Data můžete zobrazit v modelu Windows Forms <xref:System.Windows.Forms.DataGrid> ovládacího prvku tabulky a sloupce tak, že vytvoříte <xref:System.Windows.Forms.DataGridTableStyle> objekty a jejich přidání na <xref:System.Windows.Forms.GridTableStylesCollection> objekt, který je přístupný prostřednictvím <xref:System.Windows.Forms.DataGrid> ovládacího prvku <xref:System.Windows.Forms.DataGrid.TableStyles%2A> vlastnost. Každý styl tabulky zobrazí obsah libovolné tabulka dat je zadán v <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> vlastnost <xref:System.Windows.Forms.DataGridTableStyle>. Ve výchozím nastavení styl tabulky bez styly sloupců se zobrazí všechny sloupce v tabulce data. Můžete omezit, které sloupce z tabulky zobrazí tak, že přidáte <xref:System.Windows.Forms.DataGridColumnStyle> objektů <xref:System.Windows.Forms.GridColumnStylesCollection>, který je přístupný prostřednictvím <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> vlastnosti každého <xref:System.Windows.Forms.DataGridTableStyle>.  
   
- Následující postup vyžaduje **aplikace Windows** projektu, který obsahuje formulář <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o tom, jak nastavit takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows](https://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md). Ve výchozím nastavení v sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů**. Informace o jeho přidání, naleznete v tématu [jak: Přidání položek do panelu nástrojů](https://msdn.microsoft.com/library/458e119e-17fe-450b-b889-e31c128bd7e0).  
+ Následující postup vyžaduje **aplikace Windows** projektu, který obsahuje formulář <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o tom, jak nastavit takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md). Ve výchozím nastavení v sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů**. Informace o jeho přidání, naleznete v tématu [jak: Přidání položek do panelu nástrojů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100)).  
   
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  

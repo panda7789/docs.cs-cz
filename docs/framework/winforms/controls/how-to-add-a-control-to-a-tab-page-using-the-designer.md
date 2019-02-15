@@ -6,17 +6,17 @@ helpviewer_keywords:
 - tab controls [Windows Forms], tab order
 - tab pages [Windows Forms], adding controls
 ms.assetid: 7ee734e1-e31e-4ed0-bbc0-a7e8a1f20fef
-ms.openlocfilehash: b27d00e16770bf7572b1ac1424a7632a3836cbf3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 842ac13f154ef53a7e9ef852f747d4e765ac3888
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54687554"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304450"
 ---
 # <a name="how-to-add-a-control-to-a-tab-page-using-the-designer"></a>Postupy: Přidání ovládacího prvku do stránky karty pomocí návrháře
 Použití prvku modelu Windows Forms <xref:System.Windows.Forms.TabControl> zobrazit další ovládací prvky uspořádané způsobem. Tyto pokyny slouží k zobrazení obrázku na hlavní část stránky karty. Informace o přidání ikony na popisek část stránky karty, najdete v části [jak: Změna vzhledu ovládacího prvku Windows Forms TabControl](../../../../docs/framework/winforms/controls/how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md).  
   
- Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.TabControl> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows](https://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  
+ Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.TabControl> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  
   
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  

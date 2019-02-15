@@ -6,15 +6,15 @@ helpviewer_keywords:
 - Toolbox [Windows Forms], populating
 - custom components [Windows Forms], adding to Toolbox
 ms.assetid: 2fa1e3e8-6b9f-42b2-97c0-2be57444dba4
-ms.openlocfilehash: 8c40f4a58800183c142602d950e4fe1331c1eaf3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b4c6bf42bdd1ba6b0f9ccddb730dc517dbaab963
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54730266"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304086"
 ---
 # <a name="walkthrough-automatically-populating-the-toolbox-with-custom-components"></a>Průvodce: Automatické vyplnění nástrojů vlastními komponentami
-Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešení, se automaticky zobrazí v **nástrojů**, třeba akce. Můžete také ručně naplnit **nástrojů** pomocí vlastních součástí s použitím [tlačítko panelu nástrojů položky dialogové okno (Visual Studio)](https://msdn.microsoft.com/library/bd07835f-18a8-433e-bccc-7141f65263bb), ale **nástrojů** bere v úvahu položky ve vašem řešení sestavení výstupy s následujícími charakteristikami:  
+Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešení, se automaticky zobrazí v **nástrojů**, třeba akce. Můžete také ručně naplnit **nástrojů** pomocí vlastních součástí s použitím [tlačítko panelu nástrojů položky dialogové okno (Visual Studio)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dyca0t6t(v=vs.100)), ale **nástrojů** bere v úvahu položky ve vašem řešení sestavení výstupy s následujícími charakteristikami:  
   
 -   Implementuje <xref:System.ComponentModel.IComponent>;  
   
@@ -49,7 +49,7 @@ Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešen
   
 2.  Přidáte novou součást do projektu. Pojmenujte ji `DemoComponent`.  
   
-     Další informace najdete v tématu [NIB: jak: Přidání nových položek projektu](https://msdn.microsoft.com/library/63d3e16b-de6e-4bb5-a0e3-ecec762201ce).  
+     Další informace najdete v tématu [jak: Přidání nových položek projektu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w0572c5b(v=vs.100)).  
   
 3.  Sestavte projekt.  
   
@@ -80,7 +80,7 @@ Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešen
   
 1.  Uvolněte projekt z řešení.  
   
-     Další informace o uvolnění projektů, naleznete v tématu [NIB: jak: Odebrat a znovu načíst projekty](https://msdn.microsoft.com/library/abc0155b-8fcb-4ffc-95b6-698518a7100b). Pokud se zobrazí výzva k uložení, zvolte **Ano**.  
+     Další informace o uvolnění projektů, naleznete v tématu [jak: Odebrat a znovu načíst projekty](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/tt479x1t(v=vs.100)). Pokud se zobrazí výzva k uložení, zvolte **Ano**.  
   
 2.  Přidat nový **aplikace Windows** projektu do řešení. Otevřete formulář v nástrojích pro **návrháře**.  
   
@@ -94,7 +94,7 @@ Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešen
  Tento návod ukazuje, že **nástrojů** bere v úvahu součástí projektu, ale **nástrojů** je také přihlíží ovládacích prvků. Přidáváním a odebíráním ovládací prvek projekty z řešení můžete experimentovat s vlastní ovládací prvky.  
   
 ## <a name="see-also"></a>Viz také:
-- [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](https://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834)
-- [Postupy: Manipulace s karty panelu nástrojů](https://msdn.microsoft.com/library/21285050-cadd-455a-b1f5-a2289a89c4db)
-- [Zvolte dialogové okno položky panelu nástrojů (Visual Studio)](https://msdn.microsoft.com/library/bd07835f-18a8-433e-bccc-7141f65263bb)
+- [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/5aazxs78(v=vs.100))
+- [Postupy: Manipulace s karty panelu nástrojů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/66kwe227(v=vs.100))
+- [Zvolte dialogové okno položky panelu nástrojů (Visual Studio)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dyca0t6t(v=vs.100))
 - [Vkládání ovládacích prvků do Windows Forms](../../../../docs/framework/winforms/controls/putting-controls-on-windows-forms.md)

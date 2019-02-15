@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 52077103277cdc4d32dfe3e44fcccffeec20295e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8e6b0412afc972871c056a565620acee801bbdaf
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54706862"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304580"
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>TextPattern a vložené objekty – přehled
 > [!NOTE]
@@ -130,7 +130,7 @@ Příklady, jak je upraveno rozsah textu pro Move() a ExpandToEnclosingUnit()
 |Buňka s Imagí|Buňka s textem|  
 |---------------------|--------------------|  
 |![Vložený obrázek příkladu](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample")|X|  
-|![Vložený obrázek – příklad 2](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample2.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample2")|A|  
+|![Vložený obrázek – příklad 2](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample2.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample2")|Ano|  
 |![Vložený obrázek – příklad 3](../../../docs/framework/ui-automation/media/uia-textpattern-embedded-objects-overview-imageexample3.PNG "UIA_TextPattern_Embedded_Objects_Overview_ImageExample3")<br /><br /> Obrázek pro vykreslování|Z|  
   
  **Příklad 1 – získání zásobník textu z obsahu buňky.**  
@@ -158,4 +158,4 @@ Příklady, jak je upraveno rozsah textu pro Move() a ExpandToEnclosingUnit()
 - [Přístup k vloženým objektům s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/access-embedded-objects-using-ui-automation.md)
 - [Vystavení obsahu tabulky s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/expose-the-content-of-a-table-using-ui-automation.md)
 - [Procházení textu s použitím automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/traverse-text-using-ui-automation.md)
-- [TextPattern vyhledávání a výběr ukázky](https://msdn.microsoft.com/library/0a3bca57-8b72-489d-a57c-da85b7a22c7f)
+- [TextPattern vyhledávání a výběr ukázky](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FindText)

@@ -6,19 +6,19 @@ helpviewer_keywords:
 - grouping
 - groups [Windows Forms], in Windows Forms controls
 ms.assetid: 8b615000-69d9-4c64-acaf-b54fa09b69e3
-ms.openlocfilehash: d315172b4cb9a2a97ce66f3376d79b1f8065e55e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 964f2130c650d486bf8a20af96b74122b1450e05
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54548414"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304424"
 ---
 # <a name="how-to-group-items-in-a-windows-forms-listview-control-using-the-designer"></a>Postupy: Seskupení položek v ovládacím prvku Windows Forms ListView pomocí návrháře
 Funkci seskupování <xref:System.Windows.Forms.ListView> řízení umožňuje zobrazit související sady položek ve skupinách. Tyto skupiny jsou oddělené na obrazovce záhlaví vodorovné skupin, které obsahují názvů skupin. Můžete použít <xref:System.Windows.Forms.ListView> skupiny, aby měli procházení rozsáhlých seznamů jednodušší seskupováním položek podle abecedy, datum, nebo jiné logické seskupení. Následující obrázek ukazuje některé seskupených položek.  
   
  ![Skupiny ListView](../../../../docs/framework/winforms/controls/media/listviewgroups.gif "ListViewGroups")  
   
- Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.ListView> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows](https://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  
+ Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.ListView> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md).  
   
  Pokud chcete povolit seskupování, je nutné nejprve vytvořit jeden nebo více <xref:System.Windows.Forms.ListViewGroup> objektů v Návrháři nebo prostřednictvím kódu programu. Po definování skupinu můžete přiřadit položky k němu.  
   
@@ -51,5 +51,4 @@ Funkci seskupování <xref:System.Windows.Forms.ListView> řízení umožňuje z
 - <xref:System.Windows.Forms.ListViewGroup>
 - [Ovládací prvek ListView](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)
 - [Přehled ovládacího prvku ListView](../../../../docs/framework/winforms/controls/listview-control-overview-windows-forms.md)
-- [Funkce Windows XP a ovládací prvky Windows Forms](https://msdn.microsoft.com/library/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)
 - [Postupy: Přidání a odebrání položek pomocí ovládacího prvku Windows Forms ListView](../../../../docs/framework/winforms/controls/how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)

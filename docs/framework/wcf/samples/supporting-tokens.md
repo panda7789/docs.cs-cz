@@ -2,12 +2,12 @@
 title: Podpora tokenů
 ms.date: 03/30/2017
 ms.assetid: 65a8905d-92cc-4ab0-b6ed-1f710e40784e
-ms.openlocfilehash: 0214479c40e41da64c1cd2ea59837008ffecdb04
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 899c6ecabafb1bd0487b989c6da8963dd07945cf
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54656541"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304151"
 ---
 # <a name="supporting-tokens"></a>Podpora tokenů
 Ukázka podporuje tokeny ukazuje, jak přidat další tokeny na zprávu, která používá WS-Security. V příkladu přidá token zabezpečení Binární X.509 kromě token zabezpečení uživatelské jméno. Token je předán do záhlaví zprávy WS-Security z klienta ke službě a část zprávy jsou podepsány pomocí soukromého klíče přidružené k tokenu zabezpečení X.509 prokázat získáním certifikát X.509 příjemci. To je užitečné v případě, když je potřeba mít více deklarací identity přidružené k zprávy na ověřování nebo autorizaci odesílatele. Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.
@@ -429,7 +429,7 @@ iisreset
   
 2.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-3.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+3.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ##### <a name="to-run-the-sample-across-machines"></a>Ke spuštění ukázky v počítačích  
   
@@ -457,7 +457,7 @@ iisreset
   
 12. Na serveru, spusťte ImportClientCert.bat to importuje klientský certifikát ze souboru Client.cer do úložiště LocalMachine - TrustedPeople úložiště.  
   
-13. Na klientském počítači a spusťte Client.exe z okna příkazového řádku. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+13. Na klientském počítači a spusťte Client.exe z okna příkazového řádku. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ##### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   

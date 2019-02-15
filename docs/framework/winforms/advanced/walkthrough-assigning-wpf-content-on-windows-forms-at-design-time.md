@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Windows Forms, content assignments
 - WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: b3e9ef93-7e0f-4a2f-8f1e-3437609a1eb7
-ms.openlocfilehash: 49421fc6c673ffe090e58d733ff0a309464edbb9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a2597348075f870723abb07d13ac7a687e47ab41
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527741"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304398"
 ---
 # <a name="walkthrough-assigning-wpf-content-on-windows-forms-at-design-time"></a>Průvodce: Přiřazení obsahu WPF ve Windows Forms v době návrhu
 Tento názorný postup ukazují, jak vybrat typy ovládacích prvků Windows Presentation Foundation (WPF), které chcete zobrazit ve formuláři. Můžete vybrat všechny typy ovládacích prvků WPF, které jsou zahrnuty ve vašem projektu.
@@ -51,7 +51,7 @@ Tento názorný postup ukazují, jak vybrat typy ovládacích prvků Windows Pre
   
 1.  Přidat nový WPF <xref:System.Windows.Controls.UserControl> projektu do řešení. Použití výchozího názvu pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [názorný postup: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).  
   
-2.  V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [jak: Vyberte a přesuňte prvků na návrhové ploše](https://msdn.microsoft.com/library/54cb70b6-b35b-46e4-a0cc-65189399c474).  
+2.  V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [jak: Vyberte a přesuňte prvků na návrhové ploše](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100)).  
   
 3.  V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastností `200`.  
   

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - user controls [C#]
 - custom controls [Windows Forms], creating
 ms.assetid: f88481a8-c746-4a36-9479-374ce5f2e91f
-ms.openlocfilehash: 6205bea2ccb75078cba507c09f1a4d65571e3418
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 357e001effe22f5e9603ebee63188ddff957d585
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54631695"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56305724"
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-c"></a>Průvodce: Vytvoření složeného ovládacího prvku pomocí Visual C# #
 Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní grafické rozhraní a znovu použít. Složený ovládací prvek je v podstatě komponent pomocí vizuální reprezentace. V důsledku toho může obsahovat jeden nebo více Windows Forms ovládací prvky, komponenty nebo bloky kódu, který můžete rozšířit funkce ověřování uživatelského vstupu, změnou zobrazení vlastností nebo provádění jiných úloh vyžaduje autorem. Složené ovládací prvky mohou být umístěny ve Windows Forms stejným způsobem jako ostatní ovládací prvky. V první části tohoto návodu vytvoříte jednoduchou složeného ovládacího prvku volá `ctlClock`. V druhé části tohoto průvodce, které rozšiřují funkce nástroje `ctlClock` prostřednictvím dědičnosti.  
@@ -365,7 +365,7 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 9. Následujícím způsobem nastavte vlastnosti těchto ovládacích prvků.  
   
-    |Ovládací prvek|Vlastnost|Hodnota|  
+    |Control|Vlastnost|Hodnota|  
     |-------------|--------------|-----------|  
     |`label1`|**Text**|`(blank space)`|  
     ||**Název**|`lblTest`|  
@@ -406,7 +406,5 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 ## <a name="see-also"></a>Viz také:
 - [Typy vlastních ovládacích prvků](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)
-- [Programování pomocí komponent](https://msdn.microsoft.com/library/d4d4fcb4-e0b8-46b3-b679-7ee0026eb9e3)
-- [Návody pro vytváření součástí](https://msdn.microsoft.com/library/c414cca9-2489-4208-8b38-954586d91c13)
 - [Postupy: Zobrazení ovládacího prvku v zvolit položky panelu nástrojů – dialogové okno](../../../../docs/framework/winforms/controls/how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
 - [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#](../../../../docs/framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)

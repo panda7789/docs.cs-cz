@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: c321cbf9-8c05-4cce-b5a5-4bf7b230ee03
-ms.openlocfilehash: 9ac411cd13869b70edc46724219776ec411a23dc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2cb1834414b402f8840a9dfa1ee9e2497cea7af5
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54680747"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304242"
 ---
 # <a name="message-security-anonymous"></a>Zabezpečení zpráv s anonymní metodou
 Zpráva zabezpečení anonymní Ukázka předvádí, jak implementovat aplikace Windows Communication Foundation (WCF), který používá zabezpečení na úrovni zpráv bez ověřování klienta, ale, který vyžaduje ověření serveru pomocí serveru X.509 certifikát. Všechny zprávy aplikace mezi klientem a serverem jsou podepsaný a zašifrovaný. Tato ukázka je založena na [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md) vzorku. Tento příklad se skládá z programu konzoly klienta (.exe) a služby knihovny (.dll) hostované v Internetové informační služby (IIS). Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.
@@ -208,7 +208,7 @@ Press <ENTER> to terminate client.
   
 4.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-5.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+5.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
   
@@ -230,7 +230,7 @@ Press <ENTER> to terminate client.
   
 9. Na straně klienta spouštění ImportServiceCert.bat v příkazovém řádku pro vývojáře pro sadu Visual Studio otevřeného s oprávněními správce. To importuje certifikát služby ze souboru Service.cer do CurrentUser - TrustedPeople úložiště.  
   
-10. Na klientském počítači spusťte Client.exe z příkazového řádku. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. Na klientském počítači spusťte Client.exe z příkazového řádku. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   

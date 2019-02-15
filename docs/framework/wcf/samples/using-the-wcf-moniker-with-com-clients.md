@@ -2,12 +2,12 @@
 title: Použití monikeru služby WCF u klientů modelu COM
 ms.date: 03/30/2017
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
-ms.openlocfilehash: 3bcb0291b3ee91d7a5fd402c8f0e2cc4bce3695a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3cd334dab8574845e10332e90b50fef833447a1d
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54606095"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56303956"
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>Použití monikeru služby WCF u klientů modelu COM
 Tato ukázka demonstruje použití monikeru služby Windows Communication Foundation (WCF) k integraci webové služby do založené na modelu COM. vývojových prostředích, jako je například Microsoft Office Visual Basic for Applications (Office VBA) nebo Visual Basic 6.0. Tento příklad se skládá z klienta Windows Script Host (VBS), podpůrné klientské knihovny (DLL) a služby knihovny (.dll) hostované v Internetové informační služby (IIS). Služba je služba kalkulačky a klient modelu COM zavolá matematických operací – přidat, odečítání, násobení a rozdělit – ve službě. Činnost klienta je viditelný v ovládacím prvku windows pole zpráv.  
@@ -205,7 +205,7 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
   
 2.  Spusťte ComCalcClient.vbs z \client ze složky specifické pro jazyk. Činnost klienta se zobrazí v poli zpráv – windows.  
   
-3.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+3.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
   

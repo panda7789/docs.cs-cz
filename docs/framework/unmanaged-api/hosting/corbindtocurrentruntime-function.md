@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eceff4d192b2488b60172c71e225c2962c4303ea
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1062b3a74a9f10a6186ef320a97c08e6fab09545
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54721812"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56303982"
 ---
 # <a name="corbindtocurrentruntime-function"></a>CorBindToCurrentRuntime – funkce
 Načte modul CLR (CLR) do procesu pomocí informací o verzi uložených v souboru XML. Formát souboru XML je Modelováno podle konfiguračního souboru standardní aplikace. Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../../docs/framework/configure-apps/file-schema/index.md).  
   
- Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Zobrazit [načítání modul CLR do procesu](https://msdn.microsoft.com/library/1e2d6dc1-6aab-43e2-bbc0-aae40756d24f).  
+ Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Zobrazit [načítání modul CLR do procesu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/01918c6x(v=vs.100)).  
   
 ## <a name="syntax"></a>Syntaxe  
   

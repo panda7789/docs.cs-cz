@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms, anchoring and docking WPF content
 - interoperability [WPF]
 ms.assetid: 5efb1c53-1484-43d6-aa8a-f4861b99bb8a
-ms.openlocfilehash: 66fb814bbf0a40ccaa9339eb24dcc49332861deb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 543546de4f9b93deb5fa70c98608246e9c06e4f7
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54647660"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304554"
 ---
 # <a name="walkthrough-arranging-wpf-content-on-windows-forms-at-design-time"></a>Průvodce: Uspořádání obsahu WPF ve Windows Forms během návrhu
 Tento návod ukazuje způsob použití funkcí rozložení Windows Forms, jako je například ukotvení a zarovnávacích čar, k uspořádání ovládacích prvků Windows Presentation Foundation (WPF).
@@ -56,7 +56,7 @@ Tento návod ukazuje způsob použití funkcí rozložení Windows Forms, jako j
   
 1.  Přidat nový WPF <xref:System.Windows.Controls.UserControl> do projektu. Použití výchozího názvu pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [názorný postup: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu](../../../../docs/framework/winforms/advanced/walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).  
   
-2.  V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [jak: Vyberte a přesuňte prvků na návrhové ploše](https://msdn.microsoft.com/library/54cb70b6-b35b-46e4-a0cc-65189399c474).  
+2.  V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [jak: Vyberte a přesuňte prvků na návrhové ploše](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100)).  
   
 3.  V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastností `200`.  
   
@@ -83,7 +83,7 @@ Tento návod ukazuje způsob použití funkcí rozložení Windows Forms, jako j
   
 6.  V **nástrojů**, dvakrát klikněte na panel `UserControl1` pro vytvoření další instance v druhé buňce <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku.  
   
-7.  V **Osnova dokumentu** okně `tableLayoutPanel1`. Další informace najdete v tématu [Osnova dokumentu – okno](https://msdn.microsoft.com/library/9054f2bc-f6f8-4242-9fe0-be71089b12f8).  
+7.  V **Osnova dokumentu** okně `tableLayoutPanel1`. Další informace najdete v tématu [Osnova dokumentu – okno](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/46xf4h0w(v=vs.100)#using-the-document-outline-window-for-silverlight-and-wpf).  
   
 8.  V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.Forms.Control.Padding%2A> vlastnost `10, 10, 10, 10`.  
   

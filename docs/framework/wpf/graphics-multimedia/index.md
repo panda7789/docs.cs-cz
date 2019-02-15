@@ -2,16 +2,22 @@
 title: Grafika a multimédia
 ms.date: 03/30/2017
 dev_langs:
-  - csharp
-  - vb
+- csharp
+- vb
 helpviewer_keywords:
-  - 'media [WPF], features'
-  - 'video effects [WPF]'
-  - 'sound effects [WPF]'
-  - 'animation [WPF], features'
-  - 'graphics features [WPF]'
-  - 'transition effects [WPF]'
+- media [WPF], features
+- video effects [WPF]
+- sound effects [WPF]
+- animation [WPF], features
+- graphics features [WPF]
+- transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
+ms.openlocfilehash: f22fad330f9e67cd007bd968f1277f31f51b2b8e
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56304099"
 ---
 # <a name="graphics-and-multimedia"></a>Grafika a multimédia
 <a name="introduction"></a>
@@ -147,6 +153,6 @@ End Class
 - [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
 - [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
 - [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
-- [Animace a časování](https://msdn.microsoft.com/library/7d83765b-d5ae-41b1-b423-80206e1124aa)
-- [3D grafiky](https://msdn.microsoft.com/library/565c1f3c-235b-47de-b05b-3b53ed63f1b8)
-- [Multimédia](https://msdn.microsoft.com/library/44a8dcd0-80cb-4db0-a222-87cde68c2fac)
+- [Animace a časování témata s postupy](animation-and-timing-how-to-topics.md)
+- [Přehled 3D grafiky](3-d-graphics-overview.md)
+- [Přehled multimédií](multimedia-overview.md)

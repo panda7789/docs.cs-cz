@@ -9,12 +9,12 @@ helpviewer_keywords:
 - tables [Windows Forms], formatting in DataGrid control
 - formatting [Windows Forms]
 ms.assetid: 533b9814-6124-49dc-9fda-085f1502609f
-ms.openlocfilehash: 6445a8fd51c8802f3f1565e53f044594850cd9a9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1a35aa630bd939c72aeaf59b86ff0b7cff48141b
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54615621"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56305392"
 ---
 # <a name="how-to-format-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Formátování v ovládacím prvku Windows Forms DataGrid pomocí návrháře
 
@@ -33,7 +33,7 @@ ms.locfileid: "54615621"
   
  Jako první krok v datové mřížce formátování, můžete nastavit vlastnosti <xref:System.Windows.Forms.DataGrid> samotný. Tyto možnosti barvu a formát tvoří základ, ze kterého můžete pak provádět změny v závislosti na datových tabulek a sloupců zobrazených.  
   
- Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows](https://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md). V sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů** ve výchozím nastavení. Další informace najdete v tématu [jak: Přidání položek do panelu nástrojů](https://msdn.microsoft.com/library/458e119e-17fe-450b-b889-e31c128bd7e0).  
+ Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) a [jak: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md). V sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů** ve výchozím nastavení. Další informace najdete v tématu [jak: Přidání položek do panelu nástrojů](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100)).  
   
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  

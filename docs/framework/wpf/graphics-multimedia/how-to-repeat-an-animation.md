@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Timelines RepeatBehavior property [WPF]
 - animation [WPF], repeating
 ms.assetid: e6f3b068-eeeb-47fd-8d40-8848c31f1e1e
-ms.openlocfilehash: 213fca0796840ae87035be4f474cfdf4648460a5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 358400c07ec2e96401d95929cbdd22784db630f9
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54609639"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56305139"
 ---
 # <a name="how-to-repeat-an-animation"></a>Postupy: Opakování animace
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> vlastnost <xref:System.Windows.Media.Animation.Timeline> aby bylo možné řídit chování opakování animace.  
@@ -31,7 +31,6 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.T
 ## <a name="see-also"></a>Viz také:
 - [Kumulování hodnot animace při opakujících se cyklech](../../../../docs/framework/wpf/graphics-multimedia/how-to-accumulate-animation-values-during-repeat-cycles.md)
 - [Určení automatického otočení časové osy](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-whether-a-timeline-automatically-reverses.md)
-- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)
-- [Animace a časování](https://msdn.microsoft.com/library/7d83765b-d5ae-41b1-b423-80206e1124aa)
+- [Animace a časování témata s postupy](animation-and-timing-how-to-topics.md)
 - [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
 - [Ukázka chování časování animace](https://go.microsoft.com/fwlink/?LinkID=159970)

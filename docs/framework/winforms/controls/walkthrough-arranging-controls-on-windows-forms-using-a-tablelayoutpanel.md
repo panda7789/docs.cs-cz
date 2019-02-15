@@ -6,12 +6,12 @@ helpviewer_keywords:
 - TableLayoutPanel control [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 ms.assetid: d474885e-12cc-4ab7-b997-2a23a643049b
-ms.openlocfilehash: d058fd43649b8096ce2a65d8537cf4b663f58594
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f337164043014ed14d42e219f26ee2ec8be06662
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54585416"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56305841"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel"></a>Průvodce: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku TableLayoutPanel
 Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá samotné správně při změně velikosti formuláře, nebo jako obsah změnit velikost. Pokud potřebujete dynamické rozložení a nechcete zpracovat <xref:System.Windows.Forms.Control.Layout> události explicitně v kódu, zvažte použití panelu rozložení.  
@@ -22,7 +22,7 @@ Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá
   
  <xref:System.Windows.Forms.TableLayoutPanel> Uspořádá její obsah do mřížky, poskytuje funkce podobné HTML \<tabulky > element. <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek umožňuje umístit ovládací prvky v případě rozložení mřížky, aniž by bylo potřeba přesně určit umístění jednotlivých ovládacích prvků. Jeho buňky jsou uspořádány do řádků a sloupců, a ty mají různé velikosti. Sloučením buněk mezi řádky a sloupce. Buňky může obsahovat cokoli, formulář může obsahovat a chovat ve většině ostatních ohledech jako kontejnery.  
   
- <xref:System.Windows.Forms.TableLayoutPanel> Řízení také poskytuje přímo úměrná velikosti funkce v době běhu, takže rozložení můžete plynule změnit při změně velikosti formuláře. Díky tomu <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek vhodná pro účely, jako je formulářích pro zadávání dat a lokalizovaných aplikací. Další informace najdete v tématu [názorný postup: Vytvoření formuláře Windows s možností změny velikosti pro zadávání dat](https://msdn.microsoft.com/library/e193b4fc-912a-4917-b036-b76c7a6f58ab) a [názorný postup: Vytvoření formuláře Windows lokalizovatelné](https://msdn.microsoft.com/library/c5240b6e-aaca-4286-9bae-778a416edb9c).  
+ <xref:System.Windows.Forms.TableLayoutPanel> Řízení také poskytuje přímo úměrná velikosti funkce v době běhu, takže rozložení můžete plynule změnit při změně velikosti formuláře. Díky tomu <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek vhodná pro účely, jako je formulářích pro zadávání dat a lokalizovaných aplikací. Další informace najdete v tématu [názorný postup: Vytvoření formuláře Windows s možností změny velikosti pro zadávání dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/991eahec(v=vs.100)) a [názorný postup: Vytvoření formuláře Windows lokalizovatelné](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7k9fa71y(v=vs.100)).  
   
  Obecně platí, neměli byste používat <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek jako kontejner pro celé rozložení. Použití <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvky pro poskytování přímo úměrná velikosti možností k různým částem rozložení.  
   
@@ -54,7 +54,7 @@ Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá
   
 #### <a name="to-create-the-project"></a>Vytvoření projektu  
   
-1.  Vytvořte projekt aplikace Windows s názvem "TableLayoutPanelExample". Další informace najdete v tématu [jak: Vytvoření projektu aplikace Windows](https://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) .  
+1.  Vytvořte projekt aplikace Windows s názvem "TableLayoutPanelExample". Další informace najdete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) .  
   
 2.  Vyberte formulář v nástrojích pro **Windows** **Návrháře formulářů**.  
   
@@ -184,8 +184,8 @@ Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá
 - [Návod: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku FlowLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)
 - [Návod: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)
 - [Microsoft Windows uživatelské prostředí, oficiální pokyny pro uživatelské rozhraní vývojářů a návrhářů. Redmond, WA: Microsoft Press, 1999. (USBN: 0-7356-0566-1)](https://www.microsoft.com/mspress/southpacific/books/book11588.htm)
-- [Návod: Vytvoření formuláře Windows s možností změny velikosti pro zadávání dat](https://msdn.microsoft.com/library/e193b4fc-912a-4917-b036-b76c7a6f58ab)
-- [Návod: Vytvoření formuláře Windows lokalizovatelné](https://msdn.microsoft.com/library/c5240b6e-aaca-4286-9bae-778a416edb9c)
+- [Návod: Vytvoření formuláře Windows s možností změny velikosti pro zadávání dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/991eahec(v=vs.100))
+- [Návod: Vytvoření formuláře Windows lokalizovatelné](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7k9fa71y(v=vs.100))
 - [Doporučené postupy pro ovládací prvek TableLayoutPanel](../../../../docs/framework/winforms/controls/best-practices-for-the-tablelayoutpanel-control.md)
 - [Přehled vlastnosti AutoSize](../../../../docs/framework/winforms/controls/autosize-property-overview.md)
 - [Postupy: Ukotvování ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)

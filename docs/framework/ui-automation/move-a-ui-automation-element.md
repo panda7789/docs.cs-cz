@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 4042cb44-e27e-4a03-ac36-9be1eed65b47
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: a0af1f39a8120e56fe165fc35fc2cc55d1500494
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e63a63181070a30ee7c21410c70cd76253e75f83
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681128"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56305958"
 ---
 # <a name="move-a-ui-automation-element"></a>Přesunutí elementu automatizace uživatelského rozhraní
 > [!NOTE]
@@ -33,4 +33,4 @@ ms.locfileid: "54681128"
 [!code-vb[WindowMove#1300](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WindowMove/VisualBasic/windowmove.vb#1300)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Třídu WindowPattern vzorku](https://msdn.microsoft.com/library/598b695c-8baf-406e-bbfb-2a1c7842a1de)
+- [Třídu WindowPattern vzorku](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/WindowMove)

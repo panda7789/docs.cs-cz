@@ -2,12 +2,12 @@
 title: Validátor hesel pro uživatelská jména
 ms.date: 03/30/2017
 ms.assetid: 42f03841-286b-42d8-ba58-18c75422bc8e
-ms.openlocfilehash: 08ecebb98df5d4a5d6dcda3e974d6e1a4c104fa5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 33df3a7a8d463a9c2cd2d2586f0aa812e25a16ff
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54544007"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56305452"
 ---
 # <a name="user-name-password-validator"></a>Validátor hesel pro uživatelská jména
 Tento příklad ukazuje, jak implementovat vlastní UserNamePassword validátor. To je užitečné v případech, kdy se žádná z předdefinovaných režimy ověřování UserNamePassword je vhodné pro požadavky na aplikaci. například když páry uživatelského jména a hesla ukládají v některé externí úložiště, například do databáze. Tento příklad ukazuje služba, která má vlastní validátor, který kontroluje dvě dvojice konkrétního uživatelského jména a hesla. Klient používá k ověření ve službě dvojici uživatelského jména a hesla.
@@ -293,7 +293,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
   
 3.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-4.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-machines"></a>Ke spuštění ukázky v počítačích  
   
@@ -315,7 +315,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
   
 9. Na klientském počítači a spusťte Client.exe z okna příkazového řádku.  
   
-10. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   

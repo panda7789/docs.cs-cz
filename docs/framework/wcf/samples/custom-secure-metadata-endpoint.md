@@ -2,12 +2,12 @@
 title: Vlastní zabezpečený koncový bod metadat
 ms.date: 03/30/2017
 ms.assetid: 9e369e99-ea4a-49ff-aed2-9fdf61091a48
-ms.openlocfilehash: d69bc43616ee54a06d5c8f61fbb0afd4618a0202
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bc96b21c4432c204160a951e5990ee1751f60e21
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54676750"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56303904"
 ---
 # <a name="custom-secure-metadata-endpoint"></a>Vlastní zabezpečený koncový bod metadat
 Tento příklad ukazuje, jak implementovat službu s koncovým bodem zabezpečené metadata, která používá jedna z vazeb neobsahující metadata exchange a konfigurace [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nebo klientům pro načtení metadata z těchto koncových bodů metadat. Dostupné jsou dvě vazby poskytované systémem vystavení koncové body metadat: mexHttpBinding a mexHttpsBinding. mexHttpBinding se používá k vystavení koncový bod metadat prostřednictvím protokolu HTTP nezabezpečené způsobem. mexHttpsBinding se používá k vystavení koncový bod metadat prostřednictvím protokolu HTTPS bezpečným způsobem. Tento příklad ukazuje, jak vystavit koncový bod metadat zabezpečené pomocí <xref:System.ServiceModel.WSHttpBinding>. Chcete to provést, když chcete změnit nastavení zabezpečení v rámci vazby, ale nechcete, aby používal protokol HTTPS. Pokud používáte mexHttpsBinding váš koncový bod metadat budou zabezpečené, ale neexistuje žádný způsob, jak upravit nastavení vazby.  
@@ -142,7 +142,7 @@ ChannelFactory<ICalculator> cf = new    ChannelFactory<ICalculator>(endpoint.Bin
   
 2.  Spuštění klientské aplikace z \MetadataResolverClient\bin nebo \SvcutilClient\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-3.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+3.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 4.  Odeberte certifikáty spuštěním Cleanup.bat po dokončení s ukázkou. Další ukázky zabezpečení použijte stejné certifikáty.  
   
@@ -168,7 +168,7 @@ ChannelFactory<ICalculator> cf = new    ChannelFactory<ICalculator>(endpoint.Bin
   
 10. V klientském počítači spusťte MetadataResolverClient nebo SvcutilClient z VS.  
   
-    1.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+    1.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   

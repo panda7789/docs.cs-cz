@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 955efad34f816cd0445c4ebdf120d8b614f0d351
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: bd84d84706a0d61f26b576b7300fae87fbe602e8
+ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508519"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "56303387"
 ---
 # <a name="unmanaged-api-reference"></a>Nespravované rozhraní API
 Tato část obsahuje informace o nespravované rozhraní API, která je možné spravovat souvisejícím s kódem aplikace, jako je například hostitelská prostředí modulu runtime, kompilátory, disassemblery, obfuscators, ladicí programy a profilery.  
@@ -32,7 +32,7 @@ Tato část obsahuje informace o nespravované rozhraní API, která je možné 
  [Konstanty](../../../docs/framework/unmanaged-api/constants-unmanaged-api-reference.md)  
  Popisuje, které jsou definovány v CorSym.idl konstanty.  
   
- [Vlastní atributy rozhraní](https://msdn.microsoft.com/library/940952f9-46ad-4a1a-920f-118dc0bdcd9f)  
+ [Vlastní atributy rozhraní](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms231946(v=vs.100))  
  Popisuje komponenty object model (COM) vlastní atributy rozhraní.  
   
  [Ladění](../../../docs/framework/unmanaged-api/debugging/index.md)  
@@ -64,5 +64,3 @@ Tato část obsahuje informace o nespravované rozhraní API, která je možné 
   
 ## <a name="related-sections"></a>Související oddíly  
  [Průvodce vývojem](../../../docs/framework/development-guide.md)  
-  
- [Rozšířené čtení pro rozhraní .NET Framework](https://msdn.microsoft.com/library/faae8083-fecb-4514-b133-b0a5a32a7c3c)
