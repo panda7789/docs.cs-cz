@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Net Profile Named Pipe
 ms.assetid: e78e845f-c325-46e2-927d-81616f97f7d5
-ms.openlocfilehash: d35d5115f6005578164d13b94c9940152ddc1c56
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f57a5df92b1e1dd20575c7930ac2a6eb546e1400
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54734458"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332998"
 ---
-# <a name="netnamedpipebinding"></a><span data-ttu-id="9ec1f-102">NetNamedPipeBinding</span><span class="sxs-lookup"><span data-stu-id="9ec1f-102">NetNamedPipeBinding</span></span>
-<span data-ttu-id="9ec1f-103">Tento příklad ukazuje, `netNamedPipeBinding` vazbu, která poskytuje komunikaci mezi procesy ve stejném počítači.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-103">This sample demonstrates the `netNamedPipeBinding` binding, which provides cross-process communication on the same machine.</span></span> <span data-ttu-id="9ec1f-104">Pojmenované kanály napříč počítači nefungují.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-104">Named pipes do not work across machines.</span></span> <span data-ttu-id="9ec1f-105">Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) Kalkulačka služby.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-105">This sample is based on The [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) calculator service.</span></span>  
+# <a name="netnamedpipebinding"></a><span data-ttu-id="a0569-102">NetNamedPipeBinding</span><span class="sxs-lookup"><span data-stu-id="a0569-102">NetNamedPipeBinding</span></span>
+<span data-ttu-id="a0569-103">Tento příklad ukazuje, `netNamedPipeBinding` vazbu, která poskytuje komunikaci mezi procesy ve stejném počítači.</span><span class="sxs-lookup"><span data-stu-id="a0569-103">This sample demonstrates the `netNamedPipeBinding` binding, which provides cross-process communication on the same machine.</span></span> <span data-ttu-id="a0569-104">Pojmenované kanály napříč počítači nefungují.</span><span class="sxs-lookup"><span data-stu-id="a0569-104">Named pipes do not work across machines.</span></span> <span data-ttu-id="a0569-105">Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) Kalkulačka služby.</span><span class="sxs-lookup"><span data-stu-id="a0569-105">This sample is based on The [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) calculator service.</span></span>  
   
- <span data-ttu-id="9ec1f-106">V této ukázce je služba v místním prostředí.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-106">In this sample, the service is self-hosted.</span></span> <span data-ttu-id="9ec1f-107">Klient a služba se konzolové aplikace.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-107">Both the client and the service are console applications.</span></span>  
+ <span data-ttu-id="a0569-106">V této ukázce je služba v místním prostředí.</span><span class="sxs-lookup"><span data-stu-id="a0569-106">In this sample, the service is self-hosted.</span></span> <span data-ttu-id="a0569-107">Klient a služba se konzolové aplikace.</span><span class="sxs-lookup"><span data-stu-id="a0569-107">Both the client and the service are console applications.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="9ec1f-108">Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-108">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
+>  <span data-ttu-id="a0569-108">Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="a0569-108">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- <span data-ttu-id="9ec1f-109">Vazba je zadán v konfiguračních souborech pro klienta a služby.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-109">The binding is specified in the configuration files for the client and service.</span></span> <span data-ttu-id="9ec1f-110">Typ vazby je zadán v `binding` atribut [ \<koncový bod >](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu, jak je znázorněno v následující ukázková konfigurace:</span><span class="sxs-lookup"><span data-stu-id="9ec1f-110">The binding type is specified in the `binding` attribute of the [\<endpoint>](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element as shown in the following sample configuration:</span></span>  
+ <span data-ttu-id="a0569-109">Vazba je zadán v konfiguračních souborech pro klienta a služby.</span><span class="sxs-lookup"><span data-stu-id="a0569-109">The binding is specified in the configuration files for the client and service.</span></span> <span data-ttu-id="a0569-110">Typ vazby je zadán v `binding` atribut [ \<koncový bod >](../../configure-apps/file-schema/wcf/endpoint-element.md) nebo [ \<koncový bod > z \<klienta >](../../configure-apps/file-schema/wcf/endpoint-of-client.md) elementu, jak je znázorněno Následující ukázkové konfiguraci:</span><span class="sxs-lookup"><span data-stu-id="a0569-110">The binding type is specified in the `binding` attribute of the [\<endpoint>](../../configure-apps/file-schema/wcf/endpoint-element.md) or [\<endpoint> of \<client>](../../configure-apps/file-schema/wcf/endpoint-of-client.md) element, as shown in the following sample configuration:</span></span>  
   
 ```xml  
 <endpoint address="net.pipe://localhost/ServiceModelSamples/service"  
@@ -27,7 +27,7 @@ ms.locfileid: "54734458"
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- <span data-ttu-id="9ec1f-111">Předchozí příklad ukazuje, jak nakonfigurovat koncový bod pro použití `netNamedPipeBinding` vazby s výchozím nastavením.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-111">The previous sample shows how to configure an endpoint to use the `netNamedPipeBinding` binding with the default settings.</span></span> <span data-ttu-id="9ec1f-112">Pokud chcete nakonfigurovat `netNamedPipeBinding` vazby a změnit některé jeho nastavení, je nutné definovat konfiguraci vazby.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-112">If you want to configure the `netNamedPipeBinding` binding and change some of its settings, you must define a binding configuration.</span></span> <span data-ttu-id="9ec1f-113">Koncový bod musí odkazovat konfigurace vazby podle názvu pomocí `bindingConfiguration` atribut.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-113">The endpoint must reference the binding configuration by name with a `bindingConfiguration` attribute.</span></span>  
+ <span data-ttu-id="a0569-111">Předchozí příklad ukazuje, jak nakonfigurovat koncový bod pro použití `netNamedPipeBinding` vazby s výchozím nastavením.</span><span class="sxs-lookup"><span data-stu-id="a0569-111">The previous sample shows how to configure an endpoint to use the `netNamedPipeBinding` binding with the default settings.</span></span> <span data-ttu-id="a0569-112">Pokud chcete nakonfigurovat `netNamedPipeBinding` vazby a změnit některé jeho nastavení, je nutné definovat konfiguraci vazby.</span><span class="sxs-lookup"><span data-stu-id="a0569-112">If you want to configure the `netNamedPipeBinding` binding and change some of its settings, you must define a binding configuration.</span></span> <span data-ttu-id="a0569-113">Koncový bod musí odkazovat konfigurace vazby podle názvu pomocí `bindingConfiguration` atribut.</span><span class="sxs-lookup"><span data-stu-id="a0569-113">The endpoint must reference the binding configuration by name with a `bindingConfiguration` attribute.</span></span>  
   
 ```xml  
 <endpoint address="net.pipe://localhost/ServiceModelSamples/service"  
@@ -36,7 +36,7 @@ ms.locfileid: "54734458"
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- <span data-ttu-id="9ec1f-114">V tomto příkladu má název konfigurace vazby `Binding1` a obsahuje následující definice:</span><span class="sxs-lookup"><span data-stu-id="9ec1f-114">In this sample, the binding configuration is named `Binding1` and has the following definition:</span></span>  
+ <span data-ttu-id="a0569-114">V tomto příkladu má název konfigurace vazby `Binding1` a obsahuje následující definice:</span><span class="sxs-lookup"><span data-stu-id="a0569-114">In this sample, the binding configuration is named `Binding1` and has the following definition:</span></span>  
   
 ```xml  
 <bindings>  
@@ -66,7 +66,7 @@ ms.locfileid: "54734458"
 </bindings>  
 ```  
   
- <span data-ttu-id="9ec1f-115">Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-115">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="9ec1f-116">Stisknutím klávesy ENTER v okně Klient vypnutí klient.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-116">Press ENTER in the client window to shut down the client.</span></span>  
+ <span data-ttu-id="a0569-115">Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta.</span><span class="sxs-lookup"><span data-stu-id="a0569-115">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="a0569-116">Stisknutím klávesy ENTER v okně Klient vypnutí klient.</span><span class="sxs-lookup"><span data-stu-id="a0569-116">Press ENTER in the client window to shut down the client.</span></span>  
   
 ```console  
 Add(100,15.99) = 115.99  
@@ -77,21 +77,21 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="9ec1f-117">Chcete-li nastavit, sestavte a spusťte ukázku</span><span class="sxs-lookup"><span data-stu-id="9ec1f-117">To set up, build, and run the sample</span></span>  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="a0569-117">Chcete-li nastavit, sestavte a spusťte ukázku</span><span class="sxs-lookup"><span data-stu-id="a0569-117">To set up, build, and run the sample</span></span>  
   
-1.  <span data-ttu-id="9ec1f-118">Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="9ec1f-118">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
+1.  <span data-ttu-id="a0569-118">Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="a0569-118">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  <span data-ttu-id="9ec1f-119">K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="9ec1f-119">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+2.  <span data-ttu-id="a0569-119">K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="a0569-119">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  <span data-ttu-id="9ec1f-120">Spusťte ukázku v jednom počítači konfiguraci, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="9ec1f-120">To run the sample in a single machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
+3.  <span data-ttu-id="a0569-120">Spusťte ukázku v jednom počítači konfiguraci, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="a0569-120">To run the sample in a single machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="9ec1f-121">Vzorky mohou již být nainstalováno na svém počítači.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-121">The samples may already be installed on your machine.</span></span> <span data-ttu-id="9ec1f-122">Před pokračováním zkontrolujte následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="9ec1f-122">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="a0569-121">Vzorky mohou již být nainstalováno na svém počítači.</span><span class="sxs-lookup"><span data-stu-id="a0569-121">The samples may already be installed on your machine.</span></span> <span data-ttu-id="a0569-122">Před pokračováním zkontrolujte následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="a0569-122">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="9ec1f-123">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-123">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="9ec1f-124">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="9ec1f-124">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="a0569-123">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="a0569-123">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="a0569-124">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="a0569-124">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\NamedPipe`  
   
-## <a name="see-also"></a><span data-ttu-id="9ec1f-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9ec1f-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a0569-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a0569-125">See also</span></span>
