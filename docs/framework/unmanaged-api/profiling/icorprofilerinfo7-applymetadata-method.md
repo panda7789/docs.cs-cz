@@ -1,6 +1,6 @@
 ---
 title: ICorProfilerInfo7::ApplyMetaData Method
-ms.date: 03/30/2017
+ms.date: 02/15/2019
 dev_langs:
 - cpp
 api_name:
@@ -12,12 +12,12 @@ api_type:
 ms.assetid: a1bfb649-4584-4d35-b3e6-8fe59b53992a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7209314f9cf3170ba0b577395a5134f9549475e9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5caf7b5e24ac5e583420b45c563f53b8988f1e00
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54536565"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332660"
 ---
 # <a name="icorprofilerinfo7applymetadata-method"></a>ICorProfilerInfo7::ApplyMetaData Method
 [Podporované v rozhraní .NET Framework 4.6.1 a novějších verzích]  
@@ -52,7 +52,13 @@ HRESULT ApplyMetaData(
 -   `MemberSpec` záznamy, které vytvoříte pomocí volání [imetadataemit2::definemethodspec –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definemethodspec-method.md) metody.  
   
 -   `UserString` záznamy, které vytvoříte pomocí volání [imetadataemit::defineuserstring –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineuserstring-method.md) metody.  
-  
+
+Od verze .NET Core 3.0, `ApplyMetaData` také podporuje následující typy:
+
+- `TypeDef` záznamy, které vytvoříte pomocí volání [imetadataemit::definetypedef –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md) metody.
+
+- `MethodDef` záznamy, které vytvoříte pomocí volání [imetadataemit::definemethod –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md) metody. Ale přidávání virtuální metody k existujícímu typu se nepodporuje. Virtuální metody, je třeba přidat před [ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) zpětného volání.
+
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   

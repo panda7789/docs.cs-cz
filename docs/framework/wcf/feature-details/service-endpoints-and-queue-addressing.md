@@ -2,12 +2,12 @@
 title: Koncové body služby a adresování front
 ms.date: 03/30/2017
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
-ms.openlocfilehash: b513dbf5bfde812c551335826813967272bfd708
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7b4eca1519eeb1ed6357b625a3253105ece2b8ad
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613919"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332517"
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Koncové body služby a adresování front
 Toto téma popisuje, jak klienti adres služby, které načítají z fronty a mapování koncových bodů služby do fronty. Následující obrázek znázorňuje Připomínáme, classic, že nasazení aplikace Windows Communication Foundation (WCF) zařazených do fronty.  
@@ -46,7 +46,7 @@ Toto téma popisuje, jak klienti adres služby, které načítají z fronty a ma
   
  Adresa fronty se používá jako identifikátor URI naslouchání naslouchací proces ke čtení zpráv z. Jinými slovy adresa fronty je ekvivalentní k naslouchání TCP portu soketu.  
   
- Koncový bod, který čte z fronty, musíte zadat adresu fronty pomocí stejné schéma, které jste zadali dříve při otevření hostitele ServiceHost. Příklady najdete v tématu [vazby Net MSMQ](../../../../docs/framework/wcf/samples/net-msmq-binding.md) a [zprávy služby Řízení front integrace vazby ukázky](https://msdn.microsoft.com/library/997d11cb-f2c5-4ba0-9209-92843d4d0e1a).  
+ Koncový bod, který čte z fronty, musíte zadat adresu fronty pomocí stejné schéma, které jste zadali dříve při otevření hostitele ServiceHost. Příklady najdete v tématu [vazby Net MSMQ](../../../../docs/framework/wcf/samples/net-msmq-binding.md).  
   
 ### <a name="multiple-contracts-in-a-queue"></a>Více kontraktů ve frontě  
  Různé smlouvy můžete implementovat zprávy ve frontě. V takovém případě je důležité, že je PRAVDA, pokud chcete úspěšně číst a zpracovávat všechny zprávy jednu z následujících:  

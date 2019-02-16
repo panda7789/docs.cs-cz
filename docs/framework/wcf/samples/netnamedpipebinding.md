@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Net Profile Named Pipe
 ms.assetid: e78e845f-c325-46e2-927d-81616f97f7d5
-ms.openlocfilehash: d35d5115f6005578164d13b94c9940152ddc1c56
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f57a5df92b1e1dd20575c7930ac2a6eb546e1400
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54734458"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332998"
 ---
 # <a name="netnamedpipebinding"></a>NetNamedPipeBinding
 Tento příklad ukazuje, `netNamedPipeBinding` vazbu, která poskytuje komunikaci mezi procesy ve stejném počítači. Pojmenované kanály napříč počítači nefungují. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) Kalkulačka služby.  
@@ -19,7 +19,7 @@ Tento příklad ukazuje, `netNamedPipeBinding` vazbu, která poskytuje komunikac
 > [!NOTE]
 >  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Vazba je zadán v konfiguračních souborech pro klienta a služby. Typ vazby je zadán v `binding` atribut [ \<koncový bod >](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu, jak je znázorněno v následující ukázková konfigurace:  
+ Vazba je zadán v konfiguračních souborech pro klienta a služby. Typ vazby je zadán v `binding` atribut [ \<koncový bod >](../../configure-apps/file-schema/wcf/endpoint-element.md) nebo [ \<koncový bod > z \<klienta >](../../configure-apps/file-schema/wcf/endpoint-of-client.md) elementu, jak je znázorněno Následující ukázkové konfiguraci:  
   
 ```xml  
 <endpoint address="net.pipe://localhost/ServiceModelSamples/service"  

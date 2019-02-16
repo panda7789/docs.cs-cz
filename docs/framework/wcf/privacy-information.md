@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: ea3ff1e8ec4234e75b937cfef81b55bb8f71fa12
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f909b987da31a0a4af605d603d1c7b7a35615f19
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683963"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56333401"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation – informace o ochraně osobních údajů
 Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. Při vytvoření aplikace využívající Windows Communication Foundation (WCF), verze 3.0, vaše aplikace může mít vliv na vaše koncové uživatele o ochraně osobních údajů. Například vaše aplikace explicitně shromažďovat informace o uživateli, nebo může požádat o nebo odeslat informace přes Internet k vašemu webovému serveru. Pokud vložíte technologie společnosti Microsoft ve vaší aplikaci, tato technologie může mít svůj vlastní chování, které můžou ovlivnit ochranu osobních údajů. WCF neodešle žádné informace o společnosti Microsoft z vaší aplikace Pokud vy nebo koncový uživatel se rozhodnete odeslat na nás.  
@@ -402,5 +402,5 @@ Společnost Microsoft se zavazuje chránit osobní údaje koncoví uživatelé. 
  Na webové služby WSDL (Description Language) obsahuje definici portu. Každý z portů má adresu koncového bodu a vazbu, která představuje služby používané aplikace. Vystavení WSDL můžete vypnout pomocí konfigurace. Žádné informace se uchovávají v počítači.  
   
 ## <a name="see-also"></a>Viz také:
-- [Windows Communication Foundation](https://msdn.microsoft.com/library/fd327ade-0260-4c40-adbe-b74645ba3277)
+- [Windows Communication Foundation](index.md)
 - [Zabezpečení](../../../docs/framework/wcf/feature-details/security.md)

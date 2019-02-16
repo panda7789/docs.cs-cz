@@ -2,12 +2,12 @@
 title: Migrace z .NET Remoting do WCF
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: 1ebab76d63ae3328b158f1c03a61d2e2b3cbd8f9
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: 38ec11b529c7b0444d47971938fb711fe40bee3d
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415972"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56333063"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrace z .NET Remoting do WCF
 Tento článek popisuje, jak migrovat aplikace, která používá vzdálené komunikace .NET na použití služby Windows Communication Foundation (WCF). Porovná podobné koncepty mezi tyto produkty a pak popisuje, jak provádět několik běžných scénářů vzdálené komunikace v WCF.  
@@ -207,11 +207,7 @@ public class WCFCustomer
   
  Atribut [kontraktu dat DataContract] identifikuje tento typ jako jednu, která může serializovat a deserializovat mezi klientem a serverem. Atribut [DataMember] identifikuje jednotlivé vlastnosti nebo pole k serializaci.  
   
- Když WCF odešle objekt napříč úrovněmi, serializuje pouze hodnoty a vytvoří novou instanci objektu na jiné úrovni. Všechny interakce s hodnotami objektu dojít pouze místně – nekomunikují s úrovní, které objekty podle odkazu způsob, jak vzdálené komunikace .NET. Další informace naleznete v následujících tématech:  
-  
--   [Serializace a deserializace](./feature-details/serialization-and-deserialization.md)  
-  
--   [Serializace ve službě Windows Communication Foundation](https://msdn.microsoft.com/magazine/cc163569.aspx)  
+ Když WCF odešle objekt napříč úrovněmi, serializuje pouze hodnoty a vytvoří novou instanci objektu na jiné úrovni. Všechny interakce s hodnotami objektu dojít pouze místně – nekomunikují s úrovní, které objekty podle odkazu způsob, jak vzdálené komunikace .NET. Další informace najdete v tématu [serializace a deserializace](./feature-details/serialization-and-deserialization.md).  
   
 ### <a name="exception-handling-capabilities"></a>Možnosti zpracování výjimek  
   

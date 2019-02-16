@@ -2,12 +2,12 @@
 title: 'Vzorce návrhu: Vzorec Publikování–odběr založený na seznamu'
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-ms.openlocfilehash: 87151cb8e50f526838565b22088f117941d6ab98
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a71e6c060a7da4161902266eabda9dd350e40f80
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717887"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56333388"
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>Vzorce návrhu: Vzorec Publikování–odběr založený na seznamu
 Tento příklad znázorňuje vzor založený na seznamu publikování a odběru implementovaná jako program Windows Communication Foundation (WCF).  
@@ -124,7 +124,7 @@ public class PriceChangeEventArgs : EventArgs
   
 3.  Spustit Datasource.exe z \datasource\bin\\, ze složky specifické pro jazyk. Aktivita zdroje dat se zobrazí v okně konzoly. Jakmile se zdroje dat se odesílá informace do služby, jeho by měly být předány každého klienta.  
   
-4.  Pokud klient, zdroj dat a aplikací služby nejsou schopné komunikovat, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  Pokud klient, zdroj dat a aplikací služby nejsou schopné komunikovat, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-machines"></a>Ke spuštění ukázky v počítačích  
   

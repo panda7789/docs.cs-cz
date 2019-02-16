@@ -2,12 +2,12 @@
 title: Kontrakty služeb
 ms.date: 03/30/2017
 ms.assetid: 9e34b694-aa56-45b3-8dd1-2616705b4fc5
-ms.openlocfilehash: 0d44b6d0a996834c923dafee6cb6319c9dc87fd2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e6e4deaf3c5023f28f76983e6b7dfe2e24182c11
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520602"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332062"
 ---
 # <a name="service-contracts"></a>Kontrakty služeb
 Tato část obsahuje ukázky, které předvádějí kontrakty služeb Windows Communication Foundation (WCF).  
@@ -27,9 +27,6 @@ Tato část obsahuje ukázky, které předvádějí kontrakty služeb Windows Co
   
  [Stream](../../../../docs/framework/wcf/samples/stream.md)  
  Ukazuje použití streamování komunikace režim přenosu.  
-  
- [Asynchronní](https://msdn.microsoft.com/library/833db946-f511-4f64-a26f-2759a11217c7)  
- Ukazuje, jak má přístup klient operace služby asynchronně a jak službu můžete implementovat jeho operace asynchronně.  
   
  [Chyby XmlSerializer](../../../../docs/framework/wcf/samples/xmlserializer-faults.md)  
  Ukazuje, jak komunikovat se informace o chybě ze služby klienta pomocí <xref:System.Xml.Serialization.XmlSerializer>.

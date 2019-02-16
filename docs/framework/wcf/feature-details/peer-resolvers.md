@@ -2,12 +2,12 @@
 title: Překladače partnerských uzlů
 ms.date: 03/30/2017
 ms.assetid: d86d12a1-7358-450f-9727-b6afb95adb9c
-ms.openlocfilehash: b16358d05b9e457b4542e41297908e225885dad9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f7d7b055312fe82bd628f8b07304dc9bb188fffb
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496842"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56333375"
 ---
 # <a name="peer-resolvers"></a>Překladače partnerských uzlů
 Aby bylo možné připojit k sítě, vyžaduje partnerský uzel IP adresy z ostatních uzlů. Získávají se IP adresy kontaktováním překladač služby, která přijímá ID sítě a vrátí seznam hodnot adresy odpovídající uzly zaregistrovaný s ID tohoto konkrétního sítě. Překladač udržuje seznam registrovaných adresy, které se vytvoří tak, že každý uzel v mřížce zaregistrovat do služby.  
@@ -32,7 +32,7 @@ Aby bylo možné připojit k sítě, vyžaduje partnerský uzel IP adresy z osta
 > [!NOTE]
 >  Pokud používáte vlastní mechanismus rozpoznávání neocenitelní a místní sítí, se důrazně doporučuje, že aplikace používá nebo specifická pro připojení nebo neocenitelní sítě obsahují logiku, která vybere jedna adresa specifická pro připojení používat při připojování. To zabraňuje záměny potenciálně způsobené počítače s více adresami specifická pro připojení. V souladu s touto protokolu Peer Channel podporuje pouze pomocí jedné adresy specifická pro připojení v daný okamžik. Můžete zadat tuto adresu se `ListenIpAddress` vlastnost <xref:System.ServiceModel.NetPeerTcpBinding>.  
   
- Ukázku toho, jak implementovat vlastní mechanismus rozpoznávání, naleznete v tématu [Peer Channel vlastní rozpoznávání partnera](https://msdn.microsoft.com/library/5b75a2bb-7ff1-4a14-abe7-3debf0537d23).  
+ Ukázku toho, jak implementovat vlastní mechanismus rozpoznávání, naleznete v tématu [Peer Channel vlastní rozpoznávání partnera](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751466(v=vs.90)).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Uvnitř CustomPeerResolverService: Registrace klienta](../../../../docs/framework/wcf/feature-details/inside-the-custompeerresolverservice-client-registrations.md)  

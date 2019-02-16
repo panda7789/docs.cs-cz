@@ -2,12 +2,12 @@
 title: 'Přenos: UDP'
 ms.date: 03/30/2017
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
-ms.openlocfilehash: e3e01634c496a3673b49ae7329e4221e0d568803
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 59bcfc376c2fada5f94f462cecbf3d5363def48d
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43485937"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332816"
 ---
 # <a name="transport-udp"></a>Přenos: UDP
 Přenos UDP ukázka ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní přenosu Windows Communication Foundation (WCF). Ukázka popisuje doporučený postup pro vytvoření vlastní přenos ve službě WCF, pomocí architektura kanálů a osvědčených postupů WCF. Postup vytvoření vlastní přenosu jsou následující:  
@@ -52,17 +52,17 @@ Přenos UDP ukázka ukazuje, jak implementovat jednosměrového vysílání UDP 
 ### <a name="the-icommunicationobject-and-the-wcf-object-lifecycle"></a>Objekt ICommunicationObject a životního cyklu objektu WCF  
  WCF obsahuje běžné stavového stroje, který se používá pro správu životního cyklu objektů, jako jsou <xref:System.ServiceModel.Channels.IChannel>, <xref:System.ServiceModel.Channels.IChannelFactory>, a <xref:System.ServiceModel.Channels.IChannelListener> , která se používají ke komunikaci. Existuje pět stavy, ve kterých lze tyto komunikace objekty existují. Tyto stavy jsou reprezentovány <xref:System.ServiceModel.CommunicationState> výčtu a jsou následujícím způsobem:  
   
--   Vytvořeno: Toto je stav <xref:System.ServiceModel.ICommunicationObject> kdy je poprvé vytvořena. Vyvolá se v tomto stavu žádný vstup/výstup (vstupně-výstupní operace).  
+-   Vytvořit: Toto je stav <xref:System.ServiceModel.ICommunicationObject> kdy je poprvé vytvořena. Vyvolá se v tomto stavu žádný vstup/výstup (vstupně-výstupní operace).  
   
--   Otevírání: Objekty přechodu na tento stav, kdy <xref:System.ServiceModel.ICommunicationObject.Open%2A> je volána. V tomto okamžiku byly neměnné vlastnosti a začít vstupu a výstupu. Tento převod je platný pouze ze stavu vytvořen.  
+-   Otevřít: Objekty přechodu na tento stav, kdy <xref:System.ServiceModel.ICommunicationObject.Open%2A> je volána. V tomto okamžiku byly neměnné vlastnosti a začít vstupu a výstupu. Tento převod je platný pouze ze stavu vytvořen.  
   
--   Otevřít: Přechod objekty do tohoto stavu po dokončení procesu otevřít. Tento převod je platný pouze ze stavu otevření. V tomto okamžiku objektu je plně použitelné pro přenos.  
+-   Otevřít: Objekty přechod do tohoto stavu po dokončení procesu otevřít. Tento převod je platný pouze ze stavu otevření. V tomto okamžiku objektu je plně použitelné pro přenos.  
   
--   Uzavírací: Objekty přechodu na tento stav, kdy <xref:System.ServiceModel.ICommunicationObject.Close%2A> se volá pro řádné vypnutí. Tento převod je platný pouze ze stavu otevřen.  
+-   Uzavření: Objekty přechodu na tento stav, kdy <xref:System.ServiceModel.ICommunicationObject.Close%2A> se volá pro řádné vypnutí. Tento převod je platný pouze ze stavu otevřen.  
   
--   Uzavřeno: V poli Uzavřeno stavu objekty už nejsou použitelné. Obecně platí je pořád přístupný pro kontrolu největší konfiguraci, ale žádná komunikace může dojít. Tento stav je ekvivalentní vyřazována.  
+-   Zavřít: V poli Uzavřeno stavu objekty už nejsou použitelné. Obecně platí je pořád přístupný pro kontrolu největší konfiguraci, ale žádná komunikace může dojít. Tento stav je ekvivalentní vyřazována.  
   
--   Chyba: V chybovém stavu, jsou objekty přístupné pro kontrolu, ale už nebude použitelná. Pokud dojde k nezotavitelné chybě, objekt přejde do tohoto stavu. Je platné pouze přechod z tohoto stavu do `Closed` stavu.  
+-   Došlo k chybě: Objekty v chybovém stavu, jsou přístupné pro kontrolu, ale už nebude použitelná. Pokud dojde k nezotavitelné chybě, objekt přejde do tohoto stavu. Je platné pouze přechod z tohoto stavu do `Closed` stavu.  
   
  Existují události, které se aktivují pro každý přechod stavu. <xref:System.ServiceModel.ICommunicationObject.Abort%2A> Metoda může být volána v každém okamžiku a způsobí, že objekt přechod okamžitě v jejím aktuálním stavu do uzavřeného stavu. Volání <xref:System.ServiceModel.ICommunicationObject.Abort%2A> ukončí všechny nedokončené práce.  
   
@@ -255,7 +255,7 @@ AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressi
 ## <a name="adding-a-standard-binding"></a>Přidání standardní vazbu  
  Naše element vazby lze použít v následujících dvou způsobů:  
   
--   Prostřednictvím vlastní vazby: vlastní vazby umožňuje uživateli vytvořit své vlastní vazbu na základě libovolného sady elementů vazby.  
+-   Prostřednictvím vlastní vazby: Vlastní vazba umožňuje uživateli vytvořit své vlastní vazbu na základě libovolného sady elementů vazby.  
   
 -   S použitím vazeb poskytovaných systémem, který zahrnuje naše element vazby. WCF poskytuje několik z těchto vazeb definovaných systémem, jako `BasicHttpBinding`, `NetTcpBinding`, a `WsHttpBinding`. Každá z těchto vazeb souvisí s dobře definovaného profilu.  
   
@@ -394,7 +394,7 @@ protected override void OnApplyConfiguration(string configurationName)
 ```  
   
 ## <a name="the-udp-test-service-and-client"></a>Služba testovacího UDP a klienta  
- Testovací kód pro tento přenos ukázkový používání je k dispozici v adresářích UdpTestService a UdpTestClient. Kódu služby se skládá ze dvou testy – jeden test nastaví vazby a koncových bodů z kódu a druhý se prostřednictvím konfigurace. Oba testy použít dva koncové body. Použije jeden koncový bod `SampleUdpProfileBinding` s [ \<reliableSession >](https://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) nastavena na `true`. Jiný koncový bod používá vlastní vazby s `UdpTransportBindingElement`. To je ekvivalentní k použití `SampleUdpProfileBinding` s [ \<reliableSession >](https://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b) nastavena na `false`. Oba testy vytvoření služby, přidat koncový bod pro každou vazbu, otevřete službu a potom počkejte uživateli před jeho zavřením službu stiskněte ENTER.  
+ Testovací kód pro tento přenos ukázkový používání je k dispozici v adresářích UdpTestService a UdpTestClient. Kódu služby se skládá ze dvou testy – jeden test nastaví vazby a koncových bodů z kódu a druhý se prostřednictvím konfigurace. Oba testy použít dva koncové body. Použije jeden koncový bod `SampleUdpProfileBinding` s [ \<reliableSession >](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90)) nastavena na `true`. Jiný koncový bod používá vlastní vazby s `UdpTransportBindingElement`. To je ekvivalentní k použití `SampleUdpProfileBinding` s [ \<reliableSession >](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90)) nastavena na `false`. Oba testy vytvoření služby, přidat koncový bod pro každou vazbu, otevřete službu a potom počkejte uživateli před jeho zavřením službu stiskněte ENTER.  
   
  Při spuštění testu aplikace službu byste měli vidět následující výstup.  
   

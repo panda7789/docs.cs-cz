@@ -2,17 +2,17 @@
 title: Ukázka služby AJAX využívající komplexní typy
 ms.date: 03/30/2017
 ms.assetid: 88242b99-4811-4cbe-8201-52ddf48fb174
-ms.openlocfilehash: 338d7105180df94f85647da413fc682451b7c9d1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 17c760c8276799fed7e7a8366c17ef9f5cf7081c
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54676663"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56333479"
 ---
 # <a name="ajax-service-using-complex-types-sample"></a>Ukázka služby AJAX využívající komplexní typy
 Tato ukázka demonstruje použití Windows Communication Foundation (WCF) k vytvoření služby ASP.NET asynchronní JavaScript a XML (AJAX), který vytváří instance komplexních typů a odešle je mezi službou a klienta jako JSON JavaScript Object Notation (). Služby AJAX můžete přistupovat pomocí kódu jazyka JavaScript z webového prohlížeče klienta. Tato ukázka je založena na [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) vzorku.  
   
- Podpora pro AJAX ve službě WCF je optimalizovaná pro použití s technologií ASP.NET AJAX prostřednictvím <xref:System.Web.UI.ScriptManager> ovládacího prvku. Příklad použití WCF pomocí ASP.NET AJAX, najdete v článku [AJAX ukázky](https://msdn.microsoft.com/library/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).  
+ Podpora pro AJAX ve službě WCF je optimalizovaná pro použití s technologií ASP.NET AJAX prostřednictvím <xref:System.Web.UI.ScriptManager> ovládacího prvku. Příklad použití WCF pomocí ASP.NET AJAX, najdete v článku [AJAX ukázky](ajax.md).  
   
 > [!NOTE]
 >  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  

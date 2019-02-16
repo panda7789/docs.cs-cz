@@ -2,12 +2,12 @@
 title: Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: 35eeab5daec6f63f4d3bed85442ffe6ca28dc38b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 705314c1eb0318fe7da53108d51f9dc985a3fdfa
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583400"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56333453"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Internetové informační služby (IIS) a spustit z běžných virtuální adresář. Tento postup jednorázová nastavení vytvoří složku na disk. také přidá virtuální adresář služby IIS s názvem **ServiceModelSamples**.
@@ -25,7 +25,7 @@ Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Inter
   
 3.  Pokud není nainstalované Visual Studio 2012 a operačního systému není Windows Server 2008 SP2 nebo novější, nainstalujte [opravu Hotfix 251798](https://go.microsoft.com/fwlink/?LinkId=184693).  
   
-4.  Spusťte následující příkazy. Další informace o proč musí spustit tyto příkazy najdete v tématu [IIS hostované služby nezdaří](https://msdn.microsoft.com/library/ee5499fc-1b10-4cda-a9b1-13dba70f05f8).  
+4.  Spusťte následující příkazy. Další informace o proč musí spustit tyto příkazy najdete v tématu [IIS hostované služby nezdaří](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752252(v=vs.90)).  
   
     > [!WARNING]
     >  Pokud se znovu nainstaluje službu IIS, následující příkazy muset znovu spustit.

@@ -2,12 +2,12 @@
 title: Ověřování ze strany klienta
 ms.date: 03/30/2017
 ms.assetid: f0c1f805-1a81-4d0d-a112-bf5e2e87a631
-ms.openlocfilehash: 3a80121894ddbb753efbe047d14a14a57f8dddc5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b033695065dfeb130f041563909704acb84bb3be
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54640001"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56333297"
 ---
 # <a name="client-validation"></a>Ověřování ze strany klienta
 Služby často publikování metadat povolit automatické generování a konfigurace proxy serveru typů klientů. Pokud služba není důvěryhodný, klientské aplikace by měl ověřit, metadata odpovídá klientská aplikace zásady týkající se zabezpečení, transakce, typ kontraktu služby a tak dále. Následující příklad ukazuje, jak zapsat klienta chování koncového bodu, která ověřuje koncový bod služby k zajištění, že tento koncový bod služby je bezpečné používat.  
@@ -28,7 +28,7 @@ Služby často publikování metadat povolit automatické generování a konfigu
   
 3.  Spuštění klientské aplikace z \client\bin\Debug. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-4.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 5.  Odeberte certifikáty spuštěním Cleanup.bat po dokončení s ukázkou. Další ukázky zabezpečení použijte stejné certifikáty.  
   
@@ -54,7 +54,7 @@ Služby často publikování metadat povolit automatické generování a konfigu
   
 10. Na klientském počítači spusťte client.exe.  
   
-    1.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+    1.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   

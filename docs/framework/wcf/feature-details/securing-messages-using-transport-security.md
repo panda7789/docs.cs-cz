@@ -2,12 +2,12 @@
 title: Zabezpečení zpráv pomocí zabezpečení přenosu
 ms.date: 03/30/2017
 ms.assetid: 9029771a-097e-448a-a13a-55d2878330b8
-ms.openlocfilehash: 4a67cc8265254741a58c9b86bc45eff9c9366bcf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 354b014825b3282e494cf75637fb2434acdb2dbe
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54747944"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332339"
 ---
 # <a name="securing-messages-using-transport-security"></a>Zabezpečení zpráv pomocí zabezpečení přenosu
 Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ), který můžete použít k zabezpečení zprávy odeslané do fronty.  
@@ -97,6 +97,6 @@ Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ
  Jsou podporované algoritmy `MD5`, `SHA1`, `SHA256`, a `SHA512`. Výchozí hodnota je `SHA1`.  
   
 ## <a name="see-also"></a>Viz také:
-- [Služba Řízení front zpráv](https://msdn.microsoft.com/library/ff917e87-05d5-478f-9430-0f560675ece1)
+- [Přehled front](queues-overview.md)
 - [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)
 - [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

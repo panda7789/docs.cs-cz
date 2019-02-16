@@ -1,17 +1,17 @@
 ---
-title: 'Postupy: Konfigurace klienta základní Windows Communication Foundation'
+title: 'Postupy: Konfigurace základního klienta Windows Communication Foundation'
 ms.date: 09/14/2018
 helpviewer_keywords:
 - WCF clients [WCF], configuring
 ms.assetid: d067b86d-afb0-47bf-94f6-45180a3d8d78
-ms.openlocfilehash: 3f267edf87711de8a5969e3e0b577648008c5a75
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.openlocfilehash: 18acec48b2af78877f99335da38ccb0ae8942824
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46562187"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332313"
 ---
-# <a name="how-to-configure-a-basic-windows-communication-foundation-client"></a>Postupy: Konfigurace klienta základní Windows Communication Foundation
+# <a name="how-to-configure-a-basic-windows-communication-foundation-client"></a>Postupy: Konfigurace základního klienta Windows Communication Foundation
 
 Toto je pátý šesti úkolů, muset vytvořit základní aplikaci Windows Communication Foundation (WCF). Přehled všech šesti úkoly, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.
 
@@ -19,7 +19,7 @@ Toto téma popisuje klientské konfigurační soubor, který se vygeneroval pomo
 
 ## <a name="configure-a-windows-communication-foundation-client"></a>Konfigurace klienta Windows Communication Foundation
 
-Z projektu GettingStartedClient otevřete vygenerovaný konfigurační soubor (App.config). V následujícím příkladu je zobrazení generovaného konfiguračního souboru. V části [ \<system.serviceModel >](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) části, vyhledejte [ \<koncový bod >](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu.
+Z projektu GettingStartedClient otevřete vygenerovaný konfigurační soubor (App.config). V následujícím příkladu je zobrazení generovaného konfiguračního souboru. V části [ \<system.serviceModel >](../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) části, vyhledejte [ \<koncový bod >](../configure-apps/file-schema/wcf/endpoint-element.md) elementu.
 
 ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -53,12 +53,12 @@ Tento příklad konfiguruje koncového bodu, který klient používá pro přís
 
 Určuje element koncového bodu, který `ServiceReference1.ICalculator` kontraktu služby se používá ke komunikaci mezi klienta WCF a službou. Kanál WCF se nakonfigurují poskytovaných systémem <xref:System.ServiceModel.WSHttpBinding>. Tato smlouva byl vytvořen pomocí **přidat odkaz na službu** v sadě Visual Studio. Je v podstatě kopií, která byla definována v projektu GettingStartedLib kontrakt. <xref:System.ServiceModel.WSHttpBinding> Vazbu určuje HTTP jako přenosu, interoperabilní zabezpečení a další podrobnosti o konfiguraci.
 
-Další informace o tom, jak pomocí generovaného klienta s touto konfigurací najdete v tématu [postupy: používání klienta](../../../docs/framework/wcf/how-to-use-a-wcf-client.md).
+Další informace o tom, jak pomocí generovaného klienta s touto konfigurací najdete v tématu [jak: Používání klienta](../../../docs/framework/wcf/how-to-use-a-wcf-client.md).
 
 ## <a name="next-steps"></a>Další kroky
 
 > [!div class="nextstepaction"]
-> [Postupy: používání klienta WCF](../../../docs/framework/wcf/how-to-use-a-wcf-client.md)
+> [Postupy: Pomocí klienta WCF](../../../docs/framework/wcf/how-to-use-a-wcf-client.md)
 
 ## <a name="see-also"></a>Viz také:
 

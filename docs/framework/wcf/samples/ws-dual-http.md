@@ -2,12 +2,12 @@
 title: WS Dual Http
 ms.date: 03/30/2017
 ms.assetid: 9997eba5-29ec-48db-86f3-fa77b241fb1a
-ms.openlocfilehash: 93097c5f13a45ba399ec90d6282db8ca277a8ede
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d5c6309a183c0bf0b666fd39aea3d760eb7008ad
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54640547"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332153"
 ---
 # <a name="ws-dual-http"></a>WS Dual Http
 Duální Http Ukázka předvádí, jak nakonfigurovat `WSDualHttpBinding` vazby. Tento příklad se skládá z programu konzoly klienta (.exe) a služby knihovny (.dll) hostované v Internetové informační služby (IIS). Služba implementuje duplexního kontraktu. Smlouva je definován `ICalculatorDuplex` rozhraní, které zveřejňuje matematických operací (Přidat odečíst, násobení a dělení). V této ukázce `ICalculatorDuplex` rozhraní umožňuje klientovi k provádění matematických operací spuštěných výsledek výpočtu přes relaci. Nezávisle na sobě, služba vrátí výsledky v `ICalculatorDuplexCallback` rozhraní. Duplexní kontrakt vyžaduje relaci, protože kontext musí být stanovena ke korelaci sadu zprávy odesílané mezi klientem a službou. `WSDualHttpBinding` Vazba podporuje duplexní komunikaci.  
@@ -87,7 +87,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!IMPORTANT]
-    >  Při spuštění klienta v konfiguraci mezi počítači, je potřeba, místo localhost v obou `address` atribut [koncový bod](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu a `clientBaseAddress` atribut [ \< Vytvoření vazby >](../../../../docs/framework/misc/binding.md) elementu [ \<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) element s názvem příslušný počítač, jak je vidět:  
+    >  Při spuštění klienta v konfiguraci mezi počítači, je potřeba, místo localhost v obou `address` atribut [ \<koncový bod > z \<klienta >](../../configure-apps/file-schema/wcf/endpoint-of-client.md) elementu a `clientBaseAddress` atribut [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu [ \<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) element s názvem příslušný počítač, jak je vidět:  
   
     ```xml  
     <client>  

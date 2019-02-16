@@ -4,12 +4,12 @@ description: Zabezpečení v rozhraní .NET Mikroslužeb a webových aplikací �
 author: mjrousos
 ms.author: wiwagn
 ms.date: 10/19/2018
-ms.openlocfilehash: 9a60f326035a6d04aa39a14c98fc1c711ffe494a
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.openlocfilehash: e53e6a50c1fdfaff6839a0a1e328047562a47824
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362298"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56333493"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Zabezpečení Mikroslužby .NET a webové aplikace
 
@@ -191,7 +191,7 @@ Všimněte si, že pokud použijete tento pracovní postup, middleware ASP.NET C
 
 Pokud chcete vystavovat tokeny zabezpečení pro místní uživatele ASP.NET Core Identity místo pomocí externího zprostředkovatele identity, můžete využít výhod některé dobré knihovny třetích stran.
 
-[IdentityServer4](https://github.com/IdentityServer/IdentityServer4) a [OpenIddict](https://github.com/openiddict/openiddict-core) poskytovatel OpenID Connect, které lze snadno integrovat s ASP.NET Core Identity umožňuje vydávala tokeny zabezpečení ze služby ASP.NET Core. [IdentityServer4 dokumentaci](https://identityserver4.readthedocs.io/en/release/) obsahuje podrobné pokyny pro používání knihovny. Základní postup pomocí IdentityServer4 problém tokeny jsou však následujícím způsobem.
+[IdentityServer4](https://github.com/IdentityServer/IdentityServer4) a [OpenIddict](https://github.com/openiddict/openiddict-core) poskytovatel OpenID Connect, které lze snadno integrovat s ASP.NET Core Identity umožňuje vydávala tokeny zabezpečení ze služby ASP.NET Core. [IdentityServer4 dokumentaci](https://identityserver4.readthedocs.io/en/latest/) obsahuje podrobné pokyny pro používání knihovny. Základní postup pomocí IdentityServer4 problém tokeny jsou však následujícím způsobem.
 
 1. Volání aplikace. UseIdentityServer v metodě Startup.Configure přidat IdentityServer4 kanál zpracování požadavků HTTP vaší aplikace. Díky tomu knihovny obsluhovat požadavky do koncových bodů OAuth2 jako /connect/token a OpenID Connect.
 
@@ -199,17 +199,17 @@ Pokud chcete vystavovat tokeny zabezpečení pro místní uživatele ASP.NET Cor
 
 3. Konfigurace identity serveru tak, že nastavíte následující data:
 
-   - [Pověření](https://identityserver4.readthedocs.io/en/release/topics/crypto.html) má použít pro podepisování.
+   - [Pověření](https://identityserver4.readthedocs.io/en/latest/topics/crypto.html) má použít pro podepisování.
 
-   - [Identity a rozhraní API prostředky](https://identityserver4.readthedocs.io/en/release/topics/resources.html) , že uživatelé můžou žádat o přístup k:
+   - [Identity a rozhraní API prostředky](https://identityserver4.readthedocs.io/en/latest/topics/resources.html) , že uživatelé můžou žádat o přístup k:
 
       - Prostředky rozhraní API představují chráněných dat nebo funkce, které má uživatel přístup s přístupovým tokenem. Příkladem prostředku rozhraní API může být webového rozhraní API (nebo sadu rozhraní API), který vyžaduje ověření.
 
       - Prostředky identity představují informace (deklarace identity), které jsou uvedeny na klienta k identifikaci uživatele. Deklarace mohou zahrnovat uživatelské jméno, e-mailovou adresu a tak dále.
 
-   - [Klienti](https://identityserver4.readthedocs.io/en/release/topics/clients.html) , která se připojují k vyžádání tokeny.
+   - [Klienti](https://identityserver4.readthedocs.io/en/latest/topics/clients.html) , která se připojují k vyžádání tokeny.
 
-   - Mechanismus úložiště pro informace o uživateli, jako například [ASP.NET Core Identity](https://identityserver4.readthedocs.io/en/release/quickstarts/6_aspnet_identity.html) nebo alternativu.
+   - Mechanismus úložiště pro informace o uživateli, jako například [ASP.NET Core Identity](https://identityserver4.readthedocs.io/en/latest/quickstarts/0_overview.html) nebo alternativu.
 
 Když zadáte klienty a zdroje informací pro IdentityServer4 použít, můžete předat <xref:System.Collections.Generic.IEnumerable%601> kolekce příslušného typu metodám, které přebírají klienta nebo prostředků úložiště v paměti. Nebo pro složitější scénáře, můžete zadat klienta nebo prostředků poskytovatele typů pomocí vkládání závislostí.
 
@@ -300,7 +300,7 @@ Middlewaru ověřování nosiče JWT může také podporovat pokročilejší sc�
   [*https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/*](https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
 
 - **IdentityServer4. Oficiální dokumentaci** \
-  [*https://identityserver4.readthedocs.io/en/release/*](https://identityserver4.readthedocs.io/en/release/)
+  *<https://identityserver4.readthedocs.io/en/latest/>*
 
 >[!div class="step-by-step"]
 >[Předchozí](../implement-resilient-applications/monitor-app-health.md)

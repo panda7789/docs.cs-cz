@@ -2,17 +2,17 @@
 title: Ukázka služby AJAX s protokoly JSON a XML
 ms.date: 03/30/2017
 ms.assetid: 8ea5860d-0c42-4ae9-941a-e07efdd8e29c
-ms.openlocfilehash: ed337b7e2717083f5b951d9c204b90ebcddf2d3d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f8e112a75d537927d7a099d2988c1219515e2c1a
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54632293"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332338"
 ---
 # <a name="ajax-service-with-json-and-xml-sample"></a>Ukázka služby AJAX s protokoly JSON a XML
 Tento příklad ukazuje, jak použít Windows Communication Foundation (WCF) k vytvoření služby asynchronní JavaScript a XML (AJAX), který vrací data JavaScript Object Notation (JSON) nebo XML. Služby AJAX můžete přistupovat pomocí kódu jazyka JavaScript z webového prohlížeče klienta. Tato ukázka je založena na [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) vzorku.  
   
- Na rozdíl od ostatních AJAX vzorků, tato ukázka nepoužívá technologie ASP.NET AJAX a <xref:System.Web.UI.ScriptManager> ovládacího prvku. Některé další konfigurace služeb WCF AJAX je přístupný z jakékoli stránky HTML pomocí JavaScriptu a tento scénář je znázorněna zde. Příklad použití WCF pomocí ASP.NET AJAX, naleznete v tématu [AJAX ukázky](https://msdn.microsoft.com/library/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).
+ Na rozdíl od ostatních AJAX vzorků, tato ukázka nepoužívá technologie ASP.NET AJAX a <xref:System.Web.UI.ScriptManager> ovládacího prvku. Některé další konfigurace služeb WCF AJAX je přístupný z jakékoli stránky HTML pomocí JavaScriptu a tento scénář je znázorněna zde. Příklad použití WCF pomocí ASP.NET AJAX, naleznete v tématu [AJAX ukázky](ajax.md).
   
  Tento příklad ukazuje, jak přepnout typ odpovědi z operace mezi JSON a XML. Tato funkce je dostupná bez ohledu na to, zda je služba nakonfigurována přistupovat pomocí technologie ASP.NET AJAX nebo stránku HTML/JavaScript klienta.  
   

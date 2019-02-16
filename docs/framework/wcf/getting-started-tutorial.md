@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], getting started
 - getting started [WCF]
 ms.assetid: df939177-73cb-4440-bd95-092a421516a1
-ms.openlocfilehash: b0abe7a6b127a254c2f5c72dc66fc128d35374fb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2bd0b7e0d927e53f70515cfa124034a4cacc5ce7
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54491360"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332244"
 ---
 # <a name="getting-started-tutorial"></a>Kurz Začínáme
 Témata obsažené v této části jsou určeny umožňují rychlé odhalení pro Windows Communication Foundation (WCF) programovací prostředí. Jsou navrženy dokončit v pořadí podle seznamu v dolní části tohoto tématu. Absolvování tohoto kurzu pochopíte úvodní kroky potřebné k vytváření služeb WCF a klientských aplikací. Služba zpřístupňuje jeden nebo více koncových bodů, každý z nich vystavuje jednu nebo víc operací služeb. *Koncový bod* služby určuje adresu, kde najdete službu, vazbu, která obsahuje informace, které popisuje, jak klient musí komunikovat s službu a kontrakt, který definuje funkce poskytovaných službou svým klientům.
@@ -22,7 +22,7 @@ Témata obsažené v této části jsou určeny umožňují rychlé odhalení pr
 
 Témata v této části předpokládají, že používáte jako vývojové prostředí sady Visual Studio. Pokud používáte jiné vývojové prostředí, ignorujte Visual Studio konkrétní pokyny.
 
-Pro ukázkové aplikace, které lze stáhnout na pevný disk a spouštět, najdete v tématech [ukázky Windows Communication Foundation](https://msdn.microsoft.com/library/8ec9d192-5d81-4f64-bfd3-90c5e5858c91). Pro toto téma, najdete v tématu, zejména v případě, [Začínáme](../../../docs/framework/wcf/samples/getting-started-sample.md).
+Pro ukázkové aplikace, které lze stáhnout na pevný disk a spouštět, najdete v tématech [ukázky Windows Communication Foundation (WCF)](./samples/index.md). Pro toto téma, najdete v tématu, zejména v případě, [Začínáme](../../../docs/framework/wcf/samples/getting-started-sample.md).
 
 Další podrobné informace o vytváření služeb a klientů najdete v tématu [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).
 
@@ -58,7 +58,7 @@ Další podrobné informace o vytváření služeb a klientů najdete v tématu 
 
 ## <a name="related-sections"></a>Související oddíly
 
-- [Ukázky Windows Communication Foundation](https://msdn.microsoft.com/library/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)
+- [Ukázky Windows Communication Foundation (WCF)](./samples/index.md)
 - [Základní programovací životní cyklus](../../../docs/framework/wcf/basic-programming-lifecycle.md)
 
 ## <a name="see-also"></a>Viz také:

@@ -2,17 +2,17 @@
 title: Základní služba AJAX
 ms.date: 03/30/2017
 ms.assetid: d66d0c91-0109-45a0-a901-f3e4667c2465
-ms.openlocfilehash: 7a9529b79c9993e045e6bb28a7ad608f453a694e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2f488ea1784e41c0c8e4bb815397ab81de95e53b
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54509984"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332429"
 ---
 # <a name="basic-ajax-service"></a>Základní služba AJAX
 Tento příklad ukazuje, jak pomocí služby Windows Communication Foundation (WCF) základní asynchronní jazyka JavaScript technologie ASP.NET a XML (AJAX) službu (služba, která můžete přistupovat pomocí kódu jazyka JavaScript z webového prohlížeče klienta). Služba používá <xref:System.ServiceModel.Web.WebGetAttribute> atribut zajistíte, že služba reaguje na požadavky HTTP GET a je nakonfigurován na použití formátu dat JavaScript Object Notation (JSON) pro odpovědi.  
   
- Podpora pro AJAX ve službě WCF je optimalizovaná pro použití s technologií ASP.NET AJAX prostřednictvím `ScriptManager` ovládacího prvku. Příklad použití WCF pomocí ASP.NET AJAX, najdete v článku [AJAX ukázky](https://msdn.microsoft.com/library/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).  
+ Podpora pro AJAX ve službě WCF je optimalizovaná pro použití s technologií ASP.NET AJAX prostřednictvím `ScriptManager` ovládacího prvku. Příklad použití WCF pomocí ASP.NET AJAX, najdete v článku [AJAX ukázky](ajax.md).  
   
 > [!NOTE]
 >  Postupu a sestavení pokyny k instalaci pro tuto ukázku se nachází na konci tohoto tématu.  

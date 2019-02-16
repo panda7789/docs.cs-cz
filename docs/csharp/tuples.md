@@ -3,12 +3,12 @@ title: Typy řazené kolekce členů – průvodce v C#
 description: Další informace o typech pojmenované a nepojmenované řazené kolekce členů v C#
 ms.date: 05/15/2018
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 32d089d36328d30de344e14fb7e88e80eacf5ed0
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 2c2b25c34555699c196099c0e1c51681fba8c358
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155129"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56332751"
 ---
 # <a name="c-tuple-types"></a>Typy řazené kolekce členů v C# #
 
@@ -77,12 +77,12 @@ Pro všechna pole, pokud není poskytnut jasný název je použít implicitní n
 
 Existují dvě podmínky. Pokud nejsou názvy polí Release candidate plánovaných na pole řazené kolekce členů:
 
-1. Pokud název Release candidate je název vyhrazené řazené kolekce členů. Mezi příklady patří `Item3`, `ToString`. nebo `Rest`.
+1. Pokud název Release candidate je název vyhrazené řazené kolekce členů. Mezi příklady patří `Item3`, `ToString`. or `Rest`.
 1. Pokud název Release candidate je duplicitní jiného názvu pole řazené kolekce členů, explicitní nebo implicitní.
 
 Tyto podmínky-li předejít nejednoznačnosti. Tyto názvy by způsobit nejednoznačnost, pokud byly použity jako názvy polí pro pole řazená kolekce členů. Žádná z těchto podmínek způsobit chyby kompilace. Místo toho elementy bez předpokládané názvů nemají sémantické názvy plánovaných pro ně.  Následující příklady ukazují tyto podmínky:
 
-[!code-csharp[Ambiguity](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectionAmbiguities "tuples where projections are not performed")]
+[!code-csharp-interactive[Ambiguity](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectionAmbiguities "tuples where projections are not performed")]
 
 Těmito situacemi nezpůsobí chyby kompilátoru, protože, která by byla k zásadní změně kódu napsané v jazyce C# 7.0, když řazené kolekce členů pole Název projekce nebyly k dispozici.
 
@@ -90,29 +90,31 @@ Těmito situacemi nezpůsobí chyby kompilátoru, protože, která by byla k zá
 
 Od verze C# 7.3, typy řazené kolekce členů podpory `==` a `!=` operátory. Tyto operátory pracují na základě porovnání každý člen levý argument pro každého člena pravý argument v pořadí. Tato porovnání zkrácenou. Přestanou vyhodnocování členy jako jednu dvojici není rovno. Následující příklady kódu používají `==`, ale pravidla porovnání všech platí pro `!=`. Následující příklad kódu ukazuje porovnání rovnosti pro dvě dvojice celých čísel:
 
-[!code-csharp[TupleEquality](../../samples/snippets/csharp/tuples/tuples/program.cs#Equality "Testing tuples for equality")]
+[!code-csharp-interactive[TupleEquality](../../samples/snippets/csharp/tuples/tuples/program.cs#Equality "Testing tuples for equality")]
 
 Existuje několik pravidel, která pohodlnější provádění testů rovnost řazené kolekce členů. Rovnost řazené kolekce členů provádí [zrušeno vs. převody](~/_csharplang/spec/conversions.md#lifted-conversion-operators) Pokud jeden ze záznamů je s možnou hodnotou Null řazené kolekce členů, jak je znázorněno v následujícím kódu:
 
-
-[!code-csharp[NullableTupleEquality](../../samples/snippets/csharp/tuples/tuples/program.cs#NullableEquality "Comparing Tuples and nullable tuples")]
+[!code-csharp-interactive[NullableTupleEquality](../../samples/snippets/csharp/tuples/tuples/program.cs#NullableEquality "Comparing Tuples and nullable tuples")]
 
 Rovnost řazené kolekce členů také provádí implicitní převody v každém členovi obou řazených kolekcí členů. Patří mezi ně zdvižené převody rozšiřující převody a jiných implicitních převodů. Následující příklady ukazují, že celé číslo 2-řazené kolekce členů je možné porovnat s dlouhou 2-řazené kolekce členů z důvodu implicitní převod z celého čísla na dlouhé:
 
-[!code-csharp[SnippetMemberConversions](../../samples/snippets/csharp/tuples/tuples/program.cs#SnippetMemberConversions "converting tuples for equality tests")]
+[!code-csharp-interactive[SnippetMemberConversions](../../samples/snippets/csharp/tuples/tuples/program.cs#SnippetMemberConversions "converting tuples for equality tests")]
 
 Názvy členů řazené kolekce členů nejsou součástí testy pro rovnost. Ale pokud jeden z operandů je literál s explicitní názvy řazené kolekce členů, kompilátor vygeneruje upozornění CS8383 Pokud tyto názvy se neshodují s názvy je druhý operand.
 V případě, pokud jsou oba operandy literálech řazené kolekce členů se upozornění na pravý operand, jak je znázorněno v následujícím příkladu:
 
-[!code-csharp[MemberNames](../../samples/snippets/csharp/tuples/tuples/program.cs#SnippetMemberNames "Tuple member names do not participate in equality tests")]
+[!code-csharp-interactive[MemberNames](../../samples/snippets/csharp/tuples/tuples/program.cs#SnippetMemberNames "Tuple member names do not participate in equality tests")]
 
 Nakonec řazené kolekce členů může obsahovat vnořené řazené kolekce členů. Porovná rovnost řazené kolekce členů "tvar" operandem prostřednictvím vnořené řazených kolekcí členů, jako je znázorněno v následujícím příkladu:
 
-[!code-csharp[NestedTuples](../../samples/snippets/csharp/tuples/tuples/program.cs#SnippetNestedTuples "Tuples may contain nested tuples that participate in tuple equality.")]
+[!code-csharp-interactive[NestedTuples](../../samples/snippets/csharp/tuples/tuples/program.cs#SnippetNestedTuples "Tuples may contain nested tuples that participate in tuple equality.")]
+
+Jde o chybu v době kompilace k porovnání dvou řazených kolekcí členů a zjistí rovnost (či nerovnost) Pokud mají různé tvary. Kompilátor vyhrál "pokusit jakékoli dekonstrukce řazených kolekcí členů vnořené k jejich porovnání.
 
 ## <a name="assignment-and-tuples"></a>Přiřazení a řazené kolekce členů
 
-Jazyk podporuje mezi typy řazené kolekce členů, které mají stejný počet prvků, kde každý prvek na pravé straně lze implicitně převést na odpovídající prvek levá strana příkazu přiřazení. Ostatní převody, které nejsou považované za pro přiřazení. Pojďme se podívat na typy přiřazení, které jsou povolené mezi typy řazené kolekce členů.
+Jazyk podporuje mezi typy řazené kolekce členů, které mají stejný počet prvků, kde každý prvek na pravé straně lze implicitně převést na odpovídající prvek levá strana příkazu přiřazení. Ostatní převody, které nejsou považované za pro přiřazení. Je chybu v době kompilace přiřadit jeden řazené kolekce členů do jiného, když mají různé tvary. Kompilátor nebude pokoušet jakékoli dekonstrukce řazených kolekcí členů vnořené, abyste mohli přiřadit je.
+Pojďme se podívat na typy přiřazení, které jsou povolené mezi typy řazené kolekce členů.
 
 Vezměte v úvahu tyto proměnné, používat v následujících příkladech:
 

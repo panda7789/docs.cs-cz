@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - clients [WCF], security considerations
 ms.assetid: 44c8578c-9a5b-4acd-8168-1c30a027c4c5
-ms.openlocfilehash: d76b7db8a3c8f2dcdc8bdbc325a1bb14b87229ab
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fb8d2161800b336cd7f605dda79f28dbb5b91848
+ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54721107"
+ms.lasthandoff: 02/16/2019
+ms.locfileid: "56333466"
 ---
 # <a name="securing-clients"></a>Zabezpečení klientů
 Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpečení pro klienty. To znamená služba určuje, jaké režim zabezpečení, a určuje, jestli klient musí poskytnout přihlašovací údaje. Zabezpečení klienta, proto se tento proces je prostý: pomocí metadat získaných ze služby (je-li publikován) a vytvořit klienta. Metadata Určuje, jak nakonfigurovat klienta. Pokud služba vyžaduje, aby, že klient zadat přihlašovací údaje, je nutné získat pověření, která odpovídá požadavku. Toto téma popisuje proces podrobněji. Další informace o vytváření zabezpečených služeb, naleznete v tématu [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
@@ -41,7 +41,7 @@ Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpe
  Pokud máte konfigurační soubor nástroje Svcutil.exe vygenerována, zkontrolujte [ \<vazby >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) části a zjistěte, jaký typ pověření klienta je povinný. V rámci oddílu jsou elementy vazby, které určují požadavky na zabezpečení. Konkrétně zkontrolujte \<security > – Element pro každou vazbu. Tento prvek obsahuje `mode` atribut, který můžete nastavit na jedno ze tří možných hodnot (`Message`, `Transport`, nebo `TransportWithMessageCredential`). Hodnota atributu určuje režim a režim určuje, který z podřízených prvků je důležité.  
   
  `<security>` Element může obsahovat buď `<transport>` nebo `<message>` element, nebo obojí. Důležitý prvek je ten, který odpovídá režim zabezpečení. Například následující kód určuje, že je režim zabezpečení `"Message"`a pro typ přihlašovacích údajů klienta `<message>` element je `"Certificate"`. V takovém případě `<transport>` element můžete ignorovat. Ale `<message>` element určuje, že je nutné zadat certifikát X.509.  
-  
+
 ```xml  
 <wsHttpBinding>  
     <binding name="WSHttpBinding_ICalculator">  
@@ -56,7 +56,7 @@ Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpe
     </binding>  
 </wsHttpBinding>  
 ```  
-  
+
  Všimněte si, že pokud `clientCredentialType` atribut je nastaven na `"Windows"`, jak je znázorněno v následujícím příkladu, není potřeba zadat hodnotu skutečné přihlašovací údaje. Je to proto, že integrované zabezpečení Windows poskytuje skutečné přihlašovací údaje (token protokolu Kerberos) osoby, která běží klientem.  
   
 ```xml  
@@ -107,29 +107,21 @@ Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpe
 </configuration>  
 ```  
   
- Chcete-li nastavit pověření klienta v konfiguraci, přidejte [ \<endpointBehaviors >](../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) prvku do konfiguračního souboru. Přidání chování element kromě toho je potřeba propojit koncového bodu služby pomocí `behaviorConfiguration` atribut [ \<koncový bod >](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu, jak je znázorněno v následujícím příkladu. Hodnota `behaviorConfiguration` atributu musí odpovídat hodnotě chování `name` atribut.  
-  
- `<configuration>`  
-  
- `<system.serviceModel>`  
-  
- `<client>`  
-  
- `<endpoint address="http://localhost/servicemodelsamples/service.svc"`  
-  
- `binding="wsHttpBinding"`  
-  
- `bindingConfiguration="Binding1"`  
-  
- `behaviorConfiguration="myEndpointBehavior"`  
-  
- `contract="Microsoft.ServiceModel.Samples.ICalculator" />`  
-  
- `</client>`  
-  
- `</system.serviceModel>`  
-  
- `</configuration>`  
+ Chcete-li nastavit pověření klienta v konfiguraci, přidejte [ \<endpointBehaviors >](../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) prvku do konfiguračního souboru. Přidání chování element kromě toho je potřeba propojit koncového bodu služby pomocí `behaviorConfiguration` atribut [ \<koncový bod > z \<klienta >](../configure-apps/file-schema/wcf/endpoint-of-client.md) elementu, jak je znázorněno v následujícím příkladu. Hodnota `behaviorConfiguration` atributu musí odpovídat hodnotě chování `name` atribut.  
+
+```xml
+<configuration>
+  <system.serviceModel>
+    <client>
+      <endpoint address="http://localhost/servicemodelsamples/service.svc"
+                binding="wsHttpBinding"
+                bindingConfiguration="Binding1"
+                behaviorConfiguration="myEndpointBehavior"
+                contract="Microsoft.ServiceModel.Samples.ICalculator" />
+    </client>
+  </system.serviceModel>
+</configuration>
+```
   
 > [!NOTE]
 >  Některé z hodnot přihlašovacích údajů klienta nemůže být sada pomocí konfiguračních souborů aplikace, třeba, uživatelské jméno a heslo, nebo Windows uživatele a hodnoty hesla. Tyto přihlašovací údaje hodnot je možné zadat pouze v kódu.  
