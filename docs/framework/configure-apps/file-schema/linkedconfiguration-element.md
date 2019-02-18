@@ -50,10 +50,10 @@ Určuje konfigurační soubor, který chcete zahrnout.
 
 ## <a name="remarks"></a>Poznámky
 
- **\<Linkedconfiguration – >** element zjednodušuje údržbu pro sestavení komponent. Pokud jeden nebo více aplikací používat sestavení, která obsahuje konfigurační soubor umístěný v dobře známého umístění, můžete použít konfigurační soubory aplikace, které používají sestavení  **\<linkedconfiguration – >** Element zahrnout konfigurační soubor sestavení, nikoli přímo včetně informací o konfiguraci. Při sestavení součástí je údržba, aktualizace společné konfigurační soubor obsahuje informace aktualizovanou konfiguraci pro všechny aplikace, které používají sestavení.
+**\<Linkedconfiguration – >** element zjednodušuje údržbu pro sestavení komponent. Pokud jeden nebo více aplikací používat sestavení, která obsahuje konfigurační soubor umístěný v dobře známého umístění, můžete použít konfigurační soubory aplikace, které používají sestavení **\<linkedconfiguration – >** Element zahrnout konfigurační soubor sestavení, nikoli přímo včetně informací o konfiguraci. Při sestavení součástí je údržba, aktualizace společné konfigurační soubor obsahuje informace aktualizovanou konfiguraci pro všechny aplikace, které používají sestavení.
 
 > [!NOTE]
->  **\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.
+> **\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.
 
 Následující pravidla určují, použití propojené konfigurační soubory:
 
@@ -65,7 +65,7 @@ Následující pravidla určují, použití propojené konfigurační soubory:
 
 - Všechny propojené konfigurační soubory jsou sloučeny do jednoho souboru, podobně jako chování `#include` direktiva v jazyce C/C++.
 
--  **\<Linkedconfiguration – >** element je povolen pouze v konfiguračních souborech aplikace, je ignorován v *Machine.config*.
+- **\<Linkedconfiguration – >** element je povolen pouze v konfiguračních souborech aplikace, je ignorován v *Machine.config*.
 
 - Cyklické odkazy jsou zjištěny a byla ukončena. To znamená pokud  **\<linkedconfiguration – >** prvky z řady konfigurační soubory tvoří cyklus, smyčky je zjištěna a zastavena.
 

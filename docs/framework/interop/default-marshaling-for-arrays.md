@@ -43,7 +43,7 @@ V případě aplikace tvořené zcela spravovaný kód modul common language run
 |Spravovaná pole|Typ elementu|pořadí|Dolní mez|Zápis podpis|  
 |------------------------|------------------|----------|-----------------|------------------------|  
 |**ELEMENT_TYPE_ARRAY**|Určený typem.|Určené pořadí.|Volitelně můžete zadat pomocí hranice.|*typ* **[** *n*,*m* **]**|  
-|**ELEMENT_TYPE_CLASS**|Neznámé|Neznámé|Neznámé|**System.Array**|  
+|**ELEMENT_TYPE_CLASS**|Neznámé|Neznámé|Neznámé|**System.Array** |  
 |**ELEMENT_TYPE_SZARRAY**|Určený typem.|1|0|*typ* **[** *n* **]**|  
   
 <a name="cpcondefaultmarshalingforarraysanchor2"></a>   

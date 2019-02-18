@@ -48,7 +48,7 @@ Vymaže všechny dříve definované oddíly a skupin oddílů.
 
 ## <a name="remarks"></a>Poznámky
 
- **\<Vymazat >** element odebere všechny oddíly a skupiny oddílů z vaší aplikace, které byly dříve definovány v aktuálním konfiguračním souboru nebo na vyšší úrovni v hierarchii konfigurační soubor.
+**\<Vymazat >** element odebere všechny oddíly a skupiny oddílů z vaší aplikace, které byly dříve definovány v aktuálním konfiguračním souboru nebo na vyšší úrovni v hierarchii konfigurační soubor.
 
 ## <a name="example"></a>Příklad
 
