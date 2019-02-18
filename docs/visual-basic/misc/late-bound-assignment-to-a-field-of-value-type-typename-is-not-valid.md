@@ -1,5 +1,5 @@
 ---
-title: Přiřazení s pozdní vazbou na pole typu hodnota '<typename>"není platný při"<name>"je výsledkem výrazu s pozdní vazbou
+title: Přiřazení s pozdní vazbou na pole typu hodnota '<typename>'není platný při'<name>'je výsledkem výrazu s pozdní vazbou
 ms.date: 07/20/2015
 f1_keywords:
 - vbrRValueBaseForValueType
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/30/2019
 ms.locfileid: "55284411"
 ---
-# <a name="late-bound-assignment-to-a-field-of-value-type-typename-is-not-valid-when-name-is-the-result-of-a-late-bound-expression"></a>Přiřazení s pozdní vazbou na pole typu hodnota '\<typename >' není platný při "\<název >" je výsledkem výrazu s pozdní vazbou
+# <a name="late-bound-assignment-to-a-field-of-value-type-typename-is-not-valid-when-name-is-the-result-of-a-late-bound-expression"></a>Přiřazení s pozdní vazbou na pole typu hodnota '\<typename >' není platný při '\<název >' je výsledkem výrazu s pozdní vazbou
 Jste se pokusili s pozdní vazbou přiřazení, který není platný.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

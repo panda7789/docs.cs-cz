@@ -1,5 +1,5 @@
 ---
-title: Hodnota argumentu "<pathname>' obsahuje znaky, které nejsou platné v názvu cesty
+title: Hodnota argumentu '<pathname>' obsahuje znaky, které nejsou platné v názvu cesty
 ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_InvalidPathChars1
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/30/2019
 ms.locfileid: "55272796"
 ---
-# <a name="argument-value-pathname-contains-characters-that-are-not-valid-in-a-path-name"></a>Hodnota argumentu "\<cesta >" obsahuje znaky, které nejsou platné v názvu cesty
+# <a name="argument-value-pathname-contains-characters-that-are-not-valid-in-a-path-name"></a>Hodnota argumentu '\<cesta >' obsahuje znaky, které nejsou platné v názvu cesty
 Cesta obsahuje jeden nebo více znaků, které nejsou platné.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
