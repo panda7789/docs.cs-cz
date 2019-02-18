@@ -258,6 +258,7 @@
 ##### [Úvod do tříd](csharp/tutorials/intro-to-csharp/introduction-to-classes.md)
 ### [Prozkoumání C# 6](csharp/tutorials/exploration/csharp-6.yml)
 ### [Práce s odkazovými typy s možnou hodnotou null](csharp/tutorials/nullable-reference-types.md)
+### [Generování a využívání asynchronních streamů](csharp/tutorials/generate-consume-asynchronous-stream.md)
 ### [Konzolová aplikace](csharp/tutorials/console-teleprompter.md)
 ### [Klient REST](csharp/tutorials/console-webapiclient.md)
 ### [Dědičnost v jazyce C# a technologii .NET](csharp/tutorials/inheritance.md)
