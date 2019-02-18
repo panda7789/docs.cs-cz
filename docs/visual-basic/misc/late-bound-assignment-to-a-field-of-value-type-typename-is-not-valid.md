@@ -1,5 +1,5 @@
 ---
-title: Přiřazení s pozdní vazbou na pole typu hodnota '<typename>"není platný při"<name>"je výsledkem výrazu s pozdní vazbou
+title: Přiřazení s pozdní vazbou na pole typu hodnota '<typename>'není platný při'<name>'je výsledkem výrazu s pozdní vazbou
 ms.date: 07/20/2015
 f1_keywords:
 - vbrRValueBaseForValueType
@@ -11,13 +11,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/30/2019
 ms.locfileid: "55284411"
 ---
-# <a name="late-bound-assignment-to-a-field-of-value-type-typename-is-not-valid-when-name-is-the-result-of-a-late-bound-expression"></a><span data-ttu-id="979dd-102">Přiřazení s pozdní vazbou na pole typu hodnota '\<typename >' není platný při "\<název >" je výsledkem výrazu s pozdní vazbou</span><span class="sxs-lookup"><span data-stu-id="979dd-102">Late-bound assignment to a field of value type '\<typename>' is not valid when '\<name>' is the result of a late-bound expression</span></span>
-<span data-ttu-id="979dd-103">Jste se pokusili s pozdní vazbou přiřazení, který není platný.</span><span class="sxs-lookup"><span data-stu-id="979dd-103">You attempted a late-bound assignment that is not valid.</span></span>  
+# <a name="late-bound-assignment-to-a-field-of-value-type-typename-is-not-valid-when-name-is-the-result-of-a-late-bound-expression"></a><span data-ttu-id="81e54-102">Přiřazení s pozdní vazbou na pole typu hodnota '\<typename >' není platný při '\<název >' je výsledkem výrazu s pozdní vazbou</span><span class="sxs-lookup"><span data-stu-id="81e54-102">Late-bound assignment to a field of value type '\<typename>' is not valid when '\<name>' is the result of a late-bound expression</span></span>
+<span data-ttu-id="81e54-103">Jste se pokusili s pozdní vazbou přiřazení, který není platný.</span><span class="sxs-lookup"><span data-stu-id="81e54-103">You attempted a late-bound assignment that is not valid.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="979dd-104">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="979dd-104">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="81e54-104">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="81e54-104">To correct this error</span></span>  
   
--   <span data-ttu-id="979dd-105">Zkontrolujte přiřazení již v rané fázi vázána.</span><span class="sxs-lookup"><span data-stu-id="979dd-105">Make the assignment early bound.</span></span>  
+-   <span data-ttu-id="81e54-105">Zkontrolujte přiřazení již v rané fázi vázána.</span><span class="sxs-lookup"><span data-stu-id="81e54-105">Make the assignment early bound.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="979dd-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="979dd-106">See also</span></span>
-- [<span data-ttu-id="979dd-107">Typy chyb</span><span class="sxs-lookup"><span data-stu-id="979dd-107">Error Types</span></span>](../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a><span data-ttu-id="81e54-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="81e54-106">See also</span></span>
+- [<span data-ttu-id="81e54-107">Typy chyb</span><span class="sxs-lookup"><span data-stu-id="81e54-107">Error Types</span></span>](../../visual-basic/programming-guide/language-features/error-types.md)
 
