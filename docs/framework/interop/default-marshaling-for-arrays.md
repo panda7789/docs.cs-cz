@@ -57,7 +57,7 @@ V případě aplikace tvořené zcela spravovaný kód modul common language run
 |Nespravovaný typ|Importovaný typ.|  
 |--------------------|-------------------|  
 |**SafeArray (** *typ* **)**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> Pořadí = 1, dolní mez = 0. Velikosti je znám pouze v případě, že součástí spravovaný podpis. Zabezpečeným polím, které nejsou pořadí = 1 nebo dolní mez = 0 nelze zařadit jako **SZARRAY**.|  
-|*Typ***]** |**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> Pořadí = 1, dolní mez = 0. Velikosti je znám pouze v případě, že součástí spravovaný podpis.|  
+|*Typ* **]** |**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> Pořadí = 1, dolní mez = 0. Velikosti je znám pouze v případě, že součástí spravovaný podpis.|  
   
 ### <a name="safe-arrays"></a>Zabezpečeným polím  
  Když bezpečné pole je importována z knihovny typů na sestavení .NET, pole, je převedena na jednorozměrné pole známý typ (například **int**). Stejné pravidel převodu typů, které se vztahují na parametry platí také pro prvky pole. Například bezpečné pole z **BSTR** typy stane spravovaného pole řetězců a bezpečné pole variant stane spravovaného pole objektů. **SAFEARRAY** typ prvku je zachycená z knihovny typů a uložili v **SAFEARRAY** hodnotu <xref:System.Runtime.InteropServices.UnmanagedType> výčtu.  
