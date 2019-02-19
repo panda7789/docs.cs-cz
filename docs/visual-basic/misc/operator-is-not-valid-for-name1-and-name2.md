@@ -1,5 +1,5 @@
 ---
-title: Operátor není platný pro "<name1>"a"<name2>.
+title: Operátor není platný pro '<name1>' a '<name2>.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrNoValidOperator_TwoOperands
@@ -11,7 +11,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 01/30/2019
 ms.locfileid: "55257977"
 ---
-# <a name="operator-is-not-valid-for-name1-and-name2"></a>Operátor není platný pro "\<name1 >' a '\<name2 >"
+# <a name="operator-is-not-valid-for-name1-and-name2"></a>Operátor není platný pro '\<name1 >' a '\<name2 >'
 Operátor není vhodná pro typy, se kterou se pracuje na.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
