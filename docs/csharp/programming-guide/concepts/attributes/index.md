@@ -1,12 +1,6 @@
 ---
-title: Atributy (C#)
+title: 'Atributy (C#)'
 ms.date: 04/26/2018
-ms.openlocfilehash: f211e8af48bdfef0bb9bf4341c7a5911b5695101
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54573339"
 ---
 # <a name="attributes-c"></a>Atributy (C#)
 
@@ -57,7 +51,7 @@ První parametr, název knihovny DLL je poziční a dodává se vždycky první;
 
 ### <a name="attribute-targets"></a>Cíle atributů
 
-*Cílové* atributu je entita, ke kterému se vztahuje atribut. Atribut může například použít pro třídu, konkrétní metody nebo celé sestavení. Ve výchozím nastavení atribut se vztahuje k elementu, který předchází. Ale můžete také explicitně identifikovat, například zda atributu se použije k metodě, její parametr nebo na jeho návratovou hodnotu.
+*Cílové* atributu je entita, která platí atribut pro. Atribut může například použít pro třídu, konkrétní metody nebo celé sestavení. Ve výchozím nastavení atribut se vztahuje k elementu, který předchází. Ale můžete také explicitně identifikovat, například zda atributu se použije k metodě, její parametr nebo na jeho návratovou hodnotu.
 
 Cíl atributu explicitně identifikovat, použijte následující syntaxi:
 

@@ -8,19 +8,19 @@ helpviewer_keywords:
 - application settings [Windows Forms], Windows Forms
 - application settings [Windows Forms], creating
 ms.assetid: 1e7aa347-af75-41e5-89ca-f53cab704f72
-ms.openlocfilehash: ac89851ce9c655ebef3acf2d55ef6659815ca4c9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 52687347707139ba583ef4dfdeebbb41d568e95c
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54558953"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56441356"
 ---
 # <a name="how-to-create-application-settings"></a>Postupy: Vytvořit nastavení aplikace
 Pomocí spravovaného kódu, můžete vytvořit nové nastavení aplikace a svázat ho s vlastnostmi na formulář nebo ovládací prvky do formuláře, takže tato nastavení jsou načtena a za běhu automaticky uloženy.  
   
  V následujícím postupu vytvoříte ručně obálkovou třídu, která je odvozena z <xref:System.Configuration.ApplicationSettingsBase>. Do této třídy přidat vlastnost veřejně přístupné pro každé nastavení aplikace, kterou chcete zveřejnit.  
   
- Můžete také provést tento postup pomocí minimálního psaní kódu v návrháři aplikace Visual Studio.  Viz také [jak: Vytvořit nastavení aplikace pomocí návrháře](https://msdn.microsoft.com/library/wabtadw6\(v=vs.110\)).  
+ Můžete také provést tento postup pomocí minimálního psaní kódu v návrháři aplikace Visual Studio.  Viz také [jak: Vytvořit nastavení aplikace pomocí návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/wabtadw6(v=vs.100)).  
   
 ### <a name="to-create-new-application-settings-programmatically"></a>Chcete-li vytvořit nové nastavení aplikace prostřednictvím kódu programu  
   

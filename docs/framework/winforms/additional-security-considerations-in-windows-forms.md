@@ -7,12 +7,12 @@ helpviewer_keywords:
 - security [Windows Forms], calling APIs
 - Clipboard [Windows Forms], securing access
 ms.assetid: 15abda8b-0527-47c7-aedb-77ab595f2bf1
-ms.openlocfilehash: 2d7f5bfc1532775d092fbee1ef9cdc3c7ed5efc6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 56bc14f176f239a0272038494015cea4553e3e6f
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496654"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56442526"
 ---
 # <a name="additional-security-considerations-in-windows-forms"></a>Dodatečné informace o zabezpečení ve Windows Forms
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] nastavení zabezpečení může způsobit, že aplikace na spouštění v prostředí částečným vztahem důvěryhodnosti než jinak než v místním počítači. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Omezuje přístup k takové kritické místním prostředkům jako systém souborů, síťové a nespravované rozhraní API, mimo jiné. Nastavení zabezpečení ovlivňuje možnost volat rozhraní API systému Win32 Microsoftu nebo jiných rozhraní API, který nelze ověřit pomocí zabezpečení systému. Zabezpečení má vliv také na dalších aspektů vaší aplikace, včetně přístupu k souborům a dat a tisku. Další informace o přístupu k souborům a data v částečně důvěryhodném prostředí, najdete v části [další soubor zabezpečení a přístup k datům ve Windows Forms](../../../docs/framework/winforms/more-secure-file-and-data-access-in-windows-forms.md). Další informace o tisku v prostředí částečné důvěryhodnosti, naleznete v tématu [další zabezpečení tisku ve Windows Forms](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md).  
@@ -28,7 +28,7 @@ ms.locfileid: "54496654"
 |<xref:System.Security.Permissions.UIPermissionClipboard.OwnClipboard>|S určitými omezeními je možné do schránky. Umožňuje vložit data do schránky (kopírování nebo vyjmutí příkaz operations) neomezený. Vnitřní ovládací prvky, které přijímají vložení, jako je textové pole, můžete přijímat data ze schránky, ale uživatelské ovládací prvky nelze číst prostřednictvím kódu programu ze schránky.|  
 |<xref:System.Security.Permissions.UIPermissionClipboard.NoClipboard>|Schránku nelze použít.|  
   
- Ve výchozím nastavení, obdrží zóny místního intranetu <xref:System.Security.Permissions.UIPermissionClipboard.AllClipboard> přístup a zóně Internet obdrží <xref:System.Security.Permissions.UIPermissionClipboard.OwnClipboard> přístup. To znamená, že aplikace může kopírovat data do schránky, ale aplikace prostřednictvím kódu programu nelze vložit do nebo číst ze schránky. Tato omezení zabránit programy bez úplný vztah důvěryhodnosti z čtení obsahu zkopíroval do schránky. jiná aplikace. Pokud vaše aplikace vyžaduje úplný přístup schránky, ale nemáte oprávnění, budete muset zvýšení oprávnění pro vaši aplikaci. Další informace o zvyšování oprávnění najdete v tématu [obecné Správa zásad zabezpečení](https://msdn.microsoft.com/library/5121fe35-f0e3-402c-94ab-4f35b0a87b4b).  
+ Ve výchozím nastavení, obdrží zóny místního intranetu <xref:System.Security.Permissions.UIPermissionClipboard.AllClipboard> přístup a zóně Internet obdrží <xref:System.Security.Permissions.UIPermissionClipboard.OwnClipboard> přístup. To znamená, že aplikace může kopírovat data do schránky, ale aplikace prostřednictvím kódu programu nelze vložit do nebo číst ze schránky. Tato omezení zabránit programy bez úplný vztah důvěryhodnosti z čtení obsahu zkopíroval do schránky. jiná aplikace. Pokud vaše aplikace vyžaduje úplný přístup schránky, ale nemáte oprávnění, budete muset zvýšení oprávnění pro vaši aplikaci. Další informace o zvyšování oprávnění najdete v tématu [obecné Správa zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ed5htz45(v=vs.100)).  
   
 ## <a name="window-manipulation"></a>Manipulace s okna  
  <xref:System.Security.Permissions.UIPermission> Třídy také určuje oprávnění k provedení okno manipulaci a další akce související s Uživatelským rozhraním a přidružené <xref:System.Security.Permissions.UIPermissionWindow> hodnota výčtu určuje úroveň přístupu. V následující tabulce jsou uvedeny úrovně oprávnění je to možné.  
@@ -86,7 +86,7 @@ ms.locfileid: "54496654"
   
  Pokud aplikace nemá oprávnění volat nespravovaný kód, vaše aplikace musí požádat o <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> oprávnění, nebo musíte zvážit alternativní způsoby implementace funkce; v mnoha případech Windows Forms poskytuje spravované alternativy k rozhraní API systému Win32 funkce. Pokud žádná alternativa znamená, že existují a aplikace musí přístup k nespravovanému kódu, budete muset zvýšení oprávnění pro aplikaci.  
   
- Oprávnění pro volání nespravovaného kódu umožňuje aplikaci provést nejvíce cokoli. Proto by měl oprávnění pro volání nespravovaného kódu udělena pouze pro aplikace, které pocházejí z důvěryhodného zdroje. V závislosti na aplikaci, může také část funkčnost aplikace, která provádí volání nespravovaného kódu být, volitelné, nebo není povolen v úplném vztahu důvěryhodnosti pouze prostředí. Další informace o nebezpečná oprávnění najdete v tématu [Správa nebezpečných oprávnění a zásad](../../../docs/framework/misc/dangerous-permissions-and-policy-administration.md). Další informace o zvyšování oprávnění najdete v tématu [NIB: Správa zásad zabezpečení Obecné](https://msdn.microsoft.com/library/5121fe35-f0e3-402c-94ab-4f35b0a87b4b).  
+ Oprávnění pro volání nespravovaného kódu umožňuje aplikaci provést nejvíce cokoli. Proto by měl oprávnění pro volání nespravovaného kódu udělena pouze pro aplikace, které pocházejí z důvěryhodného zdroje. V závislosti na aplikaci, může také část funkčnost aplikace, která provádí volání nespravovaného kódu být, volitelné, nebo není povolen v úplném vztahu důvěryhodnosti pouze prostředí. Další informace o nebezpečná oprávnění najdete v tématu [Správa nebezpečných oprávnění a zásad](../../../docs/framework/misc/dangerous-permissions-and-policy-administration.md). Další informace o zvyšování oprávnění najdete v tématu [obecné Správa zásad zabezpečení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ed5htz45(v=vs.100)).  
   
 ## <a name="see-also"></a>Viz také:
 - [Zabezpečenější přístup k souborům a datům ve Windows Forms](../../../docs/framework/winforms/more-secure-file-and-data-access-in-windows-forms.md)

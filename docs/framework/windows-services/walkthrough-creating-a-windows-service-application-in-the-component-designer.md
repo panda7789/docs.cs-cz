@@ -9,14 +9,14 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: 79447ede354de104607117f657182023a2e57127
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 15f05f1d05a50676eb25cfa568598a575cb9cf5a
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123667"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56442903"
 ---
-# <a name="walkthrough-create-a-windows-service-app"></a>Návod: Vytvoření aplikace služby Windows
+# <a name="walkthrough-create-a-windows-service-app"></a>Průvodce: Vytvoření aplikace služby Windows
 
 Tento článek ukazuje, jak vytvořit jednoduchou aplikaci služby Windows v sadě Visual Studio, která zapisuje zprávy do protokolu událostí.
 
@@ -26,7 +26,7 @@ Pokud chcete začít, vytvořte projekt a nastavte hodnoty, které jsou požadov
 
 1. V sadě Visual Studio v panelu nabídek zvolte **souboru** > **nový** > **projektu** (nebo stiskněte klávesu **Ctrl** + **Shift**+**N**) Chcete-li otevřít **nový projekt** dialogového okna.
 
-2. Vyhledejte a vyberte **Windows Service** šablony projektu. Rozbalte **nainstalováno** > [**Visual C#** nebo **jazyka Visual Basic**] > **Windows Desktop**, nebo typ **Windows Service** do vyhledávacího pole v pravém horním rohu.
+2. Vyhledejte a vyberte **Windows Service** šablony projektu. Rozbalte **nainstalováno** > [**Visual C#**  nebo **jazyka Visual Basic**] > **Windows Desktop**, nebo typ **Windows Služba** do vyhledávacího pole v pravém horním rohu.
 
    ![Šablona služby Windows v dialogu Nový projekt v sadě Visual Studio](media/new-project-dialog.png)
 
@@ -296,7 +296,7 @@ Před spuštěním služby Windows, musíte nainstalovat, které je zaregistruje
     > [!IMPORTANT]
     > <xref:System.ServiceProcess.ServiceAccount.LocalSystem> Účet má širší oprávnění, včetně možnosti zapisovat do protokolu událostí. Používejte tento účet opatrně, protože může zvýšit riziko napadení škodlivým softwarem. Pro jiné úlohy zvažte použití <xref:System.ServiceProcess.ServiceAccount.LocalService> účet, který funguje jako neprivilegované uživatele v místním počítači a nabízí pověření anonymního a jakémukoli vzdálenému serveru. V tomto příkladu se nezdaří, pokud se pokusíte použít <xref:System.ServiceProcess.ServiceAccount.LocalService> účtu, proto, že potřebuje oprávnění k zápisu do protokolu událostí.
 
-Další informace o instalačních programů najdete v tématu [postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).
+Další informace o instalačních programů najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).
 
 ## <a name="optional-set-startup-parameters"></a>(Volitelné) Nastavit parametry spuštění
 
@@ -431,7 +431,7 @@ Teď, když jste vytvořili službu Windows, můžete ho nainstalovat. Pro insta
 
     Pokud **installutil.exe** zpracovat selhání zpráv, najdete v protokolu instalace a zjistěte, proč. Ve výchozím nastavení protokolu je ve stejné složce jako spustitelný soubor služby. Instalace může selhat, pokud <xref:System.ComponentModel.RunInstallerAttribute> třída není k dispozici na `ProjectInstaller` třídy, pokud atribut není nastavená na **true**, nebo pokud `ProjectInstaller` třída není označena **veřejné**.
 
-Další informace najdete v tématu [postupy: instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).
+Další informace najdete v tématu [jak: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).
 
 ## <a name="start-and-run-the-service"></a>Spuštění a spuštění služby
 
@@ -452,7 +452,7 @@ Další informace najdete v tématu [postupy: instalace a odinstalace služeb](.
 1. Otevřít **Prohlížeč událostí** spuštěním na typ **Prohlížeč událostí** do vyhledávacího pole na hlavním panelu Windows a pak vyberete **Prohlížeč událostí** ve výsledcích hledání.
 
    > [!TIP]
-   > V sadě Visual Studio, dostanete protokoly událostí tak, že otevřete **Průzkumníka serveru** (klávesnice: **Ctrl**+**Alt**+**S**) rozšiřuje i **protokoly událostí** uzel v místním počítači.
+   > V sadě Visual Studio, dostanete protokoly událostí tak, že otevřete **Průzkumníka serveru** (klávesnice: **CTRL**+**Alt**+**S**) rozšiřuje i **protokoly událostí** uzel v místním počítači.
 
 2. V **Prohlížeč událostí**, rozbalte **protokoly aplikací a služeb**.
 
@@ -472,7 +472,7 @@ Další informace najdete v tématu [postupy: instalace a odinstalace služeb](.
     installutil.exe /u MyNewService.exe
     ```
 
-   Pokud služba úspěšně, odinstalována **installutil.exe** hlásí, že vaše služba byla úspěšně odebrána. Další informace najdete v tématu [postupy: instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).
+   Pokud služba úspěšně, odinstalována **installutil.exe** hlásí, že vaše služba byla úspěšně odebrána. Další informace najdete v tématu [jak: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).
 
 ## <a name="next-steps"></a>Další kroky
 
@@ -486,5 +486,5 @@ Pomocí instalačního programu můžete vytvořit protokol událostí při inst
 
 - [Aplikace služby Windows](../../../docs/framework/windows-services/index.md)
 - [Úvod do aplikace služby Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Postupy: ladění aplikace služby Windows](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)
-- [Služby (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms685141.aspx)
+- [Postupy: Ladění aplikace služby Windows](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)
+- [Služby (Windows)](/windows/desktop/Services/services)

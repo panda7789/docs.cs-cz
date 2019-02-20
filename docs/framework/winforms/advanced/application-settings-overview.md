@@ -8,12 +8,12 @@ helpviewer_keywords:
 - dynamic properties
 - user preferences [Windows Forms], tracking
 ms.assetid: 0dd8bca5-a6bf-4ac4-8eec-5725d08b38dc
-ms.openlocfilehash: b30203aaf36d4fa6c0b06d54da1abc1f99d22afc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 872025c76998311ab9ac6f7ec392d811ffbf0907
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576899"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56441551"
 ---
 # <a name="application-settings-overview"></a>Přehled nastavení aplikace
 Toto téma popisuje, jak vytvářet a ukládat nastavení data jménem aplikace i vaše uživatele.  
@@ -53,7 +53,7 @@ Toto téma popisuje, jak vytvářet a ukládat nastavení data jménem aplikace 
 - <xref:System.Configuration.LocalFileSettingsProvider>
 - <xref:System.Configuration.IPersistComponentSettings>
 - [Postupy: Ověření nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-validate-application-settings.md)
-- [Správa nastavení aplikace (.NET)](https://msdn.microsoft.com/library/35254321-ad14-47d9-b8c6-39ab3203c5d9)
+- [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet)
 - [Postupy: Čtení uživatelských nastavení při běhu pomocíC#](../../../../docs/framework/winforms/advanced/how-to-read-settings-at-run-time-with-csharp.md)
 - [Použití nastavení aplikace a uživatelských nastavení](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)
 - [Architektura nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - services, debugging
 ms.assetid: 63ab0800-0f05-4f1e-88e6-94c73fd920a2
 author: ghogen
-ms.openlocfilehash: 02ea82bf224349e6ea7a5afbfb3c38ba50df46f8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 15b790f4a4d3348e2bef3e7e929d72c09da8690c
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54720363"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56441876"
 ---
 # <a name="how-to-debug-windows-service-applications"></a>Postupy: Ladění aplikace služby Windows
 Služba musí být spuštěna v rámci kontextu správce řízení služeb spíše než v rámci sady Visual Studio. Z tohoto důvodu ladění služby není tak přímočaré jako ladění jiných typů aplikací Visual Studio. Chcete-li ladit službu, musíte spustit službu a potom připojit ladicí program k procesu, ve kterém je spuštěná. Potom můžete ladit svoji aplikaci pomocí všech standardních funkcí ladění sady Visual Studio.  
@@ -32,7 +32,7 @@ Služba musí být spuštěna v rámci kontextu správce řízení služeb spí�
 >  Ladění <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda může být obtížné, protože správce řízení služeb má omezení 30 sekundách na všechny pokusy o spuštění služby. Další informace najdete v tématu [řešení potíží: Ladění služeb Windows](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md).  
   
 > [!WARNING]
->  Chcete-li získat důležité informace pro ladění, ladicího programu sady Visual Studio potřebuje k vyhledání souborů symbolů pro binární soubory, které jsou právě laděny. Pokud ladíte službu, kterou jste vytvořili v sadě Visual Studio, jsou soubory symbolů (soubory PDB) ve stejné složce jako knihovna nebo spustitelný soubor a automaticky ladicí program je načte. Pokud ladíte služba, která se nepovedlo vytvořit, musí nejprve najít symboly pro službu a ujistěte se, že jsou dostupné pomocí ladicího programu. Zobrazit [zadání symbolu (.pdb) a zdrojové soubory](https://msdn.microsoft.com/library/1105e169-5272-4e7c-b3e7-cda1b7798a6b). Pokud ladíte systémový proces nebo chcete mít symboly pro systémová volání ve vašich službách, měli byste přidat servery symbolů společnosti Microsoft. Zobrazit [symboly ladění](/windows/desktop/DxTechArts/debugging-with-symbols).  
+>  Chcete-li získat důležité informace pro ladění, ladicího programu sady Visual Studio potřebuje k vyhledání souborů symbolů pro binární soubory, které jsou právě laděny. Pokud ladíte službu, kterou jste vytvořili v sadě Visual Studio, jsou soubory symbolů (soubory PDB) ve stejné složce jako knihovna nebo spustitelný soubor a automaticky ladicí program je načte. Pokud ladíte služba, která se nepovedlo vytvořit, musí nejprve najít symboly pro službu a ujistěte se, že jsou dostupné pomocí ladicího programu. Zobrazit [zadání symbolu (.pdb) a zdrojové soubory v ladicím programu sady Visual Studio](/visualstudio/debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger). Pokud ladíte systémový proces nebo chcete mít symboly pro systémová volání ve vašich službách, měli byste přidat servery symbolů společnosti Microsoft. Zobrazit [symboly ladění](/windows/desktop/DxTechArts/debugging-with-symbols).  
   
 ### <a name="to-debug-a-service"></a>Ladění služby  
   
@@ -111,7 +111,7 @@ Služba musí být spuštěna v rámci kontextu správce řízení služeb spí�
   
 5.  Znovu spustit program jako službu Windows, nainstalujte ji a spusťte jej jako obvykle pro službu Windows. Není nutné tyto změny vrátit.  
   
- V některých případech, například pokud chcete ladit problém, který nastane pouze při spuštění systému budete muset použít ladicí program Windows. Nainstalujte [ladění nástroje pro Windows](https://msdn.microsoft.com/windows/hardware/hh852365) uvidíme [jak ladit služby Windows](https://support.microsoft.com/kb/824344).  
+ V některých případech, například pokud chcete ladit problém, který nastane pouze při spuštění systému budete muset použít ladicí program Windows. [Stáhněte si Windows Driver Kit (WDK)](/windows-hardware/drivers/download-the-wdk) uvidíme [jak ladit služby Windows](https://support.microsoft.com/kb/824344).  
   
 ## <a name="see-also"></a>Viz také:
 - [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)

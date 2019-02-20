@@ -2,21 +2,15 @@
 title: Vývoj aplikací spouštěných jako služby systému Windows
 ms.date: 03/30/2017
 helpviewer_keywords:
-- ServiceInstaller class, Windows Service applications
-- Service class, Windows Service applications
-- Windows Service applications
-- Windows NT services
-- ServiceProcessInstaller class, Windows Service applications
-- services
-- .NET applications, Windows applications
+  - 'ServiceInstaller class, Windows Service applications'
+  - 'Service class, Windows Service applications'
+  - Windows Service applications
+  - Windows NT services
+  - 'ServiceProcessInstaller class, Windows Service applications'
+  - services
+  - '.NET applications, Windows applications'
 ms.assetid: ba72d648-9553-4849-b829-069ad5ea014b
 author: ghogen
-ms.openlocfilehash: 79de8adbc0f994653f308882b335da2ffa5f7455
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035919"
 ---
 # <a name="develop-windows-service-apps"></a>Vývoj aplikací pro službu Windows
 
@@ -31,7 +25,7 @@ Pomocí sady Visual Studio nebo sady SDK rozhraní .NET Framework, můžete snad
 
 Poskytuje přehled aplikace služby Windows, dobu života služby a jak se liší od jiné běžné typy projektů aplikace služby.
 
-[Návod: Vytvoření aplikace služby systému Windows v návrháři součástí](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
+[Návod: Vytvoření aplikace služby Windows v Návrháři součástí](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
 
 Poskytuje příklad vytvoření služby v jazyce Visual Basic a Visual C#.
 
@@ -39,7 +33,7 @@ Poskytuje příklad vytvoření služby v jazyce Visual Basic a Visual C#.
 
 Vysvětluje prvky jazyka, použít v service programování.
 
-[Postupy: Vytváření služeb systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+[Postupy: Vytvoření služeb Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
 
 Popisuje postup vytvoření a konfigurace služeb Windows pomocí šablony projektu služby Windows.
 
@@ -51,4 +45,4 @@ Popisuje postup vytvoření a konfigurace služeb Windows pomocí šablony proje
 
 <xref:System.ServiceProcess.ServiceInstaller> – Popisuje funkce <xref:System.ServiceProcess.ServiceInstaller> třídu, která se používá spolu s <xref:System.ServiceProcess.ServiceProcessInstaller> třídy k instalaci a odinstalaci služby.
 
-[Vytvářet projekty ze šablon](https://msdn.microsoft.com/library/7c36d86a-6b79-4480-8228-0f925f1204b2) -popisuje projekty typů použitých v této kapitole a jak si vybrat mezi nimi.
+[Vytvářet projekty ze šablon](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/0fyc0azh(v=vs.120)) -popisuje projekty typů použitých v této kapitole a jak si vybrat mezi nimi.

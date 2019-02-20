@@ -15,12 +15,12 @@ helpviewer_keywords:
 - XPSDrv-based printers
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
-ms.openlocfilehash: e17a3888e3467d8d21506108e6599c8ae5da2fe2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ef88c9c2a7569be518794ee9083d1bf5c266d975
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54695605"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56442058"
 ---
 # <a name="printing-overview"></a>Přehled tisku
 Rozhraní Microsoft .NET Framework aplikace vývojářům, kteří používají Windows Presentation Foundation (WPF) mají nové bohatou Správa systému tisku a tisk [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)]. S [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], některé z těchto vylepšení tiskovém systému jsou také k dispozici pro vývojáře vytvářející [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace a vývojáře, kteří používají nespravovaný kód. V jádru služby tato nová funkce je nový [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] formát souboru a [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] cesta tisku.  
@@ -29,7 +29,7 @@ Rozhraní Microsoft .NET Framework aplikace vývojářům, kteří používají 
   
 <a name="introduction_to_XPS"></a>   
 ## <a name="about-xps"></a>O XPS  
- [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] je ve formátu elektronických dokumentů, formát souboru pro zařazování a jazyk pro popis stránky. Je ve formátu otevřít dokument, který používá [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)], [!INCLUDE[TLA#tla_opc](../../../../includes/tlasharptla-opc-md.md)]a další oborové standardy pro vytváření multiplatformních dokumentů. [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] zjednodušuje proces, podle kterého digitální dokumenty jsou vytvořené sdílené, vytisknout, zobrazit a archivovat. Další informace o [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)], najdete v článku [XPS webu](https://www.microsoft.com/xps).  
+ [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] je ve formátu elektronických dokumentů, formát souboru pro zařazování a jazyk pro popis stránky. Je ve formátu otevřít dokument, který používá [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)], [!INCLUDE[TLA#tla_opc](../../../../includes/tlasharptla-opc-md.md)]a další oborové standardy pro vytváření multiplatformních dokumentů. [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] zjednodušuje proces, podle kterého digitální dokumenty jsou vytvořené sdílené, vytisknout, zobrazit a archivovat. Další informace o [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)], naleznete v tématu [dokumenty XPS](/windows/desktop/printdocs/documents).  
   
  Několik postupů pro tisk [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] na základě obsahu použitím [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je ukázán v [programově tisk souborů XPS z](../../../../docs/framework/wpf/advanced/how-to-programmatically-print-xps-files.md). Možná bude užitečné odkazují tyto ukázky během kontroly obsahu obsažené v tomto tématu. (Vývojáři nespravovaného kódu by měla najdete v dokumentaci [MXDC_ESCAPE funkce](https://msdn.microsoft.com/library/windows/desktop/dd162739.aspx). Musíte použít Windows Forms vývojáři [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] v <xref:System.Drawing.Printing> obor názvů, který nepodporuje kompletní [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] cesta tisku, ale podporuje cesta tisku GDI XPS hybridní. Zobrazit **architektura cesta tisku** níže.)  
   
@@ -144,6 +144,6 @@ Pro aplikace, které nevyžadují [!INCLUDE[TLA2#tla_metro](../../../../includes
 - <xref:System.Printing.PrintQueue>
 - [Témata s postupy](../../../../docs/framework/wpf/advanced/printing-how-to-topics.md)
 - [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
-- [XPS](https://www.microsoft.com/xps)
+- [XPS – dokumenty](/windows/desktop/printdocs/documents)
 - [Serializace a úložiště dokumentů](../../../../docs/framework/wpf/advanced/document-serialization-and-storage.md)
 - [Převaděč (MXDC) dokumentů Microsoft XPS](https://msdn.microsoft.com/library/windows/desktop/ff686803.aspx)

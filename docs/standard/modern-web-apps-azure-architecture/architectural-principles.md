@@ -3,13 +3,13 @@ title: Zásady architektury
 description: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure | Zásady architektury
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
-ms.openlocfilehash: b7edfc8d0cb3460bb33fb4e54cc93dd18ce2f385
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.date: 02/16/2019
+ms.openlocfilehash: 7d127476e37b9eefa9ddc13d26991145b6245b45
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828095"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56442981"
 ---
 # <a name="architectural-principles"></a>Zásady architektury
 
@@ -99,21 +99,10 @@ Požadavek třídy mají některé z výše uvedené funkce nebo chování přid
 
 Minimálně přiklonit jednotlivých webových aplikací na jejich vlastní ohraničený kontext s své vlastní úložiště trvalosti pro svůj obchodní model, nikoli databázi pro sdílení obsahu s jinými aplikacemi. Probíhá komunikace mezi ohraničené kontexty prostřednictvím programových rozhraní, a nikoli prostřednictvím sdílenou databázi, která umožňuje obchodní logiky a události se umístit v reakci na změny, které se provedou. Ohraničených kontextech mapy úzce do mikroslužeb, která také se v ideálním případě implementují jako vlastní jednotlivých ohraničené kontexty.
 
-> ### <a name="references--modern-web-applications"></a>Odkazy – moderních webových aplikací
-> - **Oddělení oblastí zájmu**  
-> <https://deviq.com/separation-of-concerns/>
-> - **Encapsulation**  
-> <https://deviq.com/encapsulation/>
-> - **Princip inverzi závislostí**  
-> <https://deviq.com/dependency-inversion-principle/>
-> - **Princip explicitních závislostí**  
-> <https://deviq.com/explicit-dependencies-principle/>
-> - **Neopakovat sami**  
-> <https://deviq.com/don-t-repeat-yourself/>
-> - **Trvalost neznalosti**  
-> <https://deviq.com/persistence-ignorance/>
-> - **Ohraničený kontext**  
-> <https://martinfowler.com/bliki/BoundedContext.html>
+## <a name="additional-resources"></a>Další zdroje
+
+* [Vzory návrhu JAVA: Zásady](https://java-design-patterns.com/principles/)
+* [Ohraničený kontext](https://martinfowler.com/bliki/BoundedContext.html)
 
 >[!div class="step-by-step"]
 >[Předchozí](choose-between-traditional-web-and-single-page-apps.md)

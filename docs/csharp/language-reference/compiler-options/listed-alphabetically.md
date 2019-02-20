@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: f2e9ed6ee23367e6ef3cd035ef5a485105da8a27
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 439366791fcd8fa40bb3fe8fc2982272798120ef
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54653746"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56441603"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru C# (abecední pořadí)
 
@@ -36,6 +36,8 @@ Následující možnosti kompilátoru jsou seřazená podle abecedy. Seznam kate
 |[-delaysign](delaysign-compiler-option.md)|Vytvoří zpožděný podpis sestavení s použitím pouze veřejné části klíče silného názvu.|
 |[-deterministic](deterministic-compiler-option.md)|Způsobí, že kompilátor do výstupního sestavení, jejichž binární obsah je identické napříč kompilace Pokud vstupů jsou stejné.|
 |[-doc](doc-compiler-option.md)|Určuje soubor dokumentace XML, který se má vygenerovat.|
+|-pro vložení|Vložte všechny zdrojové soubory v souborech PDB.|
+|-vložení:\<seznam souborů >|Vložte konkrétní soubory PDB.|
 |[-errorreport](errorreport-compiler-option.md)|Určuje, jak zpracovávat interní chyby kompilátoru: řádku, odesílání nebo žádný. Výchozí hodnota je none.|
 |[-filealign](filealign-compiler-option.md)|Určuje zarovnání použité pro oddíly výstupního souboru.|
 |[-fullpaths](fullpaths-compiler-option.md)|Způsobí, že kompilátor generoval úplné cesty.|

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: 7403b42a48413d28808b49542727c2f07d0ad026
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a2b0668b1d55afc331484339d579752646ffa88b
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54546985"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56442409"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Možnosti kompilátoru C# uvedené podle kategorie
 
@@ -54,7 +54,8 @@ Jsou následující možnosti kompilátoru seřazené podle kategorie. Abecední
 |[-reference](reference-compiler-option.md)|Importuje metadata ze souboru, který obsahuje sestavení.|
 |-analyzátoru|Spustit analyzátory z tohoto sestavení (krátký tvar: /)|
 |-additionalfile|Názvy další soubory, které nemají přímý vliv na generování kódu, ale může používat analyzátory pro vytvoření chyby nebo varování.|
-
+|-pro vložení|Vložte všechny zdrojové soubory v souborech PDB.|
+|-vložení:\<seznam souborů >|Vložte konkrétní soubory PDB.|
 ## <a name="debuggingerror-checking"></a>Ladění a kontrola chyb
 
 |Možnost|Účel|

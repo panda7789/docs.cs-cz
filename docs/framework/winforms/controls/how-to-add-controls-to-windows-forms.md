@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms controls, adding to form
 - controls [Windows Forms], adding
 ms.assetid: 2af86001-9d62-4154-87fb-66db2c3cd9fd
-ms.openlocfilehash: 6290fdac63bb22b878035c0cc27bba97300899de
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 29a268f645810d84d9f6fb722e4728842b04ee14
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54611355"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56443169"
 ---
 # <a name="how-to-add-controls-to-windows-forms"></a>Postupy: Přidání ovládacích prvků do formulářů Windows
 Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu formuláře k definování uživatelského rozhraní (UI). A *ovládací prvek* je součást na formulář pro zobrazení informací ani nebude přijímat uživatelský vstup. Další informace o ovládacích prvcích najdete v tématu [ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/index.md).  
@@ -24,7 +24,7 @@ Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu f
   
 ### <a name="to-draw-a-control-on-a-form"></a>K nakreslení ovládacího prvku ve formuláři  
   
-1.  Otevřete formulář. Další informace najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://msdn.microsoft.com/library/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5).  
+1.  Otevřete formulář. Další informace najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).  
   
 2.  V **nástrojů**, klepněte na ovládací prvek, který chcete přidat do formuláře.  
   
@@ -37,7 +37,7 @@ Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu f
   
 ### <a name="to-drag-a-control-to-a-form"></a>Přetáhněte ovládací prvek do formuláře  
   
-1.  Otevřete formulář. Další informace najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://msdn.microsoft.com/library/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5).  
+1.  Otevřete formulář. Další informace najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).  
   
 2.  V **nástrojů**, klepněte na ovládací prvek a přetáhněte ji do svého formuláře.  
   

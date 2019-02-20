@@ -7,12 +7,12 @@ helpviewer_keywords:
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: b960bbf0a35a917d9143a0f47ce3219b6cb10ab4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5fdb3de03eaa60a4d29d5a0c7e4082a6806b0ec9
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54713312"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56441668"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Částečné třídy a metody (Průvodce programováním v C#)
 Je možné rozdělit definici [třídy](../../../csharp/language-reference/keywords/class.md), [struktura](../../../csharp/language-reference/keywords/struct.md), [rozhraní](../../../csharp/language-reference/keywords/interface.md) nebo metoda přes dvě nebo více zdrojových souborů. Každý zdrojový soubor obsahuje část definice typu nebo metodě a všechny části spolu při kompilaci aplikace.  
@@ -59,7 +59,7 @@ Je možné rozdělit definici [třídy](../../../csharp/language-reference/keywo
   
 -   class – atributy  
   
--   členové  
+-   členy  
   
  Zvažte například následující deklarace:  
   
@@ -111,7 +111,7 @@ Je možné rozdělit definici [třídy](../../../csharp/language-reference/keywo
 ## <a name="example-1"></a>Příklad 1  
   
 ### <a name="description"></a>Popis  
- V následujícím příkladu, polí a konstruktor třídy `CoOrds`, jsou deklarovány v jedné definici částečné třídy a člena, `PrintCoOrds`, je deklarována v jiné definici částečné třídy.  
+ V následujícím příkladu, polí a konstruktor třídy `Coords`, jsou deklarovány v jedné definici částečné třídy a člena, `PrintCoords`, je deklarována v jiné definici částečné třídy.  
   
 ### <a name="code"></a>Kód  
  [!code-csharp[csProgGuideObjects#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_9.cs)]  

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - sessions [WCF]
 ms.assetid: 864ba12f-3331-4359-a359-6d6d387f1035
-ms.openlocfilehash: 9285f68521770e0dd4fbc8d6f9aa006eccc502c3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6ef3ff671175182bdd3b1eab2b17ec0298ff15e1
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54533133"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56442721"
 ---
 # <a name="using-sessions"></a>Použití relací
 V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu zpráv do konverzace. Relace WCF se liší od objekt relace, která je k dispozici v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] aplikace podporují různé chování a se řídí různými způsoby. Toto téma popisuje funkce, které umožňují relace ve službě WCF aplikací a jejich použití.  
@@ -137,7 +137,7 @@ V aplikacích Windows Communication Foundation (WCF) *relace* koreluje skupinu z
  Je interakce mezi <xref:System.ServiceModel.SessionMode> výčtu v kontraktu a <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> vlastnost, která řídí přidružení mezi kanály a konkrétní objekty. Další informace najdete v tématu [relací, Instancing a souběžnosti](../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md).  
   
 ### <a name="sharing-instancecontext-objects"></a>Třída InstanceContext objekty pro sdílení obsahu  
- Můžete taky řídit, které využívají relace kanálu nebo volání je přidružený k který <xref:System.ServiceModel.InstanceContext> objektu pomocí provádí toto přidružení se sami. Kompletní příklad naleznete v tématu [InstanceContextSharing](https://msdn.microsoft.com/library/4a6a46d7-b7d7-4bb5-a0dd-03ffa3cbc230).  
+ Můžete taky řídit, které využívají relace kanálu nebo volání je přidružený k který <xref:System.ServiceModel.InstanceContext> objektu pomocí provádí toto přidružení se sami. 
   
 ## <a name="sessions-and-streaming"></a>Relace a streamování  
  Pokud máte velký objem přenášených dat, je režim tvorby datového proudu přenosu ve službě WCF proveditelné alternativou k výchozí chování ukládání do vyrovnávací paměti a zpracování zpráv v paměti jako celek. Můžete obdržet neočekávané chování při streamování volání s vazbou na základě relace. Všechna volání streamování se provádějí přes jeden kanál (kanálu datagramu), který nepodporuje relace, i v případě, že vazba používá je nakonfigurována pro použití relací. Pokud více klientů volání datových proudů na stejný objekt služby přes vazbu na základě relace, a objekt služby souběžný režim je nastavena na jednou a jeho režimu instance kontextu je nastavena na `PerSession`, kanálu datagramu a proto musí projít všechna volání současně je zpracována pouze jedno volání. Jeden nebo více klientů může potom vypršení časového limitu. Tento problém můžete obejít tak, že nastavíte objekt služby `InstanceContextMode` k `PerCall` nebo souběžnost více.  

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - controls [Windows Forms]
 - Windows Forms controls, list of
 ms.assetid: dec51976-eae0-4398-a537-20bca7974722
-ms.openlocfilehash: 18c3cf638934551ba40306d98b3bf28dfdd03463
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: bd8dd1e7a01378ce3eb278993321fd5063715e7c
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44041141"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56442864"
 ---
 # <a name="controls-to-use-on-windows-forms"></a>Ovládací prvky používané ve Windows Forms
 Následuje abecední seznam ovládacích prvků a komponent, které lze použít v modelu Windows Forms. Kromě ovládacích prvků Windows Forms uvedenými v této části můžete přidat ovládací prvky ActiveX a vlastních ovládacích prvků do formulářů Windows. Pokud zjistíte, že ovládací prvek, který je třeba zde uvedeny, můžete také vytvořit vlastní. Podrobnosti najdete v tématu [vývoj prvky Windows Forms v době návrhu](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md). Další informace o výběru ovládacího prvku potřebujete, přečtěte si [ovládacích prvků Windows Forms podle funkce](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md).  
@@ -228,8 +228,8 @@ Následuje abecední seznam ovládacích prvků a komponent, které lze použít
  [Vývoj ovládacích prvků Windows Forms v době návrhu](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)  
  Obsahuje odkazy na témata krok za krokem, doporučení pro typ ovládacího prvku k vytvoření a další informace o vytváření vlastního ovládacího prvku.  
   
- [Ovládacích prvků a programovatelných objektů porovnáno v různých jazycích a knihovnách](https://msdn.microsoft.com/library/021f2a1b-8247-4348-a5ad-e1d9ab23004b)  
+ [Ovládacích prvků a programovatelných objektů porovnáno v různých jazycích a knihovnách](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0061wezk(v=vs.100))  
  Obsahuje tabulku, která mapuje ovládacích prvků v jazyce Visual Basic 6.0 na odpovídající ovládací prvek v [!INCLUDE[vbprvblong](../../../../includes/vbprvblong-md.md)]. Mějte na paměti, že ovládací prvky jsou nyní třídy v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].  
   
- [Postupy: Přidávání ovládacích prvků ActiveX do Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)  
+ [Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows](../../../../docs/framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)  
  Popisuje způsob použití ovládacích prvků ActiveX do formulářů Windows.

@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: dc9149cb1a17e3af66abd995fd2a2196109e0e05
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: b00b0021f71097f2c6cedcb1ddea7861f1936f84
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145251"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56442227"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml 
 
@@ -89,10 +89,10 @@ Kořenový klíč z tohoto souboru se služby. Pod tímto klíčem definujete sl
 | Název služby | Popis |
 |--------------|-------------|
 | webmvc       | Kontejneru, včetně aplikací ASP.NET Core MVC využívání mikroslužeb from C na straně serveru\#|
-| CATALOG.API  | Kontejner včetně katalogu ASP.NET Core webového rozhraní API mikroslužby |
-| Ordering.API | Kontejner včetně řazení ASP.NET Core webového rozhraní API mikroslužby |
-| SQL.data     | Kontejner systémem SQL Server pro Linux, uchovávající databází mikroslužeb |
-| basket.API   | Kontejner s nákupní košík ASP.NET Core webového rozhraní API mikroslužby |
+| catalog.api  | Kontejner včetně katalogu ASP.NET Core webového rozhraní API mikroslužby |
+| ordering.api | Kontejner včetně řazení ASP.NET Core webového rozhraní API mikroslužby |
+| sql.data     | Kontejner systémem SQL Server pro Linux, uchovávající databází mikroslužeb |
+| basket.api   | Kontejner s nákupní košík ASP.NET Core webového rozhraní API mikroslužby |
 | basket.data  | Spuštění REDIS kontejneru služby cache service, s databází nákupní košík jako mezipaměť REDIS |
 
 ### <a name="a-simple-web-service-api-container"></a>Jednoduchý kontejner rozhraní API webové služby
@@ -458,7 +458,7 @@ Za tím účelem týmu .NET nabízí tři základní varianty v [microsoft/dotne
 
 1.  **Sada SDK**: pro scénáře vývoje a sestavení.
 2.  **modul runtime**: pro produkční scénář a
-3.  **modul runtime deps**: pro produkční scénáře [samostatná aplikace](https://docs.microsoft.com/dotnet/core/deploying/index#self-contained-deployments-scd).
+3.  **modul runtime deps**: pro produkční scénáře [samostatná aplikace](../../../core/deploying/index.md#self-contained-deployments-scd).
 
 Modul runtime imagí taky poskytuje automatické nastavení aspnetcore\_adresy URL na port 80 a pre-ngend mezipaměti sestavení, které vám pomůžou získat rychlejší spuštění.
 
@@ -468,7 +468,7 @@ Modul runtime imagí taky poskytuje automatické nastavení aspnetcore\_adresy U
     [*https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/*](https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/)
 
 -   **Vytváření imagí Dockeru pro aplikace .NET Core** <br/>
-    [*https://docs.microsoft.com/en-us/dotnet/core/docker/building-net-docker-images*](https://docs.microsoft.com/en-us/dotnet/core/docker/building-net-docker-images)
+    [*https://docs.microsoft.com/en-us/dotnet/core/docker/building-net-docker-images*](../../../core/docker/building-net-docker-images.md)
 
 >[!div class="step-by-step"]
 >[Předchozí](data-driven-crud-microservice.md)

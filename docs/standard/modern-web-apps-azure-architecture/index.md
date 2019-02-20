@@ -1,16 +1,11 @@
 ---
 title: Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
-description: Průvodce, který obsahuje pokyny k začátku do konce vytváření monolitické webových aplikací pomocí ASP.NET Core a Azure.
+description: 'Průvodce, který obsahuje pokyny k začátku do konce vytváření monolitické webových aplikací pomocí ASP.NET Core a Azure.'
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 5e85126cbec23bdebd510b103478b3c362ef71fa
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55827861"
 ---
+
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Navrhování moderních webových aplikací pomocí ASP.NET Core a Azure
 
 ![titulní obrázek](./media/cover.png)
@@ -107,7 +102,7 @@ Můžete dál v této příručce k vašemu týmu pomoct zajistit, aby tyto aspe
 ## <a name="references"></a>Odkazy
 
 - **Volba mezi .NET Core a .NET Framework pro serverové aplikace**  
-  <https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server>
+  [https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server](../choosing-core-framework-server.md)
 
 >[!div class="step-by-step"]
 >[Next](modern-web-applications-characteristics.md)

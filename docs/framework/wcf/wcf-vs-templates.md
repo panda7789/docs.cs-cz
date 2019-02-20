@@ -2,12 +2,12 @@
 title: Šablony Visual Studia pro WCF
 ms.date: 03/30/2017
 ms.assetid: 6a608575-3535-4190-89da-911e24c8374f
-ms.openlocfilehash: a7529b14c3c83f0df7b41581ef18e5192209bc5d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 72239f9e0e6d7882e6a29222c0b68f3bfd5d89d5
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54624935"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56443234"
 ---
 # <a name="wcf-visual-studio-templates"></a>Šablony Visual Studia pro WCF
 Šablony sady Visual Studio Windows Communication Foundation (WCF) jsou předdefinované šablony projektů a položek, které můžete použít k rychlému vytvoření služby WCF a okolního aplikace v sadě Visual Studio.  
@@ -59,7 +59,7 @@ ms.locfileid: "54624935"
  Pokud je existující projekt webového projektu je také vytvoří soubor hostitele služby (service1.svc).  
   
 ### <a name="wcf-wf-service-project-and-item-template"></a>Projekt pracovního postupu služby WCF a šablonu položky.  
- Tyto šablony vytvoření služby WCF, které jsou hostiteli služby pracovního postupu, což je pracovní postup, který je přístupný jako webovou službu. Existují samostatné šablony pro XAML nebo imperativní programovací modely. Pomocí šablon, můžete vytvořit pracovní postup sekvenční nebo stavového stroje. Další informace o těchto typech pracovního postupu, naleznete v tématu [Windows Workflow Foundation kurzy](https://msdn.microsoft.com/library/e9705654-bd96-4b56-8d98-f1f118112d97). Další informace o vytváření projektů pracovních postupů najdete v tématu [vytváření projektů pracovních postupů starších verzí](/visualstudio/workflow-designer/creating-legacy-workflow-projects).  
+ Tyto šablony vytvoření služby WCF, které jsou hostiteli služby pracovního postupu, což je pracovní postup, který je přístupný jako webovou službu. Existují samostatné šablony pro XAML nebo imperativní programovací modely. Pomocí šablon, můžete vytvořit pracovní postup sekvenční nebo stavového stroje. Další informace o těchto typech pracovního postupu, naleznete v tématu [jak: Vytvoření pracovního postupu](../windows-workflow-foundation/how-to-create-a-workflow.md). Další informace o vytváření projektů pracovních postupů najdete v tématu [vytváření projektů pracovních postupů starších verzí](/visualstudio/workflow-designer/creating-legacy-workflow-projects).  
   
  Návrhář Visual Studio je rychlejší reakce, když typ XOML, pracovní postupy se používají místo toho kódu na základě těch, které jsou. XOML pracovního postupu je výchozí typ pracovního postupu má být vytvořen.  
   

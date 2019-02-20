@@ -6,12 +6,12 @@ helpviewer_keywords:
 - layout [Windows Forms]
 - Windows Forms, arranging contents
 ms.assetid: 630c9305-9ecf-4f99-94f9-ddf06de82713
-ms.openlocfilehash: 714613253c5d3e90750f4ffad1cab34064995877
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: c6d2156b23965175bafe8f32ccf2fa325ff7e3d3
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43418049"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56441395"
 ---
 # <a name="flowlayoutpanel-control-windows-forms"></a>FlowLayoutPanel – ovládací prvek (Windows Forms)
 `FlowLayoutPanel` Ovládací prvek uspořádá jeho obsah ve směru toku vodorovně nebo svisle. Dá zabalit obsah z jednoho řádku na další nebo z jednoho sloupce na další. Alternativně můžete místo oříznutí jeho obsah zabalena.  
@@ -22,10 +22,10 @@ ms.locfileid: "43418049"
  [Přehled ovládacího prvku FlowLayoutPanel](../../../../docs/framework/winforms/controls/flowlayoutpanel-control-overview.md)  
  Představuje obecné koncepty `FlowLayoutPanel` ovládací prvek, který vám umožní vytvořit rozložení, které toky vodorovně nebo svisle.  
   
- [Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)  
+ [Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)  
  Vysvětluje způsob používání <xref:System.Windows.Forms.Control.Anchor%2A> a <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti a ukotvení podřízených ovládacích prvků v <xref:System.Windows.Forms.FlowLayoutPanel> ovládacího prvku.  
   
- Viz také [návod: uspořádání ovládacích prvků ve Windows Forms pomocí ovládacího prvku FlowLayoutPanel](https://msdn.microsoft.com/library/z9w7ek2f\(v=vs.110\)).  
+ Viz také [názorný postup: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md).  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.FlowLayoutPanel>  

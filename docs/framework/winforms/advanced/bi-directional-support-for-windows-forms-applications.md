@@ -9,21 +9,21 @@ helpviewer_keywords:
 - Windows Forms, bi-directional support
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9e35f097380272822e9dbcda01617cce9fed8fc1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ecd167b46a3d600852b5b12a7f18d0013502523d
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54676845"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56442968"
 ---
 # <a name="bi-directional-support-for-windows-forms-applications"></a>Obousměrná podpora pro formulářové aplikace Windows
 Visual Studio můžete vytvářet aplikace pro systém Windows, které podporují obousměrné (vpravo zprava doleva) jazyků, jako je arabština nebo hebrejština. To zahrnuje standardní formuláře, dialogová okna, formuláře MDI a ovládací prvky, které můžete pracovat s tyto formy – to znamená, že všechny objekty v <xref:System.Windows.Forms.Control> oboru názvů.  
   
 ## <a name="culture-support"></a>Podpora jazykové verze  
- Nastavení jazykové verze uživatelského rozhraní a jazykové verze určují, jak aplikace funguje se data, časy, měny a další informace. Podpora pro jazykové verze a jazykové verze uživatelského rozhraní je stejný pro obousměrných jazycích, jako je pro ostatní jazyky.   Viz také [třídy specifické pro jazykovou verzi pro globální Windows Forms a webové formuláře](https://msdn.microsoft.com/library/94ye9x8c\(v=vs.110\)) nebo [třídy specifické pro jazykovou verzi pro globální Windows Forms a webové formuláře](https://msdn.microsoft.com/library/94ye9x8c\(v=vs.120\))  
+ Nastavení jazykové verze uživatelského rozhraní a jazykové verze určují, jak aplikace funguje se data, časy, měny a další informace. Podpora pro jazykové verze a jazykové verze uživatelského rozhraní je stejný pro obousměrných jazycích, jako je pro ostatní jazyky. Další informace najdete v tématu [specifické pro jazykovou verzi třídy pro globální formuláře Windows a webových formulářů](/visualstudio/ide/culture-specific-classes-for-global-windows-forms-and-web-forms).  
   
 ## <a name="righttoleft-and-righttoleftlayout-properties"></a>RightToLeft a vlastnosti RightToLeftLayout  
- Základní <xref:System.Windows.Forms.Control> zahrnuje třídy, ze které jsou odvozeny formulářů, <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost, která můžete nastavit, chcete-li změnit pořadí čtení formuláře a jejích ovládacích prvků. Pokud nastavíte formuláře <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost, výchozí ovládací prvky ve formuláři zdědí toto nastavení. Ale můžete také nastavit <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost jednotlivě na většině ovládací prvky. Viz také [jak: Zobrazení textu zprava doleva v modelu Windows Forms pro globalizaci](https://msdn.microsoft.com/library/7d3337xw\(v=vs.110\)).  
+ Základní <xref:System.Windows.Forms.Control> zahrnuje třídy, ze které jsou odvozeny formulářů, <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost, která můžete nastavit, chcete-li změnit pořadí čtení formuláře a jejích ovládacích prvků. Pokud nastavíte formuláře <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost, výchozí ovládací prvky ve formuláři zdědí toto nastavení. Ale můžete také nastavit <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost jednotlivě na většině ovládací prvky. Viz také [jak: Zobrazení textu zprava doleva v modelu Windows Forms pro globalizaci](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7d3337xw(v=vs.100)).  
   
  Vliv <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost se může lišit od jeden ovládací prvek do jiného. V některé ovládací prvky vlastnost pouze nastaví pořadí čtení, stejně jako <xref:System.Windows.Forms.Button>, <xref:System.Windows.Forms.TreeView> a <xref:System.Windows.Forms.ToolTip> ovládací prvky. V další ovládací prvky <xref:System.Windows.Forms.Control.RightToLeft%2A> změny vlastností pořadí čtení a rozložení. Jedná se o <xref:System.Windows.Forms.RadioButton>, <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.Forms.CheckBox> ovládací prvky. Další ovládací prvky vyžadují, aby <xref:System.Windows.Forms.Form.RightToLeftLayout%2A> vlastnost jde použít pro zrcadlení její rozložení zprava doleva. Následující tabulka obsahuje podrobnosti o <xref:System.Windows.Forms.Control.RightToLeft%2A> a <xref:System.Windows.Forms.Form.RightToLeftLayout%2A> vlastnosti vliv jednotlivých ovládacích prvků Windows Forms.  
   
@@ -39,7 +39,7 @@ Visual Studio můžete vytvářet aplikace pro systém Windows, které podporuj�
 |<xref:System.Windows.Forms.DataGridView>|Má vliv na obou pořadí a řízení rozložení pro čtení zprava doleva.|Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.DateTimePicker>|Není ovlivněna; závisí na jazyku operačního systému|Odráží ovládacího prvku|Ano|  
 |<xref:System.Windows.Forms.DomainUpDown>|Vlevo – zarovná nahoru a dolů|Žádný vliv|Ne|  
-|<xref:System.Windows.Forms.ErrorProvider>|Nepodporováno|Žádný vliv|Ne|  
+|<xref:System.Windows.Forms.ErrorProvider>|Není podporováno|Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.FontDialog>|Závisí na jazyku operačního systému|Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.Form>|Nastaví pořadí čtení zprava doleva a obrátí posuvníky|Odráží formuláře|Ano|  
 |<xref:System.Windows.Forms.GroupBox>|Popisek se zobrazí zarovnaný doprava. Tato vlastnost může dědit podřízených ovládacích prvků.|Použití <xref:System.Windows.Forms.TableLayoutPanel> podporu v rámci ovládacího prvku pro zrcadlení zprava doleva|Ne|  
@@ -52,21 +52,21 @@ Visual Studio můžete vytvářet aplikace pro systém Windows, které podporuj�
 |<xref:System.Windows.Forms.MainMenu>|U RTL pořadí čtení v době běhu (ne v době návrhu) zobrazí zarovnaný doprava|Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.MaskedTextBox>|Zobrazí text zprava doleva.|Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.MonthCalendar>|Není ovlivněna; závisí na jazyku operačního systému|Odráží ovládacího prvku|Ano|  
-|<xref:System.Windows.Forms.NotifyIcon>|Nepodporováno|Nepodporováno|Ne|  
+|<xref:System.Windows.Forms.NotifyIcon>|Není podporováno|Není podporováno|Ne|  
 |<xref:System.Windows.Forms.NumericUpDown>|Nahoru a dolů jsou zarovnané vlevo|Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.OpenFileDialog>|V operačních systémech zprava doleva, nastavení obsahující formulář <xref:System.Windows.Forms.Control.RightToLeft> vlastnost <xref:System.Windows.Forms.RightToLeft.Yes?displayProperty=nameWithType> lokalizováno dialogového okna |Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.PageSetupDialog>|Není ovlivněna; závisí na jazyku operačního systému|Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.Panel>|Podřízené ovládací prvky mohou dědit této vlastnosti|Použití <xref:System.Windows.Forms.TableLayoutPanel> v rámci ovládacího prvku pro právo levé podpory|Ano|  
-|<xref:System.Windows.Forms.PictureBox>|Nepodporováno|Žádný vliv|Ne|  
+|<xref:System.Windows.Forms.PictureBox>|Není podporováno|Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.PrintDialog>|Není ovlivněna; závisí na jazyku operačního systému|Žádný vliv|Ne|  
 |<xref:System.Drawing.Printing.PrintDocument>|Svislý posuvník budou zarovnané vlevo a vodorovného posuvníku začne z levé strany|Žádný vliv|Ne|  
-|<xref:System.Windows.Forms.PrintPreviewDialog>|Nepodporováno|Nepodporováno|Ne|  
+|<xref:System.Windows.Forms.PrintPreviewDialog>|Není podporováno|Není podporováno|Ne|  
 |<xref:System.Windows.Forms.ProgressBar>|Tato vlastnost vliv|Odráží ovládacího prvku|Ano|  
 |<xref:System.Windows.Forms.RadioButton>|Přepínací tlačítko se zobrazí na pravé straně textu|Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.RichTextBox>|Ovládací prvky, které obsahují text se zobrazí zleva doprava se směr čtení zprava doleva|Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.SaveFileDialog>|Není ovlivněna; závisí na jazyku operačního systému|Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.SplitContainer>|Panel rozložení je obrácený; na levé straně, se zobrazí svislý posuvník Vodorovný posuvník spustí z pravé strany|Použití <xref:System.Windows.Forms.TableLayoutPanel> zrcadlení pořadí podřízených ovládacích prvků|Ne|  
-|<xref:System.Windows.Forms.Splitter>|Nepodporováno|Žádný vliv|Ne|  
+|<xref:System.Windows.Forms.Splitter>|Není podporováno|Žádný vliv|Ne|  
 |<xref:System.Windows.Forms.StatusBar>|Nejsou podporovány. použít <xref:System.Windows.Forms.StatusStrip> místo|Žádný vliv; použít <xref:System.Windows.Forms.StatusStrip> místo|Ne|  
 |<xref:System.Windows.Forms.TabControl>|Není ovlivněna touto vlastností|Odráží ovládacího prvku|Ano|  
 |<xref:System.Windows.Forms.TextBox>|Zobrazí text zprava doleva s směr čtení zprava doleva|Žádný vliv|Ne|  
@@ -119,5 +119,5 @@ Visual Studio můžete vytvářet aplikace pro systém Windows, které podporuj�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Obousměrná podpora pro webové aplikace ASP.NET](https://msdn.microsoft.com/library/5576f9b1-9b86-41ef-8354-092d366bcd03)
+- [Obousměrná podpora pro webové aplikace ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/6eedwbtt(v=vs.100))
 - [Globalizace aplikací Windows Forms](globalizing-windows-forms.md)

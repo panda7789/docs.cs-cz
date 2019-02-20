@@ -4,12 +4,12 @@ description: Přečtěte si pracovní postup "vnitřní smyčky" pro vývoj apli
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/23/2018
-ms.openlocfilehash: 03eb4662e55551678105fa9ef25b42cc05c132a5
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 2d592f92153040d910dcf529ec21770693f5973c
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219085"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56442318"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 
@@ -120,7 +120,7 @@ V souboru DockerFile potřebujete také dáte pokyn, aby Docker nenaslouchá na 
 
 Existují další řádky konfigurace, které můžete přidat v souboru DockerFile v závislosti na jazyk a rozhraní, které používáte, takže Docker ví, jak spustit aplikaci. Pro instanci, potřebujete ENTRYPOINT uspokojování \["dotnet", "MyCustomMicroservice.dll"\] ke spuštění aplikace .NET Core, i když můžete mít více variant v závislosti na přístup k sestavení a spuštění služby. Pokud chcete sestavovat a spouštět aplikace .NET při použití sady SDK a rozhraní příkazového řádku dotnet, bylo by mírně liší. Dolní řádek je, že vstupní bod řádku plus další řádky budou lišit v závislosti na jazyk nebo platformu vybraných pro vaše aplikace.
 
-**Další informace o** informace o vytváření imagí Dockeru pro aplikace .NET Core, přejděte na <https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images>.
+**Další informace o** informace o vytváření imagí Dockeru pro aplikace .NET Core, přejděte na [ https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images ](../../../core/docker/building-net-docker-images.md).
 
 Další informace o vytváření vlastních imagí, přejděte na [ https://docs.docker.com/engine/\ kurzy/dockerimages/](https://docs.docker.com/engine/tutorials/dockerimages/).
 

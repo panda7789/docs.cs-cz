@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
-ms.openlocfilehash: 2979f8e50b7fc0d0fab419a89e708517fd271be8
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 25cdd90250f256588d8ac72c0f98464eeae35938
+ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199198"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56441750"
 ---
 # <a name="workflow-security"></a>Pracovní postup zabezpečení
 Windows Workflow Foundation (WF) je integrovaná s několika různých technologií, jako je například Microsoft SQL Server a Windows Communication Foundation (WCF). Interakce s tyto technologie vznikat potíže se zabezpečením do vašich pracovních postupů v případě aktivace nesprávně.
@@ -26,7 +26,7 @@ Windows Workflow Foundation (WF) je integrovaná s několika různých technolog
 
 5.  Aplikace, které vyžadují izolaci zabezpečení by neměly sdílet stejnou instanci abstrakce schématu. Tyto aplikace použijte poskytovatele různých úložišť, nebo uložit poskytovatelé umožňují použít různé úložiště instancí.
 
-## <a name="sql-server-security-concerns"></a>Otázky zabezpečení SQL serveru
+## <a name="sql-server-security-concerns"></a>SQL Server Security Concerns
 
 -   Pokud se používá velké množství podřízené aktivity, umístění, záložek, rozšíření hostitele nebo obory nebo pokud se používají záložky s velmi velkých datových částí, může dojít k vyčerpání paměti nebo odešel množství volného místa databáze může být přidělen při stálost. To lze zmírnit použitím zabezpečení na úrovni objektů a na úrovni databáze.
 
@@ -40,12 +40,12 @@ Windows Workflow Foundation (WF) je integrovaná s několika různých technolog
 
 -   Windows Communication Foundation (WCF) koncových bodů použitých v pracovních postupech by měla být zabezpečená. Další informace najdete v tématu [WCF – Přehled zabezpečení](https://go.microsoft.com/fwlink/?LinkID=164975).
 
--   Může být implementována autorizaci na úrovni hostitele pomocí <xref:System.ServiceModel.ServiceAuthorizationManager>. Zobrazit [postupy: vytvoření vlastního Správce autorizací pro službu](https://go.microsoft.com/fwlink/?LinkId=192228) podrobnosti.
+-   Může být implementována autorizaci na úrovni hostitele pomocí <xref:System.ServiceModel.ServiceAuthorizationManager>. Zobrazit [jak: Vytvoření vlastního Správce autorizací pro službu](https://go.microsoft.com/fwlink/?LinkId=192228) podrobnosti.
 
 -   ServiceSecurityContext pro příchozí zprávy je také dostupné v rámci pracovního postupu tak přístup k informacím OperationContext.
 
 ## <a name="wf-security-pack-ctp"></a>Balíček zabezpečení WF CTP
- Microsoft WF zabezpečení Pack CTP 1 je první verze preview (CTP) technologie komunity sady aktivit a jejich provedení na základě [Windows Workflow Foundation](https://msdn.microsoft.com/netframework/aa663328.aspx)v [rozhraní .NET Framework 4](https://msdn.microsoft.com/netframework/default.aspx) pracovní postup WF ( (4) a [Windows Identity Foundation (WIF)](https://msdn.microsoft.com/security/aa570351.aspx).  CTP 1 Microsoft WF zabezpečení balíček obsahuje aktivity a jejich návrhářů, které ukazují, jak jednoduše povolit různé scénáře související se zabezpečením pomocí pracovního postupu, včetně:
+ Microsoft WF zabezpečení Pack CTP 1 je první verze preview (CTP) technologie komunity sady aktivit a jejich provedení na základě [Windows Workflow Foundation](index.md) v [rozhraní .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w0x726c2(v=vs.100)) pracovní postup WF ( (4) a [Windows Identity Foundation (WIF)](../security/index.md).  CTP 1 Microsoft WF zabezpečení balíček obsahuje aktivity a jejich návrhářů, které ukazují, jak jednoduše povolit různé scénáře související se zabezpečením pomocí pracovního postupu, včetně:
 
 1.  Zosobnění identity klienta v pracovním postupu
 
@@ -55,4 +55,4 @@ Windows Workflow Foundation (WF) je integrovaná s několika různých technolog
 
 4.  Tok tokenu zabezpečení klienta ke službě back-end (založené na deklaracích delegování) pomocí WS-Trust ActAs
 
-Další informace a stáhnout verzi CTP WF zabezpečení balíčku najdete v tématu: [WF zabezpečení Pack CTP](https://wf.codeplex.com/releases/view/48114)
+Další informace a stáhnout verzi CTP WF zabezpečení balíčku najdete v tématu: [Balíček zabezpečení WF CTP](https://wf.codeplex.com/releases/view/48114)
