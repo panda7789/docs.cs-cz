@@ -3,19 +3,13 @@ title: Co je nového v rozhraní .NET Framework
 ms.custom: updateeachrelease
 ms.date: 04/10/2018
 dev_langs:
-- csharp
-- vb
+  - csharp
+  - vb
 helpviewer_keywords:
-- what's new [.NET Framework]
+  - 'what''s new [.NET Framework]'
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: de919789c369c66c52a137bde811c56bf07a6ec9
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54416024"
 ---
 # Co je nového v rozhraní .NET Framework <a name="introduction"></a>
 
@@ -612,7 +606,7 @@ Teď máte možnost používat dotykové ovládání/stylus zásobníku na zákl
 
 **Novou implementaci pro tisk přes rozhraní API pro WPF**
 
-WPF v rozhraní API v tisku <xref:System.Printing.PrintQueue?displayProperty=nameWithType> třída volat Windows [tisk dokumentu balíčku rozhraní API](https://msdn.microsoft.com/library/windows/desktop/hh448418(v=vs.85).aspx) místo zastaralá [XPS tisk API](https://msdn.microsoft.com/library/windows/desktop/ff686814(v=vs.85).aspx). Dopad této změny na kompatibilitu aplikací, najdete v části [změny mění se cílení v rozhraní .NET Framework 4.7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
+WPF v rozhraní API v tisku <xref:System.Printing.PrintQueue?displayProperty=nameWithType> třída volat Windows [tisk dokumentu balíčku rozhraní API](/windows/desktop/printdocs/tailored-app-printing-api) místo zastaralá [XPS tisk API](/windows/desktop/printdocs/xps-printing). Dopad této změny na kompatibilitu aplikací, najdete v části [změny mění se cílení v rozhraní .NET Framework 4.7](../migration-guide/retargeting-changes-in-the-net-framework-4-7.md).
 
 <a name="v462" />
 
@@ -1168,7 +1162,7 @@ SqlClient teď automaticky poskytuje rychlejší připojení do dostupnosti skup
 
 **Ukázky**
 
- Několik položek [ukázky WPF](https://msdn.microsoft.com/library/ms771633.aspx) na webové stránce MSDN. Více než 200 nejoblíbenější vzorků (na základě využití), které se přesune do [úložišti GitHub otevřete zdrojový](https://github.com/Microsoft/WPF-Samples). Pomozte nám vylepšit naše ukázky odesláním žádosti o přijetí změn nebo otevírání [problém Githubu](https://github.com/Microsoft/WPF-Samples/issues).
+ Existuje mnoho vzorků WPF na [/WPF – ukázky Microsoft](https://github.com/Microsoft/WPF-Samples) úložiště GitHub. Pomozte nám vylepšit naše ukázky odesláním žádosti o přijetí změn nebo otevírání [problém Githubu](https://github.com/Microsoft/WPF-Samples/issues).
 
  **Rozšíření rozhraní DirectX**
 
@@ -1316,7 +1310,7 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
 
     - **Aktualizace kryptografie**
 
-         <xref:System.Security.Cryptography?displayProperty=nameWithType> Rozhraní API je právě aktualizována o podporu [kryptografie Windows CNG API](/windows/desktop/SecCNG/cng-reference). Předchozí verze rozhraní .NET Framework mají spoléhal na zcela [starší verzi rozhraní API pro šifrování Windows](/windows/desktop/SecCrypto/cryptography-portal) jako základ pro <xref:System.Security.Cryptography?displayProperty=nameWithType> implementace. Jsme měli žádosti o podporu rozhraní API CNG, protože ji podporuje [moderní kryptografické algoritmy](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx#suite_b_support), které jsou důležité pro určité kategorie aplikací.
+         <xref:System.Security.Cryptography?displayProperty=nameWithType> Rozhraní API je právě aktualizována o podporu [kryptografie Windows CNG API](/windows/desktop/SecCNG/cng-reference). Předchozí verze rozhraní .NET Framework mají spoléhal na zcela [starší verzi rozhraní API pro šifrování Windows](/windows/desktop/SecCrypto/cryptography-portal) jako základ pro <xref:System.Security.Cryptography?displayProperty=nameWithType> implementace. Jsme měli žádosti o podporu rozhraní API CNG, protože ji podporuje [moderní kryptografické algoritmy](/windows/desktop/SecCNG/cng-features#suite-b-support), které jsou důležité pro určité kategorie aplikací.
 
          Rozhraní .NET Framework 4.6 obsahuje následující nová vylepšení pro podporu kryptografie Windows CNG rozhraní API:
 
@@ -1765,7 +1759,7 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
 
 ASP.NET 4.5 a 4.5.1 přidá vazby modelu webových formulářů, podporu WebSocket, asynchronní obslužné rutiny, vylepšení výkonu a mnoho dalších funkcí. Další informace naleznete v následujících materiálech:
 
-- [ASP.NET 4.5 a Visual Studio 2012](https://msdn.microsoft.com/library/hh420390(v=vs.110).aspx)
+- [ASP.NET 4.5 a Visual Studio 2012](https://docs.microsoft.com/previous-versions/aspnet/hh420390(v=vs.110))
 
 - [ASP.NET a webové nástroje pro Visual Studio 2013 – poznámky k verzi](/aspnet/visual-studio/overview/2013/release-notes)
 
