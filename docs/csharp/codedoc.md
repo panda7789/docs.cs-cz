@@ -3,12 +3,12 @@ title: Dokumentace kódu pomocí komentářů XML
 description: Zjistěte, jak váš kód, který se dokumentační komentáře XML dokumentu a generovat soubor dokumentace XML v době kompilace.
 ms.date: 02/14/2017
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 4e5efacbb3dcc9121a5ef52ae437af263fd86cff
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: b52fba24750747772c36959324cd16e21067910e
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55271353"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56583703"
 ---
 # <a name="documenting-your-code-with-xml-comments"></a>Dokumentace kódu pomocí komentářů XML
 
@@ -194,9 +194,9 @@ Teď, když máte komentáře XML v samostatném souboru, Podívejme se, jak vá
 
 A že máte: našeho kódu je zpět ke a nebyly ztraceny žádné informace o dokumentaci.
 
-`filename` Atribut představuje název souboru XML, který obsahuje dokumentaci.
+`file` Atribut představuje název souboru XML, který obsahuje dokumentaci.
 
-`path` Atributu představuje [XPath](../standard/data/xml/xpath-queries-and-namespaces.md) dotaz pro `tag name` k dispozici v zadaném `filename`.
+`path` Atributu představuje [XPath](../standard/data/xml/xpath-queries-and-namespaces.md) dotaz pro `tag name` k dispozici v zadaném `file`.
 
 `name` Atribut představuje název specifikátor ve značce, který předchází komentáře.
 

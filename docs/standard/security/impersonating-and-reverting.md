@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: b93d402c-6c28-4f50-b2bc-d9607dc3e470
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bec065e2a78551b85fe766f1b81590b18f4679d7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e6ce153d52f9142801a7cdc7bb2e6a1770ab0b69
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54516821"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56583690"
 ---
 # <a name="impersonating-and-reverting"></a>Zosobnění a návrat
 Někdy můžete potřebovat k získání tokenu účtu Windows zosobnit účet Windows. Aplikace založená na technologii ASP.NET například může mít jednat jménem několika uživatelů v různých časech. Vaše aplikace může přijmout token, který představuje správce z Internetové informační služby (IIS), zosobnit uživatele, provedení určité operace a vrátit k předchozí identitu. V dalším kroku ji může přijmout token ze služby IIS, který reprezentuje uživatele s menším počtem práv, provádět některé operace a znovu vrátit.  
@@ -29,31 +29,31 @@ Někdy můžete potřebovat k získání tokenu účtu Windows zosobnit účet W
 2.  Vytvořit novou instanci třídy **WindowsIdentity** třídy, prochází token. Následující kód ukazuje toto volání, kde `hToken` představuje Windows token.  
   
     ```csharp  
-    WindowsIdentity ImpersonatedIdentity = new WindowsIdentity(hToken);  
+    WindowsIdentity impersonatedIdentity = new WindowsIdentity(hToken);  
     ```  
   
     ```vb  
-    Dim ImpersonatedIdentity As New WindowsIdentity(hToken)  
+    Dim impersonatedIdentity As New WindowsIdentity(hToken)  
     ```  
   
 3.  Začněte tím, že vytvoříte novou instanci třídy zosobnění <xref:System.Security.Principal.WindowsImpersonationContext> třídy a inicializuje ji <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A?displayProperty=nameWithType> metoda inicializovaného třídy, jak je znázorněno v následujícím kódu.  
   
     ```csharp  
-    WindowsImpersonationContext MyImpersonation = ImpersonatedIdentity.Impersonate();  
+    WindowsImpersonationContext myImpersonation = impersonatedIdentity.Impersonate();  
     ```  
   
     ```vb  
-    WindowsImpersonationContext MyImpersonation = ImpersonatedIdentity.Impersonate()  
+    WindowsImpersonationContext myImpersonation = impersonatedIdentity.Impersonate()  
     ```  
   
 4.  Pokud už nepotřebujete k zosobnění, zavolejte <xref:System.Security.Principal.WindowsImpersonationContext.Undo%2A?displayProperty=nameWithType> metoda Obnova zosobnění, jak je znázorněno v následujícím kódu.  
   
     ```csharp  
-    MyImpersonation.Undo();  
+    myImpersonation.Undo();  
     ```  
   
     ```vb  
-    MyImpersonation.Undo()  
+    myImpersonation.Undo()  
     ```  
   
  Pokud je důvěryhodné, kód se už připojilo <xref:System.Security.Principal.WindowsPrincipal> objekt vlákna, můžete volat metodu instance **zosobnit**, které nepřijímá token účtu. Všimněte si, že se jedná pouze užitečné, když **WindowsPrincipal** objektu ve vlákně představuje uživatele, než pod kterým proces aktuálně spouští. Například může dojít k této situaci pomocí technologie ASP.NET s ověřováním Windows zapnutý a zosobnění vypnuté. V takovém případě je proces spuštěn pod účtem nakonfigurovat v Internetové informační služby (IIS), pokud je aktuální objekt zabezpečení představuje uživatele Windows, který je přistoupit ke stránce.  

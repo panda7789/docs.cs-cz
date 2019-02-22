@@ -6,12 +6,12 @@ ms.author: johalex
 ms.date: 01/11/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 60506a6a8640a4f37e9f181bc88ae4f757502cb9
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
-ms.translationtype: MT
+ms.openlocfilehash: 03a584095badf4b1c3318833f6e67367f27b32ba
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093603"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56583716"
 ---
 # <a name="tutorial-cluster-iris-flowers-using-a-clustering-learner-with-mlnet"></a>Kurz: Cluster květin iris pomocí clusteringu learner ML.NET
 
@@ -84,7 +84,7 @@ Odeberte stávající definice třídy a přidejte následující kód, který d
 
 [!code-csharp[Define data classes](~/samples/machine-learning/tutorials/IrisFlowerClustering/IrisData.cs#ClassDefinitions)]
 
-`IrisData` je třída vstupní data a obsahuje definice pro jednotlivé funkce z datové sady. Použití [sloupec](xref:Microsoft.ML.Data.ColumnAttribute) atributy indexů zdrojových sloupců v souboru datové sady.
+`IrisData` je třída vstupní data a obsahuje definice pro jednotlivé funkce z datové sady. Použití [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute) atributy indexů zdrojových sloupců v souboru datové sady.
 
 `ClusterPrediction` Třída reprezentuje výstup model clusteringu u `IrisData` instance. Použití [Názevsloupce](xref:Microsoft.ML.Data.ColumnNameAttribute) atribut pro vytvoření vazby `PredictedClusterId` a `Distances` polím **PredictedLabel** a **skóre** sloupce v uvedeném pořadí. V případě clusteru úloh tyto sloupce mají následující význam:
 
@@ -127,7 +127,7 @@ Přidejte následující kód, který `Main` metoda nastavit způsob, jak načí
 
 [!code-csharp[Create text loader](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#SetupTextLoader)]
 
-Všimněte si, že názvy sloupců a indexy odpovídat definované schéma `IrisData` třídy. <xref:Microsoft.ML.Data.DataKind.R4?displayProperty=nameWithType> Hodnota určuje, `float` typu.
+Použití [obecný `CreateTextLoader` ](xref:Microsoft.ML.TextLoaderSaverCatalog.CreateTextLoader%60%601(Microsoft.ML.DataOperationsCatalog,System.Boolean,System.Char,System.Boolean,System.Boolean,System.Boolean)) metodu pro odvození schématu datové sady z `IrisData` definici třídy.
 
 Použití vytvořena instance <xref:Microsoft.ML.Data.TextLoader> instance má vytvořit <xref:Microsoft.Data.DataView.IDataView> instanci, která představuje zdroj dat pro trénovací datové sady:
 

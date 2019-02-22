@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: 439366791fcd8fa40bb3fe8fc2982272798120ef
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 7be62b3a97614faea14eb874be58c79246754903
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56441603"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56583651"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru C# (abecední pořadí)
 
@@ -38,6 +38,8 @@ Následující možnosti kompilátoru jsou seřazená podle abecedy. Seznam kate
 |[-doc](doc-compiler-option.md)|Určuje soubor dokumentace XML, který se má vygenerovat.|
 |-pro vložení|Vložte všechny zdrojové soubory v souborech PDB.|
 |-vložení:\<seznam souborů >|Vložte konkrétní soubory PDB.|
+|-errorendlocation|Vypsat řádek a sloupec koncového umístění jednotlivých chyb.|
+|-protokolu chyb:\<souboru >|Zadejte soubor, který chcete protokolovat všechny diagnostiky kompilátoru a analyzátoru.|
 |[-errorreport](errorreport-compiler-option.md)|Určuje, jak zpracovávat interní chyby kompilátoru: řádku, odesílání nebo žádný. Výchozí hodnota je none.|
 |[-filealign](filealign-compiler-option.md)|Určuje zarovnání použité pro oddíly výstupního souboru.|
 |[-fullpaths](fullpaths-compiler-option.md)|Způsobí, že kompilátor generoval úplné cesty.|
@@ -70,12 +72,14 @@ Následující možnosti kompilátoru jsou seřazená podle abecedy. Seznam kate
 |[-reference](reference-compiler-option.md)|Odkazuje na metadata ze zadaných souborů sestavení.|
 |[-refout](refout-compiler-option.md)|Generovat referenční sestavení kromě primárního sestavení.|
 |[-refonly](refonly-compiler-option.md)|Generovat referenční sestavení místo primárního sestavení.|
+|-reportanalyzer|Analyzátor Další informace, jako je doba provádění sestavy.|
 |[-resource](resource-compiler-option.md)|Vloží zadaný prostředek.|
 |-sady pravidel:\<souboru >|Zadejte soubor sady pravidel, která zakáže konkrétní diagnostiky.|
 |[-subsystemversion](subsystemversion-compiler-option.md)|Určuje minimální verzi podsystému, který můžete použít spustitelný soubor.|
 |[-target](target-compiler-option.md)|Určuje formát výstupního souboru pomocí jedné ze čtyř možností: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: library](target-library-compiler-option.md), [– cíl: modul](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md), [-target: winmdobj](target-winmdobj-compiler-option.md).|
 |[-unsafe](unsafe-compiler-option.md)|Umožňuje [nebezpečné](../../../csharp/language-reference/keywords/unsafe.md) kódu.|
 |[-utf8output](utf8output-compiler-option.md)|Výstup zpráv kompilátoru v kódování UTF-8.|
+|– verze|Zobrazte číslo verze kompilátoru a ukončení.|
 |[-warn](warn-compiler-option.md)|Nastaví úroveň upozornění (0-4).|
 |[-warnaserror](warnaserror-compiler-option.md)|Sestavy specifická upozornění jako chyby.|
 |[-win32icon](win32icon-compiler-option.md)|Tato ikona se použije pro výstup.|

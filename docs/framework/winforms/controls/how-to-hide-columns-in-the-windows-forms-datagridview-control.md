@@ -9,19 +9,19 @@ helpviewer_keywords:
 - data grids [Windows Forms], hiding columns
 - columns [Windows Forms], hiding
 ms.assetid: 3f94143a-2ef0-49a5-a22a-b2e6f9289642
-ms.openlocfilehash: 673c852b89518e2cb4df6ea98a337acd60bc42cb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 726fa8ee05498ae365409c8330c6e1d9283ae9f5
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54659667"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56583264"
 ---
 # <a name="how-to-hide-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView
 Někdy budete chtít zobrazit jenom některé sloupce, které jsou k dispozici ve Windows Forms <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Například můžete chtít zobrazit zaměstnanec salary sloupec uživatelů pomocí přihlašovacích údajů pro správu při skrytí od jiných uživatelů. Alternativně můžete chtít vytvořit vazbu ovládacího prvku do zdroje dat, který obsahuje mnoho sloupců, jenom některé z nich, které chcete zobrazit. V takovém případě bude obvykle odebrat sloupce, které vás nezajímají zobrazení spíše než je skrýt.  
   
  V <xref:System.Windows.Forms.DataGridView> ovládací prvek, <xref:System.Windows.Forms.DataGridViewColumn.Visible%2A> hodnota vlastnosti sloupce určuje, zda je zobrazen tento sloupec.  
   
- Není poskytována podpora pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Skrytí sloupců v Windows Forms DataGridView pomocí návrháře](https://msdn.microsoft.com/library/kaswfbes\(v=vs.110\)).  
+ Není poskytována podpora pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Skrytí sloupců v Windows Forms DataGridView pomocí návrháře](hide-columns-in-the-datagrid-using-the-designer.md).  
   
 ### <a name="to-hide-a-column-programmatically"></a>Chcete-li skrýt sloupec prostřednictvím kódu programu  
   

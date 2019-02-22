@@ -9,19 +9,19 @@ helpviewer_keywords:
 - data grids [Windows Forms], row styles
 - rows [Windows Forms], data grids
 ms.assetid: 699ef759-458c-426d-ac87-7c7e71b018ae
-ms.openlocfilehash: ba5aaec9e66f1d3c66bb50709f6fbd4afde893ae
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: eea77b7601b7dc81b92f7b08806f3f00b494aecd
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54562723"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56583885"
 ---
 # <a name="how-to-set-alternating-row-styles-for-the-windows-forms-datagridview-control"></a>Postupy: Nastavení stylů střídavých řádků pro ovládací prvek Windows Forms DataGridView
 Tabulková data se často zobrazí uživatelům ve formátu účetní knihy kde střídavé řádky mají různé barvy. Tento formát usnadňuje uživatelům řekněte, buněk, které jsou v jednotlivých řádcích, zejména u širokých tabulek, které mají mnoho sloupců.  
   
  S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, můžete zadat informace o dokončení stylu pro střídavé řádky. To umožňuje použití vlastnosti stylu, jako je barva popředí a písma, kromě barvu pozadí k rozlišení střídavé řádky.  
   
- Není poskytována podpora pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Nastavení stylů střídavých řádků pro Windows Forms DataGridView pomocí návrháře](https://msdn.microsoft.com/library/3z9sk148\(v=vs.110\)).  
+ Není poskytována podpora pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Nastavení stylů střídavých řádků pro Windows Forms DataGridView pomocí návrháře](set-alternating-row-styles-for-the-datagrid-using-the-designer.md).  
   
 ### <a name="to-set-alternating-row-styles-programmatically"></a>Nastavení stylů střídavých řádků prostřednictvím kódu programu  
   

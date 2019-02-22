@@ -4,12 +4,12 @@ description: Zjistěte podrobnosti pracovního postupu pro vývoj aplikací zalo
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: c5c8cc34c70771d3f362f967cc99e76013291faa
-ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
+ms.openlocfilehash: c34d49307408520afc6223a43d1c347dd6cffb97
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55480098"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56584301"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -489,7 +489,7 @@ Důležitý bod je, že, jak je znázorněno v obrázek 5 – 12, v sadě Visual
 
 ### <a name="a-note-about-testing-and-deploying-with-orchestrators"></a>Poznámka k testování a nasazení s orchestrátory
 
-Docker-compose up a příkazy dockeru spustit (nebo spouštění a ladění kontejnerů v sadě Visual Studio) jsou dostatečné pro testování kontejnerů ve vašem vývojovém prostředí. Ale tento přístup byste neměli používat v produkčních prostředích, kde je orchestrátorů, jako je cílem [Kubernetes](https://kubernetes.io/) nebo [Service Fabric](https://azure.microsoft.com/services/service-fabric/). Pokud používáte Kubernetes je nutné použít [podů](https://kubernetes.io/docs/concepts/workloads/pods/pod/) k uspořádání kontejnery a [služby](https://kubernetes.io/docs/concepts/services-networking/service/) k síti je. Můžete také použít [nasazení](https://kubernetes.io/docs/tutorials/k8s201/#deployments) k uspořádání pod vytváření a úpravy.
+Docker-compose up a příkazy dockeru spustit (nebo spouštění a ladění kontejnerů v sadě Visual Studio) jsou dostatečné pro testování kontejnerů ve vašem vývojovém prostředí. Ale tento přístup byste neměli používat v produkčních prostředích, kde je orchestrátorů, jako je cílem [Kubernetes](https://kubernetes.io/) nebo [Service Fabric](https://azure.microsoft.com/services/service-fabric/). Pokud používáte Kubernetes je nutné použít [podů](https://kubernetes.io/docs/concepts/workloads/pods/pod/) k uspořádání kontejnery a [služby](https://kubernetes.io/docs/concepts/services-networking/service/) k síti je. Můžete také použít [nasazení](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) k uspořádání pod vytváření a úpravy.
 
 ![6 – testování aplikace nebo mikroslužeb](./media/image17.png)
 

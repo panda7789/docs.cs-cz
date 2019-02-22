@@ -3,47 +3,53 @@ title: Terminologie dockeru
 description: Přečtěte si některé základní terminologii, která byla použita každý den, při práci s Dockerem.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 11/23/2018
-ms.openlocfilehash: 1514a2199efe52a411f61649fc21e906bba5b13c
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.date: 02/15/2019
+ms.openlocfilehash: a7f0106eed81c28634a079ce61f48d7d56f6ffd2
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56218720"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56584197"
 ---
 # <a name="docker-terminology"></a>Terminologie dockeru
 
-Tato část uvádí termíny a definice, se kterými jste byste se měli seznámit před hlubší seznamovat do Docker (pro další definice, najdete v článku rozsáhlé [Glosář](https://docs.docker.com/glossary/) poskytované Dockeru na <https://docs.docker.com/glossary/>:
+Tato část uvádí termíny a definice, měli byste se seznámit s před získáním Dockeru věnovat podrobněji. Další definice, najdete v článku rozsáhlé [Glosář](https://docs.docker.com/glossary/) poskytované Dockeru.
 
--   **Image kontejneru** balíčku se všemi závislostmi a informace potřebné k vytvoření kontejneru. Obrázek zahrnuje všechny závislosti (například rozhraní) a nasazení a konfiguraci pro modul runtime kontejneru. Obvykle bitovou kopii je odvozena z více základních imagí, že jsou vrstvy skládaný jednoho nad druhým k tvoří systém souborů kontejneru. Obrázek je neměnný po jeho vytvoření.
+**Image kontejneru**: Balíček se závislostí a informace potřebné k vytvoření kontejneru. Obrázek zahrnuje všechny závislosti (například rozhraní) plus konfigurace nasazení a spuštění pro modul runtime kontejneru. Image obvykle, je odvozena z více základních imagí, které jsou vrstvy sebe k systému souborů kontejneru. Obrázek je neměnný po jeho vytvoření.
 
--   **Kontejner** instance image Dockeru. Představuje kontejner modulu runtime pro jednu aplikaci, proces nebo službu. Zahrnuje obsah image Dockeru, běhové prostředí a standardní sadu pokynů. Při škálování služby, vytvoření více instancí kontejneru ze stejné image. Nebo úlohu služby batch můžete vytvořit několik kontejnerů ze stejné image, předávání různých parametrů pro každou instanci.
+**Soubor Dockerfile**: Textový soubor, který obsahuje pokyny, jak sestavit image Dockeru. Je to jako dávkový skript, první řádek uvádí základní image začínají řetězcem a pak postupujte podle pokynů k instalaci požadované programy, kopírovat soubory, a tak dále, dokud se nedostanete pracovního prostředí budete potřebovat.
 
--   **Značka** popisek, který můžete použít na Image tak, aby různých bitových kopií nebo verzí stejnou bitovou kopii (v závislosti na číslo verze nebo cílové prostředí) lze identifikovat a označit.
+**Sestavení**: Akce sestavení image kontejneru na základě informací a kontext poskytované jeho soubor Dockerfile a navíc další soubory ve složce, ve kterém je postavená na obrázku. Můžete vytvořit Image pomocí Dockeru **`docker build`** příkazu.
 
--   **Soubor Dockerfile** textový soubor, který obsahuje pokyny, jak sestavit image Dockeru.
+**kontejner**: Instance image Dockeru. Kontejner představuje spuštění jedné aplikace, procesu nebo služby. Zahrnuje obsah image Dockeru, spouštěcí prostředí a standardní sadu pokynů. Při škálování služby, vytvoření více instancí kontejneru ze stejné image. Nebo úlohu služby batch můžete vytvořit několik kontejnerů ze stejné image, předávání různých parametrů pro každou instanci.
 
--   **Sestavení** akce vytvoření image kontejneru na základě informace a jeho soubor Dockerfile, jakož i další soubory ve složce, ve kterém image se sestavuje poskytnutému kontextu. Vytvoření imagí pomocí příkazu docker sestavení Dockeru.
+**Svazky**: Nabízí s možností zápisu systému souborů, které kontejner může použít. Protože bitové kopie jsou jen pro čtení, ale většina aplikací potřebují k zápisu do systému souborů, přidejte svazky zapisovatelné vrstvě nad image kontejneru, aby programy přístup pro zápis systému souborů. Program nebude vědět, přistupuje vrstvami systému souborů, ale pouze ze systému souborů jako obvykle. Svazky v hostitelském systému za provozu a jsou spravované pomocí Dockeru.
 
--   **Úložišti (úložišti)** kolekci souvisejících imagí Dockeru, které jsou označené značkou, který označuje verzi image. Některá úložiště obsahovat více variant konkrétní image, jako je například image obsahující bitovou kopii obsahující pouze moduly runtime (světlejší), sady SDK (těžší), a tak dále. Tyto varianty, mohou být označeny značky. Jediné úložiště může obsahovat variant, platformy, jako jsou image Linuxu a Windows image.
+**Značka**: Označit nebo popisku, který můžete použít na Image tak, aby lze identifikovat různých bitových kopií nebo verzí stejnou bitovou kopii (v závislosti na číslo verze nebo cílové prostředí).
 
--   **Registru** služba, která poskytuje přístup k úložištím. Je výchozím nastavení registru pro největší veřejné image [Docker Hubu](https://hub.docker.com/) (vlastněné Dockeru jako organizace). Registru obvykle obsahuje úložiště z několika týmů. Podniky mají často privátních registrů k ukládání a správě imagí, které jste vytvořili. *Služba Azure Container Registry* je další příklad.
+**Vícefázových sestavení**: Je funkce, od Dockeru 17.05 nebo vyšší, pomáhá omezit velikost finální bitové kopie. V několika větách vícefázových sestavení používáte, třeba velký základní image obsahující sadu SDK pro kompilaci a publikování aplikace a pak pomocí složky pro publikování s malé pouze modul runtime základní image, k vytvoření mnohem menší finální bitové kopie
 
--   **Docker Hubu** veřejného registru k nahrání imagí a práci s nimi. Docker Hubu poskytuje Docker hostování image, veřejných nebo privátních registrů, aktivačních procedur sestavení a webhooky a integraci s z Githubu nebo Bitbucketu.
+**Úložišti (úložišti)**: Kolekce související imagí Dockeru, označené značkou, který označuje verzi image. Některá úložiště obsahovat více variant konkrétní image, jako je například obrázek (těžší), sady SDK obsahující bitovou kopii obsahující pouze moduly runtime (světlejší), atd. Tyto varianty, mohou být označeny značky. Jediné úložiště může obsahovat variant, platformy, jako jsou image Linuxu a Windows image.
 
--   **Služba Azure Container Registry** prostředek veřejné pro práci s imagí Dockeru a jeho komponent v Azure. To poskytuje registr, která je blízko svá nasazení v Azure díky tomu kontrolu přístupu, aby bylo možné používat skupiny Azure Active Directory a oprávnění.
+**Registru**: Služba, která poskytuje přístup k úložištím. Je výchozím nastavení registru pro největší veřejné image [Docker Hubu](https://hub.docker.com/) (vlastněné Dockeru jako organizace). Registru obvykle obsahuje úložiště z několika týmů. Podniky mají často privátních registrů k ukládání a správě imagí, které jste vytvořili. Služba Azure Container Registry je další příklad.
 
--   **Docker Trusted Registry (DTR)** A služba registru Dockeru (od Dockeru), který můžete nainstalovat na místním tak, aby se nachází v rámci organizace datové centrum a síť. Je vhodné pro privátních imagí, které se mají spravovat v rámci podniku. Docker Trusted Registry je součástí produktu Docker Datacenter. Další informace najdete v části [ https://docs.docker.com/docker-trusted-registry/overview/ ](https://docs.docker.com/docker-trusted-registry/overview/).
+**Více architektury image**: Pro více architekturu, je funkce, která zjednodušuje výběr příslušné bitové kopie, podle platformy Dockeru se spuštěným systémem, například když vyžádá základní image soubor Dockerfile **`FROM microsoft/dotnet:2.1-sdk`** z registru ve skutečnosti získá **`2.1-sdk-nanoserver-1709`**, **`2.1-sdk-nanoserver-1803`** nebo **`2.1-sdk-alpine`**, v závislosti na operačním systému a verze se spuštěným Dockerem.
 
--   **Docker Community Edition (CE)** nástroje pro vývoj pro Windows a macOS pro sestavování, spouštění a testování kontejnery místně. Docker CE pro Windows poskytuje vývojové prostředí pro kontejnery Windows i Linux. Je na základě hostitele linuxového Dockeru na Windows [Hyper-V](https://www.microsoft.com/en-us/server-cloud/solutions/virtualization.aspx) virtuálního počítače. Hostitel pro kontejnery Windows je přímo založena na Windows. Docker CE for Mac je založená na platformě Apple hypervisoru a [xhyve hypervisoru](https://github.com/mist64/xhyve), který poskytuje linuxového Dockeru hostitele virtuálního počítače na Mac OS X. Docker CE pro Windows a pro Mac nahradí nástrojů Dockeru, které se týkaly Oracle VirtualBox.
+**Docker Hubu**: Veřejného registru k nahrání imagí a práci s nimi. Docker Hubu poskytuje Docker hostování image, veřejných nebo privátních registrů, aktivačních procedur sestavení a webhooky a integraci s z Githubu nebo Bitbucketu.
 
--   **Docker Enterprise Edition (EE)** na podnikové úrovni verzi nástroje Dockeru pro vývoj pro Linux a Windows.
+**Azure Container Registry**: Prostředek veřejné pro práci s imagí Dockeru a jeho komponent v Azure. To poskytuje registr, která je blízko svá nasazení v Azure díky tomu kontrolu přístupu, aby bylo možné používat skupiny Azure Active Directory a oprávnění.
 
--   **Compose** nástroj příkazového řádku a YAML soubor formátu s metadaty pro definování a spouštění vícekontejnerových aplikací. Můžete definovat jednu aplikaci založené na více bitových kopií s nejméně jeden soubor .yml, které mohou přepsat hodnoty v závislosti na prostředí. Po vytvoření definice můžete nasadit celý vícekontejnerových aplikací pomocí jediného příkazu (docker-compose up), která vytvoří kontejner na image na hostitele Dockeru.
+**Docker Trusted Registry (DTR)**: Služba registru Dockeru (od Dockeru), která může být nainstalovaný místně, takže umístěná kdekoli v rámci organizace datové centrum a síť. Je vhodné pro privátních imagí, které se mají spravovat v rámci podniku. Docker Trusted Registry je součástí produktu Docker Datacenter. Další informace najdete v tématu [Docker Trusted Registry (DTR)](https://docs.docker.com/docker-trusted-registry/overview/).
 
--   **Cluster** kolekce hostitelů Docker vystavena jako by byly jednoho virtuálního hostitele Docker tak, aby aplikaci je možné škálovat na více instancí služeb rozděleny mezi více hostitelích v clusteru. Můžete vytvořit clustery Dockeru pomocí Docker Swarm, Mesosphere DC/OS, Kubernetes a Azure Service Fabric. (Pokud používáte Docker Swarm pro správu clusteru, je obvykle odkazovat do clusteru jako *swarm* namísto clusteru.)
+**Docker Community Edition (CE)**: Nástroje pro vývoj pro Windows a macOS pro sestavování, spouštění a testování kontejnery místně. Docker CE pro Windows poskytuje vývojové prostředí pro kontejnery Windows i Linux. Je na základě hostitele linuxového Dockeru na Windows [Hyper-V](https://www.microsoft.com/cloud-platform/server-virtualization) virtuálního počítače. Hostitel pro kontejnery Windows je přímo založena na Windows. Docker CE for Mac je založená na platformě Apple hypervisoru a [xhyve hypervisoru](https://github.com/mist64/xhyve), který poskytuje linuxového Dockeru hostitele virtuálního počítače na Mac OS X. Docker CE pro Windows a pro Mac nahradí nástrojů Dockeru, který byl založen na Oracle VirtualBox.
 
--   **Orchestrator** nástroj, který zjednodušuje správu clusterů a hostitelů Docker. Pomocí orchestrátorů, můžete spravovat jejich bitové kopie, kontejnerů a hostitele přes rozhraní příkazového řádku nebo grafické uživatelské rozhraní. Můžete spravovat sítě kontejnerů, konfigurace, Vyrovnávání zatížení, zjišťování služby, vysokou dostupnost, konfigurace hostitele Docker a další. Orchestrátor je zodpovědný za spouštění, distribuci, škálování a opravy úloh v kolekci uzlů. Produkty orchestrator jsou obvykle stejné produkty, které poskytují clusteru infrastruktury, jako je Mesosphere DC/OS, Kubernetes, Docker Swarm a Azure Service Fabric.
+**Docker Enterprise Edition (EE)**: Verzi celého podniku nástroje Dockeru pro vývoj pro Linux a Windows.
+
+**Compose**: Nástroj pro příkazový řádek a YAML soubor formátu s metadaty pro definování a spouštění vícekontejnerových aplikací. Můžete definovat jednu aplikaci založené na více bitových kopií s nejméně jeden soubor .yml, které mohou přepsat hodnoty v závislosti na prostředí. Po vytvoření definice můžete nasadit celý vícekontejnerové aplikace pomocí jediného příkazu (docker-compose up), která vytvoří kontejner na image na hostitele Dockeru.
+
+**Cluster**: Soubor hostitelů Docker vystavena jako by šlo jednoho virtuálního hostitele Docker, tak, aby aplikaci je možné škálovat na více instancí služeb rozděleny mezi více hostitelích v clusteru. Clustery docker lze vytvořit pomocí Kubernetes, Azure Service Fabric, Docker Swarm a Mesosphere DC/OS.
+
+**Orchestrator**: Nástroj, který zjednodušuje správu clusterů a hostitelů Docker. Orchestrátory umožňují spravovat jejich imagí kontejnerů a hostitele přes rozhraní příkazového řádku (CLI) nebo grafického uživatelského rozhraní. Můžete spravovat sítě kontejnerů, konfigurace, Vyrovnávání zatížení, zjišťování služby, vysokou dostupnost, konfigurace hostitele Docker a další. Orchestrátor je zodpovědný za spouštění, distribuci, škálování a opravy úloh v kolekci uzlů. Produkty orchestrator jsou obvykle stejné produkty, které poskytují infrastrukturu clusteru, jako je Kubernetes a Azure Service Fabric, mezi další nabídky na trhu.
 
 >[!div class="step-by-step"]
 >[Předchozí](what-is-docker.md)

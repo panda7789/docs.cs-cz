@@ -19,7 +19,7 @@ Ve scénářích mikroslužeb ověřování je obvykle zpracovávána centráln�
 
 **Obrázek 9-1**. Centralizované ověření pomocí brány rozhraní API
 
-Pokud přímo přístupné služby, jako ověřovací služba Azure Active Directory nebo vyhrazené ověřování mikroslužby funguje jako bezpečnostní služby tokenu (STS) se dá použít k ověřování uživatelů. Rozhodnutí o důvěryhodnosti jsou sdíleny mezi službami s tokeny zabezpečení nebo soubory cookie. (Tyto tokeny je možné sdílet mezi aplikacemi, v případě potřeby v ASP.NET Core s [služby ochrany dat](/aspnet/core/security/data-protection/compatibility/cookie-sharing#sharing-authentication-cookies-between-applications).) Tento model je znázorněn v obrázek 9-2.
+Pokud přímo přístupné služby, jako ověřovací služba Azure Active Directory nebo vyhrazené ověřování mikroslužby funguje jako bezpečnostní služby tokenu (STS) se dá použít k ověřování uživatelů. Rozhodnutí o důvěryhodnosti jsou sdíleny mezi službami s tokeny zabezpečení nebo soubory cookie. (Tyto tokeny lze sdílet mezi aplikací ASP.NET Core, v případě potřeby implementací [sdílení souborů cookie](/aspnet/core/security/cookie-sharing).) Tento model je znázorněn v obrázek 9-2.
 
 ![Když mikroslužeb jsou přímo přístupné, vztah důvěryhodnosti, který zahrnuje ověřování a autorizace, zařizuje služba tokenu zabezpečení vydaného službou vyhrazené mikroslužeb, sdílené mezi mikroslužbami.](./media/image2.png)
 
@@ -271,7 +271,7 @@ Middlewaru ověřování nosiče JWT může také podporovat pokročilejší sc�
 ## <a name="additional-resources"></a>Další zdroje
 
 - **Sdílení souborů cookie mezi aplikacemi** \
-  [*https://docs.microsoft.com/aspnet/core/security/data-protection/compatibility/cookie-sharing\#sharing-authentication-cookies-between-applications*](/aspnet/core/security/data-protection/compatibility/cookie-sharing#sharing-authentication-cookies-between-applications)
+  [*https://docs.microsoft.com/aspnet/core/security/cookie-sharing*](/aspnet/core/security/cookie-sharing)
 
 - **Úvod do Identity** \
   [*https://docs.microsoft.com/aspnet/core/security/authentication/identity*](/aspnet/core/security/authentication/identity)
@@ -285,7 +285,7 @@ Middlewaru ověřování nosiče JWT může také podporovat pokročilejší sc�
 - **Michell Anicas. Úvod do OAuth 2** \
   [*https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2*](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)
 
-- **AspNet.Security.OAuth.Providers** (úložiště GitHub pro poskytovatelů OAuth technologie ASP.NET. \
+- **AspNet.Security.OAuth.Providers** (úložiště GitHub pro poskytovatelů OAuth technologie ASP.NET) \
   [*https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src*](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src)
 
 - **Danny Strockis. Integrace Azure AD do webové aplikace ASP.NET Core** \

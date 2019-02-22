@@ -1,13 +1,13 @@
 ---
 title: Sekvence
 description: Další informace o použití F# seřazené posloupnosti, když máte velké, shromažďování dat ale Neočekáváme, že nemusí používat všechny elementy.
-ms.date: 05/16/2016
-ms.openlocfilehash: a86d22c834b377d4e92cfa610cdd3b498dd86dfa
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.date: 02/19/2019
+ms.openlocfilehash: a7791be5e8bd07d81fe9e890fc5896b181f0cb39
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611994"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56583924"
 ---
 # <a name="sequences"></a>Sekvence
 
@@ -98,7 +98,7 @@ Nekonečná sekvence můžete definovat pomocí [Seq.initInfinite](https://msdn.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet13.fs)]
 
-[SEQ.unfold](https://msdn.microsoft.com/library/7d9232fc-742e-42bc-bdf7-6f130f0eff21) generuje posloupnost z výpočetní funkce, který přebírá stavu a převede ho k vytvoření každé následné element v pořadí. Stav je právě hodnotu, která se používá k výpočtu každý prvek a můžete změnit, protože každý element je vypočítán. Druhý argument `Seq.unfold` je počáteční hodnota, která se používá ke spuštění sekvence. `Seq.unfold` používá typ možnosti pro stav, který umožňuje ukončit pořadí tak, že vrací `None` hodnotu. Následující kód ukazuje dva příklady sekvencí, `seq1` a `fib`, které jsou generovány nástrojem `unfold` operace. První s názvem `seq1`, je stejně jednoduché pořadí s číslic obsahující až 100. Druhá s názvem `fib`, používá `unfold` vypočítat Fibonacciho pořadí. Protože každý prvek v pořadí Fibonacciho součtu předchozích dvou čísel Fibonacciho, je hodnota stavu řazené kolekce členů, která se skládá z předchozích dvou čísel v pořadí. Počáteční hodnota je `(1,1)`, první dvě čísla v pořadí.
+[SEQ.unfold](https://msdn.microsoft.com/library/7d9232fc-742e-42bc-bdf7-6f130f0eff21) generuje posloupnost z výpočetní funkce, který přebírá stavu a převede ho k vytvoření každé následné element v pořadí. Stav je právě hodnotu, která se používá k výpočtu každý prvek a můžete změnit, protože každý element je vypočítán. Druhý argument `Seq.unfold` je počáteční hodnota, která se používá ke spuštění sekvence. `Seq.unfold` používá typ možnosti pro stav, který umožňuje ukončit pořadí tak, že vrací `None` hodnotu. Následující kód ukazuje dva příklady sekvencí, `seq1` a `fib`, které jsou generovány nástrojem `unfold` operace. První s názvem `seq1`, je stejně jednoduché pořadí s čísly až 20. Druhá s názvem `fib`, používá `unfold` vypočítat Fibonacciho pořadí. Protože každý prvek v pořadí Fibonacciho součtu předchozích dvou čísel Fibonacciho, je hodnota stavu řazené kolekce členů, která se skládá z předchozích dvou čísel v pořadí. Počáteční hodnota je `(1,1)`, první dvě čísla v pořadí.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet14.fs)]
 

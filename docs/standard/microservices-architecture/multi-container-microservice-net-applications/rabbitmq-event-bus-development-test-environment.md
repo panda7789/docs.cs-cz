@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 6d855b56a7fd00b316dde599683900ad2db758d7
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 2bcd3491c58884653cd6c119753696019151bfed
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152231"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56584366"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
 
@@ -30,13 +30,14 @@ public class EventBusRabbitMQ : IEventBus, IDisposable
 {
     // Implementation using RabbitMQ API
     //...
+}
 ```
 
 RabbitMQ implementace sběrnice událostí ukázky pro vývoj/testování je často používaný kód. Má ke zpracování připojení k serveru RabbitMQ a zadejte kód pro publikování událostí zpráv do front. Je také k implementaci slovníku kolekcí integrace obslužné rutiny událostí pro každý typ události; Tyto typy událostí mohou mít různé vytváření instancí a různých předplatných u jednotlivých mikroslužeb příjemce, jak je znázorněno v obrázek 6 – 21.
 
 ## <a name="implementing-a-simple-publish-method-with-rabbitmq"></a>Metoda s RabbitMQ Implementing jednoduchý publikování.
 
-Následující kód je součástí provádění zjednodušené událostí Service bus pro RabbitMQ Vylepšený [skutečný kód](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs) z aplikaci eShopOnContainers. Obvykle není potřeba kód, pokud jsou vylepšovat. Kód získá připojení a kanál RabbitMQ, vytvoří zprávu a pak publikuje zprávu do fronty.
+Následující kód je ***zjednodušené*** verzi implementace sběrnice událostí pro RabbitMQ, aby ukazovala celý scénář. Můžete nezpracovávají skutečně připojení tímto způsobem. Úplnou implementaci, najdete v sekci skutečný kód [dotnet architektura/aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs) úložiště. 
 
 ```csharp
 public class EventBusRabbitMQ : IEventBus, IDisposable

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], creating simple controls using code
 - Control class [Windows Forms], Windows Forms
 ms.assetid: 86cbe435-45b7-4cb4-9b5a-47418369758d
-ms.openlocfilehash: 4afa4b9e2c92569df4c8023d7dbfdfb025bf94b5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 36891a5acbb2fe06b4ab61573e26612927587c01
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527624"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56583833"
 ---
 # <a name="how-to-develop-a-simple-windows-forms-control"></a>Postupy: Vývoj ovládacího prvku jednoduchého Windows Forms
 Tato část vás provede základní kroky pro vytváření vlastního ovládacího prvku Windows Forms. Jednoduché ovládací prvek vytvořili v tomto návodu umožňuje zarovnání jeho <xref:System.Windows.Forms.Control.Text%2A> vlastnost změnit. Nelze vyvolat nebo zpracování událostí.  
@@ -34,7 +34,7 @@ Tato část vás provede základní kroky pro vytváření vlastního ovládací
     public class FirstControl:Control {}  
     ```  
   
-2.  Definujte vlastnosti. (Není nutné definovat vlastnosti, protože dědí mnoho vlastnosti z ovládacího prvku <xref:System.Windows.Forms.Control> třídy, ale většina vlastních ovládacích prvků obecně definovat další vlastnosti.) Následující fragment kódu definuje vlastnost s názvem `TextAlignment` , který `FirstControl` používá k formátování zobrazení <xref:System.Windows.Forms.Control.Text%2A> dědí vlastnosti z <xref:System.Windows.Forms.Control>. Další informace o definování vlastností najdete v tématu [přehled vlastností](https://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52).  
+2.  Definujte vlastnosti. (Není nutné definovat vlastnosti, protože dědí mnoho vlastnosti z ovládacího prvku <xref:System.Windows.Forms.Control> třídy, ale většina vlastních ovládacích prvků obecně definovat další vlastnosti.) Následující fragment kódu definuje vlastnost s názvem `TextAlignment` , který `FirstControl` používá k formátování zobrazení <xref:System.Windows.Forms.Control.Text%2A> dědí vlastnosti z <xref:System.Windows.Forms.Control>. Další informace o definování vlastností najdete v tématu [přehled vlastností](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v%3dvs.120)).  
   
      [!code-csharp[System.Windows.Forms.FirstControl#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/CS/FirstControl.cs#3)]
      [!code-vb[System.Windows.Forms.FirstControl#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/VB/FirstControl.vb#3)]  
@@ -46,7 +46,7 @@ Tato část vás provede základní kroky pro vytváření vlastního ovládací
      [!code-csharp[System.Windows.Forms.FirstControl#4](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/CS/FirstControl.cs#4)]
      [!code-vb[System.Windows.Forms.FirstControl#4](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/VB/FirstControl.vb#4)]  
   
-4.  Zadejte atributy pro ovládací prvek. Atributy umožňují vizuálního návrháře pro zobrazení ovládacího prvku a jeho vlastnosti a události odpovídajícím způsobem v době návrhu. Následující fragment kódu se vztahuje atributů, které mají `TextAlignment` vlastnost. V návrháři, jako je Visual Studio <xref:System.ComponentModel.CategoryAttribute.Category%2A> atribut (viz část kódu) způsobí, že vlastnost má být zobrazen v rámci logických kategorií. <xref:System.ComponentModel.DescriptionAttribute.Description%2A> Atribut způsobí, že popisný řetězec, který se zobrazí v dolní části **vlastnosti** okno při `TextAlignment` vybrána vlastnost. Další informace o atributech najdete v tématu [atributy doby návrhu pro komponenty](https://msdn.microsoft.com/library/12050fe3-9327-4509-9e21-4ee2494b95c3).  
+4.  Zadejte atributy pro ovládací prvek. Atributy umožňují vizuálního návrháře pro zobrazení ovládacího prvku a jeho vlastnosti a události odpovídajícím způsobem v době návrhu. Následující fragment kódu se vztahuje atributů, které mají `TextAlignment` vlastnost. V návrháři, jako je Visual Studio <xref:System.ComponentModel.CategoryAttribute.Category%2A> atribut (viz část kódu) způsobí, že vlastnost má být zobrazen v rámci logických kategorií. <xref:System.ComponentModel.DescriptionAttribute.Description%2A> Atribut způsobí, že popisný řetězec, který se zobrazí v dolní části **vlastnosti** okno při `TextAlignment` vybrána vlastnost. Další informace o atributech najdete v tématu [atributy doby návrhu pro komponenty](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/tk67c2t8(v=vs.120)).  
   
      [!code-csharp[System.Windows.Forms.FirstControl#5](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/CS/FirstControl.cs#5)]
      [!code-vb[System.Windows.Forms.FirstControl#5](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/VB/FirstControl.vb#5)]  

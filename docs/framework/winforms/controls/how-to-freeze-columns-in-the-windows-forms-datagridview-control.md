@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], freezing columns
 - DataGridView control [Windows Forms], columns always in view
 ms.assetid: 2ef8b1de-782e-4867-af8d-58171ab5c106
-ms.openlocfilehash: b7a657af2d6caf2217aedf56422f135f0b2d667e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b4e65f0fd329f624aa186748d298257b15617c17
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54619410"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56584262"
 ---
 # <a name="how-to-freeze-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Ukotvit sloupce v ovládacím prvku Windows Forms DataGridView
 Když uživatelé zobrazit data zobrazená ve Windows Forms <xref:System.Windows.Forms.DataGridView> ovládacího prvku, někdy potřebují často odkazovat na jeden sloupec nebo sadu sloupců. Například při zobrazení informací o zákaznících, který obsahuje mnoho sloupců tabulky, je užitečné zobrazit název zákazníka po celou dobu při povolení další sloupce mimo viditelná oblast.  
@@ -26,7 +26,7 @@ Když uživatelé zobrazit data zobrazená ve Windows Forms <xref:System.Windows
   
  <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A> Vlastnost sloupec určuje, zda sloupec je vždy zobrazen v mřížce.  
   
- Není poskytována podpora pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Zablokování sloupců v Windows Forms DataGridView pomocí návrháře](https://msdn.microsoft.com/library/717ss6s6\(v=vs.110\)).  
+ Není poskytována podpora pro tuto úlohu v sadě Visual Studio.  Viz také [jak: Zablokování sloupců v Windows Forms DataGridView pomocí návrháře](freeze-columns-in-the-datagrid-using-the-designer.md).  
   
 ### <a name="to-freeze-a-column-programmatically"></a>Chcete-li ukotvit sloupec prostřednictvím kódu programu  
   

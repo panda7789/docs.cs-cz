@@ -2,12 +2,12 @@
 title: Zprostředkovatel EntityClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 8c5db787-78e6-4a34-8dc1-188bca0aca5e
-ms.openlocfilehash: b094f6d0fbd7c1dc8d56fc43a05fc4d22a80e981
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: ac14840145fb3faca0f6243037c8b27be31f5c7f
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826444"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56583976"
 ---
 # <a name="entityclient-provider-for-the-entity-framework"></a>Zprostředkovatel EntityClient pro Entity Framework
 Zprostředkovatel EntityClient je poskytovatel dat používané aplikacemi Entity Framework pro přístup k datům je popsáno v konceptuálním modelu. Informace o konceptuálních modelů najdete v tématu [modelování a mapování](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md). Zprostředkovatel EntityClient používá pro přístup ke zdroji dat jiné zprostředkovatele dat .NET Framework. Například zprostředkovatel EntityClient používá zprostředkovatele dat .NET Framework pro SQL Server (SqlClient) při přístupu k databázi serveru SQL Server. Informace o poskytovateli SqlClient najdete v tématu [SqlClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md). Zprostředkovatel EntityClient je implementována v <xref:System.Data.EntityClient> oboru názvů.  
@@ -24,13 +24,12 @@ Zprostředkovatel EntityClient je poskytovatel dat používané aplikacemi Entit
   
  Následující příklad vytvoří <xref:System.Data.EntityClient.EntityCommand> objektu a přiřazuje [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazování text, který se jeho <xref:System.Data.EntityClient.EntityCommand.CommandText%2A?displayProperty=nameWithType> vlastnost. To [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotaz požaduje produktů seřazených podle ceníku v konceptuálním modelu. Následující kód všech je vůbec nezná model úložiště.  
   
- `EntityCommand cmd = conn.CreateCommand();`  
-  
- `cmd.CommandText = @"``SELECT VALUE p`  
-  
- `FROM AdventureWorksEntities.Product AS p`  
-  
- `ORDER BY p.ListPrice ";`  
+ ```csharp
+EntityCommand cmd = conn.CreateCommand();
+cmd.CommandText = @"SELECT VALUE p
+  FROM AdventureWorksEntities.Product AS p
+  ORDER BY p.ListPrice";
+```
   
 ## <a name="executing-queries"></a>Provádění dotazů  
  Pokud je dotaz proveden, je analyzovat a převést na strom canonical příkazů. Všechny následné zpracování se provádí na strom příkazů. Stromu příkazů je způsob komunikace mezi <xref:System.Data.EntityClient> a základní [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat, jako například <xref:System.Data.SqlClient>.  

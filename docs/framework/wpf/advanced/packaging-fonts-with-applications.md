@@ -10,12 +10,12 @@ helpviewer_keywords:
 - typography [WPF], packaging fonts with applications
 - packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
-ms.openlocfilehash: 52ed421ee92eed29bf16815d22e3ec7a8b718a84
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a822167ae5b2758a889c61eed5270e5abb01f961
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54632345"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56583417"
 ---
 # <a name="packaging-fonts-with-applications"></a>Balení písem s aplikacemi
 Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
@@ -31,7 +31,7 @@ Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE
   
  [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] a [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] písma obsahovat příznak typ fsType, určující písma vkládání licenční práva pro písmo. Tento typ, který příznak se vztahuje pouze na vložených písem, uložených v dokumentu – it, ale neodkazuje na písma, které jsou součástí aplikace. Můžete načíst vkládání práva pro písma tak, že vytvoříte písem <xref:System.Windows.Media.GlyphTypeface> objektu a odkazování na ně jeho <xref:System.Windows.Media.GlyphTypeface.EmbeddingRights%2A> vlastnost. Přečtěte si část "operačního systému a 2 a Windows metrik" [OpenType specifikace](https://www.microsoft.com/typography/otspec/os2.htm) Další informace o fsType příznak.  
   
- [Microsoft Typography](https://www.microsoft.com/typography/links/) webu obsahuje kontaktní informace, které pomáhají najít konkrétní písmo dodavatele nebo najít dodavatele písma pro vlastní práci.  
+ [Microsoft Typography](https://docs.microsoft.com/typography/) webu obsahuje kontaktní informace, které pomáhají najít konkrétní písmo dodavatele nebo najít dodavatele písma pro vlastní práci.  
   
 <a name="adding_fonts_as_content_items"></a>   
 ## <a name="adding-fonts-as-content-items"></a>Přidávání písem jako položky obsahu  
@@ -175,7 +175,7 @@ Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Documents.Typography>
 - <xref:System.Windows.Media.FontFamily>
-- [Typografie společnosti Microsoft: Odkazy, zprávy a kontaktů](https://www.microsoft.com/typography/links/)
+- [Typografie společnosti Microsoft: Odkazy, zprávy a kontaktů](https://docs.microsoft.com/typography/)
 - [Specifikace OpenType](https://www.microsoft.com/typography/otspec/)
 - [Funkce písma OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)
 - [Ukázková sada písem OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)

@@ -3,12 +3,12 @@ title: C#Typy a proměnné – připravuje C# jazyka
 description: Další informace o definování typů a deklarace proměnné vC#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: 34b724dff17feb699d797e9ed9aea25d85d8c5a9
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 976cb507074d4bafe4c22e9482d8f272937baf36
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129516"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56583950"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 
@@ -57,20 +57,20 @@ Znakové a řetězcové zpracování v jazyce C# používá kódování Unicode.
 To shrnuje C#pro číselné typy.
 
 * Podepsané celé číslo
-    - `sbyte`:  8 bitů v rozmezí -128-127
-    - `short`: 16 bitů, jsou v rozsahu od-32 768 32 767
-    - `int`  : 32 bitů, jsou v rozsahu od-2,147,483,648-2 147 483 647
-    - `long` : 64 bitů, v rozsahu od –9,223,372,036,854,775,808 9,223,372,036,854,775,807
+    - `sbyte`:  8 bitů v rozmezí -128 až 127
+    - `short`: 16 bitů, rozsahu od-32 768 do 32 767
+    - `int`  : 32 bitů, rozsahu od-2,147,483,648 do 2 147 483 647
+    - `long` : 64 bitů, v rozsahu od-9,223,372,036,854,775,808 9,223,372,036,854,775,807
 * Celočíselný typ bez znaménka
-    - `byte`   :  8 bitů v rozsahu od 0 – 255
-    - `ushort` : 16 bitů v rozsahu od 0 – 65 535
-    - `uint`   : 32 bity v rozsahu od 0 - 4 294 967 295
-    - `ulong`  : 64 bitů v rozsahu od 0 - 18,446,744,073,709,551,615
+    - `byte`   :  8 bitů, rozsahu od 0 do 255
+    - `ushort` : 16 bitů, rozsahu od 0 do 65 535
+    - `uint`   : 32 bitů, rozsahu od 0 do 4 294 967 295
+    - `ulong`  : 64 bitů, rozsahu od 0 do 18,446,744,073,709,551,615
 * Číslo s plovoucí desetinnou čárkou
-    - `float`  : 32 bity v rozsahu od 1,5 × 10<sup>−45</sup> -3.4 × 10<sup>38</sup>, 7 číslicemi přesnosti
-    - `double` : 64 bitů v rozsahu od 5.0 × 10<sup>−324</sup> -1.7 × 10<sup>308</sup>, 15 číslicemi přesnosti
+    - `float`  : 32 bity v rozsahu od 1,5 × 10<sup>-45</sup> 3.4 × 10<sup>38</sup>, 7 číslicemi přesnosti
+    - `double` : 64 bitů v rozsahu od 5.0 × 10<sup>-324</sup> 1.7 × 10<sup>308</sup>, 15 číslicemi přesnosti
 * Desetinné číslo
-    - `decimal` : 128 bitů, rozsah je alespoň –7.9 × 10<sup>−28</sup> -7.9 × 10<sup>28</sup>, s přesností na alespoň číslice 28
+    - `decimal` : 128 bitů, rozsah je alespoň-7.9 × 10<sup>– 28</sup> 7.9 × 10<sup>28</sup>, s přesností na alespoň číslice 28
     
 C# programy používají *typ deklarace* pro vytvoření nových typů. Deklarace typu Určuje název a členy nového typu. Pět C#společnosti jsou kategorie typů definovaných uživatelem: Třída typy, typy struktury, rozhraní typy, výčtové typy a typy delegátů.
 
