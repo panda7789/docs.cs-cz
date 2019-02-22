@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ListView control [Windows Forms]
 - list controls [Windows Forms], List view
 ms.assetid: 9f71cf5c-82da-488a-a04e-ef52c0817187
-ms.openlocfilehash: 4472d2a46b27c75d06c5e4cd6fbab18842ed111c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 207b5fcd8bb1242be180898a22ffacf6e5ac9ab1
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54591939"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664884"
 ---
 # <a name="listview-control-windows-forms"></a>ListView – ovládací prvek (Windows Forms)
 Windows Forms `ListView` ovládací prvek zobrazuje seznam položek s ikonami. Zobrazení seznamu můžete použít k vytvoření uživatelského rozhraní, jako je pravém podokně Průzkumníka Windows.  
@@ -81,9 +81,6 @@ Windows Forms `ListView` ovládací prvek zobrazuje seznam položek s ikonami. Z
   
  [Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)  
  Poskytuje pokyny pro vytváření rozložení formuláře Windows s více podokny.  
-  
- [Funkce Windows XP a ovládací prvky Windows Forms](https://msdn.microsoft.com/library/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0)  
- Vysvětluje, jak využít výhod funkce specifické pro Windows XP, které se vztahují <xref:System.Windows.Forms.ListView> ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
 - [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

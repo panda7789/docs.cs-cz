@@ -1,16 +1,16 @@
 ---
-title: Začínáme s Azure Blob storage s využitím F#
+title: Začínáme s využitím úložiště objektů Blob v AzureF#
 description: Store nestrukturovaných dat v cloudu s využitím úložiště objektů Blob v Azure.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: ea9dc334ec9c2bcd4a80cc501d4b6634da5f64e4
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 31c3017d6f43afb6b534d21d18d618b1c2903bf1
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "44037279"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664988"
 ---
-# <a name="get-started-with-azure-blob-storage-using-f"></a>Začínáme s Azure Blob storage s využitím F# #
+# <a name="get-started-with-azure-blob-storage-using-f"></a>Začínáme s využitím úložiště objektů Blob v AzureF# #
 
 Azure Blob storage je služba, která ukládá Nestrukturovaná data v cloudu jako objektů BLOB. BLOB storage dokáže ukládat jakýkoli druh textu nebo binárních dat, jako je například dokument, soubor médií nebo instalační program aplikace. Úložiště objektů blob se taky označuje jako úložiště objektů.
 
@@ -22,9 +22,9 @@ Koncepční přehled služby blob storage, najdete v části [v příručce .NET
 
 K použití tohoto průvodce, musíte nejdřív [vytvoření účtu služby Azure storage](/azure/storage/storage-create-storage-account). Pro tento účet také potřebovat přístupový klíč k úložišti.
 
-## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvořit skript F# a začněte jazyka F# Interactive
+## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvoření F# skript a spustit F# interaktivní
 
-Ukázky v tomto článku je možné v F# aplikace nebo skript F#. Chcete-li vytvořit skript F#, vytvořte soubor s `.fsx` příponu, třeba `blobs.fsx`, ve vašem vývojovém prostředí F#.
+Ukázky v tomto článku můžete použít buď F# aplikace nebo F# skriptu. Vytvoření F# skript, vytvořte soubor s `.fsx` příponu, třeba `blobs.fsx`v vaše F# vývojové prostředí.
 
 Dále používat [Správce balíčků](package-management.md) například [Stáhnout](https://fsprojects.github.io/Paket/) nebo [NuGet](https://www.nuget.org/) k instalaci `WindowsAzure.Storage` a `Microsoft.WindowsAzure.ConfigurationManager` balíčky a reference `WindowsAzure.Storage.dll` a `Microsoft.WindowsAzure.Configuration.dll` v pomocí skriptu `#r` směrnice.
 
@@ -42,7 +42,7 @@ Pro tento kurz můžete zadat připojovací řetězec ve vašem skriptu, napří
 
 [!code-fsharp[BlobStorage](../../../samples/snippets/fsharp/azure/blob-storage.fsx#L11-L11)]
 
-Je to ale **ale nedoporučený krok** skutečných projekty. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Pečlivě vždy chránit váš klíč účtu úložiště. Nedávejte ho jiným uživatelům pevného kódování, nebo ho uložili na soubor s prostým textem, který je přístupný ostatním uživatelům. Můžete znovu vygenerovat klíč pomocí webu Azure Portal, pokud se domníváte, že je možná ohrožené.
+Je to ale **ale nedoporučený krok** skutečných projekty. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Vždy klíč účtu úložiště pečlivě chraňte. Nedávejte ho jiným uživatelům, nezakódovávejte ho ani ho neukládejte do souboru ve formátu prostého textu, který je přístupný ostatním uživatelům. Můžete znovu vygenerovat klíč pomocí webu Azure Portal, pokud se domníváte, že je možná ohrožené.
 
 Pro skutečné aplikace, je nejlepší způsob, jak udržovat připojovací řetězec úložiště v konfiguračním souboru. K načtení připojovacího řetězce z konfiguračního souboru, můžete udělat toto:
 
@@ -216,23 +216,24 @@ Ve výchozím nastavení služby Azure Storage zachovává zabezpečení dat ome
 
 Ve výchozím nastavení je přístupný pouze vlastník účtu úložiště dat objektů blob v účtu úložiště. Ve výchozím nastavení ověřování požadavků na úložiště objektů Blob vyžaduje přístupový klíč účtu. Můžete však chtít určitá data objektu blob zpřístupnit ostatním uživatelům.
 
-Podrobnosti o tom, jak řídit přístup k úložišti objektů blob najdete v tématu [v .NET průvodci část úložiště objektů blob řízení přístupu na](/azure/storage/storage-dotnet-how-to-use-blobs#controlling-access-to-blob-data).
-
-
 ### <a name="encrypting-blob-data"></a>Šifrování dat objektů blob
 
 Azure Storage podporuje šifrování dat objektů blob na straně klienta i na serveru.
-
-Podrobnosti o šifrování dat objektů blob najdete v tématu [v příručce .NET pro úložiště objektů blob v tématu o šifrování](/azure/storage/storage-dotnet-how-to-use-blobs#encrypting-blob-data).
 
 ## <a name="next-steps"></a>Další kroky
 
 Teď, když jste se naučili základy používání Blob storage, použijte tyto odkazy na další informace.
 
 ### <a name="tools"></a>Nástroje
-- [F# AzureStorageTypeProvider](https://fsprojects.github.io/AzureStorageTypeProvider/) F# typu poskytovatele, který slouží k prozkoumání objektů Blob, tabulky a fronty Azure Storage prostředky a snadno použít operace CRUD s nimi.
-- [FSharp.Azure.Storage](https://github.com/fsprojects/FSharp.Azure.Storage) API F# za používání služby Microsoft Azure Table Storage
-- [Microsoft Azure Storage Explorer (MASE)](/azure/vs-azure-tools-storage-manage-with-storage-explorer) je bezplatná samostatná aplikace od Microsoftu, která umožňuje vizuálně pracovat s daty Azure Storage ve Windows, OS X a Linux.
+
+- [F# AzureStorageTypeProvider](https://fsprojects.github.io/AzureStorageTypeProvider/)\
+F# Typu poskytovatele, který slouží k prozkoumání objektů Blob, tabulky a fronty Azure Storage prostředky a snadno použít operace CRUD s nimi.
+
+- [FSharp.Azure.Storage](https://github.com/fsprojects/FSharp.Azure.Storage)\
+F# Rozhraní API za používání služby Microsoft Azure Table Storage
+
+- [Microsoft Azure Storage Explorer (MASE)](/azure/vs-azure-tools-storage-manage-with-storage-explorer)\
+Bezplatná samostatná aplikace od Microsoftu, která umožňuje vizuálně pracovat s daty Azure Storage ve Windows, OS X a Linux.
 
 ### <a name="blob-storage-reference"></a>Odkaz na objekt BLOB úložiště
 
@@ -246,3 +247,4 @@ Teď, když jste se naučili základy používání Blob storage, použijte tyto
 - [Přenos dat pomocí nástroje příkazového řádku azcopy v Linuxu](/azure/storage/common/storage-use-azcopy-linux)
 - [Nakonfigurování připojovacích řetězců Azure Storage](/azure/storage/common/storage-configure-connection-string)
 - [Blog týmu Azure Storage](https://blogs.msdn.microsoft.com/windowsazurestorage/)
+- [Rychlý start: Vytvoření objektu blob v úložišti objektů pomocí .NET](/azure/storage/blobs/storage-quickstart-blobs-dotnet)

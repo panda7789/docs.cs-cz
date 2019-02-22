@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -platform compiler option [C#]
 - /platform compiler option [C#]
 ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
-ms.openlocfilehash: 1573e28f2a6f9dec7825d364debcdf1085ef7ff2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6d4918407c68c7164db023b19cb170aef12fd203
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54635661"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56663896"
 ---
 # <a name="-platform-c-compiler-options"></a>-platform (možnosti kompilátoru C#)
 Určuje, jaké verze Common Language Runtime (CLR) můžete spustit sestavení.  
@@ -36,6 +36,8 @@ Určuje, jaké verze Common Language Runtime (CLR) můžete spustit sestavení.
   
 -   **ARM** kompiluje sestavení ke spuštění v počítači, který má procesor Advanced RISC Machine (ARM).  
   
+-   **ARM64** kompiluje sestavení ke spuštění v 64bitovém modulu CLR na počítači, který má procesor Advanced RISC Machine (ARM), který podporuje A64 instrukční sadu.  
+
 -   **x64** kompiluje sestavení ke spuštění v 64bitovém modulu CLR na počítači, který podporuje AMD64 nebo EM64T instrukční sadu.  
   
 -   **x86** kompiluje sestavení ke spuštění v 32 bitů, které je kompatibilní x86 CLR.  

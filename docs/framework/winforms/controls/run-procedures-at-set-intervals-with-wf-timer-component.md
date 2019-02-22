@@ -13,24 +13,24 @@ helpviewer_keywords:
 - Timer component [Windows Forms], initializing
 - procedures [Windows Forms], specific time intervals
 ms.assetid: 8025247a-2de4-4d86-b8ab-a8cb8aeab2ea
-ms.openlocfilehash: 6d1149e6a0c8fdb04b37af15feabfd965b5cc993
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6a5a30b77e19e316bdf08234767cab2c9b72b296
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54642266"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56663987"
 ---
 # <a name="how-to-run-procedures-at-set-intervals-with-the-windows-forms-timer-component"></a>Postupy: Spouštění procedur v nastavených intervalech pomocí komponenty Windows Forms Timer
 Někdy můžete chtít vytvořit proceduru, která běží v určitých časových intervalech, dokud dokončení smyčku nebo, který spustí po nastaveném časovém intervalu. <xref:System.Windows.Forms.Timer> Komponenta odešle takový postup je to možné.  
   
- Tato součást je určená pro prostředí Windows Forms. Pokud potřebujete časovač, který je vhodný pro prostředí serveru, přečtěte si [Úvod do serverových časovače](https://msdn.microsoft.com/library/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).  
+ Tato součást je určená pro prostředí Windows Forms. Pokud potřebujete časovač, který je vhodný pro prostředí serveru, přečtěte si [Úvod do serverových časovače](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/tb9yt5e6(v=vs.90)).  
   
 > [!NOTE]
 >  Existují některá omezení při použití <xref:System.Windows.Forms.Timer> komponenty. Další informace najdete v tématu [omezení vlastnosti intervalu součásti serveru Windows Forms Timer](../../../../docs/framework/winforms/controls/limitations-of-the-timer-component-interval-property.md).  
   
-### <a name="to-run-a-procedure-at-set-intervals-with-the-timer-component"></a>Ke spuštění procedury v nastavených intervalech pomocí komponenty Timer  
+## <a name="to-run-a-procedure-at-set-intervals-with-the-timer-component"></a>Ke spuštění procedury v nastavených intervalech pomocí komponenty Timer  
   
-1.  Přidat <xref:System.Windows.Forms.Timer> do formuláře. V části následující příklad pro ilustraci, jak to provést prostřednictvím kódu programu. Visual Studio také poskytuje podporu pro přidání součásti do formuláře. Viz také [jak: Přidání ovládacích prvků bez uživatelského rozhraní do formulářů Windows](https://msdn.microsoft.com/library/becyw7bz\(v=vs.110\)).  
+1.  Přidat <xref:System.Windows.Forms.Timer> do formuláře. V části následující příklad pro ilustraci, jak to provést prostřednictvím kódu programu. Visual Studio také poskytuje podporu pro přidání součásti do formuláře. Viz také [jak: Přidání ovládacích prvků bez uživatelského rozhraní do formulářů Windows](how-to-add-controls-without-a-user-interface-to-windows-forms.md).  
   
 2.  Nastavte <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost (v milisekundách) pro časovač. Tato vlastnost určuje, jak dlouho bude uplynout, než je znovu spusťte proces.  
   

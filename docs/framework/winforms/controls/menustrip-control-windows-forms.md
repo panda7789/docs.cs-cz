@@ -5,12 +5,12 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms]
 - menus
 ms.assetid: e361bf98-eed8-4ed3-9dfb-5a2e865e3ce6
-ms.openlocfilehash: 03328b324399c7500f2cf3a8b6ab12c843115e29
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: f94a5c5c45d3115de647085607aac396a0a8f2bc
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47205317"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664481"
 ---
 # <a name="menustrip-control-windows-forms"></a>MenuStrip – ovládací prvek (Windows Forms)
 Tato aplikace ovládacího prvku skupiny příkazů a jsou snadno přístupné.  
@@ -40,7 +40,7 @@ Tato aplikace ovládacího prvku skupiny příkazů a jsou snadno přístupné.
  [Postupy: Odebrání prvku ToolStripMenuItem z rozevíracího seznamu MDI](../../../../docs/framework/winforms/controls/how-to-remove-a-toolstripmenuitem-from-an-mdi-drop-down-menu-windows-forms.md)  
  Popisuje, jak nastavit několik vlastností pro odebrání položky nabídky z část rozevíracího seznamu MDI nadřazené nabídky.  
   
- [Postupy: Konfigurace okrajů pro zaškrtnutí a okrajů pro obrázek ovládacího prvku MenuStrip](../../../../docs/framework/winforms/controls/how-to-configure-menustrip-check-margins-and-image-margins.md)  
+ [Postupy: Nakonfigurovat zaškrtnutí MenuStrip okrajů a okrajů obrázků](../../../../docs/framework/winforms/controls/how-to-configure-menustrip-check-margins-and-image-margins.md)  
  Popisuje, jak přizpůsobit <xref:System.Windows.Forms.MenuStrip> nastavením vlastnosti okraj pro zaškrtnutí a obrázků různými způsoby.  
   
  [Postupy: Zajištění standardních položek nabídky pro formulář](../../../../docs/framework/winforms/controls/how-to-provide-standard-menu-items-to-a-form.md)  
@@ -55,19 +55,19 @@ Tato aplikace ovládacího prvku skupiny příkazů a jsou snadno přístupné.
  [Postupy: Nastavení automatického slučování nabídek pro aplikace MDI](../../../../docs/framework/winforms/controls/how-to-set-up-automatic-menu-merging-for-mdi-applications.md)  
  Popisuje, jak automaticky sloučit položky nabídky v době běhu.  
   
--   [MenuStrip – Editor kolekce položek](https://msdn.microsoft.com/library/ms233625\(v=vs.110\))  
+-   [MenuStrip – Editor kolekce položek](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233625(v=vs.100))  
   
 -   [Postupy: Kopírování ToolStripMenuItems](how-to-copy-toolstripmenuitems.md)  
   
--   [Postupy: Skrývání ToolStripMenuItems pomocí Návrháře](how-to-hide-toolstripmenuitems-using-the-designer.md)  
+-   [Postupy: Skrývání ToolStripMenuItems pomocí návrháře](how-to-hide-toolstripmenuitems-using-the-designer.md)  
   
--   [Postupy: Zákaz ToolStripMenuItems pomocí Návrháře](how-to-disable-toolstripmenuitems-using-the-designer.md)  
+-   [Postupy: Zákaz ToolStripMenuItems pomocí návrháře](how-to-disable-toolstripmenuitems-using-the-designer.md)  
   
 -   [Postupy: Přesouvání ToolStripMenuItems](how-to-move-toolstripmenuitems.md)  
   
 -   [Návod: Poskytnutí standardních položek nabídky formuláři](walkthrough-providing-standard-menu-items-to-a-form.md)  
   
--   [MenuStrip – dialogové okno úloh](https://msdn.microsoft.com/library/ms233645\(v=vs.110\))  
+-   [MenuStrip – dialogové okno úloh](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233645(v=vs.100))  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.MenuStrip>  

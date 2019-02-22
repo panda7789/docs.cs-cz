@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a63ebf55-7269-416b-b4f5-286f6c03bf0e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c75f9ffe17d04ad4b8e41a6e1402a3cf4be7e07f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0681ff9c59e77650654495ecd6e6d9f9ded82517
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54722709"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56665092"
 ---
 # <a name="custom-timespan-format-strings"></a>Vlastní řetězce formátu TimeSpan
 
@@ -54,7 +54,7 @@ Vlastní <xref:System.TimeSpan> formátovací řetězce jsou také používány 
 |"s", "%s"|Počet celé sekundy v časovém intervalu, které nejsou součástí hodinách, dnech nebo minut. Jednociferné sekund nemají úvodní nuly.<br /><br /> Další informace: [Specifikátor vlastního formátu "s"](#sSpecifier).|`TimeSpan.FromSeconds(12.965)`:<br /><br /> `%s` --> 12<br /><br /> `s\.fff` --> 12.965|
 |"ss"|Počet celé sekundy v časovém intervalu, které nejsou součástí hodinách, dnech nebo minut.  Jednociferné sekund obsahovat úvodní nuly.<br /><br /> Další informace: [Specifikátor vlastního formátu "ss"](#ssSpecifier).|`TimeSpan.FromSeconds(6.965)`:<br /><br /> `ss` --> 06<br /><br /> `ss\.fff` --> 06.965|
 |"f", "%f"|Desetiny sekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "f"](#fSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `f` --> 8<br /><br /> `ss\.f` --> 06.8|
-|"ff"|Setiny sekundy v časovém intervalu.<br /><br /> Další informace:[specifikátor vlastního formátu "ff"](#ffSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `ff` --> 89<br /><br /> `ss\.ff` --> 06.89|
+|"ff"|Setiny sekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "ff"](#ffSpecifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `ff` --> 89<br /><br /> `ss\.ff` --> 06.89|
 |"fff"|Milisekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "fff"](#f3Specifier).|`TimeSpan.FromSeconds(6.895)`:<br /><br /> `fff` --> 895<br /><br /> `ss\.fff` --> 06.895|
 |"ffff"|Desetitisíciny sekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "ffff"](#f4Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `ffff` --> 8954<br /><br /> `ss\.ffff` --> 06.8954|
 |"fffff"|Stotisíciny sekundy v časovém intervalu.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffff"](#f5Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffff` --> 89543<br /><br /> `ss\.fffff` --> 06.89543|
@@ -68,7 +68,7 @@ Vlastní <xref:System.TimeSpan> formátovací řetězce jsou také používány 
 |"FFFFFF"|Miliontiny sekundy v časovém intervalu. Nejsou zobrazeny žádné desetinné části koncové nuly.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFFF"](#F6_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 329179<br /><br /> `TimeSpan.Parse("0:0:3.1000009")`:<br /><br /> `ss\.FFFFFF`: 03.1|
 |"FFFFFFF"|Desetimiliontiny sekundy v časovém intervalu. Nejsou zobrazeny žádné desetinné části koncové nuly nebo sedmi nul.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFFFF"](#F7_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 3291791<br /><br /> `TimeSpan.Parse("0:0:3.1900000")`:<br /><br /> `ss\.FFFFFF`: 03.19|
 |"*řetězec*.|Oddělovač řetězcového literálu.<br /><br /> Další informace: [Jiné znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh':'mm':'ss` --> "14:32:17"|
-|\\| Řídicí znak.<br /><br /> Další informace:[ostatní znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|
+|&#92;|Řídicí znak.<br /><br /> Další informace: [Jiné znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|
 |Jakýkoli jiný znak|Další znak bez řídícího znaku je interpretován jako specifikátor vlastního formátu.<br /><br /> Další informace: [Jiné znaky](#Other).|`new TimeSpan(14, 32, 17):`<br /><br /> `hh\:mm\:ss` --> "14:32:17"|
 
 <a name="dSpecifier"></a> 

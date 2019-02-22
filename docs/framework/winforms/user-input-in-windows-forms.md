@@ -7,12 +7,12 @@ helpviewer_keywords:
 - mouse input [Windows Forms], using in Windows Forms
 - keyboards [Windows Forms], keyboard input
 ms.assetid: 1486075f-1e06-4c9e-82c6-f948331db6d6
-ms.openlocfilehash: fef51f57dd3c14c91572041a72c805823d6019a3
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: b422de09b41d72a680146192fd773767fe64e257
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45593783"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664559"
 ---
 # <a name="user-input-in-windows-forms"></a>Uživatelský vstup ve Windows Forms
 Windows Forms obsahuje model vstupu uživatele na základě událostí, které jsou vyvolány při zpracování související zprávy Windows. Témata v této části poskytují informace o myši a klávesnice uživatelský vstup, včetně příklady kódu, které ukazují, jak k provádění konkrétních úkolů.  
@@ -30,11 +30,11 @@ Windows Forms obsahuje model vstupu uživatele na základě událostí, které j
  [Postupy: Simulace událostí myši a klávesnice v kódu](../../../docs/framework/winforms/how-to-simulate-mouse-and-keyboard-events-in-code.md)  
  Ukazuje několik různých způsobů programově Simulace myši a klávesnice.  
   
- [Postupy: Obsluha událostí uživatelského vstupu v ovládacích prvcích Windows Forms](../../../docs/framework/winforms/how-to-handle-user-input-events-in-windows-forms-controls.md)  
+ [Postupy: Zpracování události uživatelského vstupu v ovládacích prvcích Windows Forms](../../../docs/framework/winforms/how-to-handle-user-input-events-in-windows-forms-controls.md)  
  Představuje příklad kódu, který zpracovává většinu události uživatelského vstupu a hlásí informace o každé události.  
   
  [Ověřování uživatelského vstupu ve Windows Forms](../../../docs/framework/winforms/user-input-validation-in-windows-forms.md)  
  Popisuje metody k ověření vstupu uživatele v aplikacích Windows Forms.  
   
 ## <a name="related-sections"></a>Související oddíly  
- Viz také [vytváření obslužných rutin událostí ve Windows Forms](https://msdn.microsoft.com/library/dacysss4\(v=vs.110\)).
+ Viz také [vytváření obslužných rutin událostí ve Windows Forms](creating-event-handlers-in-windows-forms.md).

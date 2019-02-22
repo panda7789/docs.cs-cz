@@ -10,12 +10,12 @@ helpviewer_keywords:
 - mouse [Windows Forms], double-click
 - mouse clicks [Windows Forms], single versus double
 ms.assetid: d836ac8c-85bc-4f3a-a761-8aee03dc682c
-ms.openlocfilehash: 8717bde485c475624be6bceae6ce2ab0c6f377bd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 05c2e308693fe5e2f278f8d503ddf52beddbb092
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54666533"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56665196"
 ---
 # <a name="how-to-distinguish-between-clicks-and-double-clicks"></a>Postupy: Rozlišení mezi kliknutím a poklikáním
 Obvykle jediného *klikněte na tlačítko* spustí uživatelské rozhraní (UI) akce a *dvakrát klikněte na panel* rozšiřuje akci. Například obvykle vybere položku jedním kliknutím a poklepání upraví vybranou položku. Windows Forms události kliknutí operaci snadno scénář, kde kliknutím a poklepání činnostem nekompatibilní, protože akce spojený s <xref:System.Windows.Forms.Control.Click> nebo <xref:System.Windows.Forms.Control.MouseClick> událostí je provedena akce spojený s <xref:System.Windows.Forms.Control.DoubleClick>nebo <xref:System.Windows.Forms.Control.MouseDoubleClick> událostí. Toto téma ukazuje dvě řešení tohoto problému. Jedním z řešení je zpracování události dvojitým kliknutím a vrátit zpět akce při zpracování událost click. Ve výjimečných případech budete muset simulovat kliknutím a dvakrát klikněte na chování pomocí manipulace <xref:System.Windows.Forms.Control.MouseDown> událostí a s využitím <xref:System.Windows.Forms.SystemInformation.DoubleClickTime%2A> a <xref:System.Windows.Forms.SystemInformation.DoubleClickSize%2A> vlastnosti <xref:System.Windows.Forms.SystemInformation> třídy. Měří čas mezi klepnutími a pokud druhé kliknutí předchází hodnotu <xref:System.Windows.Forms.SystemInformation.DoubleClickTime%2A> dosažení a kliknutím na se v obdélníku definovaném <xref:System.Windows.Forms.SystemInformation.DoubleClickSize%2A>, dvakrát klikněte na akci provést; v opačném případě klikněte na akci provést.  
@@ -40,7 +40,7 @@ Obvykle jediného *klikněte na tlačítko* spustí uživatelské rozhraní (UI)
   
 -   Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
   
- Informace o vytváření těchto příkladech z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tyto příklady v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kódu do nové projekty.  Viz také [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření těchto příkladech z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tyto příklady v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kódu do nové projekty.  
   
 ## <a name="see-also"></a>Viz také:
 - [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

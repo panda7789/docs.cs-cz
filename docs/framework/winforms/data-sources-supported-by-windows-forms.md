@@ -15,12 +15,12 @@ helpviewer_keywords:
 - DataSet class [Windows Forms], binding and Windows Forms
 - data [Windows Forms], data providers
 ms.assetid: 3d2c43f6-462b-4d35-9c86-13e9afe012e1
-ms.openlocfilehash: 71013506bfe73907cd19c11b03d01d0c3e05e1d8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 40a07ddffa68d0dac3cb9b4956510fa7dc124a7c
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54573968"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664741"
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Zdroje dat podporované rozhraním Windows Forms
 Tradičně datové vazby používá v rámci aplikací využít data uložená v databázích. Pomocí Windows Forms – datová vazba, můžou k datům z databází, stejně jako data v jiných strukturách, jako jsou pole a kolekce, tak dlouho, dokud jsou splněné určité minimální požadavky.  
@@ -37,7 +37,7 @@ Tradičně datové vazby používá v rámci aplikací využít data uložená v
  Windows Forms podporuje vlastnosti datové vazby ovládacího prvku na veřejné vlastnosti na instanci objektu pomocí <xref:System.Windows.Forms.Binding> typu. Windows Forms také podporuje vazba ovládacích prvků na základě seznamu, například <xref:System.Windows.Forms.ListControl> na objekt instance, kdy <xref:System.Windows.Forms.BindingSource> se používá.  
   
  pole nebo kolekce  
- Tak, aby fungoval jako zdroj dat, musí implementovat seznam <xref:System.Collections.IList> rozhraní, ale s jedním Příkladem může být pole, které je instance <xref:System.Array> třídy. Další informace o polích naleznete v tématu [jak: Vytvoření pole objektů (Visual Basic)](https://msdn.microsoft.com/library/6b64e069-0387-400c-9081-3bdc581020c3).  
+ Tak, aby fungoval jako zdroj dat, musí implementovat seznam <xref:System.Collections.IList> rozhraní, ale s jedním Příkladem může být pole, které je instance <xref:System.Array> třídy. Další informace o polích naleznete v tématu [jak: Vytvoření pole objektů (Visual Basic)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/487y7874(v=vs.100)).  
   
  Obecně byste měli použít <xref:System.ComponentModel.BindingList%601> při vytváření seznamů objektů pro vytváření datových vazeb. <xref:System.ComponentModel.BindingList%601> je obecný verze <xref:System.ComponentModel.IBindingList> rozhraní. <xref:System.ComponentModel.IBindingList> Rozhraní rozšiřuje <xref:System.Collections.IList> rozhraní přidáním vlastnosti, metody a události, které jsou nezbytné pro obousměrný datovou vazbu.  
   

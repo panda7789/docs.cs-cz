@@ -4,12 +4,12 @@ description: Zabezpečení v rozhraní .NET Mikroslužeb a webových aplikací �
 author: mjrousos
 ms.author: wiwagn
 ms.date: 10/19/2018
-ms.openlocfilehash: 291d60f941e4280ff120296ce1c392df3300dc44
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.openlocfilehash: fd2bff04e06bf0561ee0c95d87978f834f192172
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362416"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664039"
 ---
 # <a name="use-azure-key-vault-to-protect-secrets-at-production-time"></a>Použití Azure Key Vault k ochraně tajných kódů při produkci
 
@@ -46,8 +46,8 @@ Tajné kódy uložené jako proměnné prostředí nebo neukládá nástroj tajn
 - **Konfigurace ochrany dat** \
   [*https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/overview*](/aspnet/core/security/data-protection/configuration/overview)
 
-- **Správa klíčů a doba života** \
-  [*https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/default-settings\#data-protection-default-settings*](/aspnet/core/security/data-protection/configuration/default-settings#data-protection-default-settings)
+- **Správa klíčů ochrany dat a životnosti v ASP.NET Core** \
+  [*https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/default-settings*](/aspnet/core/security/data-protection/configuration/default-settings)
 
 - **Microsoft.Extensions.Configuration.KeyPerFile** úložiště GitHub. \
   [*https://github.com/aspnet/Configuration/tree/master/src/Config.KeyPerFile*](https://github.com/aspnet/Configuration/tree/master/src/Config.KeyPerFile)

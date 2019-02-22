@@ -2,12 +2,12 @@
 title: SQL Server Express Security
 ms.date: 03/30/2017
 ms.assetid: cf9cf6d9-4b05-43e9-ac7b-6cefbfcd6d4e
-ms.openlocfilehash: a767f4c3f862b3b7442e1455bf086bdba7042062
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 73f94d25e90197ade5e27ab6d9ff13602a5c854f
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56091614"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664247"
 ---
 # <a name="sql-server-express-security"></a>SQL Server Express Security
 Microsoft SQL Server Express Edition (SQL Server Express) je založena na systému Microsoft SQL Server a podporuje většinu funkcí databázového stroje. Je navržen tak, aby nepotřebných funkcí a připojení k síti je vypnuto ve výchozím nastavení. To snižuje styčné plochy, které je k dispozici pro uživatele se zlými úmysly útoku.  
@@ -31,7 +31,6 @@ Microsoft SQL Server Express Edition (SQL Server Express) je založena na systé
   
 |||  
 |-|-|  
-|[Připojení k SQL serveru Express](https://msdn.microsoft.com/library/ms165679.aspx) v Online knihách serveru SQL|Popisuje, jak používat SQL Server Express Edition v síti.|  
 |[Microsoft SQL Server 2005 Express Edition Books Online](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms165706(v=sql.90))|Kompletní dokumentaci k SQL serveru 2005 Express Edition.|  
 |[Uživatelské instance nejsou jiným uživatelům dovoleny](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms143684(v=sql.100)) v Online knihách serveru SQL|Popisuje, jak vytvářet a nasazovat uživatelské instance.|  
 |[Uživatelské instance SQL Serveru Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)|Popisuje možnosti uživatele instance v aplikaci ADO.NET. Poskytuje informace o tom, jak povolit uživatelskou instanci, připojení k uživatelské instanci pomocí <xref:System.Data.SqlClient.SqlConnection>, dobu života instance uživatele a scénáře instance pro uživatele.|  

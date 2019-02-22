@@ -5,15 +5,15 @@ helpviewer_keywords:
 - drag and drop [Windows Forms], Windows Forms
 - Windows Forms, drag and drop
 ms.assetid: 65cd2c03-8782-474e-b958-cbe43eeb902c
-ms.openlocfilehash: 29ed138f80705539b96f82898e50e80dd0e3cb16
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ccc9fd615cda044c739793066901ebc512643970
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527026"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664764"
 ---
 # <a name="drag-and-drop-functionality-in-windows-forms"></a>Přetažení funkce ve Windows Forms 
-Windows Forms obsahuje sadu metod, událostí a třídy, které implementují chování a přetažení. Toto téma poskytuje přehled podpory a přetažení ve Windows Forms.  Viz také [operace a přetažení a podpora schránky](https://msdn.microsoft.com/library/fe5ebfwe\(v=vs.110\)).  
+Windows Forms obsahuje sadu metod, událostí a třídy, které implementují chování a přetažení. Toto téma poskytuje přehled podpory a přetažení ve Windows Forms.  Viz také [operace a přetažení a podpora schránky](./advanced/drag-and-drop-operations-and-clipboard-support.md).  
   
 ## <a name="performing-drag-and-drop-operations"></a>Provádění operací přetažení myší  
  Chcete-li provést operaci přetažení myší, použijte <xref:System.Windows.Forms.Control.DoDragDrop%2A> metodu <xref:System.Windows.Forms.Control> třídy. Další informace o tom, jak se provádí operace přetažení myší, naleznete v tématu <xref:System.Windows.Forms.Control.DoDragDrop%2A>. Chcete-li získat obdélník, který musí být přetaženy ukazatel myši nad před zahájení operace přetažení myší, použijte <xref:System.Windows.Forms.SystemInformation.DragSize%2A> vlastnost <xref:System.Windows.Forms.SystemInformation> třídy.  

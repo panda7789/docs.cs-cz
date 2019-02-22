@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
-ms.openlocfilehash: c4b656d1ee7edcdc7e0e5cd41f7d57266ad5ad26
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 0223e21702c2a108740341c331f93b85f271cf8a
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828355"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664806"
 ---
 # <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET framework
 A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatel dat slouží k připojení k databázi, provádění příkazů a načíst výsledky. Tyto výsledky se buď zpracovávají přímo, umístí do <xref:System.Data.DataSet> aby bylo možné vystavit uživateli podle potřeby, kombinované s daty z více zdrojů nebo vzdálený mezi vrstvami. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatelé dat jsou zjednodušené, vytvoření minimální vrstvy mezi zdrojem dat a kódu, aniž byste museli obětovat funkčnost zvýšit výkon.  
@@ -155,7 +155,7 @@ using System.Data.OracleClient;
 |[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro Oracle|Doporučuje se pro střední a jedné vrstvy aplikace, které používají Oracle datového zdroje.|  
   
 ## <a name="entityclient-provider"></a>Zprostředkovatel EntityClient  
- Zprostředkovatel EntityClient se používá pro přístup k datům na základě na Entity Data Model (EDM). Na rozdíl od jiných rozhraní .NET Framework data zprostředkovatele nelze pracovat přímo se zdrojem dat. Místo toho používá Entity SQL ke komunikaci se příslušný prostředkovatel data. Další informace najdete v tématu [zprostředkovatel EntityClient a Entity SQL](https://msdn.microsoft.com/library/49202ab9-ac98-4b4b-a05c-140e422bf527).  
+ Zprostředkovatel EntityClient se používá pro přístup k datům na základě na Entity Data Model (EDM). Na rozdíl od jiných rozhraní .NET Framework data zprostředkovatele nelze pracovat přímo se zdrojem dat. Místo toho používá Entity SQL ke komunikaci se příslušný prostředkovatel data. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](./ef/entityclient-provider-for-the-entity-framework.md).  
   
 ## <a name="see-also"></a>Viz také:
 - [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)

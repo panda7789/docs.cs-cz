@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ListView control [Windows Forms], about ListView control
 - list views
 ms.assetid: c9ef56c1-3bb1-4101-9f4e-e95e720f2756
-ms.openlocfilehash: 3ac1bc5482d00419ec8a41815633150e30b4039a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8ceed741e72dae46f7f791b7564b7f5c38f82bc2
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613984"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664624"
 ---
 # <a name="listview-control-overview-windows-forms"></a>ListView – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ListView> ovládací prvek zobrazuje seznam položek s ikonami. Zobrazení seznamu můžete použít k vytvoření uživatelského rozhraní, jako je pravém podokně Průzkumníka Windows. Ovládací prvek má čtyři režimy zobrazení: Zobrazení LargeIcon, SmallIcon, seznamu a podrobností.  
@@ -45,7 +45,7 @@ Windows Forms <xref:System.Windows.Forms.ListView> ovládací prvek zobrazuje se
   
  <xref:System.Windows.Forms.ListView.Activation%2A> Vlastnost určuje, jaký typ akce, musí uživatel provést k aktivaci položky v seznamu: možnosti jsou <xref:System.Windows.Forms.ItemActivation.Standard>, <xref:System.Windows.Forms.ItemActivation.OneClick>, a <xref:System.Windows.Forms.ItemActivation.TwoClick>. <xref:System.Windows.Forms.ItemActivation.OneClick> Aktivace vyžaduje jedním kliknutím k aktivaci položky. <xref:System.Windows.Forms.ItemActivation.TwoClick> Aktivace vyžaduje, aby uživatel dvakrát kliknout na aktivaci položky; jediným kliknutím změní barvu textu položky. <xref:System.Windows.Forms.ItemActivation.Standard> Aktivace vyžaduje, aby uživatel dvakrát kliknout na aktivovat položku, ale položka nedojde ke změně vzhledu.  
   
- <xref:System.Windows.Forms.ListView> Ovládací prvek podporuje také vizuálních stylů a další funkce, které jsou k dispozici na platformě Windows XP, včetně seskupení, zobrazení tile a značky pro vložení. Další informace najdete v tématu [funkce Windows XP a ovládací prvky Windows Forms](https://msdn.microsoft.com/library/bc7fab94-fce9-4bf1-a8ad-a5837c91c3c0).  
+ <xref:System.Windows.Forms.ListView> Ovládací prvek podporuje také vizuálních stylů a další funkce, které jsou k dispozici na platformě Windows XP, včetně seskupení, zobrazení tile a značky pro vložení.  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ListView>

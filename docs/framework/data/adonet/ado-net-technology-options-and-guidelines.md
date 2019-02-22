@@ -2,12 +2,12 @@
 title: Možnosti technologie ADO.NET a pokyny
 ms.date: 03/30/2017
 ms.assetid: c8577281-38e6-4ce5-b036-572039a4c3d8
-ms.openlocfilehash: e43fa3ae893a8a18e35693cde364d227e7959398
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: b24e06fef52397a550717893876e1e1cf33f371f
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828472"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664793"
 ---
 # <a name="adonet-technology-options-and-guidelines"></a>Možnosti technologie ADO.NET a pokyny
 Datová Platforma ADO.NET je strategie více vydání ke snížení množství kódu a údržba vyžaduje pro vývojáře tak, že programovat proti koncepční entity data model. Tato platforma zahrnuje ADO.NET Entity Framework a souvisejících technologiích.  
@@ -28,7 +28,7 @@ Datová Platforma ADO.NET je strategie více vydání ke snížení množství k
  Entita SQL je navržen pro interakci se Entity Data Model založený na textu dotazovací jazyk. Entita SQL je SQL dialekt obsahující konstrukce pro dotazování z hlediska vyšší úrovně modelování koncepty, jako je dědičnost, komplexní typy a explicitní vztahy. Vývojáři mohou pomocí Entity SQL také přímo pomocí objektů služby. Další informace najdete v tématu [jazyk Entity SQL](../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md).  
   
 ### <a name="entityclient"></a>EntityClient  
- Zprostředkovatel EntityClient je nový zprostředkovatel dat .NET Framework používá pro komunikaci s datového modelu Entity. Zprostředkovatel EntityClient následuje vzor poskytovatel dat rozhraní .NET Framework vystavení <xref:System.Data.EntityClient.EntityConnection> a <xref:System.Data.EntityClient.EntityCommand> objektů, který vrací <xref:System.Data.EntityClient.EntityDataReader>. Zprostředkovatel EntityClient funguje s jazykem Entity SQL poskytuje flexibilní mapování na poskytovatele dat pro konkrétní úložiště. Další informace najdete v tématu [zprostředkovatel EntityClient a Entity SQL](https://msdn.microsoft.com/library/49202ab9-ac98-4b4b-a05c-140e422bf527).  
+ Zprostředkovatel EntityClient je nový zprostředkovatel dat .NET Framework používá pro komunikaci s datového modelu Entity. Zprostředkovatel EntityClient následuje vzor poskytovatel dat rozhraní .NET Framework vystavení <xref:System.Data.EntityClient.EntityConnection> a <xref:System.Data.EntityClient.EntityCommand> objektů, který vrací <xref:System.Data.EntityClient.EntityDataReader>. Zprostředkovatel EntityClient funguje s jazykem Entity SQL poskytuje flexibilní mapování na poskytovatele dat pro konkrétní úložiště. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](./ef/entityclient-provider-for-the-entity-framework.md).  
   
 ### <a name="entity-data-model-tools"></a>Nástroje modelu Entity Data  
  Entity Framework poskytuje nástroje příkazového řádku, průvodci a návrháři usnadnit vytváření EDM aplikací. Ovládací prvek EntityDataSource podporuje scénáře datových vazeb založené na modelu EDM. Programovací plochu ovládacího prvku EntityDataSource je podobně jako jiné ovládací prvky zdroje dat v sadě Visual Studio. Další informace najdete v tématu [ADO.NET Entity Data Model Tools](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100)).  

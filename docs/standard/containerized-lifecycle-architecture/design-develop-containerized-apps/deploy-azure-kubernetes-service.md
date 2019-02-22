@@ -3,13 +3,13 @@ title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou šk
 description: Zjistěte, jak nasadit aplikaci pomocí služby Azure Kubernetes Service.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 11/23/2018
-ms.openlocfilehash: 984a72c9ca8883b338d10fdaa826a6007580372d
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.date: 02/15/2019
+ms.openlocfilehash: 82a1cf7f3cc367bfb8b8f67a130600815f2a21c4
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221392"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664962"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks"></a>Nasazení do služby Azure Kubernetes Service (AKS)
 
@@ -26,9 +26,9 @@ Jsou požadavky, aby před použitím AKS:
 > [!NOTE]
 > Chcete-li si projít kompletní informace o:
 >
-> Azure-CLI: [https://docs.microsoft.com/cli/azure/index?view=azure-cli-latest](https://docs.microsoft.com/cli/azure/index?view=azure-cli-latest)
+> Azure-CLI: <https://docs.microsoft.com/cli/azure/index?view=azure-cli-latest>
 >
-> Subsystém Windows pro Linux: [https://docs.microsoft.com/windows/wsl/about](https://docs.microsoft.com/windows/wsl/about)
+> Subsystém Windows pro Linux: <https://docs.microsoft.com/windows/wsl/about>
 
 ## <a name="create-the-aks-environment-in-azure"></a>Vytvoření prostředí AKS v Azure
 

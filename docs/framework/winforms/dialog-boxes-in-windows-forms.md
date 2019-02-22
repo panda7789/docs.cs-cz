@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows Forms dialog boxes
 - dialogs [Windows Forms], using in Windows Forms
 ms.assetid: d43d022b-451b-490d-9386-dc79d98fbf8a
-ms.openlocfilehash: ef07c087ca43efaf99231453fcb56af0db24234a
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: b218be7d845ede7661ba31a1023ec12ec15231ab
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864252"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664754"
 ---
 # <a name="dialog-boxes-in-windows-forms"></a>Dialogová okna ve Windows Forms
 Dialogová okna se používají k interakci s uživatelem a načítání informací. Jednoduše řečeno, dialogové okno je formulář s jeho <xref:System.Windows.Forms.FormBorderStyle> výčet vlastností nastavenou na `FixedDialog`. Můžete vytvořit vlastní vlastní dialogová okna pomocí Návrháře formulářů Windows v sadě Visual Studio. Přidání ovládacích prvků, jako `Label`, `Textbox`, a `Button` přizpůsobení dialogových oknech vašim konkrétním potřebám. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Také obsahuje předdefinovaných dialogových oknech, jako například **otevřít soubor** a okna se zprávou, které můžete přizpůsobit pro vaše vlastní aplikace. Další informace najdete v tématu [dialogového okna ovládacích prvků a komponent](../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md).  
@@ -19,22 +19,6 @@ Dialogová okna se používají k interakci s uživatelem a načítání informa
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Zobrazování dialogových oken pro Windows Forms](../../../docs/framework/winforms/how-to-display-dialog-boxes-for-windows-forms.md)  
  Poskytuje pokyny pro zobrazování dialogových oknech.  
-  
--   [Postupy: načtení informací z dialogového okna selektivně pomocí více vlastností](https://msdn.microsoft.com/library/56taefba\(v=vs.110\))  
-  
--   [Postupy: načtení informací z nadřízeného formuláře dialogového okna](https://msdn.microsoft.com/library/k70t19bb\(v=vs.110\))  
-  
--   [Uživatelský vstup do dialogových oken](https://msdn.microsoft.com/library/1s9ws53w\(v=vs.110\))  
-  
--   [Postupy: načítání výsledku z dialogových oknech](https://msdn.microsoft.com/library/40x40td1\(v=vs.110\))  
-  
--   [Návod: Načtení informací z dialogového okna souhrnně pomocí objektů](https://msdn.microsoft.com/library/cakx2hdw\(v=vs.110\))  
-  
--   [Postupy: Zavření dialogových oknech a zachování dat zadaných uživatelem](https://msdn.microsoft.com/library/65ad5907\(v=vs.110\))  
-  
--   [Postupy: vytváření dialogových oken během návrhu](https://msdn.microsoft.com/library/55cz5x2c\(v=vs.110\))  
-  
--   [Postupy: zobrazení okna se zprávou](https://msdn.microsoft.com/library/3tt9e94f\(v=vs.110\))  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky a součásti dialogového okna](../../../docs/framework/winforms/controls/dialog-box-controls-and-components-windows-forms.md)  

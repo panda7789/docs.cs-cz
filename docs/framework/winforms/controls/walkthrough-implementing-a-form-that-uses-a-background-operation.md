@@ -15,12 +15,12 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 4691b796-9200-471a-89c3-ba4c7cc78c03
-ms.openlocfilehash: fa9f35fd5ecd1c6761f363ea2a1e1a67996ecb77
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 042861b2d79d0b638600a5463673fb922f3b4881
+ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543523"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56664390"
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>Průvodce: Implementace formuláře, který používá operaci na pozadí
 Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete uživatelského rozhraní (UI) přestane reagovat nebo "zablokování", můžete použít <xref:System.ComponentModel.BackgroundWorker> třídy k provedení operace v jiném vlákně.  
@@ -57,7 +57,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 5.  Přejmenování prvního <xref:System.Windows.Forms.Button> ovládací prvek `startAsyncButton` a nastavit <xref:System.Windows.Forms.Control.Text%2A> vlastnost `Start Async`. Přejmenujte druhý <xref:System.Windows.Forms.Button> ovládací prvek `cancelAsyncButton`a nastavte <xref:System.Windows.Forms.Control.Text%2A> vlastnost `Cancel Async`. Nastavte jeho <xref:System.Windows.Forms.Control.Enabled%2A> vlastnost `false`.  
   
-6.  Vytvořte obslužnou rutinu události pro obě <xref:System.Windows.Forms.Button> ovládacích prvků <xref:System.Windows.Forms.Control.Click> události. Podrobnosti najdete v tématu [jak: Vytváření obslužných rutin událostí pomocí návrháře](https://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
+6.  Vytvořte obslužnou rutinu události pro obě <xref:System.Windows.Forms.Button> ovládacích prvků <xref:System.Windows.Forms.Control.Click> události. Podrobnosti najdete v tématu [jak: Vytváření obslužných rutin událostí pomocí návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/zwwsdtbk(v=vs.100)).  
   
 7.  Přetáhněte <xref:System.Windows.Forms.Label> ovládacího prvku **nástrojů** do formuláře a přejmenujte jej `resultLabel`.  
   
@@ -75,7 +75,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 #### <a name="to-implement-asynchronous-event-handlers"></a>K implementaci asynchronní obslužné rutiny  
   
-1.  V **vlastnosti** okně s <xref:System.ComponentModel.BackgroundWorker> stále vybranou možností komponenty, klikněte na tlačítko **události** tlačítko. Dvakrát klikněte <xref:System.ComponentModel.BackgroundWorker.DoWork> a <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> událostí pro vytváření obslužných rutin událostí. Další informace o tom, jak používat obslužné rutiny událostí, naleznete v tématu [jak: Vytváření obslužných rutin událostí pomocí návrháře](https://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
+1.  V **vlastnosti** okně s <xref:System.ComponentModel.BackgroundWorker> stále vybranou možností komponenty, klikněte na tlačítko **události** tlačítko. Dvakrát klikněte <xref:System.ComponentModel.BackgroundWorker.DoWork> a <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> událostí pro vytváření obslužných rutin událostí. Další informace o tom, jak používat obslužné rutiny událostí, naleznete v tématu [jak: Vytváření obslužných rutin událostí pomocí návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/zwwsdtbk(v=vs.100)).  
   
 2.  Vytvoření nové metody, volá `ComputeFibonacci`, ve formuláři. Tato metoda provádí samotnou práci, a tok se spustí na pozadí. Tento kód ukazuje implementaci rekurzivní Fibonacciho algoritmu, který je zejména, přičemž exponenciálně delší dobu pro velké objemy. Používá se tady pro ilustraci, chcete-li zobrazit operace, která můžete zavést dlouhá zpoždění ve vaší aplikaci.  
   
