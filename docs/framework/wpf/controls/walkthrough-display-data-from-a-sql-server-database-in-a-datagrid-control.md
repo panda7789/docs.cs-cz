@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Zobrazení dat z databáze serveru SQL Server v ovládacím prvku DataGrid'
+title: 'Průvodce: Zobrazení dat z databáze systému SQL Server v ovládacím prvku DataGrid'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - DataGrid [WPF], displaying data from SQL Server
 - controls [WPF], DataGrid
 ms.assetid: 6810b048-0a23-4f86-bfa5-97f92b3cfab4
-ms.openlocfilehash: e3db65c91e53ee0ed7b5e520bbc4989cd7404816
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 6cf56a853377a9c062009fb8a4082cd5380905c6
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47197133"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56748411"
 ---
-# <a name="walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control"></a>Návod: Zobrazení dat z databáze serveru SQL Server v ovládacím prvku DataGrid
+# <a name="walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control"></a>Průvodce: Zobrazení dat z databáze systému SQL Server v ovládacím prvku DataGrid
 
 V tomto podrobném návodu, načtení dat z databáze SQL serveru a zobrazit tato data v <xref:System.Windows.Controls.DataGrid> ovládacího prvku. Použijete k vytvoření tříd entit, které představují data a zprostředkovatel LINQ slouží pro napsat dotaz, který načte zadaná data z entity třídy rozhraní ADO.NET Entity Framework.
 
@@ -71,11 +71,11 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
      [!code-xaml[DataGrid_SQL_EF_Walkthrough#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml#3)]
 
-     ![Okno s DataGrid](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step6.png "DataGrid_SQL_EF_Step6")
+     ![Window with DataGrid](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step6.png "DataGrid_SQL_EF_Step6")
 
 4.  Vyberte <xref:System.Windows.Window>.
 
-5.  Pomocí okna vlastnosti nebo editoru XAML, vytvořit obslužnou rutinu události pro <xref:System.Windows.Window> s názvem `Window_Loaded` pro <xref:System.Windows.FrameworkElement.Loaded> událostí. Další informace najdete v tématu [postupy: vytvoření jednoduché obslužná rutina události](https://msdn.microsoft.com/library/b1456e07-9dec-4354-99cf-18666b64f480).
+5.  Pomocí okna vlastnosti nebo editoru XAML, vytvořit obslužnou rutinu události pro <xref:System.Windows.Window> s názvem `Window_Loaded` pro <xref:System.Windows.FrameworkElement.Loaded> událostí. Další informace najdete v tématu [jak: Vytvořte obslužnou rutinu události jednoduché](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb675300(v=vs.100)).
 
      Následuje ukázka XAML souboru mainwindow.XAML.
 
@@ -100,4 +100,4 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Controls.DataGrid>
-- [Jak mohu: začít pracovat s Entity Framework v aplikacích WPF?](https://go.microsoft.com/fwlink/?LinkId=159868)
+- [Postup: Začínáme s Entity Framework v aplikacích WPF?](https://go.microsoft.com/fwlink/?LinkId=159868)

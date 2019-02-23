@@ -1,6 +1,6 @@
 ---
 title: Určení úplných názvů typů
-ms.date: 03/14/2018
+ms.date: 02/21/2019
 helpviewer_keywords:
 - names [.NET Framework], fully qualified type names
 - reflection, fully qualified type names
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: d90b1e39-9115-4f2a-81c0-05e7e74e5580
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9281906f5500d954f3a0c7abface4ee43adcb64d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4d73cad94e0e4343c5dd09a3b12131afeabef873
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628536"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747246"
 ---
 # <a name="specifying-fully-qualified-type-names"></a>Určení úplných názvů typů
 Je nutné zadat názvy typů mít platné zadání do různých operací reflexe. Plně kvalifikovaného názvu typu se skládá z specifikaci název sestavení, oboru názvů a název typu. Specifikace názvu typu jsou používány metody jako například <xref:System.Type.GetType%2A?displayProperty=nameWithType>, <xref:System.Reflection.Module.GetType%2A?displayProperty=nameWithType>, <xref:System.Reflection.Emit.ModuleBuilder.GetType%2A?displayProperty=nameWithType>, a <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>.  
@@ -41,9 +41,12 @@ ReferenceTypeSpec
 
 SimpleTypeSpec
     : PointerTypeSpec
-    | ArrayTypeSpec
+    | GenericTypeSpec
     | TypeName
     ;
+
+GenericTypeSpec
+   : SimpleTypeSpec ` NUMBER
 
 PointerTypeSpec
     : SimpleTypeSpec '*'
@@ -177,7 +180,10 @@ com.microsoft.crypto, Culture="", PublicKeyToken=a5d015c7d5a0b012
 com.microsoft.crypto, Culture=en, PublicKeyToken=a5d015c7d5a0b012,  
     Version=1.0.0.0  
 ```  
-  
+## <a name="specifying-generic-types"></a>Zadání obecných typů
+
+SimpleTypeSpec\`číslo představuje otevřený obecný typ. se od 1 do *n* parametry obecného typu. Například chcete získat odkaz na otevřený obecný typ. seznamu\<T > nebo uzavřený obecný typ seznamu\<řetězec >, použijte ``Type.GetType("System.Collections.Generic.List`1")`` získáte odkaz na obecný typ slovníku\<TKey, TValue >, použijte ``Type.GetType("System.Collections.Generic.Dictionary`2")``. 
+
 ## <a name="specifying-pointers"></a>Určení ukazatele  
  SimpleTypeSpec * představuje nespravovaný ukazatel. Například ukazatele na typ MyType získáte pomocí `Type.GetType("MyType*")`. Chcete-li získat ukazatel na ukazatel na typ MyType, použijte `Type.GetType("MyType**")`.  
   
@@ -192,7 +198,6 @@ com.microsoft.crypto, Culture=en, PublicKeyToken=a5d015c7d5a0b012,
 -   `Type.GetType("MyArray[]")` Získá pole s jednou dimenzí s dolní mez 0.  
   
 -   `Type.GetType("MyArray[*]")` Získá pole s jednou dimenzí s neznámým rozsahem. nižší.  
-  
 -   `Type.GetType("MyArray[][]")` Získá pole dvourozměrné pole.  
   
 -   `Type.GetType("MyArray[*,*]")` a `Type.GetType("MyArray[,]")` získá obdélníkové dvojrozměrné pole s Neznámý dolní meze.  

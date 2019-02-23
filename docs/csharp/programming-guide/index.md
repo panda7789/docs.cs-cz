@@ -1,20 +1,14 @@
 ---
-title: Průvodce programováním v C#
+title: "Průvodce programováním v\_C#"
 ms.date: 05/02/2017
 f1_keywords:
-- cs.langref
+  - cs.langref
 helpviewer_keywords:
-- reference tables [C#]
-- C# language, programming guide
-- Visual C#, programming concepts
-- C# language, concepts
+  - 'reference tables [C#]'
+  - 'C# language, programming guide'
+  - 'Visual C#, programming concepts'
+  - 'C# language, concepts'
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: d09b350e959544bc15cc6f7a646ae85e155c1108
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54495978"
 ---
 # <a name="c-programming-guide"></a>Průvodce programovacího jazyka C#
 Tato část obsahuje podrobné informace o klíčových jazyka C#, funkce a funkce přístupné pro C# pomocí rozhraní .NET Framework.  
@@ -71,7 +65,7 @@ Tato část obsahuje podrobné informace o klíčových jazyka C#, funkce a funk
 ## <a name="platform-sections"></a>Oddíly platformy  
  [Aplikační domény](../../framework/app-domains/application-domains.md)  
   
- [Sestavení a globální mezipaměť sestavení (GAC)](../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
+ [Sestavení v rozhraní .NET](../../standard/assembly/index.md)  
   
  [Atributy](../../csharp/programming-guide/concepts/attributes/index.md)  
   

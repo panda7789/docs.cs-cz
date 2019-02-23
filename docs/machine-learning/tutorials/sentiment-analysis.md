@@ -4,12 +4,12 @@ description: Objevte, jak používat ML.NET ve scénáři binární klasifikace 
 ms.date: 02/15/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: d6d5cae107e25000add5c8430a35131a79696bc2
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 9afdf1d8369e71f9614ebc2bf327e98d31b988ff
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092758"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56748385"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>Kurz: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 
@@ -204,6 +204,9 @@ ML. Kanály transformace vaší sítě vytvořit vlastní sadu transformací, kt
 Pak zavolejte `mlContext.Transforms.Text.FeaturizeText` které featurizes textového sloupce (`SentimentText`) sloupec jako číselný vektor nazývá `Features` používá algoritmus strojového učení. Toto je obálka volání, které se vrátí <xref:Microsoft.ML.Data.EstimatorChain%601> efektivně, který bude kanál. Pojmenujte toto `pipeline` jako se pak připojí trainer k `EstimatorChain`. Přidáte jako další řádek kódu:
 
 [!code-csharp[TextFeaturizingEstimator](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#7 "Add a TextFeaturizingEstimator")]
+
+>[!WARNING]
+> ML.NET verze 0.10 má změnit pořadí parametrů transformace. Tímto krokem se nevygeneruje chybu, dokud při spuštění aplikace a vytváření modelu. Použijte názvy parametrů transformací, jak je znázorněno v předchozím fragmentu kódu.
 
 Jedná se o krok předběžného zpracování a snadné. Pomocí dalších komponent, které jsou k dispozici v ML.NET můžete povolit lepší výsledky obsahující váš model.
 

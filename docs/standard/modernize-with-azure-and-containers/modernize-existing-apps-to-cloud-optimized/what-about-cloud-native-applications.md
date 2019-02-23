@@ -4,16 +4,16 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Wi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: 0e390fcc838fc745e5950a8adcaeee0e5aa6e434
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: b84eb50c0d425447e3f78f1473608c27254523a7
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152563"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56746413"
 ---
 # <a name="what-about-cloud-native-applications"></a>A co aplikací nativních pro Cloud?
 
-I když [nativní pro Cloud](https://www.gartner.com/doc/3738117/comparing-leading-cloudnative-application-platforms) aplikace nejsou hlavní výběr tohoto průvodce, je užitečné porozumět této úrovně vyspělosti modernizaci a aby se odlišil od aplikace optimalizované pro Cloud.
+I když [nativní pro Cloud](https://azure.microsoft.com/overview/cloudnative/) aplikace nejsou hlavní výběr tohoto průvodce, je užitečné porozumět této úrovně vyspělosti modernizaci a aby se odlišil od aplikace optimalizované pro Cloud.
 
 Obrázek 4-3 umístí nativních cloudových aplikací úrovně vyspělosti modernizaci aplikací:
 
@@ -23,7 +23,7 @@ Obrázek 4-3 umístí nativních cloudových aplikací úrovně vyspělosti mode
 
 Nativní pro Cloud modernizaci vyspělosti obvykle vyžaduje nové investic do vývoje. Přechod na Cloud nativní úroveň obvykle doprovází obchodní potřebu modernizovat aplikace co nejvíc výrazně zlepšit horizontálně velké aplikace tak, že vytvoříte autonomní subsystémy (mikroslužeb), které je možné nasadit a škálování nezávisle na sobě z jiných oblastí aplikace při současném snižování nákladů v dlouhé flexibilitu vývoje období a zvýšení částí těchto autonomní aplikace, které poskytují soutěžit významné výhody. 
 
-Hlavní pilíře [nativní pro Cloud](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications) aplikací jsou založené na přístupů architekturu mikroslužeb, které můžete vyvíjet s flexibilitou a škálujte na limity, které by bylo obtížné dosáhnout v monolitické architektury nasadit buď místní nebo cloudové prostředí.
+Hlavní pilíře aplikací nativních pro Cloud, jsou založeny na přístupů architekturu mikroslužeb, které můžete vyvíjet s flexibilitou a škálujte na limity, které by bylo obtížné dosáhnout v monolitické architektury, místní nebo cloudové nasazení prostředí.
 
 Vidět na obrázku 4-4 hlavní vlastnosti modelu nativní pro Cloud.  
 
@@ -33,19 +33,19 @@ Vidět na obrázku 4-4 hlavní vlastnosti modelu nativní pro Cloud.
 
 Kromě toho můžete rozšířit základní moderních webových aplikací a aplikací nativních pro cloud tak, že přidáte další služby, jako je umělá inteligence (AI), machine learning (ML) a IoT. Libovolné z těchto služeb můžete použít k rozšíření všech možných přístupů optimalizovaných pro Cloud.
 
-V architektuře aplikace je zásadní rozdíl v aplikacích na úrovni nativní pro Cloud. [Nativní pro cloud](https://www.gartner.com/doc/3738117/comparing-leading-cloudnative-application-platforms) aplikací se podle definice aplikace, které jsou založené na mikroslužbách. Nativně cloudové aplikace vyžadují speciální architektury, technologie a platformy, ve srovnání s monolitické webovou aplikaci nebo tradiční N-vrstvou aplikaci.
+V architektuře aplikace je zásadní rozdíl v aplikacích na úrovni nativní pro Cloud. Aplikací nativních pro cloud se podle definice aplikace, které jsou založené na mikroslužbách. Nativně cloudové aplikace vyžadují speciální architektury, technologie a platformy, ve srovnání s monolitické webovou aplikaci nebo tradiční N-vrstvou aplikaci.
 
 ## <a name="cloud-native-applications-details"></a>Podrobnosti o aplikací nativních pro cloud
 
-[Nativní pro cloud](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications) se o rozšířené nebo až po zralé stav pro velký i klíčové podnikové aplikace. Nativně cloudové aplikace obvykle vyžadují architektury a návrhu, které vytvářejí úplně od začátku místo modernizaci stávajících aplikací. Klíčovým rozdílem mezi aplikací nativních pro Cloud a jednodušší optimalizovaných Cloudů webové aplikace se doporučuje použít architekturu mikroslužeb v metodě nativní pro cloud. Optimalizovaných pro cloudové aplikace může být také monolitické web apps nebo N-vrstvé aplikace.
+Nativní pro cloud se o rozšířené nebo až po zralé stav pro velký i klíčové podnikové aplikace. Nativně cloudové aplikace obvykle vyžadují architektury a návrhu, které vytvářejí úplně od začátku místo modernizaci stávajících aplikací. Klíčovým rozdílem mezi aplikací nativních pro Cloud a jednodušší optimalizovaných Cloudů webové aplikace se doporučuje použít architekturu mikroslužeb v metodě nativní pro cloud. Optimalizovaných pro cloudové aplikace může být také monolitické web apps nebo N-vrstvé aplikace.
 
-[12-Factor App](https://12factor.net/) (kolekce vzory, které jsou úzce související s přístupy k mikroslužeb) bude také považován za požadavek na [nativní pro cloud](https://www.gartner.com/doc/3738117/comparing-leading-cloudnative-application-platforms) aplikačních architektur.
+[12-Factor App](https://12factor.net/) (kolekce vzory, které jsou úzce související s přístupy k mikroslužeb) bude také považován za požadavek na architektury aplikací nativních pro cloud.
 
 [Foundation nativní computingu na Cloud (CNCF)](https://www.cncf.io/) je primární promoter principů nativní pro cloud. Společnost Microsoft [člena CNCF](https://azure.microsoft.com/blog/announcing-cncf/).
 
 Ukázková definice a další informace o vlastnostech aplikací nativních pro cloud, najdete v článku společnosti Gartner [architektury a návrhu aplikací nativních pro cloud](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications). Konkrétní pokyny od Microsoftu o tom, jak implementovat aplikace nativní pro cloud, najdete v části [mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET](https://aka.ms/microservicesebook).
 
-Nejdůležitějším faktorem vzít v úvahu, pokud migrujete celé aplikace, která [nativní pro cloud](https://www.gartner.com/doc/3738117/comparing-leading-cloudnative-application-platforms) modelu je, že musí úprava architektury na architekturu založených na mikroslužbách. Z důvodu velkého refaktoringu proces, který je zahrnutý to jasně vyžadovala významnou investici ve vývoji. Tato možnost je obvykle vybrána pro důležité podnikové aplikace, které vyžadují nové úrovni, škálovatelnost a pružnost dlouhodobé. Ale můžete začít s přesunem směrem k nativní pro cloud tak, že přidáte mikroslužeb pro několika nové scénáře a nakonec Refaktorovat aplikace plně jako mikroslužeb. Toto je přírůstkové přístup, který je nejlepší volbou pro několik scénářů.
+Nejdůležitějším faktorem vzít v úvahu, pokud migrujete celé aplikace nativní pro cloud modelu je, že musí úprava architektury na architekturu založených na mikroslužbách. Z důvodu velkého refaktoringu proces, který je zahrnutý to jasně vyžadovala významnou investici ve vývoji. Tato možnost je obvykle vybrána pro důležité podnikové aplikace, které vyžadují nové úrovni, škálovatelnost a pružnost dlouhodobé. Ale můžete začít s přesunem směrem k nativní pro cloud tak, že přidáte mikroslužeb pro několika nové scénáře a nakonec Refaktorovat aplikace plně jako mikroslužeb. Toto je přírůstkové přístup, který je nejlepší volbou pro několik scénářů.
 
 ## <a name="what-about-microservices"></a>Jak je to mikroslužby? 
 

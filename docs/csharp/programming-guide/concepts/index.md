@@ -1,13 +1,7 @@
 ---
-title: Koncepty programování (C#)
+title: 'Koncepty programování (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-ms.openlocfilehash: 216b23a30e8b1d58777fbccbf2956ae91534951b
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143185"
 ---
 # <a name="programming-concepts-c"></a>Koncepty programování (C#)
 Tato část popisuje koncepty programování v jazyce C#.  
@@ -16,7 +10,7 @@ Tato část popisuje koncepty programování v jazyce C#.
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Sestavení a globální mezipaměti sestavení (C#)](../../../csharp/programming-guide/concepts/assemblies-gac/index.md)|Popisuje, jak vytvořit a používat sestavení.|  
+|[Sestavení v rozhraní .NET](../../../standard/assembly/index.md)|Popisuje, jak vytvořit a používat sestavení.|  
 |[Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../csharp/programming-guide/concepts/async/index.md)|Popisuje, jak vytvořit asynchronní řešení pomocí [asynchronní](../../../csharp/language-reference/keywords/async.md) a [await](../../../csharp/language-reference/keywords/await.md) klíčová slova v jazyce C#. Obsahuje návod.|  
 |[Atributy (C#)](../../../csharp/programming-guide/concepts/attributes/index.md)|Popisuje, jak poskytnout další informace o programování elementů, jako jsou typy, pole, metody a vlastnosti pomocí atributů.|  
 |[Informace o volajícím (C#)](../../../csharp/programming-guide/concepts/caller-information.md)|Popisuje, jak získat informace o volajícím metody. Tyto informace patří cesta k souboru a číslo řádku zdrojového kódu a členské jméno volajícího.|  

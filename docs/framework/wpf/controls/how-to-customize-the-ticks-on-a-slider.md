@@ -5,12 +5,12 @@ helpviewer_keywords:
 - TickBar [WPF]
 - Slider control [WPF], creating with TickBar
 ms.assetid: 4fa694f2-a620-4b15-be78-5f4286f89361
-ms.openlocfilehash: b6ade07b0b4c04578d2523d6d8ba992b8b2d31f7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0317668bf4f6721af698e1a8b966493b2c127012
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54696669"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56746646"
 ---
 # <a name="how-to-customize-the-ticks-on-a-slider"></a>Postupy: Přizpůsobení dílků na posuvníku
 Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.Slider> ovládací prvek, který má osové značky.  
@@ -28,4 +28,4 @@ Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.Slider> ovl
 - <xref:System.Windows.Controls.Slider>
 - <xref:System.Windows.Controls.Primitives.TickBar>
 - <xref:System.Windows.Controls.Slider.TickPlacement%2A>
-- [Postupy: témata posuvníku](https://msdn.microsoft.com/library/534be86c-afb2-425d-8186-631278a9925e)
+- [Postupy: Svázání posuvníku hodnotu vlastnosti](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms788716(v=vs.90))

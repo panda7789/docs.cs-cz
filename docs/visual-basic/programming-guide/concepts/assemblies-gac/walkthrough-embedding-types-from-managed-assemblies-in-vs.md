@@ -1,15 +1,15 @@
 ---
-title: 'Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)'
+title: 'Průvodce: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 56ed12ba-adff-4e9c-a668-7fcba80c4795
-ms.openlocfilehash: 1f6176746b783d020c809fb0b5d55d741ce0148b
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: f14a3e41c00ae307086a6d3745d4ec76b772721c
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39245466"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747541"
 ---
-# <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-visual-basic"></a>Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)
+# <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-visual-basic"></a>Průvodce: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)
 Pokud jste pro vložení informací o typu ze spravovaných sestavení se silným názvem, můžete volně zkombinujte typy v aplikaci dosáhnout nezávislosti na verzi. To znamená váš program může zapisovat používat typy z více verzí aplikace spravované knihovny aniž byste museli překompilují. pro každou verzi.  
   
  Typ vložení se často používá se spoluprací COM, jako je například aplikace, která používá objekty automatizace z aplikace Microsoft Office. Vložení informací o typu umožňuje jednomu sestavení programu pracovat s různými verzemi sady Microsoft Office na různých počítačích. Ale můžete použít také typ vkládání pomocí plně spravované řešení.  
@@ -60,7 +60,7 @@ Pokud jste pro vložení informací o typu ze spravovaných sestavení se silný
   
 4.  Klikněte pravým tlačítkem na projekt TypeEquivalenceInterface a klikněte na tlačítko **vlastnosti**. Klikněte na tlačítko **kompilaci** kartu. Nastavte výstupní cesta platná umístění na vašem vývojovém počítači, jako je třeba `C:\TypeEquivalenceSample`. Toto umístění se taky použije v pozdějším kroku v tomto názorném postupu.  
   
-5.  Při úpravách stále vlastnosti projektu, klikněte na tlačítko **podepisování** kartu. Vyberte **podepsat sestavení** možnost. V **vyberte soubor klíče se silným názvem** klikněte na možnost **< Nový … >**. V **název souboru klíče** zadejte `key.snk`. Zrušte **chránit můj soubor klíče s heslem** zaškrtávací políčko. Klikněte na tlačítko **OK**.  
+5.  Při úpravách stále vlastnosti projektu, klikněte na tlačítko **podepisování** kartu. Vyberte **podepsat sestavení** možnost. V **vyberte soubor klíče se silným názvem** klikněte na možnost **< Nový … >**. V **název souboru klíče** zadejte `key.snk`. Zrušte **chránit můj soubor klíče s heslem** zaškrtávací políčko. Klikněte na **OK**.  
   
 6.  Otevřete soubor ISampleInterface.vb. Přidejte následující kód do souboru třídy ISampleInterface k vytvoření ISampleInterface rozhraní.  
   
@@ -105,7 +105,7 @@ Pokud jste pro vložení informací o typu ze spravovaných sestavení se silný
   
 4.  Klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **vlastnosti**. Klikněte na tlačítko **kompilaci** kartu. Nastavte výstupní cestu do stejného umístění, například použít v projektu TypeEquivalenceInterface `C:\TypeEquivalenceSample`.  
   
-5.  Při úpravách stále vlastnosti projektu, klikněte na tlačítko **podepisování** kartu. Vyberte **podepsat sestavení** možnost. V **vyberte soubor klíče se silným názvem** klikněte na možnost **< Nový … >**. V **název souboru klíče** zadejte `key.snk`. Zrušte **chránit můj soubor klíče s heslem** zaškrtávací políčko. Klikněte na tlačítko **OK**.  
+5.  Při úpravách stále vlastnosti projektu, klikněte na tlačítko **podepisování** kartu. Vyberte **podepsat sestavení** možnost. V **vyberte soubor klíče se silným názvem** klikněte na možnost **< Nový … >**. V **název souboru klíče** zadejte `key.snk`. Zrušte **chránit můj soubor klíče s heslem** zaškrtávací políčko. Klikněte na **OK**.  
   
 6.  Klikněte pravým tlačítkem na projekt TypeEquivalenceRuntime a klikněte na tlačítko **přidat odkaz**. Klikněte na tlačítko **Procházet** kartu a přejděte do složky cesta pro výstup. Vyberte soubor TypeEquivalenceInterface.dll a klikněte na tlačítko **OK**.  
   
@@ -222,8 +222,8 @@ End Function
   
 6.  V Průzkumníku souborů otevřete složku výstupu cestu (například C:\TypeEquivalenceSample). Dvakrát klikněte na panel TypeEquivalenceClient.exe ke spuštění programu. Program bude odrážet nové verze sestavení TypeEquivalenceRuntime bez nutnosti znovu zkompilovat.  
   
-## <a name="see-also"></a>Viz také  
- [/ Link (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/link.md)  
- [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)  
- [Programování se sestaveními](../../../../framework/app-domains/programming-with-assemblies.md)  
- [Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)
+## <a name="see-also"></a>Viz také:
+- [/ Link (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/link.md)
+- [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)
+- [Programování se sestaveními](../../../../framework/app-domains/programming-with-assemblies.md)
+- [Sestavení v rozhraní .NET](../../../../standard/assembly/index.md)

@@ -2,12 +2,12 @@
 title: 'Postupy: Sdílení sestavení s jinými aplikacemi (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 5388aedc-cb42-4622-8b70-8e701eee057a
-ms.openlocfilehash: d0e1dafc700b55a63342331b3280337d2c93cbd1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1acd665c702dd3b765cdeffde5470893e7097695
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54631825"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747687"
 ---
 # <a name="how-to-share-an-assembly-with-other-applications-visual-basic"></a>Postupy: Sdílení sestavení s jinými aplikacemi (Visual Basic)
 Sestavení mohou být privátní nebo sdílené: ve výchozím nastavení, většina jednoduché programy obsahovat soukromé sestavení vzhledem k tomu, že nejsou určena pro použití jiné aplikace.  
@@ -29,5 +29,5 @@ Sestavení mohou být privátní nebo sdílené: ve výchozím nastavení, vět�
 ## <a name="see-also"></a>Viz také:
 
 - [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)
-- [Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)
+- [Sestavení v rozhraní .NET](../../../../standard/assembly/index.md)
 - [Programování se sestaveními](../../../../framework/app-domains/programming-with-assemblies.md)

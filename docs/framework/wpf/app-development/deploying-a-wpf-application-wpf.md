@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: 2079d4b4f6bedcc30c4826f8798729c5c9263751
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 120e2ecdf5869200fa9280ce3fc0a2a3a76c667f
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648092"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56748320"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
 Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být nasazeny. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a rozhraní .NET Framework zahrnují několik technologie nasazení. Technologie nasazení, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace závisí na typu aplikace. Toto téma nabízí stručný přehled této technologie každého nasazení, a jak se používají ve spojení s požadavky na nasazení každého [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typu aplikace.  
@@ -44,7 +44,7 @@ Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být na
   
  [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] zjednodušuje instalace a odinstalace aplikací, ale neposkytuje funkce pro zajištění, že jsou pořád aktuální z hlediska správy verzí nainstalovaných aplikací.  
   
- Další informace o [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)], naleznete v tématu [nasazení Instalační služby systému Windows](https://msdn.microsoft.com/library/121be21b-b916-43e2-8f10-8b080516d2a0).  
+ Další informace o Instalační službě systému Windows najdete v tématu [nasazení Instalační služby systému Windows](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
   
 <a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>ClickOnce – nasazení  
@@ -99,7 +99,7 @@ Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být na
 > [!NOTE]
 >  Další informace o manifesty nasazení a aplikace, najdete v části [sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md).  
   
- Tyto soubory jsou vytvářeny při [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] je vytvořená. Další informace najdete v tématu [jak: Vytvoření nového projektu aplikace prohlížeče WPF](https://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f). Například pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky, [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] jsou obvykle vydávané na webový server a prohlížet pomocí [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)].  
+ Tyto soubory jsou vytvářeny při [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] je vytvořená. Další informace najdete v tématu [jak: Vytvoření nového projektu aplikace prohlížeče WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)). Například pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky, [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] jsou obvykle vydávané na webový server a prohlížet pomocí [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)].  
   
  [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] je možné nasadit na klienty některou z metod nasazení. Nicméně [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] je doporučeno, protože poskytuje následující možnosti:  
   

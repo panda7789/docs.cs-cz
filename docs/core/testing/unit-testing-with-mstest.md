@@ -5,12 +5,12 @@ author: ncarandini
 ms.author: wiwagn
 ms.date: 09/08/2017
 ms.custom: seodec18
-ms.openlocfilehash: d0da8640393e298c3a6e367433eaa68ebb88fad7
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 4f6e1bb9a03a8f98052ec7bc911f22c288df6fe0
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170271"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56746847"
 ---
 # <a name="unit-testing-c-with-mstest-and-net-core"></a>Testování C# s MSTest a .NET Core
 
@@ -26,7 +26,7 @@ Otevřete okno prostředí. Vytvořte adresář s názvem *jednotky – testová
     /PrimeService
 ```
 
-Ujistěte se, *PrimeService* aktuální adresář a spusťte [ `dotnet new classlib` ](../tools/dotnet-new.md) vytvoření zdrojového projektu. Přejmenovat *Class1.cs* k *PrimeService.cs*. Chcete-li použít vývoj řízený testováním (TDD), vytvoříte selhání provádění `PrimeService` třídy:
+Ujistěte se, *PrimeService* aktuální adresář a spusťte [ `dotnet new classlib` ](../tools/dotnet-new.md) vytvoření zdrojového projektu. Přejmenovat *Class1.cs* k *PrimeService.cs*. Vytvoření selhání provádění `PrimeService` třídy:
 
 ```csharp
 using System;
@@ -93,7 +93,7 @@ Spustit [ `dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj` ](../t
 
 ## <a name="creating-the-first-test"></a>Vytvoření prvního testu
 
-Volá TDD přístup pro zápis jednoho selhává testování, takže předat a potom zopakováním postupu. Odebrat *UnitTest1.cs* z *PrimeService.Tests* adresáře a vytvořte nový C# soubor s názvem *PrimeService_IsPrimeShould.cs* s následujícím obsahem:
+Jeden zápis služeb při selhání testu, nastavte ji pass a postup se opakuje. Odebrat *UnitTest1.cs* z *PrimeService.Tests* adresáře a vytvořte nový C# soubor s názvem *PrimeService_IsPrimeShould.cs* s následujícím obsahem:
 
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - managed HTML DOM
 ms.assetid: a017dd5c-cd7b-47e4-952c-f4f54cb48409
-ms.openlocfilehash: 1405bb43e971f02bafa892de84a6b8acde2e319b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5c3882e29caa0c327242ed3e815b7c17ef0e2075
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54691421"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56746675"
 ---
 # <a name="using-the-managed-html-document-object-model"></a>Použití modelu spravovaného objektu dokumentu HTML
 Spravovaný model (DOM) objektu dokumentu HTML poskytuje obálku na základě [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pro třídy HTML vystavené aplikace Internet Explorer. Použít tyto třídy manipulovat s HTML stránek hostovaných v <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, nebo vytvářet nové stránky od začátku.  
@@ -39,6 +39,3 @@ Spravovaný model (DOM) objektu dokumentu HTML poskytuje obálku na základě [!
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvek WebBrowser](../../../../docs/framework/winforms/controls/webbrowser-control-windows-forms.md)  
-  
-## <a name="see-also"></a>Viz také:
-- [O objektovém modelu DHTML](https://msdn.microsoft.com/library/default.asp?url=/workshop/author/om/doc_object.asp)

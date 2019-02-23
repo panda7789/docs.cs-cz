@@ -10,12 +10,12 @@ helpviewer_keywords:
 - toolbars [Windows Forms], walkthroughs
 - ToolStrip control [Windows Forms], creating professionally styled controls
 ms.assetid: b52339ae-f1d3-494e-996e-eb455614098a
-ms.openlocfilehash: 36f34fad49ed76293a83d3c018eea48fcdb2944a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1585f6e484923d16e1613b436588467b47daeecb
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54714890"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56746241"
 ---
 # <a name="walkthrough-creating-a-professionally-styled-toolstrip-control"></a>Průvodce: Vytvoření ovládacího prvku ToolStrip s profesionálním
 Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesionální vzhled a chování napsáním vlastní třídy odvozené od <xref:System.Windows.Forms.ToolStripProfessionalRenderer> typu.  
@@ -49,7 +49,7 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
   
 2.  V **Průzkumníka řešení**, odstraňte výchozí ovládací prvek projektu tak, že odstraníte zdrojový soubor s názvem "UserControl1.cs" nebo "UserControl1.vb", v závislosti na vámi zvolený jazyk.  
   
-     Další informace najdete v tématu [NIB: jak: Odebrat, odstranit a vyloučit položky](https://msdn.microsoft.com/library/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
+     Další informace najdete v tématu [jak: Odebrat, odstranit a vyloučit položky](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0ebzhwsk(v=vs.100)).  
   
 3.  Přidat nový <xref:System.Windows.Forms.UserControl> položkou **StackViewLibrary** projektu. Zadejte základní název nového zdrojového souboru `StackView`.  
   
@@ -121,7 +121,7 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
   
 8.  Přejmenovat `mailStackButton_Click` obslužnou rutinu události `stackButton_Click`.  
   
-     Další informace najdete v tématu [jak: Přejmenovat identifikátor (Visual Basic)](https://msdn.microsoft.com/library/e5a5edf8-3dba-4119-81f4-fc2aba180e0c).  
+     Další informace najdete v tématu [kódu symbol refaktoring pro přejmenování](/visualstudio/ide/reference/rename).  
   
 9. Vložte následující kód do `stackButton_Click` obslužné rutiny události.  
   
@@ -135,7 +135,7 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
 12. Opakujte kroky 10 a 11 pro `contactsStackButton` a `tasksStackButton` ovládací prvky.  
   
 ## <a name="defining-icons"></a>Definování ikony  
- Každý `StackView` má tlačítko přidružené ikonu. Pro usnadnění práce jednotlivé ikony je vyjádřena jako řetězec s kódováním Base64, který je deserializován před <xref:System.Drawing.Bitmap> se vytvoří z něj. V produkčním prostředí ukládat data rastrového obrázku jako prostředku a ikony se zobrazí v Návrháři formulářů Windows. Další informace najdete v tématu [jak: Přidání obrázků na pozadí do formulářů Windows](https://msdn.microsoft.com/library/7a509ba2-055c-4ae6-b88a-54625c6d9aff).  
+ Každý `StackView` má tlačítko přidružené ikonu. Pro usnadnění práce jednotlivé ikony je vyjádřena jako řetězec s kódováním Base64, který je deserializován před <xref:System.Drawing.Bitmap> se vytvoří z něj. V produkčním prostředí ukládat data rastrového obrázku jako prostředku a ikony se zobrazí v Návrháři formulářů Windows. Další informace najdete v tématu [jak: Přidání obrázků na pozadí do formulářů Windows](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dff9f95f(v=vs.100)).  
   
 #### <a name="to-define-icons"></a>Chcete-li definovat ikony  
   

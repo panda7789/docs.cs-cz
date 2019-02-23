@@ -5,12 +5,12 @@ helpviewer_keywords:
 - interop assemblies
 - COM interop [Visual Basic], about COM interop
 ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
-ms.openlocfilehash: 68e750fccd988a9cf7e08b4e7169bd2385d48e1f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e4421cbc40cdccc1dbbaeb459cb12fda0ee407cf
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54734854"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56745596"
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>Představení zprostředkovatele komunikace s objekty COM (Visual Basic)
 Modelu COM (Component Object) umožňuje objektu jeho funkcionalitu, ostatních komponentách a k hostování aplikací. Zatímco objekty modelu COM byly nezbytné k programování po mnoho let Windows, aplikací navržených pro modul common language runtime (CLR) nabízí celou řadu výhod.  
@@ -38,7 +38,7 @@ Modelu COM (Component Object) umožňuje objektu jeho funkcionalitu, ostatních 
   
 -   Oprávnění vyžadovaná pro sestavení spuštěn správně.  
   
- Další informace o sestavení a sestavení manifesty, naleznete v tématu [sestavení a globální mezipaměť sestavení](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md).  
+ Další informace o sestavení a sestavení manifesty, naleznete v tématu [sestavení v rozhraní .NET](../../../standard/assembly/index.md).  
   
 ### <a name="importing-and-exporting-type-libraries"></a>Import a export knihovny typů  
  Visual Studio obsahuje nástroje, Tlbimp, který umožňuje importovat informace z knihovny typů do [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] aplikace. Knihovny typů ze sestavení můžete vygenerovat pomocí nástroje Tlbexp.  
@@ -57,7 +57,7 @@ Modelu COM (Component Object) umožňuje objektu jeho funkcionalitu, ostatních 
 - [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
 - [Spolupráce s nespravovaným kódem](../../../framework/interop/index.md)
 - [Řešení potíží s interoperabilitou](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)
-- [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)
+- [Sestavení v rozhraní .NET](../../../standard/assembly/index.md)
 - [Tlbimp.exe (importér knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
 - [Tlbexp.exe (exportér knihovny typů)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
 - [Zařazování spolupráce](../../../framework/interop/interop-marshaling.md)

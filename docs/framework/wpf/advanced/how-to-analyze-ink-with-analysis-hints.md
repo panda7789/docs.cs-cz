@@ -10,18 +10,18 @@ helpviewer_keywords:
 - ink [WPF], AnalysisHintNode objects [WPF]
 - AnalysisHintNode objects [WPF]
 ms.assetid: d4421ed4-77f5-4640-829e-9f1de50b2ff2
-ms.openlocfilehash: 74f8b3df5767888e8bca0d9f67e9c47630353fb0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c0071620c406c5907bbb656269729a5aad98eede
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33543599"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56748671"
 ---
 # <a name="how-to-analyze-ink-with-analysis-hints"></a>Postupy: Analýza inkoustu pomocí tipů analýzy
-[System.Windows.Ink.AnalysisHintNode](https://msdn.microsoft.com/library/system.windows.ink.analysishintnode(v=vs.100).aspx) poskytuje nápovědu pro [System.Windows.Ink.InkAnalyzer](https://msdn.microsoft.com/library/system.windows.ink.inkanalyzer(v=vs.100).aspx) pro který je připojen.  Pomocný parametr použije pro oblast určeného [System.Windows.Ink.ContextNode.Location%2A](https://msdn.microsoft.com/library/system.windows.ink.contextnode.location(v=vs.100).aspx) vlastnost [System.Windows.Ink.AnalysisHintNode](https://msdn.microsoft.com/library/system.windows.ink.analysishintnode(v=vs.100).aspx) a poskytuje další kontext, který má analyzátor rukopisu na zlepšení rozpoznávání přesnost. [System.Windows.Ink.InkAnalyzer](https://msdn.microsoft.com/library/system.windows.ink.inkanalyzer(v=vs.100).aspx) platí tato informace o kontextu při analýze rukopisu získané v rámci oblasti v pomocném parametru.  
+[System.Windows.Ink.AnalysisHintNode](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms610344(v=vs.90)) poskytuje nápovědu pro [System.Windows.Ink.InkAnalyzer](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms616754(v=vs.90)) na který je připojen.  Doporučení platí pro oblasti určené [System.Windows.Ink.ContextNode.Location%2A](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms594508(v=vs.90)) vlastnost [System.Windows.Ink.AnalysisHintNode](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms610344(v=vs.90)) a poskytuje další kontext pro analyzátor rukopisu na zlepšit přesnost rozpoznávání. [System.Windows.Ink.InkAnalyzer](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms616754(v=vs.90)) platí tato informace o kontextu, pokud analýza inkoustu získané v rámci oblasti v pomocném parametru.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad je aplikace, která používá více [System.Windows.Ink.AnalysisHintNode](https://msdn.microsoft.com/library/system.windows.ink.analysishintnode(v=vs.100).aspx) objekty ve formuláři, který přijímá vstup rukopisu. Aplikace používá [System.Windows.Ink.AnalysisHintNode.Factoid%2A](https://msdn.microsoft.com/library/system.windows.ink.analysishintnode.factoid(v=vs.100)) vlastnost poskytnout informace o kontextu pro každou položku na formuláři.  Aplikace používá analysis pozadí k analýze rukopisu a vymaže formu všechny rukopisu pět sekund poté, co uživatel přestane přidání rukopisu.  
+ V následujícím příkladu je aplikace, která používá více [System.Windows.Ink.AnalysisHintNode](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms610344(v=vs.90)) objekty ve formuláři, který přijímá vstup rukopisu. Aplikace používá [System.Windows.Ink.AnalysisHintNode.Factoid%2A](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms594341(v=vs.90)) vlastnost k poskytování kontextové informace pro každou položku ve formuláři.  Aplikace používá analýzu na pozadí analyzovat rukopis a vymaže pěti sekund poté, co uživatel ukončí přidávání inkoustu formu všechen rukopis.  
   
  [!code-xaml[HowToAnalyzeInk#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToAnalyzeInk/CSharp/FormAnalyzer.xaml#1)]  
   

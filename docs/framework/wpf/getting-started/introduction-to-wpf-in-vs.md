@@ -15,22 +15,22 @@ helpviewer_keywords:
 - WPF [WPF], about Windows Presentation Foundation
 - 3-D rendering [WPF]
 ms.assetid: 582a314e-e23d-4144-b45b-acbbd5579252
-ms.openlocfilehash: a2d88b9094a6168989360102a25ef7ce6e0a918a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d2a0cdb7e49fb584d0824edcefe710313ba21d4a
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33554961"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747311"
 ---
 # <a name="introduction-to-wpf-in-visual-studio"></a>Úvod k použití WPF v sadě Visual Studio
-Windows Presentation Foundation (WPF) v sadě Visual Studio poskytuje vývojářům jednotný programovací model pro vytváření aplikací klasické pracovní plochy-obchodní v systému Windows.  
+Windows Presentation Foundation (WPF) v sadě Visual Studio poskytuje vývojářům jednotný programovací model pro vytváření desktopových-obchodních aplikací na Windows.  
   
- [Vytvoření aplikací klasické pracovní plochy s Windows Presentation Foundation](/visualstudio/designers/create-modern-desktop-applications-with-windows-presentation-foundation)  
+ [Vytváření desktopových aplikací pomocí Windows Presentation Foundation](/visualstudio/designers/create-modern-desktop-applications-with-windows-presentation-foundation)  
 
- [Navrhování XAML v sadě Visual Studio a nástroj Blend for Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)  
+ [Návrh XAML v sadě Visual Studio a Blend pro Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)  
   
  [Úvod do WPF](/visualstudio/designers/introduction-to-wpf)  
   
- [WPF v rozhraní .NET Framework](https://msdn.microsoft.com/library/ms754130\(v=vs.100\).aspx)  
+ [Použití rozhraní WPF v rozhraní .NET Framework](../index.md)  
   
- [Získání sady Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
+ [Získat Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)

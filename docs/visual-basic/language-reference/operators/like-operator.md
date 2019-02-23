@@ -22,16 +22,19 @@ helpviewer_keywords:
 - data [Visual Basic], string comparisons
 - string comparison [Visual Basic], Like operators
 ms.assetid: 966283ec-80e2-4294-baa8-c75baff804f9
-ms.openlocfilehash: b1621131b3f5e4669eb637c054be1548597cf252
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 67325ef434d00368c71e7f789fcd2e4ecb4b5938
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54703260"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56748294"
 ---
 # <a name="like-operator-visual-basic"></a>Like – operátor (Visual Basic)
 Porovná řetězec oproti vzoru.  
-  
+
+> [!IMPORTANT]
+> `Like` Operátor není aktuálně podporován v projektech .NET Core a .NET Standard.
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```  

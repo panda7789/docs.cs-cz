@@ -7,12 +7,12 @@ helpviewer_keywords:
 - controls [WPF], RichTextBox
 - RichTextBox control [WPF], how-to topics
 ms.assetid: 36e9f98e-f968-42d8-adb6-9e78c814aec0
-ms.openlocfilehash: 5eccafd3a7fb75f0458fa50b1c557f4b3ddb7c27
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: def502855168b8e10f57e1426191f4e0c26e9f67
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54720480"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56745726"
 ---
 # <a name="richtextbox-how-to-topics"></a>RichTextBox – postupy
 Tato část obsahuje příklady, které ukazují, jak provádět běžné úlohy pomocí <xref:System.Windows.Controls.RichTextBox> ovládacího prvku.  
@@ -22,7 +22,6 @@ Tato část obsahuje příklady, které ukazují, jak provádět běžné úlohy
  [Programová změna výběru v poli RichTextBox](../../../../docs/framework/wpf/controls/change-selection-in-a-richtextbox-programmatically.md)  
  [Uložení, načtení a tisk obsahu RichTextBox](../../../../docs/framework/wpf/controls/how-to-save-load-and-print-richtextbox-content.md)  
  [Umístění vlastní místní nabídky v prvku RichTextBox](../../../../docs/framework/wpf/controls/how-to-position-a-custom-context-menu-in-a-richtextbox.md)  
- [Postupy: Nahraďte výchozí obsah hostitele do textového pole RTF](https://msdn.microsoft.com/library/dec1b2ce-9ca5-4bb2-bf54-f8a80a3c8beb)  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Controls.TextBox>

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - hosting Win32 control in WPF [WPF]
 - Win32 code [WPF], WPF interoperation
 ms.assetid: a676b1eb-fc55-4355-93ab-df840c41cea0
-ms.openlocfilehash: 8e6da9e9e48238c33a3522034c53ecdcb5ec99cc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 047ccd4ea4ba83c8d7427559f3ee76cc3547a430
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54691551"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747528"
 ---
 # <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>Průvodce: Hostování ovládacího prvku Win32 v subsystému WPF
 Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytváření aplikací. Ale pokud máte značné investice v kódu Win32, může být efektivnější opakovaně používat alespoň některé tohoto kódu v aplikaci WPF spíše než přepíše zcela. WPF poskytuje jednoduchý mechanismus pro hostování okně Win32, na stránce WPF.  
@@ -140,16 +140,16 @@ Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytvář
   
  Uživatele můžete také vybrat položku v seznamu kliknutím na ni, stejně jako běžné aplikace Win32. Zobrazená data se aktualizují pokaždé, když uživatel změní stav pole se seznamem vyberete, přidáte nebo přidávání položky.  
   
- Připojit položky odeslat pole se seznamem [ `LB_ADDSTRING` zpráva](https://msdn.microsoft.com/library/windows/desktop/bb775181(v=vs.85).aspx). Odstranit položky odeslat [ `LB_GETCURSEL` ](https://msdn.microsoft.com/library/windows/desktop/bb775197(v=vs.85).aspx) získat index aktuálního výběru a potom [ `LB_DELETESTRING` ](https://msdn.microsoft.com/library/windows/desktop/bb775183(v=vs.85).aspx) odstranit položku. Ukázka rovněž odesílá [ `LB_GETCOUNT` ](https://msdn.microsoft.com/library/windows/desktop/bb775195(v=vs.85).aspx)a aktualizovat zobrazení, který zobrazuje počet položek, které používá vrácené hodnoty. Obě tyto instance [ `SendMessage` ](https://msdn.microsoft.com/library/windows/desktop/ms644950(v=vs.85).aspx) použijte jednu z deklarace PInvoke popsané v předchozí části.  
+ Připojit položky odeslat pole se seznamem [ `LB_ADDSTRING` zpráva](/windows/desktop/Controls/lb-addstring). Odstranit položky odeslat [ `LB_GETCURSEL` ](/windows/desktop/Controls/lb-getcursel) získat index aktuálního výběru a potom [ `LB_DELETESTRING` ](/windows/desktop/Controls/lb-deletestring) odstranit položku. Ukázka rovněž odesílá [ `LB_GETCOUNT` ](/windows/desktop/Controls/lb-getcount)a aktualizovat zobrazení, který zobrazuje počet položek, které používá vrácené hodnoty. Obě tyto instance [ `SendMessage` ](/windows/desktop/api/winuser/nf-winuser-sendmessage) použijte jednu z deklarace PInvoke popsané v předchozí části.  
   
  [!code-csharp[WPFHostingWin32Control#AppendDeleteText](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml.cs#appenddeletetext)]
  [!code-vb[WPFHostingWin32Control#AppendDeleteText](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/Page1.xaml.vb#appenddeletetext)]  
   
- Když uživatel vybere položku nebo mění jejich výběr, ovládací prvek upozorní okno hostitele a odeslat ho [ `WM_COMMAND` zprávy](https://msdn.microsoft.com/library/windows/desktop/ms647591(v=vs.85).aspx), která vyvolává <xref:System.Windows.Interop.HwndHost.MessageHook> událostí stránky. Obslužná rutina obdrží stejné informace jako hlavní okno procedury okna hostitele. Také předá odkazem na hodnotu typu Boolean `handled`. Nastavíte `handled` k `true` k označení, že mají zpracovat zprávu a je potřeba žádné další zpracování.  
+ Když uživatel vybere položku nebo mění jejich výběr, ovládací prvek upozorní okno hostitele a odeslat ho [ `WM_COMMAND` zprávy](/windows/desktop/menurc/wm-command), která vyvolává <xref:System.Windows.Interop.HwndHost.MessageHook> událostí stránky. Obslužná rutina obdrží stejné informace jako hlavní okno procedury okna hostitele. Také předá odkazem na hodnotu typu Boolean `handled`. Nastavíte `handled` k `true` k označení, že mají zpracovat zprávu a je potřeba žádné další zpracování.  
   
- [`WM_COMMAND`](https://msdn.microsoft.com/library/windows/desktop/ms647591(v=vs.85).aspx) pro celou řadu důvodů se odešle, tak, aby musí zkontrolovat ID oznámení k určení, zda je událost, kterou chcete zpracovat. ID je součástí vysokou slova `wParam` parametru. Ukázka používá bitové operátory k extrakci ID. Pokud uživatel provedené nebo změnit jejich výběr, ID bude [ `LBN_SELCHANGE` ](https://msdn.microsoft.com/library/windows/desktop/bb775161(v=vs.85).aspx).  
+ [`WM_COMMAND`](/windows/desktop/menurc/wm-command) pro celou řadu důvodů se odešle, tak, aby musí zkontrolovat ID oznámení k určení, zda je událost, kterou chcete zpracovat. ID je součástí vysokou slova `wParam` parametru. Ukázka používá bitové operátory k extrakci ID. Pokud uživatel provedené nebo změnit jejich výběr, ID bude [ `LBN_SELCHANGE` ](/windows/desktop/Controls/lbn-selchange).  
   
- Když [ `LBN_SELCHANGE` ](https://msdn.microsoft.com/library/windows/desktop/bb775161(v=vs.85).aspx) je přijata, ukázka získá index vybrané položky odesláním ovládacího prvku [ `LB_GETCURSEL` zpráva](https://msdn.microsoft.com/library/windows/desktop/bb775197(v=vs.85).aspx). Pokud chcete získat text, je třeba nejprve vytvořit <xref:System.Text.StringBuilder>. Poté pošlete ovládacího prvku [ `LB_GETTEXT` zpráva](https://msdn.microsoft.com/library/windows/desktop/bb761313(v=vs.85).aspx). Předat prázdnou <xref:System.Text.StringBuilder> objektu jako `wParam` parametru. Když [ `SendMessage` ](https://msdn.microsoft.com/library/windows/desktop/ms644950(v=vs.85).aspx) návratu <xref:System.Text.StringBuilder> bude obsahovat text vybrané položky. Toto použití [ `SendMessage` ](https://msdn.microsoft.com/library/windows/desktop/ms644950(v=vs.85).aspx) vyžaduje další deklarace PInvoke.  
+ Když [ `LBN_SELCHANGE` ](https://msdn.microsoft.com/library/windows/desktop/bb775161(v=vs.85).aspx) je přijata, ukázka získá index vybrané položky odesláním ovládacího prvku [ `LB_GETCURSEL` zpráva](/windows/desktop/Controls/lb-getcursel). Pokud chcete získat text, je třeba nejprve vytvořit <xref:System.Text.StringBuilder>. Poté pošlete ovládacího prvku [ `LB_GETTEXT` zpráva](/windows/desktop/Controls/lb-gettext). Předat prázdnou <xref:System.Text.StringBuilder> objektu jako `wParam` parametru. Když [ `SendMessage` ](/windows/desktop/api/winuser/nf-winuser-sendmessage) návratu <xref:System.Text.StringBuilder> bude obsahovat text vybrané položky. Toto použití [ `SendMessage` ](/windows/desktop/api/winuser/nf-winuser-sendmessage) vyžaduje další deklarace PInvoke.  
   
  Nakonec nastavte `handled` k `true` k označení, že zpráva byla zpracována.  
   

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics rendering tiers [WPF]
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-ms.openlocfilehash: 85631433534a2cd962e398fe435275aa293405a7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ea3c5d2c8d98f75bad164ff16c098401e41e4c5e
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543851"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56748580"
 ---
 # <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky
 Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízení se systémem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
@@ -90,7 +90,7 @@ Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízen
 |Rastrový obsah, který používá <xref:System.Windows.Media.Imaging.RenderTargetBitmap>|Žádný obsah vykreslovány <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> metoda <xref:System.Windows.Media.Imaging.RenderTargetBitmap>.|  
 |Vedle sebe obsah, který používá <xref:System.Windows.Media.TileBrush>|Žádný obsah, ve kterém vedle sebe <xref:System.Windows.Media.TileBrush.TileMode%2A> vlastnost <xref:System.Windows.Media.TileBrush> je nastavena na <xref:System.Windows.Media.TileMode.Tile>.|  
 |Zařízení Surface, které překračují maximální velikost textury hardwarovou akceleraci|Pro většinu hardwarovou akceleraci jsou velké povrchy velikost 2048 x 2048 nebo 4096 × 4096 pixelů.|  
-|Všechny operace, jejichž video RAM požadavek překračuje paměť hardwarovou akceleraci|Využití paměti RAM video aplikace můžete monitorovat pomocí nástroje Perforator nástroj, který je součástí [WPF – výkonnostní sada](https://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e) v sadě Windows SDK.|  
+|Všechny operace, jejichž video RAM požadavek překračuje paměť hardwarovou akceleraci|Využití paměti RAM video aplikace můžete monitorovat pomocí nástroje Perforator nástroj, který je součástí [WPF – výkonnostní sada](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100)) v sadě Windows SDK.|  
 |Vrstvené windows|Povolit vrstvami windows [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací k vykreslení obsahu na obrazovku neobdélníkových oken. V operačních systémech, které podporují Windows zobrazení ovladač WDDM (Model), jako je například [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] a [!INCLUDE[win7](../../../../includes/win7-md.md)]rozvrstvenou windows jsou hardware accelerated. V ostatních systémech jako například [!INCLUDE[winxp](../../../../includes/winxp-md.md)]rozvrstvenou windows jsou vykreslovány software s žádné hardwarovou akceleraci.<br /><br /> Můžete povolit vrstvy systému windows v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] tak, že nastavíte následující <xref:System.Windows.Window> vlastnosti:<br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> = <xref:System.Windows.WindowStyle.None><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> = `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> = <xref:System.Windows.Media.Brushes.Transparent%2A>|  
   
 <a name="other_resources"></a>   
@@ -117,7 +117,7 @@ Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízen
 |Perforator|Slouží k analýze chování vykreslování.|  
 |Visual Profiler|Použijte pro profilaci použití [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] služby, jako je rozložení a elementy ve vizuálním stromu zpracování událostí.|  
   
- WPF – výkonnostní sada poskytuje bohaté a grafické zobrazení dat výkonu. Další informace o výkonu WPF – nástroje najdete v tématu [WPF – výkonnostní sada](https://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e).  
+ WPF – výkonnostní sada poskytuje bohaté a grafické zobrazení dat výkonu. Další informace o výkonu WPF – nástroje najdete v tématu [WPF – výkonnostní sada](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100)).  
   
 ### <a name="directx-diagnostic-tool"></a>Nástroje pro diagnostiku DirectX  
  [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Diagnostický nástroj, Dxdiag.exe, je účelem je pomoci při řešení problémů [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]– související problémy. Výchozí instalační složku pro [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] je nástroj pro diagnostiku:  
@@ -133,6 +133,6 @@ Hlavní okno diagnostické nástroje DirectX
 - <xref:System.Windows.Media.RenderCapability>
 - <xref:System.Windows.Media.RenderOptions>
 - [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
-- [WPF – výkonnostní sada](https://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e)
+- [WPF – výkonnostní sada](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100))
 - [Nastavení registru pro vykreslení grafiky](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)
 - [Tipy a triky animace](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)

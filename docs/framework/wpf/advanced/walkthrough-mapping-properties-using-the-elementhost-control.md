@@ -8,12 +8,12 @@ helpviewer_keywords:
 - mapping properties [WPF]
 - ElementHost control [WPF], mapping properties
 ms.assetid: bccd6e0d-2272-4924-9107-ff8ed58b88aa
-ms.openlocfilehash: bb418b725afd0c38a39e42e50511147d0f616059
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 29356f171506ece0fe35418f682681b19830d71c
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54623214"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56746335"
 ---
 # <a name="walkthrough-mapping-properties-using-the-elementhost-control"></a>Průvodce: Mapování vlastností použitím ovládacího prvku ElementHost
 
@@ -62,7 +62,7 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 4.  Otevřít `Form1` v Návrháři formulářů Windows. Klikněte dvakrát na formuláři pro přidání obslužné rutiny události <xref:System.Windows.Forms.Form.Load> událostí.
 
-5.  Vraťte se do Návrháře formulářů Windows a přidejte obslužnou rutinu události pro daný formulář <xref:System.Windows.Forms.Control.Resize> událostí. Další informace najdete v tématu [jak: Vytváření obslužných rutin událostí pomocí návrháře](https://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).
+5.  Vraťte se do Návrháře formulářů Windows a přidejte obslužnou rutinu události pro daný formulář <xref:System.Windows.Forms.Control.Resize> událostí. Další informace najdete v tématu [jak: Vytváření obslužných rutin událostí pomocí návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/zwwsdtbk(v=vs.100)).
 
 6.  Deklarovat <xref:System.Windows.Forms.Integration.ElementHost> pole `Form1` třídy.
 

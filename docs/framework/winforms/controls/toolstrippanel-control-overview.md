@@ -7,12 +7,12 @@ helpviewer_keywords:
 - toolbars [Windows Forms]
 - ToolStripPanel control [Windows Forms], about ToolStripPanel control
 ms.assetid: ce54a60c-5eba-4b4c-bd77-cf0748a666cc
-ms.openlocfilehash: 104ccfd0370eff48312372a2391031575b53b3bf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 31f701223912d577d1ef4f738639186e8d413697
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54660226"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56748359"
 ---
 # <a name="toolstrippanel-control-overview"></a>ToolStripPanel – přehled ovládacího prvku
 A <xref:System.Windows.Forms.ToolStripPanel> poskytuje jeden prostor pro umístění a rafting <xref:System.Windows.Forms.ToolStrip>, <xref:System.Windows.Forms.MenuStrip>, a <xref:System.Windows.Forms.StatusStrip> ovládací prvky. Více <xref:System.Windows.Forms.ToolStrip> ovládací prvky zásobníku vertikálně nebo horizontálně. v závislosti na tom <xref:System.Windows.Forms.ToolStripPanelRow.Orientation%2A> z <xref:System.Windows.Forms.ToolStripPanel>.  
@@ -31,4 +31,4 @@ A <xref:System.Windows.Forms.ToolStripPanel> poskytuje jeden prostor pro umíst�
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.ToolStripContainer>
 - <xref:System.Windows.Forms.ToolStripContentPanel>
-- [Ukázka ovládacího prvku ToolStrip](https://msdn.microsoft.com/library/b7352439-184a-4a3a-b2ad-07465d3af9ed)
+- [Ukázka ovládacího prvku ToolStrip](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms181005(v=vs.90))

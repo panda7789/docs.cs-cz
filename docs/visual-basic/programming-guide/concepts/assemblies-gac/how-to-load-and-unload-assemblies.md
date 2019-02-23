@@ -2,12 +2,12 @@
 title: 'Postupy: Zavedení a uvolnění sestavení (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: bbc84236-04b6-4c1b-9672-52773f65a5dc
-ms.openlocfilehash: adfe23c2c70b1f49e23fb7c3866c8dac5c9c09ef
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 77dc773c9e32c293ab5155b15e45f5255e31ab9a
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54549701"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56745208"
 ---
 # <a name="how-to-load-and-unload-assemblies-visual-basic"></a>Postupy: Zavedení a uvolnění sestavení (Visual Basic)
 Sestavení odkazuje váš program bude automaticky načtených v okamžiku sestavení, ale je také možné načíst konkrétní sestavení do aktuální domény aplikace za běhu. Další informace najdete v tématu [jak: Načtení sestavení do domény aplikace](../../../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md).  
@@ -26,5 +26,5 @@ Sestavení odkazuje váš program bude automaticky načtených v okamžiku sesta
   
 ## <a name="see-also"></a>Viz také:
 - [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)
-- [Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)
+- [Sestavení v rozhraní .NET](../../../../standard/assembly/index.md)
 - [Postupy: Načtení sestavení do domény aplikace](../../../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)

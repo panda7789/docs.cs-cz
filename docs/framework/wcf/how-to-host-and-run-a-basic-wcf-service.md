@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF services [WCF]
 - WCF services [WCF], running
 ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
-ms.openlocfilehash: 3a029ef23ba3e9a0dd62e410739fa8734acc202a
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 73633c2c6119204f2fb608b32ae794a2e07b27d0
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55277768"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747071"
 ---
 # <a name="how-to-host-and-run-a-basic-windows-communication-foundation-service"></a>Hostování a spuštění základní služby Windows Communication Foundation
 
@@ -101,7 +101,7 @@ Module Service
     Class Program
         Shared Sub Main()
             ' Step 1 Create a URI to serve as the base address
-            Dim baseAddress As New Uri("http://localhost:8000/ServiceModelSamples/Service")
+            Dim baseAddress As New Uri("http://localhost:8000/GettingStarted")
 
             ' Step 2 Create a ServiceHost instance
             Dim selfHost As New ServiceHost(GetType(CalculatorService), baseAddress)
@@ -144,18 +144,17 @@ End Module
 
 **Krok 3** – vytvoří <xref:System.ServiceModel.Description.ServiceEndpoint> instance. Koncový bod služby se skládá z adresy, vazby a smlouvy o poskytování služeb. <xref:System.ServiceModel.Description.ServiceEndpoint> Konstruktor proto přebírá typ rozhraní kontraktu služby, vazbu a adresu. Kontrakt služby je `ICalculator`, která definované a implementaci v typu služby. Vazba použitá v tomto příkladu je <xref:System.ServiceModel.WSHttpBinding> což je integrované vazbu, která se používá pro připojení ke koncovým bodům, které odpovídají WS-* specifikace. Další informace o vazbách WCF najdete v tématu [vazby WCF – přehled](bindings-overview.md). Adresa se připojí k základní adrese k identifikaci koncového bodu. Adresa zadaná v tomto kódu je "CalculatorService", takže je plně kvalifikovanou adresu pro koncový bod `"http://localhost:8000/GettingStarted/CalculatorService"`.
 
-    > [!IMPORTANT]
-    > Adding a service endpoint is optional when using .NET Framework 4 or later. In these versions, if no endpoints are added in code or configuration, WCF adds one default endpoint for each combination of base address and contract implemented by the service. For more information about default endpoints see [Specifying an Endpoint Address](specifying-an-endpoint-address.md). For more information about default endpoints, bindings, and behaviors, see [Simplified Configuration](simplified-configuration.md) and [Simplified Configuration for WCF Services](./samples/simplified-configuration-for-wcf-services.md).
+> [!IMPORTANT]
+> Přidání koncového bodu služby je volitelné, pokud používáte rozhraní .NET Framework 4 nebo novější. V těchto verzích Pokud žádné koncové body jsou přidány do kódu nebo konfigurace WCF přidá jeden výchozí koncový bod pro každou kombinaci základní adresu a kontraktů implementovaných službou. Další informace o výchozí koncové body naleznete v tématu [zadání adresy koncového bodu](specifying-an-endpoint-address.md). Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](./samples/simplified-configuration-for-wcf-services.md).
 
 **Krok 4** – povolit výměny metadat. Klienti použijí ke generování proxy servery, které se použije k volání operací služby metadata exchange. Umožňuje vytvořit výměny metadat <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instance, nastavte ho na <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true`a přidat chování při <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> kolekce <xref:System.ServiceModel.ServiceHost> instance.
 
 **Krok 5** – otevře <xref:System.ServiceModel.ServiceHost> k naslouchání pro příchozí zprávy. Všimněte si, že kód čeká uživatelem zadejte. Pokud to neprovedete, bude aplikace okamžitě ukončena a služby se vypne. Všimněte si také bloku try/catch použít. Po <xref:System.ServiceModel.ServiceHost> byla vytvořena instance, jiný kód je umístěn v bloku try/catch. Další informace o bezpečně zachycování výjimek vyvolaných <xref:System.ServiceModel.ServiceHost>, naleznete v tématu [použití zavřít a Abort k uvolnění prostředků klienta WCF](samples/use-close-abort-release-wcf-client-resources.md)
 
 > [!IMPORTANT]
-> Úpravy souboru App.config v GettingStartedLib tak, aby odrážely změny provedené v kódu:
-> 1. Změňte na řádek 14 `<service name="GettingStartedLib.CalculatorService">`
-> 2. Změňte řádek 17 `<add baseAddress = "http://localhost:8000/GettingStarted/CalculatorService" />`
-> 3. Změňte řádek 22 na `<endpoint address="" binding="wsHttpBinding" contract="GettingStartedLib.ICalculator">`
+> Když přidáte knihovny služby WCF, Visual Studio může hostovat ho za vás při ladění pomocí spuštění hostitele služby. Aby nedocházelo ke konfliktům tuto funkci můžete vypnout. 
+> 1. Otevřete vlastnosti projektu pro GettingStartedLib.
+> 2. Přejděte na **možnosti WCF** a zrušte zaškrtnutí políčka **spuštění hostitele služby WCF při ladění**.
 
 ## <a name="verify-the-service-is-working"></a>Ověřte, že služba funguje
 
@@ -163,7 +162,7 @@ End Module
 
    Služba musí běžet s oprávněními správce. Vzhledem k tomu, že Visual Studio otevřené s oprávněními správce, GettingStartedHost také spouštět s oprávněními správce. Můžete také otevřít nový příkazový řádek pomocí **spustit jako správce** a spusťte service.exe v něm.
 
-2. Otevřete webový prohlížeč a přejděte na stránku služby ladění na `http://localhost:8000/GettingStarted/CalculatorService`.
+2. Otevřete webový prohlížeč a přejděte na stránku služby ladění na `http://localhost:8000/GettingStarted/`. **Poznámka:! Je důležité koncové lomítko.**
 
 ## <a name="example"></a>Příklad
 
@@ -249,7 +248,7 @@ namespace GettingStartedHost
         static void Main(string[] args)
         {
             // Step 1 of the address configuration procedure: Create a URI to serve as the base address.
-            Uri baseAddress = new Uri("http://localhost:8000/ServiceModelSamples/Service");
+            Uri baseAddress = new Uri("http://localhost:8000/GettingStarted/");
 
             // Step 2 of the hosting procedure: Create ServiceHost
             ServiceHost selfHost = new ServiceHost(typeof(CalculatorService), baseAddress);
@@ -357,7 +356,7 @@ Module Service
     Class Program
         Shared Sub Main()
             ' Step 1 of the address configuration procedure: Create a URI to serve as the base address.
-            Dim baseAddress As New Uri("http://localhost:8000/ServiceModelSamples/Service")
+            Dim baseAddress As New Uri("http://localhost:8000/GettingStarted/")
 
             ' Step 2 of the hosting procedure: Create ServiceHost
             Dim selfHost As New ServiceHost(GetType(CalculatorService), baseAddress)
@@ -411,3 +410,4 @@ Informace o odstraňování potíží naleznete v tématu [řešení potíží s
 
 - [Začínáme](samples/getting-started-sample.md)
 - [Vlastní hostování](samples/self-host.md)
+- [Služby hostování](hosting-services.md)

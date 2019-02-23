@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c4e4b163cc783ccd01bc406789f5bf92448c697c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 697a59d80e152fb78164491c2a0eaaa8707f8914
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54685526"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56745917"
 ---
 # <a name="imetadataimportgetparamprops-method"></a>IMetaDataImport::GetParamProps – metoda
 Získá metadata hodnot pro parametr odkazuje zadaný ParamDef token.  
@@ -64,7 +64,7 @@ HRESULT GetParamProps (
  [out] Velikost vrácené v širokých znaků `szName`.  
   
  `pdwAttr`  
- [out] Ukazatel na libovolný atribut příznaky spojené s parametrem.  
+ [out] Ukazatel na libovolný atribut příznaky spojené s parametrem. To je bitová maska z `CorParamAttr` hodnoty.  
   
  `pdwCPlusTypeFlag`  
  [out] Ukazatel na příznak určující, který je parametr <xref:System.ValueType>.  
@@ -75,6 +75,10 @@ HRESULT GetParamProps (
  `pcchValue`  
  [out] Velikost `ppValue` v široké znaky, nebo nula, pokud `ppValue` neobsahuje řetězec.  
   
+## <a name="remarks"></a>Poznámky
+
+Pořadí hodnot v `pulSequence` začínají znakem 1 pro parametry. Návratová hodnota má pořadové číslo 0.
+
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   

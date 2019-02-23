@@ -7,12 +7,12 @@ ms.date: 08/30/2017
 dev_langs:
 - fsharp
 ms.custom: seodec18
-ms.openlocfilehash: 08ebe39fd6e992fdcdc10e19d87d565e76d909a2
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 9765c463bb427f79dcd0308e7e4fc643fdc06968
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53239196"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56745943"
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-xunit"></a>Testování částí F# knihoven v .NET Core pomocí příkazu dotnet test a xUnit
 
@@ -30,7 +30,7 @@ V adresáři řešení, vytvářet *MathService* adresáře. Struktura adresář
     /MathService
 ```
 
-Ujistěte se, *MathService* aktuální adresář a spusťte [ `dotnet new classlib -lang F#` ](../tools/dotnet-new.md) vytvoření zdrojového projektu.  Použití vývoj řízený testováním (TDD), vytvoříte selhání provádění matematických služby:
+Ujistěte se, *MathService* aktuální adresář a spusťte [ `dotnet new classlib -lang F#` ](../tools/dotnet-new.md) vytvoření zdrojového projektu.  Vytvoříte selhání provádění matematických služby:
 
 ```fsharp
 module MyMath =
@@ -87,7 +87,7 @@ Spustit [ `dotnet sln add .\MathService.Tests\MathService.Tests.fsproj` ](../too
 
 ## <a name="creating-the-first-test"></a>Vytvoření prvního testu
 
-Volá TDD přístup pro zápis jednoho selhává testování, takže předat a potom zopakováním postupu. Otevřít *Tests.fs* a přidejte následující kód:
+Jeden zápis služeb při selhání testu, nastavte ji pass a postup se opakuje. Otevřít *Tests.fs* a přidejte následující kód:
 
 ```fsharp
 [<Fact>]

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - documents [WPF], annotations
 - sticky notes [WPF]
 ms.assetid: 716bf474-29bd-4c74-84a4-8e0744bdad62
-ms.openlocfilehash: b3b009d7c25e813a73fe4f32c3eced632b052f13
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e88383126c1fb618b2a2a96bdf5998560864af50
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543471"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56746439"
 ---
 # <a name="annotations-overview"></a>Přehled poznámek
 Zápis poznámky nebo komentáře k dokumentu dokumentů je takový běžnou aktivitu, že jsme téměř jít samozřejmost. Tyto poznámky nebo komentáře jsou "Poznámky" přidáme do dokumentu označit, že informace nebo chcete zvýraznit položky relevantní pro pozdější použití. I když zápis poznámky na dokumenty tištěné je snadné a běžné, možnost přidávat vlastní komentář elektronických dokumentů je obvykle velmi omezená, pokud je k dispozici ve všech.  
@@ -75,4 +75,4 @@ Zápis poznámky nebo komentáře k dokumentu dokumentů je takový běžnou akt
 - [ContextMenu – přehled](../../../../docs/framework/wpf/controls/contextmenu-overview.md)
 - [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)
 - [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
-- [Postupy: Přidání příkazu do položku nabídky](https://msdn.microsoft.com/library/013d68a0-5373-4a68-bd91-5de574307370)
+- [Postupy: Přidání příkazu do položku nabídky](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms741839(v=vs.90))

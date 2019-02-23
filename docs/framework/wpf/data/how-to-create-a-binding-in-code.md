@@ -8,12 +8,12 @@ helpviewer_keywords:
 - binding data [WPF], creating
 - data binding [WPF], creating
 ms.assetid: 1a606db9-cf5f-42ed-a1c5-9e4722ec77a0
-ms.openlocfilehash: 5b086629b6144a92e9a5eeecdd6adb1ca1bad27a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6af87f1d6b8c4ee781c65d5a75872e8a72a02390
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54610731"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747700"
 ---
 # <a name="how-to-create-a-binding-in-code"></a>Postupy: Vytvoření připojení v kódu
 Tento příklad ukazuje, jak vytvořit a nastavit <xref:System.Windows.Data.Binding> v kódu.  
@@ -31,7 +31,7 @@ Tento příklad ukazuje, jak vytvořit a nastavit <xref:System.Windows.Data.Bind
  [!code-csharp[CodeOnlyBinding#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CodeOnlyBinding/CSharp/binding.cs#1)]
  [!code-vb[CodeOnlyBinding#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CodeOnlyBinding/VisualBasic/App.vb#1)]  
   
- Kompletní vzorek kódu, naleznete v tématu [pouze pro kód ukázkové vazby](https://msdn.microsoft.com/library/764aaf0b-2216-4941-9548-9c98da18d1a6).  
+ Kompletní vzorek kódu, naleznete v tématu [pouze pro kód ukázkové vazby](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771500(v=vs.90)).  
   
  Namísto volání metody <xref:System.Windows.FrameworkElement.SetBinding%2A>, můžete použít <xref:System.Windows.Data.BindingOperations.SetBinding%2A> statickou metodu <xref:System.Windows.Data.BindingOperations> třídy. Následující příklad, volání <xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType> místo <xref:System.Windows.FrameworkElement.SetBinding%2A?displayProperty=nameWithType> svázat `myText` k `myDataProperty`.  
   

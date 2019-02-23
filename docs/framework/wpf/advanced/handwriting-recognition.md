@@ -8,18 +8,18 @@ helpviewer_keywords:
 - handwriting recognition [WPF]
 - recognition of handwriting [WPF]
 ms.assetid: f4e8576d-e731-4bac-9818-22e2ae636636
-ms.openlocfilehash: 8f520b80970bfeebdfea01a6c722634efd99ffe7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a93c1486f191df31213fc6c85254ecd8801799b8
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54725386"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747298"
 ---
 # <a name="handwriting-recognition"></a>Rozpoznávání textu psaného rukou
 Tato část popisuje základní informace o rozpoznávání, protože se týkají digitálních inkoust v platformě WPF.  
   
 ## <a name="recognition-solutions"></a>Rozpoznávání řešení  
- Následující příklad ukazuje, jak rozpoznávání rukopisu pomocí [Microsoft.Ink.InkCollector](https://msdn.microsoft.com/library/microsoft.ink.inkcollector\(v=vs.90\).aspx) třídy.  
+ Následující příklad ukazuje, jak rozpoznávání rukopisu pomocí [Microsoft.Ink.InkCollector](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms583683(v=vs.90)) třídy.  
   
 > [!NOTE]
 >  Tato ukázka vyžaduje nainstalované nástroje pro rozpoznávání rukopisu v systému.  
@@ -34,4 +34,4 @@ Tato část popisuje základní informace o rozpoznávání, protože se týkaj�
  [!code-vb[InkRecognition#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InkRecognition/VisualBasic/Window1.xaml.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Microsoft.Ink.InkCollector](https://msdn.microsoft.com/library/microsoft.ink.inkcollector\(v=vs.90\).aspx)
+- [Microsoft.Ink.InkCollector](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms583683(v=vs.90))

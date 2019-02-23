@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ToolStripContainer control [Windows Forms]
 - ToolStrip control [Windows Forms], ToolStripContainer
 ms.assetid: 378fa5b4-38e1-46f4-8e5c-d0c19dcd0200
-ms.openlocfilehash: 260d79b7c6432c3dede5b593eaa3f1e52ed35c5e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 569fccfffe1d117d7ab404f72d0275e7391926da
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54588298"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56746795"
 ---
 # <a name="toolstripcontainer-control"></a>ToolStripContainer – ovládací prvek
 <xref:System.Windows.Forms.ToolStrip> ovládací prvky funkce vestavěný rafting (sdílení vodorovný nebo svislý prostor v rámci oblasti nástroje, pokud je ukotven) s použitím <xref:System.Windows.Forms.ToolStripContainer>.  
@@ -35,7 +35,7 @@ ms.locfileid: "54588298"
  <xref:System.Windows.Forms.ToolStripContentPanel>  
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.ToolStripContentPanel> z <xref:System.Windows.Forms.ToolStripContainer> ovládacího prvku.  
   
- Viz také [ToolStripContainer – dialogové okno úloh](https://msdn.microsoft.com/library/ms233647\(v=vs.110\)).  
+ Viz také [ToolStripContainer – dialogové okno úloh](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233647(v=vs.100)).  
   
 ## <a name="related-sections"></a>Související oddíly  
  <xref:System.Windows.Forms.ToolStripPanel>  

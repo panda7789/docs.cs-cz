@@ -5,12 +5,12 @@ helpviewer_keywords:
 - splitter windows
 - SplitContainer control [Windows Forms]
 ms.assetid: 2e36f17f-5c39-4fb4-bb09-7ce3ef823402
-ms.openlocfilehash: 63b1a4b9b2483d017a686819573f91744d8a565a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0afc1aba32852406b975cc65ab4d4bff334d3ff7
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518804"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56745460"
 ---
 # <a name="splitcontainer-control-windows-forms"></a>SplitContainer – ovládací prvek (Windows Forms)
 Windows Forms `SplitContainer` ovládací prvek lze považovat za složeného; je dva panely oddělené přesouvatelný panelu. Když je ukazatel myši nad panelu, ukazatel se změní tvar, který má zobrazit, že panel je přesouvatelný.  
@@ -24,16 +24,16 @@ Windows Forms `SplitContainer` ovládací prvek lze považovat za složeného; j
  [Přehled ovládacího prvku SplitContainer](../../../../docs/framework/winforms/controls/splitcontainer-control-overview-windows-forms.md)  
  Zavádí `SplitContainer` řídit a popisuje běžně používané vlastnosti, metody a události.  
   
- [Postupy: Definování chování změny velikosti a polohování v rozděleném okně](../../../../docs/framework/winforms/controls/how-to-define-resize-and-positioning-behavior-in-a-split-window.md)  
+ [Postupy: Definování změny velikosti a polohování v rozděleném okně chování](../../../../docs/framework/winforms/controls/how-to-define-resize-and-positioning-behavior-in-a-split-window.md)  
  Popisuje, jak řídit rozdělovač v rámci `SplitContainer` ovládacího prvku.  
   
  [Postupy: Vodorovné rozdělení okna](../../../../docs/framework/winforms/controls/how-to-split-a-window-horizontally.md)  
  Popisuje, jak řídit orientaci ovládacího prvku rozdělovač v rámci `SplitContainer` ovládacího prvku.  
   
- [Postupy: Vytváření uživatelského rozhraní s více podokny pomocí Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)  
+ [Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-a-multipane-user-interface-with-windows-forms.md)  
  Vytvoří více podokně uživatelské rozhraní, který je podobný tomu použitému v aplikaci Microsoft Outlook.  
   
- Také naleznete v tématu [jak: Rozdělit okno vodorovně pomocí návrháře](how-to-split-a-window-horizontally-using-the-designer.md), [postupy: vytváření rozhraní ve stylu Průzkumníka Windows ve formuláři Windows Forms](https://msdn.microsoft.com/library/zh2fe5a5\(v=vs.110\)), [postupy: vytvoření uživatelského rozhraní Multipane s Windows Forms pomocí návrháře](create-a-multipane-user-interface-with-wf-using-the-designer.md).  
+ Viz také [jak: Rozdělení okna pomocí návrháře vodorovně](how-to-split-a-window-horizontally-using-the-designer.md), [jak: Vytváření rozhraní ve stylu Průzkumníka Windows ve formuláři Windows Forms](how-to-create-a-windows-explorer-style-interface-on-a-windows-form.md), [jak: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms pomocí návrháře](create-a-multipane-user-interface-with-wf-using-the-designer.md).  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.SplitContainer> Třída  

@@ -3,12 +3,12 @@ title: Dodatky k formátu csproj pro .NET Core
 description: Další informace o rozdílech mezi stávající a soubory csproj .NET Core
 author: blackdwarf
 ms.date: 09/22/2017
-ms.openlocfilehash: 74cde39a0bbba65d252d64bcedb91c3949dcf6f2
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: d715a3a30c48f1c3fa837b24ee21b49fa947011a
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222061"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56748007"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 
@@ -97,26 +97,26 @@ Kořen `<Project>` elementu *.csproj* soubor obsahuje nový atribut volá `Sdk`.
 Je potřeba mít `Sdk` nastavený atribut na jednu z těchto ID na `<Project>` prvku abyste mohli použít nástroje pro .NET Core a vytváření kódu. 
 
 ### <a name="packagereference"></a>PackageReference
-A `<PackageReference>` prvek položky určuje závislostí NuGet v projektu. `Include` Atribut určuje ID balíčku. 
+A `<PackageReference>` určuje prvek položky [závislostí NuGet v projektu](/nuget/consume-packages/package-references-in-project-files). `Include` Atribut určuje ID balíčku. 
 
 ```xml
 <PackageReference Include="<package-id>" Version="" PrivateAssets="" IncludeAssets="" ExcludeAssets="" />
 ```
 
 #### <a name="version"></a>Version
-`Version` Určuje verzi balíčku, který se obnovit. Atribut respektuje pravidla [správy verzí NuGet](/nuget/create-packages/dependency-versions#version-ranges) schéma. Výchozí chování je shoda přesnou verzi. Například zadání `Version="1.2.3"` je ekvivalentní zápisu NuGet `[1.2.3]` pro přesné 1.2.3 verzi balíčku.
+Požadované `Version` atribut určuje verzi balíčku k obnovení. Atribut respektuje pravidla [správy verzí NuGet](/nuget/reference/package-versioning#version-ranges-and-wildcards) schéma. Výchozí chování je shoda přesnou verzi. Například zadání `Version="1.2.3"` je ekvivalentní zápisu NuGet `[1.2.3]` pro přesné 1.2.3 verzi balíčku.
 
 #### <a name="includeassets-excludeassets-and-privateassets"></a>IncludeAssets, ExcludeAssets a PrivateAssets
-`IncludeAssets` atribut určuje, jaké prostředky, které patří do určeného balíčku `<PackageReference>` by měl používat. 
+`IncludeAssets` atribut určuje, jaké prostředky, které patří do určeného balíčku `<PackageReference>` by měl používat. Ve výchozím nastavení jsou zahrnuty všechny prostředky balíčku.
 
 `ExcludeAssets` atribut určuje, jaké prostředky, které patří do určeného balíčku `<PackageReference>` by neměla využívat.
 
-`PrivateAssets` atribut určuje, jaké prostředky, které patří do určeného balíčku `<PackageReference>` by měl používat, ale ne směrovat do příští projekt. 
+`PrivateAssets` atribut určuje, jaké prostředky, které patří do určeného balíčku `<PackageReference>` by měl používat, ale ne směrovat do příští projekt. `Analyzers`, `Build` a `ContentFiles` prostředky jsou ve výchozím nastavení privátní, když tento atribut není k dispozici.
 
 > [!NOTE]
 > `PrivateAssets` je ekvivalentní *project.json*/*xproj* `SuppressParent` elementu.
 
-Tyto atributy mohou obsahovat jednu nebo více z následujících položek:
+Tyto atributy mohou obsahovat jednu nebo více následující položky oddělené středníkem `;` znaku, pokud je uveden více než jeden:
 
 * `Compile` – je možné kompilovat proti obsah složky lib.
 * `Runtime` – obsah složky modulu runtime jsou distribuovány.
@@ -184,7 +184,7 @@ Logická hodnota určující, zda lze zabalit projekt. Výchozí hodnota je `tru
 ### <a name="packageversion"></a>PackageVersion
 Určuje verzi, bude výsledný balíček. Přijímá všechny formy řetězec verze NuGet. Výchozí hodnota je hodnota `$(Version)`, to znamená, vlastnosti `Version` v projektu. 
 
-### <a name="packageid"></a>ID balíčku
+### <a name="packageid"></a>PackageId
 Určuje název pro výsledný balíček. Pokud není zadán, `pack` operace budou ve výchozím nastavení použití `AssemblyName` nebo název adresáře jako název balíčku. 
 
 ### <a name="title"></a>Název
@@ -206,12 +206,64 @@ Podrobnosti o autorských právech pro balíček.
 ### <a name="packagerequirelicenseacceptance"></a>PackageRequireLicenseAcceptance
 Logická hodnota určující, zda klient musí požádat spotřebitele o přijetí licence balíčku před instalací balíčku. Výchozí hodnota je `false`.
 
+### <a name="packagelicenseexpression"></a>PackageLicenseExpression
+
+Výraz SPDX licence nebo cesta k souboru licencí v rámci balíčku, často zobrazuje v uživatelském rozhraní nuget.org.
+
+Tady je úplný seznam [SPDX licence identifikátory](https://spdx.org/licenses/). NuGet.org přijímá pouze OSI nebo licenci FSF schválení licence při použití výrazu typu.
+
+Syntaxe výrazů licence je popsaný dole v [ABNF](https://tools.ietf.org/html/rfc5234).
+```cli
+license-id            = <short form license identifier from https://spdx.org/spdx-specification-21-web-version#h.luq9dgcle9mo>
+
+license-exception-id  = <short form license exception identifier from https://spdx.org/spdx-specification-21-web-version#h.ruv3yl8g6czd>
+
+simple-expression = license-id / license-id”+”
+
+compound-expression =  1*1(simple-expression /
+                simple-expression "WITH" license-exception-id /
+                compound-expression "AND" compound-expression /
+                compound-expression "OR" compound-expression ) /                
+                "(" compound-expression ")" )
+
+license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
+```
+
+> [!NOTE]
+> Pouze jeden z `PackageLicenseExpression`, `PackageLicenseFile` a `PackageLicenseUrl` lze zadat najednou.
+
+### <a name="packagelicensefile"></a>PackageLicenseFile
+
+Cesta k souboru licencí v rámci balíčku, pokud používáte licenci, která ještě není přiřazený identifikátor SPDX, nebo vlastní licenci (jinak `PackageLicenseExpression` je upřednostňované)
+
+> [!NOTE]
+> Pouze jeden z `PackageLicenseExpression`, `PackageLicenseFile` a `PackageLicenseUrl` lze zadat najednou.
+
 ### <a name="packagelicenseurl"></a>PackageLicenseUrl
-Adresu URL licence, která se vztahuje na balíček.
 
-### <a name="packageprojecturl"></a>PackageProjectUrl
-Adresa URL domovské stránky balíčku, často zobrazuje v uživatelském rozhraní nuget.org.
+Adresu URL licence, která se vztahuje na balíček. (_zastaralé od verze Visual Studio 15.9.4, sady .NET SDK 2.1.502 a 2.2.101_)
 
+### <a name="packagelicenseexpression"></a>PackageLicenseExpression
+
+[SPDX licence identifikátor](https://spdx.org/licenses/) nebo výrazu, tedy `Apache-2.0`.
+
+Nahradí `PackageLicenseUrl`, nelze kombinovat s `PackageLicenseFile` a vyžaduje Visual Studio 15.9.4 2.1.502 nebo 2.2.101, sady .NET SDK nebo novější.
+
+### <a name="packagelicensefile"></a>PackageLicenseFile
+
+Cesta k licenci souboru na disku, relativní k souboru projektu, tedy `LICENSE.txt`.
+
+Nahradí `PackageLicenseUrl`, nelze kombinovat s `PackageLicenseExpression` a vyžaduje Visual Studio 15.9.4 2.1.502 nebo 2.2.101, sady .NET SDK nebo novější.
+
+Budete muset zajistit, že soubor s licencí je zabalena tak, že explicitně přidáte k projektu, příklady použití:
+```xml
+<PropertyGroup>
+  <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+</PropertyGroup>
+<ItemGroup>
+  <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+</ItemGroup>
+```
 ### <a name="packageiconurl"></a>PackageIconUrl
 Adresa URL pro bitovou kopii 64 x 64 s průhledným pozadím použít jako ikona pro balíček zobrazená v uživatelském rozhraní.
 

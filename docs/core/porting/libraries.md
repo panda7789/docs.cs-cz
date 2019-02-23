@@ -2,14 +2,14 @@
 title: Port knihoven pro .NET Core
 description: Zjistěte, jak přenést projekty knihovny z rozhraní .NET Framework do .NET Core.
 author: cartermp
-ms.date: 12/7/2018
+ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 8190dcfd3ffed9051c7724752a19d88e7bef4f4d
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: 8709c4942bcd1b0fc7f0e75ee41e5c9a01df83ee
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904704"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56745557"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>Port knihovny rozhraní .NET Framework do .NET Core
 
@@ -26,7 +26,7 @@ Tento článek předpokládá, že jste:
 
 Měli byste si také se seznámit s obsahem v následujících tématech:
 
-[.NET Standard](~/docs/standard/net-standard.md)   
+[.NET Standard](../../standard/net-standard.md)\
 Toto téma popisuje formální specifikaci rozhraní API .NET, která mají být k dispozici na všech implementace .NET.
 
 [Balíčky, Metabalíčky a architektury](~/docs/core/packages.md)   

@@ -1,16 +1,10 @@
 ---
 title: Nasazení aplikace .NET core
-description: Další informace o způsobech, jak nasadit aplikaci .NET Core.
+description: 'Další informace o způsobech, jak nasadit aplikaci .NET Core.'
 author: rpetrusha
 ms.author: ronpet
 ms.date: 12/03/2018
 ms.custom: seodec18
-ms.openlocfilehash: 78dfaf46d1531e9d416b25d7ad4a595d5b3f947b
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55266907"
 ---
 # <a name="net-core-application-deployment"></a>Nasazení aplikace .NET core
 
@@ -30,7 +24,7 @@ Pro disketové jednotky nasaďte jenom aplikace a závislostí třetích stran. 
 
 Nasazení disketové jednotky má několik výhod:
 
-- Není nutné definovat cílový operační systémy, které se spustí aplikace .NET Core na předem. Vzhledem k tomu .NET Core používá běžný formát souborů PE pro spustitelné soubory a knihovny bez ohledu na operační systém, .NET Core může spustit vaši aplikaci bez ohledu na příslušný operační systém. Další informace o souborovém formátu PE najdete v tématu [formát souborů sestavení .NET](../../standard/assembly-format.md).
+- Není nutné definovat cílový operační systémy, které se spustí aplikace .NET Core na předem. Vzhledem k tomu .NET Core používá běžný formát souborů PE pro spustitelné soubory a knihovny bez ohledu na operační systém, .NET Core může spustit vaši aplikaci bez ohledu na příslušný operační systém. Další informace o souborovém formátu PE najdete v tématu [formát souborů sestavení .NET](../../standard/assembly/file-format.md).
 
 - Velikost nasazovaného balíčku je malá. Pouze nasazení aplikace a jeho závislosti, ne .NET Core samotný.
 

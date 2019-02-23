@@ -9,12 +9,12 @@ helpviewer_keywords:
 - layout [Windows Forms], TableLayoutPanel control
 - automatic sizing
 ms.assetid: f55175c6-424e-4782-a86e-3f79c1550235
-ms.openlocfilehash: 671553b496520f2c2ac3fea90b1514a6cdf1764a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 9813a1b969d0232ec842b91385d0ad893b71c0d6
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43467278"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747324"
 ---
 # <a name="tablelayoutpanel-control-windows-forms"></a>TableLayoutPanel – ovládací prvek (Windows Forms)
 <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek uspořádá její obsah do mřížky. Protože je prováděna rozložení i v době návrhu a běhu, můžete změnit dynamicky se změnami prostředí aplikace. To umožňuje ovládací prvky v panelu proporcionálně velikost, tak můžou reagovat na změny, jako je například změna velikosti nadřazeného ovládacího prvku nebo text délka mění kvůli lokalizace.  
@@ -29,7 +29,7 @@ ms.locfileid: "43467278"
  [Chování AutoSize v ovládacím prvku TableLayoutPanel](../../../../docs/framework/winforms/controls/autosize-behavior-in-the-tablelayoutpanel-control.md)  
  Popisuje způsoby <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek podporuje automatické velikosti chování.  
   
- [Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
+ [Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](../../../../docs/framework/winforms/controls/how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)  
  Ukazuje, jak a ukotvení podřízených ovládacích prvků v <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku.  
   
  [Postupy: Návrh rozložení Windows Forms, jež odpovídá lokalizaci](../../../../docs/framework/winforms/controls/how-to-design-a-windows-forms-layout-that-responds-well-to-localization.md)  
@@ -40,11 +40,11 @@ ms.locfileid: "43467278"
   
 1.  [Postupy: Zarovnání a roztažení ovládacího prvku v ovládacím prvku TableLayoutPanel](how-to-align-and-stretch-a-control-in-a-tablelayoutpanel-control.md)  
   
-2.  [Postupy: Nastavení rozpětí řádků a sloupců v ovládacím prvku TableLayoutPanel](how-to-span-rows-and-columns-in-a-tablelayoutpanel-control.md)  
+2.  [Postupy: Rozpětí řádků a sloupců v ovládacím prvku TableLayoutPanel](how-to-span-rows-and-columns-in-a-tablelayoutpanel-control.md)  
   
 3.  [Postupy: Upravování sloupců a řádků v ovládacím prvku TableLayoutPanel](how-to-edit-columns-and-rows-in-a-tablelayoutpanel-control.md)  
   
-4.  [Postupy: Uspořádání ovládacích prvků na Windows Forms s použitím ovládacího prvku TableLayoutPanel](https://msdn.microsoft.com/library/w4yc3e8c\(v=vs.110\))  
+4.  [Návod: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.TableLayoutPanel>  
@@ -60,4 +60,4 @@ ms.locfileid: "43467278"
  [Lokalizace](../../../../docs/standard/globalization-localization/localization.md)  
  Poskytuje přehled o tématech vztahujících se k lokalizaci.  
   
- Viz také [lokalizace aplikace](https://msdn.microsoft.com/library/z68135h5\(v=vs.110\)) nebo [lokalizace aplikace](https://msdn.microsoft.com/library/z68135h5\(v=vs.120\))
+ Viz také [lokalizace aplikace](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/z68135h5(v=vs.120)).

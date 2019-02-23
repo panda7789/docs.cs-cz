@@ -7,18 +7,18 @@ helpviewer_keywords:
 - reusing commonly defined objects [WPF]
 - XAML [WPF], reusing resources
 ms.assetid: 91580b89-a0a8-4889-aecb-fddf8e63175f
-ms.openlocfilehash: 5898d3236f58cd40c5e1ccd446b756b94e3fb113
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 04d1a72d70d6fd0753677f2e9635a05a60d33fec
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718660"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56748268"
 ---
 # <a name="xaml-resources"></a>Zdroje XAML
 Prostředek je objekt, který je možné využít v různých míst ve své aplikaci. Příklady prostředků: štětce a styly. Tento přehled popisuje, jak použít zdroje v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Můžete také vytvořit a přístup k prostředkům pomocí kódu nebo Zaměnitelně mezi kódem a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Další informace najdete v tématu [zdroje a kód](../../../../docs/framework/wpf/advanced/resources-and-code.md).  
   
 > [!NOTE]
->  Soubory prostředků, které jsou popsané v tomto tématu se liší podle soubory prostředků [prostředek aplikace WPF, obsah a datové soubory](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md) a jiné než vložené nebo propojené prostředky podle [ Správa prostředků aplikace (.NET)](https://msdn.microsoft.com/library/f2582734-8ada-4baa-8a7c-e2ef943ddf7e).  
+>  Soubory prostředků, které jsou popsané v tomto tématu se liší podle soubory prostředků [prostředek aplikace WPF, obsah a datové soubory](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md) a jiné než vložené nebo propojené prostředky podle [spravovat Prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet).  
   
   
 <a name="usingresources"></a>   

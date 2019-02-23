@@ -7,12 +7,12 @@ helpviewer_keywords:
 - data [Windows Forms], architecture
 - Windows Forms controls, data binding
 ms.assetid: c3826d8e-ea25-4ad4-a669-45bfb19192aa
-ms.openlocfilehash: cfb4c59c76142420f479b0b16a6d80317e98d159
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: b33ad9d78230588b9c1afd5d59fd0333e2cd18a6
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43486007"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747058"
 ---
 # <a name="windows-forms-data-binding"></a>Windows Forms – datová vazba
 Datové vazby v modelu Windows Forms poskytuje způsob, jak zobrazit a udělat změny informací ze zdroje dat v ovládacích prvcích ve formuláři. Můžete svázat do zdroje dat pro tradiční i téměř jakoukoli strukturu, která obsahuje data.  
@@ -27,7 +27,7 @@ Datové vazby v modelu Windows Forms poskytuje způsob, jak zobrazit a udělat z
  [Rozhraní související s datovou vazbou](../../../docs/framework/winforms/interfaces-related-to-data-binding.md)  
  Popisuje několik součástí Windows Forms – datová vazba rozhraní.  
   
- [Postupy: Procházení dat v rozhraní Windows Forms](../../../docs/framework/winforms/how-to-navigate-data-in-windows-forms.md)  
+ [Postupy: Procházení dat v modelu Windows Forms](../../../docs/framework/winforms/how-to-navigate-data-in-windows-forms.md)  
  Ukazuje, jak přejděte přes položky ve zdroji dat.  
   
  [Oznámení změn v datové vazbě Windows Forms](../../../docs/framework/winforms/change-notification-in-windows-forms-data-binding.md)  
@@ -45,13 +45,13 @@ Datové vazby v modelu Windows Forms poskytuje způsob, jak zobrazit a udělat z
  [Postupy: Implementace rozhraní IListSource](../../../docs/framework/winforms/how-to-implement-the-ilistsource-interface.md)  
  Ukazuje, jak implementovat <xref:System.ComponentModel.IListSource> neimplementuje rozhraní pro vytvoření třídy s možností vazby <xref:System.Collections.IList>, ale poskytuje seznam z jiného umístění.  
   
- [Postupy: Zajištění, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných](../../../docs/framework/winforms/multiple-controls-bound-to-data-source-synchronized.md)  
+ [Postupy: Zajištění více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných](../../../docs/framework/winforms/multiple-controls-bound-to-data-source-synchronized.md)  
  Ukazuje, jak zpracovat <xref:System.Windows.Forms.BindingSource.BindingComplete> událostí, aby všechny ovládací prvky vázané na zdroji dat zůstalo synchronizovaných.  
   
- [Postupy: Zajištění, aby vybraný řádek v podřízené tabulce zůstal ve správné pozici](../../../docs/framework/winforms/ensure-the-selected-row-in-a-child-table-correct.md)  
+ [Postupy: Zajistěte, aby že vybraný řádek v podřízené tabulce zůstal ve správné pozici](../../../docs/framework/winforms/ensure-the-selected-row-in-a-child-table-correct.md)  
  Ukazuje, jak zajistit vybraný řádek v podřízené tabulce nemění, když ke změně pole nadřazené tabulky.  
   
- Také naleznete v tématu [související rozhraní datové vazby](https://msdn.microsoft.com/library/41e17s4b\(v=vs.110\)), [postupy: procházení dat v modelu Windows Forms](https://msdn.microsoft.com/library/b63ha24w\(v=vs.110\)), [postupy: vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows Forms](https://msdn.microsoft.com/library/sw223a62\(v=vs.110\)).  
+ Viz také [související rozhraní datové vazby](interfaces-related-to-data-binding.md), [jak: Procházení dat v modelu Windows Forms](how-to-navigate-data-in-windows-forms.md), a [jak: Vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows Forms](how-to-create-a-simple-bound-control-on-a-windows-form.md).  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.Binding?displayProperty=nameWithType>  

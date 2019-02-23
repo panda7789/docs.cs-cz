@@ -5,12 +5,12 @@ helpviewer_keywords:
 - printing [WPF]
 - print system management [WPF]
 ms.assetid: 5f3d391a-4afd-49ee-ad99-ceb737c0c8a8
-ms.openlocfilehash: c920aff295fd22cc7faa90c2f9421840f9b60b69
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 24899d8a2184c73b50902de4a30c39327576ded1
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56441200"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747353"
 ---
 # <a name="printing-how-to-topics"></a>Postupy: Témata tisku
 Témata v této části ukazují, jak používat tisk a funkce pro správu tisku systému součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] a také novou [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] cesta tisku.  
@@ -30,9 +30,6 @@ Témata v této části ukazují, jak používat tisk a funkce pro správu tisku
   
  [Výčet dílčí sady tiskové fronty](../../../../docs/framework/wpf/advanced/how-to-enumerate-a-subset-of-print-queues.md)  
  Pokyny pro generování seznamu sad tiskárny, které mají určité charakteristické vlastnosti.  
-  
- [NOTINBUILD: Postupy: Rozšíření schématu, tisku a vytvářet nové třídy tiskovém systému](https://msdn.microsoft.com/library/a3600218-1ea5-478a-9853-6560464f2885)  
- Rozšířené informace o jak spravovaný kód programátoři můžete rozšířit schéma tisku pro tisková zařízení speciální nebo tiskárny s neobvyklé nebo nové funkce.  
   
  [Načtení vlastností systémového objektu tisku bez reflexe](../../../../docs/framework/wpf/advanced/how-to-get-print-system-object-properties-without-reflection.md)  
  Pokyny k zjišťování v době běhu tisk systémový objekt vlastností a jejich typy.  

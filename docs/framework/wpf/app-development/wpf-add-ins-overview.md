@@ -12,12 +12,12 @@ helpviewer_keywords:
 - add-ins [WPF], architecture
 - add-ins [WPF], limitations
 ms.assetid: 00b4c776-29a8-4dba-b603-280a0cdc2ade
-ms.openlocfilehash: 48981a942461570c0ef822dba9b18cb9a41f59f8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 47e76a1d08f8c85eafa7758ec9fdd80d8ae8afcf
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54662735"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56746559"
 ---
 # <a name="wpf-add-ins-overview"></a>Přehled doplňků WPF
 <a name="Introduction"></a> Rozhraní .NET Framework obsahuje doplněk model, pomocí kterých mohou vývojáři vytvářet aplikace, které podporují rozšiřitelnosti doplňku. Tento model doplňku umožňuje vytvářet doplňky, které integrovat a rozšířit funkce aplikace. V některých případech také potřeba aplikace zobrazit uživatelské rozhraní, které jsou k dispozici v doplňcích. Toto téma ukazuje, jak argumentech WPF rozhraní .NET Framework – model doplňku povolit tyto scénáře a architektura stojí za to, jeho výhody a omezení.  
@@ -100,7 +100,7 @@ ms.locfileid: "54662735"
 -   Má <xref:System.SerializableAttribute> atribut.  
   
 > [!NOTE]
->  Další informace týkající se vytváření objektů rozhraní .NET Framework lze používat vzdáleně, naleznete v tématu [provádění lze použít vzdáleně objekty](https://msdn.microsoft.com/library/01197253-3f13-43b7-894d-9683e431192a).  
+>  Další informace týkající se vytváření objektů rozhraní .NET Framework lze používat vzdáleně, naleznete v tématu [provádění lze použít vzdáleně objekty](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/wcf3swha(v=vs.100)).  
   
  Typy rozhraní WPF nejsou podpory vzdáleného přístupu. Problém vyřešit, rozšiřuje WPF rozhraní .NET Framework – model doplňku povolit rozhraní WPF vytvořené doplňky zobrazený z hostitele aplikací. Tato podpora je poskytována ve WPF dva typy: <xref:System.AddIn.Contract.INativeHandleContract> rozhraní a dvě statické metody implementované <xref:System.AddIn.Pipeline.FrameworkElementAdapters> třídy: <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A> a <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>. Na vysoké úrovni se používají tyto typy a metody následujícím způsobem:  
   
@@ -286,6 +286,6 @@ ms.locfileid: "54662735"
 - <xref:System.LoaderOptimizationAttribute>
 - [Doplňky a rozšíření](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))
 - [Aplikační domény](../../../../docs/framework/app-domains/application-domains.md)
-- [Vzdálené komunikace .NET framework – přehled](https://msdn.microsoft.com/library/eccb1d31-0a22-417a-97fd-f4f1f3aa4462)
-- [Vytváření objektů lze používat vzdáleně](https://msdn.microsoft.com/library/01197253-3f13-43b7-894d-9683e431192a)
+- [Vzdálené komunikace .NET framework – přehled](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kwdt6w2k(v=vs.100))
+- [Vytváření objektů lze používat vzdáleně](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/wcf3swha(v=vs.100))
 - [Témata s postupy](../../../../docs/framework/wpf/app-development/how-to-topics.md)

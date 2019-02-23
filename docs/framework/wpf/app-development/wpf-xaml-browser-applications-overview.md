@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: b243ee7fdb72aaf749492a008708da4209a7736e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 04bfc2df15829b63e6f2541eb95a4dd14836744c
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54611979"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747016"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>
@@ -35,7 +35,7 @@ ms.locfileid: "54611979"
   
 <a name="creating_a_new_xaml_browser_application_xbap"></a>   
 ## <a name="creating-a-new-xaml-browser-application-xbap"></a>Vytvoření nové aplikace prohlížeče XAML (XBAP)  
- Nejjednodušší způsob, jak vytvořit nového projektu XBAP, který je sadou Microsoft Visual Studio. Při vytváření nového projektu, vyberte **aplikace WPF pro prohlížeč** ze seznamu šablon. Další informace najdete v tématu [jak: Vytvoření nového projektu aplikace prohlížeče WPF](https://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f).  
+ Nejjednodušší způsob, jak vytvořit nového projektu XBAP, který je sadou Microsoft Visual Studio. Při vytváření nového projektu, vyberte **aplikace WPF pro prohlížeč** ze seznamu šablon. Další informace najdete v tématu [jak: Vytvoření nového projektu aplikace prohlížeče WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)).  
   
  Při spuštění projektu XBAP, který se otevře v okně prohlížeče místo samostatné okna. Když ladíte XBAP ze sady Visual Studio, aplikace se spustí s oprávněním zóny Internet a vyvolá proto bezpečnostním výjimkám překročení těchto oprávnění. Další informace najdete v tématu [zabezpečení](../../../../docs/framework/wpf/security-wpf.md) a [částečné zabezpečení důvěryhodnosti WPF](../../../../docs/framework/wpf/wpf-partial-trust-security.md).  
   

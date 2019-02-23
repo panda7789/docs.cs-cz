@@ -6,12 +6,12 @@ helpviewer_keywords:
 - timers
 - timers [Windows Forms], creating
 ms.assetid: 6700e534-6382-43d5-98ed-14205435fff7
-ms.openlocfilehash: 1a00bfa0772273f9374d292e27f5fba174172ca6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 1c0ad0b644c0af6a4e0982b1437291e923ca79cc
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43499871"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56745402"
 ---
 # <a name="timer-component-windows-forms"></a>Součást Časovač (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.Timer> je komponenta, která vyvolává událost v pravidelných intervalech. Tato součást je určená pro prostředí Windows Forms.  
@@ -36,6 +36,3 @@ Windows Forms <xref:System.Windows.Forms.Timer> je komponenta, která vyvolává
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
  Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
-  
- [Ovládací prvek časovače pro uživatele jazyka Visual Basic 6.0](https://msdn.microsoft.com/library/38e5184a-1e50-45cf-b936-dae566c0cfc5)  
- Popisuje, jak má časovači změněna v jazyce Visual Basic porovnání s předchozími verzemi.

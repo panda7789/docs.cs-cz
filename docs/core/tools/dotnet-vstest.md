@@ -3,12 +3,12 @@ title: příkaz DotNet vstest
 description: Příkaz dotnet vstest sestavení projektu a všechny jeho závislosti.
 author: guardrex
 ms.date: 05/30/2018
-ms.openlocfilehash: cafd862f6107be9173aad6d610cf6f8fd62e1489
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: d41e901f70b4a3d0647c693fdd8076f771466073
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169013"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747726"
 ---
 # <a name="dotnet-vstest"></a>DotNet test
 
@@ -20,20 +20,20 @@ ms.locfileid: "53169013"
 
 ## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 ```
 dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath]
     [--Platform|/Platform] [--Framework|/Framework] [--Parallel|/Parallel] [--TestCaseFilter|/TestCaseFilter] [--logger|/logger]
     [-lt|--ListTests|/lt|/ListTests] [--ParentProcessId|/ParentProcessId] [--Port|/Port] [--Diag|/Diag] [--Blame|/Blame] [--InIsolation|/InIsolation]
     [[--] <args>...]] [-?|--Help|/?|/Help]
 ```
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 ```
 dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath] 
     [--Platform|/Platform] [--Framework|/Framework] [--Parallel|/Parallel] [--TestCaseFilter|/TestCaseFilter] [--logger|/logger]
     [-lt|--ListTests|/lt|/ListTests] [--ParentProcessId|/ParentProcessId] [--Port|/Port] [--Diag|/Diag] [[--] <args>...]] [-?|--Help|/?|/Help]
 ```
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 ```
 dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--TestAdapterPath|/TestAdapterPath]
     [--Platform|/Platform] [--Framework|/Framework] [--Parallel|/Parallel] [--TestCaseFilter|/TestCaseFilter] [--logger|/logger] 
@@ -43,7 +43,7 @@ dotnet vstest [<TEST_FILE_NAMES>] [--Settings|/Settings] [--Tests|/Tests] [--Tes
 
 ## <a name="description"></a>Popis
 
-`dotnet-vstest` Příkaz spustí `VSTest.Console` aplikace příkazového řádku spustit automatizované částí a kódované testy uživatelského rozhraní aplikace.
+`dotnet-vstest` Příkaz spustí `VSTest.Console` aplikace příkazového řádku, chcete-li spustit automatizované testy jednotky.
 
 ## <a name="arguments"></a>Arguments
 
@@ -53,7 +53,7 @@ Spusťte testy ze zadaných sestaveních. Více názvů sestavení testu oddělt
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
 `--Settings|/Settings:<Settings File>`
 
@@ -73,11 +73,11 @@ Cílová architektura platformy, použít pro spuštění testu. Platné hodnoty
 
 `--Framework|/Framework:<Framework Version>`
 
-Cílová verze rozhraní .NET Framework používá pro spuštění testu. Příklady platných hodnot `.NETFramework,Version=v4.6` nebo `.NETCoreApp,Version=v1.0`. Další podporované hodnoty jsou `Framework35`, `Framework40`, `Framework45`, `FrameworkCore10`, a `FrameworkUap10`.
+Cílová verze rozhraní .NET Framework používá pro spuštění testu. Příklady platných hodnot `.NETFramework,Version=v4.6` nebo `.NETCoreApp,Version=v1.0`. Další podporované hodnoty jsou `Framework40`, `Framework45`, `FrameworkCore10`, a `FrameworkUap10`.
 
 `--Parallel|/Parallel`
 
-Spusťte testy paralelně. Ve výchozím nastavení se dají používat všechna dostupná jádra počítače. Nastavte explicitní počet jader pomocí souboru nastavení.
+Spusťte testy paralelně. Ve výchozím nastavení se dají používat všechna dostupná jádra počítače. Zadejte explicitní počet jader pomocí nastavení MaxCpuCount vlastnosti uzlu RunConfiguration v souboru runsettings.
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
@@ -142,7 +142,7 @@ Přečte soubor odpovědí pro další možnosti.
 
 Určuje další argumenty pro adaptér. Argumenty se zadávají jako dvojice název hodnota ve formátu `<n>=<v>`, kde `<n>` je název argumentu a `<v>` je hodnota argumentu. Prostor použijte k oddělení víc argumentů.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 
 `--Settings|/Settings:<Settings File>`
 
@@ -162,11 +162,11 @@ Cílová architektura platformy, použít pro spuštění testu. Platné hodnoty
 
 `--Framework|/Framework:<Framework Version>`
 
-Cílová verze rozhraní .NET Framework používá pro spuštění testu. Příklady platných hodnot `.NETFramework,Version=v4.6` nebo `.NETCoreApp,Version=v1.0`. Další podporované hodnoty jsou `Framework35`, `Framework40`, `Framework45`, a `FrameworkCore10`.
+Cílová verze rozhraní .NET Framework používá pro spuštění testu. Příklady platných hodnot `.NETFramework,Version=v4.6` nebo `.NETCoreApp,Version=v1.0`. Další podporované hodnoty jsou `Framework40`, `Framework45`, a `FrameworkCore10`.
 
 `--Parallel|/Parallel`
 
-Spusťte testy paralelně. Ve výchozím nastavení se dají používat všechna dostupná jádra počítače. Nastavte explicitní počet jader pomocí souboru nastavení.
+Spusťte testy paralelně. Ve výchozím nastavení se dají používat všechna dostupná jádra počítače. Zadejte explicitní počet jader pomocí nastavení MaxCpuCount vlastnosti uzlu RunConfiguration v souboru runsettings.
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 
@@ -218,7 +218,7 @@ Umožňuje podrobné protokoly pro testovací platformě sady. Protokoly se zapi
 
 Určuje další argumenty pro adaptér. Argumenty se zadávají jako dvojice název hodnota ve formátu `<n>=<v>`, kde `<n>` je název argumentu a `<v>` je hodnota argumentu. Prostor použijte k oddělení víc argumentů.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `--Settings|/Settings:<Settings File>`
 
@@ -238,11 +238,11 @@ Cílová architektura platformy, použít pro spuštění testu. Platné hodnoty
 
 `--Framework|/Framework:<Framework Version>`
 
-Cílová verze rozhraní .NET Framework používá pro spuštění testu. Příklady platných hodnot `.NETFramework,Version=v4.6` nebo `.NETCoreApp,Version=v1.0`. Další podporované hodnoty jsou `Framework35`, `Framework40`, `Framework45`, a `FrameworkCore10`.
+Cílová verze rozhraní .NET Framework používá pro spuštění testu. Příklady platných hodnot `.NETFramework,Version=v4.6` nebo `.NETCoreApp,Version=v1.0`. Další podporované hodnoty jsou `Framework40`, `Framework45`, a `FrameworkCore10`.
 
 `--Parallel|/Parallel`
 
-Spusťte testy paralelně. Ve výchozím nastavení se dají používat všechna dostupná jádra počítače. Nastavte explicitní počet jader pomocí souboru nastavení.
+Spusťte testy paralelně. Ve výchozím nastavení se dají používat všechna dostupná jádra počítače. Zadejte explicitní počet jader pomocí nastavení MaxCpuCount vlastnosti uzlu RunConfiguration v souboru runsettings.
 
 `--TestCaseFilter|/TestCaseFilter:<Expression>`
 

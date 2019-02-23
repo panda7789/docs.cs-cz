@@ -2,12 +2,12 @@
 title: Přátelská sestavení (C#)
 ms.date: 07/20/2015
 ms.assetid: b65ea7de-0801-477a-a39c-e914c2cc107c
-ms.openlocfilehash: e464162f12fe386c37262753331635ea82b128b0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5de27643be8f5ddbf533ebb75b66666fc6bc148b
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576977"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56748190"
 ---
 # <a name="friend-assemblies-c"></a>Přátelská sestavení (C#)
 A *sestavení typu friend* je sestavení, které můžou přistupovat k jiné sestavení [interní](../../../../csharp/language-reference/keywords/internal.md) typy a členy. Pokud identifikujete sestavení jako sestavení typu friend, máte již označit typy a členy jako veřejné je přístupná pomocí jiné sestavení. To je zvlášť vhodné v následujících scénářích:  
@@ -76,5 +76,5 @@ public class ClassWithFriendMethod
 - <xref:System.Security.Permissions.StrongNameIdentityPermission>
 - [Postupy: Vytváření nepodepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)
 - [Postupy: Vytváření podepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)
-- [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)
+- [Sestavení v rozhraní .NET](../../../../standard/assembly/index.md)
 - [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)

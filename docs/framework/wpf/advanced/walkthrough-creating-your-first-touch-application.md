@@ -10,12 +10,12 @@ helpviewer_keywords:
 - touch-sensitive applications [WPF], creating
 - creating a touchscreen application [WPF]
 ms.assetid: d69e602e-9a25-4e24-950b-e89eaa2a906b
-ms.openlocfilehash: 34a534653455449233c2908f4226cdb3a9bb9867
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d6a59d3e80e8eb3810b04e1535b72bc4b133b7df
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54724236"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747674"
 ---
 # <a name="walkthrough-creating-your-first-touch-application"></a>Průvodce: Vytvoření první aplikace
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje aplikacím na dotykového ovládání. Například můžete pracovat s aplikací pomocí jedné nebo více prsty na dotyk zařízení, např. k tomu dotykovou obrazovku tento návod vytvoří aplikaci, která umožňuje uživateli přesunutí, změna velikosti nebo otočení jednoho objektu pomocí touch.  
@@ -33,7 +33,7 @@ ms.locfileid: "54724236"
   
 #### <a name="to-create-the-application"></a>Vytvoření aplikace  
   
-1.  Vytvoření nového projektu aplikace WPF v jazyce Visual Basic nebo Visual C# s názvem `BasicManipulation`. Další informace najdete v tématu [jak: Vytvoření nového projektu aplikace WPF](https://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82).  
+1.  Vytvoření nového projektu aplikace WPF v jazyce Visual Basic nebo Visual C# s názvem `BasicManipulation`. Další informace najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).  
   
 2.  Obsah souboru MainWindow.xaml nahraďte následující XAML.  
   

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - SnapLine class [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 ms.assetid: d5c9edc7-cf30-4a97-8ebe-201d569340f8
-ms.openlocfilehash: 2a2fd47c3ea2e675292c040f08b981a394e8221b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 136a655064fc0c955cadd2f15e5900579e90187a
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543221"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56748031"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-snaplines"></a>Průvodce: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar
 Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho aplikací. Návrhář formulářů Windows poskytuje celou řadu nástrojů rozložení, jak toho dosáhnout. Jednou z vašich nejdůležitějších je <xref:System.Windows.Forms.Design.Behavior.SnapLine> funkce.  
@@ -222,7 +222,7 @@ Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho
   
 #### <a name="to-disable-snaplines-in-the-design-environment"></a>Chcete-li zakázat zarovnávacích čar v prostředí návrhu  
   
-1.  Z **nástroje** nabídky, otevřete **možnosti** dialogové okno. Otevřete dialogové okno návrháře formulářů Windows. Podrobnosti najdete v tématu [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](https://msdn.microsoft.com/library/8dd170af-72f0-4212-b04b-034ceee92834).  
+1.  Z **nástroje** nabídky, otevřete **možnosti** dialogové okno. Otevřete dialogové okno návrháře formulářů Windows. Podrobnosti najdete v tématu [Obecné, Návrhář formulářů Windows, dialogové okno Možnosti](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/5aazxs78(v=vs.100)).  
   
 2.  Vyberte **Obecné** uzlu. V **režim rozložení** oddíl, změna výběru z **zarovnávacích čar** k **SnapToGrid**.  
   

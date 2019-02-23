@@ -2,12 +2,12 @@
 title: 'Průvodce: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)'
 ms.date: 07/20/2015
 ms.assetid: 55ed13c9-c5bb-4bc2-bcd8-0587eb568864
-ms.openlocfilehash: 39452702a3e757456ff00ee22e6eb1f90160ef38
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fd03154f9f4defdedd0694fe10398c6f62d920df
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54500626"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56746925"
 ---
 # <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-c"></a>Průvodce: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)
 Pokud jste pro vložení informací o typu ze spravovaných sestavení se silným názvem, můžete volně zkombinujte typy v aplikaci dosáhnout nezávislosti na verzi. To znamená váš program může zapisovat používat typy z více verzí aplikace spravované knihovny aniž byste museli překompilují. pro každou verzi.  
@@ -237,4 +237,4 @@ Pokud jste pro vložení informací o typu ze spravovaných sestavení se silný
 - [/ Link (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)
 - [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
 - [Programování se sestaveními](../../../../framework/app-domains/programming-with-assemblies.md)
-- [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)
+- [Sestavení v rozhraní .NET](../../../../standard/assembly/index.md)

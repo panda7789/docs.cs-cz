@@ -2,12 +2,12 @@
 title: Co je nového v C# 8.0 – C# Průvodce
 description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 2.
 ms.date: 02/12/2019
-ms.openlocfilehash: a1d41418b2f546c62f1d6a51b19337ee2d303ccc
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: 874420775215502ebdacb8420b3fe0e027d6660f
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56665258"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56747619"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
 
@@ -177,7 +177,7 @@ static string Quadrant(Point p) => p switch
 
 Vzor zrušení v předchozím přepínače odpovídá při buď `x` nebo `y`, ale ne obojí je 0. Výraz přepínače musíte vytvořit hodnotu nebo vyvolat výjimku. Výraz přepínače vyvolá výjimku, pokud neodpovídá žádná případů. Kompilátor vygeneruje upozornění za vás, pokud jste ve výrazu přepínače nepokrývají všechny možné případy.
 
-## <a name="using-declarations"></a>pomocí deklarace
+## <a name="using-declarations"></a>Pomocí deklarace
 
 A **using – deklarace** deklaraci proměnné předchází `using` – klíčové slovo. To sděluje kompilátoru, že by mělo být uvolněno deklarované proměnné na konci nadřazeném oboru. Zvažte například následující kód, který zapisuje do textového souboru:
 
@@ -247,23 +247,23 @@ int M()
     int x = 7;
     return Add(x, y);
 
-    int Add(int left, int right) => left + right;
+    static int Add(int left, int right) => left + right;
 }
 ```
 
 ## <a name="disposable-ref-structs"></a>Struktury ref uvolnitelné
 
-A `struct` deklarované s `ref` modifikátor nemusí implementovat jakékoli rozhraní a proto nemůže implementovat <xref:System.IDisposable>. Proto aby `ref struct` odstraněn, musí mít k dispozici přístup `void Dispose()` metoda.
+A `struct` deklarované s `ref` modifikátor nemusí implementovat jakékoli rozhraní a proto nemůže implementovat <xref:System.IDisposable>. Proto aby `ref struct` odstraněn, musí mít k dispozici přístup `void Dispose()` metoda. To platí i pro `readonly ref struct` deklarace.
 
 ## <a name="nullable-reference-types"></a>Typy s možnou hodnotou Null odkazů
 
 V kontextu poznámky s možnou hodnotou Null, všechny proměnné typu odkazu se považuje za **nonnullable odkazový typ**. Pokud chcete určit, že proměnná může mít hodnotu null, musí připojit k názvu typu `?` deklarovat jako proměnnou **typ s možnou hodnotou Null odkazu**.
 
-Pro typy odkazů nemá kompilátor používá k zajištění, že místní proměnné jsou inicializovány na hodnotu než null při deklaraci analýzy toku. Pole musí být inicializován během konstrukce. Kompilátor generuje upozornění, pokud proměnná není nastavená v všechny konstruktory nebo inicializátor. Kromě toho nemá odkazové typy nelze přiřadit hodnotu, která může mít hodnotu null.
+Pro typy odkazů nemá kompilátor používá k zajištění, že místní proměnné jsou inicializovány na hodnotu než null při deklaraci analýzy toku. Pole musí být inicializován během konstrukce. Kompilátor generuje upozornění, pokud proměnná není nastavená voláním kterýkoli z konstruktorů k dispozici nebo inicializátor. Kromě toho nemá odkazové typy nelze přiřadit hodnotu, která může mít hodnotu null.
 
 Typy odkazů s možnou hodnotou Null nejsou kontrola nejsou přiřazen nebo inicializován na hodnotu null. Však kompilátor používá k zajištění, že všechny proměnné typu odkazu s možnou hodnotou null je porovnány s hodnotou null, předtím, než má získat přístup nebo přiřazený k typu odkazu nonnullable analýzy toku.
 
-Další informace o funkci v přehledu [typy s možnou hodnotou Null odkazů](../nullable-references.md). Vyzkoušejte si to sami v nové aplikaci v tomto [kurzu typy s možnou hodnotou Null reference](../tutorials/nullable-reference-types.md). Seznamte se s kroky při migraci z existujícího základu kódu, aby použití typů s povolenou hodnotou Null odkaz [migrace aplikace pro použití s možnou hodnotou NULL referenční typy kurzu].. /tutorials/upgrade-to-Nullable-References.MD).
+Další informace o funkci v přehledu [typy s možnou hodnotou Null odkazů](../nullable-references.md). Vyzkoušejte si to sami v nové aplikaci v tomto [kurzu typy s možnou hodnotou Null reference](../tutorials/nullable-reference-types.md). Seznamte se s kroky při migraci z existujícího základu kódu, aby použití typů s povolenou hodnotou Null odkazu v [migrace aplikace pro použití s možnou hodnotou NULL referenční typy kurzu](../tutorials/upgrade-to-nullable-references.md).
 
 ## <a name="asynchronous-streams"></a>Asynchronní datové proudy
 
@@ -301,7 +301,7 @@ Můžete zkusit asynchronními datovými proudy sami v našem kurzu [vytvářen�
 
 Rozsahy a indexy poskytují stručné syntaxe pro zadání podrozsahů v poli, <xref:System.Span%601>, nebo <xref:System.ReadOnlySpan%601>.
 
-Můžete určit index **od konce**. Zadáte **od konce** pomocí `^` operátor. Jste obeznámeni s `array[2]` znamená elementu "2 od samého začátku". Nyní `array[^2]` znamená, že element "2 od konce". Index `^0` znamená "end", nebo jedna po posledním prvku.
+Můžete určit index **od konce**. Zadáte **od konce** pomocí `^` operátor. Jste obeznámeni s `array[2]` znamená elementu "2 od samého začátku". Nyní `array[^2]` znamená, že element "2 od konce". Index `^0` znamená "end", nebo index, který následuje po posledním prvku.
 
 Můžete zadat **rozsah** s **operátor rozsahu**: `..`. Například `0..^0` určuje celý rozsah pole: 0 od začátku až do, s výjimkou 0 od konce. Jeden z operandů může používat "z start" nebo "end". Kromě toho může vynechat jeden z operandů. Výchozí hodnoty jsou `0` pro počáteční index a `^0` end indexu.
 

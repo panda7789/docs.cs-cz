@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: 3bae07f8b72225ccb502a32fbc03fb4651c80d63
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 682563937de0bb907b97ee4237d33c76307493da
+ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54654279"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56745635"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
 Aplikace Windows Presentation Foundation (WPF) může být sestaven jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] spustitelné soubory (.exe), knihovny (DLL), nebo kombinací obou typů sestavení. Toto téma popisuje, jak vytvořit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací a popisuje klíčové kroky v procesu sestavení.  
@@ -26,7 +26,7 @@ Aplikace Windows Presentation Foundation (WPF) může být sestaven jako [!INCLU
   
 -   Microsoft Build Engine (MSBuild). Kromě kód a soubory XAML musí aplikace obsahovat souboru projektu MSBuild. Další informace najdete v tématu "MSBuild".  
   
--   Visual Studio. Visual Studio je integrované vývojové prostředí, které aplikace WPF pomocí nástroje MSBuild zkompiluje a obsahuje vizuálního návrháře pro vytvoření uživatelského rozhraní. Další informace najdete v tématu [vývoj aplikací v sadě Visual Studio](https://msdn.microsoft.com/library/97490c1b-a247-41fb-8f2c-bc4c201eff68) a [návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio).  
+-   Visual Studio. Visual Studio je integrované vývojové prostředí, které aplikace WPF pomocí nástroje MSBuild zkompiluje a obsahuje vizuálního návrháře pro vytvoření uživatelského rozhraní. Další informace najdete v tématu [zapisovat a spravovat kód pomocí sady Visual Studio](/visualstudio/ide/index-writing-code) a [návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio).  
   
 <a name="The_Windows_Presentation_Foundation_Build_Pipeline"></a>   
 ## <a name="wpf-build-pipeline"></a>WPF Build Pipeline  
