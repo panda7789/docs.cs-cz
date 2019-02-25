@@ -11,18 +11,18 @@ helpviewer_keywords:
 ms.assetid: 1660f69c-5711-45d2-abc1-e25bc6779124
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0d9b72766ce2e93472a07eebdf7bf59cc7b0328d
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: f98f095f888a8ef3622fabbf4c4745af60e930e3
+ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56220570"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56584054"
 ---
 # <a name="how-to-bind-data-to-the-windows-forms-datagridview-control"></a>Postupy: Vytvoření vazby dat na ovládací prvek Windows Forms DataGridView
 
 <xref:System.Windows.Forms.DataGridView> Ovládací prvek podporuje standardní Windows Forms datový model vazby, aby mohl vytvořit vazbu k řadě zdrojů dat. Obvykle můžete svázat <xref:System.Windows.Forms.BindingSource> , který spravuje interakci se zdroji dat. <xref:System.Windows.Forms.BindingSource> Může být libovolný zdroj dat Windows Forms, který dává velkou flexibilitu při výběru nebo úpravách umístění vašich dat. Další informace o zdrojích dat <xref:System.Windows.Forms.DataGridView> podporuje ovládací prvek, najdete v článku [Přehled ovládacího prvku DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-overview-windows-forms.md).  
 
-Visual Studio poskytuje rozsáhlou podporu pro vytváření datových vazeb k ovládacím prvku DataGridView. Další informace najdete v tématu [jak: Vytvoření vazby dat na ovládací prvek Windows Forms DataGridView pomocí návrháře](https://msdn.microsoft.com/library/33w255ac\(v=vs.110\)).  
+Visual Studio poskytuje rozsáhlou podporu pro vytváření datových vazeb k ovládacím prvku DataGridView. Další informace najdete v tématu [jak: Vytvoření vazby dat na ovládací prvek Windows Forms DataGridView pomocí návrháře](bind-data-to-the-datagrid-using-the-designer.md).  
 
 Ovládací prvek DataGridView připojení k datům:
 
@@ -40,7 +40,7 @@ Tento příklad vyžaduje:
 
 - Odkazy na sestavení systému, System.Windows.Forms, System.Data a System.Xml.  
 
-Chcete-li sestavit a spustit tento příklad, vložte kód do *Form1* soubor kódu v novém projektu Windows Forms.  Další informace najdete v tématu [jak: Kompilace a spuštění kompletního příkladu kódu Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)). Informace o vytváření z C# nebo příkazového řádku jazyka Visual Basic, naleznete v tématu [příkazového řádku pomocí csc.exe](/csharp/language-reference/compiler-options/command-line-building-with-csc-exe) nebo [sestavení z příkazového řádku](/visual-basic/reference/command-line-compiler/building-from-the-command-line).  
+Chcete-li sestavit a spustit tento příklad, vložte kód do *Form1* soubor kódu v novém projektu Windows Forms. Informace o vytváření z C# nebo příkazového řádku jazyka Visual Basic, naleznete v tématu [příkazového řádku pomocí csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) nebo [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md).  
   
 Naplnění `connectionString` proměnné v příkladu nahraďte hodnoty pro připojení ukázkové databáze Northwind SQL Server. Ověřování Windows, nazývané také integrovaného zabezpečení, je bezpečnější způsob, jak se připojit k databázi než uložení hesla v připojovacím řetězci. Další informace o zabezpečení připojení najdete v tématu [chránit informace o připojení](../../data/adonet/protecting-connection-information.md).  
 
