@@ -31,7 +31,8 @@
 ### [Analyzátor přenositelnosti](standard/analyzers/portability-analyzer.md)
 ### [Analyzátor architektury](standard/analyzers/framework-analyzer.md)
 ## [Zpracování a vyvolání výjimek](standard/exceptions/)
-## [Formát souborů sestavení .NET](standard/assembly-format.md)
+## [Sestavení v .NET](standard/assembly/index.md)
+### [Formát souborů sestavení .NET](standard/assembly/file-format.md) 
 ## [Uvolňování paměti](standard/garbage-collection/)
 ## [Obecné typy](standard/generics.md)
 ## [Delegáty a výrazy lambda](standard/delegates-lambdas.md)
@@ -521,7 +522,7 @@
 #### [Přizpůsobení výběru objektů dostupných v oboru názvů My](visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)
 
 ## [Koncepty programování](visual-basic/programming-guide/concepts/index.md)
-### [Sestavení a globální mezipaměť sestavení (GAC)](visual-basic/programming-guide/concepts/assemblies-gac/index.md)
+### [Sestavení v .NET](standard/assembly/index.md)
 ### [Asynchronní programování pomocí modifikátoru Async a operátoru Await](visual-basic/programming-guide/concepts/async/index.md)
 ### [Atributy](visual-basic/programming-guide/concepts/attributes/index.md)
 ### [Stromy výrazů](visual-basic/programming-guide/concepts/expression-trees/index.md)
