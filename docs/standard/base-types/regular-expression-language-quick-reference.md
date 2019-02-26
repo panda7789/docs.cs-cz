@@ -105,15 +105,15 @@ ms.locfileid: "55204883"
   
 <a name="grouping_constructs"></a>   
 ## <a name="grouping-constructs"></a>Seskupovací konstrukce  
- Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a obvykle zachytávají podřetězce vstupního řetězce. Seskupovací konstrukce obsahují prvky jazyka uvedené v následující tabulce. Další informace najdete v tématu [Grouping Constructs](grouping-constructs-in-regular-expressions.md).  
+ Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a obvykle zachytávají podřetězce vstupního řetězce. Seskupovací konstrukce obsahují prvky jazyka uvedené v následující tabulce. Další informace najdete v tématu [Seskupovací konstrukce](grouping-constructs-in-regular-expressions.md).  
   
 |Seskupovací konstrukce|Popis|Vzor|Shody|  
 |------------------------|-----------------|-------------|-------------|  
 |`(` *Dílčí výraz* `)`|Zachycuje porovnané dílčí výrazy a přiřazuje jim řadové číslovky od jedné.|`(\w)\1`|"ee" ve slově "deep"|  
 |`(?<` *název* `>` *dílčí výraz* `)`|Zachycuje porovnaný dílčí výraz do pojmenované skupiny.|`(?<double>\w)\k<double>`|"ee" ve slově "deep"|  
-|`(?<` *name1* `-` *name2* `>` *dílčí výraz* `)`|Určuje definici vyrovnávací skupiny. Další informace najdete v části "Definice vyrovnávacího seskupení" v [Grouping Constructs](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|"((1-3)\*(3-1))" v "3+2^((1-3)\*(3-1))"|  
+|`(?<` *name1* `-` *name2* `>` *dílčí výraz* `)`|Určuje definici vyrovnávací skupiny. Další informace najdete v části "Definice vyrovnávacího seskupení" v [Seskupovací konstrukce](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|"((1-3)\*(3-1))" v "3+2^((1-3)\*(3-1))"|  
 |`(?:` *Dílčí výraz* `)`|Definuje skupinu bez zachytávání.|`Write(?:Line)?`|"WriteLine" ve výrazu "Console.WriteLine()"<br /><br /> "Write" ve výrazu "Console.Write(value)"|  
-|`(?imnsx-imnsx:` *Dílčí výraz* `)`|Použije nebo zakáže zadané možnosti v rámci *dílčí výraz*. Další informace najdete v tématu [Regular Expression Options](regular-expression-options.md).|`A\d{2}(?i:\w+)\b`|"A12xl", "A12XL" ve výrazu "A12xl A12XL a12xl"|  
+|`(?imnsx-imnsx:` *Dílčí výraz* `)`|Použije nebo zakáže zadané možnosti v rámci *dílčí výraz*. Další informace najdete v tématu [Možnosti regulárních výrazů](regular-expression-options.md).|`A\d{2}(?i:\w+)\b`|"A12xl", "A12XL" ve výrazu "A12xl A12XL a12xl"|  
 |`(?=` *Dílčí výraz* `)`|Kontrolní výraz pozitivního dopředného vyhledávání s nulovou šířkou.|`\w+(?=\.)`|"is", "ran" a "out" ve výrazu "He is. The dog ran. The sun is out."|  
 |`(?!` *Dílčí výraz* `)`|Kontrolní výraz negativního dopředného vyhledávání s nulovou šířkou.|`\b(?!un)\w+\b`|"sure", "used" ve výrazu "unsure sure unity used"|  
 |`(?<=` *Dílčí výraz* `)`|Kontrolní výraz pozitivního zpětného vyhledávání s nulovou šířkou.|`(?<=19)\d{2}\b`|"99", "50", "05" ve výrazu "1851 1999 1950 1905 2003"|  
@@ -185,22 +185,22 @@ ms.locfileid: "55204883"
   
 <a name="options"></a>   
 ## <a name="regular-expression-options"></a>Možnosti regulárních výrazů  
- Můžete zadat možnosti, které řídí způsob, jakým modul regulárních výrazů interpretuje vzor regulárního výrazu. Mnohé z těchto možností může být zadán buď jako vložené (ve vzoru regulárního výrazu), nebo jako jeden nebo více <xref:System.Text.RegularExpressions.RegexOptions> konstanty. Tyto stručné referenční informace uvádí pouze vložené možnosti. Další informace o vložených a <xref:System.Text.RegularExpressions.RegexOptions> možnosti, najdete v článku [Regular Expression Options](regular-expression-options.md).  
+ Můžete zadat možnosti, které řídí způsob, jakým modul regulárních výrazů interpretuje vzor regulárního výrazu. Mnohé z těchto možností může být zadán buď jako vložené (ve vzoru regulárního výrazu), nebo jako jeden nebo více <xref:System.Text.RegularExpressions.RegexOptions> konstanty. Tyto stručné referenční informace uvádí pouze vložené možnosti. Další informace o vložených a <xref:System.Text.RegularExpressions.RegexOptions> možnosti, najdete v článku [Možnosti regulárních výrazů](regular-expression-options.md).  
   
  Vloženou možnost můžete zadat dvěma způsoby:  
   
 -   S použitím [různých konstrukcí](miscellaneous-constructs-in-regular-expressions.md) `(?imnsx-imnsx)`, kde znaménko mínus (-) před možností nebo sadou možností vypne tyto možnosti. Například `(?i-mn)` zapne porovnávání (`i`), vypne víceřádkový režim (`m`) a vypne zachycení nepojmenované skupiny (`n`) vypnout. Možnost se vztahuje na vzor regulárního výrazu od bodu, ve kterém je možnost definována, a platí buď až do konce vzoru nebo do bodu, ve kterém je možnost zrušena jiným konstruktorem.  
   
--   S použitím [Seskupující konstrukce](grouping-constructs-in-regular-expressions.md)`(?imnsx-imnsx:`*dílčí výraz*`)`, která definuje možnosti pouze zadané skupiny.  
+-   S použitím [seskupující konstrukce](grouping-constructs-in-regular-expressions.md)`(?imnsx-imnsx:`*dílčí výraz*`)`, která definuje možnosti pouze zadané skupiny.  
   
  Modul regulárních výrazů .NET podporuje následující vložené možnosti.  
   
 |Možnost|Popis|Vzor|Shody|  
 |------------|-----------------|-------------|-------------|  
 |`i`|Použije porovnávání, které nerozlišuje velká a malá písmena.|`\b(?i)a(?-i)a\w+\b`|"aardvark", "aaaAuto" ve výrazu "aardvark AAAuto aaaAuto Adam breakfast"|  
-|`m`|Použije víceřádkový režim. `^` a `$` odpovídají začátku a konci řádku namísto začátku a konce řetězce.|Příklad naleznete v části "Víceřádkový mód" v [Regular Expression Options](regular-expression-options.md).||  
-|`n`|Nezachytí nepojmenované skupiny.|Příklad najdete v části "Pouze explicitní zachycení" v [Regular Expression Options](regular-expression-options.md).||  
-|`s`|Použije jednořádkový režim.|Příklad naleznete v části "jednořádkový mód" v [Regular Expression Options](regular-expression-options.md).||  
+|`m`|Použije víceřádkový režim. `^` a `$` odpovídají začátku a konci řádku namísto začátku a konce řetězce.|Příklad naleznete v části "Víceřádkový mód" v [Možnosti regulárních výrazů](regular-expression-options.md).||  
+|`n`|Nezachytí nepojmenované skupiny.|Příklad najdete v části "Pouze explicitní zachycení" v [Možnosti regulárních výrazů](regular-expression-options.md).||  
+|`s`|Použije jednořádkový režim.|Příklad naleznete v části "jednořádkový mód" v [Možnosti regulárních výrazů](regular-expression-options.md).||  
 |`x`|Ignoruje prázdný znak bez řídicího znaku ve vzoru regulárního výrazu.|`\b(?x) \d+ \s \w+`|"1 aardvark", "2 cats" ve výrazu "1 aardvark 2 cats IV centurions"|  
   
  [Zpět na začátek](#top)  
@@ -211,7 +211,7 @@ ms.locfileid: "55204883"
   
 |Konstrukce|Definice|Příklad|  
 |---------------|----------------|-------------|  
-|`(?imnsx-imnsx)`|Nastaví nebo zakáže možnosti, jako je nerozlišování velikosti písmen uprostřed vzoru. Další informace najdete v tématu [Regular Expression Options](regular-expression-options.md).|`\bA(?i)b\w+\b` odpovídá "ABA", "Able" v "ABA Able Act"|  
+|`(?imnsx-imnsx)`|Nastaví nebo zakáže možnosti, jako je nerozlišování velikosti písmen uprostřed vzoru. Další informace najdete v tématu [Možnosti regulárních výrazů](regular-expression-options.md).|`\bA(?i)b\w+\b` odpovídá "ABA", "Able" v "ABA Able Act"|  
 |`(?#` *Komentář* `)`|Vložený komentář. Komentář končí první pravou závorkou.|`\bA(?#Matches words starting with A)\w+\b`|  
 |`#` [do konce řádku]|Komentář x-mode. Komentář začíná znakem `#` a pokračuje na konec řádku.|`(?x)\bA\w+\b#Matches words starting with A`|  
   
