@@ -1,19 +1,13 @@
 ---
-title: Pokyny k návrhu architektury
+title: "Pokyny k\_návrhu architektury"
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- libraries, .NET Framework class library
-- class library design guidelines [.NET Framework], about
-- class library design guidelines [.NET Framework]
+  - 'libraries, .NET Framework class library'
+  - 'class library design guidelines [.NET Framework], about'
+  - 'class library design guidelines [.NET Framework]'
 ms.assetid: 5fbcaf4f-ea2a-4d20-b0d6-e61dee202b4b
 author: KrzysztofCwalina
-ms.openlocfilehash: 4d563bdba1b71f1d9ca34621471da2692fa716b5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54531457"
 ---
 # <a name="framework-design-guidelines"></a>Pokyny k návrhu architektury
 Tato část obsahuje pokyny pro návrh knihoven, které rozšiřují a pracovat s rozhraním .NET Framework. Cílem je pomoct knihovny návrhářů tím, že poskytuje jednotný programovací model, který je nezávislý na programovací jazyk se používá pro vývoj pro zajištění konzistence rozhraní API a snadné použití. Doporučujeme postupovat podle následujících pokynů návrhu, při vytváření tříd a komponent, které rozšiřují rozhraní .NET Framework. Návrh nekonzistentní knihovny nepříznivě má vliv na produktivitu vývojářů a odrazuje od přijetí.  
@@ -51,5 +45,4 @@ Tato část obsahuje pokyny pro návrh knihoven, které rozšiřují a pracovat 
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled](../../../docs/framework/get-started/overview.md)
-- [Plán pro rozhraní .NET Framework](https://msdn.microsoft.com/library/0b46b7c6-9163-4f99-8e58-0d1ee7da8c67)
 - [Průvodce vývojem](../../../docs/framework/development-guide.md)

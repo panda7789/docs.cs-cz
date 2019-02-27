@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5ae6f76ba358d07101f56de321a9453b3eee1bf2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 40dc7abd8adffef04535f6492be14bf6463ca30d
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54674034"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835808"
 ---
 # <a name="when-to-use-generic-collections"></a>Kdy použít generické kolekce
 Použitím obecných kolekcí se obecně nedoporučuje, protože výhod získáte tak okamžitý bezpečnosti typů bez nutnosti odvozen od typu základní kolekce a implementovat typ konkrétní členy. Obecné typy kolekcí také obecně poskytují vyšší výkon než odpovídající kolekci neobecné typy (a lepší než u typů, které jsou odvozeny ze základních typů neobecných kolekcí) při elementy z kolekce jsou typy hodnot, protože u obecných typů už není potřeba pole prvků.  
@@ -46,7 +46,7 @@ Použitím obecných kolekcí se obecně nedoporučuje, protože výhod získát
 -   <xref:System.Collections.Concurrent.ConcurrentBag%601> poskytuje rychlé vkládání a odstranění prvků Neseřazený.  
   
 ## <a name="linq-to-objects"></a>LINQ na objekty  
- Funkce LINQ to Objects umožňuje použít dotazy LINQ pro přístup k objektům v paměti, dokud objektový typ implementuje <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> rozhraní. Dotazy LINQ poskytují společný vzor pro přístup k datům; jsou obvykle stručnější a čitelnější než standardní `foreach` smyčky a poskytují filtrování, řazení a seskupování schopností. Dotazy LINQ mohou také zvýšit výkon. Další informace najdete v tématu [LINQ to Objects](https://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9) a [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
+ Funkce LINQ to Objects umožňuje použít dotazy LINQ pro přístup k objektům v paměti, dokud objektový typ implementuje <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> rozhraní. Dotazy LINQ poskytují společný vzor pro přístup k datům; jsou obvykle stručnější a čitelnější než standardní `foreach` smyčky a poskytují filtrování, řazení a seskupování schopností. Dotazy LINQ mohou také zvýšit výkon. Další informace najdete v tématu [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md), a [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
   
 ## <a name="additional-functionality"></a>Další funkce  
  Některé obecné typy mají funkce, který se nenachází v kolekci neobecné typy. Například <xref:System.Collections.Generic.List%601> třídu, která odpovídá neobecné <xref:System.Collections.ArrayList> třídu, má několik metod, které přijímají obecných delegátů, jako <xref:System.Predicate%601> delegáta, který vám umožní určit metody pro hledání v seznamu <xref:System.Action%601>delegáta, který představuje metody, které působí na každý prvek seznamu a <xref:System.Converter%602> delegáta, který umožňuje definovat převody mezi typy.  

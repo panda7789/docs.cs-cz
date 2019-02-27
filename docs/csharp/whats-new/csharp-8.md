@@ -2,12 +2,12 @@
 title: Co je nového v C# 8.0 – C# Průvodce
 description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 2.
 ms.date: 02/12/2019
-ms.openlocfilehash: 874420775215502ebdacb8420b3fe0e027d6660f
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 1aa5a200f84b35fda3c33a900655249d07000e8e
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56747619"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835431"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
 
@@ -119,13 +119,13 @@ public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
         // other cases removed for brevity...
         _ => 0M
     };
-    ```
+```
 
-Pattern matching creates a concise syntax for expressing this algorithm.
+Porovnávání vzorů vytvoří stručnější syntaxe pro vyjádření tento algoritmus.
 
-### Tuple patterns
+### <a name="tuple-patterns"></a>Vzory řazené kolekce členů
 
-Some algorithms depend on multiple inputs. **Tuple patterns** allow you to switch based on multiple values expressed as a [tuple](../tuples.md).  The following code shows a switch expression for the game *rock, paper, scissors*:
+Některé algoritmy závisí na více vstupů. **Vzory řazené kolekce členů** bylo možné přepnout na základě více hodnot, vyjádřené jako [řazené kolekce členů](../tuples.md).  Následující kód ukazuje výraz přepínače hry *rock, dokument, nůžek*:
 
 ```csharp
 public static string RockPaperScissors(string first, string second)
@@ -139,13 +139,13 @@ public static string RockPaperScissors(string first, string second)
         ("scissors", "paper") => "scissors cuts paper. Scissors wins.",
         (_, _) => "tie"
     };
-    ```
+```
 
-The messages indicate the winner. The discard case represents the three combinations for ties, or other text inputs.
+Zprávy určit vítěze. Případ zahození představuje tři kombinace pro vazby nebo další textovými vstupy.
 
-### Positional patterns
+### <a name="positional-patterns"></a>Poziční vzory
 
-Some types include a `Deconstruct` method that deconstructs its properties into discrete variables. When a `Deconstruct` method is accessible, you can use **positional patterns** to inspect properties of the object and use those properties for a pattern.  Consider the following `Point` class that includes a `Deconstruct` method to create discrete variables for `X` and `Y`:
+Některé typy zahrnují `Deconstruct` metodu, která do proměnných diskrétního deconstructs její vlastnosti. Když `Deconstruct` metoda je přístupná, můžete použít **poziční vzory** ke kontrole vlastností objektu a použijte tyto vlastnosti pro vzor.  Vezměte v úvahu následující `Point` třídu, která zahrnuje `Deconstruct` metodu pro vytvoření proměnné diskrétního pro `X` a `Y`:
 
 ```csharp
 public class Point

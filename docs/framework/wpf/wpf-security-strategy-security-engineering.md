@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Security Development Lifecycle (SDL), critical code management
 - threat modeling [WPF]
 ms.assetid: 0fc04394-4e47-49ca-b0cf-8cd1161d95b9
-ms.openlocfilehash: 6006024f29c37545ce95e579c7b93727d8c6bc67
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2ab6981b85d5b0663fd8e464a840bfbe55f6d3b0
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547745"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836588"
 ---
 # <a name="wpf-security-strategy---security-engineering"></a>Strategie zabezpečení WPF – engineering zabezpečení
 Trustworthy Computing je iniciativy Microsoftu pro zajištění provozní bezpečný kód. Je klíčovým prvkem Trustworthy Computing iniciativa zaměřená [!INCLUDE[TLA#tla_sdl](../../../includes/tlasharptla-sdl-md.md)]. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Je technický postup, který se používá ve spojení s standardní technického procesu usnadňuje poskytování zabezpečeného kódu. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Sestává z deset fází, které kombinují osvědčené postupy s oblast, measurability a další strukturu, včetně:  
@@ -94,5 +94,4 @@ Trustworthy Computing je iniciativy Microsoftu pro zajištění provozní bezpe�
 - [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)
 - [Strategie zabezpečení WPF – zabezpečení platformy](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)
 - [Trustworthy Computing](https://www.microsoft.com/mscorp/twc/default.mspx)
-- [Modelování aplikace před internetovými útoky](https://msdn.microsoft.com/security/securecode/threatmodeling/acetm/)
-- [Pokyny pro zabezpečení: Rozhraní .NET Framework 2.0](https://msdn.microsoft.com/library/default.asp?url=/library/dnpag2/html/PAGGuidelines0003.asp)
+- [Zabezpečení v rozhraní .NET](../../standard/security/index.md)

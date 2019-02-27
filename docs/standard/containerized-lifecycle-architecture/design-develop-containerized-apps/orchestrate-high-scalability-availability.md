@@ -3,181 +3,223 @@ title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou šk
 description: Skutečné produkční aplikace muset nasazují a spravují s orchestrátory, které zpracovávají stavu, úlohy a životní cykly všechny kontejnery.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 11/23/2018
-ms.openlocfilehash: 749b613ac847c57eb993bff90b36f02a0b39477f
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.date: 02/15/2019
+ms.openlocfilehash: e1ff3282c1fdf952177a1faa957398c33045a01c
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221157"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836159"
 ---
-# <a name="orchestrating-microservices-and-multicontainer-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
+# <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
-Využitím orchestrátorů, pro aplikace připravené pro produkční prostředí je nezbytné, pokud je vaše aplikace založené na mikroslužbách nebo jednoduše rozdělit mezi několik kontejnerů. Zavedeném dříve, v rámci přístupu založených na mikroslužbách vlastní jednotlivých mikroslužeb jeho modelu a datům tak, aby ho autonomní od vývoje a nasazení pohledu. Ale i v případě, že máte více tradiční aplikace, který se skládá z několika služeb (např. SOA), budou mít také více kontejnerů nebo služby vytvářející jednu obchodní aplikaci, která je nutné nasadit jako distribuovaný systém. Tyto druhy systémy jsou komplexní horizontální navýšení kapacity a Správa; proto naprosto nutné orchestrátor Pokud budete chtít mít připravené pro produkční prostředí a škálovatelné vícekontejnerových aplikací.
+Využitím orchestrátorů, pro aplikace připravené pro produkční prostředí je nezbytné, pokud je vaše aplikace založené na mikroslužbách nebo rozdělit mezi několik kontejnerů. Zavedeném dříve, v rámci přístupu založených na mikroslužbách vlastní jednotlivých mikroslužeb jeho modelu a datům tak, aby ho autonomní od vývoje a nasazení pohledu. Ale i v případě, že máte více tradiční aplikace, který se skládá z několika služeb (např. SOA), budou mít také více kontejnerů nebo služby vytvářející jednu obchodní aplikaci, která je nutné nasadit jako distribuovaný systém. Tyto druhy systémy jsou komplexní horizontální navýšení kapacity a Správa; Proto pokud chcete mít vícekontejnerová aplikace připravené pro produkční prostředí a škálovatelné se naprosto je nutné orchestrátor.
 
 Obrázek 4 až 6 ukazuje nasazení do clusteru aplikace skládá z několika mikroslužeb (kontejnery).
 
-![](./media/image6.png)
+![Složené aplikací Dockeru v clusteru: Použijete jeden kontejner pro každou repliku služby. Kontejnery dockeru jsou "jednotkách nasazení" a kontejner je, že instance hostitele Docker.A zpracovává mnoho kontejnerů](./media/image6.png)
 
-Obrázek 4 – 6: Cluster kontejnerů
+**Obrázek 4 až 6**. Cluster kontejnerů
 
 Vypadá jako logický přístup. Ale jak můžete zvládají Vyrovnávání zatížení, směrování a orchestraci těchto aplikací skládá?
 
-Rozhraní příkazového řádku Docker (CLI) splňuje potřeby správy jednoho kontejneru na jednom hostiteli, ale vrátí krátký se při rozhodování o Správa více kontejnerů, které jsou nasazeny na více hostitelích pro složitější distribuované aplikace. Ve většině případů je třeba platforma pro správu, který bude automaticky spustit kontejnery, pozastavení, nebo je vypnout, pokud je nepotřebujete a v ideálním případě také určují, jak bude přístup k prostředkům, jako je úložiště síť a data.
+Rozhraní příkazového řádku Docker (CLI) splňuje potřeby správy jednoho kontejneru na jednom hostiteli, ale vrátí krátký se při rozhodování o Správa více kontejnerů, které jsou nasazeny na více hostitelích pro složitější distribuované aplikace. Ve většině případů je třeba platforma pro správu, který bude automaticky spustit kontejnery, horizontální navýšení kapacity s více instancemi jednotlivé image kontejnerů, pozastavit je nebo je vypnout, když potřeba a v ideálním případě také určují, jak bude přístup k prostředkům, jako je síť a data úložiště.
 
-Se dostat nad rámec správu jednotlivých kontejnerů nebo velmi jednoduché složené aplikace a přesun směrem k větší podnikové aplikace s využitím mikroslužeb, musíte povolit orchestraci a clustering platformy.
+Se dostat nad rámec správu jednotlivých kontejnerů nebo jednoduché složené aplikace a přesun směrem k větší podnikové aplikace s využitím mikroslužeb, musíte povolit orchestraci a clustering platformy.
 
 Z pro architekturu a vývoj pohledu Pokud je sestavení velké, enterprise, založených na mikroslužbách, aplikace, je důležité pochopit následující platformy a produkty, které podporují pokročilé scénáře:
 
--   **Clustery a orchestrátorů** potřeba škálovat-navýšení kapacity aplikace napříč mnoha hostitelů Docker, jako s velkých aplikací založených na mikroslužbách je důležité mít možnost spravovat všechny tyto hostitele jako jeden cluster pomocí poskytuje abstrakci složitost základní platformy. Je to, co nabízejí clustery kontejnerů a orchestrátorů. Příklady orchestrátorů: Docker Swarm, Mesosphere DC/OS, Kubernetes (první tři dostupné prostřednictvím služby Azure Container Service) a Azure Service Fabric.
+- **Clustery a orchestrátorů.** Když budete potřebovat pro horizontální navýšení kapacity aplikace v mnoha hostitelích Dockeru, jako s velkých aplikací založených na mikroslužbách, je důležité mít možnost spravovat všechny tyto hostitele jako jeden cluster podle abstrahovat složitost základní platformy. Je to, co nabízejí clustery kontejnerů a orchestrátorů. Příklady orchestrátorů: Azure Service Fabric a Kubernetes. Kubernetes je k dispozici v Azure pomocí služby Azure Kubernetes Service.
 
--   **Plánovači** *plánování* znamená, že chcete mít možnost pro správce ke spuštění kontejnerů v clusteru tak, aby také poskytují uživatelské rozhraní. Plánovač clusteru má několik odpovědnosti: efektivně využívat prostředky clusteru, omezení zadaná uživatelem pro efektivní kontejnery pro vyrovnávání zatížení napříč uzly nebo hostitele a být odolnější proti chybám při zajištění vysoké dostupnost.
+- **Plánovači.** *Plánování* znamená, že chcete mít možnost pro správce ke spuštění kontejnerů v clusteru, takže plánovači také nabízí uživatelské rozhraní, to udělat. Plánovač clusteru má několik odpovědnosti: efektivně využívat prostředky clusteru, omezení zadaná uživatelem pro efektivní kontejnery pro vyrovnávání zatížení napříč uzly nebo hostitele a být odolnější proti chybám při zajištění vysoké dostupnost.
 
-Koncepty cluster a Plánovač jsou úzce souvisí, takže produkty k dispozici od různých dodavatelů často zadat obě sady funkcí. Tabulka 4-1 obsahuje nejdůležitější platformy a software volby, které máte pro clustery a plánovače. Tyto clustery se obvykle nabízejí ve veřejných cloudech, jako je Azure.
+Koncepty cluster a Plánovač jsou úzce souvisí, takže produkty k dispozici od různých dodavatelů často zadat obě sady funkcí. Následující sekci je uvedena nejdůležitější platformy a software volby, které máte pro clustery a plánovače. Tyto orchestrátorů se běžně nabízejí ve veřejných cloudech, jako je Azure.
 
-Tabulka 4-1: Softwarové platformy pro kontejner clustering, orchestraci a plánování
+## <a name="software-platforms-for-container-clustering-orchestration-and-scheduling"></a>Softwarové platformy pro kontejner clustering, orchestraci a plánování
 
-| Platforma | Popis |
-|---|---|
-| Docker Swarm<br/> ![Docker Swarm logo](./media/image7.png) | Docker Swarm poskytuje možnost seskupit do clusteru a plánovat kontejnery Dockeru. Pomocí Swarm můžete zapnout fondu hostitelů Docker do jednoho, virtuálního hostitele Dockeru. Klienti mohou provádět požadavky rozhraní API Swarm stejným způsobem, který se dělají na hostitele, což znamená, že Swarm usnadňuje aplikacím škálování na více hostitelích. <br /><br /> Docker Swarm je produkt z Dockeru, společnost. <br /><br /> Docker v1.12 nebo novější můžete spouštět nativní a integrované režimu Swarm. |
-| Mesosphere DC/OS<br/>![Logo mesosphere DC/OS](./media/image8.png) |  Mesosphere Enterprise DC/OS (založená na Apache Mesos) je platforma pro produkční prostředí pro spouštění kontejnerů a distribuovaných aplikací. <br /><br /> DC/OS, funguje tak, že poskytuje abstrakci kolekci prostředků, které jsou k dispozici v clusteru a zpřístupnění těchto prostředků komponenty sestavené dojde k jeho zvýraznění. Marathon se obvykle používá jako Plánovač integrovaná s DC/OS. |
-| Google Kubernetes<br />![Logo Google Kubernetes](./media/image9.png) | Kubernetes je opensourcový produkt, který poskytuje funkce, které od infrastruktura clusteru a plánování k funkcím orchestrací kontejnerů. Pomocí něho můžete automatizovat nasazení, škálování a provoz kontejnerů aplikací napříč clustery hostitelů. <br /><br /> Kubernetes poskytuje infrastrukturu zaměřené na kontejner, který seskupuje kontejnerů aplikací do logické jednotky pro snadnou správu a zjišťování. |
-| Azure Service Fabric<br />![Logo Azure Service Fabric](./media/image10.png) | [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) je platforma mikroslužeb Microsoftu pro sestavování aplikací. Je [orchestrator](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction) ze služeb a vytváří clustery počítačů. Ve výchozím nastavení Service Fabric nasadí a aktivuje služby jako proces, ale Service Fabric dokáže nasadit služby v imagí kontejnerů Dockeru. Důležitější, je možné kombinovat služby v procesech se službami v kontejnerech ve stejné aplikaci. <br /><br /> Od května 2017 je funkce produktu Service Fabric, který podporuje nasazení služby jako kontejnery Dockeru je ve verzi preview. <br /><br /> Při vývoji služeb Service Fabric mnoha způsoby používání [programovacích modelů Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework) až po nasazení [spustitelné soubory hosta](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-existing-app) stejně jako kontejnery. Service Fabric podporuje doporučené aplikace modely jako [stavové služby](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) a [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
+| Platforma | Komentáře |
+|:---:|:---|
+| **Kubernetes** <br/> ![Kubernetes Logo](./media/kubernetes-logo.png) | [*Kubernetes* ](https://kubernetes.io/) je opensourcový produkt, který poskytuje funkce, které od infrastruktura clusteru a kontejnerů plánování a orchestraci možnosti. Umožňuje vám automatizovat nasazování, škálování a provoz kontejnerů aplikací napříč clustery hostitelů. <br/> <br/> *Kubernetes* poskytuje infrastrukturu zaměřené na kontejner, který seskupuje kontejnerů aplikací do logické jednotky pro snadnou správu a zjišťování. <br/> <br/> *Kubernetes* je zavedený v systému Linux, méně až po zralé ve Windows. |
+| **Azure Kubernetes Service (AKS)** <br/> ![Logo Azure Kubernetes Service](./media/aks-logo.png) | [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) je spravovaná služba Orchestrace kontejnerů Kubernetes v Azure, která zjednodušuje správu clusteru Kubernetes, nasazení a provoz. |
+| **Azure Service Fabric** <br/> ![Logo Azure Service Fabric](./media/service-fabric-logo.png) | [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) je platforma mikroslužeb Microsoftu pro sestavování aplikací. Je [orchestrator](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction) ze služeb a vytváří clustery počítačů. Service Fabric dokáže nasadit služby, kontejnery nebo jako obyčejný procesy. Může dokonce kombinaci služby v procesech se službami v kontejnerech v rámci stejné aplikace a clusteru. <br/> <br/> *Service Fabric* clustery je možné nasadit v Azure, místně nebo v libovolném cloudu. Nasazení v Azure je však zjednodušen spravovaný přístup. <br/> <br/> *Service Fabric* poskytuje další a volitelné doporučené [programovacích modelů Service Fabric](https://azure.microsoft.com/documentation/articles/service-fabric-choose-framework/) jako [stavové služby](https://azure.microsoft.com/documentation/articles/service-fabric-reliable-services-introduction/) a [Reliable Actors](https://azure.microsoft.com/documentation/articles/service-fabric-reliable-actors-introduction/) . <br/> <br/> *Service Fabric* je zavedený ve Windows (roky vyvíjejí Windows), méně až po zralé v systému Linux. <br/> <br/> Od verze 2017 jsou podporovány kontejnery Linux i Windows v Service Fabric. |
+| **Síť Azure Service Fabric** <br/> ![Azure Service Fabric sítě Logo](./media/azure-service-fabric-mesh-logo.png) | [*Azure Service Fabric mřížky* ](https://docs.microsoft.com/azure/service-fabric-mesh/service-fabric-mesh-overview) nabízí stejnou spolehlivost, kritických pro chod výkonu a škálování jako Service Fabric, ale také nabízí plně spravované a bez serveru platformy. Není nutné ke správě clusteru, virtuální počítače, úložiště nebo síťové konfigurace. Můžete soustředit jen na vývoj vaší aplikace. <br/> <br/> *Service Fabric mřížky* podporuje kontejnery Windows i Linuxem, abyste mohli vyvíjet s libovolný programovací jazyk a rozhraní dle vlastního výběru.
 
 ## <a name="using-container-based-orchestrators-in-azure"></a>Pomocí orchestrátorů založených na kontejnerech v Azure
 
-Několik dodavatelů cloud nabízí podporu kontejnerů Dockeru a Docker clusterů a podporu Orchestrace, včetně Azure, Amazon EC2 Container Service a modul kontejnerů Google. Azure podporuje Docker clusteru a orchestrator prostřednictvím služby Azure Container Service, jak je vysvětleno v další části.
+Několik dodavatelů cloud nabízí podporu kontejnerů Dockeru a Docker clusterů a podporu Orchestrace, včetně Azure, Amazon EC2 Container Service a modul kontejnerů Google. Azure podporuje Docker clusteru a orchestrator prostřednictvím Azure Kubernetes Service (AKS), Azure Service Fabric a Azure Service Fabric mřížky.
 
-Další volbou je použití Azure Service Fabric, která podporuje také založené na Linuxu a Windows kontejnery Dockeru. Spustí Service Fabric v Azure nebo na jiný cloud a jednak [místní](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-anywhere).
+## <a name="using-azure-kubernetes-service"></a>Používání služby Azure Kubernetes
 
-## <a name="using-azure-container-service"></a>Pomocí služby Azure Container Service
+Kubernetes cluster fondy několik hostitelů Docker a zpřístupňuje jako jednoho virtuálního hostitele Docker, abyste mohli nasadit několik kontejnerů do clusteru a horizontální navýšení kapacity s libovolným počtem instancí kontejneru. Cluster bude zpracovávat složité správy základní, jako je škálovatelnost, stavu a tak dále.
 
-Docker cluster fondy více hostitelů Docker a zpřístupňuje jako jednoho virtuálního hostitele Docker, abyste mohli nasadit několik kontejnerů do clusteru. Cluster bude zpracovávat složité správy základní například škálovatelnost a stav. Obrázek 4 – 7 znázorňuje, jak mapuje clusteru Docker pro složené aplikace do služby Container Service.
+AKS zajišťuje zjednodušení vytváření, konfiguraci a správu clusterů virtuálních počítačů v Azure, které je předem nakonfigurované spouštění kontejnerizovaných aplikací. Použití optimalizovanou konfiguraci oblíbených nástrojů open source plánování a orchestraci, AKS vám umožní využívat své stávající dovednosti nebo nakreslit velké a stále se rozšiřujících odborných znalostech komunity k nasazení a správě kontejnerových aplikací v Microsoft Azure .
 
-Container Service umožňuje zjednodušení vytváření, konfiguraci a správu clusterů virtuálních počítačů, které je předem nakonfigurované spouštění kontejnerizovaných aplikací. Pomocí optimalizovanou konfiguraci oblíbených nástrojů open source plánování a orchestraci, služba Container Service poskytuje možnost používat svoje stávající dovednosti nebo nakreslit velké a stále se rozšiřujících odborných znalostech komunity k nasazení a správě kontejnerových aplikace v Azure.
+Azure Kubernetes Service optimalizuje konfiguraci oblíbených Docker clusteringu open source nástrojů a technologií konkrétně pro Azure. Získáte otevřené řešení, které nabízí přenositelnost pro vaše kontejnery i Konfigurace aplikací. Vyberete velikost, počet hostitelů a orchestrační nástroje a AKS postará o všechno ostatní.
 
-Container Service optimalizuje konfiguraci oblíbených Docker clusteringu open source nástrojů a technologií konkrétně pro Azure. Získáte otevřené řešení, které nabízí přenositelnost pro vaše kontejnery i Konfigurace aplikací. Vyberete velikost, počet hostitelů a orchestrační nástroje a služby Container Service se postará o všechno ostatní.
+![Struktura clusteru Kubernetes: Existuje jeden hlavní uzel, který zpracovává DNS, Plánovač, proxy server a podobně a několik pracovních uzlů, které jsou hostiteli kontejnerů.](media/image36.png)
 
-Container Service používá Image Dockeru k zajištění, že plné přenositelnosti kontejnerů vaší aplikace. Podporuje zvoleného Orchestrace open source platforem, jako jsou DC/OS, Kubernetes a Docker Swarm k zajištění, že můžete tyto aplikace škálovat do tisíců nebo dokonce desítek tisíců kontejnerů.
+**Obrázek 4 – 7**. Zjednodušenou strukturu a topologii clusteru Kubernetes
 
-Se službou Azure Container Service můžete využít výhod funkcí Azure na podnikové úrovni a přitom zachovávat přenositelnost aplikací, včetně v orchestračních vrstvách.
+Obrázek 4 – 7 znázorňuje strukturu cluster Kubernetes hlavní uzel (VM) řídí většina koordinace clusteru, kde můžete nasadit kontejnery na zbývající uzly, které se spravují jako jeden fond z hlediska aplikací. Máte možnost škálovat do tisíců nebo dokonce desítek tisíců kontejnerů.
 
-![](./media/image11.png)
+## <a name="development-environment-for-kubernetes"></a>Vývojové prostředí pro Kubernetes
 
-Obrázek 4 – 7: Clustering s možností ve službě Azure Container Service
+Ve vývojovém prostředí, která [Dockeru v červenci 2018 jsme oznámili](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/), Kubernetes můžete také spustit v rámci jediného vývojového počítače (Windows 10 nebo macOS) právě nainstalováním [Docker Desktop](https://www.docker.com/community-edition). Můžete ji později nasadit do cloudu (AKS) pro další testů integrace, jak je znázorněno na obrázku 4. – 8.
 
-Jak je znázorněno v obrázek 4. – 8, Container Service je jednoduše infrastruktury poskytovaný platformou Azure, abyste mohli nasadit DC/OS, Kubernetes a Docker Swarm, ale neimplementuje žádné další nástroje orchestrator. Container Service je proto není orchestrátor, jako například; je jenom infrastruktura, která využívá existující open source orchestrátorů kontejnerů.
+![Docker oznámilo podporu počítač dev pro clustery Kubernetes na dne. 2018 v Desktopu Dockeru.](media/kubernetes-development-environment.png)
 
-![](./media/image12.png)
+**Obrázek 4. – 8**. Ve vývojovém počítači i v cloudu s Kubernetes
 
-Obrázek 4. – 8: Orchestrátorů ve službě Container Service
+## <a name="get-started-with-azure-kubernetes-service-aks"></a>Začínáme s Azure Kubernetes Service (AKS)
 
-Z hlediska využití cílem služby Container Service je poskytnout hostitelské prostředí kontejneru pomocí oblíbených opensourcových nástrojů a technologií. Za tímto účelem zpřístupňuje standardní koncové body rozhraní API pro zvolený orchestrátor. Pomocí těchto koncových bodů můžete použít jakýkoli software, který může komunikovat s těmito koncovými body. V případě koncového bodu Docker Swarm můžete například použít rozhraní příkazového řádku Dockeru. Pro DC/OS můžete zvolit použití rozhraní příkazového řádku DC/OS.
+Pokud chcete začít používat AKS, nasaďte cluster AKS z webu Azure portal nebo pomocí rozhraní příkazového řádku. Další informace o nasazení clusteru Azure Container Service najdete v tématu [Nasaďte cluster Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal).
 
-### <a name="getting-started-with-container-service"></a>Začínáme se službou Container Service
+Neexistují žádné poplatky za software ve výchozím nastavení nainstalované jako součást AKS. Všechny výchozí možnosti jsou implementovány pomocí open source softwaru. AKS je k dispozici pro několik virtuálních počítačů v Azure. Se vám účtovat jenom výpočetní instance, kterou zvolíte, jakož i jiné infrastruktury spotřebované základní prostředky, jako je například úložiště a sítě. Neúčtují žádné dodatečné poplatky pro AKS, samotného.
 
-Pokud chcete začít používat službu Container Service, nasaďte cluster Container Service z webu Azure portal s použitím šablony Azure Resource Manageru nebo [CLI](https://docs.microsoft.com/cli/azure/install-azure-cli). Dostupné šablony zahrnují [Docker Swarm](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-swarm), [Kubernetes](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-kubernetes), a [DC/OS](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-dcos). Můžete upravit šablony pro rychlý start zahrnout další nebo rozšířenou konfiguraci Azure.
+Pro implementaci Další informace o nasazování do Kubernetes na základě `kubectl` a původní `.yaml` soubory, najdete v příspěvku [aplikaci eShopOnContainers nastavení ve službě AKS (služby Azure Kubernetes Service)](https://github.com/dotnet-architecture/eShopOnContainers/wiki/10.-Setting-the-solution-up-in-AKS-(Azure-Kubernetes-Service)).
 
-**Další informace o** Další informace o nasazování clusteru služby Container Service, na webu Azure [nasazení clusteru Azure Container Service](https://docs.microsoft.com/azure/container-service/dcos-swarm/container-service-deployment).
+## <a name="deploy-with-helm-charts-into-kubernetes-clusters"></a>Nasazení pomocí helmu do clusterů Kubernetes
 
-Neexistují žádné poplatky za software ve výchozím nastavení nainstalované jako součást služby ACS. Všechny výchozí možnosti jsou implementovány pomocí open source softwaru.
+Při nasazení aplikace do clusteru Kubernetes, můžete použít původní `kubectl.exe` nástroj rozhraní příkazového řádku pomocí souborů nasazení založen na nativním formátu (`.yaml` soubory), co již bylo uvedeno v předchozí části. Nicméně u složitějších aplikací Kubernetes, jako při nasazení složitých aplikací založených na mikroslužbách, doporučuje se použít [Helm](https://helm.sh/).
 
-Container Service je nyní dostupná pro standardní A, D, DS, G a GS series s Linuxem v Azure. Se vám účtovat jenom výpočetní instance, kterou zvolíte, a také další infrastrukturu spotřebované základní prostředky, jako je například úložiště a sítě. Neúčtují žádné dodatečné poplatky pro službu Container Service samotný.
+Grafy Helm umožňuje definovat, verzi, instalace, sdílené složky, upgrade nebo vrácení zpět i nejsložitější aplikaci Kubernetes.
 
-### <a name="additional-resources"></a>Další zdroje
+Když budete pokračovat, Helm využití se také doporučuje, protože další prostředí Kubernetes v Azure, jako například [prostory Azure Dev](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces) jsou také založeny na helmu.
 
-Umístění, kde najdete další informace jsou následující:
+Helm je spravován [Foundation nativní computingu na Cloud (CNCF)](https://www.cncf.io/) ve spolupráci s Microsoftem, Google, Bitnami a Přispěvatel komunity Helm.
 
--   Úvod do řešení pomocí služby Container Service pro hostování kontejnerů Docker:  
-    https://docs.microsoft.com/azure/container-service/kubernetes/container-service-intro-kubernetes>
+Další informace o implementaci na grafy Helm a Kubernetes, najdete v příspěvku [pomocí helmu k nasazení do AKS aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/wiki/10.1-Deploying-to-AKS-using-Helm-Charts).
 
--   Přehled dockeru Swarm:  
-    <https://docs.docker.com/swarm/overview/>
+## <a name="use-azure-dev-spaces-for-you-kubernetes-application-lifecycle"></a>Použijte Azure Dev mezery za vás Kubernetes životního cyklu aplikací
 
--   Přehled režimu swarm:  
-    <https://docs.docker.com/engine/swarm/>
+[Azure Dev prostory](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces) poskytuje rychlý a iterativní Kubernetes vývojové prostředí pro týmy. S nastavením minimální dev počítače můžete interaktivně spustit a ladit kontejnery přímo ve službě Azure Kubernetes Service (AKS). Můžete vyvíjet pro Windows, Mac nebo Linux pomocí známých nástrojů, jako je Visual Studio, Visual Studio Code nebo příkazového řádku.
 
--   Přehled mesosphere DC/OS:    
-    <https://docs.mesosphere.com/1.7/overview/>
+Jak už bylo zmíněno, používá Azure Dev prostory helmu při nasazování aplikací založených na kontejnerech.
 
--   Kubernetes (oficiální web):  
-    <https://kubernetes.io/>
+Azure Dev prostorech vývojové týmy být produktivnější s Kubernetes, protože umožňuje rychle iterovat a ladění kódu přímo v globální clusteru Kubernetes v Azure jenom pomocí sady Visual Studio 2017 nebo Visual Studio Code. Že cluster Kubernetes v Azure sdílené spravuje clusteru Kubernetes, takže váš tým může spolupracovat spolupracují. Vývoj kódu v izolaci, pak můžete nasadit do clusteru globální a provést začátku do konce testování s ostatními součástmi bez replikace nebo napodobování nahoru závislosti.
 
-## <a name="using-service-fabric"></a>Pomocí Service Fabric
+Jak je znázorněno na obrázku 4 – 9, většina odlišující funkce v Azure Dev prostory je možnost vytváření mezery' ", které můžou běžet integrované do zbytku globálního nasazení v clusteru.
 
-Service Fabric nástroji od Microsoftu pro přechod z současném dodávání produktů "pole", které byly obvykle monolitické ve stylu, k zajištění služeb. Prostředí pro sestavování a provoz velkých služeb ve velkém měřítku, jako je například Azure SQL Database, Azure Document DB, Azure Service Bus nebo back-endu asistentky Cortana ve tvaru Service Fabric. Platforma se v čase, jako další a další služby přijal. Co je důležité Service Fabric museli spouštět pouze v Azure, ale také v samostatných nasazeních systému Windows Server.
+![Azure Dev prostory můžete transparentně kombinovat a párovat produkční mikroslužeb s vývoj instance kontejneru, do testování nových verzí.](media/image38.png)
 
-Cílem Service Fabric je řešit složité problémy sestavování a provoz služby a efektivně využívá prostředky infrastruktury tak, aby týmy mohou řešení obchodních problémů pomocí přístup založený na mikroslužbách.
+**Obrázek 4 – 9**. Použití více mezer v Azure Dev mezery
+
+V podstatě můžete nastavit prostor sdíleném vývojovém v Azure. Každý Vývojář můžete zaměřit na právě jejich součástí aplikace a můžete využít iterativní vývoj "předem potvrzené" kódu v prostoru dev, která už obsahuje všechny ostatní služby a cloudové prostředky, které jejich scénářů závisí na. Závislosti jsou vždy aktuální a vývojáři už pracují tak, aby zrcadlí produkčního prostředí.
+
+Azure Dev prostory nabízí koncepci místa, což umožňuje pracovat v izolaci a bez obav z přerušení členy týmu. Tato funkce je založena na předpony adres URL; Pokud používáte předponu prostoru vývoj v adrese URL pro požadavek kontejneru, spustí prostory Azure Dev speciální verzi kontejneru, který se nasazuje pro toto místo, pokud existuje. V opačném případě poběží verze globální nebo konsolidované.
+
+Zobrazí se [aplikaci eShopOnContainers wiki stránky v Azure Dev prostorech](https://github.com/dotnet-architecture/eShopOnContainers/wiki/10.2-Using-Azure-Dev-Spaces-and-AKS) získat praktické zobrazení na konkrétní příklad.
+
+Další informace najdete v článku na [týmový vývoj pomocí Azure Dev prostory](https://docs.microsoft.com/azure/dev-spaces/team-development-netcore).
+
+## <a name="additional-resources"></a>Další zdroje
+
+- **Začínáme s Azure Kubernetes Service (AKS)** \
+  [*https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal*](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal)
+
+- **Azure Dev mezery** \
+  [*https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces*](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces)
+
+- **Kubernetes.** Oficiální web. \
+  [*https://kubernetes.io/*](https://kubernetes.io/)
+
+## <a name="using-azure-service-fabric"></a>Pomocí Azure Service Fabric
+
+Azure Service Fabric nástroji od Microsoftu pro přechod z současném dodávání produktů "pole", které byly obvykle monolitické ve stylu, k zajištění služeb. Prostředí pro sestavování a provoz velkých služeb ve velkém měřítku, jako je například Azure SQL Database, Azure Cosmos DB, Azure Service Bus nebo back-endu asistentky Cortana ve tvaru Service Fabric. Platforma se v čase, jako další a další služby přijal. Co je důležité Service Fabric museli spouštět pouze v Azure, ale také v samostatných nasazeních systému Windows Server.
+
+Cílem Service Fabric je řeší těžké problémy sestavování a provoz služby a efektivně využívá prostředky infrastruktury tak, aby týmy mohou řešení obchodních problémů pomocí přístup založený na mikroslužbách.
 
 Service Fabric poskytuje dva různé oblasti, které vám pomůže vytvářet aplikace, které používají přístup založený na mikroslužbách:
 
--   Platforma, která poskytuje služby systém nasadit, škálovat, upgradovat, zjišťovat a restartujte služby se nezdařilo, zjistit umístění služby, Správa stavu, a monitorovat stav. Tyto systémové služby platit poskytují řadu charakteristiky mikroslužeb je popsáno výše.
+- Platforma, která poskytuje služby systém nasadit, škálovat, upgradovat, zjišťovat a restartujte služby se nezdařilo, zjistit umístění služby, Správa stavu, a monitorovat stav. Tyto systémové služby platit přinášejí mnohé z charakteristiky mikroslužeb je popsáno výše.
 
--   Programování v rozhraní API nebo rozhraní, které vám pomůžou vytvářet aplikace jako mikroslužeb: [reliable actors a modelu reliable services](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework). Samozřejmě můžete použít libovolný kód pro vytváření mikroslužeb, ale tato rozhraní API provést úlohu jednodušší a integrují s platformou na podrobnější úrovni. Tímto způsobem můžete získat stavu a diagnostické informace nebo je mohou využít výhod správy spolehlivé stavu.
+- Programování v rozhraní API nebo rozhraní, které vám pomůžou vytvářet aplikace jako mikroslužeb: [reliable actors a modelu reliable services](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework). Můžete použít libovolný kód pro vytváření mikroslužeb, ale tato rozhraní API provést úlohu jednodušší a integrují s platformou na podrobnější úrovni. Tímto způsobem můžete získat stavu a diagnostické informace nebo je mohou využít výhod správy spolehlivé stavu.
 
 Service Fabric je nezávislá s ohledem na jak vytvářet služby, a můžete použít libovolné technologii. Však nabízí integrovanou programovací rozhraní API, která usnadňují vytváření mikroslužeb.
 
-Obrázek 4 – 9 ukazuje, jak můžete vytvořit a spouštět mikroslužby v Service Fabric, buď jako jednoduchý proces, nebo jako kontejnery Dockeru. Je také možné kombinovat mikroslužeb založených na kontejnerech s mikroslužbami založené na procesu ve stejném clusteru Service Fabric.
+Jak ukazuje obrázek 4 – 10, můžete vytvořit a spouštět mikroslužby v Service Fabric, buď jako jednoduchý proces, nebo jako kontejnery Dockeru. Je také možné kombinovat mikroslužeb založených na kontejnerech s mikroslužbami založené na procesu ve stejném clusteru Service Fabric.
 
-![](./media/image13.png)
+![Porovnání služby Azure service Fabric clustery: Mikroslužby jako proces, ve kterém každý uzel spuštěná jeden proces u jednotlivých mikroslužeb; Jako kontejnery, ve kterém každý uzel spuštěná Dockeru s několika kontejnery, Mikroslužby jednoho kontejneru na mikroslužbách.](./media/azure-service-fabric-cluster-types.png)
 
-Obrázek 4 – 9: Nasazuje mikroslužby jako procesů nebo kontejnerů v Azure Service Fabric
+**Obrázek 4 – 10**. Nasazuje mikroslužby jako procesů nebo kontejnerů v Azure Service Fabric
 
 Clustery Service Fabric, které jsou založené na hostitele se systémy Linux a Windows můžete spouštět kontejnery Linuxu Docker a kontejnery Windows.
 
-**Další informace o** aktuální informace o podporu kontejnerů v Service Fabric na webu Azure, přečtěte si [Service Fabric a kontejnery](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview).
+Aktuální informace o podpoře kontejnery v Azure Service Fabric najdete v tématu [Service Fabric a kontejnery](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview).
 
-Service Fabric je typickým příkladem platformy, pomocí kterého můžete definovat jinou logickou architekturu (obchodní mikroslužby nebo ohraničených kontextech) než fyzická implementace. Například, pokud se rozhodnete implementovat [stavové služby Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) v [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview), které jsou popsané v další části "[Stateless a stavových mikroslužeb](#stateless-versus-stateful-microservices), "máte koncept obchodní mikroslužeb s více službami fyzické.
+Service Fabric je typickým příkladem platformy, ve kterém můžete definovat jinou logickou architekturu (obchodní mikroslužby nebo ohraničených kontextech) než fyzická implementace. Například, pokud se rozhodnete implementovat [stavové služby Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) v [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview), které jsou popsané v další části "[Stateless a stavových mikroslužeb](#stateless-versus-stateful-microservices), "máte koncept obchodní mikroslužeb s více službami fyzické.
 
-Jak ukazuje obrázek 4 – 10 a přemýšlení z hlediska obchodní logiky/mikroslužeb, při implementaci služby Reliable Stateful Service Fabric je obvykle potřeba implementovat dvě úrovně služeb. První je back-end spolehlivé stavové služby, která zpracovává několik oddílů. Druhým je front-endová služba a služba brány starosti agregace směrování a data napříč několika oddíly nebo instance stavové služby. Tuto službu brány také zpracovává komunikace na straně klienta s opakování smyčky přístup k back-end služba používá ve spojení s využitím Service Fabric [reverzní proxy server](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy).
+Jak ukazuje obrázek 4 – 10 a přemýšlení z hlediska obchodní logiky/mikroslužeb, při implementaci služby Reliable Stateful Service Fabric je obvykle potřeba implementovat dvě úrovně služeb. První je back-end spolehlivé stavové služby, která zpracovává více oddílů (každý oddíl se stavovou službou). Druhým je front-endová služba a služba brány starosti agregace směrování a data napříč několika oddíly nebo instance stavové služby. Tuto službu brány také zpracovává komunikace na straně klienta s opakování smyčky přístup k back-end služby. Služba brány je volána Pokud implementujete vlastní služba nebo případně můžete také použít Service Fabric out-of-the-box [reverzní proxy server](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy).
 
-![](./media/image14.png)
+![Service Fabric je předpis pro podporu několika stavovém modelu reliable services v kontejnerech.](./media/service-fabric-stateful-business-microservice.png)
 
-Obrázek 4 – 10: Obchodní mikroslužeb s několika stavové a bezstavové služby v Service Fabric
+**Obrázek 4 – 11**. Obchodní mikroslužeb s několika instancemi stavové služby a vlastní bránu front-endu
 
-V každém případě použijete Service Fabric stavové služby Reliable Services, máte také logické nebo obchodní mikroslužbě (objektu Context ohraničená), který se obvykle skládá z několika fyzických služeb. Každá z jejich, služba brány a oddílu služby může možné implementovat jako rozhraní ASP.NET Web API služby, jak ukazuje obrázek 4 – 10.
+V každém případě použijete Service Fabric stavové služby Reliable Services, máte také logické nebo obchodní mikroslužbě (objektu Context ohraničená), který se skládá z několika fyzických služeb. Každá z jejich, služba brány a oddílu služby může možné implementovat jako rozhraní ASP.NET Web API služby, jak ukazuje obrázek 4 – 11.
 
-V Service Fabric, skupiny a nasazení skupin služeb jako [aplikace Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-model), což je jednotka balení a nasazení nástroje orchestrator nebo clusteru. Proto aplikace Service Fabric mapovat tento autonomní firmy a logické vyladěných hraniční nebo ohraničená kontext také.
+V Service Fabric, skupiny a nasazení skupin služeb jako [aplikace Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-model), což je jednotka balení a nasazení nástroje orchestrator nebo clusteru. Proto aplikace Service Fabric může být mapována na tento autonomní obchodní a logické vyladěných hraniční nebo ohraničená kontext, tak můžete nasadit tyto služby samostatně.
 
 ### <a name="service-fabric-and-containers"></a>Service Fabric a kontejnery
 
-Jde o kontejnerů v Service Fabric také můžete nasadit služby v imagí kontejnerů v clusteru Service Fabric. Obrázek 4 – 11 znázorňuje, že většina čas, kdy bude existovat pouze jeden kontejner na službu.
+Jde o kontejnerů v Service Fabric můžete taky nasadit služby v imagí kontejnerů v clusteru Service Fabric. Jak ukazuje obrázek 4-12, ve většině případů bude existovat jenom jeden kontejner na službu.
 
-![](./media/image15.png)
+![Aplikace Service Fabric můžete spustit několik kontejnerů přístup k externí databázi a celé sady by logické hranic Mikroslužby firmy](./media/azure-service-fabric-business-microservice.png)
 
-Obrázek 4 – 11: Obchodní mikroslužeb s několika službami (kontejnerů) v Service Fabric
+**Obrázek 4-12**. Obchodní mikroslužeb s několika službami (kontejnerů) v Service Fabric
 
-Kontejnery takzvané "sajdkára" (dva kontejnery, které musí být nasazeny společně jako součást logické služby) ale také možné v Service Fabric. Důležité je, že obchodní mikroslužeb je logické hranicí kolem několika získá na ucelenosti prvků. V mnoha případech může být jedinou službou s jediným datovým modelem, ale v některých případech můžete mít fyzické několik služeb a také.
+Kontejnery takzvané "sajdkára" (dva kontejnery, které musí být nasazeny společně jako součást logické služby) ale také možné v Service Fabric. Důležité je, že obchodní mikroslužeb je logické hranicí kolem několika získá na ucelenosti prvků. V mnoha případech může být jedinou službou s jediným datovým modelem, ale v některých případech můžete mít i několik fyzických služeb.
 
-V době vytváření tohoto dokumentu (duben 2017), v Service Fabric nelze nasadit SF Reliable Stateful Services v kontejnerech, můžete nasadit pouze hostované kontejnery, bezstavové služby nebo služby objektu actor v kontejnerech. Ale mějte na paměti, že je možné kombinovat služby v procesech a služby v kontejnerech ve stejné aplikaci Service Fabric, jak ukazuje obrázek 4 – 12.
+Jak ukazuje obrázek 4-13, mějte na paměti, že je možné kombinovat služby v procesech a služby v kontejnerech, ve stejné aplikaci Service Fabric.
 
-![](./media/image16.png)
+![Aplikace service fabric s služeb a kontejnerů ve stejném uzlu.](./media/business-microservice-mapped-to-service-fabric-application.png)
 
-Obrázek 4-12: Obchodní mikroslužeb mapovány na aplikaci Service Fabric s kontejnery a stavové služby
+**Obrázek 4 – 13**. Obchodní mikroslužeb mapovány na aplikaci Service Fabric s kontejnery a stavové služby
 
-Podpora je taky liší v závislosti na tom, zda používáte kontejnery Dockeru v Linuxu nebo kontejnery Windows. Podpora kontejnerů v Service Fabric se rozšíření v budoucích verzích. Aktuální novinky o podporu kontejnerů v Service Fabric na webu Azure, přečtěte si [Service Fabric a kontejnery](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview).
+Další informace o podporu kontejnerů v Azure Service Fabric najdete v tématu [Service Fabric a kontejnery](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview).
 
 ## <a name="stateless-versus-stateful-microservices"></a>Bezstavových a stavových mikroslužeb
 
-Jak bylo zmíněno výše, musíte vlastnit jednotlivých mikroslužeb (logické ohraničená Context) jeho doménový model (data a logiku). V případě bezstavové mikroslužby budou databáze externí, když relační možnosti, jako je SQL Server nebo možností NoSQL, jako jsou MongoDB nebo Azure DocumentDB.
+Jak bylo zmíněno výše, musíte vlastnit jednotlivých mikroslužeb (logické ohraničená Context) jeho doménový model (data a logiku). V případě bezstavové mikroslužby budou databáze externí, když relační možnosti, jako je SQL Server nebo možností NoSQL, jako jsou služby Azure Cosmos DB nebo MongoDB.
 
-Ale vlastních služeb také může být stavový, což znamená, že jsou data uložená v rámci mikroslužbách. Tato data mohou existovat nejen na stejném serveru, ale v rámci procesu mikroslužeb v paměti, trvale se uloží na disky a replikují do dalších uzlů. Obrázek 4 – 13 ukazuje různé přístupy.
+Ale vlastních služeb může být také stavové v Service Fabric, což znamená, že jsou data uložená v rámci mikroslužbách. Tato data mohou existovat nejen na stejném serveru, ale v rámci procesu mikroslužeb v paměti a trvale se uloží na pevné disky a replikují do dalších uzlů. Obrázek 4-30 ukazuje různé přístupy.
 
-![](./media/image17.png)
+![V bezstavové služby stavu (trvalost, databáze), zůstane mimo mikroslužbách. Stavové služby stavu, zůstane uvnitř mikroslužbách.](./media/stateless-vs-stateful-microservices.png)
 
-Obrázek 4 – 13: Bezstavových a stavových mikroslužeb
+**Obrázek 4 – 14**. Bezstavových a stavových mikroslužeb
 
-Bezstavové přístup dokonale platný a je jednodušší než stavových mikroslužeb implementace, protože tento přístup je podobný tradiční a dobře známé vzory. Ale bezstavové mikroslužby kladou latence mezi zdroji procesy a data. Zahrnují také několik pohyblivých částí, pokud se pokoušíte zlepšení výkonu pomocí dalších mezipaměť a fronty. Výsledkem je, že můžete skončit s komplexní architektury, které mají moc úrovní.
+Bezstavové přístup dokonale platný a je jednodušší než stavových mikroslužeb, protože tento přístup je podobná tradičním a dobře známé vzory implementace. Ale bezstavové mikroslužby kladou latence mezi zdroji procesy a data. Zahrnují také několik pohyblivých částí, pokud se pokoušíte zlepšení výkonu pomocí dalších mezipaměť a fronty. Výsledkem je, že můžete skončit s komplexní architektury, které mají moc úrovní.
 
-Naproti tomu [stavových mikroslužeb](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis) můžete excel v pokročilých scénářích, protože neexistuje žádný latence mezi domény logiku a data. Silná zpracování dat, herních back EndY, databáze jako služby a další scénáře s nízkou latencí všechny výhody stavové služby, které poskytují místní stavu pro rychlejší přístup.
+Naproti tomu [stavových mikroslužeb](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis) může aplikace excel v pokročilých scénářích, protože neexistuje žádný latence mezi domény logiku a data. Silná zpracování dat, hraní her zpět ukončí, databáze jako služba, a další scénáře s nízkou latencí všechny výhody stavové služby, které umožňují rychlejší přístup k místním stavu.
 
-Bezstavové a stavové služby vzájemně doplňují. Stavové služby, může rozdělit do několika oddílů. Pro přístup k těmto oddílů, může být nutné bezstavové služby, který funguje jako služba brány, která ví, jak vyřešit každý oddíl podle klíče oddílů.
+Bezstavové a stavové služby vzájemně doplňují. Pro instanci jak je vidět v diagramu pravý obrázek 4 – 31, stavové služby je možné rozdělit do několika oddílů. Pro přístup k těmto oddílů, může být nutné bezstavové služby, který funguje jako služba brány, která ví, jak vyřešit každý oddíl podle klíče oddílů.
 
-Stavové služby mají nevýhody. Ukládají zjednodušit postupy, které umožňuje horizontální navýšení kapacity. Funkce, která by obvykle implementována externí databázovými systémy. je potřeba řešit pro úlohy, jako je replikace dat mezi stavových mikroslužeb a dělení dat. Ale to je jedna z oblasti, kde jako orchestrátor [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-platform-architecture) s jeho [stavovém modelu reliable services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis) může pomoct nejvíce – díky zjednodušení vývoje a životního cyklu stavová mikroslužby pomocí [Reliable Services API](https://docs.microsoft.com/azure/service-fabric/service-fabric-work-with-reliable-collections) a [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
+Stavové služby mají nevýhody. Ukládají na úroveň vysokou složitost škálovat. Funkce, která by obvykle implementována externí databázovými systémy. je potřeba řešit pro úlohy, jako je replikace dat mezi stavových mikroslužeb a dělení dat. Ale to je jedna z oblasti, kde jako orchestrátor [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-platform-architecture) s jeho [stavovém modelu reliable services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis) může pomoct nejvíce – díky zjednodušení vývoje a životního cyklu stavová mikroslužby pomocí [Reliable Services API](https://docs.microsoft.com/azure/service-fabric/service-fabric-work-with-reliable-collections) a [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
 
 Další architektury mikroslužeb, umožňujících stavové služby, které podporují vzor objektu Actor a zlepšují odolnost proti chybám a latencí mezi obchodní logiku a data jsou Microsoft [Orleans](https://github.com/dotnet/orleans), od Microsoft Research a [ Akka.NET](https://getakka.net/). Obě architektury jsou aktuálně zlepšení jejich podpora pro Docker.
 
-Všimněte si, že kontejnery Dockeru jsou bezstavové sami. Pokud chcete implementovat stavové služby, budete potřebovat další doporučené postupy a chcete získat podrobnější popis architektury jste si předtím poznamenali. V době psaní tohoto návodu, ale stavové služby v Service Fabric nejsou podporovány jako kontejnery, pouze jako obyčejný mikroslužeb. Služby Reliable Service podporují v kontejnerech, bude k dispozici v budoucích verzích Service Fabric.
+Mějte na paměti, že kontejnery Dockeru jsou bezstavové sami. Pokud chcete implementovat stavové služby, budete potřebovat další doporučené postupy a chcete získat podrobnější popis architektury jste si předtím poznamenali.
+
+## <a name="using-azure-service-fabric-mesh"></a>Pomocí sítě Azure Service Fabric
+
+Sítě Azure Service Fabric je plně spravovaná služba, která umožňuje vývojářům umožníte sestavovat a nasazovat nejdůležitější aplikace bez nutnosti spravovat žádnou infrastrukturu. Pomocí sítě pro Service Fabric můžete vytvářet a spouštět aplikace zabezpečené a distribuovaných mikroslužeb, které se škálují na vyžádání.
+
+Jak je znázorněno na obrázku 4-15, aplikacemi hostovanými na služby prostředků infrastruktury sítě spouštění a škálování bez starostí o infrastrukturu ukončit.
+
+![Vícekontejnerová aplikace spuštěná v desktopu Dockeru je nasadit do Azure Service Fabric sítě bez starostí o infrastrukturu.](media/image39.png)
+
+**Obrázek 4 – 15**. Nasazení aplikace mikroslužeb a kontejnerů do Service Fabric mřížky
+
+Pod pokličkou sítě pro Service Fabric se skládá z clusterů tisíce počítačů. Všechny operace clusteru jsou skryté od vývojáře. Stačí nahrát kontejnery a zadejte prostředky, které potřebujete, požadavky na dostupnost a limity prostředků. Service Fabric sítě automaticky přiděluje infrastruktury požadoval nasazení vaší aplikace a také zpracovává selhání infrastruktury, ujistěte se, že jsou vaše aplikace s vysokou dostupností. Stačí vám jde o stavu a rychlost reakce aplikace, ne na infrastrukturu.
+
+Další informace najdete v tématu [dokumentace ke službě Service Fabric mřížky](https://docs.microsoft.com/azure/service-fabric-mesh/).
+
+## <a name="choosing-orchestrators-in-azure"></a>Výběr orchestrátorů v Azure
+
+Následující tabulka obsahuje pokyny k jaké orchestrator, která umožní použít v závislosti na úlohy a operačního systému fokus.
+
+![Služby Azure Kubernetes je vyspělejší v Linuxu než ve Windows a se nejčastěji používá pro nasazování mikroslužeb založené na kontejnerech. Azure Service Fabric (cluster a sítě) je vyspělejší ve Windows než v systému Linux, běžně používá pro mikroslužby podle kontejnery, mikroslužby, na základě jednoduché procesy a stavové služby.](media/image40.png)
+
+**Obrázek 4 – 16**. Výběr nástroje Orchestrator v doprovodné materiály k Azure
 
 >[!div class="step-by-step"]
 >[Předchozí](soa-applications.md)

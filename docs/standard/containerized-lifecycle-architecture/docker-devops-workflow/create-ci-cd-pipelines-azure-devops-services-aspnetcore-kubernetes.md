@@ -3,13 +3,13 @@ title: Kroky v postupu DevOps vnější smyčky pro aplikaci v Dockeru
 description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 11/23/2018
-ms.openlocfilehash: 7a98c34bfdbbdc9b34a04c891ca031f454ac4396
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.date: 02/15/2019
+ms.openlocfilehash: 2cd769ce9013a8521c53f36b44ea260ceccd48b7
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221391"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56834963"
 ---
 # <a name="creating-cicd-pipelines-in-azure-devops-services-for-a-net-core-20-application-on-containers-and-deploying-to-a-kubernetes-cluster"></a>Vytváření kanálů CI/CD ve službách Azure DevOps pro aplikace .NET Core 2.0 na kontejnerech a nasazením do clusteru Kubernetes
 
@@ -23,20 +23,20 @@ Je důležité, abyste měli na očích, že dva kanály, sestavení a průběž
 
 Jak je znázorněno v obrázek 5-13, je první fáze kanálu sestavení/CI. Ve službách Azure DevOps můžete vytvořit kanály sestavení/CD, které budou kompilaci kódu, vytvořte Image Dockeru a vložit je do registru Dockeru jako Docker Hubu nebo služby Azure Container Registry.
 
-![](media/build-ci-pipeline-azure-devops-push-to-docker-registry.png)
+![Zobrazení prohlížeče s Azure DevOps, definice úlohy procesu sestavení.](media/build-ci-pipeline-azure-devops-push-to-docker-registry.png)
 
 **Obrázek 5-13**. Sestavení a průběžná integrace kanál v Azure DevOps vytváření imagí Dockeru a nahráním Image do registru Dockeru
 
 Druhá fáze se k vytvoření kanálu nasazení a vydání. Ve službě Azure DevOps Services můžete snadno vytvořit kanál nasazení cílí na Kubernetes cluster pomocí úloh Kubernetes pro Azure DevOps služby, jak je znázorněno v obrázek 5-14.
 
-![Nasazení MVC](media/release-cd-pipeline-azure-devops-deploy-to-kubernetes.png)
+![Zobrazení prohlížeče s Azure DevOps, nasaďte do definice úlohy Kubernetes.](media/release-cd-pipeline-azure-devops-deploy-to-kubernetes.png)
 
 **Obrázek 5-14**. Kanál verze/CD v Azure DevOps služby nasazením do clusteru Kubernetes
 
 > [! Návod] eShopModernized nasazování do Kubernetes:
 >
 > Podrobný návod k kanály Azure DevOps CI/CD nasazování do Kubernetes, naleznete v tomto příspěvku: \
->[https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD))
+><https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-CI-CD)>
 
 >[!div class="step-by-step"]
 >[Předchozí](docker-application-outer-loop-devops-workflow.md)

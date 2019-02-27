@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: f5cfa6ba-cc25-4017-82cd-ba7391859113
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 71c2a6b183890aa9625dcffbef59d14c27ebe754
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: c12096739e66a47fadd89eb27e30ba3de43c7da3
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219393"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836432"
 ---
 # <a name="how-to-add-references-to-type-libraries"></a>Postupy: Přidání odkazů do knihoven typů
 Visual Studio vytvoří definiční sestavení obsahující metadata, když přidáte odkaz na knihovnu typů. Pokud je k dispozici primární sestavení zprostředkovatele komunikace, Visual Studio používá existující sestavení před generováním nového sestavení zprostředkovatele komunikace.  
@@ -47,8 +47,6 @@ Visual Studio vytvoří definiční sestavení obsahující metadata, když při
 ## <a name="see-also"></a>Viz také:
 - [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)
-- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)](../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)
-- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-vs.md)
 - [Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)](/docs/csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md) 
 - [Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)](/docs/visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md)
 - [/ Link (možnosti kompilátoru C#)](../../csharp/language-reference/compiler-options/link-compiler-option.md)

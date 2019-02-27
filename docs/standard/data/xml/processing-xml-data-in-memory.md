@@ -5,15 +5,15 @@ ms.technology: dotnet-standard
 ms.assetid: 1bbb4d05-ead7-4bda-8ece-f86d35c57ad4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8e6e89cafeb4cc580edb9630ba7415a669ea750c
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: f1a4587838180896b52bb79d447ed7ede3e22d1a
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904413"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836484"
 ---
 # <a name="processing-xml-data-in-memory"></a>Zpracování dat XML v paměti
-Rozhraní Microsoft .NET Framework zahrnuje tři modely pro zpracování dat XML: <xref:System.Xml.XmlDocument> třídy, <xref:System.Xml.XPath.XPathDocument> třídy, a [LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13).  
+Rozhraní Microsoft .NET Framework zahrnuje tři modely pro zpracování dat XML: <xref:System.Xml.XmlDocument> třídy, <xref:System.Xml.XPath.XPathDocument> třídy, a [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md).  
   
  <xref:System.Xml.XmlDocument> Třída implementuje úroveň 1 jádro W3C dokumentu objektu model (DOM) a modelu DOM základní úrovně 2 doporučení. (Mezipaměť) v paměti je v modelu DOM stromu reprezentace dokumentu XML. S <xref:System.Xml.XmlDocument> a jeho souvisejících tříd, můžete vytvořit dokumentů XML, načtení a přístup k datům a upravovat data, a uložit změny.  
   

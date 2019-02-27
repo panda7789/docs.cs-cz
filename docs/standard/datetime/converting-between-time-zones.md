@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a51e1a3b-c983-4320-b31a-1f9fa3cf824a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 78f25b657e6cb103797e13e98c3dd61a80003dc2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e08e90f61429f01f360808866fdc3d963323ba23
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54701817"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835340"
 ---
 # <a name="converting-times-between-time-zones"></a>Převádění časových údajů mezi časovými pásmy
 
@@ -27,7 +27,7 @@ Se stává čím dál důležitější pro každou aplikaci, která pracuje s da
 
 ## <a name="converting-to-coordinated-universal-time"></a>Převod na koordinovaný univerzální čas
 
-Koordinovaný univerzální čas (UTC) je standardní čas vysokou přesností, atomické. Na světě časových pásem jsou vyjádřeny jako kladné nebo záporné posun od času UTC. Čas UTC poskytne druh časového pásma zdarma nebo neutrální času časového pásma. Pomocí času UTC se doporučuje, pokud datum a čas pro přenositelnost mezi počítači je důležité. (Podrobnosti a další osvědčené postupy použití dat a časů, naleznete v tématu [kódování osvědčených postupů pomocí data a času v rozhraní .NET Framework](https://msdn.microsoft.com/library/ms973825.aspx).) Převod na standard UTC jednotlivých časových pásmech usnadňuje porovnávání času.
+Koordinovaný univerzální čas (UTC) je standardní čas vysokou přesností, atomické. Na světě časových pásem jsou vyjádřeny jako kladné nebo záporné posun od času UTC. Čas UTC poskytne druh časového pásma zdarma nebo neutrální času časového pásma. Pomocí času UTC se doporučuje, pokud datum a čas pro přenositelnost mezi počítači je důležité. (Podrobnosti a další osvědčené postupy použití dat a časů, naleznete v tématu [kódování osvědčených postupů pomocí data a času v rozhraní .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973825(v=msdn.10)).) Převod na standard UTC jednotlivých časových pásmech usnadňuje porovnávání času.
 
 > [!NOTE]
 > Můžete také serializovat <xref:System.DateTimeOffset> struktura jednoznačně představují jediný bod v čase. Protože <xref:System.DateTimeOffset> objekty ukládají hodnoty data a času spolu s jeho posun od času UTC, vždy představují určitého bodu v čase ve vztahu k času UTC.

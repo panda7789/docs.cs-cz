@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 6fcf6588-5e25-41af-b4ae-780974f2c3df
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6cb23eb652cd769a0f3387833a9ece507479c464
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 9b9f0cd44e5ab9a33db4dd2ef52681f40ca54080
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56218967"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835158"
 ---
 # <a name="compiling-an-interop-project"></a>Kompilace projektu interoperability
 
@@ -30,7 +30,7 @@ Projektů spolupráce modelu COM, které odkazují na jeden nebo více sestaven�
 
  Rozdíly mezi tyto dva postupy jsou podrobně popsány v větší [typy modelu COM pomocí spravovaného kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100)).
 
- Vkládání typů spolupráce pomocí sady Visual Studio jsou popsané v článku [názorný postup: Vložení informací o typu ze sestavení sady Microsoft Office (C# a Visual Basic)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ee317478(v=vs.100)), [názorný postup: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)](/docs/csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md), a [názorný postup: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)](/docs/visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md).
+ Vkládání typů spolupráce pomocí sady Visual Studio jsou popsané v článku [názorný postup: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)](/docs/csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md), a [názorný postup: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)](/docs/visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md).
 
  Chcete-li odkazovat na sestavení vzájemné spolupráce pomocí kompilátoru příkazového řádku a vložit informace o typu v vaše spustitelné soubory, použijte [/Link (možnosti kompilátoru C#)](../../csharp/language-reference/compiler-options/link-compiler-option.md) nebo [/Link (Visual Basic)](../../visual-basic/reference/command-line-compiler/link.md) přepínače kompilátoru a Zadejte název sestavení vzájemné spolupráce.
 
@@ -44,8 +44,6 @@ Projektů spolupráce modelu COM, které odkazují na jeden nebo více sestaven�
 - [Vystavení komponent COM pro rozhraní .NET Framework](exposing-com-components.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../standard/language-independence-and-language-independent-components.md)
 - [Používání typů modelu COM ve spravovaném kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
-- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)](../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies.md) 
-- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-vs.md)
 - [Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)](/docs/csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)
 - [Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (Visual Basic)](/docs/visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md)
 - [Import knihovny typů ve formě sestavení](importing-a-type-library-as-an-assembly.md)

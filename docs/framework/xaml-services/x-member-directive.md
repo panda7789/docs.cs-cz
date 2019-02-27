@@ -2,12 +2,12 @@
 title: x:Member – direktiva
 ms.date: 03/30/2017
 ms.assetid: 4d8394ef-644c-4331-b6c5-be855d392980
-ms.openlocfilehash: dfc08d79bd8206269807d88d2c659f13be487276
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 66d34ad6bc5b6bb98eba6219130035dc413b486f
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44177708"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835327"
 ---
 # <a name="xmember-directive"></a>x:Member – direktiva
 Deklaruje člen XAML ve značkách.  
@@ -38,4 +38,4 @@ Deklaruje člen XAML ve značkách.
  Pro podporu praktické využití `x:Members` jako prostředek k určení definice členů v kódu, musí být členy přidružené třídy, která je možné upravit. Zamýšlený modelu je, že `x:Members` existuje jako člen typu, který určuje `x:Class`. Mechanismus pro přidružení typů a členů nebo pro vytváření dynamických členů definice však není podporován na úrovni rozhraní .NET Framework XAML Services. To je ponecháno pro jednotlivé platformy, které mají aplikačních modelů, které podporují definice členů z XAML. Obvykle akce sestavení nástroje MSBUILD, které značky kompilace XAML a buď ji integrovat s kódem na pozadí nebo vytvořit čistě z XAML sestavení jsou potřeba pro podporu této funkce.  
   
 ## <a name="xproperty-for-windows-workflow-foundation"></a>x: Property pro Windows Workflow Foundation  
- Pro Windows Workflow Foundation `x:Property` definuje členy vlastní aktivity skládá zcela v XAML a XAML – definované dynamičtí členové pro Návrhář aktivity s kódem na pozadí. `x:Class` musíte také uvést v kořenovém elementu XAML výroby. Není vyžadována na úrovni rozhraní .NET Framework XAML Services, ale požadavek se změní, pokud produkční XAML je načten akcemi MSBUILD sestavení, které podporují vlastní aktivity a Windows Workflow Foundation XAML obecně. Windows Workflow Foundation nepoužívá jako jeho odpovídající hodnota pro čistě název typu XAML `x:Property` `Type` atribut a místo toho používá konvenci, který nebyl zdokumentován tady. Další informace najdete v tématu [vytvoření dynamické aktivity](https://msdn.microsoft.com/library/dd807392.aspx).
+ Pro Windows Workflow Foundation `x:Property` definuje členy vlastní aktivity skládá zcela v XAML a XAML – definované dynamičtí členové pro Návrhář aktivity s kódem na pozadí. `x:Class` musíte také uvést v kořenovém elementu XAML výroby. Není vyžadována na úrovni rozhraní .NET Framework XAML Services, ale požadavek se změní, pokud produkční XAML je načten akcemi MSBUILD sestavení, které podporují vlastní aktivity a Windows Workflow Foundation XAML obecně. Windows Workflow Foundation nepoužívá jako jeho odpovídající hodnota pro čistě název typu XAML `x:Property` `Type` atribut a místo toho používá konvenci, který nebyl zdokumentován tady. Další informace najdete v tématu [vytvoření dynamické aktivity](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd807392(v=vs.100)).

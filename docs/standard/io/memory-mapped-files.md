@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: a483d1b5-64aa-45b6-86ef-11b859f7f02e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5c35bbc8d4223e9404371665e7666715fa357154
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 6b4c1b075d54189d195ea38d421463ea6b9e6161
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865836"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835353"
 ---
 # <a name="memory-mapped-files"></a>Soubory mapované paměti
-Soubor mapovaných do paměti obsahuje obsah souboru ve virtuální paměti. Toto mapování mezi prostoru soubor a paměť umožňuje aplikaci, včetně více procesů, upravte soubor tak, že čtení a zápis přímo na paměť. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], spravovaný kód můžete použít pro přístup k souborům mapované paměti stejným způsobem, že nativní funkce Windows přístup k souborům mapované paměti, jak je popsáno v [soubory mapované paměti](https://msdn.microsoft.com/library/ms810613.aspx).  
+Soubor mapovaných do paměti obsahuje obsah souboru ve virtuální paměti. Toto mapování mezi prostoru soubor a paměť umožňuje aplikaci, včetně více procesů, upravte soubor tak, že čtení a zápis přímo na paměť. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], spravovaný kód můžete použít pro přístup k souborům mapované paměti stejným způsobem, že nativní funkce Windows přístup k souborům mapované paměti, jak je popsáno v [soubory mapované paměti](https://docs.microsoft.com/previous-versions/ms810613(v=msdn.10)).  
   
  Existují dva typy souborů mapovaných do paměti:  
   
@@ -139,7 +139,7 @@ Process C says: True
  [!code-csharp[System.IO.MemoryMappedFiles_IPC_A#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_a/cs/program.cs#1)]
  [!code-vb[System.IO.MemoryMappedFiles_IPC_A#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_a/vb/program.vb#1)]  
   
- **Proces C**  
+ **Process C**  
   
  [!code-csharp[System.IO.MemoryMappedFiles_IPC_B#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_b/cs/program.cs#1)]
  [!code-vb[System.IO.MemoryMappedFiles_IPC_B#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_b/vb/program.vb#1)]  

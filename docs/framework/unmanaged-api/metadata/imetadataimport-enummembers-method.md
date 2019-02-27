@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 88b8f874400d68110fa5e8fb66ca910b8e7231e1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: de4bf2cf647682062fbacb4484ffae905d1b7995
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54645961"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835366"
 ---
 # <a name="imetadataimportenummembers-method"></a>IMetaDataImport::EnumMembers – metoda
 Vytvoří výčet MemberDef tokeny představující členů zadaného typu.  
@@ -39,7 +39,7 @@ HRESULT EnumMembers (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `phEnum`  
  [out v] Ukazatel na enumerátor.  
   
@@ -63,7 +63,9 @@ HRESULT EnumMembers (
 |`S_FALSE`|Neexistují žádné tokeny MemberDef výčet. V takovém případě `pcTokens` je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při vytváření výčtů kolekcí členů v případě třídy `EnumMembers` vrací pouze členy definované přímo ve třídě. I v případě, že třída poskytuje implementaci pro členy zděděné nevrací žádné členy, které dědí třídu. Výčet zděděné členy, volající musí explicitně provedou řetězu dědičnosti. Všimněte si, že pravidla pro řetězec dědičnosti mohou lišit v závislosti na jazyk nebo kompilátor, který původní metadata, protože ho.  
+ Při vytváření výčtů kolekcí členů v případě třídy `EnumMembers` vrací pouze členy (polím a metodám, ale **není** vlastnosti nebo události) definované přímo ve třídě. I v případě, že třída poskytuje implementaci pro členy zděděné nevrací žádné členy, které dědí třídu. Výčet zděděné členy, volající musí explicitně provedou řetězu dědičnosti. Všimněte si, že pravidla pro řetězec dědičnosti mohou lišit v závislosti na jazyk nebo kompilátor, který původní metadata, protože ho.
+ 
+ Vlastnosti a události, které nejsou ve výčtu `EnumMembers`. Chcete-li vytvořit výčet ty, použijte [enumproperties –](imetadataimport-enumproperties-method.md) nebo [enumevents –](imetadataimport-enumevents-method.md).
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

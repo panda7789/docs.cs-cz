@@ -14,76 +14,76 @@ helpviewer_keywords:
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d1dbd2c991f4b4259caa180375283ecb6d957336
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b022c70f7ed1707e27de7cac6ce08c53ee0878d0
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578110"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836562"
 ---
 # <a name="observer-design-pattern"></a>Návrhový vzor Pozorovatel
-Návrhový vzor pozorovatel umožňuje odběratele k registraci nebo dostávat oznámení od zprostředkovatele. Je vhodná pro každý scénář, který vyžaduje nabízená oznámení. Definuje vzoru *zprostředkovatele* (také označované jako *subjektu* nebo *lze zobrazit*) a nula, jednu nebo více *pozorovatelů*. Pozorovatelů zaregistrovat u zprostředkovatele a vždy, když předdefinovanou podmínku, události nebo změna stavu dojde, zprostředkovatel automaticky oznámí všechny pozorovatelů pomocí volání jeden své metody. Při volání této metody zprostředkovatele můžete také poskytnout aktuální informace o stavu pozorovatelů. V rozhraní .NET Framework, je použít návrhový vzor pozorovatel implementací obecná <xref:System.IObservable%601?displayProperty=nameWithType> a <xref:System.IObserver%601?displayProperty=nameWithType> rozhraní. Parametr obecného typu představuje typ, který poskytuje informace o oznámení.  
+Návrhový vzor pozorovatel umožňuje předplatiteli zaregistrovat se a dostávat upozornění od poskytovatele. Je vhodný pro jakýkoli scénář, který vyžaduje nabízené oznámení. Definuje vzor *poskytovatele* (označované také jako *subjektu* nebo *pozorovat*) a nula, jeden nebo více *pozorovatelů*. Pozorovatelé zaregistrovat u poskytovatele a pokaždé, když předdefinovanou podmínku, události nebo změnu stavu dochází, zprostředkovatel automaticky upozorní všechny pozorovatelů ve volání jedné z jejich metod. Při volání této metody zprostředkovatele lze také poskytovat aktuální informace o stavu pozorovatelů. V rozhraní .NET Framework, se použije návrhový vzor pozorovatel implementací Obecné <xref:System.IObservable%601?displayProperty=nameWithType> a <xref:System.IObserver%601?displayProperty=nameWithType> rozhraní. Parametr obecného typu představuje typ, který poskytuje informace o oznámení.  
   
-## <a name="applying-the-pattern"></a>Použití vzoru  
- Návrhový vzor pozorovatel je vhodná pro distribuované nabízená oznámení, protože podporuje čistou oddělení mezi dva různé součásti nebo aplikačními vrstvami, jako je například vrstvu (obchodní logiku) zdroj dat a uživatelské rozhraní (zobrazení) vrstvě. Vzor se dá implementovat pokaždé, když poskytovatele zpětná volání použije k poskytování jeho klienty s aktuální informace.  
+## <a name="applying-the-pattern"></a>Použití tohoto vzoru  
+ Návrhový vzor pozorovatel je vhodná pro distribuované nabízené oznámení, protože umožňuje čisté oddělení mezi dva různé součásti nebo vrstvy aplikace, jako je například vrstva (obchodní logiky) zdroj dat a vrstvě uživatelského rozhraní (Zobrazit). Vzorek je možné implementovat pokaždé, když se poskytovatel používá zpětná volání k poskytování své klienty s aktuální informace.  
   
- Implementace vzoru vyžaduje zadání následující:  
+ Implementace vzoru vyžaduje, musíte poskytnout následující:  
   
--   Zprostředkovatele nebo předmětu, což je objekt, který odesílá oznámení pozorovatele. Zprostředkovatel je třídu nebo strukturu, která implementuje <xref:System.IObservable%601> rozhraní. Zprostředkovatel musí implementovat jednu metodu, <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType>, která je volána metodou pozorovatelů, které chcete dostávat oznámení od zprostředkovatele.  
+-   Zprostředkovatel nebo předmětu, což je objekt, který odesílá oznámení pozorovatele. Zprostředkovatel je třída nebo struktura, která implementuje <xref:System.IObservable%601> rozhraní. Zprostředkovatel musí implementovat jedinou metodu <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType>, která je volána metodou pozorovatelé, které chcete dostávat upozornění od poskytovatele.  
   
--   Pozorovatel, což je objekt, který obdrží oznámení ze zprostředkovatele. Pozorovatel je třídu nebo strukturu, která implementuje <xref:System.IObserver%601> rozhraní. Pozorovatel musí implementovat tři metody, které se nazývají zprostředkovatelem:  
+-   Pozorovatele, který je objekt, který dostává oznámení ze zprostředkovatele. Pozorovatelem je třída nebo struktura, která implementuje <xref:System.IObserver%601> rozhraní. Pozorovatel musí implementovat tři metody, které se nazývají zprostředkovatelem:  
   
-    -   <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType>, který poskytuje pozorovatel s aktuální nebo nové informace.  
+    -   <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType>, který poskytuje pozorovatel s informacemi o nových nebo aktuální.  
   
-    -   <xref:System.IObserver%601.OnError%2A?displayProperty=nameWithType>, která informuje pozorovatel, který došlo k chybě.  
+    -   <xref:System.IObserver%601.OnError%2A?displayProperty=nameWithType>, který informuje pozorovatele, který došlo k chybě.  
   
-    -   <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>, což naznačuje, že zprostředkovatel bylo dokončeno odesílání oznámení.  
+    -   <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>, což znamená, že zprostředkovatel dokončení odesílání oznámení.  
   
--   Mechanismus, který umožňuje poskytovateli ke sledování pozorovatelů. Obvykle používá zprostředkovatel objekt kontejneru, například <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> objektu k udržení odkazů na <xref:System.IObserver%601> implementace, které odebírá oznámení. Použití kontejner úložiště pro tento účel umožňuje zprostředkovatele pro zpracování nula na neomezený počet pozorovatelů. Pořadí, ve kterém pozorovatelů obdrží oznámení není definován; Zprostředkovatel je můžete použít libovolnou metodu pro určení pořadí.  
+-   Mechanismus, který umožňuje poskytovateli udržovat přehled o pozorovatelů. Obvykle, poskytovatel použije objekt kontejneru, jako <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> objekt obsahovat odkazy na <xref:System.IObserver%601> implementace, které mají přihlásili k odběru oznámení. Použití kontejner úložiště pro tento účel umožňuje poskytovateli zpracování nula k neomezenému počtu pozorovatelů. Není definováno pořadí, ve kterém pozorovatelů dostávat oznámení; Zprostředkovatel je můžete použít libovolnou metodu pro určení pořadí.  
   
--   <xref:System.IDisposable> Implementace, která umožňuje poskytovateli odeberte pozorovatelů po dokončení oznámení. Pozorovatelů zobrazí odkaz na <xref:System.IDisposable> implementace z <xref:System.IObservable%601.Subscribe%2A> metoda, takže můžete také zavolat <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> metoda k odhlášení odběru před zprostředkovatele dokončila odesílání oznámení.  
+-   <xref:System.IDisposable> Implementace, která umožňuje poskytovateli odeberte pozorovatelů po oznámení dokončení. Pozorovatelé zobrazí odkaz na <xref:System.IDisposable> implementaci <xref:System.IObservable%601.Subscribe%2A> metoda, takže můžete také volat <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> metoda k odhlášení odběru před dokončením příkazu se zprostředkovatel, odesílání oznámení.  
   
--   Objekt, který obsahuje data, která odešle zprostředkovatel jeho pozorovatelů. Typ tohoto objektu odpovídá parametr obecného typu <xref:System.IObservable%601> a <xref:System.IObserver%601> rozhraní. I když tento objekt může být stejný jako <xref:System.IObservable%601> implementace nejčastěji je samostatný typu.  
+-   Objekt, který obsahuje data, která odešle zprostředkovatel jeho pozorovatelů. Typ tohoto objektu, který odpovídá parametru obecného typu <xref:System.IObservable%601> a <xref:System.IObserver%601> rozhraní. I když tento objekt může být stejný jako <xref:System.IObservable%601> implementace, nejčastěji je samostatného typu.  
   
 > [!NOTE]
->  Kromě implementace návrhový vzor pozorovatel, vás může zajímat zkoumat knihovny, které jsou vytvořené pomocí <xref:System.IObservable%601> a <xref:System.IObserver%601> rozhraní. Například [reaktivní rozšíření pro platformu .NET (Rx)](https://msdn.microsoft.com/library/hh242985.aspx) obsahují sadu metod rozšíření a operátory standardní pořadí LINQ pro podporu asynchronní programování.  
+>  Kromě provádění návrhový vzor pozorovatel vás může zajímat zkoumání knihovny, které se vytvářejí pomocí <xref:System.IObservable%601> a <xref:System.IObserver%601> rozhraní. Například [Reactive Extensions pro platformu .NET (obdx)](https://docs.microsoft.com/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)) sestávat z několika metod rozšíření a pořadí standardní operátory LINQ, aby podporoval asynchronní programování.  
   
 ## <a name="implementing-the-pattern"></a>Implementace vzoru  
- Následující příklad používá návrhový vzor pozorovatel k implementaci informace systému letiště sobě deklarace identity. A `BaggageInfo` třída poskytuje informace o které letů a karusely, kde je k dispozici pro vyzvednutí sobě z každý let. Zobrazí se v následujícím příkladu.  
+ Návrhový vzor pozorovatel k implementaci informačním systému letiště sobě deklarace identity v následujícím příkladu. A `BaggageInfo` třída poskytuje informace o opravovány letů a karusel, kde je k dispozici pro vyzvednutí sobě z jednotlivých let. Je znázorněno v následujícím příkladu.  
   
  [!code-csharp[Conceptual.ObserverDesignPattern#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesignpattern/cs/provider.cs#1)]
  [!code-vb[Conceptual.ObserverDesignPattern#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesignpattern/vb/provider.vb#1)]  
   
- A `BaggageHandler` třída je odpovědná za přijímá informace, o které letů a sobě deklarací karusely. Interně udržuje dvě kolekce:  
+ A `BaggageHandler` třídy zodpovídá za příjem informací o lety opravovány a sobě Karusel deklarací identity. Interně spravuje dvě kolekce:  
   
--   `observers` -Kolekci klientů, kteří je budou přijímat aktualizované informace.  
+-   `observers` -Kolekce klienty, kteří budou dostávat aktualizované informace.  
   
--   `flights` -Kolekce letů a jejich přiřazené karusely.  
+-   `flights` -Kolekce letů a jejich přiřazené Karusel.  
   
- Obě kolekce jsou reprezentované pomocí obecného <xref:System.Collections.Generic.List%601> objekty, které jsou vytvářeny instance v `BaggageHandler` konstruktoru třídy. Zdrojový kód `BaggageHandler` třída je znázorněno v následujícím příkladu.  
+ Obě kolekce jsou reprezentované pomocí obecného <xref:System.Collections.Generic.List%601> objekty, které jsou vytvořeny v `BaggageHandler` konstruktoru třídy. Zdrojový kód `BaggageHandler` třídy je znázorněno v následujícím příkladu.  
   
  [!code-csharp[Conceptual.ObserverDesignPattern#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesignpattern/cs/provider.cs#2)]
  [!code-vb[Conceptual.ObserverDesignPattern#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesignpattern/vb/provider.vb#2)]  
   
- Volání klientů, které chcete přijímat aktualizované informace `BaggageHandler.Subscribe` metoda. Pokud klient nebyl dříve přihlásit k odběru oznámení, odkaz na klienta <xref:System.IObserver%601> implementace je přidán do `observers` kolekce.  
+ Klienti, kteří si nepřejete dostávat aktualizované informace volání `BaggageHandler.Subscribe` metody. Pokud klient nebyl dříve přihlásili k odběru oznámení, odkaz na straně klienta <xref:System.IObserver%601> implementace je přidán do `observers` kolekce.  
   
- Přetížené `BaggageHandler.BaggageStatus` nelze volat metodu že sobě z letu odpojení, nebo už odpojení. V prvním případě metodu je předán číslo letu, ze kterého pochází letu letiště a karuselu kde sobě odpojení. V druhém případě je předán metodu jenom číslo letu. Pro sobě, který je odpojeno, metoda kontroly jestli `BaggageInfo` informace předaný metodě existuje v `flights` kolekce. Pokud ne, metoda přidá informace a volá každý pozorovatel `OnNext` metoda. Metoda pro lety, jejichž sobě už odpojení, zkontroluje, zda informace na této cestě jsou uloženy v `flights` kolekce. Pokud se jedná, volá metodu každý pozorovatel `OnNext` metoda a odebere `BaggageInfo` objektu z `flights` kolekce.  
+ Přetížené `BaggageHandler.BaggageStatus` metodu lze volat pro označení, že sobě z let uvolňován, nebo je již uvolněna. V prvním případě metodě je předána číslo letu, letiště, ze kterého pochází letu a karuselu kde sobě uvolňován. V druhém případě metodě je předána jenom číslo letu. K sobě, která se zrušilo jeho načtení, metoda zkontroluje, jestli `BaggageInfo` informace předaný metodě existuje v `flights` kolekce. Pokud tomu tak není, metoda přidá informace a zavolá každý pozorovatel `OnNext` metody. Pro lety, jehož sobě již probíhá uvolnění, metoda zkontroluje, zda informace na této cestě jsou uloženy v `flights` kolekce. Pokud se jedná, volá metodu každý pozorovatel `OnNext` metoda a odebere `BaggageInfo` objektu z `flights` kolekce.  
   
- Když má dostali poslední letu dne a zpracovala jeho sobě `BaggageHandler.LastBaggageClaimed` metoda je volána. Tato metoda volá každý pozorovatel `OnCompleted` metoda indikující, že byly dokončeny všechny oznámení a pak zruší `observers` kolekce.  
+ Při poslední letu dne má dostali a zpracovala jeho sobě `BaggageHandler.LastBaggageClaimed` metoda je volána. Tato metoda volá každý pozorovatel `OnCompleted` indikace, že všechna oznámení dokončení a poté vymaže `observers` kolekce.  
   
- Poskytovatele <xref:System.IObservable%601.Subscribe%2A> metoda vrátí <xref:System.IDisposable> implementace, která umožňuje pozorovatelů zastavit přijímání oznámení před <xref:System.IObserver%601.OnCompleted%2A> metoda je volána. Zdrojový kód pro tuto `Unsubscriber(Of BaggageInfo)` třída je znázorněno v následujícím příkladu. Když je vytvořena instance třídy v `BaggageHandler.Subscribe` metoda, je předán odkaz na `observers` kolekce a odkaz na pozorovatel, který je přidán do kolekce. Tyto odkazy jsou přiřazeny k lokální proměnné. Když objektu `Dispose` metoda je volána, zkontroluje, zda stále existuje pozorovatel v `observers` kolekce a pokud ano, odebere pozorovatele.  
+ Poskytovatele <xref:System.IObservable%601.Subscribe%2A> vrátí metoda <xref:System.IDisposable> implementace, která umožňuje pozorovatelů k ukončení přijímání oznámení před <xref:System.IObserver%601.OnCompleted%2A> metoda je volána. Zdrojový kód `Unsubscriber(Of BaggageInfo)` třídy je znázorněno v následujícím příkladu. Když je vytvořena instance třídy v `BaggageHandler.Subscribe` metodě je předána odkazem na `observers` kolekce a odkaz na pozorovatele, který je přidán do kolekce. Tyto odkazy jsou přiřazeny k místní proměnné. Při objektu `Dispose` metoda je volána, zkontroluje, zda pozorovatel stále existuje v `observers` kolekce a pokud ano, odebere pozorovatele.  
   
  [!code-csharp[Conceptual.ObserverDesignPattern#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesignpattern/cs/provider.cs#3)]
  [!code-vb[Conceptual.ObserverDesignPattern#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesignpattern/vb/provider.vb#3)]  
   
- Následující příklad uvádí <xref:System.IObserver%601> implementace s názvem `ArrivalsMonitor`, což je základní třídu, která zobrazuje informace o sobě deklaraci identity. Název města, původní je abecedně, zobrazují informace. Metody `ArrivalsMonitor` jsou označeny jako `overridable` (v jazyce Visual Basic) nebo `virtual` (v jazyku C#), takže je můžete všechny přepsat odvozenou třídou.  
+ Následující příklad uvádí <xref:System.IObserver%601> implementace s názvem `ArrivalsMonitor`, což je základní třída, která zobrazí informace o deklaraci identity sobě. Informace se zobrazí abecedně, podle názvu původní město. Metody `ArrivalsMonitor` jsou označeny jako `overridable` (v jazyce Visual Basic) nebo `virtual` (v C#), takže je lze všechny přepsat v odvozené třídě.  
   
  [!code-csharp[Conceptual.ObserverDesignPattern#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesignpattern/cs/observer.cs#4)]
  [!code-vb[Conceptual.ObserverDesignPattern#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesignpattern/vb/observer.vb#4)]  
   
- `ArrivalsMonitor` Třída zahrnuje `Subscribe` a `Unsubscribe` metody. `Subscribe` Metoda umožňuje třídě Uložit <xref:System.IDisposable> implementace vrácený volání <xref:System.IObservable%601.Subscribe%2A> soukromé proměnné. `Unsubscribe` Metoda umožňuje třídě zrušit odběr oznámení voláním poskytovatele <xref:System.IDisposable.Dispose%2A> implementace. `ArrivalsMonitor` také poskytuje implementace <xref:System.IObserver%601.OnNext%2A>, <xref:System.IObserver%601.OnError%2A>, a <xref:System.IObserver%601.OnCompleted%2A> metody. Pouze <xref:System.IObserver%601.OnNext%2A> implementace obsahuje významné množství kódu. Metoda funguje s privátní, seřazené, obecného <xref:System.Collections.Generic.List%601> objekt, který uchovává informace o letištích původu, pro které lety a karusely, na kterých je k dispozici jejich sobě. Pokud `BaggageHandler` třída sestavy nové příchodem letu, <xref:System.IObserver%601.OnNext%2A> implementace metod přidá do seznamu informace o této cestě. Pokud `BaggageHandler` třída hlásí, že letu na sobě byl odpojen, <xref:System.IObserver%601.OnNext%2A> metoda odebere ze seznamu tento let. Vždy, když dojde ke změně, seznam seřazen a zobrazení v konzole.  
+ `ArrivalsMonitor` Třída zahrnuje `Subscribe` a `Unsubscribe` metody. `Subscribe` Metoda umožňuje třídě Uložit <xref:System.IDisposable> implementace vrácený voláním na <xref:System.IObservable%601.Subscribe%2A> privátní proměnné. `Unsubscribe` Metoda umožňuje třídě odběr oznámení voláním poskytovatele se <xref:System.IDisposable.Dispose%2A> implementace. `ArrivalsMonitor` také poskytuje implementace <xref:System.IObserver%601.OnNext%2A>, <xref:System.IObserver%601.OnError%2A>, a <xref:System.IObserver%601.OnCompleted%2A> metody. Pouze <xref:System.IObserver%601.OnNext%2A> značné množství kódu obsahuje implementaci. Metoda pracuje s privátní, seřazený, obecný <xref:System.Collections.Generic.List%601> objekt, který uchovává informace o letištích počátek opravovány letů a karusel, na kterých je jejich sobě k dispozici. Pokud `BaggageHandler` třídy hlásí nový doručení letu, <xref:System.IObserver%601.OnNext%2A> implementace metody přidá informace o této cestě do seznamu. Pokud `BaggageHandler` třídy hlásí, že letu sobě byl uvolněn, <xref:System.IObserver%601.OnNext%2A> metoda odstraní tento let ze seznamu. Pokaždé, když dojde ke změně, je v seznamu seřazené a zobrazí v konzole.  
   
- Následující příklad obsahuje vstupní bod aplikace, který vytvoří instanci `BaggageHandler` třídy a také dvě instance `ArrivalsMonitor` třídy a používá `BaggageHandler.BaggageStatus` metoda přidávat a odebírat informace o které lety. V každém případě pozorovatelů přijímat aktualizace a správně zobrazit informace o sobě deklaraci identity.  
+ Následující příklad obsahuje vstupní bod aplikace, která vytváří instanci `BaggageHandler` třídy a také dvě instance `ArrivalsMonitor` třídy a používá `BaggageHandler.BaggageStatus` metodu pro přidání a odebrání informací o opravovány lety. V obou případech pozorovatelů získávat aktualizace a správně zobrazit informace o deklaraci identity sobě.  
   
  [!code-csharp[Conceptual.ObserverDesignPattern#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesignpattern/cs/program.cs#5)]
  [!code-vb[Conceptual.ObserverDesignPattern#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesignpattern/vb/module1.vb#5)]  
@@ -92,6 +92,6 @@ Návrhový vzor pozorovatel umožňuje odběratele k registraci nebo dostávat o
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Doporučené postupy pro návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern-best-practices.md)|Popisuje osvědčené postupy při vývoji aplikace, které implementují návrhový vzor pozorovatel přijmout.|  
-|[Postupy: Implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md)|Poskytuje podrobné implementaci zprostředkovatele pro teplotě monitorování aplikace.|  
-|[Postupy: Implementace pozorovatele](../../../docs/standard/events/how-to-implement-an-observer.md)|Poskytuje podrobné implementace pozorovatele pro teplotě monitorování aplikace.|
+|[Doporučené postupy pro návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern-best-practices.md)|Popisuje osvědčené postupy při vývoji aplikací, které implementují návrhový vzor pozorovatel přijmout.|  
+|[Postupy: Implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md)|Poskytuje podrobné implementaci zprostředkovatele pro teploty monitorování aplikace.|  
+|[Postupy: Implementace pozorovatele](../../../docs/standard/events/how-to-implement-an-observer.md)|Poskytuje podrobné provádění pozorovatele pro teploty monitorování aplikace.|

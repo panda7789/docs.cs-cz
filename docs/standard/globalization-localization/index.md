@@ -16,7 +16,7 @@ ms.author: ronpet
 ---
 # <a name="globalizing-and-localizing-net-applications"></a>Globalizace a lokalizace aplikací .NET
 
-Vývoj [globalizované aplikace](https://msdn.microsoft.com/goglobal/bb978433.aspx), včetně aplikace, která může být lokalizována do jednoho nebo více jazyků, zahrnuje tři kroky: globalizaci, přezkoumání lokalizovatelnosti a lokalizaci.
+Vývoj světově připravených aplikací, včetně aplikace, která může být lokalizována do jednoho nebo více jazyků, zahrnuje tři kroky: globalizaci, přezkoumání lokalizovatelnosti a lokalizaci.
 
 [Globalizace](globalization.md)
 

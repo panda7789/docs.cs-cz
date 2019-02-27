@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 049976c1e63d04c495a38b39531313adc1d12c5c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fd40e35c001318f7e5e685a68fd591b253cbf051
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54620081"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836367"
 ---
 # <a name="selecting-a-collection-class"></a>Výběr třídy kolekce
 Je nutné pečlivě zvolit třídy kolekce. Pomocí nesprávného typu můžete omezit používání kolekce. Obecně platí, vyhněte se použití typů v <xref:System.Collections> obor názvů Pokud jsou specificky cílené na rozhraní .NET Framework verze 1.1. Obecné a souběžné verze kolekce jsou upřednostňovány kvůli jejich vyšší bezpečnost typů a dalších vylepšení.  
@@ -75,7 +75,7 @@ Je nutné pečlivě zvolit třídy kolekce. Pomocí nesprávného typu můžete 
     -   Kromě toho můžete použít některý z obecné kolekce tříd v <xref:System.Collections.Generic> oboru názvů jako silně typované kolekce řetězec tak, že zadáte <xref:System.String> třídu pro své argumenty obecného typu.  
   
 ## <a name="linq-to-objects-and-plinq"></a>LINQ to Objects a PLINQ  
- LINQ na objekty umožňuje vývojářům používat dotazy LINQ pro přístup k objektům v paměti, dokud objektový typ implementuje <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>. Dotazy LINQ poskytují společný vzor pro přístup k datům, jsou obvykle stručnější a čitelnější než standardní `foreach` smyčky a poskytují filtrování, řazení a seskupování schopností. Další informace najdete v tématu [LINQ to Objects](https://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9).  
+ LINQ na objekty umožňuje vývojářům používat dotazy LINQ pro přístup k objektům v paměti, dokud objektový typ implementuje <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>. Dotazy LINQ poskytují společný vzor pro přístup k datům, jsou obvykle stručnější a čitelnější než standardní `foreach` smyčky a poskytují filtrování, řazení a seskupování schopností. Další informace najdete v tématu [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md) a [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md).  
   
  PLINQ poskytuje paralelní implementace LINQ na objekty, které můžou nabízet rychlejší provádění dotazu v mnoha scénářích zefektivnit tak využívání vícejádrových počítačích. Další informace najdete v tématu [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md).  
   

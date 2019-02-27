@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: dd7604eb-9fa3-4b60-b2dd-b47739fa3148
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a6bf86986f9e6f72fca9d6e88ac16699ff7cdb4e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 83fe9180e222dd71c9d94810e4eedbac398acad4
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54606476"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836471"
 ---
 # <a name="applying-attributes"></a>Použití atributů
 Na základě následujícího postupu použijte atribut na prvek kódu.  
@@ -57,4 +57,5 @@ Na základě následujícího postupu použijte atribut na prvek kódu.
 - [Atributy](../../../docs/standard/attributes/index.md)
 - [Načítání informací uložených v atributech](../../../docs/standard/attributes/retrieving-information-stored-in-attributes.md)
 - [Koncepty](/cpp/windows/attributed-programming-concepts)
-- [Atributy](https://msdn.microsoft.com/library/ae334cee-d96c-4243-a5e3-06dd7fcaf205)
+- [Atributy (C#)](../../csharp/programming-guide/concepts/attributes/index.md)
+- [Přehled atributů (Visual Basic)](../../visual-basic/programming-guide/concepts/attributes/index.md)

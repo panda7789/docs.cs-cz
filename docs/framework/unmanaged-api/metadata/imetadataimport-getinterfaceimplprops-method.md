@@ -1,6 +1,6 @@
 ---
 title: IMetaDataImport::GetInterfaceImplProps – metoda
-ms.date: 03/30/2017
+ms.date: 02/25/2019
 api_name:
 - IMetaDataImport.GetInterfaceImplProps
 api_location:
@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 91cb42a5bf1115de82b5fe28693cb77b66915c9d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dc16d01d45364d1a17f281f859b27c3e48342ff0
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600554"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835717"
 ---
 # <a name="imetadataimportgetinterfaceimplprops-method"></a>IMetaDataImport::GetInterfaceImplProps – metoda
-Získá ukazatel na tokeny metadat pro <xref:System.Type> zadanou metodu, která implementuje a rozhraní, která deklaruje dané metody.  
+Získá ukazatel na tokeny metadat pro <xref:System.Type> zadanou metodu, která implementuje a rozhraní, která deklaruje dané metody.
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,6 +46,33 @@ HRESULT GetInterfaceImplProps (
   
  `ptkIface`  
  [out] Představuje rozhraní, které definuje implementované metody token metadat.  
+
+## <a name="remarks"></a>Poznámky
+
+ Získat hodnotu pro `iImpl` voláním [enuminterfaceimpls –](imetadataimport-enuminterfaceimpls-method.md) metody.
+ 
+ Předpokládejme například, že třída má `mdTypeDef` token hodnota 0x02000007 a implementuje tři rozhraní, jejichž typy mají tokeny: 
+
+- 0x02000003 (TypeDef)
+- 0x0100000A (TypeRef)
+- 0x0200001C (TypeDef)
+
+Obecně tyto informace jsou uloženy do tabulky implementace rozhraní jako:
+
+| Číslo řádku | Token třídy | Token rozhraní |
+|------------|-------------|-----------------|
+| 4          |             |                 |
+| 5          | 02000007    | 02000003        |
+| 6          | 02000007    | 0100000A        |
+| 7          |             |                 |
+| 8          | 02000007    | 0200001C        |
+
+Odvolat token, který je 4 bajty. hodnota:
+
+- Nižší 3 bajtů obsahovat číslo řádku, nebo identifikátorů RID.
+- Horní bajtů obsahuje typ tokenu – 0x09 pro `mdtInterfaceImpl`.
+
+`GetInterfaceImplProps` Vrátí informace uchovávané v řádku, jehož token, který zadáte v `iImpl` argument. 
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

@@ -1,7 +1,7 @@
 ---
 title: . Operator - C# odkaz
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 02/25/2019
 f1_keywords:
 - ._CSharpKeyword
 helpviewer_keywords:
@@ -9,47 +9,46 @@ helpviewer_keywords:
 - . operator [C#]
 - dot operator (.) [C#]
 ms.assetid: a1f54b52-b686-4ae5-a48e-a2a9ebd0eb7b
-ms.openlocfilehash: a59f69d0349a054c8c2a5b701b8f63df113a6580
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
+ms.openlocfilehash: 2661676d53deb874c5e5a90b4443b301730e09df
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333717"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836458"
 ---
 # <a name="-operator-c-reference"></a>. operator (Referenční dokumentace jazyka C#)
 
-Tečka – operátor (`.`) se používá pro přístup ke členu. Operátor tečky Určuje typ nebo obor názvů. Například operátor tečky slouží k přístupu k určité metody v rámci knihovny tříd rozhraní .NET Framework:
+Tečka, `.`, se obvykle používá pro přístup ke členu.
 
-[!code-csharp[csRefOperators#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#16)]
+Můžete použít `.` token pro přístup k oboru názvů nebo typ, jak ukazují následující příklady:
 
-Představte si třeba následující třídy:
+- Použití `.` pro přístup k vnořené oboru názvů v oboru názvů, jako následující příklad [ `using` směrnice](../keywords/using-directive.md) ukazuje:
 
-[!code-csharp[csRefOperators#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#17)]
+  [!code-csharp[nested namespaces](~/samples/snippets/csharp/language-reference/operators/MemberAccessExamples.cs#NestedNamespace)]
 
-[!code-csharp[csRefOperators#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#18)]
+- Použití `.` do formuláře *kvalifikovaný název* pro přístup k typu v rámci oboru názvů, jak ukazuje následující kód:
 
-Proměnná `s` se dvěma členy `a` a `b`; pokud ho chcete přistupovat k nim, použijte operátor tečky:
+  [!code-csharp[qualified name](~/samples/snippets/csharp/language-reference/operators/MemberAccessExamples.cs#QualifiedName)]
 
-[!code-csharp[csRefOperators#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#19)]
+  Použít [ `using` směrnice](../keywords/using-directive.md) provést volitelné použijte kvalifikované názvy.
 
-Tečka slouží také k vytvoření kvalifikované názvy, které jsou názvy, které určují obor názvů nebo rozhraní, například, ke kterému patří.
+- Použití `.` přístup [členy typu](../../programming-guide/classes-and-structs/index.md#members), statické a nestatické, pokud jako ukazuje následující kód:
 
-[!code-csharp[csRefOperators#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#20)]
+  [!code-csharp-interactive[type members](~/samples/snippets/csharp/language-reference/operators/MemberAccessExamples.cs#TypeMemberAccess)]
 
-Using – direktiva provádí některé kvalifikace názvu volitelné:
+Můžete také použít `.` k vyvolání [– metoda rozšíření](../../programming-guide/classes-and-structs/extension-methods.md).
 
-[!code-csharp[csRefOperators#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#21)]
+## <a name="operator-overloadability"></a>Overloadability – operátor
 
-Ale pokud identifikátor je dvojznačný, musí být kvalifikován:
-
-[!code-csharp[csRefOperators#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#22)]
+Operátor `.` nemohou být přetíženy.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Další informace najdete v tématu [přístup ke členu](~/_csharplang/spec/expressions.md#member-access) část [ C# specifikace jazyka](../language-specification/index.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Operátory jazyka C#](index.md)
+- [?. a? operátory]](null-conditional-operators.md)

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 2252214a8ec217c30842995ea7d4d141e127d5f3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2363042ace7440ee74e4590a2271e87c1389ebcc
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54640443"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836341"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpečení, také využívá podkladovou platformu, která obsahuje operační systém, funkce zabezpečení [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy se dá zajistit [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silné zabezpečení obrany v modelu, který se pokouší vyhnout jakékoli jediným bodem selhání, jak je znázorněno na následujícím obrázku:  
@@ -50,7 +50,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  Přetečení vyrovnávací paměti v minulosti byly příčinou mnoho bezpečnostními zesíleným zabezpečením. Pokud útočník využívá výhod chybu kódu, který umožňuje vkládání škodlivý kód, který zapíše za hranice vyrovnávací paměti dojde k přetečení vyrovnávací paměti. Díky tomu pak útočníka o zneužití procesu, ve kterém je kód spuštěn přepsáním návratovou adresu funkce způsobí spuštění kódu útočníka. Výsledkem je škodlivý kód, který se spustí libovolný kód se stejnými oprávněními jako napadenému proces.  
   
- Na vysoké úrovni příznak /GS kompilátoru chrání proti některé potenciální přetečení vyrovnávací paměti vložením speciální zabezpečení souboru cookie k ochraně návratovou adresu funkce s místní vyrovnávací paměti řetězců. Po vrácení funkce, soubor cookie zabezpečení je ve srovnání s původní hodnotu. Pokud hodnota změnila, pravděpodobně došlo k přetečení vyrovnávací paměti a proces se ukončí s chybovou podmínku. Zastavení procesu zabrání spouštění potenciálně škodlivého kódu. Zobrazit [/GS (Kontrola zabezpečení vyrovnávací paměti)](https://msdn.microsoft.com/library/8dbf701c.aspx) další podrobnosti.  
+ Na vysoké úrovni příznak /GS kompilátoru chrání proti některé potenciální přetečení vyrovnávací paměti vložením speciální zabezpečení souboru cookie k ochraně návratovou adresu funkce s místní vyrovnávací paměti řetězců. Po vrácení funkce, soubor cookie zabezpečení je ve srovnání s původní hodnotu. Pokud hodnota změnila, pravděpodobně došlo k přetečení vyrovnávací paměti a proces se ukončí s chybovou podmínku. Zastavení procesu zabrání spouštění potenciálně škodlivého kódu. Zobrazit [/GS (Kontrola zabezpečení vyrovnávací paměti)](/cpp/build/reference/gs-buffer-security-check) další podrobnosti.  
   
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] je zkompilován s příznak /GS pro přidání další vrstvy Defense za účelem [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
   
@@ -174,7 +174,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
 <a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>ClickOnce – nasazení  
- [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] je komplexní nasazení technologie, která je součástí rozhraní .NET Framework a integruje se s [!INCLUDE[TLA#tla_visualstu](../../../includes/tlasharptla-visualstu-md.md)] (viz [Přehled nasazení ClickOnce](https://msdn.microsoft.com/library/142dbbz4.aspx) podrobné informace). Samostatné [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace můžete nasadit s využitím [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)], zatímco aplikace hostované prohlížečem musí být nasazeny s [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)].  
+ [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] je komplexní nasazení technologie, která je součástí rozhraní .NET Framework a integruje se s [!INCLUDE[TLA#tla_visualstu](../../../includes/tlasharptla-visualstu-md.md)] (viz [ClickOnce zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment) podrobné informace). Samostatné [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace můžete nasadit s využitím [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)], zatímco aplikace hostované prohlížečem musí být nasazeny s [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)].  
   
  Aplikace nasazené pomocí [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)] jsou uvedeny další vrstvu zabezpečení [!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)]; v podstatě [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] nasazené aplikace požádat o oprávnění, která potřebují. Jsou poskytovány pouze ta oprávnění, pokud nepřekročí sadu oprávnění pro zónu, ze kterého je aplikace nasazená. Díky snížení sadu oprávnění pouze na ty, které jsou potřeba, i když jsou nižší než zadané ve spuštění zóny sadu oprávnění, je počet prostředků, které má aplikace přístup k snížit na úplném. V důsledku toho pokud aplikace je zachycena, se snižuje potenciál pro poškození do klientského počítače.  
   
@@ -210,9 +210,6 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
 ## <a name="see-also"></a>Viz také:
 - [Principy zabezpečení v Microsoft Internet Explorer 6 ve Windows XP s aktualizací SP2](https://www.microsoft.com/downloads/details.aspx?FamilyId=E550F940-37A0-4541-B5E2-704AB386C3ED&displaylang=en)
-- [Porozumění a práci v chráněném režimu, Internet Explorer](https://msdn.microsoft.com/library/bb250462.aspx)
-- [Windows XP Service Pack 3](https://www.microsoft.com/windows/products/windowsxp/sp3/default.mspx)
-- [Průvodce zabezpečením Windows Vista](https://www.microsoft.com/downloads/details.aspx?familyid=a3d1bbed-7f35-4e72-bfb5-b84a526c1565&displaylang=en)
 - [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)
 - [Zabezpečení](../../../docs/framework/wpf/security-wpf.md)
 - [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)

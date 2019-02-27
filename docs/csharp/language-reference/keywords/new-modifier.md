@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
-ms.openlocfilehash: 07986ac0c49387422aa334711b6997b159151e79
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: d5fd244ea22fd48bf5b81d2cdf55127f745c145b
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53244958"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835015"
 ---
 # <a name="new-modifier-c-reference"></a>New – modifikátor (referenční dokumentace jazyka C#)
 
@@ -24,11 +24,11 @@ V tomto příkladu `BaseC.Invoke` je skryt `DerivedC.Invoke`. Pole `x` nemá vli
 
 Skrytí názvu prostřednictvím dědičnosti má jednu z následujících forem:
 
-Obecně konstanta, pole, vlastnost nebo typ, který se používá ve třídě nebo struktuře skryje všechny členy základní třídy, které sdílejí její název.  Existují zvláštní případy.  Například, pokud deklarujete novou položku s názvem `N` mít typ, který není nevyvolatelný a základní typ deklaruje `N` na metodu, nové pole neskryje základní deklaraci v syntaxi vyvolání.  Zobrazit [specifikace jazyka C# 5.0](https://www.microsoft.com/download/details.aspx?id=7029) podrobnosti (viz oddíl "Člen vyhledávání" v části "Expressions").
+- Obecně konstanta, pole, vlastnost nebo typ, který se používá ve třídě nebo struktuře skryje všechny členy základní třídy, které sdílejí její název.  Existují zvláštní případy.  Například, pokud deklarujete novou položku s názvem `N` mít typ, který není nevyvolatelný a základní typ deklaruje `N` na metodu, nové pole neskryje základní deklaraci v syntaxi vyvolání.  Zobrazit [specifikace jazyka C# 5.0](https://www.microsoft.com/download/details.aspx?id=7029) podrobnosti (viz oddíl "Člen vyhledávání" v části "Expressions").
 
-Metody zavedené ve třídě nebo struktuře skryjí vlastnosti polí a typů, které sdílejí tento název v základní třídě. Skryje také všechny metody základní třídy, které mají stejnou signaturu.
+- Metody zavedené ve třídě nebo struktuře skryjí vlastnosti polí a typů, které sdílejí tento název v základní třídě. Skryje také všechny metody základní třídy, které mají stejnou signaturu.
 
-Indexer zavedený ve třídě nebo struktuře skryje všechny základní třídy indexerů, které mají stejnou signaturu.
+- Indexer zavedený ve třídě nebo struktuře skryje všechny základní třídy indexerů, které mají stejnou signaturu.
 
 Jedná se o chybu, chcete-li použít `new` a [přepsat](override.md) na stejný člen, protože dva Modifikátory mají vzájemně vylučují význam. `new` Modifikátor vytvoří nový člen se stejným názvem a způsobí, že původní člen bude skrytý. `override` Modifikátor rozšiřuje implementaci pro zděděného člena.
 

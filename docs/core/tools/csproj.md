@@ -3,12 +3,12 @@ title: Dodatky k formátu csproj pro .NET Core
 description: Další informace o rozdílech mezi stávající a soubory csproj .NET Core
 author: blackdwarf
 ms.date: 09/22/2017
-ms.openlocfilehash: d715a3a30c48f1c3fa837b24ee21b49fa947011a
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 8b44c445fbfd3d15cc8e6c53e640a8ae5e284d27
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748007"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836212"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 
@@ -208,7 +208,7 @@ Logická hodnota určující, zda klient musí požádat spotřebitele o přijet
 
 ### <a name="packagelicenseexpression"></a>PackageLicenseExpression
 
-Výraz SPDX licence nebo cesta k souboru licencí v rámci balíčku, často zobrazuje v uživatelském rozhraní nuget.org.
+[SPDX licence identifikátor](https://spdx.org/licenses/) nebo výraz. Například, `Apache-2.0`.
 
 Tady je úplný seznam [SPDX licence identifikátory](https://spdx.org/licenses/). NuGet.org přijímá pouze OSI nebo licenci FSF schválení licence při použití výrazu typu.
 
@@ -236,23 +236,6 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 Cesta k souboru licencí v rámci balíčku, pokud používáte licenci, která ještě není přiřazený identifikátor SPDX, nebo vlastní licenci (jinak `PackageLicenseExpression` je upřednostňované)
 
-> [!NOTE]
-> Pouze jeden z `PackageLicenseExpression`, `PackageLicenseFile` a `PackageLicenseUrl` lze zadat najednou.
-
-### <a name="packagelicenseurl"></a>PackageLicenseUrl
-
-Adresu URL licence, která se vztahuje na balíček. (_zastaralé od verze Visual Studio 15.9.4, sady .NET SDK 2.1.502 a 2.2.101_)
-
-### <a name="packagelicenseexpression"></a>PackageLicenseExpression
-
-[SPDX licence identifikátor](https://spdx.org/licenses/) nebo výrazu, tedy `Apache-2.0`.
-
-Nahradí `PackageLicenseUrl`, nelze kombinovat s `PackageLicenseFile` a vyžaduje Visual Studio 15.9.4 2.1.502 nebo 2.2.101, sady .NET SDK nebo novější.
-
-### <a name="packagelicensefile"></a>PackageLicenseFile
-
-Cesta k licenci souboru na disku, relativní k souboru projektu, tedy `LICENSE.txt`.
-
 Nahradí `PackageLicenseUrl`, nelze kombinovat s `PackageLicenseExpression` a vyžaduje Visual Studio 15.9.4 2.1.502 nebo 2.2.101, sady .NET SDK nebo novější.
 
 Budete muset zajistit, že soubor s licencí je zabalena tak, že explicitně přidáte k projektu, příklady použití:
@@ -264,6 +247,12 @@ Budete muset zajistit, že soubor s licencí je zabalena tak, že explicitně p�
   <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
 </ItemGroup>
 ```
+
+### <a name="packagelicenseurl"></a>PackageLicenseUrl
+
+Adresu URL licence, která se vztahuje na balíček. (_zastaralé od verze Visual Studio 15.9.4, sady .NET SDK 2.1.502 a 2.2.101_)
+
+
 ### <a name="packageiconurl"></a>PackageIconUrl
 Adresa URL pro bitovou kopii 64 x 64 s průhledným pozadím použít jako ikona pro balíček zobrazená v uživatelském rozhraní.
 

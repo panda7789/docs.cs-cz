@@ -3,21 +3,15 @@ title: Kolekce a datové struktury
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- grouping data in collections
-- objects [.NET Framework], grouping in collections
-- Array class, grouping data in collections
-- threading [.NET Framework], safety
-- Collections classes
-- collections [.NET Framework]
+  - grouping data in collections
+  - 'objects [.NET Framework], grouping in collections'
+  - 'Array class, grouping data in collections'
+  - 'threading [.NET Framework], safety'
+  - Collections classes
+  - 'collections [.NET Framework]'
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: af76322cac08d7cf4e7e30e503c7fa2c97414898
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53154905"
 ---
 # <a name="collections-and-data-structures"></a>Kolekce a datové struktury
 Podobná data může často být zpracována efektivněji při uloženy a zpracovávány jako kolekce. Můžete použít <xref:System.Array?displayProperty=nameWithType> třídu nebo třídy v <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent>, System.Collections.Immutable oborů názvů pro přidání, odebrání a změnu jednotlivých prvků nebo rozsahu prvků v kolekci.  
@@ -33,7 +27,7 @@ Podobná data může často být zpracována efektivněji při uloženy a zpraco
   
 -   **Umožňuje vytvářet výčty kolekce**  
   
-     Rozhraní .NET framework kolekce buď implementovat <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> povolit kolekce, kterou chcete provést iteraci pomocí. Čítače můžete představit jako přesouvatelný ukazatel na libovolný prvek v kolekci. [Foreach v](~/docs/csharp/language-reference/keywords/foreach-in.md) příkazu a [For Each... Další příkaz](~/docs/visual-basic/language-reference/statements/for-each-next-statement.md) použít enumerátor vystavené <xref:System.Collections.IEnumerable.GetEnumerator%2A> metoda a skrýt složitost manipulace s enumerátorem. Kromě toho se jakoukoli kolekci, která implementuje <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> se považuje za *dotazovatelný typ* a může být dotázán pomocí jazyka LINQ. Dotazy LINQ poskytují společný vzor pro přístup k datům. Jsou obvykle stručnější a čitelnější než standardní `foreach` smyčky a poskytují filtrování, řazení a seskupování schopností. Dotazy LINQ mohou také zvýšit výkon. Další informace najdete v tématu [LINQ to Objects](https://msdn.microsoft.com/library/73cafe73-37cf-46e7-bfa7-97c7eea7ced9), [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md) a [Úvod do dotazů LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).  
+     Rozhraní .NET framework kolekce buď implementovat <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> povolit kolekce, kterou chcete provést iteraci pomocí. Čítače můžete představit jako přesouvatelný ukazatel na libovolný prvek v kolekci. [Foreach v](../../csharp/language-reference/keywords/foreach-in.md) příkazu a [For Each... Další příkaz](../../visual-basic/language-reference/statements/for-each-next-statement.md) použít enumerátor vystavené <xref:System.Collections.IEnumerable.GetEnumerator%2A> metoda a skrýt složitost manipulace s enumerátorem. Kromě toho se jakoukoli kolekci, která implementuje <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> se považuje za *dotazovatelný typ* a může být dotázán pomocí jazyka LINQ. Dotazy LINQ poskytují společný vzor pro přístup k datům. Jsou obvykle stručnější a čitelnější než standardní `foreach` smyčky a poskytují filtrování, řazení a seskupování schopností. Dotazy LINQ mohou také zvýšit výkon. Další informace najdete v tématu [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md), [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md), [Úvod do dotazů LINQ () C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md), a [základní operace dotazů (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).  
   
 -   **Možnost Kopírovat obsah kolekce do pole**  
   

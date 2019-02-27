@@ -4,12 +4,12 @@ description: Zjistěte, jak kód šablony, které umožňují definovat typ vlá
 author: kuhlenh
 ms.author: wiwagn
 ms.date: 10/09/2018
-ms.openlocfilehash: 1d1899d482738bc6cc9f638b6a74eab8d4ca70c1
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 991e3800e1302843db0dc1c57ed3a7e4becd298e
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49121178"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835288"
 ---
 # <a name="generic-types-overview"></a>Přehled obecných typů
 
@@ -68,5 +68,4 @@ Další výhodou znalost typu vaše obecný modul runtime je lepší možnosti l
 
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do obecných typů jazyka C#](https://msdn.microsoft.com/library/ms379564.aspx)
 - [Programování průvodce v C# – obecné typy](../../docs/csharp/programming-guide/generics/index.md)

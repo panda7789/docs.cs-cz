@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 133d70058cc8151b22d31a3211d48188095e5f07
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 043fe74f66635c30f12555efb9ccc9415e200ec3
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56218904"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835236"
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>Import knihovny typů ve formě sestavení
 Definice typů modelu COM jsou obvykle umístěny v knihovně typů. Naproti tomu kompatibilní se Specifikací CLS kompilátory vytvářejí metadat typu v sestavení. Dva zdroje informací o typu se značně liší. Toto téma popisuje postupy pro generování metadat z knihovny typů. Výsledné sestavení se nazývá definiční sestavení a, které obsahuje informace o typu umožňuje používat typy modelu COM aplikacemi rozhraní .NET Framework.  
@@ -44,7 +44,7 @@ Definice typů modelu COM jsou obvykle umístěny v knihovně typů. Naproti tom
   
 -   Visual Studio  
   
-     Visual Studio automaticky převede typy modelu COM v knihovně typů na metadata do sestavení. Pokyny najdete v tématu [jak: Přidání odkazů do knihoven typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md), [názorný postup: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)](../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies.md), a [názorný postup: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-vs.md).  
+     Visual Studio automaticky převede typy modelu COM v knihovně typů na metadata do sestavení. Pokyny najdete v tématu [jak: Přidání odkazů do knihoven typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md).  
   
 -   [Importér knihovny typů (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md)  
   
@@ -81,5 +81,3 @@ Definice typů modelu COM jsou obvykle umístěny v knihovně typů. Naproti tom
 - [Nasazení aplikace spolupráce](../../../docs/framework/interop/deploying-an-interop-application.md)
 - [Postupy: Přidání odkazů do knihoven typů](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md)
 - [Postupy: Generování sestavení vzájemné spolupráce z knihoven typů](../../../docs/framework/interop/how-to-generate-interop-assemblies-from-type-libraries.md)
-- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)](../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)
-- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-vs.md)

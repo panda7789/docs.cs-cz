@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: ab0cf58bec2d9072fbc3af78e477a84726dd7a81
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0ec66015159e03de8d2c16971c0e858ebc128014
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54659641"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835106"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
 Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově orientované programování po zapouzdření a dědičnosti. Polymorfismus řecké slovo, které znamená "mnoho ve tvaru" a má dva různé aspekty:  
@@ -78,7 +78,7 @@ Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově or
  V takovém případě pokud `DoWork` je volán na použití proměnné typu D, D nové `DoWork` je volána. Pokud je proměnná typu jazyka C, B nebo A slouží k přístupu k instance D, volání `DoWork` bude pravidlům virtuální dědičnost, směrování volání selžou provádění `DoWork` ve třídě C.  
   
 ### <a name="accessing-base-class-virtual-members-from-derived-classes"></a>Přístup k virtuální členy základní třídy z odvozené třídy  
- Odvozená třída, která má nahradit nebo přepsat metodu nebo vlastnost k němu přístup metody nebo vlastnosti v základní třídě pomocí klíčového slova base. Následující kód představuje příklad:  
+ Odvozená třída, která má nahradit nebo přepsat metodu nebo vlastnost může pořád přístup k metody nebo vlastnosti na základní třídu pomocí `base` – klíčové slovo. Následující kód představuje příklad:  
   
  [!code-csharp[csProgGuideInheritance#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_9.cs)]  
   

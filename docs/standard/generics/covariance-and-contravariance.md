@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 18244ab0473ca4de97e8b6e4eb84151d3a1a5b6e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 931edf3610d083f6821ec87d3e05db855e88c6f9
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54692961"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836419"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Kovariance a kontravariance v obecných typech
 <a name="top"></a> Kovariance a kontravariance jsou pojmy, které označují schopnost používat více odvozeného typu (konkrétnější) nebo méně odvozeného typu (specifické pro less) než byl původně zadán. Parametry obecného typu podporují kovarianci a kontravarianci za účelem zvýšení flexibility při přiřazování a používání obecných typů. Pokud hovoříme o typu systému, pak jsou pojmy kovariance, kontravariance a invariance definovány následovně: V příkladech se předpokládá základní třídu s názvem `Base` a odvozenou třídu s názvem `Derived`.  
@@ -135,7 +135,7 @@ ms.locfileid: "54692961"
 ### <a name="variance-in-generic-and-non-generic-delegates"></a>Variance obecných a neobecných delegátů  
  V předchozím kódu podpis `MyMethod` přesně shoduje se signaturou konstruovaného obecného delegátu: `Func<Base, Derived>` (`Func(Of Base, Derived)` v jazyce Visual Basic). Příklad ukazuje, že tento obecný delegát může být uložen v proměnných nebo parametrech metod, které mají více odvozené typy parametrů a méně odvozené návratové typy tak dlouho, dokud všechny typy delegátů jsou konstruovány ze typu obecného delegátu <xref:System.Func%602>.  
   
- Jedná se o důležitý fakt. Účinky kovariance a kontravariance v parametrech typu obecných delegátů jsou podobné účinkům kovariance a kontravariance v běžných vazbách delegátů (viz [odchylky v delegátech](https://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)). Variance ve vazbě delegátu však funguje se všemi typy delegátů, nejen s obecnými typy delegátu, které mají parametry variantního typu. Variance ve vazbách delegátů navíc umožňuje metodě vázat se na jakýkoli delegát, který má více omezující parametry typu a méně omezující návratový typ, zatímco přiřazení obecných delegátů funguje pouze v případě, že oba typy delegátů jsou konstruovány ze stejné definice obecného typu.  
+ Jedná se o důležitý fakt. Účinky kovariance a kontravariance v parametrech typu obecných delegátů jsou podobné účinkům kovariance a kontravariance v běžných vazbách delegátů (viz [odchylky v delegátech (C#)](../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) a [ Odchylky v delegátech (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)). Variance ve vazbě delegátu však funguje se všemi typy delegátů, nejen s obecnými typy delegátu, které mají parametry variantního typu. Variance ve vazbách delegátů navíc umožňuje metodě vázat se na jakýkoli delegát, který má více omezující parametry typu a méně omezující návratový typ, zatímco přiřazení obecných delegátů funguje pouze v případě, že oba typy delegátů jsou konstruovány ze stejné definice obecného typu.  
   
  Následující příklad znázorňuje kombinované účinky variance ve vazbě delegátu a variance u parametrů obecného typu. Příklad definuje hierarchie typů, která zahrnuje tři typy od nejméně odvozené (`Type1`) k nejvíce odvozenému (`Type3`). Odchylky v běžných vazbách delegátů se používá k navázání metody s parametrem typu `Type1` a návratový typ `Type3` k obecnému delegátu s parametrem typu `Type2` a návratový typ `Type2`. Výsledný obecný delegát je poté přiřazen jiné proměnné, jejíž typ obecného delegátu má parametr typu `Type3` a návratový typ `Type1`, použitím kovariance a kontravariance parametrů obecného typu. Druhé přiřazení vyžaduje typ proměnné i typ delegátu byly konstruovány ze stejné obecné definice typu, v tomto případě <xref:System.Func%602>.  
   
@@ -162,7 +162,7 @@ ms.locfileid: "54692961"
   
  Jazyky Visual Basic a C# neumožňují porušení pravidel pro použití parametrů kovariantního a kontravariantního typu nebo přidání anotací kovariance a kontravariance parametrům typu pro jiné typy, než jsou typy rozhraní a delegátů. [Jazyk MSIL Assembler](../../../docs/framework/tools/ilasm-exe-il-assembler.md) neprovádí tyto kontroly, ale <xref:System.TypeLoadException> je vyvolána, pokud se pokusíte načíst typ, který porušuje pravidla.  
   
- Informace a příklady kódu naleznete v tématu [odchylky obecných rozhraní](https://msdn.microsoft.com/library/e14322da-1db3-42f2-9a67-397daddd6b6a).  
+ Informace a příklady kódu naleznete v tématu [odchylky obecných rozhraní (C#)](../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md) a [odchylky obecných rozhraní (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md).  
   
  [Zpět na začátek](#top)  
   
@@ -192,4 +192,5 @@ ms.locfileid: "54692961"
 
 - [Kovariance a kontravariance (C#)](../../csharp/programming-guide/concepts/covariance-contravariance/index.md)
 - [Kovariance a kontravariance (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)
-- [Odchylky v delegátech](https://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)
+- [Odchylky v delegátech (C#)](../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)
+- [Odchylky v delegátech (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)

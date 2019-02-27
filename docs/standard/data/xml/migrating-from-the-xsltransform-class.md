@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1b764febc17258bc6d929c6d988a02b58f3e2351
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c0d6ff9ced6fe8cb730c755579722e59c07dac5c
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54664548"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836497"
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>Migrace z třídy XslTransform
 
@@ -110,11 +110,11 @@ using (XmlWriter writer = doc.CreateNavigator().AppendChild()) {
 ### <a name="msxml-functions"></a>MSXML funkce  
  Podpora pro další MSXML funkce byly přidány do <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Následující seznam popisuje nové nebo vylepšené funkce:  
   
--   msxsl:node-nastavit: <xref:System.Xml.Xsl.XslTransform> vyžaduje argument [funkce sada uzlů](https://msdn.microsoft.com/library/87b6b3f4-16f4-4fa3-8103-d62a679ac2a7) funkci fragment stromu výsledek. <xref:System.Xml.Xsl.XslCompiledTransform> Třída nemá tento požadavek.  
+-   msxsl:node-nastavit: <xref:System.Xml.Xsl.XslTransform> vyžaduje argument [funkce sada uzlů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256197(v=vs.100)) funkci fragment stromu výsledek. <xref:System.Xml.Xsl.XslCompiledTransform> Třída nemá tento požadavek.  
   
 -   msxsl:Version: Tato funkce není podporována v <xref:System.Xml.Xsl.XslCompiledTransform>.  
   
--   Funkce rozšíření XPath: [Ms:string-compare – funkce](https://msdn.microsoft.com/library/20616b82-9e27-444c-b714-4f1e09b73aee), [ms:utc funkce](https://msdn.microsoft.com/library/ef26fc88-84c6-4fb9-9c3b-f2f5264b864f), [MS: namespace-uri funkce](https://msdn.microsoft.com/library/91f9cabf-ab93-4dbe-9c12-e6a75214f4c7), [ms:local – název funkce](https://msdn.microsoft.com/library/10ed60a1-17a9-4d74-8b98-7940ac97c0b5), [ms:number – funkce](https://msdn.microsoft.com/library/b94fc08e-1f31-4f48-b1a8-6d78c1b5d954), [ms:format-datum funkce](https://msdn.microsoft.com/library/51f35609-89a9-4098-a166-88bf01300bf5), a [ms:format – čas funkce](https://msdn.microsoft.com/library/e5c2df2d-e8fb-4a8f-bfc0-db84ea12a5d5) funkce jsou nyní podporovány.  
+-   Funkce rozšíření XPath: [Ms:string-compare – funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256114(v=vs.100)), [ms:utc funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256474(v=vs.100)), [MS: namespace-uri funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256231(v=vs.100)), [ms:local – název funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256055(v=vs.100)), [ms:number – funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256155(v=vs.100)), [ms:format-datum funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256099(v=vs.100)), a [ms:format – čas funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256467(v=vs.100)) funkce jsou nyní podporovány.  
   
 -   Schéma souvisejících funkcí rozšíření XPath: Tyto funkce nepodporuje nativně podle <xref:System.Xml.Xsl.XslCompiledTransform>. Ale že je možné implementovat jako funkcí rozšíření.  
   

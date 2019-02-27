@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 70845b3e184e7e8e06002a308d574d4d084e25fd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1d0a0659c99a49770d0d08460026363ecef06654
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54696214"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836315"
 ---
 # <a name="writing-custom-attributes"></a>Zápis vlastních atributů
 Návrh vlastní atributy, není potřeba hlavní mnoho nových konceptů. Pokud jste obeznámeni s objektově orientované programování a vědět, jak do návrhu tříd, již máte většinu znalosti potřebné. Uživatelských atributů, které jsou v podstatě tradiční třídy, které jsou přímo nebo nepřímo odvozeny z <xref:System.Attribute?displayProperty=nameWithType>. Stejně jako tradiční třídy uživatelských atributů, které obsahují metody, které ukládají a načítají data.  
@@ -118,7 +118,7 @@ Návrh vlastní atributy, není potřeba hlavní mnoho nových konceptů. Pokud 
  [!code-csharp[Conceptual.Attributes.Usage#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#15)]
  [!code-vb[Conceptual.Attributes.Usage#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#15)]  
   
- Můžete použít přetížení konstruktoru pro různé kombinace hodnot. Pokud můžete také definujte [vlastnost](https://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52) pro vaši vlastní třídu atributu, můžete použít kombinaci pojmenované a poziční parametry, při inicializaci atributu. Obvykle definujete všechny požadované parametry jako poziční a všechny volitelné parametry jako s názvem. V takovém případě atribut nelze inicializovat bez povinný parametr. Všechny ostatní parametry jsou volitelné. Všimněte si, že v jazyce Visual Basic by neměly používat konstruktory pro třídy atributu ParamArray argument.  
+ Můžete použít přetížení konstruktoru pro různé kombinace hodnot. Pokud můžete také definujte [vlastnost](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)) pro vaši vlastní třídu atributu, můžete použít kombinaci pojmenované a poziční parametry, při inicializaci atributu. Obvykle definujete všechny požadované parametry jako poziční a všechny volitelné parametry jako s názvem. V takovém případě atribut nelze inicializovat bez povinný parametr. Všechny ostatní parametry jsou volitelné. Všimněte si, že v jazyce Visual Basic by neměly používat konstruktory pro třídy atributu ParamArray argument.  
   
  Následující příklad kódu ukazuje, jak atribut, který se používá, že předchozí konstruktor lze použít pomocí povinných a volitelných parametrů. Předpokládá, že atribut má jeden povinný logickou hodnotu a vlastnost jeden volitelný řetězec.  
   
@@ -127,7 +127,7 @@ Návrh vlastní atributy, není potřeba hlavní mnoho nových konceptů. Pokud 
  [!code-vb[Conceptual.Attributes.Usage#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#17)]  
   
 ## <a name="declaring-properties"></a>Deklarování vlastností  
- Pokud chcete definovat parametr s názvem nebo poskytují snadný způsob, jak vrátit hodnoty uložené ve vašem atributu, deklarujte [vlastnost](https://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52). Vlastnosti atributu by měl být deklarován jako veřejné entit s popisem datového typu, který bude vrácen. Definujte proměnné, která bude obsahovat hodnotu vlastnosti vaší a přidružte jej k **získat** a **nastavit** metody. Následující příklad kódu ukazuje, jak implementovat jednoduché vlastnosti v atributu.  
+ Pokud chcete definovat parametr s názvem nebo poskytují snadný způsob, jak vrátit hodnoty uložené ve vašem atributu, deklarujte [vlastnost](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Vlastnosti atributu by měl být deklarován jako veřejné entit s popisem datového typu, který bude vrácen. Definujte proměnné, která bude obsahovat hodnotu vlastnosti vaší a přidružte jej k **získat** a **nastavit** metody. Následující příklad kódu ukazuje, jak implementovat jednoduché vlastnosti v atributu.  
   
  [!code-cpp[Conceptual.Attributes.Usage#16](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#16)]
  [!code-csharp[Conceptual.Attributes.Usage#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#16)]

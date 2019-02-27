@@ -5,12 +5,6 @@ ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3b5c774d566766936ebe043f264040ce26b8e9e3
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50202956"
 ---
 # <a name="xml-documents-and-data"></a>Dokumenty a data XML
 Rozhraní .NET Framework poskytuje komplexního a integrovaného sadu tříd, které vám umožní snadno vytvářet aplikace pracující s XML. Třídy v následující obory názvů podporují analýzu a zápis dat XML v paměti, ověřování dat a transformace XSLT pro úpravy XML.  
@@ -25,7 +19,7 @@ Rozhraní .NET Framework poskytuje komplexního a integrovaného sadu tříd, kt
   
 -   <xref:System.Xml.Linq>  
   
- Úplný seznam najdete v tématu [obory názvů System.Xml](https://msdn.microsoft.com/library/gg145036.aspx) webové stránky.  
+ Úplný seznam, vyhledejte "System.Xml" na [.NET API browseru](https://docs.microsoft.com/dotnet/api/?term=system.xml).  
   
  Třídy v tyto obory názvů podporují World Wide Web Consortium (W3C) doporučení. Příklad:  
   
@@ -33,13 +27,13 @@ Rozhraní .NET Framework poskytuje komplexního a integrovaného sadu tříd, kt
   
 -   <xref:System.Xml.XmlReader?displayProperty=nameWithType> a <xref:System.Xml.XmlWriter?displayProperty=nameWithType> třídy podporu [W3C XML 1.0](https://www.w3.org/TR/2006/REC-xml-20060816/) a [obory názvů v XML](https://www.w3.org/TR/REC-xml-names/) doporučení.  
   
--   Schémata <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType> třídy podporu [části 1 W3C XML schématu: struktury](https://www.w3.org/TR/xmlschema-1/) a [XML schématu část 2: datové typy](https://www.w3.org/TR/xmlschema-2/) doporučení.  
+-   Schémata <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType> třídy podporu [části 1 W3C XML schématu: Struktury](https://www.w3.org/TR/xmlschema-1/) a [XML schématu část 2: Datové typy](https://www.w3.org/TR/xmlschema-2/) doporučení.  
   
 -   Třídy v <xref:System.Xml.Xsl?displayProperty=nameWithType> transformace XSLT podpora oboru názvů, které odpovídají [W3C XSLT 1.0](https://www.w3.org/TR/xslt) doporučení.  
   
  XML tříd v rozhraní .NET Framework poskytuje tyto výhody:  
   
--   **Zvýšení produktivity.** [Technologie LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13) usnadňuje programu pomocí XML a poskytuje možnosti dotazu, který je podobný SQL.  
+-   **Zvýšení produktivity.** [Technologie LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) usnadňuje programu pomocí XML a poskytuje možnosti dotazu, který je podobný SQL.  
   
 -   **Rozšiřitelnost.** XML tříd v rozhraní .NET Framework je rozšiřitelný prostřednictvím použití základních tříd abstraktu a virtuální metody. Můžete například vytvořit odvozenou třídu <xref:System.Xml.XmlUrlResolver> třída, která obsahuje datový proud mezipaměti na místní disk.  
   
@@ -62,7 +56,7 @@ Rozhraní .NET Framework poskytuje komplexního a integrovaného sadu tříd, kt
  Tento článek popisuje možnosti pro zpracování dat XML.  
   
  [Zpracování dat XML v paměti](../../../../docs/standard/data/xml/processing-xml-data-in-memory.md)  
- Tento článek popisuje tři modely pro zpracování XML dat v paměti. [Technologie LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13), <xref:System.Xml.XmlDocument> třídy (založené na modelu objektu dokumentu W3C) a <xref:System.Xml.XPath.XPathDocument> třídy (založené na modelu dat XPath).  
+ Tento článek popisuje tři modely pro zpracování XML dat v paměti: [Technologie LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml.md) a [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md), <xref:System.Xml.XmlDocument> třídy (založené na modelu objektu dokumentu W3C) a <xref:System.Xml.XPath.XPathDocument> třídy (založené na modelu dat XPath).  
   
  [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
  Popisuje způsob použití procesoru XSLT.  

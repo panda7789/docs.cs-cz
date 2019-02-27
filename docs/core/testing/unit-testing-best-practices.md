@@ -5,12 +5,12 @@ author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
 ms.custom: seodec18
-ms.openlocfilehash: 79c8e216126353bdf5fca34baf432496aacb93ce
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 812b89ff163c9d39a658f817495ac12616c28f6f
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54151524"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836250"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Testování osvědčených postupů pomocí .NET Core a .NET Standard
 
@@ -18,7 +18,7 @@ Existuje mnoho výhod zápis testů jednotek; pomáhají s regrese, poskytují d
 
 V této příručce se dozvíte některé osvědčené postupy při psaní testů jednotek se testy odolné a snadno pochopitelná.
 
-Podle [Jan Reese](https://reesespieces.io) se zvláštními k [Roy Osherove](http://osherove.com/)
+Podle [Jan Reese](https://reese.dev) se zvláštními k [Roy Osherove](http://osherove.com/)
 
 ## <a name="why-unit-test"></a>Proč pro testování částí?
 

@@ -11,17 +11,17 @@ helpviewer_keywords:
 ms.assetid: 6fa7d044-ae12-4c54-b8ee-50915607a565
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0476fe7ed731dbb2c6b86cff3255673ecee6f98d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: c2870e79d82d92bd0c853e6e042add3b4243f888
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50198455"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56835483"
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Podporuje různé scénáře vývoje softwaru pomocí [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Tyto scénáře spadají do tří kategorií:
 
--   Vývoj [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace s ovládacími prvky XAML, jak je popsáno v [aplikací plán pro Windows Store pomocí jazyka C# nebo Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10)), [jak tos (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/br229566(v=win.10)), a [.NET pro Windows Store apps – přehled ](https://msdn.microsoft.com/library/windows/apps/br230302%28v=VS.110%29.aspx).
+-   Vývoj [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace s ovládacími prvky XAML, jak je popsáno v [aplikací plán pro Windows Store pomocí jazyka C# nebo Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10)), [jak tos (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/br229566(v=win.10)), a [.NET pro Windows Store apps – přehled ](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
 
 -   Vývoj knihoven tříd pro použití v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, které vytváříte s použitím rozhraní .NET Framework.
 
@@ -32,7 +32,7 @@ ms.locfileid: "50198455"
 ## <a name="the-basics"></a>Základní informace
  Rozhraní .NET Framework podporuje tři vývojové scénáře tím, že poskytuje výše uvedených [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]a díky podpoře [!INCLUDE[wrt](../../../includes/wrt-md.md)] samotný.
 
--   [.NET pro Windows Store apps](https://msdn.microsoft.com/library/windows/apps/br230232(v=vs.110).aspx) poskytuje zjednodušený pohled na knihovny tříd rozhraní .NET Framework a obsahovat pouze typy a členy, které můžete použít k vytvoření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace a [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty.
+-   [Obory názvů rozhraní .NET framework a prostředí Windows Runtime](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)#net-framework-and-windows-runtime-namespaces) poskytuje zjednodušený pohled na knihovny tříd rozhraní .NET Framework a obsahovat pouze typy a členy, které můžete použít k vytvoření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace a [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty.
 
     -   Při použití sady Visual Studio (Visual Studio 2012 nebo novější) pro vývoj [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace nebo [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty, sadu referenčních sestavení zajistí, že se zobrazí jenom odpovídající typy a členy.
 
@@ -40,7 +40,7 @@ ms.locfileid: "50198455"
 
     -   Funkce, které jednoduše zabalit operačního systému rozhraní API jsou také odebrat, protože [!INCLUDE[wrt](../../../includes/wrt-md.md)] je snadné je zavolat ze spravovaného kódu.
 
-     Další informace o tom [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)], najdete v článku [.NET pro Windows Store apps – přehled](https://msdn.microsoft.com/library/windows/apps/br230302(v=VS.110).aspx). Přečtěte si informace o procesu výběru rozhraní API, najdete v článku [Metro style aplikace .NET pro](https://blogs.msdn.microsoft.com/dotnet/2012/04/17/net-for-metro-style-apps/) záznam v blogu .NET.
+     Další informace o tom [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)], najdete v článku [.NET pro Windows Store apps – přehled](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)). Přečtěte si informace o procesu výběru rozhraní API, najdete v článku [Metro style aplikace .NET pro](https://blogs.msdn.microsoft.com/dotnet/2012/04/17/net-for-metro-style-apps/) záznam v blogu .NET.
 
 -   [Modulu Windows Runtime](/uwp/api/) uživateli poskytuje prvky rozhraní pro vytváření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace a poskytuje přístup k funkcím operačního systému. Rozhraní .NET Framework, jako jsou [!INCLUDE[wrt](../../../includes/wrt-md.md)] obsahuje metadata, která umožňuje kompilátory C# a Visual Basic k použití [!INCLUDE[wrt](../../../includes/wrt-md.md)] knihovny třídy tak, jak se pomocí rozhraní .NET Framework. Rozhraní .NET Framework usnadňuje použití [!INCLUDE[wrt](../../../includes/wrt-md.md)] skrytím určité rozdíly:
 
@@ -54,9 +54,9 @@ ms.locfileid: "50198455"
 ### <a name="the-net-framework-and-the-includewrtincludeswrt-mdmd-reference-documentation"></a>Rozhraní .NET Framework a [!INCLUDE[wrt](../../../includes/wrt-md.md)] referenční dokumentaci
  Modul Windows Runtime a sady dokumentace rozhraní .NET Framework jsou oddělené. Pokud stisknete klávesu F1 pro zobrazení nápovědy na typ nebo člen, referenční dokumentaci k příslušné sady se zobrazí. Nicméně pokud při procházení [referenční příručka prostředí Windows Runtime](/uwp/api/) můžete narazit na příklady, které jsou zdánlivě nejasné:
 
--   Témata, jako <xref:Windows.Foundation.Collections.IIterable%601> rozhraní nemají syntaxi deklarace pro Visual Basic nebo C#. Místo toho se nad oddílem syntaxe zobrazí poznámka (v tomto případě ".NET: Toto rozhraní se zobrazí jako System.Collections.Generic.IEnumerable\<T >"). Důvodem je, že rozhraní .NET Framework a [!INCLUDE[wrt](../../../includes/wrt-md.md)] poskytuje podobné funkce s různými rozhraními. Kromě toho existují rozdíly v chování: `IIterable` má `First` metoda místo <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> metoda vrátí enumerátor. Místo vynucení a seznamte se jiný způsob provádění běžných úkolů, rozhraní .NET Framework podporuje [!INCLUDE[wrt](../../../includes/wrt-md.md)] tím, že váš spravovaný kód zobrazí použít typ, který znáte. Neuvidíte `IIterable` rozhraní v rozhraní IDE, a proto jedině dojde v [!INCLUDE[wrt](../../../includes/wrt-md.md)] referenční dokumentaci je tak, že přejdete přímo do této dokumentace.
+-   Témata, jako <xref:Windows.Foundation.Collections.IIterable%601> rozhraní nemají syntaxi deklarace pro Visual Basic nebo C#. Místo toho se nad oddílem syntaxe zobrazí poznámka (v tomto případě ".NET: Toto rozhraní se zobrazí jako System.Collections.Generic.IEnumerable\<T > "). Důvodem je, že rozhraní .NET Framework a [!INCLUDE[wrt](../../../includes/wrt-md.md)] poskytuje podobné funkce s různými rozhraními. Kromě toho existují rozdíly v chování: `IIterable` má `First` metoda místo <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> metoda vrátí enumerátor. Místo vynucení a seznamte se jiný způsob provádění běžných úkolů, rozhraní .NET Framework podporuje [!INCLUDE[wrt](../../../includes/wrt-md.md)] tím, že váš spravovaný kód zobrazí použít typ, který znáte. Neuvidíte `IIterable` rozhraní v rozhraní IDE, a proto jedině dojde v [!INCLUDE[wrt](../../../includes/wrt-md.md)] referenční dokumentaci je tak, že přejdete přímo do této dokumentace.
 
--   <xref:Windows.Web.Syndication.SyndicationFeed.%23ctor(System.String,System.String,Windows.Foundation.Uri)> Dokumentaci ukazuje úzce související problém: typy parametrů se zdají být pro různé jazyky. Pro C# a Visual Basic, jsou typy parametrů <xref:System.String?displayProperty=nameWithType> a <xref:System.Uri?displayProperty=nameWithType>. Znovu, důvodem je, že rozhraní .NET Framework má svůj vlastní `String` a `Uri` typů a pro takové běžně používané typy ho nemá smysl přinutit uživatele rozhraní .NET Framework se dozvíte jiný způsob plnění úkolů. V integrovaném vývojovém prostředí, skryje rozhraní .NET Framework odpovídající [!INCLUDE[wrt](../../../includes/wrt-md.md)] typy.
+-   <xref:Windows.Web.Syndication.SyndicationFeed.%23ctor(System.String,System.String,Windows.Foundation.Uri)> Dokumentaci ukazuje úzce související problém: Typy parametrů se zdají být pro různé jazyky. Pro C# a Visual Basic, jsou typy parametrů <xref:System.String?displayProperty=nameWithType> a <xref:System.Uri?displayProperty=nameWithType>. Znovu, důvodem je, že rozhraní .NET Framework má svůj vlastní `String` a `Uri` typů a pro takové běžně používané typy ho nemá smysl přinutit uživatele rozhraní .NET Framework se dozvíte jiný způsob plnění úkolů. V integrovaném vývojovém prostředí, skryje rozhraní .NET Framework odpovídající [!INCLUDE[wrt](../../../includes/wrt-md.md)] typy.
 
 -   V několika případech, jako <xref:Windows.UI.Xaml.GridLength> strukturu, rozhraní .NET Framework poskytuje typ se stejným názvem, ale rozšířenou funkčností. Například sadu konstruktor a vlastnost témata jsou přidružené k `GridLength`, ale vzhledem k tomu, že členové jsou k dispozici jenom ve spravovaném kódu mají syntaxi bloky pouze pro Visual Basic a C#. V [!INCLUDE[wrt](../../../includes/wrt-md.md)], struktury mají pouze pole. [!INCLUDE[wrt](../../../includes/wrt-md.md)] Vyžaduje pomocná třída, struktura <xref:Windows.UI.Xaml.GridLengthHelper>, odpovídá funkci zajistí. Neuvidíte, že pomocná třída v integrovaném vývojovém prostředí při psaní spravovaného kódu.
 
@@ -146,7 +146,7 @@ ms.locfileid: "50198455"
 
 |Název|Popis|
 |-----------|-----------------|
-|[.NET pro Windows Store apps – přehled](https://msdn.microsoft.com/library/windows/apps/br230302(v=VS.110).aspx)|Popisuje typy rozhraní .NET Framework a členy, které můžete použít k vytvoření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace a [!INCLUDE[wrt](../../../includes/wrt-md.md)]komponenty. (Ve službě Windows Dev Center.)|
+|[.NET pro Windows Store apps – přehled](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))|Popisuje typy rozhraní .NET Framework a členy, které můžete použít k vytvoření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace a [!INCLUDE[wrt](../../../includes/wrt-md.md)]komponenty. (Ve službě Windows Dev Center.)|
 |[Plán pro aplikace pro Windows Store pomocí jazyka C# nebo Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10))|Poskytuje klíčové prostředky, které vám pomůžou začít vyvíjet [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací pomocí C# nebo Visual Basic, včetně mnoha témat rychlý start, pokyny a osvědčené postupy. (Ve službě Windows Dev Center.)|
 |[Jak tos (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/br229566(v=win.10))|Poskytuje klíčové prostředky, které vám pomůžou začít vyvíjet [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací pomocí C# nebo Visual Basic, včetně mnoha témat rychlý start, pokyny a osvědčené postupy. (Ve službě Windows Dev Center.)|
 |[Vytváření komponent Windows Runtime v jazyce C# a Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)|Popisuje, jak vytvořit [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty pomocí rozhraní .NET Framework, vysvětluje, jak ho použít jako součást [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace vytvořené pro Windows pomocí JavaScriptu a popisuje, jak ladit kombinaci pomocí sady Visual Studio. (Ve službě Windows Dev Center.)|

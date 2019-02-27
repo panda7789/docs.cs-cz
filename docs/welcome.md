@@ -5,12 +5,12 @@ author: mairaw
 ms.author: mairaw
 ms.date: 12/03/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: ee4f9cd33e33006697a15f0bdafb4cc9d7ecf809
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: d5ee6d9cbb8beb819d023c92af1123ebc37b53c8
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147207"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56834918"
 ---
 # <a name="welcome-to-net"></a>Vítejte v .NET
 
@@ -42,7 +42,7 @@ Informace o nejnovějších funkcích přidány do implementace .NET a podporova
 
 ## <a name="documentation"></a>Dokumentace
 
-Tato dokumentace popisuje škálu .NET napříč platformami a jazyky.  Můžete začít s využitím .NET a jeho jazyků v některém z následujících částí:
+Tato dokumentace popisuje škálu .NET napříč platformami a jazyky. Můžete začít s využitím .NET a jeho jazyků v některém z následujících částí:
 
 - [Průvodce technologií .NET](standard/index.md)
 - [Průvodce platformou .NET Core](core/index.md)
@@ -58,9 +58,9 @@ Kromě toho můžete přejít [reference k rozhraní API .NET](/dotnet/api).
 
 Tato dokumentace je zcela [opensourcových](https://github.com/dotnet/docs). Můžete přispívat žádným způsobem, který vám vyhovuje, od vytváření problémy, které píšete dokumentaci. Velká část .NET samotného je navíc také otevřít zdroj:
 
-- [Domovská stránka .NET core](https://github.com/dotnet/core)
+- [.NET Core Home](https://github.com/dotnet/core)
 - [Knihovny pro .NET](https://github.com/dotnet/corefx)
-- [.NET core Runtime](https://github.com/dotnet/coreclr)
+- [.NET Core Runtime](https://github.com/dotnet/coreclr)
 - [Platforma kompilátoru Roslyn (C# a Visual Basic) a prostředí IDE nástroje](https://github.com/dotnet/roslyn)
 - [F#Kompilátor a nástroje pro prostředí IDE](https://github.com/microsoft/visualfsharp)
 
