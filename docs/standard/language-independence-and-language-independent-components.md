@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b25f3dbe655dd60c9284ae5ef5591e95fc1b84e5
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 2d8957a5376e17ff69bf9e811125af5a4af1e3b6
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842824"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836549"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
-Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývojář můžete vyvíjet v některém z mnoha jazyků, které jsou cíleny rozhraní .NET Framework, jako je C#, C + +/ CLI, Eiffel, F #, IronPython, IronRuby, PowerBuilder, Visual Basic, Visual COBOL a prostředí Windows PowerShell. Typy a členům knihoven třídy vyvinutým pro rozhraní .NET Framework, aniž byste museli znát jazyk, ve kterém byly původně vytvořeny a to bez nutnosti dodržovat všechny původní jazykové konvence mají přístup. Pokud jste vývojářem komponenty, přístupné příslušné součásti žádné aplikace rozhraní .NET Framework bez ohledu na jazyk.  
+Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývojář můžete vyvíjet v některém z mnoha jazyků, které se zaměřují rozhraní .NET Framework, například C#, C + +/ CLI, Eiffel, F#, IronPython, IronRuby, PowerBuilder, Visual Basic, Visual COBOL a Windows Powershellu. Typy a členům knihoven třídy vyvinutým pro rozhraní .NET Framework, aniž byste museli znát jazyk, ve kterém byly původně vytvořeny a to bez nutnosti dodržovat všechny původní jazykové konvence mají přístup. Pokud jste vývojářem komponenty, přístupné příslušné součásti žádné aplikace rozhraní .NET Framework bez ohledu na jazyk.  
   
 > [!NOTE]
 >  První část Tento článek se zabývá tvorbou jazykově nezávislé komponenty – tedy součástí, které mohou být spotřebovány aplikacemi, které jsou napsané v libovolném jazyce. Můžete také vytvořit jednu součást nebo aplikaci ze zdrojového kódu napsaného v několika jazycích; Zobrazit [vzájemná](#CrossLang) v druhé části tohoto článku.  
@@ -188,7 +188,7 @@ Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývoj�
 |Nevyhovující typ|Popis|Alternativy CLS|  
 |-------------------------|-----------------|--------------------------------|  
 |<xref:System.SByte>|8bitové celé číslo se znaménkem datový typ|<xref:System.Int16>|  
-|<xref:System.TypedReference>|Ukazatel na objekt a jeho typ runtime|Žádné|  
+|<xref:System.TypedReference>|Ukazatel na objekt a jeho typ runtime|Žádná|  
 |<xref:System.UInt16>|16bitové celé číslo bez znaménka|<xref:System.Int32>|  
 |<xref:System.UInt32>|32bitové celé číslo bez znaménka|<xref:System.Int64>|  
 |<xref:System.UInt64>|64bitové celé číslo bez znaménka|<xref:System.Int64> (může přetéci), <xref:System.Numerics.BigInteger>, nebo <xref:System.Double>|  
@@ -305,7 +305,7 @@ Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývoj�
   
      Kvůli tomuto pravidlu není nutné implementovat členy kompatibilní se Specifikací neodpovídajících typy kompatibilní se Specifikací CLS. Pokud rozhraní kompatibilní se Specifikací CLS zpřístupní třídu, která implementuje rozhraní kompatibilním neodpovídající specifikaci CLS, mělo by také poskytovat konkrétní implementace všech členů mimo-kompatibilní se Specifikací CLS.  
   
- Kompilátory jazyka odpovídající specifikaci CLS musí také umožnit třídě poskytnout samostatné implementace členů, kteří mají stejný název a podpis ve více rozhraní.  Podpora jazyka C# i Visual Basic [explicitní implementace rozhraní](~/docs/csharp/programming-guide/interfaces/explicit-interface-implementation.md) poskytnout různé implementace identicky pojmenovaných metod. Visual Basic podporuje také `Implements` – klíčové slovo, které umožňuje explicitně určit, které rozhraní a člen určitý člen implementuje. Následující příklad ukazuje tento scénář definováním `Temperature` třídu, která implementuje `ICelsius` a `IFahrenheit` rozhraní jako explicitní implementace rozhraní.  
+ Kompilátory jazyka odpovídající specifikaci CLS musí také umožnit třídě poskytnout samostatné implementace členů, kteří mají stejný název a podpis ve více rozhraní.  Podpora jazyka C# i Visual Basic [explicitní implementace rozhraní](../csharp/programming-guide/interfaces/explicit-interface-implementation.md) poskytnout různé implementace identicky pojmenovaných metod. Visual Basic podporuje také `Implements` – klíčové slovo, které umožňuje explicitně určit, které rozhraní a člen určitý člen implementuje. Následující příklad ukazuje tento scénář definováním `Temperature` třídu, která implementuje `ICelsius` a `IFahrenheit` rozhraní jako explicitní implementace rozhraní.  
   
  [!code-csharp[Conceptual.CLSCompliant#24](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/eii1.cs#24)]
  [!code-vb[Conceptual.CLSCompliant#24](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/eii1.vb#24)]  
@@ -548,23 +548,23 @@ Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývoj�
   
  Chcete-li zabalit dvě třídy do jednoho sestavení, musíte je zkompilovat do modulů. Pro kompilaci zdrojového kódu jazyka Visual Basic do modulu použijte tento příkaz:  
   
-```  
+```console  
 vbc /t:module StringUtil.vb   
 ```  
   
- Další informace o syntaxi příkazového řádku kompilátoru jazyka Visual Basic najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md).  
+ Další informace o syntaxi příkazového řádku kompilátoru jazyka Visual Basic najdete v tématu [sestavení z příkazového řádku](../visual-basic/reference/command-line-compiler/building-from-the-command-line.md).  
   
  Pro kompilaci zdrojového kódu jazyka C# do modulu použijte tento příkaz:  
   
-```  
+```console  
 csc /t:module NumberUtil.cs  
 ```  
   
- Další informace o syntaxi příkazového řádku kompilátoru jazyka C# najdete v tématu [sestavení příkazového řádku s csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).  
+ Další informace o syntaxi příkazového řádku kompilátoru jazyka C# najdete v tématu [sestavení příkazového řádku s csc.exe](../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).  
   
- Pak použijete [nástroj Link (Link.exe)](https://msdn.microsoft.com/library/c1d51b8a-bd23-416d-81e4-900e02b2c129) ke kompilaci dvou modulů do sestavení:  
+ Pak použijete [možnosti Linkeru](/cpp/build/reference/linker-options) ke kompilaci dvou modulů do sestavení:  
   
-```  
+```console  
 link numberutil.netmodule stringutil.netmodule /out:UtilityLib.dll /dll   
 ```  
   
@@ -575,13 +575,13 @@ link numberutil.netmodule stringutil.netmodule /out:UtilityLib.dll /dll
   
  Pro kompilaci kódu jazyka Visual Basic použijte tento příkaz:  
   
-```  
+```console  
 vbc example.vb /r:UtilityLib.dll  
 ```  
   
  Pro kompilaci pomocí jazyka C#, změňte název kompilátoru z **Vbc –** k **csc**a příponu souboru změňte z .vb na .cs:  
   
-```  
+```console  
 csc example.cs /r:UtilityLib.dll  
 ```  
   
