@@ -2,27 +2,27 @@
 title: 'Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ) (Visual Basic)'
 ms.date: 06/22/2018
 ms.assetid: 63062a22-e6a9-42c0-b357-c7c965f58f33
-ms.openlocfilehash: 0228d152539abe3bf0db5a8e5bf4581eaf957b31
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 65c7e2c791ba8331416ee2eee292f1e8c4888712
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54638818"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836354"
 ---
-# <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a><span data-ttu-id="914a1-102">Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="914a1-102">How to: Populate Object Collections from Multiple Sources (LINQ) (Visual Basic)</span></span>
+# <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a><span data-ttu-id="b24fd-102">Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b24fd-102">How to: Populate Object Collections from Multiple Sources (LINQ) (Visual Basic)</span></span>
 
-<span data-ttu-id="914a1-103">Tento příklad ukazuje, jak sloučit data z různých zdrojů do sekvence nových typů.</span><span class="sxs-lookup"><span data-stu-id="914a1-103">This example shows how to merge data from different sources into a sequence of new types.</span></span>
+<span data-ttu-id="b24fd-103">Tento příklad ukazuje, jak sloučit data z různých zdrojů do sekvence nových typů.</span><span class="sxs-lookup"><span data-stu-id="b24fd-103">This example shows how to merge data from different sources into a sequence of new types.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="914a1-104">Nedoporučujeme připojení dat v paměti nebo dat v systému souborů s daty, která je stále v databázi.</span><span class="sxs-lookup"><span data-stu-id="914a1-104">Don't try to join in-memory data or data in the file system with data that is still in a database.</span></span> <span data-ttu-id="914a1-105">Takové spojení mezi doménami může přinést nedefinované výsledky z důvodu různé způsoby, ve kterém mohou být definovány operace spojení pro databázové dotazy a jiné druhy zdrojů.</span><span class="sxs-lookup"><span data-stu-id="914a1-105">Such cross-domain joins can yield undefined results because of different ways in which join operations might be defined for database queries and other types of sources.</span></span> <span data-ttu-id="914a1-106">Kromě toho existuje riziko, že tato operace může způsobit výjimku paměti, pokud je příliš velká množství dat v databázi.</span><span class="sxs-lookup"><span data-stu-id="914a1-106">Additionally, there is a risk that such an operation could cause an out-of-memory exception if the amount of data in the database is large enough.</span></span> <span data-ttu-id="914a1-107">K připojení dat z databáze pro data v paměti, nejprve volat `ToList` nebo `ToArray` v databázi dotaz a pak provedením příkazu join na vrácené kolekci.</span><span class="sxs-lookup"><span data-stu-id="914a1-107">To join data from a database to in-memory data, first call `ToList` or `ToArray` on the database query, and then perform the join on the returned collection.</span></span>
+> <span data-ttu-id="b24fd-104">Nedoporučujeme připojení dat v paměti nebo dat v systému souborů s daty, která je stále v databázi.</span><span class="sxs-lookup"><span data-stu-id="b24fd-104">Don't try to join in-memory data or data in the file system with data that is still in a database.</span></span> <span data-ttu-id="b24fd-105">Takové spojení mezi doménami může přinést nedefinované výsledky z důvodu různé způsoby, ve kterém mohou být definovány operace spojení pro databázové dotazy a jiné druhy zdrojů.</span><span class="sxs-lookup"><span data-stu-id="b24fd-105">Such cross-domain joins can yield undefined results because of different ways in which join operations might be defined for database queries and other types of sources.</span></span> <span data-ttu-id="b24fd-106">Kromě toho existuje riziko, že tato operace může způsobit výjimku paměti, pokud je příliš velká množství dat v databázi.</span><span class="sxs-lookup"><span data-stu-id="b24fd-106">Additionally, there is a risk that such an operation could cause an out-of-memory exception if the amount of data in the database is large enough.</span></span> <span data-ttu-id="b24fd-107">K připojení dat z databáze pro data v paměti, nejprve volat `ToList` nebo `ToArray` v databázi dotaz a pak provedením příkazu join na vrácené kolekci.</span><span class="sxs-lookup"><span data-stu-id="b24fd-107">To join data from a database to in-memory data, first call `ToList` or `ToArray` on the database query, and then perform the join on the returned collection.</span></span>
 
-## <a name="to-create-the-data-file"></a><span data-ttu-id="914a1-108">Vytvoření datového souboru</span><span class="sxs-lookup"><span data-stu-id="914a1-108">To create the data file</span></span>
+## <a name="to-create-the-data-file"></a><span data-ttu-id="b24fd-108">Vytvoření datového souboru</span><span class="sxs-lookup"><span data-stu-id="b24fd-108">To create the data file</span></span>
 
-- <span data-ttu-id="914a1-109">Zkopírujte soubory names.csv a scores.csv do složky vašeho projektu, jak je popsáno v [jak: Připojte se k obsahu z Nepodobných souborů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).</span><span class="sxs-lookup"><span data-stu-id="914a1-109">Copy the names.csv and scores.csv files into your project folder, as described in [How to: Join Content from Dissimilar Files (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).</span></span>
+- <span data-ttu-id="b24fd-109">Zkopírujte soubory names.csv a scores.csv do složky vašeho projektu, jak je popsáno v [jak: Připojte se k obsahu z Nepodobných souborů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).</span><span class="sxs-lookup"><span data-stu-id="b24fd-109">Copy the names.csv and scores.csv files into your project folder, as described in [How to: Join Content from Dissimilar Files (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="914a1-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="914a1-110">Example</span></span>
+## <a name="example"></a><span data-ttu-id="b24fd-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="b24fd-110">Example</span></span>
 
-<span data-ttu-id="914a1-111">Následující příklad ukazuje způsob použití pojmenovaného typu `Student` k uložení sloučených data ze dvou kolekcích v paměti řetězců, které simulují data z tabulky ve formátu .csv.</span><span class="sxs-lookup"><span data-stu-id="914a1-111">The following example shows how to use a named type `Student` to store merged data from two in-memory collections of strings that simulate spreadsheet data in .csv format.</span></span> <span data-ttu-id="914a1-112">První kolekce řetězců představuje jména studentů a ID, a druhá kolekce, kterou představuje ID studenta (v prvním sloupci) a čtyři skóre zkoušku.</span><span class="sxs-lookup"><span data-stu-id="914a1-112">The first collection of strings represents the student names and IDs, and the second collection represents the student ID (in the first column) and four exam scores.</span></span> <span data-ttu-id="914a1-113">ID je použít jako cizí klíč.</span><span class="sxs-lookup"><span data-stu-id="914a1-113">The ID is used as the foreign key.</span></span>
+<span data-ttu-id="b24fd-111">Následující příklad ukazuje způsob použití pojmenovaného typu `Student` k uložení sloučených data ze dvou kolekcích v paměti řetězců, které simulují data z tabulky ve formátu .csv.</span><span class="sxs-lookup"><span data-stu-id="b24fd-111">The following example shows how to use a named type `Student` to store merged data from two in-memory collections of strings that simulate spreadsheet data in .csv format.</span></span> <span data-ttu-id="b24fd-112">První kolekce řetězců představuje jména studentů a ID, a druhá kolekce, kterou představuje ID studenta (v prvním sloupci) a čtyři skóre zkoušku.</span><span class="sxs-lookup"><span data-stu-id="b24fd-112">The first collection of strings represents the student names and IDs, and the second collection represents the student ID (in the first column) and four exam scores.</span></span> <span data-ttu-id="b24fd-113">ID je použít jako cizí klíč.</span><span class="sxs-lookup"><span data-stu-id="b24fd-113">The ID is used as the foreign key.</span></span>
 
 ```vb
 Imports System.Collections.Generic
@@ -65,7 +65,7 @@ Class PopulateCollection
                           Let splitScoreLine = scoreLine.Split(New Char() {","})
                           Where Convert.ToInt32(splitName(2)) = Convert.ToInt32(splitScoreLine(0))
                           Select New Student() With {
-                               .FirstName = splitName(0), .LastName = splitName(1), .ID = splitName(2),
+                               .FirstName = splitName(1), .LastName = splitName(0), .ID = splitName(2),
                                .ExamScores = (From scoreAsText In splitScoreLine Skip 1
                                              Select Convert.ToInt32(scoreAsText)).ToList()}
 
@@ -86,23 +86,23 @@ Class PopulateCollection
 End Class
 
 ' Output:
-' The average score of Omelchenko Svetlana is 82.5
-' The average score of O'Donnell Claire is 72.25
-' The average score of Mortensen Sven is 84.5
-' The average score of Garcia Cesar is 88.25
-' The average score of Garcia Debra is 67
-' The average score of Fakhouri Fadi is 92.25
-' The average score of Feng Hanying is 88
-' The average score of Garcia Hugo is 85.75
-' The average score of Tucker Lance is 81.75
-' The average score of Adams Terry is 85.25
-' The average score of Zabokritski Eugene is 83
-' The average score of Tucker Michael is 92
+' The average score of Svetlana Omelchenko is 82.5
+' The average score of Claire O'Donnell is 72.25
+' The average score of Sven Mortensen is 84.5
+' The average score of Cesar Garcia is 88.25
+' The average score of Debra Garcia is 67
+' The average score of Fadi Fakhouri is 92.25
+' The average score of Hanying Feng is 88
+' The average score of Hugo Garcia is 85.75
+' The average score of Lance Tucker is 81.75
+' The average score of Terry Adams is 85.25
+' The average score of Eugene Zabokritski is 83
+' The average score of Michael Tucker is 92
 ```
 
-<span data-ttu-id="914a1-114">V [klauzule Select](../../../../visual-basic/language-reference/queries/select-clause.md) klauzule inicializátoru objektu se používá k vytvoření instance každé nové `Student` s použitím data ze dvou zdrojů.</span><span class="sxs-lookup"><span data-stu-id="914a1-114">In the [Select Clause](../../../../visual-basic/language-reference/queries/select-clause.md) clause, an object initializer is used to instantiate each new `Student` object by using the data from the two sources.</span></span>
+<span data-ttu-id="b24fd-114">V [klauzule Select](../../../../visual-basic/language-reference/queries/select-clause.md) klauzule inicializátoru objektu se používá k vytvoření instance každé nové `Student` s použitím data ze dvou zdrojů.</span><span class="sxs-lookup"><span data-stu-id="b24fd-114">In the [Select Clause](../../../../visual-basic/language-reference/queries/select-clause.md) clause, an object initializer is used to instantiate each new `Student` object by using the data from the two sources.</span></span>
 
-<span data-ttu-id="914a1-115">Pokud nemáte k dispozici pro ukládání výsledků dotazu, může být vhodnější než pojmenované typy anonymních typů.</span><span class="sxs-lookup"><span data-stu-id="914a1-115">If you don't have to store the results of a query, anonymous types can be more convenient than named types.</span></span> <span data-ttu-id="914a1-116">Pokud předáte výsledky dotazu mimo metodu spuštění dotazu, je nutné pojmenovaných typů.</span><span class="sxs-lookup"><span data-stu-id="914a1-116">Named types are required if you pass the query results outside the method in which the query is executed.</span></span> <span data-ttu-id="914a1-117">Následující příklad provede stejné úkoly, jako předchozí příklad, ale místo pojmenované typy používá anonymní typy:</span><span class="sxs-lookup"><span data-stu-id="914a1-117">The following example performs the same task as the previous example, but uses anonymous types instead of named types:</span></span>
+<span data-ttu-id="b24fd-115">Pokud nemáte k dispozici pro ukládání výsledků dotazu, může být vhodnější než pojmenované typy anonymních typů.</span><span class="sxs-lookup"><span data-stu-id="b24fd-115">If you don't have to store the results of a query, anonymous types can be more convenient than named types.</span></span> <span data-ttu-id="b24fd-116">Pokud předáte výsledky dotazu mimo metodu spuštění dotazu, je nutné pojmenovaných typů.</span><span class="sxs-lookup"><span data-stu-id="b24fd-116">Named types are required if you pass the query results outside the method in which the query is executed.</span></span> <span data-ttu-id="b24fd-117">Následující příklad provede stejné úkoly, jako předchozí příklad, ale místo pojmenované typy používá anonymní typy:</span><span class="sxs-lookup"><span data-stu-id="b24fd-117">The following example performs the same task as the previous example, but uses anonymous types instead of named types:</span></span>
 
 ```vb
 ' Merge the data by using an anonymous type.
@@ -128,14 +128,14 @@ For Each s In queryNamesScores2
 Next
 ```
 
-## <a name="compiling-the-code"></a><span data-ttu-id="914a1-118">Kompilování kódu</span><span class="sxs-lookup"><span data-stu-id="914a1-118">Compiling the code</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="b24fd-118">Kompilování kódu</span><span class="sxs-lookup"><span data-stu-id="b24fd-118">Compiling the code</span></span>
 
-<span data-ttu-id="914a1-119">Vytvoření a kompilace projektu, který cílí na jednu z následujících možností:</span><span class="sxs-lookup"><span data-stu-id="914a1-119">Create and compile a project that targets one of the following options:</span></span>
+<span data-ttu-id="b24fd-119">Vytvoření a kompilace projektu, který cílí na jednu z následujících možností:</span><span class="sxs-lookup"><span data-stu-id="b24fd-119">Create and compile a project that targets one of the following options:</span></span>
 
-- <span data-ttu-id="914a1-120">Rozhraní .NET framework verze 3.5 s odkazem na knihovnu System.Core.dll.</span><span class="sxs-lookup"><span data-stu-id="914a1-120">.NET Framework version 3.5 with a reference to System.Core.dll.</span></span>
-- <span data-ttu-id="914a1-121">Rozhraní .NET framework verze 4.0 nebo vyšší.</span><span class="sxs-lookup"><span data-stu-id="914a1-121">.NET Framework version 4.0 or higher.</span></span>
-- <span data-ttu-id="914a1-122">Verze .NET core 1.0 nebo vyšší.</span><span class="sxs-lookup"><span data-stu-id="914a1-122">.NET Core version 1.0 or higher.</span></span>
+- <span data-ttu-id="b24fd-120">Rozhraní .NET framework verze 3.5 s odkazem na knihovnu System.Core.dll.</span><span class="sxs-lookup"><span data-stu-id="b24fd-120">.NET Framework version 3.5 with a reference to System.Core.dll.</span></span>
+- <span data-ttu-id="b24fd-121">Rozhraní .NET framework verze 4.0 nebo vyšší.</span><span class="sxs-lookup"><span data-stu-id="b24fd-121">.NET Framework version 4.0 or higher.</span></span>
+- <span data-ttu-id="b24fd-122">Verze .NET core 1.0 nebo vyšší.</span><span class="sxs-lookup"><span data-stu-id="b24fd-122">.NET Core version 1.0 or higher.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="914a1-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="914a1-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b24fd-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b24fd-123">See also</span></span>
 
-- [<span data-ttu-id="914a1-124">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="914a1-124">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [<span data-ttu-id="b24fd-124">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b24fd-124">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

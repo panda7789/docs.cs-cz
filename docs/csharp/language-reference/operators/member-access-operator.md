@@ -1,7 +1,7 @@
 ---
 title: . Operator - C# odkaz
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 02/25/2019
 f1_keywords:
 - ._CSharpKeyword
 helpviewer_keywords:
@@ -9,47 +9,46 @@ helpviewer_keywords:
 - . operator [C#]
 - dot operator (.) [C#]
 ms.assetid: a1f54b52-b686-4ae5-a48e-a2a9ebd0eb7b
-ms.openlocfilehash: a59f69d0349a054c8c2a5b701b8f63df113a6580
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
+ms.openlocfilehash: 2661676d53deb874c5e5a90b4443b301730e09df
+ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333717"
+ms.lasthandoff: 02/26/2019
+ms.locfileid: "56836458"
 ---
-# <a name="-operator-c-reference"></a><span data-ttu-id="c8e06-103">.</span><span class="sxs-lookup"><span data-stu-id="c8e06-103">.</span></span> <span data-ttu-id="c8e06-104">operator (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="c8e06-104">operator (C# Reference)</span></span>
+# <a name="-operator-c-reference"></a><span data-ttu-id="c4dc2-103">.</span><span class="sxs-lookup"><span data-stu-id="c4dc2-103">.</span></span> <span data-ttu-id="c4dc2-104">operator (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="c4dc2-104">operator (C# Reference)</span></span>
 
-<span data-ttu-id="c8e06-105">Tečka – operátor (`.`) se používá pro přístup ke členu.</span><span class="sxs-lookup"><span data-stu-id="c8e06-105">The dot operator (`.`) is used for member access.</span></span> <span data-ttu-id="c8e06-106">Operátor tečky Určuje typ nebo obor názvů.</span><span class="sxs-lookup"><span data-stu-id="c8e06-106">The dot operator specifies a member of a type or namespace.</span></span> <span data-ttu-id="c8e06-107">Například operátor tečky slouží k přístupu k určité metody v rámci knihovny tříd rozhraní .NET Framework:</span><span class="sxs-lookup"><span data-stu-id="c8e06-107">For example, the dot operator is used to access specific methods within the .NET Framework class libraries:</span></span>
+<span data-ttu-id="c4dc2-105">Tečka, `.`, se obvykle používá pro přístup ke členu.</span><span class="sxs-lookup"><span data-stu-id="c4dc2-105">The dot, `.`, is typically used for member access.</span></span>
 
-[!code-csharp[csRefOperators#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#16)]
+<span data-ttu-id="c4dc2-106">Můžete použít `.` token pro přístup k oboru názvů nebo typ, jak ukazují následující příklady:</span><span class="sxs-lookup"><span data-stu-id="c4dc2-106">You use the `.` token to access a member of a namespace or a type, as the following examples demonstrate:</span></span>
 
-<span data-ttu-id="c8e06-108">Představte si třeba následující třídy:</span><span class="sxs-lookup"><span data-stu-id="c8e06-108">For example, consider the following class:</span></span>
+- <span data-ttu-id="c4dc2-107">Použití `.` pro přístup k vnořené oboru názvů v oboru názvů, jako následující příklad [ `using` směrnice](../keywords/using-directive.md) ukazuje:</span><span class="sxs-lookup"><span data-stu-id="c4dc2-107">Use `.` to access a nested namespace within a namespace, as the following example of a [`using` directive](../keywords/using-directive.md) shows:</span></span>
 
-[!code-csharp[csRefOperators#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#17)]
+  [!code-csharp[nested namespaces](~/samples/snippets/csharp/language-reference/operators/MemberAccessExamples.cs#NestedNamespace)]
 
-[!code-csharp[csRefOperators#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#18)]
+- <span data-ttu-id="c4dc2-108">Použití `.` do formuláře *kvalifikovaný název* pro přístup k typu v rámci oboru názvů, jak ukazuje následující kód:</span><span class="sxs-lookup"><span data-stu-id="c4dc2-108">Use `.` to form a *qualified name* to access a type within a namespace, as the following code shows:</span></span>
 
-<span data-ttu-id="c8e06-109">Proměnná `s` se dvěma členy `a` a `b`; pokud ho chcete přistupovat k nim, použijte operátor tečky:</span><span class="sxs-lookup"><span data-stu-id="c8e06-109">The variable `s` has two members, `a` and `b`; to access them, use the dot operator:</span></span>
+  [!code-csharp[qualified name](~/samples/snippets/csharp/language-reference/operators/MemberAccessExamples.cs#QualifiedName)]
 
-[!code-csharp[csRefOperators#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#19)]
+  <span data-ttu-id="c4dc2-109">Použít [ `using` směrnice](../keywords/using-directive.md) provést volitelné použijte kvalifikované názvy.</span><span class="sxs-lookup"><span data-stu-id="c4dc2-109">Use the [`using` directive](../keywords/using-directive.md) to make the use of qualified names optional.</span></span>
 
-<span data-ttu-id="c8e06-110">Tečka slouží také k vytvoření kvalifikované názvy, které jsou názvy, které určují obor názvů nebo rozhraní, například, ke kterému patří.</span><span class="sxs-lookup"><span data-stu-id="c8e06-110">The dot is also used to form qualified names, which are names that specify the namespace or interface, for example, to which they belong.</span></span>
+- <span data-ttu-id="c4dc2-110">Použití `.` přístup [členy typu](../../programming-guide/classes-and-structs/index.md#members), statické a nestatické, pokud jako ukazuje následující kód:</span><span class="sxs-lookup"><span data-stu-id="c4dc2-110">Use `.` to access [type members](../../programming-guide/classes-and-structs/index.md#members), static and non-static, as the following code shows:</span></span>
 
-[!code-csharp[csRefOperators#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#20)]
+  [!code-csharp-interactive[type members](~/samples/snippets/csharp/language-reference/operators/MemberAccessExamples.cs#TypeMemberAccess)]
 
-<span data-ttu-id="c8e06-111">Using – direktiva provádí některé kvalifikace názvu volitelné:</span><span class="sxs-lookup"><span data-stu-id="c8e06-111">The using directive makes some name qualification optional:</span></span>
+<span data-ttu-id="c4dc2-111">Můžete také použít `.` k vyvolání [– metoda rozšíření](../../programming-guide/classes-and-structs/extension-methods.md).</span><span class="sxs-lookup"><span data-stu-id="c4dc2-111">You can also use `.` to invoke an [extension method](../../programming-guide/classes-and-structs/extension-methods.md).</span></span>
 
-[!code-csharp[csRefOperators#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#21)]
+## <a name="operator-overloadability"></a><span data-ttu-id="c4dc2-112">Overloadability – operátor</span><span class="sxs-lookup"><span data-stu-id="c4dc2-112">Operator overloadability</span></span>
 
-<span data-ttu-id="c8e06-112">Ale pokud identifikátor je dvojznačný, musí být kvalifikován:</span><span class="sxs-lookup"><span data-stu-id="c8e06-112">But when an identifier is ambiguous, it must be qualified:</span></span>
+<span data-ttu-id="c4dc2-113">Operátor `.` nemohou být přetíženy.</span><span class="sxs-lookup"><span data-stu-id="c4dc2-113">The operator `.` cannot be overloaded.</span></span>
 
-[!code-csharp[csRefOperators#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#22)]
+## <a name="c-language-specification"></a><span data-ttu-id="c4dc2-114">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="c4dc2-114">C# language specification</span></span>
 
-## <a name="c-language-specification"></a><span data-ttu-id="c8e06-113">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="c8e06-113">C# language specification</span></span>
+<span data-ttu-id="c4dc2-115">Další informace najdete v tématu [přístup ke členu](~/_csharplang/spec/expressions.md#member-access) část [ C# specifikace jazyka](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="c4dc2-115">For more information, see the [Member access](~/_csharplang/spec/expressions.md#member-access) section of the [C# language specification](../language-specification/index.md).</span></span>
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+## <a name="see-also"></a><span data-ttu-id="c4dc2-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c4dc2-116">See also</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="c8e06-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c8e06-114">See also</span></span>
-
-- [<span data-ttu-id="c8e06-115">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="c8e06-115">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="c8e06-116">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="c8e06-116">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="c8e06-117">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="c8e06-117">C# Operators</span></span>](index.md)
+- [<span data-ttu-id="c4dc2-117">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="c4dc2-117">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="c4dc2-118">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="c4dc2-118">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="c4dc2-119">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="c4dc2-119">C# Operators</span></span>](index.md)
+- <span data-ttu-id="c4dc2-120">[?. a? operátory]](null-conditional-operators.md)</span><span class="sxs-lookup"><span data-stu-id="c4dc2-120">[?. and ?[] operators](null-conditional-operators.md)</span></span>
