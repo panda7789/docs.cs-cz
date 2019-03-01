@@ -16,12 +16,12 @@ helpviewer_keywords:
 - interoperability, sharing components
 - shared components, using with assemblies
 ms.assetid: b324cc1e-b03c-4f39-aea6-6a6d5bfd0e37
-ms.openlocfilehash: 413c9331611d3406c13df58f25db1ef0255339b6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dc5262d62d32ad3f79c4f4e2c4d9f862dbce3727
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517666"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56976886"
 ---
 # <a name="troubleshooting-interoperability-visual-basic"></a>Řešení potíží s interoperabilitou (Visual Basic)
 Při spolupráci mezi modelem COM a spravovaný kód [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], mohou nastat jeden nebo více z těchto běžných problémů.  
@@ -57,11 +57,11 @@ Při spolupráci mezi modelem COM a spravovaný kód [!INCLUDE[dnprdnshort](~/in
 ##  <a name="vbconinteroperabilitymarshalinganchor6"></a> Vytvoření instance třídy rozhraní .NET Framework  
  Obecně platí, můžete vytvořit instanci [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pomocí `New` příkaz s názvem třídy. Třída modelu COM reprezentované definiční sestavení je jeden případ, ve kterém můžete použít `New` příkaz s rozhraním. Pokud použijete třídu modelu COM s `Inherits` příkazu, můžete použít rozhraní, stejně jako třídy. Následující kód ukazuje, jak vytvořit `Command` objektu v projektu, který obsahuje odkaz na objekt Microsoft ActiveX Data objekty 2.8 knihovny COM:  
   
- [!code-vb[VbVbalrInterop#20](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_1.vb)]  
+ [!code-vb[VbVbalrInterop#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#20)]  
   
  Pokud použijete třídu modelu COM jako základ pro odvozenou třídu, však musíte použít třídu spolupráce, který představuje třídu COM, stejně jako v následujícím kódu:  
   
- [!code-vb[VbVbalrInterop#21](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_2.vb)]  
+ [!code-vb[VbVbalrInterop#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#21)]  
   
 > [!NOTE]
 >  Sestavení vzájemné spolupráce implicitně implementovat rozhraní, které představují třídy modelu COM. By se neměl pokoušet použít `Implements` způsobí příkaz k implementaci těchto rozhraní nebo došlo k chybě.  
@@ -81,19 +81,19 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
   
  Visual Basic .NET vyžaduje, abyste mohli používat své metody vždy vytvořit instance objektů COM. Používat tyto metody v jazyce Visual Basic, deklarovat proměnnou požadovanou třídu a použijte klíčové slovo new k přiřazení objektu k proměnné objektu. `Shared` – Klíčové slovo lze použít, když chcete Ujistěte se, že se vytvoří tento pouze jedna instance třídy.  
   
- [!code-vb[VbVbalrInterop#23](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_3.vb)]  
+ [!code-vb[VbVbalrInterop#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#23)]  
   
 ##  <a name="vbconinteroperabilitymarshalinganchor9"></a> Neošetřené chyby v obslužných rutinách událostí  
  Jeden běžný problém spolupráce zahrnuje chyby v obslužných rutinách událostí, které zpracovávají události vyvolané objektů COM. Tyto chyby se ignorovaly, pokud výslovně ověřujete chyby pomocí `On Error` nebo `Try...Catch...Finally` příkazy. Například následující příklad je z projektu jazyka Visual Basic .NET, který obsahuje odkaz na objekt Microsoft ActiveX Data objekty 2.8 knihovny COM.  
   
- [!code-vb[VbVbalrInterop#24](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_4.vb)]  
+ [!code-vb[VbVbalrInterop#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#24)]  
   
  V tomto příkladu vyvolává chybu podle očekávání. Ale pokud se pokusíte stejný příklad bez `Try...Catch...Finally` bloku, chyba se ignoruje, protože, pokud jste použili `OnError Resume Next` příkazu. Bez zpracování chyb bez upozornění selže dělení nulou. Protože tyto chyby nikdy vyvolat chyby neošetřená výjimka, je důležité, abyste používali určitou formu zpracování výjimek v obslužné rutiny událostí, které zpracovávají události od objektů COM.  
   
 ### <a name="understanding-com-interop-errors"></a>Vysvětlení chyb vzájemné spolupráce COM  
  Bez zpracování chyb, generování spolupráce volání často chyby, které poskytují pár informací. Kdykoli je to možné, použijte strukturované zpracování vám poskytneme Další informace o problémech, které se objeví chyby. To může být zvláště užitečné při ladění aplikace. Příklad:  
   
- [!code-vb[VbVbalrInterop#25](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_5.vb)]  
+ [!code-vb[VbVbalrInterop#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#25)]  
   
  Informace, např. popis chyby, HRESULT a příčiny chyby modelu COM. získáte zkoumání obsahu výjimek objektu.  
   
@@ -113,11 +113,11 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
   
  Pokud máte přístup do volané procedury tuto chybu můžete zabránit pomocí `ByVal` klíčového slova pro deklarování parametrů, které přijímají `ReadOnly` vlastnosti. Příklad:  
   
- [!code-vb[VbVbalrInterop#26](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_6.vb)]  
+ [!code-vb[VbVbalrInterop#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#26)]  
   
  Pokud nemáte přístup ke zdrojovému kódu pro procedura volána, můžete vynutit vlastnost, která má být předán podle hodnoty tak, že přidáte další sadu závorek volající procedury. Například v projektu, který obsahuje odkaz na objekt Microsoft ActiveX Data objekty 2.8 knihovny COM, můžete použít:  
   
- [!code-vb[VbVbalrInterop#27](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/troubleshooting-interoperability_7.vb)]  
+ [!code-vb[VbVbalrInterop#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#27)]  
   
 ##  <a name="vbconinteroperabilitymarshalinganchor12"></a> Nasazení sestavení, která zpřístupňují zprostředkovatele komunikace s objekty  
  Nasazení sestavení, které vystavit rozhraní COM prezentuje některé jedinečné výzvy. Například potenciální problém nastane, pokud samostatné aplikace odkazovat na stejné sestavení modelu COM. Tato situace je běžné při instalaci nové verze sestavení a stará verze sestavení je stále používá jiná aplikace. Pokud odinstalujete sestavení, které sdílí knihovnu DLL, můžete neúmyslně si je k dispozici pro jiná sestavení.  

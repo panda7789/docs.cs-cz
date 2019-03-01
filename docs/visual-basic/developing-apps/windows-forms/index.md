@@ -2,15 +2,9 @@
 title: Základy formulářové aplikace Windows (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
-- Windows applications
-- Windows Forms, Visual Basic
+  - Windows applications
+  - 'Windows Forms, Visual Basic'
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: 3db3c49427765249f7d6c5ac394f8b239cd40fa3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54592520"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Základy formulářové aplikace Windows (Visual Basic)
 Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Windows Forms, které se spouštějí místně v počítačích uživatelů. Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní pomocí Windows Forms. Aplikace modelu Windows Forms jsou založeny na třídách z <xref:System.Windows.Forms> oboru názvů.  
@@ -46,7 +40,7 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Vytvoření nové aplikace Windows Forms pomocí sady Visual Studio|[Návod: Vytvoření jednoduché Windows formuláře](https://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
+|Vytvoření nové aplikace Windows Forms pomocí sady Visual Studio|[Tutoriál 1: Vytvoření prohlížeče obrázků](/visualstudio/ide/tutorial-1-create-a-picture-viewer)|  
 |Použití ovládacích prvků ve formulářích|[Postupy: Přidání ovládacích prvků do formulářů Windows](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
 |Vytváření grafiky <xref:System.Drawing>|[Začínáme s programováním grafiky](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
 |Vytvořit vlastní ovládací prvky|[Postupy: Dědit ze třídy UserControl](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  

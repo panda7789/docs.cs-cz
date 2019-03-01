@@ -12,12 +12,12 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-ms.openlocfilehash: f5222d51ff2f60dd31ec52a8d5d6d52f37e02443
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: 6987263854b0d0372bc08bb7e4d6efb498e265f1
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55739199"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56973623"
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Představení technologie LINQ v jazyce Visual Basic
 Language Integrated Query (LINQ) přidává funkce dotazu do jazyka Visual Basic a při práci se všemi druhy dat poskytuje jednoduché a výkonné možnosti. Místo odeslání dotazu do databáze ke zpracování nebo práce s různou syntaxí dotazu pro každý typ hledaných dat, kterou hledáte, představuje LINQ dotazy jako součást jazyka Visual Basic. Používá jednotný syntax bez ohledu na typ data.  
@@ -26,12 +26,12 @@ Language Integrated Query (LINQ) přidává funkce dotazu do jazyka Visual Basic
   
  Například následující příklad kódu ukazuje dotaz LINQ, který vrátí seznam zákazníků z kolekce a skupiny, které je založené na jejich umístění.  
   
- [!code-vb[VbVbalrIntroToLINQ#1](codesnippet/VisualBasic/introduction-to-linq_1.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#1)]  
   
 ## <a name="running-the-examples"></a>Spuštění příkladů  
  Pro spuštění příkladů v úvodu a v [struktura dotazu LINQ](#structure-of-a-linq-query) oddílu, zahrňte následující kód, který vrátí seznam zákazníků a objednávek.  
   
- [!code-vb[VbVbalrIntroToLINQ#31](codesnippet/VisualBasic/introduction-to-linq_2.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#31)]  
   
 ## <a name="linq-providers"></a>Zprostředkovatelé dotazů LINQ  
  A *zprostředkovatele LINQ* dotazů LINQ jazyka Visual Basic se mapuje na zdroj dat, která je dotazována. Při psaní dotazu LINQ poskytovatel přebírá tento dotaz a přeloží ho do příkazů, které zdroje dat budou moci být prováděny. Poskytovatel také převádí data ze zdroje na objekty, které tvoří výsledek dotazu. Nakonec převede objekty na data při odeslání aktualizací do zdroje dat.  
@@ -50,23 +50,23 @@ Language Integrated Query (LINQ) přidává funkce dotazu do jazyka Visual Basic
   
  Výraz dotazu začíná `From` klauzuli. Tato klauzule určuje zdroje dat pro dotaz a proměnné, které se používají k odkazování na každý prvek zdroje dat samostatně. Tyto proměnné jsou pojmenovány *proměnné v rozsahu* nebo *iterační proměnné*. `From` Je vyžadována klauzule dotazu, s výjimkou `Aggregate` dotazy, kde `From` klauzule je volitelný. Po oboru a zdroje dotazu jsou uvedené v `From` nebo `Aggregate` klauzule, může obsahovat libovolnou kombinaci klauzulí dotazů k úpravě dotazu. Informace o klauzulích dotazu naleznete v tématu operátory dotazů LINQ jazyka Visual Basic dále v tomto tématu. Například následující dotaz Určuje zdrojovou kolekci zákaznických dat, jako `customers` proměnné a iterační proměnnou s názvem `cust`.  
   
- [!code-vb[VbVbalrIntroToLINQ#2](codesnippet/VisualBasic/introduction-to-linq_3.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#2)]  
   
  Tento příklad je platný dotaz sám; Nicméně dotaz mnohem výkonnější při přidání další klauzule dotazu pro upřesnění výsledků. Například můžete přidat `Where` klauzule můžete filtrovat výsledky podle jedné nebo více hodnot. Výrazy dotazu představují jeden řádek kódu. Další klauzule dotazu můžete přidat pouze na konec dotazu. Dotaz můžete rozdělit přes více řádků textu, aby se zlepšila čitelnost pomocí podtržítka (\_) znak pro pokračování řádku. Následující příklad kódu ukazuje příklad dotazu, který zahrnuje `Where` klauzuli.  
   
- [!code-vb[VbVbalrIntroToLINQ#3](codesnippet/VisualBasic/introduction-to-linq_4.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#3)]  
   
  Další výkonnou klauzulí dotazu je `Select` klauzuli, která umožňuje vrátit pouze vybraná pole ze zdroje dat. Dotazy LINQ vrací vyčíslitelné kolekce výrazných objektů. Dotaz může vrátit kolekci anonymních typů nebo pojmenovaných typů. Můžete použít `Select` klauzuli pro vrácení pouze jedno pole ze zdroje dat. Když toto provedete, typ vrácené kolekce je typ tohoto jednoho pole. Můžete také použít `Select` klauzuli pro vrácení více polí ze zdroje dat. Když toto provedete, typ vrácené kolekce je nový anonymní typ. Můžete také porovnat pole vrácená dotazem s poli zadaného názvu typu. Následující příklad kódu ukazuje výraz dotazu, který vrátí kolekci anonymních typů, jejichž členové obsahují data z vybraných polí ze zdroje dat.  
   
- [!code-vb[VbVbalrIntroToLINQ#4](codesnippet/VisualBasic/introduction-to-linq_5.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#4)]  
   
  Dotazy LINQ lze také kombinovat více zdrojů dat a vrácení jednoho výsledku. To můžete udělat s jedním nebo více `From` klauzule, nebo pomocí `Join` nebo `Group Join` klauzulí dotazů. Následující příklad kódu ukazuje výraz dotazu, který kombinuje data odběratele a objednávky a vrátí kolekci anonymních typů s daty odběratele a objednávky.  
   
- [!code-vb[VbVbalrIntroToLINQ#5](codesnippet/VisualBasic/introduction-to-linq_6.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#5)]  
   
  Můžete použít `Group Join` klauzule vytvoření hierarchického dotazu výsledku, který obsahuje kolekci objektů zákazníka. Každý objekt zákazníka má vlastnost, která obsahuje kolekci všech objednávek tohoto zákazníka. Následující příklad kódu ukazuje výraz dotazu, který jako hierarchické kombinuje data odběratele a objednávky a vrátí kolekci anonymních typů. Dotaz vrátí typ, který zahrnuje `CustomerOrders` vlastnost, která obsahuje kolekci dat objednávky zákazníka. Zahrnuje také `OrderTotal` vlastnost, která obsahuje součet součtů pro všechny objednávky daného zákazníka. (Tento dotaz je ekvivalentní k LEFT OUTER JOIN).  
   
- [!code-vb[VbVbalrIntroToLINQ#6](codesnippet/VisualBasic/introduction-to-linq_7.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#6)]  
   
  Existuje několik dalších operátorů dotazu LINQ, které vám umožní vytvářet výkonné výrazy dotazů. Další části tohoto tématu popisuje různé klauzule dotazu, které můžete zahrnout do výrazu dotazu. Informace o klauzulích dotazu jazyka Visual Basic, naleznete v tématu [dotazy](../../../../visual-basic/language-reference/queries/index.md).  
   
@@ -78,13 +78,13 @@ Třídy v <xref:System.Linq> obor názvů a jiných oborech názvů, které podp
 
 Buď [ `From` klauzule](../../../../visual-basic/language-reference/queries/from-clause.md) nebo `Aggregate` klauzule je vyžadována na začátku dotazu. A `From` klauzule Určuje zdrojovou kolekci a proměnnou iterace pro dotaz. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#7](codesnippet/VisualBasic/introduction-to-linq_8.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#7)]
 
 ### <a name="select-clause"></a>Select – klauzule
 
 Volitelné. A [ `Select` klauzule](../../../../visual-basic/language-reference/queries/select-clause.md) deklaruje sadu iteračních proměnných pro dotaz. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#8](codesnippet/VisualBasic/introduction-to-linq_9.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#8)]
 
 Pokud `Select` není zadána klauzule, iterační proměnné pro dotaz jsou tvořeny iteračními proměnnými určenými klauzulí `From` nebo `Aggregate` klauzuli.
 
@@ -92,83 +92,83 @@ Pokud `Select` není zadána klauzule, iterační proměnné pro dotaz jsou tvo�
 
 Volitelné. A [ `Where` klauzule](../../../../visual-basic/language-reference/queries/where-clause.md) Určuje podmínku filtrování dotazu. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#9](codesnippet/VisualBasic/introduction-to-linq_10.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#9)]
 
 ### <a name="order-by-clause"></a>Klauzule ORDER by]
 
 | Volitelné. [ `Order By` Klauzule](../../../../visual-basic/language-reference/queries/order-by-clause.md) určuje pořadí řazení pro sloupce v dotazu. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#10](codesnippet/VisualBasic/introduction-to-linq_11.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#10)]
 
 ### <a name="join-clause"></a>Join – klauzule
 
 Volitelné. A [ `Join` klauzule](../../../../visual-basic/language-reference/queries/join-clause.md) kombinuje dvě kolekce do jedné kolekce. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#11](codesnippet/VisualBasic/introduction-to-linq_12.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#11)]
 
 ### <a name="group-by-clause"></a>Group By – klauzule
 
 Volitelné. A [ `Group By` klauzule](../../../../visual-basic/language-reference/queries/group-by-clause.md) seskupuje prvky sady výsledků dotazu. Slouží k aplikaci agregačních funkcí na každou skupinu. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#12](codesnippet/VisualBasic/introduction-to-linq_13.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#12)]
 
 ### <a name="group-join-clause"></a>Group Join – klauzule
 
 Volitelné. A [ `Group Join` klauzule](../../../../visual-basic/language-reference/queries/group-join-clause.md) kombinuje dvě kolekce do jedné hierarchické kolekce. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#13](codesnippet/VisualBasic/introduction-to-linq_14.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#13)]
 
 ### <a name="aggregate-clause"></a>Aggregate – klauzule
 
 Buď [ `Aggregate` klauzule](../../../../visual-basic/language-reference/queries/aggregate-clause.md) nebo `From` klauzule je vyžadována na začátku dotazu. `Aggregate` Klauzule použije jeden nebo více agregačních funkcí na kolekci. Například můžete použít `Aggregate` klauzule a vypočítat součet všech prvků vrácených dotazem, stejně jako v následujícím příkladu.
 
-[!code-vb[VbVbalrIntroToLINQ#14](codesnippet/VisualBasic/introduction-to-linq_15.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#14)]
 
 Můžete také použít `Aggregate` klauzuli pro úpravu dotazu. Například můžete použít `Aggregate` k provedení výpočtu v kolekci souvisejících dotazů. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#15](codesnippet/VisualBasic/introduction-to-linq_16.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#15)]
 
 ### <a name="let-clause"></a>Let – klauzule
 
 Volitelné. A [ `Let` klauzule](../../../../visual-basic/language-reference/queries/let-clause.md) vypočítá hodnotu a přiřadí ji nové proměnné v dotazu. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#16](codesnippet/VisualBasic/introduction-to-linq_17.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#16)]
 
 ### <a name="distinct-clause"></a>Distinct – klauzule
 
 Volitelné. A `Distinct` klauzule omezí hodnoty aktuální iterační proměnné a odstraní tak duplicitní hodnoty ve výsledcích dotazu. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#17](codesnippet/VisualBasic/introduction-to-linq_18.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#17)]
 
 ### <a name="skip-clause"></a>Skip – klauzule
 
 Volitelné. A [ `Skip` klauzule](../../../../visual-basic/language-reference/queries/skip-clause.md) vynechá zadaný počet prvků v kolekci a vrátí zbývající prvky. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#18](codesnippet/VisualBasic/introduction-to-linq_19.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#18)]
 
 ### <a name="skip-while-clause"></a>Skip While – klauzule
 
 Volitelné. A [ `Skip While` klauzule](../../../../visual-basic/language-reference/queries/skip-while-clause.md) vynechává prvky v kolekci, tak dlouho, dokud je zadaná podmínka `true` a vrací zbývající prvky. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#19](codesnippet/VisualBasic/introduction-to-linq_20.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#19)]
 
 ### <a name="take-clause"></a>Take – klauzule
 
 Volitelné. A [ `Take` klauzule](../../../../visual-basic/language-reference/queries/take-clause.md) vrátí zadaný počet souvislých prvků od začátku kolekce. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#20](codesnippet/VisualBasic/introduction-to-linq_21.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#20)]
 
 ### <a name="take-while-clause"></a>Take While – klauzule
 
 Volitelné. A [ `Take While` klauzule](../../../../visual-basic/language-reference/queries/take-while-clause.md) obsahuje prvky v kolekci, tak dlouho, dokud je zadaná podmínka `true` a vynechány zbývající prvky. Příklad:
 
-[!code-vb[VbVbalrIntroToLINQ#21](codesnippet/VisualBasic/introduction-to-linq_22.vb)]
+ [!code-vb[VbVbalrIntroToLINQ#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#21)]
   
 ## <a name="use-additional-linq-query-features"></a>Používat další funkce dotazu LINQ  
   
 Můžete použít další funkce dotazu LINQ voláním členů vyčíslitelného a dotazovatelného typu, které poskytuje LINQ. Tyto další funkce můžete použít voláním operátora pro konkrétní dotaz na výsledek výrazu dotazu. Například v následujícím příkladu <xref:System.Linq.Enumerable.Union%2A?displayProperty=nameWithType> metoda ke kombinaci výsledků dvou dotazů do výsledku jednoho dotazu. Používá <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> metodu pro vrácení výsledků dotazu v podobě obecného seznamu.
   
- [!code-vb[VbVbalrIntroToLINQ#22](codesnippet/VisualBasic/introduction-to-linq_23.vb)]  
+ [!code-vb[VbVbalrIntroToLINQ#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#22)]  
   
  Podrobnosti o dalších možnostech LINQ naleznete v tématu [přehled standardních operátorů dotazu](../../concepts/linq/standard-query-operators-overview.md).  
   
@@ -207,7 +207,7 @@ Můžete použít další funkce dotazu LINQ voláním členů vyčíslitelného
   
  Následující příklad kódu ukazuje, jak vytvořit prvek XML, přístup k jeho dílčím prvkům a atributům a dotazu na obsah prvku s využitím jazyka LINQ.  
   
- [!code-vb[VbXmlSamples#8](../../../language-reference/operators/codesnippet/VisualBasic/introduction-to-linq_24.vb)]  
+ [!code-vb[VbXmlSamples#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples3.vb#8)]  
   
  Další informace najdete v tématu [XML](../xml/index.md).  
   

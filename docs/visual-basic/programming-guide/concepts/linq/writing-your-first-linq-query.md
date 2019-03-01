@@ -6,12 +6,12 @@ helpviewer_keywords:
 - LINQ queries [Visual Basic]
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
-ms.openlocfilehash: b49475bf7aea8d28ce057c7d4376cf7ad8285a0a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 362d241d1da01ea935ab3bb3dcdfcba30cb8c67e
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54506248"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56975144"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>Napište svůj první dotaz LINQ (Visual Basic)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou vyjádřeny v vyhrazené dotazovací jazyk. V průběhu času různé jazyky byly vyvinuty pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. Díky tomu je nezbytné pro vývojáře aplikací získat nový dotazovací jazyk pro každý typ zdroje dat nebo formát dat, která je podporována.  
@@ -34,7 +34,7 @@ A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou vyjád�
 > [!NOTE]
 >  Na [stránka kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic), ujistěte se, že **Option infer** je nastavena na **na**.  
   
- [!code-vb[VbLINQFirstQuery#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_1.vb)]  
+ [!code-vb[VbLINQFirstQuery#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#1)]  
   
  Výstup:  
   
@@ -47,7 +47,7 @@ A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou vyjád�
   
  Pokud zdroj dat již neimplementuje <xref:System.Collections.Generic.IEnumerable%601>, [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatele, je potřeba implementovat funkci *standardních operátorů pro dotazování* pro tento zdroj dat. Například [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] zpracovává práci při načítání dokumentu XML do dotazovatelného <xref:System.Xml.Linq.XElement> zadejte, jak je znázorněno v následujícím příkladu. Další informace o standardních operátorů pro dotazování, naleznete v tématu [přehled operátory standardního dotazu (Visual Basic)](standard-query-operators-overview.md).  
   
- [!code-vb[VbLINQFirstQuery#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_2.vb)]  
+ [!code-vb[VbLINQFirstQuery#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#2)]  
   
  S [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], nejprve vytvoříte objektově relační mapování v době návrhu ručně nebo pomocí [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2) v sadě Visual Studio. Psát dotazy proti objektům a v době běhu [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] zpracovává vnitřní komunikaci s databází. V následujícím příkladu `customers` představuje určité tabulky v databázi, a <xref:System.Data.Linq.Table%601> podporuje Obecné <xref:System.Linq.IQueryable%601>.  
   
@@ -67,7 +67,7 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
   
  Po spuštění, v následujícím příkladu dotaz vrátí všechna sudá čísla z celočíselné pole, `numbers`.  
   
- [!code-vb[VbLINQFirstQuery#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_1.vb)]  
+ [!code-vb[VbLINQFirstQuery#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#1)]  
   
  Výraz dotazu obsahuje tři věty: `From`, `Where`, a `Select`. Konkrétní funkci a účel každé klauzuli dotazu výrazu je podrobněji popsána [základní operace dotazů (Visual Basic)](basic-query-operations.md). Další informace najdete v tématu [dotazy](../../../../visual-basic/language-reference/queries/index.md). Všimněte si, že v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], definice dotazu často je uložen v proměnné a proveden později. Dotaz proměnných, například `evensQuery` v předchozím příkladu, musí být dotazovatelného typu. Typ `evensQuery` je `IEnumerable(Of Integer)`, přiřazené kompilátorem použití odvození místního typu.  
   
@@ -79,13 +79,13 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
 ### <a name="deferred-execution"></a>Odložené provedení  
  Typické [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu vypadá podobně jako v předchozím příkladu, ve kterém `evensQuery` je definována. Vytvoří dotaz, ale nespustí se okamžitě. Místo toho je definice dotazu uložena v proměnné dotazu `evensQuery`. Spustit dotaz později, obvykle pomocí `For Each` smyčku, která vrátí sekvenci hodnot nebo použitím operátoru standardního dotazu, jako například `Count` nebo `Max`. Tento proces se označuje jako *odložené provedení*.  
   
- [!code-vb[VbLINQFirstQuery#7](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_3.vb)]  
+ [!code-vb[VbLINQFirstQuery#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#7)]  
   
  Pro sekvenci hodnot, získáte přístup k načtená data pomocí proměnné iterace ve `For Each` smyčky (`number` v předchozím příkladu). Protože proměnné dotazu `evensQuery`, udržuje definice dotazu spíše než výsledky dotazu dotaz můžete spustit tak často, jak chcete, aby pomocí proměnné dotazu víc než jednou. Například může mít databázi v aplikaci, která se průběžně aktualizuje pomocí samostatné aplikace. Jakmile vytvoříte dotaz, který načítá data z této databáze, můžete použít `For Each` smyčky k provedení dotazu opakovaně, pokaždé, když se načítají nejnovější data.  
   
  Následující příklad ukazuje, jak odložené provedení funguje. Po `evensQuery2` je definována a spuštěn `For Each` smyčky, stejně jako v předchozích příkladech můžou některé prvky ve zdroji dat `numbers` se změní. Potom sekundy `For Each` smyčka spuštěna `evensQuery2` znovu. Výsledky se liší podruhé, protože `For Each` cyklus se opakuje, dotaz znovu pomocí nové hodnoty v `numbers`.  
   
- [!code-vb[VbLINQFirstQuery#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_4.vb)]  
+ [!code-vb[VbLINQFirstQuery#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#3)]  
   
  Výstup:  
   
@@ -102,15 +102,15 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
   
  Následující dotaz vrátí počet sudých čísel v poli celých čísel. Definice dotazů se neuloží, a `numEvens` je jednoduchý `Integer`.  
   
- [!code-vb[VbLINQFirstQuery#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_5.vb)]  
+ [!code-vb[VbLINQFirstQuery#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#4)]  
   
  Můžete stejného výsledku dosáhnout pomocí `Aggregate` metody.  
   
- [!code-vb[VbLINQFirstQuery#5](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_6.vb)]  
+ [!code-vb[VbLINQFirstQuery#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#5)]  
   
  Můžete také vynutit spuštění dotazu pomocí volání `ToList` nebo `ToArray` metodu dotazu (okamžité) nebo proměnné dotazu (odložené), jak je znázorněno v následujícím kódu.  
   
- [!code-vb[VbLINQFirstQuery#6](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/writing-your-first-linq-query_7.vb)]  
+ [!code-vb[VbLINQFirstQuery#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#6)]  
   
  V předchozích příkladech `evensQuery3` je dotaz proměnné, ale `evensList` je seznam a `evensArray` je pole.  
   

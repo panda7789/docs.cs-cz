@@ -3,14 +3,14 @@ title: Začínáme s Azure Table storage pomocíF#
 description: Store strukturovaných dat v cloudu pomocí služby Azure Table storage nebo Azure Cosmos DB.
 author: sylvanc
 ms.date: 03/26/2018
-ms.openlocfilehash: 45a5d845dcedb5c3ea07cc4540f66bad23338a88
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 2b74a33023065ea809c2d7eb6202b1a254018422
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54152070"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56966005"
 ---
-# <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Začínáme s Azure Table storage a Azure Cosmos DB Table API pomocíF# # 
+# <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Začínáme s Azure Table storage a Azure Cosmos DB Table API pomocí F\#
 
 Azure Table storage je služba, která ukládá strukturovaná data NoSQL v cloudu. Úložiště Table je úložiště klíčů/atributů s návrhem. Vzhledem k tomu, že je Table storage bez schématu, je snadné data přizpůsobovat měnícím potřebám vaší aplikace. Přístup k datům je rychlý a cenově výhodný pro všechny typy aplikací. Table storage je obvykle znamená výrazně nižší náklady než tradiční SQL pro podobné objemy dat.
 

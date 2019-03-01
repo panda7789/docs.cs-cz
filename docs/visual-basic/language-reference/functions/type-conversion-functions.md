@@ -81,12 +81,12 @@ helpviewer_keywords:
 - rounding numbers [Visual Basic], banker's rounding
 - type conversion [Visual Basic], Visual Basic vs. .NET Framework
 ms.assetid: d9d8d165-f967-44ff-a6cd-598e4740a99e
-ms.openlocfilehash: be5e1b5fff1feb8ef4cc2ff7fcbca193aafcd781
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
+ms.openlocfilehash: ea7cc2c7f988617de67bf0ea46aeb3396acdf4b1
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55674877"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56980617"
 ---
 # <a name="type-conversion-functions-visual-basic"></a>Funkce pro převod typů (Visual Basic)
 Tyto funkce jsou zkompilovaný vloženě, což znamená, že kód převodu je součástí kódu, který se vyhodnotí výraz. Někdy není žádná volání procedury k provedení převodu, což zvyšuje výkon. Každá funkce převede výraz na určitý datový typ.  
@@ -198,73 +198,73 @@ Dim i3 As Integer = CInt(Math.Round(s))        ' Result: 174
 ## <a name="cbool-example"></a>CBool – příklad  
  V následujícím příkladu `CBool` funkce převedete výrazy `Boolean` hodnoty. Pokud je výraz vyhodnocen na nenulovou hodnotu, `CBool` vrátí `True`; v opačném případě vrátí `False`.  
   
- [!code-vb[VbVbalrFunctions#1](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_1.vb)]  
+ [!code-vb[VbVbalrFunctions#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#1)]  
   
 ## <a name="cbyte-example"></a>CByte – příklad  
  V následujícím příkladu `CByte` funkce převodu výrazu `Byte`.  
   
- [!code-vb[VbVbalrFunctions#2](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_2.vb)]  
+ [!code-vb[VbVbalrFunctions#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#2)]  
   
 ## <a name="cchar-example"></a>CChar – příklad  
  V následujícím příkladu `CChar` funkce pro převod první znak `String` výraz, který se `Char` typu.  
   
- [!code-vb[VbVbalrFunctions#3](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_3.vb)]  
+ [!code-vb[VbVbalrFunctions#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#3)]  
   
  Vstupní argument `CChar` musí být datového typu `Char` nebo `String`. Nemůžete použít `CChar` pro převod čísla na znak, protože `CChar` nemůže přijmout číselným datovým typem. Následující příklad získá číslo představující bod kódu. (kód znaku) a převede ho na odpovídající znak. Používá <xref:Microsoft.VisualBasic.Interaction.InputBox%2A> funkce získat řetězec číslic, `CInt` pro převod řetězce na typ `Integer`, a `ChrW` převést číslo na typ `Char`.  
   
- [!code-vb[VbVbalrFunctions#4](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_4.vb)]  
+ [!code-vb[VbVbalrFunctions#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#4)]  
   
 ## <a name="cdate-example"></a>CDate – příklad  
  V následujícím příkladu `CDate` funkce pro převod řetězců na `Date` hodnoty. Obecně není doporučeno pevně kódováno pomocí data a času jako řetězce (jak je znázorněno v tomto příkladu). Použijte literály data a času literály, například #Feb 12, 1969 # a # 4:45:23 hodin #, místo toho.  
   
- [!code-vb[VbVbalrFunctions#5](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_5.vb)]  
+ [!code-vb[VbVbalrFunctions#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#5)]  
   
 ## <a name="cdbl-example"></a>CDbl – příklad  
- [!code-vb[VbVbalrFunctions#6](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_6.vb)]  
+ [!code-vb[VbVbalrFunctions#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#6)]  
   
 ## <a name="cdec-example"></a>CDec – příklad  
  V následujícím příkladu `CDec` funkce pro převod číselná hodnota, která `Decimal`.  
   
- [!code-vb[VbVbalrFunctions#7](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_7.vb)]  
+ [!code-vb[VbVbalrFunctions#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#7)]  
   
 ## <a name="cint-example"></a>Příklad CInt  
  V následujícím příkladu `CInt` funkce, která se převést hodnotu na `Integer`.  
   
- [!code-vb[VbVbalrFunctions#8](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_8.vb)]  
+ [!code-vb[VbVbalrFunctions#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#8)]  
 
 ## <a name="clng-example"></a>CLng – příklad
  V následujícím příkladu `CLng` funkce pro převod hodnot `Long`.  
   
- [!code-vb[VbVbalrFunctions#9](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_9.vb)]  
+ [!code-vb[VbVbalrFunctions#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#9)]  
   
 ## <a name="cobj-example"></a>Příklad CObj  
  V následujícím příkladu `CObj` funkce pro převod číselná hodnota, která `Object`. `Object` Sám obsahují jenom ukazatel čtyř bajtů, která odkazuje na `Double` přiřazena hodnota.  
   
- [!code-vb[VbVbalrFunctions#10](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_10.vb)]  
+ [!code-vb[VbVbalrFunctions#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#10)]  
   
 ## <a name="csbyte-example"></a>Csbyte – příklad  
  V následujícím příkladu `CSByte` funkce pro převod číselná hodnota, která `SByte`.  
   
- [!code-vb[VbVbalrFunctions#11](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_11.vb)]  
+ [!code-vb[VbVbalrFunctions#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#11)]  
   
 ## <a name="cshort-example"></a>Příklad CShort  
  V následujícím příkladu `CShort` funkce pro převod číselná hodnota, která `Short`.  
   
- [!code-vb[VbVbalrFunctions#12](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_12.vb)]  
+ [!code-vb[VbVbalrFunctions#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#12)]  
   
 ## <a name="csng-example"></a>CSng – příklad  
  V následujícím příkladu `CSng` funkce pro převod hodnot `Single`.  
   
- [!code-vb[VbVbalrFunctions#13](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_13.vb)]  
+ [!code-vb[VbVbalrFunctions#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#13)]  
   
 ## <a name="cstr-example"></a>Příklad CStr  
  V následujícím příkladu `CStr` funkce pro převod číselná hodnota, která `String`.  
   
- [!code-vb[VbVbalrFunctions#14](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_14.vb)]  
+ [!code-vb[VbVbalrFunctions#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#14)]  
   
  V následujícím příkladu `CStr` funkce pro převod `Date` hodnoty `String` hodnoty.  
   
- [!code-vb[VbVbalrFunctions#15](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_15.vb)]  
+ [!code-vb[VbVbalrFunctions#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#15)]  
   
  `CStr` vždy vykreslí `Date` hodnotu ve standardní krátkého formátu pro aktuální národní prostředí, například "6/15/2003 4:35:47 PM". Ale `CStr` potlačí *neutrální hodnoty* z 1/1/0001 pro datum a 00:00:00 po dobu.  
   
@@ -273,17 +273,17 @@ Dim i3 As Integer = CInt(Math.Round(s))        ' Result: 174
 ## <a name="cuint-example"></a>Cuint – příklad  
  V následujícím příkladu `CUInt` funkce pro převod číselná hodnota, která `UInteger`.  
   
- [!code-vb[VbVbalrFunctions#16](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_16.vb)]  
+ [!code-vb[VbVbalrFunctions#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#16)]  
   
 ## <a name="culng-example"></a>Culng – příklad  
  V následujícím příkladu `CULng` funkce pro převod číselná hodnota, která `ULong`.  
   
- [!code-vb[VbVbalrFunctions#17](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_17.vb)]  
+ [!code-vb[VbVbalrFunctions#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#17)]  
   
 ## <a name="cushort-example"></a>Cushort – příklad  
  V následujícím příkladu `CUShort` funkce pro převod číselná hodnota, která `UShort`.  
   
- [!code-vb[VbVbalrFunctions#18](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/type-conversion-functions_18.vb)]  
+ [!code-vb[VbVbalrFunctions#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#18)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:Microsoft.VisualBasic.Strings.Asc%2A>

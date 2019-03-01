@@ -13,12 +13,12 @@ helpviewer_keywords:
 - Visual Basic code, operators
 - arithmetic operators [Visual Basic], about arithmetic operators
 ms.assetid: 325dac7a-ea4f-41d5-8b48-f6e904211569
-ms.openlocfilehash: ff0532c87e03e4b502367313e33ddb9bd12ad8cf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2bd88b2df91c38d658e46157a9a83ce44ab9f25c
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54730734"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56981267"
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Aritmetické operátory v jazyce Visual Basic
 Aritmetické operátory jsou používány k provádění řady známých aritmetické operace, které zahrnují výpočet číselné hodnoty literály, proměnné, ostatní výrazy, funkce a volání vlastností a konstanty. Také klasifikovat s aritmetické operátory jsou bitové posunutí – operátory, které bude fungovat na úrovni jednotlivých bitů operandy a posunout své vzorců bitů doleva nebo doprava.  
@@ -26,29 +26,29 @@ Aritmetické operátory jsou používány k provádění řady známých aritmet
 ## <a name="arithmetic-operations"></a>Aritmetické operace  
  Můžete přidat dvě hodnoty ve výrazu spolu s [+ – operátor](../../../../visual-basic/language-reference/operators/addition-operator.md), nebo odstraňte jednu z jiného pomocí [-– operátor (Visual Basic)](../../../../visual-basic/language-reference/operators/subtraction-operator.md), jak ukazuje následující příklad.  
   
- [!code-vb[VbVbalrOperators#57](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_1.vb)]  
+ [!code-vb[VbVbalrOperators#57](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#57)]  
   
  Negace také používá [-– operátor (Visual Basic)](../../../../visual-basic/language-reference/operators/subtraction-operator.md), ale s pouze jeden operand, jako následující příklad ukazuje.  
   
- [!code-vb[VbVbalrOperators#58](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_2.vb)]  
+ [!code-vb[VbVbalrOperators#58](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#58)]  
   
  Použití úlohy násobení a dělení [* – operátor](../../../../visual-basic/language-reference/operators/multiplication-operator.md) a [/ – operátor (Visual Basic)](../../../../visual-basic/language-reference/operators/floating-point-division-operator.md)v uvedeném pořadí, jak ukazuje následující příklad.  
   
- [!code-vb[VbVbalrOperators#59](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_3.vb)]  
+ [!code-vb[VbVbalrOperators#59](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#59)]  
   
  Používá umocnění [^ – operátor](../../../../visual-basic/language-reference/operators/exponentiation-operator.md), jak ukazuje následující příklad.  
   
- [!code-vb[VbVbalrOperators#60](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_4.vb)]  
+ [!code-vb[VbVbalrOperators#60](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#60)]  
   
  Dělení celého čísla je prováděno [\ – operátor (Visual Basic)](../../../../visual-basic/language-reference/operators/integer-division-operator.md). Celočíselné dělení vrátí podíl, tedy na celé číslo představující počet, kolikrát dělitel lze rozdělit do bez ohledu na jakékoli zbývající podíl. Dělitel a podíl musí být integrální typy (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, a `ULong`) pro tento operátor. Všechny ostatní typy musí být převeden na celočíselný typ nejprve. Následující příklad ukazuje dělení celého čísla.  
   
- [!code-vb[VbVbalrOperators#61](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_5.vb)]  
+ [!code-vb[VbVbalrOperators#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#61)]  
   
  MODULUS aritmetické se provádí pomocí [Mod operátor](../../../../visual-basic/language-reference/operators/mod-operator.md). Tento operátor Vrátí zbytek po dělení dělitel do podíl celočíselný počet časy. Pokud dělitel a Delenec celočíselných typů, vrácená hodnota je integrální. Pokud jsou typy s plovoucí desetinnou čárkou dělení a Delenec, vrácená hodnota je také s plovoucí desetinnou čárkou. Následující příklad ukazuje toto chování.  
   
- [!code-vb[VbVbalrOperators#62](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_6.vb)]  
+ [!code-vb[VbVbalrOperators#62](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#62)]  
   
- [!code-vb[VbVbalrOperators#63](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_7.vb)]  
+ [!code-vb[VbVbalrOperators#63](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#63)]  
   
 ### <a name="attempted-division-by-zero"></a>Pokus o dělení nulou  
  Dělení nulou má odlišné výsledky v závislosti na používané datové typy. V integrální divizemi (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`), [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vyvolá <xref:System.DivideByZeroException> výjimky. V operacích dělení na `Decimal` nebo `Single` datový typ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vyvolá také <xref:System.DivideByZeroException> výjimky.  
@@ -80,7 +80,7 @@ Aritmetické operátory jsou používány k provádění řady známých aritmet
   
  V následujícím příkladu se posune `Integer` hodnota vlevo a vpravo.  
   
- [!code-vb[VbVbalrOperators#64](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_8.vb)]  
+ [!code-vb[VbVbalrOperators#64](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#64)]  
   
  Aritmetické staffhubu nikdy generovat výjimky přetečení.  
   
