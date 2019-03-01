@@ -2,14 +2,14 @@
 title: Asynchronní programování
 description: Zjistěte, jak F# asynchronního programování se provádí prostřednictvím programovací model na úrovni jazyka, který se snadno používá a je přirozený jazyk.
 ms.date: 06/20/2016
-ms.openlocfilehash: e18697708741eef066a76bbffe35882f3639bb68
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 18ba4873cd3dba6d9548a07c4487306d96adab61
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53614477"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56980084"
 ---
-# <a name="async-programming-in-f"></a>Asynchronní programování vF# #
+# <a name="async-programming-in-f"></a>Asynchronní programování v F\#
 
 > [!NOTE]
 > Některé nepřesnosti byly zjištěny v tomto článku.  Je právě přepsán.  Zobrazit [problém #666](https://github.com/dotnet/docs/issues/666) Další informace o změnách.
@@ -53,7 +53,7 @@ Existuje několik syntaktické konstrukce, které stojí za zmínku:
 
 Kromě toho normální `let`, `use`, a `do` klíčová slova můžete používat společně se asynchronní verze, stejně jako normální funkce.
 
-## <a name="how-to-start-async-code-in-f"></a>Jak můžete začít asynchronní kódF# #
+## <a name="how-to-start-async-code-in-f"></a>Jak můžete začít asynchronní kód v F\#
 
 Jak už bylo zmíněno dříve, asynchronní kód je specifikace práce udělat v jiném kontextu, který musí být explicitně spuštěna. Tady jsou dva základní způsoby, jak toho dosáhnout:
 
@@ -152,7 +152,7 @@ for html in htmlList do
 
  F#pro kompilátor je velmi přísná, díky tomu je téměř nemožné něco jako je zneklidňují nové spuštění kódu "async" synchronně. Pokud narazíte na upozornění, který je znak, jak si myslíte, že bude kód nebude spuštěno. Pokud se vás kompilátor šťastný, váš kód spustí pravděpodobně podle očekávání.
 
-## <a name="for-the-cvb-programmer-looking-into-f"></a>Pro C#podívat na programátorovi /VBF# #
+## <a name="for-the-cvb-programmer-looking-into-f"></a>Pro C#programátor /VB podíváme do F\#
 
 V této části se předpokládá, seznamte se s asynchronní model v C#/VB. Pokud nemáte, [asynchronní programování v C# ](../../../csharp/async.md) je výchozím bodem.
 

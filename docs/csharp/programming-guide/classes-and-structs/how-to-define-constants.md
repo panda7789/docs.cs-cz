@@ -5,14 +5,14 @@ helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 43f511be-346c-4b8a-995e-aded94542ece
-ms.openlocfilehash: 26d46335df3333379d5577a5c21a85a39eb6e43a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cf57589df2eb375f34d175939a7f685a4abf59a2
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54713195"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56975417"
 ---
-# <a name="how-to-define-constants-in-c"></a>Postupy: Definování konstant vC#
+# <a name="how-to-define-constants-in-c"></a>Postupy: Definování konstant v jazyce C\#
 Konstanty jsou pole, jejichž hodnoty se nastavují v době kompilace a nikdy se dá změnit. Použijte k poskytnutí smysluplné názvy namísto číselných literálů ("čísla magic") pro zvláštní hodnoty konstant.  
   
 > [!NOTE]

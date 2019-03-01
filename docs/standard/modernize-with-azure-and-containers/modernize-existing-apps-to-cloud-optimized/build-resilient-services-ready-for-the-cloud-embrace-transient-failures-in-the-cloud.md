@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Wi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/30/2018
-ms.openlocfilehash: 16228321cc788b381603513213130415eb73a95c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 801d017457d1cdc3c8a495c8127b203380cb1d9e
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53128853"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971829"
 ---
 # <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Vytváření odolných služeb připravených pro cloud: Zpracování přechodných selhání v cloudu
 
@@ -35,7 +35,7 @@ Odolné aplikace zobrazený obrázek 4 – 9, by měly implementovat postupů, j
 
 Tyto postupy můžete použít zdroje HTTP a databázových prostředků. Obrázek 4 – 9 aplikace jsou založené na 3vrstvou architekturu, je třeba těchto technik na úrovni služeb (HTTP) a na úrovni datové vrstvy (TCP). V monolitické aplikaci, která používá jenom na úrovni aplikace s jedním kromě databáze (Další služby ani mikroslužeb) zpracování přechodných chyb na úrovni databáze, připojení může být dostačující. V této situaci se vyžaduje jenom konkrétní konfiguraci připojení k databázi.
 
-Při implementaci odolných komunikaci, kterou si přístup k databázi, v závislosti na verzi technologie .NET, které používáte, může být jednoduché (například [s Entity Framework 6 nebo novější](https://msdn.microsoft.com/library/dn456835(v=vs.113).aspx), je jenom na vás konfigurace připojení k databázi). Nebo možná budete muset používat další knihovny se podobně jako [přechodné Fault Handling Application Block](https://msdn.microsoft.com/library/hh680934(v=pandp.50).aspx) (pro starší verze rozhraní .NET), nebo dokonce implementují vlastní knihovny.
+Při implementaci odolných komunikaci, kterou si přístup k databázi, v závislosti na verzi technologie .NET, které používáte, může být jednoduché (například [s Entity Framework 6 nebo novější](/ef/ef6/fundamentals/connection-resiliency/retry-logic). Je jenom na vás konfigurace připojení k databázi). Nebo možná budete muset používat další knihovny se podobně jako [přechodné Fault Handling Application Block](https://docs.microsoft.com/previous-versions/msp-n-p/hh680934(v=pandp.50)) (pro starší verze rozhraní .NET), nebo dokonce implementují vlastní knihovny.
 
 Při provádění opakování HTTP a jističe, doporučení pro .NET je použít [Polly](https://github.com/App-vNext/Polly) knihovny, která cílí na rozhraní .NET Framework 4.0, .NET Framework 4.5 a .NET Standard 1.1, včetně podpory .NET Core.
 
@@ -49,11 +49,11 @@ Zjistěte, jak implementovat strategie pro zpracování částečného selhání
 
 -   **Entity Framework odolnost proti chybám a zkuste to znovu logiku připojení (verze 6 a novější)**
 
-    [https://msdn.microsoft.com/library/dn456835(v=vs.113).aspx](https://msdn.microsoft.com/library/dn456835(v=vs.113).aspx)
+    [https://docs.microsoft.com/ef/ef6/fundamentals/connection-resiliency/retry-logic](/ef/ef6/fundamentals/connection-resiliency/retry-logic)
 
 -   **Blok aplikací zpracování přechodných chyb**
 
--   [https://msdn.microsoft.com/library/hh680934(v=pandp.50).aspx](https://msdn.microsoft.com/library/hh680934(v=pandp.50).aspx)
+-   <https://docs.microsoft.com/previous-versions/msp-n-p/hh680934(v=pandp.50)>
 
 -   **Knihovnu Polly pro odolný komunikaci pomocí protokolu HTTP**
 

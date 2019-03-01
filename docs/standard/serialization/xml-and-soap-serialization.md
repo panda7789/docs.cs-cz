@@ -9,12 +9,12 @@ helpviewer_keywords:
 - XML serialization
 - serialization
 ms.assetid: 832ac524-21bc-419a-a27b-ca8bfc45840f
-ms.openlocfilehash: 366a4a42ff0bf968e51e11a66fa81566a47c86ea
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: d9dc68d8e7eced031af404aaec20784573c9930a
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44179426"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965615"
 ---
 # <a name="xml-and-soap-serialization"></a>Serializace XML a SOAP
 
@@ -49,22 +49,22 @@ Popisuje, jak řídit serializace pomocí atributů.
 [Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)  
 Seznam atributů, které se používají k řízení serializace XML.
 
-[Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
+[Postupy: Určení alternativního názvu elementu pro Stream XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
 Uvede případě rozšířeného scénáře ukázkami, jak ke generování více datové proudy XML přepsáním serializace.
 
 [Postupy: Řízení serializace odvozených tříd](how-to-control-serialization-of-derived-classes.md)  
 Obsahuje příklad toho, jak řídit serializace odvozené třídy.
 
-[Postupy: Kvalifikace názvů elementů a atributů XML](how-to-qualify-xml-element-and-xml-attribute-names.md)  
+[Postupy: Kvalifikovat názvy atributů XML a elementu XML](how-to-qualify-xml-element-and-xml-attribute-names.md)  
 Popisuje, jak lze definovat a určit tak, jak v XML, které se používají obory názvů v datovém proudu XML.
 
 [Serializace XML pomocí webových služeb XML](xml-serialization-with-xml-web-services.md)  
 Vysvětluje, jak serializace XML se používá v webové služby XML.
 
-[Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)  
+[Postupy: Serializace objektu jako XML kódováním protokolu SOAP Stream](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)  
 Popisuje způsob použití <xref:System.Xml.Serialization.XmlSerializer> třídy za účelem vytvoření kódovaného datové proudy SOAP XML, které odpovídají část 5 World Wide Web Consortium (W3C) dokumentu s názvem [jednoduchý objekt přístup protokolu (SOAP) 1.1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/).
 
-[Postupy: Přepsání serializace XML zakódované v protokolu SOAP](how-to-override-encoded-soap-xml-serialization.md)  
+[Postupy: Přepsat kódovaný protokol SOAP serializace XML](how-to-override-encoded-soap-xml-serialization.md)  
 Popisuje proces pro přepsání XML serializaci objektů jako zprávy protokolu SOAP.
 
 [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)  
@@ -76,7 +76,7 @@ Element konfigurace nejvyšší úrovně pro řízení serializace XML.
 [\<dateTimeSerialization > – Element](datetimeserialization-element.md)  
 Určuje režim serializace <xref:System.DateTime> objekty.
 
-[\<schemaImporterExtensions > – Element](schemaimporterextensions-element.md)  
+[\<schemaImporterExtensions> Element](schemaimporterextensions-element.md)  
 Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> třídy.
 
 [\<Přidat > – Element pro \<schemaImporterExtensions >](add-element-for-schemaimporterextensions.md)  
@@ -84,10 +84,7 @@ Přidá typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaI
 
 ## <a name="related-sections"></a>Související oddíly
 
-[Pokročilé vývojovým technologiím](https://msdn.microsoft.com/library/c4a7e341-f0c6-4df4-a74f-223387ac6e4e)  
-Obsahuje odkazy na další informace o sofistikované vývojářské úlohy a techniky v rozhraní .NET Framework.
-
-[Webové služby XML vytvořené pomocí ASP.NET a klienty webové služby XML](https://msdn.microsoft.com/library/1e64af78-d705-4384-b08d-591a45f4379c)  
+[Webové služby XML vytvořené pomocí ASP.NET a klienty webové služby XML](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7bkzywba(v=vs.100))  
 Obsahuje témata, které popisují a vysvětluje, jak program webové služby XML pomocí technologie ASP.NET.
 
 ## <a name="see-also"></a>Viz také:

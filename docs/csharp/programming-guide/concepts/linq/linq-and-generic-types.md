@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generic types [LINQ]
 - generics [LINQ]
 ms.assetid: 660e3799-25ca-462c-8c4a-8bce04fbb031
-ms.openlocfilehash: 02540db02d8e413ec254c0642d106ca41b263376
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fe29bb14b85b74c249a5d9b7f8c2802ef991b13d
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54662514"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56977809"
 ---
 # <a name="linq-and-generic-types-c"></a>LINQ a obecné typy (C#)
 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy jsou založeny na obecné typy, které jsou nově ve verzi 2.0 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Předtím, než můžete začít psát dotazy nepotřebujete hlubokou znalost obecných typů. Však může být vhodné pochopit dvě základní koncepty:  
@@ -25,14 +25,14 @@ ms.locfileid: "54662514"
 ## <a name="ienumerablet-variables-in-linq-queries"></a>IEnumerable < T\> proměnné v dotazech LINQ  
  [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] proměnné dotazu jsou zadány jako <xref:System.Collections.Generic.IEnumerable%601> nebo odvozeným typem, jako <xref:System.Linq.IQueryable%601>. Když se zobrazí proměnné dotazu, který je zadán jako `IEnumerable<Customer>`, znamená to je to, že dotazu, pokud je spuštěn, vytvoří posloupnost nula nebo více `Customer` objekty.  
   
- [!code-csharp[csLINQGettingStarted#34](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/linq-and-generic-types_1.cs)]  
+ [!code-csharp[csLINQGettingStarted#34](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#34)]  
   
  Další informace najdete v tématu [vztahy typů v operacích dotazu LINQ](../../../../csharp/programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md).  
   
 ## <a name="letting-the-compiler-handle-generic-type-declarations"></a>Umožňuje kompilátoru popisovač obecného typu deklarace  
  Pokud dáváte přednost, můžete se vyhnout Obecná syntaxe pomocí [var](../../../../csharp/language-reference/keywords/var.md) – klíčové slovo. `var` – Klíčové slovo instruuje kompilátor, aby zobrazením datovému zdroji zadanému v odvození typu proměnné dotazu `from` klauzuli. Následující příklad vytvoří stejný zkompilovaný kód jako v předchozím příkladu:  
   
- [!code-csharp[csLINQGettingStarted#35](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/linq-and-generic-types_2.cs)]  
+ [!code-csharp[csLINQGettingStarted#35](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#35)]  
   
  `var` – Klíčové slovo je užitečné, když je typ proměnné zřejmý nebo když není důležité to s ohledem na vnořených obecných typech, jako jsou ty, které vytváří skupiny dotazů. Obecně doporučujeme, pokud používáte `var`, dobré si uvědomit, že ji může ztížit kódu pro ostatní uživatele. Další informace najdete v tématu [implicitně typované lokální proměnné](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   

@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Vytvoření složeného ovládacího prvku pomocí Visual C#'
+title: 'Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - custom controls [C#]
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - user controls [C#]
 - custom controls [Windows Forms], creating
 ms.assetid: f88481a8-c746-4a36-9479-374ce5f2e91f
-ms.openlocfilehash: 357e001effe22f5e9603ebee63188ddff957d585
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: a9ab771d87c3e5af4726806a262886845724cffd
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56305724"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56977045"
 ---
-# <a name="walkthrough-authoring-a-composite-control-with-visual-c"></a>Průvodce: Vytvoření složeného ovládacího prvku pomocí Visual C# #
+# <a name="walkthrough-authoring-a-composite-control-with-visual-c"></a>Návod: Vytvoření složeného ovládacího prvku pomocí Visual C\#
 Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní grafické rozhraní a znovu použít. Složený ovládací prvek je v podstatě komponent pomocí vizuální reprezentace. V důsledku toho může obsahovat jeden nebo více Windows Forms ovládací prvky, komponenty nebo bloky kódu, který můžete rozšířit funkce ověřování uživatelského vstupu, změnou zobrazení vlastností nebo provádění jiných úloh vyžaduje autorem. Složené ovládací prvky mohou být umístěny ve Windows Forms stejným způsobem jako ostatní ovládací prvky. V první části tohoto návodu vytvoříte jednoduchou složeného ovládacího prvku volá `ctlClock`. V druhé části tohoto průvodce, které rozšiřují funkce nástroje `ctlClock` prostřednictvím dědičnosti.  
   
 > [!NOTE]

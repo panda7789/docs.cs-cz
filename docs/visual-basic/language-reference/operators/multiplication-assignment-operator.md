@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '*= operator [Visual Basic]'
 - compound assignment statements [Visual Basic]
 ms.assetid: 96c86509-6eb8-4682-8226-3852e049376f
-ms.openlocfilehash: 3aa1d563b9657d4e80425b8c2d29e069ca2ef06a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d672ac147a4d7b2c21f4fcb7ee6cdf91b8b4924b
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54601880"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965329"
 ---
 # <a name="-operator-visual-basic"></a>*= – operátor (Visual Basic)
 Vynásobí hodnotu proměnné nebo vlastnosti hodnotou výrazu a výsledek přiřadí proměnné nebo vlastnosti.  
@@ -44,7 +44,7 @@ variableorproperty *= expression
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `*=` operátor násobit jeden `Integer` proměnné tak, že druhé a přiřadit výsledek, který má první proměnné.  
   
- [!code-vb[VbVbalrOperators#5](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/multiplication-assignment-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#5)]  
   
 ## <a name="see-also"></a>Viz také:
 - [* – operátor](../../../visual-basic/language-reference/operators/multiplication-operator.md)

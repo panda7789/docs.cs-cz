@@ -12,12 +12,12 @@ helpviewer_keywords:
 - arguments [Visual Basic], optional
 - optional arguments [Visual Basic], and named arguments
 ms.assetid: 398d2845-1069-4e94-b934-a73b545c8b87
-ms.openlocfilehash: 0f7f7910b5e19c3e1a22598c1a987aa2b02e256e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d128e4647930044e24eb544ec92213b481417cb0
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54552226"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965758"
 ---
 # <a name="optional-parameters-visual-basic"></a>Volitelné parametry (Visual Basic)
 Můžete určit, že parametr procedury je volitelný, a při volání této procedury se nemusí zadávat žádný argument. *Volitelné parametry* jsou označeny `Optional` – klíčové slovo v definici procedury. Platí následující pravidla:  
@@ -47,12 +47,12 @@ Sub name(argument 1, , , argument 4)
   
  První volání `MsgBox` poskytuje všechny tři argumenty v pořadí, které `MsgBox` definuje. Ve druhém volání je zadán pouze povinný argument. Ve třetím a čtvrtém volání je zadán první a třetí argument. Třetí volání tak činí podle pozice a čtvrté volání podle názvu.  
   
- [!code-vb[VbVbcnProcedures#47](./codesnippet/VisualBasic/optional-parameters_1.vb)]  
+ [!code-vb[VbVbcnProcedures#47](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#47)]  
   
 ## <a name="determining-whether-an-optional-argument-is-present"></a>Určení, zda existuje volitelný argument  
  Procedura nedokáže za běhu zjistit, zda byl daný argument vynechán nebo zda volající kód explicitně poskytuje výchozí hodnotu. Pokud to potřebujete rozlišit, můžete jako výchozí nastavit nějakou nepravděpodobnou hodnotu. Následující procedura definuje volitelný parametr `office`a testováním jeho výchozí hodnotu, `QJZ`, pokud chcete zobrazit, pokud ji má ve volání vynechán:  
   
- [!code-vb[VbVbcnProcedures#46](./codesnippet/VisualBasic/optional-parameters_2.vb)]  
+ [!code-vb[VbVbcnProcedures#46](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#46)]  
   
  Pokud volitelný parametr, jako je typem odkazu `String`, můžete použít `Nothing` jako výchozí hodnota zadaná, nejedná se o očekávanou hodnotou pro argument.  
   

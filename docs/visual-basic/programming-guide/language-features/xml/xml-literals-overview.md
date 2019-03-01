@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], XML literals
 - literals [Visual Basic], XML
 ms.assetid: 37987c15-4ab8-471b-bd45-399816bfb57f
-ms.openlocfilehash: c6d2600b590e01fff062828f8e0f48d9cfad0190
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1f0e50de6217e01a7bcb68ab27a9595d91981dd4
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681388"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56968819"
 ---
 # <a name="xml-literals-overview-visual-basic"></a>Přehled literálů XML (Visual Basic)
 *Literál XML* umožňuje začlenit XML přímo do kódu jazyka Visual Basic. Syntaxe XML literál představuje [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekty a je podobné syntaxi XML 1.0. To usnadňuje vytvořit XML elementů a dokumentů prostřednictvím kódu programu, protože váš kód má stejnou strukturu jako poslední XML.  
@@ -26,11 +26,11 @@ ms.locfileid: "54681388"
 ## <a name="simple-literals"></a>Jednoduché literály  
  Můžete vytvořit [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekt v kódu jazyka Visual Basic zadáním nebo vložením v platném formátu XML. Vrátí element XML literál <xref:System.Xml.Linq.XElement> objektu. Další informace najdete v tématu [literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) a [literály XML a specifikace XML 1.0](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md). Následující příklad vytvoří element XML, který má několik podřízených elementů.  
   
- [!code-vb[VbXMLSamples#5](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_1.vb)]  
+ [!code-vb[VbXMLSamples#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples2.vb#5)]  
   
  Dokument XML můžete vytvořit spuštěním literálu s XML `<?xml version="1.0"?>`, jak je znázorněno v následujícím příkladu. Literál dokumentu XML vrátí <xref:System.Xml.Linq.XDocument> objektu. Další informace najdete v tématu [literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md).  
   
- [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
+ [!code-vb[VbXMLSamples#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples2.vb#6)]  
   
 > [!NOTE]
 >  Literál syntaxe jazyka XML v jazyce Visual Basic není shodná se syntaxí ve specifikaci XML 1.0. Další informace najdete v tématu [literály XML a specifikace XML 1.0](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md).  
@@ -47,12 +47,12 @@ ms.locfileid: "54681388"
   
  Například následující kód používá vložený dotaz k vytvoření elementy XML členů `phoneNumbers2` pole a pak přidejte tyto prvky jako podřízené objekty `contact2`.  
   
- [!code-vb[VbXMLSamples#7](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_3.vb)]  
+ [!code-vb[VbXMLSamples#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples2.vb#7)]  
   
 ## <a name="how-the-compiler-creates-objects-from-xml-literals"></a>Jak kompilátor vytvoří objekty z literálů XML  
  Kompilátor jazyka Visual Basic přeloží literály XML do volání na ekvivalentní [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] konstruktory Vybudujte [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektu. Například kompilátor jazyka Visual Basic přeloží následující příklad kódu do volání <xref:System.Xml.Linq.XProcessingInstruction> volání konstruktoru pro instrukci verze XML, <xref:System.Xml.Linq.XElement> konstruktor pro `<contact>`, `<name>`, a `<phone>` elementy a volání <xref:System.Xml.Linq.XAttribute> konstruktor pro `type` atribut. Konkrétně uvedené atributy v následující ukázce, zavolá kompilátor jazyka Visual Basic <xref:System.Xml.Linq.XAttribute.%23ctor%28System.Xml.Linq.XName%2CSystem.Object%29> konstruktor dvakrát. První předají hodnotu `type` pro `name` parametru a hodnota `home` pro `value` parametru. Druhá bude také předat hodnotu `type` pro `name` parametr, ale hodnota `work` pro `value` parametru.  
   
- [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
+ [!code-vb[VbXMLSamples#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples2.vb#6)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Xml.Linq.XElement>

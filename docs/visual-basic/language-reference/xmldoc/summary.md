@@ -5,12 +5,12 @@ helpviewer_keywords:
 - <summary> XML tag
 - summary XML tag
 ms.assetid: 861c847d-dd94-478a-aa23-bf4899cdc848
-ms.openlocfilehash: 3f40177b717452f316672c29c6455faf33e01b4d
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 531cac9bfec24577c22cb52962b2ac1eb740c5c8
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55282708"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56975495"
 ---
 # <a name="summary-visual-basic"></a>\<Souhrn > (Visual Basic)
 Určuje souhrn člena.  
@@ -35,7 +35,7 @@ Určuje souhrn člena.
 ## <a name="example"></a>Příklad  
  V tomto příkladu `<summary>` značka, které popisují `ResetCounter` metoda a `Counter` vlastnost.  
   
- [!code-vb[VbVbcnXmlDocComments#1](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/summary_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

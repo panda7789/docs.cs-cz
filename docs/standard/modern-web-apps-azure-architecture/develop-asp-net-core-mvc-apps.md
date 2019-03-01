@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: a56b7ba047499842a9b76612df17d22c64491301
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 3ab7de919ed98df1d3fcda02772ba66f9d6294ae
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55827874"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56978329"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikace ASP.NET Core MVC aplikace
 
@@ -172,7 +172,7 @@ Dalším přístupem k oddělení aplikace od podrobností implementace je mikro
 
 ### <a name="feature-organization"></a>Funkce organizace
 
-Aplikace ASP.NET Core ve výchozím nastavení, uspořádejte jejich strukturu složek Kontrolerů a zobrazení a často modely ViewModel. Kód na straně klienta pro podporu těchto struktur na straně serveru jsou obvykle uložená samostatně ve složce wwwroot. Však velké aplikace setkat s problémy u této organizace, protože pracující na jakékoli dané funkce často vyžaduje přechod mezi tyto složky. Načte mnohem obtížnější, roste počet souborů a podsložek v každé složky, což vede k spoustu posouvání se v Průzkumníku řešení. Jedním řešením tohoto problému, je uspořádat kód aplikace podle _funkce_ místo podle typu souboru. Tento styl organizace se obvykle označuje jako funkce složky nebo [funkce řezy](https://msdn.microsoft.com/en-us/magazine/mt763233.aspx) (viz také: [Svislé řezy](https://deviq.com/vertical-slices/)).
+Aplikace ASP.NET Core ve výchozím nastavení, uspořádejte jejich strukturu složek Kontrolerů a zobrazení a často modely ViewModel. Kód na straně klienta pro podporu těchto struktur na straně serveru jsou obvykle uložená samostatně ve složce wwwroot. Však velké aplikace setkat s problémy u této organizace, protože pracující na jakékoli dané funkce často vyžaduje přechod mezi tyto složky. Načte mnohem obtížnější, roste počet souborů a podsložek v každé složky, což vede k spoustu posouvání se v Průzkumníku řešení. Jedním řešením tohoto problému, je uspořádat kód aplikace podle _funkce_ místo podle typu souboru. Tento styl organizace se obvykle označuje jako funkce složky nebo [funkce řezy](https://msdn.microsoft.com/magazine/mt763233.aspx) (viz také: [Svislé řezy](https://deviq.com/vertical-slices/)).
 
 ASP.NET Core MVC podporuje oblasti pro tento účel. Pomocí oblastí, můžete vytvořit samostatné sady Kontrolerů a zobrazení složek (stejně jako jakékoli přidružených modelech) v každé oblasti složky. Obrázek 7-1 znázorňuje strukturu složky příklad používat.
 
@@ -311,7 +311,7 @@ public async Task<IActionResult> Put(int id, [FromBody]Author author)
 }
 ```
 
-Další informace o implementaci filtry a stáhněte si ukázky práce z článku na webu MSDN [reálného světa ASP.NET Core MVC filtry](https://msdn.microsoft.com/magazine/mt767699.aspx).
+Další informace o implementaci filtry a stáhněte si ukázky práce z článku na webu MSDN [skutečných ASP.NET Core MVC filtry](https://msdn.microsoft.com/magazine/mt767699.aspx).
 
 > ### <a name="references--structuring-applications"></a>Odkazy – strukturování aplikací
 >

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - interface statement [Visual Basic]
 - interfaces [Visual Basic], interface definition
 ms.assetid: 8997af73-bda3-4f79-bd41-ca396b610260
-ms.openlocfilehash: 7bbce77034ce334b7c2b7f58a224fca38736385a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f65875caa16bfe00866cc3cd6fd0c0b22b034576
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54532760"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970529"
 ---
 # <a name="interface-statement-visual-basic"></a>Interface – příkaz (Visual Basic)
 Deklaruje název rozhraní a zavádí definice členů, které tvoří rozhraní.  
@@ -95,7 +95,7 @@ End Interface
   
      Pokud přiřadíte instanci třídy do proměnné, úroveň přístupu z jejích členů může záviset na tom, zda datový typ proměnné je základní rozhraní nebo implementující třídu. Toto dokládá následující příklad.  
   
-     [!code-vb[VbVbalrStatements#39](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/interface-statement_1.vb)]  
+     [!code-vb[VbVbalrStatements#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#39)]  
   
      Pokud jste přístup ke členům třídy pomocí `varAsInterface`, všichni mají veřejný přístup. Ale pokud získáte přístup k členům pomocí `varAsClass`, `Sub` postup `doSomething` má privátní přístup.  
   
@@ -108,7 +108,7 @@ End Interface
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Interface` příkaz k definování rozhraní s názvem `thisInterface`, které musí být implementované pomocí `Property` příkazu a `Function` příkaz.  
   
- [!code-vb[VbVbalrStatements#40](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/interface-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#40)]  
   
  Všimněte si, že `Property` a `Function` příkazy nezavádí bloky končí `End Property` a `End Function` v rámci rozhraní. Rozhraní definuje pouze podpisy členů. Kompletní `Property` a `Function` bloky se zobrazí ve třídě, která implementuje `thisInterface`.  
   

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cross-references [C#]
 - see C# XML tag
 ms.assetid: 0200de01-7e2f-45c4-9094-829d61236383
-ms.openlocfilehash: 31806ad06cc97fa27f1944f2500f0f9cbb29f561
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 1816aeb0ddf783c8ad0baa7f5d460f0fc60747e1
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55262098"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974819"
 ---
 # <a name="see-c-programming-guide"></a>\<Zobrazit > (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
@@ -36,7 +36,7 @@ ms.locfileid: "55262098"
   
  Následující příklad ukazuje \<naleznete v tématu > značky v souhrnné části.  
   
- [!code-csharp[csProgGuideDocComments#12](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/see_1.cs)]  
+ [!code-csharp[csProgGuideDocComments#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#12)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -18,12 +18,12 @@ helpviewer_keywords:
 - Option Compare statement [Visual Basic]
 - text [Visual Basic], comparing
 ms.assetid: 54e8eeeb-3b0d-4fb9-acce-fbfbd5975f6e
-ms.openlocfilehash: 59df00351d1c1cc4edf87853984d1d13187d4e5e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c90e07afb1515b50ad6e2fd2a1bbe42f6da5fa95
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54532458"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56968137"
 ---
 # <a name="option-compare-statement"></a>Option Compare – příkaz
 Deklaruje výchozí metodu porovnání pro použití při porovnávání dat řetězců.  
@@ -80,12 +80,12 @@ Option Compare { Binary | Text }
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Option Compare` příkaz nastavit jako výchozí metodu porovnání řetězce binární porovnání. Chcete-li tento kód použít, Odkomentujte `Option Compare Binary` příkaz a umístěte ho na začátku zdrojového souboru.  
   
- [!code-vb[VbVbalrStatements#45](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-compare-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#45)]  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Option Compare` příkaz pro nastavení pořadí řazení nerozlišujícího velikost písmen textu jako výchozí metodu porovnání řetězce. Chcete-li tento kód použít, Odkomentujte `Option Compare Text` příkaz a umístěte ho na začátku zdrojového souboru.  
   
- [!code-vb[VbVbalrStatements#46](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/option-compare-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#46](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#46)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:Microsoft.VisualBasic.Strings.InStr%2A>

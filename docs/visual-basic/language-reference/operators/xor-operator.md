@@ -14,12 +14,12 @@ helpviewer_keywords:
 - Xor keyword [Visual Basic]
 - bitwise comparison [Visual Basic]
 ms.assetid: 036000a9-3934-4e7f-a9d0-a816de3d84a6
-ms.openlocfilehash: af6589206232f01b572cd2b965ba1a0f36d462e1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bc3df1fdee5405445b4534a6982383c49b369b01
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527117"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56980435"
 ---
 # <a name="xor-operator-visual-basic"></a>Xor – operátor (Visual Basic)
 Provede logické vyloučení dvou `Boolean` výrazů nebo bitové vyloučení dvou numerických výrazů.  
@@ -78,14 +78,14 @@ result = expression1 Xor expression2
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Xor` operátor (exkluzivní disjunkce logické) logické vyloučení dvou výrazů. Výsledkem je `Boolean` hodnotu, která udává, jestli přesně jeden z výrazů je `True`.  
   
- [!code-vb[VbVbalrOperators#40](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xor-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#40)]  
   
  Předchozí příklad vytváří výsledky `False`, `True`, a `False`v uvedeném pořadí.  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Xor` operátor logická exkluze (exkluzivní disjunkce logické) na jednotlivé bity dvou numerických výrazů. Je-li přesně odpovídající bity operandy nastavena na hodnotu 1, je nastaven bit vzoru výsledek.  
   
- [!code-vb[VbVbalrOperators#41](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xor-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#41)]  
   
  Předchozí příklad vytváří výsledky 2, 12 a 14, v uvedeném pořadí.  
   

@@ -30,12 +30,12 @@ helpviewer_keywords:
 - exclamation point operator (!)
 - Visual Basic code, special characters
 ms.assetid: 310dce0c-45b5-4e0d-83e9-32df258d2a3e
-ms.openlocfilehash: 1541ac1793c9f3c082b688fecd4eb82fb5b59590
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 17b5fcc2be2730abfd7ee0090f9f34053e81c5f8
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54726725"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971894"
 ---
 # <a name="special-characters-in-code-visual-basic"></a>Speciální znaky v kódu (Visual Basic)
 Někdy je nutné použít speciální znaky v kódu, to znamená, znaky, které nejsou čísla. Interpunkce a speciální znaky znakové sady Visual Basic mají různé možnosti použití, z uspořádání textu programu k definování úkolů, které kompilátor nebo zkompilovaný program provede. Nezadávejte operaci, která se má provést.  
@@ -43,14 +43,14 @@ Někdy je nutné použít speciální znaky v kódu, to znamená, znaky, které 
 ## <a name="parentheses"></a>Závorky  
  Používejte závorky definuje proceduru, třeba `Sub` nebo `Function`. Všechny seznamy argumentů postupu je nutné uzavřít do závorek. Také při použití závorek k uvedení proměnných nebo argumentů do logických skupin, zejména pro přepsání výchozí pořadí podle priority operátoru ve výrazu komplexní. Toto dokládá následující příklad.  
   
- [!code-vb[VbVbcnConventions#11](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_1.vb)]  
+ [!code-vb[VbVbcnConventions#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#11)]  
   
  Po spuštění předchozího kódu, hodnota `d` je 8.225 a hodnota `e` je 3. Výpočet pro `d` používá výchozí prioritu `/` přes `+` a je ekvivalentní `d = b + (c / a)`. Závorky ve výpočtu pro `e` změnit výchozí prioritu.  
   
 ## <a name="separators"></a>Oddělovače  
  Oddělovače udělat, co jejich název napovídá: oddělují části kódu. V jazyce Visual Basic je oddělovací znak dvojtečky (`:`). Používejte oddělovače, při které chcete zahrnout více příkazů na jednom řádku namísto samostatné řádky. To šetří místo a zlepšuje čitelnost kódu. Následující příklad ukazuje tři příkazy, které jsou odděleny dvojtečkami.  
   
- [!code-vb[VbVbcnConventions#12](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_2.vb)]  
+ [!code-vb[VbVbcnConventions#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#12)]  
   
  Další informace najdete v tématu [jak: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md).  
   
@@ -59,7 +59,7 @@ Někdy je nutné použít speciální znaky v kódu, to znamená, znaky, které 
 ## <a name="concatenation"></a>Zřetězení  
  Použití `&` operátor pro *zřetězení*, nebo propojení řetězce. Nepleťte si jej `+` operátor, který přidá společně číselné hodnoty. Pokud používáte `+` operátor zřetězení při pracovat na číselné hodnoty, můžete získat nesprávné výsledky. Následující příklad ukazuje to.  
   
- [!code-vb[VbVbcnConventions#13](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_3.vb)]  
+ [!code-vb[VbVbcnConventions#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#13)]  
   
  Po spuštění předchozího kódu, hodnota `resultA` 21.01 a hodnota `resultB` je "10.0111".  
   
@@ -69,12 +69,12 @@ Někdy je nutné použít speciální znaky v kódu, to znamená, znaky, které 
 ### <a name="dot--operator"></a>Tečka (.) Operátor  
  Použití `.` operátor na třídu, strukturu, rozhraní nebo výčet jako operátor přístupu členů. Člen může být pole, vlastnosti, události nebo metody. Toto dokládá následující příklad.  
   
- [!code-vb[VbVbcnConventions#14](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_4.vb)]  
+ [!code-vb[VbVbcnConventions#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#14)]  
   
 ### <a name="exclamation-point--operator"></a>Vykřičník (!) Operátor  
  Použití `!` operátor pouze pro třídu nebo rozhraní jako slovník – operátor přístupu. Třída nebo rozhraní musí mít výchozí vlastnost, která přijímá jeden `String` argument. Identifikátor hned za `!` operátor stane hodnota argumentu předaného výchozí vlastnosti jako řetězec proměnné. Následující příklad ukazuje to.  
   
- [!code-vb[VbVbcnConventions#15](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/special-characters-in-code_5.vb)]  
+ [!code-vb[VbVbcnConventions#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#15)]  
   
  Tři výstupní řádky `MsgBox` všechny zobrazit hodnotu `32856`. První řádek využívá tradiční přístup k vlastnosti `index`, druhý používá faktu, který `index` je výchozí vlastnost třídy `hasDefault`, a třetí použije slovníkový přístup ke třídě.  
   

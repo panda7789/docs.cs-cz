@@ -10,12 +10,12 @@ helpviewer_keywords:
 - operator /=
 - compound assignment statements [Visual Basic]
 ms.assetid: a1e22d0e-8380-4761-9da1-84fb51c34821
-ms.openlocfilehash: 8507d81d3060192640bf9a84e67ad39111c455b3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c8fb990533d9db90eacf76aff424ea3cf96b0875
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54537566"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970516"
 ---
 # <a name="-operator-visual-basic"></a>/= – operátor [Visual Basic]
 Vydělí hodnotu proměnné nebo vlastnosti hodnotou výrazu a přiřadí k proměnné nebo vlastnosti výsledku s plovoucí desetinnou čárkou.  
@@ -46,7 +46,7 @@ variableorproperty /= expression
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `/=` operátor rozdělit jeden `Integer` proměnnou druhé a přiřaďte podíl první proměnné.  
   
- [!code-vb[VbVbalrOperators#17](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/floating-point-division-assignment-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#17)]  
   
 ## <a name="see-also"></a>Viz také:
 - [/ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)

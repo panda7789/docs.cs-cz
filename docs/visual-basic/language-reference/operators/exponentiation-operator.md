@@ -14,12 +14,12 @@ helpviewer_keywords:
 - powers
 - arithmetic operators [Visual Basic], exponentiation
 ms.assetid: d89a1ca8-83da-4784-a87b-a9d7dceb3f62
-ms.openlocfilehash: 2fb52a57a9d96f93c31ab1419e81e7f05967f831
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ce9cd527aff1203f30543b03f1520d429d038da3
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54659711"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56978908"
 ---
 # <a name="-operator-visual-basic"></a>^ – operátor (Visual Basic)
 Umocní jedno číslo na mocninu vyjádřenou druhým číslem.  
@@ -56,7 +56,7 @@ number ^ exponent
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `^` operátor se má zvýšit číslo mocninu exponent. Výsledkem je první operand umocněné na druhou.  
   
- [!code-vb[VbVbalrOperators#20](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/exponentiation-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#20)]  
   
  Předchozí příklad vytváří následující výsledky:  
   

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - named types [Visual Basic]
 ms.assetid: e2df3807-a70f-49dd-ac94-f1e07f472b1b
-ms.openlocfilehash: f65352ebd9ca12aaed6b469c5df136301e9f839c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d4f82cab8bcdeb3e0553649f8a569ae24bafc707
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54620536"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974351"
 ---
 # <a name="object-initializers-named-and-anonymous-types-visual-basic"></a>Inicializátory objektů: Pojmenované a anonymní typy (Visual Basic)
 Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt s použitím jeden výraz. Může se použít pro vytvoření instancí typů pojmenované a anonymní typy.  
@@ -23,11 +23,11 @@ Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt s p
 ## <a name="declarations"></a>Deklarace  
  Deklarace pojmenované a anonymní typy instancí může vypadat téměř identické, ale jejich účinky nejsou stejné. Každá kategorie má schopnosti a omezení své vlastní. Následující příklad ukazuje pohodlný způsob, jak deklarovat a inicializovat třídu s názvem instance `Customer`, pomocí seznamu inicializátorů objektů. Všimněte si, že je zadán název třídy po klíčovém slovu `New`.  
   
- [!code-vb[VbVbalrObjectInit#1](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_1.vb)]  
+ [!code-vb[VbVbalrObjectInit#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#1)]  
   
  Anonymní typ, který nemá žádný použitelný název. Proto instanci anonymního typu nelze zahrnout název třídy.  
   
- [!code-vb[VbVbalrObjectInit#2](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_2.vb)]  
+ [!code-vb[VbVbalrObjectInit#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#2)]  
   
  Požadavky a výsledky dvě deklarace nejsou stejné. Pro `namedCust`, `Customer` třídu, která má `Name` vlastnost musí existovat a deklarace vytvoří instanci této třídy. Pro `anonymousCust`, kompilátor definuje novou třídu, která má jednu vlastnost, řetězec s názvem `Name`a vytvoří novou instanci této třídy.  
   
@@ -36,48 +36,48 @@ Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt s p
   
  Každý inicializace v seznamu inicializátorů se skládá z přiřazení počáteční hodnotu na člen třídy. Názvy a datové typy členů jsou určeny při je třída definovaná. V následujících příkladech `Customer` třídy musí existovat a musí obsahovat členy s názvem `Name` a `City` , který může přijmout hodnoty řetězce.  
   
- [!code-vb[VbVbalrObjectInit#3](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_3.vb)]  
+ [!code-vb[VbVbalrObjectInit#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#3)]  
   
  Stejného výsledku také můžete získat pomocí následujícího kódu:  
   
- [!code-vb[VbVbalrObjectInit#4](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_4.vb)]  
+ [!code-vb[VbVbalrObjectInit#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#4)]  
   
  Každá z těchto deklarace je ekvivalentní v následujícím příkladu, který vytvoří `Customer` objektu pomocí výchozího konstruktoru a poté určí počáteční hodnoty pro `Name` a `City` vlastnosti pomocí `With` příkaz.  
   
- [!code-vb[VbVbalrObjectInit#5](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_5.vb)]  
+ [!code-vb[VbVbalrObjectInit#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#5)]  
   
  Pokud `Customer` třída obsahuje parametrizované konstruktor, který vám umožní odesílat hodnotu pro `Name`, například můžete také deklarovat a inicializovat `Customer` objekt následujícími způsoby:  
   
- [!code-vb[VbVbalrObjectInit#6](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_6.vb)]  
+ [!code-vb[VbVbalrObjectInit#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#6)]  
   
  Není potřeba inicializovat všechny vlastnosti, jako ukazuje následující kód.  
   
- [!code-vb[VbVbalrObjectInit#7](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_7.vb)]  
+ [!code-vb[VbVbalrObjectInit#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#7)]  
   
  Inicializační seznam však nemůže být prázdný. Neinicializovaných vlastností zachovat jejich výchozí hodnoty.  
   
 ### <a name="type-inference-with-named-types"></a>Odvození typu u pojmenovaných typů.  
  Můžete zkrátit kódu pro deklaraci `cust1` kombinací inicializátory objektů a odvození místního typu. To umožňuje vynechat, nechte `As` klauzule v deklaraci proměnné. Datový typ proměnné je odvozen z typu objektu, který je vytvořen pomocí přiřazení. V následujícím příkladu typ `cust6` je `Customer`.  
   
- [!code-vb[VbVbalrObjectInit#8](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_8.vb)]  
+ [!code-vb[VbVbalrObjectInit#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#8)]  
   
 ### <a name="remarks-about-named-types"></a>Poznámky o pojmenovaných typů  
   
 -   Člen třídy nelze inicializovat více než jednou v seznamu inicializátorů objektů. Deklarace `cust7` způsobí chybu.  
   
-     [!code-vb[VbVbalrObjectInit#9](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_9.vb)]  
+     [!code-vb[VbVbalrObjectInit#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#9)]  
   
 -   Člen slouží k inicializaci sebe samu ani na jiné pole. Pokud člen je přístupná před inicializovaná, stejně jako v následující deklaraci pro `cust8`, bude použita výchozí hodnota. Mějte na paměti, že při zpracování deklarace, která používá inicializátor objektu první věc, ke které dochází, je, že je vyvolána odpovídajícího konstruktoru. Poté se inicializují jednotlivá pole v seznamu inicializátorů. V následujících příkladech, výchozí hodnota pro `Name` je přiřazen `cust8`, a inicializovaný hodnota přiřazená v `cust9`.  
   
-     [!code-vb[VbVbalrObjectInit#10](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_10.vb)]  
+     [!code-vb[VbVbalrObjectInit#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#10)]  
   
      Následující příklad používá parametrizovaného konstruktoru z `cust3` a `cust4` deklarovat a inicializovat `cust10` a `cust11`.  
   
-     [!code-vb[VbVbalrObjectInit#11](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_11.vb)]  
+     [!code-vb[VbVbalrObjectInit#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#11)]  
   
 -   Inicializátory objektů mohou být vnořené. V následujícím příkladu `AddressClass` je třída, která má dvě vlastnosti `City` a `State`a `Customer` třída má `Address` vlastnost, která je instance `AddressClass`.  
   
-     [!code-vb[VbVbalrObjectInit#12](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_12.vb)]  
+     [!code-vb[VbVbalrObjectInit#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#12)]  
   
 -   Inicializační seznam nemůže být prázdný.  
   
@@ -96,7 +96,7 @@ Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt s p
 ## <a name="anonymous-types"></a>Anonymní typy  
  Anonymní typy inicializátory objektů použít k vytvoření nových typů, které nejsou explicitně definovány a název instance. Místo toho kompilátor generuje typ podle vlastnosti, které určíte v seznamu inicializátorů objektů. Protože není zadaný název typu, to se označuje jako *anonymního typu*. Například následující deklaraci starší jeden z porovnat `cust6`.  
   
- [!code-vb[VbVbalrObjectInit#13](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_13.vb)]  
+ [!code-vb[VbVbalrObjectInit#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#13)]  
   
  Syntakticky jediným rozdílem je, že není zadán žádný název po `New` datového typu. Ale co se stane, je značně odlišná. Kompilátor definuje nový anonymní typ, který má dvě vlastnosti `Name` a `City`a vytvoří její instanci se zadanými hodnotami. Určuje typy odvození typu `Name` a `City` v příkladu řetězce.  
   
@@ -111,19 +111,19 @@ Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt s p
   
 -   Všechny nebo většinu vlastností v deklaraci anonymního typu bude obvykle klíčové vlastnosti, které jsou označeny zadáním klíčového slova `Key` před název vlastnosti.  
   
-     [!code-vb[VbVbalrObjectInit#14](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_14.vb)]  
+     [!code-vb[VbVbalrObjectInit#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#14)]  
   
      Další informace o vlastnosti klíče najdete v tématu [klíč](../../../../visual-basic/language-reference/modifiers/key.md).  
   
 -   Pojmenované typy, inicializační seznamy, jako je třeba pro definice anonymního typu musí deklarovat alespoň jednu vlastnost.  
   
-     [!code-vb[VbVbalrObjectInit#2](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_2.vb)]  
+     [!code-vb[VbVbalrObjectInit#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#2)]  
   
 -   Při deklaraci instanci anonymního typu, kompilátor vygeneruje odpovídající definici anonymního typu. Názvy a datové typy vlastností jsou převzaty z deklaraci instance a jsou zahrnuty v kompilátoru v definici. Vlastnosti nejsou s názvem a definovaný v předstihu, jako by se použily pro pojmenovaného typu. Jejich typy jsou odvozeny. Datové typy vlastností nelze zadat s použitím `As` klauzuli.  
   
 -   Anonymní typy lze také vytvořit názvy a hodnoty jejich vlastností několika jinými způsoby. Vlastnosti anonymního typu může například trvat název a hodnotu proměnné, nebo název a hodnotu vlastnosti jiného objektu.  
   
-     [!code-vb[VbVbalrObjectInit#15](../../../../visual-basic/programming-guide/language-features/objects-and-classes/codesnippet/VisualBasic/object-initializers-named-and-anonymous-types_15.vb)]  
+     [!code-vb[VbVbalrObjectInit#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#15)]  
   
      Další informace o možnostech pro definování vlastností anonymních typů najdete v tématu [jak: Odvození názvů a typů v deklaracích anonymního typu vlastností](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md).  
   

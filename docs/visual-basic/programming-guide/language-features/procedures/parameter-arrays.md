@@ -10,12 +10,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], indefinite number of argument values
 - arrays [Visual Basic], parameter arrays
 ms.assetid: c43edfae-9114-4096-9ebc-8c5c957a1067
-ms.openlocfilehash: eac637c0fcaaded25a54332b2f1188876ef5f29a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e059f471f78262320f1968c12192de710876aef4
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54711879"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56966577"
 ---
 # <a name="parameter-arrays-visual-basic"></a>Pole parametrů (Visual Basic)
 Obvykle nelze volat proceduru s více argumentů, než určuje deklaraci procedury. Když budete potřebovat nekonečný počet argumentů, je možné deklarovat *pole parametrů*, který umožňuje procedury tak, aby přijímal pole hodnot pro parametr. Není nutné znát počet prvků v poli parametrů při definování procesu. Velikost pole je samostatně určeno každé volání do procedury.  
@@ -48,13 +48,13 @@ Obvykle nelze volat proceduru s více argumentů, než určuje deklaraci procedu
 ## <a name="example"></a>Příklad  
  Následující příklad definuje a volá funkci `calcSum`. `ParamArray` Modifikátor parametru `args` umožňuje funkci tak, aby přijímal proměnný počet argumentů.  
   
- [!code-vb[VbVbalrStatements#26](../../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/parameter-arrays_1.vb)]  
+ [!code-vb[VbVbalrStatements#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#26)]  
   
  Následující příklad definuje proceduru s polem parametrů a vypíše hodnoty ze všech prvků pole předat pole parametrů.  
   
- [!code-vb[VbVbcnProcedures#48](./codesnippet/VisualBasic/parameter-arrays_2.vb)]  
+ [!code-vb[VbVbcnProcedures#48](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#48)]  
   
- [!code-vb[VbVbcnProcedures#49](./codesnippet/VisualBasic/parameter-arrays_3.vb)]  
+ [!code-vb[VbVbcnProcedures#49](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#49)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:Microsoft.VisualBasic.Information.UBound%2A>

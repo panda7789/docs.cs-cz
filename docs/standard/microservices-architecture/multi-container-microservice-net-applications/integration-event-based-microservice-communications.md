@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 844d4bd8ac18bc31b5abeff5882df1f9a4acaab5
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: cf1757531fc9eceee17f1faec66668945b9c2758
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147253"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56967968"
 ---
 # <a name="implementing-event-based-communication-between-microservices-integration-events"></a>Implementace komunikace mezi mikroslužbami (události integrace) na základě událostí
 
@@ -78,7 +78,7 @@ V [vzor pozorovatel](https://en.wikipedia.org/wiki/Observer_pattern), váš prim
 
 ### <a name="publishsubscribe-pubsub-pattern"></a>Vzor publikování/přihlášení k odběru (publikování a odběr) 
 
-Účelem [vzor publikování/přihlášení k odběru](https://msdn.microsoft.com/library/ff649664.aspx) je stejný jako vzor pozorovatel: Chcete upozornit jiné služby, probíhají určité události. Existuje ale podstatným rozdílem mezi pozorovatel a Pub/Sub vzory. Ve vzoru pozorovatel vysílání je provádět přímo pozorovat k pozorovatelé, tak jejich "know" mezi sebou. Ale při použití modelu Pub/Sub, je třetí součást, která volá zprostředkovatele nebo zprávy Service broker nebo událostí Service bus, která se označuje vydavatele a odběratele. Proto při použití modelu Pub/Sub vydavatele a odběratele se přesně odděleném díky uvedené události Service bus nebo zprávy zprostředkovatele.
+Účelem [vzor publikování/přihlášení k odběru](https://docs.microsoft.com/previous-versions/msp-n-p/ff649664(v=pandp.10)) je stejný jako vzor pozorovatel: Chcete upozornit jiné služby, probíhají určité události. Existuje ale podstatným rozdílem mezi pozorovatel a Pub/Sub vzory. Ve vzoru pozorovatel vysílání je provádět přímo pozorovat k pozorovatelé, tak jejich "know" mezi sebou. Ale při použití modelu Pub/Sub, je třetí součást, která volá zprostředkovatele nebo zprávy Service broker nebo událostí Service bus, která se označuje vydavatele a odběratele. Proto při použití modelu Pub/Sub vydavatele a odběratele se přesně odděleném díky uvedené události Service bus nebo zprávy zprostředkovatele.
 
 ### <a name="the-middleman-or-event-bus"></a>Prostředník nebo událostí Service bus 
 

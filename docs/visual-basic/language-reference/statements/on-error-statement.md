@@ -22,12 +22,12 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], handling
 - On Error statement [Visual Basic]
 ms.assetid: ff947930-fb84-40cf-bd66-1ea219561d5c
-ms.openlocfilehash: 9916c7197b260436a447a84b22df9b76dc5af4cd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 16a2ee7f16df92db8deb44ff979ec077eefc20aa
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54654880"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56976483"
 ---
 # <a name="on-error-statement-visual-basic"></a>On Error – příkaz (Visual Basic)
 Umožňuje rutiny zpracování chyb a určuje umístění rutinu v rámci procedury; je také možné zakázat rutiny zpracování chyb.  
@@ -76,7 +76,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
 ## <a name="throw-statement"></a>Throw – příkaz  
  K chybě, která je vyvolána s `Err.Raise` metody nastaví `Exception` vlastnost nově vytvořená instance <xref:System.Exception> třídy. Aby bylo možné podporovat vyvolání výjimky, které typy odvozené výjimek, `Throw` příkaz je podporován v jazyce. Tato akce trvá jeden parametr, který je instance výjimky, která je vyvolána. Následující příklad ukazuje, jak lze tyto funkce s výjimkou existující podpory obsluhy výjimek:  
   
- [!code-vb[VbVbalrErrorHandling#17](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_1.vb)]  
+ [!code-vb[VbVbalrErrorHandling#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#17)]  
   
  Všimněte si, že `On Error GoTo` příkaz zachycuje všechny chyby, bez ohledu na třídě výjimky.  
   
@@ -94,7 +94,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
   
  Pokud chcete zabránit spuštění, když nedojde k žádné chybě kód pro zpracování chyb, umístěte `Exit Sub`, `Exit Function`, nebo `Exit Property` příkaz bezprostředně před rutina zpracování chyb, stejně jako v následujícím fragmentu:  
   
- [!code-vb[VbVbalrErrorHandling#18](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_2.vb)]  
+ [!code-vb[VbVbalrErrorHandling#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#18)]  
   
  Kód pro zpracování chyb následuje `Exit Sub` příkazu a předchází `End Sub` příkaz k oddělení od toku procedury. Kód pro zpracování chyb můžete umístit kdekoli v postupu.  
   
@@ -103,7 +103,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
   
  Pokud vytvoříte objekt, který přistupuje k jiné objekty, doporučujeme zpracovat všechny neošetřené chyby, které se předají zpět. Pokud nelze mapovat kódy chyb v `Err.Number` do jedné z vlastních chyb a pak je předat zpět do volajícího objektu. Chyby by měl určit tak, že přidáte kód chyby `VbObjectError` konstantní. Například pokud váš kód chyby je 1052, je také přiřadíte tímto způsobem:  
   
- [!code-vb[VbVbalrErrorHandling#19](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_3.vb)]  
+ [!code-vb[VbVbalrErrorHandling#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#19)]  
   
 > [!CAUTION]
 >  Chyby systému během volání Windows dynamické knihovny (DLL) nevyvolávejte výjimky a nemůže být zachycena s chyba soutisku jazyka Visual Basic. Při volání funkcí knihovny DLL, je potřeba zkontrolovat každou návratovou hodnotu pro úspěch nebo neúspěch (podle specifikace rozhraní API) a v případě selhání, zkontrolujte hodnotu `Err` objektu `LastDLLError` vlastnost.  

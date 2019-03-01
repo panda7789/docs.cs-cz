@@ -2,14 +2,14 @@
 title: ProhlídkaF#
 description: Prozkoumat některé klíčové funkce F# programovací jazyk v této ukázky s ukázkami kódu.
 ms.date: 11/06/2018
-ms.openlocfilehash: 72ecb9e71e5d039f5a62f74ad594fac82269f304
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: d741f7066517ad9bc004e2a89ba0d85a1d4c424d
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145520"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56968293"
 ---
-# <a name="tour-of-f"></a>ProhlídkaF# #
+# <a name="tour-of-f"></a>Prohlídka F\#
 
 Nejlepší způsob, jak získat informace o F# je pro čtení a zápis F# kódu. Tento článek bude fungovat jako seznámíte některé klíčové funkce F# jazyka a umožňují některé fragmenty kódu, které můžete spustit na svém počítači. Další informace o nastavení vývojového prostředí, projděte si [Začínáme](tutorials/getting-started/index.md).
 
@@ -45,7 +45,7 @@ A tady je co basic [řetězec](language-reference/strings.md) manipulaci s bude 
 
 [!code-fsharp[Strings](../../samples/snippets/fsharp/tour.fs#L158-L180)]
 
-## <a name="tuples"></a>Řazené kolekce členů
+## <a name="tuples"></a>N-tice
 
 [Řazené kolekce členů](language-reference/tuples.md) je to důležitá záležitost v F#.  Jsou to seskupení nepojmenované, ale seřazený hodnot, které lze považovat za samotné hodnoty.  Představte si je jako hodnoty, které se shromažďují od jiné hodnoty.  Mají mnoho účelů, jako je například jednoduše vrátí více hodnot z funkce nebo seskupení hodnot ke zvýšení pohodlí některé ad-hoc.
 

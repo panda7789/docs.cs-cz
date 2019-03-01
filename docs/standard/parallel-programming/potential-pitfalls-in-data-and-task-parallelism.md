@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1e357177-e699-4b8f-9e49-56d3513ed128
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5613128950d53946d55050ba3fd77cf1f0bb048a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c251bfc15ce588d426dd30f2ff1634a1f2a01336
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54513422"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971946"
 ---
 # <a name="potential-pitfalls-in-data-and-task-parallelism"></a>Potenciální nástrahy datového a funkčního paralelismu
 V mnoha případech <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> výrazné zlepšení výkonu může poskytovat prostřednictvím běžných sekvenčních smyčkách. Paralelní provádění smyčky však zavádí složitost, která může vést k problémům, které v sekvenčním kódu nejsou jako běžné nebo nejsou vůbec došlo k. Toto téma uvádí některé nedoporučované postupy při psaní paralelní smyčky.  
@@ -52,10 +52,10 @@ V mnoha případech <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty
 >  Můžete vyzkoušet to sami vložením volání některých <xref:System.Console.WriteLine%2A> v dotazech. I když tato metoda se používá v příkladech dokumentaci pro demonstrační účely, nepoužívejte ji v paralelních smyčkách není-li nezbytné.  
   
 ## <a name="be-aware-of-thread-affinity-issues"></a>Mějte na paměti problémů, spřažení vláken  
- Některé technologie, například interoperabilita modelů COM pro jedno vláknové objekty Apartment (STA) součásti Windows Forms a Windows Presentation Foundation (WPF), omezení vlákno vztahů, které vyžadují spuštění kódu na konkrétním vlákně. Například ve Windows Forms a WPF, ovládací prvek je přístupný pouze na vlákně, na kterém byla vytvořena. To znamená například, že ovládací prvek seznamu paralelní smyčky nelze aktualizovat, pokud nenakonfigurujete vlákno scheduler k plánování práce pouze na vlákně UI při. Další informace najdete v tématu [jak: Plánování práce ve vlákně uživatelského rozhraní (UI)](https://msdn.microsoft.com/library/32a846a5-d628-4933-907b-4888ff72c663).  
+ Některé technologie, například interoperabilita modelů COM pro jedno vláknové objekty Apartment (STA) součásti Windows Forms a Windows Presentation Foundation (WPF), omezení vlákno vztahů, které vyžadují spuštění kódu na konkrétním vlákně. Například ve Windows Forms a WPF, ovládací prvek je přístupný pouze na vlákně, na kterém byla vytvořena. To znamená například, že ovládací prvek seznamu paralelní smyčky nelze aktualizovat, pokud nenakonfigurujete vlákno scheduler k plánování práce pouze na vlákně UI při. Další informace najdete v tématu [zadání kontext synchronizace](xref:System.Threading.Tasks.TaskScheduler#specifying-a-synchronization-context).  
   
 ## <a name="use-caution-when-waiting-in-delegates-that-are-called-by-parallelinvoke"></a>Buďte opatrní při čekání na v delegáty, kteří jsou volány Parallel.Invoke  
- V některých případech bude Task Parallel Library vložené úlohy, což znamená, že běží na úlohu s aktuálně spuštěné vlákno. (Další informace najdete v tématu [Plánovačích úkolů](https://msdn.microsoft.com/library/638f8ea5-21db-47a2-a934-86e1e961bf65).) Optimalizace výkonu může vést k zablokování v některých případech. Například dvě úlohy mohly stejného delegáta kód, který signalizuje, že dojde k události, a potom čeká na signál jiných úloh. Pokud druhá úloha je vložená ve stejném vlákně jako první a první přejde do stavu čekání, druhá úloha již nikdy nebude moct signalizuje, že jeho událost. Aby se zabránilo taková situace, můžete zadat časový limit na operace čekání nebo použijte explicitní konstruktory vlákna zajistit, že některá úloha nelze blokovat druhé.  
+ V některých případech bude Task Parallel Library vložené úlohy, což znamená, že běží na úlohu s aktuálně spuštěné vlákno. (Další informace najdete v tématu [Plánovačích úkolů](xref:System.Threading.Tasks.TaskScheduler).) Optimalizace výkonu může vést k zablokování v některých případech. Například dvě úlohy mohly stejného delegáta kód, který signalizuje, že dojde k události, a potom čeká na signál jiných úloh. Pokud druhá úloha je vložená ve stejném vlákně jako první a první přejde do stavu čekání, druhá úloha již nikdy nebude moct signalizuje, že jeho událost. Aby se zabránilo taková situace, můžete zadat časový limit na operace čekání nebo použijte explicitní konstruktory vlákna zajistit, že některá úloha nelze blokovat druhé.  
   
 ## <a name="do-not-assume-that-iterations-of-foreach-for-and-forall-always-execute-in-parallel"></a>Nepředpokládejte, že iterace ForEach, pro a ForAll vždy spustit paralelně  
  Je důležité mít na paměti, že jednotlivé iterace v <xref:System.Threading.Tasks.Parallel.For%2A>, <xref:System.Threading.Tasks.Parallel.ForEach%2A> nebo <xref:System.Linq.ParallelEnumerable.ForAll%2A> smyčky může, ale není nutné spustit paralelně. Proto byste se měli vyhnout psaní kódu, který správnost závisí na paralelní zpracování iterace nebo spuštění iterace v libovolném pořadí. Například tento kód je pravděpodobně dojde k zablokování:  

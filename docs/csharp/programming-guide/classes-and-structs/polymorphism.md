@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: 0ec66015159e03de8d2c16971c0e858ebc128014
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 6150074df9b921b4eb62169951122f5718e4f13d
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835106"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56969957"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
 Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově orientované programování po zapouzdření a dědičnosti. Polymorfismus řecké slovo, které znamená "mnoho ve tvaru" a má dva různé aspekty:  
@@ -45,42 +45,42 @@ Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově or
   
  Odvozená třída může přepsat člena základní třídy pouze v případě, že členu základní třídy je deklarován jako [virtuální](../../../csharp/language-reference/keywords/virtual.md) nebo [abstraktní](../../../csharp/language-reference/keywords/abstract.md). Odvozené člen musí používat [přepsat](../../../csharp/language-reference/keywords/override.md) – klíčové slovo explicitně určit, že metoda je určena k účasti v virtuální volání. Následující kód představuje příklad:  
   
- [!code-csharp[csProgGuideInheritance#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_2.cs)]  
+ [!code-csharp[csProgGuideInheritance#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#20)]  
   
  Pole nemůže být virtuální; pouze metody, vlastnosti, události a indexerů může být virtuální. Je-li odvozená třída přepíše člena virtuální, se kterou nazývá i v případě, že instance této třídy je přistupováno jako jedna instance základní třídy. Následující kód představuje příklad:  
   
- [!code-csharp[csProgGuideInheritance#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_3.cs)]  
+ [!code-csharp[csProgGuideInheritance#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#21)]  
   
  Virtuální metody a vlastnosti umožňují odvozené třídy pro rozšíření bez nutnosti použít implementaci základní třídy metody základní třídy. Další informace najdete v tématu [Správa verzí pomocí nových klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md). Rozhraní obsahuje jiný způsob, jak definovat metodu nebo sadu metod, jejichž implementace je ponecháno na odvozené třídy. Další informace najdete v tématu [rozhraní](../../../csharp/programming-guide/interfaces/index.md).  
   
 ### <a name="hiding-base-class-members-with-new-members"></a>Skrytí členy základní třídy s novými členy  
  Pokud chcete vaše odvozené člen mají stejný název jako členem v základní třídě, ale nechcete, aby ho účastnit virtuální volání, můžete použít [nové](../../../csharp/language-reference/keywords/new.md) – klíčové slovo. `new` – Klíčové slovo je umístěn před návratovým typem, který se nahrazuje člena třídy. Následující kód představuje příklad:  
   
- [!code-csharp[csProgGuideInheritance#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_4.cs)]  
+ [!code-csharp[csProgGuideInheritance#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#18)]  
   
  Členy skryté základní třídy je pořád přístupný z klientského kódu přetypování instance odvozené třídy do instance základní třídy. Příklad:  
   
- [!code-csharp[csProgGuideInheritance#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_5.cs)]  
+ [!code-csharp[csProgGuideInheritance#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#19)]  
   
 ### <a name="preventing-derived-classes-from-overriding-virtual-members"></a>Zabrání přepsání virtuální členy odvozených tříd  
  Virtuální členové zůstanou po neomezenou dobu, bez ohledu na tom, kolik třídy byly prohlášeny mezi virtuální člen a třídy, která původně deklarovala virtuální. Pokud třída A deklaruje virtuální člen a třídy B je odvozena od A a b je odvozena třída jazyka C, tříd C dědí virtuální člen a má možnost přepsat, bez ohledu na to, jestli třídy B pro tento člen deklarovaný přepsání. Následující kód představuje příklad:  
   
- [!code-csharp[csProgGuideInheritance#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_6.cs)]  
+ [!code-csharp[csProgGuideInheritance#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#22)]  
   
  Odvozená třída může zastavit virtuální dědičnost deklarováním jako přepsání [zapečetěné](../../../csharp/language-reference/keywords/sealed.md). To vyžaduje, aby uvedení `sealed` – klíčové slovo před `override` – klíčové slovo v deklaraci třídy člena. Následující kód představuje příklad:  
   
- [!code-csharp[csProgGuideInheritance#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_7.cs)]  
+ [!code-csharp[csProgGuideInheritance#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#24)]  
   
  V předchozím příkladu metoda `DoWork` už není virtuální pro jakoukoli třídu odvozenou z C. Je stále virtuální pro instance jazyka C, i když jsou přetypovat na typ nebo typ B A. zapečetěné metody lze nahradit odvozené třídy pomocí `new` – klíčové slovo, jako v následujícím příkladu:  
   
- [!code-csharp[csProgGuideInheritance#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_8.cs)]  
+ [!code-csharp[csProgGuideInheritance#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#25)]  
   
  V takovém případě pokud `DoWork` je volán na použití proměnné typu D, D nové `DoWork` je volána. Pokud je proměnná typu jazyka C, B nebo A slouží k přístupu k instance D, volání `DoWork` bude pravidlům virtuální dědičnost, směrování volání selžou provádění `DoWork` ve třídě C.  
   
 ### <a name="accessing-base-class-virtual-members-from-derived-classes"></a>Přístup k virtuální členy základní třídy z odvozené třídy  
  Odvozená třída, která má nahradit nebo přepsat metodu nebo vlastnost může pořád přístup k metody nebo vlastnosti na základní třídu pomocí `base` – klíčové slovo. Následující kód představuje příklad:  
   
- [!code-csharp[csProgGuideInheritance#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_9.cs)]  
+ [!code-csharp[csProgGuideInheritance#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#26)]  
   
  Další informace najdete v tématu [základní](../../../csharp/language-reference/keywords/base.md).  
   

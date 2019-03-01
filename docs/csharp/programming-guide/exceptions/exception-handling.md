@@ -6,23 +6,23 @@ helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
-ms.openlocfilehash: 79b07891d794200507cdb97a869992ef093aff23
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 87a85511669e676f2943bf5f079b54e96b926490
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648748"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56979863"
 ---
 # <a name="exception-handling-c-programming-guide"></a>Zpracování výjimek (Průvodce programováním v C#)
 A [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blokem programátory C# pro oddíl kódu, které by mohly mít dopad výjimky. Související [catch](../../../csharp/language-reference/keywords/try-catch.md) bloky se používají ke zpracování všech výsledný výjimek. A [nakonec](../../../csharp/language-reference/keywords/try-finally.md) obsahuje kód, který se spustí bez ohledu na to, zda je výjimka vyvolána bloku `try` bloku, jako je například uvolnění prostředků, které jsou přiděleny v `try` bloku. A `try` blok vyžaduje jeden nebo více přidružené `catch` bloky, nebo `finally` bloku nebo obojí.  
   
  Následující příklady ukazují `try-catch` příkaz, `try-finally` příkaz a `try-catch-finally` příkazu.  
   
- [!code-csharp[csProgGuideExceptions#6](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_1.cs)]  
+ [!code-csharp[csProgGuideExceptions#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#6)]  
   
- [!code-csharp[csProgGuideExceptions#7](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_2.cs)]  
+ [!code-csharp[csProgGuideExceptions#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#7)]  
   
- [!code-csharp[csProgGuideExceptions#8](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_3.cs)]  
+ [!code-csharp[csProgGuideExceptions#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#8)]  
   
  A `try` blokovat bez `catch` nebo `finally` blok způsobí chybu kompilátoru.  
   
@@ -37,11 +37,11 @@ A [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blokem prog
   
 -   Můžete vytvořit a vyvolat výjimku nové a konkrétnější.  
   
-     [!code-csharp[csProgGuideExceptions#9](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_4.cs)]  
+     [!code-csharp[csProgGuideExceptions#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#9)]  
   
 -   Chcete částečně zpracování výjimky před předáním pro další zpracování. V následujícím příkladu `catch` blokování se používá k přidání položky do protokolu chyb před opětném vyvolávání výjimky.  
   
-     [!code-csharp[csProgGuideExceptions#10](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_5.cs)]  
+     [!code-csharp[csProgGuideExceptions#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#10)]  
   
 ## <a name="finally-blocks"></a>Bloky finally  
  A `finally` bloku umožňuje vyčistit akce, které se provádějí v `try` bloku. Pokud jsou k dispozici, `finally` blok se spustí po poslední, `try` blok a všechny odpovídající `catch` bloku. A `finally` blok vždy, bez ohledu na to, zda dojde k výjimce nebo `catch` najít odpovídající typ výjimky bloku.  
@@ -50,7 +50,7 @@ A [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blokem prog
   
  V následujícím příkladu `finally` blokem zavřete soubor, který je otevřen v `try` bloku. Všimněte si, že před zavřením souboru kontroly stavu popisovače souboru. Pokud `try` block nemůžou soubor otevřít, popisovač souboru stále má hodnotu `null` a `finally` bloku nepokusí se jej zavřete. Případně pokud je soubor úspěšně otevřen `try` bloku `finally` bloku zavře otevřený soubor.  
   
- [!code-csharp[csProgGuideExceptions#11](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_6.cs)]  
+ [!code-csharp[csProgGuideExceptions#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#11)]  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 

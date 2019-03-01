@@ -10,19 +10,19 @@ helpviewer_keywords:
 - functions [Visual Basic], calling recursively
 - recursion
 ms.assetid: ba1d3962-b4c3-48d3-875e-96fdb4198327
-ms.openlocfilehash: b5cbe0dfa8053a93cde9c92ffe87f0eae15d3efd
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: 97cceb833da0ef6f9ee4e3dab5abb1f2ba73a94e
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55739290"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56969320"
 ---
 # <a name="recursive-procedures-visual-basic"></a>Rekurzivní procedury (Visual Basic)
 A *rekurzivní* postup je takový, který zavolá sama sebe. Většinou to není nejúčinnější způsob psaní kódu jazyka Visual Basic.  
   
  Následující postup používá rekurze pro výpočet faktoriálu původní argument.  
   
- [!code-vb[VbVbcnProcedures#51](./codesnippet/VisualBasic/recursive-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#51)]  
   
 ## <a name="considerations-with-recursive-procedures"></a>Informace o rekurzivní procedury  
  **Omezující podmínky**. Je třeba navrhnout rekurzivní procedury pro testování nejméně jedné podmínky, které dokáže ukončit rekurze, a také musí zpracovávat tento případ, ve kterém je splněna žádná z těchto podmínek v rámci dostatečný počet rekurzivních volání. Bez nejméně jedné podmínky, které mohou být splněny bez navrácení služeb po spuštění procedury vysokým rizikem provedení v nekonečné smyčce.  

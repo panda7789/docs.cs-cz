@@ -23,12 +23,12 @@ helpviewer_keywords:
 - Exit statement [Visual Basic], For...Next statements
 - For statement [Visual Basic]
 ms.assetid: f5fc0d51-67ce-4c36-9f09-31c9a91c94e9
-ms.openlocfilehash: 703a30a558067b386c6bb5288012094418d61ca7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7b12a1b1b8d116cc906459407240fca4302460e4
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54746270"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56968722"
 ---
 # <a name="fornext-statement-visual-basic"></a>For...Next – příkaz (Visual Basic)
 Opakuje skupinu příkazů zadaného počtu opakování.  
@@ -67,11 +67,11 @@ Next [ counter ]
   
  V následujícím příkladu `index` proměnné začíná určitou hodnotou 1 a se zvýší při každé iteraci smyčky, končí po hodnotu `index` dosáhne 5.  
   
- [!code-vb[VbVbalrStatements#111](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#111](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class7.vb#111)]  
   
  V následujícím příkladu `number` proměnné začíná na 2 a je sníží 0,25 při každé iteraci smyčky, končí po hodnotu `number` dosáhne hodnoty 0. `Step` Argument `-.25` snižuje hodnotu podle 0,25 při každé iteraci smyčky.  
   
- [!code-vb[VbVbalrStatements#112](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#112](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class7.vb#112)]  
   
 > [!TIP]
 >  A [během... End While – příkaz](../../../visual-basic/language-reference/statements/while-end-while-statement.md) nebo [udělat... Příkaz LOOP](../../../visual-basic/language-reference/statements/do-loop-statement.md) dobře funguje i když nevíte předem jak často Pokud chcete spouštět příkazy ve smyčce. Ale očekáváte-li spustit s konkrétním počtem opakování, smyčky `For`... `Next` smyčky je lepší volbou. Když poprvé vstoupíte smyčky určíte počet iterací.  
@@ -79,7 +79,7 @@ Next [ counter ]
 ## <a name="nesting-loops"></a>Vnoření smyčky  
  Je možné vnořovat `For` smyčky vložením v jednom průchodu v rámci jiného. Následující příklad ukazuje vnořené `For`... `Next` struktury, které mají různé krok hodnoty. Vnější smyčka vytvoří řetězec pro každou iteraci smyčky. Jako vnitřní smyčka dekrementuje proměnnou čítače smyčky pro každou iteraci smyčky.  
   
- [!code-vb[VbVbalrStatements#113](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#113](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class7.vb#113)]  
   
  Při vnoření smyčky, každé smyčce musí mít jedinečný `counter` proměnné.  
   
@@ -160,17 +160,17 @@ Next [ counter ]
 ## <a name="example"></a>Příklad  
  Následující příklad odebere všechny prvky z obecného seznamu. Místo [For Each... Další příkaz](../../../visual-basic/language-reference/statements/for-each-next-statement.md), ukazuje příklad `For`... `Next` itinerací v sestupném pořadí. V příkladu používá tuto techniku, protože `removeAt` metoda způsobí, že prvky po odebraném prvku mají nižší hodnotu indexu.  
   
- [!code-vb[VbVbalrStatements#114](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_5.vb)]  
+ [!code-vb[VbVbalrStatements#114](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class7.vb#114)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad provede iteraci výčet, který je deklarován s použitím [Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md).  
   
- [!code-vb[VbVbalrStatements#116](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_6.vb)]  
+ [!code-vb[VbVbalrStatements#116](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class7.vb#116)]  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu, použijte parametry příkazu, který má přetížení operátoru pro třídu `+`, `-`, `>=`, a `<=` operátory.  
   
- [!code-vb[VbVbalrStatements#117](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-next-statement_7.vb)]  
+ [!code-vb[VbVbalrStatements#117](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class7.vb#117)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Collections.Generic.List%601>

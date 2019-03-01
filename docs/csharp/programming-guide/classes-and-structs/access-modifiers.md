@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# Language, access modifiers
 - access modifiers [C#], about
 ms.assetid: 6e81ee82-224f-4a12-9baf-a0dca2656c5b
-ms.openlocfilehash: 7c20292a906ecfbf08311a616e05a02cd8f8a25c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a5fbf74f30e5fc6abd9e1c5542eaadc7e3fcf552
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731696"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56977562"
 ---
 # <a name="access-modifiers-c-programming-guide"></a>Modifikátory přístupu (Průvodce programováním v C#)
 Všechny typy a členy typu mít úrovni přístupu, které řídí, jestli je možné použít od jiného kódu v sestavení nebo jiná sestavení. Následující modifikátory přístupu můžete použít k určení přístupnost typu nebo členu při jeho deklaraci:  
@@ -33,7 +33,7 @@ Všechny typy a členy typu mít úrovni přístupu, které řídí, jestli je m
   
  Následující příklady ukazují, jak zadat modifikátory přístupu na typů a členů:  
   
- [!code-csharp[csProgGuideObjects#72](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/access-modifiers_1.cs)]  
+ [!code-csharp[csProgGuideObjects#72](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#72)]  
   
  Ne všechny modifikátory přístupu může využívat všechny typy nebo členy ve všech kontextech, a v některých případech je omezená dostupnost člena typu usnadnění jeho nadřazeného typu. Následující oddíly poskytují další podrobnosti o usnadnění přístupu.  
   
@@ -59,7 +59,7 @@ Všechny typy a členy typu mít úrovni přístupu, které řídí, jestli je m
   
  K nastavení úrovně přístupu pro člen třídy nebo struktury, přidejte odpovídající klíčové slovo deklarace člena, jak je znázorněno v následujícím příkladu.  
   
- [!code-csharp[csProgGuideObjects#73](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/access-modifiers_2.cs)]  
+ [!code-csharp[csProgGuideObjects#73](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#73)]  
   
 > [!NOTE]
 >  Na úrovni chráněného interní přístupnost znamená, že není chráněné nebo interní chráněné a interní. Jinými slovy chráněné vnitřní člen je přístupný z jiné třídy ve stejném sestavení, včetně odvozených tříd. Pokud chcete omezit přístup k pouze odvozené třídy ve stejném sestavení, deklarujte interní vlastní třídy a deklarovat její členy jako chráněný. Také od C# 7.2, použijte modifikátor privátní chráněného přístupu k dosažení stejného výsledku bez nutnost třídu obsahující interní.  

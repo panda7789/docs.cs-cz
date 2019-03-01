@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Implements statement [Visual Basic]
 - interface implementation [Visual Basic], Implements statement
 ms.assetid: 1fafb83f-f55a-4215-8ea9-681e8622613d
-ms.openlocfilehash: cdcbe20157b9647040e3610d0632bd8e3fb9df65
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 75776e0d78bc1d8a834333ea4c3cc0a9291d1ed1
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681063"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965008"
 ---
 # <a name="implements-statement"></a>Implements – Příkaz
 Určuje jeden nebo více rozhraní, nebo člen rozhraní, které musí být implementován ve třídě nebo definice struktury, ve kterém se zobrazí.  
@@ -46,14 +46,14 @@ Implements interfacename.interfacemember [, ...]
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje způsob použití `Implements` příkaz implementovat členy rozhraní. Definuje rozhraní s názvem `ICustomerInfo` událost, vlastnosti a procedury. Třída `customerInfo` implementuje všechny členy definované v rozhraní.  
   
- [!code-vb[VbVbalrStatements#33](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/implements-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#33)]  
   
  Všimněte si, že třída `customerInfo` používá `Implements` příkazem na řádku samostatného zdrojového kódu k označení, že třída implementuje všechny členy `ICustomerInfo` rozhraní. Poté každý člen ve třídě, použije `Implements` – klíčové slovo jako součást její deklarace člena k označení, že implementuje člena rozhraní.  
   
 ## <a name="example"></a>Příklad  
  Následující dva postupy ukazují, jak můžete použít rozhraní implementované v předchozím příkladu. K otestování implementace, přidejte do projektu a volání těchto postupů `testImplements` postup.  
   
- [!code-vb[VbVbalrStatements#34](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/implements-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#34)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Implementuje](../../../visual-basic/language-reference/statements/implements-clause.md)

@@ -28,12 +28,12 @@ helpviewer_keywords:
 - End keyword [Visual Basic], Function statements
 - Handles keyword [Visual Basic], Function statements
 ms.assetid: a4497077-0f46-4ede-a27f-9e8670df52b9
-ms.openlocfilehash: 5018aebb0401ce5a1c46ecf04a7c65ca676271e7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 947507cb813437facc2b2343ff6f1a5d50f4dd98
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54565901"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971634"
 ---
 # <a name="function-statement-visual-basic"></a>Function – příkaz (Visual Basic)
 Deklaruje název, parametry a kód, které definují `Function` postup.  
@@ -193,11 +193,11 @@ End Function
   
  `Return` Příkaz současně přiřadí návratovou hodnotu a ukončení funkce, jako v následujícím příkladu.  
   
- [!code-vb[VbVbalrStatements#24](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#24)]  
   
  Následující příklad přiřadí název funkce návratová hodnota `myFunction` a použije je `Exit Function` příkazu vrátit.  
   
- [!code-vb[VbVbalrStatements#23](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#23)]  
   
  `Exit Function` a `Return` příkazy způsobit okamžité ukončení `Function` postup. Libovolný počet `Exit Function` a `Return` příkazů může vyskytovat kdekoli v postupu, a je možné kombinovat `Exit Function` a `Return` příkazy.  
   
@@ -240,19 +240,19 @@ End Function
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Function` příkaz deklarovat název, parametry a kód, který tvoří text `Function` postup. `ParamArray` Modifikátor umožňuje funkci tak, aby přijímal proměnný počet argumentů.  
   
- [!code-vb[VbVbalrStatements#25](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#25)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad popisuje vyvolání funkce deklarovaná v předchozím příkladu.  
   
- [!code-vb[VbVbalrStatements#26](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/function-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#26)]  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `DelayAsync` je `Async` `Function` , která má návratový typ <xref:System.Threading.Tasks.Task%601>. `DelayAsync` má `Return` příkaz, který vrátí celé číslo. Proto deklarace funkce z `DelayAsync` musí mít typ vrácené hodnoty `Task(Of Integer)`. Vzhledem k tomu, že je návratový typ `Task(Of Integer)`, vyhodnocení `Await` výrazu v `DoSomethingAsync` vytváří celé číslo. To je ukázáno v tomto prohlášení: `Dim result As Integer = Await delayTask`.  
   
  `startButton_Click` Postup je příkladem `Async Sub` postup. Protože `DoSomethingAsync` je `Async` funkce, úkol pro volání `DoSomethingAsync` musí ní použít operátor await, jak ukazuje následující příkaz: `Await DoSomethingAsync()`. `startButton_Click` `Sub` Postupu musí být definované s `Async` modifikátor vzhledem k tomu, že má `Await` výrazu.  
   
- [!code-vb[csAsyncMethod#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/VisualBasic/function-statement_5.vb)]  
+ [!code-vb[csAsyncMethod#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csasyncmethod/vb/mainwindow.xaml.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Příkaz Sub](sub-statement.md)

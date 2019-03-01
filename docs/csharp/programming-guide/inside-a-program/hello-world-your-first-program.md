@@ -9,12 +9,12 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-ms.openlocfilehash: e84baf2513f6eb96ad1819b995b765a66ad5c263
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 7ff65867f9f81118cad30852c439f8b3491bf1aa
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222321"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56969723"
 ---
 # <a name="hello-world----your-first-program-c-programming-guide"></a>Hello World!--Váš první program (C# Programming Guide)
 
@@ -42,7 +42,7 @@ Další příklady úvodních konceptů viz [Začínáme s Visual C# a Visual Ba
 
 6. Nahraďte obsah Program.cs následujícím kódem.
 
-     [!code-csharp[csProgGuide#21](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_1.cs)]
+     [!code-csharp[csProgGuide#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#21)]
 
 7. Stiskněte klávesu F5 ke spuštění projektu. Zobrazí se okno příkazového řádku, která obsahuje řádek `Hello World!`
 
@@ -52,11 +52,11 @@ Dále jsou zkoumány důležité části tohoto programu.
 
 První řádek obsahuje komentář. Znaky `//` převést zbytek řádku na poznámku.
 
-[!code-csharp[csProgGuide#32](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_2.cs)]
+ [!code-csharp[csProgGuide#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#32)]
 
 Můžete také můžete Zakomentovat blok textu jeho uzavřením mezi `/*` a `*/` znaků. To je ukázáno v následujícím příkladu.
 
-[!code-csharp[csProgGuide#33](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_3.cs)]
+ [!code-csharp[csProgGuide#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#33)]
 
 ## <a name="main-method"></a>main – metoda
 
@@ -66,19 +66,19 @@ Musí obsahovat konzolovou aplikaci C# `Main` metody, ve kterém ovládací prve
 
 - Může vrátit `void`.
 
-     [!code-csharp[csProgGuideMain#12](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_4.cs)]
+     [!code-csharp[csProgGuideMain#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#12)]
 
 - Také může vrátit celé číslo.
 
-     [!code-csharp[csProgGuideMain#13](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_5.cs)]
+     [!code-csharp[csProgGuideMain#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#13)]
 
 - Pomocí některé z návratových typů můžete převzít argumenty.
 
-     [!code-csharp[csProgGuideMain#19](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_6.cs)]
+     [!code-csharp[csProgGuideMain#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#19)]
 
      -nebo-
 
-     [!code-csharp[csProgGuideMain#18](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_7.cs)]
+     [!code-csharp[csProgGuideMain#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#18)]
 
 Parametr `Main` metody `args`, je `string` pole obsahující argumenty příkazového řádku používané k vyvolání programu. Na rozdíl od v jazyce C++ pole neobsahuje název souboru spustitelný soubor (exe).
 
@@ -90,9 +90,9 @@ Volání <xref:System.Console.ReadKey%2A> na konci `Main` metody zabrání v okn
 
 C# obvykle používají vstupní a výstupní služby poskytované knihovny run-time rozhraní .NET Framework. Příkaz `System.Console.WriteLine("Hello World!");` používá <xref:System.Console.WriteLine%2A> metody. Toto je jedna z metod výstupu <xref:System.Console> třídy do knihovny run-time. Zobrazuje svůj parametr řetězce v datovém proudu standardního výstupu následovaný novým řádkem. Další <xref:System.Console> metody jsou k dispozici pro různé vstupní a výstupní operace. Pokud zahrnete `using System;` direktiv na začátku programu, můžete přímo použít <xref:System> třídy a metody bez jejich plné kvalifikace. Například můžete volat `Console.WriteLine` místo `System.Console.WriteLine`:
 
-[!code-csharp[csProgGuide#1](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_8.cs)]
+ [!code-csharp[csProgGuide#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/using.cs#1)]
 
-[!code-csharp[csProgGuide#23](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_9.cs)]
+ [!code-csharp[csProgGuide#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#23)]
 
 Další informace o vstupních/výstupních metodách naleznete v tématu <xref:System.IO>.
 

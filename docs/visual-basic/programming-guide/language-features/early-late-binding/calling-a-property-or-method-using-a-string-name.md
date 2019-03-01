@@ -12,12 +12,12 @@ helpviewer_keywords:
 - properties [Visual Basic], setting at run time
 - CallByName function
 ms.assetid: 79a7b8b4-b8c7-4ad8-aca8-12a9a2b32f03
-ms.openlocfilehash: 865270cfc8089d0bf229d9de7a7775dd2a3361d4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: eb9d214d7bb226a4e14cb42e78bffd940049838d
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731517"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56967526"
 ---
 # <a name="calling-a-property-or-method-using-a-string-name-visual-basic"></a>Volání vlastnosti nebo metody pomocí názvu řetězce (Visual Basic)
 Ve většině případů můžete zjistit vlastnosti a metody objektu v době návrhu a napsat kód pro jejich zpracování. Ale v některých případech nemusí o vlastnostech a metodách objektu předem znáte, nebo budete chtít právě flexibilitu povolení koncového uživatele k zadání vlastností nebo provádění metod v době běhu.  
@@ -35,11 +35,11 @@ Ve většině případů můžete zjistit vlastnosti a metody objektu v době n�
   
  Předpokládejme, že přidáte odkaz na sestavení, které obsahuje třídu s názvem `MathClass`, který má novou funkci s názvem `SquareRoot`, jak je znázorněno v následujícím kódu:  
   
- [!code-vb[VbVbalrOOP#53](../../../../visual-basic/misc/codesnippet/VisualBasic/calling-a-property-or-method-using-a-string-name_1.vb)]  
+ [!code-vb[VbVbalrOOP#53](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#53)]  
   
  Vaše aplikace může používat ovládací prvky textové pole ovládacího prvku, která metoda bude volána a argumentů. Například pokud `TextBox1` obsahuje výraz, který se má vyhodnotit, a `TextBox2` je použít k zadání názvu funkce, můžete použít následující kód k vyvolání `SquareRoot` funkci na výrazu v `TextBox1`:  
   
- [!code-vb[VbVbalrOOP#54](../../../../visual-basic/misc/codesnippet/VisualBasic/calling-a-property-or-method-using-a-string-name_2.vb)]  
+ [!code-vb[VbVbalrOOP#54](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#54)]  
   
  Pokud zadáte "64" do `TextBox1`, "SquareRoot" v `TextBox2`a následně zavolat `CallMath` procedury, druhou odmocninu čísla v `TextBox1` vyhodnocena. Vyvolá kódem v příkladu `SquareRoot` funkci (desetinný řetězec, který obsahuje výraz, který má být vyhodnocen jako povinný argument) a vrátí "8" v `TextBox1` (odmocninu 64). Samozřejmě, pokud uživatel zadá neplatný řetězec v `TextBox2`, pokud řetězec obsahuje název vlastnosti namísto metody nebo pokud metoda další požadovaný argument, dojde k chybě za běhu. Je třeba přidat robustní kód pro zpracování chyb při použití `CallByName` předvídat těchto nebo jiné chyby.  
   

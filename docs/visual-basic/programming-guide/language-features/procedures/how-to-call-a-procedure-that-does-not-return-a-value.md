@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Visual Basic code, procedures
 - procedures [Visual Basic], calling
 ms.assetid: 259b49a3-a3c1-4254-ba8c-73cdc4127703
-ms.openlocfilehash: f85c7a7edf4d05dc50166ad4f30080c2e595cf65
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 899c33e6615e2979ba7abe0f537dbe05fd104beb
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590640"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965563"
 ---
 # <a name="how-to-call-a-procedure-that-does-not-return-a-value-visual-basic"></a>Postupy: Volání procedury, která nevrací hodnotu (Visual Basic)
 A `Sub` procedury nesmí vracet hodnotu volajícímu kódu. Zavoláte ji explicitně pomocí samostatné volání příkazu. Nelze volat ho jednoduše pomocí jeho názvu ve výrazu.  
@@ -26,7 +26,7 @@ A `Sub` procedury nesmí vracet hodnotu volajícímu kódu. Zavoláte ji explici
   
      Následující příklad volá jazyka Visual Basic <xref:Microsoft.VisualBasic.Interaction.AppActivate%2A> funkce k aktivaci okna aplikace. <xref:Microsoft.VisualBasic.Interaction.AppActivate%2A> Titulek okna přijímá jako její jediný argument. Nevrací hodnotu volajícímu kódu. Pokud není spuštěný proces Poznámkový blok, příklad vyvolá <xref:System.ArgumentException>. `Shell` Postup předpokládá, že jsou aplikace v zadaných cest.  
   
-     [!code-vb[VbVbalrCatRef#11](./codesnippet/VisualBasic/how-to-call-a-procedure-that-does-not-return-a-value_1.vb)]  
+     [!code-vb[VbVbalrCatRef#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCatRef/VB/Class1.vb#11)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:Microsoft.VisualBasic.Interaction.Shell%2A>

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - exceptions [C#], creating
 - exceptions [C#], throwing
 ms.assetid: 6bbba495-a115-4c6d-90cc-1f4d7b5f39e2
-ms.openlocfilehash: dfa3b60e0c76e377a52243c534139d6c9025d46e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1bfefccb32152cdb1aa1fdb156fbbd875c352218
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54573323"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970919"
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a>Vytváření a vyvolávání výjimek (Průvodce programováním v C#)
 Výjimky jsou slouží k označení, že došlo k chybě při spuštění programu. Jsou vytvořeny objektech výjimek, které popisují chybu a pak *vyvolána* s [throw](../../../csharp/language-reference/keywords/throw.md) – klíčové slovo. Modul runtime hledá pak nejkompatibilnější obslužná rutina výjimky.  
@@ -24,19 +24,19 @@ Výjimky jsou slouží k označení, že došlo k chybě při spuštění progra
   
      Například, pokud má neplatnou hodnotu parametru do metody:  
   
-     [!code-csharp[csProgGuideExceptions#12](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_1.cs)]  
+     [!code-csharp[csProgGuideExceptions#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#12)]  
   
 -   Je provedeno nevhodný volání na objekt, na základě stavu objektu.  
   
      Jedním z příkladů může být pokusu o zápis do souboru jen pro čtení. V případech, kdy stav objektu neumožňuje operaci throw instance <xref:System.InvalidOperationException> nebo objekt podle odvození z této třídy. Toto je příklad, který vyvolá metodu <xref:System.InvalidOperationException> objektu:  
   
-     [!code-csharp[csProgGuideExceptions#13](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_2.cs)]  
+     [!code-csharp[csProgGuideExceptions#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#13)]  
   
 -   Pokud argument metody způsobí výjimku.  
   
      V takovém případě by měl být původní výjimka zachycena a <xref:System.ArgumentException> by měla být vytvořena instance. Původní výjimky by měly být předány konstruktoru <xref:System.ArgumentException> jako <xref:System.Exception.InnerException%2A> parametr:  
   
-     [!code-csharp[csProgGuideExceptions#14](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/creating-and-throwing-exceptions_3.cs)]  
+     [!code-csharp[csProgGuideExceptions#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#14)]  
   
  Výjimky obsahovat vlastnost s názvem <xref:System.Exception.StackTrace%2A>. Tento řetězec obsahuje název metody na aktuální zásobník volání, společně s souboru název a číslo řádku kde byla výjimka vydána pro jednotlivé metody. A <xref:System.Exception.StackTrace%2A> modulem common language runtime (CLR) od bodu je automaticky vytvořen objekt `throw` příkaz, aby výjimky musí být vyvolány z bodu, ve kterém chcete spustit trasování zásobníku.  
   

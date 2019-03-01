@@ -11,12 +11,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], Sub
 - syntax [Visual Basic], Sub procedures
 ms.assetid: 6a0a4958-ed0a-4d3d-8d31-0772c82bda58
-ms.openlocfilehash: f558c61d2e81471e167e97816ff47bc4465c5f51
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 646d7d217891dc8ea5b78f7ce30fce19fab08316
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54638116"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56977575"
 ---
 # <a name="sub-procedures-visual-basic"></a>Sub – procedury (Visual Basic)
 A `Sub` postup je řadu příkazů jazyka Visual Basic ohraničená `Sub` a `End Sub` příkazy. `Sub` Postupu provede úlohu a potom vrátí řízení volajícímu kódu, ale nevrací hodnotu volajícímu kódu.  
@@ -30,7 +30,7 @@ A `Sub` postup je řadu příkazů jazyka Visual Basic ohraničená `Sub` a `End
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
  Syntaxe pro deklarování `Sub` postup je následující:  
   
- `[` *Modifikátory* `] Sub` *subname* `[(` *seznam_parametrů*  `)]`  
+ `[` *Modifikátory* `] Sub` *subname* `[(` *seznam_parametrů* `)]`  
   
  `' Statements of the Sub procedure.`  
   
@@ -43,11 +43,11 @@ A `Sub` postup je řadu příkazů jazyka Visual Basic ohraničená `Sub` a `End
   
  Syntaxe pro každý parametr v seznamu parametrů je následující:  
   
- `[Optional] [ByVal | ByRef] [ParamArray]`  *Název parametru*`As`*datový typ*   
+ `[Optional] [ByVal | ByRef] [ParamArray]`  *Název parametru*`As`*datový typ*  
   
  Pokud se jedná o volitelný parametr, musíte také zadat výchozí hodnotu jako součást její deklarace. Syntaxe pro určení výchozí hodnota je následujícím způsobem:  
   
- `Optional [ByVal | ByRef]`  *Název parametru*`As`*datový typ*`=`*defaultvalue*   
+ `Optional [ByVal | ByRef]`  *Název parametru*`As`*datový typ*`=`*defaultvalue*  
   
 ### <a name="parameters-as-local-variables"></a>Parametry jako lokální proměnné  
  Při řízení se předá podle postupu, každý parametr je zpracováván jako místní proměnná. To znamená, že jeho životnost je stejný jako postup a jeho rozsah je celý postup.  
@@ -66,11 +66,11 @@ A `Sub` postup je řadu příkazů jazyka Visual Basic ohraničená `Sub` a `End
 ### <a name="illustration-of-declaration-and-call"></a>Obrázek deklarace a volání  
  Následující `Sub` postup říká operátor počítače úloh, které aplikace se chystáte provést a také zobrazuje časové razítko. Namísto duplikování tento kód na začátku každé úlohy, aplikace jen volá `tellOperator` z různých umístění. Každé volání předává řetězcový v `task` argument, který identifikuje úlohy se spouští.  
   
- [!code-vb[VbVbcnProcedures#2](./codesnippet/VisualBasic/sub-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#2)]  
   
  Následující příklad ukazuje typické volání `tellOperator`.  
   
- [!code-vb[VbVbcnProcedures#3](./codesnippet/VisualBasic/sub-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#3)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Procedury](./index.md)

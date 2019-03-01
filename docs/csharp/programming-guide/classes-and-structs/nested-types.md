@@ -5,17 +5,17 @@ ms.date: 07/10/2017
 helpviewer_keywords:
 - nested types [C#]
 ms.assetid: f2e1b315-e3d1-48ce-977f-7bae0960ba99
-ms.openlocfilehash: 32f434d9813b08254b72b713ec2f9a1bc9d1b06d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7269f925b3fc78eea04249984697899b1997c3fb
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54725009"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56976704"
 ---
 # <a name="nested-types-c-programming-guide"></a>Vnořené typy (Průvodce programováním v C#)
 Typ definovaný v rámci [třídy](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md) se nazývá vnořený typ. Příklad:  
   
-[!code-csharp[csProgGuideObjects#68](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/nested-types_1.cs)]  
+ [!code-csharp[csProgGuideObjects#68](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#68)]  
   
 Bez ohledu na to, zda je vnější typ třída nebo struktura, vnořené typy jsou přednastaveny na [privátní](../../../csharp/language-reference/keywords/private.md); jsou přístupné jenom z jeho nadřazeného typu. V předchozím příkladu `Nested` třídy je nedostupný pro externí typy. 
 
@@ -29,17 +29,17 @@ Můžete také určit, [modifikátor přístupu](../../language-reference/keywor
   
 Následující příklad provede `Nested` veřejné třídy:
   
-[!code-csharp[csProgGuideObjects#69](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/nested-types_2.cs)]  
+ [!code-csharp[csProgGuideObjects#69](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#69)]  
   
  Typ vnořený nebo vnitřní, můžete získat přístup k obsahujícímu nebo vnějšímu, typu. Pro přístup k nadřazeného typu, předejte ji jako argument konstruktoru vnořeného typu. Příklad:  
   
- [!code-csharp[csProgGuideObjects#70](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/nested-types_3.cs)]  
+ [!code-csharp[csProgGuideObjects#70](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#70)]  
   
  Vnořený typ má přístup ke všem členům, kteří jsou k dispozici k jeho nadřazeného typu. Má přístup k soukromým a chráněným členům nadřazeného typu, včetně všech zděděných chráněných členů.  
   
  V předchozí prohlášení, úplný název třídy `Nested` je `Container.Nested`. Toto je název používaný k vytvoření nové instance vnořené třídy takto:  
   
- [!code-csharp[csProgGuideObjects#71](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/nested-types_4.cs)]  
+ [!code-csharp[csProgGuideObjects#71](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#71)]  
   
 ## <a name="see-also"></a>Viz také:
 

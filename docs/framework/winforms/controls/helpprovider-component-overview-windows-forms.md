@@ -10,12 +10,12 @@ helpviewer_keywords:
 - dialog boxes [Windows Forms], context-sensitive Help
 - Windows Forms, context-sensitive Help
 ms.assetid: 6b10c2cc-c577-4cb5-9669-e37b33416af9
-ms.openlocfilehash: 9d6360358b08dc0602cbdfe352bb69caee25c7bb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5fc447e00ca46f251a895f0de82118a11310a8d9
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54591971"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56972648"
 ---
 # <a name="helpprovider-component-overview-windows-forms"></a>HelpProvider – přehled komponenty (Windows Forms)
 Windows Forms [HelpProvider](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md) komponenta se používá pro soubor nápovědy HTML Help 1.x (soubor CHM vytvořenými pomocí HTML Help Workshop, nebo soubor HTM) přidružit k aplikaci Windows. Můžete poskytnout pomoc v mnoha různými způsoby:  
@@ -34,7 +34,7 @@ Windows Forms [HelpProvider](../../../../docs/framework/winforms/controls/helppr
  Pokud <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> nebyl nastaven, je nutné použít <xref:System.Windows.Forms.HelpProvider.SetHelpString%2A> k zobrazení textu nápovědy. Pokud jste nastavili i <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> a text nápovědy, na základě nápovědy <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> bude mít přednost.  
   
 > [!NOTE]
->  Můžete setkat s problémy pomocí relativní cesty při providers cestu k souboru nápovědy v <xref:System.Windows.Forms.Help.ShowHelp%2A> metoda nebo <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> vlastnost <xref:System.Windows.Forms.HelpProvider> ovládacího prvku. V důsledku toho je potřeba použít absolutní cesty k určení souboru nápovědy.  
+>  Můžete setkat s problémy při určení cesty k souboru nápovědy v pomocí relativní cesty <xref:System.Windows.Forms.Help.ShowHelp%2A> metoda nebo <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> vlastnost <xref:System.Windows.Forms.HelpProvider> ovládacího prvku. V důsledku toho je potřeba použít absolutní cesty k určení souboru nápovědy.  
   
 ## <a name="see-also"></a>Viz také:
 - [Systémy nápovědy ve formulářových aplikacích Windows](../../../../docs/framework/winforms/advanced/help-systems-in-windows-forms-applications.md)

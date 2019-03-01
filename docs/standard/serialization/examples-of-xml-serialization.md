@@ -13,12 +13,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: eec46337-9696-435b-a375-dc5effae6992
-ms.openlocfilehash: 0c5731fcff3191c192a5e7884c4d5a9566400bc5
-ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
+ms.openlocfilehash: fd01842bdb3a3b168c00e0366dd6fe4c2daf7121
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55204805"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974364"
 ---
 # <a name="examples-of-xml-serialization"></a>Příklady serializace XML
 Serializace XML může trvat více než jeden formulář z snadno komplexní. Například může serializovat třídu, která jednoduše se skládá z veřejných polí a vlastností, jak je znázorněno v [představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md). Následující příklady kódu adresa různých pokročilé scénáře, včetně použití serializace XML ke generování datový proud XML, který odpovídá určitého dokumentu schématu XML (XSD).  
@@ -119,7 +119,7 @@ private void SerializeNode(string filename){
 ```  
   
 ## <a name="serializing-a-class-that-contains-a-field-returning-a-complex-object"></a>Serializace třídu, která obsahuje pole vrácení komplexního objektu  
- Pokud vlastnost nebo pole vrátí komplexního objektu (například pole nebo instanci třídy), [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx) převede ho na prvek vnořené hlavní dokument XML. Můžete například první třídou v následujícím příkladu vrací instanci třídy sekundu.  
+ Pokud vlastnost nebo pole vrátí komplexního objektu (například pole nebo instanci třídy), <xref:System.Xml.Serialization.XmlSerializer> převede ho na prvek vnořené hlavní dokument XML. Můžete například první třídou v následujícím příkladu vrací instanci třídy sekundu.  
   
 ```vb  
 Public Class PurchaseOrder  
@@ -363,7 +363,8 @@ public class Employee {
   
  `CreatePO` Metoda vytvoří `PurchaseOrder`, `Address`, a `OrderedItem` objekty třídy a nastaví hodnoty veřejného polí. Metoda také vytvoří instanci objektu <xref:System.Xml.Serialization.XmlSerializer> třídu, která se používá k serializaci a deserializaci `PurchaseOrder`. Všimněte si, že kód předá konstruktoru typu třídy, která bude serializována. Kód vytvoří také `FileStream` , který se používá k zápisu do dokumentu XML datový proud XML.  
   
- `ReadPo` Metoda je o něco jednodušší. Stačí vytvoří objekty k deserializaci a přečte jejich hodnoty. Stejně jako u `CreatePo` metoda, je nutné nejprve vytvořit <xref:System.Xml.Serialization.XmlSerializer>, předejte typ třídy k deserializaci do konstruktoru. Také <xref:System.IO.FileStream> je vyžadována pro čtení dokumentu XML. K deserializaci objektů, zavolejte <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metodu se <xref:System.IO.FileStream> jako argument. Deserializovaný objekt musí být přetypovat na proměnné objektu typu `PurchaseOrder`. Kód poté načte hodnoty deserializovat `PurchaseOrder`. Všimněte si, můžete si také přečíst soubor PO.xml, který je vytvořen zobrazíte skutečný XML výstupu.  
+ 
+  `ReadPo` Metoda je o něco jednodušší. Stačí vytvoří objekty k deserializaci a přečte jejich hodnoty. Stejně jako u `CreatePo` metoda, je nutné nejprve vytvořit <xref:System.Xml.Serialization.XmlSerializer>, předejte typ třídy k deserializaci do konstruktoru. Také <xref:System.IO.FileStream> je vyžadována pro čtení dokumentu XML. K deserializaci objektů, zavolejte <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metodu se <xref:System.IO.FileStream> jako argument. Deserializovaný objekt musí být přetypovat na proměnné objektu typu `PurchaseOrder`. Kód poté načte hodnoty deserializovat `PurchaseOrder`. Všimněte si, můžete si také přečíst soubor PO.xml, který je vytvořen zobrazíte skutečný XML výstupu.  
   
 ```vb  
 Imports System  
@@ -767,6 +768,6 @@ public class Test
 - [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
 - [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)
 - [Seznam atributů řídících serializaci XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)
-- [XmlSerializer Class](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx)
+- [XmlSerializer Class](xref:System.Xml.Serialization.XmlSerializer)
 - [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
 - [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

@@ -18,12 +18,12 @@ helpviewer_keywords:
 - ByRef keyword [Visual Basic], Event statements
 - declaring user-defined events
 ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
-ms.openlocfilehash: 3a13b1a3d3e44f2c309e031e23972a5326ed3faa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 13b1d18592379d7a08e68e84ffba62f1cc977caa
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54653616"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56966070"
 ---
 # <a name="event-statement"></a>Event – příkaz
 Deklaruje uživatelem definovanou událost.  
@@ -82,7 +82,7 @@ End Event
 ## <a name="remarks"></a>Poznámky  
  Po události je deklarovaná, použijte `RaiseEvent` příkaz pro vyvolání události. Typické události mohou být deklarovány a aktivovaná, jak je znázorněno v následující fragmenty:  
   
- [!code-vb[VbVbalrEvents#13](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_1.vb)]  
+ [!code-vb[VbVbalrEvents#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#13)]  
   
 > [!NOTE]
 >  Je možné deklarovat argumenty události, stejně jako argumenty procedur, s následujícími výjimkami: události nemůže mít pojmenované argumenty, `ParamArray` argumenty, nebo `Optional` argumenty. Události nemají návratové hodnoty.  
@@ -106,11 +106,11 @@ End Event
   
  Přidat `WithEvents` do části deklarace proměnných `Form1` třídy:  
   
- [!code-vb[VbVbalrEvents#14](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_2.vb)]  
+ [!code-vb[VbVbalrEvents#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#14)]  
   
  Následující kód přidejte kód pro `Form1`. Nahraďte všechny duplicitní postupy, které mohou existovat, jako například `Form_Load` nebo `Button_Click`.  
   
- [!code-vb[VbVbalrEvents#15](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_3.vb)]  
+ [!code-vb[VbVbalrEvents#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#15)]  
   
  Stisknutím klávesy F5 spusťte z předchozího příkladu a klikněte na tlačítko s popiskem **Start**. Prvního textového pole spustí odpočet sekundy. Po uplynutí doby úplné (10 sekund), se zobrazí "Hotovo" prvního textového pole.  
   

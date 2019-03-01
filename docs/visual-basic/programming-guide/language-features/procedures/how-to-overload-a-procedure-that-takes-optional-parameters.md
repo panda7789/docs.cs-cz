@@ -10,12 +10,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: 825f9d56-4cde-43fd-993a-b9171717e2eb
-ms.openlocfilehash: 343ede485a0486567710a8bf34d85ea356c139fe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 52e31ba2f9d2f5cf87a5597a3c8d639816a75535
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694123"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56972661"
 ---
 # <a name="how-to-overload-a-procedure-that-takes-optional-parameters-visual-basic"></a>Postupy: Přetížení procedury, která přebírá volitelné parametry (Visual Basic)
 Pokud procedura má jeden nebo více [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) parametry, nelze definovat přetížený verzi, která odpovídá některé z jeho implicitní přetížení. Další informace najdete v tématu "Implicitní přetížení pro volitelné parametry" [aspekty přetížení procedur](./considerations-in-overloading-procedures.md).  
@@ -38,11 +38,11 @@ Pokud procedura má jeden nebo více [volitelné](../../../../visual-basic/langu
   
      Následující příklad ukazuje definované s volitelným parametrem, ekvivalentní sadu dvě přetížení procedury a nakonec příkladem neplatné a platný přetížené verze procedury.  
   
-     [!code-vb[VbVbcnProcedures#59](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-optional-parameters_1.vb)]  
+     [!code-vb[VbVbcnProcedures#59](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#59)]  
   
-     [!code-vb[VbVbcnProcedures#60](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-optional-parameters_2.vb)]  
+     [!code-vb[VbVbcnProcedures#60](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#60)]  
   
-     [!code-vb[VbVbcnProcedures#61](./codesnippet/VisualBasic/how-to-overload-a-procedure-that-takes-optional-parameters_3.vb)]  
+     [!code-vb[VbVbcnProcedures#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#61)]  
   
 ## <a name="multiple-optional-parameters"></a>Více volitelné parametry  
  Pro proceduru s více než jeden volitelný parametr musíte obvykle více než dvě přetížené verze. Například pokud existují dva volitelné parametry a volající kód můžete zadat nebo vynechat, nechte každé z nich nezávisle na druhém, je třeba čtyři přetížené verze, jeden pro jednotlivých možných kombinací zadaným argumentům.  

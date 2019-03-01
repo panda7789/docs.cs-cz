@@ -6,12 +6,12 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: 12c31db32b2b3ff3da7ed0972ea2cf090701f3e4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3391281ceeda031f6178f5909204624f3d6bb3dc
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54491739"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56973558"
 ---
 # <a name="objects-c-programming-guide"></a>Objekty (Průvodce programováním v C#)
 Definice třídy nebo struktury je jako matrice, který určuje, co můžete dělat typu. Objekt je v podstatě blok paměti, která byla přidělena a nakonfigurovány podle podrobný plán. Program může vytvořit mnoho objektů stejné třídy. Objekty se také označují jako instance a mohou být uloženy v pojmenované proměnné nebo v poli nebo kolekci. Klientský kód je kód, který používá tyto proměnné pro volání metody a přístup k veřejné vlastnosti objektu. V jazyce objektově orientované jako je C# typický program se skládá z více objektů dynamicky interakci.  
@@ -28,7 +28,7 @@ Definice třídy nebo struktury je jako matrice, který určuje, co můžete dě
   
  Protože struktury jsou typy hodnot, proměnné objektu struktura obsahuje kopii celého objektu. Instance struktury můžete vytvořit také pomocí `new` operátoru, ale to se nevyžaduje, jak je znázorněno v následujícím příkladu:  
   
- [!code-csharp[csProgGuideStatements#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_2.cs)]  
+ [!code-csharp[csProgGuideStatements#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#31)]  
   
  Paměť pro obě `p1` a `p2` přidělené v zásobníku vlákna. Tuto paměť je uvolněn spolu se tento typ nebo metoda, ve kterém je deklarována. Toto je jedním z důvodů, proč strukturách kopírují na přiřazení. Naopak paměti přidělené pro instanci třídy, je automaticky uvolňovaného (uvolněna z paměti) modul common language runtime při všech odkazů na objekt nepřejdou mimo rozsah. Není možné nedeterministicky zničit objekt třídy jako můžete v jazyce C++. Další informace o uvolňování paměti v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], naleznete v tématu [uvolňování](../../../standard/garbage-collection/index.md).  
   
@@ -42,7 +42,7 @@ Definice třídy nebo struktury je jako matrice, který určuje, co můžete dě
   
 -   Chcete-li zjistit, zda pole instancí ve dvou instancí struktury mají stejné hodnoty, použijte <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> metody. Protože implicitně dědí všechny struktury <xref:System.ValueType?displayProperty=nameWithType>, zavolejte metodu přímo na objekt, jak je znázorněno v následujícím příkladu:  
   
- [!code-csharp[csProgGuideStatements#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/objects_3.cs)]  
+ [!code-csharp[csProgGuideStatements#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#32)]  
   
  <xref:System.ValueType?displayProperty=nameWithType> Provádění `Equals` používá reflexi, protože musí být schopní určit pole jsou v libovolné struktury. Při vytváření vlastních struktur, přepsat `Equals` metodu k dispozici efektivní rovnosti algoritmus, který je specifický pro váš typ.  
   

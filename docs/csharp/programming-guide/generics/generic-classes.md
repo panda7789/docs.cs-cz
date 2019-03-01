@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: 2115b0be2ee2e989b10d2d1834a51efb0b7e2ebb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5f898bf342c8596d9dd4cc0b03396aec4dcf545c
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54651783"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970217"
 ---
 # <a name="generic-classes-c-programming-guide"></a>Obecné třídy (Průvodce programováním v C#)
 Obecné třídy zapouzdření operace, které nejsou specifické pro konkrétní data typu. Nejběžnějším využitím obecných tříd je s kolekcí jako propojené seznamy zatřiďovacích tabulek, zásobníků, front, stromy a tak dále. Operace, jako jsou přidávání a odebírání položek z kolekce jsou prováděny v podstatě stejným způsobem bez ohledu na typ data ukládat.  
@@ -40,27 +40,27 @@ Obecné třídy zapouzdření operace, které nejsou specifické pro konkrétní
   
  Pravidla pro parametry typu a omezení mají několik důsledky pro obecnou třídu chování, zejména pokud jde o dědičnosti a člen usnadnění. Než budete pokračovat, měli byste pochopit některé podmínky. Pro obecnou třídu `Node<T>,` klientský kód může odkazovat na třídu buď tak, že zadáte argument typu, chcete-li vytvořit uzavřený konstruovaný typ. (`Node<int>`). Případně ho můžete nechat parametr typu, který je tento parametr zadán, například když zadáte obecné základní třídy, chcete-li vytvořit otevřenou konstruovaný typ. (`Node<T>`). Obecné třídy můžete dědit z konkrétní, uzavřený konstruovaný nebo otevřít konstruované základní třídy:  
   
- [!code-csharp[csProgGuideGenerics#16](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_1.cs)]  
+ [!code-csharp[csProgGuideGenerics#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#16)]  
   
  Neobecné, jinými slovy, konkrétní, třídy mohou dědit z uzavřených konstruované základní třídy, ale není otevřené konstruovaný třídy nebo parametry typu, protože neexistuje žádný způsob v době běhu pro klientský kód zadáte argument typu vyžaduje vytvoření instance Základní třída.  
   
- [!code-csharp[csProgGuideGenerics#17](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_2.cs)]  
+ [!code-csharp[csProgGuideGenerics#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#17)]  
   
  Obecné třídy, které dědí z otevřené sestavené typy musíte zadat argumenty typu pro všechny parametry typu základní třídy, které nejsou sdíleny dědičné třídě, jak je ukázáno v následujícím kódu:  
   
- [!code-csharp[csProgGuideGenerics#18](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_3.cs)]  
+ [!code-csharp[csProgGuideGenerics#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#18)]  
   
  Obecné třídy, které dědí z otevřené sestavené typy musíte zadat omezení, která je nadstavbou jazyka nebo implikovat, omezení u základního typu:  
   
- [!code-csharp[csProgGuideGenerics#19](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_4.cs)]  
+ [!code-csharp[csProgGuideGenerics#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#19)]  
   
  Obecné typy můžete použít více parametry typu a omezení, následujícím způsobem:  
   
- [!code-csharp[csProgGuideGenerics#20](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_5.cs)]  
+ [!code-csharp[csProgGuideGenerics#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#20)]  
   
  Otevřené sestavené typy vytvořený a uzavřených může sloužit jako parametry metody:  
   
- [!code-csharp[csProgGuideGenerics#21](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_6.cs)]  
+ [!code-csharp[csProgGuideGenerics#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#21)]  
   
  Pokud obecná třída implementuje rozhraní, všechny instance této třídy lze převést na rozhraní.  
   

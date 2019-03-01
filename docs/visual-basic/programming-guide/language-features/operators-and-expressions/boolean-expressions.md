@@ -14,22 +14,22 @@ helpviewer_keywords:
 - operators [Visual Basic], Boolean
 - Visual Basic code, expressions
 ms.assetid: d3d90406-55c8-4404-8143-50fd7f0d0d1a
-ms.openlocfilehash: a86df2734d315e5fed0784b0394bb305b15562a9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 065df7d6217dd6f817dee1d11dd0fd4a68b6323c
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54562749"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965537"
 ---
 # <a name="boolean-expressions-visual-basic"></a>Výrazy logických hodnot (Visual Basic)
 A *logický výraz* je výraz, který se vyhodnotí na hodnotu [datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md): `True` nebo `False`. `Boolean` Výrazy lze provést několika způsoby. Nejjednodušší je přímé porovnání hodnoty `Boolean` proměnné `Boolean` literál, jak je znázorněno v následujícím příkladu.  
   
- [!code-vb[VbVbalrOperators#87](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_1.vb)]  
+ [!code-vb[VbVbalrOperators#87](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#87)]  
   
 ## <a name="two-meanings-of-the--operator"></a>Dva význam = – operátor  
  Všimněte si, že přiřazovací příkaz `newCustomer = True` vypadá stejně jako v předchozím příkladu výraz, ale provádí různé funkce a je použit jiným způsobem. V předchozím příkladu výraz `newCustomer = True` představuje logickou hodnotu a `=` znak je interpretován jako operátor porovnání. V samostatné prohlášení `=` znak je interpretován jako operátor přiřazení a přiřadí hodnotu na pravé straně proměnné na levé straně. Toto dokládá následující příklad.  
   
- [!code-vb[VbVbalrOperators#88](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_2.vb)]  
+ [!code-vb[VbVbalrOperators#88](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#88)]  
   
  Další informace najdete v tématu [porovnání hodnot](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md) a [příkazy](../../../../visual-basic/language-reference/statements/index.md).  
   
@@ -50,7 +50,7 @@ A *logický výraz* je výraz, který se vyhodnotí na hodnotu [datový typ Bool
 ## <a name="short-circuiting-operators"></a>Krátký cyklus operátory  
  Logické operátory `AndAlso` a `OrElse` chovat říká *zkrácenou*. Levý operand vyhodnotí short-circuiting operátor nejprve. Pokud levý operand stanoví hodnotu tohoto celý výraz, provádění programu pokračuje bez vyhodnocení pravý výraz. Toto dokládá následující příklad.  
   
- [!code-vb[VbVbalrOperators#89](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_3.vb)]  
+ [!code-vb[VbVbalrOperators#89](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#89)]  
   
  V předchozím příkladu, operátor, který se vyhodnotí jako levý výraz `45 < 12`. Protože levý výraz je vyhodnocen jako `False`, musí být celé logický výraz vyhodnocen `False`. Spuštění programu tedy přeskočí provádění kódu v rámci `If` blok bez vyhodnocení pravý výraz `testFunction(3)`. Tento příklad nevolá `testFunction()` protože levý výraz falsifies celý výraz.  
   
@@ -59,7 +59,7 @@ A *logický výraz* je výraz, který se vyhodnotí na hodnotu [datový typ Bool
 ### <a name="comparison-with-non-short-circuiting-operators"></a>Porovnání s bez Short Circuiting operátory  
  Oproti tomu vyhodnocují obě strany od logického operátoru při logické operátory `And` a `Or` se používají. Toto dokládá následující příklad.  
   
- [!code-vb[VbVbalrOperators#90](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/boolean-expressions_4.vb)]  
+ [!code-vb[VbVbalrOperators#90](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#90)]  
   
  Předchozí příklad volá `testFunction()` i v případě, že je levý výraz vyhodnocen `False`.  
   

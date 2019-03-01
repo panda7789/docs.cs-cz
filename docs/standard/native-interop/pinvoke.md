@@ -4,12 +4,12 @@ description: Zjistěte, jak volat nativní funkce prostřednictvím P/Invoke v r
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: f243fee2b246afff36732d469c6295d7e4b2fd87
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: 51026eab92ae4fd47ccdd78321be21bdbb5ecf49
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54416223"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56981254"
 ---
 # <a name="platform-invoke-pinvoke"></a>Vyvolání platformy (nespravovaného)
 
@@ -242,5 +242,5 @@ I v předchozích příkladech záviset na parametrech a v obou případech jsou
 ## <a name="more-resources"></a>Další materiály
 
 *   [PInvoke.net wiki](https://www.pinvoke.net/) vynikající Wiki s informacemi o společné rozhraní API systému Win32 a postupu při jejich volání.
-*   [P/Invoke na webu MSDN](https://msdn.microsoft.com/library/zbz07712.aspx)
+*   [P/Invoke na webu MSDN](/cpp/dotnet/native-and-dotnet-interoperability)
 *   [Dokumentace mono na P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)

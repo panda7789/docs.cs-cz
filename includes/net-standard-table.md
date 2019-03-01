@@ -7,9 +7,6 @@
 | Xamarin.Mac                | 3.0    | 3.0    | 3.0   | 3.0   | 3.0   | 3.0                | 3.0                | 3.8                 |
 | Xamarin.Android            | 7.0    | 7.0    | 7.0   | 7.0   | 7.0   | 7.0                | 7.0                | 8.0                 |
 | Univerzální platforma pro Windows | 10.0   | 10.0   | 10.0  | 10.0  | 10.0  | 10.0.16299         | 10.0.16299         | 10.0.16299          |
-| Windows                    | 8.0    | 8.0    | 8.1   |       |       |                    |                    |                     |
-| Windows Phone              | 8.1    | 8.1    | 8.1   |       |       |                    |                    |                     |
-| Windows Phone Silverlight  | 8.0    |        |       |       |       |                    |                    |                     |
 | Unity                      | 2018.1 | 2018.1 | 2018.1| 2018.1| 2018.1| 2018.1             |  2018.1            | 2018.1              |
 
 <sup>1 uvedené verze pro rozhraní .NET Framework se vztahují na .NET Core 2.0 SDK a novější verze nástrojů. Starší verze použít jiné mapování pro .NET Standard 1.5 nebo novější. Je možné [stáhnout nástroje pro .NET Core tools for Visual Studio 2015](https://github.com/dotnet/core/blob/master/release-notes/download-archive.md) pokud nejde upgradovat na Visual Studio 2017.</sup>

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Visual Basic code, expressions
 - numeric expressions
 ms.assetid: ba6bf43d-bd96-49b8-b1de-4a7797551372
-ms.openlocfilehash: 7bbc3bcadb318203688a3b8ecae18e723e82c8ab
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 036985a7b60afedc1e8ef0854c619ea8515e5ffe
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54560729"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974299"
 ---
 # <a name="how-to-calculate-numeric-values-visual-basic"></a>Postupy: Výpočet numerických hodnot (Visual Basic)
 Můžete vypočítat číselných hodnot pomocí numerických výrazů. A *číselného výrazu* je výraz, který obsahuje literály a konstanty a proměnné představující číselné hodnoty a operátory, které fungují u těchto hodnot.  
@@ -43,7 +43,7 @@ Můžete vypočítat číselných hodnot pomocí numerických výrazů. A *čís
   
 -   Přiřazovací příkaz můžete použít k přiřazení hodnoty reprezentována číselné proměnné, jak ukazuje následující příklad.  
   
-     [!code-vb[VbVbalrOperators#82](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-calculate-numeric-values_1.vb)]  
+     [!code-vb[VbVbalrOperators#82](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#82)]  
   
      V předchozím příkladu, hodnota výrazu na pravé straně operátor je rovno (`=`) je přiřazená k proměnné `j` na levé straně operátoru, takže `j` vyhodnocen jako 276.  
   
@@ -56,7 +56,7 @@ Můžete vypočítat číselných hodnot pomocí numerických výrazů. A *čís
   
 -   Použití závorek k uzavření operace, které chcete provést jako první. Následující příklad ukazuje dva různé výsledky se stejnými operandy a operátory.  
   
-     [!code-vb[VbVbalrOperators#83](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-calculate-numeric-values_2.vb)]  
+     [!code-vb[VbVbalrOperators#83](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#83)]  
   
      V předchozím příkladu, pro výpočet `j` provede operátor sčítání (`+`) první protože závorky kolem `(67 + i)` přepsání normální priorita a hodnota přiřazená k `j` je 276 (4 x 69). Výpočet pro `k` provádí operátory v jejich normální priorita (`*` před `+`) a hodnota přiřazená k `k` je 270 (268 plus 2).  
   

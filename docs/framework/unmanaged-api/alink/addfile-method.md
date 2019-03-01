@@ -1,5 +1,5 @@
 ---
-title: AddFile – metoda1
+title: AddFile – metoda
 ms.date: 03/30/2017
 api_name:
 - IALink.AddFile
@@ -17,14 +17,14 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 84b68638ed0f7a86156cf7e5fcc98d3c02cba18a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c04bc008d0279601e90d13e6a57c52a458fca1d7
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54662605"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56967877"
 ---
-# <a name="addfile-method1"></a>AddFile – metoda1
+# <a name="addfile-method"></a>AddFile – metoda
 Přidá soubory do sestavení. Lze použít také k vytvoření nevázaného moduly.  
   
 ## <a name="syntax"></a>Syntaxe  

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - StringBuilder class
 - strings [Visual Basic], using StringBuilder
 ms.assetid: 9c042880-aa16-432e-9ccb-cd00abda9ae3
-ms.openlocfilehash: dec1afdbd3ca6c0ba719a95906de8cf6fc7ba378
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: 5cd118ddd196bdf84045ae8b02fe590e5b087e4e
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55738796"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56967955"
 ---
 # <a name="how-to-create-strings-using-a-stringbuilder-in-visual-basic"></a>Postupy: Vytváření řetězců pomocí StringBuilder v jazyce Visual Basic
 Tento příklad vytvoří dlouhý řetězec z mnoha menších řetězců pomocí <xref:System.Text.StringBuilder> třídy. <xref:System.Text.StringBuilder> Třída je efektivnější než `&=` operátoru pro zřetězení řetězců mnoho.  
@@ -18,7 +18,7 @@ Tento příklad vytvoří dlouhý řetězec z mnoha menších řetězců pomocí
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří instance <xref:System.Text.StringBuilder> připojí 1 000 řetězce do této instance třídy a vrátí řetězcové vyjádření.  
   
- [!code-vb[VbVbalrStrings#70](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-create-strings-using-a-stringbuilder_1.vb)]  
+ [!code-vb[VbVbalrStrings#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#70)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Používání třídy StringBuilder](../../../../standard/base-types/stringbuilder.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XML literals [Visual Basic]
 - XML literals [Visual Basic], modifying
 ms.assetid: 4e864522-a37a-43a2-8236-af80277c5482
-ms.openlocfilehash: 7a01fdc9d0541b5d277c2f283e25e9a1cef3b862
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6e11c1ed4cfe4edc1c88dbbff2e9f555b1a028c4
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54636336"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974715"
 ---
 # <a name="how-to-modify-xml-literals-visual-basic"></a>Postupy: Změna literálů XML (Visual Basic)
 Visual Basic poskytuje pohodlný způsob změna literálů XML. Můžete přidat nebo odstranit elementy a atributy, a můžete také nahradit existující prvek nový prvek XML. Toto téma obsahuje několik příkladů toho, jak změnit existující literálu XML.  
@@ -22,7 +22,7 @@ Visual Basic poskytuje pohodlný způsob změna literálů XML. Můžete přidat
   
      Následující příklad kódu aktualizuje hodnotu všech \<cena > elementy v dokumentu XML.  
   
-     [!code-vb[VbXmlSamples2#4](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/VisualBasic/how-to-modify-xml-literals_1.vb)]  
+     [!code-vb[VbXmlSamples2#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#4)]  
   
      Následující znázorňuje vzorový zdroj XML a změnit tento příklad kódu XML.  
   
@@ -65,7 +65,7 @@ Visual Basic poskytuje pohodlný způsob změna literálů XML. Můžete přidat
   
 1.  Pokud chcete přidat atribut literálu XML, nejprve získejte odkaz na literál XML. Potom můžete přidat atribut tak, že přidáte novou vlastnost osy atributu XML. Můžete také přidat nový <xref:System.Xml.Linq.XAttribute> objekt pomocí literálů XML <xref:System.Xml.Linq.XContainer.Add%2A> metody. Následující příklad ukazuje obě možnosti.  
   
-     [!code-vb[VbXmlSamples2#5](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/VisualBasic/how-to-modify-xml-literals_2.vb)]  
+     [!code-vb[VbXmlSamples2#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#5)]  
   
      Následující znázorňuje vzorový zdroj XML a změnit tento příklad kódu XML.  
   
@@ -111,7 +111,7 @@ Visual Basic poskytuje pohodlný způsob změna literálů XML. Můžete přidat
   
      Následující příklad ukazuje příklady každého z následujících postupů.  
   
-     [!code-vb[VbXmlSamples2#6](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/VisualBasic/how-to-modify-xml-literals_3.vb)]  
+     [!code-vb[VbXmlSamples2#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#6)]  
   
      Následující znázorňuje vzorový zdroj XML a změnit tento příklad kódu XML.  
   
@@ -155,7 +155,7 @@ Visual Basic poskytuje pohodlný způsob změna literálů XML. Můžete přidat
   
 1.  Chcete-li odebrat ze literál XML elementu nebo atributu, získat odkaz na element nebo atribut a volání `Remove` způsob, jak je znázorněno v následujícím příkladu.  
   
-     [!code-vb[VbXmlSamples2#7](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/VisualBasic/how-to-modify-xml-literals_4.vb)]  
+     [!code-vb[VbXmlSamples2#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#7)]  
   
      Následující znázorňuje vzorový zdroj XML a změnit tento příklad kódu XML.  
   
@@ -203,7 +203,7 @@ Visual Basic poskytuje pohodlný způsob změna literálů XML. Můžete přidat
   
      Následující příklad kódu nahradí všechny \<popis > elementy \<abstraktní > element. Obsah \<popis > element je zachováno v novém \<abstraktní > elementu s použitím <xref:System.Xml.Linq.XContainer.Nodes%2A> vlastnost \<popis > <xref:System.Xml.Linq.XElement> objektu.  
   
-     [!code-vb[VbXmlSamples2#8](../../../../visual-basic/programming-guide/language-features/xml/codesnippet/VisualBasic/how-to-modify-xml-literals_5.vb)]  
+     [!code-vb[VbXmlSamples2#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#8)]  
   
      Následující znázorňuje vzorový zdroj XML a změnit tento příklad kódu XML.  
   

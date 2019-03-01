@@ -3,14 +3,14 @@ title: Interpolace řetězců v jazyce C#
 description: Zjistěte, jak mají být zahrnuty výsledky výrazu formátovaný výsledný řetězec v jazyce C# pomocí interpolace řetězců.
 author: pkulikov
 ms.date: 05/09/2018
-ms.openlocfilehash: 702a586d6a1d6844e7f5efb14a86ec635d41445c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5a637937de2f3cff7f5425f47c223a56efa8d0c2
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54727856"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56976054"
 ---
-# <a name="string-interpolation-in-c"></a>Interpolace řetězců v jazyce C# #
+# <a name="string-interpolation-in-c"></a>Interpolace řetězců v jazyce C\#
 
 V tomto kurzu se dozvíte, jak používat [interpolace](../language-reference/tokens/interpolated.md) formátování a zahrňte výsledky výrazu do výsledného řetězce. V příkladech se předpokládá, že máte zkušenosti s základní koncepty jazyka C# a .NET typ formátování. Pokud jste ještě interpolace řetězců nebo formátování typu .NET, podívejte se [kurzu interpolace řetězce interaktivní](../tutorials/intro-to-csharp/interpolated-strings.yml) první. Další informace o formátování typy v rozhraní .NET najdete v tématu [formátovací typy v .NET](../../standard/base-types/formatting-types.md) tématu.
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - RaiseEvent statement [Visual Basic]
 - event handlers, connecting events to
 ms.assetid: f82e380a-1e6b-4047-bea8-c853f4d2c742
-ms.openlocfilehash: ccefe07c847c7a356e9ff8da301257bf6a90d1ed
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ffe08dc8aeef9498d2e9f4c973c5ccbc31fec0b9
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54655007"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56973298"
 ---
 # <a name="raiseevent-statement"></a>RaiseEvent – příkaz
 Spustí událost deklarovanou na úrovni modulu uvnitř třídy, formuláře nebo dokumentu.  
@@ -38,7 +38,7 @@ RaiseEvent eventname[( argumentlist )]
   
  Pokud událost nebyla deklarována v rámci modulu, ve kterém se vyvolá, dojde k chybě. Následující fragment kódu ukazuje deklaraci události a postup vyvolání události.  
   
- [!code-vb[VbVbalrEvents#37](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/raiseevent-statement_1.vb)]  
+ [!code-vb[VbVbalrEvents#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#37)]  
   
  Nemůžete použít `RaiseEvent` vyvolávat události, které nejsou explicitně deklarovány v modulu. Například zdědí všechny formuláře <xref:System.Windows.Forms.Control.Click> událost z <xref:System.Windows.Forms.Form?displayProperty=nameWithType>, nelze vyvolat, pomocí `RaiseEvent` ve formě odvozené. Pokud deklarujete `Click` událostí v modulu formuláře je zastiňuje formuláře vlastní <xref:System.Windows.Forms.Control.Click> událostí. Stále můžete vyvolat formuláře <xref:System.Windows.Forms.Control.Click> události voláním <xref:System.Windows.Forms.Control.OnClick%2A> metody.  
   
@@ -63,12 +63,12 @@ RaiseEvent eventname[( argumentlist )]
   
  Přidat `WithEvents` do části deklarace proměnných `Form1` třídy.  
   
- [!code-vb[VbVbalrEvents#14](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/raiseevent-statement_2.vb)]  
+ [!code-vb[VbVbalrEvents#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#14)]  
   
 ## <a name="example"></a>Příklad  
  Následující kód přidejte kód pro `Form1`. Nahraďte všechny duplicitní postupy, které mohou existovat, jako například `Form_Load`, nebo `Button_Click`.  
   
- [!code-vb[VbVbalrEvents#15](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/raiseevent-statement_3.vb)]  
+ [!code-vb[VbVbalrEvents#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#15)]  
   
  Stisknutím klávesy F5 spusťte v předchozím příkladu a klikněte na tlačítko s popiskem **Start**. Prvního textového pole spustí odpočet sekundy. Po uplynutí doby úplné (10 sekund), se zobrazí "Hotovo" prvního textového pole.  
   

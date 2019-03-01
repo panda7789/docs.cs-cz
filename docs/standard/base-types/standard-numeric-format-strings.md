@@ -18,12 +18,12 @@ helpviewer_keywords:
 - format specifiers, standard numeric format strings
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1074abf9784bc26086c85f78047baa98e9c6dee7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0a11a9d18999bc7741e12af16d43fba8c03318da
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54506716"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56979954"
 ---
 # <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 
@@ -62,7 +62,7 @@ ms.locfileid: "54506716"
 |"G" nebo "g"|Obecné|Výsledek: Další compact s pevnou desetinnou čárkou nebo vědecký zápis.<br /><br /> Podporuje: Všechny číselné typy.<br /><br /> Specifikátor přesnosti: Počet platných číslic.<br /><br /> Výchozí specifikátor přesnosti: Závisí na číselném typu.<br /><br /> Další informace: [Specifikátor obecného ("G") formátu](#GFormatString).|-123.456 ("G", en US) ->-123.456<br /><br /> -123.456 ("G", sv-SE) ->-123,456<br /><br /> 123.4546 ("G4" en US) -> 123.5<br /><br /> 123.4546 ("G4", sv-SE) -> 123,5<br /><br /> -1.234567890e – 25 ("G", en US) -> - 1.23456789E – 25<br /><br /> -1.234567890e – 25 ("G", sv-SE) -> -1, 23456789E 25|  
 |"N" nebo "n"|Číslo|Výsledek: Integrální a desítkové číslice, oddělovače skupin a oddělovač desetinných míst s volitelným záporným znaménkem.<br /><br /> Podporuje: Všechny číselné typy.<br /><br /> Specifikátor přesnosti: Požadovaný počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: Určené <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [Specifikátor formátu ("N") číselné](#NFormatString).|1234.567 ("N" en US) -> 1,234.57<br /><br /> 1234.567 ("N", ru-RU) -> 1 234,57<br /><br /> 1234 ("N1" en US) -> 1,234.0<br /><br /> 1234 ("N1", ru-RU) -> 1 234,0<br /><br /> -1234.56 ("N3" en US) ->-1,234.560<br /><br /> -1234.56 ("N3", ru-RU) -> 234,560-1|  
 |"P" nebo "p"|Procento|Výsledek: Číslo vynásobené číslem 100 a zobrazují se symbolem procenta.<br /><br /> Podporuje: Všechny číselné typy.<br /><br /> Specifikátor přesnosti: Požadovaný počet desetinných míst.<br /><br /> Výchozí specifikátor přesnosti: Určené <xref:System.Globalization.NumberFormatInfo.PercentDecimalDigits%2A?displayProperty=nameWithType>.<br /><br /> Další informace: [Specifikátor formátu procent ("P")](#PFormatString).|1 ("P" en US) -> % 100,00<br /><br /> 1 ("P", fr-FR) -> 100,00 %<br /><br /> -0.39678 ("P1", en US) ->-39.7 %<br /><br /> -0.39678 ("P1", fr-FR) -> - 39,7 %|  
-|"R" nebo "r"|Zpáteční převod|Výsledek: Řetězec, který můžete zpátečního převodu na stejné číslo.<br /><br /> Podporuje: <xref:System.Single>, <xref:System.Double>, a <xref:System.Numerics.BigInteger>.<br /><br /> Poznámka: Doporučuje <xref:System.Numerics.BigInteger> pouze typu. Pro <xref:System.Double> typy, použijte "G17"; pro <xref:System.Single> typy, použijte "G9". </br> Specifikátor přesnosti: Ignorovat.<br /><br /> Další informace: [Specifikátor formátu Round-trip ("R")](#RFormatString).|123456789.12345678 ("R") -&GT; 123456789.12345678<br /><br /> -1234567890.12345678 ("R") -&GT;-1234567890.1234567|  
+|"R" nebo "r"|Zpáteční převod|Výsledek: Řetězec, který můžete zpátečního převodu na stejné číslo.<br /><br /> Podporuje: <xref:System.Single>, <xref:System.Double>, a <xref:System.Numerics.BigInteger>.<br /><br /> Poznámka: Doporučuje <xref:System.Numerics.BigInteger> pouze typu. Pro <xref:System.Double> typy, použijte "G17"; pro <xref:System.Single> typy, použijte "G9". <br> Specifikátor přesnosti: Ignorovat.<br /><br /> Další informace: [Specifikátor formátu Round-trip ("R")](#RFormatString).|123456789.12345678 ("R") -&GT; 123456789.12345678<br /><br /> -1234567890.12345678 ("R") -&GT;-1234567890.1234567|  
 |"X" nebo "x"|Šestnáctková hodnota|Výsledek: Je možné šestnáctkový řetězec.<br /><br /> Podporuje: Pouze celočíselné typy.<br /><br /> Specifikátor přesnosti: Počet číslic ve výsledném řetězci.<br /><br /> Další informace: [Šestnáctková ("X") specifikátor formátu](#XFormatString).|255 ("X") -> FF<br /><br /> -1 ("x") -> ff<br /><br /> 255 ("x4") -> 00ff<br /><br /> -1 ("X4") -> 00FF|  
 |Jakýkoli jiný samostatný znak|Neznámý specifikátor|Výsledek: Vyvolá výjimku <xref:System.FormatException> v době běhu.||  
   

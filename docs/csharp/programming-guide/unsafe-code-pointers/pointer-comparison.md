@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - pointers [C#], comparison
 ms.assetid: fcafd514-7405-4deb-8490-cc58efda5495
-ms.openlocfilehash: a2cbbabdad1d79c82bb5b3ec02a391727e552c98
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5185bd5e1686858452efcc7c89e2c1977e094386
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718634"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56969203"
 ---
 # <a name="pointer-comparison-c-programming-guide"></a>Porovnání ukazatelů (Průvodce programováním v C#)
 Můžete použít následující operátory porovnání ukazatelů libovolného typu:  
@@ -20,9 +20,9 @@ Můžete použít následující operátory porovnání ukazatelů libovolného 
  Porovnání operátory porovnávají adresy dva operandy, jako by šlo celých čísel bez znaménka.  
   
 ## <a name="example"></a>Příklad  
- [!code-csharp[csProgGuidePointers#16](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-comparison_1.cs)]  
+ [!code-csharp[csProgGuidePointers#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuidePointers/CS/Pointers2.cs#16)]  
   
- [!code-csharp[csProgGuidePointers#17](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/pointer-comparison_2.cs)]  
+ [!code-csharp[csProgGuidePointers#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuidePointers/CS/Pointers.cs#17)]  
   
 ## <a name="sample-output"></a>Vzorový výstup  
  `True`  

@@ -1,17 +1,11 @@
 ---
-title: Rozhraní - C# Průvodce programováním
+title: 'Rozhraní - C# Průvodce programováním'
 ms.custom: seodec18
 ms.date: 08/21/2018
 helpviewer_keywords:
-- interfaces [C#]
-- C# language, interfaces
+  - 'interfaces [C#]'
+  - 'C# language, interfaces'
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: 26748902be1c67ed8032fca63ff39f3626a5d673
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681811"
 ---
 # <a name="interfaces-c-programming-guide"></a>Rozhraní (Průvodce programováním v C#)
 
@@ -21,7 +15,7 @@ Pomocí rozhraní mohou například zahrnovat chování z několika zdrojů ve t
   
 Definujte rozhraní pomocí [rozhraní](../../language-reference/keywords/interface.md) – klíčové slovo. jak ukazuje následující příklad.  
   
-[!code-csharp[csProgGuideInheritance#47](../classes-and-structs/codesnippet/CSharp/interfaces_1.cs)]  
+ [!code-csharp[csProgGuideInheritance#47](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#47)]  
 
 Název struktury musí být platný C# [název identifikátoru](../inside-a-program/identifier-names.md). Podle úmluvy názvy rozhraní, které začínají na velké `I`.
 

@@ -2,12 +2,12 @@
 title: Výrazy dotazu
 description: Další informace o podpoře výrazu dotazu LINQ v JAZYKU F# programovací jazyk.
 ms.date: 05/16/2016
-ms.openlocfilehash: e4a36305b607f573c29744f50a841be078c8061f
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: e3ad2d4ebf09fff17aba80fcb3fc9853ec06af47
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611370"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56977970"
 ---
 # <a name="query-expressions"></a>Výrazy dotazu
 
@@ -511,7 +511,7 @@ V následující tabulce jsou uvedeny některé běžné dotazy Transact-SQL a j
     <th>F#Dotazování výrazu (rozlišuje velikost písmen)</th>
   </tr>
 <tr><td>
-Vyberte všechna pole z tabulky.</br>
+Vyberte všechna pole z tabulky.<br>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 </code></pre>
@@ -2431,5 +2431,5 @@ end
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)
-- [LINQ.QueryBuilder – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
+- [Linq.QueryBuilder Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
 - [Výpočetní výrazy](Computation-Expressions.md)

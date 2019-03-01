@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: 5346e5f3e780961e8353c9dec0860bebd4fc6657
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 10e2a05e8fa33ecbf2aec2432c0cf51204fc35c1
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53148896"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56969359"
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchronní komunikace založená na zprávách
 
@@ -77,7 +77,7 @@ Atomicky aktualizace stavu v původní mikroslužeb při odolné publikování d
 
 - Pomocí [protokol transakcí dolování](https://www.scoop.it/t/sql-server-transaction-log-mining).
 
-- Použití úplného [modelu Event Sourcing](https://msdn.microsoft.com/library/dn589792.aspx) vzor.
+- Použití úplného [modelu Event Sourcing](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing) vzor.
 
 - Použití [pošta k odeslání vzoru](http://gistlabs.com/2014/05/the-outbox/): tabulku transakční databáze jako používá fronta zpráv, které se bude základ pro komponentu Tvůrce událostí, která by vytvořit událost a publikujete ji.
 

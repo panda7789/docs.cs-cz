@@ -1,5 +1,5 @@
 ---
-title: ICorDebugAppDomain Interface1
+title: ICorDebugAppDomain – rozhraní
 ms.date: 03/30/2017
 api_name:
 - ICorDebugAppDomain
@@ -16,14 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9588ac26c698a8369f1ae4be89af7440a2dd1de4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: db2052bafb259f07370f007f699f6858c532b11d
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54546303"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56973753"
 ---
-# <a name="icordebugappdomain-interface1"></a>ICorDebugAppDomain Interface1
+# <a name="icordebugappdomain-interface"></a>ICorDebugAppDomain – rozhraní
+
 Poskytuje metody pro ladění domén aplikace. Toto rozhraní je podtřídou třídy icordebugcontroller –.  
   
 ## <a name="methods"></a>Metody  

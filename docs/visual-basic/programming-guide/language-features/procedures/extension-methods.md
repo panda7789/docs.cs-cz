@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extending data types [Visual Basic]
 - extension methods [Visual Basic]
 ms.assetid: b8020aae-374d-46a9-bcb7-8cc2390b93b6
-ms.openlocfilehash: c34108b9eb53da77a48afb5d270dce9a32289c99
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a0c1721027307243fbad587afe996cc5f07a6928
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731111"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970542"
 ---
 # <a name="extension-methods-visual-basic"></a>Metody rozšíření (Visual Basic)
 Rozšiřující metody umožňují vývojářům přidat vlastní funkce pro datové typy, které jsou již definovány, bez vytváření nového odvozeného typu. Rozšiřující metody umožňují napsat metodu, kterou lze volat jako by šlo metodu instance existujícího typu.  
@@ -27,17 +27,17 @@ Rozšiřující metody umožňují vývojářům přidat vlastní funkce pro dat
 ### <a name="description"></a>Popis  
  Následující příklad definuje `Print` rozšíření <xref:System.String> datového typu. Metoda používá `Console.WriteLine` pro zobrazení řetězce. Parametr `Print` metody `aString`, stanoví, že metody rozšíří <xref:System.String> třídy.  
   
- [!code-vb[VbVbalrExtensionMethods#1](./codesnippet/VisualBasic/extension-methods_1.vb)]  
+ [!code-vb[VbVbalrExtensionMethods#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/StringExtensions.vb#1)]  
   
  Všimněte si, že definice metody rozšíření je označena atributem rozšíření `<Extension()>`. Označení modulu, ve kterém je definována metoda, je volitelný, ale každá metoda rozšíření musí být označeny. <xref:System.Runtime.CompilerServices> musí být importovány pro přístup k atributu rozšíření.  
   
  Metody rozšíření lze deklarovat jen v modulech. Modul, ve kterém je definována rozšiřující metoda obvykle není stejný modul jako ten, ve kterém je volána. Místo toho se importuje modul, který obsahuje metodu rozšíření, pokud musí se jednat o, pro přivedení do rozsahu. Jakmile bude modul obsahující `Print` je v oboru, lze volat metodu, jako by šlo o běžnou metodu instance, která nepřijímá žádné argumenty, jako například `ToUpper`:  
   
- [!code-vb[VbVbalrExtensionMethods#2](./codesnippet/VisualBasic/extension-methods_2.vb)]  
+ [!code-vb[VbVbalrExtensionMethods#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class1.vb#2)]  
   
  Následující příklad `PrintAndPunctuate`, je také rozšíření <xref:System.String>, tentokrát definováno se dvěma parametry. První parametr `aString`, stanoví, že metoda rozšíření rozšiřuje <xref:System.String>. Druhý parametr `punc`, je určen jako řetězec interpunkčního, které je předáno jako argument při volání metody. Metoda zobrazí řetězec následovaný interpunkčními znaménky.  
   
- [!code-vb[VbVbalrExtensionMethods#3](./codesnippet/VisualBasic/extension-methods_3.vb)]  
+ [!code-vb[VbVbalrExtensionMethods#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class2.vb#3)]  
   
  Je volána metoda odesláním v argumentu řetězce pro `punc`: `example.PrintAndPunctuate(".")`  
   
@@ -111,7 +111,7 @@ End Module
   
  Rozšiřující metody nejsou považovány za v pozdní vazbě. V následujícím příkladu příkaz `anObject.PrintMe()` vyvolá <xref:System.MissingMemberException> výjimku, kterou byste viděli stejnou výjimku druhý `PrintMe` definici metody rozšíření se odstranily.  
   
- [!code-vb[VbVbalrExtensionMethods#9](./codesnippet/VisualBasic/extension-methods_4.vb)]  
+ [!code-vb[VbVbalrExtensionMethods#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class6.vb#9)]  
   
 ## <a name="best-practices"></a>Doporučené postupy  
  Rozšiřující metody poskytují pohodlný a účinný způsob, jak rozšířit existující typ. Však úspěšně používat, existují některé body ke zvážení. Tyto úvahy platí hlavně pro autory knihoven tříd, ale mohou ovlivnit jakékoli aplikace, které používají rozšiřující metody.  
@@ -131,23 +131,23 @@ End Module
 ## <a name="extension-methods-instance-methods-and-properties"></a>Rozšiřující metody, metody Instance a vlastnosti  
  Pokud metoda příslušné instance má podpis, který je kompatibilní s argumenty volání příkazu, metoda instance bude zvolena v preferenci jakoukoli metodou rozšíření. Instanční metoda má přednost, i když rozšiřující metoda představuje lepší shodu. V následujícím příkladu `ExampleClass` obsahuje metodu instance pojmenovanou `ExampleMethod` , který má jeden parametr typu `Integer`. Metoda rozšíření `ExampleMethod` rozšiřuje `ExampleClass`, a má jeden parametr typu `Long`.  
   
- [!code-vb[VbVbalrExtensionMethods#4](./codesnippet/VisualBasic/extension-methods_5.vb)]  
+ [!code-vb[VbVbalrExtensionMethods#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class4.vb#4)]  
   
  První volání `ExampleMethod` v následujícím kódu volá metodu rozšíření, protože `arg1` je `Long` a je kompatibilní jenom s `Long` parametr v metodě rozšíření. Druhé volání `ExampleMethod` má `Integer` argument, `arg2`, a volá metodu instance.  
   
- [!code-vb[VbVbalrExtensionMethods#5](./codesnippet/VisualBasic/extension-methods_6.vb)]  
+ [!code-vb[VbVbalrExtensionMethods#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class4.vb#5)]  
   
  Nyní obraťte datové typy parametrů ve dvou metod:  
   
- [!code-vb[VbVbalrExtensionMethods#6](./codesnippet/VisualBasic/extension-methods_7.vb)]  
+ [!code-vb[VbVbalrExtensionMethods#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class5.vb#6)]  
   
  Tentokrát kód v `Main` volá metodu instance obou časů. Důvodem je, že oba `arg1` a `arg2` mít rozšiřitelný převod `Long`, a instanční metoda má přednost před metodu rozšíření v obou případech.  
   
- [!code-vb[VbVbalrExtensionMethods#7](./codesnippet/VisualBasic/extension-methods_8.vb)]  
+ [!code-vb[VbVbalrExtensionMethods#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class5.vb#7)]  
   
  Proto rozšiřující metoda nemůže nahradit stávající metodu instance. Ale když rozšiřující metoda má stejný název jako metoda instance, ale podpisy nejsou v rozporu, obě metody jsou přístupné. Například pokud třída `ExampleClass` obsahuje metodu s názvem `ExampleMethod` , která nebere žádné argumenty, rozšiřující metody se stejným názvem, ale různými podpisy, jsou povoleny, jak je znázorněno v následujícím kódu.  
   
- [!code-vb[VbVbalrExtensionMethods#8](./codesnippet/VisualBasic/extension-methods_9.vb)]  
+ [!code-vb[VbVbalrExtensionMethods#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Module3.vb#8)]  
   
  Výstup tohoto kódu vypadá takto:  
   

@@ -1,5 +1,5 @@
 ---
-title: ICorDebugBreakpoint – rozhraní 1
+title: ICorDebugBreakpoint – rozhraní
 ms.date: 03/30/2017
 api_name:
 - ICorDebugBreakpoint
@@ -16,14 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a222f578daed0ab81e2136e00d6f9b032acd95fc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a7e454c15ddfa977a6d06921a5d80a6c05dca92f
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54744931"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56973571"
 ---
-# <a name="icordebugbreakpoint-interface1"></a>ICorDebugBreakpoint – rozhraní 1
+# <a name="icordebugbreakpoint-interface"></a>ICorDebugBreakpoint – rozhraní
+
 Představuje zarážku ve funkci nebo bod sledování na hodnotě.  
   
 ## <a name="methods"></a>Metody  

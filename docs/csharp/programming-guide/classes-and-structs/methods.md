@@ -6,12 +6,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: fa863a5606c7526ae32bc28a0cfeaa91f8c7b539
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f6e85a4dfdf562c0a479b19224e11e919da8716d
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54712152"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56980357"
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
 Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že příkazů ke spuštění volání metody a zadáním argumentů požadovanou metodu. V jazyce C# se provádí každých provedené instrukce v rámci metody. Metoda Main je vstupním bodem pro každou aplikaci C# a je volána modulem common language runtime (CLR), když se program spustí.  
@@ -27,12 +27,12 @@ Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že p
   
  Parametry metody jsou uzavřeny v závorkách a odděleny čárkami. Prázdných kulatých závorek znamenat, že metoda nevyžaduje žádné parametry. Tato třída obsahuje čtyři metody:  
   
- [!code-csharp[csProgGuideObjects#40](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_1.cs)]  
+ [!code-csharp[csProgGuideObjects#40](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#40)]  
   
 ## <a name="method-access"></a>Přístup k metodě  
  Volání metody na objektu je například přístup k poli. Za název objektu přidejte tečku, názvu metody a závorky. Argumenty jsou uvedeny v závorkách a odděleny čárkami. Metody `Motorcycle` třídy proto lze volat jako v následujícím příkladu:  
   
- [!code-csharp[csProgGuideObjects#41](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_2.cs)]  
+ [!code-csharp[csProgGuideObjects#41](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#41)]  
   
 ## <a name="method-parameters-vs-arguments"></a>Parametry metody vs. Arguments  
  Definice metody určuje názvy a typy všech parametrů, které jsou požadovány. Při volání kód volá metody, poskytuje konkrétní hodnoty nazývaných argumenty pro každý parametr. Argumenty musí být kompatibilní s typem parametru, ale nebude muset být stejný jako parametr s názvem definovaný v metodě název argumentu (pokud existuje), použít ve volajícím kódu. Příklad:  
@@ -46,11 +46,11 @@ Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že p
   
  Vytvoříte pomocí typu odkazu `class` – klíčové slovo, jak ukazuje následující příklad.  
   
- [!code-csharp[csProgGuideObjects#42](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_4.cs)]  
+ [!code-csharp[csProgGuideObjects#42](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#42)]  
   
  Nyní pokud je objekt, který je založen na tomto typu metody, je předán odkaz na objekt. Následující příklad předá objekt typu `SampleRefType` metodě `ModifyObject`.  
   
- [!code-csharp[csProgGuideObjects#75](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_5.cs)]  
+ [!code-csharp[csProgGuideObjects#75](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#75)]  
   
  V příkladu se v podstatě totéž jako předchozí příklad, předá argumentu podle hodnoty metody. Ale protože odkazový typ se používá, výsledek se liší. Úpravy, které se provádí v `ModifyObject` k `value` pole parametru, `obj`, také změní `value` pole argumentu, `rt`v `TestRefType` metoda. `TestRefType` Metoda zobrazí 33 jako výstup.  
   
@@ -70,13 +70,13 @@ public ref double GetEstimatedDistance()
 
 `return` – Klíčové slovo také zastaví provádění metody. Pokud je návratový typ `void`, `return` příkaz bez hodnoty je stále užitečná pro zastavení provádění metody. Bez `return` – klíčové slovo, metoda se zastaví provádění dosáhne konce bloku kódu. Metody s jiný než void vrací typ jsou nutné k použití `return` – klíčové slovo vrátit hodnotu. Například tyto dvě metody použít `return` – klíčové slovo do vrací celá čísla:  
   
- [!code-csharp[csProgGuideObjects#44](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_6.cs)]  
+ [!code-csharp[csProgGuideObjects#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#44)]  
   
  Na používání hodnoty vrátil z metody, můžete použít volání metody volání metody samotný kdekoli, že by stačit hodnotu stejného typu. Můžete také přiřadit návratovou hodnotu proměnné. Například následující dva příklady provedení stejného cíle:  
   
- [!code-csharp[csProgGuideObjects#45](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_7.cs)]  
+ [!code-csharp[csProgGuideObjects#45](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#45)]  
   
- [!code-csharp[csProgGuideObjects#46](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_8.cs)]  
+ [!code-csharp[csProgGuideObjects#46](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#46)]  
   
  Použití místní proměnné, v tomto případě `result`pro ukládání hodnota je volitelná. To může pomoci čitelnost kódu nebo může být nezbytné, pokud je potřeba uložit původní hodnoty argumentu pro celý rozsah metody.  
 
@@ -124,7 +124,7 @@ public static void FillMatrix(int[,] matrix)
   
  `startButton_Click` Metoda je příklad asynchronní metody, která má typ vrácené hodnoty void. Protože `DoSomethingAsync` je metodou asynchronní úloha pro volání `DoSomethingAsync` musí ní použít operátor await, jak ukazuje následující příkaz: `await DoSomethingAsync();`. `startButton_Click` Metoda musí být definované s `async` modifikátor vzhledem k tomu, že tato metoda má `await` výrazu.  
   
- [!code-csharp[csAsyncMethod#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_9.cs)]  
+ [!code-csharp[csAsyncMethod#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csasyncmethod/cs/mainwindow.xaml.cs#2)]  
   
  Asynchronní metoda nemůže deklarovat všechny [ref](../../../csharp/language-reference/keywords/ref.md) nebo [si](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametry, ale může volat metody, které mají tyto parametry.  
   

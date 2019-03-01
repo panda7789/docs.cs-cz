@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - fields [C#]
 ms.assetid: 3cbb2f61-75f8-4cce-b4ef-f5d1b3de0db7
-ms.openlocfilehash: ac825940897df3a0f6105a6d9cca8e16cf69eb25
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3cc04d9a0504e7cd79703b97441caa5ac84eda94
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54655670"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56978108"
 ---
 # <a name="fields-c-programming-guide"></a>Pole (Průvodce programováním v C#)
 A *pole* je proměnná typu, který je deklarován přímo v [třídy](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md). Pole jsou *členy* z jeho nadřazeného typu.  
@@ -23,15 +23,15 @@ A *pole* je proměnná typu, který je deklarován přímo v [třídy](../../../
   
  Pole jsou deklarovány v bloku třídy tak, že zadáte úroveň přístupu pole, za nímž následuje typ pole, za nímž následuje název pole. Příklad:  
   
- [!code-csharp[csProgGuideObjects#61](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_1.cs)]  
+ [!code-csharp[csProgGuideObjects#61](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#61)]  
   
  Chcete-li přístup k poli v objektu, přidejte tečku za názvem objektu zadán spolu s názvem pole, stejně jako v `objectname.fieldname`. Příklad:  
   
- [!code-csharp[csProgGuideObjects#62](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_2.cs)]  
+ [!code-csharp[csProgGuideObjects#62](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#62)]  
   
  Pole může dostat počáteční hodnotu použitím operátoru přiřazení při deklaraci pole. Automaticky přiřadit `day` pole `"Monday"`, například by deklarovat `day` jako v následujícím příkladu:  
   
- [!code-csharp[csProgGuideObjects#63](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/fields_3.cs)]  
+ [!code-csharp[csProgGuideObjects#63](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#63)]  
   
  Pole jsou inicializována bezprostředně před volání konstruktoru pro instanci objektu. Pokud konstruktor přiřadí hodnotu pole, přepíše libovolný zadaný při deklaraci pole. Další informace najdete v tématu [pomocí konstruktorů](../../../csharp/programming-guide/classes-and-structs/using-constructors.md).  
   

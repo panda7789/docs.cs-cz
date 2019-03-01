@@ -5,12 +5,12 @@ helpviewer_keywords:
 - param XML tag
 - <param> XML tag
 ms.assetid: 4e32e86f-f6f3-4301-b7fc-2f321fb54368
-ms.openlocfilehash: 476b3f4f6b85908897e15f73bc23d2b060e337c3
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c556b68ea99650f96ec16c220d1e2367f3e5cfde
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55283644"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56966486"
 ---
 # <a name="param-visual-basic"></a>\<Param > (Visual Basic)
 Definuje parametr název a popis.  
@@ -42,7 +42,7 @@ Definuje parametr název a popis.
 ## <a name="example"></a>Příklad  
  V tomto příkladu `<param>` značka, které popisují `id` parametru.  
   
- [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/param_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

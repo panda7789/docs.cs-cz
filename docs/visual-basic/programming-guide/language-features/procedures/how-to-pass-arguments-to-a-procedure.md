@@ -11,12 +11,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], calling
 - argument passing [Visual Basic], procedures
 ms.assetid: 08723588-3890-4ddc-8249-79e049e0f241
-ms.openlocfilehash: 6d9daf47b8d9300e9de8add1423fa1824fc62d5d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0bc7c9d09922b7fbef534e6b58389ca343cc1e13
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54691226"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974390"
 ---
 # <a name="how-to-pass-arguments-to-a-procedure-visual-basic"></a>Postupy: Předání argumentů proceduře (Visual Basic)
 Při volání procedury, použijte název procedury se seznamem argumentů v závorkách. Zadat argument odpovídající každý povinný parametr postupu definuje, a volitelně můžete zadat argumenty, které mají `Optional` parametry. Pokud nezadáte `Optional` parametr ve volání musí obsahovat čárku k označení příslušné místo v seznamu argumentů, pokud zadáváte libovolné další argumenty.  
@@ -39,7 +39,7 @@ Při volání procedury, použijte název procedury se seznamem argumentů v zá
   
      Následující příklad volá jazyka Visual Basic <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> funkce.  
   
-     [!code-vb[VbVbcnProcedures#34](./codesnippet/VisualBasic/how-to-pass-arguments-to-a-procedure_1.vb)]  
+     [!code-vb[VbVbcnProcedures#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#34)]  
   
      V předchozím příkladu poskytuje požadované první argument, který je řetězec zprávy, který se má zobrazit. Vynechá argument pro volitelný druhý parametr, který určuje tlačítka, který se má zobrazit v okně se zprávou. Protože volání neposkytne hodnotu, `MsgBox` používá výchozí hodnotu `MsgBoxStyle.OKOnly`, zobrazuje pouze **OK** tlačítko.  
   

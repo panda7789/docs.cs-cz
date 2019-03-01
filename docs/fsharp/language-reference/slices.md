@@ -2,12 +2,12 @@
 title: Kolekce obsahuje nějaké řezy (F#)
 description: Další informace o tom, jak používat kolekce obsahuje nějaké řezy existujících F# datových typů a tom, jak definovat vlastní kolekce obsahuje nějaké řezy pro jiné datové typy.
 ms.date: 01/22/2019
-ms.openlocfilehash: c204c6cbb195b33998b92dd940313a132ecc321d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 60b57d4eea40bb26dc43d8255dd933b63ac6303c
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54684178"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970103"
 ---
 # <a name="slices"></a>Kolekce obsahuje nějaké řezy
 
@@ -95,7 +95,7 @@ F# Základní knihovna nedefinuje `GetSlice`pro 3D pole. Pokud budete chtít roz
 
 F# Základní knihovna definuje řezy pro omezenou sadu typů. Pokud chcete definovat řezy pro další typy dat, lze provést v definici typu, samotné nebo v rozšíření typu.
 
-Například tady je způsob můžete třeba definovat ve výsečích <xref:System.ArraySegment`1> třídu, která umožňuje pro manipulaci s daty vhodné:
+Například tady je způsob můžete třeba definovat ve výsečích <xref:System.ArraySegment%601> třídu, která umožňuje pro manipulaci s daty vhodné:
 
 ```fsharp
 open System
@@ -112,7 +112,7 @@ let slice = arr.[2..5] //[ 3; 4; 5]
 
 ### <a name="use-inlining-to-avoid-boxing-if-it-is-necessary"></a>Pomocí vkládání, pokud je nutné, aby zabalení
 
-Pokud definujete řezy pro typ, který je ve skutečnosti struktura, doporučujeme vám `inline` `GetSlice` člen. F# Kompilátor optimalizuje okamžitě volitelné argumenty, jak se vyhnout libovolná přidělení haldy jako výsledek dělení. To je obzvláště důležité pro dělení konstrukce, jako <xref:System.Span`1> , který nemůže být být přidělený k haldě.
+Pokud definujete řezy pro typ, který je ve skutečnosti struktura, doporučujeme vám `inline` `GetSlice` člen. F# Kompilátor optimalizuje okamžitě volitelné argumenty, jak se vyhnout libovolná přidělení haldy jako výsledek dělení. To je obzvláště důležité pro dělení konstrukce, jako <xref:System.Span%601> , který se nedá přidělit v haldě.
 
 ```fsharp
 open System

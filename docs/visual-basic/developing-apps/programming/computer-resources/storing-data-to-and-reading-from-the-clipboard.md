@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data [Visual Basic], Clipboard
 - reading data, from Clipboard
 ms.assetid: f690119a-4378-4f7d-b20e-d9377ef49496
-ms.openlocfilehash: c8f15ac33ae92a13159c2a95435ba3d2391ace8d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cc39c501520f8d25d01917114553647621438750
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54739203"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56977705"
 ---
 # <a name="storing-data-to-and-reading-from-the-clipboard-visual-basic"></a>Ukládání dat do schránky a čtení ze schránky (Visual Basic)
 Schránky slouží k ukládání dat, jako je například textu a obrázků. Protože schránky sdílí všech aktivních procesů, lze použít k přenosu dat mezi nimi. `My.Computer.Clipboard` Objekt umožňuje snadno přistupovat do schránky a číst z a do ní zapisovat.  
@@ -22,13 +22,13 @@ Schránky slouží k ukládání dat, jako je například textu a obrázků. Pro
 ## <a name="reading-from-the-clipboard"></a>Čtení ze schránky  
  Použití <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText%2A> metodu za účelem čtení textu do schránky. Následující kód načte text a zobrazí ho v okně se zprávou. Musí existovat text ze schránky. například správně spustit.  
   
- [!code-vb[VbVbcnMyClipboard#4](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_1.vb)]  
+ [!code-vb[VbVbcnMyClipboard#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#4)]  
   
  Tento příklad kódu je také dostupný jako fragment kódu technologie IntelliSense. V dialogu pro výběr fragmentu kódu je umístěn v **formulářových aplikací Windows > schránky**. Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
  Použití <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetImage%2A> metodu pro načtení obrázku ze schránky. Tento příklad kontroluje, jestli je obrázek do schránky před načtením a ji přiřadíte `PictureBox1`.  
   
- [!code-vb[VbResourceTasks#16](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_2.vb)]  
+ [!code-vb[VbResourceTasks#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#16)]  
   
  Tento příklad kódu je také dostupný jako fragment kódu technologie IntelliSense. V dialogu pro výběr fragmentu kódu je umístěn v **formulářových aplikací Windows > schránky**. Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
@@ -39,31 +39,31 @@ Schránky slouží k ukládání dat, jako je například textu a obrázků. Pro
   
  Použití `ContainsImage` funkce určuje, jestli data obsažená ve schránce je obrázek. Následující kód zkontroluje, jestli se data bitovou kopii a odpovídajícím způsobem sestavy.  
   
- [!code-vb[VbResourceTasks#13](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_3.vb)]  
+ [!code-vb[VbResourceTasks#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#13)]  
   
 ## <a name="clearing-the-clipboard"></a>Vymazat schránku  
  <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.Clear%2A> Metoda vymaže do schránky. Protože schránky je sdílet s jinými procesy, zrušením zaškrtnutí může mít vliv na těchto procesů.  
   
  Následující kód ukazuje způsob použití `Clear` metody.  
   
- [!code-vb[VbVbcnMyClipboard#3](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_4.vb)]  
+ [!code-vb[VbVbcnMyClipboard#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#3)]  
   
 ## <a name="writing-to-the-clipboard"></a>Zápis do schránky.  
  Použití <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText%2A> způsob zápisu textu do schránky. Následující kód zapíše řetězce "Toto je testovací řetězec" do schránky.  
   
- [!code-vb[VbVbcnMyClipboard#1](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_5.vb)]  
+ [!code-vb[VbVbcnMyClipboard#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#1)]  
   
  `SetText` Metoda přijímá parametr formátu, který obsahuje typ <xref:System.Windows.Forms.TextDataFormat>. Následující kód zapíše řetězce "Toto je testovací řetězec" do schránky jako text ve formátu RTF.  
   
- [!code-vb[VbVbcnMyClipboard#2](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_6.vb)]  
+ [!code-vb[VbVbcnMyClipboard#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#2)]  
   
  Použití <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData%2A> metody zapsat data do schránky. Tento příklad zapíše `DataObject` `dataChunk` do schránky ve vlastním formátu `specialFormat`.  
   
- [!code-vb[VbVbcnMyClipboard#7](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_7.vb)]  
+ [!code-vb[VbVbcnMyClipboard#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#7)]  
   
  Použití <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetAudio%2A> metody zapsat zvuková data do schránky. Tento příklad vytvoří pole bajtů `musicReader`, načte soubor `cool.wav` do ní a zapíše jej do schránky.  
   
- [!code-vb[VbResourceTasks#5](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/storing-data-to-and-reading-from-the-clipboard_8.vb)]  
+ [!code-vb[VbResourceTasks#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#5)]  
   
 > [!IMPORTANT]
 >  Protože schránky je přístupný ostatním uživatelům, nepoužívejte ho pro ukládání citlivých informací, jako jsou hesla nebo důvěrná data.  

@@ -1,15 +1,9 @@
 ---
-title: Interaktivní referenční dokumentace F# (fsi.exe)
-description: Zjistěte, jak F# Interactive (fsi.exe) se používá ke spouštění F# kódu interaktivní konzoly nebo k provádění F# skripty.
+title: 'Interaktivní referenční dokumentace F# (fsi.exe)'
+description: 'Zjistěte, jak F# Interactive (fsi.exe) se používá ke spouštění F# kódu interaktivní konzoly nebo k provádění F# skripty.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 0fccc818f0a4b3d6d09a69e91da1f5c337c53a44
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611058"
 ---
-# <a name="interactive-programming-with-f"></a>Interaktivní programování s jazykem F# #
+# <a name="interactive-programming-with-f"></a>Interaktivní programování s F\#
 
 > [!NOTE]
 > Tento článek popisuje aktuálně prostředí jenom pro Windows.  Bude přepsán.
@@ -44,7 +38,7 @@ Pokud máte-li otevřen projekt, který odkazuje na některé knihovny, můžete
 Argumenty příkazového řádku (možnosti) jazyka F# Interactive lze řídit úpravou nastavení. Na **nástroje** příkaz **možnosti...** a potom rozbalte  **F# nástroje**. Jsou dvě nastavení, které můžete změnit F# interaktivní možnosti a **64-bit F# interaktivní** nastavení, která je relevantní pouze v případě, že používáte F# Interactive v 64bitovém počítači. Toto nastavení určuje, zda chcete spustit vyhrazenou 64bitovou verzi programu fsi.exe nebo fsianycpu.exe, který pomocí architektury počítače určí, zda se má spustit jako 32bitový nebo 64bitový proces.
 
 
-## <a name="scripting-with-f"></a>Skriptování pomocí jazyka F# #
+## <a name="scripting-with-f"></a>Skriptování s F\#
 Skripty používají příponu souboru **.fsx** nebo **.fsscript**. Namísto zkompilování zdrojového kódu a následného spuštění zkompilovaného sestavení, lze pouze spustit **fsi.exe** a zadejte název souboru skriptu F# zdrojový kód, a F# interactive tento kód načte a spustí v reálném čas.
 
 

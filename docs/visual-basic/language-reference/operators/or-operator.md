@@ -15,12 +15,12 @@ helpviewer_keywords:
 - logical disjunction
 - disjunction operator [Visual Basic]
 ms.assetid: 41ed6905-bf3d-468a-9e3b-03c10d461891
-ms.openlocfilehash: c2af3864ef19dbf835397968af0913cd62994305
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cbfc94ad70695e9a785375f2460f9f9d8f3a20c5
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54494428"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56977536"
 ---
 # <a name="or-operator-visual-basic"></a>Or – operátor (Visual Basic)
 Provede logickou disjunkci dvou `Boolean` výrazů nebo bitovou disjunkci dvou numerických výrazů.  
@@ -77,14 +77,14 @@ result = expression1 Or expression2
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Or` operátor inkluzivní logickou disjunkci dvou výrazů. Výsledkem je `Boolean` hodnotu, která udává, zda je jedna ze dvou výrazů `True`.  
   
- [!code-vb[VbVbalrOperators#35](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/or-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#35)]  
   
  Předchozí příklad vytváří výsledky `True`, `True`, a `False`v uvedeném pořadí.  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Or` operátor inkluzivní logickou disjunkci na jednotlivé bity dvou numerických výrazů. Pokud některý z odpovídající bitů v operandů je nastavená na 1, je nastaven bit vzoru výsledek.  
   
- [!code-vb[VbVbalrOperators#36](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/or-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#36](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#36)]  
   
  V předchozím příkladu vytvoří výsledky 10, 14 a 14, v uvedeném pořadí.  
   

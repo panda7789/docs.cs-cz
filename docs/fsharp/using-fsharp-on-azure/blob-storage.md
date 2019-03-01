@@ -3,14 +3,14 @@ title: Začínáme s využitím úložiště objektů Blob v AzureF#
 description: Store nestrukturovaných dat v cloudu s využitím úložiště objektů Blob v Azure.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 31c3017d6f43afb6b534d21d18d618b1c2903bf1
-ms.sourcegitcommit: 2b986afe4ce9e13bbeec929c9737757eb61de60e
+ms.openlocfilehash: e38f58fefa63f922bcb1a78254249a3626bfac43
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56664988"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56981904"
 ---
-# <a name="get-started-with-azure-blob-storage-using-f"></a>Začínáme s využitím úložiště objektů Blob v AzureF# #
+# <a name="get-started-with-azure-blob-storage-using-f"></a>Začínáme s Azure Blob storage s využitím F\#
 
 Azure Blob storage je služba, která ukládá Nestrukturovaná data v cloudu jako objektů BLOB. BLOB storage dokáže ukládat jakýkoli druh textu nebo binárních dat, jako je například dokument, soubor médií nebo instalační program aplikace. Úložiště objektů blob se taky označuje jako úložiště objektů.
 

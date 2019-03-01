@@ -20,12 +20,12 @@ helpviewer_keywords:
 - abstract classes [Visual Basic], inheritance
 - overriding, Overrides keyword
 ms.assetid: dfc8deba-f5b3-4d1d-a937-7cb826446fc5
-ms.openlocfilehash: ae6b53db3a2cdcefa2b05d68ed953c5e17b279dc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3d772fb81eb13b9454f44ff8ae4256bdb4144caa
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54551784"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970295"
 ---
 # <a name="inheritance-basics-visual-basic"></a>Základní informace o dědičnosti (Visual Basic)
 `Inherits` Prohlášení se používá k deklaraci nové třídy, nazvané *odvozené třídy*založená na stávající třídě, označované jako *základní třída*. Odvozené třídy dědit a můžete rozšířit, vlastnosti, metody, události, polí a konstanty definované v základní třídě. Následující část popisuje některé z pravidel pro dědičnost a modifikátory, které vám umožní změnit způsob, jak třídy dědit nebo jsou zděděny:  
@@ -62,14 +62,14 @@ ms.locfileid: "54551784"
   
  Následující příklad definuje základní třídu, `Payroll,` a odvozené třídy `BonusPayroll`, která přepíše metodu zděděné `PayEmployee`. Proceduře `RunPayroll`, vytvoří a pak předá `Payroll` objektu a `BonusPayroll` objekt funkce, `Pay`, který se spustí `PayEmployee` metoda oba objekty.  
   
- [!code-vb[VbVbalrOOP#28](../../../../visual-basic/misc/codesnippet/VisualBasic/inheritance-basics_1.vb)]  
+ [!code-vb[VbVbalrOOP#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#28)]  
   
 ## <a name="the-mybase-keyword"></a>MyBase – klíčové slovo  
  `MyBase` – Klíčové slovo se chová jako proměnné objektu, který odkazuje na základní třídu aktuální instance třídy. `MyBase` často se používá pro přístup ke členům základní třídy, přepsat nebo Stínovaný v odvozené třídě. Zejména `MyBase.New` se používá explicitně volat konstruktor základní třídy v konstruktoru odvozené třídy.  
   
  Předpokládejme například, že při návrhu odvozenou třídu, která přepíše metodu zděděné ze základní třídy. Přepsané metody lze volat metodu v základní třídě a vrácenou hodnotu změnit, jak je znázorněno v následujícím fragmentu kódu:  
   
- [!code-vb[VbVbalrOOP#109](../../../../visual-basic/misc/codesnippet/VisualBasic/inheritance-basics_2.vb)]  
+ [!code-vb[VbVbalrOOP#109](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#109)]  
   
  Následující seznam popisuje omezení pro používání `MyBase`:  
   

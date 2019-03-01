@@ -8,12 +8,12 @@ helpviewer_keywords:
 - element literal [Visual Basic]
 - XML literals [Visual Basic], element
 ms.assetid: 95039642-7893-48b7-b23f-45a6c55d8f67
-ms.openlocfilehash: 54ad162a1a720a1645a3b413e6518d2ccfd37bbe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 71e6cf3e6169434ea0a28f8691cf82f6c8e8a030
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595913"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56979919"
 ---
 # <a name="xml-element-literal-visual-basic"></a>Literál XML elementu (Visual Basic)
 
@@ -119,7 +119,7 @@ Literál, který představuje <xref:System.Xml.Linq.XElement> objektu.
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak vytvořit jednoduchý prvek XML, který má dvě vnořené prázdné prvky.  
   
- [!code-vb[VbXMLSamples#20](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-element-literal_1.vb)]  
+ [!code-vb[VbXMLSamples#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples9.vb#20)]  
   
  V příkladu se zobrazí následující text. Všimněte si, že je literál zachovává strukturu prázdné prvky.  
   
@@ -133,7 +133,7 @@ Literál, který představuje <xref:System.Xml.Linq.XElement> objektu.
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak používat vložené výrazy pro název elementu a vytvořit atributy.  
   
- [!code-vb[VbXMLSamples#21](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-element-literal_2.vb)]  
+ [!code-vb[VbXMLSamples#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples9.vb#21)]  
   
  Tento kód zobrazí následující text:  
   
@@ -144,7 +144,7 @@ Literál, který představuje <xref:System.Xml.Linq.XElement> objektu.
 ## <a name="example"></a>Příklad  
  Následující příklad deklaruje `ns` jako předponu oboru názvů XML. Potom k vytvoření literálu XML používá předponu oboru názvů a zobrazí poslední formulář elementu.  
   
- [!code-vb[VbXMLSamples#22](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-element-literal_3.vb)]  
+ [!code-vb[VbXMLSamples#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples10.vb#22)]  
   
  Tento kód zobrazí následující text:  
   

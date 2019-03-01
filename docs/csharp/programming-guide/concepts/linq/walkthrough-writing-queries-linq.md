@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Zápis dotazů v jazyce C# (LINQ)'
+title: 'Návod: Zápis dotazů v jazyce C# (LINQ)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], walkthroughs
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - queries [LINQ in C#], writing
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
-ms.openlocfilehash: 085a5f27225589989cf5b9d4b5871226624843ab
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d17d1d456752095dcc895eba291cd53745f9467d
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54554973"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56968150"
 ---
-# <a name="walkthrough-writing-queries-in-c-linq"></a>Průvodce: Zápis dotazů v jazyce C# (LINQ)
+# <a name="walkthrough-writing-queries-in-c-linq"></a>Návod: Zápis dotazů v jazyce C# (LINQ)
 Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – výrazy dotazů.  
   
 ## <a name="create-a-c-project"></a>Vytvoření projektu v jazyce C#  
@@ -67,7 +67,7 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
      Všimněte si také, že v dotazu proměnná rozsahu `student`, slouží jako odkaz na každé `Student` ve zdroji, poskytují přístup ke členu pro každý objekt.  
   
- [!code-csharp[CsLINQGettingStarted#12](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_2.cs)]  
+ [!code-csharp[CsLINQGettingStarted#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#12)]  
   
 ## <a name="execute-the-query"></a>Provedení dotazu  
   
@@ -81,7 +81,7 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
 2.  Po přidání tohoto kódu sestavte a spusťte aplikaci a ověřte výsledky v **konzoly** okna.  
   
- [!code-csharp[CsLINQGettingStarted#13](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_3.cs)]  
+ [!code-csharp[CsLINQGettingStarted#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#13)]  
   
 #### <a name="to-add-another-filter-condition"></a>Přidání další podmínky filtru  
   
@@ -121,11 +121,11 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
 1.  Seskupení je výkonná funkce ve výrazech dotazů. Dotazy s klauzulí skupiny vytvoří posloupnost skupin a obsahuje samotnou skupinu `Key` a sekvenci, která se skládá ze všech členů této skupiny. Následující nový dotaz seskupí studenty s použitím první písmeno jeho příjmení jako klíč.  
   
-     [!code-csharp[CsLINQGettingStarted#14](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_4.cs)]  
+     [!code-csharp[CsLINQGettingStarted#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#14)]  
   
 2.  Všimněte si, že je typ dotazu se změnilo. Nyní generuje sekvenci skupiny, které mají `char` typ jako klíč a sekvencí `Student` objekty. Protože došlo ke změně typu dotazu, následující změny kódu `foreach` provádění smyčky také:  
   
-     [!code-csharp[CsLINQGettingStarted#15](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_5.cs)]  
+     [!code-csharp[CsLINQGettingStarted#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#15)]  
   
 3.  Spusťte aplikaci a zobrazit výsledky v **konzoly** okna.  
   
@@ -135,7 +135,7 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
 1.  Explicitně kódování `IEnumerables` z `IGroupings` může být zdlouhavé. Můžete napsat stejný dotaz a `foreach` smyčky mnohem snadněji pomocí `var`. `var` – Klíčové slovo nezmění typy objektů; právě instruuje kompilátor k odvození typů. Změna typu `studentQuery` a iterační proměnné `group` k `var` a spusťte dotaz znovu. Všimněte si, že v vnitřní `foreach` smyčky, iterační proměnná je stále zadán jako `Student`, a dotaz funguje stejně jako v minulosti. Změnit `s` iterační proměnné a `var` a spusťte dotaz znovu. Uvidíte, že dostanete přesně stejné výsledky.  
   
-     [!code-csharp[CsLINQGettingStarted#16](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_6.cs)]  
+     [!code-csharp[CsLINQGettingStarted#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#16)]  
   
      Další informace o [var](../../../../csharp/language-reference/keywords/var.md), naleznete v tématu [implicitně typované lokální proměnné](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   
@@ -143,7 +143,7 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
 1.  Když spustíte předchozí dotaz, zjistíte, že skupiny nejsou v abecedním pořadí. Chcete-li toto nastavení změnit, je nutné zadat `orderby` klauzule po `group` klauzuli. Ale pro použití `orderby` klauzule, musíte nejprve identifikátor, který slouží jako odkaz na skupinách vytvořených skriptem `group` klauzuli. Zadejte identifikátor pomocí `into` – klíčové slovo, následujícím způsobem:  
   
-     [!code-csharp[csLINQGettingStarted#17](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_7.cs)]  
+     [!code-csharp[csLINQGettingStarted#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#17)]  
   
      Při spuštění tohoto dotazu, zobrazí se, že tyto skupiny jsou nyní seřadit v abecedním pořadí.  
   
@@ -151,7 +151,7 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
 1.  Můžete použít `let` – klíčové slovo zavedení identifikátoru pro libovolný výsledek výrazu ve výrazu dotazu. Tento identifikátor může být pro přehlednost jako v následujícím příkladu, nebo ho můžete zvýšit výkon ukládáním výsledky výrazu tak, aby nemá vypočítávat více než jednou.  
   
-     [!code-csharp[csLINQGettingStarted#18](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_8.cs)]  
+     [!code-csharp[csLINQGettingStarted#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#18)]  
   
      Další informace najdete v tématu [let – klauzule](../../../../csharp/language-reference/keywords/let-clause.md).  
   
@@ -159,17 +159,17 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
 1.  Jak je popsáno v [syntaxi dotazů a syntaxe využívající metody v jazyce LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md), nějakých operací dotazů lze vyjádřit pouze pomocí syntaxe metody. Následující kód vypočítá celkové skóre pro každou `Student` ve zdrojové sekvence a poté zavolá `Average()` metodu na výsledky dotazu pro výpočet průměrné skóre třídy.
   
-     [!code-csharp[csLINQGettingStarted#19](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_9.cs)]  
+     [!code-csharp[csLINQGettingStarted#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#19)]  
   
 #### <a name="to-transform-or-project-in-the-select-clause"></a>Transformace nebo projekce v klauzuli select  
   
 1.  Je velmi běžné, že dotaz, který vytvoří posloupnost, jehož prvky se liší od elementy ve zdrojových posloupností. Odstranit nebo okomentovat předchozí dotaz a provádění smyčky a nahraďte ho následujícím kódem. Všimněte si, že dotaz vrací posloupnost řetězců (není `Students`), a tuto skutečnost se projeví v `foreach` smyčky.  
   
-     [!code-csharp[csLINQGettingStarted#20](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_10.cs)]  
+     [!code-csharp[csLINQGettingStarted#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#20)]  
   
 2.  Kód výše v tomto názorném postupu uvedeno, že třída průměrné skóre je přibližně 334. K vytvoření sekvence `Students` jehož celkovým skóre je větší než průměr třídy společně s jejich `Student ID`, můžete použít anonymní typ v `select` – příkaz:  
   
-     [!code-csharp[csLINQGettingStarted#21](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_11.cs)]  
+     [!code-csharp[csLINQGettingStarted#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#21)]  
   
 ## <a name="next-steps"></a>Další kroky  
  Jakmile se seznámíte s základní aspektů práce s dotazy v jazyce C#, jste připravení číst dokumentaci a ukázky pro konkrétní typ zprostředkovatele LINQ, které vás zajímají:  

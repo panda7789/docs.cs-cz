@@ -10,33 +10,33 @@ helpviewer_keywords:
 - type promotion
 - declared elements [Visual Basic], visibility
 ms.assetid: 035eeb15-e4c5-4288-ab3c-6bd5d22f7051
-ms.openlocfilehash: 4761a3ebc3e1271846c2415d8f629500a515ed2f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b00fdd563a6599b3acfaaafa229fdef9400e57b6
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54721945"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56969190"
 ---
 # <a name="type-promotion-visual-basic"></a>Propagace typu (Visual Basic)
 Při deklaraci programovací element v modulu jazyka Visual Basic podporuje jeho obor názvů obsahující modul. To se označuje jako *zadejte povýšení*.  
   
  Následující příklad ukazuje definici kostru modulu a dva členy tohoto modulu.  
   
- [!code-vb[VbVbalrDeclaredElements#1](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_1.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#1)]  
   
  V rámci `projModule`, programovací elementy deklarované na úrovni modulu jsou povýšeny do `projNamespace`. V předchozím příkladu `basicEnum` a `innerClass` jsou povýšeny, ale `numberSub` není, protože nemá nastavenou deklaraci na úrovni modulu.  
   
 ## <a name="effect-of-type-promotion"></a>Účinek propagace typu  
  Efekt propagace typu je, že řetězec kvalifikace nemusí obsahovat název modulu. Následující příklad provede dvě volání do procedury v předchozím příkladu.  
   
- [!code-vb[VbVbalrDeclaredElements#2](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_2.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#2)]  
   
  V předchozím příkladu používá první volání řetězce úplný kvalifikace. Ale to není nezbytné z důvodu propagace typu. Druhý také přístup k modulu členy volat bez zahrnutí `projModule` v řetězcích kvalifikace.  
   
 ## <a name="defeat-of-type-promotion"></a>Odpojovací propagace typu  
  Pokud obor názvů již obsahuje člena se stejným názvem jako členský modul, propagace typu není zrušena pro tohoto člena modulu. Následující příklad ukazuje definici kostru výčet a modul v rámci stejného oboru názvů.  
   
- [!code-vb[VbVbalrDeclaredElements#3](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_3.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#3)]  
   
  V předchozím příkladu, Visual Basic nelze zvýšit úroveň třídy `abc` k `thisNameSpace` protože výčet na úrovni oboru názvů se stejným názvem již existuje. Pro přístup k `abcSub`, je nutné použít úplnou kvalifikace řetězec `thisNamespace.thisModule.abc.abcSub`. Však třídy `xyz` stále povýšen, a také zpřístupnit `xyzSub` s kratší řetězec kvalifikace `thisNamespace.xyz.xyzSub`.  
   
@@ -45,7 +45,7 @@ Při deklaraci programovací element v modulu jazyka Visual Basic podporuje jeho
   
  **Důsledky.** Odpojovací propagace typu Částečná definice může způsobit neočekávané výsledky a dokonce i chyby kompilátoru. Následující příklad ukazuje kostru částečné definice třídy, z nichž jeden je uvnitř modulu.  
   
- [!code-vb[VbVbalrDeclaredElements#4](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_4.vb)]  
+ [!code-vb[VbVbalrDeclaredElements#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#4)]  
   
  V předchozím příkladu, vývojář může očekávat kompilátoru sloučit dva Částečná definice `sampleClass`. Však kompilátor nebere v úvahu propagační akce pro částečnou definici uvnitř `sampleModule`. V důsledku toho se pokusí zkompilovat dvě samostatné a odlišné třídy, oba s názvem `sampleClass` , ale s jinou kvalifikace cesty.  
   

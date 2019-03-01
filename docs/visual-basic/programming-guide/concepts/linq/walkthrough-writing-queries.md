@@ -7,14 +7,14 @@ helpviewer_keywords:
 - LINQ [Visual Basic], writing queries
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
-ms.openlocfilehash: c3639070ddbb3c0eb41707d5cc5fbc7a46555a65
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3c1087f1ea260b61a51126f42703a32075884e54
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54666576"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971283"
 ---
-# <a name="walkthrough-writing-queries-in-visual-basic"></a>Průvodce: Zápis dotazů v jazyce Visual Basic
+# <a name="walkthrough-writing-queries-in-visual-basic"></a>Návod: Zápis dotazů v jazyce Visual Basic
 Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazech dotazů. Návod ukazuje, jak vytvořit dotazy v seznamu objektů Student, jak spouštět dotazy a způsobech jejich změny. Dotazy obsahovat několik funkcí, včetně anonymních typů, inicializátory objektů a odvození místního typu.  
   
  Po dokončení tohoto návodu budete připraveni přejít ukázky a dokumentaci pro konkrétní [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele, které vás zajímají. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatelé zahrnují [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], [!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)], a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
@@ -56,11 +56,11 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
   
 1.  Najít na místo `Main` metoda projektu, který je označen následujícím způsobem:  
   
-     [!code-vb[VbLINQWalkthrough#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_1.vb)]  
+     [!code-vb[VbLINQWalkthrough#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQWalkthrough/VB/Class1.vb#1)]  
   
      Zkopírujte následující kód a vložte ji.  
   
-     [!code-vb[VbLINQWalkthrough#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_2.vb)]  
+     [!code-vb[VbLINQWalkthrough#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQWalkthrough/VB/Class1.vb#2)]  
   
 2.  Umístěte ukazatel myši nad `studentQuery` ve vašem kódu, chcete-li ověřit, jestli je typ přiřazené kompilátoru `IEnumerable(Of Student)`.  
   
@@ -71,7 +71,7 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
   
 1.  Přidejte následující `For Each` smyčky pod dotaz ve vašem projektu.  
   
-     [!code-vb[VbLINQWalkthrough#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_3.vb)]  
+     [!code-vb[VbLINQWalkthrough#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQWalkthrough/VB/Class1.vb#3)]  
   
 2.  Umístěte ukazatel myši nad řídicí proměnná smyčky for `studentRecord` zobrazíte jeho datového typu. Typ `studentRecord` odvozena jako `Student`, protože `studentQuery` vrátí kolekci `Student` instancí.  
   
@@ -102,7 +102,7 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
   
 1.  Přidejte kód v této části k zavedení lokálního identifikátoru ve výrazu dotazu. Identifikátor místní, bude obsahovat přechodný výsledek. V následujícím příkladu `name` je identifikátor, který obsahuje zřetězení student jméno a příjmení. Místní identifikátor lze použít ke zvýšení pohodlí, nebo ho můžete zvýšit výkon díky ukládání výsledků výrazu, který by jinak vypočítá více než jednou.  
   
-     [!code-vb[VbLINQWalkthrough#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_4.vb)]  
+     [!code-vb[VbLINQWalkthrough#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQWalkthrough/VB/Class1.vb#4)]  
   
 2.  Sestavte a spusťte aplikaci stisknutím kombinace kláves CTRL + F5. Poznamenejte si výsledky v okně konzoly.  
   
@@ -110,7 +110,7 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
   
 1.  Přidat dotaz a `For Each` smyčky v této části, chcete-li vytvořit dotaz, který vytvoří posloupnost, jehož prvky se liší od prvků ve zdroji. V následujícím příkladu, zdroj je kolekce `Student` objekty, ale pouze jednoho člena každý objekt je vrácen: křestní jméno, jejichž příjmení je Garcia studentů. Protože `currentStudent.First` není řetězcový datový typ vrácený pořadí `studentQuery3` je `IEnumerable(Of String)`, posloupnost řetězců. Jako v předchozích příkladech přiřazení datový typ pro `studentQuery3` zbývá kompilátor určit pomocí odvození místního typu.  
   
-     [!code-vb[VbLINQWalkthrough#5](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_5.vb)]  
+     [!code-vb[VbLINQWalkthrough#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQWalkthrough/VB/Class1.vb#5)]  
   
 2.  Umístěte ukazatel myši nad `studentQuery3` ve vašem kódu, chcete-li ověřit, jestli je typ přiřazené `IEnumerable(Of String)`.  
   
@@ -122,14 +122,14 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
   
      Následující příklad vytvoří dotaz, který vrátí název a pořadí seniors jehož academic pořadí je mezi 1 a 10 v akademické pořadí. V tomto příkladu typu `studentQuery4` musí být odvozen, protože `Select` klauzule vrátí instanci anonymního typu a nemá žádný použitelný název anonymního typu.  
   
-     [!code-vb[VbLINQWalkthrough#6](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_6.vb)]  
+     [!code-vb[VbLINQWalkthrough#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQWalkthrough/VB/Class1.vb#6)]  
   
 2.  Sestavte a spusťte aplikaci stisknutím kombinace kláves CTRL + F5. Poznamenejte si výsledky v okně konzoly.  
   
 ## <a name="additional-examples"></a>Další příklady  
  Teď, když jste se seznámili se základy, tady je seznam Další příklady ilustrují flexibilitu a výkon [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy. Každý příklad předchází stručný popis toho, co dělá. Umístěte ukazatel myši nad proměnnou výsledek dotazu pro každý dotaz zobrazíte odvozený typ. Použití `For Each` smyčky výsledky.  
   
- [!code-vb[VbLINQWalkthrough#7](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/walkthrough-writing-queries_7.vb)]  
+ [!code-vb[VbLINQWalkthrough#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQWalkthrough/VB/Class1.vb#7)]  
   
 ## <a name="additional-information"></a>Další informace  
  Jakmile se seznámíte se základními koncepcemi práce s dotazy, budete chtít přečíst dokumentaci a ukázky pro konkrétní typ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele, které vás zajímají:  

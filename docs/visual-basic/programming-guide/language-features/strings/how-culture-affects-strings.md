@@ -5,12 +5,12 @@ helpviewer_keywords:
 - locale [Visual Basic], effect on strings
 - strings [Visual Basic], locale dependence
 ms.assetid: c4664444-ee0d-47bf-bef1-eaa3c54bdd7f
-ms.openlocfilehash: 9f796583e1e38c31960868b1e6f20288587fa076
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b9e9b4e199e4504e21b365706ea60d63c9d5fb87
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543445"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56980942"
 ---
 # <a name="how-culture-affects-strings-in-visual-basic"></a>Vliv jazykové verze na řetězce v jazyce Visual Basic
 Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace o jazykové verzi provádět převody řetězce a porovnávání řetězců.  
@@ -44,7 +44,7 @@ Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace 
   
  Datum převést na řetězec pro jazykovou verzi, předejte <xref:System.Globalization.CultureInfo> do objektu date <xref:System.DateTime.ToString%28System.IFormatProvider%29> metoda. Například následující kód zobrazí "07/04/2005 00:00:00", bez ohledu na nastavení jazykové verze vaší aplikace.  
   
- [!code-vb[VbVbalrConcepts#1](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/codesnippet/VisualBasic/how-culture-affects-strings_1.vb)]  
+ [!code-vb[VbVbalrConcepts#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConcepts/VB/Class1.vb#1)]  
   
 > [!NOTE]
 >  Date – literály jsou vždy interpretováno podle jazykové verze Angličtina.  
@@ -60,11 +60,11 @@ Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace 
   
  `StrComp` Funkce vrátí celé číslo, které označuje vztah mezi dvěma porovnání řetězce podle pořadí řazení. Kladnou hodnotu pro výsledek označuje, zda je první řetězec větší než druhý řetězec. Záporný výsledek označuje první řetězec, který je menší a nula znamená rovnost řetězců.  
   
- [!code-vb[VbVbalrStrings#22](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-culture-affects-strings_2.vb)]  
+ [!code-vb[VbVbalrStrings#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#22)]  
   
  Můžete také použít [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] partner `StrComp` funkce, <xref:System.String.Compare%2A?displayProperty=nameWithType> metody. Toto je statické, přetížené metody třídy base řetězec. Následující příklad ukazuje, jak tato metoda se používá:  
   
- [!code-vb[VbVbalrStrings#48](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-culture-affects-strings_3.vb)]  
+ [!code-vb[VbVbalrStrings#48](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#48)]  
   
  Pro lepší kontrolu nad jak porovnání se provádí, můžete použít další přetížení <xref:System.String.Compare%2A> metody. S <xref:System.String.Compare%2A?displayProperty=nameWithType> metodu, můžete použít `comparisonType` argument určit typ porovnání, které se použít.  
   

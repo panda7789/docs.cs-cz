@@ -9,12 +9,12 @@ helpviewer_keywords:
 - joining [LINQ in Visual Basic]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 5b00a478-035b-41c6-8918-be1a97728396
-ms.openlocfilehash: fd1025d056dfb11d2253a39defb384c1d05efa32
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 66255a9bfa2a4f9acb33073bae755efbab61042e
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54553695"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56977972"
 ---
 # <a name="how-to-combine-data-with-linq-by-using-joins-visual-basic"></a>Postupy: Kombinace dat s LINQ pomocí spojení (Visual Basic)
 Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit obsah více kolekcí založených na společné hodnoty mezi kolekcí dotazů. Tyto hodnoty jsou označovány jako *klíč* hodnoty. Rozpozná vývojářům dobře známé koncepty relační databáze `Join` klauzule jako INNER JOIN a `Group Join` klauzule jako efektivní, LEFT OUTER JOIN.  
@@ -29,8 +29,8 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
   
 2.  Ukázky v tomto tématu `Person` a `Pet` typy a data z následující příklad kódu. Zkopírujte tento kód do výchozí `Module1` modulu vytvořené pomocí jazyka Visual Basic.  
   
-     [!code-vb[VbLINQHowTos#1](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-combine-data-with-linq-by-using-joins_1.vb)]  
-    [!code-vb[VbLINQHowTos#2](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-combine-data-with-linq-by-using-joins_2.vb)]  
+     [!code-vb[VbLINQHowTos#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#1)]  
+    [!code-vb[VbLINQHowTos#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#2)]  
   
 ## <a name="perform-an-inner-join-by-using-the-join-clause"></a>Provádění vnitřního spojení s použitím Join – klauzule  
  INNER JOIN kombinuje data ze dvou kolekcí. Položky, které odpovídají zadané hodnoty klíče jsou zahrnuty. Nevylučují se žádné položky z některé kolekce, které nemají odpovídající položku v jiné kolekci.  
@@ -45,7 +45,7 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
   
 1.  Přidejte následující kód, který `Module1` modulu ve vašem projektu a podívejte se na příklady obou implicitní a explicitní vnitřního spojení.  
   
-     [!code-vb[VbLINQHowTos#4](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-combine-data-with-linq-by-using-joins_3.vb)]  
+     [!code-vb[VbLINQHowTos#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#4)]  
   
 ## <a name="perform-a-left-outer-join-by-using-the-group-join-clause"></a>Provedení levé vnější spojení pomocí Group Join – klauzule  
  LEFT OUTER JOIN zahrnuje všechny položky z kolekce levé straně, spojení a jenom odpovídající hodnoty z kolekce pravé spojení. Všechny položky z kolekce pravé spojení, které nemají odpovídající položku v kolekce levé straně jsou vyloučeny z výsledku dotazu.  
@@ -58,7 +58,7 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
   
 1.  Přidejte následující kód, který `Module1` modulu ve vašem projektu a podívejte se na příklady seskupené levé vnější spojení a Neseskupená levé vnější spojení.  
   
-     [!code-vb[VbLINQHowTos#3](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-combine-data-with-linq-by-using-joins_4.vb)]  
+     [!code-vb[VbLINQHowTos#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#3)]  
   
 ## <a name="perform-a-join-by-using-a-composite-key"></a>Provést spojení pomocí složených klíče  
  Můžete použít `And` – klíčové slovo v `Join` nebo `Group Join` klauzule k identifikaci více polí klíčů pro použití při kontrole shody hodnoty z kolekce je připojen. `And` – Klíčové slovo určuje, zda všechny zadané klíčové pole musí odpovídat pro položky, které chcete připojit.  
@@ -67,7 +67,7 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
   
 1.  Přidejte následující kód, který `Module1` modulu ve vašem projektu a podívejte se na příklady spojení, která používá složený klíč.  
   
-     [!code-vb[VbLINQHowTos#5](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-combine-data-with-linq-by-using-joins_5.vb)]  
+     [!code-vb[VbLINQHowTos#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#5)]  
   
 ## <a name="run-the-code"></a>Spuštění kódu  
   
@@ -75,7 +75,7 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
   
 1.  Nahradit `Sub Main` v `Module1` modul ve svém projektu následující kód pro spuštění příkladů v tomto tématu.  
   
-     [!code-vb[VbLINQHowTos#6](../../../../visual-basic/programming-guide/language-features/linq/codesnippet/VisualBasic/how-to-combine-data-with-linq-by-using-joins_6.vb)]  
+     [!code-vb[VbLINQHowTos#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#6)]  
   
 2.  Stisknutím klávesy F5 pro spuštění příkladů.  
   

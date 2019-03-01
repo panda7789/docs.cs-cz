@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LINQ, deferred execution
 - queries [LINQ], about LINQ queries
 ms.assetid: 37895c02-268c-41d5-be39-f7d936fa88a8
-ms.openlocfilehash: dfbd663384a76298390d216bb2488b00e2535d00
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 73b7f8b8460e4cdfad5e1dbc669447ec6fe01b8f
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54605130"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56969502"
 ---
 # <a name="introduction-to-linq-queries-c"></a>Úvod do dotazů LINQ (C#)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializovaném dotazovacím jazyce. Různé jazyky byly vyvinuty v průběhu času pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. Proto vývojáři měli získat nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který musí podporovat. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Tuto situaci zjednodušuje tím, že nabízí konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, které jsou vždy práce s objekty. Použijte stejné základní vzorce kódování pro dotazování a transformaci dat v dokumentech XML, databázích SQL [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datové sady, kolekcích .NET a jakémkoli jiném formátu, pro kterou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele je k dispozici.  
@@ -39,7 +39,7 @@ A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou obvykle
   
  Dotazovatelný typ vyžaduje žádné změny nebo zvláštní zacházení jako [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdroj. Pokud zdroj dat již není v paměti jako dotazovatelný typ, [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatele ho musí představovat jako takový. Například [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] načte dokument XML do dotazovatelného <xref:System.Xml.Linq.XElement> typu:  
   
- [!code-csharp[CsLINQGettingStarted#2](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_2.cs)]  
+ [!code-csharp[CsLINQGettingStarted#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#2)]  
   
  S [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], nejprve vytvoříte objektově relační mapování v době návrhu ručně nebo pomocí [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2) v sadě Visual Studio. Psát dotazy proti objektům a v době běhu [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] zpracovává vnitřní komunikaci s databází. V následujícím příkladu `Customers` představuje určité tabulky v databázi a typ výsledku dotazu <xref:System.Linq.IQueryable%601>, je odvozena z <xref:System.Collections.Generic.IEnumerable%601>.  
   
@@ -71,7 +71,7 @@ IQueryable<Customer> custQuery =
 ### <a name="deferred-execution"></a>Odložené provedení  
  Jak bylo uvedeno dříve, proměnná dotazu sama ukládá pouze příkazy dotazu. Aktuální provádění dotazu je odloženo, dokud neprovedete iteraci v proměnné dotazu v `foreach` příkazu. Tento koncept se označuje jako *odložené provedení* a je znázorněn v následujícím příkladu:  
   
- [!code-csharp[csLinqGettingStarted#4](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_3.cs)]  
+ [!code-csharp[csLinqGettingStarted#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#4)]  
   
  `foreach` Příkaz je také, kde jsou získávány výsledky dotazu. Například v předchozím dotazu, iterační proměnná `num` obsahuje všechny hodnoty (postupně po jednom) ve vrácené posloupnosti.  
   
@@ -80,11 +80,11 @@ IQueryable<Customer> custQuery =
 ### <a name="forcing-immediate-execution"></a>Vynucení okamžitého provedení  
  Dotazy, které provádějí funkce agregace v rozsahu prvků zdroje musí nejprve iteraci přes tyto elementy. Příklady takových dotazů jsou `Count`, `Max`, `Average`, a `First`. Provádějí se bez explicitního `foreach` příkaz protože samotný dotaz musí používat `foreach` k vrácení výsledku. Všimněte si také, že tyto typy dotazů vrací jedinou hodnotu, není `IEnumerable` kolekce. Následující dotaz vrátí počet sudých čísel ve zdrojovém poli:  
   
- [!code-csharp[csLinqGettingStarted#5](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_4.cs)]  
+ [!code-csharp[csLinqGettingStarted#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#5)]  
   
  Chcete-li vynutit okamžité spuštění libovolného dotazu a výsledky do mezipaměti, můžete volat <xref:System.Linq.Enumerable.ToList%2A> nebo <xref:System.Linq.Enumerable.ToArray%2A> metody.  
   
- [!code-csharp[csLinqGettingStarted#6](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/introduction-to-linq-queries_5.cs)]  
+ [!code-csharp[csLinqGettingStarted#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#6)]  
   
  Můžete také vynutit spuštění vložením `foreach` smyčky ihned za výraz dotazu. Však voláním `ToList` nebo `ToArray` také mezipaměti všech dat v jednoho objektu kolekce.  
   

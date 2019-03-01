@@ -5,12 +5,12 @@ helpviewer_keywords:
 - directories [Visual Basic], creating
 - folders [Visual Basic], creating
 ms.assetid: 0351a2ca-24d8-43b5-bb39-9b99e6401cff
-ms.openlocfilehash: 878ba0b8f62c067101a73182a377f5cfcb84ebc2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a7ba9ea1e7762b0a4a6660339c331fa6cdeb7858
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527429"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56976899"
 ---
 # <a name="how-to-create-a-directory-in-visual-basic"></a>Postupy: Vytvoření adresáře v jazyce Visual Basic
 Použití `CreateDirectory` metodu `My.Computer.FileSystem` objekt k vytvoření adresáře.  
@@ -21,7 +21,7 @@ Použití `CreateDirectory` metodu `My.Computer.FileSystem` objekt k vytvoření
   
 -   Použití `CreateDirectory` metoda zadáním úplné cesty umístění, kde by měl být vytvořen adresář. Tento příklad vytvoří adresář `NewDirectory` v `C:\Documents and Settings\All Users\Documents`.  
   
-     [!code-vb[VbVbcnMyFileSystem#2](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-create-a-directory_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#2)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  

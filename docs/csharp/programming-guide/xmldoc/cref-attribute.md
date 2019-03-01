@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - cref [C#]
 ms.assetid: 66a6b0e5-b961-4504-a461-3a4cf481fc8b
-ms.openlocfilehash: e2909040cc0cd38494ef0ffa16a4f361ca73925c
-ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
+ms.openlocfilehash: 9352718371226279f0a468913040e48cbeed984d
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55204285"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971361"
 ---
 # <a name="cref-attribute-c-programming-guide"></a>cref – atribut (Průvodce programováním v C#)
 `cref` Atribut ve značce dokumentaci XML znamená "odkaz na kód." Určuje, že vnitřní text značky je prvek kódu, jako je typ, metodu nebo vlastnost. Dokumentace ke službě nástroje, jako je [DocFX](https://dotnet.github.io/docfx/) a [Sandcastle](https://github.com/EWSoftware/SHFB) použít `cref` atributů, které mají automaticky generovat hypertextové odkazy na stránky, kde je zdokumentován tento typ nebo člen.  
@@ -18,7 +18,7 @@ ms.locfileid: "55204285"
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje `cref` atributy použité v [ \<naleznete v tématu >](../../../csharp/programming-guide/xmldoc/see.md) značky.  
   
- [!code-csharp[csProgGuideDocComments#3](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/cref-attribute_1.cs)]  
+ [!code-csharp[csProgGuideDocComments#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#3)]  
   
  Při kompilaci, program vygeneruje následující soubor XML. Všimněte si, že `cref` atribut pro `GetZero` metody, například transformaci pomocí kompilátoru, aby `"M:TestNamespace.TestClass.GetZero"`. Předpona "M" znamená "method" a je konvence, který je rozpoznán dokumentace nástrojů, jako je DocFX a Sandcastle. Úplný seznam předpon, naleznete v tématu [zpracování souboru XML](../../../csharp/programming-guide/xmldoc/processing-the-xml-file.md).  
   

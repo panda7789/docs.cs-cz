@@ -11,12 +11,12 @@ helpviewer_keywords:
 - inferring type information [LINQ in Visual Basic]
 - relationships [LINQ in Visual Basic]
 ms.assetid: b5ff4da5-f3fd-4a8e-aaac-1cbf52fa16f6
-ms.openlocfilehash: 519b10cfa374290a2d924cce2bd3e39683ca080f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d72a55cadce287979fad25396327680e1f0e0aaf
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731124"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56979096"
 ---
 # <a name="type-relationships-in-query-operations-visual-basic"></a>Vztahy typů v operacích dotazu (Visual Basic)
 Proměnné použité v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotazu operace jsou silného typu a musí být navzájem kompatibilní. Silné typování se používá ve zdroji dat, v samotném dotazu a ve spuštění dotazu. Následující obrázek označuje termíny používané k popisu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu. Další informace o části dotazu, naleznete v tématu [základní operace dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).  
@@ -28,7 +28,7 @@ Proměnné použité v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] d
   
  Visual Basic umožňuje silného typování pohodlný implementací odvození místního typu, označované také jako *implicitního zápisu*. Že v předchozím příkladu se používá funkce, a zobrazí se používá v rámci [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] ukázky a dokumentaci. V jazyce Visual Basic, se jednoduše tak, že pomocí provádí odvození místního typu `Dim` příkaz bez `As` klauzuli. V následujícím příkladu `city` je silně typováno jako řetězec.  
   
- [!code-vb[VbLINQTypeRels#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_1.vb)]  
+ [!code-vb[VbLINQTypeRels#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#1)]  
   
 > [!NOTE]
 >  Odvození místního typu funguje pouze tehdy, když `Option Infer` je nastavena na `On`. Další informace najdete v tématu [Option Infer – příkaz](../../../../visual-basic/language-reference/statements/option-infer-statement.md).  
@@ -37,16 +37,16 @@ Proměnné použité v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] d
   
  Budete muset zadat explicitní typ pro proměnnou rozsahu, který typ vrácený ze zdroje dat se neshoduje. Druh proměnné rozsahu můžete zadat pomocí `As` klauzuli. Nicméně to způsobí chybu při převodu [zužující převod](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) a `Option Strict` je nastavena na `On`. Proto doporučujeme provést převod na hodnoty získané ze zdroje dat. Hodnoty lze převést ze zdroje dat na typ proměnné explicitního rozsahu pomocí <xref:System.Linq.Enumerable.Cast%2A> metody. Můžete také přetypování hodnoty vybrané v `Select` klauzule explicitního typu, který se liší od typu proměnné rozsahu. Tyto body jsou znázorněné v následujícím kódu.  
   
- [!code-vb[VbLINQTypeRels#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_2.vb)]  
+ [!code-vb[VbLINQTypeRels#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#4)]  
   
 ## <a name="queries-that-return-entire-elements-of-the-source-data"></a>Dotazy vracející celé prvky zdroje dat  
  Následující příklad ukazuje [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] operaci, která vrátí sekvenci prvků vybrané ze zdroje dat dotazu. Zdroj, `names`, obsahuje pole řetězců a výstup dotazu je sekvence obsahující řetězce, které začínají písmenem M.  
   
- [!code-vb[VbLINQTypeRels#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_3.vb)]  
+ [!code-vb[VbLINQTypeRels#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#2)]  
   
  To je ekvivalentní následujícímu kódu, ale je mnohem kratší a jednodušší pro zápis. Závislost na odvození místního typu v dotazech je upřednostňovaný stylu v jazyce Visual Basic.  
   
- [!code-vb[VbLINQTypeRels#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/type-relationships-in-query-operations_4.vb)]  
+ [!code-vb[VbLINQTypeRels#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#3)]  
   
  V obou předchozí příklady kódu, existují následující relace, zda typy jsou určeny implicitně nebo explicitně.  
   

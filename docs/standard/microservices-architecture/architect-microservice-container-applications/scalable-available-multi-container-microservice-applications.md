@@ -4,12 +4,12 @@ description: Objevte možnosti Orchestrace mikroslužeb a vícekontejnerových a
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: 8f8d05a79189b909990fd7ef0c05bd84d556a94a
-ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
+ms.openlocfilehash: 0a3ecbb8d186adf3fdc492654e23111ee4c508b1
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54307432"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56980227"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -137,9 +137,11 @@ Jak je znázorněno na obrázku 4-26, je většina rozdílové funkce v Azure De
 
 V podstatě můžete nastavit prostor sdíleném vývojovém v Azure. Každý Vývojář můžete zaměřit na pouze jejich součástí aplikace a můžete využít iterativní vývoj předběžné potvrzení změn kódu v prostoru dev, která už obsahuje všechny ostatní služby a cloudové prostředky, které jejich scénářů závisí na. Závislosti jsou vždy aktuální a vývojáři už pracují tak, aby zrcadlí produkčního prostředí.
 
-Azure Dev prostory nabízí koncepci místa, což umožňuje pracovat v izolaci a bez obav z přerušení členy týmu. Tato funkce je založena na adresu URL před opravy, takže pokud používáte jakoukoli předponu dev místa v adrese URL, pro každý kontejner požadavek, poběží speciální verzi kontejner nasazuje pro, který místo existuje. V opačném případě poběží verze globální nebo konsolidované.
+Azure Dev prostory nabízí koncepci místa, což umožňuje práci v relativní izolaci a bez obav z přerušení práci týmu. Každý prostor vývoj je součástí hierarchickou strukturu, která umožňuje přepsání jednu mikroslužbu (nebo řada), z prostoru hlavní vývoj "top", s vlastní nedokončenou prací mikroslužeb.
 
-Zobrazí se [aplikaci eShopOnContainers wiki stránky v Azure Dev prostorech](https://github.com/dotnet-architecture/eShopOnContainers/wiki/10.2-Using-Azure-Dev-Spaces-and-AKS), abyste získali praktické zobrazení na konkrétní příklad.
+Tato funkce je založená na předpony adres URL, takže pokud používáte jakoukoli předponu dev místa v adrese url, požadavek se načítají z mikroslužeb cílové pokud existuje v prostoru dev, jinak předána až po první instance cílové mikroslužeb v hierarchii , nakonec získání hlavního vývojáře prostoru v horní části.
+
+Zobrazí se [aplikaci eShopOnContainers wiki stránky v Azure Dev prostorech](https://github.com/dotnet-architecture/eShopOnContainers/wiki/10.1-Using-Azure-Dev-Spaces-and-AKS), abyste získali praktické zobrazení na konkrétní příklad.
 
 Další informace najdete v článku na [týmový vývoj pomocí Azure Dev prostory](https://docs.microsoft.com/azure/dev-spaces/team-development-netcore).
 

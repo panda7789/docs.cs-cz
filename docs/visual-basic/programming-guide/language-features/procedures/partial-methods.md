@@ -11,12 +11,12 @@ helpviewer_keywords:
 - methods [Visual Basic], partial methods
 - inserting custom logic into code
 ms.assetid: 74b3368b-b348-44a0-a326-7d7dc646f4e9
-ms.openlocfilehash: a974a68010fe80a07e83ac31e109bbf1c2b955e2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4b35985aa67cea7b58ddf05611cf4e0813a2d442
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54568774"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56977458"
 ---
 # <a name="partial-methods-visual-basic"></a>Částečné metody (Visual Basic)
 Částečné metody umožňují vývojářům k vložení vlastní logiky do kódu. Kód je obvykle součástí třídy generovaný návrhářem. Částečné metody jsou definovány v dílčí třídě vytvořený generátor kódu a běžně se používají k poskytování oznámení, něco se změnila. Umožňují vývojářům určit vlastní chování v reakci na změnu.  
@@ -56,15 +56,15 @@ End Sub
 ## <a name="example"></a>Příklad  
  Do souboru s názvem Product.Designer.vb definovat `Product` třídu, která má `Quantity` vlastnost.  
   
- [!code-vb[VbVbalrPartialMeths#4](./codesnippet/VisualBasic/partial-methods_1.vb)]  
+ [!code-vb[VbVbalrPartialMeths#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#4)]  
   
  Do souboru s názvem Product.vb poskytnout implementaci pro `QuantityChanged`.  
   
- [!code-vb[VbVbalrPartialMeths#5](./codesnippet/VisualBasic/partial-methods_2.vb)]  
+ [!code-vb[VbVbalrPartialMeths#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#5)]  
   
  Nakonec do metody Main projektu deklarovat `Product` instance a zadejte počáteční hodnotu pro jeho `Quantity` vlastnost.  
   
- [!code-vb[VbVbalrPartialMeths#6](./codesnippet/VisualBasic/partial-methods_3.vb)]  
+ [!code-vb[VbVbalrPartialMeths#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#6)]  
   
  Okno se zprávou by měl vypadat, který se zobrazí tato zpráva:  
   

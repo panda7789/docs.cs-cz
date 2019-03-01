@@ -5,17 +5,17 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-ms.openlocfilehash: 16a8c1c9534e121c24289fbbfff14485b0338f63
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fe7cf3cf1982060d22f648c5e17d002b1a695ac0
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54743943"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56978524"
 ---
 # <a name="using-structs-c-programming-guide"></a>Použití struktur (Průvodce programováním v C#)
 `struct` Typ je vhodný pro zjednodušené objekty, jako představující `Point`, `Rectangle`, a `Color`. I když je každopádně pohodlné představuje bod jako [třídy](../../../csharp/language-reference/keywords/class.md) s [implemented Properties](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), [struktura](../../../csharp/language-reference/keywords/struct.md) může být efektivnější v některých scénářích. Například, pokud deklarujete pole 1000 `Point` objekty, přidělí paměť navíc pro odkazování na každý objekt; v takovém, struktura bude méně nákladné. Vzhledem k tomu, [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] obsahuje objektu s názvem <xref:System.Drawing.Point>, struktura v tomto příkladu má název "Coords" místo.  
   
- [!code-csharp[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_1.cs)]  
+ [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]  
   
  Jedná se o chybu, chcete-li definovat výchozí (bezparametrový) konstruktor pro struktury. Je také k chybě inicializace pole instance v těle struktury. Členy struktury zvenku přístupný lze inicializovat pouze pomocí konstruktoru s parametry, implicitní výchozí konstruktor [objektu inicializátoru](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md), nebo díky přístupu členů jednotlivě po tato struktura deklarována. Žádné soukromé nebo jinak nedostupná členy výhradně vyžadují použití konstruktory.
   
@@ -37,9 +37,9 @@ ms.locfileid: "54743943"
  Tento příklad ukazuje `struct` inicializace pomocí výchozí a konstruktor s parametry.  
   
 ### <a name="code"></a>Kód  
- [!code-csharp[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_1.cs)]  
+ [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]  
   
- [!code-csharp[csProgGuideObjects#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_2.cs)]  
+ [!code-csharp[csProgGuideObjects#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#2)]  
   
 ## <a name="example-2"></a>Příklad 2  
   
@@ -47,9 +47,9 @@ ms.locfileid: "54743943"
  Tento příklad ukazuje funkce, která je jedinečné pro struktury. Vytvoří objekt Coords bez použití `new` operátor. Pokud vyměňujete slovo `struct` slovo `class`, nebude kompilovat program.  
   
 ### <a name="code"></a>Kód  
- [!code-csharp[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_1.cs)]  
+ [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]  
   
- [!code-csharp[csProgGuideObjects#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_3.cs)]  
+ [!code-csharp[csProgGuideObjects#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#3)]  
   
 ## <a name="see-also"></a>Viz také:
 

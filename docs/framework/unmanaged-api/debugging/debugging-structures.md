@@ -8,14 +8,15 @@ helpviewer_keywords:
 ms.assetid: 173ba2c2-ab34-49ae-b6a8-e5c49882bf05
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 18bf03fee1a95c898e8273fa839e41a86b2d1c32
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: f50db519410b9513725c3dc10637421ba8bb37ec
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828368"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965225"
 ---
 # <a name="debugging-structures"></a>Struktury pro ladění
+
 Tato část popisuje nespravované struktury, které používá rozhraní API pro ladění.
 
 ## <a name="in-this-section"></a>V tomto oddílu
@@ -25,7 +26,7 @@ Tato část popisuje nespravované struktury, které používá rozhraní API pr
 
  [Clr_debugging_version – struktura](../../../../docs/framework/unmanaged-api/debugging/clr-debugging-version-structure.md) Určuje verzi modulu common language runtime (CLR) pro účely ladění.
 
- [CodeChunkInfo – struktura 1](../../../../docs/framework/unmanaged-api/debugging/codechunkinfo-structure.md) představuje jediný neodkazovaný blok kódu v paměti.
+ [Codechunkinfo – struktura](../../../../docs/framework/unmanaged-api/debugging/codechunkinfo-structure.md) představuje jediný neodkazovaný blok kódu v paměti.
 
  [Cor_active_function –](cor-active-function-structure.md) obsahuje informace o funkcích, které jsou aktuálně aktivní vlákna snímků.
 
@@ -71,9 +72,8 @@ Tato část popisuje nespravované struktury, které používá rozhraní API pr
 
  [Stacktrace_simplecontext – struktura](../../../../docs/framework/unmanaged-api/debugging/stacktrace-simplecontext-structure.md) poskytuje jednoduché kontext, který jde použít místo úplné `CONTEXT` struktury.
 
-
-
 ## <a name="related-sections"></a>Související oddíly
+
  [Třídy typu coclass pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-coclasses.md)
 
  [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

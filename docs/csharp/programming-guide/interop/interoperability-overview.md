@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: 8ad6b5767c349379121352930341be5b916131e6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 499efae13a0805ba161cd9db160d697b496183c0
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54502063"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974702"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Přehled interoperability (Průvodce programováním v C#)
 Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravovaného a nespravovaného kódu.  
@@ -30,7 +30,7 @@ Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravov
 ## <a name="c-interop"></a>interoperabilita C++  
  Interoperabilita C++, označované také jako ho právě funguje (IJW), můžete použít k zabalení nativních tříd jazyka C++, takže mohou být spotřebovány kód, který se vytváří v jazyce C# nebo jiný jazyk rozhraní .NET Framework. K tomuto účelu můžete psát kód C++ zalomení nativní knihovnu DLL nebo klasické komponenty COM. Na rozdíl od jiných jazycích rozhraní .NET Framework [!INCLUDE[vcprvc](~/includes/vcprvc-md.md)] má interoperability podporu, která umožňuje spravovaného a nespravovaného kódu budou umístěné ve stejné aplikaci a dokonce i ve stejném souboru. Potom sestavíte kódu jazyka C++ s použitím **/CLR** přepínače kompilátoru pro vytvoření spravované sestavení. Nakonec přidejte odkaz na sestavení v projektu C# a použít zabalenou objektů, stejně jako ostatní spravované třídy.  
   
-## <a name="exposing-com-components-to-c"></a>Vystavení komponent COM pro C#  
+## <a name="exposing-com-components-to-c"></a>Vystavení komponent COM pro C\#
  Můžete využívat komponenty modelu COM z projektu v jazyce C#. Obecné kroky jsou následující:  
   
 1.  Vyhledejte komponentu modelu COM použít a její registrace. Použijte regsvr32.exe k registraci nebo zrušení – registrace modelu COM DLL.  

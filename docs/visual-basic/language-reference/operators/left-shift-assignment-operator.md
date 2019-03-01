@@ -11,12 +11,12 @@ helpviewer_keywords:
 - operator<<=
 - compound assignment statements [Visual Basic]
 ms.assetid: 8ad26613-faff-4e2f-89ee-63feee33bfda
-ms.openlocfilehash: 4c262da906a6033680b05f6a4099a6a1dc8bfab5
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: b2a642b1187c9a08007ee1eddfa0764198fc0877
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55260629"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56981644"
 ---
 # <a name="-operator-visual-basic"></a>\<\<= Operator (Visual Basic)
 Provede aritmetický operátor posunu vlevo na základě hodnoty proměnnou nebo vlastnost a přiřadí výsledek zpět na proměnnou nebo vlastnost.  
@@ -47,7 +47,7 @@ variableorproperty <<= amount
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `<<=` operátor shift bitový vzor z `Integer` proměnnou zanechaný určenou dobu a přiřadit výsledek do proměnné.  
   
- [!code-vb[VbVbalrOperators#13](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/left-shift-assignment-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#13)]  
   
 ## <a name="see-also"></a>Viz také:
 - [<< – operátor](../../../visual-basic/language-reference/operators/left-shift-operator.md)

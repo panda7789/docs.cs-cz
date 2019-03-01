@@ -16,19 +16,19 @@ helpviewer_keywords:
 ms.assetid: 761f1c66-631c-47af-aa86-ad9c50cfa453
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 19edbebb4dcc4ad48c28ee427084510f8d743c5e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 060bc53efa175314e00f487776c43124c39f33c0
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54637826"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970971"
 ---
 # <a name="how-to-encrypt-xml-elements-with-x509-certificates"></a>Postupy: Šifrování XML elementů pomocí certifikátů X.509
 Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názvů k šifrování element v dokumentu XML.  Šifrování XML je standardní způsob pro výměnu nebo ukládání zašifrovaných dat XML, nemusíme mít starosti se snadno číst data.  Další informace o standardních šifrování XML, naleznete v tématu Specifikace World Wide Web Consortium (W3C) pro šifrování XML se nachází v <https://www.w3.org/TR/xmldsig-core/>.  
   
  Vám pomůže šifrování XML nahradit všechny – element XML nebo dokument <`EncryptedData`> element, který obsahuje šifrovaná data XML. <`EncryptedData`> Element může obsahovat dílčí prvky, které obsahují informace o klíčích a procesy používané při šifrování.  Šifrování XML umožňuje dokument obsahovat několik elementů šifrované a umožňuje element, který má být zašifrovaný více než jednou.  Příklad kódu v tomto postupu se dozvíte, jak vytvořit <`EncryptedData`> element společně s několika dalšími dílčími elementy, které použijete později při dešifrování.  
   
- V tomto příkladu šifruje elementu XML s použitím dva klíče.  Vygeneruje certifikát X.509 test pomocí [Certificate Creation Tool (Makecert.exe)](https://msdn.microsoft.com/library/windows/desktop/aa386968.aspx) a uloží certifikát do úložiště certifikátů.  V příkladu potom programově načte příslušný certifikát a použije k zašifrování – element XML pomocí <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> metody.  Interně <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> metoda vytvoří oddělený klíč relace a použije k zašifrování dokumentu XML. Tato metoda zašifruje klíč relace a uloží ho spolu s šifrované XML v rámci nového <`EncryptedData`> element.  
+ V tomto příkladu šifruje elementu XML s použitím dva klíče. Vygeneruje certifikát X.509 test pomocí [Certificate Creation Tool (Makecert.exe)](/windows/desktop/SecCrypto/makecert) a uloží certifikát do úložiště certifikátů. V příkladu potom programově načte příslušný certifikát a použije k zašifrování – element XML pomocí <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> metody. Interně <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> metoda vytvoří oddělený klíč relace a použije k zašifrování dokumentu XML. Tato metoda zašifruje klíč relace a uloží ho spolu s šifrované XML v rámci nového <`EncryptedData`> element.  
   
  Chcete-li dešifrovat elementu XML, jednoduše zavolejte <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> metodu, která automaticky načte příslušný certifikát X.509 z úložiště a provede nezbytné dešifrování.  Další informace o tom, jak dešifrování elementu XML, který byl zašifrován pomocí tohoto postupu najdete v tématu [jak: Dešifrování elementů XML pomocí certifikátů X.509](../../../docs/standard/security/how-to-decrypt-xml-elements-with-x-509-certificates.md).  
   
@@ -36,7 +36,7 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názv�
   
 ### <a name="to-encrypt-an-xml-element-with-an-x509-certificate"></a>K šifrování elementu XML pomocí certifikátu X.509  
   
-1.  Použití [Certificate Creation Tool (Makecert.exe)](https://msdn.microsoft.com/library/windows/desktop/aa386968.aspx) generovat testovacího certifikátu X.509 a umístěte ho do místního úložiště.  Budete muset vygenerovat klíč pro výměnu a je nutné provést klíč exportovatelné. Spusťte následující příkaz:  
+1.  Použití [Certificate Creation Tool (Makecert.exe)](/windows/desktop/SecCrypto/makecert) generovat testovacího certifikátu X.509 a umístěte ho do místního úložiště.  Budete muset vygenerovat klíč pro výměnu a je nutné provést klíč exportovatelné. Spusťte následující příkaz:  
   
     ```  
     makecert -r -pe -n "CN=XML_ENC_TEST_CERT" -b 01/01/2005 -e 01/01/2010 -sky exchange -ss my  

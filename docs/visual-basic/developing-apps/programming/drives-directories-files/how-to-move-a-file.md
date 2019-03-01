@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], moving
 ms.assetid: 53a7457b-5815-41ad-b37d-28537c1fb77a
-ms.openlocfilehash: 6888531918dd932ba5acb3ec967303568606d5df
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 90f315bc9153fd79f12e3dcbbfe0f238f4090b25
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54721939"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56976873"
 ---
 # <a name="how-to-move-a-file-in-visual-basic"></a>Postupy: Přesunutí souboru v jazyce Visual Basic
 `My.Computer.FileSystem.MoveFile` Metodu je možné přesunout soubor do jiné složky. Pokud cílová struktura neexistuje, vytvoří se.  
@@ -18,13 +18,13 @@ ms.locfileid: "54721939"
   
 -   Použití `MoveFile` metoda se přesunout soubor, zadáním názvu souboru a umístění zdrojového souboru a cílový soubor. V tomto příkladu přesune soubor s názvem `test.txt` z `TestDir1` k `TestDir2`. Všimněte si, že je zadán název cílového souboru, i když je stejný jako název zdrojového souboru.  
   
-     [!code-vb[VbVbcnMyFileSystem#24](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-move-a-file_1.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#24)]  
   
 ### <a name="to-move-a-file-and-rename-it"></a>Chcete-li přesunout soubor a přejmenujte jej na  
   
 -   Použití `MoveFile` metoda se přesunout soubor, zadáte název zdrojového souboru a umístění, cílové umístění a název nového v cílovém umístění. V tomto příkladu přesune soubor s názvem `test.txt` z `TestDir1` k `TestDir2` a přejmenuje ho `nexttest.txt`.  
   
-     [!code-vb[VbVbcnMyFileSystem#25](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-move-a-file_2.vb)]  
+     [!code-vb[VbVbcnMyFileSystem#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#25)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  

@@ -26,12 +26,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
-ms.openlocfilehash: 9f6faf7b9ba2338784fda2cec2efc2b3991d415e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e40890835ddd50d25106e318ee05a874ce355d9b
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54667476"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56977796"
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>Postupy: Definujte třídu, která poskytne identické funkce pro různé datové typy (Visual Basic)
 Můžete definovat třídu z které můžete vytvořit objekty, které poskytne identické funkce pro různé datové typy. K tomuto účelu můžete zadat jednu nebo víc *parametry typu* v definici. Třída pak může sloužit jako šablona pro objekty, které používají různé datové typy. Třída definována tímto způsobem se nazývá *obecnou třídu*.  
@@ -64,7 +64,7 @@ Můžete definovat třídu z které můžete vytvořit objekty, které poskytne 
   
      Následující příklad definuje třídu, která spravuje velmi jednoduchý seznam. Obsahuje seznam v poli interní `items`a pomocí kódu můžete deklarovat typ dat prvků seznamu. Umožňuje do parametrizovaného konstruktoru na pomocí kódu pro nastavení horní mez `items`, a nastaví výchozí konstruktor do 9 (pro celkem 10 položek).  
   
-     [!code-vb[VbVbalrDataTypes#7](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/how-to-define-a-class-that-can-provide-identical-functionality_1.vb)]  
+     [!code-vb[VbVbalrDataTypes#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#7)]  
   
      Je možné deklarovat třídu z `simpleList` k uložení seznamu `Integer` hodnoty, jiné třídy pro uložení seznamu `String` hodnoty a druhý pro uložení `Date` hodnoty. S výjimkou datový typ seznam členů chovají stejně jako objekty vytvořené z těchto tříd.  
   
@@ -72,7 +72,7 @@ Můžete definovat třídu z které můžete vytvořit objekty, které poskytne 
   
      Třídu můžete otestovat `simpleList` následujícím kódem.  
   
-     [!code-vb[VbVbalrDataTypes#8](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/how-to-define-a-class-that-can-provide-identical-functionality_2.vb)]  
+     [!code-vb[VbVbalrDataTypes#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#8)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)

@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - Const statement [Visual Basic]
 ms.assetid: 495b318d-b7c5-4198-94f8-0790a541b07a
-ms.openlocfilehash: 3d8134b43320003a6425cf284162d3d627b177c0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: eb99213287cda5ce7f9c3afe2998efb02ec68a03
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54623554"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56979070"
 ---
 # <a name="const-statement-visual-basic"></a>Const – příkaz (Visual Basic)
 Deklaruje a definuje jeden nebo více konstant.  
@@ -90,12 +90,12 @@ Const constantlist
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Const` příkaz k deklaraci konstanty pro použití namísto hodnoty literálu.  
   
- [!code-vb[VbVbalrStatements#13](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/const-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#13)]  
   
 ## <a name="example"></a>Příklad  
  Je-li definovat konstantu s datovým typem `Object`, kompilátor jazyka Visual Basic poskytuje typ `initializer`, namísto `Object`. V následujícím příkladu, konstanta `naturalLogBase` má run-time typu `Decimal`.  
   
- [!code-vb[VbVbalrStatements#87](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/const-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#87](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#87)]  
   
  V předchozím příkladu <xref:System.Type.ToString%2A> metodu na <xref:System.Type> objekt vrácený [GetType – operátor](../../../visual-basic/language-reference/operators/gettype-operator.md), protože <xref:System.Type> nelze převést na `String` pomocí `CStr`.  
   

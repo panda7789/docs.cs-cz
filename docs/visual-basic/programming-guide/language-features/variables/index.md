@@ -2,15 +2,9 @@
 title: Proměnné v jazyce Visual Basic
 ms.date: 07/20/2015
 helpviewer_keywords:
-- variables [Visual Basic]
-- values [Visual Basic], storing
+  - 'variables [Visual Basic]'
+  - 'values [Visual Basic], storing'
 ms.assetid: 4cfaa06d-4ae3-4307-897b-cf599dc24caa
-ms.openlocfilehash: 50b82285d31d40adfce07a61cd7902cdb2809a52
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54672224"
 ---
 # <a name="variables-in-visual-basic"></a>Proměnné v jazyce Visual Basic
 Často nutné pro ukládání hodnot při provádění výpočtů s jazykem Visual Basic. Můžete například výpočet několik hodnot, jejich porovnání a provádět s nimi, různé operace na základě výsledku porovnání. Je nutné zachovat hodnoty, pokud chcete porovnat.  
@@ -23,7 +17,7 @@ ms.locfileid: "54672224"
 ## <a name="assigning-values"></a>Přidělování hodnot  
  Přiřazovací příkazy slouží k provádění výpočtů a výsledek přiřaďte proměnné, jak ukazuje následující příklad.  
   
- [!code-vb[VbVbalrVariables#1](../../../../visual-basic/programming-guide/language-features/variables/codesnippet/VisualBasic/index_1.vb)]  
+ [!code-vb[VbVbalrVariables#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrVariables/VB/Class1.vb#1)]  
   
 > [!NOTE]
 >  Znaménko rovná se (`=`) v tomto příkladu je operátor přiřazení, ne operátor rovnosti. Hodnota je přiřazen do proměnné `applesSold`.  

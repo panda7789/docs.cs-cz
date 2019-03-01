@@ -13,12 +13,12 @@ helpviewer_keywords:
 - item XML tag
 - <term> XML tag
 ms.assetid: ec35fced-d58e-4520-a764-0691256e014b
-ms.openlocfilehash: 522450e4efcecaf74968ddb492b536aa98dc0b13
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 8964b34d94daf18e078e515b65588f5273c76199
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55260285"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970181"
 ---
 # <a name="list-visual-basic"></a>\<list> (Visual Basic)
 Definuje seznam nebo tabulku.  
@@ -60,7 +60,7 @@ Definuje seznam nebo tabulku.
 ## <a name="example"></a>Příklad  
  V tomto příkladu `<list>` značka, které definují seznam s odrážkami v části poznámky.  
   
- [!code-vb[VbVbcnXmlDocComments#5](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/list_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#5)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

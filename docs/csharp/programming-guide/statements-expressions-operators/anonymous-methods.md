@@ -7,27 +7,27 @@ helpviewer_keywords:
 - methods [C#], anonymous
 - delegates [C#], anonymous methods
 ms.assetid: a62441fa-f0a3-4acb-9aa6-93762a635275
-ms.openlocfilehash: ba80626a777f9f2d813694abf3deda0ef0c93606
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 55a39bb311d4f0a71f111db4975abf317d63d479
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54732516"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56979668"
 ---
 # <a name="anonymous-methods-c-programming-guide"></a>Anonymní metody (Průvodce programováním v C#)
 Ve verzích jazyka C# před 2.0, je možné deklarovat jedině [delegovat](../../../csharp/language-reference/keywords/delegate.md) pomocí [s názvem metody](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md). 2.0 C# zavedl anonymní metody a v C# 3.0 nebo novější, výrazy lambda jako upřednostňovaný způsob, jak napsat kód vloženého mají přednost před anonymní metody. Ale informace o anonymní metody v tomto tématu platí taky pro výrazy lambda. Existuje jeden případ, ve kterém anonymní metoda poskytuje funkce, nebyl nalezen v lambda výrazech. Anonymní metody umožňují vynechat seznam parametrů. To znamená, že na delegáty s různými podpisy lze převést anonymní metodu. To není možné s výrazy lambda. Další informace konkrétně o výrazech lambda naleznete v tématu [výrazy Lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
  Vytvoření anonymní metody je v podstatě způsob, jak předat bloku kódu jako parametr delegátu. Tady jsou dva příklady:  
   
- [!code-csharp[csProgGuideDelegates#6](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_1.cs)]  
+ [!code-csharp[csProgGuideDelegates#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#6)]  
   
- [!code-csharp[csProgGuideDelegates#5](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_2.cs)]  
+ [!code-csharp[csProgGuideDelegates#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#5)]  
   
  S použitím anonymní metody, snížit režii kódování v vytvoření instance delegátů, protože není nutné vytvářet samostatné metodě.  
   
  Například zadání bloku kódu namísto delegát může být užitečné v situaci, pokud by bylo nutné vytvořit metodu zdát, že zbytečnou režii. Dobrým příkladem může být při spuštění nového vlákna. Tato třída vytvoří vlákno a také obsahuje kód, který se vlákna spustí bez vytváření další metoda pro delegáta.  
   
- [!code-csharp[csProgGuideDelegates#7](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_3.cs)]  
+ [!code-csharp[csProgGuideDelegates#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#7)]  
   
 ## <a name="remarks"></a>Poznámky  
  Rozsah parametry anonymní metodu *anonymní metoda bloku*.  
@@ -36,7 +36,7 @@ Ve verzích jazyka C# před 2.0, je možné deklarovat jedině [delegovat](../..
   
  Místní proměnné a parametry, jejichž rozsah obsahuje deklaraci anonymní metody jsou volány *vnější* proměnné anonymní metody. Například v následující segment kódu `n` je vnější proměnné:  
   
- [!code-csharp[csProgGuideDelegates#8](../../../csharp/programming-guide/delegates/codesnippet/CSharp/anonymous-methods_4.cs)]  
+ [!code-csharp[csProgGuideDelegates#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#8)]  
   
  Odkaz na proměnnou vnějšího `n` je označen jako *zachycené* při vytvoření delegáta. Na rozdíl od místních proměnných dobu života zachycené proměnné rozšiřuje dokud delegáty, které odkazují na anonymní metody, které jsou způsobilé pro uvolňování paměti.  
   

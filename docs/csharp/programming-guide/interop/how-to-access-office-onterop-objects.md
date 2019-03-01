@@ -10,12 +10,12 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: 5868d8782d093a4d3d566708684d3adeb39020ff
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d646a73cc8616821372c5a0078b595291829ac27
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54695111"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970182"
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C# (Průvodce programováním v C#)
 Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní API Office. Nové funkce patří pojmenované a nepovinné argumenty, nový typ s názvem `dynamic`a možnost předání argumentů do parametrů odkazu v metodách modelu COM, jako by byly parametry s hodnotou.  
@@ -60,17 +60,17 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 2.  Přidejte následující `using` direktivy do horní části souboru kódu.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#1](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_1.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#1)]  
   
 ## <a name="to-create-a-list-of-bank-accounts"></a>Chcete-li vytvořit seznam účtů bank  
   
 1.  Vložte následující definice třídy do **Program.cs**v části `Program` třídy.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#2](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_2.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#2)]  
   
 2.  Přidejte následující kód, který `Main` metodu pro vytvoření `bankAccounts` seznam, který obsahuje dva účty.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#3](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_3.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#3)]  
   
 ## <a name="to-declare-a-method-that-exports-account-information-to-excel"></a>Chcete-li deklarovat metodu, která se exportuje informace o účtu do Excelu  
   
@@ -82,19 +82,19 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 2.  Přidejte následující kód na konci `DisplayInExcel`. Kód vloží hodnoty do prvních dvou sloupcích prvního řádku listu.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#5](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_5.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#5)]  
   
 3.  Přidejte následující kód na konci `DisplayInExcel`. `foreach` Smyčky vloží informace ze seznamu účtů do prvních dvou sloupců po sobě jdoucích řádků z listu.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#7](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_6.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#7)]  
   
 4.  Přidejte následující kód na konci `DisplayInExcel` upravit šířku sloupců podle obsahu.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#13](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_7.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#13)]  
   
      Starší verze jazyka C# vyžaduje explicitní přetypování pro tyto operace protože `ExcelApp.Columns[1]` vrátí `Object`, a `AutoFit` je aplikace Excel <xref:Microsoft.Office.Interop.Excel.Range> metody. Následující řádky zobrazují přetypování.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#14](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_8.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#14)]  
   
      [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)]a novějších verzích, převede vrácený `Object` k `dynamic` automaticky, pokud je sestavení odkazuje [/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) – možnost kompilátoru nebo ekvivalentně, pokud v aplikaci Excel **Embed Interop Types**je nastavena na hodnotu true. Hodnota TRUE je výchozí hodnota této vlastnosti.  
   
@@ -102,7 +102,7 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 1.  Přidejte následující řádek na konci `Main`.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#8](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_9.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#8)]  
   
 2.  Stisknutím kláves CTRL + F5.  
   
@@ -126,11 +126,11 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 2.  Přidejte následující příkaz na konci `Main`.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#11](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_12.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#11)]  
   
 3.  Přidejte následující příkaz na konci `DisplayInExcel`. `Copy` Metoda přidá do listu do schránky.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#12](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_13.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#12)]  
   
 4.  Stisknutím kláves CTRL + F5.  
   
@@ -144,7 +144,7 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
      V [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vložení informací o typu namísto použití sestavení PIA je výchozí chování. Z důvodu tuto výchozí hodnotu některé z předchozích příkladech jsou jednodušší, protože není nutné explicitní přetypování. Například, deklarace `worksheet` v `DisplayInExcel` je zapsán jako `Excel._Worksheet workSheet = excelApp.ActiveSheet` spíše než `Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet`. Volání `AutoFit` v stejným způsobem také by vyžadovaly explicitní přetypování bez výchozí, protože `ExcelApp.Columns[1]` vrátí `Object`, a `AutoFit` je metoda aplikace Excel. Následující kód ukazuje, přetypování.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#14](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_8.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#14)]  
   
 2.  Chcete-li změnit výchozí nastavení a použití sestavení PIA místo vložení informací o typu, rozbalte **odkazy** uzel v **Průzkumníka řešení** a pak vyberte **Microsoft.Office.Interop.Excel** nebo **Microsoft.Office.Interop.Word**.  
   
@@ -156,17 +156,17 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 1.  Nahraďte dvě volání na `AutoFit` v `DisplayInExcel` pomocí následujícího příkazu.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#15](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_14.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#15)]  
   
      <xref:Microsoft.Office.Interop.Excel.Range.AutoFormat%2A> Metoda má sedm parametry s hodnotou, z nichž všechny jsou volitelné. Pojmenované a nepovinné argumenty umožňují zadat argumenty pro none, některé nebo všechny z nich. V předchozí prohlášení, je zadán argument pouze pro jeden z parametrů, `Format`. Protože `Format` je první parametr v seznamu parametrů, není nutné poskytnout název parametru. Příkaz může být však lze snáze pochopit, pokud název parametru je součástí, jak je znázorněno v následujícím kódu.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#16](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_15.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#16)]  
   
 2.  Stisknutím kláves CTRL + F5 k zobrazení výsledku. Další formáty jsou uvedeny v <xref:Microsoft.Office.Interop.Excel.XlRangeAutoFormat> výčtu.  
   
 3.  Porovnání příkazu v kroku 1 s následujícím kódem, který ukazuje argumenty, které jsou nezbytné [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] nebo starší verze.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#17](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_16.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#17)]  
   
 ## <a name="example"></a>Příklad  
  Následující kód ukazuje kompletní příklad.  

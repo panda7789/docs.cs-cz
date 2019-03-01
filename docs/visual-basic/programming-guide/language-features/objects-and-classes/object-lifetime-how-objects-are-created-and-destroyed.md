@@ -22,12 +22,12 @@ helpviewer_keywords:
 - Sub Dispose destructor
 - garbage collection [Visual Basic], Visual Basic
 ms.assetid: f1ee8458-b156-44e0-9a8a-5dd171648cd8
-ms.openlocfilehash: dc05b3acda5183ddc9a7c0bdddf08a3934c298f6
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: e6274f470e042fa5d581a574d13bd67ae8e8d6e9
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55738913"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56979460"
 ---
 # <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>Doba života objektu: Jak objekty jsou vytvořeny a zničen (Visual Basic)
 Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inicializace úlohy často je nutné provádět na nové objekty před jejich použití. Běžné úlohy inicializace zahrnují otevírání souborů, připojení k databázím a čtení hodnoty z klíče registru. Visual Basic řídí Inicializace nové objekty pomocí procedury volané *konstruktory* (speciální metody, které umožňují kontrolu nad inicializace).  
@@ -42,11 +42,11 @@ Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inici
   
  Pokud chcete vytvořit konstruktor pro třídu, vytvořte proceduru s názvem `Sub New` kdekoli v definici třídy. Vytvoření konstruktoru s parametry, zadejte názvy a datové typy argumentů, které mají `Sub New` stejně jako byste měli zadat argumenty pro všechny procedury, stejně jako v následujícím kódu:  
   
- [!code-vb[VbVbalrOOP#42](../../../../visual-basic/misc/codesnippet/VisualBasic/object-lifetime-how-objects-are-created-and-destroyed_1.vb)]  
+ [!code-vb[VbVbalrOOP#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/WhidbeyStuff.vb#42)]  
   
  Konstruktory jsou často přetížené, stejně jako v následujícím kódu:  
   
- [!code-vb[VbVbalrOOP#116](../../../../visual-basic/misc/codesnippet/VisualBasic/object-lifetime-how-objects-are-created-and-destroyed_2.vb)]  
+ [!code-vb[VbVbalrOOP#116](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/WhidbeyStuff.vb#116)]  
   
  Při definování třídy odvozené z jiné třídy první řádek konstruktor musí být volání konstruktoru základní třídy, pokud má základní třída přístupný konstruktor, který nepřijímá žádné parametry. Volání na základní třídu, která obsahuje konstruktoru výše, například by `MyBase.New(s)`. V opačném případě `MyBase.New` je volitelný, a modul runtime jazyka Visual Basic volá implicitně.  
   

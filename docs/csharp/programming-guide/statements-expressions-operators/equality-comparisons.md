@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - object equality [C#]
 ms.assetid: 10b865ea-4e7b-4127-9242-c9b8f57d9f04
-ms.openlocfilehash: 25ac904b848311639dda1ecf231f0d6565799733
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2572599071fdddd15be620e1322d2e38614182c7
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54620172"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56972921"
 ---
 # <a name="equality-comparisons-c-programming-guide"></a>Porovnání rovnosti (Průvodce programováním v C#)
 Někdy je nutné srovnat dvě hodnoty na rovnost. V některých případech testujete *hodnota rovnosti*, označované také jako *ekvivalence*, což znamená, že hodnoty, které jsou obsaženy ve dvou proměnných jsou stejné. V ostatních případech je nutné určit, zda hodnoty dvou proměnných odkazují na stejný základní objekt v paměti. Tento typ rovnosti se nazývá *referenční rovnost*, nebo *identity*. Toto téma popisuje tyto dva druhy rovnosti a obsahuje odkazy na další témata pro další informace.  
@@ -18,7 +18,7 @@ Někdy je nutné srovnat dvě hodnoty na rovnost. V některých případech test
 ## <a name="reference-equality"></a>Referenční rovnost  
  Referenční rovnost znamená, že reference na dva objekty odkazují na stejný základní objekt. Tato situace může nastat prostřednictvím jednoduchého přiřazení, jak je znázorněno v následujícím příkladu.  
   
- [!code-csharp[csProgGuideStatements#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/equality-comparisons_1.cs)]  
+ [!code-csharp[csProgGuideStatements#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#18)]  
   
  V tomto kódu jsou vytvořeny dva objekty, ale po příkazu přiřazení oba odkazy odkazují na stejný objekt. Proto mají referenční rovnost. Použití <xref:System.Object.ReferenceEquals%2A> metodou ke zjištění, zda dva odkazy odkazují na stejný objekt.  
   

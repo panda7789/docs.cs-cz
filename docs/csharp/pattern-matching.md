@@ -3,14 +3,14 @@ title: Porovnávání vzorů – průvodce v C#
 description: Další informace o vzoru porovnávání výrazů v jazyce C#
 ms.date: 01/24/2017
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: fa327dafe3f924d22b5f0d459eb0b6c7ba60a684
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: eccc982c94a1f124d7250e1795a44d696e43a53c
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43522023"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56969972"
 ---
-# <a name="pattern-matching"></a>Porovnávání vzorů #
+# <a name="pattern-matching"></a>Porovnávání vzorů
 
 Vzory testování, že hodnota patří k určitým *tvar*a můžete *extrahovat* informace z hodnotu, pokud má odpovídající obrazce. Porovnávání vzorů poskytuje stručnější syntaxi pro algoritmy, které už máte ještě dnes. Jste již vytvořili porovnávání vzorů pomocí syntaxe pro stávající algoritmy. Při psaní `if` nebo `switch` příkazy, které testují hodnoty. Když tyto příkazy odpovídají, potom extrahovat a používat informace z této hodnoty. Nové prvky syntaxe jsou rozšíření pro příkazy, které jste už obeznámení s: `is` a `switch`. Tyto nové přípony kombinovat testování hodnotu a extrakci těchto informací.
 
@@ -36,7 +36,7 @@ Před C# 7.0, je třeba, otestujte všechny typy v řadě `if` a `is` příkazy:
 
 [!code-csharp[ClassicIsExpression](../../samples/csharp/PatternMatching/GeometricUtilities.cs#02_ClassicIsExpression "Classic type pattern using is")]
 
-Je výše uvedený kód výrazu classic *vzor typu*: testujete proměnnou k určení jeho typu a různé akce na základě tohoto typu.
+Je výše uvedený kód výrazu classic *vzor typu*: Provedete testování proměnnou k určení jeho typu a různé akce na základě tohoto typu.
 
 Tento kód bude jednodušší pomocí rozšíření `is` výrazu přiřazení proměnných Pokud test proběhne úspěšně:
 
@@ -111,7 +111,7 @@ Zvláštní chování `null` vzor je zajímavé protože konstanty `null` ve vzo
 
 Po zavedení služby `var` jako jeden z výrazů shoda zavádí nová pravidla pro shodu vzoru.
 
-První pravidlo je, že `var` normální typ odvozených pravidel, následuje po deklaraci: typ je odvozen být statického typu výrazu přepínače. Z tohoto pravidla vždy odpovídá typu.
+První pravidlo je, že `var` normální typ odvozených pravidel, následuje po deklaraci: Typ je odvozen být statického typu výrazu přepínače. Z tohoto pravidla vždy odpovídá typu.
 
 Druhé pravidlo je, že `var` deklarace nemá kontrolu hodnot null, které zahrnují další vzorek výrazy typu. To znamená, že proměnná může mít hodnotu null a v takovém případě je nutné kontrolu hodnot null.
 

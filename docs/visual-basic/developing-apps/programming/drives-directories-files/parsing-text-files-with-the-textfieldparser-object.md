@@ -6,12 +6,12 @@ helpviewer_keywords:
 - I/O [Visual Basic], parsing files
 - files [Visual Basic], parsing
 ms.assetid: fc31d6e6-af0c-403f-8a00-d556b2c57567
-ms.openlocfilehash: 09821e9b1985913b7433b070ae19c4818265926e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e1368e3bcf91026abf4928ab554ff970331f86ec
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54585393"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56969736"
 ---
 # <a name="parsing-text-files-with-the-textfieldparser-object-visual-basic"></a>Analýza textových souborů pomocí objektu TextFieldParser (Visual Basic)
 `TextFieldParser` Objekt umožňuje analyzovat a zpracovat velké soubory, které jsou strukturované jako sloupce textu, například soubory protokolu nebo informace o starší databázi. Analýza kódu textový soubor s `TextFieldParser` je podobný iterace textového souboru s metodu parse k extrahování textových polí je podobná řetězec metodám určený k tokenizaci řetězce s oddělovači.  
@@ -19,11 +19,11 @@ ms.locfileid: "54585393"
 ## <a name="parsing-different-types-of-text-files"></a>Analýza kódu různé typy textových souborů  
  Textové soubory mohou mít různou šířku oddělené znakem, jako je čárka nebo tabulátorem. Definování `TextFieldType` a oddělovače, jako v následujícím příkladu, který používá `SetDelimiters` metoda k definování oddělený tabulátory textového souboru:  
   
- [!code-vb[VbVbalrTextFieldParser#21](../../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/parsing-text-files-with-the-textfieldparser-object_1.vb)]  
+ [!code-vb[VbVbalrTextFieldParser#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTextFieldParser/VB/Class1.vb#21)]  
   
  Jiné textové soubory mohou mít určenými šířkami polí, které jsou opraveny. V takovém případě budete muset definovat `TextFieldType` jako `FixedWidth` a definovat šířku každého pole, jako v následujícím příkladu. V tomto příkladu `SetFieldWidths` metoda k definování textových sloupců: první sloupec je 5 znaků široký, druhá je 10, třetí je 11, a čtvrtý proměnné šířky.  
   
- [!code-vb[VbVbalrTextFieldParser#22](../../../../visual-basic/developing-apps/development-with-my/codesnippet/VisualBasic/parsing-text-files-with-the-textfieldparser-object_2.vb)]  
+ [!code-vb[VbVbalrTextFieldParser#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTextFieldParser/VB/Class1.vb#22)]  
   
  Po definování formátu můžete projít soubor, použití `ReadFields` metoda zase zpracovávat každý řádek.  
   

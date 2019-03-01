@@ -1,24 +1,18 @@
 ---
-title: Main() a argumenty příkazového řádku - C# Průvodce programováním pro službu
+title: 'Main() a argumenty příkazového řádku - C# Průvodce programováním pro službu'
 ms.custom: seodec18
 ms.date: 08/02/2017
 f1_keywords:
-- CS5001
-- main_CSharpKeyword
-- Main
+  - CS5001
+  - main_CSharpKeyword
+  - Main
 helpviewer_keywords:
-- Main method [C#]
-- C# language, command-line arguments
-- arguments [C#], command-line
-- command line [C#], arguments
-- command-line arguments [C#], Main method
+  - 'Main method [C#]'
+  - 'C# language, command-line arguments'
+  - 'arguments [C#], command-line'
+  - 'command line [C#], arguments'
+  - 'command-line arguments [C#], Main method'
 ms.assetid: 73a17231-cf96-44ea-aa8a-54807c6fb1f4
-ms.openlocfilehash: 2070a7e0bb9f2731a8a292158e2f7c856d42253c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54566707"
 ---
 # <a name="main-and-command-line-arguments-c-programming-guide"></a>Main() a argumenty příkazového řádku (C# Programming Guide)
 
@@ -26,7 +20,7 @@ ms.locfileid: "54566707"
 
  Může existovat pouze jeden vstupní bod v programu v jazyce C#. Pokud máte více než jednu třídu, která má `Main` metodu, musí zkompilujete program se **/main** – možnost kompilátoru k určení `Main` metody pro použití jako vstupní bod. Další informace najdete v tématu [/Main (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/main-compiler-option.md).
 
- [!code-csharp[csProgGuideMain#17](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-and-command-line-arguments_1.cs)]
+ [!code-csharp[csProgGuideMain#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class1.cs#17)]
 
 ## <a name="overview"></a>Přehled
 

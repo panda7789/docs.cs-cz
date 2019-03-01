@@ -14,12 +14,12 @@ helpviewer_keywords:
 - Partial keyword [Visual Basic]
 - type promotion
 ms.assetid: 7adaef80-f435-46e1-970a-269fff63b448
-ms.openlocfilehash: 8f8e7e992ce312f7f7bf2c9dbad4d14fbb095de1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e1464421866ee22f27f9cf0a3611bc09a631c004
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54690706"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56975833"
 ---
 # <a name="partial-visual-basic"></a>Partial (Visual Basic)
 Označuje, že deklarace typu je částečnou definici typu.  
@@ -89,7 +89,7 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
 ## <a name="example"></a>Příklad  
  Následující příklad rozdělí definice třídy `sampleClass` do dvě deklarace, z nichž každý definuje jiný `Sub` postup.  
   
- [!code-vb[VbVbalrKeywords#3](../../../visual-basic/language-reference/codesnippet/VisualBasic/partial_1.vb)]  
+ [!code-vb[VbVbalrKeywords#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#3)]  
   
  Dvě Částečná definice v předchozím příkladu může být ve stejném zdrojovém souboru nebo ve dvou různých zdrojových souborů.  
   

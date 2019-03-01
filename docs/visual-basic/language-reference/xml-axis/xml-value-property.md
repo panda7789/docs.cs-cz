@@ -9,12 +9,12 @@ helpviewer_keywords:
 - XML axis [Visual Basic], Value
 - XML Value property [Visual Basic]
 ms.assetid: 7ddd057a-a195-4e9b-ad8b-2ee0e615a20f
-ms.openlocfilehash: 54bd18b050ca58c286bfca3972b242348c61fe45
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7cf1dbb1d9dafa9c690b4043da5a6f36469e8d7a
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54737608"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965342"
 ---
 # <a name="xml-value-property-visual-basic"></a>Vlastnost hodnoty XML (Visual Basic)
 Poskytuje přístup k hodnotě prvního prvku kolekce <xref:System.Xml.Linq.XElement> objekty.  
@@ -50,7 +50,7 @@ object.Value
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje způsob použití <xref:System.Xml.Linq.XElement.Value%2A> vlastnosti pro přístup k prvním uzlem v kolekci <xref:System.Xml.Linq.XElement> objekty. Vlastnost osy podřízeného v příkladu se používá k získání kolekce všech podřízených uzlech s názvem `phone` , které jsou `contact` objektu.  
   
- [!code-vb[VbXMLSamples#15](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-value-property_1.vb)]  
+ [!code-vb[VbXMLSamples#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples7.vb#15)]  
   
  Tento kód zobrazí následující text:  
   
@@ -59,7 +59,7 @@ object.Value
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak má být získána hodnota atributu XML z kolekce <xref:System.Xml.Linq.XAttribute> objekty. V příkladu používá vlastnost osy atributu k zobrazení hodnoty `type` atribut pro všechny `phone` elementy.  
   
- [!code-vb[VbXMLSamples#16](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-value-property_2.vb)]  
+ [!code-vb[VbXMLSamples#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples7.vb#16)]  
   
  Tento kód zobrazí následující text:  
   

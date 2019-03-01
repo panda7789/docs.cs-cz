@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, versioning
 - C# language, override and new
 ms.assetid: 88247d07-bd0d-49e9-a619-45ccbbfdf0c5
-ms.openlocfilehash: 5c83ce79bede1ee4e5752ac0b1dcf9647df1f36c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 39aae39a761414947c14f0a78aedcdbf89ddfbda
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54555983"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56975854"
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Správa verzí pomocí klíčových slov override a new (Průvodce programováním v C#)
 Jazyk C# je navržený tak, aby Správa verzí mezi [základní](../../../csharp/language-reference/keywords/base.md) a odvozené třídy v jiných knihovnách můžete vyvíjet a udržovat zpětnou kompatibilitu. To znamená, například, že zavedení nového člena v základní třídě [třída](../../../csharp/language-reference/keywords/class.md) se stejným názvem jako člena v odvozené třídě je plně podporován v jazyce C# a nevede k neočekávanému chování. Také znamená, že třída musí explicitně uvést, zda metoda je určena k přepsání zděděné metody nebo určuje, zda je metoda novou metodu, která skrývá podobně pojmenovaných zděděné metody.  
@@ -34,15 +34,15 @@ Jazyk C# je navržený tak, aby Správa verzí mezi [základní](../../../csharp
   
  Abychom si předvedli v praxi, předpokládají na chvíli zastavíme, firmy A vytvořil třídu s názvem `GraphicsClass`, který program používá. Tady je `GraphicsClass`:  
   
- [!code-csharp[csProgGuideInheritance#27](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_1.cs)]  
+ [!code-csharp[csProgGuideInheritance#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#27)]  
   
  Vaše společnost používá ochranu této třídy a můžete ji použít k odvodit vlastní třídu, přidání nové metody:  
   
- [!code-csharp[csProgGuideInheritance#28](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_2.cs)]  
+ [!code-csharp[csProgGuideInheritance#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#28)]  
   
  Vaše aplikace se používá bez problémů, dokud nové verze aktualizací společnosti A `GraphicsClass`, který vypadá podobně jako následující kód:  
   
- [!code-csharp[csProgGuideInheritance#29](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_3.cs)]  
+ [!code-csharp[csProgGuideInheritance#29](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#29)]  
   
  Nová verze `GraphicsClass` nyní obsahuje metodu s názvem `DrawRectangle`. Na začátku nedojde k žádné akci. Nová verze je stále binární kompatibilní s předchozí verzi aplikace. Veškerý software, který jste nasadili se budou nadále fungovat, i v případě nové třídy je nainstalována v těchto počítačích. Všechna existující volání do metody `DrawRectangle` budou i nadále odkazují na vaši verzi, a to v odvozené třídě.  
   
@@ -50,32 +50,32 @@ Jazyk C# je navržený tak, aby Správa verzí mezi [základní](../../../csharp
   
  Pokud chcete metodu pro přepsání novou metodu základní třídy, použijte `override` – klíčové slovo:  
   
- [!code-csharp[csProgGuideInheritance#30](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_4.cs)]  
+ [!code-csharp[csProgGuideInheritance#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#30)]  
   
  `override` – Klíčové slovo zajišťuje, že všechny objekty odvozené z `YourDerivedGraphicsClass` budou používat verzi odvozené třídy `DrawRectangle`. Objekty odvozené z `YourDerivedGraphicsClass` pořád přístup k verzi základní třídy `DrawRectangle` pomocí klíčového slova base:  
   
- [!code-csharp[csProgGuideInheritance#44](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_5.cs)]  
+ [!code-csharp[csProgGuideInheritance#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#44)]  
   
  Pokud nechcete, aby vaše metoda k přepsání novou metodu základní třídy, platí následující aspekty. Aby nedocházelo k záměně mezi těmito dvěma metodami, můžete přejmenovat metodu. To může být časově náročné a náchylné k chybě a v některých případech stačí není praktické. Pokud váš projekt je poměrně malý, můžete přejmenovat metodu můžete použít možnosti aplikace Visual Studio refaktoringu. Další informace najdete v tématu [refaktoring tříd a typů (návrhář tříd)](/visualstudio/ide/refactoring-classes-and-types-class-designer).  
   
  Alternativně můžete zabránit upozornění pomocí klíčového slova `new` v definici odvozené třídy:  
   
- [!code-csharp[csProgGuideInheritance#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_6.cs)]  
+ [!code-csharp[csProgGuideInheritance#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#31)]  
   
  Použití `new` – klíčové slovo sděluje kompilátoru, že vaše definice skryje definici, která je obsažena v základní třídě. Toto je výchozí chování.  
   
 ## <a name="override-and-method-selection"></a>Přepsání a výběr metody  
  Při názvem metodu na třídu, kompilátor jazyka C# vybere nejlepší metody volat, pokud více než jedním ze způsobů je kompatibilní s voláním, například když existují dvě metody se stejným názvem a parametry, které jsou kompatibilní s parametrem předán. Následující metody by měly kompatibilní:  
   
- [!code-csharp[csProgGuideInheritance#32](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_7.cs)]  
+ [!code-csharp[csProgGuideInheritance#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#32)]  
   
  Když `DoWork` je volán na instanci `Derived`, kompilátor jazyka C# se nejdřív pokusí použít, provede volání kompatibilní s verzemi `DoWork` původně deklarovaná na `Derived`. Přepsání metody nepovažují, protože deklaruje se na třídu, nové implementace metody deklarované pro základní třídu. Pouze v případě, že kompilátor jazyka C# se nemůže shodovat volání metody na původní metodu na `Derived` se pokusit porovnat volání přepsané metody se stejným názvem a kompatibilní parametry. Příklad:  
   
- [!code-csharp[csProgGuideInheritance#33](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_8.cs)]  
+ [!code-csharp[csProgGuideInheritance#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#33)]  
   
  Protože proměnné `val` lze implicitně převést na dvojitou hodnotu volání kompilátor jazyka C# `DoWork(double)` místo `DoWork(int)`. Existují dva způsoby, abyste tomu předešli. Vyhněte se nejprve deklaraci nových metod se stejným názvem jako virtuální metody. Za druhé, můžete dát pokyn kompilátoru C# pro volání virtuální metody tím, že metoda základní třídy v seznamu vyhledejte přetypováním instanci `Derived` k `Base`. Protože metoda je virtuální, provádění `DoWork(int)` na `Derived` , zavolá se. Příklad:  
   
- [!code-csharp[csProgGuideInheritance#34](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/versioning-with-the-override-and-new-keywords_9.cs)]  
+ [!code-csharp[csProgGuideInheritance#34](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#34)]  
   
  Další příklady `new` a `override`, naleznete v tématu [vědět, když pro použití přepsání a nových klíčových slov](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).  
   

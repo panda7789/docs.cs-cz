@@ -9,12 +9,12 @@ helpviewer_keywords:
 - TypeOf...Is expression
 - Is operator [Visual Basic]
 ms.assetid: 8045a6c8-2a83-45b6-ad47-d09a704c656d
-ms.openlocfilehash: a78189a6b82100665ac07b9d7c89590613ec1e1f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c4b23bb2d81d1f5272a5813123681da7406c3368
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745620"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56980334"
 ---
 # <a name="is-operator-visual-basic"></a>Is – operátor (Visual Basic)
 Porovná dvě proměnné objektových referencí.  
@@ -46,7 +46,7 @@ result = object1 Is object2
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Is` operátor porovnání dvojice odkazů na objekty. Výsledky jsou přiřazeny k `Boolean` hodnotu udávající, zda dva objekty jsou identické.  
   
- [!code-vb[VbVbalrOperators#27](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/is-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#27)]  
   
  Jak ukazuje předchozí příklad, můžete použít `Is` operátor testování obou časné a pozdní vazby objektů.  
   

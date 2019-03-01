@@ -3,14 +3,14 @@ title: Typy řazené kolekce členů – průvodce v C#
 description: Další informace o typech pojmenované a nepojmenované řazené kolekce členů v C#
 ms.date: 05/15/2018
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 2c2b25c34555699c196099c0e1c51681fba8c358
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
+ms.openlocfilehash: d9d3424e1e59e7b33a098537738a0a1f6af27d74
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56332751"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971403"
 ---
-# <a name="c-tuple-types"></a>Typy řazené kolekce členů v C# #
+# <a name="c-tuple-types"></a>Typy řazené kolekce členů v C#
 
 C# řazené kolekce členů jsou typy, které definujete pomocí jednoduché syntaxe. Mezi výhody patří jednodušší syntaxí, pravidla pro převody na základě čísla (označované jako Kardinalita) a typy prvků a konzistentní pravidla pro kopie, testování rovnosti a přiřazení. Jako kompromis řazených kolekcí členů nepodporuje některé objektově orientované idiomy přidružené dědičnosti. V části můžete získat přehled [řazenými kolekcemi členů v co je nového v jazyce C# 7.0](whats-new/csharp-7.md#tuples) článku.
 

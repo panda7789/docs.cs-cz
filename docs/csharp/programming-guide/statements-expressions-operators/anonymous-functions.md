@@ -7,12 +7,12 @@ helpviewer_keywords:
 - anonymous functions [C#]
 - anonymous methods [C#]
 ms.assetid: 6ce3f04d-0c71-4728-9127-634c7e9a8365
-ms.openlocfilehash: 05098d1f26526c60656cca2255a2f93922c025da
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5500e93dc2369273d296b557e22bbe20cc589d91
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613724"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56967149"
 ---
 # <a name="anonymous-functions-c-programming-guide"></a>Anonymní funkce (Průvodce programováním v C#)
 Anonymní funkce je "vloženě" příkaz nebo výraz, který se dá použít, kdykoli se očekává typ delegáta. Slouží k inicializaci pojmenovaný delegát nebo předat místo pojmenovaný delegát typu jako parametr metody.  
@@ -26,12 +26,12 @@ Anonymní funkce je "vloženě" příkaz nebo výraz, který se dá použít, kd
     > [!NOTE]
     >  Výrazy lambda mohou být vázány na stromy výrazů a také na delegáty.  
   
-## <a name="the-evolution-of-delegates-in-c"></a>Vývoj v jazyce C# delegátů  
+## <a name="the-evolution-of-delegates-in-c"></a>Vývoj delegátů v jazyce C\#
  V jazyce C# 1.0 vytvořeného instanci delegáta explicitně inicializuje s metodu, která byla definována kdekoli v kódu. 2.0 C# představila koncept anonymní metody jako způsob, jak zapsat vložený nepojmenovaný výkazu bloků, které mohou být provedeny v vyvolání delegáta. C# 3.0 představila výrazy lambda, které jsou v principu podobná anonymní metody, ale výrazová a stručné. Tyto dvě funkce se souhrnně nazývají *anonymní funkce*. Obecně platí, aplikace, jejichž cílem verze 3.5 a novější [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] by měl použití výrazů lambda.  
   
  Následující příklad ukazuje vývoj vytvoření delegáta z 1.0 C# do jazyka C# 3.0:  
   
- [!code-csharp[csProgGuideLINQ#65](../../../csharp/programming-guide/arrays/codesnippet/CSharp/anonymous-functions_1.cs)]  
+ [!code-csharp[csProgGuideLINQ#65](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#65)]  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

@@ -6,16 +6,16 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
-ms.openlocfilehash: 8ce7f39d78006765a49bbd4e3d46c611761a4bd1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: eb1ba14bbcfe4e561fa575b9802126fab59d31fc
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181732"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56968032"
 ---
 # <a name="linq-language-integrated-query"></a>LINQ (Language Integrated Query)
 
-## <a name="what-is-it"></a>Co to je?
+## <a name="what-is-it"></a>Co je to?
 
 LINQ poskytuje možnosti dotazování úrovni jazyka a [funkce vyššího řádu](https://en.wikipedia.org/wiki/Higher-order_function) rozhraní API pro C# a VB jako způsob, jak napsat kód výrazová, deklarativní.
 
@@ -77,7 +77,7 @@ public static IEnumerable<XElement> FindAllElementsWithAttribute(XElement docume
 
 Psaní kódu ručně procházet dokumentu XML k provedení této úlohy by bylo mnohem složitější.
 
-Interakce s XML není jediné, co můžete dělat s zprostředkovatelé dotazů LINQ. [Technologie LINQ to SQL](../../docs/framework/data/adonet/sql/linq/index.md) je poměrně holou objektově-relační Mapovač (ORM) určené pro databázi MSSQL serveru. [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) knihovna poskytuje efektivní procházení dokumentu JSON prostřednictvím LINQ. Kromě toho, pokud není k dispozici knihovna, která zajišťuje, co potřebujete, můžete také [napsat vlastního zprostředkovatele LINQ](https://msdn.microsoft.com/library/Bb546158.aspx)!
+Interakce s XML není jediné, co můžete dělat s zprostředkovatelé dotazů LINQ. [Technologie LINQ to SQL](../../docs/framework/data/adonet/sql/linq/index.md) je poměrně holou objektově-relační Mapovač (ORM) určené pro databázi MSSQL serveru. [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) knihovna poskytuje efektivní procházení dokumentu JSON prostřednictvím LINQ. Kromě toho, pokud není k dispozici knihovna, která zajišťuje, co potřebujete, můžete také [napsat vlastního zprostředkovatele LINQ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110))!
 
 ## <a name="why-use-the-query-syntax"></a>Proč používat syntaxi dotazu?
 
@@ -226,7 +226,7 @@ public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params st
 
 PLINQ nebo paralelní LINQ, je modul pro paralelní provádění pro výrazy LINQ. Regulární výraz LINQ jinými slovy, může být triviálně paralelizován, napříč libovolným počtem vláken. To lze provést prostřednictvím volání `AsParallel()` před výrazem.
 
-Vezměte v úvahu následující:
+Zvažte použití těchto zdrojů:
 
 ```csharp
 public static string GetAllFacebookUserLikesMessage(IEnumerable<FacebookUser> facebookUsers)
@@ -253,5 +253,5 @@ Paralelizovat úlohy vázané na procesor, které lze snadno vyjádřit pomocí 
 ## <a name="further-resources"></a>Další materiály:
 
 *   [101 ukázek pro LINQ](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
-*   [Linqpad](https://www.linqpad.net/), playground prostředí a dotazování databáze modul pro C# /F #/VB
+*   [Linqpad](https://www.linqpad.net/), playground prostředí a dotazování databáze modul pro C#/F#/VB
 *   [EduLinq](https://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/), e knihu naučí, jak je implementovaná LINQ na objekty

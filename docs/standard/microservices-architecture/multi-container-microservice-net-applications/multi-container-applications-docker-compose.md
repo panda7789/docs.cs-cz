@@ -1,15 +1,15 @@
 ---
 title: Definování vícekontejnerové aplikace pomocí docker-compose.yml
-description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Jak určit složení mikroslužeb pro vícekontejnerových aplikací pomocí docker-compose.yml.
+description: Jak určit složení mikroslužeb pro vícekontejnerových aplikací pomocí docker-compose.yml.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: b00b0021f71097f2c6cedcb1ddea7861f1936f84
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 908837c470e97e66a6f6b06ef89e87fca80982f2
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442227"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56973506"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml 
 
@@ -468,7 +468,7 @@ Modul runtime imagí taky poskytuje automatické nastavení aspnetcore\_adresy U
     [*https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/*](https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/)
 
 -   **Vytváření imagí Dockeru pro aplikace .NET Core** <br/>
-    [*https://docs.microsoft.com/en-us/dotnet/core/docker/building-net-docker-images*](../../../core/docker/building-net-docker-images.md)
+    [*https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images*](../../../core/docker/building-net-docker-images.md)
 
 >[!div class="step-by-step"]
 >[Předchozí](data-driven-crud-microservice.md)

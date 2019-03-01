@@ -9,12 +9,12 @@ helpviewer_keywords:
 - SyncLock statement [Visual Basic]
 - locks, threads
 ms.assetid: 14501703-298f-4d43-b139-c4b6366af176
-ms.openlocfilehash: 5a931199ff8d09412d536a173f3cd12e451def64
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 3a12c3ac7250ee2904d571406d5008d451c9dc35
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48845977"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56979811"
 ---
 # <a name="synclock-statement"></a>SyncLock – příkaz
 Získá výhradní zámek pro blok příkazů, který před spuštěním bloku.  
@@ -29,7 +29,7 @@ End SyncLock
   
 ## <a name="parts"></a>Součásti  
  `lockobject`  
- Požadováno. Výraz, který se vyhodnotí jako odkaz na objekt.  
+ Povinný parametr. Výraz, který se vyhodnotí jako odkaz na objekt.  
   
  `block`  
  Volitelné. Blok příkazů, které se má provést, když je požadován zámek.  
@@ -81,13 +81,13 @@ End SyncLock
  Pokud `simpleMessageList` třídy sdílí jeden seznam zpráv mezi všechny její instance, proměnné `messagesList` a `messagesLast` by být deklarovaný jako `Shared`. V tomto případě, proměnná `messagesLock` by mělo být také `Shared`, takže by existovat jeden zámek objekt použitý objektem každou instanci.  
   
 ### <a name="code"></a>Kód  
- [!code-vb[VbVbalrThreading#1](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/synclock-statement_1.vb)]  
+ [!code-vb[VbVbalrThreading#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrThreading/VB/Class1.vb#1)]  
   
 ### <a name="description"></a>Popis  
  Následující příklad používá vlákna a `SyncLock`. Za předpokladu, `SyncLock` příkaz je k dispozici, je důležité části tohoto bloku příkazů a `balance` nikdy nebude záporné číslo. Můžete Zakomentovat `SyncLock` a `End SyncLock` příkazy a vidět její účinek ponechání navýšení kapacity `SyncLock` – klíčové slovo.  
   
 ### <a name="code"></a>Kód  
- [!code-vb[VbVbalrThreading#21](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/synclock-statement_2.vb)]  
+ [!code-vb[VbVbalrThreading#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrThreading/VB/class2.vb#21)]  
   
 ### <a name="comments"></a>Komentáře  
   

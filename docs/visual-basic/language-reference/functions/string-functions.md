@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - string functions
 ms.assetid: f1bf9ac2-cbcf-4298-ae51-53182076bdc8
-ms.openlocfilehash: 9a716a767563ab2721b3f01663d7566f141fc8e7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 11ea31ae245d34525ea33d5d2a53a72f1c415b16
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54612018"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56981449"
 ---
 # <a name="string-functions-visual-basic"></a>Funkce řetězce (Visual Basic)
 V následující tabulce jsou uvedeny funkce, které Visual Basic poskytuje pro vyhledávání a manipulaci s řetězci.  
@@ -51,27 +51,27 @@ V následující tabulce jsou uvedeny funkce, které Visual Basic poskytuje pro 
 ## <a name="example"></a>Příklad  
  V tomto příkladu `UCase` funkce vrací verzi řetězce s velkými písmeny.  
   
- [!code-vb[VbVbalrStrings#31](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_1.vb)]  
+ [!code-vb[VbVbalrStrings#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#31)]  
   
 ## <a name="example"></a>Příklad  
  V tomto příkladu `LTrim` funkce pro odstranění úvodních mezer a `RTrim` funkce pro odstranění koncových mezer z proměnné řetězce. Používá `Trim` funkce pro odstranění obou typů mezer.  
   
- [!code-vb[VbVbalrStrings#25](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_2.vb)]  
+ [!code-vb[VbVbalrStrings#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#25)]  
   
 ## <a name="example"></a>Příklad  
  V tomto příkladu `Mid` funkce vrací zadaný počet znaků z řetězce.  
   
- [!code-vb[VbVbalrStrings#17](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_3.vb)]  
+ [!code-vb[VbVbalrStrings#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#17)]  
   
 ## <a name="example"></a>Příklad  
  Tento příklad používá `Len` k vrácení počtu znaků v řetězci.  
   
- [!code-vb[VbVbalrStrings#33](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_4.vb)]  
+ [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]  
   
 ## <a name="example"></a>Příklad  
  V tomto příkladu `InStr` funkce vrací pozici prvního výskytu jednoho řetězce v jiném.  
   
- [!code-vb[VbVbalrStrings#8](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_5.vb)]  
+ [!code-vb[VbVbalrStrings#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#8)]  
   
 ## <a name="example"></a>Příklad  
  Tento příklad ukazuje různé možnosti použití `Format` funkce pro formátování hodnot pomocí obou `String` formátů a formátů definovaný uživatelem. Pro oddělovač data (`/`), oddělovač času (`:`) a indikátory dop/odp (`t` a `tt`), skutečný formátovaný výstup zobrazený v systému, závisí na nastavení národního prostředí, které kód používá. Když časy a data zobrazí ve vývojovém prostředí, používají se krátký formát času a krátký formát data národního prostředí kódu.  
@@ -79,7 +79,7 @@ V následující tabulce jsou uvedeny funkce, které Visual Basic poskytuje pro 
 > [!NOTE]
 >  Pro národní prostředí používající 24hodinový formát indikátory dop/odp (`t` a `tt`) nezobrazí.  
   
- [!code-vb[VbVbalrStrings#27](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_6.vb)]  
+ [!code-vb[VbVbalrStrings#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#27)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

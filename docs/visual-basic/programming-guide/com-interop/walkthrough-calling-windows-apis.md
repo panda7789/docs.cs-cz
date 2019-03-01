@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Volání rozhraní API Windows (Visual Basic)'
+title: 'Návod: Volání rozhraní API Windows (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - DLLs, calling
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - DllImport attribute, calling Windows API
 - Declare statement [Visual Basic], declaring DLL functions
 ms.assetid: 9280ca96-7a93-47a3-8d01-6d01be0657cb
-ms.openlocfilehash: 59c316ccb3a35a650ac11b96717a3ad729e777a3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f57b5ae35bf97a04ff235d213ffad27bd015e711
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54657971"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56981462"
 ---
-# <a name="walkthrough-calling-windows-apis-visual-basic"></a>Průvodce: Volání rozhraní API Windows (Visual Basic)
+# <a name="walkthrough-calling-windows-apis-visual-basic"></a>Návod: Volání rozhraní API Windows (Visual Basic)
 Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí operačního systému Windows. Můžete využít k provádění úkolů, když je obtížné je napsat ekvivalentní postupy. Například Windows poskytuje funkci s názvem `FlashWindowEx` , který umožňuje provádět alternativní mezi světlé a tmavé odstínů v záhlaví okna aplikace.  
   
  Výhodou použití rozhraní API Windows ve vašem kódu je, že se dají ušetřit dobu vývoje, protože obsahují řadě užitečných funkcí, které již byly napsány a čekáním, který se má použít. Nevýhodou je, že rozhraní API Windows může být obtížné pro práci s a nepřijímá, když něco selže.  
@@ -45,7 +45,7 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
   
 4.  Přidejte následující `Declare` pracovat buď pro třídu nebo modul, ve které chcete použít knihovnu DLL:  
   
-     [!code-vb[VbVbalrInterop#9](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_1.vb)]  
+     [!code-vb[VbVbalrInterop#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#9)]  
   
 ### <a name="parts-of-the-declare-statement"></a>Součástí Declare – příkaz  
  `Declare` Výpis obsahuje následující prvky.  
@@ -79,7 +79,7 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
   
 3.  Přidat ekvivalent `Const` příkazy na třídu nebo modul pro zpřístupnění tyto konstanty pro vaše aplikace. Příklad:  
   
-     [!code-vb[VbVbalrInterop#11](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_2.vb)]  
+     [!code-vb[VbVbalrInterop#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#11)]  
   
 ###### <a name="to-call-the-dll-procedure"></a>K volání procedury knihovny DLL  
   
@@ -87,7 +87,7 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
   
 2.  Přidejte kód, který `Click` obslužné rutiny události pro tlačítko, které jste přidali, zavolejte proceduru a poskytovat příslušnými argumenty:  
   
-     [!code-vb[VbVbalrInterop#12](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_3.vb)]  
+     [!code-vb[VbVbalrInterop#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#12)]  
   
 3.  Stisknutím klávesy F5 spusťte projekt. Zobrazí se okno se zprávou s oběma **Ano** a **ne** tlačítka odpovědi. Klikněte na jednu.  
   
@@ -100,11 +100,11 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
   
 2.  Pro zjednodušení přístupu k `MarshalAs` atribut, přidejte `Imports` příkaz do horní části kódu pro třídu nebo modul, jako v následujícím příkladu:  
   
-     [!code-vb[VbVbalrInterop#13](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_4.vb)]  
+     [!code-vb[VbVbalrInterop#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#13)]  
   
 3.  Přidat prototyp funkce pro importované funkce pro třídu nebo modul a použít `MarshalAs` atribut parametry nebo návratovou hodnotu. V následujícím příkladu volání rozhraní API, která očekává typ `void*` zařazena jako `AsAny`:  
   
-     [!code-vb[VbVbalrInterop#14](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_5.vb)]  
+     [!code-vb[VbVbalrInterop#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#14)]  
   
 ## <a name="api-calls-using-dllimport"></a>Volání rozhraní API pomocí DllImport  
  `DllImport` Atribut obsahuje druhý způsob, jak volat funkce v knihovnách DLL bez knihovny typů. `DllImport` je zhruba ekvivalentní k použití `Declare` příkaz ale poskytuje větší kontrolu nad jakým jsou funkce volány.  
@@ -123,23 +123,23 @@ Rozhraní API Windows jsou dynamické knihovny (DLL), které jsou součástí op
   
 5.  Pro zjednodušení přístupu k `DllImport`, přidejte `Imports` příkaz do horní části kódu pro třídu formuláře po spuštění:  
   
-     [!code-vb[VbVbalrInterop#13](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_4.vb)]  
+     [!code-vb[VbVbalrInterop#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#13)]  
   
 6.  Prázdná funkce předchozí deklaraci `End Class` příkaz pro formulář a název funkce `MoveFile`.  
   
 7.  Použít `Public` a `Shared` modifikátory deklarace funkce a nastavit parametry pro `MoveFile` na základě argumentů funkce rozhraní Windows API používá:  
   
-     [!code-vb[VbVbalrInterop#16](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_6.vb)]  
+     [!code-vb[VbVbalrInterop#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#16)]  
   
      Funkce může mít libovolný název platný postupu; `DllImport` atribut určuje název v knihovně DLL. Také obstará interoperability zařazování pro parametry a návratové hodnoty, proto můžete použít Visual Studio datové typy, které jsou podobně jako typy používá rozhraní API.  
   
 8.  Použít `DllImport` atribut funkce empty. První parametr je název a umístění souboru DLL obsahujícímu funkce, který voláte. Nemusíte určit cestu pro soubory jsou umístěné v adresáři systému Windows. Druhý parametr je pojmenovaný argument, který určuje název funkce v rozhraní Windows API. V tomto příkladu `DllImport` atribut vynutí volání `MoveFile` mají být předány `MoveFileW` v KERNEL32. KNIHOVNY DLL. `MoveFileW` Metoda zkopíruje soubor z cesty `src` k cestě `dst`.  
   
-     [!code-vb[VbVbalrInterop#17](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_7.vb)]  
+     [!code-vb[VbVbalrInterop#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#17)]  
   
 9. Přidejte kód, který `Button2_Click` obslužná rutina události volaná funkce:  
   
-     [!code-vb[VbVbalrInterop#18](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-calling-windows-apis_8.vb)]  
+     [!code-vb[VbVbalrInterop#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#18)]  
   
 10. Vytvořte soubor s názvem Test.txt a umístěte ho do C:\Tmp adresáře na pevném disku. Vytvořte adresář Tmp, v případě potřeby.  
   

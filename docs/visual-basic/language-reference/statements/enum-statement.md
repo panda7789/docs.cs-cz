@@ -11,12 +11,12 @@ helpviewer_keywords:
 - variables [Visual Basic], enumeration
 - constants [Visual Basic], enumerated
 ms.assetid: a45e51f1-65ff-48e1-bf32-79130f137377
-ms.openlocfilehash: f1086fdc26f1909e751617b78e0cd31f2a8b1b95
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 662dc63b69a8229693471909a50b0c4f336b5637
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54656658"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965693"
 ---
 # <a name="enum-statement-visual-basic"></a>Enum – příkaz (Visual Basic)
 Deklaruje výčet a definuje hodnoty jeho členů.  
@@ -139,37 +139,37 @@ End Enum
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje způsob použití `Enum` příkazu. Všimněte si, že člen se označuje jako `EggSizeEnum.Medium`a ne jako `Medium`.  
   
- [!code-vb[VbEnumsTask#41](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_1.vb)]  
+ [!code-vb[VbEnumsTask#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#41)]  
   
 ## <a name="example"></a>Příklad  
  Metoda v následujícím příkladu je mimo `Egg` třídy. Proto `EggSizeEnum` je plně kvalifikovaný jako `Egg.EggSizeEnum`.  
   
- [!code-vb[VbEnumsTask#42](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_2.vb)]  
+ [!code-vb[VbEnumsTask#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#42)]  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Enum` příkaz k definování související sadu s názvem konstantní hodnoty. V tomto případě hodnoty jsou barvy, které můžete se rozhodnout pro návrh formulářů pro zadávání dat pro databázi.  
   
- [!code-vb[VbEnumsTask#30](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_3.vb)]  
+ [!code-vb[VbEnumsTask#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#30)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje hodnoty, které obsahují kladná a záporná čísla.  
   
- [!code-vb[VbEnumsTask#31](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_4.vb)]  
+ [!code-vb[VbEnumsTask#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#31)]  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `As` klauzule slouží k určení `datatype` výčtu.  
   
- [!code-vb[VbEnumsTask#6](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_5.vb)]  
+ [!code-vb[VbEnumsTask#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#6)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak použít bitový výčtu. Víc hodnot je přiřadit k instanci bitové operace výčtu. `Enum` Deklarace obsahuje <xref:System.FlagsAttribute> atribut, který označuje, že výčtu lze považovat za sada příznaků.  
   
- [!code-vb[VbEnumsTask#61](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_6.vb)]  
+ [!code-vb[VbEnumsTask#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#61)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad provede iteraci výčet. Používá <xref:System.Enum.GetNames%2A> metody k načtení pole názvy členů výčtu, a <xref:System.Enum.GetValues%2A> k načtení pole hodnoty členů.  
   
- [!code-vb[VbEnumsTask#51](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enum-statement_7.vb)]  
+ [!code-vb[VbEnumsTask#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#51)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Enum>

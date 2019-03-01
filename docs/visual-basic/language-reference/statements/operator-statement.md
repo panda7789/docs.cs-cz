@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Operator statement [Visual Basic]
 - CType function [Visual Basic], Operator statement
 ms.assetid: b12ec4af-1ad7-4a17-865b-c5ee96320ae5
-ms.openlocfilehash: 9da2fc05824fa7e412c1c4802852fd00ba2709e0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 44b0a2513f504c8fecec74868130463581b597af
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54658192"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56981696"
 ---
 # <a name="operator-statement"></a>Operator – příkaz
 Deklaruje symbol operátoru, operandy a kód, který definuje proceduru operátoru pro třídu nebo strukturu.  
@@ -168,7 +168,7 @@ End Operator
 ## <a name="example"></a>Příklad  
  Následující příklad kódu používá `Operator` příkaz k definování obrysu strukturu, která zahrnuje procedury operátoru pro `And`, `Or`, `IsFalse`, a `IsTrue` operátory. `And` a `Or` každý používají dva operandy typu `abc` a návratový typ `abc`. `IsFalse` a `IsTrue` každá vzít jeden operand typu `abc` a vrátit `Boolean`. Tyto definice povolit, aby volající kód použít `And`, `AndAlso`, `Or`, a `OrElse` s operandy typu `abc`.  
   
- [!code-vb[VbVbalrStatements#44](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/operator-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#44](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#44)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Operátor IsFalse](../../../visual-basic/language-reference/operators/isfalse-operator.md)

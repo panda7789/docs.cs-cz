@@ -8,26 +8,26 @@ helpviewer_keywords:
 - Key [Visual Basic]
 - Key keyword [Visual Basic]
 ms.assetid: 7697a928-7d14-4430-a72a-c9e96e8d6c11
-ms.openlocfilehash: 695f356f44bfd6ea5ad3c0a977ec31ddfbea2b05
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0f4778b69963c7b0df14308b3cb6312555647b92
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54668220"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56967773"
 ---
 # <a name="key-visual-basic"></a>Key (Visual Basic)
 `Key` – Klíčové slovo umožňuje zadat chování vlastností anonymních typů. Pouze vlastnosti, kterou určíte jako vlastnosti klíče účasti v testech rovnost mezi anonymního typu instance nebo výpočet hodnoty hash. Nelze změnit hodnoty vlastnosti klíče.  
   
  Vlastnost anonymního typu určíte jako klíčová vlastnost tak, že klíčové slovo `Key` před deklarací ve inicializačního seznamu. V následujícím příkladu `Airline` a `FlightNo` jsou klíčové vlastnosti, ale `Gate` není.  
   
- [!code-vb[VbVbalrAnonymousTypes#26](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_1.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#26)]  
   
  Když se vytvoří nové anonymní typ, dědí přímo z <xref:System.Object>. Kompilátor nahradí tři zděděné členy: <xref:System.Object.Equals%2A>, <xref:System.Object.GetHashCode%2A>, a <xref:System.Object.ToString%2A>. Přepsání kód, který je vytvořen pro <xref:System.Object.Equals%2A> a <xref:System.Object.GetHashCode%2A> vychází z klíčové vlastnosti. Pokud nejsou žádné klíčové vlastnosti v typu, <xref:System.Object.GetHashCode%2A> a <xref:System.Object.Equals%2A> nejsou přepsána.  
   
 ## <a name="equality"></a>Rovnost  
  Když jsou instance stejného typu, a pokud jsou hodnoty jejich klíče vlastnosti stejné dvě instance anonymního typu jsou si rovny. V následujících příkladech `flight2` rovná `flight1` z předchozího příkladu vzhledem k tomu, že jsou instance anonymní stejného typu a mají odpovídající hodnoty pro jejich vlastnosti klíče. Ale `flight3` není roven `flight1` vzhledem k tomu, že má jinou hodnotu pro klíčovou vlastnost `FlightNo`. Instance `flight4` není stejného typu jako `flight1` vzhledem k tomu, že se určit různé vlastnosti jako vlastnosti klíče.  
   
- [!code-vb[VbVbalrAnonymousTypes#27](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_2.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#27)]  
   
  Pokud není deklarovaný dvě instance s pouze neklíčovým vlastnostmi, identické název, typ, pořadí a hodnoty, nejsou dvě instance stejné. Instance bez klíčové vlastnosti rovná pouze na sebe sama.  
   
@@ -38,20 +38,20 @@ ms.locfileid: "54668220"
   
  Instance anonymního typu, které mají stejné hodnoty pro všechny vlastnosti klíče mají stejnou hodnotu hash kód, i v případě, že vlastnosti neklíčovým nemají odpovídající hodnoty. Následující příkaz vrátí `True`.  
   
- [!code-vb[VbVbalrAnonymousTypes#37](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_3.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#37)]  
   
  Instance anonymního typu, které mají různé hodnoty pro jeden nebo více klíčové vlastnosti mají odlišné kódu hodnoty hash. Následující příkaz vrátí `False`.  
   
- [!code-vb[VbVbalrAnonymousTypes#38](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_4.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#38)]  
   
  Instance anonymních typů, které určují různé vlastnosti jako vlastnosti klíče nejsou instance stejného typu. Hodnoty hash různých mají i v případě, že názvy a hodnoty všech vlastností jsou stejné. Následující příkaz vrátí `False`.  
   
- [!code-vb[VbVbalrAnonymousTypes#39](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_5.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#39)]  
   
 ## <a name="read-only-values"></a>Hodnoty jen pro čtení  
  Nelze změnit hodnoty vlastnosti klíče. Například v `flight1` v předchozích příkladech `Airline` a `FlightNo` pole jsou jen pro čtení, ale `Gate` lze změnit.  
   
- [!code-vb[VbVbalrAnonymousTypes#28](../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/key_6.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#28)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Definice anonymního typu](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-type-definition.md)

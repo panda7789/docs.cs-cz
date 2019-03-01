@@ -4,12 +4,12 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/25/2019
-ms.openlocfilehash: a00a5c42facb105a23cd85fce79f9fd16a96ccfa
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: cb84f4ebb0681792a820f8ed7bc32c5d1d8c08b5
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835509"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56967162"
 ---
 # <a name="build-aspnet-core-21-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Sestavení aplikace ASP.NET Core 2.1 nasazené jako kontejnery Linux do AKS/Kubernetes produktu orchestrator
 
@@ -29,7 +29,7 @@ Následující příklady prozkoumat vytvoření aplikace ASP.NET Core 2.1, kter
 
 ASP.NET Core je pro obecné účely Vývojová platforma udržuje od Microsoftu a komunity .NET na Githubu. Je multiplatformní, podpora Windows, macOS a Linux a je možné v zařízení, cloud a scénáře vložené a IoT.
 
-Tento příklad používá jednoduchý projekt, který je založen na základě Visual Studio webového rozhraní API šablony, takže není nutné žádné další znalostní báze k vytvoření vzorku. Stačí vytvořit projekt pomocí standardní šablonu, která obsahuje všechny prvky malém projektu pomocí rozhraní REST API, technologií ASP.NET Core 2.1.
+Tento příklad používá jednoduchý projekt, který je založen na šabloně webového rozhraní API Visual Studio, takže není nutné žádné další znalostní báze k vytvoření vzorku. Stačí vytvořit projekt pomocí standardní šablonu, která obsahuje všechny prvky malém projektu pomocí rozhraní REST API, technologií ASP.NET Core 2.1.
 
 ![Přidáte okno nového projektu v sadě Visual Studio, vyberte webovou aplikaci ASP.NET Core.](media/create-aspnet-core-application.png)
 

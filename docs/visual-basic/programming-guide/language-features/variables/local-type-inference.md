@@ -12,17 +12,17 @@ helpviewer_keywords:
 - inference [Visual Basic]
 - type inference [Visual Basic]
 ms.assetid: b8307f18-2e56-4ab3-a45a-826873f400f6
-ms.openlocfilehash: f4edc879af9539a40269336bed97fe206920992a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 62f46f8f9691dd260e4a4c40c0ffccbce4c5beb7
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54706745"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56973402"
 ---
 # <a name="local-type-inference-visual-basic"></a>Odvození místního typu (Visual Basic)
 Kompilátor jazyka Visual Basic používá *odvození typu* určit typy dat místní proměnné deklarované bez `As` klauzuli. Kompilátor odvodí typ proměnné z typu výrazu inicializace. To umožňuje deklarovat proměnné bez explicitně typu, s informacemi o tom, jak je znázorněno v následujícím příkladu. V důsledku deklarace obě `num1` a `num2` jsou silného typu jako celá čísla.  
   
- [!code-vb[VbVbalrTypeInference#1](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_1.vb)]  
+ [!code-vb[VbVbalrTypeInference#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#1)]  
  
 > [!NOTE]
 >  Pokud nechcete, aby `num2` v předchozím příkladu na zadaný jako `Integer`, můžete určit jiný typ pomocí deklarací, jako `Dim num3 As Object = 3` nebo `Dim num4 As Double = 3`.  
@@ -40,23 +40,23 @@ Kompilátor jazyka Visual Basic používá *odvození typu* určit typy dat mís
 ## <a name="examples"></a>Příklady  
  Odvození typu vyvolá se v případě lokální proměnná je deklarovaná bez `As` klauzule a inicializován. Kompilátor používá jako typ proměnné typu počáteční hodnota. Například všechny následující řádky kódu deklaruje proměnnou typu `String`.  
   
- [!code-vb[VbVbalrTypeInference#2](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_2.vb)]  
+ [!code-vb[VbVbalrTypeInference#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#2)]  
   
  Následující kód ukazuje dva ekvivalentní způsoby, jak vytvořit pole celých čísel.  
   
- [!code-vb[VbVbalrTypeInference#3](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_3.vb)]  
+ [!code-vb[VbVbalrTypeInference#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#3)]  
   
  Je vhodné použít odvození typu k určení typu řídicí proměnná smyčky for. V následujícím kódu, kompilátor odvodí, které `number` je `Integer` protože `someNumbers2` z předchozího příkladu je pole celých čísel.  
   
- [!code-vb[VbVbalrTypeInference#4](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_4.vb)]  
+ [!code-vb[VbVbalrTypeInference#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#4)]  
   
  Odvození místního typu lze použít v `Using` příkazy k vytvoření typu název prostředku, jak ukazuje následující příklad.  
   
- [!code-vb[VbVbalrTypeInference#7](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_5.vb)]  
+ [!code-vb[VbVbalrTypeInference#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#7)]  
   
  Typ proměnné také jde odvodit z návratové hodnoty funkce, jak ukazuje následující příklad. Obě `pList1` a `pList2` jsou pole procesů, protože `Process.GetProcesses` vrátí celou řadu procesů.  
   
- [!code-vb[VbVbalrTypeInference#5](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/local-type-inference_6.vb)]  
+ [!code-vb[VbVbalrTypeInference#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#5)]  
   
 ## <a name="option-infer"></a>Option Infer  
  `Option Infer` Umožňuje určit, zda je povolena odvození místního typu v určitý soubor. Povolit nebo blokovat možnost, zadejte jeden z následujících příkazů na začátku souboru.  

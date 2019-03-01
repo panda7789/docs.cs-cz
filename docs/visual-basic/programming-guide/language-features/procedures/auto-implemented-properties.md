@@ -9,27 +9,27 @@ helpviewer_keywords:
 - properties [Visual Basic], auto-implemented
 - auto-implemented properties [Visual Basic]
 ms.assetid: 5c669f0b-cf95-4b4e-ae84-9cc55212ca87
-ms.openlocfilehash: fdf5b8bcc53a49b31fa0fb2b71dc2702a4900503
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 56ea9bac1326ebab7ef44fb5541c05be8bc855e7
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54495458"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56967201"
 ---
 # <a name="auto-implemented-properties-visual-basic"></a>Automaticky implementované vlastnosti (Visual Basic)
 *Automaticky implementované vlastnosti* vám umožní rychle určit vlastnost třídy, aniž byste museli napsat kód, který `Get` a `Set` vlastnost. Při psaní kódu pro automaticky implementovanou vlastnost kompilátor jazyka Visual Basic automaticky vytvoří soukromé pole k uložení proměnné vlastnost kromě vytvoření přidružený `Get` a `Set` postupy.  
   
  S automaticky implementovanými vlastnostmi lze deklarovat vlastnosti, včetně výchozí hodnotu, na jednom řádku. Následující příklad ukazuje tři vlastnosti deklarací.  
   
- [!code-vb[VbVbalrAutoImplementedProperties#1](./codesnippet/VisualBasic/auto-implemented-properties_1.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrautoimplementedproperties/vb/module1.vb#1)]  
   
  Automaticky implementované vlastnosti je ekvivalentní k vlastnosti, kterou je uložená hodnota vlastnosti v soukromé pole. Následující příklad kódu ukazuje automaticky implementované vlastnosti.  
   
- [!code-vb[VbVbalrAutoImplementedProperties#5](./codesnippet/VisualBasic/auto-implemented-properties_2.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrautoimplementedproperties/vb/module1.vb#5)]  
   
  Následující příklad kódu ukazuje odpovídající kód z předchozího příkladu automaticky implementované vlastnosti.  
   
- [!code-vb[VbVbalrAutoImplementedProperties#2](./codesnippet/VisualBasic/auto-implemented-properties_3.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrautoimplementedproperties/vb/module1.vb#2)]  
   
  Následující kód zobrazí implementace vlastnosti jen pro čtení:  
   
@@ -63,7 +63,7 @@ End Class
 ## <a name="initializing-an-auto-implemented-property"></a>Inicializuje se automaticky implementované vlastnosti  
  Libovolný výraz, který slouží k inicializaci pole je platný pro inicializaci automaticky implementované vlastnosti. Při inicializaci automaticky implementované vlastnosti výraz je vyhodnocen a předat `Set` postup pro vlastnost. Následující příklady kódu ukazují některé automaticky implementované vlastnosti, které obsahují počáteční hodnoty.  
   
- [!code-vb[VbVbalrAutoImplementedProperties#3](./codesnippet/VisualBasic/auto-implemented-properties_4.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrautoimplementedproperties/vb/module1.vb#3)]  
   
  Nelze inicializovat automaticky implementované vlastnosti, který je členem `Interface`, nebo disk, který je označen `MustOverride`.  
   
@@ -71,7 +71,7 @@ End Class
   
  Když deklarujete automaticky implementované vlastnosti jako pole, nelze zadat explicitní pole hranice. Můžete však zadat hodnotu pomocí inicializátoru pole, jak je znázorněno v následujícím příkladu.  
   
- [!code-vb[VbVbalrAutoImplementedProperties#4](./codesnippet/VisualBasic/auto-implemented-properties_5.vb)]  
+ [!code-vb[VbVbalrAutoImplementedProperties#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrautoimplementedproperties/vb/module1.vb#4)]  
   
 ## <a name="property-definitions-that-require-standard-syntax"></a>Definice vlastností, které vyžadují standardní syntaxe  
  Automaticky implementované vlastnosti jsou pohodlný a podporují řadu programovacích scénářů. Existují však situace, kdy nejde používat automaticky implementované vlastnosti a musíte místo toho použít standardní, nebo *rozšířit*, syntaxe vlastnosti.  

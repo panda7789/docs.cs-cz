@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5f2288e02c01a40877abbd6a5ce5b2696c0944ac
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8268aca920c0b9fc8ea3390d80b9164c22c1ad9c
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54719973"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56977853"
 ---
 # <a name="putinstancewmi-function"></a>PutInstanceWmi – funkce
 Vytvoří nebo aktualizuje instance existující třídy. Instance se zapisují do úložiště služby WMI. 
@@ -49,7 +49,7 @@ HRESULT PutInstanceWmi (
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud nastavíte, WMI neukládá všechny kvalifikátory s **Amended** charakter. </br> Pokud není sada, předpokládá se, že tento objekt není lokalizována, a všechny kvalifikátory jsou storedwith této instance. |
+| `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud nastavíte, WMI neukládá všechny kvalifikátory s **Amended** charakter. <br> Pokud není sada, předpokládá se, že tento objekt není lokalizována, a všechny kvalifikátory jsou storedwith této instance. |
 | `WBEM_FLAG_CREATE_OR_UPDATE` | 0 | Vytvořte instanci, pokud ho neexistuje, nebo ho přepíše, pokud již existuje. |
 | `WBEM_FLAG_UPDATE_ONLY` | 1 | Aktualizace instance. Instance musí existovat volání k dosažení úspěchu. |
 | `WBEM_FLAG_CREATE_ONLY` | 2 | Vytvoření instance. Volání selže, pokud instanci již existuje. |

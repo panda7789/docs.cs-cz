@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting procedures
 - procedures [Visual Basic], about procedures
 ms.assetid: 525721e8-2e02-4f75-b5d8-6b893462cf2b
-ms.openlocfilehash: 5ef0a485a0b114f465aac694970ec3350b26f35a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e29e4a3b216657b398407701530ad9bfe975dbf6
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648544"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971998"
 ---
 # <a name="troubleshooting-procedures-visual-basic"></a>Řešení potíží s procedurami (Visual Basic)
 Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout při práci s postupy.  
@@ -41,7 +41,7 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
  **Správný způsob:** Aby bylo možné upravit prvky pole, které má být vrácena, definujte interní pole jako místní proměnná. Následující příklad se zkompiluje bez chyb.  
   
- [!code-vb[VbVbcnProcedures#66](./codesnippet/VisualBasic/troubleshooting-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#66](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#66)]  
   
 ## <a name="argument-not-being-modified-by-procedure-call"></a>Argument není právě upravuje voláním procedury  
  Pokud chcete povolit postup, chcete-li změnit programovací element základní argumentu ve volajícím kódu, musíte jí předat podle odkazu. Ale postup může přistupovat k prvkům argument typu odkazu, i v případě, předat podle hodnoty.  
@@ -52,13 +52,13 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
  Následující příklad definuje dva postupy, které v této proměnné pole hodnota a provozují na jeho prvků. Postup `increase` jednoduše přidá jednu na každý prvek. Postup `replace` přiřadí nové pole parametru `a()` a pak přidá jednu na každý prvek. Ale přeřazení neovlivní základní proměnné pole ve volajícím kódu, protože `a()` je deklarován `ByVal`.  
   
- [!code-vb[VbVbcnProcedures#35](./codesnippet/VisualBasic/troubleshooting-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#35)]  
   
- [!code-vb[VbVbcnProcedures#38](./codesnippet/VisualBasic/troubleshooting-procedures_3.vb)]  
+ [!code-vb[VbVbcnProcedures#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#38)]  
   
  Následující příklad provede volání `increase` a `replace`.  
   
- [!code-vb[VbVbcnProcedures#37](./codesnippet/VisualBasic/troubleshooting-procedures_4.vb)]  
+ [!code-vb[VbVbcnProcedures#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#37)]  
   
  První `MsgBox` volání zobrazí "po increase(n): 11, 21, 31, 41". Protože `n` je typem odkazu `increase` lze měnit její členy, i když je jí předán `ByVal`.  
   
@@ -66,7 +66,7 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
  **Správný způsob:** Abyste mohli upravovat základní prvek proměnné samotné, předávání odkazem. Následující příklad ukazuje změnu v deklaraci `replace` , který umožňuje jedno pole nahradit jiným ve volajícím kódu.  
   
- [!code-vb[VbVbcnProcedures#64](./codesnippet/VisualBasic/troubleshooting-procedures_5.vb)]  
+ [!code-vb[VbVbcnProcedures#64](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#64)]  
   
 ## <a name="unable-to-define-an-overload"></a>Nelze definovat přetíženou  
  Pokud chcete definovat přetížené verze procedury, musíte použít stejný název, ale jiným podpisem. Pokud kompilátor nemůže rozlišit vaše deklarace z přetížení se stejným podpisem, dojde k chybě.  
@@ -108,9 +108,9 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
  Následující příklad znázorňuje proces řešení přetížení.  
   
- [!code-vb[VbVbcnProcedures#62](./codesnippet/VisualBasic/troubleshooting-procedures_6.vb)]  
+ [!code-vb[VbVbcnProcedures#62](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#62)]  
   
- [!code-vb[VbVbcnProcedures#63](./codesnippet/VisualBasic/troubleshooting-procedures_7.vb)]  
+ [!code-vb[VbVbcnProcedures#63](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#63)]  
   
  Při prvním volání, kompilátor eliminuje první přetížení, protože typ prvního argumentu (`Short`) zužuje na typ odpovídající parametru (`Byte`). Eliminuje pak třetí přetížení, protože typ každého argumentu ve druhé přetížení (`Short` a `Single`) rozšiřuje na odpovídající typ v třetí přetížení (`Integer` a `Single`). Druhé přetížení vyžaduje méně rozšíření, takže kompilátor používá volání.  
   
@@ -118,7 +118,7 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
  **Správný způsob:** Aby bylo možné volání přetížené procedury bez nejednoznačnost, použijte [funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md) tak, aby odpovídaly datové typy argumentů na typy parametrů. Následující příklad ukazuje volání `z` druhé přetížení, která vynutí řešení.  
   
- [!code-vb[VbVbcnProcedures#65](./codesnippet/VisualBasic/troubleshooting-procedures_8.vb)]  
+ [!code-vb[VbVbcnProcedures#65](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#65)]  
   
 ### <a name="overload-resolution-with-optional-and-paramarray-arguments"></a>Přetížení překlad IP adres s volitelným a ParamArray – argumenty  
  Pokud dvě přetížení procedury, mají stejné podpisy, s tím rozdílem, že je deklarován poslední parametr [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) v jednom a [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) , ve druhém přeloží kompilátor volání této procedury podle nejvíce odpovídá. Další informace najdete v tématu [rozlišení přetížení](./overload-resolution.md).  

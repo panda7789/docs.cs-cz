@@ -107,7 +107,7 @@ Vaše téma se bude také obsahovat odkazy na ukázky. Přímý odkaz na složku
 
 Další informace najdete v tématu [ukázky Readme](https://github.com/dotnet/samples/blob/master/README.md).
 
-## <a name="the-c-interactive-experience"></a>C# Interaktivní prostředí #
+## <a name="the-c-interactive-experience"></a>C# Interaktivní prostředí
 
 Krátké ukázky kódu v C# můžete použít `csharp-interactive` značku jazyka k určení C# ukázky, která běží v prohlížeči. (Ukázky použití vloženého kódu `csharp-interactive` označit, pro zahrnuté ze zdroje, fragment kódu používá `code-csharp-interactive` značka.) Tyto ukázky kódu zobrazit okno kódu a oknem výstupu v následujícím článku. V okně výstupu se zobrazí všechny výstupy z provádění interaktivního kódu, jakmile uživatel má spuštění ukázky. 
 

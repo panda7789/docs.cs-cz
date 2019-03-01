@@ -39,12 +39,12 @@ helpviewer_keywords:
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ab7d64a9c7f0b1a080fdf82ed2662c7256f16132
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 82854b87f922f9937e593d0936fb1b29e6380ec0
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54555177"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970568"
 ---
 # <a name="net-class-library-overview"></a>Přehled knihovny tříd .NET
 
@@ -96,8 +96,8 @@ Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které 
 ||<xref:System.UInt16>|16bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**UShort**|**ushort**|**short bez znaménka**|**uint16**|  
 ||<xref:System.UInt32>|32bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**UInteger**|**uint**|**unsigned int**<br /> -nebo-<br /> **unsigned long**|**uint32**|  
 ||<xref:System.UInt64>|64bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**ULong**|**ulong**|**unsigned __int64**|**uint64**|  
-|Číslo s plovoucí desetinnou čárkou|<xref:System.Single>|(32bitová verze) číslo s jednoduchou přesností s plovoucí desetinnou čárkou|**Jeden**|**float**|**float**|**float32**</br> or</br>**single**|  
-||<xref:System.Double>|(64-bit) číslo s dvojitou přesnost s plovoucí desetinnou čárkou|**Double**|**double**|**double**|**float**</br> or </br> **double**|  
+|Číslo s plovoucí desetinnou čárkou|<xref:System.Single>|(32bitová verze) číslo s jednoduchou přesností s plovoucí desetinnou čárkou|**Jeden**|**float**|**float**|**float32**<br> or<br>**single**|  
+||<xref:System.Double>|(64-bit) číslo s dvojitou přesnost s plovoucí desetinnou čárkou|**Double**|**double**|**double**|**float**<br> or <br> **double**|  
 |Logické|<xref:System.Boolean>|Logická hodnota (true nebo false).|**Datový typ Boolean**|**bool**|**bool**|**bool**|  
 |Ostatní|<xref:System.Char>|Znak Unicode (16 bitů).|**Char**|**char**|**wchar_t**|**char**|  
 ||<xref:System.Decimal>|Desetinná hodnota (128-bit).|**Decimal**|**decimal**|**Decimal**|**decimal**|  

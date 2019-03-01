@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Implementace dědičnosti s objekty COM (Visual Basic)'
+title: 'Návod: Implementace dědičnosti s objekty COM (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - inheritance [Visual Basic], COM reusability
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - inheritance [Visual Basic], walkthroughs
 - derived classes [Visual Basic], COM reusability
 ms.assetid: f8e7263a-de13-48d1-b67c-ca1adf3544d9
-ms.openlocfilehash: e99deb2ea5e8acd5e1e07adffe29d35e2624b27e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d3814dddb0e39bf986e8d6ee88b3c7b4ec759748
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648203"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56980448"
 ---
-# <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a>Průvodce: Implementace dědičnosti s objekty COM (Visual Basic)
+# <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a>Návod: Implementace dědičnosti s objekty COM (Visual Basic)
 Lze odvodit třídy jazyka Visual Basic z `Public` třídy v objektech COM, včetně těch, které jsou vytvořeny v dřívějších verzích jazyka Visual Basic. Vlastnosti a metody třídy dědí od objektů COM může přepsat nebo přetížené stejně jako vlastnosti a metody jiné základní třídy lze přepsat nebo přetížené. Dědičnost z objektů COM je užitečné, pokud máte existující knihovny tříd, které nechcete, aby se musela kompilovat.  
   
  Následující postup ukazuje, jak pomocí jazyka Visual Basic 6.0 můžete vytvořit objekt modelu COM, který obsahuje třídu a pak použít jako základní třídu.  
@@ -94,15 +94,15 @@ Lze odvodit třídy jazyka Visual Basic z `Public` třídy v objektech COM, vče
   
 6.  Přidejte následující kód k hornímu okraji `MathClass` dědit ze třídy modelu COM.  
   
-     [!code-vb[VbVbalrInterop#31](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-implementing-inheritance-with-com-objects_1.vb)]  
+     [!code-vb[VbVbalrInterop#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#31)]  
   
 7.  Přetížení veřejnou metodu základní třídy přidáním následujícího kódu `MathClass`:  
   
-     [!code-vb[VbVbalrInterop#32](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-implementing-inheritance-with-com-objects_2.vb)]  
+     [!code-vb[VbVbalrInterop#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#32)]  
   
 8.  Zděděné třídy rozšířit přidáním následujícího kódu `MathClass`:  
   
-     [!code-vb[VbVbalrInterop#33](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-implementing-inheritance-with-com-objects_3.vb)]  
+     [!code-vb[VbVbalrInterop#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#33)]  
   
  Nová třída dědí vlastnosti ze základní třídy objektu COM, přetížení metody a definuje novou metodu rozšíření třídy.  
   
@@ -112,7 +112,7 @@ Lze odvodit třídy jazyka Visual Basic z `Public` třídy v objektech COM, vče
   
 2.  Na tlačítku `Click` procedury Obslužná rutina události, přidejte následující kód k vytvoření instance `MathClass` a volání přetížené metody:  
   
-     [!code-vb[VbVbalrInterop#34](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/walkthrough-implementing-inheritance-with-com-objects_4.vb)]  
+     [!code-vb[VbVbalrInterop#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#34)]  
   
 3.  Stisknutím klávesy F5 spusťte projekt.  
   

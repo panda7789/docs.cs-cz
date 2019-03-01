@@ -3,16 +3,10 @@ title: Paralelní programování v .NET
 ms.date: 09/12/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- parallel programming
+  - parallel programming
 ms.assetid: 4d83c690-ad2d-489e-a2e0-b85b898a672d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3d1cd0b797373da4cab59484e3e6302927d821ed
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47112717"
 ---
 # <a name="parallel-programming-in-net"></a>Paralelní programování v .NET
 
@@ -33,7 +27,7 @@ Následující obrázek poskytuje podrobný přehled architektury paralelního p
 |[Datové struktury pro paralelní programování](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md)|Obsahuje odkazy na dokumentaci pro třídy kolekce bezpečné pro přístup z více vláken, typy zjednodušené synchronizace a typy pro opožděnou inicializaci.|
 |[Paralelní diagnostické nástroje](../../../docs/standard/parallel-programming/parallel-diagnostic-tools.md)|Poskytuje odkazy na dokumentaci oken ladicího programu sady Visual Studio pro úkoly a Paralelní zásobníky a pro [Vizualizátor souběžnosti](/visualstudio/profiling/concurrency-visualizer).|
 |[Vlastní dělicí metody pro PLINQ a TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)|Popisuje, jak pracují rozdělovače a jak nakonfigurovat výchozí rozdělovače nebo vytvořit nový rozdělovač.|
-|[Plánovače úloh](https://msdn.microsoft.com/library/638f8ea5-21db-47a2-a934-86e1e961bf65)|Popisuje, jak pracují plánovače a jak lze nakonfigurovat výchozí plánovače.|
+|[Plánovače úloh](xref:System.Threading.Tasks.TaskScheduler)|Popisuje, jak pracují plánovače a jak lze nakonfigurovat výchozí plánovače.|
 |[Výrazy lambda v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)|Poskytuje stručný přehled výrazů lambda v jazyce C# a Visual Basic a ukazuje způsob jejich použití v PLINQ a Task Parallel Library.|
 |[Pro další čtení](../../../docs/standard/parallel-programming/for-further-reading-parallel-programming.md)|Obsahuje odkazy na další informace a zdroje ukázek pro paralelní programování v rozhraní .NET.|
 

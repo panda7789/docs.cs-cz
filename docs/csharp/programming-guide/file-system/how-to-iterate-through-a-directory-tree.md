@@ -6,12 +6,12 @@ helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-ms.openlocfilehash: 93084d0b3c0e930f90b06c3d6ee244deef8d8290
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 29f52728f0bfa9e78253fc2b39583e89f53198d6
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613841"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56976327"
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Postupy: Iterace v adresářovém stromu (C# Průvodce programováním v)
 Fráze "iterace v adresářovém stromu" znamená, že pro přístup k každý soubor v každé vnořené podadresáři uvedený kořenový adresář na libovolnou hloubku. Nemáte nutně otevřete každý soubor. Můžete načíst jenom název souboru nebo podadresáře jako `string`, nebo můžete získat další informace ve formě <xref:System.IO.FileInfo?displayProperty=nameWithType> nebo <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> objektu.  
@@ -41,14 +41,14 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
   
  Konkrétní výjimky, které jsou zpracovány a konkrétní akce, které se provádí pro každý soubor nebo složku, jsou k dispozici pouze jako příklady. Upravte tento kód podle svých specifických požadavků. Komentáře v kódu pro další informace.  
   
- [!code-csharp[csFilesandFolders#1](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_1.cs)]  
+ [!code-csharp[csFilesandFolders#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#1)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak k iteraci v rámci souborů a složek v adresářovém stromu bez použití rekurze. Tuto techniku používá Obecné <xref:System.Collections.Generic.Stack%601> typ kolekce, který se nachází poslední v zásobníku-first-out (LIFO).  
   
  Konkrétní výjimky, které jsou zpracovány a konkrétní akce, které se provádí pro každý soubor nebo složku, jsou k dispozici pouze jako příklady. Upravte tento kód podle svých specifických požadavků. Komentáře v kódu pro další informace.  
   
- [!code-csharp[csFilesandFolders#2](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-iterate-through-a-directory-tree_2.cs)]  
+ [!code-csharp[csFilesandFolders#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#2)]  
   
  Obecně je příliš časově náročné otestovat všechny složky, které slouží k určení, jestli vaše aplikace má oprávnění k jeho otevření. Proto v příkladu kódu právě obklopuje operace v této části `try/catch` bloku. Můžete upravit `catch` blokovat tak, že když je odepřen přístup do složky, pokusíte zvýšení úrovně oprávnění a pak ho znovu přístup. Zpravidla zachycujte pouze takové výjimky, které dokáže zpracovat bez opuštění vaší aplikace v neznámém stavu.  
   

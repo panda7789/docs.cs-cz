@@ -9,14 +9,14 @@ helpviewer_keywords:
 - WithEvents keyword [Visual Basic], walkthroughs
 - event handlers [Visual Basic], walkthroughs
 ms.assetid: f145b3fc-5ae0-4509-a2aa-1ff6934706bd
-ms.openlocfilehash: 2af8fe5557e452db1ef3a72de35582b18117cc30
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0757c3ce0528f76eab5607e20ebca2e66a903900
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54553734"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974143"
 ---
-# <a name="walkthrough-handling-events-visual-basic"></a>Průvodce: Zpracování událostí (Visual Basic)
+# <a name="walkthrough-handling-events-visual-basic"></a>Návod: Zpracování událostí (Visual Basic)
 Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. První téma [názorný postup: Deklarující a vyvolání události](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md), ukazuje, jak deklarace a vyvolávání událostí. Tato část používá formulář opravdu zavřít a třídy v tomto návodu k ukazují, jak zpracovávat události, když se provedou.  
   
  `Widget` Třídy příkladu tradiční příkazy pro zpracování událostí. Visual Basic obsahuje jiné techniky pro práci s událostmi. Jako cvičení, můžete upravit tento příkladu pro použití `AddHandler` a `Handles` příkazy.  
@@ -25,7 +25,7 @@ Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. Prvn�
   
 1.  Umístěte následující kód v `Form1`:  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#4](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_1.vb)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#4)]  
   
      `WithEvents` – Klíčové slovo určuje, že proměnné `mWidget` se používá ke zpracování událostí objektu. Zadejte typ objektu zadáním názvu třídy, ze kterého se vytvoří objekt.  
   
@@ -47,13 +47,13 @@ Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. Prvn�
   
 3.  Přidejte následující kód, který `mWidget_PercentDone` obslužné rutiny události:  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#5](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_2.vb)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#5)]  
   
      Pokaždé, když `PercentDone` událost se vyvolá, zobrazí se postup události dokončení v procentech `Label` ovládacího prvku. `DoEvents` Metoda umožňuje tento popisek repaint a klikněte na možnost také umožňuje uživateli **zrušit** tlačítko.  
   
 4.  Přidejte následující kód `Button2_Click` obslužné rutiny události:  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#6](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_3.vb)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#6)]  
   
  Pokud uživatel klikne **zrušit** tlačítka při `LongTask` běží, `Button2_Click` provedla událost poté, co `DoEvents` příkaz umožňuje zpracování událostí na výskyt. Proměnnou na úrovni `mblnCancel` je nastavena na `True`a `mWidget_PercentDone` události poté jej ověří a nastaví `ByRef Cancel` argument `True`.  
   
@@ -70,7 +70,7 @@ Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. Prvn�
   
 3.  Přidejte následující kód `Form1_Load` události postupu vytvořte `Widget`:  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#7](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_4.vb)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#7)]  
   
  Když tento kód spustí, Visual Basic vytvoří `Widget` objektu a jeho události se připojí k přidružené procedury `mWidget`. Od této chvíle, vždy, když `Widget` vyvolá jeho `PercentDone` událostí, `mWidget_PercentDone` procedury události.  
   
@@ -78,7 +78,7 @@ Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. Prvn�
   
 -   Přidejte následující kód, který `Button1_Click` obslužné rutiny události:  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#8](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_5.vb)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#8)]  
   
  Před `LongTask` metoda je volána, označení, že zobrazuje procento dokončení musí být inicializován a úrovni třídy `Boolean` příznak pro zrušení metoda musí být nastaveno na `False`.  
   
@@ -107,7 +107,7 @@ Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. Prvn�
   
 -   Přidejte následující řádek kódu, který `Button1_Click` postupu bezprostředně předchází řádku, který čte `mWidget.LongTask(12.2, 0.33)`:  
   
-     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#9](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_6.vb)]  
+     [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#9)]  
   
  Výše uvedený kód vytvoří novou `Widget` pokaždé, když dojde ke kliknutí na tlačítko. Poté, co `LongTask` metoda dokončí, odkaz na `Widget` vydání a `Widget` zničen.  
   

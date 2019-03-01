@@ -36,12 +36,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 89f771d9-ecbb-4737-88b8-116b63c6cf4d
-ms.openlocfilehash: b69fc668a63d1b4f834d5aa65ae8e27854d73e63
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d990d0167152c2a97315c0540361ba8b537f1946
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595575"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56978498"
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Obecné typy v jazyce Visual Basic (Visual Basic)
 A *obecného typu* je jediný prvek programování, které se přizpůsobí provádět stejné funkce pro širokou škálu datových typů. Při definování obecné třídy nebo proceduru není nutné definovat samostatné verze pro každý typ dat, pro které můžete chtít provést, které tuto funkci.  
@@ -55,7 +55,7 @@ A *obecného typu* je jediný prvek programování, které se přizpůsobí prov
   
  Například můžete chtít vytvořit a používat fronty třídu, která funguje na určitý datový typ. například `String`. Je možné deklarovat třídu z <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>, jak ukazuje následující příklad.  
   
- [!code-vb[VbVbalrDataTypes#1](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_1.vb)]  
+ [!code-vb[VbVbalrDataTypes#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#1)]  
   
  Teď můžete použít `stringQ` pracovat pouze s `String` hodnoty. Protože `stringQ` je specifické pro `String` místo se zobecnit pro `Object` hodnoty, není nutné pozdní vazby nebo typ převodu. Tím ušetříte čas spuštění a snižuje chyby za běhu.  
   
@@ -64,15 +64,15 @@ A *obecného typu* je jediný prvek programování, které se přizpůsobí prov
 ## <a name="example-of-a-generic-class"></a>Příklad obecné třídy  
  Následující příklad ukazuje definici kostru obecné třídy.  
   
- [!code-vb[VbVbalrDataTypes#2](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_2.vb)]  
+ [!code-vb[VbVbalrDataTypes#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#2)]  
   
  V předchozím kostru `t` je *parametr typu*, to znamená, zástupný symbol pro datový typ, který zadáte při deklaraci třídy. Kdekoli v kódu, je možné deklarovat různé verze `classHolder` zadáním různých datových typů pro `t`. Následující příklad ukazuje dva takové deklarace.  
   
- [!code-vb[VbVbalrDataTypes#3](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_3.vb)]  
+ [!code-vb[VbVbalrDataTypes#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#3)]  
   
  Předchozí příkaz deklarují *vytvořený třídy*, ve kterém nahradí určitý typ parametru typu. Toto nahrazení se šíří v rámci kódu v rámci vytvořeného třídy. Následující příklad ukazuje, co `processNewItem` postup vypadá podobně jako v `integerClass`.  
   
- [!code-vb[VbVbalrDataTypes#4](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_4.vb)]  
+ [!code-vb[VbVbalrDataTypes#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#4)]  
   
  Podrobnější příklad naleznete v tématu [jak: Definujte třídu, která poskytne identické funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md).  
   
@@ -110,7 +110,7 @@ A *obecného typu* je jediný prvek programování, které se přizpůsobí prov
 ### <a name="example-of-a-constraint"></a>Příklad omezení  
  Následující příklad ukazuje definici kostru třídy s omezením, který vyžaduje argument typu pro implementaci <xref:System.IComparable>.  
   
- [!code-vb[VbVbalrDataTypes#5](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_5.vb)]  
+ [!code-vb[VbVbalrDataTypes#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#5)]  
   
  Pokud následující kód se pokusí vytvořit třídu z `itemManager` zadáním typu, který neimplementuje <xref:System.IComparable>, kompilátor signály chybu.  
   
@@ -132,7 +132,7 @@ A *obecného typu* je jediný prvek programování, které se přizpůsobí prov
 ### <a name="example-of-multiple-constraints"></a>Příklad více omezení  
  Následující příklad ukazuje definici kostru obecné třídy se seznamem omezení u parametru typu. V kódu, který vytvoří instanci této třídy, argument typu musí implementovat obě <xref:System.IComparable> a <xref:System.IDisposable> rozhraní být typ odkazu, tak a zpřístupnit dostupný konstruktor bez parametrů.  
   
- [!code-vb[VbVbalrDataTypes#6](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_6.vb)]  
+ [!code-vb[VbVbalrDataTypes#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#6)]  
   
 ## <a name="important-terms"></a>Důležité termíny  
  Obecné typy představují a používají následující termíny:  

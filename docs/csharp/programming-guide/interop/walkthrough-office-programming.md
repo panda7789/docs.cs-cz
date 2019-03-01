@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 3520c78df1593f72a144d70238f0fd0c763cdd64
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 3dce7e4bce0b056437445b92f52f6c6360844289
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835795"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56966135"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Návod: Programování pro Office (C# a Visual Basic)
 Visual Studio nabízí funkce v jazyce C# a Visual Basic, které zlepšují programování pro sadu Microsoft Office. Užitečné funkce jazyka C# zahrnout pojmenované a nepovinné argumenty a návratové hodnoty typu `dynamic`. Programování v modelu COM, můžete vynechat `ref` – klíčové slovo a získat přístup k indexované vlastnosti. Funkce v jazyce Visual Basic zahrnují automaticky implementované vlastnosti příkazy ve výrazech lambda a inicializátory kolekce.
@@ -63,9 +63,9 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 2.  Přidejte následující `Imports` příkazy (Visual Basic) nebo `using` direktivy (C#) na začátek souboru kódu, pokud již nejsou k dispozici.  
   
-     [!code-csharp[csOfficeWalkthrough#1](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_1.cs)]
+     [!code-csharp[csOfficeWalkthrough#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#1)]
 
-     [!code-vb[csOfficeWalkthrough#1](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_1.vb)]
+     [!code-vb[csOfficeWalkthrough#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#1)]
   
 ### <a name="to-create-a-list-of-bank-accounts"></a>Chcete-li vytvořit seznam účtů bank  
   
@@ -73,23 +73,23 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 2.  Nahraďte definici `Account` třídy následujícím kódem. Definice tříd pomocí *automaticky implementované vlastnosti*. Další informace najdete v tématu [implemented Properties](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md).  
   
-     [!code-csharp[csOfficeWalkthrough#2](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_2.cs)]
+     [!code-csharp[csOfficeWalkthrough#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/account.cs#2)]
 
-     [!code-vb[csOfficeWalkthrough#2](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_2.vb)]  
+     [!code-vb[csOfficeWalkthrough#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/account.vb#2)]  
   
 3.  Chcete-li vytvořit `bankAccounts` seznam, který obsahuje dva účty, přidejte následující kód, který `ThisAddIn_Startup` metoda ve *ThisAddIn.vb* nebo *ThisAddIn.cs*. Pomocí seznamu deklarace *inicializátory kolekce*. Další informace najdete v tématu [inicializátory kolekce](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md).  
   
-     [!code-csharp[csOfficeWalkthrough#3](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_3.cs)]
+     [!code-csharp[csOfficeWalkthrough#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#3)]
 
-     [!code-vb[csOfficeWalkthrough#3](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_3.vb)]  
+     [!code-vb[csOfficeWalkthrough#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#3)]  
   
 ### <a name="to-export-data-to-excel"></a>Export dat do Excelu  
   
 1.  Ve stejném souboru přidejte následující metodu do `ThisAddIn` třídy. Metoda nastavuje Excelový sešit a exportuje data do ní.  
   
-     [!code-csharp[csOfficeWalkthrough#4](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_4.cs)]
+     [!code-csharp[csOfficeWalkthrough#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#4)]
 
-     [!code-vb[csOfficeWalkthrough#4](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_4.vb)]  
+     [!code-vb[csOfficeWalkthrough#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#4)]  
   
      V této metodě se používají dvě nové funkce C#. Obě tyto funkce již existují v jazyce Visual Basic.  
   
@@ -99,11 +99,11 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
     -   `Range` a `Offset` vlastnosti [rozsah](<xref:Microsoft.Office.Interop.Excel.Range>) používají *indexovaných vlastností* funkce. Tato funkce umožňuje, abyste mohli využívat tyto vlastnosti z typů modelu COM s použitím typické C# syntaxi. Indexované vlastnosti také umožňují používat `Value` vlastnost `Range` objektu, takže odpadá nutnost používat `Value2` vlastnost. `Value` Indexované vlastnosti, ale index je volitelné. Volitelné argumenty a indexované vlastnosti společně v následujícím příkladu.  
   
-         [!code-csharp[csOfficeWalkthrough#5](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_5.cs)]  
+         [!code-csharp[csOfficeWalkthrough#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#5)]  
   
          V předchozích verzích tohoto jazyka se vyžaduje následující speciální syntaxi.  
   
-         [!code-csharp[csOfficeWalkthrough#6](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_6.cs)]  
+         [!code-csharp[csOfficeWalkthrough#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#6)]  
   
          Nelze vytvořit indexované vlastnosti. Tato funkce podporuje pouze využití stávající indexované vlastnosti.  
   
@@ -111,15 +111,15 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 2.  Přidejte následující kód na konci `DisplayInExcel` upravit šířku sloupců podle obsahu.  
   
-     [!code-csharp[csOfficeWalkthrough#7](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_7.cs)]
+     [!code-csharp[csOfficeWalkthrough#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#7)]
 
-     [!code-vb[csOfficeWalkthrough#7](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_7.vb)]  
+     [!code-vb[csOfficeWalkthrough#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#7)]  
   
      Tyto doplňky ukazují další funkce v jazyce C#: považuje `Object` jako v případě, že mají typ vrácené hodnoty z hostitelů modelu COM, jako je například Office [dynamické](../../../csharp/language-reference/keywords/dynamic.md). K tomu dojde automaticky při **Embed Interop Types** je nastavena na výchozí hodnotu, `True`, nebo ekvivalentně, když sestavení odkazuje [/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) – možnost kompilátoru. Typ `dynamic` umožňuje pozdní vazby již k dispozici v jazyce Visual Basic a zabraňuje explicitní přetypování nutné Visual C# 2008 a starší verze jazyka.  
   
      Například `excelApp.Columns[1]` vrátí `Object`, a `AutoFit` je aplikace Excel [rozsah](<xref:Microsoft.Office.Interop.Excel.Range>) metody. Bez `dynamic`, musíte přetypovat vrácený objekt `excelApp.Columns[1]` jako instance `Range` před voláním metody `AutoFit`.  
   
-     [!code-csharp[csOfficeWalkthrough#8](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_8.cs)]  
+     [!code-csharp[csOfficeWalkthrough#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#8)]  
   
      Další informace o vkládání typů spolupráce naleznete v tématu postupy "najít odkazy PIA" a "obnovit závislost PIA" dále v tomto tématu. Další informace o `dynamic`, naleznete v tématu [dynamické](../../../csharp/language-reference/keywords/dynamic.md) nebo [použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md).  
   
@@ -127,9 +127,9 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 1.  Přidejte následující kód na konci `ThisAddIn_StartUp` metody. Volání `DisplayInExcel` obsahuje dva argumenty. Prvním argumentem je název seznamu účtů na zpracování. Druhý argument je víceřádkového výrazu lambda výraz, který definuje, jak se data mají být zpracovány. `ID` a `balance` sousedících buněk se zobrazují hodnoty pro každý účet, a řádek je zobrazen červeně, pokud zůstatek na účtu je menší než nula. Další informace najdete v tématu [výrazy Lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
-     [!code-csharp[csOfficeWalkthrough#9](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_9.cs)]
+     [!code-csharp[csOfficeWalkthrough#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#9)]
 
-     [!code-vb[csOfficeWalkthrough#9](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_9.vb)]  
+     [!code-vb[csOfficeWalkthrough#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#9)]  
   
 2.  Chcete-li spustit program, stiskněte klávesu F5. Zobrazí se Excelového listu, který obsahuje data z účtů.  
   
@@ -137,9 +137,9 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 1.  Přidejte následující kód na konci `ThisAddIn_StartUp` metodu pro vytvoření dokumentu aplikace Word, který obsahuje odkaz na Excelový sešit.  
   
-     [!code-csharp[csOfficeWalkthrough#10](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_10.cs)]
+     [!code-csharp[csOfficeWalkthrough#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#10)]
 
-     [!code-vb[csOfficeWalkthrough#10](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_10.vb)]  
+     [!code-vb[csOfficeWalkthrough#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#10)]  
   
      Tento kód ukazuje několik nových funkcí v jazyce C#: možnost chcete vynechat, nechte `ref` – klíčové slovo v programování v modelu COM, pojmenované argumenty a nepovinné argumenty. Tyto funkce se již existují v jazyce Visual Basic. [PasteSpecial](<xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A>) metoda má sedm parametry, které jsou definovány jako s volitelnými parametry. Pojmenované a nepovinné argumenty umožňují označit parametry, které chcete získat přístup podle názvu a argumenty odesílat jenom tyto parametry. V tomto příkladu jsou argumenty odesílat udávající, že by měl být vytvářeny odkaz k sešitu do schránky (parametr `Link`) a že je odkaz zobrazený v dokumentu jako ikona (parametr `DisplayAsIcon`). Visual C# také umožňuje vynechat, nechte `ref` – klíčové slovo pro tyto argumenty.
   

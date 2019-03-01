@@ -7,53 +7,53 @@ helpviewer_keywords:
 - LINQ, C#
 - queries [LINQ], LINQ in C#
 ms.assetid: b8700c1f-05c9-4380-b6eb-e34c4da38e54
-ms.openlocfilehash: 843126d86df36b2aeaa8f57248afb930b92a9ff0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 585bbd9a9fbc78029911dac8af4c1ad3eebe35b0
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33339316"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970698"
 ---
-# <a name="getting-started-with-linq-in-c"></a>Začínáme s dotazy LINQ v jazyce C#
-Tato část obsahuje základní informace, které vám pomohou pochopit, zbytek LINQ dokumentace a ukázky.  
+# <a name="getting-started-with-linq-in-c"></a>Začínáme s dotazy LINQ v jazyce C\#
+Tato část obsahuje základní informace, které vám pomohou pochopit, zbytek LINQ dokumentaci a ukázky.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Úvod do dotazů LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)  
- Popisuje základní operace dotazů LINQ tří částí, které jsou společné pro všechny jazyky a datových zdrojů.  
+ Popisuje tři části, které jsou společné pro všechny jazyky a zdroje dat základní operace dotazů LINQ.  
   
  [LINQ a obecné typy (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-generic-types.md)  
- Poskytuje stručný úvod do obecných typů, jak se používají v technologii LINQ.  
+ Poskytuje stručný úvod do obecných typů, které se používají v technologii LINQ.  
   
  [Základní operace dotazů LINQ](../../../../csharp/programming-guide/concepts/linq/basic-linq-query-operations.md)  
- Popisuje nejběžnějších typů operace dotazů a jak jsou vyjádřeny v jazyce C#.  
+ Popisuje nejběžnější typy operací dotazů a jak jsou vyjádřeny v C#.  
   
  [Transformace dat pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md)  
- Popisuje různé způsoby, můžete převést data načtená v dotazech.  
+ Popisuje různé způsoby, že můžete transformovat data načtená v dotazech.  
   
  [Vztahy typů v operacích dotazu LINQ](../../../../csharp/programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md)  
- Popisuje, jak jsou typy zachovaná nebo transformovat na tři části operace dotazů LINQ  
+ Popisuje, jak typy jsou zachovány a/nebo transformovat na tři části operace dotazu LINQ  
   
  [Syntaxe využívající dotazy a syntaxe využívající metody v jazyce LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)  
- Porovná syntaxi dotazu a syntaxe využívající metody jako dva způsoby, jak express dotaz LINQ.  
+ Porovná syntaxi dotazů a syntaxe využívající metody jako dva způsoby, jak vyjádřit dotaz LINQ.  
   
  [Funkce C# podporující LINQ](../../../../csharp/programming-guide/concepts/linq/features-that-support-linq.md)  
- Popisuje jazykové konstrukty přidali v C# 3.0, které podporují LINQ.  
+ Popisuje jazykovým konstrukcím, přidá C# 3.0, které podporují LINQ.  
   
- [Návod: Zápis dotazů v C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
- Podrobné pokyny pro vytvoření projektu LINQ v C#, přidáním jednoduché datové zdroje a provádění některých operací základní dotazu.  
+ [Návod: Zápis dotazů vC#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
+ Podrobné pokyny pro vytvoření C# projektu LINQ, přidání zdroje dat jednoduché a provádět některé základní operace dotazů.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)  
  Obsahuje odkazy na témata, která popisují technologie LINQ.  
   
  [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
- Obsahuje přehled dotazů LINQ a poskytuje odkazy na další zdroje informací.  
+ Obsahuje přehled dotazů v LINQ a poskytuje odkazy na další zdroje informací.  
   
- [Visual Studio – sada IDE a nástrojů podpory pro výrazy LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/visual-studio-ide-and-tools-support-for-linq.md)  
- Popisuje nástroje dostupné v prostředí Visual Studio pro návrh, kódování a ladění aplikace s povolenými LINQ.  
+ [Visual Studio IDE a nástrojů podpory pro funkci LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/visual-studio-ide-and-tools-support-for-linq.md)  
+ Popisuje nástroje, které jsou k dispozici v prostředí sady Visual Studio pro návrh, kódování a ladění aplikace s povolenými LINQ.  
   
  [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- Představuje standardní metody používané v technologii LINQ.  
+ Představuje standardní metod používaných v LINQ.  
   
- [Začínáme s dotazy LINQ v jazyku Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
- Obsahuje odkazy na témata o použití LINQ v jazyce Visual Basic.
+ [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
+ Obsahuje odkazy na témata o použití LINQ s jazykem Visual Basic.

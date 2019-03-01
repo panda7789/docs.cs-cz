@@ -14,12 +14,12 @@ helpviewer_keywords:
 - End statement [Visual Basic]
 - execution [Visual Basic], stopping
 ms.assetid: 0e64467c-0f34-4aab-9ddd-43f8b9d55d90
-ms.openlocfilehash: a2c211e5ebfd00a639644243312cbe25f71f4cde
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8b189449044a48432a6cf05b75f39581be111495
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54593703"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56979528"
 ---
 # <a name="end-statement"></a>End – příkaz
 Ukončí provádění okamžitě.  
@@ -50,7 +50,7 @@ End
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `End` příkaz k ukončení provádění kódu, pokud uživatel požaduje.  
   
- [!code-vb[VbVersHelp60Controls#64](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/end-statement_1.vb)]  
+ [!code-vb[VbVersHelp60Controls#64](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVersHelp60Controls/VB/Form1.vb#64)]  
   
 ## <a name="smart-device-developer-notes"></a>Poznámky pro vývojáře inteligentního zařízení  
  Tento příkaz není podporován.  

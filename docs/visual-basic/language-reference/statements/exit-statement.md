@@ -12,12 +12,12 @@ helpviewer_keywords:
 - program termination
 - execution [Visual Basic], stopping
 ms.assetid: 760bfb32-5c3f-4bdb-a432-9a6001c92db7
-ms.openlocfilehash: 63bcc5d5205681917ba30bdb73bc496307a6322a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e08d436686876a0a3d63f15167d35383e32221e7
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54672510"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56967799"
 ---
 # <a name="exit-statement-visual-basic"></a>Exit – příkaz (Visual Basic)
 Ukončí proceduru nebo blok a okamžitě přenese ovládací prvek do příkazu za voláním procedury nebo definicí bloku.  
@@ -67,17 +67,17 @@ Exit { Do | For | Function | Property | Select | Sub | Try | While }
 ## <a name="example"></a>Příklad  
  V následujícím příkladu podmínka smyčky zastaví smyčky při `index` proměnnou je větší než 100. `If` Příkaz ve smyčce, ale způsobí, že `Exit Do` příkaz zastaví smyčky, pokud indexovaná proměnná je větší než 10.  
   
- [!code-vb[VbVbalrStatements#133](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/exit-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#133](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#133)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad přiřadí název funkce návratová hodnota `myFunction`a potom použije `Exit Function` vrácení z funkce.  
   
- [!code-vb[VbVbalrStatements#23](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/exit-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#23)]  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md) přiřazovat návratovou hodnotu a ukončení funkce.  
   
- [!code-vb[VbVbalrStatements#24](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/exit-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#24)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Příkaz Continue](../../../visual-basic/language-reference/statements/continue-statement.md)

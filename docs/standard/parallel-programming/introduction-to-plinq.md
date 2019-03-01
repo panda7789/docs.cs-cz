@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1a1cf3ea782752f750f3545a28699a8bc325e4a5
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.openlocfilehash: 9227d10e2c12f88d33b283d1f1328d628b64afa0
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55903888"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56975729"
 ---
 # <a name="introduction-to-plinq"></a>Úvod do PLINQ
 ## <a name="what-is-a-parallel-query"></a>Co je paralelní dotaz?  
@@ -33,7 +33,7 @@ ms.locfileid: "55903888"
 ## <a name="the-parallelenumerable-class"></a>Třída ParallelEnumerable  
  <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> Třídy zpřístupňuje téměř všechny funkce PLINQ.  A zbytek <xref:System.Linq?displayProperty=nameWithType> obor názvů typů jsou kompilovány do sestavení System.Core.dll. Výchozí projekty jazyka C# a Visual Basic v sadě Visual Studio odkazují na toto sestavení a importují obor názvů.  
   
- <xref:System.Linq.ParallelEnumerable> zahrnuje implementaci všech standardních operátorů pro dotazování, které podporují LINQ to Objects, přestože se nepokouší paralelizovat každé z nich. Pokud nejste obeznámeni s [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)], naleznete v tématu [Úvod do LINQ](https://msdn.microsoft.com/library/24dddf19-12a0-4707-a4bc-eba4fa7f219e).  
+ <xref:System.Linq.ParallelEnumerable> zahrnuje implementaci všech standardních operátorů pro dotazování, které podporují LINQ to Objects, přestože se nepokouší paralelizovat každé z nich. Pokud nejste obeznámeni s [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)], naleznete v tématu [Úvod do LINQ (C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq.md) a [Úvod do LINQ (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md).  
   
  Kromě standardních operátorů pro dotazování <xref:System.Linq.ParallelEnumerable> třída obsahuje sadu metod, které umožňují specifické chování pro paralelní zpracování. Tyto metody specifické pro PLINQ jsou uvedeny v následující tabulce.  
   

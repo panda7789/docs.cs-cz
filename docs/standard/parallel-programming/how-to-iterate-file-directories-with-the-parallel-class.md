@@ -10,15 +10,15 @@ helpviewer_keywords:
 ms.assetid: 555e9f48-f53d-4774-9bcf-3e965c732ec5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 34f9208ac5007e26967c136f0599cabfd66ba2ea
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: c1ec270159430434adc074f1fa6ca92ec3c4a455
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45596359"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965264"
 ---
 # <a name="how-to-iterate-file-directories-with-the-parallel-class"></a>Postupy: Procházení adresářů se soubory pomocí paralelní třídy
-V mnoha případech je iterace souboru operací, kterou lze snadno paralelizovat. Téma [postupy: iterovat adresářů se soubory pomocí jazyka PLINQ](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-plinq.md) ukazuje nejjednodušší způsob, jak tuto úlohu proveďte pro řadu scénářů. Jakmile se však musí kód vypořádat s mnoha typy výjimek, mohou se při přístupu k systému souborů objevit komplikace. Následující příklad znázorňuje jeden ze způsobů řešení problému. Pro procházení všech souborů a složek v zadaném adresáři používá iteraci založenou na zásobníku a umožňuje kódu zachytit a zpracovat různé výjimky. Způsob zpracování výjimek záleží samozřejmě na vás.  
+V mnoha případech je iterace souboru operací, kterou lze snadno paralelizovat. Téma [jak: Procházení adresářů se soubory pomocí jazyka PLINQ](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-plinq.md) ukazuje nejjednodušší způsob, jak tuto úlohu proveďte pro řadu scénářů. Jakmile se však musí kód vypořádat s mnoha typy výjimek, mohou se při přístupu k systému souborů objevit komplikace. Následující příklad znázorňuje jeden ze způsobů řešení problému. Pro procházení všech souborů a složek v zadaném adresáři používá iteraci založenou na zásobníku a umožňuje kódu zachytit a zpracovat různé výjimky. Způsob zpracování výjimek záleží samozřejmě na vás.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad prochází adresář sekvenčně, soubory však zpracovává paralelně. Toto je pravděpodobně nejlepší řešení, pokud máte velký poměr souborů na adresář. Je také možné provést paralelní zpracování iterace adresáře a k jednotlivým souborům přistupovat sekvenčně. Paralelní zpracování obou smyček není pravděpodobně efektivní, dokud není výslovně použito počítače s velkým počtem procesorů. Jako ve všech případech je však třeba důkladně otestovat celou aplikaci a určit nejlepší přístup.  
@@ -30,7 +30,7 @@ V mnoha případech je iterace souboru operací, kterou lze snadno paralelizova
   
  Pro zachování celkového počtu zpracovaných souborů je v příkladu použita místní proměnná `fileCount`. Vzhledem k tomu, že k proměnné může přistupovat souběžně více úkolů, je přístup k této proměnné synchronizován voláním metody <xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType>.  
   
- Pamatujte, že pokud je výjimka vyvolána v hlavním vlákně, mohou vlákna, která byla spouštěna metodou <xref:System.Threading.Tasks.Parallel.ForEach%2A>, být spuštěna i nadále. Tato vlákna lze zastavit nastavením proměnné typu Boolean v obslužných rutinách události a ověřením hodnoty v jednotlivých iteracích paralelní smyčky. Označuje-li hodnota vyvolání výjimky, je třeba pro zastavení nebo přerušení smyčky použít proměnnou <xref:System.Threading.Tasks.ParallelLoopState>. Další informace najdete v tématu [postupy: zastavení nebo přerušení smyčky Parallel.For](https://msdn.microsoft.com/library/de52e4f1-9346-4ad5-b582-1a4d54dc7f7e).  
+ Pamatujte, že pokud je výjimka vyvolána v hlavním vlákně, mohou vlákna, která byla spouštěna metodou <xref:System.Threading.Tasks.Parallel.ForEach%2A>, být spuštěna i nadále. Tato vlákna lze zastavit nastavením proměnné typu Boolean v obslužných rutinách události a ověřením hodnoty v jednotlivých iteracích paralelní smyčky. Označuje-li hodnota vyvolání výjimky, je třeba pro zastavení nebo přerušení smyčky použít proměnnou <xref:System.Threading.Tasks.ParallelLoopState>. Další informace najdete v tématu [jak: Zastavení nebo přerušení smyčky Parallel.For](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd460721(v=vs.100)).  
   
 ## <a name="see-also"></a>Viz také:
 

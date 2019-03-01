@@ -10,12 +10,12 @@ helpviewer_keywords:
 - concatenation operators [Visual Basic], syntax
 - strings [Visual Basic], concatenating
 ms.assetid: fefc3d00-cbf1-475c-8c5e-6fb213b3f85a
-ms.openlocfilehash: eac99ba38841f6972b5bdc8a01f816519af06288
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2237da5d64ada6817d3a9a88b04b76f573bd76c0
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54684668"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56976509"
 ---
 # <a name="amp-operator-visual-basic"></a>&amp; – Operátor (Visual Basic)
 Vytvoří spojení řetězců dvou výrazů.  
@@ -50,7 +50,7 @@ result = expression1 & expression2
 ## <a name="example"></a>Příklad  
  V tomto příkladu `&` operátoru pro zřetězení řetězců vynucení. Výsledkem je řetězcovou hodnotu představující zřetězení operandy dva řetězce.  
   
- [!code-vb[VbVbalrOperators#2](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/concatenation-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
 - [&= – operátor](../../../visual-basic/language-reference/operators/and-assignment-operator.md)

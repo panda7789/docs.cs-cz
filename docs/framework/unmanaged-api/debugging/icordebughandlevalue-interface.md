@@ -1,5 +1,5 @@
 ---
-title: ICorDebugHandleValue – rozhraní 1
+title: ICorDebugHandleValue – rozhraní
 ms.date: 03/30/2017
 api_name:
 - ICorDebugHandleValue
@@ -16,14 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 102fcff6120822c5de0ede45d43a9cd064270085
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6dddc1665dff5c1a0629d25aa99066ce6eeca94a
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54715475"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56981436"
 ---
-# <a name="icordebughandlevalue-interface1"></a>ICorDebugHandleValue – rozhraní 1
+# <a name="icordebughandlevalue-interface"></a>ICorDebugHandleValue – rozhraní
+
 Podtřída ICorDebugReferenceValue, která představuje referenční hodnotu, do které ladicí program vytvořil popisovač pro uvolnění paměti.  
   
 ## <a name="methods"></a>Metody  

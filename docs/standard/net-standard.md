@@ -3,15 +3,15 @@ title: .NET Standard
 description: Další informace o .NET Standard, jeho verze a implementace .NET, kteří jej podporují.
 author: mairaw
 ms.author: mairaw
-ms.date: 07/19/2018
+ms.date: 02/25/2019
 ms.technology: dotnet-standard
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: d759ab8fe436ad68ca67943b7a4330cea093ae52
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 83b5498ac6f585a8d2554377748836d88ce592d1
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54535915"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970880"
 ---
 # <a name="net-standard"></a>.NET Standard
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - arguments [Visual Basic], passing by value or by reference
 - argument passing [Visual Basic], by value or by reference
 ms.assetid: fd8a9de6-7178-44d5-a9bf-458d4ad907c2
-ms.openlocfilehash: 86dc813c264f45e4f9c2cdf8d2dc7e7e6603c4d8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c2c778afea90a90b2b5f83300c2d174db39f3c15
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54725360"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56978472"
 ---
 # <a name="passing-arguments-by-value-and-by-reference-visual-basic"></a>Předávání argumentů podle hodnoty a odkazu (Visual Basic)
 V jazyce Visual Basic, můžete předat argument procedury *podle hodnoty* nebo *odkazem*. To se označuje jako *předávání mechanismus*, a určí, zda procesu můžete upravit programový element základní argumentu ve volajícím kódu. Deklarace procedury určuje předávání mechanismus pro každý parametr zadáním [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) – klíčové slovo.  
@@ -66,7 +66,7 @@ V jazyce Visual Basic, můžete předat argument procedury *podle hodnoty* nebo 
  Následující příklad ukazuje, kdy se mají předat argumenty podle hodnoty a při předávání pomocí odkazu. Postup `Calculate` jsou obě `ByVal` a `ByRef` parametru. Vzhledem úrokové sazby `rate`a součet peníze, `debt`, úlohou postupu je vypočítat nové hodnoty pro `debt` , který je výsledkem použití úrokové sazby na původní hodnoty `debt`. Protože `debt` je `ByRef` parametr, nové celkem se projeví v hodnotu argumentu ve volajícím kódu, který odpovídá `debt`. Parametr `rate` je `ByVal` parametr protože `Calculate` by neměly měnit jeho hodnotu.  
   
 ### <a name="code"></a>Kód  
- [!code-vb[VbVbcnProcedures#74](./codesnippet/VisualBasic/passing-arguments-by-value-and-by-reference_1.vb)]  
+ [!code-vb[VbVbcnProcedures#74](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class2.vb#74)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Procedury](./index.md)

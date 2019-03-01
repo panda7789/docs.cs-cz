@@ -5,17 +5,17 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, program structure
 ms.assetid: 5ae964a5-0ef0-40fe-88fb-6d1793371d0d
-ms.openlocfilehash: 53908a21e573b7ac7d8347ebfe7f11202612fae1
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
+ms.openlocfilehash: a60a03d0f88b6176dc22e850c8a84b605078c657
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55675098"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56967324"
 ---
 # <a name="general-structure-of-a-c-program-c-programming-guide"></a>Obecná struktura programu v C# (Průvodce programováním v C#)
 Programy jazyka C# může skládat z jednoho nebo více souborů. Každý soubor může obsahovat nula nebo více oborů názvů. Obor názvů může obsahovat typy, jako jsou třídy, struktury, rozhraní, výčty a delegáti, kromě jiných oborech názvů. Následuje kostra programu v C#, která obsahuje všechny tyto elementy.  
   
- [!code-csharp[csProgGuide#34](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/general-structure-of-a-csharp-program_1.cs)]  
+ [!code-csharp[csProgGuide#34](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/class2.cs#34)]  
   
 ## <a name="related-sections"></a>Související oddíly  
  Další informace:  

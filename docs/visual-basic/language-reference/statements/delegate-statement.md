@@ -7,12 +7,12 @@ helpviewer_keywords:
 - delegate keyword [Visual Basic]
 - Delegate statement [Visual Basic]
 ms.assetid: f799c518-0817-40cc-ad0b-4da846fdba57
-ms.openlocfilehash: 1ed2dc91d1a2ea9bade11902aac553e24c0607ad
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c0fb524961cd04b73a8b83094880d5eaa206fe9c
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583662"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965797"
 ---
 # <a name="delegate-statement"></a>Delegate – příkaz
 Slouží k deklaraci delegáta. Delegát je typ odkazu, který odkazuje `Shared` metodu typu nebo metodě instance objektu. Všechny procedury s parametry a návratovým typem odpovídajícím lze použít k vytvoření instance této třídy delegáta. Postup lze poté později vyvolat prostřednictvím instance delegátu.  
@@ -62,7 +62,7 @@ Slouží k deklaraci delegáta. Delegát je typ odkazu, který odkazuje `Shared`
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Delegate` příkaz deklarovat delegáta pro účely provozování na dvou čísel a vrátí číslo. `DelegateTest` Metoda použije instanci tohoto typu delegáta a použije ho k pracovat s páry čísel.  
   
- [!code-vb[VbVbalrDelegates#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/delegate-statement_1.vb)]  
+ [!code-vb[VbVbalrDelegates#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#14)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)

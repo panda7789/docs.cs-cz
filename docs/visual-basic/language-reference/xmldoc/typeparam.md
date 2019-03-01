@@ -5,12 +5,12 @@ helpviewer_keywords:
 - typeparam XML tag
 - <typeparam> XML tag
 ms.assetid: 1bb5ba78-f060-478c-905c-77a2e43639af
-ms.openlocfilehash: f84a5194551a718ff4ca512839a937f786740ca9
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: d7fb980545a532e39310ea3e9d663a2b5a81a006
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55259225"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56968449"
 ---
 # <a name="typeparam-visual-basic"></a>\<typeparam > (Visual Basic)
 Definuje typu parametru názvu a popisu.  
@@ -36,7 +36,7 @@ Definuje typu parametru názvu a popisu.
 ## <a name="example"></a>Příklad  
  V tomto příkladu `<typeparam>` značka, které popisují `id` parametru.  
   
- [!code-vb[VbVbcnXmlDocComments#8](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/typeparam_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#8)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

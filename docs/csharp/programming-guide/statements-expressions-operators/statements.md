@@ -6,19 +6,19 @@ helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: 12c4561e9e2c2a9e3a211351b70fd83b8ca7bccd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 232368d2b019b8c265bbb48bd197776f9e03a132
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54640846"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971504"
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
 Akce, které přijímá programu jsou vyjádřeny v příkazech. Běžné akce zahrnují deklarování proměnných, přiřazování hodnot, volání metod ve smyčce přes kolekce a vytváření větví do jednoho nebo jiného bloku kódu, v závislosti na danou podmínku. Pořadí, ve kterém jsou spouštěny příkazy v programu v jazyce se nazývá tok řízení toku provádění. Tok řízení se může lišit při každém spuštění programu, v závislosti na tom, jak program reaguje na vstup, že bude dostávat v době běhu.  
   
  Příkaz se může skládat z jediný řádek kódu, který končí středníkem nebo řady jedním řádkem příkazy v bloku. Blok příkazů, který je uzavřen v {} složené závorky a může obsahovat vnořené bloky. Následující kód ukazuje dva příklady příkazů jedním řádkem a blok příkazů více řádky:  
   
- [!code-csharp[csProgGuideStatements#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_1.cs)]  
+ [!code-csharp[csProgGuideStatements#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#1)]  
   
 ## <a name="types-of-statements"></a>Typy příkazů  
  V následující tabulce jsou uvedeny různé typy příkazů v C# a jejich související klíčová slova, s odkazy na témata, které obsahují další informace:  
@@ -43,43 +43,43 @@ Akce, které přijímá programu jsou vyjádřeny v příkazech. Běžné akce z
 
 Následující kód ukazuje příklady deklarace proměnných a nemusíte počátečního přiřazení a deklarace konstanty s inicializací nezbytné.
 
-[!code-csharp[csProgGuideStatements#23](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_2.cs)]
+ [!code-csharp[csProgGuideStatements#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#23)]
 
 ## <a name="expression-statements"></a>Příkazy výrazů
 
 Následující kód ukazuje příklady příkazy výrazů, včetně přiřazení, vytváření objektů přiřazení a volání metody.
 
-[!code-csharp[csProgGuideStatements#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_3.cs)]
+ [!code-csharp[csProgGuideStatements#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#24)]
 
 ## <a name="the-empty-statement"></a>Prázdný příkaz
 
 Následující příklady ukazují dvě použití pro prázdný příkaz:
 
-[!code-csharp[csProgGuideStatements#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_4.cs)]
+ [!code-csharp[csProgGuideStatements#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#25)]
 
 ## <a name="embedded-statements"></a>Vložené příkazy
 
  Některé příkazy, včetně [proveďte](../../../csharp/language-reference/keywords/do.md), [při](../../../csharp/language-reference/keywords/while.md), [pro](../../../csharp/language-reference/keywords/for.md), a [foreach](../../../csharp/language-reference/keywords/foreach-in.md), mají vloženým příkazem, který následuje, je vždy. Tento příkaz vložený může být jeden příkaz nebo více příkazů uzavřených podle {} hranaté závorce v bloku příkazu. Ještě jeden řádek integrovaných prohlášení, můžou být uzavřená v {} hranaté závorky, jak je znázorněno v následujícím příkladu:  
   
- [!code-csharp[csProgGuideStatements#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_5.cs)]  
+ [!code-csharp[csProgGuideStatements#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#26)]  
   
  Vloženým příkazem, který není uzavřen v {} hranaté závorky nemůže být v příkazu deklarace ani příkaz s popiskem. To je ukázáno v následujícím příkladu:  
   
- [!code-csharp[csProgGuideStatements#27](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_6.cs)]  
+ [!code-csharp[csProgGuideStatements#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#27)]  
   
  Vloženým příkazem umístěte do bloku, chcete-li vyřešit chybu:  
   
- [!code-csharp[csProgGuideStatements#28](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_7.cs)]  
+ [!code-csharp[csProgGuideStatements#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#28)]  
   
 ## <a name="nested-statement-blocks"></a>Vnořené příkazy bloky  
  Blok příkazu mohou být vnořené, jak je znázorněno v následujícím kódu:  
   
- [!code-csharp[csProgGuideStatements#29](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_8.cs)]  
+ [!code-csharp[csProgGuideStatements#29](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#29)]  
   
 ## <a name="unreachable-statements"></a>Nedosažitelný příkazy  
  Pokud kompilátor zjistí, že tok řízení můžete nikdy nedorazí konkrétní příkaz za žádných okolností, vygeneruje upozornění CS0162, jak je znázorněno v následujícím příkladu:  
   
- [!code-csharp[csProgGuideStatements#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/statements_9.cs)]  
+ [!code-csharp[csProgGuideStatements#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#22)]  
   
 ## <a name="related-sections"></a>Související oddíly  
   

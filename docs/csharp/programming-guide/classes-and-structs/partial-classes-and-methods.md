@@ -7,12 +7,12 @@ helpviewer_keywords:
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 5fdb3de03eaa60a4d29d5a0c7e4082a6806b0ec9
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 7e91d77393c4d2980cce73a92589b752124e8077
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56441668"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965199"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Částečné třídy a metody (Průvodce programováním v C#)
 Je možné rozdělit definici [třídy](../../../csharp/language-reference/keywords/class.md), [struktura](../../../csharp/language-reference/keywords/struct.md), [rozhraní](../../../csharp/language-reference/keywords/interface.md) nebo metoda přes dvě nebo více zdrojových souborů. Každý zdrojový soubor obsahuje část definice typu nebo metodě a všechny části spolu při kompilaci aplikace.  
@@ -26,7 +26,7 @@ Je možné rozdělit definici [třídy](../../../csharp/language-reference/keywo
   
 -   Pro rozdělení definice třídy, použijte [částečné](../../../csharp/language-reference/keywords/partial-type.md) – klíčové slovo modifikátoru, jak je znázorněno zde:  
   
- [!code-csharp[csProgGuideObjects#26](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_1.cs)]  
+ [!code-csharp[csProgGuideObjects#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#26)]  
   
  `partial` – Klíčové slovo Určuje další části třídy, struktury nebo rozhraní lze definovat v oboru názvů. Musíte použít všechny části `partial` – klíčové slovo. Všechno, co musí být k dispozici v části doby kompilace a finální typu formuláře. Všechny součásti musí mít stejné usnadnění, například `public`, `private`, a tak dále.  
   
@@ -39,15 +39,15 @@ Je možné rozdělit definici [třídy](../../../csharp/language-reference/keywo
   
  Následující příklad ukazuje, že vnořené typy může být částečně, i když není typu, které jsou vnořené uvnitř částečné samotný.  
   
- [!code-csharp[csProgGuideObjects#25](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_2.cs)]  
+ [!code-csharp[csProgGuideObjects#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#25)]  
   
  V době kompilace jsou sloučeny atributy částečný typ definice. Zvažte například následující deklarace:  
   
- [!code-csharp[csProgGuideObjects#23](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_3.cs)]  
+ [!code-csharp[csProgGuideObjects#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#23)]  
   
  Jsou ekvivalentní následující deklarace:  
   
- [!code-csharp[csProgGuideObjects#24](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_4.cs)]  
+ [!code-csharp[csProgGuideObjects#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#24)]  
   
  Tyto jsou sloučeny ze všech definic částečného typu:  
   
@@ -63,24 +63,24 @@ Je možné rozdělit definici [třídy](../../../csharp/language-reference/keywo
   
  Zvažte například následující deklarace:  
   
- [!code-csharp[csProgGuideObjects#21](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_5.cs)]  
+ [!code-csharp[csProgGuideObjects#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#21)]  
   
  Jsou ekvivalentní následující deklarace:  
   
- [!code-csharp[csProgGuideObjects#22](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_6.cs)]  
+ [!code-csharp[csProgGuideObjects#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#22)]  
   
 ### <a name="restrictions"></a>Omezení  
  Existuje několik pravidel dodržovat při práci s definicí částečné třídy:  
   
 -   Všechny definice částečný typ má být součástí stejného typu musí být upravena se `partial`. Například následující deklarace třídy vygenerují chybu:  
   
-     [!code-csharp[csProgGuideObjects#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_7.cs)]  
+     [!code-csharp[csProgGuideObjects#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#20)]  
   
 -   `partial` Modifikátor se může objevit jenom bezprostředně před klíčová slova `class`, `struct`, nebo `interface`.  
   
 -   Vnořené částečné typy jsou povoleny v definicích typu částečně, jak je znázorněno v následujícím příkladu:  
   
-     [!code-csharp[csProgGuideObjects#19](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_8.cs)]  
+     [!code-csharp[csProgGuideObjects#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#19)]  
   
 -   Všechny definice částečný typ má být součástí stejného typu musí být definován ve stejné sestavení a stejném modulu (soubor .exe nebo .dll). Částečné definice nemůžou zahrnovat více modulů.  
   
@@ -114,7 +114,7 @@ Je možné rozdělit definici [třídy](../../../csharp/language-reference/keywo
  V následujícím příkladu, polí a konstruktor třídy `Coords`, jsou deklarovány v jedné definici částečné třídy a člena, `PrintCoords`, je deklarována v jiné definici částečné třídy.  
   
 ### <a name="code"></a>Kód  
- [!code-csharp[csProgGuideObjects#17](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_9.cs)]  
+ [!code-csharp[csProgGuideObjects#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#17)]  
   
 ## <a name="example-2"></a>Příklad 2  
   
@@ -122,7 +122,7 @@ Je možné rozdělit definici [třídy](../../../csharp/language-reference/keywo
  Následující příklad ukazuje, že můžete také vyvíjet částečné struktury a rozhraní.  
   
 ### <a name="code"></a>Kód  
- [!code-csharp[csProgGuideObjects#18](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/partial-classes-and-methods_10.cs)]  
+ [!code-csharp[csProgGuideObjects#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#18)]  
   
 ## <a name="partial-methods"></a>Částečné metody  
  Částečné třídy nebo struktury může obsahovat částečná metoda. Jednou ze součástí sady třídy obsahuje podpis metody. Volitelné implementace může být definovaná v části stejné nebo jiné části. Pokud implementace není zadán, pak metoda a všechna volání do metody se odeberou v době kompilace.  

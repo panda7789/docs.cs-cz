@@ -5,26 +5,26 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: 32dcfc8da52fc623473a1cc234e710463f8d28be
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2c1416566ca59a44b36457c710955de863013417
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54722696"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56980713"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Argumenty příkazového řádku (Průvodce programováním v C#)
 Argumenty můžete poslat `Main` metoda definováním metody jedním z následujících způsobů:  
   
- [!code-csharp[csProgGuideMain#2](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_1.cs)]  
+ [!code-csharp[csProgGuideMain#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#2)]  
   
- [!code-csharp[csProgGuideMain#3](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_2.cs)]  
+ [!code-csharp[csProgGuideMain#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#3)]  
   
 > [!NOTE]
 >  Chcete-li povolit argumenty příkazového řádku `Main` metodu v aplikaci Windows Forms, je nutné ručně upravit podpis `Main` v souboru program.cs. Vytvoří kód generovaný návrhářem formulářů Windows `Main` bez vstupního parametru. Můžete také použít <xref:System.Environment.CommandLine%2A?displayProperty=nameWithType> nebo <xref:System.Environment.GetCommandLineArgs%2A?displayProperty=nameWithType> pro přístup k argumenty příkazového řádku z libovolného bodu v konzole nebo v aplikaci Windows.  
   
  Parametr `Main` je metoda <xref:System.String> pole, které představuje argumenty příkazového řádku. Obvykle zjistíte, zda existují argumenty testováním `Length` vlastnosti, například:  
   
- [!code-csharp[csProgGuideMain#4](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_3.cs)]  
+ [!code-csharp[csProgGuideMain#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#4)]  
   
  Můžete také převést řetězcové argumenty pro číselné typy s použitím <xref:System.Convert> třídy nebo `Parse` metody. Například následující výraz převede `string` k `long` čísla pomocí <xref:System.Int64.Parse%2A> metody:  
   
@@ -53,7 +53,7 @@ long num = Convert.ToInt64(s);
   
 1.  Vložte následující kód do libovolného textového editoru a uložte soubor jako textový soubor s názvem `Factorial.cs`.  
   
-     [!code-csharp[csProgGuideMain#16](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/command-line-arguments_4.cs)]  
+     [!code-csharp[csProgGuideMain#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class1.cs#16)]  
   
 2.  Z **Start** obrazovky nebo **Start** nabídky, otevřete sadu Visual Studio **Developer Command Prompt** okna a pak přejděte do složky, která obsahuje soubor, který jste právě vytvořit.  
   

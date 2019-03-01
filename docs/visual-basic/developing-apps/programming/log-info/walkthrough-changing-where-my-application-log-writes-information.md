@@ -5,14 +5,14 @@ helpviewer_keywords:
 - My.Application.Log object, walkthroughs
 - event logs, changing output location
 ms.assetid: ecc74f95-743c-450d-93f6-09a30db0fe4a
-ms.openlocfilehash: b0d9e40f3f41eac5b16037a89a3cac45cbfc8c57
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2c86d175ca7a592b4ae329cf9a9eedb8a649712f
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54574441"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56980422"
 ---
-# <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a>Průvodce: Změna, kam objekt My.Application.Log zapisuje informace (Visual Basic)
+# <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a>Návod: Změna, kam objekt My.Application.Log zapisuje informace (Visual Basic)
 Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování informací o události, ke kterým dochází ve vaší aplikaci. Tento návod ukazuje, jak přepsat výchozí nastavení a způsobit, `Log` objekt k zápisu do jiných naslouchacích procesů protokolu.  
   
 ## <a name="prerequisites"></a>Požadavky  
@@ -175,7 +175,7 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
   
 2.  Tento příklad kódu ukazuje, jak určit název silně pojmenované typy pro plně kvalifikovaný Systen.Diagnostics.FileLogTraceListener"v tomto případě.  
   
-     [!code-vb[VbVbalrMyApplicationLog#15](../../../../visual-basic/developing-apps/programming/log-info/codesnippet/VisualBasic/walkthrough-changing-where-my-application-log-writes-information_1.vb)]  
+     [!code-vb[VbVbalrMyApplicationLog#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#15)]  
   
      Toto je výstup, a to je možné jednoznačně odkazovat na typ silným názvem, stejně jako v "pro přidání posluchače" výše uvedeného postupu.  
   

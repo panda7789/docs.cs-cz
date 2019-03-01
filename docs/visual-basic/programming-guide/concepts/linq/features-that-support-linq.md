@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Visual Basic, LINQ features
 - LINQ [Visual Basic], features supporting LINQ
 ms.assetid: c821bb50-b6f6-4cf9-8aba-2717e465bd3a
-ms.openlocfilehash: 557e3607443066a863946ff08958197a14662a88
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e76fcb891e0b258d261208f7cb9173c49899ba11
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54519370"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974260"
 ---
 # <a name="visual-basic-features-that-support-linq"></a>Funkce Visual Basic podporující LINQ
 Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na technologie v jazyce Visual Basic, že podporuje syntaxi dotazu a jiné jazykové konstrukty přímo v jazyce. S [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], nemusíte učit nový jazyk k dotazu vůči externímu zdroji dat. V jazyce Visual Basic můžete dotazovat data v relačních databází, úložiště XML nebo objekty. Tato integrace možností dotazování jazyk povolí kompilaci kontrolu pro chyby syntaxe a bezpečnost typů. Tato integrační také zajišťuje, že už znáte většinu toho, co máte vědět o zápis bohatě vybaveným a různých dotazů v jazyce Visual Basic.  
@@ -20,7 +20,7 @@ Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na techn
 ## <a name="query-expressions"></a>Výrazy dotazu  
  Výrazy dotazů v jazyce Visual Basic lze vyjádřit v deklarativní syntaxe podobná SQL nebo výraz XQuery. V době kompilace je syntaxe dotazu převeden na volání metody k implementaci zprostředkovatele LINQ standardní metody operátoru dotazu rozšíření. Řízení aplikací, které jsou operátory standardního dotazu v oboru tak, že zadáte odpovídající obor názvů s `Imports` příkazu. Syntaxe výrazu dotazu jazyka Visual Basic vypadá takto:  
   
- [!code-vb[VbLINQVbFeatures#1](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_1.vb)]  
+ [!code-vb[VbLINQVbFeatures#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#1)]  
   
  Další informace najdete v tématu [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
   
@@ -31,18 +31,18 @@ Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na techn
   
  Následující příklad ukazuje odvození místního typu. Pokud chcete použít tento příklad, je nutné nastavit `Option Infer` k `On`.  
   
- [!code-vb[VbLINQVbFeatures#2](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_2.vb)]  
+ [!code-vb[VbLINQVbFeatures#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#2)]  
   
  Odvození místního typu také umožňuje vytvořit anonymní typy, které jsou popsané dále v této části a jsou nutné pro dotazy LINQ.  
   
  V následujícím příkladu LINQ, dojde k odvození typu Pokud `Option Infer` je buď `On` nebo `Off`. Pokud dojde k chybě kompilace `Option Infer` je `Off` a `Option Strict` je `On`.  
   
- [!code-vb[VbLINQVbFeatures#3](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_3.vb)]  
+ [!code-vb[VbLINQVbFeatures#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#3)]  
   
 ## <a name="object-initializers"></a>Inicializátory objektů  
  Inicializátory objektů se používají ve výrazech dotazů, když máte k vytvoření anonymního typu k ukládání výsledků dotazu. Můžete se používají také k inicializaci objektů třídy pojmenované typy mimo dotazy. S použitím inicializátoru objektu, můžete inicializovat objekt na jednom řádku bez nutnosti explicitně volat konstruktor. Za předpokladu, že máte třídu s názvem `Customer` , která má veřejný `Name` a `Phone` vlastnosti, společně s další vlastnosti inicializátoru objektu je možné tímto způsobem:  
   
- [!code-vb[VbLINQVbFeatures#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_4.vb)]  
+ [!code-vb[VbLINQVbFeatures#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#4)]  
   
  Další informace najdete v tématu [inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
   
@@ -51,7 +51,7 @@ Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na techn
   
  *Anonymního typu* je dynamicky vytvořený kompilátorem. Název typu je přiřazena kompilátorem a může změnit s každou novou kompilaci. Název proto nelze použít přímo. Anonymní typy jsou inicializovány v následujícím způsobem:  
   
- [!code-vb[VbLINQVbFeatures#5](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_5.vb)]  
+ [!code-vb[VbLINQVbFeatures#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#5)]  
   
  Další informace najdete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
   
@@ -60,36 +60,36 @@ Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na techn
   
  Následující metody rozšíření přidá tisku metodu <xref:System.String> třídy.  
   
- [!code-vb[VbLINQVbFeatures#6](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_6.vb)]  
+ [!code-vb[VbLINQVbFeatures#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#6)]  
   
  Metoda je volána jako o běžnou metodu instance z <xref:System.String>:  
   
- [!code-vb[VbLINQVbFeatures#7](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_7.vb)]  
+ [!code-vb[VbLINQVbFeatures#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#7)]  
   
  Další informace najdete v tématu [rozšiřující metody](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).  
   
-## <a name="lambda-expressions"></a>Výrazy lambda  
+## <a name="lambda-expressions"></a>Lambda – výrazy  
  Výraz lambda je funkce bez názvu, který vypočítá a vrátí jednu hodnotu. Na rozdíl od funkce s názvem mohou být výraz lambda definován a provedeny ve stejnou dobu. Následující příklad zobrazuje 4.  
   
- [!code-vb[VbLINQVbFeatures#8](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_8.vb)]  
+ [!code-vb[VbLINQVbFeatures#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#8)]  
   
  Můžete přiřadit definici výrazu lambda s názvem proměnné a pak použijte název pro volání funkce. Následující příklad zobrazuje také 4.  
   
- [!code-vb[VbLINQVbFeatures#12](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_9.vb)]  
+ [!code-vb[VbLINQVbFeatures#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#12)]  
   
  V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], výrazů lambda tvoří základ mnoho standardních operátorů pro dotazování. Kompilátor vytvoří výrazy lambda zachycení výpočty, které jsou definovány metody základních dotazů jako například `Where`, `Select`, `Order By`, `Take While`a další.  
   
  Například následující kód definuje dotaz, který vrátí vedoucí Všichni studenti ze seznamu studentů.  
   
- [!code-vb[VbLINQVbFeatures#9](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_10.vb)]  
+ [!code-vb[VbLINQVbFeatures#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#9)]  
   
  Definice dotazu je zkompilováno do kódu, který je podobný následujícím příkladu, který se používá k určení argumentů dvou výrazů lambda `Where` a `Select`.  
   
- [!code-vb[VbLINQVbFeatures#10](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_11.vb)]  
+ [!code-vb[VbLINQVbFeatures#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#10)]  
   
  Buď verze můžete spustit pomocí `For Each` smyčka:  
   
- [!code-vb[VbLINQVbFeatures#11](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_12.vb)]  
+ [!code-vb[VbLINQVbFeatures#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#11)]  
   
  Další informace najdete v tématu [výrazy Lambda](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   

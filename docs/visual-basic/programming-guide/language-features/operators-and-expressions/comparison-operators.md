@@ -15,12 +15,12 @@ helpviewer_keywords:
 - comparison operators [Visual Basic], comparing numeric values
 - operators [Visual Basic], comparison
 ms.assetid: 0b570339-5407-474f-8421-e183a8b303ee
-ms.openlocfilehash: db9eef215b16c95a40dfc622bb29443dd1736943
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cd7ee90e749be76012cf7143787bc6f1d096da03
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54552031"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56969372"
 ---
 # <a name="comparison-operators-in-visual-basic"></a>Operátory porovnání v jazyce Visual Basic
 Operátory porovnání porovnat dva výrazy a vrátí `Boolean` hodnotu, která představuje vztah jejich hodnoty. Existují operátory pro porovnání číselných hodnot, operátorů pro porovnávání řetězců a operátory porovnání objektů. Všechny tři typy operátorů jsou popsány zde.  
@@ -61,17 +61,17 @@ Operátory porovnání porovnat dva výrazy a vrátí `Boolean` hodnotu, která 
 ## <a name="comparing-objects"></a>Porovnávání objektů  
  Porovná dvě proměnné odkazu na objekt pomocí jazyka Visual Basic [je operátor](../../../../visual-basic/language-reference/operators/is-operator.md) a [IsNot – operátor](../../../../visual-basic/language-reference/operators/isnot-operator.md). Určete, jestli dvě referenční proměnné odkazovat na stejnou instanci objektu můžete použít některý z těchto operátorů. Toto dokládá následující příklad.  
   
- [!code-vb[VbVbalrOperators#65](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_1.vb)]  
+ [!code-vb[VbVbalrOperators#65](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#65)]  
   
  V předchozím příkladu `x Is y` vyhodnotí jako `True`, protože obě proměnné odkazovat na stejnou instanci. Kontrast tento výsledek v následujícím příkladu.  
   
- [!code-vb[VbVbalrOperators#66](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_2.vb)]  
+ [!code-vb[VbVbalrOperators#66](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#66)]  
   
  V předchozím příkladu `x Is y` vyhodnotí jako `False`, protože i když proměnné odkazovat na objekty stejného typu, odkazují na různé instance daného typu.  
   
  Pokud chcete otestovat pro dva objekty nejsou odkazuje na stejnou instanci `IsNot` operátor vyhnete gramaticky clumsy kombinaci `Not` a `Is`. Toto dokládá následující příklad.  
   
- [!code-vb[VbVbalrOperators#67](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_3.vb)]  
+ [!code-vb[VbVbalrOperators#67](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#67)]  
   
  V předchozím příkladu `If a IsNot b` je ekvivalentní `If Not a Is b`.  
   
@@ -82,7 +82,7 @@ Operátory porovnání porovnat dva výrazy a vrátí `Boolean` hodnotu, která 
   
  Když `typename` Určuje typ rozhraní, pak bude `TypeOf`... `Is` výraz vrátí `True` Pokud objekt implementuje typ rozhraní. Když `typename` je typ třídy, pak výraz vrací `True` Pokud je objekt instancí zadané třídy nebo třídy, která je odvozena z dané třídy. Toto dokládá následující příklad.  
   
- [!code-vb[VbVbalrOperators#68](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_4.vb)]  
+ [!code-vb[VbVbalrOperators#68](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#68)]  
   
  V předchozím příkladu `TypeOf x Is Control` výraz vyhodnocen jako `True` protože typu `x` je `Button`, který dědí z `Control`.  
   

@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: e0635d03e7d1b31642a6669aecefd2b0099e9c78
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: 7a9c6c64f5aa482b6d21aab0c88fc204c6427a41
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066282"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974780"
 ---
 # <a name="use-nosql-databases-as-a-persistence-infrastructure"></a>Použití databází NoSQL jako infrastruktury trvalosti
 
@@ -163,7 +163,7 @@ V podstatě je to pouze upozornění s informacemi o tom, že byste neměli vžd
 
 ### <a name="the-code-use-mongodb-api-in-net-core-applications"></a>Kód: Použití rozhraní API MongoDB v aplikacích .NET Core
 
-Rozhraní MongoDB API pro .NET je založená na balíčky NuGet, které je třeba přidat do vašich projektů, jako je v projektu Locations.API je znázorněno následujícím obrázku.
+Rozhraní MongoDB API pro .NET je založená na balíčky NuGet, které je třeba přidat do vašich projektů, jako je v projektu Locations.API je znázorněno na následujícím obrázku.
 
 ![Zobrazení Průzkumník řešení zobrazující balíčky závislostí nuget MongoDB.](./media/image21-bis.png)
 

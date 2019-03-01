@@ -1,16 +1,10 @@
 ---
-title: Úvod do C# – interaktivní kurzy
-description: Přečtěte si C# v prohlížeči a můžete začít s vývojovým prostředím
+title: 'Úvod do C# – interaktivní kurzy'
+description: 'Přečtěte si C# v prohlížeči a můžete začít s vývojovým prostředím'
 ms.date: 01/30/2018
 ms.custom: mvc
-ms.openlocfilehash: bfd08c0885351cebb0b2d7a45e93de20fa1bc97f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50186149"
 ---
-# <a name="introduction-to-c"></a>Úvod do C# #
+# <a name="introduction-to-c"></a>Úvod do jazyka C\#
 
 Vítáme vás u kurzu Úvod do C#. Tento kurz začíná interaktivní lekcí, kterou si můžete spustit v prohlížeči.
 

@@ -1,23 +1,17 @@
 ---
-title: Typy – C# Průvodce programováním
+title: 'Typy – C# Průvodce programováním'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
-- value types [C#]
-- reference types [C#]
-- types [C#]
-- C# language, data types
-- common type system [C#]
-- data types [C#]
-- C# language, types
-- strong typing [C#]
+  - 'value types [C#]'
+  - 'reference types [C#]'
+  - 'types [C#]'
+  - 'C# language, data types'
+  - 'common type system [C#]'
+  - 'data types [C#]'
+  - 'C# language, types'
+  - 'strong typing [C#]'
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 5d24e28b6a685cf4934c06c72ffbc8aa29748faa
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55739313"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 ## <a name="types-variables-and-values"></a>Typy, proměnných a hodnot  
@@ -39,7 +33,7 @@ ms.locfileid: "55739313"
   
  Kompilátor používá informace o typu, abyste měli jistotu, že jsou všechny operace, které jsou prováděny ve vašem kódu *bezpečnost typů*. Například, pokud deklarujete proměnnou typu [int](../../../csharp/language-reference/keywords/int.md), kompilátor umožňuje také použít proměnné a operace odčítání. Pokud se pokusíte provést tyto stejné operace na proměnnou typu [bool](../../../csharp/language-reference/keywords/bool.md), kompilátor vygeneruje chybu, jak je znázorněno v následujícím příkladu:  
   
- [!code-csharp[csProgGuideTypes#42](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_1.cs)]  
+ [!code-csharp[csProgGuideTypes#42](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#42)]  
   
 > [!NOTE]
 >  Vývojáře v C a C++, Všimněte si, že v jazyce C#, [bool](../../../csharp/language-reference/keywords/bool.md) není převoditelná na [int](../../../csharp/language-reference/keywords/int.md).  
@@ -49,11 +43,11 @@ ms.locfileid: "55739313"
 ### <a name="specifying-types-in-variable-declarations"></a>Určení typů v deklaracích proměnných  
  Pokud deklarujete proměnnou nebo konstantní v programu, musíte buď určit její typ nebo použít [var](../../../csharp/language-reference/keywords/var.md) – klíčové slovo, abyste umožnili kompilátoru odvodit typ. Následující příklad ukazuje některé deklarace proměnných, které používají předdefinované číselné typy a komplexní typy definované uživatelem:  
   
- [!code-csharp[csProgGuideTypes#36](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_2.cs)]  
+ [!code-csharp[csProgGuideTypes#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#36)]  
   
  Typy parametrů metod a vrácené hodnoty jsou uvedeny v podpisu metody. Následující podpis představuje metodu, která vyžaduje [int](../../../csharp/language-reference/keywords/int.md) jako vstupní argument a vrátí řetězec:  
   
- [!code-csharp[csProgGuideTypes#35](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_3.cs)]  
+ [!code-csharp[csProgGuideTypes#35](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#35)]  
   
  Jakmile je proměnná deklarována, nemůže být znovu deklarována s novým typem a nelze jí přiřadit hodnotu, která není kompatibilní s příslušným deklarovaným typem. Například nelze deklarovat [int](../../../csharp/language-reference/keywords/int.md) a přiřadit mu hodnotu typu Boolean [true](../../../csharp/language-reference/keywords/true-literal.md). Hodnoty však lze převést na jiné typy, například když jsou přiřazeny nové proměnné nebo předány jako argumenty metody. A *převod typu* fakturuje se u tohoto nezpůsobí ztrátu dat probíhá automaticky kompilátorem. Vyžaduje převod, který může způsobit ztrátu dat *přetypování* ve zdrojovém kódu.  
   
@@ -104,13 +98,13 @@ char c = 'Z';
   
  Můžete použít [struktura](../../../csharp/language-reference/keywords/struct.md) – klíčové slovo k tvorbě vlastních typů vlastní hodnotu. Obvykle struktura slouží jako kontejner pro malou skupinu příbuzných proměnných, jak je znázorněno v následujícím příkladu:  
   
- [!code-csharp[csProgGuideObjects#1](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/index_4.cs)]  
+ [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]  
   
  Další informace o strukturách naleznete v tématu [struktury](../../../csharp/programming-guide/classes-and-structs/structs.md). Další informace o typech hodnot v rozhraní .NET najdete v tématu [hodnotách](../../../csharp/language-reference/keywords/value-types.md).  
   
  Další kategorie typů hodnot je [výčtu](../../../csharp/language-reference/keywords/enum.md). Výčet definuje sadu pojmenovaných integrálních konstant. Například <xref:System.IO.FileMode?displayProperty=nameWithType> výčtu v knihovně tříd rozhraní .NET obsahuje sadu s názvem konstantní celá čísla, které určují, jak by měl být soubor otevřen. Jak je znázorněno v následujícím příkladu je definována:  
  
- [!code-csharp[csProgGuideTypes#44](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_5.cs)]  
+ [!code-csharp[csProgGuideTypes#44](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#44)]  
   
  `System.IO.FileMode.Create` – Konstanta má hodnotu 2. Název však má mnohem větší smysl pro člověka při čtení zdrojového kódu a z toho důvodu je lepší používat místo čísel konstantní literální čísla. Další informace naleznete v tématu <xref:System.IO.FileMode?displayProperty=nameWithType>.  
   
@@ -133,7 +127,7 @@ IMyInterface iface = new MyClass();
   
  Všechna pole jsou typy odkazů, i když jsou jejich prvky typy hodnot. Pole implicitně odvozují ze <xref:System.Array?displayProperty=nameWithType> třídy, ale deklarujete a používáte je se zjednodušenou syntaxí, která je k dispozici v jazyce C#, jak je znázorněno v následujícím příkladu:  
   
- [!code-csharp[csProgGuideTypes#45](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_6.cs)]  
+ [!code-csharp[csProgGuideTypes#45](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#45)]  
   
  Typy odkazu plně podporují dědičnost. Při vytváření třídy můžete dědit ze kteréhokoli rozhraní nebo třídu, která není definován jako [zapečetěné](../../../csharp/language-reference/keywords/sealed.md), a jiné třídy mohou dědit z vaší třídy a přepsat vaše virtuální metody. Další informace o tom, jak vytvořit vlastní třídy naleznete v tématu [třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md). Další informace o dědičnosti a virtuálních metodách, naleznete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
   
@@ -142,7 +136,7 @@ IMyInterface iface = new MyClass();
   
  Vzhledem k tomu, že jsou literály typovány a všechny typy jsou nakonec odvozeny z <xref:System.Object?displayProperty=nameWithType>, můžete psát a kompilovat kód následujícím:  
   
- [!code-csharp[csProgGuideTypes#37](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/index_7.cs)]  
+ [!code-csharp[csProgGuideTypes#37](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#37)]  
   
 ## <a name="generic-types"></a>Obecné typy  
  Typ lze deklarovat s jedním nebo více *parametry typu* , které slouží jako zástupný symbol pro skutečný typ ( *konkrétní typ*), že kód klienta poskytne při vytváření instance daného typu. Tyto typy jsou označovány jako *obecných typů*. Například typ formátu .NET <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> má jeden parametr typu, které podle konvence je označen názvem *T*. Při vytváření instance typu, je třeba zadat typ objektů, které budou obsahovat seznam, například řetězec:  

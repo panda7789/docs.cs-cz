@@ -8,12 +8,12 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: 20676b53d21931987139288e29c009c8348ce6ca
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: abe593e9c132f4fc151983d6c4dc04bd13627120
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54690888"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56978407"
 ---
 # <a name="serialization-guidelines"></a>Pokyny pro serializaci
 Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování rozhraní API.  
@@ -69,8 +69,9 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
      [!code-csharp[SerializationGuidelines#3](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#3)]
      [!code-vb[SerializationGuidelines#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#3)]  
   
-     <xref:System.Runtime.Serialization.OnDeserializedAttribute> Se atribut nejčastěji používané zpětného volání. Další atributy řady jsou <xref:System.Runtime.Serialization.OnDeserializingAttribute>,    
-    <xref:System.Runtime.Serialization.OnSerializingAttribute>, a <xref:System.Runtime.Serialization.OnSerializedAttribute>. Jejich lze použít k označení zpětná volání, které získat spuštěny před deserializace před serializací a nakonec po serializaci, v uvedeném pořadí.  
+     
+      <xref:System.Runtime.Serialization.OnDeserializedAttribute> Se atribut nejčastěji používané zpětného volání. Další atributy řady jsou <xref:System.Runtime.Serialization.OnDeserializingAttribute>,    
+<xref:System.Runtime.Serialization.OnSerializingAttribute>, a <xref:System.Runtime.Serialization.OnSerializedAttribute>. Jejich lze použít k označení zpětná volání, které získat spuštěny před deserializace před serializací a nakonec po serializaci, v uvedeném pořadí.  
   
 4.  ZVAŽTE použití <xref:System.Runtime.Serialization.KnownTypeAttribute> označuje konkrétní typy, které se mají používat při deserializaci komplexní objekt grafu.  
   
@@ -87,7 +88,8 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
   
 6.  ZVAŽTE implementaci <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní, které chcete, aby verzemi mezi různými verzemi typu.  
   
-     Rozhraní umožňuje serializátor zajistit, aby žádná data nejsou ztracena během verzemi. <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> Vlastnost uloží všechna data z budoucí verze typu, který neznámý pro aktuální verzi. Aktuální verze je následně serializaci a deserializaci v budoucích verzích, doplňující data nebudou mít k dispozici v serializovaném proudu prostřednictvím **ExtensionData** hodnotu vlastnosti.  
+     Rozhraní umožňuje serializátor zajistit, aby žádná data nejsou ztracena během verzemi. 
+  <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> Vlastnost uloží všechna data z budoucí verze typu, který neznámý pro aktuální verzi. Aktuální verze je následně serializaci a deserializaci v budoucích verzích, doplňující data nebudou mít k dispozici v serializovaném proudu prostřednictvím **ExtensionData** hodnotu vlastnosti.  
   
      [!code-csharp[SerializationGuidelines#5](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#5)]
      [!code-vb[SerializationGuidelines#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#5)]  
@@ -144,6 +146,6 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
 - [Serializátor kontraktu dat](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)
 - [Typy podporované serializátorem kontraktu dat](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
 - [Binární serializace](binary-serialization.md)
-- [Vzdálené objekty](https://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)
+- [Vzdálené komunikace .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
 - [Serializace XML a SOAP](xml-and-soap-serialization.md)
 - [Zabezpečení a serializace](../../../docs/framework/misc/security-and-serialization.md)

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - pattern matching, empty strings
 - operators [Visual Basic], comparison
 ms.assetid: 19a83804-b5af-4739-928b-ac93e64e457f
-ms.openlocfilehash: a4d5f12c5cf1ba89f7b505fb44c3f8fb19cb09d4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 884c5ddf15deb49719915f10e107ba6a3431c4bc
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54669156"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56965940"
 ---
 # <a name="how-to-match-a-string-against-a-pattern-visual-basic"></a>Postupy: Porovnání řetězce se vzorem (Visual Basic)
 Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md) vyhovuje vzoru, můžete použít [operátor Like](../../../../visual-basic/language-reference/operators/like-operator.md).  
@@ -33,7 +33,7 @@ Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/l
   
      Následující příklad testuje, jestli `myString` obsahuje přesně jeden znak `H`.  
   
-     [!code-vb[VbVbalrOperators#70](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_1.vb)]  
+     [!code-vb[VbVbalrOperators#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#70)]  
   
 ### <a name="to-match-a-character-in-the-string-expression-against-a-wildcard-character"></a>Odpovídá znaku v řetězci výraz proti zástupný znak  
   
@@ -41,7 +41,7 @@ Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/l
   
      Následující příklad testuje, jestli `myString` se skládá z jednoho znaku `W` následovaný přesně dva znaky žádné hodnoty.  
   
-     [!code-vb[VbVbalrOperators#71](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_2.vb)]  
+     [!code-vb[VbVbalrOperators#71](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#71)]  
   
 ### <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters"></a>Odpovídá znaku v řetězcového výrazu seznam znaků  
   
@@ -49,7 +49,7 @@ Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/l
   
      Následující příklad testuje, jestli `myString` jakýkoli platný znak následovaný přesně jedním ze znaků se skládá ze `A`, `C`, nebo `E`.  
   
-     [!code-vb[VbVbalrOperators#72](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_3.vb)]  
+     [!code-vb[VbVbalrOperators#72](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#72)]  
   
      Všimněte si, že tuto shodu je velká a malá písmena.  
   
@@ -59,7 +59,7 @@ Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/l
   
      Následující příklad testuje, jestli `myString` se skládá ze znaků `num` za nímž následuje přesně jedním ze znaků `i`, `j`, `k`, `l`, `m`, nebo `n`.  
   
-     [!code-vb[VbVbalrOperators#73](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_4.vb)]  
+     [!code-vb[VbVbalrOperators#73](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#73)]  
   
      Všimněte si, že tuto shodu je velká a malá písmena.  
   
@@ -76,7 +76,7 @@ Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/l
   
      Následující příklad testuje sedmičíselné telefonní číslo `phoneNum` přesně tři číslice, za nímž následuje mezeru, pomlčku (`–`), tečku (`.`), nebo žádný znak, následovaný přesně čtyři číslice.  
   
-     [!code-vb[VbVbalrOperators#74](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-match-a-string-against-a-pattern_5.vb)]  
+     [!code-vb[VbVbalrOperators#74](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#74)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Operátory porovnání](../../../../visual-basic/language-reference/operators/comparison-operators.md)

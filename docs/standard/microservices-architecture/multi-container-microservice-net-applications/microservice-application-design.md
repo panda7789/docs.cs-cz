@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 8b2372ab5d58898b7a5730e118cc710d09a9bf92
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 124bd402af7b721366af67b362747dfd71907f34
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130491"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56981878"
 ---
 # <a name="designing-a-microservice-oriented-application"></a>Návrh aplikace orientované na mikroslužby
 
@@ -61,7 +61,7 @@ Mikroslužby jsou vyvíjeny a nasazené jako kontejnery nezávisle na mezi sebou
 
 Každá mikroslužba má svou vlastní databázi, což umožňuje být zcela oddělená od jiných mikroslužeb. Pokud je to nezbytné, konzistenci mezi databází z různých mikroslužeb se opírá události integrace na úrovni aplikace (prostřednictvím sběrnice logické událostí), jako zpracované v příkazu a model dělení zodpovědnosti dotazů (CQRS). Proto musí obchodní omezení zapojte konečnou konzistenci mezi různými mikroslužbami a související databází.
 
-### <a name="eshoponcontainers-a-reference-application-for-net-core-and-microservices-deployed-using-containers"></a>aplikaci eShopOnContainers: Referenční aplikace pro .NET Core a mikroslužby se nasazují pomocí kontejnerů
+### <a name="eshoponcontainers-a-reference-application-for-net-core-and-microservices-deployed-using-containers"></a>eShopOnContainers: Referenční aplikace pro .NET Core a mikroslužby se nasazují pomocí kontejnerů
 
 Abyste se mohli zaměřit na architektury a technologie místo přemýšlení o hypothetic obchodní domény, který možná nevíte, jsme vybrali dobře známé obchodní domény – konkrétně, zjednodušené aplikaci elektronického obchodování (kde e), která předkládá katalog produkty, trvá objednávek zákazníků, ověřuje inventáře a provede další podnikové funkce. Tento zdrojový kód aplikace založené na kontejnerech je k dispozici v [aplikaci eShopOnContainers](https://aka.ms/MicroservicesArchitecture) úložiště GitHub.
 
@@ -158,7 +158,7 @@ Existuje mnoho vzorech architektury, které jsou používané softwarové archit
 
 - Jednoduché CRUD, oddělených, jednou vrstvou.
 
-- [Tradiční N vrstvami](https://msdn.microsoft.com/library/ee658109.aspx#Layers).
+- [Tradiční N vrstvami](https://docs.microsoft.com/previous-versions/msp-n-p/ee658109(v=pandp.10)).
 
 - [Řízené doménou návrhu N vrstvami](https://blogs.msdn.microsoft.com/cesardelatorre/2011/07/03/published-first-alpha-version-of-domain-oriented-n-layered-architecture-v2-0/).
 

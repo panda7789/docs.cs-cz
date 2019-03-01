@@ -1,16 +1,16 @@
 ---
-title: Koncepty programování (Visual Basic)
-ms.date: 07/20/2015
+title: Koncepty programování – Visual Basic
+ms.date: 02/27/2017
 ms.assetid: cc9cac84-61f6-476e-b8c7-9bae7749bd90
 ---
 # <a name="programming-concepts-visual-basic"></a>Koncepty programování (Visual Basic)
+
 Tato část popisuje koncepty programování v jazyce Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Sestavení v rozhraní .NET](../../../standard/assembly/index.md)|Popisuje, jak vytvořit a používat sestavení.|  
 |[Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)|Popisuje, jak vytvořit asynchronní řešení pomocí [asynchronní](../../../visual-basic/language-reference/modifiers/async.md) a [Await](../../../visual-basic/language-reference/operators/await-operator.md) klíčová slova. Obsahuje návod.|  
 |[Přehled atributů (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/index.md)|Popisuje, jak poskytnout další informace o programování elementů, jako jsou typy, pole, metody a vlastnosti pomocí atributů.|  
 |[Informace o volajícím (Visual Basic)](../../../visual-basic/programming-guide/concepts/caller-information.md)|Popisuje, jak získat informace o volajícím metody. Tyto informace patří cesta k souboru a číslo řádku zdrojového kódu a členské jméno volajícího.|  
@@ -27,4 +27,5 @@ Tato část popisuje koncepty programování v jazyce Visual Basic.
   
 |||  
 |---|---|  
+|[Sestavení v .NET](../../../standard/assembly/index.md)|Popisuje, jak vytvořit a používat sestavení.|  
 |[Tipy pro zvýšení výkonu](../../../framework/performance/performance-tips.md) | Tento článek popisuje několik základních pravidel, které vám mohou pomoci zvýšit výkon vaší aplikace.|

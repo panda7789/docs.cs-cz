@@ -3,14 +3,14 @@ title: Historie jazyka C# – průvodce v C#
 description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula od?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: f5bf9a7de7c8681fa2ebb49ba1cf6991b9b137c9
-ms.sourcegitcommit: 90775b20343b6ad831af6f5380f8ab7553abb16b
+ms.openlocfilehash: c750bf8e1ae6dd94c11dc887921c5c365cc04b10
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54186225"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56981930"
 ---
-# <a name="the-history-of-c"></a>Historie jazyka C# #
+# <a name="the-history-of-c"></a>Historie jazyka C\#
 
 Tento článek obsahuje historii každé hlavní verze produktu C# jazyka. C# Týmu nepřestává vám umožní inovovat a přidání nových funkcí. Podrobný stav funkce jazyka, včetně funkcí pro nadcházejících vydáních najdete [v úložišti dotnet/roslyn](https://github.com/dotnet/roslyn/blob/master/docs/Language%20Feature%20Status.md) na Githubu.
 
@@ -19,11 +19,11 @@ Tento článek obsahuje historii každé hlavní verze produktu C# jazyka. C# T�
 
 C# Nástroje pro vytváření zvažte nejnovější verzi hlavní jazyk výchozí jazykovou verzi. Můžou existovat dílčích verzí mezi hlavními verzemi, najdete v dalších článcích v této části. Chcete-li používat nejnovější funkce ve verzi bod, je potřeba [konfigurace verze jazyka kompilátoru](../language-reference/configure-language-version.md) a vyberte verzi. Byly tří dílčích verzí od C# 7.0:
 
-* [C#7.3](csharp-7-3.md):
+* [C# 7.3](csharp-7-3.md):
   - C#7.3 je aktuálně dostupné v [Visual Studio 2017 verze 15.7](https://visualstudio.microsoft.com/vs/whatsnew/)a [.NET Core 2.1 SDK 2.1.300 RC1](../../core/whats-new/index.md).
-* [C#7.2](csharp-7-2.md):
+* [C# 7.2](csharp-7-2.md):
   - C#7.2 je aktuálně dostupné v [Visual Studio 2017 verze 15.5](https://visualstudio.microsoft.com/vs/whatsnew/)a [.NET Core 2.0 SDK](../../core/whats-new/index.md).
-* [C#7.1](csharp-7-1.md):
+* [C# 7.1](csharp-7-1.md):
   - Tyto funkce byly přidány v [Visual Studio 2017 verze 15.3](https://visualstudio.microsoft.com/vs/whatsnew/)a [.NET Core 2.0 SDK](../../core/whats-new/index.md).
 
 ## <a name="c-version-10"></a>C# verze 1.0

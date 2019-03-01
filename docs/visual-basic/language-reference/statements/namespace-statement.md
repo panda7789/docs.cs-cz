@@ -12,12 +12,12 @@ helpviewer_keywords:
 - root namespaces
 - declarations [Visual Basic], namespaces
 ms.assetid: a31fbd95-9ace-4c3d-bbb1-51222a2272b2
-ms.openlocfilehash: 1e7fb55cac1de747c620ea44f320ec9185bfbd3b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1268982eb841327d72ce195992f8c4dcad4440a7
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54612148"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56966174"
 ---
 # <a name="namespace-statement"></a>Namespace – příkaz
 Deklaruje název oboru názvů a způsobí, že zdrojový kód, který následuje za deklarací zkompiluje uvnitř tohoto oboru názvů.  
@@ -78,17 +78,17 @@ End Namespace
 ## <a name="example"></a>Příklad  
  Následující příklad deklaruje dva obory názvů, jeden v druhém vnořený.  
   
- [!code-vb[VbVbalrStatements#43](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#43](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#43)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad deklaruje několik vnořené obory názvů na jednom řádku a je ekvivalentní předchozí příklad.  
   
- [!code-vb[VbVbalrStatements#41](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#41)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad přistupuje k třídy definované v předchozích příkladech.  
   
- [!code-vb[VbVbalrStatements#42](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/namespace-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#42)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad definuje kostra novou třídu obecný seznam a přidá jej do <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů.  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - lifetime [Visual Basic], Visual Basic
 - lifetime [Visual Basic]
 ms.assetid: bd91e390-690a-469a-9946-8dca70bc14e7
-ms.openlocfilehash: 4c52d426fe5194a6eb61b232b8f17669b4477f16
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 15fb6895836de95d37081c44973f455622da178e
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54667385"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56976041"
 ---
 # <a name="lifetime-in-visual-basic"></a>Doba platnosti v jazyce Visual Basic
 *Životnost* deklarované elementu je časové období, během které je k dispozici pro použití. Proměnné jsou pouze prvky, které mají životnost. Pro tento účel kompilátor zpracovává parametry procedury a funkce vrátí jako zvláštní případy proměnných. Životnost proměnné představuje dobu, během které může obsahovat hodnotu. Můžete změnit její hodnotu za dobu života, ale vždy obsahuje některá z hodnot.  
@@ -58,7 +58,7 @@ ms.locfileid: "54667385"
  Následující příklad deklaruje proměnnou s [statické](../../../../visual-basic/language-reference/modifiers/static.md) – klíčové slovo. (Všimněte si, že není nutné `Dim` – klíčové slovo při [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) , jako používá modifikátor `Static`.)  
   
 ### <a name="code"></a>Kód  
- [!code-vb[VbVbalrKeywords#13](../../../../visual-basic/language-reference/codesnippet/VisualBasic/lifetime_1.vb)]  
+ [!code-vb[VbVbalrKeywords#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/class7.vb#13)]  
   
 ### <a name="comments"></a>Komentáře  
  V předchozím příkladu je proměnná `applesSold` i nadále existovat za postupem `runningTotal` vrátí volajícímu kódu. Při příštím `runningTotal` je volána, `applesSold` uchovává jeho dříve počítanou hodnotu.  

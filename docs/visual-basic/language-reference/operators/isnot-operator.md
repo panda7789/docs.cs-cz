@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - IsNot operator [Visual Basic]
 ms.assetid: 8dd2bcdb-0166-48a2-9094-60dfb448f36c
-ms.openlocfilehash: ffafff915af8a94e9bc135246064e4c049d41838
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a7a0952ebe13b732ce706c3dad97a6da3b5cb85d
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54596459"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56966551"
 ---
 # <a name="isnot-operator-visual-basic"></a>IsNot – operátor (Visual Basic)
 Porovná dvě proměnné objektových referencí.  
@@ -45,7 +45,7 @@ result = object1 IsNot object2
 ## <a name="example"></a>Příklad  
  Následující příklad kódu používá obě `Is` operátor a `IsNot` operátor k dosažení stejného porovnání.  
   
- [!code-vb[VbVbalrOperators#29](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/isnot-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#29)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Operátor Is](../../../visual-basic/language-reference/operators/is-operator.md)

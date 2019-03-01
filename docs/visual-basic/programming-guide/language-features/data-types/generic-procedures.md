@@ -12,12 +12,12 @@ helpviewer_keywords:
 - generics [Visual Basic], procedures
 - generic procedures [Visual Basic], type inference
 ms.assetid: 95577b28-137f-4d5c-a149-919c828600e5
-ms.openlocfilehash: 0f2a0c646b5af91d5296bafb01f5261d7ee6b9fd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e6b7d6a560f2f374c17e011479d6e2e458f9c1ed
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54574310"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56976522"
 ---
 # <a name="generic-procedures-in-visual-basic"></a>Obecné procedury v jazyce Visual Basic
 A *obecný postup*, označované také jako *obecnou metodu*, postup definované s alespoň jedním parametrem typu. To umožňuje volajícímu kódu pro datové typy na své požadavky na přizpůsobení pokaždé, když volá proceduru.  
@@ -29,7 +29,7 @@ A *obecný postup*, označované také jako *obecnou metodu*, postup definované
 ## <a name="type-inference"></a>Odvození typu  
  Obecný postup lze volat bez poskytnutí vůbec žádné argumenty typu. Při volání tímto způsobem, kompilátor se pokusí určit příslušné datové typy k předávání argumentů podle postupu. Tento postup se nazývá *odvození typu*. Následující kód ukazuje volání ve kterém kompilátor odvodí, že by měla předat typ `String` na parametr typu `t`.  
   
- [!code-vb[VbVbalrDataTypes#15](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-procedures_1.vb)]  
+ [!code-vb[VbVbalrDataTypes#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#15)]  
   
  Pokud kompilátor nemůže odvodit argumenty typu z kontextu volání, hlásí chybu. Jednou z možných příčin takové chyby je řadit nesoulad pole. Předpokládejme například, že definovat normální parametr jako pole parametru typu. Při volání obecný postup poskytuje celou řadu jiné hodnosti (počet rozměrů), neshoda způsobí, že odvození typu selhání. Následující kód ukazuje volání v které dvourozměrné pole se předává procedury, která očekává, že jednorozměrné pole.  
   
@@ -53,14 +53,14 @@ End Sub
  Následující příklad definuje obecný `Function` procedury k nalezení konkrétní element v poli. Definuje jeden parametr typu a použije je k vytvoření dva parametry v seznamu parametrů.  
   
 ### <a name="code"></a>Kód  
- [!code-vb[VbVbalrDataTypes#14](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-procedures_2.vb)]  
+ [!code-vb[VbVbalrDataTypes#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#14)]  
   
 ### <a name="comments"></a>Komentáře  
  V předchozím příkladu vyžaduje schopnost porovnávat `searchValue` proti každý prvek `searchArray`. Pokud chcete zajistit tuto možnost, omezuje parametr typu `T` k implementaci <xref:System.IComparable%601> rozhraní. Tento kód použije <xref:System.IComparable%601.CompareTo%2A> metoda místo `=` operátoru, protože není k dispozici žádná záruka, že argument typu zadaný pro `T` podporuje `=` operátor.  
   
  Můžete testovat `findElement` procedury s následujícím kódem.  
   
- [!code-vb[VbVbalrDataTypes#13](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-procedures_3.vb)]  
+ [!code-vb[VbVbalrDataTypes#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#13)]  
   
  Předchozí volání `MsgBox` zobrazení "0", "1" a "-1" v uvedeném pořadí.  
   

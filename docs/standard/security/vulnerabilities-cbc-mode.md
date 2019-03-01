@@ -4,12 +4,12 @@ description: Zjistěte, jak k detekování a zmírnění chyby zabezpečení ča
 ms.date: 06/12/2018
 author: blowdart
 ms.author: mairaw
-ms.openlocfilehash: 0f5f7d2032981d28445abe27f87a678ce2c74600
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: 6d8c2593cdbc4bbff2b1507196989282b16aa9a8
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066169"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974286"
 ---
 # <a name="timing-vulnerabilities-with-cbc-mode-symmetric-decryption-using-padding"></a>Časování chybami zabezpečení pomocí režimu CBC Symetrické dešifrování pomocí odsazení
 
@@ -92,7 +92,7 @@ Aplikace, které nelze změnit jejich formát zasílání zpráv, ale neověřen
   - To také nezabrání obnovení ve formátu prostého textu v situacích, kde může útočník vynucení stejné jako prostý text s posunem jiná zpráva šifrování více než jednou.
 - Brána vyhodnocení volání dešifrování Ztlumit signál časování:
   - Výpočet doby uchování musí být minimálně nad rámec maximální množství času, které by pro datový segment, který obsahuje odsazení provést operaci dešifrování.
-  - Čas výpočty by mělo být provedeno podle pokynů v [získávání ve vysokém rozlišení časová razítka](https://msdn.microsoft.com/library/windows/desktop/dn55340.aspx), nikoli pomocí <xref:System.Environment.TickCount?displayProperty=nameWithType> (v souladu s vrácení over nebo přetečení) nebo odečtení dvou časová razítka systému (v souladu s úpravy NTP chyby).
+  - Čas výpočty by mělo být provedeno podle pokynů v [získávání ve vysokém rozlišení časová razítka](/windows/desktop/sysinfo/acquiring-high-resolution-time-stamps), nikoli pomocí <xref:System.Environment.TickCount?displayProperty=nameWithType> (v souladu s vrácení over nebo přetečení) nebo odečtení dvou časová razítka systému (v souladu s úpravy NTP chyby).
   - Výpočty čas musí být včetně dešifrovací operace, včetně všechny potenciální výjimky spravované nebo aplikací v jazyce C++, nikoli pouze, aby bylo vytvořeno na konci.
   - Pokud úspěch nebo neúspěch byla zjištěna ještě, brána časování je potřeba při jeho platnost vyprší, vrátí hodnotu neúspěch.
 - Služby, které provádějí neověřené dešifrování by měl mít nastavené ke zjištění, že má větší "neplatné" zprávy pocházejí monitorování.
@@ -103,7 +103,7 @@ Aplikace, které nelze změnit jejich formát zasílání zpráv, ale neověřen
 Pro programy vytvořena šifrování Windows: Další knihovny služby nové generace (CNG):
 
 - Volání dešifrování [BCryptDecrypt](/windows/desktop/api/bcrypt/nf-bcrypt-bcryptdecrypt), zadání `BCRYPT_BLOCK_PADDING` příznak.
-- Popisovač klíče byl inicializován pomocí volání [BCryptSetProperty](/windows/desktop/api/bcrypt/nf-bcrypt-bcryptsetproperty) s [BCRYPT_CHAINING_MODE](https://msdn.microsoft.com/library/windows/desktop/aa376211.aspx#BCRYPT_CHAINING_MODE) nastavena na `BCRYPT_CHAIN_MODE_CBC`.
+- Popisovač klíče byl inicializován pomocí volání [BCryptSetProperty](/windows/desktop/api/bcrypt/nf-bcrypt-bcryptsetproperty) s [BCRYPT_CHAINING_MODE](/windows/desktop/SecCNG/cng-property-identifiers#BCRYPT_CHAINING_MODE) nastavena na `BCRYPT_CHAIN_MODE_CBC`.
   - Protože `BCRYPT_CHAIN_MODE_CBC` je výchozí nastavení, která měla vliv na kód nemusí mít přiřazené libovolnou hodnotu pro `BCRYPT_CHAINING_MODE`.
 
 Pro programy vytvořené starší kryptografické rozhraní API Windows:

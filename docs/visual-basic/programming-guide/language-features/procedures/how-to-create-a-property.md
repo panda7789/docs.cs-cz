@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - properties [Visual Basic]
 ms.assetid: 4d229712-6be8-4c5c-bac5-06995ce9185a
-ms.openlocfilehash: cc1222feed338f88142c4a6a7d6520fa458b5c11
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4afcd57a9133515cecc72da856f67e4e3d5ff717
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54734036"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970958"
 ---
 # <a name="how-to-create-a-property-visual-basic"></a>Postupy: Vytvoření vlastnosti (Visual Basic)
 Použijte definici vlastnosti mezi `Property` příkazu a `End Property` příkazu. V rámci této definice můžete definovat `Get` postupu `Set` procedury nebo obojí. Všechny vlastnosti kódu je v rámci těchto postupů.  
@@ -54,11 +54,11 @@ Použijte definici vlastnosti mezi `Property` příkazu a `End Property` příka
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří vlastnost pro čtení a zápis, která ukládá celé jméno, křestní jméno a příjmení dvě základní názvy jako. Když volající kód čte `fullName`, `Get` postup kombinuje dva základní názvy a vrátí úplný název. Pokud volající kód přiřadí nový úplný název, `Set` postup pokusy o jeho rozdělení na dva základní názvy. Pokud nelze najít mezeru, uloží jej jako křestní jméno.  
   
- [!code-vb[VbVbcnProcedures#8](./codesnippet/VisualBasic/how-to-create-a-property_1.vb)]  
+ [!code-vb[VbVbcnProcedures#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#8)]  
   
  Následující příklad ukazuje typické volání procedury vlastnosti z `fullName`. První volání nastaví hodnotu vlastnosti a druhé volání obnoví.  
   
- [!code-vb[VbVbcnProcedures#9](./codesnippet/VisualBasic/how-to-create-a-property_2.vb)]  
+ [!code-vb[VbVbcnProcedures#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#9)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Procedury](./index.md)

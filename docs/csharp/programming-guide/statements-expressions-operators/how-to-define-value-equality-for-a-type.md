@@ -9,12 +9,12 @@ helpviewer_keywords:
 - value equality [C#]
 - equivalence [C#]
 ms.assetid: 4084581e-b931-498b-9534-cf7ef5b68690
-ms.openlocfilehash: 456555a34347771c9918341d7d1a797e611f5577
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 71f404fd0881a1da761d3f53daac03805a01f18f
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54589314"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970750"
 ---
 # <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Postupy: Definování rovnosti hodnoty pro typ (C# Průvodce programováním v)
 Při definování třídy nebo struktury, rozhodnete se, zda je vhodné vytvořit vlastní definici rovnosti hodnoty (nebo ekvivalence) pro typ. Rovnost hodnot se obvykle, implementují se očekává, že objekty tohoto typu přidána do kolekce s nějakým nebo při jejich hlavním účelem je uložit sadu pole nebo vlastnosti. Vaše definici rovnosti hodnot daného můžete založit na porovnání všech polí a vlastností v typu, nebo můžete založit definice v podmnožině. Ale v obou případech a ve třídách a strukturách pět záruky ekvivalence postupujte podle vaší implementace:  
@@ -57,7 +57,7 @@ Při definování třídy nebo struktury, rozhodnete se, zda je vhodné vytvoři
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak implementovat rovnost hodnot ve struktuře (ValueType):  
   
- [!code-csharp[csProgGuideStatements#20](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-define-value-equality-for-a-type_2.cs)]  
+ [!code-csharp[csProgGuideStatements#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#20)]  
   
  Pro struktury, výchozí implementaci <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> (což je přepsaná verze <xref:System.ValueType?displayProperty=nameWithType>) provádí kontroly rovnosti hodnoty pomocí reflexe pro porovnání hodnot každé pole v typu. Při přepsání virtuální implementátora `Equals` metody struktury účelem je poskytovat efektivnější způsob provedení kontroly rovnosti hodnoty a volitelně založit porovnání na určitou podmnožinu struktura, obsahovat pole nebo vlastnosti.  
   

@@ -5,12 +5,12 @@ ms.date: 07/28/2018
 author: billwagner
 ms.author: wiwagn
 ms.custom: seodec18
-ms.openlocfilehash: 63fc441d045f62abc6776cac56571a971d64fefd
-ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
+ms.openlocfilehash: 4e336abf62299e0dee2e4757bb83f967ed4aed59
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56583872"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56966018"
 ---
 # <a name="how-to-remove-the-net-core-runtime-and-sdk"></a>Odebrání modulu Runtime .NET Core a sady SDK
 
@@ -132,7 +132,7 @@ Microsoft.NETCore.App 2.1.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.Ap
 Microsoft.NETCore.App 2.1.1 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
 ```
 
-***
+---
 
 ## <a name="uninstalling-net-core"></a>Odinstalování rozhraní .NET Core
 

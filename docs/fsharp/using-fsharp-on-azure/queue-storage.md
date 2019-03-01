@@ -1,20 +1,20 @@
 ---
-title: Začínáme s Azure Queue storage s využitím F#
+title: Začínáme s Azure Queue storage pomocíF#
 description: Fronty Azure Queue poskytují spolehlivý asynchronní přenos zpráv mezi součástmi aplikace. Cloudový přenos zpráv umožňuje nezávislé škálování součástí vaší aplikace.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 14bbc657f965fc262d2a83b1fdf982fe5e75d55e
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 58a46dfe905a32be77a13d11df8f0544546ea0ed
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "33569411"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974273"
 ---
-# <a name="get-started-with-azure-queue-storage-using-f"></a>Začínáme s Azure Queue storage s využitím F# #
+# <a name="get-started-with-azure-queue-storage-using-f"></a>Začínáme s Azure Queue storage s využitím F\#
 
 Úložiště Azure Queue zajišťuje cloudový přenos zpráv mezi součástmi aplikace. Při navrhování aplikací pro škálování, komponenty aplikace bývají často oddělené, tak, aby se mohly škálovat nezávisle. Queue storage zajišťuje asynchronní přenos zpráv pro komunikaci mezi komponentami aplikace, ať už jsou spuštěné v cloudu, v klientských počítačích, na místním serveru nebo na mobilním zařízení. Queue storage také podporuje správu asynchronních úloh a vytváření pracovních postupů pro procesy.
 
-### <a name="about-this-tutorial"></a>Informace o tomto kurzu
+### <a name="about-this-tutorial"></a>O tomto kurzu
 
 Tento kurz ukazuje, jak napsat F# kód pro některé běžné úlohy pomocí Azure Queue storage. Úlohy popsané patří vytváření a odstraňování front a přidávání, čtení a odstraňování front zpráv.
 
@@ -25,9 +25,9 @@ Koncepční přehled služby queue storage, najdete v tématu [v příručce .NE
 K použití tohoto průvodce, musíte nejdřív [vytvoření účtu služby Azure storage](/azure/storage/storage-create-storage-account).
 Budete také potřebovat přístupový klíč k úložišti pro tento účet.
 
-## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvořit skript F# a začněte jazyka F# Interactive
+## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvoření F# skript a spustit F# interaktivní
 
-Ukázky v tomto článku je možné v F# aplikace nebo skript F#. Chcete-li vytvořit skript F#, vytvořte soubor s `.fsx` příponu, třeba `queues.fsx`, ve vašem vývojovém prostředí F#.
+Ukázky v tomto článku můžete použít buď F# aplikace nebo F# skriptu. Vytvoření F# skript, vytvořte soubor s `.fsx` příponu, třeba `queues.fsx`v vaše F# vývojové prostředí.
 
 Pak pomocí [Správce balíčků](package-management.md) jako [Stáhnout](https://fsprojects.github.io/Paket/) nebo [NuGet](https://www.nuget.org/) k instalaci `WindowsAzure.Storage` balíčku a odkaz na `WindowsAzure.Storage.dll` ve skriptu pomocí `#r`směrnice.
 
@@ -45,7 +45,7 @@ Pro tento kurz zadáte svůj připojovací řetězec ve vašem skriptu, napřík
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L9-L9)]
 
-Je to ale **ale nedoporučený krok** skutečných projekty. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Pečlivě vždy chránit váš klíč účtu úložiště. Nedávejte ho jiným uživatelům pevného kódování, nebo ho uložili na soubor s prostým textem, který je přístupný ostatním uživatelům. Můžete znovu vygenerovat klíč pomocí webu Azure Portal, pokud se domníváte, že je možná ohrožené.
+Je to ale **ale nedoporučený krok** skutečných projekty. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Vždy klíč účtu úložiště pečlivě chraňte. Nedávejte ho jiným uživatelům, nezakódovávejte ho ani ho neukládejte do souboru ve formátu prostého textu, který je přístupný ostatním uživatelům. Můžete znovu vygenerovat klíč pomocí webu Azure Portal, pokud se domníváte, že je možná ohrožené.
 
 Pro skutečné aplikace, je nejlepší způsob, jak udržovat připojovací řetězec úložiště v konfiguračním souboru. K načtení připojovacího řetězce z konfiguračního souboru, můžete udělat toto:
 

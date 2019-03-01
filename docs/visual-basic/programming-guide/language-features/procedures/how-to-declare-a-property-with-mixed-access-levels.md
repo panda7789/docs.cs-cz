@@ -10,12 +10,12 @@ helpviewer_keywords:
 - properties [Visual Basic], access levels
 - Property statement [Visual Basic], declaring mixed access levels
 ms.assetid: fdbb2d97-279a-4956-b26c-cbdfbc34915a
-ms.openlocfilehash: b10f679d735d21ba0002c8a3f4e230836298d4e1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d2b1a80863fe29901554b4912acbbfbdfdab4122
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54514254"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56972581"
 ---
 # <a name="how-to-declare-a-property-with-mixed-access-levels-visual-basic"></a>Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu (Visual Basic)
 Pokud chcete, aby `Get` a `Set` postupy na vlastnost, která má mít různé úrovně přístupu, můžete použít úroveň mnohem mírnější v `Property` příkazu a více omezující úroveň buď `Get` nebo `Set` příkaz. Pokud chcete, aby určité části kódu, abyste mohli získat hodnotu vlastnosti a některých jiných částí kódu budete moci změnit hodnotu použijete u vlastnosti smíšenými úrovněmi přístupu.  
@@ -30,7 +30,7 @@ Pokud chcete, aby `Get` a `Set` postupy na vlastnost, která má mít různé ú
   
 3.  Nezadávejte úroveň přístupu na Další procedura property. Úroveň přístupu, které jsou deklarované v předpokládá `Property` příkazu. Můžete omezit přístup na pouze jednu z vlastností.  
   
-     [!code-vb[VbVbcnProcedures#10](./codesnippet/VisualBasic/how-to-declare-a-property-with-mixed-access-levels_1.vb)]  
+     [!code-vb[VbVbcnProcedures#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#10)]  
   
      V předchozím příkladu `Get` procedura nemá stejný `Protected` přístup jako vlastnost, zatímco `Set` procedura nemá `Private` přístup. Třída odvozená z `employee` můžete přečíst `salary` hodnotu, ale jenom `employee` třídy můžete ho nastavit.  
   

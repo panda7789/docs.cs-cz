@@ -22,12 +22,12 @@ helpviewer_keywords:
 - Exit statement [Visual Basic], For Each...Next statements
 - iteration
 ms.assetid: ebce3120-95c3-42b1-b70b-fa7da40c75e2
-ms.openlocfilehash: a44aff8407a29ef7f3712e116301cfce0aa984ea
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 269d905ad59a162af4e790e29d3753f090f511bd
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54700426"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56975001"
 ---
 # <a name="for-eachnext-statement-visual-basic"></a>For Each...Next – příkaz (Visual Basic)
 Opakuje skupinu příkazů pro každý prvek v kolekci.  
@@ -64,7 +64,7 @@ Next [ element ]
   
  V následujícím příkladu `For Each`...`Next` příkaz Iteruje přes všechny prvky ze seznamu kolekce.  
   
- [!code-vb[VbVbalrStatements#121](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_1.vb)]  
+ [!code-vb[VbVbalrStatements#121](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class9.vb#121)]  
   
  Další příklady najdete v tématu [kolekce](../../../standard/collections/index.md) a [pole](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
@@ -73,7 +73,7 @@ Next [ element ]
   
  Následující příklad ukazuje vnořené `For Each`...`Next` struktury.  
   
- [!code-vb[VbVbalrStatements#122](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_2.vb)]  
+ [!code-vb[VbVbalrStatements#122](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class9.vb#122)]  
   
  Pokud byste vnořit smyčky, každé smyčce musí mít jedinečný `element` proměnné.  
   
@@ -86,7 +86,7 @@ Next [ element ]
   
  Následující příklad ukazuje způsob použití `Continue For` a `Exit For` příkazy.  
   
- [!code-vb[VbVbalrStatements#123](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_3.vb)]  
+ [!code-vb[VbVbalrStatements#123](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class9.vb#123)]  
   
  Můžete vložit libovolný počet `Exit For` příkazů v `For Each` smyčky. Při použití v rámci vnořené `For Each` smyčky, `Exit For` způsobí spuštění do ukončení vnitřní smyčky a přenosy ovládacího prvku na další vyšší úroveň vnoření.  
   
@@ -105,7 +105,7 @@ Next [ element ]
   
  Následující příklad používá funkce iterátoru. Má funkce iterátoru `Yield` , který se nachází uvnitř [pro... Další](../../../visual-basic/language-reference/statements/for-next-statement.md) smyčky. V `ListEvenNumbers` metodě, každé iterace `For Each` tělo s příkazy vytvoří volání funkce iterátoru, který pokračuje k dalšímu `Yield` příkazu.  
   
- [!code-vb[VbVbalrStatements#127](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_4.vb)]  
+ [!code-vb[VbVbalrStatements#127](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class9.vb#127)]  
   
  Další informace najdete v tématu [iterátory](../../programming-guide/concepts/iterators.md), [příkazu Yield](../../../visual-basic/language-reference/statements/yield-statement.md), a [iterátoru](../../../visual-basic/language-reference/modifiers/iterator.md).  
   
@@ -133,7 +133,7 @@ Next [ element ]
   
  V následujícím příkladu se přiřazení `m` jako počáteční hodnota pro `n` není při kompilaci `Option Strict` je zapnutý, protože převod `Long` k `Integer` je zužující převod. V `For Each` příkazu, ale žádná chyba kompilátoru je hlášeny, i když přiřazení `number` vyžaduje stejný převod z `Long` k `Integer`. V `For Each` příkazu, který obsahuje velký počet chyb za běhu dochází při <xref:Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger%2A> se použije na velké množství.  
   
- [!code-vb[VbVbalrStatements#89](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_5.vb)]  
+ [!code-vb[VbVbalrStatements#89](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class3.vb#89)]  
   
 ### <a name="ienumerator-calls"></a>IEnumerator volání  
  Při provádění `For Each`... `Next` spuštění cyklu, Visual Basic ověřuje, že `group` odkazuje na objekt platné kolekce. V opačném případě dojde k výjimce. V opačném případě volá <xref:System.Collections.IEnumerator.MoveNext%2A> metoda a <xref:System.Collections.IEnumerator.Current%2A> vlastnost objekt enumerátoru pro vrácení prvního prvku. Pokud `MoveNext` označuje, že neexistuje žádná další prvek, to znamená, pokud kolekce je prázdná, `For Each` smyčky zastaví a řídit předá následující příkaz `Next` příkazu. Jinak, nastaví jazyka Visual Basic `element` na první element a spuštění tohoto bloku příkazů.  
@@ -161,7 +161,7 @@ End Sub
 ## <a name="example"></a>Příklad  
  Následující příklad vypíše všechny složky v adresáři C:\ s použitím <xref:System.IO.DirectoryInfo> třídy.  
   
- [!code-vb[VbVbalrStatements#124](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_6.vb)]  
+ [!code-vb[VbVbalrStatements#124](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class9.vb#124)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje postup při řazení kolekce. Příklad řadí instance třídy `Car` třídy, které jsou uložené v <xref:System.Collections.Generic.List%601>. `Car` Implementuje třída <xref:System.IComparable%601> rozhraní, které vyžaduje, aby <xref:System.IComparable%601.CompareTo%2A> implementaci metody.  
@@ -170,7 +170,7 @@ End Sub
   
  V `ListCars` metody, `cars.Sort()` příkaz Seřadí seznam. Toto volání <xref:System.Collections.Generic.List%601.Sort%2A> metodu <xref:System.Collections.Generic.List%601> způsobí, že `CompareTo` metoda bude automaticky volána pro `Car` objekty v `List`.  
   
- [!code-vb[VbVbalrStatements#125](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_7.vb)]  
+ [!code-vb[VbVbalrStatements#125](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class9.vb#125)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Kolekce](../../../standard/collections/index.md)

@@ -19,12 +19,12 @@ helpviewer_keywords:
 - floating-point numbers [Visual Basic], comparison
 - floating-point numbers
 ms.assetid: 90040d67-b630-4125-a6ae-37195b079042
-ms.openlocfilehash: e67339beac42fe6dc32925c8733bec2889739733
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3e7190f3ba63b6af9f7f402fbc23b4268c329856
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54728067"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56974741"
 ---
 # <a name="troubleshooting-data-types-visual-basic"></a>Řešení potíží s datovými typy (Visual Basic)
 Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout při provádění operací ve vnitřních datových typů.  
@@ -40,7 +40,7 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
  Následující příklad ukazuje správná i nesprávná porovnání dvou `Double` hodnoty.  
   
- [!code-vb[VbVbalrDataTypes#10](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_1.vb)]  
+ [!code-vb[VbVbalrDataTypes#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#10)]  
   
  V předchozím příkladu se používá <xref:System.Double.ToString%2A> metodu <xref:System.Double> struktury tak, aby ho můžete zadat vyšší přesností než `CStr` používá klíčové slovo. Výchozí hodnota je 15 číslic, ale to formát "G17" rozšiřuje na 17 číslic.  
   
@@ -55,7 +55,7 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
  Následující příklad ukazuje potenciál nepřesnost operandů s plovoucí desetinnou čárkou.  
   
- [!code-vb[VbVbalrDataTypes#11](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_2.vb)]  
+ [!code-vb[VbVbalrDataTypes#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#11)]  
   
  V předchozím příkladu se používá <xref:System.Double.ToString%2A> metodu <xref:System.Double> struktury tak, aby ho můžete zadat vyšší přesností než `CStr` používá klíčové slovo. Výchozí hodnota je 15 číslic, ale to formát "G17" rozšiřuje na 17 číslic.  
   
@@ -89,7 +89,7 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
  Následující příklad ukazuje neúspěšných a úspěšných přiřazení literál na `Char` proměnné.  
   
- [!code-vb[VbVbalrDataTypes#12](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/troubleshooting-data-types_3.vb)]  
+ [!code-vb[VbVbalrDataTypes#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#12)]  
   
  Je vždycky riziko pomocí zužující převody, protože může selhat v době běhu. Například převod z `String` k `Char` může selhat, pokud `String` hodnota obsahuje více než jeden znak. Proto je lépe programování používat `C` znak.  
   

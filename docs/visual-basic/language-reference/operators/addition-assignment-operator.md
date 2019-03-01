@@ -10,12 +10,12 @@ helpviewer_keywords:
 - += operator [Visual Basic], appending strings
 - compound assignment statements [Visual Basic]
 ms.assetid: d3e959f4-85d4-4e47-87c4-77b62335a5b3
-ms.openlocfilehash: cfe987929099fc73ba3af9fe92b5871275c5396e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7fdf5cd422cf2a4081372bc14e74ed7463393520
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617548"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56979850"
 ---
 # <a name="-operator-visual-basic"></a>+= – operátor (Visual Basic)
 Přidá hodnotu číselného výrazu hodnotu číselného proměnnou nebo vlastnost a výsledek přiřadí proměnné nebo vlastnosti. Je také možné zřetězit `String` výraz, který se `String` proměnnou nebo vlastnost a přiřadit výsledek, který má proměnnou nebo vlastnost.  
@@ -51,9 +51,9 @@ variableorproperty += expression
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `+=` operátor zkombinovat hodnoty jedné proměnné s jinou. První část používá `+=` s číselné proměnné přidat jednu hodnotu do jiné. Druhá část používá `+=` s `String` proměnné ke zřetězení jednu hodnotu druhou. V obou případech platí výsledek je přiřazen k první proměnné.  
   
- [!code-vb[VbVbalrOperators#7](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addition-assignment-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#7)]  
   
- [!code-vb[VbVbalrOperators#8](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/addition-assignment-operator_2.vb)]  
+ [!code-vb[VbVbalrOperators#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#8)]  
   
  Hodnota `num1` 13 a hodnota je nyní `str1` je nyní "103".  
   

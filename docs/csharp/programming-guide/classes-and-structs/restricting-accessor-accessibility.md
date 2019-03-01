@@ -10,17 +10,17 @@ helpviewer_keywords:
 - asymmetric accessor accesibility [C#]
 - indexers [C#], read-only
 ms.assetid: 6e655798-e112-4301-a680-6310a6e012e1
-ms.openlocfilehash: 3e097b2208b69f21347c49e253e59a9c14f30e51
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 24df3a78487cf054a2682b3fbdf8d78b37c4ea6b
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219409"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56979447"
 ---
 # <a name="restricting-accessor-accessibility-c-programming-guide"></a>Omezení přístupnosti přístupového objektu (Průvodce programováním v C#)
 [Získat](../../../csharp/language-reference/keywords/get.md) a [nastavit](../../../csharp/language-reference/keywords/set.md) části vlastnost nebo indexer, se nazývají *přistupující objekty*. Ve výchozím nastavení tyto přístupové objekty mít stejnou úroveň viditelnosti nebo přístup k vlastnosti nebo indexeru, ke kterému patří. Další informace najdete v tématu [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). Někdy je však užitečný k omezení přístupu k jednomu z těchto přístupových objektů. Obvykle to zahrnuje omezení přístupnost `set` přístupového objektu při zachování `get` přistupující objekt veřejně přístupná. Příklad:  
   
- [!code-csharp[csProgGuideIndexers#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_1.cs)]  
+ [!code-csharp[csProgGuideIndexers#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideIndexers/CS/Indexers.cs#6)]  
   
  V tomto příkladu vlastnost s názvem `Name` definuje `get` a `set` přistupujícího objektu. `get` Přistupující objekt obdrží úrovni přístupu, samotná hodnota vlastnosti `public` v tomto případě while `set` přístupový objekt je explicitně s omezením pomocí specifikátoru použitím [chráněné](../../../csharp/language-reference/keywords/protected.md) modifikátor přístupu k přístupový objekt samotný.  
   
@@ -38,12 +38,12 @@ ms.locfileid: "56219409"
 ## <a name="access-modifiers-on-overriding-accessors"></a>Modifikátory přístupu pro přepsání přístupové objekty  
  Při přepsání vlastnost nebo indexovací člen přepsané přistupující objekty musí být přístupná pro přepsání kódu. Navíc přístupnost vlastnost nebo indexer a jeho přístupových objektů musí odpovídat odpovídající přepsané vlastnosti nebo indexeru a jeho přístupových objektů. Příklad:  
   
- [!code-csharp[csProgGuideIndexers#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_2.cs)]  
+ [!code-csharp[csProgGuideIndexers#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideIndexers/CS/Indexers.cs#7)]  
   
 ## <a name="implementing-interfaces"></a>Implementace rozhraní  
  Při použití přístupový objekt pro implementaci rozhraní přistupujícím objektu nemusí mít modifikátor přístupu. Nicméně Pokud implementujete rozhraní pomocí jeden přistupující objekt, jako například `get`, další přístupový objekt může mít modifikátor přístupu, jako v následujícím příkladu:  
   
- [!code-csharp[csProgGuideIndexers#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_3.cs)]  
+ [!code-csharp[csProgGuideIndexers#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideIndexers/CS/Indexers.cs#8)]  
   
 ## <a name="accessor-accessibility-domain"></a>Doména přístupnosti přístupového objektu  
  Pokud použijete modifikátor přístupu nastaven na přístupový objekt, [doména přístupnosti](../../../csharp/language-reference/keywords/accessibility-domain.md) přistupujícím objektu je určen tento modifikátor.  
@@ -55,7 +55,7 @@ ms.locfileid: "56219409"
   
  Tento příklad také ukazuje, že modifikátor omezení přístupu, jako `private` nebo `protected`na `set` přistupující objekt `Name` vlastnost v `DerivedClass` brání v přístupu k přistupujícím objektu a vygeneruje chybu, pokud přiřadíte ho.  
   
- [!code-csharp[csProgGuideIndexers#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_4.cs)]  
+ [!code-csharp[csProgGuideIndexers#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideIndexers/CS/Indexers.cs#5)]  
   
 ## <a name="comments"></a>Komentáře  
  Všimněte si, že pokud nahradíte deklarace `new private string Id` podle `new public string Id`, získáte výstup:  

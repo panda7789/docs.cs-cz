@@ -1,19 +1,13 @@
 ---
-title: Výukové programy jazyka C#
-description: Prozkoumejte tyto C# kurzů se naučíte sestavit C# programy a další C# jazykové funkce.
+title: 'Kurzy k jazyku C#'
+description: 'Prozkoumejte tyto C# kurzů se naučíte sestavit C# programy a další C# jazykové funkce.'
 ms.date: 10/25/2018
-ms.openlocfilehash: f49754a9d6fa7523d88fa5ce3a7f57501f434878
-ms.sourcegitcommit: d09c77414e9e4fc72c79b04deee7a756a120674e
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54084664"
 ---
-# <a name="c-tutorials"></a>Výukové programy jazyka C#
+# <a name="c-tutorials"></a>Kurzy k jazyku C#
 
 Vítá vás C# kurzy. Tento kurz začíná interaktivní lekcí, kterou si můžete spustit v prohlížeči. Kurzech a pokročilejší kurzy pomoc při práci s nástroje pro vývoj .NET k vytvoření C# programů na vašem počítači.
 
-## <a name="introduction-to-c-interactive-tutorials"></a>Úvod do C# interaktivní kurzy #
+## <a name="introduction-to-c-interactive-tutorials"></a>Úvod do C# interaktivní kurzy
 
 První lekce vysvětluje C# koncepty pomocí malých utržků kódu. Dozvíte se základy C# syntaxe a postup při práci s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Celá lekce je interativní, vyzkoušíte si psaní i spouštění kódu. Pro první lekci nepotřebujete žádné předchozí znalosti programování nebo jazyka C#.
 
@@ -47,7 +41,7 @@ Tento kurz předpokládá, že dokončení lekce uvedené výše.
 
 Úvodní kurzy následující Hello World lekci jsou k dispozici ve vlastním místním vývojovém prostředí. Na konci každého kurzu rozhodněte, pokud chcete pokračovat v další lekci online nebo na vlastním počítači. Existují odkazy můžete nastavení prostředí a pokračovat k dalšímu kurzu, ve vašem počítači.
 
-## <a name="explore-new-features-in-c"></a>Prozkoumání nových funkcí vC# #
+## <a name="explore-new-features-in-c"></a>Prozkoumání nových funkcí v jazyce C\#
 
 Vyzkoušejte si nové funkce v [ C# 6](../whats-new/csharp-6.md) v tomto [interaktivní zkoumání](exploration/csharp-6.yml).
 

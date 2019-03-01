@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - TryCast keyword [Visual Basic]
 ms.assetid: d1ef5d47-fef4-491e-b014-1d910628f65c
-ms.openlocfilehash: 1bd92428927927a84c1de8f88d176a8f0aba4af2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dd50a23f09fa5dd49b86eefe163cea20430e2360
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54524937"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56981280"
 ---
 # <a name="trycast-operator-visual-basic"></a>TryCast – operátor (Visual Basic)
 Zavádí operaci převodu typu, který nevyvolá výjimku.  
@@ -37,7 +37,7 @@ Zavádí operaci převodu typu, který nevyvolá výjimku.
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak používat `TryCast`.  
   
- [!code-vb[VbVbalrKeywords#6](../../../visual-basic/language-reference/codesnippet/VisualBasic/trycast-operator_1.vb)]  
+ [!code-vb[VbVbalrKeywords#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#6)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - My.Resources object
 ms.assetid: 34c3f2dc-7b87-432c-9d5f-17ea666bb266
-ms.openlocfilehash: 2bd120c11e42648d1ca0304bbf9338f1cf569c48
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: 758d3334fd9d3b01e088246cf2fe28c5b03576d6
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55065866"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56973727"
 ---
 # <a name="myresources-object"></a>My.Resources – objekt
 Poskytuje třídy a vlastnosti pro přístup k prostředkům aplikace.  
@@ -53,29 +53,29 @@ Poskytuje třídy a vlastnosti pro přístup k prostředkům aplikace.
 ## <a name="example"></a>Příklad  
  V tomto příkladu nastaví název formuláře na prostředek řetězce s názvem `Form1Title` v souboru prostředků aplikace. Pro příklad fungoval, musí mít aplikace řetězec s názvem `Form1Title` v jeho souboru prostředků.  
   
- [!code-vb[VbVbalrMyResources#1](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_1.vb)]  
+ [!code-vb[VbVbalrMyResources#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#1)]  
   
 ## <a name="example"></a>Příklad  
  V tomto příkladu nastaví ikony ve formuláři na ikonu s názvem `Form1Icon` , která je uložena v souboru prostředků aplikace. Pro příklad fungoval, musí mít aplikace ikonu s názvem `Form1Icon` v jeho souboru prostředků.  
   
- [!code-vb[VbVbalrMyResources#2](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_2.vb)]  
+ [!code-vb[VbVbalrMyResources#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#2)]  
   
 ## <a name="example"></a>Příklad  
  V tomto příkladu nastaví obrázek na pozadí formuláře obrázkový prostředek s názvem `Form1Background`, což je v souboru prostředků aplikace. Pro tento příklad fungoval, musí aplikace mít obrázkový prostředek s názvem `Form1Background` v jeho souboru prostředků.  
   
- [!code-vb[VbVbalrMyResources#3](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_3.vb)]  
+ [!code-vb[VbVbalrMyResources#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#3)]  
   
 ## <a name="example"></a>Příklad  
  V tomto příkladu přehraje zvuk, který je uložený jako prostředek zvuku s názvem `Form1Greeting` v souboru prostředků aplikace. Například pro práci, aplikace musí mít zvukový prostředek s názvem `Form1Greeting` v jeho souboru prostředků. `My.Computer.Audio.Play` Metoda je k dispozici pouze pro aplikace Windows Forms.  
   
- [!code-vb[VbVbalrMyResources#4](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_4.vb)]  
+ [!code-vb[VbVbalrMyResources#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#4)]  
   
 ## <a name="example"></a>Příklad  
  Tento příklad načte francouzské verzi řetězcový prostředek aplikace. Název prostředku `Message`. Změna jazykové verze, která `My.Resources` používá objekt, v příkladu <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeUICulture%2A>.  
   
  Pro tento příklad fungoval, musí mít aplikace řetězec s názvem `Message` v jeho prostředku souboru a aplikace by měla mít francouzština verzi souboru prostředků Resources.fr-FR.resx. Pokud aplikace nemá žádné francouzské verzi souboru prostředků `My.Resource` objekt získá prostředek ze souboru prostředků výchozí jazykové verze.  
   
- [!code-vb[VbVbalrMyResources#10](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-resources-object_5.vb)]  
+ [!code-vb[VbVbalrMyResources#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#10)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Správa prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet)

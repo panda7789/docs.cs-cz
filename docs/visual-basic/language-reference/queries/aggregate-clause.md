@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Aggregate statement [Visual Basic]
 - queries [Visual Basic], Aggregate
 ms.assetid: 1315a814-5db6-4077-b34b-b141e11cc0eb
-ms.openlocfilehash: a26ea220a807d3158d6874e2127db9a2f280a10c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 21781db637c71abbbe9366bc95b6ee4c89ac2246
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547089"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56981956"
 ---
 # <a name="aggregate-clause-visual-basic"></a>Aggregate – klauzule (Visual Basic)
 Použije jeden nebo více agregačních funkcí na kolekci.  
@@ -54,25 +54,25 @@ Toto jsou standardní agregační funkce, které lze použít s `Aggregate` klau
 
 Vrátí `true` Pokud všechny prvky v kolekci splňují zadanou podmínku; v opačném případě vrátí `false`. Následuje příklad:
 
-[!code-vb[VbSimpleQuerySamples#5](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_1.vb)]
+ [!code-vb[VbSimpleQuerySamples#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#5)]
 
 ### <a name="any"></a>Jakýkoli
 
 Vrátí `true` Pokud libovolný prvek v kolekci splňuje zadanou podmínku; v opačném případě vrátí `false`. Následuje příklad:
 
-[!code-vb[VbSimpleQuerySamples#6](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_2.vb)]
+ [!code-vb[VbSimpleQuerySamples#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#6)]
 
 ### <a name="average"></a>Průměr
 
 Vypočítá průměr všech prvků v kolekci nebo vypočítá zadaný výraz pro všechny elementy v kolekci. Následuje příklad:
 
-[!code-vb[VbSimpleQuerySamples#7](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_3.vb)]
+ [!code-vb[VbSimpleQuerySamples#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#7)]
 
 ### <a name="count"></a>Počet
 
 Vrátí počet prvků v kolekci. Můžete zadat volitelný `Boolean` výraz ke zjištění počtu prvků v kolekci, které splňují podmínku. Následuje příklad:
 
-[!code-vb[VbSimpleQuerySamples#8](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_4.vb)]
+ [!code-vb[VbSimpleQuerySamples#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#8)]
 
 ### <a name="group"></a>Skupina
 
@@ -86,25 +86,25 @@ Vrátí počet prvků v kolekci. Můžete zadat volitelný `Boolean` výraz ke z
 
 Vypočítá maximální hodnotu z kolekce nebo vypočítá zadaný výraz pro všechny elementy v kolekci. Následuje příklad:
 
-[!code-vb[VbSimpleQuerySamples#9](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_5.vb)]
+ [!code-vb[VbSimpleQuerySamples#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#9)]
 
 ### <a name="min"></a>Minimum
 
 Vypočítá minimální hodnotu z kolekce nebo vypočítá zadaný výraz pro všechny elementy v kolekci. Následuje příklad:
 
-[!code-vb[VbSimpleQuerySamples#10](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_6.vb)]
+ [!code-vb[VbSimpleQuerySamples#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#10)]
 
 ### <a name="sum"></a>Součet
 
 Vypočítá součet všech prvků v kolekci nebo vypočítá zadaný výraz pro všechny elementy v kolekci. Následuje příklad:
 
-[!code-vb[VbSimpleQuerySamples#15](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_7.vb)]
+ [!code-vb[VbSimpleQuerySamples#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#15)]
 
 ## <a name="example"></a>Příklad  
 
 Následující příklad ukazuje způsob použití `Aggregate` klauzule k aplikaci agregačních funkcí na výsledek dotazu.  
   
- [!code-vb[VbSimpleQuerySamples#4](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_8.vb)]  
+ [!code-vb[VbSimpleQuerySamples#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#4)]  
   
 ## <a name="creating-user-defined-aggregate-functions"></a>Vytvoření uživatelsky definované agregační funkce
 
@@ -112,11 +112,11 @@ Následující příklad ukazuje způsob použití `Aggregate` klauzule k aplika
   
  Například následující příklad ukazuje vlastní agregační funkce, která vypočítá Medián kolekci čísel. Existují dvě přetížení `Median` – metoda rozšíření. První přetížení přijímá jako vstup, kolekci typu `IEnumerable(Of Double)`. Pokud `Median` agregační funkce se volá pro pole dotazu s typem `Double`, tato metoda bude volána. Druhé přetížení `Median` metody mohou být předány žádné obecného typu. Obecné přetížení `Median` metoda přijímá druhý parametr, který odkazuje `Func(Of T, Double)` výraz lambda definoval se projekt hodnota pro typ (z kolekce) jako odpovídající hodnotu typu `Double`. Potom postoupí výpočtu střední hodnotu do jiné přetížení `Median` metody. Další informace o výrazech lambda naleznete v tématu [výrazy Lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
- [!code-vb[VbSimpleQuerySamples#18](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_9.vb)]  
+ [!code-vb[VbSimpleQuerySamples#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/UserDefinedAggregates.vb#18)]  
   
  Následující příklad ukazuje ukázkové dotazy, které volají `Median` agregační funkce na kolekci typu `Integer`a kolekce typu `Double`. Dotaz, který volá `Median` agregační funkce na kolekci typu `Double` volá přetížení `Median` metody, která přijímá jako vstup, kolekci typu `Double`. Dotaz, který volá `Median` agregační funkce na kolekci typu `Integer` volá obecné přetížení `Median` metody.  
   
- [!code-vb[VbSimpleQuerySamples#19](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/aggregate-clause_10.vb)]  
+ [!code-vb[VbSimpleQuerySamples#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/UserDefinedAggregates.vb#19)]  
   
 ## <a name="see-also"></a>Viz také:
 

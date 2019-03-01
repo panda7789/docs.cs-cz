@@ -5,12 +5,12 @@ helpviewer_keywords:
 - <value> XML tag
 - value XML tag
 ms.assetid: 0b84b02e-9e6d-41b5-a926-0d5dc76dacb5
-ms.openlocfilehash: 5aab2307a1967ea660282c7b324eaddfe798a155
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.openlocfilehash: 89a2daad1c47ea8e2a045b2e22a9569e54086e8a
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857876"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970737"
 ---
 # <a name="value-visual-basic"></a>\<Hodnota > (Visual Basic)
 Určuje popis vlastnosti.  
@@ -33,7 +33,7 @@ Určuje popis vlastnosti.
 ## <a name="example"></a>Příklad  
  V tomto příkladu `<value>` značka, které popisují, jaká hodnota `Counter` vlastnost obsahuje.  
   
- [!code-vb[VbVbcnXmlDocComments#1](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/value_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - My.Settings object
 ms.assetid: 41f30dc1-202a-4273-b9b7-5728941f996c
-ms.openlocfilehash: 293e7cd6449b8a35b5e42b4823a4412e0d6a3f14
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5d6d56e4a1eddcb687fe042568509ba489aa8bb3
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628159"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56973467"
 ---
 # <a name="mysettings-object"></a>My.Settings – objekt
 Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.  
@@ -42,7 +42,7 @@ Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.
   
  `My.Settings` Objekt poskytuje také pokročilé vlastností a metod zděděných z <xref:System.Configuration.ApplicationSettingsBase> třídy.  
   
-## <a name="tasks"></a>Úlohy  
+## <a name="tasks"></a>Úkoly  
  Následující tabulka uvádí příklady úloh týkajících `My.Settings` objektu.  
   
 |Chcete-li|Další informace naleznete v tématu|  
@@ -55,7 +55,7 @@ Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.
 ## <a name="example"></a>Příklad  
  Tento příklad zobrazuje hodnotu `Nickname` nastavení.  
   
- [!code-vb[VbVbalrMyResources#14](../../../visual-basic/developing-apps/programming/app-settings/codesnippet/VisualBasic/my-settings-object_1.vb)]  
+ [!code-vb[VbVbalrMyResources#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#14)]  
   
  Pro tento příklad fungoval, musí mít vaše aplikace `Nickname` typu nastavení `String`.  
   

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - c XML tag
 - <c> XML tag
 ms.assetid: 36ad5d1b-11f7-4012-8932-41962ac327d1
-ms.openlocfilehash: 2fa6e66771ac854421d07a5f33e116f12516dad6
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 5f07b9cc084c73a7dcaf8c4d5f631519e550781e
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55260194"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56979481"
 ---
 # <a name="c-visual-basic"></a>\<c > (Visual Basic)
 Označuje, že je text v rámci popis kódu.  
@@ -35,7 +35,7 @@ Označuje, že je text v rámci popis kódu.
 ## <a name="example"></a>Příklad  
  V tomto příkladu `<c>` značky v souhrnné části, která označuje, že `Counter` je kód.  
   
- [!code-vb[VbVbcnXmlDocComments#1](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/c_1.vb)]  
+ [!code-vb[VbVbcnXmlDocComments#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

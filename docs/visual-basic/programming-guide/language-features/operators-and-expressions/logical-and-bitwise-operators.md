@@ -21,12 +21,12 @@ helpviewer_keywords:
 - OrElse operator [Visual Basic]
 - logical operators [Visual Basic], unary
 ms.assetid: ca474e13-567d-4b1d-a18b-301433705e57
-ms.openlocfilehash: 6dd71a01aeb56a6805689b6e898ab9c2c404959b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 94d43b7bea48d85e612b5c995e20e286f14b024a
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54640755"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56976496"
 ---
 # <a name="logical-and-bitwise-operators-in-visual-basic"></a>Logické a bitové operátory v jazyce Visual Basic
 Logické operátory porovnávají `Boolean` výrazy a vraťte se `Boolean` výsledek. `And`, `Or`, `AndAlso`, `OrElse`, A `Xor` operátory jsou *binární* protože přijímají dva operandy, zatímco `Not` operátor je *unární* protože trvá jeden operand. Některé z těchto operátorů lze provést také bitové logické operace na integrální hodnoty.  
@@ -34,7 +34,7 @@ Logické operátory porovnávají `Boolean` výrazy a vraťte se `Boolean` výsl
 ## <a name="unary-logical-operator"></a>Unární logický operátor  
  [Operátor Not](../../../../visual-basic/language-reference/operators/not-operator.md) provádí logické *negace* na `Boolean` výrazu. Bude vrácen na logický protějšek svého operandu. Pokud je výraz vyhodnocen `True`, pak `Not` vrátí `False`; Pokud je výraz vyhodnocen `False`, pak `Not` vrátí `True`. Toto dokládá následující příklad.  
   
- [!code-vb[VbVbalrOperators#77](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_1.vb)]  
+ [!code-vb[VbVbalrOperators#77](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#77)]  
   
 ## <a name="binary-logical-operators"></a>Binární logické operátory  
  [Operátoru](../../../../visual-basic/language-reference/operators/and-operator.md) provádí logické *spojení* na dvou `Boolean` výrazy. Pokud mají oba výrazy `True`, pak `And` vrátí `True`. Pokud se alespoň jeden z výrazů vyhodnotí jako `False`, pak `And` vrátí `False`.  
@@ -45,7 +45,7 @@ Logické operátory porovnávají `Boolean` výrazy a vraťte se `Boolean` výsl
   
  Následující příklad ukazuje, `And`, `Or`, a `Xor` operátory.  
   
- [!code-vb[VbVbalrOperators#78](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_2.vb)]  
+ [!code-vb[VbVbalrOperators#78](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#78)]  
   
 ## <a name="short-circuiting-logical-operations"></a>Zkrácení logické operace  
  [AndAlso – operátor](../../../../visual-basic/language-reference/operators/andalso-operator.md) je velmi podobný `And` operátor v tom, že také provede logickou konjunkci na dvou `Boolean` výrazy. Klíčovým rozdílem mezi těmito dvěma je, že `AndAlso` vykazuje *zkrácenou* chování. Pokud k prvnímu výrazu v `AndAlso` výraz vyhodnocen jako `False`, a druhý výraz není vyhodnocen, protože ji nelze změnit na konečný výsledek a `AndAlso` vrátí `False`.  
@@ -57,18 +57,18 @@ Logické operátory porovnávají `Boolean` výrazy a vraťte se `Boolean` výsl
   
  Následující příklad ukazuje rozdíl mezi `And`, `Or`a jejich protějšky short-circuiting.  
   
- [!code-vb[VbVbalrOperators#81](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_3.vb)]  
+ [!code-vb[VbVbalrOperators#81](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#81)]  
   
- [!code-vb[VbVbalrOperators#80](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_4.vb)]  
+ [!code-vb[VbVbalrOperators#80](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#80)]  
   
- [!code-vb[VbVbalrOperators#79](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/logical-and-bitwise-operators_5.vb)]  
+ [!code-vb[VbVbalrOperators#79](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#79)]  
   
  V předchozím příkladu, Všimněte si, že některé důležité kód uvnitř `checkIfValid()` při volání je zkratována nespustí. První `If` příkaz volá `checkIfValid()` Přestože `12 > 45` vrátí `False`, protože `And` není zkrácenou. Druhá `If` příkaz nevolá `checkIfValid()`, protože při `12 > 45` vrátí `False`, `AndAlso` zkratům druhý výraz. Třetí `If` příkaz volá `checkIfValid()` Přestože `12 < 45` vrátí `True`, protože `Or` není zkrácenou. Čtvrtý `If` příkaz nevolá `checkIfValid()`, protože při `12 < 45` vrátí `True`, `OrElse` zkratům druhý výraz.  
   
 ## <a name="bitwise-operations"></a>Bitové operace  
  Bitové operace vyhodnotit dvě celočíselné hodnoty ve formuláři binární soubor (základní 2). Jejich porovnání bity na odpovídající pozice a pak přiřaďte hodnoty založené na porovnání. Následující příklad ukazuje, `And` operátor.  
   
- [!code-vb[VbVbalrConcepts#2](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/codesnippet/VisualBasic/logical-and-bitwise-operators_6.vb)]  
+ [!code-vb[VbVbalrConcepts#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConcepts/VB/Class1.vb#2)]  
   
  Předchozí příklad nastaví hodnotu `x` na hodnotu 1. V takovém z následujících důvodů:  
   

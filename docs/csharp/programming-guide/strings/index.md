@@ -1,17 +1,11 @@
 ---
-title: Řetězce - C# Průvodce programováním
+title: 'Řetězce - C# Průvodce programováním'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
-- C# language, strings
-- strings [C#]
+  - 'C# language, strings'
+  - 'strings [C#]'
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: ba0c9abe9a38962ab19a204019abd3ac89ae6915
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53236359"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu <xref:System.String> jehož hodnota je text. Interně, text se ukládá jako sekvenční jen pro čtení kolekcí <xref:System.Char> objekty. Neexistuje žádný znak null ukončující řetězec jazyka C#; na konci řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0'). <xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, není počet znaků Unicode. Chcete-li získat přístup k jednotlivým kódové body sady Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.  
@@ -31,22 +25,22 @@ ms.locfileid: "53236359"
 ## <a name="immutability-of-string-objects"></a>Neměnnost řetězcových objektů  
  Řetězcových objektů jsou *neměnné*: nedá se změnit po vytvoření. Všechny <xref:System.String> metody a operátory jazyka C#, které patrně upravují řetězec ve skutečnosti výsledky jsou vráceny ve nový objekt řetězce. V následujícím příkladu když obsah `s1` a `s2` jsou zřetězeny a vytvoří jeden řetězec, jsou dva řetězce původní verzí bez úprav. `+=` Operátor vytvoří nový řetězec, který obsahuje kombinované obsah. Tento nový objekt je přiřazená k proměnné `s1`a původní objekt, který byl přiřazen `s1` se uvolní pro uvolnění paměti, protože žádná proměnná uchovává odkaz na to.  
   
- [!code-csharp[csProgGuideStrings#2](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_2.cs)]  
+ [!code-csharp[csProgGuideStrings#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#2)]  
   
  Protože je řetězec "úpravy" ve skutečnosti novou vytváření řetězců, musíte použít upozornění při vytváření odkazů na řetězce. Je-li vytvořit odkaz na řetězec a potom "upravit" původního řetězce, bude pokračovat odkaz tak, aby odkazoval na původní objekt místo nový objekt, který byl vytvořen, pokud byla změněna řetězec. Následující kód ukazuje toto chování:  
   
- [!code-csharp[csProgGuideStrings#25](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_3.cs)]  
+ [!code-csharp[csProgGuideStrings#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#25)]  
   
  Další informace o vytváření nových řetězců, které jsou založeny na úpravy, jako je například hledat a nahrazovat operace u původního řetězce najdete v tématu [jak: Změna obsahu řetězce](../../how-to/modify-string-contents.md).  
   
 ## <a name="regular-and-verbatim-string-literals"></a>Pravidelné a Verbatim řetězcové literály  
  Používejte regulární řetězcové literály, když je nutné vložit řídicí znaky, které jsou k dispozici v jazyce C#, jak je znázorněno v následujícím příkladu:  
   
- [!code-csharp[csProgGuideStrings#3](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_4.cs)]  
+ [!code-csharp[csProgGuideStrings#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#3)]  
   
  Používejte verbatim řetězce pro lepší čitelnost a pohodlí při textový řetězec obsahuje zpětné lomítko znaků, například cesty k souborům. Protože doslovném řetězci zachovat jako součást řetězce textu znaky nového řádku, můžete použít k inicializaci víceřádkových řetězců. Vkládat uvozovky uvnitř doslovný řetězec pomocí dvojitých uvozovek. Následující příklad ukazuje některé běžné použití doslovném řetězci:  
   
- [!code-csharp[csProgGuideStrings#4](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_5.cs)]  
+ [!code-csharp[csProgGuideStrings#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#4)]  
   
 ## <a name="string-escape-sequences"></a>Řetězec řídicí sekvence  
   
@@ -131,7 +125,7 @@ string s = String.Empty;
 |[Postupy: Změna obsahu řetězce](../../how-to/modify-string-contents.md)|Ukazuje techniky transformace řetězce a změnit obsah řetězce.|  
 |[Postupy: Porovnávání řetězců](../../how-to/compare-strings.md)|Ukazuje, jak k provádění pořadí a jazykové verze konkrétní porovnání řetězců.|  
 |[Postupy: Řetězení více řetězců](../../how-to/concatenate-multiple-strings.md)|Ukazuje různé způsoby, jak spojit víc řetězce do jednoho.|
-|[Postupy: Analýza řetězců metodou String.Split ](../../how-to/parse-strings-using-split.md)|Obsahuje příklady kódu, které ukazují, jak používat `String.Split` metodu pro analýzu řetězce.|  
+|[Postupy: Analýza řetězců metodou String.Split](../../how-to/parse-strings-using-split.md)|Obsahuje příklady kódu, které ukazují, jak používat `String.Split` metodu pro analýzu řetězce.|  
 |[Postupy: Hledání řetězců](../../how-to/search-strings.md)|Vysvětluje způsob používání vyhledávání určitý text nebo vzory v řetězcích.|  
 |[Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|Ukazuje, jak bezpečně analyzovat řetězec zjistíte, zda má platnou číselnou hodnotu.|  
 |[Interpolace řetězců](../../language-reference/tokens/interpolated.md)|Popisuje funkci interpolace řetězce, která poskytuje pohodlné syntaxe na formát řetězce.|

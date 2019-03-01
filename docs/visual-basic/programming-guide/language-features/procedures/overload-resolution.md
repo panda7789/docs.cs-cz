@@ -10,12 +10,12 @@ helpviewer_keywords:
 - signatures [Visual Basic], procedure
 - overloads [Visual Basic], resolution
 ms.assetid: 766115d1-4352-45fb-859f-6063e0de0ec0
-ms.openlocfilehash: 734cc521fe2e8b7af5ca594ced8c3a0a22603af7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c55b1c001ae1c74b0c34d716b9fa3f90dade3e28
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54525947"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56966226"
 ---
 # <a name="overload-resolution-visual-basic"></a>Rozlišení přetěžování (Visual Basic)
 Když kompilátor jazyka Visual Basic dojde během volání procedury, která je definována v několika přetížené verze, kompilátor musí rozhodnout, které přetížení volání. Dělá to pomocí následujících kroků:  
@@ -41,9 +41,9 @@ Překlad mezi přetížené verze
   
  Následující příklad ukazuje tento proces řešení přetížení.  
   
- [!code-vb[VbVbcnProcedures#62](./codesnippet/VisualBasic/overload-resolution_1.vb)]  
+ [!code-vb[VbVbcnProcedures#62](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#62)]  
   
- [!code-vb[VbVbcnProcedures#63](./codesnippet/VisualBasic/overload-resolution_2.vb)]  
+ [!code-vb[VbVbcnProcedures#63](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#63)]  
   
  Při prvním volání, kompilátor eliminuje první přetížení, protože typ prvního argumentu (`Short`) zužuje na typ odpovídající parametru (`Byte`). Eliminuje pak třetí přetížení, protože typ každého argumentu ve druhé přetížení (`Short` a `Single`) rozšiřuje na odpovídající typ v třetí přetížení (`Integer` a `Single`). Druhé přetížení vyžaduje méně rozšíření, takže kompilátor používá volání.  
   

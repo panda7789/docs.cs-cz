@@ -1,13 +1,7 @@
 ---
-title: Asynchronní programování pomocí modifikátoru async a operátoru await (C#)
+title: 'Asynchronní programování pomocí modifikátoru async a operátoru await (C#)'
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: 011ddf8e9769471f37f073b4440a909afc5e404f
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55759506"
 ---
 # <a name="asynchronous-programming-with-async-and-await-c"></a>Asynchronní programování pomocí modifikátoru async a operátoru await (C#)
 Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zlepšit celkovou rychlost reakce aplikace. Tradiční techniky pro psaní asynchronních aplikací však mohou být složité, takže je obtížné je napsat, ladit a udržovat.  
@@ -230,7 +224,7 @@ Asynchronní rozhraní API v programování v prostředí Windows Runtime někte
    
   
 ##  <a name="BKMK_NamingConvention"></a> Zásady vytváření názvů  
- Podle úmluvy připojte "Async" názvy metod, které mají `async` modifikátor.  
+Podle konvence, metody, které vracejí běžně očekávatelný typů (například `Task`, `Task<T>`, `ValueTask`, `ValueTask<T>`) by měly mít názvy, které končí řetězcem "Async". Metody, které začít asynchronní operaci, ale nevrátí očekávatelný typ by neměly mít názvy, které končí "Async", ale může začínat "Begin", "Start" nebo některé operace navrhnout tato metoda vrátí nebo vyvolat výsledek operace.
   
  Můžete ignorovat konvenci, kde událost, základní třída a rozhraní smlouvy navrhují odlišný název. Například byste neměli přejmenovat běžné obslužné rutiny událostí, jako například `Button1_Click`.  
   

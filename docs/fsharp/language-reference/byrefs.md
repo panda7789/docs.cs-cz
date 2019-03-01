@@ -2,12 +2,12 @@
 title: Parametry ByRef
 description: Další informace o typu byref a typů předávané v F#, které se používají pro programování nízké úrovně.
 ms.date: 09/02/2018
-ms.openlocfilehash: c45c061a1487c60c3361cd82a55357189754e29d
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: d8d8b2f0c9965a06e823e9be4e8d1b34201cc471
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611578"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56976548"
 ---
 # <a name="byrefs"></a>Parametry ByRef
 
@@ -105,7 +105,7 @@ Všechna tato pravidla společně znamenají, že držitele `inref` ukazatel nes
 
 Účelem `outref<'T>` se k označení, že ukazatele by měli číst jenom z. Nečekaně `outref<'T>` povolí čtení základní hodnotu bez ohledu na jeho název. Toto je pro účely kompatibility. Sémanticky `outref<'T>` se nijak neliší od `byref<'T>`.
 
-### <a name="interop-with-c"></a>Interoperabilita s C# #
+### <a name="interop-with-c"></a>Interoperabilita s C\#
 
 C# podporuje `in ref` a `out ref` klíčová slova, kromě `ref` vrátí. Následující tabulka ukazuje, jak F# interpretuje co C# vysílá:
 

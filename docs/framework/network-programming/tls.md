@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Internet, security
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
-ms.openlocfilehash: 2d7555d39b3aa92ca49368ca5ad59750e3603606
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: 6aa05aab5bbd012c31dc31be38c0b3eaea13dd27
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415894"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56966187"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Zabezpečení TLS (Transport Layer) osvědčené postupy s použitím rozhraní .NET Framework
 
@@ -270,10 +270,10 @@ Pokud chcete povolit nebo opětovné povolení protokolu TLS 1.2 a/nebo protokol
 
 | **OS** | **Podpora protokolu TLS 1.2** |
 | --- | --- |
-| Windows 10</br>Windows Server 2016 | Podporované a ve výchozím nastavení povolená. |
-| Windows 8.1</br>Windows Server 2012 R2 | Podporované a ve výchozím nastavení povolená. |
-| Windows 8.0</br>Windows Server 2012 | Podporované a ve výchozím nastavení povolená. |
-| Windows 7 SP1</br>Windows Server 2008 R2 SP1 | Podporované, ale není ve výchozím nastavení povolená. Zobrazit [zabezpečení TLS (Transport Layer), nastavení registru](/windows-server/security/tls/tls-registry-settings) webové stránky, podrobné informace o postupu povolení protokolu TLS 1.2. |
+| Windows 10<br>Windows Server 2016 | Podporované a ve výchozím nastavení povolená. |
+| Windows 8.1<br>Windows Server 2012 R2 | Podporované a ve výchozím nastavení povolená. |
+| Windows 8.0<br>Windows Server 2012 | Podporované a ve výchozím nastavení povolená. |
+| Windows 7 SP1<br>Windows Server 2008 R2 SP1 | Podporované, ale není ve výchozím nastavení povolená. Zobrazit [zabezpečení TLS (Transport Layer), nastavení registru](/windows-server/security/tls/tls-registry-settings) webové stránky, podrobné informace o postupu povolení protokolu TLS 1.2. |
 | Windows Server 2008 | Podpora protokolu TLS 1.2 a TLS 1.1 vyžaduje aktualizaci. Zobrazit [aktualizace přidává funkce pro protokol TLS 1.1 a TLS 1.2 v systému Windows Server 2008 SP2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
 | Windows Vista | Není podporováno. |
 
@@ -285,12 +285,12 @@ Tato tabulka zobrazuje aktualizace operačního systému, že které budete pot�
 
 | **OS** | **Minimální aktualizace, které jsou potřebné pro podporu protokolu TLS 1.2 v rozhraní .NET Framework 3.5** |
 | --- | --- |
-| Windows 10</br>Windows Server 2016 | [Kumulativní aktualizace pro Windows 10 verze 1511 a Windows serveru 2016 Technical Preview 4: 10. května 2016](https://support.microsoft.com/help/3156421/cumulative-update-for-windows-10-version-1511-and-windows-server-2016) |
-| Windows 8.1</br>Windows Server 2012 R2 | [Podpora verzí výchozí společnosti TLS systému zahrnuty v rozhraní .NET Framework 3.5 ve Windows 8.1 a Windows Server 2012 R2](https://support.microsoft.com/help/3154520/support-for-tls-system-default-versions-included-in-the--net-framework) |
-| Windows 8.0</br>Windows Server 2012 | [Podpora verzí výchozí společnosti TLS systému zahrnuty v rozhraní .NET Framework 3.5 ve Windows serveru 2012](https://support.microsoft.com/help/3154519/support-for-tls-system-default-versions-included-in-the--net-framework) |
-| Windows 7 SP1</br>Windows Server 2008 R2 SP1 | [Podpora verzí výchozí společnosti TLS systému zahrnuty v rozhraní .NET Framework 3.5.1 na Windows 7 SP1 a Server 2008 R2 SP1](https://support.microsoft.com/help/3154518/support-for-tls-system-default-versions-included-in-the--net-framework) |
+| Windows 10<br>Windows Server 2016 | [Kumulativní aktualizace pro Windows 10 verze 1511 a Windows serveru 2016 Technical Preview 4: 10. května 2016](https://support.microsoft.com/help/3156421/cumulative-update-for-windows-10-version-1511-and-windows-server-2016) |
+| Windows 8.1<br>Windows Server 2012 R2 | [Podpora verzí výchozí společnosti TLS systému zahrnuty v rozhraní .NET Framework 3.5 ve Windows 8.1 a Windows Server 2012 R2](https://support.microsoft.com/help/3154520/support-for-tls-system-default-versions-included-in-the--net-framework) |
+| Windows 8.0<br>Windows Server 2012 | [Podpora verzí výchozí společnosti TLS systému zahrnuty v rozhraní .NET Framework 3.5 ve Windows serveru 2012](https://support.microsoft.com/help/3154519/support-for-tls-system-default-versions-included-in-the--net-framework) |
+| Windows 7 SP1<br>Windows Server 2008 R2 SP1 | [Podpora verzí výchozí společnosti TLS systému zahrnuty v rozhraní .NET Framework 3.5.1 na Windows 7 SP1 a Server 2008 R2 SP1](https://support.microsoft.com/help/3154518/support-for-tls-system-default-versions-included-in-the--net-framework) |
 | Windows Server 2008 | [Podpora verzí výchozí společnosti TLS systému zahrnuty v rozhraní .NET Framework 2.0 SP2 ve Windows Vista SP2 a Server 2008 SP2](https://support.microsoft.com/help/3154517/support-for-tls-system-default-versions-included-in-the--net-framework) |
-| Windows Vista | Nepodporováno |
+| Windows Vista | Není podporováno |
 
 ## <a name="azure-cloud-services"></a>Azure Cloud Services
 

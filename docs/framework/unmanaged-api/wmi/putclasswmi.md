@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 995c697497876969edc1021350b7bfe28e4018bb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: edc2b90ebf73e23aeee6407eb6cb3551b9672d29
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54614507"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56972804"
 ---
 # <a name="putclasswmi-function"></a>PutClassWmi – funkce
 Vytvoří novou třídu nebo aktualizuje nějakou existující.  
@@ -49,7 +49,7 @@ HRESULT PutClassWmi (
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
-| `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud sada WMI neukládá všechny kvalifikátory s upravenou charakter. </br> Pokud není sada, předpokládá se, že tento objekt není lokalizována, a všechny kvalifikátory jsou storedwith této instance. |
+| `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud sada WMI neukládá všechny kvalifikátory s upravenou charakter. <br> Pokud není sada, předpokládá se, že tento objekt není lokalizována, a všechny kvalifikátory jsou storedwith této instance. |
 | `WBEM_FLAG_CREATE_OR_UPDATE` | 0 | Vytvořte třídu, pokud ho neexistuje, nebo ho přepíše, pokud již existuje. |
 | `WBEM_FLAG_UPDATE_ONLY` | 1 | Aktualizace třídy. Třída musí existovat volání k dosažení úspěchu. |
 | `WBEM_FLAG_CREATE_ONLY` | 2 | Vytvořte třídu. Volání selže, pokud třída již existuje. |
