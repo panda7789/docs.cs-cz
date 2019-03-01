@@ -27,12 +27,12 @@
 ### [Základní typy](standard/base-types/)
 ## [Knihovny tříd .NET](standard/class-libraries.md)
 ## [Analyzátory](standard/analyzers/index.md)
-### [Analyzátor rozhraní API](standard/analyzers/api-analyzer.md) 
+### [Analyzátor rozhraní API](standard/analyzers/api-analyzer.md)
 ### [Analyzátor přenositelnosti](standard/analyzers/portability-analyzer.md)
 ### [Analyzátor architektury](standard/analyzers/framework-analyzer.md)
 ## [Zpracování a vyvolání výjimek](standard/exceptions/)
 ## [Sestavení v .NET](standard/assembly/index.md)
-### [Formát souborů sestavení .NET](standard/assembly/file-format.md) 
+### [Formát souborů sestavení .NET](standard/assembly/file-format.md)
 ## [Uvolňování paměti](standard/garbage-collection/)
 ## [Obecné typy](standard/generics.md)
 ## [Delegáty a výrazy lambda](standard/delegates-lambdas.md)
@@ -93,7 +93,6 @@
 ### [Co je nového v .NET Core 2.1](core/whats-new/dotnet-core-2-1.md)
 ### [Co je nového v .NET Core 2.0](core/whats-new/dotnet-core-2-0.md)
 ## [Kurzy](core/tutorials/index.md)
-### [Vytvoření kompletního řešení .NET Core ve Windows pomocí sady Visual Studio 2017](core/tutorials/using-on-windows-full-solution.md)
 ### [Začínáme s .NET Core v systému macOS](core/tutorials/using-on-macos.md)
 ### [Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac](core/tutorials/using-on-mac-vs.md)
 ### [Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac](core/tutorials/using-on-mac-vs-full-solution.md)
@@ -101,7 +100,6 @@
 ### [Uspořádání a testování projektů pomocí příkazového řádku .NET Core](core/tutorials/testing-with-cli.md)
 ### [Vývoj knihoven pomocí nástrojů pro různé platformy](core/tutorials/libraries.md)
 ### [Vývoj aplikací ASP.NET Core](core/tutorials/aspnet-core.md)
-### [Správa verzí závislosti balíčků pro .NET Core 1.0](core/tutorials/managing-package-dependency-versions.md)
 ### [Hostování .NET Core z nativního kódu](core/tutorials/netcore-hosting.md)
 ### [Vytvoření vlastní šablony pro dotnet new](core/tutorials/create-custom-template.md)
 ## [Balíčky, metabalíčky a architektury](core/packages.md)
@@ -270,7 +268,9 @@
 ## [Prohlídka jazyka C#](csharp/tour-of-csharp/)
 <!-- The "What's New" section is short, and one level
     deep, so leave it in the main TOC -->
+<!-- markdownlint-disable MD003 -->
 ## Co je nového v jazyce C#
+<!-- markdownlint-enable MD003 -->
 ### [C# 8.0 – Preview 2](csharp/whats-new/csharp-8.md)
 ### [C# 7.3](csharp/whats-new/csharp-7-3.md)
 ### [C# 7.2](csharp/whats-new/csharp-7-2.md)
@@ -522,9 +522,11 @@
 #### [Přizpůsobení výběru objektů dostupných v oboru názvů My](visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)
 
 ## [Koncepty programování](visual-basic/programming-guide/concepts/index.md)
-### [Sestavení v .NET](standard/assembly/index.md)
 ### [Asynchronní programování pomocí modifikátoru Async a operátoru Await](visual-basic/programming-guide/concepts/async/index.md)
 ### [Atributy](visual-basic/programming-guide/concepts/attributes/index.md)
+### [Informace o volajícím](visual-basic/programming-guide/concepts/caller-information.md)
+### [Kolekce](visual-basic/programming-guide/concepts/collections.md)
+### [Kovariance a kontravariance](visual-basic/programming-guide/concepts/covariance-contravariance/index.md)
 ### [Stromy výrazů](visual-basic/programming-guide/concepts/expression-trees/index.md)
 ### [Iterátory](visual-basic/programming-guide/concepts/iterators.md)
 ### [LINQ (Language-Integrated Query)](visual-basic/programming-guide/concepts/linq/index.md)
@@ -1211,7 +1213,7 @@
 #### [Kontrola přechodných hodnot dat v kanálu](machine-learning/how-to-guides/inspect-intermediate-data-ml-net.md)
 #### [Trénování regresního modelu](machine-learning/how-to-guides/train-regression-model-ml-net.md)
 #### [Určení důležitosti funkcí modelu pomocí PFI](machine-learning/how-to-guides/determine-global-feature-importance-in-model.md)
-### Použití vytrénovaného modelu  
+### Použití vytrénovaného modelu
 #### [Postupné předpovědi pomocí PredictionEngine](machine-learning/how-to-guides/single-predict-model-ml-net.md)
 #### [Zprovoznění vytrénovaného modelu](machine-learning/how-to-guides/consuming-model-ml-net.md)
 ### Infer.NET
