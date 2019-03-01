@@ -6,42 +6,42 @@ helpviewer_keywords:
 - I/O [Visual Basic], My.Computer.FileSystem.WriteAllText method
 - I/O [Visual Basic], WriteAllText method
 ms.assetid: bbbd7fb5-f169-41a9-b53f-520ea9613913
-ms.openlocfilehash: 5fabd0b6894fc5ab7d4bab1979d71b171d2b21c4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d7518493cca62018ccda9659e977333184888ea7
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54498213"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56968683"
 ---
-# <a name="how-to-append-to-text-files-in-visual-basic"></a><span data-ttu-id="5edae-102">Postupy: Připojování k textovým souborům v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="5edae-102">How to: Append to Text Files in Visual Basic</span></span>
-<span data-ttu-id="5edae-103"><xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> Metodu lze použít k připojení do textového souboru, který zadáte `append` parametr je nastaven na `True`.</span><span class="sxs-lookup"><span data-stu-id="5edae-103">The <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> method can be used to append to a text file by specifying that the `append` parameter is set to `True`.</span></span>  
+# <a name="how-to-append-to-text-files-in-visual-basic"></a><span data-ttu-id="f18c2-102">Postupy: Připojování k textovým souborům v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f18c2-102">How to: Append to Text Files in Visual Basic</span></span>
+<span data-ttu-id="f18c2-103"><xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> Metodu lze použít k připojení do textového souboru, který zadáte `append` parametr je nastaven na `True`.</span><span class="sxs-lookup"><span data-stu-id="f18c2-103">The <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> method can be used to append to a text file by specifying that the `append` parameter is set to `True`.</span></span>  
   
-### <a name="to-append-to-a-text-file"></a><span data-ttu-id="5edae-104">K připojení do textového souboru</span><span class="sxs-lookup"><span data-stu-id="5edae-104">To append to a text file</span></span>  
+### <a name="to-append-to-a-text-file"></a><span data-ttu-id="f18c2-104">K připojení do textového souboru</span><span class="sxs-lookup"><span data-stu-id="f18c2-104">To append to a text file</span></span>  
   
--   <span data-ttu-id="5edae-105">Použití `WriteAllText` způsob určení cílového souboru a řetězce, které se mají připojit a nastavení `append` parametr `True`.</span><span class="sxs-lookup"><span data-stu-id="5edae-105">Use the `WriteAllText` method, specifying the target file and string to be appended and setting the `append` parameter to `True`.</span></span>  
+-   <span data-ttu-id="f18c2-105">Použití `WriteAllText` způsob určení cílového souboru a řetězce, které se mají připojit a nastavení `append` parametr `True`.</span><span class="sxs-lookup"><span data-stu-id="f18c2-105">Use the `WriteAllText` method, specifying the target file and string to be appended and setting the `append` parameter to `True`.</span></span>  
   
-     <span data-ttu-id="5edae-106">Tento příklad zapíše řetězec `"This is a test string."` do souboru s názvem `Testfile.txt`.</span><span class="sxs-lookup"><span data-stu-id="5edae-106">This example writes the string `"This is a test string."` to the file named `Testfile.txt`.</span></span>  
+     <span data-ttu-id="f18c2-106">Tento příklad zapíše řetězec `"This is a test string."` do souboru s názvem `Testfile.txt`.</span><span class="sxs-lookup"><span data-stu-id="f18c2-106">This example writes the string `"This is a test string."` to the file named `Testfile.txt`.</span></span>  
   
-     [!code-vb[VbFileIOWrite#6](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-append-to-text-files_1.vb)]  
+     [!code-vb[VbFileIOWrite#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOWrite/VB/Class1.vb#6)]  
   
-## <a name="robust-programming"></a><span data-ttu-id="5edae-107">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="5edae-107">Robust Programming</span></span>  
- <span data-ttu-id="5edae-108">Následující podmínky mohou způsobit výjimku:</span><span class="sxs-lookup"><span data-stu-id="5edae-108">The following conditions may cause an exception:</span></span>  
+## <a name="robust-programming"></a><span data-ttu-id="f18c2-107">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="f18c2-107">Robust Programming</span></span>  
+ <span data-ttu-id="f18c2-108">Následující podmínky mohou způsobit výjimku:</span><span class="sxs-lookup"><span data-stu-id="f18c2-108">The following conditions may cause an exception:</span></span>  
   
--   <span data-ttu-id="5edae-109">Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (začíná \\ \\.\\) (<xref:System.ArgumentException>).</span><span class="sxs-lookup"><span data-stu-id="5edae-109">The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).</span></span>  
+-   <span data-ttu-id="f18c2-109">Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (začíná \\ \\.\\) (<xref:System.ArgumentException>).</span><span class="sxs-lookup"><span data-stu-id="f18c2-109">The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).</span></span>  
   
--   <span data-ttu-id="5edae-110">Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).</span><span class="sxs-lookup"><span data-stu-id="5edae-110">The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).</span></span>  
+-   <span data-ttu-id="f18c2-110">Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).</span><span class="sxs-lookup"><span data-stu-id="f18c2-110">The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).</span></span>  
   
--   <span data-ttu-id="5edae-111">`File` odkazuje na cestu, která neexistuje (<xref:System.IO.FileNotFoundException> nebo <xref:System.IO.DirectoryNotFoundException>).</span><span class="sxs-lookup"><span data-stu-id="5edae-111">`File` points to a path that does not exist (<xref:System.IO.FileNotFoundException> or <xref:System.IO.DirectoryNotFoundException>).</span></span>  
+-   <span data-ttu-id="f18c2-111">`File` odkazuje na cestu, která neexistuje (<xref:System.IO.FileNotFoundException> nebo <xref:System.IO.DirectoryNotFoundException>).</span><span class="sxs-lookup"><span data-stu-id="f18c2-111">`File` points to a path that does not exist (<xref:System.IO.FileNotFoundException> or <xref:System.IO.DirectoryNotFoundException>).</span></span>  
   
--   <span data-ttu-id="5edae-112">Soubor je používán jiným procesem nebo dojde k chybě vstupně-výstupních operací (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="5edae-112">The file is in use by another process, or an I/O error occurs (<xref:System.IO.IOException>).</span></span>  
+-   <span data-ttu-id="f18c2-112">Soubor je používán jiným procesem nebo dojde k chybě vstupně-výstupních operací (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="f18c2-112">The file is in use by another process, or an I/O error occurs (<xref:System.IO.IOException>).</span></span>  
   
--   <span data-ttu-id="5edae-113">Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="5edae-113">The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).</span></span>  
+-   <span data-ttu-id="f18c2-113">Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="f18c2-113">The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).</span></span>  
   
--   <span data-ttu-id="5edae-114">Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).</span><span class="sxs-lookup"><span data-stu-id="5edae-114">A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).</span></span>  
+-   <span data-ttu-id="f18c2-114">Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).</span><span class="sxs-lookup"><span data-stu-id="f18c2-114">A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).</span></span>  
   
--   <span data-ttu-id="5edae-115">Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).</span><span class="sxs-lookup"><span data-stu-id="5edae-115">The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).</span></span>  
+-   <span data-ttu-id="f18c2-115">Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).</span><span class="sxs-lookup"><span data-stu-id="f18c2-115">The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5edae-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5edae-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f18c2-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f18c2-116">See also</span></span>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
-- [<span data-ttu-id="5edae-117">Zápis do souborů</span><span class="sxs-lookup"><span data-stu-id="5edae-117">Writing to Files</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [<span data-ttu-id="f18c2-117">Zápis do souborů</span><span class="sxs-lookup"><span data-stu-id="f18c2-117">Writing to Files</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)

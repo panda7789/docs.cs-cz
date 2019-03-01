@@ -12,68 +12,68 @@ helpviewer_keywords:
 - Group By statement [Visual Basic]
 - Group By clause [Visual Basic]
 ms.assetid: b1b5dcea-6654-473b-a2db-01f7e4c265d7
-ms.openlocfilehash: 806675c35c0463047646c70a54f80a69d57dffa4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 47db8c9dc0562f8eb527eda65bb56404dc1ea8c8
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54574843"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971322"
 ---
-# <a name="group-by-clause-visual-basic"></a><span data-ttu-id="8e797-102">Group By – klauzule (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8e797-102">Group By Clause (Visual Basic)</span></span>
-<span data-ttu-id="8e797-103">Seskupuje prvky sady výsledků dotazu.</span><span class="sxs-lookup"><span data-stu-id="8e797-103">Groups the elements of a query result.</span></span> <span data-ttu-id="8e797-104">Můžete také použít k aplikaci agregačních funkcí na každou skupinu.</span><span class="sxs-lookup"><span data-stu-id="8e797-104">Can also be used to apply aggregate functions to each group.</span></span> <span data-ttu-id="8e797-105">Operace seskupení je založená na jeden nebo více klíčů.</span><span class="sxs-lookup"><span data-stu-id="8e797-105">The grouping operation is based on one or more keys.</span></span>  
+# <a name="group-by-clause-visual-basic"></a><span data-ttu-id="8fda5-102">Group By – klauzule (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8fda5-102">Group By Clause (Visual Basic)</span></span>
+<span data-ttu-id="8fda5-103">Seskupuje prvky sady výsledků dotazu.</span><span class="sxs-lookup"><span data-stu-id="8fda5-103">Groups the elements of a query result.</span></span> <span data-ttu-id="8fda5-104">Můžete také použít k aplikaci agregačních funkcí na každou skupinu.</span><span class="sxs-lookup"><span data-stu-id="8fda5-104">Can also be used to apply aggregate functions to each group.</span></span> <span data-ttu-id="8fda5-105">Operace seskupení je založená na jeden nebo více klíčů.</span><span class="sxs-lookup"><span data-stu-id="8fda5-105">The grouping operation is based on one or more keys.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8e797-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8e797-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="8fda5-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8fda5-106">Syntax</span></span>  
   
 ```  
 Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]  
   Into aggregateList  
 ```  
   
-## <a name="parts"></a><span data-ttu-id="8e797-107">Součásti</span><span class="sxs-lookup"><span data-stu-id="8e797-107">Parts</span></span>  
+## <a name="parts"></a><span data-ttu-id="8fda5-107">Součásti</span><span class="sxs-lookup"><span data-stu-id="8fda5-107">Parts</span></span>  
   
--   <span data-ttu-id="8e797-108">`listField1`, `listField2`</span><span class="sxs-lookup"><span data-stu-id="8e797-108">`listField1`, `listField2`</span></span>  
+-   <span data-ttu-id="8fda5-108">`listField1`, `listField2`</span><span class="sxs-lookup"><span data-stu-id="8fda5-108">`listField1`, `listField2`</span></span>  
   
-     <span data-ttu-id="8e797-109">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="8e797-109">Optional.</span></span> <span data-ttu-id="8e797-110">Jedno nebo více polí proměnné dotazu nebo proměnné, které explicitně určete pole, které mají být zahrnuty ve výsledku seskupené.</span><span class="sxs-lookup"><span data-stu-id="8e797-110">One or more fields of the query variable or variables that explicitly identify the fields to be included in the grouped result.</span></span> <span data-ttu-id="8e797-111">Pokud nebyla určena žádná pole, všechna pole, proměnná dotazu nebo proměnné jsou zahrnuty ve výsledku seskupené.</span><span class="sxs-lookup"><span data-stu-id="8e797-111">If no fields are specified, all fields of the query variable or variables are included in the grouped result.</span></span>  
+     <span data-ttu-id="8fda5-109">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="8fda5-109">Optional.</span></span> <span data-ttu-id="8fda5-110">Jedno nebo více polí proměnné dotazu nebo proměnné, které explicitně určete pole, které mají být zahrnuty ve výsledku seskupené.</span><span class="sxs-lookup"><span data-stu-id="8fda5-110">One or more fields of the query variable or variables that explicitly identify the fields to be included in the grouped result.</span></span> <span data-ttu-id="8fda5-111">Pokud nebyla určena žádná pole, všechna pole, proměnná dotazu nebo proměnné jsou zahrnuty ve výsledku seskupené.</span><span class="sxs-lookup"><span data-stu-id="8fda5-111">If no fields are specified, all fields of the query variable or variables are included in the grouped result.</span></span>  
   
 -   `keyExp1`  
   
-     <span data-ttu-id="8e797-112">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="8e797-112">Required.</span></span> <span data-ttu-id="8e797-113">Výraz, který určuje klíč pro použití k určení skupiny prvků.</span><span class="sxs-lookup"><span data-stu-id="8e797-113">An expression that identifies the key to use to determine the groups of elements.</span></span> <span data-ttu-id="8e797-114">Můžete zadat více než jeden klíč k určení složený klíč.</span><span class="sxs-lookup"><span data-stu-id="8e797-114">You can specify more than one key to specify a composite key.</span></span>  
+     <span data-ttu-id="8fda5-112">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="8fda5-112">Required.</span></span> <span data-ttu-id="8fda5-113">Výraz, který určuje klíč pro použití k určení skupiny prvků.</span><span class="sxs-lookup"><span data-stu-id="8fda5-113">An expression that identifies the key to use to determine the groups of elements.</span></span> <span data-ttu-id="8fda5-114">Můžete zadat více než jeden klíč k určení složený klíč.</span><span class="sxs-lookup"><span data-stu-id="8fda5-114">You can specify more than one key to specify a composite key.</span></span>  
   
 -   `keyExp2`  
   
-     <span data-ttu-id="8e797-115">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="8e797-115">Optional.</span></span> <span data-ttu-id="8e797-116">Jeden nebo více dalších klíčů, které jsou spojené s `keyExp1` vytvoření složeného klíče.</span><span class="sxs-lookup"><span data-stu-id="8e797-116">One or more additional keys that are combined with `keyExp1` to create a composite key.</span></span>  
+     <span data-ttu-id="8fda5-115">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="8fda5-115">Optional.</span></span> <span data-ttu-id="8fda5-116">Jeden nebo více dalších klíčů, které jsou spojené s `keyExp1` vytvoření složeného klíče.</span><span class="sxs-lookup"><span data-stu-id="8fda5-116">One or more additional keys that are combined with `keyExp1` to create a composite key.</span></span>  
   
 -   `aggregateList`  
   
-     <span data-ttu-id="8e797-117">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="8e797-117">Required.</span></span> <span data-ttu-id="8e797-118">Jeden nebo více výrazů, které určují, jak se agregují skupiny.</span><span class="sxs-lookup"><span data-stu-id="8e797-118">One or more expressions that identify how the groups are aggregated.</span></span> <span data-ttu-id="8e797-119">Chcete-li zjistit název člena pro seskupené výsledky, použijte `Group` – klíčové slovo, které může být v některém z následujících forem:</span><span class="sxs-lookup"><span data-stu-id="8e797-119">To identify a member name for the grouped results, use the `Group` keyword, which can be in either of the following forms:</span></span>  
+     <span data-ttu-id="8fda5-117">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="8fda5-117">Required.</span></span> <span data-ttu-id="8fda5-118">Jeden nebo více výrazů, které určují, jak se agregují skupiny.</span><span class="sxs-lookup"><span data-stu-id="8fda5-118">One or more expressions that identify how the groups are aggregated.</span></span> <span data-ttu-id="8fda5-119">Chcete-li zjistit název člena pro seskupené výsledky, použijte `Group` – klíčové slovo, které může být v některém z následujících forem:</span><span class="sxs-lookup"><span data-stu-id="8fda5-119">To identify a member name for the grouped results, use the `Group` keyword, which can be in either of the following forms:</span></span>  
   
     ```  
     Into Group  
     ```  
   
-     <span data-ttu-id="8e797-120">-nebo-</span><span class="sxs-lookup"><span data-stu-id="8e797-120">-or-</span></span>  
+     <span data-ttu-id="8fda5-120">-nebo-</span><span class="sxs-lookup"><span data-stu-id="8fda5-120">-or-</span></span>  
   
     ```  
     Into <alias> = Group  
     ```  
   
-     <span data-ttu-id="8e797-121">Může také obsahovat agregační funkce, které chcete aplikovat ve skupině.</span><span class="sxs-lookup"><span data-stu-id="8e797-121">You can also include aggregate functions to apply to the group.</span></span>  
+     <span data-ttu-id="8fda5-121">Může také obsahovat agregační funkce, které chcete aplikovat ve skupině.</span><span class="sxs-lookup"><span data-stu-id="8fda5-121">You can also include aggregate functions to apply to the group.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="8e797-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="8e797-122">Remarks</span></span>  
- <span data-ttu-id="8e797-123">Můžete použít `Group By` klauzule přerušení výsledků dotazu do skupin.</span><span class="sxs-lookup"><span data-stu-id="8e797-123">You can use the `Group By` clause to break the results of a query into groups.</span></span> <span data-ttu-id="8e797-124">Seskupení podle klíče nebo složený klíč skládající se z více klíčů.</span><span class="sxs-lookup"><span data-stu-id="8e797-124">The grouping is based on a key or a composite key consisting of multiple keys.</span></span> <span data-ttu-id="8e797-125">Prvky, které jsou spojeny s odpovídající hodnoty klíče jsou součástí stejné skupiny.</span><span class="sxs-lookup"><span data-stu-id="8e797-125">Elements that are associated with matching key values are included in the same group.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="8fda5-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="8fda5-122">Remarks</span></span>  
+ <span data-ttu-id="8fda5-123">Můžete použít `Group By` klauzule přerušení výsledků dotazu do skupin.</span><span class="sxs-lookup"><span data-stu-id="8fda5-123">You can use the `Group By` clause to break the results of a query into groups.</span></span> <span data-ttu-id="8fda5-124">Seskupení podle klíče nebo složený klíč skládající se z více klíčů.</span><span class="sxs-lookup"><span data-stu-id="8fda5-124">The grouping is based on a key or a composite key consisting of multiple keys.</span></span> <span data-ttu-id="8fda5-125">Prvky, které jsou spojeny s odpovídající hodnoty klíče jsou součástí stejné skupiny.</span><span class="sxs-lookup"><span data-stu-id="8fda5-125">Elements that are associated with matching key values are included in the same group.</span></span>  
   
- <span data-ttu-id="8e797-126">Můžete použít `aggregateList` parametr `Into` klauzule a `Group` – klíčové slovo k identifikaci názvu členu, který se používá k odkazování skupiny.</span><span class="sxs-lookup"><span data-stu-id="8e797-126">You use the `aggregateList` parameter of the `Into` clause and the `Group` keyword to identify the member name that is used to reference the group.</span></span> <span data-ttu-id="8e797-127">Můžete použít také v agregačních funkcí `Into` klauzule k výpočtu hodnot seskupených elementů.</span><span class="sxs-lookup"><span data-stu-id="8e797-127">You can also include aggregate functions in the `Into` clause to compute values for the grouped elements.</span></span> <span data-ttu-id="8e797-128">Seznam standardní agregační funkce najdete v tématu [Aggregate – klauzule](../../../visual-basic/language-reference/queries/aggregate-clause.md).</span><span class="sxs-lookup"><span data-stu-id="8e797-128">For a list of standard aggregate functions, see [Aggregate Clause](../../../visual-basic/language-reference/queries/aggregate-clause.md).</span></span>  
+ <span data-ttu-id="8fda5-126">Můžete použít `aggregateList` parametr `Into` klauzule a `Group` – klíčové slovo k identifikaci názvu členu, který se používá k odkazování skupiny.</span><span class="sxs-lookup"><span data-stu-id="8fda5-126">You use the `aggregateList` parameter of the `Into` clause and the `Group` keyword to identify the member name that is used to reference the group.</span></span> <span data-ttu-id="8fda5-127">Můžete použít také v agregačních funkcí `Into` klauzule k výpočtu hodnot seskupených elementů.</span><span class="sxs-lookup"><span data-stu-id="8fda5-127">You can also include aggregate functions in the `Into` clause to compute values for the grouped elements.</span></span> <span data-ttu-id="8fda5-128">Seznam standardní agregační funkce najdete v tématu [Aggregate – klauzule](../../../visual-basic/language-reference/queries/aggregate-clause.md).</span><span class="sxs-lookup"><span data-stu-id="8fda5-128">For a list of standard aggregate functions, see [Aggregate Clause](../../../visual-basic/language-reference/queries/aggregate-clause.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="8e797-129">Příklad</span><span class="sxs-lookup"><span data-stu-id="8e797-129">Example</span></span>  
- <span data-ttu-id="8e797-130">Následující příklad kódu seskupí seznam zákazníků na základě jejich umístění (a případně zemi) a poskytuje počet zákazníků v každé skupině.</span><span class="sxs-lookup"><span data-stu-id="8e797-130">The following code example groups a list of customers based on their location (country) and provides a count of the customers in each group.</span></span> <span data-ttu-id="8e797-131">Výsledky jsou seřazené podle názvu země.</span><span class="sxs-lookup"><span data-stu-id="8e797-131">The results are ordered by country name.</span></span> <span data-ttu-id="8e797-132">Seskupené výsledky jsou řazeny podle název města.</span><span class="sxs-lookup"><span data-stu-id="8e797-132">The grouped results are ordered by city name.</span></span>  
+## <a name="example"></a><span data-ttu-id="8fda5-129">Příklad</span><span class="sxs-lookup"><span data-stu-id="8fda5-129">Example</span></span>  
+ <span data-ttu-id="8fda5-130">Následující příklad kódu seskupí seznam zákazníků na základě jejich umístění (a případně zemi) a poskytuje počet zákazníků v každé skupině.</span><span class="sxs-lookup"><span data-stu-id="8fda5-130">The following code example groups a list of customers based on their location (country) and provides a count of the customers in each group.</span></span> <span data-ttu-id="8fda5-131">Výsledky jsou seřazené podle názvu země.</span><span class="sxs-lookup"><span data-stu-id="8fda5-131">The results are ordered by country name.</span></span> <span data-ttu-id="8fda5-132">Seskupené výsledky jsou řazeny podle název města.</span><span class="sxs-lookup"><span data-stu-id="8fda5-132">The grouped results are ordered by city name.</span></span>  
   
- [!code-vb[VbSimpleQuerySamples#11](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/group-by-clause_1.vb)]  
+ [!code-vb[VbSimpleQuerySamples#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#11)]  
   
-## <a name="see-also"></a><span data-ttu-id="8e797-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8e797-133">See also</span></span>
-- [<span data-ttu-id="8e797-134">Úvod do LINQ v JAZYKU Visual Basic</span><span class="sxs-lookup"><span data-stu-id="8e797-134">Introduction to LINQ in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [<span data-ttu-id="8e797-135">Dotazy</span><span class="sxs-lookup"><span data-stu-id="8e797-135">Queries</span></span>](../../../visual-basic/language-reference/queries/index.md)
-- [<span data-ttu-id="8e797-136">Klauzule Select</span><span class="sxs-lookup"><span data-stu-id="8e797-136">Select Clause</span></span>](../../../visual-basic/language-reference/queries/select-clause.md)
-- [<span data-ttu-id="8e797-137">Klauzule From</span><span class="sxs-lookup"><span data-stu-id="8e797-137">From Clause</span></span>](../../../visual-basic/language-reference/queries/from-clause.md)
-- [<span data-ttu-id="8e797-138">Klauzule Order By</span><span class="sxs-lookup"><span data-stu-id="8e797-138">Order By Clause</span></span>](../../../visual-basic/language-reference/queries/order-by-clause.md)
-- [<span data-ttu-id="8e797-139">Klauzule Aggregate</span><span class="sxs-lookup"><span data-stu-id="8e797-139">Aggregate Clause</span></span>](../../../visual-basic/language-reference/queries/aggregate-clause.md)
-- [<span data-ttu-id="8e797-140">Klauzule Group Join</span><span class="sxs-lookup"><span data-stu-id="8e797-140">Group Join Clause</span></span>](../../../visual-basic/language-reference/queries/group-join-clause.md)
+## <a name="see-also"></a><span data-ttu-id="8fda5-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8fda5-133">See also</span></span>
+- [<span data-ttu-id="8fda5-134">Úvod do LINQ v JAZYKU Visual Basic</span><span class="sxs-lookup"><span data-stu-id="8fda5-134">Introduction to LINQ in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [<span data-ttu-id="8fda5-135">Dotazy</span><span class="sxs-lookup"><span data-stu-id="8fda5-135">Queries</span></span>](../../../visual-basic/language-reference/queries/index.md)
+- [<span data-ttu-id="8fda5-136">Klauzule Select</span><span class="sxs-lookup"><span data-stu-id="8fda5-136">Select Clause</span></span>](../../../visual-basic/language-reference/queries/select-clause.md)
+- [<span data-ttu-id="8fda5-137">Klauzule From</span><span class="sxs-lookup"><span data-stu-id="8fda5-137">From Clause</span></span>](../../../visual-basic/language-reference/queries/from-clause.md)
+- [<span data-ttu-id="8fda5-138">Klauzule Order By</span><span class="sxs-lookup"><span data-stu-id="8fda5-138">Order By Clause</span></span>](../../../visual-basic/language-reference/queries/order-by-clause.md)
+- [<span data-ttu-id="8fda5-139">Klauzule Aggregate</span><span class="sxs-lookup"><span data-stu-id="8fda5-139">Aggregate Clause</span></span>](../../../visual-basic/language-reference/queries/aggregate-clause.md)
+- [<span data-ttu-id="8fda5-140">Klauzule Group Join</span><span class="sxs-lookup"><span data-stu-id="8fda5-140">Group Join Clause</span></span>](../../../visual-basic/language-reference/queries/group-join-clause.md)

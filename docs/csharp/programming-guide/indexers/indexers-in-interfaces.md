@@ -6,34 +6,34 @@ helpviewer_keywords:
 - indexers [C#], in interfaces
 - accessors [C#], indexers
 ms.assetid: e16b54bd-4a83-4f52-bd75-65819fca79e8
-ms.openlocfilehash: 5d2dc8f5bdb0b89d5fd265ad86cbb13401bc8b14
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 07f2297512d59492320e7ac31fd44c9b0a7bedd7
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54523581"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56970685"
 ---
-# <a name="indexers-in-interfaces-c-programming-guide"></a><span data-ttu-id="6da58-102">Indexery v rozhraní (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="6da58-102">Indexers in Interfaces (C# Programming Guide)</span></span>
-<span data-ttu-id="6da58-103">Indexery mohou být deklarovány na [rozhraní](../../../csharp/language-reference/keywords/interface.md).</span><span class="sxs-lookup"><span data-stu-id="6da58-103">Indexers can be declared on an [interface](../../../csharp/language-reference/keywords/interface.md).</span></span> <span data-ttu-id="6da58-104">Přistupující objekty rozhraní indexery se liší od přístupových objektů [třídy](../../../csharp/language-reference/keywords/class.md) indexery následujícími způsoby:</span><span class="sxs-lookup"><span data-stu-id="6da58-104">Accessors of interface indexers differ from the accessors of [class](../../../csharp/language-reference/keywords/class.md) indexers in the following ways:</span></span>  
+# <a name="indexers-in-interfaces-c-programming-guide"></a><span data-ttu-id="2334f-102">Indexery v rozhraní (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="2334f-102">Indexers in Interfaces (C# Programming Guide)</span></span>
+<span data-ttu-id="2334f-103">Indexery mohou být deklarovány na [rozhraní](../../../csharp/language-reference/keywords/interface.md).</span><span class="sxs-lookup"><span data-stu-id="2334f-103">Indexers can be declared on an [interface](../../../csharp/language-reference/keywords/interface.md).</span></span> <span data-ttu-id="2334f-104">Přistupující objekty rozhraní indexery se liší od přístupových objektů [třídy](../../../csharp/language-reference/keywords/class.md) indexery následujícími způsoby:</span><span class="sxs-lookup"><span data-stu-id="2334f-104">Accessors of interface indexers differ from the accessors of [class](../../../csharp/language-reference/keywords/class.md) indexers in the following ways:</span></span>  
   
--   <span data-ttu-id="6da58-105">Přístupové objekty rozhraní nepoužívejte modifikátory.</span><span class="sxs-lookup"><span data-stu-id="6da58-105">Interface accessors do not use modifiers.</span></span>  
+-   <span data-ttu-id="2334f-105">Přístupové objekty rozhraní nepoužívejte modifikátory.</span><span class="sxs-lookup"><span data-stu-id="2334f-105">Interface accessors do not use modifiers.</span></span>  
   
--   <span data-ttu-id="6da58-106">Přístupový objekt rozhraní nemá tělo.</span><span class="sxs-lookup"><span data-stu-id="6da58-106">An interface accessor does not have a body.</span></span>  
+-   <span data-ttu-id="2334f-106">Přístupový objekt rozhraní nemá tělo.</span><span class="sxs-lookup"><span data-stu-id="2334f-106">An interface accessor does not have a body.</span></span>  
   
- <span data-ttu-id="6da58-107">Účelem přístupového objektu je proto udává, jestli je indexeru pro čtení i zápis, jen pro čtení nebo jen pro zápis.</span><span class="sxs-lookup"><span data-stu-id="6da58-107">Thus, the purpose of the accessor is to indicate whether the indexer is read-write, read-only, or write-only.</span></span>  
+ <span data-ttu-id="2334f-107">Účelem přístupového objektu je proto udává, jestli je indexeru pro čtení i zápis, jen pro čtení nebo jen pro zápis.</span><span class="sxs-lookup"><span data-stu-id="2334f-107">Thus, the purpose of the accessor is to indicate whether the indexer is read-write, read-only, or write-only.</span></span>  
   
- <span data-ttu-id="6da58-108">Následuje příklad rozhraní indexeru přístupového objektu:</span><span class="sxs-lookup"><span data-stu-id="6da58-108">The following is an example of an interface indexer accessor:</span></span>  
+ <span data-ttu-id="2334f-108">Následuje příklad rozhraní indexeru přístupového objektu:</span><span class="sxs-lookup"><span data-stu-id="2334f-108">The following is an example of an interface indexer accessor:</span></span>  
   
- [!code-csharp[csProgGuideIndexers#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/indexers-in-interfaces_1.cs)]  
+ [!code-csharp[csProgGuideIndexers#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideIndexers/CS/Indexers.cs#3)]  
   
- <span data-ttu-id="6da58-109">Podpis indexeru se musí lišit od podpisů ze všech indexerů je deklarována v stejné rozhraní.</span><span class="sxs-lookup"><span data-stu-id="6da58-109">The signature of an indexer must differ from the signatures of all other indexers declared in the same interface.</span></span>  
+ <span data-ttu-id="2334f-109">Podpis indexeru se musí lišit od podpisů ze všech indexerů je deklarována v stejné rozhraní.</span><span class="sxs-lookup"><span data-stu-id="2334f-109">The signature of an indexer must differ from the signatures of all other indexers declared in the same interface.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="6da58-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="6da58-110">Example</span></span>  
- <span data-ttu-id="6da58-111">Následující příklad ukazuje, jak implementovat rozhraní indexery.</span><span class="sxs-lookup"><span data-stu-id="6da58-111">The following example shows how to implement interface indexers.</span></span>  
+## <a name="example"></a><span data-ttu-id="2334f-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="2334f-110">Example</span></span>  
+ <span data-ttu-id="2334f-111">Následující příklad ukazuje, jak implementovat rozhraní indexery.</span><span class="sxs-lookup"><span data-stu-id="2334f-111">The following example shows how to implement interface indexers.</span></span>  
   
  [!code-csharp[csProgGuideIndexers#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/indexers-in-interfaces_2.cs)]  
   
- <span data-ttu-id="6da58-112">V předchozím příkladu můžete použít explicitní implementace členu rozhraní s použitím plně kvalifikovaný název tohoto člena rozhraní.</span><span class="sxs-lookup"><span data-stu-id="6da58-112">In the preceding example, you could use the explicit interface member implementation by using the fully qualified name of the interface member.</span></span> <span data-ttu-id="6da58-113">Příklad:</span><span class="sxs-lookup"><span data-stu-id="6da58-113">For example:</span></span>  
+ <span data-ttu-id="2334f-112">V předchozím příkladu můžete použít explicitní implementace členu rozhraní s použitím plně kvalifikovaný název tohoto člena rozhraní.</span><span class="sxs-lookup"><span data-stu-id="2334f-112">In the preceding example, you could use the explicit interface member implementation by using the fully qualified name of the interface member.</span></span> <span data-ttu-id="2334f-113">Příklad:</span><span class="sxs-lookup"><span data-stu-id="2334f-113">For example:</span></span>  
   
 ```  
 string ISomeInterface.this[int index]   
@@ -41,7 +41,7 @@ string ISomeInterface.this[int index]
 }   
 ```  
   
- <span data-ttu-id="6da58-114">Plně kvalifikovaný název je však potřeba jenom k třída implementuje víc než jedno rozhraní se stejným podpisem indexer-li předejít nejednoznačnosti.</span><span class="sxs-lookup"><span data-stu-id="6da58-114">However, the fully qualified name is only needed to avoid ambiguity when the class is implementing more than one interface with the same indexer signature.</span></span> <span data-ttu-id="6da58-115">Například pokud `Employee` třída implementuje dvě rozhraní, `ICitizen` a `IEmployee`, a obě rozhraní mají stejnou signaturu indexer, je nutné explicitní implementace členu rozhraní.</span><span class="sxs-lookup"><span data-stu-id="6da58-115">For example, if an `Employee` class is implementing two interfaces, `ICitizen` and `IEmployee`, and both interfaces have the same indexer signature, the explicit interface member implementation is necessary.</span></span> <span data-ttu-id="6da58-116">To znamená, následující deklarace indexer:</span><span class="sxs-lookup"><span data-stu-id="6da58-116">That is, the following indexer declaration:</span></span>  
+ <span data-ttu-id="2334f-114">Plně kvalifikovaný název je však potřeba jenom k třída implementuje víc než jedno rozhraní se stejným podpisem indexer-li předejít nejednoznačnosti.</span><span class="sxs-lookup"><span data-stu-id="2334f-114">However, the fully qualified name is only needed to avoid ambiguity when the class is implementing more than one interface with the same indexer signature.</span></span> <span data-ttu-id="2334f-115">Například pokud `Employee` třída implementuje dvě rozhraní, `ICitizen` a `IEmployee`, a obě rozhraní mají stejnou signaturu indexer, je nutné explicitní implementace členu rozhraní.</span><span class="sxs-lookup"><span data-stu-id="2334f-115">For example, if an `Employee` class is implementing two interfaces, `ICitizen` and `IEmployee`, and both interfaces have the same indexer signature, the explicit interface member implementation is necessary.</span></span> <span data-ttu-id="2334f-116">To znamená, následující deklarace indexer:</span><span class="sxs-lookup"><span data-stu-id="2334f-116">That is, the following indexer declaration:</span></span>  
   
 ```  
 string IEmployee.this[int index]   
@@ -49,7 +49,7 @@ string IEmployee.this[int index]
 }   
 ```  
   
- <span data-ttu-id="6da58-117">implementuje indexer na `IEmployee` rozhraní při následující deklarace:</span><span class="sxs-lookup"><span data-stu-id="6da58-117">implements the indexer on the `IEmployee` interface, while the following declaration:</span></span>  
+ <span data-ttu-id="2334f-117">implementuje indexer na `IEmployee` rozhraní při následující deklarace:</span><span class="sxs-lookup"><span data-stu-id="2334f-117">implements the indexer on the `IEmployee` interface, while the following declaration:</span></span>  
   
 ```  
 string ICitizen.this[int index]
@@ -57,11 +57,11 @@ string ICitizen.this[int index]
 }   
 ```  
   
- <span data-ttu-id="6da58-118">implementuje indexer na `ICitizen` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="6da58-118">implements the indexer on the `ICitizen` interface.</span></span>  
+ <span data-ttu-id="2334f-118">implementuje indexer na `ICitizen` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="2334f-118">implements the indexer on the `ICitizen` interface.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6da58-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6da58-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2334f-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2334f-119">See also</span></span>
 
-- [<span data-ttu-id="6da58-120">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="6da58-120">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
-- [<span data-ttu-id="6da58-121">Indexery</span><span class="sxs-lookup"><span data-stu-id="6da58-121">Indexers</span></span>](../../../csharp/programming-guide/indexers/index.md)
-- [<span data-ttu-id="6da58-122">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="6da58-122">Properties</span></span>](../../../csharp/programming-guide/classes-and-structs/properties.md)
-- [<span data-ttu-id="6da58-123">Rozhraní</span><span class="sxs-lookup"><span data-stu-id="6da58-123">Interfaces</span></span>](../../../csharp/programming-guide/interfaces/index.md)
+- [<span data-ttu-id="2334f-120">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="2334f-120">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
+- [<span data-ttu-id="2334f-121">Indexery</span><span class="sxs-lookup"><span data-stu-id="2334f-121">Indexers</span></span>](../../../csharp/programming-guide/indexers/index.md)
+- [<span data-ttu-id="2334f-122">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="2334f-122">Properties</span></span>](../../../csharp/programming-guide/classes-and-structs/properties.md)
+- [<span data-ttu-id="2334f-123">Rozhraní</span><span class="sxs-lookup"><span data-stu-id="2334f-123">Interfaces</span></span>](../../../csharp/programming-guide/interfaces/index.md)

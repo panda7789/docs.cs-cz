@@ -10,110 +10,110 @@ helpviewer_keywords:
 - unboxing [C#]
 - boxing [C#]
 ms.assetid: 8da9bbf4-bce9-4b08-b2e5-f64c11c56514
-ms.openlocfilehash: 5dcfd989e17aca9c2e94f1cf732d16fd1f4f0fef
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 333f8709fa3247be22c068b52e2fa937483acd3b
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54525727"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56973103"
 ---
-# <a name="boxing-and-unboxing-c-programming-guide"></a><span data-ttu-id="fef54-102">Zabalení a rozbalení (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="fef54-102">Boxing and Unboxing (C# Programming Guide)</span></span>
-<span data-ttu-id="fef54-103">Zabalení je proces převodu [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) typu `object` nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty.</span><span class="sxs-lookup"><span data-stu-id="fef54-103">Boxing is the process of converting a [value type](../../../csharp/language-reference/keywords/value-types.md) to the type `object` or to any interface type implemented by this value type.</span></span> <span data-ttu-id="fef54-104">Když modul CLR pole typu hodnoty, obtéká hodnotu uvnitř System.Object a uloží ji na spravované haldě.</span><span class="sxs-lookup"><span data-stu-id="fef54-104">When the CLR boxes a value type, it wraps the value inside a System.Object and stores it on the managed heap.</span></span> <span data-ttu-id="fef54-105">Rozbalení extrahuje typ hodnoty z objektu.</span><span class="sxs-lookup"><span data-stu-id="fef54-105">Unboxing extracts the value type from the object.</span></span> <span data-ttu-id="fef54-106">Zabalení je implicitní; Rozbalení je explicitní.</span><span class="sxs-lookup"><span data-stu-id="fef54-106">Boxing is implicit; unboxing is explicit.</span></span> <span data-ttu-id="fef54-107">Pojem zabalení a rozbalení základem sjednocené zobrazení C# systému typů, ve kterém lze považovat hodnotu libovolného typu za objekt.</span><span class="sxs-lookup"><span data-stu-id="fef54-107">The concept of boxing and unboxing underlies the C# unified view of the type system in which a value of any type can be treated as an object.</span></span>  
+# <a name="boxing-and-unboxing-c-programming-guide"></a><span data-ttu-id="3bc1b-102">Zabalení a rozbalení (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="3bc1b-102">Boxing and Unboxing (C# Programming Guide)</span></span>
+<span data-ttu-id="3bc1b-103">Zabalení je proces převodu [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) typu `object` nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-103">Boxing is the process of converting a [value type](../../../csharp/language-reference/keywords/value-types.md) to the type `object` or to any interface type implemented by this value type.</span></span> <span data-ttu-id="3bc1b-104">Když modul CLR pole typu hodnoty, obtéká hodnotu uvnitř System.Object a uloží ji na spravované haldě.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-104">When the CLR boxes a value type, it wraps the value inside a System.Object and stores it on the managed heap.</span></span> <span data-ttu-id="3bc1b-105">Rozbalení extrahuje typ hodnoty z objektu.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-105">Unboxing extracts the value type from the object.</span></span> <span data-ttu-id="3bc1b-106">Zabalení je implicitní; Rozbalení je explicitní.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-106">Boxing is implicit; unboxing is explicit.</span></span> <span data-ttu-id="3bc1b-107">Pojem zabalení a rozbalení základem sjednocené zobrazení C# systému typů, ve kterém lze považovat hodnotu libovolného typu za objekt.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-107">The concept of boxing and unboxing underlies the C# unified view of the type system in which a value of any type can be treated as an object.</span></span>  
   
- <span data-ttu-id="fef54-108">V následujícím příkladu proměnná integer `i` je *boxed* a přiřazené k objektu `o`.</span><span class="sxs-lookup"><span data-stu-id="fef54-108">In the following example, the integer variable `i` is *boxed* and assigned to object `o`.</span></span>  
+ <span data-ttu-id="3bc1b-108">V následujícím příkladu proměnná integer `i` je *boxed* a přiřazené k objektu `o`.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-108">In the following example, the integer variable `i` is *boxed* and assigned to object `o`.</span></span>  
   
- [!code-csharp[csProgGuideTypes#14](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_1.cs)]  
+ [!code-csharp[csProgGuideTypes#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#14)]  
   
- <span data-ttu-id="fef54-109">Objekt `o` lze potom rozbalit a přiřadit k proměnné celého čísla `i`:</span><span class="sxs-lookup"><span data-stu-id="fef54-109">The object `o` can then be unboxed and assigned to integer variable `i`:</span></span>  
+ <span data-ttu-id="3bc1b-109">Objekt `o` lze potom rozbalit a přiřadit k proměnné celého čísla `i`:</span><span class="sxs-lookup"><span data-stu-id="3bc1b-109">The object `o` can then be unboxed and assigned to integer variable `i`:</span></span>  
   
- [!code-csharp[csProgGuideTypes#15](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_2.cs)]  
+ [!code-csharp[csProgGuideTypes#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#15)]  
   
- <span data-ttu-id="fef54-110">Následující příklady ilustrují použití zabalení v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="fef54-110">The following examples illustrate how boxing is used in C#.</span></span>  
+ <span data-ttu-id="3bc1b-110">Následující příklady ilustrují použití zabalení v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-110">The following examples illustrate how boxing is used in C#.</span></span>  
   
- [!code-csharp[csProgGuideTypes#47](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_3.cs)]  
+ [!code-csharp[csProgGuideTypes#47](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#47)]  
   
-## <a name="performance"></a><span data-ttu-id="fef54-111">Výkon</span><span class="sxs-lookup"><span data-stu-id="fef54-111">Performance</span></span>  
- <span data-ttu-id="fef54-112">Vzhledem k jednoduchým přiřazením jsou zabalení a rozbalení výpočetně náročné procesy.</span><span class="sxs-lookup"><span data-stu-id="fef54-112">In relation to simple assignments, boxing and unboxing are computationally expensive processes.</span></span> <span data-ttu-id="fef54-113">Když je typ hodnoty v poli, musí být přiděleny a konstruovány nový objekt.</span><span class="sxs-lookup"><span data-stu-id="fef54-113">When a value type is boxed, a new object must be allocated and constructed.</span></span> <span data-ttu-id="fef54-114">V menší míře je přetypování potřebné pro rozbalení je také nákladné výpočetně.</span><span class="sxs-lookup"><span data-stu-id="fef54-114">To a lesser degree, the cast required for unboxing is also expensive computationally.</span></span> <span data-ttu-id="fef54-115">Další informace najdete v tématu [výkonu](../../../../docs/framework/performance/performance-tips.md).</span><span class="sxs-lookup"><span data-stu-id="fef54-115">For more information, see [Performance](../../../../docs/framework/performance/performance-tips.md).</span></span>  
+## <a name="performance"></a><span data-ttu-id="3bc1b-111">Výkon</span><span class="sxs-lookup"><span data-stu-id="3bc1b-111">Performance</span></span>  
+ <span data-ttu-id="3bc1b-112">Vzhledem k jednoduchým přiřazením jsou zabalení a rozbalení výpočetně náročné procesy.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-112">In relation to simple assignments, boxing and unboxing are computationally expensive processes.</span></span> <span data-ttu-id="3bc1b-113">Když je typ hodnoty v poli, musí být přiděleny a konstruovány nový objekt.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-113">When a value type is boxed, a new object must be allocated and constructed.</span></span> <span data-ttu-id="3bc1b-114">V menší míře je přetypování potřebné pro rozbalení je také nákladné výpočetně.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-114">To a lesser degree, the cast required for unboxing is also expensive computationally.</span></span> <span data-ttu-id="3bc1b-115">Další informace najdete v tématu [výkonu](../../../../docs/framework/performance/performance-tips.md).</span><span class="sxs-lookup"><span data-stu-id="3bc1b-115">For more information, see [Performance](../../../../docs/framework/performance/performance-tips.md).</span></span>  
   
-## <a name="boxing"></a><span data-ttu-id="fef54-116">Zabalení</span><span class="sxs-lookup"><span data-stu-id="fef54-116">Boxing</span></span>  
- <span data-ttu-id="fef54-117">Zabalení slouží k uložení typů hodnot haldy uvolňování.</span><span class="sxs-lookup"><span data-stu-id="fef54-117">Boxing is used to store value types in the garbage-collected heap.</span></span> <span data-ttu-id="fef54-118">Zabalení je implicitní převod [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) typu `object` nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty.</span><span class="sxs-lookup"><span data-stu-id="fef54-118">Boxing is an implicit conversion of a [value type](../../../csharp/language-reference/keywords/value-types.md) to the type `object` or to any interface type implemented by this value type.</span></span> <span data-ttu-id="fef54-119">Zabalení typu hodnoty přiděluje instance objektu na haldě a kopíruje hodnotu do nového objektu.</span><span class="sxs-lookup"><span data-stu-id="fef54-119">Boxing a value type allocates an object instance on the heap and copies the value into the new object.</span></span>  
+## <a name="boxing"></a><span data-ttu-id="3bc1b-116">Zabalení</span><span class="sxs-lookup"><span data-stu-id="3bc1b-116">Boxing</span></span>  
+ <span data-ttu-id="3bc1b-117">Zabalení slouží k uložení typů hodnot haldy uvolňování.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-117">Boxing is used to store value types in the garbage-collected heap.</span></span> <span data-ttu-id="3bc1b-118">Zabalení je implicitní převod [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) typu `object` nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-118">Boxing is an implicit conversion of a [value type](../../../csharp/language-reference/keywords/value-types.md) to the type `object` or to any interface type implemented by this value type.</span></span> <span data-ttu-id="3bc1b-119">Zabalení typu hodnoty přiděluje instance objektu na haldě a kopíruje hodnotu do nového objektu.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-119">Boxing a value type allocates an object instance on the heap and copies the value into the new object.</span></span>  
   
- <span data-ttu-id="fef54-120">Vezměte v úvahu následující deklarace proměnné hodnotového typu:</span><span class="sxs-lookup"><span data-stu-id="fef54-120">Consider the following declaration of a value-type variable:</span></span>  
+ <span data-ttu-id="3bc1b-120">Vezměte v úvahu následující deklarace proměnné hodnotového typu:</span><span class="sxs-lookup"><span data-stu-id="3bc1b-120">Consider the following declaration of a value-type variable:</span></span>  
   
- [!code-csharp[csProgGuideTypes#17](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_4.cs)]  
+ [!code-csharp[csProgGuideTypes#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#17)]  
   
- <span data-ttu-id="fef54-121">Následující příkaz se implicitně týká operace zabalení pro proměnnou `i`:</span><span class="sxs-lookup"><span data-stu-id="fef54-121">The following statement implicitly applies the boxing operation on the variable `i`:</span></span>  
+ <span data-ttu-id="3bc1b-121">Následující příkaz se implicitně týká operace zabalení pro proměnnou `i`:</span><span class="sxs-lookup"><span data-stu-id="3bc1b-121">The following statement implicitly applies the boxing operation on the variable `i`:</span></span>  
   
- [!code-csharp[csProgGuideTypes#18](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_5.cs)]  
+ [!code-csharp[csProgGuideTypes#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#18)]  
   
- <span data-ttu-id="fef54-122">Výsledkem tohoto příkazu je vytvoření odkazu na objekt `o`, v zásobníku, který odkazuje na hodnotu typu `int`, na haldě.</span><span class="sxs-lookup"><span data-stu-id="fef54-122">The result of this statement is creating an object reference `o`, on the stack, that references a value of the type `int`, on the heap.</span></span> <span data-ttu-id="fef54-123">Tuto hodnotu je kopií hodnoty hodnotového typu přiřazena k proměnné `i`.</span><span class="sxs-lookup"><span data-stu-id="fef54-123">This value is a copy of the value-type value assigned to the variable `i`.</span></span> <span data-ttu-id="fef54-124">Rozdíl mezi dvěma proměnnými, `i` a `o`, je znázorněn na následujícím obrázku.</span><span class="sxs-lookup"><span data-stu-id="fef54-124">The difference between the two variables, `i` and `o`, is illustrated in the following figure.</span></span>  
+ <span data-ttu-id="3bc1b-122">Výsledkem tohoto příkazu je vytvoření odkazu na objekt `o`, v zásobníku, který odkazuje na hodnotu typu `int`, na haldě.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-122">The result of this statement is creating an object reference `o`, on the stack, that references a value of the type `int`, on the heap.</span></span> <span data-ttu-id="3bc1b-123">Tuto hodnotu je kopií hodnoty hodnotového typu přiřazena k proměnné `i`.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-123">This value is a copy of the value-type value assigned to the variable `i`.</span></span> <span data-ttu-id="3bc1b-124">Rozdíl mezi dvěma proměnnými, `i` a `o`, je znázorněn na následujícím obrázku.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-124">The difference between the two variables, `i` and `o`, is illustrated in the following figure.</span></span>  
   
- <span data-ttu-id="fef54-125">![BoxingConversion – grafika](../../../csharp/programming-guide/types/media/vcboxingconversion.gif "vcBoxingConversion")</span><span class="sxs-lookup"><span data-stu-id="fef54-125">![BoxingConversion graphic](../../../csharp/programming-guide/types/media/vcboxingconversion.gif "vcBoxingConversion")</span></span>  
-<span data-ttu-id="fef54-126">Převod na uzavřené určení</span><span class="sxs-lookup"><span data-stu-id="fef54-126">Boxing Conversion</span></span>  
+ <span data-ttu-id="3bc1b-125">![BoxingConversion – grafika](../../../csharp/programming-guide/types/media/vcboxingconversion.gif "vcBoxingConversion")</span><span class="sxs-lookup"><span data-stu-id="3bc1b-125">![BoxingConversion graphic](../../../csharp/programming-guide/types/media/vcboxingconversion.gif "vcBoxingConversion")</span></span>  
+<span data-ttu-id="3bc1b-126">Převod na uzavřené určení</span><span class="sxs-lookup"><span data-stu-id="3bc1b-126">Boxing Conversion</span></span>  
   
- <span data-ttu-id="fef54-127">Je také možné provést zabalení explicitně jako v následujícím příkladu, ale nikdy není vyžadováno explicitní zabalení:</span><span class="sxs-lookup"><span data-stu-id="fef54-127">It is also possible to perform the boxing explicitly as in the following example, but explicit boxing is never required:</span></span>  
+ <span data-ttu-id="3bc1b-127">Je také možné provést zabalení explicitně jako v následujícím příkladu, ale nikdy není vyžadováno explicitní zabalení:</span><span class="sxs-lookup"><span data-stu-id="3bc1b-127">It is also possible to perform the boxing explicitly as in the following example, but explicit boxing is never required:</span></span>  
   
- [!code-csharp[csProgGuideTypes#19](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_6.cs)]  
+ [!code-csharp[csProgGuideTypes#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#19)]  
   
-## <a name="description"></a><span data-ttu-id="fef54-128">Popis</span><span class="sxs-lookup"><span data-stu-id="fef54-128">Description</span></span>  
- <span data-ttu-id="fef54-129">V tomto příkladu se převede celočíselná proměnná `i` objektu `o` pomocí uzavřeného určení.</span><span class="sxs-lookup"><span data-stu-id="fef54-129">This example converts an integer variable `i` to an object `o` by using boxing.</span></span> <span data-ttu-id="fef54-130">Následně je hodnota uložená v proměnné `i` se změnil z `123` k `456`.</span><span class="sxs-lookup"><span data-stu-id="fef54-130">Then, the value stored in the variable `i` is changed from `123` to `456`.</span></span> <span data-ttu-id="fef54-131">Příklad ukazuje, že typ původní hodnoty a zabalený objekt používají samostatná paměťová místa a proto mohou uchovávat různé hodnoty.</span><span class="sxs-lookup"><span data-stu-id="fef54-131">The example shows that the original value type and the boxed object use separate memory locations, and therefore can store different values.</span></span>  
+## <a name="description"></a><span data-ttu-id="3bc1b-128">Popis</span><span class="sxs-lookup"><span data-stu-id="3bc1b-128">Description</span></span>  
+ <span data-ttu-id="3bc1b-129">V tomto příkladu se převede celočíselná proměnná `i` objektu `o` pomocí uzavřeného určení.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-129">This example converts an integer variable `i` to an object `o` by using boxing.</span></span> <span data-ttu-id="3bc1b-130">Následně je hodnota uložená v proměnné `i` se změnil z `123` k `456`.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-130">Then, the value stored in the variable `i` is changed from `123` to `456`.</span></span> <span data-ttu-id="3bc1b-131">Příklad ukazuje, že typ původní hodnoty a zabalený objekt používají samostatná paměťová místa a proto mohou uchovávat různé hodnoty.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-131">The example shows that the original value type and the boxed object use separate memory locations, and therefore can store different values.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="fef54-132">Příklad</span><span class="sxs-lookup"><span data-stu-id="fef54-132">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="3bc1b-132">Příklad</span><span class="sxs-lookup"><span data-stu-id="3bc1b-132">Example</span></span>  
  [!code-csharp[csProgGuideTypes#16](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_7.cs)]  
   
-## <a name="unboxing"></a><span data-ttu-id="fef54-133">Rozbalení</span><span class="sxs-lookup"><span data-stu-id="fef54-133">Unboxing</span></span>  
- <span data-ttu-id="fef54-134">Rozbalení je explicitní převod z typu `object` k [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) nebo z typu rozhraní na typ hodnoty, která implementuje rozhraní.</span><span class="sxs-lookup"><span data-stu-id="fef54-134">Unboxing is an explicit conversion from the type `object` to a [value type](../../../csharp/language-reference/keywords/value-types.md) or from an interface type to a value type that implements the interface.</span></span> <span data-ttu-id="fef54-135">Operace rozbalení se skládá ze:</span><span class="sxs-lookup"><span data-stu-id="fef54-135">An unboxing operation consists of:</span></span>  
+## <a name="unboxing"></a><span data-ttu-id="3bc1b-133">Rozbalení</span><span class="sxs-lookup"><span data-stu-id="3bc1b-133">Unboxing</span></span>  
+ <span data-ttu-id="3bc1b-134">Rozbalení je explicitní převod z typu `object` k [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) nebo z typu rozhraní na typ hodnoty, která implementuje rozhraní.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-134">Unboxing is an explicit conversion from the type `object` to a [value type](../../../csharp/language-reference/keywords/value-types.md) or from an interface type to a value type that implements the interface.</span></span> <span data-ttu-id="3bc1b-135">Operace rozbalení se skládá ze:</span><span class="sxs-lookup"><span data-stu-id="3bc1b-135">An unboxing operation consists of:</span></span>  
   
--   <span data-ttu-id="fef54-136">Kontrola instance objektu, abyste měli jistotu, že se jedná o zabalenou hodnotu daného typu hodnoty.</span><span class="sxs-lookup"><span data-stu-id="fef54-136">Checking the object instance to make sure that it is a boxed value of the given value type.</span></span>  
+-   <span data-ttu-id="3bc1b-136">Kontrola instance objektu, abyste měli jistotu, že se jedná o zabalenou hodnotu daného typu hodnoty.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-136">Checking the object instance to make sure that it is a boxed value of the given value type.</span></span>  
   
--   <span data-ttu-id="fef54-137">Kopírování hodnoty z instance do proměnné typu hodnoty.</span><span class="sxs-lookup"><span data-stu-id="fef54-137">Copying the value from the instance into the value-type variable.</span></span>  
+-   <span data-ttu-id="3bc1b-137">Kopírování hodnoty z instance do proměnné typu hodnoty.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-137">Copying the value from the instance into the value-type variable.</span></span>  
   
- <span data-ttu-id="fef54-138">Následující příkazy ukazují operace zabalení a rozbalení:</span><span class="sxs-lookup"><span data-stu-id="fef54-138">The following statements demonstrate both boxing and unboxing operations:</span></span>  
+ <span data-ttu-id="3bc1b-138">Následující příkazy ukazují operace zabalení a rozbalení:</span><span class="sxs-lookup"><span data-stu-id="3bc1b-138">The following statements demonstrate both boxing and unboxing operations:</span></span>  
   
- [!code-csharp[csProgGuideTypes#21](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_8.cs)]  
+ [!code-csharp[csProgGuideTypes#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#21)]  
   
- <span data-ttu-id="fef54-139">Následující obrázek ukazuje výsledek předchozích příkazů.</span><span class="sxs-lookup"><span data-stu-id="fef54-139">The following figure demonstrates the result of the previous statements.</span></span>  
+ <span data-ttu-id="3bc1b-139">Následující obrázek ukazuje výsledek předchozích příkazů.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-139">The following figure demonstrates the result of the previous statements.</span></span>  
   
- <span data-ttu-id="fef54-140">![Obrázek rozbalení převod](../../../csharp/programming-guide/types/media/vcunboxingconversion.gif "vcUnBoxingConversion")</span><span class="sxs-lookup"><span data-stu-id="fef54-140">![UnBoxing Conversion graphic](../../../csharp/programming-guide/types/media/vcunboxingconversion.gif "vcUnBoxingConversion")</span></span>  
-<span data-ttu-id="fef54-141">Převod rozbalením</span><span class="sxs-lookup"><span data-stu-id="fef54-141">Unboxing Conversion</span></span>  
+ <span data-ttu-id="3bc1b-140">![Obrázek rozbalení převod](../../../csharp/programming-guide/types/media/vcunboxingconversion.gif "vcUnBoxingConversion")</span><span class="sxs-lookup"><span data-stu-id="3bc1b-140">![UnBoxing Conversion graphic](../../../csharp/programming-guide/types/media/vcunboxingconversion.gif "vcUnBoxingConversion")</span></span>  
+<span data-ttu-id="3bc1b-141">Převod rozbalením</span><span class="sxs-lookup"><span data-stu-id="3bc1b-141">Unboxing Conversion</span></span>  
   
- <span data-ttu-id="fef54-142">Pro rozbalení typů hodnot v době spuštění úspěšné, musí být rozbalená položka odkazem na objekt, který byl dříve vytvořen zabalením instance tohoto typu hodnoty.</span><span class="sxs-lookup"><span data-stu-id="fef54-142">For the unboxing of value types to succeed at run time, the item being unboxed must be a reference to an object that was previously created by boxing an instance of that value type.</span></span> <span data-ttu-id="fef54-143">Při pokusu o rozbalení `null` způsobí, že <xref:System.NullReferenceException>.</span><span class="sxs-lookup"><span data-stu-id="fef54-143">Attempting to unbox `null` causes a <xref:System.NullReferenceException>.</span></span> <span data-ttu-id="fef54-144">Při pokusu o vybalení odkazu na nekompatibilní hodnotu způsobí typ <xref:System.InvalidCastException>.</span><span class="sxs-lookup"><span data-stu-id="fef54-144">Attempting to unbox a reference to an incompatible value type causes an <xref:System.InvalidCastException>.</span></span>  
+ <span data-ttu-id="3bc1b-142">Pro rozbalení typů hodnot v době spuštění úspěšné, musí být rozbalená položka odkazem na objekt, který byl dříve vytvořen zabalením instance tohoto typu hodnoty.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-142">For the unboxing of value types to succeed at run time, the item being unboxed must be a reference to an object that was previously created by boxing an instance of that value type.</span></span> <span data-ttu-id="3bc1b-143">Při pokusu o rozbalení `null` způsobí, že <xref:System.NullReferenceException>.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-143">Attempting to unbox `null` causes a <xref:System.NullReferenceException>.</span></span> <span data-ttu-id="3bc1b-144">Při pokusu o vybalení odkazu na nekompatibilní hodnotu způsobí typ <xref:System.InvalidCastException>.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-144">Attempting to unbox a reference to an incompatible value type causes an <xref:System.InvalidCastException>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="fef54-145">Příklad</span><span class="sxs-lookup"><span data-stu-id="fef54-145">Example</span></span>  
- <span data-ttu-id="fef54-146">Následující příklad ukazuje případ neplatného rozbalení a výsledné `InvalidCastException`.</span><span class="sxs-lookup"><span data-stu-id="fef54-146">The following example demonstrates a case of invalid unboxing and the resulting `InvalidCastException`.</span></span> <span data-ttu-id="fef54-147">Pomocí `try` a `catch`, když dojde k chybě, zobrazí se chybová zpráva.</span><span class="sxs-lookup"><span data-stu-id="fef54-147">Using `try` and `catch`, an error message is displayed when the error occurs.</span></span>  
+## <a name="example"></a><span data-ttu-id="3bc1b-145">Příklad</span><span class="sxs-lookup"><span data-stu-id="3bc1b-145">Example</span></span>  
+ <span data-ttu-id="3bc1b-146">Následující příklad ukazuje případ neplatného rozbalení a výsledné `InvalidCastException`.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-146">The following example demonstrates a case of invalid unboxing and the resulting `InvalidCastException`.</span></span> <span data-ttu-id="3bc1b-147">Pomocí `try` a `catch`, když dojde k chybě, zobrazí se chybová zpráva.</span><span class="sxs-lookup"><span data-stu-id="3bc1b-147">Using `try` and `catch`, an error message is displayed when the error occurs.</span></span>  
   
- [!code-csharp[csProgGuideTypes#20](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/boxing-and-unboxing_9.cs)]  
+ [!code-csharp[csProgGuideTypes#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#20)]  
   
- <span data-ttu-id="fef54-148">Výstup tohoto programu:</span><span class="sxs-lookup"><span data-stu-id="fef54-148">This program outputs:</span></span>  
+ <span data-ttu-id="3bc1b-148">Výstup tohoto programu:</span><span class="sxs-lookup"><span data-stu-id="3bc1b-148">This program outputs:</span></span>  
   
  `Specified cast is not valid. Error: Incorrect unboxing.`  
   
- <span data-ttu-id="fef54-149">Pokud změníte příkaz:</span><span class="sxs-lookup"><span data-stu-id="fef54-149">If you change the statement:</span></span>  
+ <span data-ttu-id="3bc1b-149">Pokud změníte příkaz:</span><span class="sxs-lookup"><span data-stu-id="3bc1b-149">If you change the statement:</span></span>  
   
 ```csharp
 int j = (short) o;  
 ```  
   
- <span data-ttu-id="fef54-150">na</span><span class="sxs-lookup"><span data-stu-id="fef54-150">to:</span></span>  
+ <span data-ttu-id="3bc1b-150">na</span><span class="sxs-lookup"><span data-stu-id="3bc1b-150">to:</span></span>  
   
 ```csharp
 int j = (int) o;  
 ```  
   
- <span data-ttu-id="fef54-151">Převod se provede, a zobrazí se výstup:</span><span class="sxs-lookup"><span data-stu-id="fef54-151">the conversion will be performed, and you will get the output:</span></span>  
+ <span data-ttu-id="3bc1b-151">Převod se provede, a zobrazí se výstup:</span><span class="sxs-lookup"><span data-stu-id="3bc1b-151">the conversion will be performed, and you will get the output:</span></span>  
   
  `Unboxing OK.`  
   
-## <a name="c-language-specification"></a><span data-ttu-id="fef54-152">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="fef54-152">C# Language Specification</span></span>  
+## <a name="c-language-specification"></a><span data-ttu-id="3bc1b-152">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="3bc1b-152">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="related-sections"></a><span data-ttu-id="fef54-153">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="fef54-153">Related Sections</span></span>  
- <span data-ttu-id="fef54-154">Další informace:</span><span class="sxs-lookup"><span data-stu-id="fef54-154">For more information:</span></span>  
+## <a name="related-sections"></a><span data-ttu-id="3bc1b-153">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="3bc1b-153">Related Sections</span></span>  
+ <span data-ttu-id="3bc1b-154">Další informace:</span><span class="sxs-lookup"><span data-stu-id="3bc1b-154">For more information:</span></span>  
   
--   [<span data-ttu-id="fef54-155">Odkazové typy</span><span class="sxs-lookup"><span data-stu-id="fef54-155">Reference Types</span></span>](../../../csharp/language-reference/keywords/reference-types.md)  
+-   [<span data-ttu-id="3bc1b-155">Odkazové typy</span><span class="sxs-lookup"><span data-stu-id="3bc1b-155">Reference Types</span></span>](../../../csharp/language-reference/keywords/reference-types.md)  
   
--   [<span data-ttu-id="fef54-156">Typy hodnot</span><span class="sxs-lookup"><span data-stu-id="fef54-156">Value Types</span></span>](../../../csharp/language-reference/keywords/value-types.md)  
+-   [<span data-ttu-id="3bc1b-156">Typy hodnot</span><span class="sxs-lookup"><span data-stu-id="3bc1b-156">Value Types</span></span>](../../../csharp/language-reference/keywords/value-types.md)  
   
-## <a name="see-also"></a><span data-ttu-id="fef54-157">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fef54-157">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3bc1b-157">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3bc1b-157">See also</span></span>
 
-- [<span data-ttu-id="fef54-158">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="fef54-158">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
+- [<span data-ttu-id="3bc1b-158">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="3bc1b-158">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)

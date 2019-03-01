@@ -12,36 +12,36 @@ helpviewer_keywords:
 - classes, overriding
 - overriding classes
 ms.assetid: 5cc1c0b0-f94b-4525-9a41-88a582cd6668
-ms.openlocfilehash: 08c686349acc5777343e8e6f2e6084be44a20fe1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0f2fe865019b24263f76595654455df7b597c1d8
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517393"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56968527"
 ---
-# <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a><span data-ttu-id="18b63-102">Postupy: Určení alternativního názvu elementu pro Stream XML</span><span class="sxs-lookup"><span data-stu-id="18b63-102">How to: Specify an Alternate Element Name for an XML Stream</span></span>
+# <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a><span data-ttu-id="c5466-102">Postupy: Určení alternativního názvu elementu pro Stream XML</span><span class="sxs-lookup"><span data-stu-id="c5466-102">How to: Specify an Alternate Element Name for an XML Stream</span></span>
   
-<span data-ttu-id="18b63-103">Použití [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx), můžete vygenerovat více než jeden datový proud XML se stejnou sadou tříd.</span><span class="sxs-lookup"><span data-stu-id="18b63-103">Using the [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx), you can generate more than one XML stream with the same set of classes.</span></span> <span data-ttu-id="18b63-104">Můžete to provést, protože dvě různé webové služby XML vyžadují stejné základní informace s pouze mírné rozdíly.</span><span class="sxs-lookup"><span data-stu-id="18b63-104">You might want to do this because two different XML Web services require the same basic information, with only slight differences.</span></span> <span data-ttu-id="18b63-105">Představte si například dvě XML webové služby, které zpracovávají objednávky pro knihy a obě vyžadují tedy čísla ISBN.</span><span class="sxs-lookup"><span data-stu-id="18b63-105">For example, imagine two XML Web services that process orders for books, and thus both require ISBN numbers.</span></span> <span data-ttu-id="18b63-106">Jedna služba používá značky \<ISBN > zatímco druhý používá značky \<BookID >.</span><span class="sxs-lookup"><span data-stu-id="18b63-106">One service uses the tag \<ISBN> while the second uses the tag \<BookID>.</span></span> <span data-ttu-id="18b63-107">Máte třídu s názvem `Book` obsahující pole s názvem `ISBN`.</span><span class="sxs-lookup"><span data-stu-id="18b63-107">You have a class named `Book` that contains a field named `ISBN`.</span></span> <span data-ttu-id="18b63-108">Pokud instance `Book` serializován třídy, standardně použije název člena (ISBN) jako název elementu značky.</span><span class="sxs-lookup"><span data-stu-id="18b63-108">When an instance of the `Book` class is serialized, it will, by default, use the member name (ISBN) as the tag element name.</span></span> <span data-ttu-id="18b63-109">U první webové služby XML je podle očekávání.</span><span class="sxs-lookup"><span data-stu-id="18b63-109">For the first XML Web service, this is as expected.</span></span> <span data-ttu-id="18b63-110">Pokud chcete odeslat datový proud XML druhý webové služby XML, je nutné přepsat serializace tak, aby byl název elementu na značku, ale `BookID`.</span><span class="sxs-lookup"><span data-stu-id="18b63-110">But to send the XML stream to the second XML Web service, you must override the serialization so that the tag's element name is `BookID`.</span></span>  
+<span data-ttu-id="c5466-103">Pomocí <xref:System.Xml.Serialization.XmlSerializer>, můžete vygenerovat více než jeden datový proud XML se stejnou sadou tříd.</span><span class="sxs-lookup"><span data-stu-id="c5466-103">Using the <xref:System.Xml.Serialization.XmlSerializer>, you can generate more than one XML stream with the same set of classes.</span></span> <span data-ttu-id="c5466-104">Můžete to provést, protože dvě různé webové služby XML vyžadují stejné základní informace s pouze mírné rozdíly.</span><span class="sxs-lookup"><span data-stu-id="c5466-104">You might want to do this because two different XML Web services require the same basic information, with only slight differences.</span></span> <span data-ttu-id="c5466-105">Představte si například dvě XML webové služby, které zpracovávají objednávky pro knihy a obě vyžadují tedy čísla ISBN.</span><span class="sxs-lookup"><span data-stu-id="c5466-105">For example, imagine two XML Web services that process orders for books, and thus both require ISBN numbers.</span></span> <span data-ttu-id="c5466-106">Jedna služba používá značky \<ISBN > zatímco druhý používá značky \<BookID >.</span><span class="sxs-lookup"><span data-stu-id="c5466-106">One service uses the tag \<ISBN> while the second uses the tag \<BookID>.</span></span> <span data-ttu-id="c5466-107">Máte třídu s názvem `Book` obsahující pole s názvem `ISBN`.</span><span class="sxs-lookup"><span data-stu-id="c5466-107">You have a class named `Book` that contains a field named `ISBN`.</span></span> <span data-ttu-id="c5466-108">Pokud instance `Book` serializován třídy, standardně použije název člena (ISBN) jako název elementu značky.</span><span class="sxs-lookup"><span data-stu-id="c5466-108">When an instance of the `Book` class is serialized, it will, by default, use the member name (ISBN) as the tag element name.</span></span> <span data-ttu-id="c5466-109">U první webové služby XML je podle očekávání.</span><span class="sxs-lookup"><span data-stu-id="c5466-109">For the first XML Web service, this is as expected.</span></span> <span data-ttu-id="c5466-110">Pokud chcete odeslat datový proud XML druhý webové služby XML, je nutné přepsat serializace tak, aby byl název elementu na značku, ale `BookID`.</span><span class="sxs-lookup"><span data-stu-id="c5466-110">But to send the XML stream to the second XML Web service, you must override the serialization so that the tag's element name is `BookID`.</span></span>  
   
-## <a name="to-create-an-xml-stream-with-an-alternate-element-name"></a><span data-ttu-id="18b63-111">Chcete-li vytvořit datový proud XML s názvem alternativní elementu</span><span class="sxs-lookup"><span data-stu-id="18b63-111">To create an XML stream with an alternate element name</span></span>  
+## <a name="to-create-an-xml-stream-with-an-alternate-element-name"></a><span data-ttu-id="c5466-111">Chcete-li vytvořit datový proud XML s názvem alternativní elementu</span><span class="sxs-lookup"><span data-stu-id="c5466-111">To create an XML stream with an alternate element name</span></span>  
   
-1.  <span data-ttu-id="18b63-112">Vytvořit instanci <xref:System.Xml.Serialization.XmlElementAttribute> třídy.</span><span class="sxs-lookup"><span data-stu-id="18b63-112">Create an instance of the <xref:System.Xml.Serialization.XmlElementAttribute> class.</span></span>  
+1.  <span data-ttu-id="c5466-112">Vytvořit instanci <xref:System.Xml.Serialization.XmlElementAttribute> třídy.</span><span class="sxs-lookup"><span data-stu-id="c5466-112">Create an instance of the <xref:System.Xml.Serialization.XmlElementAttribute> class.</span></span>  
   
-2.  <span data-ttu-id="18b63-113">Nastavte <xref:System.Xml.Serialization.XmlElementAttribute.ElementName%2A> z <xref:System.Xml.Serialization.XmlElementAttribute> na "BookID".</span><span class="sxs-lookup"><span data-stu-id="18b63-113">Set the <xref:System.Xml.Serialization.XmlElementAttribute.ElementName%2A> of the <xref:System.Xml.Serialization.XmlElementAttribute> to "BookID".</span></span>  
+2.  <span data-ttu-id="c5466-113">Nastavte <xref:System.Xml.Serialization.XmlElementAttribute.ElementName%2A> z <xref:System.Xml.Serialization.XmlElementAttribute> na "BookID".</span><span class="sxs-lookup"><span data-stu-id="c5466-113">Set the <xref:System.Xml.Serialization.XmlElementAttribute.ElementName%2A> of the <xref:System.Xml.Serialization.XmlElementAttribute> to "BookID".</span></span>  
   
-3.  <span data-ttu-id="18b63-114">Vytvořit instanci <xref:System.Xml.Serialization.XmlAttributes> třídy.</span><span class="sxs-lookup"><span data-stu-id="18b63-114">Create an instance of the <xref:System.Xml.Serialization.XmlAttributes> class.</span></span>  
+3.  <span data-ttu-id="c5466-114">Vytvořit instanci <xref:System.Xml.Serialization.XmlAttributes> třídy.</span><span class="sxs-lookup"><span data-stu-id="c5466-114">Create an instance of the <xref:System.Xml.Serialization.XmlAttributes> class.</span></span>  
   
-4.  <span data-ttu-id="18b63-115">Přidat `XmlElementAttribute` do kolekce přistupovat prostřednictvím <xref:System.Xml.Serialization.XmlAttributes.XmlElements%2A> vlastnost <xref:System.Xml.Serialization.XmlAttributes> .</span><span class="sxs-lookup"><span data-stu-id="18b63-115">Add the `XmlElementAttribute` object to the collection accessed through the <xref:System.Xml.Serialization.XmlAttributes.XmlElements%2A> property of <xref:System.Xml.Serialization.XmlAttributes> .</span></span>  
+4.  <span data-ttu-id="c5466-115">Přidat `XmlElementAttribute` do kolekce přistupovat prostřednictvím <xref:System.Xml.Serialization.XmlAttributes.XmlElements%2A> vlastnost <xref:System.Xml.Serialization.XmlAttributes> .</span><span class="sxs-lookup"><span data-stu-id="c5466-115">Add the `XmlElementAttribute` object to the collection accessed through the <xref:System.Xml.Serialization.XmlAttributes.XmlElements%2A> property of <xref:System.Xml.Serialization.XmlAttributes> .</span></span>  
   
-5.  <span data-ttu-id="18b63-116">Vytvořit instanci <xref:System.Xml.Serialization.XmlAttributeOverrides> třídy.</span><span class="sxs-lookup"><span data-stu-id="18b63-116">Create an instance of the <xref:System.Xml.Serialization.XmlAttributeOverrides> class.</span></span>  
+5.  <span data-ttu-id="c5466-116">Vytvořit instanci <xref:System.Xml.Serialization.XmlAttributeOverrides> třídy.</span><span class="sxs-lookup"><span data-stu-id="c5466-116">Create an instance of the <xref:System.Xml.Serialization.XmlAttributeOverrides> class.</span></span>  
   
-6.  <span data-ttu-id="18b63-117">Přidat `XmlAttributes` k <xref:System.Xml.Serialization.XmlAttributeOverrides>, předávání typ objektu určeného k přepsání a název člena přepsání.</span><span class="sxs-lookup"><span data-stu-id="18b63-117">Add the `XmlAttributes` to the <xref:System.Xml.Serialization.XmlAttributeOverrides>, passing the type of the object to override and the name of the member being overridden.</span></span>  
+6.  <span data-ttu-id="c5466-117">Přidat `XmlAttributes` k <xref:System.Xml.Serialization.XmlAttributeOverrides>, předávání typ objektu určeného k přepsání a název člena přepsání.</span><span class="sxs-lookup"><span data-stu-id="c5466-117">Add the `XmlAttributes` to the <xref:System.Xml.Serialization.XmlAttributeOverrides>, passing the type of the object to override and the name of the member being overridden.</span></span>  
   
-7.  <span data-ttu-id="18b63-118">Vytvořit instanci `XmlSerializer` třídy s `XmlAttributeOverrides`.</span><span class="sxs-lookup"><span data-stu-id="18b63-118">Create an instance of the `XmlSerializer` class with `XmlAttributeOverrides`.</span></span>  
+7.  <span data-ttu-id="c5466-118">Vytvořit instanci `XmlSerializer` třídy s `XmlAttributeOverrides`.</span><span class="sxs-lookup"><span data-stu-id="c5466-118">Create an instance of the `XmlSerializer` class with `XmlAttributeOverrides`.</span></span>  
   
-8.  <span data-ttu-id="18b63-119">Vytvořit instanci `Book` třídy a serializaci nebo deserializaci ji.</span><span class="sxs-lookup"><span data-stu-id="18b63-119">Create an instance of the `Book` class, and serialize or deserialize it.</span></span>  
+8.  <span data-ttu-id="c5466-119">Vytvořit instanci `Book` třídy a serializaci nebo deserializaci ji.</span><span class="sxs-lookup"><span data-stu-id="c5466-119">Create an instance of the `Book` class, and serialize or deserialize it.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="18b63-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="18b63-120">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="c5466-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="c5466-120">Example</span></span>  
   
 ```vb  
 Public Class SerializeOverride()  
@@ -83,7 +83,7 @@ public class SerializeOverride()
 }  
 ```  
   
- <span data-ttu-id="18b63-121">Datový proud XML může vypadat takto.</span><span class="sxs-lookup"><span data-stu-id="18b63-121">The XML stream might resemble the following.</span></span>  
+ <span data-ttu-id="c5466-121">Datový proud XML může vypadat takto.</span><span class="sxs-lookup"><span data-stu-id="c5466-121">The XML stream might resemble the following.</span></span>  
   
 ```xml  
 <Book>  
@@ -91,13 +91,13 @@ public class SerializeOverride()
 </Book>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="18b63-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="18b63-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c5466-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c5466-122">See also</span></span>
 
 - <xref:System.Xml.Serialization.XmlElementAttribute>
 - <xref:System.Xml.Serialization.XmlAttributes>
 - <xref:System.Xml.Serialization.XmlAttributeOverrides>
-- [<span data-ttu-id="18b63-123">Serializace XML a SOAP</span><span class="sxs-lookup"><span data-stu-id="18b63-123">XML and SOAP Serialization</span></span>](../../../docs/standard/serialization/xml-and-soap-serialization.md)
-- [<span data-ttu-id="18b63-124">XmlSerializer</span><span class="sxs-lookup"><span data-stu-id="18b63-124">XmlSerializer</span></span>](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx)
-- [<span data-ttu-id="18b63-125">Postupy: Serializace objektu</span><span class="sxs-lookup"><span data-stu-id="18b63-125">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [<span data-ttu-id="18b63-126">Postupy: Deserializace objektu</span><span class="sxs-lookup"><span data-stu-id="18b63-126">How to: Deserialize an Object</span></span>](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
-- [<span data-ttu-id="18b63-127">Postupy: Deserializace objektu</span><span class="sxs-lookup"><span data-stu-id="18b63-127">How to: Deserialize an Object</span></span>](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+- [<span data-ttu-id="c5466-123">Serializace XML a SOAP</span><span class="sxs-lookup"><span data-stu-id="c5466-123">XML and SOAP Serialization</span></span>](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- <xref:System.Xml.Serialization.XmlSerializer>
+- [<span data-ttu-id="c5466-124">Postupy: Serializace objektu</span><span class="sxs-lookup"><span data-stu-id="c5466-124">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)
+- [<span data-ttu-id="c5466-125">Postupy: Deserializace objektu</span><span class="sxs-lookup"><span data-stu-id="c5466-125">How to: Deserialize an Object</span></span>](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+- [<span data-ttu-id="c5466-126">Postupy: Deserializace objektu</span><span class="sxs-lookup"><span data-stu-id="c5466-126">How to: Deserialize an Object</span></span>](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

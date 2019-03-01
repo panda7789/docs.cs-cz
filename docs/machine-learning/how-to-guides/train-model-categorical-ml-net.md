@@ -1,33 +1,33 @@
 ---
 title: Použijte vytváření funkcí k tréninku modelu na data v kategoriích – ML.NET
 description: Zjistěte, jak použít vytváření funkcí pro strojové učení cvičení modelu zařazené do kategorií dat s ML.NET
-ms.date: 02/06/2018
+ms.date: 02/06/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: c24840ee89917d270bcbacbcf36905b4ee82a4aa
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: eedbe0499784e7a99b0101c42892652daef3a114
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092082"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56968410"
 ---
-# <a name="apply-feature-engineering-for-model-training-on-categorical-data---mlnet"></a><span data-ttu-id="4da51-103">Použijte vytváření funkcí k tréninku modelu na data v kategoriích – ML.NET</span><span class="sxs-lookup"><span data-stu-id="4da51-103">Apply feature engineering for model training on categorical data - ML.NET</span></span>
+# <a name="apply-feature-engineering-for-model-training-on-categorical-data---mlnet"></a><span data-ttu-id="e4029-103">Použijte vytváření funkcí k tréninku modelu na data v kategoriích – ML.NET</span><span class="sxs-lookup"><span data-stu-id="e4029-103">Apply feature engineering for model training on categorical data - ML.NET</span></span>
 
-<span data-ttu-id="4da51-104">Je potřeba převést všechna data bez typu float pro `float` datové typy od všech ML.NET `learners` očekávat funkce, jako je `float vector`.</span><span class="sxs-lookup"><span data-stu-id="4da51-104">You need to convert any non float data to `float` data types since all ML.NET `learners` expect features as a `float vector`.</span></span>
+<span data-ttu-id="e4029-104">Je potřeba převést všechna data bez typu float pro `float` datové typy od všech ML.NET `learners` očekávat funkce, jako je `float vector`.</span><span class="sxs-lookup"><span data-stu-id="e4029-104">You need to convert any non float data to `float` data types since all ML.NET `learners` expect features as a `float vector`.</span></span>
 
-<span data-ttu-id="4da51-105">Pokud datová sada obsahuje `categorical` data (například "výčet"), ML.NET nabízí několik možností, jak jeho převodu do funkce:</span><span class="sxs-lookup"><span data-stu-id="4da51-105">If the dataset contains `categorical` data (for example, 'enum'), ML.NET offers several ways of converting it to features:</span></span>
+<span data-ttu-id="e4029-105">Pokud datová sada obsahuje `categorical` data (například "výčet"), ML.NET nabízí několik možností, jak jeho převodu do funkce:</span><span class="sxs-lookup"><span data-stu-id="e4029-105">If the dataset contains `categorical` data (for example, 'enum'), ML.NET offers several ways of converting it to features:</span></span>
 
-- <span data-ttu-id="4da51-106">Jeden horkou kódování</span><span class="sxs-lookup"><span data-stu-id="4da51-106">One-hot encoding</span></span>
-- <span data-ttu-id="4da51-107">Hodnota hash založené na horkou jeden kódování</span><span class="sxs-lookup"><span data-stu-id="4da51-107">Hash-based one-hot encoding</span></span>
-- <span data-ttu-id="4da51-108">Binární kódování (převést kategorie se budou indexovat jako funkce trochu pořadí a použití bits)</span><span class="sxs-lookup"><span data-stu-id="4da51-108">Binary encoding (convert category index into a bit sequence and use bits as features)</span></span>
+- <span data-ttu-id="e4029-106">Jeden horkou kódování</span><span class="sxs-lookup"><span data-stu-id="e4029-106">One-hot encoding</span></span>
+- <span data-ttu-id="e4029-107">Hodnota hash založené na horkou jeden kódování</span><span class="sxs-lookup"><span data-stu-id="e4029-107">Hash-based one-hot encoding</span></span>
+- <span data-ttu-id="e4029-108">Binární kódování (převést kategorie se budou indexovat jako funkce trochu pořadí a použití bits)</span><span class="sxs-lookup"><span data-stu-id="e4029-108">Binary encoding (convert category index into a bit sequence and use bits as features)</span></span>
 
-<span data-ttu-id="4da51-109">A `one-hot encoding` může být plýtvání, pokud jsou některé kategorie velmi vysokou kardinalitu (spoustu různých hodnot, s malým nastavit často ke kterým dochází.</span><span class="sxs-lookup"><span data-stu-id="4da51-109">A `one-hot encoding` can be wasteful if some categories are very high-cardinality (lots of different values, with a small set commonly occurring.</span></span> <span data-ttu-id="4da51-110">V takovém případě snížení počtu slotů kódování pomocí funkce založená na počtu výběru.</span><span class="sxs-lookup"><span data-stu-id="4da51-110">In that case, reduce the number of slots to encode with count-based feature selection.</span></span>
+<span data-ttu-id="e4029-109">A `one-hot encoding` může být plýtvání, pokud jsou některé kategorie velmi vysokou kardinalitu (spoustu různých hodnot, s malým nastavit často ke kterým dochází.</span><span class="sxs-lookup"><span data-stu-id="e4029-109">A `one-hot encoding` can be wasteful if some categories are very high-cardinality (lots of different values, with a small set commonly occurring.</span></span> <span data-ttu-id="e4029-110">V takovém případě snížení počtu slotů kódování pomocí funkce založená na počtu výběru.</span><span class="sxs-lookup"><span data-stu-id="e4029-110">In that case, reduce the number of slots to encode with count-based feature selection.</span></span>
 
-<span data-ttu-id="4da51-111">Zahrnout zařazené do kategorií snadné přímo do kanálu ML.NET učení a zkontrolujte, že transformace zařazené do kategorií:</span><span class="sxs-lookup"><span data-stu-id="4da51-111">Include categorical featurization directly in the ML.NET learning pipeline to ensure that the categorical transformation:</span></span>
+<span data-ttu-id="e4029-111">Zahrnout zařazené do kategorií snadné přímo do kanálu ML.NET učení a zkontrolujte, že transformace zařazené do kategorií:</span><span class="sxs-lookup"><span data-stu-id="e4029-111">Include categorical featurization directly in the ML.NET learning pipeline to ensure that the categorical transformation:</span></span>
 
-- <span data-ttu-id="4da51-112">je pouze "vycvičena" na trénovací data a ne na testovací data</span><span class="sxs-lookup"><span data-stu-id="4da51-112">is only 'trained' on the training data, and not on your test data,</span></span>
-- <span data-ttu-id="4da51-113">je správně použita nová příchozí data bez další předběžné zpracování v době předpovědi.</span><span class="sxs-lookup"><span data-stu-id="4da51-113">is correctly applied to new incoming data, without extra pre-processing at prediction time.</span></span>
+- <span data-ttu-id="e4029-112">je pouze "vycvičena" na trénovací data a ne na testovací data</span><span class="sxs-lookup"><span data-stu-id="e4029-112">is only 'trained' on the training data, and not on your test data,</span></span>
+- <span data-ttu-id="e4029-113">je správně použita nová příchozí data bez další předběžné zpracování v době předpovědi.</span><span class="sxs-lookup"><span data-stu-id="e4029-113">is correctly applied to new incoming data, without extra pre-processing at prediction time.</span></span>
 
-<span data-ttu-id="4da51-114">Následující příklad ukazuje zpracování zařazené do kategorií [datovou sadu pro dospělé sčítání](https://github.com/dotnet/machinelearning/blob/master/test/data/adult.tiny.with-schema.txt):</span><span class="sxs-lookup"><span data-stu-id="4da51-114">The following example illustrates categorical handling for the [adult census dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/adult.tiny.with-schema.txt):</span></span>
+<span data-ttu-id="e4029-114">Následující příklad ukazuje zpracování zařazené do kategorií [datovou sadu pro dospělé sčítání](https://github.com/dotnet/machinelearning/blob/master/test/data/adult.tiny.with-schema.txt):</span><span class="sxs-lookup"><span data-stu-id="e4029-114">The following example illustrates categorical handling for the [adult census dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/adult.tiny.with-schema.txt):</span></span>
 
 ```console
 Label   Workclass   education   marital-status  occupation  relationship    ethnicity   sex native-country-region   age fnlwgt  education-num   capital-gain    capital-loss    hours-per-week
