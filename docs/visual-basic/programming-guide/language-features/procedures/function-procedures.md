@@ -9,12 +9,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], Function procedures
 - syntax [Visual Basic], function procedures
 ms.assetid: 1b9f632c-553b-4cb6-920a-ded117ead8c0
-ms.openlocfilehash: 8b67a6953e7788827ef1ec268f54bddf2f1392c3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f1e2c707b3caa8c7cc49a6f33840ebdfd0c89f4e
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54662254"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56968644"
 ---
 # <a name="function-procedures-visual-basic"></a>Procedury funkcí (Visual Basic)
 A `Function` postup je řadu příkazů jazyka Visual Basic ohraničená `Function` a `End Function` příkazy. `Function` Postupu provede úlohu a potom vrátí řízení volajícímu kódu. Když vrátí řízení, také vrátí hodnotu volajícímu kódu.  
@@ -83,20 +83,20 @@ End Function
   
  Syntaxe pro volání `Function` postup je následující:  
   
- *l-hodnoty*`=`*functionname* `[(` *seznam_argumentů*  `)]`  
+ *l-hodnoty*`=`*functionname* `[(` *seznam_argumentů* `)]`  
   
- `If ((` *FunctionName* `[(` *seznam_argumentů* `)] / 3) <=` *výraz*  `) Then`  
+ `If ((` *FunctionName* `[(` *seznam_argumentů* `)] / 3) <=` *výraz* `) Then`  
   
  Při volání `Function` procedury, není nutné používat jeho návratovou hodnotu. Pokud ho nevidíte, jsou provedeny všechny akce funkce, ale je návratová hodnota ignorována. <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> se často nazývá tímto způsobem.  
   
 ### <a name="illustration-of-declaration-and-call"></a>Obrázek deklarace a volání  
  Následující `Function` postup vypočítá nejdelší strana nebo přepony pravoúhlého trojúhelníku, pro obě strany zadané hodnoty.  
   
- [!code-vb[VbVbcnProcedures#1](./codesnippet/VisualBasic/function-procedures_1.vb)]  
+ [!code-vb[VbVbcnProcedures#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#1)]  
   
  Následující příklad ukazuje typické volání `hypotenuse`.  
   
- [!code-vb[VbVbcnProcedures#6](./codesnippet/VisualBasic/function-procedures_2.vb)]  
+ [!code-vb[VbVbcnProcedures#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#6)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Procedury](./index.md)

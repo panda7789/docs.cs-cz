@@ -6,12 +6,12 @@ helpviewer_keywords:
 - anonymous types [C#]
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
-ms.openlocfilehash: 179e49f44b2dbf711dae2ce81a1ef14815b7d18a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 165793155aabac23245b352959be3188b0a5a6e5
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54729756"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971166"
 ---
 # <a name="anonymous-types-c-programming-guide"></a>Anonymní typy (Průvodce programováním v C#)
 Anonymní typy poskytují pohodlný způsob, jak zapouzdřit sadu vlastnosti jen pro čtení bez nutnosti explicitně definovat typ nejprve do jediného objektu. Název typu je generovaný kompilátorem a není k dispozici na úrovni zdrojového kódu. Typ každé vlastnosti je odvozen kompilátorem.  
@@ -36,7 +36,7 @@ Console.WriteLine(v.Amount + v.Message);
   
  Pokud nezadáte názvy členů v anonymním typu, kompilátor poskytuje členům anonymní typ stejný název jako vlastnost se používá k jejich inicializaci. Název vlastnosti, která je inicializována s výrazem, musíte zadat, jak je znázorněno v předchozím příkladu. V následujícím příkladu jsou názvy vlastností anonymních typů `Color` a `Price`.  
   
- [!code-csharp[csRef30Features#81](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/anonymous-types_1.cs)]  
+ [!code-csharp[csRef30Features#81](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csRef30Features/CS/csref30.cs#81)]  
   
  Obvykle, když pomocí anonymního typu inicializovat proměnnou, deklarujete proměnnou jako implicitně typovaná lokální proměnná s použitím [var](../../../csharp/language-reference/keywords/var.md). V deklaraci proměnné nelze zadat název typu, protože pouze kompilátor má přístup k základní název anonymního typu. Další informace o `var`, naleznete v tématu [implicitně typované lokální proměnné](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
   

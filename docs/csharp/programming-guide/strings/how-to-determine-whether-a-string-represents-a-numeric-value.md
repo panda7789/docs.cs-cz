@@ -7,12 +7,12 @@ helpviewer_keywords:
 - validating numeric input [C#]
 - strings [C#], numeric
 ms.assetid: a4e84e10-ea0a-489f-a868-503dded9d85f
-ms.openlocfilehash: 77673256caba640f1340fc8218bea020f5fc04f7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dcba1651c736b58b2c95bac21f086c46417629df
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54696370"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56980747"
 ---
 # <a name="how-to-determine-whether-a-string-represents-a-numeric-value-c-programming-guide"></a>Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu (C# Průvodce programováním v)
 Chcete-li zjistit, zda je řetězec reprezentaci platná zadané číselného typu, použijte statické `TryParse` metodu, která je implementována všechny primitivní číselné typy a také typy, jako <xref:System.DateTime> a <xref:System.Net.IPAddress>. Následující příklad ukazuje, jak zjistit, jestli "108" je platný [int](../../../csharp/language-reference/keywords/int.md).  
@@ -31,7 +31,7 @@ bool result = int.TryParse(s, out i); //i now = 108
 ## <a name="example"></a>Příklad  
  Následující příklady ukazují, jak používat `TryParse` s řetězcové reprezentace `long`, `byte`, a `decimal` hodnoty.  
   
- [!code-csharp[csProgGuideStrings#14](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-determine-whether-a-string-represents-a-numeric-value_1.cs)]  
+ [!code-csharp[csProgGuideStrings#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#14)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Primitivní číselné typy i implementace `Parse` statická metoda, která vyvolá výjimku, pokud řetězec není platné číslo. `TryParse` je obecně efektivnější, protože se právě vrací hodnotu false, pokud číslo není platné.  
