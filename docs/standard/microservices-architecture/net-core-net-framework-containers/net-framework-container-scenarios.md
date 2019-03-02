@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: a4da138540d8a2b8c1ac322c00904cff2b329aea
-ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
+ms.openlocfilehash: 4c1149c02c32c357c4817af539eb0cf529266181
+ms.sourcegitcommit: a532e8314c3a4b5b039656567fedff9787a31957
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55479903"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251011"
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Framework
 
@@ -23,7 +23,7 @@ Ve většině případů pro tento scénář nebude nutné migrovat existující
 
 ## <a name="using-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>Pomocí knihovny .NET třetích stran nebo není k dispozici balíčky NuGet pro .NET Core
 
-Rychle využívají knihovny třetích stran [.NET Standard](../../net-standard.md), což umožňuje sdílení kódu mezi všechny typy .NET, včetně .NET Core. S rozhraním .NET Standard 2.0 knihovny a nad rámec plochy rozhraní API se stal kompatibility přes různá rozhraní výrazně větší a v .NET Core 2.x aplikací můžete také přímo odkazovat na existující knihovny rozhraní .NET Framework (viz [compat překrytí](https://github.com/dotnet/standard/blob/master/docs/netstandard-20/README.md#net-framework-461-supporting-net-standard-20)).
+Rychle využívají knihovny třetích stran [.NET Standard](../../net-standard.md), což umožňuje sdílení kódu mezi všechny typy .NET, včetně .NET Core. S rozhraním .NET Standard 2.0 knihovny a nad rámec plochy rozhraní API se stal kompatibility přes různá rozhraní výrazně větší a v .NET Core 2.x aplikací můžete také přímo odkazovat na existující knihovny rozhraní .NET Framework (viz [.NET Framework 4.6.1 podporuje .NET Standard 2.0](https://github.com/dotnet/standard/blob/master/docs/planning/netstandard-2.0/README.md#net-framework-461-supporting-net-standard-20)).
 
 Kromě toho [Windows Compatibility Pack](../../../core/porting/windows-compat-pack.md) vydaná v Listopadu 2017 rozšířit plochy rozhraní API dostupné pro .NET Standard 2.0 na Windows. Tato sada umožňuje rekompilace většina stávajícího kódu pro .NET Standard 2.x s žádné nebo téměř žádné úpravy, a spustit na Windows.
 

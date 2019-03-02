@@ -6,12 +6,12 @@ ms.author: johalex
 ms.date: 02/08/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 10e0fa2cedff3e31575ad2b9c8bc2d9ecc81f3e8
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: d9c87c4f4a81c02979259a47e8c4167d80f06377
+ms.sourcegitcommit: a532e8314c3a4b5b039656567fedff9787a31957
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092537"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251089"
 ---
 # <a name="tutorial-predict-prices-using-a-regression-learner-with-mlnet"></a>Kurz: Předvídání cen pomocí learner regrese ML.NET
 
@@ -307,11 +307,11 @@ Protože chceme, aby načíst model ze souboru zip jsme předtím uložili, a My
 
 [!code-csharp[LoadTheModel](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#21 "Load the model")]
 
-Zatímco `model` je `transformer` , který pracuje na mnoho řádky dat, je potřeba k předpovědím na jednotlivé příklady o velmi běžný scénář produkčního prostředí. <xref:Microsoft.ML.PredictionEngine%602> Představuje obálku, která je vrácena z `CreatePredictionEngine` metody. Přidejte následující kód k vytvoření `PredictionEngine` jako první řádek `Predict` metody:
+Zatímco `model` je `transformer` , který pracuje na mnoho řádky dat, je potřeba k předpovědím na jednotlivé příklady o velmi běžný scénář produkčního prostředí. <xref:Microsoft.ML.PredictionEngine%602> Představuje obálku, která je vrácena z `CreatePredictionEngine` metody. Přidejte následující kód k vytvoření `PredictionEngine` jako další řádek `TestSinglePrediction` metody:
 
 [!code-csharp[MakePredictionEngine](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#22 "Create the PredictionFunction")]
   
-Tento kurz používá jeden test latence v rámci této třídy. Později můžete přidat další scénáře můžete experimentovat s modelem. Přidat cestu k otestování předpovědi trénovaného modelu nákladů `Predict` metodu tak, že vytvoříte instanci `TaxiTrip`:
+Tento kurz používá jeden test latence v rámci této třídy. Později můžete přidat další scénáře můžete experimentovat s modelem. Přidat cestu k otestování předpovědi trénovaného modelu nákladů `TestSinglePrediction` metodu tak, že vytvoříte instanci `TaxiTrip`:
 
 [!code-csharp[PredictionData](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#23 "Create test data for single prediction")]
 
@@ -319,7 +319,7 @@ Tento kurz používá jeden test latence v rámci této třídy. Později může
 
 [!code-csharp[Predict](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#24 "Create a prediction of taxi fare")]
 
-K zobrazení předpokládané tarif zadané cesty, přidejte následující kód do `Main` metody:
+K zobrazení předpokládané tarif zadané cesty, přidejte následující kód do `TestSinglePrediction` metody:
 
 [!code-csharp[Predict](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#25 "Display the prediction.")]
 

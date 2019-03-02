@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], basic programming
 - Windows Communication Foundation [WCF], programming
 ms.assetid: 3ae3d498-f43c-4ecc-8cc0-6cbe36b62593
-ms.openlocfilehash: 7ae35ebeae030cc925f6c787c550941ed268e427
-ms.sourcegitcommit: af0a22a4eb11bbcd33baec49150d551955b50a16
+ms.openlocfilehash: c4c8529eb477b31eba464c9b156569819ec22941
+ms.sourcegitcommit: a532e8314c3a4b5b039656567fedff9787a31957
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56261787"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251076"
 ---
 # <a name="basic-wcf-programming"></a>Základní programování WCF
 Tato část představuje základní informace pro vytváření aplikací pro Windows Communication Foundation (WCF).  
@@ -32,7 +32,7 @@ Tato část představuje základní informace pro vytváření aplikací pro Win
  Popisuje základní informace o hostování služeb v aplikaci.  
   
  [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)  
- Popisuje, jak získat metadata ze služby, převést, který kód klienta WCF, problémy se zabezpečením, zpracování a vytváření, konfiguraci a hostování WCF klienta.  
+ Popisuje, jak získat metadata ze služeb, převést, který kód klienta WCF, zpracování problémy se zabezpečením a vytváření, konfiguraci a hostování klienta WCF.  
   
  [Úvod do rozšířitelnosti](../../../docs/framework/wcf/introduction-to-extensibility.md)  
  Popisuje, jak rozšířit WCF vytvářet vlastní řešení.  
