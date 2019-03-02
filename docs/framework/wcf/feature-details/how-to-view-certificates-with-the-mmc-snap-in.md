@@ -1,61 +1,86 @@
 ---
 title: 'Postupy: Zobrazení certifikátů pomocí modulu snap-in konzoly MMC'
-ms.date: 03/30/2017
+ms.date: 02/25/2019
 helpviewer_keywords:
 - certificates [WCF], viewing with the MMC snap-in
 ms.assetid: 2b8782aa-ebb4-4ee7-974b-90299e356dc5
-ms.openlocfilehash: 72fd6a1be2f33e1bfeb08fd43f3436627ee842e5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6ec86ffca9ae84a9c3276a3dd6de676919dcd2e0
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54521579"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57200283"
 ---
-# <a name="how-to-view-certificates-with-the-mmc-snap-in"></a><span data-ttu-id="79c7e-102">Postupy: Zobrazení certifikátů pomocí modulu snap-in konzoly MMC</span><span class="sxs-lookup"><span data-stu-id="79c7e-102">How to: View Certificates with the MMC Snap-in</span></span>
-<span data-ttu-id="79c7e-103">Společný typ přihlašovacích údajů je certifikát X.509.</span><span class="sxs-lookup"><span data-stu-id="79c7e-103">A common type of credential is the X.509 certificate.</span></span> <span data-ttu-id="79c7e-104">Při vytváření zabezpečených služeb a klientů, můžete určit certifikát použít jako pověření klienta nebo služby pomocí metody, jako <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="79c7e-104">When creating secure services or clients, you can specify a certificate be used as the client or service credential by using methods such as the <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> method.</span></span> <span data-ttu-id="79c7e-105">Metoda vyžaduje různé parametry, jako jsou úložiště, kde je certifikát uložený a hodnoty pro použití při hledání certifikátu.</span><span class="sxs-lookup"><span data-stu-id="79c7e-105">The method requires various parameters, such as the store where the certificate is stored and a value to use when searching for the certificate.</span></span> <span data-ttu-id="79c7e-106">Následující postup ukazuje, jak prozkoumat úložišti v počítači se najít odpovídající certifikát.</span><span class="sxs-lookup"><span data-stu-id="79c7e-106">The following procedure demonstrates how to examine the stores on a computer to find an appropriate certificate.</span></span> <span data-ttu-id="79c7e-107">Příklad toho, jak najít kryptografický otisk certifikátu, naleznete v tématu [jak: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).</span><span class="sxs-lookup"><span data-stu-id="79c7e-107">For an example of finding the certificate thumbprint, see [How to: Retrieve the Thumbprint of a Certificate](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).</span></span>  
+# <a name="how-to-view-certificates-with-the-mmc-snap-in"></a><span data-ttu-id="110c6-102">Postupy: Zobrazení certifikátů pomocí modulu snap-in konzoly MMC</span><span class="sxs-lookup"><span data-stu-id="110c6-102">How to: View certificates with the MMC snap-in</span></span>
+<span data-ttu-id="110c6-103">Při vytváření zabezpečeného klienta nebo služby, můžete použít [certifikát](working-with-certificates.md) jako přihlašovací údaje.</span><span class="sxs-lookup"><span data-stu-id="110c6-103">When you create a secure client or service, you can use a [certificate](working-with-certificates.md) as the credential.</span></span> <span data-ttu-id="110c6-104">Například běžný typ přihlašovacích údajů je certifikát X.509, který vytvoříte pomocí <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType> metody.</span><span class="sxs-lookup"><span data-stu-id="110c6-104">For example, a common type of credential is the X.509 certificate, which you create with the <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType> method.</span></span> 
+
+<span data-ttu-id="110c6-105">Existují tři různé typy úložišť certifikátů, které můžete zkontrolovat pomocí Microsoft Management Console (MMC) v systémech Windows:</span><span class="sxs-lookup"><span data-stu-id="110c6-105">There are three different types of certificate stores that you can examine with the Microsoft Management Console (MMC) on Windows systems:</span></span>
+
+- <span data-ttu-id="110c6-106">Místní počítač: Úložiště je místní pro zařízení a globální pro všechny uživatele v zařízení.</span><span class="sxs-lookup"><span data-stu-id="110c6-106">Local computer: The store is local to the device and global to all users on the device.</span></span>
+
+- <span data-ttu-id="110c6-107">Aktuální uživatel: Úložiště je místní pro aktuální uživatelský účet v zařízení.</span><span class="sxs-lookup"><span data-stu-id="110c6-107">Current user: The store is local to the current user account on the device.</span></span>
+
+- <span data-ttu-id="110c6-108">Účet služby: Úložiště je místní pro konkrétní službu na zařízení.</span><span class="sxs-lookup"><span data-stu-id="110c6-108">Service account: The store is local to a particular service on the device.</span></span>
+
   
-### <a name="to-view-certificates-in-the-mmc-snap-in"></a><span data-ttu-id="79c7e-108">Chcete-li zobrazit certifikáty modulu snap-in konzoly MMC</span><span class="sxs-lookup"><span data-stu-id="79c7e-108">To view certificates in the MMC snap-in</span></span>  
+## <a name="view-certificates-in-the-mmc-snap-in"></a><span data-ttu-id="110c6-109">Zobrazit certifikáty modulu snap-in konzoly MMC</span><span class="sxs-lookup"><span data-stu-id="110c6-109">View certificates in the MMC snap-in</span></span> 
+
+<span data-ttu-id="110c6-110">Následující postup ukazuje, jak prozkoumat úložišť na vaše místní zařízení najít odpovídající certifikát:</span><span class="sxs-lookup"><span data-stu-id="110c6-110">The following procedure demonstrates how to examine the stores on your local device to find an appropriate certificate:</span></span> 
   
-1.  <span data-ttu-id="79c7e-109">Otevřete okno příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="79c7e-109">Open a Command Prompt window.</span></span>  
+1. <span data-ttu-id="110c6-111">Vyberte **spustit** z **Start** nabídky a pak zadejte *konzoly mmc*.</span><span class="sxs-lookup"><span data-stu-id="110c6-111">Select **Run** from the **Start** menu, and then enter *mmc*.</span></span> 
+
+    <span data-ttu-id="110c6-112">Otevře se konzole MMC.</span><span class="sxs-lookup"><span data-stu-id="110c6-112">The MMC appears.</span></span> 
   
-2.  <span data-ttu-id="79c7e-110">Typ `mmc` a stiskněte klávesu ENTER.</span><span class="sxs-lookup"><span data-stu-id="79c7e-110">Type `mmc` and press the ENTER key.</span></span> <span data-ttu-id="79c7e-111">Všimněte si, že chcete zobrazit certifikáty v úložišti místního počítače, musí být v roli správce.</span><span class="sxs-lookup"><span data-stu-id="79c7e-111">Note that to view certificates in the local machine store, you must be in the Administrator role.</span></span>  
+2. <span data-ttu-id="110c6-113">Z **souboru** nabídce vyberte možnost **přidat nebo odebrat modul snap-In**.</span><span class="sxs-lookup"><span data-stu-id="110c6-113">From the **File** menu, select **Add/Remove Snap In**.</span></span> 
+    
+    <span data-ttu-id="110c6-114">**Přidat nebo odebrat moduly Snap in** zobrazí se okno.</span><span class="sxs-lookup"><span data-stu-id="110c6-114">The **Add or Remove Snap-ins** window appears.</span></span>
   
-3.  <span data-ttu-id="79c7e-112">Na **souboru** nabídky, klikněte na tlačítko **přidat nebo odebrat modul snap-In**.</span><span class="sxs-lookup"><span data-stu-id="79c7e-112">On the **File** menu, click **Add/Remove Snap In**.</span></span>  
+3. <span data-ttu-id="110c6-115">Z **modul snap in k dispozici** klikněte na položku **certifikáty**a pak vyberte **přidat**.</span><span class="sxs-lookup"><span data-stu-id="110c6-115">From the **Available snap-ins** list, choose **Certificates**, then select **Add**.</span></span>  
+
+    ![Přidat modul snap-in certifikátů](./media/mmc-add-certificate-snap-in.png)
   
-4.  <span data-ttu-id="79c7e-113">Klikněte na **Přidat**.</span><span class="sxs-lookup"><span data-stu-id="79c7e-113">Click **Add**.</span></span>  
+4. <span data-ttu-id="110c6-117">V **modul snap-in Certifikáty** okně **účet počítače**a pak vyberte **Další**.</span><span class="sxs-lookup"><span data-stu-id="110c6-117">In the **Certificates snap-in** window, select **Computer account**, and then select **Next**.</span></span> 
   
-5.  <span data-ttu-id="79c7e-114">V **přidat samostatný modul Snap-in** dialogu **certifikáty**.</span><span class="sxs-lookup"><span data-stu-id="79c7e-114">In the **Add Standalone Snap-in** dialog box, select **Certificates**.</span></span>  
+    <span data-ttu-id="110c6-118">Volitelně můžete vybrat **Můj uživatelský účet** pro aktuálního uživatele nebo **účet služby** pro konkrétní službu.</span><span class="sxs-lookup"><span data-stu-id="110c6-118">Optionally, you can select **My user account** for the current user or **Service account** for a particular service.</span></span> 
+
+    > [!NOTE]
+    > <span data-ttu-id="110c6-119">Pokud si nejste správce pro vaše zařízení, můžete spravovat certifikáty jenom pro váš uživatelský účet.</span><span class="sxs-lookup"><span data-stu-id="110c6-119">If you're not an administrator for your device, you can manage certificates only for your user account.</span></span>
   
-6.  <span data-ttu-id="79c7e-115">Klikněte na **Přidat**.</span><span class="sxs-lookup"><span data-stu-id="79c7e-115">Click **Add**.</span></span>  
+5. <span data-ttu-id="110c6-120">V **vybrat počítač** okně, ponechejte tuto položku **místního počítače** vybrali a pak vyberte **Dokončit**.</span><span class="sxs-lookup"><span data-stu-id="110c6-120">In the **Select Computer** window, leave **Local computer** selected, and then select **Finish**.</span></span>  
   
-7.  <span data-ttu-id="79c7e-116">V **modul snap-in Certifikáty** dialogu **účet počítače** a klikněte na tlačítko **Další**.</span><span class="sxs-lookup"><span data-stu-id="79c7e-116">In the **Certificates snap-in** dialog box, select **Computer account** and click **Next**.</span></span> <span data-ttu-id="79c7e-117">Volitelně můžete vybrat **tento uživatelský účet** nebo **účet služby**.</span><span class="sxs-lookup"><span data-stu-id="79c7e-117">Optionally, you can select **My User account** or **Service account**.</span></span> <span data-ttu-id="79c7e-118">Pokud nejste správcem tohoto počítače, můžete spravovat certifikáty jenom pro váš uživatelský účet.</span><span class="sxs-lookup"><span data-stu-id="79c7e-118">If you are not an administrator of the computer, you can manage certificates only for your user account.</span></span>  
+6. <span data-ttu-id="110c6-121">V **přidat nebo odebrat modul Snap-in** okně **OK**.</span><span class="sxs-lookup"><span data-stu-id="110c6-121">In the **Add or Remove Snap-in** window, select **OK**.</span></span>  
   
-8.  <span data-ttu-id="79c7e-119">V **vybrat počítač** dialogové okno, klikněte na tlačítko **Dokončit**.</span><span class="sxs-lookup"><span data-stu-id="79c7e-119">In the **Select Computer** dialog box, click **Finish**.</span></span>  
+    ![Přidat modul snap-in certifikátů](./media/mmc-certificate-snap-in-selected.png)
+
+7. <span data-ttu-id="110c6-123">Volitelné: Z **souboru** nabídce vyberte možnost **Uložit** nebo **uložit jako** uložit soubor konzoly MMC pro pozdější použití.</span><span class="sxs-lookup"><span data-stu-id="110c6-123">Optional: From the **File** menu, select **Save** or **Save As** to save the MMC console file for later use.</span></span>  
+
+8. <span data-ttu-id="110c6-124">Chcete-li zobrazit vaše certifikáty modulu snap-in konzoly MMC, vyberte **kořenový adresář konzoly** v levém podokně, potom rozbalte **certifikáty (místní počítač)**.</span><span class="sxs-lookup"><span data-stu-id="110c6-124">To view your certificates in the MMC snap-in, select **Console Root** in the left pane, then expand **Certificates (Local Computer)**.</span></span>
+
+    <span data-ttu-id="110c6-125">Zobrazí se seznam adresářů pro každý typ certifikátu.</span><span class="sxs-lookup"><span data-stu-id="110c6-125">A list of directories for each type of certificate appears.</span></span> <span data-ttu-id="110c6-126">Každý certifikát adresáře můžete zobrazit, export, import a odstranit certifikáty pro jeho.</span><span class="sxs-lookup"><span data-stu-id="110c6-126">From each certificate directory, you can view, export, import, and delete its certificates.</span></span>
   
-9. <span data-ttu-id="79c7e-120">V **přidat samostatný modul Snap-in** dialogové okno, klikněte na tlačítko **Zavřít**.</span><span class="sxs-lookup"><span data-stu-id="79c7e-120">In the **Add Standalone Snap-in** dialog box, click **Close**.</span></span>  
+
+## <a name="view-certificates-with-the-certificate-manager-tool"></a><span data-ttu-id="110c6-127">Zobrazení certifikátů pomocí nástroje Správce certifikátů</span><span class="sxs-lookup"><span data-stu-id="110c6-127">View certificates with the Certificate Manager tool</span></span>
+
+<span data-ttu-id="110c6-128">Můžete také zobrazit, export, import a odstranit certifikáty pomocí nástroje Správce certifikátů.</span><span class="sxs-lookup"><span data-stu-id="110c6-128">You can also view, export, import, and delete certificates by using the Certificate Manager tool.</span></span>
+
+### <a name="to-view-certificates-for-the-local-device"></a><span data-ttu-id="110c6-129">Chcete-li zobrazit certifikáty pro místní zařízení</span><span class="sxs-lookup"><span data-stu-id="110c6-129">To view certificates for the local device</span></span>
+
+1. <span data-ttu-id="110c6-130">Vyberte **spustit** z **Start** nabídky a pak zadejte *certlm.msc*.</span><span class="sxs-lookup"><span data-stu-id="110c6-130">Select **Run** from the **Start** menu, and then enter *certlm.msc*.</span></span> 
+
+    <span data-ttu-id="110c6-131">Zobrazí se nástroj Správce certifikátů pro místní zařízení.</span><span class="sxs-lookup"><span data-stu-id="110c6-131">The Certificate Manager tool for the local device appears.</span></span> 
   
-10. <span data-ttu-id="79c7e-121">Na **Přidat/odebrat modul Snap-in** dialogové okno, klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="79c7e-121">On the **Add/Remove Snap-in** dialog box, click **OK**.</span></span>  
+2. <span data-ttu-id="110c6-132">Chcete-li zobrazit certifikáty, v části **certifikáty - místní počítač** v levém podokně rozbalte adresář pro typ certifikátu, kterou chcete zobrazit.</span><span class="sxs-lookup"><span data-stu-id="110c6-132">To view your certificates, under **Certificates - Local Computer** in the left pane, expand the directory for the type of certificate you want to view.</span></span>
+
+### <a name="to-view-certificates-for-the-current-user"></a><span data-ttu-id="110c6-133">Chcete-li zobrazit certifikáty pro aktuálního uživatele</span><span class="sxs-lookup"><span data-stu-id="110c6-133">To view certificates for the current user</span></span>
+
+1. <span data-ttu-id="110c6-134">Vyberte **spustit** z **Start** nabídky a pak zadejte *certmgr.msc*.</span><span class="sxs-lookup"><span data-stu-id="110c6-134">Select **Run** from the **Start** menu, and then enter *certmgr.msc*.</span></span> 
+
+    <span data-ttu-id="110c6-135">Zobrazí se nástroj Certificate Manager pro aktuálního uživatele.</span><span class="sxs-lookup"><span data-stu-id="110c6-135">The Certificate Manager tool for the current user appears.</span></span> 
   
-11. <span data-ttu-id="79c7e-122">V **kořenový adresář konzoly** okna, klikněte na tlačítko **certifikáty (místní počítač)** zobrazíte certifikát uloží pro počítač.</span><span class="sxs-lookup"><span data-stu-id="79c7e-122">In the **Console Root** window, click **Certificates (Local Computer)** to view the certificate stores for the computer.</span></span>  
+2. <span data-ttu-id="110c6-136">Chcete-li zobrazit certifikáty, v části **certifikáty – aktuální uživatel** v levém podokně rozbalte adresář pro typ certifikátu, kterou chcete zobrazit.</span><span class="sxs-lookup"><span data-stu-id="110c6-136">To view your certificates, under **Certificates - Current User** in the left pane, expand the directory for the type of certificate you want to view.</span></span>
+
   
-12. <span data-ttu-id="79c7e-123">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="79c7e-123">Optional.</span></span> <span data-ttu-id="79c7e-124">Pokud chcete zobrazit certifikáty pro váš účet, opakujte kroky 3 až 6.</span><span class="sxs-lookup"><span data-stu-id="79c7e-124">To view certificates for your account, repeat steps 3 to 6.</span></span> <span data-ttu-id="79c7e-125">V kroku 7, místo výběru **účet počítače**, klikněte na tlačítko **tento uživatelský účet** a opakujte kroky 8 až 10.</span><span class="sxs-lookup"><span data-stu-id="79c7e-125">In step 7, instead of selecting **Computer account**, click **My User account** and repeat steps 8 to 10.</span></span>  
-  
-13. <span data-ttu-id="79c7e-126">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="79c7e-126">Optional.</span></span> <span data-ttu-id="79c7e-127">Na **souboru** nabídky, klikněte na tlačítko **Uložit** nebo **uložit jako**.</span><span class="sxs-lookup"><span data-stu-id="79c7e-127">On the **File** menu, click **Save** or **Save As**.</span></span> <span data-ttu-id="79c7e-128">Uložte soubor konzoly pro pozdější použití.</span><span class="sxs-lookup"><span data-stu-id="79c7e-128">Save the console file for later reuse.</span></span>  
-  
-## <a name="viewing-certificates-with-internet-explorer"></a><span data-ttu-id="79c7e-129">Zobrazení certifikátů pomocí Internet Exploreru</span><span class="sxs-lookup"><span data-stu-id="79c7e-129">Viewing Certificates with Internet Explorer</span></span>  
- <span data-ttu-id="79c7e-130">Můžete také zobrazit, export, import a odstranit certifikáty pomocí aplikace Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="79c7e-130">You can also view, export, import, and delete certificates by using Internet Explorer.</span></span>  
-  
-#### <a name="to-view-certificates-with-internet-explorer"></a><span data-ttu-id="79c7e-131">K zobrazení certifikátů pomocí Internet Exploreru</span><span class="sxs-lookup"><span data-stu-id="79c7e-131">To view certificates with Internet Explorer</span></span>  
-  
-1.  <span data-ttu-id="79c7e-132">V aplikaci Internet Explorer, klikněte na tlačítko **nástroje**, pak klikněte na tlačítko **Možnosti Internetu** zobrazíte **Možnosti Internetu** dialogové okno.</span><span class="sxs-lookup"><span data-stu-id="79c7e-132">In Internet Explorer, click **Tools**, then click **Internet Options** to display the **Internet Options** dialog box.</span></span>  
-  
-2.  <span data-ttu-id="79c7e-133">Klikněte na tlačítko **obsahu** kartu.</span><span class="sxs-lookup"><span data-stu-id="79c7e-133">Click the **Content** tab.</span></span>  
-  
-3.  <span data-ttu-id="79c7e-134">V části **certifikáty**, klikněte na tlačítko **certifikáty**.</span><span class="sxs-lookup"><span data-stu-id="79c7e-134">Under **Certificates**, click **Certificates**.</span></span>  
-  
-4.  <span data-ttu-id="79c7e-135">Chcete-li zobrazit podrobnosti o některý z certifikátů, vyberte certifikát a klikněte na tlačítko **zobrazení**.</span><span class="sxs-lookup"><span data-stu-id="79c7e-135">To view details of any certificate, select the certificate and click **View**.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="79c7e-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="79c7e-136">See also</span></span>
-- [<span data-ttu-id="79c7e-137">Práce s certifikáty</span><span class="sxs-lookup"><span data-stu-id="79c7e-137">Working with Certificates</span></span>](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [<span data-ttu-id="79c7e-138">Postupy: Vytváření dočasných certifikátů pro použití během vývoje.</span><span class="sxs-lookup"><span data-stu-id="79c7e-138">How to: Create Temporary Certificates for Use During Development</span></span>](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)
-- [<span data-ttu-id="79c7e-139">Postupy: Načtení kryptografického otisku certifikátu</span><span class="sxs-lookup"><span data-stu-id="79c7e-139">How to: Retrieve the Thumbprint of a Certificate</span></span>](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)
+## <a name="see-also"></a><span data-ttu-id="110c6-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="110c6-137">See also</span></span>
+- [<span data-ttu-id="110c6-138">Práce s certifikáty</span><span class="sxs-lookup"><span data-stu-id="110c6-138">Working with certificates</span></span>](working-with-certificates.md)
+- [<span data-ttu-id="110c6-139">Postupy: Vytváření dočasných certifikátů pro použití během vývoje.</span><span class="sxs-lookup"><span data-stu-id="110c6-139">How to: Create temporary certificates for use during development</span></span>](how-to-create-temporary-certificates-for-use-during-development.md)
+- [<span data-ttu-id="110c6-140">Postupy: Načtení kryptografického otisku certifikátu</span><span class="sxs-lookup"><span data-stu-id="110c6-140">How to: Retrieve the thumbprint of a certificate</span></span>](how-to-retrieve-the-thumbprint-of-a-certificate.md)
