@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-ms.openlocfilehash: def49bc4264f2cae8e17d5f00ff12ad41674da2d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5d168cbecf4f6a0c075a66ff1dd4b50b154d985c
+ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540608"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57212518"
 ---
 # <a name="service-identity-and-authentication"></a>Identita a ověřování služby
-Služby *identitě koncového bodu*je hodnota vygenerovaná ze služby webové služby WSDL (Description Language). Tato hodnota, rozšíří na všechny klienty, se používá k ověřování. Poté, co klient inicializuje komunikaci na koncový bod a služby se ověří na klienta, klient porovná hodnotu identity koncový bod s skutečná hodnota vrácená v procesu ověřování koncového bodu. Pokud se shodují, klient jistotu, že kontaktoval koncový bod služby očekávané. Tato operace funguje jako ochranu proti *phishing* zabraňuje klient se přesměrovává na koncový bod hostitelem škodlivé služby.  
+Služby *identitě koncového bodu* je hodnota vygenerovaná ze služby webové služby WSDL (Description Language). Tato hodnota, rozšíří na všechny klienty, se používá k ověřování. Poté, co klient inicializuje komunikaci na koncový bod a služby se ověří na klienta, klient porovná hodnotu identity koncový bod s skutečná hodnota vrácená v procesu ověřování koncového bodu. Pokud se shodují, klient jistotu, že kontaktoval koncový bod služby očekávané. Tato operace funguje jako ochranu proti *phishing* zabraňuje klient se přesměrovává na koncový bod hostitelem škodlivé služby.  
   
  Ukázková aplikace, který ukazuje nastavení identity, najdete v části [ukázka Identity služby](../../../../docs/framework/wcf/samples/service-identity-sample.md). Další informace o koncových bodech a adresy koncových bodů najdete v tématu [adresy](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md).  
   

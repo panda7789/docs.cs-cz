@@ -5,14 +5,14 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 97f30838d6bd61654daa800e891e3a79dd3f1297
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3eb19d151140f29e81376d64ecf9976e87459ce1
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617197"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57202675"
 ---
-# <a name="methods"></a>Metody #
+# <a name="methods"></a>Metody
 
 Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že příkazů ke spuštění volání metody a zadáním argumentů požadovanou metodu. V jazyce C# se provádí každých provedené instrukce v rámci metody. `Main` Metoda je vstupní bod pro každou aplikaci C# a je volána modulem common language runtime (CLR), když se program spustí.
 
@@ -36,7 +36,8 @@ Toto téma obsahuje následující oddíly:
 - [Iterátory](#iterators)
 
 <a name="signatures"></a>
-## <a name="method-signatures"></a>Podpisy metod ##
+
+## <a name="method-signatures"></a>Podpisy metod
 
 Metody jsou deklarovány v `class` nebo `struct` zadáním:
 
@@ -58,7 +59,8 @@ Následující příklad definuje třídu s názvem `Motorcycle` , která obsahu
 Všimněte si, `Motorcycle` třída zahrnuje přetěžované metody, `Drive`. Dvě metody se stejným názvem, ale musí být rozlišené pomocí jejich typy parametrů.
 
 <a name="invocation"></a>
-## <a name="method-invocation"></a>Volání metody ##
+
+## <a name="method-invocation"></a>Volání metody
 
 Metody mohou být buď *instance* nebo *statické*. Volání metody instance vyžaduje vytvoření instance objektu a volat metodu na objektu. Metoda instance pracuje na tuto instanci a jeho data. Volání statické metody pomocí odkazu na název typu, do kterého metoda patří; statické metody pracovat se nevztahují na instance data. Pokus o volání statické metody instancí objektu generuje chybu kompilátoru.
 
@@ -80,8 +82,9 @@ Můžete vyvolat metodu pomocí obou poziční argumenty a pojmenované argument
 
 [!code-csharp[csSnippets.Methods#46](../../samples/snippets/csharp/concepts/methods/named2.cs#46)]
 
- <a name="inherited"></a>
- ## <a name="inherited-and-overridden-methods"></a>Zděděné a přepsané metody ##
+<a name="inherited"></a>
+
+## <a name="inherited-and-overridden-methods"></a>Zděděné a přepsané metody
 
 Kromě členy, které jsou explicitně definovány v rámci typu Typ dědí členy definované v její základní třídy. Protože všechny typy v systému spravovaný typ dědí přímo nebo nepřímo <xref:System.Object> třídu, všechny typy dědit její členy jako <xref:System.Object.Equals(System.Object)>, <xref:System.Object.GetType>, a <xref:System.Object.ToString>. Následující příklad definuje `Person` třídy, vytvoří dvě `Person` objektů a volá `Person.Equals` metodou ke zjištění, zda dva objekty rovnají. `Equals` Metody, ale není definovaný v `Person` třída; je zděděno od <xref:System.Object>.
 
@@ -92,12 +95,14 @@ Typy lze přepsat pomocí zděděných členů `override` – klíčové slovo a
 [!code-csharp[csSnippets.Methods#105](../../samples/snippets/csharp/concepts/methods/overridden1.cs#105)]
 
 <a name="passing"></a>
-## <a name="passing-parameters"></a>Předávání parametrů ##
+
+## <a name="passing-parameters"></a>Předávání parametrů
 
 Typy v jazyce C# jsou buď *typů hodnot* nebo *referenční typy*. Seznam typů předdefinovaných hodnot najdete v tématu [typy a proměnné](./tour-of-csharp/types-and-variables.md). Ve výchozím nastavení typy hodnot a odkazové typy jsou předávány na metodu hodnotou.
 
 <a name="byval"></a>
-### <a name="passing-parameters-by-value"></a>Předávání parametrů podle hodnoty ###
+
+### <a name="passing-parameters-by-value"></a>Předávání parametrů podle hodnoty
 
 Pokud typ hodnoty je předán do metody podle hodnoty, kopii objektu namísto objektu samotného je předán metodě. Proto změny objektu volané metody nemají žádný vliv na původní objekt, když ovládací prvek vrátí volajícímu.
 
@@ -112,7 +117,8 @@ Následující příklad definuje třídu (což je odkazový typ) s názvem `Sam
 [!code-csharp[csSnippets.Methods#42](../../samples/snippets/csharp/concepts/methods/byvalue42.cs#42)]
 
 <a name="byref"></a>
-### <a name="passing-parameters-by-reference"></a>Předávání parametrů odkazem. ###
+
+### <a name="passing-parameters-by-reference"></a>Předávání parametrů odkazem.
 
 Předávání parametru podle odkazu, pokud chcete změňte hodnotu argumentu v metodě a chcete, aby odrážela tuto změnu, když ovládací prvek vrátí volajícímu metody. Parametr předávání pomocí odkazu, použijte [ `ref` ](language-reference/keywords/ref.md) nebo [ `out` ](language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Můžete také předat hodnotu s odkazem na vyhnout kopírování, ale stále zabránit změny pomocí [ `in` ](language-reference/keywords/in-parameter-modifier.md) – klíčové slovo.
 
@@ -127,7 +133,8 @@ Běžným vzorem, který používá parametry ref zahrnuje prohození hodnoty pr
 Předávání parametrů typu odkazu můžete změnit hodnotu referenční samotné, nikoli hodnotu jeho jednotlivé prvky nebo pole.
 
 <a name="paramarray"></a>
-### <a name="parameter-arrays"></a>Pole parametrů ###
+
+### <a name="parameter-arrays"></a>Pole parametrů
 
 V některých případech je omezující požadavek zadat přesný počet argumentů pro metodu. S použitím `params` – klíčové slovo k označení, že je parametr pole parametrů, povolíte metodu volat s proměnným počtem argumentů. Parametr označené `params` – klíčové slovo musí být typu pole a musí být posledním parametrem v seznamu parametrů metody.
 
@@ -142,7 +149,8 @@ Následující příklad definuje metodu s názvem `DoStringOperation` , který 
 [!code-csharp[csSnippets.Methods#106](../../samples/snippets/csharp/concepts/methods/byref108.cs#108)]
 
 <a name="optional"></a>
-## <a name="optional-parameters-and-arguments"></a>Volitelné parametry a argumenty ##
+
+## <a name="optional-parameters-and-arguments"></a>Volitelné parametry a argumenty
 
 Definice metody můžete určit, že její parametry jsou povinné a že jsou volitelné. Ve výchozím nastavení parametry jsou povinné. Volitelné parametry jsou určeny včetně výchozí hodnota parametru v definici metody. Při volání metody pro volitelný parametr není zadaný žádný argument, je použita výchozí hodnota.
 
@@ -172,8 +180,9 @@ Má vliv na použití volitelných parametrů *rozlišení přetěžování*, ne
 - Pokud je nalezen více než jeden Release candidate, pravidla rozlišení přetížení pro upřednostňované převody se aplikují na argumenty, které jsou explicitně zadány. Vynechaný argumenty pro volitelné parametry jsou ignorovány.
 - Pokud dvě kandidáty jsou považovány za stejnou měrou bezproblémový, předvoleb přejde na Release candidate, který nemá žádné volitelné parametry, které byly vynechány argumenty ve volání. Toto je důsledkem obecné předvoleb v rozlišení přetížení pro kandidáty, které mají méně parametrů.
 
- <a name="return"></a>
- ## <a name="return-values"></a>Vrácené hodnoty ##
+<a name="return"></a>
+
+## <a name="return-values"></a>Vrácené hodnoty
 
 Metody může vrátit hodnotu volajícímu. Pokud je návratový typ (typ uveden před název metody) `void`, metoda může vrátit hodnotu pomocí `return` – klíčové slovo. Příkaz s `return` – klíčové slovo následované proměnná, konstanta nebo výraz, který odpovídá návratový typ, vrátí tuto hodnotu volajícímu metody. Metody s jiný než void vrací typ jsou nutné k použití `return` – klíčové slovo vrátit hodnotu. `return` – Klíčové slovo také zastaví provádění metody.
 
@@ -229,8 +238,9 @@ Pokud metoda pole je předán jako argument a změní hodnotu jednotlivých prvk
 
 [!code-csharp[csSnippets.Methods#101](../../samples/snippets/csharp/concepts/methods/returnarray1.cs#101)]
 
- <a name="extension"></a>
- ## <a name="extension-methods"></a>Rozšiřující metody ##
+<a name="extension"></a>
+
+## <a name="extension-methods"></a>Rozšiřující metody
 
 Obvykle existují dva způsoby, jak přidat metodu k existujícímu typu:
 
@@ -242,7 +252,8 @@ Metody rozšíření umožňují "přidávat" metody do existujícího typu bez 
 Další informace najdete v tématu [rozšiřující metody](programming-guide/classes-and-structs/extension-methods.md).
 
 <a name="async"></a>
-## <a name="async-methods"></a>Asynchronní metody ##
+
+## <a name="async-methods"></a>Asynchronní metody
 
 Při použití asynchronní funkce, se dají vyvolat asynchronní metody bez použití explicitní zpětná volání nebo Ruční rozdělení kódu mezi více metodách a výrazech lambda.
 
@@ -262,7 +273,8 @@ Asynchronní metoda nemůže deklarovat všechny [v](language-reference/keywords
  Další informace o metodách async naleznete v tématu [Asynchronous Programming with Async and Await](async.md), [tok řízení v asynchronních programech](programming-guide/concepts/async/control-flow-in-async-programs.md), a [Async Return Types](programming-guide/concepts/async/async-return-types.md).
 
 <a name="expr"></a>
-## <a name="expression-bodied-members"></a>Členové tvoření výrazy ##
+
+## <a name="expression-bodied-members"></a>Členové tvoření výrazy
 
 Je běžné mít definice metod, které jednoduše okamžitě vrátí výsledek výrazu nebo, které mají jeden příkaz jako tělo metody.  Existuje místní syntaxe pro definování těchto metod pomocí `=>`:
 
@@ -278,7 +290,8 @@ public Customer this[long id] => store.LookupCustomer(id);
 Pokud metoda vrátí `void` nebo je asynchronní metody, výrazu příkazu (stejně jako výrazy lambda) musí být tělo metody.  Pro vlastnostmi a indexery, musí být jen pro čtení a je velmi riskantní používat `get` – klíčové slovo přistupujícího objektu.
 
 <a name="iterators"></a>
-## <a name="iterators"></a>Iterátory ##
+
+## <a name="iterators"></a>Iterátory
 
 Iterátor provádí vlastní iterace nad kolekcí, jako je například seznam nebo pole. Iterátor používá [yield return](language-reference/keywords/yield.md) příkaz vrátit vždy jeden prvek v čase. Když `yield return` je dosažen příkaz aktuální umístění se uloží, tak, aby volající mohl požadovat další prvek v sekvenci.
 
@@ -286,7 +299,7 @@ Návratový typ iterátor může být <xref:System.Collections.IEnumerable>, <xr
 
 Další informace najdete v tématu [iterátory](programming-guide/concepts/iterators.md).
 
-## <a name="see-also"></a>Viz také: ##
+## <a name="see-also"></a>Viz také:
 
 - [Modifikátory přístupu](language-reference/keywords/access-modifiers.md)
 - [Statické třídy a jejich členové](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)

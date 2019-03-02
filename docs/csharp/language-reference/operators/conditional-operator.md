@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: ca61ee323d98ece1236d9072e14d02385fbdf9f8
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: c3c875cf5b8d1b5e69cd76cb0ee4df0a989a35a0
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241785"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57202896"
 ---
 # <a name="-operator-c-reference"></a>?: – Operátor (referenční dokumentace jazyka C#)
 
@@ -45,7 +45,7 @@ a ? b : (c ? d : e)
 
 Následující příklad ukazuje použití podmíněný operátor:
 
-[!code-csharp[non ref condtional](~/samples/snippets/csharp/language-reference/operators/ConditionalExamples.cs#ConditionalValue)]
+[!code-csharp[non ref conditional](~/samples/snippets/csharp/language-reference/operators/ConditionalExamples.cs#ConditionalValue)]
 
 ## <a name="conditional-ref-expression"></a>Ref podmíněný výraz
 
@@ -89,4 +89,4 @@ Další informace najdete v tématu [Podmiňovací operátor](~/_csharplang/spec
 - [if-else – příkaz](../keywords/if-else.md)
 - [Operátory ?. a ?[]](null-conditional-operators.md)
 - [?? – operátor](null-coalescing-operator.md)
-- [REF – klíčové slovo](../keywords/ref.md)
+- [ref keyword](../keywords/ref.md)

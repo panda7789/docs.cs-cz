@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 06/20/2016
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
 ms.custom: seodec18
-ms.openlocfilehash: 231cbbde7c908c3d63d3ff0f59cf3d797e8b9543
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: a36f4a6f01c4e11429fda3a3022b4092e98db6cf
+ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612124"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57212206"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -20,7 +20,7 @@ C# má úroveň jazyka asynchronní programovací model, který umožňuje snadn
 
 ## <a name="basic-overview-of-the-asynchronous-model"></a>Základní přehled asynchronní Model
 
-Základem asynchronního programování je `Task` a `Task<T>` objekty, které model asynchronních operací.  Jsou podporovány `async` a `await` klíčová slova.  Model je ve většině případů poměrně jednoduchý: 
+Základem asynchronního programování je `Task` a `Task<T>` objekty, které model asynchronních operací.  Jsou podporovány `async` a `await` klíčová slova.  Model je ve většině případů poměrně jednoduchý:
 
 Pro vstupně-výstupní kód můžete `await` operace, která vrátí `Task` nebo `Task<T>` uvnitř `async` metoda.
 
@@ -87,11 +87,11 @@ Pro teoreticky sklon, toto je implementace [Promise modelu asynchronii](https://
 
 ## <a name="key-pieces-to-understand"></a>Důležité porozumět
 
-*   Asynchronní kód můžete použít pro vstupně-výstupní a vázané na procesor kódu, ale jinak pro jednotlivé scénáře.
-*   Používá asynchronní kód `Task<T>` a `Task`, které jsou objektů, které používá model práce na pozadí.
+* Asynchronní kód můžete použít pro vstupně-výstupní a vázané na procesor kódu, ale jinak pro jednotlivé scénáře.
+* Používá asynchronní kód `Task<T>` a `Task`, které jsou objektů, které používá model práce na pozadí.
 * `async` – Klíčové slovo změní metodu na asynchronní metodu, která umožňuje používat `await` – klíčové slovo v těle.
-*   Když `await` – klíčové slovo se použijí, volání metody pozastaví a vrací řízení volajícímu zpět, dokud není dokončen očekávaný úkol.
-*   `await` jde použít jenom v asynchronní metodě.
+* Když `await` – klíčové slovo se použijí, volání metody pozastaví a vrací řízení volajícímu zpět, dokud není dokončen očekávaný úkol.
+* `await` jde použít jenom v asynchronní metodě.
 
 ## <a name="recognize-cpu-bound-and-io-bound-work"></a>Rozpoznat vázané na procesor a vstupně-výstupní práce
 
@@ -106,7 +106,7 @@ Tady jsou dva otázek, na které je třeba požádat předtím, než začnete ps
 2. Bude kód provádět velmi náročné výpočty?
 
     Pokud jste odpověděli "Ano", pak je práce **vázané na procesor**.
-    
+
 Pokud je pracovní máte **vstupně-výstupní**, použijte `async` a `await` *bez* `Task.Run`.  Můžete *by neměla* použít Task Parallel Library.  Důvodem je popsaný v [asynchronní v článku hloubky](../standard/async-in-depth.md).
 
 Pokud je pracovní máte **vázané na procesor** a péči o rychlosti odezvy, použijte `async` a `await` ale nejde vytvořit podřízený práce vypnout v jiném vlákně *s* `Task.Run`.  Pokud práce je vhodný pro souběžnost a paralelismu, měli byste také zvážit použití [Task Parallel Library](../standard/parallel-programming/task-parallel-library-tpl.md).
@@ -185,12 +185,12 @@ public async Task<User> GetUserAsync(int userId)
 public static async Task<IEnumerable<User>> GetUsersAsync(IEnumerable<int> userIds)
 {
     var getUserTasks = new List<Task<User>>();
-    
+
     foreach (int userId in userIds)
     {
         getUserTasks.Add(GetUserAsync(userId));
     }
-    
+
     return await Task.WhenAll(getUserTasks);
 }
 ```
@@ -212,33 +212,34 @@ public static async Task<User[]> GetUsersAsync(IEnumerable<int> userIds)
     return await Task.WhenAll(getUserTasks);
 }
 ```
+
 I když je tolik kódu, aby se postaral při kombinování LINQ s asynchronní kód.  Vzhledem k tomu LINQ používá odložené provedení (opožděné), asynchronní volání se neprovede okamžitě stejně jako `foreach()` smyčky není-li vynutit generovaného sekvenčního k iteraci pomocí volání `.ToList()` nebo `.ToArray()`.
 
 ## <a name="important-info-and-advice"></a>Důležité informace a Rady
 
 Přestože je poměrně přímočarý asynchronní programování, existují některé podrobnosti potřeba mít na paměti, což může zabránit neočekávanému chování.
 
-*  `async` **metody musí mít** `await` **– klíčové slovo v jejich obsahu nebo se nikdy yield!**
+* `async` **metody musí mít** `await` **– klíčové slovo v jejich obsahu nebo se nikdy yield!**
 
 To je důležité si pamatovat.  Pokud `await` není použit v těle `async` metoda, C# kompilátor bude generovat upozornění, ale bude kód zkompilovat a spustit jako by šlo normální metody.  Pamatujte, že to by také být velmi neefektivní, jako by být provádění stavového stroje generovaný kompilátorem jazyka C# pro asynchronní metody, cokoli.
 
-*   **Jako přípona názvu každý asynchronní metoda, který napíšete, měli byste přidat "Async".**
+* **Jako přípona názvu každý asynchronní metoda, který napíšete, měli byste přidat "Async".**
 
 Toto je konvence v rozhraní .NET pro snadněji rozlišit synchronní a asynchronní metody. Všimněte si, že některé metody, které nejsou explicitně volána ve vašem kódu (například obslužné rutiny událostí nebo metody kontroleru webového) není nemusí nezbytně vztahovat. Protože tyto nejsou volány explicitně pomocí kódu, se explicitní o jejich pojmenování není důležité.
 
-*   `async void` **by měla sloužit pouze pro obslužné rutiny událostí.**
+* `async void` **by měla sloužit pouze pro obslužné rutiny událostí.**
 
 `async void` je jediný způsob, jak povolit asynchronní obslužné rutiny pracovat, protože události nemají návratové typy (tedy nemůže provádět využívání `Task` a `Task<T>`). Jakékoli další použití `async void` nedodržuje vzoru TAP a může být náročné, pokud chcete použít, jako například:
 
-  *   Výjimky vyvolané `async void` metoda nemůže být zachycena mimo tuto metodu.
-  *   `async void` metody jsou velmi obtížné testování.
-  *   `async void` metod může způsobit špatné vedlejší účinky, pokud volající není očekáván je asynchronní.
+* Výjimky vyvolané `async void` metoda nemůže být zachycena mimo tuto metodu.
+* `async void` metody jsou velmi obtížné testování.
+* `async void` metod může způsobit špatné vedlejší účinky, pokud volající není očekáván je asynchronní.
 
-*   **Pečlivě běhounu při použití asynchronní výrazy lambda v LINQ – výrazy**
+* **Pečlivě běhounu při použití asynchronní výrazy lambda v LINQ – výrazy**
 
 Výrazy lambda v jazyce LINQ pomocí odloženého provedení, můžou být nakonec význam kódu v době, kdy, jestliže neočekáváte na provádění. Po zavedení služby blokování úloh do tohoto může snadno způsobit zablokování Pokud nezapíše se správně. Kromě toho vnoření asynchronní kód tímto způsobem můžete také to ztížit argumentovat o provádění kódu. Asynchronní a LINQ jsou velmi výkonné, ale má být použit společně jako pečlivě a co je to možné.
 
-*   **Napsat kód, který čeká na úkoly způsobem neblokující**
+* **Napsat kód, který čeká na úkoly způsobem neblokující**
 
 Blokuje aktuální vlákno jako prostředek k čekání na dokončení úkolu může způsobit zablokování a konflikty blokované kontextu vlákna a můžou vyžadovat, aby výrazně složitějších zpracování chyb. Následující tabulka obsahuje pokyny k řešení problémů s čekání na neblokující způsobem úkolů:
 
@@ -249,16 +250,16 @@ Blokuje aktuální vlákno jako prostředek k čekání na dokončení úkolu m�
 | `await Task.WhenAll` | `Task.WaitAll` | Čekání na dokončení všech úloh |
 | `await Task.Delay` | `Thread.Sleep` | Čekání na časový úsek |
 
-*   **Zápis méně stavový kód**
+* **Zápis méně stavový kód**
 
 Nejsou závislé na stavu globálních objektů nebo provádění některých metod. Místo toho záviset pouze na návratové hodnoty metod. Proč?
 
-  *   Kód bude jednodušší argumentovat o.
-  *   Kód bude snazší testování.
-  *   Kombinace asynchronní a synchronní kód je mnohem jednodušší.
-  *   Ke konfliktům časování obvykle vyhnout úplně.
-  *   V závislosti na návratové hodnoty zjednodušuje koordinační asynchronní kód.
-  *   (Bonusové) je velice dobře funguje pro vkládání závislostí.
+  * Kód bude jednodušší argumentovat o.
+  * Kód bude snazší testování.
+  * Kombinace asynchronní a synchronní kód je mnohem jednodušší.
+  * Ke konfliktům časování obvykle vyhnout úplně.
+  * V závislosti na návratové hodnoty zjednodušuje koordinační asynchronní kód.
+  * (Bonusové) je velice dobře funguje pro vkládání závislostí.
 
 Doporučené cílem je dosáhnout úplné nebo téměř úplnou [referenční transparentnosti](https://en.wikipedia.org/wiki/Referential_transparency_%28computer_science%29) ve vašem kódu. To způsobí velmi předvídatelné, možností intenzivního testování a udržovatelný kód.
 

@@ -3,12 +3,12 @@ title: C#Výrazy – připravuje C# jazyka
 description: výrazy, operandy a operátory jsou stavební bloky C# jazyka
 ms.date: 11/06/2016
 ms.assetid: 20d5eb10-7381-47b9-ad90-f1cc895aa27e
-ms.openlocfilehash: 28e1d6952975c6932dc9ae40af28c7201d61d778
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 682f98d51bf4eb3c1641297972afb86956e06d3e
+ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53154931"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57212089"
 ---
 # <a name="expressions"></a>Výrazy
 
@@ -91,6 +91,6 @@ Shrnuje následující C#pro operátory, výpis operátor kategorií v pořadí 
         - `*=`   `/=`   `%=`   `+=`   `-=`   `<<=`   `>>=`   `&=`  `^=`  `|=`
     - `(T x) => y`: Anonymní funkce (výraz lambda)
 
->[!div class="step-by-step"]
->[Předchozí](types-and-variables.md)
->[další](statements.md)
+> [!div class="step-by-step"]
+> [Předchozí](types-and-variables.md)
+> [další](statements.md)

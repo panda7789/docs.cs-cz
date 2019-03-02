@@ -8,12 +8,12 @@ helpviewer_keywords:
 - anonymous types [Visual Basic]
 - types [Visual Basic], anonymous
 ms.assetid: 7b87532c-4b3e-4398-8503-6ea9d67574a4
-ms.openlocfilehash: 5ff3b12e85b9ab7fb8341bb8665a057165e78816
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 824481c9c73d496998d5810c620b2317c1ec252a
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56968015"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203438"
 ---
 # <a name="anonymous-types-visual-basic"></a>Anonymní typy (Visual Basic)
 Visual Basic podporuje anonymní typy, které vám umožní vytvářet objekty bez psaní definice třídy datového typu. Místo toho kompilátor vygeneruje třídu za vás. Třída nemá žádný použitelný název, dědí přímo z <xref:System.Object>a obsahuje vlastnosti, které jste zadali v rámci deklarace objektu. Protože není zadán název datového typu, to se označuje jako *anonymního typu*.  
@@ -81,7 +81,7 @@ Visual Basic podporuje anonymní typy, které vám umožní vytvářet objekty b
 ### <a name="read-only-values"></a>Hodnoty jen pro čtení  
  Nelze změnit hodnoty vlastnosti klíče. Například v `prod8` v předchozím příkladu `Name` a `Price` pole jsou `read-only`, ale `OnHand` lze změnit.  
   
- [!code-vb[VbVbalrAnonymousTypes#8](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-types_8.vb)]  
+ [!code-vb[VbVbalrAnonymousTypes#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#8)]  
   
 ## <a name="anonymous-types-from-query-expressions"></a>Anonymní typy z – výrazy dotazů  
  Výrazy dotazu není vždy třídou vyžadována vytváření anonymních typů. Pokud je to možné, používají k uložení dat sloupce existujícího typu. K tomu dojde, když dotaz vrátí buď celých záznamů ze zdroje dat, nebo pouze jedno pole z každého záznamu. V následujících příkladech kódu `customers` je kolekce objektů `Customer` třídy. Třída má mnoho vlastností a může obsahovat jeden nebo více z nich ve výsledku dotazu v libovolném pořadí. V první dva příklady jsou vyžadovány žádné anonymní typy, protože dotazů vyberte elementů pojmenovaných typů:  

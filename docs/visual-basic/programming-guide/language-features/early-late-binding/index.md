@@ -17,13 +17,13 @@ ms.assetid: d6ff7f1e-b94f-4205-ab8d-5cfa91758724
 # <a name="early-and-late-binding-visual-basic"></a>Statické a pozdní vazby (Visual Basic)
 Kompilátor jazyka Visual Basic provádí proces s názvem `binding` když objekt přiřazen do proměnné objektu. Objekt je *časné* při je přiřazena k proměnné deklarované jako konkrétní typy objektů. Časná vázaným objektům povolení kompilátoru přidělení paměti a provádět další optimalizace před spuštěním aplikace. Například následující fragment kódu deklaruje proměnnou typu <xref:System.IO.FileStream>:  
   
- [!code-vb[VbVbalrOOP#90](../../../../visual-basic/misc/codesnippet/VisualBasic/early-and-late-binding_1.vb)]  
+ [!code-vb[VbVbalrOOP#90](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#90)]  
   
  Protože <xref:System.IO.FileStream> je konkrétní typy objektů, přiřazenou instanci `FS` časná vazba.  
   
  Naopak je objekt *pozdní vazby* při je přiřazena k proměnné deklarované jako typ `Object`. Objekty tohoto typu můžou obsahovat odkazy na libovolný objekt, ale nemají mnohé z výhod časnou vazbou. Například následující fragment kódu deklaruje proměnnou objektu pro objekt vrácený `CreateObject` funkce:  
   
- [!code-vb[VbVbalrOOP#91](../../../../visual-basic/misc/codesnippet/VisualBasic/early-and-late-binding_2.vb)]  
+ [!code-vb[VbVbalrOOP#91](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/LateBinding.vb#91)]  
   
 ## <a name="advantages-of-early-binding"></a>Výhody časná vazba  
  Časné vazby objektů pokaždé, když je to možné, byste měli použít, protože umožňují kompilátor, aby byl důležité optimalizace, které vrací efektivnější aplikace. Časné vazby objektů jsou výrazně rychlejší než objekty s pozdní vazbou a byl kód čitelnější a udržovat tím, že s informacemi o tom právě jaký druh objekty používají. Časná vazba Další výhodou je, že umožňuje užitečných funkcí, jako je doplňování kódu pro automatickou a dynamická Nápověda, protože integrovaného vývojového prostředí (IDE) sady Visual Studio můžete určit přesně jaký typ objektu pracujete s při úpravě kód. Časné vazby snižuje množství a závažnosti chyby za běhu, protože umožňuje kompilátoru zprávy o chybách při kompilaci programu.  

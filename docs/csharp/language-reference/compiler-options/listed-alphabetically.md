@@ -3,16 +3,16 @@ title: Možnosti kompilátoru C# (abecední pořadí)
 ms.date: 05/15/2018
 helpviewer_keywords:
 - compiler options [C#], listed alpabetically
-- C# language, compiler options listed alphabitically
+- C# language, compiler options listed alphabetically
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: 7be62b3a97614faea14eb874be58c79246754903
-ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
+ms.openlocfilehash: 6c7f845027f1b3d0b23403ea45f9e6d96b2a806d
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56583651"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203558"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru C# (abecední pořadí)
 

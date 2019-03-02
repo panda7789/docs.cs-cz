@@ -4,12 +4,12 @@ description: Zjistěte, jak vytvářet knihovny .NET Core pomocí nástroje př�
 author: cartermp
 ms.date: 05/01/2017
 ms.custom: seodec18
-ms.openlocfilehash: f93c39d6225eef180634b238414fcda99750189f
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 9dd1d8477f8e34e79ff521463972e26a21ad1dfd
+ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169362"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57212063"
 ---
 # <a name="developing-libraries-with-cross-platform-tools"></a>Vývoj knihoven pomocí nástrojů pro různé platformy
 
@@ -58,9 +58,9 @@ Existují tři primární možnosti při cílení na .NET Standard, v závislost
     ```
 
 2. Pomocí úpravy hodnoty v můžete použít nižší nebo vyšší verze rozhraní .NET Standard `TargetFramework` uzlu souboru projektu.
-    
+
     Verze .NET standard jsou zpětně kompatibilní. To znamená, že `netstandard1.0` knihovny spouštět `netstandard1.1` platformy a vyšší. Však neexistuje žádná dopředné kompatibility – nižší platformy .NET Standard nemůže odkazovat na větší z nich. To znamená, že `netstandard1.0` knihovny nelze referenční dokumentace knihovny, které cílí `netstandard1.1` nebo vyšší. Vyberte verzi Standard, která má správné kombinace podpoře platforem a rozhraní API pro vaše potřeby. Doporučujeme `netstandard1.4` teď.
-    
+
 3. Pokud chcete cílit na rozhraní .NET Framework verze 4.0 nebo níže, nebo chcete použít rozhraní API, které jsou k dispozici v rozhraní .NET Framework, ale ne v .NET Standard (například `System.Drawing`), přečtěte si následující části a zjistěte, jak multitarget.
 
 ## <a name="how-to-target-the-net-framework"></a>Jak se zaměřit na rozhraní .NET Framework
@@ -131,7 +131,7 @@ Váš soubor projektu může vypadat takto:
 Všimněte si tři hlavní změny tady:
 
 1. `TargetFramework` Uzlu se nahradil `TargetFrameworks`, a tři Tfm jsou vyjádřeny v.
-1. Je `<ItemGroup>` uzel `net40 ` cílové souhrnné informace v jednom odkazu rozhraní .NET Framework.
+1. Je `<ItemGroup>` uzel `net40` cílové souhrnné informace v jednom odkazu rozhraní .NET Framework.
 1. Je `<ItemGroup>` uzel `net45` cílové stahování dva odkazy na rozhraní .NET Framework.
 
 Systém sestavení je seznámen následující symboly preprocesoru používané `#if` direktivy:
@@ -256,7 +256,7 @@ Je důležité mít možnost Testovat napříč platformami. Můžete použít b
    [!INCLUDE[DotNet Restore Note](../../../includes/dotnet-restore-note.md)]
 
 1. Ověřte, že xUnit běží spuštěním `dotnet test` příkazu. Pokud jste se rozhodli použít MSTest, byste místo toho spustit MSTest runner konzoly.
-    
+
 A to je všechno! Teď můžete otestovat vaši knihovnu na všech platformách pomocí nástrojů příkazového řádku. Pokračovat v testování teď, když máte všechno, co nastavíte, testování knihovny je velmi jednoduchý:
 
 1. Proveďte změny v knihovně.
@@ -321,7 +321,7 @@ Tato možnost přidá výše uvedených tří projektů a soubor řešení, kter
 Použití rozhraní příkazového řádku .NET Core k přidání odkazu na projekt je nejlepší způsob, jak odkazovat na projekt. Z **AwesomeLibrary.CSharp** a **AwesomeLibrary.FSharp** adresáře projektu, můžete spustit následující příkaz:
 
 ```console
-$ dotnet add reference ../AwesomeLibrary.Core/AwesomeLibrary.Core.csproj
+dotnet add reference ../AwesomeLibrary.Core/AwesomeLibrary.Core.csproj
 ```
 
 Soubory projektu pro obě **AwesomeLibrary.CSharp** a **AwesomeLibrary.FSharp** bude nyní odkaz **AwesomeLibrary.Core** jako `ProjectReference` cíl.  Můžete to ověřit tak kontrolu souborů projektu a zobrazuje v je následující:

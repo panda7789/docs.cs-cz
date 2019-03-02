@@ -6,12 +6,12 @@ helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], about exceptions
 ms.assetid: 71472c62-320a-470a-97d2-67995180389d
-ms.openlocfilehash: adbaf22e5a9e5ac826a341cc8c602085db04dd46
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 2edaf8c823f228ecb50a256961fe78980826d7f2
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965485"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203714"
 ---
 # <a name="using-exceptions-c-programming-guide"></a>Použití výjimek (Průvodce programováním v C#)
 V jazyce C# jsou chyby v programu v době běhu šířena přes program pomocí mechanizmu nazývány výjimkami. Výjimky jsou vyvolaných kódem, který dojde k chybě a zachytit kód, který můžete chybu opravit. Výjimky mohou být vyvolány pomocí rozhraní .NET Framework common language runtime (CLR) nebo kód v programu. Jakmile je vyvolána výjimka, rozšíří zásobníkem volání do `catch` se nachází příkaz pro výjimku. Nezachycených výjimek jsou zpracovány rutinou obecná výjimka poskytuje systém, který se zobrazí dialogové okno.  
@@ -28,7 +28,7 @@ V jazyce C# jsou chyby v programu v době běhu šířena přes program pomocí 
   
  A `try` příkaz může obsahovat více než jednu `catch` bloku. První `catch` je proveden příkaz, který dokáže zpracovat výjimky; všechny následující `catch` příkazy, i v případě, že jsou kompatibilní, jsou ignorovány. Proto catch bloky by měla být vždy seřazené od nejvíce konkrétní (nebo nejvíce odvozenému) nejméně specifická. Příklad:  
   
- [!code-csharp[csProgGuideExceptions#3](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/using-exceptions_3.cs)]  
+ [!code-csharp[csProgGuideExceptions#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#3)]  
   
  Před `catch` blok je spuštěn, modul runtime kontroluje `finally` bloky. `Finally` bloky povolit programátorovi, aby vyčistit všechny nejednoznačný stav, který by mohl být přetrvávající ze přerušené `try` bloku nebo uvolnit všem externím prostředkům (například obslužné rutiny grafiky, připojení k databázi nebo datové proudy souborů) bez čekání uvolňování paměti kolekce v modulu runtime pro dokončení objekty. Příklad:  
   

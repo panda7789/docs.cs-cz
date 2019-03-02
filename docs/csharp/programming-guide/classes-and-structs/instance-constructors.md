@@ -6,12 +6,12 @@ helpviewer_keywords:
 - constructors [C#], instance constructors
 - instance constructors [C#]
 ms.assetid: 24663779-c1e5-4af4-a942-ca554e4c542d
-ms.openlocfilehash: 639a0db5bcc5c5b322618ed9119c582374447d34
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: c698ffc8d1bc68b2ebcbdf4578ab5926d4743516
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979962"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203467"
 ---
 # <a name="instance-constructors-c-programming-guide"></a>Konstruktory instancí (Průvodce programováním v C#)
 Konstruktory instancí se používají k vytváření a inicializace žádné proměnné členů instance při použití [nové](../../../csharp/language-reference/keywords/new.md) výraz, který se vytvoří objekt [třídy](../../../csharp/language-reference/keywords/class.md). Inicializace [statické](../../../csharp/language-reference/keywords/static.md) třídy nebo statické proměnné v nestatické třídy, je nutné definovat statický konstruktor. Další informace najdete v tématu [statické konstruktory](../../../csharp/programming-guide/classes-and-structs/static-constructors.md).  
@@ -42,7 +42,7 @@ Konstruktory instancí se používají k vytváření a inicializace žádné pr
 ## <a name="example-1"></a>Příklad 1  
  Následující příklad ukazuje třídu s dvěma třídami konstruktory, jeden bez argumentů a druhý se dvěma argumenty.  
   
- [!code-csharp[csProgGuideObjects#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/instance-constructors_5.cs)]  
+ [!code-csharp[csProgGuideObjects#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#4)]  
   
 ## <a name="example-2"></a>Příklad 2  
  V tomto příkladu třída `Person` nemá žádné konstruktory, ve kterých případu, výchozí konstruktor je poskytována automaticky a pole jsou inicializovány na výchozích hodnotách.  

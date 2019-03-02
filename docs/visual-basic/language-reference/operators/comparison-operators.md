@@ -30,12 +30,12 @@ helpviewer_keywords:
 - Is operator [Visual Basic]
 - comparison operators [Visual Basic], Visual Basicl
 ms.assetid: d6cb12a8-e52e-46a7-8aaf-f804d634a825
-ms.openlocfilehash: bf7ff1870a523903babd7140e0d8271f9946064b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a816b1097c0a9628bb2889d39be5c029beaa3c63
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628055"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57200985"
 ---
 # <a name="comparison-operators-visual-basic"></a>Operátory porovnání (Visual Basic)
 Níže jsou operátory porovnání, které jsou definovány v jazyce Visual Basic.  
@@ -146,7 +146,7 @@ result = string Like pattern
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje různé možnosti použití relační porovnávací operátory, které můžete použít k porovnání výrazy. Vrátí relační relační operátory `Boolean` výsledek, který představuje zda uvedená výraz je vyhodnocen jako `True`. Pokud použijete `>` a `<` operátory na řetězce, je provedeno porovnání použitím normální abecedním pořadí řazení řetězců. Toto pořadí může být závislé na nastavení národního prostředí. Určuje, zda je řazení malá a velká písmena nebo není závislá [Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md) nastavení.  
   
- [!code-vb[VbVbalrOperators#1](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_1.vb)]  
+ [!code-vb[VbVbalrOperators#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#1)]  
   
  V předchozím příkladu vrátí první porovnání `False` a vrátit zbývající porovnání `True`.  
   

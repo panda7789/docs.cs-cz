@@ -3,12 +3,12 @@ title: 'Kurz: Zápis první opravu analyzátoru a kódu'
 description: Tento kurz obsahuje podrobné pokyny k sestavení analyzátor a oprava kódu pomocí sady SDK kompilátoru .NET (Roslyn API).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 2959fe3008bfca972d3a164ed27d05c2a8b0e69a
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 727e1deb859cf0f719f47b71129407b683978681
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397995"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57201895"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Kurz: Zápis první opravu analyzátoru a kódu
 
@@ -282,7 +282,7 @@ V dalším kroku nahraďte `TestMethod2` tento test, který zajišťuje diagnost
 ```csharp
 [DataTestMethod]
 [DataRow(LocalIntCouldBeConstant, LocalIntCouldBeConstantFixed, 10, 13)]
-public void WhenDiagosticIsRaisedFixUpdatesCode(
+public void WhenDiagnosticIsRaisedFixUpdatesCode(
     string test,
     string fixTest,
     int line,
@@ -422,7 +422,7 @@ První `foreach` smyčky zkontroluje každou deklaraci proměnné pomocí syntak
 
 ## <a name="add-the-final-polish"></a>Přidejte poslední polština
 
-Pak budete téměř hotovi. Existuje několik další podmínky pro vaše analyzátor pro zpracování. Visual Studio volá analyzátory, když uživatel píše kód. Je často případ, který vaše analyzátor bude volána pro kód, který nepodporuje kompilaci. Diagnostického analyzátoru `AnalyzeNode` metoda nekontroluje, jestli je konstantní hodnoty lze převést na typ proměnné. Ano, aktuální implementace využívá elastic převést nesprávná deklarace například int i = "abc" "na lokální konstanta. Přidáte konstantu zdrojové řetězce pro tuto podmínku:
+Už jste téměř hotovi. Existuje několik další podmínky pro vaše analyzátor pro zpracování. Visual Studio volá analyzátory, když uživatel píše kód. Je často případ, který vaše analyzátor bude volána pro kód, který nepodporuje kompilaci. Diagnostického analyzátoru `AnalyzeNode` metoda nekontroluje, jestli je konstantní hodnoty lze převést na typ proměnné. Ano, aktuální implementace využívá elastic převést nesprávná deklarace například int i = "abc" "na lokální konstanta. Přidáte konstantu zdrojové řetězce pro tuto podmínku:
 
 [!code-csharp[Mismatched types don't raise diagnostics](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#DeclarationIsInvalid "When the variable type and the constant type don't match, there's no diagnostic")]
 

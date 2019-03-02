@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: 6150074df9b921b4eb62169951122f5718e4f13d
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 3aeb9735876953e9332997f6b8f2ca4df9234c06
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56969957"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203386"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
 Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově orientované programování po zapouzdření a dědičnosti. Polymorfismus řecké slovo, které znamená "mnoho ve tvaru" a má dva různé aspekty:  
@@ -28,7 +28,7 @@ Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově or
   
  Nejprve vytvořte základní třídu s názvem `Shape`a odvozené třídy jako `Rectangle`, `Circle`, a `Triangle`. Poskytují `Shape` třídy virtuální metody volá `Draw`, a představuje přepsání, které v jednotlivých odvozené třídy za účelem vykreslení konkrétní obrazce třídy. Vytvoření `List<Shape>` objektu a k němu přidejte kruh, trojúhelník a obdélník. Chcete-li aktualizovat na návrhovém povrchu, použijte [foreach](../../../csharp/language-reference/keywords/foreach-in.md) smyčky k iteraci v rámci seznamu a volání `Draw` metodu na každý `Shape` objekt v seznamu. Přestože se každý objekt v seznamu má deklarovaný typ `Shape`, je typu za běhu (verze přepsané metody v každé odvozené třídy), která bude vyvolána.  
   
- [!code-csharp[csProgGuideInheritance#50](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/polymorphism_1.cs)]  
+ [!code-csharp[csProgGuideInheritance#50](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#50)]  
   
  V jazyce C#, je polymorfní každý typ, protože všechny typy, včetně uživatelem definované typy dědí <xref:System.Object>.  
   

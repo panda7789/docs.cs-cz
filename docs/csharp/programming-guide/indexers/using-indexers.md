@@ -5,16 +5,16 @@ ms.date: 10/03/2018
 helpviewer_keywords:
 - indexers [C#], about indexers
 ms.assetid: df70e1a2-3ce3-4aba-ad80-4b2f3538699f
-ms.openlocfilehash: b74e4375464cc515a281922cb1d5b5b0d1dd1954
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 6b129177e6eb916982a27ba76aca517b0642344c
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56969398"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203295"
 ---
 # <a name="using-indexers-c-programming-guide"></a>Použití indexerů (C# Programming Guide)
 
-Indexery jsou syntaktické pohodlí, které vám umožní vytvořit [třídy](../../../csharp/language-reference/keywords/class.md), [struktura](../../../csharp/language-reference/keywords/struct.md), nebo [rozhraní](../../../csharp/language-reference/keywords/interface.md) , klientské aplikace můžou k stejně jako pole. Indexery jsou nejčastěji implementovány v typech, jejichž primárním účelem je k zapouzdření vnitřní kolekce nebo pole. Předpokládejme například, že máte třídu `TempRecord` , která představuje teploty v Farenheit zjištěná v různých časech 10 během období 24 hodin. Třída obsahuje pole `temps` typu `float[]` k uložení teplotní hodnoty. Implementací indexer v této třídě klienti mají přístup k teploty v `TempRecord` instance jako `float temp = tr[4]` místo jako `float temp = tr.temps[4]`. Notace indexeru nejen zjednodušuje syntaxi pro klientské aplikace; také udržuje třídy a jejím účelem intuitivnější pro ostatní vývojáři mohli pochopit.  
+Indexery jsou syntaktické pohodlí, které vám umožní vytvořit [třídy](../../../csharp/language-reference/keywords/class.md), [struktura](../../../csharp/language-reference/keywords/struct.md), nebo [rozhraní](../../../csharp/language-reference/keywords/interface.md) , klientské aplikace můžou k stejně jako pole. Indexery jsou nejčastěji implementovány v typech, jejichž primárním účelem je k zapouzdření vnitřní kolekce nebo pole. Předpokládejme například, že máte třídu `TempRecord` , která představuje teplotu ve stupních Fahrenheita zjištěná v různých časech 10 během období 24 hodin. Třída obsahuje pole `temps` typu `float[]` k uložení teplotní hodnoty. Implementací indexer v této třídě klienti mají přístup k teploty v `TempRecord` instance jako `float temp = tr[4]` místo jako `float temp = tr.temps[4]`. Notace indexeru nejen zjednodušuje syntaxi pro klientské aplikace; také udržuje třídy a jejím účelem intuitivnější pro ostatní vývojáři mohli pochopit.  
   
 Chcete-li deklarovat indexer na třídě nebo struktuře, použijte [to](../../../csharp/language-reference/keywords/this.md) – klíčové slovo, jako v následujícím příkladu:
 
@@ -63,7 +63,7 @@ C#neomezuje typ parametru indexer na celé číslo. Například může být vhod
   
 Následující příklad deklaruje třídu, která ukládá dny v týdnu. A `get` přistupující objekt přebírá řetězec názvu dne a vrátí odpovídající celé číslo. Například vrátí hodnotu 0, "Neděle", "Pondělí" vrátí hodnotu 1 a tak dále.  
   
-[!code-csharp[csProgGuideIndexers#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-indexers_2.cs)]  
+ [!code-csharp[csProgGuideIndexers#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideIndexers/CS/Indexers.cs#2)]  
   
 ## <a name="robust-programming"></a>Robustní programování
 

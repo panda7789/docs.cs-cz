@@ -3,12 +3,12 @@ title: C#Typy a proměnné – připravuje C# jazyka
 description: Další informace o definování typů a deklarace proměnné vC#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: 976cb507074d4bafe4c22e9482d8f272937baf36
-ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
+ms.openlocfilehash: 6880fa51ca30dadac901d2b86de189b59658d164
+ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56583950"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57211998"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 
@@ -71,7 +71,7 @@ To shrnuje C#pro číselné typy.
     - `double` : 64 bitů v rozsahu od 5.0 × 10<sup>-324</sup> 1.7 × 10<sup>308</sup>, 15 číslicemi přesnosti
 * Desetinné číslo
     - `decimal` : 128 bitů, rozsah je alespoň-7.9 × 10<sup>– 28</sup> 7.9 × 10<sup>28</sup>, s přesností na alespoň číslice 28
-    
+
 C# programy používají *typ deklarace* pro vytvoření nových typů. Deklarace typu Určuje název a členy nového typu. Pět C#společnosti jsou kategorie typů definovaných uživatelem: Třída typy, typy struktury, rozhraní typy, výčtové typy a typy delegátů.
 
 A `class` typ definuje datová struktura, která obsahuje data (pole) a funkční členy (metody, vlastnosti a ostatní). Typy tříd podporují jednoduché dědičnosti a polymorfismu, mechanismy jeho prostřednictvím odvozené třídy můžete rozšířit a specialize základní třídy.
@@ -115,6 +115,6 @@ Existuje několik typů z *proměnné* v jazyce C#, včetně polí, prvky pole, 
 * Typ delegáta
     - A `null` odkaz nebo odkaz na instanci typu kompatibilní delegáta
 
->[!div class="step-by-step"]
->[Předchozí](program-structure.md)
->[další](expressions.md)
+> [!div class="step-by-step"]
+> [Předchozí](program-structure.md)
+> [další](expressions.md)

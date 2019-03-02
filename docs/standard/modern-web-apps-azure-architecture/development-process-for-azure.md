@@ -4,19 +4,19 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 72e6f468cc55ea344d53b4342fb7d9c776a1a16c
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: b7a6ae343feae7c28fb7debdc8a6b617872d262f
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55827471"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57202103"
 ---
 # <a name="development-process-for-azure"></a>Proces vývoje pro Azure
 
 > _"S cloudem, jednotlivce a malé firmy můžete Přichytit jejich prsty a okamžitě nastavit služby na podnikové úrovni."_  
 > _- Roy Stephan_
 
- ## <a name="vision"></a>Obraz
+## <a name="vision"></a>Obraz
 
 > *Vyvíjejte aplikace dobře navržené ASP .NET Core způsobem, který vám vyhovuje, pomocí sady Visual Studio nebo rozhraní příkazového řádku dotnet a Visual Studio Code nebo vašem editoru podle výběru.*
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: f6e85a4dfdf562c0a479b19224e11e919da8716d
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: b97ce10cfb2e35beecf2c96acbac9c4ac8462c1d
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56980357"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57201159"
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
 Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že příkazů ke spuštění volání metody a zadáním argumentů požadovanou metodu. V jazyce C# se provádí každých provedené instrukce v rámci metody. Metoda Main je vstupním bodem pro každou aplikaci C# a je volána modulem common language runtime (CLR), když se program spustí.  
@@ -37,7 +37,7 @@ Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že p
 ## <a name="method-parameters-vs-arguments"></a>Parametry metody vs. Arguments  
  Definice metody určuje názvy a typy všech parametrů, které jsou požadovány. Při volání kód volá metody, poskytuje konkrétní hodnoty nazývaných argumenty pro každý parametr. Argumenty musí být kompatibilní s typem parametru, ale nebude muset být stejný jako parametr s názvem definovaný v metodě název argumentu (pokud existuje), použít ve volajícím kódu. Příklad:  
   
- [!code-csharp[csProgGuideObjects#74](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/methods_3.cs)]  
+ [!code-csharp[csProgGuideObjects#74](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#74)]  
   
 ## <a name="passing-by-reference-vs-passing-by-value"></a>Předávání odkaz na vs. Předání hodnotou  
  Ve výchozím nastavení když typ hodnoty se předá metodě, je kopie předán místo samotného objektu. Proto se změny na argument nemají žádný vliv na původní kopii ve volání metody. Můžete předat typ hodnoty podle odkazu s použitím ref – klíčové slovo. Další informace najdete v tématu [předávání parametrů typu hodnoty](../../../csharp/programming-guide/classes-and-structs/passing-value-type-parameters.md). Seznam typů předdefinovaných hodnot najdete v tématu [Tabulka typů hodnot](../../../csharp/language-reference/keywords/value-types-table.md).  

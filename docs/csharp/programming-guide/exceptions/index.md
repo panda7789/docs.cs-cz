@@ -1,18 +1,12 @@
 ---
-title: Výjimky a jejich zpracování - C# Průvodce programováním
+title: 'Výjimky a jejich zpracování - C# Průvodce programováním'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
-- exception handling [C#]
-- exceptions [C#]
-- C# language, exceptions
+  - 'exception handling [C#]'
+  - 'exceptions [C#]'
+  - 'C# language, exceptions'
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: 79b369c8aef0e231611b99e70deb15f8a61fa715
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527559"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Výjimky a jejich zpracování (Průvodce programováním v C#)
 Funkce nápovědy pro zpracování výjimek jazyka C# zacházet s nečekaným nebo výjimečné situace, ke kterým dochází při spuštění programu. Používá pro zpracování výjimek `try`, `catch`, a `finally` klíčová slova vyzkoušet akce, které nemusí proběhnout úspěšně, zpracování selhání, pokud se rozhodnete, že je přijatelné, provedete to tak a následně vyčistit prostředky. Výjimky mohou být generovány modulem common language runtime (CLR), rozhraní .NET Framework nebo jakékoli knihovny třetích stran nebo kódem aplikace. Výjimky jsou vytvářeny instalační sadou `throw` – klíčové slovo.  
@@ -21,7 +15,7 @@ Funkce nápovědy pro zpracování výjimek jazyka C# zacházet s nečekaným ne
   
  V tomto příkladu metoda testů pro dělení nulou a zachytí chyby. Bez zpracování výjimek, tento program by jej měla ukončit s **dividebyzeroexception – neošetřené** chyby.  
   
- [!code-csharp[csProgGuideExceptions#18](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exceptions-and-exception-handling_1.cs)]  
+ [!code-csharp[csProgGuideExceptions#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#18)]  
   
 ## <a name="exceptions-overview"></a>Přehled výjimek  
  Výjimky mají následující vlastnosti:  

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - interfaces [C#], event implementation in classes
 - events [C#], in interfaces
 ms.assetid: 63527447-9535-4880-8e95-35e2075827df
-ms.openlocfilehash: 47bd7184e26a643aa8ff17b3e0a0507ab7978216
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dfd0602ef92f9b0f84a8e1434ef834a328d60f03
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540277"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57200270"
 ---
 # <a name="how-to-implement-interface-events-c-programming-guide"></a>Postupy: Implementace událostí rozhraní (C# Průvodce programováním v)
 [Rozhraní](../../../csharp/language-reference/keywords/interface.md) lze deklarovat [události](../../../csharp/language-reference/keywords/event.md). Následující příklad ukazuje, jak implementace událostí rozhraní ve třídě. V podstatě pravidla jsou stejné jako při implementaci metody rozhraní ani vlastnost.  
@@ -56,7 +56,7 @@ Následující příklad ukazuje, jak zpracovat méně běžné situace, ve kter
   
 Poskytnutím vlastní přístupové objekty, můžete určit, zda dvě události představují stejnou událost ve své třídě, nebo jednotlivé události. Například pokud události by měly být vyvolána v různých časech podle specifikace rozhraní, můžete přidružit každou událost samostatné implementaci ve své třídě. V následujícím příkladu, předplatitelé určení, které `OnDraw` události se mu přetypováním tvar odkazu na buď `IShape` nebo `IDrawingObject`.  
   
- [!code-csharp[WrapTwoInterfaceEvents](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-implement-interface-events_1.cs#everything)]
+ [!code-csharp[csProgGuideEvents#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEvents/CS/Events.cs#10)]
   
 ## <a name="see-also"></a>Viz také:
 

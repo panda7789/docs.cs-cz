@@ -10,12 +10,12 @@ helpviewer_keywords:
 - operator -=
 - compound assignment statements [Visual Basic]
 ms.assetid: 5ead0c37-ae50-48f7-8435-8e341d81cae1
-ms.openlocfilehash: 29a178ece41763dfdf9fe1ff042f419bc879dcd9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c3495c4e45fe5e1d497578ee3ee6afe874e90eed
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54675051"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203042"
 ---
 # <a name="--operator-visual-basic"></a>-= – operátor (Visual Basic)
 Odečte hodnotu výrazu od hodnoty proměnnou nebo vlastnost a výsledek přiřadí proměnné nebo vlastnosti.  
@@ -44,7 +44,7 @@ variableorproperty -= expression
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `-=` operátor odečíst jeden `Integer` proměnné z jiného a přiřadit výsledek, který má tato proměnná.  
   
- [!code-vb[VbVbalrOperators#11](codesnippet/VisualBasic/subtraction-assignment-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#11)]  
   
 ## <a name="see-also"></a>Viz také:
 - [-– Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-operator.md)

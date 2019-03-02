@@ -6,12 +6,12 @@ helpviewer_keywords:
 - examples [Visual Basic], coding conventions
 - Visual Basic code, conventions
 ms.assetid: c1df130b-fec6-49a5-becf-0a7e494a1d0f
-ms.openlocfilehash: e036792cf33082fa78cf243887b8ac7db7f8ad5a
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 634e39e3e274b919f63ff1b4f3c7b0cd311beaf1
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56981488"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57201173"
 ---
 # <a name="visual-basic-coding-conventions"></a>Visual Basic – konvence kódování
 Microsoft vyvíjí vzorky a dokumentaci, postupujte podle pokynů v tomto tématu. Pokud budete postupovat podle stejné konvence psaní kódu, může získat následující výhody:  
@@ -112,7 +112,7 @@ Microsoft vyvíjí vzorky a dokumentaci, postupujte podle pokynů v tomto témat
   
 -   Když deklarujete a inicializujete pole základních datových typů, použijte syntax {}. Například použijte následující syntaxi:  
   
-     [!code-vb[VbVbalrGuidelines#12](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_10.vb)]  
+     [!code-vb[VbVbalrGuidelines#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#12)]  
   
      Nepoužívejte následující syntaxi:  
   

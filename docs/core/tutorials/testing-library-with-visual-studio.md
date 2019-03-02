@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodoc18
-ms.openlocfilehash: 7f0f1da48294fd3856f0b2524ef5239b8b63f3e6
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.openlocfilehash: c099bde5a90e7e95eb5d9da6aacf763054a865ae
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362688"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57201323"
 ---
 # <a name="test-a-net-standard-library-with-net-core-in-visual-studio-2017"></a>Test knihovny .NET Standard s .NET Core v sadě Visual Studio 2017
 
@@ -163,7 +163,7 @@ Vašeho testovacího běhu došlo k chybám, žádné, ale mírně změnit tak, 
 
    ![Okno Průzkumníka testu je False neplatnost kontrolního výrazu](./media/testing-library-with-visual-studio/failed-test-detail.png)
 
-1. Odebrat kód, který jste přidali (`"Error", `) a opětovné spuštění testu. Testy budou úspěšné.
+1. Vrátit zpět změny, které jste provedli v kroku 1 a odebrat řetězec "Chyba". Opětovné provedení testu a budou testy úspěšné.
 
 ## <a name="testing-the-release-version-of-the-library"></a>Testování verze knihovny
 

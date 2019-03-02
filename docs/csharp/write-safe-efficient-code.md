@@ -3,12 +3,12 @@ title: Zápis bezpečný a účinný C# kódu
 description: Poslední vylepšení C# jazyk umožňují také napsat bezpečného kódu s možností ověření, že výkon bylo dřív přidružené nezabezpečený kód.
 ms.date: 10/23/2018
 ms.custom: mvc
-ms.openlocfilehash: 35d9cf89d8ba2ddb673554a76eb33ae59b178b42
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: d363e357d3749bb2014456c0064c4de7dd7f1acb
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245685"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203461"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Zápis bezpečný a účinný C# kódu
 
@@ -129,7 +129,7 @@ Typy hodnot se zkopírují po uplynutí volané metody, pokud nezadáte žádné
 
 Přidat `in` modifikátor předat argument odkazem a deklarovat vaším záměrem návrhu předání argumentů odkazem, aby předešel zbytečnému kopírování. Nemáte v úmyslu změnit objekt použitý jako tento argument.
 
-Tento postup často zvyšuje výkon u typů hodnot jen pro čtení, které jsou větší než <xref:System.IntPtr.Size?displayProperty=nameWithType>. Pro jednoduché typy (`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, `double`, `decimal` a `bool`, a `enum` typy), jsou minimial všechny potenciální zvýšení výkonu. Ve skutečnosti, může se snížit výkon pomocí pass-by-reference pro typy menší než <xref:System.IntPtr.Size?displayProperty=nameWithType>.
+Tento postup často zvyšuje výkon u typů hodnot jen pro čtení, které jsou větší než <xref:System.IntPtr.Size?displayProperty=nameWithType>. Pro jednoduché typy (`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, `double`, `decimal` a `bool`, a `enum` typy), všechny potenciální zvýšení výkonu jsou minimální. Ve skutečnosti, může se snížit výkon pomocí pass-by-reference pro typy menší než <xref:System.IntPtr.Size?displayProperty=nameWithType>.
 
 Následující kód ukazuje příklad metodu, která vypočítá vzdálenost mezi dvěma body v 3D prostoru.
 
@@ -215,5 +215,5 @@ Těchto vylepšení C# jazyka jsou navrženy pro algoritmů výkon kritických-l
 
 ## <a name="see-also"></a>Viz také:
 
-- [REF – klíčové slovo](language-reference/keywords/ref.md)
+- [ref keyword](language-reference/keywords/ref.md)
 - [Návratové a místní referenční hodnoty](programming-guide/classes-and-structs/ref-returns.md)

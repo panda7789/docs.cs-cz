@@ -17,12 +17,12 @@ helpviewer_keywords:
 - quotients, integer
 - truncation [Visual Basic], integer division
 ms.assetid: 4b0ee347-950c-45c9-8e23-54bc85df208e
-ms.openlocfilehash: ac306038aefba4ca0e0f13fa2945d01c27c0804d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7ce7bdaa2bcbf2ba67f24c7e129f8f9a03a28c52
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54654682"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57201908"
 ---
 # <a name="-operator-visual-basic"></a>\ – operátor (Visual Basic)
 Provede podíl dvou čísel a vrátí celé číslo.  
@@ -64,7 +64,7 @@ expression1 \ expression2
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `\` operátor dělení celého čísla. Výsledkem je celé číslo, které představuje celočíselnou podílu dvou operandů s zbytek zahodí.  
   
- [!code-vb[VbVbalrOperators#18](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/integer-division-operator_1.vb)]  
+ [!code-vb[VbVbalrOperators#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#18)]  
   
  Výrazy uvedené v předchozím příkladu vrátí hodnoty 2, 3, 33 a-22, v uvedeném pořadí.  
   

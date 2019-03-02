@@ -4,12 +4,12 @@ description: V tomto článku se naučíte, jak povolení dokončování pomocí
 author: thraka
 ms.author: adegeo
 ms.date: 12/17/2018
-ms.openlocfilehash: 783868fb8300dd4a25c62a108c1c0f7a485721df
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 16574e02aa9f9167602401eef2ad7a73e07ad107
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54029603"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203334"
 ---
 # <a name="how-to-enable-tab-completion-for-net-core-cli"></a>Povolení dokončování pomocí TABULÁTORU pro rozhraní příkazového řádku .NET Core
 
@@ -17,7 +17,7 @@ Počínaje .NET Core 2.0 SDK, rozhraní příkazového řádku .NET Core podporu
 
 [!INCLUDE [topic-appliesto-net-core-2plus](~/includes/topic-appliesto-net-core-2plus.md)]
 
-Po nastavení dokončování pomocí tabulátoru pro rozhraní příkazového řádku .NET Core se aktivuje zadáním `dotnet ` příkazu v prostředí a potom stisknutí klávesy TAB. Aktuální příkaz řádek se odešle do `dotnet complete` příkazu a výsledky se zpracovávají ve vašem prostředí. Můžete testovat výsledky bez povolení dokončování pomocí tabulátoru odesláním něco přímo `dotnet complete` příkazu. Příklad:
+Po nastavení dokončování pomocí tabulátoru pro rozhraní příkazového řádku .NET Core se aktivuje zadáním `dotnet` příkazu v prostředí a potom stisknutím klávesy TAB. Aktuální příkaz řádek se odešle do `dotnet complete` příkazu a výsledky se zpracovávají ve vašem prostředí. Můžete testovat výsledky bez povolení dokončování pomocí tabulátoru odesláním něco přímo `dotnet complete` příkazu. Příklad:
 
 ```
 > dotnet complete "dotnet a"
@@ -78,7 +78,7 @@ _dotnet_bash_complete()
 complete -f -F _dotnet_bash_complete dotnet
 ```
 
-## <a name="zsh"></a>zsh
+## <a name="zsh"></a>Zsh
 
 Přidání dokončování pomocí tabulátoru pro vaše **zsh** prostředí pro rozhraní příkazového řádku .NET Core, přidejte následující kód, který vaše `.zshrc` souboru:
 

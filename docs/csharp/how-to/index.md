@@ -1,14 +1,9 @@
 ---
-title: Jak článků (Průvodce v C#)
-description: Kolekce rychlé tipy a krátký, zaměřuje ukázky kódu
+title: 'Jak článků (Průvodce v C#)'
+description: 'Kolekce rychlé tipy a krátký, zaměřuje ukázky kódu'
 ms.date: 12/20/2017
-ms.openlocfilehash: 9326235341ee38e46f4204b7b3d7f67cae2774af
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44260188"
 ---
+
 # <a name="how-to-c"></a>Jak (C#)
 
 V tom, jak příručce jazyka C# najdete rychlé odpovědi na běžné dotazy. V některých případech může být uvedena články v několika oddílech. Chtěli jsme se je bylo možné snadno najít pro více cesty pro hledání. 
@@ -113,7 +108,7 @@ LINQ umožňuje napsat kód k dotazování libovolný zdroj dat, která podporuj
 - [Řazení elementů zdroje dat](../programming-guide/concepts/linq/how-to-sort-elements.md).
 - [Řazení elementů u více klíčů](../programming-guide/concepts/linq/how-to-sort-elements-on-multiple-keys.md).
 - [Řízení typu projekce](../programming-guide/concepts/linq/how-to-control-the-type-of-a-projection.md).
-- [Počet výskytů hodnoty ve zdrojové sekvence](../programming-guide/concepts/linq/how-to-count-occurrences-of-a-word-in-a-string-linq.md).
+- [Počet výskytů hodnotu do zdrojové sekvence](../programming-guide/concepts/linq/how-to-count-occurrences-of-a-word-in-a-string-linq.md).
 - [Výpočet mezilehlých hodnot](../programming-guide/concepts/linq/how-to-calculate-intermediate-values.md).
 - [Sloučit data z víc zdrojů](../programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md).
 - [Hledání množinových rozdílů mezi dvěma sekvencemi](../programming-guide/concepts/linq/how-to-find-the-set-difference-between-two-lists-linq.md).

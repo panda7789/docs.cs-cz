@@ -7,16 +7,16 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 38b8a0fc8c89975318b42380ca936869544af601
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 08863e677413c27461d621c7126c64f2b76c33a8
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694968"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57202597"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Omezení parametrů typů (C# Programming Guide)
 
-Omezení kompilátoru informuje o možnosti, které argument typu musí mít. Bez jakýchkoliv omezení typu argument může být libovolného typu. Kompilátor může převzít jenom jako objekty její členové <xref:System.Object?displayPropety=nameWithType>, což je základní třídy ultimate pro jakýkoli typ .NET. Další informace najdete v tématu [Proč používat omezení](#why-use-constraints). Pokud klientský kód se pokusí vytvořit instanci své třídy pomocí typu, který není povolen omezením, výsledkem je chyba kompilace. Omezení je určené vlastností `where` kontextové klíčové slovo. V následující tabulce jsou uvedeny sedm typy omezujících podmínek:
+Omezení kompilátoru informuje o možnosti, které argument typu musí mít. Bez jakýchkoliv omezení typu argument může být libovolného typu. Kompilátor může převzít jenom jako objekty její členové <xref:System.Object?displayProperty=nameWithType>, což je základní třídy ultimate pro jakýkoli typ .NET. Další informace najdete v tématu [Proč používat omezení](#why-use-constraints). Pokud klientský kód se pokusí vytvořit instanci své třídy pomocí typu, který není povolen omezením, výsledkem je chyba kompilace. Omezení je určené vlastností `where` kontextové klíčové slovo. V následující tabulce jsou uvedeny sedm typy omezujících podmínek:
 
 |Omezení|Popis|
 |----------------|-----------------|

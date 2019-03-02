@@ -22,12 +22,12 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], handling
 - On Error statement [Visual Basic]
 ms.assetid: ff947930-fb84-40cf-bd66-1ea219561d5c
-ms.openlocfilehash: 16a2ee7f16df92db8deb44ff979ec077eefc20aa
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 5dc432f8e62430d48954b2c049cab3ebae4d442e
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56976483"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203740"
 ---
 # <a name="on-error-statement-visual-basic"></a>On Error – příkaz (Visual Basic)
 Umožňuje rutiny zpracování chyb a určuje umístění rutinu v rámci procedury; je také možné zakázat rutiny zpracování chyb.  
@@ -111,7 +111,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
 ## <a name="example"></a>Příklad  
  V tomto příkladu se nejdřív pomocí `On Error GoTo` příkaz a zadejte umístění rutiny zpracování chyb v rámci procedury. V tomto příkladu generuje pokus dělit nulou číslo chyby 6. Je chyba zpracována v rutině zpracování chyb a ovládací prvek se poté vrátí příkazu, který způsobil chybu. `On Error GoTo 0` Příkaz vypne Chyba soutisku. Pak bude `On Error Resume Next` prohlášení se používá k odložení Chyba soutisku tak, aby kontext chyby generované dalšího příkazu můžete pro některé známé. Všimněte si, že `Err.Clear` slouží k vymazání `Err` vlastností objektu po je chyba zpracována.  
   
- [!code-vb[VbVbalrErrorHandling#20](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/on-error-statement_4.vb)]  
+ [!code-vb[VbVbalrErrorHandling#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#20)]  
   
 ## <a name="requirements"></a>Požadavky  
  **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  

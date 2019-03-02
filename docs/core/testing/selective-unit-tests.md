@@ -4,16 +4,16 @@ description: Jak pomocí výrazu filtru spouštění selektivních testů jednot
 author: smadala
 ms.date: 03/22/2017
 ms.custom: seodec18
-ms.openlocfilehash: 2ec6dc770f33acc4acea79e60cf6f9c33f1077d8
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 6160a8b9184d031fcc06356b5b489ee24b765e84
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53239940"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57201414"
 ---
 # <a name="running-selective-unit-tests"></a>Spouštění selektivních testů jednotek
 
-S `dotnet test` příkaz v .NET Core, vám pomůže výraz filtru spouštění selektivních testů. Tento článek ukazuje, jak filtrovat, kterou test běží. Následující příklady používají `dotnet test`. Pokud používáte `vstest.console.exe`, nahraďte `--filter ` s `--testcasefilter:`.
+S `dotnet test` příkaz v .NET Core, vám pomůže výraz filtru spouštění selektivních testů. Tento článek ukazuje, jak filtrovat, kterou test běží. Následující příklady používají `dotnet test`. Pokud používáte `vstest.console.exe`, nahraďte `--filter` s `--testcasefilter:`.
 
 ## <a name="mstest"></a>MSTest
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: 2c2840d934a3535c3799033413742c9dd81244fe
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: bcf4cd9d4ac4e4de3174cb57d83c8cab7de86c21
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56975989"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57202402"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Statické třídy a jejich členové (Průvodce programováním v C#)
 A [statické](../../../csharp/language-reference/keywords/static.md) třída je v podstatě stejný jako nestatické třídy, ale je jedním z rozdílů: Nelze vytvořit instanci statické třídy. Jinými slovy, nelze použít [nové](../../../csharp/language-reference/keywords/new.md) – klíčové slovo vytvoření proměnné typu třídy. Protože neexistuje žádná instance proměnné, přístup jako objekty její členové statické třídy pomocí samotný název třídy. Například, pokud mají statickou třídu, která se jmenuje `UtilityClass` , který má veřejnou statickou metodu s názvem `MethodA`, zavolejte metodu, jak je znázorněno v následujícím příkladu:  
@@ -59,7 +59,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
 ## <a name="example"></a>Příklad  
  Tady je příklad, který obsahuje dvě metody, které převést teplotu ve stupních Celsia na stupně Fahrenheita a Fahrenheita na stupně Celsia statické třídy:  
   
- [!code-csharp[csProgGuideObjects#31](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/static-classes-and-static-class-members_1.cs)]  
+ [!code-csharp[csProgGuideObjects#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#31)]  
   
 ## <a name="static-members"></a>Statické členy  
  Nestatické třídy mohou obsahovat statické metody, pole, vlastnosti nebo události. Statický člen je volatelná třídy i v případě, že byla vytvořena žádná instance třídy. Statický člen se vždy přistupuje pomocí názvu třídy, nikoli název instance. Jenom jednu kopii statického člena, který existuje, bez ohledu na to, kolik instancí třídy jsou vytvořeny. Statické metody a vlastnosti nemůže přistupovat k nestatickému pole a události v jejich nadřazeným typem a nemají přístup k proměnné instance objektu, pokud je explicitně předán v parametru metody.  

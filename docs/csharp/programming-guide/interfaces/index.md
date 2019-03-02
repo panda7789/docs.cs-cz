@@ -33,7 +33,7 @@ Pokud třída nebo struktura implementuje rozhraní, třídy nebo struktury mus�
   
 Následující příklad ukazuje implementaci <xref:System.IEquatable%601> rozhraní. Implementující třída `Car`, musí poskytnout implementaci položky <xref:System.IEquatable%601.Equals%2A> metody.  
   
-[!code-csharp[csProgGuideInheritance#48](../classes-and-structs/codesnippet/CSharp/interfaces_2.cs)]  
+ [!code-csharp[csProgGuideInheritance#48](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#48)]  
   
 Vlastnostmi a indexery třídy můžete definovat další přistupující objekty vlastnosti nebo indexovacího člena, který je definován v rozhraní. Například rozhraní může deklarovat vlastnost, která má [získat](../../language-reference/keywords/get.md) přistupujícího objektu. Třída, která implementuje rozhraní může deklarovat stejnou vlastnost s oběma `get` a [nastavit](../../language-reference/keywords/set.md) přistupujícího objektu. Pokud vlastnost nebo indexovací člen používá explicitní implementaci, musí odpovídat přístupové objekty. Další informace o explicitní implementaci, najdete v části [explicitní implementaci rozhraní](explicit-interface-implementation.md) a [vlastností rozhraní](../classes-and-structs/interface-properties.md).  
 

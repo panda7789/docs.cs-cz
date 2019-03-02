@@ -2,16 +2,11 @@
 title: WCF Data Services 4.5
 ms.date: 03/30/2017
 helpviewer_keywords:
-- Astoria
-- WCF Data Services, getting started
+  - Astoria
+  - 'WCF Data Services, getting started'
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
-ms.openlocfilehash: 6fd81a6bd4449cc0ef11b68320f366368d5edb7e
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092485"
 ---
+
 # <a name="wcf-data-services-45"></a>WCF Data Services 4.5
 
 Služby WCF Data Services (dříve označované jako "Služby ADO.NET Data Services") je součástí rozhraní .NET Framework, která umožňuje vytvářet služby, které používají [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] k vystavení a zpracování dat prostřednictvím webu nebo intranetu pomocí sémantiky [ (REST) Representational state transfer](https://go.microsoft.com/fwlink/?LinkId=113919). OData zveřejňuje data jako prostředky, které jsou adresovat pomocí identifikátorů URI. Data se získat přístup, změnit pomocí standardní příkazy HTTP z GET, PUT, POST a DELETE. Používá relace entity konvencí OData [modelu Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md) vystavit prostředky jako sady entit, které se týkají přidružení.
@@ -28,111 +23,111 @@ V závislosti na vašich zájmech vezměte v úvahu Začínáme se službou WCF 
 
 Chci pustit do práce …
 
--   [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
+- [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
 
--   [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
+- [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
 
--   [Silverlight Quickstart](https://go.microsoft.com/fwlink/?LinkID=192782)
+- [Silverlight Quickstart](https://go.microsoft.com/fwlink/?LinkID=192782)
 
--   [Silverlight Quickstart pro vývoj pro Windows Phone](https://go.microsoft.com/fwlink/?LinkID=214535)
+- [Silverlight Quickstart pro vývoj pro Windows Phone](https://go.microsoft.com/fwlink/?LinkID=214535)
 
 Stačí ukázat kódu...
 
--   [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
+- [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
 
--   [Postupy: Spuštění dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)
+- [Postupy: Spuštění dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)
 
--   [Postupy: Vytvoření vazby dat na elementy Windows Presentation Foundation](../../../../docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md)
+- [Postupy: Vytvoření vazby dat na elementy Windows Presentation Foundation](../../../../docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md)
 
 Chci vědět více o OData...
 
- -   [Dokument White Paper: Úvod do prostředí OData](https://go.microsoft.com/fwlink/?LinkId=220867)
+- [Dokument White Paper: Úvod do prostředí OData](https://go.microsoft.com/fwlink/?LinkId=220867)
 
--   [Otevřít web Data protokolu](https://go.microsoft.com/fwlink/?LinkID=184554)
+- [Otevřít web Data protokolu](https://go.microsoft.com/fwlink/?LinkID=184554)
 
--   [OData: SDK](https://go.microsoft.com/fwlink/?LinkID=185248)
+- [OData: SDK](https://go.microsoft.com/fwlink/?LinkID=185248)
 
--   [OData: Nejčastější dotazy](https://go.microsoft.com/fwlink/?LinkId=185867)
+- [OData: Nejčastější dotazy](https://go.microsoft.com/fwlink/?LinkId=185867)
 
 Chci některé videa...
 
--   [Průvodce pro začátečníky služeb WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=220864)
+- [Průvodce pro začátečníky služeb WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=220864)
 
--   [WCF Data Services – video pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=220861)
+- [WCF Data Services – video pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=220861)
 
--   [OData: Vývojáři webové stránky](https://go.microsoft.com/fwlink/?LinkId=185866)
+- [OData: Vývojáři webové stránky](https://go.microsoft.com/fwlink/?LinkId=185866)
 
 Chci zobrazit-koncové ukázky...
 
--   [Dokumentace ke službě vzorky z Galerie ukázek MSDN služeb WCF Data Services](https://go.microsoft.com/fwlink/?LinkID=220865)
+- [Dokumentace ke službě vzorky z Galerie ukázek MSDN služeb WCF Data Services](https://go.microsoft.com/fwlink/?LinkID=220865)
 
--   [Další WCF Data Services – ukázky na Galerie ukázek MSDN](https://go.microsoft.com/fwlink/?LinkId=220866)
+- [Další WCF Data Services – ukázky na Galerie ukázek MSDN](https://go.microsoft.com/fwlink/?LinkId=220866)
 
--   [OData: SDK](https://go.microsoft.com/fwlink/?LinkID=185248)
+- [OData: SDK](https://go.microsoft.com/fwlink/?LinkID=185248)
 
 Jak zajistíte jejich integraci se sadou Visual Studio?
 
--   [Generování klientské knihovny datové služby](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)
+- [Generování klientské knihovny datové služby](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)
 
--   [Vytvoření datové služby](../../../../docs/framework/data/wcf/creating-the-data-service.md)
+- [Vytvoření datové služby](../../../../docs/framework/data/wcf/creating-the-data-service.md)
 
--   [Zprostředkovatel Entity Framework](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)
+- [Zprostředkovatel Entity Framework](../../../../docs/framework/data/wcf/entity-framework-provider-wcf-data-services.md)
 
 Co můžu dělat s ním?
 
--   [Přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)
+- [Přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)
 
--   [Dokument White Paper: Úvod do prostředí OData](https://go.microsoft.com/fwlink/?LinkId=220867)
+- [Dokument White Paper: Úvod do prostředí OData](https://go.microsoft.com/fwlink/?LinkId=220867)
 
--   [Scénáře aplikací](../../../../docs/framework/data/wcf/application-scenarios-wcf-data-services.md)
+- [Scénáře aplikací](../../../../docs/framework/data/wcf/application-scenarios-wcf-data-services.md)
 
 Chci používat Silverlight...
 
--   [Silverlight Quickstart](https://go.microsoft.com/fwlink/?LinkID=192782)
+- [Silverlight Quickstart](https://go.microsoft.com/fwlink/?LinkID=192782)
 
--   [Datové služby WCF (Silverlight)](https://go.microsoft.com/fwlink/?LinkID=143149)
+- [Datové služby WCF (Silverlight)](https://go.microsoft.com/fwlink/?LinkID=143149)
 
--   [Začínáme s aplikací Silverlight](https://go.microsoft.com/fwlink/?LinkId=148366)
+- [Začínáme s aplikací Silverlight](https://go.microsoft.com/fwlink/?LinkId=148366)
 
 Chci používat LINQ...
 
--   [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
+- [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
 
--   [Aspekty LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md)
+- [Aspekty LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md)
 
--   [Postupy: Spuštění dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)
+- [Postupy: Spuštění dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)
 
 Potřebuji ještě nějaké další informace...
 
--   [Blog týmu služby WCF Data](https://go.microsoft.com/fwlink/?LinkID=150511)
+- [Blog týmu služby WCF Data](https://go.microsoft.com/fwlink/?LinkID=150511)
 
--   [Prostředky](../../../../docs/framework/data/wcf/wcf-data-services-resources.md)
+- [Prostředky](../../../../docs/framework/data/wcf/wcf-data-services-resources.md)
 
--   [Středisko pro vývojáře služby WCF Data](https://go.microsoft.com/fwlink/?LinkId=220868)
+- [Středisko pro vývojáře služby WCF Data](https://go.microsoft.com/fwlink/?LinkId=220868)
 
--   [Otevřít web Data protokolu](https://go.microsoft.com/fwlink/?LinkID=184554)
+- [Otevřít web Data protokolu](https://go.microsoft.com/fwlink/?LinkID=184554)
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
- [Přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)
+[Přehled](../../../../docs/framework/data/wcf/wcf-data-services-overview.md)
 
- Poskytuje přehled funkcí a možností, které jsou k dispozici ve službě WCF Data Services.
+Poskytuje přehled funkcí a možností, které jsou k dispozici ve službě WCF Data Services.
 
- [Co je nového ve službě WCF Data Services 5.0](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee373845(v=vs.103))
+[Co je nového ve službě WCF Data Services 5.0](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee373845(v=vs.103))
 
- Popisuje nové funkce služeb WCF Data Services a podpora pro nové funkce OData.
+Popisuje nové funkce služeb WCF Data Services a podpora pro nové funkce OData.
 
- [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
+[Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
 
- Popisuje, jak vystavení a spotřebování informační kanály OData s použitím služeb WCF Data Services.
+Popisuje, jak vystavení a spotřebování informační kanály OData s použitím služeb WCF Data Services.
 
- [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
+[Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
 
- Popisuje postup vytvoření a konfigurace datové služby, která zveřejňuje informační kanály OData.
+Popisuje postup vytvoření a konfigurace datové služby, která zveřejňuje informační kanály OData.
 
- [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+[Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
 
- Popisuje, jak pomocí klientských knihoven využívat informačních kanálů OData z klientské aplikace rozhraní .NET Framework.
+Popisuje, jak pomocí klientských knihoven využívat informačních kanálů OData z klientské aplikace rozhraní .NET Framework.
 
 ## <a name="see-also"></a>Viz také:
 

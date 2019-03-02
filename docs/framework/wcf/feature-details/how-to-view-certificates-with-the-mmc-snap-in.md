@@ -1,61 +1,86 @@
 ---
 title: 'Postupy: Zobrazení certifikátů pomocí modulu snap-in konzoly MMC'
-ms.date: 03/30/2017
+ms.date: 02/25/2019
 helpviewer_keywords:
 - certificates [WCF], viewing with the MMC snap-in
 ms.assetid: 2b8782aa-ebb4-4ee7-974b-90299e356dc5
-ms.openlocfilehash: 72fd6a1be2f33e1bfeb08fd43f3436627ee842e5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6ec86ffca9ae84a9c3276a3dd6de676919dcd2e0
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54521579"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57200283"
 ---
 # <a name="how-to-view-certificates-with-the-mmc-snap-in"></a>Postupy: Zobrazení certifikátů pomocí modulu snap-in konzoly MMC
-Společný typ přihlašovacích údajů je certifikát X.509. Při vytváření zabezpečených služeb a klientů, můžete určit certifikát použít jako pověření klienta nebo služby pomocí metody, jako <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metody. Metoda vyžaduje různé parametry, jako jsou úložiště, kde je certifikát uložený a hodnoty pro použití při hledání certifikátu. Následující postup ukazuje, jak prozkoumat úložišti v počítači se najít odpovídající certifikát. Příklad toho, jak najít kryptografický otisk certifikátu, naleznete v tématu [jak: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).  
+Při vytváření zabezpečeného klienta nebo služby, můžete použít [certifikát](working-with-certificates.md) jako přihlašovací údaje. Například běžný typ přihlašovacích údajů je certifikát X.509, který vytvoříte pomocí <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType> metody. 
+
+Existují tři různé typy úložišť certifikátů, které můžete zkontrolovat pomocí Microsoft Management Console (MMC) v systémech Windows:
+
+- Místní počítač: Úložiště je místní pro zařízení a globální pro všechny uživatele v zařízení.
+
+- Aktuální uživatel: Úložiště je místní pro aktuální uživatelský účet v zařízení.
+
+- Účet služby: Úložiště je místní pro konkrétní službu na zařízení.
+
   
-### <a name="to-view-certificates-in-the-mmc-snap-in"></a>Chcete-li zobrazit certifikáty modulu snap-in konzoly MMC  
+## <a name="view-certificates-in-the-mmc-snap-in"></a>Zobrazit certifikáty modulu snap-in konzoly MMC 
+
+Následující postup ukazuje, jak prozkoumat úložišť na vaše místní zařízení najít odpovídající certifikát: 
   
-1.  Otevřete okno příkazového řádku.  
+1. Vyberte **spustit** z **Start** nabídky a pak zadejte *konzoly mmc*. 
+
+    Otevře se konzole MMC. 
   
-2.  Typ `mmc` a stiskněte klávesu ENTER. Všimněte si, že chcete zobrazit certifikáty v úložišti místního počítače, musí být v roli správce.  
+2. Z **souboru** nabídce vyberte možnost **přidat nebo odebrat modul snap-In**. 
+    
+    **Přidat nebo odebrat moduly Snap in** zobrazí se okno.
   
-3.  Na **souboru** nabídky, klikněte na tlačítko **přidat nebo odebrat modul snap-In**.  
+3. Z **modul snap in k dispozici** klikněte na položku **certifikáty**a pak vyberte **přidat**.  
+
+    ![Přidat modul snap-in certifikátů](./media/mmc-add-certificate-snap-in.png)
   
-4.  Klikněte na **Přidat**.  
+4. V **modul snap-in Certifikáty** okně **účet počítače**a pak vyberte **Další**. 
   
-5.  V **přidat samostatný modul Snap-in** dialogu **certifikáty**.  
+    Volitelně můžete vybrat **Můj uživatelský účet** pro aktuálního uživatele nebo **účet služby** pro konkrétní službu. 
+
+    > [!NOTE]
+    > Pokud si nejste správce pro vaše zařízení, můžete spravovat certifikáty jenom pro váš uživatelský účet.
   
-6.  Klikněte na **Přidat**.  
+5. V **vybrat počítač** okně, ponechejte tuto položku **místního počítače** vybrali a pak vyberte **Dokončit**.  
   
-7.  V **modul snap-in Certifikáty** dialogu **účet počítače** a klikněte na tlačítko **Další**. Volitelně můžete vybrat **tento uživatelský účet** nebo **účet služby**. Pokud nejste správcem tohoto počítače, můžete spravovat certifikáty jenom pro váš uživatelský účet.  
+6. V **přidat nebo odebrat modul Snap-in** okně **OK**.  
   
-8.  V **vybrat počítač** dialogové okno, klikněte na tlačítko **Dokončit**.  
+    ![Přidat modul snap-in certifikátů](./media/mmc-certificate-snap-in-selected.png)
+
+7. Volitelné: Z **souboru** nabídce vyberte možnost **Uložit** nebo **uložit jako** uložit soubor konzoly MMC pro pozdější použití.  
+
+8. Chcete-li zobrazit vaše certifikáty modulu snap-in konzoly MMC, vyberte **kořenový adresář konzoly** v levém podokně, potom rozbalte **certifikáty (místní počítač)**.
+
+    Zobrazí se seznam adresářů pro každý typ certifikátu. Každý certifikát adresáře můžete zobrazit, export, import a odstranit certifikáty pro jeho.
   
-9. V **přidat samostatný modul Snap-in** dialogové okno, klikněte na tlačítko **Zavřít**.  
+
+## <a name="view-certificates-with-the-certificate-manager-tool"></a>Zobrazení certifikátů pomocí nástroje Správce certifikátů
+
+Můžete také zobrazit, export, import a odstranit certifikáty pomocí nástroje Správce certifikátů.
+
+### <a name="to-view-certificates-for-the-local-device"></a>Chcete-li zobrazit certifikáty pro místní zařízení
+
+1. Vyberte **spustit** z **Start** nabídky a pak zadejte *certlm.msc*. 
+
+    Zobrazí se nástroj Správce certifikátů pro místní zařízení. 
   
-10. Na **Přidat/odebrat modul Snap-in** dialogové okno, klikněte na tlačítko **OK**.  
+2. Chcete-li zobrazit certifikáty, v části **certifikáty - místní počítač** v levém podokně rozbalte adresář pro typ certifikátu, kterou chcete zobrazit.
+
+### <a name="to-view-certificates-for-the-current-user"></a>Chcete-li zobrazit certifikáty pro aktuálního uživatele
+
+1. Vyberte **spustit** z **Start** nabídky a pak zadejte *certmgr.msc*. 
+
+    Zobrazí se nástroj Certificate Manager pro aktuálního uživatele. 
   
-11. V **kořenový adresář konzoly** okna, klikněte na tlačítko **certifikáty (místní počítač)** zobrazíte certifikát uloží pro počítač.  
-  
-12. Volitelné. Pokud chcete zobrazit certifikáty pro váš účet, opakujte kroky 3 až 6. V kroku 7, místo výběru **účet počítače**, klikněte na tlačítko **tento uživatelský účet** a opakujte kroky 8 až 10.  
-  
-13. Volitelné. Na **souboru** nabídky, klikněte na tlačítko **Uložit** nebo **uložit jako**. Uložte soubor konzoly pro pozdější použití.  
-  
-## <a name="viewing-certificates-with-internet-explorer"></a>Zobrazení certifikátů pomocí Internet Exploreru  
- Můžete také zobrazit, export, import a odstranit certifikáty pomocí aplikace Internet Explorer.  
-  
-#### <a name="to-view-certificates-with-internet-explorer"></a>K zobrazení certifikátů pomocí Internet Exploreru  
-  
-1.  V aplikaci Internet Explorer, klikněte na tlačítko **nástroje**, pak klikněte na tlačítko **Možnosti Internetu** zobrazíte **Možnosti Internetu** dialogové okno.  
-  
-2.  Klikněte na tlačítko **obsahu** kartu.  
-  
-3.  V části **certifikáty**, klikněte na tlačítko **certifikáty**.  
-  
-4.  Chcete-li zobrazit podrobnosti o některý z certifikátů, vyberte certifikát a klikněte na tlačítko **zobrazení**.  
+2. Chcete-li zobrazit certifikáty, v části **certifikáty – aktuální uživatel** v levém podokně rozbalte adresář pro typ certifikátu, kterou chcete zobrazit.
+
   
 ## <a name="see-also"></a>Viz také:
-- [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Postupy: Vytváření dočasných certifikátů pro použití během vývoje.](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)
-- [Postupy: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md)
+- [Práce s certifikáty](working-with-certificates.md)
+- [Postupy: Vytváření dočasných certifikátů pro použití během vývoje.](how-to-create-temporary-certificates-for-use-during-development.md)
+- [Postupy: Načtení kryptografického otisku certifikátu](how-to-retrieve-the-thumbprint-of-a-certificate.md)

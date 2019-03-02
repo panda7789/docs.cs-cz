@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 09/10/2018
 ms.technology: dotnet-cli
 ms.custom: seodec18
-ms.openlocfilehash: eaa2bd3327cf76522c74dad07a5a9e0e268a3b55
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c57326f038eee4069de9064cb2798d2004b0dbdd
+ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54605952"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57212167"
 ---
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core ve Windows, Linux nebo macOS pomocí příkazového řádku
 
@@ -30,13 +30,13 @@ Je možné [zobrazení nebo stažení ukázkového kódu](https://github.com/dot
 Otevřete příkazový řádek a vytvořte složku s názvem *Hello*. Přejděte do složky, kterou jste vytvořili a zadejte následující příkaz:
 
 ```console
-$ dotnet new console
-$ dotnet run
+dotnet new console
+dotnet run
 ```
 
 Pojďme si rychlý návod:
 
-1. `$ dotnet new console`
+1. `dotnet new console`
 
    [`dotnet new`](../tools/dotnet-new.md) Vytvoří aktuální `Hello.csproj` soubor projektu se závislostmi, které jsou potřebné k sestavení aplikace konzoly.  Vytvoří se také `Program.cs`, základní soubor, který obsahuje vstupní bod pro aplikaci.
 
@@ -59,12 +59,12 @@ Pojďme si rychlý návod:
 
    [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-   `dotnet new` volání [ `dotnet restore` ](../tools/dotnet-restore.md) implicitně. `dotnet restore` volání do [NuGet](https://www.nuget.org/) (.NET Správce balíčků) Chcete-li obnovit strom závislostí. Analyzuje NuGet *Hello.csproj* soubor, soubory ke stažení závislosti definované v souboru (nebo získá z mezipaměti na svém počítači) a zapíše *obj/project.assets.json* soubor, který je potřeba kompilace a spuštění ukázky. 
-   
+   `dotnet new` volání [ `dotnet restore` ](../tools/dotnet-restore.md) implicitně. `dotnet restore` volání do [NuGet](https://www.nuget.org/) (.NET Správce balíčků) Chcete-li obnovit strom závislostí. Analyzuje NuGet *Hello.csproj* soubor, soubory ke stažení závislosti definované v souboru (nebo získá z mezipaměti na svém počítači) a zapíše *obj/project.assets.json* soubor, který je potřeba kompilace a spuštění ukázky.
+
    > [!IMPORTANT]
    > Pokud používáte verzi sady SDK .NET Core 1.x, budete muset volat `dotnet restore` sami po volání `dotnet new`.
 
-2. `$ dotnet run`
+2. `dotnet run`
 
    [`dotnet run`](../tools/dotnet-run.md) volání [ `dotnet build` ](../tools/dotnet-build.md) zajistit, aby se sestavily cíle sestavení a poté zavolá `dotnet <assembly.dll>` spustit cílovou aplikaci.
 
@@ -74,6 +74,7 @@ Pojďme si rychlý návod:
     ```
 
     Alternativně můžete také spustit [ `dotnet build` ](../tools/dotnet-build.md) pro kompilaci kódu bez nutnosti spuštění sestavení konzolové aplikace. Výsledkem je kompilovanou aplikaci jako soubor DLL, který můžete spustit s `dotnet bin\Debug\netcoreapp2.1\Hello.dll` na Windows (použijte `/` systémů než Windows). Argumenty do aplikace můžete také zadat jak uvidíte později v tématu.
+
     ```console
     $ dotnet bin\Debug\netcoreapp2.1\Hello.dll
     Hello World!

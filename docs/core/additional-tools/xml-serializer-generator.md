@@ -5,12 +5,12 @@ author: mlacouture
 ms.date: 01/19/2017
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 9070c42a7cef389a2a13f6be6f26f7dafd7f25e2
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: e5b41b6e5d747cd99a80930bb64e36839af4ab66
+ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53244775"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57211894"
 ---
 # <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Pomocí generátor serializátor XML společnosti Microsoft v rozhraní .NET Core
 
@@ -33,9 +33,9 @@ K provedení kroků v tomto kurzu je potřeba:
 * Váš oblíbený editor kódu.
 
 > [!TIP]
-> Je potřeba nainstalovat editor kódu? Zkuste [sady Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)!
-  
-## <a name="use-microsoft-xml-serializer-generator-in-a-net-core-console-application"></a>Použít Microsoft generátor serializátor XML v konzolovou aplikaci .NET Core 
+> Je potřeba nainstalovat editor kódu? Try [Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)!
+
+## <a name="use-microsoft-xml-serializer-generator-in-a-net-core-console-application"></a>Použít Microsoft generátor serializátor XML v konzolovou aplikaci .NET Core
 
 Následující pokyny ukazují, jak používat generátor serializátor XML v konzolovou aplikaci .NET Core.
 
@@ -49,7 +49,7 @@ dotnet new console
 
 ### <a name="add-a-reference-to-the-microsoftxmlserializergenerator-package-in-the-myapp-project"></a>Přidejte odkaz na balíček Microsoft.XmlSerializer.Generator MyApp projektu
 
-Použití [ `dotnet add package` ](../tools//dotnet-add-package.md) příkaz pro přidání odkazu ve vašem projektu. 
+Použití [ `dotnet add package` ](../tools//dotnet-add-package.md) příkaz pro přidání odkazu ve vašem projektu.
 
 Zadejte:
 
@@ -107,7 +107,7 @@ Pořád ještě uvnitř *MyApp* složky, spusťte aplikaci prostřednictvím [ `
 Zadejte následující příkaz v okně konzoly:
 
 ```console
-$ dotnet run
+dotnet run
 ```
 
 > [!NOTE]
@@ -116,7 +116,7 @@ $ dotnet run
 > [!IMPORTANT]
 > Příkazy a postupy v tomto kurzu ke spuštění aplikace se používají pouze během vývoje. Jakmile budete připraveni k nasazení své aplikace, podívejte se na různé [strategie nasazení](../deploying/index.md) pro aplikace .NET Core a [ `dotnet publish` ](../tools/dotnet-publish.md) příkazu.
 
-Pokud všechno proběhne úspěšně, sestavení s názvem *MyApp.XmlSerializers.dll* se generuje ve výstupní složce. 
+Pokud všechno proběhne úspěšně, sestavení s názvem *MyApp.XmlSerializers.dll* se generuje ve výstupní složce.
 
 Blahopřejeme! máte jen:
 > [!div class="checklist"]

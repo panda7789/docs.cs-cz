@@ -1,40 +1,42 @@
 ---
-title: Vyberte C# verzi jazyka – průvodce v C#
-description: Nastavení kompilátoru k provedení ověření syntaxe pomocí verze konkrétní kompilátoru
-ms.date: 05/24/2018
-ms.openlocfilehash: 9b91e62168ced0f373e1a55def8b279dc64833d8
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+title: Vyberte C# jazykovou verzi - C# Průvodce
+description: Konfigurace kompilátor provést ověření syntaxe pomocí specifické verzi kompilátoru
+ms.date: 02/28/2019
+ms.openlocfilehash: 6d31a757171bd2eecdcc1fbd3da765dcb3fe45c0
+ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36208353"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57212024"
 ---
-# <a name="select-the-c-language-version"></a>Vyberte verzi jazyka C#
+# <a name="select-the-c-language-version"></a>Vyberte C# jazykovou verzi
 
-Kompilátor jazyka C# výchozí nejnovější hlavní verzi jazyka, který byl vydán. Můžete se rozhodnout zkompilovat všechny projekt pomocí nové verze bodu jazyka. Výběr novější verze jazyka, který umožňuje svým projektem zajistíte pomocí nejnovějších funkcí jazyka. V jiných scénářích musíte ověřit, že projektu zkompiluje řádně při použití starší verze jazyka.
+C# Kompilátor Určuje výchozí jazykovou verzi na základě cílové rozhraní projektu nebo rozhraní. Když váš projekt cílí na verzi preview rozhraní, které obsahuje odpovídající jazykovou verzi preview, je jazyková verze používá jazykovou verzi preview. Projekt není zacílená ve verzi preview rozhraní, jazykové verzi použít při nejnovější dílčí verzi.
 
-Tato funkce oddělí rozhodnutí pro instalaci nové verze sady SDK a nástroje ve vašem vývojovém prostředí z rozhodnutí o začlenit nové jazykové funkce v projektu. Nejnovější sady SDK a nástrojů můžete nainstalovat na počítači pro sestavení. Každý projekt, lze nakonfigurovat k využívání na konkrétní verzi jazyka pro jeho sestavení.
+Například během období preview pro .NET Core 3.0, libovolný projekt, který cílí `netcoreapp3.0` nebo `netstandard2.1` (ve verzi preview) se používají C# 8.0 – language (také ve verzi preview). Cílení na všechny vydané verzi použije C# 7.3 (nejnovější vydaná verze). Toto chování znamená, že každý projekt cílí na rozhraní .NET Framework bude používat nejnovější verzi (C# 7.3). 
 
-Chcete-li nastavit jazyková verze několika způsoby:
+Tato funkce odděluje rozhodnutí pro instalaci nové verze sady SDK a nástroje ve vašem vývojovém prostředí od rozhodnutí začlenit nové funkce jazyků v projektu. Nejnovější sady SDK a nástroje můžete nainstalovat na počítače pro sestavení. Každý projekt se dá použít konkrétní verzi jazyka pro jeho sestavení. Výchozí chování znamená, že všechny jazykové funkce, které využívají nové typy nebo nové chování modulu CLR jsou povolené jenom v případě, že projekty jsou určené pro tyto architektury.
 
-- Závisí na [rychlé akce Visual Studio](#visual-studio-quick-action).
-- Nastavení jazykové verze [rozhraní Visual Studia](#set-the-language-version-in-visual-studio).
-- Ručně upravit, pokud vaše [ **.csproj** soubor](#edit-the-csproj-file).
-- Nastavení jazykové verze [pro více projektů v podadresáři](#configure-multiple-projects).
+Výchozí chování můžete přepsat zadáním jazykovou verzi. Existuje několik způsobů, jak nastavit jazykovou verzi:
+
+- Spolehněte se na [sady Visual Studio rychle reagovat](#visual-studio-quick-action).
+- Nastavení jazykové verze v [Visual Studio UI](#set-the-language-version-in-visual-studio).
+- Ručně upravit vaše [ **.csproj** souboru](#edit-the-csproj-file).
+- Nastavit jazykovou verzi [pro více projektů v podadresáři](#configure-multiple-projects).
 - Konfigurace [ `-langversion` – možnost kompilátoru](#set-the-langversion-compiler-option).
 
-## <a name="visual-studio-quick-action"></a>Visual Studio rychlé akce
+## <a name="visual-studio-quick-action"></a>Rychlé akce pro Visual Studio
 
-Visual Studio vám pomůže určit jazyková verze, které potřebujete. Pokud použijete jazyk funkce, která není k dispozici pro aktuálně nakonfigurované verze, Visual Studio zobrazí potenciální potíže se aktualizovat jazyková verze pro projekt.
+Visual Studio vám pomůže určit jazykové verze, které potřebujete. Pokud používáte jazyk funkce, která není k dispozici pro aktuálně nakonfigurovaná verze, sada Visual Studio zobrazí potenciální opravu a aktualizovat verzi jazyka pro projekt.
 
 ## <a name="set-the-language-version-in-visual-studio"></a>Nastavení jazykové verze v sadě Visual Studio
 
-Verze můžete nastavit v sadě Visual Studio. Klikněte pravým tlačítkem na uzel projektu v Průzkumníku řešení a vyberte **vlastnosti**. Vyberte **sestavení** a vyberte **Upřesnit** tlačítko. V rozevíracím seznamu vyberte verzi. Následující obrázek ukazuje nastavení "posledního":
+Nastavte verzi v sadě Visual Studio. Klikněte pravým tlačítkem na uzel projektu v Průzkumníku řešení a vyberte **vlastnosti**. Vyberte **sestavení** kartě a vyberte **Upřesnit** tlačítko. V rozevíracím seznamu vyberte verzi. Následující obrázek ukazuje "posledního" nastavení:
 
-![Snímek obrazovky nastavení pokročilé sestavení, kde můžete určit jazyková verze](./media/configure-language-version/advanced-build-settings.png)
+![Snímek obrazovky nastavení rozšířené sestavení, ve kterém můžete zadat jazykovou verzi](./media/configure-language-version/advanced-build-settings.png)
 
 > [!NOTE]
-> Pokud používáte Visual Studio IDE aktualizace souborů csproj, rozhraní IDE vytvoří samostatné uzly pro každou konfiguraci sestavení. Budete obvykle nastavíte hodnotu stejné ve všech konfigurací sestavení, ale je potřeba explicitně nastaven pro každou konfiguraci sestavení, nebo vyberte "Všechny konfigurace" při změně tohoto nastavení. V souboru csproj se zobrazí následující:
+> Je-li aktualizovat soubory csproj pomocí rozhraní IDE sady Visual Studio, rozhraní IDE vytvoří samostatné uzly pro každou konfiguraci sestavení. Budete obvykle nastavena hodnotu stejné ve všech konfiguracích sestavení, ale je potřeba explicitně nastavena pro každou konfiguraci sestavení, nebo vyberte "Všechny konfigurace", když je toto nastavení změnit. V souboru csproj se zobrazí následující:
 >
 >```xml
 > <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -49,7 +51,7 @@ Verze můžete nastavit v sadě Visual Studio. Klikněte pravým tlačítkem na 
 
 ## <a name="edit-the-csproj-file"></a>Upravte soubor csproj
 
-Jazyková verze můžete nastavit v vaše **.csproj** souboru. Přidáte element takto:
+Můžete nastavit jazykovou verzi vašeho **.csproj** souboru. Přidáte element takto:
 
 ```xml
 <PropertyGroup>
@@ -57,28 +59,28 @@ Jazyková verze můžete nastavit v vaše **.csproj** souboru. Přidáte element
 </PropertyGroup>
 ```
 
-Hodnota `latest` používá nejnovější dílčí verzi jazyka C#. Platné hodnoty jsou:
+Hodnota `latest` používá nejnovější dílčí verzi C# jazyka. Platné hodnoty jsou:
 
 |Hodnota|Význam|
 |------------|-------------|
-|default|Kompilátor přijímá všechny platné syntaxe jazyka z nejnovější hlavní verzi, která může podporovat.|
-|ISO-1|Kompilátor přijímá pouze syntaxi, která je součástí ISO/IEC 23270: 2003 C# (1.0 nebo 1.2) |
-|ISO-2|Kompilátor přijímá pouze syntaxi, která je součástí ISO/IEC 23270: 2006 C# (2.0) |
-|3|Kompilátor přijímá pouze syntaxi, která je zahrnuta v C# 3.0 nebo nižší.|
-|4|Kompilátor přijímá pouze syntaxi, která je zahrnuta v C# 4.0 nebo nižší.|
-|5|Kompilátor přijímá pouze syntaxi, která je zahrnuta v C# 5.0 nebo nižší.|
-|6|Kompilátor přijímá pouze syntaxi, která je zahrnuta v C# 6.0 nebo nižší.|
-|7|Kompilátor přijímá pouze syntaxi, která je zahrnuta v C# 7.0 nebo nižší.|
-|7.1|Kompilátor přijímá pouze syntaxi, která je zahrnuta v C# 7.1 nebo nižší.|
-|7.2|Kompilátor přijímá pouze syntaxi, která je zahrnuta v C# 7.2 nebo nižší.|
-|7.3|Kompilátor přijímá pouze syntaxi, která je zahrnuta v C# 7.3 nebo nižší.|
-|Nejnovější|Kompilátor přijímá všechny platné syntaxe jazyka, jakou může podporovat.|
-
-Speciální řetězce `default` a `latest` odkazující na nejnovější hlavní (C# 7.0) a (C# 7.3) jazyk podverze nainstalován v počítači sestavení v uvedeném pořadí.
+|preview|Kompilátor přijímá všechny platné syntaxe jazyka z nejnovější verze preview.|
+|nejnovější|Kompilátor přijímá syntaxi z nejnovější vydanou verzi kompilátoru (včetně vedlejší verze aktualizace).|
+|latestMajor|Kompilátor přijímá syntaxi z nejnovější vydanou hlavní verzi kompilátoru.|
+|8.0|Kompilátor přijímá pouze syntaxi, která je součástí C# 8.0 nebo nižší.|
+|7.3|Kompilátor přijímá pouze syntaxi, která je součástí C# 7.3 nebo nižší.|
+|7.2|Kompilátor přijímá pouze syntaxi, která je součástí C# 7.2 nebo nižší.|
+|7.1|Kompilátor přijímá pouze syntaxi, která je součástí C# 7.1 nebo nižší.|
+|7|Kompilátor přijímá pouze syntaxi, která je součástí C# 7.0 nebo nižší.|
+|6|Kompilátor přijímá pouze syntaxi, která je součástí C# 6.0 nebo nižší.|
+|5|Kompilátor přijímá pouze syntaxi, která je součástí C# 5.0 nebo nižší.|
+|4|Kompilátor přijímá pouze syntaxi, která je součástí C# 4.0 nebo nižší.|
+|3|Kompilátor přijímá pouze syntaxi, která je součástí C# 3.0 nebo nižší.|
+|ISO-2|Kompilátor přijímá pouze syntaxi, která je součástí 23270: ISO/IEC 2006 C# (2.0) |
+|ISO-1|Kompilátor přijímá pouze syntaxi, která je součástí 23270: ISO/IEC 2003 C# (1.0 nebo 1.2) |
 
 ## <a name="configure-multiple-projects"></a>Konfigurace více projektů
 
-Můžete vytvořit **Directory.build.props** soubor, který obsahuje `<LangVersion>` elementu, který chcete nakonfigurovat několik adresářů. Obvykle to uděláte ve vašem adresáři řešení. Přidejte následující **Directory.build.props** soubor v adresáři řešení:
+Můžete vytvořit **Directory.build.props** soubor, který obsahuje `<LangVersion>` prvek, který chcete nakonfigurovat více adresářů. Obvykle to uděláte ve svém adresáři řešení. Přidejte následující text do **Directory.build.props** soubor v adresáři řešení:
 
 ```xml
 <Project>
@@ -88,8 +90,8 @@ Můžete vytvořit **Directory.build.props** soubor, který obsahuje `<LangVersi
 </Project>
 ```
 
-Nyní sestavení v každé podadresáři adresář obsahující tento soubor použije verze 7.3 syntaxe jazyka C#. Další informace najdete v článku na [přizpůsobit buildu](/visualstudio/msbuild/customize-your-build).
+Nyní, bude sestavení všechny podadresáře adresáře, který obsahuje tento soubor používají C# verzi 7.3 syntaxe. Další informace najdete v článku na [přizpůsobení sestavení](/visualstudio/msbuild/customize-your-build).
 
 ## <a name="set-the-langversion-compiler-option"></a>Nastavte langversion – možnost kompilátoru
 
-Můžete použít `-langversion` možnost příkazového řádku. Další informace najdete v článku na [- langversion](../language-reference/compiler-options/langversion-compiler-option.md) – možnost kompilátoru. Zobrazí se seznam platných hodnot zadáním `csc -langversion:?`.
+Můžete použít `-langversion` možnost příkazového řádku. Další informace najdete v článku na [- langversion](../language-reference/compiler-options/langversion-compiler-option.md) – možnost kompilátoru. Seznam platných hodnot najdete tak, že zadáte `csc -langversion:?`.

@@ -4,12 +4,6 @@ description: Shrnuje rozhraní .NET Framework nespravovaného rozhraní API pro 
 author: rpetrusha
 ms.author: ronpet
 ms.date: 11/06/2017
-ms.openlocfilehash: 6e105bc28b6011c3177216aba996eb85c0766ac8
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44069508"
 ---
 # <a name="windows-management-instrumentation-wmi-and-performance-counters-unmanaged-api-reference"></a>Windows Management Instrumentation (WMI) a z čítačů výkonu (referenční dokumentace nespravovaného rozhraní API)
 
@@ -39,7 +33,7 @@ Toto rozhraní API zahrnuje následující funkce:
 | [Funkce ExecQueryWmi](execquerywmi.md) | Spustí dotaz pro načtení objektů. |
 | [Funkce FormatFromRawValue](formatfromrawvalue.md) | Převede jednu hodnotu hrubý výkon při zpracování dat pro zadaný formát nebo dvě hodnoty hrubý výkon při zpracování dat, pokud převod formátu podle času. | 
 | [Funkce Get](get.md) | Načte hodnotu zadané vlastnosti, pokud existuje. |
-| [GetCurrentApartmentType – funkce](getcurrentapartmenttype.md) | Získá typ objektu apartment, ve kterém je spuštěn volající. |
+| [GetCurrentApartmentType function](getcurrentapartmenttype.md) | Získá typ objektu apartment, ve kterém je spuštěn volající. |
 | [GetDemultiplexedStub – funkce](getdemultiplexedstub.md) | Vytvoří pomáhat klientovi v přijetí byla zahájena asynchronní volání ze správy službou Windows Server pro předávání jímky objektu. |
 | [GetErrorInfo – funkce](geterrorinfo.md) | Načte informace o chybě z předchozího volání funkce. | 
 | [Funkce GetMethod](getmethod.md) | Načte informace o zadané metodě. | 
@@ -63,8 +57,8 @@ Toto rozhraní API zahrnuje následující funkce:
 | [QualifierSet_Delete – funkce](qualifierset-delete.md) | Odstraní zadaný kvalifikátor podle názvu.  |
 | [QualifierSet_EndEnumeration – funkce](qualifierset-endenumeration.md) | Ukončí výčet začal s voláním `QualifierSet_BeginEnumeration` funkce. |
 | [QualifierSet_Get – funkce](qualifierset-get.md) | Získá zadaný s názvem kvalifikátoru.  |
-| [QualifierSet_GetNames – funkce](qualifierset-getnames.md) | Načte názvy všech kvalifikátory nebo zadané kvalifikátory, které jsou k dispozici z aktuální objekt nebo vlastnost. |
-| [QualifierSet_Next – funkce](qualifierset-next.md) | Načte další kvalifikátor ve výčtu, který spustil pomocí volání [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) funkce. |
+| [QualifierSet_GetNames function](qualifierset-getnames.md) | Načte názvy všech kvalifikátory nebo zadané kvalifikátory, které jsou k dispozici z aktuální objekt nebo vlastnost. |
+| [QualifierSet_Next function](qualifierset-next.md) | Načte další kvalifikátor ve výčtu, který spustil pomocí volání [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) funkce. |
 | [QualifierSet_Put – funkce](qualifierset-put.md) | Zapíše s názvem kvalifikátoru a hodnotu. |
 | [ResetSecurity – funkce](resetsecurity.md) | Přiřadí zadaný zosobnění pro aktuální vlákno. |
 | [SetSecurity – funkce](setsecurity.md) | Získá token zosobnění spojený s aktuálním vláknem. |
@@ -73,5 +67,6 @@ Toto rozhraní API zahrnuje následující funkce:
 | [VerifyClient – funkce](verifyclientkey.md) | Zajistí, že klíč klienta bude mít správné zabezpečení. |
 | [WritePropertyValue – funkce](writepropertyvalue.md) | Zapíše zadaný počet bajtů na vlastnost identifikovaný popisovač vlastnosti. |
 
- ## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také:
+
 [Referenční dokumentace nespravovaného rozhraní API](../index.md) 

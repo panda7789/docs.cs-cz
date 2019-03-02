@@ -2,15 +2,9 @@
 title: Události (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
-- events [Visual Basic], about events
-- events [Visual Basic]
+  - 'events [Visual Basic], about events'
+  - 'events [Visual Basic]'
 ms.assetid: 8fb0353a-e41b-4e23-b78f-da65db832f70
-ms.openlocfilehash: 08bd3b3c7ff5608193de0cdc1a869e0918c9e96e
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55065788"
 ---
 # <a name="events-visual-basic"></a>Události (Visual Basic)
 Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou spouštěny v pořadí, ve skutečnosti, většina programů jsou řízené událostmi – to znamená toku provádění se určuje podle externí výskyty volá *události*.  
@@ -23,12 +17,12 @@ Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou
 ### <a name="declaring-events"></a>Deklarace událostí  
  Deklarování událostí v rámci třídy, struktury, modulů a rozhraní, která používají `Event` – klíčové slovo, jako v následujícím příkladu:  
   
- [!code-vb[VbVbalrEvents#24](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_1.vb)]  
+ [!code-vb[VbVbalrEvents#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#24)]  
   
 ### <a name="raising-events"></a>Vyvolávání událostí  
  Událost je jako zpráva oznamující, že něco důležitého došlo k chybě. Je volána v rámci vysílání zprávy *vyvolání* události. V jazyce Visual Basic vyvolat události `RaiseEvent` příkazu, jako v následujícím příkladu:  
   
- [!code-vb[VbVbalrEvents#25](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_2.vb)]  
+ [!code-vb[VbVbalrEvents#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#25)]  
   
  Události musí být vyvolány v rámci oboru třídy, modulu nebo struktury, ve kterém jsou deklarovány. Například odvozené třídy nemohou vyvolat události zděděné ze základní třídy.  
   
@@ -49,7 +43,7 @@ Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou
 ### <a name="withevents-and-the-handles-clause"></a>WithEvents a klauzule Handles  
  `WithEvents` Příkazu a `Handles` klauzule poskytují deklarativní způsob zadání obslužné rutiny událostí. Události vyvolané objektem deklarována s `WithEvents` – klíčové slovo mohou být zpracovány všechny procedury s `Handles` příkaz pro tuto událost, jak je znázorněno v následujícím příkladu:  
   
- [!code-vb[VbVbalrEvents#1](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_3.vb)]  
+ [!code-vb[VbVbalrEvents#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#1)]  
   
  `WithEvents` Příkazu a `Handles` klauzule jsou často nejlepší volbou pro obslužné rutiny událostí, protože deklarativní syntaxe používají usnadňuje zpracování událostí na kód, čtení a ladění. Nicméně, mějte na paměti následující omezení týkající se použití `WithEvents` proměnné:  
   
@@ -65,18 +59,18 @@ Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou
   
  V některých případech například s událostí spojených s formuláře nebo ovládací prvky, Visual Basic automaticky tříd stub si prázdné obslužné rutiny a přidruží ji k události. Například když dvakrát kliknete na příkazové tlačítko na formulář v režimu návrhu, Visual Basic vytvoří prázdné obslužné rutiny a `WithEvents` proměnné příkazového tlačítka, stejně jako v následujícím kódu:  
   
- [!code-vb[VbVbalrEvents#26](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_4.vb)]  
+ [!code-vb[VbVbalrEvents#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#26)]  
   
 ### <a name="addhandler-and-removehandler"></a>Metody AddHandler a RemoveHandler  
  `AddHandler` Příkaz je podobný `Handles` klauzuli v, jak vám umožňují určit obslužnou rutinu události. Ale `AddHandler`, která se používá s `RemoveHandler`, poskytuje větší flexibilitu než `Handles` klauzule vám umožňuje dynamicky přidat, odebrat a změnit obslužnou rutinu události, který je přidružený k události. Pokud chcete zpracovávat události ze struktury nebo sdílené události, je nutné použít `AddHandler`.  
   
  `AddHandler` přebírá dva argumenty: název události od odesílatele události jako je například ovládací prvek a výraz, který se vyhodnotí jako delegát. Není potřeba explicitně zadat třídu delegáta při použití `AddHandler`, protože `AddressOf` příkaz vždy vrátí odkaz na delegáta. Následující příklad přidruží události vyvolané objektem obslužné rutiny události:  
   
- [!code-vb[VbVbalrEvents#28](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_5.vb)]  
+ [!code-vb[VbVbalrEvents#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#28)]  
   
  `RemoveHandler`, který událost odpojení od obslužné rutiny události, používá stejnou syntaxi jako `AddHandler`. Příklad:  
   
- [!code-vb[VbVbalrEvents#29](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_6.vb)]  
+ [!code-vb[VbVbalrEvents#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#29)]  
   
  V následujícím příkladu obslužná rutina události je přidružena k události a je vyvolána událost. Obslužná rutina události události zachytí a zobrazí zprávu.  
   
@@ -84,16 +78,16 @@ Projekt sady Visual Studio může vizualizovat jako série postupů, které jsou
   
  Nakonec se odebere Druhá obslužná rutina události a třetí dobu se vyvolá událost. Protože je už přidružený k události obslužnou rutinu události, nedojde k žádné akci.  
   
- [!code-vb[VbVbalrEvents#38](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_7.vb)]  
+ [!code-vb[VbVbalrEvents#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class2.vb#38)]  
   
 ## <a name="handling-events-inherited-from-a-base-class"></a>Zpracování událostí zděděné ze základní třídy  
  *Odvozené třídy*– třídy, které dědí vlastnosti ze základní třídy – můžete zpracovávat události vyvolané službou své základní třídy pomocí `Handles MyBase` příkazu.  
   
-#### <a name="to-handle-events-from-a-base-class"></a>Zpracování událostí ze základní třídy  
+### <a name="to-handle-events-from-a-base-class"></a>Zpracování událostí ze základní třídy  
   
 -   Deklarovat přidáním obslužné rutiny události v odvozené třídě `Handles MyBase.` *eventname* příkaz řádek deklaraci procedury Obslužná rutina události, kde *eventname* je název události v Základní třída, kterou obsluhujete. Příklad:  
   
-     [!code-vb[VbVbalrEvents#12](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/events_8.vb)]  
+     [!code-vb[VbVbalrEvents#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#12)]  
   
 ## <a name="related-sections"></a>Související oddíly  
   

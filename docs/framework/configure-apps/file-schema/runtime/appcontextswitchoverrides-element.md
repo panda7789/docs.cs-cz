@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e90f551b94e16fc7cecf768feff43e4d084c04a6
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: b11452e34a802e84a12eb1832234ae5ab60aa992
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56966148"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203545"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides> Element
 Definuje jeden nebo více přepínačů používané <xref:System.AppContext> třídě poskytnout mechanismus výslovného nesouhlasu pro nové funkce.  
@@ -88,6 +88,7 @@ Definuje jeden nebo více přepínačů používané <xref:System.AppContext> t�
 |`Switch.System.Net.`<br/>`DontEnableTlsAlerts`|Zakáže upozornění SslStream TLS na straně serveru.|Rozhraní .NET framework 4.7|
 |`Switch.System.Runtime.Serialization.`<br/>`DoNotUseECMAScriptV6EscapeControlCharacter` |Ovládací prvky, zda [DataContractJsonSerializer](xref:System.Runtime.Serialization.Json.DataContractJsonSerializer) serializuje některé řídicí znaky na základě standardů ECMAScript V6 a V8. Další informace najdete v tématu [omezení rizik: Serializace ovládacího prvku znaků s vlastností objektu DataContractJsonSerializer](../../../migration-guide/mitigation-serialization-control-characters.md)| Rozhraní .NET framework 4.7 |
 |`Switch.System.Runtime.Serialization.`<br/>`DoNotUseTimeZoneInfo`|Ovládací prvky, zda <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporuje víc úpravy nebo pouze jediné úpravy pro časové pásmo. Pokud `true`, použije <xref:System.TimeZoneInfo> typ k serializaci a deserializaci data a času; v opačném případě se použije <xref:System.TimeZone> typ, který nepodporuje víc úpravy pravidel.|.NET Framework 4.6.2|
+|`Switch.System.Runtime.Serialization.UseNewMaxArraySize`|Ovládací prvky, zda <xref:System.Runtime.Serialization.ObjectManager?displayProperty=nameWithType> používá větší velikost pole během objekt serializace a deserializace. Nastavte na tento přepínač `true` ke zlepšení výkonu serializace a deserializace velkých grafů objektů podle typů, jako <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. |.NET Framework 4.7.2|
 |`Switch.System.Security.ClaimsIdentity.`<br/>`SetActorAsReferenceWhenCopyingClaimsIdentity`|Ovládací prvky, zda <xref:System.Security.Claims.ClaimsIdentity.%23ctor%28System.Security.Principal.IIdentity%29?displayProperty=nameWithType> konstruktor nastaví nový objekt <xref:System.Security.Claims.ClaimsIdentity.Actor%2A?displayProperty=nameWithType> vlastnost s existující odkaz na objekt. Další informace najdete v tématu [omezení rizik: Konstruktor ClaimsIdentity](../../../migration-guide/mitigation-claimsidentity-constructor.md).|.NET Framework 4.6.2|  
 |`Switch.System.Security.Cryptography.`<br/>`AesCryptoServiceProvider.DontCorrectlyResetDecryptor`|Ovládací prvky, zda pokus o opakované použití <xref:System.Security.Cryptography.AesCryptoServiceProvider> vyvolá modul pro dešifrování <xref:System.Security.Cryptography.CryptographicException>. Další informace najdete v tématu [AesCryptoServiceProvider modul pro dešifrování. nabízí opakovaně použitelné transformace](../../../migration-guide/retargeting/4.6.1-4.6.2.md#aescryptoserviceprovider-decryptor-provides-a-reusable-transform).|.NET Framework 4.6.2|
 |`Switch.System.Security.Cryptography.`<br/>`DoNotAddrOfCspParentWindowHandle`|Ovládací prvky, zda hodnota [CspParameters.ParentWindowHandle](xref:System.Security.Cryptography.CspParameters.ParentWindowHandle) vlastnost je [IntPtr](xref:System.IntPtr) , že zpracování představuje umístění okna v paměti, nebo zda je popisovač okna (popisovačem HWND). Další informace najdete v tématu [omezení rizik: CspParameters.ParentWindowHandle očekává, že popisovačem HWND](../../../migration-guide/retargeting/4.6.2-4.7.md#cspparametersparentwindowhandle-now-expects-hwnd-value). |Rozhraní .NET framework 4.7|   

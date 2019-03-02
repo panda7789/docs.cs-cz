@@ -10,12 +10,12 @@ helpviewer_keywords:
 - virtual methods [C#]
 - C# language, inheritance
 ms.assetid: 81d64ee4-50f9-4d6c-a8dc-257c348d2eea
-ms.openlocfilehash: 4ba5c28f6d4842846c55f47b3b40628ec57c9702
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a6e9e095caaa8c0e4330df3f766dbef927c5acd2
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54607014"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57202350"
 ---
 # <a name="inheritance-c-programming-guide"></a>Dědičnost (Průvodce programováním v C#)
 
@@ -35,7 +35,7 @@ Dědičnost tříd
   
  Následující příklad ukazuje, jak relace tříd jsme vám ukázali v předchozí ilustraci jsou vyjádřeny v jazyce C#. Příklad také ukazuje, jak `WorkItem` přepisuje metodu virtuální <xref:System.Object.ToString%2A?displayProperty=nameWithType>a jak `ChangeRequest` třída dědí `WorkItem` implementace metody.  
   
- [!code-csharp[csProgGuideInheritance#49](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/inheritance_1.cs)]  
+ [!code-csharp[csProgGuideInheritance#49](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#49)]  
   
 ## <a name="abstract-and-virtual-methods"></a>Abstraktní a virtuální metody  
  Pokud základní třída deklaruje metodu jako [virtuální](../../../csharp/language-reference/keywords/virtual.md), mohou odvozené třídy [přepsat](../../../csharp/language-reference/keywords/override.md) metoda vlastní implementací. Pokud základní třída deklaruje člen jako [abstraktní](../../../csharp/language-reference/keywords/abstract.md), že metoda musí přepsat v neabstraktní třídě, který dědí přímo z této třídy. Pokud odvozené třídy je sama o sobě abstraktní, dědí abstraktní členové bez jejich implementaci. Abstraktní a virtuální členy jsou základem pro polymorfismus, což je druhým charakteristickým znakem primární objektově orientované programování. Další informace najdete v tématu [polymorfismus](../../../csharp/programming-guide/classes-and-structs/polymorphism.md).  

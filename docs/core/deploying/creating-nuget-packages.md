@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 06/20/2016
 ms.technology: dotnet-cli
 ms.custom: seodec18
-ms.openlocfilehash: 14e3dc265991634b4ef4814fb149f0aaebbcfab6
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 1add3470799b75ebb92c67eed3509523e510ab6c
+ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170051"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57211790"
 ---
 # <a name="how-to-create-a-nuget-package-with-net-core-command-line-interface-cli-tools"></a>Jak vytvořit balíček NuGet s nástroji .NET Core rozhraní příkazového řádku (CLI)
 
@@ -28,13 +28,13 @@ Pokud máte přechodné závislosti; To znamená, že projekt, který závisí n
 Až se ujistíte, obnovení balíčků, můžete přejít k adresáři, kde se nachází knihovny:
 
 ```console
-$ cd src/SuperAwesomeLibrary`
+cd src/SuperAwesomeLibrary
 ```
 
 Pak je pouze jediný příkaz z příkazového řádku:
 
 ```console
-$ dotnet pack
+dotnet pack
 ```
 
 Vaše `/bin/Debug` složky se teď měl vypadat takto:
@@ -50,7 +50,7 @@ SuperAwesomeLibrary.1.0.0.symbols.nupkg
 Mějte na paměti, vznikne balíčku, který je schopen právě laděny. Pokud chcete vytvořit balíček NuGet s binárními soubory verze, všechno, co potřebujete udělat je přidat `--configuration` (nebo `-c`) přepněte a použít `release` jako argument.
 
 ```console
-$ dotnet pack --configuration release
+dotnet pack --configuration release
 ```
 
 Vaše `/bin` složky budou mít `release` složku, která obsahuje váš balíček NuGet s binárními soubory verze:

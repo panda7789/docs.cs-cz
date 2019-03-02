@@ -16,7 +16,7 @@ ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
 ## <a name="declaring-and-initializing-strings"></a>Deklarace a inicializace řetězců  
  Můžete deklarovat a inicializovat řetězce různými způsoby, jak je znázorněno v následujícím příkladu:  
   
- [!code-csharp[csProgGuideStrings#1](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_1.cs)]  
+ [!code-csharp[csProgGuideStrings#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#1)]  
   
  Všimněte si, že je velmi riskantní používat [nové](../../../csharp/language-reference/keywords/new-operator.md) operátoru pro vytvoření objektu řetězce s výjimkou při inicializaci řetězce bez pole znaků.  
   
@@ -84,16 +84,16 @@ Další informace o formátování typy .NET najdete v části [formátovací ty
 ## <a name="substrings"></a>Podřetězců  
  Dílčí řetězec je posloupnost znaků, které jsou obsaženy v řetězci. Použití <xref:System.String.Substring%2A> metodu pro vytvoření nového řetězce z část původní řetězec. Můžete vyhledat jeden nebo více výskytů dílčí řetězec s použitím <xref:System.String.IndexOf%2A> metody. Použití <xref:System.String.Replace%2A> metoda nahraďte všechny výskyty zadaným podřetězcem nový řetězec. Podobně jako <xref:System.String.Substring%2A> metody <xref:System.String.Replace%2A> ve skutečnosti vrátí nový řetězec a nezmění původní řetězec. Další informace najdete v tématu [postupy: vyhledávání řetězců](../../how-to/search-strings.md) a [jak: Změna obsahu řetězce](../../how-to/modify-string-contents.md).  
   
- [!code-csharp[csProgGuideStrings#7](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_7.cs)]  
+ [!code-csharp[csProgGuideStrings#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#9)]  
   
 ## <a name="accessing-individual-characters"></a>Přístup ke jednotlivým znakům  
  Zápis pole s hodnotou indexu můžete získat přístup jen pro čtení na jednotlivé znaky, jako v následujícím příkladu:  
   
- [!code-csharp[csProgGuideStrings#9](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_8.cs)]  
+ [!code-csharp[csProgGuideStrings#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#8)]  
   
  Pokud <xref:System.String> metody se neposkytuje funkce, které potřebujete k úpravě jednotlivých znaků v řetězci, můžete použít <xref:System.Text.StringBuilder> objekt upravit jednotlivé znaky "místní" a pak vytvořte nový řetězec k uložení výsledků pomocí <xref:System.Text.StringBuilder> metody. V následujícím příkladu se předpokládá, že musí určitým způsobem upravit původní řetězec a poté uložit výsledky pro budoucí použití:  
   
- [!code-csharp[csProgGuideStrings#8](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_9.cs)]  
+ [!code-csharp[csProgGuideStrings#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#27)]  
   
 ## <a name="null-strings-and-empty-strings"></a>Řetězce s hodnotou Null a prázdné řetězce  
  Prázdný řetězec je instance <xref:System.String?displayProperty=nameWithType> objekt obsahující nulové znaky. Prázdné řetězce představují prázdné textové pole se často používají v různých programovacích scénářů. Můžete volat metody na prázdné řetězce, protože jde o platný <xref:System.String?displayProperty=nameWithType> objekty. Prázdné řetězce jsou inicializovány následujícím způsobem:  
@@ -104,12 +104,12 @@ string s = String.Empty;
   
  Naopak řetězec null neodkazuje na instanci <xref:System.String?displayProperty=nameWithType> objektu a jakýkoliv pokus o volání metody na řetězec s hodnotou null způsobí, že <xref:System.NullReferenceException>. Můžete však použít řetězce s hodnotou null v operace porovnání a zřetězení s dalšími řetězci. Následující příklady znázorňují někdy, v nichž odkaz na řetězec s hodnotou null nemá a nezpůsobí výjimku, která je vyvolána:  
   
- [!code-csharp[csProgGuideStrings#27](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_10.cs)]  
+ [!code-csharp[csProgGuideStrings#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#20)]  
   
 ## <a name="using-stringbuilder-for-fast-string-creation"></a>Pro vytváření rychlého řetězců pomocí StringBuilder  
  Operace s řetězci v .NET je vysoce optimalizovaných a ve většině případů nemají vliv výrazně výkonu. V některých případech například úzkou smyčky, které jsou spuštěny mnoha stovek nebo tisíců časy, ale operace s řetězci může ovlivnit výkon. <xref:System.Text.StringBuilder> Třída vytvoří vyrovnávací paměti pro řetězec, který nabízí lepší výkon, pokud aplikace provádí mnoho manipulace s řetězci. <xref:System.Text.StringBuilder> Řetězec umožňuje také něco změnit přiřazení jednotlivých znaků, předdefinovaných řetězec datového typu se nepodporuje. Tento kód například změní obsah řetězce bez vytvoření nového řetězce:  
   
- [!code-csharp[csProgGuideStrings#20](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_11.cs)]  
+ [!code-csharp[csProgGuideStrings#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#15)]  
   
  V tomto příkladu <xref:System.Text.StringBuilder> objektu se používá k vytvoření řetězce z sadu číselné typy:  
   

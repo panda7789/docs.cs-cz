@@ -10,12 +10,12 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: d646a73cc8616821372c5a0078b595291829ac27
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: b928be1c4e291918b0d75d6efc40bb11cff91088
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56970182"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203532"
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C# (Průvodce programováním v C#)
 Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní API Office. Nové funkce patří pojmenované a nepovinné argumenty, nový typ s názvem `dynamic`a možnost předání argumentů do parametrů odkazu v metodách modelu COM, jako by byly parametry s hodnotou.  
@@ -78,7 +78,7 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
      Metoda <xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A> je volitelný parametr určující konkrétní šablonu. Volitelné parametry, které jsou nové v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vám umožní argument pro tento parametr vynechat, pokud chcete použít výchozí hodnotu parametru. Protože je v následujícím kódu žádný argument `Add` používá výchozí šablonu a vytvoří nový sešit. Ekvivalentní příkaz ve starších verzích jazyka C# vyžaduje argument zástupný symbol: `ExcelApp.Workbooks.Add(Type.Missing)`.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#4](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_4.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#4)]  
   
 2.  Přidejte následující kód na konci `DisplayInExcel`. Kód vloží hodnoty do prvních dvou sloupcích prvního řádku listu.  
   
@@ -118,11 +118,11 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
      `PasteSpecial` Metoda vloží obsah schránky. Metoda má sedm parametrů odkazu, z nichž všechny jsou volitelné. Následující kód určuje argumenty pro dva z nich: `Link`, chcete-li vytvořit odkaz na zdroj obsah schránky a `DisplayAsIcon`, aby se zobrazil na odkaz jako ikona. V [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], můžete použít pojmenované argumenty pro tyto dvě a ostatní vynechat. I když jsou parametry odkazů, není potřeba použít `ref` – klíčové slovo, nebo k vytvoření proměnné k odeslání jako argumenty. Hodnoty můžete odeslat přímo. V [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] a starší verze, je nutné odeslat argumentů proměnných pro každý odkaz na parametr.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#9](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_10.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#9)]  
   
      V [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] nebo starší verze jazyka následující složitější kód je povinný.  
   
-     [!code-csharp[csProgGuideOfficeHowTo#10](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_11.cs)]  
+     [!code-csharp[csProgGuideOfficeHowTo#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#10)]  
   
 2.  Přidejte následující příkaz na konci `Main`.  
   
@@ -171,7 +171,7 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
 ## <a name="example"></a>Příklad  
  Následující kód ukazuje kompletní příklad.  
   
- [!code-csharp[csProgGuideOfficeHowTo#18](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_17.cs)]  
+ [!code-csharp[csProgGuideOfficeHowTo#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/walkthrough.cs#18)]  
   
 ## <a name="see-also"></a>Viz také:
 

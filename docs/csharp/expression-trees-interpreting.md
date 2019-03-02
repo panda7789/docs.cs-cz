@@ -3,12 +3,12 @@ title: Interpretace výrazů
 description: Zjistěte, jak napsat kód, který zkontrolujte strukturu stromu výrazů.
 ms.date: 06/20/2016
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: 95fbb021aeeb9f2f4eb36f664f9fe904d1d52453
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 49c030706a0a6196dfdd72e3c2fbff90b7667f48
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43506416"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57201973"
 ---
 # <a name="interpreting-expressions"></a>Interpretace výrazů
 
@@ -353,7 +353,7 @@ Expression<Func<int, int>> factorial = (n) =>
     Enumerable.Range(1, n).Aggregate((product, factor) => product * factor);
 ```
 
-Tento kód představuje jednu možnou implementaci matematické *faktoriál* funkce. Způsob, jak tento kód je napsali zvýrazní dvě omezením vytváření stromů výrazů přiřazením výrazy lambda výrazech. Nejprve lambda nejsou povoleny. To znamená nejde mi využít smyčky, bloky, pokud / else příkazy a další ovládací prvek struktury, které jsou běžné v jazyce C#. Já jsem můžete používat výrazy. Za druhé nelze rekurzivní volání stejného výrazu.
+Tento kód představuje jednu možnou implementaci matematické *faktoriál* funkce. Způsob, jakým napsali tento kód ukazuje dvě omezení vytváření stromů výrazů přiřazením výrazy lambda výrazy. Nejprve lambda nejsou povoleny. To znamená nejde mi využít smyčky, bloky, pokud / else příkazy a další ovládací prvek struktury, které jsou běžné v jazyce C#. Já jsem můžete používat výrazy. Za druhé nelze rekurzivní volání stejného výrazu.
 Uvidím, pokud již byly delegáta, ale nelze volat v podobě stromu výrazu. V části o [vytváření stromů výrazů](expression-trees-building.md) dozvíte techniky k překonání těchto omezení.
 
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Internet, security
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
-ms.openlocfilehash: 6aa05aab5bbd012c31dc31be38c0b3eaea13dd27
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: b08d119c0c7edb71ceab5c763c1359bf4c90cfec
+ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56966187"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57212531"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Zabezpečení TLS (Transport Layer) osvědčené postupy s použitím rozhraní .NET Framework
 
@@ -237,7 +237,7 @@ V registru můžete použít pro velice přesně kontrolovat, protokol, který v
 
 Začněte `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols` klíč registru. Pod tímto klíčem můžete vytvořit všechny podklíče v sadě `SSL 2.0`, `SSL 3.0`, `TLS 1.0`, `TLS 1.1`, a `TLS 1.2`. Pod každým z těchto podklíčích, můžete vytvořit podklíče `Client` a/nebo `Server`. V části `Client` a `Server`, vytvořením hodnoty DWORD `DisabledByDefault` (0 nebo 1) a `Enabled` (0 nebo hodnotu 0xFFFFFFFF).
 
-## <a name="the-schusestrongcrypto-flag"></a>The SCH_USE_STRONG_CRYPTO flag
+## <a name="the-sch_use_strong_crypto-flag"></a>The SCH_USE_STRONG_CRYPTO flag
 
 Pokud je povolená (ve výchozím nastavení, pomocí `AppContext` přepnout, nebo pomocí registru Windows), používá rozhraní .NET Framework `SCH_USE_STRONG_CRYPTO` příznak, když vaše aplikace požaduje protokol zabezpečení TLS. `SCH_USE_STRONG_CRYPTO` Příznak můžete povolit ve výchozím nastavení, `AppContext` přepnout, nebo s registrem. Operační systém předává příznak, který `Schannel`dáte pokyn, aby ho zakázat známé slabé kryptografické algoritmy, šifer sady a verze protokolu TLS/SSL, které může být jinak povoleno pro lepší spolupráci. Další informace naleznete v tématu:
 
