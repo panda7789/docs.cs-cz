@@ -7,12 +7,12 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: 9ee6e9a06d590d9d8452dcdaea11219070e613c4
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 9e63b16106f69ec35b7713ffc1a28e2cfb19d2d9
+ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188180"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57203649"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
 
@@ -158,7 +158,7 @@ Usnadnění | [Usnadnění přístupu člena](#member-accessibility) | Přístup
 Usnadnění | [Usnadnění přístupu člena](#member-accessibility) | Viditelnost a přístupnost typů a členů musí být takový, že typy v podpisu kteréhokoli člena musí být viditelné a přístupné, kdykoli je samotný člen viditelný a přístupný. Například veřejnou metodu, která je viditelná mimo sestavení, nebude mít argument, jehož typ je viditelný pouze v rámci sestavení. Viditelnost a přístupnost typy psaní obecného typu použít v podpisu kteréhokoli člena musí být viditelné a přístupné kdykoli je samotný člen viditelný a přístupný. Například instance obecného typu uvedená v podpisu člena, který je viditelný mimo sestavení, nebude mít obecný argument, jehož typ je viditelný pouze v rámci sestavení. | 12
 Pole | [Pole](#arrays) | Pole musí mít prvky s typem kompatibilní se Specifikací CLS, a všechny dimenze pole musí mít nižší mez nula. Pouze skutečnost, že položka je pole a typ prvku pole musí rozlišovat mezi přetíženími. Když je přetížení založeno na dvou nebo více typech pole typy prvků by jsou pojmenované typy. | 16
 Atributy | [Atributy](#attributes) | Atributy musí být typu [System.Attribute](xref:System.Attribute), nebo typu, který z něj dědí. | 41
-Atributy | [Atributy](#attributes) | Specifikace CLS umožňuje pouze podsadu kódování vlastních atributů. Jediné typy, které se zobrazí v těchto kódováních jsou (viz oddíl IV): [System.Type](xref:System.Type), [System.String](xref:System.String), [System.Char](xref:System.Char), [System.Boolean](xref:System.Boolean), [System.Byte](xref:System.Byte), [System.Int16](xref:System.Int16), [System.Int32](xref:System.Int32), [System.Int64](xref:System.Int64), [ System.Single](xref:System.Single), [System.Double](xref:System.Double), a jakýkoli typ výčtu založený na typu základního celého čísla kompatibilním se Specifikací CLS. | 34
+Atributy | [Atributy](#attributes) | Specifikace CLS umožňuje pouze podsadu kódování vlastních atributů. Pouze typy, které se zobrazí v těchto kódováních jsou (viz oddíl IV): [System.Type](xref:System.Type), [System.String](xref:System.String), [System.Char](xref:System.Char), [System.Boolean](xref:System.Boolean), [System.Byte](xref:System.Byte), [ System.Int16](xref:System.Int16), [System.Int32](xref:System.Int32), [System.Int64](xref:System.Int64), [System.Single](xref:System.Single), [System.Double](xref:System.Double), a libovolný typ výčtu, založený na typu základního celého čísla kompatibilním se Specifikací CLS. | 34
 Atributy | [Atributy](#attributes) | Specifikace CLS neumožňuje veřejně viditelné požadované modifikátory (`modreq`, viz oddíl II), ale umožňuje volitelné modifikátory (`modopt`, viz oddíl II) nerozumí. | 35
 Konstruktory | [Konstruktory](#constructors) | Konstruktor objektu zavolá nějakou instanci konstruktoru své základní třídy, předtím, než dojde k jakémukoli přístupu ke zděděným datům instance. (To neplatí pro typy hodnot, které nemusí mít konstruktory.)  | 21
 Konstruktory | [Konstruktory](#constructors) | Konstruktor objektu nebude volán, jedině jako část vytvoření objektu a objekt nelze inicializovat dvakrát. | 22
@@ -320,7 +320,7 @@ Typ kompatibilní se Specifikací CLS | Popis
 ------------------ | -----------
 [Bajtů](xref:System.Byte) | 8bitové celé číslo bez znaménka 
 [Int16](xref:System.Int16) | 16bitové celé číslo se znaménkem 
-[Datový typ Int32](xref:System.Int32) | 32bitové celé číslo se znaménkem 
+[Int32](xref:System.Int32) | 32bitové celé číslo se znaménkem 
 [Int64](xref:System.Int64) | 64bitové celé číslo se znaménkem
 [Jeden](xref:System.Single) | S plovoucí desetinnou čárkou s jednoduchou přesností
 [Double](xref:System.Double) | Dvojité přesnosti s plovoucí desetinnou čárkou
@@ -336,7 +336,7 @@ Vnitřní typy, které jsou uvedeny v následující tabulce nejsou kompatibiln�
 Nevyhovující typ | Popis | Alternativy CLS
 ------------------ | ----------- | -------------------------
 [SByte –](xref:System.SByte) | 8bitové celé číslo se znaménkem datový typ | [Int16](xref:System.Int16)
-[UInt16](xref:System.UInt16) | 16bitové celé číslo bez znaménka | [Datový typ Int32](xref:System.Int32)
+[UInt16](xref:System.UInt16) | 16bitové celé číslo bez znaménka | [Int32](xref:System.Int32)
 [UInt32](xref:System.UInt32) | 32bitové celé číslo bez znaménka | [Int64](xref:System.Int64)
 [UInt64](xref:System.UInt64) | 64bitové celé číslo bez znaménka | [Int64](xref:System.Int64) (může přetéci), [BigInteger](xref:System.Numerics.BigInteger), nebo [Double](xref:System.Double)
 [UIntPtr](xref:System.UIntPtr) | Nepodepsaný ukazatel nebo popisovač | [IntPtr](xref:System.IntPtr)
@@ -2058,7 +2058,7 @@ Konstruktory ve kompatibilní se Specifikací CLS třídách a strukturách mus�
 
 Vlastnosti v typech odpovídajících specifikaci CLS musí postupovat podle těchto pravidel:
 
-* Vlastnost musí mít setter, getter nebo oba. V sestavení, jsou implementovány jako speciální metody, což znamená, že se zobrazí jako samostatné metody (metoda getter má název `get` \_ *propertyname* a Metoda setter je `set*\_*propertyname*) marked as `SpecialName "v metadata sestavení. C# Kompilátor vynucuje toto pravidlo automaticky bez nutnosti použít [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) atribut. 
+* Vlastnost musí mít setter, getter nebo oba. V sestavení, jsou implementovány jako speciální metody, což znamená, že se zobrazí jako samostatné metody (metoda getter má název `get` \_ *propertyname* a Metoda setter je `set` \_ *propertyname*) označené jako `SpecialName` v metadatech sestavení. C# Kompilátor vynucuje toto pravidlo automaticky bez nutnosti použít <xref:System.CLSCompliantAttribute> atribut. 
 
 * Typ vlastnosti je návratový typ vlastnosti getter a poslední argument metody setter. Tyto typy musí být kompatibilní se Specifikací CLS a argumenty nelze přiřazovat na vlastnost odkazem (to znamená, že nemůže být spravovanými ukazateli). 
 
@@ -2580,7 +2580,7 @@ Konstruktor nebo vlastnosti odpovídající specifikaci CLS atributu mohou vysta
 
 * [Int16](xref:System.Int16)
 
-* [Datový typ Int32](xref:System.Int32)
+* [Int32](xref:System.Int32)
 
 * [Int64](xref:System.Int64)
 

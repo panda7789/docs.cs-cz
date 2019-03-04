@@ -1041,8 +1041,9 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časového p�
 
 - Návrhář aktivity flowchart nebo jiné návrháře aktivit pracovního postupu se může zobrazit všechny objekty do výchozího umístění na rozdíl od hodnoty připojené vlastnosti.
 
+<a name="clickonce-1" />
 
-### <a name="clickonce"></a>ClickOnce
+### <a name="clickonce"></a>Technologie ClickOnce
 
 Aktualizovali jsme ClickOnce pro podporu protokolu TLS 1.1 a TLS 1.2 kromě 1.0 protokolu, která již podporuje. ClickOnce automaticky rozpozná, protokol, který se vyžaduje; žádné další kroky v rámci aplikace ClickOnce jsou požadovány pro povolení TLS 1.1 a 1.2 podpory.
 

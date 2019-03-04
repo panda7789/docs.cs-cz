@@ -1,18 +1,18 @@
 ---
-title: Výrazy lambda
+title: Lambda – výrazy
 description: Další použití lambda výrazů, které jsou bloky spustitelného kódu, které mohou být předány jako argumenty.
 ms.author: ronpet
 author: rpetrusha
 ms.date: 11/22/2016
 ms.assetid: b6a0539a-8ce5-4da7-adcf-44be345a2714
-ms.openlocfilehash: 74ad1c5ddae69864b85099535e8b83a4504275a7
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 642422a4cc077ffebb5ee6db9d7ffb937fc1e173
+ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183124"
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57212349"
 ---
-# <a name="lambda-expressions"></a>Výrazy lambda #
+# <a name="lambda-expressions"></a>Výrazy lambda
 
 A *výraz lambda* je blok kódu (výraz nebo blok příkazů, který), který je zpracováván jako objekt. Může být předán jako argument metody, a to může být vrácen voláním metody. Výrazy lambda jsou často používány pro:
 
@@ -32,7 +32,7 @@ Nebo jej lze předat přímo jako argument metody:
 
 [!code-csharp[csSnippets.Lambdas](../../samples/snippets/csharp/concepts/lambda-expressions/lambda2.cs#2)]
 
-## <a name="expression-lambdas"></a>Výrazové lambdy ##
+## <a name="expression-lambdas"></a>Výrazové lambdy
 
  Výraz lambda s výrazem na pravé straně = > – operátor je volána *výrazu lambda*. Výrazové lambdy se často používají v konstrukci [stromů výrazů](expression-trees.md). Výrazová lambda vrátí výsledek výrazu a má následující základní podobu:
 
@@ -54,7 +54,7 @@ Kompilátor používá obvykle odvození typu při určování typy parametrů. 
 
 V předchozím příkladu si všimněte, že hlavní část výrazové lambdy může být tvořena voláním metody. Ale pokud vytváříte stromy výrazů, které jsou vyhodnocovány mimo rozhraní .NET Framework, například systému SQL Server nebo Entity Framework (EF), můžete neměly by pomocí volání metody v lambda výrazech, protože může metody nemají význam mimo kontext implementace .NET. Pokud budete chtít v tomto případě používat volání metody, nezapomeňte otestovat jejich důkladně a zkontrolujte, že metoda, kterou lze úspěšně vyřešit volání.
 
-## <a name="statement-lambdas"></a>Příkazové lambdy ##
+## <a name="statement-lambdas"></a>Příkazové lambdy
 
 Příkazová lambda se podobá výrazové lambdě s tím rozdílem, že výrazy jsou uzavřeny ve složených závorkách:
 
@@ -68,7 +68,7 @@ Text příkazové lambdy může obsahovat libovolný počet příkazů. V praxi
 
 Příkazové lambdy nelze stejně jako anonymní metody používat k vytvoření stromů výrazu.
 
-## <a name="async-lambdas"></a>Asynchronní lambdy ##
+## <a name="async-lambdas"></a>Asynchronní lambdy
 
 Můžete snadno vytvořit výrazy lambda a příkazy, které zahrnují asynchronní zpracování pomocí [asynchronní](language-reference/keywords/async.md) a [await](language-reference/keywords/await.md) klíčová slova. Například v příkladu volá `ShowSquares` metodu, která se spustí asynchronně.
 
@@ -76,7 +76,7 @@ Můžete snadno vytvořit výrazy lambda a příkazy, které zahrnují asynchron
 
 Další informace o tom, jak vytvořit a používat asynchronní metody, naleznete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](programming-guide/concepts/async/index.md).
 
-## <a name="lambda-expressions-and-tuples"></a>Výrazy lambda a řazené kolekce členů ##
+## <a name="lambda-expressions-and-tuples"></a>Výrazy lambda a řazené kolekce členů
 
 Od verze C# 7.0, jazyk C# obsahuje integrovanou podporu pro řazené kolekce členů. Řazená kolekce členů můžete zadat jako argument výraz lambda, a výraz lambda může také vrátit řazené kolekce členů. V některých případech kompilátor jazyka C# používá odvození typu k určení typů součásti řazené kolekce členů.
 
@@ -90,7 +90,7 @@ Obvykle jsou pojmenované pole řazená kolekce členů `Item1`, `Item2`atd. Řa
 
 Další informace o podpoře pro řazené kolekce členů v C# najdete v tématu [typy řazené kolekce členů jazyka C#](tuples.md).
 
-## <a name="lambdas-with-the-standard-query-operators"></a>Výrazy lambda s operátory standardního dotazu ##
+## <a name="lambdas-with-the-standard-query-operators"></a>Výrazy lambda s operátory standardního dotazu
 
 LINQ na objekty v jiných implementacích má vstupní parametr, jehož typ je jednou z <xref:System.Func%601> řady obecných delegátů. Tyto delegáty používají parametry typu pro definování počtu a typu vstupních parametrů a návratový typ delegáta. `Func` Delegáti jsou velmi užiteční pro zapouzdření výrazů definovaných uživatelem, které jsou použity pro každý prvek v sadě zdrojových dat. Představme si třeba, <xref:System.Func%601> delegáta, jehož syntaxe je:
 
@@ -118,7 +118,7 @@ Následující příklad určuje většího počtu vstupních parametrů uzavře
 
 [!code-csharp[csSnippets.Lambdas](../../samples/snippets/csharp/concepts/lambda-expressions/query1.cs#6)]
 
-## <a name="type-inference-in-lambda-expressions"></a>Odvození typu proměnné ve výrazech lambda ##
+## <a name="type-inference-in-lambda-expressions"></a>Odvození typu proměnné ve výrazech lambda
 
 Při psaní výrazů lambda, často není nutné zadat typ pro vstupní parametry, protože kompilátor může odvodit typ na základě hlavní část výrazu lambda, typy parametrů a dalších faktorů, jak je popsáno ve specifikaci jazyka C#. Pro většinu standardních operátorů pro dotazování je prvním vstupem typ prvků ve zdrojové sekvenci. Pokud se dotazuje `IEnumerable<Customer>`, pak je vstupní proměnná odvozena jako `Customer` objekt, což znamená, že máte přístup k jejím metodám a vlastnostem:
 
@@ -134,7 +134,7 @@ Obecná pravidla pro odvození typu proměnné pro výrazy lambda jsou:
 
 Výrazy lambda nemají vlastní určený typ, protože systém běžných typů nezná vnitřní pojem „výraz lambda“. Někdy je však vhodné hovořit neformálně o „typu“ výrazu lambda. V těchto případech typ odkazuje na typ delegáta nebo <xref:System.Linq.Expressions.Expression> typ na který je převeden výraz lambda.
 
-## <a name="variable-scope-in-lambda-expressions"></a>Rozsah proměnné ve výrazech lambda ##
+## <a name="variable-scope-in-lambda-expressions"></a>Rozsah proměnné ve výrazech lambda
 
 Výrazy lambda mohou odkazovat na *vnější proměnné* (viz [anonymní metody](programming-guide/statements-expressions-operators/anonymous-methods.md)), které jsou v oboru v metodě, která definuje funkci lambda, nebo v rozsahu typu, který obsahuje výraz lambda. Proměnné, které jsou zachyceny tímto způsobem, jsou uloženy pro použití ve výrazu lambda i v případě, že proměnné by jinak přesáhly rozsah platnosti a bylo by vynuceno uvolnění paměti. Vnější proměnná musí být jednoznačně přiřazena dříve, než může být upotřebena ve výrazu lambda. Následující příklad znázorňuje tato pravidla.
 
@@ -152,7 +152,7 @@ Výrazy lambda mohou odkazovat na *vnější proměnné* (viz [anonymní metody]
 
 - Výraz lambda nemůže obsahovat `goto` příkazu `break` příkazu, nebo `continue` příkaz, který se nachází uvnitř funkce lambda, pokud cíl příkazu skoku je mimo blok. Je také chybou mít příkaz skoku mimo blok funkce lambda, pokud je cíl uvnitř bloku.
 
-## <a name="see-also"></a>Viz také: ##
+## <a name="see-also"></a>Viz také:
 
 - [LINQ (Language-Integrated Query)](../standard/using-linq.md)
 - [Anonymní metody](programming-guide/statements-expressions-operators/anonymous-methods.md)
