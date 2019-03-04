@@ -1,5 +1,5 @@
 ---
-title: 'Příklad regulárního výrazu: Vyhledávání atributů href'
+title: 'Příklad regulárního výrazu: Vyhledávání atributů HREF'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -15,14 +15,14 @@ helpviewer_keywords:
 ms.assetid: fae2c15b-7adf-4b15-b118-58eb3906994f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e6fe667ca908b2a4ba16e34e8e74dd39ca01f153
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 4e743f32637a7e15b4b017bbe30aa02ad8388fbe
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582837"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56975963"
 ---
-# <a name="regular-expression-example-scanning-for-hrefs"></a>Příklad regulárního výrazu: Vyhledávání atributů href
+# <a name="regular-expression-example-scanning-for-hrefs"></a>Příklad regulárního výrazu: Vyhledávání atributů HREF
 Následující příklad hledá vstupní řetězec a zobrazí všechny href = "..." a jejich umístění v řetězci.  
   
 ## <a name="the-regex-object"></a>Objekt regulárního výrazu  
@@ -44,7 +44,7 @@ Následující příklad hledá vstupní řetězec a zobrazí všechny href = ".
 |`\s*`|Porovná žádný nebo více prázdných znaků.|  
 |`=`|Porovná znaménko rovná se.|  
 |`\s*`|Porovná žádný nebo více prázdných znaků.|  
-|<code>(?:\["'\](?<1>\[^"'\]*)["']&#124;(?<1>\S+))</code>|Bez přiřazení výsledku zachycené skupině odpovídat jedné z následujících akcí:<br /> <ul><li><p>Uvozovka nebo apostrof, za nímž následuje nula nebo více výskytů libovolného znaku jiného než uvozovka nebo apostrof, za nímž následuje uvozovka nebo apostrof. Skupina s názvem `1` je součástí tohoto modelu.</p></li><li><p>Jeden nebo více znaků prázdné znaky. Skupina s názvem `1` je součástí tohoto modelu.</p></li></ul>|  
+|`(?:\["'\](?<1>\[^"'\]*)["']|(?<1>\S+))`|Bez přiřazení výsledku zachycené skupině odpovídat jedné z následujících akcí:<br /> <ul><li><p>Uvozovka nebo apostrof, za nímž následuje nula nebo více výskytů libovolného znaku jiného než uvozovka nebo apostrof, za nímž následuje uvozovka nebo apostrof. Skupina s názvem `1` je součástí tohoto modelu.</p></li><li><p>Jeden nebo více znaků prázdné znaky. Skupina s názvem `1` je součástí tohoto modelu.</p></li></ul>|  
 |`(?<1>[^"']*)`|Přiřadit žádnému nebo více výskytům libovolného znaku jiného než uvozovka nebo apostrof zachytávající skupina s názvem `1`.|  
 |`(?<1>\S+)`|Jeden nebo více znaků prázdné znaky přiřadit zachytávající skupina s názvem `1`.|  
   

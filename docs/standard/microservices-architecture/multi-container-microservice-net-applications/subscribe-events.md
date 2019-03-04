@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: b95e256bf8df7207eed0895587c0945f37b08ecb
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: eef1ad347cb621e1f26c9c65d46d71e83a2c3a23
+ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53128948"
+ms.lasthandoff: 02/28/2019
+ms.locfileid: "56971777"
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
@@ -93,23 +93,23 @@ V pokročilejších mikroslužeb, stejně jako při použití modelu CQRS přís
 
 ### <a name="designing-atomicity-and-resiliency-when-publishing-to-the-event-bus"></a>Navrhování atomicitu a odolnost proti chybám při publikování událostí Service bus
 
-Při publikování události integrace prostřednictvím distribuované zasílání zpráv systému, jako je vaše událostí Service bus, budete mít problém atomicky aktualizuje původní databáze a publikování události (to znamená, jak dokončení operace nebo žádná z nich). Například v zjednodušený příklad je uvedeno výše, kód potvrdí data do databáze při cena produktu se změnilo a pak publikuje zprávu ProductPriceChangedIntegrationEvent. Na začátku může vypadat základní atomicky provést tyto dvě operace. Ale pokud používáte distribuovaných transakcí týkajících se databáze a zprávy zprostředkovatele, stejně jako v starší systémy, jako je [Microsoft Message Queuing (MSMQ)](https://msdn.microsoft.com/library/ms711472\(v=vs.85\).aspx), toto nastavení nedoporučujeme důvodů popsaného [Věty](https://www.quora.com/What-Is-CAP-Theorem-1).
+Při publikování události integrace prostřednictvím distribuované zasílání zpráv systému, jako je vaše událostí Service bus, budete mít problém atomicky aktualizuje původní databáze a publikování události (to znamená, jak dokončení operace nebo žádná z nich). Například v zjednodušený příklad je uvedeno výše, kód potvrdí data do databáze při cena produktu se změnilo a pak publikuje zprávu ProductPriceChangedIntegrationEvent. Na začátku může vypadat základní atomicky provést tyto dvě operace. Ale pokud používáte distribuovaných transakcí týkajících se databáze a zprávy zprostředkovatele, stejně jako v starší systémy, jako je [Microsoft Message Queuing (MSMQ)](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx), toto nastavení nedoporučujeme důvodů popsaného [Věty](https://www.quora.com/What-Is-CAP-Theorem-1).
 
 V podstatě mikroslužeb použijete k sestavení škálovatelné a vysoce dostupné systémy. Zjednodušení trochu, věty říká, že nemůže vytvořit databázi (distribuovaným) (nebo mikroslužeb, který vlastní svůj model), který je neustále k dispozici, silně konzistentních *a* vůči žádný oddíl. Musíte zvolit dvě z těchto tří vlastností.
 
-V architekturách založených na mikroslužbách byste měli zvolit dostupnost a odolnost a měli omezit silnou konzistenci. Proto se ve většině moderních aplikací založených na mikroslužbách, obvykle nechcete používat distribuovaných transakcí v zasílání zpráv, stejně jako při implementaci [distribuované transakce](https://msdn.microsoft.com/library/ms681205\(v=vs.85\).aspx) založené na Windows distribuované transakce Koordinátor (DTC) s [MSMQ](https://msdn.microsoft.com/library/ms711472\(v=vs.85\).aspx).
+V architekturách založených na mikroslužbách byste měli zvolit dostupnost a odolnost a měli omezit silnou konzistenci. Proto se ve většině moderních aplikací založených na mikroslužbách, obvykle nechcete používat distribuovaných transakcí v zasílání zpráv, stejně jako při implementaci [distribuované transakce](https://docs.microsoft.com/previous-versions/windows/desktop/ms681205(v=vs.85)) založené na Windows distribuované transakce Koordinátor (DTC) s [MSMQ](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx).
 
 Vraťme se k počáteční problému a jeho příklad. Pokud po aktualizaci databáze dojde k chybě služby (v tomto případě klikněte pravým tlačítkem za řádkem kódu pomocí \_kontextu. SaveChangesAsync()), ale před publikováním integrace událostí může nekonzistenci celého systému. To může být pro důležité obchodní informace, v závislosti na konkrétní obchodní operace, které se zabývají.
 
 Jak je uvedeno výše v části architektura, může mít několik přístupů pro řešení tohoto problému:
 
--   Použití úplného [model Event Sourcing](https://msdn.microsoft.com/library/dn589792.aspx).
+-   Použití úplného [model Event Sourcing](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing).
 
 -   Pomocí [protokol transakcí dolování](https://www.scoop.it/t/sql-server-transaction-log-mining).
 
 -   Použití [pošta k odeslání vzoru](http://gistlabs.com/2014/05/the-outbox/). Toto je transakční tabulku pro ukládání událostí integrace (rozšíření místní transakce).
 
-V tomto scénáři použití úplné modelu Event Sourcing (ES) je jedním z osvědčených postupů, není-li *nejlepší*. V mnoha scénářích aplikací, ale nemusí být schopni implementovat úplnou ES operace. ES znamená, že ukládání pouze události domény v transakční databáze, místo uložení aktuální data o stavu. Uložení pouze událostí domény může mít skvělé výhody, jako je například s historii vašeho systému, které jsou k dispozici a nebudou moct určení stavu systému v každém okamžiku v minulosti. Ale implementace úplnou ES vyžaduje, abyste úprava architektury většina vašeho systému a přináší mnoho dalších složitosti a požadavky. Například můžete chcete použít databázi vytvořené speciálně pro model event sourcing, například [události Store](https://eventstore.org/), nebo databáze dokumentově orientované, jako je Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělé přístup k tomuto problému, ale ne Nejjednodušším řešením, pokud jste již obeznámeni s modelem event sourcing.
+V tomto scénáři použití úplné modelu Event Sourcing (ES) je jedním z osvědčených postupů, *není-li* nejlepší. V mnoha scénářích aplikací, ale nemusí být schopni implementovat úplnou ES operace. ES znamená, že ukládání pouze události domény v transakční databáze, místo uložení aktuální data o stavu. Uložení pouze událostí domény může mít skvělé výhody, jako je například s historii vašeho systému, které jsou k dispozici a nebudou moct určení stavu systému v každém okamžiku v minulosti. Ale implementace úplnou ES vyžaduje, abyste úprava architektury většina vašeho systému a přináší mnoho dalších složitosti a požadavky. Například můžete chcete použít databázi vytvořené speciálně pro model event sourcing, například [události Store](https://eventstore.org/), nebo databáze dokumentově orientované, jako je Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělé přístup k tomuto problému, ale ne Nejjednodušším řešením, pokud jste již obeznámeni s modelem event sourcing.
 
 Možnost použití transakční protokol dolování zpočátku vypadá velmi transparentní. Ale pro tuto metodu použijte mikroslužbách musí být vázány na protokol transakce relační databázový systém, jako je například protokolu transakcí serveru SQL Server. To je pravděpodobně není žádoucí. Jiné nevýhodou je, že nízké úrovně aktualizací zaznamenaných v transakčním protokolu nemusí být na stejné úrovni jako základní integrace událostí. Pokud ano, proces zpětnou tyto operace protokolu transakcí může být obtížné.
 
@@ -304,7 +304,7 @@ Některé zpracování zprávy je ze své podstaty idempotentní. Například po
 ### <a name="additional-resources"></a>Další zdroje
 
 -   **Aby byla dodržena zpráv, idempotence** <br/>
-    [*https://msdn.microsoft.com/library/jj591565.aspx#honoring_message_idempotency*](https://msdn.microsoft.com/library/jj591565.aspx)
+    <https://docs.microsoft.com/previous-versions/msp-n-p/jj591565(v=pandp.10)#honoring-message-idempotency>
 
 ## <a name="deduplicating-integration-event-messages"></a>Odstranění duplicit dat zprávy o událostech integrace
 
@@ -337,7 +337,7 @@ Pokud je nastavený příznak "redelivered", příjemce, který přijme v úvahu
     [*https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html*](https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
 
 -   **Komunikace mezi ohraničené kontexty** <br/>
-    [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
+    <https://docs.microsoft.com/previous-versions/msp-n-p/jj591572(v=pandp.10)>
 
 -   **Konzistence typu případné** <br/>
     [*https://en.wikipedia.org/wiki/Eventual\_consistency*](https://en.wikipedia.org/wiki/Eventual_consistency)
@@ -352,7 +352,7 @@ Pokud je nastavený příznak "redelivered", příjemce, který přijme v úvahu
     [*https://microservices.io/patterns/data/event-sourcing.html*](https://microservices.io/patterns/data/event-sourcing.html)
 
 -   **Úvod do modelu Event Sourcing** <br/>
-    [*https://msdn.microsoft.com/library/jj591559.aspx*](https://msdn.microsoft.com/library/jj591559.aspx)
+    <https://docs.microsoft.com/previous-versions/msp-n-p/jj591559(v=pandp.10)>
 
 -   **Událost Store databáze**. Oficiální web. <br/>
     [*https://geteventstore.com/*](https://geteventstore.com/)
@@ -367,7 +367,7 @@ Pokud je nastavený příznak "redelivered", příjemce, který přijme v úvahu
     [*https://www.quora.com/What-Is-CAP-Theorem-1*](https://www.quora.com/What-Is-CAP-Theorem-1)
 
 -   **Úvod do konzistence dat** <br/>
-    [*https://msdn.microsoft.com/library/dn589800.aspx*](https://msdn.microsoft.com/library/dn589800.aspx)
+    <https://docs.microsoft.com/previous-versions/msp-n-p/dn589800(v=pandp.10)>
 
 -   **Rick Saling. Věty: Proč "všechno, co jsou různé" bez cloudu a Internetu** <br/>
     [*https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/*](https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/)
@@ -380,9 +380,6 @@ Pokud je nastavený příznak "redelivered", příjemce, který přijme v úvahu
 
 -   **Průvodce spolehlivost** (RabbitMQ dokumentace) * <br/>
     [*https://www.rabbitmq.com/reliability.html\#consumer*](https://www.rabbitmq.com/reliability.html#consumer)
-
--   **Účastní transakce (DTC) externí** (MSMQ) <br/>
-    [*https://msdn.microsoft.com/library/ms978430.aspx\#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
 
 -   **Azure Service Bus. Zprostředkované zasílání zpráv: Vyhledávání duplicit** <br/>
     [*https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25*](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
