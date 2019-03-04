@@ -33,6 +33,7 @@
 ## [Zpracování a vyvolání výjimek](standard/exceptions/)
 ## [Sestavení v .NET](standard/assembly/index.md)
 ### [Formát souborů sestavení .NET](standard/assembly/file-format.md)
+### [Postupy: Použití a ladění funkce zrušení načtení sestavení v .NET Core](standard/assembly/unloadability-howto.md)
 ## [Uvolňování paměti](standard/garbage-collection/)
 ## [Obecné typy](standard/generics.md)
 ## [Delegáty a výrazy lambda](standard/delegates-lambdas.md)
@@ -268,9 +269,9 @@
 ## [Prohlídka jazyka C#](csharp/tour-of-csharp/)
 <!-- The "What's New" section is short, and one level
     deep, so leave it in the main TOC -->
-<!-- markdownlint-disable MD003 -->
+<!-- markdownlint-disable MD003 MD020 -->
 ## Co je nového v jazyce C#
-<!-- markdownlint-enable MD003 -->
+<!-- markdownlint-enable MD003 MD020 -->
 ### [C# 8.0 – Preview 2](csharp/whats-new/csharp-8.md)
 ### [C# 7.3](csharp/whats-new/csharp-7-3.md)
 ### [C# 7.2](csharp/whats-new/csharp-7-2.md)
