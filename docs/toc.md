@@ -505,15 +505,6 @@
 ### [Přístup k datům](visual-basic/developing-apps/accessing-data.md)
 ### [Vytváření a používání komponent](visual-basic/developing-apps/creating-and-using-components.md)
 
-### [Tisk a vytváření sestav](visual-basic/developing-apps/printing/index.md)
-#### [Komponenta PrintForm](visual-basic/developing-apps/printing/printform-component.md)
-#### [Postupy: Tisk posuvného formuláře](visual-basic/developing-apps/printing/how-to-print-a-scrollable-form.md)
-#### [Postupy: Tisk klientských a neklientských oblastí formuláře](visual-basic/developing-apps/printing/how-to-print-client-and-non-client-areas-of-a-form.md)
-#### [Postupy: Tisk klientské oblasti formuláře](visual-basic/developing-apps/printing/how-to-print-the-client-area-of-a-form.md)
-#### [Postupy: Tisk formuláře pomocí komponenty PrintForm](visual-basic/developing-apps/printing/how-to-print-a-form-by-using-the-printform-component.md)
-#### [Nasazení aplikací odkazujících na komponentu PrintForm](visual-basic/developing-apps/printing/deploying-applications-that-reference-the-printform-component.md)
-#### [Přidávání tisknutelných sestav do aplikací sady Visual Studio](visual-basic/developing-apps/printing/adding-printable-reports-to-visual-studio-applications.md)
-
 ### [Základy formulářové aplikace Windows](visual-basic/developing-apps/windows-forms/index.md)
 
 ### [Přizpůsobení projektů a rozšíření oboru názvů My v jazyce Visual Basic](visual-basic/developing-apps/customizing-extending-my/index.md)
