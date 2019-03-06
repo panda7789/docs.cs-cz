@@ -7,36 +7,36 @@ helpviewer_keywords:
 - 3-D graphics [WPF]
 - graphics [WPF], 3-D
 ms.assetid: 4f091835-28d1-498c-b660-9b3acf34ed13
-ms.openlocfilehash: d542ecd7f162e56a8a6e8ae04c0ea60eb6a69f3e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1f78d2f0ff8887ca5cf1cd1129fb946d2224246d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33554837"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57353553"
 ---
-# <a name="3-d-graphics-how-to-topics"></a><span data-ttu-id="af957-102">Postupy: Témata 3D grafiky</span><span class="sxs-lookup"><span data-stu-id="af957-102">3-D Graphics How-to Topics</span></span>
-<span data-ttu-id="af957-103">Témata v této části ukazují, jak používat [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] grafiky ve [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="af957-103">The topics in this section demonstrate how to use [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] graphics in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
+# <a name="3-d-graphics-how-to-topics"></a><span data-ttu-id="64e09-102">Postupy: Témata 3D grafiky</span><span class="sxs-lookup"><span data-stu-id="64e09-102">3-D Graphics How-to Topics</span></span>
+<span data-ttu-id="64e09-103">Témata v této části ukazují, jak používat [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] grafiky v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.</span><span class="sxs-lookup"><span data-stu-id="64e09-103">The topics in this section demonstrate how to use [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] graphics in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="af957-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="af957-104">In This Section</span></span>  
- [<span data-ttu-id="af957-105">Vytvoření 3D scény</span><span class="sxs-lookup"><span data-stu-id="af957-105">Create a 3-D Scene</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-3-d-scene.md)  
- [<span data-ttu-id="af957-106">Použití kresby na 3D model</span><span class="sxs-lookup"><span data-stu-id="af957-106">Apply a Drawing to a 3-D Model</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-drawing-to-a-3-d-model.md)  
- [<span data-ttu-id="af957-107">Použití materiálu na přední a zadní část 3D objektu</span><span class="sxs-lookup"><span data-stu-id="af957-107">Apply Material to the Front and Back of a 3-D Object</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-material-to-the-front-and-back-of-a-3-d-object.md)  
- [<span data-ttu-id="af957-108">Použití vyzařujícího materiálu na 3D objekt</span><span class="sxs-lookup"><span data-stu-id="af957-108">Apply Emissive Material to a 3-D Object</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-emissive-material-to-a-3-d-object.md)  
- [<span data-ttu-id="af957-109">Transformace měřítka 3D modelu</span><span class="sxs-lookup"><span data-stu-id="af957-109">Transform the Scale of a 3-D Model</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-transform-the-scale-of-a-3-d-model.md)  
- [<span data-ttu-id="af957-110">Použití několika transformací na 3D model</span><span class="sxs-lookup"><span data-stu-id="af957-110">Apply Multiple Transformations to a 3-D Model</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transformations-to-a-3-d-model.md)  
- [<span data-ttu-id="af957-111">Animace 3D posunutí</span><span class="sxs-lookup"><span data-stu-id="af957-111">Animate 3-D Translations</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-3-d-translations.md)  
- [<span data-ttu-id="af957-112">Animace trojrozměrného otočení pomocí scénářů</span><span class="sxs-lookup"><span data-stu-id="af957-112">Animate a 3-D Rotation Using Storyboards</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-3-d-rotation-using-storyboards.md)  
- [<span data-ttu-id="af957-113">Animace trojrozměrného otočení pomocí Rotation3DAnimation</span><span class="sxs-lookup"><span data-stu-id="af957-113">Animate a 3-D Rotation Using Rotation3DAnimation</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-3-d-rotation-using-rotation3danimation.md)  
- [<span data-ttu-id="af957-114">Animace 3D otočení pomocí kvaternionů</span><span class="sxs-lookup"><span data-stu-id="af957-114">Animate a 3-D Rotation Using Quaternions</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-3-d-rotation-using-quaternions.md)  
- [<span data-ttu-id="af957-115">Animace trojrozměrné rotace pomocí klíčových snímků (Rotation3DAnimationUsingKeyFrames)</span><span class="sxs-lookup"><span data-stu-id="af957-115">Animate a 3-D Rotation Using Key Frames (Rotation3DAnimationUsingKeyFrames)</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-3-d-rotation-using-key-frames.md)  
- [<span data-ttu-id="af957-116">Animace trojrozměrné rotace pomocí klíčových snímků (QuaternionAnimationUsingKeyFrames)</span><span class="sxs-lookup"><span data-stu-id="af957-116">Animate a 3-D Rotation Using Key Frames (QuaternionAnimationUsingKeyFrames)</span></span>](../../../../docs/framework/wpf/graphics-multimedia/animate-a-3-d-rotation-quaternionanimationusingkeyframes.md)  
- [<span data-ttu-id="af957-117">Animace umístění a směrování kamery ve 3D scéně</span><span class="sxs-lookup"><span data-stu-id="af957-117">Animate Camera Position and Direction in a 3D Scene</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-camera-position-and-direction-in-a-3d-scene.md)  
- [<span data-ttu-id="af957-118">Animace umístění a směrování kamery pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="af957-118">Animate Camera Position and Direction Using Key Frames</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-camera-position-and-direction-using-key-frames.md)  
- [<span data-ttu-id="af957-119">Animace vlastností materiálu ve 3D scéně</span><span class="sxs-lookup"><span data-stu-id="af957-119">Animate Material Properties in a 3-D Scene</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-material-properties-in-a-3-d-scene.md)  
- [<span data-ttu-id="af957-120">Ověření pozice v objektu Viewport3D</span><span class="sxs-lookup"><span data-stu-id="af957-120">Hit Test in a Viewport3D</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-hit-test-in-a-viewport3d.md)  
- [<span data-ttu-id="af957-121">Testování struktur Point4D na rovnost a nerovnost</span><span class="sxs-lookup"><span data-stu-id="af957-121">Test Point4D structures for equality and inequality</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-test-point4d-structures-for-equality-and-inequality.md)  
+## <a name="in-this-section"></a><span data-ttu-id="64e09-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="64e09-104">In This Section</span></span>  
+ [<span data-ttu-id="64e09-105">Vytvoření 3D scény</span><span class="sxs-lookup"><span data-stu-id="64e09-105">Create a 3-D Scene</span></span>](how-to-create-a-3-d-scene.md)  
+ [<span data-ttu-id="64e09-106">Použití kresby na 3D model</span><span class="sxs-lookup"><span data-stu-id="64e09-106">Apply a Drawing to a 3-D Model</span></span>](how-to-apply-a-drawing-to-a-3-d-model.md)  
+ [<span data-ttu-id="64e09-107">Použití materiálu na přední a zadní část 3D objektu</span><span class="sxs-lookup"><span data-stu-id="64e09-107">Apply Material to the Front and Back of a 3-D Object</span></span>](how-to-apply-material-to-the-front-and-back-of-a-3-d-object.md)  
+ [<span data-ttu-id="64e09-108">Použití vyzařujícího materiálu na 3D objekt</span><span class="sxs-lookup"><span data-stu-id="64e09-108">Apply Emissive Material to a 3-D Object</span></span>](how-to-apply-emissive-material-to-a-3-d-object.md)  
+ [<span data-ttu-id="64e09-109">Transformace měřítka 3D modelu</span><span class="sxs-lookup"><span data-stu-id="64e09-109">Transform the Scale of a 3-D Model</span></span>](how-to-transform-the-scale-of-a-3-d-model.md)  
+ [<span data-ttu-id="64e09-110">Použití několika transformací na 3D model</span><span class="sxs-lookup"><span data-stu-id="64e09-110">Apply Multiple Transformations to a 3-D Model</span></span>](how-to-apply-multiple-transformations-to-a-3-d-model.md)  
+ [<span data-ttu-id="64e09-111">Animace 3D posunutí</span><span class="sxs-lookup"><span data-stu-id="64e09-111">Animate 3-D Translations</span></span>](how-to-animate-3-d-translations.md)  
+ [<span data-ttu-id="64e09-112">Animace trojrozměrného otočení pomocí scénářů</span><span class="sxs-lookup"><span data-stu-id="64e09-112">Animate a 3-D Rotation Using Storyboards</span></span>](how-to-animate-a-3-d-rotation-using-storyboards.md)  
+ [<span data-ttu-id="64e09-113">Animace trojrozměrného otočení pomocí Rotation3DAnimation</span><span class="sxs-lookup"><span data-stu-id="64e09-113">Animate a 3-D Rotation Using Rotation3DAnimation</span></span>](how-to-animate-a-3-d-rotation-using-rotation3danimation.md)  
+ [<span data-ttu-id="64e09-114">Animace 3D otočení pomocí kvaternionů</span><span class="sxs-lookup"><span data-stu-id="64e09-114">Animate a 3-D Rotation Using Quaternions</span></span>](how-to-animate-a-3-d-rotation-using-quaternions.md)  
+ [<span data-ttu-id="64e09-115">Animace trojrozměrné rotace pomocí klíčových snímků (Rotation3DAnimationUsingKeyFrames)</span><span class="sxs-lookup"><span data-stu-id="64e09-115">Animate a 3-D Rotation Using Key Frames (Rotation3DAnimationUsingKeyFrames)</span></span>](how-to-animate-a-3-d-rotation-using-key-frames.md)  
+ [<span data-ttu-id="64e09-116">Animace trojrozměrné rotace pomocí klíčových snímků (QuaternionAnimationUsingKeyFrames)</span><span class="sxs-lookup"><span data-stu-id="64e09-116">Animate a 3-D Rotation Using Key Frames (QuaternionAnimationUsingKeyFrames)</span></span>](animate-a-3-d-rotation-quaternionanimationusingkeyframes.md)  
+ [<span data-ttu-id="64e09-117">Animace umístění a směrování kamery ve 3D scéně</span><span class="sxs-lookup"><span data-stu-id="64e09-117">Animate Camera Position and Direction in a 3D Scene</span></span>](how-to-animate-camera-position-and-direction-in-a-3d-scene.md)  
+ [<span data-ttu-id="64e09-118">Animace umístění a směrování kamery pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="64e09-118">Animate Camera Position and Direction Using Key Frames</span></span>](how-to-animate-camera-position-and-direction-using-key-frames.md)  
+ [<span data-ttu-id="64e09-119">Animace vlastností materiálu ve 3D scéně</span><span class="sxs-lookup"><span data-stu-id="64e09-119">Animate Material Properties in a 3-D Scene</span></span>](how-to-animate-material-properties-in-a-3-d-scene.md)  
+ [<span data-ttu-id="64e09-120">Ověření pozice v objektu Viewport3D</span><span class="sxs-lookup"><span data-stu-id="64e09-120">Hit Test in a Viewport3D</span></span>](how-to-hit-test-in-a-viewport3d.md)  
+ [<span data-ttu-id="64e09-121">Testování struktur Point4D na rovnost a nerovnost</span><span class="sxs-lookup"><span data-stu-id="64e09-121">Test Point4D structures for equality and inequality</span></span>](how-to-test-point4d-structures-for-equality-and-inequality.md)  
   
-## <a name="reference"></a><span data-ttu-id="af957-122">Odkaz</span><span class="sxs-lookup"><span data-stu-id="af957-122">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="64e09-122">Odkaz</span><span class="sxs-lookup"><span data-stu-id="64e09-122">Reference</span></span>  
  <xref:System.Windows.Controls.Viewport3D>  
   
  <xref:System.Windows.Media.Media3D.PerspectiveCamera>  
@@ -45,5 +45,5 @@ ms.locfileid: "33554837"
   
  <xref:System.Windows.Media.Media3D.Material>  
   
-## <a name="related-sections"></a><span data-ttu-id="af957-123">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="af957-123">Related Sections</span></span>  
- [<span data-ttu-id="af957-124">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="af957-124">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+## <a name="related-sections"></a><span data-ttu-id="64e09-123">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="64e09-123">Related Sections</span></span>  
+ [<span data-ttu-id="64e09-124">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="64e09-124">Graphics and Multimedia</span></span>](index.md)

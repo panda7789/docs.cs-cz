@@ -2,21 +2,21 @@
 title: 'Postupy: Vytváření nepodepsaných přátelských sestavení (Visual Basic)'
 ms.date: 03/14/2018
 ms.assetid: 5735eb79-9729-4c46-ac1f-537ada3acaa7
-ms.openlocfilehash: 8c1d5fb24d0032e88b951eefa1bd7a3a8c6ccb88
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: f5e475f3a0fdc9350e43b89db16724ef0f544071
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748125"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57369562"
 ---
-# <a name="how-to-create-unsigned-friend-assemblies-visual-basic"></a><span data-ttu-id="0f22d-102">Postupy: Vytváření nepodepsaných přátelských sestavení (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0f22d-102">How to: Create Unsigned Friend Assemblies (Visual Basic)</span></span>
-<span data-ttu-id="0f22d-103">Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která jsou bez znaménka.</span><span class="sxs-lookup"><span data-stu-id="0f22d-103">This example shows how to use friend assemblies with assemblies that are unsigned.</span></span>  
+# <a name="how-to-create-unsigned-friend-assemblies-visual-basic"></a><span data-ttu-id="3c009-102">Postupy: Vytváření nepodepsaných přátelských sestavení (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3c009-102">How to: Create Unsigned Friend Assemblies (Visual Basic)</span></span>
+<span data-ttu-id="3c009-103">Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která jsou bez znaménka.</span><span class="sxs-lookup"><span data-stu-id="3c009-103">This example shows how to use friend assemblies with assemblies that are unsigned.</span></span>  
   
-### <a name="to-create-an-assembly-and-a-friend-assembly"></a><span data-ttu-id="0f22d-104">Chcete-li vytvořit sestavení a sestavení typu friend</span><span class="sxs-lookup"><span data-stu-id="0f22d-104">To create an assembly and a friend assembly</span></span>  
+### <a name="to-create-an-assembly-and-a-friend-assembly"></a><span data-ttu-id="3c009-104">Chcete-li vytvořit sestavení a sestavení typu friend</span><span class="sxs-lookup"><span data-stu-id="3c009-104">To create an assembly and a friend assembly</span></span>  
   
-1.  <span data-ttu-id="0f22d-105">Otevřete příkazový řádek.</span><span class="sxs-lookup"><span data-stu-id="0f22d-105">Open a command prompt.</span></span>  
+1.  <span data-ttu-id="3c009-105">Otevřete příkazový řádek.</span><span class="sxs-lookup"><span data-stu-id="3c009-105">Open a command prompt.</span></span>  
   
-2.  <span data-ttu-id="0f22d-106">Vytvořte soubor jazyka Visual Basic `friend_signed_A.` , který obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="0f22d-106">Create a Visual Basic file named `friend_signed_A.` that contains the following code.</span></span> <span data-ttu-id="0f22d-107">Tento kód použije <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut pro deklaraci friend_signed_B jako sestavení typu friend.</span><span class="sxs-lookup"><span data-stu-id="0f22d-107">The code uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to declare friend_signed_B as a friend assembly.</span></span>  
+2.  <span data-ttu-id="3c009-106">Vytvořte soubor jazyka Visual Basic `friend_signed_A.` , který obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="3c009-106">Create a Visual Basic file named `friend_signed_A.` that contains the following code.</span></span> <span data-ttu-id="3c009-107">Tento kód použije <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut pro deklaraci friend_signed_B jako sestavení typu friend.</span><span class="sxs-lookup"><span data-stu-id="3c009-107">The code uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to declare friend_signed_B as a friend assembly.</span></span>  
   
     ```vb  
     ' friend_unsigned_A.vb  
@@ -42,13 +42,13 @@ ms.locfileid: "56748125"
     End Class  
     ```  
   
-3.  <span data-ttu-id="0f22d-108">Kompilace a podepsání friend_signed_A pomocí následujícího příkazu.</span><span class="sxs-lookup"><span data-stu-id="0f22d-108">Compile and sign friend_signed_A by using the following command.</span></span>  
+3.  <span data-ttu-id="3c009-108">Kompilace a podepsání friend_signed_A pomocí následujícího příkazu.</span><span class="sxs-lookup"><span data-stu-id="3c009-108">Compile and sign friend_signed_A by using the following command.</span></span>  
   
     ```console  
     vbc -target:library friend_unsigned_A.vb  
     ```  
   
-4.  <span data-ttu-id="0f22d-109">Vytvořte soubor jazyka Visual Basic `friend_unsigned_B` , který obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="0f22d-109">Create a Visual Basic file named `friend_unsigned_B` that contains the following code.</span></span> <span data-ttu-id="0f22d-110">Protože friend_unsigned_A určuje friend_unsigned_B jako sestavení typu friend, můžete přístup ke kódu v friend_unsigned_B `Friend` typy a členy z friend_unsigned_A.</span><span class="sxs-lookup"><span data-stu-id="0f22d-110">Because friend_unsigned_A specifies friend_unsigned_B as a friend assembly, the code in friend_unsigned_B can access `Friend` types and members from friend_unsigned_A.</span></span>  
+4.  <span data-ttu-id="3c009-109">Vytvořte soubor jazyka Visual Basic `friend_unsigned_B` , který obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="3c009-109">Create a Visual Basic file named `friend_unsigned_B` that contains the following code.</span></span> <span data-ttu-id="3c009-110">Protože friend_unsigned_A určuje friend_unsigned_B jako sestavení typu friend, můžete přístup ke kódu v friend_unsigned_B `Friend` typy a členy z friend_unsigned_A.</span><span class="sxs-lookup"><span data-stu-id="3c009-110">Because friend_unsigned_A specifies friend_unsigned_B as a friend assembly, the code in friend_unsigned_B can access `Friend` types and members from friend_unsigned_A.</span></span>  
   
     ```vb  
     ' friend_unsigned_B.vb  
@@ -69,24 +69,24 @@ ms.locfileid: "56748125"
     End Module  
     ```  
   
-5.  <span data-ttu-id="0f22d-111">Zkompilujte friend_signed_B pomocí následujícího příkazu.</span><span class="sxs-lookup"><span data-stu-id="0f22d-111">Compile friend_signed_B by using the following command.</span></span>  
+5.  <span data-ttu-id="3c009-111">Zkompilujte friend_signed_B pomocí následujícího příkazu.</span><span class="sxs-lookup"><span data-stu-id="3c009-111">Compile friend_signed_B by using the following command.</span></span>  
   
     ```console
     vbc -r:friend_unsigned_A.dll friend_unsigned_B.vb  
     ```  
   
-     <span data-ttu-id="0f22d-112">Název sestavení, který je generován kompilátorem musí odpovídat názvu sestavení typu friend, která je předána <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut.</span><span class="sxs-lookup"><span data-stu-id="0f22d-112">The name of the assembly that is generated by the compiler must match the friend assembly name that is passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute.</span></span> <span data-ttu-id="0f22d-113">Sestavení můžete explicitně nastavit pomocí `/out` – možnost kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="0f22d-113">You can explicitly set the assembly by using the `/out` compiler option.</span></span>  
+     <span data-ttu-id="3c009-112">Název sestavení, který je generován kompilátorem musí odpovídat názvu sestavení typu friend, která je předána <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut.</span><span class="sxs-lookup"><span data-stu-id="3c009-112">The name of the assembly that is generated by the compiler must match the friend assembly name that is passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute.</span></span> <span data-ttu-id="3c009-113">Sestavení můžete explicitně nastavit pomocí `/out` – možnost kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="3c009-113">You can explicitly set the assembly by using the `/out` compiler option.</span></span>  
   
-6.  <span data-ttu-id="0f22d-114">Spusťte soubor friend_signed_B.exe.</span><span class="sxs-lookup"><span data-stu-id="0f22d-114">Run the friend_signed_B.exe file.</span></span>  
+6.  <span data-ttu-id="3c009-114">Spusťte soubor friend_signed_B.exe.</span><span class="sxs-lookup"><span data-stu-id="3c009-114">Run the friend_signed_B.exe file.</span></span>  
   
-     <span data-ttu-id="0f22d-115">Program zobrazí dva řetězce: "Class1.Test" a "Class2.Test".</span><span class="sxs-lookup"><span data-stu-id="0f22d-115">The program displays two strings: "Class1.Test" and "Class2.Test".</span></span>  
+     <span data-ttu-id="3c009-115">Program zobrazí dva řetězce: "Class1.Test" a "Class2.Test".</span><span class="sxs-lookup"><span data-stu-id="3c009-115">The program displays two strings: "Class1.Test" and "Class2.Test".</span></span>  
   
-## <a name="net-framework-security"></a><span data-ttu-id="0f22d-116">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="0f22d-116">.NET Framework Security</span></span>  
- <span data-ttu-id="0f22d-117">Existují podobnost <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy.</span><span class="sxs-lookup"><span data-stu-id="0f22d-117">There are similarities between the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute and the <xref:System.Security.Permissions.StrongNameIdentityPermission> class.</span></span> <span data-ttu-id="0f22d-118">Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může požadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda `Friend` typy a členy.</span><span class="sxs-lookup"><span data-stu-id="0f22d-118">The main difference is that <xref:System.Security.Permissions.StrongNameIdentityPermission> can demand security permissions to run a particular section of code, whereas the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute controls the visibility of `Friend` types and members.</span></span>  
+## <a name="net-framework-security"></a><span data-ttu-id="3c009-116">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="3c009-116">.NET Framework Security</span></span>  
+ <span data-ttu-id="3c009-117">Existují podobnost <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy.</span><span class="sxs-lookup"><span data-stu-id="3c009-117">There are similarities between the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute and the <xref:System.Security.Permissions.StrongNameIdentityPermission> class.</span></span> <span data-ttu-id="3c009-118">Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může požadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda `Friend` typy a členy.</span><span class="sxs-lookup"><span data-stu-id="3c009-118">The main difference is that <xref:System.Security.Permissions.StrongNameIdentityPermission> can demand security permissions to run a particular section of code, whereas the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute controls the visibility of `Friend` types and members.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0f22d-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0f22d-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3c009-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3c009-119">See also</span></span>
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
-- [<span data-ttu-id="0f22d-120">Sestavení v rozhraní .NET</span><span class="sxs-lookup"><span data-stu-id="0f22d-120">Assemblies in .NET</span></span>](../../../../standard/assembly/index.md)
-- [<span data-ttu-id="0f22d-121">Přátelská sestavení (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0f22d-121">Friend Assemblies (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/assemblies-gac/friend-assemblies.md)
-- [<span data-ttu-id="0f22d-122">Postupy: Vytváření podepsaných přátelských sestavení (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0f22d-122">How to: Create Signed Friend Assemblies (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)
-- [<span data-ttu-id="0f22d-123">Průvodce koncepty programování</span><span class="sxs-lookup"><span data-stu-id="0f22d-123">Programming Guide Concepts</span></span>](../../../../visual-basic/programming-guide/concepts/index.md)
+- [<span data-ttu-id="3c009-120">Sestavení v .NET</span><span class="sxs-lookup"><span data-stu-id="3c009-120">Assemblies in .NET</span></span>](../../../../standard/assembly/index.md)
+- [<span data-ttu-id="3c009-121">Přátelská sestavení</span><span class="sxs-lookup"><span data-stu-id="3c009-121">Friend Assemblies</span></span>](../../../../standard/assembly/friend-assemblies.md)
+- [<span data-ttu-id="3c009-122">Postupy: Vytváření podepsaných přátelských sestavení (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3c009-122">How to: Create Signed Friend Assemblies (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)
+- [<span data-ttu-id="3c009-123">Průvodce koncepty programování</span><span class="sxs-lookup"><span data-stu-id="3c009-123">Programming Guide Concepts</span></span>](../../../../visual-basic/programming-guide/concepts/index.md)

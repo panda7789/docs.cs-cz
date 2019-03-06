@@ -9,24 +9,24 @@ helpviewer_keywords:
 - Shape objects [WPF]
 - Shape types [WPF]
 ms.assetid: 91a371f1-81e4-40da-ad61-ec24167152e6
-ms.openlocfilehash: 0a218df17412f713eec272e49c13956b2efb71b5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5f1d22d2f7070bb93d175c28c166c434ff16ae19
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54620224"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358064"
 ---
-# <a name="shapes-how-to-topics"></a><span data-ttu-id="658f4-102">Postupy: Témata tvarů</span><span class="sxs-lookup"><span data-stu-id="658f4-102">Shapes How-to Topics</span></span>
-<span data-ttu-id="658f4-103">Témata v této části ukazují, jak používat <xref:System.Windows.Shapes.Shape> objektů pro kreslení tvarů základní na obrazovku.</span><span class="sxs-lookup"><span data-stu-id="658f4-103">The topics in this section demonstrate how to use <xref:System.Windows.Shapes.Shape> objects to draw basic shapes to the screen.</span></span>  
+# <a name="shapes-how-to-topics"></a><span data-ttu-id="ce513-102">Postupy: Témata tvarů</span><span class="sxs-lookup"><span data-stu-id="ce513-102">Shapes How-to Topics</span></span>
+<span data-ttu-id="ce513-103">Témata v této části ukazují, jak používat <xref:System.Windows.Shapes.Shape> objektů pro kreslení tvarů základní na obrazovku.</span><span class="sxs-lookup"><span data-stu-id="ce513-103">The topics in this section demonstrate how to use <xref:System.Windows.Shapes.Shape> objects to draw basic shapes to the screen.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="658f4-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="658f4-104">In This Section</span></span>  
- [<span data-ttu-id="658f4-105">Vykreslení zavřeného tvaru pomocí mnohoúhelníku</span><span class="sxs-lookup"><span data-stu-id="658f4-105">Draw a Closed Shape by Using the Polygon Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-closed-shape-by-using-the-polygon-element.md)  
- [<span data-ttu-id="658f4-106">Vykreslení elipsy nebo kruhu</span><span class="sxs-lookup"><span data-stu-id="658f4-106">Draw an Ellipse or a Circle</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-an-ellipse-or-a-circle.md)  
- [<span data-ttu-id="658f4-107">Vykreslení čáry</span><span class="sxs-lookup"><span data-stu-id="658f4-107">Draw a Line</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-line.md)  
- [<span data-ttu-id="658f4-108">Vykreslení lomené čáry pomocí elementu lomené čáry</span><span class="sxs-lookup"><span data-stu-id="658f4-108">Draw a Polyline by Using the Polyline Element</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-polyline-by-using-the-polyline-element.md)  
- [<span data-ttu-id="658f4-109">Vykreslení obdélníku</span><span class="sxs-lookup"><span data-stu-id="658f4-109">Draw a Rectangle</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-rectangle.md)  
- [<span data-ttu-id="658f4-110">Změna zakončení na konci čáry nebo segmentu</span><span class="sxs-lookup"><span data-stu-id="658f4-110">Modify the Cap at the End of a Line or Segment</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-modify-the-cap-at-the-end-of-a-line-or-segment.md)  
+## <a name="in-this-section"></a><span data-ttu-id="ce513-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ce513-104">In This Section</span></span>  
+ [<span data-ttu-id="ce513-105">Vykreslení zavřeného tvaru pomocí mnohoúhelníku</span><span class="sxs-lookup"><span data-stu-id="ce513-105">Draw a Closed Shape by Using the Polygon Element</span></span>](how-to-draw-a-closed-shape-by-using-the-polygon-element.md)  
+ [<span data-ttu-id="ce513-106">Vykreslení elipsy nebo kruhu</span><span class="sxs-lookup"><span data-stu-id="ce513-106">Draw an Ellipse or a Circle</span></span>](how-to-draw-an-ellipse-or-a-circle.md)  
+ [<span data-ttu-id="ce513-107">Vykreslení čáry</span><span class="sxs-lookup"><span data-stu-id="ce513-107">Draw a Line</span></span>](how-to-draw-a-line.md)  
+ [<span data-ttu-id="ce513-108">Vykreslení lomené čáry pomocí elementu lomené čáry</span><span class="sxs-lookup"><span data-stu-id="ce513-108">Draw a Polyline by Using the Polyline Element</span></span>](how-to-draw-a-polyline-by-using-the-polyline-element.md)  
+ [<span data-ttu-id="ce513-109">Vykreslení obdélníku</span><span class="sxs-lookup"><span data-stu-id="ce513-109">Draw a Rectangle</span></span>](how-to-draw-a-rectangle.md)  
+ [<span data-ttu-id="ce513-110">Změna zakončení na konci čáry nebo segmentu</span><span class="sxs-lookup"><span data-stu-id="ce513-110">Modify the Cap at the End of a Line or Segment</span></span>](how-to-modify-the-cap-at-the-end-of-a-line-or-segment.md)  
   
-## <a name="see-also"></a><span data-ttu-id="658f4-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="658f4-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ce513-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ce513-111">See also</span></span>
 - <xref:System.Windows.Shapes.Shape>
-- [<span data-ttu-id="658f4-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="658f4-112">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+- [<span data-ttu-id="ce513-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="ce513-112">Graphics and Multimedia</span></span>](index.md)

@@ -10,75 +10,75 @@ helpviewer_keywords:
 - Protected Friend keyword combination
 - Friend keyword [Visual Basic], and Protected
 ms.assetid: b664605e-1c79-4728-b996-aa59c50846bc
-ms.openlocfilehash: 52fdbfa3b0cd79cc9714a13a75716829163e45f6
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 1e6dbaa9201d5c9cd902412797b2427ec488d014
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56967370"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371408"
 ---
-# <a name="friend-visual-basic"></a><span data-ttu-id="5753d-102">Friend (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5753d-102">Friend (Visual Basic)</span></span>
-<span data-ttu-id="5753d-103">Určuje, že nejmíň jeden deklarovaný programový prvek je přístupný pouze z v rámci sestavení, které obsahuje jeho deklaraci.</span><span class="sxs-lookup"><span data-stu-id="5753d-103">Specifies that one or more declared programming elements are accessible only from within the assembly that contains their declaration.</span></span>  
+# <a name="friend-visual-basic"></a><span data-ttu-id="130ef-102">Friend (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="130ef-102">Friend (Visual Basic)</span></span>
+<span data-ttu-id="130ef-103">Určuje, že nejmíň jeden deklarovaný programový prvek je přístupný pouze z v rámci sestavení, které obsahuje jeho deklaraci.</span><span class="sxs-lookup"><span data-stu-id="130ef-103">Specifies that one or more declared programming elements are accessible only from within the assembly that contains their declaration.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="5753d-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5753d-104">Remarks</span></span>  
- <span data-ttu-id="5753d-105">V mnoha případech chcete programovací prvky, jako například třídy a struktury celé sestavení používané výhradně komponenty, který je deklaruje.</span><span class="sxs-lookup"><span data-stu-id="5753d-105">In many cases, you want programming elements such as classes and structures to be used by the entire assembly, not only by the component that declares them.</span></span> <span data-ttu-id="5753d-106">Však nemusí je chcete být přístupné kódem mimo sestavení (například pokud je vlastní aplikace).</span><span class="sxs-lookup"><span data-stu-id="5753d-106">However, you might not want them to be accessible by code outside the assembly (for example, if the application is proprietary).</span></span> <span data-ttu-id="5753d-107">Pokud chcete omezit přístup k prvku tímto způsobem, je možné deklarovat s použitím `Friend` modifikátor.</span><span class="sxs-lookup"><span data-stu-id="5753d-107">If you want to limit access to an element in this way, you can declare it by using the `Friend` modifier.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="130ef-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="130ef-104">Remarks</span></span>  
+ <span data-ttu-id="130ef-105">V mnoha případech chcete programovací prvky, jako například třídy a struktury celé sestavení používané výhradně komponenty, který je deklaruje.</span><span class="sxs-lookup"><span data-stu-id="130ef-105">In many cases, you want programming elements such as classes and structures to be used by the entire assembly, not only by the component that declares them.</span></span> <span data-ttu-id="130ef-106">Však nemusí je chcete být přístupné kódem mimo sestavení (například pokud je vlastní aplikace).</span><span class="sxs-lookup"><span data-stu-id="130ef-106">However, you might not want them to be accessible by code outside the assembly (for example, if the application is proprietary).</span></span> <span data-ttu-id="130ef-107">Pokud chcete omezit přístup k prvku tímto způsobem, je možné deklarovat s použitím `Friend` modifikátor.</span><span class="sxs-lookup"><span data-stu-id="130ef-107">If you want to limit access to an element in this way, you can declare it by using the `Friend` modifier.</span></span>  
   
- <span data-ttu-id="5753d-108">Kód v jiné třídy, struktury a moduly, které jsou kompilovány do stejného sestavení můžete přistupovat ke všem `Friend` prvky v tomto sestavení.</span><span class="sxs-lookup"><span data-stu-id="5753d-108">Code in other classes, structures, and modules that are compiled to the same assembly can access all the `Friend` elements in that assembly.</span></span>  
+ <span data-ttu-id="130ef-108">Kód v jiné třídy, struktury a moduly, které jsou kompilovány do stejného sestavení můžete přistupovat ke všem `Friend` prvky v tomto sestavení.</span><span class="sxs-lookup"><span data-stu-id="130ef-108">Code in other classes, structures, and modules that are compiled to the same assembly can access all the `Friend` elements in that assembly.</span></span>  
   
- <span data-ttu-id="5753d-109">`Friend` přístup je často upřednostňovanou úroveň pro programovací prvky aplikace, a `Friend` je přístup k výchozím úrovně rozhraní, modulu, třídy nebo struktury.</span><span class="sxs-lookup"><span data-stu-id="5753d-109">`Friend` access is often the preferred level for an application's programming elements, and `Friend` is the default access level of an interface, a module, a class, or a structure.</span></span>  
+ <span data-ttu-id="130ef-109">`Friend` přístup je často upřednostňovanou úroveň pro programovací prvky aplikace, a `Friend` je přístup k výchozím úrovně rozhraní, modulu, třídy nebo struktury.</span><span class="sxs-lookup"><span data-stu-id="130ef-109">`Friend` access is often the preferred level for an application's programming elements, and `Friend` is the default access level of an interface, a module, a class, or a structure.</span></span>  
   
- <span data-ttu-id="5753d-110">Můžete použít `Friend` pouze na úrovni modulu, rozhraní nebo oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="5753d-110">You can use `Friend` only at the module, interface, or namespace level.</span></span> <span data-ttu-id="5753d-111">Proto deklarace kontext `Friend` element musí být zdrojový soubor, obor názvů, rozhraní, modulu, třídy nebo struktury; nemůže být procedury.</span><span class="sxs-lookup"><span data-stu-id="5753d-111">Therefore, the declaration context for a `Friend` element must be a source file, a namespace, an interface, a module, a class, or a structure; it can't be a procedure.</span></span>  
+ <span data-ttu-id="130ef-110">Můžete použít `Friend` pouze na úrovni modulu, rozhraní nebo oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="130ef-110">You can use `Friend` only at the module, interface, or namespace level.</span></span> <span data-ttu-id="130ef-111">Proto deklarace kontext `Friend` element musí být zdrojový soubor, obor názvů, rozhraní, modulu, třídy nebo struktury; nemůže být procedury.</span><span class="sxs-lookup"><span data-stu-id="130ef-111">Therefore, the declaration context for a `Friend` element must be a source file, a namespace, an interface, a module, a class, or a structure; it can't be a procedure.</span></span>  
 
 > [!NOTE]
-> <span data-ttu-id="5753d-112">Můžete také použít [Protected Friend](protected-friend.md) modifikátor přístupu, který zpřístupňuje člen třídy z v rámci této třídy z odvozené třídy a ze stejného sestavení, ve kterém je třída definovaná.</span><span class="sxs-lookup"><span data-stu-id="5753d-112">You can also use the [Protected Friend](protected-friend.md) access modifier, which makes a class member accessible from within that class, from derived classes, and from the same assembly in which the class is defined.</span></span> <span data-ttu-id="5753d-113">Chcete-li omezit přístup ke členovi v rámci své třídy a z odvozených tříd ve stejném sestavení, je použít [Private Protected](private-protected.md) modifikátor přístupu.</span><span class="sxs-lookup"><span data-stu-id="5753d-113">To restrict access to a member from within its class and from derived classes in the same assembly, you use the [Private Protected](private-protected.md) access modifier.</span></span>
+> <span data-ttu-id="130ef-112">Můžete také použít [Protected Friend](protected-friend.md) modifikátor přístupu, který zpřístupňuje člen třídy z v rámci této třídy z odvozené třídy a ze stejného sestavení, ve kterém je třída definovaná.</span><span class="sxs-lookup"><span data-stu-id="130ef-112">You can also use the [Protected Friend](protected-friend.md) access modifier, which makes a class member accessible from within that class, from derived classes, and from the same assembly in which the class is defined.</span></span> <span data-ttu-id="130ef-113">Chcete-li omezit přístup ke členovi v rámci své třídy a z odvozených tříd ve stejném sestavení, je použít [Private Protected](private-protected.md) modifikátor přístupu.</span><span class="sxs-lookup"><span data-stu-id="130ef-113">To restrict access to a member from within its class and from derived classes in the same assembly, you use the [Private Protected](private-protected.md) access modifier.</span></span>
 
- <span data-ttu-id="5753d-114">Porovnání `Friend` a dalších modifikátorů přístupu, najdete v článku [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span><span class="sxs-lookup"><span data-stu-id="5753d-114">For a comparison of `Friend` and the other access modifiers, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
+ <span data-ttu-id="130ef-114">Porovnání `Friend` a dalších modifikátorů přístupu, najdete v článku [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span><span class="sxs-lookup"><span data-stu-id="130ef-114">For a comparison of `Friend` and the other access modifiers, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="5753d-115">Můžete určit, že jiné sestavení je sestavení typu friend, což umožňuje přístup ke všem typy a členy, které jsou označeny jako `Friend`.</span><span class="sxs-lookup"><span data-stu-id="5753d-115">You can specify that another assembly is a friend assembly, which allows it to access all types and members that are marked as `Friend`.</span></span> <span data-ttu-id="5753d-116">Další informace najdete v tématu [přátelských sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).</span><span class="sxs-lookup"><span data-stu-id="5753d-116">For more information, see [Friend Assemblies](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).</span></span>  
+>  <span data-ttu-id="130ef-115">Můžete určit, že jiné sestavení je sestavení typu friend, což umožňuje přístup ke všem typy a členy, které jsou označeny jako `Friend`.</span><span class="sxs-lookup"><span data-stu-id="130ef-115">You can specify that another assembly is a friend assembly, which allows it to access all types and members that are marked as `Friend`.</span></span> <span data-ttu-id="130ef-116">Další informace najdete v tématu [přátelských sestavení](../../../standard/assembly/friend-assemblies.md).</span><span class="sxs-lookup"><span data-stu-id="130ef-116">For more information, see [Friend Assemblies](../../../standard/assembly/friend-assemblies.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="5753d-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="5753d-117">Example</span></span>  
- <span data-ttu-id="5753d-118">Následující třídy používá `Friend` modifikátor umožňující dalších programovacích prvků v rámci stejného sestavení pro přístup k určitým členům.</span><span class="sxs-lookup"><span data-stu-id="5753d-118">The following class uses the `Friend` modifier to allow other programming elements within the same assembly to access certain members.</span></span>  
+## <a name="example"></a><span data-ttu-id="130ef-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="130ef-117">Example</span></span>  
+ <span data-ttu-id="130ef-118">Následující třídy používá `Friend` modifikátor umožňující dalších programovacích prvků v rámci stejného sestavení pro přístup k určitým členům.</span><span class="sxs-lookup"><span data-stu-id="130ef-118">The following class uses the `Friend` modifier to allow other programming elements within the same assembly to access certain members.</span></span>  
   
  [!code-vb[VbVbalrAccessModifiers#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalraccessmodifiers/vb/class1.vb#1)]  
   
-## <a name="usage"></a><span data-ttu-id="5753d-119">Použití</span><span class="sxs-lookup"><span data-stu-id="5753d-119">Usage</span></span>  
- <span data-ttu-id="5753d-120">Můžete použít `Friend` modifikátor v těchto kontextech:</span><span class="sxs-lookup"><span data-stu-id="5753d-120">You can use the `Friend` modifier in these contexts:</span></span>  
+## <a name="usage"></a><span data-ttu-id="130ef-119">Použití</span><span class="sxs-lookup"><span data-stu-id="130ef-119">Usage</span></span>  
+ <span data-ttu-id="130ef-120">Můžete použít `Friend` modifikátor v těchto kontextech:</span><span class="sxs-lookup"><span data-stu-id="130ef-120">You can use the `Friend` modifier in these contexts:</span></span>  
   
- [<span data-ttu-id="5753d-121">Příkaz Class</span><span class="sxs-lookup"><span data-stu-id="5753d-121">Class Statement</span></span>](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [<span data-ttu-id="130ef-121">Příkaz Class</span><span class="sxs-lookup"><span data-stu-id="130ef-121">Class Statement</span></span>](../../../visual-basic/language-reference/statements/class-statement.md)  
   
- [<span data-ttu-id="5753d-122">Příkaz Const</span><span class="sxs-lookup"><span data-stu-id="5753d-122">Const Statement</span></span>](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [<span data-ttu-id="130ef-122">Příkaz Const</span><span class="sxs-lookup"><span data-stu-id="130ef-122">Const Statement</span></span>](../../../visual-basic/language-reference/statements/const-statement.md)  
   
- [<span data-ttu-id="5753d-123">Příkaz Declare</span><span class="sxs-lookup"><span data-stu-id="5753d-123">Declare Statement</span></span>](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [<span data-ttu-id="130ef-123">Příkaz Declare</span><span class="sxs-lookup"><span data-stu-id="130ef-123">Declare Statement</span></span>](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
- [<span data-ttu-id="5753d-124">Příkaz Delegate</span><span class="sxs-lookup"><span data-stu-id="5753d-124">Delegate Statement</span></span>](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [<span data-ttu-id="130ef-124">Příkaz Delegate</span><span class="sxs-lookup"><span data-stu-id="130ef-124">Delegate Statement</span></span>](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
- [<span data-ttu-id="5753d-125">Příkaz Dim</span><span class="sxs-lookup"><span data-stu-id="5753d-125">Dim Statement</span></span>](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [<span data-ttu-id="130ef-125">Příkaz Dim</span><span class="sxs-lookup"><span data-stu-id="130ef-125">Dim Statement</span></span>](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
- [<span data-ttu-id="5753d-126">Příkaz Enum</span><span class="sxs-lookup"><span data-stu-id="5753d-126">Enum Statement</span></span>](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [<span data-ttu-id="130ef-126">Příkaz Enum</span><span class="sxs-lookup"><span data-stu-id="130ef-126">Enum Statement</span></span>](../../../visual-basic/language-reference/statements/enum-statement.md)  
   
- [<span data-ttu-id="5753d-127">Příkaz Event</span><span class="sxs-lookup"><span data-stu-id="5753d-127">Event Statement</span></span>](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [<span data-ttu-id="130ef-127">Příkaz Event</span><span class="sxs-lookup"><span data-stu-id="130ef-127">Event Statement</span></span>](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [<span data-ttu-id="5753d-128">Příkaz Function</span><span class="sxs-lookup"><span data-stu-id="5753d-128">Function Statement</span></span>](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [<span data-ttu-id="130ef-128">Příkaz Function</span><span class="sxs-lookup"><span data-stu-id="130ef-128">Function Statement</span></span>](../../../visual-basic/language-reference/statements/function-statement.md)  
   
- [<span data-ttu-id="5753d-129">Příkaz Interface</span><span class="sxs-lookup"><span data-stu-id="5753d-129">Interface Statement</span></span>](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [<span data-ttu-id="130ef-129">Příkaz Interface</span><span class="sxs-lookup"><span data-stu-id="130ef-129">Interface Statement</span></span>](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
- [<span data-ttu-id="5753d-130">Příkaz Module</span><span class="sxs-lookup"><span data-stu-id="5753d-130">Module Statement</span></span>](../../../visual-basic/language-reference/statements/module-statement.md)  
+ [<span data-ttu-id="130ef-130">Příkaz Module</span><span class="sxs-lookup"><span data-stu-id="130ef-130">Module Statement</span></span>](../../../visual-basic/language-reference/statements/module-statement.md)  
   
- [<span data-ttu-id="5753d-131">Příkaz Property</span><span class="sxs-lookup"><span data-stu-id="5753d-131">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [<span data-ttu-id="130ef-131">Příkaz Property</span><span class="sxs-lookup"><span data-stu-id="130ef-131">Property Statement</span></span>](../../../visual-basic/language-reference/statements/property-statement.md)  
   
- [<span data-ttu-id="5753d-132">Příkaz Structure</span><span class="sxs-lookup"><span data-stu-id="5753d-132">Structure Statement</span></span>](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [<span data-ttu-id="130ef-132">Příkaz Structure</span><span class="sxs-lookup"><span data-stu-id="130ef-132">Structure Statement</span></span>](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
- [<span data-ttu-id="5753d-133">Příkaz Sub</span><span class="sxs-lookup"><span data-stu-id="5753d-133">Sub Statement</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [<span data-ttu-id="130ef-133">Příkaz Sub</span><span class="sxs-lookup"><span data-stu-id="130ef-133">Sub Statement</span></span>](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## <a name="see-also"></a><span data-ttu-id="5753d-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5753d-134">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="130ef-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="130ef-134">See also</span></span>
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
-- [<span data-ttu-id="5753d-135">Public</span><span class="sxs-lookup"><span data-stu-id="5753d-135">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)
-- [<span data-ttu-id="5753d-136">Protected</span><span class="sxs-lookup"><span data-stu-id="5753d-136">Protected</span></span>](../../../visual-basic/language-reference/modifiers/protected.md)
-- [<span data-ttu-id="5753d-137">Private</span><span class="sxs-lookup"><span data-stu-id="5753d-137">Private</span></span>](../../../visual-basic/language-reference/modifiers/private.md)
-- [<span data-ttu-id="5753d-138">Private Protected</span><span class="sxs-lookup"><span data-stu-id="5753d-138">Private Protected</span></span>](./private-protected.md)
-- [<span data-ttu-id="5753d-139">Protected Friend</span><span class="sxs-lookup"><span data-stu-id="5753d-139">Protected Friend</span></span>](./protected-friend.md)
-- [<span data-ttu-id="5753d-140">Úrovně přístupu v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="5753d-140">Access levels in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
-- [<span data-ttu-id="5753d-141">Procedury</span><span class="sxs-lookup"><span data-stu-id="5753d-141">Procedures</span></span>](../../../visual-basic/programming-guide/language-features/procedures/index.md)
-- [<span data-ttu-id="5753d-142">Struktury</span><span class="sxs-lookup"><span data-stu-id="5753d-142">Structures</span></span>](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
-- [<span data-ttu-id="5753d-143">Objekty a třídy</span><span class="sxs-lookup"><span data-stu-id="5753d-143">Objects and Classes</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [<span data-ttu-id="130ef-135">Public</span><span class="sxs-lookup"><span data-stu-id="130ef-135">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)
+- [<span data-ttu-id="130ef-136">Protected</span><span class="sxs-lookup"><span data-stu-id="130ef-136">Protected</span></span>](../../../visual-basic/language-reference/modifiers/protected.md)
+- [<span data-ttu-id="130ef-137">Private</span><span class="sxs-lookup"><span data-stu-id="130ef-137">Private</span></span>](../../../visual-basic/language-reference/modifiers/private.md)
+- [<span data-ttu-id="130ef-138">Private Protected</span><span class="sxs-lookup"><span data-stu-id="130ef-138">Private Protected</span></span>](./private-protected.md)
+- [<span data-ttu-id="130ef-139">Protected Friend</span><span class="sxs-lookup"><span data-stu-id="130ef-139">Protected Friend</span></span>](./protected-friend.md)
+- [<span data-ttu-id="130ef-140">Úrovně přístupu v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="130ef-140">Access levels in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [<span data-ttu-id="130ef-141">Procedury</span><span class="sxs-lookup"><span data-stu-id="130ef-141">Procedures</span></span>](../../../visual-basic/programming-guide/language-features/procedures/index.md)
+- [<span data-ttu-id="130ef-142">Struktury</span><span class="sxs-lookup"><span data-stu-id="130ef-142">Structures</span></span>](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
+- [<span data-ttu-id="130ef-143">Objekty a třídy</span><span class="sxs-lookup"><span data-stu-id="130ef-143">Objects and Classes</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

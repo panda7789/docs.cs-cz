@@ -7,21 +7,21 @@ helpviewer_keywords:
 - controls [WPF], TextBox
 - TextBox control [WPF]
 ms.assetid: 2512a277-e9d8-4de8-a12f-2bd95e8e7b60
-ms.openlocfilehash: 18f5b6b826d1c5c7ff6fe3087b839eb6947dc695
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f2a261b72fe3205c9a03292f1f6bbcebdcf8649b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54649346"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57356972"
 ---
-# <a name="textbox"></a><span data-ttu-id="3f059-102">TextBox</span><span class="sxs-lookup"><span data-stu-id="3f059-102">TextBox</span></span>
-<span data-ttu-id="3f059-103"><xref:System.Windows.Controls.TextBox> Ovládacího prvku poskytuje podporu pro základní textové zadání v aplikaci WPF.</span><span class="sxs-lookup"><span data-stu-id="3f059-103">The <xref:System.Windows.Controls.TextBox> control provides support for basic text input in WPF applications.</span></span>  
+# <a name="textbox"></a><span data-ttu-id="63ec9-102">TextBox</span><span class="sxs-lookup"><span data-stu-id="63ec9-102">TextBox</span></span>
+<span data-ttu-id="63ec9-103"><xref:System.Windows.Controls.TextBox> Ovládacího prvku poskytuje podporu pro základní textové zadání v aplikaci WPF.</span><span class="sxs-lookup"><span data-stu-id="63ec9-103">The <xref:System.Windows.Controls.TextBox> control provides support for basic text input in WPF applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="3f059-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="3f059-104">In This Section</span></span>  
- [<span data-ttu-id="3f059-105">TextBox – přehled</span><span class="sxs-lookup"><span data-stu-id="3f059-105">TextBox Overview</span></span>](../../../../docs/framework/wpf/controls/textbox-overview.md)  
- [<span data-ttu-id="3f059-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="3f059-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/textbox-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="63ec9-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="63ec9-104">In This Section</span></span>  
+ [<span data-ttu-id="63ec9-105">TextBox – přehled</span><span class="sxs-lookup"><span data-stu-id="63ec9-105">TextBox Overview</span></span>](textbox-overview.md)  
+ [<span data-ttu-id="63ec9-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="63ec9-106">How-to Topics</span></span>](textbox-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="3f059-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="3f059-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="63ec9-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="63ec9-107">Reference</span></span>  
  <xref:System.Windows.Controls.TextBox>  
   
  <xref:System.Windows.Controls.RichTextBox>  
@@ -30,6 +30,6 @@ ms.locfileid: "54649346"
   
  <xref:System.Windows.Controls.PasswordBox>  
   
-## <a name="see-also"></a><span data-ttu-id="3f059-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3f059-108">See also</span></span>
-- [<span data-ttu-id="3f059-109">Ukázková galerie ovládacích prvků WPF</span><span class="sxs-lookup"><span data-stu-id="3f059-109">WPF Controls Gallery Sample</span></span>](https://go.microsoft.com/fwlink/?LinkID=160053)
-- [<span data-ttu-id="3f059-110">TextBox – styly a šablony</span><span class="sxs-lookup"><span data-stu-id="3f059-110">TextBox Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)
+## <a name="see-also"></a><span data-ttu-id="63ec9-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="63ec9-108">See also</span></span>
+- [<span data-ttu-id="63ec9-109">Ukázková galerie ovládacích prvků WPF</span><span class="sxs-lookup"><span data-stu-id="63ec9-109">WPF Controls Gallery Sample</span></span>](https://go.microsoft.com/fwlink/?LinkID=160053)
+- [<span data-ttu-id="63ec9-110">TextBox – styly a šablony</span><span class="sxs-lookup"><span data-stu-id="63ec9-110">TextBox Styles and Templates</span></span>](textbox-styles-and-templates.md)
