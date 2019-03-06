@@ -7,24 +7,24 @@ helpviewer_keywords:
 - controls [WPF], ProgressBar
 - ProgressBar control [WPF]
 ms.assetid: 4545b358-b93c-47df-88e4-9946d7db9e3f
-ms.openlocfilehash: eb446cf47bcfc3d97a6435c00ef24ab3d112c8fb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 27a2f54edac2add67b938300dc342744475466cc
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33552893"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371330"
 ---
-# <a name="progressbar"></a><span data-ttu-id="4e9e2-102">ProgressBar</span><span class="sxs-lookup"><span data-stu-id="4e9e2-102">ProgressBar</span></span>
-<span data-ttu-id="4e9e2-103">A <xref:System.Windows.Controls.ProgressBar> označuje průběh operace.</span><span class="sxs-lookup"><span data-stu-id="4e9e2-103">A <xref:System.Windows.Controls.ProgressBar> indicates the progress of an operation.</span></span> <span data-ttu-id="4e9e2-104"><xref:System.Windows.Controls.ProgressBar> Řízení se skládá z okno, které je vyplněn barva zvýraznění systému v průběhu operace.</span><span class="sxs-lookup"><span data-stu-id="4e9e2-104">The <xref:System.Windows.Controls.ProgressBar> control consists of a window that is filled with the system highlight color as an operation progresses.</span></span>  
+# <a name="progressbar"></a><span data-ttu-id="bb382-102">ProgressBar</span><span class="sxs-lookup"><span data-stu-id="bb382-102">ProgressBar</span></span>
+<span data-ttu-id="bb382-103">A <xref:System.Windows.Controls.ProgressBar> označuje průběh operace.</span><span class="sxs-lookup"><span data-stu-id="bb382-103">A <xref:System.Windows.Controls.ProgressBar> indicates the progress of an operation.</span></span> <span data-ttu-id="bb382-104"><xref:System.Windows.Controls.ProgressBar> Ovládací prvek se skládá z okna, který je vyplněn barvou zvýraznění systému v průběhu operace.</span><span class="sxs-lookup"><span data-stu-id="bb382-104">The <xref:System.Windows.Controls.ProgressBar> control consists of a window that is filled with the system highlight color as an operation progresses.</span></span>  
   
- <span data-ttu-id="4e9e2-105">Následující obrázek znázorňuje typické <xref:System.Windows.Controls.ProgressBar>.</span><span class="sxs-lookup"><span data-stu-id="4e9e2-105">The following illustration shows a typical <xref:System.Windows.Controls.ProgressBar>.</span></span>  
+ <span data-ttu-id="bb382-105">Následující obrázek ukazuje typické <xref:System.Windows.Controls.ProgressBar>.</span><span class="sxs-lookup"><span data-stu-id="bb382-105">The following illustration shows a typical <xref:System.Windows.Controls.ProgressBar>.</span></span>  
   
- <span data-ttu-id="4e9e2-106">![Indikátor průběhu](../../../../docs/framework/wpf/controls/media/ss-ctl-progressbar.GIF "SS_CTL_progressbar")</span><span class="sxs-lookup"><span data-stu-id="4e9e2-106">![Progress bar](../../../../docs/framework/wpf/controls/media/ss-ctl-progressbar.GIF "SS_CTL_progressbar")</span></span>  
+ <span data-ttu-id="bb382-106">![Progress bar](./media/ss-ctl-progressbar.GIF "SS_CTL_progressbar")</span><span class="sxs-lookup"><span data-stu-id="bb382-106">![Progress bar](./media/ss-ctl-progressbar.GIF "SS_CTL_progressbar")</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="4e9e2-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="4e9e2-107">In This Section</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="bb382-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="bb382-107">In This Section</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="4e9e2-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="4e9e2-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="bb382-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="bb382-108">Reference</span></span>  
  <xref:System.Windows.Controls.ProgressBar>  
   <xref:System.Windows.Controls.Primitives.StatusBar>  
   
-## <a name="related-sections"></a><span data-ttu-id="4e9e2-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="4e9e2-109">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="bb382-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="bb382-109">Related Sections</span></span>

@@ -7,73 +7,73 @@ helpviewer_keywords:
 - control library [WPF]
 - libraries [WPF], controls
 ms.assetid: c1b33289-c389-4ac2-b153-3cbb0d8324ad
-ms.openlocfilehash: 0bdd636af78ddfce22c28edc3dd4523654d07611
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: f5d69a1743941a235b3a1fda38023b11b3f26809
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746008"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57354001"
 ---
-# <a name="control-library"></a><span data-ttu-id="64cb4-102">Knihovna ovládacích prvků</span><span class="sxs-lookup"><span data-stu-id="64cb4-102">Control Library</span></span>
-<span data-ttu-id="64cb4-103">Knihovna ovládacích prvků Windows Presentation Foundation (WPF) obsahuje informace o ovládacích prvcích ve Windows Presentation Foundation (WPF), uvedeným podle abecedy.</span><span class="sxs-lookup"><span data-stu-id="64cb4-103">The Windows Presentation Foundation (WPF) control library contains information on the controls provided by Windows Presentation Foundation (WPF), listed alphabetically.</span></span>  
+# <a name="control-library"></a><span data-ttu-id="f3e09-102">Knihovna ovládacích prvků</span><span class="sxs-lookup"><span data-stu-id="f3e09-102">Control Library</span></span>
+<span data-ttu-id="f3e09-103">Knihovna ovládacích prvků Windows Presentation Foundation (WPF) obsahuje informace o ovládacích prvcích ve Windows Presentation Foundation (WPF), uvedeným podle abecedy.</span><span class="sxs-lookup"><span data-stu-id="f3e09-103">The Windows Presentation Foundation (WPF) control library contains information on the controls provided by Windows Presentation Foundation (WPF), listed alphabetically.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="64cb4-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="64cb4-104">In This Section</span></span>  
- [<span data-ttu-id="64cb4-105">Ohraničení</span><span class="sxs-lookup"><span data-stu-id="64cb4-105">Border</span></span>](../../../../docs/framework/wpf/controls/border.md)  
- [<span data-ttu-id="64cb4-106">BulletDecorator</span><span class="sxs-lookup"><span data-stu-id="64cb4-106">BulletDecorator</span></span>](../../../../docs/framework/wpf/controls/bulletdecorator.md)  
- [<span data-ttu-id="64cb4-107">Tlačítko</span><span class="sxs-lookup"><span data-stu-id="64cb4-107">Button</span></span>](../../../../docs/framework/wpf/controls/button.md)  
- [<span data-ttu-id="64cb4-108">Kalendář</span><span class="sxs-lookup"><span data-stu-id="64cb4-108">Calendar</span></span>](../../../../docs/framework/wpf/controls/calendar.md)  
- [<span data-ttu-id="64cb4-109">Plátno</span><span class="sxs-lookup"><span data-stu-id="64cb4-109">Canvas</span></span>](../../../../docs/framework/wpf/controls/canvas.md)  
- [<span data-ttu-id="64cb4-110">CheckBox</span><span class="sxs-lookup"><span data-stu-id="64cb4-110">CheckBox</span></span>](../../../../docs/framework/wpf/controls/checkbox.md)  
- [<span data-ttu-id="64cb4-111">ComboBox</span><span class="sxs-lookup"><span data-stu-id="64cb4-111">ComboBox</span></span>](../../../../docs/framework/wpf/controls/combobox.md)  
- [<span data-ttu-id="64cb4-112">ContextMenu</span><span class="sxs-lookup"><span data-stu-id="64cb4-112">ContextMenu</span></span>](../../../../docs/framework/wpf/controls/contextmenu.md)  
- [<span data-ttu-id="64cb4-113">DataGrid</span><span class="sxs-lookup"><span data-stu-id="64cb4-113">DataGrid</span></span>](../../../../docs/framework/wpf/controls/datagrid.md)  
- [<span data-ttu-id="64cb4-114">DatePicker</span><span class="sxs-lookup"><span data-stu-id="64cb4-114">DatePicker</span></span>](../../../../docs/framework/wpf/controls/datepicker.md)  
- [<span data-ttu-id="64cb4-115">DockPanel</span><span class="sxs-lookup"><span data-stu-id="64cb4-115">DockPanel</span></span>](../../../../docs/framework/wpf/controls/dockpanel.md)  
- [<span data-ttu-id="64cb4-116">DocumentViewer</span><span class="sxs-lookup"><span data-stu-id="64cb4-116">DocumentViewer</span></span>](../../../../docs/framework/wpf/controls/documentviewer.md)  
- [<span data-ttu-id="64cb4-117">Rozšíření</span><span class="sxs-lookup"><span data-stu-id="64cb4-117">Expander</span></span>](../../../../docs/framework/wpf/controls/expander.md)  
- [<span data-ttu-id="64cb4-118">FlowDocumentPageViewer</span><span class="sxs-lookup"><span data-stu-id="64cb4-118">FlowDocumentPageViewer</span></span>](../../../../docs/framework/wpf/controls/flowdocumentpageviewer.md)  
- [<span data-ttu-id="64cb4-119">FlowDocumentReader</span><span class="sxs-lookup"><span data-stu-id="64cb4-119">FlowDocumentReader</span></span>](../../../../docs/framework/wpf/controls/flowdocumentreader.md)  
- [<span data-ttu-id="64cb4-120">FlowDocumentScrollViewer</span><span class="sxs-lookup"><span data-stu-id="64cb4-120">FlowDocumentScrollViewer</span></span>](../../../../docs/framework/wpf/controls/flowdocumentscrollviewer.md)  
- [<span data-ttu-id="64cb4-121">Rámec</span><span class="sxs-lookup"><span data-stu-id="64cb4-121">Frame</span></span>](../../../../docs/framework/wpf/controls/frame.md)  
- [<span data-ttu-id="64cb4-122">Mřížka</span><span class="sxs-lookup"><span data-stu-id="64cb4-122">Grid</span></span>](../../../../docs/framework/wpf/controls/grid.md)  
- [<span data-ttu-id="64cb4-123">GridSplitter</span><span class="sxs-lookup"><span data-stu-id="64cb4-123">GridSplitter</span></span>](../../../../docs/framework/wpf/controls/gridsplitter.md)  
- [<span data-ttu-id="64cb4-124">GroupBox</span><span class="sxs-lookup"><span data-stu-id="64cb4-124">GroupBox</span></span>](../../../../docs/framework/wpf/controls/groupbox.md)  
- [<span data-ttu-id="64cb4-125">Obrázek</span><span class="sxs-lookup"><span data-stu-id="64cb4-125">Image</span></span>](../../../../docs/framework/wpf/controls/image.md)  
- [<span data-ttu-id="64cb4-126">Popisek</span><span class="sxs-lookup"><span data-stu-id="64cb4-126">Label</span></span>](../../../../docs/framework/wpf/controls/label.md)  
- [<span data-ttu-id="64cb4-127">ListBox</span><span class="sxs-lookup"><span data-stu-id="64cb4-127">ListBox</span></span>](../../../../docs/framework/wpf/controls/listbox.md)  
- [<span data-ttu-id="64cb4-128">ListView</span><span class="sxs-lookup"><span data-stu-id="64cb4-128">ListView</span></span>](../../../../docs/framework/wpf/controls/listview.md)  
- [<span data-ttu-id="64cb4-129">Nabídka</span><span class="sxs-lookup"><span data-stu-id="64cb4-129">Menu</span></span>](../../../../docs/framework/wpf/controls/menu.md)  
- [<span data-ttu-id="64cb4-130">Panel</span><span class="sxs-lookup"><span data-stu-id="64cb4-130">Panel</span></span>](../../../../docs/framework/wpf/controls/panel.md)  
- [<span data-ttu-id="64cb4-131">PasswordBox</span><span class="sxs-lookup"><span data-stu-id="64cb4-131">PasswordBox</span></span>](../../../../docs/framework/wpf/controls/passwordbox.md)  
- [<span data-ttu-id="64cb4-132">Popup</span><span class="sxs-lookup"><span data-stu-id="64cb4-132">Popup</span></span>](../../../../docs/framework/wpf/controls/popup.md)  
- [<span data-ttu-id="64cb4-133">ProgressBar</span><span class="sxs-lookup"><span data-stu-id="64cb4-133">ProgressBar</span></span>](../../../../docs/framework/wpf/controls/progressbar.md)  
- [<span data-ttu-id="64cb4-134">PrintDialog</span><span class="sxs-lookup"><span data-stu-id="64cb4-134">PrintDialog</span></span>](../../../../docs/framework/wpf/controls/printdialog.md)  
- [<span data-ttu-id="64cb4-135">RadioButton</span><span class="sxs-lookup"><span data-stu-id="64cb4-135">RadioButton</span></span>](../../../../docs/framework/wpf/controls/radiobutton.md)  
- [<span data-ttu-id="64cb4-136">RepeatButton</span><span class="sxs-lookup"><span data-stu-id="64cb4-136">RepeatButton</span></span>](../../../../docs/framework/wpf/controls/repeatbutton.md)  
- [<span data-ttu-id="64cb4-137">RichTextBox</span><span class="sxs-lookup"><span data-stu-id="64cb4-137">RichTextBox</span></span>](../../../../docs/framework/wpf/controls/richtextbox.md)  
- [<span data-ttu-id="64cb4-138">ScrollBar</span><span class="sxs-lookup"><span data-stu-id="64cb4-138">ScrollBar</span></span>](../../../../docs/framework/wpf/controls/scrollbar.md)  
- [<span data-ttu-id="64cb4-139">ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="64cb4-139">ScrollViewer</span></span>](../../../../docs/framework/wpf/controls/scrollviewer.md)  
- [<span data-ttu-id="64cb4-140">Oddělovač</span><span class="sxs-lookup"><span data-stu-id="64cb4-140">Separator</span></span>](../../../../docs/framework/wpf/controls/separator.md)  
- [<span data-ttu-id="64cb4-141">Posuvník</span><span class="sxs-lookup"><span data-stu-id="64cb4-141">Slider</span></span>](../../../../docs/framework/wpf/controls/slider.md)  
- [<span data-ttu-id="64cb4-142">StackPanel</span><span class="sxs-lookup"><span data-stu-id="64cb4-142">StackPanel</span></span>](../../../../docs/framework/wpf/controls/stackpanel.md)  
- [<span data-ttu-id="64cb4-143">StatusBar</span><span class="sxs-lookup"><span data-stu-id="64cb4-143">StatusBar</span></span>](../../../../docs/framework/wpf/controls/statusbar.md)  
- [<span data-ttu-id="64cb4-144">TabControl</span><span class="sxs-lookup"><span data-stu-id="64cb4-144">TabControl</span></span>](../../../../docs/framework/wpf/controls/tabcontrol.md)  
- [<span data-ttu-id="64cb4-145">TextBlock</span><span class="sxs-lookup"><span data-stu-id="64cb4-145">TextBlock</span></span>](../../../../docs/framework/wpf/controls/textblock.md)  
- [<span data-ttu-id="64cb4-146">TextBox</span><span class="sxs-lookup"><span data-stu-id="64cb4-146">TextBox</span></span>](../../../../docs/framework/wpf/controls/textbox.md)  
- [<span data-ttu-id="64cb4-147">ToolBar</span><span class="sxs-lookup"><span data-stu-id="64cb4-147">ToolBar</span></span>](../../../../docs/framework/wpf/controls/toolbar.md)  
- [<span data-ttu-id="64cb4-148">ToolTip</span><span class="sxs-lookup"><span data-stu-id="64cb4-148">ToolTip</span></span>](../../../../docs/framework/wpf/controls/tooltip.md)  
- [<span data-ttu-id="64cb4-149">TreeView</span><span class="sxs-lookup"><span data-stu-id="64cb4-149">TreeView</span></span>](../../../../docs/framework/wpf/controls/treeview.md)  
- [<span data-ttu-id="64cb4-150">WrapPanel</span><span class="sxs-lookup"><span data-stu-id="64cb4-150">WrapPanel</span></span>](../../../../docs/framework/wpf/controls/wrappanel.md)  
- [<span data-ttu-id="64cb4-151">Viewbox</span><span class="sxs-lookup"><span data-stu-id="64cb4-151">Viewbox</span></span>](../../../../docs/framework/wpf/controls/viewbox.md)  
+## <a name="in-this-section"></a><span data-ttu-id="f3e09-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f3e09-104">In This Section</span></span>  
+ [<span data-ttu-id="f3e09-105">Ohraničení</span><span class="sxs-lookup"><span data-stu-id="f3e09-105">Border</span></span>](border.md)  
+ [<span data-ttu-id="f3e09-106">BulletDecorator</span><span class="sxs-lookup"><span data-stu-id="f3e09-106">BulletDecorator</span></span>](bulletdecorator.md)  
+ [<span data-ttu-id="f3e09-107">Tlačítko</span><span class="sxs-lookup"><span data-stu-id="f3e09-107">Button</span></span>](button.md)  
+ [<span data-ttu-id="f3e09-108">Kalendář</span><span class="sxs-lookup"><span data-stu-id="f3e09-108">Calendar</span></span>](calendar.md)  
+ [<span data-ttu-id="f3e09-109">Plátno</span><span class="sxs-lookup"><span data-stu-id="f3e09-109">Canvas</span></span>](canvas.md)  
+ [<span data-ttu-id="f3e09-110">CheckBox</span><span class="sxs-lookup"><span data-stu-id="f3e09-110">CheckBox</span></span>](checkbox.md)  
+ [<span data-ttu-id="f3e09-111">ComboBox</span><span class="sxs-lookup"><span data-stu-id="f3e09-111">ComboBox</span></span>](combobox.md)  
+ [<span data-ttu-id="f3e09-112">ContextMenu</span><span class="sxs-lookup"><span data-stu-id="f3e09-112">ContextMenu</span></span>](contextmenu.md)  
+ [<span data-ttu-id="f3e09-113">DataGrid</span><span class="sxs-lookup"><span data-stu-id="f3e09-113">DataGrid</span></span>](datagrid.md)  
+ [<span data-ttu-id="f3e09-114">DatePicker</span><span class="sxs-lookup"><span data-stu-id="f3e09-114">DatePicker</span></span>](datepicker.md)  
+ [<span data-ttu-id="f3e09-115">DockPanel</span><span class="sxs-lookup"><span data-stu-id="f3e09-115">DockPanel</span></span>](dockpanel.md)  
+ [<span data-ttu-id="f3e09-116">DocumentViewer</span><span class="sxs-lookup"><span data-stu-id="f3e09-116">DocumentViewer</span></span>](documentviewer.md)  
+ [<span data-ttu-id="f3e09-117">Rozšíření</span><span class="sxs-lookup"><span data-stu-id="f3e09-117">Expander</span></span>](expander.md)  
+ [<span data-ttu-id="f3e09-118">FlowDocumentPageViewer</span><span class="sxs-lookup"><span data-stu-id="f3e09-118">FlowDocumentPageViewer</span></span>](flowdocumentpageviewer.md)  
+ [<span data-ttu-id="f3e09-119">FlowDocumentReader</span><span class="sxs-lookup"><span data-stu-id="f3e09-119">FlowDocumentReader</span></span>](flowdocumentreader.md)  
+ [<span data-ttu-id="f3e09-120">FlowDocumentScrollViewer</span><span class="sxs-lookup"><span data-stu-id="f3e09-120">FlowDocumentScrollViewer</span></span>](flowdocumentscrollviewer.md)  
+ [<span data-ttu-id="f3e09-121">Rámec</span><span class="sxs-lookup"><span data-stu-id="f3e09-121">Frame</span></span>](frame.md)  
+ [<span data-ttu-id="f3e09-122">Mřížka</span><span class="sxs-lookup"><span data-stu-id="f3e09-122">Grid</span></span>](grid.md)  
+ [<span data-ttu-id="f3e09-123">GridSplitter</span><span class="sxs-lookup"><span data-stu-id="f3e09-123">GridSplitter</span></span>](gridsplitter.md)  
+ [<span data-ttu-id="f3e09-124">GroupBox</span><span class="sxs-lookup"><span data-stu-id="f3e09-124">GroupBox</span></span>](groupbox.md)  
+ [<span data-ttu-id="f3e09-125">Obrázek</span><span class="sxs-lookup"><span data-stu-id="f3e09-125">Image</span></span>](image.md)  
+ [<span data-ttu-id="f3e09-126">Popisek</span><span class="sxs-lookup"><span data-stu-id="f3e09-126">Label</span></span>](label.md)  
+ [<span data-ttu-id="f3e09-127">ListBox</span><span class="sxs-lookup"><span data-stu-id="f3e09-127">ListBox</span></span>](listbox.md)  
+ [<span data-ttu-id="f3e09-128">ListView</span><span class="sxs-lookup"><span data-stu-id="f3e09-128">ListView</span></span>](listview.md)  
+ [<span data-ttu-id="f3e09-129">Nabídka</span><span class="sxs-lookup"><span data-stu-id="f3e09-129">Menu</span></span>](menu.md)  
+ [<span data-ttu-id="f3e09-130">Panel</span><span class="sxs-lookup"><span data-stu-id="f3e09-130">Panel</span></span>](panel.md)  
+ [<span data-ttu-id="f3e09-131">PasswordBox</span><span class="sxs-lookup"><span data-stu-id="f3e09-131">PasswordBox</span></span>](passwordbox.md)  
+ [<span data-ttu-id="f3e09-132">Popup</span><span class="sxs-lookup"><span data-stu-id="f3e09-132">Popup</span></span>](popup.md)  
+ [<span data-ttu-id="f3e09-133">ProgressBar</span><span class="sxs-lookup"><span data-stu-id="f3e09-133">ProgressBar</span></span>](progressbar.md)  
+ [<span data-ttu-id="f3e09-134">PrintDialog</span><span class="sxs-lookup"><span data-stu-id="f3e09-134">PrintDialog</span></span>](printdialog.md)  
+ [<span data-ttu-id="f3e09-135">RadioButton</span><span class="sxs-lookup"><span data-stu-id="f3e09-135">RadioButton</span></span>](radiobutton.md)  
+ [<span data-ttu-id="f3e09-136">RepeatButton</span><span class="sxs-lookup"><span data-stu-id="f3e09-136">RepeatButton</span></span>](repeatbutton.md)  
+ [<span data-ttu-id="f3e09-137">RichTextBox</span><span class="sxs-lookup"><span data-stu-id="f3e09-137">RichTextBox</span></span>](richtextbox.md)  
+ [<span data-ttu-id="f3e09-138">ScrollBar</span><span class="sxs-lookup"><span data-stu-id="f3e09-138">ScrollBar</span></span>](scrollbar.md)  
+ [<span data-ttu-id="f3e09-139">ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="f3e09-139">ScrollViewer</span></span>](scrollviewer.md)  
+ [<span data-ttu-id="f3e09-140">Oddělovač</span><span class="sxs-lookup"><span data-stu-id="f3e09-140">Separator</span></span>](separator.md)  
+ [<span data-ttu-id="f3e09-141">Posuvník</span><span class="sxs-lookup"><span data-stu-id="f3e09-141">Slider</span></span>](slider.md)  
+ [<span data-ttu-id="f3e09-142">StackPanel</span><span class="sxs-lookup"><span data-stu-id="f3e09-142">StackPanel</span></span>](stackpanel.md)  
+ [<span data-ttu-id="f3e09-143">StatusBar</span><span class="sxs-lookup"><span data-stu-id="f3e09-143">StatusBar</span></span>](statusbar.md)  
+ [<span data-ttu-id="f3e09-144">TabControl</span><span class="sxs-lookup"><span data-stu-id="f3e09-144">TabControl</span></span>](tabcontrol.md)  
+ [<span data-ttu-id="f3e09-145">TextBlock</span><span class="sxs-lookup"><span data-stu-id="f3e09-145">TextBlock</span></span>](textblock.md)  
+ [<span data-ttu-id="f3e09-146">TextBox</span><span class="sxs-lookup"><span data-stu-id="f3e09-146">TextBox</span></span>](textbox.md)  
+ [<span data-ttu-id="f3e09-147">ToolBar</span><span class="sxs-lookup"><span data-stu-id="f3e09-147">ToolBar</span></span>](toolbar.md)  
+ [<span data-ttu-id="f3e09-148">ToolTip</span><span class="sxs-lookup"><span data-stu-id="f3e09-148">ToolTip</span></span>](tooltip.md)  
+ [<span data-ttu-id="f3e09-149">TreeView</span><span class="sxs-lookup"><span data-stu-id="f3e09-149">TreeView</span></span>](treeview.md)  
+ [<span data-ttu-id="f3e09-150">WrapPanel</span><span class="sxs-lookup"><span data-stu-id="f3e09-150">WrapPanel</span></span>](wrappanel.md)  
+ [<span data-ttu-id="f3e09-151">Viewbox</span><span class="sxs-lookup"><span data-stu-id="f3e09-151">Viewbox</span></span>](viewbox.md)  
   
-## <a name="reference"></a><span data-ttu-id="64cb4-152">Odkaz</span><span class="sxs-lookup"><span data-stu-id="64cb4-152">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="f3e09-152">Odkaz</span><span class="sxs-lookup"><span data-stu-id="f3e09-152">Reference</span></span>  
  <xref:System.Windows.Controls>  
   
  <xref:System.Windows.Controls.Primitives>  
   
-## <a name="related-sections"></a><span data-ttu-id="64cb4-153">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="64cb4-153">Related Sections</span></span>  
- [<span data-ttu-id="64cb4-154">Přizpůsobení ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="64cb4-154">Control Customization</span></span>](../../../../docs/framework/wpf/controls/control-customization.md)  
+## <a name="related-sections"></a><span data-ttu-id="f3e09-153">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="f3e09-153">Related Sections</span></span>  
+ [<span data-ttu-id="f3e09-154">Přizpůsobení ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="f3e09-154">Control Customization</span></span>](control-customization.md)  
   
- [<span data-ttu-id="64cb4-155">Ovládací prvky podle kategorie</span><span class="sxs-lookup"><span data-stu-id="64cb4-155">Controls by Category</span></span>](../../../../docs/framework/wpf/controls/controls-by-category.md)  
+ [<span data-ttu-id="f3e09-155">Ovládací prvky podle kategorie</span><span class="sxs-lookup"><span data-stu-id="f3e09-155">Controls by Category</span></span>](controls-by-category.md)  
   
- [<span data-ttu-id="64cb4-156">Model obsahu WPF</span><span class="sxs-lookup"><span data-stu-id="64cb4-156">WPF Content Model</span></span>](../../../../docs/framework/wpf/controls/wpf-content-model.md)
+ [<span data-ttu-id="f3e09-156">Model obsahu WPF</span><span class="sxs-lookup"><span data-stu-id="f3e09-156">WPF Content Model</span></span>](wpf-content-model.md)

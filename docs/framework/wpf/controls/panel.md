@@ -8,21 +8,21 @@ helpviewer_keywords:
 - layout [WPF], Panel control
 - Panel control [WPF]
 ms.assetid: 792943c5-335d-49dd-aa5b-ec1582a10088
-ms.openlocfilehash: 0d76883621b07a3049895e4577516e9362720896
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6471aebf4a510c63084f8da733fb3dfe2300c1aa
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33554921"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57367593"
 ---
-# <a name="panel"></a><span data-ttu-id="4f54d-102">Panel</span><span class="sxs-lookup"><span data-stu-id="4f54d-102">Panel</span></span>
-<span data-ttu-id="4f54d-103"><xref:System.Windows.Controls.Panel> je základní třída pro všechny elementy, které podporují rozložení aplikace v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="4f54d-103"><xref:System.Windows.Controls.Panel> is the base class for all elements that support application layout in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
+# <a name="panel"></a><span data-ttu-id="a4bf7-102">Panel</span><span class="sxs-lookup"><span data-stu-id="a4bf7-102">Panel</span></span>
+<span data-ttu-id="a4bf7-103"><xref:System.Windows.Controls.Panel> je základní třídou pro všechny elementy, které podporují aplikace rozložení v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="a4bf7-103"><xref:System.Windows.Controls.Panel> is the base class for all elements that support application layout in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="4f54d-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="4f54d-104">In This Section</span></span>  
- [<span data-ttu-id="4f54d-105">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="4f54d-105">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [<span data-ttu-id="4f54d-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="4f54d-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/panel-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="a4bf7-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="a4bf7-104">In This Section</span></span>  
+ [<span data-ttu-id="a4bf7-105">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="a4bf7-105">Panels Overview</span></span>](panels-overview.md)  
+ [<span data-ttu-id="a4bf7-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="a4bf7-106">How-to Topics</span></span>](panel-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="4f54d-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="4f54d-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="a4bf7-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="a4bf7-107">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -37,9 +37,9 @@ ms.locfileid: "33554921"
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="4f54d-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="4f54d-108">Related Sections</span></span>  
- [<span data-ttu-id="4f54d-109">Rozložení</span><span class="sxs-lookup"><span data-stu-id="4f54d-109">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="a4bf7-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="a4bf7-108">Related Sections</span></span>  
+ [<span data-ttu-id="a4bf7-109">Rozložení</span><span class="sxs-lookup"><span data-stu-id="a4bf7-109">Layout</span></span>](../advanced/layout.md)  
   
- [<span data-ttu-id="4f54d-110">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="4f54d-110">Walkthrough: My first WPF desktop application</span></span>](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="a4bf7-110">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="a4bf7-110">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="4f54d-111">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="4f54d-111">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [<span data-ttu-id="a4bf7-111">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="a4bf7-111">ScrollViewer Overview</span></span>](scrollviewer-overview.md)
