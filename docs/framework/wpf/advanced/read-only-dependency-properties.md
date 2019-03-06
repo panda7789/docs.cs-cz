@@ -5,12 +5,12 @@ helpviewer_keywords:
 - dependency properties [WPF], read-only
 - read-only dependency properties [WPF]
 ms.assetid: f23d6ec9-3780-4c09-a2ff-b2f0a2deddf1
-ms.openlocfilehash: 256790880e6fcf3bd2492d3f3f00b532f6a31eea
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9aeeab95342bce94c53e89229003f55009118f96
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54568127"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57379001"
 ---
 # <a name="read-only-dependency-properties"></a>Vlastnosti závislosti jen pro čtení
 Toto téma popisuje vlastnosti závislosti jen pro čtení, včetně existující vlastnosti závislosti jen pro čtení a scénáře a postupy pro vytvoření vlastnosti vlastní závislosti jen pro čtení.  
@@ -19,7 +19,7 @@ Toto téma popisuje vlastnosti závislosti jen pro čtení, včetně existujíc�
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Toto téma předpokládá, že chápete základní scénáře implementace vlastnosti závislosti a jak je použito metadat pro vlastnost vlastní závislosti. Zobrazit [vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md) a [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md) pro kontext.  
+ Toto téma předpokládá, že chápete základní scénáře implementace vlastnosti závislosti a jak je použito metadat pro vlastnost vlastní závislosti. Zobrazit [vlastní vlastnosti závislosti](custom-dependency-properties.md) a [Metadata vlastností závislosti](dependency-property-metadata.md) pro kontext.  
   
 <a name="existing"></a>   
 ## <a name="existing-read-only-dependency-properties"></a>Existující vlastnosti závislosti jen pro čtení  
@@ -31,7 +31,7 @@ Toto téma popisuje vlastnosti závislosti jen pro čtení, včetně existujíc�
 ## <a name="creating-custom-read-only-dependency-properties"></a>Vytváří se vlastní závislosti jen pro čtení vlastnosti  
  Nezapomeňte si přečíst výše uvedené části týkající se proč vlastnosti závislosti jen pro čtení nebude fungovat pro řadu scénářů typické vlastnost závislosti. Ale pokud máte odpovídající scénáři, můžete chtít vytvořit vlastní vlastnosti závislosti jen pro čtení.  
   
- Velkou část procesu vytvoření vlastnosti závislosti jen pro čtení je stejný, jak je popsáno v [vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md) a [implementace vlastnosti závislosti](../../../../docs/framework/wpf/advanced/how-to-implement-a-dependency-property.md) témata. Existují tři důležité rozdíly:  
+ Velkou část procesu vytvoření vlastnosti závislosti jen pro čtení je stejný, jak je popsáno v [vlastní vlastnosti závislosti](custom-dependency-properties.md) a [implementace vlastnosti závislosti](how-to-implement-a-dependency-property.md) témata. Existují tři důležité rozdíly:  
   
 -   Při registraci vaší vlastností, zavolejte <xref:System.Windows.DependencyProperty.RegisterReadOnly%2A> metoda místo normální <xref:System.Windows.DependencyProperty.Register%2A> metody pro registraci vlastnost.  
   
@@ -41,9 +41,9 @@ Toto téma popisuje vlastnosti závislosti jen pro čtení, včetně existujíc�
   
  Jakýkoli soukromé pole nebo hodnotu, kterou jste zálohování vaší vlastnosti závislosti jen pro čtení samozřejmě může být plně zapisovat pomocí libovolné logiky rozhodnete. Nejjednodušší způsob, jak nastavit vlastnost původně nebo jako součást logiky modulu runtime je však používat systém vlastnost [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], namísto obcházení systému vlastností a nastavení privátní pomocné pole přímo. Zejména je podpis <xref:System.Windows.DependencyObject.SetValue%2A> , který přijímá parametr typu <xref:System.Windows.DependencyPropertyKey>. Jak a kde nastavíte hodnotu prostřednictvím kódu programu v rámci vaší aplikace logiky bude mít vliv na způsob nastavení přístupu na <xref:System.Windows.DependencyPropertyKey> vytvoří při první registraci vlastnost závislosti. Pokud zpracovat tuto logiku vše v rámci třídy vám může usnadnit privátní, nebo pokud chcete, aby nastavení z dalších částí sestavení, může ji nastavit interní. Jedním z přístupů je volat <xref:System.Windows.DependencyObject.SetValue%2A> v rámci třídy obslužná rutina události relevantní události, která informuje o tom, kterou je potřeba změnit hodnotu vlastnosti uloženou instanci třídy. Další možností je spojovat vlastnosti závislosti pomocí spárované <xref:System.Windows.PropertyChangedCallback> a <xref:System.Windows.CoerceValueCallback> zpětná volání jako součást těchto vlastností metadat během registrace.  
   
- Protože <xref:System.Windows.DependencyPropertyKey> je privátní a se nerozšíří vlastnost systému mimo váš kód, vlastnosti závislosti jen pro čtení má lepší než vlastnost závislosti pro čtení a zápis nastavení zabezpečení. Pro vlastnost závislosti pro čtení i zápis je explicitně nebo implicitně veřejné pole identifikační a proto je široce nastavitelnou vlastnost. Další podrobnosti najdete v části [zabezpečení vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-security.md).  
+ Protože <xref:System.Windows.DependencyPropertyKey> je privátní a se nerozšíří vlastnost systému mimo váš kód, vlastnosti závislosti jen pro čtení má lepší než vlastnost závislosti pro čtení a zápis nastavení zabezpečení. Pro vlastnost závislosti pro čtení i zápis je explicitně nebo implicitně veřejné pole identifikační a proto je široce nastavitelnou vlastnost. Další podrobnosti najdete v části [zabezpečení vlastností závislosti](dependency-property-security.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)
-- [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+- [Přehled vlastností závislosti](dependency-properties-overview.md)
+- [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
+- [Styly a šablony](../controls/styling-and-templating.md)

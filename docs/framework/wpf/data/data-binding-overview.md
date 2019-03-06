@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data binding [WPF], about data binding
 - conversion for data binding [WPF]
 ms.assetid: c707c95f-7811-401d-956e-2fffd019a211
-ms.openlocfilehash: 4cce0d56a629ca01e0174235b1e84291e9fa2f57
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ad86577aa4a66d9296c3c1844c9f8fa8c2b89d24
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54503206"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57364824"
 ---
 # <a name="data-binding-overview"></a>Přehled datových vazeb
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vytváření datových vazeb nabízí jednoduchý a konzistentní způsob pro aplikace k zobrazení a interakci s daty. Elementy mohou být vázány na data z různých zdrojů dat ve formě [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]. <xref:System.Windows.Controls.ContentControl>s jako <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.ItemsControl>s jako <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ListView> mají integrované funkce, které umožňují flexibilní styly jednotlivých datových položek nebo kolekce datových položek. Řazení, filtrování a zobrazení skupiny můžete generovat na data.  
@@ -33,7 +33,7 @@ ms.locfileid: "54503206"
   
  Příklad datové vazby, podívejte se na následující aplikace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] z [ukázku vazby dat](https://go.microsoft.com/fwlink/?LinkID=163703):  
   
- ![Snímek obrazovky ukázkové vazby dat](../../../../docs/framework/wpf/data/media/databinding-databindingdemo.png "DataBinding_DataBindingDemo")  
+ ![Snímek obrazovky ukázkové vazby dat](./media/databinding-databindingdemo.png "DataBinding_DataBindingDemo")  
   
  Výše je uvedeno [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] aplikace, která zobrazuje seznam položek aukce. Aplikace ukazuje následující funkce datové vazby:  
   
@@ -49,7 +49,7 @@ ms.locfileid: "54503206"
   
  Pokud uživatel klikne *přidat produkt* tlačítko, následující formulář se zobrazí:  
   
- ![Přidat stránku výpis produktů](../../../../docs/framework/wpf/data/media/databinding-demo-addproductlisting.png "DataBinding_Demo_AddProductListing")  
+ ![Přidat stránku výpis produktů](./media/databinding-demo-addproductlisting.png "DataBinding_Demo_AddProductListing")  
   
  Uživatel, upravte pole ve formuláři, ve verzi preview výpis produktů pomocí podrobnější podokna ve verzi preview a krátký ve verzi preview a klikněte na *odeslat* přidat nový výpis produktů. Všechny existující seskupování, filtrování a řazení funkce bude vztahovat na nové položky. V tomto konkrétním případě se zobrazí položka zadaná ve výše uvedeném jako druhá položka v rámci *počítače* kategorie.  
   
@@ -61,7 +61,7 @@ ms.locfileid: "54503206"
   
  Bez ohledu na to, jaký element jsou vazby a povaze zdroje dat, každý vazby vždy řídí modelem návodu na následujícím obrázku:  
   
- ![Diagram základní datové vazby](../../../../docs/framework/wpf/data/media/databindingmostbasic.png "DataBindingMostBasic")  
+ ![Diagram základní datové vazby](./media/databindingmostbasic.png "DataBindingMostBasic")  
   
  Vidíte na obrázku výše, datové vazby je v podstatě most mezi vaší cíl vazby a zdrojem vazby. Na obrázku ukazuje následující základní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] koncepty vazeb dat:  
   
@@ -69,7 +69,7 @@ ms.locfileid: "54503206"
   
 -   Vlastnost target musí být vlastnost závislosti. Většina <xref:System.Windows.UIElement> vlastnosti jsou vlastnosti závislosti a většina vlastnosti závislosti, s výjimkou těch jen pro čtení podporují datové vazby ve výchozím nastavení. (Pouze <xref:System.Windows.DependencyObject> typy můžete definovat vlastnosti závislosti a všechny <xref:System.Windows.UIElement>s jsou odvozeny z <xref:System.Windows.DependencyObject>.)  
   
--   I když není zadaný obrázek, je třeba poznamenat, že vazba zdrojový objekt není omezena na právě vlastní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Datová vazba podporuje data ve formě [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty a [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]. Poskytnout příklady, může být váš zdroj vazby <xref:System.Windows.UIElement>, libovolný objekt seznamu [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekt, který je přidružený [!INCLUDE[TLA#tla_adonet](../../../../includes/tlasharptla-adonet-md.md)] dat nebo webové služby nebo XmlNode, který obsahuje vaše [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data. Další informace najdete v tématu [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
+-   I když není zadaný obrázek, je třeba poznamenat, že vazba zdrojový objekt není omezena na právě vlastní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objektu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Datová vazba podporuje data ve formě [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty a [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]. Poskytnout příklady, může být váš zdroj vazby <xref:System.Windows.UIElement>, libovolný objekt seznamu [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekt, který je přidružený [!INCLUDE[TLA#tla_adonet](../../../../includes/tlasharptla-adonet-md.md)] dat nebo webové služby nebo XmlNode, který obsahuje vaše [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data. Další informace najdete v tématu [Přehled zdrojů vazby](binding-sources-overview.md).  
   
  Při prohlížení prostřednictvím jiné [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)] témat, je dobré si uvědomit, že pokud vytvoříte vazbu, jsou vazby cíl vazby *k* zdroj vazby. Například, pokud zobrazujete některé základní [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data v <xref:System.Windows.Controls.ListBox> použití datových vazeb, jsou vazby vaše <xref:System.Windows.Controls.ListBox> k [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data.  
   
@@ -81,7 +81,7 @@ ms.locfileid: "54503206"
   
  Můžete chtít vaše aplikace umožňuje uživatelům změnit data a šíří zpět do zdrojového objektu. Nebo možná chcete povolit uživatelům aktualizovat zdroj dat. To můžete řídit tak, že nastavíte <xref:System.Windows.Data.Binding.Mode%2A> vlastnictví vaší <xref:System.Windows.Data.Binding> objektu. Následující obrázek znázorňuje různé typy toku dat:  
   
- ![Tok dat datové vazby](../../../../docs/framework/wpf/data/media/databinding-dataflow.png "DataBinding_DataFlow")  
+ ![Tok dat datové vazby](./media/databinding-dataflow.png "DataBinding_DataFlow")  
   
 -   <xref:System.Windows.Data.BindingMode.OneWay> Vazba způsobí, že změny zdrojové vlastnosti se automaticky aktualizovat vlastnost target, ale změny cílové vlastnosti nejsou šířeny zpět do vlastnost source. Tento typ vazby je vhodné v případě vázaného ovládacího prvku je implicitně jen pro čtení. Například může vytvoření vazby ke zdroji, jako je například běžícími nebo možná cílovou vlastnost nemá žádný ovládací prvek rozhraní pro provádění změn, jako je například barvu pozadí vázané na data v tabulce. Pokud není nutné ke sledování změn vlastnost target, pomocí <xref:System.Windows.Data.BindingMode.OneWay> vazby režimu zabraňuje nároky <xref:System.Windows.Data.BindingMode.TwoWay> režimu vazby.  
   
@@ -91,7 +91,7 @@ ms.locfileid: "54503206"
   
 -   Není znázorněné na obrázku je <xref:System.Windows.Data.BindingMode.OneTime> vazby, což způsobí, že vlastnost source inicializovat vlastnost target, ale následné změny nejsou rozšířena. To znamená, že pokud kontext dat při změně nebo objektu v kontextu změny dat, pak tato změna se neprojeví v vlastnost target. Tento typ vazby je vhodný, pokud používáte dat, kde je vhodné použít snímek aktuálního stavu nebo je skutečně statická data. Tento typ vazby je také užitečné, pokud chcete inicializovat vaše cílová vlastnost s některá z hodnot z vlastnosti zdroje a kontext dat není předem známý. To je v podstatě jednodušší forma <xref:System.Windows.Data.BindingMode.OneWay> vazby, která poskytuje lepší výkon v případech, kde zdrojové hodnoty nezmění.  
   
- Všimněte si, že ke zjištění změny zdroje (pro <xref:System.Windows.Data.BindingMode.OneWay> a <xref:System.Windows.Data.BindingMode.TwoWay> vazby), zdroj musí implementovat mechanismus oznámení změn vhodné vlastnosti, jako <xref:System.ComponentModel.INotifyPropertyChanged>. Zobrazit [implementace oznámení změn vlastností](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md) příklad <xref:System.ComponentModel.INotifyPropertyChanged> implementace.  
+ Všimněte si, že ke zjištění změny zdroje (pro <xref:System.Windows.Data.BindingMode.OneWay> a <xref:System.Windows.Data.BindingMode.TwoWay> vazby), zdroj musí implementovat mechanismus oznámení změn vhodné vlastnosti, jako <xref:System.ComponentModel.INotifyPropertyChanged>. Zobrazit [implementace oznámení změn vlastností](how-to-implement-property-change-notification.md) příklad <xref:System.ComponentModel.INotifyPropertyChanged> implementace.  
   
  <xref:System.Windows.Data.Binding.Mode%2A> Stránka vlastností poskytuje další informace o vazbách režimech a příklad toho, jak k určení směru vazby.  
   
@@ -101,7 +101,7 @@ ms.locfileid: "54503206"
   
  Však zdrojovou hodnotu aktualizován při úpravách text nebo po dokončení úprav textu a přesuňte ukazatel myši mimo textového pole? <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> Vlastnost vazby Určuje, co spustí aktualizaci zdroje. Tečky vpravo šipky na následujícím obrázku ukazují role <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> vlastnost:  
   
- ![UpdateSourceTrigger diagram](../../../../docs/framework/wpf/data/media/databindingupdatesourcetrigger.png "DataBindingUpdateSourceTrigger")  
+ ![UpdateSourceTrigger diagram](./media/databindingupdatesourcetrigger.png "DataBindingUpdateSourceTrigger")  
   
  Pokud <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>, pak hodnota odkazuje pravou šipku <xref:System.Windows.Data.BindingMode.TwoWay> nebo <xref:System.Windows.Data.BindingMode.OneWayToSource> co nejdříve změny vlastností cílové aktualizuje vazby. Ale pokud <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>, pak tato hodnota pouze získá aktualizováno s novou hodnotu, pokud vlastnost target ztratí fokus.  
   
@@ -117,7 +117,7 @@ ms.locfileid: "54503206"
 |PropertyChanged|Při psaní do <xref:System.Windows.Controls.TextBox>|<xref:System.Windows.Controls.TextBox> ovládací prvky v okně chatovací místnosti|  
 |explicitní|Když aplikace volá <xref:System.Windows.Data.BindingExpression.UpdateSource%2A>|<xref:System.Windows.Controls.TextBox> ovládací prvky v Upravitelný formulář (aktualizace zdrojové hodnoty pouze v případě, že uživatel klikne na tlačítko Odeslat)|  
   
- Příklad najdete v tématu [řídit, kdy k aktualizaci textu TextBox zdroji](../../../../docs/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source.md).  
+ Příklad najdete v tématu [řídit, kdy k aktualizaci textu TextBox zdroji](how-to-control-when-the-textbox-text-updates-the-source.md).  
   
 <a name="creating_a_binding"></a>   
 ## <a name="creating-a-binding"></a>Vytvoření vazby  
@@ -126,13 +126,13 @@ ms.locfileid: "54503206"
   
  Podívejte se na následující příklad, ve kterém je zdrojový objekt vazby třídu s názvem *Mojedata* , která je definována v *SDKSample* oboru názvů. Pro demonstrační účely *Mojedata* třída nemá řetězcovou vlastnost s názvem *ColorName*, ze které je hodnota nastavena na hodnotu "Red". Proto tento příklad vygeneruje tlačítko s červenou na pozadí.  
   
- [!code-xaml[BindNonTextProperty#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindNonTextProperty/CS/Page1.xaml#1)]  
+ [!code-xaml[BindNonTextProperty#1](~/samples/snippets/csharp/VS_Snippets_Wpf/BindNonTextProperty/CS/Page1.xaml#1)]  
   
- Podrobné informace o syntaxi deklarace vazby a příklady, jak vytvořit vazby v kódu najdete v tématu [přehled deklarací vazeb](../../../../docs/framework/wpf/data/binding-declarations-overview.md).  
+ Podrobné informace o syntaxi deklarace vazby a příklady, jak vytvořit vazby v kódu najdete v tématu [přehled deklarací vazeb](binding-declarations-overview.md).  
   
  Pokud používáme v tomto příkladu pro naši základní diagram, výsledná hodnota vypadá takto. Jedná se <xref:System.Windows.Data.BindingMode.OneWay> vazby, protože vlastnost pozadí podporuje <xref:System.Windows.Data.BindingMode.OneWay> vazby ve výchozím nastavení.  
   
- ![Diagram datové vazby](../../../../docs/framework/wpf/data/media/databindingbuttonbackgroundexample.png "DataBindingButtonBackgroundExample")  
+ ![Diagram datové vazby](./media/databindingbuttonbackgroundexample.png "DataBindingButtonBackgroundExample")  
   
  Budete divit, proč tento postup funguje, i když *ColorName* je vlastnost typu řetězec při <xref:System.Windows.Controls.Control.Background%2A> vlastnost je typu <xref:System.Windows.Media.Brush>. Toto je výchozí převod typů v práci a je podrobněji popsána [převod dat](#data_conversion) oddílu.  
   
@@ -142,9 +142,9 @@ ms.locfileid: "54503206"
   
  Existuje několik způsobů určení zdrojového objektu vazby. Použití <xref:System.Windows.FrameworkElement.DataContext%2A> vlastnosti nadřazeného elementu je užitečné, když vytváříte vazbu více vlastností ke stejnému zdroji. Ale v některých případech může být vhodnější k určení zdroje připojení na deklarace jednotlivých připojení. Předchozí příklad, namísto použití <xref:System.Windows.FrameworkElement.DataContext%2A> vlastnost, můžete určit zdroje připojení tak, že nastavíte <xref:System.Windows.Data.Binding.Source%2A> vlastnost přímo u vazby deklarace tlačítka, jako v následujícím příkladu:  
   
- [!code-xaml[BindNonTextProperty#BackgroundBindingCompact](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindNonTextProperty/CS/Page2.xaml#backgroundbindingcompact)]  
+ [!code-xaml[BindNonTextProperty#BackgroundBindingCompact](~/samples/snippets/csharp/VS_Snippets_Wpf/BindNonTextProperty/CS/Page2.xaml#backgroundbindingcompact)]  
   
- Kromě nastavení <xref:System.Windows.FrameworkElement.DataContext%2A> vlastnost v elementu přímo, dědění <xref:System.Windows.FrameworkElement.DataContext%2A> hodnotu nadřazeným (jako je například tlačítko v prvním příkladu) a nastavením explicitního určení zdroje připojení <xref:System.Windows.Data.Binding.Source%2A> vlastnost <xref:System.Windows.Data.Binding> (například tlačítko v poslední příkladu), můžete použít také <xref:System.Windows.Data.Binding.ElementName%2A> vlastnost nebo <xref:System.Windows.Data.Binding.RelativeSource%2A> vlastnosti k určení zdroje připojení. <xref:System.Windows.Data.Binding.ElementName%2A> Vlastnost je užitečná, pokud se vazba na další prvky v aplikaci, třeba když používáte ovládací prvek posuvník šířku tlačítka. <xref:System.Windows.Data.Binding.RelativeSource%2A> Vlastnost je užitečná, pokud vazba je zadaný v <xref:System.Windows.Controls.ControlTemplate> nebo <xref:System.Windows.Style>. Další informace najdete v tématu [určení zdroje vazby](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md).  
+ Kromě nastavení <xref:System.Windows.FrameworkElement.DataContext%2A> vlastnost v elementu přímo, dědění <xref:System.Windows.FrameworkElement.DataContext%2A> hodnotu nadřazeným (jako je například tlačítko v prvním příkladu) a nastavením explicitního určení zdroje připojení <xref:System.Windows.Data.Binding.Source%2A> vlastnost <xref:System.Windows.Data.Binding> (například tlačítko v poslední příkladu), můžete použít také <xref:System.Windows.Data.Binding.ElementName%2A> vlastnost nebo <xref:System.Windows.Data.Binding.RelativeSource%2A> vlastnosti k určení zdroje připojení. <xref:System.Windows.Data.Binding.ElementName%2A> Vlastnost je užitečná, pokud se vazba na další prvky v aplikaci, třeba když používáte ovládací prvek posuvník šířku tlačítka. <xref:System.Windows.Data.Binding.RelativeSource%2A> Vlastnost je užitečná, pokud vazba je zadaný v <xref:System.Windows.Controls.ControlTemplate> nebo <xref:System.Windows.Style>. Další informace najdete v tématu [určení zdroje vazby](how-to-specify-the-binding-source.md).  
   
 <a name="specifying_the_path_to_the_value"></a>   
 ### <a name="specifying-the-path-to-the-value"></a>Zadání cesty k hodnotě  
@@ -154,7 +154,7 @@ ms.locfileid: "54503206"
   
  Všimněte si, že i když budeme mít oznámil, <xref:System.Windows.Data.Binding.Path%2A> hodnotu použití je jedním z čtyři nezbytné komponenty položky vazby ve scénářích, které chcete vytvořit vazbu na celý objekt, hodnotu by být stejný jako zdrojový objekt vazby. V těchto případech se vztahuje k není zadán <xref:System.Windows.Data.Binding.Path%2A>. Vezměte v úvahu v následujícím příkladu:  
   
- [!code-xaml[MasterDetail#EmptyBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MasterDetail/CSharp/Page1.xaml#emptybinding)]  
+ [!code-xaml[MasterDetail#EmptyBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/MasterDetail/CSharp/Page1.xaml#emptybinding)]  
   
  Výše uvedený příklad používá syntaxi prázdné vazby: {Binding}. V takovém případě <xref:System.Windows.Controls.ListBox> DataContext dědí z nadřazeného elementu DockPanel (není vidět v tomto příkladu). Když se cesta nezadá, výchozí hodnota je vytvořit vazbu na celý objekt. Jinými slovy, v tomto příkladu cesta byla ponechána protože jsme vazby <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastnost na celý objekt. (Viz [připojení ke kolekcím](#binding_to_collections) části Podrobné informace.)  
   
@@ -168,16 +168,16 @@ ms.locfileid: "54503206"
   
  Představte si třeba následující příkaz, kde *myDataObject* je instance *Mojedata* třídy *myBinding* je zdrojem <xref:System.Windows.Data.Binding> objektu a *Mojedata* třída je definované třídou, která obsahuje řetězec vlastnost s názvem *MyDataProperty*. Tento příklad vytvoří vazbu obsah textu *mytext*, instance <xref:System.Windows.Controls.TextBlock>do *MyDataProperty*.  
   
- [!code-csharp[CodeOnlyBinding#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CodeOnlyBinding/CSharp/binding.cs#1)]
- [!code-vb[CodeOnlyBinding#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CodeOnlyBinding/VisualBasic/App.vb#1)]  
+ [!code-csharp[CodeOnlyBinding#1](~/samples/snippets/csharp/VS_Snippets_Wpf/CodeOnlyBinding/CSharp/binding.cs#1)]
+ [!code-vb[CodeOnlyBinding#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CodeOnlyBinding/VisualBasic/App.vb#1)]  
   
  Můžete použít stejný *myBinding* objekt k vytvoření jiných vazbách. Například můžete použít *myBinding* objekt k vytvoření vazby textový obsah zaškrtnutím políčka *MyDataProperty*. V tomto scénáři bude existovat dvě instance <xref:System.Windows.Data.BindingExpression> sdílení *myBinding* objektu.  
   
  A <xref:System.Windows.Data.BindingExpression> objektu můžete získat prostřednictvím vrácenou hodnotu volání funkce <xref:System.Windows.Data.BindingOperations.GetBindingExpression%2A> na objekt vázaný na data. Následující témata ukazují některé z použití <xref:System.Windows.Data.BindingExpression> třídy:  
   
--   [Získání objektu vazby ze svázané cílové vlastnosti](../../../../docs/framework/wpf/data/how-to-get-the-binding-object-from-a-bound-target-property.md)  
+-   [Získání objektu vazby ze svázané cílové vlastnosti](how-to-get-the-binding-object-from-a-bound-target-property.md)  
   
--   [Určení, kdy dojde k aktualizaci zdroje textem TextBox](../../../../docs/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source.md)  
+-   [Určení, kdy dojde k aktualizaci zdroje textem TextBox](how-to-control-when-the-textbox-text-updates-the-source.md)  
   
 <a name="data_conversion"></a>   
 ## <a name="data-conversion"></a>Převod dat  
@@ -185,18 +185,18 @@ ms.locfileid: "54503206"
   
  Chcete-li přidat tyto informace pro obrázek v [vytváření vazby](#creating_a_binding) části diagramu vypadá takto:  
   
- ![Diagram datové vazby](../../../../docs/framework/wpf/data/media/databindingbuttondefaultconversion.png "DataBindingButtonDefaultConversion")  
+ ![Diagram datové vazby](./media/databindingbuttondefaultconversion.png "DataBindingButtonDefaultConversion")  
   
  Co když, ale namísto toho, aby vlastnost typu řetězec má váš zdrojový objekt vazby *barva* vlastnost typu <xref:System.Windows.Media.Color>? V takovém případě v pořadí pro vytvoření vazby na pracovní je třeba do prvního zapnutí *barva* hodnotu vlastnosti na něco jiného, který <xref:System.Windows.Controls.Control.Background%2A> tato vlastnost přijímá parametry. Je třeba vytvořit vlastní převaděč implementací <xref:System.Windows.Data.IValueConverter> rozhraní, jako v následujícím příkladu:  
   
- [!code-csharp[ColorPicker_snip#16](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ColorPicker_snip/CSharp/ColorPickerLib/ColorPicker.cs#16)]
- [!code-vb[ColorPicker_snip#16](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ColorPicker_snip/visualbasic/colorpickerlib/colorpicker.vb#16)]  
+ [!code-csharp[ColorPicker_snip#16](~/samples/snippets/csharp/VS_Snippets_Wpf/ColorPicker_snip/CSharp/ColorPickerLib/ColorPicker.cs#16)]
+ [!code-vb[ColorPicker_snip#16](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ColorPicker_snip/visualbasic/colorpickerlib/colorpicker.vb#16)]  
   
  <xref:System.Windows.Data.IValueConverter> Referenční stránce poskytuje další informace.  
   
  Teď se používá vlastní převaděč namísto výchozí převod a naše diagram vypadá takto:  
   
- ![Diagram datové vazby](../../../../docs/framework/wpf/data/media/databindingconvertercolorexample.png "DataBindingConverterColorExample")  
+ ![Diagram datové vazby](./media/databindingconvertercolorexample.png "DataBindingConverterColorExample")  
   
  Zdůrazňujeme, mohou být převody výchozí k dispozici z důvodu převaděče typů, které se nacházejí v typu svázaný s. Toto chování bude záviset na které převaděče typů jsou dostupné na cíli. Pokud máte pochybnosti, vytvořte vlastní převaděče.  
   
@@ -217,7 +217,7 @@ ms.locfileid: "54503206"
   
  Naštěstí naše základní diagram stále platí. Pokud vytváříte vazbu <xref:System.Windows.Controls.ItemsControl> do kolekce, diagram vypadá takto:  
   
- ![Vytváření datových vazeb ItemsControl diagram](../../../../docs/framework/wpf/data/media/databindingitemscontrol.png "DataBindingItemsControl")  
+ ![Vytváření datových vazeb ItemsControl diagram](./media/databindingitemscontrol.png "DataBindingItemsControl")  
   
  Jak je znázorněno v tomto diagramu pro vytvoření vazby <xref:System.Windows.Controls.ItemsControl> na objekt kolekce <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> je vlastnost použít. Můžete si představit <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastnost jako obsah <xref:System.Windows.Controls.ItemsControl>. Všimněte si, že je vazba <xref:System.Windows.Data.BindingMode.OneWay> vzhledem k tomu, <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> podporuje vlastnost <xref:System.Windows.Data.BindingMode.OneWay> vazby ve výchozím nastavení.  
   
@@ -225,7 +225,7 @@ ms.locfileid: "54503206"
 ### <a name="how-to-implement-collections"></a>Implementace kolekce  
  Můžete zobrazit výčet přes jakoukoli kolekci, která implementuje <xref:System.Collections.IEnumerable> rozhraní. Však nastavení dynamické vazby, vložení nebo odstranění v kolekci aktualizovat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] automaticky, kolekce musí implementovat <xref:System.Collections.Specialized.INotifyCollectionChanged> rozhraní. Toto rozhraní poskytuje událost, která by měla být vyvolána při každé změně zdrojové kolekce.  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, která je integrovaná provádění shromažďování dat, který zpřístupňuje <xref:System.Collections.Specialized.INotifyCollectionChanged> rozhraní. Všimněte si, že pro úplnou podporu přenášení dat hodnotami z objekty zdroje do cíle, každý objekt v kolekci, která podporuje vlastnosti umožňující vazbu musí implementovat taky <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Další informace najdete v tématu [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, která je integrovaná provádění shromažďování dat, který zpřístupňuje <xref:System.Collections.Specialized.INotifyCollectionChanged> rozhraní. Všimněte si, že pro úplnou podporu přenášení dat hodnotami z objekty zdroje do cíle, každý objekt v kolekci, která podporuje vlastnosti umožňující vazbu musí implementovat taky <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Další informace najdete v tématu [Přehled zdrojů vazby](binding-sources-overview.md).  
   
  Před implementací vlastní kolekce, zvažte použití <xref:System.Collections.ObjectModel.ObservableCollection%601> nebo jeden z existující kolekce tříd, například <xref:System.Collections.Generic.List%601>, <xref:System.Collections.ObjectModel.Collection%601>, a <xref:System.ComponentModel.BindingList%601>, mezi mnoha dalších. Pokud jste pokročilý scénář a chcete implementovat vlastní kolekci, zvažte použití <xref:System.Collections.IList>, která poskytuje negenerická kolekce objektů, které je jednotlivě přístupný index a tím zajištění nejlepšího výkonu.  
   
@@ -243,14 +243,14 @@ ms.locfileid: "54503206"
 #### <a name="how-to-create-a-view"></a>Postup vytvoření zobrazení  
  Jedním ze způsobů, jak vytvořit a používat zobrazení je přímo vytvořit instanci objektu view a použít je jako zdroj vazby. Představte si třeba [ukázku vazby dat](https://go.microsoft.com/fwlink/?LinkID=163703) aplikace znázorněný [co je datová vazba?](#what_is_data_binding) části. Aplikace je implementováno tak, aby <xref:System.Windows.Controls.ListBox> váže k zobrazení nad shromažďováním dat namísto shromažďování dat přímo. V následujícím příkladu se extrahují z [ukázku vazby dat](https://go.microsoft.com/fwlink/?LinkID=163703) aplikace. <xref:System.Windows.Data.CollectionViewSource> Třída je [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] proxy, která dědí z třídy <xref:System.Windows.Data.CollectionView>. V tomto konkrétním příkladu <xref:System.Windows.Data.CollectionViewSource.Source%2A> zobrazení je vázán *AuctionItems* kolekce (typu <xref:System.Collections.ObjectModel.ObservableCollection%601>) aktuálního objektu aplikace.  
   
- [!code-xaml[DataBindingLab#WindowResources1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#windowresources1)]  
-[!code-xaml[DataBindingLab#CollectionViewSource](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#collectionviewsource)]  
-[!code-xaml[DataBindingLab#WindowResources2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#windowresources2)]  
+ [!code-xaml[DataBindingLab#WindowResources1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#windowresources1)]  
+[!code-xaml[DataBindingLab#CollectionViewSource](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#collectionviewsource)]  
+[!code-xaml[DataBindingLab#WindowResources2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#windowresources2)]  
   
  Prostředek *listingDataView* pak slouží jako zdroj vazby pro prvky v aplikaci, jako <xref:System.Windows.Controls.ListBox>:  
   
- [!code-xaml[DataBindingLab#Master1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#master1)]  
-[!code-xaml[DataBindingLab#Master2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#master2)]  
+ [!code-xaml[DataBindingLab#Master1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#master1)]  
+[!code-xaml[DataBindingLab#Master2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#master2)]  
   
  Chcete-li vytvořit další zobrazení pro jednu kolekci, můžete vytvořit jiný <xref:System.Windows.Data.CollectionViewSource> instance a zadejte pro něj jiný `x:Key` název.  
   
@@ -265,44 +265,44 @@ ms.locfileid: "54503206"
 ##### <a name="using-a-default-view"></a>Použití výchozí zobrazení  
  Zadání zobrazení kolekce jako zdrojem vazby, který je jedním ze způsobů, jak vytvořit a používat zobrazení kolekce. WPF také vytvoří výchozí kolekci zobrazení pro každou kolekci se používá jako zdroj vazby. Pokud svážete přímo do kolekce, WPF se váže k jeho výchozí zobrazení. Všimněte si, že toto výchozí zobrazení sdílí všechny vazby do stejné kolekce, takže ke změně výchozího zobrazení podle jednoho vázaného ovládacího prvku nebo kódu (jako je například řazení nebo ke změně aktuální položky ukazatel prodiskutována později) se projeví v jiných vazbách do stejné kolekce.  
   
- Načtení výchozího zobrazení, použijte <xref:System.Windows.Data.CollectionViewSource.GetDefaultView%2A> metody. Příklad najdete v tématu [získat výchozí zobrazení datové kolekce](../../../../docs/framework/wpf/data/how-to-get-the-default-view-of-a-data-collection.md).  
+ Načtení výchozího zobrazení, použijte <xref:System.Windows.Data.CollectionViewSource.GetDefaultView%2A> metody. Příklad najdete v tématu [získat výchozí zobrazení datové kolekce](how-to-get-the-default-view-of-a-data-collection.md).  
   
 ##### <a name="collection-views-with-adonet-datatables"></a>Zobrazení kolekcí s ADO.NET DataTables  
  Kvůli zvýšení výkonu se zobrazení kolekce pro technologii ADO.NET <xref:System.Data.DataTable> nebo <xref:System.Data.DataView> objekty delegovat, řazení a filtrování, abyste <xref:System.Data.DataView>. To způsobí, že řazení a filtrování, abyste sdílet mezi všechny kolekce zobrazení zdroje dat. Povolit zobrazení jednotlivých kolekcí k řazení a filtrováni nezávisle na sobě, inicializovat každé kolekci zobrazení vlastní <xref:System.Data.DataView> objektu.  
   
 #### <a name="sorting"></a>Řazení  
- Jak už bylo uvedeno dříve, můžete zobrazení použít pořadí řazení kolekce. Protože existuje ve zdrojové kolekce, vaše data může nebo nemusí mít odpovídající vlastní pořadí. Zobrazení nad shromažďováním umožňuje ukládat objednávky, nebo změňte výchozí pořadí na základě kritérií porovnání, které zadáte. Protože je na základě klienta zobrazení dat, běžný scénář, kdy se uživatel může chtít řadit sloupce tabulkových dat na hodnotu, která odpovídá sloupci. Použití zobrazení, tento uživatel řízené řazení lze použít, znovu bez jakýchkoli změn zdrojová kolekce nebo dokonce museli dotaz na obsah kolekce. Příklad najdete v tématu [řazení GridView sloupce při kliknutí na záhlaví](../../../../docs/framework/wpf/controls/how-to-sort-a-gridview-column-when-a-header-is-clicked.md).  
+ Jak už bylo uvedeno dříve, můžete zobrazení použít pořadí řazení kolekce. Protože existuje ve zdrojové kolekce, vaše data může nebo nemusí mít odpovídající vlastní pořadí. Zobrazení nad shromažďováním umožňuje ukládat objednávky, nebo změňte výchozí pořadí na základě kritérií porovnání, které zadáte. Protože je na základě klienta zobrazení dat, běžný scénář, kdy se uživatel může chtít řadit sloupce tabulkových dat na hodnotu, která odpovídá sloupci. Použití zobrazení, tento uživatel řízené řazení lze použít, znovu bez jakýchkoli změn zdrojová kolekce nebo dokonce museli dotaz na obsah kolekce. Příklad najdete v tématu [řazení GridView sloupce při kliknutí na záhlaví](../controls/how-to-sort-a-gridview-column-when-a-header-is-clicked.md).  
   
  Následující příklad ukazuje logiku řazení "Řazení podle kategorie a datum" <xref:System.Windows.Controls.CheckBox> aplikace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v [co je datová vazba?](#what_is_data_binding) části:  
   
- [!code-csharp[DataBindingLab#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#8)]
- [!code-vb[DataBindingLab#8](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#8)]  
+ [!code-csharp[DataBindingLab#8](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#8)]
+ [!code-vb[DataBindingLab#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#8)]  
   
 #### <a name="filtering"></a>Filtrování  
  Zobrazení můžete také použít filtr do kolekce. To znamená, že i když položka mohou existovat v kolekci, toto konkrétní zobrazení slouží k zobrazení jenom určité podmnožiny na plné kolekci. Můžete filtrovat na podmínky v datech. Například tak, jak se provádí aplikace v [co je datová vazba?](#what_is_data_binding) části "Zobrazit pouze bargains" <xref:System.Windows.Controls.CheckBox> obsahuje logiku a vyfiltrovat položky, které nákladů 25 USD nebo více. Následující kód se spustí, chcete-li nastavit *ShowOnlyBargainsFilter* jako <xref:System.Windows.Data.CollectionViewSource.Filter> obslužné rutiny události při, který <xref:System.Windows.Controls.CheckBox> je vybrán:  
   
- [!code-csharp[DataBindingLab#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#10)]
- [!code-vb[DataBindingLab#10](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#10)]  
+ [!code-csharp[DataBindingLab#10](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#10)]
+ [!code-vb[DataBindingLab#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#10)]  
   
  *ShowOnlyBargainsFilter* obslužná rutina události má následující implementaci:  
   
- [!code-csharp[DataBindingLab#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#5)]
- [!code-vb[DataBindingLab#5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#5)]  
+ [!code-csharp[DataBindingLab#5](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#5)]
+ [!code-vb[DataBindingLab#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#5)]  
   
- Pokud používáte některou <xref:System.Windows.Data.CollectionView> třídy přímo namísto tohoto <xref:System.Windows.Data.CollectionViewSource>, můžete využít <xref:System.Windows.Data.CollectionView.Filter%2A> vlastnosti a určit tak zpětné volání. Příklad najdete v tématu [filtrování dat v zobrazení](../../../../docs/framework/wpf/data/how-to-filter-data-in-a-view.md).  
+ Pokud používáte některou <xref:System.Windows.Data.CollectionView> třídy přímo namísto tohoto <xref:System.Windows.Data.CollectionViewSource>, můžete využít <xref:System.Windows.Data.CollectionView.Filter%2A> vlastnosti a určit tak zpětné volání. Příklad najdete v tématu [filtrování dat v zobrazení](how-to-filter-data-in-a-view.md).  
   
 #### <a name="grouping"></a>Seskupování  
  S výjimkou vnitřní třída, která se zobrazí <xref:System.Collections.IEnumerable> kolekce, všechna zobrazení kolekce podporují funkce pro seskupení, který umožňuje uživateli oddílu kolekce v zobrazení kolekce do logických skupin. Skupiny můžou být explicitní, pokud uživatel zadává seznam skupin, nebo implicitní, přičemž skupiny jsou dynamicky generované v závislosti na data.  
   
  Následující příklad ukazuje logiky "Seskupit podle kategorie" <xref:System.Windows.Controls.CheckBox>:  
   
- [!code-csharp[DataBindingLab#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#6)]
- [!code-vb[DataBindingLab#6](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#6)]  
+ [!code-csharp[DataBindingLab#6](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml.cs#6)]
+ [!code-vb[DataBindingLab#6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/MainWindow.xaml.vb#6)]  
   
- Další příklad seskupení, naleznete v tématu [seskupení položek v ListView, že implementuje GridView](../../../../docs/framework/wpf/controls/how-to-group-items-in-a-listview-that-implements-a-gridview.md).  
+ Další příklad seskupení, naleznete v tématu [seskupení položek v ListView, že implementuje GridView](../controls/how-to-group-items-in-a-listview-that-implements-a-gridview.md).  
   
 #### <a name="current-item-pointers"></a>Ukazatele na aktuální položku  
- Zobrazení také podporují pojem s aktuální položkou. Můžete procházet objekty v zobrazení kolekce. Lze při procházení, přesouváte položky ukazatel, který vám umožní načíst objekt, který v této konkrétní umístění v kolekci existuje. Příklad najdete v tématu [přejít přes objektů v datech CollectionView](../../../../docs/framework/wpf/data/how-to-navigate-through-the-objects-in-a-data-collectionview.md).  
+ Zobrazení také podporují pojem s aktuální položkou. Můžete procházet objekty v zobrazení kolekce. Lze při procházení, přesouváte položky ukazatel, který vám umožní načíst objekt, který v této konkrétní umístění v kolekci existuje. Příklad najdete v tématu [přejít přes objektů v datech CollectionView](how-to-navigate-through-the-objects-in-a-data-collectionview.md).  
   
  Protože WPF vytvoří vazbu na kolekce, mají všechny vazby na kolekce pouze pomocí zobrazení (zobrazení, které zadáte, nebo kolekci výchozí zobrazení), aktuální položky ukazatel. Při vytváření vazeb k zobrazení, v znak lomítka ("/") `Path` hodnota označuje aktuální položky zobrazení. V následujícím příkladu je kontext dat zobrazení kolekce. První řádek vytvoří vazbu na kolekce. Druhý řádek vytvoří vazbu na aktuální položku v kolekci. Třetí řádek vytvoří vazbu `Description` vlastnosti aktuální položky v kolekci.  
   
@@ -326,13 +326,13 @@ ms.locfileid: "54503206"
   
  Scénář hlavní podrobnosti můžete implementovat jednoduše tak, že dva nebo více ovládacích prvků vázaných na stejném zobrazení. Následující příklad z [ukázku vazby dat](https://go.microsoft.com/fwlink/?LinkID=163703) ukazuje z kódu <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ContentControl> se zobrazí v aplikaci [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v [co je datová vazba?](#what_is_data_binding) části:  
   
- [!code-xaml[DataBindingLab#Master1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#master1)]  
-[!code-xaml[DataBindingLab#Master2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#master2)]  
-[!code-xaml[DataBindingLab#Detail](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#detail)]  
+ [!code-xaml[DataBindingLab#Master1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#master1)]  
+[!code-xaml[DataBindingLab#Master2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#master2)]  
+[!code-xaml[DataBindingLab#Detail](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/MainWindow.xaml#detail)]  
   
  Všimněte si, že oba ovládací prvky jsou vázána ke stejnému zdroji *listingDataView* statický prostředek (viz definice tohoto prostředku v [postup vytvoření zobrazení části](#how_to_create_a_view)). Tento postup funguje, protože když je objekt typu singleton ( <xref:System.Windows.Controls.ContentControl> v tomto případě) je vázán na kolekci zobrazení, se automaticky váže k <xref:System.Windows.Data.CollectionView.CurrentItem%2A> zobrazení. Všimněte si, že <xref:System.Windows.Data.CollectionViewSource> objekty automaticky synchronizovat, měny a výběr. Pokud váš ovládací prvek seznamu není vázán na <xref:System.Windows.Data.CollectionViewSource> objektu jako v následujícím příkladu, je nutné nastavit jeho <xref:System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItem%2A> vlastnost `true` aby to fungovalo.  
   
- Další příklady najdete v tématu [připojení ke kolekci a zobrazení informací podle výběru](../../../../docs/framework/wpf/data/how-to-bind-to-a-collection-and-display-information-based-on-selection.md) a [použití vzoru seznam-podrobnosti s hierarchickými daty](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md).  
+ Další příklady najdete v tématu [připojení ke kolekci a zobrazení informací podle výběru](how-to-bind-to-a-collection-and-display-information-based-on-selection.md) a [použití vzoru seznam-podrobnosti s hierarchickými daty](how-to-use-the-master-detail-pattern-with-hierarchical-data.md).  
   
  Mohli jste si všimnout, že výše uvedený příklad používá šablonu. Data by ve skutečnosti zobrazí tak, jak bychom ale bez použití šablony (explicitně používají <xref:System.Windows.Controls.ContentControl> a, která implicitně používá <xref:System.Windows.Controls.ListBox>). Nyní jsme zapnout na šablonování data v další části.  
   
@@ -340,17 +340,17 @@ ms.locfileid: "54503206"
 ## <a name="data-templating"></a>Šablon dat  
  Bez použití šablony, naši aplikaci [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v [co je datová vazba?](#what_is_data_binding) oddílu by vypadat nějak takto:  
   
- ![Ukázka datové vazby bez datové šablony](../../../../docs/framework/wpf/data/media/databindingdemotemplates.png "DataBindingDemoTemplates")  
+ ![Ukázka datové vazby bez datové šablony](./media/databindingdemotemplates.png "DataBindingDemoTemplates")  
   
  Jak je znázorněno v příkladu v předchozí části, jak <xref:System.Windows.Controls.ListBox> ovládacího prvku a <xref:System.Windows.Controls.ContentControl> je vázána na objekt celou kolekci (nebo přesněji řečeno, zobrazení přes objekt kolekce) z *AuctionItem*s. Bez konkrétní pokyny o tom, jak zobrazit shromažďování dat <xref:System.Windows.Controls.ListBox> zobrazuje řetězcovou reprezentaci jednotlivých objektů v kolekci základní a <xref:System.Windows.Controls.ContentControl> zobrazena řetězcová reprezentace je vázán na objekt.  
   
  Pro vyřešení tohoto problému je aplikace definuje <xref:System.Windows.DataTemplate>s. Jak je znázorněno v příkladu v předchozí části, <xref:System.Windows.Controls.ContentControl> explicitně používá *detailsProductListingTemplate*<xref:System.Windows.DataTemplate>. <xref:System.Windows.Controls.ListBox> Ovládací prvek implicitně používá následující <xref:System.Windows.DataTemplate> při zobrazení *AuctionItem* objektů v kolekci:  
   
- [!code-xaml[DataBindingLab#AuctionItemDataTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#auctionitemdatatemplate)]  
+ [!code-xaml[DataBindingLab#AuctionItemDataTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#auctionitemdatatemplate)]  
   
  Pomocí těchto dvou <xref:System.Windows.DataTemplate>s, je výsledný uživatelské rozhraní z článku [co je datová vazba?](#what_is_data_binding) části. Jak vidíte z tohoto snímku obrazovky, kromě povolení umístit data ve své ovládací prvky <xref:System.Windows.DataTemplate>s umožňují definovat zajímavé vizuály pro vaše data. Například <xref:System.Windows.DataTrigger>s se používají v uvedeném <xref:System.Windows.DataTemplate> tak, aby *AuctionItem*s *SpecialFeatures* hodnotu *zvýrazněte* by se mělo zobrazit oranžové ohraničení a hvězdičku.  
   
- Další informace o šablonách dat, najdete v článku [přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md).  
+ Další informace o šablonách dat, najdete v článku [přehled datových šablon](data-templating-overview.md).  
   
 <a name="data_validation"></a>   
 ## <a name="data-validation"></a>Ověřování dat  
@@ -360,7 +360,7 @@ ms.locfileid: "54503206"
 ### <a name="associating-validation-rules-with-a-binding"></a>Přidružení pravidel ověřování s vazbou  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Vazby modelu dat vám umožní přidružit <xref:System.Windows.Data.Binding.ValidationRules%2A> s vaší <xref:System.Windows.Data.Binding> objektu. Například následující příklad vytvoří vazbu <xref:System.Windows.Controls.TextBox> vlastnost s názvem `StartPrice` a přidá <xref:System.Windows.Controls.ExceptionValidationRule> objektu <xref:System.Windows.Data.Binding.ValidationRules%2A?displayProperty=nameWithType> vlastnost.  
   
- [!code-xaml[DataBindingLab#DefaultValidation](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/AddProductWindow.xaml#defaultvalidation)]  
+ [!code-xaml[DataBindingLab#DefaultValidation](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/AddProductWindow.xaml#defaultvalidation)]  
   
  A <xref:System.Windows.Controls.ValidationRule> objekt kontroluje, zda je platná hodnota vlastnosti. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má následující dva typy integrovanou <xref:System.Windows.Controls.ValidationRule> objekty:  
   
@@ -370,12 +370,12 @@ ms.locfileid: "54503206"
   
  Můžete také vytvořit vlastní ověřovací pravidlo odvozené z <xref:System.Windows.Controls.ValidationRule> třídy a implementace <xref:System.Windows.Controls.ValidationRule.Validate%2A> metody. Následující příklad ukazuje pravidlem, které používá *přidat produkt výpis* "Datum zahájení" <xref:System.Windows.Controls.TextBox> z [co je datová vazba?](#what_is_data_binding) části:  
   
- [!code-csharp[DataBindingLab#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/FutureDateRule.cs#2)]
- [!code-vb[DataBindingLab#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/FutureDateRule.vb#2)]  
+ [!code-csharp[DataBindingLab#2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/FutureDateRule.cs#2)]
+ [!code-vb[DataBindingLab#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataBindingLab/VisualBasic/FutureDateRule.vb#2)]  
   
  *StartDateEntryForm* <xref:System.Windows.Controls.TextBox> používá toto *FutureDateRule*, jak je znázorněno v následujícím příkladu:  
   
- [!code-xaml[DataBindingLab#CustomValidation](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/AddProductWindow.xaml#customvalidation)]  
+ [!code-xaml[DataBindingLab#CustomValidation](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/AddProductWindow.xaml#customvalidation)]  
   
  Upozorňujeme, že <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>, aktualizuje modul vazby zdrojovou hodnotu při každém stisknutí klávesy, což znamená, že ho také kontroly v každé pravidlo <xref:System.Windows.Data.Binding.ValidationRules%2A> kolekce při každém stisknutí klávesy. To dál probereme v části procesu ověřování.  
   
@@ -383,23 +383,23 @@ ms.locfileid: "54503206"
 ### <a name="providing-visual-feedback"></a>Poskytuje vizuální zpětnou vazbu  
  Pokud uživatel zadá neplatnou hodnotu, můžete zadat svůj názor. o chybu v aplikaci [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Jedním ze způsobů, k poskytování zpětné vazby, je nastavit <xref:System.Windows.Controls.Validation.ErrorTemplate%2A?displayProperty=nameWithType> přidružená vlastnost vlastní <xref:System.Windows.Controls.ControlTemplate>. Jak je znázorněno v předchozí pododdílu *StartDateEntryForm* <xref:System.Windows.Controls.TextBox> používá <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> volá *validationTemplate*. Následující příklad ukazuje definici *validationTemplate*:  
   
- [!code-xaml[DataBindingLab#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/AddProductWindow.xaml#1)]  
+ [!code-xaml[DataBindingLab#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/AddProductWindow.xaml#1)]  
   
  <xref:System.Windows.Controls.AdornedElementPlaceholder> Prvek určuje umístění ovládacího prvku se opatřený.  
   
  Kromě toho můžete také použít <xref:System.Windows.Controls.ToolTip> zobrazíte chybovou zprávu. Obě *StartDateEntryForm* a *StartPriceEntryForm*<xref:System.Windows.Controls.TextBox>es použít styl *textStyleTextBox*, která vytvoří <xref:System.Windows.Controls.ToolTip> , který Zobrazí se chybová zpráva. Následující příklad ukazuje definici *textStyleTextBox*. Připojená vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je `true` když jeden nebo více vazby na vlastnosti elementu vazby jsou chybné.  
   
- [!code-xaml[DataBindingLab#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#14)]  
+ [!code-xaml[DataBindingLab#14](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#14)]  
   
  S vlastním <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> a <xref:System.Windows.Controls.ToolTip>, *StartDateEntryForm* <xref:System.Windows.Controls.TextBox> vypadá podobně jako následující, když dojde k chybě ověřování:  
   
- ![Chyba ověřování dat vazby](../../../../docs/framework/wpf/data/media/databindingdemo-validation.PNG "DataBindingDemo_Validation")  
+ ![Chyba ověřování dat vazby](./media/databindingdemo-validation.PNG "DataBindingDemo_Validation")  
   
  Pokud vaše <xref:System.Windows.Data.Binding> má přidruženou ověřovacích pravidel, ale nezadáte <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> na vázaného ovládacího prvku, výchozí <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> se použije k upozornit uživatele, když dojde k chybě ověřování. Výchozí hodnota <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> je šablonu ovládacího prvku, který definuje červené ohraničení ve vrstvě doplněk pro úpravy. S výchozím <xref:System.Windows.Controls.Validation.ErrorTemplate%2A> a <xref:System.Windows.Controls.ToolTip>, [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] z *StartPriceEntryForm* <xref:System.Windows.Controls.TextBox> vypadá podobně jako následující, když dojde k chybě ověřování:  
   
- ![Chyba ověřování dat vazby](../../../../docs/framework/wpf/data/media/databindingdemo-validationdefault.PNG "DataBindingDemo_ValidationDefault")  
+ ![Chyba ověřování dat vazby](./media/databindingdemo-validationdefault.PNG "DataBindingDemo_ValidationDefault")  
   
- Příklad toho, jak poskytnout logiku pro ověření všechny ovládací prvky v dialogovém okně, najdete v části vlastní dialogová okna v [přehled dialogových oken](../../../../docs/framework/wpf/app-development/dialog-boxes-overview.md).  
+ Příklad toho, jak poskytnout logiku pro ověření všechny ovládací prvky v dialogovém okně, najdete v části vlastní dialogová okna v [přehled dialogových oken](../app-development/dialog-boxes-overview.md).  
   
 ### <a name="validation-process"></a>Proces ověření  
  Ověření obvykle dochází při převodu hodnoty cílové vlastnosti zdroje vazby. Tato akce probíhá v <xref:System.Windows.Data.BindingMode.TwoWay> a <xref:System.Windows.Data.BindingMode.OneWayToSource> vazby. Zdůrazňujeme, co způsobí, že zdroj aktualizace závisí na hodnotě <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> vlastnost, jak je popsáno v [co triggery zdroje aktualizací](#what_triggers_source_updates) oddílu.  
@@ -431,9 +431,9 @@ ms.locfileid: "54503206"
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Controls.DataErrorValidationRule>
-- [Novinky ve verzi 4.5 grafického subsystému WPF](../../../../docs/framework/wpf/getting-started/whats-new.md)
-- [Vytvoření vazby k výsledkům dotazu LINQ](../../../../docs/framework/wpf/data/how-to-bind-to-the-results-of-a-linq-query.md)
-- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
+- [Novinky ve verzi 4.5 grafického subsystému WPF](../getting-started/whats-new.md)
+- [Vytvoření vazby k výsledkům dotazu LINQ](how-to-bind-to-the-results-of-a-linq-query.md)
+- [Datová vazba](../advanced/optimizing-performance-data-binding.md)
 - [Ukázka vazby dat](https://go.microsoft.com/fwlink/?LinkID=163703)
-- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
-- [Vytvoření vazby ke zdroji dat ADO.NET](../../../../docs/framework/wpf/data/how-to-bind-to-an-ado-net-data-source.md)
+- [Témata s postupy](data-binding-how-to-topics.md)
+- [Vytvoření vazby ke zdroji dat ADO.NET](how-to-bind-to-an-ado-net-data-source.md)

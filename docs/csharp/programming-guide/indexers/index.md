@@ -1,19 +1,13 @@
 ---
-title: Indexery - C# Průvodce programováním
+title: 'Indexery - C# Průvodce programováním'
 ms.custom: seodec18
 ms.date: 03/10/2017
 f1_keywords:
-- cs.indexers
+  - cs.indexers
 helpviewer_keywords:
-- indexers [C#]
-- C# language, indexers
+  - 'indexers [C#]'
+  - 'C# language, indexers'
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-ms.openlocfilehash: 08aff040720b57a8e94e1c60c22a04791d463cf0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54512031"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexery (Průvodce programováním v C#)
 
@@ -54,7 +48,7 @@ Od verze C# 7.0, jak získat a přístupový objekt set mohou být implementovan
   
 -   Indexery může mít více než jeden formální parametr, například při přístupu k dvourozměrné pole.  
   
-##  <a name="BKMK_RelatedSections"></a> Související oddíly  
+## <a name="BKMK_RelatedSections"></a> Související oddíly  
   
 -   [Použití indexerů](../../../csharp/programming-guide/indexers/using-indexers.md)  
   

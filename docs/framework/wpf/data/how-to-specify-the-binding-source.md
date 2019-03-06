@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 55d47757-2648-4a52-987f-b767953f168c
-ms.openlocfilehash: f2e3fa3352da85c7da394a582cfcd058fe3fadf4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 105924fec2956f2f74a2a574ee62f71a37df9366
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54577123"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57356718"
 ---
 # <a name="how-to-specify-the-binding-source"></a>Postupy: Určení zdroje připojení
 V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z. Toto téma popisuje různé způsoby určení zdroje připojení.  
@@ -24,16 +24,16 @@ V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z
   
  V následujícím příkladu se naváže kontext dat v kořenovém elementu aplikace. To umožňuje všechny podřízené prvky dědit daného datového kontextu. Data pro vazbu pocházejí z vlastní datové třídy `NetIncome`, odkazuje přímo prostřednictvím mapování a daný klíč prostředku `incomeDataSource`.  
   
- [!code-xaml[DirectionalBinding#DataContext1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/Page1.xaml#datacontext1)]  
-[!code-xaml[DirectionalBinding#DataContext2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/Page1.xaml#datacontext2)]  
+ [!code-xaml[DirectionalBinding#DataContext1](~/samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/Page1.xaml#datacontext1)]  
+[!code-xaml[DirectionalBinding#DataContext2](~/samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/Page1.xaml#datacontext2)]  
   
  Následující příklad ukazuje definici `NetIncome` třídy.  
   
- [!code-csharp[DirectionalBinding#DataObject](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/billsdata.cs#dataobject)]
- [!code-vb[DirectionalBinding#DataObject](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DirectionalBinding/VisualBasic/NetIncome.vb#dataobject)]  
+ [!code-csharp[DirectionalBinding#DataObject](~/samples/snippets/csharp/VS_Snippets_Wpf/DirectionalBinding/CSharp/billsdata.cs#dataobject)]
+ [!code-vb[DirectionalBinding#DataObject](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DirectionalBinding/VisualBasic/NetIncome.vb#dataobject)]  
   
 > [!NOTE]
->  Výše uvedený příklad vytvoří instanci objektu ve značkách a použije ho jako prostředek. Pokud chcete vytvořit vazbu na objekt, který se už vytvářejí instance v kódu, je nutné nastavit `DataContext` vlastnost prostřednictvím kódu programu. Příklad najdete v tématu [zkontrolujte Data k dispozici pro vazbu v XAML](../../../../docs/framework/wpf/data/how-to-make-data-available-for-binding-in-xaml.md).  
+>  Výše uvedený příklad vytvoří instanci objektu ve značkách a použije ho jako prostředek. Pokud chcete vytvořit vazbu na objekt, který se už vytvářejí instance v kódu, je nutné nastavit `DataContext` vlastnost prostřednictvím kódu programu. Příklad najdete v tématu [zkontrolujte Data k dispozici pro vazbu v XAML](how-to-make-data-available-for-binding-in-xaml.md).  
   
  Případně pokud chcete zadat zdroj na jednotlivé vazby explicitně, máte následující možnosti. Tyto přednost zděděné datového kontextu.  
   
@@ -46,7 +46,7 @@ V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.FrameworkElement.DataContext%2A?displayProperty=nameWithType>
 - <xref:System.Windows.FrameworkContentElement.DataContext%2A?displayProperty=nameWithType>
-- [Dědičnost hodnoty vlastnosti](../../../../docs/framework/wpf/advanced/property-value-inheritance.md)
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Přehled deklarací vazeb](../../../../docs/framework/wpf/data/binding-declarations-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+- [Dědičnost hodnoty vlastnosti](../advanced/property-value-inheritance.md)
+- [Přehled datových vazeb](data-binding-overview.md)
+- [Přehled deklarací vazeb](binding-declarations-overview.md)
+- [Témata s postupy](data-binding-how-to-topics.md)

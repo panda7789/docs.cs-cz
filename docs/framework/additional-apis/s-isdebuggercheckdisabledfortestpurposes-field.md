@@ -1,5 +1,5 @@
 ---
-title: Pole s_isDebuggerCheckDisabledForTestPurposes
+title: s_isDebuggerCheckDisabledForTestPurposes Field
 ms.date: 03/30/2017
 ms.technology:
 - dotnet-wpf
@@ -12,27 +12,27 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 9033a513-c255-4f31-b6d7-09b8d8c50e2d
-ms.openlocfilehash: ada3abcccac4244819cfbef1101a770761df6a50
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: b6490919163a7c4a618bf9a8d0e2aa145f60eda1
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221918"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57372305"
 ---
-# <a name="sisdebuggercheckdisabledfortestpurposes-field"></a>Pole s_isDebuggerCheckDisabledForTestPurposes
+# <a name="sisdebuggercheckdisabledfortestpurposes-field"></a>s_isDebuggerCheckDisabledForTestPurposes Field
 
 Tato privátní pole v `System.Windows.Diagnostics.VisualDiagnostics` třída se používá sada Visual Studio k určení, zda bude provedena interní kontroly pro aktivní ladicí program.
 
 ## <a name="syntax"></a>Syntaxe
-  
-```csharp  
+
+```csharp
 private static bool s_isDebuggerCheckDisabledForTestPurposes
 ```
-  
+
 > [!WARNING]
->  Rozhraní API v `System.Windows.Diagnostics.VisualDiagnostics` třídy jsou k dispozici, pouze když je aplikace spuštěna v ladicím programu. Nastavte `s_isDebuggerCheckDisabledForTestPurposes` k `true` pro přístup k rozhraní API mimo ladicí program.  
->   
->  Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.  
+> Rozhraní API v `System.Windows.Diagnostics.VisualDiagnostics` třídy jsou k dispozici, pouze když je aplikace spuštěna v ladicím programu. Nastavte `s_isDebuggerCheckDisabledForTestPurposes` k `true` pro přístup k rozhraní API mimo ladicí program.
+>
+> Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
 
 ## <a name="requirements"></a>Požadavky
 

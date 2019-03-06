@@ -7,18 +7,18 @@ helpviewer_keywords:
 - ScrollBar control [WPF]
 - controls [WPF], ScrollBar
 ms.assetid: 60f27d35-8f7b-4285-89d2-28336a4c073a
-ms.openlocfilehash: 9ae7334172b5cbc4ea7fb6be3caebcf2c47589ae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 242dbdeeed5408815878aa30ef276019e1ccc2c4
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33556000"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358844"
 ---
 # <a name="scrollbar"></a>ScrollBar
-A <xref:System.Windows.Controls.Primitives.ScrollBar> vám umožní zobrazit obsah, který je mimo aktuální zobrazení oblasti klouzavé <xref:System.Windows.Controls.Primitives.Thumb> zpřístupněte obsah.  
+A <xref:System.Windows.Controls.Primitives.ScrollBar> vám umožní zobrazit obsah, který je mimo aktuální oblast zobrazení posunutím <xref:System.Windows.Controls.Primitives.Thumb> zajistit pro obsah viditelný.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přizpůsobení velikosti jezdce v prvku ScrollBar](../../../../docs/framework/wpf/controls/how-to-customize-the-thumb-size-on-a-scrollbar.md)  
+ [Přizpůsobení velikosti jezdce v prvku ScrollBar](how-to-customize-the-thumb-size-on-a-scrollbar.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Primitives.ScrollBar>  

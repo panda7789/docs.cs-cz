@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 67978e49a8c23c4b25234ecbb3639c696c7232f4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 072e775d11d44dfbca27f1616889e388ae61d467
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54655644"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57365994"
 ---
 # <a name="ixclrdataprocessendenummethodinstancesbyaddress-method"></a>IXCLRDataProcess::EndEnumMethodInstancesByAddress Method
 
@@ -36,9 +36,10 @@ HRESULT EndEnumMethodInstancesByAddress(
 );
 ```
 
-### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
-`handle` [out] Popisovač pro vytváření výčtu instancí metody.
+`handle`\
+[out] Popisovač pro vytváření výčtu instancí metody.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -53,6 +54,6 @@ Zadaná metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 29. pozi
 
 ## <a name="see-also"></a>Viz také:
 
-- [CLRDataSourceType Enumeration](../../../../docs/framework/unmanaged-api/debugging/clrdatasourcetype-enumeration.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [IXCLRDataProcess Interface](../../../../docs/framework/unmanaged-api/debugging/ixclrdataprocess-interface.md)
+- [CLRDataSourceType Enumeration](clrdatasourcetype-enumeration.md)
+- [Ladění](index.md)
+- [IXCLRDataProcess Interface](ixclrdataprocess-interface.md)

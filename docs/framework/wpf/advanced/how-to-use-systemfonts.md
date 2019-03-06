@@ -9,12 +9,12 @@ helpviewer_keywords:
 - fonts [WPF], system fonts
 - classes [WPF], SystemFonts
 ms.assetid: 3f46a4ec-2225-408a-8123-8838a8f7057a
-ms.openlocfilehash: bf99d716c5c41b7604244022d2e58423594a9cf3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5ed44da316ddee5ea3a83262f913da571bf75276
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54674869"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57378896"
 ---
 # <a name="how-to-use-systemfonts"></a>Postupy: Používání třídy SystemFonts
 Tento příklad ukazuje způsob použití statické prostředky <xref:System.Windows.SystemFonts> třídy za účelem stylu nebo tlačítko Přizpůsobit.  
@@ -29,19 +29,19 @@ Tento příklad ukazuje způsob použití statické prostředky <xref:System.Win
   
  Následující příklad ukazuje, jak přistupovat a používat vlastnosti <xref:System.Windows.SystemFonts> jako statické hodnoty pro styl nebo tlačítko Přizpůsobit. Tento příklad kódu přiřazuje <xref:System.Windows.SystemFonts> hodnoty k tlačítku.  
   
- [!code-xaml[SystemRes_snip#FontStaticResources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SystemRes_snip/CSharp/Pane1.xaml#fontstaticresources)]  
+ [!code-xaml[SystemRes_snip#FontStaticResources](~/samples/snippets/csharp/VS_Snippets_Wpf/SystemRes_snip/CSharp/Pane1.xaml#fontstaticresources)]  
   
  Chcete-li použít hodnoty <xref:System.Windows.SystemFonts> v kódu, není nutné používat statickou hodnotou nebo odkazem dynamický prostředek. Místo toho použijte vlastnosti neklíčovým <xref:System.Windows.SystemFonts> třídy. I když neklíčovým vlastnosti jsou zdánlivě definovány jako statické vlastnosti, chování za běhu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hostitelem systému přehodnotí vlastnosti v reálném čase a se správně řízené uživatelské změny hodnot systémového účtu. Následující příklad ukazuje, jak určuje nastavení písma tlačítka.  
   
- [!code-csharp[SystemRes_snip#FontResourcesCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SystemRes_snip/CSharp/Pane1.xaml.cs#fontresourcescode)]
- [!code-vb[SystemRes_snip#FontResourcesCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SystemRes_snip/VisualBasic/Pane1.xaml.vb#fontresourcescode)]  
+ [!code-csharp[SystemRes_snip#FontResourcesCode](~/samples/snippets/csharp/VS_Snippets_Wpf/SystemRes_snip/CSharp/Pane1.xaml.cs#fontresourcescode)]
+ [!code-vb[SystemRes_snip#FontResourcesCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SystemRes_snip/VisualBasic/Pane1.xaml.vb#fontresourcescode)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.SystemFonts>
-- [Vykreslení oblasti systémovým štětcem](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)
-- [Používání třídy SystemParameters](../../../../docs/framework/wpf/advanced/how-to-use-systemparameters.md)
-- [Použití klíčů systémových písem](../../../../docs/framework/wpf/advanced/how-to-use-system-fonts-keys.md)
-- [Témata s postupy](../../../../docs/framework/wpf/advanced/resources-how-to-topics.md)
-- [x:Static – rozšíření značek](../../../../docs/framework/xaml-services/x-static-markup-extension.md)
-- [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)
-- [Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)
+- [Vykreslení oblasti systémovým štětcem](../graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)
+- [Používání třídy SystemParameters](how-to-use-systemparameters.md)
+- [Použití klíčů systémových písem](how-to-use-system-fonts-keys.md)
+- [Témata s postupy](resources-how-to-topics.md)
+- [x:Static – rozšíření značek](../../xaml-services/x-static-markup-extension.md)
+- [Prostředky XAML](xaml-resources.md)
+- [Rozšíření značek DynamicResource](dynamicresource-markup-extension.md)

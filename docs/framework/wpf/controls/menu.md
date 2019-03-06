@@ -7,23 +7,23 @@ helpviewer_keywords:
 - Menu control [WPF]
 - controls [WPF], Menu
 ms.assetid: 4317fb80-408c-47c7-9223-b29e4742c4ee
-ms.openlocfilehash: e01a0264b86e052d9def7f3657f96d238a67afb2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 93152861ff3a2ab1782b86b1de0951d89a8cc85d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33555786"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57370758"
 ---
 # <a name="menu"></a>Nabídka
-A <xref:System.Windows.Controls.Menu> je ovládací prvek, který umožňuje hierarchické uspořádání elementů spojených s příkazy nebo obslužné rutiny událostí. Každý <xref:System.Windows.Controls.Menu> může obsahovat více <xref:System.Windows.Controls.MenuItem> ovládací prvky. Každý <xref:System.Windows.Controls.MenuItem> můžete vyvolat příkaz nebo vyvolat `Click` obslužné rutiny události. A <xref:System.Windows.Controls.MenuItem> může mít více <xref:System.Windows.Controls.MenuItem> elementy jako podřízené objekty, které tvoří podnabídky.  
+A <xref:System.Windows.Controls.Menu> je ovládací prvek, který umožňuje hierarchické uspořádání prvků, které jsou spojené s příkazy nebo obslužné rutiny událostí. Každý <xref:System.Windows.Controls.Menu> může obsahovat více <xref:System.Windows.Controls.MenuItem> ovládacích prvků. Každý <xref:System.Windows.Controls.MenuItem> můžete vyvolat příkaz nebo vyvolat `Click` obslužné rutiny události. A <xref:System.Windows.Controls.MenuItem> může mít také více <xref:System.Windows.Controls.MenuItem> prvky jako podřízené objekty, které tvoří podnabídky.  
   
- Následující obrázek znázorňuje tři různé stavy ovládacího prvku typu nabídky. Ve výchozím stavu je při spočívající žádné zařízení, jako je například ukazatel myši na <xref:System.Windows.Controls.Menu>. Stav fokus nastane, když ukazatel myši ukazatele myši <xref:System.Windows.Controls.Menu> a při stisknutí tlačítka stavu dojde po kliknutí na tlačítko myši nad <xref:System.Windows.Controls.Menu>.  
+ Následující obrázek znázorňuje tři různé stavy ovládací prvek nabídky. Ve výchozím stavu je při žádná zařízení, jako je ukazatel myši je nejsou uložené na <xref:System.Windows.Controls.Menu>. Stav fokus nastane, pokud se ukazatel myši je ukazatel myši <xref:System.Windows.Controls.Menu> a při stisknutí stavu nastane, pokud dojde ke kliknutí na tlačítko myši nad <xref:System.Windows.Controls.Menu>.  
   
- ![Stavy nabídky](../../../../docs/framework/wpf/controls/media/ss-ctl-menu.gif "SS_CTL_menu")  
-Nabídky v různých stavů  
+ ![Stavy nabídky](./media/ss-ctl-menu.gif "SS_CTL_menu")  
+Nabídky v různých stavech  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled nabídky](../../../../docs/framework/wpf/controls/menu-overview.md)  
+ [Přehled nabídky](menu-overview.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Menu>  

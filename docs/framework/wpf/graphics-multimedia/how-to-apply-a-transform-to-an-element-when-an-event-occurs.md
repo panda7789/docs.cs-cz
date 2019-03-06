@@ -11,15 +11,15 @@ helpviewer_keywords:
 - properties [WPF], RenderTransform
 - LayoutTransform property [WPF]
 ms.assetid: 71e4327e-ca57-444c-a3cf-09fb381491a0
-ms.openlocfilehash: 3862ffcb8e0dcabd2de67c495204470ac9fa6c14
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c14f746846943d3fa5150fbee405a62249dee9c1
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54726387"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57357925"
 ---
 # <a name="how-to-apply-a-transform-to-an-element-when-an-event-occurs"></a>Postupy: Použití transformace na element při výskytu události
-Tento příklad ukazuje způsob použití <xref:System.Windows.Media.ScaleTransform> při výskytu události. Pojem, který je znázorněna zde je stejný, který používáte pro použití jiné typy transformací. Další informace o dostupných typech transformace, najdete v článku <xref:System.Windows.Media.Transform> třídy nebo [transformuje přehled](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md).  
+Tento příklad ukazuje způsob použití <xref:System.Windows.Media.ScaleTransform> při výskytu události. Pojem, který je znázorněna zde je stejný, který používáte pro použití jiné typy transformací. Další informace o dostupných typech transformace, najdete v článku <xref:System.Windows.Media.Transform> třídy nebo [transformuje přehled](transforms-overview.md).  
   
  Použití transformace na element v některém z těchto způsobů:  
   
@@ -30,14 +30,14 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.ScaleTransf
  Následující příklad se vztahuje <xref:System.Windows.Media.ScaleTransform> k <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost tlačítka. Když se ukazatel myši přesune na tlačítko <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> a <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> vlastnosti <xref:System.Windows.Media.ScaleTransform> jsou nastaveny na `2`, což způsobí, že tlačítko větší. Pokud ukazatel myši pohybuje, vypnutí tlačítka, <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> a <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> jsou nastaveny na `1`, což způsobí, že tlačítko vrátit na původní velikost.  
   
 ## <a name="example"></a>Příklad  
- [!code-xaml[ButtonTransform#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ButtonTransform/CSharp/ButtonTransformExample.xaml#1)]  
+ [!code-xaml[ButtonTransform#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ButtonTransform/CSharp/ButtonTransformExample.xaml#1)]  
   
- [!code-csharp[ButtonTransform#1cb](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ButtonTransform/CSharp/ButtonTransformExample.xaml.cs#1cb)]
- [!code-vb[ButtonTransform#1cb](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ButtonTransform/VisualBasic/ButtonTransformExample.xaml.vb#1cb)]  
+ [!code-csharp[ButtonTransform#1cb](~/samples/snippets/csharp/VS_Snippets_Wpf/ButtonTransform/CSharp/ButtonTransformExample.xaml.cs#1cb)]
+ [!code-vb[ButtonTransform#1cb](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ButtonTransform/VisualBasic/ButtonTransformExample.xaml.vb#1cb)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Media.Transform>
 - <xref:System.Windows.Media.ScaleTransform>
-- [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)
-- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+- [Přehled transformace](transforms-overview.md)
+- [Témata s postupy](transformations-how-to-topics.md)
+- [Přehled směrovaných událostí](../advanced/routed-events-overview.md)

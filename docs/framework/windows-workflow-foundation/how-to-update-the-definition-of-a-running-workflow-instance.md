@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: aktualizace definice běžící Instance pracovního postupu'
+title: 'Postupy: Aktualizace definice běžící Instance pracovního postupu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 26dfac36-ae23-4909-9867-62495b55fb5e
-ms.openlocfilehash: da8b6adeede1fddf39c818568cfd884c3add317f
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 1f5980ed360e8dfb4aaac92e1e5e7236ffb9f409
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123836"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57376590"
 ---
-# <a name="how-to-update-the-definition-of-a-running-workflow-instance"></a>Postupy: aktualizace definice běžící Instance pracovního postupu
-Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům aplikací k aktualizaci pracovního postupu definici trvalé instance práce. Požadovaná změna lze provádět opravy chyb, nové požadavky, nebo tak, aby vyhovovaly neočekávaným změnám. Tento krok úvodního kurzu ukazuje, jak použít ke změně trvalého instance dynamické aktualizace `v1` číslo opakovaně uhodnout pracovního postupu tak, aby odpovídaly nových funkcích uvedených ve [jak: více verzí pracovní postup-souběžně hostitele ](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
+# <a name="how-to-update-the-definition-of-a-running-workflow-instance"></a>Postupy: Aktualizace definice běžící Instance pracovního postupu
+Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům aplikací k aktualizaci pracovního postupu definici trvalé instance práce. Požadovaná změna lze provádět opravy chyb, nové požadavky, nebo tak, aby vyhovovaly neočekávaným změnám. Tento krok úvodního kurzu ukazuje, jak použít ke změně trvalého instance dynamické aktualizace `v1` číslo opakovaně uhodnout pracovního postupu tak, aby odpovídaly nových funkcích uvedených ve [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
 
 > [!NOTE]
 >  Pokud chcete stáhnout dokončený verzi nebo zobrazit na video s návodem tohoto kurzu, najdete v článku [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
@@ -40,7 +40,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
   
 -   [Povolit od předchozích verzí pracovních postupů](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_StartPreviousVersions)  
   
-###  <a name="BKMK_CreateProject"></a> Chcete-li vytvořit projekt CreateUpdateMaps  
+### <a name="BKMK_CreateProject"></a> Chcete-li vytvořit projekt CreateUpdateMaps  
   
 1.  Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníka řešení** a zvolte **přidat**, **nový projekt**.  
   
@@ -224,7 +224,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
     }
     ```
 
-###  <a name="BKMK_StateMachine"></a> Chcete-li aktualizovat StateMachineNumberGuessWorkflow
+### <a name="BKMK_StateMachine"></a> Chcete-li aktualizovat StateMachineNumberGuessWorkflow
 
 1.  Přidat `CreateStateMachineUpdateMap` k `Program` třídy (nebo `Module1`).
 
@@ -256,7 +256,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
     StateMachine sm = wf.Implementation as StateMachine;
     ```
 
-3.  Dále, aktualizujte výrazy dva `WriteLine` aktivity, které se zobrazí, zda je odhad uživatele moc vysoká, nebo příliš malá, aby odpovídaly aktualizace provedené v [jak: hostitel více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
+3.  Dále, aktualizujte výrazy dva `WriteLine` aktivity, které se zobrazí, zda je odhad uživatele moc vysoká, nebo příliš malá, aby odpovídaly aktualizace provedené v [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
 
     ```vb
     'Update the Text of the two WriteLine activities that write the
@@ -417,7 +417,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
     }
     ```
 
-###  <a name="BKMK_Flowchart"></a> Chcete-li aktualizovat FlowchartNumberGuessWorkflow
+### <a name="BKMK_Flowchart"></a> Chcete-li aktualizovat FlowchartNumberGuessWorkflow
 
 1.  Přidejte následující `CreateFlowchartUpdateMethod` k `Program` třídy (nebo `Module1`). Tato metoda je podobný `CreateStateMachineUpdateMap`. Začíná volání `StartUpdate`, aktualizuje definice pracovního postupu vývojového diagramu a dokončení uložením mapa aktualizace a aktualizovaný pracovní postup definice.
 
@@ -531,7 +531,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
     }
     ```
 
-###  <a name="BKMK_Sequential"></a> Chcete-li aktualizovat SequentialNumberGuessWorkflow
+### <a name="BKMK_Sequential"></a> Chcete-li aktualizovat SequentialNumberGuessWorkflow
 
 1.  Přidejte následující `CreateSequentialUpdateMethod` k `Program` třídy (nebo `Module1`). Tato metoda je podobný tyto dvě metody. Začíná volání `StartUpdate`, aktualizuje definice sekvenčního pracovního postupu a dokončení uložením mapa aktualizace a aktualizovaný pracovní postup definice.
 
@@ -611,7 +611,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
     }
     ```
 
-###  <a name="BKMK_CreateUpdateMaps"></a> Sestavte a spusťte aplikaci CreateUpdateMaps
+### <a name="BKMK_CreateUpdateMaps"></a> Sestavte a spusťte aplikaci CreateUpdateMaps
 
 1.  Aktualizace `Main` metoda a přidejte následující tři metody volání. Tyto metody jsou přidány v následujících částech. Každá metoda aktualizuje odpovídající číslo odhad pracovní postup a vytvoří `DynamicUpdateMap` , který popisuje aktualizace.
 
@@ -645,19 +645,19 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
 
      Jakmile se vytvoří mapování aktualizace a aktualizovat definice pracovního postupu, dalším krokem je vytvoření sestavení aktualizovaný pracovní postup obsahující aktualizované definice.
 
-###  <a name="BKMK_BuildAssembly"></a> K vytvoření sestavení aktualizovaný pracovní postup
+### <a name="BKMK_BuildAssembly"></a> K vytvoření sestavení aktualizovaný pracovní postup
 
 1.  Spusťte druhou instanci sady Visual Studio 2012.
 
 2.  Zvolte **otevřít**, **projekt či řešení** z **souboru** nabídky.
 
-3.  Přejděte **NumberGuessWorkflowActivities_du** složku, kterou jste vytvořili v [jak: hostitele více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md), vyberte **NumberGuessWorkflowActivities.csproj**  (nebo **vbproj**) a klikněte na tlačítko **otevřít**.
+3.  Přejděte **NumberGuessWorkflowActivities_du** složku, kterou jste vytvořili v [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md)vyberte **NumberGuessWorkflowActivities.csproj** (nebo **vbproj**) a klikněte na tlačítko **otevřít**.
 
 4.  V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **SequentialNumberGuessWorkflow.xaml** a zvolte **vyjmout z projektu**. Stejnou věc udělat **FlowchartNumberGuessWorkflow.xaml** a **StateMachineNumberGuessWorkflow.xaml**. Tento krok se odebere předchozí verze definice pracovního postupu z projektu.
 
 5.  Zvolte **přidat existující položku** z **projektu** nabídky.
 
-6.  Přejděte **NumberGuessWorkflowActivities_du** složku, kterou jste vytvořili v [jak: hostitele více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
+6.  Přejděte **NumberGuessWorkflowActivities_du** složku, kterou jste vytvořili v [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
 
 7.  Zvolte **soubory XAML (\*.xaml;\*. XOML)** z **soubory typu** rozevíracího seznamu.
 
@@ -674,9 +674,9 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
 
 11. Otevřete Průzkumníka Windows a přejděte **NumberGuessWorkflowActivities_du\bin\Debug** složky (nebo **bin\Release** v závislosti na nastavení projektu).
 
-12. Přejmenovat **NumberGuessWorkflowActivities.dll** k **NumberGuessWorkflowActivities_v15.dll**a zkopírujte ho do **PreviousVersions** složku, kterou jste vytvořili v [Postupy: hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
+12. Přejmenovat **NumberGuessWorkflowActivities.dll** k **NumberGuessWorkflowActivities_v15.dll**a zkopírujte ho do **PreviousVersions** složku, kterou jste vytvořili v [Jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
 
-###  <a name="BKMK_UpdateWorkflowVersionMap"></a> Chcete-li aktualizovat WorkflowVersionMap nové verze
+### <a name="BKMK_UpdateWorkflowVersionMap"></a> Chcete-li aktualizovat WorkflowVersionMap nové verze
 
 1.  Přepněte zpět do původní instance sady Visual Studio 2012.
 
@@ -1063,7 +1063,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
 
 5.  Sestavte projekt stisknutím kombinace kláves CTRL+SHIFT+B.
 
-###  <a name="BKMK_ApplyUpdate"></a> Aby se dynamická aktualizace
+### <a name="BKMK_ApplyUpdate"></a> Aby se dynamická aktualizace
 
 1.  Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníka řešení** a zvolte **přidat**, **nový projekt**.
 
@@ -1413,32 +1413,32 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
 21. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení a pak stiskněte CTRL + F5 ke spuštění `ApplyDynamicUpdate` aplikace a aktualizovat instance trvalá pracovního postupu. Byste měli vidět výstup podobný následujícímu. Pracovní postupy verze 1.0.0.0 jsou aktualizována na verzi 1.5.0.0, zatímco se neaktualizují verzi 2.0.0.0 pracovních postupů.
 
  **Kontrola: StateMachineNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: StateMachineNumberGuessWorkflow; Verze = 1.5.0.0**
+**aktualizováno, aby: StateMachineNumberGuessWorkflow; Version=1.5.0.0**
+**Inspecting: StateMachineNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: StateMachineNumberGuessWorkflow; Verze = 1.5.0.0**
+**kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**
+**kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**
+**kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**
+**kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**
+**kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**
 **kontrola: StateMachineNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: StateMachineNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: StateMachineNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: StateMachineNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: StateMachineNumberGuessWorkflow; Verze = 2.0.0.0**
-**kontrola: StateMachineNumberGuessWorkflow; Verze = 2.0.0.0**
-**kontrola: FlowchartNumberGuessWorkflow; Verze = 2.0.0.0**
+**aktualizováno, aby: StateMachineNumberGuessWorkflow; Version=1.5.0.0**
+**Inspecting: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**
+**kontrola: StateMachineNumberGuessWorkflow; Version=2.0.0.0**
+**Inspecting: StateMachineNumberGuessWorkflow; Version=2.0.0.0**
+**Inspecting: FlowchartNumberGuessWorkflow; Verze = 2.0.0.0**
 **kontrola: FlowchartNumberGuessWorkflow; Verze = 2.0.0.0**
 **kontrola: SequentialNumberGuessWorkflow; Verze = 2.0.0.0**
 **kontrola: SequentialNumberGuessWorkflow; Verze = 2.0.0.0**
 **stisknutím libovolné klávesy pokračovat...**
 
-###  <a name="BKMK_BuildAndRun"></a> Spusťte aplikaci pomocí aktualizovaných pracovních postupů
+### <a name="BKMK_BuildAndRun"></a> Spusťte aplikaci pomocí aktualizovaných pracovních postupů
 
 1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníka řešení** a zvolte **nastavit jako spouštěný projekt**.
 
@@ -1446,7 +1446,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
 
 3.  Klikněte na tlačítko **novou hru** spuštění nového pracovního postupu a poznamenejte si informace o verzi níže se stavové okno, které označuje pracovního postupu `v2` pracovního postupu.
 
-4.  Vyberte jednu z `v1` pracovních postupů, které jste spustili na začátku [jak: hostitel více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md) tématu. Všimněte si, že informace o verzi v části stavové okno označuje, že pracovní postup je verze **1.5.0.0** pracovního postupu. Všimněte si, že nejsou k dispozici žádné informace uvedené informace o předchozích pokusů jiné než, zda byly moc vysoká, nebo příliš nízká.
+4.  Vyberte jednu z `v1` pracovních postupů, které jste spustili na začátku [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md) tématu. Všimněte si, že informace o verzi v části stavové okno označuje, že pracovní postup je verze **1.5.0.0** pracovního postupu. Všimněte si, že nejsou k dispozici žádné informace uvedené informace o předchozích pokusů jiné než, zda byly moc vysoká, nebo příliš nízká.
 
  **Zadejte prosím číslo mezi 1 a 10**
 **váš odhad je příliš nízká.**
@@ -1473,7 +1473,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
  **Zadejte prosím číslo mezi 1 a 10**
 **6 je správná. Odhadl na oplátku 4.**
 
-###  <a name="BKMK_StartPreviousVersions"></a> Povolit od předchozích verzí pracovních postupů
+### <a name="BKMK_StartPreviousVersions"></a> Povolit od předchozích verzí pracovních postupů
  Pokud vyčerpáte pracovní postupy pro aktualizace, můžete upravit `NumberGuessWorkflowHost` aplikaci, která od předchozích verzí pracovních postupů.
 
 1.  Dvakrát klikněte na panel **WorkflowHostForm** v **Průzkumníka řešení**a vyberte **WorkflowType** – pole se seznamem.

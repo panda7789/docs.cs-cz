@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - navigation [WPF]
 ms.assetid: f804648e-558c-4f60-8e48-d11f4a23c436
-ms.openlocfilehash: d6b767e68f8d3217ffacd787137a2d4b91c3761d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4d1cfd1388e68ff6a5f8c6a6b209dc38dd2f80d3
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33550108"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57379741"
 ---
 # <a name="navigation-how-to-topics"></a>Postupy: Témata navigace
 Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] navigace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Volání funkce stránky](../../../../docs/framework/wpf/app-development/how-to-call-a-page-function.md)  
-  [Načtení návratové hodnoty funkce stránky](../../../../docs/framework/wpf/app-development/how-to-get-the-return-value-of-a-page-function.md)  
-  [Přecházení vpřed a zpět v historii navigace](../../../../docs/framework/wpf/app-development/how-to-navigate-forward-or-back-through-navigation-history.md)  
-  [Vrácení z funkce stránky](../../../../docs/framework/wpf/app-development/how-to-return-from-a-page-function.md)  
+ [Volání funkce stránky](how-to-call-a-page-function.md)  
+  [Načtení návratové hodnoty funkce stránky](how-to-get-the-return-value-of-a-page-function.md)  
+  [Přecházení vpřed a zpět v historii navigace](how-to-navigate-forward-or-back-through-navigation-history.md)  
+  [Vrácení z funkce stránky](how-to-return-from-a-page-function.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
+ [Přehled navigace](navigation-overview.md)  
   
- [Přehled strukturované navigace](../../../../docs/framework/wpf/app-development/structured-navigation-overview.md)
+ [Přehled strukturované navigace](structured-navigation-overview.md)

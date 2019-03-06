@@ -7,19 +7,19 @@ helpviewer_keywords:
 - graphics [WPF], PathGeometry class
 - XAML [WPF], object element usage
 ms.assetid: b8586241-a02d-486e-9223-e1e98e047f41
-ms.openlocfilehash: 03f9c4f8156c5f14ff127dd47c7ade6f6ee22e5e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 65a86b82af9269d1af7198b8106ad478e88f3691
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54671262"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57379156"
 ---
 # <a name="path-markup-syntax"></a>Syntaxe značek cesty
-Cesty jsou popsány v [tvary a základní kresby v přehledu WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md) a [přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md), ale toto téma popisuje podrobně výkonná a komplexní zkrácené jazyk, slouží k určení cesty geometrie více kompaktně pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
+Cesty jsou popsány v [tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md) a [přehled geometrie](geometry-overview.md), ale toto téma popisuje podrobně výkonná a komplexní zkrácené jazyk, slouží k určení cesty geometrie více kompaktně pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- V tomto tématu informace o tom, měli byste se seznámit se základními funkcemi <xref:System.Windows.Media.Geometry> objekty. Další informace najdete v tématu [přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md).  
+ V tomto tématu informace o tom, měli byste se seznámit se základními funkcemi <xref:System.Windows.Media.Geometry> objekty. Další informace najdete v tématu [přehled geometrie](geometry-overview.md).  
   
 <a name="abouthisdocument"></a>   
 ## <a name="streamgeometry-and-pathfigurecollection-mini-languages"></a>Streamgeometry – a PathFigureCollection Mini – jazyky  
@@ -27,15 +27,15 @@ Cesty jsou popsány v [tvary a základní kresby v přehledu WPF](../../../../do
   
 -   Použijete <xref:System.Windows.Media.StreamGeometry> zkrácené jazyce, pokud je nastavení vlastnosti typu <xref:System.Windows.Media.Geometry>, jako <xref:System.Windows.UIElement.Clip%2A> vlastnost <xref:System.Windows.UIElement> nebo <xref:System.Windows.Shapes.Path.Data%2A> vlastnost <xref:System.Windows.Shapes.Path> element. Následující příklad používá syntaxi atributů k vytvoření <xref:System.Windows.Media.StreamGeometry>.  
   
-     [!code-xaml[GeometrySample_snip_XAML#GraphicsMMStreamGeometryAttributeSyntaxInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample_snip_XAML/CS/MiniLanguageExample.xaml#graphicsmmstreamgeometryattributesyntaxinline)]  
+     [!code-xaml[GeometrySample_snip_XAML#GraphicsMMStreamGeometryAttributeSyntaxInline](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample_snip_XAML/CS/MiniLanguageExample.xaml#graphicsmmstreamgeometryattributesyntaxinline)]  
   
 -   Použijete <xref:System.Windows.Media.PathFigureCollection> zkrácené jazyk při nastavení <xref:System.Windows.Media.PathGeometry.Figures%2A> vlastnost <xref:System.Windows.Media.PathGeometry>. Následující příklad používá syntaxi atributů k vytvoření <xref:System.Windows.Media.PathFigureCollection> pro <xref:System.Windows.Media.PathGeometry>.  
   
-     [!code-xaml[GeometrySample_snip_XAML#GraphicsMMPathFigureCollectionAttributeSyntaxInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample_snip_XAML/CS/MiniLanguageExample.xaml#graphicsmmpathfigurecollectionattributesyntaxinline)]  
+     [!code-xaml[GeometrySample_snip_XAML#GraphicsMMPathFigureCollectionAttributeSyntaxInline](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample_snip_XAML/CS/MiniLanguageExample.xaml#graphicsmmpathfigurecollectionattributesyntaxinline)]  
   
  Jak je vidět z předchozích příkladů dva jazyků mini jsou velmi podobné. Vždy je možné použít <xref:System.Windows.Media.PathGeometry> v každé situaci, kde můžete použít <xref:System.Windows.Media.StreamGeometry>; Ano která byste měli použít? Použít <xref:System.Windows.Media.StreamGeometry> při není nutné změnit cesty po vytvoření; použijte <xref:System.Windows.Media.PathGeometry> Pokud potřebujete změnit cesty.  
   
- Další informace o rozdílech mezi <xref:System.Windows.Media.PathGeometry> a <xref:System.Windows.Media.StreamGeometry> objekty, najdete [přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md).  
+ Další informace o rozdílech mezi <xref:System.Windows.Media.PathGeometry> a <xref:System.Windows.Media.StreamGeometry> objekty, najdete [přehled geometrie](geometry-overview.md).  
   
 ### <a name="a-note-about-white-space"></a>Poznámka k prázdné znaky  
  Pro zkrácení se zobrazí jedna mezera v oddílech syntaxe, které následují, ale více prostorů jsou přijatelné také všude, kde se zobrazí jedna mezera.  
@@ -229,6 +229,6 @@ Velké `V` znamená, že `y` je absolutní hodnota; malé `v` znamená, že `y` 
 - <xref:System.Windows.Media.StreamGeometry>
 - <xref:System.Windows.Media.PathGeometry>
 - <xref:System.Windows.Media.PathFigureCollection>
-- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
-- [Přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/geometries-how-to-topics.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Přehled geometrie](geometry-overview.md)
+- [Témata s postupy](geometries-how-to-topics.md)

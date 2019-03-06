@@ -15,19 +15,19 @@ helpviewer_keywords:
 - button set [WPF], grouped
 - bubbling [WPF]
 ms.assetid: 1a2189ae-13b4-45b0-b12c-8de2e49c29d2
-ms.openlocfilehash: 637cb6cfb343352561708a7d94e76e84e2ca7ca9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b0db690bfd1a0cabf3060067ea23cf01acf3251d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54535812"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57379208"
 ---
 # <a name="routed-events-overview"></a>Přehled směrovaných událostí
 Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Téma definuje terminologie směrovaných událostí, popisuje, jak směrované události jsou směrovány stromové struktuře prvků, shrnuje, jak zpracování směrované události a seznámíte s vytvořením vlastní směrované události.
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Toto téma předpokládá, že máte základní znalosti o [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] a objektově orientované programování, jakož i koncept jak vztahy mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky můžete conceptualized jako strom. Pokud chcete postupovat podle příkladů v tomto tématu, měli byste také znát [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a vědět, jak psát velmi základní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací nebo stránek. Další informace najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md) a [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md).  
+ Toto téma předpokládá, že máte základní znalosti o [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] a objektově orientované programování, jakož i koncept jak vztahy mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky můžete conceptualized jako strom. Pokud chcete postupovat podle příkladů v tomto tématu, měli byste také znát [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a vědět, jak psát velmi základní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací nebo stránek. Další informace najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md) a [přehled XAML (WPF)](xaml-overview-wpf.md).  
   
 <a name="routing"></a>   
 ## <a name="what-is-a-routed-event"></a>Co je směrované události?  
@@ -41,11 +41,11 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
   
  Vezměte v úvahu následující jednoduchý prvek stromu:  
   
- [!code-xaml[EventOvwSupport#GroupButton](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml#groupbutton)]  
+ [!code-xaml[EventOvwSupport#GroupButton](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml#groupbutton)]  
   
  Tento strom prvku produkuje přibližně takto:  
   
- ![Ano, ne a stornovací tlačítka](../../../../docs/framework/wpf/advanced/media/routedevent-ovw-1.gif "RoutedEvent_ovw_1")  
+ ![Ano, ne a stornovací tlačítka](./media/routedevent-ovw-1.gif "RoutedEvent_ovw_1")  
   
  V tomto zjednodušené prvek stromu, příčiny <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí je jedním z <xref:System.Windows.Controls.Button> elementy a podle toho, co <xref:System.Windows.Controls.Button> došlo ke kliknutí na je první prvek, který se má zpracovat události. Ale pokud žádná obslužná rutina připojena k <xref:System.Windows.Controls.Button> funguje na události a události je předána nahoru na <xref:System.Windows.Controls.Button> nadřazené ve stromové struktuře element, který je <xref:System.Windows.Controls.StackPanel>. Potenciálně, bubliny událostí, které budou <xref:System.Windows.Controls.Border>a pak mimo ně na stránce kořen stromem prvků (není vidět).  
   
@@ -60,8 +60,8 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
   
  **Body připojení singulární obslužné rutiny:** V [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)], budete muset připojit více než jednou stejnou obslužnou rutinu pro zpracování událostí, které může být vyvolána z více prvků. Směrované události vám umožní připojit tuto obslužnou rutinu pouze jednou, jak je znázorněno v předchozím příkladu a použijte obslužnou rutinu logiku k určení, odkud událost pochází v případě potřeby. Například to může být obslužná rutina pro dříve zobrazených [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]:  
   
- [!code-csharp[EventOvwSupport#GroupButtonCodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml.cs#groupbuttoncodebehind)]
- [!code-vb[EventOvwSupport#GroupButtonCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/EventOvwSupport/visualbasic/default.xaml.vb#groupbuttoncodebehind)]  
+ [!code-csharp[EventOvwSupport#GroupButtonCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml.cs#groupbuttoncodebehind)]
+ [!code-vb[EventOvwSupport#GroupButtonCodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EventOvwSupport/visualbasic/default.xaml.vb#groupbuttoncodebehind)]  
   
  **Zpracování tříd:** Směrování událostí povolení statické obslužné rutiny, která je definována třída. Tato obslužná rutina třída má zpracovat před všechny připojené instance obslužné rutiny události.  
   
@@ -72,15 +72,15 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
   
  Následující příklad ukazuje deklaraci pro vlastní `Tap` směrované události, včetně registrace a působení <xref:System.Windows.RoutedEvent> identifikátor pole a `add` a `remove` implementace pro `Tap` [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] událostí.  
   
- [!code-csharp[RoutedEventCustom#AddRemoveHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventCustom/CSharp/SDKSampleLibrary/class1.cs#addremovehandler)]
- [!code-vb[RoutedEventCustom#AddRemoveHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventCustom/VB/SDKSampleLibrary/Class1.vb#addremovehandler)]  
+ [!code-csharp[RoutedEventCustom#AddRemoveHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventCustom/CSharp/SDKSampleLibrary/class1.cs#addremovehandler)]
+ [!code-vb[RoutedEventCustom#AddRemoveHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventCustom/VB/SDKSampleLibrary/Class1.vb#addremovehandler)]  
   
 ### <a name="routed-event-handlers-and-xaml"></a>Obslužné rutiny směrovaných událostí a XAML  
  Chcete-li přidat obslužnou rutinu události použití [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], deklaruje název události jako atribut na prvek, který je naslouchací proces událostí. Hodnota atributu je název metody implementované obslužná rutina, která musí existovat v dílčí třídě soubor kódu na pozadí.  
   
- [!code-xaml[EventOvwSupport#SimplestSyntax](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml#simplestsyntax)]  
+ [!code-xaml[EventOvwSupport#SimplestSyntax](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml#simplestsyntax)]  
   
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Syntaxe pro přidání standardní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obslužné rutiny událostí je stejný pro přidání obslužné rutiny směrovaných událostí, protože jsou ve skutečnosti přidáním obslužných rutin k [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obálky událostí, který obsahuje implementaci směrované události pod. Další informace o přidání obslužné rutiny událostí v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], naleznete v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md).  
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Syntaxe pro přidání standardní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obslužné rutiny událostí je stejný pro přidání obslužné rutiny směrovaných událostí, protože jsou ve skutečnosti přidáním obslužných rutin k [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obálky událostí, který obsahuje implementaci směrované události pod. Další informace o přidání obslužné rutiny událostí v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], naleznete v tématu [přehled XAML (WPF)](xaml-overview-wpf.md).  
   
 <a name="routing_strategies"></a>   
 ## <a name="routing-strategies"></a>Strategie směrování  
@@ -114,30 +114,30 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
 ## <a name="adding-and-implementing-an-event-handler-for-a-routed-event"></a>Přidání a implementace obslužné rutiny události pro směrovanou událost  
  Chcete-li přidat obslužnou rutinu události v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], stačí jednoduše přidat název události na prvek jako atribut a nastavit hodnotu atributu název obslužné rutiny události, která implementuje delegáta odpovídající jako v následujícím příkladu.  
   
- [!code-xaml[EventOvwSupport#SimplestSyntax](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml#simplestsyntax)]  
+ [!code-xaml[EventOvwSupport#SimplestSyntax](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml#simplestsyntax)]  
   
  `b1SetColor` je název implementovaného obslužná rutina, která obsahuje kód, který zpracovává <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí. `b1SetColor` musí mít stejný podpis jako <xref:System.Windows.RoutedEventHandler> delegáta, který je delegát obslužné rutiny události pro <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí. Všechny obslužné rutiny delegátů směrované události první parametr určuje prvek, na který se přidá obslužnou rutinu události a druhý parametr určuje data pro událost.  
   
-[!code-csharp[EventOvwSupport#SimpleHandlerA](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml.cs#simplehandlera)]
-[!code-vb[EventOvwSupport#SimpleHandlerA](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/EventOvwSupport/visualbasic/default.xaml.vb#simplehandlera)]  
+[!code-csharp[EventOvwSupport#SimpleHandlerA](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml.cs#simplehandlera)]
+[!code-vb[EventOvwSupport#SimpleHandlerA](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EventOvwSupport/visualbasic/default.xaml.vb#simplehandlera)]  
   
  <xref:System.Windows.RoutedEventHandler> je delegát obslužné rutiny základní směrované události. Směrované události, které jsou specializované pro určité ovládací prvky nebo scénáře delegáty pro obslužné rutiny směrovaných událostí také může stát více specializovaný, tak, aby se můžou přenášet data specializované události. Například v běžném scénáři vstupní, může zpracovat <xref:System.Windows.UIElement.DragEnter> směrované události. Vaše obslužná rutina by měly implementovat <xref:System.Windows.DragEventHandler> delegovat. S použitím nejspecifičtější delegáta, může zpracovat <xref:System.Windows.DragEventArgs> v obslužné rutiny a čtení <xref:System.Windows.DragEventArgs.Data%2A> vlastnost, která obsahuje datovou část schránky operace přetažení.  
   
- Úplný příklad toho, jak přidat obslužnou rutinu události k prvku pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], naleznete v tématu [zpracování události směrovat](../../../../docs/framework/wpf/advanced/how-to-handle-a-routed-event.md).  
+ Úplný příklad toho, jak přidat obslužnou rutinu události k prvku pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], naleznete v tématu [zpracování události směrovat](how-to-handle-a-routed-event.md).  
   
  Přidání rutiny pro směrovanou událost v aplikaci, která se vytvoří v kódu je jednoduché. Obslužné rutiny směrovaných událostí je vždy možné přidat prostřednictvím Pomocná metoda <xref:System.Windows.UIElement.AddHandler%2A> (což je stejnou metodu, která vyžaduje existující základní `add`.) Ale existující [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] směrované události mají obvykle zálohování implementace `add` a `remove` logiku, která umožní obslužné rutiny pro směrované události přidávané syntaxí event specifické pro jazyk, což je mnohem intuitivnější syntaxe než Pomocná metoda. Následuje příklad použití metody pomocné rutiny:  
   
- [!code-csharp[EventOvwSupport#AddHandlerCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml.cs#addhandlercode)]
- [!code-vb[EventOvwSupport#AddHandlerCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/EventOvwSupport/visualbasic/default.xaml.vb#addhandlercode)]  
+ [!code-csharp[EventOvwSupport#AddHandlerCode](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml.cs#addhandlercode)]
+ [!code-vb[EventOvwSupport#AddHandlerCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EventOvwSupport/visualbasic/default.xaml.vb#addhandlercode)]  
   
  Další příklad ukazuje C# syntaxe – operátor (Visual Basic má syntaxi operátor mírně odlišné z důvodu jeho zpracování přesměrování):  
   
- [!code-csharp[EventOvwSupport#AddHandlerPlusEquals](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml.cs#addhandlerplusequals)]
- [!code-vb[EventOvwSupport#AddHandlerPlusEquals](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/EventOvwSupport/visualbasic/default.xaml.vb#addhandlerplusequals)]  
+ [!code-csharp[EventOvwSupport#AddHandlerPlusEquals](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml.cs#addhandlerplusequals)]
+ [!code-vb[EventOvwSupport#AddHandlerPlusEquals](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EventOvwSupport/visualbasic/default.xaml.vb#addhandlerplusequals)]  
   
- Příklad toho, jak přidat obslužnou rutinu události v kódu, naleznete v tématu [přidat kód pomocí obslužné rutiny události](../../../../docs/framework/wpf/advanced/how-to-add-an-event-handler-using-code.md).  
+ Příklad toho, jak přidat obslužnou rutinu události v kódu, naleznete v tématu [přidat kód pomocí obslužné rutiny události](how-to-add-an-event-handler-using-code.md).  
   
- Pokud používáte Visual Basic, můžete také použít `Handles` – klíčové slovo pro přidání obslužné rutiny jako součást deklarace obslužných rutin. Další informace najdete v tématu [jazyka Visual Basic a WPF zpracování událostí](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md).  
+ Pokud používáte Visual Basic, můžete také použít `Handles` – klíčové slovo pro přidání obslužné rutiny jako součást deklarace obslužných rutin. Další informace najdete v tématu [jazyka Visual Basic a WPF zpracování událostí](visual-basic-and-wpf-event-handling.md).  
   
 <a name="concept_handled"></a>   
 ### <a name="the-concept-of-handled"></a>Zpracovává konceptu  
@@ -165,7 +165,7 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
   
  Tento návrh koncepční je posíleno chování směrování již bylo zmíněno dříve: je obtížnější (i když pořád v kódu nebo styly) připojit obslužné rutiny pro směrované události, které jsou vyvolány i v případě, že předchozí obslužnou rutinou na trase již nastaven <xref:System.Windows.RoutedEventArgs.Handled%2A>k `true`.  
   
- Další informace o <xref:System.Windows.RoutedEventArgs.Handled%2A>, zpracování třídy směrovaných událostí a doporučení o tom, kdy je vhodné k označení směrovaných událostí jako <xref:System.Windows.RoutedEventArgs.Handled%2A>, naleznete v tématu [označení směrované události jako Handled a zpracování tříd](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md).  
+ Další informace o <xref:System.Windows.RoutedEventArgs.Handled%2A>, zpracování třídy směrovaných událostí a doporučení o tom, kdy je vhodné k označení směrovaných událostí jako <xref:System.Windows.RoutedEventArgs.Handled%2A>, naleznete v tématu [označení směrované události jako Handled a zpracování tříd](marking-routed-events-as-handled-and-class-handling.md).  
   
  V aplikacích je celkem běžné právě zpracování šíření směrované události u objektu, která ji vyvolala a nesmí být obeznámeni s vlastností Směrování události vůbec. Je však stále vhodné k označení směrovaných událostí jako zpracované v případě, že data, aby se zabránilo neočekávané vedlejší účinky jsou jen pro případ, element, který je další nahoru stromem prvků má také obslužná rutina připojená pro tento stejný směrované události.  
   
@@ -173,7 +173,7 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
 ## <a name="class-handlers"></a>Třída obslužné rutiny  
  Pokud definujete třídu, která je odvozena z nějakým způsobem <xref:System.Windows.DependencyObject>, můžete také definujte a připojte obslužné rutiny třídy pro směrovanou událost, která je členem vaší třídy deklarované nebo zděděné události. Obslužné rutiny třídy jsou vyvolány před obslužné instance naslouchacího procesu, které jsou připojené k instanci této třídy, pokaždé, když se dosáhne směrované události instance elementu v jeho trasu.  
   
- Některé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky mají vlastní zpracování třídy pro určité směrovaných událostí. To může přidělit vnějšího vzhledu směrované události někdy není vyvolána, ale ve skutečnosti se třída zpracovává a směrované události mohou být zpracovávány obslužnými instance stále potenciálně, pokud použijete některé techniky. Navíc mnoho základních tříd a ovládací prvky vystavit virtuální metody, které můžete použít k přepsání zpracování chování třídy. Další informace o tom, jak obejít nežádoucí třídy zpracování a o definování vlastní zpracování ve třídě vlastní třídy naleznete v tématu [označení směrované události jako Handled a zpracování tříd](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md).  
+ Některé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky mají vlastní zpracování třídy pro určité směrovaných událostí. To může přidělit vnějšího vzhledu směrované události někdy není vyvolána, ale ve skutečnosti se třída zpracovává a směrované události mohou být zpracovávány obslužnými instance stále potenciálně, pokud použijete některé techniky. Navíc mnoho základních tříd a ovládací prvky vystavit virtuální metody, které můžete použít k přepsání zpracování chování třídy. Další informace o tom, jak obejít nežádoucí třídy zpracování a o definování vlastní zpracování ve třídě vlastní třídy naleznete v tématu [označení směrované události jako Handled a zpracování tříd](marking-routed-events-as-handled-and-class-handling.md).  
   
 <a name="attached_events"></a>   
 ## <a name="attached-events-in-wpf"></a>Připojené události ve WPF  
@@ -181,15 +181,15 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Vstupní systém hojně používá přidružené události. Ale téměř všechny tyto připojené události se předávají prostřednictvím základní elementy. Vstupní události potom zobrazí jako ekvivalentní nepřipojené směrovaných událostí, které jsou členy třídy base element. Například základní přidružená událost <xref:System.Windows.Input.Mouse.MouseDown?displayProperty=nameWithType> informace snadno půjde na každá <xref:System.Windows.UIElement> pomocí <xref:System.Windows.UIElement.MouseDown> zabývat <xref:System.Windows.UIElement> místo zabývajících se syntaxí přidružená událost buď v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nebo kódu.  
   
- Další informace o přidružené události v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [přehled připojených událostí](../../../../docs/framework/wpf/advanced/attached-events-overview.md).  
+ Další informace o přidružené události v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [přehled připojených událostí](attached-events-overview.md).  
   
 <a name="Qualifying_Event_Names_in_XAML_for_Anticipated_Routing"></a>   
 ## <a name="qualified-event-names-in-xaml"></a>Názvy kvalifikované událostí v XAML  
  Další využití syntaxe, která se podobá *typename*. *EventName* syntaxe událost pro připojené, ale není přesněji řečeno je využití přidružená událost po připojení obslužné rutiny pro směrované události, které jsou vyvolány podřízené elementy. Připojte obslužné rutiny na společným nadřazeným prvkem, abyste mohli využívat směrování událostí, i když společným nadřazeným prvkem nemusí mít odpovídající směrovaných událostí jako člen. V tomto příkladu zvažte znovu:  
   
- [!code-xaml[EventOvwSupport#GroupButton](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml#groupbutton)]  
+ [!code-xaml[EventOvwSupport#GroupButton](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml#groupbutton)]  
   
- Tady je nadřazený element naslouchací proces ve kterém se přidá obslužnou rutinu <xref:System.Windows.Controls.StackPanel>. Ale to je přidání obslužné rutiny pro směrovanou událost, která byla deklarována a bude aktivováno <xref:System.Windows.Controls.Button> třídy (<xref:System.Windows.Controls.Primitives.ButtonBase> ve skutečnosti, ale k dispozici <xref:System.Windows.Controls.Button> prostřednictvím dědičnosti). <xref:System.Windows.Controls.Button> "vlastní" události, ale systém směrované události povolení obslužné rutiny pro směrované události, které chcete připojit k libovolnému <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement> instance naslouchací proces, který jinak přiložit naslouchacích procesů pro [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] událostí. Výchozí obor názvů xmlns pro tyto názvy atributů kvalifikovaný událost je obvykle výchozí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] xmlns oboru názvů, ale můžete také určit předponou obory názvů pro vlastní směrované události. Další informace o xmlns najdete v tématu [obory názvů XAML a mapování Namespace pro WPF XAML](../../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
+ Tady je nadřazený element naslouchací proces ve kterém se přidá obslužnou rutinu <xref:System.Windows.Controls.StackPanel>. Ale to je přidání obslužné rutiny pro směrovanou událost, která byla deklarována a bude aktivováno <xref:System.Windows.Controls.Button> třídy (<xref:System.Windows.Controls.Primitives.ButtonBase> ve skutečnosti, ale k dispozici <xref:System.Windows.Controls.Button> prostřednictvím dědičnosti). <xref:System.Windows.Controls.Button> "vlastní" události, ale systém směrované události povolení obslužné rutiny pro směrované události, které chcete připojit k libovolnému <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement> instance naslouchací proces, který jinak přiložit naslouchacích procesů pro [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] událostí. Výchozí obor názvů xmlns pro tyto názvy atributů kvalifikovaný událost je obvykle výchozí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] xmlns oboru názvů, ale můžete také určit předponou obory názvů pro vlastní směrované události. Další informace o xmlns najdete v tématu [obory názvů XAML a mapování Namespace pro WPF XAML](xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   
 <a name="how_event_processing_works"></a>   
 ## <a name="wpf-input-events"></a>Události vstupu WPF  
@@ -199,7 +199,7 @@ Toto téma popisuje koncept směrovaných událostí v [!INCLUDE[TLA#tla_winclie
   
  Jako ukázku jak vstupní funguje pro zpracování událostí zvažte následující příklad vstupní události. Na následujícím obrázku stromu `leaf element #2` je zdrojem i `PreviewMouseDown` a pak `MouseDown` událostí.  
   
- ![Směrování událostí – diagram](../../../../docs/framework/wpf/advanced/media/wcsdkcoreinputevents.png "wcsdkCoreInputEvents")  
+ ![Směrování událostí – diagram](./media/wcsdkcoreinputevents.png "wcsdkCoreInputEvents")  
 Vstupní události šíření a tunelové propojení  
   
  Pořadí zpracování události je následující:  
@@ -222,35 +222,35 @@ Vstupní události šíření a tunelové propojení
   
  Obvykle Jakmile je označen vstupní události <xref:System.Windows.RoutedEventArgs.Handled%2A>, dále nejsou vyvolány obslužné rutiny. Obvykle byste měli označit vstupní události jako zpracované ihned poté, co je vyvolána obslužná rutina, které řeší vaše konkrétní aplikaci logické zpracování význam vstupní události.  
   
- Výjimkou z tohoto obecné prohlášení o <xref:System.Windows.RoutedEventArgs.Handled%2A> stav je danou vstupní obslužné rutiny událostí, které jsou registrované na záměrně Ignorovat <xref:System.Windows.RoutedEventArgs.Handled%2A> stavu data událostí by stále volat buď trase. Další informace najdete v tématu [události náhledu](../../../../docs/framework/wpf/advanced/preview-events.md) nebo [označení směrované události jako Handled a zpracování tříd](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md).  
+ Výjimkou z tohoto obecné prohlášení o <xref:System.Windows.RoutedEventArgs.Handled%2A> stav je danou vstupní obslužné rutiny událostí, které jsou registrované na záměrně Ignorovat <xref:System.Windows.RoutedEventArgs.Handled%2A> stavu data událostí by stále volat buď trase. Další informace najdete v tématu [události náhledu](preview-events.md) nebo [označení směrované události jako Handled a zpracování tříd](marking-routed-events-as-handled-and-class-handling.md).  
   
  Datový model sdílené událostí mezi událostmi tunelového propojení a šíření a sekvenční vyvolání první tunelového propojení potom šíření událostí, není konceptu, které obecně platí pro všechny směrovaných událostí. Konkrétně je chování implementované jak [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vstupní zařízení zvolte vyvolání a připojit páry vstupní události. Implementace vlastní události vstupu je pokročilý scénář, ale můžete také postupovat podle tohoto modelu pro vstupní události.  
   
- Určité třídy zvolte třídy – zpracování některých vstupní události, obvykle se záměrem, nově definují obor konkrétní vstupní události řízené uživatele znamená v rámci ovládacího prvku a vyvolání nové události. Další informace najdete v tématu [označení směrované události jako Handled a zpracování tříd](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md).  
+ Určité třídy zvolte třídy – zpracování některých vstupní události, obvykle se záměrem, nově definují obor konkrétní vstupní události řízené uživatele znamená v rámci ovládacího prvku a vyvolání nové události. Další informace najdete v tématu [označení směrované události jako Handled a zpracování tříd](marking-routed-events-as-handled-and-class-handling.md).  
   
- Další informace o vstupu a vstupu a události interakci v typických aplikačních scénářů, najdete v části [vstupní přehled](../../../../docs/framework/wpf/advanced/input-overview.md).  
+ Další informace o vstupu a vstupu a události interakci v typických aplikačních scénářů, najdete v části [vstupní přehled](input-overview.md).  
   
 <a name="events_styles"></a>   
 ## <a name="eventsetters-and-eventtriggers"></a>EventSetters a EventTriggers  
  Styly, může obsahovat některé předem deklarovat [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] zpracování syntaxe v kódu s použitím událostí <xref:System.Windows.EventSetter>. Když tento styl aplikován, přidá se do upravený instance odkazované obslužné rutiny. Je možné deklarovat <xref:System.Windows.EventSetter> pouze pro směrovanou událost. Následuje příklad. Všimněte si, že `b1SetColor` zde odkazovaná metoda je v souboru kódu na pozadí.  
   
- [!code-xaml[EventOvwSupport#XAML2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/page2.xaml#xaml2)]  
+ [!code-xaml[EventOvwSupport#XAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/page2.xaml#xaml2)]  
   
  Využívat získané zde je, že styl by mohla obsahovat spoustu dalších informací, které může použít jakékoli tlačítko ve vaší aplikaci, a <xref:System.Windows.EventSetter> být součástí tohoto stylu podporuje opakované využívání kódu i na úrovni kódu. Navíc <xref:System.Windows.EventSetter> abstrahuje názvy metod pro obslužné rutiny ještě o krok směrem od obecné kód aplikace a stránky.  
   
- Jiné speciální syntaxi, která kombinuje směrovaných událostí a animace funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je <xref:System.Windows.EventTrigger>. Stejně jako u <xref:System.Windows.EventSetter>, pouze směrovaných událostí mohou být použity pro <xref:System.Windows.EventTrigger>. Obvykle <xref:System.Windows.EventTrigger> je deklarován jako součást styl, ale <xref:System.Windows.EventTrigger> lze také deklarovat na úrovni stránky prvky jako součást <xref:System.Windows.FrameworkElement.Triggers%2A> kolekce, nebo v <xref:System.Windows.Controls.ControlTemplate>. <xref:System.Windows.EventTrigger> Umožňují zadat <xref:System.Windows.Media.Animation.Storyboard> , že se spustí pokaždé, když směrované události dosáhne elementu v jeho trasu, která deklaruje <xref:System.Windows.EventTrigger> pro tuto událost. Výhodou <xref:System.Windows.EventTrigger> přes právě zpracování událostí a způsobit tak, aby se začala existujícího scénáře je, že <xref:System.Windows.EventTrigger> poskytuje lepší kontrolu nad scénáři a její chování za běhu. Další informace najdete v tématu [použitím aktivačních procedur událostí pro řízení scénáře po jeho spuštění](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md).  
+ Jiné speciální syntaxi, která kombinuje směrovaných událostí a animace funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je <xref:System.Windows.EventTrigger>. Stejně jako u <xref:System.Windows.EventSetter>, pouze směrovaných událostí mohou být použity pro <xref:System.Windows.EventTrigger>. Obvykle <xref:System.Windows.EventTrigger> je deklarován jako součást styl, ale <xref:System.Windows.EventTrigger> lze také deklarovat na úrovni stránky prvky jako součást <xref:System.Windows.FrameworkElement.Triggers%2A> kolekce, nebo v <xref:System.Windows.Controls.ControlTemplate>. <xref:System.Windows.EventTrigger> Umožňují zadat <xref:System.Windows.Media.Animation.Storyboard> , že se spustí pokaždé, když směrované události dosáhne elementu v jeho trasu, která deklaruje <xref:System.Windows.EventTrigger> pro tuto událost. Výhodou <xref:System.Windows.EventTrigger> přes právě zpracování událostí a způsobit tak, aby se začala existujícího scénáře je, že <xref:System.Windows.EventTrigger> poskytuje lepší kontrolu nad scénáři a její chování za běhu. Další informace najdete v tématu [použitím aktivačních procedur událostí pro řízení scénáře po jeho spuštění](../graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md).  
   
 <a name="more_about"></a>   
 ## <a name="more-about-routed-events"></a>Další informace o směrované události  
- Toto téma popisuje hlavně směrovaných událostí z hlediska popisující o základních konceptech a doprovodné materiály o tom, a reagovat na směrovaných událostí, které jsou už k dispozici v různých základních elementů a ovládacích prvků. Můžete však vytvořit vlastní směrované události na vaše vlastní třídy a všechny nezbytné podporu, jako je například datových tříd událostí specializované a delegáti. Vlastník směrované události může být libovolná třída, ale musí být směrované události vyvolané službou a zpracovány <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement> odvozené třídy, aby byla užitečná. Další informace o vlastních událostech najdete v tématu [vytvoření vlastní události směrovat](../../../../docs/framework/wpf/advanced/how-to-create-a-custom-routed-event.md).  
+ Toto téma popisuje hlavně směrovaných událostí z hlediska popisující o základních konceptech a doprovodné materiály o tom, a reagovat na směrovaných událostí, které jsou už k dispozici v různých základních elementů a ovládacích prvků. Můžete však vytvořit vlastní směrované události na vaše vlastní třídy a všechny nezbytné podporu, jako je například datových tříd událostí specializované a delegáti. Vlastník směrované události může být libovolná třída, ale musí být směrované události vyvolané službou a zpracovány <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement> odvozené třídy, aby byla užitečná. Další informace o vlastních událostech najdete v tématu [vytvoření vlastní události směrovat](how-to-create-a-custom-routed-event.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.EventManager>
 - <xref:System.Windows.RoutedEvent>
 - <xref:System.Windows.RoutedEventArgs>
-- [Označení směrovaných událostí jako zpracovaných a zpracování tříd](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)
-- [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)
-- [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)
-- [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)
-- [Stromy v subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md)
-- [Slabé vzory událostí](../../../../docs/framework/wpf/advanced/weak-event-patterns.md)
+- [Označení směrovaných událostí jako zpracovaných a zpracování tříd](marking-routed-events-as-handled-and-class-handling.md)
+- [Přehled vstupu](input-overview.md)
+- [Přehled příkazů](commanding-overview.md)
+- [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
+- [Stromy v subsystému WPF](trees-in-wpf.md)
+- [Slabé vzory událostí](weak-event-patterns.md)

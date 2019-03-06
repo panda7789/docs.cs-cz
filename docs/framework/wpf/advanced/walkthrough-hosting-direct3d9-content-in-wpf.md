@@ -1,18 +1,18 @@
 ---
-title: 'Průvodce: Hostování obsahu Direct3D9 v subsystému WPF'
+title: 'Návod: Hostování obsahu Direct3D9 v subsystému WPF'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Direct3D9 [WPF interoperability], hosting Direct3D9 content
 - WPF [WPF], hosting Direct3D9 content
 ms.assetid: 60983736-0ab5-42cc-8b16-e9fbde261a43
-ms.openlocfilehash: 8a298bdd9a78279f177b5891bf69d0197ec7c040
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: e588118e995694ea899b73d238e00f63e92feea4
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746704"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352045"
 ---
-# <a name="walkthrough-hosting-direct3d9-content-in-wpf"></a>Průvodce: Hostování obsahu Direct3D9 v subsystému WPF
+# <a name="walkthrough-hosting-direct3d9-content-in-wpf"></a>Návod: Hostování obsahu Direct3D9 v subsystému WPF
 Tento návod ukazuje, jak k hostování obsahu Direct3D9 v aplikaci Windows Presentation Foundation (WPF).  
   
  V tomto podrobném návodu můžete provádět následující úlohy:  
@@ -32,7 +32,7 @@ Tento návod ukazuje, jak k hostování obsahu Direct3D9 v aplikaci Windows Pres
   
 -   Rozhraní DirectX SDK 9 nebo novější.  
   
--   Knihovna DLL, která obsahuje obsahu Direct3D9 ve formátu WPF kompatibilní. Další informace najdete v tématu [WPF a systému Direct3D9 vzájemná spolupráce grafického subsystému](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md) a [názorný postup: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md).  
+-   Knihovna DLL, která obsahuje obsahu Direct3D9 ve formátu WPF kompatibilní. Další informace najdete v tématu [WPF a systému Direct3D9 vzájemná spolupráce grafického subsystému](wpf-and-direct3d9-interoperation.md) a [názorný postup: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md).  
   
 ## <a name="creating-the-wpf-project"></a>Vytvoření projektu WPF  
  Prvním krokem je vytvoření projektu pro aplikaci WPF.  
@@ -52,7 +52,7 @@ Tento návod ukazuje, jak k hostování obsahu Direct3D9 v aplikaci Windows Pres
   
 2.  Automaticky generovaného kódu nahraďte následujícím kódem.  
   
-     [!code-csharp[System.Windows.Interop.D3DImage#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/CS/window1.xaml.cs#1)]  
+     [!code-csharp[System.Windows.Interop.D3DImage#1](~/samples/snippets/csharp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/CS/window1.xaml.cs#1)]  
   
 ## <a name="hosting-the-direct3d9-content"></a>Hostování obsahu Direct3D9  
  Nakonec použijte <xref:System.Windows.Interop.D3DImage> třídy k hostování obsahu Direct3D9.  
@@ -61,7 +61,7 @@ Tento návod ukazuje, jak k hostování obsahu Direct3D9 v aplikaci Windows Pres
   
 1.  V souboru MainWindow.xaml nahraďte automaticky generované XAML následující XAML.  
   
-     [!code-xaml[System.Windows.Interop.D3DImage#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/CS/window1.xaml#10)]  
+     [!code-xaml[System.Windows.Interop.D3DImage#10](~/samples/snippets/csharp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/CS/window1.xaml#10)]  
   
 2.  Sestavte projekt.  
   
@@ -73,4 +73,4 @@ Tento návod ukazuje, jak k hostování obsahu Direct3D9 v aplikaci Windows Pres
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Interop.D3DImage>
-- [Předpoklady výkonu pro Direct3D9 a interoperabilitu WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)
+- [Předpoklady výkonu pro Direct3D9 a interoperabilitu WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md)

@@ -2,12 +2,12 @@
 title: 'Postupy: Vytváření podepsaných přátelských sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: bab62063-61e6-453f-905f-77673df9534e
-ms.openlocfilehash: 54307313eb7955a40e290218aacf27be320e745b
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 13b99cd1118071e7c403828260003c80b9417792
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746659"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57354489"
 ---
 # <a name="how-to-create-signed-friend-assemblies-c"></a>Postupy: Vytváření podepsaných přátelských sestavení (C#)
 Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která mít silné názvy. Obě sestavení musí být silný název. Přestože obě sestavení v tomto příkladu pomocí stejných klíčů, můžete použít různé klíče pro dvě sestavení.  
@@ -91,8 +91,8 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
-- [Sestavení v rozhraní .NET](../../../../standard/assembly/index.md)
-- [Přátelská sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)
+- [Sestavení v .NET](../../../../standard/assembly/index.md)
+- [Přátelská sestavení](../../../../standard/assembly/friend-assemblies.md)
 - [Postupy: Vytváření nepodepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)
 - [/keyfile](../../../../csharp/language-reference/compiler-options/keyfile-compiler-option.md)
 - [Sn.exe (nástroj pro silný název)](../../../../framework/tools/sn-exe-strong-name-tool.md)

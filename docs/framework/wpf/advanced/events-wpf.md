@@ -8,26 +8,26 @@ helpviewer_keywords:
 - events [WPF], windows
 - WPF [WPF], events
 ms.assetid: d3b93c6f-aa6b-486d-a010-d097ea8a516b
-ms.openlocfilehash: b5a3b71758fea9c98c04377b910ba07b49617696
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e6aa6fea3c19d452013e4e77d7ef4773a2f45343
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33542584"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57361210"
 ---
 # <a name="events-wpf"></a>Události (WPF)
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] představuje směrované události, které můžete vyvolat obslužné rutiny, které existují v různých naslouchací procesy ve stromové struktuře element aplikace.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zavádí směrovaných událostí, které můžete vyvolat obslužné rutiny, které existují v různých naslouchacích procesů ve stromu elementů aplikace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
- [Přehled přidružených událostí](../../../../docs/framework/wpf/advanced/attached-events-overview.md)  
- [Události doby života objektu](../../../../docs/framework/wpf/advanced/object-lifetime-events.md)  
- [Označení směrovaných událostí jako zpracovaných a zpracování tříd](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
- [Události náhledu](../../../../docs/framework/wpf/advanced/preview-events.md)  
- [Události změny vlastnosti](../../../../docs/framework/wpf/advanced/property-change-events.md)  
- [Zpracování událostí v jazyku Visual Basic a WPF](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md)  
- [Slabé vzory událostí](../../../../docs/framework/wpf/advanced/weak-event-patterns.md)  
- [Témata s postupy](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)  
+ [Přehled směrovaných událostí](routed-events-overview.md)  
+ [Přehled přidružených událostí](attached-events-overview.md)  
+ [Události doby života objektu](object-lifetime-events.md)  
+ [Označení směrovaných událostí jako zpracovaných a zpracování tříd](marking-routed-events-as-handled-and-class-handling.md)  
+ [Události náhledu](preview-events.md)  
+ [Události změny vlastnosti](property-change-events.md)  
+ [Zpracování událostí v jazyku Visual Basic a WPF](visual-basic-and-wpf-event-handling.md)  
+ [Slabé vzory událostí](weak-event-patterns.md)  
+ [Témata s postupy](events-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.RoutedEvent>  
@@ -37,13 +37,13 @@ ms.locfileid: "33542584"
  <xref:System.Windows.RoutingStrategy>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Architektura WPF](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
-  [XAML ve WPF](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
-  [Základní elementy](../../../../docs/framework/wpf/advanced/base-elements.md)  
-  [Strom elementu a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
-  [Vlastnosti](../../../../docs/framework/wpf/advanced/properties-wpf.md)  
-  [Vstup](../../../../docs/framework/wpf/advanced/input-wpf.md)  
-  [Prostředky](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
-  [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
-  [Model obsahu WPF](../../../../docs/framework/wpf/controls/wpf-content-model.md)  
-  [Model vláken](../../../../docs/framework/wpf/advanced/threading-model.md)
+ [Architektura WPF](wpf-architecture.md)  
+  [XAML ve WPF](xaml-in-wpf.md)  
+  [Základní elementy](base-elements.md)  
+  [Strom elementu a serializace](element-tree-and-serialization.md)  
+  [Vlastnosti](properties-wpf.md)  
+  [Vstup](input-wpf.md)  
+  [Prostředky](resources-wpf.md)  
+  [Styly a šablony](../controls/styling-and-templating.md)  
+  [Model obsahu WPF](../controls/wpf-content-model.md)  
+  [Model vláken](threading-model.md)

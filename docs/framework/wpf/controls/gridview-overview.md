@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ListView controls [WPF], GridView view mode
 - controls [WPF], ListView
 ms.assetid: b2d02267-32b3-40ce-8e9f-06972d8749d9
-ms.openlocfilehash: 161c42254144fca0e76bfb5e4aa10f1afb5b11d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 37332e529992f963f576a273dac917d671a3c198
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54578530"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57360196"
 ---
 # <a name="gridview-overview"></a>GridView – přehled
 <xref:System.Windows.Controls.GridView> režim zobrazení je jeden z režimů zobrazení pro <xref:System.Windows.Controls.ListView> ovládacího prvku. <xref:System.Windows.Controls.GridView> Třída a její podpůrnou třídy povolit vy a vaši uživatelé zobrazit položky kolekce tabulku, která se obvykle používá jako záhlaví sloupců interaktivní tlačítka. Toto téma představuje <xref:System.Windows.Controls.GridView> třídy a popisuje jejich použití.  
@@ -29,19 +29,19 @@ ms.locfileid: "54578530"
   
  **GridView zobrazení obsahu ListView**  
   
- ![Styl ListView](../../../../docs/framework/wpf/controls/media/styledlistview.PNG "StyledListView")  
+ ![Styl ListView](./media/styledlistview.PNG "StyledListView")  
   
  <xref:System.Windows.Controls.GridView> sloupce jsou reprezentovány <xref:System.Windows.Controls.GridViewColumn> objekty, které lze automaticky velikosti jejich obsahu. Volitelně můžete explicitně nastavit <xref:System.Windows.Controls.GridViewColumn> určité šířce. Změna velikosti sloupců přetažením úchytu mezi záhlaví sloupců. Můžete taky dynamicky přidat, odebrat, nahraďte a změnit uspořádání sloupců, protože tato funkce je integrovaná do <xref:System.Windows.Controls.GridView>. Ale <xref:System.Windows.Controls.GridView> nelze přímo aktualizovat data, která se zobrazí.  
   
  Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.GridView> , která zobrazuje data zaměstnanců. V tomto příkladu <xref:System.Windows.Controls.ListView> definuje `EmployeeInfoDataSource` jako <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>. Definice vlastnosti <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> svázat <xref:System.Windows.Controls.GridViewColumn> obsahu `EmployeeInfoDataSource` kategorie dat.  
   
- [!code-xaml[ListViewCode#ListViewEmployee](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#listviewemployee)]  
+ [!code-xaml[ListViewCode#ListViewEmployee](~/samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#listviewemployee)]  
   
  Následující obrázek ukazuje tabulku, že v předchozím příkladu vytvoří.  
   
  **GridView zobrazující data z vlastnost ItemsSource.**  
   
- ![ListView s výstupem GridView](../../../../docs/framework/wpf/controls/media/listviewgridview.JPG "ListViewGridView")  
+ ![ListView s výstupem GridView](./media/listviewgridview.JPG "ListViewGridView")  
   
 <a name="GridViewLayoutandStyle"></a>   
 ## <a name="gridview-layout-and-style"></a>Rozložení ovládacího prvku GridView a stylu  
@@ -55,7 +55,7 @@ ms.locfileid: "54578530"
   
  K určení zarovnání obsahu ve sloupci <xref:System.Windows.Controls.GridView>, definovat <xref:System.Windows.Controls.GridViewColumn.CellTemplate%2A>. Nepoužívejte <xref:System.Windows.Controls.Control.HorizontalContentAlignment%2A> a <xref:System.Windows.Controls.Control.VerticalContentAlignment%2A> vlastnosti <xref:System.Windows.Controls.ListView> obsah, který se zobrazí při použití <xref:System.Windows.Controls.GridView>.  
   
- Pokud chcete nastavit vlastnosti šablony a styl záhlaví sloupců, použijte <xref:System.Windows.Controls.GridView>, <xref:System.Windows.Controls.GridViewColumn>, a <xref:System.Windows.Controls.GridViewColumnHeader> třídy. Další informace najdete v tématu [GridView styly záhlaví sloupců a Přehled šablon](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md).  
+ Pokud chcete nastavit vlastnosti šablony a styl záhlaví sloupců, použijte <xref:System.Windows.Controls.GridView>, <xref:System.Windows.Controls.GridViewColumn>, a <xref:System.Windows.Controls.GridViewColumnHeader> třídy. Další informace najdete v tématu [GridView styly záhlaví sloupců a Přehled šablon](gridview-column-header-styles-and-templates-overview.md).  
   
 <a name="AddingVisualElementstoaGridViewView"></a>   
 ### <a name="adding-visual-elements-to-a-gridview"></a>Přidání vizuální prvky GridView  
@@ -65,7 +65,7 @@ ms.locfileid: "54578530"
   
 <a name="StylingRowsinaGridViewView"></a>   
 ### <a name="styling-rows-in-a-gridview"></a>Používání stylů pro řádky GridView  
- Použití <xref:System.Windows.Controls.GridViewRowPresenter> a <xref:System.Windows.Controls.GridViewHeaderRowPresenter> třídy pro formátování a zobrazení řádky <xref:System.Windows.Controls.GridView>. Příklad toho, jak pro styl řádky v <xref:System.Windows.Controls.GridView> zobrazení režimu naleznete v tématu [stylu řádku v ListView, že implementuje GridView](../../../../docs/framework/wpf/controls/how-to-style-a-row-in-a-listview-that-implements-a-gridview.md).  
+ Použití <xref:System.Windows.Controls.GridViewRowPresenter> a <xref:System.Windows.Controls.GridViewHeaderRowPresenter> třídy pro formátování a zobrazení řádky <xref:System.Windows.Controls.GridView>. Příklad toho, jak pro styl řádky v <xref:System.Windows.Controls.GridView> zobrazení režimu naleznete v tématu [stylu řádku v ListView, že implementuje GridView](how-to-style-a-row-in-a-listview-that-implements-a-gridview.md).  
   
 <a name="AlignmentIssuesWhenUsingItemContainerStyle"></a>   
 ### <a name="alignment-issues-when-you-use-itemcontainerstyle"></a>Zarovnání problémy při použití ItemContainerStyle  
@@ -83,7 +83,7 @@ ms.locfileid: "54578530"
   
      Uživatelé mohou změnit pořadí sloupců v <xref:System.Windows.Controls.GridView> klávesy levé tlačítko myši, zatímco je nad záhlaví sloupce a následným přetažením sloupce do nového umístění. Když uživatel přetáhne záhlaví sloupce, zobrazí se plovoucí verze hlavičky a také pevné černá čára, která ukazuje, kam chcete vložit sloupec.  
   
-     Pokud chcete změnit výchozí styl plovoucí verze záhlaví, zadejte <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.GridViewColumnHeader> typ, který je při aktivaci <xref:System.Windows.Controls.GridViewColumnHeader.Role%2A> je nastavena na <xref:System.Windows.Controls.GridViewColumnHeaderRole.Floating>. Další informace najdete v tématu [vytvoření stylu pro záhlaví sloupce GridView kvůli usnadnění použití vypsány](../../../../docs/framework/wpf/controls/how-to-create-a-style-for-a-dragged-gridview-column-header.md).  
+     Pokud chcete změnit výchozí styl plovoucí verze záhlaví, zadejte <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.GridViewColumnHeader> typ, který je při aktivaci <xref:System.Windows.Controls.GridViewColumnHeader.Role%2A> je nastavena na <xref:System.Windows.Controls.GridViewColumnHeaderRole.Floating>. Další informace najdete v tématu [vytvoření stylu pro záhlaví sloupce GridView kvůli usnadnění použití vypsány](how-to-create-a-style-for-a-dragged-gridview-column-header.md).  
   
 -   **Změnit velikost sloupce na jeho obsah.**  
   
@@ -96,7 +96,7 @@ ms.locfileid: "54578530"
   
      Uživatelé mohou vybrat jednu nebo více položek v <xref:System.Windows.Controls.GridView>.  
   
-     Pokud chcete změnit <xref:System.Windows.Style> vybrané položky, naleznete v tématu [stylu vybraných položek v ListView použitím aktivačních procedur](../../../../docs/framework/wpf/controls/how-to-use-triggers-to-style-selected-items-in-a-listview.md).  
+     Pokud chcete změnit <xref:System.Windows.Style> vybrané položky, naleznete v tématu [stylu vybraných položek v ListView použitím aktivačních procedur](how-to-use-triggers-to-style-selected-items-in-a-listview.md).  
   
 -   **Přejděte do zobrazení obsahu, který není zpočátku viditelné na obrazovce.**  
   
@@ -110,7 +110,7 @@ ms.locfileid: "54578530"
   
 <a name="Obtaining_Other_Custom_Views"></a>   
 ## <a name="obtaining-other-custom-views"></a>Získání dalších vlastních zobrazení  
- <xref:System.Windows.Controls.GridView> Třídu, která je odvozena od <xref:System.Windows.Controls.ViewBase> abstraktní třídu, je právě jeden z režimů zobrazení možných pro <xref:System.Windows.Controls.ListView> třídy. Můžete vytvořit další vlastní zobrazení pro <xref:System.Windows.Controls.ListView> odvozením z <xref:System.Windows.Controls.ViewBase> třídy. Příklad vlastního režimu zobrazení najdete v tématu [vytvoření vlastního režimu zobrazení pro ListView](../../../../docs/framework/wpf/controls/how-to-create-a-custom-view-mode-for-a-listview.md).  
+ <xref:System.Windows.Controls.GridView> Třídu, která je odvozena od <xref:System.Windows.Controls.ViewBase> abstraktní třídu, je právě jeden z režimů zobrazení možných pro <xref:System.Windows.Controls.ListView> třídy. Můžete vytvořit další vlastní zobrazení pro <xref:System.Windows.Controls.ListView> odvozením z <xref:System.Windows.Controls.ViewBase> třídy. Příklad vlastního režimu zobrazení najdete v tématu [vytvoření vlastního režimu zobrazení pro ListView](how-to-create-a-custom-view-mode-for-a-listview.md).  
   
 <a name="GridViewSupportingClasses"></a>   
 ## <a name="gridview-supporting-classes"></a>Podpora třídy GridView  
@@ -136,6 +136,6 @@ ms.locfileid: "54578530"
 - <xref:System.Windows.Controls.GridViewRowPresenter>
 - <xref:System.Windows.Controls.GridViewHeaderRowPresenter>
 - <xref:System.Windows.Controls.ViewBase>
-- [ListView – přehled](../../../../docs/framework/wpf/controls/listview-overview.md)
-- [Řazení sloupce GridView při kliknutí na záhlaví](../../../../docs/framework/wpf/controls/how-to-sort-a-gridview-column-when-a-header-is-clicked.md)
-- [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+- [ListView – přehled](listview-overview.md)
+- [Řazení sloupce GridView při kliknutí na záhlaví](how-to-sort-a-gridview-column-when-a-header-is-clicked.md)
+- [Témata s postupy](listview-how-to-topics.md)

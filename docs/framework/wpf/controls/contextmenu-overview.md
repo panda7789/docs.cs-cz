@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], ContextMenu
 - ContextMenu controls [WPF], about ContextMenu controls
 ms.assetid: 16909c42-799a-4561-91e0-7d69dcfeea91
-ms.openlocfilehash: f1ef0f166908cce3f6c6e39819561a7ec3756a7b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4d3677021e38c10d38c0e5ed5e5de1824397db50
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595744"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57357362"
 ---
 # <a name="contextmenu-overview"></a>ContextMenu – přehled
 <xref:System.Windows.Controls.ContextMenu> Třída reprezentuje element, který zpřístupňuje funkce s použitím kontextu konkrétní <xref:System.Windows.Controls.Menu>. Obvykle uživatel poskytuje <xref:System.Windows.Controls.ContextMenu> v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] kliknutím pravým tlačítkem myši na tlačítko myši. Toto téma představuje <xref:System.Windows.Controls.ContextMenu> elementu a poskytuje příklady toho, jak ho použijte ve [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a kódu.  
@@ -28,10 +28,10 @@ ms.locfileid: "54595744"
 ## <a name="creating-contextmenus"></a>Vytváření ContextMenu  
  Následující příklady ukazují, jak vytvořit <xref:System.Windows.Controls.ContextMenu> s dílčích nabídek. <xref:System.Windows.Controls.ContextMenu> Ovládací prvky jsou připojeny k ovládací prvky tlačítek.  
   
- [!code-xaml[ContextMenu#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#1)]  
+ [!code-xaml[ContextMenu#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#1)]  
   
- [!code-csharp[ContextMenu#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml.cs#2)]
- [!code-vb[ContextMenu#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ContextMenu/VisualBasic/Pane1.xaml.vb#2)]  
+ [!code-csharp[ContextMenu#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml.cs#2)]
+ [!code-vb[ContextMenu#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContextMenu/VisualBasic/Pane1.xaml.vb#2)]  
   
 <a name="applying_styles_to_contextmenu"></a>   
 ## <a name="applying-styles-to-a-contextmenu"></a>Aplikování stylů ContextMenu  
@@ -67,6 +67,6 @@ ms.locfileid: "54595744"
 - <xref:System.Windows.Style>
 - <xref:System.Windows.Controls.Menu>
 - <xref:System.Windows.Controls.MenuItem>
-- [ContextMenu](../../../../docs/framework/wpf/controls/contextmenu.md)
-- [ContextMenu – styly a šablony](../../../../docs/framework/wpf/controls/contextmenu-styles-and-templates.md)
+- [ContextMenu](contextmenu.md)
+- [ContextMenu – styly a šablony](contextmenu-styles-and-templates.md)
 - [Ukázková galerie ovládacích prvků WPF](https://go.microsoft.com/fwlink/?LinkID=160053)

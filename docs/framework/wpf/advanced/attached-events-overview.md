@@ -12,12 +12,12 @@ helpviewer_keywords:
 - backing attached events with routed events [WPF]
 - attached events [WPF], definition
 ms.assetid: 2c40eae3-80e4-4a45-ae09-df6c9ab4d91e
-ms.openlocfilehash: b82af44b1262f4eb2839efef85a4b35eba534524
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8586f09d5c12f732c63bccf4682edf94144fd47f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54682953"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371668"
 ---
 # <a name="attached-events-overview"></a>Přehled připojených událostí
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] Definuje komponentu jazyka a typu události, volá se, *přidružená událost*. Koncept přidružená událost umožňuje přidání obslužné rutiny při určité události libovolný prvek, nikoli element, který ve skutečnosti definuje nebo dědí události. V takovém případě objekt potenciálně vyvolání události ani cílové zpracování instance definuje nebo jinak "vlastní" události.  
@@ -26,7 +26,7 @@ ms.locfileid: "54682953"
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Toto téma předpokládá, že jste četli [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md) a [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md).  
+ Toto téma předpokládá, že jste četli [směrovat Přehled událostí](routed-events-overview.md) a [přehled XAML (WPF)](xaml-overview-wpf.md).  
   
 <a name="Syntax"></a>   
 ## <a name="attached-event-syntax"></a>Syntaxe přidružená událost  
@@ -36,7 +36,7 @@ ms.locfileid: "54682953"
   
  Například tady je [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntaxe obslužné rutiny pro vlastní připojení `NeedsCleaning` – přidružená událost:  
   
- [!code-xaml[WPFAquariumSln#AE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquarium/Window1.xaml#ae)]  
+ [!code-xaml[WPFAquariumSln#AE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquarium/Window1.xaml#ae)]  
   
  Poznámka: `aqua:` předpony; předpona, která je nezbytné v tomto případě protože přidružená událost je vlastní událost, která pochází z vlastní atribut xmlns pro mapovanou.  
   
@@ -58,7 +58,7 @@ ms.locfileid: "54682953"
   
  Obecně platí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] přidružená událost není příliš neliší od [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] směrované události. Rozdíly jsou jak zdroj události a jeho zveřejnění třídou jako člen (který má vliv také [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntaxe obslužné rutiny).  
   
- Nicméně, jako jste si předtím poznamenali, existující [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] připojené události nejsou určené především pro zpracování v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Účelem události je častěji, povolte složené element hlášení stavu na nadřazený element v skládání, ve kterém případ události se obvykle vyvolá v kódu a také závisí na zpracování ve třídě příslušné nadřazené třídy. Pro instanci položky v rámci <xref:System.Windows.Controls.Primitives.Selector> očekává se zvýšení připojeného <xref:System.Windows.Controls.Primitives.Selector.Selected> událost, což je třída pak zpracovány <xref:System.Windows.Controls.Primitives.Selector> třídy a potenciálně převést pomocí <xref:System.Windows.Controls.Primitives.Selector> třídy do různých směrované události <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged> . Další informace o směrované události a zpracování tříd naleznete v tématu [označení směrované události jako Handled a zpracování tříd](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md).  
+ Nicméně, jako jste si předtím poznamenali, existující [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] připojené události nejsou určené především pro zpracování v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Účelem události je častěji, povolte složené element hlášení stavu na nadřazený element v skládání, ve kterém případ události se obvykle vyvolá v kódu a také závisí na zpracování ve třídě příslušné nadřazené třídy. Pro instanci položky v rámci <xref:System.Windows.Controls.Primitives.Selector> očekává se zvýšení připojeného <xref:System.Windows.Controls.Primitives.Selector.Selected> událost, což je třída pak zpracovány <xref:System.Windows.Controls.Primitives.Selector> třídy a potenciálně převést pomocí <xref:System.Windows.Controls.Primitives.Selector> třídy do různých směrované události <xref:System.Windows.Controls.Primitives.Selector.SelectionChanged> . Další informace o směrované události a zpracování tříd naleznete v tématu [označení směrované události jako Handled a zpracování tříd](marking-routed-events-as-handled-and-class-handling.md).  
   
 <a name="Custom"></a>   
 ## <a name="defining-your-own-attached-events-as-routed-events"></a>Definování připojených událostí jako směrovaných událostí  
@@ -80,10 +80,10 @@ ms.locfileid: "54682953"
   
  Například následující kód definuje `NeedsCleaning` přidružená událost ve třídě vlastníka `Aquarium`, použije [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] připojené události strategie deklarování připojených událostí jako směrovaných událostí.  
   
- [!code-csharp[WPFAquariumSln#AECode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#aecode)]
- [!code-vb[WPFAquariumSln#AECode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#aecode)]  
+ [!code-csharp[WPFAquariumSln#AECode](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#aecode)]
+ [!code-vb[WPFAquariumSln#AECode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#aecode)]  
   
- Všimněte si, že metoda používá k navázání identifikátor pole přidružená událost <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>, ve skutečnosti stejnou metodu, která se použije k registraci nepřipojené směrované události. Připojené události a směrované události všech zaregistrováni do centralizované interní úložiště. Tato implementace úložiště událostí umožňuje "události jako rozhraní" koncepční úvahy, že je podrobněji popsána [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
+ Všimněte si, že metoda používá k navázání identifikátor pole přidružená událost <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>, ve skutečnosti stejnou metodu, která se použije k registraci nepřipojené směrované události. Připojené události a směrované události všech zaregistrováni do centralizované interní úložiště. Tato implementace úložiště událostí umožňuje "události jako rozhraní" koncepční úvahy, že je podrobněji popsána [směrovat Přehled událostí](routed-events-overview.md).  
   
 <a name="Raising"></a>   
 ## <a name="raising-a-wpf-attached-event"></a>Vyvolání WPF – přidružená událost  
@@ -92,6 +92,6 @@ ms.locfileid: "54682953"
  Nicméně pokud definujete vlastní přidružená událost na základě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modelu odvození připojených událostí na <xref:System.Windows.RoutedEvent>, můžete použít <xref:System.Windows.UIElement.RaiseEvent%2A> k vyvolání připojené události z libovolného <xref:System.Windows.UIElement> nebo <xref:System.Windows.ContentElement>. Vyvolání směrovaných událostí (připojené, nebo ne) vyžaduje deklaraci konkrétní element ve stromové struktuře prvek jako zdroj události; Tento zdroj se hlásí jako <xref:System.Windows.UIElement.RaiseEvent%2A> volajícího. Určení, které elementy se ohlásí jako zdroj ve stromové struktuře odpovídá vaší služby  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
-- [Podrobná syntaxe XAML](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)
-- [XAML a vlastní třídy pro WPF](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)
+- [Přehled směrovaných událostí](routed-events-overview.md)
+- [Podrobná syntaxe XAML](xaml-syntax-in-detail.md)
+- [XAML a vlastní třídy pro WPF](xaml-and-custom-classes-for-wpf.md)

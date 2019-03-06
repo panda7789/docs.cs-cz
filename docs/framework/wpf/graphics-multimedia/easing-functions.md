@@ -15,12 +15,12 @@ helpviewer_keywords:
 - easing functions [WPF], customizing
 - animations [WPF], applying
 ms.assetid: 075b9c2b-82c4-43fa-b3cd-de0b6236eb38
-ms.openlocfilehash: 038d9423ddae6f16165ed0618beab8391c462ac9
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 456308e37bddc1df86b49085139a3810c4959a58
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43461706"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57354502"
 ---
 # <a name="easing-functions"></a>Funkce usnadnění
 Funkcí usnadnění umožňují použít vlastní matematické vzorce animace. Například můžete objekt realisticky odraz nebo se chovat, jako by šlo o spring. Můžete použít k odhadu negativních dopadů klíčových snímků nebo dokonce od/Komu/kým animace, ale by to obnášelo značné množství práce a animace bude méně přesné než matematické vzorce.  
@@ -51,11 +51,11 @@ Funkcí usnadnění umožňují použít vlastní matematické vzorce animace. N
   
  Chcete-li použít funkci zpomalení animace, použijte `EasingFunction` zadejte funkci uvolnění použít pro animaci vlastnosti animace. Následující příklad se vztahuje <xref:System.Windows.Media.Animation.BounceEase> funkce k uvolnění <xref:System.Windows.Media.Animation.DoubleAnimation> vytvořit skákající efekt.  
   
- [!code-xaml[BounceEase_snippet#BounceEase](../../../../samples/snippets/csharp/VS_Snippets_Wpf/bounceease_snippet/CS/window1.xaml#bounceease)]  
+ [!code-xaml[BounceEase_snippet#BounceEase](~/samples/snippets/csharp/VS_Snippets_Wpf/bounceease_snippet/CS/window1.xaml#bounceease)]  
   
  V předchozím příkladu funkci uvolnění aplikováno od/Komu/kým animace. Můžete také použít těchto funkcí usnadnění pro animace klíčových snímků. Následující příklad ukazuje, jak pomocí klíčových snímků k nim má přiřazené funkce usnadnění pro vytvoření animace obdélníku, který kontrakty směrem nahoru, může zpomalit, pak zvětší směrem dolů (jakoby klesá) a potom nedoručitelných zpráv a zastaví.  
   
- [!code-xaml[EasingFunctionDoubleKeyFrame_snippet#EasingFunctionDoubleKeyFrame](../../../../samples/snippets/csharp/VS_Snippets_Wpf/easingfunctiondoublekeyframe_snippet/CS/window1.xaml#easingfunctiondoublekeyframe)]  
+ [!code-xaml[EasingFunctionDoubleKeyFrame_snippet#EasingFunctionDoubleKeyFrame](~/samples/snippets/csharp/VS_Snippets_Wpf/easingfunctiondoublekeyframe_snippet/CS/window1.xaml#easingfunctiondoublekeyframe)]  
   
  Můžete použít <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> změnit vlastnost změnit funkci zpomalení chování, to znamená, jak argument interpolaci animace. Existují tři možné hodnoty, které poskytnete pro <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>:  
   
@@ -63,59 +63,59 @@ Funkcí usnadnění umožňují použít vlastní matematické vzorce animace. N
   
 -   <xref:System.Windows.Media.Animation.EasingMode.EaseOut>: Interpolace následuje interpolace 100 % minus výstup vzorec přidružený k funkci přechodu.  
   
--   <xref:System.Windows.Media.Animation.EasingMode.EaseInOut>: Používá interpolace <xref:System.Windows.Media.Animation.EasingMode.EaseIn> v první polovině animace a <xref:System.Windows.Media.Animation.EasingMode.EaseOut> v druhé polovině.  
+-   <xref:System.Windows.Media.Animation.EasingMode.EaseInOut>: Použití interpolace <xref:System.Windows.Media.Animation.EasingMode.EaseIn> v první polovině animace a <xref:System.Windows.Media.Animation.EasingMode.EaseOut> v druhé polovině.  
   
  Následující grafy ukazují různé hodnoty <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> kde *f*(*x*) představuje animace průběhu a *t* představuje čas.  
   
  <xref:System.Windows.Media.Animation.BackEase>  
   
- ![Vlastnosti EasingMode BackEase funkce ](../../../../docs/framework/wpf/graphics-multimedia/media/backease-graph.png "BackEase_Graph")  
+ ![Vlastnosti EasingMode BackEase funkce ](./media/backease-graph.png "BackEase_Graph")  
   
  <xref:System.Windows.Media.Animation.BounceEase>  
   
- ![Vlastnosti EasingMode BounceEase funkce ](../../../../docs/framework/wpf/graphics-multimedia/media/bounceease-graph.png "BounceEase_Graph")  
+ ![Vlastnosti EasingMode BounceEase funkce ](./media/bounceease-graph.png "BounceEase_Graph")  
   
  <xref:System.Windows.Media.Animation.CircleEase>  
   
- ![Vlastnosti EasingMode CircleEase funkce ](../../../../docs/framework/wpf/graphics-multimedia/media/circleease-graph.png "CircleEase_Graph")  
+ ![Vlastnosti EasingMode CircleEase funkce ](./media/circleease-graph.png "CircleEase_Graph")  
   
  <xref:System.Windows.Media.Animation.CubicEase>  
   
- ![Vlastnosti EasingMode CubicEase funkce ](../../../../docs/framework/wpf/graphics-multimedia/media/cubicease-graph.png "CubicEase_Graph")  
+ ![Vlastnosti EasingMode CubicEase funkce ](./media/cubicease-graph.png "CubicEase_Graph")  
   
  <xref:System.Windows.Media.Animation.ElasticEase>  
   
- ![Funkce ElasticEase s grafy různých režimů funkce Easing. ](../../../../docs/framework/wpf/graphics-multimedia/media/elasticease-graph.png "ElasticEase_Graph")  
+ ![Funkce ElasticEase s grafy různých režimů funkce Easing. ](./media/elasticease-graph.png "ElasticEase_Graph")  
   
  <xref:System.Windows.Media.Animation.ExponentialEase>  
   
- ![Funkce ExponentialEase grafy různých režimů funkce Easing. ](../../../../docs/framework/wpf/graphics-multimedia/media/exponentialease-graph.png "ExponentialEase_Graph")  
+ ![Funkce ExponentialEase grafy různých režimů funkce Easing. ](./media/exponentialease-graph.png "ExponentialEase_Graph")  
   
  <xref:System.Windows.Media.Animation.PowerEase>  
   
- ![Funkce QuarticEase s grafy různých režimů funkce Easing. ](../../../../docs/framework/wpf/graphics-multimedia/media/quarticease-graph.png "QuarticEase_Graph")  
+ ![Funkce QuarticEase s grafy různých režimů funkce Easing. ](./media/quarticease-graph.png "QuarticEase_Graph")  
   
  <xref:System.Windows.Media.Animation.QuadraticEase>  
   
- ![Funkce QuadraticEase s grafy různých režimů funkce Easing](../../../../docs/framework/wpf/graphics-multimedia/media/quadraticease-graph.png "QuadraticEase_Graph")  
+ ![Funkce QuadraticEase s grafy různých režimů funkce Easing](./media/quadraticease-graph.png "QuadraticEase_Graph")  
   
  <xref:System.Windows.Media.Animation.QuarticEase>  
   
- ![Funkce QuarticEase s grafy různých režimů funkce Easing. ](../../../../docs/framework/wpf/graphics-multimedia/media/quarticease-graph.png "QuarticEase_Graph")  
+ ![Funkce QuarticEase s grafy různých režimů funkce Easing. ](./media/quarticease-graph.png "QuarticEase_Graph")  
   
  <xref:System.Windows.Media.Animation.QuinticEase>  
   
- ![Funkce QuinticEase s grafy různých režimů funkce Easing. ](../../../../docs/framework/wpf/graphics-multimedia/media/quinticease-graph.png "QuinticEase_Graph")  
+ ![Funkce QuinticEase s grafy různých režimů funkce Easing. ](./media/quinticease-graph.png "QuinticEase_Graph")  
   
  <xref:System.Windows.Media.Animation.SineEase>  
   
- ![Funkce pro různé hodnoty vlastnosti EasingMode SineEase](../../../../docs/framework/wpf/graphics-multimedia/media/sineease-graph.png "SineEase_Graph")  
+ ![Funkce pro různé hodnoty vlastnosti EasingMode SineEase](./media/sineease-graph.png "SineEase_Graph")  
   
 > [!NOTE]
 >  Můžete použít <xref:System.Windows.Media.Animation.PowerEase> vytvoření stejné chování jako <xref:System.Windows.Media.Animation.CubicEase>, <xref:System.Windows.Media.Animation.QuadraticEase>, <xref:System.Windows.Media.Animation.QuarticEase>, a <xref:System.Windows.Media.Animation.QuinticEase> pomocí <xref:System.Windows.Media.Animation.PowerEase.Power%2A> vlastnost. Například, pokud chcete použít <xref:System.Windows.Media.Animation.PowerEase> pro nahrazení <xref:System.Windows.Media.Animation.CubicEase>, zadejte <xref:System.Windows.Media.Animation.PowerEase.Power%2A> hodnotu 3.  
   
  Kromě použití funkcí usnadnění, které jsou součástí za běhu, můžete vytvořit vlastní funkce usnadnění děděním z <xref:System.Windows.Media.Animation.EasingFunctionBase>. Následující příklad ukazuje, jak vytvořit jednoduchou funkci vlastní uvolnění. Můžete přidat vlastní logiku matematická pro chování funkci uvolnění tak, že přepíšete <xref:System.Windows.Media.Animation.EasingFunctionBase.EaseInCore%2A> metody.   
   
- [!code-csharp[CustomEasingFunction#CustomEasingFunction](../../../../samples/snippets/csharp/VS_Snippets_Wpf/customeasingfunction/csharp/customlog10easingfunction.cs#customeasingfunction)]
- [!code-vb[CustomEasingFunction#CustomEasingFunction](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/customeasingfunction/visualbasic/customlog10easingfunction.vb#customeasingfunction)]
- [!code-xaml[CustomEasingFunction#CustomEasingFunction](../../../../samples/snippets/csharp/VS_Snippets_Wpf/customeasingfunction/csharp/window1.xaml#customeasingfunction)]
+ [!code-csharp[CustomEasingFunction#CustomEasingFunction](~/samples/snippets/csharp/VS_Snippets_Wpf/customeasingfunction/csharp/customlog10easingfunction.cs#customeasingfunction)]
+ [!code-vb[CustomEasingFunction#CustomEasingFunction](~/samples/snippets/visualbasic/VS_Snippets_Wpf/customeasingfunction/visualbasic/customlog10easingfunction.vb#customeasingfunction)]
+ [!code-xaml[CustomEasingFunction#CustomEasingFunction](~/samples/snippets/csharp/VS_Snippets_Wpf/customeasingfunction/csharp/window1.xaml#customeasingfunction)]

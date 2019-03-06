@@ -7,22 +7,22 @@ helpviewer_keywords:
 - controls [WPF], TreeView
 - TreeView control [WPF], how-to topics
 ms.assetid: b9e9790e-7bfd-45d1-8b7a-1e0d125182a8
-ms.openlocfilehash: 902478763a214b96c3d0565fe38f0e9cd4c2acc0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fa7ef39083eb192c6ea675568b955fc78608ba88
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33555397"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57357752"
 ---
 # <a name="treeview-how-to-topics"></a>TreeView – postupy
-Témata v této části popisují způsob použití <xref:System.Windows.Controls.TreeView> ovládací prvek pro zobrazení informací v hierarchická struktura.  
+Témata v této části popisují způsob použití <xref:System.Windows.Controls.TreeView> ovládací prvek pro zobrazení informací v hierarchické struktuře.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vytvoření jednoduchého nebo složitého zobrazení TreeViews](../../../../docs/framework/wpf/controls/how-to-create-simple-or-complex-treeviews.md)  
-  [Použití SelectedValue, SelectedValuePath a SelectedItem](../../../../docs/framework/wpf/controls/how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md)  
-  [Připojení TreeView k datům nezjistitelné hloubky](../../../../docs/framework/wpf/controls/how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth.md)  
-  [Zvýšení výkonu TreeView](../../../../docs/framework/wpf/controls/how-to-improve-the-performance-of-a-treeview.md)  
-  [Hledání TreeViewItem v objektu TreeView](../../../../docs/framework/wpf/controls/how-to-find-a-treeviewitem-in-a-treeview.md)  
+ [Vytvoření jednoduchého nebo složitého zobrazení TreeViews](how-to-create-simple-or-complex-treeviews.md)  
+  [Použití SelectedValue, SelectedValuePath a SelectedItem](how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md)  
+  [Připojení TreeView k datům nezjistitelné hloubky](how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth.md)  
+  [Zvýšení výkonu TreeView](how-to-improve-the-performance-of-a-treeview.md)  
+  [Hledání TreeViewItem v objektu TreeView](how-to-find-a-treeviewitem-in-a-treeview.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.TreeView>  

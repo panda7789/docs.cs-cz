@@ -10,12 +10,12 @@ helpviewer_keywords:
 - custom controls [WPF], improving accessibility
 - UI Automation [WPF], using with custom controls
 ms.assetid: 47b310fc-fbd5-4ce2-a606-22d04c6d4911
-ms.openlocfilehash: 96107c287003cc5fca2eb0eaa86f0f1f32b7d65e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2587a3b4e38aed507688cc86f0e179b3acbb1672
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54523694"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358320"
 ---
 # <a name="ui-automation-of-a-wpf-custom-control"></a>Automatizace uživatelského rozhraní vlastního ovládacího prvku WPF
 [!INCLUDE[TLA#tla_uiautomation](../../../../includes/tlasharptla-uiautomation-md.md)] poskytuje jednotné rozhraní zobecněný této služby automation, který můžou klienti použít k prozkoumání a fungovat uživatelských rozhraní z různých platforem a rozhraní. [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] Umožňuje (testovací) kontroly kvality kódu a dostupnost aplikace, jako je čtení obrazovky použít k prozkoumání prvky uživatelského rozhraní a simulaci interakce uživatele s nimi z jiného kódu. Informace o [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] na všech platformách, najdete v článku usnadnění přístupu.  
@@ -54,8 +54,8 @@ ms.locfileid: "54523694"
 ### <a name="override-getpattern"></a>Přepsat GetPattern  
  Automationpeer Zjednodušte některé aspekty implementace na straně serveru [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] poskytovatelů, ale vlastní ovládací prvek automationpeer stále musí zpracovávat vzor rozhraní. Jako poskytovatelé bez WPF partnerské uzly podpora vzorů ovládacích prvků, jelikož implementuje rozhraní <xref:System.Windows.Automation.Provider?displayProperty=nameWithType> obor názvů, jako například <xref:System.Windows.Automation.Provider.IInvokeProvider>. Rozhraní pro řízení vzor je možné implementovat partnerem sám nebo jiný objekt. Druhé strany provádění <xref:System.Windows.Automation.Peers.AutomationPeer.GetPattern%2A> vrátí objekt, který podporuje zadanému vzoru. [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] kód volá <xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A> metody a určuje <xref:System.Windows.Automation.Peers.PatternInterface> hodnota výčtu. Přepsání metody <xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A> by měla vrátit objekt, který implementuje zadanému vzoru. Pokud váš ovládací prvek nemá žádné vlastní implementaci vzoru, můžete volat implementaci základní typ <xref:System.Windows.Automation.Peers.AutomationPeer.GetPattern%2A> načíst jeho implementace nebo hodnota null, pokud vzor není podporovaná pro tento typ ovládacího prvku. Například vlastní ovládací prvek NumericUpDown lze nastavit na hodnotu v rozsahu, takže jeho [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] peer by implementovat <xref:System.Windows.Automation.Provider.IRangeValueProvider> rozhraní. Následující příklad ukazuje jak partnerské <xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A> reagovat na je přepsána metoda <xref:System.Windows.Automation.Peers.PatternInterface.RangeValue?displayProperty=nameWithType> hodnotu.  
   
- [!code-csharp[CustomControlNumericUpDown#GetPattern](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/NumericUpDown.cs#getpattern)]
- [!code-vb[CustomControlNumericUpDown#GetPattern](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/numericupdown.vb#getpattern)]  
+ [!code-csharp[CustomControlNumericUpDown#GetPattern](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/NumericUpDown.cs#getpattern)]
+ [!code-vb[CustomControlNumericUpDown#GetPattern](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/numericupdown.vb#getpattern)]  
   
  A <xref:System.Windows.Automation.Peers.UIElementAutomationPeer.GetPattern%2A> metodu můžete také určit dílčí prvek jako poskytovatel vzor. Následující kód ukazuje, jak <xref:System.Windows.Controls.ItemsControl> přenosy posuňte vzor zpracování na druhé straně jeho vnitřní <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku.  
   
@@ -106,8 +106,8 @@ End Class
 ### <a name="override-core-methods"></a>Přepište metody "Základní"  
  Automatizace kód získá informace o váš ovládací prvek voláním veřejné metody třídy peer. Zadání informací o váš ovládací prvek, přepište každou metodu, jejíž název končí řetězcem "Základní" při implementaci ovládacího prvku se liší od, který poskytuje základní klientská automatizační třída partnera. Minimálně musí implementovat ovládacího prvku <xref:System.Windows.Automation.Peers.AutomationPeer.GetClassNameCore%2A> a <xref:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlTypeCore%2A> metod, jak je znázorněno v následujícím příkladu.  
   
- [!code-csharp[CustomControlNumericUpDown#CoreOverrides](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/NumericUpDown.cs#coreoverrides)]
- [!code-vb[CustomControlNumericUpDown#CoreOverrides](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/numericupdown.vb#coreoverrides)]  
+ [!code-csharp[CustomControlNumericUpDown#CoreOverrides](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/NumericUpDown.cs#coreoverrides)]
+ [!code-vb[CustomControlNumericUpDown#CoreOverrides](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/numericupdown.vb#coreoverrides)]  
   
  Implementace <xref:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlTypeCore%2A> popisuje ovládacího prvku tak, že vrací <xref:System.Windows.Automation.ControlType> hodnotu. Přestože může vrátit <xref:System.Windows.Automation.ControlType.Custom?displayProperty=nameWithType>, jeden z více konkrétní typy ovládacích prvků by měla vrátit, pokud přesně popisuje ovládacího prvku. Vrácená hodnota <xref:System.Windows.Automation.ControlType.Custom?displayProperty=nameWithType> vyžaduje další práci pro zprostředkovatele pro implementaci [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)], a [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] klientské produkty nebudou moct předvídat řídicí struktura, interakce klávesnice a vzorů ovládacích prvků je to možné.  
   
@@ -151,10 +151,10 @@ End Class
 ### <a name="raise-events"></a>Vyvolávání událostí  
  Klienti automatizace mohou přihlásit k události automatizace. Vlastní ovládací prvky se musí hlásit změny stav ovládacích prvků pomocí volání <xref:System.Windows.Automation.Peers.AutomationPeer.RaiseAutomationEvent%2A> metody. Podobně při změně hodnoty vlastnosti, zavolejte <xref:System.Windows.Automation.Peers.AutomationPeer.RaisePropertyChangedEvent%2A> metody. Následující kód ukazuje, jak získat objekt sdílené z ovládacího prvku kódu a volání metody k vyvolání události. Optimalizace Určuje kód, pokud jsou všechny moduly pro naslouchání pro tento typ události. Vyvolání události pouze v případě, že existují naslouchacích procesů se vyhnete zbytečnou režii a umožňuje řídit, stále reagovat.  
   
- [!code-csharp[CustomControlNumericUpDown#RaiseEventFromControl](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/NumericUpDown.cs#raiseeventfromcontrol)]
- [!code-vb[CustomControlNumericUpDown#RaiseEventFromControl](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/numericupdown.vb#raiseeventfromcontrol)]  
+ [!code-csharp[CustomControlNumericUpDown#RaiseEventFromControl](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/NumericUpDown.cs#raiseeventfromcontrol)]
+ [!code-vb[CustomControlNumericUpDown#RaiseEventFromControl](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic/customcontrollibrary/numericupdown.vb#raiseeventfromcontrol)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled automatizace uživatelského rozhraní](../../../../docs/framework/ui-automation/ui-automation-overview.md)
+- [Přehled automatizace uživatelského rozhraní](../../ui-automation/ui-automation-overview.md)
 - [Ovládací prvek NumericUpDown vlastní motiv a ukázka podpora automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=160025)
-- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../../../docs/framework/ui-automation/server-side-ui-automation-provider-implementation.md)
+- [Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru](../../ui-automation/server-side-ui-automation-provider-implementation.md)

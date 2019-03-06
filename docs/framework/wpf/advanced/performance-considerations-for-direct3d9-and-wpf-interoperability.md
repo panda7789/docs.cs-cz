@@ -5,18 +5,18 @@ helpviewer_keywords:
 - WPF [WPF], Direct3D9 interop performance
 - Direct3D9 [WPF interoperability], performance
 ms.assetid: ea8baf91-12fe-4b44-ac4d-477110ab14dd
-ms.openlocfilehash: f595e75c90ebef480200e9210a57087eb4d20e87
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fd3c99f22a1d097c82494ba6eff344820162ed87
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54608859"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57356712"
 ---
 # <a name="performance-considerations-for-direct3d9-and-wpf-interoperability"></a>Předpokládaný výkon pro Direct3D9 a interoperabilitu WPF
 Můžete hostovat pomocí obsahu Direct3D9 <xref:System.Windows.Interop.D3DImage> třídy. Hostování obsahu Direct3D9 může ovlivnit výkon vaší aplikace. Toto téma popisuje osvědčené postupy a optimalizovat výkon při hostování obsahu Direct3D9 v aplikaci Windows Presentation Foundation (WPF). Zahrnout tyto osvědčené postupy použití <xref:System.Windows.Interop.D3DImage> a osvědčené postupy při použití Windows Vista, Windows XP a zobrazí více monitorů.  
   
 > [!NOTE]
->  Příklady kódu, které ukazují tyto osvědčené postupy, najdete v části [WPF a systému Direct3D9 vzájemná spolupráce grafického subsystému](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md).  
+>  Příklady kódu, které ukazují tyto osvědčené postupy, najdete v části [WPF a systému Direct3D9 vzájemná spolupráce grafického subsystému](wpf-and-direct3d9-interoperation.md).  
   
 ## <a name="use-d3dimage-sparingly"></a>Používejte opatrně D3DImage  
  Konání obsahu Direct3D9 <xref:System.Windows.Interop.D3DImage> instance se nezobrazuje jako rychlý jako u čistě aplikace Direct3D. Kopírování na plochu a vyprazdňování vyrovnávací paměť může být nákladná operace. Jako počet <xref:System.Windows.Interop.D3DImage> zvýšení instancí, další vyprazdňování dojde k a zhorší výkon. Proto byste měli použít <xref:System.Windows.Interop.D3DImage> opatrně.  
@@ -47,7 +47,7 @@ Můžete hostovat pomocí obsahu Direct3D9 <xref:System.Windows.Interop.D3DImage
 ## <a name="best-practices-for-multi-monitor-displays"></a>Osvědčené postupy pro zobrazí více monitorů  
  Pokud používáte počítač s více monitory, postupujte podle výše popsaným osvědčené postupy. Existují také zvážit další výkonnosti pro konfigurace s více monitory.  
   
- Při vytváření přípravné vyrovnávací paměti, vytvoří se na konkrétní zařízení a adaptér, ale WPF může zobrazit front-vyrovnávací paměť na žádném adaptéru. Kopírování mezi adaptéry k aktualizaci front-vyrovnávací paměti mohou být velmi náročné. V systému Windows Vista, který je nakonfigurován na použití WDDM s více grafických karet a `IDirect3DDevice9Ex` zařízení, pokud je front-vyrovnávací paměť na jiný adaptér, ale stále stejný grafická karta, neexistuje žádné snížení výkonu. Na Windows XP a XDDM s více grafickými kartami, existuje ale penalizace výkonu při front-vyrovnávací paměti se zobrazí na jiný adaptér než přípravné vyrovnávací paměti. Další informace najdete v tématu [WPF a systému Direct3D9 vzájemná spolupráce grafického subsystému](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md).  
+ Při vytváření přípravné vyrovnávací paměti, vytvoří se na konkrétní zařízení a adaptér, ale WPF může zobrazit front-vyrovnávací paměť na žádném adaptéru. Kopírování mezi adaptéry k aktualizaci front-vyrovnávací paměti mohou být velmi náročné. V systému Windows Vista, který je nakonfigurován na použití WDDM s více grafických karet a `IDirect3DDevice9Ex` zařízení, pokud je front-vyrovnávací paměť na jiný adaptér, ale stále stejný grafická karta, neexistuje žádné snížení výkonu. Na Windows XP a XDDM s více grafickými kartami, existuje ale penalizace výkonu při front-vyrovnávací paměti se zobrazí na jiný adaptér než přípravné vyrovnávací paměti. Další informace najdete v tématu [WPF a systému Direct3D9 vzájemná spolupráce grafického subsystému](wpf-and-direct3d9-interoperation.md).  
   
 ## <a name="performance-summary"></a>Souhrnné informace o výkonu  
  V následující tabulce jsou uvedeny výkonu aktualizace front-vyrovnávací paměti jako funkce operačního systému, formát pixelu a surface lockability. Front-vyrovnávací paměti a přípravné vyrovnávací paměti se předpokládá, že bude stejný adaptér. V závislosti na konfiguraci adaptéru hardwaru aktualizace jsou obvykle mnohem rychlejší než aktualizace softwaru.  
@@ -61,6 +61,6 @@ Můžete hostovat pomocí obsahu Direct3D9 <xref:System.Windows.Interop.D3DImage
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Interop.D3DImage>
-- [Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)
-- [Návod: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)
-- [Návod: Hostování obsahu Direct3D9 v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)
+- [Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9](wpf-and-direct3d9-interoperation.md)
+- [Návod: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)
+- [Návod: Hostování obsahu Direct3D9 v subsystému WPF](walkthrough-hosting-direct3d9-content-in-wpf.md)

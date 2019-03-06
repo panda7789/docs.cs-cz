@@ -5,12 +5,12 @@ helpviewer_keywords:
 - accumulating animation values across repeating cycles [WPF]
 - animation [WPF], accumulating values across repeating cycles
 ms.assetid: 548df369-c7cc-4dab-b569-08b95ced2e7e
-ms.openlocfilehash: 6e98b7eefd0c30e728b60926096c0f082bc079ab
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e38e1601e2f4eeab2b53918924bc21e05163d948
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587278"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57357258"
 ---
 # <a name="how-to-accumulate-animation-values-during-repeat-cycles"></a>Postupy: Kumulování hodnot animace při opakujících se cyklech
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A> vlastnost kumulování hodnot animace přes opakující se cykly.  
@@ -18,7 +18,7 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.D
 ## <a name="example"></a>Příklad  
  Použití <xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A> vlastnost kumulování základních hodnot animace přes opakující se cykly. Například pokud nastavíte animace opakování 9 časy (<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> = "9 x") a nastavte vlastnost animovat 10 až 15 (z = 10 k = 15), vlastnost animuje z 10 až 15 během první cyklu z 15 až 20 během druhé cyklu , od 20 do 25 během cyklu třetí a tak dále. Každý cyklus animace proto používá koncovou hodnotu animace od předchozího cyklu animace jako jeho základní hodnoty.  
   
- Můžete použít `IsCumulative` vlastnost nejzákladnější animace a většina klíčový snímek animace. Další informace najdete v tématu [přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md) a [přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md).  
+ Můžete použít `IsCumulative` vlastnost nejzákladnější animace a většina klíčový snímek animace. Další informace najdete v tématu [přehled animace](animation-overview.md) a [přehled animací klíčových snímků](key-frame-animations-overview.md).  
   
  Následující příklad ukazuje toto chování animace šířka čtyři obdélníků. Příklad:  
   
@@ -30,11 +30,11 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.D
   
 -   Animuje poslední obdélníku s <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> a nastaví <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.IsCumulative%2A> vlastnost `false`.  
   
- [!code-xaml[timingbehaviors_snip#IsCumulativeWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/IsCumulativeExample.xaml#iscumulativewholepage)]  
+ [!code-xaml[timingbehaviors_snip#IsCumulativeWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/IsCumulativeExample.xaml#iscumulativewholepage)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Přidání výstupní hodnoty animace do počáteční hodnoty animace](../../../../docs/framework/wpf/graphics-multimedia/how-to-add-an-animation-output-value-to-an-animation-starting-value.md)
-- [Opakování animace](../../../../docs/framework/wpf/graphics-multimedia/how-to-repeat-an-animation.md)
-- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
-- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)
+- [Přidání výstupní hodnoty animace do počáteční hodnoty animace](how-to-add-an-animation-output-value-to-an-animation-starting-value.md)
+- [Opakování animace](how-to-repeat-an-animation.md)
+- [Přehled animace](animation-overview.md)
+- [Přehled animací klíčových snímků](key-frame-animations-overview.md)
+- [Témata s postupy](animation-and-timing-how-to-topics.md)

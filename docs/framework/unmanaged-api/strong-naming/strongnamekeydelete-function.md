@@ -16,48 +16,54 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3eace88e5034c61b7608a6d777608cc2544b8564
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dfc785a48d0cdf1cf2fdc0245a27b8ef35fd2d81
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54688477"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57364512"
 ---
 # <a name="strongnamekeydelete-function"></a>StrongNameKeyDelete – funkce
-Odstraní zadaný kontejner klíče.  
-  
- Tato funkce je zastaralá. Použití [iclrstrongname::strongnamekeydelete –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeydelete-method.md) metoda místo.  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
-BOOLEAN StrongNameKeyDelete (  
-    [in]  LPCWSTR   wszKeyContainer  
-);  
-```  
-  
-#### <a name="parameters"></a>Parametry  
- `wszKeyContainer`  
- [in] Název kontejneru klíčů pro odstranění.  
-  
-## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném případě `false`.  
-  
-## <a name="remarks"></a>Poznámky  
- Použití [strongnamekeyinstall –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamekeyinstall-function.md) funkce importa pár veřejného a privátního klíče do kontejneru.  
-  
- Pokud `StrongNameKeyDelete` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
-  
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** StrongName.h  
-  
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
+Odstraní zadaný kontejner klíče.
+
+Tato funkce je zastaralá. Použití [iclrstrongname::strongnamekeydelete –](../hosting/iclrstrongname-strongnamekeydelete-method.md) metoda místo.
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
+BOOLEAN StrongNameKeyDelete (
+    [in]  LPCWSTR   wszKeyContainer
+);
+```
+
+## <a name="parameters"></a>Parametry
+
+`wszKeyContainer`\
+[in] Název kontejneru klíčů pro odstranění.
+
+## <a name="return-value"></a>Návratová hodnota
+
+`true` Při úspěšném dokončení; v opačném případě `false`.
+
+## <a name="remarks"></a>Poznámky
+
+Použití [strongnamekeyinstall –](strongnamekeyinstall-function.md) k importu pár veřejného a privátního klíče do kontejneru.
+
+Pokud `StrongNameKeyDelete` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.
+
+## <a name="requirements"></a>Požadavky
+
+**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+**Záhlaví:** StrongName.h
+
+**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll
+
+**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+
 ## <a name="see-also"></a>Viz také:
-- [StrongNameKeyDelete – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeydelete-method.md)
-- [StrongNameKeyInstall – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeyinstall-method.md)
-- [ICLRStrongName – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+
+- [StrongNameKeyDelete – metoda](../hosting/iclrstrongname-strongnamekeydelete-method.md)
+- [StrongNameKeyInstall – metoda](../hosting/iclrstrongname-strongnamekeyinstall-method.md)
+- [ICLRStrongName – rozhraní](../hosting/iclrstrongname-interface.md)

@@ -2,12 +2,6 @@
 title: Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: bd7e462b-583b-4395-9c36-45aa9e61072c
-ms.openlocfilehash: 731657e0834eb8fc2b724cda40ee721c98111c14
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55739030"
 ---
 # <a name="asynchronous-programming-with-async-and-await-visual-basic"></a>Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)
 Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zlepšit celkovou rychlost reakce aplikace. Tradiční techniky pro psaní asynchronních aplikací však mohou být složité, takže je obtížné je napsat, ladit a udržovat.  
@@ -16,7 +10,7 @@ Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zl
   
  Toto téma obsahuje přehled kdy a jak použít asynchronní programování a obsahuje odkazy na témata podpory, která obsahují podrobné informace a příklady.  
   
-##  <a name="BKMK_WhentoUseAsynchrony"></a> Asynchronní programování zlepšuje odezvu  
+## <a name="BKMK_WhentoUseAsynchrony"></a> Asynchronní programování zlepšuje odezvu  
  Asynchronie je nezbytná pro aktivity, které mohou potenciálně blokovat, například pokud vaše aplikace přistupuje na web. Přístup k webovému prostředku je někdy pomalý nebo zpožděný. Pokud je taková činnost blokována v rámci synchronního procesu, musí čekat celá aplikace. U asynchronního procesu může aplikace pokračovat v další práci, která nezávisí na webovém prostředku, dokud neskončí potenciálně blokující úloha.  
   
  Následující tabulka ukazuje typické oblasti, kde asynchronní programování zlepšuje rychlost reakce. Uvedená rozhraní API z rozhraní .NET Framework 4.5 a prostředí Windows Runtime obsahují metody, které podporují asynchronní programování.  
@@ -35,7 +29,7 @@ Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zl
   
  Asynchronní přístup přidává ekvivalent automatického přenosu do seznamu možností, z nichž můžete vybírat při vytváření asynchronní operace. To znamená, že získáte všechny výhody tradičního asynchronního programování, ale s mnohem menším úsilím ze strany vývojáře.  
   
-##  <a name="BKMK_HowtoWriteanAsyncMethod"></a> Je snazší psát asynchronní metody  
+## <a name="BKMK_HowtoWriteanAsyncMethod"></a> Je snazší psát asynchronní metody  
  [Asynchronní](../../../../visual-basic/language-reference/modifiers/async.md) a [Await](../../../../visual-basic/language-reference/modifiers/async.md) základem asynchronního programování jsou klíčová slova v jazyce Visual Basic. Pomocí těchto dvou klíčových slov můžete použít zdroje v rozhraní .NET Framework nebo prostředí Windows Runtime k vytvoření asynchronní metody téměř stejně snadno, jako vytváříte synchronní metody. Asynchronní metody, které definujete pomocí `Async` a `Await` jsou označovány jako asynchronní metody.  
   
  Následující příklad ukazuje asynchronní metodu. Téměř vše v rámci kódu by vám mělo být zcela známé. Komentáře volají funkce, které jste přidali při tvorbě asynchronie.  
@@ -101,7 +95,7 @@ Dim urlContents As String = Await client.GetStringAsync()
   
  Další informace o asynchronii v předchozích verzích rozhraní .NET Framework najdete v tématu [TPL a tradiční rozhraní .NET Framework Asynchronous Programming](../../../../standard/parallel-programming/tpl-and-traditional-async-programming.md).  
   
-##  <a name="BKMK_WhatHappensUnderstandinganAsyncMethod"></a> Co se děje v asynchronní metodě  
+## <a name="BKMK_WhatHappensUnderstandinganAsyncMethod"></a> Co se děje v asynchronní metodě  
  Nejdůležitějším principem, který je třeba pochopit v asynchronním programování, je, jak ovládat přesuny toků od metody k metodě. Následující diagram vás provede procesem.  
   
  ![Trasování aplikace asynchronní](../../../../csharp/programming-guide/concepts/async/media/navigationtrace.png "NavigationTrace")  
@@ -137,19 +131,19 @@ Dim urlContents As String = Await client.GetStringAsync()
   
  Další informace o toku řízení naleznete v tématu [tok řízení v asynchronních programech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md).  
   
-##  <a name="BKMK_APIAsyncMethods"></a> Rozhraní API asynchronní metody  
+## <a name="BKMK_APIAsyncMethods"></a> Rozhraní API asynchronní metody  
  Možná se ptáte kde nalézt metody jako `GetStringAsync` , které podporují asynchronní programování. Rozhraní .NET Framework 4.5 nebo novější obsahuje mnoho členů, které pracují s `Async` a `Await`. Tyto členy můžete rozpoznat podle přípony "Async", která je připojena k názvu členu a návratovému typu <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>. Například `System.IO.Stream` třída obsahuje metody, jako například <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.ReadAsync%2A>, a <xref:System.IO.Stream.WriteAsync%2A> vedle synchronních metod <xref:System.IO.Stream.CopyTo%2A>, <xref:System.IO.Stream.Read%2A>, a <xref:System.IO.Stream.Write%2A>.  
   
  Modul Runtime Windows také obsahuje mnoho metod, které můžete použít s `Async` a `Await` v aplikacích pro Windows. Další informace a příklad metody naleznete v tématu [volání asynchronního rozhraní API v C# nebo Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic), [asynchronní programování (aplikace pro Windows Runtime)](https://docs.microsoft.com/previous-versions/windows/apps/hh464924(v=win.10)), a [WhenAny: Přemostění rozhraní .NET Framework a prostředí Windows Runtime](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/jj635140(v=vs.120)).  
   
-##  <a name="BKMK_Threads"></a> Vlákna  
+## <a name="BKMK_Threads"></a> Vlákna  
  Asynchronní metody mají být neblokující operace. `Await` Výrazu v asynchronní metodě nebude blokovat aktuální vlákno, zatímco očekávaná úloha běží. Namísto toho se výraz zaregistruje pro zbývající metody jako pokračování a vrátí řízení volajícímu asynchronní metody.  
   
  `Async` a `Await` klíčová slova nezpůsobí další vlákna, který se má vytvořit. Asynchronní metody nevyžadují multithreading, protože asynchronní metoda není spuštěna ve vlastním vlákně. Metoda pracuje na aktuálním kontextu synchronizace a používá čas ve vlákně pouze v případě, že je metoda aktivní. Můžete použít <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> pro přesun práce vázané na procesor do vlákna na pozadí, ale na pozadí vlákno nepomůže s procesem, který pouze čeká na zpřístupnění výsledků.  
   
  Asynchronní přístup při asynchronním programování se doporučuje v téměř každém případě existujících přístupů. Konkrétně tento přístup je obecně lepší než <xref:System.ComponentModel.BackgroundWorker> pro vstupně-výstupní operace vzhledem k tomu, že kód je jednodušší a nemusíte pro ochranu proti na konflikty časování. V kombinaci s <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType>, je asynchronní programování lepší než <xref:System.ComponentModel.BackgroundWorker> pro operace vázané na procesor protože asynchronní programování odděluje koordinaci podrobností od spouštění kódu z práce, která `Task.Run` přenosů do fondu vláken.  
   
-##  <a name="BKMK_AsyncandAwait"></a> Async a operátoru Await  
+## <a name="BKMK_AsyncandAwait"></a> Async a operátoru Await  
  Pokud určíte, že metoda je metodou asynchronní pomocí [asynchronní](../../../../visual-basic/language-reference/modifiers/async.md) modifikátor, povolíte tím následující dvě možnosti.  
   
 -   Označená asynchronní metoda může použít [Await](../../../../visual-basic/language-reference/operators/await-operator.md) k určení místa pozastavení možnost. Operátor await sděluje kompilátoru, že s asynchronními metodami nelze za daným bodem pokračovat, dokud nebude dokončen očekávaný asynchronní proces. Během této doby se ovládací prvek vrátí volajícímu asynchronní metody.  
@@ -166,7 +160,7 @@ Dim urlContents As String = Await client.GetStringAsync()
   
 -   [Operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md)  
   
-##  <a name="BKMK_ReturnTypesandParameters"></a> Typy vrácených hodnot a parametrů  
+## <a name="BKMK_ReturnTypesandParameters"></a> Typy vrácených hodnot a parametrů  
  Při programování rozhraní .NET Framework asynchronní metoda obvykle vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>. V asynchronní metodě `Await` operátor je použít pro úlohu, která je vrácena z volání do jiné asynchronní metody.  
   
  Zadáte <xref:System.Threading.Tasks.Task%601> jako návratový typ, pokud metoda obsahuje [vrátit](../../../../visual-basic/language-reference/statements/return-statement.md) příkaz, který určuje typ operandu `TResult`.  
@@ -227,12 +221,12 @@ Await Task_MethodAsync()
   
  Další informace a příklad najdete v tématu [volání asynchronního rozhraní API v jazyce C# nebo Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).  
   
-##  <a name="BKMK_NamingConvention"></a> Zásady vytváření názvů  
+## <a name="BKMK_NamingConvention"></a> Zásady vytváření názvů  
  Podle úmluvy připojte "Async" názvy metod, které mají `Async` modifikátor.  
   
  Můžete ignorovat konvenci, kde událost, základní třída a rozhraní smlouvy navrhují odlišný název. Například byste neměli přejmenovat běžné obslužné rutiny událostí, jako například `Button1_Click`.  
   
-##  <a name="BKMK_RelatedTopics"></a> Související témata a ukázky (Visual Studio)  
+## <a name="BKMK_RelatedTopics"></a> Související témata a ukázky (Visual Studio)  
   
 |Název|Popis|Ukázka|  
 |-----------|-----------------|------------|  
@@ -249,7 +243,7 @@ Await Task_MethodAsync()
 |[Asynchronní vzor založený na úlohách (TAP)](../../../../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)|Popisuje nový vzor pro asynchronii v rozhraní .NET Framework. Vzorek je založen na <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> typy.||  
 |[Videa o asynchronním programování na kanálu Channel 9](https://channel9.msdn.com/search?term=async+&type=All)|Poskytuje odkazy na různá videa o asynchronním programování.||  
   
-##  <a name="BKMK_CompleteExample"></a> Kompletní příklad  
+## <a name="BKMK_CompleteExample"></a> Kompletní příklad  
  Následující kód je soubor MainWindow.xaml.vb z aplikace Windows Presentation Foundation (WPF), která toto téma popisuje. Můžete stáhnout ukázku z [asynchronní vzorek: Příklad z "asynchronní programování pomocí modifikátoru Async a Await"](https://code.msdn.microsoft.com/Async-Sample-Example-from-9b9f505c).  
   
 ```vb  

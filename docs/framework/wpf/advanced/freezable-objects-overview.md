@@ -9,12 +9,12 @@ helpviewer_keywords:
 - unfreezing Freezable objects [WPF]
 - classes [WPF], Freezable
 ms.assetid: 89c71692-4f43-4057-b611-67c6a8a863a2
-ms.openlocfilehash: 281c1c9556773446808f7bd4b4ef558805503cea
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9331c892b0c0abccf2ea8700d46fa4180a7225ed
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54499311"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57375841"
 ---
 # <a name="freezable-objects-overview"></a>Přehled zablokovatelných objektů
 Toto téma popisuje, jak efektivně používat a vytvořte <xref:System.Windows.Freezable> objekty, které mají speciální funkcí, které může pomoct zlepšit výkon aplikace. Příklady zablokovatelných objektů: štětce, pera, transformace, geometrie a animace.  
@@ -31,8 +31,8 @@ Toto téma popisuje, jak efektivně používat a vytvořte <xref:System.Windows.
   
  Předpokládejme například, že vytvoříte <xref:System.Windows.Media.SolidColorBrush> štětce a použít ho k vykreslení na pozadí tlačítka.  
   
- [!code-csharp[freezablesample_procedural#FrozenExamplePart1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#frozenexamplepart1)]
- [!code-vb[freezablesample_procedural#FrozenExamplePart1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#frozenexamplepart1)]  
+ [!code-csharp[freezablesample_procedural#FrozenExamplePart1](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#frozenexamplepart1)]
+ [!code-vb[freezablesample_procedural#FrozenExamplePart1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#frozenexamplepart1)]  
   
  Při vykreslování na tlačítko [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] grafiky subsystémů používá údaje vykreslení skupiny obrazových bodů pro vytvoření vzhledu tlačítka. I když jste použili štětec jednotné barvy popisující, jak by měl překreslit tlačítko, vaše štětec jednotné barvy neumí skutečně Malování. Grafika systému generuje rychlé, nízké úrovně objektů pro tlačítko a štětce a ty objekty, které ve skutečnosti se zobrazí na obrazovce.  
   
@@ -43,8 +43,8 @@ Toto téma popisuje, jak efektivně používat a vytvořte <xref:System.Windows.
 > [!NOTE]
 >  Ne každá Zmrazitelný objekt lze ukotvit. Aby se zabránilo vyvolání <xref:System.InvalidOperationException>, zkontrolujte hodnotu Zmrazitelný objekt <xref:System.Windows.Freezable.CanFreeze%2A> a určí, zda lze ukotvit před pokusem o ho zastavit.  
   
- [!code-csharp[freezablesample_procedural#FrozenExamplePart2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#frozenexamplepart2)]
- [!code-vb[freezablesample_procedural#FrozenExamplePart2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#frozenexamplepart2)]  
+ [!code-csharp[freezablesample_procedural#FrozenExamplePart2](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#frozenexamplepart2)]
+ [!code-vb[freezablesample_procedural#FrozenExamplePart2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#frozenexamplepart2)]  
   
  Pokud už nepotřebujete změnit zablokovatelného objektu, zamrzá ji poskytuje výhody výkonu. Pokud byste chtěli ukotvit štětce v tomto příkladu, systém grafiky by už nemusíte sledovat změny. Grafika systému lze také nastavit další optimalizace, protože ví, že nedojde ke změně stopy.  
   
@@ -55,8 +55,8 @@ Toto téma popisuje, jak efektivně používat a vytvořte <xref:System.Windows.
 ## <a name="using-freezables"></a>Pomocí Zablokovatelné  
  Pomocí nezmrazený zablokovatelného objektu je jako použití jakéhokoli jiného typu objektu. V následujícím příkladu, barvu <xref:System.Windows.Media.SolidColorBrush> změněn z žlutá červená po slouží k vykreslení na pozadí tlačítka. Grafika systému funguje na pozadí automaticky změnit na tlačítko z žlutá červená při příštím spuštění se aktualizují na obrazovce.  
   
- [!code-csharp[freezablesample_procedural#UnFrozenExampleShort](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#unfrozenexampleshort)]
- [!code-vb[freezablesample_procedural#UnFrozenExampleShort](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#unfrozenexampleshort)]  
+ [!code-csharp[freezablesample_procedural#UnFrozenExampleShort](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#unfrozenexampleshort)]
+ [!code-vb[freezablesample_procedural#UnFrozenExampleShort](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#unfrozenexampleshort)]  
   
 ### <a name="freezing-a-freezable"></a>Zmrazení zablokovatelného objektu  
  Chcete-li <xref:System.Windows.Freezable> zavoláte neupravitelných, jeho <xref:System.Windows.Freezable.Freeze%2A> metoda. Po ukotvení objekt, který obsahuje zablokovatelných objektů jsou tyto objekty také zmražená. Například, pokud ukotvení <xref:System.Windows.Media.PathGeometry>, obrázky a segmentů obsahuje by zmrazené příliš.  
@@ -65,7 +65,7 @@ Toto téma popisuje, jak efektivně používat a vytvořte <xref:System.Windows.
   
 -   Má animovat nebo data vázané vlastnosti.  
   
--   Obsahuje vlastnosti nastavit pomocí dynamického prostředku. (Najdete v článku [prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md) Další informace o dynamické prostředků.)  
+-   Obsahuje vlastnosti nastavit pomocí dynamického prostředku. (Najdete v článku [prostředky XAML](xaml-resources.md) Další informace o dynamické prostředků.)  
   
 -   Obsahuje <xref:System.Windows.Freezable> podřízených objektů, které nelze zmrazit.  
   
@@ -73,22 +73,22 @@ Toto téma popisuje, jak efektivně používat a vytvořte <xref:System.Windows.
   
  Po volání zablokovatelného objektu <xref:System.Windows.Freezable.Freeze%2A> metoda, je již upravit. Pokouší změnit zmrazený objektu způsobí, že <xref:System.InvalidOperationException> vyvolání. Následující kód vyvolá výjimku, protože jsme pokusí změnit stopy po je zmrazen.  
   
- [!code-csharp[freezablesample_procedural#ExceptionExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#exceptionexample)]
- [!code-vb[freezablesample_procedural#ExceptionExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#exceptionexample)]  
+ [!code-csharp[freezablesample_procedural#ExceptionExample](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#exceptionexample)]
+ [!code-vb[freezablesample_procedural#ExceptionExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#exceptionexample)]  
   
  Abyste se vyhnuli vyvolání této výjimky, můžete použít <xref:System.Windows.Freezable.IsFrozen%2A> metodou ke zjištění, zda <xref:System.Windows.Freezable> je zmrazen.  
   
- [!code-csharp[freezablesample_procedural#CheckIsFrozenExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#checkisfrozenexample)]
- [!code-vb[freezablesample_procedural#CheckIsFrozenExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#checkisfrozenexample)]  
+ [!code-csharp[freezablesample_procedural#CheckIsFrozenExample](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#checkisfrozenexample)]
+ [!code-vb[freezablesample_procedural#CheckIsFrozenExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#checkisfrozenexample)]  
   
  V předchozím příkladu kódu byla provedena zmrazených objektů pomocí kopii lze měnit <xref:System.Windows.Freezable.Clone%2A> metody. Další část pojednává o klonování podrobněji.  
   
- **Poznámka:** protože zmrazený zablokovatelného objektu nelze animovat, systém animace automaticky vytvoří upravitelné klony z zmrazené <xref:System.Windows.Freezable> objekty při pokusu o jejich animace <xref:System.Windows.Media.Animation.Storyboard>. Eliminuje režie naklonováním způsobeno výkon, ponechte objekt zmrazen, pokud máte v úmyslu jej lze animovat. Další informace o animace s použitím scénářů, najdete v článku [přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).  
+ **Poznámka:** protože zmrazený zablokovatelného objektu nelze animovat, systém animace automaticky vytvoří upravitelné klony z zmrazené <xref:System.Windows.Freezable> objekty při pokusu o jejich animace <xref:System.Windows.Media.Animation.Storyboard>. Eliminuje režie naklonováním způsobeno výkon, ponechte objekt zmrazen, pokud máte v úmyslu jej lze animovat. Další informace o animace s použitím scénářů, najdete v článku [přehled scénářů](../graphics-multimedia/storyboards-overview.md).  
   
 ### <a name="freezing-from-markup"></a>Zastaveno z kódu  
  Zablokovat a nešlo <xref:System.Windows.Freezable> objekt deklarován v kódu, je použít `PresentationOptions:Freeze` atribut. V následujícím příkladu <xref:System.Windows.Media.SolidColorBrush> je deklarován jako prostředek stránky a je zmrazen. Potom slouží k nastavení pozadí tlačítka.  
   
- [!code-xaml[FreezableSample#FreezeFromMarkupWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FreezableSample/CS/FreezeFromMarkupExample.xaml#freezefrommarkupwholepage)]  
+ [!code-xaml[FreezableSample#FreezeFromMarkupWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FreezableSample/CS/FreezeFromMarkupExample.xaml#freezefrommarkupwholepage)]  
   
  Použít `Freeze` atribut, je nutné mapovat do oboru názvů možnosti prezentace: `http://schemas.microsoft.com/winfx/2006/xaml/presentation/options`. `PresentationOptions` je doporučené předpona pro mapování tento obor názvů:  
   
@@ -96,22 +96,22 @@ Toto téma popisuje, jak efektivně používat a vytvořte <xref:System.Windows.
 xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"   
 ```  
   
- Protože ne všechny čtenáři XAML rozpoznat tento atribut, doporučuje se, že používáte [mc: ignorable – atribut](../../../../docs/framework/wpf/advanced/mc-ignorable-attribute.md) k označení `Presentation:Freeze` jako ignorable – atribut:  
+ Protože ne všechny čtenáři XAML rozpoznat tento atribut, doporučuje se, že používáte [mc: ignorable – atribut](mc-ignorable-attribute.md) k označení `Presentation:Freeze` jako ignorable – atribut:  
   
 ```  
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
 mc:Ignorable="PresentationOptions"  
 ```  
   
- Další informace najdete v tématu [mc: ignorable – atribut](../../../../docs/framework/wpf/advanced/mc-ignorable-attribute.md) stránky.  
+ Další informace najdete v tématu [mc: ignorable – atribut](mc-ignorable-attribute.md) stránky.  
   
 ### <a name="unfreezing-a-freezable"></a>"Unfreezing" zablokovatelného objektu  
  Zmrazené jednou, <xref:System.Windows.Freezable> nelze změnit ani zmrazen; však můžete vytvořit nezmrazený klon pomocí <xref:System.Windows.Freezable.Clone%2A> nebo <xref:System.Windows.Freezable.CloneCurrentValue%2A> metody.  
   
  V následujícím příkladu pozadí tlačítka se nastaví pomocí štětce a tento štětce pak je zmrazen. Nezmrazený kopírování je tvořen pomocí štětce <xref:System.Windows.Freezable.Clone%2A> metody. Klonování je změnit a použít ke změně pozadí tlačítka z žlutá červená.  
   
- [!code-csharp[freezablesample_procedural#CloneExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#cloneexample)]
- [!code-vb[freezablesample_procedural#CloneExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#cloneexample)]  
+ [!code-csharp[freezablesample_procedural#CloneExample](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#cloneexample)]
+ [!code-vb[freezablesample_procedural#CloneExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#cloneexample)]  
   
 > [!NOTE]
 >  Bez ohledu na to, které můžete použít metodu klonování, animací nikdy zkopírovány do nového <xref:System.Windows.Freezable>.  
@@ -130,7 +130,7 @@ mc:Ignorable="PresentationOptions"
   
 -   Snadné klonování: zablokovatelného objektu třídy již provedlo několik metod, které vytvářejí hloubkové duplicity.  
   
- A <xref:System.Windows.Freezable> je typ <xref:System.Windows.DependencyObject>a proto používá systém vlastnost závislosti. Vlastnosti vaší třídy nemusí být vlastnosti závislostí, ale pomocí vlastnosti závislosti se sníží množství kódu, je nutné zapsat, protože <xref:System.Windows.Freezable> třídy byla navržena s vlastností závislosti v úvahu. Další informace o systému vlastnost závislosti, najdete v článku [přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
+ A <xref:System.Windows.Freezable> je typ <xref:System.Windows.DependencyObject>a proto používá systém vlastnost závislosti. Vlastnosti vaší třídy nemusí být vlastnosti závislostí, ale pomocí vlastnosti závislosti se sníží množství kódu, je nutné zapsat, protože <xref:System.Windows.Freezable> třídy byla navržena s vlastností závislosti v úvahu. Další informace o systému vlastnost závislosti, najdete v článku [přehled vlastností závislosti](dependency-properties-overview.md).  
   
  Každý <xref:System.Windows.Freezable> podtřídy musí přepsat <xref:System.Windows.Freezable.CreateInstanceCore%2A> metody. Pokud vaše třída používá vlastnosti závislosti pro všechna jeho data, jste hotovi.  
   
@@ -164,5 +164,5 @@ mc:Ignorable="PresentationOptions"
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Freezable>
 - [Ukázka vlastních animací](https://go.microsoft.com/fwlink/?LinkID=159981)
-- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)
-- [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)
+- [Přehled vlastností závislosti](dependency-properties-overview.md)
+- [Vlastní vlastnosti závislosti](custom-dependency-properties.md)

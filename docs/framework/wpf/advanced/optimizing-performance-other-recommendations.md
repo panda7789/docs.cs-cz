@@ -11,15 +11,15 @@ helpviewer_keywords:
 - ScrollBarVisibility enumeration [WPF]
 - brushes [WPF], performance
 ms.assetid: d028cc65-7e97-4a4f-9859-929734eaf40d
-ms.openlocfilehash: fecb16592f3b3af78e329e095684b9c726f056f4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 05fe4ba4e2125b01637bc9066d23b5738d81f98d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54703676"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358935"
 ---
 # <a name="optimizing-performance-other-recommendations"></a>Optimalizace výkonu: Další doporučení
-<a name="introduction"></a> Toto téma obsahuje doporučení k výkonu kromě těch, které jsou předmětem témata v [optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md) oddílu.  
+<a name="introduction"></a> Toto téma obsahuje doporučení k výkonu kromě těch, které jsou předmětem témata v [optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md) oddílu.  
   
  Toto téma obsahuje následující oddíly:  
   
@@ -43,8 +43,8 @@ ms.locfileid: "54703676"
 ## <a name="navigation-to-object"></a>Navigace na objekt  
  <xref:System.Windows.Navigation.NavigationWindow> Je odvozena z objektu <xref:System.Windows.Window> a rozšiřuje podporující navigaci v obsahu, především na základě agregace <xref:System.Windows.Navigation.NavigationService> a deníku. Můžete aktualizovat klientské oblasti <xref:System.Windows.Navigation.NavigationWindow> zadáním buď [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] nebo objekt. Následující příklad ukazuje obě metody:  
   
- [!code-csharp[Performance#PerformanceSnippet14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/TestNavigation.xaml.cs#performancesnippet14)]
- [!code-vb[Performance#PerformanceSnippet14](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Performance/visualbasic/testnavigation.xaml.vb#performancesnippet14)]  
+ [!code-csharp[Performance#PerformanceSnippet14](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/TestNavigation.xaml.cs#performancesnippet14)]
+ [!code-vb[Performance#PerformanceSnippet14](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Performance/visualbasic/testnavigation.xaml.vb#performancesnippet14)]  
   
  Každý <xref:System.Windows.Navigation.NavigationWindow> objekt má deníku, které zaznamenává historii navigace uživatele v tomto okně. Jedním z účely deník je umožnit uživatelům vrátit jejich kroky.  
   
@@ -52,7 +52,7 @@ ms.locfileid: "54703676"
   
  Při navigaci pomocí objektu ukládá tento deník celý vizuální strom objektu. To znamená, že pokaždé, když navštívíte stránku, vykreslí okamžitě bez nutnosti znovu vytvořena. V takovém případě je vysoké náklady na úložiště deníku, ale čas k rekonstrukci stránky je nízká.  
   
- Při použití <xref:System.Windows.Navigation.NavigationWindow> objektu, je potřeba vzít v úvahu, jak podporu záznamu do deníku ovlivňuje výkon vaší aplikace. Další informace najdete v tématu [Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md).  
+ Při použití <xref:System.Windows.Navigation.NavigationWindow> objektu, je potřeba vzít v úvahu, jak podporu záznamu do deníku ovlivňuje výkon vaší aplikace. Další informace najdete v tématu [Přehled navigace](../app-development/navigation-overview.md).  
   
 <a name="Hit_Testing"></a>   
 ## <a name="hit-testing-on-large-3d-surfaces"></a>Testování na velké 3D površích průchodu  
@@ -73,12 +73,12 @@ ms.locfileid: "54703676"
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Písmo Cache service sdílí data písma mezi [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací. První [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] spustíte aplikaci spustí tuto službu, pokud služba není spuštěná. Pokud používáte [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], "Windows Presentation Foundation (WPF) písmo 3.0.0.0" Služba mezipaměti můžete nastavit od "Ruční" (výchozí) na "Automatické (zpoždění spuštění)" snížit čas spuštění počáteční [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
   
 ## <a name="see-also"></a>Viz také:
-- [Plánování výkonu aplikace](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)
-- [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)
-- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)
-- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)
-- [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)
-- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)
-- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
-- [Tipy a triky animace](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)
+- [Plánování výkonu aplikace](planning-for-application-performance.md)
+- [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
+- [Rozložení a návrh](optimizing-performance-layout-and-design.md)
+- [2D grafika a obrázky](optimizing-performance-2d-graphics-and-imaging.md)
+- [Chování objektu](optimizing-performance-object-behavior.md)
+- [Prostředky aplikace](optimizing-performance-application-resources.md)
+- [Text](optimizing-performance-text.md)
+- [Datová vazba](optimizing-performance-data-binding.md)
+- [Tipy a triky animace](../graphics-multimedia/animation-tips-and-tricks.md)

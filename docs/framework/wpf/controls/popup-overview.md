@@ -5,12 +5,12 @@ helpviewer_keywords:
 - controls [WPF], Popup
 - Popup control [WPF], about Popup control
 ms.assetid: 774f53ca-bff8-470e-9ce9-3928b4cf3d4c
-ms.openlocfilehash: 693c4d0cf0847b90379d409427b173b2c4740311
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4d480adbbd35084b30e2ca1c74d7392814b87783
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54616797"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358467"
 ---
 # <a name="popup-overview"></a>Přehled překryvných objektů
 <xref:System.Windows.Controls.Primitives.Popup> Ovládacího prvku poskytuje způsob, jak zobrazit obsah v samostatném okně umístěný za aktuální období aplikace vzhledem k určené souřadnice prvek nebo obrazovka. Toto téma představuje <xref:System.Windows.Controls.Primitives.Popup> řízení a poskytuje informace o jeho použití.  
@@ -22,27 +22,27 @@ ms.locfileid: "54616797"
  A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsah v samostatném okně vzhledem k elementu nebo bodě na obrazovce. Když <xref:System.Windows.Controls.Primitives.Popup> viditelnost <xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A> je nastavena na `true`.  
   
 > [!NOTE]
->  A <xref:System.Windows.Controls.Primitives.Popup> se neotevře automaticky při umístění ukazatele myši nad jeho nadřazený objekt. Pokud chcete, aby <xref:System.Windows.Controls.Primitives.Popup> automaticky otevřít pomocí aplikace <xref:System.Windows.Controls.ToolTip> nebo <xref:System.Windows.Controls.ToolTipService> třídy. Další informace najdete v tématu [ToolTip – přehled](../../../../docs/framework/wpf/controls/tooltip-overview.md).  
+>  A <xref:System.Windows.Controls.Primitives.Popup> se neotevře automaticky při umístění ukazatele myši nad jeho nadřazený objekt. Pokud chcete, aby <xref:System.Windows.Controls.Primitives.Popup> automaticky otevřít pomocí aplikace <xref:System.Windows.Controls.ToolTip> nebo <xref:System.Windows.Controls.ToolTipService> třídy. Další informace najdete v tématu [ToolTip – přehled](tooltip-overview.md).  
   
 <a name="APopupExample"></a>   
 ## <a name="creating-a-popup"></a>Vytváří se automaticky otevíraného okna  
  Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.Primitives.Popup> prvek, který je podřízený prvek <xref:System.Windows.Controls.Button> ovládacího prvku. Protože <xref:System.Windows.Controls.Button> může mít pouze jeden podřízený element, v tomto příkladu vloží text <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.Primitives.Popup> ovládacích prvků v <xref:System.Windows.Controls.StackPanel>. Obsah <xref:System.Windows.Controls.Primitives.Popup> se zobrazí v <xref:System.Windows.Controls.TextBlock> ovládací prvek, který zobrazí jeho textu v samostatném okně, které čísel s plovoucí čárkou nad okna aplikace poblíž související <xref:System.Windows.Controls.Button> ovládacího prvku.  
   
- [!code-xaml[PopupSimple#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#1)]  
+ [!code-xaml[PopupSimple#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#1)]  
   
- [!code-xaml[PopupSimple#CreatePopupCodeXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#createpopupcodexaml)]  
+ [!code-xaml[PopupSimple#CreatePopupCodeXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#createpopupcodexaml)]  
   
 <a name="PopupUses"></a>   
 ## <a name="controls-that-implement-a-popup"></a>Ovládací prvky, které implementují automaticky otevíraného okna  
  Můžete vytvářet <xref:System.Windows.Controls.Primitives.Popup> ovládacích prvků do jiných ovládacích prvků. Implementujte následující ovládací prvky <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek pro konkrétní použití:  
   
--   <xref:System.Windows.Controls.ToolTip>. Pokud chcete vytvořit popisek pro element, použijte <xref:System.Windows.Controls.ToolTip> a <xref:System.Windows.Controls.ToolTipService> třídy. Další informace najdete v tématu [ToolTip – přehled](../../../../docs/framework/wpf/controls/tooltip-overview.md).  
+-   <xref:System.Windows.Controls.ToolTip>. Pokud chcete vytvořit popisek pro element, použijte <xref:System.Windows.Controls.ToolTip> a <xref:System.Windows.Controls.ToolTipService> třídy. Další informace najdete v tématu [ToolTip – přehled](tooltip-overview.md).  
   
--   <xref:System.Windows.Controls.ContextMenu>. Pokud chcete vytvořit kontextovou nabídku pro prvek, použijte <xref:System.Windows.Controls.ContextMenu> ovládacího prvku. Další informace najdete v tématu [ContextMenu – přehled](../../../../docs/framework/wpf/controls/contextmenu-overview.md).  
+-   <xref:System.Windows.Controls.ContextMenu>. Pokud chcete vytvořit kontextovou nabídku pro prvek, použijte <xref:System.Windows.Controls.ContextMenu> ovládacího prvku. Další informace najdete v tématu [ContextMenu – přehled](contextmenu-overview.md).  
   
 -   <xref:System.Windows.Controls.ComboBox>. Pokud chcete vytvořit ovládacího prvku pro výběr, který se má pole rozevíracího seznamu, kterou lze použít zobrazené nebo skryté, <xref:System.Windows.Controls.ComboBox> ovládacího prvku.  
   
--   <xref:System.Windows.Controls.Expander>. Pokud chcete vytvořit pro ovládací prvek zobrazující záhlaví s sbalitelné oblasti, která zobrazuje obsah, použijte <xref:System.Windows.Controls.Expander> ovládacího prvku. Další informace najdete v tématu [přehled rozšíření](../../../../docs/framework/wpf/controls/expander-overview.md).  
+-   <xref:System.Windows.Controls.Expander>. Pokud chcete vytvořit pro ovládací prvek zobrazující záhlaví s sbalitelné oblasti, která zobrazuje obsah, použijte <xref:System.Windows.Controls.Expander> ovládacího prvku. Další informace najdete v tématu [přehled rozšíření](expander-overview.md).  
   
 <a name="PopupBehaviorandAppearance"></a>   
 ## <a name="popup-behavior-and-appearance"></a>Automaticky otevírané okno chování a vzhledu  
@@ -74,13 +74,13 @@ ms.locfileid: "54616797"
   
 <a name="DefiningPopupPosition"></a>   
 ## <a name="defining-the-popup-position"></a>Definování překryvného umístění  
- Umístíte automaticky otevíraného okna tak, že nastavíte <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>, <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>, <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>, <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>, a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffsetProperty> vlastnosti. Další informace najdete v tématu [chování při umístění automaticky otevíraného okna](../../../../docs/framework/wpf/controls/popup-placement-behavior.md). Když <xref:System.Windows.Controls.Primitives.Popup> se zobrazí na obrazovce, je nepřemístí samotné Pokud přemístí svého nadřazeného objektu.  
+ Umístíte automaticky otevíraného okna tak, že nastavíte <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>, <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>, <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>, <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>, a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffsetProperty> vlastnosti. Další informace najdete v tématu [chování při umístění automaticky otevíraného okna](popup-placement-behavior.md). Když <xref:System.Windows.Controls.Primitives.Popup> se zobrazí na obrazovce, je nepřemístí samotné Pokud přemístí svého nadřazeného objektu.  
   
 <a name="CustomizingPopupPlacement"></a>   
 ### <a name="customizing-popup-placement"></a>Přizpůsobení umístění automaticky otevíraného okna  
  Můžete přizpůsobit umístění <xref:System.Windows.Controls.Primitives.Popup> ovládacího prvku tak, že zadáte sady souřadnic, které jsou relativně k <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> místo, kam chcete <xref:System.Windows.Controls.Primitives.Popup> zobrazit.  
   
- Chcete-li přizpůsobit umístění, nastavte <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> vlastnost <xref:System.Windows.Controls.Primitives.PlacementMode.Custom>. Potom definujte <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> delegáta, který vrátí sadu bodů možná umístění a primární osy (v upřednostňovaném pořadí) pro <xref:System.Windows.Controls.Primitives.Popup>. Bod, který ukazuje největší část <xref:System.Windows.Controls.Primitives.Popup> se vybere automaticky. Příklad najdete v tématu [určení vlastního překryvného umístění](../../../../docs/framework/wpf/controls/how-to-specify-a-custom-popup-position.md).  
+ Chcete-li přizpůsobit umístění, nastavte <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> vlastnost <xref:System.Windows.Controls.Primitives.PlacementMode.Custom>. Potom definujte <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> delegáta, který vrátí sadu bodů možná umístění a primární osy (v upřednostňovaném pořadí) pro <xref:System.Windows.Controls.Primitives.Popup>. Bod, který ukazuje největší část <xref:System.Windows.Controls.Primitives.Popup> se vybere automaticky. Příklad najdete v tématu [určení vlastního překryvného umístění](how-to-specify-a-custom-popup-position.md).  
   
 <a name="PopupandtheVisualTree"></a>   
 ## <a name="popup-and-the-visual-tree"></a>Místní nabídka a vizuální strom  
@@ -96,5 +96,5 @@ ms.locfileid: "54616797"
 - <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback>
 - <xref:System.Windows.Controls.ToolTip>
 - <xref:System.Windows.Controls.ToolTipService>
-- [Témata s postupy](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)
-- [Témata s postupy](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)
+- [Témata s postupy](popup-how-to-topics.md)
+- [Témata s postupy](tooltip-how-to-topics.md)

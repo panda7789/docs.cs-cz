@@ -11,12 +11,12 @@ helpviewer_keywords:
 - text [WPF], performance
 - glyphs [WPF]
 ms.assetid: 66b1b9a7-8618-48db-b616-c57ea4327b98
-ms.openlocfilehash: e233503ec6a31b28134afbdaef229901b11fbaa0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: db0738008766343fa19454cac14e75b318663f34
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54741688"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352766"
 ---
 # <a name="optimizing-performance-text"></a>Optimalizace výkonu: Text
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnuje podporu pro prezentaci textový obsah prostřednictvím plně funkční [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] ovládacích prvků. Lze obecně rozdělit vykreslování textu ve třech vrstvách:  
@@ -49,11 +49,11 @@ ms.locfileid: "54741688"
 -   Reprezentace pevného formátu dokumentu, včetně klientů k předchozím verzím sady [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a další výpočetní zařízení.  
   
 > [!NOTE]
->  <xref:System.Windows.Documents.Glyphs> a <xref:System.Windows.Media.GlyphRun> jsou navrženy pro prezentaci pevného formátu dokumentu a tisku scénáře. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje několik elementů pro obecné rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] scénáře, jako <xref:System.Windows.Controls.Label> a <xref:System.Windows.Controls.TextBlock>. Další informace o rozložení a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénáře, naleznete v tématu [Typografie v rozhraní WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md).  
+>  <xref:System.Windows.Documents.Glyphs> a <xref:System.Windows.Media.GlyphRun> jsou navrženy pro prezentaci pevného formátu dokumentu a tisku scénáře. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje několik elementů pro obecné rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] scénáře, jako <xref:System.Windows.Controls.Label> a <xref:System.Windows.Controls.TextBlock>. Další informace o rozložení a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénáře, naleznete v tématu [Typografie v rozhraní WPF](typography-in-wpf.md).  
   
  Následující příklady ukazují, jak definovat vlastnosti <xref:System.Windows.Documents.Glyphs> objekt [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. <xref:System.Windows.Documents.Glyphs> Objekt představuje výstup <xref:System.Windows.Media.GlyphRun> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. V příkladech se předpokládá, že Arial Kurýrní nové a časy New Roman písma jsou nainstalovány v **C:\WINDOWS\Fonts** složky na místním počítači.  
   
- [!code-xaml[GlyphsOvwSample1#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GlyphsOvwSample1/CS/default.xaml#1)]  
+ [!code-xaml[GlyphsOvwSample1#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GlyphsOvwSample1/CS/default.xaml#1)]  
   
 ### <a name="using-drawglyphrun"></a>Pomocí DrawGlyphRun  
  Pokud máte vlastní ovládací prvek a chcete se vykreslují glyfy, použijte <xref:System.Windows.Media.DrawingContext.DrawGlyphRun%2A> metody.  
@@ -62,16 +62,16 @@ ms.locfileid: "54741688"
   
 <a name="FormattedText_Object"></a>   
 ## <a name="formattedtext-object"></a>Objekt FormattedText  
- <xref:System.Windows.Media.FormattedText> Objekt umožňuje nakreslit více řádky textu, ve kterém každý znak v textu jednotlivě naformátovaná. Další informace najdete v tématu [kreslení textu ve formátu](../../../../docs/framework/wpf/advanced/drawing-formatted-text.md).  
+ <xref:System.Windows.Media.FormattedText> Objekt umožňuje nakreslit více řádky textu, ve kterém každý znak v textu jednotlivě naformátovaná. Další informace najdete v tématu [kreslení textu ve formátu](drawing-formatted-text.md).  
   
- Chcete-li vytvořit formátovaný text, zavolejte <xref:System.Windows.Media.FormattedText.%23ctor%2A> konstruktor k vytvoření <xref:System.Windows.Media.FormattedText> objektu. Po vytvoření počáteční formátovaný řetězec, můžete použít celou řadu formátování styly. Pokud aplikace chce implementovat vlastní rozložení, pak bude <xref:System.Windows.Media.FormattedText> objekt je vhodnější než použití ovládacího prvku, jako například <xref:System.Windows.Controls.TextBlock>. Další informace o <xref:System.Windows.Media.FormattedText> objektu, najdete v článku [kreslení textu ve formátu](../../../../docs/framework/wpf/advanced/drawing-formatted-text.md) .  
+ Chcete-li vytvořit formátovaný text, zavolejte <xref:System.Windows.Media.FormattedText.%23ctor%2A> konstruktor k vytvoření <xref:System.Windows.Media.FormattedText> objektu. Po vytvoření počáteční formátovaný řetězec, můžete použít celou řadu formátování styly. Pokud aplikace chce implementovat vlastní rozložení, pak bude <xref:System.Windows.Media.FormattedText> objekt je vhodnější než použití ovládacího prvku, jako například <xref:System.Windows.Controls.TextBlock>. Další informace o <xref:System.Windows.Media.FormattedText> objektu, najdete v článku [kreslení textu ve formátu](drawing-formatted-text.md) .  
   
  <xref:System.Windows.Media.FormattedText> Objekt, který poskytuje nízké úrovně funkce pro formátování textu. Můžete změnit více styl na jeden nebo více znaků. Například lze zavolat i <xref:System.Windows.Media.FormattedText.SetFontSize%2A> a <xref:System.Windows.Media.FormattedText.SetForegroundBrush%2A> metody, chcete-li změnit formátování prvních pěti znaků v textu.  
   
  Následující příklad kódu vytvoří <xref:System.Windows.Media.FormattedText> objektu a vykreslí je.  
   
- [!code-csharp[formattedtextsnippets#FormattedTextSnippets1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FormattedTextSnippets/CSharp/Window1.xaml.cs#formattedtextsnippets1)]
- [!code-vb[formattedtextsnippets#FormattedTextSnippets1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FormattedTextSnippets/visualbasic/window1.xaml.vb#formattedtextsnippets1)]  
+ [!code-csharp[formattedtextsnippets#FormattedTextSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/FormattedTextSnippets/CSharp/Window1.xaml.cs#formattedtextsnippets1)]
+ [!code-vb[formattedtextsnippets#FormattedTextSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FormattedTextSnippets/visualbasic/window1.xaml.vb#formattedtextsnippets1)]  
   
 <a name="FlowDocument_TextBlock_Label"></a>   
 ## <a name="flowdocument-textblock-and-label-controls"></a>FlowDocument TextBlock a ovládací prvky popisku  
@@ -80,21 +80,21 @@ ms.locfileid: "54741688"
 ### <a name="flowdocument-impacts-performance-more-than-textblock-or-label"></a>FlowDocument ovlivňuje výkon více než prvku TextBlock nebo popisek  
  Obecně platí <xref:System.Windows.Controls.TextBlock> element by měl použít, pokud je text omezená podpora vyžadovat, například stručný větu v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label> lze použít, když je nutné podporovat minimální text. <xref:System.Windows.Documents.FlowDocument> Elementu je kontejner pro znovu přizpůsobitelným dokumenty, které podporují bohatý prezentační obsahu a proto má větší dopad na výkon než při použití <xref:System.Windows.Controls.TextBlock> nebo <xref:System.Windows.Controls.Label> ovládacích prvků.  
   
- Další informace o <xref:System.Windows.Documents.FlowDocument>, naleznete v tématu [přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md).  
+ Další informace o <xref:System.Windows.Documents.FlowDocument>, naleznete v tématu [přehled toku dokumentů](flow-document-overview.md).  
   
 ### <a name="avoid-using-textblock-in-flowdocument"></a>Vyhněte se použití TextBlock v FlowDocument  
  <xref:System.Windows.Controls.TextBlock> Element je odvozen od <xref:System.Windows.UIElement>. <xref:System.Windows.Documents.Run> Element je odvozen od <xref:System.Windows.Documents.TextElement>, což je méně nákladný než <xref:System.Windows.UIElement>-odvozenému objektu. Pokud je to možné, použijte <xref:System.Windows.Documents.Run> spíše než <xref:System.Windows.Controls.TextBlock> pro zobrazení textu v obsahu <xref:System.Windows.Documents.FlowDocument>.  
   
  Následující příklad kódu ukazuje dva způsoby nastavení obsahu textu v rámci <xref:System.Windows.Documents.FlowDocument>:  
   
- [!code-xaml[Performance#PerformanceSnippet13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/FlowDocument.xaml#performancesnippet13)]  
+ [!code-xaml[Performance#PerformanceSnippet13](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/FlowDocument.xaml#performancesnippet13)]  
   
 ### <a name="avoid-using-run-to-set-text-properties"></a>Vyhněte se použití spuštění můžete nastavit vlastnosti textu  
  Obecně platí, pomocí <xref:System.Windows.Documents.Run> v rámci <xref:System.Windows.Controls.TextBlock> je vyšší výkon než bez použití explicitní náročné <xref:System.Windows.Documents.Run> objektu. Pokud používáte <xref:System.Windows.Documents.Run> Pokud chcete nastavit vlastnosti text, nastavte tyto vlastnosti přímo na <xref:System.Windows.Controls.TextBlock> místo.  
   
  Následující příklad kódu znázorňuje tyto dva způsoby nastavení vlastnosti textu, v tomto případě <xref:System.Windows.Controls.TextBlock.FontWeight%2A> vlastnost:  
   
- [!code-xaml[Performance#PerformanceSnippet12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Window1.xaml#performancesnippet12)]  
+ [!code-xaml[Performance#PerformanceSnippet12](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Window1.xaml#performancesnippet12)]  
   
  Následující tabulka zobrazuje náklady na zobrazení 1000 <xref:System.Windows.Controls.TextBlock> objekty s a bez explicitního <xref:System.Windows.Documents.Run>.  
   
@@ -124,21 +124,21 @@ ms.locfileid: "54741688"
   
  Následující příklad kódu ukazuje více <xref:System.Windows.Controls.TextBlock> prvků, které slouží k zobrazení hypertextové odkazy:  
   
- [!code-xaml[Performance#PerformanceSnippet9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet9)]  
+ [!code-xaml[Performance#PerformanceSnippet9](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet9)]  
   
  Následující příklad kódu ukazuje efektivnější způsob zobrazení hypertextové odkazy, tentokrát pomocí jediného <xref:System.Windows.Controls.TextBlock>:  
   
- [!code-xaml[Performance#PerformanceSnippet10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet10)]  
+ [!code-xaml[Performance#PerformanceSnippet10](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet10)]  
   
 ### <a name="showing-underlines-on-hyperlinks-only-on-mouseenter-events"></a>Ukazuje na hypertextové odkazy pouze na události MouseEnter podtržení  
- A <xref:System.Windows.TextDecoration> objektu je vizuální dekoru, můžete přidat do textu, však může být pro vytvoření instance náročné na výkon. Pokud provedete rozsáhlé používání šířky <xref:System.Windows.Documents.Hyperlink> prvky, vezměte v úvahu zobrazující podtržení jenom v případě, že se aktivuje událost, například <xref:System.Windows.ContentElement.MouseEnter> událostí. Další informace najdete v tématu [podtržený zadejte hypertextového odkazu](../../../../docs/framework/wpf/advanced/how-to-specify-whether-a-hyperlink-is-underlined.md).  
+ A <xref:System.Windows.TextDecoration> objektu je vizuální dekoru, můžete přidat do textu, však může být pro vytvoření instance náročné na výkon. Pokud provedete rozsáhlé používání šířky <xref:System.Windows.Documents.Hyperlink> prvky, vezměte v úvahu zobrazující podtržení jenom v případě, že se aktivuje událost, například <xref:System.Windows.ContentElement.MouseEnter> událostí. Další informace najdete v tématu [podtržený zadejte hypertextového odkazu](how-to-specify-whether-a-hyperlink-is-underlined.md).  
   
- ![Hypertextové odkazy zobrazení TextDecorations](../../../../docs/framework/wpf/advanced/media/textdecoration03.png "TextDecoration03")  
+ ![Hypertextové odkazy zobrazení TextDecorations](./media/textdecoration03.png "TextDecoration03")  
 Povolí, v MouseEnter hypertextový odkaz  
   
  Následující ukázkový kód <xref:System.Windows.Documents.Hyperlink> definována a nemusíte podtržení:  
   
- [!code-xaml[Performance#PerformanceSnippet11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet11)]  
+ [!code-xaml[Performance#PerformanceSnippet11](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet11)]  
   
  Následující tabulka zobrazuje náklady na zobrazení 1000 <xref:System.Windows.Documents.Hyperlink> elementy a nemusíte podtržení.  
   
@@ -161,12 +161,12 @@ Povolí, v MouseEnter hypertextový odkaz
  Funkci optimální odstavce <xref:System.Windows.Documents.FlowDocument> objekt rozložen odstavce tak, aby se jako rovnoměrně distribuuje prázdné znaky. Ve výchozím nastavení optimální odstavec je zakázaná. Tuto funkci lze povolit nastavením objektu <xref:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled%2A> vlastnost `true`. Povolení této funkce však ovlivňuje výkon aplikace. Je doporučeno, je velmi riskantní používat funkci optimální odstavec pokud ho potřebujete.  
   
 ## <a name="see-also"></a>Viz také:
-- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
-- [Plánování výkonu aplikace](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)
-- [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)
-- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)
-- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)
-- [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)
-- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
-- [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
+- [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
+- [Plánování výkonu aplikace](planning-for-application-performance.md)
+- [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
+- [Rozložení a návrh](optimizing-performance-layout-and-design.md)
+- [2D grafika a obrázky](optimizing-performance-2d-graphics-and-imaging.md)
+- [Chování objektu](optimizing-performance-object-behavior.md)
+- [Prostředky aplikace](optimizing-performance-application-resources.md)
+- [Datová vazba](optimizing-performance-data-binding.md)
+- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)

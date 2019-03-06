@@ -2,23 +2,24 @@
 title: <ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9af4ec79-cdef-457e-9dca-09d5eb821594
-ms.openlocfilehash: f1f405c693d8ed9182baac60a06df7928058ee09
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.openlocfilehash: 77b1383c1fcd3e867e6cef0ae5507b3a2ff8a80d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55759740"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371382"
 ---
 # <a name="ws2007federationhttpbinding"></a>\<ws2007FederationHttpBinding>
-Zabezpečená a interoperabilní vazbu, která je odvozena z [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a podporuje zabezpečení.  
-  
- \<system.ServiceModel>  
-\<vazby >  
-\<ws2007FederationHttpBinding>  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```xml  
+
+Zabezpečená a interoperabilní vazbu, která je odvozena z [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a podporuje zabezpečení.
+
+\<system.ServiceModel>\
+\<vazby > \
+\<ws2007FederationHttpBinding>
+
+## <a name="syntax"></a>Syntaxe
+
+```xml
 <ws2007FederationHttpBinding>
   <binding bypassProxyOnLocal="Boolean"
            closeTimeout="TimeSpan"
@@ -53,52 +54,54 @@ Zabezpečená a interoperabilní vazbu, která je odvozena z [ \<wsFederationHtt
                   maxStringContentLength="Integer" />
   </binding>
 </ws2007FederationHttpBinding>
-```  
-  
-## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
-  
-### <a name="attributes"></a>Atributy  
-  
-|Atribut|Popis|  
-|---------------|-----------------|  
-|`bypassProxyOnLocal`|Hodnota, která označuje, zda obejít proxy server pro místní adresy. Výchozí hodnota je `false`.|  
-|`closeTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace uzavření. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
-|`hostnameComparisonMode`|Určuje režim porovnání jména hostitele HTTP použít k analýze identifikátoru URI. Tento atribut je typu <xref:System.ServiceModel.HostNameComparisonMode>, což znamená, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele. Výchozí hodnota je <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, které ignoruje jako název hostitele v porovnávání.|  
-|`maxBufferPoolSize`|Velikost fondu maximální vyrovnávací paměti pro tuto vazbu. Výchozí hodnota je 524,288 bajtů (512 * 1024). Mnoho částí Windows Communication Foundation (WCF) použít vyrovnávací paměti. Vytváření a ničení pokaždé, když používají se vyrovnávací paměti je nákladné a uvolňování paměti pro vyrovnávací paměť je také náročné. S fondy vyrovnávací paměti může trvat vyrovnávací paměti z fondu, ho použít a vrátit do fondu, až budete hotovi. Proto je vyloučeno režie při vytváření a ničení vyrovnávací paměti.|  
-|`maxReceivedMessageSize`|Maximální velikost v bajtech, včetně záhlaví, které může být přijata v kanálu nakonfigurovaným s touto vazbou. Odesílatel zprávy, která překračuje tento limit obdrží chybu protokolu SOAP. Příjemce zahodí a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536.|  
-|`messageEncoding`|Definuje kodér pro kódování zprávy. Platné hodnoty patří:<br /><br /> -Text: Použijte kodér textu zprávy.<br />-Mtom: Pomocí kodéru zpráv přenosu organizace mechanismus 1.0 (MTOM).<br /><br /> Výchozí hodnota je Text.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.WSMessageEncoding>.|  
-|`name`|Název konfigurace vazby. Tato hodnota by měla být jedinečný, protože se používá jako identifikace pro vazbu. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název. Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).|  
-|`openTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
-|`privactyNoticeAt`|Identifikátor URI, ve kterém je umístěno oznámení soukromí.|  
-|`privactyNoticeVersion`|Verze aktuálního oznámení o ochraně osobních údajů.|  
-|`proxyAddress`|Identifikátor URI, který určuje adresu proxy serveru HTTP. Pokud `useDefaultWebProxy` je `true`, toto nastavení musí být `null`. Výchozí hodnota je `null`.|  
-|`receiveTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace obdržení. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:10:00.|  
-|`sendTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
-|`textEncoding`|Nastaví znakovou sadu kódování, které má být použito pro vysílání zpráv z vazby. Platné hodnoty patří:<br /><br /> -BigEndianUnicode: Big Endian kódování Unicode.<br />-Unicode: 16bitové kódování.<br />-   UTF8: 8bitové kódování.<br /><br /> Použije se UTF8. Tento atribut je typu <xref:System.Text.Encoding>.|  
-|`transactionFlow`|Hodnota, která určuje, zda vazba podporuje průchodu WS-transakce. Výchozí hodnota je `false`.|  
-|`useDefaultWebProxy`|Hodnota, která označuje, zda se používá v systému automaticky nakonfigurovaný proxy HTTP. Adresa proxy musí být `null` (to znamená, není nastavený) Pokud tento atribut je `true`. Výchozí hodnota je `true`.|  
-  
-### <a name="child-elements"></a>Podřízené elementy  
-  
-|Prvek|Popis|  
-|-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md)|Definuje nastavení zabezpečení pro zprávu. Tento prvek je typu <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>.|  
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
-|[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Určuje, zda jsou vytvořeny spolehlivé relace mezi koncovými body kanálu.|  
-  
-### <a name="parent-elements"></a>Nadřazené elementy  
-  
-|Prvek|Popis|  
-|-------------|-----------------|  
-|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
-  
-## <a name="remarks"></a>Poznámky  
- Federace se nachází taky možnost podělit identit napříč více podniky nebo vztah důvěryhodnosti domény pro ověřování a autorizaci. Protokol WS-Trust používá k mapování reprezentace identit z jednoho vztahu důvěryhodnosti domény na jiný. Federované vazby HTTP podporuje zabezpečení protokolu SOAP, stejně jako ve smíšeném režimu zabezpečení, ale zabezpečení přenosu není podporováno. Nakonfigurované s touto vazbou služby musíte použít přenos pomocí protokolu HTTP. Další informace najdete v tématu [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
-  
-## <a name="example"></a>Příklad  
-  
-```xml  
+```
+
+## <a name="attributes-and-elements"></a>Atributy a elementy
+
+Následující části popisují atributy, podřízené prvky a nadřazené prvky.
+
+### <a name="attributes"></a>Atributy
+
+|Atribut|Popis|
+|---------------|-----------------|
+|`bypassProxyOnLocal`|Hodnota, která označuje, zda obejít proxy server pro místní adresy. Výchozí hodnota je `false`.|
+|`closeTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace uzavření. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|
+|`hostnameComparisonMode`|Určuje režim porovnání jména hostitele HTTP použít k analýze identifikátoru URI. Tento atribut je typu <xref:System.ServiceModel.HostNameComparisonMode>, což znamená, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele. Výchozí hodnota je <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, které ignoruje jako název hostitele v porovnávání.|
+|`maxBufferPoolSize`|Velikost fondu maximální vyrovnávací paměti pro tuto vazbu. Výchozí hodnota je 524,288 bajtů (512 * 1024). Mnoho částí Windows Communication Foundation (WCF) použít vyrovnávací paměti. Vytváření a ničení pokaždé, když používají se vyrovnávací paměti je nákladné a uvolňování paměti pro vyrovnávací paměť je také náročné. S fondy vyrovnávací paměti může trvat vyrovnávací paměti z fondu, ho použít a vrátit do fondu, až budete hotovi. Proto je vyloučeno režie při vytváření a ničení vyrovnávací paměti.|
+|`maxReceivedMessageSize`|Maximální velikost v bajtech, včetně záhlaví, které může být přijata v kanálu nakonfigurovaným s touto vazbou. Odesílatel zprávy, která překračuje tento limit obdrží chybu protokolu SOAP. Příjemce zahodí a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536.|
+|`messageEncoding`|Definuje kodér pro kódování zprávy. Platné hodnoty patří:<br /><br /> -Text: Použijte kodér textu zprávy.<br />-Mtom: Pomocí kodéru zpráv přenosu organizace mechanismus 1.0 (MTOM).<br /><br /> Výchozí hodnota je Text.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.WSMessageEncoding>.|
+|`name`|Název konfigurace vazby. Tato hodnota by měla být jedinečný, protože se používá jako identifikace pro vazbu. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název. Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).|
+|`openTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|
+|`privacyNoticeAt`|Identifikátor URI, ve kterém je umístěno oznámení soukromí.|
+|`privacyNoticeVersion`|Verze aktuálního oznámení o ochraně osobních údajů.|
+|`proxyAddress`|Identifikátor URI, který určuje adresu proxy serveru HTTP. Pokud `useDefaultWebProxy` je `true`, toto nastavení musí být `null`. Výchozí hodnota je `null`.|
+|`receiveTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace obdržení. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:10:00.|
+|`sendTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|
+|`textEncoding`|Nastaví znakovou sadu kódování, které má být použito pro vysílání zpráv z vazby. Platné hodnoty patří:<br /><br /> -BigEndianUnicode: Big Endian kódování Unicode.<br />-Unicode: 16bitové kódování.<br />-   UTF8: 8bitové kódování.<br /><br /> Použije se UTF8. Tento atribut je typu <xref:System.Text.Encoding>.|
+|`transactionFlow`|Hodnota, která určuje, zda vazba podporuje průchodu WS-transakce. Výchozí hodnota je `false`.|
+|`useDefaultWebProxy`|Hodnota, která označuje, zda se používá v systému automaticky nakonfigurovaný proxy HTTP. Adresa proxy musí být `null` (to znamená, není nastavený) Pokud tento atribut je `true`. Výchozí hodnota je `true`.|
+
+### <a name="child-elements"></a>Podřízené elementy
+
+|Prvek|Popis|
+|-------------|-----------------|
+|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md)|Definuje nastavení zabezpečení pro zprávu. Tento prvek je typu <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>.|
+|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|
+|[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Určuje, zda jsou vytvořeny spolehlivé relace mezi koncovými body kanálu.|
+
+### <a name="parent-elements"></a>Nadřazené elementy
+
+|Prvek|Popis|
+|-------------|-----------------|
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|
+
+## <a name="remarks"></a>Poznámky
+
+Federace se nachází taky možnost podělit identit napříč více podniky nebo vztah důvěryhodnosti domény pro ověřování a autorizaci. Protokol WS-Trust používá k mapování reprezentace identit z jednoho vztahu důvěryhodnosti domény na jiný. Federované vazby HTTP podporuje zabezpečení protokolu SOAP, stejně jako ve smíšeném režimu zabezpečení, ale zabezpečení přenosu není podporováno. Nakonfigurované s touto vazbou služby musíte použít přenos pomocí protokolu HTTP. Další informace najdete v tématu [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).
+
+## <a name="example"></a>Příklad
+
+```xml
 <configuration>
   <system.ServiceModel>
     <bindings>
@@ -127,9 +130,10 @@ Zabezpečená a interoperabilní vazbu, která je odvozena z [ \<wsFederationHtt
     </bindings>
   </system.ServiceModel>
 </configuration>
-```  
-  
+```
+
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.WS2007FederationHttpBinding>
 - <xref:System.ServiceModel.Configuration.WS2007FederationHttpBindingElement>
 - [\<wsFederationHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)

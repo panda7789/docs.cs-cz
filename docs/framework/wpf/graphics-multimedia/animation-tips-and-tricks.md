@@ -14,12 +14,12 @@ helpviewer_keywords:
 - performance troubleshooting [WPF], animation
 - animations [WPF], use of system resources
 ms.assetid: e467796b-d5d4-45a6-a108-8c5d7ff69a0f
-ms.openlocfilehash: 6d79d3330154fff33abe5a401a70c6b9a20aad72
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e8b2a6b5386ec33ad8aa5281d808bb7089149764
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54660421"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57362432"
 ---
 # <a name="animation-tips-and-tricks"></a>Tipy a triky animace
 Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], existuje několik tipů a triků, které můžete provést vašich animacích líp fungovat a uložit frustrace.  
@@ -28,13 +28,13 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
 ## <a name="general-issues"></a>Obecné problémy  
   
 ### <a name="animating-the-position-of-a-scroll-bar-or-slider-freezes-it"></a>Animace polohy posuvníku nebo posuvník se zablokuje ho  
- Pokud je vlastnost pozice posuvníku nebo posuvník pomocí animace, který má <xref:System.Windows.Media.Animation.FillBehavior> z <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd> (výchozí hodnota), uživatel se už se moct přesunout posuvník nebo posuvník. To je proto, že i v případě, že animace ukončena, ho pořád přepisuje vlastnost target základní hodnoty. Zastavíte animaci z aktuální hodnota vlastnosti přepsání, odeberte ji nebo jí <xref:System.Windows.Media.Animation.FillBehavior> z <xref:System.Windows.Media.Animation.FillBehavior.Stop>. Další informace a příklad najdete v tématu [nastavit vlastnost Po animaci pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-a-property-after-animating-it-with-a-storyboard.md).  
+ Pokud je vlastnost pozice posuvníku nebo posuvník pomocí animace, který má <xref:System.Windows.Media.Animation.FillBehavior> z <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd> (výchozí hodnota), uživatel se už se moct přesunout posuvník nebo posuvník. To je proto, že i v případě, že animace ukončena, ho pořád přepisuje vlastnost target základní hodnoty. Zastavíte animaci z aktuální hodnota vlastnosti přepsání, odeberte ji nebo jí <xref:System.Windows.Media.Animation.FillBehavior> z <xref:System.Windows.Media.Animation.FillBehavior.Stop>. Další informace a příklad najdete v tématu [nastavit vlastnost Po animaci pomocí scénáře](how-to-set-a-property-after-animating-it-with-a-storyboard.md).  
   
 ### <a name="animating-the-output-of-an-animation-has-no-effect"></a>Animace výstup animace nemá žádný vliv  
  Nelze animovat objekt, který se nachází výstup z jiné animace. Například, pokud použijete <xref:System.Windows.Media.Animation.ObjectAnimationUsingKeyFrames> pro animaci <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Rectangle> z <xref:System.Windows.Media.RadialGradientBrush> k <xref:System.Windows.Media.SolidColorBrush>, všechny vlastnosti nelze animovat <xref:System.Windows.Media.RadialGradientBrush> nebo <xref:System.Windows.Media.SolidColorBrush>.  
   
 ### <a name="cant-change-the-value-of-a-property-after-animating-it"></a>Nelze změnit hodnotu vlastnosti po animaci  
- V některých případech se může zobrazit, že nelze změnit hodnotu vlastnosti po je byl animovat, dokonce i po ukončení animace. To je proto, že i v případě, že animace ukončena, ho pořád přepisuje základní hodnotu vlastnosti. Zastavíte animaci z aktuální hodnota vlastnosti přepsání, odeberte ji nebo jí <xref:System.Windows.Media.Animation.FillBehavior> z <xref:System.Windows.Media.Animation.FillBehavior.Stop>. Další informace a příklad najdete v tématu [nastavit vlastnost Po animaci pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-a-property-after-animating-it-with-a-storyboard.md).  
+ V některých případech se může zobrazit, že nelze změnit hodnotu vlastnosti po je byl animovat, dokonce i po ukončení animace. To je proto, že i v případě, že animace ukončena, ho pořád přepisuje základní hodnotu vlastnosti. Zastavíte animaci z aktuální hodnota vlastnosti přepsání, odeberte ji nebo jí <xref:System.Windows.Media.Animation.FillBehavior> z <xref:System.Windows.Media.Animation.FillBehavior.Stop>. Další informace a příklad najdete v tématu [nastavit vlastnost Po animaci pomocí scénáře](how-to-set-a-property-after-animating-it-with-a-storyboard.md).  
   
 ### <a name="changing-a-timeline-has-no-effect"></a>Změna časovou osu nemá žádný vliv  
  I když většina <xref:System.Windows.Media.Animation.Timeline> jsou animovatelné vlastnosti a mohou být data vázány, změna hodnot vlastnosti aktivní <xref:System.Windows.Media.Animation.Timeline> zdá se, že nemají žádný vliv. Důvodem je, že, když <xref:System.Windows.Media.Animation.Timeline> je spuštěno, vytvoří kopii tohoto systému časování <xref:System.Windows.Media.Animation.Timeline> a použije ho k vytvoření <xref:System.Windows.Media.Animation.Clock> objektu. Úprava původní nemá žádný vliv na kopírování v systému.  
@@ -47,14 +47,14 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
   
 -   Při práci přímo na úrovni hodin, vytvořit a použít novou sadu hodiny a pomocí nich nahradí předchozí sadu generovanou hodiny.  
   
- Další informace o časové osy a hodiny, naleznete v tématu [animace a časování přehledu systému](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md).  
+ Další informace o časové osy a hodiny, naleznete v tématu [animace a časování přehledu systému](animation-and-timing-system-overview.md).  
   
 ### <a name="fillbehaviorstop-doesnt-work-as-expected"></a>FillBehavior.Stop nebude fungovat podle očekávání  
  Existují situace, při nastavení <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> vlastnost <xref:System.Windows.Media.Animation.FillBehavior.Stop> zdá se, že nemají žádný vliv, jako např. kdy animace "předá" do jiného vzhledem k tomu, že má <xref:System.Windows.Media.Animation.BeginStoryboard.HandoffBehavior%2A> nastavení <xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace>.  
   
  Následující příklad vytvoří <xref:System.Windows.Controls.Canvas>, <xref:System.Windows.Shapes.Rectangle> a <xref:System.Windows.Media.TranslateTransform>. <xref:System.Windows.Media.TranslateTransform> Bude při animaci pohybovat přesunout <xref:System.Windows.Shapes.Rectangle> kolem <xref:System.Windows.Controls.Canvas>.  
   
- [!code-xaml[AnimationTipsAndTricksSample_snip#FillBehaviorTipAnimatedObject](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml#fillbehaviortipanimatedobject)]  
+ [!code-xaml[AnimationTipsAndTricksSample_snip#FillBehaviorTipAnimatedObject](~/samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml#fillbehaviortipanimatedobject)]  
   
  Příklady v této části použít předchozí objekty k předvedení několik případů kde <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> vlastnost nechová podle očekávání tak.  
   
@@ -63,11 +63,11 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
   
  První <xref:System.Windows.Media.Animation.Storyboard>, `B1`, animuje <xref:System.Windows.Media.TranslateTransform.X%2A> vlastnost <xref:System.Windows.Media.TranslateTransform> od 0 do 350, který přesune obdélník 350 pixelů na pravé straně. Při dosažení konce jeho trvání animace a zastaví přehrávání, <xref:System.Windows.Media.TranslateTransform.X%2A> vlastnost vrátí na původní hodnotu, 0. V důsledku toho obdélník přesune do pravé 350 pixelů a pak přejde zpět na původní pozici.  
   
- [!code-xaml[AnimationTipsAndTricksSample_snip#FillBehaviorTipStoryboardB1Button](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml#fillbehaviortipstoryboardb1button)]  
+ [!code-xaml[AnimationTipsAndTricksSample_snip#FillBehaviorTipStoryboardB1Button](~/samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml#fillbehaviortipstoryboardb1button)]  
   
  Druhá <xref:System.Windows.Media.Animation.Storyboard>, `B2`, také animuje <xref:System.Windows.Media.TranslateTransform.X%2A> vlastnost stejného <xref:System.Windows.Media.TranslateTransform>. Protože pouze <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnosti animace v tomto <xref:System.Windows.Media.Animation.Storyboard> je nastaven, animace používá aktuální hodnotu vlastnosti se animuje jako svou výchozí hodnotu.  
   
- [!code-xaml[AnimationTipsAndTricksSample_snip#FillBehaviorTipStoryboardB2Button](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml#fillbehaviortipstoryboardb2button)]  
+ [!code-xaml[AnimationTipsAndTricksSample_snip#FillBehaviorTipStoryboardB2Button](~/samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml#fillbehaviortipstoryboardb2button)]  
   
  Pokud kliknete na druhé tlačítko při prvním <xref:System.Windows.Media.Animation.Storyboard> je přehrávání, by se dalo očekávat následující chování:  
   
@@ -80,16 +80,16 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
 #### <a name="fillbehavior-and-the-completed-event"></a>FillBehavior a dokončené události  
  Další příklady ukazují jiný scénář, ve kterém <xref:System.Windows.Media.Animation.FillBehavior.Stop> <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> zdá se, že nemají žádný vliv. Znovu, v příkladu se používá ve scénáři pro animaci <xref:System.Windows.Media.TranslateTransform.X%2A> vlastnost <xref:System.Windows.Media.TranslateTransform> od 0 do 350. Ale tentokrát v příkladu zaregistruje <xref:System.Windows.Media.Animation.Timeline.Completed> událostí.  
   
- [!code-xaml[AnimationTipsAndTricksSample_snip#FillBehaviorTipStoryboardCButton](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml#fillbehaviortipstoryboardcbutton)]  
+ [!code-xaml[AnimationTipsAndTricksSample_snip#FillBehaviorTipStoryboardCButton](~/samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml#fillbehaviortipstoryboardcbutton)]  
   
  <xref:System.Windows.Media.Animation.Timeline.Completed> Obslužné rutiny události spustí jiný <xref:System.Windows.Media.Animation.Storyboard> , který animuje stejnou vlastnost její aktuální hodnota na 500.  
   
- [!code-csharp[AnimationTipsAndTricksSample_snip#FillBehaviorTipStoryboardC1CompletedHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml.cs#fillbehaviortipstoryboardc1completedhandler)]
- [!code-vb[AnimationTipsAndTricksSample_snip#FillBehaviorTipStoryboardC1CompletedHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/VisualBasic/FillBehaviorTip.xaml.vb#fillbehaviortipstoryboardc1completedhandler)]  
+ [!code-csharp[AnimationTipsAndTricksSample_snip#FillBehaviorTipStoryboardC1CompletedHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml.cs#fillbehaviortipstoryboardc1completedhandler)]
+ [!code-vb[AnimationTipsAndTricksSample_snip#FillBehaviorTipStoryboardC1CompletedHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/VisualBasic/FillBehaviorTip.xaml.vb#fillbehaviortipstoryboardc1completedhandler)]  
   
  Následuje kód, který definuje druhý <xref:System.Windows.Media.Animation.Storyboard> jako prostředek.  
   
- [!code-xaml[AnimationTipsAndTricksSample_snip#FillBehaviorTipResources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml#fillbehaviortipresources)]  
+ [!code-xaml[AnimationTipsAndTricksSample_snip#FillBehaviorTipResources](~/samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml#fillbehaviortipresources)]  
   
  Při spuštění <xref:System.Windows.Media.Animation.Storyboard>, by se dalo očekávat <xref:System.Windows.Media.TranslateTransform.X%2A> vlastnost <xref:System.Windows.Media.TranslateTransform> pro animaci od 0 do 350, pak se vraťte na 0 po dokončení (protože má <xref:System.Windows.Media.Animation.FillBehavior> nastavení <xref:System.Windows.Media.Animation.FillBehavior.Stop>) a potom bude animovat z 0 na 500. Místo toho <xref:System.Windows.Media.TranslateTransform> animuje z 0 na 350 a potom na 500.  
   
@@ -113,7 +113,7 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
   
 -   K odebrání animace z konkrétní vlastnosti, použijte <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%28System.Windows.DependencyProperty%2CSystem.Windows.Media.Animation.AnimationTimeline%29> metody. Zadejte vlastnost animované jako první parametr a `null` jako druhý. Tato akce odebere všechny hodiny animace z vlastnosti.  
   
- Další informace o různých způsobech animace vlastností najdete v tématu [přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md).  
+ Další informace o různých způsobech animace vlastností najdete v tématu [přehled způsobů animace vlastností](property-animation-techniques-overview.md).  
   
 ### <a name="using-the-compose-handoffbehavior-consumes-system-resources"></a>Použití Compose HandoffBehavior využívá systémové prostředky  
  Při použití <xref:System.Windows.Media.Animation.Storyboard>, <xref:System.Windows.Media.Animation.AnimationTimeline>, nebo <xref:System.Windows.Media.Animation.AnimationClock> k vlastnosti pomocí <xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior>, jakékoli <xref:System.Windows.Media.Animation.Clock> objekty dříve přidružené k této vlastnosti budou dál spotřebovávat systémové prostředky, nebudou časování systému Tyto hodiny automaticky odeberte.  
@@ -126,7 +126,7 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
   
  To je především to problém pro animací na objekty, které mají dlouhou životnost.  Pokud objekt je vynuceno uvolnění paměti, jeho hodiny se také odpojí a prováděno uvolnění paměti.  
   
- Další informace o objekty clock, naleznete v tématu [animace a časování přehledu systému](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md).  
+ Další informace o objekty clock, naleznete v tématu [animace a časování přehledu systému](animation-and-timing-system-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled animace](animation-overview.md)

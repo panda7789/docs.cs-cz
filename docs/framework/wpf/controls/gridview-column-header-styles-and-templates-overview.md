@@ -8,12 +8,12 @@ helpviewer_keywords:
 - headers [WPF], customizing
 - GridView view mode [WPF], customizing column headers
 ms.assetid: 74835674-a39e-4ab5-9418-ad7f6ab7b956
-ms.openlocfilehash: 7cc758760075746971dd0d397568c64e7baf8b67
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6e5cf8a8b280a539feb73a54defbb0cd8c2c0f79
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590900"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57366644"
 ---
 # <a name="gridview-column-header-styles-and-templates-overview"></a>GridView Styly záhlaví sloupců a přehled šablon
 Tento přehled popisuje pořadí priorit pro vlastnosti, které můžete použít k přizpůsobení záhlaví sloupce v <xref:System.Windows.Controls.GridView> režim zobrazení <xref:System.Windows.Controls.ListView> ovládacího prvku.  
@@ -36,6 +36,6 @@ Tento přehled popisuje pořadí priorit pro vlastnosti, které můžete použí
  <sup>1</sup>pro **vlastnosti šablony záhlaví**, pokud jste nastavili šablonu a vlastnosti selektor šablony, má přednost vlastnosti šablony. Pokud nastavíte například <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> a <xref:System.Windows.Controls.ContentControl.ContentTemplateSelector%2A> vlastnosti, <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> vlastnost má přednost.  
   
 ## <a name="see-also"></a>Viz také:
-- [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
-- [ListView – přehled](../../../../docs/framework/wpf/controls/listview-overview.md)
-- [GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)
+- [Témata s postupy](listview-how-to-topics.md)
+- [ListView – přehled](listview-overview.md)
+- [GridView – přehled](gridview-overview.md)

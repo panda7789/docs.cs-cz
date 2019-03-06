@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: d7b544fcb308960ff86b83655d60cb1453b6571a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dee1df1e122e47ea67618da5a1e4349e28d90447
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543812"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377362"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 Toto téma popisuje problémy, které byste měli vědět při zápisu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací na globálním trhu. Globalizace programovací prvky, které jsou definovány v [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] v `System.Globalization`.
@@ -47,7 +47,7 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
 
 <a name="lang_attrib"></a>
 ### <a name="language-attribute"></a>Atribut Language
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] používá [XML: lang](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md) představující atributu language elementu.  Abyste mohli využívat <xref:System.Globalization.CultureInfo> třídy, hodnota atributu language musí být jeden z názvů jazykovou verzi předdefinovaná v nástroji <xref:System.Globalization.CultureInfo>. [XML: lang](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md) je odvoditelný v stromem prvků (podle pravidel XML, ne tedy nutně kvůli dědičnosti vlastností závislostí) a jeho výchozí hodnota je prázdný řetězec, pokud není explicitně přiřazeny.
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] používá [XML: lang](../../xaml-services/xml-lang-handling-in-xaml.md) představující atributu language elementu.  Abyste mohli využívat <xref:System.Globalization.CultureInfo> třídy, hodnota atributu language musí být jeden z názvů jazykovou verzi předdefinovaná v nástroji <xref:System.Globalization.CultureInfo>. [XML: lang](../../xaml-services/xml-lang-handling-in-xaml.md) je odvoditelný v stromem prvků (podle pravidel XML, ne tedy nutně kvůli dědičnosti vlastností závislostí) a jeho výchozí hodnota je prázdný řetězec, pokud není explicitně přiřazeny.
 
  Atribut language je velmi užitečné pro určení dialekty. Francouzština má například pravopisu, slovník a výslovnost ve Francii, Quebec, Belgie a Švýcarska. Také čínštiny, japonštiny a korejštiny sdílet body kódu v [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)], ale znakový obrazce se liší a používají něco úplně jiného písma.
 
@@ -151,7 +151,7 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
 ### <a name="localizable-user-interface"></a>Lokalizovatelné uživatelského rozhraní
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace používají [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] definovat jejich [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] umožňuje vývojářům zadat sadu vlastností a logika hierarchii objektů. Primární použití [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je vývoj [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací, ale slouží k určení hierarchie žádné [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty. Většina vývojářů používá [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a zadat jejich aplikaci [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] a reagovat na interakci uživatele pomocí programovacího jazyka, jako je C#.
 
- Z prostředků hlediska [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru určená k popisu závislá na jazyku [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] je element prostředku a proto jeho poslední distribuce musí být ve formátu lokalizovatelné pro podporu mezinárodní jazyky. Protože [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nemůže zpracovávat události, mnoho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikace obsahují bloky kódu k tomu. Další informace najdete v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md). Kód je vynechají a zkompilovány do různých binární soubory při [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je soubor tokenizovaného do formuláře BAML z XAML. Formulář BAML souborů XAML, obrázky a další typy objektů spravovaných prostředků jsou vloženy do satelitní sestavení prostředků, které může být lokalizována do jiných jazyků, nebo hlavní sestavení při lokalizaci se nevyžaduje.
+ Z prostředků hlediska [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru určená k popisu závislá na jazyku [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] je element prostředku a proto jeho poslední distribuce musí být ve formátu lokalizovatelné pro podporu mezinárodní jazyky. Protože [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nemůže zpracovávat události, mnoho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikace obsahují bloky kódu k tomu. Další informace najdete v tématu [přehled XAML (WPF)](xaml-overview-wpf.md). Kód je vynechají a zkompilovány do různých binární soubory při [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je soubor tokenizovaného do formuláře BAML z XAML. Formulář BAML souborů XAML, obrázky a další typy objektů spravovaných prostředků jsou vloženy do satelitní sestavení prostředků, které může být lokalizována do jiných jazyků, nebo hlavní sestavení při lokalizaci se nevyžaduje.
 
 > [!NOTE]
 >  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace podporují všechny [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)] [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] prostředky, včetně tabulek řetězců, obrázků a tak dále.
@@ -167,7 +167,7 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
 
  Můžete vytvořit instanci prostředků ve vaší aplikaci <xref:System.Resources.ResourceManager> a načtěte prostředek, který chcete použít. Následující příklad demonstruje, jak to udělat.
 
- [!code-csharp[LocalizationResources#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LocalizationResources/CSharp/page1.xaml.cs#2)]
+ [!code-csharp[LocalizationResources#2](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationResources/CSharp/page1.xaml.cs#2)]
 
 <a name="using_clickonce"></a>
 ## <a name="using-clickonce-with-localized-applications"></a>Pomocí lokalizovaných aplikací ClickOnce
@@ -181,4 +181,4 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
 ```
 
 ## <a name="see-also"></a>Viz také:
-- [Přehled globalizace a lokalizace WPF](../../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)
+- [Přehled globalizace a lokalizace WPF](wpf-globalization-and-localization-overview.md)

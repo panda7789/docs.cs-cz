@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DateTime XAML text [WPF]
 - DateTime XAML syntax [WPF], format strings for
 ms.assetid: 5901710a-609b-40c8-9d65-f0016cd9090b
-ms.openlocfilehash: c443451a0fd9fffec97377efc611e0ccfe534f06
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8180064d1a500ea17568f6790e13398524eb5f36
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54606722"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57365682"
 ---
 # <a name="datetime-xaml-syntax"></a>DateTime – syntaxe v jazyce XAML
 Některé ovládací prvky, jako například <xref:System.Windows.Controls.Calendar> a <xref:System.Windows.Controls.DatePicker>, mají vlastnosti, které používají <xref:System.DateTime> typu. I když obvykle zadat počáteční datum a čas pro tyto ovládací prvky v kódu v době běhu je zadat v XAML počáteční datum nebo čas. Analyzátor WPF XAML zpracovává analýzu <xref:System.DateTime> hodnoty pomocí předdefinovaných textová syntaxe XAML. Toto téma popisuje, jaké jsou specifikace <xref:System.DateTime> textová syntaxe XAML.  
@@ -75,4 +75,4 @@ Některé ovládací prvky, jako například <xref:System.Windows.Controls.Calen
  Jak bylo uvedeno dříve, <xref:System.DateTime> v XAML lze zadat jako libovolný řetězec, který je přijatelné pro jako vstupní <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>. Jedná se o další oficiální formáty (třeba <xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>) a formátů, které nejsou stanovení jako konkrétní <xref:System.Globalization.DateTimeFormatInfo> formuláře. Například formulář `YYYY/mm/dd` je přijatelné pro jako vstupní <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>. Toto téma se nebude pokoušet popisují všechny možné formáty, které pracují a místo toho doporučuje vzor krátkého formátu data jako standardním postupem.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [Přehled XAML (WPF)](xaml-overview-wpf.md)

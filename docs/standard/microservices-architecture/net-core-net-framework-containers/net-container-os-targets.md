@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: bef268a180584c47486a16960ca13fd63201fbe2
-ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
+ms.openlocfilehash: 9e1d07e48d88376efb5fbdbdadc999c8dcd5082d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55479864"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57374905"
 ---
 # <a name="what-os-to-target-with-net-containers"></a>Jaký operační systém mají cílit kontejnery .NET
 
@@ -21,7 +21,7 @@ Více distribuce pro Linux, jsou dostupné a podporované v oficiální Image .N
 
 Obrázek 3-1 se zobrazí možné verze operačního systému v závislosti na rozhraní .NET framework používá.
 
-![Při nasazování starších aplikací rozhraní .NET Framework, které máte na cílová jádra serveru systému Windows, kompatibilní s starší verze aplikace a služby IIS, má větší obrázek. Při nasazování aplikací .NET Core, můžete směrovat Windows Nano Server, což je cloudové prostředí, používá Kestrel a je menší a spouští rychleji. Můžete také směrovat Linux podporuje Debian, nástroj Alpine a další. Také používá Kestrel a je menší a spouští rychleji.](./media/image1.png)
+![Při nasazování starší verze aplikací rozhraní .NET Framework, budete muset cílit na jádru Windows serveru, kompatibilní s starší verze aplikace a služby IIS, má větší obrázek. Při nasazování aplikací .NET Core, můžete směrovat Windows Nano Server, což je cloudové prostředí, používá Kestrel a je menší a spouští rychleji. Můžete také směrovat Linux podporuje Debian, nástroj Alpine a další. Také používá Kestrel a je menší a spouští rychleji.](./media/image1.png)
 
 **Obrázek 3-1.** Operační systémy pro cílení v závislosti na verzi rozhraní .NET framework
 
@@ -57,6 +57,6 @@ Když přidáte název bitové kopie do souboru Dockerfile, můžete vybrat oper
 </tbody>
 </table>
 
->[!div class="step-by-step"]
->[Předchozí](container-framework-choice-factors.md)
->[další](official-net-docker-images.md)
+> [!div class="step-by-step"]
+> [Předchozí](container-framework-choice-factors.md)
+> [další](official-net-docker-images.md)

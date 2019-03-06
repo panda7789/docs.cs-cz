@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Menu control [WPF]
 - controls [WPF], Menu
 ms.assetid: 67df6de5-db96-4c71-b752-af90729a6537
-ms.openlocfilehash: b1f3889803ba681542349443276041d312293bcf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d5f53603ea22b2ae12a9846ba6bdce525790ce15
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54626872"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57360939"
 ---
 # <a name="menu-overview"></a>Přehled nabídky
 <xref:System.Windows.Controls.Menu> Třída umožňuje uspořádat prvky, které jsou spojené s příkazy a obslužnými rutinami událostí v hierarchickém pořadí. Každý <xref:System.Windows.Controls.Menu> kolekce obsahuje element <xref:System.Windows.Controls.MenuItem> elementy.  
@@ -24,10 +24,10 @@ ms.locfileid: "54626872"
 ## <a name="creating-menus"></a>Vytvoření nabídky  
  Následující příklad vytvoří <xref:System.Windows.Controls.Menu> pro práci s textem v <xref:System.Windows.Controls.TextBox>. <xref:System.Windows.Controls.Menu> Obsahuje <xref:System.Windows.Controls.MenuItem> objekty, které používají <xref:System.Windows.Controls.MenuItem.Command%2A>, <xref:System.Windows.Controls.MenuItem.IsCheckable%2A>, a <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> vlastnosti a <xref:System.Windows.Controls.MenuItem.Checked>, <xref:System.Windows.Controls.MenuItem.Unchecked>, a <xref:System.Windows.Controls.MenuItem.Click> události.  
   
- [!code-xaml[MenuItemCommandsAndEvents#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MenuItemCommandsAndEvents/CSharp/Window1.xaml#1)]  
+ [!code-xaml[MenuItemCommandsAndEvents#1](~/samples/snippets/csharp/VS_Snippets_Wpf/MenuItemCommandsAndEvents/CSharp/Window1.xaml#1)]  
   
- [!code-csharp[MenuItemCommandsAndEvents#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MenuItemCommandsAndEvents/CSharp/Window1.xaml.cs#2)]
- [!code-vb[MenuItemCommandsAndEvents#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/MenuItemCommandsAndEvents/VisualBasic/Window1.xaml.vb#2)]  
+ [!code-csharp[MenuItemCommandsAndEvents#2](~/samples/snippets/csharp/VS_Snippets_Wpf/MenuItemCommandsAndEvents/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[MenuItemCommandsAndEvents#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MenuItemCommandsAndEvents/VisualBasic/Window1.xaml.vb#2)]  
   
 <a name="menus_with_shortcutkeys"></a>   
 ## <a name="menuitems-with-keyboard-shortcuts"></a>Vlastnost MenuItems s klávesovými zkratkami  
@@ -37,15 +37,15 @@ ms.locfileid: "54626872"
 ### <a name="inputgesturetext"></a>InputGestureText  
  Následující příklad ukazuje způsob použití <xref:System.Windows.Controls.MenuItem.InputGestureText%2A> vlastnost má být přiřazena text klávesové zkratky pro <xref:System.Windows.Controls.MenuItem> ovládacích prvků. To umístí pouze klávesové zkratky v položce nabídky.  Nepřiřadí příkaz <xref:System.Windows.Controls.MenuItem>. Aplikace musí zpracovat vstup uživatele k provedení akce.  
   
- [!code-xaml[MenuEvent#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MenuEvent/CSharp/Pane1.xaml#6)]  
+ [!code-xaml[MenuEvent#6](~/samples/snippets/csharp/VS_Snippets_Wpf/MenuEvent/CSharp/Pane1.xaml#6)]  
   
 <a name="menus_commands"></a>   
 ### <a name="command"></a>Příkaz  
  Následující příklad ukazuje způsob použití <xref:System.Windows.Controls.MenuItem.Command%2A> vlastnost pro přidružení **otevřít** a **Uložit** příkazů s <xref:System.Windows.Controls.MenuItem> ovládacích prvků. Nejen vlastnost příkazu přidružit příkaz s <xref:System.Windows.Controls.MenuItem>, ale také poskytuje gesta vstupní text, který má použít jako zástupce.  
   
- [!code-xaml[MenuEvent#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MenuEvent/CSharp/Pane1.xaml#8)]  
+ [!code-xaml[MenuEvent#8](~/samples/snippets/csharp/VS_Snippets_Wpf/MenuEvent/CSharp/Pane1.xaml#8)]  
   
- <xref:System.Windows.Controls.MenuItem> Třída má také <xref:System.Windows.Controls.MenuItem.CommandTarget%2A> vlastnost, která určuje element, kde dochází k příkazu. Pokud <xref:System.Windows.Controls.MenuItem.CommandTarget%2A> není nastaven, elementu, který má fokus klávesnice přijme příkaz. Další informace o příkazech najdete v tématu [přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md).  
+ <xref:System.Windows.Controls.MenuItem> Třída má také <xref:System.Windows.Controls.MenuItem.CommandTarget%2A> vlastnost, která určuje element, kde dochází k příkazu. Pokud <xref:System.Windows.Controls.MenuItem.CommandTarget%2A> není nastaven, elementu, který má fokus klávesnice přijme příkaz. Další informace o příkazech najdete v tématu [přehled příkazů](../advanced/commanding-overview.md).  
   
 <a name="menu_styling"></a>   
 ## <a name="menu-styling"></a>Používání stylů pro nabídky  
@@ -53,11 +53,11 @@ ms.locfileid: "54626872"
   
  První příklad kódu definuje <xref:System.Windows.Style> volá `Simple` , který ukazuje, jak používat aktuální systémová nastavení v vašemu stylu. Kód přiřadí barvu `MenuHighlightBrush` jako barva pozadí v nabídce a `MenuTextBrush` jako barva popředí v nabídce. Všimněte si, že použijete k přiřazení stopy klíče prostředku.  
   
- [!code-xaml[MenuStylesSnippet#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MenuStylesSnippet/CS/app.xaml#1)]  
+ [!code-xaml[MenuStylesSnippet#1](~/samples/snippets/csharp/VS_Snippets_Wpf/MenuStylesSnippet/CS/app.xaml#1)]  
   
  Následující ukázkový používá <xref:System.Windows.Trigger> prvky, které vám umožní změnit vzhled <xref:System.Windows.Controls.MenuItem> v reakci na události, které <xref:System.Windows.Controls.Menu>. Když přesunete ukazatel myši <xref:System.Windows.Controls.Menu>, barvu popředí a vlastností písma položky nabídky, změnit.  
   
- [!code-xaml[MenuStylesSnippet#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MenuStylesSnippet/CS/app.xaml#2)]  
+ [!code-xaml[MenuStylesSnippet#2](~/samples/snippets/csharp/VS_Snippets_Wpf/MenuStylesSnippet/CS/app.xaml#2)]  
   
 ## <a name="see-also"></a>Viz také:
 - [Ukázková galerie ovládacích prvků WPF](https://go.microsoft.com/fwlink/?LinkID=160053)

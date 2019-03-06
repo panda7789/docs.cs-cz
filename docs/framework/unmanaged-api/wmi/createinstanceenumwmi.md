@@ -16,21 +16,22 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ba59d9d47d5c120eb2ff0a3a3c65e0fe8cdf75e5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8a1d082cae19bd83c90e063d841a0c9e4602bc40
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54498291"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373046"
 ---
 # <a name="createinstanceenumwmi-function"></a>CreateInstanceEnumWmi – funkce
-Vrátí enumerátor, který vrátí instance dané třídy, které splňují kritéria zadaná výběru. 
+
+Vrátí enumerátor, který vrátí instance dané třídy, které splňují kritéria zadaná výběru.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
 HRESULT CreateInstanceEnumWmi (
    [in] BSTR                    strFilter,
    [in] long                    lFlags,
@@ -42,16 +43,16 @@ HRESULT CreateInstanceEnumWmi (
    [in] BSTR                    strUser,
    [in] BSTR                    strPassword,
    [in] BSTR                    strAuthority
-); 
-```  
+);
+```
 
 ## <a name="parameters"></a>Parametry
 
-`strFilter`    
+`strFilter`\
 [in] Název třídy, pro které jsou požadované instancí. Tento parametr nemůže mít `null`.
 
-`lFlags`   
-[in] Kombinace příznaků, které ovlivňují chování této funkce. Následující hodnoty jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu: 
+`lFlags`\
+[in] Kombinace příznaků, které ovlivňují chování této funkce. Následující hodnoty jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
@@ -60,31 +61,32 @@ HRESULT CreateInstanceEnumWmi (
 | `WBEM_FLAG_SHALLOW` | 1 | Výčet obsahuje pouze čistě instance této třídy a vyloučí všechny výskyty podtříd zadat vlastnosti nebyla nalezena v této třídě. |
 | `WBEM_FLAG_RETURN_IMMEDIATELY` | 0x10 | Příznak způsobí, že volání semisynchronní volání. |
 | `WBEM_FLAG_FORWARD_ONLY` | 0x20 | Vrátí enumerátor pouze vpřed. Obvykle dopředné enumerátory jsou rychlejší a využívat méně paměti, než je běžné výčty, ale nejsou povoleny volání [klonování](clone.md). |
-| `WBEM_FLAG_BIDIRECTIONAL` | 0 | Rozhraní WMI uchovává ukazateli na objekty enumration, dokud se neuvolní. | 
+| `WBEM_FLAG_BIDIRECTIONAL` | 0 | Rozhraní WMI uchovává ukazatelů na objekty ve výčtu, dokud se neuvolní. |
 
 Doporučené příznaky jsou `WBEM_FLAG_RETURN_IMMEDIATELY` a `WBEM_FLAG_FORWARD_ONLY` pro zajištění nejlepšího výkonu.
 
-`pCtx`  
+`pCtx`\
 [in] Obvykle je tato hodnota `null`. V opačném případě je ukazatel [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) , jež mohou využívat poskytovatele, který poskytuje požadovaná instance.
 
-`ppEnum`  
+`ppEnum`\
 [out] Přijímá ukazatel na enumerátor.
 
-`authLevel`  
+`authLevel`\
 [in] Úroveň autorizace.
 
-`impLevel` [in] Úroveň zosobnění.
+`impLevel`\
+[in] Úroveň zosobnění.
 
-`pCurrentNamespace`   
+`pCurrentNamespace`\
 [in] Ukazatel [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objekt, který představuje aktuální obor názvů.
 
-`strUser`   
+`strUser`\
 [in] Uživatelské jméno. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
 
-`strPassword`   
+`strPassword`\
 [in] Heslo. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
 
-`strAuthority`   
+`strAuthority`\
 [in] Název domény uživatele. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
 
 ## <a name="return-value"></a>Návratová hodnota
@@ -101,7 +103,7 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hl
 | `WBEM_E_SHUTTING_DOWN` | 0x80041033 | Služba WMI byla pravděpodobně zastavena a restartování. Volání [ConnectServerWmi](connectserverwmi.md) znovu. |
 | `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Odkaz vzdálené volání (procedur RPC) mezi aktuálním procesem a službou WMI se nezdařil. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
-  
+
 ## <a name="remarks"></a>Poznámky
 
 Tato funkce zalamuje volání na [IWbemServices::CreateClassEnum](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemservices-createinstanceenum) metody.
@@ -110,12 +112,14 @@ Všimněte si, že vrácené enumerátor může mít nulovým počtem elementů.
 
 Pokud selže volání funkce, můžete získat další informace o chybě při volání [GetErrorInfo –](geterrorinfo.md) funkce.
 
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** WMINet_Utils.idl  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+## <a name="requirements"></a>Požadavky
+
+**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+**Záhlaví:** WMINet_Utils.idl
+
+**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

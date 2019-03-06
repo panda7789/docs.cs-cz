@@ -6,21 +6,21 @@ f1_keywords:
 helpviewer_keywords:
 - base elements [WPF]
 ms.assetid: 55034aa5-3c1d-442a-8293-f4692d8ea6ae
-ms.openlocfilehash: 165dfda74ac570578371915259548784c5a37820
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a1f7105ee6590314eb2ebbfa52b511f55f83dc05
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33539462"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57359611"
 ---
 # <a name="base-elements"></a>Základní elementy
-Čtyři klíč třídy –<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, a <xref:System.Windows.FrameworkContentElement>– implementace významné procento běžné funkce element, která je k dispozici v programování WPF. Tyto čtyři třídy jsou uvedené v této sadě SDK jako element základní třídy.  
+Čtyři klíč třídy –<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, a <xref:System.Windows.FrameworkContentElement>– implementace podstatné procento běžné funkce element, která je dostupná v programování ve WPF. Tyto čtyři třídy jsou uvedené v této sadě SDK jako základní prvek třídy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled základních elementů](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
- [Přehled zarovnání, okrajů a odsazení](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/advanced/base-elements-how-to-topics.md)  
+ [Přehled základních elementů](base-elements-overview.md)  
+ [Přehled zablokovatelných objektů](freezable-objects-overview.md)  
+ [Přehled zarovnání, okrajů a odsazení](alignment-margins-and-padding-overview.md)  
+ [Témata s postupy](base-elements-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.UIElement>  
@@ -32,12 +32,12 @@ ms.locfileid: "33539462"
  <xref:System.Windows.FrameworkContentElement>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Architektura WPF](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
-  [XAML ve WPF](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
-  [Strom elementu a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
-  [Vlastnosti](../../../../docs/framework/wpf/advanced/properties-wpf.md)  
-  [Události](../../../../docs/framework/wpf/advanced/events-wpf.md)  
-  [Vstup](../../../../docs/framework/wpf/advanced/input-wpf.md)  
-  [Prostředky](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
-  [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
-  [Model vláken](../../../../docs/framework/wpf/advanced/threading-model.md)
+ [Architektura WPF](wpf-architecture.md)  
+  [XAML ve WPF](xaml-in-wpf.md)  
+  [Strom elementu a serializace](element-tree-and-serialization.md)  
+  [Vlastnosti](properties-wpf.md)  
+  [Události](events-wpf.md)  
+  [Vstup](input-wpf.md)  
+  [Prostředky](resources-wpf.md)  
+  [Styly a šablony](../controls/styling-and-templating.md)  
+  [Model vláken](threading-model.md)

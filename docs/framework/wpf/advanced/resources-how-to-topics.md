@@ -7,23 +7,23 @@ helpviewer_keywords:
 - reusing resources [WPF]
 - 'resources [WPF], '
 ms.assetid: 9f986a6d-7cc8-45ac-bb0f-43177a57649d
-ms.openlocfilehash: e0dc707419e975fa57a47e6c51a40c295b8e62ec
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8ad776b8ed18d74a6804b0efd8853c7af6efee0e
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33546157"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57356205"
 ---
 # <a name="resources-how-to-topics"></a>Postupy: Témata zdrojů
-Témata v této části popisují, jak využívat prostředky Windows Presentation Foundation (WPF).  
+Témata v této části popisují způsob použití prostředků Windows Presentation Foundation (WPF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Definice a odkaz prostředku](../../../../docs/framework/wpf/advanced/how-to-define-and-reference-a-resource.md)  
- [Použití prostředků aplikace](../../../../docs/framework/wpf/advanced/how-to-use-application-resources.md)  
- [Používání třídy SystemFonts](../../../../docs/framework/wpf/advanced/how-to-use-systemfonts.md)  
- [Použití klíčů systémových písem](../../../../docs/framework/wpf/advanced/how-to-use-system-fonts-keys.md)  
- [Používání třídy SystemParameters](../../../../docs/framework/wpf/advanced/how-to-use-systemparameters.md)  
- [Použití klíčů systémových parametrů](../../../../docs/framework/wpf/advanced/how-to-use-system-parameters-keys.md)  
+ [Definice a odkaz prostředku](how-to-define-and-reference-a-resource.md)  
+ [Použití prostředků aplikace](how-to-use-application-resources.md)  
+ [Používání třídy SystemFonts](how-to-use-systemfonts.md)  
+ [Použití klíčů systémových písem](how-to-use-system-fonts-keys.md)  
+ [Používání třídy SystemParameters](how-to-use-systemparameters.md)  
+ [Použití klíčů systémových parametrů](how-to-use-system-parameters-keys.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.FrameworkTemplate.Resources%2A>  
@@ -35,4 +35,4 @@ Témata v této části popisují, jak využívat prostředky Windows Presentati
  <xref:System.Windows.SystemFonts>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)
+ [Prostředky XAML](xaml-resources.md)

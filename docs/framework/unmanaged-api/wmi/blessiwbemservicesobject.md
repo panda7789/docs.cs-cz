@@ -16,21 +16,21 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a561c5af868968624ee9ee81050d87b17c4591be
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1eb6b870beabb71e340b0ec39c489cedb02128cf
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54624415"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57366631"
 ---
 # <a name="blessiwbemservicesobject-function"></a>Funkce BlessIWbemServicesObject
-Určuje, zda pověření uživatelů odkudkoli přístup k zadané [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objektu.   
-  
+Určuje, zda pověření uživatelů odkudkoli přístup k zadané [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objektu. 
+
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
+
+## <a name="syntax"></a>Syntaxe
+
+```
 HRESULT BlessIWbemServicesObject (
    [in] IUnknown* pIUnknown,
    [in] BSTR strUser, 
@@ -39,24 +39,27 @@ HRESULT BlessIWbemServicesObject (
    [in] DWORD impLevel, 
    [in] DWORD authnLevel
 );
-```  
+```
 
 ## <a name="parameters"></a>Parametry
 
-`pIWbemServices`  
+`pIWbemServices`\
 [in] Ukazatel na objekt služby WMI.
 
-`strUser`  
+`strUser`\
 [in] Uživatelské jméno.
 
-`strPassword`  
+`strPassword`\
 [in] Heslo přidružené k `strUser`.
 
-`strAuthority` [in] Název domény uživatele. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+`strAuthority`\
+[in] Název domény uživatele. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
 
-`impLevel` [in] Úroveň zosobnění.
+`impLevel`\
+[in] Úroveň zosobnění.
 
-`authnLevel` [in] Úroveň autorizace.
+`authnLevel`\
+[in] Úroveň autorizace.
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -70,12 +73,14 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WinError.h* h
 | `E_OUTOFMEMORY` | 0x80000002 | K provedení této operace není dostatek paměti. | 
 | `S_OK` | 0 | Volání funkce byla úspěšná. | 
 
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** WMINet_Utils.idl  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+## <a name="requirements"></a>Požadavky
+
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+ **Záhlaví:** WMINet_Utils.idl
+
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

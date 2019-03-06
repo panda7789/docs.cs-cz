@@ -7,24 +7,24 @@ helpviewer_keywords:
 - input API [WPF]
 - commanding [WPF]
 ms.assetid: 9a7ccd30-095b-4f34-b284-8fb7e8f95a9b
-ms.openlocfilehash: 1510c037dcb3d5e386e1d4c4dd3a3fe002f13c59
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c72aa41aeb4c2da5577f1581a8f65afbefb222c6
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33544229"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350745"
 ---
 # <a name="input-wpf"></a>Vstup (WPF)
-Windows Presentation Foundation (WPF) zahrnuje podporu pro několik typů vstupu. Tento vstup zahrnuje text, dotykového ovládání, myši, příkazy, fokus, dotykového ovládání, přetahování myší a digitální rukopisu. Tato část popisuje témata týkající se vstup v grafickém subsystému WPF.  
+Windows Presentation Foundation (WPF) obsahuje podporu pro několik typů vstupu. Tento vstup obsahuje text, dotykové ovládání, myši, příkazy, fokus, dotykové ovládání, přetahování myší a digitálního inkoustu. Tato část popisuje témat souvisejících s vstup v subsystému WPF.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)  
- [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
- [Přehled fokusu](../../../../docs/framework/wpf/advanced/focus-overview.md)  
- [Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)  
- [Návod: Vytvoření první dotykové aplikace](../../../../docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)  
- [Témata s postupy](../../../../docs/framework/wpf/advanced/input-and-commands-how-to-topics.md)  
- [Rukopis](../../../../docs/framework/wpf/advanced/digital-ink.md)  
+ [Přehled vstupu](input-overview.md)  
+ [Přehled příkazů](commanding-overview.md)  
+ [Přehled fokusu](focus-overview.md)  
+ [Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle](styling-for-focus-in-controls-and-focusvisualstyle.md)  
+ [Návod: Vytvoření první aplikace](walkthrough-creating-your-first-touch-application.md)  
+ [Témata s postupy](input-and-commands-how-to-topics.md)  
+ [Rukopis](digital-ink.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.UIElement>  
@@ -42,5 +42,5 @@ Windows Presentation Foundation (WPF) zahrnuje podporu pro několik typů vstupu
  <xref:System.Windows.Input.FocusManager>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Ovládací prvky](../../../../docs/framework/wpf/controls/index.md)  
-  [Události](../../../../docs/framework/wpf/advanced/events-wpf.md)
+ [Ovládací prvky](../controls/index.md)  
+  [Události](events-wpf.md)

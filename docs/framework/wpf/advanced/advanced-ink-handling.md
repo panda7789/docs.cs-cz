@@ -8,20 +8,20 @@ helpviewer_keywords:
 - InkCanvas control [WPF]
 - ink [WPF], advanced handling
 ms.assetid: abc8481a-f983-416f-b051-9168ac8b2ba3
-ms.openlocfilehash: eb347f5477974851e91c6a00b423bd4acf1f0b3b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 840ab08faebe760a38ef344fd1c41818a838250b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33539025"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57367868"
 ---
 # <a name="advanced-ink-handling"></a>Upřesnění zpracování inkoustu
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Se dodává s verzí <xref:System.Windows.Controls.InkCanvas>, a je element můžete umístit v aplikaci k okamžitému spuštění shromažďování a zobrazení rukopisu. Ale pokud <xref:System.Windows.Controls.InkCanvas> řízení neposkytuje dost dobře úroveň kontroly, můžete zachovat kontrolu na vyšší úrovni přizpůsobením vlastní rozpoznávání rukopisu a třídy vykreslování rukopisu pomocí <xref:System.Windows.Input.StylusPlugIns>.  
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Se dodává s <xref:System.Windows.Controls.InkCanvas>, a je prvek vložíte do vaší aplikace k okamžitému spuštění shromažďování a zobrazování rukopisu. Nicméně pokud <xref:System.Windows.Controls.InkCanvas> ovládací prvek neposkytuje dost jemné úrovni ovládacího prvku, abyste mohli pro ovládací prvek na vyšší úrovni přizpůsobením vlastní kolekce inkoustů a tříd vykreslení inkoustu pomocí <xref:System.Windows.Input.StylusPlugIns>.  
   
- <xref:System.Windows.Input.StylusPlugIns> Třídy poskytují mechanismus pro implementaci nízké úrovně řízení přes <xref:System.Windows.Input.Stylus> vstup a dynamicky vykreslování rukopisu. <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> Třída poskytuje mechanismus pro implementaci vlastního chování a použijte ho pro datový proud dat pocházejících z pera zařízení k zajištění optimálního výkonu. <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>, Speciální <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>, umožňuje přizpůsobit dynamicky vykreslování rukopisu dat v reálném čase to znamená, že <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> nevykresluje digitálního okamžitě jako <xref:System.Windows.Input.StylusPoint> data byla vygenerována, takže se zdá, že "toku" z pera zařízení.  
+ <xref:System.Windows.Input.StylusPlugIns> Třídy poskytují mechanismus pro implementaci nízké úrovně řízení nad <xref:System.Windows.Input.Stylus> vstup a dynamicky vykreslení inkoustu. <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> Třída poskytuje mechanismus pro implementaci vlastního chování a použít na datový proud množství dat přicházejících z stylus zařízení k zajištění optimálního výkonu. <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>, Specializovaný <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn>, umožňuje vám umožní přizpůsobit dynamicky datech pro vykreslení inkoustu v reálném čase, to znamená, že <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> vykreslí rukopis okamžitě, protože <xref:System.Windows.Input.StylusPoint> vygenerována data, aby se zobrazovalo "tok" z pera zařízení.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Rukopis s vlastním vykreslováním](../../../../docs/framework/wpf/advanced/custom-rendering-ink.md)  
-  [Přijetí vstupu z pera](../../../../docs/framework/wpf/advanced/intercepting-input-from-the-stylus.md)  
-  [Vytvoření ovládacího prvku vstupu rukopisu](../../../../docs/framework/wpf/advanced/creating-an-ink-input-control.md)  
-  [Model vláken rukopisu](../../../../docs/framework/wpf/advanced/the-ink-threading-model.md)
+ [Rukopis s vlastním vykreslováním](custom-rendering-ink.md)  
+  [Přijetí vstupu z pera](intercepting-input-from-the-stylus.md)  
+  [Vytvoření ovládacího prvku vstupu rukopisu](creating-an-ink-input-control.md)  
+  [Model vláken rukopisu](the-ink-threading-model.md)

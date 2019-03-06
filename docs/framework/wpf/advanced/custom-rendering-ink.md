@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ink [WPF], custom-rendering
 - classes [WPF], InkCanvas
 ms.assetid: 65c978a7-0ee0-454f-ac7f-b1bd2efecac5
-ms.openlocfilehash: 4aa646ab27044bc26f3787d3edb5f0f15a15bd2f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ce4c2bd48e819541d942c795307df36629ec05b9
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54635583"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57362627"
 ---
 # <a name="custom-rendering-ink"></a>Inkoust vlastního vykreslení
 <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> Vlastností tahu vám umožní určit vzhled tah, jako je například její velikost, barvu a tvar, ale může nastat situace, které chcete přizpůsobit vzhled nad rámec co <xref:System.Windows.Ink.Stroke.DrawingAttributes%2A> povolit. Můžete chtít přizpůsobit vzhled inkoustu vykreslování v vzhled vzduchová pistole, energetika Malování a mnoho dalších účinky. Windows Presentation Foundation (WPF), umožňuje vám vlastní vykreslení inkoustu pomocí implementace vlastní <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> a <xref:System.Windows.Ink.Stroke> objektu.  
@@ -37,7 +37,7 @@ ms.locfileid: "54635583"
   
  Existují tři třídy k implementaci při vykreslování dynamicky rukopisu.  
   
-1.  **DynamicRenderer**: Implementace, která je odvozena z třídy <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>. Tato třída je specializovaný <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> , který vykreslí tahu jako jeho vykreslení. <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Nemá vykreslování v samostatném vlákně, tak ke shromáždění inkoustu i v případě, že je blokované vlákno uživatelského rozhraní (UI) aplikace se zobrazí pera surface. Další informace o modelu vláken naleznete v tématu [The Model vláken inkoustu](../../../../docs/framework/wpf/advanced/the-ink-threading-model.md). Přizpůsobení dynamicky vykreslování tah, přepsat <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDraw%2A> metody.  
+1.  **DynamicRenderer**: Implementace, která je odvozena z třídy <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>. Tato třída je specializovaný <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> , který vykreslí tahu jako jeho vykreslení. <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Nemá vykreslování v samostatném vlákně, tak ke shromáždění inkoustu i v případě, že je blokované vlákno uživatelského rozhraní (UI) aplikace se zobrazí pera surface. Další informace o modelu vláken naleznete v tématu [The Model vláken inkoustu](the-ink-threading-model.md). Přizpůsobení dynamicky vykreslování tah, přepsat <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer.OnDraw%2A> metody.  
   
 2.  **Protože byl zdvih**: Implementace, která je odvozena z třídy <xref:System.Windows.Ink.Stroke>. Tato třída je zodpovědný za statické vykreslování <xref:System.Windows.Input.StylusPoint> dat poté, co bude převeden do <xref:System.Windows.Ink.Stroke> objektu. Přepsat <xref:System.Windows.Ink.Stroke.DrawCore%2A> je konzistentní s dynamické vykreslování metody k zajištění tohoto statické vykreslování objektu stroke.  
   
@@ -49,10 +49,10 @@ ms.locfileid: "54635583"
   
  Následující příklad ukazuje vlastní <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> , který vykreslí rukopis s efektem štětec lineárního přechodu.  
   
- [!code-csharp[AdvancedInkTopicsSamples#19](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#19)]
- [!code-vb[AdvancedInkTopicsSamples#19](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#19)]  
-[!code-csharp[AdvancedInkTopicsSamples#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#1)]
-[!code-vb[AdvancedInkTopicsSamples#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#1)]  
+ [!code-csharp[AdvancedInkTopicsSamples#19](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#19)]
+ [!code-vb[AdvancedInkTopicsSamples#19](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#19)]  
+[!code-csharp[AdvancedInkTopicsSamples#1](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#1)]
+[!code-vb[AdvancedInkTopicsSamples#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#1)]  
   
 <a name="ImplementingCustomStrokes"></a>   
 ## <a name="implementing-custom-strokes"></a>Implementace vlastního tahy  
@@ -64,10 +64,10 @@ ms.locfileid: "54635583"
   
  Následující C# kódu ukazuje vlastní <xref:System.Windows.Ink.Stroke> třídu, která vykreslí <xref:System.Windows.Input.StylusPoint> data jako 3D stroke.  
   
- [!code-csharp[AdvancedInkTopicsSamples#19](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#19)]
- [!code-vb[AdvancedInkTopicsSamples#19](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#19)]  
-[!code-csharp[AdvancedInkTopicsSamples#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#2)]
-[!code-vb[AdvancedInkTopicsSamples#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#2)]  
+ [!code-csharp[AdvancedInkTopicsSamples#19](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#19)]
+ [!code-vb[AdvancedInkTopicsSamples#19](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#19)]  
+[!code-csharp[AdvancedInkTopicsSamples#2](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#2)]
+[!code-vb[AdvancedInkTopicsSamples#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#2)]  
   
 <a name="ImplementingACustomInkCanvas"></a>   
 ## <a name="implementing-a-custom-inkcanvas"></a>Implementace vlastního InkCanvas  
@@ -83,7 +83,7 @@ ms.locfileid: "54635583"
   
  Následující C# kódu ukazuje vlastní <xref:System.Windows.Controls.InkCanvas> třídu, která používá vlastní <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> a shromažďuje vlastní tahů.  
   
- [!code-csharp[AdvancedInkTopicsSamples#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/Window1.xaml.cs#9)]  
+ [!code-csharp[AdvancedInkTopicsSamples#9](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/Window1.xaml.cs#9)]  
   
  <xref:System.Windows.Controls.InkCanvas> Může mít více než jeden <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>. Můžete přidat více <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> objektů <xref:System.Windows.Controls.InkCanvas> jejich přidáním do <xref:System.Windows.UIElement.StylusPlugIns%2A> vlastnost.  
   
@@ -92,4 +92,4 @@ ms.locfileid: "54635583"
  Můžete přizpůsobit vzhled ink odvozením vlastních <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>, <xref:System.Windows.Ink.Stroke>, a <xref:System.Windows.Controls.InkCanvas> třídy. Společně tyto třídy zkontrolujte, že vzhled objektu stroke konzistentní uživatel nakreslí tahu až po shromáždění zpracovat.  
   
 ## <a name="see-also"></a>Viz také:
-- [Pokročilé zpracování rukopisu](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)
+- [Pokročilé zpracování rukopisu](advanced-ink-handling.md)

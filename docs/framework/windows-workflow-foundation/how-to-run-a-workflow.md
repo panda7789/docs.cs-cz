@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f814ff82-fe2b-4614-aebb-b768c3e61179
-ms.openlocfilehash: e609c2b1a24ba01bf23226187b6d87e56395ff99
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4a5836c60d5f0ea21b1373b2d9bbbb29e0b6cb9f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54530399"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57360022"
 ---
 # <a name="how-to-run-a-workflow"></a>Postupy: Spuštění pracovního postupu
 Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started a popisuje, jak vytvořit hostitele pracovního postupu a spustit pracovní postup definovaný v předchozím [jak: Vytvoření pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-a-workflow.md) tématu.
@@ -137,7 +137,7 @@ Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started 
      [!code-csharp[CFX_WF_GettingStarted#11](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#11)]
      [!code-vb[CFX_WF_GettingStarted#11](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#11)]
 
-##  <a name="BKMK_ToRunTheApplication"></a> Sestavení a spuštění aplikace
+## <a name="BKMK_ToRunTheApplication"></a> Sestavení a spuštění aplikace
 
 1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníka řešení** a vyberte **nastavit jako spouštěný projekt**.
 

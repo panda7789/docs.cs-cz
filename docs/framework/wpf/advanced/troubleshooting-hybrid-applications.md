@@ -9,12 +9,12 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - message loops [WPF]
 ms.assetid: f440c23f-fa5d-4d5a-852f-ba61150e6405
-ms.openlocfilehash: 005cd017ae7702169aefb61a746c8adaba8118db
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: dbc70f58fddfad6e7e7271802b8b01d2b52ab25a
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748697"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57370095"
 ---
 # <a name="troubleshooting-hybrid-applications"></a>Řešení potíží s hybridními aplikacemi
 <a name="introduction"></a> Toto téma uvádí některé běžné problémy, které se mohou vyskytnout při vytváření hybridních aplikací, které obě používají [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologie.  
@@ -35,7 +35,7 @@ ms.locfileid: "56748697"
   
 <a name="scaling"></a>   
 ## <a name="scaling"></a>Škálování  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] mají různé velikosti modelů. Některé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] změnu velikosti mají smysl v daném [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků, ale ostatní nejsou. Například, škálování [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacího prvku na hodnotu 0, bude fungovat, ale pokud se pokusíte škálování stejný ovládací prvek zpět na nenulovou hodnotu, velikost ovládacího prvku zůstává 0. Další informace najdete v tématu [důležité informace o rozložení pro WindowsFormsHost Element](../../../../docs/framework/wpf/advanced/layout-considerations-for-the-windowsformshost-element.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] mají různé velikosti modelů. Některé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] změnu velikosti mají smysl v daném [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků, ale ostatní nejsou. Například, škálování [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacího prvku na hodnotu 0, bude fungovat, ale pokud se pokusíte škálování stejný ovládací prvek zpět na nenulovou hodnotu, velikost ovládacího prvku zůstává 0. Další informace najdete v tématu [důležité informace o rozložení pro WindowsFormsHost Element](layout-considerations-for-the-windowsformshost-element.md).  
   
 <a name="adapter"></a>   
 ## <a name="adapter"></a>Adaptér  
@@ -53,7 +53,7 @@ ms.locfileid: "56748697"
   
 <a name="property_mapping"></a>   
 ## <a name="property-mapping"></a>Mapování vlastností  
- Některé mapování vlastností vyžadují rozsáhlé výkladu pro přemostění rozdílné implementace mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologie. Mapování vlastností povolit kódu reagovat na změny písma, barvy a dalších vlastností. Obecně platí, mapování vlastností fungují tak, že buď poslouchání *vlastnost*změnit události nebo na*vlastnost*změnit volání a příslušné vlastnosti nastavení na podřízený ovládací prvek nebo jeho adaptér. Další informace najdete v tématu [Windows Forms a WPF vlastnost mapování](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md).  
+ Některé mapování vlastností vyžadují rozsáhlé výkladu pro přemostění rozdílné implementace mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologie. Mapování vlastností povolit kódu reagovat na změny písma, barvy a dalších vlastností. Obecně platí, mapování vlastností fungují tak, že buď poslouchání *vlastnost*změnit události nebo na*vlastnost*změnit volání a příslušné vlastnosti nastavení na podřízený ovládací prvek nebo jeho adaptér. Další informace najdete v tématu [Windows Forms a WPF vlastnost mapování](windows-forms-and-wpf-property-mapping.md).  
   
 <a name="layoutrelated_properties_on_hosted_content"></a>   
 ## <a name="layout-related-properties-on-hosted-content"></a>Vlastnosti související s rozložením na hostovaný obsah  
@@ -66,7 +66,7 @@ ms.locfileid: "56748697"
 |<xref:System.Windows.Forms.Integration.ElementHost>|<xref:System.Windows.FrameworkElement.Height%2A><br /><br /> <xref:System.Windows.FrameworkElement.Width%2A><br /><br /> <xref:System.Windows.FrameworkElement.Margin%2A><br /><br /> <xref:System.Windows.FrameworkElement.VerticalAlignment%2A><br /><br /> <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>|  
 |<xref:System.Windows.Forms.Integration.WindowsFormsHost>|<xref:System.Windows.Forms.Control.Margin%2A><br /><br /> <xref:System.Windows.Forms.Control.Dock%2A><br /><br /> <xref:System.Windows.Forms.Control.AutoSize%2A><br /><br /> <xref:System.Windows.Forms.Control.Location%2A><br /><br /> <xref:System.Windows.Forms.Control.MaximumSize%2A>|  
   
- Nenastavujte tyto vlastnosti přímo na hostovaný obsah. Další informace najdete v tématu [důležité informace o rozložení pro WindowsFormsHost Element](../../../../docs/framework/wpf/advanced/layout-considerations-for-the-windowsformshost-element.md).  
+ Nenastavujte tyto vlastnosti přímo na hostovaný obsah. Další informace najdete v tématu [důležité informace o rozložení pro WindowsFormsHost Element](layout-considerations-for-the-windowsformshost-element.md).  
   
 <a name="navigation_applications"></a>   
 ## <a name="navigation-applications"></a>Navigační aplikace  
@@ -76,7 +76,7 @@ ms.locfileid: "56748697"
 ## <a name="message-loop-interoperation"></a>Vzájemná spolupráce grafického subsystému zpráva smyčky  
  Při práci s [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] smyčky zpráv, zpráv nemusí být zpracován podle očekávání. <xref:System.Windows.Forms.Integration.WindowsFormsHost.EnableWindowsFormsInterop%2A> Metoda je volána <xref:System.Windows.Forms.Integration.WindowsFormsHost> konstruktoru. Tato metoda přidá filtru zprávy [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] smyčku zpráv. Volá tento filtr <xref:System.Windows.Forms.Control.PreProcessMessage%2A?displayProperty=nameWithType> metoda Pokud <xref:System.Windows.Forms.Control?displayProperty=nameWithType> byla cílem zprávy a překládá/odešle zprávu.  
   
- Pokud zobrazíte <xref:System.Windows.Window> v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] smyčky zpráv s <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType>, nic nelze zadat, pokud zavoláte <xref:System.Windows.Forms.Integration.ElementHost.EnableModelessKeyboardInterop%2A> metoda. <xref:System.Windows.Forms.Integration.ElementHost.EnableModelessKeyboardInterop%2A> Přijímá metodu <xref:System.Windows.Window> a přidá <xref:System.Windows.Forms.IMessageFilter?displayProperty=nameWithType>, který přesměrovává klíč související zprávy [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] smyčky zpráv. Další informace najdete v tématu [Windows Forms a WPF architektura vstupu Interoperability](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-interoperability-input-architecture.md).  
+ Pokud zobrazíte <xref:System.Windows.Window> v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] smyčky zpráv s <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType>, nic nelze zadat, pokud zavoláte <xref:System.Windows.Forms.Integration.ElementHost.EnableModelessKeyboardInterop%2A> metoda. <xref:System.Windows.Forms.Integration.ElementHost.EnableModelessKeyboardInterop%2A> Přijímá metodu <xref:System.Windows.Window> a přidá <xref:System.Windows.Forms.IMessageFilter?displayProperty=nameWithType>, který přesměrovává klíč související zprávy [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] smyčky zpráv. Další informace najdete v tématu [Windows Forms a WPF architektura vstupu Interoperability](windows-forms-and-wpf-interoperability-input-architecture.md).  
   
 <a name="opacity_and_layering"></a>   
 ## <a name="opacity-and-layering"></a>Krytí a vrstvení  
@@ -88,7 +88,7 @@ ms.locfileid: "56748697"
   
 <a name="enabling_visual_styles"></a>   
 ## <a name="enabling-visual-styles"></a>Povolení vizuálních stylů  
- [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] styly vizuálu na [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek není povolený. <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> Metoda je volána v šabloně [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace. I když tato metoda není volána ve výchozím nastavení, pokud používáte [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] vytvořit projekt, zobrazí se [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] visual styly pro ovládací prvky, pokud je k dispozici verzi knihovny Comctl32.dll 6.0. Je třeba zavolat <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> metoda před vytvořením popisovačů u vlákna. Další informace najdete v tématu [jak: Povolení vizuálních stylů v hybridní aplikaci](../../../../docs/framework/wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application.md).  
+ [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] styly vizuálu na [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek není povolený. <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> Metoda je volána v šabloně [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace. I když tato metoda není volána ve výchozím nastavení, pokud používáte [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)] vytvořit projekt, zobrazí se [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] visual styly pro ovládací prvky, pokud je k dispozici verzi knihovny Comctl32.dll 6.0. Je třeba zavolat <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> metoda před vytvořením popisovačů u vlákna. Další informace najdete v tématu [jak: Povolení vizuálních stylů v hybridní aplikaci](how-to-enable-visual-styles-in-a-hybrid-application.md).  
   
 <a name="licensed_controls"></a>   
 ## <a name="licensed-controls"></a>Licencované ovládací prvky  
@@ -108,7 +108,7 @@ ms.locfileid: "56748697"
 ### <a name="design-time-error-list-appears-when-the-obj-folder-is-deleted"></a>Když se odstraní složka obj, zobrazí se seznam chyb v době návrhu  
  Pokud se odstraní složka obj, zobrazí se seznam chyb návrhu.  
   
- Při návrhu pomocí <xref:System.Windows.Forms.Integration.ElementHost>, Návrhář formulářů Windows používá generované soubory ve složce ladění nebo vydání v rámci složku obj váš projekt. Pokud odstraníte tyto soubory se zobrazí v seznamu chyb návrhu. Chcete-li tento problém vyřešit, znovu sestavte projekt. Další informace najdete v tématu [chyby doby návrhu v Návrháři formulářů Windows](../../../../docs/framework/winforms/controls/design-time-errors-in-the-windows-forms-designer.md).  
+ Při návrhu pomocí <xref:System.Windows.Forms.Integration.ElementHost>, Návrhář formulářů Windows používá generované soubory ve složce ladění nebo vydání v rámci složku obj váš projekt. Pokud odstraníte tyto soubory se zobrazí v seznamu chyb návrhu. Chcete-li tento problém vyřešit, znovu sestavte projekt. Další informace najdete v tématu [chyby doby návrhu v Návrháři formulářů Windows](../../winforms/controls/design-time-errors-in-the-windows-forms-designer.md).  
   
 <a name="elementhost_and_ime"></a>   
 ## <a name="elementhost-and-ime"></a>Elementhost – a editoru IME  
@@ -118,9 +118,9 @@ ms.locfileid: "56748697"
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Vzájemná funkční spolupráce v návrháři pro WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628658(v=vs.100))
-- [Architektura vstupu interoperability Windows Forms a WPF](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-interoperability-input-architecture.md)
-- [Postupy: Povolení vizuálních stylů v hybridní aplikaci](../../../../docs/framework/wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application.md)
-- [Předpoklady rozložení pro element WindowsFormsHost](../../../../docs/framework/wpf/advanced/layout-considerations-for-the-windowsformshost-element.md)
-- [Mapování vlastnosti Windows Forms a WPF](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)
-- [Chyby v rámci doby návrhu v Návrháři formulářů](../../../../docs/framework/winforms/controls/design-time-errors-in-the-windows-forms-designer.md)
-- [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)
+- [Architektura vstupu interoperability Windows Forms a WPF](windows-forms-and-wpf-interoperability-input-architecture.md)
+- [Postupy: Povolení vizuálních stylů v hybridní aplikaci](how-to-enable-visual-styles-in-a-hybrid-application.md)
+- [Předpoklady rozložení pro element WindowsFormsHost](layout-considerations-for-the-windowsformshost-element.md)
+- [Mapování vlastnosti Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md)
+- [Chyby v rámci doby návrhu v Návrháři formulářů](../../winforms/controls/design-time-errors-in-the-windows-forms-designer.md)
+- [Migrace a interoperabilita](migration-and-interoperability.md)

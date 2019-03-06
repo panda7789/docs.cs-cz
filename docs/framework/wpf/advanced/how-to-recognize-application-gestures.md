@@ -8,19 +8,19 @@ helpviewer_keywords:
 - application gestures [WPF], recognizing
 - gestures [WPF], recognizing
 ms.assetid: d58b740f-5192-4a3e-af59-7aa162e6ca15
-ms.openlocfilehash: 68a7c8cd4b8ed935d005fabff37a7b44c1b98012
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 99deaa528a089f2d16268747f2e946873f3420a0
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54506703"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57370511"
 ---
 # <a name="how-to-recognize-application-gestures"></a>Postupy: Rozlišení gest aplikací
 Následující příklad ukazuje, jak když uživatel provede smazání inkoustu <xref:System.Windows.Ink.ApplicationGesture.ScratchOut> gesta na <xref:System.Windows.Controls.InkCanvas>. Tento příklad předpokládá <xref:System.Windows.Controls.InkCanvas>, označované jako `inkCanvas1`, je deklarována v souboru XAML.  
   
 ## <a name="example"></a>Příklad  
- [!code-csharp[HowToRecognizeGestures#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToRecognizeGestures/CSharp/Window1.xaml.cs#1)]
- [!code-vb[HowToRecognizeGestures#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HowToRecognizeGestures/VisualBasic/Window1.xaml.vb#1)]  
+ [!code-csharp[HowToRecognizeGestures#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HowToRecognizeGestures/CSharp/Window1.xaml.cs#1)]
+ [!code-vb[HowToRecognizeGestures#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HowToRecognizeGestures/VisualBasic/Window1.xaml.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Ink.ApplicationGesture>

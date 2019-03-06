@@ -12,12 +12,12 @@ helpviewer_keywords:
 - syntax [WPF], object elements
 - binding declarations [WPF]
 ms.assetid: b97fd626-4c0d-4761-872a-2bca5820da2c
-ms.openlocfilehash: f31a13096d8bd3a788e530b480fece448bfe1e6e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2ef632ee1335d1ee0e94eaa1a7f25cbe34ed4e6f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54704014"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57363407"
 ---
 # <a name="binding-declarations-overview"></a>Přehled deklarací připojení
 Toto téma popisuje různé způsoby, jak je možné deklarovat vazbu.  
@@ -26,9 +26,9 @@ Toto téma popisuje různé způsoby, jak je možné deklarovat vazbu.
   
 <a name="Prereq"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Před čtením tohoto tématu, je důležité, že máte zkušenosti s koncept a používání rozšíření značek. Další informace o rozšíření značek, naleznete v tématu [– rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
+ Před čtením tohoto tématu, je důležité, že máte zkušenosti s koncept a používání rozšíření značek. Další informace o rozšíření značek, naleznete v tématu [– rozšíření značek a WPF XAML](../advanced/markup-extensions-and-wpf-xaml.md).  
   
- Toto téma nepopisuje koncepty vazeb data. Diskuzi o koncepty vazeb dat, naleznete v tématu [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).  
+ Toto téma nepopisuje koncepty vazeb data. Diskuzi o koncepty vazeb dat, naleznete v tématu [Data Binding Overview](data-binding-overview.md).  
   
 <a name="BindinginXAML"></a>   
 ## <a name="declaring-a-binding-in-xaml"></a>Deklarování vazbu v XAML  
@@ -40,9 +40,9 @@ Toto téma popisuje různé způsoby, jak je možné deklarovat vazbu.
   
  Při vytváření vazby deklarace řetězců v kódu, musí být připojené k vlastnosti konkrétní závislost cílového objektu. Následující příklad ukazuje, jak vytvořit vazbu <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> vlastnost pomocí rozšíření vazby, určení <xref:System.Windows.Data.Binding.Source%2A> a <xref:System.Windows.Data.Binding.Path%2A> vlastnosti.  
   
- [!code-xaml[SimpleBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#L37-L37)]  
+ [!code-xaml[SimpleBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/SimpleBinding/CSharp/Page1.xaml#L37-L37)]  
   
- Můžete zadat maximálně vlastnosti <xref:System.Windows.Data.Binding> třídy tímto způsobem. Další informace o rozšíření vazby stejně jako u seznamu <xref:System.Windows.Data.Binding> zobrazit vlastnosti, které nelze nastavit pomocí rozšíření vazby [Binding Markup Extension](../../../../docs/framework/wpf/advanced/binding-markup-extension.md) Přehled.  
+ Můžete zadat maximálně vlastnosti <xref:System.Windows.Data.Binding> třídy tímto způsobem. Další informace o rozšíření vazby stejně jako u seznamu <xref:System.Windows.Data.Binding> zobrazit vlastnosti, které nelze nastavit pomocí rozšíření vazby [Binding Markup Extension](../advanced/binding-markup-extension.md) Přehled.  
   
 <a name="ObjectElementSyntax"></a>   
 ### <a name="object-element-syntax"></a>Syntaxe elementu objektu  
@@ -50,11 +50,11 @@ Toto téma popisuje různé způsoby, jak je možné deklarovat vazbu.
   
  Následuje příklad syntaxe elementu objektu a použití rozšíření značky:  
   
- [!code-xaml[BindConversionMarkup#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversionMarkup/CSharp/Page1.xaml#1)]  
+ [!code-xaml[BindConversionMarkup#1](~/samples/snippets/csharp/VS_Snippets_Wpf/BindConversionMarkup/CSharp/Page1.xaml#1)]  
   
  V příkladu vytvoří vazbu <xref:System.Windows.Controls.TextBlock.Foreground%2A> vlastnost deklarováním vazby pomocí rozšíření syntaxe. Deklarace vazby <xref:System.Windows.Controls.TextBlock.Text%2A> vlastnost používá syntaxi elementu objektu.  
   
- Další informace o různých podmínkách, najdete v části [syntaxe XAML v podrobnosti o](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md).  
+ Další informace o různých podmínkách, najdete v části [syntaxe XAML v podrobnosti o](../advanced/xaml-syntax-in-detail.md).  
   
 <a name="MBandPB"></a>   
 ### <a name="multibinding-and-prioritybinding"></a>MultiBinding a rozhraní PriorityBinding  
@@ -64,10 +64,10 @@ Toto téma popisuje různé způsoby, jak je možné deklarovat vazbu.
 ## <a name="creating-a-binding-in-code"></a>Vytvoření vazby v kódu  
  Dalším způsobem určení vazby je můžete nastavit vlastnosti přímo <xref:System.Windows.Data.Binding> objekt v kódu. Následující příklad ukazuje, jak vytvořit <xref:System.Windows.Data.Binding> a určení vlastností v kódu.  V tomto příkladu `TheConverter` je objekt, který implementuje <xref:System.Windows.Data.IValueConverter> rozhraní.  
   
- [!code-csharp[BindConversion#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#1)]
- [!code-vb[BindConversion#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#1)]  
+ [!code-csharp[BindConversion#1](~/samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#1)]
+ [!code-vb[BindConversion#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#1)]  
   
- Pokud je objekt, jsou vazby <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> můžete volat `SetBinding` metodu na objekt přímo namísto použití <xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType>. Příklad najdete v tématu [vytvoření vazby v kódu](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md).  
+ Pokud je objekt, jsou vazby <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> můžete volat `SetBinding` metodu na objekt přímo namísto použití <xref:System.Windows.Data.BindingOperations.SetBinding%2A?displayProperty=nameWithType>. Příklad najdete v tématu [vytvoření vazby v kódu](how-to-create-a-binding-in-code.md).  
   
 <a name="Path_Syntax"></a>   
 ## <a name="binding-path-syntax"></a>Syntaxe cesty vazby  
@@ -119,14 +119,14 @@ Toto téma popisuje různé způsoby, jak je možné deklarovat vazbu.
   
 -   Pokud nenastavíte <xref:System.Windows.Data.Binding.ConverterCulture%2A>, používá modul vazby `Language` vlastnost cílového objektu vazby. V XAML výchozí hodnota je "en US" nebo dědí z kořenového elementu (nebo libovolný element) na stránce hodnotu, pokud byla explicitně nastavena.  
   
--   Pokud vazba již má kontext dat (například zděděné datového kontextu pocházející z nadřazeného elementu) a libovolné položky nebo kolekci se vrací v tomto kontextu je vhodná pro vazbu bez nutnosti dalších úprav cesty Vazba deklarace nechat bez klauzule vůbec: `{Binding}` To je často způsob, jakým vazbu je určená pro používání stylů data, kdy vazba postupuje podle kolekce. Další informace najdete v části "Celé objekty použít jako vazbu zdroji" v [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
+-   Pokud vazba již má kontext dat (například zděděné datového kontextu pocházející z nadřazeného elementu) a libovolné položky nebo kolekci se vrací v tomto kontextu je vhodná pro vazbu bez nutnosti dalších úprav cesty Vazba deklarace nechat bez klauzule vůbec: `{Binding}` To je často způsob, jakým vazbu je určená pro používání stylů data, kdy vazba postupuje podle kolekce. Další informace najdete v části "Celé objekty použít jako vazbu zdroji" v [Přehled zdrojů vazby](binding-sources-overview.md).  
   
 -   Výchozí hodnota <xref:System.Windows.Data.Binding.Mode%2A> se pohybuje mezi jednosměrnou a obousměrnou v závislosti na vlastnosti závislosti svázaný. Vždy je možné deklarovat režimu vazby explicitně, aby se zajistilo, že vaše vazby má požadované chování. Ve vlastnostech ovládacího prvku Obecné, upravovat uživatele jako například <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> a <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A?displayProperty=nameWithType>, ve výchozím nastavení obousměrné vazby, zatímco většina jiných vlastností ve výchozím nastavení jednosměrné vazby.  
   
 -   Výchozí hodnota <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnota se liší mezi <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged> a <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus> v závislosti na vlastnost vázané závislosti. Výchozí hodnota pro většinu vlastností závislostí je <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>, zatímco <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> vlastnost má výchozí hodnotu <xref:System.Windows.Data.UpdateSourceTrigger.LostFocus>.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
-- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
-- [PropertyPath – syntaxe v jazyce XAML](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)
+- [Přehled datových vazeb](data-binding-overview.md)
+- [Témata s postupy](data-binding-how-to-topics.md)
+- [Datová vazba](../advanced/optimizing-performance-data-binding.md)
+- [PropertyPath – syntaxe v jazyce XAML](../advanced/propertypath-xaml-syntax.md)

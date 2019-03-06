@@ -7,20 +7,20 @@ helpviewer_keywords:
 - windows [WPF]
 - WPF application [WPF], windows
 ms.assetid: dc091d04-68cf-4592-9695-75fda037db76
-ms.openlocfilehash: 04622255ea70d3d8161dc18919cb2833fe706639
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 798f8def03cb396224b7ba61bd17974609a5ff54
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33550774"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57353852"
 ---
 # <a name="windows-in-wpf-applications"></a>Systém Windows v aplikacích WPF
-Uživatelé komunikovat s aplikací prostřednictvím služby windows. Základní účelem okno je hostování a zobrazit obsah. Typ obsahu, že okno hostitele závisí na typu dat, že aplikace funguje přes, který může obsahovat média, rozšiřitelné aplikace Markup Language (XAML) stránky, webové stránky, dokumenty, databázových tabulek a záznamy a informace o systému.  
+Uživatelé komunikují s aplikací prostřednictvím služby windows. Základní účel okna je hostování a zobrazit obsah. Typ obsahu, okno hostitele závisí na typu dat, že aplikace funguje, které mohou zahrnovat média, stránky Extensible Application Markup Language (XAML), webových stránek, dokumenty, databázových tabulek a záznamů a systémové informace.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled Windows ve WPF](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md)  
- [Přehled dialogových oken](../../../../docs/framework/wpf/app-development/dialog-boxes-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/app-development/window-management-how-to-topics.md)  
+ [Přehled Windows ve WPF](wpf-windows-overview.md)  
+ [Přehled dialogových oken](dialog-boxes-overview.md)  
+ [Témata s postupy](window-management-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Window>  
@@ -28,7 +28,7 @@ Uživatelé komunikovat s aplikací prostřednictvím služby windows. Základn�
  <xref:System.Windows.Navigation.NavigationWindow>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
-  [Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
-  [Hostování](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md)  
-  [Sestavení a nasazení](../../../../docs/framework/wpf/app-development/building-and-deploying-wpf-applications.md)
+ [Přehled správy aplikací](application-management-overview.md)  
+  [Přehled navigace](navigation-overview.md)  
+  [Hostování](hosting-wpf-applications.md)  
+  [Sestavení a nasazení](building-and-deploying-wpf-applications.md)

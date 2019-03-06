@@ -9,37 +9,37 @@ helpviewer_keywords:
 - documents [WPF], trimmng text
 - trimmng text [WPF]
 ms.assetid: dd8c9191-d2be-45fd-9fb4-3c75b65578c5
-ms.openlocfilehash: 97bc88b298500892fcc7d26e61f8052a05d9e593
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 367e1f46524d8135d8269a2e2159dfe7c2468c45
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33543537"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57354463"
 ---
 # <a name="how-to-enable-text-trimming"></a>Postupy: Povolení ořezávání textu
-Tento příklad ukazuje použití a důsledků hodnoty, které jsou k dispozici v <xref:System.Windows.TextTrimming> výčtu.  
+Tento příklad ukazuje použití a efekty hodnot, které jsou k dispozici v <xref:System.Windows.TextTrimming> výčtu.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu definuje <xref:System.Windows.Controls.TextBlock> element s <xref:System.Windows.Controls.TextBlock.TextTrimming%2A> nastaven atribut.  
+ Následující příklad definuje <xref:System.Windows.Controls.TextBlock> křížkem <xref:System.Windows.Controls.TextBlock.TextTrimming%2A> sadu atributů.  
   
- [!code-xaml[TextTrimmingSnippets#_TextTrimmingXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextTrimmingSnippets/CSharp/Window1.xaml#_texttrimmingxaml)]  
+ [!code-xaml[TextTrimmingSnippets#_TextTrimmingXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextTrimmingSnippets/CSharp/Window1.xaml#_texttrimmingxaml)]  
   
 ## <a name="example"></a>Příklad  
- Nastavení odpovídající <xref:System.Windows.TextTrimming> je znázorněn vlastností v kódu.  
+ Nastavení odpovídající <xref:System.Windows.TextTrimming> vlastností v kódu je znázorněno níže.  
   
- [!code-csharp[TextTrimmingSnippets#_TextTrimmingSetTextTrimming](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextTrimmingSnippets/CSharp/Window1.xaml.cs#_texttrimmingsettexttrimming)]
- [!code-vb[TextTrimmingSnippets#_TextTrimmingSetTextTrimming](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextTrimmingSnippets/VisualBasic/Window1.xaml.vb#_texttrimmingsettexttrimming)]  
+ [!code-csharp[TextTrimmingSnippets#_TextTrimmingSetTextTrimming](~/samples/snippets/csharp/VS_Snippets_Wpf/TextTrimmingSnippets/CSharp/Window1.xaml.cs#_texttrimmingsettexttrimming)]
+ [!code-vb[TextTrimmingSnippets#_TextTrimmingSetTextTrimming](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextTrimmingSnippets/VisualBasic/Window1.xaml.vb#_texttrimmingsettexttrimming)]  
   
- Jsou aktuálně tři možnosti pro text oříznutí: **CharacterEllipsis**, **WordEllipsis**, a **žádné**.  
+ Jsou nyní tři možnosti pro oříznutí textu: **CharacterEllipsis**, **WordEllipsis**, a **žádný**.  
   
- Když <xref:System.Windows.Controls.TextBlock.TextTrimming%2A> je nastaven na **CharacterEllipsis**, text je oříznut a dál se třemi tečkami na nejbližší okraj oříznutí znaků.  Toto nastavení se obvykle trim přizpůsobení přesněji na hranici oříznutí textu, ale může mít za následek slova částečně oříznuty.  Následující obrázek znázorňuje účinek tohoto nastavení na <xref:System.Windows.Controls.TextBlock> podobné definované výše.  
+ Když <xref:System.Windows.Controls.TextBlock.TextTrimming%2A> je nastavena na **CharacterEllipsis**, text je oříznut a pokračuje se třemi tečkami na znak, který je nejblíž k oříznutí edge.  Toto nastavení obvykle mají být odebrány text, který lépe přizpůsobit na hranici ořezávání, ale může vést k slov, který částečně má být oříznut.  Následující obrázek ukazuje účinek tohoto nastavení na <xref:System.Windows.Controls.TextBlock> podobně jako výše.  
   
- ![Příklad: TextTrimming.CharacterEllipsis](../../../../docs/framework/wpf/advanced/media/texttrimming-character.png "TextTrimming_Character")  
+ ![Příklad: TextTrimming.CharacterEllipsis](./media/texttrimming-character.png "TextTrimming_Character")  
   
- Když <xref:System.Windows.Controls.TextBlock.TextTrimming%2A> je nastaven na **WordEllipsis**, text je oříznut a dál se třemi tečkami na konci prvního úplné slova nejbližší okraj oříznutí.  Toto nastavení nebude zobrazit částečně oříznutý slova, ale obvykle není trim co nejvíce oříznutí okraj jako text **CharacterEllipsis** nastavení.  Následující obrázek znázorňuje účinek tohoto nastavení na <xref:System.Windows.Controls.TextBlock> definované výše.  
+ Když <xref:System.Windows.Controls.TextBlock.TextTrimming%2A> je nastavena na **WordEllipsis**, text je oříznut a pokračovat tři tečky na konci prvního úplné slovo nejbližší na hraničních zařízeních oříznutí.  Toto nastavení částečně oříznutý slova se nezobrazí, ale obvykle nechcete trim co nejvíce oříznutí edge jako text **CharacterEllipsis** nastavení.  Následující obrázek ukazuje účinek tohoto nastavení na <xref:System.Windows.Controls.TextBlock> výše.  
   
- ![Příklad: TextTrimming.WordEllipsis](../../../../docs/framework/wpf/advanced/media/texttrimming-word.png "TextTrimming_Word")  
+ ![Příklad: TextTrimming.WordEllipsis](./media/texttrimming-word.png "TextTrimming_Word")  
   
- Když <xref:System.Windows.Controls.TextBlock.TextTrimming%2A> je nastaven na **žádné**, se provádí bez oříznutí text.  V takovém případě text jednoduše oříznout na hranici nadřazený kontejner textu.  Následující obrázek znázorňuje účinek tohoto nastavení na <xref:System.Windows.Controls.TextBlock> podobné definované výše.  
+ Když <xref:System.Windows.Controls.TextBlock.TextTrimming%2A> je nastavena na **žádný**, se provádí bez ořezávání textu.  V takovém případě text jednoduše ořízne na hranici jeho nadřazeného kontejneru text.  Následující obrázek ukazuje účinek tohoto nastavení na <xref:System.Windows.Controls.TextBlock> podobně jako výše.  
   
- ![Příklad: TextTrimming.None](../../../../docs/framework/wpf/advanced/media/texttrimming-none.png "TextTrimming_None")
+ ![Příklad: TextTrimming.None](./media/texttrimming-none.png "TextTrimming_None")

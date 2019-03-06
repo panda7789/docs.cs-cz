@@ -13,19 +13,19 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 699c03d379d105806292a23b09a63d0634a7a2e4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: be9f1916722b493490541046906a38b9fac63a4e
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54592682"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371980"
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
-<a name="introduction"></a> Při vývoji, nasazení samostatné služby Windows Presentation Foundation (WPF) a aplikace hostované v prohlížeči, je nutné zvážit modelu zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace jsou spouštěny s neomezenými oprávněními ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** sada oprávnění), ať už nasazeným v rámci Windows Installer (MSI), příkazu XCopy, nebo [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]. Nasazení částečným vztahem důvěryhodnosti, samostatné aplikace WPF s ClickOnce se nepodporuje. Však vytvořit hostitele úplného vztahu důvěryhodnosti aplikace s částečnou důvěryhodností <xref:System.AppDomain> pomocí modelu doplňku rozhraní .NET Framework. Další informace najdete v tématu [přehled doplňků WPF](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).  
+<a name="introduction"></a> Při vývoji, nasazení samostatné služby Windows Presentation Foundation (WPF) a aplikace hostované v prohlížeči, je nutné zvážit modelu zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace jsou spouštěny s neomezenými oprávněními ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** sada oprávnění), ať už nasazeným v rámci Windows Installer (MSI), příkazu XCopy, nebo [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]. Nasazení částečným vztahem důvěryhodnosti, samostatné aplikace WPF s ClickOnce se nepodporuje. Však vytvořit hostitele úplného vztahu důvěryhodnosti aplikace s částečnou důvěryhodností <xref:System.AppDomain> pomocí modelu doplňku rozhraní .NET Framework. Další informace najdete v tématu [přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované prohlížečem hostují [!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)] nebo Firefox, a může být buď [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] nebo dojde ke ztrátě [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] dokumenty pro další informace najdete v tématu [přehled aplikací prohlížeče WPF XAML](../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md).  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované prohlížečem hostují [!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)] nebo Firefox, a může být buď [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] nebo dojde ke ztrátě [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] dokumenty pro další informace najdete v tématu [přehled aplikací prohlížeče WPF XAML](./app-development/wpf-xaml-browser-applications-overview.md).  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované v prohlížeči jsou spouštěny v částečném vztahu důvěryhodnosti zabezpečení izolovaného prostoru ve výchozím nastavení, která je omezena na výchozí hodnotu [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **Internet** oprávnění sady zón. To efektivně izoluje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované v prohlížeči od klientského počítače stejným způsobem, že byste očekávali typické webové aplikace. XBAP, který může zvýšení oprávnění, až plné důvěryhodnosti, v závislosti na zóně zabezpečení adresy URL nasazení a konfigurace zabezpečení klienta. Další informace najdete v tématu [částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md).  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované v prohlížeči jsou spouštěny v částečném vztahu důvěryhodnosti zabezpečení izolovaného prostoru ve výchozím nastavení, která je omezena na výchozí hodnotu [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **Internet** oprávnění sady zón. To efektivně izoluje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované v prohlížeči od klientského počítače stejným způsobem, že byste očekávali typické webové aplikace. XBAP, který může zvýšení oprávnění, až plné důvěryhodnosti, v závislosti na zóně zabezpečení adresy URL nasazení a konfigurace zabezpečení klienta. Další informace najdete v tématu [částečné zabezpečení důvěryhodnosti WPF](wpf-partial-trust-security.md).  
   
  Toto téma popisuje model zabezpečení pro nasazení samostatné služby Windows Presentation Foundation (WPF) a aplikace hostované prohlížečem.  
   
@@ -49,7 +49,7 @@ ms.locfileid: "54592682"
   
  *Navigační aplikace* je navigace mezi položkami obsahu v rámci aplikace, která je hostovaná v prohlížeči. *Navigace v prohlížeči* se navigační prvek se změní obsah a umístění URL samotného prohlížeče. Vztah mezi navigační aplikace (obvykle XAML) a navigace v prohlížeči (obvykle ve formátu HTML) je znázorněn na následujícím obrázku:
   
- ![Diagram navigačního](../../../docs/framework/wpf/media/safetoplevelnavigationfigure.png "SafeTopLevelNavigationFigure")  
+ ![Diagram navigačního](./media/safetoplevelnavigationfigure.png "SafeTopLevelNavigationFigure")  
   
  Typ obsahu, který je bezpečný pro [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] přejděte k položce je primárně určeno, jestli se používá navigaci v rámci aplikace nebo navigace v prohlížeči.  
   
@@ -65,7 +65,7 @@ ms.locfileid: "54592682"
 |Kód aplikace|Zdroje XAML, které mají zkompilovaného kódu.<br /><br /> -nebo-<br /><br /> Soubory XAML, které jsou přidány do projektu s typem sestavení **stránky**.|`pack://application:,,,/MyResourceFile``.xaml`|  
   
 > [!NOTE]
->  Další informace o datových souborů aplikací a aktualizací Service pack [!INCLUDE[TLA2#tla_uri#plural](../../../includes/tla2sharptla-urisharpplural-md.md)], naleznete v tématu [prostředek aplikace WPF, obsah a datové soubory](../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md).  
+>  Další informace o datových souborů aplikací a aktualizací Service pack [!INCLUDE[TLA2#tla_uri#plural](../../../includes/tla2sharptla-urisharpplural-md.md)], naleznete v tématu [prostředek aplikace WPF, obsah a datové soubory](./app-development/wpf-application-resource-content-and-data-files.md).  
   
  Soubory, typy obsahu se dá Navigovat buď uživatelem nebo prostřednictvím kódu programu:  
   
@@ -115,7 +115,7 @@ ms.locfileid: "54592682"
   
      **Nastavení zabezpečení** dialogové okno se zobrazí a můžete nakonfigurovat nastavení zabezpečení pro vybrané zóny.  
   
-     ![Dialogové okno nastavení zabezpečení](../../../docs/framework/wpf/media/wpfsecurityfigure1.PNG "WPFSecurityFigure1")  
+     ![Dialogové okno nastavení zabezpečení](./media/wpfsecurityfigure1.PNG "WPFSecurityFigure1")  
   
 > [!NOTE]
 >  Do dialogového okna Možnosti Internetu můžete získat také z aplikace Internet Explorer. Klikněte na tlačítko **nástroje** a potom klikněte na tlačítko **Možnosti Internetu**.  
@@ -153,7 +153,7 @@ ms.locfileid: "54592682"
 > [!NOTE]
 >  Tato část platí také pro <xref:System.Windows.Controls.Frame> ovládací prvek, protože používá <xref:System.Windows.Controls.WebBrowser> přejít na obsah ve formátu HTML.  
   
- Pokud WPF <xref:System.Windows.Controls.WebBrowser> ovládací prvek se používá k hostování nedůvěryhodných webového obsahu, aby aplikace používala s částečnou důvěryhodností <xref:System.AppDomain> umožňující ochrání váš kód aplikace z potenciálně škodlivý kód skriptu HTML. To platí zejména v Pokud vaše aplikace pracuje s hostované skriptu s použitím <xref:System.Windows.Controls.WebBrowser.InvokeScript%2A> metoda a <xref:System.Windows.Controls.WebBrowser.ObjectForScripting%2A> vlastnost. Další informace najdete v tématu [přehled doplňků WPF](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).  
+ Pokud WPF <xref:System.Windows.Controls.WebBrowser> ovládací prvek se používá k hostování nedůvěryhodných webového obsahu, aby aplikace používala s částečnou důvěryhodností <xref:System.AppDomain> umožňující ochrání váš kód aplikace z potenciálně škodlivý kód skriptu HTML. To platí zejména v Pokud vaše aplikace pracuje s hostované skriptu s použitím <xref:System.Windows.Controls.WebBrowser.InvokeScript%2A> metoda a <xref:System.Windows.Controls.WebBrowser.ObjectForScripting%2A> vlastnost. Další informace najdete v tématu [přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
   
  Pokud vaše aplikace používá WPF <xref:System.Windows.Controls.WebBrowser> ovládacího prvku, jiný způsob, jak zvýšit zabezpečení a zmírnění útoků je umožnit ovládací prvky funkcí aplikace Internet Explorer. Ovládací prvky funkcí jsou dodatky k aplikaci Internet Explorer, které umožňují správcům a vývojářům konfigurovat funkce Internet Exploreru a aplikací, které jsou hostiteli ovládacího prvku WebBrowser ActiveX, který WPF <xref:System.Windows.Controls.WebBrowser> řídit zalomí. Ovládací prvky funkcí lze nastavit pomocí [CoInternetSetFeatureEnabled](https://go.microsoft.com/fwlink/?LinkId=179394) funkce nebo změnou hodnoty registru. Další informace o ovládacích prvcích funkce, najdete v části [Úvod k ovládacím prvkům funkce](https://go.microsoft.com/fwlink/?LinkId=179390) a [ovládací prvky Internet funkce](https://go.microsoft.com/fwlink/?LinkId=179392).  
   
@@ -251,9 +251,9 @@ ms.locfileid: "54592682"
   
  V obou případech platí, dojde ke ztrátě [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] soubor, na kterou se přejde dědí oprávnění hostitelské aplikaci. Toto chování však může nežádoucí z hlediska zabezpečení, zejména v případě, že je dojde ke ztrátě [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] soubor byl vytvořen entita, která není důvěryhodný nebo je neznámý. Tento typ obsahu se označuje jako *externí obsah*a obě <xref:System.Windows.Controls.Frame> a <xref:System.Windows.Navigation.NavigationWindow> dá izolovat ji při navigaci mezi. Izolace je dosaženo pomocí nastavení **vlastnost SandboxExternalContent** vlastnost na hodnotu true, jak je znázorněno v následujících příkladech týkajících <xref:System.Windows.Controls.Frame> a <xref:System.Windows.Navigation.NavigationWindow>:  
   
- [!code-xaml[SecurityOverviewSnippets#FrameMARKUP](../../../samples/snippets/csharp/VS_Snippets_Wpf/SecurityOverviewSnippets/CS/Window2.xaml#framemarkup)]  
+ [!code-xaml[SecurityOverviewSnippets#FrameMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/SecurityOverviewSnippets/CS/Window2.xaml#framemarkup)]  
   
- [!code-xaml[SecurityOverviewSnippets#NavigationWindowMARKUP](../../../samples/snippets/csharp/VS_Snippets_Wpf/SecurityOverviewSnippets/CS/Window1.xaml#navigationwindowmarkup)]  
+ [!code-xaml[SecurityOverviewSnippets#NavigationWindowMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/SecurityOverviewSnippets/CS/Window1.xaml#navigationwindowmarkup)]  
   
  S tímto nastavením se načtou do procesu, která je oddělená od procesu, který je hostitelem aplikace externí obsah. Tento proces je omezen na výchozí zóna sada oprávnění Internetu, efektivně izoluje od hostitelské aplikace a klientským počítačem.  
   
@@ -267,15 +267,15 @@ ms.locfileid: "54592682"
 |Oblast|Prostředek|  
 |----------|--------------|  
 |Spravovaný kód|[Vzory a postupy pro doprovodné materiály zabezpečení pro aplikace](https://go.microsoft.com/fwlink/?LinkId=117426)|  
-|[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]|[Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)|  
+|[!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)]|[Zabezpečení přístupu kódu](../misc/code-access-security.md)|  
 |[!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]|[ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)|  
-|[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)|  
+|[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[Částečné zabezpečení důvěryhodnosti WPF](wpf-partial-trust-security.md)|  
   
 ## <a name="see-also"></a>Viz také:
-- [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)
-- [Strategie zabezpečení WPF – zabezpečení platformy](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)
-- [Strategie zabezpečení WPF – engineering zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)
+- [Částečné zabezpečení důvěryhodnosti WPF](wpf-partial-trust-security.md)
+- [Strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)
+- [Strategie zabezpečení WPF – engineering zabezpečení](wpf-security-strategy-security-engineering.md)
 - [Vzory a postupy pro doprovodné materiály zabezpečení pro aplikace](https://go.microsoft.com/fwlink/?LinkId=117426)
-- [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)
+- [Zabezpečení přístupu kódu](../misc/code-access-security.md)
 - [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)
-- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [Přehled XAML (WPF)](./advanced/xaml-overview-wpf.md)

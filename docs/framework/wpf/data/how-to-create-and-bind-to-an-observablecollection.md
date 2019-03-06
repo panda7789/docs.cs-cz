@@ -8,12 +8,12 @@ helpviewer_keywords:
 - data binding [WPF], ObservableCollection class
 - notifications [WPF]
 ms.assetid: 6cf7e275-df76-41c6-a611-53b889b8fd5a
-ms.openlocfilehash: cf9f714878cd1b0b179dc1ced44e3dcfe7c2f9bd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 10cea133651739df8bb8e27c58221b34067782f5
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517588"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57376114"
 ---
 # <a name="how-to-create-and-bind-to-an-observablecollection"></a>Postupy: Vytvoření a připojení ke kolekci ObservableCollection
 Tento příklad ukazuje postup vytvoření a připojení ke kolekci, která je odvozena z <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, která je třídu kolekce, která poskytuje oznámení, pokud získat přidávat nebo odebírat položky.  
@@ -104,7 +104,7 @@ Public Class PersonName
 End Class  
 ```  
   
- Můžete zpřístupnit kolekci pro vazbu stejně jako byste to udělali s jinými [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty, jak je popsáno v [zkontrolujte Data k dispozici pro vazbu v XAML](../../../../docs/framework/wpf/data/how-to-make-data-available-for-binding-in-xaml.md). Například můžete vytvořit instanci kolekce v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a určete kolekci jako prostředek, jak je znázorněno zde:  
+ Můžete zpřístupnit kolekci pro vazbu stejně jako byste to udělali s jinými [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty, jak je popsáno v [zkontrolujte Data k dispozici pro vazbu v XAML](how-to-make-data-available-for-binding-in-xaml.md). Například můžete vytvořit instanci kolekce v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a určete kolekci jako prostředek, jak je znázorněno zde:  
   
 ```xaml  
 <Window  
@@ -136,13 +136,13 @@ End Class
  Definice `NameItemTemplate` zde není zobrazen.  
   
 > [!NOTE]
->  Objekty v kolekci musí splňovat požadavky popsané v [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md). Konkrétně, pokud používáte <xref:System.Windows.Data.BindingMode.OneWay> nebo <xref:System.Windows.Data.BindingMode.TwoWay> (třeba chtít vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] aktualizovat při změně vlastnosti zdroje dynamicky), musíte implementovat mechanismus oznámení vhodný změněné vlastnosti jako je například <xref:System.ComponentModel.INotifyPropertyChanged>rozhraní.  
+>  Objekty v kolekci musí splňovat požadavky popsané v [Přehled zdrojů vazby](binding-sources-overview.md). Konkrétně, pokud používáte <xref:System.Windows.Data.BindingMode.OneWay> nebo <xref:System.Windows.Data.BindingMode.TwoWay> (třeba chtít vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] aktualizovat při změně vlastnosti zdroje dynamicky), musíte implementovat mechanismus oznámení vhodný změněné vlastnosti jako je například <xref:System.ComponentModel.INotifyPropertyChanged>rozhraní.  
   
- Další informace najdete v tématu vazby do oddílu kolekce [přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md).  
+ Další informace najdete v tématu vazby do oddílu kolekce [přehled datových vazeb](data-binding-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Řazení dat v zobrazení](../../../../docs/framework/wpf/data/how-to-sort-data-in-a-view.md)
-- [Filtrování dat v zobrazení](../../../../docs/framework/wpf/data/how-to-filter-data-in-a-view.md)
-- [Řazení a seskupení dat pomocí zobrazení XAML](../../../../docs/framework/wpf/data/how-to-sort-and-group-data-using-a-view-in-xaml.md)
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+- [Řazení dat v zobrazení](how-to-sort-data-in-a-view.md)
+- [Filtrování dat v zobrazení](how-to-filter-data-in-a-view.md)
+- [Řazení a seskupení dat pomocí zobrazení XAML](how-to-sort-and-group-data-using-a-view-in-xaml.md)
+- [Přehled datových vazeb](data-binding-overview.md)
+- [Témata s postupy](data-binding-how-to-topics.md)

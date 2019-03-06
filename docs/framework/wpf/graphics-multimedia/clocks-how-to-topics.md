@@ -9,20 +9,20 @@ helpviewer_keywords:
 - clocks [WPF], animation
 - animation [WPF], clocks
 ms.assetid: c687b2a5-b151-41e2-9ade-df2fc1a16b04
-ms.openlocfilehash: f2888f28ad7723b7390d0e2339c2117e64e84ecd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bb625c116b1c58071ec0f51729df07f43600f36f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33554804"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57361444"
 ---
 # <a name="clocks-how-to-topics"></a>Postupy: Témata hodin
-Následující témata popisují, jak používat <xref:System.Windows.Media.Animation.Clock> objekt, který chcete spravovat informace o stavu časování pro <xref:System.Windows.Media.Animation.Timeline>.  
+Následující témata popisují způsob použití <xref:System.Windows.Media.Animation.Clock> objekt pro zachování informací o stavu časování <xref:System.Windows.Media.Animation.Timeline>.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Animace vlastnosti pomocí AnimationClock](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-an-animationclock.md)  
- [Interaktivní řízení hodin](../../../../docs/framework/wpf/graphics-multimedia/how-to-interactively-control-a-clock.md)  
- [Synchronní vyhledání hodin](../../../../docs/framework/wpf/graphics-multimedia/how-to-seek-a-clock-synchronously.md)  
+ [Animace vlastnosti pomocí AnimationClock](how-to-animate-a-property-by-using-an-animationclock.md)  
+ [Interaktivní řízení hodin](how-to-interactively-control-a-clock.md)  
+ [Synchronní vyhledání hodin](how-to-seek-a-clock-synchronously.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Media.Animation.Clock>  
@@ -34,6 +34,6 @@ Následující témata popisují, jak používat <xref:System.Windows.Media.Anim
  <xref:System.Windows.Media.Animation.Timeline>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
+ [Přehled animace](animation-overview.md)  
   
- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)
+ [Přehled scénářů](storyboards-overview.md)

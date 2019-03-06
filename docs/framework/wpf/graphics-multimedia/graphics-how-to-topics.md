@@ -8,23 +8,23 @@ helpviewer_keywords:
 - graphics [WPF], how-to topics
 - visual effects [WPF]
 ms.assetid: 959cb1cc-d26c-4bbc-b637-251091987288
-ms.openlocfilehash: 63f268692924db94710d4aa21ff6f03b00989f67
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 957040cd8202f2fa2bb1838718a49dbe028c02b1
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54688207"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358783"
 ---
 # <a name="graphics-how-to-topics"></a>Postupy: Témata grafiky
 Následující témata ukazují, jak použít grafické funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Animace obdélníku](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-rectangle.md)  
- [Animace umístění objektu pomocí PointAnimation](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-position-of-an-object-by-using-pointanimation.md)  
- [Body a vektory transformace](../../../../docs/framework/wpf/graphics-multimedia/how-to-transform-points-and-vectors.md)  
- [Rozšíření skleněného rámečku do aplikace WPF](../../../../docs/framework/wpf/graphics-multimedia/extend-glass-frame-into-a-wpf-application.md)  
- [Postupy: Zvýšení výkonu vykreslování zachycením elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-improve-rendering-performance-by-caching-an-element.md)  
- [Postupy: Použití elementu uloženého v mezipaměti jako štětce](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-cached-element-as-a-brush.md)  
+ [Animace obdélníku](how-to-animate-a-rectangle.md)  
+ [Animace umístění objektu pomocí PointAnimation](how-to-animate-the-position-of-an-object-by-using-pointanimation.md)  
+ [Body a vektory transformace](how-to-transform-points-and-vectors.md)  
+ [Rozšíření skleněného rámečku do aplikace WPF](extend-glass-frame-into-a-wpf-application.md)  
+ [Postupy: Zvýšení výkonu vykreslování zachycením elementu](how-to-improve-rendering-performance-by-caching-an-element.md)  
+ [Postupy: Použití elementu uloženého v mezipaměti jako štětce](how-to-use-a-cached-element-as-a-brush.md)  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Shapes.Shape>
@@ -34,5 +34,5 @@ Následující témata ukazují, jak použít grafické funkce [!INCLUDE[TLA#tla
 - <xref:System.Windows.Media.Drawing>
 - <xref:System.Windows.Media.Brush>
 - <xref:System.Windows.Media.Effects.BitmapEffect>
-- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
-- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+- [Grafika a multimédia](index.md)
+- [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md)

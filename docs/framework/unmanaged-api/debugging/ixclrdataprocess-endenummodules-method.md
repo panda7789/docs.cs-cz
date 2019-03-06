@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 50ad55674360d7b880af3ddf701cf17005f30ce7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3b7050e92af6fc58b45837840b2796a5deac955c
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54722735"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57375334"
 ---
 # <a name="ixclrdataprocessendenummodules-method"></a>IXCLRDataProcess::EndEnumModules – metoda
 
@@ -35,8 +35,10 @@ HRESULT EndEnumModules(
 );
 ```
 
-### <a name="parameters"></a>Parametry
-`handle` [out] Popisovač pro vytvoření výčtu moduly.
+## <a name="parameters"></a>Parametry
+
+`handle`\
+[out] Popisovač pro vytvoření výčtu moduly.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -51,5 +53,5 @@ Zadaná metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 26. pozi
 
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [IXCLRDataProcess Interface](../../../../docs/framework/unmanaged-api/debugging/ixclrdataprocess-interface.md)
+- [Ladění](index.md)
+- [IXCLRDataProcess Interface](ixclrdataprocess-interface.md)

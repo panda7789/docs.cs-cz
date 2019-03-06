@@ -8,12 +8,12 @@ helpviewer_keywords:
 - geometry classes [WPF]
 - graphics [WPF], geometry classes
 ms.assetid: 9fba8934-98b7-4af6-82f6-f4ef887f963a
-ms.openlocfilehash: 0c30bc99939b7e60e7e36b698776951cc6181497
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e002c07953320ac5e7c0854fe521896c3bca225c
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54532343"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57353007"
 ---
 # <a name="geometry-overview"></a>Přehled geometrie
 Tento přehled popisuje způsob použití [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Media.Geometry> tříd k popisu obrazce. V tomto tématu jsou také uvedeny rozdíly mezi <xref:System.Windows.Media.Geometry> objekty a <xref:System.Windows.Shapes.Shape> elementy.  
@@ -25,7 +25,7 @@ Tento přehled popisuje způsob použití [!INCLUDE[TLA#tla_winclient](../../../
   
  <xref:System.Windows.Media.Geometry> objekty mohou být jednoduché, například obdélníků a kruhy nebo složený, vytvoření ze dvou nebo více geometrické objekty.  Složitější geometrie lze vytvořit pomocí <xref:System.Windows.Media.PathGeometry> a <xref:System.Windows.Media.StreamGeometry> třídy, které umožňují popsat oblouky a křivky.  
   
- Protože <xref:System.Windows.Media.Geometry> k typu <xref:System.Windows.Freezable>, <xref:System.Windows.Media.Geometry> objekty poskytují několik speciální funkce: mohou být deklarovány jako [prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md), sdíleny mezi více objektů, jen pro čtení ke zlepšení výkonu, klonování, a provedené bezpečné pro vlákna. Další informace o různých funkcí poskytovaných službou <xref:System.Windows.Freezable> objekty, najdete [přehled Zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md).  
+ Protože <xref:System.Windows.Media.Geometry> k typu <xref:System.Windows.Freezable>, <xref:System.Windows.Media.Geometry> objekty poskytují několik speciální funkce: mohou být deklarovány jako [prostředky](../advanced/xaml-resources.md), sdíleny mezi více objektů, jen pro čtení ke zlepšení výkonu, klonování, a provedené bezpečné pro vlákna. Další informace o různých funkcí poskytovaných službou <xref:System.Windows.Freezable> objekty, najdete [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md).  
   
 <a name="wcpsdk_graphics_geometry_geometryandshapes"></a>   
 ## <a name="geometries-vs-shapes"></a>Geometrie vs. Obrazce  
@@ -66,43 +66,43 @@ Tento přehled popisuje způsob použití [!INCLUDE[TLA#tla_winclient](../../../
   
  Následující příklad ukazuje, jak vytvořit a vykreslování <xref:System.Windows.Media.LineGeometry>.  Jak bylo uvedeno dříve, <xref:System.Windows.Media.Geometry> objektu se nepodařilo vykreslit, tak v příkladu se používá <xref:System.Windows.Shapes.Path> tvar k vykreslení řádku.  Protože řádku nemá žádné oblasti, nastavení <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnost <xref:System.Windows.Shapes.Path> by neměl žádný vliv; místo toho pouze <xref:System.Windows.Shapes.Shape.Stroke%2A> a <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> nejsou zadány vlastnosti. Výstup z příkladu ukazuje následující obrázek.  
   
- ![LineGeometry](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-line.gif "graphicsmm_line")  
+ ![LineGeometry](./media/graphicsmm-line.gif "graphicsmm_line")  
 LineGeometry vykreslovány z (10,20) (100,130)  
   
- [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMLineGeometryExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmlinegeometryexample)]  
+ [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMLineGeometryExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmlinegeometryexample)]  
   
- [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMLineGeometryExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmlinegeometryexample)]
- [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMLineGeometryExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmlinegeometryexample)]  
+ [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMLineGeometryExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmlinegeometryexample)]
+ [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMLineGeometryExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmlinegeometryexample)]  
   
  Následující příklad ukazuje, jak vytvořit a vykreslit <xref:System.Windows.Media.EllipseGeometry>.  Příklady sady <xref:System.Windows.Media.EllipseGeometry.Center%2A> z <xref:System.Windows.Media.EllipseGeometry> je nastavena na bod `50,50` a poloměr x a y-radius jsou obě nastaveny na `50`, vytváří kruh průměru 100.  Vnitřní elipsy kresleno přiřazení hodnoty k vlastnosti výplň Path element, v tomto případě <xref:System.Windows.Media.Brushes.Gold%2A>. Výstup z příkladu ukazuje následující obrázek.  
   
- ![EllipseGeometry](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-ellipse.gif "graphicsmm_ellipse")  
+ ![EllipseGeometry](./media/graphicsmm-ellipse.gif "graphicsmm_ellipse")  
 EllipseGeometry vykreslovat (50,50)  
   
- [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMEllipseGeometryExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmellipsegeometryexample)]  
+ [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMEllipseGeometryExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmellipsegeometryexample)]  
   
- [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMEllipseGeometryExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmellipsegeometryexample)]
- [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMEllipseGeometryExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmellipsegeometryexample)]  
+ [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMEllipseGeometryExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmellipsegeometryexample)]
+ [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMEllipseGeometryExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmellipsegeometryexample)]  
   
  Následující příklad ukazuje, jak vytvořit a vykreslování <xref:System.Windows.Media.RectangleGeometry>.  Určené pozici a rozměry obdélníku <xref:System.Windows.Rect> struktury. Pozice je `50,50` a výška a šířka jsou obě `25`, která vytvoří čtverec. Výstup z příkladu ukazuje následující obrázek.  
   
- ![RectangleGeometry](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rectangle.gif "graphicsmm_rectangle")  
+ ![RectangleGeometry](./media/graphicsmm-rectangle.gif "graphicsmm_rectangle")  
 RectangleGeometry vykreslovat 50,50  
   
- [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMRectangleGeometryExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmrectanglegeometryexample)]  
+ [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMRectangleGeometryExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmrectanglegeometryexample)]  
   
- [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMRectangleGeometryExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmrectanglegeometryexample)]
- [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMRectangleGeometryExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmrectanglegeometryexample)]  
+ [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMRectangleGeometryExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmrectanglegeometryexample)]
+ [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMRectangleGeometryExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmrectanglegeometryexample)]  
   
  Následující příklad ukazuje, jak pomocí <xref:System.Windows.Media.EllipseGeometry> jako oblast ústřižku pro bitovou kopii.  <xref:System.Windows.Controls.Image> Objektu je definována s <xref:System.Windows.FrameworkElement.Width%2A> 200 a <xref:System.Windows.FrameworkElement.Height%2A> 150.  <xref:System.Windows.Media.EllipseGeometry> s <xref:System.Windows.Media.EllipseGeometry.RadiusX%2A> hodnotu 100, <xref:System.Windows.Media.EllipseGeometry.RadiusY%2A> hodnota 75 a <xref:System.Windows.Media.EllipseGeometry.Center%2A> hodnota 100,75 nastavená na <xref:System.Windows.UIElement.Clip%2A> vlastnosti bitové kopie.  Zobrazí se pouze část obrázku, který je v rámci oblasti se třemi tečkami. Výstup z příkladu ukazuje následující obrázek.  
   
- ![Obrázek a nemusíte výstřižek](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clipexample.png "graphicsmm_clipexample")  
+ ![Obrázek a nemusíte výstřižek](./media/graphicsmm-clipexample.png "graphicsmm_clipexample")  
 EllipseGeometry umožňuje oříznout ovládacího prvku pro obrázek  
   
- [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMImageClipGeometryExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmimageclipgeometryexample)]  
+ [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMImageClipGeometryExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmimageclipgeometryexample)]  
   
- [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMImageClipGeometryExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmimageclipgeometryexample)]
- [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMImageClipGeometryExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmimageclipgeometryexample)]  
+ [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMImageClipGeometryExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmimageclipgeometryexample)]
+ [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMImageClipGeometryExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmimageclipgeometryexample)]  
   
 <a name="wcpsdk_graphics_geometry_pathgeometry"></a>   
 ## <a name="path-geometries"></a>Cesta geometrie  
@@ -114,25 +114,25 @@ EllipseGeometry umožňuje oříznout ovládacího prvku pro obrázek
   
 |Typ segmentu|Popis|Příklad|  
 |------------------|-----------------|-------------|  
-|<xref:System.Windows.Media.ArcSegment>|Vytvoří oblouku elipsy mezi dvěma body.|[Vytvoření oblouku elipsy](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-an-elliptical-arc.md).|  
-|<xref:System.Windows.Media.BezierSegment>|Vytvoří kubické Bézierovy křivky mezi dvěma body.|[Vytvoření Kubické Bézierovy křivky](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-cubic-bezier-curve.md).|  
-|<xref:System.Windows.Media.LineSegment>|Vytvoří čáry mezi dvěma body.|[Vytvoření LineSegment v PathGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-linesegment-in-a-pathgeometry.md)|  
+|<xref:System.Windows.Media.ArcSegment>|Vytvoří oblouku elipsy mezi dvěma body.|[Vytvoření oblouku elipsy](how-to-create-an-elliptical-arc.md).|  
+|<xref:System.Windows.Media.BezierSegment>|Vytvoří kubické Bézierovy křivky mezi dvěma body.|[Vytvoření Kubické Bézierovy křivky](how-to-create-a-cubic-bezier-curve.md).|  
+|<xref:System.Windows.Media.LineSegment>|Vytvoří čáry mezi dvěma body.|[Vytvoření LineSegment v PathGeometry](how-to-create-a-linesegment-in-a-pathgeometry.md)|  
 |<xref:System.Windows.Media.PolyBezierSegment>|Vytvoří řadu kubické Bézierovy křivky.|Zobrazit <xref:System.Windows.Media.PolyBezierSegment> typ stránky.|  
 |<xref:System.Windows.Media.PolyLineSegment>|Vytvoří řadu řádky.|Zobrazit <xref:System.Windows.Media.PolyLineSegment> typ stránky.|  
 |<xref:System.Windows.Media.PolyQuadraticBezierSegment>|Vytvoří řadu kvadratické Bézierovy křivky.|Zobrazit <xref:System.Windows.Media.PolyQuadraticBezierSegment> stránky.|  
-|<xref:System.Windows.Media.QuadraticBezierSegment>|Vytvoří kvadratické Bézierovy křivky.|[Vytvoření kvadratické Bézierovy křivky](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-quadratic-bezier-curve.md).|  
+|<xref:System.Windows.Media.QuadraticBezierSegment>|Vytvoří kvadratické Bézierovy křivky.|[Vytvoření kvadratické Bézierovy křivky](how-to-create-a-quadratic-bezier-curve.md).|  
   
  Segmenty v rámci <xref:System.Windows.Media.PathFigure> se sloučí do jediného geometrické obrazce s koncový bod každý segment se počáteční bod dalšího segmentu. <xref:System.Windows.Media.PathFigure.StartPoint%2A> Vlastnost <xref:System.Windows.Media.PathFigure> Určuje bod, ze které je vykresleno první segment. Každý další segment začíná na koncový bod předchozího segmentu. Například zobrazuje svislá čára z `10,50` k `10,150` lze definovat tak, že nastavíte <xref:System.Windows.Media.PathFigure.StartPoint%2A> vlastnost `10,50` a vytváření <xref:System.Windows.Media.LineSegment> s <xref:System.Windows.Media.LineSegment.Point%2A> nastavení vlastnosti `10,150`.  
   
  Následující příklad vytvoří jednoduchý <xref:System.Windows.Media.PathGeometry> sestává z jediného <xref:System.Windows.Media.PathFigure> s <xref:System.Windows.Media.LineSegment> a zobrazí ji pomocí <xref:System.Windows.Shapes.Path> elementu. <xref:System.Windows.Media.PathFigure> Objektu <xref:System.Windows.Media.PathFigure.StartPoint%2A> je nastavena na `10,20` a <xref:System.Windows.Media.LineSegment> je definována s koncový bod `100,130`. Je vidět na následujícím obrázku <xref:System.Windows.Media.PathGeometry> vytvořené v tomto příkladu.  
   
- ![LineGeometry](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-line.gif "graphicsmm_line")  
+ ![LineGeometry](./media/graphicsmm-line.gif "graphicsmm_line")  
 PathGeometry –, který obsahuje jeden LineSegment  
   
- [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMPathGeometryLineExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmpathgeometrylineexample)]  
+ [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMPathGeometryLineExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmpathgeometrylineexample)]  
   
- [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMPathGeometryLineExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmpathgeometrylineexample)]
- [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMPathGeometryLineExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmpathgeometrylineexample)]  
+ [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMPathGeometryLineExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmpathgeometrylineexample)]
+ [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMPathGeometryLineExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmpathgeometrylineexample)]  
   
  Je vhodné kontrastní v tomto příkladu s předchozím <xref:System.Windows.Media.LineGeometry> příklad.  Syntaxe pro <xref:System.Windows.Media.PathGeometry> je mnohem podrobnější než, který používá pro jednoduchou <xref:System.Windows.Media.LineGeometry>, a to může být vhodnější použít <xref:System.Windows.Media.LineGeometry> třídy v takovém případě ale podrobné syntaxe <xref:System.Windows.Media.PathGeometry> umožňuje velmi složité a komplexní geometrické oblastech.  
   
@@ -144,33 +144,33 @@ PathGeometry –, který obsahuje jeden LineSegment
   
  Tento příklad přidá <xref:System.Windows.Media.ArcSegment>, který pochází z koncového bodu předchozí <xref:System.Windows.Media.LineSegment> bodu určeného jeho <xref:System.Windows.Media.ArcSegment.Point%2A> vlastnost. Příklad také určuje oblouku x - a -poloměr y (<xref:System.Windows.Media.ArcSegment.Size%2A>), úhel otočení (<xref:System.Windows.Media.ArcSegment.RotationAngle%2A>), příznak, který udává, jak velké by měl být úhel oblouku výsledný (<xref:System.Windows.Media.ArcSegment.IsLargeArc%2A>) a hodnotu, která udává, v jakém směru vykreslením oblouku (<xref:System.Windows.Media.ArcSegment.SweepDirection%2A>). Následující obrázek znázorňuje tvar vytvořené v tomto příkladu.  
   
- ![A PathGeometry](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-path2.gif "graphicsmm_path2")  
+ ![A PathGeometry](./media/graphicsmm-path2.gif "graphicsmm_path2")  
 PathGeometry  
   
- [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMPathGeometryComplexExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmpathgeometrycomplexexample)]  
+ [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMPathGeometryComplexExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmpathgeometrycomplexexample)]  
   
- [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMPathGeometryComplexExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmpathgeometrycomplexexample)]
- [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMPathGeometryComplexExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmpathgeometrycomplexexample)]  
+ [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMPathGeometryComplexExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmpathgeometrycomplexexample)]
+ [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMPathGeometryComplexExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmpathgeometrycomplexexample)]  
   
  Možné vytvářet i složitější geometrie pomocí několika <xref:System.Windows.Media.PathFigure> objekty v rámci <xref:System.Windows.Media.PathGeometry>.  
   
  Následující příklad vytvoří <xref:System.Windows.Media.PathGeometry> se dvěma <xref:System.Windows.Media.PathFigure> objektů, z nichž každý obsahuje více <xref:System.Windows.Media.PathSegment> objekty.  <xref:System.Windows.Media.PathFigure> z výše uvedeného příkladu a <xref:System.Windows.Media.PathFigure> s <xref:System.Windows.Media.PolyLineSegment> a <xref:System.Windows.Media.QuadraticBezierSegment> se používají.  A <xref:System.Windows.Media.PolyLineSegment> je definována s polem bodů a <xref:System.Windows.Media.QuadraticBezierSegment> je definována s řídicí bod a koncový bod. Následující obrázek znázorňuje tvar vytvořené v tomto příkladu.  
   
- ![A PathGeometry](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-path.gif "graphicsmm_path")  
+ ![A PathGeometry](./media/graphicsmm-path.gif "graphicsmm_path")  
 PathGeometry s několika obrázků  
   
- [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMPathGeometryComplexMultiExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmpathgeometrycomplexmultiexample)]  
+ [!code-xaml[GeometryOverviewSamples_snip#GraphicsMMPathGeometryComplexMultiExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_snip/CS/GeometryExamples.xaml#graphicsmmpathgeometrycomplexmultiexample)]  
   
- [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMPathGeometryComplexMultiExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmpathgeometrycomplexmultiexample)]
- [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMPathGeometryComplexMultiExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmpathgeometrycomplexmultiexample)]  
+ [!code-csharp[GeometryOverviewSamples_procedural_snip#GraphicsMMPathGeometryComplexMultiExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/CSharp/GeometryExamples.cs#graphicsmmpathgeometrycomplexmultiexample)]
+ [!code-vb[GeometryOverviewSamples_procedural_snip#GraphicsMMPathGeometryComplexMultiExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GeometryOverviewSamples_procedural_snip/visualbasic/geometryexamples.vb#graphicsmmpathgeometrycomplexmultiexample)]  
   
 ### <a name="streamgeometry"></a>StreamGeometry  
  Podobně jako <xref:System.Windows.Media.PathGeometry> třídy, <xref:System.Windows.Media.StreamGeometry> definuje komplexní geometrické obrazce, který může obsahovat křivky oblouky a řádky. Na rozdíl od <xref:System.Windows.Media.PathGeometry>, obsah <xref:System.Windows.Media.StreamGeometry> nepodporují datové vazby, animace nebo úpravy. Použití <xref:System.Windows.Media.StreamGeometry> když potřebujete k popisu komplexní geometry, ale nechcete, aby režii podporuje datové vazby, animace nebo úpravy. Z důvodu jeho efektivitu a <xref:System.Windows.Media.StreamGeometry> třídy je dobrou volbou pro popis doplňků pro úpravy.  
   
- Příklad najdete v tématu [vytvoření tvaru použitím StreamGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-shape-using-a-streamgeometry.md).  
+ Příklad najdete v tématu [vytvoření tvaru použitím StreamGeometry](how-to-create-a-shape-using-a-streamgeometry.md).  
   
 ### <a name="path-markup-syntax"></a>Syntaxe značek cesty  
- <xref:System.Windows.Media.PathGeometry> a <xref:System.Windows.Media.StreamGeometry> podporuje [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] atribut syntaxe pomocí speciální řadu přesunutí a vykreslení příkazů. Další informace najdete v tématu [syntaxe značek cesty](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md).  
+ <xref:System.Windows.Media.PathGeometry> a <xref:System.Windows.Media.StreamGeometry> podporuje [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] atribut syntaxe pomocí speciální řadu přesunutí a vykreslení příkazů. Další informace najdete v tématu [syntaxe značek cesty](path-markup-syntax.md).  
   
 <a name="wcpsdk_graphics_geometry_introduction2"></a>   
 ## <a name="composite-geometries"></a>Složený geometrie  
@@ -178,7 +178,7 @@ PathGeometry s několika obrázků
   
 -   <xref:System.Windows.Media.CombinedGeometry> Objektu a <xref:System.Windows.Media.Geometry.Combine%2A> metoda provádí logické operace zkombinovat oblasti určené dvě geometrie. <xref:System.Windows.Media.Geometry> objekty, které mají žádné oblasti se zahodí. Jenom dva <xref:System.Windows.Media.Geometry> objekty mohou být kombinovány (i když tyto dvě geometrie může také být složené geometrie).  
   
--   <xref:System.Windows.Media.GeometryGroup> Třída vytvoří sloučení <xref:System.Windows.Media.Geometry> objekty obsahuje bez kombinování jejich oblasti. Libovolný počet <xref:System.Windows.Media.Geometry> objekty mohou být přidány do <xref:System.Windows.Media.GeometryGroup>. Příklad najdete v tématu [vytvoření složeného tvaru](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-composite-shape.md).  
+-   <xref:System.Windows.Media.GeometryGroup> Třída vytvoří sloučení <xref:System.Windows.Media.Geometry> objekty obsahuje bez kombinování jejich oblasti. Libovolný počet <xref:System.Windows.Media.Geometry> objekty mohou být přidány do <xref:System.Windows.Media.GeometryGroup>. Příklad najdete v tématu [vytvoření složeného tvaru](how-to-create-a-composite-shape.md).  
   
  Protože neprovádějte operaci combine, pomocí <xref:System.Windows.Media.GeometryGroup> objekty nabízí v porovnání s použitím výkony těží <xref:System.Windows.Media.CombinedGeometry> objekty nebo <xref:System.Windows.Media.Geometry.Combine%2A> metody.  
   
@@ -188,21 +188,21 @@ PathGeometry s několika obrázků
   
  V následujícím příkladu <xref:System.Windows.Media.CombinedGeometry> je definována s režimem kombinování sjednocení.  Obě <xref:System.Windows.Media.CombinedGeometry.Geometry1%2A> a <xref:System.Windows.Media.CombinedGeometry.Geometry2%2A> jsou definovány jako kroužky stejného protokolu radius, ale s posunem centra 50.  
   
- [!code-xaml[GeometrySample#23](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/combininggeometriesexample.xaml#23)]  
+ [!code-xaml[GeometrySample#23](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/combininggeometriesexample.xaml#23)]  
   
- ![Výsledky sjednocení kombinování režimu](../../../../docs/framework/wpf/graphics-multimedia/media/mil-task-combined-geometry-union.PNG "mil_task_combined_geometry_union")  
+ ![Výsledky sjednocení kombinování režimu](./media/mil-task-combined-geometry-union.PNG "mil_task_combined_geometry_union")  
   
  V následujícím příkladu <xref:System.Windows.Media.CombinedGeometry> je definována s kombinování režimu <xref:System.Windows.Media.GeometryCombineMode.Xor>.  Obě <xref:System.Windows.Media.CombinedGeometry.Geometry1%2A> a <xref:System.Windows.Media.CombinedGeometry.Geometry2%2A> jsou definovány jako kroužky stejného protokolu radius, ale s posunem centra 50.  
   
- [!code-xaml[GeometrySample#24](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/combininggeometriesexample.xaml#24)]  
+ [!code-xaml[GeometrySample#24](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/combininggeometriesexample.xaml#24)]  
   
- ![Výsledky Xor kombinování režimu](../../../../docs/framework/wpf/graphics-multimedia/media/mil-task-combined-geometry-xor.PNG "mil_task_combined_geometry_xor")  
+ ![Výsledky Xor kombinování režimu](./media/mil-task-combined-geometry-xor.PNG "mil_task_combined_geometry_xor")  
   
- Další příklady najdete v tématu [vytvoření složeného tvaru](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-composite-shape.md) a [vytvoření kombinované geometrie](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-combined-geometry.md).  
+ Další příklady najdete v tématu [vytvoření složeného tvaru](how-to-create-a-composite-shape.md) a [vytvoření kombinované geometrie](how-to-create-a-combined-geometry.md).  
   
 <a name="freezable_features"></a>   
 ## <a name="freezable-features"></a>Freezable – funkce  
- Protože dědí sám od <xref:System.Windows.Freezable> třídy, <xref:System.Windows.Media.Geometry> třídy poskytují několik speciálních funkcí: <xref:System.Windows.Media.Geometry> objekty mohou být deklarovány jako [prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md), sdíleny mezi více objektů, jen pro čtení ke zlepšení výkon, klonování a provedli bezpečné pro vlákna. Další informace o různých funkcí poskytovaných službou <xref:System.Windows.Freezable> objekty, najdete [přehled Zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md).  
+ Protože dědí sám od <xref:System.Windows.Freezable> třídy, <xref:System.Windows.Media.Geometry> třídy poskytují několik speciálních funkcí: <xref:System.Windows.Media.Geometry> objekty mohou být deklarovány jako [prostředky XAML](../advanced/xaml-resources.md), sdíleny mezi více objektů, jen pro čtení ke zlepšení výkon, klonování a provedli bezpečné pro vlákna. Další informace o různých funkcí poskytovaných službou <xref:System.Windows.Freezable> objekty, najdete [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md).  
   
 <a name="othergeometryfeatures"></a>   
 ## <a name="other-geometry-features"></a>Další funkce geometrie  
@@ -221,9 +221,9 @@ PathGeometry s několika obrázků
 - <xref:System.Windows.Media.PathGeometry>
 - <xref:System.Windows.Shapes.Path>
 - <xref:System.Windows.Media.GeometryDrawing>
-- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [Syntaxe značek cesty](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)
-- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/geometries-how-to-topics.md)
-- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
-- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
-- [Přehled nakreslených objektů](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)
+- [2D grafika a obrázky](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [Syntaxe značek cesty](path-markup-syntax.md)
+- [Témata s postupy](geometries-how-to-topics.md)
+- [Přehled animace](animation-overview.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Přehled nakreslených objektů](drawing-objects-overview.md)

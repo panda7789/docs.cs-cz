@@ -6,19 +6,19 @@ helpviewer_keywords:
 - key frames [WPF], about key-frame animations
 - multiple animation target values [WPF]
 ms.assetid: 10028f97-bb63-41fc-b8ad-663dac7ea203
-ms.openlocfilehash: 5891887ea0df4addc828dd617c9fce63bb9096ea
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a4606b73835087a406d989960d7a6e24ad218769
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54661591"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57362978"
 ---
 # <a name="key-frame-animations-overview"></a>Přehled animací klíčových snímků
 Toto téma vás seznámí s animací klíčových snímků. Animace klíčových snímků vám umožní pomocí více než dva cílových hodnot animace a řídit metodu interpolace animace společnosti.  
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Tento přehled informace o tom, měli byste se seznámit s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] animace a časových os. Úvod do animace, najdete v článku [přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md). Pomáhá také se seznámit s animace od/Komu/kým. Další informace najdete v tématu Přehled animací From/To/By.  
+ Tento přehled informace o tom, měli byste se seznámit s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] animace a časových os. Úvod do animace, najdete v článku [přehled animace](animation-overview.md). Pomáhá také se seznámit s animace od/Komu/kým. Další informace najdete v tématu Přehled animací From/To/By.  
   
 <a name="whatisakeyframeanimation"></a>   
 ## <a name="what-is-a-key-frame-animation"></a>Co je animace klíčových snímků?  
@@ -32,13 +32,13 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
   
 -   Pro každou cílovou hodnotu vytvořit klíčový snímek příslušného typu, nastavte ho na hodnotu a <xref:System.Windows.Media.Animation.KeyTime>a přidejte ho do animace <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A> kolekce.  
   
--   Přidružit animaci vlastnosti, stejně jako byste to udělali s od/Komu/kým animace. Další informace o použití animace vlastnosti pomocí scénáře najdete v tématu [přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).  
+-   Přidružit animaci vlastnosti, stejně jako byste to udělali s od/Komu/kým animace. Další informace o použití animace vlastnosti pomocí scénáře najdete v tématu [přehled scénářů](storyboards-overview.md).  
   
  Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> pro animaci <xref:System.Windows.Shapes.Rectangle> element do čtyř různých umístění.  
   
- [!code-xaml[keyframes_ovw_snippet#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
+ [!code-xaml[keyframes_ovw_snippet#BasicKeyFrameExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
   
- Od/Komu/kým, jako je animace, animace klíčových snímků je použít na vlastnost s použitím <xref:System.Windows.Media.Animation.Storyboard> značek a kódu nebo s použitím <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metody v kódu. Animace klíčových snímků můžete také použít k vytvoření <xref:System.Windows.Media.Animation.AnimationClock> a použít ji pro jednu nebo více vlastností. Další informace o různých způsobech použití animací, najdete v článku [přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md).  
+ Od/Komu/kým, jako je animace, animace klíčových snímků je použít na vlastnost s použitím <xref:System.Windows.Media.Animation.Storyboard> značek a kódu nebo s použitím <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metody v kódu. Animace klíčových snímků můžete také použít k vytvoření <xref:System.Windows.Media.Animation.AnimationClock> a použít ji pro jednu nebo více vlastností. Další informace o různých způsobech použití animací, najdete v článku [přehled způsobů animace vlastností](property-animation-techniques-overview.md).  
   
 <a name="animation_types"></a>   
 ## <a name="key-frame-animation-types"></a>Typy animace klíčových snímků  
@@ -99,7 +99,7 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
   
 -   Nakonec animace přechody hodnota klíčový snímek s časem na největší klíče, který se rovná nebo je menší, než se animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A>.  
   
- Pokud se animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> je <xref:System.Windows.Duration.Automatic%2A> nebo jeho <xref:System.Windows.Media.Animation.Timeline.Duration%2A> je roven času poslední klíčový snímek animace elementy end. Jinak, pokud se animace <xref:System.Windows.Duration> je větší než klíčovým momentem poslední klíčový snímek animace obsahuje hodnotu klíčového snímku, dokud ho dosáhne konce jeho <xref:System.Windows.Duration>. Podobně jako všechny animace klíčových snímků animace používá jeho <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> a určí, zda jej drží konečnou hodnotu dosáhne konce jeho aktivní období. Další informace najdete v tématu [přehled chování časování](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md).  
+ Pokud se animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> je <xref:System.Windows.Duration.Automatic%2A> nebo jeho <xref:System.Windows.Media.Animation.Timeline.Duration%2A> je roven času poslední klíčový snímek animace elementy end. Jinak, pokud se animace <xref:System.Windows.Duration> je větší než klíčovým momentem poslední klíčový snímek animace obsahuje hodnotu klíčového snímku, dokud ho dosáhne konce jeho <xref:System.Windows.Duration>. Podobně jako všechny animace klíčových snímků animace používá jeho <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> a určí, zda jej drží konečnou hodnotu dosáhne konce jeho aktivní období. Další informace najdete v tématu [přehled chování časování](timing-behaviors-overview.md).  
   
  Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> objekt definovaný v předchozím příkladu k předvedení jak <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> a <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> vlastnosti práce.  
   
@@ -113,7 +113,7 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
   
 -   Vzhledem k tomu, <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnost animace byla nastavena na 10 sekund, animace uchovává svou poslední hodnotu 2 sekundy před koncové v době = 0:0:10.  
   
- [!code-xaml[keyframes_ovw_snippet#BasicKeyFrameExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
+ [!code-xaml[keyframes_ovw_snippet#BasicKeyFrameExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
   
 <a name="interpolationmethods"></a>   
 ## <a name="interpolation-methods"></a>Interpolace metody  
@@ -155,7 +155,7 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
 ### <a name="splined-interpolation"></a>Splined interpolace  
  Splined interpolace lze použít k dosažení víc odpovídají realitě účinky časování. Protože animace se proto často používají k napodobují efekty, ke kterým dochází v reálném světě, vývojáři může potřebovat jemné ovládací prvek zrychlení a zpomalení objektů a zavřete manipulaci s časování segmentů. Klíčové snímky SpLine umožňují splined interpolace animace. U dalších klíčových snímků, můžete zadat <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> a <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A>. U křivkový klíčový snímek, můžete také zadat <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame.KeySpline%2A>. Následující příklad ukazuje klíčové rámečku jedné křivky pro <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>. Všimněte si, že <xref:System.Windows.Media.Animation.KeySpline> vlastnost; díky liší od ostatních typů klíčové snímky spline klíčový snímek.  
   
- [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
+ [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
   
  Kubické Bézierovy křivky je definován tak, že počáteční bod, koncový bod a dva ovládací prvek body. <xref:System.Windows.Media.Animation.KeySpline> Vlastnost klíčové rámečku křivkový definuje dva řídicí bod Bézierovy křivky, který vede od (0; 0) na (1,1). Určuje první řídicí bod křivky faktor v první polovině roku Bézierovu křivku, a druhý řídicí bod řídí faktor křivky v druhé polovině segmentu Bézierovy křivky. Výsledný křivky popisuje rychlost změny pro klíčový rámec tohoto křivky. Tím strmější křivku, tím rychleji klíčový snímek změní jeho hodnoty. Protože křivka získá plošší, klíčové rámečku změní jeho hodnoty pomaleji.  
   
@@ -163,25 +163,25 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
   
  Následující příklad určuje <xref:System.Windows.Media.Animation.KeySpline> 0,1 1,0, která vytvoří následující Bézierovu křivku.  
   
- ![Bézierovy křivky](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-keyspline-0-1-1-0.png "graphicsmm_keyspline_0_1_1_0")  
+ ![Bézierovy křivky](./media/graphicsmm-keyspline-0-1-1-0.png "graphicsmm_keyspline_0_1_1_0")  
 Klíče křivky pomocí kontrolních bodů (0.0; 1.0) a (1.0, 0.0)  
   
- [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
+ [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexample)]  
   
  Toto klíčové rámečku animuje rychle při jeho začíná, může zpomalit a potom zrychluje znovu předtím, než ho ukončí.  
   
  Následující příklad určuje <xref:System.Windows.Media.Animation.KeySpline> z 0.5,0.25 0.75,1.0, která vytvoří následující Bézierovu křivku.  
   
- ![Bézierovy křivky](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-keyspline-025-050-075-10.png "graphicsmm_keyspline_025_050_075_10")  
+ ![Bézierovy křivky](./media/graphicsmm-keyspline-025-050-075-10.png "graphicsmm_keyspline_025_050_075_10")  
 Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)  
   
- [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExampleInline3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]  
+ [!code-xaml[keyframes_ovw_snippet#SingleSplineKeyFrameExampleInline3](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#singlesplinekeyframeexampleinline3)]  
   
  Protože zaoblení Bézierovu křivku mění velmi malý, tento klíčový snímek animuje téměř konstantní rychlostí; To může zpomalit trochu směrem k velmi ukončení.  
   
  Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> pro animaci pozici obdélníku. Vzhledem k tomu, <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> používá <xref:System.Windows.Media.Animation.SplineDoubleKeyFrame> objekty, přechod mezi každou hodnotu klíčového snímku používá splined interpolace.  
   
- [!code-xaml[keyframes_ovw_snippet#SplinedInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#splinedinterpolationexample)]  
+ [!code-xaml[keyframes_ovw_snippet#SplinedInterpolationExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#splinedinterpolationexample)]  
   
  Splined interpolace může být obtížné porozumět; pomůže experimentovat s různými nastaveními. [Ukázkové animace křivkový klíč](https://go.microsoft.com/fwlink/?LinkID=160011) vám umožní změnit hodnoty klíče křivky a zobrazit výsledek na animace.  
   
@@ -191,7 +191,7 @@ Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)
   
  V následujícím příkladu <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> vytvoření této interpolace lineární splined a diskrétní používá.  
   
- [!code-xaml[keyframes_ovw_snippet#ComboInterpolationExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#combointerpolationexample)]  
+ [!code-xaml[keyframes_ovw_snippet#ComboInterpolationExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/InterpolationMethodsExample.xaml#combointerpolationexample)]  
   
 <a name="keytimes"></a>   
 ## <a name="more-about-duration-and-key-times"></a>Další informace o době trvání a časy klíče  
@@ -212,7 +212,7 @@ Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)
   
 -   Čtvrtý klíčový snímek animuje od 500 do 600. Začne při ukončení třetí klíčových snímků (v době = 9 sekund) a přehraje na 1 sekundu koncové době = 0:0:10.  
   
- [!code-xaml[keyframes_ovw_snippet#TimeSpanKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#timespankeytimeexample)]  
+ [!code-xaml[keyframes_ovw_snippet#TimeSpanKeyTimeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#timespankeytimeexample)]  
   
 ### <a name="percentage-values"></a>Procento hodnoty  
  Procentuální hodnota určuje, že klíčový snímek končí určité procento animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A>. V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], zadejte procento jako čísla následované `%` symbol. V kódu, můžete použít <xref:System.Windows.Media.Animation.KeyTime.FromPercent%2A> metoda a předat ji <xref:System.Double> procentuální hodnota. Hodnota musí být větší než nebo rovna 0 a menší nebo rovna 100 procent. Následující příklad ukazuje s určitou dobou trvání animace 10 sekund a čtyři klíčové snímky, jejichž klíče časy jsou určené jako procenta.  
@@ -225,7 +225,7 @@ Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)
   
 -   Čtvrtý klíčový snímek animuje od 500 do 600. Začne při ukončení třetí klíčových snímků (v době = 9 sekund) a přehraje na 1 sekundu koncové době = 0:0:10 (1 * 10 = 10).  
   
- [!code-xaml[keyframes_ovw_snippet#PercentageKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#percentagekeytimeexample)]  
+ [!code-xaml[keyframes_ovw_snippet#PercentageKeyTimeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#percentagekeytimeexample)]  
   
 ### <a name="special-value-uniform"></a>Zvláštní hodnota, Uniform  
  Použití <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> časování, pokud chcete, aby každý klíčový rámec stejné množství času se.  
@@ -240,14 +240,14 @@ Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)
   
 -   Čtvrtý klíčový snímek animuje od 500 do 600. Začne při ukončení druhého klíčové rámečku (v době = 7.5 sekund) a přehraje 2,5 sekund koncové době = 0:0:1.  
   
- [!code-xaml[keyframes_ovw_snippet#UniformKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#uniformkeytimeexample)]  
+ [!code-xaml[keyframes_ovw_snippet#UniformKeyTimeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#uniformkeytimeexample)]  
   
 ### <a name="special-value-paced"></a>Zvláštní hodnota tempem  
  Použití <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> časování, pokud chcete animovat tempu.  
   
  A <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> klíčovým momentem přiděluje čas dostupnosti podle délku každého klíčové snímky k určení doby trvání jednotlivých snímků.  Získají tak chování rychlost nebo rychlost animace zůstává konstantní.  Následující příklad ukazuje animace s určitou dobou trvání 10 sekund a tří klíčových snímků krát jejichž klíče jsou zadány jako <xref:System.Windows.Media.Animation.KeyTime.Paced%2A>.  
   
- [!code-xaml[keyframes_ovw_snippet#PacedKeyTimeExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#pacedkeytimeexample)]  
+ [!code-xaml[keyframes_ovw_snippet#PacedKeyTimeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#pacedkeytimeexample)]  
   
  Všimněte si, že pokud je klíčovým momentem poslední klíčové rámečku <xref:System.Windows.Media.Animation.KeyTime.Paced%2A> nebo <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>, nastaví se jeho vyřešení klíčovým momentem do 100 procent. Pokud je první klíče snímek s více snímky animace tempem, jeho vyřešení klíčovým momentem se nastaví na hodnotu 0. (Pokud klíčový rámec kolekce obsahuje pouze jeden klíčový snímek a je tempem klíčový snímek, jeho vyřešení klíčovým momentem se nastavit na 100 procent.)  
   
@@ -289,7 +289,7 @@ Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)
 - <xref:System.Windows.Media.Animation.Timeline>
 - [Ukázka animace klíčových křivky](https://go.microsoft.com/fwlink/?LinkID=160011)
 - [Ukázka animace klíčových snímků](https://go.microsoft.com/fwlink/?LinkID=160012)
-- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
-- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)
-- [Témata s postupy ke klíčovým snímkům](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)
-- [Přehled chování časování](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)
+- [Přehled animace](animation-overview.md)
+- [Přehled scénářů](storyboards-overview.md)
+- [Témata s postupy ke klíčovým snímkům](key-frame-animation-how-to-topics.md)
+- [Přehled chování časování](timing-behaviors-overview.md)

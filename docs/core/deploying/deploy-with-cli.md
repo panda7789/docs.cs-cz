@@ -8,18 +8,18 @@ dev_langs:
 - csharp
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: cac6215afb34b5b2864284763eea59b33feb35fe
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 22494a87b4f6aaa6bd1a57873493f64df3b1ecb8
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55826457"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57359728"
 ---
 # <a name="publish-net-core-apps-with-the-cli"></a>Publikování .NET Core aplikací pomocí rozhraní příkazového řádku
 
 Tento článek ukazuje, jak publikovat aplikaci .NET Core z příkazového řádku. .NET core nabízí tři způsoby, jak publikovat aplikace. Nasazení závisí na architektuře vytvoří soubor .dll napříč platformami, která používá místně nainstalovaný modul runtime .NET Core. Vytvoří spustitelný soubor závisí na architektuře specifické pro platformu spustitelný soubor, který používá místně nainstalovaný modul runtime .NET Core. Samostatný spustitelný soubor vytvoří spustitelný soubor pro konkrétní platformu a obsahuje místní kopie modulu runtime .NET Core.
 
-Přehled těchto publikování režimech najdete v tématu [nasazení aplikace .NET Core](index.md). 
+Přehled těchto publikování režimech najdete v tématu [nasazení aplikace .NET Core](index.md).
 
 Hledáte rychlý pomoc pomocí rozhraní příkazového řádku? Následující tabulka ukazuje několik příkladů toho, jak publikovat aplikaci. Můžete určit cílovou architekturu s `-f <TFM>` parametr nebo úpravou souboru projektu. Další informace najdete v tématu [publikování Základy](#publishing-basics).
 
@@ -33,8 +33,8 @@ Hledáte rychlý pomoc pomocí rozhraní příkazového řádku? Následující 
 |                                | 2.2 | `dotnet publish -c Release -r <RID> --self-contained true` |
 |                                | 3.0 | `dotnet publish -c Release -r <RID> --self-contained true` |
 
->[!IMPORTANT]
->\*Při použití sady SDK verze 3.0, závisí na architektuře spustitelný soubor to je výchozí režim publikování při spuštění na úrovni basic `dotnet publish` příkazu. To platí jenom pro projekty, které se zaměřují **.NET Core 2.1** nebo **.NET Core 3.0**.
+> [!IMPORTANT]
+> \*Při použití sady SDK verze 3.0, závisí na architektuře spustitelný soubor to je výchozí režim publikování při spuštění na úrovni basic `dotnet publish` příkazu. To platí jenom pro projekty, které se zaměřují **.NET Core 2.1** nebo **.NET Core 3.0**.
 
 ## <a name="publishing-basics"></a>Základní informace o publikování
 
@@ -42,7 +42,7 @@ Hledáte rychlý pomoc pomocí rozhraní příkazového řádku? Následující 
 
 Pokud chcete cílit na více než jedno rozhraní, můžete nastavit `<TargetFrameworks>` nastavení k více než jednu hodnotu TFM oddělené středníkem. Jedno z rozhraní s publikováním `dotnet publish -f <TFM>` příkazu. Pokud máte například `<TargetFrameworks>netcoreapp2.1;netcoreapp2.2</TargetFrameworks>` a spusťte `dotnet publish -f netcoreapp2.1`, se vytvoří binární soubor, který cílí na .NET Core 2.1.
 
-Není-li jinak nastavit výstupní adresář [ `dotnet publish` ](../tools/dotnet-publish.md) příkaz je `./bin/<BUILD-CONFIGURATION>/<TFM>/publish/`. Výchozí hodnota **konfiguraci sestavení** režim je **ladění** není-li změnit `-c` parametr. Například `dotnet publish -c Release -f netcoreapp2.1` publikuje do `myfolder/bin/Release/netcoreapp2.1/publish/`. 
+Není-li jinak nastavit výstupní adresář [ `dotnet publish` ](../tools/dotnet-publish.md) příkaz je `./bin/<BUILD-CONFIGURATION>/<TFM>/publish/`. Výchozí hodnota **konfiguraci sestavení** režim je **ladění** není-li změnit `-c` parametr. Například `dotnet publish -c Release -f netcoreapp2.1` publikuje do `myfolder/bin/Release/netcoreapp2.1/publish/`.
 
 Pokud používáte .NET Core SDK 3.0, výchozí režim pro aplikace, že cílová verze .NET Core 2.1, 2.2 nebo 3.0 je spustitelný soubor závisí na architektuře publikování.
 
@@ -50,7 +50,7 @@ Pokud používáte .NET Core SDK 2.1, výchozí režim pro aplikace, že je verz
 
 ### <a name="native-dependencies"></a>Nativní závislosti
 
-Pokud vaše aplikace obsahuje nativní závislosti, nebude fungovat v různých operačních systémů. Například pokud vaše aplikace používá nativní rozhraní API systému Win32, nebude fungovat v systému macOS nebo Linux. Je třeba zadat kód specifický pro platformu a kompilace spustitelný soubor pro každou platformu. 
+Pokud vaše aplikace obsahuje nativní závislosti, nebude fungovat v různých operačních systémů. Například pokud vaše aplikace používá nativní rozhraní API systému Win32, nebude fungovat v systému macOS nebo Linux. Je třeba zadat kód specifický pro platformu a kompilace spustitelný soubor pro každou platformu.
 
 Zvažte také, pokud má knihovna odkazujete nativní závislost, vaše aplikace se možná nespustí na všech platformách. Ale je možné, který se odkazuje na balíček NuGet je součástí verze specifické pro platformu pro zpracování požadované závislosti nativního za vás.
 
@@ -85,6 +85,7 @@ namespace apptest1
     }
 }
 ```
+
 ```vb
 Imports System
 
@@ -128,34 +129,30 @@ Publikování FDE vytvoří aplikaci, která automaticky zobrazí souhrn po dop�
 
 Je nutné (s výjimkou .NET Core 3.x, pokud cílíte na platformu aktuální) použijte následující přepínače s `dotnet publish` příkaz pro publikování FDE:
 
-- `-r <RID>`  
-  Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
+- `-r <RID>` Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
 
-- `--self-contained false`  
-  Tento přepínač říká .NET Core SDK k vytvoření spustitelného souboru jako FDE.
+- `--self-contained false` Tento přepínač říká .NET Core SDK k vytvoření spustitelného souboru jako FDE.
 
 Vždy, když použijete `-r` přepínače, cesta ke složce výstupu se změní na: `./bin/<BUILD-CONFIGURATION>/<TFM>/<RID>/publish/`
 
 Pokud používáte [ukázkovou aplikaci](#sample-app)spuštěním `dotnet publish -f netcoreapp2.2 -r win10-x64 --self-contained false`. Tento příkaz vytvoří následující spustitelný soubor: `./bin/Debug/netcoreapp2.2/win10-x64/publish/apptest1.exe`
 
-> [!Note]
+> [!NOTE]
 > Můžete snížit celkovou velikost vašeho nasazení tím, že **invariantní režimu globalizace**. Tento režim je užitečný pro aplikace, které nejsou globální a které používají konvence formátování, konvence malých a velkých písmen a řetězec porovnání a řazení pořadí [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture). Další informace o **invariantní režimu globalizace** a jak ho chcete povolit, najdete v článku [invariantní režimu globalizace rozhraní .NET Core](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md)
 
 ## <a name="self-contained-deployment"></a>Samostatná nasazení
 
-Když publikujete samostatná nasazení (SCD), .NET Core SDK vytvoří spustitelný soubor pro konkrétní platformu. Publikování SCD zahrnuje všechny požadované soubory .NET Core ke spouštění vaší aplikace, ale neobsahuje [nativní závislosti .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md). Tyto závislosti musí být k dispozici v systému před spuštěním aplikace. 
+Když publikujete samostatná nasazení (SCD), .NET Core SDK vytvoří spustitelný soubor pro konkrétní platformu. Publikování SCD zahrnuje všechny požadované soubory .NET Core ke spouštění vaší aplikace, ale neobsahuje [nativní závislosti .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md). Tyto závislosti musí být k dispozici v systému před spuštěním aplikace.
 
 Publikování SCD vytvoří aplikaci, která není vpřed na nejnovější dostupné .NET Core opravu zabezpečení. Další informace o vázání verze v době kompilace, naleznete v tématu [vyberte verzi .NET Core používat](../versions/selection.md#self-contained-deployments-include-the-selected-runtime).
 
 Je nutné použít následující přepínače s `dotnet publish` příkaz pro publikování SCD:
 
-- `-r <RID>`  
-  Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
+- `-r <RID>` Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
 
-- `--self-contained true`  
-  Tento přepínač říká .NET Core SDK k vytvoření spustitelného souboru jako SCD.
+- `--self-contained true` Tento přepínač říká .NET Core SDK k vytvoření spustitelného souboru jako SCD.
 
-> [!Note]
+> [!NOTE]
 > Můžete snížit celkovou velikost vašeho nasazení tím, že **invariantní režimu globalizace**. Tento režim je užitečný pro aplikace, které nejsou globální a které používají konvence formátování, konvence malých a velkých písmen a řetězec porovnání a řazení pořadí [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture). Další informace o **invariantní režimu globalizace** a jak ho chcete povolit, najdete v článku [invariantní režimu globalizace rozhraní .NET Core](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md)
 
 

@@ -50,10 +50,9 @@ Tvoří základní jednotku nasazení, správu verzí, opětovného použití, r
 
  - [Formát souborů sestavení .NET](file-format.md)
  - [Sestavení v modulu CLR (Common Language Runtime)](../../framework/app-domains/assemblies-in-the-common-language-runtime.md)  
- - [Přátelská sestavení (C#)](../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
- - [Přátelská sestavení (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+ - [Přátelská sestavení](friend-assemblies.md)  
  - [Postupy: Zavedení a uvolnění sestavení (C#)](../../csharp/programming-guide/concepts/assemblies-gac/how-to-load-and-unload-assemblies.md)  
  - [Postupy: Zavedení a uvolnění sestavení (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-load-and-unload-assemblies.md)  
- - [Postupy: Použití a Unloadability sestavení ladění v rozhraní .NET Core](unloadability-howto.md)
+ - [Postupy: Použití a ladění funkce zrušení načtení sestavení v .NET Core](unloadability-howto.md)
  - [Postupy: Určení, zda je soubor sestavení (C#)](../../csharp/programming-guide/concepts/assemblies-gac/how-to-determine-if-a-file-is-an-assembly.md)  
  - [Postupy: Určení, zda je soubor sestavení (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-determine-if-a-file-is-an-assembly.md)  

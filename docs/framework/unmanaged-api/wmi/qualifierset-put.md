@@ -16,50 +16,53 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bf3d422bbcec2754601f6dd07d7b45bab2a716e3
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 0e42cf3440bef030f5c7bec71ed1b4b875b79a61
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201156"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57378820"
 ---
 # <a name="qualifiersetput-function"></a>QualifierSet_Put – funkce
-Zapíše s názvem kvalifikátoru a hodnotu. Nový kvalifikátor přepíše předchozí hodnotu se stejným názvem. Pokud kvalifikátor buď neexistuje, vytvoří se. 
+
+Zapíše s názvem kvalifikátoru a hodnotu. Nový kvalifikátor přepíše předchozí hodnotu se stejným názvem. Pokud kvalifikátor buď neexistuje, vytvoří se.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
 HRESULT QualifierSet_Put (
-   [in] int                  vFunc, 
-   [in] IWbemQualifierSet*   ptr, 
+   [in] int                  vFunc,
+   [in] IWbemQualifierSet*   ptr,
    [in] LPCWSTR              wszName,
    [in] VARIANT*             pVal,
    [in] LONG                 lFlavor
-); 
-```  
+);
+```
 
 ## <a name="parameters"></a>Parametry
 
-`vFunc`   
+`vFunc`\
 [in] Tento parametr se nepoužívá.
 
-`ptr`   
+`ptr`\
 [in] Ukazatel [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.
 
-`wszName`   
+`wszName`\
 [in] Název kvalifikátor pro zápis.
 
-`pVal` [in] Ukazatel na platný `VARIANT` , který obsahuje kvalifikátor pro zápis. Tento parametr nemůže mít `null`.
+`pVal`\
+[in] Ukazatel na platný `VARIANT` , který obsahuje kvalifikátor pro zápis. Tento parametr nemůže mít `null`.
 
-`lFlavor` [in] Jeden z následujících konstant, které definuje požadovaný flavor u tohoto kvalifikátoru. Výchozí hodnota je `WBEM_FLAVOR_OVERRIDABLE` (0).
+`lFlavor`\
+[in] Jeden z následujících konstant, které definuje požadovaný flavor u tohoto kvalifikátoru. Výchozí hodnota je `WBEM_FLAVOR_OVERRIDABLE` (0).
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_OVERRIDABLE` | 0 | Kvalifikátor se dá přepsat v odvozené třídě nebo instanci. **Toto je výchozí hodnota.** |
 | `WBEM_FLAVOR_FLAG_PROPAGATE_TO_INSTANCE` | 1 | Kvalifikátor je postoupena do instance. |
-| `WBEM_FLAVOR_GLAG_PROPAGATE_TO_DERIVED_CLASS` | 2 | Kvalifikátor je postoupena do odvozené třídy. |
+| `WBEM_FLAVOR_FLAG_PROPAGATE_TO_DERIVED_CLASS` | 2 | Kvalifikátor je postoupena do odvozené třídy. |
 | `WBEM_FLAVOR_NOT_OVERRIDABLE` | 0x10 | Kvalifikátor nelze přepsat v odvozené třídě nebo instanci. |
 | `WBEM_FLAVOR_AMENDED` | 0x80 | Kvalifikátor je lokalizován. |
 
@@ -74,17 +77,19 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hl
 | `WBEM_E_INVALID_QUALIFIER_TYPE` | 0x80041029 | `pVal` Parametr není platný typ kvalifikátoru. |
 | `WBEM_E_OVERRIDE_NOT_ALLOWED` | 0x8004101a | Není možné volat `QualifierSet_Put` metoda na kvalifikátor, protože vlastnící objekt nepovoluje přepíše. |
 | `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
-  
+
 ## <a name="remarks"></a>Poznámky
 
 Tato funkce zalamuje volání na [IWbemQualifierSet::Put](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-put) metody.
 
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** WMINet_Utils.idl  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+## <a name="requirements"></a>Požadavky
+
+**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+**Záhlaví:** WMINet_Utils.idl
+
+**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

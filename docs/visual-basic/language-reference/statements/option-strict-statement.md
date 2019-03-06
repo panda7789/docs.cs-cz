@@ -11,12 +11,12 @@ helpviewer_keywords:
 - late binding [Visual Basic]
 - implicit conversions [Visual Basic]
 ms.assetid: 5883e0c1-a920-4274-8e46-b0ff047eaee5
-ms.openlocfilehash: 1fce65b70c663ca56427122abb604d16fcd029d7
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: adfac0eebc0d50ed3c8c523c0442636b05901c18
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56981540"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57355126"
 ---
 # <a name="option-strict-statement"></a>Option Strict – příkaz
 Omezí implicitní převody typů dat jenom na rozšiřující převody, nepovoluje pozdní vazby a zakazuje implicitního zápisu, která vede `Object` typu.  
@@ -113,7 +113,7 @@ Option Strict { On | Off }
   
 2.  Na **kompilaci** kartu, nastavte hodnotu **Option Strict** pole.  
   
-###  <a name="conditions"></a> Chcete-li nastavit upozornění konfigurace v prostředí IDE  
+### <a name="conditions"></a> Chcete-li nastavit upozornění konfigurace v prostředí IDE  
  Při použití [stránka kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) místo `Option Strict` prohlášení, máte větší kontrolu nad podmínky, které generují chyby. **Upozornění konfigurace** část **stránka kompilovat** má nastavení, které odpovídají uvedených tří podmínek, které způsobí chybu kompilace při `Option Strict` zapnutý. Tato nastavení jsou následující:  
   
 -   **Implicitní převod**  

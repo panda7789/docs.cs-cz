@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - events [WPF], how-to topics
 ms.assetid: 00463181-36eb-4be0-bfa2-452854cce642
-ms.openlocfilehash: fea698dd137a0e5639e4777b85284beaf83ace1b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 54c69e57efb99f5008d5fa5a21f748cd8e535afe
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33543524"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57370959"
 ---
 # <a name="events-how-to-topics"></a>Postupy: Události
-Témata v této části popisují postup používání událostí v grafickém subsystému WPF.  
+Témata v této části popisují způsob použití událostí v subsystému WPF.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přidání obslužné rutiny události pomocí kódu](../../../../docs/framework/wpf/advanced/how-to-add-an-event-handler-using-code.md)  
- [Zpracování směrované události](../../../../docs/framework/wpf/advanced/how-to-handle-a-routed-event.md)  
- [Vytvoření vlastní směrované události](../../../../docs/framework/wpf/advanced/how-to-create-a-custom-routed-event.md)  
- [Hledání zdrojového elementu v obslužné rutině události](../../../../docs/framework/wpf/advanced/how-to-find-the-source-element-in-an-event-handler.md)  
- [Přidání zpracování třídy pro směrovanou událost](../../../../docs/framework/wpf/advanced/how-to-add-class-handling-for-a-routed-event.md)  
+ [Přidání obslužné rutiny události pomocí kódu](how-to-add-an-event-handler-using-code.md)  
+ [Zpracování směrované události](how-to-handle-a-routed-event.md)  
+ [Vytvoření vlastní směrované události](how-to-create-a-custom-routed-event.md)  
+ [Hledání zdrojového elementu v obslužné rutině události](how-to-find-the-source-element-in-an-event-handler.md)  
+ [Přidání zpracování třídy pro směrovanou událost](how-to-add-class-handling-for-a-routed-event.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.RoutedEvent>  

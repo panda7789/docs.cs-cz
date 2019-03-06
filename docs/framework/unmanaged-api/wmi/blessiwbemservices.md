@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b127c48a300af01c8e7b32d422e42fbc4796420d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 23b72856015d028e50c1e3bfd4a12e0f220291c3
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54716075"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57354606"
 ---
 # <a name="blessiwbemservices-function"></a>Funkce BlessIWbemServices
 Určuje, zda pověření uživatelů odkudkoli přístup k zadané [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) třídy.   
@@ -43,20 +43,23 @@ HRESULT BlessIWbemServices (
 
 ## <a name="parameters"></a>Parametry
 
-`pIWbemServices`  
+`pIWbemServices`\
 [in] Ukazatel [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objektu, pro které jsou potřeba oprávnění.
 
-`strUser`  
+`strUser`\
 [in] Uživatelské jméno.
 
-`strPassword`  
+`strPassword`\
 [in] Heslo přidružené k `strUser`.
 
-`strAuthority` [in] Název domény uživatele. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+`strAuthority`\
+[in] Název domény uživatele. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
 
-`impLevel` [in] Úroveň zosobnění.
+`impLevel`\
+[in] Úroveň zosobnění.
 
-`authnLevel` [in] Úroveň autorizace.
+`authnLevel`\
+[in] Úroveň autorizace.
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -71,6 +74,7 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WinError.h* h
 | `S_OK` | 0 | Volání funkce byla úspěšná. | 
 
 ## <a name="requirements"></a>Požadavky  
+
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
@@ -78,4 +82,5 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WinError.h* h
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

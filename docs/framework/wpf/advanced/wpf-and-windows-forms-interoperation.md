@@ -8,12 +8,12 @@ helpviewer_keywords:
 - interoperability [WPF], Windows Forms
 - hybrid control [WPF interoperability]
 ms.assetid: 9e8aa6b6-112c-4579-98d1-c974917df499
-ms.openlocfilehash: e6bbf6aea1a98b7e1497101ea6a6121525f1c87f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e6fe459ab00622860cd10e4e119e943e588f06b2
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54732021"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352942"
 ---
 # <a name="wpf-and-windows-forms-interoperation"></a>Vzájemná spolupráce subsystémů WPF a Windows Forms
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] představovat dvě různé architektury pro vytvoření rozhraní aplikací. <xref:System.Windows.Forms.Integration?displayProperty=nameWithType> Obor názvů obsahuje třídy, které umožňují běžné scénáře vzájemné spolupráce. Jsou dvě klíčové třídy, které implementují součinnosti možnosti <xref:System.Windows.Forms.Integration.WindowsFormsHost> a <xref:System.Windows.Forms.Integration.ElementHost>. Toto téma popisuje, jaké součinnosti scénáře jsou podporovány a jaké scénáře nejsou podporovány.  
@@ -60,12 +60,12 @@ ms.locfileid: "54732021"
 ### <a name="ambient-properties"></a>Vedlejším vlastnostem  
  Některé vlastnosti prostředí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky mají [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ekvivalenty. Tyto vlastnosti prostředí se rozšíří na hostovanou [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky a vystavený jako veřejné vlastnosti na <xref:System.Windows.Forms.Integration.WindowsFormsHost> ovládacího prvku. <xref:System.Windows.Forms.Integration.WindowsFormsHost> Ovládací prvek přeloží každý [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vedlejší vlastnost do jeho [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ekvivalentní.  
   
- Další informace najdete v tématu [Windows Forms a WPF vlastnost mapování](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md).  
+ Další informace najdete v tématu [Windows Forms a WPF vlastnost mapování](windows-forms-and-wpf-property-mapping.md).  
   
 ### <a name="behavior"></a>Chování  
  Následující tabulka popisuje součinnosti chování.  
   
-|Chování|Podporováno|Nepodporováno|  
+|Chování|Podporováno|Není podporováno|  
 |--------------|---------------|-------------------|  
 |Průhlednost|[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vykreslování ovládacího prvku podporuje průhlednost. Na pozadí nadřazeného objektu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvek se může stát na pozadí hostované [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků.|Některé [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků nepodporují průhlednost. Například <xref:System.Windows.Forms.TextBox> a <xref:System.Windows.Forms.ComboBox> ovládacích prvků nesmí být transparentní, když jsou hostované ve [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].|  
 |Procházení tabulátorem|Pořadí pro hostované [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků je stejný jako při tyto ovládací prvky hostují v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]– aplikace založené na.<br /><br /> Procházení tabulátorem z [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mít pod kontrolou [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacím prvkem klávesu TAB a klávesy SHIFT + TAB funguje jako obvykle.<br /><br /> [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky, které mají <xref:System.Windows.Forms.Control.TabStop%2A> hodnotou vlastnosti `false` neobdrží fokus, když uživatel karty prostřednictvím ovládacích prvků.<br /><br /> -Každá <xref:System.Windows.Forms.Integration.WindowsFormsHost> ovládací prvek má <xref:System.Windows.Forms.Integration.WindowsFormsHost.TabIndex%2A> hodnotu, která určuje, zda, který <xref:System.Windows.Forms.Integration.WindowsFormsHost> ovládací prvek.<br />-   [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky, které jsou obsaženy v <xref:System.Windows.Forms.Integration.WindowsFormsHost> kontejneru podle pořadí zadaném <xref:System.Windows.Forms.Control.TabIndex%2A> vlastnost. Procházení tabulátorem z poslední pořadové umístí fokus na další [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvek, pokud existuje. Pokud žádné jiné focusable [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvek existuje, vrátí první tabulátor [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek v pořadí karet.<br />-   <xref:System.Windows.Forms.Integration.WindowsFormsHost.TabIndex%2A> hodnoty pro ovládací prvky uvnitř <xref:System.Windows.Forms.Integration.WindowsFormsHost> jsou relativní vzhledem k na stejné úrovni [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky, které jsou součástí <xref:System.Windows.Forms.Integration.WindowsFormsHost> ovládacího prvku.<br />-Tabulátor respektuje chování specifické pro ovládací prvek. Například stisknutím klávesy TAB v <xref:System.Windows.Forms.TextBox> ovládací prvek, který má <xref:System.Windows.Forms.TextBoxBase.AcceptsTab%2A> hodnotou vlastnosti `true` zadá na kartě v textovém poli namísto Přesun fokusu.|Nelze použít.|  
@@ -103,12 +103,12 @@ ms.locfileid: "54732021"
 ### <a name="ambient-properties"></a>Vedlejším vlastnostem  
  Některé vlastnosti prostředí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky mají [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ekvivalenty. Tyto vlastnosti prostředí se rozšíří na hostovanou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky a vystavený jako veřejné vlastnosti na <xref:System.Windows.Forms.Integration.ElementHost> ovládacího prvku. <xref:System.Windows.Forms.Integration.ElementHost> Ovládací prvek přeloží každý [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vedlejší vlastnost k jeho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ekvivalentní.  
   
- Další informace najdete v tématu [Windows Forms a WPF vlastnost mapování](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md).  
+ Další informace najdete v tématu [Windows Forms a WPF vlastnost mapování](windows-forms-and-wpf-property-mapping.md).  
   
 ### <a name="behavior"></a>Chování  
  Následující tabulka popisuje součinnosti chování.  
   
-|Chování|Podporováno|Nepodporováno|  
+|Chování|Podporováno|Není podporováno|  
 |--------------|---------------|-------------------|  
 |Průhlednost|[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování ovládacího prvku podporuje průhlednost. Na pozadí nadřazeného objektu [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek se může stát na pozadí hostované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacích prvků.|Nelze použít.|  
 |Multithreading|Všechny typy prvků multithreading jsou podporovány.|Jak [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] technologie předpokládají modelu s jedním vláknem souběžnosti. Volání rozhraní framework objekty z jiných vláken během ladění, vyvolá výjimku k vynucení tento požadavek.|  
@@ -120,7 +120,7 @@ ms.locfileid: "54732021"
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)
-- [Návod: Hostování složeného ovládacího Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
-- [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
-- [Mapování vlastnosti Windows Forms a WPF](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)
+- [Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-control-in-wpf.md)
+- [Návod: Hostování složeného ovládacího Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
+- [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
+- [Mapování vlastnosti Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md)

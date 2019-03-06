@@ -113,7 +113,7 @@ string s = String.Empty;
   
  V tomto příkladu <xref:System.Text.StringBuilder> objektu se používá k vytvoření řetězce z sadu číselné typy:  
   
- [!code-csharp[csProgGuideStrings#15](../../../csharp/programming-guide/strings/codesnippet/CSharp/index_12.cs)]  
+ [!code-csharp[TestStringBuilder#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/TestStringBuilder.cs)]
   
 ## <a name="strings-extension-methods-and-linq"></a>Řetězce a metod rozšíření LINQ  
  Protože <xref:System.String> typ implementuje <xref:System.Collections.Generic.IEnumerable%601>, můžete použít rozšiřující metody definované v <xref:System.Linq.Enumerable> třídy na řetězce. Aby se zabránilo nepořádku visual, tyto metody jsou vyloučené z IntelliSense pro značku <xref:System.String> typu, ale jsou nicméně k dispozici. Můžete také použít [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazech na řetězce dotazů. Další informace najdete v tématu [LINQ a řetězce](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md).  

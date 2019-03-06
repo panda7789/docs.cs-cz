@@ -17,40 +17,44 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 44a6596807b98e6c8b8624b5df18f78dbf8d0711
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fd899422287d34407778f67e5b4dfd2f33ffd00c
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417775"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57359689"
 ---
 # <a name="icordebugmodule2resolveassembly-method"></a>ICorDebugModule2::ResolveAssembly – metoda
-Přeloží sestavení odkazuje token Zadaná metadata.  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
-HRESULT ResolveAssembly (  
-    [in]  mdToken             tkAssemblyRef,  
-    [out] ICorDebugAssembly   **ppAssembly  
-);  
-```  
-  
-#### <a name="parameters"></a>Parametry  
- `tkAsemblyRef`  
- [v] `mdToken` Hodnotu, která odkazuje na sestavení.  
-  
- `ppAssembly`  
- [out] Ukazatel na adresu ICorDebugAssembly objekt, který představuje sestavení.  
-  
-## <a name="remarks"></a>Poznámky  
- Pokud sestavení dosud není načtený při `ResolveAssembly` nazývá HRESULT je vrácena hodnota CORDBG_E_CANNOT_RESOLVE_ASSEMBLY.  
-  
-## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** CorDebug.idl, CorDebug.h  
-  
- **Knihovna:** CorGuids.lib  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+
+Přeloží sestavení odkazuje token Zadaná metadata.
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
+HRESULT ResolveAssembly (
+    [in]  mdToken             tkAssemblyRef,
+    [out] ICorDebugAssembly   **ppAssembly
+);
+```
+
+## <a name="parameters"></a>Parametry
+
+`tkAssemblyRef`\
+[in] `mdToken` Hodnotu, která odkazuje na sestavení.
+
+`ppAssembly`\
+[out] Ukazatel na adresu icordebugassembly – objekt, který představuje sestavení.
+
+## <a name="remarks"></a>Poznámky
+
+Pokud sestavení ještě není zaveden při `ResolveAssembly` nazývá HRESULT je vrácena hodnota CORDBG_E_CANNOT_RESOLVE_ASSEMBLY.
+
+## <a name="requirements"></a>Požadavky
+
+**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+**Záhlaví:** CorDebug.idl, CorDebug.h
+
+**Knihovna:** CorGuids.lib
+
+**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]

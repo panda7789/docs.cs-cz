@@ -8,27 +8,27 @@ helpviewer_keywords:
 - ListBox controls [WPF], getting a ListBoxItem
 - ListBoxItem [WPF]
 ms.assetid: da877c6f-5fd8-40cb-8909-225cbfd99aa5
-ms.openlocfilehash: f1e25ce60ff5feb8fd644a5864dbd762b4b5fa39
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 27a435feb4a941c77af221ab25bd63ea98b16e92
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33552724"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57360495"
 ---
 # <a name="how-to-get-a-listboxitem"></a>Postupy: Načtení položky ListBoxItem
-Pokud potřebujete konkrétní <xref:System.Windows.Controls.ListBoxItem> v konkrétní indexu v <xref:System.Windows.Controls.ListBox>, můžete použít <xref:System.Windows.Controls.ItemContainerGenerator>.  
+Pokud potřebujete získat konkrétní <xref:System.Windows.Controls.ListBoxItem> konkrétního indexu ve <xref:System.Windows.Controls.ListBox>, můžete použít <xref:System.Windows.Controls.ItemContainerGenerator>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje <xref:System.Windows.Controls.ListBox> a jeho položky.  
+ Následující příklad ukazuje <xref:System.Windows.Controls.ListBox> a jejích položek.  
   
- [!code-xaml[ListBoxItems#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListBoxItems/CSharp/Window1.xaml#1)]  
+ [!code-xaml[ListBoxItems#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxItems/CSharp/Window1.xaml#1)]  
   
  Následující příklad ukazuje, jak k získání položky určením index položky v <xref:System.Windows.Controls.ItemContainerGenerator.ContainerFromIndex%2A> vlastnost <xref:System.Windows.Controls.ItemContainerGenerator>.  
   
- [!code-csharp[ListBoxItems#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListBoxItems/CSharp/Window1.xaml.cs#2)]
- [!code-vb[ListBoxItems#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ListBoxItems/VisualBasic/Window1.xaml.vb#2)]  
+ [!code-csharp[ListBoxItems#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxItems/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[ListBoxItems#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListBoxItems/VisualBasic/Window1.xaml.vb#2)]  
   
- Po načtení položku seznamu, můžete zobrazit obsah položku, jak je znázorněno v následujícím příkladu.  
+ Po načtení položky seznamu můžete zobrazit obsah položky, jak je znázorněno v následujícím příkladu.  
   
- [!code-csharp[ListBoxItems#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListBoxItems/CSharp/Window1.xaml.cs#3)]
- [!code-vb[ListBoxItems#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ListBoxItems/VisualBasic/Window1.xaml.vb#3)]
+ [!code-csharp[ListBoxItems#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxItems/CSharp/Window1.xaml.cs#3)]
+ [!code-vb[ListBoxItems#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListBoxItems/VisualBasic/Window1.xaml.vb#3)]

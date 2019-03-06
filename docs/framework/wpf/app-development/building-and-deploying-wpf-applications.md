@@ -8,33 +8,33 @@ helpviewer_keywords:
 - deploying applications [WPF]
 - builds [WPF]
 ms.assetid: 5198df5e-dda0-4ddc-a275-e0a7a4693524
-ms.openlocfilehash: 874a184939f95f155ddaee053c33fe66c4db15d1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0c3ddc042586df1164618d2a169df98934779b30
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33547138"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57368048"
 ---
 # <a name="building-and-deploying-wpf-applications"></a>Sestavení a nasazení aplikací WPF
-Sestavení a nasazení modelu poskytuje možnost vytvářet a nasazovat aplikace místně i vzdáleně, včetně následujících:  
+Sestavení a nasazení modelu poskytuje možnost sestavovat a nasazovat aplikace místně i vzdáleně, včetně následujících:  
   
--   MSBuild: sestavení .NET systému nachází v oboru názvů Microsoft.Build.Tasks.Windows.  
+-   MSBuild: .NET sestavovací systém, na které se nachází v oboru názvů Microsoft.Build.Tasks.Windows.  
   
--   Prostředky: práci s prostředky uživatelského rozhraní.  
+-   Prostředky: práce s prostředky uživatelského prostředí.  
   
 -   ClickOnce – nasazení: publikování a nasazení systém .NET.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
- [Nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)  
- [Témata s postupy](../../../../docs/framework/wpf/app-development/build-and-deploy-how-to-topics.md)  
+ [Sestavení aplikace WPF](building-a-wpf-application-wpf.md)  
+ [Nasazení aplikace WPF](deploying-a-wpf-application-wpf.md)  
+ [Témata s postupy](build-and-deploy-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  MSBuild  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md)  
-  [Windows ve WPF](../../../../docs/framework/wpf/app-development/windows-in-wpf-applications.md)  
-  [Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
-  [Přehled aplikací Prohlížeče WPF XAML](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md)  
-  [Hostování](../../../../docs/framework/wpf/app-development/hosting-wpf-applications.md)
+ [Přehled správy aplikací](application-management-overview.md)  
+  [Windows ve WPF](windows-in-wpf-applications.md)  
+  [Přehled navigace](navigation-overview.md)  
+  [Přehled aplikací Prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md)  
+  [Hostování](hosting-wpf-applications.md)

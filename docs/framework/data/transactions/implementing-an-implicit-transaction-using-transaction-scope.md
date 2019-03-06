@@ -5,15 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49d1706a-1e0c-4c85-9704-75c908372eb9
-ms.openlocfilehash: ae0c729444b3ccb154481e65a094d29d68541793
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fccfa5b0ef531ac8ecc869d7a248bb4f43a55d2c
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54645844"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57375243"
 ---
 # <a name="implementing-an-implicit-transaction-using-transaction-scope"></a>Implementace implicitní transakce s využitím oboru transakcí
-<xref:System.Transactions.TransactionScope> Třída poskytuje jednoduchý způsob, jak označit bloku kódu jako účasti na transakci, aniž by bylo nutné k interakci se vlastní transakce. Obor transakce můžete vybrat a spravovat okolí transakce automaticky. Z důvodu jeho snadno použitelných a efektivitu, je doporučeno používat <xref:System.Transactions.TransactionScope> třídy při vývoji aplikace transakce.  
+
+  <xref:System.Transactions.TransactionScope> Třída poskytuje jednoduchý způsob, jak označit bloku kódu jako účasti na transakci, aniž by bylo nutné k interakci se vlastní transakce. Obor transakce můžete vybrat a spravovat okolí transakce automaticky. Z důvodu jeho snadno použitelných a efektivitu, je doporučeno používat <xref:System.Transactions.TransactionScope> třídy při vývoji aplikace transakce.  
   
  Kromě toho není nutné zařazení prostředky explicitně s transakcí. Jakékoli <xref:System.Transactions> můžete zjišťovat existenci transakci okolí Autor oboru a automaticky zařazení správce prostředků (například SQL Server 2005).  
   
@@ -34,14 +35,15 @@ ms.locfileid: "54645844"
   
  Pokud <xref:System.Transactions.TransactionScope> objektu, původně vytvořil transakci skutečná práce potvrzování transakcí správcem transakcí dojde poté, co poslední řádek kódu **pomocí** bloku. Pokud nebyl vytvořen transakce, potvrzení dochází, pokud <xref:System.Transactions.CommittableTransaction.Commit%2A> je volána metodou vlastníka <xref:System.Transactions.CommittableTransaction> objektu. V tomto okamžiku správce transakcí volá prostředek manažery a informovat je na zápis nebo vrácení zpět, podle toho, jestli <xref:System.Transactions.TransactionScope.Complete%2A> byla volána metoda <xref:System.Transactions.TransactionScope> objektu.  
   
- **Pomocí** příkaz zajistí, že <xref:System.Transactions.TransactionScope.Dispose%2A> metodu <xref:System.Transactions.TransactionScope> objekt, se nazývá i v případě, že dojde k výjimce. <xref:System.Transactions.TransactionScope.Dispose%2A> Metoda označuje konec rozsahu transakce. Výjimky, k nimž došlo po volání této metody nemusí mít vliv na transakci. Tato metoda také obnoví okolí transakci ji předchozího stavu.  
+ **Pomocí** příkaz zajistí, že <xref:System.Transactions.TransactionScope.Dispose%2A> metodu <xref:System.Transactions.TransactionScope> objekt, se nazývá i v případě, že dojde k výjimce. 
+  <xref:System.Transactions.TransactionScope.Dispose%2A> Metoda označuje konec rozsahu transakce. Výjimky, k nimž došlo po volání této metody nemusí mít vliv na transakci. Tato metoda také obnoví okolí transakci ji předchozího stavu.  
   
  Objekt <xref:System.Transactions.TransactionAbortedException> je vyvolána, pokud obor vytvoří transakce a transakce je přerušená. Objekt <xref:System.Transactions.TransactionInDoubtException> je vyvolána, pokud správce transakcí nelze dosáhnout rozhodnutí o potvrzení. Pokud transakce není vyvolána žádná výjimka.  
   
 ## <a name="rolling-back-a-transaction"></a>Vrácení transakce zpět  
  Pokud byste chtěli vrácení zpět transakcí, neměli by jste volat <xref:System.Transactions.TransactionScope.Complete%2A> metody v rozsahu transakce. Například může vyvolat výjimku v rámci oboru. Transakce, ve kterém je součástí bude vrácena zpět.  
   
-##  <a name="ManageTxFlow"></a> Správa toku transakce pomocí TransactionScopeOption  
+## <a name="ManageTxFlow"></a> Správa toku transakce pomocí TransactionScopeOption  
  Obor transakcí, které mohou být vnořené voláním metody, která používá <xref:System.Transactions.TransactionScope> z v rámci metody, která používá vlastní rozsah, jako je tomu u `RootMethod` metodu v následujícím příkladu  
   
 ```csharp  

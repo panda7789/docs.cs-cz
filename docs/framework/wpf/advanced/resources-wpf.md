@@ -8,29 +8,29 @@ helpviewer_keywords:
 - resources [WPF]
 - reusing commonly defined objects [WPF]
 ms.assetid: 12ae4b67-cd0c-4c4d-a188-2c3de173bbb9
-ms.openlocfilehash: c6e81ee119e82c7b07c5c3b92d35f0e0c184685d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3097fe627377e98ab283a5b6178acb9f74fc487c
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33545815"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57372201"
 ---
 # <a name="resources-wpf"></a>Zdroje (WPF)
-Prostředek je objekt, který lze znovu použít na různých místech v aplikaci. WPF podporuje různé typy prostředků. Tyto prostředky jsou primárně dva typy prostředků: XAML prostředků a prostředků datových souborů. Příklady prostředků XAML: štětce a stylů. Soubory prostředků data jsou jiný spustitelný soubor datové soubory, které aplikace potřebuje.  
+Prostředek je objekt, který je možné využít v různých míst ve své aplikaci. WPF podporuje různé typy prostředků. Tyto prostředky jsou primárně dva typy prostředků: Prostředky XAML a datové soubory prostředků. Příklady prostředků XAML: štětce a styly. Datové soubory prostředků jsou nespustitelném datových souborů, které aplikace potřebuje.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
- [Prostředek, obsah a datové soubory aplikace WPF](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)  
- [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
+ [Prostředky XAML](xaml-resources.md)  
+ [Prostředek, obsah a datové soubory aplikace WPF](../app-development/wpf-application-resource-content-and-data-files.md)  
+ [Sbalení URI v technologii WPF](../app-development/pack-uris-in-wpf.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.ResourceDictionary>  
   
- [Rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)  
+ [Rozšíření značek StaticResource](staticresource-markup-extension.md)  
   
- [Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)  
+ [Rozšíření značek DynamicResource](dynamicresource-markup-extension.md)  
   
- [x:Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md)  
+ [x:Key – direktiva](../../xaml-services/x-key-directive.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
- [XAML ve WPF](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)
+ [XAML ve WPF](xaml-in-wpf.md)

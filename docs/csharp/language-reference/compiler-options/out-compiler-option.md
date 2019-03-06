@@ -8,12 +8,12 @@ helpviewer_keywords:
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-ms.openlocfilehash: 62a8835361e2e55d3d970cf3ae7cd2699e3c79fb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6d1134367cbbe494f5ab882d88cc083110ffd5c7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54725737"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57362354"
 ---
 # <a name="-out-c-compiler-options"></a>-out (možnosti kompilátoru C#)
 **-Out** parametr určuje název výstupního souboru.  
@@ -45,7 +45,7 @@ ms.locfileid: "54725737"
   
  Všechny moduly, které vytváří jako část kompilace stát soubory přidružené k žádné sestavení také vytvořit za kompilace. Použití [ildasm.exe](../../../framework/tools/ildasm-exe-il-disassembler.md) zobrazíte zobrazit přidružené soubory v manifestu sestavení.  
   
- -Out – možnost kompilátoru je nutná pro exe cíl sestavení typu friend. Další informace najdete v části [přátelských sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).  
+ -Out – možnost kompilátoru je nutná pro exe cíl sestavení typu friend. Další informace najdete v části [přátelských sestavení](../../../standard/assembly/friend-assemblies.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
@@ -67,5 +67,5 @@ csc t.cs -out:mymodule.netmodule -target:module t2.cs
 ## <a name="see-also"></a>Viz také:
 
 - [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
-- [Přátelská sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md)
+- [Přátelská sestavení](../../../standard/assembly/friend-assemblies.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

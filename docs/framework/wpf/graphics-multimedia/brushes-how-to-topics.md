@@ -7,35 +7,35 @@ helpviewer_keywords:
 - graphics [WPF], brushes
 - brushes [WPF]
 ms.assetid: 43e7f798-9558-4498-b5b6-4a4c6baf956b
-ms.openlocfilehash: b62830da6f48e07c60df731a8ba29998d6145217
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4bf49449cd51753e7dc59c169fe51f13dcc67a81
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33557534"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373254"
 ---
 # <a name="brushes-how-to-topics"></a>Postupy: Témata štětců
-Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] štětce k vyplnění obsah na obrazovku.  
+Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] štětce k vyplnění obsah na obrazovce.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Animace barvy a krytí štětce SolidColorBrush](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-color-or-opacity-of-a-solidcolorbrush.md)  
- [Animace umístění nebo barvy přechodové zarážky](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-position-or-color-of-a-gradient-stop.md)  
- [Vytvoření reflexe](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-reflection.md)  
- [Vytvoření jiných vzorů dlaždic pomocí prvku TileBrush](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-different-tile-patterns-with-a-tilebrush.md)  
- [Definice pera](../../../../docs/framework/wpf/graphics-multimedia/how-to-define-a-pen.md)  
- [Vykreslení oblasti kresbou](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-drawing.md)  
- [Vykreslení oblasti obrázkem](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-an-image.md)  
- [Vykreslení oblasti lineárním přechodem](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-linear-gradient.md)  
- [Vykreslení oblasti paprskovým přechodem](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-radial-gradient.md)  
- [Vykreslení oblasti plnou barvou](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-solid-color.md)  
- [Vykreslení oblasti systémovým štětcem](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)  
- [Vykreslení oblasti videem](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-video.md)  
- [Vykreslení oblasti vizuálním objektem](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-visual.md)  
- [Zachování poměru stran u obrázku na pozadí](../../../../docs/framework/wpf/graphics-multimedia/how-to-preserve-the-aspect-ratio-of-an-image-used-as-a-background.md)  
- [Nastavení vodorovného a svislého zarovnání prvku TileBrush](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-the-horizontal-and-vertical-alignment-of-a-tilebrush.md)  
- [Nastavení velikosti dlaždice pro TileBrush](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-the-tile-size-for-a-tilebrush.md)  
- [Transformace štětce](../../../../docs/framework/wpf/graphics-multimedia/how-to-transform-a-brush.md)  
- [Použití systémových barev v gradientu](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)  
+ [Animace barvy a krytí štětce SolidColorBrush](how-to-animate-the-color-or-opacity-of-a-solidcolorbrush.md)  
+ [Animace umístění nebo barvy přechodové zarážky](how-to-animate-the-position-or-color-of-a-gradient-stop.md)  
+ [Vytvoření reflexe](how-to-create-a-reflection.md)  
+ [Vytvoření jiných vzorů dlaždic pomocí prvku TileBrush](how-to-create-different-tile-patterns-with-a-tilebrush.md)  
+ [Definice pera](how-to-define-a-pen.md)  
+ [Vykreslení oblasti kresbou](how-to-paint-an-area-with-a-drawing.md)  
+ [Vykreslení oblasti obrázkem](how-to-paint-an-area-with-an-image.md)  
+ [Vykreslení oblasti lineárním přechodem](how-to-paint-an-area-with-a-linear-gradient.md)  
+ [Vykreslení oblasti paprskovým přechodem](how-to-paint-an-area-with-a-radial-gradient.md)  
+ [Vykreslení oblasti plnou barvou](how-to-paint-an-area-with-a-solid-color.md)  
+ [Vykreslení oblasti systémovým štětcem](how-to-paint-an-area-with-a-system-brush.md)  
+ [Vykreslení oblasti videem](how-to-paint-an-area-with-a-video.md)  
+ [Vykreslení oblasti vizuálním objektem](how-to-paint-an-area-with-a-visual.md)  
+ [Zachování poměru stran u obrázku na pozadí](how-to-preserve-the-aspect-ratio-of-an-image-used-as-a-background.md)  
+ [Nastavení vodorovného a svislého zarovnání prvku TileBrush](how-to-set-the-horizontal-and-vertical-alignment-of-a-tilebrush.md)  
+ [Nastavení velikosti dlaždice pro TileBrush](how-to-set-the-tile-size-for-a-tilebrush.md)  
+ [Transformace štětce](how-to-transform-a-brush.md)  
+ [Použití systémových barev v gradientu](how-to-use-system-colors-in-a-gradient.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Media.Brush>  
@@ -51,6 +51,6 @@ Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../
  <xref:System.Windows.Media.VisualBrush>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
+ [Grafika a multimédia](index.md)  
   
- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+ [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md)

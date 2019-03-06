@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Ukládání dat aplikací v aplikaci WPF'
+title: 'Návod: Ukládání dat aplikací v aplikaci WPF'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-ms.openlocfilehash: e7083c4b15e2693c0c76e6ca7c9a00e4c4dab56c
-ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
+ms.openlocfilehash: 886a436f845aa4ba9662e75cbc9e534e915a4cfa
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55480059"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57361171"
 ---
-# <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Průvodce: Ukládání dat aplikací v aplikaci WPF
+# <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Návod: Ukládání dat aplikací v aplikaci WPF
 Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikacím můžete získat data z mezipaměti namísto načítání z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc umožňuje ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.
 
  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Poskytuje třídy, které vám umožní používat ukládání do mezipaměti v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikací. Tyto třídy se nacházejí v <xref:System.Runtime.Caching> oboru názvů.
@@ -322,12 +322,12 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 ## <a name="code-example"></a>Příklad kódu
  Po dokončení tohoto návodu, kód, který jste vytvořili projekt bude vypadat podobně jako v následujícím příkladu.
 
- [!code-csharp[CachingWPFApplications#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CachingWPFApplications/CSharp/MainWindow.xaml.cs#1)]
- [!code-vb[CachingWPFApplications#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CachingWPFApplications/VisualBasic/MainWindow.xaml.vb#1)]
+ [!code-csharp[CachingWPFApplications#1](~/samples/snippets/csharp/VS_Snippets_Wpf/CachingWPFApplications/CSharp/MainWindow.xaml.cs#1)]
+ [!code-vb[CachingWPFApplications#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CachingWPFApplications/VisualBasic/MainWindow.xaml.vb#1)]
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.Caching.MemoryCache>
 - <xref:System.Runtime.Caching.ObjectCache>
 - <xref:System.Runtime.Caching>
-- [Ukládání do vyrovnávací paměti v aplikacích .NET Framework](../../../../docs/framework/performance/caching-in-net-framework-applications.md)
+- [Ukládání do vyrovnávací paměti v aplikacích .NET Framework](../../performance/caching-in-net-framework-applications.md)

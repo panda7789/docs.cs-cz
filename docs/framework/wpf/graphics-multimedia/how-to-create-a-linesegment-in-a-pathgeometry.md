@@ -8,12 +8,12 @@ helpviewer_keywords:
 - line segments [WPF], creating
 - graphics [WPF], line segments
 ms.assetid: 0155ed47-a20d-49a7-a306-186d8e07fbc4
-ms.openlocfilehash: 9aa17a361e8e0ca5b43b2646c38926e0123818c1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a6862ab02c288f9cfd1fac4a8c22079b0cf91016
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54712126"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57356179"
 ---
 # <a name="how-to-create-a-linesegment-in-a-pathgeometry"></a>Postupy: Vytvoření LineSegment v PathGeometry
 Tento příklad ukazuje, jak vytvořit úsek čáry. Chcete-li vytvořit úsek čáry, použijte <xref:System.Windows.Media.PathGeometry>, <xref:System.Windows.Media.PathFigure>, a <xref:System.Windows.Media.LineSegment> třídy.  
@@ -21,7 +21,7 @@ Tento příklad ukazuje, jak vytvořit úsek čáry. Chcete-li vytvořit úsek �
 ## <a name="example"></a>Příklad  
  Následující příklady nakreslit <xref:System.Windows.Media.LineSegment> z (10, 50) na (200, 70). Následující obrázek znázorňuje výsledný <xref:System.Windows.Media.LineSegment>; mřížky na pozadí byla přidána do souřadnicový systém zobrazení.  
   
- ![LineSegment v PathFigure](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment")  
+ ![LineSegment v PathFigure](./media/graphicsmm-pathgeometrylinesegment.png "graphicsmm_pathgeometrylinesegment")  
 LineSegment vykreslovány z (10,50) (200,70)  
   
  [xaml]  
@@ -35,7 +35,7 @@ LineSegment vykreslovány z (10,50) (200,70)
   
  [xaml]  
   
- (Všimněte si, že tato syntaxe atributu ve skutečnosti vytváří <xref:System.Windows.Media.StreamGeometry>, nenáročný verzi <xref:System.Windows.Media.PathGeometry>. Další informace najdete v tématu [syntaxe značek cesty](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md) stránky.)  
+ (Všimněte si, že tato syntaxe atributu ve skutečnosti vytváří <xref:System.Windows.Media.StreamGeometry>, nenáročný verzi <xref:System.Windows.Media.PathGeometry>. Další informace najdete v tématu [syntaxe značek cesty](path-markup-syntax.md) stránky.)  
   
  V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], mohou také nakreslit úsek čáry pomocí syntaxe elementu objektu. Tady je ekvivalentní předchozí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příklad.  
   
@@ -106,4 +106,4 @@ Dim myPathFigure As New PathFigure()
 - <xref:System.Windows.Media.PathGeometry>
 - <xref:System.Windows.Media.GeometryDrawing>
 - <xref:System.Windows.Shapes.Path>
-- [Přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)
+- [Přehled geometrie](geometry-overview.md)

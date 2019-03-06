@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ToolTip control [WPF], about ToolTip control
 - controls [WPF], ToolTip
 ms.assetid: f06c1603-e9cb-4809-8a62-234607fc52f7
-ms.openlocfilehash: 5378744ea43b72bafb77c9d58c1a8d848c3a8fc9
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 745ac23d65248302940eed6db3b8b19748dfc00d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56745512"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57376322"
 ---
 # <a name="tooltip-overview"></a>ToolTip – přehled
 Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení ukazatele myši nad prvkem, například jako více než je ovládací prvek tooltip <xref:System.Windows.Controls.Button>. Toto téma představuje popisek a popisuje, jak vytvořit a přizpůsobit obsah popisku.  
@@ -36,32 +36,32 @@ Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení uk
 ## <a name="creating-a-tooltip"></a>Vytvoření popisu  
  Následující příklad ukazuje, jak vytvořit jednoduchý popis tlačítka tak, že nastavíte <xref:System.Windows.FrameworkElement.ToolTip%2A> vlastnost <xref:System.Windows.Controls.Button> ovládací prvek textového řetězce.  
   
- [!code-xaml[GroupBoxSnippet#ToolTipString](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GroupBoxSnippet/CS/Window1.xaml#tooltipstring)]  
+ [!code-xaml[GroupBoxSnippet#ToolTipString](~/samples/snippets/csharp/VS_Snippets_Wpf/GroupBoxSnippet/CS/Window1.xaml#tooltipstring)]  
   
  Můžete také definovat popisek jako <xref:System.Windows.Controls.ToolTip> objektu. Následující příklad používá [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] k určení <xref:System.Windows.Controls.ToolTip> objektu jako text nápovědy <xref:System.Windows.Controls.TextBox> elementu. Všimněte si, že příklad určuje <xref:System.Windows.Controls.ToolTip> nastavením <xref:System.Windows.FrameworkElement.ToolTip%2A?displayProperty=nameWithType> vlastnost.  
   
- [!code-xaml[ToolTipSimple#ToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml#tooltip)]  
+ [!code-xaml[ToolTipSimple#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml#tooltip)]  
   
  Následující příklad používá ke generování kódu <xref:System.Windows.Controls.ToolTip> objektu. V příkladu se vytvoří <xref:System.Windows.Controls.ToolTip> (`tt`) a přidruží ji k <xref:System.Windows.Controls.Button>.  
   
- [!code-csharp[ToolTipSimple#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml.cs#2)]
- [!code-vb[ToolTipSimple#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipSimple/VisualBasic/Window1.xaml.vb#2)]  
+ [!code-csharp[ToolTipSimple#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml.cs#2)]
+ [!code-vb[ToolTipSimple#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipSimple/VisualBasic/Window1.xaml.vb#2)]  
   
  Můžete také vytvořit popisek obsah, který není definován jako <xref:System.Windows.Controls.ToolTip> objekt uzavřením popis obsahu v elementu rozložení, jako například <xref:System.Windows.Controls.DockPanel>. Následující příklad ukazuje, jak nastavit <xref:System.Windows.FrameworkElement.ToolTip%2A> vlastnost <xref:System.Windows.Controls.TextBox> s obsahem, který je uzavřen v <xref:System.Windows.Controls.DockPanel> ovládacího prvku.  
   
- [!code-xaml[GroupBoxSnippet#ToolTipDockPanel](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GroupBoxSnippet/CS/Window1.xaml#tooltipdockpanel)]  
+ [!code-xaml[GroupBoxSnippet#ToolTipDockPanel](~/samples/snippets/csharp/VS_Snippets_Wpf/GroupBoxSnippet/CS/Window1.xaml#tooltipdockpanel)]  
   
 <a name="Using_the_ToolTip_and_ToolTipService_Properties"></a>   
 ## <a name="using-the-properties-of-the-tooltip-and-tooltipservice-classes"></a>Pomocí vlastnosti popisku a ToolTipService třídy  
  Popis obsahu můžete upravit nastavení visual vlastností a použitím stylů. Pokud definujete obsahu jako popis <xref:System.Windows.Controls.ToolTip> objektu, můžete nastavit vizuální vlastnosti <xref:System.Windows.Controls.ToolTip> objektu. V opačném případě je potřeba nastavit ekvivalentní připojené vlastnosti v <xref:System.Windows.Controls.ToolTipService> třídy.  
   
- Příklad toho, jak nastavit vlastnosti k určení pozice popisku obsah pomocí <xref:System.Windows.Controls.ToolTip> a <xref:System.Windows.Controls.ToolTipService> vlastnosti, viz [umístění objektu ToolTip](../../../../docs/framework/wpf/controls/how-to-position-a-tooltip.md).  
+ Příklad toho, jak nastavit vlastnosti k určení pozice popisku obsah pomocí <xref:System.Windows.Controls.ToolTip> a <xref:System.Windows.Controls.ToolTipService> vlastnosti, viz [umístění objektu ToolTip](how-to-position-a-tooltip.md).  
   
 <a name="StylingToolTip"></a>   
 ## <a name="styling-a-tooltip"></a>Používání stylů pro popis tlačítka  
  Můžete nastavit styl <xref:System.Windows.Controls.ToolTip> tak, že definujete vlastní <xref:System.Windows.Style>. Následující příklad definuje <xref:System.Windows.Style> volá `Simple` , který ukazuje, jak posun umístění <xref:System.Windows.Controls.ToolTip> a změňte jeho vzhled pomocí nastavení <xref:System.Windows.Controls.Control.Background%2A>, <xref:System.Windows.Controls.Control.Foreground%2A>, <xref:System.Windows.Controls.Control.FontSize%2A>, a <xref:System.Windows.Controls.Control.FontWeight%2A>.  
   
- [!code-xaml[ToolTipSimple#Style](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml#style)]  
+ [!code-xaml[ToolTipSimple#Style](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml#style)]  
   
 <a name="UsingtheToolTipServiceTimeIntervalProperties"></a>   
 ## <a name="using-the-time-interval-properties-of-tooltipservice"></a>Pomocí vlastnosti Interval doby ToolTipService  
@@ -69,15 +69,15 @@ Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení uk
   
  Použití <xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A> a <xref:System.Windows.Controls.ToolTipService.ShowDuration%2A> vlastnosti k určení zpoždění, obvykle (BRIEF), než <xref:System.Windows.Controls.ToolTip> se zobrazí a také k určení, jak dlouho <xref:System.Windows.Controls.ToolTip> zůstává viditelná. Další informace najdete v tématu [jak: Prodleva zobrazení popisu](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms747264(v=vs.90)).  
   
- <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A> Vlastnost určuje, pokud popisky dat pro různé ovládací prvky se zobrazí počáteční neprodleně při přesunutí ukazatele myši rychle mezi nimi. Další informace o <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A> vlastnost, naleznete v tématu [používání vlastnosti BetweenShowDelay](../../../../docs/framework/wpf/controls/how-to-use-the-betweenshowdelay-property.md).  
+ <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A> Vlastnost určuje, pokud popisky dat pro různé ovládací prvky se zobrazí počáteční neprodleně při přesunutí ukazatele myši rychle mezi nimi. Další informace o <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A> vlastnost, naleznete v tématu [používání vlastnosti BetweenShowDelay](how-to-use-the-betweenshowdelay-property.md).  
   
  Následující příklad ukazuje, jak nastavit tyto vlastnosti pro popis.  
   
- [!code-xaml[ToolTipService#ToolTip](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
+ [!code-xaml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Controls.ToolTipService>
 - <xref:System.Windows.Controls.ToolTip>
 - <xref:System.Windows.Controls.ToolTipEventArgs>
 - <xref:System.Windows.Controls.ToolTipEventHandler>
-- [Témata s postupy](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)
+- [Témata s postupy](tooltip-how-to-topics.md)

@@ -11,12 +11,12 @@ ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 author: mairaw
 ms.author: mairaw
 ms.custom: vs-dotnet
-ms.openlocfilehash: ace9e339a65c14e69e1a672880e392c7e09d36e8
-ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
+ms.openlocfilehash: b7ad8afbad212d5c79c9391bd9f6d1da7ff8fb28
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57212375"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358182"
 ---
 # <a name="walkthrough-my-first-wpf-desktop-application"></a>Návod: Moje první desktopová aplikace WPF
 
@@ -61,7 +61,7 @@ Prvním krokem je vytvoření aplikační infrastruktury, který obsahuje defini
 
    3. Vyberte **aplikace WPF (.NET Framework)** šablony. Zadejte název **`ExpenseIt`** a pak vyberte **OK**.
 
-      ![Dialogové okno nového projektu s vybraná aplikace WPF](media/new-project-dialog.png)
+      ![Dialogové okno nového projektu s vybraná aplikace WPF](./media/new-project-dialog.png)
 
       Visual Studio vytvoří projekt a otevře se návrhář pro výchozí okno aplikace s názvem **souboru MainWindow.xaml**.
 
@@ -74,11 +74,11 @@ Prvním krokem je vytvoření aplikační infrastruktury, který obsahuje defini
 
     Vaše XAML by měl vypadat takto v jazyce Visual Basic:
 
-    [!code-xaml[ExpenseIt#1_A](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/Application.xaml#1_a)]
+    [!code-xaml[ExpenseIt#1_A](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/Application.xaml#1_a)]
 
     Nebo takto v jazyce C#:
 
-    [!code-xaml[ExpenseIt#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/App.xaml#1)]
+    [!code-xaml[ExpenseIt#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/App.xaml#1)]
 
 3. Otevřít *souboru MainWindow.xaml*.
 
@@ -94,7 +94,7 @@ Prvním krokem je vytvoření aplikační infrastruktury, který obsahuje defini
    </NavigationWindow>
    ```
 
-   Tato aplikace přejde na jiný obsah v závislosti na vstupu uživatele. To je důvod, proč hlavní <xref:System.Windows.Window> musí změnit tak, aby <xref:System.Windows.Navigation.NavigationWindow>. <xref:System.Windows.Navigation.NavigationWindow> zdědí všechny vlastnosti <xref:System.Windows.Window>. <xref:System.Windows.Navigation.NavigationWindow> Vytvoří instanci prvku v souboru XAML <xref:System.Windows.Navigation.NavigationWindow> třídy. Další informace najdete v tématu [Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md).
+   Tato aplikace přejde na jiný obsah v závislosti na vstupu uživatele. To je důvod, proč hlavní <xref:System.Windows.Window> musí změnit tak, aby <xref:System.Windows.Navigation.NavigationWindow>. <xref:System.Windows.Navigation.NavigationWindow> zdědí všechny vlastnosti <xref:System.Windows.Window>. <xref:System.Windows.Navigation.NavigationWindow> Vytvoří instanci prvku v souboru XAML <xref:System.Windows.Navigation.NavigationWindow> třídy. Další informace najdete v tématu [Přehled navigace](../app-development/navigation-overview.md).
 
 5. Změňte následující vlastnosti na <xref:System.Windows.Navigation.NavigationWindow> element:
 
@@ -108,11 +108,11 @@ Prvním krokem je vytvoření aplikační infrastruktury, který obsahuje defini
 
     Vaše XAML by měl vypadat takto v jazyce Visual Basic:
 
-    [!code-xaml[ExpenseIt#2_A](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt/MainWindow.xaml#2_a)]
+    [!code-xaml[ExpenseIt#2_A](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt/MainWindow.xaml#2_a)]
 
     Nebo takto v jazyce C#:
 
-    [!code-xaml[ExpenseIt#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/MainWindow.xaml#2)]
+    [!code-xaml[ExpenseIt#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/MainWindow.xaml#2)]
 
 6. Otevřít *soubor MainWindow.xaml.vb* nebo *MainWindow.xaml.cs*.
 
@@ -122,8 +122,8 @@ Prvním krokem je vytvoření aplikační infrastruktury, který obsahuje defini
 
    Váš kód by měl vypadat takto:
 
-   [!code-csharp[ExpenseIt#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/MainWindow.xaml.cs#3)]
-   [!code-vb[ExpenseIt#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/MainWindow.xaml.vb#3)]
+   [!code-csharp[ExpenseIt#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/MainWindow.xaml.cs#3)]
+   [!code-vb[ExpenseIt#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/MainWindow.xaml.vb#3)]
 
    > [!TIP]
    > Můžete přepínat na jazyk kódu ukázek kódu mezi C# a Visual Basic v **jazyk** rozevíracího seznamu v horní pravé části tohoto článku.
@@ -146,11 +146,11 @@ V této části přidáte dvě stránky a obrázku do aplikace.
 
     Vaše XAML by měl vypadat takto v jazyce Visual Basic:
 
-    [!code-xaml[ExpenseIt#6_A](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseItHome.xaml#6_a)]
+    [!code-xaml[ExpenseIt#6_A](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseItHome.xaml#6_a)]
 
     Nebo to v jazyce C#:
 
-    [!code-xaml[ExpenseIt#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt2/ExpenseItHome.xaml#6)]
+    [!code-xaml[ExpenseIt#6](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt2/ExpenseItHome.xaml#6)]
 
 4. Otevřít *souboru MainWindow.xaml*.
 
@@ -158,16 +158,16 @@ V této části přidáte dvě stránky a obrázku do aplikace.
 
     Tím se nastaví *`ExpenseItHome.xaml`* bude první stránka otevře při spuštění aplikace. Vaše XAML by měl vypadat takto v jazyce Visual Basic:
 
-    [!code-xaml[ExpenseIt#7_A](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/MainWindow.xaml#7_a)]
+    [!code-xaml[ExpenseIt#7_A](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/MainWindow.xaml#7_a)]
 
     Nebo to v jazyce C#:
 
-    [!code-xaml[ExpenseIt#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt2/MainWindow.xaml#7)]
+    [!code-xaml[ExpenseIt#7](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt2/MainWindow.xaml#7)]
 
    > [!TIP]
    > Můžete také nastavit **zdroj** vlastnost **různé** kategorii **vlastnosti** okna.
    >
-   > ![Source – vlastnost v okně Vlastnosti](media/properties-source.png)
+   > ![Source – vlastnost v okně Vlastnosti](./media/properties-source.png)
 
 6. Do projektu přidejte další novou stránku WPF a pojmenujte ho *ExpenseReportPage.xaml*::
 
@@ -183,11 +183,11 @@ V této části přidáte dvě stránky a obrázku do aplikace.
 
     Vaše XAML by měl vypadat takto v jazyce Visual Basic:
 
-    [!code-xaml[ExpenseIt#4_A](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseReportPage.xaml#4_a)]
+    [!code-xaml[ExpenseIt#4_A](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseReportPage.xaml#4_a)]
 
     Nebo to v jazyce C#:
 
-    [!code-xaml[ExpenseIt#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/ExpenseReportPage.xaml#4)]
+    [!code-xaml[ExpenseIt#4](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/ExpenseReportPage.xaml#4)]
 
 9. Otevřít *ExpenseItHome.xaml.vb* a *ExpenseReportPage.xaml.vb*, nebo *ExpenseItHome.xaml.cs* a *ExpenseReportPage.xaml.cs*.
 
@@ -195,15 +195,15 @@ V této části přidáte dvě stránky a obrázku do aplikace.
 
     Váš kód by měl vypadat takto pro **`ExpenseItHome`**:
 
-    [!code-csharp[ExpenseIt#2_5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt2/ExpenseItHome.xaml.cs#2_5)]
-    [!code-vb[ExpenseIt#2_5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseItHome.xaml.vb#2_5)]
+    [!code-csharp[ExpenseIt#2_5](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt2/ExpenseItHome.xaml.cs#2_5)]
+    [!code-vb[ExpenseIt#2_5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseItHome.xaml.vb#2_5)]
 
     A takhle pro **ExpenseReportPage**:
 
-    [!code-csharp[ExpenseIt#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/ExpenseReportPage.xaml.cs#5)]
-    [!code-vb[ExpenseIt#5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseReportPage.xaml.vb#5)]
+    [!code-csharp[ExpenseIt#5](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/ExpenseReportPage.xaml.cs#5)]
+    [!code-vb[ExpenseIt#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseReportPage.xaml.vb#5)]
 
-10. Přidání obrázku s názvem *watermark.png* do projektu. Můžete vytvořit vlastní image, zkopírujte soubor ve vzorku kódu nebo získat [tady](https://github.com/dotnet/docs/blob/master/docs/framework/wpf/getting-started/media/watermark.png).
+10. Přidání obrázku s názvem *watermark.png* do projektu. Můžete vytvořit vlastní image, zkopírujte soubor ve vzorku kódu nebo získat [tady](https://github.com/dotnet/docs/blob/master/docs/framework/wpf/getting-started/./media/watermark.png).
 
     1. Klikněte pravým tlačítkem na uzel projektu a vyberte **přidat** > **existující položku**, nebo stiskněte klávesu **Shift**+**Alt** + **A**.
 
@@ -215,7 +215,7 @@ V této části přidáte dvě stránky a obrázku do aplikace.
 
     Následující obrázek znázorňuje aplikaci <xref:System.Windows.Navigation.NavigationWindow> tlačítka:
 
-    ![Snímek obrazovky ExpenseIt – ukázka](../../../../docs/framework/wpf/getting-started/media/gettingstartedfigure1.png)
+    ![Snímek obrazovky ExpenseIt – ukázka](./media/gettingstartedfigure1.png)
 
 2. Ukončete aplikaci se vraťte do sady Visual Studio.
 
@@ -233,7 +233,7 @@ Rozložení poskytuje seřazený umožňuje umístit prvky uživatelského rozhr
 Každá z těchto ovládacích prvků rozložení podporuje zvláštní druh rozložení pro jeho podřízené prvky. `ExpenseIt` změnit velikost stránky, a každá stránka obsahuje prvky, které jsou uspořádány vodorovně a svisle vedle dalších prvků. V důsledku toho <xref:System.Windows.Controls.Grid> je prvek ideální rozložení pro aplikaci.
 
 > [!TIP]
-> Další informace o <xref:System.Windows.Controls.Panel> prvky, naleznete v tématu [přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md). Další informace o rozložení najdete v tématu [rozložení](../../../../docs/framework/wpf/advanced/layout.md).
+> Další informace o <xref:System.Windows.Controls.Panel> prvky, naleznete v tématu [přehled panelů](../controls/panels-overview.md). Další informace o rozložení najdete v tématu [rozložení](../advanced/layout.md).
 
 V části vytvoříte tabulku s jedním sloupcem se třemi řádky a 10 pixel okraj přidáním řádků a sloupců definice <xref:System.Windows.Controls.Grid> v *`ExpenseItHome.xaml`*.
 
@@ -248,21 +248,21 @@ V části vytvoříte tabulku s jedním sloupcem se třemi řádky a 10 pixel ok
    > [!TIP]
    > Můžete také nastavit **okraj** hodnoty v **vlastnosti** okně v části **rozložení** kategorie:
    >
-   > ![Hodnoty vlastnosti okraj v okně Vlastnosti](media/properties-margin.png)
+   > ![Hodnoty vlastnosti okraj v okně Vlastnosti](./media/properties-margin.png)
 
 3. Přidejte následující XAML mezi <xref:System.Windows.Controls.Grid> značky vytvářet definice řádků a sloupců:
 
-    [!code-xaml[ExpenseIt#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt3/ExpenseItHome.xaml#8)]
+    [!code-xaml[ExpenseIt#8](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt3/ExpenseItHome.xaml#8)]
 
     <xref:System.Windows.Controls.RowDefinition.Height%2A> Dva řádky se nastaví na <xref:System.Windows.GridLength.Auto%2A>, což znamená, že je nastavena velikost řádků na základě obsahu v řádcích. Výchozí hodnota <xref:System.Windows.Controls.RowDefinition.Height%2A> je <xref:System.Windows.GridUnitType.Star> velikosti, což znamená, že vážený poměr volného místa výšku řádku. Například pokud máte dva řádky <xref:System.Windows.Controls.RowDefinition.Height%2A> z "*", každý z nich výška polovinu dostupné místo.
 
     Vaše <xref:System.Windows.Controls.Grid> by teď měl vypadat podobně jako následující XAML:
 
-    [!code-xaml[ExpenseIt#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt3/ExpenseItHome.xaml#9)]
+    [!code-xaml[ExpenseIt#9](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt3/ExpenseItHome.xaml#9)]
 
 ## <a name="add-controls"></a>Přidání ovládacích prvků
 
-V této části budete aktualizovat na domovské stránce uživatelského rozhraní, zobrazí se seznam lidí, se může uživatel vybrat z zobrazíte vyúčtování pro. Ovládací prvky jsou objekty uživatelského rozhraní, které umožňují uživatelům, aby komunikovali s vaší aplikací. Další informace najdete v tématu [ovládací prvky](../../../../docs/framework/wpf/controls/index.md).
+V této části budete aktualizovat na domovské stránce uživatelského rozhraní, zobrazí se seznam lidí, se může uživatel vybrat z zobrazíte vyúčtování pro. Ovládací prvky jsou objekty uživatelského rozhraní, které umožňují uživatelům, aby komunikovali s vaší aplikací. Další informace najdete v tématu [ovládací prvky](../controls/index.md).
 
 K vytvoření tohoto uživatelského rozhraní, přidejte následující prvky, které mají *`ExpenseItHome.xaml`*:
 
@@ -270,13 +270,13 @@ K vytvoření tohoto uživatelského rozhraní, přidejte následující prvky, 
 - <xref:System.Windows.Controls.Label> (pro záhlaví seznamu).
 - <xref:System.Windows.Controls.Button> (Chcete-li kliknutím zobrazíte vyúčtování pro osobu, která je v seznamu vyberete).
 
-Každý ovládací prvek nachází v řádku <xref:System.Windows.Controls.Grid> nastavením <xref:System.Windows.Controls.Grid.Row%2A?displayProperty=nameWithType> přidružená vlastnost. Další informace o přidružené vlastnosti najdete v tématu [přehled připojených vlastností](../../../../docs/framework/wpf/advanced/attached-properties-overview.md).
+Každý ovládací prvek nachází v řádku <xref:System.Windows.Controls.Grid> nastavením <xref:System.Windows.Controls.Grid.Row%2A?displayProperty=nameWithType> přidružená vlastnost. Další informace o přidružené vlastnosti najdete v tématu [přehled připojených vlastností](../advanced/attached-properties-overview.md).
 
 1. Otevřít *`ExpenseItHome.xaml`*.
 
 2. Přidejte následující XAML někde mezi <xref:System.Windows.Controls.Grid> značky:
 
-   [!code-xaml[ExpenseIt#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt4/ExpenseItHome.xaml#10)]
+   [!code-xaml[ExpenseIt#10](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt4/ExpenseItHome.xaml#10)]
 
    > [!TIP]
    > Ovládací prvky můžete vytvořit také z jejich přetažením **nástrojů** okna do okna návrhu a nastavte jejich vlastnosti **vlastnosti** okna.
@@ -285,7 +285,7 @@ Každý ovládací prvek nachází v řádku <xref:System.Windows.Controls.Grid>
 
 Následující obrázek znázorňuje ovládací prvky, že kterou jste právě vytvořili:
 
-![Snímek obrazovky ExpenseIt – ukázka](../../../../docs/framework/wpf/getting-started/media/gettingstartedfigure2.png)
+![Snímek obrazovky ExpenseIt – ukázka](./media/gettingstartedfigure2.png)
 
 ## <a name="add-an-image-and-a-title"></a>Přidat obrázek a název
 
@@ -295,11 +295,11 @@ V této části budete aktualizovat Uživatelském rozhraní domovské stránky 
 
 2. Přidat jiný sloupec <xref:System.Windows.Controls.Grid.ColumnDefinitions%2A> s pevnou <xref:System.Windows.Controls.ColumnDefinition.Width%2A> 230 pixelů:
 
-    [!code-xaml[ExpenseIt#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt5/ExpenseItHome.xaml#11)]
+    [!code-xaml[ExpenseIt#11](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt5/ExpenseItHome.xaml#11)]
 
 3. Přidat další řádek <xref:System.Windows.Controls.Grid.RowDefinitions%2A>, celkem čtyři řádky:
 
-    [!code-xaml[ExpenseIt#11b](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt5/ExpenseItHome.xaml#11b)]
+    [!code-xaml[ExpenseIt#11b](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt5/ExpenseItHome.xaml#11b)]
 
 4. Přesuňte ovládací prvky na druhý sloupec tak, že nastavíte <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType> vlastnost na hodnotu 1 v každé tři ovládací prvky (hranice ListBox a tlačítko).
 
@@ -307,21 +307,21 @@ V této části budete aktualizovat Uživatelském rozhraní domovské stránky 
 
    XAML pro tři ovládací prvky nyní vypadá takto:
 
-    [!code-xaml[ExpenseIt#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt5/ExpenseItHome.xaml#12)]
+    [!code-xaml[ExpenseIt#12](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt5/ExpenseItHome.xaml#12)]
 
 6. Nastavte <xref:System.Windows.Controls.Panel.Background%2A> z <xref:System.Windows.Controls.Grid> bude *watermark.png* soubor obrázku, přidáním následující XAML někde mezi `<Grid>` a `</Grid>` značky:
 
-    [!code-xaml[ExpenseIt#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt5/ExpenseItHome.xaml#14)]
+    [!code-xaml[ExpenseIt#14](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt5/ExpenseItHome.xaml#14)]
 
 7. Před <xref:System.Windows.Controls.Border> prvku, přidejte <xref:System.Windows.Controls.Label> s obsahem "Zobrazení vyúčtování". Toto je název stránky.
 
-    [!code-xaml[ExpenseIt#13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt5/ExpenseItHome.xaml#13)]
+    [!code-xaml[ExpenseIt#13](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt5/ExpenseItHome.xaml#13)]
 
 8. Sestavte a spusťte aplikaci.
 
 Následující obrázek ukazuje výsledky co jste právě přidali:
 
-![Snímek obrazovky ExpenseIt – ukázka](../../../../docs/framework/wpf/getting-started/media/gettingstartedfigure3.png)
+![Snímek obrazovky ExpenseIt – ukázka](./media/gettingstartedfigure3.png)
 
 ## <a name="add-code-to-handle-events"></a>Přidejte kód pro zpracování událostí
 
@@ -329,14 +329,14 @@ Následující obrázek ukazuje výsledky co jste právě přidali:
 
 2. Přidat <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužnou rutinu události <xref:System.Windows.Controls.Button> elementu. Další informace najdete v tématu [jak: Vytvořte obslužnou rutinu události jednoduché](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb675300(v=vs.100)).
 
-    [!code-xaml[ExpenseIt#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt6/ExpenseItHome.xaml#15)]
+    [!code-xaml[ExpenseIt#15](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt6/ExpenseItHome.xaml#15)]
 
 3. Otevřít *`ExpenseItHome.xaml.vb`* nebo *`ExpenseItHome.xaml.cs`*.
 
 4. Přidejte následující kód, který `ExpenseItHome` třídy přidejte tlačítko klikněte na obslužnou rutinu události. Obslužná rutina události otevře **ExpenseReportPage** stránky.
 
-    [!code-csharp[ExpenseIt#16](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt6/ExpenseItHome.xaml.cs#16)]
-    [!code-vb[ExpenseIt#16](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt6/ExpenseItHome.xaml.vb#16)]
+    [!code-csharp[ExpenseIt#16](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt6/ExpenseItHome.xaml.cs#16)]
+    [!code-vb[ExpenseIt#16](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt6/ExpenseItHome.xaml.vb#16)]
 
 ## <a name="create-the-ui-for-expensereportpage"></a>Vytvoření uživatelského rozhraní pro ExpenseReportPage
 
@@ -346,7 +346,7 @@ Následující obrázek ukazuje výsledky co jste právě přidali:
 
 2. Přidejte následující XAML mezi <xref:System.Windows.Controls.Grid> značky:
 
-    [!code-xaml[ExpenseIt#17](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt6/ExpenseReportPage.xaml#17)]
+    [!code-xaml[ExpenseIt#17](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt6/ExpenseReportPage.xaml#17)]
 
     Toto uživatelské rozhraní je podobný *`ExpenseItHome.xaml`*, s výjimkou data sestavy se zobrazí v <xref:System.Windows.Controls.DataGrid>.
 
@@ -361,17 +361,17 @@ Následující obrázek ukazuje výsledky co jste právě přidali:
 
 Následující obrázek znázorňuje prvky uživatelského rozhraní, které jsou přidány do *ExpenseReportPage.xaml*.
 
-![Snímek obrazovky ExpenseIt – ukázka](../../../../docs/framework/wpf/getting-started/media/gettingstartedfigure4.png)
+![Snímek obrazovky ExpenseIt – ukázka](./media/gettingstartedfigure4.png)
 
 ## <a name="style-controls"></a>Ovládací prvky stylu
 
-Vzhled různé prvky je často stejný pro všechny prvky v uživatelském rozhraní stejného typu. Uživatelské rozhraní používá [styly](../../../../docs/framework/wpf/controls/styling-and-templating.md) k zajištění vzhled opakovaně použitelné napříč více prvků. Opětovné použití stylů pomáhá zjednodušit XAML vytváření a správu. Tato část nahradí atributy na element, definované v předchozích krocích se styly.
+Vzhled různé prvky je často stejný pro všechny prvky v uživatelském rozhraní stejného typu. Uživatelské rozhraní používá [styly](../controls/styling-and-templating.md) k zajištění vzhled opakovaně použitelné napříč více prvků. Opětovné použití stylů pomáhá zjednodušit XAML vytváření a správu. Tato část nahradí atributy na element, definované v předchozích krocích se styly.
 
 1. Otevřít *Application.xaml* nebo *App.xaml*.
 
 2. Přidejte následující XAML mezi <xref:System.Windows.Application.Resources%2A?displayProperty=nameWithType> značky:
 
-    [!code-xaml[ExpenseIt#18](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt7/App.xaml#18)]
+    [!code-xaml[ExpenseIt#18](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt7/App.xaml#18)]
 
     Tento XAML přidá následující styly:
 
@@ -387,13 +387,13 @@ Vzhled různé prvky je často stejný pro všechny prvky v uživatelském rozhr
 
     - `buttonStyle`: K formátování <xref:System.Windows.Controls.Button> na `ExpenseItHome.xaml`.
 
-    Všimněte si, že se styly prostředky a podřízené objekty daného <xref:System.Windows.Application.Resources%2A?displayProperty=nameWithType> element vlastnosti. V tomto umístění se styly použijí na všechny prvky v aplikaci. Příklad použití prostředků v aplikaci .NET Framework, naleznete v tématu [využití prostředků aplikace](../../../../docs/framework/wpf/advanced/how-to-use-application-resources.md).
+    Všimněte si, že se styly prostředky a podřízené objekty daného <xref:System.Windows.Application.Resources%2A?displayProperty=nameWithType> element vlastnosti. V tomto umístění se styly použijí na všechny prvky v aplikaci. Příklad použití prostředků v aplikaci .NET Framework, naleznete v tématu [využití prostředků aplikace](../advanced/how-to-use-application-resources.md).
 
 3. Otevřít *`ExpenseItHome.xaml`*.
 
 4. Nahradit vše mezi <xref:System.Windows.Controls.Grid> prvky s následující XAML:
 
-    [!code-xaml[ExpenseIt#19](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt7/ExpenseItHome.xaml#19)]
+    [!code-xaml[ExpenseIt#19](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt7/ExpenseItHome.xaml#19)]
 
     Vlastnosti, jako <xref:System.Windows.VerticalAlignment> a <xref:System.Windows.Media.FontFamily> , které definují vzhled každého ovládacího prvku odebrán a nahrazen o aplikování stylů. Například `headerTextStyle` platí pro "Zobrazení vyúčtování" <xref:System.Windows.Controls.Label>.
 
@@ -401,7 +401,7 @@ Vzhled různé prvky je často stejný pro všechny prvky v uživatelském rozhr
 
 6. Nahradit vše mezi <xref:System.Windows.Controls.Grid> prvky s následující XAML:
 
-    [!code-xaml[ExpenseIt#20](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt7/ExpenseReportPage.xaml#20)]
+    [!code-xaml[ExpenseIt#20](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt7/ExpenseReportPage.xaml#20)]
 
     Tento postup přidá stylů <xref:System.Windows.Controls.Label> a <xref:System.Windows.Controls.Border> elementy.
 
@@ -413,23 +413,23 @@ V této části vytvoříte data XML, který je vázán na různé ovládací pr
 
 2. Po zahájení <xref:System.Windows.Controls.Grid> elementu, přidejte následující XAML vytvořit <xref:System.Windows.Data.XmlDataProvider> , která pro každou osobu, která obsahuje data:
 
-    [!code-xaml[ExpenseIt#21](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#21)]
-    [!code-xaml[ExpenseIt#23](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#23)]
-    [!code-xaml[ExpenseIt#22](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#22)]
+    [!code-xaml[ExpenseIt#21](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#21)]
+    [!code-xaml[ExpenseIt#23](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#23)]
+    [!code-xaml[ExpenseIt#22](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#22)]
 
     Data se vytvoří jako <xref:System.Windows.Controls.Grid> prostředků. Obvykle to budou načteny jako soubor, ale pro zjednodušení je přidat data vložené.
 
 3. V rámci `<Grid.Resources>` elementu, přidejte následující <xref:System.Windows.DataTemplate>, který definuje způsob zobrazení dat v <xref:System.Windows.Controls.ListBox>:
 
-    [!code-xaml[ExpenseIt#21](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#21)]
-    [!code-xaml[ExpenseIt#24](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#24)]
-    [!code-xaml[ExpenseIt#22](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#22)]
+    [!code-xaml[ExpenseIt#21](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#21)]
+    [!code-xaml[ExpenseIt#24](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#24)]
+    [!code-xaml[ExpenseIt#22](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#22)]
 
-    Další informace o šablonách dat, naleznete v tématu [přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md).
+    Další informace o šablonách dat, naleznete v tématu [přehled datových šablon](../data/data-templating-overview.md).
 
 4. Nahraďte existující <xref:System.Windows.Controls.ListBox> s následující XAML:
 
-    [!code-xaml[ExpenseIt#25](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#25)]
+    [!code-xaml[ExpenseIt#25](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml#25)]
 
     Tento XAML naváže <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastnost <xref:System.Windows.Controls.ListBox> ke zdroji dat a použije šablona dat jako <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>.
 
@@ -441,15 +441,15 @@ V dalším kroku přidáte kód pro načtení název, který je vybrán na **`Ex
 
 2. Přidáte konstruktor, který přebírá objekt, abyste mohli předat data sestavy výdajů z vybraného uživatele.
 
-    [!code-csharp[ExpenseIt#26](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseReportPage.xaml.cs#26)]
-    [!code-vb[ExpenseIt#26](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt8/ExpenseReportPage.xaml.vb#26)]
+    [!code-csharp[ExpenseIt#26](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseReportPage.xaml.cs#26)]
+    [!code-vb[ExpenseIt#26](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt8/ExpenseReportPage.xaml.vb#26)]
 
 3. Otevřít *`ExpenseItHome.xaml.vb`* nebo *`ExpenseItHome.xaml.cs`*.
 
 4. Změnit <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužná rutina události volaná nový konstruktor předávání dat sestavy výdajů z vybraného uživatele.
 
-    [!code-csharp[ExpenseIt#27](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml.cs#27)]
-    [!code-vb[ExpenseIt#27](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt8/ExpenseItHome.xaml.vb#27)]
+    [!code-csharp[ExpenseIt#27](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt8/ExpenseItHome.xaml.cs#27)]
+    [!code-vb[ExpenseIt#27](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt8/ExpenseItHome.xaml.vb#27)]
 
 ## <a name="style-data-with-data-templates"></a>Styl dat s využitím šablon dat
 
@@ -457,17 +457,17 @@ V této části budete aktualizovat uživatelské rozhraní pro každou položku
 
 1. Otevřít *ExpenseReportPage.xaml*.
 
-2. Vytvoření vazby obsah "Name" a "Oddělení" <xref:System.Windows.Controls.Label> prvků, které se příslušná data source – vlastnost. Další informace o datové vazbě naleznete v tématu [přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md).
+2. Vytvoření vazby obsah "Name" a "Oddělení" <xref:System.Windows.Controls.Label> prvků, které se příslušná data source – vlastnost. Další informace o datové vazbě naleznete v tématu [přehled datových vazeb](../data/data-binding-overview.md).
 
-    [!code-xaml[ExpenseIt#31](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseReportPage.xaml#31)]
+    [!code-xaml[ExpenseIt#31](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseReportPage.xaml#31)]
 
 3. Po zahájení <xref:System.Windows.Controls.Grid> prvku, přidejte následující datové šablony, které definují způsob zobrazení dat sestavy výdajů:
 
-    [!code-xaml[ExpenseIt#30](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseReportPage.xaml#30)]
+    [!code-xaml[ExpenseIt#30](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseReportPage.xaml#30)]
 
 4. Nahraďte <xref:System.Windows.Controls.DataGridTextColumn> prvky s <xref:System.Windows.Controls.DataGridTemplateColumn> pod <xref:System.Windows.Controls.DataGrid> elementu a použijte šablony k nim.
 
-    [!code-xaml[ExpenseIt#32](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseReportPage.xaml#32)]
+    [!code-xaml[ExpenseIt#32](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseReportPage.xaml#32)]
 
 5. Sestavte a spusťte aplikaci.
 
@@ -475,39 +475,39 @@ V této části budete aktualizovat uživatelské rozhraní pro každou položku
 
 Následující obrázek ukazuje obě stránky `ExpenseIt` aplikace s ovládacími prvky, rozložení, styly, vazby dat a použitých šablon dat:
 
-![Snímky obrazovky ExpenseIt – ukázka](../../../../docs/framework/wpf/getting-started/media/gettingstartedfigure5.png)
+![Snímky obrazovky ExpenseIt – ukázka](./media/gettingstartedfigure5.png)
 
 > [!NOTE]
 > Tato ukázka předvádí konkrétní funkce WPF a nebude použijte všechny osvědčené postupy pro takové věci, jako je zabezpečení, lokalizace a přístupnost. Pro komplexní pokrytí WPF a osvědčené postupy vývoje aplikací rozhraní .NET Framework naleznete v následujících tématech:
 >
-> - [Usnadnění](../../../../docs/framework/ui-automation/accessibility-best-practices.md)
+> - [Usnadnění](../../ui-automation/accessibility-best-practices.md)
 >
-> - [Zabezpečení](../../../../docs/framework/wpf/security-wpf.md)
+> - [Zabezpečení](../security-wpf.md)
 >
-> - [WPF globalizace a lokalizace](../../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)
+> - [WPF globalizace a lokalizace](../advanced/wpf-globalization-and-localization-overview.md)
 >
-> - [Výkonu WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
+> - [Výkonu WPF](../advanced/optimizing-wpf-application-performance.md)
 
 ## <a name="next-steps"></a>Další kroky
 
 V tomto návodu jste zjistili několik technik pro vytvoření uživatelského rozhraní pomocí Windows Presentation Foundation (WPF). Nyní byste měli mít základní znalosti o stavební bloky vázané na data, aplikace rozhraní .NET Framework. Další informace o WPF architekturu a programovací modely naleznete v následujících tématech:
 
-- [Architektura WPF](../../../../docs/framework/wpf/advanced/wpf-architecture.md)
-- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)
-- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)
+- [Architektura WPF](../advanced/wpf-architecture.md)
+- [Přehled XAML (WPF)](../advanced/xaml-overview-wpf.md)
+- [Přehled vlastností závislosti](../advanced/dependency-properties-overview.md)
+- [Rozložení](../advanced/layout.md)
 
 Další informace o vytváření aplikací naleznete v následujících tématech:
 
-- [Vývoj aplikací](../../../../docs/framework/wpf/app-development/index.md)
-- [Ovládací prvky](../../../../docs/framework/wpf/controls/index.md)
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
-- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [Vývoj aplikací](../app-development/index.md)
+- [Ovládací prvky](../controls/index.md)
+- [Přehled datových vazeb](../data/data-binding-overview.md)
+- [Grafika a multimédia](../graphics-multimedia/index.md)
+- [Dokumenty v platformě WPF](../advanced/documents-in-wpf.md)
 
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md)
-- [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)
-- [Sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styles-and-templates.md)
+- [Přehled panelů](../controls/panels-overview.md)
+- [Přehled datových šablon](../data/data-templating-overview.md)
+- [Sestavení aplikace WPF](../app-development/building-a-wpf-application-wpf.md)
+- [Styly a šablony](../controls/styles-and-templates.md)

@@ -1,19 +1,19 @@
 ---
-title: 'Průvodce: Hostování obsahu WPF v Win32'
+title: 'Návod: Hostování obsahu WPF v Win32'
 ms.date: 03/30/2017
 dev_langs:
 - cpp
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
-ms.openlocfilehash: c56ef33d1a44b263466a293b06aa988885b2008d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1f1ac68e49b5f84a41e3091b1a81010e7aa7cc0b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54725594"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57363160"
 ---
-# <a name="walkthrough-hosting-wpf-content-in-win32"></a>Průvodce: Hostování obsahu WPF v Win32
+# <a name="walkthrough-hosting-wpf-content-in-win32"></a>Návod: Hostování obsahu WPF v Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být mnohem efektivnější přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce, které vaše aplikace místo přepsání původní kód. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje jednoduchý mechanismus pro hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna.  
   
  Tento kurz popisuje, jak psát ukázkovou aplikaci, [hostování obsahu WPF v ukázce okně Win32](https://go.microsoft.com/fwlink/?LinkID=160004), že hostitelé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna. Můžete rozšířit tuto ukázku pro hostování všech [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna. Protože se týká kombinace spravovaného a nespravovaného kódu, je aplikace napsaná v [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)].  
@@ -22,7 +22,7 @@ ms.locfileid: "54725594"
   
 <a name="requirements"></a>   
 ## <a name="requirements"></a>Požadavky  
- V tomto kurzu se předpokládá základní znalost obou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programování. Pro základní informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] programování, naleznete v tématu [Začínáme](../../../../docs/framework/wpf/getting-started/index.md). Úvod do [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programování, můžete by měly odkazovat všechny mnoho knih, které k tomuto tématu, zejména *programování Windows* podle Charles Petzold.  
+ V tomto kurzu se předpokládá základní znalost obou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programování. Pro základní informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] programování, naleznete v tématu [Začínáme](../getting-started/index.md). Úvod do [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programování, můžete by měly odkazovat všechny mnoho knih, které k tomuto tématu, zejména *programování Windows* podle Charles Petzold.  
   
  Protože vzorku, který doprovází tento kurz je implementována v [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)], tento kurz předpokládá znalost použití [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)] programu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] plus znalost programování spravovaného kódu. Znalost [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)] je užitečné, ale není nutná.  
   
@@ -112,7 +112,7 @@ ms.locfileid: "54725594"
 
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá jednovláknový apartment (STA) model vláken. Aby bylo možné správně pracovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu kódu, je nutné nastavit model vláken aplikace na STA použitím atributu na vstupní bod.
 
- [!code-cpp[Win32HostingWPFPage#WinMain](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.cpp#winmain)]
+ [!code-cpp[Win32HostingWPFPage#WinMain](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.cpp#winmain)]
 
 <a name="hosting_the_wpf_page"></a>
 ### <a name="hosting-the-wpf-content"></a>Hostování obsahu WPF
@@ -120,14 +120,14 @@ ms.locfileid: "54725594"
 
  Kód pro hostitele [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah je implementována v obslužné rutiny pro [WM_CREATE](/windows/desktop/winmsg/wm-create) oznámení v okně hostitele.
 
- [!code-cpp[Win32HostingWPFPage#WMCreate](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.cpp#wmcreate)]
+ [!code-cpp[Win32HostingWPFPage#WMCreate](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.cpp#wmcreate)]
 
  `GetHwnd` Metoda přijímá informace velikost a umístění a nadřazeného popisovač okna a vrátí popisovač okna hostovanou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah.
 
 > [!NOTE]
 >  Nelze použít `#using` směrnice pro `System::Windows::Interop` oboru názvů. Tím se vytvoří kolize názvů mezi <xref:System.Windows.Interop.MSG> struktury v tomto oboru názvů a msg – struktura deklarována ve winuser. Místo toho musíte použít plně kvalifikované názvy pro přístup k obsahu daného oboru názvů.
 
- [!code-cpp[Win32HostingWPFPage#GetHwnd](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.cpp#gethwnd)]
+ [!code-cpp[Win32HostingWPFPage#GetHwnd](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.cpp#gethwnd)]
 
  Nelze umístit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu přímo v okně aplikace. Místo toho byste nejprve vytvořit <xref:System.Windows.Interop.HwndSource> pro obtékání [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. Tento objekt je v podstatě okno, které slouží k hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. Můžete hostovat <xref:System.Windows.Interop.HwndSource> v nadřazené okno tak, že vytvoříte jako podřízený objekt [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno, které je součástí vaší aplikace. <xref:System.Windows.Interop.HwndSource> Parametry konstruktoru obsahují mnohem stejné informace, které by předat CreateWindow při vytváření [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] podřízené okno.
 
@@ -145,7 +145,7 @@ ms.locfileid: "54725594"
 
  Nejjednodušším řešením tohoto problému je implementace spravovanou třídu, která obsahuje sadu statických polí pro odkazy pro všemi spravovanými objekty, které potřebují přístup k uložení. Ukázka používá `WPFPageHost` třídy pro uložení odkazu na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu včetně počáteční hodnoty počtu její vlastnosti, které může uživatel později změnit. Toto je definováno v záhlaví.
 
- [!code-cpp[Win32HostingWPFPage#WPFPageHost](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.h#wpfpagehost)]
+ [!code-cpp[Win32HostingWPFPage#WPFPageHost](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.h#wpfpagehost)]
 
  Druhá část `GetHwnd` funkce přiřazuje hodnoty těchto polí pro pozdější použití při `myPage` je stále v oboru.
 
@@ -155,7 +155,7 @@ ms.locfileid: "54725594"
 
  Jak je uvedeno výše, když uživatel klepne buď tlačítko [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu vyvolá `OnButtonClicked` událostí. Aplikace připojí obslužnou rutinu pro tuto událost, chcete-li dostávat tato oznámení. Pokud **OK** došlo ke kliknutí na tlačítko, obslužná rutina načte informace o uživateli z [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu a zobrazí ho v sadě statické ovládací prvky.
 
- [!code-cpp[Win32HostingWPFPage#WPFButtonClicked](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.cpp#wpfbuttonclicked)]
+ [!code-cpp[Win32HostingWPFPage#WPFButtonClicked](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.cpp#wpfbuttonclicked)]
 
  Obslužná rutina přijímá argument objektu vlastní události z [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah, `MyPageEventArgs`. Objektu `IsOK` je nastavena na `true` Pokud **OK** došlo ke kliknutí na tlačítko, a `false` Pokud **zrušit** došlo ke kliknutí na tlačítko.
 
@@ -163,7 +163,7 @@ ms.locfileid: "54725594"
 
  Aplikace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] poskytuje sadu přepínací tlačítka, které umožní uživateli změnit barvu pozadí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah a několik vlastností písma související. Následující příklad je výpisem z procedury okna aplikace (WndProc) a její zprávy zpracování, který nastaví různé vlastnosti na různé zprávy, včetně barvu pozadí. Ostatní jsou podobné a nejsou zobrazeny. Zobrazit úplnou ukázku podrobnosti a kontext.
 
- [!code-cpp[Win32HostingWPFPage#WMCommandToBG](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.cpp#wmcommandtobg)]
+ [!code-cpp[Win32HostingWPFPage#WMCommandToBG](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.cpp#wmcommandtobg)]
 
  Pokud chcete nastavit barvu pozadí, získejte odkaz na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah (`hostedPage`) z `WPFPageHost` a nastavte vlastnost barvu pozadí na požadovanou barvu. Ukázka používá tři volby barev: původní barvu, světle zelená nebo světle lososová. Původní barva pozadí se ukládá jako statické pole v `WPFPageHost` třídy. Chcete-li nastavit další dva, vytvořte nový <xref:System.Windows.Media.SolidColorBrush> objektu a předejte hodnotu statické barvy z konstruktoru <xref:System.Windows.Media.Colors> objektu.
 
@@ -186,23 +186,23 @@ ms.locfileid: "54725594"
 
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Obsahu konstruktoru přijímá požadované šířku a výšku a velikosti <xref:System.Windows.Controls.Grid> odpovídajícím způsobem. Potom definuje základní rozložení tak, že vytvoříte sadu <xref:System.Windows.Controls.ColumnDefinition> a <xref:System.Windows.Controls.RowDefinition> objekty a jejich přidání na <xref:System.Windows.Controls.Grid> základní objekt <xref:System.Windows.Controls.Grid.ColumnDefinitions%2A> a <xref:System.Windows.Controls.Grid.RowDefinitions%2A> kolekcí, v uvedeném pořadí. Definuje mřížky pěti řádcích a sedmi sloupcích, s dimenzemi určené obsah buňky.
 
- [!code-cpp[Win32HostingWPFPage#WPFPageCtorToGridDef](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagectortogriddef)]
+ [!code-cpp[Win32HostingWPFPage#WPFPageCtorToGridDef](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagectortogriddef)]
 
  V dalším kroku se přidá konstruktoru [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvků, které mají <xref:System.Windows.Controls.Grid>. Prvním prvkem je text nadpisu, který je <xref:System.Windows.Controls.Label> ovládacího prvku, které jsou zaměřeny na prvním řádku mřížky.
 
- [!code-cpp[Win32HostingWPFPage#WPFPageCtorTitle](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagectortitle)]
+ [!code-cpp[Win32HostingWPFPage#WPFPageCtorTitle](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagectortitle)]
 
  Další řádek obsahuje název <xref:System.Windows.Controls.Label> ovládacího prvku a jeho přidruženého <xref:System.Windows.Controls.TextBox> ovládacího prvku. Stejný kód, protože se používají pro každý pár popisku nebo textového pole je umístěna společně s privátní metody a použít pro všechny pět párů popisku nebo textového pole. Metody vytvoření odpovídající ovládací prvek a volat <xref:System.Windows.Controls.Grid> statická třída <xref:System.Windows.Controls.Grid.SetColumn%2A> a <xref:System.Windows.Controls.Grid.SetRow%2A> metody umístit ovládací prvky v buňku. Po vytvoření ovládacího prvku, ukázka zavolá <xref:System.Windows.Controls.UIElementCollection.Add%2A> metodu <xref:System.Windows.Controls.Panel.Children%2A> vlastnost <xref:System.Windows.Controls.Grid> přidání ovládacího prvku do mřížky. Kód pro přidání zbývající páry popisku nebo textového pole je podobné. Zobrazit ukázkový kód pro podrobnosti.
 
- [!code-cpp[Win32HostingWPFPage#WPFPageCtorName](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagectorname)]
+ [!code-cpp[Win32HostingWPFPage#WPFPageCtorName](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagectorname)]
 
  Implementace ze dvou způsobů je následujícím způsobem:
 
- [!code-cpp[Win32HostingWPFPage#WPFPageCreateHelpers](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagecreatehelpers)]
+ [!code-cpp[Win32HostingWPFPage#WPFPageCreateHelpers](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagecreatehelpers)]
 
  Nakonec ukázka přidá **OK** a **zrušit** tlačítka a připojí obslužnou rutinu události pro jejich <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události.
 
- [!code-cpp[Win32HostingWPFPage#WPFPageCtorButtonsEvents](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagectorbuttonsevents)]
+ [!code-cpp[Win32HostingWPFPage#WPFPageCtorButtonsEvents](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagectorbuttonsevents)]
 
 <a name="returning_data_to_window"></a>
 ### <a name="returning-the-data-to-the-host-window"></a>Vrací Data do okna hostitele
@@ -210,11 +210,11 @@ ms.locfileid: "54725594"
 
  Deklarace událostí v WPFPage.h:
 
- [!code-cpp[Win32HostingWPFPage#WPFPageEventDecl](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.h#wpfpageeventdecl)]
+ [!code-cpp[Win32HostingWPFPage#WPFPageEventDecl](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.h#wpfpageeventdecl)]
 
  <xref:System.Windows.Controls.Primitives.ButtonBase.Click> Obslužné rutiny události v WPFPage.cpp:
 
- [!code-cpp[Win32HostingWPFPage#WPFPageButtonClicked](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagebuttonclicked)]
+ [!code-cpp[Win32HostingWPFPage#WPFPageButtonClicked](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagebuttonclicked)]
 
 <a name="set_page_properties"></a>
 ### <a name="setting-the-wpf-properties"></a>Nastavení vlastností WPF
@@ -222,13 +222,13 @@ ms.locfileid: "54725594"
 
  Z WPFPage.h:
 
- [!code-cpp[Win32HostingWPFPage#WPFPageFontFamilyProperty](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.h#wpfpagefontfamilyproperty)]
+ [!code-cpp[Win32HostingWPFPage#WPFPageFontFamilyProperty](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.h#wpfpagefontfamilyproperty)]
 
  From WPFPage.cpp:
 
- [!code-cpp[Win32HostingWPFPage#WPFPageSetFontFamily](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagesetfontfamily)]
+ [!code-cpp[Win32HostingWPFPage#WPFPageSetFontFamily](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagesetfontfamily)]
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Interop.HwndSource>
-- [Vzájemná spolupráce grafického subsystému WPF a systému Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)
+- [Vzájemná spolupráce grafického subsystému WPF a systému Win32](wpf-and-win32-interoperation.md)

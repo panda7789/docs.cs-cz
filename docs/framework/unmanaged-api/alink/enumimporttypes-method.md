@@ -17,47 +17,52 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4e437868138d7ae31d233853ecc0f709de3ee39d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1d0aefea7345bc3bf37bdb8d13cb2cda19cfe527
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54512720"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57355737"
 ---
 # <a name="enumimporttypes-method"></a>EnumImportTypes – metoda
-Vytvoří výčet jednotlivých typů v každém oboru.  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
-HRESULT EnumImportTypes(  
-    HALINKENUM   hEnum,  
-    DWORD        dwMax,  
-    mdTypeDef    aTypeDefs[],  
-    DWORD*       pdwCount  
-) PURE;  
-```  
-  
-#### <a name="parameters"></a>Parametry  
- `hEnum`  
- Popisovač pro enumerátor.  
-  
- `dwMax`  
- Maximální počet typů, který chcete načíst.  
-  
- `aTypeDefs`  
- Zadejte Recieves tokeny, která nepřekročí `dwMax`.  
-  
- `pdwCount`  
- Přijímá skutečný počet typů v `aTypeDefs`.  
-  
-## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje, vrátí hodnotu S_OK.  
-  
-## <a name="requirements"></a>Požadavky  
- Vyžaduje alink.h  
-  
+
+Vytvoří výčet jednotlivých typů v každém oboru.
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
+HRESULT EnumImportTypes(
+    HALINKENUM   hEnum,
+    DWORD        dwMax,
+    mdTypeDef    aTypeDefs[],
+    DWORD*       pdwCount
+) PURE;
+```
+
+## <a name="parameters"></a>Parametry
+
+`hEnum`\
+Popisovač pro enumerátor.
+
+`dwMax`\
+Maximální počet typů, který chcete načíst.
+
+`aTypeDefs`\
+Přijímá typ tokeny, která nepřekročí `dwMax`.
+
+`pdwCount`\
+Přijímá skutečný počet typů v `aTypeDefs`.
+
+## <a name="return-value"></a>Návratová hodnota
+
+Pokud metoda uspěje, vrátí hodnotu S_OK.
+
+## <a name="requirements"></a>Požadavky
+
+Vyžaduje alink.h
+
 ## <a name="see-also"></a>Viz také:
-- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+
+- [IALink – rozhraní](ialink-interface.md)
+- [IALink2 – rozhraní](ialink2-interface.md)
+- [Rozhraní API ALink](index.md)

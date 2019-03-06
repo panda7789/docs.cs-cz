@@ -13,29 +13,29 @@ helpviewer_keywords:
 - WPF [WPF], interoperability
 - migration [WPF]
 ms.assetid: d655de05-bf63-4814-bc64-6b3be01c70a2
-ms.openlocfilehash: a94d855a88fafd0f8faf98c98601142802701dd1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7576c8631a39a6dcf234f15b93fd5714f493276e
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33544850"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57366618"
 ---
 # <a name="migration-and-interoperability"></a>Migrace a interoperabilita
-Tato stránka obsahuje odkazy na dokumenty, které popisují, jak implementovat vzájemná spolupráce mezi [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací a dalších typů [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] aplikace.  
+Tato stránka obsahuje odkazy na dokumenty, které popisují postup implementace součinnost mezi [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací a dalších typů [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] aplikací.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vzájemná spolupráce subsystémů WPF a Windows Forms](../../../../docs/framework/wpf/advanced/wpf-and-windows-forms-interoperation.md)  
- [Vzájemná spolupráce grafického subsystému WPF a systému Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)  
- [Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9](../../../../docs/framework/wpf/advanced/wpf-and-direct3d9-interoperation.md)  
+ [Vzájemná spolupráce subsystémů WPF a Windows Forms](wpf-and-windows-forms-interoperation.md)  
+ [Vzájemná spolupráce grafického subsystému WPF a systému Win32](wpf-and-win32-interoperation.md)  
+ [Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9](wpf-and-direct3d9-interoperation.md)  
   
 ## <a name="reference"></a>Odkaz  
   
 |Termín|Definice|  
 |----------|----------------|  
-|<xref:System.Windows.Forms.Integration.WindowsFormsHost>|Element, který můžete použít k hostiteli [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek jako prvek [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránky.|  
-|<xref:System.Windows.Forms.Integration.ElementHost>|A [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek, který můžete použít k hostiteli [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ovládacího prvku.|  
+|<xref:System.Windows.Forms.Integration.WindowsFormsHost>|Element, který můžete použít na hostitele [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek jako prvek sady [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránky.|  
+|<xref:System.Windows.Forms.Integration.ElementHost>|A [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek, který můžete použít na hostitele [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ovládacího prvku.|  
 |<xref:System.Windows.Interop.HwndSource>|Hostitelé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] oblast v rámci [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace.|  
-|<xref:System.Windows.Interop.HwndHost>|Základní třída pro <xref:System.Windows.Forms.Integration.WindowsFormsHost>, definuje některé základní funkce, které všechny na základě HWND technologie použijte, pokud hostované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Podtřída to k hostování [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okně v rámci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.|  
-|<xref:System.Windows.Interop.BrowserInteropHelper>|Pomocná třída pro podmínky prohlížeče prostředí pro vytváření sestav [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, která je hostovaná v prohlížeči.|  
+|<xref:System.Windows.Interop.HwndHost>|Základní třída pro <xref:System.Windows.Forms.Integration.WindowsFormsHost>, definuje některé základní funkce, které všechny technologie založené na HWND použít, když jsou hostované ve [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Podtřídy to k hostování [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna nejvyšší úrovně v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.|  
+|<xref:System.Windows.Interop.BrowserInteropHelper>|Pomocná třída pro podmínky prohlížeč prostředí pro vytváření sestav [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikaci hostovanou prohlížečem.|  
   
 ## <a name="related-sections"></a>Související oddíly

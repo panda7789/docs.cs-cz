@@ -8,12 +8,12 @@ helpviewer_keywords:
 - event handlers [WPF], adding
 - XAML [WPF], adding event handlers
 ms.assetid: 269c61e0-6bd9-4291-9bed-1c5ee66da486
-ms.openlocfilehash: 4e8344ebcb0406a7da29787c5a4377760f55597e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 05eaae0f5b893f42d421717ac73373d4c79004c4
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54499129"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352188"
 ---
 # <a name="how-to-add-an-event-handler-using-code"></a>Postupy: Přidání obslužné rutiny události pomocí kódu
 Tento příklad ukazuje, jak přidat obslužnou rutinu události k prvku pomocí kódu.  
@@ -27,16 +27,16 @@ Tento příklad ukazuje, jak přidat obslužnou rutinu události k prvku pomocí
   
 -   Použití <xref:System.Windows.UIElement.AddHandler%2A> metody společně s `AddressOf` operátor tak, aby odkazovaly implementaci obslužné rutiny události.  
   
--   Použití `Handles` – klíčové slovo jako součást definice obslužné rutiny události. Tato technika, tady není ukázaný; Zobrazit [jazyka Visual Basic a WPF zpracování událostí](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md).  
+-   Použití `Handles` – klíčové slovo jako součást definice obslužné rutiny události. Tato technika, tady není ukázaný; Zobrazit [jazyka Visual Basic a WPF zpracování událostí](visual-basic-and-wpf-event-handling.md).  
   
- [!code-xaml[RoutedEventAddRemoveHandler#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/CSharp/default.xaml#xaml)]  
+ [!code-xaml[RoutedEventAddRemoveHandler#XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/CSharp/default.xaml#xaml)]  
   
- [!code-csharp[RoutedEventAddRemoveHandler#Handler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/CSharp/default.xaml.cs#handler)]
- [!code-vb[RoutedEventAddRemoveHandler#Handler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/VisualBasic/default.xaml.vb#handler)]  
+ [!code-csharp[RoutedEventAddRemoveHandler#Handler](~/samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/CSharp/default.xaml.cs#handler)]
+ [!code-vb[RoutedEventAddRemoveHandler#Handler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/VisualBasic/default.xaml.vb#handler)]  
   
 > [!NOTE]
->  Přidání obslužné rutiny událostí v původně analyzovaný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránka je mnohem jednodušší. V rámci elementu objektu, ve které chcete přidat obslužnou rutinu události přidejte atribut, který odpovídá názvu události, ke které chcete zpracovat. Hodnota tohoto atributu zadejte jako název obslužné metody událostí, který jste definovali v souboru kódu na pozadí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky. Další informace najdete v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md) nebo [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
+>  Přidání obslužné rutiny událostí v původně analyzovaný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránka je mnohem jednodušší. V rámci elementu objektu, ve které chcete přidat obslužnou rutinu události přidejte atribut, který odpovídá názvu události, ke které chcete zpracovat. Hodnota tohoto atributu zadejte jako název obslužné metody událostí, který jste definovali v souboru kódu na pozadí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky. Další informace najdete v tématu [přehled XAML (WPF)](xaml-overview-wpf.md) nebo [směrovat Přehled událostí](routed-events-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)
+- [Přehled směrovaných událostí](routed-events-overview.md)
+- [Témata s postupy](events-how-to-topics.md)

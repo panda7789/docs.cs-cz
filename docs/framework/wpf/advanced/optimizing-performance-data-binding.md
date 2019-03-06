@@ -5,12 +5,12 @@ helpviewer_keywords:
 - binding data [WPF], performance
 - data binding [WPF], performance
 ms.assetid: 1506a35d-c009-43db-9f1e-4e230ad5be73
-ms.openlocfilehash: 156d248921499aa78c3638e45af113c5698bdacd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dfc58036bc39879009b31d29dc41247a914bcd59
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54668012"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352019"
 ---
 # <a name="optimizing-performance-data-binding"></a>Optimalizace výkonu: Datová vazba
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vytváření datových vazeb nabízí jednoduchý a konzistentní způsob pro aplikace k zobrazení a interakci s daty. Elementy mohou být vázány na data z různých zdrojů dat ve formě [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)].  
@@ -74,14 +74,14 @@ ms.locfileid: "54668012"
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Umožňuje vám data svázat [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] obsahu; však vazba dat na [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] obsah je pomalejší než datové vazby k [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekty. Nelze převést [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekt dat do formátu XML, pokud jediným účelem je určený pro vytváření datových vazeb.  
   
 ## <a name="see-also"></a>Viz také:
-- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
-- [Plánování výkonu aplikace](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)
-- [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)
-- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)
-- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)
-- [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)
-- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)
-- [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Návod: Ukládání dat aplikací v aplikaci WPF](../../../../docs/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application.md)
+- [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
+- [Plánování výkonu aplikace](planning-for-application-performance.md)
+- [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
+- [Rozložení a návrh](optimizing-performance-layout-and-design.md)
+- [2D grafika a obrázky](optimizing-performance-2d-graphics-and-imaging.md)
+- [Chování objektu](optimizing-performance-object-behavior.md)
+- [Prostředky aplikace](optimizing-performance-application-resources.md)
+- [Text](optimizing-performance-text.md)
+- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)
+- [Přehled datových vazeb](../data/data-binding-overview.md)
+- [Návod: Ukládání dat aplikací v aplikaci WPF](walkthrough-caching-application-data-in-a-wpf-application.md)

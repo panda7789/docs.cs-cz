@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML [WPF], custom classes
 - classes [WPF], custom classes in XAML
 ms.assetid: e7313137-581e-4a64-8453-d44e15a6164a
-ms.openlocfilehash: f6709cad76ff05c3134c8430b36d5f34019b03ca
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a1de1ee80d1f88b0c0a7adfb75b96353b6861d97
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54606579"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371889"
 ---
 # <a name="xaml-and-custom-classes-for-wpf"></a>XAML a vlastní třídy pro WPF
 Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] architektur podporuje schopnost definovat vlastní třídy nebo struktury v libovolném [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] jazyk a pak přístupu, které třídy pomocí kódu XAML. Můžete použít kombinaci [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]-definované typy a vlastních typů ve stejném souboru kódu, obvykle na předponu oboru názvů XAML mapování vlastních typů. Toto téma popisuje požadavky, které má být použitelná jako prvek XAML musí splňovat vlastní třídy.  
@@ -26,7 +26,7 @@ Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlashar
   
 -   Výhodou definování vlastní třídy v aplikaci je, že tato metoda je relativně jednoduché a minimalizuje nasazení a testování problémů při zavedení samostatné sestavení mimo hlavní spustitelný soubor aplikace.  
   
--   Zda definované ve stejném nebo jiném sestavení, je potřeba namapovat mezi názvový prostor CLR a obor názvů XML jinak se nedá použít v XAML jako prvky vlastní třídy. Zobrazit [obory názvů XAML a mapování Namespace pro WPF XAML](../../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
+-   Zda definované ve stejném nebo jiném sestavení, je potřeba namapovat mezi názvový prostor CLR a obor názvů XML jinak se nedá použít v XAML jako prvky vlastní třídy. Zobrazit [obory názvů XAML a mapování Namespace pro WPF XAML](xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   
 <a name="Requirements_for_a_Custom_Class_as_a_XAML_Element"></a>   
 ## <a name="requirements-for-a-custom-class-as-a-xaml-element"></a>Požadavky pro vlastní třídy jako prvek XAML  
@@ -52,19 +52,19 @@ Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlashar
 ### <a name="typeconverter-enabled-attribute-syntax"></a>Povolené syntaxe atributu TypeConverter  
  Pokud zadáte konvertor typu vyhrazené, s atributy na úrovni třídy, použitých převodů umožňuje syntaxe atributu jakákoli vlastnost, která je potřeba vytvořit instanci tohoto typu. Konvertor typu není povoleno použití elementu objektu typu; pouze přítomnost výchozího konstruktoru pro daný typ umožňuje použití elementu objektu. Proto vlastnosti, které jsou povolené konvertor typu nejsou obecně použitelné v syntaxi vlastnosti, pokud typ, samotný také podporuje syntaxi elementu objektu. Výjimkou je, že můžete zadat syntax prvku vlastnosti, ale mít element vlastnosti obsahuje řetězec. Tohle využívání je ve skutečnosti v podstatě ekvivalentní použití syntaxe atributu a takové použití není běžné, pokud je potřeba pro více robustní zpracování prázdných hodnotu atributu. Například následující je použití elementu vlastnosti, která přebírá řetězec a ekvivalentní použití atributu:  
   
- [!code-xaml[XamlOvwSupport#GoofyTCPE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#goofytcpe)]  
+ [!code-xaml[XamlOvwSupport#GoofyTCPE](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#goofytcpe)]  
   
- [!code-xaml[XamlOvwSupport#GoofyTCPE2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#goofytcpe2)]  
+ [!code-xaml[XamlOvwSupport#GoofyTCPE2](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page8.xaml#goofytcpe2)]  
   
  Příkladem vlastnosti, kde syntaxe atributu je povoleno, ale syntax prvku vlastnosti, které obsahuje prvek objektu je zakázané prostřednictvím XAML jsou různé vlastnosti, které provést <xref:System.Windows.Input.Cursor> typu. <xref:System.Windows.Input.Cursor> Třída má vyhrazené konvertor <xref:System.Windows.Input.CursorConverter>, ale nezpřístupňuje výchozí konstruktor, proto <xref:System.Windows.FrameworkElement.Cursor%2A> vlastnost lze nastavit pouze pomocí syntaxe atributu i když samotný <xref:System.Windows.Input.Cursor> typ je typ odkazu.  
   
 ### <a name="per-property-type-converters"></a>Převaděče typů na vlastnost  
  Můžete také deklarovat samotné vlastnosti konvertor typu na úrovni vlastnost. To umožňuje "zkrácené jazyk", který vytváří instance objektů typu inline vlastnost podle jako vstup pro zpracování příchozích řetězcové hodnoty atributu <xref:System.ComponentModel.TypeConverter.ConvertFrom%2A> operace podle příslušného typu. Obvykle se to provádí poskytnout přístupový objekt usnadnění práce, a ne jako jediný prostředek povolit nastavení vlastnosti v XAML. Je však také možné použít převaděče typů pro atributy, ve které chcete použít existující [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] typy, které nezadávejte výchozí konstruktor nebo konvertor s atributy typu. Příklady z [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rozhraní API jsou určité vlastnosti, které provést <xref:System.Globalization.CultureInfo> typu. V takovém případě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použít existující rozhraní Microsoft .NET Framework <xref:System.Globalization.CultureInfo> typ lépe situacích kompatibilita a migrace, které byly použity v předchozích verzích rozhraní, ale <xref:System.Globalization.CultureInfo> typ nepodporuje potřebné konstruktory nebo převod typu na úrovni typu na možné přímo použít jako hodnotu vlastnosti XAML.  
   
- Pokaždé, když zveřejníte vlastnost, která má využití XAML, zejména v případě, že se ovládací prvek Autor, doporučujeme raději zálohování tuto vlastnost s vlastností závislostí. To platí zejména v Pokud použijete existující [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] implementace editoru XAML, protože výkon lze zvýšit pomocí <xref:System.Windows.DependencyProperty> zálohování. Vlastnosti závislosti zpřístupní vlastnosti funkce systému pro vaše vlastnost, která uživateli přijde očekávat dostupné vlastnosti XAML. To zahrnuje funkce, jako je animace, podporu styl a datové vazby. Další informace najdete v tématu [vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md) a [vlastnosti závislostí a načítání XAML](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md).  
+ Pokaždé, když zveřejníte vlastnost, která má využití XAML, zejména v případě, že se ovládací prvek Autor, doporučujeme raději zálohování tuto vlastnost s vlastností závislostí. To platí zejména v Pokud použijete existující [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] implementace editoru XAML, protože výkon lze zvýšit pomocí <xref:System.Windows.DependencyProperty> zálohování. Vlastnosti závislosti zpřístupní vlastnosti funkce systému pro vaše vlastnost, která uživateli přijde očekávat dostupné vlastnosti XAML. To zahrnuje funkce, jako je animace, podporu styl a datové vazby. Další informace najdete v tématu [vlastní vlastnosti závislosti](custom-dependency-properties.md) a [vlastnosti závislostí a načítání XAML](xaml-loading-and-dependency-properties.md).  
   
 ### <a name="writing-and-attributing-a-type-converter"></a>Psaní a zapisujících konvertor typu  
- Čas od času musíte napsat vlastní <xref:System.ComponentModel.TypeConverter> odvozené třídy poskytují převod typu pro váš typ vlastnosti. Pokyny, jak jsou odvozeny z a vytvořit převaděč typu, který podporuje použití XAML a tom, jak používat <xref:System.ComponentModel.TypeConverterAttribute>, naleznete v tématu [TypeConverters a XAML](../../../../docs/framework/wpf/advanced/typeconverters-and-xaml.md).  
+ Čas od času musíte napsat vlastní <xref:System.ComponentModel.TypeConverter> odvozené třídy poskytují převod typu pro váš typ vlastnosti. Pokyny, jak jsou odvozeny z a vytvořit převaděč typu, který podporuje použití XAML a tom, jak používat <xref:System.ComponentModel.TypeConverterAttribute>, naleznete v tématu [TypeConverters a XAML](typeconverters-and-xaml.md).  
   
 <a name="Requirements_for_Events_of_a_Custom_Class_as_XAML"></a>   
 ## <a name="requirements-for-xaml-event-handler-attribute-syntax-on-events-of-a-custom-class"></a>Požadavky pro syntaxe atributu obslužné rutiny události XAML na události vlastní třídy  
@@ -79,7 +79,7 @@ Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlashar
   
 -   Objekt, který je objekt kolekce není nutné zadat v syntaxi elementu objektu. Pokaždé, když zadáte vlastnosti XAML, která přebírá typ kolekce je implicitní přítomnosti tohoto typu kolekce.  
   
--   Podřízené prvky prvku vlastnost kolekce, ve značkách jsou zpracovány do stanou členy kolekce. Obvykle kód přístup k členům kolekce se provádí prostřednictvím metody seznamu/slovníku jako `Add`, nebo prostřednictvím indexeru. Ale syntaxe XAML nepodporuje metody nebo indexery (výjimka: XAML 2009 může podporovat metody, ale pomocí XAML 2009 omezuje možná použití WPF; Zobrazit [funkce jazyka XAML 2009](../../../../docs/framework/xaml-services/xaml-2009-language-features.md)). Kolekce jsou samozřejmě velmi běžné požadavky pro vytváření stromové struktuře prvků a potřebujete způsob, jak naplnit těchto kolekcí v deklarativní XAML. Proto se zpracovávají podřízené prvky prvku vlastnost kolekce jejich přidáním do kolekce, která je typ hodnoty vlastnosti kolekce.  
+-   Podřízené prvky prvku vlastnost kolekce, ve značkách jsou zpracovány do stanou členy kolekce. Obvykle kód přístup k členům kolekce se provádí prostřednictvím metody seznamu/slovníku jako `Add`, nebo prostřednictvím indexeru. Ale syntaxe XAML nepodporuje metody nebo indexery (výjimka: XAML 2009 může podporovat metody, ale pomocí XAML 2009 omezuje možná použití WPF; Zobrazit [funkce jazyka XAML 2009](../../xaml-services/xaml-2009-language-features.md)). Kolekce jsou samozřejmě velmi běžné požadavky pro vytváření stromové struktuře prvků a potřebujete způsob, jak naplnit těchto kolekcí v deklarativní XAML. Proto se zpracovávají podřízené prvky prvku vlastnost kolekce jejich přidáním do kolekce, která je typ hodnoty vlastnosti kolekce.  
   
  Implementace rozhraní .NET Framework XAML Services a proto procesor WPF XAML používá následující definici pro co se považuje za vlastnost kolekce. Vlastnost typ vlastnosti musí implementovat jedno z následujících akcí:  
   
@@ -87,7 +87,7 @@ Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlashar
   
 -   Implementuje <xref:System.Collections.IDictionary> nebo jeho obecný ekvivalent (<xref:System.Collections.Generic.IDictionary%602>).  
   
--   Je odvozen od <xref:System.Array> (Další informace o polích v XAML najdete v tématu [x: Array – rozšíření značek](../../../../docs/framework/xaml-services/x-array-markup-extension.md).)  
+-   Je odvozen od <xref:System.Array> (Další informace o polích v XAML najdete v tématu [x: Array – rozšíření značek](../../xaml-services/x-array-markup-extension.md).)  
   
 -   Implementuje <xref:System.Windows.Markup.IAddChild> (rozhraní určené [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]).  
   
@@ -96,7 +96,7 @@ Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlashar
 > [!NOTE]
 >  Obecné `List` a `Dictionary` rozhraní (<xref:System.Collections.Generic.IList%601> a <xref:System.Collections.Generic.IDictionary%602>) nejsou podporovány pro detekci kolekce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] XAML procesoru. Můžete však použít <xref:System.Collections.Generic.List%601> třídy jako základní třídu, protože implementuje <xref:System.Collections.IList> přímo, nebo <xref:System.Collections.Generic.Dictionary%602> jako základní třídu, protože implementuje <xref:System.Collections.IDictionary> přímo.  
   
- Při deklaraci vlastnosti, která vezme kolekci buďte opatrní jak hodnota této vlastnosti se inicializuje nové instance daného typu. Pokud nejsou implementace vlastnost jako vlastnost závislosti, pak vlastnost, použijte pomocné pole, která volá konstruktor typu kolekce je odpovídající. Pokud je vaše vlastnost vlastnost závislosti, budete muset inicializovat vlastnost kolekce jako součást výchozí konstruktor typu. Je to proto, že vlastnost závislosti má výchozí hodnotu z metadat a obvykle nechcete, aby počáteční hodnota vlastnosti kolekce statické, sdílené kolekce. Měla by existovat instance kolekce za každou obsahující instanci typu. Další informace najdete v tématu [vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md).  
+ Při deklaraci vlastnosti, která vezme kolekci buďte opatrní jak hodnota této vlastnosti se inicializuje nové instance daného typu. Pokud nejsou implementace vlastnost jako vlastnost závislosti, pak vlastnost, použijte pomocné pole, která volá konstruktor typu kolekce je odpovídající. Pokud je vaše vlastnost vlastnost závislosti, budete muset inicializovat vlastnost kolekce jako součást výchozí konstruktor typu. Je to proto, že vlastnost závislosti má výchozí hodnotu z metadat a obvykle nechcete, aby počáteční hodnota vlastnosti kolekce statické, sdílené kolekce. Měla by existovat instance kolekce za každou obsahující instanci typu. Další informace najdete v tématu [vlastní vlastnosti závislosti](custom-dependency-properties.md).  
   
  Vlastní typ kolekce můžete implementovat pro vaši vlastnost kolekce. Z důvodu zpracování implicitní kolekce vlastností typ vlastní kolekce není nutné zadat výchozí konstruktor, aby se implicitně použije v XAML. Ale můžete volitelně zadat výchozí konstruktor pro typ kolekce. To může být vhodné praxe. Pokud nezadáte konstruktor default, nelze explicitně deklarovat kolekci jako element objektu. Některé autoři značky pravděpodobně chtít zobrazit explicitní kolekce jako otázkou styl značek. Výchozí konstruktor může také zjednodušit požadavky inicializace při vytváření nových objektů, které používají váš typ kolekce jako hodnotu vlastnosti.  
   
@@ -110,11 +110,11 @@ Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlashar
   
 <a name="Serializing"></a>   
 ## <a name="serializing-xaml"></a>Serializace XAML  
- Pro určité scénáře, jako třeba když se ovládací prvek Autor, můžete chtít také zajistit, že všechny reprezentaci objektu, který se dá vytvořit instance v XAML lze také serializovat zpět na odpovídající kód XAML. Serializace požadavky nejsou popsané v tomto tématu. Zobrazit [řídit vytvoření přehledu](../../../../docs/framework/wpf/controls/control-authoring-overview.md) a [strom prvku a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md).  
+ Pro určité scénáře, jako třeba když se ovládací prvek Autor, můžete chtít také zajistit, že všechny reprezentaci objektu, který se dá vytvořit instance v XAML lze také serializovat zpět na odpovídající kód XAML. Serializace požadavky nejsou popsané v tomto tématu. Zobrazit [řídit vytvoření přehledu](../controls/control-authoring-overview.md) a [strom prvku a serializace](element-tree-and-serialization.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)
-- [Přehled vytváření ovládacích prvků](../../../../docs/framework/wpf/controls/control-authoring-overview.md)
-- [Přehled základních elementů](../../../../docs/framework/wpf/advanced/base-elements-overview.md)
-- [Vlastnosti závislostí a načítání XAML](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)
+- [Přehled XAML (WPF)](xaml-overview-wpf.md)
+- [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
+- [Přehled vytváření ovládacích prvků](../controls/control-authoring-overview.md)
+- [Přehled základních elementů](base-elements-overview.md)
+- [Vlastnosti závislostí a načítání XAML](xaml-loading-and-dependency-properties.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Button controls [WPF], creating with automatic layout
 - automatic layout [WPF], creating buttons
 ms.assetid: 96c206d0-9e77-4784-9d2d-5045aed2021c
-ms.openlocfilehash: 501341f0e71e6e5a224c51e4ae01c68ce6b845cb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2172aba80fe963be33036a7245f228e8d5bfedda
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543484"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57370342"
 ---
 # <a name="how-to-use-automatic-layout-to-create-a-button"></a>Postupy: Vytvoření tlačítka pomocí automatického rozložení
 Tento příklad popisuje, jak automatické rozložení metodu použijte, chcete-li vytvořit tlačítko v lokalizovatelných aplikacích.  
@@ -20,15 +20,15 @@ Tento příklad popisuje, jak automatické rozložení metodu použijte, chcete-
  Následující dva [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] příklady vytvářet aplikace pro vytvoření instance tlačítka; jednu se anglický text a jednu s textem španělština. Všimněte si, že kód je stejná s výjimkou textu. Upraví tlačítka podle textu.  
   
 ## <a name="example"></a>Příklad  
- [!code-xaml[LocalizationBtn_snip#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LocalizationBtn_snip/CS/Pane1.xaml#1)]  
+ [!code-xaml[LocalizationBtn_snip#1](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationBtn_snip/CS/Pane1.xaml#1)]  
   
- [!code-xaml[LocalizationBtn#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LocalizationBtn/CS/Pane1.xaml#1)]  
+ [!code-xaml[LocalizationBtn#1](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationBtn/CS/Pane1.xaml#1)]  
   
  Následující obrázek ukazuje výstup z ukázek kódu.  
   
- ![Stejné tlačítko s textem v různých jazycích](../../../../docs/framework/wpf/advanced/media/globalizationbutton.png "GlobalizationButton")  
+ ![Stejné tlačítko s textem v různých jazycích](./media/globalizationbutton.png "GlobalizationButton")  
 Tlačítko automaticky umožňující změnu velikosti  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled automatického rozložení](../../../../docs/framework/wpf/advanced/use-automatic-layout-overview.md)
-- [Automatické rozložení použitím mřížky](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)
+- [Přehled automatického rozložení](use-automatic-layout-overview.md)
+- [Automatické rozložení použitím mřížky](how-to-use-a-grid-for-automatic-layout.md)

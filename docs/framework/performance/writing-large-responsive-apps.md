@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: f2f2bff0d86d3c3fed443628a5c437fe1ebdcc15
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 67da51ae900a0b2d1c0728b22e58aa83e789684f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219838"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358168"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Psaní velkých a pohotově reagujících aplikací .NET Framework
 Tento článek poskytuje tipy pro zvýšení výkonu velkých aplikací rozhraní .NET Framework nebo aplikace, které zpracovávají velké množství dat, jako jsou soubory nebo databáze. Tyto tipy pocházejí z přepsání kompilátory C# i Visual Basic ve spravovaném kódu a tento článek obsahuje několik skutečné příklady z kompilátoru jazyka C#. 
@@ -467,7 +467,6 @@ class Compilation { /*...*/
 - [Průvodce začátečníka profilací výkonu](/visualstudio/profiling/beginners-guide-to-performance-profiling)
 - [Výkon](../../../docs/framework/performance/index.md)
 - [Tipy ke zvýšení výkonu rozhraní .NET](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973839(v%3dmsdn.10))
-- [Nástroj pro analýzu výkonu Windows Phone](https://msdn.microsoft.com/magazine/hh781024.aspx)
 - [Na webu Channel 9 kurzů PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial)
 - [The .NET Compiler Platform SDK](../../csharp/roslyn-sdk/index.md)
 - [DotNet/roslyn úložišti na Githubu](https://github.com/dotnet/roslyn)

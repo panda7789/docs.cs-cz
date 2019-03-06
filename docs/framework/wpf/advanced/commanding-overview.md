@@ -13,12 +13,12 @@ helpviewer_keywords:
 - commanding [WPF]
 - CommandManager [WPF]
 ms.assetid: bc208dfe-367d-426a-99de-52b7e7511e81
-ms.openlocfilehash: 5273850c9fec731c5f11e101d218532d06632263
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 1e756aa633ddf87267baa1fc52343a0b7570f753
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748424"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57379078"
 ---
 # <a name="commanding-overview"></a>Přehled příkazů
 <a name="introduction"></a> Příkazů je mechanismus vstupní v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytující vstupní zpracování více sémantických úrovni, než vstupní zařízení. Příklady příkazů **kopírování**, **Vyjmout**, a **vložit** nalézt operace v mnoha aplikacích.  
@@ -51,10 +51,10 @@ ms.locfileid: "56748424"
   
  Následující příklad ukazuje, jak nastavit <xref:System.Windows.Controls.MenuItem> tak, aby po kliknutí se vyvolá <xref:System.Windows.Input.ApplicationCommands.Paste%2A> příkaz <xref:System.Windows.Controls.TextBox>, předpokládá <xref:System.Windows.Controls.TextBox> má klávesnice fokus.  
   
- [!code-xaml[CommandingOverviewSnippets#CommandingOverviewSimpleCommand](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewsimplecommand)]  
+ [!code-xaml[CommandingOverviewSnippets#CommandingOverviewSimpleCommand](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewsimplecommand)]  
   
- [!code-csharp[CommandingOverviewSnippets#CommandingOverviewCommandTargetCodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcommandtargetcodebehind)]
- [!code-vb[CommandingOverviewSnippets#CommandingOverviewCommandTargetCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcommandtargetcodebehind)]  
+ [!code-csharp[CommandingOverviewSnippets#CommandingOverviewCommandTargetCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcommandtargetcodebehind)]
+ [!code-vb[CommandingOverviewSnippets#CommandingOverviewCommandTargetCodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcommandtargetcodebehind)]  
   
 <a name="Four_main_Concepts"></a>   
 ## <a name="four-main-concepts-in-wpf-commanding"></a>Čtyři hlavní koncepty v WPF příkazů  
@@ -74,7 +74,7 @@ ms.locfileid: "56748424"
 ### <a name="commands"></a>Příkazy  
  Příkazy v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou vytvořeny pomocí implementace <xref:System.Windows.Input.ICommand> rozhraní.  <xref:System.Windows.Input.ICommand> poskytuje dvě metody <xref:System.Windows.Input.ICommand.Execute%2A>, a <xref:System.Windows.Input.ICommand.CanExecute%2A>a události, <xref:System.Windows.Input.ICommand.CanExecuteChanged>. <xref:System.Windows.Input.ICommand.Execute%2A> provádí akce, které jsou spojeny s příkazu. <xref:System.Windows.Input.ICommand.CanExecute%2A> Určuje, zda lze příkaz provést na aktuálním cíli příkazu. <xref:System.Windows.Input.ICommand.CanExecuteChanged> je aktivována, pokud správce příkazů, které centralizuje řídicí operace zjistí změnu ve zdroji příkaz, který může zneplatnit příkazu, která byla vyvolána, ale dosud proveden příkaz vazbou.  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Provádění <xref:System.Windows.Input.ICommand> je <xref:System.Windows.Input.RoutedCommand> třídy a je na tomto přehledu.  
   
- Hlavní zdroje vstupu v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] se ukazatel myši, klávesnice, inkoustu a směrování příkazů.  Používat vstupy více zařízení objektově orientovaný <xref:System.Windows.RoutedEvent> oznámit objekty na stránce aplikace, že vstupní události došlo.  A <xref:System.Windows.Input.RoutedCommand> se nijak neliší.  <xref:System.Windows.Input.RoutedCommand.Execute%2A> a <xref:System.Windows.Input.RoutedCommand.CanExecute%2A> metody <xref:System.Windows.Input.RoutedCommand> neobsahují aplikační logiku pro příkaz, ale místo toho vyvolat směrované události, které vytvoří tunel a předána prostřednictvím stromem prvků, dokud narazí objekt se <xref:System.Windows.Input.CommandBinding>.  <xref:System.Windows.Input.CommandBinding> Obsahuje rutiny pro tyto události a obslužné rutiny, které k provedení příkazu.  Další informace o směrování událostí ve [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
+ Hlavní zdroje vstupu v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] se ukazatel myši, klávesnice, inkoustu a směrování příkazů.  Používat vstupy více zařízení objektově orientovaný <xref:System.Windows.RoutedEvent> oznámit objekty na stránce aplikace, že vstupní události došlo.  A <xref:System.Windows.Input.RoutedCommand> se nijak neliší.  <xref:System.Windows.Input.RoutedCommand.Execute%2A> a <xref:System.Windows.Input.RoutedCommand.CanExecute%2A> metody <xref:System.Windows.Input.RoutedCommand> neobsahují aplikační logiku pro příkaz, ale místo toho vyvolat směrované události, které vytvoří tunel a předána prostřednictvím stromem prvků, dokud narazí objekt se <xref:System.Windows.Input.CommandBinding>.  <xref:System.Windows.Input.CommandBinding> Obsahuje rutiny pro tyto události a obslužné rutiny, které k provedení příkazu.  Další informace o směrování událostí ve [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [směrovat Přehled událostí](routed-events-overview.md).  
   
  <xref:System.Windows.Input.RoutedCommand.Execute%2A> Metoda <xref:System.Windows.Input.RoutedCommand> vyvolá <xref:System.Windows.Input.CommandManager.PreviewExecuted> a <xref:System.Windows.Input.CommandManager.Executed> události na daném cíli příkazu.  <xref:System.Windows.Input.RoutedCommand.CanExecute%2A> Metoda <xref:System.Windows.Input.RoutedCommand> vyvolá <xref:System.Windows.Input.CommandManager.CanExecute> a <xref:System.Windows.Input.CommandManager.PreviewCanExecute> události na daném cíli příkazu.  Tyto události tunelové propojení a bubliny prostřednictvím stromem prvků, dokud nebude objekt, který má narazí <xref:System.Windows.Input.CommandBinding> pro s konkrétním příkazem.  
   
@@ -98,10 +98,10 @@ ms.locfileid: "56748424"
   
  Následující příklad ukazuje způsob použití <xref:System.Windows.Controls.MenuItem> v <xref:System.Windows.Controls.ContextMenu> jako zdroj pro příkaz <xref:System.Windows.Input.ApplicationCommands.Properties%2A> příkazu.  
   
- [!code-xaml[CommandingOverviewSnippets#CommandingOverviewCmdSourceXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewcmdsourcexaml)]  
+ [!code-xaml[CommandingOverviewSnippets#CommandingOverviewCmdSourceXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewcmdsourcexaml)]  
   
- [!code-csharp[CommandingOverviewSnippets#CommandingOverviewCmdSource](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdsource)]
- [!code-vb[CommandingOverviewSnippets#CommandingOverviewCmdSource](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdsource)]  
+ [!code-csharp[CommandingOverviewSnippets#CommandingOverviewCmdSource](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdsource)]
+ [!code-vb[CommandingOverviewSnippets#CommandingOverviewCmdSource](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdsource)]  
   
  Obvykle příkaz zdroj bude naslouchat <xref:System.Windows.Input.RoutedCommand.CanExecuteChanged> událostí.  Tato událost informuje zdroj příkazu, který se mohl změnit možnost příkazu ke spuštění na aktuálním cíli příkazu.  Zdroj příkazu můžete zadávat dotazy aktuální stav <xref:System.Windows.Input.RoutedCommand> pomocí <xref:System.Windows.Input.RoutedCommand.CanExecute%2A> metody.  Zdroj příkazu můžete pak sama deaktivuje Pokud nelze provést příkaz.  Příkladem je <xref:System.Windows.Controls.MenuItem> graying samotné, když nelze provést příkaz.  
   
@@ -111,17 +111,17 @@ ms.locfileid: "56748424"
   
  Následující příklad ukazuje, jak vytvořit <xref:System.Windows.Input.KeyBinding> mezi <xref:System.Windows.Input.KeyGesture> a <xref:System.Windows.Input.RoutedCommand>.  
   
- [!code-xaml[CommandingOverviewSnippets#CommandingOverviewXAMLKeyBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewxamlkeybinding)]  
+ [!code-xaml[CommandingOverviewSnippets#CommandingOverviewXAMLKeyBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewxamlkeybinding)]  
   
- [!code-csharp[CommandingOverviewSnippets#CommandingOverviewKeyBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewkeybinding)]
- [!code-vb[CommandingOverviewSnippets#CommandingOverviewKeyBinding](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewkeybinding)]  
+ [!code-csharp[CommandingOverviewSnippets#CommandingOverviewKeyBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewkeybinding)]
+ [!code-vb[CommandingOverviewSnippets#CommandingOverviewKeyBinding](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewkeybinding)]  
   
  Dalším způsobem, jak přidružit <xref:System.Windows.Input.InputGesture> k <xref:System.Windows.Input.RoutedCommand> je přidání <xref:System.Windows.Input.InputGesture> k <xref:System.Windows.Input.InputGestureCollection> na <xref:System.Windows.Input.RoutedCommand>.  
   
  Následující příklad ukazuje, jak přidat <xref:System.Windows.Input.KeyGesture> k <xref:System.Windows.Input.InputGestureCollection> z <xref:System.Windows.Input.RoutedCommand>.  
   
- [!code-csharp[CommandingOverviewSnippets#CommandingOverviewKeyGestureOnCmd](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewkeygestureoncmd)]
- [!code-vb[CommandingOverviewSnippets#CommandingOverviewKeyGestureOnCmd](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewkeygestureoncmd)]  
+ [!code-csharp[CommandingOverviewSnippets#CommandingOverviewKeyGestureOnCmd](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewkeygestureoncmd)]
+ [!code-vb[CommandingOverviewSnippets#CommandingOverviewKeyGestureOnCmd](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewkeygestureoncmd)]  
   
 <a name="Command_Binding"></a>   
 ### <a name="commandbinding"></a>CommandBinding  
@@ -133,18 +133,18 @@ ms.locfileid: "56748424"
   
  Následující příklad ukazuje, jak vytvořit <xref:System.Windows.Input.CommandBinding> v kořenovém adresáři <xref:System.Windows.Window> aplikace.  <xref:System.Windows.Input.CommandBinding> Přidruží <xref:System.Windows.Input.ApplicationCommands.Open%2A> příkaz <xref:System.Windows.Input.CommandManager.Executed> a <xref:System.Windows.Input.CommandBinding.CanExecute> obslužné rutiny.  
   
- [!code-xaml[commandwithhandler#CommandHandlerCommandBinding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml#commandhandlercommandbinding)]  
+ [!code-xaml[commandwithhandler#CommandHandlerCommandBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml#commandhandlercommandbinding)]  
   
- [!code-csharp[CommandHandlerProcedural#CommandHandlerBindingInit](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandHandlerProcedural/CSharp/Window1.xaml.cs#commandhandlerbindinginit)]
- [!code-vb[CommandHandlerProcedural#CommandHandlerBindingInit](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandHandlerProcedural/visualbasic/window1.xaml.vb#commandhandlerbindinginit)]  
+ [!code-csharp[CommandHandlerProcedural#CommandHandlerBindingInit](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandHandlerProcedural/CSharp/Window1.xaml.cs#commandhandlerbindinginit)]
+ [!code-vb[CommandHandlerProcedural#CommandHandlerBindingInit](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandHandlerProcedural/visualbasic/window1.xaml.vb#commandhandlerbindinginit)]  
   
  Dále <xref:System.Windows.Input.ExecutedRoutedEventHandler> a <xref:System.Windows.Input.CanExecuteRoutedEventHandler> jsou vytvořeny.  <xref:System.Windows.Input.ExecutedRoutedEventHandler> Otevře <xref:System.Windows.MessageBox> , který zobrazí řetězec říká byl proveden příkaz.  <xref:System.Windows.Input.CanExecuteRoutedEventHandler> Nastaví <xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A> vlastnost `true`.  
   
- [!code-csharp[commandwithhandler#CommandHandlerExecutedHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml.cs#commandhandlerexecutedhandler)]
- [!code-vb[commandwithhandler#CommandHandlerExecutedHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/commandWithHandler/VisualBasic/Window1.xaml.vb#commandhandlerexecutedhandler)]  
+ [!code-csharp[commandwithhandler#CommandHandlerExecutedHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml.cs#commandhandlerexecutedhandler)]
+ [!code-vb[commandwithhandler#CommandHandlerExecutedHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/commandWithHandler/VisualBasic/Window1.xaml.vb#commandhandlerexecutedhandler)]  
   
- [!code-csharp[commandwithhandler#CommandHandlerCanExecuteHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml.cs#commandhandlercanexecutehandler)]
- [!code-vb[commandwithhandler#CommandHandlerCanExecuteHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/commandWithHandler/VisualBasic/Window1.xaml.vb#commandhandlercanexecutehandler)]  
+ [!code-csharp[commandwithhandler#CommandHandlerCanExecuteHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml.cs#commandhandlercanexecutehandler)]
+ [!code-vb[commandwithhandler#CommandHandlerCanExecuteHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/commandWithHandler/VisualBasic/Window1.xaml.vb#commandhandlercanexecutehandler)]  
   
  A <xref:System.Windows.Input.CommandBinding> je připojený k určitému objektu, jako je například kořenovou <xref:System.Windows.Window> aplikace nebo ovládacího prvku.  Objekt, který <xref:System.Windows.Input.CommandBinding> je připojen k definuje rozsah vazby.  Například <xref:System.Windows.Input.CommandBinding> připojen k nadřazenému prvku příkazu cíl dosažitelný z <xref:System.Windows.Input.CommandBinding.Executed> události, ale <xref:System.Windows.Input.CommandBinding> připojené k potomkem příkazu není dostupný cílový.  Toto je v přímém důsledku tak, jak <xref:System.Windows.RoutedEvent> tunely a bubliny z objektu, která vyvolává událost.  
   
@@ -158,10 +158,10 @@ ms.locfileid: "56748424"
   
  Následující příklad ukazuje, jak v kódu a v kódu explicitně nastavit cíl příkazu.  
   
- [!code-xaml[CommandingOverviewSnippets#CommandingOverviewXAMLCommandTarget](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewxamlcommandtarget)]  
+ [!code-xaml[CommandingOverviewSnippets#CommandingOverviewXAMLCommandTarget](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewxamlcommandtarget)]  
   
- [!code-csharp[CommandingOverviewSnippets#CommandingOverviewCommandTargetCodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcommandtargetcodebehind)]
- [!code-vb[CommandingOverviewSnippets#CommandingOverviewCommandTargetCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcommandtargetcodebehind)]  
+ [!code-csharp[CommandingOverviewSnippets#CommandingOverviewCommandTargetCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcommandtargetcodebehind)]
+ [!code-vb[CommandingOverviewSnippets#CommandingOverviewCommandTargetCodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcommandtargetcodebehind)]  
   
 <a name="Command_Manager"></a>   
 ### <a name="the-commandmanager"></a>CommandManager  
@@ -188,8 +188,8 @@ ms.locfileid: "56748424"
 - <xref:System.Windows.Input.CommandBinding>
 - <xref:System.Windows.Input.InputBinding>
 - <xref:System.Windows.Input.CommandManager>
-- [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)
-- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
-- [Implementace rozhraní ICommandSource](../../../../docs/framework/wpf/advanced/how-to-implement-icommandsource.md)
+- [Přehled vstupu](input-overview.md)
+- [Přehled směrovaných událostí](routed-events-overview.md)
+- [Implementace rozhraní ICommandSource](how-to-implement-icommandsource.md)
 - [Postupy: Přidání příkazu do položku nabídky](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms741839(v=vs.90))
 - [Vytvoření vlastní routedcommand – ukázky](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand)

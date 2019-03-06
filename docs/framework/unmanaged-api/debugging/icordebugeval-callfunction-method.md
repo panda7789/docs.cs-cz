@@ -17,49 +17,54 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 493b4850436b3724287210878992d1d8ce8fe168
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 66e51dc15f7d44ede26634571fa04c58e9735694
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54589396"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57364148"
 ---
 # <a name="icordebugevalcallfunction-method"></a>ICorDebugEval::CallFunction – metoda
-Nastaví zadanou funkci volání.  
-  
- Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0. Použití [icordebugeval2::callparameterizedfunction –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md) místo.  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
-HRESULT CallFunction (  
-    [in] ICorDebugFunction  *pFunction,  
-    [in] ULONG32            nArgs,  
-    [in, size_is(nArgs)] ICorDebugValue *ppArgs[]  
-);  
-```  
-  
-#### <a name="parameters"></a>Parametry  
- `pFunction`  
- [in] Ukazatel na objekt ICorDebugFunction, který určuje funkci, která se má volat.  
-  
- `nArgs`  
- [in] Počet argumentů pro funkce.  
-  
- `ppArgs`  
- [in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugValue, který určuje argument předaný do funkce.  
-  
-## <a name="remarks"></a>Poznámky  
- Pokud je virtuální, funkce `CallFunction` provede virtuální odeslání. Pokud je funkce v různých aplikační domény, přechod dojde, pokud jsou všechny argumenty také v této doméně aplikace.  
-  
-## <a name="requirements"></a>Požadavky  
- **Platformy:** WindowSee [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** CorDebug.idl, CorDebug.h  
-  
- **Knihovna:** CorGuids.lib  
-  
- **Verze rozhraní .NET framework:** 1.1, 1.0  
-  
+
+Nastaví zadanou funkci volání.
+
+Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0. Použití [icordebugeval2::callparameterizedfunction –](icordebugeval2-callparameterizedfunction-method.md) místo.
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
+HRESULT CallFunction (
+    [in] ICorDebugFunction  *pFunction,
+    [in] ULONG32            nArgs,
+    [in, size_is(nArgs)] ICorDebugValue *ppArgs[]
+);
+```
+
+## <a name="parameters"></a>Parametry
+
+`pFunction`\
+[in] Ukazatel na objekt ICorDebugFunction, který určuje funkci, která se má volat.
+
+`nArgs`\
+[in] Počet argumentů pro funkce.
+
+`ppArgs`\
+[in] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugValue, který určuje argument předaný do funkce.
+
+## <a name="remarks"></a>Poznámky
+
+Pokud je virtuální, funkce `CallFunction` provede virtuální odeslání. Pokud je funkce v různých aplikační domény, přechod dojde, pokud jsou všechny argumenty také v této doméně aplikace.
+
+## <a name="requirements"></a>Požadavky
+
+**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+**Záhlaví:** CorDebug.idl, CorDebug.h
+
+**Knihovna:** CorGuids.lib
+
+**Verze rozhraní .NET framework:** 1.1, 1.0
+
 ## <a name="see-also"></a>Viz také:
-- [CallParameterizedFunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md)
+
+- [CallParameterizedFunction – metoda](icordebugeval2-callparameterizedfunction-method.md)

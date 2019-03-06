@@ -10,12 +10,12 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-ms.openlocfilehash: 9df6adbf9208ee58044b0ba6ef606d693c9dca7a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 326cf683c05eae342646efca962cfe9b87ccab79
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54705820"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57364681"
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>Rozšíření skleněného rámečku do aplikace WPF
 Toto téma ukazuje, jak rozšířit [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] skleněného rámečku do aplikace Windows Presentation Foundation (WPF) v oblasti klienta.  
@@ -28,7 +28,7 @@ Toto téma ukazuje, jak rozšířit [!INCLUDE[TLA#tla_winvista](../../../../incl
   
  **Internet Explorer s rozšířenou skleněného rámečku za adresního řádku.**  
   
- ![Aplikace Internet Explorer 7 s rozšířeným za adresního řádku skleněného rámečku. ](../../../../docs/framework/wpf/graphics-multimedia/media/ie7glasstopbar.PNG "IE7glasstopbar")  
+ ![Aplikace Internet Explorer 7 s rozšířeným za adresního řádku skleněného rámečku. ](./media/ie7glasstopbar.PNG "IE7glasstopbar")  
   
  Rozšíření skleněného rámečku na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací, přístupu k nespravované [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] je potřeba. Následující příklad kódu nemá nespravovaného kódu (pinvoke) pro dva [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] potřeba splnit pro rozšíření rámce do klientské oblasti. Každá z těchto [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] jsou deklarovány ve třídě volá **NonClientRegionAPI**.  
   
@@ -147,7 +147,7 @@ void OnLoaded(object sender, RoutedEventArgs e)
   
  **Rozšíří skleněného rámečku do**[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]**aplikace.**  
   
- ![Skleněného rámečku rozšíří do aplikace WPF. ](../../../../docs/framework/wpf/graphics-multimedia/media/wpfextendedglassintoclient.PNG "WPFextendedGlassIntoClient")  
+ ![Skleněného rámečku rozšíří do aplikace WPF. ](./media/wpfextendedglassintoclient.PNG "WPFextendedGlassIntoClient")  
   
 ## <a name="see-also"></a>Viz také:
 - [Přehled Správce oken plochy](/windows/desktop/dwm/dwm-overview)
