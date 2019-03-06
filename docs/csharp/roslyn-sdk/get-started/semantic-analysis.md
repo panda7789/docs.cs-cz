@@ -3,12 +3,12 @@ title: Začínáme s sémantická analýza
 description: Tento kurz obsahuje přehled práce s sémantické analýzy pomocí sady .NET SDK kompilátoru.
 ms.date: 02/06/2018
 ms.custom: mvc
-ms.openlocfilehash: 669f11377edfa707133f7ad8df72117942d504fa
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: dac733cba1d60a1bd24f5308717f4933cd620319
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202571"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57359624"
 ---
 # <a name="get-started-with-semantic-analysis"></a>Začínáme s sémantická analýza
 
@@ -117,7 +117,7 @@ K dokončení tohoto kurzu Vytvořme dotaz LINQ, který vytvoří posloupnost v�
 
 [!code-csharp[Access the sequence of members on the string type](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#9 "Access the sequence of members on the string type.")]
 
-Tento zdroj sekvence obsahuje všechny členy, včetně vlastností a polí, tak filtrovat pomocí <xref:System.Collections.Immutable.ImmutableArray%601.OfType%2A?displayProperty=nameWithType> metodu najít prvky, které jsou <xref:Microsoft.CodeAnalysis.IMethodSymbol?displayProperty=nameWithType> objekty:
+Této zdrojové sekvence obsahuje všechny členy, včetně vlastností a polí, takže filtrovat pomocí <xref:System.Collections.Immutable.ImmutableArray%601.OfType%2A?displayProperty=nameWithType> metodu najít prvky, které jsou <xref:Microsoft.CodeAnalysis.IMethodSymbol?displayProperty=nameWithType> objekty:
 
 [!code-csharp[Filter the sequence to only methods](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#10 "Find the subset of the collection that is the methods.")]
 

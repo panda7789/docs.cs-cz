@@ -5,12 +5,12 @@ helpviewer_keywords:
 - typography [WPF], ClearType technology
 - ClearType [WPF], technology
 ms.assetid: 7e2392e0-75dc-463d-a716-908772782431
-ms.openlocfilehash: 08fb3b7a6d2af4ede27ebeb1454b040d2bd3eb43
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d5aee9eccad7075ca9f05e08a02ba008bab9a7e7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54719219"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57355152"
 ---
 # <a name="cleartype-overview"></a>ClearType – přehled
 Toto téma obsahuje přehled [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] technologie najdete v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -28,12 +28,12 @@ Toto téma obsahuje přehled [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharp
   
  Následující dva příklady ukazují, jak glyfy mohou začít na ohraničení dílčí pixel až dílčí pixel umístění se používá. V příkladu na levé straně je vykreslen pomocí předchozí verze [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] renderer, který není využívat umístění dílčí pixelů. V příkladu na pravé straně je vykreslen pomocí nové verze [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] renderer, použití dílčích pixel umístění. Všimněte si, jak každý **e** a **l** pravém obrázku je vykreslen trošku jinak vzhledem k tomu, že každý se spouští v různých dílčí pixelů. Při zobrazení textu v normální velikosti na obrazovce, tento rozdíl není patrné z důvodu vysoký kontrast piktogram image. To je možné pouze z důvodu sofistikované barva filtrování, který je součástí [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)].  
   
- ![Text zobrazený ve dvou verzích ClearType](../../../../docs/framework/wpf/advanced/media/wcpsdk-mmgraphics-text-cleartype-overview-01.png "wcpsdk_mmgraphics_text_cleartype_overview_01")  
+ ![Text zobrazený ve dvou verzích ClearType](./media/wcpsdk-mmgraphics-text-cleartype-overview-01.png "wcpsdk_mmgraphics_text_cleartype_overview_01")  
 Text zobrazený v dříve a později verzích ClearType  
   
  Následující dva příklady porovnávají výstup z dříve [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] nástroj pro vykreslování s novou verzi [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] zobrazovací jednotky. Umístění subpixel, zobrazí na pravé straně, se výrazně zlepšuje typu na obrazovce, zejména v malých velikostech, kde představuje rozdíl mezi dílčí pixelů a celý pixel podstatnou část piktogram šířku mezery. Všimněte si, že mezery mezi znaky se víc i v druhý obrázek. Kumulativní výhodu, že dílčí pixel umístění do celkového vzhledu obrazovky textu je výrazně vyšší a představuje významný krok ve vývoji [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] technologie.  
   
- ![Text displayed with earlier version of ClearType](../../../../docs/framework/wpf/advanced/media/wcpsdk-mmgraphics-text-cleartype-overview-02.png "wcpsdk_mmgraphics_text_cleartype_overview_02")  
+ ![Text displayed with earlier version of ClearType](./media/wcpsdk-mmgraphics-text-cleartype-overview-02.png "wcpsdk_mmgraphics_text_cleartype_overview_02")  
 Text s dříve a novějších verzích ClearType  
   
 <a name="y-direction_antialiasing"></a>   
@@ -42,14 +42,14 @@ Text s dříve a novějších verzích ClearType
   
  Následující příklad ukazuje účinek s žádné vyhlazení směru osy y. V tomto případě jsou zřejmá ostrých hran na horní a dolní část písmeno.  
   
- ![Text pomocí ostrých hran na bez podstruktury křivky](../../../../docs/framework/wpf/advanced/media/wcpsdk-mmgraphics-text-cleartype-overview-03.png "wcpsdk_mmgraphics_text_cleartype_overview_03")  
+ ![Text pomocí ostrých hran na bez podstruktury křivky](./media/wcpsdk-mmgraphics-text-cleartype-overview-03.png "wcpsdk_mmgraphics_text_cleartype_overview_03")  
 Text pomocí ostrých hran na bez podstruktury křivky  
   
  [!INCLUDE[TLA2#tla_ct](../../../../includes/tla2sharptla-ct-md.md)] v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje vyhlazení na úrovni směru osy y vyhlazení jakékoli ostrých hran. To je zvlášť důležité pro zlepšení čitelnosti východoasijské jazyky, kde mají téměř stejné množství vodorovné a svislé bez podstruktury křivky ideografickými znaky.  
   
  Následující příklad ukazuje účinek antialiasingu směru osy y. V takovém případě horní a dolní část písmeno zobrazit smooth křivky.  
   
- ![Text with ClearType y&#45;direction anti&#45;aliasing](../../../../docs/framework/wpf/advanced/media/wcpsdk-mmgraphics-text-cleartype-overview-04.png "wcpsdk_mmgraphics_text_cleartype_overview_04")  
+ ![Text with ClearType y&#45;direction anti&#45;aliasing](./media/wcpsdk-mmgraphics-text-cleartype-overview-04.png "wcpsdk_mmgraphics_text_cleartype_overview_04")  
 Text s ClearType směru osy y vyhlazení  
   
 <a name="hardware_acceleration"></a>   
@@ -67,4 +67,4 @@ Text s ClearType směru osy y vyhlazení
  [PowerToy ClearType Tuner](https://www.microsoft.com/typography/ClearTypePowerToy.mspx)  
   
 ## <a name="see-also"></a>Viz také:
-- [Nastavení registru ClearType](../../../../docs/framework/wpf/advanced/cleartype-registry-settings.md)
+- [Nastavení registru ClearType](cleartype-registry-settings.md)

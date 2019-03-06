@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application startup [WPF]
 - performance [WPF], startup time
 ms.assetid: f0ec58d8-626f-4d8a-9873-c20f95e08b96
-ms.openlocfilehash: 6c72a69a1593c97ebda924e2b8aeb49a3cbefe1e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0bd7875f1e819497ea3a4d846a2876084a54ab80
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527325"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57379104"
 ---
 # <a name="application-startup-time"></a>Rychlejší spuštění aplikace
 Množství času, který je požadován pro spuštění aplikace WPF může značně lišit. Toto téma popisuje různé postupy pro zkrácení doby spuštění vnímaná, ve skutečnosti pro aplikace Windows Presentation Foundation (WPF).  
@@ -24,7 +24,7 @@ Množství času, který je požadován pro spuštění aplikace WPF může zna�
  Horké spuštění nastane, pokud většina těchto stránek pro hlavní komponenty společného jazykového modulu runtime (CLR) jsou už načtené v paměti, což šetří čas přístupu nákladné disku. To je důvod, proč spravované aplikace spouští rychleji, když je spuštěna jednou.  
   
 ## <a name="implement-a-splash-screen"></a>Implementace úvodní obrazovky  
- V případech, kde je důležité, nevyhnutelné zpoždění mezi spuštěním aplikace a zobrazení první uživatelského rozhraní, optimalizujte vnímaná spuštění pomocí *úvodní obrazovka*. Tento přístup téměř okamžitě zobrazí obrázek po spuštění aplikace uživatelem. Když je připravený k zobrazení jeho první uživatelského rozhraní aplikace, zmenšuje se na úvodní obrazovce. Počínaje [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], můžete použít <xref:System.Windows.SplashScreen> třídu pro implementaci úvodní obrazovky. Další informace najdete v tématu [přidání úvodní obrazovky do aplikace WPF](../../../../docs/framework/wpf/app-development/how-to-add-a-splash-screen-to-a-wpf-application.md).  
+ V případech, kde je důležité, nevyhnutelné zpoždění mezi spuštěním aplikace a zobrazení první uživatelského rozhraní, optimalizujte vnímaná spuštění pomocí *úvodní obrazovka*. Tento přístup téměř okamžitě zobrazí obrázek po spuštění aplikace uživatelem. Když je připravený k zobrazení jeho první uživatelského rozhraní aplikace, zmenšuje se na úvodní obrazovce. Počínaje [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], můžete použít <xref:System.Windows.SplashScreen> třídu pro implementaci úvodní obrazovky. Další informace najdete v tématu [přidání úvodní obrazovky do aplikace WPF](../app-development/how-to-add-a-splash-screen-to-a-wpf-application.md).  
   
  Můžete také implementovat vlastní úvodní obrazovky pomocí nativní grafické Win32. Zobrazit vaši implementaci před <xref:System.Windows.Application.Run%2A> metoda je volána.  
   
@@ -53,7 +53,7 @@ Množství času, který je požadován pro spuštění aplikace WPF může zna�
  Zvažte, jak se vyhnout konfigurace aplikace. Například pokud aplikace má požadavky na jednoduchou konfiguraci a má striktní spuštění dob, položky registru nebo jednoduchý soubor INI může být rychlejší spouštění alternativu.  
   
 ## <a name="utilize-the-gac"></a>Využívat GAC  
- Pokud sestavení není nainstalováno v globální mezipaměti sestavení (GAC), je způsobena ověření algoritmu hash sestavení se silným názvem a ověření image Ngen nativní bitové kopie sestavení je k dispozici v počítači. U všech sestavení nainstalovaná v GAC je přeskočeno ověřování silného názvu. Další informace najdete v tématu [Gacutil.exe (Global Assembly Cache Tool)](../../../../docs/framework/tools/gacutil-exe-gac-tool.md).  
+ Pokud sestavení není nainstalováno v globální mezipaměti sestavení (GAC), je způsobena ověření algoritmu hash sestavení se silným názvem a ověření image Ngen nativní bitové kopie sestavení je k dispozici v počítači. U všech sestavení nainstalovaná v GAC je přeskočeno ověřování silného názvu. Další informace najdete v tématu [Gacutil.exe (Global Assembly Cache Tool)](../../tools/gacutil-exe-gac-tool.md).  
   
 ## <a name="use-ngenexe"></a>Použití nástroje Ngen.exe  
  Zvažte použití Native Image Generator (Ngen.exe) ve své aplikaci. Pomocí Ngen.exe znamená, že obchodování spotřeby procesoru pro přístup na disk, protože nativní bitové kopie generované Ngen.exe by mohla být větší než image jazyka MSIL.  
@@ -67,14 +67,14 @@ Množství času, který je požadován pro spuštění aplikace WPF může zna�
 ### <a name="ngen-and-clickonce"></a>Ngen a ClickOnce  
  Způsob, jak máte v úmyslu nasadit vaše aplikace provést také rozdíl v okamžiku načtení. [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] nasazení aplikace nepodporuje Ngen. Pokud se rozhodnete použít Ngen.exe pro vaši aplikaci, budete muset použít jiný mechanismus nasazení, jako je například Instalační služby systému Windows.  
   
- Další informace najdete v tématu [Ngen.exe (Generátor nativních obrázků)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md).  
+ Další informace najdete v tématu [Ngen.exe (Generátor nativních obrázků)](../../tools/ngen-exe-native-image-generator.md).  
   
 ### <a name="rebasing-and-dll-address-collisions"></a>Rebasing a kolize adresy knihovny DLL  
  Pokud používáte Ngen.exe, mějte na paměti, že probíhá přenesení změn může dojít, když jsou nativní bitové kopie načtena do paměti. Pokud knihovna DLL není na jeho upřednostňované základní adrese načíst, protože je už přidělená daného rozsahu adres, zavaděč Windows bude načten na jinou adresu, která může být časově náročná operace.  
   
  Vám pomůže nástroj virtuální adresu výpisu paměti (Vadump.exe) zkontrolujte, jestli jsou moduly, ve kterých jsou privátní všechny stránky. Pokud je to tento případ, modul může mít se přenese se změnami do jinou adresu. Proto není možné sdílet jeho stránky.  
   
- Další informace o tom, jak nastavit základní adresu najdete v tématu [Ngen.exe (Generátor nativních obrázků)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md).  
+ Další informace o tom, jak nastavit základní adresu najdete v tématu [Ngen.exe (Generátor nativních obrázků)](../../tools/ngen-exe-native-image-generator.md).  
   
 ## <a name="optimize-authenticode"></a>Optimalizace Authenticode  
  Ověřování Authenticode přidává na dobu spuštění. Sestavení s podpisem Authenticode muset ověřit s certifikační autoritou (CA). Toto ověřování může být časově náročné, protože to může vyžadovat připojení k síti několikrát stáhnout aktuální seznamy odvolaných certifikátů. Je také zajišťuje, že je úplným řetězem platné certifikáty na cestě pro důvěryhodného kořenového. Tento fakt může projevit na několik sekund prodlevy při načítání sestavení.  
@@ -91,7 +91,7 @@ Množství času, který je požadován pro spuštění aplikace WPF může zna�
 </configuration>  
 ```  
   
- Další informace najdete v tématu [ \<generatePublisherEvidence > Element](../../../../docs/framework/configure-apps/file-schema/runtime/generatepublisherevidence-element.md).  
+ Další informace najdete v tématu [ \<generatePublisherEvidence > Element](../../configure-apps/file-schema/runtime/generatepublisherevidence-element.md).  
   
 ## <a name="compare-performance-on-windows-vista"></a>Porovnání výkonu v systému Windows Vista  
  Správce paměti v systému Windows Vista se nazývá SuperFetch technologie. SuperFetch analyzuje vzory používání paměti průběžným monitorováním určete obsah paměti optimální pro konkrétního uživatele. Funguje neustále udržovat daný obsah za všech okolností.  
@@ -127,6 +127,6 @@ Množství času, který je požadován pro spuštění aplikace WPF může zna�
 - <xref:System.AppDomain>
 - <xref:System.Resources.NeutralResourcesLanguageAttribute>
 - <xref:System.Resources.ResourceManager>
-- [Přidání úvodní obrazovky do aplikace WPF](../../../../docs/framework/wpf/app-development/how-to-add-a-splash-screen-to-a-wpf-application.md)
-- [Ngen.exe (generátor nativních obrázků)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md)
-- [\<generatePublisherEvidence> Element](../../../../docs/framework/configure-apps/file-schema/runtime/generatepublisherevidence-element.md)
+- [Přidání úvodní obrazovky do aplikace WPF](../app-development/how-to-add-a-splash-screen-to-a-wpf-application.md)
+- [Ngen.exe (generátor nativních obrázků)](../../tools/ngen-exe-native-image-generator.md)
+- [\<generatePublisherEvidence> Element](../../configure-apps/file-schema/runtime/generatepublisherevidence-element.md)

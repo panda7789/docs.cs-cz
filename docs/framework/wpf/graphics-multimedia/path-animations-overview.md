@@ -8,21 +8,21 @@ helpviewer_keywords:
 - animation [WPF], paths
 - path animations [WPF]
 ms.assetid: 979c732c-df74-47a6-be96-8e07b3707d53
-ms.openlocfilehash: 610ef2721bef18e1cb1e87500a9dc9cf2729c867
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c8e628e11debadb88c365ac95d355f1ee641bdbc
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54614244"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57367853"
 ---
 # <a name="path-animations-overview"></a>Přehled animací cesty
 <a name="introduction"></a> Toto téma představuje animace cesty, které vám umožní používat geometrické cesty k vygenerování výstupní hodnoty. Animace cesty jsou užitečné pro přesun a otočení objekty podél cest složité.  
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- V tomto tématu informace o tom, měli byste se seznámit s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce animace. Úvod do funkce animace, najdete v článku [přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
+ V tomto tématu informace o tom, měli byste se seznámit s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce animace. Úvod do funkce animace, najdete v článku [přehled animace](animation-overview.md).  
   
- Vzhledem k tomu, že používáte <xref:System.Windows.Media.PathGeometry> objektu k definování animace cesty, byste měli také znáte <xref:System.Windows.Media.PathGeometry> a různých typech <xref:System.Windows.Media.PathSegment> objekty. Další informace najdete v tématu [přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md).  
+ Vzhledem k tomu, že používáte <xref:System.Windows.Media.PathGeometry> objektu k definování animace cesty, byste měli také znáte <xref:System.Windows.Media.PathGeometry> a různých typech <xref:System.Windows.Media.PathSegment> objekty. Další informace najdete v tématu [přehled geometrie](geometry-overview.md).  
   
 <a name="what_is_a_path_animation"></a>   
 ## <a name="what-is-a-path-animation"></a>Co je animace cesty?  
@@ -30,14 +30,14 @@ ms.locfileid: "54614244"
   
  Animace cesty jsou velmi užitečné pro animace objektu podél cesty složité. Jeden ze způsobů, jak přesunout, je použití objektu podél cesty <xref:System.Windows.Media.MatrixTransform> a <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath> transformace objektu podél cesty složité. Následující příklad ukazuje tento postup pomocí <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath> objektu animace <xref:System.Windows.Media.MatrixTransform.Matrix%2A> vlastnost <xref:System.Windows.Media.MatrixTransform>. <xref:System.Windows.Media.MatrixTransform> Se použije k tlačítku a způsobí, že chcete přesunout podél zakřivené cesty. Vzhledem k tomu, <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.DoesRotateWithTangent%2A> je nastavena na `true`, obdélník se otočí spolu tangens cestu.  
   
- [!code-xaml[PathAnimationGallery_snippet#MatrixAnimationUsingPathDoesRotateWithTangentWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PathAnimationGallery_snippet/CS/matrixanimationusingpathdoesrotatewithtangentexample.xaml#matrixanimationusingpathdoesrotatewithtangentwholepage)]  
+ [!code-xaml[PathAnimationGallery_snippet#MatrixAnimationUsingPathDoesRotateWithTangentWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/PathAnimationGallery_snippet/CS/matrixanimationusingpathdoesrotatewithtangentexample.xaml#matrixanimationusingpathdoesrotatewithtangentwholepage)]  
   
- [!code-csharp[PathAnimationGallery_procedural_snip#MatrixAnimationUsingPathDoesRotateWithTangentWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PathAnimationGallery_procedural_snip/CSharp/MatrixAnimationUsingPathDoesRotateWithTangentExample.cs#matrixanimationusingpathdoesrotatewithtangentwholepage)]
- [!code-vb[PathAnimationGallery_procedural_snip#MatrixAnimationUsingPathDoesRotateWithTangentWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PathAnimationGallery_procedural_snip/VisualBasic/MatrixAnimationUsingPathDoesRotateWithTangentExample.vb#matrixanimationusingpathdoesrotatewithtangentwholepage)]  
+ [!code-csharp[PathAnimationGallery_procedural_snip#MatrixAnimationUsingPathDoesRotateWithTangentWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/PathAnimationGallery_procedural_snip/CSharp/MatrixAnimationUsingPathDoesRotateWithTangentExample.cs#matrixanimationusingpathdoesrotatewithtangentwholepage)]
+ [!code-vb[PathAnimationGallery_procedural_snip#MatrixAnimationUsingPathDoesRotateWithTangentWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PathAnimationGallery_procedural_snip/VisualBasic/MatrixAnimationUsingPathDoesRotateWithTangentExample.vb#matrixanimationusingpathdoesrotatewithtangentwholepage)]  
   
- Další informace o syntaxi cestu, která se používá v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příkladu najdete v článku [syntaxe značek cesty](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md) Přehled. Úplnou ukázku najdete v tématu [ukázkové animace cesty](https://go.microsoft.com/fwlink/?LinkID=160028).  
+ Další informace o syntaxi cestu, která se používá v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příkladu najdete v článku [syntaxe značek cesty](path-markup-syntax.md) Přehled. Úplnou ukázku najdete v tématu [ukázkové animace cesty](https://go.microsoft.com/fwlink/?LinkID=160028).  
   
- Animace cesty můžete použít na vlastnost s použitím <xref:System.Windows.Media.Animation.Storyboard> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kód, nebo pomocí <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metody v kódu. Animace cesty můžete také použít k vytvoření <xref:System.Windows.Media.Animation.AnimationClock> a použít ji pro jednu nebo více vlastností. Další informace o různých způsobech použití animací, naleznete v tématu [přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md).  
+ Animace cesty můžete použít na vlastnost s použitím <xref:System.Windows.Media.Animation.Storyboard> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kód, nebo pomocí <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metody v kódu. Animace cesty můžete také použít k vytvoření <xref:System.Windows.Media.Animation.AnimationClock> a použít ji pro jednu nebo více vlastností. Další informace o různých způsobech použití animací, naleznete v tématu [přehled způsobů animace vlastností](property-animation-techniques-overview.md).  
   
 <a name="animation_types"></a>   
 ## <a name="path-animation-types"></a>Typy animace cesty  
@@ -53,9 +53,9 @@ ms.locfileid: "54614244"
   
 |Typ vlastnosti|Odpovídající třída animace cesty|Příklad|  
 |-------------------|----------------------------------------|-------------|  
-|<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>|[Animace objektu podél cesty (dvojitá animace)](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-object-along-a-path-double-animation.md)|  
-|<xref:System.Windows.Media.Matrix>|<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath>|[Animace objektu podél cesty (animace matice)](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-object-along-a-path-matrix-animation.md)|  
-|<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimationUsingPath>|[Animace objektu podél cesty (bodová animace)](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-object-along-a-path-point-animation.md)|  
+|<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>|[Animace objektu podél cesty (dvojitá animace)](how-to-animate-an-object-along-a-path-double-animation.md)|  
+|<xref:System.Windows.Media.Matrix>|<xref:System.Windows.Media.Animation.MatrixAnimationUsingPath>|[Animace objektu podél cesty (animace matice)](how-to-animate-an-object-along-a-path-matrix-animation.md)|  
+|<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimationUsingPath>|[Animace objektu podél cesty (bodová animace)](how-to-animate-an-object-along-a-path-point-animation.md)|  
   
  A <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath> generuje <xref:System.Windows.Media.Matrix> hodnoty z jeho <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.PathGeometry%2A>. Při použití s <xref:System.Windows.Media.MatrixTransform>, <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath> můžete přesunout objektu podél cesty. Pokud jste nastavili <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath.DoesRotateWithTangent%2A> vlastnost <xref:System.Windows.Media.Animation.MatrixAnimationUsingPath> k `true`, také otočí objektu podél křivky cesty.  
   
@@ -83,15 +83,15 @@ ms.locfileid: "54614244"
   
  Segmenty v <xref:System.Windows.Media.PathFigure> jsou zkombinované do jediného geometrické obrazce, která používá koncový bod segment, který jako počáteční bod dalšího segmentu. <xref:System.Windows.Media.PathFigure.StartPoint%2A> Vlastnost <xref:System.Windows.Media.PathFigure> Určuje bod, ze které je vykresleno první segment. Každý další segment začíná na koncový bod předchozího segmentu. Například zobrazuje svislá čára z `10,50` k `10,150` lze definovat tak, že nastavíte <xref:System.Windows.Media.PathFigure.StartPoint%2A> vlastnost `10,50` a vytváření <xref:System.Windows.Media.LineSegment> s <xref:System.Windows.Media.LineSegment.Point%2A> nastavení vlastnosti `10,150`.  
   
- Další informace o <xref:System.Windows.Media.PathGeometry> objekty, najdete [přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md).  
+ Další informace o <xref:System.Windows.Media.PathGeometry> objekty, najdete [přehled geometrie](geometry-overview.md).  
   
- V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete nastavit speciální syntaxe zkrácený <xref:System.Windows.Media.PathGeometry.Figures%2A> vlastnost <xref:System.Windows.Media.PathGeometry>. Další informace najdete v tématu [syntaxe značek cesty](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md) Přehled.  
+ V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete nastavit speciální syntaxe zkrácený <xref:System.Windows.Media.PathGeometry.Figures%2A> vlastnost <xref:System.Windows.Media.PathGeometry>. Další informace najdete v tématu [syntaxe značek cesty](path-markup-syntax.md) Přehled.  
   
- Další informace o syntaxi cestu, která se používá v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příkladu najdete v článku [syntaxe značek cesty](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md) Přehled.  
+ Další informace o syntaxi cestu, která se používá v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příkladu najdete v článku [syntaxe značek cesty](path-markup-syntax.md) Přehled.  
   
 ## <a name="see-also"></a>Viz také:
 - [Ukázka animace cesty](https://go.microsoft.com/fwlink/?LinkID=160028)
-- [Syntaxe značek cesty](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)
-- [Postupy: Témata animace cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animation-how-to-topics.md)
-- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
-- [Přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)
+- [Syntaxe značek cesty](path-markup-syntax.md)
+- [Postupy: Témata animace cesty](path-animation-how-to-topics.md)
+- [Přehled animace](animation-overview.md)
+- [Přehled způsobů animace vlastností](property-animation-techniques-overview.md)

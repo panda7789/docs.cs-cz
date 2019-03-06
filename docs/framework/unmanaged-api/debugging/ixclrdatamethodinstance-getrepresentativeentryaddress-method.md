@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 52b2fdaaefd16a49300641f44041b8352141385b
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 6f204e2ed9cb1409d53432355467bb11946f8809
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828537"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57372448"
 ---
 # <a name="ixclrdatamethodinstancegetrepresentativeentryaddress-method"></a>IXCLRDataMethodInstance::GetRepresentativeEntryAddress – metoda
 
@@ -36,9 +36,10 @@ HRESULT GetRepresentativeEntryAddress(
 );
 ```
 
-### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
-`addr` [out] Adresa nejreprezentativnější nativní vstupní bod pro metodu.
+`addr`\
+[out] Adresa nejreprezentativnější nativní vstupní bod pro metodu.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -53,5 +54,5 @@ Zadaná metoda je součástí [ `IXCLRDataMethodInstance` rozhraní](ixclrdatame
 
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [IXCLRDataMethodInstance Interface](../../../../docs/framework/unmanaged-api/debugging/ixclrdatamethodinstance-interface.md)
+- [Ladění](index.md)
+- [IXCLRDataMethodInstance Interface](ixclrdatamethodinstance-interface.md)

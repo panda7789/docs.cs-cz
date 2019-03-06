@@ -7,15 +7,15 @@ helpviewer_keywords:
 - RelativeSource markup extensions [WPF]
 - XAML [WPF], RelativeSource markup extension
 ms.assetid: 26be4721-49b5-4717-a92e-7d54ad0d3a81
-ms.openlocfilehash: 43201be232a037b14d783ae61546ef0030f486ee
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d96a00afc08f2c5593dad5a3a47ab46045ff6b0f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54559382"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57365106"
 ---
 # <a name="relativesource-markupextension"></a>RelativeSource MarkupExtension
-Určuje vlastnosti <xref:System.Windows.Data.RelativeSource> zdroj vazby pro použití v rámci [Binding Markup Extension](../../../../docs/framework/wpf/advanced/binding-markup-extension.md), nebo při nastavení <xref:System.Windows.Data.Binding.RelativeSource%2A> vlastnost <xref:System.Windows.Data.Binding> prvku v XAML.  
+Určuje vlastnosti <xref:System.Windows.Data.RelativeSource> zdroj vazby pro použití v rámci [Binding Markup Extension](binding-markup-extension.md), nebo při nastavení <xref:System.Windows.Data.Binding.RelativeSource%2A> vlastnost <xref:System.Windows.Data.Binding> prvku v XAML.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -61,11 +61,11 @@ Určuje vlastnosti <xref:System.Windows.Data.RelativeSource> zdroj vazby pro pou
 |`intLevel`|Volitelné pro `FindAncestor` režimu. Úroveň předchůdce (vyhodnocována ve směru nadřazeného uzlu v logickém stromu)|  
   
 ## <a name="remarks"></a>Poznámky  
- `{RelativeSource TemplatedParent}` vazba je klíčovou techniku, která řeší rozsáhlejší koncept oddělení uživatelského ovládacího prvku rozhraní a logiky ovládacího prvku. To umožňuje vytvořit vazbu z definice šablony na nadřazený objekt vytvořený pomocí šablony (instanci objektu vytvořenou za běhu, pro niž je šablona použita). Pro tento případ [– rozšíření značek TemplateBinding](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md) vlastně zjednodušením následujícího výrazu vazby: `{Binding RelativeSource={RelativeSource TemplatedParent}}`. `TemplateBinding` nebo `{RelativeSource TemplatedParent}` je relevantní pouze v XAML, který definuje šablonu. Další informace najdete v tématu [TemplateBinding – rozšíření značek](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)  
+ `{RelativeSource TemplatedParent}` vazba je klíčovou techniku, která řeší rozsáhlejší koncept oddělení uživatelského ovládacího prvku rozhraní a logiky ovládacího prvku. To umožňuje vytvořit vazbu z definice šablony na nadřazený objekt vytvořený pomocí šablony (instanci objektu vytvořenou za běhu, pro niž je šablona použita). Pro tento případ [– rozšíření značek TemplateBinding](templatebinding-markup-extension.md) vlastně zjednodušením následujícího výrazu vazby: `{Binding RelativeSource={RelativeSource TemplatedParent}}`. `TemplateBinding` nebo `{RelativeSource TemplatedParent}` je relevantní pouze v XAML, který definuje šablonu. Další informace najdete v tématu [TemplateBinding – rozšíření značek](templatebinding-markup-extension.md)  
   
  `{RelativeSource FindAncestor}` používá se hlavně v šablonách ovládacích prvků nebo předvídatelný kompozici uživatelského rozhraní, pro případy, ve kterém ovládací prvek se vždy očekává ve vizuálním stromu určitého typu předchůdce. Například může použít položky ovládacího prvku položek `FindAncestor` předchůdce nadřazeného ovládacího vytvořit vazby na vlastnosti prvku položek. Nebo můžete použít prvky, které jsou součástí kompozice ovládacích prvků v šabloně `FindAncestor` vazby na nadřazené elementy ve stejné struktuře kompozice.  
   
- V syntaxi elementu objektu pro `FindAncestor` uvedené v oddílech syntaxe XAML, slouží druhá syntaxe elementu objektu speciálně pro režim `FindAncestor` režimu. `FindAncestor` režim vyžaduje <xref:System.Windows.Data.RelativeSource.AncestorType%2A> hodnotu. Je nutné nastavit <xref:System.Windows.Data.RelativeSource.AncestorType%2A> jako atribut s použitím [x: Type – rozšíření značek](../../../../docs/framework/xaml-services/x-type-markup-extension.md) odkaz na typ hledaného předchůdce. <xref:System.Windows.Data.RelativeSource.AncestorType%2A> Hodnota se používá, když požadavek na vytvoření vazby zpracován za běhu.  
+ V syntaxi elementu objektu pro `FindAncestor` uvedené v oddílech syntaxe XAML, slouží druhá syntaxe elementu objektu speciálně pro režim `FindAncestor` režimu. `FindAncestor` režim vyžaduje <xref:System.Windows.Data.RelativeSource.AncestorType%2A> hodnotu. Je nutné nastavit <xref:System.Windows.Data.RelativeSource.AncestorType%2A> jako atribut s použitím [x: Type – rozšíření značek](../../xaml-services/x-type-markup-extension.md) odkaz na typ hledaného předchůdce. <xref:System.Windows.Data.RelativeSource.AncestorType%2A> Hodnota se používá, když požadavek na vytvoření vazby zpracován za běhu.  
   
  Pro `FindAncestor` režim, vlastnost nepovinný <xref:System.Windows.Data.RelativeSource.AncestorLevel%2A> může pomoci rozlišit vyhledávání v případech, kde je pravděpodobně více než jeden předchůdce tohoto typu existující ve stromu elementů.  
   
@@ -99,17 +99,17 @@ Určuje vlastnosti <xref:System.Windows.Data.RelativeSource> zdroj vazby pro pou
     </ListBox.ItemTemplate>  
 ```  
   
- Popis vytváření datových vazeb koncept není součástí tohoto, naleznete v tématu [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).  
+ Popis vytváření datových vazeb koncept není součástí tohoto, naleznete v tématu [Data Binding Overview](../data/data-binding-overview.md).  
   
  V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementaci procesoru XAML je zpracování tohoto rozšíření značek je určené <xref:System.Windows.Data.RelativeSource> třídy.  
   
- `RelativeSource` je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek XAML používá `{` a `}` znaků v syntaxi atributu, což je konvence, podle kterého na procesor XAML rozpozná, že rozšíření značek musí zpracovat atribut. Další informace najdete v tématu [– rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
+ `RelativeSource` je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek XAML používá `{` a `}` znaků v syntaxi atributu, což je konvence, podle kterého na procesor XAML rozpozná, že rozšíření značek musí zpracovat atribut. Další informace najdete v tématu [– rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Data.Binding>
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
-- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Přehled deklarací vazeb](../../../../docs/framework/wpf/data/binding-declarations-overview.md)
-- [x:Type – rozšíření značek](../../../../docs/framework/xaml-services/x-type-markup-extension.md)
+- [Styly a šablony](../controls/styling-and-templating.md)
+- [Přehled XAML (WPF)](xaml-overview-wpf.md)
+- [Rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md)
+- [Přehled datových vazeb](../data/data-binding-overview.md)
+- [Přehled deklarací vazeb](../data/binding-declarations-overview.md)
+- [x:Type – rozšíření značek](../../xaml-services/x-type-markup-extension.md)

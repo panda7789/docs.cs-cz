@@ -16,43 +16,43 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fa46cf1fde4306af562248b4c12b048e3d8e2a51
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fb5a26fccf7ceb56089aae4bd4f0732b8a405ba0
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717646"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57376231"
 ---
 # <a name="compareto-function"></a>Funkce CompareTo
-Porovná objekt na jiný objekt správy Windows.  
+
+Porovná objekt na jiný objekt správy Windows.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
-## <a name="syntax"></a>Syntaxe  
-  
-```
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
 HRESULT CompareTo (
-   [in] int               vFunc, 
-   [in] IWbemClassObject* ptr, 
+   [in] int               vFunc,
+   [in] IWbemClassObject* ptr,
    [in] LONG              flags,
-   [in] IWbemClassObject* pCompareTo 
-); 
-```  
+   [in] IWbemClassObject* pCompareTo
+);
+```
 
 ## <a name="parameters"></a>Parametry
 
-`vFunc`  
+`vFunc`\
 [in] Tento parametr se nepoužívá.
 
-`ptr`  
+`ptr`\
 [in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
-`flags`  
+`flags`\
 [in] Bitová kombinace příznaků, které určují vlastnosti objektu vzít v úvahu pro porovnání. Zobrazit [poznámky](#remarks) části Další informace.
 
-`pCompareTo`  
-
-[in] Objekt k porovnání. `pcompareTo` musí být platný [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance; nemůže být `null`.
+`pCompareTo`\
+[in] Objekt k porovnání. `pCompareTo` musí být platný [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance; nemůže být `null`.
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -66,7 +66,7 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hl
 | `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
 | `WBEM_S_DIFFERENT` | 0x40003 | Objekty jsou odlišné. |
 | `WBEM_S_SAME` | 0 | Objekty jsou stejné založené na porovnání příznaky. |
-  
+
 ## <a name="remarks"></a>Poznámky
 
 Tato funkce zalamuje volání na [IWbemClassObject::CompareTo](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-compareto) metody.
@@ -80,7 +80,7 @@ Příznaky, které mohou být předány jako `lEnumFlags` argument jsou definov�
 | `WBEM_FLAG_IGNORE_DEFAULT_VALUES` | 4 | Ignorujte výchozí hodnoty vlastnosti. Tento příznak platí jenom pro porovnání třídy. |
 | `WBEM_FLAG_IGNORE_FLAVOR` | 0x20 | Ignorujte flavor. Tento příznak stále kvalifikátory bere v úvahu, ale bude ignorovat rozdíly charakter, jako jsou pravidla pro šíření a přepsat omezení. |
 | `WBEM_FLAG_IGNORE_CASE` | 0x10 | Ignorujte velikost písmen v porovnání hodnot řetězců. Platí to i na řetězce a jednu hodnotu kvalifikátoru. Porovnání názvy vlastností a kvalifikátor je vždy bez ohledu na to, zda je tento příznak nastaven malá a velká písmena. |
-| `WBEM_FLAG_IGNORE_CLASS` | 0x8 | Předpokládají, že jsou objekty, který se porovnává instanes stejné třídy. V důsledku toho tento příznak porovnává instance informace týkající se pouze. Pomocí tohoto příznaku za účelem optimalizace výkonu. Pokud objekty nejsou stejné třídy, nejsou výsledky definovány. |
+| `WBEM_FLAG_IGNORE_CLASS` | 0x8 | Předpokládá, že porovnávaných objektů jsou instance stejné třídy. V důsledku toho tento příznak porovnává instance informace týkající se pouze. Pomocí tohoto příznaku za účelem optimalizace výkonu. Pokud objekty nejsou stejné třídy, nejsou výsledky definovány. |
 
 Nebo můžete zadat jeden složený příznak následujícím způsobem:
 
@@ -88,12 +88,14 @@ Nebo můžete zadat jeden složený příznak následujícím způsobem:
 |---------|---------|---------|
 |`WBEM_COMPARISON_INCLUDE_ALL` | 0 | Vezměte v úvahu všechny funkce v porovnání. |
 
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** WMINet_Utils.idl  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+## <a name="requirements"></a>Požadavky
+
+**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+**Záhlaví:** WMINet_Utils.idl
+
+**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

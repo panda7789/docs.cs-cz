@@ -13,12 +13,12 @@ helpviewer_keywords:
 - identifying changed property events [WPF]
 - property triggers [WPF], definition of
 ms.assetid: 0a7989df-9674-4cc1-bc50-5d8ef5d9c055
-ms.openlocfilehash: cd7c9c514c90a94e3329bec9614624ee399481ed
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2997696a6617bb9c17bb98bba0b352cb27c07896
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54523997"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57351993"
 ---
 # <a name="property-change-events"></a>Události změny vlastnosti
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] definuje několik událostí, které jsou vyvolány v reakci na změnu v hodnotě vlastnosti. Vlastnost je často vlastnost závislosti. Samotné události je někdy směrované události a v některých případech je standard [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] událostí. Definice události se liší v závislosti na scénáři, protože některé změny vlastností se více odpovídajícím způsobem směrovaná přes stromu, zatímco jiné změny vlastností jsou obecně jen zájmu změnou vlastnosti objektu.  
@@ -33,7 +33,7 @@ ms.locfileid: "54523997"
   
  Protože máte staré hodnoty a novou hodnotu, může být lákavé použít tuto obslužnou rutinu události jako validátor pro hodnotu vlastnosti. Ale to není návrhu záměr většina události změněné vlastnosti. Obecně platí hodnoty jsou k dispozici, aby mohli pracovat s těmito hodnotami v jiných oblastech logiku kódu, ale ve skutečnosti změna hodnot z v rámci obslužné rutiny události není vhodné a může způsobit nechtěné rekurzi v závislosti na tom, jak je implementované vaše obslužná rutina .  
   
- Pokud vaše je vlastní závislost vlastnost, nebo pokud pracujete s odvozené třídy kde jste definovali kódu instance, je mnohem lepší mechanismus pro sledování změn vlastnosti, které je součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systému vlastností: zpětná volání systému vlastnost <xref:System.Windows.CoerceValueCallback> a <xref:System.Windows.PropertyChangedCallback>. Další informace o tom, jak můžete používat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systém pro ověřování polí a vynucení, přečtěte si [vlastnost závislosti zpětné volání a ověření](../../../../docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md) a [vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md).  
+ Pokud vaše je vlastní závislost vlastnost, nebo pokud pracujete s odvozené třídy kde jste definovali kódu instance, je mnohem lepší mechanismus pro sledování změn vlastnosti, které je součástí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systému vlastností: zpětná volání systému vlastnost <xref:System.Windows.CoerceValueCallback> a <xref:System.Windows.PropertyChangedCallback>. Další informace o tom, jak můžete používat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vlastnost systém pro ověřování polí a vynucení, přečtěte si [vlastnost závislosti zpětné volání a ověření](dependency-property-callbacks-and-validation.md) a [vlastní vlastnosti závislosti](custom-dependency-properties.md).  
   
 ### <a name="dependencypropertychanged-events"></a>DependencyPropertyChanged události  
  Je jinou dvojici typů, které jsou součástí scénáře událost změněné vlastnosti <xref:System.Windows.DependencyPropertyChangedEventArgs> a <xref:System.Windows.DependencyPropertyChangedEventHandler>. Události změny vlastnosti nejsou směrovány; jsou standardní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] události. <xref:System.Windows.DependencyPropertyChangedEventArgs> je neobvyklé události datový typ vytváření sestav, protože není odvozena od <xref:System.EventArgs>; <xref:System.Windows.DependencyPropertyChangedEventArgs> je struktura, není třída.  
@@ -59,8 +59,8 @@ ms.locfileid: "54523997"
   
  Aktivační procedury vlastností jsou obecně vhodné pro scénáře, ve kterém by měl změnit jednu nebo více vlastností vzhled, na základě stavu jinou vlastnost u stejného elementu.  
   
- Další informace o aktivační procedury vlastností najdete v tématu [styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md).  
+ Další informace o aktivační procedury vlastností najdete v tématu [styly a šablony](../controls/styling-and-templating.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
-- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)
+- [Přehled směrovaných událostí](routed-events-overview.md)
+- [Přehled vlastností závislosti](dependency-properties-overview.md)

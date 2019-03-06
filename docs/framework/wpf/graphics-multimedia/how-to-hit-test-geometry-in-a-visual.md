@@ -9,12 +9,12 @@ helpviewer_keywords:
 - visual objects [WPF], hit tests on
 - Geometry objects [WPF], visual objects comprising
 ms.assetid: 8bf2643f-d7f9-4cb4-9ea6-5b893c23200d
-ms.openlocfilehash: 4faf7a131b688fd245c0e207c8bac0f077b06ed5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e51dd73a65666ffee5958325079e8f06f13ac61b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54709049"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57363797"
 ---
 # <a name="how-to-hit-test-geometry-in-a-visual"></a>Postupy: Spuštění geometrie testu ve vizuálním objektu
 Tento příklad ukazuje, jak provádět ověření pozice ve vizuální objekt, který se skládá z jedné nebo více <xref:System.Windows.Media.Geometry> objekty.  
@@ -25,8 +25,8 @@ Tento příklad ukazuje, jak provádět ověření pozice ve vizuální objekt, 
 > [!NOTE]
 >  Ve většině případů byste použili <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> metodou ke zjištění, zda bod protíná některý vykreslený obsah vizuálu.  
   
- [!code-csharp[VisualsOverview#VisualsOverviewSnippet4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualsOverview/CSharp/Window1.xaml.cs#visualsoverviewsnippet4)]
- [!code-vb[VisualsOverview#VisualsOverviewSnippet4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsOverview/visualbasic/window1.xaml.vb#visualsoverviewsnippet4)]  
+ [!code-csharp[VisualsOverview#VisualsOverviewSnippet4](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualsOverview/CSharp/Window1.xaml.cs#visualsoverviewsnippet4)]
+ [!code-vb[VisualsOverview#VisualsOverviewSnippet4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsOverview/visualbasic/window1.xaml.vb#visualsoverviewsnippet4)]  
   
  <xref:System.Windows.Media.Geometry.FillContains%2A> Je metoda přetížená metoda, která umožňuje spuštění testu s použitím zadaného <xref:System.Windows.Point> nebo <xref:System.Windows.Media.Geometry>. Pokud je vytažený geometrii, protože byl zdvih můžete rozšířit mimo hranice výplně. V takovém případě můžete chtít volat <xref:System.Windows.Media.Geometry.StrokeContains%2A> kromě <xref:System.Windows.Media.Geometry.FillContains%2A>.  
   
@@ -36,5 +36,5 @@ Tento příklad ukazuje, jak provádět ověření pozice ve vizuální objekt, 
 >  Tato ukázka není vezměte v úvahu všechny transformace nebo oříznutí, který může použít pro geometrii. Kromě toho tato ukázka nebude fungovat u upravený ovládací prvek, protože nemá žádné kreslení přímo s ním spojená.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ověřování pozice ve vizuální vrstvě](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)
-- [Ověřování pozice pomocí objektu Geometry jako parametru](../../../../docs/framework/wpf/graphics-multimedia/how-to-hit-test-using-geometry-as-a-parameter.md)
+- [Ověřování pozice ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
+- [Ověřování pozice pomocí objektu Geometry jako parametru](how-to-hit-test-using-geometry-as-a-parameter.md)

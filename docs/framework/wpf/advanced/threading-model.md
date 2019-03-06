@@ -18,12 +18,12 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: c86ab6c7d5113f95b0fd93d194465c4af701f78a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e2a4b1157ec1f114b9e33f220e09fc791cfb9fc3
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54513646"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57353033"
 ---
 # <a name="threading-model"></a>Model vláken
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] slouží k uložení vývojáři z obtížné dělení na vlákna. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojáři nebudete muset psát rozhraní, které používá více než jedno vlákno. Protože s více vlákny jsou složité a těžko ladění, mělo by se vyhnout při existují řešení s jedním vláknem.  
@@ -62,7 +62,7 @@ ms.locfileid: "54513646"
   
  Vezměte v úvahu v následujícím příkladu:  
   
- ![Snímek obrazovky prvočísel](../../../../docs/framework/wpf/advanced/media/threadingprimenumberscreenshot.PNG "ThreadingPrimeNumberScreenShot")  
+ ![Snímek obrazovky prvočísel](./media/threadingprimenumberscreenshot.PNG "ThreadingPrimeNumberScreenShot")  
   
  Tato jednoduchá aplikace počítá směrem nahoru ve třech, vyhledání prvočísel. Pokud uživatel klikne **Start** tlačítko hledání začne. Když program vyhledá prime, aktualizuje uživatelské rozhraní s jeho zjišťování. V kterékoli fázi můžete uživatele zastavit hledání.  
   
@@ -74,30 +74,30 @@ ms.locfileid: "54513646"
   
  Ke správě výpočtu z je nejlepší způsob, jak rozdělit doba zpracování mezi výpočet a zpracování událostí <xref:System.Windows.Threading.Dispatcher>. Pomocí <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> metoda, jsme naplánovat kontroly prime číslo ve stejné fronty, která [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] události jsou vykreslovány vedle z. V našem příkladu jsme naplánovat jenom jedno číslo prime kontrolu najednou. Po dokončení kontroly prime číslo k další kontrole jsme naplánovat okamžitě. Tato kontrola probíhá až poté, co čekající [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] události byly zpracovány.  
   
- ![Dispečer fronty obrázek](../../../../docs/framework/wpf/advanced/media/threadingdispatcherqueue.PNG "ThreadingDispatcherQueue")  
+ ![Dispečer fronty obrázek](./media/threadingdispatcherqueue.PNG "ThreadingDispatcherQueue")  
   
  [!INCLUDE[TLA#tla_word](../../../../includes/tlasharptla-word-md.md)] provede kontrolu pravopisu pomocí tohoto mechanismu. Kontrola pravopisu probíhá na pozadí pomocí doby nečinnosti [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna. Pojďme se podívat na kód.  
   
  Následující příklad ukazuje, XAML, který vytvoří uživatelské rozhraní.  
   
- [!code-xaml[ThreadingPrimeNumbers#ThreadingPrimeNumberXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml#threadingprimenumberxaml)]  
+ [!code-xaml[ThreadingPrimeNumbers#ThreadingPrimeNumberXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml#threadingprimenumberxaml)]  
   
  Následující příklad ukazuje kód na pozadí.  
   
- [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberCodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumbercodebehind)]
- [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumbercodebehind)]  
+ [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumbercodebehind)]
+ [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberCodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumbercodebehind)]  
   
  Následující příklad ukazuje obslužnou rutinu události pro <xref:System.Windows.Controls.Button>.  
   
- [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberStartOrStop](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumberstartorstop)]
- [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberStartOrStop](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumberstartorstop)]  
+ [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberStartOrStop](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumberstartorstop)]
+ [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberStartOrStop](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumberstartorstop)]  
   
  Kromě aktualizace textu na <xref:System.Windows.Controls.Button>, tato obslužná rutina zodpovídá za plánování první kontrola prime číslo tak, že přidáte delegáta, kterého <xref:System.Windows.Threading.Dispatcher> fronty. Později po této obslužné rutiny události dokončí svou práci <xref:System.Windows.Threading.Dispatcher> vybere tento delegát pro spuštění.  
   
  Jak už jsme zmínili výše, <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> je <xref:System.Windows.Threading.Dispatcher> členů používají k plánování delegáta pro spuštění. V tomto případě zvolíme <xref:System.Windows.Threading.DispatcherPriority.SystemIdle> priority. <xref:System.Windows.Threading.Dispatcher> Tento delegát se spustí, pouze v případě, že neexistují žádné důležité události ke zpracování. [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] schopnost reagovat je důležitější než číslo kontrolu. Můžeme také předat nový delegát představující rutina kontrola číslo.  
   
- [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberCheckNextNumber](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumberchecknextnumber)]
- [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberCheckNextNumber](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumberchecknextnumber)]  
+ [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberCheckNextNumber](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumberchecknextnumber)]
+ [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberCheckNextNumber](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumberchecknextnumber)]  
   
  Tato metoda ověří, zda je nejbližší liché číslo prime. Pokud je primární, metoda přímo aktualizuje `bigPrime` <xref:System.Windows.Controls.TextBlock> tak, aby odrážely jeho zjišťování. Můžeme to udělat, protože dochází k výpočtu ve stejném vláknu, která byla použita k vytvoření komponenty. Zvolili jsme použít pro výpočet samostatném vlákně, měli jsme pro složitější mechanismus synchronizace a provádění aktualizací v [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna. Ukážeme si tuto situaci dále.  
   
@@ -109,24 +109,24 @@ ms.locfileid: "54513646"
   
  V tomto příkladu jsme napodobovat vzdálené volání procedury, která načte předpověď počasí. Používáme samostatné pracovní vlákno k provedení tohoto volání a můžeme plánovat metodu aktualizace v <xref:System.Windows.Threading.Dispatcher> z [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna, když jsme hotovi.  
   
- ![Snímek obrazovky uživatelského rozhraní weather](../../../../docs/framework/wpf/advanced/media/threadingweatheruiscreenshot.PNG "ThreadingWeatherUIScreenShot")  
+ ![Snímek obrazovky uživatelského rozhraní weather](./media/threadingweatheruiscreenshot.PNG "ThreadingWeatherUIScreenShot")  
   
- [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherCodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweathercodebehind)]
- [!code-vb[ThreadingWeatherForecast#ThreadingWeatherCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweathercodebehind)]  
+ [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweathercodebehind)]
+ [!code-vb[ThreadingWeatherForecast#ThreadingWeatherCodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweathercodebehind)]  
   
  Následují některé podrobnosti zaznamenán.  
   
 -   Vytvoření obslužné rutiny tlačítko  
   
-     [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherButtonHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherbuttonhandler)]
-     [!code-vb[ThreadingWeatherForecast#ThreadingWeatherButtonHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherbuttonhandler)]  
+     [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherButtonHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherbuttonhandler)]
+     [!code-vb[ThreadingWeatherForecast#ThreadingWeatherButtonHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherbuttonhandler)]  
   
  Při kliknutí na tlačítko můžeme zobrazit kreslení hodiny a spustit animaci. Tlačítko Zakážeme. Jsme vyvolat `FetchWeatherFromServer` metoda v nové vlákno a pak jsme vrácení, což <xref:System.Windows.Threading.Dispatcher> kvůli zpracování událostí, zatímco čekáme shromažďovat předpovědí počasí.  
   
 -   Načítají se počasí  
   
-     [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherFetchWeather](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherfetchweather)]
-     [!code-vb[ThreadingWeatherForecast#ThreadingWeatherFetchWeather](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherfetchweather)]  
+     [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherFetchWeather](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherfetchweather)]
+     [!code-vb[ThreadingWeatherForecast#ThreadingWeatherFetchWeather](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherfetchweather)]  
   
  Abychom si to nekomplikovali, nemáme ve skutečnosti všechny sítě kód v tomto příkladu. Místo toho můžeme simulovat zpoždění síťového přístupu tak, že vložíte do režimu spánku čtyři sekundy naše nové vlákno. V tuto chvíli původní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna je stále spuštěná a reagovat na události. Ukážeme vám to, že jste ponechali jsme animace spuštěna a minimalizovat a maximalizovat tlačítka také fungovat dál.  
   
@@ -134,8 +134,8 @@ ms.locfileid: "54513646"
   
 -   Aktualizuje se [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]  
   
-     [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherUpdateUI](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherupdateui)]
-     [!code-vb[ThreadingWeatherForecast#ThreadingWeatherUpdateUI](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherupdateui)]  
+     [!code-csharp[ThreadingWeatherForecast#ThreadingWeatherUpdateUI](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingWeatherForecast/CSharp/Window1.xaml.cs#threadingweatherupdateui)]
+     [!code-vb[ThreadingWeatherForecast#ThreadingWeatherUpdateUI](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingWeatherForecast/visualbasic/window1.xaml.vb#threadingweatherupdateui)]  
   
  Když <xref:System.Windows.Threading.Dispatcher> v [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákno má čas, spustí naplánované volání `UpdateUserInterface`. Tato metoda animace hodiny se zastaví a vybere bitovou kopii k popisu počasí. Zobrazí tuto bitovou kopii a obnoví na tlačítko "načítání forecast".  
   
@@ -151,20 +151,20 @@ ms.locfileid: "54513646"
   
  Následující příklad ukazuje kód.  
   
- [!code-xaml[ThreadingMultipleBrowsers#ThreadingMultiBrowserXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingMultipleBrowsers/CSharp/Window1.xaml#threadingmultibrowserxaml)]  
+ [!code-xaml[ThreadingMultipleBrowsers#ThreadingMultiBrowserXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingMultipleBrowsers/CSharp/Window1.xaml#threadingmultibrowserxaml)]  
   
- [!code-csharp[ThreadingMultipleBrowsers#ThreadingMultiBrowserCodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingMultipleBrowsers/CSharp/Window1.xaml.cs#threadingmultibrowsercodebehind)]
- [!code-vb[ThreadingMultipleBrowsers#ThreadingMultiBrowserCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingMultipleBrowsers/VisualBasic/Window1.xaml.vb#threadingmultibrowsercodebehind)]  
+ [!code-csharp[ThreadingMultipleBrowsers#ThreadingMultiBrowserCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingMultipleBrowsers/CSharp/Window1.xaml.cs#threadingmultibrowsercodebehind)]
+ [!code-vb[ThreadingMultipleBrowsers#ThreadingMultiBrowserCodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingMultipleBrowsers/VisualBasic/Window1.xaml.vb#threadingmultibrowsercodebehind)]  
   
  Následující vláken segmenty tohoto kódu, které jsou zajímá nejvíce, nám v tomto kontextu:  
   
- [!code-csharp[ThreadingMultipleBrowsers#ThreadingMultiBrowserNewWindow](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingMultipleBrowsers/CSharp/Window1.xaml.cs#threadingmultibrowsernewwindow)]
- [!code-vb[ThreadingMultipleBrowsers#ThreadingMultiBrowserNewWindow](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingMultipleBrowsers/VisualBasic/Window1.xaml.vb#threadingmultibrowsernewwindow)]  
+ [!code-csharp[ThreadingMultipleBrowsers#ThreadingMultiBrowserNewWindow](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingMultipleBrowsers/CSharp/Window1.xaml.cs#threadingmultibrowsernewwindow)]
+ [!code-vb[ThreadingMultipleBrowsers#ThreadingMultiBrowserNewWindow](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingMultipleBrowsers/VisualBasic/Window1.xaml.vb#threadingmultibrowsernewwindow)]  
   
  Tato metoda je volána, když "nové okno" po kliknutí na tlačítko. Vytvoří nové vlákno a spustí asynchronně.  
   
- [!code-csharp[ThreadingMultipleBrowsers#ThreadingMultiBrowserThreadStart](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ThreadingMultipleBrowsers/CSharp/Window1.xaml.cs#threadingmultibrowserthreadstart)]
- [!code-vb[ThreadingMultipleBrowsers#ThreadingMultiBrowserThreadStart](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingMultipleBrowsers/VisualBasic/Window1.xaml.vb#threadingmultibrowserthreadstart)]  
+ [!code-csharp[ThreadingMultipleBrowsers#ThreadingMultiBrowserThreadStart](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingMultipleBrowsers/CSharp/Window1.xaml.cs#threadingmultibrowserthreadstart)]
+ [!code-vb[ThreadingMultipleBrowsers#ThreadingMultiBrowserThreadStart](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingMultipleBrowsers/VisualBasic/Window1.xaml.vb#threadingmultibrowserthreadstart)]  
   
  Tato metoda je výchozím bodem pro nové vlákno. Vytvoříme nové okno pod kontrolou toto vlákno. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] automaticky vytvoří nový <xref:System.Windows.Threading.Dispatcher> ke správě nového vlákna. Všechny musíme udělat, aby byly v okně funkční, je začít <xref:System.Windows.Threading.Dispatcher>.  
   
@@ -172,10 +172,10 @@ ms.locfileid: "54513646"
 ## <a name="technical-details-and-stumbling-points"></a>Technické podrobnosti a Stumbling body  
   
 ### <a name="writing-components-using-threading"></a>Zápis komponent pomocí dělení na vlákna  
- Microsoft .NET Framework Developer's Guide popisuje vzor jak součásti můžete zveřejnit asynchronní chování svým klientům (viz [založený na událostech přehled asynchronních vzorů](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)). Například předpokládejme, že jsme chtěli balíček `FetchWeatherFromServer` metoda do komponenty opakovaně použitelné, které nepodporují grafiku. Následující standardní vzor rozhraní Microsoft .NET Framework vypadat přibližně takto.  
+ Microsoft .NET Framework Developer's Guide popisuje vzor jak součásti můžete zveřejnit asynchronní chování svým klientům (viz [založený na událostech přehled asynchronních vzorů](../../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)). Například předpokládejme, že jsme chtěli balíček `FetchWeatherFromServer` metoda do komponenty opakovaně použitelné, které nepodporují grafiku. Následující standardní vzor rozhraní Microsoft .NET Framework vypadat přibližně takto.  
   
- [!code-csharp[CommandingOverviewSnippets#ThreadingArticleWeatherComponent1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#threadingarticleweathercomponent1)]
- [!code-vb[CommandingOverviewSnippets#ThreadingArticleWeatherComponent1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#threadingarticleweathercomponent1)]  
+ [!code-csharp[CommandingOverviewSnippets#ThreadingArticleWeatherComponent1](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#threadingarticleweathercomponent1)]
+ [!code-vb[CommandingOverviewSnippets#ThreadingArticleWeatherComponent1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#threadingarticleweathercomponent1)]  
   
  `GetWeatherAsync` by použijte jeden z technik popsaných výše, jako je například vytváření vlákna na pozadí, proveďte práci asynchronně, ne blokování volajícího vlákna.  
   
@@ -183,13 +183,13 @@ ms.locfileid: "54513646"
   
  <xref:System.Windows.Threading.DispatcherSynchronizationContext> Třídy řeší tyto potřeby – ho představit jako zjednodušenou verzi <xref:System.Windows.Threading.Dispatcher> , který funguje s jinými [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] i architektury.  
   
- [!code-csharp[CommandingOverviewSnippets#ThreadingArticleWeatherComponent2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#threadingarticleweathercomponent2)]
- [!code-vb[CommandingOverviewSnippets#ThreadingArticleWeatherComponent2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#threadingarticleweathercomponent2)]  
+ [!code-csharp[CommandingOverviewSnippets#ThreadingArticleWeatherComponent2](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#threadingarticleweathercomponent2)]
+ [!code-vb[CommandingOverviewSnippets#ThreadingArticleWeatherComponent2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#threadingarticleweathercomponent2)]  
   
 ### <a name="nested-pumping"></a>Vnořené – čerpání  
  Někdy není možné úplně zamčení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna. Pojďme se podívat <xref:System.Windows.MessageBox.Show%2A> metodu <xref:System.Windows.MessageBox> třídy. <xref:System.Windows.MessageBox.Show%2A> nevrací se, dokud uživatel neklikne na tlačítko OK. Ale vytváří okno, které musí mít interaktivní smyčku zpráv. Zatímco čekáme na uživatele kliknutím na tlačítko OK, neodpovídá původní okna aplikace na vstup uživatele. Nicméně, dál zpracovávat malovat zprávy. V původním okně překreslí samotná popsaná a zobrazení.  
   
- ![MessageBox tlačítko "OK"](../../../../docs/framework/wpf/advanced/media/threadingnestedpumping.png "ThreadingNestedPumping")  
+ ![MessageBox tlačítko "OK"](./media/threadingnestedpumping.png "ThreadingNestedPumping")  
   
  Některé vlákno musí mít na starost okno zprávy. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvořit nové vlákno jen pro okno zprávy, ale toto vlákno nebudou moct vykreslení zakázané prvků v okně původní (Nezapomeňte starší diskuzi o vzájemné vyloučení). Místo toho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá vnořené zprávy systému zpracování. <xref:System.Windows.Threading.Dispatcher> Třída zahrnuje zvláštní metodu nazvanou <xref:System.Windows.Threading.Dispatcher.PushFrame%2A>, který pak ukládá aktuální bod provádění aplikace začíná nové smyčky zpráv. Po dokončení vnořené zpráva smyčky, provádění pokračuje po původním <xref:System.Windows.Threading.Dispatcher.PushFrame%2A> volání.  
   
@@ -198,7 +198,7 @@ ms.locfileid: "54513646"
 ### <a name="stale-routed-events"></a>Zastaralé směrovaných událostí  
  Systém směrovaných událostí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] upozorní celé struktury, když jsou vyvolány události.  
   
- [!code-xaml[InputOvw#ThreadingArticleStaticRoutedEvent](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml#threadingarticlestaticroutedevent)]  
+ [!code-xaml[InputOvw#ThreadingArticleStaticRoutedEvent](~/samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml#threadingarticlestaticroutedevent)]  
   
  Když se stiskne levé tlačítko myši nad třemi tečkami `handler2` provádí. Po `handler2` dokončí, události se předají <xref:System.Windows.Controls.Canvas> objektu, který používá `handler1` ke zpracování. K tomu dojde pouze v případě `handler2` nemá explicitně označit objekt události jako zpracování.  
   
@@ -209,7 +209,7 @@ ms.locfileid: "54513646"
   
  Většina rozhraní nejsou vytvořené pomocí bezpečný přístup z více vláken v úvahu vzhledem k tomu, že vývojáři pracují za předpokladu, který [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] nikdy je nevyužili ve více než jedno vlákno. V tomto případě, že jedno vlákno může provést změny v prostředí v neočekávanou dobu, způsobí tyto nesprávně dopad, který <xref:System.Windows.Threading.DispatcherObject> mechanismus vzájemné vyloučení by měl řešit. Vezměte v úvahu následujícím pseudokódu:  
   
- ![Práce s vlákny opětovný vstup diagram](../../../../docs/framework/wpf/advanced/media/threadingreentrancy.png "ThreadingReentrancy")  
+ ![Práce s vlákny opětovný vstup diagram](./media/threadingreentrancy.png "ThreadingReentrancy")  
   
  Ve většině případů je správné věci, ale existují situace v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] kde takové neočekávané vícenásobného přístupu může ve skutečnosti způsobovat problémy. Ano, v určitých časech klíče [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] volání <xref:System.Windows.Threading.Dispatcher.DisableProcessing%2A>, instrukce zámek pro toto vlákno použít změny, které [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] opětovné zadání bez zámku, namísto obvyklého [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] zámku.  
   

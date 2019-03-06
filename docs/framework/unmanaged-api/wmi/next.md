@@ -1,6 +1,6 @@
 ---
 title: Funkci Next (referenční dokumentace nespravovaného rozhraní API)
-description: Další funkce retireves další vlastnosti ve výčtu.
+description: Další funkce načte další vlastnosti ve výčtu.
 ms.date: 11/06/2017
 api_name:
 - Next
@@ -16,54 +16,54 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c6e39c1bc4c2860e400e2708e588416eb5769bd
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 240544330fa352cbfdc01944e4be6bcad28dc96f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56971881"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373192"
 ---
 # <a name="next-function"></a>Další funkce
-Načte další vlastnosti ve výčtu, která začíná volání [funkce BeginEnumeration](beginenumeration.md).  
+Načte další vlastnosti ve výčtu, která začíná volání [funkce BeginEnumeration](beginenumeration.md).
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
 HRESULT Next (
-   [in] int               vFunc, 
-   [in] IWbemClassObject* ptr, 
+   [in] int               vFunc,
+   [in] IWbemClassObject* ptr,
    [in] LONG              lFlags,
    [out] BSTR*            pstrName,
    [out] VARIANT*         pVal,
    [out] CIMTYPE*         pvtType,
-   [out] LONG*            plFlavor     
-); 
-```  
+   [out] LONG*            plFlavor
+);
+```
 
 ## <a name="parameters"></a>Parametry
 
-`vFunc`  
+`vFunc`\
 [in] Tento parametr se nepoužívá.
 
-`ptr`  
+`ptr`\
 [in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
-`lFlags`  
+`lFlags`\
 [in] Vyhrazená. Tento parametr musí být 0.
 
-`pstrName`  
+`pstrName`\
 [out] Nový `BSTR` , který obsahuje název vlastnosti. Tento parametr lze nastavit na `null` Pokud název není povinné.
 
-`pVal`  
-[out] A `VARIANT` vyplněnou hodnotou vlastnosti. Tento parametr lze nastavit na `null` Pokud hodnota není povinné. Pokud funkce vrátí chybový kód, `VARIANT` předán `pVal` je bez jakýchkoli úprav vlevo. 
+`pVal`\
+[out] A `VARIANT` vyplněnou hodnotou vlastnosti. Tento parametr lze nastavit na `null` Pokud hodnota není povinné. Pokud funkce vrátí chybový kód, `VARIANT` předán `pVal` je bez jakýchkoli úprav vlevo.
 
-`pvtType`  
-[out] Ukazatel `CIMTYPE` proměnné ( `LONG` do typ vlastnosti je umístěn). Hodnota této vlastnosti může být `VT_NULL_VARIANT`, v takovém případě je potřeba určit skutečný typ vlastnosti. Tento parametr může být také `null`. 
+`pvtType`\
+[out] Ukazatel `CIMTYPE` proměnné ( `LONG` do typ vlastnosti je umístěn). Hodnota této vlastnosti může být `VT_NULL_VARIANT`, v takovém případě je potřeba určit skutečný typ vlastnosti. Tento parametr může být také `null`.
 
-`plFlavor`  
-[out] `null`, nebo hodnotu, která obdrží informace o původu vlastnosti. Možné hodnoty v části [poznámky]. 
+`plFlavor`\
+[out] `null`, nebo hodnotu, která obdrží informace o původu vlastnosti. Možné hodnoty v části [poznámky].
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -75,10 +75,10 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hl
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr je neplatný. |
 | `WBEM_E_UNEXPECTED` | 0x8004101d | Došlo bez volání [ `BeginEnumeration` ](beginenumeration.md) funkce. |
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici zahájíte nový výčet. |
-| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Vzdálené volání procedur od aktuální proces a správy Windows se nezdařilo. |
+| `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Volání vzdálených procedur mezi aktuálním procesem a službou Windows Management se nezdařilo. |
 | `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
 | `WBEM_S_NO_MORE_DATA` | 0x40005 | Nejsou žádné další vlastnosti ve výčtu. |
-  
+
 ## <a name="remarks"></a>Poznámky
 
 Tato funkce zalamuje volání na [IWbemClassObject::Next](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-next) metody.
@@ -95,12 +95,14 @@ Pokud `plFlavor` není `null`, `LONG` hodnotu obdrží informace o původu vlast
 | `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pro třídu: Vlastnost se dědí z nadřazené třídy. <br> Pro instanci: Vlastnost, zatímco zděděná z nadřazené třídy nebyl změněn instancí.  |
 | `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | Pro třídu: Vlastnost patří k odvozené třídě. <br> Pro instanci: Instance; je změněna vlastnost To znamená, že byla zadána hodnota nebo kvalifikátor byla přidána nebo upravena. |
 
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** WMINet_Utils.idl  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+## <a name="requirements"></a>Požadavky
+
+**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+**Záhlaví:** WMINet_Utils.idl
+
+**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

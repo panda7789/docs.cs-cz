@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 4a086157b27b7426cb6d5f17f13426c0f26d2b2d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0de622e96b9138b86cfc77c51d1a215c1868accf
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54658218"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57375919"
 ---
 # <a name="ixclrdataprocessstartenummodules-method"></a>IXCLRDataProcess::StartEnumModules – metoda
 
@@ -38,7 +38,8 @@ HRESULT StartEnumModules(
 
 ### <a name="parameters"></a>Parametry
 
-`handle` [out] Popisovač pro vytvoření výčtu moduly.
+`handle`\
+[out] Popisovač pro vytvoření výčtu moduly.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -53,6 +54,6 @@ Zadaná metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 24. pozi
 
 ## <a name="see-also"></a>Viz také:
 
-- [CLRDataSourceType Enumeration](../../../../docs/framework/unmanaged-api/debugging/clrdatasourcetype-enumeration.md)
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [IXCLRDataProcess Interface](../../../../docs/framework/unmanaged-api/debugging/ixclrdataprocess-interface.md)
+- [CLRDataSourceType Enumeration](clrdatasourcetype-enumeration.md)
+- [Ladění](index.md)
+- [IXCLRDataProcess Interface](ixclrdataprocess-interface.md)

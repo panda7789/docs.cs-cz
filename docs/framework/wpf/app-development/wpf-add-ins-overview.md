@@ -12,12 +12,12 @@ helpviewer_keywords:
 - add-ins [WPF], architecture
 - add-ins [WPF], limitations
 ms.assetid: 00b4c776-29a8-4dba-b603-280a0cdc2ade
-ms.openlocfilehash: 47e76a1d08f8c85eafa7758ec9fdd80d8ae8afcf
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 859e586d6cb0b334a7ad766de5d3aabb0e1864ac
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746559"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57365838"
 ---
 # <a name="wpf-add-ins-overview"></a>Přehled doplňků WPF
 <a name="Introduction"></a> Rozhraní .NET Framework obsahuje doplněk model, pomocí kterých mohou vývojáři vytvářet aplikace, které podporují rozšiřitelnosti doplňku. Tento model doplňku umožňuje vytvářet doplňky, které integrovat a rozšířit funkce aplikace. V některých případech také potřeba aplikace zobrazit uživatelské rozhraní, které jsou k dispozici v doplňcích. Toto téma ukazuje, jak argumentech WPF rozhraní .NET Framework – model doplňku povolit tyto scénáře a architektura stojí za to, jeho výhody a omezení.  
@@ -56,7 +56,7 @@ ms.locfileid: "56746559"
   
 -   **Komunikace**: Povolení doplňky a hostovat aplikace komunikovat mezi sebou přes hranice izolace pomocí volání metody a předávání dat.  
   
--   **Správa životního cyklu**: Načítání a uvolňování domény aplikace a procesy vyčistit a předvídatelným způsobem (viz [aplikačních doménách](../../../../docs/framework/app-domains/application-domains.md)).  
+-   **Správa životního cyklu**: Načítání a uvolňování domény aplikace a procesy vyčistit a předvídatelným způsobem (viz [aplikačních doménách](../../app-domains/application-domains.md)).  
   
 -   **Správa verzí**: Zajištění, že hostovat aplikace a doplňky stále komunikovat při vytváření nové verze buď.  
   
@@ -130,7 +130,7 @@ ms.locfileid: "56746559"
   
 6.  Hostitelská aplikace zobrazí vráceného <xref:System.Windows.FrameworkElement>.  
   
- Příklad, který ukazuje, jak implementovat doplněk, který vrací uživatelské rozhraní, naleznete v tématu [vytvořit doplňku, který vrací uživatelské rozhraní](../../../../docs/framework/wpf/app-development/how-to-create-an-add-in-that-returns-a-ui.md).  
+ Příklad, který ukazuje, jak implementovat doplněk, který vrací uživatelské rozhraní, naleznete v tématu [vytvořit doplňku, který vrací uživatelské rozhraní](how-to-create-an-add-in-that-returns-a-ui.md).  
   
 <a name="AddInIsAUI"></a>   
 ## <a name="add-in-is-a-user-interface"></a>Doplněk je uživatelské rozhraní  
@@ -148,7 +148,7 @@ ms.locfileid: "56746559"
   
 6.  Hostitelská aplikace zobrazí vráceného <xref:System.Windows.FrameworkElement>.  
   
- Příklad, který ukazuje, jak implementovat doplňku tvořící uživatelské rozhraní, naleznete v tématu [vytvoření uživatelského rozhraní doplňku, který je](../../../../docs/framework/wpf/app-development/how-to-create-an-add-in-that-is-a-ui.md).  
+ Příklad, který ukazuje, jak implementovat doplňku tvořící uživatelské rozhraní, naleznete v tématu [vytvoření uživatelského rozhraní doplňku, který je](how-to-create-an-add-in-that-is-a-ui.md).  
   
 <a name="ReturningMultipleUIsFromAnAddIn"></a>   
 ## <a name="returning-multiple-uis-from-an-add-in"></a>Vrácení více uživatelských rozhraní z doplňku  
@@ -219,7 +219,7 @@ ms.locfileid: "56746559"
   
 -   Na straně hostitele aplikací se sbalí WPF <xref:System.Windows.Interop.HwndSource> jako interní třída WPF, která je odvozena z <xref:System.Windows.Interop.HwndHost> a využívá <xref:System.AddIn.Contract.INativeHandleContract>. Instance této třídy je vrácený <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A> hostitelské aplikace.  
   
- <xref:System.Windows.Interop.HwndHost> existuje, chcete-li zobrazit uživatelské rozhraní, identifikovaný popisovače okna od uživatelského rozhraní WPF. Další informace najdete v tématu [WPF a systému Win32 vzájemná spolupráce grafického subsystému](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md).  
+ <xref:System.Windows.Interop.HwndHost> existuje, chcete-li zobrazit uživatelské rozhraní, identifikovaný popisovače okna od uživatelského rozhraní WPF. Další informace najdete v tématu [WPF a systému Win32 vzájemná spolupráce grafického subsystému](../advanced/wpf-and-win32-interoperation.md).  
   
  Stručně řečeno <xref:System.AddIn.Contract.INativeHandleContract>, <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>, a <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A> umožňují popisovač okna pro rozhraní WPF předat z doplňku pro hostitelskou aplikaci, ve kterém jsou zapouzdřena objektem <xref:System.Windows.Interop.HwndHost> a zobrazí uživatelské rozhraní pro hostitelskou aplikaci.  
   
@@ -252,11 +252,11 @@ ms.locfileid: "56746559"
   
 -   Doplňky uživatelského rozhraní zobrazí z hostitele aplikace neodpovídají chování výstřižek hostitelskou aplikaci.  
   
--   Konceptu *vzdušného prostoru* interoperabilitou scénáře platí také pro doplňky (viz [přehled technologických oblastí](../../../../docs/framework/wpf/advanced/technology-regions-overview.md)).  
+-   Konceptu *vzdušného prostoru* interoperabilitou scénáře platí také pro doplňky (viz [přehled technologických oblastí](../advanced/technology-regions-overview.md)).  
   
 -   Hostitelská aplikace uživatelského rozhraní služby, například prostředků dědičnost, datových vazeb a příkazů, nejsou automaticky k dispozici pro doplněk uživatelská rozhraní. K poskytování těchto služeb add-in, budete muset aktualizovat kanálu.  
   
--   UI add-in nemůže být otočen, škálovat, zkosený nebo jinak ovlivněny transformaci (viz [transformuje přehled](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)).  
+-   UI add-in nemůže být otočen, škálovat, zkosený nebo jinak ovlivněny transformaci (viz [transformuje přehled](../graphics-multimedia/transforms-overview.md)).  
   
 -   Uvnitř doplněk uživatelská rozhraní, které je vykreslen metodou kreslicí operace z obsahu <xref:System.Drawing> oboru názvů může zahrnovat alfa míchání. Doplňku uživatelského rozhraní a hostitelskou aplikaci uživatelského rozhraní, který ji obsahuje musí však být neprůhledné; 100 % jinými slovy `Opacity` vlastnost u obou musí být nastavena na hodnotu 1.  
   
@@ -280,12 +280,12 @@ ms.locfileid: "56746559"
   
 <a name="PerformanceOptimization"></a>   
 ## <a name="performance-optimization"></a>Optimalizace výkonu  
- Ve výchozím nastavení Pokud se používá více domén aplikace, různé sestavení rozhraní .NET Framework vyžaduje každá aplikace všechny načtou do domény vaší aplikace. Čas potřebný k vytvoření nové domény aplikace a spouštění aplikací v nich v důsledku toho může ovlivnit výkon. Rozhraní .NET Framework však nabízí způsob, jak můžete snížit dobu spuštění tím, že aplikace pro sdílení sestavení napříč doménami aplikace, pokud jsou už načteny. Můžete to provést pomocí <xref:System.LoaderOptimizationAttribute> atribut, který je nutné použít na metodu vstupního bodu (`Main`). V takovém případě je nutné použít pouze kód pro implementaci definice aplikace (viz [přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md)).  
+ Ve výchozím nastavení Pokud se používá více domén aplikace, různé sestavení rozhraní .NET Framework vyžaduje každá aplikace všechny načtou do domény vaší aplikace. Čas potřebný k vytvoření nové domény aplikace a spouštění aplikací v nich v důsledku toho může ovlivnit výkon. Rozhraní .NET Framework však nabízí způsob, jak můžete snížit dobu spuštění tím, že aplikace pro sdílení sestavení napříč doménami aplikace, pokud jsou už načteny. Můžete to provést pomocí <xref:System.LoaderOptimizationAttribute> atribut, který je nutné použít na metodu vstupního bodu (`Main`). V takovém případě je nutné použít pouze kód pro implementaci definice aplikace (viz [přehled správy aplikací](application-management-overview.md)).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.LoaderOptimizationAttribute>
 - [Doplňky a rozšíření](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))
-- [Aplikační domény](../../../../docs/framework/app-domains/application-domains.md)
+- [Aplikační domény](../../app-domains/application-domains.md)
 - [Vzdálené komunikace .NET framework – přehled](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kwdt6w2k(v=vs.100))
 - [Vytváření objektů lze používat vzdáleně](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/wcf3swha(v=vs.100))
-- [Témata s postupy](../../../../docs/framework/wpf/app-development/how-to-topics.md)
+- [Témata s postupy](how-to-topics.md)

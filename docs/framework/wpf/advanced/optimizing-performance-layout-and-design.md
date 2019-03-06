@@ -9,12 +9,12 @@ helpviewer_keywords:
 - design considerations [WPF]
 - layout pass [WPF]
 ms.assetid: 005f4cda-a849-448b-916b-38d14d9a96fe
-ms.openlocfilehash: c5dd567fa9f5db69c52072a1cc67b5c574f8e1f5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e62b439926465aa1a61abd39c7c942acf26732c4
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54623869"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57367940"
 ---
 # <a name="optimizing-performance-layout-and-design"></a>Optimalizace výkonu: Rozložení a návrh
 Návrh vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikaci může ovlivnit její výkon tak, že vytvoříte zbytečnou režii v Výpočet rozložení a ověření odkazy na objekty. Konstrukce objektů, zejména v době běhu, mohou ovlivnit charakteristiky výkonu vaší aplikace.  
@@ -49,7 +49,7 @@ Návrh vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-w
 ### <a name="use-the-most-efficient-panel-where-possible"></a>Použít Panel nejúčinnější, kde je to možné  
  Složitost procesu rozložení je přímo založena na chování rozložení <xref:System.Windows.Controls.Panel>-odvozené elementy, které používáte. Například <xref:System.Windows.Controls.Grid> nebo <xref:System.Windows.Controls.StackPanel> řízení poskytuje výrazně víc funkcí než <xref:System.Windows.Controls.Canvas> ovládacího prvku. Cena za toto větší zvýšení funkce je větší zvýšení nákladů na výkon. Ale pokud nechcete, aby funkce, která <xref:System.Windows.Controls.Grid> poskytuje ovládací prvek, jako byste měli použít méně nákladnější alternativy <xref:System.Windows.Controls.Canvas> nebo vlastní panel.  
   
- Další informace najdete v tématu [přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md).  
+ Další informace najdete v tématu [přehled panelů](../controls/panels-overview.md).  
   
 ### <a name="update-rather-than-replace-a-rendertransform"></a>Místo nahrazení RenderTransform – aktualizovat  
  Je možné aktualizovat <xref:System.Windows.Media.Transform> místo nahrazení jako hodnoty <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost. To platí hlavně v situacích, které se týkají animace. Stačí aktualizovat existující <xref:System.Windows.Media.Transform>, byste se vyhnout zahájení výpočtu zbytečné rozložení aplikace.  
@@ -64,19 +64,19 @@ Návrh vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-w
   
  Následující příklad kódu ukazuje, jak vytvořit horní části stromu dolů.  
   
- [!code-csharp[Performance#PerformanceSnippet1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Window1.xaml.cs#performancesnippet1)]
- [!code-vb[Performance#PerformanceSnippet1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Performance/visualbasic/window1.xaml.vb#performancesnippet1)]  
+ [!code-csharp[Performance#PerformanceSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Window1.xaml.cs#performancesnippet1)]
+ [!code-vb[Performance#PerformanceSnippet1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Performance/visualbasic/window1.xaml.vb#performancesnippet1)]  
   
- Další informace o logickém stromu, naleznete v tématu [stromy v subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md).  
+ Další informace o logickém stromu, naleznete v tématu [stromy v subsystému WPF](trees-in-wpf.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
-- [Plánování výkonu aplikace](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)
-- [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)
-- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)
-- [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)
-- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)
-- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
-- [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
-- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)
+- [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
+- [Plánování výkonu aplikace](planning-for-application-performance.md)
+- [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
+- [2D grafika a obrázky](optimizing-performance-2d-graphics-and-imaging.md)
+- [Chování objektu](optimizing-performance-object-behavior.md)
+- [Prostředky aplikace](optimizing-performance-application-resources.md)
+- [Text](optimizing-performance-text.md)
+- [Datová vazba](optimizing-performance-data-binding.md)
+- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)
+- [Rozložení](layout.md)

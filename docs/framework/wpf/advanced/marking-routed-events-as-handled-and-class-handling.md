@@ -17,12 +17,12 @@ helpviewer_keywords:
 - events [WPF], suppressing
 - bubbling events [WPF]
 ms.assetid: 5e745508-4861-4b48-b5f6-5fc7ce5289d2
-ms.openlocfilehash: 6e34347212a3dc9d8a64b48360af70366bab2083
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 34bb8c1cde71f6280ae2924a82ddb2efb0efbdf2
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595107"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57378829"
 ---
 # <a name="marking-routed-events-as-handled-and-class-handling"></a>Označení směrovaných událostí jako zpracovaných a zpracování tříd
 Obslužné rutiny pro směrovanou událost můžete označit události zpracovávají v rámci data události. Zpracování události zkrátí efektivní trasy. Třídy zpracování je programovací koncept, který podporuje směrovaných událostí. Třída obslužné rutiny má možnost zpracování konkrétní směrované události na úrovni třída s obslužnou rutinou, která je volána před všechny instance obslužné rutiny na jakoukoli instanci třídy.  
@@ -31,7 +31,7 @@ Obslužné rutiny pro směrovanou událost můžete označit události zpracová
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Toto téma popisuje na koncepty představenými v [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
+ Toto téma popisuje na koncepty představenými v [směrovat Přehled událostí](routed-events-overview.md).  
   
 <a name="When_to_Mark_Events_as_Handled"></a>   
 ## <a name="when-to-mark-events-as-handled"></a>Kdy k označení události jako zpracované  
@@ -47,7 +47,7 @@ Obslužné rutiny pro směrovanou událost můžete označit události zpracová
   
  Připojení mezi tunelového propojení a šíření směrovaných událostí se provádí vnitřní implementace, jak každá [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] třída vyvolá vlastní deklarované směrovaných událostí, a to platí pro spárované vstupní směrovaných událostí. Ale pokud je tato implementace úroveň třídy existuje, neexistuje žádné připojení mezi tunelového propojení směrované události a šíření směrované události, které sdílejí schéma pojmenování: bez provádění by dvě zcela samostatné směrovaných událostí a nebude je aktivována v pořadí nebo sdílenou složku data události.  
   
- Další informace o tom, jak implementovat páry tunelového propojení/bublinu vstupní směrované události ve třídě vlastní, naleznete v tématu [vytvoření vlastní události směrovat](../../../../docs/framework/wpf/advanced/how-to-create-a-custom-routed-event.md).  
+ Další informace o tom, jak implementovat páry tunelového propojení/bublinu vstupní směrované události ve třídě vlastní, naleznete v tématu [vytvoření vlastní události směrovat](how-to-create-a-custom-routed-event.md).  
   
 <a name="Class_Handlers_and_Instance_Handlers"></a>   
 ## <a name="class-handlers-and-instance-handlers"></a>Obslužné rutiny třídy a Instance obslužné rutiny  
@@ -100,6 +100,6 @@ Obslužné rutiny pro směrovanou událost můžete označit události zpracová
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.EventManager>
-- [Události náhledu](../../../../docs/framework/wpf/advanced/preview-events.md)
-- [Vytvoření vlastní směrované události](../../../../docs/framework/wpf/advanced/how-to-create-a-custom-routed-event.md)
-- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+- [Události náhledu](preview-events.md)
+- [Vytvoření vlastní směrované události](how-to-create-a-custom-routed-event.md)
+- [Přehled směrovaných událostí](routed-events-overview.md)

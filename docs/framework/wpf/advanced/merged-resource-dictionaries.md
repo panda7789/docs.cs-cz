@@ -5,12 +5,12 @@ helpviewer_keywords:
 - merged resource dictionaries [WPF]
 - dictionaries [WPF], merged resources
 ms.assetid: d159531f-05d4-49fd-b951-c332de51e5bc
-ms.openlocfilehash: f8549dedc9c6f37fb8a06a376351ed96b808bfd4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ae6c8dc3669ed46165f3d78e78735187ebbc3776
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54572916"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377015"
 ---
 # <a name="merged-resource-dictionaries"></a>Slovníky sloučených prostředků
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prostředků podporují funkci slovníku prostředků. Tato funkce poskytuje způsob, jak definovat části prostředky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace mimo zkompilovaný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikace. Prostředky pak můžete sdílet mezi aplikací a také více pohodlně izolaci pro lokalizaci.  
@@ -18,9 +18,9 @@ ms.locfileid: "54572916"
 ## <a name="introducing-a-merged-resource-dictionary"></a>Úvod do slovníku prostředků  
  Ve značce použijte následující syntaxi zavést slovník prostředků do stránky:  
   
- [!code-xaml[ResourceMergeDictionary#MergedXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ResourceMergeDictionary/CS/default.xaml#mergedxaml)]  
+ [!code-xaml[ResourceMergeDictionary#MergedXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ResourceMergeDictionary/CS/default.xaml#mergedxaml)]  
   
- Všimněte si, že <xref:System.Windows.ResourceDictionary> prvek nemá [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md), které se obecně požaduje pro všechny položky v kolekci prostředků. Ale jiné <xref:System.Windows.ResourceDictionary> odkazů v rámci <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> kolekce je zvláštní případ, vyhrazena pro tento scénář slovníku prostředků. <xref:System.Windows.ResourceDictionary> , Který představuje sloučený slovník prostředků nemůže mít [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md). Obvykle každý <xref:System.Windows.ResourceDictionary> v rámci <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> určuje kolekci <xref:System.Windows.ResourceDictionary.Source%2A> atribut. Hodnota <xref:System.Windows.ResourceDictionary.Source%2A> by měl být [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] , který překládá do umístění souboru prostředků ke sloučení. Určení, která [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] musí být jiný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru, s <xref:System.Windows.ResourceDictionary> jako jeho kořenový element.  
+ Všimněte si, že <xref:System.Windows.ResourceDictionary> prvek nemá [x: Key – direktiva](../../xaml-services/x-key-directive.md), které se obecně požaduje pro všechny položky v kolekci prostředků. Ale jiné <xref:System.Windows.ResourceDictionary> odkazů v rámci <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> kolekce je zvláštní případ, vyhrazena pro tento scénář slovníku prostředků. <xref:System.Windows.ResourceDictionary> , Který představuje sloučený slovník prostředků nemůže mít [x: Key – direktiva](../../xaml-services/x-key-directive.md). Obvykle každý <xref:System.Windows.ResourceDictionary> v rámci <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> určuje kolekci <xref:System.Windows.ResourceDictionary.Source%2A> atribut. Hodnota <xref:System.Windows.ResourceDictionary.Source%2A> by měl být [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] , který překládá do umístění souboru prostředků ke sloučení. Určení, která [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] musí být jiný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru, s <xref:System.Windows.ResourceDictionary> jako jeho kořenový element.  
   
 > [!NOTE]
 >  Je možné k definování prostředků v rámci <xref:System.Windows.ResourceDictionary> , který je uveden jako sloučeného slovníku, buď jako alternativu k určení <xref:System.Windows.ResourceDictionary.Source%2A>, nebo kromě libovolné prostředky jsou zahrnuty ze zadaného zdroje. Ale to není běžný scénář, kdy; hlavní scénáře pro sloučenými slovníky je sloučit prostředky z umístění externích souborů. Pokud chcete určit prostředky v rámci značky pro stránku, měli byste obvykle definovat v hlavním <xref:System.Windows.ResourceDictionary> a ne v sloučenými slovníky.  
@@ -39,7 +39,7 @@ ms.locfileid: "54572916"
 > [!NOTE]
 >  Nepoužívejte akci vložený prostředek sestavení. Vlastní akci sestavení je podporováno pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací, ale rozlišení <xref:System.Windows.ResourceDictionary.Source%2A> nebere <xref:System.Resources.ResourceManager>a proto nelze oddělit jednotlivé prostředky z datového proudu. Můžete stále použít integrovaný prostředek pro jiné účely tak dlouho, dokud jste také použili <xref:System.Resources.ResourceManager> přístup k prostředkům.  
   
- Související technikou je identifikátory Pack URI pro použití [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru a označujeme jako zdroj. Identifikátor URI balíku umožňuje odkazy na součásti odkazovaná sestavení a další techniky. Další informace o identifikátory Pack URI najdete v tématu [prostředek aplikace WPF, obsah a datové soubory](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md).  
+ Související technikou je identifikátory Pack URI pro použití [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru a označujeme jako zdroj. Identifikátor URI balíku umožňuje odkazy na součásti odkazovaná sestavení a další techniky. Další informace o identifikátory Pack URI najdete v tématu [prostředek aplikace WPF, obsah a datové soubory](../app-development/wpf-application-resource-content-and-data-files.md).  
   
  Pro prostředky, které nejsou kompilovány jako součást projektu identifikátor URI je vyhodnocen v době běhu. Například soubor můžete použít běžné přepravy identifikátoru URI: nebo http: k odkazování na soubor prostředků. Nevýhodou použití přístupu noncompiled prostředků je tento soubor: přístup vyžaduje další kroky nasazení a http: přístupu znamená zóny zabezpečení Internetu.  
   
@@ -49,10 +49,10 @@ ms.locfileid: "54572916"
  Zápis sloučenými slovníky jako místní aplikace soubory nebo na místní sdílené úložiště je další možné sloučeného slovníku / scénář nasazení aplikace.  
   
 ### <a name="localization"></a>Lokalizace  
- Pokud jsou izolované slovníky, které jsou sloučena s primární slovníky a uchovávat jako volné prostředky, které potřebují k lokalizování [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], tyto soubory mohou být lokalizována samostatně. Tento postup je jednoduchý alternativou k lokalizování sestavení satelitních prostředků. Podrobnosti najdete v tématu [přehled WPF globalizace a lokalizace](../../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md).  
+ Pokud jsou izolované slovníky, které jsou sloučena s primární slovníky a uchovávat jako volné prostředky, které potřebují k lokalizování [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], tyto soubory mohou být lokalizována samostatně. Tento postup je jednoduchý alternativou k lokalizování sestavení satelitních prostředků. Podrobnosti najdete v tématu [přehled WPF globalizace a lokalizace](wpf-globalization-and-localization-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.ResourceDictionary>
-- [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)
-- [Prostředky a kód](../../../../docs/framework/wpf/advanced/resources-and-code.md)
-- [Prostředek, obsah a datové soubory aplikace WPF](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)
+- [Prostředky XAML](xaml-resources.md)
+- [Prostředky a kód](resources-and-code.md)
+- [Prostředek, obsah a datové soubory aplikace WPF](../app-development/wpf-application-resource-content-and-data-files.md)

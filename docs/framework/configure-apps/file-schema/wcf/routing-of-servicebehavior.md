@@ -3,11 +3,11 @@ title: <routing> z <serviceBehavior>
 ms.date: 03/30/2017
 ms.assetid: d8f9c844-4629-4a45-9599-856dc8f01794
 ms.openlocfilehash: 3f23cbb45aa72b1aae18c845e68b426a4214d499
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55261773"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57354219"
 ---
 # <a name="routing-of-servicebehavior"></a>\<směrování > z \<serviceBehavior >
 Poskytuje přístup ke službě Směrování a povolit dynamickou změnu konfigurace směrování.  

@@ -7,21 +7,21 @@ helpviewer_keywords:
 - controls [WPF], Image
 - Image control [WPF]
 ms.assetid: e6e51cf9-8fa1-457e-856b-a5e513bc5caf
-ms.openlocfilehash: a4fe896214a4513bf5c7e38fcc1fcbd001933481
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f55036d4fdf4576faab50be7b42cf7a4077e6a3b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54530785"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57376270"
 ---
 # <a name="image-how-to-topics"></a>Postupy: Témata obrázku
 Témata v této části popisují způsob použití <xref:System.Windows.Controls.Image> elementu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Použití elementu obrázku](../../../../docs/framework/wpf/controls/how-to-use-the-image-element.md)  
-  [Převedení obrázku na odstíny šedi](../../../../docs/framework/wpf/controls/how-to-convert-an-image-to-greyscale.md)  
-  [Oříznutí obrázku](../../../../docs/framework/wpf/controls/how-to-crop-an-image.md)  
-  [Otočení obrázku](../../../../docs/framework/wpf/controls/how-to-rotate-an-image.md)  
+ [Použití elementu obrázku](how-to-use-the-image-element.md)  
+  [Převedení obrázku na odstíny šedi](how-to-convert-an-image-to-greyscale.md)  
+  [Oříznutí obrázku](how-to-crop-an-image.md)  
+  [Otočení obrázku](how-to-rotate-an-image.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Image>  
@@ -31,5 +31,5 @@ Témata v této části popisují způsob použití <xref:System.Windows.Control
  <xref:System.Windows.Media.Imaging.BitmapSource>  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/imaging-how-to-topics.md)
+- [Přehled obrázků](../graphics-multimedia/imaging-overview.md)
+- [Témata s postupy](../graphics-multimedia/imaging-how-to-topics.md)

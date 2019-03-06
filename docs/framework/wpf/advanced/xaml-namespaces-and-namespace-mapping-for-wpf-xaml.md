@@ -14,12 +14,12 @@ helpviewer_keywords:
 - classes [WPF], mapping namespaces to
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
-ms.openlocfilehash: a484ba1e5d0c7a51e7e4c3edbf341bf40345fd2d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5921824ddbd52c264affd4822ed626d5d38b80a1
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54633910"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57366601"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Obor názvů XAML mapování oboru názvů pro WPF XAML
 Dále toto téma vysvětluje přítomnost a účel dvě tak často, nenašla v kořenovém tagu souboru WPF XAML mapování oboru názvů XAML. Také popisuje, jak vytvořit podobná mapování pro elementy, které jsou definovány ve svém vlastním kódu a/nebo v rámci samostatné sestavení pomocí.  
@@ -40,7 +40,7 @@ Dále toto téma vysvětluje přítomnost a účel dvě tak často, nenašla v k
   
  Vztah mezi tyto deklarace je, že `x:` mapování předpony podporuje vnitřních objektů, které jsou součástí definice jazyka XAML a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je jedna implementace, která používá XAML jako jazyk a definuje slovník z jeho objekty pro XAML. Použití slovníku WPF bude mnohem častější než použití – vnitřní prvky XAML, proto slovníku WPF je mapován jako výchozí.  
   
- `x:` Předponu konvence pro mapování podpory – vnitřní prvky jazyka XAML je následována šablony projektů, ukázkový kód a dokumentace jazykové funkce v rámci této [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. Obor názvů XAML definuje mnoho běžně používaných funkcí, které jsou nezbytné pro základní aplikace WPF i. Například, aby bylo možné připojit k žádné použití modelu code-behind do souboru XAML prostřednictvím částečné třídy, je nutné pojmenovat tuto třídu jako `x:Class` atribut v kořenovém prvku příslušný soubor XAML. Nebo libovolný element, jak jsou definovány v stránku XAML, který budete chtít získat přístup jako prostředek s klíčem by měla mít `x:Key` atribut nastaven pro element. Další informace o těchto a dalších aspektů XAML naleznete v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md) nebo [syntaxe XAML v podrobnosti o](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md).  
+ `x:` Předponu konvence pro mapování podpory – vnitřní prvky jazyka XAML je následována šablony projektů, ukázkový kód a dokumentace jazykové funkce v rámci této [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. Obor názvů XAML definuje mnoho běžně používaných funkcí, které jsou nezbytné pro základní aplikace WPF i. Například, aby bylo možné připojit k žádné použití modelu code-behind do souboru XAML prostřednictvím částečné třídy, je nutné pojmenovat tuto třídu jako `x:Class` atribut v kořenovém prvku příslušný soubor XAML. Nebo libovolný element, jak jsou definovány v stránku XAML, který budete chtít získat přístup jako prostředek s klíčem by měla mít `x:Key` atribut nastaven pro element. Další informace o těchto a dalších aspektů XAML naleznete v tématu [přehled XAML (WPF)](xaml-overview-wpf.md) nebo [syntaxe XAML v podrobnosti o](xaml-syntax-in-detail.md).  
   
 <a name="Mapping_To_Custom_Classes_and_Assemblies"></a>   
 ## <a name="mapping-to-custom-classes-and-assemblies"></a>Mapování vlastní třídy a sestavení  
@@ -115,7 +115,7 @@ End Namespace
   
  [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] pomocí návrháře, který je obvykle namapovaný na předponu oboru názvů `d:`. Tento obor názvů XAML pro podporu výměny XAML mezi předem namapovat novější šablony projektů pro WPF [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] a jiných prostředích návrhu. Tento obor názvů XAML návrhu slouží k perpetuate stav návrhu při vracení uživatelského rozhraní založeného na XAML v návrháři. Používá se i pro funkce, jako `d:IsDataSource`, která umožňují zdroje dat modulu runtime v návrháři.  
   
- Může se zobrazit jinou předponu namapované je `mc:`. `mc:` je z důvodu kompatibility značek a využívá vzor kompatibility značek, který není nutně specifické pro XAML. Do určité míry kompatibility značek, funkce se dá použít k výměně XAML mezi rozhraní nebo jiné hranice implementace základní práci mezi kontext schématu XAML, zajištění kompatibility pro omezené režimy v některém z návrhářů a tak dále. Další informace o konceptech kompatibility značek a jejich vzájemné vztahy k použití WPF v tématu [kompatibility značek (mc:) Funkce jazyka](../../../../docs/framework/wpf/advanced/markup-compatibility-mc-language-features.md).  
+ Může se zobrazit jinou předponu namapované je `mc:`. `mc:` je z důvodu kompatibility značek a využívá vzor kompatibility značek, který není nutně specifické pro XAML. Do určité míry kompatibility značek, funkce se dá použít k výměně XAML mezi rozhraní nebo jiné hranice implementace základní práci mezi kontext schématu XAML, zajištění kompatibility pro omezené režimy v některém z návrhářů a tak dále. Další informace o konceptech kompatibility značek a jejich vzájemné vztahy k použití WPF v tématu [kompatibility značek (mc:) Funkce jazyka](markup-compatibility-mc-language-features.md).  
   
 ## <a name="wpf-and-assembly-loading"></a>WPF a načítání sestavení  
  Kontext WPF schématu XAML se integruje s modelem aplikace WPF, která dále používá koncept CLR definované <xref:System.AppDomain>. Následující text popisuje, jak interpretovat kontext schématu XAML načtení sestavení nebo najít typy v době běhu nebo návrhu, založený na použití WPF <xref:System.AppDomain> a dalších faktorů.  
@@ -138,4 +138,4 @@ End Namespace
   
 ## <a name="see-also"></a>Viz také:
 - [Obory názvů XML](https://go.microsoft.com/fwlink/?LinkId=98069)
-- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [Přehled XAML (WPF)](xaml-overview-wpf.md)

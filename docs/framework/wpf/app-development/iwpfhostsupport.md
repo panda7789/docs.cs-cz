@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - IWpfHostSupport interface [WPF]
 ms.assetid: cc5a0281-de81-4cc1-87e4-0e46b1a811e9
-ms.openlocfilehash: 57d9ef87a078655a89a5869a48a1bd16f21b000f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 074167111b78edc517dda019465260d0acd54737
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500923"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57376010"
 ---
 # <a name="iwpfhostsupport"></a>IWpfHostSupport
 Aplikace, které hostují [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] obsahu prostřednictvím PresentationHost.exe implementace tohoto rozhraní stanovit bodů integrace mezi hostitelem a PresentationHost.exe.  
@@ -32,6 +32,6 @@ Aplikace, které hostují [!INCLUDE[TLA#tla_winclient](../../../../includes/tlas
   
 |Člen|Popis|  
 |------------|-----------------|  
-|[GetRawInputDevices](../../../../docs/framework/wpf/app-development/getrawinputdevices.md)|Umožňuje PresentationHost.exe zjišťování zařízení nezpracovaná vstupní (lidské rozhraní zařízení), které hostitelskou aplikaci zájem.|  
-|[FilterInputMessage](../../../../docs/framework/wpf/app-development/filterinputmessage.md)|Voláno rozhraním PresentationHost.exe pokaždé, když je přijata zpráva, pokud je vrácena E_NOTIMPL.|  
-|[GetCustomUI](../../../../docs/framework/wpf/app-development/getcustomui.md)|Ve výchozím nastavení PresentationHost.exe poskytuje vlastní průběh nasazení a chyba nasazení uživatelská rozhraní, které se zobrazují při nasazení obsahu WPF.|
+|[GetRawInputDevices](getrawinputdevices.md)|Umožňuje PresentationHost.exe zjišťování zařízení nezpracovaná vstupní (lidské rozhraní zařízení), které hostitelskou aplikaci zájem.|  
+|[FilterInputMessage](filterinputmessage.md)|Voláno rozhraním PresentationHost.exe pokaždé, když je přijata zpráva, pokud je vrácena E_NOTIMPL.|  
+|[GetCustomUI](getcustomui.md)|Ve výchozím nastavení PresentationHost.exe poskytuje vlastní průběh nasazení a chyba nasazení uživatelská rozhraní, které se zobrazují při nasazení obsahu WPF.|

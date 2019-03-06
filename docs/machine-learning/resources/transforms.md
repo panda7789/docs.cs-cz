@@ -4,12 +4,12 @@ description: Prozkoumejte funkce engineering součásti, které jsou podporovan�
 author: JRAlexander
 ms.custom: seodec18
 ms.date: 01/14/2019
-ms.openlocfilehash: 54dffec37318b79edf546ba1f6e1145e35782bfb
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: e649c9a27f0409cb9cdfb554963b5c0e732991f2
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415348"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57355403"
 ---
 # <a name="machine-learning-data-transforms---mlnet"></a>Strojové učení transformací dat - ML.NET
 
@@ -25,7 +25,7 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | <xref:Microsoft.ML.Transforms.GroupTransform> | Skupiny hodnoty pro skalární sloupec jako vektor podle ID souvislých skupiny. |
 | <xref:Microsoft.ML.Transforms.UngroupTransform> | Zrušení skupiny vektorové sloupce do sekvence řádků, inverzní funkce k transformaci skupiny. |
 
-## <a name="conversions"></a>Převody 
+## <a name="conversions"></a>Převody
 
 | Transformace | Definice |
 | --- | --- |
@@ -36,7 +36,6 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | <xref:Microsoft.ML.Transforms.Conversions.KeyToVectorMappingTransformer> | Převede klíč na sloupec vektoru. |
 | <xref:Microsoft.ML.Transforms.Conversions.TypeConvertingTransformer> | Změny základní typ sloupce za předpokladu, že typ lze převést. |
 | <xref:Microsoft.ML.Transforms.Conversions.ValueToKeyMappingTransformer> | Převede vstupní hodnoty (slova, čísla, atd.) do indexu ve slovníku. |
-
 
 ## <a name="deep-learning"></a>Obsáhlý learning
 
@@ -49,17 +48,17 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.Transforms.Text.CustomStopWordsRemovingTransform> | Odebere zadaný seznam stop slov porovnání jednotlivých tokenů (porovnání velká a malá písmena) stopwords.| 
-| <xref:Microsoft.ML.ImageAnalytics.ImageGrayscaleTransform> | Přijímá jeden nebo více sloupců ImageType a převede je do odstínů šedi reprezentace stejnou bitovou kopii.|
+| <xref:Microsoft.ML.Transforms.Text.CustomStopWordsRemovingTransform> | Odebere zadaný seznam stop slov porovnání jednotlivých tokenů (porovnání velká a malá písmena) stopwords.|
+| <xref:Microsoft.ML.ImageAnalytics.ImageGrayscaleTransform> | Přijímá jeden nebo více sloupců ImageType a převede je na stupně šedé reprezentace stejnou bitovou kopii.|
 | <xref:Microsoft.ML.ImageAnalytics.ImageLoaderTransform> | Vezme jeden nebo více sloupců ReadOnlyMemory a načte jako ImageType. |
 | <xref:Microsoft.ML.ImageAnalytics.ImagePixelExtractorTransform> | Přijímá jeden nebo více sloupců ImageType a převede je na reprezentaci vektoru.|
 | <xref:Microsoft.ML.ImageAnalytics.ImageResizerTransform> | Vezme jeden nebo více sloupců ImageType a přizpůsobí svou velikost je zadaná výšku a šířku.|
 | <xref:Microsoft.ML.Transforms.Text.LatentDirichletAllocationTransformer> | Implementuje LightLDA stavu nejmodernější provádění latentní Dirichletův přidělení.|
 | <xref:Microsoft.ML.Transforms.LoadTransform> | Načte konkrétní transformace ze souboru zadaného modelu. Umožňuje "vybírání" transformací z serializovaný řetězec nebo použití předem vytrénovaných transformace na zobrazení dat různých (ale stále kompatibilní). |
-| <xref:Microsoft.ML.Transforms.Text.NgramExtractingTransformer> | Vytvoří kontejner počty ngrams (pořadí po sobě jdoucích hodnoty o délce 1-n) v dané vektor klíče. Dělá to tak vytváření slovník ngrams a jako index v kontejneru a s použitím id ve slovníku. | 
-| <xref:Microsoft.ML.Transforms.Text.NgramExtractorTransform> | Změní sadu tokenizovaná text (vector ReadOnlyMemory) nebo vektorů klíčů vektory čísly. Funkce vektory jsou počty ngrams (pořadí po sobě jdoucích tokeny - slova nebo klíče - o délce 1-n). | 
-| <xref:Microsoft.ML.Transforms.Text.NgramHashExtractingTransformer> | Zapne kolekci tokenizovaná textu (vector ReadOnlyMemory) do čísla vektory pomocí algoritmu hash. | 
-| <xref:Microsoft.ML.Transforms.Text.NgramHashingTransformer> | Vytvoří kontejner počty ngrams (posloupnosti po sobě jdoucích slov o délce 1-n) v daného textu. | 
+| <xref:Microsoft.ML.Transforms.Text.NgramExtractingTransformer> | Vytvoří kontejner počty ngrams (pořadí po sobě jdoucích hodnoty o délce 1-n) v dané vektor klíče. Dělá to tak vytváření slovník ngrams a jako index v kontejneru a s použitím id ve slovníku. |
+| <xref:Microsoft.ML.Transforms.Text.NgramExtractorTransform> | Změní sadu tokenizovaná text (vector ReadOnlyMemory) nebo vektorů klíčů vektory čísly. Funkce vektory jsou počty ngrams (pořadí po sobě jdoucích tokeny - slova nebo klíče - o délce 1-n). |
+| <xref:Microsoft.ML.Transforms.Text.NgramHashExtractingTransformer> | Zapne kolekci tokenizovaná textu (vector ReadOnlyMemory) do čísla vektory pomocí algoritmu hash. |
+| <xref:Microsoft.ML.Transforms.Text.NgramHashingTransformer> | Vytvoří kontejner počty ngrams (posloupnosti po sobě jdoucích slov o délce 1-n) v daného textu. |
 | <xref:Microsoft.ML.Transforms.Categorical.OneHotEncodingTransformer> | Převede hodnotu zařazené do kategorií na indikátor pole tak, že vytváření slovník kategorií na základě dat a s použitím id ve slovníku jako index v poli |
 | <xref:Microsoft.ML.Transforms.Projections.PcaTransform> | Vypočítá projekce vektoru funkce na volné místo nízké hodnocení. |
 | <xref:Microsoft.ML.Transforms.Text.SentimentAnalyzingTransformer> | Používá model které je předem vytrénované mínění ke stanovení skóre vstupního řetězce. |
@@ -73,7 +72,7 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.Transforms.AlexNetExtension> | Toto je metodu rozšíření, která se použije <xref:Microsoft.ML.Transforms.DnnImageFeaturizerEstimator> aby bylo možné používat pretrained [AlexNet](https://en.wikipedia.org/wiki/AlexNet) modelu. NuGet, který obsahuje toto rozšíření také je zaručeno, že k binárnímu modelu soubor k zahrnutí. | 
+| <xref:Microsoft.ML.Transforms.AlexNetExtension> | Toto je metodu rozšíření, která se použije <xref:Microsoft.ML.Transforms.DnnImageFeaturizerEstimator> aby bylo možné používat pretrained [AlexNet](https://en.wikipedia.org/wiki/AlexNet) modelu. NuGet, který obsahuje toto rozšíření také je zaručeno, že k binárnímu modelu soubor k zahrnutí. |
 | <xref:Microsoft.ML.Transforms.ResNet18Extension> | Toto je metodu rozšíření, která se použije <xref:Microsoft.ML.Transforms.DnnImageFeaturizerEstimator> použití pretrained ResNet18 modelu. NuGet, který obsahuje toto rozšíření také je zaručeno, že k binárnímu modelu soubor k zahrnutí. |
 | <xref:Microsoft.ML.Transforms.ResNet50Extension> | Toto je metodu rozšíření, která se použije <xref:Microsoft.ML.Transforms.DnnImageFeaturizerEstimator> používat pretrained ResNet50model. NuGet, který obsahuje toto rozšíření také je zaručeno, že k binárnímu modelu soubor k zahrnutí. |
 | <xref:Microsoft.ML.Transforms.ResNet101Extension> | Toto je metodu rozšíření, která se použije <xref:Microsoft.ML.Transforms.DnnImageFeaturizerEstimator> použití pretrained ResNet101 modelu. NuGet, který obsahuje toto rozšíření také je zaručeno, že k binárnímu modelu soubor k zahrnutí. |
@@ -116,7 +115,7 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | <xref:Microsoft.ML.Transforms.BootstrapSamplingTransformer> | Aproximuje bootstrap vzorkování pomocí vzorkování Poissonovo rozdělení. |
 | <xref:Microsoft.ML.Transforms.Projections.RandomFourierFeaturizingTransformer> | Vytvoří náhodný Fourierova funkce. |
 | <xref:Microsoft.ML.Transforms.Text.TokenizingByCharactersTransformer> | Znak objektově orientovaný tokenizátor, ve kterém se text je považován za posloupnost znaků. |
-| <xref:Microsoft.ML.Transforms.Projections.VectorWhiteningTransformer> | Optimalizace Simplfies jako pomoc s identifikací váhy. |
+| <xref:Microsoft.ML.Transforms.Projections.VectorWhiteningTransformer> | Zjednodušuje optimalizace jako pomoc s identifikací váhy. |
 
 ## <a name="row-filters"></a>Filtry řádků
 

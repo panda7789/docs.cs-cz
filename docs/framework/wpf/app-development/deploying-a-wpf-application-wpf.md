@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: 120e2ecdf5869200fa9280ce3fc0a2a3a76c667f
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: f0d01dffe0f8dad2b1e9af75d6642c68be3ee0f2
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748320"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57379091"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
 Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být nasazeny. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] a rozhraní .NET Framework zahrnují několik technologie nasazení. Technologie nasazení, která se používá k nasazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace závisí na typu aplikace. Toto téma nabízí stručný přehled této technologie každého nasazení, a jak se používají ve spojení s požadavky na nasazení každého [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typu aplikace.  
@@ -80,11 +80,11 @@ Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být na
 ### <a name="deploying-markup-only-xaml-applications"></a>Nasazení aplikací pouze značky XAML  
  Pouze značky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky jsou obvykle publikované na webové servery, jako je třeba [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] stránky a lze ji zobrazit pomocí [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)]. Pouze značky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky spustit v sandboxu částečným vztahem důvěryhodnosti zabezpečení s nakonfigurovanými omezeními, které jsou definovány sada oprávnění Internetu zóny. To poskytuje ekvivalentní karanténě k [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)]– na základě webové aplikace.  
   
- Další informace o zabezpečení pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] naleznete v tématu [zabezpečení](../../../../docs/framework/wpf/security-wpf.md).  
+ Další informace o zabezpečení pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] naleznete v tématu [zabezpečení](../security-wpf.md).  
   
  Pouze značky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky lze nainstalovat do místního systému souborů pomocí obou příkazu XCopy nebo [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]. Tyto stránky lze zobrazit pomocí [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] nebo Průzkumníka Windows.  
   
- Další informace o XAML najdete v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md).  
+ Další informace o XAML najdete v tématu [přehled XAML (WPF)](../advanced/xaml-overview-wpf.md).  
   
 <a name="Deploying_XAML_Browser_Applications"></a>   
 ### <a name="deploying-xaml-browser-applications"></a>Nasazení aplikace prohlížeče XAML  
@@ -97,7 +97,7 @@ Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být na
 -   *ApplicationName*.exe.manifest: Manifest aplikace.  
   
 > [!NOTE]
->  Další informace o manifesty nasazení a aplikace, najdete v části [sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md).  
+>  Další informace o manifesty nasazení a aplikace, najdete v části [sestavení aplikace WPF](building-a-wpf-application-wpf.md).  
   
  Tyto soubory jsou vytvářeny při [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] je vytvořená. Další informace najdete v tématu [jak: Vytvoření nového projektu aplikace prohlížeče WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)). Například pouze [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky, [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] jsou obvykle vydávané na webový server a prohlížet pomocí [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)].  
   
@@ -109,7 +109,7 @@ Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být na
   
  ClickOnce publikuje ve výchozím nastavení aplikace soubory s příponu .deploy odstraní. To může být problematické, ale je možné zakázat. Další informace najdete v tématu [serveru a problémy s konfigurací klienta v nasazeních ClickOnce](/visualstudio/deployment/server-and-client-configuration-issues-in-clickonce-deployments).  
   
- Další informace o nasazení [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)], naleznete v tématu [přehled aplikací prohlížeče WPF XAML](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md).  
+ Další informace o nasazení [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)], naleznete v tématu [přehled aplikací prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md).  
   
 <a name="Installing__NET_Framework_3_0"></a>   
 ## <a name="installing-the-net-framework"></a>Instalace rozhraní .NET Framework  
@@ -121,8 +121,8 @@ Po aplikace Windows Presentation Foundation (WPF) se vytvářejí, musí být na
   
  Automatické zjišťování rozhraní .NET framework je k dispozici na [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)], [!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)], a [!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)] klienti, kteří mají [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] nebo novější.  
   
- Další informace najdete v tématu [nasazení rozhraní .NET Framework a aplikace](../../../../docs/framework/deployment/index.md).  
+ Další informace najdete v tématu [nasazení rozhraní .NET Framework a aplikace](../../deployment/index.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)
-- [Zabezpečení](../../../../docs/framework/wpf/security-wpf.md)
+- [Sestavení aplikace WPF](building-a-wpf-application-wpf.md)
+- [Zabezpečení](../security-wpf.md)

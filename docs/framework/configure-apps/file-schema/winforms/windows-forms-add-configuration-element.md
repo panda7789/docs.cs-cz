@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 3e3e04de-99d1-4658-b716-44cb669d9589
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3e9b8b6325900214865e31492b129e381de5c1c2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 107de172e523758474bafb3b86a2960b926a010a
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54507366"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371369"
 ---
 # <a name="windows-forms-add-configuration-element"></a>Přidání konfiguračního prvku Windows Forms
 
@@ -63,9 +63,9 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="a-nameremarks--remarks"></a><a name="remarks" /> Poznámky
 
-Od verze rozhraní .NET Framework 4.7, `<System.Windows.Forms.ApplicationConfigurationSection>` element umožňuje konfigurace aplikací Windows Forms, abyste mohli využívat funkce přidané v posledních verzích rozhraní .NET Framework. 
+Od verze rozhraní .NET Framework 4.7, `<System.Windows.Forms.ApplicationConfigurationSection>` element umožňuje konfigurace aplikací Windows Forms, abyste mohli využívat funkce přidané v posledních verzích rozhraní .NET Framework.
 
-`<System.Windows.Forms.ApplicationConfigurationSection>` Element slouží k přidání jednoho nebo více podřízených `<add>` prvky, z nichž každý definuje konkrétní nastavení.  
+`<System.Windows.Forms.ApplicationConfigurationSection>` Element slouží k přidání jednoho nebo více podřízených `<add>` prvky, z nichž každý definuje konkrétní nastavení.
 
 Přehled podpora vysokého nastavení DPI formulářů Windows, naleznete v tématu [vysoké rozlišení DPI podporují ve Windows Forms](../../../../../docs/framework/winforms/high-dpi-support-in-windows-forms.md).
 
@@ -75,7 +75,7 @@ Windows Forms aplikace, které jsou spuštěny pod od verze Windows 10 Creators 
 
 - Podpora pro dynamické DPI scénáře, ve kterých uživatel změní DPI nebo škálovací faktor po aplikace modelu Windows Forms byl spuštěn.
 
-- Vylepšení ve škálování a rozložení počtu Windows Forms ovládací prvky, jako <xref:System.Windows.Forms.MonthCalendar> ovládacího prvku a <xref:System.Windows.Forms.CheckedListBox> ovládacího prvku. 
+- Vylepšení ve škálování a rozložení počtu Windows Forms ovládací prvky, jako <xref:System.Windows.Forms.MonthCalendar> ovládacího prvku a <xref:System.Windows.Forms.CheckedListBox> ovládacího prvku.
 
 Vysoká rozpoznání nastavení dpi je přihlašovaná funkce; ve výchozím nastavení hodnotu `DpiAwareness` je `false`. Můžete se rozhodnout do Windows Forms podporu pro rozpoznání nastavení DPI tak, že nastavíte hodnotu tohoto klíče k `PerMonitorV2` v konfiguračním souboru aplikace. Pokud je povoleno sledování DPI, jsou také povoleny všechny jednotlivé funkce DPI. Zde jsou některé z nich:
 
@@ -83,11 +83,11 @@ Vysoká rozpoznání nastavení dpi je přihlašovaná funkce; ve výchozím nas
 
 - Dynamické DPI podpory, které řídí `EnableWindowsFormsHighDpiAutoResizing` klíč.
 
-- Jednoho průchodu změny velikosti ovládacího prvku, který řídí `Form.DisableSinglePassControlScaling` jednotlivce <xref:System.Windows.Forms.Form> ovládací prvky podle `AnchorLayout.DisableSinglePassControlScaling` ukotvených ovládacích prvků a pomocí klíče `MonthCalendar.DisableSinglePassControlScaling` klíče pro <xref:System.Windows.Forms.MonthCalendar> ovládacího prvku 
+- Jednoho průchodu změny velikosti ovládacího prvku, který řídí `Form.DisableSinglePassControlScaling` jednotlivce <xref:System.Windows.Forms.Form> ovládací prvky podle `AnchorLayout.DisableSinglePassControlScaling` ukotvených ovládacích prvků a pomocí klíče `MonthCalendar.DisableSinglePassControlScaling` klíče pro <xref:System.Windows.Forms.MonthCalendar> ovládacího prvku
 
-- Vysoké rozlišení DPI změnu měřítka a rozložení vylepšení, které řídí `CheckListBox.DisableHighDpiImprovements` klíče pro <xref:System.Windows.Forms.CheckedListBox> řízení podle `DataGridView.DisableHighDpiImprovements` klíče pro <xref:System.Windows.Forms.DataGridView> ovládacího prvku a `Toolstrip.DisableHighDpiImprovements` klíče pro <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  
+- Vysoké rozlišení DPI změnu měřítka a rozložení vylepšení, které řídí `CheckListBox.DisableHighDpiImprovements` klíče pro <xref:System.Windows.Forms.CheckedListBox> řízení podle `DataGridView.DisableHighDpiImprovements` klíče pro <xref:System.Windows.Forms.DataGridView> ovládacího prvku a `Toolstrip.DisableHighDpiImprovements` klíče pro <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.
 
-Jedno výchozí vyjádřit výslovný souhlas nastavení zadat nastavením `DpiAwareness` k `PerMonitorV2` obecně postačuje pro nové aplikace Windows Forms. Však můžete poté zrušit individuální vysoké rozlišení DPI vylepšení přidáním odpovídající klíč do konfiguračního souboru aplikace. Abyste mohli využívat všechny nové featuers DPI kromě podpory dynamického DPI, například by přidejte následující konfigurační soubor aplikace:
+Jedno výchozí vyjádřit výslovný souhlas nastavení zadat nastavením `DpiAwareness` k `PerMonitorV2` obecně postačuje pro nové aplikace Windows Forms. Však můžete poté zrušit individuální vysoké rozlišení DPI vylepšení přidáním odpovídající klíč do konfiguračního souboru aplikace. Abyste mohli využívat všechny nové funkce DPI kromě podpory dynamického DPI, například by přidejte následující konfigurační soubor aplikace:
 
 ```xml
 <System.Windows.Forms.ApplicationConfigurationSection>
@@ -99,14 +99,14 @@ Jedno výchozí vyjádřit výslovný souhlas nastavení zadat nastavením `DpiA
 Obvykle Pokud se rozhodnete konkrétní funkci vzhledem k tomu, že jste se rozhodli zpracovávat prostřednictvím kódu programu.
 
 Další informace o a současně využívat podpora vysokého nastavení DPI v aplikacích Windows Forms, naleznete v tématu [vysoké rozlišení DPI podporují ve Windows Forms](../../../../../docs/framework/winforms/high-dpi-support-in-windows-forms.md).
- 
+
 ### <a name="disabledpichangedmessagehandling"></a>DisableDpiChangedMessageHandling
 
-Od verze rozhraní .NET Framework 4.7, ovládacích prvků Windows Forms zvýšit počet událostí související se změnami v DPI škálování. Patří mezi ně <xref:System.Windows.Forms.Control.DpiChangedAfterParent>, <xref:System.Windows.Forms.Control.DpiChangedBeforeParent>, a <xref:System.Windows.Forms.Form.DpiChanged> události. Hodnota `DisableDpiChangedMessageHandling` klíč určuje, zda jsou tyto události vyvolány v aplikaci Windows Forms. 
+Od verze rozhraní .NET Framework 4.7, ovládacích prvků Windows Forms zvýšit počet událostí související se změnami v DPI škálování. Patří mezi ně <xref:System.Windows.Forms.Control.DpiChangedAfterParent>, <xref:System.Windows.Forms.Control.DpiChangedBeforeParent>, a <xref:System.Windows.Forms.Form.DpiChanged> události. Hodnota `DisableDpiChangedMessageHandling` klíč určuje, zda jsou tyto události vyvolány v aplikaci Windows Forms.
 
 ### <a name="single-pass-scaling"></a>Škálování jednoho průchodu
 
-Jeden nebo více pass škálování ovlivňuje ovlivnit vnímanou odezvu uživatelského rozhraní a vzhled prvky uživatelského rozhraní, jak se upraví. Od verze rozhraní .NET Framework 4.7, Windows Forms používá škálování na jednom průchodu. V předchozích verzích rozhraní .NET Framework škálování se provádí prostřednictvím více průchody, která způsobila některé ovládací prvky škálovat víc než bylo nutné. Škálování jednoho průchodu pouze je třeba zakázat Pokud vaše aplikace závisí na staré chování.  
+Jeden nebo více pass škálování ovlivňuje ovlivnit vnímanou odezvu uživatelského rozhraní a vzhled prvky uživatelského rozhraní, jak se upraví. Od verze rozhraní .NET Framework 4.7, Windows Forms používá škálování na jednom průchodu. V předchozích verzích rozhraní .NET Framework škálování se provádí prostřednictvím více průchody, která způsobila některé ovládací prvky škálovat víc než bylo nutné. Škálování jednoho průchodu pouze je třeba zakázat Pokud vaše aplikace závisí na staré chování.
 
 ## <a name="see-also"></a>Viz také:
 

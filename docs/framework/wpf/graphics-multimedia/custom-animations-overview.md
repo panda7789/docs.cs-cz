@@ -8,21 +8,21 @@ helpviewer_keywords:
 - animation [WPF], custom classes
 - custom animation classes [WPF]
 ms.assetid: 9be69d50-3384-4938-886f-08ce00e4a7a6
-ms.openlocfilehash: 20bf15040d22d334800d6a163937c22928499f3d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0ab553f6ac22813533710e8b2ed7a3be31f6914d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527637"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358519"
 ---
 # <a name="custom-animations-overview"></a>Přehled vlastních animací
 Toto téma popisuje, jak a kdy k rozšíření [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace systém tak, že vytvoříte vlastní klíčové snímky animace třídy, nebo pomocí zpětného volání za rámce se.  
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- V tomto tématu informace o tom, měli byste se seznámit s různými typy animací poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Další informace najdete v tématu Přehled animací From/To/By, [přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)a [přehled animací cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md).  
+ V tomto tématu informace o tom, měli byste se seznámit s různými typy animací poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Další informace najdete v tématu Přehled animací From/To/By, [přehled animací klíčových snímků](key-frame-animations-overview.md)a [přehled animací cesty](path-animations-overview.md).  
   
- Protože animace třídy dědí <xref:System.Windows.Freezable> třídy, měli byste se seznámit s <xref:System.Windows.Freezable> objekty a o tom, jak dědit z <xref:System.Windows.Freezable>. Další informace najdete v tématu [přehled Zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md).  
+ Protože animace třídy dědí <xref:System.Windows.Freezable> třídy, měli byste se seznámit s <xref:System.Windows.Freezable> objekty a o tom, jak dědit z <xref:System.Windows.Freezable>. Další informace najdete v tématu [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md).  
   
 <a name="extendingtheanimationsystem"></a>   
 ## <a name="extending-the-animation-system"></a>Rozšíření systému animace  
@@ -45,7 +45,7 @@ Toto téma popisuje, jak a kdy k rozšíření [!INCLUDE[TLA2#tla_winclient](../
   
 <a name="createacustomkeyframe"></a>   
 ## <a name="create-a-custom-key-frame"></a>Vytvořit vlastní klíčové rámečku  
- Vytvoření vlastní klíčové rámečku třídy je nejjednodušší způsob, jak rozšířit systém animace. Tuto metodu použijte, pokud chcete metodu různých interpolace animace klíčových snímků.  Jak je popsáno v [přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md), animace klíčových snímků používá ke generování jeho výstupní hodnoty klíčových snímků objektů. Každý objekt klíčový snímek provádí tři funkce:  
+ Vytvoření vlastní klíčové rámečku třídy je nejjednodušší způsob, jak rozšířit systém animace. Tuto metodu použijte, pokud chcete metodu různých interpolace animace klíčových snímků.  Jak je popsáno v [přehled animací klíčových snímků](key-frame-animations-overview.md), animace klíčových snímků používá ke generování jeho výstupní hodnoty klíčových snímků objektů. Každý objekt klíčový snímek provádí tři funkce:  
   
 -   Určuje cílový hodnotu pomocí jeho <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> vlastnost.  
   
@@ -57,7 +57,7 @@ Toto téma popisuje, jak a kdy k rozšíření [!INCLUDE[TLA2#tla_winclient](../
   
  Odvozovat  *\<typ >* klíčový snímek abstraktní třídy a implementovat metodu InterpolateValueCore. Metoda InterpolateValueCore vrátí aktuální hodnotu klíčového snímku. Přebírá dva parametry: hodnoty předchozí klíčový snímek a průběh hodnotu od 0 do 1. Průběh 0 označuje klíčový snímek byl spuštěn, a hodnota 1 označuje, že klíčový snímek dokončil a by měl vrátit hodnotu zadanou pomocí jeho <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> vlastnost.  
   
- Protože  *\<typ >* klíčový snímek třídy dědí z <xref:System.Windows.Freezable> třídy, je nutné také přepsat <xref:System.Windows.Freezable.CreateInstanceCore%2A> core vrací novou instanci třídy. Pokud třída nepoužívá vlastnosti závislosti k ukládání svých dat nebo vyžaduje dodatečnou inicializaci. po jeho vytvoření, možná budete muset přepsat další metody; Zobrazit [přehled Zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md) Další informace.  
+ Protože  *\<typ >* klíčový snímek třídy dědí z <xref:System.Windows.Freezable> třídy, je nutné také přepsat <xref:System.Windows.Freezable.CreateInstanceCore%2A> core vrací novou instanci třídy. Pokud třída nepoužívá vlastnosti závislosti k ukládání svých dat nebo vyžaduje dodatečnou inicializaci. po jeho vytvoření, možná budete muset přepsat další metody; Zobrazit [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md) Další informace.  
   
  Po vytvoření vlastních  *\<typ >* klíčový snímek animace, můžete ji  *\<typ >* AnimationUsingKeyFrames pro daný typ.  
   
@@ -72,7 +72,7 @@ Toto téma popisuje, jak a kdy k rozšíření [!INCLUDE[TLA2#tla_winclient](../
   
  Odvozovat  *\<typ >* animace třídy a implementovat metodu GetCurrentValueCore. Metoda GetCurrentValueCore vrátí aktuální hodnotu animace. Přijímá tři parametry: navrhované výchozí hodnoty, navrhované konečnou hodnotu a <xref:System.Windows.Media.Animation.AnimationClock>, kterou používáte k určení rozsahu postupu animace.  
   
- Protože  *\<typ >* AnimationBase třídy dědí z <xref:System.Windows.Freezable> třídy, je nutné také přepsat <xref:System.Windows.Freezable.CreateInstanceCore%2A> core vrací novou instanci třídy. Pokud třída nepoužívá vlastnosti závislosti k ukládání svých dat nebo vyžaduje dodatečnou inicializaci. po jeho vytvoření, možná budete muset přepsat další metody; Zobrazit [přehled Zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md) Další informace.  
+ Protože  *\<typ >* AnimationBase třídy dědí z <xref:System.Windows.Freezable> třídy, je nutné také přepsat <xref:System.Windows.Freezable.CreateInstanceCore%2A> core vrací novou instanci třídy. Pokud třída nepoužívá vlastnosti závislosti k ukládání svých dat nebo vyžaduje dodatečnou inicializaci. po jeho vytvoření, možná budete muset přepsat další metody; Zobrazit [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md) Další informace.  
   
  Další informace najdete v dokumentaci k GetCurrentValueCore metodu pro  *\<typ >* AnimationBase třídy pro typ, který má být animován. Příklad najdete v tématu [ukázkové vlastní animace](https://go.microsoft.com/fwlink/?LinkID=159981)  
   
@@ -95,7 +95,7 @@ Toto téma popisuje, jak a kdy k rozšíření [!INCLUDE[TLA2#tla_winclient](../
   
 -   <xref:System.Windows.Media.Animation.AnimationTimeline.TargetPropertyType%2A> – Přepsat tuto vlastnost umožňující označit, <xref:System.Type> výstupu animace vytvoří.  
   
- Pokud třída nepoužívá vlastnosti závislosti k ukládání svých dat nebo vyžaduje dodatečnou inicializaci. po jeho vytvoření, možná budete muset přepsat další metody; Zobrazit [přehled Zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md) Další informace.  
+ Pokud třída nepoužívá vlastnosti závislosti k ukládání svých dat nebo vyžaduje dodatečnou inicializaci. po jeho vytvoření, možná budete muset přepsat další metody; Zobrazit [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md) Další informace.  
   
  Doporučené paradigma (používané [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animací), je použít dvě úrovně dědičnosti:  
   
@@ -126,10 +126,10 @@ Toto téma popisuje, jak a kdy k rozšíření [!INCLUDE[TLA2#tla_winclient](../
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Media.Animation.AnimationTimeline>
 - <xref:System.Windows.Media.Animation.IKeyFrame>
-- [Přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)
-- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)
-- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)
-- [Přehled animací cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)
-- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
-- [Přehled animace a systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)
+- [Přehled způsobů animace vlastností](property-animation-techniques-overview.md)
+- [Přehled zablokovatelných objektů](../advanced/freezable-objects-overview.md)
+- [Přehled animací klíčových snímků](key-frame-animations-overview.md)
+- [Přehled animací cesty](path-animations-overview.md)
+- [Přehled animace](animation-overview.md)
+- [Přehled animace a systému časování](animation-and-timing-system-overview.md)
 - [Ukázka vlastních animací](https://go.microsoft.com/fwlink/?LinkID=159981)

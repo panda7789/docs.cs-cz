@@ -7,19 +7,19 @@ helpviewer_keywords:
 - styles [WPF]
 - templates [WPF]
 ms.assetid: 7fd571fd-d54a-40fc-b332-4c4015a5b6ff
-ms.openlocfilehash: e310d9800f4ee2274221e8461838ed8ee3d66ac7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d7a5e9515e78dd9c762973ca9854e04b44c1e18d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33553365"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57372071"
 ---
 # <a name="styles-and-templates"></a>– styly a šablony
-Windows Presentation Foundation (WPF) stylů a ukázka odkazují na sadu funkcí (styly, šablony, aktivační události a scénářů), které umožňují aplikace, dokument nebo návrhář uživatelského rozhraní (UI) pro vytvoření vizuálně byly atraktivní aplikace a do standardizovat na konkrétní vzhled jejich produktu.  
+Windows Presentation Foundation (WPF) styly a šablony najdete suite funkcí (styly, šablony, aktivační události a scénáře), které umožňují aplikace, dokumentu nebo návrhář uživatelského rozhraní (UI) vytvářet vizuálně působivé aplikace a na standardizovat používání na konkrétní oblast pro svůj produkt.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
-  [Postupy: Vyhledávání elementů generovaných objektem ControlTemplate](../../../../docs/framework/wpf/controls/how-to-find-controltemplate-generated-elements.md)  
+ [Styly a šablony](styling-and-templating.md)  
+  [Postupy: Vyhledávání elementů generovaných objektem ControlTemplate](how-to-find-controltemplate-generated-elements.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Style>  
@@ -27,6 +27,6 @@ Windows Presentation Foundation (WPF) stylů a ukázka odkazují na sadu funkcí
   <xref:System.Windows.DataTemplate>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Pokročilé](../../../../docs/framework/wpf/advanced/index.md)  
-  [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)  
-  [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+ [Pokročilé](../advanced/index.md)  
+  [Přizpůsobení ovládacího prvku](control-customization.md)  
+  [Grafika a multimédia](../graphics-multimedia/index.md)

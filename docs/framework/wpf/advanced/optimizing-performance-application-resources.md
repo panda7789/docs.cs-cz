@@ -9,17 +9,17 @@ helpviewer_keywords:
 - brushes [WPF], performance
 - sharing brushes without copying [WPF]
 ms.assetid: 62b88488-c08e-4804-b7de-a1c34fbe929c
-ms.openlocfilehash: fa412a4f900179c22868b2ef3e7429e7dc2acc9c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 921a67a24464ff5ac782045ae022f7766f32d579
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54507548"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352396"
 ---
 # <a name="optimizing-performance-application-resources"></a>Optimalizace výkonu: Zdroje aplikace
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje sdílení prostředků aplikace tak, aby mezi elementy podobné typy může podporovat konzistentního vzhledu a chování. Toto téma obsahuje několik doporučení v této oblasti, které vám můžou pomoci zvýšit výkon vašich aplikací.  
   
- Další informace o prostředcích naleznete v tématu [prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
+ Další informace o prostředcích naleznete v tématu [prostředky XAML](xaml-resources.md).  
   
 ## <a name="sharing-resources"></a>Sdílení prostředků  
  Pokud vaše aplikace používá vlastní ovládací prvky a definuje prostředky v <xref:System.Windows.ResourceDictionary> (nebo prostředky XAML uzel), doporučuje se, že buď definujete prostředky na <xref:System.Windows.Application> nebo <xref:System.Windows.Window> objekt úroveň nebo definovat výchozí motivu pro vlastní ovládací prvky. Definování prostředků v vlastního ovládacího prvku <xref:System.Windows.ResourceDictionary> má dopad na výkon pro každou instanci tohoto ovládacího prvku. Například pokud máte operace náročné na výkon štětce definované jako součást definice prostředků vlastního ovládacího prvku a velký počet instancí vlastního ovládacího prvku, pracovní sada aplikace se výrazně zvýšit.  
@@ -31,7 +31,7 @@ ms.locfileid: "54507548"
   
  Následující ukázkový kód to znázorňuje:  
   
- [!code-xaml[Performance#PerformanceSnippet7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/BrushResource.xaml#performancesnippet7)]  
+ [!code-xaml[Performance#PerformanceSnippet7](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/BrushResource.xaml#performancesnippet7)]  
   
 ## <a name="use-static-resources-when-possible"></a>Použití statické prostředky, pokud je to možné  
  Statický prostředek poskytuje hodnotu pro všechny atributy vlastnosti XAML vyhledáním odkaz na prostředek už definované. Chování při vyhledávání pro daný prostředek je obdobou vyhledávání za kompilace.  
@@ -40,15 +40,15 @@ ms.locfileid: "54507548"
   
  Následující příklad kódu ukazuje použití obou typů prostředků:  
   
- [!code-xaml[Performance#PerformanceSnippet8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/DynamicResource.xaml#performancesnippet8)]  
+ [!code-xaml[Performance#PerformanceSnippet8](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/DynamicResource.xaml#performancesnippet8)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
-- [Plánování výkonu aplikace](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)
-- [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)
-- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)
-- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)
-- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)
-- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
-- [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
+- [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
+- [Plánování výkonu aplikace](planning-for-application-performance.md)
+- [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
+- [Rozložení a návrh](optimizing-performance-layout-and-design.md)
+- [2D grafika a obrázky](optimizing-performance-2d-graphics-and-imaging.md)
+- [Chování objektu](optimizing-performance-object-behavior.md)
+- [Text](optimizing-performance-text.md)
+- [Datová vazba](optimizing-performance-data-binding.md)
+- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)

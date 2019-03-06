@@ -6,35 +6,35 @@ f1_keywords:
 helpviewer_keywords:
 - geometry classes [WPF]
 ms.assetid: 83873331-b013-472e-8197-8ba993dd242f
-ms.openlocfilehash: cb8efd32302287de1d80ef68cf98bfa071b7feaf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f2a45cf48c1d0cc097cea956d22fed2079e657a8
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54664678"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57361639"
 ---
 # <a name="geometries-how-to-topics"></a>Postupy: Geometrie
 Témata v této části ukazují, jak používat <xref:System.Windows.Media.Geometry> objekty ve svých aplikacích.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Animace EllipseGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-an-ellipsegeometry.md)  
- [Animace velikosti ArcSegment](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-size-of-an-arcsegment.md)  
- [Řízení výplně složeného tvaru](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-the-fill-of-a-composite-shape.md)  
- [Vytvoření kombinované geometrie](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-combined-geometry.md)  
- [Vytvoření složeného tvaru](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-composite-shape.md)  
- [Vytvoření kubické Bézierovy křivky](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-cubic-bezier-curve.md)  
- [Vytvoření čáry pomocí LineGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-line-using-a-linegeometry.md)  
- [Vytvoření LineSegment v PathGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-linesegment-in-a-pathgeometry.md)  
- [Vytvoření tvaru pomocí PathGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-shape-by-using-a-pathgeometry.md)  
- [Vytvoření tvaru pomocí StreamGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-shape-using-a-streamgeometry.md)  
- [Vytvoření kvadratické Bézierovy křivky](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-quadratic-bezier-curve.md)  
- [Vytvoření oblouku elipsy](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-an-elliptical-arc.md)  
- [Vytvoření několika dílčích cest v rámci PathGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-multiple-subpaths-within-a-pathgeometry.md)  
- [Definice obdélníku pomocí RectangleGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-define-a-rectangle-using-a-rectanglegeometry.md)  
- [Zaoblení rohů RectangleGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-round-the-corners-of-a-rectanglegeometry.md)  
+ [Animace EllipseGeometry](how-to-animate-an-ellipsegeometry.md)  
+ [Animace velikosti ArcSegment](how-to-animate-the-size-of-an-arcsegment.md)  
+ [Řízení výplně složeného tvaru](how-to-control-the-fill-of-a-composite-shape.md)  
+ [Vytvoření kombinované geometrie](how-to-create-a-combined-geometry.md)  
+ [Vytvoření složeného tvaru](how-to-create-a-composite-shape.md)  
+ [Vytvoření kubické Bézierovy křivky](how-to-create-a-cubic-bezier-curve.md)  
+ [Vytvoření čáry pomocí LineGeometry](how-to-create-a-line-using-a-linegeometry.md)  
+ [Vytvoření LineSegment v PathGeometry](how-to-create-a-linesegment-in-a-pathgeometry.md)  
+ [Vytvoření tvaru pomocí PathGeometry](how-to-create-a-shape-by-using-a-pathgeometry.md)  
+ [Vytvoření tvaru pomocí StreamGeometry](how-to-create-a-shape-using-a-streamgeometry.md)  
+ [Vytvoření kvadratické Bézierovy křivky](how-to-create-a-quadratic-bezier-curve.md)  
+ [Vytvoření oblouku elipsy](how-to-create-an-elliptical-arc.md)  
+ [Vytvoření několika dílčích cest v rámci PathGeometry](how-to-create-multiple-subpaths-within-a-pathgeometry.md)  
+ [Definice obdélníku pomocí RectangleGeometry](how-to-define-a-rectangle-using-a-rectanglegeometry.md)  
+ [Zaoblení rohů RectangleGeometry](how-to-round-the-corners-of-a-rectanglegeometry.md)  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Media.Brushes>
 - <xref:System.Windows.Shapes.Shape>
-- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
-- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Grafika a multimédia](index.md)

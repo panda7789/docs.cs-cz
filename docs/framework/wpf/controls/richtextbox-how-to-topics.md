@@ -7,23 +7,23 @@ helpviewer_keywords:
 - controls [WPF], RichTextBox
 - RichTextBox control [WPF], how-to topics
 ms.assetid: 36e9f98e-f968-42d8-adb6-9e78c814aec0
-ms.openlocfilehash: def502855168b8e10f57e1426191f4e0c26e9f67
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: fbf40aa8dded4e676828c600ecb634732803dbdb
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56745726"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377016"
 ---
 # <a name="richtextbox-how-to-topics"></a>RichTextBox – postupy
 Tato část obsahuje příklady, které ukazují, jak provádět běžné úlohy pomocí <xref:System.Windows.Controls.RichTextBox> ovládacího prvku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Extrahování textového obsahu z pole RichTextBox](../../../../docs/framework/wpf/controls/how-to-extract-the-text-content-from-a-richtextbox.md)  
- [Programová změna výběru v poli RichTextBox](../../../../docs/framework/wpf/controls/change-selection-in-a-richtextbox-programmatically.md)  
- [Uložení, načtení a tisk obsahu RichTextBox](../../../../docs/framework/wpf/controls/how-to-save-load-and-print-richtextbox-content.md)  
- [Umístění vlastní místní nabídky v prvku RichTextBox](../../../../docs/framework/wpf/controls/how-to-position-a-custom-context-menu-in-a-richtextbox.md)  
+ [Extrahování textového obsahu z pole RichTextBox](how-to-extract-the-text-content-from-a-richtextbox.md)  
+ [Programová změna výběru v poli RichTextBox](change-selection-in-a-richtextbox-programmatically.md)  
+ [Uložení, načtení a tisk obsahu RichTextBox](how-to-save-load-and-print-richtextbox-content.md)  
+ [Umístění vlastní místní nabídky v prvku RichTextBox](how-to-position-a-custom-context-menu-in-a-richtextbox.md)  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Controls.TextBox>
-- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
-- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
+- [Dokumenty v platformě WPF](../advanced/documents-in-wpf.md)
+- [Přehled toku dokumentů](../advanced/flow-document-overview.md)

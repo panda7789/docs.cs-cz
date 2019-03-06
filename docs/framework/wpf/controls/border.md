@@ -8,18 +8,18 @@ helpviewer_keywords:
 - controls [WPF], Border
 - Border control [WPF]
 ms.assetid: 51739f83-b5a2-489b-854b-30607e74a502
-ms.openlocfilehash: 0ee7ae6598feacee282cc283b82e20390418b4c9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 922b4b90f3f8bc74d0465691386fa1a2422c6573
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551051"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57368074"
 ---
 # <a name="border"></a>Ohraničení
 Následující příklad ukazuje, jak dynamicky měnit vlastnosti <xref:System.Windows.Controls.Border> elementu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Animace hodnoty BorderThickness](../../../../docs/framework/wpf/controls/how-to-animate-a-borderthickness-value.md)  
+ [Animace hodnoty BorderThickness](how-to-animate-a-borderthickness-value.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Decorator>  
@@ -27,6 +27,6 @@ Následující příklad ukazuje, jak dynamicky měnit vlastnosti <xref:System.W
  <xref:System.Windows.Controls.Border>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)  
+ [Přehled panelu](panels-overview.md)  
   
- [Přehled zarovnání, okrajů a odsazení](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)
+ [Přehled zarovnání, okrajů a odsazení](../advanced/alignment-margins-and-padding-overview.md)

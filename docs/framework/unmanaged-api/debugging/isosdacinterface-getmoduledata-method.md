@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 80b15f076dfe7a7bbbe7e28d9d68f01255e47202
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: b0edd459deaf68040e05209c6ecf2cb7cae12e8d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828528"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57369952"
 ---
 # <a name="isosdacinterfacegetmoduledata-method"></a>ISOSDacInterface::GetModuleData – metoda
 
@@ -39,9 +39,11 @@ HRESULT GetModuleData(
 
 ### <a name="parameters"></a>Parametry
 
-`moduleAddr` [in] Adresa načíst informace pro modul.
+`moduleAddr`\
+[in] Adresa načíst informace pro modul.
 
-`data` [out] [DacpModuleData struktura](dacpmoduledata-structure.md) k ukládání informací načteného modulu.
+`data`\
+[out] [DacpModuleData struktura](dacpmoduledata-structure.md) k ukládání informací načteného modulu.
 
 
 ## <a name="remarks"></a>Poznámky
@@ -57,5 +59,5 @@ Zadaná metoda je součástí `ISOSDacInterface` rozhraní a odpovídá 13 pozic
 
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [ISOSDacInterface rozhraní](../../../../docs/framework/unmanaged-api/debugging/isosdacinterface-interface.md)
+- [Ladění](index.md)
+- [ISOSDacInterface rozhraní](isosdacinterface-interface.md)

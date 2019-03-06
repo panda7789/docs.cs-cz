@@ -8,21 +8,21 @@ helpviewer_keywords:
 - serialization [WPF]
 - tree [WPF]
 ms.assetid: 8f57e879-180b-421f-b3d0-ac007ff2ce80
-ms.openlocfilehash: 9fcaf10bbed23a6c8b8cdc8355a2575574d2207a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4c178213e08add247311f0b71517ed292bd6658a
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33542858"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57355802"
 ---
 # <a name="element-tree-and-serialization"></a>Strom prvku a serializace
-Programovací elementy WPF často existují v určitou formu stromu vzájemných vztahů. Například můžete být aplikace vytvořena uživatelského rozhraní v jazyce XAML conceptualized jako strom k objektu. Stromu element lze dále rozdělit do dvou diskrétních ještě někdy paralelní stromy: logického stromu a vizuálním stromu. Serializace v grafickém subsystému WPF zahrnuje uložení stavu tyto dvě, stromy, a také stav aplikace a jejich zápisu do souboru, potenciálně jako XAML.  
+Programovací prvky WPF často existovat v nějaké podobě stromu vztah mezi sebou. Aplikace, které vytvořili uživatelského rozhraní v XAML může být například conceptualized jako stromu objektů. Strom prvku je možné dále rozdělit do dvou diskrétních, ale někdy paralelní stromů: Logická stromová struktura a vizuálního stromu. Serializace v subsystému WPF zahrnuje ukládání stavu z těchto dvou stromy a také stav aplikace a zápis do souboru, potenciálně jako XAML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Stromy v subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md)  
- [Omezení serializace XamlWriter.Save](../../../../docs/framework/wpf/advanced/serialization-limitations-of-xamlwriter-save.md)  
- [Inicializace elementů objektu, které nejsou ve stromu objektů](../../../../docs/framework/wpf/advanced/initialization-for-object-elements-not-in-an-object-tree.md)  
- [Témata s postupy](../../../../docs/framework/wpf/advanced/element-tree-and-serialization-how-to-topics.md)  
+ [Stromy v subsystému WPF](trees-in-wpf.md)  
+ [Omezení serializace XamlWriter.Save](serialization-limitations-of-xamlwriter-save.md)  
+ [Inicializace elementů objektu, které nejsou ve stromu objektů](initialization-for-object-elements-not-in-an-object-tree.md)  
+ [Témata s postupy](element-tree-and-serialization-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Markup>  
@@ -32,12 +32,12 @@ Programovací elementy WPF často existují v určitou formu stromu vzájemných
  <xref:System.Windows.Media.VisualTreeHelper>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Architektura WPF](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
-  [XAML ve WPF](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
-  [Základní elementy](../../../../docs/framework/wpf/advanced/base-elements.md)  
-  [Vlastnosti](../../../../docs/framework/wpf/advanced/properties-wpf.md)  
-  [Události](../../../../docs/framework/wpf/advanced/events-wpf.md)  
-  [Vstup](../../../../docs/framework/wpf/advanced/input-wpf.md)  
-  [Prostředky](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
-  [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
-  [Model vláken](../../../../docs/framework/wpf/advanced/threading-model.md)
+ [Architektura WPF](wpf-architecture.md)  
+  [XAML ve WPF](xaml-in-wpf.md)  
+  [Základní elementy](base-elements.md)  
+  [Vlastnosti](properties-wpf.md)  
+  [Události](events-wpf.md)  
+  [Vstup](input-wpf.md)  
+  [Prostředky](resources-wpf.md)  
+  [Styly a šablony](../controls/styling-and-templating.md)  
+  [Model vláken](threading-model.md)

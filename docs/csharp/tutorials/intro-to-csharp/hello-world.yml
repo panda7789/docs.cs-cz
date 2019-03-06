@@ -11,12 +11,12 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: 86c2226796d5632281f2b6b2cb533bfeacebd288
-  ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+  ms.openlocfilehash: ef52031f75bd2004bcb5927524a9c82ac8fbf36f
+  ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 01/04/2019
-  ms.locfileid: "54030513"
+  ms.lasthandoff: 03/05/2019
+  ms.locfileid: "57370316"
 items:
 - durationInMinutes: 1
   content: >
@@ -259,7 +259,7 @@ items:
     Existují dvě podobné metody <xref:System.String.StartsWith%2A> a <xref:System.String.EndsWith%2A> hledání dílčích řetězců v řetězci. Ty vyhledají dílčí řetězec na začátku nebo konci řetězce. Zkuste upravit předchozí ukázku použít <xref:System.String.StartsWith%2A> a <xref:System.String.EndsWith%2A> místo <xref:System.String.Contains%2A>. Vyhledejte "Vás" nebo "goodbye" na začátku řetězce. Vyhledejte "hello" nebo "goodbye" na konci řetězce.
 
 
-    > [!Note]
+    > [!NOTE]
 
     > Podívejte se na vaše interpunkční znaménka při testování textu na konci řetězce. Pokud řetězec končí tečkou, musíte hledat řetězec končící tečkou.
 

@@ -1,15 +1,15 @@
 ---
-title: 'Průvodce: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)'
+title: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-ms.openlocfilehash: 51fb2a90a7398da5334e2fd4508f90d4594e5dc7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a9eb9f53b456b309997ef9e6fdb83b770478889b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54709491"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57379117"
 ---
-# <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Průvodce: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)
+# <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)
 Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce async/await. Můžete psát asynchronní kód, který vypadá jako synchronní kód a nechte kompilátor obtížné zpětného volání funkce a pokračování, které obvykle zahrnuje asynchronního kódu.  
   
  Další informace o funkci Async naleznete v tématu [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).  
@@ -47,7 +47,7 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
 ## <a name="prerequisites"></a>Požadavky  
  Visual Studio 2012 nebo novější musí nainstalovat ve vašem počítači. Další informace najdete v tématu [webu společnosti Microsoft](https://go.microsoft.com/fwlink/?LinkId=235233).  
   
-###  <a name="CreateWPFApp"></a> Vytvoření aplikace WPF  
+### <a name="CreateWPFApp"></a> Vytvoření aplikace WPF  
   
 1.  Spusťte Visual Studio.  
   
@@ -61,8 +61,8 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
      Nový projekt se zobrazí v **Průzkumníka řešení**.  
   
-##  <a name="BKMK_DesignWPFMainWin"></a>   
-###  <a name="MainWindow"></a> Návrh jednoduchého hlavního okna MainWindow WPF  
+## <a name="BKMK_DesignWPFMainWin"></a>   
+### <a name="MainWindow"></a> Návrh jednoduchého hlavního okna MainWindow WPF  
   
 1.  V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
   
@@ -90,8 +90,8 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
      Další informace o Návrhář WPF XAML najdete v tématu [vytvoření uživatelského rozhraní pomocí návrháře XAML](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio).  
   
-##  <a name="BKMK_AddReference"></a>   
-###  <a name="AddRef"></a> Přidání odkazu  
+## <a name="BKMK_AddReference"></a>   
+### <a name="AddRef"></a> Přidání odkazu  
   
 1.  V **Průzkumníka řešení**, vyberte název vašeho projektu.  
   
@@ -107,8 +107,8 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
 6.  Zvolte **OK** tlačítka zavřete dialogové okno.  
   
-##  <a name="BKMK_AddStatesandDirs"></a>   
-###  <a name="ImportsState"></a> Přidání potřebných příkazů Imports  
+## <a name="BKMK_AddStatesandDirs"></a>   
+### <a name="ImportsState"></a> Přidání potřebných příkazů Imports  
   
 1.  V **Průzkumníka řešení**, otevřete místní nabídku pro soubor MainWindow.xaml.vb a klikněte na tlačítko **zobrazit kód**.  
   
@@ -120,8 +120,8 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
     Imports System.IO  
     ```  
   
-##  <a name="BKMK_CreatSynchApp"></a>   
-###  <a name="synchronous"></a> Vytvoření synchronní aplikace  
+## <a name="BKMK_CreatSynchApp"></a>   
+### <a name="synchronous"></a> Vytvoření synchronní aplikace  
   
 1.  V okně návrhu, MainWindow.xaml, dvakrát klikněte **Start** pro vytvoření `startButton_Click` obslužné rutiny události v souboru MainWindow.xaml.vb.  
   
@@ -221,8 +221,8 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
     End Sub  
     ```  
   
-##  <a name="BKMK_TestSynchSol"></a>   
-###  <a name="testSynch"></a> Otestování synchronního řešení  
+## <a name="BKMK_TestSynchSol"></a>   
+### <a name="testSynch"></a> Otestování synchronního řešení  
   
 1.  Stisknutím klávesy F5 spusťte program a klikněte na tlačítko **Start** tlačítko.  
   
@@ -247,8 +247,8 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
      Všimněte si, že trvá několik sekund zobrazí počty. Během této doby vlákno uživatelského rozhraní je blokována během čekání požadované prostředky ke stažení. V důsledku toho nelze přesunout, maximalizovat, minimalizovat nebo dokonce zavřete okno zobrazení po zvolení **Start** tlačítko. Tyto aktivity dál rozšiřuji neúspěšné, dokud se začnou objevovat počtu bajtů. Pokud web nereaguje, je nutné žádná zpráva o které lokalitě se nezdařilo. Je obtížné i zastavte čekání a ukončení programu.  
   
-##  <a name="BKMK_ConvertGtBtArr"></a>   
-###  <a name="GetURLContents"></a> Převedení metody GetURLContents na asynchronní metodu  
+## <a name="BKMK_ConvertGtBtArr"></a>   
+### <a name="GetURLContents"></a> Převedení metody GetURLContents na asynchronní metodu  
   
 1.  Převést synchronní řešení na asynchronní řešení, je nejlepším místem pro spuštění v `GetURLContents` protože volání <xref:System.Net.HttpWebRequest> – metoda <xref:System.Net.HttpWebRequest.GetResponse%2A> a <xref:System.IO.Stream> metoda <xref:System.IO.Stream.CopyTo%2A> jsou, kde aplikace přistupuje na web . Rozhraní .NET Framework zjednodušuje převod zadáním asynchronní verze obě metody.  
   
@@ -329,8 +329,8 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
      Tyto drobné změny převodu `GetURLContents` na asynchronní metodu dokončení.  
   
-##  <a name="BKMK_ConvertSumPagSzs"></a>   
-###  <a name="SumPageSizes"></a> Převedení metody SumPageSizes na asynchronní metodu  
+## <a name="BKMK_ConvertSumPagSzs"></a>   
+### <a name="SumPageSizes"></a> Převedení metody SumPageSizes na asynchronní metodu  
   
 1.  Zopakujte kroky z předchozího postupu pro `SumPageSizes`. Nejprve změňte volání `GetURLContents` pro asynchronní volání.  
   
@@ -369,8 +369,8 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
      Převod `SumPageSizes` k `SumPageSizesAsync` je dokončena.  
   
-##  <a name="BKMK_Cnvrtbttn1"></a>   
-###  <a name="startButton"></a> Převedení metody startButton_Click na asynchronní metodu  
+## <a name="BKMK_Cnvrtbttn1"></a>   
+### <a name="startButton"></a> Převedení metody startButton_Click na asynchronní metodu  
   
 1.  V obslužné rutině události změnit název volané metody z `SumPageSizes` k `SumPageSizesAsync`, pokud jste tak již neučinili.  
   
@@ -415,8 +415,8 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
      Dokončení převodu projektu z synchronní pro asynchronní zpracování.  
   
-##  <a name="BKMK_testAsynchSolution"></a>   
-###  <a name="testAsynch"></a> Otestování asynchronního řešení  
+## <a name="BKMK_testAsynchSolution"></a>   
+### <a name="testAsynch"></a> Otestování asynchronního řešení  
   
 1.  Stisknutím klávesy F5 spusťte program a klikněte na tlačítko **Start** tlačítko.  
   
@@ -426,8 +426,8 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
     -   Co je nejdůležitější vlákno uživatelského rozhraní není blokované, soubory ke stažení. Můžete přecházet nebo změně velikosti okna, zatímco v průběhu stahování webové prostředky počítá a zobrazuje. Pokud některý z webů je pomalý nebo nereaguje, můžete zrušit operaci výběrem **Zavřít** tlačítko (x červená pole v pravém horním rohu).  
   
-##  <a name="BKMK_ReplaceGetByteArrayAsync"></a>   
-###  <a name="GetURLContentsAsync"></a> Nahrazení metody GetURLContentsAsync metodou rozhraní .NET Framework  
+## <a name="BKMK_ReplaceGetByteArrayAsync"></a>   
+### <a name="GetURLContentsAsync"></a> Nahrazení metody GetURLContentsAsync metodou rozhraní .NET Framework  
   
 1.  Rozhraní .NET Framework 4.5 poskytuje mnoho asynchronní metody, které můžete použít. Jeden z nich, <xref:System.Net.Http.HttpClient> metoda <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29>, stačí provedla potřebné pro tento návod. Můžete použít místo něj `GetURLContentsAsync` metoda, kterou jste vytvořili v předchozím kroku.  
   
@@ -452,7 +452,7 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
      Chování této verze projektu by měl odpovídat chování, které popisuje postup "k otestování asynchronního řešení", ale s i menším úsilím od vás.  
   
-##  <a name="BKMK_CompleteCodeExamples"></a> Příklad  
+## <a name="BKMK_CompleteCodeExamples"></a> Příklad  
  Následující kód obsahuje úplný příklad převod ze synchronního na asynchronní řešení pomocí asynchronní `GetURLContentsAsync` metodu, která jste napsali. Všimněte si, že důrazně vypadá podobně jako původní, která je synchronní řešení.  
   
 ```vb  

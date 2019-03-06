@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Hostování ovládacího prvku Win32 v subsystému WPF'
+title: 'Návod: Hostování ovládacího prvku Win32 v subsystému WPF'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - hosting Win32 control in WPF [WPF]
 - Win32 code [WPF], WPF interoperation
 ms.assetid: a676b1eb-fc55-4355-93ab-df840c41cea0
-ms.openlocfilehash: 047ccd4ea4ba83c8d7427559f3ee76cc3547a430
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 1bb5def111aad850a5f74afaba352394ac2587e9
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56747528"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377401"
 ---
-# <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>Průvodce: Hostování ovládacího prvku Win32 v subsystému WPF
+# <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>Návod: Hostování ovládacího prvku Win32 v subsystému WPF
 Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytváření aplikací. Ale pokud máte značné investice v kódu Win32, může být efektivnější opakovaně používat alespoň některé tohoto kódu v aplikaci WPF spíše než přepíše zcela. WPF poskytuje jednoduchý mechanismus pro hostování okně Win32, na stránce WPF.  
   
  Toto téma vás provede aplikace, [hostování ovládacím prvku Win32 v ukázce WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WPFHostingWin32Control), že ovládací prvek pole se seznamem Win32 hostitele. Tento obecný postup je možné rozšířit na hostování jakékoli okno Win32.  
@@ -23,7 +23,7 @@ Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytvář
   
 <a name="requirements"></a>   
 ## <a name="requirements"></a>Požadavky  
- Toto téma předpokládá základní znalost programování WPF a systému Win32. Základní informace o programování WPF, naleznete v tématu [Začínáme](../../../../docs/framework/wpf/getting-started/index.md). Úvod do programování Win32, můžete by měly odkazovat všechny mnoho knih, které k tomuto tématu, zejména *programování Windows* podle Charles Petzold.  
+ Toto téma předpokládá základní znalost programování WPF a systému Win32. Základní informace o programování WPF, naleznete v tématu [Začínáme](../getting-started/index.md). Úvod do programování Win32, můžete by měly odkazovat všechny mnoho knih, které k tomuto tématu, zejména *programování Windows* podle Charles Petzold.  
   
  Protože vzorku, který doprovází toto téma je implementována v C#, ho využívá platformu vyvolání služby (PInvoke) pro přístup k rozhraní API systému Win32. Některé znalost PInvoke je užitečné, ale není nutná.  
   
@@ -64,19 +64,19 @@ Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytvář
   
  Kód pro implementaci toto rozložení je poměrně jednoduché. Kořenový element <xref:System.Windows.Controls.DockPanel> , který má dva podřízené prvky. První je <xref:System.Windows.Controls.Border> element, který je hostitelem ListBox – ovládací prvek. Zabírá Čtvereček in 200 x 200 pravém horním rohu stránky. Druhým je <xref:System.Windows.Controls.StackPanel> element, který obsahuje sadu ovládacích prvků WPF, které zobrazují informace a umožňují manipulovat s ListBox – ovládací prvek tak, že nastavíte vystavený součinnosti vlastnosti. Pro každý z prvků, které jsou podřízené <xref:System.Windows.Controls.StackPanel>, naleznete v tématu referenční materiál pro různé prvky používá pro podrobnosti o tyto prvky jsou nebo co dělají, ty jsou uvedené ve níže uvedeného ukázkového kódu, ale nebudou je zde vysvětleno (na úrovni basic vzájemné spolupráce modelu nevyžaduje žádnou z nich, jsou poskytovány přidat některé interaktivitu k ukázce).  
   
- [!code-xaml[WPFHostingWin32Control#WPFUI](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml#wpfui)]  
+ [!code-xaml[WPFHostingWin32Control#WPFUI](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml#wpfui)]  
   
 <a name="host_class"></a>   
 ## <a name="implement-a-class-to-host-the-microsoft-win32-control"></a>Implementace třídy pro hostování ovládacího prvku Microsoft Win32  
  Jádrem této ukázce je třída, která ve skutečnosti hostuje ovládací prvek, ControlHost.cs. Dědí z <xref:System.Windows.Interop.HwndHost>. Konstruktor přijímá dva parametry, výšku a šířku, které odpovídají výšku a šířku <xref:System.Windows.Controls.Border> element, který je hostitelem ListBox – ovládací prvek. Tyto hodnoty se později použijí k Ujistěte se, že velikost odpovídá ovládacího prvku <xref:System.Windows.Controls.Border> elementu.  
   
- [!code-csharp[WPFHostingWin32Control#ControlHostClass](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#controlhostclass)]
- [!code-vb[WPFHostingWin32Control#ControlHostClass](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#controlhostclass)]  
+ [!code-csharp[WPFHostingWin32Control#ControlHostClass](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#controlhostclass)]
+ [!code-vb[WPFHostingWin32Control#ControlHostClass](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#controlhostclass)]  
   
  Existuje také sada konstanty. Tyto konstanty do značné míry pocházejí ze winuser a umožňují používat běžné názvy při volání funkce Win32.  
   
- [!code-csharp[WPFHostingWin32Control#ControlHostConstants](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#controlhostconstants)]
- [!code-vb[WPFHostingWin32Control#ControlHostConstants](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#controlhostconstants)]  
+ [!code-csharp[WPFHostingWin32Control#ControlHostConstants](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#controlhostconstants)]
+ [!code-vb[WPFHostingWin32Control#ControlHostConstants](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#controlhostconstants)]  
   
 <a name="buildwindowcore"></a>   
 ### <a name="override-buildwindowcore-to-create-the-microsoft-win32-window"></a>Přepsat BuildWindowCore se vytvořit okno Microsoft Win32  
@@ -90,26 +90,26 @@ Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytvář
   
  HWND ovládací prvek je přístupný prostřednictvím vlastnosti jen pro čtení, tak, aby stránka hostitele můžete použít k odesílání zpráv do ovládacího prvku.  
   
- [!code-csharp[WPFHostingWin32Control#IntPtrProperty](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#intptrproperty)]
- [!code-vb[WPFHostingWin32Control#IntPtrProperty](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#intptrproperty)]  
+ [!code-csharp[WPFHostingWin32Control#IntPtrProperty](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#intptrproperty)]
+ [!code-vb[WPFHostingWin32Control#IntPtrProperty](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#intptrproperty)]  
   
  ListBox – ovládací prvek je vytvořen jako podřízená položka okna hostitele. Výšku a šířku windows jsou nastaveny na hodnoty předané do konstruktoru, bylo uvedeno výše. Tím se zajistí, že velikost okna hostitele a ovládací prvek je stejné jako vyhrazené oblasti na stránce.  Po vytvoření okna vrátí vzorek <xref:System.Runtime.InteropServices.HandleRef> objekt, který obsahuje HWND okno hostitele.  
   
- [!code-csharp[WPFHostingWin32Control#BuildWindowCore](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#buildwindowcore)]
- [!code-vb[WPFHostingWin32Control#BuildWindowCore](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#buildwindowcore)]  
+ [!code-csharp[WPFHostingWin32Control#BuildWindowCore](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#buildwindowcore)]
+ [!code-vb[WPFHostingWin32Control#BuildWindowCore](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#buildwindowcore)]  
   
- [!code-csharp[WPFHostingWin32Control#BuildWindowCoreHelper](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#buildwindowcorehelper)]
- [!code-vb[WPFHostingWin32Control#BuildWindowCoreHelper](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#buildwindowcorehelper)]  
+ [!code-csharp[WPFHostingWin32Control#BuildWindowCoreHelper](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#buildwindowcorehelper)]
+ [!code-vb[WPFHostingWin32Control#BuildWindowCoreHelper](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#buildwindowcorehelper)]  
   
 <a name="destroywindow_wndproc"></a>   
 ### <a name="implement-destroywindow-and-wndproc"></a>Destroywindow – implementace a WndProc  
  Kromě <xref:System.Windows.Interop.HwndHost.BuildWindowCore%2A>, musí také přepsat <xref:System.Windows.Interop.HwndHost.WndProc%2A> a <xref:System.Windows.Interop.HwndHost.DestroyWindowCore%2A> metody <xref:System.Windows.Interop.HwndHost>. V tomto příkladu jsou zpracovávány zprávy pro ovládací prvek <xref:System.Windows.Interop.HwndHost.MessageHook> obslužné rutiny, takže provádění <xref:System.Windows.Interop.HwndHost.WndProc%2A> a <xref:System.Windows.Interop.HwndHost.DestroyWindowCore%2A> je minimální. V případě třídy <xref:System.Windows.Interop.HwndHost.WndProc%2A>, nastavte `handled` k `false` do značí, že zpráva nebyla zpracována a vrátí 0. Pro <xref:System.Windows.Interop.HwndHost.DestroyWindowCore%2A>, jednoduše odstranit okno.  
   
- [!code-csharp[WPFHostingWin32Control#WndProcDestroy](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#wndprocdestroy)]
- [!code-vb[WPFHostingWin32Control#WndProcDestroy](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#wndprocdestroy)]  
+ [!code-csharp[WPFHostingWin32Control#WndProcDestroy](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#wndprocdestroy)]
+ [!code-vb[WPFHostingWin32Control#WndProcDestroy](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#wndprocdestroy)]  
   
- [!code-csharp[WPFHostingWin32Control#WndProcDestroyHelper](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#wndprocdestroyhelper)]
- [!code-vb[WPFHostingWin32Control#WndProcDestroyHelper](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#wndprocdestroyhelper)]  
+ [!code-csharp[WPFHostingWin32Control#WndProcDestroyHelper](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/ControlHost.cs#wndprocdestroyhelper)]
+ [!code-vb[WPFHostingWin32Control#WndProcDestroyHelper](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/ControlHost.vb#wndprocdestroyhelper)]  
   
 <a name="host_the_control"></a>   
 ## <a name="host-the-control-on-the-page"></a>Hostování ovládacího prvku na stránce  
@@ -120,11 +120,11 @@ Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytvář
 > [!NOTE]
 >  Všimněte si, že existují dvě Deklarace SendMessage PInvoke. To je nezbytné, protože jeden používá `wParam` předat řetězec a druhý parametr se používá k předání celé číslo. Budete potřebovat samostatné prohlášení pro každý podpis k zajištění, že je správně zařazovat data.  
   
- [!code-csharp[WPFHostingWin32Control#HostWindowClass](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml.cs#hostwindowclass)]
- [!code-vb[WPFHostingWin32Control#HostWindowClass](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/Page1.xaml.vb#hostwindowclass)]  
+ [!code-csharp[WPFHostingWin32Control#HostWindowClass](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml.cs#hostwindowclass)]
+ [!code-vb[WPFHostingWin32Control#HostWindowClass](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/Page1.xaml.vb#hostwindowclass)]  
   
- [!code-csharp[WPFHostingWin32Control#ControlMsgFilterSendMessage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml.cs#controlmsgfiltersendmessage)]
- [!code-vb[WPFHostingWin32Control#ControlMsgFilterSendMessage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/Page1.xaml.vb#controlmsgfiltersendmessage)]  
+ [!code-csharp[WPFHostingWin32Control#ControlMsgFilterSendMessage](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml.cs#controlmsgfiltersendmessage)]
+ [!code-vb[WPFHostingWin32Control#ControlMsgFilterSendMessage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/Page1.xaml.vb#controlmsgfiltersendmessage)]  
   
 <a name="communication"></a>   
 ## <a name="implement-communication-between-the-control-and-the-page"></a>Implementace komunikace mezi ovládacím prvkem a na stránce  
@@ -142,18 +142,18 @@ Windows Presentation Foundation (WPF) poskytuje bohaté prostředí pro vytvář
   
  Připojit položky odeslat pole se seznamem [ `LB_ADDSTRING` zpráva](/windows/desktop/Controls/lb-addstring). Odstranit položky odeslat [ `LB_GETCURSEL` ](/windows/desktop/Controls/lb-getcursel) získat index aktuálního výběru a potom [ `LB_DELETESTRING` ](/windows/desktop/Controls/lb-deletestring) odstranit položku. Ukázka rovněž odesílá [ `LB_GETCOUNT` ](/windows/desktop/Controls/lb-getcount)a aktualizovat zobrazení, který zobrazuje počet položek, které používá vrácené hodnoty. Obě tyto instance [ `SendMessage` ](/windows/desktop/api/winuser/nf-winuser-sendmessage) použijte jednu z deklarace PInvoke popsané v předchozí části.  
   
- [!code-csharp[WPFHostingWin32Control#AppendDeleteText](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml.cs#appenddeletetext)]
- [!code-vb[WPFHostingWin32Control#AppendDeleteText](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/Page1.xaml.vb#appenddeletetext)]  
+ [!code-csharp[WPFHostingWin32Control#AppendDeleteText](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml.cs#appenddeletetext)]
+ [!code-vb[WPFHostingWin32Control#AppendDeleteText](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFHostingWin32Control/VisualBasic/Page1.xaml.vb#appenddeletetext)]  
   
  Když uživatel vybere položku nebo mění jejich výběr, ovládací prvek upozorní okno hostitele a odeslat ho [ `WM_COMMAND` zprávy](/windows/desktop/menurc/wm-command), která vyvolává <xref:System.Windows.Interop.HwndHost.MessageHook> událostí stránky. Obslužná rutina obdrží stejné informace jako hlavní okno procedury okna hostitele. Také předá odkazem na hodnotu typu Boolean `handled`. Nastavíte `handled` k `true` k označení, že mají zpracovat zprávu a je potřeba žádné další zpracování.  
   
  [`WM_COMMAND`](/windows/desktop/menurc/wm-command) pro celou řadu důvodů se odešle, tak, aby musí zkontrolovat ID oznámení k určení, zda je událost, kterou chcete zpracovat. ID je součástí vysokou slova `wParam` parametru. Ukázka používá bitové operátory k extrakci ID. Pokud uživatel provedené nebo změnit jejich výběr, ID bude [ `LBN_SELCHANGE` ](/windows/desktop/Controls/lbn-selchange).  
   
- Když [ `LBN_SELCHANGE` ](https://msdn.microsoft.com/library/windows/desktop/bb775161(v=vs.85).aspx) je přijata, ukázka získá index vybrané položky odesláním ovládacího prvku [ `LB_GETCURSEL` zpráva](/windows/desktop/Controls/lb-getcursel). Pokud chcete získat text, je třeba nejprve vytvořit <xref:System.Text.StringBuilder>. Poté pošlete ovládacího prvku [ `LB_GETTEXT` zpráva](/windows/desktop/Controls/lb-gettext). Předat prázdnou <xref:System.Text.StringBuilder> objektu jako `wParam` parametru. Když [ `SendMessage` ](/windows/desktop/api/winuser/nf-winuser-sendmessage) návratu <xref:System.Text.StringBuilder> bude obsahovat text vybrané položky. Toto použití [ `SendMessage` ](/windows/desktop/api/winuser/nf-winuser-sendmessage) vyžaduje další deklarace PInvoke.  
+ Když [ `LBN_SELCHANGE` ](/windows/desktop/Controls/lbn-selchange) je přijata, ukázka získá index vybrané položky odesláním ovládacího prvku [ `LB_GETCURSEL` zpráva](/windows/desktop/Controls/lb-getcursel). Pokud chcete získat text, je třeba nejprve vytvořit <xref:System.Text.StringBuilder>. Poté pošlete ovládacího prvku [ `LB_GETTEXT` zpráva](/windows/desktop/Controls/lb-gettext). Předat prázdnou <xref:System.Text.StringBuilder> objektu jako `wParam` parametru. Když [ `SendMessage` ](/windows/desktop/api/winuser/nf-winuser-sendmessage) návratu <xref:System.Text.StringBuilder> bude obsahovat text vybrané položky. Toto použití [ `SendMessage` ](/windows/desktop/api/winuser/nf-winuser-sendmessage) vyžaduje další deklarace PInvoke.  
   
  Nakonec nastavte `handled` k `true` k označení, že zpráva byla zpracována.  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Interop.HwndHost>
-- [Vzájemná spolupráce grafického subsystému WPF a systému Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)
-- [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)
+- [Vzájemná spolupráce grafického subsystému WPF a systému Win32](wpf-and-win32-interoperation.md)
+- [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)

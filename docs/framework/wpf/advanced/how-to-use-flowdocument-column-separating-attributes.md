@@ -6,21 +6,21 @@ helpviewer_keywords:
 - column-separating attributes
 - documents [WPF], FlowDocument column-separating attributes
 ms.assetid: c7a822f8-aeca-45bd-a258-2852ff28005c
-ms.openlocfilehash: 678e01a35c286ea03f0385291d64f2f900f068c5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8693c8973442a5c6e65e64c5c66194c11bbff119
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33543768"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57363779"
 ---
 # <a name="how-to-use-flowdocument-column-separating-attributes"></a>Postupy: Použití atributů pro oddělení sloupců FlowDocument
-Tento příklad ukazuje způsob použití funkce dělicí sloupec <xref:System.Windows.Documents.FlowDocument>.  
+Tento příklad ukazuje, jak používat funkce oddělení sloupců <xref:System.Windows.Documents.FlowDocument>.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu definuje <xref:System.Windows.Documents.FlowDocument>a nastaví <xref:System.Windows.Documents.FlowDocument.ColumnGap%2A>, <xref:System.Windows.Documents.FlowDocument.ColumnRuleBrush%2A>, a <xref:System.Windows.Documents.FlowDocument.ColumnRuleWidth%2A> atributy.  <xref:System.Windows.Documents.FlowDocument> Obsahuje jeden odstavec Ukázka obsahu.  
+ Následující příklad definuje <xref:System.Windows.Documents.FlowDocument>a nastaví <xref:System.Windows.Documents.FlowDocument.ColumnGap%2A>, <xref:System.Windows.Documents.FlowDocument.ColumnRuleBrush%2A>, a <xref:System.Windows.Documents.FlowDocument.ColumnRuleWidth%2A> atributy.  <xref:System.Windows.Documents.FlowDocument> Obsahuje jeden odstavec ukázkový obsah.  
   
- [!code-xaml[FlowDocumentSnippets#_FlowDocumentColumnStuffXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentcolumnstuffxaml)]  
+ [!code-xaml[FlowDocumentSnippets#_FlowDocumentColumnStuffXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml#_flowdocumentcolumnstuffxaml)]  
   
- Následující obrázek znázorňuje důsledky <xref:System.Windows.Documents.FlowDocument.ColumnGap%2A>, <xref:System.Windows.Documents.FlowDocument.ColumnRuleBrush%2A>, a <xref:System.Windows.Documents.FlowDocument.ColumnRuleWidth%2A> atributů v vykreslené <xref:System.Windows.Documents.FlowDocument>.  
+ Následující obrázek ukazuje účinky <xref:System.Windows.Documents.FlowDocument.ColumnGap%2A>, <xref:System.Windows.Documents.FlowDocument.ColumnRuleBrush%2A>, a <xref:System.Windows.Documents.FlowDocument.ColumnRuleWidth%2A> atributů vykreslovaných <xref:System.Windows.Documents.FlowDocument>.  
   
- ![Snímek obrazovky: Sloupec objektu FlowDocument](../../../../docs/framework/wpf/advanced/media/flowdocumentintracolumn.png "FlowDocumentIntraColumn")
+ ![Snímek obrazovky: Sloupec objektu FlowDocument](./media/flowdocumentintracolumn.png "FlowDocumentIntraColumn")

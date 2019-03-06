@@ -8,25 +8,25 @@ helpviewer_keywords:
 - controls [WPF], ToolTip
 - popups [WPF]
 ms.assetid: a3cb42d6-6ce3-4aa0-a557-2cc5b142f1e4
-ms.openlocfilehash: 50656f0d8ca1eafa62d65a2fe275398c9694cc69
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8f471b26daa89bc513b36eaed5336aa6262cb26d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33556975"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57367567"
 ---
 # <a name="tooltip"></a>Popisy tlačítek
-Popisek je malé místní okno, které se zobrazí, když uživatel pozastaví ukazatel myši nad elementem, například jako přes <xref:System.Windows.Controls.Button>.  
+Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení ukazatele myši nad prvkem, například jako více než je ovládací prvek tooltip <xref:System.Windows.Controls.Button>.  
   
- Následující obrázek ukazuje, která odkazuje na ukazatel myši **Zavřít**<xref:System.Windows.Controls.Button>, který pak zobrazí její identifikaci <xref:System.Windows.Controls.ToolTip>.  
+ Na následujícím obrázku, který odkazuje na ukazatel myši **Zavřít**<xref:System.Windows.Controls.Button>, která pak zobrazí jeho identifikaci <xref:System.Windows.Controls.ToolTip>.  
   
- Tlačítko Zavřít s jeho popis zobrazený  
+ Tlačítko Zavřít s jeho popis zobrazený v  
   
- ![Snímek obrazovky popisek](../../../../docs/framework/wpf/controls/media/ss-ctl-tooltip.png "SS_CTL_tooltip")  
+ ![Snímek obrazovky popisek](./media/ss-ctl-tooltip.png "SS_CTL_tooltip")  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [ToolTip – přehled](../../../../docs/framework/wpf/controls/tooltip-overview.md)  
-  [Témata s postupy](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)  
+ [ToolTip – přehled](tooltip-overview.md)  
+  [Témata s postupy](tooltip-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ToolTip>  
@@ -34,5 +34,5 @@ Popisek je malé místní okno, které se zobrazí, když uživatel pozastaví u
   <xref:System.Windows.Controls.Primitives.Popup>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled prvku Popup](../../../../docs/framework/wpf/controls/popup-overview.md)  
-  [Témata s postupy](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)
+ [Přehled prvku Popup](popup-overview.md)  
+  [Témata s postupy](popup-how-to-topics.md)

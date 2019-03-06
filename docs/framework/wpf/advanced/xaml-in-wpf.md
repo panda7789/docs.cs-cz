@@ -7,39 +7,39 @@ helpviewer_keywords:
 - XAML [WPF]
 - Extensible Application Markup Language [WPF]
 ms.assetid: 5d858575-a83b-42df-ad3f-047ed2d6e3c8
-ms.openlocfilehash: 5a1db973be51d98ad6e55062fac23e31926f2bb1
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 0d04b656492dd934199164920e35bdaaa0663032
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46710762"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57362900"
 ---
 # <a name="xaml-in-wpf"></a>XAML ve WPF
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] je značkovací jazyk pro deklarativních aplikací programování. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] implementuje implementace aXAML procesoru a poskytuje podporu jazyka XAML. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Typy jsou implementované tak, že poskytují požadovaný typ zálohování pro reprezentaci XAML. Obecně platí, můžete vytvořit většina vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace uživatelského rozhraní v kódu XAML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [Podrobná syntaxe XAML](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)  
- [Podkladový kód a kód XAML v subsystému WPF](../../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)  
- [XAML a vlastní třídy pro WPF](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)  
- [Rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
- [Obory názvů XAML a mapování oboru názvů pro WPF XAML](../../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)  
- [Obory názvů WPF XAML](../../../../docs/framework/wpf/advanced/wpf-xaml-namescopes.md)  
- [Vložené styly a šablony](../../../../docs/framework/wpf/advanced/inline-styles-and-templates.md)  
- [Zpracování mezerových znaků v XAML](../../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)  
- [TypeConverters a XAML](../../../../docs/framework/wpf/advanced/typeconverters-and-xaml.md)  
- [Znakové entity XML a jazyk XAML](../../../../docs/framework/xaml-services/xml-character-entities-and-xaml.md)  
- [Jazykové funkce oboru názvů jazyka XAML (x:)](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)  
- [Rozšíření WPF XAML](../../../../docs/framework/wpf/advanced/wpf-xaml-extensions.md)  
- [Jazykové funkce kompatibility značek (mc:)](../../../../docs/framework/wpf/advanced/markup-compatibility-mc-language-features.md)  
+ [Přehled XAML (WPF)](xaml-overview-wpf.md)  
+ [Podrobná syntaxe XAML](xaml-syntax-in-detail.md)  
+ [Podkladový kód a kód XAML v subsystému WPF](code-behind-and-xaml-in-wpf.md)  
+ [XAML a vlastní třídy pro WPF](xaml-and-custom-classes-for-wpf.md)  
+ [Rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md)  
+ [Obory názvů XAML a mapování oboru názvů pro WPF XAML](xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)  
+ [Obory názvů WPF XAML](wpf-xaml-namescopes.md)  
+ [Vložené styly a šablony](inline-styles-and-templates.md)  
+ [Zpracování mezerových znaků v XAML](../../xaml-services/whitespace-processing-in-xaml.md)  
+ [TypeConverters a XAML](typeconverters-and-xaml.md)  
+ [Znakové entity XML a jazyk XAML](../../xaml-services/xml-character-entities-and-xaml.md)  
+ [Namespace XAML (x:) Jazykové funkce](../../xaml-services/xaml-namespace-x-language-features.md)  
+ [Rozšíření WPF XAML](wpf-xaml-extensions.md)  
+ [Kompatibility značek (mc:) Jazykové funkce](markup-compatibility-mc-language-features.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Architektura WPF](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
-  [Základní elementy](../../../../docs/framework/wpf/advanced/base-elements.md)  
-  [Strom elementu a serializace](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
-  [Vlastnosti](../../../../docs/framework/wpf/advanced/properties-wpf.md)  
-  [Události](../../../../docs/framework/wpf/advanced/events-wpf.md)  
-  [Vstup](../../../../docs/framework/wpf/advanced/input-wpf.md)  
-  [Prostředky](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
-  [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
-  [Model vláken](../../../../docs/framework/wpf/advanced/threading-model.md)
+ [Architektura WPF](wpf-architecture.md)  
+  [Základní elementy](base-elements.md)  
+  [Strom elementu a serializace](element-tree-and-serialization.md)  
+  [Vlastnosti](properties-wpf.md)  
+  [Události](events-wpf.md)  
+  [Vstup](input-wpf.md)  
+  [Prostředky](resources-wpf.md)  
+  [Styly a šablony](../controls/styling-and-templating.md)  
+  [Model vláken](threading-model.md)

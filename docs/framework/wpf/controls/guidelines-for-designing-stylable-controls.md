@@ -5,12 +5,12 @@ helpviewer_keywords:
 - style design for controls [WPF]
 - controls [WPF], style design
 ms.assetid: c52dde45-a311-4531-af4c-853371c4d5f4
-ms.openlocfilehash: 02333d05bc1c0f9804caa36af1a1842cba22908c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 88f03b8084b0160e5c61bfdc4dc6984fbd1cddde
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54545027"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352981"
 ---
 # <a name="guidelines-for-designing-stylable-controls"></a>Pokyny pro návrh ovládacích prvků s podporou stylů
 Tento dokument shrnuje sadu osvědčených postupů, které je třeba zvážit při návrhu ovládací prvek, který máte v úmyslu být snadno s podporou stylů a templatable. Jsme obdrželi na tuto sadu osvědčených postupů prostřednictvím spoustu omyl a při práci na – styly ovládacích prvků motivu pro předdefinované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sada ovládacích prvků. Jsme zjistili, že úspěšné stylů je co nejvíce funkcí dobře navržené objektový model je styl samotného. Jeho zamýšlenou cílovou skupinou pro tento dokument je ovládací prvek autora, ne Autor stylu.  
@@ -27,7 +27,7 @@ Tento dokument shrnuje sadu osvědčených postupů, které je třeba zvážit p
   
 -   Datové šablony.  
   
- Úvod do styly a šablony, najdete v části [styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md).  
+ Úvod do styly a šablony, najdete v části [styly a šablony](styling-and-templating.md).  
   
 <a name="Before_You_Start__Understanding_Your_Control"></a>   
 ## <a name="before-you-start-understanding-your-control"></a>Než začnete: Princip ovládacího prvku  
@@ -119,5 +119,5 @@ Tento dokument shrnuje sadu osvědčených postupů, které je třeba zvážit p
 -   **Styly motivů není nutné mít sémantiku konzistentní "layout" přes všechny motivy**. Například výchozí styl není potřeba zajistit, že se ovládací prvek zabírají stejné množství velikost ve všech motivy nebo zaručit, že ovládací prvek bude mít stejný obsah rozpětí / odsazení mezi všechny motivy.  
   
 ## <a name="see-also"></a>Viz také:
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
-- [Přehled vytváření ovládacích prvků](../../../../docs/framework/wpf/controls/control-authoring-overview.md)
+- [Styly a šablony](styling-and-templating.md)
+- [Přehled vytváření ovládacích prvků](control-authoring-overview.md)

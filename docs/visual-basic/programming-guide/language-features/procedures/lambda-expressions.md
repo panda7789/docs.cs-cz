@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expressions [Visual Basic], lambda
 - inline functions [Visual Basic]
 ms.assetid: 137064b0-3928-4bfa-ba71-c3f9cbd951e2
-ms.openlocfilehash: de09612ee978ee809ee07f0db2e37b14533760da
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 02377b0765144064df8d51fa63768412ca4b606a
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56974806"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57363474"
 ---
 # <a name="lambda-expressions-visual-basic"></a>Lambda – výrazy (Visual Basic)
 A *výraz lambda* je funkce nebo podprogramu bez názvu, který lze použít bez ohledu na to delegát je platný. Výrazy lambda může být funkce nebo podprogramy a může být jeden nebo více řádků. Můžete předat hodnoty z aktuálního oboru pro výraz lambda.  
@@ -109,7 +109,7 @@ End Class
   
  Další informace o tom, jak vytvořit a používat asynchronní metody, naleznete v tématu [Asynchronous Programming with Async and Await](../../../../visual-basic/programming-guide/concepts/async/index.md).  
   
-##  <a name="context"></a> Kontext  
+## <a name="context"></a> Kontext  
  Výraz lambda sdílí jeho kontextu oboru, ve kterém je definována. Má stejná přístupová práva jako libovolný kód napsaný v rozsah. Jedná se o přístup k proměnné členů, funkcí a typu Sub, `Me`a parametrů a lokálních proměnných v nadřazeného oboru.  
   
  Přístup k místní proměnné a parametry v rozsah můžete rozšířit nad rámec doby života tohoto oboru. Dokud delegát, který odkazuje na výraz lambda není k dispozici pro uvolňování paměti, přístup k proměnným v původní prostředí se zachová. V následujícím příkladu proměnná `target` je lokální vzhledem k `makeTheGame`, metody, ve které výraz lambda `playTheGame` je definována. Všimněte si, že vrácený výraz lambda, přiřazená `takeAGuess` v `Main`, má stále přístup k místní proměnné `target`.  

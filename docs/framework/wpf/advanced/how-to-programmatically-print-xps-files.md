@@ -8,12 +8,12 @@ helpviewer_keywords:
 - printing XPS files programmatically [WPF]
 - XPS files [WPF], printing programmatically
 ms.assetid: 0b1c0a3f-b19e-43d6-bcc9-eb3ec4e555ad
-ms.openlocfilehash: 53cc58b3e30b91e8694a8090f3cc85cf0b3c0af6
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: c00a12000dd10ba32bd550186377547b3ef72d25
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442916"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57372721"
 ---
 # <a name="how-to-programmatically-print-xps-files"></a>Postupy: Tisk souborů XPS z programu
 Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A> metoda tisknout [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] soubory bez zahájení <xref:System.Windows.Controls.PrintDialog> nebo v zásadě, všechny [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] vůbec.  
@@ -43,8 +43,8 @@ Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A
   
  Masa v příkladu se `static` **BatchXPSPrinter.PrintXPS** metody. Po vytvoření tiskového serveru a fronty, metoda výzvu k zadání adresáře, který obsahuje [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] soubory. Po ověření existence adresáře a přítomnost \*XPS soubory v něm, metoda přidá každý takový soubor tiskové fronty. Příklad předpokládá, že je tiskárna bez XPSDrv, tak jsme prochází `false` pro poslední parametr <xref:System.Printing.PrintQueue.AddJob%28System.String%2CSystem.String%2CSystem.Boolean%29> metody. Z tohoto důvodu se ověří metodu [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] kód v souboru dříve než se pokusí převést na jazyk popisu stránky tiskárny. Pokud se ověření nezdaří, je vyvolána výjimka. Příklad kódu se zachytit výjimku, informovat uživatele o tom a poté přejděte k další zpracování [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] souboru.  
   
- [!code-csharp[BatchPrintXPSFiles#BatchPrintXPSFiles](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BatchPrintXPSFiles/CSharp/Program.cs#batchprintxpsfiles)]
- [!code-vb[BatchPrintXPSFiles#BatchPrintXPSFiles](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BatchPrintXPSFiles/visualbasic/program.vb#batchprintxpsfiles)]  
+ [!code-csharp[BatchPrintXPSFiles#BatchPrintXPSFiles](~/samples/snippets/csharp/VS_Snippets_Wpf/BatchPrintXPSFiles/CSharp/Program.cs#batchprintxpsfiles)]
+ [!code-vb[BatchPrintXPSFiles#BatchPrintXPSFiles](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BatchPrintXPSFiles/visualbasic/program.vb#batchprintxpsfiles)]  
   
  Pokud používáte XPSDrv tiskárny a potom poslední parametr lze nastavit na `true`. V takovém případě od [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] je jazyk stránky popis tiskárny, metoda odešle soubor do tiskárny bez ověřování nebo jeho převodu do jiného jazyka popis stránky. Pokud si nejste jisti v době návrhu, jestli aplikace budou používat XPSDrv tiskárny, můžete upravit aplikaci jeho čtení <xref:System.Printing.PrintQueue.IsXpsDevice%2A> vlastnost a větev, podle zjištěných informacích.  
   

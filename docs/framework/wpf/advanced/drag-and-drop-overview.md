@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drag-and-drop [WPF], events
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
-ms.openlocfilehash: 82d2a055f6780c81c601665f8c3403d9d95c85df
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 67c332b4fd4d2937f3a455353f3a5353dde10ef5
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54492570"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57356478"
 ---
 # <a name="drag-and-drop-overview"></a>Přehled přetažení
 Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Přetáhněte myší obvykle odkazuje na metodu přenosu dat, která zahrnuje pomocí myši (nebo jiné polohovací zařízení) a vyberte jeden nebo více objektů, tyto objekty přetáhnete přes některé požadovaný cíl v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]a jejich vyřazení.  
@@ -50,7 +50,7 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
   
  V operaci kopírování a vkládání do schránky systému se používá k dočasnému uložení přenášených dat; v rámci operace přetažení myší <xref:System.Windows.DataObject> se používá k uložení dat. Entity se skládá z jednoho nebo více párů datový objekt <xref:System.Object> obsahující skutečná data a odpovídající identifikátor formát data.  
   
- Zdroje přetažení zahájí operaci přetažení myší voláním statické <xref:System.Windows.DragDrop.DoDragDrop%2A?displayProperty=nameWithType> metoda a předáním přenášená data. <xref:System.Windows.DragDrop.DoDragDrop%2A> Metoda bude automaticky zalomí, data <xref:System.Windows.DataObject> v případě potřeby. Pro větší kontrolu nad formátem data, můžete data v zabalit <xref:System.Windows.DataObject> před předáním do <xref:System.Windows.DragDrop.DoDragDrop%2A> metody. Cíl přetažení je zodpovědný za extrahování dat z <xref:System.Windows.DataObject>. Další informace o práci s objekty dat, naleznete v tématu [Data a datové objekty](../../../../docs/framework/wpf/advanced/data-and-data-objects.md).  
+ Zdroje přetažení zahájí operaci přetažení myší voláním statické <xref:System.Windows.DragDrop.DoDragDrop%2A?displayProperty=nameWithType> metoda a předáním přenášená data. <xref:System.Windows.DragDrop.DoDragDrop%2A> Metoda bude automaticky zalomí, data <xref:System.Windows.DataObject> v případě potřeby. Pro větší kontrolu nad formátem data, můžete data v zabalit <xref:System.Windows.DataObject> před předáním do <xref:System.Windows.DragDrop.DoDragDrop%2A> metody. Cíl přetažení je zodpovědný za extrahování dat z <xref:System.Windows.DataObject>. Další informace o práci s objekty dat, naleznete v tématu [Data a datové objekty](data-and-data-objects.md).  
   
  Zdroj a cíl operace přetažení myší jsou prvky uživatelského rozhraní; data, která je ve skutečnosti přenášených obvykle nemá vizuální reprezentace. Můžete napsat kód k poskytování vizuální znázornění dat, který je přetažen, jako například vyvolá se v případě přetahování souborů v Průzkumníku Windows. Ve výchozím nastavení zpětná vazba je uživateli poskytnutý změnou kurzor představují efekt, který bude mít operace přetažení myší na data, jako například, jestli budou data přesunout ani zkopírovat.  
   
@@ -63,7 +63,7 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
   
 <a name="Drag_and_Drop_Events"></a>   
 ## <a name="drag-and-drop-events"></a>Události přetažení myší  
- Operace přetažení myší podporují s modelem řízené událostmi.  Přetáhněte zdroj a cíl operace přetažení myší pomocí standardní sadu událostí.  Následující tabulky shrnují standardní události přetažení myší. Toto jsou připojené události na <xref:System.Windows.DragDrop> třídy. Další informace o přidružené události najdete v tématu [přehled připojených událostí](../../../../docs/framework/wpf/advanced/attached-events-overview.md).  
+ Operace přetažení myší podporují s modelem řízené událostmi.  Přetáhněte zdroj a cíl operace přetažení myší pomocí standardní sadu událostí.  Následující tabulky shrnují standardní události přetažení myší. Toto jsou připojené události na <xref:System.Windows.DragDrop> třídy. Další informace o přidružené události najdete v tématu [přehled připojených událostí](attached-events-overview.md).  
   
 ### <a name="drag-source-events"></a>Zdroj události přetažení  
   
@@ -87,7 +87,7 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
 |<xref:System.Windows.DragDrop.PreviewDragOver>|Tunelového propojení verzi <xref:System.Windows.DragDrop.DragOver>.|  
 |<xref:System.Windows.DragDrop.PreviewDrop>|Tunelového propojení verzi <xref:System.Windows.DragDrop.Drop>.|  
   
- Zpracování událostí a přetahování pro instancí objektu, přidejte obslužné rutiny pro události uvedené v předchozích tabulkách. Zpracování událostí a přetahování na úrovni třídy, přepište odpovídající virtuální na * událostí a na\*PreviewEvent metody. Další informace najdete v tématu [třídy zpracování směrování událostí, které ovládací prvek základní třídy](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md#Class_Handling_of_Routed_Events).  
+ Zpracování událostí a přetahování pro instancí objektu, přidejte obslužné rutiny pro události uvedené v předchozích tabulkách. Zpracování událostí a přetahování na úrovni třídy, přepište odpovídající virtuální na * událostí a na\*PreviewEvent metody. Další informace najdete v tématu [třídy zpracování směrování událostí, které ovládací prvek základní třídy](marking-routed-events-as-handled-and-class-handling.md#Class_Handling_of_Routed_Events).  
   
 <a name="Implementing_Drag_And_Drop"></a>   
 ## <a name="implementing-drag-and-drop"></a>Implementace přetažení myší  
@@ -123,9 +123,9 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
   
 <a name="Drag_And_Drop_Example"></a>   
 ## <a name="drag-and-drop-example"></a>Příklad přetažení myší  
- Tato část popisuje, jak implementovat a přetažení pro <xref:System.Windows.Shapes.Ellipse> elementu. <xref:System.Windows.Shapes.Ellipse> Přetáhněte zdroj a cíl přetažení. Přenášených dat je řetězcové vyjádření se třemi tečkami <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnost. Zobrazí se následující XAML <xref:System.Windows.Shapes.Ellipse> element a související události přetažení myší, které zpracovává. Zopakujte kroky pro implementaci přetažení myší, naleznete v tématu [názorný postup: Povolení přetahování na uživatelský ovládací prvek](../../../../docs/framework/wpf/advanced/walkthrough-enabling-drag-and-drop-on-a-user-control.md).  
+ Tato část popisuje, jak implementovat a přetažení pro <xref:System.Windows.Shapes.Ellipse> elementu. <xref:System.Windows.Shapes.Ellipse> Přetáhněte zdroj a cíl přetažení. Přenášených dat je řetězcové vyjádření se třemi tečkami <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnost. Zobrazí se následující XAML <xref:System.Windows.Shapes.Ellipse> element a související události přetažení myší, které zpracovává. Zopakujte kroky pro implementaci přetažení myší, naleznete v tématu [názorný postup: Povolení přetahování na uživatelský ovládací prvek](walkthrough-enabling-drag-and-drop-on-a-user-control.md).  
   
- [!code-xaml[DragDropSnippets#EllipseXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml#ellipsexaml)]  
+ [!code-xaml[DragDropSnippets#EllipseXaml](~/samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml#ellipsexaml)]  
   
 ### <a name="enabling-an-element-to-be-a-drag-source"></a>Umožňuje Element, který má jako zdroj přetažení  
  Objekt, který je zdrojem přetažení je zodpovědný za:  
@@ -142,8 +142,8 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
   
  Je zodpovědností aplikace k určení, kdy dochází k přetáhněte, a poté operaci inicializovat přetažení myší pomocí volání <xref:System.Windows.DragDrop.DoDragDrop%2A> metody. Obvykle, když jde <xref:System.Windows.UIElement.MouseMove> přes elementu, který chcete přetáhnout, když se stiskne tlačítko myši, dojde k události. Následující příklad ukazuje, jak se zahájit operaci přetažení myší z <xref:System.Windows.UIElement.MouseMove> obslužná rutina události <xref:System.Windows.Shapes.Ellipse> element k němu zdroji přetažení. Přenášených dat je řetězcové vyjádření se třemi tečkami <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnost.  
   
- [!code-csharp[DragDropSnippets#DoDragDrop](../../../../samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#dodragdrop)]
- [!code-vb[DragDropSnippets#DoDragDrop](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#dodragdrop)]  
+ [!code-csharp[DragDropSnippets#DoDragDrop](~/samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#dodragdrop)]
+ [!code-vb[DragDropSnippets#DoDragDrop](~/samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#dodragdrop)]  
   
  Uvnitř <xref:System.Windows.UIElement.MouseMove> obslužná rutina události, volání <xref:System.Windows.DragDrop.DoDragDrop%2A> metoda k zahájení operace přetažení myší. <xref:System.Windows.DragDrop.DoDragDrop%2A> Metoda přijímá tři parametry:  
   
@@ -153,7 +153,7 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
   
 -   `allowedEffects` -Jedním z <xref:System.Windows.DragDropEffects> hodnot výčtu, která určuje povolené efekty operace přetažení myší.  
   
- Může být jakýkoli serializovatelný objekt předaný `data` parametru. Je-li data již není zabalené v <xref:System.Windows.DataObject>, se automaticky uzavřou v novém <xref:System.Windows.DataObject>. Předat více položek dat, je nutné vytvořit <xref:System.Windows.DataObject> sami a předat ho metodě <xref:System.Windows.DragDrop.DoDragDrop%2A> metody. Další informace najdete v tématu [Data a datové objekty](../../../../docs/framework/wpf/advanced/data-and-data-objects.md).  
+ Může být jakýkoli serializovatelný objekt předaný `data` parametru. Je-li data již není zabalené v <xref:System.Windows.DataObject>, se automaticky uzavřou v novém <xref:System.Windows.DataObject>. Předat více položek dat, je nutné vytvořit <xref:System.Windows.DataObject> sami a předat ho metodě <xref:System.Windows.DragDrop.DoDragDrop%2A> metody. Další informace najdete v tématu [Data a datové objekty](data-and-data-objects.md).  
   
  `allowedEffects` Parametr se používá k určení, co se zdroji přetažení umožňují cíl přetažení se přenášená data. Běžné hodnoty pro zdroj přetažení <xref:System.Windows.DragDropEffects.Copy>, <xref:System.Windows.DragDropEffects.Move>, a <xref:System.Windows.DragDropEffects.All>.  
   
@@ -192,32 +192,32 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
   
  Následující příklad ukazuje <xref:System.Windows.DragDrop.DragEnter> obslužné rutiny události pro <xref:System.Windows.Shapes.Ellipse> elementu. Tento kód zobrazí náhled účinky operace přetažení myší uložením aktuální <xref:System.Windows.Shapes.Shape.Fill%2A> štětce. Poté použije <xref:System.Windows.DataObject.GetDataPresent%2A> metodu ke kontrole, jestli <xref:System.Windows.DataObject> přetažen nad třemi tečkami obsahuje data řetězce, který lze převést na <xref:System.Windows.Media.Brush>. Pokud ano, je data extrahována pomocí <xref:System.Windows.DataObject.GetData%2A> metody. Je pak převedeno <xref:System.Windows.Media.Brush> a použít na tři tečky. Změny se vrátí zpět v <xref:System.Windows.DragDrop.DragLeave> obslužné rutiny události. Pokud data nelze převést na <xref:System.Windows.Media.Brush>, neprovede se žádná akce.  
   
- [!code-csharp[DragDropSnippets#DragEnter](../../../../samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#dragenter)]
- [!code-vb[DragDropSnippets#DragEnter](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#dragenter)]  
+ [!code-csharp[DragDropSnippets#DragEnter](~/samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#dragenter)]
+ [!code-vb[DragDropSnippets#DragEnter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#dragenter)]  
   
  <xref:System.Windows.DragDrop.DragOver> Nepřetržitě, zatímco data Přesune cíl přetažení, dojde k události. Tato událost se páruje s oblastí <xref:System.Windows.DragDrop.GiveFeedback> události ve zdroji přetažení. V <xref:System.Windows.DragDrop.DragOver> obslužná rutina události, obvykle se používá <xref:System.Windows.DataObject.GetDataPresent%2A> a <xref:System.Windows.DataObject.GetData%2A> metody, chcete-li zkontrolovat, zda přenášených dat ve formátu, která dokáže zpracovávat cíl přetažení. Můžete také zkontrolovat, zda jsou stisknutí jakékoli modifikační klávesy, která se obvykle signalizují, zda uživatel si klade za cíl akce přesunutí nebo kopírování. Po provedení těchto kontrol, nastavit <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> vlastnost oznámit přetahování zdroje, jaký vliv má vyřazení dat bude mít. Zdroje přetažení obdrží tyto informace <xref:System.Windows.DragDrop.GiveFeedback> argumenty události a nastavit odpovídající kurzor poskytněte zpětnou vazbu pro uživatele.  
   
  Následující příklad ukazuje <xref:System.Windows.DragDrop.DragOver> obslužné rutiny události pro <xref:System.Windows.Shapes.Ellipse> elementu. Tento kód zkontroluje, zda <xref:System.Windows.DataObject> přetažen nad třemi tečkami obsahuje data řetězce, který lze převést na <xref:System.Windows.Media.Brush>. Pokud ano, nastaví <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.DragDropEffects.Copy>. Ke zdroji přetažení označuje, že data je možné zkopírovat do na tři tečky. Pokud data nelze převést na <xref:System.Windows.Media.Brush>, <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> je nastavena na <xref:System.Windows.DragDropEffects.None>. To znamená na zdroji přetažení, že se třemi tečkami není cíle přetažení platná data.  
   
- [!code-csharp[DragDropSnippets#DragOver](../../../../samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#dragover)]
- [!code-vb[DragDropSnippets#DragOver](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#dragover)]  
+ [!code-csharp[DragDropSnippets#DragOver](~/samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#dragover)]
+ [!code-vb[DragDropSnippets#DragOver](~/samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#dragover)]  
   
  <xref:System.Windows.DragDrop.DragLeave> Události dojde, když data ocitne mimo hranice cíle bez probíhá vyřazování. Zpracování této události cokoli, co jste to udělali v zpět <xref:System.Windows.DragDrop.DragEnter> obslužné rutiny události.  
   
  Následující příklad ukazuje <xref:System.Windows.DragDrop.DragLeave> obslužné rutiny události pro <xref:System.Windows.Shapes.Ellipse> elementu. Tento kód vrátí zpět provést ve verzi preview <xref:System.Windows.DragDrop.DragEnter> obslužné rutiny události s použitím uložené <xref:System.Windows.Media.Brush> na tři tečky.  
   
- [!code-csharp[DragDropSnippets#DragLeave](../../../../samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#dragleave)]
- [!code-vb[DragDropSnippets#DragLeave](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#dragleave)]  
+ [!code-csharp[DragDropSnippets#DragLeave](~/samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#dragleave)]
+ [!code-vb[DragDropSnippets#DragLeave](~/samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#dragleave)]  
   
  <xref:System.Windows.DragDrop.Drop> Při přetažení dat přes cíl přetažení, dojde k události; ve výchozím nastavení, to se stane, když se uvolní tlačítko myši. V <xref:System.Windows.DragDrop.Drop> obslužná rutina události, je použít <xref:System.Windows.DataObject.GetData%2A> metoda extrahovat přenášená data <xref:System.Windows.DataObject> a provádět žádné zpracovávání dat, který vaše aplikace vyžaduje. <xref:System.Windows.DragDrop.Drop> Událost skončí operace přetažení myší.  
   
  Následující příklad ukazuje <xref:System.Windows.DragDrop.Drop> obslužné rutiny události pro <xref:System.Windows.Shapes.Ellipse> elementu. Tento kód použije účinek operace přetažení myší a je podobný kód v <xref:System.Windows.DragDrop.DragEnter> obslužné rutiny události. Zkontroluje, jestli <xref:System.Windows.DataObject> přetažen nad třemi tečkami obsahuje data řetězce, který lze převést na <xref:System.Windows.Media.Brush>. Pokud ano, <xref:System.Windows.Media.Brush> se použije na tři tečky. Pokud data nelze převést na <xref:System.Windows.Media.Brush>, neprovede se žádná akce.  
   
- [!code-csharp[DragDropSnippets#Drop](../../../../samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#drop)]
- [!code-vb[DragDropSnippets#Drop](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#drop)]  
+ [!code-csharp[DragDropSnippets#Drop](~/samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#drop)]
+ [!code-vb[DragDropSnippets#Drop](~/samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#drop)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Clipboard>
-- [Návod: Povolení přetahování na uživatelský ovládací prvek](../../../../docs/framework/wpf/advanced/walkthrough-enabling-drag-and-drop-on-a-user-control.md)
-- [Témata s postupy](../../../../docs/framework/wpf/advanced/drag-and-drop-how-to-topics.md)
-- [Přetažení](../../../../docs/framework/wpf/advanced/drag-and-drop.md)
+- [Návod: Povolení přetahování na uživatelský ovládací prvek](walkthrough-enabling-drag-and-drop-on-a-user-control.md)
+- [Témata s postupy](drag-and-drop-how-to-topics.md)
+- [Přetažení](drag-and-drop.md)

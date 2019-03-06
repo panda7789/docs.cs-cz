@@ -16,12 +16,12 @@ ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
 ## <a name="creating-an-instance-of-a-control"></a>Vytvoření Instance ovládacího prvku  
  Můžete přidat ovládací prvek k aplikaci pomocí buď [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] nebo kódu.  Následující příklad ukazuje, jak vytvořit jednoduchou aplikaci, která uživatele vyzve k zadání jména a příjmení.  Tento příklad vytvoří šesti ovládacích prvků: dva popisky, dvě textová pole a dvě tlačítka v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Podobně je možné vytvořit všechny ovládací prvky.  
   
- [!code-xaml[ControlsOverview#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#1)]  
+ [!code-xaml[ControlsOverview#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#1)]  
   
  Následující příklad vytvoří stejné aplikace v kódu. Pro zkrácení vytváření <xref:System.Windows.Controls.Grid>, `grid1`, byly vyloučeny z ukázky. `grid1` má stejné definice sloupců a řádků, jak je znázorněno v předchozím [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příklad.  
   
- [!code-csharp[ControlsOverview#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#2)]
- [!code-vb[ControlsOverview#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#2)]  
+ [!code-csharp[ControlsOverview#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#2)]
+ [!code-vb[ControlsOverview#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#2)]  
   
 <a name="changing_the_appearance_of_a_control"></a>   
 ## <a name="changing-the-appearance-of-a-control"></a>Změna vzhledu ovládacího prvku  
@@ -36,29 +36,29 @@ ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
 ### <a name="changing-a-controls-property-value"></a>Změna hodnoty vlastnosti ovládacího prvku  
  Mnoho ovládacích prvků mají vlastnosti, které umožňují změnit, jak ovládací prvek zobrazuje, jako <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button>. Můžete nastavit hodnotu vlastnosti v obou [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kódu. Následující příklad nastaví <xref:System.Windows.Controls.Control.Background%2A>, <xref:System.Windows.Controls.Control.FontSize%2A>, a <xref:System.Windows.Controls.Control.FontWeight%2A> vlastnosti <xref:System.Windows.Controls.Button> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
- [!code-xaml[ControlsOverview#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#3)]  
+ [!code-xaml[ControlsOverview#3](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#3)]  
   
  Následující příklad nastaví stejné vlastnosti v kódu.  
   
- [!code-csharp[ControlsOverview#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#4)]
- [!code-vb[ControlsOverview#4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#4)]  
+ [!code-csharp[ControlsOverview#4](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#4)]
+ [!code-vb[ControlsOverview#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#4)]  
   
 ### <a name="creating-a-style-for-a-control"></a>Vytvoření stylu pro ovládací prvek  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje možnost určit vzhled ovládacích prvků velkoobchodních, místo nastavování vlastností pro každou instanci aplikace, tak, že vytvoříte <xref:System.Windows.Style>. Následující příklad vytvoří <xref:System.Windows.Style> , která je použita na každý <xref:System.Windows.Controls.Button> v aplikaci. <xref:System.Windows.Style> definice jsou obvykle definovány v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] v <xref:System.Windows.ResourceDictionary>, například <xref:System.Windows.FrameworkElement.Resources%2A> vlastnost <xref:System.Windows.FrameworkElement>.  
   
- [!code-xaml[ControlsOverview#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#5)]  
+ [!code-xaml[ControlsOverview#5](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#5)]  
   
- Můžete také použít styl na pouze některé ovládací prvky určitého typu přiřazením klíč stylu a zadáte tento klíč v `Style` vlastnost ovládacího prvku.  Další informace o stylech najdete v tématu [styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md).  
+ Můžete také použít styl na pouze některé ovládací prvky určitého typu přiřazením klíč stylu a zadáte tento klíč v `Style` vlastnost ovládacího prvku.  Další informace o stylech najdete v tématu [styly a šablony](styling-and-templating.md).  
   
 ### <a name="creating-a-controltemplate"></a>Vytvoření objektu ControlTemplate  
  A <xref:System.Windows.Style> vám umožní nastavit vlastnosti na více ovládacích prvků v čase, ale někdy může být vhodné přizpůsobit vzhled <xref:System.Windows.Controls.Control> rámec toho, co můžete udělat tak, že vytvoříte <xref:System.Windows.Style>. Třídy odvozené z <xref:System.Windows.Controls.Control> třídy <xref:System.Windows.Controls.ControlTemplate>, která definuje strukturu a vzhled <xref:System.Windows.Controls.Control>. <xref:System.Windows.Controls.Control.Template%2A> Vlastnost <xref:System.Windows.Controls.Control> je veřejné, takže můžete poskytnout <xref:System.Windows.Controls.Control> <xref:System.Windows.Controls.ControlTemplate> , která je jiná než výchozí. Často můžete zadat nový <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Control> namísto dědění z ovládacího prvku pro přizpůsobení vzhledu <xref:System.Windows.Controls.Control>.  
   
  Vezměte v úvahu velmi běžný ovládací prvek <xref:System.Windows.Controls.Button>.  Primární chování <xref:System.Windows.Controls.Button> je umožnit aplikaci provést některé akce, když na něj uživatel klikne.  Ve výchozím nastavení <xref:System.Windows.Controls.Button> v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] se zobrazí jako zvýšené obdélník.  Při vývoji aplikace, můžete chtít využít výhod chování <xref:System.Windows.Controls.Button>– to znamená, že pomocí manipulace klikněte na tlačítko události – ale můžete změnit vzhled na tlačítko rámec toho, co můžete dělat to změnou na tlačítko Vlastnosti.  V takovém případě můžete vytvořit nový <xref:System.Windows.Controls.ControlTemplate>.  
   
- Následující příklad vytvoří <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Button>.  <xref:System.Windows.Controls.ControlTemplate> Vytvoří <xref:System.Windows.Controls.Button> oblých rohů a barevného přechodu pozadí.  <xref:System.Windows.Controls.ControlTemplate> Obsahuje <xref:System.Windows.Controls.Border> jehož <xref:System.Windows.Controls.Border.Background%2A> je <xref:System.Windows.Media.LinearGradientBrush> se dvěma <xref:System.Windows.Media.GradientStop> objekty.  První <xref:System.Windows.Media.GradientStop> používá datové vazby k vytvoření vazby <xref:System.Windows.Media.GradientStop.Color%2A> vlastnost <xref:System.Windows.Media.GradientStop> na barvu pozadí tlačítka.  Při nastavení <xref:System.Windows.Controls.Control.Background%2A> vlastnost <xref:System.Windows.Controls.Button>, barva tato hodnota se použije jako první <xref:System.Windows.Media.GradientStop>. Další informace o datové vazbě naleznete v tématu [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md). Tento příklad také vytvoří <xref:System.Windows.Trigger> , který změní vzhled <xref:System.Windows.Controls.Button> při <xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A> je `true`.  
+ Následující příklad vytvoří <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Button>.  <xref:System.Windows.Controls.ControlTemplate> Vytvoří <xref:System.Windows.Controls.Button> oblých rohů a barevného přechodu pozadí.  <xref:System.Windows.Controls.ControlTemplate> Obsahuje <xref:System.Windows.Controls.Border> jehož <xref:System.Windows.Controls.Border.Background%2A> je <xref:System.Windows.Media.LinearGradientBrush> se dvěma <xref:System.Windows.Media.GradientStop> objekty.  První <xref:System.Windows.Media.GradientStop> používá datové vazby k vytvoření vazby <xref:System.Windows.Media.GradientStop.Color%2A> vlastnost <xref:System.Windows.Media.GradientStop> na barvu pozadí tlačítka.  Při nastavení <xref:System.Windows.Controls.Control.Background%2A> vlastnost <xref:System.Windows.Controls.Button>, barva tato hodnota se použije jako první <xref:System.Windows.Media.GradientStop>. Další informace o datové vazbě naleznete v tématu [Data Binding Overview](../data/data-binding-overview.md). Tento příklad také vytvoří <xref:System.Windows.Trigger> , který změní vzhled <xref:System.Windows.Controls.Button> při <xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A> je `true`.  
   
- [!code-xaml[ControlsOverview#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#6)]  
-[!code-xaml[ControlsOverview#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#7)]  
+ [!code-xaml[ControlsOverview#6](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#6)]  
+[!code-xaml[ControlsOverview#7](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml#7)]  
   
 > [!NOTE]
 >  <xref:System.Windows.Controls.Control.Background%2A> Vlastnost <xref:System.Windows.Controls.Button> musí být nastaveno na <xref:System.Windows.Media.SolidColorBrush> například fungovala správně.  
@@ -67,15 +67,15 @@ ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
 ## <a name="subscribing-to-events"></a>Přihlášení k odběru událostí  
  Vám může přihlásit k odběru události ovládacího prvku buď pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nebo kód, ale může zpracovat pouze událost v kódu.  Následující příklad ukazuje, jak se přihlásit k odběru `Click` události <xref:System.Windows.Controls.Button>.  
   
- [!code-xaml[ControlsOverview#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#10)]  
+ [!code-xaml[ControlsOverview#10](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/Window1.xaml#10)]  
   
- [!code-csharp[ControlsOverview#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#8)]
- [!code-vb[ControlsOverview#8](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#8)]  
+ [!code-csharp[ControlsOverview#8](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#8)]
+ [!code-vb[ControlsOverview#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#8)]  
   
  Následující příklad popisovače `Click` události <xref:System.Windows.Controls.Button>.  
   
- [!code-csharp[ControlsOverview#9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#9)]
- [!code-vb[ControlsOverview#9](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#9)]  
+ [!code-csharp[ControlsOverview#9](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlsOverview/CSharp/AppInCode.xaml.cs#9)]
+ [!code-vb[ControlsOverview#9](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ControlsOverview/VisualBasic/AppInCode.xaml.vb#9)]  
   
 <a name="rich_content_in_controls"></a>   
 ## <a name="rich-content-in-controls"></a>Formátovaný obsah v ovládacích prvcích  
@@ -90,15 +90,15 @@ ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
 -   <xref:System.Windows.Controls.HeaderedItemsControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.MenuItem>, <xref:System.Windows.Controls.TreeViewItem>, a <xref:System.Windows.Controls.ToolBar>.  
 
   
- Další informace o těchto základních třídách naleznete v tématu [Model obsahu WPF](../../../../docs/framework/wpf/controls/wpf-content-model.md).  
+ Další informace o těchto základních třídách naleznete v tématu [Model obsahu WPF](wpf-content-model.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
-- [Ovládací prvky podle kategorie](../../../../docs/framework/wpf/controls/controls-by-category.md)
-- [Knihovna ovládacích prvků](../../../../docs/framework/wpf/controls/control-library.md)
-- [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Vstup](../../../../docs/framework/wpf/advanced/input-wpf.md)
-- [Povolení příkazu](../../../../docs/framework/wpf/advanced/how-to-enable-a-command.md)
-- [Návody: Vytvoření tlačítka s vlastní animací](../../../../docs/framework/wpf/controls/walkthroughs-create-a-custom-animated-button.md)
-- [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)
+- [Styly a šablony](styling-and-templating.md)
+- [Ovládací prvky podle kategorie](controls-by-category.md)
+- [Knihovna ovládacích prvků](control-library.md)
+- [Přehled datových šablon](../data/data-templating-overview.md)
+- [Přehled datových vazeb](../data/data-binding-overview.md)
+- [Vstup](../advanced/input-wpf.md)
+- [Povolení příkazu](../advanced/how-to-enable-a-command.md)
+- [Návody: Vytvoření tlačítka s vlastní animací](walkthroughs-create-a-custom-animated-button.md)
+- [Přizpůsobení ovládacího prvku](control-customization.md)

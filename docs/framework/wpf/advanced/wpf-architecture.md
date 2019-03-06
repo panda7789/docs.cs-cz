@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: 7214304d8575fb6ef8774d55eaf29ad714235123
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dee88ceb82528955d8809214bff474b92233d28c
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54634581"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57362006"
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentation Foundation (WPF). Zabírá většinu hlavních subsystémy [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]a popisuje způsob, jakým interagují. Je také podrobné informace o některých volby provedené architektů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -33,7 +33,7 @@ Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentati
   
  Hlavní součásti [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] jsou znázorněné na následujícím obrázku. Červené části diagramu (PresentationFramework PresentationCore a milcore) jsou části kódu hlavní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Pouze jeden z nich je nespravované součásti – milcore. Je Milcore napsanou v nespravovaném kódu, chcete-li povolit úzkou integraci s [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]. Zobrazení v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] se provádí prostřednictvím [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] umožňující efektivní hardwarové a softwarové vykreslování. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] také vyžaduje přesné řízení paměti a spuštění. Kompoziční modul v milcore je velmi výkonné citlivé a požadované ztráty mnoho výhod [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] získáte výkon.  
   
- ![Pozice WPF v rozhraní .NET Framework. ](../../../../docs/framework/wpf/advanced/media/wpf-architect1.PNG "wpf_architect1")  
+ ![Pozice WPF v rozhraní .NET Framework. ](./media/wpf-architect1.PNG "wpf_architect1")  
   
  Komunikace mezi spravovanými a nespravovanými části [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je popsána dále v tomto tématu. Zbývající spravované programovací model je popsána níže.  
   
@@ -71,7 +71,7 @@ Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentati
   
  Při programování [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], vytvoříte <xref:System.Windows.Media.Visual> elementy a odvozené typy, které interně komunikovat s stromové struktuře kompozice přes tento protokol zasílání zpráv. Každý <xref:System.Windows.Media.Visual> v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] můžou vytvořit jednu, žádný nebo několik uzlů složení.  
   
- ![Windows Presentation Foundation vizuálního stromu. ](../../../../docs/framework/wpf/advanced/media/wpf-architecture2.PNG "wpf_architecture2")  
+ ![Windows Presentation Foundation vizuálního stromu. ](./media/wpf-architecture2.PNG "wpf_architecture2")  
   
  Je velmi důležité architektury podrobností a Všimněte si zde – celý strom vizuály a vykreslování pokynů se uloží do mezipaměti. V podmínkách grafiky [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] využívá uchovanou vykreslování systém. To umožňuje systému repaint na vysokou obnovovací frekvence bez systému složení blokování na zpětná volání do uživatelského kódu. To pomáhá zabránit vzhledu aplikace reagovat.  
   
@@ -149,6 +149,6 @@ Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentati
 - <xref:System.Windows.Threading.DispatcherObject>
 - <xref:System.Windows.Input.CommandBinding>
 - <xref:System.Windows.Controls.Control>
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)
-- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled datových vazeb](../data/data-binding-overview.md)
+- [Rozložení](layout.md)
+- [Přehled animace](../graphics-multimedia/animation-overview.md)

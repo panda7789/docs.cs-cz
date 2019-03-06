@@ -9,12 +9,12 @@ helpviewer_keywords:
 - controls [WPF], layout system
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
-ms.openlocfilehash: d6326ae34b53ca4f68bc58b85e395c10726a377d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4c114d7ed22ac01b69f9ad77a69b4089f574c13f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54738823"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57369848"
 ---
 # <a name="layout"></a>Rozložení
 Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systém rozložení. Vysvětlení, jak a kdy probíhá výpočet rozložení je nezbytné pro vytváření uživatelských rozhraní v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -41,22 +41,22 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
  Následující obrázek znázorňuje jednoduché rozložení.  
   
- ![Typické mřížky žádné ohraničujícího rámečku, který bude zobrazen. ](../../../../docs/framework/wpf/advanced/media/boundingbox1.png "boundingbox1")  
+ ![Typické mřížky žádné ohraničujícího rámečku, který bude zobrazen. ](./media/boundingbox1.png "boundingbox1")  
   
  Toto rozložení lze dosáhnout pomocí následujících [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
- [!code-xaml[LayoutInformation#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LayoutInformation/CSharp/Window1.xaml#1)]  
+ [!code-xaml[LayoutInformation#1](~/samples/snippets/csharp/VS_Snippets_Wpf/LayoutInformation/CSharp/Window1.xaml#1)]  
   
  Jediný <xref:System.Windows.Controls.TextBlock> element hostována v rámci <xref:System.Windows.Controls.Grid>. Zatímco vyplní pouze levém horním rohu prvního sloupce do přiděleného místa pro text <xref:System.Windows.Controls.TextBlock> je ve skutečnosti mnohem větší. Ohraničující rámeček žádné <xref:System.Windows.FrameworkElement> lze načíst s použitím <xref:System.Windows.Controls.Primitives.LayoutInformation.GetLayoutSlot%2A> metody. Následující obrázek znázorňuje rámeček ohraničující konkrétní <xref:System.Windows.Controls.TextBlock> elementu.  
   
- ![Ohraničující rámeček ovládacím prvku TextBlock je nyní viditelné. ](../../../../docs/framework/wpf/advanced/media/boundingbox2.png "boundingbox2")  
+ ![Ohraničující rámeček ovládacím prvku TextBlock je nyní viditelné. ](./media/boundingbox2.png "boundingbox2")  
   
  Jak je uvedeno žlutý obdélníku do přiděleného místa pro <xref:System.Windows.Controls.TextBlock> prvek je ve skutečnosti mnohem větší, než se zobrazí. Jako další prvky jsou přidány do <xref:System.Windows.Controls.Grid>, toto přidělení může zmenšit nebo zvětšit, v závislosti na typu a velikosti prvků, které jsou přidány.  
   
  Pozici rozložení <xref:System.Windows.Controls.TextBlock> je přeložit na <xref:System.Windows.Shapes.Path> pomocí <xref:System.Windows.Controls.Primitives.LayoutInformation.GetLayoutSlot%2A> metody. Tato technika může být užitečné při zobrazování ohraničující rámeček elementu.  
   
- [!code-csharp[LayoutInformation#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LayoutInformation/CSharp/Window1.xaml.cs#2)]
- [!code-vb[LayoutInformation#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/LayoutInformation/VisualBasic/Window1.xaml.vb#2)]  
+ [!code-csharp[LayoutInformation#2](~/samples/snippets/csharp/VS_Snippets_Wpf/LayoutInformation/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[LayoutInformation#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/LayoutInformation/VisualBasic/Window1.xaml.vb#2)]  
   
 <a name="LayoutSystem_Overview"></a>   
 ## <a name="the-layout-system"></a>Systém rozložení  
@@ -122,7 +122,7 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
 -   Mějte které změně hodnoty vlastnosti rekurzivní aktualizace vynutí systém rozložení.  
   
-     Vlastnosti závislostí, jejichž hodnoty může způsobit, že systém rozložení inicializovat jsou označené veřejné příznaky. <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> a <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> poskytují užitečné příčiny, vlastností, které vynutí změny hodnot rekurzivního aktualizovat tak, že systém rozložení. Obecně platí, by měly mít jakákoli vlastnost, která mohou ovlivnit velikost elementu ohraničující rámeček <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> příznak nastaven na hodnotu true. Další informace najdete v tématu [přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
+     Vlastnosti závislostí, jejichž hodnoty může způsobit, že systém rozložení inicializovat jsou označené veřejné příznaky. <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> a <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> poskytují užitečné příčiny, vlastností, které vynutí změny hodnot rekurzivního aktualizovat tak, že systém rozložení. Obecně platí, by měly mít jakákoli vlastnost, která mohou ovlivnit velikost elementu ohraničující rámeček <xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A> příznak nastaven na hodnotu true. Další informace najdete v tématu [přehled vlastností závislosti](dependency-properties-overview.md).  
   
 -   Pokud je to možné, používat <xref:System.Windows.UIElement.RenderTransform%2A> místo <xref:System.Windows.FrameworkElement.LayoutTransform%2A>.  
   
@@ -146,11 +146,11 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
   
 <a name="LayoutSystem_whatsnext"></a>   
 ## <a name="whats-next"></a>Co se chystá  
- Vysvětlení, jak prvky se měří a uspořádat je prvním krokem při Principy rozložení. Další informace o dostupných <xref:System.Windows.Controls.Panel> prvky, naleznete v tématu [přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md). Chcete-li lépe pochopit různé vlastnosti umístění, které můžou ovlivnit rozložení, naleznete v tématu [zarovnání, okrajů a odsazení přehled](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md). Příklad vlastní <xref:System.Windows.Controls.Panel> prvku, naleznete v tématu [paprskového ukázková Panel](https://go.microsoft.com/fwlink/?LinkID=159982). Až budete připravení na všech součástí dohromady v aplikaci s nižšími nároky, naleznete v tématu [názorný postup: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).  
+ Vysvětlení, jak prvky se měří a uspořádat je prvním krokem při Principy rozložení. Další informace o dostupných <xref:System.Windows.Controls.Panel> prvky, naleznete v tématu [přehled panelů](../controls/panels-overview.md). Chcete-li lépe pochopit různé vlastnosti umístění, které můžou ovlivnit rozložení, naleznete v tématu [zarovnání, okrajů a odsazení přehled](alignment-margins-and-padding-overview.md). Příklad vlastní <xref:System.Windows.Controls.Panel> prvku, naleznete v tématu [paprskového ukázková Panel](https://go.microsoft.com/fwlink/?LinkID=159982). Až budete připravení na všech součástí dohromady v aplikaci s nižšími nároky, naleznete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.FrameworkElement>
 - <xref:System.Windows.UIElement>
-- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)
-- [Přehled zarovnání, okrajů a odsazení](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)
-- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)
+- [Přehled panelu](../controls/panels-overview.md)
+- [Přehled zarovnání, okrajů a odsazení](alignment-margins-and-padding-overview.md)
+- [Rozložení a návrh](optimizing-performance-layout-and-design.md)

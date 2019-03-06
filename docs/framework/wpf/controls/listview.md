@@ -7,22 +7,23 @@ helpviewer_keywords:
 - controls [WPF], ListView
 - ListView control [WPF]
 ms.assetid: fc3784a7-c9e8-4e2b-909a-7af37cef9b43
-ms.openlocfilehash: 619f10b36aa55813824483c386b59778fd756118
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7de612992c7ccab57259146e8b8fa294e503b733
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57376218"
 ---
 # <a name="listview"></a>ListView
-<xref:System.Windows.Controls.ListView> Řízení poskytuje infrastrukturu pro zobrazení sadu datových položek v různých rozložení nebo zobrazení.  
+<xref:System.Windows.Controls.ListView> Ovládacího prvku poskytuje infrastrukturu pro zobrazení množinou datových položek v zobrazení nebo různá rozložení.  
   
- Následující obrázek znázorňuje <xref:System.Windows.Controls.ListView>.  
+ Následující ilustrace ukazuje <xref:System.Windows.Controls.ListView>.  
   
- ![ListView s výstupem GridView](../../../../docs/framework/wpf/controls/media/listviewgridview.JPG "ListViewGridView")  
+ ![ListView s výstupem GridView](./media/listviewgridview.JPG "ListViewGridView")  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehledy](../../../../docs/framework/wpf/controls/listview-overviews.md)  
- [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  
+ [Přehledy](listview-overviews.md)  
+ [Témata s postupy](listview-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ListView>  
@@ -30,5 +31,5 @@ ms.lasthandoff: 05/04/2018
   <xref:System.Windows.Controls.GridView>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
-  [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)
+ [Přehled datových vazeb](../data/data-binding-overview.md)  
+  [Přehled datových šablon](../data/data-templating-overview.md)

@@ -4,6 +4,7 @@ description: 'Příručka k používání služeb Azure sF#'
 author: sylvanc
 ms.date: 09/22/2016
 ---
+
 # <a name="using-f-on-azure"></a>Použití jazyka F# v Azure
 
 F#je vynikající jazyk pro programování v cloudu a se často používá k zápisu webové aplikace, cloudové služby, mikroslužby hostované v cloudu a pro škálovatelné zpracování dat.
@@ -87,7 +88,7 @@ Azure Notification Hubs je možné s F# dvěma způsoby:
 
 ## <a name="implementing-webhooks-on-azure-with-f"></a>Implementace Webhooky v Azure s využitím F\#
 
-A [Webhooku](https://en.wikipedia.org/wiki/Webhook) se spouští přes webový požadavek zpětného volání. Webhooky jsou používány webů, jako je GitHub na signál události. 
+A [Webhooku](https://en.wikipedia.org/wiki/Webhook) se spouští přes webový požadavek zpětného volání. Webhooky jsou používány webů, jako je GitHub na signál události.
 
 Webhooků je možné implementovat v F# a hostuje ho na Azure prostřednictvím [funkce Azure Functions v F# s Webhooku vazby](/azure/azure-functions/functions-bindings-http-webhook).
 
@@ -109,7 +110,7 @@ Virtuální počítače Azure mohou být prostřednictvím kódu programu nasazu
 
 Podobně, dalších prostředků Azure může také možné nasadit a spravovat z F# skripty pomocí stejné komponenty. Například můžete vytvořit účty úložiště, nasazení Azure Cloud Services, vytváření instancí služby Azure Cosmos DB a spravovat centra oznámení Azure prostřednictvím kódu programu z F# skripty.
 
-Pomocí F# skripty k nasazení a správě prostředků není obvykle nutné. Prostředky Azure například může být nasazený přímo z popisů šablony JSON, které mohou být parametrizovány. V tématu [šablon Azure Resource Manageru](/azure/azure-resource-manager/resource-manager-template-best-practices) včetně příkladů, jako [šablony pro rychlý start Azure](https://azure.microsoft.com/resources/templates/).
+Pomocí F# skripty k nasazení a správě prostředků není obvykle nutné. Například prostředky Azure také jde nasadit přímo z popisů šablony JSON, které mohou být parametrizovány. V tématu [šablon Azure Resource Manageru](/azure/azure-resource-manager/resource-manager-template-best-practices) včetně příkladů, jako [šablony pro rychlý start Azure](https://azure.microsoft.com/resources/templates/).
 
 ## <a name="other-resources"></a>Další zdroje
 

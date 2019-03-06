@@ -17,17 +17,17 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 2363042ace7440ee74e4590a2271e87c1389ebcc
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 01d17b39e89b764871c1c70512eae6929cc98554
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836341"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57353059"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpečení, také využívá podkladovou platformu, která obsahuje operační systém, funkce zabezpečení [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy se dá zajistit [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silné zabezpečení obrany v modelu, který se pokouší vyhnout jakékoli jediným bodem selhání, jak je znázorněno na následujícím obrázku:  
   
- ![Zabezpečení WPF – ilustrace](../../../docs/framework/wpf/media/windowplatformsecurity.PNG "windowplatformsecurity")  
+ ![Zabezpečení WPF – ilustrace](./media/windowplatformsecurity.PNG "windowplatformsecurity")  
   
  Zbývající část tohoto tématu jsou popsané funkce v každém z těchto úrovní, které se týkají [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] zvlášť.  
   
@@ -140,14 +140,14 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  Následující obrázek ukazuje vztah mezi zónami, sady oprávnění, oprávnění a prostředky.  
   
- ![Sady oprávnění CAS](../../../docs/framework/wpf/media/caspermissionsets.png "CASPermissionSets")  
+ ![Sady oprávnění CAS](./media/caspermissionsets.png "CASPermissionSets")  
   
  Omezení internetové zóny zabezpečení sandboxu stejnou měrou vztahují na jakýkoli kód, který [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] importuje z knihovny systému, včetně [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Tím se zajistí, že každý bit kód je uzamčený, i [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Bohužel, abyste mohli provést, [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] potřebuje ke spuštění funkce, které vyžadují více oprávnění než ty, které zajišťuje sandboxu zabezpečení zóně Internet.  
   
  Vezměte v úvahu [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] aplikaci, která zahrnuje následující stránka:  
   
- [!code-csharp[WPFPlatformSecuritySnippets#Permission](../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/CSharp/Page1.xaml.cs#permission)]
- [!code-vb[WPFPlatformSecuritySnippets#Permission](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/VisualBasic/Page1.xaml.vb#permission)]  
+ [!code-csharp[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/CSharp/Page1.xaml.cs#permission)]
+ [!code-vb[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/VisualBasic/Page1.xaml.vb#permission)]  
   
  Chcete-li to provést [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)], základní [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] kód musí být spuštěn víc funkcí než je k dispozici k volání [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)], včetně:  
   
@@ -165,8 +165,8 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] to provádí pomocí **Assert** metoda oprávnění. Následující kód ukazuje, jak to probíhá.  
   
- [!code-csharp[WPFPlatformSecuritySnippets#Permission](../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/CSharp/Page1.xaml.cs#permission)]
- [!code-vb[WPFPlatformSecuritySnippets#Permission](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/VisualBasic/Page1.xaml.vb#permission)]  
+ [!code-csharp[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/CSharp/Page1.xaml.cs#permission)]
+ [!code-vb[WPFPlatformSecuritySnippets#Permission](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFPlatformSecuritySnippets/VisualBasic/Page1.xaml.vb#permission)]  
   
  **Assert** v podstatě brání neomezená oprávnění vyžadované [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] z jsou omezené na základě Internetu zóna oprávnění [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)].  
   
@@ -182,7 +182,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
 ### <a name="security-critical-methodology"></a>Metodologie kritické pro zabezpečení  
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Kód, který používá oprávnění k povolení izolovaném prostoru zóny Internetu [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] aplikace musí uchovávat na nejvyšší možné stupeň auditování zabezpečení a řízení. Pro usnadnění tohoto požadavku, rozhraní .NET Framework poskytuje novou podporu pro správu kód, který má oprávnění. Konkrétně [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] umožňuje identifikovat kód, který má oprávnění a označte ji pomocí <xref:System.Security.SecurityCriticalAttribute>; jakýkoli kód není označené <xref:System.Security.SecurityCriticalAttribute> stane *transparentní* použití této metody. Naopak spravovaného kódu, který není označen atributem <xref:System.Security.SecurityCriticalAttribute> je zabráněno zvyšování oprávnění.  
   
- Kritické pro zabezpečení metodologie umožňuje uspořádání [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] kód, který má oprávnění do *kritické pro zabezpečení jádra*, pokračujte zbývajícími je transparentní. Izolace kritické pro zabezpečení kódu umožňuje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] inženýrský tým zaměřit další bezpečnostní analýzy a zdrojový ovládací prvek na kritické pro zabezpečení jádra nenabízející postupy standard zabezpečení (viz [strategie zabezpečení WPF – Engineering zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)).  
+ Kritické pro zabezpečení metodologie umožňuje uspořádání [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] kód, který má oprávnění do *kritické pro zabezpečení jádra*, pokračujte zbývajícími je transparentní. Izolace kritické pro zabezpečení kódu umožňuje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] inženýrský tým zaměřit další bezpečnostní analýzy a zdrojový ovládací prvek na kritické pro zabezpečení jádra nenabízející postupy standard zabezpečení (viz [strategie zabezpečení WPF – Engineering zabezpečení](wpf-security-strategy-security-engineering.md)).  
   
  Všimněte si, že rozhraní .NET Framework umožňuje důvěryhodného kódu k rozšíření [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] izolovaného prostoru zóny Internetu tím, že vývojářům umožňuje psát spravovaná sestavení, které jsou označeny <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) a nasadili pro uživatele globální mezipaměti sestavení (GAC). Označení sestavení APTCA je operace vysoce citlivé a zabezpečení, protože povoluje libovolný kód k volání tohoto sestavení, včetně škodlivý kód z Internetu. Extrémně opatrní a osvědčené postupy a musí být při tomto postupu uživatele musíte se rozhodnout důvěřovat softwaru v pořadí, aby byl nainstalován.  
   
@@ -210,7 +210,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
 ## <a name="see-also"></a>Viz také:
 - [Principy zabezpečení v Microsoft Internet Explorer 6 ve Windows XP s aktualizací SP2](https://www.microsoft.com/downloads/details.aspx?FamilyId=E550F940-37A0-4541-B5E2-704AB386C3ED&displaylang=en)
-- [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)
-- [Zabezpečení](../../../docs/framework/wpf/security-wpf.md)
-- [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)
-- [Strategie zabezpečení WPF – engineering zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)
+- [Zabezpečení přístupu kódu](../misc/code-access-security.md)
+- [Zabezpečení](security-wpf.md)
+- [Částečné zabezpečení důvěryhodnosti WPF](wpf-partial-trust-security.md)
+- [Strategie zabezpečení WPF – engineering zabezpečení](wpf-security-strategy-security-engineering.md)

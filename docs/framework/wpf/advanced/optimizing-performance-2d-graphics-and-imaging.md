@@ -12,12 +12,12 @@ helpviewer_keywords:
 - 2-D graphics [WPF]
 - images [WPF], optimizing performance
 ms.assetid: e335601e-28c8-4d64-ba27-778fffd55f72
-ms.openlocfilehash: d138f7ebc6fe62f03cd80189185c8ba73d3a2006
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6ec03775f42e7f7a60d182eba134f9e1f7ba8466
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54630811"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371395"
 ---
 # <a name="optimizing-performance-2d-graphics-and-imaging"></a>Optimalizace výkonu: 2D grafika a obrázky
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje širokou škálu 2D grafika a funkce pro zpracování obrázků lze optimalizovat pro potřeby vaší aplikace. Toto téma obsahuje informace o optimalizaci výkonu v těchto oblastech.  
@@ -49,7 +49,7 @@ ms.locfileid: "54630811"
   
  Protože <xref:System.Windows.Shapes.Shape> objekty jsou odvozeny z <xref:System.Windows.FrameworkElement> třídy, jejich používání lze přidat mnohem větší spotřebu paměti v aplikaci. Pokud se ve skutečnosti není nutné <xref:System.Windows.FrameworkElement> funkce pro grafického obsahu, zvažte použití míň náročné <xref:System.Windows.Media.Drawing> objekty.  
   
- Další informace o <xref:System.Windows.Media.Drawing> objekty, najdete [kreslení objekty – přehled](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md).  
+ Další informace o <xref:System.Windows.Media.Drawing> objekty, najdete [kreslení objekty – přehled](../graphics-multimedia/drawing-objects-overview.md).  
   
 <a name="StreamGeometry_Objects"></a>   
 ## <a name="streamgeometry-objects"></a>Streamgeometry – objekty  
@@ -57,13 +57,13 @@ ms.locfileid: "54630811"
   
  Následující příklad používá syntaxi atributů k vytvoření trojúhelníkové <xref:System.Windows.Media.StreamGeometry> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
- [!code-xaml[GeometriesMiscSnippets_snip#StreamGeometryTriangleExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/StreamGeometryExample.xaml#streamgeometrytriangleexamplewholepage)]  
+ [!code-xaml[GeometriesMiscSnippets_snip#StreamGeometryTriangleExampleWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/StreamGeometryExample.xaml#streamgeometrytriangleexamplewholepage)]  
   
- Další informace o <xref:System.Windows.Media.StreamGeometry> objekty, najdete [vytvoření tvaru použitím StreamGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-shape-using-a-streamgeometry.md).  
+ Další informace o <xref:System.Windows.Media.StreamGeometry> objekty, najdete [vytvoření tvaru použitím StreamGeometry](../graphics-multimedia/how-to-create-a-shape-using-a-streamgeometry.md).  
   
 <a name="DrawingVisual_Objects"></a>   
 ## <a name="drawingvisual-objects"></a>Objekty DrawingVisual  
- <xref:System.Windows.Media.DrawingVisual> Objekt je zjednodušenou kreslení třídu, která se použije k vykreslení obrazce, Image nebo text. Tato třída se považuje za jednoduché, protože neposkytuje rozložení nebo událostí zpracování, což zvyšuje výkon. Z tohoto důvodu jsou ideální pro pozadí a klipart kreslení. Další informace najdete v tématu [použití objektů DrawingVisual](../../../../docs/framework/wpf/graphics-multimedia/using-drawingvisual-objects.md).  
+ <xref:System.Windows.Media.DrawingVisual> Objekt je zjednodušenou kreslení třídu, která se použije k vykreslení obrazce, Image nebo text. Tato třída se považuje za jednoduché, protože neposkytuje rozložení nebo událostí zpracování, což zvyšuje výkon. Z tohoto důvodu jsou ideální pro pozadí a klipart kreslení. Další informace najdete v tématu [použití objektů DrawingVisual](../graphics-multimedia/using-drawingvisual-objects.md).  
   
 <a name="Images"></a>   
 ## <a name="images"></a>Obrázky  
@@ -77,15 +77,15 @@ ms.locfileid: "54630811"
   
 -   Pokud je to možné sloučit bitové kopie do jedné image, jako proužek film skládá z více bitových kopií.  
   
--   Další informace najdete v tématu [Imaging přehled](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md).  
+-   Další informace najdete v tématu [Imaging přehled](../graphics-multimedia/imaging-overview.md).  
   
 ### <a name="bitmapscalingmode"></a>BitmapScalingMode  
  Při animaci škálování jakékoli rastrový obrázek, výchozí vysoce kvalitní bitovou kopii znovu algoritmus vzorkování spotřebovat někdy způsobit snížení frekvence snímků, účinně způsobující animace zadrhávají dostatečné systémové prostředky. Tím, že nastavíte <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A> vlastnost <xref:System.Windows.Media.RenderOptions> objektu <xref:System.Windows.Media.BitmapScalingMode.LowQuality> vytvoříte hladší animace při změně velikosti rastrový obrázek. <xref:System.Windows.Media.BitmapScalingMode.LowQuality> Určuje režim [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslovací modul přepnutí z algoritmu optimalizované kvality algoritmu optimalizované rychlost při zpracování obrázků.  
   
  Následující příklad ukazuje, jak nastavit <xref:System.Windows.Media.BitmapScalingMode> objektu image.  
   
- [!code-csharp[RenderOptions#RenderOptionsSnippet2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RenderOptions/CSharp/Window1.xaml.cs#renderoptionssnippet2)]
- [!code-vb[RenderOptions#RenderOptionsSnippet2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RenderOptions/visualbasic/window1.xaml.vb#renderoptionssnippet2)]  
+ [!code-csharp[RenderOptions#RenderOptionsSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/RenderOptions/CSharp/Window1.xaml.cs#renderoptionssnippet2)]
+ [!code-vb[RenderOptions#RenderOptionsSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RenderOptions/visualbasic/window1.xaml.vb#renderoptionssnippet2)]  
   
 ### <a name="cachinghint"></a>CachingHint  
  Ve výchozím nastavení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] neukládá do mezipaměti vykreslený obsah <xref:System.Windows.Media.TileBrush> objekty, jako například <xref:System.Windows.Media.DrawingBrush> a <xref:System.Windows.Media.VisualBrush>. Ve scénářích statické kde obsah ani použití <xref:System.Windows.Media.TileBrush> v změnu scény, to dává smysl, protože šetří grafické paměti. Nepoužívá jako mnohem smysl při <xref:System.Windows.Media.TileBrush> s statického obsahu se používá jako nestatická – například když statickou <xref:System.Windows.Media.DrawingBrush> nebo <xref:System.Windows.Media.VisualBrush> je namapována na povrchu objektu otáčení 3D. Výchozí chování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je znovu zpracovat celý obsah <xref:System.Windows.Media.DrawingBrush> nebo <xref:System.Windows.Media.VisualBrush> pro každý snímek, i když je obsah neměnné.  
@@ -96,17 +96,17 @@ ms.locfileid: "54630811"
   
  Následující příklad ukazuje, jak použít možnost ukládání do mezipaměti pomocný parametr pro <xref:System.Windows.Media.DrawingBrush>.  
   
- [!code-csharp[RenderOptions#RenderOptionsSnippet3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RenderOptions/CSharp/Window1.xaml.cs#renderoptionssnippet3)]
- [!code-vb[RenderOptions#RenderOptionsSnippet3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RenderOptions/visualbasic/window1.xaml.vb#renderoptionssnippet3)]  
+ [!code-csharp[RenderOptions#RenderOptionsSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/RenderOptions/CSharp/Window1.xaml.cs#renderoptionssnippet3)]
+ [!code-vb[RenderOptions#RenderOptionsSnippet3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RenderOptions/visualbasic/window1.xaml.vb#renderoptionssnippet3)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
-- [Plánování výkonu aplikace](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)
-- [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)
-- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)
-- [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)
-- [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)
-- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)
-- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
-- [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
-- [Tipy a triky animace](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)
+- [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
+- [Plánování výkonu aplikace](planning-for-application-performance.md)
+- [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
+- [Rozložení a návrh](optimizing-performance-layout-and-design.md)
+- [Chování objektu](optimizing-performance-object-behavior.md)
+- [Prostředky aplikace](optimizing-performance-application-resources.md)
+- [Text](optimizing-performance-text.md)
+- [Datová vazba](optimizing-performance-data-binding.md)
+- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)
+- [Tipy a triky animace](../graphics-multimedia/animation-tips-and-tricks.md)

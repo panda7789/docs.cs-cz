@@ -7,41 +7,41 @@ helpviewer_keywords:
 - timing system [WPF]
 - animation [WPF]
 ms.assetid: 587e36f6-1957-424e-9d89-c43724f26d84
-ms.openlocfilehash: 7c61e1bbd3b9c93785393c729f2af27f29d1dc40
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 4936ba7bcd78c4867dae99df8bad11776cf655db
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45994270"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358493"
 ---
 # <a name="animation-and-timing-how-to-topics"></a>Postupy: Témata animace a časování
 Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] animace a časování systému ve svých aplikacích.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Zrychlení a zpomalení animace](../../../../docs/framework/wpf/graphics-multimedia/how-to-accelerate-or-decelerate-an-animation.md)  
- [Kumulování hodnot animace při opakujících se cyklech](../../../../docs/framework/wpf/graphics-multimedia/how-to-accumulate-animation-values-during-repeat-cycles.md)  
- [Přidání výstupní hodnoty animace do počáteční hodnoty animace](../../../../docs/framework/wpf/graphics-multimedia/how-to-add-an-animation-output-value-to-an-animation-starting-value.md)  
- [Animace vlastnosti pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)  
- [Animace vlastnosti bez pomoci scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md)  
- [Animace v objektu ControlTemplate](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-in-a-controltemplate.md)  
- [Animace ve stylu](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-in-a-style.md)  
- [Animace krytí elementu nebo štětce](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-opacity-of-an-element-or-brush.md)  
- [Změna rychlosti hodin bez úpravy rychlosti časové osy](../../../../docs/framework/wpf/graphics-multimedia/change-the-speed-of-a-clock.md)  
- [Kontrola scénáře po jeho spuštění pomocí interaktivních metod](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-storyboard-after-it-starts.md)  
- [Řízení animací pomocí polí Od, Komu a Kdo](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-an-animation-using-from-to-and-by.md)  
- [Definování rozsahu názvů](../../../../docs/framework/wpf/graphics-multimedia/how-to-define-a-name-scope.md)  
- [Obdržení oznámení při změně stavu hodin](../../../../docs/framework/wpf/graphics-multimedia/how-to-receive-notification-when-clock-state-changes.md)  
- [Opakování animace](../../../../docs/framework/wpf/graphics-multimedia/how-to-repeat-an-animation.md)  
- [Hledání ve scénáři](../../../../docs/framework/wpf/graphics-multimedia/how-to-seek-a-storyboard.md)  
- [Synchronní hledání ve scénáři](../../../../docs/framework/wpf/graphics-multimedia/how-to-seek-a-storyboard-synchronously.md)  
- [Nastavení trvání pro animaci](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-a-duration-for-an-animation.md)  
- [Nastavení vlastnosti po animaci pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-a-property-after-animating-it-with-a-storyboard.md)  
- [Zjednodušení aplikací pomocí podřízených časových os](../../../../docs/framework/wpf/graphics-multimedia/how-to-simplify-animations-by-using-child-timelines.md)  
- [Určení HandoffBehavior mezi animacemi scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-handoffbehavior-between-storyboard-animations.md)  
- [Určení FillBehavior pro časovou osu, která dosáhla konce aktivního období](../../../../docs/framework/wpf/graphics-multimedia/specify-the-fillbehavior-for-a-timeline.md)  
- [Určení automatického otočení časové osy](../../../../docs/framework/wpf/graphics-multimedia/how-to-specify-whether-a-timeline-automatically-reverses.md)  
- [Spuštění animace při změně hodnoty vlastnosti](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-an-animation-when-a-property-value-changes.md)  
- [Použití aktivačních událostí pro řízení scénáře po spuštění](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)  
+ [Zrychlení a zpomalení animace](how-to-accelerate-or-decelerate-an-animation.md)  
+ [Kumulování hodnot animace při opakujících se cyklech](how-to-accumulate-animation-values-during-repeat-cycles.md)  
+ [Přidání výstupní hodnoty animace do počáteční hodnoty animace](how-to-add-an-animation-output-value-to-an-animation-starting-value.md)  
+ [Animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md)  
+ [Animace vlastnosti bez pomoci scénáře](how-to-animate-a-property-without-using-a-storyboard.md)  
+ [Animace v objektu ControlTemplate](how-to-animate-in-a-controltemplate.md)  
+ [Animace ve stylu](how-to-animate-in-a-style.md)  
+ [Animace krytí elementu nebo štětce](how-to-animate-the-opacity-of-an-element-or-brush.md)  
+ [Změna rychlosti hodin bez úpravy rychlosti časové osy](change-the-speed-of-a-clock.md)  
+ [Kontrola scénáře po jeho spuštění pomocí interaktivních metod](how-to-control-a-storyboard-after-it-starts.md)  
+ [Řízení animací pomocí polí Od, Komu a Kdo](how-to-control-an-animation-using-from-to-and-by.md)  
+ [Definování rozsahu názvů](how-to-define-a-name-scope.md)  
+ [Obdržení oznámení při změně stavu hodin](how-to-receive-notification-when-clock-state-changes.md)  
+ [Opakování animace](how-to-repeat-an-animation.md)  
+ [Hledání ve scénáři](how-to-seek-a-storyboard.md)  
+ [Synchronní hledání ve scénáři](how-to-seek-a-storyboard-synchronously.md)  
+ [Nastavení trvání pro animaci](how-to-set-a-duration-for-an-animation.md)  
+ [Nastavení vlastnosti po animaci pomocí scénáře](how-to-set-a-property-after-animating-it-with-a-storyboard.md)  
+ [Zjednodušení aplikací pomocí podřízených časových os](how-to-simplify-animations-by-using-child-timelines.md)  
+ [Určení HandoffBehavior mezi animacemi scénáře](how-to-specify-handoffbehavior-between-storyboard-animations.md)  
+ [Určení FillBehavior pro časovou osu, která dosáhla konce aktivního období](specify-the-fillbehavior-for-a-timeline.md)  
+ [Určení automatického otočení časové osy](how-to-specify-whether-a-timeline-automatically-reverses.md)  
+ [Spuštění animace při změně hodnoty vlastnosti](how-to-trigger-an-animation-when-a-property-value-changes.md)  
+ [Použití aktivačních událostí pro řízení scénáře po spuštění](how-to-use-event-triggers-to-control-a-storyboard-after-it-starts.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Media.Animation.Timeline>  
@@ -55,4 +55,4 @@ Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../
  <xref:System.Windows.Media.Animation>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+ [Grafika a multimédia](index.md)

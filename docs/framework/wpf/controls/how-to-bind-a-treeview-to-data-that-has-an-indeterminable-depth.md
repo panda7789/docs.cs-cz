@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - TreeView control [WPF], binding to data of indeterminate depth
 ms.assetid: daddcd74-1b0f-4ffd-baeb-ec934c5e0f53
-ms.openlocfilehash: 702a86f049635423a31e554d205dcc3cf4aa799d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6c0361674c4f6f740784a7657e018d5257c6edac
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54605364"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377233"
 ---
 # <a name="how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth"></a>Postupy: Připojení TreeView k datům nezjistitelné hloubky
 Může nastat situace, kdy budete chtít vytvořit vazbu <xref:System.Windows.Controls.TreeView> ke zdroji dat, jejichž hloubky není znám.  Tato situace může nastat, když jsou data rekurzivní ze své podstaty, jako je například systém souborů, složek, ve kterém můžou obsahovat složky, nebo organizační struktury vaší společnosti, kde zaměstnanci mají ostatní zaměstnanci jako přímé podřízené.  
@@ -23,8 +23,8 @@ Může nastat situace, kdy budete chtít vytvořit vazbu <xref:System.Windows.Co
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak vytvořit vazbu <xref:System.Windows.Controls.TreeView> hierarchická data a použít <xref:System.Windows.HierarchicalDataTemplate> zadat <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> pro každou <xref:System.Windows.Controls.TreeViewItem>.  <xref:System.Windows.Controls.TreeView> Vytvoří vazbu na data XML, který představuje zaměstnanců ve společnosti.  Každý `Employee` element může obsahovat další `Employee` prvků, které mají označení o podřízenosti. Protože data je rekurzivní, <xref:System.Windows.HierarchicalDataTemplate> můžou uplatnit na každé úrovni.  
   
- [!code-xaml[TreeViewWithUnknownDepth#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewWithUnknownDepth/CS/Window1.xaml#1)]  
+ [!code-xaml[TreeViewWithUnknownDepth#1](~/samples/snippets/csharp/VS_Snippets_Wpf/TreeViewWithUnknownDepth/CS/Window1.xaml#1)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)
+- [Přehled datových vazeb](../data/data-binding-overview.md)
+- [Přehled datových šablon](../data/data-templating-overview.md)

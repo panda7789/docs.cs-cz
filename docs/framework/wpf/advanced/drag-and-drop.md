@@ -8,21 +8,21 @@ helpviewer_keywords:
 - drag and drop [WPF]
 - drag-and-drop [WPF]
 ms.assetid: 77c48920-8c8b-41eb-8fe8-b411962c8623
-ms.openlocfilehash: 084354f2c567716c2ca083dddb4cd6628334d603
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4a0e7cac9262908e4683aebeb653559c1513d4d9
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33542571"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57367463"
 ---
 # <a name="drag-and-drop"></a>Přetažení
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje vysoce flexibilní přetažení a drop infrastruktury, která podporuje přetahování a vkládání dat v rámci obě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace a také dalších [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] aplikace.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje vysoce flexibilní přetahování a přetažení infrastrukturu, která podporuje přetahování a vkládání velkých dat do obou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace i jiné [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] aplikací.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled přetažení](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)  
- [Data a datové objekty](../../../../docs/framework/wpf/advanced/data-and-data-objects.md)  
- [Návod: Povolení přetahování pomocí myši na uživatelském ovládacím prvku](../../../../docs/framework/wpf/advanced/walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
- [Témata s postupy](../../../../docs/framework/wpf/advanced/drag-and-drop-how-to-topics.md)  
+ [Přehled přetažení](drag-and-drop-overview.md)  
+ [Data a datové objekty](data-and-data-objects.md)  
+ [Návod: Povolení přetahování na uživatelský ovládací prvek](walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
+ [Témata s postupy](drag-and-drop-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.DataFormat>  

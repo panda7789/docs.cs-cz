@@ -5,12 +5,12 @@ helpviewer_keywords:
 - controls [WPF], Calendar
 - Calendar control [WPF]
 ms.assetid: ee844e4a-eefe-48e2-bd0d-1d82cc5e960b
-ms.openlocfilehash: d8e2306a2a63e567b156449caa9741e1028f017f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d2332f5d11e60a45e4da5d62ef7beed7aa14dfa7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54545222"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57359403"
 ---
 # <a name="calendar"></a>Kalendář
 Kalendář umožňuje uživateli vybrat datum pomocí vizuálního zobrazení kalendáře.  
@@ -19,7 +19,7 @@ Kalendář umožňuje uživateli vybrat datum pomocí vizuálního zobrazení ka
   
  Následující obrázek ukazuje dva <xref:System.Windows.Controls.Calendar> ovládací prvky s výběry a přerušení spojení data a jedna bez ní.  
   
- ![Ovládací prvky v kalendáři](../../../../docs/framework/wpf/controls/media/ndp-calendarcontrols.png "NDP_CalendarControls")  
+ ![Ovládací prvky v kalendáři](./media/ndp-calendarcontrols.png "NDP_CalendarControls")  
 Ovládací prvky kalendáře  
   
  Následující tabulka obsahuje informace o úlohách, které jsou obvykle přidruženy k <xref:System.Windows.Controls.Calendar>.  
@@ -52,5 +52,5 @@ Ovládací prvky kalendáře
 |MEZERNÍK nebo ENTER|<xref:System.Windows.Controls.CalendarMode.Year> Nebo <xref:System.Windows.Controls.CalendarMode.Decade>|Přepínače <xref:System.Windows.Controls.Calendar.DisplayMode%2A> k <xref:System.Windows.Controls.CalendarMode.Month> nebo <xref:System.Windows.Controls.CalendarMode.Year> reprezentována cílených položky.|  
   
 ## <a name="see-also"></a>Viz také:
-- [Ovládací prvky](../../../../docs/framework/wpf/controls/index.md)
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+- [Ovládací prvky](index.md)
+- [Styly a šablony](styling-and-templating.md)

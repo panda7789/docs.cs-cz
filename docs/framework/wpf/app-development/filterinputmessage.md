@@ -5,12 +5,12 @@ helpviewer_keywords:
 - raw input [WPF]
 - FilterInputMessage method [WPF]
 ms.assetid: 4d74c6cf-7d1d-49ff-96c1-231340ce54f5
-ms.openlocfilehash: c3620e13951afddc8de25c314de17704548d2366
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 1b255c342416bd8ee01b858af3b6c8e5b6ee787b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746163"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57368243"
 ---
 # <a name="filterinputmessage"></a>FilterInputMessage
 Voláno rozhraním PresentationHost.exe pokaždé, když je přijata zpráva, pokud je vrácena E_NOTIMPL.  
@@ -33,14 +33,14 @@ HRESULT FilterInputMessage( [in] MSG* pMsg ) ;
   
  S_FALSE - filtr zpracovat tuto zprávu a by mělo dojít k žádné další zpracování.  
   
- E_NOTIMPL – Pokud je tato hodnota se vrátí, [filterinputmessage –](../../../../docs/framework/wpf/app-development/filterinputmessage.md) není volána znovu. To může být vrácena z hostitele aplikace, která interested pouze při poskytování vlastní pokrok a chyba uživatelských rozhraní k PresentationHost.exe není zajímá se předalo PresentationHost.exe nezpracované zprávy o zadávání.  
+ E_NOTIMPL – Pokud je tato hodnota se vrátí, [filterinputmessage –](filterinputmessage.md) není volána znovu. To může být vrácena z hostitele aplikace, která interested pouze při poskytování vlastní pokrok a chyba uživatelských rozhraní k PresentationHost.exe není zajímá se předalo PresentationHost.exe nezpracované zprávy o zadávání.  
   
 ## <a name="remarks"></a>Poznámky  
  PresentationHost.exe je cílem různých nezpracovaná vstupní zařízení, včetně klávesnice, myš a dálková ovládání. V některých případech je závislá na vstupu, který by jinak využívat PresentationHost.exe chování v hostitelské aplikaci. Například hostitelská aplikace může záviset na příjem některé vstupní zprávy k určení, jestli se mají zobrazit prvky konkrétní uživatelského rozhraní.  
   
- Aby hostitelskou aplikaci pro příjem nezbytné vstupní zprávy k poskytování těchto projevů PresentationHost.exe předává odpovídající nezpracované zprávy o zadávání hostované aplikace voláním [filterinputmessage –](../../../../docs/framework/wpf/app-development/filterinputmessage.md).  
+ Aby hostitelskou aplikaci pro příjem nezbytné vstupní zprávy k poskytování těchto projevů PresentationHost.exe předává odpovídající nezpracované zprávy o zadávání hostované aplikace voláním [filterinputmessage –](filterinputmessage.md).  
   
- Hostované aplikace přijme nezpracované zprávy o zadávání tak, že zaregistrujete sadu nezpracovaná vstupní zařízení (lidské rozhraní) vrácený [getrawinputdevices –](../../../../docs/framework/wpf/app-development/getrawinputdevices.md).  
+ Hostované aplikace přijme nezpracované zprávy o zadávání tak, že zaregistrujete sadu nezpracovaná vstupní zařízení (lidské rozhraní) vrácený [getrawinputdevices –](getrawinputdevices.md).  
   
 ## <a name="see-also"></a>Viz také:
 - [WM_INPUT zprávy](/windows/desktop/inputdev/wm-input)

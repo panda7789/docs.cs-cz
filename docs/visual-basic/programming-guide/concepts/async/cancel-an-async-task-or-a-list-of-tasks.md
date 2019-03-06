@@ -2,12 +2,12 @@
 title: Zrušení asynchronní úlohy nebo seznamu úkolů (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: a9ee1b71-5bec-4736-a1e9-448042dd7215
-ms.openlocfilehash: e4e0fcb1d706fef09233543487aebdeb01cdfbcf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 81676324145bcf8f6d9a13e757865fa86e6d2e23
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54695890"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57374450"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-visual-basic"></a>Zrušení asynchronní úlohy nebo seznamu úkolů (Visual Basic)
 Můžete nastavit tlačítko, které můžete použít pro zrušení asynchronní aplikace, pokud nechcete čekat na dokončení. Podle příkladů v tomto tématu můžete přidat tlačítko pro zrušení do aplikace, která stahuje obsah z jednoho webu nebo seznamu webů.  
@@ -17,7 +17,7 @@ Můžete nastavit tlačítko, které můžete použít pro zrušení asynchronn�
 > [!NOTE]
 >  Chcete-li spustit příklady, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalován v počítači.  
   
-##  <a name="BKMK_CancelaTask"></a> Zrušení úlohy  
+## <a name="BKMK_CancelaTask"></a> Zrušení úlohy  
  V prvním příkladu **zrušit** tlačítko s jeden úkol stahování. Pokud tlačítko použijete, když aplikace stahuje obsah, stahování bude zrušeno.  
   
 ### <a name="downloading-the-example"></a>Stažení příkladu  
@@ -135,7 +135,7 @@ Můžete nastavit tlačítko, které můžete použít pro zrušení asynchronn�
     Download canceled.  
     ```  
   
-##  <a name="BKMK_CancelaListofTasks"></a> Zrušení seznamu úloh  
+## <a name="BKMK_CancelaListofTasks"></a> Zrušení seznamu úloh  
  Můžete rozšířit předchozí příklad zrušit tak řadu úkolů propojením stejné `CancellationTokenSource` instance s jednotlivými úkoly. Pokud se rozhodnete **zrušit** , zrušíte všechny úlohy, které ještě nebyly dokončeny.  
   
 ### <a name="downloading-the-example"></a>Stažení příkladu  
@@ -247,7 +247,7 @@ Můžete nastavit tlačítko, které můžete použít pro zrušení asynchronn�
     Downloads canceled.  
     ```  
   
-##  <a name="BKMK_CompleteExamples"></a> Kompletní příklady  
+## <a name="BKMK_CompleteExamples"></a> Kompletní příklady  
  Následující části obsahují kód pro každý z předchozích příkladů. Všimněte si, že musíte přidat odkaz pro <xref:System.Net.Http>.  
   
  Můžete si stáhnout projektů z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).  

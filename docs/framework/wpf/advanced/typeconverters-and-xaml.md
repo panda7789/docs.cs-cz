@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XAML [WPF], TypeConverter class
 ms.assetid: f6313e4d-e89d-497d-ac87-b43511a1ae4b
-ms.openlocfilehash: 29286328c960707151fd5b6f2804346373000ad4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7f42bb6e4333fcb5e83ee4b95e404230424b317f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54748074"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352708"
 ---
 # <a name="typeconverters-and-xaml"></a>TypeConverters a XAML
 Toto téma popisuje účel typu Převod z řetězce jako obecnou funkcí jazyka XAML. V rozhraní .NET Framework <xref:System.ComponentModel.TypeConverter> třída slouží jako součást implementace pro spravovaný vlastní třídu, která lze použít jako hodnotu vlastnosti v použití atributu XAML konkrétní účel. Pokud napíšete vlastní třída a chcete, aby instance třídy má být použitelná jako hodnoty atributů nastavitelné XAML, může být potřeba použít <xref:System.ComponentModel.TypeConverterAttribute> do vaší třídy napsat vlastní <xref:System.ComponentModel.TypeConverter> třídy, nebo obojí.  
@@ -24,27 +24,22 @@ Toto téma popisuje účel typu Převod z řetězce jako obecnou funkcí jazyka 
  Procesor XAML vyžaduje dva druhy údajů aby bylo možné zpracovat hodnotu atributu. První část informací je typ hodnoty vlastnosti, která je nastavena. Libovolný řetězec, který definuje hodnotu atributu a který, jsou zpracovávána v XAML musí být nakonec převést nebo přeložit hodnotu daného typu. Pokud je hodnota jednoduchého typu, který je srozumitelné pro analyzátor XAML (například číselná hodnota), dojde k pokusu o přímý převod řetězce. Pokud je hodnota výčtu, řetězec se používá ke kontrole pro porovnání název pojmenované konstanty tohoto výčtu. Pokud je hodnota ani na primitivní analyzátor rozumí ani výčet a dotyčný typ musí být schopný poskytnout instanci typu, nebo hodnotu založenou na převedený řetězec. To se provádí tak, že třída konvertor typu. Konvertor typů je v podstatě pomocnou třídu pro poskytování hodnoty jiné třídy, pro scénář XAML a potenciálně také pro kód volá v kódu .NET.  
   
 ### <a name="using-existing-type-conversion-behavior-in-xaml"></a>Pomocí stávající chování převodu typu v XAML  
- V závislosti na vaší znalost základní koncepty XAML už využíváte chování převodu typu v základní aplikaci XAML nevěděli ho. Například WPF definuje doslova stovky vlastnosti, které přijmout hodnotu typu <xref:System.Windows.Point>. A <xref:System.Windows.Point> je hodnota, která popisuje souřadnice v dvojrozměrné souřadnicového prostoru a vlastně jenom má dvě důležité vlastnosti: <xref:System.Windows.Point.X%2A> a <xref:System.Windows.Point.Y%2A>. Při zadávání bod v XAML můžete zadat jako řetězec s oddělovačem (obvykle čárkami) mezi <xref:System.Windows.Point.X%2A> a <xref:System.Windows.Point.Y%2A> hodnoty, které zadáte. Například: `<LinearGradientBrush StartPoint="0,0" EndPoint="1,1">`.  
+ V závislosti na vaší znalost základní koncepty XAML už využíváte chování převodu typu v základní aplikaci XAML nevěděli ho. Například WPF definuje doslova stovky vlastnosti, které přijmout hodnotu typu <xref:System.Windows.Point>. A <xref:System.Windows.Point> je hodnota, která popisuje souřadnice v dvojrozměrné souřadnicového prostoru a vlastně jenom má dvě důležité vlastnosti: <xref:System.Windows.Point.X%2A> a <xref:System.Windows.Point.Y%2A>. Při zadávání bod v XAML můžete zadat jako řetězec s oddělovačem (obvykle čárkami) mezi <xref:System.Windows.Point.X%2A> a <xref:System.Windows.Point.Y%2A> hodnoty, které zadáte. Například: `<LinearGradientBrush StartPoint="0,0" EndPoint="1,1"/>`.  
   
  I tento jednoduchý typ <xref:System.Windows.Point> a využití jednoduché v XAML zahrnují konvertor typu. V tomto případě to je třída <xref:System.Windows.PointConverter>.  
   
  Konvertor typů pro <xref:System.Windows.Point> definované na úrovni zjednodušují třídy použití značek všech vlastností, které trvat <xref:System.Windows.Point>. Bez konvertor typu tady, je třeba následující mnohem podrobnější kód pro stejný příklad uvedený dříve:  
-  
- `<LinearGradientBrush>`  
-  
- `<LinearGradientBrush.StartPoint>`  
-  
- `<Point X="0" Y="0"/>`  
-  
- `</LinearGradientBrush.StartPoint>`  
-  
- `<LinearGradientBrush.EndPoint>`  
-  
- `<Point X="1" Y="1"/>`  
-  
- `</LinearGradientBrush.EndPoint>`  
-  
- `<LinearGradientBrush>`  
+
+```xaml
+<LinearGradientBrush>
+  <LinearGradientBrush.StartPoint>
+    <Point X="0" Y="0"/>
+  </LinearGradientBrush.StartPoint>
+  <LinearGradientBrush.EndPoint>
+    <Point X="1" Y="1"/>
+  </LinearGradientBrush.EndPoint>
+</LinearGradientBrush>
+ ```
   
  Jestli se má použít typ převodu řetězce nebo podrobnější ekvivalentní syntax je obecně kódování styl volbou. Pracovního postupu nástroje XAML může také ovlivnit, jak nastavit hodnoty. Některé nástroje XAML se mají generovat nejpodrobnější formu značky vzhledem k tomu je snazší zpátečního převodu na návrháře zobrazení nebo svůj vlastní mechanismus serializace.  
   
@@ -53,7 +48,7 @@ Toto téma popisuje účel typu Převod z řetězce jako obecnou funkcí jazyka 
 ### <a name="type-converters-and-markup-extensions"></a>Převaděče typů a rozšíření značek  
  Rozšíření a typ převaděče značek vyplnit ortogonální role z hlediska procesoru chování XAML a scénáře, které se použijí pro. I když je k dispozici pro použití rozšíření značky kontext, není chování převodu typu vlastnosti, kde rozšíření značek zajišťuje, že hodnota je obecně změnami implementace rozšíření značek. Jinými slovy i v případě, že rozšíření značek vrací textový řetězec jako jeho `ProvideValue` výstupu, není vyvolána chování převodu typu pro tento řetězec jako použitý pro určitou vlastnost nebo typ hodnoty vlastnosti, obecně je účel rozšíření značek k procesu řetězce a vrátit potřebný objekt bez jakékoli konvertor typu.  
   
- Jedna běžné situace, kde je nutné místo konvertor typu rozšíření značek, je vytvořit odkaz na objekt, který již existuje. Konvertor typu bezstavové nejlépe, může generovat jenom nové instance, který nemusí být žádoucí. Další informace o rozšíření značek, naleznete v tématu [– rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
+ Jedna běžné situace, kde je nutné místo konvertor typu rozšíření značek, je vytvořit odkaz na objekt, který již existuje. Konvertor typu bezstavové nejlépe, může generovat jenom nové instance, který nemusí být žádoucí. Další informace o rozšíření značek, naleznete v tématu [– rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
   
 ### <a name="native-type-converters"></a>Nativní typ převaděče  
  V implementaci WPF a .NET Framework XAML analyzátor existují určité typy, které mají nativní typ převodu zpracování, ještě nejsou typy, které může konvenčně považovat za primitiv. Příklad takového typu je <xref:System.DateTime>. Důvodem je založen na fungování architektury .NET Framework: typ <xref:System.DateTime> je definována v mscorlib, většina základních knihoven v .NET. <xref:System.DateTime> není dovoleno přiřadit atributem, který pochází z jiného sestavení, který vytvoří závislost (<xref:System.ComponentModel.TypeConverterAttribute> je ze systému), nemůže být podporována mechanismu obvykle typ převaděče zjišťování přidělování. Místo toho analyzátoru XAML obsahuje seznam typů, které je třeba tyto nativní zpracování a zpracuje podobně do zpracování true primitiv. (V případě třídy <xref:System.DateTime> to zahrnuje volání <xref:System.DateTime.Parse%2A>.)  
@@ -116,6 +111,6 @@ Toto téma popisuje účel typu Převod z řetězce jako obecnou funkcí jazyka 
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.ComponentModel.TypeConverter>
-- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
-- [Podrobná syntaxe XAML](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)
+- [Přehled XAML (WPF)](xaml-overview-wpf.md)
+- [Rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md)
+- [Podrobná syntaxe XAML](xaml-syntax-in-detail.md)

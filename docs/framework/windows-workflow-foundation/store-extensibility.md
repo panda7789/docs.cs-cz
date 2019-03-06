@@ -1,20 +1,20 @@
 ---
-title: Rozšíření úložiště
+title: Rozšiřitelnost Store
 ms.date: 03/30/2017
 ms.assetid: 7c3f4a46-4bac-4138-ae6a-a7c7ee0d28f5
-ms.openlocfilehash: 8cfbf96256d4b8416beb526875a1e9ac09c3bfbb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8f317e8e0864dd6c4595ac669611594c843b277c
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517917"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57375425"
 ---
-# <a name="store-extensibility"></a>Rozšíření úložiště
-<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> umožňuje uživatelům povýšit specifické pro aplikace, vlastní vlastnosti, které lze použít k dotazu pro instance v databázi trvalost. Operace povýšení vlastnost způsobí, že hodnota, která má být k dispozici v rámci speciální zobrazení v databázi. Tyto vlastnosti propagovaných (vlastnosti, které lze použít v dotazech uživatele) může být jednoduché typy, jako je například Int64, Guid, String a data a času nebo serializovaných binárního typu (byte[]).  
+# <a name="store-extensibility"></a>Rozšiřitelnost Store
+<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> umožňuje zvýšit úroveň specifické pro aplikace, vlastní vlastnosti, které lze použít k dotazování pro instance databáze trvalosti. V rámci podpory vlastnosti způsobí, že hodnota, která má být k dispozici v rámci speciální zobrazení v databázi. Tyto propagované vlastnosti (vlastnosti, které lze použít v uživatelských dotazů) může být jednoduché typy, jako je například Int64, Guid, String a datum a čas nebo typ serializovaného binární (byte[]).  
   
- <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> Třída má <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.Promote%2A> metodu, kterou můžete použít ke zvýšení úrovně vlastnost jako vlastnost, která lze použít v dotazech. V následujícím příkladu je příkladem začátku do konce rozšíření úložiště.  
+ <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> Třída nemá <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.Promote%2A> metodu, která vám umožní podporovat vlastnost jako vlastnost, která můžete v dotazech použít nedají. V následujícím příkladu je příkladem začátku do konce rozšíření úložiště.  
   
-1.  V tomto ukázkovém scénáři dokumentu zpracování (DP) aplikace má pracovní postupy, z nichž každá používá vlastní aktivity pro zpracování dokumentu. Tyto pracovní postupy mají sadu proměnné stavu, které musí být viditelné pro koncového uživatele. K dosažení tohoto distribučního bodu aplikace poskytuje rozšíření instance typu <xref:System.Activities.Persistence.PersistenceParticipant>, který je využíván jiným aktivity k poskytování proměnné stavu.  
+1.  V tomto ukázkovém scénáři má dokument zpracování (DP) aplikací pracovních postupů, z nichž každý používá vlastní aktivity pro zpracování dokumentu. Tyto pracovní postupy mají sadu proměnných stavu, které je potřeba nastavena jako viditelná pro koncového uživatele. K dosažení tohoto distribučního bodu aplikace poskytuje rozšíření instance typu <xref:System.Activities.Persistence.PersistenceParticipant>, které používají aktivity slouží k poskytování proměnné stavu.  
   
     ```  
     class DocumentStatusExtension : PersistenceParticipant  
@@ -26,7 +26,7 @@ ms.locfileid: "33517917"
     }  
     ```  
   
-2.  Nové rozšíření se pak přidá k hostiteli.  
+2.  Nové rozšíření se pak přidá do hostitele.  
   
     ```  
     static Activity workflow = CreateWorkflow();  
@@ -35,9 +35,9 @@ ms.locfileid: "33517917"
     application.Extensions.Add(documentStatusExtension);  
     ```  
   
-     Další informace o přidání vlastního účastník najdete v tématu [trvalost účastníky](../../../docs/framework/windows-workflow-foundation/persistence-participants.md) ukázka.  
+     Další podrobnosti o přidání vlastního účastníka trvalosti najdete v článku [účastníci trvalosti](../../../docs/framework/windows-workflow-foundation/persistence-participants.md) vzorku.  
   
-3.  Vlastní aktivity v aplikaci distribučního bodu naplnění různých polí stav v **Execute** metoda.  
+3.  Vlastní aktivity v aplikaci distribučního bodu naplnění různých polí stav v **Execute** metody.  
   
     ```  
     public override void Execute(CodeActivityContext context)  
@@ -51,7 +51,7 @@ ms.locfileid: "33517917"
     }  
     ```  
   
-4.  Když bod trvalost dosáhne instanci pracovního postupu **CollectValues** metodu **DocumentStatusExtension** trvalost účastník uloží tyto vlastnosti do trvalosti dat kolekce.  
+4.  Instance pracovního postupu dosáhne bod trvalost **CollectValues** metodu **DocumentStatusExtension** trvalého účastníka trvalosti dat uloží tyto vlastnosti kolekce.  
   
     ```  
     class DocumentStatusExtension : PersistenceParticipant  
@@ -73,9 +73,9 @@ ms.locfileid: "33517917"
     ```  
   
     > [!NOTE]
-    >  Všechny tyto vlastnosti jsou předány **SqlWorkflowInstanceStore** rámcem trvalost prostřednictvím **SaveWorkflowCommand.InstanceData** kolekce.  
+    >  Všechny tyto vlastnosti jsou předány **SqlWorkflowInstanceStore** rozhraním trvalost prostřednictvím **SaveWorkflowCommand.InstanceData** kolekce.  
   
-5.  Distribuční bod aplikace inicializuje ukládání Instance pracovního postupu SQL a vyvolá **povýšit** metoda zvýšení úrovně tato data.  
+5.  Distribučního bodu aplikace inicializuje Store Instance pracovního postupu SQL a vyvolá **povýšit** metoda podporovat tato data.  
   
     ```  
     SqlWorkflowInstanceStore store = new SqlWorkflowInstanceStore(connectionString);  
@@ -91,9 +91,9 @@ ms.locfileid: "33517917"
     store.Promote("DocumentStatus", variantProperties, null);  
     ```  
   
-     Na základě této informace povýšení **SqlWorkflowInstanceStore** umístí vlastnosti dat ve sloupcích [InstancePromotedProperties](#InstancePromotedProperties) zobrazení.
+     Na základě těchto informací povýšení **SqlWorkflowInstanceStore** umístí vlastnosti dat sloupců [InstancePromotedProperties](#InstancePromotedProperties) zobrazení.
   
-6.  Pro dotaz na podmnožinu dat z tabulky povýšení, přidá aplikace distribučního bodu přizpůsobené zobrazení nad zobrazení povýšení.  
+6.  Pro dotaz na podmnožinu dat z tabulky povýšení, distribučního bodu aplikace přidá vlastní zobrazení nad zobrazení povýšení.  
   
     ```  
     create view [dbo].[DocumentStatus] with schemabinding  
@@ -108,11 +108,11 @@ ms.locfileid: "33517917"
     go  
     ```  
   
-##  <a name="InstancePromotedProperties"></a> Zobrazení [System.Activities.DurableInstancing.InstancePromotedProperties]  
+## <a name="InstancePromotedProperties"></a> Zobrazení [System.Activities.DurableInstancing.InstancePromotedProperties]  
   
 |Název sloupce|Typ sloupce|Popis|  
 |-----------------|-----------------|-----------------|  
-|identifikátor instanceId|GUID|K instanci pracovního postupu, které patří tato povýšení.|  
-|PromotionName|Nvarchar(400)|Název povýšení sám sebe.|  
-|Hodnota1, hodnota2, hodnota3,.., Value32|SQL_VARIANT|Hodnota propagovaných samotné vlastnosti. V sql_variant vejde na většině primitivní datové typy SQL s výjimkou binární objekty BLOB a více než 8 000 bajtů délku řetězce.|  
-|Value33, Value34, Value35,..., Value64|Varbinary(max)|Hodnota propagovaných vlastnosti, které jsou explicitně deklarované jako varbinary(max).|
+|InstanceId|GUID|Instance pracovního postupu patřící do této propagační akce.|  
+|PromotionName|nvarchar(400)|Název povýšení, samotného.|  
+|Hodnota1, hodnota2, hodnota3,..., Value32|SQL_VARIANT|Hodnota samotné propagované vlastnosti. Většina primitivní datové typy SQL s výjimkou binární objekty BLOB a víc než 8 000 bajtů délku řetězce lze zobrazit v sql_variant.|  
+|Value33 Value34, Value35,..., Value64|Varbinary(max)|Hodnoty propagované vlastnosti, které jsou explicitně deklarovány jako varbinary(max).|

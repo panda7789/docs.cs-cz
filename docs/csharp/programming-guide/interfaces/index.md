@@ -62,7 +62,7 @@ Rozhraní má následující vlastnosti:
  [Postupy: Explicitní implementace členů dvou rozhraní](how-to-explicitly-implement-members-of-two-interfaces.md)  
  Obsahuje příklad toho, jak explicitní implementace členů rozhraní s dědičnosti.  
   
-##  <a name="BKMK_RelatedSections"></a> Související oddíly
+## <a name="BKMK_RelatedSections"></a> Související oddíly
 
 - [Vlastnosti rozhraní](../classes-and-structs/interface-properties.md)  
 - [Indexery v rozhraní](../indexers/indexers-in-interfaces.md)  

@@ -7,20 +7,20 @@ helpviewer_keywords:
 - controls [WPF], CheckBox
 - CheckBox control [WPF]
 ms.assetid: ee701cc2-968b-4683-8f81-3fafd8542700
-ms.openlocfilehash: a3f59ce8632a56f363f6ea029fc328655fece930
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 42d4d0e232d66c076a2f3ecfb2ae95a41b0557a5
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33550749"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377072"
 ---
 # <a name="checkbox"></a>CheckBox
-Můžete použít <xref:System.Windows.Controls.CheckBox> v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] vaší aplikace představují možnosti, které může uživatel zaškrtněte nebo zrušte. Můžete použít jeden zaškrtávacího políčka nebo můžete seskupit dva nebo více políček.  
+Můžete použít <xref:System.Windows.Controls.CheckBox> v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] vaší aplikace k reprezentaci možností, které uživatel může vybrat nebo vymazat. Můžete pomocí jednoho zaškrtávacího políčka nebo můžete seskupit dvou nebo více zaškrtávacích políček.  
   
- Následující obrázek ukazuje různé stavy <xref:System.Windows.Controls.CheckBox>.  
+ Následující obrázek znázorňuje různé stavy <xref:System.Windows.Controls.CheckBox>.  
   
- ![Zaškrtávací políčko stavy](../../../../docs/framework/wpf/controls/media/ss-ctl-checkbox.png "SS_CTL_checkbox")  
-Ovládacích prvků CheckBox v různých stavů  
+ ![Zaškrtávací políčko stavy](./media/ss-ctl-checkbox.png "SS_CTL_checkbox")  
+Ovládacích prvků CheckBox v různých stavech  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.CheckBox>  

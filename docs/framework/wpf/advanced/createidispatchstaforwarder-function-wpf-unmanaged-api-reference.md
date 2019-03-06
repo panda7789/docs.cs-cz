@@ -8,12 +8,12 @@ api_name:
 api_location:
 - PresentationHost_v0400.dll
 ms.assetid: 57a02dfa-f091-4ace-9c06-1f4ab52b3527
-ms.openlocfilehash: 215f6ff727b814e7e7d7c708c29a8c5221f5797f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c4da322bf779e084f12529d0da6949ef6ada5cf3
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54575979"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57379650"
 ---
 # <a name="createidispatchstaforwarder-function-wpf-unmanaged-api-reference"></a>Funkce CreateIDispatchSTAForwarder (WPF nespravovaná referenční dokumentace rozhraní API)
 Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určena pro použití přímo v kódu.  
@@ -39,7 +39,7 @@ HRESULT CreateIDispatchSTAForwarder(
  Ukazatel na adresu `IDispatch` rozhraní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [rozhraní .NET Framework System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [rozhraní .NET Framework System Requirements](../../get-started/system-requirements.md).  
   
  **DLL:**  
   
@@ -50,4 +50,4 @@ HRESULT CreateIDispatchSTAForwarder(
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Odkaz na nespravované rozhraní API subsystému WPF](../../../../docs/framework/wpf/advanced/wpf-unmanaged-api-reference.md)
+- [Odkaz na nespravované rozhraní API subsystému WPF](wpf-unmanaged-api-reference.md)

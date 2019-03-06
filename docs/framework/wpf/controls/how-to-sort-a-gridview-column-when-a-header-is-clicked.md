@@ -10,12 +10,12 @@ helpviewer_keywords:
 - ListView controls [WPF], sorting GridView columns
 - GridView controls [WPF], ListView control
 ms.assetid: 4865d720-d147-40ed-83a7-af7587f8aad8
-ms.openlocfilehash: 2d0cca89d906a60a3f7072de27bc54b7a869a01e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b636842b1d41e17b09f02b7b9a6f7aa47eb4cdd1
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694084"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57365409"
 ---
 # <a name="how-to-sort-a-gridview-column-when-a-header-is-clicked"></a>Postupy: Řazení sloupce GridView při kliknutí na záhlaví
 Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.ListView> ovládací prvek, který implementuje <xref:System.Windows.Controls.GridView> zobrazit režimu a seřadí data obsahu, když uživatel klikne na záhlaví sloupce.  
@@ -226,6 +226,6 @@ End Sub
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Controls.ListView>
 - <xref:System.Windows.Controls.GridView>
-- [ListView – přehled](../../../../docs/framework/wpf/controls/listview-overview.md)
-- [GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+- [ListView – přehled](listview-overview.md)
+- [GridView – přehled](gridview-overview.md)
+- [Témata s postupy](listview-how-to-topics.md)

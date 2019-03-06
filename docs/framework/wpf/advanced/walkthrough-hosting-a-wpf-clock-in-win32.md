@@ -1,23 +1,23 @@
 ---
-title: 'Průvodce: Hostování hodin WPF v Win32'
+title: 'Návod: Hostování hodin WPF v Win32'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - interoperability [WPF], tutorials
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 555e55a7-0851-4ec8-b1c6-0acba7e9b648
-ms.openlocfilehash: 5cccc89c8346358bc4f719e1b089a181dd81f970
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a58d7e5848ccd62b889b8a7645c08a35822b3352
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54579768"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352721"
 ---
-# <a name="walkthrough-hosting-a-wpf-clock-in-win32"></a>Průvodce: Hostování hodin WPF v Win32
+# <a name="walkthrough-hosting-a-wpf-clock-in-win32"></a>Návod: Hostování hodin WPF v Win32
 Vložit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uvnitř [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikací, použijte <xref:System.Windows.Interop.HwndSource>, poskytující HWND, který obsahuje vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. Nejprve vytvoříte <xref:System.Windows.Interop.HwndSource>, předá CreateWindow podobně jako parametry.  Pak můžete zjistit <xref:System.Windows.Interop.HwndSource> o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu chcete dovnitř.  Nakonec získejte HWND z celkového počtu <xref:System.Windows.Interop.HwndSource>. Tento návod ukazuje, jak vytvořit smíšenými [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uvnitř [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikaci, která reimplements operační systém **vlastnosti data a času** dialogového okna.  
   
 ## <a name="prerequisites"></a>Požadavky  
- Zobrazit [WPF a systému Win32 vzájemná spolupráce grafického subsystému](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md).  
+ Zobrazit [WPF a systému Win32 vzájemná spolupráce grafického subsystému](wpf-and-win32-interoperation.md).  
   
 ## <a name="how-to-use-this-tutorial"></a>Jak používat v tomto kurzu  
  V tomto kurzu se soustřeďuje na důležité kroky pro vytváření aplikace vzájemné spolupráce. Tento kurz je založená na výběru [ukázka vzájemná spolupráce grafického subsystému hodin Win32](https://go.microsoft.com/fwlink/?LinkID=160051), ale tato ukázka je reflektivní konečného produktu. V tomto kurzu dokumenty kroky, jako kdyby byly spuštění s existujícím [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] projektu vlastní, možná již existující projekt a přidávání hostovaný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] do vaší aplikace. Můžete porovnat svůj produkt end s [ukázka vzájemná spolupráce grafického subsystému hodin Win32](https://go.microsoft.com/fwlink/?LinkID=160051).  
@@ -25,11 +25,11 @@ Vložit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclien
 ## <a name="a-walkthrough-of-windows-presentation-framework-inside-win32-hwndsource"></a>Názorný postup Windows Presentation Framework v systému Win32 (HwndSource)  
  Následující obrázek znázorňuje zamýšlený konečný produkt v tomto kurzu:  
   
- ![Dialogové okno Vlastnosti data a času](../../../../docs/framework/wpf/advanced/media/interoparch06.PNG "InteropArch06")  
+ ![Dialogové okno Vlastnosti data a času](./media/interoparch06.PNG "InteropArch06")  
   
  Toto dialogové okno můžete znovu vytvořit tak, že vytvoříte C++ [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] projekt [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]a použití editoru dialogových oken k vytvoření následujících:  
   
- ![Dialogové okno Vlastnosti data a času](../../../../docs/framework/wpf/advanced/media/interoparch07.PNG "InteropArch07")  
+ ![Dialogové okno Vlastnosti data a času](./media/interoparch07.PNG "InteropArch07")  
   
  (Není potřeba použít [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] používat <xref:System.Windows.Interop.HwndSource>, a není potřeba C++ použít k zápisu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programy, ale to je poměrně typické způsob, jak to provést a slouží také k podle jednotlivých kroků kurzu vysvětlení).  
   
@@ -213,19 +213,19 @@ HWND clock = ManagedCode::GetHwnd(hDlg, point.x, point.y, width, height);
   
  Toto je zápis:  
   
- [!code-xaml[Win32Clock#AllClockXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Win32Clock/CS/Clock.xaml#allclockxaml)]  
+ [!code-xaml[Win32Clock#AllClockXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/Win32Clock/CS/Clock.xaml#allclockxaml)]  
   
  A tady je doprovodné kódu:  
   
- [!code-csharp[Win32Clock#AllClockCS](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Win32Clock/CS/Clock.xaml.cs#allclockcs)]  
+ [!code-csharp[Win32Clock#AllClockCS](~/samples/snippets/csharp/VS_Snippets_Wpf/Win32Clock/CS/Clock.xaml.cs#allclockcs)]  
   
  Konečný výsledek vypadá takto:  
   
- ![Dialogové okno Vlastnosti data a času](../../../../docs/framework/wpf/advanced/media/interoparch08.PNG "InteropArch08")  
+ ![Dialogové okno Vlastnosti data a času](./media/interoparch08.PNG "InteropArch08")  
   
  Porovnejte vaše konečný výsledek kódu, který vytváří tento snímek obrazovky, naleznete v tématu [ukázka vzájemná spolupráce grafického subsystému hodin Win32](https://go.microsoft.com/fwlink/?LinkID=160051).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Interop.HwndSource>
-- [Vzájemná spolupráce grafického subsystému WPF a systému Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)
+- [Vzájemná spolupráce grafického subsystému WPF a systému Win32](wpf-and-win32-interoperation.md)
 - [Ukázka součinnosti hodin Win32](https://go.microsoft.com/fwlink/?LinkID=160051)

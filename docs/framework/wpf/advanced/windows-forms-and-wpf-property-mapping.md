@@ -8,12 +8,12 @@ helpviewer_keywords:
 - interoperability [WPF], Windows Forms
 - WindowsFormsHost element property mapping [WPF]
 ms.assetid: 999d8298-9c04-467d-a453-86e41002057d
-ms.openlocfilehash: 9e2cd55d0d5eb453ad5d29b707a14b9894d40089
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1274724e1cd93f5788840978b583e4bf05c06bb2
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493700"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358558"
 ---
 # <a name="windows-forms-and-wpf-property-mapping"></a>Mapování vlastnosti Windows Forms a WPF
 [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] technologie mají dva modely podobné, ale jiné vlastnosti. *Mapování vlastností* podporuje interoperabilitu mezi dvěma architektury a poskytuje následující možnosti:  
@@ -49,7 +49,7 @@ ms.locfileid: "54493700"
   
  Připojené vlastnosti na prvky kontejneru jsou plně podporovány <xref:System.Windows.Forms.Integration.WindowsFormsHost> elementu.  
   
- Další informace najdete v tématu [názorný postup: Mapování vlastností použitím elementu WindowsFormsHost](../../../../docs/framework/wpf/advanced/walkthrough-mapping-properties-using-the-windowsformshost-element.md).  
+ Další informace najdete v tématu [názorný postup: Mapování vlastností použitím elementu WindowsFormsHost](walkthrough-mapping-properties-using-the-windowsformshost-element.md).  
   
 ## <a name="updates-to-parent-properties"></a>Aktualizace vlastnosti nadřazené  
  Změny vlastnosti většina nadřazené způsobit oznámení hostované podřízený ovládací prvek. Následující seznam popisuje vlastnosti, které nezpůsobí oznámení, když se změní jejich hodnoty.  
@@ -117,7 +117,7 @@ ms.locfileid: "54493700"
   
  <xref:System.Windows.Forms.Integration.ElementHost> Ovládací prvek přeloží výchozí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vlastnosti k jejich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ekvivalenty pomocí následující tabulky překladu.  
   
- Další informace najdete v tématu [názorný postup: Mapování vlastností použitím ovládacího prvku ElementHost](../../../../docs/framework/wpf/advanced/walkthrough-mapping-properties-using-the-elementhost-control.md).  
+ Další informace najdete v tématu [názorný postup: Mapování vlastností použitím ovládacího prvku ElementHost](walkthrough-mapping-properties-using-the-elementhost-control.md).  
   
 |Hostující formuláře Windows|Windows Presentation Foundation|Chování vzájemné spolupráce|  
 |---------------------------|-------------------------------------|-----------------------------|  
@@ -137,7 +137,7 @@ ms.locfileid: "54493700"
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Vzájemná spolupráce grafického subsystému WPF a systému Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)
-- [Vzájemná spolupráce subsystémů WPF a Windows Forms](../../../../docs/framework/wpf/advanced/wpf-and-windows-forms-interoperation.md)
-- [Návod: Mapování vlastností použitím elementu WindowsFormsHost](../../../../docs/framework/wpf/advanced/walkthrough-mapping-properties-using-the-windowsformshost-element.md)
-- [Návod: Mapování vlastností použitím ovládacího prvku ElementHost](../../../../docs/framework/wpf/advanced/walkthrough-mapping-properties-using-the-elementhost-control.md)
+- [Vzájemná spolupráce grafického subsystému WPF a systému Win32](wpf-and-win32-interoperation.md)
+- [Vzájemná spolupráce subsystémů WPF a Windows Forms](wpf-and-windows-forms-interoperation.md)
+- [Návod: Mapování vlastností použitím elementu WindowsFormsHost](walkthrough-mapping-properties-using-the-windowsformshost-element.md)
+- [Návod: Mapování vlastností použitím ovládacího prvku ElementHost](walkthrough-mapping-properties-using-the-elementhost-control.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - 3-D graphics [WPF]
 - graphics [WPF], 3-D
 ms.assetid: 67f31ed4-e36b-4b02-9889-dcce245d7afc
-ms.openlocfilehash: 237c354d1a5207d4d038097f7e1348379c44382d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7f9f3d21d14a8eac862186a41bd8771cffb7375c
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54653242"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352864"
 ---
 # <a name="3-d-graphics-overview"></a>Přehled 3D grafiky
 <a name="introduction"></a> [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] Funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vývojářům umožňuje nakreslit, transformaci a animace 3D grafiky v kódu a procedurální kódu. Vývojáři můžou kombinovat [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] a [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] grafiku, vytvořit bohaté ovládací prvky, poskytují komplexní ilustrace znázorňující data nebo vylepšit uživatel činnost rozhraní aplikace. [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] podpora v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] není určená k poskytování hru Vývojová platforma plně funkční. Toto téma obsahuje přehled [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] grafiky systému.  
@@ -29,7 +29,7 @@ ms.locfileid: "54653242"
 ## <a name="3-d-coordinate-space"></a>3D souřadnicového prostoru  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Souřadnicový systém pro [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] grafiky vyhledá původ v levém horním rohu oblasti vykreslování (obvykle obrazovky). V [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] systému, kladné hodnoty na ose x pokračovat na pravé straně a osy y kladné hodnoty postupovat směrem dolů.  V [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] souřadnicový systém, ale původ se nachází v Centru pro vykreslení oblasti s hodnoty na ose x kladné pokračuje na pravé straně, ale hodnoty y pozitivní místo toho pokračuje směrem nahoru a osy z kladné hodnoty pokračuje směrem ven. ze zdroje směrem k prohlížeči.  
   
- ![Systémy souřadnic](../../../../docs/framework/wpf/graphics-multimedia/media/coordsystem-1.png "CoordSystem-1")  
+ ![Systémy souřadnic](./media/coordsystem-1.png "CoordSystem-1")  
 Reprezentace konvenční 2D a 3D souřadnicový systém  
   
  Místo definované tyto osy je bez pohybu rámec pro [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] objekty v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Jak vytvářet modely v tomto prostoru a vytvoření světla a jejich zobrazení bezpečnostních kamer, je užitečné k rozlišení tohoto bez pohybu referenčním rámcem nebo "místa na světě," z místní rámec, který vytvoříte pro každý model, při použití transformace. Nezapomeňte, že objekty v prostoru světa mohou vypadají úplně jinak, nebo nebude viditelné ve všech, v závislosti na světla a fotoaparát nastavení, ale pozice kamery nezmění umístění objektů v prostoru světa.  
@@ -42,18 +42,18 @@ Reprezentace konvenční 2D a 3D souřadnicový systém
   
  <xref:System.Windows.Media.Media3D.ProjectionCamera.NearPlaneDistance%2A> a <xref:System.Windows.Media.Media3D.ProjectionCamera.FarPlaneDistance%2A> vlastnosti <xref:System.Windows.Media.Media3D.ProjectionCamera> omezit rozsah kamery projekce. Protože kamery může být umístěn kdekoli ve scéně, je možné fotoaparát skutečně umístit uvnitř modelu nebo velmi v modelu, způsobuje obtížné správně odlišit objekty.  <xref:System.Windows.Media.Media3D.ProjectionCamera.NearPlaneDistance%2A> Umožňuje určit minimální vzdálenost od fotoaparátu/kamery, jejichž překročení se vykreslit objekty.  Naopak <xref:System.Windows.Media.Media3D.ProjectionCamera.FarPlaneDistance%2A> umožňuje určit vzdálenost od fotoaparátu/kamery nad rámec, který nebude nutné vykreslit objekty, které zajišťuje, že bude rozpoznatelných objektů příliš daleko nebudou zahrnuty ve scéně.  
   
- ![Nastavení fotoaparátu](../../../../docs/framework/wpf/graphics-multimedia/media/coordsystem-6.png "CoordSystem 6")  
+ ![Nastavení fotoaparátu](./media/coordsystem-6.png "CoordSystem 6")  
 Poloha kamery  
   
  <xref:System.Windows.Media.Media3D.OrthographicCamera> Určuje pravoúhlý projekci [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] modelu do [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] vizuální povrch. Stejně jako ostatní kamer určuje pozici zobrazení směr a směr "nahoru". Na rozdíl od <xref:System.Windows.Media.Media3D.PerspectiveCamera>, ale <xref:System.Windows.Media.Media3D.OrthographicCamera> popisuje projekci, která nezahrnuje perspektivního zkreslení perspektivy. Jinými slovy <xref:System.Windows.Media.Media3D.OrthographicCamera> popisuje zobrazení pole, jehož strany jsou paralelní místo jednoho splňovat bodě fotoaparátu/kamery, jehož strany. Následující obrázek ukazuje stejný model, jak zobrazit pomocí <xref:System.Windows.Media.Media3D.PerspectiveCamera> a <xref:System.Windows.Media.Media3D.OrthographicCamera>.  
   
- ![Pravoúhlé a perspektivní projekci](../../../../docs/framework/wpf/graphics-multimedia/media/camera-projections4.png "Camera_projections4")  
+ ![Pravoúhlé a perspektivní projekci](./media/camera-projections4.png "Camera_projections4")  
 Perspektivy a pravoúhle projekce  
   
  Následující kód ukazuje některé typické nastavení.  
   
- [!code-csharp[3dgallery_procedural_snip#Basic3DShapeCodeExampleInline1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_procedural_snip/CSharp/Basic3DShapeExample.cs#basic3dshapecodeexampleinline1)]
- [!code-vb[3dgallery_procedural_snip#Basic3DShapeCodeExampleInline1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/3DGallery_procedural_snip/visualbasic/basic3dshapeexample.vb#basic3dshapecodeexampleinline1)]  
+ [!code-csharp[3dgallery_procedural_snip#Basic3DShapeCodeExampleInline1](~/samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_procedural_snip/CSharp/Basic3DShapeExample.cs#basic3dshapecodeexampleinline1)]
+ [!code-vb[3dgallery_procedural_snip#Basic3DShapeCodeExampleInline1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DGallery_procedural_snip/visualbasic/basic3dshapeexample.vb#basic3dshapecodeexampleinline1)]  
   
 <a name="models_meshes"></a>   
 ## <a name="model-and-mesh-primitives"></a>Model a primitivních elementů sítě  
@@ -64,7 +64,7 @@ Perspektivy a pravoúhle projekce
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] Systému v současné době poskytuje <xref:System.Windows.Media.Media3D.MeshGeometry3D> třídy, které můžete zadat libovolný geometrie; nepodporuje aktuálně předdefinované [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] primitivních elementů, jako jsou oblasti a kubické formuláře. Začněte vytvářet <xref:System.Windows.Media.Media3D.MeshGeometry3D> tak, že zadáte seznam vrcholů trojúhelník jako jeho <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A> vlastnost. Každý vrchol je zadán jako <xref:System.Windows.Media.Media3D.Point3D>.  (V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], tuto vlastnost zadávejte jako seznam čísel seskupili po třech, které představují souřadnice každý vrchol.) V závislosti na jeho geometrie může vaše síť skládá z mnoha trojúhelníků, z nichž některé sdílet stejnou rohů (vrcholy). Chcete-li nakreslit síť správně, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] potřebuje informace o tom, které jsou sdíleny vrcholy které trojúhelníky. Tento údaj zadáte tak, že zadáte seznam trojúhelník indexy se <xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices%2A> vlastnost. Tento seznam určuje pořadí, ve kterém body podle <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A> seznamu určí trojúhelník.  
   
- [!code-xaml[basic3d#Basic3DXAML3DN3](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Basic3D/XAML/Window1.xaml#basic3dxaml3dn3)]  
+ [!code-xaml[basic3d#Basic3DXAML3DN3](~/samples/snippets/xaml/VS_Snippets_Wpf/Basic3D/XAML/Window1.xaml#basic3dxaml3dn3)]  
   
  V předchozím příkladu <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A> seznamu určuje osm vrcholů k definování datové krychle ve tvaru mřížky. <xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices%2A> Vlastnost určuje seznam dvanáct skupin tři indexy.  Každé číslo v seznamu odkazuje na posun do <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A> seznamu.  Například první tři vrcholy, které jsou určené <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A> seznamu jsou (1,1,0) (0,1,0) a (0,0,0). První tři indexy, které jsou určené <xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices%2A> seznamu jsou 0, 2 a 1, které odpovídají na první třetí a druhá body v <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A> seznamu. V důsledku toho první trojúhelník, který vytvoří model datové krychle se skládá z (1,1,0) na (0,1,0) na (0,0,0) a zbývající jedenáct trojúhelníky určí podobně.  
   
@@ -74,11 +74,11 @@ Perspektivy a pravoúhle projekce
   
  Následující příklad ukazuje, jak vytvořit jeden obličej systému model datové krychle v kódu procedury. Všimněte si, že můžete nakreslit celé datové krychle jako jeden GeometryModel3D; v tomto příkladu kreslí datové krychle pro rozpoznávání tváře jako modelu jedinečných aby bylo možné použít samostatné textury pro každý obličej později.  
   
- [!code-csharp[3doverview#3DOverview3DN6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn6)]
- [!code-vb[3doverview#3DOverview3DN6](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn6)]  
+ [!code-csharp[3doverview#3DOverview3DN6](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn6)]
+ [!code-vb[3doverview#3DOverview3DN6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn6)]  
   
- [!code-csharp[3doverview#3DOverview3DN7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn7)]
- [!code-vb[3doverview#3DOverview3DN7](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn7)]  
+ [!code-csharp[3doverview#3DOverview3DN7](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn7)]
+ [!code-vb[3doverview#3DOverview3DN7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn7)]  
   
 <a name="materials"></a>   
 ## <a name="applying-materials-to-the-model"></a>Použití materiálu na modelu  
@@ -99,12 +99,12 @@ Perspektivy a pravoúhle projekce
   
  Následující příklady kódu ukazují, jak použít plnou barvu a kresby jako štětce k [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] modely.  
   
- [!code-xaml[basic3d#Basic3DXAML3DN5](../../../../samples/snippets/xaml/VS_Snippets_Wpf/Basic3D/XAML/Window1.xaml#basic3dxaml3dn5)]  
+ [!code-xaml[basic3d#Basic3DXAML3DN5](~/samples/snippets/xaml/VS_Snippets_Wpf/Basic3D/XAML/Window1.xaml#basic3dxaml3dn5)]  
   
- [!code-xaml[3doverview#3DOverview3DN9](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/app.xaml#3doverview3dn9)]  
+ [!code-xaml[3doverview#3DOverview3DN9](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/app.xaml#3doverview3dn9)]  
   
- [!code-csharp[3doverview#3DOverview3DN8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn8)]
- [!code-vb[3doverview#3DOverview3DN8](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn8)]  
+ [!code-csharp[3doverview#3DOverview3DN8](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn8)]
+ [!code-vb[3doverview#3DOverview3DN8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn8)]  
   
 <a name="lights"></a>   
 ## <a name="illuminating-the-scene"></a>Osvětlení scény.  
@@ -122,16 +122,16 @@ Perspektivy a pravoúhle projekce
   
  Světla jsou <xref:System.Windows.Media.Media3D.Model3D> objekty, dají se transformovat a animovat vlastnosti světla, včetně umístění, barvy, směr a rozsah.  
   
- [!code-xaml[hittest3d#HitTest3D3DN6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HitTest3D/CSharp/Window1.xaml#hittest3d3dn6)]  
+ [!code-xaml[hittest3d#HitTest3D3DN6](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTest3D/CSharp/Window1.xaml#hittest3d3dn6)]  
   
- [!code-csharp[basic3d#Basic3D3DN11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Basic3D/CSharp/Window1.xaml.cs#basic3d3dn11)]
- [!code-vb[basic3d#Basic3D3DN11](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Basic3D/visualbasic/window1.xaml.vb#basic3d3dn11)]  
+ [!code-csharp[basic3d#Basic3D3DN11](~/samples/snippets/csharp/VS_Snippets_Wpf/Basic3D/CSharp/Window1.xaml.cs#basic3d3dn11)]
+ [!code-vb[basic3d#Basic3D3DN11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Basic3D/visualbasic/window1.xaml.vb#basic3d3dn11)]  
   
- [!code-csharp[basic3d#Basic3D3DN12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Basic3D/CSharp/Window1.xaml.cs#basic3d3dn12)]
- [!code-vb[basic3d#Basic3D3DN12](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Basic3D/visualbasic/window1.xaml.vb#basic3d3dn12)]  
+ [!code-csharp[basic3d#Basic3D3DN12](~/samples/snippets/csharp/VS_Snippets_Wpf/Basic3D/CSharp/Window1.xaml.cs#basic3d3dn12)]
+ [!code-vb[basic3d#Basic3D3DN12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Basic3D/visualbasic/window1.xaml.vb#basic3d3dn12)]  
   
- [!code-csharp[basic3d#Basic3D3DN13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Basic3D/CSharp/Window1.xaml.cs#basic3d3dn13)]
- [!code-vb[basic3d#Basic3D3DN13](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Basic3D/visualbasic/window1.xaml.vb#basic3d3dn13)]  
+ [!code-csharp[basic3d#Basic3D3DN13](~/samples/snippets/csharp/VS_Snippets_Wpf/Basic3D/CSharp/Window1.xaml.cs#basic3d3dn13)]
+ [!code-vb[basic3d#Basic3D3DN13](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Basic3D/visualbasic/window1.xaml.vb#basic3d3dn13)]  
   
 <a name="transforms"></a>   
 ## <a name="transforming-models"></a>Transformace modelů  
@@ -139,27 +139,27 @@ Perspektivy a pravoúhle projekce
   
  Každý objekt modelu má <xref:System.Windows.Media.Media3D.Model3D.Transform%2A> vlastností, pomocí kterého můžete přecházet, znovu zorientovat nebo velikost modelu.  Při použití transformace efektivně posun všechny body daného modelu libovolné vektoru nebo hodnotu zadanou pomocí transformace. Jinými slovy jsme transformovali souřadnicového prostoru ve kterém je model definovaný ("model místo"), ale nedošlo ke změně hodnoty, které tvoří geometrie modelu v souřadnicový systém celý scény ("místa na světě").  
   
- Další informace o transformaci modelů najdete v tématu [přehled 3D transformací](../../../../docs/framework/wpf/graphics-multimedia/3-d-transformations-overview.md).  
+ Další informace o transformaci modelů najdete v tématu [přehled 3D transformací](3-d-transformations-overview.md).  
   
 <a name="animations"></a>   
 ## <a name="animating-models"></a>Animace modelů  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] Implementace podílí na stejném systému časování a animace jako [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] grafiky. Jinými slovy animace 3D scény, animujte vlastnosti z jeho modelů. Je možné pro animaci vlastnosti primitivních elementů přímo, ale je obvykle jednodušší animace transformace, které se mění pozice nebo vzhled modelů. Protože transformací lze použít u <xref:System.Windows.Media.Media3D.Model3DGroup> objekty a také jednotlivé modely, je možné použít jednu sadu animace podřízený Model3DGroup a další sadu animace do skupiny podřízených objektů. Animace vlastnosti osvětlení scény v můžete také dosáhnout různých vizuálních efektů. Nakonec můžete animovat projekce sama tak, že animace polohy kamery nebo pole zobrazení. Základní informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] načasování a animace systému, najdete v článku [přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md), [přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md), a [přehled Zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)témata.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] Implementace podílí na stejném systému časování a animace jako [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] grafiky. Jinými slovy animace 3D scény, animujte vlastnosti z jeho modelů. Je možné pro animaci vlastnosti primitivních elementů přímo, ale je obvykle jednodušší animace transformace, které se mění pozice nebo vzhled modelů. Protože transformací lze použít u <xref:System.Windows.Media.Media3D.Model3DGroup> objekty a také jednotlivé modely, je možné použít jednu sadu animace podřízený Model3DGroup a další sadu animace do skupiny podřízených objektů. Animace vlastnosti osvětlení scény v můžete také dosáhnout různých vizuálních efektů. Nakonec můžete animovat projekce sama tak, že animace polohy kamery nebo pole zobrazení. Základní informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] načasování a animace systému, najdete v článku [přehled animace](animation-overview.md), [přehled scénářů](storyboards-overview.md), a [přehled Zablokovatelných objektů](../advanced/freezable-objects-overview.md)témata.  
   
  Pro animaci objektu v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], vytvoření časové osy, definujte animace (což je ve skutečnosti změn v některá z hodnot vlastností v průběhu času) a určete vlastnost, pro kterou chcete použít animace. Protože všechny objekty do [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] scény jsou podřízené objekty daného <xref:System.Windows.Controls.Viewport3D>, zacílené žádné animace má být použita do scény vlastnosti jsou vlastnosti z vlastností objektu Viewport3D.  
   
  Předpokládejme, že má být model pravděpodobně wobble na místě. Můžete se rozhodnout pro použití <xref:System.Windows.Media.Media3D.RotateTransform3D> modelu a animovat osy otočení z jednoho vektor do jiného. Následující příklad kódu ukazuje použití Vector3DAnimation s vlastností osy Rotation3D transformaci, za předpokladu, že RotateTransform3D bude jedním z několika transformací použitá pro model s TransformGroup.  
   
- [!code-csharp[3doverview#3DOverview3DN1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn1)]
- [!code-vb[3doverview#3DOverview3DN1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn1)]  
+ [!code-csharp[3doverview#3DOverview3DN1](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn1)]
+ [!code-vb[3doverview#3DOverview3DN1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn1)]  
   
- [!code-csharp[3doverview#3DOverview3DN3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn3)]
- [!code-vb[3doverview#3DOverview3DN3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn3)]  
+ [!code-csharp[3doverview#3DOverview3DN3](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn3)]
+ [!code-vb[3doverview#3DOverview3DN3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn3)]  
   
- [!code-csharp[3doverview#3DOverview3DN4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn4)]
- [!code-vb[3doverview#3DOverview3DN4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn4)]  
+ [!code-csharp[3doverview#3DOverview3DN4](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn4)]
+ [!code-vb[3doverview#3DOverview3DN4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn4)]  
   
- [!code-csharp[3doverview#3DOverview3DN5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn5)]
- [!code-vb[3doverview#3DOverview3DN5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn5)]  
+ [!code-csharp[3doverview#3DOverview3DN5](~/samples/snippets/csharp/VS_Snippets_Wpf/3DOverview/CSharp/Window1.xaml.cs#3doverview3dn5)]
+ [!code-vb[3doverview#3DOverview3DN5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/3DOverview/visualbasic/window1.xaml.vb#3doverview3dn5)]  
   
 <a name="animations1"></a>   
 ## <a name="add-3-d-content-to-the-window"></a>V okně Přidání 3D obsahu  
@@ -167,15 +167,15 @@ Perspektivy a pravoúhle projekce
   
  Nakonec přidejte <xref:System.Windows.Controls.Viewport3D> do okna. Když <xref:System.Windows.Controls.Viewport3D> je součástí obsahu prvku rozložení jako plátno, určete velikost Viewport3D nastavením jeho <xref:System.Windows.FrameworkElement.Height%2A> a <xref:System.Windows.FrameworkElement.Width%2A> vlastnosti (zděděno z <xref:System.Windows.FrameworkElement>).  
   
- [!code-xaml[hostingwpfusercontrolinwf#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingWpfUserControlInWf/CSharp/HostingWpfUserControlInWf/ConeControl.xaml#1)]  
+ [!code-xaml[hostingwpfusercontrolinwf#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWpfUserControlInWf/CSharp/HostingWpfUserControlInWf/ConeControl.xaml#1)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Controls.Viewport3D>
 - <xref:System.Windows.Media.Media3D.PerspectiveCamera>
 - <xref:System.Windows.Media.Media3D.DirectionalLight>
 - <xref:System.Windows.Media.Media3D.Material>
-- [Přehled 3D transformací](../../../../docs/framework/wpf/graphics-multimedia/3-d-transformations-overview.md)
-- [Maximalizace výkonu WPF 3D](../../../../docs/framework/wpf/graphics-multimedia/maximize-wpf-3d-performance.md)
-- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-how-to-topics.md)
-- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
-- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+- [Přehled 3D transformací](3-d-transformations-overview.md)
+- [Maximalizace výkonu WPF 3D](maximize-wpf-3d-performance.md)
+- [Témata s postupy](3-d-graphics-how-to-topics.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)

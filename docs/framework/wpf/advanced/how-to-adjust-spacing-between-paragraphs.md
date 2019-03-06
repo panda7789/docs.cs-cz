@@ -6,21 +6,21 @@ helpviewer_keywords:
 - paragraphs [WPF], spacing between
 - documents [WPF], adjusting spacing between paragraphs
 ms.assetid: 7cd2f2ac-0e19-4587-bfb6-7f5b18c9536e
-ms.openlocfilehash: b232903054cf45b70ba99a9223352391498cf79b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e2a6ba34e3ab15eb316671fef7c11bea03d53c73
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33542945"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57367476"
 ---
 # <a name="how-to-adjust-spacing-between-paragraphs"></a>Postupy: Úprava mezer mezi odstavci
-Tento příklad ukazuje, jak upravit nebo odstranit mezery mezi odstavci v toku obsahu.  
+Tento příklad ukazuje, jak upravit nebo odstranit mezer mezi odstavci v plovoucího obsahu.  
   
- V toku obsahu místo navíc, který se zobrazí mezi odstavců je výsledkem okraje nastavit u těchto odstavců; Proto může být řízena mezery mezi odstavci nastavování okrajů na těchto odstavcích.  Zcela eliminovat mezera navíc mezi dva odstavce, nastavení okrajů pro odstavců na **0**.  K dosažení uniform mezery mezi odstavci v rámci celou <xref:System.Windows.Documents.FlowDocument>, můžete nastavit hodnotu uniform rozpětí pro všechny odstavce v pomocí stylů <xref:System.Windows.Documents.FlowDocument>.  
+ V toku obsahu místo navíc, který se zobrazí mezi odstavci je výsledkem okraje nastavit na těchto odstavcích; Proto mohou být řízena mezer mezi odstavci nastavování okrajů v těchto odstavcích.  Úplně eliminovat nadbytečné mezery mezi dva odstavce, nastavit okraje pro odstavce na **0**.  K dosažení jednotné mezer mezi odstavci v celém celý <xref:System.Windows.Documents.FlowDocument>, použití stylu pro nastavení jednotné okraj hodnoty pro všechny odstavce v <xref:System.Windows.Documents.FlowDocument>.  
   
- Je důležité si uvědomit, že okraje pro dva odstavce přiléhající bude "sbalit" větší dva okraje, namísto prodloužily nahoru. Ano Pokud dva odstavce přiléhající okraje 20 pixelů a 40 pixelů v uvedeném pořadí, výsledná mezery mezi odstavců je 40 pixelů, větší hodnot dva okraje.  
+ Je důležité si uvědomit, že okraje pro dva odstavce sousedící bude "sbalit" větší z dva okraje, a nemuseli zdvojovací nahoru. Takže pokud dva odstavce sousedící okrajů 20 pixelů a 40 pixelů v uvedeném pořadí, je výsledný mezeru mezi odstavců 40 pixelů, větší z hodnoty dvě vlastnosti okraj.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá stylů pro nastavení okraje pro všechny <xref:System.Windows.Documents.Paragraph> elementů v <xref:System.Windows.Documents.FlowDocument> k **0**, které efektivně eliminuje mezi odstavců v mezera navíc <xref:System.Windows.Documents.FlowDocument>.  
+ Následující příklad používá používání stylů pro nastavení okraje pro všechny <xref:System.Windows.Documents.Paragraph> prvků v <xref:System.Windows.Documents.FlowDocument> k **0**, což účinně eliminuje nadbytečné mezery mezi odstavci v <xref:System.Windows.Documents.FlowDocument>.  
   
- [!code-xaml[BlockSnippets#_ParagraphSpacingXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml#_paragraphspacingxaml)]
+ [!code-xaml[BlockSnippets#_ParagraphSpacingXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/BlockSnippets/CSharp/Window1.xaml#_paragraphspacingxaml)]

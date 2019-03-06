@@ -6,12 +6,12 @@ helpviewer_keywords:
 - value inheritance [WPF]
 - properties [WPF], value inheritance
 ms.assetid: d7c338f9-f2bf-48ed-832c-7be58ac390e4
-ms.openlocfilehash: e6b16bc3fc482e0f640f8b2d083392e6f94de618
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 64cafbe2f6044c83600ef227608dee24b29e3943
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54520580"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57359874"
 ---
 # <a name="property-value-inheritance"></a>Dědičnost hodnoty vlastnosti
 Dědičnost hodnoty vlastnosti je funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému vlastností. Dědičnost hodnoty vlastnosti umožňuje podřízené prvky ve stromové struktuře prvků, které mají získat hodnoty konkrétní vlastnosti od nadřízené prvky, jak je nastavit kdekoli v nejbližší nadřazený element dědí tuto hodnotu. Nadřazený element může také získali jeho hodnotu prostřednictvím dědičnost hodnoty vlastnosti, tak systému recurses potenciálně až po kořen stránky. Dědičnost hodnoty vlastnosti není výchozí chování systému vlastnosti; Vlastnost musí navázat s nastavením konkrétní metadat způsobí tuto vlastnost k zahájení dědičnost hodnoty vlastnosti na podřízené prvky.  
@@ -30,7 +30,7 @@ Dědičnost hodnoty vlastnosti je funkce [!INCLUDE[TLA#tla_winclient](../../../.
 ## <a name="making-a-custom-property-inheritable"></a>Vytváření vlastních vlastností odvoditelný  
  Změnou vlastní vlastnost metadat, můžete provést také vlastní vlastnosti odvoditelný. Všimněte si však, že určit vlastnosti jako odvoditelný mají některé důležité informace o výkonu. V případech, kdy tato vlastnost nemá zavedené místní hodnota nebo hodnota získaných styly, šablony a datové vazby poskytuje dědičnou vlastnost příslušné hodnoty přiřazené vlastnosti pro všechny podřízené prvky v logickém stromu.  
   
- Chcete-li vlastnost zapojují do dědičnosti hodnoty, vytvořte vlastní přidružená vlastnost, jak je popsáno v [registrace připojené vlastnosti](../../../../docs/framework/wpf/advanced/how-to-register-an-attached-property.md). Registrace vlastnosti s metadaty (<xref:System.Windows.FrameworkPropertyMetadata>) a vyberte možnost "Inherits" v nastavení možnosti v rámci těchto metadat. Ujistěte se také, že vlastnost má zavedené výchozí hodnotu, protože tato hodnota bude nyní dědí. I když jste zaregistrovali vlastnost jako připojená, můžete také chtít vytvořit vlastnost zabezpečenou "obálku" pro přístup get/set na typ vlastníka stejně, jako byste to udělali pro vlastnost "samostatný" závislosti. Až to uděláte, může být buď nastavena vlastnost odvoditelný pomocí obálky s přímým přístupem vlastnost v typu vlastníka nebo odvozené typy nebo ji můžete nastavit pomocí syntaxe připojené vlastnosti na žádném <xref:System.Windows.DependencyObject>.  
+ Chcete-li vlastnost zapojují do dědičnosti hodnoty, vytvořte vlastní přidružená vlastnost, jak je popsáno v [registrace připojené vlastnosti](how-to-register-an-attached-property.md). Registrace vlastnosti s metadaty (<xref:System.Windows.FrameworkPropertyMetadata>) a vyberte možnost "Inherits" v nastavení možnosti v rámci těchto metadat. Ujistěte se také, že vlastnost má zavedené výchozí hodnotu, protože tato hodnota bude nyní dědí. I když jste zaregistrovali vlastnost jako připojená, můžete také chtít vytvořit vlastnost zabezpečenou "obálku" pro přístup get/set na typ vlastníka stejně, jako byste to udělali pro vlastnost "samostatný" závislosti. Až to uděláte, může být buď nastavena vlastnost odvoditelný pomocí obálky s přímým přístupem vlastnost v typu vlastníka nebo odvozené typy nebo ji můžete nastavit pomocí syntaxe připojené vlastnosti na žádném <xref:System.Windows.DependencyObject>.  
   
  Připojené vlastnosti jsou koncepčně podobné globální vlastnosti; můžete zkontrolovat hodnotu na všech <xref:System.Windows.DependencyObject> a získat platný výsledek. Typický scénář pro připojené vlastnosti je nastavit hodnoty vlastností v podřízené prvky a tento scénář je mnohem efektivnější, pokud je vlastnost dotyčný připojené vlastnosti, která je vždy implicitně k dispozici jako připojené vlastnosti na každý prvek (<xref:System.Windows.DependencyObject>) ve stromové struktuře.  
   
@@ -42,6 +42,6 @@ Dědičnost hodnoty vlastnosti je funkce [!INCLUDE[TLA#tla_winclient](../../../.
  Dědičnost vlastnosti funguje tak, že procházení stromu prvků. Tento strom je často paralelní Logická stromová struktura. Ale vždy, když obsahovat objekt základní úrovni WPF v kódu, který definuje stromu, například <xref:System.Windows.Media.Brush>, vytvoříte jednorázová logického stromu. Hodnota true logického stromu nerozšiřuje koncepčně prostřednictvím <xref:System.Windows.Media.Brush>, protože Logická stromová struktura je koncept úrovni rozhraní WPF. Zobrazí se to projeví ve výsledcích při použití metody <xref:System.Windows.LogicalTreeHelper>. Ale dědičnost hodnoty vlastnosti dokáže Přemostit překonání tohoto rozdílu v logickém stromu a předáním stále zděděné hodnoty, tak dlouho, dokud vlastnost odvoditelný byl registrován jako připojené vlastnosti a žádné úmyslné blokování dědičnosti hranic (například <xref:System.Windows.Controls.Frame>) dochází.  
   
 ## <a name="see-also"></a>Viz také:
-- [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)
-- [Přehled přidružených vlastností](../../../../docs/framework/wpf/advanced/attached-properties-overview.md)
-- [Priorita hodnot vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)
+- [Metadata vlastností závislosti](dependency-property-metadata.md)
+- [Přehled přidružených vlastností](attached-properties-overview.md)
+- [Priorita hodnot vlastností závislosti](dependency-property-value-precedence.md)

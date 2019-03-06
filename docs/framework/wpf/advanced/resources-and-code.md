@@ -11,15 +11,15 @@ helpviewer_keywords:
 - procedural code [WPF], accessing resources from
 - resources [WPF], creating with procedural code
 ms.assetid: c1cfcddb-e39c-41c8-a7f3-60984914dfae
-ms.openlocfilehash: ff259dae06ef7347dd9fa3afbab68ae67e9146a3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 12f9acccfc23364795cd18ef1da2ced5b442c6f7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54725520"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57367974"
 ---
 # <a name="resources-and-code"></a>Zdroje a kód
-Tento přehled se soustřeďuje na tom [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prostředkům můžou přistupovat ani je vytvářet pomocí kódu spíše než [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] syntaxe. Další informace o využití obecné prostředků a prostředků z [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] perspektivy syntaxe, naleznete v tématu [prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
+Tento přehled se soustřeďuje na tom [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prostředkům můžou přistupovat ani je vytvářet pomocí kódu spíše než [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] syntaxe. Další informace o využití obecné prostředků a prostředků z [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] perspektivy syntaxe, naleznete v tématu [prostředky XAML](xaml-resources.md).  
   
   
   
@@ -29,8 +29,8 @@ Tento přehled se soustřeďuje na tom [!INCLUDE[TLA#tla_winclient](../../../../
   
  Tady je příklad stručný kódu, který vyhledá prostředek klíčem a používá vrácené hodnoty nastavení vlastnosti implementovaná jako <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužné rutiny události.  
   
- [!code-csharp[PropertiesOvwSupport#ResourceProceduralGet](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml.cs#resourceproceduralget)]
- [!code-vb[PropertiesOvwSupport#ResourceProceduralGet](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page3.xaml.vb#resourceproceduralget)]  
+ [!code-csharp[PropertiesOvwSupport#ResourceProceduralGet](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page3.xaml.cs#resourceproceduralget)]
+ [!code-vb[PropertiesOvwSupport#ResourceProceduralGet](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page3.xaml.vb#resourceproceduralget)]  
   
  Je alternativní metoda pro přiřazení odkazu prostředku <xref:System.Windows.FrameworkElement.SetResourceReference%2A>. Tato metoda přebírá dva parametry: klíč prostředku a identifikátor pro vlastnost konkrétní závislosti, který je přítomen v instanci elementu, ke kterému by měly přiřazena hodnota prostředku. Tato metoda funkčně stejný a nabízí výhodu v podobě nevyžaduje žádné přetypování návratové hodnoty.  
   
@@ -44,8 +44,8 @@ Tento přehled se soustřeďuje na tom [!INCLUDE[TLA#tla_winclient](../../../../
   
 <a name="objectaskey"></a>   
 ## <a name="using-objects-as-keys"></a>Použití objektů jako klíče  
- Většina použití prostředků nastaví klíč prostředku bude řetězec. Ale různé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce záměrně nepoužívejte řetězec typu k určení klíče, místo tohoto parametru je objekt. Funkce s prostředků s klíči objektu používá [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podpora styl a motiv. Každý styly motivů, které se stanou výchozího stylu pro ovládací prvek jinak než stylem jsou klíčovány pomocí <xref:System.Type> ovládacího prvku, který se má použít. Je nastaven podle typu poskytuje spolehlivé vyhledávání mechanismus, který funguje na výchozí instance jednotlivých typech ovládacích prvků a typ jde detekoval reflexe a používat pro používání stylů pro odvozené třídy i v případě, že odvozený typ, jinak nemá žádný výchozí styl. Můžete zadat <xref:System.Type> klíč pro prostředek definovaný v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pomocí [x: Type – rozšíření značek](../../../../docs/framework/xaml-services/x-type-markup-extension.md). Podobně jako rozšíření existovat pro další použití klíče neřetězcový, které podporují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce, jako [– rozšíření značek ComponentResourceKey](../../../../docs/framework/wpf/advanced/componentresourcekey-markup-extension.md).  
+ Většina použití prostředků nastaví klíč prostředku bude řetězec. Ale různé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce záměrně nepoužívejte řetězec typu k určení klíče, místo tohoto parametru je objekt. Funkce s prostředků s klíči objektu používá [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podpora styl a motiv. Každý styly motivů, které se stanou výchozího stylu pro ovládací prvek jinak než stylem jsou klíčovány pomocí <xref:System.Type> ovládacího prvku, který se má použít. Je nastaven podle typu poskytuje spolehlivé vyhledávání mechanismus, který funguje na výchozí instance jednotlivých typech ovládacích prvků a typ jde detekoval reflexe a používat pro používání stylů pro odvozené třídy i v případě, že odvozený typ, jinak nemá žádný výchozí styl. Můžete zadat <xref:System.Type> klíč pro prostředek definovaný v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pomocí [x: Type – rozšíření značek](../../xaml-services/x-type-markup-extension.md). Podobně jako rozšíření existovat pro další použití klíče neřetězcový, které podporují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce, jako [– rozšíření značek ComponentResourceKey](componentresourcekey-markup-extension.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+- [Prostředky XAML](xaml-resources.md)
+- [Styly a šablony](../controls/styling-and-templating.md)

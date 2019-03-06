@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Security Development Lifecycle (SDL), critical code management
 - threat modeling [WPF]
 ms.assetid: 0fc04394-4e47-49ca-b0cf-8cd1161d95b9
-ms.openlocfilehash: 2ab6981b85d5b0663fd8e464a840bfbe55f6d3b0
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: bddb9bb2cf9a601ce7796d17483c1ab8fa6d7aa1
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836588"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57378953"
 ---
 # <a name="wpf-security-strategy---security-engineering"></a>Strategie zabezpečení WPF – engineering zabezpečení
 Trustworthy Computing je iniciativy Microsoftu pro zajištění provozní bezpečný kód. Je klíčovým prvkem Trustworthy Computing iniciativa zaměřená [!INCLUDE[TLA#tla_sdl](../../../includes/tlasharptla-sdl-md.md)]. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Je technický postup, který se používá ve spojení s standardní technického procesu usnadňuje poskytování zabezpečeného kódu. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Sestává z deset fází, které kombinují osvědčené postupy s oblast, measurability a další strukturu, včetně:  
@@ -87,11 +87,11 @@ Trustworthy Computing je iniciativy Microsoftu pro zajištění provozní bezpe�
   
 <a name="critical_code"></a>   
 ### <a name="critical-code-management"></a>Správa kritického kódu  
- Pro [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)], [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] sestavení izolovaného prostoru zabezpečení pomocí podpory rozhraní .NET Framework pro označení a sledování zabezpečení kritického kódu, který má oprávnění (naleznete v tématu **kritické pro zabezpečení metodologie** v [WPF Strategie zabezpečení – zabezpečení platformy](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)). Provádět požadavky na zabezpečení vysoké kvality při zabezpečení kritického kódu, takový kód obdrží další úroveň řízení a zabezpečení auditu správy zdroje. Přibližně 5 až 10 % [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] kritické pro zabezpečení kód, který je vyhrazený tým si předtím prostudovali zkontroloval se skládá. Zdrojový kód a proces vrácení se změnami se spravuje zabezpečení kritický kód pro sledování a mapováním každou kritické entitu (například metodu, která obsahuje kritický kód) na jeho znaménko vypnuté. Znaménko vypnutý stav zahrnuje názvy nejméně jeden revidující. Každý každodenními buildy sady [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] porovnává kritický kód, který v předchozí sestavení, která zkontroluje změny neschválených. Pokud pracovník změní kritického kódu bez schválení od revizí týmu, je zjistili a opravili okamžitě. Tento proces umožní aplikaci a údržby zejména vysoký stupeň kontroly nad [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] kód izolovaného prostoru.  
+ Pro [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)], [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] sestavení izolovaného prostoru zabezpečení pomocí podpory rozhraní .NET Framework pro označení a sledování zabezpečení kritického kódu, který má oprávnění (naleznete v tématu **kritické pro zabezpečení metodologie** v [WPF Strategie zabezpečení – zabezpečení platformy](wpf-security-strategy-platform-security.md)). Provádět požadavky na zabezpečení vysoké kvality při zabezpečení kritického kódu, takový kód obdrží další úroveň řízení a zabezpečení auditu správy zdroje. Přibližně 5 až 10 % [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] kritické pro zabezpečení kód, který je vyhrazený tým si předtím prostudovali zkontroloval se skládá. Zdrojový kód a proces vrácení se změnami se spravuje zabezpečení kritický kód pro sledování a mapováním každou kritické entitu (například metodu, která obsahuje kritický kód) na jeho znaménko vypnuté. Znaménko vypnutý stav zahrnuje názvy nejméně jeden revidující. Každý každodenními buildy sady [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] porovnává kritický kód, který v předchozí sestavení, která zkontroluje změny neschválených. Pokud pracovník změní kritického kódu bez schválení od revizí týmu, je zjistili a opravili okamžitě. Tento proces umožní aplikaci a údržby zejména vysoký stupeň kontroly nad [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] kód izolovaného prostoru.  
   
 ## <a name="see-also"></a>Viz také:
-- [Zabezpečení](../../../docs/framework/wpf/security-wpf.md)
-- [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)
-- [Strategie zabezpečení WPF – zabezpečení platformy](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)
+- [Zabezpečení](security-wpf.md)
+- [Částečné zabezpečení důvěryhodnosti WPF](wpf-partial-trust-security.md)
+- [Strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)
 - [Trustworthy Computing](https://www.microsoft.com/mscorp/twc/default.mspx)
 - [Zabezpečení v rozhraní .NET](../../standard/security/index.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - monthly calendar [WPF], creating
 - Grid control [WPF], creating [WPF], complex grid
 ms.assetid: 4ce3040a-a156-4364-9596-98ca1eca5550
-ms.openlocfilehash: e2356113457e8c9a6737132e9779e49c05a23d77
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: dd17dfeea85e2b404f7a284f93faceec63145b1f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149780"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57355011"
 ---
 # <a name="how-to-create-a-complex-grid"></a>Vytvoření komplexní mřížky
 
@@ -24,11 +24,11 @@ Následující příklad definuje osm řádků a sloupců osm pomocí <xref:Syst
 
 V příkladu je použit svislá přechody do <xref:System.Windows.Shapes.Shape.Fill%2A> sloupců a řádků ke zlepšení čitelnosti kalendáře a vizuální prezentace. Styl <xref:System.Windows.Controls.TextBlock> elementy reprezentují data a dny v týdnu. <xref:System.Windows.Controls.TextBlock> prvky jsou absolutně umístěné v rámci jejich buňky pomocí <xref:System.Windows.FrameworkElement.Margin%2A> vlastnosti a vlastnosti zarovnání, které jsou definované ve stylu pro aplikaci.
 
-[!code-xaml[GridComplex#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GridComplex/CS/default.xaml#1)]
+[!code-xaml[GridComplex#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GridComplex/CS/default.xaml#1)]
 
 Následující obrázek ukazuje výsledný ovládací prvek, přizpůsobitelné kalendáře:
 
-![Snímek obrazovky výsledný ovládací prvek](./media/how-to-create-a-complex-grid/wpf-manual-calendar.png)
+![Snímek obrazovky výsledný ovládací prvek](././media/how-to-create-a-complex-grid/wpf-manual-calendar.png)
 
 ## <a name="see-also"></a>Viz také:
 

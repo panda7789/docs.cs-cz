@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], PrintDialog
 - PrintDialog control [WPF]
 ms.assetid: 0ce9e3e7-206f-45ec-b845-4c05cfb5ff1d
-ms.openlocfilehash: 7def3ab16fe174008d1c7287786fd22566ce3d70
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f8638b56e8a6430b1a7cec371f133063a0c57692
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54689300"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57368974"
 ---
 # <a name="printdialog"></a>PrintDialog
 <xref:System.Windows.Controls.PrintDialog> Ovládací prvek se používá k vytvoření instance pole standardního dialogového okna Tisk, který automaticky nakonfiguruje <xref:System.Printing.PrintTicket> a <xref:System.Printing.PrintQueue> podle vstup uživatele.  
@@ -26,5 +26,5 @@ ms.locfileid: "54689300"
  <xref:System.Printing.PrintQueue>  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)
-- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [Přehled tisku](../advanced/printing-overview.md)
+- [Dokumenty v platformě WPF](../advanced/documents-in-wpf.md)

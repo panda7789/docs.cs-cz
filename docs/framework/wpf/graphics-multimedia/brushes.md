@@ -8,24 +8,24 @@ helpviewer_keywords:
 - painting [WPF]
 - brushes [WPF]
 ms.assetid: 26710879-12ad-4c63-9bc6-a1834bb4243b
-ms.openlocfilehash: 2ebb4553ed55e89cb0b7acf6336f21b422d4753f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f52834a652f3f88a526f359a558e192c5f34839c
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33557261"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57366722"
 ---
 # <a name="brushes"></a>Štětce
-Následující témata popisují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] štětce k "malování" obsah na obrazovku  
+Následující témata popisují způsob použití [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] štětce "vykreslení" obsah na obrazovku  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled štětců WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md)  
- [Přehled transformace štětce](../../../../docs/framework/wpf/graphics-multimedia/brush-transformation-overview.md)  
- [Přehled masek neprůhlednosti](../../../../docs/framework/wpf/graphics-multimedia/opacity-masks-overview.md)  
- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
- [TileBrush – přehled](../../../../docs/framework/wpf/graphics-multimedia/tilebrush-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/brushes-how-to-topics.md)  
+ [Přehled štětců WPF](wpf-brushes-overview.md)  
+ [Přehled transformace štětce](brush-transformation-overview.md)  
+ [Přehled masek neprůhlednosti](opacity-masks-overview.md)  
+ [Přehled malování plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md)  
+ [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)  
+ [TileBrush – přehled](tilebrush-overview.md)  
+ [Témata s postupy](brushes-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Media.Brush>  
@@ -41,6 +41,6 @@ Následující témata popisují, jak používat [!INCLUDE[TLA#tla_winclient](..
  <xref:System.Windows.Media.VisualBrush>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
+ [Grafika a multimédia](index.md)  
   
- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+ [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md)

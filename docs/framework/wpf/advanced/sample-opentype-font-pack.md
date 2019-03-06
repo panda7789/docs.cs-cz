@@ -6,12 +6,12 @@ helpviewer_keywords:
 - fonts [WPF], OpenType font pack
 - typography [WPF], OpenType font pack
 ms.assetid: 56b46fa1-a44e-419b-8f14-25ad51c715c3
-ms.openlocfilehash: d460eac13b99a503244503bdc3bbcaccfe649205
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: aa7eca674bd2758358bec244f2a21a341526d4b8
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600229"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377070"
 ---
 # <a name="sample-opentype-font-pack"></a>Ukázková sada písem OpenType
 Toto téma obsahuje přehled ukázky [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma, které jsou distribuovány s [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)]. Rozšířená podpora písma ukázka [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] funkce, které mohou být využívána [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.  
@@ -34,7 +34,7 @@ Toto téma obsahuje přehled ukázky [!INCLUDE[TLA#tla_opentype](../../../../inc
   
  Následující obrázek znázorňuje, co ukázka [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] vypadat písma.  
   
- ![Seznam názvů písma v balík vzorových písmo](../../../../docs/framework/wpf/advanced/media/samplefontpack01.gif "samplefontpack01")  
+ ![Seznam názvů písma v balík vzorových písmo](./media/samplefontpack01.gif "samplefontpack01")  
 V této sady sada písem OpenType je víc písem  
   
  Ukázka písma jsou dodávané v rámci licence od horní dotah Corporation. Horní dotah je poskytovatel produktů, pokročilé písma. Licence rozšířené nebo vlastní verze ukázka písma, najdete v článku [horní dotah Corporation webu](https://go.microsoft.com/fwlink/?LinkId=182627).  
@@ -46,14 +46,14 @@ V této sady sada písem OpenType je víc písem
 ## <a name="installing-the-fonts"></a>Instalace písem  
  Máte možnost nainstalovat vzorovou [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma na výchozí hodnotu [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] adresář písma **\WINDOWS\Fonts**. Použijte ovládací panel písma k instalaci písem. Po těchto písmo v počítači, jsou přístupné pro všechny aplikace, které odkazují na výchozí [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] písma. Můžete zobrazit reprezentativní sadu znaků v několika velikostí písma zdvojnásobení – kliknutím na soubor písma. Následující snímek obrazovky ukazuje soubor Lindsey písma, Linds.ttf.  
   
- ![Písmo Lindsey &#40;OpenType&#41;](../../../../docs/framework/wpf/advanced/media/typographyinwpf-04.png "TypographyInWPF_04")  
+ ![Písmo Lindsey &#40;OpenType&#41;](./media/typographyinwpf-04.png "TypographyInWPF_04")  
 Zobrazení Lindsey písma  
   
 <a name="using_the_fonts"></a>   
 ## <a name="using-the-fonts"></a>Použití písem  
- Existují dva způsoby, které můžete písem v aplikaci. Přidat písma do aplikace podle obsahu položky, které nejsou vloženy jako prostředky v rámci sestavení projektu. Alternativně můžete přidat písma do aplikace jako zdroj položek projektu, které jsou vloženy do souborů sestavení aplikace. Další informace najdete v tématu [balení písem s aplikacemi](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md).  
+ Existují dva způsoby, které můžete písem v aplikaci. Přidat písma do aplikace podle obsahu položky, které nejsou vloženy jako prostředky v rámci sestavení projektu. Alternativně můžete přidat písma do aplikace jako zdroj položek projektu, které jsou vloženy do souborů sestavení aplikace. Další informace najdete v tématu [balení písem s aplikacemi](packaging-fonts-with-applications.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Documents.Typography>
-- [Funkce písma OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)
-- [Balení písem s aplikacemi](../../../../docs/framework/wpf/advanced/packaging-fonts-with-applications.md)
+- [Funkce písma OpenType](opentype-font-features.md)
+- [Balení písem s aplikacemi](packaging-fonts-with-applications.md)

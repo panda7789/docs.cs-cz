@@ -2,12 +2,12 @@
 title: Informace o volajícím (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 15d556eb-4d0c-4497-98a3-7f60abb7d6a1
-ms.openlocfilehash: 7b0776425b41c8fef975355f3547a64c33fd96b4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b3d7c999137b1e62de573470b8327bf070f2b1a9
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54619010"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57375542"
 ---
 # <a name="caller-information-visual-basic"></a>Informace o volajícím (Visual Basic)
 Pomocí atributů Informace o volajícím můžete získat informace o volajícím metody. Můžete získat cestu k souboru zdrojového kódu, číslo řádku ve zdrojovém kódu a název členu volajícího. Tyto informace jsou užitečné pro trasování, ladění a vytváření diagnostických nástrojů.  
@@ -55,7 +55,7 @@ End Sub
   
  Volitelné argumenty můžete explicitně zadat, chcete-li řídit nebo skrýt informace o volajícím.  
   
-###  <a name="MEMBERNAMES"></a> Názvy členů  
+### <a name="MEMBERNAMES"></a> Názvy členů  
  Můžete použít `CallerMemberName` atribut vyhnout zadávání názvu členu jako `String` argumentů volané metody. Tímto způsobem se vyhnete problému, který **refaktoring přejmenování** nedojde ke změně `String` hodnoty. Tato výhoda se hodí zvláště v těchto úlohách:  
   
 -   Použití trasování a diagnostických rutin.  

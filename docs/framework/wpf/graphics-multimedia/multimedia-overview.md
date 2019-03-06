@@ -5,12 +5,12 @@ helpviewer_keywords:
 - multimedia [WPF]
 - media [WPF]
 ms.assetid: feb25b15-d741-4ac3-818f-1b19f63a3562
-ms.openlocfilehash: aa8d1a33fb415b986bc5e058f5d198c221f9f489
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 09b830562444bd51e931a1b5013d2a803319e336
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493167"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352762"
 ---
 # <a name="multimedia-overview"></a>Přehled multimédií
 Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vám umožní integrovat zvuku a videa do svých aplikací a zlepšit uživatelské prostředí. Toto téma představuje multimediální funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -21,9 +21,9 @@ Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharp
 ## <a name="media-api"></a>Media API  
  <xref:System.Windows.Controls.MediaElement> a <xref:System.Windows.Media.MediaPlayer> třídy se používají k předkládání obsahu zvuku nebo videa. Tyto třídy je možné řídit interaktivně nebo hodin. Tyto třídy můžete použít na [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] 10 ovládací prvek přehrávání médií. Třídy, které použijete, závisí na scénáři.  
   
- <xref:System.Windows.Controls.MediaElement> je <xref:System.Windows.UIElement> , který je podporován [rozložení](../../../../docs/framework/wpf/advanced/layout.md) a můžou je využívat jako obsah mnoho ovládacích prvků. Je také možné používat ve [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a zároveň i kód. <xref:System.Windows.Media.MediaPlayer>, na druhé straně je navržená pro <xref:System.Windows.Media.Drawing> objektů a nemá podporu rozložení. Médium načtené pomocí možnosti <xref:System.Windows.Media.MediaPlayer> lze pouze zobrazit pomocí <xref:System.Windows.Media.VideoDrawing> nebo interakcí přímo s <xref:System.Windows.Media.DrawingContext>. <xref:System.Windows.Media.MediaPlayer> nelze použít v XAML.  
+ <xref:System.Windows.Controls.MediaElement> je <xref:System.Windows.UIElement> , který je podporován [rozložení](../advanced/layout.md) a můžou je využívat jako obsah mnoho ovládacích prvků. Je také možné používat ve [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a zároveň i kód. <xref:System.Windows.Media.MediaPlayer>, na druhé straně je navržená pro <xref:System.Windows.Media.Drawing> objektů a nemá podporu rozložení. Médium načtené pomocí možnosti <xref:System.Windows.Media.MediaPlayer> lze pouze zobrazit pomocí <xref:System.Windows.Media.VideoDrawing> nebo interakcí přímo s <xref:System.Windows.Media.DrawingContext>. <xref:System.Windows.Media.MediaPlayer> nelze použít v XAML.  
   
- Další informace o vykreslení objektů a kreslení kontextu najdete v tématu [výkresu objekty – přehled](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md).  
+ Další informace o vykreslení objektů a kreslení kontextu najdete v tématu [výkresu objekty – přehled](drawing-objects-overview.md).  
   
 > [!NOTE]
 >  Při distribuci média s aplikací, nelze použít jako zdroj projektu mediální soubor. V souboru projektu, musíte místo toho nastavte typ média na `Content` a nastavte `CopyToOutputDirectory` k `PreserveNewest` nebo `Always`.  
@@ -49,7 +49,7 @@ Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharp
   
  Řízení přehrávání médií v nezávislých režimu, je možné metody ovládacího prvku objektu média. Dostupné metody řízení <xref:System.Windows.Controls.MediaElement.Play%2A>, <xref:System.Windows.Controls.MediaElement.Pause%2A>, <xref:System.Windows.Controls.MediaElement.Close%2A>, a <xref:System.Windows.Controls.MediaElement.Stop%2A>. Pro <xref:System.Windows.Controls.MediaElement>, interaktivní řízení použití těchto metod je k dispozici pouze pokud <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A> je nastavena na <xref:System.Windows.Controls.MediaState.Manual>. Tyto metody nejsou k dispozici, když je objekt média v režimu hodiny.  
   
- Zobrazit [řízení elementu MediaElement (přehrát, pozastavit, zastavit, svazek a rychlost)](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md) příklad nezávislé režimu.  
+ Zobrazit [řízení elementu MediaElement (přehrát, pozastavit, zastavit, svazek a rychlost)](how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md) příklad nezávislé režimu.  
   
 ### <a name="clock-mode"></a>Režim hodiny  
  V režimu hodiny <xref:System.Windows.Media.MediaTimeline> přehrávání médií jednotek. Hodiny režim má následující vlastnosti:  
@@ -62,15 +62,15 @@ Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharp
   
  Ovládací prvek přehrávání médií v režimu hodiny <xref:System.Windows.Media.Animation.ClockController> ovládací prvek metody se musí použít. A <xref:System.Windows.Media.Animation.ClockController> se získávají z <xref:System.Windows.Media.Animation.ClockController> vlastnost <xref:System.Windows.Media.MediaClock>. Pokud se pokusíte použít metody ovládacího prvku buď <xref:System.Windows.Controls.MediaElement> nebo <xref:System.Windows.Media.MediaPlayer> objektu v režimu hodin <xref:System.InvalidOperationException> bude vyvolána výjimka.  
   
- Zobrazit [přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md) Další informace o hodiny a časové rámce.  
+ Zobrazit [přehled animace](animation-overview.md) Další informace o hodiny a časové rámce.  
   
- Zobrazit [řízení elementu MediaElement pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-by-using-a-storyboard.md) příklad režimu hodiny.  
+ Zobrazit [řízení elementu MediaElement pomocí scénáře](how-to-control-a-mediaelement-by-using-a-storyboard.md) příklad režimu hodiny.  
   
 <a name="mediaelement"></a>   
 ## <a name="mediaelement-class"></a>Třída elementu MediaElement  
  Přidání média do aplikace je stejně jednoduché jako přidání <xref:System.Windows.Controls.MediaElement> ovládací prvek [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] aplikace a poskytování <xref:System.Uri> na médium, které chcete zahrnout. Všech typů médií podporovaných [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] 10 jsou podporovány v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Následující příklad ukazuje, jednoduché použití <xref:System.Windows.Controls.MediaElement> v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
   
- [!code-xaml[MediaElement_snip#SimpleMediaElementUsageWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MediaElement_snip/CSharp/SimpleUsage.xaml#simplemediaelementusagewholepage)]  
+ [!code-xaml[MediaElement_snip#SimpleMediaElementUsageWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/MediaElement_snip/CSharp/SimpleUsage.xaml#simplemediaelementusagewholepage)]  
   
  V této ukázce média přehrání automaticky poté, co je načten. Po dokončení přehrávání média médium se zavře a všechny prostředky média jsou verze (včetně grafické paměti). Toto je výchozí chování <xref:System.Windows.Controls.MediaElement> objektu a řídí <xref:System.Windows.Controls.MediaElement.LoadedBehavior%2A> a <xref:System.Windows.Controls.MediaElement.UnloadedBehavior%2A> vlastnosti.  
   
@@ -108,11 +108,11 @@ Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharp
 ### <a name="displaying-a-mediaplayer"></a>Zobrazení MediaPlayer  
  Technicky vzato <xref:System.Windows.Media.MediaPlayer> nelze zobrazit, protože nemá žádné fyzické reprezentace. Nicméně je možné prezentovat média v <xref:System.Windows.Media.Drawing> pomocí <xref:System.Windows.Media.VideoDrawing> třídy. Následující příklad ukazuje použití <xref:System.Windows.Media.VideoDrawing> zobrazíte média.  
   
- [!code-csharp[DrawingMiscSnippets_snip#VideoDrawingExampleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#videodrawingexampleinline)]  
+ [!code-csharp[DrawingMiscSnippets_snip#VideoDrawingExampleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/VideoDrawingExample.cs#videodrawingexampleinline)]  
   
- Zobrazit [kreslení objekty – přehled](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md) Další informace o <xref:System.Windows.Media.Drawing> objekty.  
+ Zobrazit [kreslení objekty – přehled](drawing-objects-overview.md) Další informace o <xref:System.Windows.Media.Drawing> objekty.  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Media.DrawingGroup>
-- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)
-- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/audio-and-video-how-to-topics.md)
+- [Rozložení](../advanced/layout.md)
+- [Témata s postupy](audio-and-video-how-to-topics.md)

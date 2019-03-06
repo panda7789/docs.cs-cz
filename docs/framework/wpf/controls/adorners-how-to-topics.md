@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - adorners [WPF], how-to topics
 ms.assetid: e29d7516-d5e6-4500-bd4f-775e6f830984
-ms.openlocfilehash: ba81f8e2d603ee2e734e5afd14182e95804fe69e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 930d0834570529bd958006818cddb8f5692066d7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33550082"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57359247"
 ---
 # <a name="adorners-how-to-topics"></a>Postupy: Témata doplňků
-Následující příklady ukazují, jak provádět běžné úlohy pomocí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] adorner framework.  
+Následující příklady ukazují, jak provádět běžné úlohy pomocí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] rozhraní pro úpravy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Implementace doplňku pro úpravy](../../../../docs/framework/wpf/controls/how-to-implement-an-adorner.md)  
- [Svázání doplňku pro úpravy s elementem](../../../../docs/framework/wpf/controls/how-to-bind-an-adorner-to-an-element.md)  
- [Doplnění podřízených položek panelu](../../../../docs/framework/wpf/controls/how-to-adorn-the-children-of-a-panel.md)  
- [Odebrání doplňku pro úpravy z elementu](../../../../docs/framework/wpf/controls/how-to-remove-an-adorner-from-an-element.md)  
- [Odebrání všech doplňků pro úpravy z elementu](../../../../docs/framework/wpf/controls/how-to-remove-all-adorners-from-an-element.md)  
+ [Implementace doplňku pro úpravy](how-to-implement-an-adorner.md)  
+ [Svázání doplňku pro úpravy s elementem](how-to-bind-an-adorner-to-an-element.md)  
+ [Doplnění podřízených položek panelu](how-to-adorn-the-children-of-a-panel.md)  
+ [Odebrání doplňku pro úpravy z elementu](how-to-remove-an-adorner-from-an-element.md)  
+ [Odebrání všech doplňků pro úpravy z elementu](how-to-remove-all-adorners-from-an-element.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.AdornedElementPlaceholder>  
