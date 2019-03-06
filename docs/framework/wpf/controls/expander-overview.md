@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], Expander
 - Expander control [WPF], about Expander control
 ms.assetid: 877bf425-0e54-49ec-8fd2-13a211377abb
-ms.openlocfilehash: 63fa061211e846a6b4d9c88cdf3c7c24e4aac3ad
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2eff66377a3ba9b0e30417cc7dd1e1413d9074d9
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54693753"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57369926"
 ---
 # <a name="expander-overview"></a>Přehled rozšíření
 <xref:System.Windows.Controls.Expander> Ovládacího prvku poskytuje způsob, jak zadat obsah v rozšiřitelné oblasti, která se podobá okno a obsahuje hlavičku.  
@@ -23,7 +23,7 @@ ms.locfileid: "54693753"
 ## <a name="creating-a-simple-expander"></a>Vytvoření jednoduché rozšíření  
  Následující příklad ukazuje, jak vytvořit jednoduchou <xref:System.Windows.Controls.Expander> ovládacího prvku. Tento příklad vytvoří <xref:System.Windows.Controls.Expander> vypadá podobně jako na předchozím obrázku.  
   
- [!code-xaml[ExpanderExample#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpanderExample/CSharp/Page1.xaml#2)]  
+ [!code-xaml[ExpanderExample#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderExample/CSharp/Page1.xaml#2)]  
   
  <xref:System.Windows.Controls.ContentControl.Content%2A> a <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> ze <xref:System.Windows.Controls.Expander> může také obsahovat například složitým obsahem <xref:System.Windows.Controls.RadioButton> a <xref:System.Windows.Controls.Image> objekty.  
   
@@ -45,15 +45,15 @@ ms.locfileid: "54693753"
   
  **Rozšíření v prvku ScrollViewer**  
   
- ![Rozšíření s posuvník](../../../../docs/framework/wpf/controls/media/expanderwithscrollbar.JPG "ExpanderWithScrollBar")  
+ ![Rozšíření s posuvník](./media/expanderwithscrollbar.JPG "ExpanderWithScrollBar")  
   
  Když umístíte <xref:System.Windows.Controls.Expander> v ovládacím prvku <xref:System.Windows.Controls.ScrollViewer>, nastavte <xref:System.Windows.Controls.ScrollViewer> dimenze vlastnost, která odpovídá směr, ve kterém <xref:System.Windows.Controls.Expander> otevře obsah na velikost <xref:System.Windows.Controls.Expander> obsahu oblasti. Například, pokud jste nastavili <xref:System.Windows.Controls.Expander.ExpandDirection%2A> vlastnost <xref:System.Windows.Controls.Expander> k <xref:System.Windows.Controls.ExpandDirection.Down> (oblasti obsahu otevře dolů), nastavit <xref:System.Windows.FrameworkElement.Height%2A> vlastnost <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku na požadované výšku oblasti obsahu. Pokud nastavíte dimenze výšce místo na samotný, obsah <xref:System.Windows.Controls.ScrollViewer> nerozpozná toto nastavení a proto neposkytuje posouvatelným obsahem.  
   
  Následující příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.Expander> ovládací prvek, který se složitým obsahem, který obsahuje <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku. Tento příklad vytvoří <xref:System.Windows.Controls.Expander> , který je jako na obrázku na začátku tohoto oddílu.  
   
- [!code-csharp[ExpanderRichContent#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpanderRichContent/CSharp/Window1.xaml.cs#1)]
- [!code-vb[ExpanderRichContent#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderRichContent/VisualBasic/Window1.xaml.vb#1)]
- [!code-xaml[ExpanderRichContent#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpanderRichContent/CSharp/Window1.xaml#1)]  
+ [!code-csharp[ExpanderRichContent#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderRichContent/CSharp/Window1.xaml.cs#1)]
+ [!code-vb[ExpanderRichContent#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderRichContent/VisualBasic/Window1.xaml.vb#1)]
+ [!code-xaml[ExpanderRichContent#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderRichContent/CSharp/Window1.xaml#1)]  
   
 <a name="UsingtheAlignmentProperties"></a>   
 ## <a name="using-the-alignment-properties"></a>Pomocí vlastností zarovnání  
@@ -62,4 +62,4 @@ ms.locfileid: "54693753"
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Controls.Expander>
 - <xref:System.Windows.Controls.ExpandDirection>
-- [Témata s postupy](../../../../docs/framework/wpf/controls/expander-how-to-topics.md)
+- [Témata s postupy](expander-how-to-topics.md)

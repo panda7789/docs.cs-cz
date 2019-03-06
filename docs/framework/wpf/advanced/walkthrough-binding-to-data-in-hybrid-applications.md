@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Připojení k datům v hybridních aplikacích'
+title: 'Návod: Připojení k datům v hybridních aplikacích'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - data binding [WPF interoperability]
 ms.assetid: 18997e71-745a-4425-9c69-2cbce1d8669e
-ms.openlocfilehash: 2a20dc95467df4baedce2f4acc63f0c029f178c6
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 378ebd5a402006d7e7a88029ced62f812f620aeb
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748489"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377739"
 ---
-# <a name="walkthrough-binding-to-data-in-hybrid-applications"></a>Průvodce: Připojení k datům v hybridních aplikacích
+# <a name="walkthrough-binding-to-data-in-hybrid-applications"></a>Návod: Připojení k datům v hybridních aplikacích
 Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň uživatelům poskytují přístup k podkladová data, ať používáte [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nebo [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tento návod ukazuje, jak můžete datové vazby v hybridních aplikacích, které zahrnují oba [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky.  
   
  Úlohy v tomto návodu zahrnují:  
@@ -67,7 +67,7 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
 5.  Pojmenujte výchozí <xref:System.Windows.Controls.Grid> element `mainGrid` přiřazením <xref:System.Windows.FrameworkElement.Name%2A> vlastnost.  
   
-     [!code-xaml[WPFWithWFAndDatabinding#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#8)]  
+     [!code-xaml[WPFWithWFAndDatabinding#8](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#8)]  
   
 ## <a name="defining-the-data-template"></a>Definování šablon dat  
  Zobrazí se seznam zákazníků v <xref:System.Windows.Controls.ListBox> ovládacího prvku. Následující příklad kódu definuje <xref:System.Windows.DataTemplate> objekt s názvem `ListItemsTemplate` , která řídí vizuálního stromu <xref:System.Windows.Controls.ListBox> ovládacího prvku. To <xref:System.Windows.DataTemplate> je přiřazen <xref:System.Windows.Controls.ListBox> ovládacího prvku <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> vlastnost.  
@@ -76,7 +76,7 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
 -   Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
   
-     [!code-xaml[WPFWithWFAndDatabinding#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#3)]  
+     [!code-xaml[WPFWithWFAndDatabinding#3](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#3)]  
   
 ## <a name="specifying-the-form-layout"></a>Určení rozložení formuláře  
  Rozložení formuláře je definována grid se třemi řádky a tři sloupce. <xref:System.Windows.Controls.Label> ovládací prvky jsou k dispozici k identifikaci jednotlivých sloupců v tabulce Zákazníci.  
@@ -85,13 +85,13 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
 -   Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
   
-     [!code-xaml[WPFWithWFAndDatabinding#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#4)]  
+     [!code-xaml[WPFWithWFAndDatabinding#4](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#4)]  
   
 #### <a name="to-set-up-the-label-controls"></a>Nastavit ovládací prvky popisku  
   
 -   Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
   
-     [!code-xaml[WPFWithWFAndDatabinding#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#5)]  
+     [!code-xaml[WPFWithWFAndDatabinding#5](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#5)]  
   
 ## <a name="specifying-data-bindings"></a>Určení datové vazby  
  Zobrazí se seznam zákazníků v <xref:System.Windows.Controls.ListBox> ovládacího prvku. Připojený `ListItemsTemplate` vytvoří vazbu <xref:System.Windows.Controls.TextBlock> ovládací prvek `ContactName` pole z databáze.  
@@ -104,7 +104,7 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
      <xref:System.Windows.Data.Binding> Třídy vytvoří vazbu <xref:System.Windows.Controls.TextBox> ovládacích prvků na odpovídající pole v databázi.  
   
-     [!code-xaml[WPFWithWFAndDatabinding#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#6)]  
+     [!code-xaml[WPFWithWFAndDatabinding#6](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#6)]  
   
 ## <a name="displaying-data-by-using-interoperation"></a>Zobrazení dat s využitím vzájemná spolupráce grafického subsystému  
  Zobrazení objednávek odpovídající k vybranému zákazníkovi v <xref:System.Windows.Forms.DataGridView?displayProperty=nameWithType> ovládací prvek s názvem `dataGridView1`. `dataGridView1` Ovládací prvek vázán na zdroj dat v souboru kódu na pozadí. A <xref:System.Windows.Forms.Integration.WindowsFormsHost> ovládací prvek je nadřazeného tohoto [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládacího prvku.  
@@ -113,7 +113,7 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
 -   Zkopírujte následující XAML do <xref:System.Windows.Controls.Grid> deklarace prvku.  
   
-     [!code-xaml[WPFWithWFAndDatabinding#7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#7)]  
+     [!code-xaml[WPFWithWFAndDatabinding#7](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml#7)]  
   
 ## <a name="adding-the-data-source-to-the-project"></a>Přidání zdroje dat do projektu  
  Pomocí sady Visual Studio můžete snadno přidat zdroj dat do projektu. Tento postup přidá silně typované datové sady do vašeho projektu. Přidají také několik jiných tříd podpory, jako jsou adaptéry tabulek pro jednotlivé vybrané tabulky.  
@@ -139,15 +139,15 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
   
      Tento kód deklaruje <xref:System.Windows.Forms.BindingSource> komponenty a přidružené pomocné třídy, které se připojují k databázi.  
   
-     [!code-csharp[WPFWithWFAndDatabinding#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#11)]
-     [!code-vb[WPFWithWFAndDatabinding#11](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#11)]
+     [!code-csharp[WPFWithWFAndDatabinding#11](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#11)]
+     [!code-vb[WPFWithWFAndDatabinding#11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#11)]
 
 3.  Zkopírujte následující kód do konstruktoru.
 
      Tento kód vytvoří a inicializuje <xref:System.Windows.Forms.BindingSource> komponenty.
 
-     [!code-csharp[WPFWithWFAndDatabinding#12](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#12)]
-     [!code-vb[WPFWithWFAndDatabinding#12](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#12)]
+     [!code-csharp[WPFWithWFAndDatabinding#12](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#12)]
+     [!code-vb[WPFWithWFAndDatabinding#12](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#12)]
 
 4.  Open MainWindow.xaml.
 
@@ -161,15 +161,15 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
 
      Tento kód přiřadí <xref:System.Windows.Forms.BindingSource> komponenty jako kontext dat a naplní `Customers` a `Orders` adaptér objekty.
 
-     [!code-csharp[WPFWithWFAndDatabinding#13](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#13)]
-     [!code-vb[WPFWithWFAndDatabinding#13](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#13)]
+     [!code-csharp[WPFWithWFAndDatabinding#13](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#13)]
+     [!code-vb[WPFWithWFAndDatabinding#13](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#13)]
 
 9. Zkopírujte následující kód do `MainWindow` definici třídy.
 
      Tato metoda obsluhuje <xref:System.Windows.Data.CollectionView.CurrentChanged> událostí a aktualizuje aktuální položky datové vazby.
 
-     [!code-csharp[WPFWithWFAndDatabinding#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#14)]
-     [!code-vb[WPFWithWFAndDatabinding#14](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#14)]  
+     [!code-csharp[WPFWithWFAndDatabinding#14](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFWithWFAndDatabinding/CSharp/WPFWithWFAndDatabinding/Window1.xaml.cs#14)]
+     [!code-vb[WPFWithWFAndDatabinding#14](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFWithWFAndDatabinding/VisualBasic/WPFWithWFAndDatabinding/Window1.xaml.vb#14)]  
   
 10. Stisknutím klávesy F5 sestavte a spusťte aplikaci.  
   
@@ -178,5 +178,5 @@ Vytvoření vazby zdroje dat k ovládacímu prvku je zásadní pro zároveň už
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
 - [Datové vazby v ukázce hybridní aplikace](https://go.microsoft.com/fwlink/?LinkID=159983)
-- [Návod: Hostování složeného ovládacího Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
-- [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
+- [Návod: Hostování složeného ovládacího Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
+- [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)

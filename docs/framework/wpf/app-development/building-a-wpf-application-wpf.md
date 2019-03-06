@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: 682563937de0bb907b97ee4237d33c76307493da
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: d60b6babebd69e45335ab4c12cb797126ec6b6a3
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56745635"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57364291"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
 Aplikace Windows Presentation Foundation (WPF) může být sestaven jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] spustitelné soubory (.exe), knihovny (DLL), nebo kombinací obou typů sestavení. Toto téma popisuje, jak vytvořit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací a popisuje klíčové kroky v procesu sestavení.  
@@ -32,7 +32,7 @@ Aplikace Windows Presentation Foundation (WPF) může být sestaven jako [!INCLU
 ## <a name="wpf-build-pipeline"></a>WPF Build Pipeline  
  Když [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] projekt se vytvořil, kombinace specifické pro jazyk a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]– jsou vyvolány určité cíle. Proces provedení tyto cíle se nazývá kanálu sestavení, a jsou klíčové kroky návodu na následujícím obrázku.  
   
- ![Proces sestavení WPF](../../../../docs/framework/wpf/app-development/media/wpfbuildsystem-figure1.png "WPFBuildSystem_Figure1")  
+ ![Proces sestavení WPF](./media/wpfbuildsystem-figure1.png "WPFBuildSystem_Figure1")  
   
 <a name="Pre_Build_Initializations"></a>   
 ### <a name="pre-build-initializations"></a>Inicializace před sestavením  
@@ -167,7 +167,7 @@ End Sub
 -   Nic přepsán (Pokud se nic v projektu nezměnilo).  
   
 ## <a name="see-also"></a>Viz také:
-- [Nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)
+- [Nasazení aplikace WPF](deploying-a-wpf-application-wpf.md)
 - [Referenční dokumentace WPF MSBuild](/visualstudio/msbuild/wpf-msbuild-reference)
-- [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)
-- [Prostředek, obsah a datové soubory aplikace WPF](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)
+- [Sbalení URI v technologii WPF](pack-uris-in-wpf.md)
+- [Prostředek, obsah a datové soubory aplikace WPF](wpf-application-resource-content-and-data-files.md)

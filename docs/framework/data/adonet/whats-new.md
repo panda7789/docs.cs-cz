@@ -3,11 +3,11 @@ title: Co je nového v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 3bb65d38-cce2-46f5-b979-e5c505e95e10
 ms.openlocfilehash: 2acbd6a766d91e31db71ce193bcc4081e5f32c9d
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092511"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57378246"
 ---
 # <a name="whats-new-in-adonet"></a>Co je nového v ADO.NET
 Následující funkce jsou novinkou [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  

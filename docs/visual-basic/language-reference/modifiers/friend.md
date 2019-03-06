@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Protected Friend keyword combination
 - Friend keyword [Visual Basic], and Protected
 ms.assetid: b664605e-1c79-4728-b996-aa59c50846bc
-ms.openlocfilehash: 52fdbfa3b0cd79cc9714a13a75716829163e45f6
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 1e6dbaa9201d5c9cd902412797b2427ec488d014
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56967370"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371408"
 ---
 # <a name="friend-visual-basic"></a>Friend (Visual Basic)
 Určuje, že nejmíň jeden deklarovaný programový prvek je přístupný pouze z v rámci sestavení, které obsahuje jeho deklaraci.  
@@ -35,7 +35,7 @@ Určuje, že nejmíň jeden deklarovaný programový prvek je přístupný pouze
  Porovnání `Friend` a dalších modifikátorů přístupu, najdete v článku [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 > [!NOTE]
->  Můžete určit, že jiné sestavení je sestavení typu friend, což umožňuje přístup ke všem typy a členy, které jsou označeny jako `Friend`. Další informace najdete v tématu [přátelských sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).  
+>  Můžete určit, že jiné sestavení je sestavení typu friend, což umožňuje přístup ke všem typy a členy, které jsou označeny jako `Friend`. Další informace najdete v tématu [přátelských sestavení](../../../standard/assembly/friend-assemblies.md).  
   
 ## <a name="example"></a>Příklad  
  Následující třídy používá `Friend` modifikátor umožňující dalších programovacích prvků v rámci stejného sestavení pro přístup k určitým členům.  

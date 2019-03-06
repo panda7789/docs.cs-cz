@@ -8,18 +8,18 @@ helpviewer_keywords:
 - controls [WPF], Canvas
 - Canvas control [WPF]
 ms.assetid: fdb390e9-1bba-4b5f-87fe-c3bc246fa7e9
-ms.openlocfilehash: 41b1315f03c55c290959e8871df2630802882a75
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7b3e1c942308aa90887b6370ed402a1a87364415
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33553271"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57351040"
 ---
 # <a name="canvas"></a>Plátno
-<xref:System.Windows.Controls.Canvas> je ovládací prvek rozložení, který umožňuje absolutní umístění podřízených elementů.  
+<xref:System.Windows.Controls.Canvas> je rozložení ovládacího prvku, který umožňuje absolutní umístění podřízených elementů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Témata s postupy](../../../../docs/framework/wpf/controls/canvas-how-to-topics.md)  
+ [Témata s postupy](canvas-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Panel>  
@@ -37,8 +37,8 @@ ms.locfileid: "33553271"
  <xref:System.Windows.Controls.WrapPanel>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)  
+ [Rozložení](../advanced/layout.md)  
   
- [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [ScrollViewer – přehled](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [ScrollViewer – přehled](scrollviewer-overview.md)

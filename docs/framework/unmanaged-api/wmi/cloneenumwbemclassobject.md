@@ -16,21 +16,21 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 52edc72e3714ceaf8cc92f272da6a374eb324dad
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ac85ed86ea968fa945e07f95db8977a33c5d12a6
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54661643"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57367100"
 ---
 # <a name="cloneenumwbemclassobject-function"></a>Funkce CloneEnumWbemClassObject
-Vytvoří kopii logické tohoto čítače, zachovat své aktuální pozici ve výčtu.  
-  
+Vytvoří kopii logické tohoto čítače, zachovat své aktuální pozici ve výčtu.
+
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
+
+## <a name="syntax"></a>Syntaxe
+
+```
 HRESULT CloneEnumWbemClassObject (
    [out] IEnumWbemClassObject**  ppEnum, 
    [in] DWORD                    authLevel,
@@ -40,29 +40,29 @@ HRESULT CloneEnumWbemClassObject (
    [in] BSTR                     strPassword,
    [in BSTR]                     strAuthority 
 ); 
-```  
+```
 
 ## <a name="parameters"></a>Parametry
 
-`ppEnum`  
+`ppEnum`\
 [out] Přijímá ukazatel na novou [IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject).
 
-`authLevel`  
+`authLevel`\
 [in] Úroveň autorizace.
 
-`impLevel` [in] Úroveň zosobnění.
+`impLevel`\
+[in] Úroveň zosobnění.
 
-`pCurrentEnumWbemClassObject`  
+`pCurrentEnumWbemClassObject`\
 [out] Ukazatel [IEnumWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-ienumwbemclassobject) instance ke klonování.
 
-`strUser`   
+`strUser`\
 [in] Uživatelské jméno. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
 
-`strPassword`   
+`strPassword`\
 [in] Heslo. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
 
-`strAuthority`   
-[in] Název domény uživatele. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
+`strAuthority`\ [in] název domény uživatele. Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -75,12 +75,12 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hl
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Není k dispozici není dostatek paměti dokončit operaci. |
 | `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | Odkaz vzdálené volání (procedur RPC) mezi aktuálním procesem a službou WMI se nezdařil. |
 | `WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
-  
+
 ## <a name="remarks"></a>Poznámky
 
 Tato funkce zalamuje volání na [IEnumWbemClassObject::Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone) metody.
 
-Tato metoda provádí pouze kopie "co možná nejlepší". Vzhledem k dynamické povaze velký počet objektů CIM je možné, že nový čítač není výčet stejnou sadu objektů jako enumerátoru zdroje.  
+Tato metoda provádí pouze kopie "co možná nejlepší". Vzhledem k dynamické povaze velký počet objektů CIM je možné, že nový čítač není výčet stejnou sadu objektů jako enumerátoru zdroje.
 
 Pokud selže volání funkce, můžete získat další informace o chybě při volání [GetErrorInfo –](geterrorinfo.md) funkce.
 
@@ -88,12 +88,13 @@ Pokud selže volání funkce, můžete získat další informace o chybě při v
 
 Příklad najdete v tématu [IEnumWbemClassObject::Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone) metody.
 
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** WMINet_Utils.idl  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+## <a name="requirements"></a>Požadavky
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+ **Záhlaví:** WMINet_Utils.idl
+
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

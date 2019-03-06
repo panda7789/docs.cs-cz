@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 2df2cd11-6aac-4bdf-ab7b-ea5f464cd5ca
-ms.openlocfilehash: c5c89f388d90fbcbd02342514def52a8960b99fb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 857175c65c62d8abad07a93baf72aa3709e5cb6b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694370"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57375633"
 ---
 # <a name="binding-sources-overview"></a>Přehled zdrojů připojení
 V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z. Toto téma popisuje typy objektů, které můžete použít jako zdroj vazby.  
@@ -27,15 +27,15 @@ V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z
 |[!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] Objekty|Můžete vázat na veřejné vlastnosti, dílčí vlastnosti, jakož i indexery žádné [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objektu. Modul vazby používá [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] reflexi k získání hodnot vlastností. Můžete také objekty, které implementují <xref:System.ComponentModel.ICustomTypeDescriptor> nebo jste registrovaný <xref:System.ComponentModel.TypeDescriptionProvider> fungovat i pro vazby.<br /><br /> Další informace o tom, jak implementovat třídu, který může sloužit jako zdroj vazby najdete v tématu [implementaci třídy pro zdroj vazby](#classes) dále v tomto tématu.|  
 |dynamické objekty|Můžete vázat na dostupné vlastnostmi a indexery objekt, který implementuje <xref:System.Dynamic.IDynamicMetaObjectProvider> rozhraní. Pokud přistupujete můžete členské v kódu, můžete svázat do něj. Například, pokud dynamický objekt umožňuje přístup ke členu v kódu prostřednictvím `someObjet.AProperty`, můžete svázat do ní nastavením cesta vazby `AProperty`.|  
 |[!INCLUDE[TLA#tla_adonet](../../../../includes/tlasharptla-adonet-md.md)] Objekty|Lze svázat [!INCLUDE[TLA2#tla_adonet](../../../../includes/tla2sharptla-adonet-md.md)] objekty, jako například <xref:System.Data.DataTable>. [!INCLUDE[TLA2#tla_adonet](../../../../includes/tla2sharptla-adonet-md.md)] <xref:System.Data.DataView> Implementuje <xref:System.ComponentModel.IBindingList> rozhraní, které poskytuje oznámení o změnách, které naslouchá vazby.|  
-|[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] Objekty|Můžete svázat a spustit `XPath` dotazuje na <xref:System.Xml.XmlNode>, <xref:System.Xml.XmlDocument>, nebo <xref:System.Xml.XmlElement>. Pohodlný způsob, jak přistupovat k [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data, která je zdrojem vazby v kódu, je použít <xref:System.Windows.Data.XmlDataProvider> objektu. Další informace najdete v tématu [svázání dat XML pomocí XMLDataProvider a dotazů XPath](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).<br /><br /> Také lze svázat <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>, nebo připojení k výsledkům dotazů, spusťte na tyto typy objektů pomocí LINQ to XML. Pohodlný způsob, jak používat technologie LINQ to XML pro přístup k datům XML, který je zdrojem vazby v kódu je použít <xref:System.Windows.Data.ObjectDataProvider> objektu. Další informace najdete v tématu [připojení k XDocument, XElement nebo LINQ pro výsledky XML dotazu](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md).|  
-|<xref:System.Windows.DependencyObject> Objekty|Mohl vytvořit vazbu k vlastnosti závislosti žádné <xref:System.Windows.DependencyObject>. Příklad najdete v tématu [vazby vlastností dvou ovládacích](../../../../docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md).|  
+|[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] Objekty|Můžete svázat a spustit `XPath` dotazuje na <xref:System.Xml.XmlNode>, <xref:System.Xml.XmlDocument>, nebo <xref:System.Xml.XmlElement>. Pohodlný způsob, jak přistupovat k [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data, která je zdrojem vazby v kódu, je použít <xref:System.Windows.Data.XmlDataProvider> objektu. Další informace najdete v tématu [svázání dat XML pomocí XMLDataProvider a dotazů XPath](how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).<br /><br /> Také lze svázat <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>, nebo připojení k výsledkům dotazů, spusťte na tyto typy objektů pomocí LINQ to XML. Pohodlný způsob, jak používat technologie LINQ to XML pro přístup k datům XML, který je zdrojem vazby v kódu je použít <xref:System.Windows.Data.ObjectDataProvider> objektu. Další informace najdete v tématu [připojení k XDocument, XElement nebo LINQ pro výsledky XML dotazu](how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md).|  
+|<xref:System.Windows.DependencyObject> Objekty|Mohl vytvořit vazbu k vlastnosti závislosti žádné <xref:System.Windows.DependencyObject>. Příklad najdete v tématu [vazby vlastností dvou ovládacích](how-to-bind-the-properties-of-two-controls.md).|  
   
 <a name="classes"></a>   
 ## <a name="implementing-a-class-for-the-binding-source"></a>Implementace třídy pro zdroje připojení  
  Můžete vytvořit vlastní zdroje připojení. Tato část popisuje, co potřebujete vědět, Pokud implementujete třídu, která bude sloužit jako zdroj vazby.  
   
 ### <a name="providing-change-notifications"></a>Poskytování oznámení o změnách  
- Pokud používáte buď <xref:System.Windows.Data.BindingMode.OneWay> nebo <xref:System.Windows.Data.BindingMode.TwoWay> vazby (protože chcete, aby vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] aktualizovat při změně vlastnosti zdroje vazby dynamicky), musíte implementovat mechanismus oznámení vhodný změněné vlastnosti. Doporučené mechanismus je určený pro [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] nebo dynamické třídu pro implementaci <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Další informace najdete v tématu [implementace oznámení změn vlastností](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md).  
+ Pokud používáte buď <xref:System.Windows.Data.BindingMode.OneWay> nebo <xref:System.Windows.Data.BindingMode.TwoWay> vazby (protože chcete, aby vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] aktualizovat při změně vlastnosti zdroje vazby dynamicky), musíte implementovat mechanismus oznámení vhodný změněné vlastnosti. Doporučené mechanismus je určený pro [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] nebo dynamické třídu pro implementaci <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Další informace najdete v tématu [implementace oznámení změn vlastností](how-to-implement-property-change-notification.md).  
   
  Pokud jste vytvořili [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objekt, který neimplementuje <xref:System.ComponentModel.INotifyPropertyChanged>, pak je nutné uspořádat pro vlastní oznámení systému, abyste měli jistotu, že data používaná ve vazbě zůstane aktuální. Díky podpoře můžete zadat oznámení o změnách `PropertyChanged` vzor pro každou vlastnost, která chcete, aby oznámení o změně. Tento vzor podporovat, můžete definovat *PropertyName*změněné události pro každou vlastnost, kde *PropertyName* je název vlastnosti. Můžete vyvolat událost pokaždé, když se změní vlastnost.  
   
@@ -54,9 +54,9 @@ V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z
   
 <a name="objects"></a>   
 ## <a name="using-entire-objects-as-a-binding-source"></a>Použití celé objekty jako zdroje vazby  
- Celý objekt slouží jako zdroj vazby. Zdrojem vazby, který můžete určit pomocí <xref:System.Windows.Data.Binding.Source%2A> nebo <xref:System.Windows.FrameworkElement.DataContext%2A> vlastnost a pak zadejte prázdnou vazby deklarace: `{Binding}`. Scénáře, ve kterých to je užitečné zahrnout vazby na objekty, které jsou typu String, vytvoření vazby na objekty s více vlastnostmi, které vás zajímají, nebo vytvoření vazby na objekty kolekce. Příklad vytvoření vazby na celou kolekci objektu, najdete v části [použití vzoru seznam-podrobnosti s hierarchickými daty](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md).  
+ Celý objekt slouží jako zdroj vazby. Zdrojem vazby, který můžete určit pomocí <xref:System.Windows.Data.Binding.Source%2A> nebo <xref:System.Windows.FrameworkElement.DataContext%2A> vlastnost a pak zadejte prázdnou vazby deklarace: `{Binding}`. Scénáře, ve kterých to je užitečné zahrnout vazby na objekty, které jsou typu String, vytvoření vazby na objekty s více vlastnostmi, které vás zajímají, nebo vytvoření vazby na objekty kolekce. Příklad vytvoření vazby na celou kolekci objektu, najdete v části [použití vzoru seznam-podrobnosti s hierarchickými daty](how-to-use-the-master-detail-pattern-with-hierarchical-data.md).  
   
- Všimněte si, že budete muset použít vlastní logiku, aby data má smysl pro vaše vlastností cíle. Vlastní logiky může být v podobě vlastního převaděče (pokud ještě neexistuje výchozí typ převodu) nebo <xref:System.Windows.DataTemplate>. Další informace o převaděčů najdete v části převod dat z [přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md). Další informace o šablonách dat, naleznete v tématu [přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md).  
+ Všimněte si, že budete muset použít vlastní logiku, aby data má smysl pro vaše vlastností cíle. Vlastní logiky může být v podobě vlastního převaděče (pokud ještě neexistuje výchozí typ převodu) nebo <xref:System.Windows.DataTemplate>. Další informace o převaděčů najdete v části převod dat z [přehled datových vazeb](data-binding-overview.md). Další informace o šablonách dat, naleznete v tématu [přehled datových šablon](data-templating-overview.md).  
   
 <a name="collections"></a>   
 ## <a name="using-collection-objects-as-a-binding-source"></a>Použití objektů kolekce jako zdroje vazby  
@@ -64,9 +64,9 @@ V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z
   
  Můžete zobrazit výčet přes jakoukoli kolekci, která implementuje <xref:System.Collections.IEnumerable> rozhraní. Však nastavení dynamické vazby, vložení nebo odstranění v kolekci aktualizovat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] automaticky, kolekce musí implementovat <xref:System.Collections.Specialized.INotifyCollectionChanged> rozhraní. Toto rozhraní poskytuje událost, která musí být vyvolána při každé změně zdrojové kolekce.  
   
- <xref:System.Collections.ObjectModel.ObservableCollection%601> Třídy je předdefinované implementace shromažďování dat, který zpřístupňuje <xref:System.Collections.Specialized.INotifyCollectionChanged> rozhraní. Jednotlivé datové objekty v kolekci musí splňovat požadavky popsané v předchozích částech. Příklad najdete v tématu [vytvoření a připojení ke kolekci ObservableCollection](../../../../docs/framework/wpf/data/how-to-create-and-bind-to-an-observablecollection.md). Před implementací vlastní kolekce, zvažte použití <xref:System.Collections.ObjectModel.ObservableCollection%601> nebo jeden z existující kolekce tříd, například <xref:System.Collections.Generic.List%601>, <xref:System.Collections.ObjectModel.Collection%601>, a <xref:System.ComponentModel.BindingList%601>, mezi mnoha dalších.  
+ <xref:System.Collections.ObjectModel.ObservableCollection%601> Třídy je předdefinované implementace shromažďování dat, který zpřístupňuje <xref:System.Collections.Specialized.INotifyCollectionChanged> rozhraní. Jednotlivé datové objekty v kolekci musí splňovat požadavky popsané v předchozích částech. Příklad najdete v tématu [vytvoření a připojení ke kolekci ObservableCollection](how-to-create-and-bind-to-an-observablecollection.md). Před implementací vlastní kolekce, zvažte použití <xref:System.Collections.ObjectModel.ObservableCollection%601> nebo jeden z existující kolekce tříd, například <xref:System.Collections.Generic.List%601>, <xref:System.Collections.ObjectModel.Collection%601>, a <xref:System.ComponentModel.BindingList%601>, mezi mnoha dalších.  
   
- WPF nikdy vytvořena vazba přímo s kolekce. Pokud chcete zadat kolekci jako zdroj vazby, WPF skutečně vytvoří vazbu kolekce výchozí zobrazení. Informace o výchozích zobrazení najdete v tématu [přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md).  
+ WPF nikdy vytvořena vazba přímo s kolekce. Pokud chcete zadat kolekci jako zdroj vazby, WPF skutečně vytvoří vazbu kolekce výchozí zobrazení. Informace o výchozích zobrazení najdete v tématu [přehled datových vazeb](data-binding-overview.md).  
   
  Pokud jste pokročilý scénář a chcete implementovat vlastní kolekci, zvažte použití <xref:System.Collections.IList> rozhraní. <xref:System.Collections.IList> poskytuje obecné kolekci objektů, které lze jednotlivě přistupovat pomocí indexu, což může zlepšit výkon.  
   
@@ -92,13 +92,13 @@ V datové vazbě objekt zdroj vazby odkazuje na objekt, který je získat data z
   
  Jsou vnitřní objekty anonymního typu. Vlastnosti anonymních typů lze svázat pouze při spuštění v režimu plné důvěryhodnosti. Další informace o anonymních typech najdete v tématu [anonymní typy (C# Programming Guide)](~/docs/csharp/programming-guide/classes-and-structs/anonymous-types.md) nebo [anonymní typy (Visual Basic)](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) (Visual Basic).  
   
- Další informace o částečným vztahem důvěryhodnosti zabezpečení najdete v tématu [částečné zabezpečení důvěryhodnosti WPF](../../../../docs/framework/wpf/wpf-partial-trust-security.md).  
+ Další informace o částečným vztahem důvěryhodnosti zabezpečení najdete v tématu [částečné zabezpečení důvěryhodnosti WPF](../wpf-partial-trust-security.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Data.ObjectDataProvider>
 - <xref:System.Windows.Data.XmlDataProvider>
-- [Určení zdroje vazby](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md)
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+- [Určení zdroje vazby](how-to-specify-the-binding-source.md)
+- [Přehled datových vazeb](data-binding-overview.md)
+- [Témata s postupy](data-binding-how-to-topics.md)
 - [Přehled datové vazby WPF s LINQ to XML](/visualstudio/designers/wpf-data-binding-with-linq-to-xml-overview)
-- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
+- [Datová vazba](../advanced/optimizing-performance-data-binding.md)

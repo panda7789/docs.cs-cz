@@ -12,12 +12,12 @@ helpviewer_keywords:
 - vectors [WPF], drawing
 - Shape objects [WPF]
 ms.assetid: 66d7a6d6-e3b6-47bc-8dfe-8a1b26f7d901
-ms.openlocfilehash: e3a18d1cf788dfa8f2a9b05077b30af7eeabe584
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9852c811b00ee7f8d86b7c1daaaa28f28fa5a89f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54665900"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57372734"
 ---
 # <a name="shapes-and-basic-drawing-in-wpf-overview"></a>Tvary a základní kresby v přehledu WPF
 Toto téma poskytuje přehled o tom, jak kreslení pomocí <xref:System.Windows.Shapes.Shape> objekty. A <xref:System.Windows.Shapes.Shape> je typ <xref:System.Windows.UIElement> , která umožňuje nakreslit obrazec na obrazovku. Protože jsou prvky uživatelského rozhraní, <xref:System.Windows.Shapes.Shape> objekty mohou být použity uvnitř <xref:System.Windows.Controls.Panel> elementy a většina ovládacích prvků.  
@@ -41,28 +41,28 @@ Toto téma poskytuje přehled o tom, jak kreslení pomocí <xref:System.Windows.
   
  <xref:System.Windows.Shapes.Line> Třída umožňuje nakreslit čáru mezi dvěma body. Následující příklad ukazuje několik způsobů, jak zadat řádek souřadnice a vlastností tahu.  
   
- [!code-xaml[drawingwithshapeelements#LineExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/lineexample.xaml#lineexample1)]  
+ [!code-xaml[drawingwithshapeelements#LineExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/lineexample.xaml#lineexample1)]  
   
- [!code-cpp[shapesprocedural#ShapesProceduralLine](../../../../samples/snippets/cpp/VS_Snippets_Wpf/ShapesProcedural/CPP/ShapesProcedural.cpp#shapesproceduralline)]
- [!code-csharp[shapesprocedural#ShapesProceduralLine](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ShapesProcedural/Csharp/ShapesProcedural.cs#shapesproceduralline)]
- [!code-vb[shapesprocedural#ShapesProceduralLine](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ShapesProcedural/VisualBasic/ShapesProceduralVB.vb#shapesproceduralline)]  
+ [!code-cpp[shapesprocedural#ShapesProceduralLine](~/samples/snippets/cpp/VS_Snippets_Wpf/ShapesProcedural/CPP/ShapesProcedural.cpp#shapesproceduralline)]
+ [!code-csharp[shapesprocedural#ShapesProceduralLine](~/samples/snippets/csharp/VS_Snippets_Wpf/ShapesProcedural/Csharp/ShapesProcedural.cs#shapesproceduralline)]
+ [!code-vb[shapesprocedural#ShapesProceduralLine](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ShapesProcedural/VisualBasic/ShapesProceduralVB.vb#shapesproceduralline)]  
   
  Následující obrázek ukazuje vygenerované <xref:System.Windows.Shapes.Line>.  
   
- ![Řádek obrázek](../../../../docs/framework/wpf/graphics-multimedia/media/shape-ovw-line2.gif "shape_ovw_line2")  
+ ![Řádek obrázek](./media/shape-ovw-line2.gif "shape_ovw_line2")  
   
  I když <xref:System.Windows.Shapes.Line> poskytuje třídy <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnost nastavení nemá žádný vliv, protože <xref:System.Windows.Shapes.Line> nemá žádné oblasti.  
   
  Je jiné běžné obrazce <xref:System.Windows.Shapes.Ellipse>.  Vytvoření <xref:System.Windows.Shapes.Ellipse> definováním obrazce <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastnosti. Chcete-li nakreslit kruh, zadejte <xref:System.Windows.Shapes.Ellipse> jehož <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> jsou hodnoty stejné.  
   
- [!code-xaml[ShapeOverviews#ShapesOVW1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ShapeOverviews/CS/Window1.xaml#shapesovw1)]  
+ [!code-xaml[ShapeOverviews#ShapesOVW1](~/samples/snippets/csharp/VS_Snippets_Wpf/ShapeOverviews/CS/Window1.xaml#shapesovw1)]  
   
- [!code-csharp[brushesmiscsnippets_procedural_snip#SetBackgroundColorOfShapeCodeExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/CSharp/SetBackgroundColorOfShapeExample.cs#setbackgroundcolorofshapecodeexamplewholepage)]
- [!code-vb[brushesmiscsnippets_procedural_snip#SetBackgroundColorOfShapeCodeExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/visualbasic/setbackgroundcolorofshapeexample.vb#setbackgroundcolorofshapecodeexamplewholepage)]  
+ [!code-csharp[brushesmiscsnippets_procedural_snip#SetBackgroundColorOfShapeCodeExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/CSharp/SetBackgroundColorOfShapeExample.cs#setbackgroundcolorofshapecodeexamplewholepage)]
+ [!code-vb[brushesmiscsnippets_procedural_snip#SetBackgroundColorOfShapeCodeExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/visualbasic/setbackgroundcolorofshapeexample.vb#setbackgroundcolorofshapecodeexamplewholepage)]  
   
  Následující obrázek ukazuje příklad vykreslovaných <xref:System.Windows.Shapes.Ellipse>.  
   
- ![Obrázek Elipsa](../../../../docs/framework/wpf/graphics-multimedia/media/shape-ovw-ellipse2.png "shape_ovw_ellipse2")  
+ ![Obrázek Elipsa](./media/shape-ovw-ellipse2.png "shape_ovw_ellipse2")  
   
 <a name="paths"></a>   
 ## <a name="using-paths-and-geometries"></a>Pomocí cesty a geometrie  
@@ -76,13 +76,13 @@ Toto téma poskytuje přehled o tom, jak kreslení pomocí <xref:System.Windows.
   
  V následujícím příkladu <xref:System.Windows.Shapes.Path> se používá k nakreslení kvadratické Bézierovy křivky.  
   
- [!code-xaml[geometrysample#34](../../../../samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/pathgeometryexample.xaml#34)]  
+ [!code-xaml[geometrysample#34](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/pathgeometryexample.xaml#34)]  
   
  Následující obrázek ukazuje vykreslené tvaru.  
   
- ![Cesta k obrázku](../../../../docs/framework/wpf/graphics-multimedia/media/shape-ovw-path2.gif "shape_ovw_path2")  
+ ![Cesta k obrázku](./media/shape-ovw-path2.gif "shape_ovw_path2")  
   
- Další informace o <xref:System.Windows.Media.PathGeometry> a druhý <xref:System.Windows.Media.Geometry> třídy, najdete v článku [přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md).  
+ Další informace o <xref:System.Windows.Media.PathGeometry> a druhý <xref:System.Windows.Media.Geometry> třídy, najdete v článku [přehled geometrie](geometry-overview.md).  
   
 <a name="pathdatastring"></a>   
 ### <a name="xaml-abbreviated-syntax"></a>XAML se používá zkratka syntaxe  
@@ -95,13 +95,13 @@ Data="M 100,200 C 100,25 400,350 400,175 H 280" />
   
  Následující obrázek ukazuje vykreslovaných <xref:System.Windows.Shapes.Path>.  
   
- ![Cesta k obrázku](../../../../docs/framework/wpf/graphics-multimedia/media/shape-ovw-path.PNG "shape_ovw_path")  
+ ![Cesta k obrázku](./media/shape-ovw-path.PNG "shape_ovw_path")  
   
  <xref:System.Windows.Shapes.Path.Data%2A> Atribut řetězec začíná příkazu "moveto" indikován M, který vytváří bod spuštění pro cestu ve službě souřadnicový systém <xref:System.Windows.Controls.Canvas>. <xref:System.Windows.Shapes.Path> data parametrů rozlišují malá a velká písmena. Velké M označuje absolutní umístění pro nové aktuálního místa. Malá písmena m by označoval relativních souřadnicích. První segment je kubické Bézierovy křivky počínaje (100,200) a končící (400,175), vykresleného pomocí nich řídit body (100,25) a (400,350). Tento segment je indikován příkaz jazyka C v <xref:System.Windows.Shapes.Path.Data%2A> atribut řetězců. Znovu velké C určuje absolutní cestu. malá písmena c by označoval relativní cestu.  
   
  Druhý segment začíná příkaz vodorovné absolutní "lineto" H, který určuje linií z předchozích podřízená cesta koncového bodu (400,175) do nového koncového bodu (280,175). Protože je příkaz vodorovné "lineto", je hodnota zadaná *x*-koordinaci.  
   
- Úplná cesta syntaxi naleznete v tématu <xref:System.Windows.Shapes.Path.Data%2A> odkaz a [vytvoření tvaru použitím PathGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-shape-by-using-a-pathgeometry.md).  
+ Úplná cesta syntaxi naleznete v tématu <xref:System.Windows.Shapes.Path.Data%2A> odkaz a [vytvoření tvaru použitím PathGeometry](how-to-create-a-shape-by-using-a-pathgeometry.md).  
   
 <a name="fillpaint"></a>   
 ## <a name="painting-shapes"></a>Malování obrazců  
@@ -122,7 +122,7 @@ Data="M 100,200 C 100,25 400,350 400,175 H 280" />
   
  Následující obrázek ukazuje vygenerované <xref:System.Windows.Shapes.Ellipse>.  
   
- ![Elipsa](../../../../docs/framework/wpf/graphics-multimedia/media/shape-ovw-ellipsefill.PNG "shape_ovw_ellipsefill")  
+ ![Elipsa](./media/shape-ovw-ellipsefill.PNG "shape_ovw_ellipsefill")  
   
  Alternativně můžete syntax prvku vlastnosti explicitně vytvořit <xref:System.Windows.Media.SolidColorBrush> objektu k vyplnění obrazce plnou barvou.  
   
@@ -145,13 +145,13 @@ Data="M 100,200 C 100,25 400,350 400,175 H 280" />
   
  Následující obrázek znázorňuje vykreslené tvaru.  
   
- ![Obrázek SolidColorBrush](../../../../docs/framework/wpf/graphics-multimedia/media/shape-ovw-solidcolorbrush.PNG "shape_ovw_solidcolorbrush")  
+ ![Obrázek SolidColorBrush](./media/shape-ovw-solidcolorbrush.PNG "shape_ovw_solidcolorbrush")  
   
- Můžete také malovat stroke nebo výplň s přechody, obrázky, modely a více obrazce. Další informace najdete v tématu [Malování plnými barvami a přechody přehled](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md).  
+ Můžete také malovat stroke nebo výplň s přechody, obrázky, modely a více obrazce. Další informace najdete v tématu [Malování plnými barvami a přechody přehled](painting-with-solid-colors-and-gradients-overview.md).  
   
 <a name="stretchableshapessection"></a>   
 ## <a name="stretchable-shapes"></a>Obrazce umožňující roztažení  
- <xref:System.Windows.Shapes.Line>, <xref:System.Windows.Shapes.Path>, <xref:System.Windows.Shapes.Polygon>, <xref:System.Windows.Shapes.Polyline>, A <xref:System.Windows.Shapes.Rectangle> mít všechny třídy <xref:System.Windows.Shapes.Shape.Stretch%2A> vlastnost. Tato vlastnost určuje, jak <xref:System.Windows.Shapes.Shape> je tak, aby vyplnil roztažený obsah na objekt (shape chcete kreslit) <xref:System.Windows.Shapes.Shape> místo rozložení objektu. A <xref:System.Windows.Shapes.Shape> objektu rozložení místo představuje velikost místa <xref:System.Windows.Shapes.Shape> je přidělena systém rozložení, protože buď explicitní <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> nastavení nebo z důvodu jeho <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> a <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> nastavení. Další informace o rozložení ve Windows Presentation Foundation, najdete v části [rozložení](../../../../docs/framework/wpf/advanced/layout.md) Přehled.  
+ <xref:System.Windows.Shapes.Line>, <xref:System.Windows.Shapes.Path>, <xref:System.Windows.Shapes.Polygon>, <xref:System.Windows.Shapes.Polyline>, A <xref:System.Windows.Shapes.Rectangle> mít všechny třídy <xref:System.Windows.Shapes.Shape.Stretch%2A> vlastnost. Tato vlastnost určuje, jak <xref:System.Windows.Shapes.Shape> je tak, aby vyplnil roztažený obsah na objekt (shape chcete kreslit) <xref:System.Windows.Shapes.Shape> místo rozložení objektu. A <xref:System.Windows.Shapes.Shape> objektu rozložení místo představuje velikost místa <xref:System.Windows.Shapes.Shape> je přidělena systém rozložení, protože buď explicitní <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> nastavení nebo z důvodu jeho <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> a <xref:System.Windows.FrameworkElement.VerticalAlignment%2A> nastavení. Další informace o rozložení ve Windows Presentation Foundation, najdete v části [rozložení](../advanced/layout.md) Přehled.  
   
  Vlastnost Stretch má jednu z následujících hodnot:  
   
@@ -202,21 +202,21 @@ myPolygon.StrokeThickness = 2;
   
  V následujícím příkladu <xref:System.Windows.Media.RotateTransform> slouží k otáčet 45 stupňů obrazec o tvaru levého horního rohu (0; 0).  
   
- [!code-xaml[transformssample#14](../../../../samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/RotateTransformExample.xaml#14)]  
+ [!code-xaml[transformssample#14](~/samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/RotateTransformExample.xaml#14)]  
   
  V následujícím příkladu jiný tvar je otočený 45 stupňů, ale tentokrát je otočený o bodu (25,50).  
   
- [!code-xaml[transformssample#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/RotateTransformExample.xaml#15)]  
+ [!code-xaml[transformssample#15](~/samples/snippets/csharp/VS_Snippets_Wpf/transformsSample/CS/RotateTransformExample.xaml#15)]  
   
  Na následujícím obrázku je výsledkem použití dvou transformací.  
   
- ![45 stupňů rotace s různými středy](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-rotatetransform45degrees.gif "wcpsdk_graphicsmm_rotatetransform45degrees")  
+ ![45 stupňů rotace s různými středy](./media/wcpsdk-graphicsmm-rotatetransform45degrees.gif "wcpsdk_graphicsmm_rotatetransform45degrees")  
   
  V předchozích příkladech byla použita jeden transformace každého objektu shape. Použití několika transformací na tvar (nebo jiný prvek uživatelského rozhraní), použijte <xref:System.Windows.Media.TransformGroup>.  
   
 ## <a name="see-also"></a>Viz také:
-- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
-- [Přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)
-- [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)
-- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [2D grafika a obrázky](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [Přehled malování plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md)
+- [Přehled geometrie](geometry-overview.md)
+- [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)
+- [Přehled animace](animation-overview.md)

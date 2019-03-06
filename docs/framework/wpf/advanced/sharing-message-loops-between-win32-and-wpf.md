@@ -7,12 +7,12 @@ helpviewer_keywords:
 - sharing message loops [WPF]
 - interoperability [WPF], Win32
 ms.assetid: 39ee888c-e5ec-41c8-b11f-7b851a554442
-ms.openlocfilehash: 6ee440d91bf241949923074dfd5163a49cfd9979
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2de3c2eba534618f6bd6dee0b2c23758f9e15f3f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54740959"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57378208"
 ---
 # <a name="sharing-message-loops-between-win32-and-wpf"></a>Sdílení smyčky zpráv mezi systémem Win32 a platformou WPF
 Toto téma popisuje, jak implementovat smyčky zpráv pro součinnost s produktem [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], buď pomocí existující zprávu vystavení smyčky v <xref:System.Windows.Threading.Dispatcher> nebo vytvořením smyčku samostatné na [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] součinnosti kódu vedle sebe.  
@@ -64,6 +64,6 @@ Toto téma popisuje, jak implementovat smyčky zpráv pro součinnost s produkte
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Interop.ComponentDispatcher>
 - <xref:System.Windows.Interop.IKeyboardInputSink>
-- [Vzájemná spolupráce grafického subsystému WPF a systému Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)
-- [Model vláken](../../../../docs/framework/wpf/advanced/threading-model.md)
-- [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)
+- [Vzájemná spolupráce grafického subsystému WPF a systému Win32](wpf-and-win32-interoperation.md)
+- [Model vláken](threading-model.md)
+- [Přehled vstupu](input-overview.md)

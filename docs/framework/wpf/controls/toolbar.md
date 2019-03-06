@@ -7,27 +7,27 @@ helpviewer_keywords:
 - controls [WPF], ToolBar
 - ToolBar control [WPF]
 ms.assetid: 8a95d759-c298-4291-aa7e-ecdeffaae6ab
-ms.openlocfilehash: a1216a4aa8c2872eef33eb29a74ec4c1913dc671
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5acb5d96a9c8a1ce2d2c0c842be0e57e62eb538f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33555426"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57361925"
 ---
 # <a name="toolbar"></a>ToolBar
-<xref:System.Windows.Controls.ToolBar> Ovládací prvek je kontejner pro skupinu příkazy nebo ovládací prvky, které jsou obvykle spojené v jejich funkce.  
+<xref:System.Windows.Controls.ToolBar> Ovládací prvek slouží jako kontejner pro skupinu příkazů nebo ovládacích prvků, které se obvykle týkají v jejich funkce.  
   
- Následující ilustrace znázorňuje vodorovného a svislého <xref:System.Windows.Controls.ToolBar> ovládací prvky.  
+ Na následujících obrázcích vodorovného a svislého <xref:System.Windows.Controls.ToolBar> ovládacích prvků.  
   
- ![Vodorovné nástrojů](../../../../docs/framework/wpf/controls/media/ss-ctl-horztoolbar.GIF "SS_CTL_horztoolbar")  
-Vodorovné panelu nástrojů  
+ ![Horizontal ToolBar](./media/ss-ctl-horztoolbar.GIF "SS_CTL_horztoolbar")  
+Vodorovném panelu nástrojů  
   
- ![Svislé nástrojů](../../../../docs/framework/wpf/controls/media/ss-ctl-verttoolbar.GIF "SS_CTL_verttoolbar")  
-Svislé panelu nástrojů  
+ ![Vertical ToolBar](./media/ss-ctl-verttoolbar.GIF "SS_CTL_verttoolbar")  
+Svislé nástrojů  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [ToolBar – přehled](../../../../docs/framework/wpf/controls/toolbar-overview.md)  
-  [Ovládací prvky stylu na prvku ToolBar](../../../../docs/framework/wpf/controls/how-to-style-controls-on-a-toolbar.md)  
+ [ToolBar – přehled](toolbar-overview.md)  
+  [Ovládací prvky stylu na prvku ToolBar](how-to-style-controls-on-a-toolbar.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ToolBar>  

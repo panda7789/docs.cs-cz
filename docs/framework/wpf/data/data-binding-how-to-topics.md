@@ -7,52 +7,52 @@ helpviewer_keywords:
 - data binding [WPF], how-to topics
 - binding data [WPF], how-to topics
 ms.assetid: a3b2563e-d879-41a7-9dfd-ac56b27fdcad
-ms.openlocfilehash: ae69481a884610d6253ee9a45bc3139cabac7e0f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 49929dc5afaa9bc1e97589d244c2bdbbd14cdb00
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33557690"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57360573"
 ---
 # <a name="data-binding-how-to-topics"></a>Postupy: Témata datových vazeb
-Témata v této části popisují, jak používat datové vazby k vytvoření vazby prvků k datům z různých zdrojů dat ve formuláři common language runtime (CLR) objektů a XML.  
+Témata v této části popisují způsob použití datových vazeb k vytvoření vazby prvků k datům z různých zdrojů dat ve formě common language runtime (CLR) objektů a XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vytvoření jednoduché vazby](../../../../docs/framework/wpf/data/how-to-create-a-simple-binding.md)  
- [Určení zdroje vazby](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md)  
- [Zpřístupnění dat pro vazbu v jazyku XAML](../../../../docs/framework/wpf/data/how-to-make-data-available-for-binding-in-xaml.md)  
- [Určení, kdy dojde k aktualizaci zdroje textem TextBox](../../../../docs/framework/wpf/data/how-to-control-when-the-textbox-text-updates-the-source.md)  
- [Určení směru vazby](../../../../docs/framework/wpf/data/how-to-specify-the-direction-of-the-binding.md)  
- [Vytvoření vazby ke kolekci a zobrazení informací podle výběru](../../../../docs/framework/wpf/data/how-to-bind-to-a-collection-and-display-information-based-on-selection.md)  
- [Vytvoření vazby k vyčíslení](../../../../docs/framework/wpf/data/how-to-bind-to-an-enumeration.md)  
- [Vytvoření vazby vlastností dvou ovládacích prvků](../../../../docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md)  
- [Implementace ověření vazby](../../../../docs/framework/wpf/data/how-to-implement-binding-validation.md)  
- [Implementace logiky ověření na vlastních objektech](../../../../docs/framework/wpf/data/how-to-implement-validation-logic-on-custom-objects.md)  
- [Získání objektu vazby ze svázané cílové vlastnosti](../../../../docs/framework/wpf/data/how-to-get-the-binding-object-from-a-bound-target-property.md)  
- [Implementace CompositeCollection](../../../../docs/framework/wpf/data/how-to-implement-a-compositecollection.md)  
- [Převod vázaných dat](../../../../docs/framework/wpf/data/how-to-convert-bound-data.md)  
- [Vytvoření vazby v kódu](../../../../docs/framework/wpf/data/how-to-create-a-binding-in-code.md)  
- [Načtení výchozího zobrazení datové kolekce](../../../../docs/framework/wpf/data/how-to-get-the-default-view-of-a-data-collection.md)  
- [Navigace v objektech v datovém zobrazení CollectionView](../../../../docs/framework/wpf/data/how-to-navigate-through-the-objects-in-a-data-collectionview.md)  
- [Filtrování dat v zobrazení](../../../../docs/framework/wpf/data/how-to-filter-data-in-a-view.md)  
- [Řazení dat v zobrazení](../../../../docs/framework/wpf/data/how-to-sort-data-in-a-view.md)  
- [Řazení a seskupení dat pomocí zobrazení XAML](../../../../docs/framework/wpf/data/how-to-sort-and-group-data-using-a-view-in-xaml.md)  
- [Použití vzoru seznam-podrobnosti s hierarchickými daty](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md)  
- [Použití vzoru seznam-podrobnosti s hierarchickými daty XML](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)  
- [Vygenerování hodnoty na základě seznamu vázaných položek](../../../../docs/framework/wpf/data/how-to-produce-a-value-based-on-a-list-of-bound-items.md)  
- [Implementace oznámení změn vlastností](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md)  
- [Vytvoření a vytvoření vazby ke kolekci ObservableCollection](../../../../docs/framework/wpf/data/how-to-create-and-bind-to-an-observablecollection.md)  
- [Implementace rozhraní PriorityBinding](../../../../docs/framework/wpf/data/how-to-implement-prioritybinding.md)  
- [Vytvoření vazby k datům XML pomocí objektu XMLDataProvider a dotazů XPath](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)  
- [Vytvoření vazby k XDocument, XElement nebo LINQ pro výsledky XQuery](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md)  
- [Použití oborů názvů XML v datové vazbě](../../../../docs/framework/wpf/data/how-to-use-xml-namespaces-in-data-binding.md)  
- [Vytvoření vazby ke zdroji dat ADO.NET](../../../../docs/framework/wpf/data/how-to-bind-to-an-ado-net-data-source.md)  
- [Vytvoření vazby k metodě](../../../../docs/framework/wpf/data/how-to-bind-to-a-method.md)  
- [Nastavení oznámení pro aktualizace vazeb](../../../../docs/framework/wpf/data/how-to-set-up-notification-of-binding-updates.md)  
- [Vymazání vazeb](../../../../docs/framework/wpf/data/how-to-clear-bindings.md)  
- [Hledání elementů generovaných šablonou DataTemplate](../../../../docs/framework/wpf/data/how-to-find-datatemplate-generated-elements.md)  
- [Vytvoření vazby k webové službě](../../../../docs/framework/wpf/data/how-to-bind-to-a-web-service.md)  
- [Vytvoření vazby k výsledkům dotazu LINQ](../../../../docs/framework/wpf/data/how-to-bind-to-the-results-of-a-linq-query.md)  
+ [Vytvoření jednoduché vazby](how-to-create-a-simple-binding.md)  
+ [Určení zdroje vazby](how-to-specify-the-binding-source.md)  
+ [Zpřístupnění dat pro vazbu v jazyku XAML](how-to-make-data-available-for-binding-in-xaml.md)  
+ [Určení, kdy dojde k aktualizaci zdroje textem TextBox](how-to-control-when-the-textbox-text-updates-the-source.md)  
+ [Určení směru vazby](how-to-specify-the-direction-of-the-binding.md)  
+ [Vytvoření vazby ke kolekci a zobrazení informací podle výběru](how-to-bind-to-a-collection-and-display-information-based-on-selection.md)  
+ [Vytvoření vazby k vyčíslení](how-to-bind-to-an-enumeration.md)  
+ [Vytvoření vazby vlastností dvou ovládacích prvků](how-to-bind-the-properties-of-two-controls.md)  
+ [Implementace ověření vazby](how-to-implement-binding-validation.md)  
+ [Implementace logiky ověření na vlastních objektech](how-to-implement-validation-logic-on-custom-objects.md)  
+ [Získání objektu vazby ze svázané cílové vlastnosti](how-to-get-the-binding-object-from-a-bound-target-property.md)  
+ [Implementace CompositeCollection](how-to-implement-a-compositecollection.md)  
+ [Převod vázaných dat](how-to-convert-bound-data.md)  
+ [Vytvoření vazby v kódu](how-to-create-a-binding-in-code.md)  
+ [Načtení výchozího zobrazení datové kolekce](how-to-get-the-default-view-of-a-data-collection.md)  
+ [Navigace v objektech v datovém zobrazení CollectionView](how-to-navigate-through-the-objects-in-a-data-collectionview.md)  
+ [Filtrování dat v zobrazení](how-to-filter-data-in-a-view.md)  
+ [Řazení dat v zobrazení](how-to-sort-data-in-a-view.md)  
+ [Řazení a seskupení dat pomocí zobrazení XAML](how-to-sort-and-group-data-using-a-view-in-xaml.md)  
+ [Použití vzoru seznam-podrobnosti s hierarchickými daty](how-to-use-the-master-detail-pattern-with-hierarchical-data.md)  
+ [Použití vzoru seznam-podrobnosti s hierarchickými daty XML](how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)  
+ [Vygenerování hodnoty na základě seznamu vázaných položek](how-to-produce-a-value-based-on-a-list-of-bound-items.md)  
+ [Implementace oznámení změn vlastností](how-to-implement-property-change-notification.md)  
+ [Vytvoření a vytvoření vazby ke kolekci ObservableCollection](how-to-create-and-bind-to-an-observablecollection.md)  
+ [Implementace rozhraní PriorityBinding](how-to-implement-prioritybinding.md)  
+ [Vytvoření vazby k datům XML pomocí objektu XMLDataProvider a dotazů XPath](how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)  
+ [Vytvoření vazby k XDocument, XElement nebo LINQ pro výsledky XQuery](how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md)  
+ [Použití oborů názvů XML v datové vazbě](how-to-use-xml-namespaces-in-data-binding.md)  
+ [Vytvoření vazby ke zdroji dat ADO.NET](how-to-bind-to-an-ado-net-data-source.md)  
+ [Vytvoření vazby k metodě](how-to-bind-to-a-method.md)  
+ [Nastavení oznámení pro aktualizace vazeb](how-to-set-up-notification-of-binding-updates.md)  
+ [Vymazání vazeb](how-to-clear-bindings.md)  
+ [Hledání elementů generovaných šablonou DataTemplate](how-to-find-datatemplate-generated-elements.md)  
+ [Vytvoření vazby k webové službě](how-to-bind-to-a-web-service.md)  
+ [Vytvoření vazby k výsledkům dotazu LINQ](how-to-bind-to-the-results-of-a-linq-query.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Data>  
@@ -64,6 +64,6 @@ Témata v této části popisují, jak používat datové vazby k vytvoření va
  <xref:System.Windows.Controls.DataTemplateSelector>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Datová vazba](../../../../docs/framework/wpf/data/data-binding-wpf.md)  
+ [Datová vazba](data-binding-wpf.md)  
   
- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
+ [Datová vazba](../advanced/optimizing-performance-data-binding.md)

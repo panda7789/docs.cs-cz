@@ -8,12 +8,12 @@ helpviewer_keywords:
 - visual layer [WPF], DrawingVisual objects
 - DrawingVisual objects in visual layer [WPF]
 ms.assetid: 0b4e711d-e640-40cb-81c3-8f5c59909b7d
-ms.openlocfilehash: 0d4ba3939a95b665684713f3b1775bacd3d028b9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d15662958c6967d8bbb157c1af99b4666cebecc2
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54675065"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57375048"
 ---
 # <a name="using-drawingvisual-objects"></a>Použití objektů DrawingVisual
 Toto téma obsahuje přehled o tom, jak používat <xref:System.Windows.Media.DrawingVisual> objekty v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vizuální vrstvy.  
@@ -28,8 +28,8 @@ Toto téma obsahuje přehled o tom, jak používat <xref:System.Windows.Media.Dr
   
  Při vytváření objektu kontejneru hostitele pro vizuální objekty potřebujete ukládat odkazy na vizuální objekty v <xref:System.Windows.Media.VisualCollection>. Použití <xref:System.Windows.Media.VisualCollection.Add%2A> způsob, jak přidat vizuální objekt kontejneru hostitele. V následujícím příkladu je vytvořen objekt kontejneru hostitele a tři vizuální objekty jsou přidány do jeho <xref:System.Windows.Media.VisualCollection>.  
   
- [!code-csharp[DrawingVisualSample#100](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#100)]
- [!code-vb[DrawingVisualSample#100](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#100)]  
+ [!code-csharp[DrawingVisualSample#100](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#100)]
+ [!code-vb[DrawingVisualSample#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#100)]  
   
 > [!NOTE]
 >  Kompletní kód ukázku, ze které byla extrahována v předchozím příkladu kódu najdete v tématu [ukázka spuštění testu DrawingVisuals](https://go.microsoft.com/fwlink/?LinkID=159994).  
@@ -42,8 +42,8 @@ Toto téma obsahuje přehled o tom, jak používat <xref:System.Windows.Media.Dr
   
  V následujícím příkladu <xref:System.Windows.Media.DrawingVisual> objekt je vytvořen a vykreslení obdélníku do jeho <xref:System.Windows.Media.DrawingContext>.  
   
- [!code-csharp[DrawingVisualSample#101](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#101)]
- [!code-vb[DrawingVisualSample#101](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#101)]  
+ [!code-csharp[DrawingVisualSample#101](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#101)]
+ [!code-vb[DrawingVisualSample#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#101)]  
   
 <a name="creating_overrides"></a>   
 ## <a name="creating-overrides-for-frameworkelement-members"></a>Vytváření přepsání pro objekt FrameworkElement členy  
@@ -57,8 +57,8 @@ Toto téma obsahuje přehled o tom, jak používat <xref:System.Windows.Media.Dr
   
  V následujícím příkladu, přepíše dvou <xref:System.Windows.FrameworkElement> členy jsou implementovány.  
   
- [!code-csharp[DrawingVisualSample#102](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#102)]
- [!code-vb[DrawingVisualSample#102](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#102)]  
+ [!code-csharp[DrawingVisualSample#102](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#102)]
+ [!code-vb[DrawingVisualSample#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#102)]  
   
 <a name="providing_hit_testing_support"></a>   
 ## <a name="providing-hit-testing-support"></a>Poskytuje podporu přístupů testování  
@@ -66,11 +66,11 @@ Toto téma obsahuje přehled o tom, jak používat <xref:System.Windows.Media.Dr
   
  V následujícím příkladu je implementováno přístupů k testování podporu pro hostitelský objekt kontejneru a jeho podřízené položky.  
   
- [!code-csharp[DrawingVisualSample#103](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#103)]
- [!code-vb[DrawingVisualSample#103](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#103)]  
+ [!code-csharp[DrawingVisualSample#103](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#103)]
+ [!code-vb[DrawingVisualSample#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#103)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Media.DrawingVisual>
 - <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>
-- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
-- [Ověřování pozice ve vizuální vrstvě](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)
+- [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md)
+- [Ověřování pozice ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)

@@ -8,18 +8,18 @@ helpviewer_keywords:
 - content [WPF], Grid control
 - Grid control [WPF]
 ms.assetid: cf2cc94c-bbc2-4e54-a601-605038ab63fe
-ms.openlocfilehash: cffc1d078bffaa14326d279eb82f8ff040187145
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c0be95d84aa1b4b8b05e623f9012664de1a401a6
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551025"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352136"
 ---
 # <a name="grid"></a>Mřížka
-<xref:System.Windows.Controls.Grid> Element se používá k přesné umístění obsahu v řádků a sloupců.  
+<xref:System.Windows.Controls.Grid> Element umožňuje přesné umístění obsahu do řádků a sloupců.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Témata s postupy](../../../../docs/framework/wpf/controls/grid-how-to-topics.md)  
+ [Témata s postupy](grid-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Panel>  
@@ -37,8 +37,8 @@ ms.locfileid: "33551025"
  <xref:System.Windows.Controls.WrapPanel>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)  
+ [Rozložení](../advanced/layout.md)  
   
- [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [ScrollViewer – přehled](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [ScrollViewer – přehled](scrollviewer-overview.md)

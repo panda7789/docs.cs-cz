@@ -9,12 +9,12 @@ helpviewer_keywords:
 - controls [WPF], ScrollViewer
 - ScrollViewer control [WPF], about ScrollViewer control
 ms.assetid: 94a13b94-cfdf-4b12-a1aa-90cb50c6e9b9
-ms.openlocfilehash: 1bee47ed5294af66bcaa45254105c00d825042ad
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 2685be197d6b47cf174c5fbd062bd3c37a19f5eb
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746056"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57356907"
 ---
 # <a name="scrollviewer-overview"></a>ScrollViewer – přehled
 Obsah v rámci uživatelského rozhraní je často větší než oblasti zobrazení obrazovce počítače. <xref:System.Windows.Controls.ScrollViewer> Řízení poskytuje pohodlný způsob, jak povolit posouvání obsahu v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Toto téma představuje <xref:System.Windows.Controls.ScrollViewer> elementu a obsahuje několik příkladů použití.  
@@ -38,33 +38,33 @@ Obsah v rámci uživatelského rozhraní je často větší než oblasti zobraze
   
  Následující příklad kódu ukazuje, jak k přetypování instance <xref:System.Windows.Controls.Primitives.IScrollInfo> k <xref:System.Windows.Controls.StackPanel> a použití obsahu umožňující posouvání metod (<xref:System.Windows.Controls.Primitives.IScrollInfo.LineUp%2A> a <xref:System.Windows.Controls.Primitives.IScrollInfo.LineDown%2A>) definované rozhraní.  
   
- [!code-csharp[IScrollInfoMethods#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/IScrollInfoMethods/CSharp/Window1.xaml.cs#3)]
- [!code-vb[IScrollInfoMethods#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/IScrollInfoMethods/VisualBasic/Window1.xaml.vb#3)]  
+ [!code-csharp[IScrollInfoMethods#3](~/samples/snippets/csharp/VS_Snippets_Wpf/IScrollInfoMethods/CSharp/Window1.xaml.cs#3)]
+ [!code-vb[IScrollInfoMethods#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/IScrollInfoMethods/VisualBasic/Window1.xaml.vb#3)]  
   
 <a name="scrollviewer_markup_syntax_and_sample"></a>   
 ## <a name="defining-and-using-a-scrollviewer-element"></a>Definování a použití prvku ScrollViewer  
  Následující příklad vytvoří <xref:System.Windows.Controls.ScrollViewer> v okně, které obsahuje nějaký text a obdélníku. <xref:System.Windows.Controls.Primitives.ScrollBar> prvky se zobrazí, jenom když nejsou nezbytné. Když změníte velikost okna, <xref:System.Windows.Controls.Primitives.ScrollBar> prvky se zobrazí a zmizí z důvodu aktualizované hodnoty <xref:System.Windows.Controls.ScrollViewer.ComputedHorizontalScrollBarVisibility%2A> a <xref:System.Windows.Controls.ScrollViewer.ComputedVerticalScrollBarVisibility%2A> vlastnosti.  
   
- [!code-cpp[ScrollViewer#1](../../../../samples/snippets/cpp/VS_Snippets_Wpf/ScrollViewer/CPP/ScrollViewer_wcp.cpp#1)]
- [!code-csharp[ScrollViewer#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ScrollViewer/CSharp/ScrollViewer_wcp.cs#1)]
- [!code-vb[ScrollViewer#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ScrollViewer/VisualBasic/ScrollViewer.vb#1)]
- [!code-xaml[ScrollViewer#1](../../../../samples/snippets/xaml/VS_Snippets_Wpf/ScrollViewer/XAML/Pane1.xaml#1)]  
+ [!code-cpp[ScrollViewer#1](~/samples/snippets/cpp/VS_Snippets_Wpf/ScrollViewer/CPP/ScrollViewer_wcp.cpp#1)]
+ [!code-csharp[ScrollViewer#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollViewer/CSharp/ScrollViewer_wcp.cs#1)]
+ [!code-vb[ScrollViewer#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ScrollViewer/VisualBasic/ScrollViewer.vb#1)]
+ [!code-xaml[ScrollViewer#1](~/samples/snippets/xaml/VS_Snippets_Wpf/ScrollViewer/XAML/Pane1.xaml#1)]  
   
 <a name="scrollviewer_styling_scrollviewer"></a>   
 ## <a name="styling-a-scrollviewer"></a>Práce se styly prvku ScrollViewer  
- Ve Windows Presentation Foundation, všechny ovládací prvky, jako jsou <xref:System.Windows.Controls.ScrollViewer> můžete navržen tak, aby bylo možné změnit výchozí chování vykreslování ovládacího prvku. Další informace o určení stylu ovládacího prvku, naleznete v tématu [styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md).  
+ Ve Windows Presentation Foundation, všechny ovládací prvky, jako jsou <xref:System.Windows.Controls.ScrollViewer> můžete navržen tak, aby bylo možné změnit výchozí chování vykreslování ovládacího prvku. Další informace o určení stylu ovládacího prvku, naleznete v tématu [styly a šablony](styling-and-templating.md).  
   
 <a name="scrollviewer_scroll_vs_paginate"></a>   
 ## <a name="paginating-documents"></a>Stránkování dokumenty  
  Pro obsah dokumentů je alternativou k posouvání vyberte kontejner dokumentu, který podporuje stránkování. <xref:System.Windows.Documents.FlowDocument> je pro dokumenty, které jsou navržené tak zajistit také jejich hostování v rámci ovládacího prvku zobrazení, jako například <xref:System.Windows.Controls.FlowDocumentPageViewer>, podporuje stránkování obsah na několika stránkách brání není nutné. <xref:System.Windows.Controls.DocumentViewer> poskytuje řešení pro zobrazení <xref:System.Windows.Documents.FixedDocument> obsah, který používá tradiční posouvání k zobrazení obsahu mimo sféry oblasti zobrazení.  
   
- Další informace o formátech dokumentu a prezentace možnosti najdete v tématu [dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md).  
+ Další informace o formátech dokumentu a prezentace možnosti najdete v tématu [dokumenty v platformě WPF](../advanced/documents-in-wpf.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Controls.ScrollViewer>
 - <xref:System.Windows.Controls.Primitives.ScrollBar>
 - <xref:System.Windows.Controls.Primitives.IScrollInfo>
 - [Postupy: Vytvoření prohlížeče s posuvným zobrazením](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752352(v=vs.90))
-- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
-- [ScrollBar – styly a šablony](../../../../docs/framework/wpf/controls/scrollbar-styles-and-templates.md)
-- [Ovládací prvky](../../../../docs/framework/wpf/advanced/optimizing-performance-controls.md)
+- [Dokumenty v platformě WPF](../advanced/documents-in-wpf.md)
+- [ScrollBar – styly a šablony](scrollbar-styles-and-templates.md)
+- [Ovládací prvky](../advanced/optimizing-performance-controls.md)

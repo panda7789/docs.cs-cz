@@ -5,12 +5,12 @@ author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
 ms.custom: seodec18
-ms.openlocfilehash: 812b89ff163c9d39a658f817495ac12616c28f6f
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: b543ab2e200e8169a251db8ddfb1493c5583ed69
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836250"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57360248"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Testování osvědčených postupů pomocí .NET Core a .NET Standard
 
@@ -47,7 +47,7 @@ Psaní testů pro váš kód bude přirozeně oddělit váš kód, protože by b
 - **Izolované**. Testování částí jsou samostatný, můžete spustit v izolaci a nemají žádné závislosti na jakýkoli vnější faktory, jako je systém souborů nebo databáze.
 - **Opakovatelné**. Testování částí by měl být konzistentní s jeho výsledky, to znamená, vždy vrátí stejného výsledku Pokud něco mezi spuštění nelze změnit.
 - **Kontroluje se svým**. Test by měl být dokáže automaticky rozpoznat, pokud byl úspěšný, nebo bez zásahu člověka.
-- **Včasné**. Testování částí, neměla by mít Neproporcionální změna dlouhou dobu pro zápis ve srovnání s testovaný kód. Pokud zjistíte testování kódu, přičemž velké množství času ve srovnání s psaní kódu, zvažte návrh, který je víc možností intenzivního testování.
+- **Včasné**. Testování částí, neměla by mít nepřiměřeně dlouhou dobu pro zápis ve srovnání s testovaný kód. Pokud zjistíte testování kódu, přičemž velké množství času ve srovnání s psaní kódu, zvažte návrh, který je víc možností intenzivního testování.
 
 ## <a name="lets-speak-the-same-language"></a>Můžeme mluvit stejný jazyk
 Termín *napodobení* je bohužel chybná, když mluvíme o testování. Definuje následující nejběžnější typy *napodobenin* při psaní testů jednotek:

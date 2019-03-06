@@ -6,12 +6,12 @@ helpviewer_keywords:
 - graphics [WPF], lines
 - lines [WPF], drawing
 ms.assetid: 0513ee01-6b27-4bb3-85f3-3a3e6710d80e
-ms.openlocfilehash: 54152b6b68dd453c565afa2ffb23edfe8132a441
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a194fad5471cafcb567aa00522a597a4186ef4af
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54629017"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57374180"
 ---
 # <a name="how-to-draw-a-line"></a>Postupy: Vykreslení čáry
 Tento příklad ukazuje, jak s použitím kreslení čar <xref:System.Windows.Shapes.Line> elementu.  
@@ -23,7 +23,7 @@ Tento příklad ukazuje, jak s použitím kreslení čar <xref:System.Windows.Sh
  Následující příklad nakreslí tři řádky uvnitř <xref:System.Windows.Controls.Canvas> elementu.  
   
 ## <a name="example"></a>Příklad  
- [!code-xaml[drawingwithshapeelements#LineExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/lineexample.xaml#lineexample1)]  
+ [!code-xaml[drawingwithshapeelements#LineExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/lineexample.xaml#lineexample1)]  
   
  V tomto příkladu je součástí větší ukázky; úplnou ukázku najdete v tématu [ukázka prvky tvar](https://go.microsoft.com/fwlink/?LinkID=160037).  
   

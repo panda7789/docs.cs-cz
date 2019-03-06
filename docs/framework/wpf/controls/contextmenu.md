@@ -8,23 +8,23 @@ helpviewer_keywords:
 - menus [WPF], context
 - controls [WPF], ContextMenu
 ms.assetid: 2f40b2bb-b702-4706-9fc4-10bcfd7cc35d
-ms.openlocfilehash: fc2fe332916b4edd89025f8cf77f8a45034a4ce9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 17b2df1e3712dc0755130a9ac979c05fadcf53a3
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33550121"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57354632"
 ---
 # <a name="contextmenu"></a>ContextMenu
-<xref:System.Windows.Controls.ContextMenu> Umožňuje ovládacího prvku k zobrazení <xref:System.Windows.Controls.Menu> týkající se kontextu ovládacího prvku. Obvykle <xref:System.Windows.Controls.ContextMenu> je zpřístupněná [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] prostřednictvím pravým tlačítkem myši nebo nabídky tlačítka na klávesnici.  
+<xref:System.Windows.Controls.ContextMenu> Umožňuje ovládací prvek pro zobrazení <xref:System.Windows.Controls.Menu> , která je specifická v kontextu ovládacího prvku. Obvykle <xref:System.Windows.Controls.ContextMenu> je zpřístupněná [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] přes pravé tlačítko myši nebo tlačítko nabídky klávesnici.  
   
- Následující obrázek ukazuje <xref:System.Windows.Controls.ContextMenu> ve dvou různých stavů: výchozí stav a otevřeném stavu. Ve výchozím stavu sbalena ovládacího prvku. Při stisknutí tlačítka pravého tlačítka myši nad nadřazeného v nabídce, ovládacího prvku se rozbalí a zobrazí položky nabídky.  
+ Následující obrázek ukazuje <xref:System.Windows.Controls.ContextMenu> ve dvou různých stavů: výchozí stav a otevřeném stavu. Ve výchozím stavu je sbalen ovládací prvek. Při stisknutí pravého tlačítka myši přes nadřazené nabídky, ovládací prvek se rozbalí a zobrazí položky nabídky.  
   
- ![ContextMenu – stavy](../../../../docs/framework/wpf/controls/media/ss-ctl-contextmenu.png "SS_CTL_contextmenu")  
-ContextMenu – v různých stavů  
+ ![Stavy](./media/ss-ctl-contextmenu.png "SS_CTL_contextmenu")  
+ContextMenu – v různých stavech  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [ContextMenu – přehled](../../../../docs/framework/wpf/controls/contextmenu-overview.md)  
+ [ContextMenu – přehled](contextmenu-overview.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ContextMenu>  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics rendering tiers [WPF]
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-ms.openlocfilehash: ea3c5d2c8d98f75bad164ff16c098401e41e4c5e
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: f56a8435b1cdebe0e0af6531c37dccfbe6617a0e
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748580"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57357518"
 ---
 # <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky
 Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízení se systémem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
@@ -107,7 +107,7 @@ Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízen
 |**Vyžaduje ovladačem grafické karty data nastavení**|Určuje, zda systém zakáže hardwarovou akceleraci ovladače vydané před listopadem 2004.|  
 |**Pomocí možnosti odkaz rasterizéru**|Určuje, zda [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používejte rasterizéru referenčního.|  
   
- Tato nastavení je možný přes všechny externí konfigurační nástroj, který se ví, jak odkazovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nastavení registru. Tato nastavení také můžou vytvořit nebo upravit přístup k hodnoty přímo s použitím [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Editor registru. Další informace najdete v tématu [nastavení registru pro vykreslení grafiky](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md).  
+ Tato nastavení je možný přes všechny externí konfigurační nástroj, který se ví, jak odkazovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nastavení registru. Tato nastavení také můžou vytvořit nebo upravit přístup k hodnoty přímo s použitím [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Editor registru. Další informace najdete v tématu [nastavení registru pro vykreslení grafiky](../graphics-multimedia/graphics-rendering-registry-settings.md).  
   
 ### <a name="wpf-performance-profiling-tools"></a>Nástroje pro profilaci výkonu WPF  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje sadu nástrojů, které vám umožní analyzovat chování za běhu aplikace a určete typy optimalizace výkonu, které můžete použít profilování výkonu. V následující tabulce jsou uvedeny výkonu profilování nástroje, které jsou součástí [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)] nástrojů WPF – výkonnostní sada:  
@@ -126,13 +126,13 @@ Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízen
   
  Při spuštění [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] diagnostický nástroj, hlavní okno obsahuje sadu karet, které vám umožní zobrazit a diagnostikovat [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)]-související informace. Například **systému** karta poskytuje systémové informace o počítači a určuje verzi modulu [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] , která je nainstalovaná ve vašem počítači.  
   
- ![Screenhot: Nástroje pro diagnostiku DirectX](../../../../docs/framework/wpf/advanced/media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")  
+ ![Screenhot: Nástroje pro diagnostiku DirectX](./media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")  
 Hlavní okno diagnostické nástroje DirectX  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Media.RenderCapability>
 - <xref:System.Windows.Media.RenderOptions>
-- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
+- [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
 - [WPF – výkonnostní sada](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100))
-- [Nastavení registru pro vykreslení grafiky](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)
-- [Tipy a triky animace](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)
+- [Nastavení registru pro vykreslení grafiky](../graphics-multimedia/graphics-rendering-registry-settings.md)
+- [Tipy a triky animace](../graphics-multimedia/animation-tips-and-tricks.md)

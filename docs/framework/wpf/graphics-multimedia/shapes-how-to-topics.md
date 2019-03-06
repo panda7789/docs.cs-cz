@@ -9,24 +9,24 @@ helpviewer_keywords:
 - Shape objects [WPF]
 - Shape types [WPF]
 ms.assetid: 91a371f1-81e4-40da-ad61-ec24167152e6
-ms.openlocfilehash: 0a218df17412f713eec272e49c13956b2efb71b5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5f1d22d2f7070bb93d175c28c166c434ff16ae19
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54620224"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358064"
 ---
 # <a name="shapes-how-to-topics"></a>Postupy: Témata tvarů
 Témata v této části ukazují, jak používat <xref:System.Windows.Shapes.Shape> objektů pro kreslení tvarů základní na obrazovku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vykreslení zavřeného tvaru pomocí mnohoúhelníku](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-closed-shape-by-using-the-polygon-element.md)  
- [Vykreslení elipsy nebo kruhu](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-an-ellipse-or-a-circle.md)  
- [Vykreslení čáry](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-line.md)  
- [Vykreslení lomené čáry pomocí elementu lomené čáry](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-polyline-by-using-the-polyline-element.md)  
- [Vykreslení obdélníku](../../../../docs/framework/wpf/graphics-multimedia/how-to-draw-a-rectangle.md)  
- [Změna zakončení na konci čáry nebo segmentu](../../../../docs/framework/wpf/graphics-multimedia/how-to-modify-the-cap-at-the-end-of-a-line-or-segment.md)  
+ [Vykreslení zavřeného tvaru pomocí mnohoúhelníku](how-to-draw-a-closed-shape-by-using-the-polygon-element.md)  
+ [Vykreslení elipsy nebo kruhu](how-to-draw-an-ellipse-or-a-circle.md)  
+ [Vykreslení čáry](how-to-draw-a-line.md)  
+ [Vykreslení lomené čáry pomocí elementu lomené čáry](how-to-draw-a-polyline-by-using-the-polyline-element.md)  
+ [Vykreslení obdélníku](how-to-draw-a-rectangle.md)  
+ [Změna zakončení na konci čáry nebo segmentu](how-to-modify-the-cap-at-the-end-of-a-line-or-segment.md)  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Shapes.Shape>
-- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+- [Grafika a multimédia](index.md)

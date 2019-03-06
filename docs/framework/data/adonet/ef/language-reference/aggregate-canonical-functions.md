@@ -2,18 +2,18 @@
 title: Agregační kanonické funkce
 ms.date: 03/30/2017
 ms.assetid: 3bcff826-ca90-41b3-a791-04d6ff0e5085
-ms.openlocfilehash: f65557703070a43f586a668903d049a374ef70d3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f5d3584c6e9d35c9eb69b4f54cad45187416ee59
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708971"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57372799"
 ---
 # <a name="aggregate-canonical-functions"></a>Agregační kanonické funkce
 
 Agregace jsou výrazy, které snižují řadu vstupní hodnoty do například jednu hodnotu. Agregace se obvykle používají ve spojení s klauzulí GROUP BY vyberte výrazu a existují omezení ve kterém můžou použít.
 
-## <a name="aggegate-entity-sql-canonical-functions"></a>Kanonické funkce Aggegate Entity SQL
+## <a name="aggregate-entity-sql-canonical-functions"></a>Agregační kanonické funkce Entity SQL
 
 Následují agregační kanonické funkce Entity SQL.
 
@@ -31,7 +31,7 @@ Typ `expression`, nebo `null` Pokud jsou všechny vstupní hodnoty `null` hodnot
 
 **Příklad**
 
-[!code-csharp[DP EntityServices Concepts#EDM_AVG](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_avg)] 
+[!code-csharp[DP EntityServices Concepts#EDM_AVG](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_avg)]
 [!code-sql[DP EntityServices Concepts#EDM_AVG](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_avg)]
 
 ### <a name="bigcountexpression"></a>BigCount(expression)
@@ -48,10 +48,10 @@ Libovolného typu.
 
 **Příklad**
 
-[!code-csharp[DP EntityServices Concepts#EDM_BIGCOUNT](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_bigcount)] 
+[!code-csharp[DP EntityServices Concepts#EDM_BIGCOUNT](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_bigcount)]
 [!code-sql[DP EntityServices Concepts#EDM_BIGCOUNT](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_bigcount)]
 
-### <a name="countexpression"></a>Count(Expression) 
+### <a name="countexpression"></a>Count(Expression)
 
 Vrátí velikost položky agregace, včetně hodnotu null a duplicitní hodnoty.
 
@@ -185,7 +185,7 @@ A `Double`, nebo `null` Pokud jsou všechny vstupní hodnoty `null` hodnoty.
 **Příklad**
 
 [!code-csharp[DP EntityServices Concepts#EDM_VARP](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_varp)]
-[!code-sql[DP EntityServices Concepts#EDM_VARP](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_varp)] 
+[!code-sql[DP EntityServices Concepts#EDM_VARP](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_varp)]
 
 Ekvivalentní funkce je k dispozici ve zprostředkovateli spravovaného klienta Microsoft SQL. Další informace najdete v tématu [SqlClient pro funkce Entity Framework](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).
 
@@ -206,7 +206,7 @@ Agregace na základě skupin se počítá v průběhu skupiny definované v klau
 Následující příklad vypočítá průměrné množství, řazení pro jednotlivé produkty:
 
 ```sql
-select p, avg(ol.Quantity) from LOB.OrderLines as ol 
+select p, avg(ol.Quantity) from LOB.OrderLines as ol
   group by ol.Product as p
 ```
 
@@ -224,7 +224,7 @@ select avg(ol.Quantity) from LOB.OrderLines as ol group by 1
 
 Uvnitř agregace skupinové výrazy jsou vyhodnocovány v rámci oboru rozlišení názvů, které se staly viditelnými pro výraz klauzule WHERE.
 
-Stejně jako v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], na základě skupin agregace můžete také určit všechny nebo odlišné modifikátor. Pokud není zadána odlišné modifikátor, duplicitní položky zanikne brány v agregační vstupní kolekce předtím, než je vypočítán agregace. Pokud je zadán modifikátorem všechny (nebo pokud není zadán žádný modifikátor), bez odstranění duplicit se provádí.  
+Stejně jako v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], na základě skupin agregace můžete také určit všechny nebo odlišné modifikátor. Pokud není zadána odlišné modifikátor, duplicitní položky zanikne brány v agregační vstupní kolekce předtím, než je vypočítán agregace. Pokud je zadán modifikátorem všechny (nebo pokud není zadán žádný modifikátor), bez odstranění duplicit se provádí.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - dependency properties [WPF], backing properties with
 - properties [WPF], backing with dependency properties
 ms.assetid: 855fd6d7-19ac-493c-bf5e-2f40b57cdc92
-ms.openlocfilehash: 90eb15d3cc0d9a6c1d07879b0166da4d45d786be
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8ee944c521b7e4ec75394c821e8bd509dd4eca74
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54727323"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57374411"
 ---
 # <a name="how-to-implement-a-dependency-property"></a>Postupy: Implementace vlastnosti závislosti
 Tento příklad ukazuje, jak zálohovat [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost s <xref:System.Windows.DependencyProperty> pole, proto definování vlastnost závislosti. Při definování vlastní vlastnosti a nechcete, aby podporují mnoho aspektů [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funkce, včetně styly, vazby dat, dědičnost, animace a výchozí hodnoty, měli byste implementovat jako vlastnost závislosti.  
@@ -27,11 +27,11 @@ Tento příklad ukazuje, jak zálohovat [!INCLUDE[TLA#tla_clr](../../../../inclu
   
  Můžete také určit výchozí metadat pro vlastnost závislosti. Tento příklad registruje výchozí hodnota `State` vlastnost závislosti bude `false`.  
   
- [!code-csharp[PropertySystemEsoterics#MyStateControl](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/SDKSampleLibrary/class1.cs#mystatecontrol)]
- [!code-vb[PropertySystemEsoterics#MyStateControl](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/sdksamplelibrary/class1.vb#mystatecontrol)]  
+ [!code-csharp[PropertySystemEsoterics#MyStateControl](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertySystemEsoterics/CSharp/SDKSampleLibrary/class1.cs#mystatecontrol)]
+ [!code-vb[PropertySystemEsoterics#MyStateControl](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertySystemEsoterics/visualbasic/sdksamplelibrary/class1.vb#mystatecontrol)]  
   
- Další informace o tom, a proto implementace vlastnosti závislosti, na rozdíl od jenom zálohování [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnost s privátní pole, naleznete v tématu [přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md).  
+ Další informace o tom, a proto implementace vlastnosti závislosti, na rozdíl od jenom zálohování [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] vlastnost s privátní pole, naleznete v tématu [přehled vlastností závislosti](dependency-properties-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/advanced/properties-how-to-topics.md)
+- [Přehled vlastností závislosti](dependency-properties-overview.md)
+- [Témata s postupy](properties-how-to-topics.md)

@@ -4,12 +4,12 @@ description: V tomto kurzu se naučíte jak vytvořit základní aplikaci v .NET
 ms.date: 10/11/2018
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: eed72553576f4154fe63b2e5cf035a781afe4b7c
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: addaabb41e57e03a5cf4ec5b2fa3b8b4f3089b32
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169583"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57372916"
 ---
 # <a name="how-to-containerize-a-net-core-application"></a>Jak kontejnerizovat aplikace .NET Core
 
@@ -22,7 +22,7 @@ V průběhu tohoto kurzu se dozvíte:
 > * Postup vytvoření aplikace .NET Core.
 > * Jak nasadit aplikace do kontejneru Dockeru.
 
-## <a name="net-core-easiest-way-to-get-started"></a>.NET core: Nejjednodušší způsob, jak začít
+## <a name="net-core-easiest-way-to-get-started"></a>.NET Core: Nejjednodušší způsob, jak začít
 
 Před vytvořením image Dockeru, musíte aplikaci kontejnerizace. Můžete jej vytvořit v Linuxu, MacOS nebo Windows. Nejrychlejší a nejjednodušší způsob, jak to udělat, je použití .NET Core.
 
@@ -36,7 +36,7 @@ Můžete vytvářet kontejnery Windows i Linuxu pomocí [více arch na základě
 
 K provedení kroků v tomto kurzu je potřeba:
 
-#### <a name="net-core-sdk"></a>.NET core SDK
+#### <a name="net-core-sdk"></a>.NET Core SDK
 
 * Nainstalujte [sady SDK .NET Core 2.1](https://www.microsoft.com/net/download) nebo novější.
 
@@ -45,7 +45,7 @@ Zobrazit [podporované verze operačního systému .NET Core 2.1](https://github
 * Pokud jste tak dosud neučinili, nainstalujte váš oblíbený editor kódu.
 
 > [!TIP]
-> Je potřeba nainstalovat editor kódu? Zkuste [Visual Studio Code](https://code.visualstudio.com/download)!
+> Je potřeba nainstalovat editor kódu? Try [Visual Studio Code](https://code.visualstudio.com/download)!
 
 #### <a name="installing-docker-client"></a>Instalace klienta Dockeru
 
@@ -159,7 +159,7 @@ WORKDIR /app
 COPY *.csproj ./
 ```
 
-[ **Spustit** ](https://docs.docker.com/engine/reference/builder/#run) instrukce spustí všechny příkazy v nové vrstvě nad aktuální imagí a potvrďte výsledky. Výsledná potvrzená image se používá k dalšímu kroku v souboru Dockerfile. Spouštíme **dotnet restore** získat potřebné závislosti soubor projektu C#. 
+[ **Spustit** ](https://docs.docker.com/engine/reference/builder/#run) instrukce spustí všechny příkazy v nové vrstvě nad aktuální imagí a potvrďte výsledky. Výsledná potvrzená image se používá k dalšímu kroku v souboru Dockerfile. Spouštíme **dotnet restore** získat potřebné závislosti soubor projektu C#.
 
 ```Dockerfile
 RUN dotnet restore
@@ -263,7 +263,7 @@ Tady jsou některé další kroky, které si můžete:
 * [Docker for rychlí průvodci Azure](https://docs.docker.com/docker-for-azure/#docker-community-edition-ce-for-azure)
 * [Nasazení vaší aplikace v Dockeru pro Azure](https://docs.docker.com/docker-for-azure/deploy/)
 
-> [!Note]
+> [!NOTE]
 > Pokud nemáte předplatné Azure, [zaregistrujte se ještě dnes](https://azure.microsoft.com/free/?b=16.48) pro bezplatný účet 30 dní a získat 200 USD v kreditech Azure pro vyzkoušení jakékoli kombinace služeb Azure.
 
 ## <a name="docker-images-used-in-this-sample"></a>Používané v tomto příkladu Imagí dockeru

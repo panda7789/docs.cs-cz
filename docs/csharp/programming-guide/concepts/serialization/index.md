@@ -1,12 +1,6 @@
 ---
-title: Serializace (C#)
+title: 'Serializace (C#)'
 ms.date: 04/26/2018
-ms.openlocfilehash: 7d72be92e5568037264438e3fde1e7565366c962
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43858314"
 ---
 # <a name="serialization-c"></a>Serializace (C#)
 
@@ -68,12 +62,12 @@ Pokud chcete, aby váš objekt mohl deserializovat vlastní způsobem, je nutné
 
 Serializace návrháře je zvláštní forma serializace, která zahrnuje druh objektu trvalost spojené s vývojovými nástroji. Návrháře serializace je proces převodu grafu objektu do zdrojového souboru, který lze později obnovit grafu objektů. Zdrojový soubor může obsahovat kód, značek nebo dokonce i informace o tabulce SQL.
 
-##  <a name="BKMK_RelatedTopics"></a> Související témata a příklady  
+## <a name="BKMK_RelatedTopics"></a> Související témata a příklady  
 [Návod: Uchování objektu v sadě Visual Studio (C#)](walkthrough-persisting-an-object-in-visual-studio.md)  
 Ukazuje, jak serializace může být použita k uchování dat objektu mezi instancemi, umožňuje uložení hodnot a načíst je dalším je vytvořena instance objektu.
 
-[Postupy: čtení dat objektů ze souboru XML (C#)](how-to-read-object-data-from-an-xml-file.md)  
+[Postupy: Čtení dat objektů ze souboru XML (C#)](how-to-read-object-data-from-an-xml-file.md)  
  Znázorňuje způsob čtení dat objektů, které se předtím zapsala do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.
 
-[Postupy: zápis dat objektů do souboru XML (C#)](how-to-write-object-data-to-an-xml-file.md)  
+[Postupy: Zápis dat objektů do souboru XML (C#)](how-to-write-object-data-to-an-xml-file.md)  
 Ukazuje, jak zapsat objekt ze třídy do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.

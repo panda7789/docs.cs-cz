@@ -7,20 +7,20 @@ helpviewer_keywords:
 - controls [WPF], Button
 - Button control [WPF]
 ms.assetid: a9d8f5a5-c98c-463e-808a-5a4e63173098
-ms.openlocfilehash: e1f40edb88ce1d208ca97b29e4c7daaf0c82ed35
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 277338ae11090fa3701135cd0ac761da0a887255
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551697"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57362718"
 ---
 # <a name="button"></a>Tlačítko
-A <xref:System.Windows.Controls.Button> řízení reaguje na uživatelský vstup z myši, klávesnice, pera, nebo jiné vstupní zařízení a vyvolá <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí. A <xref:System.Windows.Controls.Button> je základní [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] komponenty, která může obsahovat jednoduchý obsah, jako je text a může také obsahovat komplexní obsah, například bitové kopie a <xref:System.Windows.Controls.Panel> ovládací prvky.  
+A <xref:System.Windows.Controls.Button> ovládací prvek reaguje na uživatelský vstup z myši, klávesnice, pera, nebo jiné vstupní zařízení a vyvolá <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí. A <xref:System.Windows.Controls.Button> je základní [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] součást, která může obsahovat jednoduchý obsah, jako je například text a může také obsahovat složitým obsahem, jako jsou obrázky a <xref:System.Windows.Controls.Panel> ovládací prvky.  
   
- ![Tlačítko stavy](../../../../docs/framework/wpf/controls/media/ss-ctl-buttons.bmp "SS_CTL_buttons")  
+ ![Tlačítko stavy](./media/ss-ctl-buttons.bmp "SS_CTL_buttons")  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vytvoření tlačítka s obrázkem](../../../../docs/framework/wpf/controls/how-to-create-a-button-that-has-an-image.md)  
+ [Vytvoření tlačítka s obrázkem](how-to-create-a-button-that-has-an-image.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Button>  

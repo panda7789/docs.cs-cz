@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# Language, access modifiers
 - access modifiers [C#], about
 ms.assetid: 6e81ee82-224f-4a12-9baf-a0dca2656c5b
-ms.openlocfilehash: a5fbf74f30e5fc6abd9e1c5542eaadc7e3fcf552
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: d328f8e73824a4773c6e10f506f3021d3c88d085
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977562"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57378049"
 ---
 # <a name="access-modifiers-c-programming-guide"></a>Modifikátory přístupu (Průvodce programováním v C#)
 Všechny typy a členy typu mít úrovni přístupu, které řídí, jestli je možné použít od jiného kódu v sestavení nebo jiná sestavení. Následující modifikátory přístupu můžete použít k určení přístupnost typu nebo členu při jeho deklaraci:  
@@ -44,7 +44,7 @@ Všechny typy a členy typu mít úrovni přístupu, které řídí, jestli je m
   
  Odvozené třídy nemůže mít vyšší dostupnost než jejich základní typy. Jinými slovy, nemůže mít veřejnou třídu `B` , která je odvozena z interní třída `A`. Pokud to bylo povoleno, bude mít vliv na provádění `A` veřejné, protože všechny chráněné nebo interní členy `A` jsou přístupné z odvozené třídy.  
   
- Můžete povolit konkrétní jiná sestavení pro přístup k interní typy s použitím atributu InternalsVisibleToAttribute. Další informace najdete v tématu [přátelských sestavení](../concepts/assemblies-gac/friend-assemblies.md).  
+ Můžete povolit konkrétní jiná sestavení pro přístup k interní typy s použitím atributu InternalsVisibleToAttribute. Další informace najdete v tématu [přátelských sestavení](../../../standard/assembly/friend-assemblies.md).  
   
 ## <a name="class-and-struct-member-accessibility"></a>Třídy a přístupnost členů struktury  
  Členy třídy (včetně vnořené třídy a struktury) mohou být deklarovány s žádným z šesti typy přístupu. Členy struktury nejde deklarovat jako chránit, protože struktury nepodporují dědičnosti.  

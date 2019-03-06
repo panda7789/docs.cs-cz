@@ -9,18 +9,18 @@ helpviewer_keywords:
 - Viewbox control [WPF]
 - scaling elements [WPF], Viewbox control
 ms.assetid: 00fc0a16-1078-4d55-9849-ffaf7da96531
-ms.openlocfilehash: a16d5ee8bd087a9d5dfe20ec6203e3f171da8784
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 67c9277ba4a7ae0ee802c536699a765669ddf508
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54649840"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57361912"
 ---
 # <a name="viewbox"></a>Viewbox
 <xref:System.Windows.Controls.Viewbox> Ovládacího prvku se používá k roztažení nebo škálovat podřízený element.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Použití vlastností roztažení na obsah Viewbox](../../../../docs/framework/wpf/controls/how-to-apply-stretch-properties-to-the-contents-of-a-viewbox.md)  
+ [Použití vlastností roztažení na obsah Viewbox](how-to-apply-stretch-properties-to-the-contents-of-a-viewbox.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Viewbox>  

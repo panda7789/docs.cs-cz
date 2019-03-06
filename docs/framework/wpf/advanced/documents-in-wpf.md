@@ -10,12 +10,12 @@ helpviewer_keywords:
 - documents [WPF], types of
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
-ms.openlocfilehash: 00e983c907c0376b45d2342f393569d045cbf98b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 20d90f96647989be35bf2c9cdf6243e8e868cd1e
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517731"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57361366"
 ---
 # <a name="documents-in-wpf"></a>Dokumenty v platformě WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí širokou škálu funkce dokumentu, které umožňují vytvářet a věrného obsah, který je navržena jako snadno používaná a čtení než v předchozích generací [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Kromě poznat široké možnosti a kvality [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje integrované služby pro zobrazení dokumentu, balení a zabezpečení. Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentů.  
@@ -27,7 +27,7 @@ ms.locfileid: "54517731"
   
  Oprava dokumentů jsou určené pro aplikace, které vyžadují přesné [!INCLUDE[TLA#tla_wys](../../../../includes/tlasharptla-wys-md.md)] prezentace, nezávisle na zobrazení nebo tiskárny hardware používá. Obvyklá využití pro pevné dokumenty zahrnují DTP, zpracování textu a rozložení formuláře, ve kterém je velmi důležité dodržování původní návrh stránek. Jako součást její rozložení pevné dokumentu udržuje přesné poziční umístění obsahu prvků nezávislé zobrazení nebo tisk zařízení používá. Například stránku pevné dokument zobrazit v zobrazení 96 dpi zobrazí přesně stejné je výstup laserová tiskárna 600 rozlišení dpi jako když se výstup phototypesetter 4800 dpi. Rozložení stránky zůstává stejná ve všech případech, zatímco kvalitu dokumentu maximalizuje možnosti jednotlivých zařízení.  
   
- Dokumenty toku naproti tomu jsou určená k optimalizaci pro zobrazení a čitelnost a jsou co nejlépe využít v případě snadné čtení je scénář využití primární dokumentu. Dokumenty toku místo nastavování jedno předdefinované rozložení dynamicky upravit a přeformátování jejich obsah na základě proměnných za běhu, jako je například velikost okna, rozlišení zařízení a volitelné uživatelských předvoleb. Webová stránka je jednoduchý příklad plovoucí dokument, kde je obsah stránky dynamicky formátovaný podle aktuálního okna. Dokumenty toku optimalizovat zobrazení a čtení prostředí pro uživatele, založené na prostředí modulu runtime. Stejný tok dokument bude dynamicky přeformátovat pro optimální čitelnost na zobrazení s vysokým rozlišením 19 palce nebo malé 2 x 3, 5palcová PDA obrazovky. Kromě toho mají dokumenty toku počet integrované funkce, včetně vyhledávání, zobrazování režimy, které optimalizují čitelnost a umožňuje změnit velikost a vzhled písma.  Zobrazit [přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md) pro obrázky, ukázky a podrobné informace o toku dokumentů.  
+ Dokumenty toku naproti tomu jsou určená k optimalizaci pro zobrazení a čitelnost a jsou co nejlépe využít v případě snadné čtení je scénář využití primární dokumentu. Dokumenty toku místo nastavování jedno předdefinované rozložení dynamicky upravit a přeformátování jejich obsah na základě proměnných za běhu, jako je například velikost okna, rozlišení zařízení a volitelné uživatelských předvoleb. Webová stránka je jednoduchý příklad plovoucí dokument, kde je obsah stránky dynamicky formátovaný podle aktuálního okna. Dokumenty toku optimalizovat zobrazení a čtení prostředí pro uživatele, založené na prostředí modulu runtime. Stejný tok dokument bude dynamicky přeformátovat pro optimální čitelnost na zobrazení s vysokým rozlišením 19 palce nebo malé 2 x 3, 5palcová PDA obrazovky. Kromě toho mají dokumenty toku počet integrované funkce, včetně vyhledávání, zobrazování režimy, které optimalizují čitelnost a umožňuje změnit velikost a vzhled písma.  Zobrazit [přehled toku dokumentů](flow-document-overview.md) pro obrázky, ukázky a podrobné informace o toku dokumentů.  
   
 <a name="document_viewer"></a>   
 ## <a name="document-controls-and-text-layout"></a>Ovládacích prvků dokumentu a rozložení textu  
@@ -40,7 +40,7 @@ ms.locfileid: "54517731"
   
 <a name="flow_document"></a>   
 ### <a name="flow-document-controls"></a>Ovládací prvky toků dokumentu  
- **Poznámka:** Podrobnější informace o toku dokumentu funkcí a postupů pro jejich vytváření najdete v článku [přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md).  
+ **Poznámka:** Podrobnější informace o toku dokumentu funkcí a postupů pro jejich vytváření najdete v článku [přehled toku dokumentů](flow-document-overview.md).  
   
  Zobrazení obsahu toku dokumentu se podporuje tři prvky: <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentPageViewer>, a <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  
   
@@ -54,7 +54,7 @@ ms.locfileid: "54517731"
   
 <a name="text_in_the_user_interface"></a>   
 ### <a name="text-in-the-user-interface"></a>Text v uživatelském rozhraní  
- Kromě přidání textu do dokumentů, text je samozřejmě možné v uživatelském rozhraní aplikace, jako jsou formuláře. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnuje více ovládacích prvků pro vykreslení textu na obrazovce. Každý ovládací prvek je zacílený na jiný scénář a má svůj vlastní seznam funkcí a omezení. Obecně platí <xref:System.Windows.Controls.TextBlock> element by měl použít, pokud je text omezená podpora vyžadovat, například stručný větu v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label> lze použít, když je nutné podporovat minimální text. Další informace najdete v tématu [TextBlock – přehled](../../../../docs/framework/wpf/controls/textblock-overview.md).  
+ Kromě přidání textu do dokumentů, text je samozřejmě možné v uživatelském rozhraní aplikace, jako jsou formuláře. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zahrnuje více ovládacích prvků pro vykreslení textu na obrazovce. Každý ovládací prvek je zacílený na jiný scénář a má svůj vlastní seznam funkcí a omezení. Obecně platí <xref:System.Windows.Controls.TextBlock> element by měl použít, pokud je text omezená podpora vyžadovat, například stručný větu v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label> lze použít, když je nutné podporovat minimální text. Další informace najdete v tématu [TextBlock – přehled](../controls/textblock-overview.md).  
   
 <a name="packaging"></a>   
 ## <a name="document-packaging"></a>Balení dokumentů  
@@ -142,7 +142,7 @@ ms.locfileid: "54517731"
 - <xref:System.IO.Packaging.ZipPackagePart>
 - <xref:System.IO.Packaging.PackageRelationship>
 - <xref:System.Windows.Controls.DocumentViewer>
-- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)
-- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
-- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)
-- [Serializace a úložiště dokumentů](../../../../docs/framework/wpf/advanced/document-serialization-and-storage.md)
+- [Text](optimizing-performance-text.md)
+- [Přehled toku dokumentů](flow-document-overview.md)
+- [Přehled tisku](printing-overview.md)
+- [Serializace a úložiště dokumentů](document-serialization-and-storage.md)

@@ -2,12 +2,12 @@
 title: Obor výchozích názvových prostorů v jazyce C# 1
 ms.date: 07/20/2015
 ms.assetid: fe826236-830f-457a-9027-7ad62c909fae
-ms.openlocfilehash: dfc86e2e58eb936106807aba21b2953f52101cbc
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: d60f489f616a413e25bf5cd427bd467852a97c7b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979707"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57379442"
 ---
 # <a name="scope-of-default-namespaces-in-c"></a>Obor výchozích názvových prostorů v jazyce C\#
 Výchozí obory názvů, jak je ve stromové struktuře XML nejsou v oboru pro dotazy. Pokud budete mít soubor XML, který je ve výchozím oboru názvů, je stále třeba deklarovat <xref:System.Xml.Linq.XNamespace> proměnnou a sloučit s místním názvem vytvořit kvalifikovaný název, který se má použít v dotazu.  
@@ -53,7 +53,7 @@ End of result set
 ## <a name="example"></a>Příklad  
  Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který je zakódovaný správně.  
   
- Na rozdíl od nesprávně programové výše uvedeném příkladu je správný přístup při použití jazyka C# k deklaraci a inicializaci <xref:System.Xml.Linq.XNamespace> objektu a použít je při zadávání <xref:System.Xml.Linq.XName> objekty. V tomto případě, že argument <xref:System.Xml.Linq.XElement.Elements%2A> metoda je <xref:System.Xml.Linq.XName> objektu.  
+ Na rozdíl od nesprávně programové výše uvedeném příkladu je správný přístup při použití jazyka C# k deklaraci a inicializaci <xref:System.Xml.Linq.XNamespace> objektu a použít je při zadávání <xref:System.Xml.Linq.XName> objekty. V tomto případě, že argument <xref:System.Xml.Linq.XContainer.Elements%2A> metoda je <xref:System.Xml.Linq.XName> objektu.  
   
 ### <a name="code"></a>Kód  
   

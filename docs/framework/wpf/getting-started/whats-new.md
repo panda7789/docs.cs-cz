@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], what's new
 - WPF [WPF], what's new
 ms.assetid: db086ae4-70bb-4862-95db-2eaca5216bc3
-ms.openlocfilehash: 6dc833ce3dc88b61ed6966c7b5ca2756f5012308
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 92f69d0f9ad962dff231308ed3f5d59a0d406792
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55265347"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57368165"
 ---
 # <a name="whats-new-in-wpf-version-45"></a>Novinky ve verzi 4.5 grafického subsystému WPF
 <a name="introduction"></a> Toto téma obsahuje informace o nových a vylepšených funkcích [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] verze 4.5.  
@@ -115,15 +115,15 @@ ms.locfileid: "55265347"
   
 <a name="weak_event_pattern"></a>   
 ## <a name="improved-support-for-establishing-a-weak-reference-to-an-event"></a>Vylepšená podpora pro stanovení Slabý odkaz na událost  
- Implementace vzoru slabých událostí je teď jednodušší, protože Odběratelé událostí mohl podílet na to bez implementace rozhraní navíc.  Obecné <xref:System.Windows.WeakEventManager> tříd také umožňuje předplatitelům se účastnit slabý vzor událostí, je-li to vyhrazené <xref:System.Windows.WeakEventManager> pro určitou událost neexistuje.  Další informace najdete v tématu [slabé vzory událostí](../../../../docs/framework/wpf/advanced/weak-event-patterns.md).  
+ Implementace vzoru slabých událostí je teď jednodušší, protože Odběratelé událostí mohl podílet na to bez implementace rozhraní navíc.  Obecné <xref:System.Windows.WeakEventManager> tříd také umožňuje předplatitelům se účastnit slabý vzor událostí, je-li to vyhrazené <xref:System.Windows.WeakEventManager> pro určitou událost neexistuje.  Další informace najdete v tématu [slabé vzory událostí](../advanced/weak-event-patterns.md).  
   
 <a name="async"></a>   
 ## <a name="new-methods-for-the-dispatcher-class"></a>Nové metody pro třídu dispečer  
- Dispečer třída definuje nové metody pro synchronní a asynchronní operace.  Synchronní <xref:System.Windows.Threading.Dispatcher.Invoke%2A> přetížení, která přijímají definuje metody <xref:System.Action> nebo <xref:System.Func%601> parametru. Nový asynchronní metody <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A>, využívá taky <xref:System.Action> nebo <xref:System.Func%601> jako parametru zpětného volání a vrátí <xref:System.Windows.Threading.DispatcherOperation> nebo <xref:System.Windows.Threading.DispatcherOperation%601>.   <xref:System.Windows.Threading.DispatcherOperation> a <xref:System.Windows.Threading.DispatcherOperation%601> třídy definují <xref:System.Threading.Tasks.Task> vlastnost.  Při volání <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A>, můžete použít `await` – klíčové slovo se buď <xref:System.Windows.Threading.DispatcherOperation> nebo přidružené <xref:System.Threading.Tasks.Task>. Pokud budete muset počkat synchronně <xref:System.Threading.Tasks.Task> , který je vrácen <xref:System.Windows.Threading.DispatcherOperation> nebo <xref:System.Windows.Threading.DispatcherOperation%601>, volání <xref:System.Windows.Threading.TaskExtensions.DispatcherOperationWait%2A> – metoda rozšíření. Volání <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> způsobí zablokování, pokud operace je zařazeno do fronty v volajícího vlákna. Další informace o používání <xref:System.Threading.Tasks.Task> provádět asynchronní operace, najdete v článku [funkční paralelismus (Task Parallel Library)](../../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md).  
+ Dispečer třída definuje nové metody pro synchronní a asynchronní operace.  Synchronní <xref:System.Windows.Threading.Dispatcher.Invoke%2A> přetížení, která přijímají definuje metody <xref:System.Action> nebo <xref:System.Func%601> parametru. Nový asynchronní metody <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A>, využívá taky <xref:System.Action> nebo <xref:System.Func%601> jako parametru zpětného volání a vrátí <xref:System.Windows.Threading.DispatcherOperation> nebo <xref:System.Windows.Threading.DispatcherOperation%601>.   <xref:System.Windows.Threading.DispatcherOperation> a <xref:System.Windows.Threading.DispatcherOperation%601> třídy definují <xref:System.Threading.Tasks.Task> vlastnost.  Při volání <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A>, můžete použít `await` – klíčové slovo se buď <xref:System.Windows.Threading.DispatcherOperation> nebo přidružené <xref:System.Threading.Tasks.Task>. Pokud budete muset počkat synchronně <xref:System.Threading.Tasks.Task> , který je vrácen <xref:System.Windows.Threading.DispatcherOperation> nebo <xref:System.Windows.Threading.DispatcherOperation%601>, volání <xref:System.Windows.Threading.TaskExtensions.DispatcherOperationWait%2A> – metoda rozšíření. Volání <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> způsobí zablokování, pokud operace je zařazeno do fronty v volajícího vlákna. Další informace o používání <xref:System.Threading.Tasks.Task> provádět asynchronní operace, najdete v článku [funkční paralelismus (Task Parallel Library)](../../../standard/parallel-programming/task-based-asynchronous-programming.md).  
   
 <a name="events_markup_extenions"></a>   
 ## <a name="markup-extensions-for-events"></a>Rozšíření značek pro události  
  WPF 4.5 podporuje – rozšíření značek pro události.  Zatímco WPF nedefinuje rozšíření značek, který má být použit pro události, budou moct vytvořit rozšíření značek, který lze použít s událostmi třetím stranám.  
   
 ## <a name="see-also"></a>Viz také:
-- [Novinky v rozhraní .NET Framework](../../../../docs/framework/whats-new/index.md)
+- [Novinky v rozhraní .NET Framework](../../whats-new/index.md)

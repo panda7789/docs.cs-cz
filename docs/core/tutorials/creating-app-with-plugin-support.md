@@ -4,12 +4,12 @@ description: Zjistěte, jak vytvořit aplikaci .NET Core, která podporuje modul
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/28/2019
-ms.openlocfilehash: f2997c778b87ecd88c0fd2fadf491763066a4950
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: 85ea06d56ed1c3312a010c5e575dd193c00b93e9
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55739606"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57363901"
 ---
 # <a name="create-a-net-core-application-with-plugins"></a>Vytvoření aplikace .NET Core s moduly plug-in
 
@@ -244,7 +244,7 @@ Téměř všechny moduly plug-in jsou složitější než jednoduché "Hello Wor
 
 ## <a name="other-plugin-examples-in-the-sample"></a>Další příklady modul plug-in v ukázce
 
-`AssemblyDependencyResolver` Objektu můžete také vyřešit nativní knihovny zahrnuté v balíčcích NuGet stejně jako lokalizované satelitní sestavení. `UVPlugin` a `FrenchPlugin` ukazují tyto scénáře, v uvedeném pořadí.
+Úplný zdrojový kód pro účely tohoto kurzu můžete najít v [úložišti dotnet/samples](https://github.com/dotnet/samples/tree/master/core/extensions/AppWithPlugin). Je hotová ukázka obsahuje několik příkladů scénářů `AssemblyDependencyResolver` chování. Například `AssemblyDependencyResolver` objektu můžete také vyřešit nativních knihoven, jakož i lokalizovaná satelitní sestavení v balíčcích NuGet. `UVPlugin` a `FrenchPlugin` v úložišti ukázek ukazují tyto scénáře.
 
 ## <a name="how-to-reference-a-plugin-interface-assembly-defined-in-a-nuget-package"></a>Způsob vytvoření odkazu na sestavení rozhraní modulu plug-in definovaných v balíčku NuGet
 

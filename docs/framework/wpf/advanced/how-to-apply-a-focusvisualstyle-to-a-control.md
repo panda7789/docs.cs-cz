@@ -5,12 +5,12 @@ helpviewer_keywords:
 - properties [WPF], FocusVisualStyle
 - FocusVisualStyle property [WPF]
 ms.assetid: 363de99e-8ecc-438c-ac4a-f9147432ebd6
-ms.openlocfilehash: ae7820dac011425251d087dd4109c3f40bdd308c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c4b379d3c57b6d0ae29952c23a35d7cc2cdf7f96
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493245"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57366592"
 ---
 # <a name="how-to-apply-a-focusvisualstyle-to-a-control"></a>Postupy: Použití FocusVisualStyle na ovládací prvek
 Tento příklad ukazuje, jak vytvořit vizuální styl fokusu na prostředcích a použít styl na ovládací prvek, pomocí <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> vlastnost.  
@@ -20,13 +20,13 @@ Tento příklad ukazuje, jak vytvořit vizuální styl fokusu na prostředcích 
   
  Externí obdélník podobné ohraničení je umístěn mimo oblasti obdélníkový. Není-li jinak upraven, velikosti styl používá <xref:System.Windows.FrameworkElement.ActualHeight%2A> a <xref:System.Windows.FrameworkElement.ActualWidth%2A> obdélníkové ovládacího prvku, ve kterém se použije vizuální styl fokusu. V tomto příkladu nastaví záporné hodnoty <xref:System.Windows.FrameworkElement.Margin%2A> provádět mírně zobrazují mimo cílené ovládací prvek ohraničení.  
   
- [!code-xaml[FEFocusVisualStyle#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FEFocusVisualStyle/CS/page1.xaml#xaml)]  
+ [!code-xaml[FEFocusVisualStyle#XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FEFocusVisualStyle/CS/page1.xaml#xaml)]  
   
  A <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> je sčítání jakýkoli styl šablony ovládacího prvku, který přichází z explicitní styl nebo stylu motivu; primární stylu pro ovládací prvek může stále možné vytvořit pomocí <xref:System.Windows.Controls.ControlTemplate> a nastavení na hodnotu stylu <xref:System.Windows.FrameworkElement.Style%2A> vlastnost.  
   
- Fokus vizuální styly by měly být používány konzistentně napříč motiv nebo uživatelské rozhraní, místo použití jinou používat pro každý prvek může získat fokus. Podrobnosti najdete v tématu [stylů pro fokus v ovládacích prvcích a FocusVisualStyle](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md).  
+ Fokus vizuální styly by měly být používány konzistentně napříč motiv nebo uživatelské rozhraní, místo použití jinou používat pro každý prvek může získat fokus. Podrobnosti najdete v tématu [stylů pro fokus v ovládacích prvcích a FocusVisualStyle](styling-for-focus-in-controls-and-focusvisualstyle.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
-- [Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle](../../../../docs/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle.md)
+- [Styly a šablony](../controls/styling-and-templating.md)
+- [Nastavení stylů pro fokus v ovládacích prvcích a FocusVisualStyle](styling-for-focus-in-controls-and-focusvisualstyle.md)

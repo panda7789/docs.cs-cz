@@ -7,34 +7,34 @@ helpviewer_keywords:
 - 3-D graphics [WPF]
 - graphics [WPF], 3-D
 ms.assetid: 4f091835-28d1-498c-b660-9b3acf34ed13
-ms.openlocfilehash: d542ecd7f162e56a8a6e8ae04c0ea60eb6a69f3e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1f78d2f0ff8887ca5cf1cd1129fb946d2224246d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33554837"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57353553"
 ---
 # <a name="3-d-graphics-how-to-topics"></a>Postupy: Témata 3D grafiky
-Témata v této části ukazují, jak používat [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] grafiky ve [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
+Témata v této části ukazují, jak používat [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] grafiky v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Vytvoření 3D scény](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-3-d-scene.md)  
- [Použití kresby na 3D model](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-drawing-to-a-3-d-model.md)  
- [Použití materiálu na přední a zadní část 3D objektu](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-material-to-the-front-and-back-of-a-3-d-object.md)  
- [Použití vyzařujícího materiálu na 3D objekt](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-emissive-material-to-a-3-d-object.md)  
- [Transformace měřítka 3D modelu](../../../../docs/framework/wpf/graphics-multimedia/how-to-transform-the-scale-of-a-3-d-model.md)  
- [Použití několika transformací na 3D model](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-multiple-transformations-to-a-3-d-model.md)  
- [Animace 3D posunutí](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-3-d-translations.md)  
- [Animace trojrozměrného otočení pomocí scénářů](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-3-d-rotation-using-storyboards.md)  
- [Animace trojrozměrného otočení pomocí Rotation3DAnimation](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-3-d-rotation-using-rotation3danimation.md)  
- [Animace 3D otočení pomocí kvaternionů](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-3-d-rotation-using-quaternions.md)  
- [Animace trojrozměrné rotace pomocí klíčových snímků (Rotation3DAnimationUsingKeyFrames)](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-3-d-rotation-using-key-frames.md)  
- [Animace trojrozměrné rotace pomocí klíčových snímků (QuaternionAnimationUsingKeyFrames)](../../../../docs/framework/wpf/graphics-multimedia/animate-a-3-d-rotation-quaternionanimationusingkeyframes.md)  
- [Animace umístění a směrování kamery ve 3D scéně](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-camera-position-and-direction-in-a-3d-scene.md)  
- [Animace umístění a směrování kamery pomocí klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-camera-position-and-direction-using-key-frames.md)  
- [Animace vlastností materiálu ve 3D scéně](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-material-properties-in-a-3-d-scene.md)  
- [Ověření pozice v objektu Viewport3D](../../../../docs/framework/wpf/graphics-multimedia/how-to-hit-test-in-a-viewport3d.md)  
- [Testování struktur Point4D na rovnost a nerovnost](../../../../docs/framework/wpf/graphics-multimedia/how-to-test-point4d-structures-for-equality-and-inequality.md)  
+ [Vytvoření 3D scény](how-to-create-a-3-d-scene.md)  
+ [Použití kresby na 3D model](how-to-apply-a-drawing-to-a-3-d-model.md)  
+ [Použití materiálu na přední a zadní část 3D objektu](how-to-apply-material-to-the-front-and-back-of-a-3-d-object.md)  
+ [Použití vyzařujícího materiálu na 3D objekt](how-to-apply-emissive-material-to-a-3-d-object.md)  
+ [Transformace měřítka 3D modelu](how-to-transform-the-scale-of-a-3-d-model.md)  
+ [Použití několika transformací na 3D model](how-to-apply-multiple-transformations-to-a-3-d-model.md)  
+ [Animace 3D posunutí](how-to-animate-3-d-translations.md)  
+ [Animace trojrozměrného otočení pomocí scénářů](how-to-animate-a-3-d-rotation-using-storyboards.md)  
+ [Animace trojrozměrného otočení pomocí Rotation3DAnimation](how-to-animate-a-3-d-rotation-using-rotation3danimation.md)  
+ [Animace 3D otočení pomocí kvaternionů](how-to-animate-a-3-d-rotation-using-quaternions.md)  
+ [Animace trojrozměrné rotace pomocí klíčových snímků (Rotation3DAnimationUsingKeyFrames)](how-to-animate-a-3-d-rotation-using-key-frames.md)  
+ [Animace trojrozměrné rotace pomocí klíčových snímků (QuaternionAnimationUsingKeyFrames)](animate-a-3-d-rotation-quaternionanimationusingkeyframes.md)  
+ [Animace umístění a směrování kamery ve 3D scéně](how-to-animate-camera-position-and-direction-in-a-3d-scene.md)  
+ [Animace umístění a směrování kamery pomocí klíčových snímků](how-to-animate-camera-position-and-direction-using-key-frames.md)  
+ [Animace vlastností materiálu ve 3D scéně](how-to-animate-material-properties-in-a-3-d-scene.md)  
+ [Ověření pozice v objektu Viewport3D](how-to-hit-test-in-a-viewport3d.md)  
+ [Testování struktur Point4D na rovnost a nerovnost](how-to-test-point4d-structures-for-equality-and-inequality.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Viewport3D>  
@@ -46,4 +46,4 @@ Témata v této části ukazují, jak používat [!INCLUDE[TLA#tla_3d](../../../
  <xref:System.Windows.Media.Media3D.Material>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+ [Grafika a multimédia](index.md)

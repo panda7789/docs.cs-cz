@@ -5,12 +5,12 @@ helpviewer_keywords:
 - applications [WPF], optimizing
 - WPF application [WPF], optimizing
 ms.assetid: c91bd0c5-a193-46ff-9da1-eb7a3a76a3b3
-ms.openlocfilehash: 3fadba2fe8036fc558e18f80bd7cb1ffc977b762
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fda5330ff75c1744f3ed9d4394e51b5efb737071
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54632111"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57374424"
 ---
 # <a name="planning-for-application-performance"></a>Plánování výkonu aplikace
 Úspěch dosažení svých cílů výkonu závisí na tom, jak dobře při vývoji strategie výkonu. Plánování je první fázi při vývoji libovolný produkt. Toto téma popisuje několik velmi jednoduchých pravidel pro vývoj strategie dobrého výkonu.  
@@ -33,12 +33,12 @@ ms.locfileid: "54632111"
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládací prvky jsou ze své podstaty extensible tím, že pro přizpůsobení šíření celého jejich výskytu, při není změna jejich chování ovládacího prvku. S využitím styly, šablony a šablony ovládacích prvků, můžete vytvořit a postupně vyvíjí přizpůsobitelnou [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] , která se přizpůsobí vašim požadavkům na výkon.  
   
 ## <a name="see-also"></a>Viz také:
-- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
-- [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)
-- [Rozložení a návrh](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)
-- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)
-- [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)
-- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)
-- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
-- [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
+- [Optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md)
+- [Využití výhod hardwaru](optimizing-performance-taking-advantage-of-hardware.md)
+- [Rozložení a návrh](optimizing-performance-layout-and-design.md)
+- [2D grafika a obrázky](optimizing-performance-2d-graphics-and-imaging.md)
+- [Chování objektu](optimizing-performance-object-behavior.md)
+- [Prostředky aplikace](optimizing-performance-application-resources.md)
+- [Text](optimizing-performance-text.md)
+- [Datová vazba](optimizing-performance-data-binding.md)
+- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)

@@ -2,17 +2,11 @@
 title: .NET Framework – výkon
 ms.date: 03/30/2017
 helpviewer_keywords:
-- performance [.NET Framework]
-- reliability [.NET Framework]
+  - 'performance [.NET Framework]'
+  - 'reliability [.NET Framework]'
 ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f5667d55b8a49ba7b32570ad6a230b220ac8953b
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221170"
 ---
 # <a name="net-framework-performance"></a>.NET Framework – výkon
 Pokud chcete vytvářet aplikace s vynikajícím výkonem, měli byste navrhnout a naplánovat výkon stejně jako byste navrhovali libovolnou jinou funkci aplikace. Můžete použít nástroje poskytované společností Microsoft k měření výkonu vaší aplikace a, v případě potřeby zdokonalení využití paměti, propustnosti kódování a rychlost odezvy. Toto téma uvádí analytické nástroje výkonu, poskytuje Microsoft a obsahuje odkazy na další témata, která pokrývají výkon pro konkrétní oblasti vývoje aplikací.  
@@ -49,7 +43,6 @@ Pokud chcete vytvářet aplikace s vynikajícím výkonem, měli byste navrhnout
 |[!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace napsané v jazyce C++, C# a Visual Basic|[Osvědčené postupy z hlediska výkonu pro aplikace Windows Store pomocí jazyka C++, C# a Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh750313%28v=win.10%29)|  
 |Windows Presentation Foundation (WPF)|[WPF – výkonnostní sada](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100))|  
 |ASP.NET|[ASP.NET: přehled výkonu](https://docs.microsoft.com/previous-versions/aspnet/cc668225(v=vs.100))|  
-|Windows Forms|[Praktické tipy pro zvýšení výkonu aplikací Windows Forms](https://msdn.microsoft.com/magazine/cc163630.aspx)|  
   
 ## <a name="related-topics"></a>Související témata  
   

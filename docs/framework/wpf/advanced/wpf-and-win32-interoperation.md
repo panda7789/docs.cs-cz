@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 0ffbde0d-701d-45a3-a6fa-dd71f4d9772e
-ms.openlocfilehash: a242f60324f2342f3dd96edc3ccbd663ecc9807a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e5a044166023069cdb6e1091339044cd7f964825
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54680478"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377229"
 ---
 # <a name="wpf-and-win32-interoperation"></a>Vzájemná spolupráce grafického subsystému WPF a systému Win32
 Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spolupráci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] kódu. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být efektivnější opakovaně používat některé z kódu.  
@@ -27,7 +27,7 @@ Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spoluprác
   
 -   Hostitel [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. S touto technikou, můžete použít existující vlastní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] ovládacího prvku v kontextu jiných [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu a předání dat přes hranice.  
   
- Každá z těchto postupů je koncepčně představenými v tomto tématu. Hostování více kódu objektově orientovaný ukázky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)], naleznete v tématu [názorný postup: Hostování obsahu WPF v Win32](../../../../docs/framework/wpf/advanced/walkthrough-hosting-wpf-content-in-win32.md). Hostování více kódu objektově orientovaný ukázky [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [názorný postup: Hostování ovládacího prvku Win32 v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-win32-control-in-wpf.md).  
+ Každá z těchto postupů je koncepčně představenými v tomto tématu. Hostování více kódu objektově orientovaný ukázky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)], naleznete v tématu [názorný postup: Hostování obsahu WPF v Win32](walkthrough-hosting-wpf-content-in-win32.md). Hostování více kódu objektově orientovaný ukázky [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [názorný postup: Hostování ovládacího prvku Win32 v subsystému WPF](walkthrough-hosting-a-win32-control-in-wpf.md).  
   
 <a name="projects"></a>   
 ## <a name="wpf-interoperation-projects"></a>Součinnost projekty WPF  
@@ -50,11 +50,11 @@ Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spoluprác
   
 <a name="hwnds"></a>   
 ## <a name="how-wpf-uses-hwnds"></a>Použití HWND WPF  
- Chcete-li maximálně využít [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] "Interoperabilita HWND", je potřeba pochopit, jak [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá HWND. Pro všechny HWND, nejde kombinovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování pomocí [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] vykreslování nebo [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)]  /  [!INCLUDE[TLA2#tla_gdiplus](../../../../includes/tla2sharptla-gdiplus-md.md)] vykreslování. To má několik důsledky. Především aby bylo možné kombinovat tyto modely vykreslování vůbec, musíte vytvořit součinnosti řešení a pomocí určené segmentů vzájemná spolupráce grafického subsystému pro každý model vykreslování, který chcete použít. Také chování vykreslování vytvoří "vzdušného prostoru" omezení pro co lze provádět součinnosti řešení. Pojem "vzdušného prostoru" je vysvětleno podrobněji v tématu [přehled technologických oblastí](../../../../docs/framework/wpf/advanced/technology-regions-overview.md).  
+ Chcete-li maximálně využít [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] "Interoperabilita HWND", je potřeba pochopit, jak [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá HWND. Pro všechny HWND, nejde kombinovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování pomocí [!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] vykreslování nebo [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)]  /  [!INCLUDE[TLA2#tla_gdiplus](../../../../includes/tla2sharptla-gdiplus-md.md)] vykreslování. To má několik důsledky. Především aby bylo možné kombinovat tyto modely vykreslování vůbec, musíte vytvořit součinnosti řešení a pomocí určené segmentů vzájemná spolupráce grafického subsystému pro každý model vykreslování, který chcete použít. Také chování vykreslování vytvoří "vzdušného prostoru" omezení pro co lze provádět součinnosti řešení. Pojem "vzdušného prostoru" je vysvětleno podrobněji v tématu [přehled technologických oblastí](technology-regions-overview.md).  
   
  Všechny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou prvky na obrazovce opírá HWND. Při vytváření [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Window>, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vytvoří nejvyšší úrovně HWND a použije <xref:System.Windows.Interop.HwndSource> umístit <xref:System.Windows.Window> a jeho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu uvnitř HWND.  Zbývající část vaší [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] tomto jednotném HWND sdílí obsah v aplikaci. Výjimka je nabídek, pole se seznamem pole rozevírací nabídky a jiné automaticky otevíraná okna. Tyto prvky vytvořit své vlastní okno nejvyšší úrovně, což je důvod, proč [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nabídky potenciálně přejít po okraji okna HWND, který jej obsahuje. Při použití <xref:System.Windows.Interop.HwndHost> umístit popisovačem HWND uvnitř [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] informuje [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] tom, jak umístit nové podřízené HWND relativní vzhledem k [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Window> HWND.  
   
- Pojmem k HWND je průhlednosti v rámci a mezi každou HWND. To je také popsáno v tématu [přehled technologických oblastí](../../../../docs/framework/wpf/advanced/technology-regions-overview.md).  
+ Pojmem k HWND je průhlednosti v rámci a mezi každou HWND. To je také popsáno v tématu [přehled technologických oblastí](technology-regions-overview.md).  
   
 <a name="hosting_a_wpf_page"></a>   
 ## <a name="hosting-wpf-content-in-a-microsoft-win32-window"></a>Hostování obsahu WPF v okně Microsoft Win32  
@@ -87,7 +87,7 @@ Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spoluprác
 > [!NOTE]
 >  Můžete provést některé nebo všechny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah definice třídy pro jeden krok v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] horizontálních oddílů pomocí třídy výchozí částečné třídy obsahu, je-li vytvořit samostatné sestavení a pak na něj odkazovat. I když obvykle zahrnují <xref:System.Windows.Application> objektu jako část kompilace [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] do sestavení, nikoli skončíte, který pomocí <xref:System.Windows.Application> jako součást spolupráci, stačí použijete jeden nebo více kořenové třídy pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů uvedených do aplikace a odkazovat na jejich částečné třídy. Zbytek postupu je v podstatě podobný tomu uvedených výše.  
 >   
->  Každý z těchto kroků je znázorněn prostřednictvím kódu v tomto tématu [názorný postup: Hostování obsahu WPF v Win32](../../../../docs/framework/wpf/advanced/walkthrough-hosting-wpf-content-in-win32.md).  
+>  Každý z těchto kroků je znázorněn prostřednictvím kódu v tomto tématu [názorný postup: Hostování obsahu WPF v Win32](walkthrough-hosting-wpf-content-in-win32.md).  
   
 <a name="hosting_an_hwnd"></a>   
 ## <a name="hosting-a-microsoft-win32-window-in-wpf"></a>Hostující okno Microsoft Win32 v subsystému WPF  
@@ -115,7 +115,7 @@ Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spoluprác
   
  Tímto postupem se vytvoří aplikaci, která funguje s vstup z myši. Můžete přidat nezávislým podporu pro vaše prostředí okno implementací <xref:System.Windows.Interop.IKeyboardInputSink> rozhraní.  
   
- Každý z těchto kroků je znázorněn prostřednictvím kódu v tomto tématu [názorný postup: Hostování ovládacího prvku Win32 v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-win32-control-in-wpf.md).  
+ Každý z těchto kroků je znázorněn prostřednictvím kódu v tomto tématu [názorný postup: Hostování ovládacího prvku Win32 v subsystému WPF](walkthrough-hosting-a-win32-control-in-wpf.md).  
   
 ### <a name="hwnds-inside-wpf"></a>Hwnds Inside WPF  
  Můžete si představit <xref:System.Windows.Interop.HwndHost> jako speciální ovládací prvek. (Technicky vzato <xref:System.Windows.Interop.HwndHost> je <xref:System.Windows.FrameworkElement> odvozené třídy, ne <xref:System.Windows.Controls.Control> odvozené třídy, ale jeho vzít v úvahu ovládací prvek pro účely vzájemná spolupráce grafického subsystému.) <xref:System.Windows.Interop.HwndHost> abstrahuje základní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] povaze hostovaný obsah tak, aby zbývající část [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] bere v úvahu hostovaný obsah bude jiný ovládací prvek jako objekt, který by měl vykreslení a zpracování vstupu. <xref:System.Windows.Interop.HwndHost> Obecně se chová stejně jako jakýkoli jiný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.FrameworkElement>, i když jsou některé důležité rozdíly kolem výstup (pro vykreslování a grafiku) a vstup (myš a klávesnici) podle omezení jaké základní HWND může podporovat.  
@@ -160,5 +160,5 @@ Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spoluprác
 - <xref:System.Windows.Interop.HwndHost>
 - <xref:System.Windows.Interop.HwndSource>
 - <xref:System.Windows.Interop>
-- [Návod: Hostování ovládacího prvku Win32 v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-win32-control-in-wpf.md)
-- [Návod: Hostování obsahu WPF v Win32](../../../../docs/framework/wpf/advanced/walkthrough-hosting-wpf-content-in-win32.md)
+- [Návod: Hostování ovládacího prvku Win32 v subsystému WPF](walkthrough-hosting-a-win32-control-in-wpf.md)
+- [Návod: Hostování obsahu WPF v Win32](walkthrough-hosting-wpf-content-in-win32.md)

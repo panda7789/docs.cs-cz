@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 1b69a3385743e948dd52dee75be2f975066c5f85
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3cc3b0258381b10c27dd58bee66dbb6b2cf5b2c8
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54542597"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57351083"
 ---
 # <a name="dacpgetmoduleaddressrequest-method"></a>DacpGetModuleAddress::Request – metoda
 
@@ -36,9 +36,10 @@ HRESULT Request(
 );
 ```
 
-### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
-`pDataModule` [in] Ukazatel na data modulu počáteční hodnoty.
+`pDataModule`\
+[in] Ukazatel na data modulu počáteční hodnoty.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -56,5 +57,5 @@ Tato struktura se nachází uvnitř modulu runtime a není dostupná záhlaví n
 
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [DacpGetModuleAddress Interface](../../../../docs/framework/unmanaged-api/debugging/dacpgetmoduleaddress-structure.md)
+- [Ladění](index.md)
+- [DacpGetModuleAddress Interface](dacpgetmoduleaddress-structure.md)

@@ -8,17 +8,17 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - visual styles [Windows Forms]
 ms.assetid: 95de9b9c-d804-405c-b2d1-49a88c1e0fe1
-ms.openlocfilehash: 03ac17816e071299307c03ffebb363fe0ddde9c7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9588a2e2d839af43ffe4397303c4a45cad5af2e5
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54616183"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371915"
 ---
 # <a name="how-to-enable-visual-styles-in-a-hybrid-application"></a>Postupy: Povolení vizuálních stylů v hybridní aplikaci
 Toto téma ukazuje, jak povolit [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] styly vizuál na [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] konání ovládacího prvku [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace založené na.  
   
- Pokud vaše aplikace volá <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> metoda, většina vašich [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky budou automaticky používat vizuální styly, když vaše aplikace běží na [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]. Další informace najdete v tématu [vykreslování ovládacích prvků s vizuálními styly](../../../../docs/framework/winforms/controls/rendering-controls-with-visual-styles.md).  
+ Pokud vaše aplikace volá <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> metoda, většina vašich [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky budou automaticky používat vizuální styly, když vaše aplikace běží na [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]. Další informace najdete v tématu [vykreslování ovládacích prvků s vizuálními styly](../../winforms/controls/rendering-controls-with-visual-styles.md).  
   
  Výpis úplného kódu úkoly uvedené v tomto tématu, naleznete v tématu [povolení vizuálních stylů v hybridní aplikace ukázku](https://go.microsoft.com/fwlink/?LinkID=159986).  
   
@@ -46,8 +46,8 @@ Toto téma ukazuje, jak povolit [!INCLUDE[TLA#tla_winxp](../../../../includes/tl
   
 8.  V souboru MainWindow.xaml.vb nebo MainWindow.xaml.cs, vložte následující kód pro zpracování <xref:System.Windows.FrameworkElement.Loaded> událostí.  
   
-     [!code-csharp[HostingWfWithVisualStyles#11](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HostingWfWithVisualStyles/CSharp/HostingWfWithVisualStyles/Window1.xaml.cs#11)]
-     [!code-vb[HostingWfWithVisualStyles#11](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HostingWfWithVisualStyles/VisualBasic/HostingWfWithVisualStyles/Window1.xaml.vb#11)]  
+     [!code-csharp[HostingWfWithVisualStyles#11](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWfWithVisualStyles/CSharp/HostingWfWithVisualStyles/Window1.xaml.cs#11)]
+     [!code-vb[HostingWfWithVisualStyles#11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HostingWfWithVisualStyles/VisualBasic/HostingWfWithVisualStyles/Window1.xaml.vb#11)]  
   
 9. Stisknutím klávesy F5 sestavte a spusťte aplikaci.  
   
@@ -70,5 +70,5 @@ Toto téma ukazuje, jak povolit [!INCLUDE[TLA#tla_winxp](../../../../includes/tl
 - <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>
 - <xref:System.Windows.Forms.VisualStyles>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Vykreslování ovládacích prvků s vizuálními styly](../../../../docs/framework/winforms/controls/rendering-controls-with-visual-styles.md)
-- [Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)
+- [Vykreslování ovládacích prvků s vizuálními styly](../../winforms/controls/rendering-controls-with-visual-styles.md)
+- [Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-control-in-wpf.md)

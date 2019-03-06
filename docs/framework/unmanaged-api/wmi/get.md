@@ -16,21 +16,22 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e996a299de7b365a1513d5b1fb7ca0e758f6005b
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 7534d760f902f80d42c6c20c57a34d52012997a7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56966057"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57369653"
 ---
 # <a name="get-function"></a>Get – funkce
+
 Načte hodnotu zadané vlastnosti, pokud existuje.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
-## <a name="syntax"></a>Syntaxe  
-  
-```  
+
+## <a name="syntax"></a>Syntaxe
+
+```
 HRESULT Get (
    [in] int               vFunc, 
    [in] IWbemClassObject* ptr, 
@@ -40,26 +41,30 @@ HRESULT Get (
    [out] CIMTYPE*         pvtType,
    [out] LONG*            plFlavor
 ); 
-```  
+```
 
 ## <a name="parameters"></a>Parametry
 
-`vFunc`  
+`vFunc`\
 [in] Tento parametr se nepoužívá.
 
-`ptr`  
+`ptr`\
 [in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
-`wszName`  
+`wszName`\
 [in] Název vlastnosti.
 
-`lFlags` [in] Vyhrazená. Tento parametr musí být 0.
+`lFlags`\
+[in] Vyhrazená. Tento parametr musí být 0.
 
-`pVal` [out] Pokud funkce vrátí úspěšně, obsahuje hodnotu `wszName` vlastnost. `pval` Argument je přiřazena správný typ a hodnota pro kvalifikátor.
+`pVal`\
+[out] Pokud funkce vrátí úspěšně, obsahuje hodnotu `wszName` vlastnost. `pval` Argument je přiřazena správný typ a hodnota pro kvalifikátor.
 
-`pvtType` [out] Pokud funkce vrátí úspěšně, obsahuje [konstantní typ modelu CIM](/windows/desktop/api/wbemcli/ne-wbemcli-tag_cimtype_enumeration) , který určuje typ vlastnosti. Jeho hodnota může být také `null`. 
+`pvtType`\
+[out] Pokud funkce vrátí úspěšně, obsahuje [konstantní typ modelu CIM](/windows/desktop/api/wbemcli/ne-wbemcli-tag_cimtype_enumeration) , který určuje typ vlastnosti. Jeho hodnota může být také `null`. 
 
-`plFlavor` [out] Pokud funkce vrátí úspěšně, obdrží informace o původu vlastnosti. Jeho hodnota může být `null`, nebo jednu z následujících konstant WBEM_FLAVOR_TYPE definované v *WbemCli.h* hlavičkový soubor: 
+`plFlavor`\
+[out] Pokud funkce vrátí úspěšně, obdrží informace o původu vlastnosti. Jeho hodnota může být `null`, nebo jednu z následujících konstant WBEM_FLAVOR_TYPE definované v *WbemCli.h* hlavičkový soubor: 
 
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
@@ -78,7 +83,7 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hl
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná vlastnost nebyla nalezena. |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná.  |
-  
+
 ## <a name="remarks"></a>Poznámky
 
 Tato funkce zalamuje volání na [IWbemClassObject::Get](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-get) metody.
@@ -87,12 +92,14 @@ Tato funkce zalamuje volání na [IWbemClassObject::Get](/windows/desktop/api/wb
 
 `pVal` Argument je přiřazena správný typ a hodnota pro kvalifikátor a modelu COM [VariantInit](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit) – funkce
 
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** WMINet_Utils.idl  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+## <a name="requirements"></a>Požadavky
+
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+ **Záhlaví:** WMINet_Utils.idl
+
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

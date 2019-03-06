@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DataGrid [WPF], group
 - DataGrid [WPF], filter
 ms.assetid: 03345e85-89e3-4aec-9ed0-3b80759df770
-ms.openlocfilehash: f0f80afd982092248bc52590e072c92784dbcbce
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 81fdb0a6d5602f612c55d7e790ca9a0fe56c144e
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54650454"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57365045"
 ---
 # <a name="how-to-group-sort-and-filter-data-in-the-datagrid-control"></a>Postupy: Seskupení, řazení a filtrování dat v ovládacím prvku DataGrid
 
@@ -24,7 +24,7 @@ ms.locfileid: "54650454"
 
 V tomto příkladu kolekce `Task` objektům svázaným s <xref:System.Windows.Data.CollectionViewSource>. <xref:System.Windows.Data.CollectionViewSource> Slouží jako <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> pro <xref:System.Windows.Controls.DataGrid>. Seskupení, řazení a filtrování se provádí na <xref:System.Windows.Data.CollectionViewSource> a jsou zobrazeny v <xref:System.Windows.Controls.DataGrid> uživatelského rozhraní.
 
-![Seskupená data do ovládacího prvku DataGrid](./media/wpf-datagridgroups.png "WPF_DataGridGroups") seskupená data do ovládacího prvku DataGrid
+![Seskupená data do ovládacího prvku DataGrid](././media/wpf-datagridgroups.png "WPF_DataGridGroups") seskupená data do ovládacího prvku DataGrid
 
 ## <a name="using-a-collectionviewsource-as-an-itemssource"></a>Pomocí kolekce CollectionViewSource jako vlastnost ItemsSource.
 
@@ -42,9 +42,9 @@ Pro seskupení, řazení a filtrování dat v <xref:System.Windows.Controls.Data
     [!code-csharp[DataGrid_GroupSortFilter#101](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#101)]
     [!code-vb[DataGrid_GroupSortFilter#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#101)]
 
-2. V XAML, vytvoření instance třídy kolekce a nastavte [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md).
+2. V XAML, vytvoření instance třídy kolekce a nastavte [x: Key – direktiva](../../xaml-services/x-key-directive.md).
 
-3. V XAML, vytvořte instanci <xref:System.Windows.Data.CollectionViewSource> třídy, nastavte [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md)a nastavte instance třídy kolekce jako <xref:System.Windows.Data.CollectionViewSource.Source%2A>.
+3. V XAML, vytvořte instanci <xref:System.Windows.Data.CollectionViewSource> třídy, nastavte [x: Key – direktiva](../../xaml-services/x-key-directive.md)a nastavte instance třídy kolekce jako <xref:System.Windows.Data.CollectionViewSource.Source%2A>.
 
     [!code-xaml[DataGrid_GroupSortFilter#201](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/WindowSnips1.xaml#201)]
 

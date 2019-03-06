@@ -7,34 +7,34 @@ helpviewer_keywords:
 - Imaging API [WPF]
 - images [WPF], how-to topics
 ms.assetid: 96834ee4-a5fc-4dd0-9948-b9bbc9437a5c
-ms.openlocfilehash: 872eb510e3e85046818987fc6aaf761fca21b320
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 80659117ab96a6bdb9a9536d3eba47d13a2c395f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493609"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57359533"
 ---
 # <a name="imaging-how-to-topics"></a>Postupy: Témata obrázků
 Témata v této části ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aby bylo možné zobrazit nebo změnit bitmapové obrázky.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Použití BitmapImage v jazyku XAML](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-a-bitmapimage.md)  
- [Načtení obrázku jako miniatury](../../../../docs/framework/wpf/graphics-multimedia/how-to-load-an-image-as-a-thumbnail.md)  
- [Použití transformace na bitmapu](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-transform-to-a-bitmapimage.md)  
- [Vytvoření bitmapy z vizuálního objektu](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-bitmap-from-a-visual.md)  
- [Kódování vizuálního objektu na soubor obrázku](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-a-visual-to-an-image-file.md)  
- [Vytvoření nového objektu BitmapSource](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-new-bitmapsource.md)  
- [Vzájemné zřetězení objektů BitmapSource](../../../../docs/framework/wpf/graphics-multimedia/how-to-chain-bitmapsource-objects-together.md)  
- [Převod BitmapSource do jiného formátu PixelFormat](../../../../docs/framework/wpf/graphics-multimedia/how-to-convert-a-bitmapsource-to-a-different-pixelformat.md)  
- [Převod BitmapSource do formátu indexovaných pixelů](../../../../docs/framework/wpf/graphics-multimedia/how-to-convert-a-bitmapsource-to-an-indexed-pixel-format.md)  
- [Kódování a dekódování obrázku JPEG](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-jpeg-image.md)  
- [Kódování a dekódování obrázku BMP](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-bmp-image.md)  
- [Kódování a dekódování obrázku PNG](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-png-image.md)  
- [Kódování a dekódování obrázku WDP](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-wdp-image.md)  
- [Kódování a dekódování obrázku GIF](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-gif-image.md)  
- [Kódování a dekódování obrázku TIFF](../../../../docs/framework/wpf/graphics-multimedia/how-to-encode-and-decode-a-tiff-image.md)  
- [Zápis metadat do bitmapy](../../../../docs/framework/wpf/graphics-multimedia/how-to-write-metadata-to-a-bitmap.md)  
- [Čtení metadat z bitmapy](../../../../docs/framework/wpf/graphics-multimedia/how-to-read-metadata-from-a-bitmap.md)  
+ [Použití BitmapImage v jazyku XAML](how-to-use-a-bitmapimage.md)  
+ [Načtení obrázku jako miniatury](how-to-load-an-image-as-a-thumbnail.md)  
+ [Použití transformace na bitmapu](how-to-apply-a-transform-to-a-bitmapimage.md)  
+ [Vytvoření bitmapy z vizuálního objektu](how-to-create-a-bitmap-from-a-visual.md)  
+ [Kódování vizuálního objektu na soubor obrázku](how-to-encode-a-visual-to-an-image-file.md)  
+ [Vytvoření nového objektu BitmapSource](how-to-create-a-new-bitmapsource.md)  
+ [Vzájemné zřetězení objektů BitmapSource](how-to-chain-bitmapsource-objects-together.md)  
+ [Převod BitmapSource do jiného formátu PixelFormat](how-to-convert-a-bitmapsource-to-a-different-pixelformat.md)  
+ [Převod BitmapSource do formátu indexovaných pixelů](how-to-convert-a-bitmapsource-to-an-indexed-pixel-format.md)  
+ [Kódování a dekódování obrázku JPEG](how-to-encode-and-decode-a-jpeg-image.md)  
+ [Kódování a dekódování obrázku BMP](how-to-encode-and-decode-a-bmp-image.md)  
+ [Kódování a dekódování obrázku PNG](how-to-encode-and-decode-a-png-image.md)  
+ [Kódování a dekódování obrázku WDP](how-to-encode-and-decode-a-wdp-image.md)  
+ [Kódování a dekódování obrázku GIF](how-to-encode-and-decode-a-gif-image.md)  
+ [Kódování a dekódování obrázku TIFF](how-to-encode-and-decode-a-tiff-image.md)  
+ [Zápis metadat do bitmapy](how-to-write-metadata-to-a-bitmap.md)  
+ [Čtení metadat z bitmapy](how-to-read-metadata-from-a-bitmap.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Image>  
@@ -44,4 +44,4 @@ Témata v této části ukazují, jak používat [!INCLUDE[TLA#tla_winclient](..
  <xref:System.Windows.Media.Imaging.BitmapSource>  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
+- [Přehled obrázků](imaging-overview.md)

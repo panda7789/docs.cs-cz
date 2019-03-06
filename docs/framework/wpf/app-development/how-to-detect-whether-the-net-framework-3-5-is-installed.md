@@ -7,18 +7,18 @@ helpviewer_keywords:
 - detecting whether.NET Framework 3.5 is installed [WPF]
 - determining whether.NET Framework 3.5 is installed [WPF]
 ms.assetid: 8556a9d2-1eb8-48ef-919c-5baf22a2a9a2
-ms.openlocfilehash: cbdac46a52ae92ec7a8f6fb819a3da54ddccce7b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2f3e3077f78aed90f4e213d61267131019664fdb
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54636407"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57378762"
 ---
 # <a name="how-to-detect-whether-the-net-framework-35-is-installed"></a>Postupy: Zjištění, jestli je nainstalované rozhraní .NET Framework 3.5
 Správci mohli nasadit aplikace Windows Presentation Foundation (WPF) v systému, který se zaměřuje [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)], se musí nejdřív ověřit, která [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] modul runtime je k dispozici. Toto téma obsahuje skript napsané v HTML/JavaScript, která správcům umožňuje určit, zda [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] je k dispozici v systému.  
   
 > [!NOTE]
->  Podrobné informace o instalaci, nasazení a zjištění [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], naleznete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../../../docs/framework/install/guide-for-developers.md).  
+>  Podrobné informace o instalaci, nasazení a zjištění [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], naleznete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../install/guide-for-developers.md).  
   
 ## <a name="example"></a>Příklad  
  Když [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] je nainstalovaný, MSI přidá ".NET CLR" a číslo verze na řetězec UserAgent. Následující příklad ukazuje skript součástí jednoduché stránky HTML. Skript hledá řetězec UserAgent k určení, zda [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] je nainstalována a stavovou zprávu se zobrazí ve výsledcích hledání.  
@@ -129,4 +129,4 @@ Správci mohli nasadit aplikace Windows Presentation Foundation (WPF) v systému
  `This machine's userAgent string is: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 1.1.4322; InfoPath.2; .NET CLR 3.0.590; MS-RTC LM 8).`  
   
 ## <a name="see-also"></a>Viz také:
-- [Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)
+- [Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0](how-to-detect-whether-the-net-framework-3-0-is-installed.md)

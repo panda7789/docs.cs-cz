@@ -9,12 +9,12 @@ helpviewer_keywords:
 - ', '
 - flow documents [WPF]
 ms.assetid: ef236a50-d44f-43c8-ba7c-82b0c733c0b7
-ms.openlocfilehash: 34bab81f10b52829558e9a44c6bd4e1ed6c0fdbe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a396bede9e0004c9f0681e3399af95f31592a0b0
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648505"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57361405"
 ---
 # <a name="flow-document-overview"></a>Přehled toku dokumentů
 Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumenty toku místo nastavování jedno předdefinované rozložení dynamicky upravit a přeformátování jejich obsah na základě proměnných za běhu, jako je například velikost okna, rozlišení zařízení a volitelné uživatelských předvoleb. Kromě toho nabízejí dokumenty toku dokumentu pokročilé funkce, jako je stránkování a sloupce. Toto téma obsahuje přehled toku dokumentů a postupy jejich vytvoření.  
@@ -23,22 +23,22 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
 <a name="what_is_a_flow_document"></a>   
 ## <a name="what-is-a-flow-document"></a>Co je dokument Flow  
- Plovoucí dokument je určen k "přeformátování obsah" v závislosti na velikosti okna, rozlišení zařízení i ostatním proměnným prostředí. Kromě toho mají dokumenty toku počet integrované funkce, včetně vyhledávání, zobrazování režimy, které optimalizují čitelnost a umožňuje změnit velikost a vzhled písma. Dokumenty toku se co nejlépe využít v případě snadné čtení je scénář využití primární dokumentu. Naproti tomu pevné dokumenty by mít statické prezentace. Oprava dokumentů jsou užitečné, pokud je základní přesné zdrojový obsah. Zobrazit [dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md) Další informace o různých typů dokumentů.  
+ Plovoucí dokument je určen k "přeformátování obsah" v závislosti na velikosti okna, rozlišení zařízení i ostatním proměnným prostředí. Kromě toho mají dokumenty toku počet integrované funkce, včetně vyhledávání, zobrazování režimy, které optimalizují čitelnost a umožňuje změnit velikost a vzhled písma. Dokumenty toku se co nejlépe využít v případě snadné čtení je scénář využití primární dokumentu. Naproti tomu pevné dokumenty by mít statické prezentace. Oprava dokumentů jsou užitečné, pokud je základní přesné zdrojový obsah. Zobrazit [dokumenty v platformě WPF](documents-in-wpf.md) Další informace o různých typů dokumentů.  
   
  Následující obrázek znázorňuje tok ukázkový dokument zobrazit v několika oknech různých velikostí. Jako zobrazovanou oblast změní, obsah přeteče co nejlíp využít volného místa.  
   
- ![Tok obsahu dokumentu s přeskupením](../../../../docs/framework/wpf/advanced/media/edocs-flowdocument.png "eDocs_FlowDocument")  
+ ![Tok obsahu dokumentu s přeskupením](./media/edocs-flowdocument.png "eDocs_FlowDocument")  
   
  Jak je vidět na obrázku výše, plovoucího obsahu může obsahovat mnoho komponent včetně odstavce, seznamy, obrázků a dalších. Tyto součásti odpovídají elementy v kódu a objekty v kódu procedury. Můžeme se přenášejí prostřednictvím těchto tříd podrobně později v [tok související třídy](#flow_related_classes) části tohoto přehledu. Teď tady je příklad jednoduchého kódu, který vytvoří dokument tok skládající se z odstavec s nějaký tučný text a seznam.
   
- [!code-xaml[FlowOvwSnippets_snip#SimpleFlowExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/SimpleFlowExample.xaml#simpleflowexamplewholepage)]  
+ [!code-xaml[FlowOvwSnippets_snip#SimpleFlowExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/SimpleFlowExample.xaml#simpleflowexamplewholepage)]  
   
- [!code-csharp[FlowOvwSnippets_procedural_snip#SimpleFlowCodeOnlyExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/CSharp/SimpleFlowExample.cs#simpleflowcodeonlyexamplewholepage)]
- [!code-vb[FlowOvwSnippets_procedural_snip#SimpleFlowCodeOnlyExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/VisualBasic/SimpleFlowExample.vb#simpleflowcodeonlyexamplewholepage)]  
+ [!code-csharp[FlowOvwSnippets_procedural_snip#SimpleFlowCodeOnlyExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/CSharp/SimpleFlowExample.cs#simpleflowcodeonlyexamplewholepage)]
+ [!code-vb[FlowOvwSnippets_procedural_snip#SimpleFlowCodeOnlyExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/VisualBasic/SimpleFlowExample.vb#simpleflowcodeonlyexamplewholepage)]  
   
  Na obrázku níže ukazuje, jak vypadá tento fragment kódu.  
   
- ![Snímek obrazovky: Příklad FlowDocument vykresleného](../../../../docs/framework/wpf/advanced/media/flow-ovw-first-example.png "Flow_Ovw_First_Example")  
+ ![Snímek obrazovky: Příklad FlowDocument vykresleného](./media/flow-ovw-first-example.png "Flow_Ovw_First_Example")  
   
  V tomto příkladu <xref:System.Windows.Controls.FlowDocumentReader> ovládací prvek slouží jako hostitel plovoucího obsahu. V tématu [typů dokumentů tok](#flow_document_types) Další informace o hostování ovládacích prvků plovoucího obsahu. <xref:System.Windows.Documents.Paragraph>, <xref:System.Windows.Documents.List>, <xref:System.Windows.Documents.ListItem>, a <xref:System.Windows.Documents.Bold> elementy se používají k řízení formátování obsahu na základě jejich pořadí v kódu. Například <xref:System.Windows.Documents.Bold> element zabírá pouze část textu v odstavci; v důsledku toho je tučný pouze část textu. Pokud jste použili HTML, bude povědomé.  
   
@@ -58,7 +58,7 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
 ## <a name="flow-document-types"></a>Typy dokumentů toku  
  Zobrazení obsahu dokumentu toku a jak se zobrazuje je závislá na objekt slouží jako hostitel plovoucího obsahu. Existují čtyři ovládací prvky, které podporují prohlížení plovoucího obsahu: <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentPageViewer>, <xref:System.Windows.Controls.RichTextBox>, a <xref:System.Windows.Controls.FlowDocumentScrollViewer>. Tyto ovládací prvky jsou popsány níže.  
   
- **Poznámka:** <xref:System.Windows.Documents.FlowDocument> je potřeba přímo hostitele plovoucího obsahu, tak všechny tyto ovládací prvky zobrazení využití <xref:System.Windows.Documents.FlowDocument> povolit tok obsahu hostování.  
+ **Poznámka:** <xref:System.Windows.Documents.FlowDocument> je potřeba přímo hostitele plovoucího obsahu, tak všechny tyto ovládací prvky zobrazení využití <xref:System.Windows.Documents.FlowDocument> povolit tok obsahu hostování.
   
 ### <a name="flowdocumentreader"></a>FlowDocumentReader  
  <xref:System.Windows.Controls.FlowDocumentReader> obsahuje funkce, které uživateli umožňuje dynamicky vybrat mezi různých režimů zobrazení, včetně zobrazení (stránka na-time) jednostránkové režimu, dvě--na stránkách (formát čtení adresáře) zobrazení režimu a režimu kontinuálního rolování (neomezené) zobrazení. Další informace o těchto režimech zobrazení najdete v tématu <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>. Pokud nepotřebujete umožňuje dynamicky přepnout mezi režimy různých zobrazení <xref:System.Windows.Controls.FlowDocumentPageViewer> a <xref:System.Windows.Controls.FlowDocumentScrollViewer> poskytují nenáročný tok prohlížeče obsahu, které jsou opravené v režimu konkrétní zobrazení.  
@@ -69,7 +69,7 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
  Ve výchozím nastavení je vždy zobrazen svislý posuvník a vodorovný posuvník se zobrazí v případě potřeby. Výchozí uživatelské rozhraní pro <xref:System.Windows.Controls.FlowDocumentScrollViewer> nezahrnuje panel nástrojů, nicméně <xref:System.Windows.Controls.FlowDocumentScrollViewer.IsToolBarVisible%2A> vlastnost slouží k povolení integrovaných nástrojů.  
   
 ### <a name="richtextbox"></a>RichTextBox  
- Můžete použít <xref:System.Windows.Controls.RichTextBox> Pokud chcete povolit uživatelům upravit obsah toku. Například Kdybyste chtěli vytvořit editor, který povolené uživatele k manipulaci s věci, jako jsou tabulky, kurzíva a bold formátování a další, můžete využít <xref:System.Windows.Controls.RichTextBox>. Zobrazit [RichTextBox – přehled](../../../../docs/framework/wpf/controls/richtextbox-overview.md) Další informace.  
+ Můžete použít <xref:System.Windows.Controls.RichTextBox> Pokud chcete povolit uživatelům upravit obsah toku. Například Kdybyste chtěli vytvořit editor, který povolené uživatele k manipulaci s věci, jako jsou tabulky, kurzíva a bold formátování a další, můžete využít <xref:System.Windows.Controls.RichTextBox>. Zobrazit [RichTextBox – přehled](../controls/richtextbox-overview.md) Další informace.  
   
  **Poznámka:** Obsah uvnitř toku <xref:System.Windows.Controls.RichTextBox> nechová stejně jako plovoucího obsahu obsažené v jiných ovládacích prvků. Například neexistují žádné sloupce v <xref:System.Windows.Controls.RichTextBox> a proto žádná automatická změna velikosti chování. Kromě toho nejsou k dispozici v rámci obvykle integrovaných funkcí plovoucího obsahu, jako je hledání, zobrazení, navigaci na stránce a přiblížení <xref:System.Windows.Controls.RichTextBox>.  
   
@@ -87,7 +87,7 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
 ## <a name="flow-related-classes"></a>Tok související třídy  
  Následující diagram znázorňuje objekty nejčastěji používané s plovoucího obsahu:  
   
- ![Diagram: Tok obsahu elementu hierarchie tříd](../../../../docs/framework/wpf/advanced/media/flow-class-hierarchy.png "Flow_Class_Hierarchy")  
+ ![Diagram: Tok obsahu elementu hierarchie tříd](./media/flow-class-hierarchy.png "Flow_Class_Hierarchy")  
   
  Pro účely obsah toku existují dvě důležité kategorie:  
   
@@ -102,10 +102,10 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  <xref:System.Windows.Documents.Paragraph> obvykle slouží k seskupení obsahu do odstavce. Nejjednodušším a nejběžnějším užívání odstavec je vytvoření odstavci textu.  
   
- [!code-xaml[FlowOvwSnippets_snip#ParagraphExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/ParagraphExample.xaml#paragraphexamplewholepage)]  
+ [!code-xaml[FlowOvwSnippets_snip#ParagraphExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/ParagraphExample.xaml#paragraphexamplewholepage)]  
   
- [!code-csharp[FlowOvwSnippets_procedural_snip#ParagraphCodeOnlyExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/CSharp/ParagraphExample.cs#paragraphcodeonlyexamplewholepage)]
- [!code-vb[FlowOvwSnippets_procedural_snip#ParagraphCodeOnlyExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/VisualBasic/ParagraphExample.vb#paragraphcodeonlyexamplewholepage)]  
+ [!code-csharp[FlowOvwSnippets_procedural_snip#ParagraphCodeOnlyExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/CSharp/ParagraphExample.cs#paragraphcodeonlyexamplewholepage)]
+ [!code-vb[FlowOvwSnippets_procedural_snip#ParagraphCodeOnlyExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/VisualBasic/ParagraphExample.vb#paragraphcodeonlyexamplewholepage)]  
   
  Jak vidíte níže, ale může obsahovat také další elementy odvozené vložené. 
   
@@ -115,10 +115,10 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  V následujícím příkladu jsou definovány tři odstavce v rámci jednoho <xref:System.Windows.Documents.Section>. Oddíl má <xref:System.Windows.Documents.TextElement.Background%2A> hodnota vlastnosti červené, tedy barvu pozadí odstavců je také červené.  
   
- [!code-xaml[FlowOvwSnippets_snip#SectionExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/SectionExample.xaml#sectionexamplewholepage)]  
+ [!code-xaml[FlowOvwSnippets_snip#SectionExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/SectionExample.xaml#sectionexamplewholepage)]  
   
- [!code-csharp[FlowOvwSnippets_procedural_snip#SectionCodeOnlyExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/CSharp/SectionExample.cs#sectioncodeonlyexamplewholepage)]
- [!code-vb[FlowOvwSnippets_procedural_snip#SectionCodeOnlyExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/VisualBasic/SectionExample.vb#sectioncodeonlyexamplewholepage)]  
+ [!code-csharp[FlowOvwSnippets_procedural_snip#SectionCodeOnlyExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/CSharp/SectionExample.cs#sectioncodeonlyexamplewholepage)]
+ [!code-vb[FlowOvwSnippets_procedural_snip#SectionCodeOnlyExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/VisualBasic/SectionExample.vb#sectioncodeonlyexamplewholepage)]  
   
  **BlockUIContainer**  
   
@@ -126,33 +126,33 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  Následující příklad ukazuje způsob použití <xref:System.Windows.Documents.BlockUIContainer> prvek hostitele <xref:System.Windows.UIElement> objektů v rámci plovoucího obsahu.  
   
- [!code-xaml[SpanSnippets#_BlockUIXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml#_blockuixaml)]  
+ [!code-xaml[SpanSnippets#_BlockUIXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml#_blockuixaml)]  
   
  Následující obrázek ukazuje, jak se vykreslí v tomto příkladu.  
   
- ![Snímek obrazovky: UIElement součástí plovoucího obsahu](../../../../docs/framework/wpf/advanced/media/blockuicontainer.png "BlockUIContainer")  
+ ![Snímek obrazovky: UIElement součástí plovoucího obsahu](./media/blockuicontainer.png "BlockUIContainer")  
   
  **Seznam**  
   
  <xref:System.Windows.Documents.List> slouží k vytvoření seznamu s odrážkami nebo číselné. Nastavte <xref:System.Windows.Documents.List.MarkerStyle%2A> vlastnost <xref:System.Windows.TextMarkerStyle> hodnotu výčtu pro určení stylu ze seznamu. Následující příklad ukazuje, jak vytvořit jednoduchý seznam.  
   
- [!code-xaml[FlowOvwSnippets_snip#ListExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/ListExample.xaml#listexamplewholepage)]  
+ [!code-xaml[FlowOvwSnippets_snip#ListExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/ListExample.xaml#listexamplewholepage)]  
   
- [!code-csharp[FlowOvwSnippets_procedural_snip#ListCodeOnlyExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/CSharp/ListExample.cs#listcodeonlyexamplewholepage)]
- [!code-vb[FlowOvwSnippets_procedural_snip#ListCodeOnlyExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/VisualBasic/ListExample.vb#listcodeonlyexamplewholepage)]  
+ [!code-csharp[FlowOvwSnippets_procedural_snip#ListCodeOnlyExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/CSharp/ListExample.cs#listcodeonlyexamplewholepage)]
+ [!code-vb[FlowOvwSnippets_procedural_snip#ListCodeOnlyExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/VisualBasic/ListExample.vb#listcodeonlyexamplewholepage)]  
   
  **Poznámka:** <xref:System.Windows.Documents.List> je jediným prvkem tok, který používá <xref:System.Windows.Documents.ListItemCollection> Spravovat podřízené prvky.  
   
  **Tabulka**  
   
- <xref:System.Windows.Documents.Table> slouží k vytvoření tabulky. <xref:System.Windows.Documents.Table> se podobá <xref:System.Windows.Controls.Grid> element, ale je k dispozici další možnosti a proto vyžaduje větší režijní náklady na prostředek. Protože <xref:System.Windows.Controls.Grid> je <xref:System.Windows.UIElement>, tok obsahu jej nelze použít, pokud je obsažen v <xref:System.Windows.Documents.BlockUIContainer> nebo <xref:System.Windows.Documents.InlineUIContainer>. Další informace o <xref:System.Windows.Documents.Table>, naleznete v tématu [Přehled tabulek](../../../../docs/framework/wpf/advanced/table-overview.md).  
+ <xref:System.Windows.Documents.Table> slouží k vytvoření tabulky. <xref:System.Windows.Documents.Table> se podobá <xref:System.Windows.Controls.Grid> element, ale je k dispozici další možnosti a proto vyžaduje větší režijní náklady na prostředek. Protože <xref:System.Windows.Controls.Grid> je <xref:System.Windows.UIElement>, tok obsahu jej nelze použít, pokud je obsažen v <xref:System.Windows.Documents.BlockUIContainer> nebo <xref:System.Windows.Documents.InlineUIContainer>. Další informace o <xref:System.Windows.Documents.Table>, naleznete v tématu [Přehled tabulek](table-overview.md).  
   
 ### <a name="inline-derived-classes"></a>Vložené odvozené třídy  
  **Spuštění**  
   
  <xref:System.Windows.Documents.Run> slouží jako neformátovaný text. Očekáváte <xref:System.Windows.Documents.Run> objekty pro rozsáhlé v toku obsahu. Ale v kódu <xref:System.Windows.Documents.Run> prvky nejsou musí být použito explicitně. <xref:System.Windows.Documents.Run> je potřeba použít při vytváření nebo manipulace s dokumenty toku pomocí kódu. Například v kódu níže, první <xref:System.Windows.Documents.Paragraph> Určuje <xref:System.Windows.Documents.Run> element explicitně při druhém nikoli. Oba odstavce generovat výstup identické.  
   
- [!code-xaml[FlowOvwSnippets_snip#RunExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/RunSnippetsExample.xaml#runexample1)]  
+ [!code-xaml[FlowOvwSnippets_snip#RunExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/RunSnippetsExample.xaml#runexample1)]  
   
  **Poznámka:**  Počínaje [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)], <xref:System.Windows.Documents.Run.Text%2A> vlastnost <xref:System.Windows.Documents.Run> objekt je vlastnost závislosti. Můžete vytvořit vazbu <xref:System.Windows.Documents.Run.Text%2A> vlastnost datového zdroje, jako <xref:System.Windows.Controls.TextBlock>. <xref:System.Windows.Documents.Run.Text%2A> Vlastnost plně podporuje jednosměrné vazby. <xref:System.Windows.Documents.Run.Text%2A> Vlastnost také podporuje obousměrnou vazbu, s výjimkou <xref:System.Windows.Controls.RichTextBox>. Příklad naleznete v tématu <xref:System.Windows.Documents.Run.Text%2A?displayProperty=nameWithType>.  
   
@@ -162,20 +162,20 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  Níže je příklad <xref:System.Windows.Documents.Span> používá tak, aby obsahovala vložený obsah, včetně textu, <xref:System.Windows.Documents.Bold> elementu a <xref:System.Windows.Controls.Button>.  
   
- [!code-xaml[FlowOvwSnippets_snip#SpanExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/SpanExample.xaml#spanexamplewholepage)]  
+ [!code-xaml[FlowOvwSnippets_snip#SpanExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/SpanExample.xaml#spanexamplewholepage)]  
   
  Následující snímek obrazovky ukazuje, jak se vykreslí v tomto příkladu.  
   
- ![Snímek obrazovky: Vykreslí značky Span příklad](../../../../docs/framework/wpf/advanced/media/flow-spanexample.gif "Flow_SpanExample")  
+ ![Snímek obrazovky: Vykreslí značky Span příklad](./media/flow-spanexample.gif "Flow_SpanExample")  
   
  **InlineUIContainer**  
   
  <xref:System.Windows.Documents.InlineUIContainer> umožňuje <xref:System.Windows.UIElement> prvky (například ovládací prvek jako <xref:System.Windows.Controls.Button>) mají být vloženy <xref:System.Windows.Documents.Inline> obsahu elementu. Tento element je ekvivalentní vložené <xref:System.Windows.Documents.BlockUIContainer> popsané výše. Tady je příklad, který používá <xref:System.Windows.Documents.InlineUIContainer> k vložení <xref:System.Windows.Controls.Button> vložený v <xref:System.Windows.Documents.Paragraph>.  
   
- [!code-xaml[FlowOvwSnippets_snip#InlineUIContainerExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/InlineUIContainerExample.xaml#inlineuicontainerexamplewholepage)]  
+ [!code-xaml[FlowOvwSnippets_snip#InlineUIContainerExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/InlineUIContainerExample.xaml#inlineuicontainerexamplewholepage)]  
   
- [!code-csharp[FlowOvwSnippets_procedural_snip#InlineUIContainerCodeOnlyExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/CSharp/InlineUIContainerExample.cs#inlineuicontainercodeonlyexamplewholepage)]
- [!code-vb[FlowOvwSnippets_procedural_snip#InlineUIContainerCodeOnlyExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/VisualBasic/InlineUIContainerExample.vb#inlineuicontainercodeonlyexamplewholepage)]  
+ [!code-csharp[FlowOvwSnippets_procedural_snip#InlineUIContainerCodeOnlyExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/CSharp/InlineUIContainerExample.cs#inlineuicontainercodeonlyexamplewholepage)]
+ [!code-vb[FlowOvwSnippets_procedural_snip#InlineUIContainerCodeOnlyExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/VisualBasic/InlineUIContainerExample.vb#inlineuicontainercodeonlyexamplewholepage)]  
   
  **Poznámka:** <xref:System.Windows.Documents.InlineUIContainer> není potřeba explicitně použít v kódu. Pokud vynecháte, <xref:System.Windows.Documents.InlineUIContainer> bude vytvořeno při kompilaci kódu.  
   
@@ -185,14 +185,14 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  Následující příklad ukazuje postup vložení <xref:System.Windows.Documents.Figure> do textu odstavce.  
   
- [!code-xaml[FlowOvwSnippets_snip#FigureExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/FigureExample.xaml#figureexamplewholepage)]  
+ [!code-xaml[FlowOvwSnippets_snip#FigureExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/FigureExample.xaml#figureexamplewholepage)]  
   
- [!code-csharp[FlowOvwSnippets_procedural_snip#FigureCodeOnlyExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/CSharp/FigureExample.cs#figurecodeonlyexamplewholepage)]
- [!code-vb[FlowOvwSnippets_procedural_snip#FigureCodeOnlyExampleWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/VisualBasic/FigureExample.vb#figurecodeonlyexamplewholepage)]  
+ [!code-csharp[FlowOvwSnippets_procedural_snip#FigureCodeOnlyExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/CSharp/FigureExample.cs#figurecodeonlyexamplewholepage)]
+ [!code-vb[FlowOvwSnippets_procedural_snip#FigureCodeOnlyExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowOvwSnippets_procedural_snip/VisualBasic/FigureExample.vb#figurecodeonlyexamplewholepage)]  
   
  Následující obrázek znázorňuje, jak se vykreslí v tomto příkladu.  
   
- ![Snímek obrazovky: Obrázek příkladu](../../../../docs/framework/wpf/advanced/media/flow-ovw-figure-example.png "Flow_Ovw_Figure_Example")  
+ ![Snímek obrazovky: Obrázek příkladu](./media/flow-ovw-figure-example.png "Flow_Ovw_Figure_Example")  
   
  <xref:System.Windows.Documents.Figure> a <xref:System.Windows.Documents.Floater> se liší v několika způsoby a používají se pro různé scénáře.  
   
@@ -218,11 +218,11 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  <xref:System.Windows.Documents.LineBreak> způsobí, že konec řádku vyskytuje v plovoucího obsahu. Následující příklad ukazuje použití <xref:System.Windows.Documents.LineBreak>.  
   
- [!code-xaml[FlowOvwSnippets_snip#LineBreakExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/LineBreakExample.xaml#linebreakexamplewholepage)]  
+ [!code-xaml[FlowOvwSnippets_snip#LineBreakExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/LineBreakExample.xaml#linebreakexamplewholepage)]  
   
  Následující snímek obrazovky ukazuje, jak se vykreslí v tomto příkladu.  
   
- ![Snímek obrazovky: Příklad LineBreak](../../../../docs/framework/wpf/advanced/media/flow-ovw-linebreakexample.png "Flow_Ovw_LineBreakExample")  
+ ![Snímek obrazovky: Příklad LineBreak](./media/flow-ovw-linebreakexample.png "Flow_Ovw_LineBreakExample")  
   
 ### <a name="flow-collection-elements"></a>Kolekce elementů toku  
  V mnoha příkladech <xref:System.Windows.Documents.BlockCollection> a <xref:System.Windows.Documents.InlineCollection> se používají k vytvoření obsahu toku prostřednictvím kódu programu. Například pro přidání prvků do <xref:System.Windows.Documents.Paragraph>, můžete použít syntaxi:  
@@ -247,58 +247,58 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  Jako příklad použití <xref:System.Windows.Documents.BlockCollection>, následující příklad vytvoří nový <xref:System.Windows.Documents.Section> a použije je **přidat** způsob, jak přidat nové <xref:System.Windows.Documents.Paragraph> k <xref:System.Windows.Documents.Section> obsah.  
   
- [!code-csharp[FlowDocumentSnippets#_SectionBlocksAdd](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_sectionblocksadd)]
- [!code-vb[FlowDocumentSnippets#_SectionBlocksAdd](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_sectionblocksadd)]  
+ [!code-csharp[FlowDocumentSnippets#_SectionBlocksAdd](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentSnippets/CSharp/Window1.xaml.cs#_sectionblocksadd)]
+ [!code-vb[FlowDocumentSnippets#_SectionBlocksAdd](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentSnippets/visualbasic/window1.xaml.vb#_sectionblocksadd)]  
   
  Kromě přidání položky do kolekce flow, můžete odebrat také položky.  Následující příklad odstraní poslední <xref:System.Windows.Documents.Inline> prvek <xref:System.Windows.Documents.Span>.  
   
- [!code-csharp[SpanSnippets#_SpanInlinesRemoveLast](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_spaninlinesremovelast)]
- [!code-vb[SpanSnippets#_SpanInlinesRemoveLast](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_spaninlinesremovelast)]  
+ [!code-csharp[SpanSnippets#_SpanInlinesRemoveLast](~/samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_spaninlinesremovelast)]
+ [!code-vb[SpanSnippets#_SpanInlinesRemoveLast](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_spaninlinesremovelast)]  
   
  Následující příklad odebere veškerý obsah (<xref:System.Windows.Documents.Inline> elementy) z <xref:System.Windows.Documents.Span>.  
   
- [!code-csharp[SpanSnippets#_SpanInlinesClear](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_spaninlinesclear)]
- [!code-vb[SpanSnippets#_SpanInlinesClear](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_spaninlinesclear)]  
+ [!code-csharp[SpanSnippets#_SpanInlinesClear](~/samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_spaninlinesclear)]
+ [!code-vb[SpanSnippets#_SpanInlinesClear](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_spaninlinesclear)]  
   
  Při práci s plovoucího obsahu prostřednictvím kódu programu, budete pravděpodobně vytvářet rozsáhlé používání těchto kolekcí.  
   
  Určuje, zda prvek flow používá <xref:System.Windows.Documents.InlineCollection> (Inlines) nebo <xref:System.Windows.Documents.BlockCollection> (bloky) tak, aby obsahovala jeho podřízené prvky závisí na typu podřízených elementů (<xref:System.Windows.Documents.Block> nebo <xref:System.Windows.Documents.Inline>) mohou být obsaženy nadřazenou položkou. Pravidla členství ve skupině pro tok obsahu prvky jsou shrnuté v obsahu schématu v další části.  
   
- **Poznámka:** Je třetí typ kolekce použít s plovoucího obsahu <xref:System.Windows.Documents.ListItemCollection>, ale tato kolekce se používá pouze pro <xref:System.Windows.Documents.List>. Kromě toho existuje několik kolekcí použít s <xref:System.Windows.Documents.Table>. Zobrazit [Přehled tabulek](../../../../docs/framework/wpf/advanced/table-overview.md) Další informace.  
+ **Poznámka:** Je třetí typ kolekce použít s plovoucího obsahu <xref:System.Windows.Documents.ListItemCollection>, ale tato kolekce se používá pouze pro <xref:System.Windows.Documents.List>. Kromě toho existuje několik kolekcí použít s <xref:System.Windows.Documents.Table>. Zobrazit [Přehled tabulek](table-overview.md) Další informace.  
   
 <a name="content_schema"></a>   
 ## <a name="content-schema"></a>Schéma obsahu  
  Získá počet elementů obsahu toku jiné, může být náročné udržovat přehled o jaký typ elementu může obsahovat podřízené elementy. Následující diagram obsahuje souhrn pravidla členství ve skupině pro prvky toku. Šipky představují možné nadřazené a podřízené vztahy.  
   
- ![Diagram: Tok obsahu členství ve skupině schématu](../../../../docs/framework/wpf/advanced/media/flow-content-schema.png "Flow_Content_Schema")  
+ ![Diagram: Tok obsahu členství ve skupině schématu](./media/flow-content-schema.png "Flow_Content_Schema")  
   
  Jak je vidět v diagramu výše, podřízené položky pro element povolená nejsou určeny nutně, jestli se jedná <xref:System.Windows.Documents.Block> element nebo <xref:System.Windows.Documents.Inline> elementu. Například <xref:System.Windows.Documents.Span> ( <xref:System.Windows.Documents.Inline> element) může mít pouze <xref:System.Windows.Documents.Inline> podřízené prvky při <xref:System.Windows.Documents.Figure> (také <xref:System.Windows.Documents.Inline> element) může mít pouze <xref:System.Windows.Documents.Block> podřízené prvky. Diagram je proto užitečné k rychlému určení toho, který element mohou být obsaženy v jiném. Jako příklad použijeme diagramu a zjistěte, jak vytvořit tok obsahu <xref:System.Windows.Controls.RichTextBox>.  
   
  **1.** A <xref:System.Windows.Controls.RichTextBox> musí obsahovat <xref:System.Windows.Documents.FlowDocument> zase obsahující <xref:System.Windows.Documents.Block>-odvozenému objektu. Níže je odpovídající segment z výše uvedeném diagramu.  
   
- ![Diagram: Pravidla členství ve skupině RichTextBox](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough1.png "Flow_Ovw_SchemaWalkThrough1")  
+ ![Diagram: Pravidla členství ve skupině RichTextBox](./media/flow-ovw-schemawalkthrough1.png "Flow_Ovw_SchemaWalkThrough1")  
   
  Proto pokud je kód může vypadat.  
   
- [!code-xaml[FlowOvwSnippets_snip#SchemaWalkThrough1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/MiscSnippets.xaml#schemawalkthrough1)]  
+ [!code-xaml[FlowOvwSnippets_snip#SchemaWalkThrough1](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/MiscSnippets.xaml#schemawalkthrough1)]  
   
  **2.** Podle diagramu, existuje několik <xref:System.Windows.Documents.Block> elementy lze vybírat včetně <xref:System.Windows.Documents.Paragraph>, <xref:System.Windows.Documents.Section>, <xref:System.Windows.Documents.Table>, <xref:System.Windows.Documents.List>, a <xref:System.Windows.Documents.BlockUIContainer> (viz bloku odvozené třídy). Řekněme, že chceme, aby <xref:System.Windows.Documents.Table>. Podle diagramu výše <xref:System.Windows.Documents.Table> obsahuje <xref:System.Windows.Documents.TableRowGroup> obsahující <xref:System.Windows.Documents.TableRow> prvky, které obsahují <xref:System.Windows.Documents.TableCell> prvky, které obsahují <xref:System.Windows.Documents.Block>-odvozenému objektu. Níže je odpovídající segmentu pro <xref:System.Windows.Documents.Table> z výše uvedeném diagramu.  
   
- ![Diagram: Nadřazené&#47;podřízené schématu pro tabulku](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough2.png "Flow_Ovw_SchemaWalkThrough2")  
+ ![Diagram: Nadřazené&#47;podřízené schématu pro tabulku](./media/flow-ovw-schemawalkthrough2.png "Flow_Ovw_SchemaWalkThrough2")  
   
  Níže je odpovídající značky.  
   
- [!code-xaml[FlowOvwSnippets_snip#SchemaWalkThrough2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/MiscSnippets.xaml#schemawalkthrough2)]  
+ [!code-xaml[FlowOvwSnippets_snip#SchemaWalkThrough2](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/MiscSnippets.xaml#schemawalkthrough2)]  
   
  **3.** Znovu jeden nebo více <xref:System.Windows.Documents.Block> prvky jsou nutné pod <xref:System.Windows.Documents.TableCell>. Aby byl jednoduchý, Pojďme nějaký text umístíte text do buňky. Můžeme to udělat pomocí <xref:System.Windows.Documents.Paragraph> s <xref:System.Windows.Documents.Run> elementu. Níže je odpovídající segmenty z diagram zobrazující, že <xref:System.Windows.Documents.Paragraph> může trvat <xref:System.Windows.Documents.Inline> elementu a zda <xref:System.Windows.Documents.Run> ( <xref:System.Windows.Documents.Inline> element) jde převzít jenom prostý text.  
   
- ![Diagram: Nadřazené&#47;podřízené schéma pro odstavec](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough3.png "Flow_Ovw_SchemaWalkThrough3")  
+ ![Diagram: Nadřazené&#47;podřízené schéma pro odstavec](./media/flow-ovw-schemawalkthrough3.png "Flow_Ovw_SchemaWalkThrough3")  
   
- ![Diagram: Nadřazené&#47;podřízené schématu pro spuštění](../../../../docs/framework/wpf/advanced/media/flow-ovw-schemawalkthrough4.png "Flow_Ovw_SchemaWalkThrough4")  
+ ![Diagram: Nadřazené&#47;podřízené schématu pro spuštění](./media/flow-ovw-schemawalkthrough4.png "Flow_Ovw_SchemaWalkThrough4")  
   
  Níže je celý příklad v kódu.  
   
- [!code-xaml[FlowOvwSnippets_snip#SchemaExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/SchemaExample.xaml#schemaexamplewholepage)]  
+ [!code-xaml[FlowOvwSnippets_snip#SchemaExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/SchemaExample.xaml#schemaexamplewholepage)]  
   
 <a name="customizing_text"></a>   
 ## <a name="customizing-text"></a>Přizpůsobení textu  
@@ -309,51 +309,51 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  Následující příklad ukazuje, jak nastavit <xref:System.Windows.Documents.Paragraph.TextDecorations%2A> vlastnost <xref:System.Windows.Documents.Paragraph>.  
   
- [!code-xaml[InlineSnippets#_Paragraph_TextDecXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml#_paragraph_textdecxaml)]  
+ [!code-xaml[InlineSnippets#_Paragraph_TextDecXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml#_paragraph_textdecxaml)]  
   
- [!code-csharp[InlineSnippets#_Paragraph_TextDec](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_paragraph_textdec)]
- [!code-vb[InlineSnippets#_Paragraph_TextDec](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_paragraph_textdec)]  
+ [!code-csharp[InlineSnippets#_Paragraph_TextDec](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_paragraph_textdec)]
+ [!code-vb[InlineSnippets#_Paragraph_TextDec](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_paragraph_textdec)]  
   
  Následující obrázek ukazuje, jak se vykreslí v tomto příkladu.  
   
- ![Snímek obrazovky: Text s efektem přeškrtnutí výchozí](../../../../docs/framework/wpf/advanced/media/inline-textdec-strike.png "Inline_TextDec_Strike")  
+ ![Snímek obrazovky: Text s efektem přeškrtnutí výchozí](./media/inline-textdec-strike.png "Inline_TextDec_Strike")  
   
  Následující obrázky zobrazit jak **přeškrtnutí**, **směrného plánu**, a **podtržení** dekorace vykreslení.  
   
- ![Snímek obrazovky: Čára nahoře TextDecorator](../../../../docs/framework/wpf/advanced/media/inline-textdec-over.png "Inline_TextDec_Over")  
+ ![Snímek obrazovky: Čára nahoře TextDecorator](./media/inline-textdec-over.png "Inline_TextDec_Over")  
   
- ![Snímek obrazovky: Výchozí základní vliv na text](../../../../docs/framework/wpf/advanced/media/inline-textdec-base.png "Inline_TextDec_Base")  
+ ![Snímek obrazovky: Výchozí základní vliv na text](./media/inline-textdec-base.png "Inline_TextDec_Base")  
   
- ![Snímek obrazovky: Text s efektem podtržení výchozí](../../../../docs/framework/wpf/advanced/media/inline-textdec-under.png "Inline_TextDec_Under")  
+ ![Snímek obrazovky: Text s efektem podtržení výchozí](./media/inline-textdec-under.png "Inline_TextDec_Under")  
   
 ### <a name="typography"></a>Typografie  
  <xref:System.Windows.Documents.TextElement.Typography%2A> Vlastnost je zveřejněný prostřednictvím většina související tok obsahu včetně <xref:System.Windows.Documents.TextElement>, <xref:System.Windows.Documents.FlowDocument>, <xref:System.Windows.Controls.TextBlock>, a <xref:System.Windows.Controls.TextBox>. Tato vlastnost se používá k řízení zkrácené typografické vlastnosti/variace textu (tj malé nebo velké písmena, což horních a dolních indexů atd).  
   
  Následující příklad ukazuje, jak nastavit <xref:System.Windows.Documents.TextElement.Typography%2A> atribut, pomocí <xref:System.Windows.Documents.Paragraph> jako příklad elementu.  
   
- [!code-xaml[TextElementSnippets#_TextElement_TypogXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml#_textelement_typogxaml)]  
+ [!code-xaml[TextElementSnippets#_TextElement_TypogXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml#_textelement_typogxaml)]  
   
  Následující obrázek ukazuje, jak se vykreslí v tomto příkladu.  
   
- ![Snímek obrazovky: Text se změněnou typografií](../../../../docs/framework/wpf/advanced/media/textelement-typog.png "TextElement_Typog")  
+ ![Snímek obrazovky: Text se změněnou typografií](./media/textelement-typog.png "TextElement_Typog")  
   
  Naproti tomu následující obrázek ukazuje, jak se vykreslí podobný příklad s výchozí typografické vlastnosti.  
   
- ![Snímek obrazovky: Text se změněnou typografií](../../../../docs/framework/wpf/advanced/media/textelement-typog-default.png "TextElement_Typog_Default")  
+ ![Snímek obrazovky: Text se změněnou typografií](./media/textelement-typog-default.png "TextElement_Typog_Default")  
   
  Následující příklad ukazuje, jak nastavit <xref:System.Windows.Controls.TextBox.Typography%2A> vlastnost prostřednictvím kódu programu.  
   
- [!code-csharp[TextElementSnippets#_TextElement_Typog](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textelement_typog)]
- [!code-vb[TextElementSnippets#_TextElement_Typog](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textelement_typog)]  
+ [!code-csharp[TextElementSnippets#_TextElement_Typog](~/samples/snippets/csharp/VS_Snippets_Wpf/TextElementSnippets/CSharp/Window1.xaml.cs#_textelement_typog)]
+ [!code-vb[TextElementSnippets#_TextElement_Typog](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextElementSnippets/visualbasic/window1.xaml.vb#_textelement_typog)]  
   
- Zobrazit [Typografie v rozhraní WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md) Další informace o typografii.  
+ Zobrazit [Typografie v rozhraní WPF](typography-in-wpf.md) Další informace o typografii.  
   
 ## <a name="see-also"></a>Viz také:
-- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)
-- [Typografie v rozhraní WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)
-- [Témata s postupy](../../../../docs/framework/wpf/advanced/flow-content-elements-how-to-topics.md)
-- [Přehled modelu obsahu TextElement](../../../../docs/framework/wpf/advanced/textelement-content-model-overview.md)
-- [RichTextBox – přehled](../../../../docs/framework/wpf/controls/richtextbox-overview.md)
-- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
-- [Přehled tabulky](../../../../docs/framework/wpf/advanced/table-overview.md)
-- [Přehled poznámek](../../../../docs/framework/wpf/advanced/annotations-overview.md)
+- [Text](optimizing-performance-text.md)
+- [Typografie v rozhraní WPF](typography-in-wpf.md)
+- [Témata s postupy](flow-content-elements-how-to-topics.md)
+- [Přehled modelu obsahu TextElement](textelement-content-model-overview.md)
+- [RichTextBox – přehled](../controls/richtextbox-overview.md)
+- [Dokumenty v platformě WPF](documents-in-wpf.md)
+- [Přehled tabulky](table-overview.md)
+- [Přehled poznámek](annotations-overview.md)

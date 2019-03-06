@@ -7,23 +7,23 @@ helpviewer_keywords:
 - controls [WPF], TextBlock
 - TextBlock control [WPF]
 ms.assetid: ea5f7826-7a92-4de9-9eee-10ef700ce7b6
-ms.openlocfilehash: f032476326ac96edbfb7532f30dedd72b78f76fd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 31ef66ba7e584b88a38185a4d3ad02ca413fad34
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33555896"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358909"
 ---
 # <a name="textblock"></a>TextBlock
-<xref:System.Windows.Controls.TextBlock> Řízení poskytuje flexibilní text podporu pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. Element je určena především basic [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénáře, které nevyžadují více než jeden odstavec textu.  
+<xref:System.Windows.Controls.TextBlock> Ovládacího prvku poskytuje text flexibilní podporu pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací. Cílí element primárně na basic [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] scénáře, které nevyžadují více než jeden odstavec textu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [TextBlock – přehled](../../../../docs/framework/wpf/controls/textblock-overview.md)  
+ [TextBlock – přehled](textblock-overview.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Label>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Dokumenty v platformě WPF](../advanced/documents-in-wpf.md)  
   
- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
+ [Přehled toku dokumentů](../advanced/flow-document-overview.md)

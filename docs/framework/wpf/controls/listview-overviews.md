@@ -7,20 +7,20 @@ helpviewer_keywords:
 - controls [WPF], ListView
 - ListView controls [WPF], using
 ms.assetid: 49dfef1a-dddf-4fc6-a511-6d5f925a4781
-ms.openlocfilehash: a488432dadcfb700c62fd7f847cb31c8ed95aba7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 734b5265c1d25e4538c40f5a43bff220d675eedb
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551045"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57370329"
 ---
 # <a name="listview-overviews"></a>Přehled ListView
 Témata v této části se dozvíte, jak používat <xref:System.Windows.Controls.ListView> ovládacího prvku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [ListView – přehled](../../../../docs/framework/wpf/controls/listview-overview.md)  
- [GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)  
- [Přehled stylů záhlaví sloupců a šablon GridView](../../../../docs/framework/wpf/controls/gridview-column-header-styles-and-templates-overview.md)  
+ [ListView – přehled](listview-overview.md)  
+ [GridView – přehled](gridview-overview.md)  
+ [Přehled stylů záhlaví sloupců a šablon GridView](gridview-column-header-styles-and-templates-overview.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ListView>  
@@ -28,4 +28,4 @@ Témata v této části se dozvíte, jak používat <xref:System.Windows.Control
  <xref:System.Windows.Controls.GridView>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+ [Témata s postupy](listview-how-to-topics.md)

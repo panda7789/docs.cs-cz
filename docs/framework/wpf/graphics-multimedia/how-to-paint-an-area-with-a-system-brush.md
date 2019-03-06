@@ -6,12 +6,12 @@ helpviewer_keywords:
 - painting [WPF], with system brushes
 - brushes [WPF], painting with system brushes [WPF]
 ms.assetid: 5141a763-9235-42cb-a6bb-afc75513eac7
-ms.openlocfilehash: 6977410a596a943a23c3841e80edf4cfed1bf6b5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7beaf4370f115a3995c9ca23bb0022bd5b269193
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54644934"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57364109"
 ---
 # <a name="how-to-paint-an-area-with-a-system-brush"></a>Postupy: Vykreslení oblasti systémovým štětcem
 <xref:System.Windows.SystemColors> Třídě poskytuje přístup k systémových štětců a barvy, jako například <xref:System.Windows.SystemColors.ControlBrush%2A>, <xref:System.Windows.SystemColors.ControlBrushKey%2A>, a <xref:System.Windows.SystemColors.DesktopBrush%2A>. Je systém štětce <xref:System.Windows.Media.SolidColorBrush> objekt, který vykreslí oblasti barvou zadaný systém. Systémové štětce vždy vytváří plné barvy; nelze použít k vytvoření přechodu.  
@@ -34,19 +34,19 @@ ms.locfileid: "54644934"
   
      Získá odkaz na dynamické <xref:System.Windows.Media.Color> struktury zadané systémovou barvou.  
   
- Systémové barvy je <xref:System.Windows.Media.Color> struktura, která slouží ke konfiguraci štětce. Například můžete vytvořit pomocí nastavení systémových barev přechod <xref:System.Windows.Media.GradientStop.Color%2A> vlastnosti <xref:System.Windows.Media.LinearGradientBrush> objektu Přechodové zarážky pomocí systémových barev. Příklad najdete v tématu [použití systémových barev v gradientu](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md).  
+ Systémové barvy je <xref:System.Windows.Media.Color> struktura, která slouží ke konfiguraci štětce. Například můžete vytvořit pomocí nastavení systémových barev přechod <xref:System.Windows.Media.GradientStop.Color%2A> vlastnosti <xref:System.Windows.Media.LinearGradientBrush> objektu Přechodové zarážky pomocí systémových barev. Příklad najdete v tématu [použití systémových barev v gradientu](how-to-use-system-colors-in-a-gradient.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad používá odkaz štětce dynamickým nastavit pozadí tlačítka.  
   
- [!code-xaml[brushsamples_snip#GraphicsMMDynamicSystemColorDesktopBrushKeyExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/brushsamples_snip/CS/DynamicSystemBrushExample.xaml#graphicsmmdynamicsystemcolordesktopbrushkeyexamplewholepage)]  
+ [!code-xaml[brushsamples_snip#GraphicsMMDynamicSystemColorDesktopBrushKeyExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/brushsamples_snip/CS/DynamicSystemBrushExample.xaml#graphicsmmdynamicsystemcolordesktopbrushkeyexamplewholepage)]  
   
  Následující příklad používá statický systém štětce odkaz nastavení pozadí tlačítka.  
   
- [!code-xaml[brushsamples_snip#GraphicsMMStaticSystemColorDesktopBrushExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/brushsamples_snip/CS/StaticSystemBrushExample.xaml#graphicsmmstaticsystemcolordesktopbrushexamplewholepage)]  
+ [!code-xaml[brushsamples_snip#GraphicsMMStaticSystemColorDesktopBrushExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/brushsamples_snip/CS/StaticSystemBrushExample.xaml#graphicsmmstaticsystemcolordesktopbrushexamplewholepage)]  
   
- Příklad ukazující způsob použití systémových barev v gradientu najdete v tématu [použití systémových barev v gradientu](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md).  
+ Příklad ukazující způsob použití systémových barev v gradientu najdete v tématu [použití systémových barev v gradientu](how-to-use-system-colors-in-a-gradient.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Použití systémových barev v gradientu](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)
-- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
+- [Použití systémových barev v gradientu](how-to-use-system-colors-in-a-gradient.md)
+- [Přehled malování plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md)

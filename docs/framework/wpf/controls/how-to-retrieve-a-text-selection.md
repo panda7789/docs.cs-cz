@@ -9,12 +9,12 @@ helpviewer_keywords:
 - TextBox control [WPF], retrieving text
 - retrieving text [WPF]
 ms.assetid: d5793172-1e11-4a39-9be0-73f336ed858d
-ms.openlocfilehash: 3e2a4d9938f73cb306e8fd8b0e6b25b5abfa3b4a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fdd0e3974964e141c4b65e1c8851f3c371a4d501
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517770"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57357609"
 ---
 # <a name="how-to-retrieve-a-text-selection"></a>Postupy: Načtení výběru textu
 Tento příklad ukazuje jeden ze způsobů použití <xref:System.Windows.Controls.TextBox.SelectedText%2A> vlastnost pro načtení textu, který uživatel vybral v <xref:System.Windows.Controls.TextBox> ovládacího prvku.  
@@ -24,14 +24,14 @@ Tento příklad ukazuje jeden ze způsobů použití <xref:System.Windows.Contro
   
  V tomto příkladu tlačítko s přidruženou <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužná rutina události se používá k načtení výběru textu. Když uživatel klikne na tlačítko <xref:System.Windows.Controls.Button.OnClick%2A> metoda zkopíruje vybraný text do textového pole na řetězec. Zvláštní okolnosti, které výběr textu je načten (kliknutí na tlačítko), stejně jako akci prováděnou s výběr (text výběr se kopíruje do řetězce), lze snadno upravit tak, aby vyhovovaly širokou škálu scénářů.  
   
- [!code-xaml[TextBox_MiscCode#_TextBoxSelectTextXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textboxselecttextxaml)]  
+ [!code-xaml[TextBox_MiscCode#_TextBoxSelectTextXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textboxselecttextxaml)]  
   
 ## <a name="example"></a>Příklad  
  Následující C# ukazuje příklad <xref:System.Windows.Controls.Button.OnClick%2A> obslužné rutiny události pro tlačítko definované v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pro účely tohoto příkladu.  
   
- [!code-csharp[TextBox_MiscCode#_SelectText](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml.cs#_selecttext)]
- [!code-vb[TextBox_MiscCode#_SelectText](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_selecttext)]  
+ [!code-csharp[TextBox_MiscCode#_SelectText](~/samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml.cs#_selecttext)]
+ [!code-vb[TextBox_MiscCode#_SelectText](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_selecttext)]  
   
 ## <a name="see-also"></a>Viz také:
-- [TextBox – přehled](../../../../docs/framework/wpf/controls/textbox-overview.md)
-- [RichTextBox – přehled](../../../../docs/framework/wpf/controls/richtextbox-overview.md)
+- [TextBox – přehled](textbox-overview.md)
+- [RichTextBox – přehled](richtextbox-overview.md)

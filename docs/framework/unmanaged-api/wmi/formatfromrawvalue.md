@@ -16,21 +16,21 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 420a02d2f7757c52d6e8ff92a9ca30e44938cd18
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8bef18468ef02e37b857316cd9fa2bf4cf5f9e9b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54546436"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57369330"
 ---
 # <a name="formatfromrawvalue-function"></a>Funkce FormatFromRawValue
-Převede jednu hodnotu hrubý výkon při zpracování dat pro zadaný formát nebo dvě hodnoty hrubý výkon při zpracování dat, pokud převod formátu podle času.   
-  
+Převede jednu hodnotu hrubý výkon při zpracování dat pro zadaný formát nebo dvě hodnoty hrubý výkon při zpracování dat, pokud převod formátu podle času. 
+
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
+
+## <a name="syntax"></a>Syntaxe
+
+```
 int FormatFromRawValue (
    [in] uint                    dwCounterType, 
    [in] uint                    dwFormat, 
@@ -39,14 +39,14 @@ int FormatFromRawValue (
    [in] PDH_RAW_COUNTER*        pRawValue2,
    [out] PDH_FMT_COUNTERVALUE*  pFmtValue
 ); 
-```  
+```
 
 ## <a name="parameters"></a>Parametry
 
-`dwCounterType`  
+`dwCounterType`\
 [in] Typ čítače. Seznam typů čítačů najdete v tématu [typů čítačů výkonu služby WMI](/windows/desktop/WmiSdk/wmi-performance-counter-types). `dwCounterType` může být libovolný typ čítače s výjimkou `PERF_LARGE_RAW_FRACTION` a `PERF_LARGE_RAW_BASE`. 
 
-`dwFormat`  
+`dwFormat`\
 [in] Formát, do které chcete převést hrubá data. Může být jeden z následujících hodnot:
 
 |Konstanta  |Hodnota  |Popis |
@@ -62,14 +62,16 @@ Použijte některou z předchozích hodnot mohou být sloučeny pomocí operáto
 | `PDH_FMT_NOSCALE` | 0x00001000 | Nevztahují se čítač faktory měřítka. |
 | `PDH_FMT_1000` | 0x00002000 | Vynásobte konečnou hodnotu 1000. | 
 
-`pTimeBase`  
+`pTimeBase`\
 [in] Ukazatel na základní čas, pokud je to nutné pro převod formátu. Pokud základní informace o čase není nezbytné pro převod formátu, hodnota tohoto parametru je ignorována.
 
-`pRawValue1` [in] Ukazatel [ `PDH_RAW_COUNTER` ](/windows/desktop/api/pdh/ns-pdh-_pdh_raw_counter) struktura, která představuje hodnotu hrubého výkonu.
+`pRawValue1`\ [in] ukazatel [ `PDH_RAW_COUNTER` ](/windows/desktop/api/pdh/ns-pdh-_pdh_raw_counter) struktura, která představuje hodnotu hrubého výkonu.
 
-`pRawValue2` [in] Ukazatel [ `PDH_RAW_COUNTER` ](/windows/desktop/api/pdh/ns-pdh-_pdh_raw_counter) struktura, která představuje hodnotu druhého hrubého výkonu. Pokud druhá hodnota hrubého výkonu není nezbytné, tento parametr by měl být `null`.
+`pRawValue2`\
+[in] Ukazatel [ `PDH_RAW_COUNTER` ](/windows/desktop/api/pdh/ns-pdh-_pdh_raw_counter) struktura, která představuje hodnotu druhého hrubého výkonu. Pokud druhá hodnota hrubého výkonu není nezbytné, tento parametr by měl být `null`.
 
-`pFmtValue` [out] Ukazatel [ `PDH_FMT_COUNTERVALUE` ](/windows/desktop/api/pdh/ns-pdh-_pdh_fmt_countervalue) struktura, která přijímá hodnotu formátovaný výkonu.
+`pFmtValue`\
+[out] Ukazatel [ `PDH_FMT_COUNTERVALUE` ](/windows/desktop/api/pdh/ns-pdh-_pdh_fmt_countervalue) struktura, která přijímá hodnotu formátovaný výkonu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -80,17 +82,19 @@ Následující hodnoty jsou vráceny pomocí této funkce:
 | `ERROR_SUCCESS` | 0 | Volání funkce je úspěšné. |
 | `PDH_INVALID_ARGUMENT` | 0xC0000BBD | Požadovaný argument je chybí nebo není správný. | 
 | `PDH_INVALID_HANDLE` | 0xC0000BBC | Popisovač není platný objekt PDH. |
-  
+
 ## <a name="remarks"></a>Poznámky
 
 Tato funkce zalamuje volání na [FormatFromRawValue](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms231047%28v=vs.85%29) funkce.
 
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Knihovna:** PerfCounter.dll  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+## <a name="requirements"></a>Požadavky
+
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+ **Knihovna:** PerfCounter.dll
+
+ **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 2cc712e6560fc58af7526428ba40c424be388eee
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 336e47d531fc880571165cd55f117825cd1a2abb
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54746658"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57374866"
 ---
 # <a name="ixclrdatamodulerequest-method"></a>IXCLRDataModule::Request – metoda
 
@@ -39,15 +39,20 @@ HRESULT Request([in] ULONG32 reqCode,
 
 ### <a name="parameters"></a>Parametry
 
-`reqCode` [in] Typ k odeslání žádosti.
+`reqCode`\
+[in] Typ k odeslání žádosti.
 
-`inBufferSize` [in] velikost vstupní vyrovnávací paměť musí být předány.
+`inBufferSize`\
+[in] velikost vstupní vyrovnávací paměť musí být předány.
 
-`inBuffer` [in, size_is(inBufferSize)] Ukazatele na vyrovnávací paměti pro nezpracovaná data se odešle požadavek.
+`inBuffer`\
+[in, size_is(inBufferSize)] Ukazatele na vyrovnávací paměti pro nezpracovaná data se odešle požadavek.
 
-`outBufferSize` [in] Velikost výstupní vyrovnávací paměť.
+`outBufferSize`\
+[in] Velikost výstupní vyrovnávací paměť.
 
-`outBuffer` [out, size_is(outBufferSize)] Ukazatel vyrovnávací paměť pro ukládání odpovědi na požadavek.
+`outBuffer`\
+[out, size_is(outBufferSize)] Ukazatel vyrovnávací paměť pro ukládání odpovědi na požadavek.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -61,5 +66,5 @@ Zadaná metoda je součástí `IXCLRDataModule` rozhraní a odpovídá 36 pozice
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [IXCLRDataModule Interface](../../../../docs/framework/unmanaged-api/debugging/ixclrdatamodule-interface.md)
+- [Ladění](index.md)
+- [IXCLRDataModule Interface](ixclrdatamodule-interface.md)

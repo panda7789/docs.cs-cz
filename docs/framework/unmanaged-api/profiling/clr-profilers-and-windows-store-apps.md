@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1c8eb2e7-f20a-42f9-a795-71503486a0f5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e4dedc6b527706fc9f22add903feb30ad2884eab
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 93344e1c5aa62e86d29a0110a9d8cffc3cea66ff
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188817"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358545"
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>Profilery CLR a aplikace pro Windows Store
 
@@ -126,7 +126,7 @@ Nejprve budete chtít požádat uživatele, váš profiler která aplikace Windo
 
 Můžete použít <xref:Windows.Management.Deployment.PackageManager> k vygenerování tohoto seznamu. `PackageManager` je třída Windows Runtime, která je k dispozici pro aplikace klasické pracovní plochy a je ve skutečnosti *pouze* k dispozici pro aplikace klasické pracovní plochy.
 
-Následující příklad kódu z hypotetické uživatelského rozhraní Profiler zapsán jako desktopové aplikace v C# yses `PackageManager` vytvořit seznam aplikací pro Windows:
+Následující příklad kódu z hypotetické uživatelského rozhraní Profiler zapsán jako desktopové aplikace v C# používá `PackageManager` vytvořit seznam aplikací pro Windows:
 
 ```csharp
 string currentUserSID = WindowsIdentity.GetCurrent().User.ToString();
@@ -143,7 +143,7 @@ Vezměte v úvahu následující fragment kódu:
 
 ```csharp
 IPackageDebugSettings pkgDebugSettings = new PackageDebugSettings();
-pkgDebugSettings.EnableDebugging(packgeFullName, debuggerCommandLine, 
+pkgDebugSettings.EnableDebugging(packageFullName, debuggerCommandLine,
                                                                  (IntPtr)fixedEnvironmentPzz);
 ```
 
@@ -168,7 +168,7 @@ Existuje několik položek, které je potřeba získat vpravo:
         // Parse command line here
         // …
 
-        HANDLE hThread = OpenThread(THREAD_SUSPEND_RESUME, 
+        HANDLE hThread = OpenThread(THREAD_SUSPEND_RESUME,
                                                                   FALSE /* bInheritHandle */, nThreadID);
         ResumeThread(hThread);
         CloseHandle(hThread);
@@ -235,7 +235,7 @@ Proto je vhodné provést vypadat přibližně takto:
 
 ```csharp
 IPackageDebugSettings pkgDebugSettings = new PackageDebugSettings();
-pkgDebugSettings.EnableDebugging(packgeFullName, null /* debuggerCommandLine */, 
+pkgDebugSettings.EnableDebugging(packageFullName, null /* debuggerCommandLine */,
                                                                  IntPtr.Zero /* environment */);
 ```
 
@@ -384,7 +384,7 @@ Pro pochopení důsledků to, je důležité znát rozdíly mezi synchronní a a
 
 Relevantní bod je, že volání vlákna vytvořená modulem profileru jsou vždy považovány za synchronní, i v případě, že tato volání jsou tvořeny mimo implementaci jednoho z vaší knihovny DLL Profiler [ICorProfilerCallback](icorprofilercallback-interface.md) metody. Nejméně, který používá v případě. Teď, když modul CLR vypnul váš profiler vlákna do spravovaného vlákna kvůli volání [forcegc – metoda](icorprofilerinfo-forcegc-method.md), že vlákno je nelze nadále považovat za váš profiler vláken. V důsledku toho CLR vynucuje přísnější definicí co splňuje podmínky jako synchronní pro toto vlákno – a to, které musí volání pocházejí z uvnitř některého z vaší knihovny DLL Profiler [ICorProfilerCallback](icorprofilercallback-interface.md) metody k získání způsobilosti jako synchronní.
 
-Co to znamená v praxi? Většina [ICorProfilerInfo](icorprofilerinfo-interface.md) metody jsou bezpečné volat synchronně a okamžitě selžou jinak. Pokud vaše knihovna DLL Profiler opětovně používá vaše [forcegc – metoda](icorprofilerinfo-forcegc-method.md) vlákno k provedení jiných volání uskutečněných obvykle na vytvoření profiler vláken (například [requestprofilerdetach –](icorprofilerinfo3-requestprofilerdetach-method.md), [requestrejit –](icorprofilerinfo4-requestrejit-method.md), nebo [requestrevert –](icorprofilerinfo4-requestrevert-method.md)), budete mít problémy. I asynchronní typově bezpečné funkce, jako [dostacksnapshot –](icorprofilerinfo2-dostacksnapshot-method.md) má zvláštní pravidla při volání z spravovaná vlákna. (Naleznete v příspěvku blogu [procházení zásobníku Profiler: základy a dalších fázích můžete využít](https://blogs.msdn.microsoft.com/davbr/2005/10/06/profiler-stack-walking-basics-and-beyond/) Další informace.)
+Co to znamená v praxi? Většina [ICorProfilerInfo](icorprofilerinfo-interface.md) metody jsou bezpečné volat synchronně a okamžitě selžou jinak. Pokud vaše knihovna DLL Profiler opětovně používá vaše [forcegc – metoda](icorprofilerinfo-forcegc-method.md) vlákno k provedení jiných volání uskutečněných obvykle na vytvoření profiler vláken (například [requestprofilerdetach –](icorprofilerinfo3-requestprofilerdetach-method.md), [requestrejit –](icorprofilerinfo4-requestrejit-method.md), nebo [requestrevert –](icorprofilerinfo4-requestrevert-method.md)), budete mít problémy. I asynchronní typově bezpečné funkce, jako [dostacksnapshot –](icorprofilerinfo2-dostacksnapshot-method.md) má zvláštní pravidla při volání z spravovaná vlákna. (Naleznete v příspěvku blogu [Profiler procházení zásobníku: Základní informace a dalších fázích můžete využít](https://blogs.msdn.microsoft.com/davbr/2005/10/06/profiler-stack-walking-basics-and-beyond/) Další informace.)
 
 Proto doporučujeme, aby jakékoli vlákno vytvoří vaše knihovna DLL Profiler volat [forcegc – metoda](icorprofilerinfo-forcegc-method.md) by měla sloužit *pouze* pro účely aktivace GC a pak odpověď na zpětná volání uvolňování paměti. Neměli volat do rozhraní API profilování provádět další úkoly, jako je zásobník vzorkování nebo odpojení.
 
