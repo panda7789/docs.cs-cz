@@ -7,24 +7,24 @@ helpviewer_keywords:
 - controls [WPF], RepeatButton
 - RepeatButton control [WPF]
 ms.assetid: 5702b603-95e6-438a-88c0-76509367e876
-ms.openlocfilehash: 4dff6497fe6d6483b12d09b6dc84fdb0f2fbd95e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d1eaaaae2e42bc366d6859ad72a90b149341eef0
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33555003"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57367142"
 ---
-# <a name="repeatbutton"></a><span data-ttu-id="3b408-102">RepeatButton</span><span class="sxs-lookup"><span data-stu-id="3b408-102">RepeatButton</span></span>
-<span data-ttu-id="3b408-103"><xref:System.Windows.Controls.Primitives.RepeatButton> Je podobná <xref:System.Windows.Controls.Button>.</span><span class="sxs-lookup"><span data-stu-id="3b408-103">The <xref:System.Windows.Controls.Primitives.RepeatButton> is similar to a <xref:System.Windows.Controls.Button>.</span></span> <span data-ttu-id="3b408-104">Ale <xref:System.Windows.Controls.Primitives.RepeatButton> udělení prvky řízení nad tím, kdy a jak <xref:System.Windows.Controls.Primitives.ButtonBase.Click> dojde k události.</span><span class="sxs-lookup"><span data-stu-id="3b408-104">However, <xref:System.Windows.Controls.Primitives.RepeatButton> elements give you control over when and how the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event occurs.</span></span>  
+# <a name="repeatbutton"></a><span data-ttu-id="8299e-102">RepeatButton</span><span class="sxs-lookup"><span data-stu-id="8299e-102">RepeatButton</span></span>
+<span data-ttu-id="8299e-103"><xref:System.Windows.Controls.Primitives.RepeatButton> Je podobný <xref:System.Windows.Controls.Button>.</span><span class="sxs-lookup"><span data-stu-id="8299e-103">The <xref:System.Windows.Controls.Primitives.RepeatButton> is similar to a <xref:System.Windows.Controls.Button>.</span></span> <span data-ttu-id="8299e-104">Ale <xref:System.Windows.Controls.Primitives.RepeatButton> prvky umožňují kontrolu nad tím, kdy a jak <xref:System.Windows.Controls.Primitives.ButtonBase.Click> dojde k události.</span><span class="sxs-lookup"><span data-stu-id="8299e-104">However, <xref:System.Windows.Controls.Primitives.RepeatButton> elements give you control over when and how the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event occurs.</span></span>  
   
- <span data-ttu-id="3b408-105">Následující obrázek ukazuje příklad tří stavů opakování tlačítko – ovládací prvek, výchozí, PointerFocused a stisknuta klávesa.</span><span class="sxs-lookup"><span data-stu-id="3b408-105">The following graphic shows an example of the three states of a repeat button control, Default, PointerFocused, and Pressed.</span></span> <span data-ttu-id="3b408-106">Na první tlačítko ukazuje výchozí stav <xref:System.Windows.Controls.Primitives.RepeatButton>.</span><span class="sxs-lookup"><span data-stu-id="3b408-106">The first button shows the default state of the <xref:System.Windows.Controls.Primitives.RepeatButton>.</span></span> <span data-ttu-id="3b408-107">Druhá ukazuje, jak vzhled tlačítka změní, když umístění ukazatele myši nad tlačítko, předá fokus.</span><span class="sxs-lookup"><span data-stu-id="3b408-107">The second shows how the appearance of the button changes when the mouse pointer hovers over the button, giving it focus.</span></span> <span data-ttu-id="3b408-108">Zobrazí poslední tlačítko vzhled <xref:System.Windows.Controls.Primitives.RepeatButton> uživatel stiskne tlačítko myši nad ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="3b408-108">The last button shows the appearance of the <xref:System.Windows.Controls.Primitives.RepeatButton> when the user presses the mouse button over the control.</span></span>  
+ <span data-ttu-id="8299e-105">Následující obrázek ukazuje příklad ze tří stavů ovládacího prvku tlačítka opakovat, výchozí, PointerFocused a stisknuta klávesa.</span><span class="sxs-lookup"><span data-stu-id="8299e-105">The following graphic shows an example of the three states of a repeat button control, Default, PointerFocused, and Pressed.</span></span> <span data-ttu-id="8299e-106">Ve výchozím stavu se zobrazí první tlačítko <xref:System.Windows.Controls.Primitives.RepeatButton>.</span><span class="sxs-lookup"><span data-stu-id="8299e-106">The first button shows the default state of the <xref:System.Windows.Controls.Primitives.RepeatButton>.</span></span> <span data-ttu-id="8299e-107">Druhé se zobrazí jak vzhled tlačítka se mění při umístění ukazatele myši nad tlačítkem, že mu poskytneme fokus.</span><span class="sxs-lookup"><span data-stu-id="8299e-107">The second shows how the appearance of the button changes when the mouse pointer hovers over the button, giving it focus.</span></span> <span data-ttu-id="8299e-108">Poslední zobrazovalo vzhled <xref:System.Windows.Controls.Primitives.RepeatButton> uživatel stiskne tlačítko myši nad ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="8299e-108">The last button shows the appearance of the <xref:System.Windows.Controls.Primitives.RepeatButton> when the user presses the mouse button over the control.</span></span>  
   
- <span data-ttu-id="3b408-109">![Opakujte tlačítko stavy](../../../../docs/framework/wpf/controls/media/ss-ctl-repeatbutton.png "SS_CTL_repeatbutton")</span><span class="sxs-lookup"><span data-stu-id="3b408-109">![Repeat button states](../../../../docs/framework/wpf/controls/media/ss-ctl-repeatbutton.png "SS_CTL_repeatbutton")</span></span>  
-<span data-ttu-id="3b408-110">Typické RepeatButton</span><span class="sxs-lookup"><span data-stu-id="3b408-110">Typical RepeatButton</span></span>  
+ <span data-ttu-id="8299e-109">![Opakujte stavy tlačítka](./media/ss-ctl-repeatbutton.png "SS_CTL_repeatbutton")</span><span class="sxs-lookup"><span data-stu-id="8299e-109">![Repeat button states](./media/ss-ctl-repeatbutton.png "SS_CTL_repeatbutton")</span></span>  
+<span data-ttu-id="8299e-110">Typické RepeatButton</span><span class="sxs-lookup"><span data-stu-id="8299e-110">Typical RepeatButton</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="3b408-111">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="3b408-111">In This Section</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="8299e-111">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="8299e-111">In This Section</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="3b408-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="3b408-112">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="8299e-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="8299e-112">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.RepeatButton>  
   
-## <a name="related-sections"></a><span data-ttu-id="3b408-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="3b408-113">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="8299e-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="8299e-113">Related Sections</span></span>

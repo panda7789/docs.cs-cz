@@ -9,25 +9,25 @@ helpviewer_keywords:
 - content [WPF], ScrollViewer control
 - controls [WPF], ScrollViewer
 ms.assetid: 2163666e-04da-4036-841f-40947c9c034d
-ms.openlocfilehash: 7e4bb04c3d339f01b97c09966e096ddd6de47fbe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cbed07ac08005e801b56b9538f46361df723bcb0
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54671977"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57367107"
 ---
-# <a name="scrollviewer"></a><span data-ttu-id="e9580-102">ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="e9580-102">ScrollViewer</span></span>
-<span data-ttu-id="e9580-103"><xref:System.Windows.Controls.ScrollViewer> Ovládací prvek vytvoří rolovací oblast, ve které obsah můžete posouvat vodorovně nebo svisle.</span><span class="sxs-lookup"><span data-stu-id="e9580-103">The <xref:System.Windows.Controls.ScrollViewer> control creates a scrollable region wherein content can be scrolled horizontally or vertically.</span></span>  
+# <a name="scrollviewer"></a><span data-ttu-id="dbc7d-102">ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="dbc7d-102">ScrollViewer</span></span>
+<span data-ttu-id="dbc7d-103"><xref:System.Windows.Controls.ScrollViewer> Ovládací prvek vytvoří rolovací oblast, ve které obsah můžete posouvat vodorovně nebo svisle.</span><span class="sxs-lookup"><span data-stu-id="dbc7d-103">The <xref:System.Windows.Controls.ScrollViewer> control creates a scrollable region wherein content can be scrolled horizontally or vertically.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="e9580-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="e9580-104">In This Section</span></span>  
- [<span data-ttu-id="e9580-105">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="e9580-105">ScrollViewer Overview</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)  
- [<span data-ttu-id="e9580-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="e9580-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/scrollviewer-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="dbc7d-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="dbc7d-104">In This Section</span></span>  
+ [<span data-ttu-id="dbc7d-105">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="dbc7d-105">ScrollViewer Overview</span></span>](scrollviewer-overview.md)  
+ [<span data-ttu-id="dbc7d-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="dbc7d-106">How-to Topics</span></span>](scrollviewer-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="e9580-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="e9580-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="dbc7d-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="dbc7d-107">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.ScrollBar>  
   
  <xref:System.Windows.Controls.ScrollViewer>  
   
-## <a name="see-also"></a><span data-ttu-id="e9580-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e9580-108">See also</span></span>
-- [<span data-ttu-id="e9580-109">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="e9580-109">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)
-- [<span data-ttu-id="e9580-110">Rozložení</span><span class="sxs-lookup"><span data-stu-id="e9580-110">Layout</span></span>](../../../../docs/framework/wpf/advanced/layout.md)
+## <a name="see-also"></a><span data-ttu-id="dbc7d-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dbc7d-108">See also</span></span>
+- [<span data-ttu-id="dbc7d-109">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="dbc7d-109">Panels Overview</span></span>](panels-overview.md)
+- [<span data-ttu-id="dbc7d-110">Rozložení</span><span class="sxs-lookup"><span data-stu-id="dbc7d-110">Layout</span></span>](../advanced/layout.md)

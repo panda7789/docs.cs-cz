@@ -9,26 +9,26 @@ helpviewer_keywords:
 - popups [WPF]
 - controls [WPF], Popup
 ms.assetid: 36a4320f-91ce-4f5f-9621-7934de3eff77
-ms.openlocfilehash: c7161439f5b4a0e0e224235b458945376215d273
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a36af4730a494448387ad059ff75199a19a1a359
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551749"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57370654"
 ---
-# <a name="popup"></a><span data-ttu-id="c7111-102">Překryvný</span><span class="sxs-lookup"><span data-stu-id="c7111-102">Popup</span></span>
-<span data-ttu-id="c7111-103"><xref:System.Windows.Controls.Primitives.Popup> Zobrazí obsah v samostatném okně, které překrývat aktuální okno aplikace.</span><span class="sxs-lookup"><span data-stu-id="c7111-103">The <xref:System.Windows.Controls.Primitives.Popup> control displays content in a separate window that floats over the current application window.</span></span>  
+# <a name="popup"></a><span data-ttu-id="8abc3-102">Překryvný</span><span class="sxs-lookup"><span data-stu-id="8abc3-102">Popup</span></span>
+<span data-ttu-id="8abc3-103"><xref:System.Windows.Controls.Primitives.Popup> Ovládací prvek zobrazí obsah v samostatném okně umístěný za aktuální období aplikace.</span><span class="sxs-lookup"><span data-stu-id="8abc3-103">The <xref:System.Windows.Controls.Primitives.Popup> control displays content in a separate window that floats over the current application window.</span></span>  
   
- <span data-ttu-id="c7111-104">Následující obrázek znázorňuje <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek, který je nastavený s ohledem na <xref:System.Windows.Controls.Button> který je jeho nadřazený objekt.</span><span class="sxs-lookup"><span data-stu-id="c7111-104">The following illustration shows a <xref:System.Windows.Controls.Primitives.Popup> control that is positioned with respect to a <xref:System.Windows.Controls.Button> that is its parent.</span></span>  
+ <span data-ttu-id="8abc3-104">Následující ilustrace ukazuje <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek, který je umístěn s ohledem na <xref:System.Windows.Controls.Button> , který je jeho nadřazený objekt.</span><span class="sxs-lookup"><span data-stu-id="8abc3-104">The following illustration shows a <xref:System.Windows.Controls.Primitives.Popup> control that is positioned with respect to a <xref:System.Windows.Controls.Button> that is its parent.</span></span>  
   
- <span data-ttu-id="c7111-105">![Obrázek místní](../../../../docs/framework/wpf/controls/media/popuppicture.JPG "PopupPicture")</span><span class="sxs-lookup"><span data-stu-id="c7111-105">![Popup illustration](../../../../docs/framework/wpf/controls/media/popuppicture.JPG "PopupPicture")</span></span>  
+ <span data-ttu-id="8abc3-105">![Automaticky otevírané okno obrázku](./media/popuppicture.JPG "PopupPicture")</span><span class="sxs-lookup"><span data-stu-id="8abc3-105">![Popup illustration](./media/popuppicture.JPG "PopupPicture")</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="c7111-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c7111-106">In This Section</span></span>  
- [<span data-ttu-id="c7111-107">Přehled prvku Popup</span><span class="sxs-lookup"><span data-stu-id="c7111-107">Popup Overview</span></span>](../../../../docs/framework/wpf/controls/popup-overview.md)  
- [<span data-ttu-id="c7111-108">Chování při umístění prvku Popup</span><span class="sxs-lookup"><span data-stu-id="c7111-108">Popup Placement Behavior</span></span>](../../../../docs/framework/wpf/controls/popup-placement-behavior.md)  
- [<span data-ttu-id="c7111-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="c7111-109">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="8abc3-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="8abc3-106">In This Section</span></span>  
+ [<span data-ttu-id="8abc3-107">Přehled prvku Popup</span><span class="sxs-lookup"><span data-stu-id="8abc3-107">Popup Overview</span></span>](popup-overview.md)  
+ [<span data-ttu-id="8abc3-108">Chování při umístění prvku Popup</span><span class="sxs-lookup"><span data-stu-id="8abc3-108">Popup Placement Behavior</span></span>](popup-placement-behavior.md)  
+ [<span data-ttu-id="8abc3-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="8abc3-109">How-to Topics</span></span>](popup-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="c7111-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c7111-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="8abc3-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="8abc3-110">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.Popup>  
   
-## <a name="related-sections"></a><span data-ttu-id="c7111-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="c7111-111">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="8abc3-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="8abc3-111">Related Sections</span></span>

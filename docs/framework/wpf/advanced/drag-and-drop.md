@@ -8,23 +8,23 @@ helpviewer_keywords:
 - drag and drop [WPF]
 - drag-and-drop [WPF]
 ms.assetid: 77c48920-8c8b-41eb-8fe8-b411962c8623
-ms.openlocfilehash: 084354f2c567716c2ca083dddb4cd6628334d603
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4a0e7cac9262908e4683aebeb653559c1513d4d9
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33542571"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57367463"
 ---
-# <a name="drag-and-drop"></a><span data-ttu-id="b105f-102">Přetažení</span><span class="sxs-lookup"><span data-stu-id="b105f-102">Drag and Drop</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="b105f-103"> poskytuje vysoce flexibilní přetažení a drop infrastruktury, která podporuje přetahování a vkládání dat v rámci obě [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace a také dalších [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="b105f-103"> provides a highly flexible drag and drop infrastructure which supports dragging and dropping of data within both [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications as well as other [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] applications.</span></span>  
+# <a name="drag-and-drop"></a><span data-ttu-id="97eaf-102">Přetažení</span><span class="sxs-lookup"><span data-stu-id="97eaf-102">Drag and Drop</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="97eaf-103">poskytuje vysoce flexibilní přetahování a přetažení infrastrukturu, která podporuje přetahování a vkládání velkých dat do obou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace i jiné [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] aplikací.</span><span class="sxs-lookup"><span data-stu-id="97eaf-103">provides a highly flexible drag and drop infrastructure which supports dragging and dropping of data within both [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications as well as other [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="b105f-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="b105f-104">In This Section</span></span>  
- [<span data-ttu-id="b105f-105">Přehled přetažení</span><span class="sxs-lookup"><span data-stu-id="b105f-105">Drag and Drop Overview</span></span>](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)  
- [<span data-ttu-id="b105f-106">Data a datové objekty</span><span class="sxs-lookup"><span data-stu-id="b105f-106">Data and Data Objects</span></span>](../../../../docs/framework/wpf/advanced/data-and-data-objects.md)  
- [<span data-ttu-id="b105f-107">Návod: Povolení přetahování pomocí myši na uživatelském ovládacím prvku</span><span class="sxs-lookup"><span data-stu-id="b105f-107">Walkthrough: Enabling Drag and Drop on a User Control</span></span>](../../../../docs/framework/wpf/advanced/walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
- [<span data-ttu-id="b105f-108">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="b105f-108">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/drag-and-drop-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="97eaf-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="97eaf-104">In This Section</span></span>  
+ [<span data-ttu-id="97eaf-105">Přehled přetažení</span><span class="sxs-lookup"><span data-stu-id="97eaf-105">Drag and Drop Overview</span></span>](drag-and-drop-overview.md)  
+ [<span data-ttu-id="97eaf-106">Data a datové objekty</span><span class="sxs-lookup"><span data-stu-id="97eaf-106">Data and Data Objects</span></span>](data-and-data-objects.md)  
+ [<span data-ttu-id="97eaf-107">Návod: Povolení přetahování na uživatelský ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="97eaf-107">Walkthrough: Enabling Drag and Drop on a User Control</span></span>](walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
+ [<span data-ttu-id="97eaf-108">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="97eaf-108">How-to Topics</span></span>](drag-and-drop-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="b105f-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="b105f-109">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="97eaf-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="97eaf-109">Reference</span></span>  
  <xref:System.Windows.DataFormat>  
   <xref:System.Windows.DataObject>  
   <xref:System.Windows.DragDrop>  
@@ -32,4 +32,4 @@ ms.locfileid: "33542571"
   <xref:System.Windows.DragEventHandler>  
   <xref:System.Windows.TextDataFormat>  
   
-## <a name="related-sections"></a><span data-ttu-id="b105f-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="b105f-110">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="97eaf-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="97eaf-110">Related Sections</span></span>

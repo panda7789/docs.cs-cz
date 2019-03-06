@@ -8,25 +8,25 @@ helpviewer_keywords:
 - controls [WPF], Border
 - Border control [WPF]
 ms.assetid: 51739f83-b5a2-489b-854b-30607e74a502
-ms.openlocfilehash: 0ee7ae6598feacee282cc283b82e20390418b4c9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 922b4b90f3f8bc74d0465691386fa1a2422c6573
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551051"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57368074"
 ---
-# <a name="border"></a><span data-ttu-id="6210c-102">Ohraničení</span><span class="sxs-lookup"><span data-stu-id="6210c-102">Border</span></span>
-<span data-ttu-id="6210c-103">Následující příklad ukazuje, jak dynamicky měnit vlastnosti <xref:System.Windows.Controls.Border> elementu.</span><span class="sxs-lookup"><span data-stu-id="6210c-103">The following sample demonstrates how to dynamically change properties of the <xref:System.Windows.Controls.Border> element.</span></span>  
+# <a name="border"></a><span data-ttu-id="2c720-102">Ohraničení</span><span class="sxs-lookup"><span data-stu-id="2c720-102">Border</span></span>
+<span data-ttu-id="2c720-103">Následující příklad ukazuje, jak dynamicky měnit vlastnosti <xref:System.Windows.Controls.Border> elementu.</span><span class="sxs-lookup"><span data-stu-id="2c720-103">The following sample demonstrates how to dynamically change properties of the <xref:System.Windows.Controls.Border> element.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="6210c-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="6210c-104">In This Section</span></span>  
- [<span data-ttu-id="6210c-105">Animace hodnoty BorderThickness</span><span class="sxs-lookup"><span data-stu-id="6210c-105">Animate a BorderThickness Value</span></span>](../../../../docs/framework/wpf/controls/how-to-animate-a-borderthickness-value.md)  
+## <a name="in-this-section"></a><span data-ttu-id="2c720-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="2c720-104">In This Section</span></span>  
+ [<span data-ttu-id="2c720-105">Animace hodnoty BorderThickness</span><span class="sxs-lookup"><span data-stu-id="2c720-105">Animate a BorderThickness Value</span></span>](how-to-animate-a-borderthickness-value.md)  
   
-## <a name="reference"></a><span data-ttu-id="6210c-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="6210c-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="2c720-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="2c720-106">Reference</span></span>  
  <xref:System.Windows.Controls.Decorator>  
   
  <xref:System.Windows.Controls.Border>  
   
-## <a name="related-sections"></a><span data-ttu-id="6210c-107">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="6210c-107">Related Sections</span></span>  
- [<span data-ttu-id="6210c-108">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="6210c-108">Panels Overview</span></span>](../../../../docs/framework/wpf/controls/panels-overview.md)  
+## <a name="related-sections"></a><span data-ttu-id="2c720-107">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="2c720-107">Related Sections</span></span>  
+ [<span data-ttu-id="2c720-108">Přehled panelu</span><span class="sxs-lookup"><span data-stu-id="2c720-108">Panels Overview</span></span>](panels-overview.md)  
   
- [<span data-ttu-id="6210c-109">Přehled zarovnání, okrajů a odsazení</span><span class="sxs-lookup"><span data-stu-id="6210c-109">Alignment, Margins, and Padding Overview</span></span>](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)
+ [<span data-ttu-id="2c720-109">Přehled zarovnání, okrajů a odsazení</span><span class="sxs-lookup"><span data-stu-id="2c720-109">Alignment, Margins, and Padding Overview</span></span>](../advanced/alignment-margins-and-padding-overview.md)

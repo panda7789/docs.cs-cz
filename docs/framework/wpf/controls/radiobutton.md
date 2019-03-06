@@ -7,22 +7,22 @@ helpviewer_keywords:
 - RadioButton control [WPF]
 - controls [WPF], RadioButton
 ms.assetid: 6c9ba847-eab7-4bba-9c74-6b56ef72067b
-ms.openlocfilehash: 936b2d72a73a6937bd0c0415cb86ead89062da7a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 32db3436b536cd1a27dd79e0e98cdc3e6f21c4c9
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33553920"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57365266"
 ---
-# <a name="radiobutton"></a><span data-ttu-id="36398-102">RadioButton</span><span class="sxs-lookup"><span data-stu-id="36398-102">RadioButton</span></span>
-<span data-ttu-id="36398-103"><xref:System.Windows.Controls.RadioButton> ovládací prvky jsou obvykle seskupeny dohromady a nabídnout uživatelům jednu volbu mezi několik možností; lze vybrat pouze jedno tlačítko najednou.</span><span class="sxs-lookup"><span data-stu-id="36398-103"><xref:System.Windows.Controls.RadioButton> controls are usually grouped together to offer users a single choice among several options; only one button at a time can be selected.</span></span>  
+# <a name="radiobutton"></a><span data-ttu-id="11772-102">RadioButton</span><span class="sxs-lookup"><span data-stu-id="11772-102">RadioButton</span></span>
+<span data-ttu-id="11772-103"><xref:System.Windows.Controls.RadioButton> ovládací prvky jsou obvykle seskupené s cílem zajistit uživatelům nabídnout jednoho výběru z několika možností; lze vybrat pouze jedno tlačítko najednou.</span><span class="sxs-lookup"><span data-stu-id="11772-103"><xref:System.Windows.Controls.RadioButton> controls are usually grouped together to offer users a single choice among several options; only one button at a time can be selected.</span></span>  
   
- <span data-ttu-id="36398-104">Následující obrázek znázorňuje příklad <xref:System.Windows.Controls.RadioButton> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="36398-104">The following illustration shows an example of a <xref:System.Windows.Controls.RadioButton> control.</span></span>  
+ <span data-ttu-id="11772-104">Následující obrázek znázorňuje příklad <xref:System.Windows.Controls.RadioButton> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="11772-104">The following illustration shows an example of a <xref:System.Windows.Controls.RadioButton> control.</span></span>  
   
- <span data-ttu-id="36398-105">![Přepínač – tlačítko stavy](../../../../docs/framework/wpf/controls/media/ss-ctl-radiobuttons.gif "SS_CTL_radiobuttons")</span><span class="sxs-lookup"><span data-stu-id="36398-105">![Radio button states](../../../../docs/framework/wpf/controls/media/ss-ctl-radiobuttons.gif "SS_CTL_radiobuttons")</span></span>  
-<span data-ttu-id="36398-106">Typické RadioButton</span><span class="sxs-lookup"><span data-stu-id="36398-106">Typical RadioButton</span></span>  
+ <span data-ttu-id="11772-105">![Přepínač stavy tlačítka](./media/ss-ctl-radiobuttons.gif "SS_CTL_radiobuttons")</span><span class="sxs-lookup"><span data-stu-id="11772-105">![Radio button states](./media/ss-ctl-radiobuttons.gif "SS_CTL_radiobuttons")</span></span>  
+<span data-ttu-id="11772-106">Typické ovládacího prvku RadioButton</span><span class="sxs-lookup"><span data-stu-id="11772-106">Typical RadioButton</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="36398-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="36398-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="11772-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="11772-107">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.ToggleButton>  
   
-## <a name="related-sections"></a><span data-ttu-id="36398-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="36398-108">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="11772-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="11772-108">Related Sections</span></span>

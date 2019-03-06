@@ -8,36 +8,36 @@ helpviewer_keywords:
 - serialization [WPF]
 - tree [WPF]
 ms.assetid: 8f57e879-180b-421f-b3d0-ac007ff2ce80
-ms.openlocfilehash: 9fcaf10bbed23a6c8b8cdc8355a2575574d2207a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4c178213e08add247311f0b71517ed292bd6658a
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33542858"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57355802"
 ---
-# <a name="element-tree-and-serialization"></a><span data-ttu-id="874e4-102">Strom prvku a serializace</span><span class="sxs-lookup"><span data-stu-id="874e4-102">Element Tree and Serialization</span></span>
-<span data-ttu-id="874e4-103">Programovací elementy WPF často existují v určitou formu stromu vzájemných vztahů.</span><span class="sxs-lookup"><span data-stu-id="874e4-103">WPF programming elements often exist in some form of tree relationship to each other.</span></span> <span data-ttu-id="874e4-104">Například můžete být aplikace vytvořena uživatelského rozhraní v jazyce XAML conceptualized jako strom k objektu.</span><span class="sxs-lookup"><span data-stu-id="874e4-104">For instance, an application UI created in XAML can be conceptualized as an object tree.</span></span> <span data-ttu-id="874e4-105">Stromu element lze dále rozdělit do dvou diskrétních ještě někdy paralelní stromy: logického stromu a vizuálním stromu.</span><span class="sxs-lookup"><span data-stu-id="874e4-105">The element tree can be further divided into two discrete yet sometimes parallel trees: the logical tree and the visual tree.</span></span> <span data-ttu-id="874e4-106">Serializace v grafickém subsystému WPF zahrnuje uložení stavu tyto dvě, stromy, a také stav aplikace a jejich zápisu do souboru, potenciálně jako XAML.</span><span class="sxs-lookup"><span data-stu-id="874e4-106">Serialization in WPF involves saving the state of these two trees as well as application state and writing it to a file, potentially as XAML.</span></span>  
+# <a name="element-tree-and-serialization"></a><span data-ttu-id="97814-102">Strom prvku a serializace</span><span class="sxs-lookup"><span data-stu-id="97814-102">Element Tree and Serialization</span></span>
+<span data-ttu-id="97814-103">Programovací prvky WPF často existovat v nějaké podobě stromu vztah mezi sebou.</span><span class="sxs-lookup"><span data-stu-id="97814-103">WPF programming elements often exist in some form of tree relationship to each other.</span></span> <span data-ttu-id="97814-104">Aplikace, které vytvořili uživatelského rozhraní v XAML může být například conceptualized jako stromu objektů.</span><span class="sxs-lookup"><span data-stu-id="97814-104">For instance, an application UI created in XAML can be conceptualized as an object tree.</span></span> <span data-ttu-id="97814-105">Strom prvku je možné dále rozdělit do dvou diskrétních, ale někdy paralelní stromů: Logická stromová struktura a vizuálního stromu.</span><span class="sxs-lookup"><span data-stu-id="97814-105">The element tree can be further divided into two discrete yet sometimes parallel trees: the logical tree and the visual tree.</span></span> <span data-ttu-id="97814-106">Serializace v subsystému WPF zahrnuje ukládání stavu z těchto dvou stromy a také stav aplikace a zápis do souboru, potenciálně jako XAML.</span><span class="sxs-lookup"><span data-stu-id="97814-106">Serialization in WPF involves saving the state of these two trees as well as application state and writing it to a file, potentially as XAML.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="874e4-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="874e4-107">In This Section</span></span>  
- [<span data-ttu-id="874e4-108">Stromy v subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="874e4-108">Trees in WPF</span></span>](../../../../docs/framework/wpf/advanced/trees-in-wpf.md)  
- [<span data-ttu-id="874e4-109">Omezení serializace XamlWriter.Save</span><span class="sxs-lookup"><span data-stu-id="874e4-109">Serialization Limitations of XamlWriter.Save</span></span>](../../../../docs/framework/wpf/advanced/serialization-limitations-of-xamlwriter-save.md)  
- [<span data-ttu-id="874e4-110">Inicializace elementů objektu, které nejsou ve stromu objektů</span><span class="sxs-lookup"><span data-stu-id="874e4-110">Initialization for Object Elements Not in an Object Tree</span></span>](../../../../docs/framework/wpf/advanced/initialization-for-object-elements-not-in-an-object-tree.md)  
- [<span data-ttu-id="874e4-111">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="874e4-111">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/element-tree-and-serialization-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="97814-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="97814-107">In This Section</span></span>  
+ [<span data-ttu-id="97814-108">Stromy v subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="97814-108">Trees in WPF</span></span>](trees-in-wpf.md)  
+ [<span data-ttu-id="97814-109">Omezení serializace XamlWriter.Save</span><span class="sxs-lookup"><span data-stu-id="97814-109">Serialization Limitations of XamlWriter.Save</span></span>](serialization-limitations-of-xamlwriter-save.md)  
+ [<span data-ttu-id="97814-110">Inicializace elementů objektu, které nejsou ve stromu objektů</span><span class="sxs-lookup"><span data-stu-id="97814-110">Initialization for Object Elements Not in an Object Tree</span></span>](initialization-for-object-elements-not-in-an-object-tree.md)  
+ [<span data-ttu-id="97814-111">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="97814-111">How-to Topics</span></span>](element-tree-and-serialization-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="874e4-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="874e4-112">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="97814-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="97814-112">Reference</span></span>  
  <xref:System.Windows.Markup>  
   
  <xref:System.Windows.LogicalTreeHelper>  
   
  <xref:System.Windows.Media.VisualTreeHelper>  
   
-## <a name="related-sections"></a><span data-ttu-id="874e4-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="874e4-113">Related Sections</span></span>  
- [<span data-ttu-id="874e4-114">Architektura WPF</span><span class="sxs-lookup"><span data-stu-id="874e4-114">WPF Architecture</span></span>](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
-  [<span data-ttu-id="874e4-115">XAML ve WPF</span><span class="sxs-lookup"><span data-stu-id="874e4-115">XAML in WPF</span></span>](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
-  [<span data-ttu-id="874e4-116">Základní elementy</span><span class="sxs-lookup"><span data-stu-id="874e4-116">Base Elements</span></span>](../../../../docs/framework/wpf/advanced/base-elements.md)  
-  [<span data-ttu-id="874e4-117">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="874e4-117">Properties</span></span>](../../../../docs/framework/wpf/advanced/properties-wpf.md)  
-  [<span data-ttu-id="874e4-118">Události</span><span class="sxs-lookup"><span data-stu-id="874e4-118">Events</span></span>](../../../../docs/framework/wpf/advanced/events-wpf.md)  
-  [<span data-ttu-id="874e4-119">Vstup</span><span class="sxs-lookup"><span data-stu-id="874e4-119">Input</span></span>](../../../../docs/framework/wpf/advanced/input-wpf.md)  
-  [<span data-ttu-id="874e4-120">Prostředky</span><span class="sxs-lookup"><span data-stu-id="874e4-120">Resources</span></span>](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
-  [<span data-ttu-id="874e4-121">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="874e4-121">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
-  [<span data-ttu-id="874e4-122">Model vláken</span><span class="sxs-lookup"><span data-stu-id="874e4-122">Threading Model</span></span>](../../../../docs/framework/wpf/advanced/threading-model.md)
+## <a name="related-sections"></a><span data-ttu-id="97814-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="97814-113">Related Sections</span></span>  
+ [<span data-ttu-id="97814-114">Architektura WPF</span><span class="sxs-lookup"><span data-stu-id="97814-114">WPF Architecture</span></span>](wpf-architecture.md)  
+  [<span data-ttu-id="97814-115">XAML ve WPF</span><span class="sxs-lookup"><span data-stu-id="97814-115">XAML in WPF</span></span>](xaml-in-wpf.md)  
+  [<span data-ttu-id="97814-116">Základní elementy</span><span class="sxs-lookup"><span data-stu-id="97814-116">Base Elements</span></span>](base-elements.md)  
+  [<span data-ttu-id="97814-117">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="97814-117">Properties</span></span>](properties-wpf.md)  
+  [<span data-ttu-id="97814-118">Události</span><span class="sxs-lookup"><span data-stu-id="97814-118">Events</span></span>](events-wpf.md)  
+  [<span data-ttu-id="97814-119">Vstup</span><span class="sxs-lookup"><span data-stu-id="97814-119">Input</span></span>](input-wpf.md)  
+  [<span data-ttu-id="97814-120">Prostředky</span><span class="sxs-lookup"><span data-stu-id="97814-120">Resources</span></span>](resources-wpf.md)  
+  [<span data-ttu-id="97814-121">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="97814-121">Styling and Templating</span></span>](../controls/styling-and-templating.md)  
+  [<span data-ttu-id="97814-122">Model vláken</span><span class="sxs-lookup"><span data-stu-id="97814-122">Threading Model</span></span>](threading-model.md)

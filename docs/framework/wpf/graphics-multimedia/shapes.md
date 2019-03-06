@@ -14,21 +14,21 @@ helpviewer_keywords:
 - stretchable Shapes [WPF]
 - Shape objects [WPF]
 ms.assetid: 893253b8-c2df-4f22-961d-cbc533d64c79
-ms.openlocfilehash: c39be1bdcc9c91f4822b7e168f16cb51c51d6c60
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5c4f76ee753ed6caa30d15a51c341a2edb64011d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580821"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57350702"
 ---
-# <a name="shapes"></a><span data-ttu-id="95332-102">Obrazce</span><span class="sxs-lookup"><span data-stu-id="95332-102">Shapes</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="95332-103">poskytuje podporu pro kreslení základních tvarů pomocí <xref:System.Windows.Shapes.Shape> třídy.</span><span class="sxs-lookup"><span data-stu-id="95332-103">provides support for drawing basic shapes using the <xref:System.Windows.Shapes.Shape> class.</span></span> <span data-ttu-id="95332-104">Shape – objekty jsou odvozeny z <xref:System.Windows.FrameworkElement> a v důsledku toho součástí systému rozložení a může být vykreslen jednoduše [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].</span><span class="sxs-lookup"><span data-stu-id="95332-104">Shape objects derive from <xref:System.Windows.FrameworkElement> and as such, participate in the layout system and can be drawn simply using [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].</span></span>  
+# <a name="shapes"></a><span data-ttu-id="7254c-102">Obrazce</span><span class="sxs-lookup"><span data-stu-id="7254c-102">Shapes</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="7254c-103">poskytuje podporu pro kreslení základních tvarů pomocí <xref:System.Windows.Shapes.Shape> třídy.</span><span class="sxs-lookup"><span data-stu-id="7254c-103">provides support for drawing basic shapes using the <xref:System.Windows.Shapes.Shape> class.</span></span> <span data-ttu-id="7254c-104">Shape – objekty jsou odvozeny z <xref:System.Windows.FrameworkElement> a v důsledku toho součástí systému rozložení a může být vykreslen jednoduše [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].</span><span class="sxs-lookup"><span data-stu-id="7254c-104">Shape objects derive from <xref:System.Windows.FrameworkElement> and as such, participate in the layout system and can be drawn simply using [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="95332-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="95332-105">In This Section</span></span>  
- [<span data-ttu-id="95332-106">Přehled objektů Shape a základního kreslení ve WPF</span><span class="sxs-lookup"><span data-stu-id="95332-106">Shapes and Basic Drawing in WPF Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
- [<span data-ttu-id="95332-107">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="95332-107">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/shapes-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="7254c-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="7254c-105">In This Section</span></span>  
+ [<span data-ttu-id="7254c-106">Přehled objektů Shape a základního kreslení ve WPF</span><span class="sxs-lookup"><span data-stu-id="7254c-106">Shapes and Basic Drawing in WPF Overview</span></span>](shapes-and-basic-drawing-in-wpf-overview.md)  
+ [<span data-ttu-id="7254c-107">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="7254c-107">How-to Topics</span></span>](shapes-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="95332-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="95332-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7254c-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7254c-108">See also</span></span>
 - <xref:System.Windows.Shapes.Shape>
-- [<span data-ttu-id="95332-109">2D grafika a obrázky</span><span class="sxs-lookup"><span data-stu-id="95332-109">2D Graphics and Imaging</span></span>](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [<span data-ttu-id="95332-110">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="95332-110">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+- [<span data-ttu-id="7254c-109">2D grafika a obrázky</span><span class="sxs-lookup"><span data-stu-id="7254c-109">2D Graphics and Imaging</span></span>](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [<span data-ttu-id="7254c-110">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="7254c-110">Graphics and Multimedia</span></span>](index.md)
