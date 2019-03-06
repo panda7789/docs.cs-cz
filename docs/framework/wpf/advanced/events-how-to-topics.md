@@ -6,28 +6,28 @@ f1_keywords:
 helpviewer_keywords:
 - events [WPF], how-to topics
 ms.assetid: 00463181-36eb-4be0-bfa2-452854cce642
-ms.openlocfilehash: fea698dd137a0e5639e4777b85284beaf83ace1b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 54c69e57efb99f5008d5fa5a21f748cd8e535afe
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33543524"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57370959"
 ---
-# <a name="events-how-to-topics"></a><span data-ttu-id="58bf9-102">Postupy: Události</span><span class="sxs-lookup"><span data-stu-id="58bf9-102">Events How-to Topics</span></span>
-<span data-ttu-id="58bf9-103">Témata v této části popisují postup používání událostí v grafickém subsystému WPF.</span><span class="sxs-lookup"><span data-stu-id="58bf9-103">The topics in this section describe how to use events in WPF.</span></span>  
+# <a name="events-how-to-topics"></a><span data-ttu-id="037d8-102">Postupy: Události</span><span class="sxs-lookup"><span data-stu-id="037d8-102">Events How-to Topics</span></span>
+<span data-ttu-id="037d8-103">Témata v této části popisují způsob použití událostí v subsystému WPF.</span><span class="sxs-lookup"><span data-stu-id="037d8-103">The topics in this section describe how to use events in WPF.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="58bf9-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="58bf9-104">In This Section</span></span>  
- [<span data-ttu-id="58bf9-105">Přidání obslužné rutiny události pomocí kódu</span><span class="sxs-lookup"><span data-stu-id="58bf9-105">Add an Event Handler Using Code</span></span>](../../../../docs/framework/wpf/advanced/how-to-add-an-event-handler-using-code.md)  
- [<span data-ttu-id="58bf9-106">Zpracování směrované události</span><span class="sxs-lookup"><span data-stu-id="58bf9-106">Handle a Routed Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-handle-a-routed-event.md)  
- [<span data-ttu-id="58bf9-107">Vytvoření vlastní směrované události</span><span class="sxs-lookup"><span data-stu-id="58bf9-107">Create a Custom Routed Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-create-a-custom-routed-event.md)  
- [<span data-ttu-id="58bf9-108">Hledání zdrojového elementu v obslužné rutině události</span><span class="sxs-lookup"><span data-stu-id="58bf9-108">Find the Source Element in an Event Handler</span></span>](../../../../docs/framework/wpf/advanced/how-to-find-the-source-element-in-an-event-handler.md)  
- [<span data-ttu-id="58bf9-109">Přidání zpracování třídy pro směrovanou událost</span><span class="sxs-lookup"><span data-stu-id="58bf9-109">Add Class Handling for a Routed Event</span></span>](../../../../docs/framework/wpf/advanced/how-to-add-class-handling-for-a-routed-event.md)  
+## <a name="in-this-section"></a><span data-ttu-id="037d8-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="037d8-104">In This Section</span></span>  
+ [<span data-ttu-id="037d8-105">Přidání obslužné rutiny události pomocí kódu</span><span class="sxs-lookup"><span data-stu-id="037d8-105">Add an Event Handler Using Code</span></span>](how-to-add-an-event-handler-using-code.md)  
+ [<span data-ttu-id="037d8-106">Zpracování směrované události</span><span class="sxs-lookup"><span data-stu-id="037d8-106">Handle a Routed Event</span></span>](how-to-handle-a-routed-event.md)  
+ [<span data-ttu-id="037d8-107">Vytvoření vlastní směrované události</span><span class="sxs-lookup"><span data-stu-id="037d8-107">Create a Custom Routed Event</span></span>](how-to-create-a-custom-routed-event.md)  
+ [<span data-ttu-id="037d8-108">Hledání zdrojového elementu v obslužné rutině události</span><span class="sxs-lookup"><span data-stu-id="037d8-108">Find the Source Element in an Event Handler</span></span>](how-to-find-the-source-element-in-an-event-handler.md)  
+ [<span data-ttu-id="037d8-109">Přidání zpracování třídy pro směrovanou událost</span><span class="sxs-lookup"><span data-stu-id="037d8-109">Add Class Handling for a Routed Event</span></span>](how-to-add-class-handling-for-a-routed-event.md)  
   
-## <a name="reference"></a><span data-ttu-id="58bf9-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="58bf9-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="037d8-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="037d8-110">Reference</span></span>  
  <xref:System.Windows.RoutedEvent>  
   
  <xref:System.Windows.EventManager>  
   
  <xref:System.Windows.RoutingStrategy>  
   
-## <a name="related-sections"></a><span data-ttu-id="58bf9-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="58bf9-111">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="037d8-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="037d8-111">Related Sections</span></span>

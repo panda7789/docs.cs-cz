@@ -7,26 +7,26 @@ helpviewer_keywords:
 - ListBox control [WPF]
 - controls [WPF], ListBox
 ms.assetid: b91bb352-4f51-44e0-9017-a041f216c852
-ms.openlocfilehash: 5363cc3a6939b829a7cde0a87b096932556fc5bc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fe458ea2ca4107b7d43b160ba90b57c10b88a7f6
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551684"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57362224"
 ---
-# <a name="listbox"></a><span data-ttu-id="f072b-102">ListBox</span><span class="sxs-lookup"><span data-stu-id="f072b-102">ListBox</span></span>
-<span data-ttu-id="f072b-103">A <xref:System.Windows.Controls.ListBox> řízení poskytuje uživatelům seznam položek, které lze vybírat.</span><span class="sxs-lookup"><span data-stu-id="f072b-103">A <xref:System.Windows.Controls.ListBox> control provides users with a list of selectable items.</span></span>  
+# <a name="listbox"></a><span data-ttu-id="1f34d-102">ListBox</span><span class="sxs-lookup"><span data-stu-id="1f34d-102">ListBox</span></span>
+<span data-ttu-id="1f34d-103">A <xref:System.Windows.Controls.ListBox> řízení poskytuje uživatelům seznam volitelných položek.</span><span class="sxs-lookup"><span data-stu-id="1f34d-103">A <xref:System.Windows.Controls.ListBox> control provides users with a list of selectable items.</span></span>  
   
- <span data-ttu-id="f072b-104">Následující obrázek ukazuje typické <xref:System.Windows.Controls.ListBox>.</span><span class="sxs-lookup"><span data-stu-id="f072b-104">The following figure illustrates a typical <xref:System.Windows.Controls.ListBox>.</span></span>  
+ <span data-ttu-id="1f34d-104">Následující obrázek ukazuje typické <xref:System.Windows.Controls.ListBox>.</span><span class="sxs-lookup"><span data-stu-id="1f34d-104">The following figure illustrates a typical <xref:System.Windows.Controls.ListBox>.</span></span>  
   
- <span data-ttu-id="f072b-105">![ListBox – snímek obrazovky](../../../../docs/framework/wpf/controls/media/ss-ctl-listbox.gif "SS_CTL_listbox")</span><span class="sxs-lookup"><span data-stu-id="f072b-105">![ListBox screen shot](../../../../docs/framework/wpf/controls/media/ss-ctl-listbox.gif "SS_CTL_listbox")</span></span>  
-<span data-ttu-id="f072b-106">Typické ListBox</span><span class="sxs-lookup"><span data-stu-id="f072b-106">Typical ListBox</span></span>  
+ <span data-ttu-id="1f34d-105">![ListBox screen shot](./media/ss-ctl-listbox.gif "SS_CTL_listbox")</span><span class="sxs-lookup"><span data-stu-id="1f34d-105">![ListBox screen shot](./media/ss-ctl-listbox.gif "SS_CTL_listbox")</span></span>  
+<span data-ttu-id="1f34d-106">Typické ListBox</span><span class="sxs-lookup"><span data-stu-id="1f34d-106">Typical ListBox</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="f072b-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f072b-107">In This Section</span></span>  
- [<span data-ttu-id="f072b-108">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="f072b-108">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/listbox-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="1f34d-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="1f34d-107">In This Section</span></span>  
+ [<span data-ttu-id="1f34d-108">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="1f34d-108">How-to Topics</span></span>](listbox-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="f072b-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="f072b-109">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="1f34d-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="1f34d-109">Reference</span></span>  
  <xref:System.Windows.Controls.ListBox>  
   <xref:System.Windows.Controls.ListBoxItem>  
   
-## <a name="related-sections"></a><span data-ttu-id="f072b-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="f072b-110">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="1f34d-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="1f34d-110">Related Sections</span></span>

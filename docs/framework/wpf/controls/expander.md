@@ -10,26 +10,26 @@ helpviewer_keywords:
 - Expander control [WPF]
 - collapsing headers [WPF]
 ms.assetid: e9dfc8d6-4555-47b9-a4de-0acd64f8770a
-ms.openlocfilehash: c235381af36fd6c99d10f27a8a543f836d7af108
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ba034dfceb4a42e1f88d15379b482e47a0700b8d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551964"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371937"
 ---
-# <a name="expander"></a><span data-ttu-id="32169-102">Rozšíření</span><span class="sxs-lookup"><span data-stu-id="32169-102">Expander</span></span>
-<span data-ttu-id="32169-103"><xref:System.Windows.Controls.Expander> Umožňuje uživatelům zobrazit záhlaví a rozbalte tuto hlavičku další podrobnosti zobrazíte, nebo na Sbalit oddíl až hlavičku.</span><span class="sxs-lookup"><span data-stu-id="32169-103">An <xref:System.Windows.Controls.Expander> allows a user to view a header and expand that header to see further details, or to collapse a section up to a header.</span></span>  
+# <a name="expander"></a><span data-ttu-id="65bf4-102">Rozšíření</span><span class="sxs-lookup"><span data-stu-id="65bf4-102">Expander</span></span>
+<span data-ttu-id="65bf4-103"><xref:System.Windows.Controls.Expander> Umožňuje uživateli zobrazit záhlaví a rozbalte tuto hlavičku k dalším podrobnostem a Sbalit oddíl až záhlaví.</span><span class="sxs-lookup"><span data-stu-id="65bf4-103">An <xref:System.Windows.Controls.Expander> allows a user to view a header and expand that header to see further details, or to collapse a section up to a header.</span></span>  
   
- <span data-ttu-id="32169-104">Následující obrázek poskytuje příklad tohoto ovládacího prvku v jeho rozšířené pozice.</span><span class="sxs-lookup"><span data-stu-id="32169-104">The following illustration provides an example of this control in its expanded position.</span></span>  
+ <span data-ttu-id="65bf4-104">Následující obrázek poskytuje příklad tohoto ovládacího prvku v pozici rozbalený.</span><span class="sxs-lookup"><span data-stu-id="65bf4-104">The following illustration provides an example of this control in its expanded position.</span></span>  
   
- <span data-ttu-id="32169-105">![Rozšíření – příklad](../../../../docs/framework/wpf/controls/media/expanderexample.JPG "ExpanderExample")</span><span class="sxs-lookup"><span data-stu-id="32169-105">![Expander example](../../../../docs/framework/wpf/controls/media/expanderexample.JPG "ExpanderExample")</span></span>  
-<span data-ttu-id="32169-106">Rozšíření – ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="32169-106">Expander control</span></span>  
+ <span data-ttu-id="65bf4-105">![Rozšíření příkladu](./media/expanderexample.JPG "ExpanderExample")</span><span class="sxs-lookup"><span data-stu-id="65bf4-105">![Expander example](./media/expanderexample.JPG "ExpanderExample")</span></span>  
+<span data-ttu-id="65bf4-106">Rozšíření – ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="65bf4-106">Expander control</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="32169-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="32169-107">In This Section</span></span>  
- [<span data-ttu-id="32169-108">Přehled rozšíření</span><span class="sxs-lookup"><span data-stu-id="32169-108">Expander Overview</span></span>](../../../../docs/framework/wpf/controls/expander-overview.md)  
- [<span data-ttu-id="32169-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="32169-109">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/expander-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="65bf4-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="65bf4-107">In This Section</span></span>  
+ [<span data-ttu-id="65bf4-108">Přehled rozšíření</span><span class="sxs-lookup"><span data-stu-id="65bf4-108">Expander Overview</span></span>](expander-overview.md)  
+ [<span data-ttu-id="65bf4-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="65bf4-109">How-to Topics</span></span>](expander-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="32169-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="32169-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="65bf4-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="65bf4-110">Reference</span></span>  
  <xref:System.Windows.Controls.Expander>  
   
-## <a name="related-sections"></a><span data-ttu-id="32169-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="32169-111">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="65bf4-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="65bf4-111">Related Sections</span></span>

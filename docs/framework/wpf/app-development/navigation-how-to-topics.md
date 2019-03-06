@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - navigation [WPF]
 ms.assetid: f804648e-558c-4f60-8e48-d11f4a23c436
-ms.openlocfilehash: d6b767e68f8d3217ffacd787137a2d4b91c3761d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4d1cfd1388e68ff6a5f8c6a6b209dc38dd2f80d3
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33550108"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57379741"
 ---
-# <a name="navigation-how-to-topics"></a><span data-ttu-id="c9dea-102">Postupy: Témata navigace</span><span class="sxs-lookup"><span data-stu-id="c9dea-102">Navigation How-to Topics</span></span>
-<span data-ttu-id="c9dea-103">Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] navigace.</span><span class="sxs-lookup"><span data-stu-id="c9dea-103">The following topics show how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] navigation.</span></span>  
+# <a name="navigation-how-to-topics"></a><span data-ttu-id="ee54a-102">Postupy: Témata navigace</span><span class="sxs-lookup"><span data-stu-id="ee54a-102">Navigation How-to Topics</span></span>
+<span data-ttu-id="ee54a-103">Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] navigace.</span><span class="sxs-lookup"><span data-stu-id="ee54a-103">The following topics show how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] navigation.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="c9dea-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c9dea-104">In This Section</span></span>  
- [<span data-ttu-id="c9dea-105">Volání funkce stránky</span><span class="sxs-lookup"><span data-stu-id="c9dea-105">Call a Page Function</span></span>](../../../../docs/framework/wpf/app-development/how-to-call-a-page-function.md)  
-  [<span data-ttu-id="c9dea-106">Načtení návratové hodnoty funkce stránky</span><span class="sxs-lookup"><span data-stu-id="c9dea-106">Get the Return Value of a Page Function</span></span>](../../../../docs/framework/wpf/app-development/how-to-get-the-return-value-of-a-page-function.md)  
-  [<span data-ttu-id="c9dea-107">Přecházení vpřed a zpět v historii navigace</span><span class="sxs-lookup"><span data-stu-id="c9dea-107">Navigate Forward or Back Through Navigation History</span></span>](../../../../docs/framework/wpf/app-development/how-to-navigate-forward-or-back-through-navigation-history.md)  
-  [<span data-ttu-id="c9dea-108">Vrácení z funkce stránky</span><span class="sxs-lookup"><span data-stu-id="c9dea-108">Return from a Page Function</span></span>](../../../../docs/framework/wpf/app-development/how-to-return-from-a-page-function.md)  
+## <a name="in-this-section"></a><span data-ttu-id="ee54a-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ee54a-104">In This Section</span></span>  
+ [<span data-ttu-id="ee54a-105">Volání funkce stránky</span><span class="sxs-lookup"><span data-stu-id="ee54a-105">Call a Page Function</span></span>](how-to-call-a-page-function.md)  
+  [<span data-ttu-id="ee54a-106">Načtení návratové hodnoty funkce stránky</span><span class="sxs-lookup"><span data-stu-id="ee54a-106">Get the Return Value of a Page Function</span></span>](how-to-get-the-return-value-of-a-page-function.md)  
+  [<span data-ttu-id="ee54a-107">Přecházení vpřed a zpět v historii navigace</span><span class="sxs-lookup"><span data-stu-id="ee54a-107">Navigate Forward or Back Through Navigation History</span></span>](how-to-navigate-forward-or-back-through-navigation-history.md)  
+  [<span data-ttu-id="ee54a-108">Vrácení z funkce stránky</span><span class="sxs-lookup"><span data-stu-id="ee54a-108">Return from a Page Function</span></span>](how-to-return-from-a-page-function.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="c9dea-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="c9dea-109">Related Sections</span></span>  
- [<span data-ttu-id="c9dea-110">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="c9dea-110">Navigation Overview</span></span>](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
+## <a name="related-sections"></a><span data-ttu-id="ee54a-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="ee54a-109">Related Sections</span></span>  
+ [<span data-ttu-id="ee54a-110">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="ee54a-110">Navigation Overview</span></span>](navigation-overview.md)  
   
- [<span data-ttu-id="c9dea-111">Přehled strukturované navigace</span><span class="sxs-lookup"><span data-stu-id="c9dea-111">Structured Navigation Overview</span></span>](../../../../docs/framework/wpf/app-development/structured-navigation-overview.md)
+ [<span data-ttu-id="ee54a-111">Přehled strukturované navigace</span><span class="sxs-lookup"><span data-stu-id="ee54a-111">Structured Navigation Overview</span></span>](structured-navigation-overview.md)

@@ -6,23 +6,23 @@ f1_keywords:
 helpviewer_keywords:
 - base elements [WPF]
 ms.assetid: 55034aa5-3c1d-442a-8293-f4692d8ea6ae
-ms.openlocfilehash: 165dfda74ac570578371915259548784c5a37820
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a1f7105ee6590314eb2ebbfa52b511f55f83dc05
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33539462"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57359611"
 ---
-# <a name="base-elements"></a><span data-ttu-id="59f75-102">Základní elementy</span><span class="sxs-lookup"><span data-stu-id="59f75-102">Base Elements</span></span>
-<span data-ttu-id="59f75-103">Čtyři klíč třídy –<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, a <xref:System.Windows.FrameworkContentElement>– implementace významné procento běžné funkce element, která je k dispozici v programování WPF.</span><span class="sxs-lookup"><span data-stu-id="59f75-103">Four key classes--<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, and <xref:System.Windows.FrameworkContentElement>--implement a substantial percentage of the common element functionality available in WPF programming.</span></span> <span data-ttu-id="59f75-104">Tyto čtyři třídy jsou uvedené v této sadě SDK jako element základní třídy.</span><span class="sxs-lookup"><span data-stu-id="59f75-104">These four classes are referred to in this SDK as the base element classes.</span></span>  
+# <a name="base-elements"></a><span data-ttu-id="ac291-102">Základní elementy</span><span class="sxs-lookup"><span data-stu-id="ac291-102">Base Elements</span></span>
+<span data-ttu-id="ac291-103">Čtyři klíč třídy –<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, a <xref:System.Windows.FrameworkContentElement>– implementace podstatné procento běžné funkce element, která je dostupná v programování ve WPF.</span><span class="sxs-lookup"><span data-stu-id="ac291-103">Four key classes--<xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, and <xref:System.Windows.FrameworkContentElement>--implement a substantial percentage of the common element functionality available in WPF programming.</span></span> <span data-ttu-id="ac291-104">Tyto čtyři třídy jsou uvedené v této sadě SDK jako základní prvek třídy.</span><span class="sxs-lookup"><span data-stu-id="ac291-104">These four classes are referred to in this SDK as the base element classes.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="59f75-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="59f75-105">In This Section</span></span>  
- [<span data-ttu-id="59f75-106">Přehled základních elementů</span><span class="sxs-lookup"><span data-stu-id="59f75-106">Base Elements Overview</span></span>](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
- [<span data-ttu-id="59f75-107">Přehled zablokovatelných objektů</span><span class="sxs-lookup"><span data-stu-id="59f75-107">Freezable Objects Overview</span></span>](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
- [<span data-ttu-id="59f75-108">Přehled zarovnání, okrajů a odsazení</span><span class="sxs-lookup"><span data-stu-id="59f75-108">Alignment, Margins, and Padding Overview</span></span>](../../../../docs/framework/wpf/advanced/alignment-margins-and-padding-overview.md)  
- [<span data-ttu-id="59f75-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="59f75-109">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/base-elements-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="ac291-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ac291-105">In This Section</span></span>  
+ [<span data-ttu-id="ac291-106">Přehled základních elementů</span><span class="sxs-lookup"><span data-stu-id="ac291-106">Base Elements Overview</span></span>](base-elements-overview.md)  
+ [<span data-ttu-id="ac291-107">Přehled zablokovatelných objektů</span><span class="sxs-lookup"><span data-stu-id="ac291-107">Freezable Objects Overview</span></span>](freezable-objects-overview.md)  
+ [<span data-ttu-id="ac291-108">Přehled zarovnání, okrajů a odsazení</span><span class="sxs-lookup"><span data-stu-id="ac291-108">Alignment, Margins, and Padding Overview</span></span>](alignment-margins-and-padding-overview.md)  
+ [<span data-ttu-id="ac291-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="ac291-109">How-to Topics</span></span>](base-elements-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="59f75-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="59f75-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="ac291-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="ac291-110">Reference</span></span>  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.ContentElement>  
@@ -31,13 +31,13 @@ ms.locfileid: "33539462"
   
  <xref:System.Windows.FrameworkContentElement>  
   
-## <a name="related-sections"></a><span data-ttu-id="59f75-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="59f75-111">Related Sections</span></span>  
- [<span data-ttu-id="59f75-112">Architektura WPF</span><span class="sxs-lookup"><span data-stu-id="59f75-112">WPF Architecture</span></span>](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
-  [<span data-ttu-id="59f75-113">XAML ve WPF</span><span class="sxs-lookup"><span data-stu-id="59f75-113">XAML in WPF</span></span>](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
-  [<span data-ttu-id="59f75-114">Strom elementu a serializace</span><span class="sxs-lookup"><span data-stu-id="59f75-114">Element Tree and Serialization</span></span>](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
-  [<span data-ttu-id="59f75-115">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="59f75-115">Properties</span></span>](../../../../docs/framework/wpf/advanced/properties-wpf.md)  
-  [<span data-ttu-id="59f75-116">Události</span><span class="sxs-lookup"><span data-stu-id="59f75-116">Events</span></span>](../../../../docs/framework/wpf/advanced/events-wpf.md)  
-  [<span data-ttu-id="59f75-117">Vstup</span><span class="sxs-lookup"><span data-stu-id="59f75-117">Input</span></span>](../../../../docs/framework/wpf/advanced/input-wpf.md)  
-  [<span data-ttu-id="59f75-118">Prostředky</span><span class="sxs-lookup"><span data-stu-id="59f75-118">Resources</span></span>](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
-  [<span data-ttu-id="59f75-119">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="59f75-119">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
-  [<span data-ttu-id="59f75-120">Model vláken</span><span class="sxs-lookup"><span data-stu-id="59f75-120">Threading Model</span></span>](../../../../docs/framework/wpf/advanced/threading-model.md)
+## <a name="related-sections"></a><span data-ttu-id="ac291-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="ac291-111">Related Sections</span></span>  
+ [<span data-ttu-id="ac291-112">Architektura WPF</span><span class="sxs-lookup"><span data-stu-id="ac291-112">WPF Architecture</span></span>](wpf-architecture.md)  
+  [<span data-ttu-id="ac291-113">XAML ve WPF</span><span class="sxs-lookup"><span data-stu-id="ac291-113">XAML in WPF</span></span>](xaml-in-wpf.md)  
+  [<span data-ttu-id="ac291-114">Strom elementu a serializace</span><span class="sxs-lookup"><span data-stu-id="ac291-114">Element Tree and Serialization</span></span>](element-tree-and-serialization.md)  
+  [<span data-ttu-id="ac291-115">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="ac291-115">Properties</span></span>](properties-wpf.md)  
+  [<span data-ttu-id="ac291-116">Události</span><span class="sxs-lookup"><span data-stu-id="ac291-116">Events</span></span>](events-wpf.md)  
+  [<span data-ttu-id="ac291-117">Vstup</span><span class="sxs-lookup"><span data-stu-id="ac291-117">Input</span></span>](input-wpf.md)  
+  [<span data-ttu-id="ac291-118">Prostředky</span><span class="sxs-lookup"><span data-stu-id="ac291-118">Resources</span></span>](resources-wpf.md)  
+  [<span data-ttu-id="ac291-119">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="ac291-119">Styling and Templating</span></span>](../controls/styling-and-templating.md)  
+  [<span data-ttu-id="ac291-120">Model vláken</span><span class="sxs-lookup"><span data-stu-id="ac291-120">Threading Model</span></span>](threading-model.md)

@@ -7,23 +7,23 @@ helpviewer_keywords:
 - documents [WPF], flow content reference
 - flow content reference [WPF]
 ms.assetid: d32501af-0bac-4b80-8a20-61a6996753fe
-ms.openlocfilehash: c41270bc09dfefb282a3c0e0ee0308e22e1af446
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 47bdc48eb6f2fcb0ffd73f06a58bd01d716e56fc
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33542334"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373540"
 ---
-# <a name="flow-content"></a><span data-ttu-id="b3774-102">Obsah toku</span><span class="sxs-lookup"><span data-stu-id="b3774-102">Flow Content</span></span>
-<span data-ttu-id="b3774-103">Tok obsahu elementy poskytují stavební bloky pro vytvoření vhodný pro hostování v toku obsahu <xref:System.Windows.Documents.FlowDocument>.</span><span class="sxs-lookup"><span data-stu-id="b3774-103">Flow content elements provide the building blocks for creating flow content suitable for hosting in a <xref:System.Windows.Documents.FlowDocument>.</span></span>  
+# <a name="flow-content"></a><span data-ttu-id="d6bed-102">Obsah toku</span><span class="sxs-lookup"><span data-stu-id="d6bed-102">Flow Content</span></span>
+<span data-ttu-id="d6bed-103">Elementů obsahu toku poskytoval stavební bloky pro vytváření vhodný pro hostování v plovoucího obsahu <xref:System.Windows.Documents.FlowDocument>.</span><span class="sxs-lookup"><span data-stu-id="d6bed-103">Flow content elements provide the building blocks for creating flow content suitable for hosting in a <xref:System.Windows.Documents.FlowDocument>.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="b3774-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="b3774-104">In This Section</span></span>  
- [<span data-ttu-id="b3774-105">Přehled toku dokumentů</span><span class="sxs-lookup"><span data-stu-id="b3774-105">Flow Document Overview</span></span>](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
- [<span data-ttu-id="b3774-106">Přehled modelu obsahu TextElement</span><span class="sxs-lookup"><span data-stu-id="b3774-106">TextElement Content Model Overview</span></span>](../../../../docs/framework/wpf/advanced/textelement-content-model-overview.md)  
- [<span data-ttu-id="b3774-107">Přehled tabulky</span><span class="sxs-lookup"><span data-stu-id="b3774-107">Table Overview</span></span>](../../../../docs/framework/wpf/advanced/table-overview.md)  
- [<span data-ttu-id="b3774-108">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="b3774-108">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/flow-content-elements-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="d6bed-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="d6bed-104">In This Section</span></span>  
+ [<span data-ttu-id="d6bed-105">Přehled toku dokumentů</span><span class="sxs-lookup"><span data-stu-id="d6bed-105">Flow Document Overview</span></span>](flow-document-overview.md)  
+ [<span data-ttu-id="d6bed-106">Přehled modelu obsahu TextElement</span><span class="sxs-lookup"><span data-stu-id="d6bed-106">TextElement Content Model Overview</span></span>](textelement-content-model-overview.md)  
+ [<span data-ttu-id="d6bed-107">Přehled tabulky</span><span class="sxs-lookup"><span data-stu-id="d6bed-107">Table Overview</span></span>](table-overview.md)  
+ [<span data-ttu-id="d6bed-108">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="d6bed-108">How-to Topics</span></span>](flow-content-elements-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="b3774-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="b3774-109">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="d6bed-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="d6bed-109">Reference</span></span>  
  <xref:System.Windows.Documents.FlowDocument>  
   <xref:System.Windows.Documents.Block>  
   <xref:System.Windows.Documents.List>  
@@ -38,5 +38,5 @@ ms.locfileid: "33542334"
   <xref:System.Windows.Documents.Span>  
   <xref:System.Windows.Documents.ListItem>  
   
-## <a name="related-sections"></a><span data-ttu-id="b3774-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="b3774-110">Related Sections</span></span>  
- [<span data-ttu-id="b3774-111">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="b3774-111">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+## <a name="related-sections"></a><span data-ttu-id="d6bed-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="d6bed-110">Related Sections</span></span>  
+ [<span data-ttu-id="d6bed-111">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="d6bed-111">Documents in WPF</span></span>](documents-in-wpf.md)

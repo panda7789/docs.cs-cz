@@ -7,24 +7,24 @@ helpviewer_keywords:
 - controls [WPF], GroupBox
 - GroupBox control [WPF]
 ms.assetid: 1f4ed3d9-a171-4623-bc4f-3314e3576271
-ms.openlocfilehash: e7e73523f9c7038fdcec64f66567dc41a75d5e2e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 811a29f6575681504a8dcf72257c82d288558a12
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33550836"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358922"
 ---
-# <a name="groupbox"></a><span data-ttu-id="ef54e-102">GroupBox</span><span class="sxs-lookup"><span data-stu-id="ef54e-102">GroupBox</span></span>
-<span data-ttu-id="ef54e-103"><xref:System.Windows.Controls.GroupBox> Ovládacího prvku <xref:System.Windows.Controls.HeaderedContentControl> názvem kontejner, který poskytuje [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)] obsah.</span><span class="sxs-lookup"><span data-stu-id="ef54e-103">The <xref:System.Windows.Controls.GroupBox> control is a <xref:System.Windows.Controls.HeaderedContentControl> that provides a titled container for [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)] content.</span></span>  
+# <a name="groupbox"></a><span data-ttu-id="6e583-102">GroupBox</span><span class="sxs-lookup"><span data-stu-id="6e583-102">GroupBox</span></span>
+<span data-ttu-id="6e583-103"><xref:System.Windows.Controls.GroupBox> Je ovládací prvek <xref:System.Windows.Controls.HeaderedContentControl> poskytující kontejner s názvem pro [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)] obsah.</span><span class="sxs-lookup"><span data-stu-id="6e583-103">The <xref:System.Windows.Controls.GroupBox> control is a <xref:System.Windows.Controls.HeaderedContentControl> that provides a titled container for [!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)] content.</span></span>  
   
- <span data-ttu-id="ef54e-104">Následující obrázek znázorňuje <xref:System.Windows.Controls.GroupBox> obsahující <xref:System.Windows.Controls.TabControl> a <xref:System.Windows.Controls.Button> , jsou uzavřené v <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="ef54e-104">The following illustration shows a <xref:System.Windows.Controls.GroupBox> that contains a <xref:System.Windows.Controls.TabControl> and a <xref:System.Windows.Controls.Button> that are enclosed in a <xref:System.Windows.Controls.StackPanel>.</span></span>  
+ <span data-ttu-id="6e583-104">Je vidět na následujícím obrázku <xref:System.Windows.Controls.GroupBox> , která obsahuje <xref:System.Windows.Controls.TabControl> a <xref:System.Windows.Controls.Button> , které jsou uzavřeny v <xref:System.Windows.Controls.StackPanel>.</span><span class="sxs-lookup"><span data-stu-id="6e583-104">The following illustration shows a <xref:System.Windows.Controls.GroupBox> that contains a <xref:System.Windows.Controls.TabControl> and a <xref:System.Windows.Controls.Button> that are enclosed in a <xref:System.Windows.Controls.StackPanel>.</span></span>  
   
- <span data-ttu-id="ef54e-105">![GroupBoxImage](../../../../docs/framework/wpf/controls/media/groupboximage.JPG "GroupBoxImage")</span><span class="sxs-lookup"><span data-stu-id="ef54e-105">![GroupBoxImage](../../../../docs/framework/wpf/controls/media/groupboximage.JPG "GroupBoxImage")</span></span>  
+ <span data-ttu-id="6e583-105">![GroupBoxImage](./media/groupboximage.JPG "GroupBoxImage")</span><span class="sxs-lookup"><span data-stu-id="6e583-105">![GroupBoxImage](./media/groupboximage.JPG "GroupBoxImage")</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="ef54e-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ef54e-106">In This Section</span></span>  
- [<span data-ttu-id="ef54e-107">Definice šablony GroupBox</span><span class="sxs-lookup"><span data-stu-id="ef54e-107">Define a GroupBox Template</span></span>](../../../../docs/framework/wpf/controls/how-to-define-a-groupbox-template.md)  
+## <a name="in-this-section"></a><span data-ttu-id="6e583-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="6e583-106">In This Section</span></span>  
+ [<span data-ttu-id="6e583-107">Definice šablony GroupBox</span><span class="sxs-lookup"><span data-stu-id="6e583-107">Define a GroupBox Template</span></span>](how-to-define-a-groupbox-template.md)  
   
-## <a name="reference"></a><span data-ttu-id="ef54e-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="ef54e-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="6e583-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="6e583-108">Reference</span></span>  
  <xref:System.Windows.Controls.GroupBox>  
   
-## <a name="related-sections"></a><span data-ttu-id="ef54e-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="ef54e-109">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="6e583-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="6e583-109">Related Sections</span></span>

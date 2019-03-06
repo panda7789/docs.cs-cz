@@ -16,21 +16,21 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a561c5af868968624ee9ee81050d87b17c4591be
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1eb6b870beabb71e340b0ec39c489cedb02128cf
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54624415"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57366631"
 ---
-# <a name="blessiwbemservicesobject-function"></a><span data-ttu-id="bc6c8-103">Funkce BlessIWbemServicesObject</span><span class="sxs-lookup"><span data-stu-id="bc6c8-103">BlessIWbemServicesObject function</span></span>
-<span data-ttu-id="bc6c8-104">Určuje, zda pověření uživatelů odkudkoli přístup k zadané [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objektu.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-104">Indicates whether the user credentials permit access to a specified [IWbemServices](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) object.</span></span>   
-  
+# <a name="blessiwbemservicesobject-function"></a><span data-ttu-id="5c175-103">Funkce BlessIWbemServicesObject</span><span class="sxs-lookup"><span data-stu-id="5c175-103">BlessIWbemServicesObject function</span></span>
+<span data-ttu-id="5c175-104">Určuje, zda pověření uživatelů odkudkoli přístup k zadané [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objektu.</span><span class="sxs-lookup"><span data-stu-id="5c175-104">Indicates whether the user credentials permit access to a specified [IWbemServices](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) object.</span></span> 
+
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
-## <a name="syntax"></a><span data-ttu-id="bc6c8-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bc6c8-105">Syntax</span></span>  
-  
-```  
+
+## <a name="syntax"></a><span data-ttu-id="5c175-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5c175-105">Syntax</span></span>
+
+```
 HRESULT BlessIWbemServicesObject (
    [in] IUnknown* pIUnknown,
    [in] BSTR strUser, 
@@ -39,43 +39,48 @@ HRESULT BlessIWbemServicesObject (
    [in] DWORD impLevel, 
    [in] DWORD authnLevel
 );
-```  
+```
 
-## <a name="parameters"></a><span data-ttu-id="bc6c8-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="bc6c8-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="5c175-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="5c175-106">Parameters</span></span>
 
-`pIWbemServices`  
-<span data-ttu-id="bc6c8-107">[in] Ukazatel na objekt služby WMI.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-107">[in] A pointer to a WMI service object.</span></span>
+`pIWbemServices`\
+<span data-ttu-id="5c175-107">[in] Ukazatel na objekt služby WMI.</span><span class="sxs-lookup"><span data-stu-id="5c175-107">[in] A pointer to a WMI service object.</span></span>
 
-`strUser`  
-<span data-ttu-id="bc6c8-108">[in] Uživatelské jméno.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-108">[in] The user name.</span></span>
+`strUser`\
+<span data-ttu-id="5c175-108">[in] Uživatelské jméno.</span><span class="sxs-lookup"><span data-stu-id="5c175-108">[in] The user name.</span></span>
 
-`strPassword`  
-<span data-ttu-id="bc6c8-109">[in] Heslo přidružené k `strUser`.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-109">[in] The password associated with `strUser`.</span></span>
+`strPassword`\
+<span data-ttu-id="5c175-109">[in] Heslo přidružené k `strUser`.</span><span class="sxs-lookup"><span data-stu-id="5c175-109">[in] The password associated with `strUser`.</span></span>
 
-<span data-ttu-id="bc6c8-110">`strAuthority` [in] Název domény uživatele.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-110">`strAuthority` [in] The domain name of the user.</span></span> <span data-ttu-id="bc6c8-111">Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-111">See the [ConnectServerWmi](connectserverwmi.md) function for more information.</span></span>
+`strAuthority`\
+<span data-ttu-id="5c175-110">[in] Název domény uživatele.</span><span class="sxs-lookup"><span data-stu-id="5c175-110">[in] The domain name of the user.</span></span> <span data-ttu-id="5c175-111">Zobrazit [ConnectServerWmi](connectserverwmi.md) funkce pro další informace.</span><span class="sxs-lookup"><span data-stu-id="5c175-111">See the [ConnectServerWmi](connectserverwmi.md) function for more information.</span></span>
 
-<span data-ttu-id="bc6c8-112">`impLevel` [in] Úroveň zosobnění.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-112">`impLevel` [in] The impersonation level.</span></span>
+`impLevel`\
+<span data-ttu-id="5c175-112">[in] Úroveň zosobnění.</span><span class="sxs-lookup"><span data-stu-id="5c175-112">[in] The impersonation level.</span></span>
 
-<span data-ttu-id="bc6c8-113">`authnLevel` [in] Úroveň autorizace.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-113">`authnLevel` [in] The authorization level.</span></span>
+`authnLevel`\
+<span data-ttu-id="5c175-113">[in] Úroveň autorizace.</span><span class="sxs-lookup"><span data-stu-id="5c175-113">[in] The authorization level.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="bc6c8-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="bc6c8-114">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="5c175-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="5c175-114">Return value</span></span>
 
-<span data-ttu-id="bc6c8-115">Následující hodnoty vrácené touto funkcí jsou definovány v *WinError.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="bc6c8-115">The following values returned by this function are defined in the *WinError.h* header file, or you can define them as constants in your code:</span></span>
+<span data-ttu-id="5c175-115">Následující hodnoty vrácené touto funkcí jsou definovány v *WinError.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="5c175-115">The following values returned by this function are defined in the *WinError.h* header file, or you can define them as constants in your code:</span></span>
 
-|<span data-ttu-id="bc6c8-116">Konstanta</span><span class="sxs-lookup"><span data-stu-id="bc6c8-116">Constant</span></span>  |<span data-ttu-id="bc6c8-117">Hodnota</span><span class="sxs-lookup"><span data-stu-id="bc6c8-117">Value</span></span>  |<span data-ttu-id="bc6c8-118">Popis</span><span class="sxs-lookup"><span data-stu-id="bc6c8-118">Description</span></span>  |
+|<span data-ttu-id="5c175-116">Konstanta</span><span class="sxs-lookup"><span data-stu-id="5c175-116">Constant</span></span>  |<span data-ttu-id="5c175-117">Hodnota</span><span class="sxs-lookup"><span data-stu-id="5c175-117">Value</span></span>  |<span data-ttu-id="5c175-118">Popis</span><span class="sxs-lookup"><span data-stu-id="5c175-118">Description</span></span>  |
 |---------|---------|---------|
-| `E_INVALIDARG` | <span data-ttu-id="bc6c8-119">0x80070057</span><span class="sxs-lookup"><span data-stu-id="bc6c8-119">0x80070057</span></span> | <span data-ttu-id="bc6c8-120">Jeden nebo více argumentů nejsou platné.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-120">One or more arguments are invalid.</span></span> |
-| `E_POINTER` | <span data-ttu-id="bc6c8-121">0x80004003</span><span class="sxs-lookup"><span data-stu-id="bc6c8-121">0x80004003</span></span> | <span data-ttu-id="bc6c8-122">`pIWbemServices` je `null`.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-122">`pIWbemServices` is `null`.</span></span> | 
-| `E_FAIL` | <span data-ttu-id="bc6c8-123">0x80000008</span><span class="sxs-lookup"><span data-stu-id="bc6c8-123">0x80000008</span></span> | <span data-ttu-id="bc6c8-124">Došlo k nespecifikované chybě.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-124">An unspecified error has occurred.</span></span> |
-| `E_OUTOFMEMORY` | <span data-ttu-id="bc6c8-125">0x80000002</span><span class="sxs-lookup"><span data-stu-id="bc6c8-125">0x80000002</span></span> | <span data-ttu-id="bc6c8-126">K provedení této operace není dostatek paměti.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-126">Insufficient memory is available to perform the operation.</span></span> | 
-| `S_OK` | <span data-ttu-id="bc6c8-127">0</span><span class="sxs-lookup"><span data-stu-id="bc6c8-127">0</span></span> | <span data-ttu-id="bc6c8-128">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="bc6c8-128">The function call was successful.</span></span> | 
+| `E_INVALIDARG` | <span data-ttu-id="5c175-119">0x80070057</span><span class="sxs-lookup"><span data-stu-id="5c175-119">0x80070057</span></span> | <span data-ttu-id="5c175-120">Jeden nebo více argumentů nejsou platné.</span><span class="sxs-lookup"><span data-stu-id="5c175-120">One or more arguments are invalid.</span></span> |
+| `E_POINTER` | <span data-ttu-id="5c175-121">0x80004003</span><span class="sxs-lookup"><span data-stu-id="5c175-121">0x80004003</span></span> | <span data-ttu-id="5c175-122">`pIWbemServices` je `null`.</span><span class="sxs-lookup"><span data-stu-id="5c175-122">`pIWbemServices` is `null`.</span></span> | 
+| `E_FAIL` | <span data-ttu-id="5c175-123">0x80000008</span><span class="sxs-lookup"><span data-stu-id="5c175-123">0x80000008</span></span> | <span data-ttu-id="5c175-124">Došlo k nespecifikované chybě.</span><span class="sxs-lookup"><span data-stu-id="5c175-124">An unspecified error has occurred.</span></span> |
+| `E_OUTOFMEMORY` | <span data-ttu-id="5c175-125">0x80000002</span><span class="sxs-lookup"><span data-stu-id="5c175-125">0x80000002</span></span> | <span data-ttu-id="5c175-126">K provedení této operace není dostatek paměti.</span><span class="sxs-lookup"><span data-stu-id="5c175-126">Insufficient memory is available to perform the operation.</span></span> | 
+| `S_OK` | <span data-ttu-id="5c175-127">0</span><span class="sxs-lookup"><span data-stu-id="5c175-127">0</span></span> | <span data-ttu-id="5c175-128">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="5c175-128">The function call was successful.</span></span> | 
 
-## <a name="requirements"></a><span data-ttu-id="bc6c8-129">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bc6c8-129">Requirements</span></span>  
- <span data-ttu-id="bc6c8-130">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bc6c8-130">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
-  
- <span data-ttu-id="bc6c8-131">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="bc6c8-131">**Header:** WMINet_Utils.idl</span></span>  
-  
- <span data-ttu-id="bc6c8-132">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="bc6c8-132">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="bc6c8-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bc6c8-133">See also</span></span>
-- [<span data-ttu-id="bc6c8-134">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="bc6c8-134">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+## <a name="requirements"></a><span data-ttu-id="5c175-129">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5c175-129">Requirements</span></span>
+
+ <span data-ttu-id="5c175-130">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5c175-130">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>
+
+ <span data-ttu-id="5c175-131">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="5c175-131">**Header:** WMINet_Utils.idl</span></span>
+
+ <span data-ttu-id="5c175-132">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="5c175-132">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="5c175-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5c175-133">See also</span></span>
+
+- [<span data-ttu-id="5c175-134">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="5c175-134">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)

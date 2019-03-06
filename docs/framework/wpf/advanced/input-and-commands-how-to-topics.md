@@ -7,30 +7,30 @@ helpviewer_keywords:
 - input API [WPF]
 - commanding [WPF]
 ms.assetid: a5c266b6-969c-4049-a471-ddca7b10fb89
-ms.openlocfilehash: 2fb3472456e709c0f9f395789fd42ed38a3d2ed7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a3cd3bd0861ef2e2896d33e52594b0712e984149
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33544285"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352383"
 ---
-# <a name="input-and-commands-how-to-topics"></a><span data-ttu-id="b174d-102">Postupy: Témata vstupu a příkazů</span><span class="sxs-lookup"><span data-stu-id="b174d-102">Input and Commands How-to Topics</span></span>
-<span data-ttu-id="b174d-103">Témata v této části popisují, jak používat vstupní a řídicího infrastruktury v systému Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="b174d-103">The topics in this section describe how to use the input and commanding infrastructure in Windows Presentation Foundation (WPF).</span></span>  
+# <a name="input-and-commands-how-to-topics"></a><span data-ttu-id="1493e-102">Postupy: Témata vstupu a příkazů</span><span class="sxs-lookup"><span data-stu-id="1493e-102">Input and Commands How-to Topics</span></span>
+<span data-ttu-id="1493e-103">Témata v této části popisují způsob použití infrastruktury vstupní a řídicího ve Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="1493e-103">The topics in this section describe how to use the input and commanding infrastructure in Windows Presentation Foundation (WPF).</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="b174d-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="b174d-104">In This Section</span></span>  
- [<span data-ttu-id="b174d-105">Povolení příkazu</span><span class="sxs-lookup"><span data-stu-id="b174d-105">Enable a Command</span></span>](../../../../docs/framework/wpf/advanced/how-to-enable-a-command.md)  
- [<span data-ttu-id="b174d-106">Změna typu kurzoru</span><span class="sxs-lookup"><span data-stu-id="b174d-106">Change the Cursor Type</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-cursor-type.md)  
- [<span data-ttu-id="b174d-107">Změna barvy elementu použitím událostí fokusu</span><span class="sxs-lookup"><span data-stu-id="b174d-107">Change the Color of an Element Using Focus Events</span></span>](../../../../docs/framework/wpf/advanced/how-to-change-the-color-of-an-element-using-focus-events.md)  
- [<span data-ttu-id="b174d-108">Použití FocusVisualStyle na ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="b174d-108">Apply a FocusVisualStyle to a Control</span></span>](../../../../docs/framework/wpf/advanced/how-to-apply-a-focusvisualstyle-to-a-control.md)  
- [<span data-ttu-id="b174d-109">Detekce stisknuté klávesy Enter</span><span class="sxs-lookup"><span data-stu-id="b174d-109">Detect When the Enter Key is Pressed</span></span>](../../../../docs/framework/wpf/advanced/how-to-detect-when-the-enter-key-pressed.md)  
- [<span data-ttu-id="b174d-110">Vytvoření efektu přechodu použitím událostí</span><span class="sxs-lookup"><span data-stu-id="b174d-110">Create a Rollover Effect Using Events</span></span>](../../../../docs/framework/wpf/advanced/how-to-create-a-rollover-effect-using-events.md)  
- [<span data-ttu-id="b174d-111">Nastavení objektu tak, aby následoval ukazatel myši</span><span class="sxs-lookup"><span data-stu-id="b174d-111">Make an Object Follow the Mouse Pointer</span></span>](../../../../docs/framework/wpf/advanced/how-to-make-an-object-follow-the-mouse-pointer.md)  
- [<span data-ttu-id="b174d-112">Vytvoření objektu RoutedCommand</span><span class="sxs-lookup"><span data-stu-id="b174d-112">Create a RoutedCommand</span></span>](../../../../docs/framework/wpf/advanced/how-to-create-a-routedcommand.md)  
- [<span data-ttu-id="b174d-113">Implementace rozhraní ICommandSource</span><span class="sxs-lookup"><span data-stu-id="b174d-113">Implement ICommandSource</span></span>](../../../../docs/framework/wpf/advanced/how-to-implement-icommandsource.md)  
- [<span data-ttu-id="b174d-114">Propojení příkazu s ovládacím prvkem bez podpory příkazů</span><span class="sxs-lookup"><span data-stu-id="b174d-114">Hook Up a Command to a Control with No Command Support</span></span>](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-no-command-support.md)  
- [<span data-ttu-id="b174d-115">Propojení příkazu s ovládacím prvkem s podporou příkazů</span><span class="sxs-lookup"><span data-stu-id="b174d-115">Hook Up a Command to a Control with Command Support</span></span>](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-command-support.md)  
+## <a name="in-this-section"></a><span data-ttu-id="1493e-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="1493e-104">In This Section</span></span>  
+ [<span data-ttu-id="1493e-105">Povolení příkazu</span><span class="sxs-lookup"><span data-stu-id="1493e-105">Enable a Command</span></span>](how-to-enable-a-command.md)  
+ [<span data-ttu-id="1493e-106">Změna typu kurzoru</span><span class="sxs-lookup"><span data-stu-id="1493e-106">Change the Cursor Type</span></span>](how-to-change-the-cursor-type.md)  
+ [<span data-ttu-id="1493e-107">Změna barvy elementu použitím událostí fokusu</span><span class="sxs-lookup"><span data-stu-id="1493e-107">Change the Color of an Element Using Focus Events</span></span>](how-to-change-the-color-of-an-element-using-focus-events.md)  
+ [<span data-ttu-id="1493e-108">Použití FocusVisualStyle na ovládací prvek</span><span class="sxs-lookup"><span data-stu-id="1493e-108">Apply a FocusVisualStyle to a Control</span></span>](how-to-apply-a-focusvisualstyle-to-a-control.md)  
+ [<span data-ttu-id="1493e-109">Detekce stisknuté klávesy Enter</span><span class="sxs-lookup"><span data-stu-id="1493e-109">Detect When the Enter Key is Pressed</span></span>](how-to-detect-when-the-enter-key-pressed.md)  
+ [<span data-ttu-id="1493e-110">Vytvoření efektu přechodu použitím událostí</span><span class="sxs-lookup"><span data-stu-id="1493e-110">Create a Rollover Effect Using Events</span></span>](how-to-create-a-rollover-effect-using-events.md)  
+ [<span data-ttu-id="1493e-111">Nastavení objektu tak, aby následoval ukazatel myši</span><span class="sxs-lookup"><span data-stu-id="1493e-111">Make an Object Follow the Mouse Pointer</span></span>](how-to-make-an-object-follow-the-mouse-pointer.md)  
+ [<span data-ttu-id="1493e-112">Vytvoření objektu RoutedCommand</span><span class="sxs-lookup"><span data-stu-id="1493e-112">Create a RoutedCommand</span></span>](how-to-create-a-routedcommand.md)  
+ [<span data-ttu-id="1493e-113">Implementace rozhraní ICommandSource</span><span class="sxs-lookup"><span data-stu-id="1493e-113">Implement ICommandSource</span></span>](how-to-implement-icommandsource.md)  
+ [<span data-ttu-id="1493e-114">Propojení příkazu s ovládacím prvkem bez podpory příkazů</span><span class="sxs-lookup"><span data-stu-id="1493e-114">Hook Up a Command to a Control with No Command Support</span></span>](how-to-hook-up-a-command-to-a-control-with-no-command-support.md)  
+ [<span data-ttu-id="1493e-115">Propojení příkazu s ovládacím prvkem s podporou příkazů</span><span class="sxs-lookup"><span data-stu-id="1493e-115">Hook Up a Command to a Control with Command Support</span></span>](how-to-hook-up-a-command-to-a-control-with-command-support.md)  
   
-## <a name="reference"></a><span data-ttu-id="b174d-116">Odkaz</span><span class="sxs-lookup"><span data-stu-id="b174d-116">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="1493e-116">Odkaz</span><span class="sxs-lookup"><span data-stu-id="1493e-116">Reference</span></span>  
  <xref:System.Windows.UIElement>  
   
  <xref:System.Windows.FrameworkElement>  
@@ -45,4 +45,4 @@ ms.locfileid: "33544285"
   
  <xref:System.Windows.Input.FocusManager>  
   
-## <a name="related-sections"></a><span data-ttu-id="b174d-117">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="b174d-117">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="1493e-117">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="1493e-117">Related Sections</span></span>

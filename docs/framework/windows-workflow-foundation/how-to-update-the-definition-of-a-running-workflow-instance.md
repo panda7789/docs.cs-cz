@@ -1,69 +1,69 @@
 ---
-title: 'Postupy: aktualizace definice běžící Instance pracovního postupu'
+title: 'Postupy: Aktualizace definice běžící Instance pracovního postupu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 26dfac36-ae23-4909-9867-62495b55fb5e
-ms.openlocfilehash: da8b6adeede1fddf39c818568cfd884c3add317f
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 1f5980ed360e8dfb4aaac92e1e5e7236ffb9f409
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123836"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57376590"
 ---
-# <a name="how-to-update-the-definition-of-a-running-workflow-instance"></a><span data-ttu-id="88562-102">Postupy: aktualizace definice běžící Instance pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="88562-102">How to: Update the Definition of a Running Workflow Instance</span></span>
-<span data-ttu-id="88562-103">Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům aplikací k aktualizaci pracovního postupu definici trvalé instance práce.</span><span class="sxs-lookup"><span data-stu-id="88562-103">Dynamic update provides a mechanism for workflow application developers to update the workflow definition of a persisted workflow instance.</span></span> <span data-ttu-id="88562-104">Požadovaná změna lze provádět opravy chyb, nové požadavky, nebo tak, aby vyhovovaly neočekávaným změnám.</span><span class="sxs-lookup"><span data-stu-id="88562-104">The required change can be to implement a bug fix, new requirements, or to accommodate unexpected changes.</span></span> <span data-ttu-id="88562-105">Tento krok úvodního kurzu ukazuje, jak použít ke změně trvalého instance dynamické aktualizace `v1` číslo opakovaně uhodnout pracovního postupu tak, aby odpovídaly nových funkcích uvedených ve [jak: více verzí pracovní postup-souběžně hostitele ](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span><span class="sxs-lookup"><span data-stu-id="88562-105">This step in the tutorial demonstrates how to use dynamic update to modify  persisted instances of the `v1` number guessing workflow to match the new functionality introduced in [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span></span>
+# <a name="how-to-update-the-definition-of-a-running-workflow-instance"></a><span data-ttu-id="9b3b3-102">Postupy: Aktualizace definice běžící Instance pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="9b3b3-102">How to: Update the Definition of a Running Workflow Instance</span></span>
+<span data-ttu-id="9b3b3-103">Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům aplikací k aktualizaci pracovního postupu definici trvalé instance práce.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-103">Dynamic update provides a mechanism for workflow application developers to update the workflow definition of a persisted workflow instance.</span></span> <span data-ttu-id="9b3b3-104">Požadovaná změna lze provádět opravy chyb, nové požadavky, nebo tak, aby vyhovovaly neočekávaným změnám.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-104">The required change can be to implement a bug fix, new requirements, or to accommodate unexpected changes.</span></span> <span data-ttu-id="9b3b3-105">Tento krok úvodního kurzu ukazuje, jak použít ke změně trvalého instance dynamické aktualizace `v1` číslo opakovaně uhodnout pracovního postupu tak, aby odpovídaly nových funkcích uvedených ve [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-105">This step in the tutorial demonstrates how to use dynamic update to modify  persisted instances of the `v1` number guessing workflow to match the new functionality introduced in [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span></span>
 
 > [!NOTE]
->  <span data-ttu-id="88562-106">Pokud chcete stáhnout dokončený verzi nebo zobrazit na video s návodem tohoto kurzu, najdete v článku [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).</span><span class="sxs-lookup"><span data-stu-id="88562-106">To download a completed version or view a video walkthrough of the tutorial, see [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976).</span></span>  
+>  <span data-ttu-id="9b3b3-106">Pokud chcete stáhnout dokončený verzi nebo zobrazit na video s návodem tohoto kurzu, najdete v článku [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-106">To download a completed version or view a video walkthrough of the tutorial, see [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976).</span></span>  
   
-## <a name="in-this-topic"></a><span data-ttu-id="88562-107">V tomto tématu</span><span class="sxs-lookup"><span data-stu-id="88562-107">In this topic</span></span>  
+## <a name="in-this-topic"></a><span data-ttu-id="9b3b3-107">V tomto tématu</span><span class="sxs-lookup"><span data-stu-id="9b3b3-107">In this topic</span></span>  
   
--   [<span data-ttu-id="88562-108">Chcete-li vytvořit projekt CreateUpdateMaps</span><span class="sxs-lookup"><span data-stu-id="88562-108">To create the CreateUpdateMaps project</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_CreateProject)  
+-   [<span data-ttu-id="9b3b3-108">Chcete-li vytvořit projekt CreateUpdateMaps</span><span class="sxs-lookup"><span data-stu-id="9b3b3-108">To create the CreateUpdateMaps project</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_CreateProject)  
   
--   [<span data-ttu-id="88562-109">Chcete-li aktualizovat StateMachineNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="88562-109">To update StateMachineNumberGuessWorkflow</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_StateMachine)  
+-   [<span data-ttu-id="9b3b3-109">Chcete-li aktualizovat StateMachineNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="9b3b3-109">To update StateMachineNumberGuessWorkflow</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_StateMachine)  
   
--   [<span data-ttu-id="88562-110">Chcete-li aktualizovat FlowchartNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="88562-110">To update FlowchartNumberGuessWorkflow</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_Flowchart)  
+-   [<span data-ttu-id="9b3b3-110">Chcete-li aktualizovat FlowchartNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="9b3b3-110">To update FlowchartNumberGuessWorkflow</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_Flowchart)  
   
--   [<span data-ttu-id="88562-111">Chcete-li aktualizovat SequentialNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="88562-111">To update SequentialNumberGuessWorkflow</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_Sequential)  
+-   [<span data-ttu-id="9b3b3-111">Chcete-li aktualizovat SequentialNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="9b3b3-111">To update SequentialNumberGuessWorkflow</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_Sequential)  
   
--   [<span data-ttu-id="88562-112">Sestavte a spusťte aplikaci CreateUpdateMaps</span><span class="sxs-lookup"><span data-stu-id="88562-112">To build and run the CreateUpdateMaps application</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_CreateUpdateMaps)  
+-   [<span data-ttu-id="9b3b3-112">Sestavte a spusťte aplikaci CreateUpdateMaps</span><span class="sxs-lookup"><span data-stu-id="9b3b3-112">To build and run the CreateUpdateMaps application</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_CreateUpdateMaps)  
   
--   [<span data-ttu-id="88562-113">K vytvoření sestavení aktualizovaný pracovní postup</span><span class="sxs-lookup"><span data-stu-id="88562-113">To build the updated workflow assembly</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_BuildAssembly)  
+-   [<span data-ttu-id="9b3b3-113">K vytvoření sestavení aktualizovaný pracovní postup</span><span class="sxs-lookup"><span data-stu-id="9b3b3-113">To build the updated workflow assembly</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_BuildAssembly)  
   
--   [<span data-ttu-id="88562-114">Chcete-li aktualizovat WorkflowVersionMap nové verze</span><span class="sxs-lookup"><span data-stu-id="88562-114">To update WorkflowVersionMap with the new versions</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_UpdateWorkflowVersionMap)  
+-   [<span data-ttu-id="9b3b3-114">Chcete-li aktualizovat WorkflowVersionMap nové verze</span><span class="sxs-lookup"><span data-stu-id="9b3b3-114">To update WorkflowVersionMap with the new versions</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_UpdateWorkflowVersionMap)  
   
--   [<span data-ttu-id="88562-115">Aby se dynamická aktualizace</span><span class="sxs-lookup"><span data-stu-id="88562-115">To apply the dynamic updates</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_ApplyUpdate)  
+-   [<span data-ttu-id="9b3b3-115">Aby se dynamická aktualizace</span><span class="sxs-lookup"><span data-stu-id="9b3b3-115">To apply the dynamic updates</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_ApplyUpdate)  
   
--   [<span data-ttu-id="88562-116">Spusťte aplikaci pomocí aktualizovaných pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="88562-116">To run the application with the updated workflows</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_BuildAndRun)  
+-   [<span data-ttu-id="9b3b3-116">Spusťte aplikaci pomocí aktualizovaných pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="9b3b3-116">To run the application with the updated workflows</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_BuildAndRun)  
   
--   [<span data-ttu-id="88562-117">Povolit od předchozích verzí pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="88562-117">To enable starting previous versions of the workflows</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_StartPreviousVersions)  
+-   [<span data-ttu-id="9b3b3-117">Povolit od předchozích verzí pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="9b3b3-117">To enable starting previous versions of the workflows</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_StartPreviousVersions)  
   
-###  <a name="BKMK_CreateProject"></a> <span data-ttu-id="88562-118">Chcete-li vytvořit projekt CreateUpdateMaps</span><span class="sxs-lookup"><span data-stu-id="88562-118">To create the CreateUpdateMaps project</span></span>  
+### <a name="BKMK_CreateProject"></a> <span data-ttu-id="9b3b3-118">Chcete-li vytvořit projekt CreateUpdateMaps</span><span class="sxs-lookup"><span data-stu-id="9b3b3-118">To create the CreateUpdateMaps project</span></span>  
   
-1.  <span data-ttu-id="88562-119">Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníka řešení** a zvolte **přidat**, **nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="88562-119">Right-click **WF45GettingStartedTutorial** in **Solution Explorer** and choose **Add**, **New Project**.</span></span>  
+1.  <span data-ttu-id="9b3b3-119">Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníka řešení** a zvolte **přidat**, **nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-119">Right-click **WF45GettingStartedTutorial** in **Solution Explorer** and choose **Add**, **New Project**.</span></span>  
   
-2.  <span data-ttu-id="88562-120">V **nainstalováno** uzlu, vyberte **Visual C#**, **Windows** (nebo **jazyka Visual Basic**, **Windows**).</span><span class="sxs-lookup"><span data-stu-id="88562-120">In the **Installed** node, select **Visual C#**, **Windows** (or **Visual Basic**, **Windows**).</span></span>  
+2.  <span data-ttu-id="9b3b3-120">V **nainstalováno** uzlu, vyberte **Visual C#**, **Windows** (nebo **jazyka Visual Basic**, **Windows**).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-120">In the **Installed** node, select **Visual C#**, **Windows** (or **Visual Basic**, **Windows**).</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="88562-121">V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalováno** uzlu.</span><span class="sxs-lookup"><span data-stu-id="88562-121">Depending on which programming language is configured as the primary language in Visual Studio, the **Visual C#** or **Visual Basic** node may be under the **Other Languages** node in the **Installed** node.</span></span>
+    >  <span data-ttu-id="9b3b3-121">V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalováno** uzlu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-121">Depending on which programming language is configured as the primary language in Visual Studio, the **Visual C#** or **Visual Basic** node may be under the **Other Languages** node in the **Installed** node.</span></span>
 
-     <span data-ttu-id="88562-122">Ujistěte se, že **rozhraní .NET Framework 4.5** je vybrali v rozevíracím seznamu verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="88562-122">Ensure that **.NET Framework 4.5** is selected in the .NET Framework version drop-down list.</span></span> <span data-ttu-id="88562-123">Vyberte **konzolovou aplikaci** z **Windows** seznamu.</span><span class="sxs-lookup"><span data-stu-id="88562-123">Select **Console Application** from the **Windows** list.</span></span> <span data-ttu-id="88562-124">Typ **CreateUpdateMaps** do **název** pole a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="88562-124">Type **CreateUpdateMaps** into the **Name** box and click **OK**.</span></span>
+     <span data-ttu-id="9b3b3-122">Ujistěte se, že **rozhraní .NET Framework 4.5** je vybrali v rozevíracím seznamu verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-122">Ensure that **.NET Framework 4.5** is selected in the .NET Framework version drop-down list.</span></span> <span data-ttu-id="9b3b3-123">Vyberte **konzolovou aplikaci** z **Windows** seznamu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-123">Select **Console Application** from the **Windows** list.</span></span> <span data-ttu-id="9b3b3-124">Typ **CreateUpdateMaps** do **název** pole a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-124">Type **CreateUpdateMaps** into the **Name** box and click **OK**.</span></span>
 
-3.  <span data-ttu-id="88562-125">Klikněte pravým tlačítkem na **CreateUpdateMaps** v **Průzkumníka řešení** a zvolte **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="88562-125">Right-click **CreateUpdateMaps** in **Solution Explorer** and choose **Add Reference**.</span></span>
+3.  <span data-ttu-id="9b3b3-125">Klikněte pravým tlačítkem na **CreateUpdateMaps** v **Průzkumníka řešení** a zvolte **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-125">Right-click **CreateUpdateMaps** in **Solution Explorer** and choose **Add Reference**.</span></span>
 
-4.  <span data-ttu-id="88562-126">Vyberte **Framework** z **sestavení** uzlu **přidat odkaz** seznamu.</span><span class="sxs-lookup"><span data-stu-id="88562-126">Select **Framework** from the **Assemblies** node in the **Add Reference** list.</span></span> <span data-ttu-id="88562-127">Typ **System.Activities** do **hledání sestavení** pole k filtrování sestavení a usnadňují vyberte požadované odkazy.</span><span class="sxs-lookup"><span data-stu-id="88562-127">Type **System.Activities** into the **Search Assemblies** box to filter the assemblies and make the desired references easier to select.</span></span>
+4.  <span data-ttu-id="9b3b3-126">Vyberte **Framework** z **sestavení** uzlu **přidat odkaz** seznamu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-126">Select **Framework** from the **Assemblies** node in the **Add Reference** list.</span></span> <span data-ttu-id="9b3b3-127">Typ **System.Activities** do **hledání sestavení** pole k filtrování sestavení a usnadňují vyberte požadované odkazy.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-127">Type **System.Activities** into the **Search Assemblies** box to filter the assemblies and make the desired references easier to select.</span></span>
 
-5.  <span data-ttu-id="88562-128">Zaškrtněte políčko vedle **System.Activities** z **výsledky hledání** seznamu.</span><span class="sxs-lookup"><span data-stu-id="88562-128">Check the checkbox beside **System.Activities** from the **Search Results** list.</span></span>
+5.  <span data-ttu-id="9b3b3-128">Zaškrtněte políčko vedle **System.Activities** z **výsledky hledání** seznamu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-128">Check the checkbox beside **System.Activities** from the **Search Results** list.</span></span>
 
-6.  <span data-ttu-id="88562-129">Typ **serializace** do **hledání sestavení** pole a zaškrtněte políčko vedle **System.Runtime.Serialization** z **výsledky hledání**  seznamu.</span><span class="sxs-lookup"><span data-stu-id="88562-129">Type **Serialization** into the **Search Assemblies** box, and check the checkbox beside **System.Runtime.Serialization** from the **Search Results** list.</span></span>
+6.  <span data-ttu-id="9b3b3-129">Typ **serializace** do **hledání sestavení** pole a zaškrtněte políčko vedle **System.Runtime.Serialization** z **výsledky hledání**  seznamu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-129">Type **Serialization** into the **Search Assemblies** box, and check the checkbox beside **System.Runtime.Serialization** from the **Search Results** list.</span></span>
 
-7.  <span data-ttu-id="88562-130">Typ **oboru názvů System.Xaml** do **hledání sestavení** pole a zaškrtněte políčko vedle **oboru názvů System.Xaml** z **výsledky hledání** seznamu.</span><span class="sxs-lookup"><span data-stu-id="88562-130">Type **System.Xaml** into the **Search Assemblies** box, and check the checkbox beside **System.Xaml** from the **Search Results** list.</span></span>
+7.  <span data-ttu-id="9b3b3-130">Typ **oboru názvů System.Xaml** do **hledání sestavení** pole a zaškrtněte políčko vedle **oboru názvů System.Xaml** z **výsledky hledání** seznamu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-130">Type **System.Xaml** into the **Search Assemblies** box, and check the checkbox beside **System.Xaml** from the **Search Results** list.</span></span>
 
-8.  <span data-ttu-id="88562-131">Klikněte na tlačítko **OK** zavřete **správce odkazů** a přidejte odkazy.</span><span class="sxs-lookup"><span data-stu-id="88562-131">Click **OK** to close **Reference Manager** and add the references.</span></span>
+8.  <span data-ttu-id="9b3b3-131">Klikněte na tlačítko **OK** zavřete **správce odkazů** a přidejte odkazy.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-131">Click **OK** to close **Reference Manager** and add the references.</span></span>
 
-9. <span data-ttu-id="88562-132">Přidejte následující `using` (nebo `Imports`) příkazů v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.</span><span class="sxs-lookup"><span data-stu-id="88562-132">Add the following `using` (or `Imports`) statements at the top of the file with the other `using` (or `Imports`) statements.</span></span>
+9. <span data-ttu-id="9b3b3-132">Přidejte následující `using` (nebo `Imports`) příkazů v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-132">Add the following `using` (or `Imports`) statements at the top of the file with the other `using` (or `Imports`) statements.</span></span>
 
     ```vb
     Imports System.Activities
@@ -89,7 +89,7 @@ ms.locfileid: "49123836"
     using Microsoft.CSharp.Activities;
     ```
 
-10. <span data-ttu-id="88562-133">Přidejte následující dva řetězce členy k `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="88562-133">Add the following two string members to the `Program` class (or `Module1`).</span></span>
+10. <span data-ttu-id="9b3b3-133">Přidejte následující dva řetězce členy k `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-133">Add the following two string members to the `Program` class (or `Module1`).</span></span>
 
     ```vb
     Const mapPath = "..\..\..\PreviousVersions"
@@ -101,7 +101,7 @@ ms.locfileid: "49123836"
     const string definitionPath = @"..\..\..\NumberGuessWorkflowActivities_du";
     ```
 
-11. <span data-ttu-id="88562-134">Přidejte následující `StartUpdate` metodu `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="88562-134">Add the following `StartUpdate` method to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="88562-135">Tato metoda načte zadaný xaml definici pracovního postupu do `ActivityBuilder`a pak zavolá `DynamicUpdate.PrepareForUpdate`.</span><span class="sxs-lookup"><span data-stu-id="88562-135">This method loads up the specified xaml workflow definition into an `ActivityBuilder`, and then calls `DynamicUpdate.PrepareForUpdate`.</span></span> <span data-ttu-id="88562-136">`PrepareForUpdate` Vytvoří kopii definice pracovního postupu uvnitř `ActivityBuilder`.</span><span class="sxs-lookup"><span data-stu-id="88562-136">`PrepareForUpdate` makes a copy of the workflow definition inside the `ActivityBuilder`.</span></span> <span data-ttu-id="88562-137">Po úpravě definice pracovního postupu tuto kopii použít spolu s definici upravenou pracovní postup k vytvoření mapy aktualizace.</span><span class="sxs-lookup"><span data-stu-id="88562-137">After the workflow definition is modified, this copy is used along with the modified workflow definition to create the update map.</span></span>
+11. <span data-ttu-id="9b3b3-134">Přidejte následující `StartUpdate` metodu `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-134">Add the following `StartUpdate` method to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="9b3b3-135">Tato metoda načte zadaný xaml definici pracovního postupu do `ActivityBuilder`a pak zavolá `DynamicUpdate.PrepareForUpdate`.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-135">This method loads up the specified xaml workflow definition into an `ActivityBuilder`, and then calls `DynamicUpdate.PrepareForUpdate`.</span></span> <span data-ttu-id="9b3b3-136">`PrepareForUpdate` Vytvoří kopii definice pracovního postupu uvnitř `ActivityBuilder`.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-136">`PrepareForUpdate` makes a copy of the workflow definition inside the `ActivityBuilder`.</span></span> <span data-ttu-id="9b3b3-137">Po úpravě definice pracovního postupu tuto kopii použít spolu s definici upravenou pracovní postup k vytvoření mapy aktualizace.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-137">After the workflow definition is modified, this copy is used along with the modified workflow definition to create the update map.</span></span>
 
     ```vb
     Private Function StartUpdate(name As String) As ActivityBuilder
@@ -165,7 +165,7 @@ ms.locfileid: "49123836"
     }
     ```
 
-12. <span data-ttu-id="88562-138">V dalším kroku přidejte následující `CreateUpdateMethod` k `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="88562-138">Next, add the following `CreateUpdateMethod` to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="88562-139">To vytvoří mapu dynamickou aktualizaci ve volání DynamicUpdateServices.CreateUpdateMap a potom uloží mapa aktualizace pomocí zadaného názvu.</span><span class="sxs-lookup"><span data-stu-id="88562-139">This creates a dynamic update map by calling DynamicUpdateServices.CreateUpdateMap, and then saves the update map using the specified name.</span></span> <span data-ttu-id="88562-140">Toto mapování aktualizace obsahuje informace potřebné pro modul runtime pracovního postupu aktualizace trvalé instance práce, která byla spuštěna pomocí původní definici pracovního postupu, které jsou součástí `ActivityBuilder` tak, aby nedokončí pomocí definice aktualizovaný pracovní postup.</span><span class="sxs-lookup"><span data-stu-id="88562-140">This update map contains the information needed by the workflow runtime to update a persisted workflow instance that was started using the original workflow definition contained in the `ActivityBuilder` so that it completes using the updated workflow definition.</span></span>
+12. <span data-ttu-id="9b3b3-138">V dalším kroku přidejte následující `CreateUpdateMethod` k `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-138">Next, add the following `CreateUpdateMethod` to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="9b3b3-139">To vytvoří mapu dynamickou aktualizaci ve volání DynamicUpdateServices.CreateUpdateMap a potom uloží mapa aktualizace pomocí zadaného názvu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-139">This creates a dynamic update map by calling DynamicUpdateServices.CreateUpdateMap, and then saves the update map using the specified name.</span></span> <span data-ttu-id="9b3b3-140">Toto mapování aktualizace obsahuje informace potřebné pro modul runtime pracovního postupu aktualizace trvalé instance práce, která byla spuštěna pomocí původní definici pracovního postupu, které jsou součástí `ActivityBuilder` tak, aby nedokončí pomocí definice aktualizovaný pracovní postup.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-140">This update map contains the information needed by the workflow runtime to update a persisted workflow instance that was started using the original workflow definition contained in the `ActivityBuilder` so that it completes using the updated workflow definition.</span></span>
 
     ```vb
     Private Sub CreateUpdateMaps(wf As ActivityBuilder, name As String)
@@ -199,7 +199,7 @@ ms.locfileid: "49123836"
     }
     ```
 
-13. <span data-ttu-id="88562-141">Přidejte následující `SaveUpdatedDefinition` metodu `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="88562-141">Add the following `SaveUpdatedDefinition` method to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="88562-142">Tato metoda šetří definici aktualizovaný pracovní postup po vytvoření mapa aktualizace.</span><span class="sxs-lookup"><span data-stu-id="88562-142">This method saves the updated workflow definition once the update map is created.</span></span>
+13. <span data-ttu-id="9b3b3-141">Přidejte následující `SaveUpdatedDefinition` metodu `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-141">Add the following `SaveUpdatedDefinition` method to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="9b3b3-142">Tato metoda šetří definici aktualizovaný pracovní postup po vytvoření mapa aktualizace.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-142">This method saves the updated workflow definition once the update map is created.</span></span>
 
     ```vb
     Private Sub SaveUpdatedDefinition(wf As ActivityBuilder, name As String)
@@ -224,9 +224,9 @@ ms.locfileid: "49123836"
     }
     ```
 
-###  <a name="BKMK_StateMachine"></a> <span data-ttu-id="88562-143">Chcete-li aktualizovat StateMachineNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="88562-143">To update StateMachineNumberGuessWorkflow</span></span>
+### <a name="BKMK_StateMachine"></a> <span data-ttu-id="9b3b3-143">Chcete-li aktualizovat StateMachineNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="9b3b3-143">To update StateMachineNumberGuessWorkflow</span></span>
 
-1.  <span data-ttu-id="88562-144">Přidat `CreateStateMachineUpdateMap` k `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="88562-144">Add a `CreateStateMachineUpdateMap` to the `Program` class (or `Module1`).</span></span>
+1.  <span data-ttu-id="9b3b3-144">Přidat `CreateStateMachineUpdateMap` k `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-144">Add a `CreateStateMachineUpdateMap` to the `Program` class (or `Module1`).</span></span>
 
     ```vb
     Private Sub CreateStateMachineUpdateMap()
@@ -240,7 +240,7 @@ ms.locfileid: "49123836"
     }
     ```
 
-2.  <span data-ttu-id="88562-145">Volání `StartUpdate` a pak získejte odkaz na kořenovém adresáři `StateMachine` aktivity pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="88562-145">Make a call to `StartUpdate` and then get a reference to the root `StateMachine` activity of the workflow.</span></span>
+2.  <span data-ttu-id="9b3b3-145">Volání `StartUpdate` a pak získejte odkaz na kořenovém adresáři `StateMachine` aktivity pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-145">Make a call to `StartUpdate` and then get a reference to the root `StateMachine` activity of the workflow.</span></span>
 
     ```vb
     Dim wf As ActivityBuilder = StartUpdate("StateMachineNumberGuessWorkflow.xaml")
@@ -256,7 +256,7 @@ ms.locfileid: "49123836"
     StateMachine sm = wf.Implementation as StateMachine;
     ```
 
-3.  <span data-ttu-id="88562-146">Dále, aktualizujte výrazy dva `WriteLine` aktivity, které se zobrazí, zda je odhad uživatele moc vysoká, nebo příliš malá, aby odpovídaly aktualizace provedené v [jak: hostitel více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span><span class="sxs-lookup"><span data-stu-id="88562-146">Next, update the expressions of the two `WriteLine` activities that display whether the user's guess is too high or too low so that they match the updates made in [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span></span>
+3.  <span data-ttu-id="9b3b3-146">Dále, aktualizujte výrazy dva `WriteLine` aktivity, které se zobrazí, zda je odhad uživatele moc vysoká, nebo příliš malá, aby odpovídaly aktualizace provedené v [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-146">Next, update the expressions of the two `WriteLine` activities that display whether the user's guess is too high or too low so that they match the updates made in [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span></span>
 
     ```vb
     'Update the Text of the two WriteLine activities that write the
@@ -288,7 +288,7 @@ ms.locfileid: "49123836"
     tooHigh.Text = new CSharpValue<string>("Guess.ToString() + \" is too high.\"");
     ```
 
-4.  <span data-ttu-id="88562-147">V dalším kroku přidejte nové `WriteLine` aktivitu, která zobrazuje zprávu zavřít.</span><span class="sxs-lookup"><span data-stu-id="88562-147">Next, add the new `WriteLine` activity that displays the closing message.</span></span>
+4.  <span data-ttu-id="9b3b3-147">V dalším kroku přidejte nové `WriteLine` aktivitu, která zobrazuje zprávu zavřít.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-147">Next, add the new `WriteLine` activity that displays the closing message.</span></span>
 
     ```vb
     'Create the new WriteLine that displays the closing message.
@@ -317,7 +317,7 @@ ms.locfileid: "49123836"
     sm.States[1].Transitions[0].Action = wl;
     ```
 
-5.  <span data-ttu-id="88562-148">Po aktualizaci pracovního postupu zavolejte `CreateUpdateMaps` a `SaveUpdatedDefinition`.</span><span class="sxs-lookup"><span data-stu-id="88562-148">After the workflow is updated, call `CreateUpdateMaps` and `SaveUpdatedDefinition`.</span></span> <span data-ttu-id="88562-149">`CreateUpdateMaps` vytvoří a uloží `DynamicUpdateMap`, a `SaveUpdatedDefinition` uloží definice aktualizovaný pracovní postup.</span><span class="sxs-lookup"><span data-stu-id="88562-149">`CreateUpdateMaps` creates and saves the `DynamicUpdateMap`, and `SaveUpdatedDefinition` saves the updated workflow definition.</span></span>
+5.  <span data-ttu-id="9b3b3-148">Po aktualizaci pracovního postupu zavolejte `CreateUpdateMaps` a `SaveUpdatedDefinition`.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-148">After the workflow is updated, call `CreateUpdateMaps` and `SaveUpdatedDefinition`.</span></span> <span data-ttu-id="9b3b3-149">`CreateUpdateMaps` vytvoří a uloží `DynamicUpdateMap`, a `SaveUpdatedDefinition` uloží definice aktualizovaný pracovní postup.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-149">`CreateUpdateMaps` creates and saves the `DynamicUpdateMap`, and `SaveUpdatedDefinition` saves the updated workflow definition.</span></span>
 
     ```vb
     'Create the update map.
@@ -335,7 +335,7 @@ ms.locfileid: "49123836"
     SaveUpdatedDefinition(wf, "StateMachineNumberGuessWorkflow_du.xaml");
     ```
 
-     <span data-ttu-id="88562-150">V následujícím příkladu je dokončené `CreateStateMachineUpdateMap` metody.</span><span class="sxs-lookup"><span data-stu-id="88562-150">The following example is the completed `CreateStateMachineUpdateMap` method.</span></span>
+     <span data-ttu-id="9b3b3-150">V následujícím příkladu je dokončené `CreateStateMachineUpdateMap` metody.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-150">The following example is the completed `CreateStateMachineUpdateMap` method.</span></span>
 
     ```vb
     Private Sub CreateStateMachineUpdateMap()
@@ -417,9 +417,9 @@ ms.locfileid: "49123836"
     }
     ```
 
-###  <a name="BKMK_Flowchart"></a> <span data-ttu-id="88562-151">Chcete-li aktualizovat FlowchartNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="88562-151">To update FlowchartNumberGuessWorkflow</span></span>
+### <a name="BKMK_Flowchart"></a> <span data-ttu-id="9b3b3-151">Chcete-li aktualizovat FlowchartNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="9b3b3-151">To update FlowchartNumberGuessWorkflow</span></span>
 
-1.  <span data-ttu-id="88562-152">Přidejte následující `CreateFlowchartUpdateMethod` k `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="88562-152">Add the following `CreateFlowchartUpdateMethod` to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="88562-153">Tato metoda je podobný `CreateStateMachineUpdateMap`.</span><span class="sxs-lookup"><span data-stu-id="88562-153">This method is similar to `CreateStateMachineUpdateMap`.</span></span> <span data-ttu-id="88562-154">Začíná volání `StartUpdate`, aktualizuje definice pracovního postupu vývojového diagramu a dokončení uložením mapa aktualizace a aktualizovaný pracovní postup definice.</span><span class="sxs-lookup"><span data-stu-id="88562-154">It starts with a call to `StartUpdate`, updates the flowchart workflow definition, and finishes by saving the update map and the updated workflow definition.</span></span>
+1.  <span data-ttu-id="9b3b3-152">Přidejte následující `CreateFlowchartUpdateMethod` k `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-152">Add the following `CreateFlowchartUpdateMethod` to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="9b3b3-153">Tato metoda je podobný `CreateStateMachineUpdateMap`.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-153">This method is similar to `CreateStateMachineUpdateMap`.</span></span> <span data-ttu-id="9b3b3-154">Začíná volání `StartUpdate`, aktualizuje definice pracovního postupu vývojového diagramu a dokončení uložením mapa aktualizace a aktualizovaný pracovní postup definice.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-154">It starts with a call to `StartUpdate`, updates the flowchart workflow definition, and finishes by saving the update map and the updated workflow definition.</span></span>
 
     ```vb
     Private Sub CreateFlowchartUpdateMap()
@@ -531,9 +531,9 @@ ms.locfileid: "49123836"
     }
     ```
 
-###  <a name="BKMK_Sequential"></a> <span data-ttu-id="88562-155">Chcete-li aktualizovat SequentialNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="88562-155">To update SequentialNumberGuessWorkflow</span></span>
+### <a name="BKMK_Sequential"></a> <span data-ttu-id="9b3b3-155">Chcete-li aktualizovat SequentialNumberGuessWorkflow</span><span class="sxs-lookup"><span data-stu-id="9b3b3-155">To update SequentialNumberGuessWorkflow</span></span>
 
-1.  <span data-ttu-id="88562-156">Přidejte následující `CreateSequentialUpdateMethod` k `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="88562-156">Add the following `CreateSequentialUpdateMethod` to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="88562-157">Tato metoda je podobný tyto dvě metody.</span><span class="sxs-lookup"><span data-stu-id="88562-157">This method is similar to the other two methods.</span></span> <span data-ttu-id="88562-158">Začíná volání `StartUpdate`, aktualizuje definice sekvenčního pracovního postupu a dokončení uložením mapa aktualizace a aktualizovaný pracovní postup definice.</span><span class="sxs-lookup"><span data-stu-id="88562-158">It starts with a call to `StartUpdate`, updates the sequential workflow definition, and finishes by saving the update map and the updated workflow definition.</span></span>
+1.  <span data-ttu-id="9b3b3-156">Přidejte následující `CreateSequentialUpdateMethod` k `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-156">Add the following `CreateSequentialUpdateMethod` to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="9b3b3-157">Tato metoda je podobný tyto dvě metody.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-157">This method is similar to the other two methods.</span></span> <span data-ttu-id="9b3b3-158">Začíná volání `StartUpdate`, aktualizuje definice sekvenčního pracovního postupu a dokončení uložením mapa aktualizace a aktualizovaný pracovní postup definice.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-158">It starts with a call to `StartUpdate`, updates the sequential workflow definition, and finishes by saving the update map and the updated workflow definition.</span></span>
 
     ```vb
     Private Sub CreateSequentialUpdateMap()
@@ -611,9 +611,9 @@ ms.locfileid: "49123836"
     }
     ```
 
-###  <a name="BKMK_CreateUpdateMaps"></a> <span data-ttu-id="88562-159">Sestavte a spusťte aplikaci CreateUpdateMaps</span><span class="sxs-lookup"><span data-stu-id="88562-159">To build and run the CreateUpdateMaps application</span></span>
+### <a name="BKMK_CreateUpdateMaps"></a> <span data-ttu-id="9b3b3-159">Sestavte a spusťte aplikaci CreateUpdateMaps</span><span class="sxs-lookup"><span data-stu-id="9b3b3-159">To build and run the CreateUpdateMaps application</span></span>
 
-1.  <span data-ttu-id="88562-160">Aktualizace `Main` metoda a přidejte následující tři metody volání.</span><span class="sxs-lookup"><span data-stu-id="88562-160">Update the `Main` method and add the following three method calls.</span></span> <span data-ttu-id="88562-161">Tyto metody jsou přidány v následujících částech.</span><span class="sxs-lookup"><span data-stu-id="88562-161">These methods are added in the following sections.</span></span> <span data-ttu-id="88562-162">Každá metoda aktualizuje odpovídající číslo odhad pracovní postup a vytvoří `DynamicUpdateMap` , který popisuje aktualizace.</span><span class="sxs-lookup"><span data-stu-id="88562-162">Each method updates the corresponding number guess workflow and creates a `DynamicUpdateMap` that describes the updates.</span></span>
+1.  <span data-ttu-id="9b3b3-160">Aktualizace `Main` metoda a přidejte následující tři metody volání.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-160">Update the `Main` method and add the following three method calls.</span></span> <span data-ttu-id="9b3b3-161">Tyto metody jsou přidány v následujících částech.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-161">These methods are added in the following sections.</span></span> <span data-ttu-id="9b3b3-162">Každá metoda aktualizuje odpovídající číslo odhad pracovní postup a vytvoří `DynamicUpdateMap` , který popisuje aktualizace.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-162">Each method updates the corresponding number guess workflow and creates a `DynamicUpdateMap` that describes the updates.</span></span>
 
     ```vb
     Sub Main()
@@ -636,53 +636,53 @@ ms.locfileid: "49123836"
     }
     ```
 
-2.  <span data-ttu-id="88562-163">Klikněte pravým tlačítkem na **CreateUpdateMaps** v **Průzkumníka řešení** a zvolte **nastavit jako spouštěný projekt**.</span><span class="sxs-lookup"><span data-stu-id="88562-163">Right-click **CreateUpdateMaps** in **Solution Explorer** and choose **Set as StartUp Project**.</span></span>
+2.  <span data-ttu-id="9b3b3-163">Klikněte pravým tlačítkem na **CreateUpdateMaps** v **Průzkumníka řešení** a zvolte **nastavit jako spouštěný projekt**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-163">Right-click **CreateUpdateMaps** in **Solution Explorer** and choose **Set as StartUp Project**.</span></span>
 
-3.  <span data-ttu-id="88562-164">Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení a CTRL + F5 ke spuštění `CreateUpdateMaps` aplikace.</span><span class="sxs-lookup"><span data-stu-id="88562-164">Press CTRL+SHIFT+B to build the solution, and then CTRL+F5 to run the `CreateUpdateMaps` application.</span></span>
-
-    > [!NOTE]
-    >  <span data-ttu-id="88562-165">`CreateUpdateMaps` Aplikace nejsou zobrazeny žádné informace o stavu během spuštění, ale pokud byste se podívat **NumberGuessWorkflowActivities_du** složky a **PreviousVersions** složky se zobrazí soubory definice aktualizovaný pracovní postup a mapy aktualizace.</span><span class="sxs-lookup"><span data-stu-id="88562-165">The `CreateUpdateMaps` application does not display any status information while running, but if you look in the **NumberGuessWorkflowActivities_du** folder and the **PreviousVersions** folder you will see the updated workflow definition files and the update maps.</span></span>
-
-     <span data-ttu-id="88562-166">Jakmile se vytvoří mapování aktualizace a aktualizovat definice pracovního postupu, dalším krokem je vytvoření sestavení aktualizovaný pracovní postup obsahující aktualizované definice.</span><span class="sxs-lookup"><span data-stu-id="88562-166">Once the update maps are created and the workflow definitions updated, the next step is to build an updated workflow assembly containing the updated definitions.</span></span>
-
-###  <a name="BKMK_BuildAssembly"></a> <span data-ttu-id="88562-167">K vytvoření sestavení aktualizovaný pracovní postup</span><span class="sxs-lookup"><span data-stu-id="88562-167">To build the updated workflow assembly</span></span>
-
-1.  <span data-ttu-id="88562-168">Spusťte druhou instanci sady Visual Studio 2012.</span><span class="sxs-lookup"><span data-stu-id="88562-168">Open a second instance of Visual Studio 2012.</span></span>
-
-2.  <span data-ttu-id="88562-169">Zvolte **otevřít**, **projekt či řešení** z **souboru** nabídky.</span><span class="sxs-lookup"><span data-stu-id="88562-169">Choose **Open**, **Project/Solution** from the **File** menu.</span></span>
-
-3.  <span data-ttu-id="88562-170">Přejděte **NumberGuessWorkflowActivities_du** složku, kterou jste vytvořili v [jak: hostitele více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md), vyberte **NumberGuessWorkflowActivities.csproj**  (nebo **vbproj**) a klikněte na tlačítko **otevřít**.</span><span class="sxs-lookup"><span data-stu-id="88562-170">Navigate to the **NumberGuessWorkflowActivities_du** folder you created in [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md), select **NumberGuessWorkflowActivities.csproj** (or **vbproj**), and click **Open**.</span></span>
-
-4.  <span data-ttu-id="88562-171">V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **SequentialNumberGuessWorkflow.xaml** a zvolte **vyjmout z projektu**.</span><span class="sxs-lookup"><span data-stu-id="88562-171">In **Solution Explorer**, right click **SequentialNumberGuessWorkflow.xaml** and choose **Exclude From Project**.</span></span> <span data-ttu-id="88562-172">Stejnou věc udělat **FlowchartNumberGuessWorkflow.xaml** a **StateMachineNumberGuessWorkflow.xaml**.</span><span class="sxs-lookup"><span data-stu-id="88562-172">Do the same thing for **FlowchartNumberGuessWorkflow.xaml** and **StateMachineNumberGuessWorkflow.xaml**.</span></span> <span data-ttu-id="88562-173">Tento krok se odebere předchozí verze definice pracovního postupu z projektu.</span><span class="sxs-lookup"><span data-stu-id="88562-173">This step removes the previous versions of the workflow definitions from the project.</span></span>
-
-5.  <span data-ttu-id="88562-174">Zvolte **přidat existující položku** z **projektu** nabídky.</span><span class="sxs-lookup"><span data-stu-id="88562-174">Choose **Add Existing Item** from the **Project** menu.</span></span>
-
-6.  <span data-ttu-id="88562-175">Přejděte **NumberGuessWorkflowActivities_du** složku, kterou jste vytvořili v [jak: hostitele více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span><span class="sxs-lookup"><span data-stu-id="88562-175">Navigate to the **NumberGuessWorkflowActivities_du** folder you created in [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span></span>
-
-7.  <span data-ttu-id="88562-176">Zvolte **soubory XAML (\*.xaml;\*. XOML)** z **soubory typu** rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="88562-176">Choose **XAML Files (\*.xaml;\*.xoml)** from the **Files of type** drop-down list.</span></span>
-
-8.  <span data-ttu-id="88562-177">Vyberte **SequentialNumberGuessWorkflow_du.xaml**, **FlowchartNumberGuessWorkflow_du.xaml**, a **StateMachineNumberGuessWorkflow_du.xaml** a klikněte na tlačítko  **Přidat**.</span><span class="sxs-lookup"><span data-stu-id="88562-177">Select **SequentialNumberGuessWorkflow_du.xaml**, **FlowchartNumberGuessWorkflow_du.xaml**, and **StateMachineNumberGuessWorkflow_du.xaml** and click **Add**.</span></span>
+3.  <span data-ttu-id="9b3b3-164">Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení a CTRL + F5 ke spuštění `CreateUpdateMaps` aplikace.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-164">Press CTRL+SHIFT+B to build the solution, and then CTRL+F5 to run the `CreateUpdateMaps` application.</span></span>
 
     > [!NOTE]
-    >  <span data-ttu-id="88562-178">CTRL + kliknutí vybrat více položek najednou.</span><span class="sxs-lookup"><span data-stu-id="88562-178">CTRL+Click to select multiple items at a time.</span></span>
+    >  <span data-ttu-id="9b3b3-165">`CreateUpdateMaps` Aplikace nejsou zobrazeny žádné informace o stavu během spuštění, ale pokud byste se podívat **NumberGuessWorkflowActivities_du** složky a **PreviousVersions** složky se zobrazí soubory definice aktualizovaný pracovní postup a mapy aktualizace.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-165">The `CreateUpdateMaps` application does not display any status information while running, but if you look in the **NumberGuessWorkflowActivities_du** folder and the **PreviousVersions** folder you will see the updated workflow definition files and the update maps.</span></span>
 
-     <span data-ttu-id="88562-179">Tento krok přidává aktualizované verze definice pracovního postupu do projektu.</span><span class="sxs-lookup"><span data-stu-id="88562-179">This step adds the updated versions of the workflow definitions to the project.</span></span>
+     <span data-ttu-id="9b3b3-166">Jakmile se vytvoří mapování aktualizace a aktualizovat definice pracovního postupu, dalším krokem je vytvoření sestavení aktualizovaný pracovní postup obsahující aktualizované definice.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-166">Once the update maps are created and the workflow definitions updated, the next step is to build an updated workflow assembly containing the updated definitions.</span></span>
 
-9. <span data-ttu-id="88562-180">Sestavte projekt stisknutím kombinace kláves CTRL+SHIFT+B.</span><span class="sxs-lookup"><span data-stu-id="88562-180">Press CTRL+SHIFT+B to build the project.</span></span>
+### <a name="BKMK_BuildAssembly"></a> <span data-ttu-id="9b3b3-167">K vytvoření sestavení aktualizovaný pracovní postup</span><span class="sxs-lookup"><span data-stu-id="9b3b3-167">To build the updated workflow assembly</span></span>
 
-10. <span data-ttu-id="88562-181">Zvolte **zavřít řešení** z **souboru** nabídky.</span><span class="sxs-lookup"><span data-stu-id="88562-181">Choose **Close Solution** from the **File** menu.</span></span> <span data-ttu-id="88562-182">Soubor řešení pro projekt se nevyžaduje, takže klikněte na tlačítko **ne** ukončit sadu Visual Studio bez uložení souboru řešení.</span><span class="sxs-lookup"><span data-stu-id="88562-182">A solution file for the project is not required, so click **No** to close Visual Studio without saving a solution file.</span></span> <span data-ttu-id="88562-183">Zvolte **ukončovací** z **souboru** nabídku ukončit sadu Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="88562-183">Choose **Exit** from the **File** menu to close Visual Studio.</span></span>
+1.  <span data-ttu-id="9b3b3-168">Spusťte druhou instanci sady Visual Studio 2012.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-168">Open a second instance of Visual Studio 2012.</span></span>
 
-11. <span data-ttu-id="88562-184">Otevřete Průzkumníka Windows a přejděte **NumberGuessWorkflowActivities_du\bin\Debug** složky (nebo **bin\Release** v závislosti na nastavení projektu).</span><span class="sxs-lookup"><span data-stu-id="88562-184">Open Windows Explorer and navigate to the **NumberGuessWorkflowActivities_du\bin\Debug** folder (or **bin\Release** depending on your project settings).</span></span>
+2.  <span data-ttu-id="9b3b3-169">Zvolte **otevřít**, **projekt či řešení** z **souboru** nabídky.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-169">Choose **Open**, **Project/Solution** from the **File** menu.</span></span>
 
-12. <span data-ttu-id="88562-185">Přejmenovat **NumberGuessWorkflowActivities.dll** k **NumberGuessWorkflowActivities_v15.dll**a zkopírujte ho do **PreviousVersions** složku, kterou jste vytvořili v [Postupy: hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span><span class="sxs-lookup"><span data-stu-id="88562-185">Rename **NumberGuessWorkflowActivities.dll** to **NumberGuessWorkflowActivities_v15.dll**, and copy it to the **PreviousVersions** folder you created in [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span></span>
+3.  <span data-ttu-id="9b3b3-170">Přejděte **NumberGuessWorkflowActivities_du** složku, kterou jste vytvořili v [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md)vyberte **NumberGuessWorkflowActivities.csproj** (nebo **vbproj**) a klikněte na tlačítko **otevřít**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-170">Navigate to the **NumberGuessWorkflowActivities_du** folder you created in [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md), select **NumberGuessWorkflowActivities.csproj** (or **vbproj**), and click **Open**.</span></span>
 
-###  <a name="BKMK_UpdateWorkflowVersionMap"></a> <span data-ttu-id="88562-186">Chcete-li aktualizovat WorkflowVersionMap nové verze</span><span class="sxs-lookup"><span data-stu-id="88562-186">To update WorkflowVersionMap with the new versions</span></span>
+4.  <span data-ttu-id="9b3b3-171">V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **SequentialNumberGuessWorkflow.xaml** a zvolte **vyjmout z projektu**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-171">In **Solution Explorer**, right click **SequentialNumberGuessWorkflow.xaml** and choose **Exclude From Project**.</span></span> <span data-ttu-id="9b3b3-172">Stejnou věc udělat **FlowchartNumberGuessWorkflow.xaml** a **StateMachineNumberGuessWorkflow.xaml**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-172">Do the same thing for **FlowchartNumberGuessWorkflow.xaml** and **StateMachineNumberGuessWorkflow.xaml**.</span></span> <span data-ttu-id="9b3b3-173">Tento krok se odebere předchozí verze definice pracovního postupu z projektu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-173">This step removes the previous versions of the workflow definitions from the project.</span></span>
 
-1.  <span data-ttu-id="88562-187">Přepněte zpět do původní instance sady Visual Studio 2012.</span><span class="sxs-lookup"><span data-stu-id="88562-187">Switch back to the initial instance of Visual Studio 2012.</span></span>
+5.  <span data-ttu-id="9b3b3-174">Zvolte **přidat existující položku** z **projektu** nabídky.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-174">Choose **Add Existing Item** from the **Project** menu.</span></span>
 
-2.  <span data-ttu-id="88562-188">Dvakrát klikněte na panel **WorkflowVersionMap.cs** (nebo **WorkflowVersionMap.vb**) v části **NumberGuessWorkflowHost** projekt tak, aby ho otevřete.</span><span class="sxs-lookup"><span data-stu-id="88562-188">Double-click **WorkflowVersionMap.cs** (or **WorkflowVersionMap.vb**) under the **NumberGuessWorkflowHost** project to open it.</span></span>
+6.  <span data-ttu-id="9b3b3-175">Přejděte **NumberGuessWorkflowActivities_du** složku, kterou jste vytvořili v [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-175">Navigate to the **NumberGuessWorkflowActivities_du** folder you created in [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span></span>
 
-3.  <span data-ttu-id="88562-189">Přidejte tři nové identity pracovního postupu pod šest existující deklarace identity pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="88562-189">Add three new workflow identities just below the six existing workflow identity declarations.</span></span> <span data-ttu-id="88562-190">V tomto kurzu `1.5.0.0` slouží jako `WorkflowIdentity.Version` identit dynamické aktualizace.</span><span class="sxs-lookup"><span data-stu-id="88562-190">In this tutorial, `1.5.0.0` is used as the `WorkflowIdentity.Version` for the dynamic update identities.</span></span> <span data-ttu-id="88562-191">Tyto nové `v15` pracovního postupu se použije identity poskytnout definici správné pracovního postupu pro dynamicky aktualizovaný pracovní postup trvalé instance.</span><span class="sxs-lookup"><span data-stu-id="88562-191">These new `v15` workflow identities will be used provide the correct workflow definition for the dynamically updated persisted workflow instances.</span></span>
+7.  <span data-ttu-id="9b3b3-176">Zvolte **soubory XAML (\*.xaml;\*. XOML)** z **soubory typu** rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-176">Choose **XAML Files (\*.xaml;\*.xoml)** from the **Files of type** drop-down list.</span></span>
+
+8.  <span data-ttu-id="9b3b3-177">Vyberte **SequentialNumberGuessWorkflow_du.xaml**, **FlowchartNumberGuessWorkflow_du.xaml**, a **StateMachineNumberGuessWorkflow_du.xaml** a klikněte na tlačítko  **Přidat**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-177">Select **SequentialNumberGuessWorkflow_du.xaml**, **FlowchartNumberGuessWorkflow_du.xaml**, and **StateMachineNumberGuessWorkflow_du.xaml** and click **Add**.</span></span>
+
+    > [!NOTE]
+    >  <span data-ttu-id="9b3b3-178">CTRL + kliknutí vybrat více položek najednou.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-178">CTRL+Click to select multiple items at a time.</span></span>
+
+     <span data-ttu-id="9b3b3-179">Tento krok přidává aktualizované verze definice pracovního postupu do projektu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-179">This step adds the updated versions of the workflow definitions to the project.</span></span>
+
+9. <span data-ttu-id="9b3b3-180">Sestavte projekt stisknutím kombinace kláves CTRL+SHIFT+B.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-180">Press CTRL+SHIFT+B to build the project.</span></span>
+
+10. <span data-ttu-id="9b3b3-181">Zvolte **zavřít řešení** z **souboru** nabídky.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-181">Choose **Close Solution** from the **File** menu.</span></span> <span data-ttu-id="9b3b3-182">Soubor řešení pro projekt se nevyžaduje, takže klikněte na tlačítko **ne** ukončit sadu Visual Studio bez uložení souboru řešení.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-182">A solution file for the project is not required, so click **No** to close Visual Studio without saving a solution file.</span></span> <span data-ttu-id="9b3b3-183">Zvolte **ukončovací** z **souboru** nabídku ukončit sadu Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-183">Choose **Exit** from the **File** menu to close Visual Studio.</span></span>
+
+11. <span data-ttu-id="9b3b3-184">Otevřete Průzkumníka Windows a přejděte **NumberGuessWorkflowActivities_du\bin\Debug** složky (nebo **bin\Release** v závislosti na nastavení projektu).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-184">Open Windows Explorer and navigate to the **NumberGuessWorkflowActivities_du\bin\Debug** folder (or **bin\Release** depending on your project settings).</span></span>
+
+12. <span data-ttu-id="9b3b3-185">Přejmenovat **NumberGuessWorkflowActivities.dll** k **NumberGuessWorkflowActivities_v15.dll**a zkopírujte ho do **PreviousVersions** složku, kterou jste vytvořili v [Jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-185">Rename **NumberGuessWorkflowActivities.dll** to **NumberGuessWorkflowActivities_v15.dll**, and copy it to the **PreviousVersions** folder you created in [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).</span></span>
+
+### <a name="BKMK_UpdateWorkflowVersionMap"></a> <span data-ttu-id="9b3b3-186">Chcete-li aktualizovat WorkflowVersionMap nové verze</span><span class="sxs-lookup"><span data-stu-id="9b3b3-186">To update WorkflowVersionMap with the new versions</span></span>
+
+1.  <span data-ttu-id="9b3b3-187">Přepněte zpět do původní instance sady Visual Studio 2012.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-187">Switch back to the initial instance of Visual Studio 2012.</span></span>
+
+2.  <span data-ttu-id="9b3b3-188">Dvakrát klikněte na panel **WorkflowVersionMap.cs** (nebo **WorkflowVersionMap.vb**) v části **NumberGuessWorkflowHost** projekt tak, aby ho otevřete.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-188">Double-click **WorkflowVersionMap.cs** (or **WorkflowVersionMap.vb**) under the **NumberGuessWorkflowHost** project to open it.</span></span>
+
+3.  <span data-ttu-id="9b3b3-189">Přidejte tři nové identity pracovního postupu pod šest existující deklarace identity pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-189">Add three new workflow identities just below the six existing workflow identity declarations.</span></span> <span data-ttu-id="9b3b3-190">V tomto kurzu `1.5.0.0` slouží jako `WorkflowIdentity.Version` identit dynamické aktualizace.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-190">In this tutorial, `1.5.0.0` is used as the `WorkflowIdentity.Version` for the dynamic update identities.</span></span> <span data-ttu-id="9b3b3-191">Tyto nové `v15` pracovního postupu se použije identity poskytnout definici správné pracovního postupu pro dynamicky aktualizovaný pracovní postup trvalé instance.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-191">These new `v15` workflow identities will be used provide the correct workflow definition for the dynamically updated persisted workflow instances.</span></span>
 
     ```vb
     'Current version identities.
@@ -718,7 +718,7 @@ ms.locfileid: "49123836"
     static public WorkflowIdentity SequentialNumberGuessIdentity_v15;
     ```
 
-4.  <span data-ttu-id="88562-192">Přidejte následující kód na konci konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="88562-192">Add the following code at the end of the constructor.</span></span> <span data-ttu-id="88562-193">Tento kód inicializuje identity pracovního postupu dynamické aktualizace, načte odpovídající definice pracovního postupu a přidá je do slovníku verze pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="88562-193">This code initializes the dynamic update workflow identities, loads the corresponding workflow definitions, and adds them to the workflow version dictionary.</span></span>
+4.  <span data-ttu-id="9b3b3-192">Přidejte následující kód na konci konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-192">Add the following code at the end of the constructor.</span></span> <span data-ttu-id="9b3b3-193">Tento kód inicializuje identity pracovního postupu dynamické aktualizace, načte odpovídající definice pracovního postupu a přidá je do slovníku verze pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-193">This code initializes the dynamic update workflow identities, loads the corresponding workflow definitions, and adds them to the workflow version dictionary.</span></span>
 
     ```vb
     'Initialize the dynamic update workflow identities.
@@ -796,7 +796,7 @@ ms.locfileid: "49123836"
         v15Assembly.CreateInstance("NumberGuessWorkflowActivities.FlowchartNumberGuessWorkflow") as Activity);
     ```
 
-     <span data-ttu-id="88562-194">V následujícím příkladu je dokončené `WorkflowVersionMap` třídy.</span><span class="sxs-lookup"><span data-stu-id="88562-194">The following example is the completed `WorkflowVersionMap` class.</span></span>
+     <span data-ttu-id="9b3b3-194">V následujícím příkladu je dokončené `WorkflowVersionMap` třídy.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-194">The following example is the completed `WorkflowVersionMap` class.</span></span>
 
     ```vb
     Public Module WorkflowVersionMap
@@ -1061,36 +1061,36 @@ ms.locfileid: "49123836"
     }
     ```
 
-5.  <span data-ttu-id="88562-195">Sestavte projekt stisknutím kombinace kláves CTRL+SHIFT+B.</span><span class="sxs-lookup"><span data-stu-id="88562-195">Press CTRL+SHIFT+B to build the project.</span></span>
+5.  <span data-ttu-id="9b3b3-195">Sestavte projekt stisknutím kombinace kláves CTRL+SHIFT+B.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-195">Press CTRL+SHIFT+B to build the project.</span></span>
 
-###  <a name="BKMK_ApplyUpdate"></a> <span data-ttu-id="88562-196">Aby se dynamická aktualizace</span><span class="sxs-lookup"><span data-stu-id="88562-196">To apply the dynamic updates</span></span>
+### <a name="BKMK_ApplyUpdate"></a> <span data-ttu-id="9b3b3-196">Aby se dynamická aktualizace</span><span class="sxs-lookup"><span data-stu-id="9b3b3-196">To apply the dynamic updates</span></span>
 
-1.  <span data-ttu-id="88562-197">Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníka řešení** a zvolte **přidat**, **nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="88562-197">Right-click **WF45GettingStartedTutorial** in **Solution Explorer** and choose **Add**, **New Project**.</span></span>
+1.  <span data-ttu-id="9b3b3-197">Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníka řešení** a zvolte **přidat**, **nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-197">Right-click **WF45GettingStartedTutorial** in **Solution Explorer** and choose **Add**, **New Project**.</span></span>
 
-2.  <span data-ttu-id="88562-198">V **nainstalováno** uzlu, vyberte **Visual C#**, **Windows** (nebo **jazyka Visual Basic**, **Windows**).</span><span class="sxs-lookup"><span data-stu-id="88562-198">In the **Installed** node, select **Visual C#**, **Windows** (or **Visual Basic**, **Windows**).</span></span>
+2.  <span data-ttu-id="9b3b3-198">V **nainstalováno** uzlu, vyberte **Visual C#**, **Windows** (nebo **jazyka Visual Basic**, **Windows**).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-198">In the **Installed** node, select **Visual C#**, **Windows** (or **Visual Basic**, **Windows**).</span></span>
 
     > [!NOTE]
-    >  <span data-ttu-id="88562-199">V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalováno** uzlu.</span><span class="sxs-lookup"><span data-stu-id="88562-199">Depending on which programming language is configured as the primary language in Visual Studio, the **Visual C#** or **Visual Basic** node may be under the **Other Languages** node in the **Installed** node.</span></span>
+    >  <span data-ttu-id="9b3b3-199">V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalováno** uzlu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-199">Depending on which programming language is configured as the primary language in Visual Studio, the **Visual C#** or **Visual Basic** node may be under the **Other Languages** node in the **Installed** node.</span></span>
 
-     <span data-ttu-id="88562-200">Ujistěte se, že **rozhraní .NET Framework 4.5** je vybrali v rozevíracím seznamu verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="88562-200">Ensure that **.NET Framework 4.5** is selected in the .NET Framework version drop-down list.</span></span> <span data-ttu-id="88562-201">Vyberte **konzolovou aplikaci** z **Windows** seznamu.</span><span class="sxs-lookup"><span data-stu-id="88562-201">Select **Console Application** from the **Windows** list.</span></span> <span data-ttu-id="88562-202">Typ **ApplyDynamicUpdate** do **název** pole a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="88562-202">Type **ApplyDynamicUpdate** into the **Name** box and click **OK**.</span></span>
+     <span data-ttu-id="9b3b3-200">Ujistěte se, že **rozhraní .NET Framework 4.5** je vybrali v rozevíracím seznamu verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-200">Ensure that **.NET Framework 4.5** is selected in the .NET Framework version drop-down list.</span></span> <span data-ttu-id="9b3b3-201">Vyberte **konzolovou aplikaci** z **Windows** seznamu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-201">Select **Console Application** from the **Windows** list.</span></span> <span data-ttu-id="9b3b3-202">Typ **ApplyDynamicUpdate** do **název** pole a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-202">Type **ApplyDynamicUpdate** into the **Name** box and click **OK**.</span></span>
 
-3.  <span data-ttu-id="88562-203">Klikněte pravým tlačítkem na **ApplyDynamicUpdate** v **Průzkumníka řešení** a zvolte **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="88562-203">Right-click **ApplyDynamicUpdate** in **Solution Explorer** and choose **Add Reference**.</span></span>
+3.  <span data-ttu-id="9b3b3-203">Klikněte pravým tlačítkem na **ApplyDynamicUpdate** v **Průzkumníka řešení** a zvolte **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-203">Right-click **ApplyDynamicUpdate** in **Solution Explorer** and choose **Add Reference**.</span></span>
 
-4.  <span data-ttu-id="88562-204">Klikněte na tlačítko **řešení** a zaškrtněte políčko vedle položky **NumberGuessWorkflowHost**.</span><span class="sxs-lookup"><span data-stu-id="88562-204">Click **Solution** and check the box next to **NumberGuessWorkflowHost**.</span></span> <span data-ttu-id="88562-205">Je potřeba tento odkaz tak, aby `ApplyDynamicUpdate` můžete použít `NumberGuessWorkflowHost.WorkflowVersionMap` třídy.</span><span class="sxs-lookup"><span data-stu-id="88562-205">This reference is needed so that `ApplyDynamicUpdate` can use the `NumberGuessWorkflowHost.WorkflowVersionMap` class.</span></span>
+4.  <span data-ttu-id="9b3b3-204">Klikněte na tlačítko **řešení** a zaškrtněte políčko vedle položky **NumberGuessWorkflowHost**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-204">Click **Solution** and check the box next to **NumberGuessWorkflowHost**.</span></span> <span data-ttu-id="9b3b3-205">Je potřeba tento odkaz tak, aby `ApplyDynamicUpdate` můžete použít `NumberGuessWorkflowHost.WorkflowVersionMap` třídy.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-205">This reference is needed so that `ApplyDynamicUpdate` can use the `NumberGuessWorkflowHost.WorkflowVersionMap` class.</span></span>
 
-5.  <span data-ttu-id="88562-206">Vyberte **Framework** z **sestavení** uzlu **přidat odkaz** seznamu.</span><span class="sxs-lookup"><span data-stu-id="88562-206">Select **Framework** from the **Assemblies** node in the **Add Reference** list.</span></span> <span data-ttu-id="88562-207">Typ **System.Activities** do **hledání sestavení** pole.</span><span class="sxs-lookup"><span data-stu-id="88562-207">Type **System.Activities** into the **Search Assemblies** box.</span></span> <span data-ttu-id="88562-208">To bude filtrovat sestavení a usnadňují vyberte požadované odkazy.</span><span class="sxs-lookup"><span data-stu-id="88562-208">This will filter the assemblies and make the desired references easier to select.</span></span>
+5.  <span data-ttu-id="9b3b3-206">Vyberte **Framework** z **sestavení** uzlu **přidat odkaz** seznamu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-206">Select **Framework** from the **Assemblies** node in the **Add Reference** list.</span></span> <span data-ttu-id="9b3b3-207">Typ **System.Activities** do **hledání sestavení** pole.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-207">Type **System.Activities** into the **Search Assemblies** box.</span></span> <span data-ttu-id="9b3b3-208">To bude filtrovat sestavení a usnadňují vyberte požadované odkazy.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-208">This will filter the assemblies and make the desired references easier to select.</span></span>
 
-6.  <span data-ttu-id="88562-209">Zaškrtněte políčko vedle **System.Activities** z **výsledky hledání** seznamu.</span><span class="sxs-lookup"><span data-stu-id="88562-209">Check the checkbox beside **System.Activities** from the **Search Results** list.</span></span>
+6.  <span data-ttu-id="9b3b3-209">Zaškrtněte políčko vedle **System.Activities** z **výsledky hledání** seznamu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-209">Check the checkbox beside **System.Activities** from the **Search Results** list.</span></span>
 
-7.  <span data-ttu-id="88562-210">Typ **serializace** do **hledání sestavení** pole a zaškrtněte políčko vedle **System.Runtime.Serialization** z **výsledky hledání**  seznamu.</span><span class="sxs-lookup"><span data-stu-id="88562-210">Type **Serialization** into the **Search Assemblies** box, and check the checkbox beside **System.Runtime.Serialization** from the **Search Results** list.</span></span>
+7.  <span data-ttu-id="9b3b3-210">Typ **serializace** do **hledání sestavení** pole a zaškrtněte políčko vedle **System.Runtime.Serialization** z **výsledky hledání**  seznamu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-210">Type **Serialization** into the **Search Assemblies** box, and check the checkbox beside **System.Runtime.Serialization** from the **Search Results** list.</span></span>
 
-8.  <span data-ttu-id="88562-211">Typ **DurableInstancing** do **hledání sestavení** pole a zaškrtněte políčko vedle **System.Activities.DurableInstancing** a  **System.Runtime.DurableInstancing** z **výsledky hledání** seznamu.</span><span class="sxs-lookup"><span data-stu-id="88562-211">Type **DurableInstancing** into the **Search Assemblies** box, and check the checkbox beside **System.Activities.DurableInstancing** and **System.Runtime.DurableInstancing** from the **Search Results** list.</span></span>
+8.  <span data-ttu-id="9b3b3-211">Typ **DurableInstancing** do **hledání sestavení** pole a zaškrtněte políčko vedle **System.Activities.DurableInstancing** a  **System.Runtime.DurableInstancing** z **výsledky hledání** seznamu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-211">Type **DurableInstancing** into the **Search Assemblies** box, and check the checkbox beside **System.Activities.DurableInstancing** and **System.Runtime.DurableInstancing** from the **Search Results** list.</span></span>
 
-9. <span data-ttu-id="88562-212">Klikněte na tlačítko **OK** zavřete **správce odkazů** a přidejte odkazy.</span><span class="sxs-lookup"><span data-stu-id="88562-212">Click **OK** to close **Reference Manager** and add the references.</span></span>
+9. <span data-ttu-id="9b3b3-212">Klikněte na tlačítko **OK** zavřete **správce odkazů** a přidejte odkazy.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-212">Click **OK** to close **Reference Manager** and add the references.</span></span>
 
-10. <span data-ttu-id="88562-213">Klikněte pravým tlačítkem na **ApplyDynamicUpdate** v Průzkumníku řešení a zvolte **přidat**, **třídy**.</span><span class="sxs-lookup"><span data-stu-id="88562-213">Right-click **ApplyDynamicUpdate** in Solution Explorer and choose **Add**, **Class**.</span></span> <span data-ttu-id="88562-214">Typ `DynamicUpdateInfo` do **název** pole a klikněte na tlačítko **přidat**.</span><span class="sxs-lookup"><span data-stu-id="88562-214">Type `DynamicUpdateInfo` into the **Name** box and click **Add**.</span></span>
+10. <span data-ttu-id="9b3b3-213">Klikněte pravým tlačítkem na **ApplyDynamicUpdate** v Průzkumníku řešení a zvolte **přidat**, **třídy**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-213">Right-click **ApplyDynamicUpdate** in Solution Explorer and choose **Add**, **Class**.</span></span> <span data-ttu-id="9b3b3-214">Typ `DynamicUpdateInfo` do **název** pole a klikněte na tlačítko **přidat**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-214">Type `DynamicUpdateInfo` into the **Name** box and click **Add**.</span></span>
 
-11. <span data-ttu-id="88562-215">Přidejte následující dva členy k `DynamicUpdateInfo` třídy.</span><span class="sxs-lookup"><span data-stu-id="88562-215">Add the following two members to the `DynamicUpdateInfo` class.</span></span> <span data-ttu-id="88562-216">V následujícím příkladu je dokončené `DynamicUpdateInfo` třídy.</span><span class="sxs-lookup"><span data-stu-id="88562-216">The following example is the completed `DynamicUpdateInfo` class.</span></span> <span data-ttu-id="88562-217">Tato třída obsahuje informace o mapa aktualizace a nové identity pracovního postupu při instance pracovního postupu se aktualizuje.</span><span class="sxs-lookup"><span data-stu-id="88562-217">This class contains information on the update map and new workflow identity used when a workflow instance is updated.</span></span>
+11. <span data-ttu-id="9b3b3-215">Přidejte následující dva členy k `DynamicUpdateInfo` třídy.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-215">Add the following two members to the `DynamicUpdateInfo` class.</span></span> <span data-ttu-id="9b3b3-216">V následujícím příkladu je dokončené `DynamicUpdateInfo` třídy.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-216">The following example is the completed `DynamicUpdateInfo` class.</span></span> <span data-ttu-id="9b3b3-217">Tato třída obsahuje informace o mapa aktualizace a nové identity pracovního postupu při instance pracovního postupu se aktualizuje.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-217">This class contains information on the update map and new workflow identity used when a workflow instance is updated.</span></span>
 
     ```vb
     Public Class DynamicUpdateInfo
@@ -1107,7 +1107,7 @@ ms.locfileid: "49123836"
     }
     ```
 
-12. <span data-ttu-id="88562-218">Přidejte následující `using` (nebo `Imports`) příkazů v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.</span><span class="sxs-lookup"><span data-stu-id="88562-218">Add the following `using` (or `Imports`) statements at the top of the file with the other `using` (or `Imports`) statements.</span></span>
+12. <span data-ttu-id="9b3b3-218">Přidejte následující `using` (nebo `Imports`) příkazů v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-218">Add the following `using` (or `Imports`) statements at the top of the file with the other `using` (or `Imports`) statements.</span></span>
 
     ```vb
     Imports System.Activities
@@ -1119,9 +1119,9 @@ ms.locfileid: "49123836"
     using System.Activities.DynamicUpdate;
     ```
 
-13. <span data-ttu-id="88562-219">Dvakrát klikněte na panel **Program.cs** (nebo **Module1.vb**) v Průzkumníku řešení.</span><span class="sxs-lookup"><span data-stu-id="88562-219">Double-click **Program.cs** (or **Module1.vb**) in Solution Explorer.</span></span>
+13. <span data-ttu-id="9b3b3-219">Dvakrát klikněte na panel **Program.cs** (nebo **Module1.vb**) v Průzkumníku řešení.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-219">Double-click **Program.cs** (or **Module1.vb**) in Solution Explorer.</span></span>
 
-14. <span data-ttu-id="88562-220">Přidejte následující `using` (nebo `Imports`) příkazů v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.</span><span class="sxs-lookup"><span data-stu-id="88562-220">Add the following `using` (or `Imports`) statements at the top of the file with the other `using` (or `Imports`) statements.</span></span>
+14. <span data-ttu-id="9b3b3-220">Přidejte následující `using` (nebo `Imports`) příkazů v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-220">Add the following `using` (or `Imports`) statements at the top of the file with the other `using` (or `Imports`) statements.</span></span>
 
     ```vb
     Imports NumberGuessWorkflowHost
@@ -1144,7 +1144,7 @@ ms.locfileid: "49123836"
     using System.Activities.DurableInstancing;
     ```
 
-15. <span data-ttu-id="88562-221">Přidejte následující připojovací řetězec člen, který chcete `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="88562-221">Add the following connection string member to the `Program` class (or `Module1`).</span></span>
+15. <span data-ttu-id="9b3b3-221">Přidejte následující připojovací řetězec člen, který chcete `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-221">Add the following connection string member to the `Program` class (or `Module1`).</span></span>
 
     ```vb
     Const connectionString = "Server=.\SQLEXPRESS;Initial Catalog=WF45GettingStartedTutorial;Integrated Security=SSPI"
@@ -1155,9 +1155,9 @@ ms.locfileid: "49123836"
     ```
 
     > [!NOTE]
-    >  <span data-ttu-id="88562-222">V závislosti na vaší edici systému SQL Server může být jiný server název připojovacího řetězce.</span><span class="sxs-lookup"><span data-stu-id="88562-222">Depending on your edition of SQL Server, the connection string server name may be different.</span></span>
+    >  <span data-ttu-id="9b3b3-222">V závislosti na vaší edici systému SQL Server může být jiný server název připojovacího řetězce.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-222">Depending on your edition of SQL Server, the connection string server name may be different.</span></span>
 
-16. <span data-ttu-id="88562-223">Přidejte následující `GetIDs` metodu `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="88562-223">Add the following `GetIDs` method to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="88562-224">Tato metoda vrátí seznam identifikátorů instance trvalá pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="88562-224">This method returns a list of persisted workflow instance ids.</span></span>
+16. <span data-ttu-id="9b3b3-223">Přidejte následující `GetIDs` metodu `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-223">Add the following `GetIDs` method to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="9b3b3-224">Tato metoda vrátí seznam identifikátorů instance trvalá pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-224">This method returns a list of persisted workflow instance ids.</span></span>
 
     ```vb
     Function GetIds() As IList(Of Guid)
@@ -1210,7 +1210,7 @@ ms.locfileid: "49123836"
     }
     ```
 
-17. <span data-ttu-id="88562-225">Přidejte následující `LoadMap` metodu `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="88562-225">Add the following `LoadMap` method to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="88562-226">Tato metoda vytvoří slovník, který mapuje `v1` identity pracovního postupu do mapy aktualizace a nové identity pracovního postupu používá k aktualizaci odpovídající trvalé instance pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="88562-226">This method creates a dictionary that maps `v1` workflow identities to the update maps and new workflow identities used to update the corresponding persisted workflow instances.</span></span>
+17. <span data-ttu-id="9b3b3-225">Přidejte následující `LoadMap` metodu `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-225">Add the following `LoadMap` method to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="9b3b3-226">Tato metoda vytvoří slovník, který mapuje `v1` identity pracovního postupu do mapy aktualizace a nové identity pracovního postupu používá k aktualizaci odpovídající trvalé instance pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-226">This method creates a dictionary that maps `v1` workflow identities to the update maps and new workflow identities used to update the corresponding persisted workflow instances.</span></span>
 
     ```vb
     Function LoadMap(mapName As String) As DynamicUpdateMap
@@ -1253,7 +1253,7 @@ ms.locfileid: "49123836"
     }
     ```
 
-18. <span data-ttu-id="88562-227">Přidejte následující `LoadMaps` metodu `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="88562-227">Add the following `LoadMaps` method to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="88562-228">Tato metoda načte tři mapy aktualizace a vytvoří slovník, který mapuje `v1` identity pracovního postupu do mapy aktualizace.</span><span class="sxs-lookup"><span data-stu-id="88562-228">This method loads the three update maps and creates a dictionary that maps `v1` workflow identities to the update maps.</span></span>
+18. <span data-ttu-id="9b3b3-227">Přidejte následující `LoadMaps` metodu `Program` třídy (nebo `Module1`).</span><span class="sxs-lookup"><span data-stu-id="9b3b3-227">Add the following `LoadMaps` method to the `Program` class (or `Module1`).</span></span> <span data-ttu-id="9b3b3-228">Tato metoda načte tři mapy aktualizace a vytvoří slovník, který mapuje `v1` identity pracovního postupu do mapy aktualizace.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-228">This method loads the three update maps and creates a dictionary that maps `v1` workflow identities to the update maps.</span></span>
 
     ```vb
     Function LoadMaps() As IDictionary(Of WorkflowIdentity, DynamicUpdateInfo)
@@ -1325,7 +1325,7 @@ ms.locfileid: "49123836"
     }
     ```
 
-19. <span data-ttu-id="88562-229">Přidejte následující kód, který `Main`.</span><span class="sxs-lookup"><span data-stu-id="88562-229">Add the following code to `Main`.</span></span> <span data-ttu-id="88562-230">Tento kód provede trvalá pracovního postupu instance a zkontroluje každý `WorkflowIdentity`.</span><span class="sxs-lookup"><span data-stu-id="88562-230">This code iterates the persisted workflow instances and examines each `WorkflowIdentity`.</span></span> <span data-ttu-id="88562-231">Pokud `WorkflowIdentity` mapuje na `v1` instance pracovního postupu `WorkflowApplication` je nakonfigurovaný s definicí aktualizovaný pracovní postup a identitu aktualizovaný pracovní postup.</span><span class="sxs-lookup"><span data-stu-id="88562-231">If the `WorkflowIdentity` maps to a `v1` workflow instance, a `WorkflowApplication` is configured with the updated workflow definition and an updated workflow identity.</span></span> <span data-ttu-id="88562-232">Dále `WorkflowApplication.Load` volána s instance a mapa aktualizace, která se vztahuje na mapě dynamické aktualizace.</span><span class="sxs-lookup"><span data-stu-id="88562-232">Next, `WorkflowApplication.Load` is called with the instance and the update map, which applies the dynamic update map.</span></span> <span data-ttu-id="88562-233">Jakmile tuto aktualizaci nenainstalujete, aktualizovanou instanci přetrvává volání `Unload`.</span><span class="sxs-lookup"><span data-stu-id="88562-233">Once the update is applied, the updated instance is persisted with a call to `Unload`.</span></span>
+19. <span data-ttu-id="9b3b3-229">Přidejte následující kód, který `Main`.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-229">Add the following code to `Main`.</span></span> <span data-ttu-id="9b3b3-230">Tento kód provede trvalá pracovního postupu instance a zkontroluje každý `WorkflowIdentity`.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-230">This code iterates the persisted workflow instances and examines each `WorkflowIdentity`.</span></span> <span data-ttu-id="9b3b3-231">Pokud `WorkflowIdentity` mapuje na `v1` instance pracovního postupu `WorkflowApplication` je nakonfigurovaný s definicí aktualizovaný pracovní postup a identitu aktualizovaný pracovní postup.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-231">If the `WorkflowIdentity` maps to a `v1` workflow instance, a `WorkflowApplication` is configured with the updated workflow definition and an updated workflow identity.</span></span> <span data-ttu-id="9b3b3-232">Dále `WorkflowApplication.Load` volána s instance a mapa aktualizace, která se vztahuje na mapě dynamické aktualizace.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-232">Next, `WorkflowApplication.Load` is called with the instance and the update map, which applies the dynamic update map.</span></span> <span data-ttu-id="9b3b3-233">Jakmile tuto aktualizaci nenainstalujete, aktualizovanou instanci přetrvává volání `Unload`.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-233">Once the update is applied, the updated instance is persisted with a call to `Unload`.</span></span>
 
     ```vb
     Dim store = New SqlWorkflowInstanceStore(connectionString)
@@ -1408,35 +1408,35 @@ ms.locfileid: "49123836"
     }
     ```
 
-20. <span data-ttu-id="88562-234">Klikněte pravým tlačítkem na **ApplyDynamicUpdate** v **Průzkumníka řešení** a zvolte **nastavit jako spouštěný projekt**.</span><span class="sxs-lookup"><span data-stu-id="88562-234">Right-click **ApplyDynamicUpdate** in **Solution Explorer** and choose **Set as StartUp Project**.</span></span>
+20. <span data-ttu-id="9b3b3-234">Klikněte pravým tlačítkem na **ApplyDynamicUpdate** v **Průzkumníka řešení** a zvolte **nastavit jako spouštěný projekt**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-234">Right-click **ApplyDynamicUpdate** in **Solution Explorer** and choose **Set as StartUp Project**.</span></span>
 
-21. <span data-ttu-id="88562-235">Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení a pak stiskněte CTRL + F5 ke spuštění `ApplyDynamicUpdate` aplikace a aktualizovat instance trvalá pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="88562-235">Press CTRL+SHIFT+B to build the solution, and then press CTRL+F5 to run the `ApplyDynamicUpdate` application and update the persisted workflow instances.</span></span> <span data-ttu-id="88562-236">Byste měli vidět výstup podobný následujícímu.</span><span class="sxs-lookup"><span data-stu-id="88562-236">You should see output similar to the following.</span></span> <span data-ttu-id="88562-237">Pracovní postupy verze 1.0.0.0 jsou aktualizována na verzi 1.5.0.0, zatímco se neaktualizují verzi 2.0.0.0 pracovních postupů.</span><span class="sxs-lookup"><span data-stu-id="88562-237">The version 1.0.0.0 workflows are updated to version 1.5.0.0, while the version 2.0.0.0 workflows are not updated.</span></span>
+21. <span data-ttu-id="9b3b3-235">Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení a pak stiskněte CTRL + F5 ke spuštění `ApplyDynamicUpdate` aplikace a aktualizovat instance trvalá pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-235">Press CTRL+SHIFT+B to build the solution, and then press CTRL+F5 to run the `ApplyDynamicUpdate` application and update the persisted workflow instances.</span></span> <span data-ttu-id="9b3b3-236">Byste měli vidět výstup podobný následujícímu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-236">You should see output similar to the following.</span></span> <span data-ttu-id="9b3b3-237">Pracovní postupy verze 1.0.0.0 jsou aktualizována na verzi 1.5.0.0, zatímco se neaktualizují verzi 2.0.0.0 pracovních postupů.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-237">The version 1.0.0.0 workflows are updated to version 1.5.0.0, while the version 2.0.0.0 workflows are not updated.</span></span>
 
- <span data-ttu-id="88562-238">**Kontrola: StateMachineNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: StateMachineNumberGuessWorkflow; Verze = 1.5.0.0**
+ <span data-ttu-id="9b3b3-238">**Kontrola: StateMachineNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: StateMachineNumberGuessWorkflow; Version=1.5.0.0**
+**Inspecting: StateMachineNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: StateMachineNumberGuessWorkflow; Verze = 1.5.0.0**
+**kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**
+**kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**
+**kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**
+**kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**
+**kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**
 **kontrola: StateMachineNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: StateMachineNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: StateMachineNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: StateMachineNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**
-**aktualizováno za účelem: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**
-**kontrola: StateMachineNumberGuessWorkflow; Verze = 2.0.0.0**
-**kontrola: StateMachineNumberGuessWorkflow; Verze = 2.0.0.0**
-**kontrola: FlowchartNumberGuessWorkflow; Verze = 2.0.0.0**
+**aktualizováno, aby: StateMachineNumberGuessWorkflow; Version=1.5.0.0**
+**Inspecting: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**
+**aktualizováno, aby: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**
+**kontrola: StateMachineNumberGuessWorkflow; Version=2.0.0.0**
+**Inspecting: StateMachineNumberGuessWorkflow; Version=2.0.0.0**
+**Inspecting: FlowchartNumberGuessWorkflow; Verze = 2.0.0.0**
 **kontrola: FlowchartNumberGuessWorkflow; Verze = 2.0.0.0**
 **kontrola: SequentialNumberGuessWorkflow; Verze = 2.0.0.0**
 **kontrola: SequentialNumberGuessWorkflow; Verze = 2.0.0.0**
-**stisknutím libovolné klávesy pokračovat...**</span><span class="sxs-lookup"><span data-stu-id="88562-238">**Inspecting: StateMachineNumberGuessWorkflow; Version=1.0.0.0**
+**stisknutím libovolné klávesy pokračovat...**</span><span class="sxs-lookup"><span data-stu-id="9b3b3-238">**Inspecting: StateMachineNumberGuessWorkflow; Version=1.0.0.0**
 **Updated to: StateMachineNumberGuessWorkflow; Version=1.5.0.0**
 **Inspecting: StateMachineNumberGuessWorkflow; Version=1.0.0.0**
 **Updated to: StateMachineNumberGuessWorkflow; Version=1.5.0.0**
@@ -1462,30 +1462,30 @@ ms.locfileid: "49123836"
 **Inspecting: SequentialNumberGuessWorkflow; Version=2.0.0.0**
 **Press any key to continue . . .**</span></span>
 
-###  <a name="BKMK_BuildAndRun"></a> <span data-ttu-id="88562-239">Spusťte aplikaci pomocí aktualizovaných pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="88562-239">To run the application with the updated workflows</span></span>
+### <a name="BKMK_BuildAndRun"></a> <span data-ttu-id="9b3b3-239">Spusťte aplikaci pomocí aktualizovaných pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="9b3b3-239">To run the application with the updated workflows</span></span>
 
-1.  <span data-ttu-id="88562-240">Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníka řešení** a zvolte **nastavit jako spouštěný projekt**.</span><span class="sxs-lookup"><span data-stu-id="88562-240">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Set as StartUp Project**.</span></span>
+1.  <span data-ttu-id="9b3b3-240">Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníka řešení** a zvolte **nastavit jako spouštěný projekt**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-240">Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Set as StartUp Project**.</span></span>
 
-2.  <span data-ttu-id="88562-241">Stisknutím kláves CTRL + F5 spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="88562-241">Press CTRL+F5 to run the application.</span></span>
+2.  <span data-ttu-id="9b3b3-241">Stisknutím kláves CTRL + F5 spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-241">Press CTRL+F5 to run the application.</span></span>
 
-3.  <span data-ttu-id="88562-242">Klikněte na tlačítko **novou hru** spuštění nového pracovního postupu a poznamenejte si informace o verzi níže se stavové okno, které označuje pracovního postupu `v2` pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="88562-242">Click **New Game** to start a new workflow and note the version information below the status window that indicates the workflow is a `v2` workflow.</span></span>
+3.  <span data-ttu-id="9b3b3-242">Klikněte na tlačítko **novou hru** spuštění nového pracovního postupu a poznamenejte si informace o verzi níže se stavové okno, které označuje pracovního postupu `v2` pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-242">Click **New Game** to start a new workflow and note the version information below the status window that indicates the workflow is a `v2` workflow.</span></span>
 
-4.  <span data-ttu-id="88562-243">Vyberte jednu z `v1` pracovních postupů, které jste spustili na začátku [jak: hostitel více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md) tématu.</span><span class="sxs-lookup"><span data-stu-id="88562-243">Select one of the `v1` workflows you started at the beginning of the [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md) topic.</span></span> <span data-ttu-id="88562-244">Všimněte si, že informace o verzi v části stavové okno označuje, že pracovní postup je verze **1.5.0.0** pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="88562-244">Note that the version information under the status window indicates that the workflow is a version **1.5.0.0** workflow.</span></span> <span data-ttu-id="88562-245">Všimněte si, že nejsou k dispozici žádné informace uvedené informace o předchozích pokusů jiné než, zda byly moc vysoká, nebo příliš nízká.</span><span class="sxs-lookup"><span data-stu-id="88562-245">Note that there is no information indicated about previous guesses other than whether they were too high or too low.</span></span>
+4.  <span data-ttu-id="9b3b3-243">Vyberte jednu z `v1` pracovních postupů, které jste spustili na začátku [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md) tématu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-243">Select one of the `v1` workflows you started at the beginning of the [How to: Host Multiple Versions of a Workflow Side-by-Side](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md) topic.</span></span> <span data-ttu-id="9b3b3-244">Všimněte si, že informace o verzi v části stavové okno označuje, že pracovní postup je verze **1.5.0.0** pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-244">Note that the version information under the status window indicates that the workflow is a version **1.5.0.0** workflow.</span></span> <span data-ttu-id="9b3b3-245">Všimněte si, že nejsou k dispozici žádné informace uvedené informace o předchozích pokusů jiné než, zda byly moc vysoká, nebo příliš nízká.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-245">Note that there is no information indicated about previous guesses other than whether they were too high or too low.</span></span>
 
- <span data-ttu-id="88562-246">**Zadejte prosím číslo mezi 1 a 10**
-**váš odhad je příliš nízká.**</span><span class="sxs-lookup"><span data-stu-id="88562-246">**Please enter a number between 1 and 10**
+ <span data-ttu-id="9b3b3-246">**Zadejte prosím číslo mezi 1 a 10**
+**váš odhad je příliš nízká.**</span><span class="sxs-lookup"><span data-stu-id="9b3b3-246">**Please enter a number between 1 and 10**
 **Your guess is too low.**</span></span>
 
-5.  <span data-ttu-id="88562-247">Poznamenejte si, `InstanceId` a pak zadejte pokusů až do dokončení pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="88562-247">Make a note of the `InstanceId` and then enter guesses until the workflow completes.</span></span> <span data-ttu-id="88562-248">Stavové okno zobrazuje informace o obsahu odhad vzhledem k tomu, `WriteLine` činnosti byly aktualizovány pomocí dynamické aktualizace.</span><span class="sxs-lookup"><span data-stu-id="88562-248">The status window displays information about the content of the guess because the `WriteLine` activities were updated by the dynamic update.</span></span>
+5.  <span data-ttu-id="9b3b3-247">Poznamenejte si, `InstanceId` a pak zadejte pokusů až do dokončení pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-247">Make a note of the `InstanceId` and then enter guesses until the workflow completes.</span></span> <span data-ttu-id="9b3b3-248">Stavové okno zobrazuje informace o obsahu odhad vzhledem k tomu, `WriteLine` činnosti byly aktualizovány pomocí dynamické aktualizace.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-248">The status window displays information about the content of the guess because the `WriteLine` activities were updated by the dynamic update.</span></span>
 
- <span data-ttu-id="88562-249">**Zadejte prosím číslo mezi 1 a 10**
+ <span data-ttu-id="9b3b3-249">**Zadejte prosím číslo mezi 1 a 10**
 **váš odhad je příliš nízká.** 
  **Zadejte prosím číslo mezi 1 a 10**
 **5 je příliš nízká.** 
  **Zadejte prosím číslo mezi 1 a 10**
 **7 je příliš vysoká.** 
  **Zadejte prosím číslo mezi 1 a 10**
-**ještě jednou vám Gratulujeme, můžete uhodnout číslo na oplátku 4.**</span><span class="sxs-lookup"><span data-stu-id="88562-249">**Please enter a number between 1 and 10**
+**ještě jednou vám Gratulujeme, můžete uhodnout číslo na oplátku 4.**</span><span class="sxs-lookup"><span data-stu-id="9b3b3-249">**Please enter a number between 1 and 10**
 **Your guess is too low.**
 **Please enter a number between 1 and 10**
 **5 is too low.**
@@ -1494,16 +1494,16 @@ ms.locfileid: "49123836"
 **Please enter a number between 1 and 10**
 **Congratulations, you guessed the number in 4 turns.**</span></span>
 
-6.  <span data-ttu-id="88562-250">Otevřete Průzkumníka Windows a přejděte **NumberGuessWorkflowHost\bin\debug** složky (nebo **bin\release** v závislosti na nastavení projektu) a otevřete soubor sledování pomocí poznámkového bloku, který odpovídá k dokončení pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="88562-250">Open Windows Explorer and navigate to the **NumberGuessWorkflowHost\bin\debug** folder (or **bin\release** depending on your project settings) and open the tracking file using Notepad that corresponds to the completed workflow.</span></span> <span data-ttu-id="88562-251">Pokud jste neprovedli si `InstanceId` je možné identifikovat pomocí souboru správné sledování **datum změny** informace v Průzkumníku Windows.</span><span class="sxs-lookup"><span data-stu-id="88562-251">If you did not make a note of the `InstanceId` you may be able to identify the correct tracking file by using the **Date modified** information in Windows Explorer.</span></span> <span data-ttu-id="88562-252">Poslední řádek informace o sledování obsahuje výstup nově přidaný `WriteLine` aktivity.</span><span class="sxs-lookup"><span data-stu-id="88562-252">The last line of the tracking information contains the output of the newly added `WriteLine` activity.</span></span>
+6.  <span data-ttu-id="9b3b3-250">Otevřete Průzkumníka Windows a přejděte **NumberGuessWorkflowHost\bin\debug** složky (nebo **bin\release** v závislosti na nastavení projektu) a otevřete soubor sledování pomocí poznámkového bloku, který odpovídá k dokončení pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-250">Open Windows Explorer and navigate to the **NumberGuessWorkflowHost\bin\debug** folder (or **bin\release** depending on your project settings) and open the tracking file using Notepad that corresponds to the completed workflow.</span></span> <span data-ttu-id="9b3b3-251">Pokud jste neprovedli si `InstanceId` je možné identifikovat pomocí souboru správné sledování **datum změny** informace v Průzkumníku Windows.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-251">If you did not make a note of the `InstanceId` you may be able to identify the correct tracking file by using the **Date modified** information in Windows Explorer.</span></span> <span data-ttu-id="9b3b3-252">Poslední řádek informace o sledování obsahuje výstup nově přidaný `WriteLine` aktivity.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-252">The last line of the tracking information contains the output of the newly added `WriteLine` activity.</span></span>
 
- <span data-ttu-id="88562-253">**Zadejte prosím číslo mezi 1 a 10**
+ <span data-ttu-id="9b3b3-253">**Zadejte prosím číslo mezi 1 a 10**
 **váš odhad je příliš nízká.** 
  **Zadejte prosím číslo mezi 1 a 10**
 **5 je příliš nízká.** 
  **Zadejte prosím číslo mezi 1 a 10**
 **7 je příliš vysoká.** 
  **Zadejte prosím číslo mezi 1 a 10**
-**6 je správná. Odhadl na oplátku 4.**</span><span class="sxs-lookup"><span data-stu-id="88562-253">**Please enter a number between 1 and 10**
+**6 je správná. Odhadl na oplátku 4.**</span><span class="sxs-lookup"><span data-stu-id="9b3b3-253">**Please enter a number between 1 and 10**
 **Your guess is too low.**
 **Please enter a number between 1 and 10**
 **5 is too low.**
@@ -1512,14 +1512,14 @@ ms.locfileid: "49123836"
 **Please enter a number between 1 and 10**
 **6 is correct. You guessed it in 4 turns.**</span></span>
 
-###  <a name="BKMK_StartPreviousVersions"></a> <span data-ttu-id="88562-254">Povolit od předchozích verzí pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="88562-254">To enable starting previous versions of the workflows</span></span>
- <span data-ttu-id="88562-255">Pokud vyčerpáte pracovní postupy pro aktualizace, můžete upravit `NumberGuessWorkflowHost` aplikaci, která od předchozích verzí pracovních postupů.</span><span class="sxs-lookup"><span data-stu-id="88562-255">If you run out of workflows to update, you can modify the `NumberGuessWorkflowHost` application to enable starting previous versions of the workflows.</span></span>
+### <a name="BKMK_StartPreviousVersions"></a> <span data-ttu-id="9b3b3-254">Povolit od předchozích verzí pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="9b3b3-254">To enable starting previous versions of the workflows</span></span>
+ <span data-ttu-id="9b3b3-255">Pokud vyčerpáte pracovní postupy pro aktualizace, můžete upravit `NumberGuessWorkflowHost` aplikaci, která od předchozích verzí pracovních postupů.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-255">If you run out of workflows to update, you can modify the `NumberGuessWorkflowHost` application to enable starting previous versions of the workflows.</span></span>
 
-1.  <span data-ttu-id="88562-256">Dvakrát klikněte na panel **WorkflowHostForm** v **Průzkumníka řešení**a vyberte **WorkflowType** – pole se seznamem.</span><span class="sxs-lookup"><span data-stu-id="88562-256">Double-click **WorkflowHostForm** in **Solution Explorer**, and select the **WorkflowType** combo box.</span></span>
+1.  <span data-ttu-id="9b3b3-256">Dvakrát klikněte na panel **WorkflowHostForm** v **Průzkumníka řešení**a vyberte **WorkflowType** – pole se seznamem.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-256">Double-click **WorkflowHostForm** in **Solution Explorer**, and select the **WorkflowType** combo box.</span></span>
 
-2.  <span data-ttu-id="88562-257">V **vlastnosti** okna, vyberte **položky** vlastnosti a klikněte na tlačítko se třemi tečkami upravit **položky** kolekce.</span><span class="sxs-lookup"><span data-stu-id="88562-257">In the **Properties** window, select the **Items** property and click the ellipsis button to edit the **Items** collection.</span></span>
+2.  <span data-ttu-id="9b3b3-257">V **vlastnosti** okna, vyberte **položky** vlastnosti a klikněte na tlačítko se třemi tečkami upravit **položky** kolekce.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-257">In the **Properties** window, select the **Items** property and click the ellipsis button to edit the **Items** collection.</span></span>
 
-3.  <span data-ttu-id="88562-258">Přidejte následující tři položky do kolekce.</span><span class="sxs-lookup"><span data-stu-id="88562-258">Add the following three items to the collection.</span></span>
+3.  <span data-ttu-id="9b3b3-258">Přidejte následující tři položky do kolekce.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-258">Add the following three items to the collection.</span></span>
 
     ```
     StateMachineNumberGuessWorkflow v1
@@ -1527,7 +1527,7 @@ ms.locfileid: "49123836"
     SequentialNumberGuessWorkflow v1
     ```
 
-     <span data-ttu-id="88562-259">Dokončené `Items` kolekce bude obsahovat šest položek.</span><span class="sxs-lookup"><span data-stu-id="88562-259">The completed `Items` collection will have six items.</span></span>
+     <span data-ttu-id="9b3b3-259">Dokončené `Items` kolekce bude obsahovat šest položek.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-259">The completed `Items` collection will have six items.</span></span>
 
     ```
     StateMachineNumberGuessWorkflow
@@ -1538,9 +1538,9 @@ ms.locfileid: "49123836"
     SequentialNumberGuessWorkflow v1
     ```
 
-4.  <span data-ttu-id="88562-260">Dvakrát klikněte na panel **WorkflowHostForm** v **Průzkumníka řešení**a vyberte **zobrazit kód**.</span><span class="sxs-lookup"><span data-stu-id="88562-260">Double-click **WorkflowHostForm** in **Solution Explorer**, and select **View Code**.</span></span>
+4.  <span data-ttu-id="9b3b3-260">Dvakrát klikněte na panel **WorkflowHostForm** v **Průzkumníka řešení**a vyberte **zobrazit kód**.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-260">Double-click **WorkflowHostForm** in **Solution Explorer**, and select **View Code**.</span></span>
 
-5.  <span data-ttu-id="88562-261">Přidejte tři nové případy `switch` (nebo `Select Case`) příkaz v `NewGame_Click` obslužné rutiny pro nové položky v mapování **WorkflowType** – pole se seznamem pro odpovídající identity pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="88562-261">Add three new cases to the `switch` (or `Select Case`) statement in the `NewGame_Click` handler to map the new items in the **WorkflowType** combo box to the matching workflow identities.</span></span>
+5.  <span data-ttu-id="9b3b3-261">Přidejte tři nové případy `switch` (nebo `Select Case`) příkaz v `NewGame_Click` obslužné rutiny pro nové položky v mapování **WorkflowType** – pole se seznamem pro odpovídající identity pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-261">Add three new cases to the `switch` (or `Select Case`) statement in the `NewGame_Click` handler to map the new items in the **WorkflowType** combo box to the matching workflow identities.</span></span>
 
     ```vb
     Case "SequentialNumberGuessWorkflow v1"
@@ -1567,7 +1567,7 @@ ms.locfileid: "49123836"
         break;
     ```
 
-     <span data-ttu-id="88562-262">Následující příklad obsahuje kompletní `switch` (nebo `Select Case`) příkaz.</span><span class="sxs-lookup"><span data-stu-id="88562-262">The following example contains the complete `switch` (or `Select Case`) statement.</span></span>
+     <span data-ttu-id="9b3b3-262">Následující příklad obsahuje kompletní `switch` (nebo `Select Case`) příkaz.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-262">The following example contains the complete `switch` (or `Select Case`) statement.</span></span>
 
     ```vb
     Select Case WorkflowType.SelectedItem.ToString()
@@ -1620,4 +1620,4 @@ ms.locfileid: "49123836"
     };
     ```
 
-6.  <span data-ttu-id="88562-263">Stisknutím kláves CTRL + F5 sestavte a spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="88562-263">Press CTRL+F5 to build and run the application.</span></span> <span data-ttu-id="88562-264">Nyní můžete spustit `v1` verze pracovního postupu, stejně jako aktuální verze.</span><span class="sxs-lookup"><span data-stu-id="88562-264">You can now start the `v1` versions of the workflow as well as the current versions.</span></span> <span data-ttu-id="88562-265">Chcete-li dynamicky aktualizovat tyto nové instance, spusťte **ApplyDynamicUpdate** aplikace.</span><span class="sxs-lookup"><span data-stu-id="88562-265">To dynamically update these new instances, run the **ApplyDynamicUpdate** application.</span></span>
+6.  <span data-ttu-id="9b3b3-263">Stisknutím kláves CTRL + F5 sestavte a spusťte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-263">Press CTRL+F5 to build and run the application.</span></span> <span data-ttu-id="9b3b3-264">Nyní můžete spustit `v1` verze pracovního postupu, stejně jako aktuální verze.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-264">You can now start the `v1` versions of the workflow as well as the current versions.</span></span> <span data-ttu-id="9b3b3-265">Chcete-li dynamicky aktualizovat tyto nové instance, spusťte **ApplyDynamicUpdate** aplikace.</span><span class="sxs-lookup"><span data-stu-id="9b3b3-265">To dynamically update these new instances, run the **ApplyDynamicUpdate** application.</span></span>

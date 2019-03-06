@@ -7,37 +7,37 @@ helpviewer_keywords:
 - graphics [WPF], brushes
 - brushes [WPF]
 ms.assetid: 43e7f798-9558-4498-b5b6-4a4c6baf956b
-ms.openlocfilehash: b62830da6f48e07c60df731a8ba29998d6145217
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4bf49449cd51753e7dc59c169fe51f13dcc67a81
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33557534"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373254"
 ---
-# <a name="brushes-how-to-topics"></a><span data-ttu-id="06607-102">Postupy: Témata štětců</span><span class="sxs-lookup"><span data-stu-id="06607-102">Brushes How-to Topics</span></span>
-<span data-ttu-id="06607-103">Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] štětce k vyplnění obsah na obrazovku.</span><span class="sxs-lookup"><span data-stu-id="06607-103">The following topics demonstrate how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] brushes in order to paint content to the screen.</span></span>  
+# <a name="brushes-how-to-topics"></a><span data-ttu-id="ee79e-102">Postupy: Témata štětců</span><span class="sxs-lookup"><span data-stu-id="ee79e-102">Brushes How-to Topics</span></span>
+<span data-ttu-id="ee79e-103">Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] štětce k vyplnění obsah na obrazovce.</span><span class="sxs-lookup"><span data-stu-id="ee79e-103">The following topics demonstrate how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] brushes in order to paint content to the screen.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="06607-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="06607-104">In This Section</span></span>  
- [<span data-ttu-id="06607-105">Animace barvy a krytí štětce SolidColorBrush</span><span class="sxs-lookup"><span data-stu-id="06607-105">Animate the Color or Opacity of a SolidColorBrush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-color-or-opacity-of-a-solidcolorbrush.md)  
- [<span data-ttu-id="06607-106">Animace umístění nebo barvy přechodové zarážky</span><span class="sxs-lookup"><span data-stu-id="06607-106">Animate the Position or Color of a Gradient Stop</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-the-position-or-color-of-a-gradient-stop.md)  
- [<span data-ttu-id="06607-107">Vytvoření reflexe</span><span class="sxs-lookup"><span data-stu-id="06607-107">Create a Reflection</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-reflection.md)  
- [<span data-ttu-id="06607-108">Vytvoření jiných vzorů dlaždic pomocí prvku TileBrush</span><span class="sxs-lookup"><span data-stu-id="06607-108">Create Different Tile Patterns with a TileBrush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-different-tile-patterns-with-a-tilebrush.md)  
- [<span data-ttu-id="06607-109">Definice pera</span><span class="sxs-lookup"><span data-stu-id="06607-109">Define a Pen</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-define-a-pen.md)  
- [<span data-ttu-id="06607-110">Vykreslení oblasti kresbou</span><span class="sxs-lookup"><span data-stu-id="06607-110">Paint an Area with a Drawing</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-drawing.md)  
- [<span data-ttu-id="06607-111">Vykreslení oblasti obrázkem</span><span class="sxs-lookup"><span data-stu-id="06607-111">Paint an Area with an Image</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-an-image.md)  
- [<span data-ttu-id="06607-112">Vykreslení oblasti lineárním přechodem</span><span class="sxs-lookup"><span data-stu-id="06607-112">Paint an Area with a Linear Gradient</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-linear-gradient.md)  
- [<span data-ttu-id="06607-113">Vykreslení oblasti paprskovým přechodem</span><span class="sxs-lookup"><span data-stu-id="06607-113">Paint an Area with a Radial Gradient</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-radial-gradient.md)  
- [<span data-ttu-id="06607-114">Vykreslení oblasti plnou barvou</span><span class="sxs-lookup"><span data-stu-id="06607-114">Paint an Area with a Solid Color</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-solid-color.md)  
- [<span data-ttu-id="06607-115">Vykreslení oblasti systémovým štětcem</span><span class="sxs-lookup"><span data-stu-id="06607-115">Paint an Area with a System Brush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)  
- [<span data-ttu-id="06607-116">Vykreslení oblasti videem</span><span class="sxs-lookup"><span data-stu-id="06607-116">Paint an Area with a Video</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-video.md)  
- [<span data-ttu-id="06607-117">Vykreslení oblasti vizuálním objektem</span><span class="sxs-lookup"><span data-stu-id="06607-117">Paint an Area with a Visual</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-paint-an-area-with-a-visual.md)  
- [<span data-ttu-id="06607-118">Zachování poměru stran u obrázku na pozadí</span><span class="sxs-lookup"><span data-stu-id="06607-118">Preserve the Aspect Ratio of an Image Used as a Background</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-preserve-the-aspect-ratio-of-an-image-used-as-a-background.md)  
- [<span data-ttu-id="06607-119">Nastavení vodorovného a svislého zarovnání prvku TileBrush</span><span class="sxs-lookup"><span data-stu-id="06607-119">Set the Horizontal and Vertical Alignment of a TileBrush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-the-horizontal-and-vertical-alignment-of-a-tilebrush.md)  
- [<span data-ttu-id="06607-120">Nastavení velikosti dlaždice pro TileBrush</span><span class="sxs-lookup"><span data-stu-id="06607-120">Set the Tile Size for a TileBrush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-the-tile-size-for-a-tilebrush.md)  
- [<span data-ttu-id="06607-121">Transformace štětce</span><span class="sxs-lookup"><span data-stu-id="06607-121">Transform a Brush</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-transform-a-brush.md)  
- [<span data-ttu-id="06607-122">Použití systémových barev v gradientu</span><span class="sxs-lookup"><span data-stu-id="06607-122">Use System Colors in a Gradient</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-system-colors-in-a-gradient.md)  
+## <a name="in-this-section"></a><span data-ttu-id="ee79e-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ee79e-104">In This Section</span></span>  
+ [<span data-ttu-id="ee79e-105">Animace barvy a krytí štětce SolidColorBrush</span><span class="sxs-lookup"><span data-stu-id="ee79e-105">Animate the Color or Opacity of a SolidColorBrush</span></span>](how-to-animate-the-color-or-opacity-of-a-solidcolorbrush.md)  
+ [<span data-ttu-id="ee79e-106">Animace umístění nebo barvy přechodové zarážky</span><span class="sxs-lookup"><span data-stu-id="ee79e-106">Animate the Position or Color of a Gradient Stop</span></span>](how-to-animate-the-position-or-color-of-a-gradient-stop.md)  
+ [<span data-ttu-id="ee79e-107">Vytvoření reflexe</span><span class="sxs-lookup"><span data-stu-id="ee79e-107">Create a Reflection</span></span>](how-to-create-a-reflection.md)  
+ [<span data-ttu-id="ee79e-108">Vytvoření jiných vzorů dlaždic pomocí prvku TileBrush</span><span class="sxs-lookup"><span data-stu-id="ee79e-108">Create Different Tile Patterns with a TileBrush</span></span>](how-to-create-different-tile-patterns-with-a-tilebrush.md)  
+ [<span data-ttu-id="ee79e-109">Definice pera</span><span class="sxs-lookup"><span data-stu-id="ee79e-109">Define a Pen</span></span>](how-to-define-a-pen.md)  
+ [<span data-ttu-id="ee79e-110">Vykreslení oblasti kresbou</span><span class="sxs-lookup"><span data-stu-id="ee79e-110">Paint an Area with a Drawing</span></span>](how-to-paint-an-area-with-a-drawing.md)  
+ [<span data-ttu-id="ee79e-111">Vykreslení oblasti obrázkem</span><span class="sxs-lookup"><span data-stu-id="ee79e-111">Paint an Area with an Image</span></span>](how-to-paint-an-area-with-an-image.md)  
+ [<span data-ttu-id="ee79e-112">Vykreslení oblasti lineárním přechodem</span><span class="sxs-lookup"><span data-stu-id="ee79e-112">Paint an Area with a Linear Gradient</span></span>](how-to-paint-an-area-with-a-linear-gradient.md)  
+ [<span data-ttu-id="ee79e-113">Vykreslení oblasti paprskovým přechodem</span><span class="sxs-lookup"><span data-stu-id="ee79e-113">Paint an Area with a Radial Gradient</span></span>](how-to-paint-an-area-with-a-radial-gradient.md)  
+ [<span data-ttu-id="ee79e-114">Vykreslení oblasti plnou barvou</span><span class="sxs-lookup"><span data-stu-id="ee79e-114">Paint an Area with a Solid Color</span></span>](how-to-paint-an-area-with-a-solid-color.md)  
+ [<span data-ttu-id="ee79e-115">Vykreslení oblasti systémovým štětcem</span><span class="sxs-lookup"><span data-stu-id="ee79e-115">Paint an Area with a System Brush</span></span>](how-to-paint-an-area-with-a-system-brush.md)  
+ [<span data-ttu-id="ee79e-116">Vykreslení oblasti videem</span><span class="sxs-lookup"><span data-stu-id="ee79e-116">Paint an Area with a Video</span></span>](how-to-paint-an-area-with-a-video.md)  
+ [<span data-ttu-id="ee79e-117">Vykreslení oblasti vizuálním objektem</span><span class="sxs-lookup"><span data-stu-id="ee79e-117">Paint an Area with a Visual</span></span>](how-to-paint-an-area-with-a-visual.md)  
+ [<span data-ttu-id="ee79e-118">Zachování poměru stran u obrázku na pozadí</span><span class="sxs-lookup"><span data-stu-id="ee79e-118">Preserve the Aspect Ratio of an Image Used as a Background</span></span>](how-to-preserve-the-aspect-ratio-of-an-image-used-as-a-background.md)  
+ [<span data-ttu-id="ee79e-119">Nastavení vodorovného a svislého zarovnání prvku TileBrush</span><span class="sxs-lookup"><span data-stu-id="ee79e-119">Set the Horizontal and Vertical Alignment of a TileBrush</span></span>](how-to-set-the-horizontal-and-vertical-alignment-of-a-tilebrush.md)  
+ [<span data-ttu-id="ee79e-120">Nastavení velikosti dlaždice pro TileBrush</span><span class="sxs-lookup"><span data-stu-id="ee79e-120">Set the Tile Size for a TileBrush</span></span>](how-to-set-the-tile-size-for-a-tilebrush.md)  
+ [<span data-ttu-id="ee79e-121">Transformace štětce</span><span class="sxs-lookup"><span data-stu-id="ee79e-121">Transform a Brush</span></span>](how-to-transform-a-brush.md)  
+ [<span data-ttu-id="ee79e-122">Použití systémových barev v gradientu</span><span class="sxs-lookup"><span data-stu-id="ee79e-122">Use System Colors in a Gradient</span></span>](how-to-use-system-colors-in-a-gradient.md)  
   
-## <a name="reference"></a><span data-ttu-id="06607-123">Odkaz</span><span class="sxs-lookup"><span data-stu-id="06607-123">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="ee79e-123">Odkaz</span><span class="sxs-lookup"><span data-stu-id="ee79e-123">Reference</span></span>  
  <xref:System.Windows.Media.Brush>  
   
  <xref:System.Windows.Media.SolidColorBrush>  
@@ -50,7 +50,7 @@ ms.locfileid: "33557534"
   
  <xref:System.Windows.Media.VisualBrush>  
   
-## <a name="related-sections"></a><span data-ttu-id="06607-124">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="06607-124">Related Sections</span></span>  
- [<span data-ttu-id="06607-125">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="06607-125">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
+## <a name="related-sections"></a><span data-ttu-id="ee79e-124">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="ee79e-124">Related Sections</span></span>  
+ [<span data-ttu-id="ee79e-125">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="ee79e-125">Graphics and Multimedia</span></span>](index.md)  
   
- [<span data-ttu-id="06607-126">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="06607-126">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+ [<span data-ttu-id="ee79e-126">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="ee79e-126">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)

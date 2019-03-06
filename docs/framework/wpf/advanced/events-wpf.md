@@ -8,42 +8,42 @@ helpviewer_keywords:
 - events [WPF], windows
 - WPF [WPF], events
 ms.assetid: d3b93c6f-aa6b-486d-a010-d097ea8a516b
-ms.openlocfilehash: b5a3b71758fea9c98c04377b910ba07b49617696
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e6aa6fea3c19d452013e4e77d7ef4773a2f45343
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33542584"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57361210"
 ---
-# <a name="events-wpf"></a><span data-ttu-id="28b78-102">Události (WPF)</span><span class="sxs-lookup"><span data-stu-id="28b78-102">Events (WPF)</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]<span data-ttu-id="28b78-103"> představuje směrované události, které můžete vyvolat obslužné rutiny, které existují v různých naslouchací procesy ve stromové struktuře element aplikace.</span><span class="sxs-lookup"><span data-stu-id="28b78-103"> introduces routed events that can invoke handlers that exist on various listeners in the element tree of an application.</span></span>  
+# <a name="events-wpf"></a><span data-ttu-id="76591-102">Události (WPF)</span><span class="sxs-lookup"><span data-stu-id="76591-102">Events (WPF)</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="76591-103">zavádí směrovaných událostí, které můžete vyvolat obslužné rutiny, které existují v různých naslouchacích procesů ve stromu elementů aplikace.</span><span class="sxs-lookup"><span data-stu-id="76591-103">introduces routed events that can invoke handlers that exist on various listeners in the element tree of an application.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="28b78-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="28b78-104">In This Section</span></span>  
- [<span data-ttu-id="28b78-105">Přehled směrovaných událostí</span><span class="sxs-lookup"><span data-stu-id="28b78-105">Routed Events Overview</span></span>](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
- [<span data-ttu-id="28b78-106">Přehled přidružených událostí</span><span class="sxs-lookup"><span data-stu-id="28b78-106">Attached Events Overview</span></span>](../../../../docs/framework/wpf/advanced/attached-events-overview.md)  
- [<span data-ttu-id="28b78-107">Události doby života objektu</span><span class="sxs-lookup"><span data-stu-id="28b78-107">Object Lifetime Events</span></span>](../../../../docs/framework/wpf/advanced/object-lifetime-events.md)  
- [<span data-ttu-id="28b78-108">Označení směrovaných událostí jako zpracovaných a zpracování tříd</span><span class="sxs-lookup"><span data-stu-id="28b78-108">Marking Routed Events as Handled, and Class Handling</span></span>](../../../../docs/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling.md)  
- [<span data-ttu-id="28b78-109">Události náhledu</span><span class="sxs-lookup"><span data-stu-id="28b78-109">Preview Events</span></span>](../../../../docs/framework/wpf/advanced/preview-events.md)  
- [<span data-ttu-id="28b78-110">Události změny vlastnosti</span><span class="sxs-lookup"><span data-stu-id="28b78-110">Property Change Events</span></span>](../../../../docs/framework/wpf/advanced/property-change-events.md)  
- [<span data-ttu-id="28b78-111">Zpracování událostí v jazyku Visual Basic a WPF</span><span class="sxs-lookup"><span data-stu-id="28b78-111">Visual Basic and WPF Event Handling</span></span>](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md)  
- [<span data-ttu-id="28b78-112">Slabé vzory událostí</span><span class="sxs-lookup"><span data-stu-id="28b78-112">Weak Event Patterns</span></span>](../../../../docs/framework/wpf/advanced/weak-event-patterns.md)  
- [<span data-ttu-id="28b78-113">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="28b78-113">How-to Topics</span></span>](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="76591-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="76591-104">In This Section</span></span>  
+ [<span data-ttu-id="76591-105">Přehled směrovaných událostí</span><span class="sxs-lookup"><span data-stu-id="76591-105">Routed Events Overview</span></span>](routed-events-overview.md)  
+ [<span data-ttu-id="76591-106">Přehled přidružených událostí</span><span class="sxs-lookup"><span data-stu-id="76591-106">Attached Events Overview</span></span>](attached-events-overview.md)  
+ [<span data-ttu-id="76591-107">Události doby života objektu</span><span class="sxs-lookup"><span data-stu-id="76591-107">Object Lifetime Events</span></span>](object-lifetime-events.md)  
+ [<span data-ttu-id="76591-108">Označení směrovaných událostí jako zpracovaných a zpracování tříd</span><span class="sxs-lookup"><span data-stu-id="76591-108">Marking Routed Events as Handled, and Class Handling</span></span>](marking-routed-events-as-handled-and-class-handling.md)  
+ [<span data-ttu-id="76591-109">Události náhledu</span><span class="sxs-lookup"><span data-stu-id="76591-109">Preview Events</span></span>](preview-events.md)  
+ [<span data-ttu-id="76591-110">Události změny vlastnosti</span><span class="sxs-lookup"><span data-stu-id="76591-110">Property Change Events</span></span>](property-change-events.md)  
+ [<span data-ttu-id="76591-111">Zpracování událostí v jazyku Visual Basic a WPF</span><span class="sxs-lookup"><span data-stu-id="76591-111">Visual Basic and WPF Event Handling</span></span>](visual-basic-and-wpf-event-handling.md)  
+ [<span data-ttu-id="76591-112">Slabé vzory událostí</span><span class="sxs-lookup"><span data-stu-id="76591-112">Weak Event Patterns</span></span>](weak-event-patterns.md)  
+ [<span data-ttu-id="76591-113">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="76591-113">How-to Topics</span></span>](events-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="28b78-114">Odkaz</span><span class="sxs-lookup"><span data-stu-id="28b78-114">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="76591-114">Odkaz</span><span class="sxs-lookup"><span data-stu-id="76591-114">Reference</span></span>  
  <xref:System.Windows.RoutedEvent>  
   
  <xref:System.Windows.EventManager>  
   
  <xref:System.Windows.RoutingStrategy>  
   
-## <a name="related-sections"></a><span data-ttu-id="28b78-115">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="28b78-115">Related Sections</span></span>  
- [<span data-ttu-id="28b78-116">Architektura WPF</span><span class="sxs-lookup"><span data-stu-id="28b78-116">WPF Architecture</span></span>](../../../../docs/framework/wpf/advanced/wpf-architecture.md)  
-  [<span data-ttu-id="28b78-117">XAML ve WPF</span><span class="sxs-lookup"><span data-stu-id="28b78-117">XAML in WPF</span></span>](../../../../docs/framework/wpf/advanced/xaml-in-wpf.md)  
-  [<span data-ttu-id="28b78-118">Základní elementy</span><span class="sxs-lookup"><span data-stu-id="28b78-118">Base Elements</span></span>](../../../../docs/framework/wpf/advanced/base-elements.md)  
-  [<span data-ttu-id="28b78-119">Strom elementu a serializace</span><span class="sxs-lookup"><span data-stu-id="28b78-119">Element Tree and Serialization</span></span>](../../../../docs/framework/wpf/advanced/element-tree-and-serialization.md)  
-  [<span data-ttu-id="28b78-120">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="28b78-120">Properties</span></span>](../../../../docs/framework/wpf/advanced/properties-wpf.md)  
-  [<span data-ttu-id="28b78-121">Vstup</span><span class="sxs-lookup"><span data-stu-id="28b78-121">Input</span></span>](../../../../docs/framework/wpf/advanced/input-wpf.md)  
-  [<span data-ttu-id="28b78-122">Prostředky</span><span class="sxs-lookup"><span data-stu-id="28b78-122">Resources</span></span>](../../../../docs/framework/wpf/advanced/resources-wpf.md)  
-  [<span data-ttu-id="28b78-123">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="28b78-123">Styling and Templating</span></span>](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
-  [<span data-ttu-id="28b78-124">Model obsahu WPF</span><span class="sxs-lookup"><span data-stu-id="28b78-124">WPF Content Model</span></span>](../../../../docs/framework/wpf/controls/wpf-content-model.md)  
-  [<span data-ttu-id="28b78-125">Model vláken</span><span class="sxs-lookup"><span data-stu-id="28b78-125">Threading Model</span></span>](../../../../docs/framework/wpf/advanced/threading-model.md)
+## <a name="related-sections"></a><span data-ttu-id="76591-115">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="76591-115">Related Sections</span></span>  
+ [<span data-ttu-id="76591-116">Architektura WPF</span><span class="sxs-lookup"><span data-stu-id="76591-116">WPF Architecture</span></span>](wpf-architecture.md)  
+  [<span data-ttu-id="76591-117">XAML ve WPF</span><span class="sxs-lookup"><span data-stu-id="76591-117">XAML in WPF</span></span>](xaml-in-wpf.md)  
+  [<span data-ttu-id="76591-118">Základní elementy</span><span class="sxs-lookup"><span data-stu-id="76591-118">Base Elements</span></span>](base-elements.md)  
+  [<span data-ttu-id="76591-119">Strom elementu a serializace</span><span class="sxs-lookup"><span data-stu-id="76591-119">Element Tree and Serialization</span></span>](element-tree-and-serialization.md)  
+  [<span data-ttu-id="76591-120">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="76591-120">Properties</span></span>](properties-wpf.md)  
+  [<span data-ttu-id="76591-121">Vstup</span><span class="sxs-lookup"><span data-stu-id="76591-121">Input</span></span>](input-wpf.md)  
+  [<span data-ttu-id="76591-122">Prostředky</span><span class="sxs-lookup"><span data-stu-id="76591-122">Resources</span></span>](resources-wpf.md)  
+  [<span data-ttu-id="76591-123">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="76591-123">Styling and Templating</span></span>](../controls/styling-and-templating.md)  
+  [<span data-ttu-id="76591-124">Model obsahu WPF</span><span class="sxs-lookup"><span data-stu-id="76591-124">WPF Content Model</span></span>](../controls/wpf-content-model.md)  
+  [<span data-ttu-id="76591-125">Model vláken</span><span class="sxs-lookup"><span data-stu-id="76591-125">Threading Model</span></span>](threading-model.md)
