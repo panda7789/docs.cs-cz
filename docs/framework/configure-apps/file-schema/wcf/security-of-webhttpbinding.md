@@ -3,11 +3,11 @@ title: <security> z <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 727cf3d2-6f56-48ad-a59f-ba423edb9c83
 ms.openlocfilehash: 7f714ffb89d5ff990239bd1a02ffaeead4ad7d91
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55278795"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57360771"
 ---
 # <a name="security-of-webhttpbinding"></a>\<security> of \<webHttpBinding>
 Určuje koncový bod nakonfigurovaný s požadavky na zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  

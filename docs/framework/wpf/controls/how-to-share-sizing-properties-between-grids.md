@@ -9,12 +9,12 @@ helpviewer_keywords:
 - sizing data in Grid controls [WPF]
 - Grid control [WPF], sharing sizing data of rows
 ms.assetid: a0535a6f-ff04-4b25-9912-7dd856e11044
-ms.openlocfilehash: e415cb8bf5d2eb53926ae885ba18685390a61201
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bd0f812ce9a15628bd0bddf3a88e898311f0a9d3
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694097"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373124"
 ---
 # <a name="how-to-share-sizing-properties-between-grids"></a>Postupy: Sdílení vlastností změny velikosti mezi mřížkami
 Tento příklad ukazuje, jak ke sdílení dat pro změnu velikosti sloupců a řádků mezi <xref:System.Windows.Controls.Grid> prvky, aby bylo možné zachovat změny velikosti konzistentní vzhledem k aplikacím.  
@@ -24,18 +24,18 @@ Tento příklad ukazuje, jak ke sdílení dat pro změnu velikosti sloupců a ř
   
  V příkladu zpracovává hodnoty vlastnosti pomocí dvou <xref:System.Windows.Controls.Button> elementy; každý element představuje jednu z hodnot logická vlastnost. Když <xref:System.Windows.Controls.Grid.IsSharedSizeScope%2A> je hodnota vlastnosti nastavena `true`, každý sloupec nebo řádek člen <xref:System.Windows.Controls.DefinitionBase.SharedSizeGroup%2A> sdílí informace o nastavení velikosti, bez ohledu na obsah řádku nebo sloupce.  
   
- [!code-xaml[gridIssharedsizescopeProp#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml#1)]  
+ [!code-xaml[gridIssharedsizescopeProp#1](~/samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml#1)]  
   
  ...  
   
- [!code-xaml[gridIssharedsizescopeProp#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml#2)]  
+ [!code-xaml[gridIssharedsizescopeProp#2](~/samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml#2)]  
   
  Následující příklad použití modelu code-behind zpracovává metody, která tlačítko <xref:System.Windows.Controls.Primitives.ButtonBase.Click> vyvolává události. Tento příklad zapíše výsledky volání těchto metod na <xref:System.Windows.Controls.TextBlock> prvky, které týkající se použití metody get na výstup nové hodnoty vlastnosti jako řetězce.  
   
- [!code-csharp[gridIssharedsizescopeProp#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml.cs#3)]
- [!code-vb[gridIssharedsizescopeProp#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/gridIssharedsizescopeProp/VisualBasic/Window1.xaml.vb#3)]  
+ [!code-csharp[gridIssharedsizescopeProp#3](~/samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml.cs#3)]
+ [!code-vb[gridIssharedsizescopeProp#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/gridIssharedsizescopeProp/VisualBasic/Window1.xaml.vb#3)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Controls.Grid>
 - <xref:System.Windows.Controls.Grid.IsSharedSizeScope%2A>
-- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)
+- [Přehled panelu](panels-overview.md)

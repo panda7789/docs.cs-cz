@@ -10,12 +10,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - collection-type properties [WPF]
 ms.assetid: 99f96a42-3ab7-4f64-a16b-2e10d654e97c
-ms.openlocfilehash: 21f260262d434ffe3685b226193f2d6cd2125549
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a2a664f0672f4585649cebad6e62635125db0983
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54548427"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57354892"
 ---
 # <a name="collection-type-dependency-properties"></a>Vlastnosti závislostí typu kolekce
 Toto téma obsahuje pokyny a doporučené způsoby pro implementace vlastnosti závislosti, kde je typ vlastnosti typu kolekce.  
@@ -32,20 +32,20 @@ Toto téma obsahuje pokyny a doporučené způsoby pro implementace vlastnosti z
   
  Podívejte se na následující příklad. Následující části v příkladu je uvedena definice pro třídu `Aquarium`. Třída definuje vlastnost závislostí typu kolekce `AquariumObjects`, který používá Obecné <xref:System.Collections.Generic.List%601> typ s <xref:System.Windows.FrameworkElement> omezení typu. V <xref:System.Windows.DependencyProperty.Register%28System.String%2CSystem.Type%2CSystem.Type%2CSystem.Windows.PropertyMetadata%29> volání pro vlastnost závislosti, metadata vytvoří výchozí hodnotu bude nový obecný <xref:System.Collections.Generic.List%601>.  
   
- [!code-csharp[PropertiesOvwSupport2#CollectionProblemDefinition](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport2/CSharp/page.xaml.cs#collectionproblemdefinition)]
- [!code-vb[PropertiesOvwSupport2#CollectionProblemDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport2/visualbasic/page.xaml.vb#collectionproblemdefinition)]  
+ [!code-csharp[PropertiesOvwSupport2#CollectionProblemDefinition](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport2/CSharp/page.xaml.cs#collectionproblemdefinition)]
+ [!code-vb[PropertiesOvwSupport2#CollectionProblemDefinition](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport2/visualbasic/page.xaml.vb#collectionproblemdefinition)]  
   
  Ale pokud ponecháte jenom kód, jak je znázorněno, tato výchozí hodnota jednoho seznamu sdílí se pro všechny výskyty `Aquarium`. Pokud jste spustili následující testovací kód, který se má zobrazit, jak byste měli vytvořit instanci dva samostatné `Aquarium` instance a přidat jiné jeden `Fish` u každého z nich, zobrazí se překvapivé výsledek:  
   
- [!code-csharp[PropertiesOvwSupport#CollectionProblemTestCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#collectionproblemtestcode)]
- [!code-vb[PropertiesOvwSupport#CollectionProblemTestCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#collectionproblemtestcode)]  
+ [!code-csharp[PropertiesOvwSupport#CollectionProblemTestCode](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#collectionproblemtestcode)]
+ [!code-vb[PropertiesOvwSupport#CollectionProblemTestCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#collectionproblemtestcode)]  
   
  Ne každá kolekce s počtem jedna Každá kolekce má dva počet! Důvodem je, že každý `Aquarium` přidá jeho `Fish` na výchozí hodnotu kolekce, která je výsledkem volání jediný konstruktor v metadatech a proto jsou sdílena mezi všemi instancemi. Tato situace je téměř nikdy co chcete.  
   
  Chcete-li tento problém, je nutné obnovit hodnota vlastnosti závislostí kolekce na instanci jedinečný jako součást volání konstruktoru třídy. Vzhledem k tomu, je vlastnost závislosti jen pro čtení, je použít <xref:System.Windows.DependencyObject.SetValue%28System.Windows.DependencyPropertyKey%2CSystem.Object%29> metody, nastavte pomocí <xref:System.Windows.DependencyPropertyKey> , který je přístupný jenom v rámci třídy.  
   
- [!code-csharp[PropertiesOvwSupport#CollectionProblemCtor](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#collectionproblemctor)]
- [!code-vb[PropertiesOvwSupport#CollectionProblemCtor](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#collectionproblemctor)]  
+ [!code-csharp[PropertiesOvwSupport#CollectionProblemCtor](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#collectionproblemctor)]
+ [!code-vb[PropertiesOvwSupport#CollectionProblemCtor](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#collectionproblemctor)]  
   
  Nyní, pokud jste spustili, že stejné znovu otestujte kódu, je možné, uvidíte více očekávané výsledky, kde každý `Aquarium` podporované svou vlastní jedinečnou kolekci.  
   
@@ -58,8 +58,8 @@ Toto téma obsahuje pokyny a doporučené způsoby pro implementace vlastnosti z
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.FreezableCollection%601>
-- [XAML a vlastní třídy pro WPF](../../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)
-- [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)
-- [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)
+- [XAML a vlastní třídy pro WPF](xaml-and-custom-classes-for-wpf.md)
+- [Přehled datových vazeb](../data/data-binding-overview.md)
+- [Přehled vlastností závislosti](dependency-properties-overview.md)
+- [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
+- [Metadata vlastností závislosti](dependency-property-metadata.md)

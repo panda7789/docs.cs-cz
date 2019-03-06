@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - attached properties [WPF Designer]
 ms.assetid: 75928354-dc01-47e8-a018-8409aec1f32d
-ms.openlocfilehash: e4f2b88b075a7806d2ca4c4a1e2cf3f027e71f51
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: de17fb30358bdf1a8e2a1d6cfc4f5f80fefa1268
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54706229"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57370121"
 ---
 # <a name="attached-properties-overview"></a>Přehled připojených vlastností
 
@@ -20,7 +20,7 @@ Připojená vlastnost je definován pomocí XAML koncept. Připojená vlastnost 
 
 ## Požadované součásti <a name="prerequisites"></a>
 
-Toto téma předpokládá, že rozumíte vlastnosti závislosti z pohledu příjemce vlastnosti existujícího závislosti na [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] třídy a čtení [přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md). Pokud chcete postupovat podle příkladů v tomto tématu, potřebujete také pochopit XAML a vědět, jak psát aplikace WPF.
+Toto téma předpokládá, že rozumíte vlastnosti závislosti z pohledu příjemce vlastnosti existujícího závislosti na [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] třídy a čtení [přehled vlastností závislosti](dependency-properties-overview.md). Pokud chcete postupovat podle příkladů v tomto tématu, potřebujete také pochopit XAML a vědět, jak psát aplikace WPF.
 
 ## Proč používat připojené vlastnosti <a name="attached_properties_usage"></a>
 
@@ -32,11 +32,11 @@ V XAML, nastavte připojené vlastnosti pomocí syntaxe *AttachedPropertyProvide
 
 Následuje příklad, jak můžete nastavit <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> v XAML:
 
-[!code-xaml[PropertiesOvwSupport#APBasicUsage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml#apbasicusage)]
+[!code-xaml[PropertiesOvwSupport#APBasicUsage](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml#apbasicusage)]
 
 Všimněte si, že využití je poněkud podobně jako statická vlastnost; vždycky odkazovat typ <xref:System.Windows.Controls.DockPanel> , která vlastní a registruje připojená vlastnost, místo odkazování na jakoukoli instanci určená názvem.
 
-Protože připojené vlastnosti v XAML je atribut, který můžete nastavit v označení, má pouze operaci set také všechny závažnosti. Nelze získat přímo vlastnost v XAML, i když jsou některé nepřímé mechanismy pro porovnání hodnot, jako jsou triggery ve stylech (podrobnosti najdete v tématu [styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)).
+Protože připojené vlastnosti v XAML je atribut, který můžete nastavit v označení, má pouze operaci set také všechny závažnosti. Nelze získat přímo vlastnost v XAML, i když jsou některé nepřímé mechanismy pro porovnání hodnot, jako jsou triggery ve stylech (podrobnosti najdete v tématu [styly a šablony](../controls/styling-and-templating.md)).
 
 ### <a name="attached-property-implementation-in-wpf"></a>Připojená vlastnost implementace v subsystému WPF
 
@@ -64,8 +64,8 @@ Připojené vlastnosti v objektu WPF nemají typické [!INCLUDE[TLA2#tla_clr](..
 
 Následující příklad ukazuje, jak můžete nastavit připojené vlastnosti v kódu. V tomto příkladu `myCheckBox` je instance <xref:System.Windows.Controls.CheckBox> třídy.
 
-[!code-csharp[PropertiesOvwSupport#APCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#apcode)]
-[!code-vb[PropertiesOvwSupport#APCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#apcode)]
+[!code-csharp[PropertiesOvwSupport#APCode](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/page4.xaml.cs#apcode)]
+[!code-vb[PropertiesOvwSupport#APCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page4.xaml.vb#apcode)]
 
 Podobně jako XAML malá a velká, pokud `myCheckBox` Loader již byl přidán jako podřízený prvek `myDockPanel` třetí řádek kódu na čtvrtém řádku kódu by vyvolat výjimku, ale hodnota vlastnosti nemusí pracovat <xref:System.Windows.Controls.DockPanel> nadřazené. proto by Neprovádět žádnou akci. Pouze <xref:System.Windows.Controls.DockPanel.Dock%2A?displayProperty=nameWithType> hodnota nastavená na podřízený element v kombinaci s přítomnost <xref:System.Windows.Controls.DockPanel> nadřazeného elementu způsobí efektivní chování ve vygenerované aplikaci. (V takovém případě vám může nastavte přidruženou vlastnost a potom připojit ke stromu. Nebo může připojit ke stromu potom nastavte přidruženou vlastnost. Buď akce pořadí poskytuje stejný výsledek).
 
@@ -73,7 +73,7 @@ Podobně jako XAML malá a velká, pokud `myCheckBox` Loader již byl přidán j
 
 Při registraci vlastnost, <xref:System.Windows.FrameworkPropertyMetadata> je nastaveno k určení vlastností vlastnosti, jako je například určuje, zda vlastnost ovlivňuje vykreslování, měření a tak dále. Metadata pro připojené vlastnosti se obvykle nijak neliší od na vlastnost závislosti. Pokud je v přepsání připojená vlastnost metadat, tato hodnota se změní výchozí hodnotu implicitní připojené vlastnosti na instancích přepsáním třídy zadat výchozí hodnotu. Konkrétně se výchozí hodnota bude nahlášena, pokud některé zpracování dotazů pro hodnotu vlastnosti připojené vlastnosti prostřednictvím `Get` metodu přistupujícího objektu pro tuto vlastnost zadání instance třídy, kde zadáte metadata a hodnotu pro tento připojená vlastnost byla jinak není nastavený.
 
-Pokud chcete povolit dědičnost hodnoty vlastnosti na vlastnost, používejte připojené vlastnosti spíše než závislost nepřipojené vlastnosti. Podrobnosti najdete v tématu [dědičnost hodnoty vlastnosti](../../../../docs/framework/wpf/advanced/property-value-inheritance.md).
+Pokud chcete povolit dědičnost hodnoty vlastnosti na vlastnost, používejte připojené vlastnosti spíše než závislost nepřipojené vlastnosti. Podrobnosti najdete v tématu [dědičnost hodnoty vlastnosti](property-value-inheritance.md).
 
 ## Vlastní připojené vlastnosti <a name="custom"></a>
 
@@ -83,7 +83,7 @@ Když je důvodem pro vlastnost nastavení mechanismus k dispozici pro jiné ne�
 
 Jiné scénáře použití připojené vlastnosti je, pokud vaše třída reprezentuje službu a chcete, aby třídy bude schopná integrovat službu více transparentně.
 
-Ještě další možností je získat podporu Návrhář WPF Visual Studio, jako například **vlastnosti** okno úpravy. Další informace najdete v tématu [Přehled vytváření ovládacího prvku](../../../../docs/framework/wpf/controls/control-authoring-overview.md).
+Ještě další možností je získat podporu Návrhář WPF Visual Studio, jako například **vlastnosti** okno úpravy. Další informace najdete v tématu [Přehled vytváření ovládacího prvku](../controls/control-authoring-overview.md).
 
 Jak jsme zmínili, byste měli zaregistrovat jako připojené vlastnosti Pokud budete chtít použít dědičnost hodnoty vlastnosti.
 
@@ -118,8 +118,8 @@ Podpis pro **Set_PropertyName_** přístupový objekt musí být:
 
 Následující příklad ukazuje registraci vlastnost závislosti (pomocí <xref:System.Windows.DependencyProperty.RegisterAttached%2A> metoda), stejně jako **Get_PropertyName_** a **Set_PropertyName_** přistupující objekty. V tomto příkladu je název přidružené vlastnosti `IsBubbleSource`. Proto musí mít název přístupové objekty `GetIsBubbleSource` a `SetIsBubbleSource`.
 
-[!code-csharp[WPFAquariumSln#RegisterAttachedBubbler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#registerattachedbubbler)]
-[!code-vb[WPFAquariumSln#RegisterAttachedBubbler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#registerattachedbubbler)]
+[!code-csharp[WPFAquariumSln#RegisterAttachedBubbler](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#registerattachedbubbler)]
+[!code-vb[WPFAquariumSln#RegisterAttachedBubbler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#registerattachedbubbler)]
 
 #### <a name="attached-property-attributes"></a>Atributy připojené vlastnosti
 
@@ -135,16 +135,16 @@ WPF definuje několik [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../incl
 
 ## Další informace o přidružené vlastnosti <a name="more"></a>
 
--   Další informace o vytvoření připojené vlastnosti najdete v tématu [registrace připojené vlastnosti](../../../../docs/framework/wpf/advanced/how-to-register-an-attached-property.md).
+-   Další informace o vytvoření připojené vlastnosti najdete v tématu [registrace připojené vlastnosti](how-to-register-an-attached-property.md).
 
--   Další pokročilé scénáře použití pro vlastnosti závislosti a připojených vlastností, naleznete v tématu [vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md).
+-   Další pokročilé scénáře použití pro vlastnosti závislosti a připojených vlastností, naleznete v tématu [vlastní vlastnosti závislosti](custom-dependency-properties.md).
 
 -   Můžete také registrovat vlastnost jako připojené vlastnosti a jako vlastnost závislosti, ale stále pak vystavit implementace "zabezpečenou obálku". V takovém případě vlastnost lze nastavit buď na tento element nebo na libovolný element prostřednictvím XAML připojené vlastnosti syntaxe. Je například vlastnost s odpovídající scénáře pro použití, standard a připojené <xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType>.
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.DependencyProperty>
-- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)
-- [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)
-- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Registrace přidružené vlastnosti](../../../../docs/framework/wpf/advanced/how-to-register-an-attached-property.md)
+- [Přehled vlastností závislosti](dependency-properties-overview.md)
+- [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
+- [Přehled XAML (WPF)](xaml-overview-wpf.md)
+- [Registrace přidružené vlastnosti](how-to-register-an-attached-property.md)

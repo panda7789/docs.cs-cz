@@ -7,18 +7,18 @@ helpviewer_keywords:
 - FlowDocumentPageViewer control [WPF]
 - controls [WPF], FlowDocumentPageViewer
 ms.assetid: 1ed5a30e-f415-4c26-a52f-9f028a68f66f
-ms.openlocfilehash: 4f58ebbb3f0876c8c1aa23bae04fb46573bc234f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 40c0ad20e22c06a0b92b71c59ea733b08fbded52
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54653759"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57366566"
 ---
 # <a name="flowdocumentpageviewer"></a>FlowDocumentPageViewer
 <xref:System.Windows.Controls.FlowDocumentPageViewer> Ovládacího prvku se používá k zobrazení <xref:System.Windows.Documents.FlowDocument> obsahu na základě na stránku. Rozdíl oproti <xref:System.Windows.Controls.FlowDocumentScrollViewer>, která představuje <xref:System.Windows.Documents.FlowDocument> obsahu v prohlížeči posouvání.  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Documents.FlowDocument>
-- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/advanced/flow-content-elements-how-to-topics.md)
-- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [Přehled toku dokumentů](../advanced/flow-document-overview.md)
+- [Témata s postupy](../advanced/flow-content-elements-how-to-topics.md)
+- [Dokumenty v platformě WPF](../advanced/documents-in-wpf.md)

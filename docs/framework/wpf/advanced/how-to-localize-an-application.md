@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 1761fbf1cb8ec337ea5733e3ab693031b1934179
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 777d0fa9217b647b9ee9bd952addaa83b5f825fc
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54725538"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57374112"
 ---
 # <a name="how-to-localize-an-application"></a>Postupy: Lokalizace aplikace
 Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml – nástroj.  
@@ -30,7 +30,7 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
 ## <a name="requirements"></a>Požadavky  
  V průběhu této diskuse, budete používat [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)], což je kompilátor, který se spustí z příkazového řádku.  
   
- Navíc vám bude nastaven na použití souboru projektu. Pokyny k používání [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] a soubory projektu, přečtěte si [sestavovat a nasazovat](../../../../docs/framework/wpf/app-development/building-and-deploying-wpf-applications.md).  
+ Navíc vám bude nastaven na použití souboru projektu. Pokyny k používání [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] a soubory projektu, přečtěte si [sestavovat a nasazovat](../app-development/building-and-deploying-wpf-applications.md).  
   
  Všechny příklady v této diskuzi použít jako jazykové verze en US (angličtina-USA). To umožňuje seznámení se základními kroky příklady bez instalace jiný jazyk.  
   
@@ -137,13 +137,13 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
   
    2.  **Klíč prostředku**. Identifikátor lokalizovaný prostředek.  
   
-   3.  **Kategorie**. Typ hodnoty. Zobrazit [atributy a komentáře lokalizace](../../../../docs/framework/wpf/advanced/localization-attributes-and-comments.md).  
+   3.  **Kategorie**. Typ hodnoty. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md).  
   
-   4.  **Lepší čitelnost**. Hodnota určuje, zda mohou být přečteny lokalizátora. Zobrazit [atributy a komentáře lokalizace](../../../../docs/framework/wpf/advanced/localization-attributes-and-comments.md).  
+   4.  **Lepší čitelnost**. Hodnota určuje, zda mohou být přečteny lokalizátora. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md).  
   
-   5.  **Modifiability**. Určuje, zda můžete změnit hodnotu lokalizátora. Zobrazit [atributy a komentáře lokalizace](../../../../docs/framework/wpf/advanced/localization-attributes-and-comments.md).  
+   5.  **Modifiability**. Určuje, zda můžete změnit hodnotu lokalizátora. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md).  
   
-   6.  **Komentáře**. Další popis hodnotu sloužící k určení, jak je lokalizován hodnotu. Zobrazit [atributy a komentáře lokalizace](../../../../docs/framework/wpf/advanced/localization-attributes-and-comments.md).  
+   6.  **Komentáře**. Další popis hodnotu sloužící k určení, jak je lokalizován hodnotu. Zobrazit [atributy a komentáře lokalizace](localization-attributes-and-comments.md).  
   
    7.  **Hodnota**. Textová hodnota pro převod na požadovanou jazykovou verzi.  
   
@@ -192,9 +192,9 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
   
     -   Ve vaší aplikaci přidejte následující kód do souboru App.xaml.cs:  
   
-   [!code-xaml[LocBamlChangeCultureSnippets#LocBamlChangeCultureMARKUP](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LocBamlChangeCultureSnippets/CSharp/App.xaml#locbamlchangeculturemarkup)]
-   [!code-csharp[LocBamlChangeCultureSnippets#LocBamlChangeCultureCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LocBamlChangeCultureSnippets/CSharp/App.xaml.cs#locbamlchangeculturecodebehind)]
-   [!code-vb[LocBamlChangeCultureSnippets#LocBamlChangeCultureCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/LocBamlChangeCultureSnippets/VisualBasic/Application.xaml.vb#locbamlchangeculturecodebehind)]  
+   [!code-xaml[LocBamlChangeCultureSnippets#LocBamlChangeCultureMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/LocBamlChangeCultureSnippets/CSharp/App.xaml#locbamlchangeculturemarkup)]
+   [!code-csharp[LocBamlChangeCultureSnippets#LocBamlChangeCultureCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/LocBamlChangeCultureSnippets/CSharp/App.xaml.cs#locbamlchangeculturecodebehind)]
+   [!code-vb[LocBamlChangeCultureSnippets#LocBamlChangeCultureCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/LocBamlChangeCultureSnippets/VisualBasic/Application.xaml.vb#locbamlchangeculturecodebehind)]  
   
 <a name="Some_Tips_for_Using_LocBaml"></a>   
 ## <a name="some-tips-for-using-locbaml"></a>Některé tipy pro používání locbaml –  
@@ -210,5 +210,5 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
  Nyní byste měli mít základní znalosti o tom, jak používat locbaml – nástroj.  Můžete by měl být schopen provést soubor obsahující identifikátory UID. S použitím locbaml – nástroj, byste měli analyzovat soubor, který chcete extrahovat lokalizovatelné obsah a po obsahu se kombinují, by měla být schopna generovat. resources.dll soubor, který sloučí přeloženého obsahu. Toto téma neobsahuje všechny možné podrobnosti, ale Teď máte znalosti, které jsou nezbytné pro účely locbaml – lokalizace vašich aplikací.  
   
 ## <a name="see-also"></a>Viz také:
-- [Globalizace pro WPF](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)
-- [Přehled automatického rozložení](../../../../docs/framework/wpf/advanced/use-automatic-layout-overview.md)
+- [Globalizace pro WPF](globalization-for-wpf.md)
+- [Přehled automatického rozložení](use-automatic-layout-overview.md)

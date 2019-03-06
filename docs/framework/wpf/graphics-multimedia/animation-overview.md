@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Storyboards [WPF], animations
 - animations [WPF], overview
 ms.assetid: bd9ce563-725d-4385-87c9-d7ee38cf79ea
-ms.openlocfilehash: 7a783f687dd8c9c21f796f2a8da7e0471a1f0d2b
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: cf95abc6780b1182582e567f78783388f1d377cb
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44189468"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373735"
 ---
 # <a name="animation-overview"></a>Přehled animace
 <a name="introduction"></a>
@@ -49,7 +49,7 @@ ms.locfileid: "44189468"
   
 -   Musíte ho zařadit do třídy, která dědí z <xref:System.Windows.DependencyObject> a implementuje <xref:System.Windows.Media.Animation.IAnimatable> rozhraní.  
   
--   K dispozici musí být typ kompatibilní animace. (Pokud [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] neposkytne, můžete vytvořit svoje vlastní. Zobrazit [Přehled vlastních animací](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md).)  
+-   K dispozici musí být typ kompatibilní animace. (Pokud [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] neposkytne, můžete vytvořit svoje vlastní. Zobrazit [Přehled vlastních animací](custom-animations-overview.md).)  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje mnoho objektů, které mají <xref:System.Windows.Media.Animation.IAnimatable> vlastnosti. Ovládací prvky jako například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.TabControl>a také <xref:System.Windows.Controls.Panel> a <xref:System.Windows.Shapes.Shape> objekty dědit z <xref:System.Windows.DependencyObject>. Většina jejich vlastnosti jsou vlastnosti závislosti.  
   
@@ -63,12 +63,12 @@ ms.locfileid: "44189468"
   
  Následující ukazuje, jak vytvořit <xref:System.Windows.Shapes.Rectangle> prvek <xref:System.Windows.Controls.StackPanel> v XAML.  
   
- [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_1)]  
+ [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_1](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_1)]  
   
  Následující ukazuje, jak vytvořit <xref:System.Windows.Shapes.Rectangle> prvek <xref:System.Windows.Controls.StackPanel> v kódu.  
   
- [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Class1.cs#rectangleopacityfadeexamplecode_1)]
- [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/Class1.vb#rectangleopacityfadeexamplecode_1)]  
+ [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_1](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Class1.cs#rectangleopacityfadeexamplecode_1)]
+ [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/Class1.vb#rectangleopacityfadeexamplecode_1)]  
   
 <a name="opacity_animation_step1"></a>   
 ### <a name="part-1-create-a-doubleanimation"></a>Část 1: Vytvoření doubleanimation –  
@@ -76,108 +76,108 @@ ms.locfileid: "44189468"
   
 1.  Hodnota krytí `1.0` stane zcela neprůhledný objekt a hodnotu neprůhlednosti `0.0` umožňuje úplně skrytá. Animace přechod z `1.0` k `0.0` nastavíte jeho <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost `1.0` a jeho <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnost `0.0`. Následující ukazuje, jak vytvořit <xref:System.Windows.Media.Animation.DoubleAnimation> v XAML.  
   
-     [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_2)]  
+     [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_2](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_2)]  
   
      Následující ukazuje, jak vytvořit <xref:System.Windows.Media.Animation.DoubleAnimation> v kódu.  
   
-     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Class1.cs#rectangleopacityfadeexamplecode_2)]
-     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/Class1.vb#rectangleopacityfadeexamplecode_2)]  
+     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_2](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Class1.cs#rectangleopacityfadeexamplecode_2)]
+     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/Class1.vb#rectangleopacityfadeexamplecode_2)]  
   
 2.  V dalším kroku je nutné zadat <xref:System.Windows.Media.Animation.Timeline.Duration%2A>. <xref:System.Windows.Media.Animation.Timeline.Duration%2A> Animace Určuje, jak dlouho trvá přejděte od počáteční hodnoty cílové hodnoty. Následující ukazuje, jak nastavit <xref:System.Windows.Media.Animation.Timeline.Duration%2A> na pět sekund v XAML.  
   
-     [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_3)]  
+     [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_3](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_3)]  
   
      Následující ukazuje, jak nastavit <xref:System.Windows.Media.Animation.Timeline.Duration%2A> na pět sekund v kódu.  
   
-     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Class1.cs#rectangleopacityfadeexamplecode_3)]
-     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/Class1.vb#rectangleopacityfadeexamplecode_3)]  
+     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_3](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Class1.cs#rectangleopacityfadeexamplecode_3)]
+     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/Class1.vb#rectangleopacityfadeexamplecode_3)]  
   
 3.  Předchozí kód jsme si ukázali, animace, která změní z `1.0` k `0.0`, což způsobí, že cílový element, která má vyblednout z stane zcela neprůhledný na úplně skrytá. Chcete-li element fade zpět do zobrazení po zmizí, nastavte <xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A> vlastnost animace `true`. Chcete-li animaci opakování po neomezenou dobu, nastavte jeho <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> vlastnost <xref:System.Windows.Media.Animation.RepeatBehavior.Forever%2A>. Následující ukazuje, jak nastavit <xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A> a <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> vlastnosti v XAML.  
   
-     [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_4)]  
+     [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_4](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_4)]  
   
      Následující ukazuje, jak nastavit <xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A> a <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> vlastností v kódu.  
   
-     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Class1.cs#rectangleopacityfadeexamplecode_4)]
-     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/Class1.vb#rectangleopacityfadeexamplecode_4)]  
+     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_4](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Class1.cs#rectangleopacityfadeexamplecode_4)]
+     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/Class1.vb#rectangleopacityfadeexamplecode_4)]  
   
 <a name="opacity_animation_step2"></a>   
-### <a name="part-2-create-a-storyboard"></a>Část 2: Vytvoření scénáře  
- Použijte animaci k objektu, vytvořit <xref:System.Windows.Media.Animation.Storyboard> a použít <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> a <xref:System.Windows.Media.Animation.Storyboard.TargetProperty%2A> připojené vlastnosti, které chcete zadat objekt a animovat vlastnost.  
+### <a name="part-2-create-a-storyboard"></a>Část 2: Vytvořit scénář  
+ Použijte animaci k objektu, vytvořit <xref:System.Windows.Media.Animation.Storyboard> a použít <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> a <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> připojené vlastnosti, které chcete zadat objekt a animovat vlastnost.  
   
 1.  Vytvořte <xref:System.Windows.Media.Animation.Storyboard> a přidat animaci jako jeho podřízených. Následující ukazuje, jak vytvořit <xref:System.Windows.Media.Animation.Storyboard> v XAML.  
   
-     [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_5)]    
+     [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_5](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_5)]    
   
      Chcete-li vytvořit <xref:System.Windows.Media.Animation.Storyboard> v kódu, deklarujte <xref:System.Windows.Media.Animation.Storyboard> proměnné na úrovni třídy.  
   
-     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_100](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode_100)]
-     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_100](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode_100)]  
+     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_100](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode_100)]
+     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode_100)]  
   
      Potom inicializujte <xref:System.Windows.Media.Animation.Storyboard> a přidat animaci jako jeho podřízených.  
   
-     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_101](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode_101)]
-     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_101](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode_101)]  
+     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_101](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode_101)]
+     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode_101)]  
   
 2.  <xref:System.Windows.Media.Animation.Storyboard> Musí vědět, kde použít animace. Použití <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A?displayProperty=nameWithType> připojené vlastnosti a určit tak objekt, který má animovat. Následující ukazuje, jak nastavit cílový název <xref:System.Windows.Media.Animation.DoubleAnimation> k `MyRectangle` v XAML.  
   
-     [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_6)]  
+     [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_6](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_6)]  
   
      Následující ukazuje, jak nastavit cílový název <xref:System.Windows.Media.Animation.DoubleAnimation> k `MyRectangle` v kódu.  
   
-     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_102](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode_102)]
-     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_102](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode_102)]  
+     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_102](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode_102)]
+     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode_102)]  
   
-3.  Použití <xref:System.Windows.Media.Animation.Storyboard.TargetProperty%2A> připojené vlastnosti k určení vlastností pro animaci. Následující příklad zobrazuje konfiguraci animace k cíli <xref:System.Windows.UIElement.Opacity%2A> vlastnost <xref:System.Windows.Shapes.Rectangle> v XAML.
+3.  Použití <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> připojené vlastnosti k určení vlastností pro animaci. Následující příklad zobrazuje konfiguraci animace k cíli <xref:System.Windows.UIElement.Opacity%2A> vlastnost <xref:System.Windows.Shapes.Rectangle> v XAML.
   
-     [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_7)]  
+     [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml_7](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/Window1.xaml#rectangleopacityfadeexamplexaml_7)]  
   
      Následující příklad zobrazuje konfiguraci animace k cíli <xref:System.Windows.UIElement.Opacity%2A> vlastnost <xref:System.Windows.Shapes.Rectangle> v kódu.  
   
-     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_103](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode_103)]
-     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_103](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode_103)]  
+     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_103](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode_103)]
+     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode_103)]  
   
- Další informace o <xref:System.Windows.Media.Animation.Storyboard.TargetProperty%2A> syntaxi a další příklady najdete v článku [přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).  
+ Další informace o <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> syntaxi a další příklady najdete v článku [přehled scénářů](storyboards-overview.md).  
   
 <a name="opacity_animation_step3"></a>   
-### <a name="part-3-xaml-associate-the-storyboard-with-a-trigger"></a>– Část 3 (XAML): Přidružení scénáře s triggerem  
+### <a name="part-3-xaml-associate-the-storyboard-with-a-trigger"></a>Část 3 (XAML): Scénář přidružit aktivační události  
  Nejjednodušší způsob, jak použít a začít <xref:System.Windows.Media.Animation.Storyboard> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , je použít aktivační procedura událostí. Tato část ukazuje, jak přidružit <xref:System.Windows.Media.Animation.Storyboard> triggerem v XAML.  
   
 1.  Vytvoření <xref:System.Windows.Media.Animation.BeginStoryboard> objektu a přidružit vaše scénáře. A <xref:System.Windows.Media.Animation.BeginStoryboard> k typu <xref:System.Windows.TriggerAction> , která se vztahuje a spustí <xref:System.Windows.Media.Animation.Storyboard>.  
   
-     [!code-xaml[animation_ovws_snippet#RectangleOpacityFadeExampleInline_3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_snippet/CS/RectangleOpacityFadeExample.xaml#rectangleopacityfadeexampleinline_3)]  
+     [!code-xaml[animation_ovws_snippet#RectangleOpacityFadeExampleInline_3](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_snippet/CS/RectangleOpacityFadeExample.xaml#rectangleopacityfadeexampleinline_3)]  
   
-2.  Vytvoření <xref:System.Windows.EventTrigger> a přidejte <xref:System.Windows.Media.Animation.BeginStoryboard> k jeho <xref:System.Windows.EventTrigger.Actions%2A> kolekce. Nastavte <xref:System.Windows.EventTrigger.RoutedEvent%2A> vlastnost <xref:System.Windows.EventTrigger> směrované události, kterou chcete spustit <xref:System.Windows.Media.Animation.Storyboard>. (Další informace o směrované události, najdete v článku [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).)  
+2.  Vytvoření <xref:System.Windows.EventTrigger> a přidejte <xref:System.Windows.Media.Animation.BeginStoryboard> k jeho <xref:System.Windows.EventTrigger.Actions%2A> kolekce. Nastavte <xref:System.Windows.EventTrigger.RoutedEvent%2A> vlastnost <xref:System.Windows.EventTrigger> směrované události, kterou chcete spustit <xref:System.Windows.Media.Animation.Storyboard>. (Další informace o směrované události, najdete v článku [směrovat Přehled událostí](../advanced/routed-events-overview.md).)  
   
-     [!code-xaml[animation_ovws_snippet#RectangleOpacityFadeExampleInline_2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_snippet/CS/RectangleOpacityFadeExample.xaml#rectangleopacityfadeexampleinline_2)]  
+     [!code-xaml[animation_ovws_snippet#RectangleOpacityFadeExampleInline_2](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_snippet/CS/RectangleOpacityFadeExample.xaml#rectangleopacityfadeexampleinline_2)]  
   
 3.  Přidat <xref:System.Windows.EventTrigger> k <xref:System.Windows.FrameworkElement.Triggers%2A> kolekce obdélníku.  
   
-     [!code-xaml[animation_ovws_snippet#RectangleOpacityFadeExampleInline_1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_snippet/CS/RectangleOpacityFadeExample.xaml#rectangleopacityfadeexampleinline_1)]  
+     [!code-xaml[animation_ovws_snippet#RectangleOpacityFadeExampleInline_1](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_snippet/CS/RectangleOpacityFadeExample.xaml#rectangleopacityfadeexampleinline_1)]  
   
 <a name="opacity_animation_step3code"></a>   
-### <a name="part-3-code-associate-the-storyboard-with-an-event-handler"></a>Část 3 (kód): Přidružení scénáři s obslužnou rutinu události  
+### <a name="part-3-code-associate-the-storyboard-with-an-event-handler"></a>Část 3 (kód): Scénář přidružit obslužná rutina události  
  Nejjednodušší způsob, jak použít a začít <xref:System.Windows.Media.Animation.Storyboard> v kódu je použití obslužné rutiny události. Tato část ukazuje, jak přidružit <xref:System.Windows.Media.Animation.Storyboard> obslužnou rutinu v kódu.  
   
 1.  Zaregistrujte se <xref:System.Windows.FrameworkElement.Loaded> události obdélníku.  
   
-     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_104](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode_104)]
-     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_104](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode_104)]  
+     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_104](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode_104)]
+     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode_104)]  
   
 2.  Deklarace obslužné rutiny události. V obslužné rutině události, použijte <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> způsob, jak použít scénáře.  
   
-     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_105](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode_105)]
-     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_105](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode_105)]  
+     [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode_105](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode_105)]
+     [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode_105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode_105)]  
   
 ### <a name="complete-example"></a>Kompletní příklad  
  Následující ukazuje, jak vytvořit obdélníku, který se sníží (zesvětlí) do zobrazení v XAML.  
   
- [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml#rectangleopacityfadeexamplexaml)]  
+ [!code-xaml[animation_ovws2#RectangleOpacityFadeExampleXaml](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml#rectangleopacityfadeexamplexaml)]  
   
  Následující ukazuje, jak vytvořit obdélníku, který se sníží (zesvětlí) do zobrazení v kódu.  
   
- [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode)]
- [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode)]  
+ [!code-csharp[animation_ovws2#RectangleOpacityFadeExampleCode](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws2/CSharp/MainWindow.xaml.cs#rectangleopacityfadeexamplecode)]
+ [!code-vb[animation_ovws2#RectangleOpacityFadeExampleCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws2/VisualBasic/MainWindow.xaml.vb#rectangleopacityfadeexamplecode)]  
   
 <a name="animationtypes"></a>   
 ## <a name="animation-types"></a>Typy animací  
@@ -195,11 +195,11 @@ ms.locfileid: "44189468"
   
      Příklady v tomto přehledu použít tyto animace, protože jsou nejjednodušší na používání. Animace od/Komu/kým jsou popsány podrobně v přehledu From/To/By animace.  
   
--   \<*Typ*> AnimationUsingKeyFrames  
+-   \<*Type*>AnimationUsingKeyFrames  
   
-     Animace klíčových snímků jsou výkonnější než animace od/Komu/kým, protože můžete zadat libovolný počet cílových hodnot a dokonce i řídit metodu interpolace. Některé typy lze animovat pouze s použitím animací klíčových snímků. Animace klíčových snímků jsou popsány podrobně [přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md).  
+     Animace klíčových snímků jsou výkonnější než animace od/Komu/kým, protože můžete zadat libovolný počet cílových hodnot a dokonce i řídit metodu interpolace. Některé typy lze animovat pouze s použitím animací klíčových snímků. Animace klíčových snímků jsou popsány podrobně [přehled animací klíčových snímků](key-frame-animations-overview.md).  
   
--   \<*Typ*> AnimationUsingPath  
+-   \<*Type*>AnimationUsingPath  
   
      Animace cesty umožňují použití geometrické cesty za účelem vytvoření animovaný hodnot.  
   
@@ -213,10 +213,10 @@ ms.locfileid: "44189468"
   
 |Typ vlastnosti|Odpovídající basic (od/Komu/kým) animace|Odpovídající animace klíčových snímků|Odpovídající animace cesty|Příklad použití|  
 |-------------------|----------------------------------------------------|---------------------------------------|----------------------------------|-------------------|  
-|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Žádné|Animace <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> nebo <xref:System.Windows.Media.GradientStop>.|  
+|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Žádná|Animace <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> nebo <xref:System.Windows.Media.GradientStop>.|  
 |<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimation>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>|Animace <xref:System.Windows.FrameworkElement.Width%2A> z <xref:System.Windows.Controls.DockPanel> nebo <xref:System.Windows.FrameworkElement.Height%2A> z <xref:System.Windows.Controls.Button>.|  
 |<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimation>|<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.PointAnimationUsingPath>|Animace <xref:System.Windows.Media.EllipseGeometry.Center%2A> pozici <xref:System.Windows.Media.EllipseGeometry>.|  
-|<xref:System.String>|Žádné|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Žádné|Animace <xref:System.Windows.Controls.TextBlock.Text%2A> z <xref:System.Windows.Controls.TextBlock> nebo <xref:System.Windows.Controls.ContentControl.Content%2A> z <xref:System.Windows.Controls.Button>.|  
+|<xref:System.String>|Žádná|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Žádná|Animace <xref:System.Windows.Controls.TextBlock.Text%2A> z <xref:System.Windows.Controls.TextBlock> nebo <xref:System.Windows.Controls.ContentControl.Content%2A> z <xref:System.Windows.Controls.Button>.|  
   
 <a name="animationsaretimelines"></a>   
 ### <a name="animations-are-timelines"></a>Jsou časové osy animací  
@@ -253,22 +253,22 @@ ms.locfileid: "44189468"
 #### <a name="repeatbehavior"></a>RepeatBehavior  
  <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> Vlastnost určuje, kolikrát časovou osu přehrávání. Ve výchozím nastavení, mají časové osy nepředstavuje počet iterací z `1.0`, což znamená, že jeden hrají čas a Neopakovat vůbec.  
   
- Další informace o těchto vlastností a další, najdete v článku [přehled chování časování](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md).  
+ Další informace o těchto vlastností a další, najdete v článku [přehled chování časování](timing-behaviors-overview.md).  
   
 <a name="applyanimationstoproperty"></a>   
 ## <a name="applying-an-animation-to-a-property"></a>Použití animace do vlastnosti  
  Různé typy animací a jejich časování vlastnosti v předchozích částech. Tato část ukazuje, jak použít animace na vlastnost, která má být animován. <xref:System.Windows.Media.Animation.Storyboard> objekty poskytují jedním ze způsobů použití animací na vlastnosti. A <xref:System.Windows.Media.Animation.Storyboard> je *časové osy kontejneru* poskytující cílení informace pro animace obsahuje.  
   
 ### <a name="targeting-objects-and-properties"></a>Cílení objektů a vlastností  
- <xref:System.Windows.Media.Animation.Storyboard> Třída poskytuje <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> a <xref:System.Windows.Media.Animation.Storyboard.TargetProperty%2A> připojené vlastnosti. Nastavením těchto vlastností na animace dáte animace jak animovat. Ale předtím, než animace můžete cílit na objekt, objekt se musí obvykle předávat název.  
+ <xref:System.Windows.Media.Animation.Storyboard> Třída poskytuje <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> a <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> připojené vlastnosti. Nastavením těchto vlastností na animace dáte animace jak animovat. Ale předtím, než animace můžete cílit na objekt, objekt se musí obvykle předávat název.  
   
  Přiřazuje se název, který má <xref:System.Windows.FrameworkElement> se liší od přiřazení název, který má <xref:System.Windows.Freezable> objektu. Většina ovládací prvky a panelů jsou prvky rozhraní; Většina čistě grafických objektů, jako jsou štětce, transformace a geometrie, jsou však zablokovatelných objektů. Pokud si nejste jisti, zda je typ <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.Freezable>, odkazovat **hierarchie dědičnosti** část její referenční dokumentaci.  
   
 -   Chcete-li <xref:System.Windows.FrameworkElement> cíl animace musíte pojmenovat je tak, že nastavíte její <xref:System.Windows.FrameworkElement.Name%2A> vlastnost. V kódu, musíte taky použít <xref:System.Windows.FrameworkElement.RegisterName%2A> metody pro registraci názvu elementu na stránce, do které patří.  
   
--   Chcete-li <xref:System.Windows.Freezable> cíl animace v objektu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete použít [x: Name – direktiva](../../../../docs/framework/xaml-services/x-name-directive.md) přiřadit název. V kódu, vám stačí použít <xref:System.Windows.FrameworkElement.RegisterName%2A> metody pro registraci objektu se stránkou, do které patří.  
+-   Chcete-li <xref:System.Windows.Freezable> cíl animace v objektu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete použít [x: Name – direktiva](../../xaml-services/x-name-directive.md) přiřadit název. V kódu, vám stačí použít <xref:System.Windows.FrameworkElement.RegisterName%2A> metody pro registraci objektu se stránkou, do které patří.  
   
- Následující části poskytují příklad názvy elementu v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kódu. Podrobnější informace o pojmenování a zacílení, najdete v článku [přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).  
+ Následující části poskytují příklad názvy elementu v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kódu. Podrobnější informace o pojmenování a zacílení, najdete v článku [přehled scénářů](storyboards-overview.md).  
   
 ### <a name="applying-and-starting-storyboards"></a>Použití a spuštění scénáře  
  Pro spuštění scénáře v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], přidružíte ho <xref:System.Windows.EventTrigger>. <xref:System.Windows.EventTrigger> Je objekt, který popisuje, jaká opatření je třeba provést, když dojde k určité události. Může být jeden z těchto akcí <xref:System.Windows.Media.Animation.BeginStoryboard> akce, který používáte ke spuštění scénář. Aktivační události jsou v principu podobná obslužné rutiny událostí, protože umožňují určit, jak vaše aplikace reaguje na konkrétní události. Na rozdíl od obslužné rutiny událostí, může být aktivační události jsou plně popsány v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]; není vyžadován žádný kód.  
@@ -277,7 +277,7 @@ ms.locfileid: "44189468"
   
 <a name="controllingstoryboards"></a>   
 ## <a name="interactively-control-a-storyboard"></a>Interaktivní řízení scénáře  
- Předchozí příklad ukázal, jak začít <xref:System.Windows.Media.Animation.Storyboard> při výskytu události. Můžete také interaktivní řízení <xref:System.Windows.Media.Animation.Storyboard> po jeho spuštění: můžete pozastavit, obnovit, zastavit, přejděte na svůj, hledání a odeberte <xref:System.Windows.Media.Animation.Storyboard>. Další informace a příklad, který ukazuje, jak interaktivní řízení <xref:System.Windows.Media.Animation.Storyboard>, najdete v článku [přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).  
+ Předchozí příklad ukázal, jak začít <xref:System.Windows.Media.Animation.Storyboard> při výskytu události. Můžete také interaktivní řízení <xref:System.Windows.Media.Animation.Storyboard> po jeho spuštění: můžete pozastavit, obnovit, zastavit, přejděte na svůj, hledání a odeberte <xref:System.Windows.Media.Animation.Storyboard>. Další informace a příklad, který ukazuje, jak interaktivní řízení <xref:System.Windows.Media.Animation.Storyboard>, najdete v článku [přehled scénářů](storyboards-overview.md).  
   
 <a name="fillbehaviorsection"></a>   
 ## <a name="what-happens-after-an-animation-ends"></a>Co se stane po ukončení animace?  
@@ -285,16 +285,16 @@ ms.locfileid: "44189468"
   
  <xref:System.Windows.Media.Animation.DoubleAnimation> v předchozím příkladu nekončí protože jeho <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> je nastavena na <xref:System.Windows.Media.Animation.RepeatBehavior.Forever%2A>. Následující příklad animuje pomocí podobných animace obdélníku. Na rozdíl od předchozího příkladu <xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A> a <xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A> vlastnosti této animace jsou ponechány na výchozích hodnotách. Proto se animace postupu z 1 na 0 více než pět sekund a poté se zastaví.  
   
- [!code-xaml[animation_ovws_snippet#FillBehaviorExampleRectangleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_snippet/CS/FillBehaviorExample.xaml#fillbehaviorexamplerectangleinline)]  
+ [!code-xaml[animation_ovws_snippet#FillBehaviorExampleRectangleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_snippet/CS/FillBehaviorExample.xaml#fillbehaviorexamplerectangleinline)]  
   
- [!code-csharp[animation_ovws_procedural_snip#FillBehaviorExampleRectangleInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_procedural_snip/CSharp/FillBehaviorExample.cs#fillbehaviorexamplerectangleinline)]
- [!code-vb[animation_ovws_procedural_snip#FillBehaviorExampleRectangleInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws_procedural_snip/visualbasic/fillbehaviorexample.vb#fillbehaviorexamplerectangleinline)]  
+ [!code-csharp[animation_ovws_procedural_snip#FillBehaviorExampleRectangleInline](~/samples/snippets/csharp/VS_Snippets_Wpf/animation_ovws_procedural_snip/CSharp/FillBehaviorExample.cs#fillbehaviorexamplerectangleinline)]
+ [!code-vb[animation_ovws_procedural_snip#FillBehaviorExampleRectangleInline](~/samples/snippets/visualbasic/VS_Snippets_Wpf/animation_ovws_procedural_snip/visualbasic/fillbehaviorexample.vb#fillbehaviorexamplerectangleinline)]  
   
  Protože jeho <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> nebylo změněno z jeho výchozí hodnotu, která je <xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>, animace drží konečnou hodnotu 0, při jeho ukončení. Proto <xref:System.Windows.UIElement.Opacity%2A> z obdélník zůstane v umístění 0 po animace končí. Pokud jste nastavili <xref:System.Windows.UIElement.Opacity%2A> obdélníku s jinou hodnotou kódu se nemají žádný vliv, protože animaci je stále by to mělo dopad <xref:System.Windows.UIElement.Opacity%2A> vlastnost.  
   
- Jeden způsob, jak získat ovládací prvek animované vlastnosti v kódu je použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metodu a zadejte hodnotu null pro <xref:System.Windows.Media.Animation.AnimationTimeline> parametr. Další informace a příklad najdete v tématu [nastavit vlastnost Po animaci pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-set-a-property-after-animating-it-with-a-storyboard.md).  
+ Jeden způsob, jak získat ovládací prvek animované vlastnosti v kódu je použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metodu a zadejte hodnotu null pro <xref:System.Windows.Media.Animation.AnimationTimeline> parametr. Další informace a příklad najdete v tématu [nastavit vlastnost Po animaci pomocí scénáře](how-to-set-a-property-after-animating-it-with-a-storyboard.md).  
   
- Všimněte si, že i když nastavení hodnoty vlastnosti, která má <xref:System.Windows.Media.Animation.ClockState.Active> nebo <xref:System.Windows.Media.Animation.ClockState.Filling> animace se neprojeví, změňte hodnotu vlastnosti. Další informace najdete v tématu [animace a časování přehledu systému](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md).  
+ Všimněte si, že i když nastavení hodnoty vlastnosti, která má <xref:System.Windows.Media.Animation.ClockState.Active> nebo <xref:System.Windows.Media.Animation.ClockState.Filling> animace se neprojeví, změňte hodnotu vlastnosti. Další informace najdete v tématu [animace a časování přehledu systému](animation-and-timing-system-overview.md).  
   
 <a name="databindingAndAnimatingAnimationsSection"></a>   
 ## <a name="data-binding-and-animating-animations"></a>Vytváření datových vazeb a animace animace  
@@ -302,17 +302,17 @@ ms.locfileid: "44189468"
   
  Přečtěte si v příkladu v předchozí části, které jsme si ukázali, jak animovat <xref:System.Windows.UIElement.Opacity%2A> obdélníku. Při načtení obdélníku v předchozím příkladu jeho aktivační událost se vztahuje <xref:System.Windows.Media.Animation.Storyboard>. Časování systému vytvoří kopii <xref:System.Windows.Media.Animation.Storyboard> a jeho animace. Tyto kopie jsou zmražená (jen pro čtení) a <xref:System.Windows.Media.Animation.Clock> z nich jsou vytvořeny objekty. Tyto hodiny vykonávají samotnou práci animace cílové vlastnosti.  
   
- Časování systému vytvoří účtovat poplatky za <xref:System.Windows.Media.Animation.DoubleAnimation> a použije ho k objektu a vlastnost, která je určená <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> a <xref:System.Windows.Media.Animation.Storyboard.TargetProperty%2A> z <xref:System.Windows.Media.Animation.DoubleAnimation>. V tomto případě platí časování systému hodiny tak, aby <xref:System.Windows.UIElement.Opacity%2A> vlastnost v objektu, který je pojmenován "MyRectangle."  
+ Časování systému vytvoří účtovat poplatky za <xref:System.Windows.Media.Animation.DoubleAnimation> a použije ho k objektu a vlastnost, která je určená <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> a <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> z <xref:System.Windows.Media.Animation.DoubleAnimation>. V tomto případě platí časování systému hodiny tak, aby <xref:System.Windows.UIElement.Opacity%2A> vlastnost v objektu, který je pojmenován "MyRectangle."  
   
  I když se vytvoří také hodin pro <xref:System.Windows.Media.Animation.Storyboard>, hodiny neplatí pro žádné vlastnosti. Jeho účelem je potřeba zkontrolovat jeho podřízených hodiny, hodiny, který je vytvořen pro <xref:System.Windows.Media.Animation.DoubleAnimation>.  
   
  Pro animaci tak, aby odrážely změny dat vazby nebo animace musí být znovu vygenerován hodiny. Hodiny nejsou generovány pro vás automaticky. Chcete-li animaci, aby odrážely změny, znovu použít jeho scénáře s využitím <xref:System.Windows.Media.Animation.BeginStoryboard> nebo <xref:System.Windows.Media.Animation.Storyboard.Begin%2A> metody. Při použití těchto metod, restartuje se animace. V kódu, můžete použít <xref:System.Windows.Media.Animation.Storyboard.Seek%2A> metoda shift scénáři zpět na předchozí pozici.  
   
- Příklad dat vázány animace, najdete v části [klíč křivkový animace ukázka](https://go.microsoft.com/fwlink/?LinkID=160011). Další informace o tom, jak systém animace a časování funguje, najdete v části [animace a časování přehledu systému](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md).  
+ Příklad dat vázány animace, najdete v části [klíč křivkový animace ukázka](https://go.microsoft.com/fwlink/?LinkID=160011). Další informace o tom, jak systém animace a časování funguje, najdete v části [animace a časování přehledu systému](animation-and-timing-system-overview.md).  
   
 <a name="otherWaysToAnimateSection"></a>   
 ## <a name="other-ways-to-animate"></a>Další způsoby pro animaci  
- Příklady v tomto přehledu ukazují, jak pro animaci pomocí scénáře. Při použití kódu lze animovat několika jinými způsoby. Další informace najdete v tématu [přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md).  
+ Příklady v tomto přehledu ukazují, jak pro animaci pomocí scénáře. Při použití kódu lze animovat několika jinými způsoby. Další informace najdete v tématu [přehled způsobů animace vlastností](property-animation-techniques-overview.md).  
   
 <a name="animation_samples"></a>   
 ## <a name="animation-samples"></a>Ukázky animace  
@@ -331,21 +331,21 @@ ms.locfileid: "44189468"
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Přehled animace a systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)|Popisuje, jak časování systému používá <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> třídy, které vám umožňují vytvářet animace.|  
-|[Tipy a triky animace](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)|Obsahuje užitečné tipy pro řešení problémů s použitím animací, jako je například výkon.|  
-|[Přehled vlastních animací](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)|Popisuje, jak rozšířit systém animace pomocí klíčových snímků, třídy animace nebo zpětná volání za snímků.|  
+|[Přehled animace a systému časování](animation-and-timing-system-overview.md)|Popisuje, jak časování systému používá <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> třídy, které vám umožňují vytvářet animace.|  
+|[Tipy a triky animace](animation-tips-and-tricks.md)|Obsahuje užitečné tipy pro řešení problémů s použitím animací, jako je například výkon.|  
+|[Přehled vlastních animací](custom-animations-overview.md)|Popisuje, jak rozšířit systém animace pomocí klíčových snímků, třídy animace nebo zpětná volání za snímků.|  
 |Přehled animace od/komu/kým|Popisuje, jak vytvořit animaci, která přechází mezi dvěma hodnotami.|  
-|[Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)|Popisuje, jak vytvořit animaci s více hodnotami Cíl, včetně možnosti řídit metodu interpolace.|  
-|[Funkce uvolnění](../../../../docs/framework/wpf/graphics-multimedia/easing-functions.md)|Vysvětluje, jak použít vašich animacích získáte realistické chování, jako je například skákání matematické vzorce.|  
-|[Přehled animací cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)|Popisuje, jak se přesunout nebo otočit objekt komplexní cestě.|  
-|[Přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)|Popisuje animace vlastnosti pomocí scénáře, místní animace, hodiny a za snímků animace.|  
-|[Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)|Popisuje způsob použití scénářů s více časové osy k vytvoření složitých animace.|  
-|[Přehled chování časování](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)|Popisuje <xref:System.Windows.Media.Animation.Timeline> typy a vlastnosti používané ve animace.|  
-|[Přehled událostí časování](../../../../docs/framework/wpf/graphics-multimedia/timing-events-overview.md)|Popisuje události, které jsou k dispozici na <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> objekty pro provádění kódu na místech na časové ose, jako například začít, pozastavení, obnovení, přeskočit nebo zastavit.|  
-|[Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-how-to-topics.md)|Obsahuje příklady kódu pro použití animace a časových os ve vaší aplikaci.|  
-|[Postupy: Témata hodin](../../../../docs/framework/wpf/graphics-multimedia/clocks-how-to-topics.md)|Obsahuje příklady kódu pro použití <xref:System.Windows.Media.Animation.Clock> objektu v aplikaci.|  
-|[Témata s postupy ke klíčovým snímkům](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití animací klíčových snímků v aplikaci.|  
-|[Postupy: Témata animace cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití animace cesty ve vaší aplikaci.|  
+|[Přehled animací klíčových snímků](key-frame-animations-overview.md)|Popisuje, jak vytvořit animaci s více hodnotami Cíl, včetně možnosti řídit metodu interpolace.|  
+|[Funkce uvolnění](easing-functions.md)|Vysvětluje, jak použít vašich animacích získáte realistické chování, jako je například skákání matematické vzorce.|  
+|[Přehled animací cesty](path-animations-overview.md)|Popisuje, jak se přesunout nebo otočit objekt komplexní cestě.|  
+|[Přehled způsobů animace vlastností](property-animation-techniques-overview.md)|Popisuje animace vlastnosti pomocí scénáře, místní animace, hodiny a za snímků animace.|  
+|[Přehled scénářů](storyboards-overview.md)|Popisuje způsob použití scénářů s více časové osy k vytvoření složitých animace.|  
+|[Přehled chování časování](timing-behaviors-overview.md)|Popisuje <xref:System.Windows.Media.Animation.Timeline> typy a vlastnosti používané ve animace.|  
+|[Přehled událostí časování](timing-events-overview.md)|Popisuje události, které jsou k dispozici na <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> objekty pro provádění kódu na místech na časové ose, jako například začít, pozastavení, obnovení, přeskočit nebo zastavit.|  
+|[Témata s postupy](animation-and-timing-how-to-topics.md)|Obsahuje příklady kódu pro použití animace a časových os ve vaší aplikaci.|  
+|[Postupy: Témata hodin](clocks-how-to-topics.md)|Obsahuje příklady kódu pro použití <xref:System.Windows.Media.Animation.Clock> objektu v aplikaci.|  
+|[Témata s postupy ke klíčovým snímkům](key-frame-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití animací klíčových snímků v aplikaci.|  
+|[Postupy: Témata animace cesty](path-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití animace cesty ve vaší aplikaci.|  
   
 <a name="reference"></a>   
 ## <a name="reference"></a>Odkaz  

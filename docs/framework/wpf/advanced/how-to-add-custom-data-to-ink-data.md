@@ -5,15 +5,15 @@ helpviewer_keywords:
 - ink data [WPF], adding custom data
 - InkCanvas [WPF], displaying
 ms.assetid: f02aac6f-3436-4f7c-b6ea-0452cba5332c
-ms.openlocfilehash: 40d883f3d3e1d504c8757c31325aa72a03da37e0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c524e30943a21426e2e5e8fe6ae009999924fead
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33544508"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57361665"
 ---
 # <a name="how-to-add-custom-data-to-ink-data"></a>Postupy: Přidání vlastních dat do dat inkoustu
-Přidáním vlastních dat do barvu, která bude uloženo při uložení rukopisu rukopisu serializovat formát (Serialized Format).  Můžete uložit vlastní data, která mají <xref:System.Windows.Ink.DrawingAttributes>, <xref:System.Windows.Ink.StrokeCollection>, nebo <xref:System.Windows.Ink.Stroke>.  Schopnost uložit vlastní data na tři objekty vám dává možnost k rozhodování o nejlepší místo k uložení dat.  Všechny tři třídy podobné metody používat k ukládání a přístup k vlastní data.  
+Přidat vlastní data pro barvu, která se uloží při uložení rukopisu ve formátu inkoustu serializovat (ISF).  Vlastní data, která můžete uložit <xref:System.Windows.Ink.DrawingAttributes>, <xref:System.Windows.Ink.StrokeCollection>, nebo <xref:System.Windows.Ink.Stroke>.  Schopnost uložit vlastní data na třech objektech dává možnost se rozhodnout nejlepší místo pro uložení data.  Všechny tři třídy podobným způsobem ukládání a přístup k vlastní data.  
   
  Jako vlastní data lze uložit pouze následující typy:  
   
@@ -72,12 +72,12 @@ Přidáním vlastních dat do barvu, která bude uloženo při uložení rukopis
 -   <xref:System.UInt64>[]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak přidat a načíst vlastní data ze <xref:System.Windows.Ink.StrokeCollection>.  
+ Následující příklad ukazuje, jak přidat a načíst vlastní data <xref:System.Windows.Ink.StrokeCollection>.  
   
- [!code-csharp[HowToAddCustomDataToInk#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToAddCustomDataToInk/CSharp/Window1.xaml.cs#1)]  
+ [!code-csharp[HowToAddCustomDataToInk#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HowToAddCustomDataToInk/CSharp/Window1.xaml.cs#1)]  
   
- Následující příklad vytvoří aplikaci, která zobrazuje <xref:System.Windows.Controls.InkCanvas> a dvě tlačítka.  Tlačítko, `switchAuthor`, umožňuje dvě pera, který se má použít dvě různé autory.  Tlačítko `changePenColors` změní barvu každého tahu na <xref:System.Windows.Controls.InkCanvas> podle autora.  Aplikace definuje dvě <xref:System.Windows.Ink.DrawingAttributes> objekty a přidá vlastní vlastnost pro každé z nich určující, které autor obrázek <xref:System.Windows.Ink.Stroke>.  Když uživatel klikne na `changePenColors`, aplikace mění vzhled tahu podle hodnotu vlastní vlastnosti.  
+ Následující příklad vytvoří aplikaci, která se zobrazí <xref:System.Windows.Controls.InkCanvas> a dvě tlačítka.  Tlačítko, `switchAuthor`, umožňuje používat dva různí tvůrci dva pera.  Tlačítko `changePenColors` změní barvu každého tahu na <xref:System.Windows.Controls.InkCanvas> podle autora.  Aplikace definuje dvě <xref:System.Windows.Ink.DrawingAttributes> objektů a přidá vlastní vlastnost pro každý z nich, která určuje, které autor nakreslili <xref:System.Windows.Ink.Stroke>.  Když uživatel klepne `changePenColors`, aplikace změní vzhled objektu stroke podle hodnoty vlastnosti.  
   
- [!code-xaml[HowToAddCustomDataToInk#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToAddCustomDataToInk/CSharp/Window1.xaml#2)]  
+ [!code-xaml[HowToAddCustomDataToInk#2](~/samples/snippets/csharp/VS_Snippets_Wpf/HowToAddCustomDataToInk/CSharp/Window1.xaml#2)]  
   
- [!code-csharp[HowToAddCustomDataToInk#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HowToAddCustomDataToInk/CSharp/Window1.xaml.cs#3)]
+ [!code-csharp[HowToAddCustomDataToInk#3](~/samples/snippets/csharp/VS_Snippets_Wpf/HowToAddCustomDataToInk/CSharp/Window1.xaml.cs#3)]

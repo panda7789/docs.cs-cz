@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /moduleassemblyname compiler option [Visual Basic]
 - -moduleassemblyname compiler option [Visual Basic]
 ms.assetid: 013a57b6-f425-4dd3-b333-512d72c42f55
-ms.openlocfilehash: f88a0001bb2ba55c0a3eac3ed208f14292d86734
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: a16dd616c8a38dea4bd1779e4feea779b3a18e2d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56745661"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57375295"
 ---
 # <a name="-moduleassemblyname"></a>-moduleassemblyname
 Určuje název sestavení, které bude tento modul součástí.  
@@ -37,7 +37,7 @@ Určuje název sestavení, které bude tento modul součástí.
   
 -   Odkazované sestavení má udělen Přátelský přístup sestavení k sestavení, do kterého bude sestaven modul.  
   
- Další informace o vytváření modulu najdete v tématu [/Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md). Další informace o přátelských sestavení naleznete v tématu [přátelských sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md).  
+ Další informace o vytváření modulu najdete v tématu [/Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md). Další informace o přátelských sestavení naleznete v tématu [přátelských sestavení](../../../standard/assembly/friend-assemblies.md).  
   
 > [!NOTE]
 >  `-moduleassemblyname` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici, pouze pokud kompilujete z příkazového řádku.  
@@ -49,6 +49,6 @@ Určuje název sestavení, které bude tento modul součástí.
 - [-main](../../../visual-basic/reference/command-line-compiler/main.md)
 - [– referenční dokumentace (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
 - [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)
-- [Sestavení v rozhraní .NET](../../../standard/assembly/index.md)
+- [Sestavení v .NET](../../../standard/assembly/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Přátelská sestavení](../../programming-guide/concepts/assemblies-gac/friend-assemblies.md)
+- [Přátelská sestavení](../../../standard/assembly/friend-assemblies.md)

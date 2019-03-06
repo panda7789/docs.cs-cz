@@ -5,12 +5,12 @@ helpviewer_keywords:
 - PropertyPath object [WPF]
 - XAML [WPF], PropertyPath object
 ms.assetid: 0e3cdf07-abe6-460a-a9af-3764b4fd707f
-ms.openlocfilehash: 7c6f658558618e0812ea2537837577cbf011edd4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 25214a3c177975505713a444b69a7006c0fd523f
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648749"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57363511"
 ---
 # <a name="propertypath-xaml-syntax"></a>PropertyPath – syntaxe v jazyce XAML
 <xref:System.Windows.PropertyPath> Objekt podporuje komplexní vložené [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntaxi pro různé vlastnosti, které provést nastavení <xref:System.Windows.PropertyPath> typu jako jeho hodnotu. Toto téma dokumenty <xref:System.Windows.PropertyPath> syntaxe jako použitý pro vazbu a animace syntaxe.  
@@ -28,7 +28,7 @@ ms.locfileid: "54648749"
 ## <a name="propertypath-for-objects-in-data-binding"></a>Propertypath – pro objekty v datové vazbě  
  Datová vazba [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce zajišťovaný cílová hodnota libovolné vlastnosti závislostí lze svázat. Zdroj datové vazby však nemusí být vlastnost závislosti; může být libovolný typ vlastnosti, který je rozpoznán zprostředkovatelem dat. Cesty vlastností slouží zejména pro <xref:System.Windows.Data.ObjectDataProvider>, který se používá pro získání zdroje připojení z [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty a jejich vlastnosti.  
   
- Všimněte si, že vazba dat k [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] nepoužívá <xref:System.Windows.PropertyPath>, protože nepoužívá <xref:System.Windows.Data.Binding.Path%2A> v <xref:System.Windows.Data.Binding>. Místo toho použít <xref:System.Windows.Data.Binding.XPath%2A> a zadejte platnou syntaxi XPath do [!INCLUDE[TLA#tla_xmldom](../../../../includes/tlasharptla-xmldom-md.md)] data. <xref:System.Windows.Data.Binding.XPath%2A> je také zadán jako řetězec, ale není dokumentováno. Zobrazit [svázání dat XML pomocí XMLDataProvider a dotazů XPath](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).  
+ Všimněte si, že vazba dat k [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] nepoužívá <xref:System.Windows.PropertyPath>, protože nepoužívá <xref:System.Windows.Data.Binding.Path%2A> v <xref:System.Windows.Data.Binding>. Místo toho použít <xref:System.Windows.Data.Binding.XPath%2A> a zadejte platnou syntaxi XPath do [!INCLUDE[TLA#tla_xmldom](../../../../includes/tlasharptla-xmldom-md.md)] data. <xref:System.Windows.Data.Binding.XPath%2A> je také zadán jako řetězec, ale není dokumentováno. Zobrazit [svázání dat XML pomocí XMLDataProvider a dotazů XPath](../data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).  
   
  Klíčem k pochopení cesty vlastností v datové vazbě je, že je možné cílit na vazby na hodnotu jednotlivých vlastností nebo místo toho lze svázat vlastnosti cíle, které přijímají seznamy nebo kolekce. Pokud vytváříte vazbu kolekce, například vytvoření vazby <xref:System.Windows.Controls.ListBox> , který se rozbalí v závislosti na tom, kolik datových položek jsou v kolekci, pak vaše cesta k vlastnosti by měla odkazovat na objekt kolekce, ne z individuálních kolekce položek. Modul vazby dat bude odpovídat použít jako zdroj dat na typ cíl vazby automaticky, což vede k chování například naplnění kolekce <xref:System.Windows.Controls.ListBox> s polem položek.  
   
@@ -85,7 +85,7 @@ ms.locfileid: "54648749"
 <object Path="propertyName/propertyNameX" .../>  
 ```  
   
- / V této syntaxe slouží k navigaci v rámci zdrojového objektu hierarchických dat a více kroků na hierarchii s po sobě jdoucích / znaky jsou podporovány. Zdrojové účty procházení pro aktuální pozici ukazatele záznamu, což je určeno synchronizaci dat s uživatelským rozhraním z jeho zobrazení. Podrobnosti o vázání s objekty zdrojů hierarchických dat a koncept aktuální ukazatel záznam v datové vazbě naleznete v tématu [použití vzoru seznam-podrobnosti s hierarchickými daty](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md) nebo [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).  
+ / V této syntaxe slouží k navigaci v rámci zdrojového objektu hierarchických dat a více kroků na hierarchii s po sobě jdoucích / znaky jsou podporovány. Zdrojové účty procházení pro aktuální pozici ukazatele záznamu, což je určeno synchronizaci dat s uživatelským rozhraním z jeho zobrazení. Podrobnosti o vázání s objekty zdrojů hierarchických dat a koncept aktuální ukazatel záznam v datové vazbě naleznete v tématu [použití vzoru seznam-podrobnosti s hierarchickými daty](../data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md) nebo [Data Binding Overview](../data/data-binding-overview.md).  
   
 > [!NOTE]
 >  Na první pohled, vypadá podobně jako tato syntaxe [!INCLUDE[TLA2#tla_xpath](../../../../includes/tla2sharptla-xpath-md.md)]. Skutečného [!INCLUDE[TLA2#tla_xpath](../../../../includes/tla2sharptla-xpath-md.md)] výraz pro vytvoření vazby na [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] zdroj dat se nepoužívá jako <xref:System.Windows.Data.Binding.Path%2A> hodnotu a místo toho byste měli použít pro vzájemně vylučují <xref:System.Windows.Data.Binding.XPath%2A> vlastnost.  
@@ -142,7 +142,7 @@ or
   
 <a name="general"></a>   
 ### <a name="general-object-property-considerations-for-animations"></a>Obecné – vlastnosti objektu důležité informace týkající se animace  
- Další informace o animace koncepty, najdete v části [přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md) a [přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
+ Další informace o animace koncepty, najdete v části [přehled scénářů](../graphics-multimedia/storyboards-overview.md) a [přehled animace](../graphics-multimedia/animation-overview.md).  
   
  Typ hodnoty nebo animované vlastnosti musí být buď <xref:System.Windows.Freezable> typů nebo primitiv. Vlastnost, která spustí cesta se musí přeložit název vlastnosti závislosti, která existuje na zadaný <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> typu.  
   
@@ -168,7 +168,7 @@ or
   
  `propertyName2` musí být název, která existuje na objekt, který je hodnota vlastnosti závislosti `propertyName`. Jinými slovy `propertyName2` musí existovat jako vlastnost závislosti na typu, který je `propertyName` <xref:System.Windows.DependencyProperty.PropertyType%2A>.  
   
- Nepřímé cílení animací je nutné z důvodu použité styly a šablony. Chcete-li cílit na animace, musíte <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> v cílové objektů, které se vytváří název [x: Name](../../../../docs/framework/xaml-services/x-name-directive.md) nebo <xref:System.Windows.FrameworkElement.Name%2A>. Přestože šablony a prvky stylů také může mít názvy, názvy platí pouze v rámci namescope stylu a šablon. (Pokud styly a šablony značce aplikace sdílet obory názvů, názvy nemohl být jedinečné. Styly a šablony doslova sdílejí mezi instancemi a by perpetuate duplicitní názvy.) Proto pokud jednotlivé vlastnosti elementu, který chcete animovat pochází stylu nebo šablony, budete muset spustit s instancí s názvem elementu, který není ze šablony stylů a směrovat do stylu nebo šablony vizuálního stromu můžete přejít na vlastnost chcete animovat.  
+ Nepřímé cílení animací je nutné z důvodu použité styly a šablony. Chcete-li cílit na animace, musíte <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> v cílové objektů, které se vytváří název [x: Name](../../xaml-services/x-name-directive.md) nebo <xref:System.Windows.FrameworkElement.Name%2A>. Přestože šablony a prvky stylů také může mít názvy, názvy platí pouze v rámci namescope stylu a šablon. (Pokud styly a šablony značce aplikace sdílet obory názvů, názvy nemohl být jedinečné. Styly a šablony doslova sdílejí mezi instancemi a by perpetuate duplicitní názvy.) Proto pokud jednotlivé vlastnosti elementu, který chcete animovat pochází stylu nebo šablony, budete muset spustit s instancí s názvem elementu, který není ze šablony stylů a směrovat do stylu nebo šablony vizuálního stromu můžete přejít na vlastnost chcete animovat.  
   
  Například <xref:System.Windows.Controls.Panel.Background%2A> vlastnost <xref:System.Windows.Controls.Panel> je kompletní <xref:System.Windows.Media.Brush> (ve skutečnosti <xref:System.Windows.Media.SolidColorBrush>), které přišly z motivu šablony. Animování <xref:System.Windows.Media.Brush> úplně, došlo by musí být BrushAnimation (pravděpodobně jeden pro každý <xref:System.Windows.Media.Brush> typu) a neexistuje žádný takový typ. Pro animaci štětce, místo toho animovat vlastnosti z konkrétní <xref:System.Windows.Media.Brush> typu. Je potřeba získat z <xref:System.Windows.Media.SolidColorBrush> k jeho <xref:System.Windows.Media.SolidColorBrush.Color%2A> použít <xref:System.Windows.Media.Animation.ColorAnimation> existuje. Cesta vlastnosti v tomto příkladu bude `Background.Color`.  
   
@@ -198,5 +198,5 @@ or
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.PropertyPath>
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)
+- [Přehled datových vazeb](../data/data-binding-overview.md)
+- [Přehled scénářů](../graphics-multimedia/storyboards-overview.md)

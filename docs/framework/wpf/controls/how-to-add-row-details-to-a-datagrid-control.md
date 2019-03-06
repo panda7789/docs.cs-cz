@@ -9,61 +9,61 @@ helpviewer_keywords:
 - row details [WPF], DataGrid
 - DataGrid [WPF], row details
 ms.assetid: 0bdc6f50-9b4c-483f-9df6-a47a1fde998b
-ms.openlocfilehash: b6b0cc99c9833e514d2d52ecf139ab8e110f73e3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5976e834ca984a257e5562b2a3c8051f45575f5b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33555948"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57372188"
 ---
 # <a name="how-to-add-row-details-to-a-datagrid-control"></a>Postupy: Přidání podrobností řádku do ovládacího prvku DataGrid
-Při použití <xref:System.Windows.Controls.DataGrid> řízení, prezentace dat můžete přizpůsobit přidáním v části Podrobnosti o řádek. Přidání v části Podrobnosti o řádek umožňují seskupit některá data v šabloně, která je volitelně zobrazená nebo sbalená. Například můžete přidat podrobnosti řádku <xref:System.Windows.Controls.DataGrid> , uvede pouze souhrn dat pro každý řádek <xref:System.Windows.Controls.DataGrid>, ale přináší další datová pole, když uživatel vybere řádek. Definovat šablonu pro v oddílu Podrobnosti řádek <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> vlastnost. Následující obrázek znázorňuje příklad v části Podrobnosti o řádek.  
+Při použití <xref:System.Windows.Controls.DataGrid> ovládacího prvku, prezentace dat můžete přizpůsobit přidáním části Podrobnosti řádků. Přidání části Podrobnosti o řádek umožňují seskupit některá data v šabloně, která je volitelně zobrazená nebo sbalená. Například může přidání podrobností řádku do <xref:System.Windows.Controls.DataGrid> , který představuje pouze souhrnné informace o data pro každý řádek <xref:System.Windows.Controls.DataGrid>, ale přináší další datová pole, když uživatel vybere řádek. Definování šablony daného oddílu Podrobnosti řádku <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> vlastnost. Následující obrázek znázorňuje příklad v části Podrobnosti řádků.  
   
- ![DataGrid – zobrazený s podrobnostmi řádků](../../../../docs/framework/wpf/controls/media/ndp-rowdetails.png "NDP_RowDetails")  
+ ![DataGrid – zobrazí se podrobnosti řádku](./media/ndp-rowdetails.png "NDP_RowDetails")  
   
- Podrobnosti šablony řádku definujete jako buď inline kód XAML nebo jako prostředek. V následujících postupech se zobrazí obou přístupů. Šablonu dat, který je přidán jako prostředek lze použít v rámci projektu bez nutnosti znovu vytvářet šablony. Šablonu data, která je přidána jako inline kód XAML je k dispozici pouze z ovládacího prvku kterých byla definována.  
+ Podrobnosti šablony řádku definujete, buď jako vložené XAML nebo jako prostředek. Oba přístupy jsou uvedeny v následujících postupech. Datové šablony, které se přidají jako prostředek je možné v celém projektu bez nutnosti znovu vytvářet šablony. Datové šablony, které se přidají jako vložený, XAML je dostupná jenom z ovládacího prvku níž byl definován.  
   
-### <a name="to-display-row-details-by-using-inline-xaml"></a>Zobrazit podrobnosti o řádek pomocí inline kód XAML  
+### <a name="to-display-row-details-by-using-inline-xaml"></a>Chcete-li zobrazit podrobnosti řádku s použitím vložené XAML  
   
-1.  Vytvoření <xref:System.Windows.Controls.DataGrid> , které zobrazuje data ze zdroje dat.  
+1.  Vytvoření <xref:System.Windows.Controls.DataGrid> zobrazující data z datového zdroje.  
   
 2.  V <xref:System.Windows.Controls.DataGrid> elementu, přidejte <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> elementu.  
   
-3.  Vytvoření <xref:System.Windows.DataTemplate> vzhled v části Podrobnosti o řádek, který definuje.  
+3.  Vytvoření <xref:System.Windows.DataTemplate> , která definuje vzhled elementů v části Podrobnosti řádků.  
   
-     Následující XAML ukazuje <xref:System.Windows.Controls.DataGrid> a definování <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> vložené. <xref:System.Windows.Controls.DataGrid> Zobrazí tři hodnoty v každém řádku a tři další hodnoty když je vybraný řádek.  
+     Zobrazí se následující XAML <xref:System.Windows.Controls.DataGrid> a tom, jak definovat <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> vložené. <xref:System.Windows.Controls.DataGrid> Zobrazí tři hodnoty v jednotlivých řádcích a tři další hodnoty při výběru řádku.  
   
-     [!code-xaml[DataGrid_RowDetails#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/mainwindow.xaml#1)]  
+     [!code-xaml[DataGrid_RowDetails#1](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/mainwindow.xaml#1)]  
   
-     Následující kód ukazuje dotaz, který slouží k výběru data, která se zobrazí v <xref:System.Windows.Controls.DataGrid>. V tomto příkladu dotaz vybere data z entity, která obsahuje informace o zákazníkovi.  
+     Následující kód ukazuje dotaz, který se používá pro výběr data, která se zobrazí <xref:System.Windows.Controls.DataGrid>. V tomto příkladu dotaz vybere data z entity, který obsahuje informace o zákaznících.  
   
-     [!code-csharp[DataGrid_RowDetails#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/mainwindow.xaml.cs#2)]
-     [!code-vb[DataGrid_RowDetails#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_rowdetails/vb/mainwindow.xaml.vb#2)]  
+     [!code-csharp[DataGrid_RowDetails#2](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/mainwindow.xaml.cs#2)]
+     [!code-vb[DataGrid_RowDetails#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_rowdetails/vb/mainwindow.xaml.vb#2)]  
   
-### <a name="to-display-row-details-by-using-a-resource"></a>Zobrazit podrobnosti o řádek pomocí prostředku  
+### <a name="to-display-row-details-by-using-a-resource"></a>Chcete-li zobrazit podrobnosti řádku s použitím prostředku  
   
-1.  Vytvoření <xref:System.Windows.Controls.DataGrid> , které zobrazuje data ze zdroje dat.  
+1.  Vytvoření <xref:System.Windows.Controls.DataGrid> zobrazující data z datového zdroje.  
   
-2.  Přidat <xref:System.Windows.FrameworkElement.Resources%2A> element pro kořenový element například <xref:System.Windows.Window> ovládací prvek nebo <xref:System.Windows.Controls.Page> řídit, nebo přidejte <xref:System.Windows.Application.Resources%2A> elementu, který chcete <xref:System.Windows.Application> – třída v souboru App.xaml (nebo Application.xaml).  
+2.  Přidat <xref:System.Windows.FrameworkElement.Resources%2A> element do kořenového elementu, jako <xref:System.Windows.Window> ovládací prvek nebo <xref:System.Windows.Controls.Page> ovládací prvek, nebo přidejte <xref:System.Windows.Application.Resources%2A> element <xref:System.Windows.Application> třída v souboru App.xaml (nebo Application.xaml).  
   
-3.  V elementu prostředky, vytvořte <xref:System.Windows.DataTemplate> vzhled v části Podrobnosti o řádek, který definuje.  
+3.  Vytvořte v elementu resources <xref:System.Windows.DataTemplate> , která definuje vzhled elementů v části Podrobnosti řádků.  
   
-     Následující XAML ukazuje <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> definované v <xref:System.Windows.Application> třídy.  
+     Zobrazí se následující XAML <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> definované v <xref:System.Windows.Application> třídy.  
   
-     [!code-xaml[DataGrid_RowDetails#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/app.xaml#3)]  
+     [!code-xaml[DataGrid_RowDetails#3](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/app.xaml#3)]  
   
-4.  Na <xref:System.Windows.DataTemplate>, nastavte [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md) na hodnotu, která jednoznačně identifikuje data šablony.  
+4.  Na <xref:System.Windows.DataTemplate>, nastavte [x: Key – direktiva](../../xaml-services/x-key-directive.md) na hodnotu, která jednoznačně identifikuje šablony.  
   
-5.  V <xref:System.Windows.Controls.DataGrid> , nastavena <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> vlastnost prostředku definované v předchozích krocích. Přiřadíte prostředek jako statické prostředek.  
+5.  V <xref:System.Windows.Controls.DataGrid> element, nastaven <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> vlastnost na prostředek definovaný v předchozích krocích. Přiřaďte zdroje jako statický prostředek.  
   
-     Následující XAML ukazuje <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> vlastností nastavenou na prostředek z předchozího příkladu.  
+     Zobrazí se následující XAML <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> nastavenou na prostředek z předchozího příkladu.  
   
-     [!code-xaml[DataGrid_RowDetails#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/window2.xaml#4)]  
+     [!code-xaml[DataGrid_RowDetails#4](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_rowdetails/cs/window2.xaml#4)]  
   
-### <a name="to-set-visibility-and-prevent-horizontal-scrolling-for-row-details"></a>Nastavit viditelnost a zabránit vodorovného posouvání podrobnosti řádek  
+### <a name="to-set-visibility-and-prevent-horizontal-scrolling-for-row-details"></a>Pokud chcete nastavit viditelnost a zabránit vodorovného posouvání pro podrobnosti řádku  
   
-1.  V případě potřeby nastavte <xref:System.Windows.Controls.DataGrid.RowDetailsVisibilityMode%2A> vlastnosti <xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode> hodnotu.  
+1.  V případě potřeby nastavte <xref:System.Windows.Controls.DataGrid.RowDetailsVisibilityMode%2A> vlastnost <xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode> hodnotu.  
   
-     Ve výchozím nastavení, je hodnota nastavena <xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode.VisibleWhenSelected>. Můžete nastavit na <xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode.Visible> a zobrazit podrobnosti pro všechny řádky nebo <xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode.Collapsed> skrýt podrobnosti pro všechny řádky.  
+     Ve výchozím nastavení, je hodnota nastavena <xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode.VisibleWhenSelected>. Můžete nastavit na <xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode.Visible> zobrazte podrobnosti pro všechny řádky nebo <xref:System.Windows.Controls.DataGridRowDetailsVisibilityMode.Collapsed> skrýt podrobnosti pro všechny řádky.  
   
-2.  V případě potřeby nastavte <xref:System.Windows.Controls.DataGrid.AreRowDetailsFrozen%2A> vlastnost `true` zabránit řádek podrobnosti části posouvání vodorovně.
+2.  V případě potřeby nastavte <xref:System.Windows.Controls.DataGrid.AreRowDetailsFrozen%2A> vlastnost `true` zabránit řádku podrobnosti v části posouvání vodorovně.

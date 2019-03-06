@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - 3-D graphics [WPF]
 ms.assetid: 4bcf949d-d92f-4d8d-8a9b-1e4c61b25bf6
-ms.openlocfilehash: aab9759bcadd52c0af03034cc18512ced01046ce
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 48e8310e003dcd3ebca579654b81363efaac9068
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54508652"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57364005"
 ---
 # <a name="maximize-wpf-3d-performance"></a>Maximalizace výkonu WPF 3D
 Jaké používáte [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vytváření 3D ovládací prvky a zahrnout 3D scény ve svých aplikacích, je důležité vzít v úvahu optimalizace výkonu. Toto téma obsahuje seznam 3D třídy a vlastnosti, které mají vliv na výkon pro aplikace, včetně doporučení pro optimalizaci výkonu při jejich použití.  
   
- Toto téma předpokládá, že znáte [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 3D funkcí. Návrhy v tomto dokumentu platí pro "vykreslování vrstvy 2" – zhruba definován jako hardwaru, který podporuje pixel shader verze 2.0 a vertex shader verze 2.0. Další podrobnosti najdete v tématu [vrstvy vykreslování grafiky](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md).  
+ Toto téma předpokládá, že znáte [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 3D funkcí. Návrhy v tomto dokumentu platí pro "vykreslování vrstvy 2" – zhruba definován jako hardwaru, který podporuje pixel shader verze 2.0 a vertex shader verze 2.0. Další podrobnosti najdete v tématu [vrstvy vykreslování grafiky](../advanced/graphics-rendering-tiers.md).  
   
 ## <a name="performance-impact-high"></a>Dopad na výkon: Vysoká  
   
@@ -60,4 +60,4 @@ Jaké používáte [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla
 |<xref:System.Windows.Media.Media3D.MeshGeometry3D>|Chcete-li minimalizovat čas vytváření rozsáhlých kolekcí v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], jako je například MeshGeometry3D <xref:System.Windows.Media.Media3D.MeshGeometry3D.Positions%2A>, <xref:System.Windows.Media.Media3D.MeshGeometry3D.Normals%2A>, <xref:System.Windows.Media.Media3D.MeshGeometry3D.TextureCoordinates%2A>, a <xref:System.Windows.Media.Media3D.MeshGeometry3D.TriangleIndices%2A>, předem velikost kolekce před hodnotu základního souboru. Pokud je to možné předejte kolekce konstruktory předem vyplněná datové struktury, například pole nebo seznamy.|  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled 3D grafiky](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-overview.md)
+- [Přehled 3D grafiky](3-d-graphics-overview.md)

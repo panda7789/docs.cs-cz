@@ -9,12 +9,12 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: acd9a6ef-b7ca-4146-abb6-60f3b366e9ec
-ms.openlocfilehash: 25f5fb254ec6f952d7cafa2cb893e35daa0e9029
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 432df80fca58311d1c0931d9ba3b224fc9e271ff
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54573933"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57375386"
 ---
 # <a name="mcignorable-attribute"></a>mc:Ignorable – atribut
 Určuje, které [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] předpony oboru názvů v souboru označení může ignorovat. [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru. `mc:Ignorable` Atribut podporuje kompatibility značek pro vlastní obor názvů mapování a pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] správy verzí.  
@@ -59,7 +59,7 @@ Určuje, které [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md
   
  Při implementaci [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru, procesoru implementace nesmí vyvolat analýzu a zpracování chyb v rozlišení typů pro libovolný element nebo atribut, který je kvalifikována předponu, která je označena jako `mc:Ignorable`. Ale implementace procesoru stále může vyvolat výjimky, které jsou výsledkem sekundární nedaří načíst nebo zpracovat, jako je například dříve uvedeného příkladu jeden podřízený element elementu.  
   
- Ve výchozím nastavení [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor bude ignorovat obsah v rámci elementu ignorované. Můžete však zadat atribut Další [MC: processcontent – atribut](../../../../docs/framework/wpf/advanced/mc-processcontent-attribute.md), trvalé zpracování obsahu v rámci elementu ignorované podle dalšího k dispozici nadřazený element.  
+ Ve výchozím nastavení [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor bude ignorovat obsah v rámci elementu ignorované. Můžete však zadat atribut Další [MC: processcontent – atribut](mc-processcontent-attribute.md), trvalé zpracování obsahu v rámci elementu ignorované podle dalšího k dispozici nadřazený element.  
   
  Dá se zadat více předpony v atribut, pomocí jednoho nebo více prázdných znaků jako oddělovač, například: `mc:Ignorable="ignore1 ignore2"`.  
 
@@ -67,6 +67,6 @@ Určuje, které [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Markup.XamlReader>
-- [PresentationOptions:Freeze – atribut](../../../../docs/framework/wpf/advanced/presentationoptions-freeze-attribute.md)
-- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [PresentationOptions:Freeze – atribut](presentationoptions-freeze-attribute.md)
+- [Přehled XAML (WPF)](xaml-overview-wpf.md)
+- [Dokumenty v platformě WPF](documents-in-wpf.md)

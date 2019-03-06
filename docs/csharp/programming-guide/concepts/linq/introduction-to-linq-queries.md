@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LINQ, deferred execution
 - queries [LINQ], about LINQ queries
 ms.assetid: 37895c02-268c-41d5-be39-f7d936fa88a8
-ms.openlocfilehash: 2202641d56a151de2eebe08d4c100c37fb399e5d
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 7984d684987ef8acb172e8339f120c410f4885f3
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201661"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57362081"
 ---
 # <a name="introduction-to-linq-queries-c"></a>Úvod do dotazů LINQ (C#)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializovaném dotazovacím jazyce. Různé jazyky byly vyvinuty v průběhu času pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. Proto vývojáři měli získat nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který musí podporovat. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Tuto situaci zjednodušuje tím, že nabízí konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, které jsou vždy práce s objekty. Použijte stejné základní vzorce kódování pro dotazování a transformaci dat v dokumentech XML, databázích SQL [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datové sady, kolekcích .NET a jakémkoli jiném formátu, pro kterou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele je k dispozici.  
@@ -58,7 +58,7 @@ IQueryable<Customer> custQuery =
 > [!NOTE]
 >  Typy, jako <xref:System.Collections.ArrayList> podporující neobecné <xref:System.Collections.IEnumerable> rozhraní může také sloužit jako [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdroj. Další informace najdete v tématu [jak: Vytvoření dotazu na ArrayList pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).  
   
-##  <a name="query"></a> Dotaz  
+## <a name="query"></a> Dotaz  
  Dotaz Určuje, jaké informace se mají načíst z datového zdroje nebo zdrojů. V případě potřeby dotaz také určuje, jak tyto informace by měl být seřazeny, seskupeny a tvarovány dříve, než se vrátí. Dotaz je uložen v proměnné dotazu a inicializován pomocí výrazu dotazu. Chcete-li usnadnit psaní dotazů, jazyk C# zavedl novou syntaxi dotazu.  
   
  Dotaz v předchozím příkladu vrátí všechna sudá čísla z pole celých čísel. Výraz dotazu obsahuje tři věty: `from`, `where` a `select`. (Pokud jste obeznámeni s SQL, všimnete si, že pořadí klauzulí je obrácené pořadí, v SQL.) `from` Klauzule určuje zdroje dat `where` klauzule aplikuje filtr a `select` klauzule určuje typ vrácených prvků. Tyto a další klauzule dotazu jsou podrobně popsány v [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md) oddílu. Prozatím je důležité, že v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], proměnná dotazu sama neprovede žádnou akci a nevrátí žádná data. Ukládá pouze informace potřebné k vytvoření výsledku při spuštění dotazu někdy později. Další informace o tom, jak jsou dotazy konstruovány na pozadí, naleznete v tématu [přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md).  

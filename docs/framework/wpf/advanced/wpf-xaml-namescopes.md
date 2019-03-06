@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML [WPF], namescopes
 - classes [WPF], FrameworkContentElement
 ms.assetid: 52bbf4f2-15fc-40d4-837b-bb4c21ead7d4
-ms.openlocfilehash: 52fc542996f2fe691b62aeff5296e045643fcc7f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f5a49198d6f55c9a3aa3c7557a96ab791d54351b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54498343"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57366748"
 ---
 # <a name="wpf-xaml-namescopes"></a>Obory názvů WPF XAML
 Obory názvů XAML jsou pojem, který identifikuje objekty, které jsou definovány v XAML. Názvy v XAML namescope lze použít k vytvoření relace mezi XAML definované názvy objektů a jejich ekvivalenty instance ve stromu objektů. Obvykle XAML obory názvů v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] spravovaného kódu jsou vytvořeny při načítání jednotlivých stránek XAML kořeny pro aplikace XAML. Obory názvů XAML jako programovací objekty jsou definovány <xref:System.Windows.Markup.INameScope> rozhraní a jsou také implementováno třídou praktické <xref:System.Windows.NameScope>.  
@@ -36,7 +36,7 @@ Obory názvů XAML jsou pojem, který identifikuje objekty, které jsou definov�
 ### <a name="adding-objects-to-runtime-object-trees"></a>Přidání objektů do objektu modulu Runtime stromů  
  V okamžiku, který je analyzovány XAML představuje okamžik v čase, který je vytvořen a definovaný obor namescope WPF XAML. Pokud chcete přidat objekt stromu objektů v bodě v čase po XAML, který vytvořil stromu byl analyzován, `Name` nebo `x:Name` hodnotu na nový objekt se neaktualizuje automaticky informace v XAML namescope. Chcete-li přidat název pro objekt do WPF XAML namescope po načtení XAML, musí volat odpovídající provádění <xref:System.Windows.Markup.INameScope.RegisterName%2A> na objekt, který definuje obor namescope XAML, který je obvykle kořenové stránky XAML. Pokud název není zaregistrovaný, přidání objektu nelze odkazovat podle názvu prostřednictvím metod, jako <xref:System.Windows.FrameworkElement.FindName%2A>, a nemůžete použít tento název pro cílení na animace.  
   
- Nejběžnější scénář pro vývojáře aplikací je, že použijete <xref:System.Windows.FrameworkElement.RegisterName%2A> k registraci názvů do namescope XAML v kořenovém adresáři aktuální stránky. <xref:System.Windows.FrameworkElement.RegisterName%2A> je součástí scénáře důležité pro scénáře této cílové objektů pro animace. Další informace najdete v tématu [přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).  
+ Nejběžnější scénář pro vývojáře aplikací je, že použijete <xref:System.Windows.FrameworkElement.RegisterName%2A> k registraci názvů do namescope XAML v kořenovém adresáři aktuální stránky. <xref:System.Windows.FrameworkElement.RegisterName%2A> je součástí scénáře důležité pro scénáře této cílové objektů pro animace. Další informace najdete v tématu [přehled scénářů](../graphics-multimedia/storyboards-overview.md).  
   
  Při volání <xref:System.Windows.FrameworkElement.RegisterName%2A> u objektu jiného než objekt, který definuje obor namescope XAML, název je stále zaregistrovaná namescope XAML, volání objektů uložených v rámci, jako by měly volat <xref:System.Windows.FrameworkElement.RegisterName%2A> na XAML namescope definice objektu.  
   
@@ -49,7 +49,7 @@ Obory názvů XAML jsou pojem, který identifikuje objekty, které jsou definov�
   
  Pokud je objekt zadán jako `dependencyObject` pro <xref:System.Windows.NameScope.SetNameScope%2A> není <xref:System.Windows.Markup.INameScope> implementaci <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>, volání <xref:System.Windows.FrameworkElement.RegisterName%2A> na všech podřízených elementů nebude mít žádný efekt. Pokud chcete vytvořit nový obor namescope XAML explicitně, pak zavolá do <xref:System.Windows.FrameworkElement.RegisterName%2A> vyvolá výjimku.  
   
- Příklad použití XAML namescope rozhraní API v kódu, naleznete v tématu [definování rozsahu názvů](../../../../docs/framework/wpf/graphics-multimedia/how-to-define-a-name-scope.md).  
+ Příklad použití XAML namescope rozhraní API v kódu, naleznete v tématu [definování rozsahu názvů](../graphics-multimedia/how-to-define-a-name-scope.md).  
   
 <a name="Namescopes_in_Styles_and_Templates"></a>   
 ## <a name="xaml-namescopes-in-styles-and-templates"></a>Obory názvů XAML v styly a šablony  
@@ -57,7 +57,7 @@ Obory názvů XAML jsou pojem, který identifikuje objekty, které jsou definov�
   
  Vezměte v úvahu v následujícím příkladu:  
   
- [!code-xaml[XamlOvwSupport#NameScopeTemplates](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page6.xaml#namescopetemplates)]  
+ [!code-xaml[XamlOvwSupport#NameScopeTemplates](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page6.xaml#namescopetemplates)]  
   
  Stejné šablony se tady platí pro dvě různá tlačítka. Pokud šablony neměla samostatné obory názvů XAML `TheBorder` název použitý v šabloně by způsobila kolizi názvů v XAML namescope. Každá instance šablona má svůj vlastní obor namescope XAML, takže v tomto příkladu každá instance šablona XAML namescope by obsahovat přesně jeden název.  
   
@@ -97,5 +97,5 @@ Obory názvů XAML jsou pojem, který identifikuje objekty, které jsou definov�
 -   <xref:System.Windows.FrameworkContentElement>  
   
 ## <a name="see-also"></a>Viz také:
-- [Obory názvů XAML a mapování oboru názvů pro WPF XAML](../../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)
-- [x:Name – direktiva](../../../../docs/framework/xaml-services/x-name-directive.md)
+- [Obory názvů XAML a mapování oboru názvů pro WPF XAML](xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)
+- [x:Name – direktiva](../../xaml-services/x-name-directive.md)

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - adorners [WPF], about adorners
 ms.assetid: 33d4c5c2-2daf-4e45-ba9a-5b673e2b8280
-ms.openlocfilehash: c9ac784223a76d7bf10a888617c0d3d25c916c10
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9c9d77c9771fd8759530267bd38cb7c0bb59598c
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54702965"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57357939"
 ---
 # <a name="adorners-overview"></a>Přehled doplňků
 Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement>, která slouží k poskytování vizuální upozornění na uživatele. Mimo jiné účely je možné přidat funkční zpracovává na prvky nebo poskytují informace o ovládací prvek stavu doplňků pro úpravy.  
@@ -50,12 +50,12 @@ Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement
   
  Následující příklad ukazuje třídu, která implementuje jednoduchou doplněk pro úpravy. Doplněk pro úpravy příklad jednoduše adorns rohů <xref:System.Windows.UIElement> s kruzích.  
   
- [!code-csharp[Adorners_SimpleCircleAdorner#_SimpleCircleAdornerBody](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_simplecircleadornerbody)]
- [!code-vb[Adorners_SimpleCircleAdorner#_SimpleCircleAdornerBody](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_simplecircleadornerbody)]  
+ [!code-csharp[Adorners_SimpleCircleAdorner#_SimpleCircleAdornerBody](~/samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_simplecircleadornerbody)]
+ [!code-vb[Adorners_SimpleCircleAdorner#_SimpleCircleAdornerBody](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_simplecircleadornerbody)]  
   
  Následující obrázek ukazuje SimpleCircleAdorner u <xref:System.Windows.Controls.TextBox>.  
   
- ![Příklad doplňků pro úpravy: S textového pole](../../../../docs/framework/wpf/controls/media/adornedtextbox.png "AdornedTextBox")  
+ ![Příklad doplňků pro úpravy: S textového pole](./media/adornedtextbox.png "AdornedTextBox")  
   
 <a name="rendering_behavior_for_Adorners"></a>   
 ## <a name="rendering-behavior-for-adorners"></a>Chování vykreslování pro doplňky pro úpravy  
@@ -70,7 +70,7 @@ Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement
   
  Pokud chcete povolit předávací přístupů testování prvků pro úpravy, nastavte průchodů testů <xref:System.Windows.UIElement.IsHitTestVisible%2A> vlastnost **false** na doplněk pro úpravy.  Další informace o přístupů testování najdete v tématu  
   
- [Ověřování pozice ve vizuální vrstvě](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md).  
+ [Ověřování pozice ve vizuální vrstvě](../graphics-multimedia/hit-testing-in-the-visual-layer.md).  
   
 <a name="adorn_single_element"></a>   
 ## <a name="adorning-a-single-uielement"></a>Adorning jednoho elementu UIElement  
@@ -82,8 +82,8 @@ Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement
   
  Následující příklad vytvoří vazbu SimpleCircleAdorner (popsaný výš) k <xref:System.Windows.Controls.TextBox> s názvem *hodnotu myTextBox*.  
   
- [!code-csharp[Adorners_SimpleCircleAdorner#_AdornSingleElement](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_adornsingleelement)]
- [!code-vb[Adorners_SimpleCircleAdorner#_AdornSingleElement](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_adornsingleelement)]  
+ [!code-csharp[Adorners_SimpleCircleAdorner#_AdornSingleElement](~/samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_adornsingleelement)]
+ [!code-vb[Adorners_SimpleCircleAdorner#_AdornSingleElement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_adornsingleelement)]  
   
 > [!NOTE]
 >  Pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] pro vazbu na jiný prvek pro úpravy v tuto chvíli nepodporuje.  
@@ -98,12 +98,12 @@ Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement
   
  Následující příklad vytvoří vazbu SimpleCircleAdorner (popsaný výš) do podřízených položek <xref:System.Windows.Controls.StackPanel> s názvem *myStackPanel*.  
   
- [!code-csharp[Adorners_SimpleCircleAdorner#_AdornChildren](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_adornchildren)]
- [!code-vb[Adorners_SimpleCircleAdorner#_AdornChildren](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_adornchildren)]  
+ [!code-csharp[Adorners_SimpleCircleAdorner#_AdornChildren](~/samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_adornchildren)]
+ [!code-vb[Adorners_SimpleCircleAdorner#_AdornChildren](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_adornchildren)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Media.AdornerHitTestResult>
-- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
-- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
-- [Přehled nakreslených objektů](../../../../docs/framework/wpf/graphics-multimedia/drawing-objects-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/controls/adorners-how-to-topics.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](../graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](../graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+- [Přehled nakreslených objektů](../graphics-multimedia/drawing-objects-overview.md)
+- [Témata s postupy](adorners-how-to-topics.md)

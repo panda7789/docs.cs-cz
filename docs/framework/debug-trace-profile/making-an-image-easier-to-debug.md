@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 7d90ea7a-150f-4f97-98a7-f9c26541b9a3
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7f25eaaa17d4c4bd2e9522591bb0fd66445cdb6f
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 5bab707afb059d4fcbd46a9ee54edead991be523
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036023"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57362007"
 ---
 # <a name="making-an-image-easier-to-debug-in-net"></a>Usnadnění ladění v rozhraní .NET bitovou kopii
 
@@ -34,7 +34,7 @@ V některých případech bude zapotřebí změnit chování kompilátoru JIT ta
 
 Například, pokud sestavení, který chcete ladit nazývá *MyApp.exe*, můžete vytvořit textový soubor s názvem *MyApp.ini*, ve stejné složce jako *MyApp.exe*, které obsahuje Tyto tři řádky:
 
-```txt
+```ini
 [.NET Framework Debugging Control]
 GenerateTrackingInfo=1
 AllowOptimize=0
@@ -44,14 +44,15 @@ Hodnotu každé možnosti lze nastavit na 0 nebo 1 a chybějící možnost bude 
 
 Od verze rozhraní .NET Framework verze 2.0, kompilátor JIT vždy generovat informace o sledování bez ohledu na hodnotu pro `GenerateTrackingInfo`, nicméně `AllowOptimize` hodnota stále má vliv. Při použití [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) předkompilování nativní bitové kopie bez optimalizace, musí být k dispozici v cílové složce s souboru INI `AllowOptimize=0` při Ngen.exe spustí. Pokud máte předkompilovaných sestavení bez optimalizace, je nutné odebrat předkompilovaný kód pomocí NGen.exe **/ uninstall** možnost před opětovným spuštěním Ngen.exe předkompilování kódu jako optimalizovaného. Pokud není k dispozici ve složce soubor .ini, Ngen.exe předkompilování kódu jako optimalizovaného.
 
-<xref:System.Diagnostics.DebuggableAttribute?displayProperty=nameWithType> určuje nastavení sestavení. **DebuggableAttribute** obsahuje dvě pole určující, zda kompilátor JIT by měl optimalizaci a/nebo generovat informace o sledování. Od verze rozhraní .NET Framework verze 2.0, kompilátor JIT vždy generovat informace o sledování.
+
+  <xref:System.Diagnostics.DebuggableAttribute?displayProperty=nameWithType> určuje nastavení sestavení. **DebuggableAttribute** obsahuje dvě pole určující, zda kompilátor JIT by měl optimalizaci a/nebo generovat informace o sledování. Od verze rozhraní .NET Framework verze 2.0, kompilátor JIT vždy generovat informace o sledování.
 
 Pro sestavení prodejní verze, kompilátory nemají nastavený žádný **DebuggableAttribute**. Ve výchozím nastavení vygeneruje kompilátor JIT nejvyšší výkon s nejtěžší možností ladění strojového kódu. Povolením JIT sledování se snižuje výkon a vypnutím optimalizace se výkon razantně snižuje.
 
 **DebuggableAttribute** se vztahuje na celé sestavení najednou, nikoli na jednotlivé moduly v rámci sestavení. Nástroje pro vývoj proto musí připojit vlastní atributy k tokenu metadat sestavení, pokud sestavení má již byl vytvořen, nebo ke třídě s názvem **System.Runtime.CompilerServices.AssemblyAttributesGoHere**. Nástroj ALink následně podporuje tyto **DebuggableAttribute** atributy z každého modulu na sestavení stanou součástí. Pokud dojde ke konfliktu, operace nástroje ALink se nezdaří.
 
 > [!NOTE]
-> V rozhraní .NET Framework verze 1.0, přidá kompilátor jazyka Microsoft Visual C++ **DebuggableAttribute** při **/CLR** a **/zi** jsou zadány možnosti kompilátoru. Ve verzi 1.1 rozhraní .NET Framework, musíte buď přidat **DebugabbleAttribute** ručně v kódu nebo použití **/assemblydebug** – možnost linkeru.
+> V rozhraní .NET Framework verze 1.0, přidá kompilátor jazyka Microsoft Visual C++ **DebuggableAttribute** při **/CLR** a **/zi** jsou zadány možnosti kompilátoru. Ve verzi 1.1 rozhraní .NET Framework, musíte buď přidat **DebuggableAttribute** ručně v kódu nebo použití **/assemblydebug** – možnost linkeru.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -24,12 +24,12 @@ helpviewer_keywords:
 - startup events [WPF]
 - lifetime events of objects [WPF]
 ms.assetid: face6fc7-465b-4502-bfe5-e88d2e729a78
-ms.openlocfilehash: 8b42104522be854fe4e49d08e110497469d64980
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b5f38492fff9aa87094542b174becc54ee324a78
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54555359"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371486"
 ---
 # <a name="object-lifetime-events"></a>Události doby života objektu
 Toto téma popisuje konkrétní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] události, které místo fází v doba života objektu vytvoření, použití a zničení.  
@@ -38,7 +38,7 @@ Toto téma popisuje konkrétní [!INCLUDE[TLA2#tla_winclient](../../../../includ
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Toto téma předpokládá, že rozumíte vlastnosti závislosti z pohledu příjemce vlastnosti existujícího závislosti na [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] třídy a čtení [přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md) tématu. Pokud chcete postupovat podle příkladů v tomto tématu, měli byste také znát [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] (naleznete v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)) a vědět, jak psát [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
+ Toto téma předpokládá, že rozumíte vlastnosti závislosti z pohledu příjemce vlastnosti existujícího závislosti na [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] třídy a čtení [přehled vlastností závislosti](dependency-properties-overview.md) tématu. Pokud chcete postupovat podle příkladů v tomto tématu, měli byste také znát [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] (naleznete v tématu [přehled XAML (WPF)](xaml-overview-wpf.md)) a vědět, jak psát [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
   
 <a name="intro"></a>   
 ## <a name="object-lifetime-events"></a>Události doby života objektu  
@@ -61,19 +61,19 @@ Toto téma popisuje konkrétní [!INCLUDE[TLA2#tla_winclient](../../../../includ
 > [!NOTE]
 >  Toto chování může vypadat na první pohled tunelové propojení pro směrovanou událost. Však žádné informace o provádění události z události. Každý prvek má vždy zpracovat jeho <xref:System.Windows.FrameworkElement.Loaded> událostí a označování dat události jako zpracované nemá žádný vliv nad rámec tohoto prvku.  
   
-### <a name="unloaded"></a>Není načten  
+### <a name="unloaded"></a>uvolněné  
  <xref:System.Windows.FrameworkElement.Unloaded> je vyvolána jako poslední a inicializuje zdroji prezentace nebo vizuální nadřazený odebírá. Když <xref:System.Windows.FrameworkElement.Unloaded> se vyvolá a zpracovat elementu, který je nadřazený zdroj událostí (počítáno od <xref:System.Windows.FrameworkElement.Parent%2A> vlastnost) nebo libovolný daný prvek nahoru v stromů logické nebo visual již bylo zrušeno nastavení, což znamená, že vazba dat, odkazy na prostředky , a styly nemůže být nastavený na jejich normální nebo poslední známé hodnota doby běhu.  
   
 <a name="application_model_elements"></a>   
 ## <a name="lifetime-events-application-model-elements"></a>Prvky modelu aplikace události životního cyklu  
  Stavíme na běžné události doby života pro prvky jsou prvky modelu následující aplikace: <xref:System.Windows.Application>, <xref:System.Windows.Window>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Navigation.NavigationWindow>, a <xref:System.Windows.Controls.Frame>. Toto rozšíření běžné události doby života s další události, které jsou relevantní pro jejich konkrétní účel. Ty jsou podrobně popsány v následujících umístěních:  
   
--   <xref:System.Windows.Application>: [Přehled správy aplikací](../../../../docs/framework/wpf/app-development/application-management-overview.md).  
+-   <xref:System.Windows.Application>: [Přehled správy aplikací](../app-development/application-management-overview.md).  
   
--   <xref:System.Windows.Window>: [Přehled WPF Windows](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md).  
+-   <xref:System.Windows.Window>: [Přehled WPF Windows](../app-development/wpf-windows-overview.md).  
   
--   <xref:System.Windows.Controls.Page>, <xref:System.Windows.Navigation.NavigationWindow>, a <xref:System.Windows.Controls.Frame>: [Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md).  
+-   <xref:System.Windows.Controls.Page>, <xref:System.Windows.Navigation.NavigationWindow>, a <xref:System.Windows.Controls.Frame>: [Přehled navigace](../app-development/navigation-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Priorita hodnot vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-value-precedence.md)
-- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+- [Priorita hodnot vlastností závislosti](dependency-property-value-precedence.md)
+- [Přehled směrovaných událostí](routed-events-overview.md)

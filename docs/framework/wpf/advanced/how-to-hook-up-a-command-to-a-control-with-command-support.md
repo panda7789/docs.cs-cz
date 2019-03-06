@@ -10,12 +10,12 @@ helpviewer_keywords:
 - RoutedCommand class [WPF], attaching to a Control
 - classes [WPF], RoutedCommand [WPF], attaching to a Control
 ms.assetid: 8d8592ae-0c91-469e-a1cd-d179c4544548
-ms.openlocfilehash: 4eded4812d8894b58331f26ec75c592c15e95419
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2bb3e00cad1a629a405fa75ef32a289c4006f324
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54663203"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57364434"
 ---
 # <a name="how-to-hook-up-a-command-to-a-control-with-command-support"></a>Postupy: Připojení příkazu k ovládacímu prvku pomocí podpory příkazů
 Následující příklad ukazuje, jak k připojení <xref:System.Windows.Input.RoutedCommand> k <xref:System.Windows.Controls.Control> které má integrované v podpoře pro příkaz.  Kompletní příklad, který zachytí příkazy do více zdrojů, najdete v článku [vytvořením ukázkového routedcommand – vlastní](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand) vzorku.  
@@ -31,11 +31,11 @@ Následující příklad ukazuje, jak k připojení <xref:System.Windows.Input.R
   
  A <xref:System.Windows.Controls.MenuItem> se vytvoří a je <xref:System.Windows.Controls.MenuItem.Command%2A> je nastavena na <xref:System.Windows.Input.ApplicationCommands.Paste%2A> příkazu.  <xref:System.Windows.Controls.MenuItem.CommandTarget%2A> Není explicitně nastavena na hodnotu <xref:System.Windows.Controls.TextBox> objektu.  Když <xref:System.Windows.Controls.MenuItem.CommandTarget%2A> není nastavena, cíl pro příkaz je element, který má fokus klávesnice.  Pokud se nepodporuje element, který má klávesnice fokus <xref:System.Windows.Input.ApplicationCommands.Paste%2A> příkaz % $n nebo nelze aktuálně provést příkaz Vložit (schránky je prázdný, například) pak bude <xref:System.Windows.Controls.MenuItem> by být zobrazena šedě.  
   
- [!code-xaml[MenuItemCommandTask_XAML#MenuItemCommanding](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MenuItemCommandTask_XAML/CS/Window1.xaml#menuitemcommanding)]  
+ [!code-xaml[MenuItemCommandTask_XAML#MenuItemCommanding](~/samples/snippets/csharp/VS_Snippets_Wpf/MenuItemCommandTask_XAML/CS/Window1.xaml#menuitemcommanding)]  
   
- [!code-csharp[MenuItemCommandTask#MenuItemCommandingCodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MenuItemCommandTask/CSharp/Window1.xaml.cs#menuitemcommandingcodebehind)]
- [!code-vb[MenuItemCommandTask#MenuItemCommandingCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/MenuItemCommandTask/VisualBasic/Window1.xaml.vb#menuitemcommandingcodebehind)]  
+ [!code-csharp[MenuItemCommandTask#MenuItemCommandingCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/MenuItemCommandTask/CSharp/Window1.xaml.cs#menuitemcommandingcodebehind)]
+ [!code-vb[MenuItemCommandTask#MenuItemCommandingCodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MenuItemCommandTask/VisualBasic/Window1.xaml.vb#menuitemcommandingcodebehind)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)
-- [Propojení příkazu s ovládacím prvkem bez podpory příkazů](../../../../docs/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-no-command-support.md)
+- [Přehled příkazů](commanding-overview.md)
+- [Propojení příkazu s ovládacím prvkem bez podpory příkazů](how-to-hook-up-a-command-to-a-control-with-no-command-support.md)

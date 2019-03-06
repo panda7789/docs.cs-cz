@@ -7,24 +7,24 @@ helpviewer_keywords:
 - Grid control [WPF], how-to topics
 - controls [WPF], Grid
 ms.assetid: 90e07c2d-237f-47b4-a632-771570b77fd0
-ms.openlocfilehash: ec9ee608b939c10db295c7b6c37442ef6085f194
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a9ef840d98a6c7aa5db841dd0ff860e2fb1d044a
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33550362"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377674"
 ---
 # <a name="grid-how-to-topics"></a>Postupy: Témata mřížky
-Témata v této části popisují, jak na pozici elementů pomocí <xref:System.Windows.Controls.Grid> elementu.  
+Témata v této části popisují, jak umístění pomocí elementů <xref:System.Windows.Controls.Grid> elementu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Sestavení standardního dialogového okna uživatelského rozhraní pomocí mřížky](../../../../docs/framework/wpf/controls/how-to-build-a-standard-ui-dialog-box-by-using-grid.md)  
- [Vytvoření komplexní mřížky](../../../../docs/framework/wpf/controls/how-to-create-a-complex-grid.md)  
- [Vytvoření elementu mřížky](../../../../docs/framework/wpf/controls/how-to-create-a-grid-element.md)  
- [Vytvoření a použití objektu GridLengthConverter](../../../../docs/framework/wpf/controls/how-to-create-and-use-a-gridlengthconverter-object.md)  
- [Práce se sloupci a řádky pomocí objektů ColumnDefinitionsCollections a RowDefinitionsCollections](../../../../docs/framework/wpf/controls/manipulate-columns-and-rows-by-using-columndefinitionscollections.md)  
- [Umístění podřízených elementů mřížky](../../../../docs/framework/wpf/controls/how-to-position-the-child-elements-of-a-grid.md)  
- [Sdílení vlastností změny velikosti mezi mřížkami](../../../../docs/framework/wpf/controls/how-to-share-sizing-properties-between-grids.md)  
+ [Sestavení standardního dialogového okna uživatelského rozhraní pomocí mřížky](how-to-build-a-standard-ui-dialog-box-by-using-grid.md)  
+ [Vytvoření komplexní mřížky](how-to-create-a-complex-grid.md)  
+ [Vytvoření elementu mřížky](how-to-create-a-grid-element.md)  
+ [Vytvoření a použití objektu GridLengthConverter](how-to-create-and-use-a-gridlengthconverter-object.md)  
+ [Práce se sloupci a řádky pomocí objektů ColumnDefinitionsCollections a RowDefinitionsCollections](manipulate-columns-and-rows-by-using-columndefinitionscollections.md)  
+ [Umístění podřízených elementů mřížky](how-to-position-the-child-elements-of-a-grid.md)  
+ [Sdílení vlastností změny velikosti mezi mřížkami](how-to-share-sizing-properties-between-grids.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Panel>  
@@ -42,8 +42,8 @@ Témata v této části popisují, jak na pozici elementů pomocí <xref:System.
  <xref:System.Windows.Controls.WrapPanel>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)  
+ [Rozložení](../advanced/layout.md)  
   
- [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [ScrollViewer – přehled](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [ScrollViewer – přehled](scrollviewer-overview.md)

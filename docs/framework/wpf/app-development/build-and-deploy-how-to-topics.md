@@ -7,28 +7,28 @@ helpviewer_keywords:
 - WPF application [WPF], building
 - WPF application [WPF], deploying
 ms.assetid: 88952ad2-5b74-48ca-a4c5-3f4fbb53ce12
-ms.openlocfilehash: 75e1a92e683da5260718febf2a248e45496b64bf
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 4aaeeed4ff6a130c6d3ddda696286222d7c9efaf
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746938"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57374788"
 ---
 # <a name="build-and-deploy-how-to-topics"></a>Postupy: Témata sestavení a nasazení
 Následující témata ukazují, jak vytvořit soubory projektu pro různé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typy aplikací.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Konfigurace služeb IIS 5.0 a IIS 6.0 pro nasazení aplikací WPF](../../../../docs/framework/wpf/app-development/how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md)  
- [Konfigurace sady Visual Studio pro ladění aplikace Prohlížeče XAML za účelem volání webové služby](../../../../docs/framework/wpf/app-development/configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)  
- [Určení nainstalované verze WPF](../../../../docs/framework/wpf/app-development/how-to-determine-the-installed-version-of-wpf.md)  
- [Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)  
- [Zjištění, jestli je nainstalovaná platforma .NET Framework 3.5](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-5-is-installed.md)  
- [Zjištění, jestli je instalovaný modulu plugin WPF pro Firefox](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed.md)  
+ [Konfigurace služeb IIS 5.0 a IIS 6.0 pro nasazení aplikací WPF](how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md)  
+ [Konfigurace sady Visual Studio pro ladění aplikace Prohlížeče XAML za účelem volání webové služby](configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)  
+ [Určení nainstalované verze WPF](how-to-determine-the-installed-version-of-wpf.md)  
+ [Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0](how-to-detect-whether-the-net-framework-3-0-is-installed.md)  
+ [Zjištění, jestli je nainstalovaná platforma .NET Framework 3.5](how-to-detect-whether-the-net-framework-3-5-is-installed.md)  
+ [Zjištění, jestli je instalovaný modulu plugin WPF pro Firefox](how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
+ [Sestavení aplikace WPF](building-a-wpf-application-wpf.md)  
   
- [Nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)  
+ [Nasazení aplikace WPF](deploying-a-wpf-application-wpf.md)  
   
  [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   

@@ -6,19 +6,19 @@ helpviewer_keywords:
 - documents [WPF], annotations
 - sticky notes [WPF]
 ms.assetid: 232ad0d7-2264-4bed-aae3-10dfde116a9c
-ms.openlocfilehash: 7696781ec8f77a670f7e2133466bc8068ba18203
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2c7b6d68d558125cdd5887485c72359f1fe3ceb5
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33537200"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373592"
 ---
 # <a name="annotations"></a>Poznámky
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] obsahuje zobrazení ovládacích prvků, které podporují obsah dokumentu zadávání poznámek k dokumentu.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] obsahuje zobrazení ovládacích prvků, které podporují zadávání poznámek k dokumentu obsah dokumentu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled poznámek](../../../../docs/framework/wpf/advanced/annotations-overview.md)  
-  [Schéma poznámek](../../../../docs/framework/wpf/advanced/annotations-schema.md)  
+ [Přehled poznámek](annotations-overview.md)  
+  [Schéma poznámek](annotations-schema.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Annotations.Annotation>  
@@ -26,5 +26,5 @@ ms.locfileid: "33537200"
   <xref:System.Windows.Controls.DocumentViewer>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
-  [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
+ [Dokumenty v platformě WPF](documents-in-wpf.md)  
+  [Přehled toku dokumentů](flow-document-overview.md)

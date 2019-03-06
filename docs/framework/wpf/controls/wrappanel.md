@@ -8,15 +8,15 @@ helpviewer_keywords:
 - WrapPanel control [WPF]
 - content [WPF], sequentially positioning
 ms.assetid: f0acb1b4-df71-4c5a-b4a4-98f189002537
-ms.openlocfilehash: a8072a90984e5b9b926ab28d7f0239a71b754b73
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 530c41938ae4abb893fd91d64804c7aaa2d430b5
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33554025"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57362146"
 ---
 # <a name="wrappanel"></a>WrapPanel
-<xref:System.Windows.Controls.WrapPanel> Element umisťuje podřízených elementů v sekvenčních pozici zleva doprava, nejnovější obsah na další řádek na hranici jeho obsahujícího pole.  
+<xref:System.Windows.Controls.WrapPanel> Element umístí podřízené prvky do sekvenční Pozice zleva doprava, rozděluje obsah na další řádek na okraji jeho obsahujícího pole.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Panel>  
@@ -34,8 +34,8 @@ ms.locfileid: "33554025"
  <xref:System.Windows.Controls.WrapPanel>  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)  
+ [Rozložení](../advanced/layout.md)  
   
- [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [Návod: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [ScrollViewer – přehled](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)
+ [ScrollViewer – přehled](scrollviewer-overview.md)

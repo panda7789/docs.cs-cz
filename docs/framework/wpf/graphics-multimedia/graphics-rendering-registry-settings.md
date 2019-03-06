@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: 020570c66401661f55b82a0c7111b4ac53f9c884
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4b02a5ef1fb28e83ecdfc257dd81d9a890b77121
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54556152"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57375347"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Nastavení registru pro vykreslení grafiky
 Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nastavení registru, které ovlivňují vykreslování grafiky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
@@ -50,7 +50,7 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
  **Zakázat možnost hardwarové akcelerace** umožňuje vypnutí hardwarové akcelerace pro účely ladění a testování. Když se zobrazí artefakty vykreslování v aplikaci, vypněte hardwarovou akceleraci. Pokud artefakt zmizí, může být problém s ovladač videa.  
   
- **Zakázat možnost hardwarové akcelerace** je hodnota DWORD 0 nebo 1. Hodnota 1 vypne hardwarovou akceleraci. Hodnota 0 povolí hardwarovou akceleraci předpokladu, že systém splňuje požadavky na hardware akcelerace; Další informace najdete v tématu [vrstvy vykreslování grafiky](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md).  
+ **Zakázat možnost hardwarové akcelerace** je hodnota DWORD 0 nebo 1. Hodnota 1 vypne hardwarovou akceleraci. Hodnota 0 povolí hardwarovou akceleraci předpokladu, že systém splňuje požadavky na hardware akcelerace; Další informace najdete v tématu [vrstvy vykreslování grafiky](../advanced/graphics-rendering-tiers.md).  
   
 <a name="maxmultisample"></a>   
 ## <a name="maximum-multisample-value"></a>Maximální hodnota Multisample  
@@ -98,5 +98,5 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
  **Pomocí možnosti odkaz rasterizéru** přebírá hodnotu DWORD. Hodnota 0 znamená, že se nepoužívá rasterizéru referenčního. Další vynutí nenulové hodnoty [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rasterizéru referenčního používat.  
   
 ## <a name="see-also"></a>Viz také:
-- [Vrstvy vykreslování grafiky](../../../../docs/framework/wpf/advanced/graphics-rendering-tiers.md)
-- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+- [Vrstvy vykreslování grafiky](../advanced/graphics-rendering-tiers.md)
+- [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md)

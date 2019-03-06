@@ -1,43 +1,43 @@
 ---
-title: Instance aktivace
+title: Aktivace instance
 ms.date: 03/30/2017
 ms.assetid: 134c3f70-5d4e-46d0-9d49-469a6643edd8
-ms.openlocfilehash: a1b78dc62fbdc6e5551addf400ceb14dc9e822f5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 78f134ca2d78261a5f6ff9376bd9a98116315f0c
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516825"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57366042"
 ---
-# <a name="instance-activation"></a>Instance aktivace
-Ukládání Instance pracovního postupu SQL spustí vnitřní úloh, která pravidelně probudí a zjišťuje instance pracovního postupu spustitelného nebo activatable v databázi trvalost. Pokud najde instanci spustitelného pracovního postupu, upozorní hostitele pracovního postupu, který je schopen aktivace instance. Pokud instance úložiště najde instance activatable pracovního postupu, upozorní obecné hostitele, který aktivuje hostitele pracovního postupu, který pak spustí instanci pracovního postupu. Následující části v tomto tématu popisují proces aktivace instance podrobně.  
+# <a name="instance-activation"></a>Aktivace instance
+Store Instance pracovního postupu SQL spouští interní úlohy, která pravidelně probudí a instance pracovních postupů spustitelných nebo aktivovatelné zjistí databáze trvalosti. Pokud najde instance pracovního postupu spustitelný, upozorní hostitele pracovního postupu, které podporují aktivaci instance. Pokud v úložišti instancí najde instanci aktivovatelné pracovního postupu, upozorní obecný hostitele, který aktivuje hostitele pracovního postupu, která pak spustí instanci pracovního postupu. Následující části v tomto tématu popisují proces aktivace instance podrobně.  
   
-##  <a name="RunnableSection"></a> Zjišťování a aktivace instance spustitelného pracovních postupů  
- Ukládání Instance pracovního postupu SQL považuje instance pracovního postupu *spustitelného* Pokud instance není v pozastaveném stavu nebo stavu dokončení a splňuje následující podmínky:  
+## <a name="RunnableSection"></a> Zjišťování a aktivace spustitelné instance pracovního postupu  
+ Store Instance pracovního postupu SQL bude považovat za instanci pracovního postupu *spustitelných* Pokud instance není v pozastaveném stavu nebo stavu dokončení a splňuje následující podmínky:  
   
--   Instance je odemčený a má čekající časovač s vypršenou platností.  
+-   Instance odemknut a má čekajícího časovače, kterému vypršela platnost.  
   
--   Instance má na zámek vypršela platnost.  
+-   Instance má vypršela platnost zámku na něj.  
   
--   Instance je odemčený a její stav je **zpracování**.  
+-   Instance je odemknutá a že má stav **zpracování**.  
   
- Vyvolá ukládání Instance pracovního postupu SQL <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> Pokud najde spustitelného instance. Poté SqlWorkflowInstanceStore zastaví monitorování až <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> je jednou volána v úložišti.  
+ Vyvolá Store Instance pracovního postupu SQL <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> když najde spustitelné instanci. Potom úložiště SqlWorkflowInstanceStore zastaví monitorování až <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> se volá jednou ve storu.  
   
- Hostitele pracovního postupu, který má přihlášený(á) k odběru <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> a provede podporující načítání instance <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> proti úložiště instance k načtení instance do paměti. Hostitel pracovního postupu se považuje za schopná načítání instance pracovního postupu, pokud vlastnost metadat hostitele a instance **WorkflowServiceType** nastaví na stejnou hodnotu.  
+ Hostitele pracovního postupu, který má přihlášený(á) k odběru <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> a dokáže načítání instance, spustí <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> proti úložiště instance k načtení instance do paměti. Hostitel pracovního postupu se považuje za podporující načítání instance pracovního postupu, pokud mají vlastnosti metadat o hostiteli a instance **WorkflowServiceType** nastavena na stejnou hodnotu.  
   
-## <a name="detecting-and-activating-activatable-workflow-instances"></a>Zjišťování a aktivace instancí Activatable pracovních postupů  
- Instance pracovního postupu se považuje za *activatable* Pokud instance je spustitelného a není žádné hostitele pracovního postupu, který je schopen načítání instance běží na počítači. Pro danou definici instanci spustitelného pracovního postupu v tématu zjištění a aktivace spustitelného instance pracovního postupu výše.  
+## <a name="detecting-and-activating-activatable-workflow-instances"></a>Zjišťování a aktivace instance aktivovatelné pracovních postupů  
+ Instance pracovního postupu se považuje za *aktivovatelné* Pokud instance je spustitelný a neexistuje žádné hostitele pracovního postupu, který podporuje načítání instance běží v počítači. Definice instance spustitelných pracovního postupu naleznete v tématu zjištění a aktivace spustitelných instancí pracovního postupu výše.  
   
- Vyvolá ukládání Instance pracovního postupu SQL <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> Pokud najde instance pracovního postupu activatable v databázi. Poté SqlWorkflowInstanceStore zastaví monitorování až <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> je jednou volána v úložišti.  
+ Vyvolá Store Instance pracovního postupu SQL <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> při instance pracovního postupu aktivovatelné najde v databázi. Potom úložiště SqlWorkflowInstanceStore zastaví monitorování až <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> se volá jednou ve storu.  
   
- Při obecné hostitele, který má přihlášený(á) k odběru <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> přijímá události, se provede <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> proti úložiště instance k získání aktivační parametry, které jsou potřebné pro vytvoření hostitele pracovního postupu. Obecné hostitel používá tyto aktivační parametry pro vytvoření hostitele pracovního postupu, který naopak načte a spustí instanci spustitelného služby.  
+ Při obecné hostitele, který má přihlášený(á) k odběru <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> přijímá události, je spuštěn <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> proti v úložišti instancí k získání aktivační parametry potřebné pro vytvoření hostitele pracovního postupu. Obecný hostitel používá tyto aktivační parametry k vytvoření hostitele pracovního postupu, která pak načte a spustí instanci spustitelných služby.  
   
-## <a name="generic-hosts"></a>Obecné hostitele  
- Obecné hostitel je hostitele, který má hodnotu vlastnosti metadat **WorkflowServiceType** pro obecné hostitele je nastavena na **WorkflowServiceType.Any** k označení, že je zpracovat libovolný typ pracovního postupu. Obecné hostitele má parametr XName s názvem **ActivationType**.  
+## <a name="generic-hosts"></a>Obecný hostitele  
+ Obecný hostitel je hostitel s hodnotou vlastnosti metadat **WorkflowServiceType** pro obecný hostitele je nastavena na **WorkflowServiceType.Any** k označení, že dokáže zpracovat jakýkoli typ pracovního postupu. Obecný hostitele má XName parametr s názvem **ActivationType**.  
   
- V současné době podporuje ukládání Instance pracovního postupu SQL obecné hostitele s hodnotou parametru ActivationType nastavena na **WAS**. Pokud ActivationType není nastaven na WAS, vyvolá ukládání Instance pracovního postupu SQL <xref:System.Runtime.DurableInstancing.InstancePersistenceException>. Služba správy pracovního postupu, který se dodává s [!INCLUDE[dublin](../../../includes/dublin-md.md)] je obecný hostitele, který má typ aktivace nastavený na **WAS**.  
+ V současné době Store Instance pracovního postupu SQL podporuje obecné hostitele s hodnotou ActivationType parametrem nastaveným na **WAS**. Pokud ActivationType není nastaven na služba WAS, vyvolá Store Instance pracovního postupu SQL <xref:System.Runtime.DurableInstancing.InstancePersistenceException>. Služba správy pracovního postupu, který se dodává s [!INCLUDE[dublin](../../../includes/dublin-md.md)] je obecný hostitele, který má typ aktivace nastavený na **WAS**.  
   
- Aktivace WAS obecné hostitele vyžaduje sadu parametrů aktivace odvození adresa koncového bodu, na které je možné aktivovat nové hostitele. Parametry aktivace pro aktivaci WAS jsou název lokality, cesta k aplikaci relativně k webu a cestu ke službě vzhledem k aplikaci. Ukládání Instance pracovního postupu SQL ukládá tyto parametry aktivace během provádění <xref:System.Activities.DurableInstancing.SaveWorkflowCommand>.  
+ Pro aktivaci WAS obecný hostitel vyžaduje sadu parametrů aktivace pro odvození adresu koncového bodu, ve kterém můžete aktivovat nové hostitele. Parametry aktivace pro aktivaci WAS jsou název lokality, cesta k aplikaci vzhledem k webu a cestu ke službě vzhledem k aplikaci. Store Instance pracovního postupu SQL ukládá tyto parametry aktivace během provádění <xref:System.Activities.DurableInstancing.SaveWorkflowCommand>.  
   
-## <a name="runnable-instances-detection-period"></a>Období detekce spustitelného instancí  
- **Spustitelného období zjišťování instancí** vlastnost úložiště Instance pracovního postupu SQL určuje časové období, po jejímž uplynutí ukládání Instance pracovního postupu SQL spustí úlohu detekce ke zjištění všech spustitelného nebo activatable pracovního postupu instance v databázi trvalost předchozího cyklu zjišťování. V tématu [spustitelného období zjišťování instancí](../../../docs/framework/windows-workflow-foundation/runnable-instances-detection-period.md) další podrobnosti o této vlastnosti.
+## <a name="runnable-instances-detection-period"></a>Interval detekce spustitelných instancí  
+ **Období zjišťování spustitelných instancí** vlastnost Store Instance pracovního postupu SQL určuje časové období, po jejímž uplynutí Store Instance pracovního postupu SQL spustí úlohu detekce zjistit žádné spustitelné nebo aktivovatelné pracovního postupu instance databáze stálost po dokončení předchozího cyklu zjišťování. Zobrazit [období zjišťování spustitelných instancí](../../../docs/framework/windows-workflow-foundation/runnable-instances-detection-period.md) podrobné informace o této vlastnosti.

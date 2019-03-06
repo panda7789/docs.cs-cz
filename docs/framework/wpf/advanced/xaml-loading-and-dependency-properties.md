@@ -9,12 +9,12 @@ helpviewer_keywords:
 - dependency properties [WPF], XAML loading and
 - loading XML data [WPF]
 ms.assetid: 6eea9f4e-45ce-413b-a266-f08238737bf2
-ms.openlocfilehash: 3cce6e09cd2dbb02a07487ade781b03406fcad96
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ed608a658b5077a20ed56419c4ac731641610e3d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580275"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373072"
 ---
 # <a name="xaml-loading-and-dependency-properties"></a>Vlastnost závislostí a načítání XAML
 Aktuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provádění jeho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru je ze své podstaty používající vlastnost závislosti. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Procesor při načítání binární soubor používá metody vlastností systému pro vlastnosti závislosti [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a při zpracovávání atributů, které jsou vlastnosti závislosti. To efektivně obchází vlastnost obálky. Pokud implementujete vlastní vlastnosti závislosti, musí odpovídat tomuto chování a by měl předejde jakýkoli jiný kód v vaši Obálka vlastnosti než metody vlastností systému <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A>.  
@@ -22,7 +22,7 @@ Aktuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-wincl
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Toto téma předpokládá, že pochopit vlastnosti závislostí i jako příjemce a Autor a přečetl [přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md) a [vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md). Doporučujeme mít přečíst [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md) a [syntaxe XAML v podrobnosti o](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md).  
+ Toto téma předpokládá, že pochopit vlastnosti závislostí i jako příjemce a Autor a přečetl [přehled vlastností závislosti](dependency-properties-overview.md) a [vlastní vlastnosti závislosti](custom-dependency-properties.md). Doporučujeme mít přečíst [přehled XAML (WPF)](xaml-overview-wpf.md) a [syntaxe XAML v podrobnosti o](xaml-syntax-in-detail.md).  
   
 <a name="implementation"></a>   
 ## <a name="the-wpf-xaml-loader-implementation-and-performance"></a>Implementace zavaděč WPF XAML a výkonu  
@@ -38,13 +38,13 @@ Aktuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-wincl
   
  V následujícím příkladu je definice vlastnosti doporučené závislostí s obálky, identifikátor vlastnosti se mají ukládat jako `public` `static` `readonly` pole a `get` a `set` definice neobsahují žádný kód nad rámec metod systém nezbytné vlastnosti, které definují vlastnosti závislosti zálohování.  
   
- [!code-csharp[WPFAquariumSln#AGWithWrapper](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#agwithwrapper)]
- [!code-vb[WPFAquariumSln#AGWithWrapper](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#agwithwrapper)]  
+ [!code-csharp[WPFAquariumSln#AGWithWrapper](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#agwithwrapper)]
+ [!code-vb[WPFAquariumSln#AGWithWrapper](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#agwithwrapper)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)
-- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)
-- [Vlastnosti závislostí typu kolekce](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)
-- [Zabezpečení vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-security.md)
-- [Zabezpečené vzory konstruktoru pro DependencyObjects](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)
+- [Přehled vlastností závislosti](dependency-properties-overview.md)
+- [Přehled XAML (WPF)](xaml-overview-wpf.md)
+- [Metadata vlastností závislosti](dependency-property-metadata.md)
+- [Vlastnosti závislostí typu kolekce](collection-type-dependency-properties.md)
+- [Zabezpečení vlastností závislosti](dependency-property-security.md)
+- [Zabezpečené vzory konstruktoru pro DependencyObjects](safe-constructor-patterns-for-dependencyobjects.md)

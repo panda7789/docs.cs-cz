@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 47cea4810b764005e87d00966c15cf138f5913a7
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 4e32facc65162c4deb853cd507a00126e5f786e7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55825950"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57352591"
 ---
 # <a name="isosdacinterfacegetmethoddescdata-method"></a>ISOSDacInterface::GetMethodDescData – metoda
 
@@ -41,19 +41,25 @@ HRESULT GetMethodDescData(
 );
 ```
 
-### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
-`methodDesc` [in] Adresa MethodDesc.
+`methodDesc`\
+[in] Adresa MethodDesc.
 
-`ip` [in] IP adresa metody.
+`ip`\
+[in] IP adresa metody.
 
-`data` [out] Data související s MethodDesc vrácená z interních rozhraních API.
+`data`\
+[out] Data související s MethodDesc vrácená z interních rozhraních API.
 
-`cRevertedRejitVersions` [out] Počet verzí vrácený rejit.
+`cRevertedRejitVersions`\
+[out] Počet verzí vrácený rejit.
 
-`rgRevertedRejitData` [out] Data související s verzí vrácený rejit vrácená z interních rozhraních API.
+`rgRevertedRejitData`\
+[out] Data související s verzí vrácený rejit vrácená z interních rozhraních API.
 
-`pcNeededRevertedRejitData` [out] Počet bajtů vyžadovaných k uložení dat spojené s vrácený ReJit verze.
+`pcNeededRevertedRejitData`\
+[out] Počet bajtů vyžadovaných k uložení dat spojené s vrácený ReJit verze.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -68,5 +74,5 @@ Zadaná metoda je součástí `ISOSDacInterface` rozhraní a odpovídá 20. pros
 
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [ISOSDacInterface rozhraní](../../../../docs/framework/unmanaged-api/debugging/isosdacinterface-interface.md)
+- [Ladění](index.md)
+- [ISOSDacInterface rozhraní](isosdacinterface-interface.md)

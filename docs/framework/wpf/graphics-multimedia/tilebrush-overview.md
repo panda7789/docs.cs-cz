@@ -8,12 +8,12 @@ helpviewer_keywords:
 - TileBrush [WPF]
 - brushes [WPF], TileBrush
 ms.assetid: aa4a7b7e-d09d-44c2-8d61-310c50e08d68
-ms.openlocfilehash: 9058c6c3256efad15e0811fcc1f21f440e13edbf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8013bacf6c4d33ce89fc287e625ce8c8fb6c3ef0
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683018"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57369939"
 ---
 # <a name="tilebrush-overview"></a>TileBrush – přehled
 <xref:System.Windows.Media.TileBrush> objekty poskytují vám s velkou kontrolu nad jak Vymalování oblasti s obrázkem, <xref:System.Windows.Media.Drawing>, nebo <xref:System.Windows.Media.Visual>. Toto téma popisuje způsob použití <xref:System.Windows.Media.TileBrush> funkce, které chcete získat větší kontrolu nad jak <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, nebo <xref:System.Windows.Media.VisualBrush> jsou vykreslovány oblasti.  
@@ -21,7 +21,7 @@ ms.locfileid: "54683018"
   
 <a name="prerequisite"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Informace o tom v tomto tématu, je vhodné pochopit, jak používat základní funkce <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, nebo <xref:System.Windows.Media.VisualBrush> třídy. Úvod do těchto typů, najdete v článku [Malování pomocí obrázků, kreseb a vizuálních](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
+ Informace o tom v tomto tématu, je vhodné pochopit, jak používat základní funkce <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, nebo <xref:System.Windows.Media.VisualBrush> třídy. Úvod do těchto typů, najdete v článku [Malování pomocí obrázků, kreseb a vizuálních](painting-with-images-drawings-and-visuals.md).  
   
 <a name="tilebrush"></a>   
 ## <a name="painting-an-area-with-tiles"></a>Malování s dlaždicemi, které oblasti  
@@ -29,10 +29,10 @@ ms.locfileid: "54683018"
   
  V oblasti dlaždicového štětce vykreslování zahrnuje tři komponenty: obsah, že je základní dlaždice a výstupní oblasti.  
   
- ![TileBrush components](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-defaultcontentprojection2.png "wcpsdk_mmgraphics_defaultcontentprojection2")  
+ ![TileBrush components](./media/wcpsdk-mmgraphics-defaultcontentprojection2.png "wcpsdk_mmgraphics_defaultcontentprojection2")  
 Součásti s jednu dlaždici TileBrush  
   
- ![Součástí Objekt TileBrush](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tiledprojection.png "graphicsmm_tiledprojection")  
+ ![Součástí Objekt TileBrush](./media/graphicsmm-tiledprojection.png "graphicsmm_tiledprojection")  
 Součástí TileBrush pomocí vlastnosti TileMode objektu dlaždice  
   
  Výstupní oblasti je v oblasti se překreslit, jako <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Ellipse> nebo <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button>. Tento oddíl popisuje další dvě součásti <xref:System.Windows.Media.TileBrush>.  
@@ -63,14 +63,14 @@ Součástí TileBrush pomocí vlastnosti TileMode objektu dlaždice
   
  Následující obrázek ukazuje různé <xref:System.Windows.Media.TileBrush.Stretch%2A> nastavení.  
   
- ![Různá nastavení TileBrush Stretch](../../../../docs/framework/wpf/graphics-multimedia/media/img-mmgraphics-stretchenum.jpg "img_mmgraphics_stretchenum")  
+ ![Různá nastavení TileBrush Stretch](./media/img-mmgraphics-stretchenum.jpg "img_mmgraphics_stretchenum")  
   
  V následujícím příkladu, obsah <xref:System.Windows.Media.ImageBrush> je nastavit tak, že není roztáhnout tak, aby vyplnil výstupní oblasti.  
   
- [!code-xaml[BrushOverviewExamples_snip#GraphicsMMNoStretchExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/StretchExample.xaml#graphicsmmnostretchexample)]  
+ [!code-xaml[BrushOverviewExamples_snip#GraphicsMMNoStretchExample](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/StretchExample.xaml#graphicsmmnostretchexample)]  
   
- [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMNoStretchExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/StretchExample.cs#graphicsmmnostretchexample)]
- [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMNoStretchExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/stretchexample.vb#graphicsmmnostretchexample)]  
+ [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMNoStretchExample](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/StretchExample.cs#graphicsmmnostretchexample)]
+ [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMNoStretchExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/stretchexample.vb#graphicsmmnostretchexample)]  
   
  Ve výchozím nastavení <xref:System.Windows.Media.TileBrush> vygeneruje jednu dlaždici (základní dlaždice) a roztáhne, aby tuto dlaždici pro úplně naplnění výstupní oblasti. Můžete změnit velikost a umístění základní dlaždice tak, že nastavíte <xref:System.Windows.Media.TileBrush.Viewport%2A> a <xref:System.Windows.Media.TileBrush.ViewportUnits%2A> vlastnosti.  
   
@@ -80,21 +80,21 @@ Součástí TileBrush pomocí vlastnosti TileMode objektu dlaždice
   
  Následující ilustrace ukazuje rozdíl ve výstupu mezi <xref:System.Windows.Media.TileBrush> s relativní a absolutní <xref:System.Windows.Media.TileBrush.ViewportUnits%2A>. Všimněte si, že na každé obrázcích je vedle sebe vzor; Další část popisuje, jak zadat vzor dlaždice.  
   
- ![Absolutní a relativní zobrazení jednotky](../../../../docs/framework/wpf/graphics-multimedia/media/absolute-and-relative-viewports.png "absolute_and_relative_viewports")  
+ ![Absolutní a relativní zobrazení jednotky](./media/absolute-and-relative-viewports.png "absolute_and_relative_viewports")  
   
  V následujícím příkladu se používá image vytvořit dlaždici, která má šířku a výšku 50 %. Základní dlaždice se nachází na (0,0) výstupní oblasti.  
   
- [!code-xaml[BrushOverviewExamples_snip#GraphicsMMRelativeViewportUnitsExample1](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileSizeExample.xaml#graphicsmmrelativeviewportunitsexample1)]  
+ [!code-xaml[BrushOverviewExamples_snip#GraphicsMMRelativeViewportUnitsExample1](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileSizeExample.xaml#graphicsmmrelativeviewportunitsexample1)]  
   
- [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMRelativeViewportUnitsExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/TileSizeExample.cs#graphicsmmrelativeviewportunitsexample1)]
- [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMRelativeViewportUnitsExample1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/tilesizeexample.vb#graphicsmmrelativeviewportunitsexample1)]  
+ [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMRelativeViewportUnitsExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/TileSizeExample.cs#graphicsmmrelativeviewportunitsexample1)]
+ [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMRelativeViewportUnitsExample1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/tilesizeexample.vb#graphicsmmrelativeviewportunitsexample1)]  
   
  Následující příklad nastaví dlaždicích <xref:System.Windows.Media.ImageBrush> do 25 25 zařízeních nezávislých na pixelech. Protože <xref:System.Windows.Media.TileBrush.ViewportUnits%2A> jsou absolutní, <xref:System.Windows.Media.ImageBrush> dlaždice jsou vždy 25 25 pixelů, bez ohledu na velikost oblasti se překreslit.  
   
- [!code-xaml[BrushOverviewExamples_snip#GraphicsMMAbsoluteViewportUnitsExample1](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileSizeExample.xaml#graphicsmmabsoluteviewportunitsexample1)]  
+ [!code-xaml[BrushOverviewExamples_snip#GraphicsMMAbsoluteViewportUnitsExample1](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileSizeExample.xaml#graphicsmmabsoluteviewportunitsexample1)]  
   
- [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMAbsoluteViewportUnitsExample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/TileSizeExample.cs#graphicsmmabsoluteviewportunitsexample1)]
- [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMAbsoluteViewportUnitsExample1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/tilesizeexample.vb#graphicsmmabsoluteviewportunitsexample1)]  
+ [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMAbsoluteViewportUnitsExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/TileSizeExample.cs#graphicsmmabsoluteviewportunitsexample1)]
+ [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMAbsoluteViewportUnitsExample1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/tilesizeexample.vb#graphicsmmabsoluteviewportunitsexample1)]  
   
 <a name="tilingbehavior"></a>   
 ### <a name="tiling-behavior"></a>Chování dělení do bloků  
@@ -112,22 +112,22 @@ Součástí TileBrush pomocí vlastnosti TileMode objektu dlaždice
   
  Následující obrázek ukazuje dělení do bloků různé režimy.  
   
- ![Různá nastavení vlastnosti TileMode objektu TileBrush](../../../../docs/framework/wpf/graphics-multimedia/media/img-mmgraphics-tilemodes.gif "img_mmgraphics_tilemodes")  
+ ![Různá nastavení vlastnosti TileMode objektu TileBrush](./media/img-mmgraphics-tilemodes.gif "img_mmgraphics_tilemodes")  
   
  V následujícím příkladu se používá bitovou kopii k vykreslení obdélníku, který je 100 pixelů na šířku a 100 pixelů na výšku. Tím, že nastavíte na stopu <xref:System.Windows.Media.TileBrush.Viewport%2A> byla nastavena do 0,0,0.25,0.25, se provádí na stopu je základní dlaždice bude 1/4 výstupní oblasti. Nástroj štětec <xref:System.Windows.Media.TileBrush.TileMode%2A> je nastavena na <xref:System.Windows.Media.TileMode.FlipXY>. tak, že vyplní obdélníku s řádky dlaždic.  
   
- [!code-xaml[BrushOverviewExamples_snip#GraphicsMMFlipXYExample](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TilingExample.xaml#graphicsmmflipxyexample)]  
+ [!code-xaml[BrushOverviewExamples_snip#GraphicsMMFlipXYExample](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TilingExample.xaml#graphicsmmflipxyexample)]  
   
- [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMFlipXYExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/TilingExample.cs#graphicsmmflipxyexample)]
- [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMFlipXYExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/tilingexample.vb#graphicsmmflipxyexample)]  
+ [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMFlipXYExample](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/TilingExample.cs#graphicsmmflipxyexample)]
+ [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMFlipXYExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/tilingexample.vb#graphicsmmflipxyexample)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Media.ImageBrush>
 - <xref:System.Windows.Media.DrawingBrush>
 - <xref:System.Windows.Media.VisualBrush>
 - <xref:System.Windows.Media.TileBrush>
-- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
-- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/brushes-how-to-topics.md)
-- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
+- [Témata s postupy](brushes-how-to-topics.md)
+- [Přehled zablokovatelných objektů](../advanced/freezable-objects-overview.md)
 - [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)
 - [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)

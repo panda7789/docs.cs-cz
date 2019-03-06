@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 58b39d12-c953-40c4-88af-d7eb3343ca28
 author: BrucePerlerMS
 ms.openlocfilehash: db4e0492772d6fd0e155843422b7350aa630f713
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55269520"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57369679"
 ---
 # <a name="issuernameregistry"></a>\<issuerNameRegistry>
 Nakonfiguruje registru názvu vystavitele, který se používá obslužné rutiny v kolekci obslužná rutina tokenů.  
@@ -42,7 +42,7 @@ Nakonfiguruje registru názvu vystavitele, který se používá obslužné rutin
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|– typ|Typ, který je odvozen od <xref:System.IdentityModel.Tokens.IssuerNameRegistry> třídy. Další informace o tom, jak určit vlastní `type`, najdete v článku [vlastní typ reference].|  
+| – typ|Typ, který je odvozen od <xref:System.IdentityModel.Tokens.IssuerNameRegistry> třídy. Další informace o tom, jak určit vlastní `type`, najdete v článku [vlastní typ reference].|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   

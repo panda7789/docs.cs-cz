@@ -8,22 +8,22 @@ helpviewer_keywords:
 - markup extensions [WPF]
 - WPF Namespace [WPF]
 ms.assetid: 5e1d60e8-9403-47d0-98e4-b49aec871ee7
-ms.openlocfilehash: 72f0ab5e07e963951a477aaf44f08f0aff760df0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 91416bba9c94c26cbc107e90c2f528d94600699c
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33546641"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57371811"
 ---
 # <a name="wpf-xaml-extensions"></a>Rozšíření WPF XAML
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Rozšíření značek datové vazby](../../../../docs/framework/wpf/advanced/binding-markup-extension.md)  
-  [Rozšíření značek ColorConvertedBitmap](../../../../docs/framework/wpf/advanced/colorconvertedbitmap-markup-extension.md)  
-  [Rozšíření značek ComponentResourceKey](../../../../docs/framework/wpf/advanced/componentresourcekey-markup-extension.md)  
-  [Rozšíření značek DynamicResource](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md)  
-  [Rozšíření značek RelativeSource](../../../../docs/framework/wpf/advanced/relativesource-markupextension.md)  
-  [Rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md)  
-  [Rozšíření značek TemplateBinding](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md)  
-  [Rozšíření značek ThemeDictionary](../../../../docs/framework/wpf/advanced/themedictionary-markup-extension.md)  
-  [PropertyPath – syntaxe v jazyce XAML](../../../../docs/framework/wpf/advanced/propertypath-xaml-syntax.md)  
-  [PresentationOptions:Freeze – atribut](../../../../docs/framework/wpf/advanced/presentationoptions-freeze-attribute.md)
+ [Rozšíření značek datové vazby](binding-markup-extension.md)  
+  [Rozšíření značek ColorConvertedBitmap](colorconvertedbitmap-markup-extension.md)  
+  [Rozšíření značek ComponentResourceKey](componentresourcekey-markup-extension.md)  
+  [Rozšíření značek DynamicResource](dynamicresource-markup-extension.md)  
+  [Rozšíření značek RelativeSource](relativesource-markupextension.md)  
+  [Rozšíření značek StaticResource](staticresource-markup-extension.md)  
+  [Rozšíření značek TemplateBinding](templatebinding-markup-extension.md)  
+  [Rozšíření značek ThemeDictionary](themedictionary-markup-extension.md)  
+  [PropertyPath – syntaxe v jazyce XAML](propertypath-xaml-syntax.md)  
+  [PresentationOptions:Freeze – atribut](presentationoptions-freeze-attribute.md)

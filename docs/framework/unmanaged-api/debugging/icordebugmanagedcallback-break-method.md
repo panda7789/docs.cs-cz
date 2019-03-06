@@ -17,40 +17,44 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 83524b24fd05969fa4f45fd742d1df955c441d44
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bab20301c5413f8bbe95d44b87e06d3b3870c9e7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54732385"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377700"
 ---
 # <a name="icordebugmanagedcallbackbreak-method"></a>ICorDebugManagedCallback::Break – metoda
-Upozorní ladicí program při <xref:System.Reflection.Emit.OpCodes.Break> instrukce v datovém proudu kód provádí.  
-  
-## <a name="syntax"></a>Syntaxe  
-  
-```  
-HRESULT Break (  
-    [in] ICorDebugAppDomain *pAppDomain,  
-    [in] ICorDebugThread    *thread  
-);  
-```  
-  
-#### <a name="parameters"></a>Parametry  
- `pAppDOmain`  
- [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který obsahuje instrukce break.  
-  
- `thread`  
- [in] Ukazatel na objekt icordebugthread –, který představuje vlákno, které obsahuje instrukce break.  
-  
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-  
- **Záhlaví:** CorDebug.idl, CorDebug.h  
-  
- **Knihovna:** CorGuids.lib  
-  
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
+Upozorní ladicí program při <xref:System.Reflection.Emit.OpCodes.Break> instrukce v datovém proudu kód provádí.
+
+## <a name="syntax"></a>Syntaxe
+
+```cpp
+HRESULT Break (
+    [in] ICorDebugAppDomain *pAppDomain,
+    [in] ICorDebugThread    *thread
+);
+```
+
+## <a name="parameters"></a>Parametry
+
+`pAppDomain`\
+[in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který obsahuje instrukce break.
+
+`thread`\
+[in] Ukazatel na objekt icordebugthread –, který představuje vlákno, které obsahuje instrukce break.
+
+## <a name="requirements"></a>Požadavky
+
+**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+
+**Záhlaví:** CorDebug.idl, CorDebug.h
+
+**Knihovna:** CorGuids.lib
+
+**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+
 ## <a name="see-also"></a>Viz také:
-- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+
+- [ICorDebugManagedCallback – rozhraní](icordebugmanagedcallback-interface.md)

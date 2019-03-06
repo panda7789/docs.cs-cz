@@ -8,12 +8,12 @@ helpviewer_keywords:
 - adorners [WPF], binding to children of Panels
 - Panel control [WPF], binding adorners to children
 ms.assetid: 4cc9b972-b472-4e5c-bdf3-3702d7fbb1f5
-ms.openlocfilehash: ae039243ded93eb2bc7f85f9f07fad1dbe0eac2e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9f840180edf55c3e10e6859dfc2b9f4b6495b878
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54544975"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57358188"
 ---
 # <a name="how-to-adorn-the-children-of-a-panel"></a>Postupy: Doplnění podřízených položek panelu
 Tento příklad ukazuje, jak prostřednictvím kódu programu připojení doplňku k podřízené položky zadaného <xref:System.Windows.Controls.Panel>.  
@@ -27,11 +27,11 @@ Tento příklad ukazuje, jak prostřednictvím kódu programu připojení doplň
   
  Následující příklad vytvoří vazbu SimpleCircleAdorner (popsaný výš) do podřízených položek <xref:System.Windows.Controls.StackPanel> s názvem *myStackPanel*.  
   
- [!code-csharp[Adorners_SimpleCircleAdorner#_AdornChildren](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_adornchildren)]
- [!code-vb[Adorners_SimpleCircleAdorner#_AdornChildren](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_adornchildren)]  
+ [!code-csharp[Adorners_SimpleCircleAdorner#_AdornChildren](~/samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_adornchildren)]
+ [!code-vb[Adorners_SimpleCircleAdorner#_AdornChildren](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_adornchildren)]  
   
 > [!NOTE]
 >  Pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] pro vazbu na jiný prvek pro úpravy v tuto chvíli nepodporuje.  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled doplňků pro úpravy](../../../../docs/framework/wpf/controls/adorners-overview.md)
+- [Přehled doplňků pro úpravy](adorners-overview.md)

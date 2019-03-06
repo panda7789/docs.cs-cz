@@ -9,15 +9,15 @@ helpviewer_keywords:
 - templates [WPF], ToggleButton
 - parts [WPF], ToggleButton
 ms.assetid: 54f23f30-4bcb-4f09-8ce4-376a13a255a1
-ms.openlocfilehash: 76b6cb370829da7dd7a8ee6c2dc2fd07c3478080
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fd8d1986bf5c9b5f42a4c8146a89682f4a96b75e
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54731228"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57376179"
 ---
 # <a name="togglebutton-syles-and-templates"></a>ToggleButton – styly a šablony
-Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Primitives.ToggleButton> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Primitives.ToggleButton> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
   
 ## <a name="togglebutton-parts"></a>Části ToggleButton  
  <xref:System.Windows.Controls.Primitives.ToggleButton> Ovládací prvek nemá žádné pojmenované součásti.  
@@ -46,18 +46,18 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Primitive
 ## <a name="togglebutton-controltemplate-example"></a>Příklad šablony ControlTemplate ToggleButton  
  Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.Primitives.ToggleButton> ovládacího prvku.  
   
- [!code-xaml[ControlTemplateExamples#ToggleButton](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/combobox.xaml#togglebutton)]  
+ [!code-xaml[ControlTemplateExamples#ToggleButton](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/combobox.xaml#togglebutton)]  
   
  V předchozím příkladu používá jeden nebo více z následujících prostředků.  
   
- [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
+ [!code-xaml[ControlTemplateExamples#Resources](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
  Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>
-- [Styly a šablony ovládacích prvků](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)
-- [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+- [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
+- [Přizpůsobení ovládacího prvku](control-customization.md)
+- [Styly a šablony](styling-and-templating.md)
+- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

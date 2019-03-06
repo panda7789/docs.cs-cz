@@ -3,11 +3,11 @@ title: <security> z <wsHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 8658b162-2ddf-4162-a869-aa517a42288a
 ms.openlocfilehash: 0de9ade585a2170aa1def9898581aedddc651bd7
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55258445"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57366085"
 ---
 # <a name="security-of-wshttpbinding"></a>\<zabezpečení > z \<wsHttpBinding >
 Představuje možnosti zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  

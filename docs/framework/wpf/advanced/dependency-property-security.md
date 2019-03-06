@@ -10,12 +10,12 @@ helpviewer_keywords:
 - dependency properties [WPF], access
 - security [WPF], dependency properties
 ms.assetid: d10150ec-90c5-4571-8d35-84bafa2429a4
-ms.openlocfilehash: eb27f3c902a0fb783d26d14d1ce494eebcffb999
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d51f8f5fd704b0c95b8e6f841b9b0ff8567899cb
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54532146"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57364811"
 ---
 # <a name="dependency-property-security"></a>Zabezpečení vlastností závislosti
 Vlastnosti závislosti by měla být obecně považují za veřejné vlastnosti. Povaha [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastnost brání nemůže provádět záruky zabezpečení o hodnotu vlastnosti závislosti.  
@@ -27,7 +27,7 @@ Vlastnosti závislosti by měla být obecně považují za veřejné vlastnosti.
   
  Pokud vytváříte vlastní vlastnosti závislosti, byste měli deklarovat obálkami a <xref:System.Windows.DependencyProperty> identifikátor pole jako veřejné členy, aby volající není získat zavádějící informace o úroveň přístupu true dané vlastnosti (z důvodu jeho úložiště se implementováno jako vlastnost závislosti).  
   
- Pro vlastnost závislosti vlastní, můžete zaregistrovat vaše vlastnost jako vlastnost závislosti jen pro čtení, a to poskytuje efektivní způsob zabránění nastavování kdokoli, který neobsahuje odkaz na vlastnost <xref:System.Windows.DependencyPropertyKey> pro tuto vlastnost. Další informace najdete v tématu [vlastnosti závislosti jen pro čtení](../../../../docs/framework/wpf/advanced/read-only-dependency-properties.md).  
+ Pro vlastnost závislosti vlastní, můžete zaregistrovat vaše vlastnost jako vlastnost závislosti jen pro čtení, a to poskytuje efektivní způsob zabránění nastavování kdokoli, který neobsahuje odkaz na vlastnost <xref:System.Windows.DependencyPropertyKey> pro tuto vlastnost. Další informace najdete v tématu [vlastnosti závislosti jen pro čtení](read-only-dependency-properties.md).  
   
 > [!NOTE]
 >  Deklarace <xref:System.Windows.DependencyProperty> privátní pole identifikátor není je zakázané a lze případně snížit okamžitě vystavené obor názvů vlastní třídy, ale tato vlastnost by neměly být zahrnuté "privátní" ve stejném smyslu jako [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] jazyk definice definovat úrovně přístupu, z důvodů popsaných v další části.  
@@ -40,4 +40,4 @@ Vlastnosti závislosti by měla být obecně považují za veřejné vlastnosti.
  Použití požadavku na <xref:System.Windows.DependencyProperty.ValidateValueCallback%2A> a očekává neúspěšné ověření na vyžádání selhání zabránit nastavena vlastnost není adekvátní bezpečnostní mechanismus. Nastavit hodnotu zneplatnění vynutit prostřednictvím <xref:System.Windows.DependencyProperty.ValidateValueCallback%2A> může také potlačit škodlivý volajícím, pokud tyto volajícím jsou zpracovávána v rámci domény aplikace.  
   
 ## <a name="see-also"></a>Viz také:
-- [Vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md)
+- [Vlastní vlastnosti závislosti](custom-dependency-properties.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - routed events [WPF], handling
 - bubbling events [WPF]
 ms.assetid: 157787b4-f469-4047-8777-5b034145f32e
-ms.openlocfilehash: 40cacbf6b36cf474f5267870531e5f4ac048dc56
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 42f5f247e775fbf0bd323fc693a74d6149c87bb3
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54561332"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57368191"
 ---
 # <a name="how-to-handle-a-routed-event"></a>Postupy: Zpracování směrované události
 Tento příklad ukazuje, jak šíření pracovní událostí a jak napsat obslužnou rutinu, která dokáže zpracovávat data směrované události.  
@@ -27,16 +27,16 @@ Tento příklad ukazuje, jak šíření pracovní událostí a jak napsat obslu�
   
  Všimněte si, že v nadřazené <xref:System.Windows.Controls.StackPanel> elementu, <xref:System.Windows.Controls.Primitives.ButtonBase.Click> název události, zadaný jako atribut je částečně kvalifikované pojmenováním <xref:System.Windows.Controls.Button> třídy. <xref:System.Windows.Controls.Button> Třída je <xref:System.Windows.Controls.Primitives.ButtonBase> odvozenou třídu, která má <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí ve výpisu. Tato technika částečné kvalifikace pro obslužnou rutinu události připojení je nutné v případě, že událost, která se zpracovává neexistuje u členů výpis elementu, kde je obslužná rutina směrované události připojen.  
   
- [!code-xaml[RoutedEventHandle#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventHandle/CSharp/default.xaml#xaml)]  
+ [!code-xaml[RoutedEventHandle#XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventHandle/CSharp/default.xaml#xaml)]  
   
  Následující příklad popisovače <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událostí.  Příklad sestavy, které elementy zpracovává události a který element vyvolává událost. Obslužná rutina události je provedena, když uživatel klikne na tlačítko buď tlačítko.  
   
- [!code-csharp[RoutedEventHandle#Handler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventHandle/CSharp/default.xaml.cs#handler)]
- [!code-vb[RoutedEventHandle#Handler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventHandle/VisualBasic/MainWindow.xaml.vb#handler)]  
+ [!code-csharp[RoutedEventHandle#Handler](~/samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventHandle/CSharp/default.xaml.cs#handler)]
+ [!code-vb[RoutedEventHandle#Handler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventHandle/VisualBasic/MainWindow.xaml.vb#handler)]  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.RoutedEvent>
-- [Přehled vstupu](../../../../docs/framework/wpf/advanced/input-overview.md)
-- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)
-- [Podrobná syntaxe XAML](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)
+- [Přehled vstupu](input-overview.md)
+- [Přehled směrovaných událostí](routed-events-overview.md)
+- [Témata s postupy](events-how-to-topics.md)
+- [Podrobná syntaxe XAML](xaml-syntax-in-detail.md)

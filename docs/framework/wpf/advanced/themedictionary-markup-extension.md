@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ThemeDictionary markup extension [WPF]
 - XAML [WPF], ThemeDictionary markup extension
 ms.assetid: aa75e10b-13dd-4989-972d-51bab63a05e2
-ms.openlocfilehash: 659af630f697d7f2742bc71006241c4bded842c6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0bc4b2a11927bd2551dc322c5a856ade9a85c8b7
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718920"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57364798"
 ---
 # <a name="themedictionary-markup-extension"></a>ThemeDictionary – rozšíření značek
 Poskytuje způsob, jak pro vlastní ovládací prvek autorů nebo aplikace, které se integrují ovládací prvky třetích stran pro načtení konkrétní motivu zdrojových slovnících pro použití v používání stylů pro ovládací prvek.  
@@ -38,7 +38,7 @@ Poskytuje způsob, jak pro vlastní ovládací prvek autorů nebo aplikace, kter
   
 |||  
 |-|-|  
-|`assemblyUri`|[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] Sestavení, který obsahuje informace o motivech. Obvykle je to identifikátor URI, který odkazuje na sestavení v balíčku větší sadu. Prostředky sestavení a sady identifikátorů URI pro zjednodušení problémů s nasazením. Další informace najdete v části [identifikátory Pack URI v subsystému WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md).|  
+|`assemblyUri`|[!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] Sestavení, který obsahuje informace o motivech. Obvykle je to identifikátor URI, který odkazuje na sestavení v balíčku větší sadu. Prostředky sestavení a sady identifikátorů URI pro zjednodušení problémů s nasazením. Další informace najdete v části [identifikátory Pack URI v subsystému WPF](../app-development/pack-uris-in-wpf.md).|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto rozšíření je určený k vyplnění pouze jednu hodnotu určité vlastnosti: hodnota pro <xref:System.Windows.ResourceDictionary.Source%2A?displayProperty=nameWithType>.  
@@ -61,10 +61,10 @@ Poskytuje způsob, jak pro vlastní ovládací prvek autorů nebo aplikace, kter
   
  V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru, zpracování tohoto rozšíření značek definováno <xref:System.Windows.ThemeDictionaryExtension> třídy.  
   
- `ThemeDictionary` je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] použít {a} znaků v syntaxi atributu, což je konvence, podle kterého [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru rozpozná, že rozšíření značek musí zpracovat atribut. Další informace najdete v tématu [– rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
+ `ThemeDictionary` je rozšíření značek. Rozšíření značek jsou obvykle implementována v případě požadavku, aby díky použití řídicí sekvence mohly být hodnoty atributů něčím jiným než literálními hodnotami nebo názvy obslužných rutin, a tento požadavek má tak rozsáhlou platnost, že nestačí jednoduše použít převaděče typů pro určité typy nebo vlastnosti. Všechna rozšíření značek v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] použít {a} znaků v syntaxi atributu, což je konvence, podle kterého [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru rozpozná, že rozšíření značek musí zpracovat atribut. Další informace najdete v tématu [– rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
   
 ## <a name="see-also"></a>Viz také:
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
-- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
-- [Rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
-- [Prostředek, obsah a datové soubory aplikace WPF](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)
+- [Styly a šablony](../controls/styling-and-templating.md)
+- [Přehled XAML (WPF)](xaml-overview-wpf.md)
+- [Rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md)
+- [Prostředek, obsah a datové soubory aplikace WPF](../app-development/wpf-application-resource-content-and-data-files.md)

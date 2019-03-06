@@ -7,19 +7,19 @@ helpviewer_keywords:
 - controls [WPF], BulletDecorator
 - BulletDecorator control [WPF]
 ms.assetid: 1756cabf-59b4-47a7-883d-1bdf2e5abe00
-ms.openlocfilehash: 39fb0dcfe0110a0badcd552d711db40086d46fd0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 38efb1ba0ed9ed34d256418ae60b863fccc8eaf1
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551146"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377227"
 ---
 # <a name="bulletdecorator"></a>BulletDecorator
-<xref:System.Windows.Controls.Primitives.BulletDecorator> má dvě vlastnosti obsahu: <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> a <xref:System.Windows.Controls.Decorator.Child%2A>. <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> Definuje vlastnost <xref:System.Windows.UIElement> používat jako odrážku. <xref:System.Windows.Controls.Decorator.Child%2A> Definuje vlastnost <xref:System.Windows.UIElement> který vizuálně zarovnaná s odrážkou.  
+<xref:System.Windows.Controls.Primitives.BulletDecorator> má dvě vlastnosti obsahu: <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> a <xref:System.Windows.Controls.Decorator.Child%2A>. <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> Definuje vlastnost <xref:System.Windows.UIElement> používat jako odrážka. <xref:System.Windows.Controls.Decorator.Child%2A> Definuje vlastnost <xref:System.Windows.UIElement> , který vizuálně zarovnal odrážky.  
   
- Následující obrázek znázorňuje příklady ovládacích prvků, které používají <xref:System.Windows.Controls.Primitives.BulletDecorator>.  
+ Následující ilustrace ukazuje příklady ovládacích prvků, které používají <xref:System.Windows.Controls.Primitives.BulletDecorator>.  
   
- ![3 třídy BulletDecorator: CheckBox, RadioButton a TextBox](../../../../docs/framework/wpf/controls/media/bulletdecorator.png "BulletDecorator")  
+ ![3 třídy BulletDecorator: CheckBox, RadioButton, TextBox](./media/bulletdecorator.png "BulletDecorator")  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Primitives.BulletDecorator>

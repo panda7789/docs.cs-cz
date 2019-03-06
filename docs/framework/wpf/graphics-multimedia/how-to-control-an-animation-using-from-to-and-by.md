@@ -7,15 +7,15 @@ helpviewer_keywords:
 - animation [WPF], basic animation
 - From/to/by animation
 ms.assetid: 59afba57-6fc1-44c8-987e-8a5f4142adad
-ms.openlocfilehash: dda8cdb6159cc6d8e6da5b7d430ebf76aaa100b7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 35973a2a3dea233468f91c6bd24851be088b84e0
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54530308"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373839"
 ---
 # <a name="how-to-control-an-animation-using-from-to-and-by"></a>Postupy: Postupy: Řízení animací použitím polí Od, Komu a Kdo
-"Od/Komu/kým" nebo "základní animace" vytvoří přechod mezi dvě cílové hodnoty (naleznete v tématu [přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md) s úvodem do různé typy animací). Chcete-li nastavit cílové hodnoty základní animace, použijte jeho <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>, <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>, a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti.  Následující tabulka shrnuje, jak <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>, <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>, a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti mohou být použity společně nebo samostatně k určení cílové animace hodnoty.  
+"Od/Komu/kým" nebo "základní animace" vytvoří přechod mezi dvě cílové hodnoty (naleznete v tématu [přehled animace](animation-overview.md) s úvodem do různé typy animací). Chcete-li nastavit cílové hodnoty základní animace, použijte jeho <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>, <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>, a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti.  Následující tabulka shrnuje, jak <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>, <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>, a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti mohou být použity společně nebo samostatně k určení cílové animace hodnoty.  
   
 |Byly zadány vlastnosti|Výsledné chování|  
 |--------------------------|------------------------|  
@@ -28,16 +28,16 @@ ms.locfileid: "54530308"
 > [!NOTE]
 >  Nenastavujte i <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnost a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnost u stejného animace.  
   
- Pokud chcete použít jiné metody interpolace nebo mezi více než dva cílových hodnot animace, použijte animace klíčových snímků. Zobrazit [přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md) Další informace.  
+ Pokud chcete použít jiné metody interpolace nebo mezi více než dva cílových hodnot animace, použijte animace klíčových snímků. Zobrazit [přehled animací klíčových snímků](key-frame-animations-overview.md) Další informace.  
   
- Informace o použití více animace do vlastnosti jediné najdete v tématu [přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md).  
+ Informace o použití více animace do vlastnosti jediné najdete v tématu [přehled animací klíčových snímků](key-frame-animations-overview.md).  
   
  Následující příklad ukazuje různé účinky nastavení <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>, <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>, a <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnosti animace.  
   
 ## <a name="example"></a>Příklad  
- [!code-xaml[BasicAnimations_snippet#AnimationTargetValuesWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BasicAnimations_snippet/CS/AnimationTargetValuesExample.xaml#animationtargetvalueswholepage)]  
+ [!code-xaml[BasicAnimations_snippet#AnimationTargetValuesWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/BasicAnimations_snippet/CS/AnimationTargetValuesExample.xaml#animationtargetvalueswholepage)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
-- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)
+- [Přehled animace](animation-overview.md)
+- [Přehled animací klíčových snímků](key-frame-animations-overview.md)
 - [Od, Komu a kdo ukázkové cílové hodnoty animace](https://go.microsoft.com/fwlink/?LinkID=159988)

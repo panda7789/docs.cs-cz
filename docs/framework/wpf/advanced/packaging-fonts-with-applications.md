@@ -10,12 +10,12 @@ helpviewer_keywords:
 - typography [WPF], packaging fonts with applications
 - packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
-ms.openlocfilehash: a822167ae5b2758a889c61eed5270e5abb01f961
-ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
+ms.openlocfilehash: e66841fe72281bf0562b2ce50925a5c3a6bb9b54
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56583417"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57378866"
 ---
 # <a name="packaging-fonts-with-applications"></a>Balení písem s aplikacemi
 Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
@@ -64,7 +64,7 @@ Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE
   
  Následující příklad kódu ukazuje, jak odkazovat na aplikace písmo jako položka obsahu – odkazovaná položka obsahu musí být ve stejném adresáři jako soubory sestavení aplikace.  
   
- [!code-xaml[FontSnippets#FontPackageSnippet8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml#fontpackagesnippet8)]  
+ [!code-xaml[FontSnippets#FontPackageSnippet8](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml#fontpackagesnippet8)]  
   
 <a name="adding_fonts_as_resource_items"></a>   
 ## <a name="adding-fonts-as-resource-items"></a>Přidávání písem jako položky prostředků  
@@ -87,18 +87,18 @@ Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE
   
  Následující příklad kódu ukazuje, jak odkazovat na prostředky písma aplikace.  
   
- [!code-xaml[FontSnippets#FontPackageSnippet1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml#fontpackagesnippet1)]  
+ [!code-xaml[FontSnippets#FontPackageSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml#fontpackagesnippet1)]  
   
 ### <a name="referencing-font-resource-items-from-code"></a>Odkazování na písma položky prostředků z kódu  
  Aby bylo možné odkazovat písma položky prostředků z kódu, je nutné zadat odkaz na prostředek písma dvou částí: základní [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]; a odkaz na umístění písma. Tyto hodnoty se použijí jako parametry <xref:System.Windows.Media.FontFamily.%23ctor%2A> metody. Následující příklad kódu ukazuje, jak odkazovat na písmo prostředků v projektu podadresář s názvem `resources`.  
   
- [!code-csharp[FontSnippets#FontPackageSnippet2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet2)]
- [!code-vb[FontSnippets#FontPackageSnippet2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet2)]  
+ [!code-csharp[FontSnippets#FontPackageSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet2)]
+ [!code-vb[FontSnippets#FontPackageSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet2)]  
   
  Základní [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] mohou zahrnovat podadresář aplikace, ve které se nachází zdroj písma. V takovém případě není potřeba zadávat adresář odkaz na umístění písma, ale by měl zahrnovat jeden z předních "`./`", označující písma prostředků je ve stejném adresáři určeném základní [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)]. Následující příklad kódu ukazuje alternativní způsob odkazuje na položku prostředků písma – je ekvivalentní předchozí příklad kódu.  
   
- [!code-csharp[FontSnippets#FontPackageSnippet5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet5)]
- [!code-vb[FontSnippets#FontPackageSnippet5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet5)]  
+ [!code-csharp[FontSnippets#FontPackageSnippet5](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontPackageSnippets.xaml.cs#fontpackagesnippet5)]
+ [!code-vb[FontSnippets#FontPackageSnippet5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontpackagesnippets.xaml.vb#fontpackagesnippet5)]  
   
 ### <a name="referencing-fonts-from-the-same-application-subdirectory"></a>Odkazování na písma z podadresáře stejné aplikace  
  Můžete umístit obě aplikace obsahu a zdrojové soubory v rámci stejné uživatelské podadresáře projektu aplikace. Následující příklad souboru projektu zobrazí stránku obsahu a zdroje písma, které jsou definovány ve stejném podadresáři.  
@@ -115,21 +115,21 @@ Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE
   
  Protože obsah aplikace a písma jsou ve stejném podadresáři, písmo odkaz je relativní vzhledem k obsahu aplikace. Následující příklady ukazují způsob vytvoření odkazu prostředku písem aplikace, když je písmo ve stejném adresáři jako aplikace.  
   
- [!code-xaml[FontSnippets#FontPackageSnippet3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/pages/HomePage.xaml#fontpackagesnippet3)]  
+ [!code-xaml[FontSnippets#FontPackageSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/pages/HomePage.xaml#fontpackagesnippet3)]  
   
- [!code-csharp[FontSnippets#FontPackageSnippet4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/pages/HomePage.xaml.cs#fontpackagesnippet4)]
- [!code-vb[FontSnippets#FontPackageSnippet4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/pages/homepage.xaml.vb#fontpackagesnippet4)]  
+ [!code-csharp[FontSnippets#FontPackageSnippet4](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/pages/HomePage.xaml.cs#fontpackagesnippet4)]
+ [!code-vb[FontSnippets#FontPackageSnippet4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/pages/homepage.xaml.vb#fontpackagesnippet4)]  
   
 ### <a name="enumerating-fonts-in-an-application"></a>Vytváření výčtu písem v aplikaci  
  Výčet písma jako položky prostředků ve vaší aplikaci, použijte buď <xref:System.Windows.Media.Fonts.GetFontFamilies%2A> nebo <xref:System.Windows.Media.Fonts.GetTypefaces%2A> metody. Následující příklad ukazuje způsob použití <xref:System.Windows.Media.Fonts.GetFontFamilies%2A> metoda vrátí kolekci <xref:System.Windows.Media.FontFamily> objekty z písma umístění aplikace. V tomto případě aplikace obsahuje podadresář s názvem "resources".  
   
- [!code-csharp[FontSnippets#FontsSnippet3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet3)]
- [!code-vb[FontSnippets#FontsSnippet3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet3)]  
+ [!code-csharp[FontSnippets#FontsSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet3)]
+ [!code-vb[FontSnippets#FontsSnippet3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet3)]  
   
  Následující příklad ukazuje způsob použití <xref:System.Windows.Media.Fonts.GetTypefaces%2A> metoda vrátí kolekci <xref:System.Windows.Media.Typeface> objekty z písma umístění aplikace. V tomto případě aplikace obsahuje podadresář s názvem "resources".  
   
- [!code-csharp[FontSnippets#FontsSnippet7](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet7)]
- [!code-vb[FontSnippets#FontsSnippet7](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet7)]  
+ [!code-csharp[FontSnippets#FontsSnippet7](~/samples/snippets/csharp/VS_Snippets_Wpf/FontSnippets/CSharp/FontFamilySnippets.xaml.cs#fontssnippet7)]
+ [!code-vb[FontSnippets#FontsSnippet7](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FontSnippets/visualbasic/fontfamilysnippets.xaml.vb#fontssnippet7)]  
   
 <a name="creating_a_font_resource_library"></a>   
 ## <a name="creating-a-font-resource-library"></a>Vytvoření prostředků knihovny písma  
@@ -151,10 +151,10 @@ Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE
 ### <a name="referencing-a-font-in-a-resource-library"></a>Odkazování na písmo v knihovně prostředků  
  K odkazování písma v knihovně prostředků z vaší aplikace, musíte přidat předponu písma odkaz s názvem sestavení knihovny. V takovém případě je sestavení prostředků písmo "FontLibrary". K oddělení názvu sestavení z odkazu v rámci sestavení, použijte znak ";". Přidání klíčového slova "Součást", za nímž následuje odkaz na název písma dokončí úplný odkaz na prostředek knihovny písma. Následující příklad kódu ukazuje, jak odkazovat na písmo v sestavení knihovny prostředků.  
   
- [!code-xaml[OpenTypeFontsSample#OpenTypeFontsSample1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontsSample/CS/Kootenay.xaml#opentypefontssample1)]  
+ [!code-xaml[OpenTypeFontsSample#OpenTypeFontsSample1](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontsSample/CS/Kootenay.xaml#opentypefontssample1)]  
   
 > [!NOTE]
->  Tato sada SDK obsahuje sadu ukázkových [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem, které můžete použít s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací. Písma jsou definovány v knihovně pouze prostředky. Další informace najdete v tématu [Ukázková sada písem OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md).  
+>  Tato sada SDK obsahuje sadu ukázkových [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem, které můžete použít s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací. Písma jsou definovány v knihovně pouze prostředky. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
   
 <a name="limitations_on_font_usage"></a>   
 ## <a name="limitations-on-font-usage"></a>Omezení týkající se použití písem  
@@ -177,5 +177,5 @@ Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE
 - <xref:System.Windows.Media.FontFamily>
 - [Typografie společnosti Microsoft: Odkazy, zprávy a kontaktů](https://docs.microsoft.com/typography/)
 - [Specifikace OpenType](https://www.microsoft.com/typography/otspec/)
-- [Funkce písma OpenType](../../../../docs/framework/wpf/advanced/opentype-font-features.md)
-- [Ukázková sada písem OpenType](../../../../docs/framework/wpf/advanced/sample-opentype-font-pack.md)
+- [Funkce písma OpenType](opentype-font-features.md)
+- [Ukázková sada písem OpenType](sample-opentype-font-pack.md)

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data binding [WPF], PriorityBinding class
 ms.assetid: d63b65ab-b3e9-4322-9aa8-1450f8d89532
-ms.openlocfilehash: 0eb14b3f3859983ba4ba0436ab5a0fab9fda5006
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: cf21041a7f3d5b75803378cf05768ee6f1008fdd
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56745302"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57354593"
 ---
 # <a name="how-to-implement-prioritybinding"></a>Postupy: Implementace rozhraní PriorityBinding
 <xref:System.Windows.Data.PriorityBinding> v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funguje tak, že zadáte seznam vazby. Seznam vazby je nejnižší priorita seřazené od nejvyšší prioritou. Vrátí-li nejvyšší prioritou vazby hodnotu úspěšně při zpracování nejsou nikdy potřeba zpracovat v seznamu vazeb. Může to být případ, který nejvyšší prioritou vazby trvá dlouhou dobu k vyhodnocení, další nejvyšší prioritu, která vrací hodnotu úspěšně bude používat, dokud vazbu s vyšší prioritou vrací hodnotu úspěšně.  
@@ -29,12 +29,12 @@ ms.locfileid: "56745302"
 > [!NOTE]
 >  V tomto příkladu je pouze pro demonstrační účely. [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] Nedoporučujeme pokyny k definování vlastností, které jsou řádů pomalejší, než bude sada polí. Další informace najdete v tématu [výběr mezi vlastností a metod](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229054(v=vs.100)).  
   
- [!code-csharp[PriorityBinding#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml.cs#1)]
- [!code-vb[PriorityBinding#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/PriorityBinding/VisualBasic/AsyncDataSource.vb#1)]  
+ [!code-csharp[PriorityBinding#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml.cs#1)]
+ [!code-vb[PriorityBinding#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PriorityBinding/VisualBasic/AsyncDataSource.vb#1)]  
   
  <xref:System.Windows.Controls.TextBlock.Text%2A> Vlastnost vytvoří vazbu na výše uvedené `AsyncDS` pomocí <xref:System.Windows.Data.PriorityBinding>:  
   
- [!code-xaml[PriorityBinding#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml#2)]  
+ [!code-xaml[PriorityBinding#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml#2)]  
   
  Když zpracovává modul vazby <xref:System.Windows.Data.Binding> objekty, začíná prvním <xref:System.Windows.Data.Binding>, který je vázán na `SlowestDP` vlastnost. Když to <xref:System.Windows.Data.Binding> je zpracování nevrací hodnotu úspěšně vzhledem k tomu, že se je v režimu spánku po dobu 5 sekund, takže další <xref:System.Windows.Data.Binding> zpracování elementu. Další <xref:System.Windows.Data.Binding> nevrací hodnotu úspěšně protože uspává se na 3 sekundy. Vazby pak přesune do další <xref:System.Windows.Data.Binding> element, který je vázán na `FastDP` vlastnost. To <xref:System.Windows.Data.Binding> vrací hodnotu "Rychlého Value". <xref:System.Windows.Controls.TextBlock> Nyní zobrazuje hodnotu "Rychlého Value".  
   
@@ -46,5 +46,5 @@ ms.locfileid: "56745302"
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Data.Binding.IsAsync%2A?displayProperty=nameWithType>
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+- [Přehled datových vazeb](data-binding-overview.md)
+- [Témata s postupy](data-binding-how-to-topics.md)

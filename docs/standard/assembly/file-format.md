@@ -6,12 +6,12 @@ ms.author: mairaw
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
-ms.openlocfilehash: 186b5cce7a3ab4924097a1212df9945b7e945367
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: 0bde31a004b1952be488569f89cfd3b129c82771
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748759"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57369075"
 ---
 # <a name="net-assembly-file-format"></a>Formát souborů sestavení .NET
 
@@ -19,7 +19,7 @@ ms.locfileid: "56748759"
 
 > Jednotlivé komponenty rozhraní příkazového řádku představuje metadata pro deklarace, implementace a odkazy na specifické pro tuto součást. Proto metadata specifická pro součást se označuje jako součást metadat a výsledné komponenty se říká, že se popisující samy sebe – od I.9.1 335 Standard ECMA, komponenty a sestavení.
 
-Formát je plně zadaný a standardizované jako [335 Standard ECMA](https://www.ecma-international.org/publications/standards/Ecma-335.htm). Všechny kompilátory .NET a moduly runtime použijte tento formát. Přítomnost binární formát zdokumentované a zřídka aktualizované byl hlavní výhoda (pravděpodobně požadavek) pro interoperabilitu. Formát poslední aktualizace podstatné způsobem v roce 2005 (.NET 2.0) tak, aby vyhovovaly obecné typy a architekturu procesoru.
+Formát je plně zadaný a standardizované jako [335 Standard ECMA](https://www.ecma-international.org/publications/standards/Ecma-335.htm). Všechny kompilátory .NET a moduly runtime použijte tento formát. Přítomnost binární formát zdokumentované a zřídka aktualizované byl hlavní výhoda (pravděpodobně požadavek) pro spolupráci. Formát poslední aktualizace podstatné způsobem v roce 2005 (.NET 2.0) tak, aby vyhovovaly obecné typy a architekturu procesoru.
 
 Formát je bez ohledu na využití procesoru a operačního systému. Se použil jako součást implementace .NET, které se zaměřují mnoho čipy a procesorů. Formát samotné má dědictví Windows, je implementable pro všechny operační systémy. Jeho pravděpodobně nejdůležitější interoperability operačního systému je, že většina hodnoty jsou uloženy ve formátu little endian. Nemá konkrétní spřažení s velikost ukazatele počítače (například 32-bit, 64 bitů).
 

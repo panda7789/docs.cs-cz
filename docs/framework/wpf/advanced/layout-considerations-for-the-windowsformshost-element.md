@@ -9,12 +9,12 @@ helpviewer_keywords:
 - dynamic layout [WPF interoperability]
 - device-independent pixels
 ms.assetid: 3c574597-bbde-440f-95cc-01371f1a5d9d
-ms.openlocfilehash: a399cc9742ff9b19aabd6dcee558f94147c88356
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 891254ff44926a719bb0c124e5dc098fd3f3e82e
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54625624"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57366540"
 ---
 # <a name="layout-considerations-for-the-windowsformshost-element"></a>Předpoklady rozložení pro element WindowsFormsHost
 Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost> element komunikuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém rozložení.  
@@ -30,9 +30,9 @@ Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost
   
 |Funkce rozložení|Popis|  
 |--------------------|-----------------|  
-|Automatické přizpůsobení velikosti|Některé [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] Změna velikosti ovládacích prvků samy o sobě správně zobrazit jejich obsah. Další informace najdete v tématu [přehled vlastnosti AutoSize](../../../../docs/framework/winforms/controls/autosize-property-overview.md).|  
+|Automatické přizpůsobení velikosti|Některé [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] Změna velikosti ovládacích prvků samy o sobě správně zobrazit jejich obsah. Další informace najdete v tématu [přehled vlastnosti AutoSize](../../winforms/controls/autosize-property-overview.md).|  
 |Ukotvení a dokování|[!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] řídí podporu umístění a velikosti podle nadřazeného kontejneru. Další informace naleznete v tématu <xref:System.Windows.Forms.Control.Anchor%2A?displayProperty=nameWithType> a <xref:System.Windows.Forms.Control.Dock%2A?displayProperty=nameWithType>.|  
-|Automatické škálování|Ovládací prvky kontejneru velikost sami sebe i jejich podřízené prvky podle rozlišení výstupní zařízení nebo velikost v pixelech výchozí písmo kontejneru. Další informace najdete v tématu [automatické změně měřítka ve Windows Forms](../../../../docs/framework/winforms/automatic-scaling-in-windows-forms.md).|  
+|Automatické škálování|Ovládací prvky kontejneru velikost sami sebe i jejich podřízené prvky podle rozlišení výstupní zařízení nebo velikost v pixelech výchozí písmo kontejneru. Další informace najdete v tématu [automatické změně měřítka ve Windows Forms](../../winforms/automatic-scaling-in-windows-forms.md).|  
 |Kontejnery rozložení|<xref:System.Windows.Forms.FlowLayoutPanel> a <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvky uspořádejte jejich podřízených ovládacích prvků a nastavení velikosti sami podle jejich obsah.|  
   
 ## <a name="layout-limitations"></a>Omezení rozložení  
@@ -73,7 +73,7 @@ Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost
 |přetečení|Když <xref:System.Windows.Forms.Integration.WindowsFormsHost> element převede z `double` hodnoty `int` hodnoty, je možné přetečení. Hodnoty, které jsou větší než <xref:System.Int32.MaxValue> jsou nastaveny na <xref:System.Int32.MaxValue>.|  
   
 ### <a name="layout-related-properties"></a>Vlastnosti související s rozložením  
- Vlastnosti, které řídí chování rozložení v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky jsou odpovídajícím způsobem podle mapovány <xref:System.Windows.Forms.Integration.WindowsFormsHost> elementu. Další informace najdete v tématu [Windows Forms a WPF vlastnost mapování](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md).  
+ Vlastnosti, které řídí chování rozložení v [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky jsou odpovídajícím způsobem podle mapovány <xref:System.Windows.Forms.Integration.WindowsFormsHost> elementu. Další informace najdete v tématu [Windows Forms a WPF vlastnost mapování](windows-forms-and-wpf-property-mapping.md).  
   
 ### <a name="layout-changes-in-the-hosted-control"></a>Změny rozložení v hostovaného ovládacího prvku  
  Změny rozložení v hostovanou [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek se rozšíří na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aktivovat aktualizaci rozložení. <xref:System.Windows.UIElement.InvalidateMeasure%2A> Metoda <xref:System.Windows.Forms.Integration.WindowsFormsHost> zajistí, že způsobit změny rozložení v ovládacím prvku hostované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modul rozložení pro spuštění.  
@@ -101,7 +101,7 @@ Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Návod: Ovládací prvky uspořádání Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-arranging-windows-forms-controls-in-wpf.md)
+- [Návod: Ovládací prvky uspořádání Windows Forms v subsystému WPF](walkthrough-arranging-windows-forms-controls-in-wpf.md)
 - [Uspořádání Windows Forms ovládací prvky v ukázce WPF](https://go.microsoft.com/fwlink/?LinkID=159971)
-- [Mapování vlastnosti Windows Forms a WPF](../../../../docs/framework/wpf/advanced/windows-forms-and-wpf-property-mapping.md)
-- [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)
+- [Mapování vlastnosti Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md)
+- [Migrace a interoperabilita](migration-and-interoperability.md)

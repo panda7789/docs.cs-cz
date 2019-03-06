@@ -7,25 +7,25 @@ helpviewer_keywords:
 - WPF [WPF], creating Direct3D9 content
 - Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 1b14b823-69c4-4e8d-99e4-f6dade58f89a
-ms.openlocfilehash: 9fd5cc270074a3a2845147bcad8baef8d1f8ba2a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e9d000ca2da9dd9b4c8a677e85bc9cca5b1b1b1d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54529408"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57372682"
 ---
 # <a name="wpf-and-direct3d9-interoperation"></a>Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9
 Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (WPF). Toto téma popisuje postup vytvoření obsahu Direct3D9 tak, aby efektivně spolupracuje s WPF.  
   
 > [!NOTE]
->  Při použití obsahu Direct3D9 v subsystému WPF, musíte také uvažovat o výkonu. Další informace o tom, jak optimalizovat výkon, naleznete v tématu [důležité informace o výkonu pro Direct3D9 a interoperabilitu WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
+>  Při použití obsahu Direct3D9 v subsystému WPF, musíte také uvažovat o výkonu. Další informace o tom, jak optimalizovat výkon, naleznete v tématu [důležité informace o výkonu pro Direct3D9 a interoperabilitu WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
   
 ## <a name="display-buffers"></a>Vyrovnávací paměti zobrazení  
  <xref:System.Windows.Interop.D3DImage> Třída spravuje dvě vyrovnávací paměti zobrazení, které se volají *přípravné vyrovnávací paměti* a *front-vyrovnávací paměti*. Přípravné vyrovnávací paměti je vaše plocha Direct3D9. Změny přípravné vyrovnávací paměti jsou zkopírovány vpřed na front-vyrovnávací paměti při volání <xref:System.Windows.Interop.D3DImage.Unlock%2A> metody.  
   
  Následující ilustrace znázorňuje vztah mezi přípravné vyrovnávací paměti a front-vyrovnávací paměti.  
   
- ![Vyrovnávací paměti zobrazení D3DImage](../../../../docs/framework/wpf/advanced/media/d3dimage-buffers.png "D3DImage_buffers")  
+ ![Vyrovnávací paměti zobrazení D3DImage](./media/d3dimage-buffers.png "D3DImage_buffers")  
   
 ## <a name="direct3d9-device-creation"></a>Vytvoření zařízení Direct3D9  
  K vykreslení obsahu Direct3D9, musíte vytvořit Direct3D9 zařízení. Existují dva Direct3D9 objekty, které můžete použít k vytvoření zařízení, `IDirect3D9` a `IDirect3D9Ex`. Můžete vytvořit tyto objekty `IDirect3DDevice9` a `IDirect3DDevice9Ex` zařízení, v uvedeném pořadí.  
@@ -39,14 +39,14 @@ Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (W
  Ve Windows Vista nebo novějšího operačního systému, použijte `Direct3DCreate9Ex` metodu s zobrazení, který je nakonfigurován pro použití Windows zobrazit ovladač WDDM (Model). Použití `Direct3DCreate9` metoda na libovolné platformě.  
   
 ### <a name="availability-of-the-direct3dcreate9ex-method"></a>Dostupnost Direct3DCreate9Ex – metoda  
- Má d3d9.dll `Direct3DCreate9Ex` metoda pouze u Windows Vista nebo novějším operačním systémem. Pokud připojíte přímo funkce ve Windows XP, vaše aplikace se nepodaří načíst. Chcete-li zjistit, zda `Direct3DCreate9Ex` metoda je podporována, načíst knihovnu DLL a vyhledejte adresu proc. Následující kód ukazuje, jak otestovat `Direct3DCreate9Ex` metody. Příklad úplného kódu, naleznete v tématu [názorný postup: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md).  
+ Má d3d9.dll `Direct3DCreate9Ex` metoda pouze u Windows Vista nebo novějším operačním systémem. Pokud připojíte přímo funkce ve Windows XP, vaše aplikace se nepodaří načíst. Chcete-li zjistit, zda `Direct3DCreate9Ex` metoda je podporována, načíst knihovnu DLL a vyhledejte adresu proc. Následující kód ukazuje, jak otestovat `Direct3DCreate9Ex` metody. Příklad úplného kódu, naleznete v tématu [názorný postup: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md).  
   
- [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_EnsureD3DObjects](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_ensured3dobjects)]  
+ [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_EnsureD3DObjects](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_ensured3dobjects)]  
   
 ### <a name="hwnd-creation"></a>Vytvoření prvku HWND  
  Vytvoření zařízení vyžaduje popisovačem HWND. Obecně platí vytvořte fiktivního HWND pro Direct3D9 používat. Následující příklad kódu ukazuje, jak vytvořit fiktivního HWND.  
   
- [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_EnsureHWND](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_ensurehwnd)]  
+ [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_EnsureHWND](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_ensurehwnd)]  
   
 ### <a name="present-parameters"></a>K dispozici parametry  
  Vytvoření zařízení také vyžaduje `D3DPRESENT_PARAMETERS` struktury, ale pouze několik parametrů, které jsou důležité. Tyto parametry se rozhodli minimalizovat nároky na paměť.  
@@ -57,7 +57,7 @@ Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (W
   
  Následující kód ukazuje, jak inicializovat `D3DPRESENT_PARAMETERS` struktury.  
   
- [!code-cpp[System.Windows.Interop.D3DImage#Renderer_Init](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderer_init)]  
+ [!code-cpp[System.Windows.Interop.D3DImage#Renderer_Init](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderer_init)]  
   
 ## <a name="creating-the-back-buffer-render-target"></a>Vytvoření cíle vykreslování přípravné vyrovnávací paměti  
  K zobrazení obsahu Direct3D9 v <xref:System.Windows.Interop.D3DImage>, vytvořte Direct3D9 plochu a přiřaďte ho voláním <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> metody.  
@@ -67,14 +67,14 @@ Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (W
   
  Následující příklad kódu ukazuje, jak můžete zkontrolovat všechny adaptéry v systému pro Direct3D9 podporují.  
   
- [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_TestSurfaceSettings](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_testsurfacesettings)]  
+ [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_TestSurfaceSettings](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_testsurfacesettings)]  
   
 ### <a name="creating-the-surface"></a>Vytváření na plochu  
- Před vytvořením povrch, ověřte, zda možnosti zařízení podporovat dobrý výkon na cílovém operačním systému. Další informace najdete v tématu [důležité informace o výkonu pro Direct3D9 a interoperabilitu WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
+ Před vytvořením povrch, ověřte, zda možnosti zařízení podporovat dobrý výkon na cílovém operačním systému. Další informace najdete v tématu [důležité informace o výkonu pro Direct3D9 a interoperabilitu WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
   
  Po ověření schopnosti zařízení, můžete vytvořit na plochu. Následující příklad kódu ukazuje, jak vytvořit cíl vykreslování.  
   
- [!code-cpp[System.Windows.Interop.D3DImage#Renderer_CreateSurface](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderer_createsurface)]  
+ [!code-cpp[System.Windows.Interop.D3DImage#Renderer_CreateSurface](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderer_createsurface)]  
   
 ### <a name="wddm"></a>WDDM  
  Ve Windows Vista a novějších operačních systémech, které jsou nakonfigurovány pro použití WDDM, vytvořte textur cíl vykreslování a předat povrch úroveň 0 <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> metody. Tento přístup není doporučen na Windows XP, protože nelze vytvořit cílovou texturu možno zablokovat vykreslování a sníží výkon.  
@@ -125,7 +125,7 @@ Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (W
   
  Následující příklad kódu ukazuje, jak najít aktuální monitorování.  
   
- [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_SetAdapter](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_setadapter)]  
+ [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_SetAdapter](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_setadapter)]  
   
  Aktualizovat monitorování při <xref:System.Windows.Interop.D3DImage> kontejneru velikost nebo pozice změny nebo aktualizace monitorování s využitím `DispatcherTimer` , která aktualizuje několikrát za sekundu.  
   
@@ -149,6 +149,6 @@ Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (W
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Interop.D3DImage>
-- [Předpoklady výkonu pro Direct3D9 a interoperabilitu WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)
-- [Návod: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)
-- [Návod: Hostování obsahu Direct3D9 v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)
+- [Předpoklady výkonu pro Direct3D9 a interoperabilitu WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md)
+- [Návod: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)
+- [Návod: Hostování obsahu Direct3D9 v subsystému WPF](walkthrough-hosting-direct3d9-content-in-wpf.md)

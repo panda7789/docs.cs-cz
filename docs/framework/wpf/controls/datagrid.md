@@ -10,15 +10,15 @@ helpviewer_keywords:
 - DataGrid [WPF], customizing the appearance of
 - DataGrid columns [WPF], using
 ms.assetid: bf89ea63-79b6-422b-bc9f-0485ad803216
-ms.openlocfilehash: 7eb5c4719a18a288ca0ee3acb13c8c2498ab30f7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 86721592f632d6d77dbfa6bc4eac3c2872628b0d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54676078"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57368135"
 ---
 # <a name="datagrid"></a>DataGrid
-<xref:System.Windows.Controls.DataGrid> Řízení umožňuje zobrazit a upravit data z mnoha různých zdrojů, jako například z databáze SQL, dotaz LINQ nebo kterýkoli jiný zdroj dat s možností vazby. Další informace najdete v tématu [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
+<xref:System.Windows.Controls.DataGrid> Řízení umožňuje zobrazit a upravit data z mnoha různých zdrojů, jako například z databáze SQL, dotaz LINQ nebo kterýkoli jiný zdroj dat s možností vazby. Další informace najdete v tématu [Přehled zdrojů vazby](../data/binding-sources-overview.md).  
   
  Text, ovládací prvky, můžete zobrazit jako sloupce <xref:System.Windows.Controls.ComboBox>, nebo jakýkoli jiný WPF obsah, jako jsou obrázky, tlačítek nebo veškerý obsah v šabloně. Můžete použít <xref:System.Windows.Controls.DataGridTemplateColumn> zobrazení dat, které jsou definovány v šabloně. Následující tabulka uvádí typy sloupců, které jsou k dispozici ve výchozím nastavení.  
   
@@ -38,7 +38,7 @@ ms.locfileid: "54676078"
 |Alternující barvy pozadí|Nastavte <xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A> vlastnost na hodnotu 2 nebo více a pak mu přiřaďte <xref:System.Windows.Media.Brush> k <xref:System.Windows.Controls.DataGrid.RowBackground%2A> a <xref:System.Windows.Controls.DataGrid.AlternatingRowBackground%2A> vlastnosti.|  
 |Definování chování výběru řádků a buňky|Nastavte <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> a <xref:System.Windows.Controls.DataGrid.SelectionUnit%2A> vlastnosti.|  
 |Přizpůsobit vzhled záhlaví buňky a řádků|Použít novou <xref:System.Windows.Style> k <xref:System.Windows.Controls.DataGrid.ColumnHeaderStyle%2A>, <xref:System.Windows.Controls.DataGrid.RowHeaderStyle%2A>, <xref:System.Windows.Controls.DataGrid.CellStyle%2A>, nebo <xref:System.Windows.Controls.DataGrid.RowStyle%2A> vlastnosti.|  
-|Nastavit možnosti změny velikosti|Nastavte <xref:System.Windows.FrameworkElement.Height%2A>, <xref:System.Windows.FrameworkElement.MaxHeight%2A>, <xref:System.Windows.FrameworkElement.MinHeight%2A>, <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.MaxWidth%2A>, nebo <xref:System.Windows.FrameworkElement.MinWidth%2A> vlastnosti. Další informace najdete v tématu [možnosti nastavení velikosti v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/sizing-options-in-the-datagrid-control.md).|  
+|Nastavit možnosti změny velikosti|Nastavte <xref:System.Windows.FrameworkElement.Height%2A>, <xref:System.Windows.FrameworkElement.MaxHeight%2A>, <xref:System.Windows.FrameworkElement.MinHeight%2A>, <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.MaxWidth%2A>, nebo <xref:System.Windows.FrameworkElement.MinWidth%2A> vlastnosti. Další informace najdete v tématu [možnosti nastavení velikosti v ovládacím prvku DataGrid](sizing-options-in-the-datagrid-control.md).|  
 |Přístup k vybrané položky|Zkontrolujte <xref:System.Windows.Controls.DataGrid.SelectedCells%2A> vlastnost k získání vybraných buněk a <xref:System.Windows.Controls.Primitives.MultiSelector.SelectedItems%2A> vlastnost k získání vybrané řádky. Další informace naleznete v tématu <xref:System.Windows.Controls.DataGrid.SelectedCells%2A>.|  
 |Upravit interakce s koncovým uživatelem|Nastavte <xref:System.Windows.Controls.DataGrid.CanUserAddRows%2A>, <xref:System.Windows.Controls.DataGrid.CanUserDeleteRows%2A>, <xref:System.Windows.Controls.DataGrid.CanUserReorderColumns%2A>, <xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A>, <xref:System.Windows.Controls.DataGrid.CanUserResizeRows%2A>, a <xref:System.Windows.Controls.DataGrid.CanUserSortColumns%2A> vlastnosti.|  
 |Zrušit nebo změnit automaticky generovaný sloupce|Zpracování <xref:System.Windows.Controls.DataGrid.AutoGeneratingColumn> událostí.|  
@@ -49,17 +49,17 @@ ms.locfileid: "54676078"
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Návod: Zobrazení dat z databáze systému SQL Server v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|Popisuje, jak vytvořit nový projekt WPF, přidejte Entity Framework Element, nastavit zdroje a zobrazení dat v <xref:System.Windows.Controls.DataGrid>.|  
-|[Postupy: Přidání podrobností řádku do ovládacího prvku DataGrid](../../../../docs/framework/wpf/controls/how-to-add-row-details-to-a-datagrid-control.md)|Popisuje, jak vytvořit řádek podrobnosti <xref:System.Windows.Controls.DataGrid>.|  
-|[Postupy: Implementace ověření pomocí ovládacího prvku DataGrid](../../../../docs/framework/wpf/controls/how-to-implement-validation-with-the-datagrid-control.md)|Popisuje, jak ověřte hodnoty v <xref:System.Windows.Controls.DataGrid> buňky a řádky a ověření zobrazení zpětné vazby.|  
-|[Výchozí chování klávesnice a myši v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/default-keyboard-and-mouse-behavior-in-the-datagrid-control.md)|Popisuje, jak pracovat <xref:System.Windows.Controls.DataGrid> ovládacího prvku pomocí klávesnice a myši.|  
-|[Postupy: Seskupení, řazení a filtrování dat v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/how-to-group-sort-and-filter-data-in-the-datagrid-control.md)|Popisuje postup zobrazení dat v <xref:System.Windows.Controls.DataGrid> seskupení, řazení a filtrování dat různými způsoby.|  
-|[Možnosti změny velikosti v ovládacím prvku DataGrid](../../../../docs/framework/wpf/controls/sizing-options-in-the-datagrid-control.md)|Popisuje, jak řídit absolutní a Automatická změna velikosti v <xref:System.Windows.Controls.DataGrid>.|  
+|[Návod: Zobrazení dat z databáze systému SQL Server v ovládacím prvku DataGrid](walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|Popisuje, jak vytvořit nový projekt WPF, přidejte Entity Framework Element, nastavit zdroje a zobrazení dat v <xref:System.Windows.Controls.DataGrid>.|  
+|[Postupy: Přidání podrobností řádku do ovládacího prvku DataGrid](how-to-add-row-details-to-a-datagrid-control.md)|Popisuje, jak vytvořit řádek podrobnosti <xref:System.Windows.Controls.DataGrid>.|  
+|[Postupy: Implementace ověření pomocí ovládacího prvku DataGrid](how-to-implement-validation-with-the-datagrid-control.md)|Popisuje, jak ověřte hodnoty v <xref:System.Windows.Controls.DataGrid> buňky a řádky a ověření zobrazení zpětné vazby.|  
+|[Výchozí chování klávesnice a myši v ovládacím prvku DataGrid](default-keyboard-and-mouse-behavior-in-the-datagrid-control.md)|Popisuje, jak pracovat <xref:System.Windows.Controls.DataGrid> ovládacího prvku pomocí klávesnice a myši.|  
+|[Postupy: Seskupení, řazení a filtrování dat v ovládacím prvku DataGrid](how-to-group-sort-and-filter-data-in-the-datagrid-control.md)|Popisuje postup zobrazení dat v <xref:System.Windows.Controls.DataGrid> seskupení, řazení a filtrování dat různými způsoby.|  
+|[Možnosti změny velikosti v ovládacím prvku DataGrid](sizing-options-in-the-datagrid-control.md)|Popisuje, jak řídit absolutní a Automatická změna velikosti v <xref:System.Windows.Controls.DataGrid>.|  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Controls.DataGrid>
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
-- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
-- [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)
-- [Ovládací prvky](../../../../docs/framework/wpf/controls/index.md)
-- [Model obsahu WPF](../../../../docs/framework/wpf/controls/wpf-content-model.md)
+- [Styly a šablony](styling-and-templating.md)
+- [Přehled datových vazeb](../data/data-binding-overview.md)
+- [Přehled datových šablon](../data/data-templating-overview.md)
+- [Ovládací prvky](index.md)
+- [Model obsahu WPF](wpf-content-model.md)

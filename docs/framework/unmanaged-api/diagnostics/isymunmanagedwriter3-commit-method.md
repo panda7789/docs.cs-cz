@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 90ef45650b30fd57fb93d0e16eac6e34079745b1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 38d9c3eeb5cdb8b15ef5306a641910f2f4bcc9cf
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54526233"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57372344"
 ---
 # <a name="isymunmanagedwriter3commit-method"></a>ISymUnmanagedWriter3::Commit – metoda
 Potvrdí změny doposud zapsán do datového proudu.  
@@ -37,7 +37,7 @@ HRESULT Commit();
  Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl , CorSym.h  
+ **Záhlaví:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 - [ISymUnmanagedWriter3 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)

@@ -28,25 +28,25 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: 5cc7c54b78e291c25f1eda62942545acbb893091
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d1a93fe81b892b85f77547d48428d3d9a78d5173
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54733451"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373094"
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
 Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (WPF) prostřednictvím systému windows. Primárním účelem okna je jako hostitele obsahu, která data vizualizuje a umožňuje uživatelům interakci s daty. Samostatné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace poskytují jejich vlastní okna s použitím <xref:System.Windows.Window> třídy. Toto téma představuje <xref:System.Windows.Window> před pokrývají základní informace o vytváření a správa systému windows v samostatné aplikace.  
   
 > [!NOTE]
->  Hostované v prohlížeči [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací, včetně [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a dojde ke ztrátě [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] neposkytují stránek, vlastní systému windows. Místo toho jsou hostované v systému windows poskytuje [!INCLUDE[TLA#tla_iegeneric](../../../../includes/tlasharptla-iegeneric-md.md)]. Zobrazit [přehled aplikací prohlížeče WPF XAML](../../../../docs/framework/wpf/app-development/wpf-xaml-browser-applications-overview.md).  
+>  Hostované v prohlížeči [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací, včetně [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a dojde ke ztrátě [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] neposkytují stránek, vlastní systému windows. Místo toho jsou hostované v systému windows poskytuje [!INCLUDE[TLA#tla_iegeneric](../../../../includes/tlasharptla-iegeneric-md.md)]. Zobrazit [přehled aplikací prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md).  
   
   
 <a name="TheWindowClass"></a>   
 ## <a name="the-window-class"></a>Třídy oken  
  Následující obrázek znázorňuje základní části okna.  
   
- ![Okno prvky](../../../../docs/framework/wpf/app-development/media/windowoverviewfigure1.PNG "WindowOverviewFigure1")  
+ ![Okno prvky](./media/windowoverviewfigure1.PNG "WindowOverviewFigure1")  
   
  Okno je rozdělen do dvou oblastí: neklientská oblast a klientské oblasti.  
   
@@ -82,16 +82,16 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  Obecně platí, ale vzhled okna je implementováno pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značky a její chování je implementováno pomocí použití modelu code-behind, jak je znázorněno v následujícím příkladu.  
   
- [!code-xaml[WindowsOverviewSnippets#MarkupAndCodeBehindWindowMARKUP](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/MarkupAndCodeBehindWindow.xaml#markupandcodebehindwindowmarkup)]  
+ [!code-xaml[WindowsOverviewSnippets#MarkupAndCodeBehindWindowMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/MarkupAndCodeBehindWindow.xaml#markupandcodebehindwindowmarkup)]  
   
- [!code-csharp[WindowsOverviewSnippets#MarkupAndCodeBehindWindowCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/MarkupAndCodeBehindWindow.xaml.cs#markupandcodebehindwindowcodebehind)]
- [!code-vb[WindowsOverviewSnippets#MarkupAndCodeBehindWindowCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WindowsOverviewSnippets/VisualBasic/MarkupAndCodeBehindWindow.xaml.vb#markupandcodebehindwindowcodebehind)]  
+ [!code-csharp[WindowsOverviewSnippets#MarkupAndCodeBehindWindowCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/MarkupAndCodeBehindWindow.xaml.cs#markupandcodebehindwindowcodebehind)]
+ [!code-vb[WindowsOverviewSnippets#MarkupAndCodeBehindWindowCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowsOverviewSnippets/VisualBasic/MarkupAndCodeBehindWindow.xaml.vb#markupandcodebehindwindowcodebehind)]  
   
  Chcete-li povolit [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru označení a použití modelu code-behind soubor spolupráce, vyžadují se následující věci:  
   
 -   V kódu `Window` musí obsahovat element `x:Class` atribut. Když je aplikace sestavená, existenci `x:Class` ve značkách soubor způsobí, že [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] k vytvoření `partial` třídu odvozenou od <xref:System.Windows.Window> a má název, který je určen `x:Class` atribut. To vyžaduje přidání [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] deklarace oboru názvů pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] schématu ( `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` ). Vygenerovaný `partial` implementuje třída `InitializeComponent` metodu, která je volána k registraci události a nastavit vlastnosti, které jsou implementovány v kódu.  
   
--   V modelu code-behind, musí být třída `partial` třídy se stejným názvem, která je zadána `x:Class` atribut v kódu který musí být odvozen od <xref:System.Windows.Window>. To umožňuje použití modelu code-behind souboru má být spojen s `partial` třídu, která se vygeneruje pro označovacího souboru, když je aplikace sestavená (viz [sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)).  
+-   V modelu code-behind, musí být třída `partial` třídy se stejným názvem, která je zadána `x:Class` atribut v kódu který musí být odvozen od <xref:System.Windows.Window>. To umožňuje použití modelu code-behind souboru má být spojen s `partial` třídu, která se vygeneruje pro označovacího souboru, když je aplikace sestavená (viz [sestavení aplikace WPF](building-a-wpf-application-wpf.md)).  
   
 -   V modelu code-behind <xref:System.Windows.Window> třída musí implementovat konstruktor, který volá `InitializeComponent` metody. `InitializeComponent` je implementován ve značce vygenerovaný soubor `partial` třídy k registraci události a nastavte vlastnosti, které jsou definovány v kódu.  
   
@@ -100,10 +100,10 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  S touto konfigurací na místě, můžete se soustředit na definování vzhledu okna [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek a provádění své chování v kódu. Následující příklad ukazuje okno s tlačítkem, implementované v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značky a obslužnou rutinu události pro tlačítka <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události, implementovat v kódu.  
   
- [!code-xaml[WindowsOverviewWindowWithButtonSnippets#MarkupAndCodeBehindWindowMARKUP](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewWindowWithButtonSnippets/CSharp/MarkupAndCodeBehindWindow.xaml#markupandcodebehindwindowmarkup)]  
+ [!code-xaml[WindowsOverviewWindowWithButtonSnippets#MarkupAndCodeBehindWindowMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewWindowWithButtonSnippets/CSharp/MarkupAndCodeBehindWindow.xaml#markupandcodebehindwindowmarkup)]  
   
- [!code-csharp[WindowsOverviewWindowWithButtonSnippets#MarkupAndCodeBehindWindowCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewWindowWithButtonSnippets/CSharp/MarkupAndCodeBehindWindow.xaml.cs#markupandcodebehindwindowcodebehind)]
- [!code-vb[WindowsOverviewWindowWithButtonSnippets#MarkupAndCodeBehindWindowCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WindowsOverviewWindowWithButtonSnippets/VisualBasic/MarkupAndCodeBehindWindow.xaml.vb#markupandcodebehindwindowcodebehind)]  
+ [!code-csharp[WindowsOverviewWindowWithButtonSnippets#MarkupAndCodeBehindWindowCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewWindowWithButtonSnippets/CSharp/MarkupAndCodeBehindWindow.xaml.cs#markupandcodebehindwindowcodebehind)]
+ [!code-vb[WindowsOverviewWindowWithButtonSnippets#MarkupAndCodeBehindWindowCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowsOverviewWindowWithButtonSnippets/VisualBasic/MarkupAndCodeBehindWindow.xaml.vb#markupandcodebehindwindowcodebehind)]  
   
 <a name="ConfiguringWindowForMSBuild"></a>   
 ## <a name="configuring-a-window-definition-for-msbuild"></a>Konfigurace definice okna pro MSBuild  
@@ -125,7 +125,7 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
 </Project>  
 ```  
   
- Informace o vytváření [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] naleznete v tématu [sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md).  
+ Informace o vytváření [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] naleznete v tématu [sestavení aplikace WPF](building-a-wpf-application-wpf.md).  
   
 <a name="WindowLifetime"></a>   
 ## <a name="window-lifetime"></a>Doba života okna  
@@ -136,9 +136,9 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
 ### <a name="opening-a-window"></a>Otevřete okno  
  Otevřete okno, nejprve vytvořte její instanci, která je znázorněn v následujícím příkladu.  
   
- [!code-xaml[WindowsOverviewStartupEventSnippets#AppMARKUP](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewStartupEventSnippets/CSharp/App.xaml#appmarkup)]  
+ [!code-xaml[WindowsOverviewStartupEventSnippets#AppMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewStartupEventSnippets/CSharp/App.xaml#appmarkup)]  
   
- [!code-csharp[WindowsOverviewStartupEventSnippets#AppCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewStartupEventSnippets/CSharp/App.xaml.cs#appcodebehind)]  
+ [!code-csharp[WindowsOverviewStartupEventSnippets#AppCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewStartupEventSnippets/CSharp/App.xaml.cs#appcodebehind)]  
   
  V tomto příkladu `MarkupAndCodeBehindWindow` je vytvořena instance při spuštění aplikace, které dojde při <xref:System.Windows.Application.Startup> událost se vyvolá.  
   
@@ -146,18 +146,18 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  Otevření okna je nakonec voláním <xref:System.Windows.Window.Show%2A> metoda; výsledek je znázorněno na následujícím obrázku.  
   
- ![Otevřít okno otevřené voláním metody window.show](../../../../docs/framework/wpf/app-development/media/windowoverviewfigure8.png "WindowOverviewFigure8")  
+ ![Otevřít okno otevřené voláním metody window.show](./media/windowoverviewfigure8.png "WindowOverviewFigure8")  
   
  Okno, které se otevře voláním <xref:System.Windows.Window.Show%2A> je nemodálním okně, což znamená, že aplikace funguje v režimu, který umožňuje uživatelům aktivovat ostatní okna ve stejné aplikaci.  
   
 > [!NOTE]
->  <xref:System.Windows.Window.ShowDialog%2A> je volána k modálně otevřít windows, jako například dialogová okna. Zobrazit [přehled dialogových oken](../../../../docs/framework/wpf/app-development/dialog-boxes-overview.md) Další informace.  
+>  <xref:System.Windows.Window.ShowDialog%2A> je volána k modálně otevřít windows, jako například dialogová okna. Zobrazit [přehled dialogových oken](dialog-boxes-overview.md) Další informace.  
   
  Když <xref:System.Windows.Window.Show%2A> je volána, okno provádí inicializace předtím, než se zobrazí k vytvoření infrastruktury, které umožňuje přijímat uživatelský vstup. Při inicializaci okna <xref:System.Windows.Window.SourceInitialized> událost se vyvolá, a zobrazí se okno.  
   
  Jako zástupce <xref:System.Windows.Application.StartupUri%2A> lze nastavit k určení první okno, které se automaticky otevře při spuštění aplikace.  
   
- [!code-xaml[WindowsOverviewSnippets#ApplicationStartupUriMARKUP](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/App.xaml#applicationstartupurimarkup)]  
+ [!code-xaml[WindowsOverviewSnippets#ApplicationStartupUriMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/App.xaml#applicationstartupurimarkup)]  
   
  Při spuštění aplikace, okna zadanou hodnotou <xref:System.Windows.Application.StartupUri%2A> otevření modelessly; interně, voláním otevření okna jeho <xref:System.Windows.Window.Show%2A> metoda.  
   
@@ -171,8 +171,8 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  Některé windows vyžadují vztah s oknem je otevře. Například [!INCLUDE[TLA#tla_ide](../../../../includes/tlasharptla-ide-md.md)] aplikace může zobrazit vlastnosti windows a okna nástrojů, jehož chování typické je zahrnují okna, která je vytvořila. Kromě toho taková okna by měl vždy zavřít, minimalizovat, maximalizovat a obnovit společně s oknem, které byly vytvořeny. Takové vztah lze navázat tak, že jedno okno *vlastní* jiného a dosáhnout tak, že nastavíte <xref:System.Windows.Window.Owner%2A> vlastnost *vlastní okno* s odkazem na *vlastníka okno*. To je ukázáno v následujícím příkladu.  
   
- [!code-csharp[WindowOwnerOwnedWindowsSnippets#SetWindowOwnerCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/CSharp/MainWindow.xaml.cs#setwindowownercode)]
- [!code-vb[WindowOwnerOwnedWindowsSnippets#SetWindowOwnerCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/visualbasic/mainwindow.xaml.vb#setwindowownercode)]  
+ [!code-csharp[WindowOwnerOwnedWindowsSnippets#SetWindowOwnerCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/CSharp/MainWindow.xaml.cs#setwindowownercode)]
+ [!code-vb[WindowOwnerOwnedWindowsSnippets#SetWindowOwnerCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/visualbasic/mainwindow.xaml.vb#setwindowownercode)]  
   
  Po navázání vlastnictví:  
   
@@ -213,10 +213,10 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  Jedním z běžných důvodů pro zpracování <xref:System.Windows.Window.Activated> a <xref:System.Windows.Window.Deactivated> je můžete povolit nebo zakázat funkce, které lze spustit pouze když je aktivní okno. Například některé windows zobrazit interaktivní obsah, který vyžaduje vstup uživatele konstantní nebo pozornost, včetně hry a přehrávačů videa. Následující příklad je zjednodušený video přehrávač, který ukazuje, jak zpracovat <xref:System.Windows.Window.Activated> a <xref:System.Windows.Window.Deactivated> k implementaci tohoto chování.  
   
- [!code-xaml[WindowsOverviewSnippets#ActivationDeactivationMARKUP](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/CustomMediaPlayerWindow.xaml#activationdeactivationmarkup)]  
+ [!code-xaml[WindowsOverviewSnippets#ActivationDeactivationMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/CustomMediaPlayerWindow.xaml#activationdeactivationmarkup)]  
   
- [!code-csharp[WindowsOverviewSnippets#ActivationDeactivationCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/CustomMediaPlayerWindow.xaml.cs#activationdeactivationcodebehind)]
- [!code-vb[WindowsOverviewSnippets#ActivationDeactivationCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WindowsOverviewSnippets/VisualBasic/CustomMediaPlayerWindow.xaml.vb#activationdeactivationcodebehind)]  
+ [!code-csharp[WindowsOverviewSnippets#ActivationDeactivationCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/CustomMediaPlayerWindow.xaml.cs#activationdeactivationcodebehind)]
+ [!code-vb[WindowsOverviewSnippets#ActivationDeactivationCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowsOverviewSnippets/VisualBasic/CustomMediaPlayerWindow.xaml.vb#activationdeactivationcodebehind)]  
   
  Další typy aplikací může stále spuštění kódu na pozadí při deaktivaci časového období. Například poštovní klient může pokračovat v dotazování poštovní server, když uživatel používá jiné aplikace. Aplikace, jako jsou tyto často poskytují odlišných nebo dodatečných chování, zatímco je deaktivováno hlavního okna. S ohledem na program e-mailu to může znamenat přidání nové položky pošty do schránky doručených zpráv i přidání oznámení ikony na hlavním panelu systému. Ikona oznámení potřebovat zobrazí jenom při e-mailu okno není aktivní, které se dají určit pomocí kontroly <xref:System.Windows.Window.IsActive%2A> vlastnost.  
   
@@ -247,17 +247,17 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  Zavřete okno v reakci na jednu z těchto mechanismů vlastní, musíte zavolat <xref:System.Windows.Window.Close%2A> metody. Následující příklad implementuje možnost Zavřít okno výběrem **ukončovací** na **souboru** nabídky.  
   
- [!code-xaml[WindowsOverviewSnippets#WindowWithFileExitMARKUP](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowWithFileExit.xaml#windowwithfileexitmarkup)]  
+ [!code-xaml[WindowsOverviewSnippets#WindowWithFileExitMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowWithFileExit.xaml#windowwithfileexitmarkup)]  
   
- [!code-csharp[WindowsOverviewSnippets#WindowWithFileExitCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowWithFileExit.xaml.cs#windowwithfileexitcodebehind)]
- [!code-vb[WindowsOverviewSnippets#WindowWithFileExitCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WindowsOverviewSnippets/VisualBasic/WindowWithFileExit.xaml.vb#windowwithfileexitcodebehind)]  
+ [!code-csharp[WindowsOverviewSnippets#WindowWithFileExitCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowWithFileExit.xaml.cs#windowwithfileexitcodebehind)]
+ [!code-vb[WindowsOverviewSnippets#WindowWithFileExitCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowsOverviewSnippets/VisualBasic/WindowWithFileExit.xaml.vb#windowwithfileexitcodebehind)]  
   
  Po zavření okna vyvolává dvě události: <xref:System.Windows.Window.Closing> a <xref:System.Windows.Window.Closed>.  
   
  <xref:System.Windows.Window.Closing> je aktivována před okno se zavře a poskytuje mechanismus, podle které okno jde zakázat uzavření. Jedním z běžných důvodů zabránit zavření okna je, pokud obsahu okna obsahuje upravený data. V takovém případě <xref:System.Windows.Window.Closing> události může být zpracována pro určení, zda je nekonzistentní data a pokud ano, chcete-li požádat uživatele, zda chcete pokračovat bez uložení dat zavření okna nebo zrušení zavření okna. Následující příklad ukazuje klíčové aspekty zpracování <xref:System.Windows.Window.Closing>.  
   
- [!code-csharp[WindowClosingSnippets](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml.cs)]
- [!code-vb[WindowClosingSnippets](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WindowClosingSnippets/visualbasic/datawindow.xaml.vb)]  
+ [!code-csharp[WindowClosingSnippets](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml.cs)]
+ [!code-vb[WindowClosingSnippets](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowClosingSnippets/visualbasic/datawindow.xaml.vb)]  
  
   
  <xref:System.Windows.Window.Closing> Je předána obslužné rutiny události <xref:System.ComponentModel.CancelEventArgs>, která implementuje `Boolean` <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> vlastnost, která nastavíte na `true` zabránit okno zavřít.  
@@ -284,11 +284,11 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
 ### <a name="window-lifetime-events"></a>Události doby života okno  
  Následující obrázek znázorňuje posloupnost událostí instančního objektu v životnost časového období.  
   
- ![Doba života okna](../../../../docs/framework/wpf/app-development/media/windowlifetimeevents.png "WindowLifetimeEvents")  
+ ![Doba života okna](./media/windowlifetimeevents.png "WindowLifetimeEvents")  
   
  Následující obrázek znázorňuje posloupnost událostí instančního objektu v době životnosti okno, které se zobrazí bez aktivace (<xref:System.Windows.Window.ShowActivated%2A> je nastavena na `false` předtím, než se zobrazí v okně).  
   
- ![Doba života okna &#40;Window.ShowActivated &#61; False&#41;](../../../../docs/framework/wpf/app-development/media/windowlifetimenoact.png "WindowLifetimeNoAct")  
+ ![Doba života okna &#40;Window.ShowActivated &#61; False&#41;](./media/windowlifetimenoact.png "WindowLifetimeNoAct")  
   
 <a name="WindowLocation"></a>   
 ## <a name="window-location"></a>Umístění okna  
@@ -308,7 +308,7 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
 ### <a name="topmost-windows-and-z-order"></a>Nejvyšší Windows a pořadí Z-Order  
  Kromě nutnosti x a y umístění, okno má také umístění z dimenze, která určuje svislé polohy s ohledem na ostatní okna. To se označuje jako pořadí vykreslování v okně a existují dva typy: Normální pořadí vykreslování a nejvyšší pořadí vykreslování. Umístění okna *normální pořadí vykreslování* je určeno bez ohledu na to, zda je aktuálně aktivní. Ve výchozím nastavení okno se nachází v normální pořadí vykreslování. Umístění okna *nejvyšší pořadí vykreslování* je také určeno bez ohledu na to, zda je aktuálně aktivní. Kromě toho windows v nejvyšší pořadí vykreslování jsou vždy umístěné nad windows v normálním pořadí vykreslování. Okno se nachází v nejvyšší pořadí vykreslování nastavením jeho <xref:System.Windows.Window.Topmost%2A> vlastnost `true`.  
   
- [!code-xaml[WindowsOverviewSnippets#TopmostWindowMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/TopmostWindow.xaml#topmostwindowmarkup1)]  
+ [!code-xaml[WindowsOverviewSnippets#TopmostWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/TopmostWindow.xaml#topmostwindowmarkup1)]  
   
  V rámci každého pořadí vykreslování aktuálně aktivní okno zobrazuje nad všemi ostatními okny ve stejném pořadí vykreslování.  
   
@@ -318,11 +318,11 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  <xref:System.Windows.FrameworkElement.MinWidth%2A>, <xref:System.Windows.FrameworkElement.Width%2A>, a <xref:System.Windows.FrameworkElement.MaxWidth%2A> se používají ke správě škálu šířek, které může mít během celé jeho životnosti okna a konfiguraci, jak je znázorněno v následujícím příkladu.  
   
- [!code-xaml[WindowsOverviewSnippets#WidthWindowMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WidthWindow.xaml#widthwindowmarkup1)]  
+ [!code-xaml[WindowsOverviewSnippets#WidthWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WidthWindow.xaml#widthwindowmarkup1)]  
   
  Spravuje výšku okna <xref:System.Windows.FrameworkElement.MinHeight%2A>, <xref:System.Windows.FrameworkElement.Height%2A>, a <xref:System.Windows.FrameworkElement.MaxHeight%2A>a konfiguraci, jak je znázorněno v následujícím příkladu.  
   
- [!code-xaml[WindowsOverviewSnippets#HeightWindowMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/HeightWindow.xaml#heightwindowmarkup1)]  
+ [!code-xaml[WindowsOverviewSnippets#HeightWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/HeightWindow.xaml#heightwindowmarkup1)]  
   
  Protože různé hodnoty šířku a výšku hodnoty určit rozsah, je možné pro šířku a výšku umožňující změnu velikosti okna musí být kdekoli v zadaném rozsahu pro odpovídající dimenzi. Ke zjištění svou aktuální šířku a výšku, zkontrolujte <xref:System.Windows.FrameworkElement.ActualWidth%2A> a <xref:System.Windows.FrameworkElement.ActualHeight%2A>v uvedeném pořadí.  
   
@@ -338,12 +338,12 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  Následující příklad ukazuje okno, která automaticky velikosti podle jeho obsah svisle nebo vodorovně, při prvním zobrazení.  
   
- [!code-xaml[WindowsOverviewSnippets#SizeToContentWindowMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/SizeToContentWindow.xaml#sizetocontentwindowmarkup1)]  
+ [!code-xaml[WindowsOverviewSnippets#SizeToContentWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/SizeToContentWindow.xaml#sizetocontentwindowmarkup1)]  
   
  Následující příklad ukazuje, jak nastavit <xref:System.Windows.Window.SizeToContent%2A> vlastností v kódu k určení, jak změní velikost okna podle jeho obsahu.
   
- [!code-csharp[HOWTOWindowManagementSnippets#SetWindowSizeToContentPropertyCODE](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/CSharp/MainWindow.xaml.cs#setwindowsizetocontentpropertycode)]
- [!code-vb[HOWTOWindowManagementSnippets#SetWindowSizeToContentPropertyCODE](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/visualbasic/mainwindow.xaml.vb#setwindowsizetocontentpropertycode)]  
+ [!code-csharp[HOWTOWindowManagementSnippets#SetWindowSizeToContentPropertyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/CSharp/MainWindow.xaml.cs#setwindowsizetocontentpropertycode)]
+ [!code-vb[HOWTOWindowManagementSnippets#SetWindowSizeToContentPropertyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/visualbasic/mainwindow.xaml.vb#setwindowsizetocontentpropertycode)]  
   
 <a name="OrderOfPrecedence"></a>   
 ## <a name="order-of-precedence-for-sizing-properties"></a>Pořadí priorit pro vlastností změny velikosti  
@@ -392,7 +392,7 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  Následující příklad ukazuje, jak vytvořit okno, které se zobrazí jako maximalizované, když se otevře.  
   
- [!code-xaml[WindowsOverviewSnippets#WindowStateWindowMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowStateWindow.xaml#windowstatewindowmarkup1)]  
+ [!code-xaml[WindowsOverviewSnippets#WindowStateWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowStateWindow.xaml#windowstatewindowmarkup1)]  
   
  Obecně byste měli nastavit <xref:System.Windows.Window.WindowState%2A> nakonfigurovat počáteční stav okna. Jakmile se zobrazí okno s možností změny velikosti, uživatele stiskněte minimalizovat, maximalizovat a obnovit tlačítka na záhlaví okna. Chcete-li změnit stav okna.  
   
@@ -419,7 +419,7 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  Stejně jako u <xref:System.Windows.Window.WindowStyle%2A>, režim změny velikosti okna je pravděpodobně nebudou měnit během celé jeho životnosti, což znamená, že budete pravděpodobně ji nastavíte z [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek.  
   
- [!code-xaml[WindowsOverviewSnippets#ResizeModeWindowMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/ResizeModeWindow.xaml#resizemodewindowmarkup1)]  
+ [!code-xaml[WindowsOverviewSnippets#ResizeModeWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/ResizeModeWindow.xaml#resizemodewindowmarkup1)]  
   
  Všimněte si, že můžete zjistit, zda je okno maximalizované, rychle minimalizovat nebo obnovit, že se podíváte <xref:System.Windows.Window.WindowState%2A> vlastnost.  
   
@@ -439,22 +439,22 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  Vliv tyto styly oken jsou znázorněné na následujícím obrázku.  
   
- ![Styly oken](../../../../docs/framework/wpf/app-development/media/windowoverviewfigure6.PNG "WindowOverviewFigure6")  
+ ![Styly oken](./media/windowoverviewfigure6.PNG "WindowOverviewFigure6")  
   
  Můžete nastavit <xref:System.Windows.Window.WindowStyle%2A> buď pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek nebo kódu, protože nepravděpodobné, chcete-li změnit během životního cyklu okna, bude pravděpodobně nakonfigurujete pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek.  
   
- [!code-xaml[WindowsOverviewSnippets#WindowStyleWindowMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowStyleWindow.xaml#windowstylewindowmarkup1)]  
+ [!code-xaml[WindowsOverviewSnippets#WindowStyleWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/WindowStyleWindow.xaml#windowstylewindowmarkup1)]  
   
 #### <a name="non-rectangular-window-style"></a>Styl neobdélníkových oken  
  Také existují situace, kdy styly ohraničení, které <xref:System.Windows.Window.WindowStyle%2A> umožňuje mít nestačí. Můžete například vytvořit aplikaci s neobdélníkových ohraničení, jako je [!INCLUDE[TLA#tla_wmp](../../../../includes/tlasharptla-wmp-md.md)] používá.  
   
  Představte si třeba okně bublin řeči je znázorněno na následujícím obrázku.  
   
- ![Vytvoření nepravoúhlého okna](../../../../docs/framework/wpf/app-development/media/nonrectangularwindowfigure.PNG "NonRectangularWindowFigure")  
+ ![Vytvoření nepravoúhlého okna](./media/nonrectangularwindowfigure.PNG "NonRectangularWindowFigure")  
   
  Tento typ okna je vytvořit tak, že nastavíte <xref:System.Windows.Window.WindowStyle%2A> vlastnost <xref:System.Windows.WindowStyle.None>a pomocí speciální podporu, která <xref:System.Windows.Window> má transparentnosti.  
   
- [!code-xaml[WindowsOverviewSnippets#TransparentWindowMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/TransparentWindow.xaml#transparentwindowmarkup1)]  
+ [!code-xaml[WindowsOverviewSnippets#TransparentWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/TransparentWindow.xaml#transparentwindowmarkup1)]  
   
  Tato kombinace hodnot instruuje okno k vykreslení zcela transparentní. V tomto stavu nelze použít v okně neklientská oblast vylepšení (Zavřít nabídku, tlačítka Minimalizovat, maximalizovat a obnovit a tak dále). V důsledku toho budete muset zadat vlastní.  
   
@@ -462,11 +462,11 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
 ### <a name="task-bar-presence"></a>Přítomnost hlavního panelu  
  Výchozí vzhled okna obsahuje tlačítko na hlavním panelu, podobný jako na následujícím obrázku.  
   
- ![Okno s tlačítko na hlavním panelu](../../../../docs/framework/wpf/app-development/media/windowoverviewfigure7.PNG "WindowOverviewFigure7")  
+ ![Okno s tlačítko na hlavním panelu](./media/windowoverviewfigure7.PNG "WindowOverviewFigure7")  
   
- Některé typy windows nemají tlačítko na hlavním panelu, jako jsou okna se zprávou a dialogová okna (viz [přehled dialogových oken](../../../../docs/framework/wpf/app-development/dialog-boxes-overview.md)). Můžete řídit, zda je zobrazen tlačítko na hlavním panelu okna tak, že nastavíte <xref:System.Windows.Window.ShowInTaskbar%2A> vlastnosti (`true` ve výchozím nastavení).  
+ Některé typy windows nemají tlačítko na hlavním panelu, jako jsou okna se zprávou a dialogová okna (viz [přehled dialogových oken](dialog-boxes-overview.md)). Můžete řídit, zda je zobrazen tlačítko na hlavním panelu okna tak, že nastavíte <xref:System.Windows.Window.ShowInTaskbar%2A> vlastnosti (`true` ve výchozím nastavení).  
   
- [!code-xaml[WindowsOverviewSnippets#ShowInTaskbarWindowMARKUP1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/ShowInTaskbarWindow.xaml#showintaskbarwindowmarkup1)]  
+ [!code-xaml[WindowsOverviewSnippets#ShowInTaskbarWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/ShowInTaskbarWindow.xaml#showintaskbarwindowmarkup1)]  
   
 <a name="SecurityConsiderations"></a>   
 ## <a name="security-considerations"></a>Důležité informace o zabezpečení  
@@ -474,18 +474,18 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  Ale to spadá mimo sadu oprávnění udělená aplikace, které jsou spouštěny z Internetu nebo místní intranet zóny pomocí [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)]. V důsledku toho uživatelé dostanou [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] upozornění zabezpečení a se potřebují k rozvoji sady oprávnění pro aplikace pro úplný vztah důvěryhodnosti.  
   
- Kromě toho [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] nelze zobrazit systému windows nebo dialogová okna ve výchozím nastavení. Informace o informace o zabezpečení pro samostatné aplikace, najdete v článku [strategie zabezpečení WPF – zabezpečení platformy](../../../../docs/framework/wpf/wpf-security-strategy-platform-security.md).  
+ Kromě toho [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] nelze zobrazit systému windows nebo dialogová okna ve výchozím nastavení. Informace o informace o zabezpečení pro samostatné aplikace, najdete v článku [strategie zabezpečení WPF – zabezpečení platformy](../wpf-security-strategy-platform-security.md).  
   
 <a name="Other_Types_of_Windows"></a>   
 ## <a name="other-types-of-windows"></a>Jiné typy Windows  
- <xref:System.Windows.Navigation.NavigationWindow> je okno, které slouží k hostování navigaci obsahu. Další informace najdete v tématu [Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md)).  
+ <xref:System.Windows.Navigation.NavigationWindow> je okno, které slouží k hostování navigaci obsahu. Další informace najdete v tématu [Přehled navigace](navigation-overview.md)).  
   
- Dialogová okna jsou windows, které se často používají k získání informací od uživatele k dokončení funkce. Například, pokud uživatel požaduje pro otevření souboru, **otevřít soubor** aplikací a získání názvu souboru od uživatele je obvykle zobrazí dialogové okno. Další informace najdete v tématu [přehled dialogových oken](../../../../docs/framework/wpf/app-development/dialog-boxes-overview.md).  
+ Dialogová okna jsou windows, které se často používají k získání informací od uživatele k dokončení funkce. Například, pokud uživatel požaduje pro otevření souboru, **otevřít soubor** aplikací a získání názvu souboru od uživatele je obvykle zobrazí dialogové okno. Další informace najdete v tématu [přehled dialogových oken](dialog-boxes-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
 - <xref:System.Windows.Window>
 - <xref:System.Windows.MessageBox>
 - <xref:System.Windows.Navigation.NavigationWindow>
 - <xref:System.Windows.Application>
-- [Přehled dialogových oken](../../../../docs/framework/wpf/app-development/dialog-boxes-overview.md)
-- [Sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)
+- [Přehled dialogových oken](dialog-boxes-overview.md)
+- [Sestavení aplikace WPF](building-a-wpf-application-wpf.md)

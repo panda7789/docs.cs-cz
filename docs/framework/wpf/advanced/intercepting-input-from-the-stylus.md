@@ -10,12 +10,12 @@ helpviewer_keywords:
 - ', '
 - ', '
 ms.assetid: 791bb2f0-4e5c-4569-ac3c-211996808d44
-ms.openlocfilehash: 5384a49461886ba184a0a128467c864b37c0efc9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0568e72e6d686ce08e6bd802f273e45dd623524b
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54667024"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57374307"
 ---
 # <a name="intercepting-input-from-the-stylus"></a>Přijetí vstupu z pera
 <xref:System.Windows.Input.StylusPlugIns> Architektura poskytuje mechanismus pro implementaci nízké úrovně řízení nad <xref:System.Windows.Input.Stylus> vstup a vytváření digitálních inkoust <xref:System.Windows.Ink.Stroke> objekty. <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> Třída poskytuje mechanismus pro implementaci vlastního chování a použít na datový proud množství dat přicházejících z stylus zařízení k zajištění optimálního výkonu.  
@@ -47,10 +47,10 @@ ms.locfileid: "54667024"
   
  Následující příklad ukazuje modul plug-in, který omezuje vstupu jehly úpravou <xref:System.Windows.Input.StylusPoint.X%2A> a <xref:System.Windows.Input.StylusPoint.Y%2A> hodnoty v <xref:System.Windows.Input.StylusPoint> dat při pocházejí z <xref:System.Windows.Input.Stylus> zařízení.  
   
- [!code-csharp[AdvancedInkTopicsSamples#19](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#19)]
- [!code-vb[AdvancedInkTopicsSamples#19](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#19)]  
-[!code-csharp[AdvancedInkTopicsSamples#3](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#3)]
-[!code-vb[AdvancedInkTopicsSamples#3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#3)]  
+ [!code-csharp[AdvancedInkTopicsSamples#19](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#19)]
+ [!code-vb[AdvancedInkTopicsSamples#19](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#19)]  
+[!code-csharp[AdvancedInkTopicsSamples#3](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/DynamicRenderer.cs#3)]
+[!code-vb[AdvancedInkTopicsSamples#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/AdvancedInkTopicsSamples/VisualBasic/DynamicRenderer.vb#3)]  
   
 <a name="AddingYourPluginToAnInkCanvas"></a>   
 ## <a name="adding-your-plug-in-to-an-inkcanvas"></a>Přidat modul Plug-in k objektu InkCanvas  
@@ -58,18 +58,18 @@ ms.locfileid: "54667024"
   
  Následující příklad ukazuje vlastní <xref:System.Windows.Controls.InkCanvas> , která filtruje rukopisu.  
   
- [!code-csharp[AdvancedInkTopicsSamples#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/Window1.xaml.cs#4)]  
+ [!code-csharp[AdvancedInkTopicsSamples#4](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/Window1.xaml.cs#4)]  
   
  Pokud chcete přidat `FilterInkCanvas` do vaší aplikace a spusťte ho, všimnete si, že není rukopis s omezeným přístupem v oblasti až poté, co uživatel vykoná tah. Důvodem je, že <xref:System.Windows.Controls.InkCanvas> má <xref:System.Windows.Controls.InkCanvas.DynamicRenderer%2A> vlastnost, která je <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> a je již členem skupiny <xref:System.Windows.UIElement.StylusPlugIns%2A> kolekce. Vlastní <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> jste přidali do <xref:System.Windows.UIElement.StylusPlugIns%2A> kolekce přijímá <xref:System.Windows.Input.StylusPoint> data po <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> přijímá data. V důsledku toho <xref:System.Windows.Input.StylusPoint> data se nebudou filtrovat až poté, co uživatel zruší pero na konec tah. K filtrování rukopis jako uživatel nakreslí ho, vložte `FilterPlugin` před <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>.  
   
  Následující kód jazyka C# ukazuje vlastní <xref:System.Windows.Controls.InkCanvas> rukopisu, která filtruje podle jeho vykreslení.  
   
- [!code-csharp[AdvancedInkTopicsSamples#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/Window1.xaml.cs#5)]  
+ [!code-csharp[AdvancedInkTopicsSamples#5](~/samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/Window1.xaml.cs#5)]  
   
 <a name="Conclusion"></a>   
 ## <a name="conclusion"></a>Závěr  
  Odvozením vlastních <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> třídy a vkládání do <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> kolekcí, můžete výrazně vylepšit chování digitálních inkoust. Máte přístup k <xref:System.Windows.Input.StylusPoint> dat, jako je generováno, získáte tak možnost přizpůsobit <xref:System.Windows.Input.Stylus> vstupu. Protože máte takový přístup nízké úrovně ke <xref:System.Windows.Input.StylusPoint> data, kolekce inkoustů a vykreslování poskytovaly optimální výkon můžete implementovat pro vaši aplikaci.  
   
 ## <a name="see-also"></a>Viz také:
-- [Pokročilé zpracování rukopisu](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)
+- [Pokročilé zpracování rukopisu](advanced-ink-handling.md)
 - [Přístup k a manipulaci s vstup pomocí pera](https://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)

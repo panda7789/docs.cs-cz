@@ -7,12 +7,12 @@ helpviewer_keywords:
 - templates [WPF], inline
 - inline styles [WPF]
 ms.assetid: 69a1a3f9-acb5-4e2c-9c43-2e376c055ac4
-ms.openlocfilehash: 7f619985e909b772d8c7b86d8393341999288cba
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6225e1abd2b6bb8c3598b08bb2a717340c435e77
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496910"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57373384"
 ---
 # <a name="inline-styles-and-templates"></a>Vložené styly a šablony
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje <xref:System.Windows.Style> objekty a objekty šablony (<xref:System.Windows.FrameworkTemplate> podtřídy) jako způsob, jak definovat vzhled elementu v prostředky, takže je možné použít víc než jednou. Z tohoto důvodu atributů [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , která přijímá typy <xref:System.Windows.Style> a <xref:System.Windows.FrameworkTemplate> téměř vždy ujistěte se, odkazy na prostředky na stávající – styly a šablony spíše než definovat nové značky vložené.  
@@ -34,7 +34,7 @@ ms.locfileid: "54496910"
   
  Obvykle neexistuje žádný důvod nastavit styl nebo šablona vložené, i v případě, že chcete použít tento styl nebo šablona v dané oblasti. Většinu prvků, které mohou provádět styl nebo šablona také podporují vlastnost obsahu a obsahu modelu. Pokud používáte pouze libovolné Logická stromová struktura jednou vytvořit pomocí stylu nebo šablony, by bylo ještě jednodušší právě vyplníte vlastnost tohoto obsahu ekvivalentní podřízené elementy v kódu s přímým přístupem. To by úplně obejít mechanismy věnovaný stylu a šablon.  
   
- Styly a šablony existují také jiné syntaxe ve – rozšíření značek, které vracejí objekt povolené. Dva taková rozšíření, kterých je možné scénáře zahrnují [TemplateBinding](../../../../docs/framework/wpf/advanced/templatebinding-markup-extension.md) a <xref:System.Windows.Data.Binding>.  
+ Styly a šablony existují také jiné syntaxe ve – rozšíření značek, které vracejí objekt povolené. Dva taková rozšíření, kterých je možné scénáře zahrnují [TemplateBinding](templatebinding-markup-extension.md) a <xref:System.Windows.Data.Binding>.  
   
 ## <a name="see-also"></a>Viz také:
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+- [Styly a šablony](../controls/styling-and-templating.md)

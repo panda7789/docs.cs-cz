@@ -1,25 +1,25 @@
 ---
-title: 'Průvodce: Vytvoření tlačítka použitím XAML'
+title: 'Návod: Vytvoření tlačítka použitím XAML'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - buttons [WPF]
 ms.assetid: 138c41c4-1759-4bbf-8d77-77031a06a8a0
-ms.openlocfilehash: d88eca573d09c0c40575718a125a65b2d13593d8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0d8b3e476488f81e4154c876e555b3090d0287f9
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54606780"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57377221"
 ---
-# <a name="walkthrough-create-a-button-by-using-xaml"></a>Průvodce: Vytvoření tlačítka použitím XAML
+# <a name="walkthrough-create-a-button-by-using-xaml"></a>Návod: Vytvoření tlačítka použitím XAML
 Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro použití v aplikaci Windows Presentation Foundation (WPF). Tento návod používá – styly a šablony vytvořit tlačítko vlastní prostředek, umožňující opětovné použití kódu a oddělení logiky tlačítko od deklarace tlačítko. Tento návod byl napsán výhradně v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
   
 > [!IMPORTANT]
->  Tento názorný postup vás provede kroky pro vytváření aplikace psát nebo zkopírováním a vložením [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] do sady Microsoft Visual Studio. Pokud chcete další informace o použití návrhářský nástroj (Microsoft Expression Blend) Chcete-li vytvořit stejnou aplikaci, najdete v článku [vytvoření tlačítka pomocí pomocí Microsoft Expression Blend](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md).  
+>  Tento názorný postup vás provede kroky pro vytváření aplikace psát nebo zkopírováním a vložením [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] do sady Microsoft Visual Studio. Pokud chcete další informace o použití návrhářský nástroj (Microsoft Expression Blend) Chcete-li vytvořit stejnou aplikaci, najdete v článku [vytvoření tlačítka pomocí pomocí Microsoft Expression Blend](walkthrough-create-a-button-by-using-microsoft-expression-blend.md).  
   
  Následující obrázek ukazuje dokončení tlačítka.  
   
- ![Vlastní tlačítka, které se vytvořily pomocí XAML](../../../../docs/framework/wpf/controls/media/custom-button-animatedbutton-5.gif "custom_button_AnimatedButton_5")  
+ ![Vlastní tlačítka, které se vytvořily pomocí XAML](./media/custom-button-animatedbutton-5.gif "custom_button_AnimatedButton_5")  
   
 ## <a name="create-basic-buttons"></a>Vytvoření základní tlačítka  
  Začněme vytvořením nového projektu a přidává několik tlačítek do okna.  
@@ -49,12 +49,12 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      Stisknutím klávesy F5 spusťte aplikaci. měli byste vidět sadu tlačítek, která vypadá jako na následujícím obrázku.  
   
-     ![Tři základní tlačítka](../../../../docs/framework/wpf/controls/media/custom-button-animatedbutton-1.gif "custom_button_AnimatedButton_1")  
+     ![Tři základní tlačítka](./media/custom-button-animatedbutton-1.gif "custom_button_AnimatedButton_1")  
   
      Teď, když jste vytvořili základní tlačítka, jste dokončili práci v souboru Window1.xaml. Zbytek tohoto průvodce se zaměřuje na soubor app.xaml definování – styly a šablony tlačítek.  
   
 ## <a name="set-basic-properties"></a>Nastavte základní vlastnosti  
- V dalším kroku nastavíme některé vlastnosti na tato tlačítka řídit vzhled tlačítka a rozložení. Namísto nastavení vlastností tlačítka jednotlivě, budete používat prostředky k definování vlastností tlačítka pro celou aplikaci. Prostředky aplikace jsou koncepčně podobné pro externí [!INCLUDE[TLA#tla_css](../../../../includes/tlasharptla-css-md.md)] pro webové stránky; prostředky jsou však mnohem výkonnější než [!INCLUDE[TLA#tla_css](../../../../includes/tlasharptla-css-md.md)], jak se zobrazí na konci tohoto návodu. Další informace o prostředcích najdete v tématu [prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
+ V dalším kroku nastavíme některé vlastnosti na tato tlačítka řídit vzhled tlačítka a rozložení. Namísto nastavení vlastností tlačítka jednotlivě, budete používat prostředky k definování vlastností tlačítka pro celou aplikaci. Prostředky aplikace jsou koncepčně podobné pro externí [!INCLUDE[TLA#tla_css](../../../../includes/tlasharptla-css-md.md)] pro webové stránky; prostředky jsou však mnohem výkonnější než [!INCLUDE[TLA#tla_css](../../../../includes/tlasharptla-css-md.md)], jak se zobrazí na konci tohoto návodu. Další informace o prostředcích najdete v tématu [prostředky XAML](../advanced/xaml-resources.md).  
   
 #### <a name="to-use-styles-to-set-basic-properties-on-the-buttons"></a>Použití stylů můžete nastavit základní vlastnosti tlačítka  
   
@@ -72,7 +72,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
     </Application>  
     ```  
   
-     Tady můžete definovat prostředek Určuje prostředek oboru. Definování prostředků v `Application.Resources` v souboru app.xaml umožňuje soubor prostředků pro použití v kdekoli v aplikaci. Další informace o definování oboru prostředků najdete v tématu [prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
+     Tady můžete definovat prostředek Určuje prostředek oboru. Definování prostředků v `Application.Resources` v souboru app.xaml umožňuje soubor prostředků pro použití v kdekoli v aplikaci. Další informace o definování oboru prostředků najdete v tématu [prostředky XAML](../advanced/xaml-resources.md).  
   
 2.  **Vytvoření stylu a definovat hodnoty základní vlastnosti s ní:** Přidejte následující kód k `Application.Resources` bloku. Tento kód vytvoří <xref:System.Windows.Style> , která se vztahuje na všechna tlačítka v nastavení aplikace <xref:System.Windows.FrameworkElement.Width%2A> tlačítek na hodnotu 90 a <xref:System.Windows.FrameworkElement.Margin%2A> 10:  
   
@@ -87,9 +87,9 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      <xref:System.Windows.Style.TargetType%2A> Vlastnost určuje, že styl platí pro všechny objekty typu <xref:System.Windows.Controls.Button>. Každý <xref:System.Windows.Setter> nastaví hodnotu jinou vlastnost <xref:System.Windows.Style>. Proto v tuto chvíli každé tlačítko v aplikaci má šířku 90 a okraj 10.  Pokud stisknete klávesu F5 ke spuštění aplikace, zobrazí následující okno.  
   
-     ![Tlačítka s šířkou 90 a okraj 10](../../../../docs/framework/wpf/controls/media/custom-button-animatedbutton-2.gif "custom_button_AnimatedButton_2")  
+     ![Tlačítka s šířkou 90 a okraj 10](./media/custom-button-animatedbutton-2.gif "custom_button_AnimatedButton_2")  
   
-     Je mnohem více že můžete provést se styly, včetně celou řadu způsobů, jak doladit, jaké objekty jsou cíleny, zadáte hodnoty komplexní vlastnost a dokonce i pomocí stylů jako vstup pro jiné styly. Další informace najdete v tématu [styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md).  
+     Je mnohem více že můžete provést se styly, včetně celou řadu způsobů, jak doladit, jaké objekty jsou cíleny, zadáte hodnoty komplexní vlastnost a dokonce i pomocí stylů jako vstup pro jiné styly. Další informace najdete v tématu [styly a šablony](styling-and-templating.md).  
   
 3.  **Nastavte hodnotu vlastnosti stylu na prostředek:** Prostředky povolit jednoduchý způsob, jak opětovné použití obecně definovaných objektů a hodnoty. To je užitečné zejména pro definování komplexních hodnot. aby byl kód modulárnější použití prostředků. Přidejte následující zvýrazněný kód do souboru app.xaml.  
   
@@ -112,7 +112,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      Stisknutím klávesy F5 spusťte aplikaci. By měl vypadat nějak takto.  
   
-     ![Tlačítka s barevného přechodu pozadí](../../../../docs/framework/wpf/controls/media/custom-button-animatedbutton-3.gif "custom_button_AnimatedButton_3")  
+     ![Tlačítka s barevného přechodu pozadí](./media/custom-button-animatedbutton-3.gif "custom_button_AnimatedButton_3")  
   
 ## <a name="create-a-template-that-defines-the-look-of-the-button"></a>Vytvořit šablonu, která definuje vzhled tlačítka  
  V této části vytvoříte šablonu, která se přizpůsobí vzhled tlačítka (prezentace). Prezentace tlačítko se skládá z několika objektů včetně obdélníků a další součásti jedinečný vzhled na tlačítko.  
@@ -165,7 +165,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      Stisknutím klávesy F5 spusťte aplikaci. By měl vypadat nějak takto.  
   
-     ![](../../../../docs/framework/wpf/controls/media/custom-button-animatedbutton-4.gif "custom_button_AnimatedButton_4")  
+     ![](./media/custom-button-animatedbutton-4.gif "custom_button_AnimatedButton_4")  
   
 3.  **Přidejte glasseffect do šablony:** Dále přidáte skla. Nejprve vytvoříte některé prostředky, které vytvoření efektu přechodu skla. Přidat tyto přechodu prostředky kdekoli v rámci `Application.Resources` blok:  
   
@@ -244,7 +244,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      Všimněte si, že <xref:System.Windows.UIElement.Opacity%2A> obdélníku s `x:Name` vlastnost "glassCube" je 0, takže při spuštění ukázky, se nezobrazí jako překryvný obrázek na horní části obdélníku lupy. Je to proto, že později přidáme aktivační procedury do šablon pro při interakci uživatele pomocí tlačítka. Však můžete zobrazit tlačítko vypadá nyní tak, že změníte <xref:System.Windows.UIElement.Opacity%2A> hodnotu 1 a spuštění aplikace. Prohlédněte si následující obrázek. Než budete pokračovat k dalšímu kroku, změnit <xref:System.Windows.UIElement.Opacity%2A> zpět na hodnotu 0.  
   
-     ![Vlastní tlačítka, které se vytvořily pomocí XAML](../../../../docs/framework/wpf/controls/media/custom-button-animatedbutton-5.gif "custom_button_AnimatedButton_5")  
+     ![Vlastní tlačítka, které se vytvořily pomocí XAML](./media/custom-button-animatedbutton-5.gif "custom_button_AnimatedButton_5")  
   
 ## <a name="create-button-interactivity"></a>Vytvářet tlačítka interakce  
  V této části vytvoříte aktivační procedury vlastností a aktivační události změnit hodnoty vlastností a spuštění animace v reakci na akce uživatelů, například ukazatele myši nad tlačítkem a kliknutím na.  
@@ -396,7 +396,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      Existují dva animace, které se zobrazí, když ukazatel myši překročí tlačítka (<xref:System.Windows.UIElement.MouseEnter> událost je aktivována). Tyto animace budete zmenšit skla obdélník na ose X a Y. Všimněte si, že vlastnosti na <xref:System.Windows.Media.Animation.DoubleAnimation> prvky – <xref:System.Windows.Media.Animation.Timeline.Duration%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>. <xref:System.Windows.Media.Animation.Timeline.Duration%2A> Určuje, zda animace vyskytuje více než půl sekundy, a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> Určuje, že zmenšuje skla 10 %.  
   
-     Druhý aktivační procedura událostí (<xref:System.Windows.UIElement.MouseLeave>) jednoduše zastaví první z nich. Při zastavení <xref:System.Windows.Media.Animation.Storyboard>, animované vlastnosti vrátit na výchozí hodnoty. Proto když uživatel přesune ukazatel mimo tlačítko, na tlačítko se vrátí způsobu, jakým byl před přesunutím ukazatele myši nad tlačítkem. Další informace o animacích naleznete v tématu [přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
+     Druhý aktivační procedura událostí (<xref:System.Windows.UIElement.MouseLeave>) jednoduše zastaví první z nich. Při zastavení <xref:System.Windows.Media.Animation.Storyboard>, animované vlastnosti vrátit na výchozí hodnoty. Proto když uživatel přesune ukazatel mimo tlačítko, na tlačítko se vrátí způsobu, jakým byl před přesunutím ukazatele myši nad tlačítkem. Další informace o animacích naleznete v tématu [přehled animace](../graphics-multimedia/animation-overview.md).  
   
 5.  **Přidání animace k po kliknutí na tlačítko:** Posledním krokem je přidání triggeru pro, když uživatel klikne na tlačítko. Přidejte následující kód, kdekoli uvnitř sady `ControlTemplate.Triggers` blok:  
   
@@ -432,8 +432,8 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
 -   Přizpůsobit chování pro tlačítka v reakci na akce uživatele (například <xref:System.Windows.UIElement.MouseEnter>, <xref:System.Windows.UIElement.MouseLeave>, a <xref:System.Windows.Controls.Primitives.ButtonBase.Click>), které obsahovat efekty animace.  
   
 ## <a name="see-also"></a>Viz také:
-- [Vytvoření tlačítka pomocí nástroje Microsoft Expression Blend](../../../../docs/framework/wpf/controls/walkthrough-create-a-button-by-using-microsoft-expression-blend.md)
-- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
-- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
-- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
-- [Přehled efektů bitmap](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects-overview.md)
+- [Vytvoření tlačítka pomocí nástroje Microsoft Expression Blend](walkthrough-create-a-button-by-using-microsoft-expression-blend.md)
+- [Styly a šablony](styling-and-templating.md)
+- [Přehled animace](../graphics-multimedia/animation-overview.md)
+- [Přehled malování plnými barvami a přechody](../graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
+- [Přehled efektů bitmap](../graphics-multimedia/bitmap-effects-overview.md)

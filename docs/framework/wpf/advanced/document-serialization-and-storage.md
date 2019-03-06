@@ -6,12 +6,12 @@ helpviewer_keywords:
 - documents [WPF], storage
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
-ms.openlocfilehash: 028f7e8f2be2aa0718eebc133ebd9d35717c824d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fbdd04f40c1d4a29ff1807b8a2760802b0338cb3
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54630850"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57379689"
 ---
 # <a name="document-serialization-and-storage"></a>Serializace a úložiště dokumentu
 Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobrazování vysoce kvalitní dokumenty.  Rozšířené funkce, které podporují – dokumenty a tok dokumenty, rozšířené zobrazení ovládacích prvků, v kombinaci s výkonné 2D a 3D grafické možnosti trvat aplikace rozhraní .NET Framework na zcela novou úroveň kvality a činnost koncového uživatele.  Dokáže flexibilně spravovat v paměti reprezentace dokumentu je klíčovou funkcí rozhraní .NET Framework a nebudou moct efektivně ukládat a načítat dokumenty z úložiště dat je potřeba téměř všechny aplikace.  Proces převodu dokumentu z interního vyjádření v paměti k externím úložišti, se nazývá serializace.  Proces zpětné čtení úložiště dat a znovu vytvořit původní instance v paměti je označován deserializace.  
@@ -41,7 +41,7 @@ Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobr
     -   Podpora uživatelského rozhraní pro vlastní nastavení za běhu a možnosti.  
   
 ### <a name="xps-print-path"></a>Cesta tisku XPS  
- Rozhraní Microsoft .NET Framework [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] cesta tisku také poskytuje rozšířitelný mechanismus pro psaní dokumenty tiskový výstup.  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] slouží jako formát souboru dokument a je formát nativní zařazování tisku pro [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)].  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] dokumenty můžete odeslat přímo do [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]– bez nutnosti pro převod na mezilehlého formátu kompatibilním s airprintem.  Zobrazit [přehled tisku s](../../../../docs/framework/wpf/advanced/printing-overview.md) Další informace o možnostech výstupní cesta tisku a funkcích.  
+ Rozhraní Microsoft .NET Framework [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] cesta tisku také poskytuje rozšířitelný mechanismus pro psaní dokumenty tiskový výstup.  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] slouží jako formát souboru dokument a je formát nativní zařazování tisku pro [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)].  [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] dokumenty můžete odeslat přímo do [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]– bez nutnosti pro převod na mezilehlého formátu kompatibilním s airprintem.  Zobrazit [přehled tisku s](printing-overview.md) Další informace o možnostech výstupní cesta tisku a funkcích.  
   
 <a name="PluginSerializers"></a>   
 ## <a name="plug-in-serializers"></a>Modul plug-in Serializátorů  
@@ -54,11 +54,11 @@ Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobr
   
  Následující příklad ukazuje aplikace, která se používá <xref:System.Windows.Documents.Serialization.SerializerProvider> metoda ve vlastnosti "PlugInFileFilter".  PlugInFileFilter vytvoří výčet nainstalovaných modulů plug-in a sestaví řetězec filtru možnosti k dispozici soubor <xref:Microsoft.Win32.SaveFileDialog>.  
   
- [!code-csharp[DocumentSerialize#DocSerializeFileFilter](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializefilefilter)]  
+ [!code-csharp[DocumentSerialize#DocSerializeFileFilter](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializefilefilter)]  
   
  Po výběru název výstupního souboru tímto uživatelem, následující příklad ukazuje použití metody <xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A> metody pro ukládání daný dokument v zadaném formátu.  
   
- [!code-csharp[DocumentSerialize#DocSerializePlugIn](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializeplugin)]  
+ [!code-csharp[DocumentSerialize#DocSerializePlugIn](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentSerialize/CSharp/ThumbViewer.cs#docserializeplugin)]  
   
 <a name="InstallingPluginSerializers"></a>   
 ### <a name="installing-plug-in-serializers"></a>Instalace modulu Plug-in Serializátorů  
@@ -77,6 +77,6 @@ Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobr
 - <xref:System.Windows.Documents.Serialization>
 - <xref:System.Windows.Xps.XpsDocumentWriter>
 - <xref:System.Windows.Xps.Packaging.XpsDocument>
-- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
-- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)
+- [Dokumenty v platformě WPF](documents-in-wpf.md)
+- [Přehled tisku](printing-overview.md)
 - [XML Paper Specification: Přehled](https://go.microsoft.com/fwlink?LinkID=106246)
