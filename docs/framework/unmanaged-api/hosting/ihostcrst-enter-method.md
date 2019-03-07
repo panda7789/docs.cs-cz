@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8ae1d3ad05cd30312ecd9b8f84ebe7aa8c6a7906
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: de249928f853c5384db7a2e7615eb425109fd572
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54511810"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57497428"
 ---
 # <a name="ihostcrstenter-method"></a>IHostCrst::Enter – metoda
 Zadá kritický oddíl, která je reprezentována aktuální [ihostcrst –](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md) instance.  
@@ -35,7 +35,7 @@ HRESULT Enter (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `option`  
  [in] Jeden z [wait_option –](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) hodnoty označující, jaká akce by hostitele zabrat Pokud operace bloky.  
   

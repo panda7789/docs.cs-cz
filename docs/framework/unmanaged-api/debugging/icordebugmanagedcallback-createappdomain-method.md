@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 36ded85cd2d8ebe49ee0b1e190266061cb56dfb7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0682aec060d5f65a3034d482c92a04e0880f7a6b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496738"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57484768"
 ---
 # <a name="icordebugmanagedcallbackcreateappdomain-method"></a>ICorDebugManagedCallback::CreateAppDomain – metoda
 Upozorní ladicího programu, že se vytvořila domény aplikace.  
@@ -36,7 +36,7 @@ HRESULT CreateAppDomain (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pProcess`  
  [in] Ukazatel na objekt ICorDebugProcess, který představuje proces, ve kterém byla vytvořena domény aplikace.  
   

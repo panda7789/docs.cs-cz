@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a2a26e32040f705fd46f9d9d8909fd47e963baa8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4c5d061227e4094c96f14bd8f4f3e80e869b838a
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54510778"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487149"
 ---
 # <a name="iclrtaskneedspriorityscheduling-method"></a>ICLRTask::NeedsPriorityScheduling – metoda
 Získá hodnotu určující, zda aktuální úloha, která je právě přepnutí, musí být označen jako s vysokou prioritou pro přeplánování.  
@@ -35,7 +35,7 @@ HRESULT NeedsPriorityScheduling (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pbNeedsPriorityRescheduling`  
  [out] `true`v případě, že hostitel má pokusit o plánovanou zkoušku Přeplánovat aktuální instance úlohy, co nejdříve; v opačném případě `false`.  
   

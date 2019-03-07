@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 454391eb7a5f1821438837c8fb7e5f8bad6b5723
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 39d9b4e69080e759a5a7d930f61abb3ba6160801
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54651653"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57486144"
 ---
 # <a name="imetadataassemblyimportfindassembliesbyname-method"></a>IMetaDataAssemblyImport::FindAssembliesByName – metoda
 Získává pole sestavení se zadaným `szAssemblyName` parametr pomocí standardních pravidel použijí modulem common language runtime (CLR) k vyřešení odkazů.  
@@ -40,7 +40,7 @@ HRESULT FindAssembliesByName (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `szAppBase`  
  [in] Kořenový adresář, do kterého chcete vyhledat dané sestavení. Pokud tato hodnota nastavená na `null`, `FindAssembliesByName` bude vypadat pouze v globální mezipaměti sestavení pro sestavení.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 008e76b57ed0925eaae29cf7d2b451fc9ddd08a1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ba0cabfe9e96ace255235f1aa7d2b80452c4d72e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54730097"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57482883"
 ---
 # <a name="iclrsyncmanagerdeleterwlockowneriterator-method"></a>ICLRSyncManager::DeleteRWLockOwnerIterator – metoda
 Požadavky, že modul CLR (CLR) zničit iterátor, který byl vytvořen voláním [iclrsyncmanager::createrwlockowneriterator –](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-createrwlockowneriterator-method.md).  
@@ -35,7 +35,7 @@ HRESULT DeleteRWLockOwnerIterator (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `Iterator`  
  [in] Iterátor, který byl vytvořen pomocí volání `CreateRWLockOwnerIterator`.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c62ad58cd7ad1bd752d5958a5630dc7a019131e9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1361d6e93fcf39a86951a78f1245e9158d6ed314
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54645441"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57483612"
 ---
 # <a name="isymunmanagedwriterdefinelocalvariable-method"></a>ISymUnmanagedWriter::DefineLocalVariable – metoda
 V aktuálním oboru lexikální definuje jednu proměnnou. Tuto metodu lze volat pro proměnnou se stejným názvem, který má více domovů v rámci oboru více než jednou. V takovém případě však hodnoty `startOffset` a `endOffset` parametry se nesmí překrývat.  
@@ -43,7 +43,7 @@ HRESULT DefineLocalVariable(
     [in] ULONG32      endOffset);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `name`  
  [in] Ukazatel `WCHAR` , který definuje název místní proměnné.  
   
