@@ -17,39 +17,39 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5aa1025d3f24126c6f8b8585e39dda0201fad3d7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0ecea5911771d12df74b260845523dd2b7a012aa
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54623310"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57494516"
 ---
-# <a name="icorprofilercallbackinitialize-method"></a><span data-ttu-id="895cc-102">ICorProfilerCallback::Initialize – metoda</span><span class="sxs-lookup"><span data-stu-id="895cc-102">ICorProfilerCallback::Initialize Method</span></span>
-<span data-ttu-id="895cc-103">Volá se, aby inicializaci profileru kód při každém spuštění nové aplikace common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="895cc-103">Called to initialize the code profiler whenever a new common language runtime (CLR) application is started.</span></span>  
+# <a name="icorprofilercallbackinitialize-method"></a><span data-ttu-id="4dc1c-102">ICorProfilerCallback::Initialize – metoda</span><span class="sxs-lookup"><span data-stu-id="4dc1c-102">ICorProfilerCallback::Initialize Method</span></span>
+<span data-ttu-id="4dc1c-103">Volá se, aby inicializaci profileru kód při každém spuštění nové aplikace common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="4dc1c-103">Called to initialize the code profiler whenever a new common language runtime (CLR) application is started.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="895cc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="895cc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4dc1c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4dc1c-104">Syntax</span></span>  
   
 ```  
 HRESULT Initialize(  
     [in] IUnknown     *pICorProfilerInfoUnk);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="895cc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="895cc-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="4dc1c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="4dc1c-105">Parameters</span></span>  
  `pICorProfilerInfoUnk`  
- <span data-ttu-id="895cc-106">[v](/cpp/atl/iunknown) rozhraní, které profiler se musí dotazovat pro [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) ukazatel rozhraní.</span><span class="sxs-lookup"><span data-stu-id="895cc-106">[in](/cpp/atl/iunknown) interface that the profiler must query for an [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) interface pointer.</span></span>  
+ <span data-ttu-id="4dc1c-106">[v](/cpp/atl/iunknown) rozhraní, které profiler se musí dotazovat pro [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) ukazatel rozhraní.</span><span class="sxs-lookup"><span data-stu-id="4dc1c-106">[in](/cpp/atl/iunknown) interface that the profiler must query for an [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) interface pointer.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="895cc-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="895cc-107">Remarks</span></span>  
- <span data-ttu-id="895cc-108">`Initialize` Volání je možnost pouze chcete povolit (nebo zakázat) zpětná volání, které jsou neměnné.</span><span class="sxs-lookup"><span data-stu-id="895cc-108">The `Initialize` call is the only opportunity to enable (or disable) callbacks that are immutable.</span></span> <span data-ttu-id="895cc-109">Po povolení zpětného volání ve `Initialize` volání, nejde zakázat, později pomocí [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md).</span><span class="sxs-lookup"><span data-stu-id="895cc-109">Once a callback is enabled by the `Initialize` call, it cannot be disabled later using [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md).</span></span> <span data-ttu-id="895cc-110">Hodnota COR_PRF_MONITOR_IMMUTABLE [cor_prf_monitor –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) výčet Určuje, které události jsou neměnné.</span><span class="sxs-lookup"><span data-stu-id="895cc-110">The COR_PRF_MONITOR_IMMUTABLE value of the [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) enumeration indicates which events are immutable.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="4dc1c-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4dc1c-107">Remarks</span></span>  
+ <span data-ttu-id="4dc1c-108">`Initialize` Volání je možnost pouze chcete povolit (nebo zakázat) zpětná volání, které jsou neměnné.</span><span class="sxs-lookup"><span data-stu-id="4dc1c-108">The `Initialize` call is the only opportunity to enable (or disable) callbacks that are immutable.</span></span> <span data-ttu-id="4dc1c-109">Po povolení zpětného volání ve `Initialize` volání, nejde zakázat, později pomocí [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md).</span><span class="sxs-lookup"><span data-stu-id="4dc1c-109">Once a callback is enabled by the `Initialize` call, it cannot be disabled later using [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md).</span></span> <span data-ttu-id="4dc1c-110">Hodnota COR_PRF_MONITOR_IMMUTABLE [cor_prf_monitor –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) výčet Určuje, které události jsou neměnné.</span><span class="sxs-lookup"><span data-stu-id="4dc1c-110">The COR_PRF_MONITOR_IMMUTABLE value of the [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) enumeration indicates which events are immutable.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="895cc-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="895cc-111">Requirements</span></span>  
- <span data-ttu-id="895cc-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="895cc-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4dc1c-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4dc1c-111">Requirements</span></span>  
+ <span data-ttu-id="4dc1c-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4dc1c-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="895cc-113">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="895cc-113">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="4dc1c-113">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="4dc1c-113">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="895cc-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="895cc-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="4dc1c-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="4dc1c-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="895cc-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="895cc-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="4dc1c-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4dc1c-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="895cc-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="895cc-116">See also</span></span>
-- [<span data-ttu-id="895cc-117">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="895cc-117">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [<span data-ttu-id="895cc-118">Shutdown – metoda</span><span class="sxs-lookup"><span data-stu-id="895cc-118">Shutdown Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-shutdown-method.md)
+## <a name="see-also"></a><span data-ttu-id="4dc1c-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4dc1c-116">See also</span></span>
+- [<span data-ttu-id="4dc1c-117">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4dc1c-117">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [<span data-ttu-id="4dc1c-118">Shutdown – metoda</span><span class="sxs-lookup"><span data-stu-id="4dc1c-118">Shutdown Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-shutdown-method.md)

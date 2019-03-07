@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3662ed8a3fda5881b0e0929a830d19b0d805299f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3fe3cbc4bad83496bcc58aaea60e6724b1d1f06c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33411028"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57466385"
 ---
-# <a name="icordebugframecreatestepper-method"></a><span data-ttu-id="2e0fd-102">ICorDebugFrame::CreateStepper – metoda</span><span class="sxs-lookup"><span data-stu-id="2e0fd-102">ICorDebugFrame::CreateStepper Method</span></span>
-<span data-ttu-id="2e0fd-103">Získá krokovač, které umožňuje provádět operace taktování relativně k této ICorDebugFrame ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="2e0fd-103">Gets a stepper that allows the debugger to perform stepping operations relative to this ICorDebugFrame.</span></span>  
+# <a name="icordebugframecreatestepper-method"></a><span data-ttu-id="ad342-102">ICorDebugFrame::CreateStepper – metoda</span><span class="sxs-lookup"><span data-stu-id="ad342-102">ICorDebugFrame::CreateStepper Method</span></span>
+<span data-ttu-id="ad342-103">Získá krokovač, umožňující ladicího programu k provádění operací krokování vzhledem k této ICorDebugFrame.</span><span class="sxs-lookup"><span data-stu-id="ad342-103">Gets a stepper that allows the debugger to perform stepping operations relative to this ICorDebugFrame.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2e0fd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2e0fd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ad342-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ad342-104">Syntax</span></span>  
   
 ```  
 HRESULT CreateStepper (  
@@ -35,18 +35,18 @@ HRESULT CreateStepper (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="2e0fd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2e0fd-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="ad342-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ad342-105">Parameters</span></span>  
  `ppStepper`  
- <span data-ttu-id="2e0fd-106">[out] Ukazatel na adresu ICorDebugStepper objekt, který umožňuje ladicí program k provádění operací taktování vzhledem k aktuální snímek.</span><span class="sxs-lookup"><span data-stu-id="2e0fd-106">[out] A pointer to the address of an ICorDebugStepper object that allows the debugger to perform stepping operations relative to the current frame.</span></span>  
+ <span data-ttu-id="ad342-106">[out] Ukazatel na adresu icordebugstepper – objekt, který umožňuje ladicího programu k provádění operací krokování vzhledem k aktuální rámec.</span><span class="sxs-lookup"><span data-stu-id="ad342-106">[out] A pointer to the address of an ICorDebugStepper object that allows the debugger to perform stepping operations relative to the current frame.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="2e0fd-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2e0fd-107">Remarks</span></span>  
- <span data-ttu-id="2e0fd-108">Pokud rámečku není aktivní, objekt krokovač obvykle mají se vraťte do rámečku před dokončením kroku.</span><span class="sxs-lookup"><span data-stu-id="2e0fd-108">If the frame is not active, the stepper object will typically have to return to the frame before the step is completed.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ad342-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ad342-107">Remarks</span></span>  
+ <span data-ttu-id="ad342-108">Pokud rámce není aktivní, obvykle muset objekt krokovač vrátit na snímek před dokončení tohoto kroku.</span><span class="sxs-lookup"><span data-stu-id="ad342-108">If the frame is not active, the stepper object will typically have to return to the frame before the step is completed.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2e0fd-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2e0fd-109">Requirements</span></span>  
- <span data-ttu-id="2e0fd-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2e0fd-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ad342-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ad342-109">Requirements</span></span>  
+ <span data-ttu-id="ad342-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ad342-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2e0fd-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="2e0fd-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="ad342-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="ad342-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="2e0fd-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="2e0fd-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="ad342-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="ad342-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="2e0fd-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2e0fd-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="ad342-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ad342-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

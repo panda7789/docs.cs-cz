@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 403adfbfe96558196e5ba64ddcbe0be637ba1b1c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e6f5f1da94e1ae07a604a616c631a38d02caea9d
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403250"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57496193"
 ---
-# <a name="icordebugarrayvaluegetelementtype-method"></a><span data-ttu-id="cfb8b-102">ICorDebugArrayValue::GetElementType – metoda</span><span class="sxs-lookup"><span data-stu-id="cfb8b-102">ICorDebugArrayValue::GetElementType Method</span></span>
-<span data-ttu-id="cfb8b-103">Získá hodnotu, která určuje jednoduchý typ elementů v poli.</span><span class="sxs-lookup"><span data-stu-id="cfb8b-103">Gets a value that indicates the simple type of the elements in the array.</span></span>  
+# <a name="icordebugarrayvaluegetelementtype-method"></a><span data-ttu-id="1f3ce-102">ICorDebugArrayValue::GetElementType – metoda</span><span class="sxs-lookup"><span data-stu-id="1f3ce-102">ICorDebugArrayValue::GetElementType Method</span></span>
+<span data-ttu-id="1f3ce-103">Získá hodnotu, která určuje jednoduchý typ prvků v poli.</span><span class="sxs-lookup"><span data-stu-id="1f3ce-103">Gets a value that indicates the simple type of the elements in the array.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="cfb8b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cfb8b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1f3ce-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1f3ce-104">Syntax</span></span>  
   
 ```  
 HRESULT GetElementType (  
@@ -35,15 +35,15 @@ HRESULT GetElementType (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="cfb8b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="cfb8b-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="1f3ce-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1f3ce-105">Parameters</span></span>  
  `pType`  
- <span data-ttu-id="cfb8b-106">[out] Ukazatel na hodnotu CorElementType – výčet, který určuje typ.</span><span class="sxs-lookup"><span data-stu-id="cfb8b-106">[out] A pointer to a value of the CorElementType enumeration that indicates the type.</span></span>  
+ <span data-ttu-id="1f3ce-106">[out] Ukazatel na hodnotu corelementtype – výčet, který označuje typ.</span><span class="sxs-lookup"><span data-stu-id="1f3ce-106">[out] A pointer to a value of the CorElementType enumeration that indicates the type.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="cfb8b-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cfb8b-107">Requirements</span></span>  
- <span data-ttu-id="cfb8b-108">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cfb8b-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1f3ce-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1f3ce-107">Requirements</span></span>  
+ <span data-ttu-id="1f3ce-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1f3ce-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="cfb8b-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="cfb8b-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="1f3ce-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="1f3ce-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="cfb8b-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="cfb8b-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="1f3ce-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="1f3ce-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="cfb8b-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cfb8b-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="1f3ce-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1f3ce-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

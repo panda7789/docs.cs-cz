@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c2c3040adddabee716976d778c29d1f6729efc39
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f957ff6949ea2335c6606eb112352a5180e2c1c8
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576925"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57500314"
 ---
-# <a name="lpoverlappedcompletionroutine-function-pointer"></a><span data-ttu-id="05ad6-102">LPOVERLAPPED_COMPLETION_ROUTINE – ukazatel na funkci</span><span class="sxs-lookup"><span data-stu-id="05ad6-102">LPOVERLAPPED_COMPLETION_ROUTINE Function Pointer</span></span>
-<span data-ttu-id="05ad6-103">Odkazuje na funkci, která upozorňuje hostitele, pokud překrytí (tj, asynchronní) vstupně-výstupních operací na zařízení byla dokončena.</span><span class="sxs-lookup"><span data-stu-id="05ad6-103">Points to a function that notifies the host when an overlapped (that is, asynchronous) I/O to a device has completed.</span></span>  
+# <a name="lpoverlappedcompletionroutine-function-pointer"></a><span data-ttu-id="e84c8-102">LPOVERLAPPED_COMPLETION_ROUTINE – ukazatel na funkci</span><span class="sxs-lookup"><span data-stu-id="e84c8-102">LPOVERLAPPED_COMPLETION_ROUTINE Function Pointer</span></span>
+<span data-ttu-id="e84c8-103">Odkazuje na funkci, která upozorňuje hostitele, pokud překrytí (tj, asynchronní) vstupně-výstupních operací na zařízení byla dokončena.</span><span class="sxs-lookup"><span data-stu-id="e84c8-103">Points to a function that notifies the host when an overlapped (that is, asynchronous) I/O to a device has completed.</span></span>  
   
- <span data-ttu-id="05ad6-104">Tento ukazatel na funkci se už nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="05ad6-104">This function pointer has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
+ <span data-ttu-id="e84c8-104">Tento ukazatel na funkci se už nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="e84c8-104">This function pointer has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="05ad6-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="05ad6-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e84c8-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e84c8-105">Syntax</span></span>  
   
 ```  
 typedef VOID (*LPOVERLAPPED_COMPLETION_ROUTINE) (  
@@ -38,29 +38,29 @@ typedef VOID (*LPOVERLAPPED_COMPLETION_ROUTINE) (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="05ad6-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="05ad6-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="e84c8-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="e84c8-106">Parameters</span></span>  
  `dwErrorCode`  
- <span data-ttu-id="05ad6-107">[in] Hodnotu, která je kód chyby, pokud bylo ukončeno zařízení; v opačném případě tato hodnota je nula.</span><span class="sxs-lookup"><span data-stu-id="05ad6-107">[in] A value that is an error code if the device has been closed; otherwise, this value is zero.</span></span>  
+ <span data-ttu-id="e84c8-107">[in] Hodnotu, která je kód chyby, pokud bylo ukončeno zařízení; v opačném případě tato hodnota je nula.</span><span class="sxs-lookup"><span data-stu-id="e84c8-107">[in] A value that is an error code if the device has been closed; otherwise, this value is zero.</span></span>  
   
- <span data-ttu-id="05ad6-108">Zavření zařízení způsobí, že všechny čekající vstupně-výstupních operací zařízení okamžitě provést.</span><span class="sxs-lookup"><span data-stu-id="05ad6-108">Closing a device causes all pending I/O to the device to be completed immediately.</span></span>  
+ <span data-ttu-id="e84c8-108">Zavření zařízení způsobí, že všechny čekající vstupně-výstupních operací zařízení okamžitě provést.</span><span class="sxs-lookup"><span data-stu-id="e84c8-108">Closing a device causes all pending I/O to the device to be completed immediately.</span></span>  
   
  `dwNumberOfBytesTransfered`  
- <span data-ttu-id="05ad6-109">[in] Počet bajtů přenesených vstupně-výstupní operace.</span><span class="sxs-lookup"><span data-stu-id="05ad6-109">[in] The number of bytes transferred by the I/O operation.</span></span>  
+ <span data-ttu-id="e84c8-109">[in] Počet bajtů přenesených vstupně-výstupní operace.</span><span class="sxs-lookup"><span data-stu-id="e84c8-109">[in] The number of bytes transferred by the I/O operation.</span></span>  
   
  `lpOverlapped`  
- <span data-ttu-id="05ad6-110">[in] Ukazatel na strukturu, která obsahuje informace, které se dá použít k dokončení žádosti o vstupně-výstupních operací.</span><span class="sxs-lookup"><span data-stu-id="05ad6-110">[in] A pointer to a structure that contains information to be used to complete the I/O request.</span></span>  
+ <span data-ttu-id="e84c8-110">[in] Ukazatel na strukturu, která obsahuje informace, které se dá použít k dokončení žádosti o vstupně-výstupních operací.</span><span class="sxs-lookup"><span data-stu-id="e84c8-110">[in] A pointer to a structure that contains information to be used to complete the I/O request.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="05ad6-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="05ad6-111">Remarks</span></span>  
- <span data-ttu-id="05ad6-112">Funkce, které `LPOVERLAPPED_COMPLETION_ROUTINE` body je funkce zpětného volání a musí být implementováno tvůrci hostitelské aplikace.</span><span class="sxs-lookup"><span data-stu-id="05ad6-112">The function to which `LPOVERLAPPED_COMPLETION_ROUTINE` points is a callback function and must be implemented by the writer of the hosting application.</span></span> <span data-ttu-id="05ad6-113">Funkce zpětného volání umožňuje hostiteli zpracování dokončenou žádost vstupně-výstupních operací.</span><span class="sxs-lookup"><span data-stu-id="05ad6-113">The callback function allows the host to process the completed I/O request.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="e84c8-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e84c8-111">Remarks</span></span>  
+ <span data-ttu-id="e84c8-112">Funkce, které `LPOVERLAPPED_COMPLETION_ROUTINE` body je funkce zpětného volání a musí být implementováno tvůrci hostitelské aplikace.</span><span class="sxs-lookup"><span data-stu-id="e84c8-112">The function to which `LPOVERLAPPED_COMPLETION_ROUTINE` points is a callback function and must be implemented by the writer of the hosting application.</span></span> <span data-ttu-id="e84c8-113">Funkce zpětného volání umožňuje hostiteli zpracování dokončenou žádost vstupně-výstupních operací.</span><span class="sxs-lookup"><span data-stu-id="e84c8-113">The callback function allows the host to process the completed I/O request.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="05ad6-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="05ad6-114">Requirements</span></span>  
- <span data-ttu-id="05ad6-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="05ad6-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e84c8-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e84c8-114">Requirements</span></span>  
+ <span data-ttu-id="e84c8-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e84c8-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="05ad6-116">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="05ad6-116">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="e84c8-116">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="e84c8-116">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="05ad6-117">**Knihovna:** MSCorWks.dll</span><span class="sxs-lookup"><span data-stu-id="05ad6-117">**Library:** MSCorWks.dll</span></span>  
+ <span data-ttu-id="e84c8-117">**Knihovna:** MSCorWks.dll</span><span class="sxs-lookup"><span data-stu-id="e84c8-117">**Library:** MSCorWks.dll</span></span>  
   
- <span data-ttu-id="05ad6-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="05ad6-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="e84c8-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e84c8-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="05ad6-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="05ad6-119">See also</span></span>
-- [<span data-ttu-id="05ad6-120">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="05ad6-120">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a><span data-ttu-id="e84c8-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e84c8-119">See also</span></span>
+- [<span data-ttu-id="e84c8-120">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="e84c8-120">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

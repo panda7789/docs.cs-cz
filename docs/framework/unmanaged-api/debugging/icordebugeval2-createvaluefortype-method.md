@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 683457c249915708becadaeda9dec265666e2023
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b27e40618d6128c21e99745ca45e139a9c21c843
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412104"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57475031"
 ---
-# <a name="icordebugeval2createvaluefortype-method"></a><span data-ttu-id="20b18-102">ICorDebugEval2::CreateValueForType – metoda</span><span class="sxs-lookup"><span data-stu-id="20b18-102">ICorDebugEval2::CreateValueForType Method</span></span>
-<span data-ttu-id="20b18-103">Získá ukazatel na nové ICorDebugValue zadaného typu, s počáteční hodnotou nula nebo hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="20b18-103">Gets a pointer to a new ICorDebugValue of the specified type, with an initial value of zero or null.</span></span>  
+# <a name="icordebugeval2createvaluefortype-method"></a><span data-ttu-id="0f24e-102">ICorDebugEval2::CreateValueForType – metoda</span><span class="sxs-lookup"><span data-stu-id="0f24e-102">ICorDebugEval2::CreateValueForType Method</span></span>
+<span data-ttu-id="0f24e-103">Získá ukazatel na novou ICorDebugValue zadaného typu, s počáteční hodnotou nula nebo hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="0f24e-103">Gets a pointer to a new ICorDebugValue of the specified type, with an initial value of zero or null.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="20b18-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="20b18-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0f24e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0f24e-104">Syntax</span></span>  
   
 ```  
 HRESULT CreateValueForType (  
@@ -36,23 +36,23 @@ HRESULT CreateValueForType (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="20b18-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="20b18-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="0f24e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="0f24e-105">Parameters</span></span>  
  `pType`  
- <span data-ttu-id="20b18-106">[v] Ukazatel na ICorDebugType objekt, který představuje typ.</span><span class="sxs-lookup"><span data-stu-id="20b18-106">[in] Pointer to an ICorDebugType object that represents the type.</span></span>  
+ <span data-ttu-id="0f24e-106">[in] Ukazatel na objekt, který představuje typ ICorDebugType.</span><span class="sxs-lookup"><span data-stu-id="0f24e-106">[in] Pointer to an ICorDebugType object that represents the type.</span></span>  
   
  `ppValue`  
- <span data-ttu-id="20b18-107">[out] Ukazatel na adresu `ICorDebugValue` objekt, který představuje hodnotu.</span><span class="sxs-lookup"><span data-stu-id="20b18-107">[out] Pointer to the address of an `ICorDebugValue` object that represents the value.</span></span>  
+ <span data-ttu-id="0f24e-107">[out] Ukazatel na adresu `ICorDebugValue` objekt, který představuje hodnotu.</span><span class="sxs-lookup"><span data-stu-id="0f24e-107">[out] Pointer to the address of an `ICorDebugValue` object that represents the value.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="20b18-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="20b18-108">Remarks</span></span>  
- <span data-ttu-id="20b18-109">`CreateValueForType` Umožňuje zobecnit [icordebugeval::createvalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md) tím, že se k zadání typu libovolného objektu, včetně sestavený typy, jako `List<int>`.</span><span class="sxs-lookup"><span data-stu-id="20b18-109">`CreateValueForType` generalizes [ICorDebugEval::CreateValue](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md) by allowing you to specify an arbitrary object type, including constructed types such as `List<int>`.</span></span> <span data-ttu-id="20b18-110">Jediným účelem: Tato metoda je ke generování hodnotu, která se dá předat do vyhodnocení funkce.</span><span class="sxs-lookup"><span data-stu-id="20b18-110">The only purpose of this method is to generate a value that can be passed to a function evaluation.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="0f24e-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0f24e-108">Remarks</span></span>  
+ <span data-ttu-id="0f24e-109">`CreateValueForType` zobecňuje [icordebugeval::createvalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md) , neboť umožňuje určit typ libovolného objektu, včetně vytvořený typy, jako `List<int>`.</span><span class="sxs-lookup"><span data-stu-id="0f24e-109">`CreateValueForType` generalizes [ICorDebugEval::CreateValue](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md) by allowing you to specify an arbitrary object type, including constructed types such as `List<int>`.</span></span> <span data-ttu-id="0f24e-110">Jediným účelem: Tato metoda se má generovat hodnotu, která může být předán vyhodnocení funkce.</span><span class="sxs-lookup"><span data-stu-id="0f24e-110">The only purpose of this method is to generate a value that can be passed to a function evaluation.</span></span>  
   
- <span data-ttu-id="20b18-111">Typ musí být třídu nebo typ hodnoty.</span><span class="sxs-lookup"><span data-stu-id="20b18-111">The type must be a class or a value type.</span></span> <span data-ttu-id="20b18-112">Tuto metodu nelze použít k vytvoření hodnoty pole nebo hodnoty řetězce.</span><span class="sxs-lookup"><span data-stu-id="20b18-112">You cannot use this method to create array values or string values.</span></span>  
+ <span data-ttu-id="0f24e-111">Typ musí být třída nebo hodnotového typu.</span><span class="sxs-lookup"><span data-stu-id="0f24e-111">The type must be a class or a value type.</span></span> <span data-ttu-id="0f24e-112">Tuto metodu nelze použít k vytvoření hodnoty pole nebo řetězec.</span><span class="sxs-lookup"><span data-stu-id="0f24e-112">You cannot use this method to create array values or string values.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="20b18-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="20b18-113">Requirements</span></span>  
- <span data-ttu-id="20b18-114">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="20b18-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0f24e-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0f24e-113">Requirements</span></span>  
+ <span data-ttu-id="0f24e-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0f24e-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="20b18-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="20b18-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="0f24e-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="0f24e-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="20b18-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="20b18-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="0f24e-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="0f24e-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="20b18-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="20b18-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="0f24e-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0f24e-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>

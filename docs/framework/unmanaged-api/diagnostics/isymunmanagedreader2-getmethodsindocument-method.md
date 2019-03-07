@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 38cbea25c485ff517e3448c4de5245ff36fb5b21
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 26e6efff403f7fa10e1d96ffb3bf0f4b9ab3a96d
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54594548"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57465852"
 ---
-# <a name="isymunmanagedreader2getmethodsindocument-method"></a><span data-ttu-id="3c4c9-102">ISymUnmanagedReader2::GetMethodsInDocument – metoda</span><span class="sxs-lookup"><span data-stu-id="3c4c9-102">ISymUnmanagedReader2::GetMethodsInDocument Method</span></span>
-<span data-ttu-id="3c4c9-103">Získá každou metodu, která obsahuje informace o řádek v zadané dokumentu.</span><span class="sxs-lookup"><span data-stu-id="3c4c9-103">Gets every method that has line information in the provided document.</span></span>  
+# <a name="isymunmanagedreader2getmethodsindocument-method"></a><span data-ttu-id="70bdb-102">ISymUnmanagedReader2::GetMethodsInDocument – metoda</span><span class="sxs-lookup"><span data-stu-id="70bdb-102">ISymUnmanagedReader2::GetMethodsInDocument Method</span></span>
+<span data-ttu-id="70bdb-103">Získá každou metodu, která obsahuje informace o řádek v zadané dokumentu.</span><span class="sxs-lookup"><span data-stu-id="70bdb-103">Gets every method that has line information in the provided document.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3c4c9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3c4c9-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="70bdb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="70bdb-104">Syntax</span></span>  
   
 ```  
 HRESULT GetMethodsInDocument(  
@@ -38,24 +38,24 @@ HRESULT GetMethodsInDocument(
         length_is(*pcMethod)] ISymUnmanagedMethod* pRetVal[]);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="3c4c9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3c4c9-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="70bdb-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="70bdb-105">Parameters</span></span>  
  `document`  
- <span data-ttu-id="3c4c9-106">[in] Ukazatel na dokument.</span><span class="sxs-lookup"><span data-stu-id="3c4c9-106">[in] A pointer to the document.</span></span>  
+ <span data-ttu-id="70bdb-106">[in] Ukazatel na dokument.</span><span class="sxs-lookup"><span data-stu-id="70bdb-106">[in] A pointer to the document.</span></span>  
   
  `cMethod`  
- <span data-ttu-id="3c4c9-107">[in] A `ULONG32` , který označuje velikost `pRetVal` pole.</span><span class="sxs-lookup"><span data-stu-id="3c4c9-107">[in] A `ULONG32` that indicates the size of the  `pRetVal` array.</span></span>  
+ <span data-ttu-id="70bdb-107">[in] A `ULONG32` , který označuje velikost `pRetVal` pole.</span><span class="sxs-lookup"><span data-stu-id="70bdb-107">[in] A `ULONG32` that indicates the size of the  `pRetVal` array.</span></span>  
   
  `pcMethod`  
- <span data-ttu-id="3c4c9-108">[out] Ukazatel `ULONG32` , která obdrží velikost vyrovnávací paměti musí obsahovat metody.</span><span class="sxs-lookup"><span data-stu-id="3c4c9-108">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the methods.</span></span>  
+ <span data-ttu-id="70bdb-108">[out] Ukazatel `ULONG32` , která obdrží velikost vyrovnávací paměti musí obsahovat metody.</span><span class="sxs-lookup"><span data-stu-id="70bdb-108">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the methods.</span></span>  
   
  `pRetVal`  
- <span data-ttu-id="3c4c9-109">[out] Ukazatel do vyrovnávací paměti, která přijímá metody.</span><span class="sxs-lookup"><span data-stu-id="3c4c9-109">[out] A pointer to the buffer that receives the methods.</span></span>  
+ <span data-ttu-id="70bdb-109">[out] Ukazatel do vyrovnávací paměti, která přijímá metody.</span><span class="sxs-lookup"><span data-stu-id="70bdb-109">[out] A pointer to the buffer that receives the methods.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="3c4c9-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="3c4c9-110">Return Value</span></span>  
- <span data-ttu-id="3c4c9-111">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="3c4c9-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="70bdb-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="70bdb-110">Return Value</span></span>  
+ <span data-ttu-id="70bdb-111">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="70bdb-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="3c4c9-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3c4c9-112">Requirements</span></span>  
- <span data-ttu-id="3c4c9-113">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="3c4c9-113">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="70bdb-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="70bdb-112">Requirements</span></span>  
+ <span data-ttu-id="70bdb-113">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="70bdb-113">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3c4c9-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3c4c9-114">See also</span></span>
-- [<span data-ttu-id="3c4c9-115">ISymUnmanagedReader2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3c4c9-115">ISymUnmanagedReader2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="70bdb-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="70bdb-114">See also</span></span>
+- [<span data-ttu-id="70bdb-115">ISymUnmanagedReader2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="70bdb-115">ISymUnmanagedReader2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)

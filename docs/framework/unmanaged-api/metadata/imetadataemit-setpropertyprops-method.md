@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 997e43e6a8be1ac2859e7338751272f3074be11d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d836abb63aec0ffd72fb54d342e36bae7191a533
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54523127"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489030"
 ---
-# <a name="imetadataemitsetpropertyprops-method"></a><span data-ttu-id="736cd-102">IMetaDataEmit::SetPropertyProps – metoda</span><span class="sxs-lookup"><span data-stu-id="736cd-102">IMetaDataEmit::SetPropertyProps Method</span></span>
-<span data-ttu-id="736cd-103">Nastaví uložená v metadatech pro vlastnosti určené předchozím volání funkce [DefineProperty – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).</span><span class="sxs-lookup"><span data-stu-id="736cd-103">Sets the features stored in metadata for a property defined by a prior call to [DefineProperty Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).</span></span>  
+# <a name="imetadataemitsetpropertyprops-method"></a><span data-ttu-id="70f7a-102">IMetaDataEmit::SetPropertyProps – metoda</span><span class="sxs-lookup"><span data-stu-id="70f7a-102">IMetaDataEmit::SetPropertyProps Method</span></span>
+<span data-ttu-id="70f7a-103">Nastaví uložená v metadatech pro vlastnosti určené předchozím volání funkce [DefineProperty – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).</span><span class="sxs-lookup"><span data-stu-id="70f7a-103">Sets the features stored in metadata for a property defined by a prior call to [DefineProperty Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="736cd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="736cd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="70f7a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="70f7a-104">Syntax</span></span>  
   
 ```  
 HRESULT SetPropertyProps (   
@@ -42,40 +42,40 @@ HRESULT SetPropertyProps (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="736cd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="736cd-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="70f7a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="70f7a-105">Parameters</span></span>  
  `pr`  
- <span data-ttu-id="736cd-106">[in] Token pro vlastnost, která má být změněn</span><span class="sxs-lookup"><span data-stu-id="736cd-106">[in] The token for the property to be changed</span></span>  
+ <span data-ttu-id="70f7a-106">[in] Token pro vlastnost, která má být změněn</span><span class="sxs-lookup"><span data-stu-id="70f7a-106">[in] The token for the property to be changed</span></span>  
   
  `dwPropFlags`  
- <span data-ttu-id="736cd-107">[in] Vlastnost příznaky.</span><span class="sxs-lookup"><span data-stu-id="736cd-107">[in] Property flags.</span></span>  
+ <span data-ttu-id="70f7a-107">[in] Vlastnost příznaky.</span><span class="sxs-lookup"><span data-stu-id="70f7a-107">[in] Property flags.</span></span>  
   
  `dwCPlusTypeFlag`  
- <span data-ttu-id="736cd-108">[in] Typ vlastnosti na výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="736cd-108">[in] The type of the property's default value.</span></span>  
+ <span data-ttu-id="70f7a-108">[in] Typ vlastnosti na výchozí hodnotu.</span><span class="sxs-lookup"><span data-stu-id="70f7a-108">[in] The type of the property's default value.</span></span>  
   
  `pValue`  
- <span data-ttu-id="736cd-109">[in] Výchozí hodnota pro vlastnost.</span><span class="sxs-lookup"><span data-stu-id="736cd-109">[in] The default value for the property.</span></span>  
+ <span data-ttu-id="70f7a-109">[in] Výchozí hodnota pro vlastnost.</span><span class="sxs-lookup"><span data-stu-id="70f7a-109">[in] The default value for the property.</span></span>  
   
  `cchValue`  
- <span data-ttu-id="736cd-110">[in] Počet (Unicode) znaky v `pValue`.</span><span class="sxs-lookup"><span data-stu-id="736cd-110">[in] The count of (Unicode) characters in `pValue`.</span></span>  
+ <span data-ttu-id="70f7a-110">[in] Počet (Unicode) znaky v `pValue`.</span><span class="sxs-lookup"><span data-stu-id="70f7a-110">[in] The count of (Unicode) characters in `pValue`.</span></span>  
   
  `mdSetter`  
- <span data-ttu-id="736cd-111">[in] Metoda, která nastaví hodnotu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="736cd-111">[in] The method that sets the property value.</span></span>  
+ <span data-ttu-id="70f7a-111">[in] Metoda, která nastaví hodnotu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="70f7a-111">[in] The method that sets the property value.</span></span>  
   
  `mdGetter`  
- <span data-ttu-id="736cd-112">[in] Metoda, která vrací hodnotu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="736cd-112">[in] The method that gets the property value.</span></span>  
+ <span data-ttu-id="70f7a-112">[in] Metoda, která vrací hodnotu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="70f7a-112">[in] The method that gets the property value.</span></span>  
   
  `rmdOtherMethods[]`  
- <span data-ttu-id="736cd-113">[in] Pole jiné metody přidružený k vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="736cd-113">[in] An array of other methods associated with the property.</span></span> <span data-ttu-id="736cd-114">Toto pole se ukončí `mdTokenNil` token.</span><span class="sxs-lookup"><span data-stu-id="736cd-114">Terminate this array with an `mdTokenNil` token.</span></span>  
+ <span data-ttu-id="70f7a-113">[in] Pole jiné metody přidružený k vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="70f7a-113">[in] An array of other methods associated with the property.</span></span> <span data-ttu-id="70f7a-114">Toto pole se ukončí `mdTokenNil` token.</span><span class="sxs-lookup"><span data-stu-id="70f7a-114">Terminate this array with an `mdTokenNil` token.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="736cd-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="736cd-115">Requirements</span></span>  
- <span data-ttu-id="736cd-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="736cd-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="70f7a-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="70f7a-115">Requirements</span></span>  
+ <span data-ttu-id="70f7a-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="70f7a-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="736cd-117">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="736cd-117">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="70f7a-117">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="70f7a-117">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="736cd-118">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="736cd-118">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="70f7a-118">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="70f7a-118">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="736cd-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="736cd-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="70f7a-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="70f7a-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="736cd-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="736cd-120">See also</span></span>
-- [<span data-ttu-id="736cd-121">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="736cd-121">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="736cd-122">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="736cd-122">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="70f7a-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="70f7a-120">See also</span></span>
+- [<span data-ttu-id="70f7a-121">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="70f7a-121">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="70f7a-122">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="70f7a-122">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

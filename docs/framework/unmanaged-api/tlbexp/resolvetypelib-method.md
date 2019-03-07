@@ -15,17 +15,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6558d27f10e5b93dfe2c8053bb96434d49fd3c4a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5b87460b9e525f2cf91b8f177c06286b5bbb3c52
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54537205"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57486118"
 ---
-# <a name="resolvetypelib-method"></a><span data-ttu-id="1e4ae-102">ResolveTypeLib – metoda</span><span class="sxs-lookup"><span data-stu-id="1e4ae-102">ResolveTypeLib Method</span></span>
-<span data-ttu-id="1e4ae-103">Přeloží jednoduchý název knihovny typů tak, že vrací jeho úplnou cestu.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-103">Resolves the simple name of a type library by returning its fully qualified path.</span></span>  
+# <a name="resolvetypelib-method"></a><span data-ttu-id="2f4fe-102">ResolveTypeLib – metoda</span><span class="sxs-lookup"><span data-stu-id="2f4fe-102">ResolveTypeLib Method</span></span>
+<span data-ttu-id="2f4fe-103">Přeloží jednoduchý název knihovny typů tak, že vrací jeho úplnou cestu.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-103">Resolves the simple name of a type library by returning its fully qualified path.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1e4ae-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1e4ae-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2f4fe-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2f4fe-104">Syntax</span></span>  
   
 ```  
 HRESULT ResolveTypeLib(  
@@ -38,42 +38,42 @@ HRESULT ResolveTypeLib(
     [out] BSTR     *pbstrResolvedTlbName);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="1e4ae-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1e4ae-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="2f4fe-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2f4fe-105">Parameters</span></span>  
  `bstrSimpleName`  
- <span data-ttu-id="1e4ae-106">[in] A [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) , který obsahuje jednoduchý název knihovny typů.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-106">[in] A [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) that contains the simple name of the type library.</span></span>  
+ <span data-ttu-id="2f4fe-106">[in] A [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) , který obsahuje jednoduchý název knihovny typů.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-106">[in] A [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) that contains the simple name of the type library.</span></span>  
   
  `tlbid`  
- <span data-ttu-id="1e4ae-107">[in] Identifikátor GUID přiřazený do knihovny typů v registru.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-107">[in] The GUID assigned to the type library in the registry.</span></span>  
+ <span data-ttu-id="2f4fe-107">[in] Identifikátor GUID přiřazený do knihovny typů v registru.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-107">[in] The GUID assigned to the type library in the registry.</span></span>  
   
  `lcid`  
- <span data-ttu-id="1e4ae-108">[in] ID lokalizace knihovny typů.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-108">[in] The localization ID of the type library.</span></span>  
+ <span data-ttu-id="2f4fe-108">[in] ID lokalizace knihovny typů.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-108">[in] The localization ID of the type library.</span></span>  
   
  `wMajorVersion`  
- <span data-ttu-id="1e4ae-109">[in] Číslo hlavní verze knihovny typů.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-109">[in] The major version number of the type library.</span></span> <span data-ttu-id="1e4ae-110">Například pro verzi *x.y*, je číslo hlavní verze *x*.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-110">For example, for version *x.y*, the major version number is *x*.</span></span>  
+ <span data-ttu-id="2f4fe-109">[in] Číslo hlavní verze knihovny typů.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-109">[in] The major version number of the type library.</span></span> <span data-ttu-id="2f4fe-110">Například pro verzi *x.y*, je číslo hlavní verze *x*.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-110">For example, for version *x.y*, the major version number is *x*.</span></span>  
   
  `wMinorVersion`  
- <span data-ttu-id="1e4ae-111">[in] Číslo podverze knihovny typů.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-111">[in] The minor version number of the type library.</span></span> <span data-ttu-id="1e4ae-112">Například pro verzi *x.y*, je číslo podverze *y*.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-112">For example, for version *x.y*, the minor version number is *y*.</span></span>  
+ <span data-ttu-id="2f4fe-111">[in] Číslo podverze knihovny typů.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-111">[in] The minor version number of the type library.</span></span> <span data-ttu-id="2f4fe-112">Například pro verzi *x.y*, je číslo podverze *y*.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-112">For example, for version *x.y*, the minor version number is *y*.</span></span>  
   
  `syskind`  
- <span data-ttu-id="1e4ae-113">[in] A [SYSKIND](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/ne-oaidl-tagsyskind) příznak, který identifikuje provozní prostředí.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-113">[in] A [SYSKIND](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/ne-oaidl-tagsyskind) flag that identifies the operating environment.</span></span> <span data-ttu-id="1e4ae-114">Běžné hodnoty jsou SYS_WIN32 a SYS_WIN64.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-114">Common values are SYS_WIN32 and SYS_WIN64.</span></span>  
+ <span data-ttu-id="2f4fe-113">[in] A [SYSKIND](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/ne-oaidl-tagsyskind) příznak, který identifikuje provozní prostředí.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-113">[in] A [SYSKIND](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/ne-oaidl-tagsyskind) flag that identifies the operating environment.</span></span> <span data-ttu-id="2f4fe-114">Běžné hodnoty jsou SYS_WIN32 a SYS_WIN64.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-114">Common values are SYS_WIN32 and SYS_WIN64.</span></span>  
   
  `pbstrResolvedTlbName`  
- <span data-ttu-id="1e4ae-115">[out] Ukazatel [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) obsahující úplnou cestu knihovny typů s názvem v `bstrSimpleName` parametru.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-115">[out] A pointer to a [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) that contains the full path of the type library named in the `bstrSimpleName` parameter.</span></span>  
+ <span data-ttu-id="2f4fe-115">[out] Ukazatel [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) obsahující úplnou cestu knihovny typů s názvem v `bstrSimpleName` parametru.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-115">[out] A pointer to a [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) that contains the full path of the type library named in the `bstrSimpleName` parameter.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="1e4ae-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1e4ae-116">Remarks</span></span>  
- <span data-ttu-id="1e4ae-117">`ResolveTypeLib` Metoda je volána [loadtypelibwithresolver – funkce](../../../../docs/framework/unmanaged-api/tlbexp/loadtypelibwithresolver-function.md) během [Tlbexp.exe (Exportér knihovny typů)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) zpracování.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-117">The `ResolveTypeLib` method is called by the [LoadTypeLibWithResolver function](../../../../docs/framework/unmanaged-api/tlbexp/loadtypelibwithresolver-function.md) during [Tlbexp.exe (Type Library Exporter)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) processing.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2f4fe-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2f4fe-116">Remarks</span></span>  
+ <span data-ttu-id="2f4fe-117">`ResolveTypeLib` Metoda je volána [loadtypelibwithresolver – funkce](../../../../docs/framework/unmanaged-api/tlbexp/loadtypelibwithresolver-function.md) během [Tlbexp.exe (Exportér knihovny typů)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) zpracování.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-117">The `ResolveTypeLib` method is called by the [LoadTypeLibWithResolver function](../../../../docs/framework/unmanaged-api/tlbexp/loadtypelibwithresolver-function.md) during [Tlbexp.exe (Type Library Exporter)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) processing.</span></span>  
   
- <span data-ttu-id="1e4ae-118">Vlastní implementace tohoto rozhraní musí vrátit [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) obsahující úplnou cestu knihovny typů s názvem v `bstrSimpleName` parametru.</span><span class="sxs-lookup"><span data-stu-id="1e4ae-118">Custom implementations of this interface must return a [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) that contains the full path of the type library named in the `bstrSimpleName` parameter.</span></span>  
+ <span data-ttu-id="2f4fe-118">Vlastní implementace tohoto rozhraní musí vrátit [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) obsahující úplnou cestu knihovny typů s názvem v `bstrSimpleName` parametru.</span><span class="sxs-lookup"><span data-stu-id="2f4fe-118">Custom implementations of this interface must return a [BSTR](https://docs.microsoft.com/previous-versions/windows/desktop/automat/bstr) that contains the full path of the type library named in the `bstrSimpleName` parameter.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="1e4ae-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1e4ae-119">Requirements</span></span>  
- <span data-ttu-id="1e4ae-120">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1e4ae-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2f4fe-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2f4fe-119">Requirements</span></span>  
+ <span data-ttu-id="2f4fe-120">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2f4fe-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="1e4ae-121">**Záhlaví:** TlbRef.idl, TlbRef.h</span><span class="sxs-lookup"><span data-stu-id="1e4ae-121">**Header:** TlbRef.idl, TlbRef.h</span></span>  
+ <span data-ttu-id="2f4fe-121">**Záhlaví:** TlbRef.idl, TlbRef.h</span><span class="sxs-lookup"><span data-stu-id="2f4fe-121">**Header:** TlbRef.idl, TlbRef.h</span></span>  
   
- <span data-ttu-id="1e4ae-122">**Knihovna:** TlbRef.lib</span><span class="sxs-lookup"><span data-stu-id="1e4ae-122">**Library:** TlbRef.lib</span></span>  
+ <span data-ttu-id="2f4fe-122">**Knihovna:** TlbRef.lib</span><span class="sxs-lookup"><span data-stu-id="2f4fe-122">**Library:** TlbRef.lib</span></span>  
   
- <span data-ttu-id="1e4ae-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1e4ae-123">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="2f4fe-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2f4fe-123">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1e4ae-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1e4ae-124">See also</span></span>
-- [<span data-ttu-id="1e4ae-125">Pomocné funkce Tlbexp</span><span class="sxs-lookup"><span data-stu-id="1e4ae-125">Tlbexp Helper Functions</span></span>](../../../../docs/framework/unmanaged-api/tlbexp/index.md)
-- [<span data-ttu-id="1e4ae-126">LoadTypeLibEx</span><span class="sxs-lookup"><span data-stu-id="1e4ae-126">LoadTypeLibEx</span></span>](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)
+## <a name="see-also"></a><span data-ttu-id="2f4fe-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2f4fe-124">See also</span></span>
+- [<span data-ttu-id="2f4fe-125">Pomocné funkce Tlbexp</span><span class="sxs-lookup"><span data-stu-id="2f4fe-125">Tlbexp Helper Functions</span></span>](../../../../docs/framework/unmanaged-api/tlbexp/index.md)
+- [<span data-ttu-id="2f4fe-126">LoadTypeLibEx</span><span class="sxs-lookup"><span data-stu-id="2f4fe-126">LoadTypeLibEx</span></span>](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

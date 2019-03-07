@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ac34fbca56c8a0f00ee3a7e0f898b8ee03287b11
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f34a2fe2bb1f92e75f77c086b03776ec59495600
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412282"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57482096"
 ---
-# <a name="icordebugfunctiongetilcode-method"></a><span data-ttu-id="b48c0-102">ICorDebugFunction::GetILCode – metoda</span><span class="sxs-lookup"><span data-stu-id="b48c0-102">ICorDebugFunction::GetILCode Method</span></span>
-<span data-ttu-id="b48c0-103">Získá instanci ICorDebugCode, která představuje kód Microsoft (MSIL intermediate language) přidružené k tomuto objektu ICorDebugFunction.</span><span class="sxs-lookup"><span data-stu-id="b48c0-103">Gets the ICorDebugCode instance that represents the Microsoft intermediate language (MSIL) code associated with this ICorDebugFunction object.</span></span>  
+# <a name="icordebugfunctiongetilcode-method"></a><span data-ttu-id="b0e9a-102">ICorDebugFunction::GetILCode – metoda</span><span class="sxs-lookup"><span data-stu-id="b0e9a-102">ICorDebugFunction::GetILCode Method</span></span>
+<span data-ttu-id="b0e9a-103">Získá instanci ICorDebugCode, který představuje kód Microsoft intermediate language (MSIL) asociovaném s tímto objektem ICorDebugFunction.</span><span class="sxs-lookup"><span data-stu-id="b0e9a-103">Gets the ICorDebugCode instance that represents the Microsoft intermediate language (MSIL) code associated with this ICorDebugFunction object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b48c0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b48c0-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b0e9a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b0e9a-104">Syntax</span></span>  
   
 ```  
 HRESULT GetILCode (  
@@ -35,18 +35,18 @@ HRESULT GetILCode (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="b48c0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b48c0-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b0e9a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b0e9a-105">Parameters</span></span>  
  `ppCode`  
- <span data-ttu-id="b48c0-106">[out] Ukazatel `ICorDebugCode` instanci, nebo hodnotu null, pokud funkce nebyla zkompilovat do MSIL.</span><span class="sxs-lookup"><span data-stu-id="b48c0-106">[out] A pointer to the `ICorDebugCode` instance, or null, if the function was not compiled into MSIL.</span></span>  
+ <span data-ttu-id="b0e9a-106">[out] Ukazatel `ICorDebugCode` instanci, nebo hodnotu null, pokud funkce nebyla zkompilována do jazyka MSIL.</span><span class="sxs-lookup"><span data-stu-id="b0e9a-106">[out] A pointer to the `ICorDebugCode` instance, or null, if the function was not compiled into MSIL.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="b48c0-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b48c0-107">Remarks</span></span>  
- <span data-ttu-id="b48c0-108">Pokud k této funkci byl povolen upravit a pokračovat `GetILCode` metoda získá kód MSIL odpovídající této funkce upravenou verzi kód v common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="b48c0-108">If Edit and Continue has been allowed on this function, the `GetILCode` method will get the MSIL code corresponding to this function's edited version of the code in the common language runtime (CLR).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b0e9a-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b0e9a-107">Remarks</span></span>  
+ <span data-ttu-id="b0e9a-108">Pokud u této funkce bylo povoleno upravit a pokračovat `GetILCode` metoda se zobrazí kód jazyka MSIL, který odpovídá této funkce upravenou verzi kódu v modulu common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="b0e9a-108">If Edit and Continue has been allowed on this function, the `GetILCode` method will get the MSIL code corresponding to this function's edited version of the code in the common language runtime (CLR).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b48c0-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b48c0-109">Requirements</span></span>  
- <span data-ttu-id="b48c0-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b48c0-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b0e9a-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b0e9a-109">Requirements</span></span>  
+ <span data-ttu-id="b0e9a-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b0e9a-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b48c0-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b48c0-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="b0e9a-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="b0e9a-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="b48c0-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b48c0-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b0e9a-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b0e9a-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b48c0-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b48c0-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="b0e9a-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b0e9a-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

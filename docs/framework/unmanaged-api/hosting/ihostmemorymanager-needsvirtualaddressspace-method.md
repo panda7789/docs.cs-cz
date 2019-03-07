@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c4a67e1eb5a257cc6d4e4c9bc8798b61c97fba38
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4fe47a155b29fe452a59adfaffe59162f60f58aa
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54661747"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57469571"
 ---
-# <a name="ihostmemorymanagerneedsvirtualaddressspace-method"></a><span data-ttu-id="356eb-102">IHostMemoryManager::NeedsVirtualAddressSpace – metoda</span><span class="sxs-lookup"><span data-stu-id="356eb-102">IHostMemoryManager::NeedsVirtualAddressSpace Method</span></span>
-<span data-ttu-id="356eb-103">Upozorňuje hostitele, že bude pokus o použití zadaná paměťová common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="356eb-103">Notifies the host that the common language runtime (CLR) is going to attempt to use the specified memory.</span></span>  
+# <a name="ihostmemorymanagerneedsvirtualaddressspace-method"></a><span data-ttu-id="97541-102">IHostMemoryManager::NeedsVirtualAddressSpace – metoda</span><span class="sxs-lookup"><span data-stu-id="97541-102">IHostMemoryManager::NeedsVirtualAddressSpace Method</span></span>
+<span data-ttu-id="97541-103">Upozorňuje hostitele, že bude pokus o použití zadaná paměťová common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="97541-103">Notifies the host that the common language runtime (CLR) is going to attempt to use the specified memory.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="356eb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="356eb-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="97541-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="97541-104">Syntax</span></span>  
   
 ```  
 HRESULT NeedsVirtualAddressSpace (  
@@ -36,26 +36,26 @@ HRESULT NeedsVirtualAddressSpace (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="356eb-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="356eb-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="97541-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="97541-105">Parameters</span></span>  
  `startAddress`  
- <span data-ttu-id="356eb-106">[in] Počáteční adresa paměti.</span><span class="sxs-lookup"><span data-stu-id="356eb-106">[in] The starting address of the memory.</span></span>  
+ <span data-ttu-id="97541-106">[in] Počáteční adresa paměti.</span><span class="sxs-lookup"><span data-stu-id="97541-106">[in] The starting address of the memory.</span></span>  
   
  `size`  
- <span data-ttu-id="356eb-107">[in] Velikost v bajtech paměti.</span><span class="sxs-lookup"><span data-stu-id="356eb-107">[in] The size, in bytes, of the memory.</span></span>  
+ <span data-ttu-id="97541-107">[in] Velikost v bajtech paměti.</span><span class="sxs-lookup"><span data-stu-id="97541-107">[in] The size, in bytes, of the memory.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="356eb-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="356eb-108">Remarks</span></span>  
- <span data-ttu-id="356eb-109">`NeedsVirtualAddressSpace` Metoda je metoda zpětného volání a musí být implementováno tvůrci hostitelské aplikace.</span><span class="sxs-lookup"><span data-stu-id="356eb-109">The `NeedsVirtualAddressSpace` method is a callback method and must be implemented by the writer of the hosting application.</span></span> <span data-ttu-id="356eb-110">Je volána modulem CLR.</span><span class="sxs-lookup"><span data-stu-id="356eb-110">It is called by the CLR.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="97541-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="97541-108">Remarks</span></span>  
+ <span data-ttu-id="97541-109">`NeedsVirtualAddressSpace` Metoda je metoda zpětného volání a musí být implementováno tvůrci hostitelské aplikace.</span><span class="sxs-lookup"><span data-stu-id="97541-109">The `NeedsVirtualAddressSpace` method is a callback method and must be implemented by the writer of the hosting application.</span></span> <span data-ttu-id="97541-110">Je volána modulem CLR.</span><span class="sxs-lookup"><span data-stu-id="97541-110">It is called by the CLR.</span></span>  
   
- <span data-ttu-id="356eb-111">Pokud hostitel nechce CLR, která pomocí zadané paměti, může vrátit E_OUTOFMEMORY HRESULT.</span><span class="sxs-lookup"><span data-stu-id="356eb-111">If the host does not want the CLR to use the specified memory, it may return an E_OUTOFMEMORY HRESULT.</span></span>  
+ <span data-ttu-id="97541-111">Pokud hostitel nechce CLR, která pomocí zadané paměti, může vrátit E_OUTOFMEMORY HRESULT.</span><span class="sxs-lookup"><span data-stu-id="97541-111">If the host does not want the CLR to use the specified memory, it may return an E_OUTOFMEMORY HRESULT.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="356eb-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="356eb-112">Requirements</span></span>  
- <span data-ttu-id="356eb-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="356eb-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="97541-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="97541-112">Requirements</span></span>  
+ <span data-ttu-id="97541-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="97541-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="356eb-114">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="356eb-114">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="97541-114">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="97541-114">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="356eb-115">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="356eb-115">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="97541-115">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="97541-115">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="356eb-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="356eb-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="97541-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="97541-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="356eb-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="356eb-117">See also</span></span>
-- [<span data-ttu-id="356eb-118">IHostMemoryManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="356eb-118">IHostMemoryManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
+## <a name="see-also"></a><span data-ttu-id="97541-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="97541-117">See also</span></span>
+- [<span data-ttu-id="97541-118">IHostMemoryManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="97541-118">IHostMemoryManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)

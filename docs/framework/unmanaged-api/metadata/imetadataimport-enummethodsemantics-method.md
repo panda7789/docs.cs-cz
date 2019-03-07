@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a3c20e2787eb8071b10e06b980572c347959fe3c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6021cd0126f4dd85b796a3110cd95a83c0f77ff4
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54619445"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57466788"
 ---
-# <a name="imetadataimportenummethodsemantics-method"></a><span data-ttu-id="9a330-102">IMetaDataImport::EnumMethodSemantics – metoda</span><span class="sxs-lookup"><span data-stu-id="9a330-102">IMetaDataImport::EnumMethodSemantics Method</span></span>
-<span data-ttu-id="9a330-103">Vytvoří výčet vlastností a změnu vlastnosti události, ke kterým se vztahuje zadanou metodu.</span><span class="sxs-lookup"><span data-stu-id="9a330-103">Enumerates the properties and the property-change events to which the specified method is related.</span></span>  
+# <a name="imetadataimportenummethodsemantics-method"></a><span data-ttu-id="c241a-102">IMetaDataImport::EnumMethodSemantics – metoda</span><span class="sxs-lookup"><span data-stu-id="c241a-102">IMetaDataImport::EnumMethodSemantics Method</span></span>
+<span data-ttu-id="c241a-103">Vytvoří výčet vlastností a změnu vlastnosti události, ke kterým se vztahuje zadanou metodu.</span><span class="sxs-lookup"><span data-stu-id="c241a-103">Enumerates the properties and the property-change events to which the specified method is related.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9a330-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9a330-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c241a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c241a-104">Syntax</span></span>  
   
 ```  
 HRESULT EnumMethodSemantics (  
@@ -39,41 +39,41 @@ HRESULT EnumMethodSemantics (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="9a330-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9a330-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c241a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c241a-105">Parameters</span></span>  
  `phEnum`  
- <span data-ttu-id="9a330-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="9a330-106">[in, out] A pointer to the enumerator.</span></span> <span data-ttu-id="9a330-107">První volání této metody musí mít hodnotu NULL.</span><span class="sxs-lookup"><span data-stu-id="9a330-107">This must be NULL for the first call of this method.</span></span>  
+ <span data-ttu-id="c241a-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="c241a-106">[in, out] A pointer to the enumerator.</span></span> <span data-ttu-id="c241a-107">První volání této metody musí mít hodnotu NULL.</span><span class="sxs-lookup"><span data-stu-id="c241a-107">This must be NULL for the first call of this method.</span></span>  
   
  `mb`  
- <span data-ttu-id="9a330-108">[in] Token MethodDef, která omezuje rozsah výčtu.</span><span class="sxs-lookup"><span data-stu-id="9a330-108">[in] A MethodDef token that limits the scope of the enumeration.</span></span>  
+ <span data-ttu-id="c241a-108">[in] Token MethodDef, která omezuje rozsah výčtu.</span><span class="sxs-lookup"><span data-stu-id="c241a-108">[in] A MethodDef token that limits the scope of the enumeration.</span></span>  
   
  `rEventProp`  
- <span data-ttu-id="9a330-109">[out] Pole používá k ukládání vlastnosti nebo události.</span><span class="sxs-lookup"><span data-stu-id="9a330-109">[out] The array used to store the events or properties.</span></span>  
+ <span data-ttu-id="c241a-109">[out] Pole používá k ukládání vlastnosti nebo události.</span><span class="sxs-lookup"><span data-stu-id="c241a-109">[out] The array used to store the events or properties.</span></span>  
   
  `cMax`  
- <span data-ttu-id="9a330-110">[in] Maximální velikost `rEventProp` pole.</span><span class="sxs-lookup"><span data-stu-id="9a330-110">[in] The maximum size of the `rEventProp` array.</span></span>  
+ <span data-ttu-id="c241a-110">[in] Maximální velikost `rEventProp` pole.</span><span class="sxs-lookup"><span data-stu-id="c241a-110">[in] The maximum size of the `rEventProp` array.</span></span>  
   
  `pcEventProp`  
- <span data-ttu-id="9a330-111">[out] Počet událostí nebo vlastnosti, které jsou vráceny v `rEventProp`.</span><span class="sxs-lookup"><span data-stu-id="9a330-111">[out] The number of events or properties returned in `rEventProp`.</span></span>  
+ <span data-ttu-id="c241a-111">[out] Počet událostí nebo vlastnosti, které jsou vráceny v `rEventProp`.</span><span class="sxs-lookup"><span data-stu-id="c241a-111">[out] The number of events or properties returned in `rEventProp`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="9a330-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="9a330-112">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="c241a-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c241a-112">Return Value</span></span>  
   
-|<span data-ttu-id="9a330-113">HRESULT</span><span class="sxs-lookup"><span data-stu-id="9a330-113">HRESULT</span></span>|<span data-ttu-id="9a330-114">Popis</span><span class="sxs-lookup"><span data-stu-id="9a330-114">Description</span></span>|  
+|<span data-ttu-id="c241a-113">HRESULT</span><span class="sxs-lookup"><span data-stu-id="c241a-113">HRESULT</span></span>|<span data-ttu-id="c241a-114">Popis</span><span class="sxs-lookup"><span data-stu-id="c241a-114">Description</span></span>|  
 |-------------|-----------------|  
-|`S_OK`|<span data-ttu-id="9a330-115">`EnumMethodSemantics` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="9a330-115">`EnumMethodSemantics` returned successfully.</span></span>|  
-|`S_FALSE`|<span data-ttu-id="9a330-116">Neexistují žádné události nebo vlastnosti, které chcete zobrazit výčet.</span><span class="sxs-lookup"><span data-stu-id="9a330-116">There are no events or properties to enumerate.</span></span> <span data-ttu-id="9a330-117">V takovém případě `pcEventProp` je nula.</span><span class="sxs-lookup"><span data-stu-id="9a330-117">In that case, `pcEventProp` is zero.</span></span>|  
+|`S_OK`|<span data-ttu-id="c241a-115">`EnumMethodSemantics` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="c241a-115">`EnumMethodSemantics` returned successfully.</span></span>|  
+|`S_FALSE`|<span data-ttu-id="c241a-116">Neexistují žádné události nebo vlastnosti, které chcete zobrazit výčet.</span><span class="sxs-lookup"><span data-stu-id="c241a-116">There are no events or properties to enumerate.</span></span> <span data-ttu-id="c241a-117">V takovém případě `pcEventProp` je nula.</span><span class="sxs-lookup"><span data-stu-id="c241a-117">In that case, `pcEventProp` is zero.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="9a330-118">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9a330-118">Remarks</span></span>  
- <span data-ttu-id="9a330-119">Mnoho běžných typů modulu runtime jazyka definovat *vlastnost* `Changed` události a `On` *vlastnost* `Changed` metody související s jejich vlastností.</span><span class="sxs-lookup"><span data-stu-id="9a330-119">Many common language runtime types define *Property*`Changed` events and `On`*Property*`Changed` methods related to their properties.</span></span> <span data-ttu-id="9a330-120">Například <xref:System.Windows.Forms.Control?displayProperty=nameWithType> definuje typ <xref:System.Windows.Forms.Control.Font%2A> vlastnost, <xref:System.Windows.Forms.Control.FontChanged> události a <xref:System.Windows.Forms.Control.OnFontChanged%2A> metoda.</span><span class="sxs-lookup"><span data-stu-id="9a330-120">For example, the <xref:System.Windows.Forms.Control?displayProperty=nameWithType> type defines a <xref:System.Windows.Forms.Control.Font%2A> property, a <xref:System.Windows.Forms.Control.FontChanged> event, and an <xref:System.Windows.Forms.Control.OnFontChanged%2A> method.</span></span> <span data-ttu-id="9a330-121">Metodu přístupového objektu set <xref:System.Windows.Forms.Control.Font%2A> vlastnost volání <xref:System.Windows.Forms.Control.OnFontChanged%2A> metodu, která postupně vyvolá <xref:System.Windows.Forms.Control.FontChanged> událostí.</span><span class="sxs-lookup"><span data-stu-id="9a330-121">The set accessor method of the <xref:System.Windows.Forms.Control.Font%2A> property calls <xref:System.Windows.Forms.Control.OnFontChanged%2A> method, which in turn raises the <xref:System.Windows.Forms.Control.FontChanged> event.</span></span> <span data-ttu-id="9a330-122">By volat `EnumMethodSemantics` pomocí MethodDef pro <xref:System.Windows.Forms.Control.OnFontChanged%2A> zobrazíte odkazy na <xref:System.Windows.Forms.Control.Font%2A> vlastnost a <xref:System.Windows.Forms.Control.FontChanged> událostí.</span><span class="sxs-lookup"><span data-stu-id="9a330-122">You would call `EnumMethodSemantics` using the MethodDef for <xref:System.Windows.Forms.Control.OnFontChanged%2A> to get references to the <xref:System.Windows.Forms.Control.Font%2A> property and the <xref:System.Windows.Forms.Control.FontChanged> event.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c241a-118">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c241a-118">Remarks</span></span>  
+ <span data-ttu-id="c241a-119">Mnoho běžných typů modulu runtime jazyka definovat *vlastnost* `Changed` události a `On` *vlastnost* `Changed` metody související s jejich vlastností.</span><span class="sxs-lookup"><span data-stu-id="c241a-119">Many common language runtime types define *Property*`Changed` events and `On`*Property*`Changed` methods related to their properties.</span></span> <span data-ttu-id="c241a-120">Například <xref:System.Windows.Forms.Control?displayProperty=nameWithType> definuje typ <xref:System.Windows.Forms.Control.Font%2A> vlastnost, <xref:System.Windows.Forms.Control.FontChanged> události a <xref:System.Windows.Forms.Control.OnFontChanged%2A> metoda.</span><span class="sxs-lookup"><span data-stu-id="c241a-120">For example, the <xref:System.Windows.Forms.Control?displayProperty=nameWithType> type defines a <xref:System.Windows.Forms.Control.Font%2A> property, a <xref:System.Windows.Forms.Control.FontChanged> event, and an <xref:System.Windows.Forms.Control.OnFontChanged%2A> method.</span></span> <span data-ttu-id="c241a-121">Metodu přístupového objektu set <xref:System.Windows.Forms.Control.Font%2A> vlastnost volání <xref:System.Windows.Forms.Control.OnFontChanged%2A> metodu, která postupně vyvolá <xref:System.Windows.Forms.Control.FontChanged> událostí.</span><span class="sxs-lookup"><span data-stu-id="c241a-121">The set accessor method of the <xref:System.Windows.Forms.Control.Font%2A> property calls <xref:System.Windows.Forms.Control.OnFontChanged%2A> method, which in turn raises the <xref:System.Windows.Forms.Control.FontChanged> event.</span></span> <span data-ttu-id="c241a-122">By volat `EnumMethodSemantics` pomocí MethodDef pro <xref:System.Windows.Forms.Control.OnFontChanged%2A> zobrazíte odkazy na <xref:System.Windows.Forms.Control.Font%2A> vlastnost a <xref:System.Windows.Forms.Control.FontChanged> událostí.</span><span class="sxs-lookup"><span data-stu-id="c241a-122">You would call `EnumMethodSemantics` using the MethodDef for <xref:System.Windows.Forms.Control.OnFontChanged%2A> to get references to the <xref:System.Windows.Forms.Control.Font%2A> property and the <xref:System.Windows.Forms.Control.FontChanged> event.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9a330-123">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9a330-123">Requirements</span></span>  
- <span data-ttu-id="9a330-124">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9a330-124">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c241a-123">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c241a-123">Requirements</span></span>  
+ <span data-ttu-id="c241a-124">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c241a-124">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9a330-125">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="9a330-125">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="c241a-125">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="c241a-125">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="9a330-126">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9a330-126">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="c241a-126">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c241a-126">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="9a330-127">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9a330-127">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="c241a-127">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c241a-127">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9a330-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9a330-128">See also</span></span>
-- [<span data-ttu-id="9a330-129">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9a330-129">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="9a330-130">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9a330-130">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="c241a-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c241a-128">See also</span></span>
+- [<span data-ttu-id="c241a-129">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c241a-129">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="c241a-130">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c241a-130">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

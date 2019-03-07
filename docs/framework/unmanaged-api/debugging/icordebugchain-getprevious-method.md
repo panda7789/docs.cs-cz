@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2c0545440ed63ba914229249080ec9f6be8eb2b3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7fdcdf23dfee01e8bad1c95adb4de66f270d5e00
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402250"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57474966"
 ---
-# <a name="icordebugchaingetprevious-method"></a><span data-ttu-id="17b17-102">ICorDebugChain::GetPrevious – metoda</span><span class="sxs-lookup"><span data-stu-id="17b17-102">ICorDebugChain::GetPrevious Method</span></span>
-<span data-ttu-id="17b17-103">Získá předchozí řetěz snímků pro vlákno.</span><span class="sxs-lookup"><span data-stu-id="17b17-103">Gets the previous chain of frames for the thread.</span></span>  
+# <a name="icordebugchaingetprevious-method"></a><span data-ttu-id="51b80-102">ICorDebugChain::GetPrevious – metoda</span><span class="sxs-lookup"><span data-stu-id="51b80-102">ICorDebugChain::GetPrevious Method</span></span>
+<span data-ttu-id="51b80-103">Získá předchozí řetězu rámce pro vlákno.</span><span class="sxs-lookup"><span data-stu-id="51b80-103">Gets the previous chain of frames for the thread.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="17b17-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="17b17-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="51b80-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="51b80-104">Syntax</span></span>  
   
 ```  
 HRESULT GetPrevious (  
@@ -35,15 +35,15 @@ HRESULT GetPrevious (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="17b17-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="17b17-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="51b80-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="51b80-105">Parameters</span></span>  
  `ppChain`  
- <span data-ttu-id="17b17-106">[out] Ukazatel na adresu ICorDebugChain objekt, který reprezentuje předchozího řetězce rámce pro tento přístup z více vláken.</span><span class="sxs-lookup"><span data-stu-id="17b17-106">[out] A pointer to the address of an ICorDebugChain object that represents the previous chain of frames for this thread.</span></span> <span data-ttu-id="17b17-107">Pokud je tento řetězec řetězu první `ppChain` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="17b17-107">If this chain is the first chain, `ppChain` is null.</span></span>  
+ <span data-ttu-id="51b80-106">[out] Ukazatel na adresa icordebugchain – objekt, který představuje předchozí řetězu snímků pro toto vlákno.</span><span class="sxs-lookup"><span data-stu-id="51b80-106">[out] A pointer to the address of an ICorDebugChain object that represents the previous chain of frames for this thread.</span></span> <span data-ttu-id="51b80-107">Pokud se tento řetězec je první řetězec `ppChain` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="51b80-107">If this chain is the first chain, `ppChain` is null.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="17b17-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="17b17-108">Requirements</span></span>  
- <span data-ttu-id="17b17-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="17b17-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="51b80-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="51b80-108">Requirements</span></span>  
+ <span data-ttu-id="51b80-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="51b80-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="17b17-110">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="17b17-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="51b80-110">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="51b80-110">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="17b17-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="17b17-111">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="51b80-111">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="51b80-111">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="17b17-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="17b17-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="51b80-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="51b80-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

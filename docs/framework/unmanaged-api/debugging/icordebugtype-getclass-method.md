@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ff2258faa8bc766c8c769f4e135f868334516b96
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0915027ce6a3768ff854eafc5496c5057081cc4d
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422556"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57499534"
 ---
-# <a name="icordebugtypegetclass-method"></a><span data-ttu-id="6f093-102">ICorDebugType::GetClass – metoda</span><span class="sxs-lookup"><span data-stu-id="6f093-102">ICorDebugType::GetClass Method</span></span>
-<span data-ttu-id="6f093-103">Získá ukazatele rozhraní umožňuje ICorDebugClass, který představuje bez instancí obecného typu.</span><span class="sxs-lookup"><span data-stu-id="6f093-103">Gets an interface pointer to an ICorDebugClass that represents the uninstantiated generic type.</span></span>  
+# <a name="icordebugtypegetclass-method"></a><span data-ttu-id="54463-102">ICorDebugType::GetClass – metoda</span><span class="sxs-lookup"><span data-stu-id="54463-102">ICorDebugType::GetClass Method</span></span>
+<span data-ttu-id="54463-103">Získá ukazatel rozhraní k ICorDebugClass, který představuje obecný typ bez instancí.</span><span class="sxs-lookup"><span data-stu-id="54463-103">Gets an interface pointer to an ICorDebugClass that represents the uninstantiated generic type.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6f093-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6f093-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="54463-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="54463-104">Syntax</span></span>  
   
 ```  
 HRESULT GetClass (  
@@ -35,18 +35,18 @@ HRESULT GetClass (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="6f093-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6f093-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="54463-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="54463-105">Parameters</span></span>  
  `ppClass`  
- <span data-ttu-id="6f093-106">[out] Ukazatel na adresu `ICorDebugClass` rozhraní, které představuje bez instancí obecného typu.</span><span class="sxs-lookup"><span data-stu-id="6f093-106">[out] A pointer to the address of an `ICorDebugClass` interface that represents the uninstantiated generic type.</span></span>  
+ <span data-ttu-id="54463-106">[out] Ukazatel na adresu `ICorDebugClass` rozhraní, které představuje obecný typ bez instancí.</span><span class="sxs-lookup"><span data-stu-id="54463-106">[out] A pointer to the address of an `ICorDebugClass` interface that represents the uninstantiated generic type.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="6f093-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6f093-107">Remarks</span></span>  
- <span data-ttu-id="6f093-108">`GetClass` je možné volat jenom za určitých podmínek.</span><span class="sxs-lookup"><span data-stu-id="6f093-108">`GetClass` can be called only under certain conditions.</span></span> <span data-ttu-id="6f093-109">Volání [icordebugtype::gettype –](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) před voláním `GetClass`.</span><span class="sxs-lookup"><span data-stu-id="6f093-109">Call [ICorDebugType::GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) before calling `GetClass`.</span></span> <span data-ttu-id="6f093-110">Pokud `ICorDebugType::GetType` vrátí CorElementType hodnotu, která je ELEMENT_TYPE_CLASS nebo Typ ELEMENT_TYPE_VALUETYPE, který, `GetClass` lze volat pro získání bez instancí typu pro obecného typu.</span><span class="sxs-lookup"><span data-stu-id="6f093-110">If `ICorDebugType::GetType` returns a CorElementType value that is ELEMENT_TYPE_CLASS or ELEMENT_TYPE_VALUETYPE, `GetClass` can be called to get the uninstantiated type for a generic type.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="54463-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="54463-107">Remarks</span></span>  
+ <span data-ttu-id="54463-108">`GetClass` může být volána pouze za určitých podmínek.</span><span class="sxs-lookup"><span data-stu-id="54463-108">`GetClass` can be called only under certain conditions.</span></span> <span data-ttu-id="54463-109">Volání [icordebugtype::gettype –](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) před voláním `GetClass`.</span><span class="sxs-lookup"><span data-stu-id="54463-109">Call [ICorDebugType::GetType](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) before calling `GetClass`.</span></span> <span data-ttu-id="54463-110">Pokud `ICorDebugType::GetType` vrací hodnotu corelementtype –, který je za řetězcem ELEMENT_TYPE_CLASS nebo ELEMENT_TYPE_VALUETYPE, `GetClass` zjistit nevytvořeným instancím typu pro obecný typ může být volána.</span><span class="sxs-lookup"><span data-stu-id="54463-110">If `ICorDebugType::GetType` returns a CorElementType value that is ELEMENT_TYPE_CLASS or ELEMENT_TYPE_VALUETYPE, `GetClass` can be called to get the uninstantiated type for a generic type.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="6f093-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6f093-111">Requirements</span></span>  
- <span data-ttu-id="6f093-112">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6f093-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="54463-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="54463-111">Requirements</span></span>  
+ <span data-ttu-id="54463-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="54463-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6f093-113">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="6f093-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="54463-113">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="54463-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="6f093-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6f093-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="54463-114">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="54463-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="6f093-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6f093-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="54463-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="54463-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>

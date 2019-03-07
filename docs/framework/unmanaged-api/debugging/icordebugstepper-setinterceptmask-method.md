@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7654a91180dd0b4148cfb85b35bf1ce730764f28
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 25a9d287e6520f1fc7826d85dfbcd8e9a6da22f7
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422682"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57481057"
 ---
-# <a name="icordebugsteppersetinterceptmask-method"></a><span data-ttu-id="dabae-102">ICorDebugStepper::SetInterceptMask – metoda</span><span class="sxs-lookup"><span data-stu-id="dabae-102">ICorDebugStepper::SetInterceptMask Method</span></span>
-<span data-ttu-id="dabae-103">Nastaví hodnotu, která určuje typy kód, který se stupeň do.</span><span class="sxs-lookup"><span data-stu-id="dabae-103">Sets a value that specifies the types of code that are stepped into.</span></span>  
+# <a name="icordebugsteppersetinterceptmask-method"></a><span data-ttu-id="06281-102">ICorDebugStepper::SetInterceptMask – metoda</span><span class="sxs-lookup"><span data-stu-id="06281-102">ICorDebugStepper::SetInterceptMask Method</span></span>
+<span data-ttu-id="06281-103">Nastaví hodnotu, která určuje typy kódu, které jsou vkročili.</span><span class="sxs-lookup"><span data-stu-id="06281-103">Sets a value that specifies the types of code that are stepped into.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="dabae-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dabae-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="06281-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="06281-104">Syntax</span></span>  
   
 ```  
 HRESULT SetInterceptMask (  
@@ -35,20 +35,20 @@ HRESULT SetInterceptMask (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="dabae-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="dabae-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="06281-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="06281-105">Parameters</span></span>  
  `mask`  
- <span data-ttu-id="dabae-106">[v] Kombinace hodnot CorDebugIntercept – výčet, který určuje typy kódu.</span><span class="sxs-lookup"><span data-stu-id="dabae-106">[in] A combination of values of the CorDebugIntercept enumeration that specifies the types of code.</span></span>  
+ <span data-ttu-id="06281-106">[in] Kombinace hodnot cordebugintercept – výčet, který určuje typy kódu.</span><span class="sxs-lookup"><span data-stu-id="06281-106">[in] A combination of values of the CorDebugIntercept enumeration that specifies the types of code.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="dabae-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="dabae-107">Remarks</span></span>  
- <span data-ttu-id="dabae-108">Pokud je nastaven bit pro interceptoru, krokovače dokončí, když je došlo k danému typu brání kódu.</span><span class="sxs-lookup"><span data-stu-id="dabae-108">If the bit for an interceptor is set, the stepper will complete when the given type of intercepting code is encountered.</span></span> <span data-ttu-id="dabae-109">Pokud je bit není zaškrtnuto, bude přeskočen intercepting kódu.</span><span class="sxs-lookup"><span data-stu-id="dabae-109">If the bit is cleared, the intercepting code will be skipped.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="06281-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="06281-107">Remarks</span></span>  
+ <span data-ttu-id="06281-108">Pokud je nastaven bit pro zachycování, krokovače dokončí, když dochází k danému typu zachycení kódu.</span><span class="sxs-lookup"><span data-stu-id="06281-108">If the bit for an interceptor is set, the stepper will complete when the given type of intercepting code is encountered.</span></span> <span data-ttu-id="06281-109">Pokud bit vymazán, prověřuje zachycovací kódu se přeskočí.</span><span class="sxs-lookup"><span data-stu-id="06281-109">If the bit is cleared, the intercepting code will be skipped.</span></span>  
   
- <span data-ttu-id="dabae-110">`SetInterceptMask` Metoda může mít nepředpokládaného interakce s [icordebugstepper::setunmappedstopmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) (z uživatele hlediska).</span><span class="sxs-lookup"><span data-stu-id="dabae-110">The `SetInterceptMask` method may have unforeseen interactions with [ICorDebugStepper::SetUnmappedStopMask](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) (from the user's point of view).</span></span> <span data-ttu-id="dabae-111">Například pokud jenom viditelné (to znamená,-vnitřní) část kód inicializace třídy chybí informace o mapování a STOP_NO_MAPPING_INFO není nastavený (najdete v článku [icordebugstepper::setunmappedstopmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) metoda a CorDebugUnmappedStop – výčet), bude krokovače krok přes inicializaci třídy.</span><span class="sxs-lookup"><span data-stu-id="dabae-111">For example, if the only visible (that is, non-internal) portion of class initialization code lacks mapping information and STOP_NO_MAPPING_INFO isn't set (see the [ICorDebugStepper::SetUnmappedStopMask](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) method and the CorDebugUnmappedStop enumeration), the stepper will step over the class initialization.</span></span> <span data-ttu-id="dabae-112">Ve výchozím nastavení pouze INTERCEPT_NONE hodnotu `CorDebugIntercept` se použije výčet.</span><span class="sxs-lookup"><span data-stu-id="dabae-112">By default, only the INTERCEPT_NONE value of the `CorDebugIntercept` enumeration will be used.</span></span>  
+ <span data-ttu-id="06281-110">`SetInterceptMask` Metoda může mít nepředvídatelné interakce s [icordebugstepper::setunmappedstopmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) (od uživatele pohledu).</span><span class="sxs-lookup"><span data-stu-id="06281-110">The `SetInterceptMask` method may have unforeseen interactions with [ICorDebugStepper::SetUnmappedStopMask](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) (from the user's point of view).</span></span> <span data-ttu-id="06281-111">Například pokud viditelné jenom (to znamená, – vnitřní) část inicializační kód třídy chybí informace o mapování a není nastaven STOP_NO_MAPPING_INFO (naleznete v tématu [icordebugstepper::setunmappedstopmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) metoda a Cordebugunmappedstop – výčet) krokovače přesune se krokování přes inicializace třídy.</span><span class="sxs-lookup"><span data-stu-id="06281-111">For example, if the only visible (that is, non-internal) portion of class initialization code lacks mapping information and STOP_NO_MAPPING_INFO isn't set (see the [ICorDebugStepper::SetUnmappedStopMask](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) method and the CorDebugUnmappedStop enumeration), the stepper will step over the class initialization.</span></span> <span data-ttu-id="06281-112">Ve výchozím nastavení pouze INTERCEPT_NONE hodnotu `CorDebugIntercept` se použije výčet.</span><span class="sxs-lookup"><span data-stu-id="06281-112">By default, only the INTERCEPT_NONE value of the `CorDebugIntercept` enumeration will be used.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="dabae-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="dabae-113">Requirements</span></span>  
- <span data-ttu-id="dabae-114">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="dabae-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="06281-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="06281-113">Requirements</span></span>  
+ <span data-ttu-id="06281-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="06281-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="dabae-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="dabae-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="06281-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="06281-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="dabae-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="dabae-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="06281-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="06281-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="dabae-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="dabae-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="06281-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="06281-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
