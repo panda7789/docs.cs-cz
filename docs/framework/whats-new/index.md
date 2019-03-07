@@ -796,7 +796,7 @@ K vyřešení tohoto v [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], b
 
 **Podpora pro symetrické šifrování trvalé klíč**
 
-Knihovna šifrování Windows (CNG) přidali jsme podporu pro ukládání trvalých symetrické klíče a pomocí symetrické klíče uložené hardwaru a [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] mades pro vývojáře, aby bylo možné tuto funkci používat.  Pojem názvy klíčů a klíč zprostředkovatele je specifický pro implementaci, použití této funkce vyžaduje použití konstruktoru konkrétní implementaci typů namísto přístup upřednostňované objekt pro vytváření (například voláním `Aes.Create`).
+Knihovna šifrování Windows (CNG) přidali jsme podporu pro ukládání trvalých symetrické klíče a pomocí symetrické klíče uložené hardwaru a [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] umožňuje vývojářům umožňují vytvářet tuto funkci používat.  Pojem názvy klíčů a klíč zprostředkovatele je specifický pro implementaci, použití této funkce vyžaduje použití konstruktoru konkrétní implementaci typů namísto přístup upřednostňované objekt pro vytváření (například voláním `Aes.Create`).
 
 Podpora šifrování se symetrickým trvalé klíč existuje pro AES (<xref:System.Security.Cryptography.AesCng>) a algoritmus 3DES (<xref:System.Security.Cryptography.TripleDESCng>) algoritmy. Příklad:
 

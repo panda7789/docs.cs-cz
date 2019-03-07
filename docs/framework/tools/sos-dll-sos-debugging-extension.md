@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 9ac1b522-77ab-4cdc-852a-20fcdc9ae498
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2c6f2d001c6513211cf15993285e3564f7613402
-ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
+ms.openlocfilehash: 8ffb0686de5039573355e48446a4085fc44d2c75
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47863660"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57356894"
 ---
 # <a name="sosdll-sos-debugging-extension"></a>SOS.dll (rozšíření ladění SOS)
 
@@ -39,7 +39,7 @@ Nástroj SOS Debugging Extension (SOS.dll) pomáhá při ladění spravovaných 
 |**DumpDomain** [\<*adresy domény*>]|Vytvoří výčet všech <xref:System.Reflection.Assembly> objektu, který je načten v rámci zadaného <xref:System.AppDomain> adresy objektu.  Při volání bez parametrů, **DumpDomain** příkaz vypíše všechny <xref:System.AppDomain> objekty v procesu.|
 |**DumpHeap** [**-stat**] [**-řetězců**] [**-krátký**] [**-min** \< *velikost*>] [**-max** \< *velikost*>] [**- thinlock**] [**- startAtLowerBound**] [**- mt** \< *MethodTable adresu*>] [**– typ** \< *název částečného typu*>] [*start* [*end*]]|Zobrazí informace o haldě uvolnění paměti a statistiky uvolňování objektů.<br /><br /> **DumpHeap** příkaz zobrazí upozornění, pokud zjistí nadměrnou fragmentaci v haldě systému uvolňování paměti.<br /><br /> **-Stat** omezí výstup na zobrazení statistického shrnutí typů.<br /><br /> **-Řetězců** omezí výstup na souhrnné statistické řetězcovou hodnotu.<br /><br /> **-Krátký** možnost omezí výstup na pouhé zobrazení adresy každého objektu. To umožňuje automatizovat snadným vytvořením kanálu pro výstup z příkazu do dalšího příkazu ladicího programu.<br /><br /> **-Min** možnost ignoruje objekty, které jsou menší než `size` parametr zadáno v bajtech.<br /><br /> **-Max** možnost ignoruje objekty, které jsou větší, než `size` parametr zadáno v bajtech.<br /><br /> **- Thinlock** možnost sestavy ThinLocks.  Další informace najdete v tématu **SyncBlk** příkazu.<br /><br /> `-startAtLowerBound` Možnost vynutí procházení haldy má začít ve dolní mez zadaného rozsahu adres. Během fáze plánování často nelze haldu projít, jelikož je s objekty pohybováno. Tato možnost vynutí **DumpHeap** zahájíte její procházení na zadané dolní mezi. Aby tato možnost fungovala, je třeba zadat adresu platného objektu jako dolní mez. Na adrese chybného objektu lze zobrazit paměť a vyhledat další tabulky metody ručně. Pokud se uvolňování paměti kolekce je momentálně ve volání `memcopy`, je také možné najít adresu dalšího objektu přidáním velikosti na počáteční adresu, která je předána jako parametr.<br /><br /> **- Mt** možnost vypíše pouze ty objekty, které odpovídají zadané `MethodTable` struktury.<br /><br /> **– Typ** možnost vypíše pouze ty objekty, jejichž název typu je odpovídají podřetězci zadaného řetězce.<br /><br /> `start` Parametr začne vypisovat ze zadané adresy.<br /><br /> `end` Parametr zastaví vypisování na zadané adrese.|
 |**DumpIL** \< *spravované DynamicMethod objekt*> &#124; \< *DynamicMethodDesc ukazatel*> &#124; \<  *MethodDesc ukazatele*>|Zobrazí kód v jazyce MSIL (Microsoft Intermediate Language) přidružený ke spravované metodě.<br /><br /> Dynamický kód jazyka MSIL je vysílán jinak, než kód jazyka MSIL, který je načten ze sestavení. Dynamický kód jazyka MSIL odkazuje spíše na objekty v poli spravovaných objektů, než na tokeny metadat.|
-|**DumpLog** [**- addr** \< *addressOfStressLog*>] [<*Filenam*`e`>]|Zapíše obsah zátěžového protokolu uloženého v paměti do zadaného souboru. Pokud nebude název zadán, vytvoří příkaz v aktuálním adresáři soubor s názvem StressLog.txt.<br /><br /> Zátěžový protokol uložený v paměti pomáhá diagnostikovat zátěžová selhání bez pomoci zámků nebo vstupů a výstupů. Pro povolení zátěžového protokolu, nastavit následující klíče registru pod HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework:<br /><br /> (DWORD) StressLog = 1<br /><br /> (DWORD) LogFacility = 0xffffffff<br /><br /> (DWORD) StressLogSize = 65536<br /><br /> Volitelný `-addr` umožní zadat jiný než výchozí zátěžový protokol.|
+|**DumpLog** [**-addr** \<*addressOfStressLog*>] [<*Filenam*`e`>]|Zapíše obsah zátěžového protokolu uloženého v paměti do zadaného souboru. Pokud nebude název zadán, vytvoří příkaz v aktuálním adresáři soubor s názvem StressLog.txt.<br /><br /> Zátěžový protokol uložený v paměti pomáhá diagnostikovat zátěžová selhání bez pomoci zámků nebo vstupů a výstupů. Pro povolení zátěžového protokolu, nastavit následující klíče registru pod HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework:<br /><br /> (DWORD) StressLog = 1<br /><br /> (DWORD) LogFacility = 0xffffffff<br /><br /> (DWORD) StressLogSize = 65536<br /><br /> Volitelný `-addr` umožní zadat jiný než výchozí zátěžový protokol.|
 |**DumpMD** \< *MethodDesc adresu*>|Zobrazí informace o `MethodDesc` struktury na zadané adrese.<br /><br /> Můžete použít **IP2MD** příkazu získejte `MethodDesc` adresy ze spravované funkce struktury.|
 |**Eeclass** [**-MD**] \< *MethodTable adresu*>|Zobrazí informace o tabulce metod na zadané adrese. Zadání **-MD** možnost zobrazí seznam všech metod definovaných s objektem.<br /><br /> Každý spravovaný objekt obsahuje ukazatel tabulky metod.|
 |**DumpMethodSig** \< *sigaddr*><*moduleadd*`r`>|Zobrazí informace o `MethodSig` struktury na zadané adrese.|
@@ -58,21 +58,21 @@ Nástroj SOS Debugging Extension (SOS.dll) pomáhá při ladění spravovaných 
 |**NEJČASTĚJŠÍ DOTAZY**|Zobrazí nejčastější dotazy.|
 |**FinalizeQueue** [**-detail**] &#124; [**- allReady**] [**-krátký**]|Zobrazí všechny objekty, které jsou registrovány pro dokončení.<br /><br /> **-Detail** možnost se zobrazí další informace o jakýchkoli `SyncBlocks` , které je potřeba vyčistí a všechny `RuntimeCallableWrappers` (RCW), které čekají na vyčištění. Obě tyto datové struktury jsou uloženy do mezipaměti a vyčištěny finalizačním vláknem při spuštění.<br /><br /> `-allReady` Možnost zobrazí všechny objekty, které jsou připraveny k dokončení, bez ohledu na to, zda jsou již označen jako například kolekci uvolňování paměti, nebo budou označeny v dalším uvolňování. Objekty, které jsou na seznamu objektů připravených k dokončení, jsou dokončitelné objekty, které již nezačínají kořenem. Tato možnost může být velice nákladná, jelikož ověřuje, zda všechny objekty ve frontě dokončitelných objektů stále začínají kořenem.<br /><br /> `-short` Možnost omezuje výstup na zobrazení adresy každého objektu. Pokud se používá ve spojení s **- allReady**, vypíše všechny objekty, které mají finalizační metody, které již nezačínají kořenem. Pokud je použita nezávisle, vypíše všechny objekty ve frontách s dokončitelnými objekty a objekty připravenými k dokončení.|
 |**FindAppDomain** \< *adresy objektu*>|Určuje doménu aplikace objektu na zadané adrese.|
-|**FindRoots** **-gen** \< *N*> &#124; **-gen žádné** &#124; \< *adresy objektu*>|Způsobí přerušení ladicího programu během ladění při dalším shromáždění zadané generace. Efekt se obnoví, jakmile dojde k přerušení. Pro přerušení dalšího shromažďování je třeba znovu zadat tento příkaz. *\<Adresy objektu >* formu tento příkaz se používá po přerušení způsobeném příkazem **-gen** nebo **– některé obecné** došlo k chybě. V tu chvíli laděný proces je ve správném stavu, aby **FindRoots** mohl identifikovat kořeny pro objekty z aktuální tom generací.|
+|**FindRoots** **-gen** \< *N*> &#124; **-gen žádné** &#124; \< *adresy objektu*>|Způsobí přerušení ladicího programu během ladění při dalším shromáždění zadané generace. Efekt se obnoví, jakmile dojde k přerušení. Pro přerušení dalšího shromažďování je třeba znovu zadat tento příkaz.  *\<Adresy objektu >* formu tento příkaz se používá po přerušení způsobeném příkazem **-gen** nebo **– některé obecné** došlo k chybě. V tu chvíli laděný proces je ve správném stavu, aby **FindRoots** mohl identifikovat kořeny pro objekty z aktuální tom generací.|
 |**GC** [**- perdomain**]|Zobrazí statistické údaje o popisovačích systému uvolňování paměti v procesu.<br /><br /> **- Perdomain** možnost uspořádá statistické údaje podle domény aplikace.<br /><br /> Použití **GCHandles** příkazu k vyhledání nevrácení paměti způsobených nevrácením popisovačů uvolňování paměti. Neuvolnění paměti například nastane, když kód zachová velké pole, protože silný popisovač systému uvolňování paměti na něj stále ukazuje, zatímco je zrušen, aniž by bylo uvolněno pole.|
 |**GCHandleLeaks**|Vyhledá v paměti jakékoli odkazy na silné a připojené popisovače systému uvolňování paměti v procesu a zobrazí výsledky. Pokud je popisovač nalezen, **GCHandleLeaks** příkaz zobrazí adresu odkazu. Pokud není popisovač v paměti nalezen, zobrazí tento příkaz upozornění.|
 |**GCInfo** \< *MethodDesc adresu*>\<*kód adresa*>|Zobrazí data, která označují, kdy registry nebo umístění zásobníku obsahují spravované objekty. Pokud dojde k uvolnění paměti, musí uvolňovač vědět o umístění odkazů na objekty, aby je bylo možné aktualizovat novou hodnotou ukazatele na objekt.|
-|**GCRoot** [**- nostacks**] \< *adresy objektu*>|Zobrazí informace o odkazech (nebo kořenech) na objekt na zadané adrese.<br /><br /> **GCRoot** příkaz prověří celou spravovanou haldu a tabulku popisovačů pro popisovače uvnitř jiných objektů a popisovače v zásobníku. Každý zásobník následně vyhledá ukazatele na objekty a rovněž je prohledána fronta finalizační metody.<br /><br /> Tento příkaz neurčuje, zda je kořen zásobníku platný nebo zrušený. Použít **CLRStack** a **U** příkazy rámce, kterému patří hodnota místní proměnnou nebo argument, aby bylo možné zjistit, zda je kořen zásobníku stále používán.<br /><br /> **- Nostacks** možnost omezuje vyhledávání na popisovače systému uvolňování paměti a uvolnitelné objekty.|
+|**GCRoot** [**- nostacks**] \< *adresy objektu*>|Zobrazí informace o odkazech (nebo kořenech) na objekt na zadané adrese.<br /><br /> **GCRoot** příkaz prověří celou spravovanou haldu a tabulku popisovačů pro popisovače uvnitř jiných objektů a popisovače v zásobníku. Každý zásobník následně vyhledá ukazatele na objekty a rovněž je prohledána fronta finalizační metody.<br /><br /> Tento příkaz neurčuje, zda je kořen zásobníku platný nebo zrušený. Použít **CLRStack** a **U** příkazy rámce, kterému patří hodnota místní proměnnou nebo argument, aby bylo možné zjistit, zda je kořen zásobníku stále používán.<br /><br /> **- Nostacks** možnost omezuje vyhledávání na popisovače systému uvolňování paměti a dostupné objekty.|
 |**GCWhere***\<adresy objektu >*|Zobrazí umístění a velikost předaného argumentu v haldě uvolňování paměti. Pokud argument leží ve spravované haldě, ale není platnou adresou objektu, je zobrazena velikost 0 (nula).|
 |**Nápověda** [\<*příkaz*>] [`faq`]|Zobrazí všechny dostupné příkazy, pokud není zadán žádný parametr, nebo zobrazí detailní informace nápovědy o zadaném příkazu.<br /><br /> `faq` Zobrazí odpovědi na nejčastější dotazy.|
 |**HeapStat** [**- inclUnrooted** &#124; **-iu**]|Zobrazí velikosti generací pro každou haldu a celkové volné místo v každé generaci v každé haldě. Pokud-**inclUnrooted** zadána, sestava obsahuje informace o spravovaných objektech z haldy uvolňování paměti kolekce, která je již nezačínají kořenem.|
 |**HistClear**|Uvolní všechny prostředky používané v řady `Hist` příkazy.<br /><br /> Obecně platí, není potřeba explicitně volat `HistClear`, protože každý `HistInit` vyčistí předchozí zdroje.|
 |**HistInit**|Inicializuje struktury SOS ze zátěžového protokolu uloženého v laděné položce.|
-|**HistObj** *< obj_address >*|Zkontroluje všechny záznamy přemístění zátěžového protokolu a zobrazí řetězec přemísťování uvolňování paměti, který může vést na adresu předanou jako argument.|
-|**HistObjFind***< obj_address >* |Zobrazí všechny položky protokolu, které odkazují na objekt na zadané adrese.|
-|**HistRoot**  *\<root >*|Zobrazí informace týkající se propagace a přemístění zadaného kořenu.<br /><br /> Hodnotu kořenu lze použít ke sledování pohybu objektu skrz uvolňování paměti.|
+|**HistObj** *<obj_address>*|Zkontroluje všechny záznamy přemístění zátěžového protokolu a zobrazí řetězec přemísťování uvolňování paměti, který může vést na adresu předanou jako argument.|
+|**HistObjFind**  *<obj_address>*|Zobrazí všechny položky protokolu, které odkazují na objekt na zadané adrese.|
+|**HistRoot** *\<root>*|Zobrazí informace týkající se propagace a přemístění zadaného kořenu.<br /><br /> Hodnotu kořenu lze použít ke sledování pohybu objektu skrz uvolňování paměti.|
 |**IP2MD** \< *kód adresa*>|Zobrazí `MethodDesc` struktury na zadané adrese v kódu, který byl zkompilován JIT Kompilátorem.|
-|`ListNearObj` (`lno`) *< obj_address >*|Zobrazí objekty před a za zadanou adresou. Tento příkaz vyhledá adresu v haldě uvolňování paměti vypadající jako platný začátek spravovaného objektu (podle platné tabulky metod) a objekt následující za adresou argumentu.|
+|`ListNearObj` (`lno`) *<obj_address>*|Zobrazí objekty před a za zadanou adresou. Tento příkaz vyhledá adresu v haldě uvolňování paměti vypadající jako platný začátek spravovaného objektu (podle platné tabulky metod) a objekt následující za adresou argumentu.|
 |**MinidumpMode** [**0**] [**1**]|Zabrání ve spuštění nebezpečných příkazů pomocí minimálního výpisu.<br /><br /> Předejte **0** chcete zakázat tuto funkci nebo **1** tuto funkci povolil. Ve výchozím nastavení **MinidumpMode** nastavena na hodnotu **0**.<br /><br /> Vytvořený pomocí **.dump /m** příkazu nebo **.dump** příkaz mají omezenou data specifická pro modul CLR a bylo možné správně spustit pouze podmnožinu příkazů SOS. Některé příkazy mohou selhat s neočekávanými chybami, jelikož požadované oblasti paměti nejsou zmapovány nebo jsou zmapovány pouze částečně. Tato možnost zabraňuje ve spuštění nebezpečných příkazů s minimálním výpisem.|
 |**Name2EE** \< *název modulu*> \<*název typu nebo metodě*><br /><br /> -nebo-<br /><br /> **Name2EE** \< *název modulu*>**!** \< *název typu nebo metodě*>|Zobrazí `MethodTable` strukturu a `EEClass` strukturu pro zadaný typ nebo metodu v zadaném modulu.<br /><br /> Zadaný modul musí být načten v procesu.<br /><br /> K získání správného názvu typu, procházení s využitím modulu [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md). Můžete také předat `*` jako modul parametr name vyhledat všechny načtené spravované moduly. *Název modulu* parametr může být také název ladicího programu pro modul, jako například `mscorlib` nebo `image00400000`.<br /><br /> Tento příkaz podporuje syntaxi ladicího programu Windows <`module`>`!`<`type`>. Typ musí být plně kvalifikovaný.|
 |**ObjSize** [\<*adresy objektu*>] &#124; [**-agregační**] [**-stat**]|Zobrazí velikost zadaného objektu. Pokud nezadáte žádné parametry, **ObjSize** příkaz zobrazuje velikost všech objektů nalezených ve spravovaných vláknech, zobrazí všechny popisovače systému uvolňování paměti v procesu a sečte velikost všech objektů, na které odkazují tyto popisovače. **ObjSize** příkaz zahrnuje velikost všech podřízených objektů včetně objektu nadřazeného.<br /><br /> **-Agregační** možnost se dá použít ve spojení s **-stat** argument pro získání podrobného zobrazení typů, které stále začínají kořenem. S použitím **! dumpheap-stat** a **! objsize-aggregate - stat**, můžete určit, které objekty již nezačínají kořenem a diagnostikovat různé problémy s pamětí.|
@@ -82,8 +82,8 @@ Nástroj SOS Debugging Extension (SOS.dll) pomáhá při ladění spravovaných 
 |**SaveModule** \< *základní adresa*> \<*název souboru*>|Zapíše bitovou kopii, která je načtena do paměti na zadané adrese, do zadaného souboru.|
 |**SOSFlush**|Vyprázdní interní mezipaměť SOS.|
 |**StopOnException** [**-odvozené**] [**– vytvořit** &#124; **-create2**] \< *výjimka* >  \< *Pseudoregistr číslo*>|Způsobí, že se ladicí program zastaví, pokud je vyvolána zadaná výjimka, ale bude pokračovat, pokud je vyvolána jiná výjimka.<br /><br /> **-Odvozené** možnost zachytí zadanou výjimku a každou výjimku odvozenou od zadané výjimky.|
-|**SyncBlk** [**– všechny** &#124; \< *syncblk číslo*>]|Zobrazí zadanou `SyncBlock` struktura nebo všechny `SyncBlock` struktury.  Pokud nepředáte žádné argumenty, **SyncBlk** příkaz zobrazí `SyncBlock` struktury odpovídající objektům, které jsou vláknem vlastněny.<br /><br /> A `SyncBlock` struktura je kontejner pro další informace, které nemusí být vytvořeny pro každý objekt. Může obsahovat data zprostředkovatele komunikace s objekty COM, hodnoty hash a informace o zamykání pro operace bezpečné pro přístup z více vláken.|
-|**Fondu vláken**|Zobrazí informace o spravovaném fondu vláken, včetně počtu pracovních požadavků ve frontě, počtu vláken portů dokončení a počtu časovačů.|
+|**SyncBlk** [**-all** &#124; \<*syncblk number*>]|Zobrazí zadanou `SyncBlock` struktura nebo všechny `SyncBlock` struktury.  Pokud nepředáte žádné argumenty, **SyncBlk** příkaz zobrazí `SyncBlock` struktury odpovídající objektům, které jsou vláknem vlastněny.<br /><br /> A `SyncBlock` struktura je kontejner pro další informace, které nemusí být vytvořeny pro každý objekt. Může obsahovat data zprostředkovatele komunikace s objekty COM, hodnoty hash a informace o zamykání pro operace bezpečné pro přístup z více vláken.|
+|**ThreadPool**|Zobrazí informace o spravovaném fondu vláken, včetně počtu pracovních požadavků ve frontě, počtu vláken portů dokončení a počtu časovačů.|
 |**Name2ee** \< *název modulu*> \<*tokenu*>|Zadaná metadata se změní v zadaného modulu do tokenu `MethodTable` struktury nebo `MethodDesc` struktury.<br /><br /> Můžete předat `*` pro parametr názvu modulu najít, co tento token mapuje v každý načtený spravovaný modul. Můžete také předat název ladicího programu pro modul, jako například `mscorlib` nebo `image00400000`.|
 |**Vlákna** [**-live**] [**-speciální**]|Zobrazí všechna spravovaná vlákna v procesu.<br /><br /> **Vlákna** příkaz zobrazí ladicí program zkrácené ID, ID vlákna modulu CLR a ID vlákna operačního systému.  Kromě toho **vlákna** příkaz zobrazí sloupec doména, která určuje doménu aplikace, ve kterém je vlákno prováděno, sloupec APT, který zobrazuje režim apartment modelu COM a sloupec výjimka, která zobrazuje poslední ve vlákně došlo k výjimce.<br /><br /> **-Live** možnost zobrazí vlákna asociovaná se živým vláknem.<br /><br /> **-Speciální** možnost zobrazí všechna speciální vlákna vytvořená modulem CLR. Mezi speciální vlákna patří vlákna uvolňování paměti (v současných a server uvolnění paměti), pomocná vlákna ladicího programu, finalizační vlákna, <xref:System.AppDomain> uvolnit vlákna a vlákna časovače fondu vláken.|
 |**ThreadState \<**  *pole hodnoty stavu* **>**|Zobrazí stav vlákna. `value` Parametr je hodnota `State` pole **vlákna** výstupu sestavy.<br /><br /> Příklad:<br /><br /> `0:003> !Threads     ThreadCount:      2     UnstartedThread:  0     BackgroundThread: 1     PendingThread:    0     DeadThread:       0     Hosted Runtime:   no                                           PreEmptive   GC Alloc           Lock            ID OSID ThreadOBJ    State     GC       Context       Domain   Count APT Exception        0    1  250 0019b068      a020 Disabled 02349668:02349fe8 0015def0     0 MTA        2    2  944 001a6020      b220 Enabled  00000000:00000000 0015def0     0 MTA (Finalizer)     0:003> !ThreadState b220         Legal to Join         Background         CLR Owns         CoInitialized         In Multi Threaded Apartment`|
@@ -126,79 +126,79 @@ Následující příkaz zobrazí obsah pole na adrese `00ad28d0`.  Zobrazí se d
 !dumparray -start 2 -length 5 -detail 00ad28d0
 ```
 
- Následující příkaz zobrazí obsah sestavení na adrese `1ca248`.
+Následující příkaz zobrazí obsah sestavení na adrese `1ca248`.
 
 ```
 !dumpassembly 1ca248
 ```
 
- Následující příkaz zobrazí informace o haldě systému uvolňování paměti.
+Následující příkaz zobrazí informace o haldě systému uvolňování paměti.
 
 ```
 !dumpheap
 ```
 
- Následující příkaz zapíše obsah zátěžového protokolu z paměti do (výchozího) souboru s názvem StressLog.txt v aktuálním adresáři.
+Následující příkaz zapíše obsah zátěžového protokolu z paměti do (výchozího) souboru s názvem StressLog.txt v aktuálním adresáři.
 
 ```
 !DumpLog
 ```
 
- Následující příkaz zobrazí `MethodDesc` struktury na adrese `902f40`.
+Následující příkaz zobrazí `MethodDesc` struktury na adrese `902f40`.
 
 ```
 !dumpmd 902f40
 ```
 
- Následující příkaz zobrazí informace o modulu na adrese `1caa50`.
+Následující příkaz zobrazí informace o modulu na adrese `1caa50`.
 
 ```
 !dumpmodule 1caa50
 ```
 
- Následující příkaz zobrazí informace o objektu na adrese `a79d40`.
+Následující příkaz zobrazí informace o objektu na adrese `a79d40`.
 
 ```
 !DumpObj a79d40
 ```
 
- Následující příkaz zobrazí pole třídy hodnoty na adrese `00a79d9c` pomocí tabulky metod na adrese `0090320c`.
+Následující příkaz zobrazí pole třídy hodnoty na adrese `00a79d9c` pomocí tabulky metod na adrese `0090320c`.
 
 ```
 !DumpVC 0090320c 00a79d9c
 ```
 
- Následující příkaz zobrazí paměť procesu využitou systémem uvolňování paměti.
+Následující příkaz zobrazí paměť procesu využitou systémem uvolňování paměti.
 
 ```
 !eeheap -gc
 ```
 
- Následující příkaz zobrazí všechny objekty, které jsou naplánovány k dokončení.
+Následující příkaz zobrazí všechny objekty, které jsou naplánovány k dokončení.
 
 ```
 !finalizequeue
 ```
 
- Následující příkaz určuje doménu aplikace objektu na adrese `00a79d98`.
+Následující příkaz určuje doménu aplikace objektu na adrese `00a79d98`.
 
 ```
 !findappdomain 00a79d98
 ```
 
- Následující příkaz zobrazí všechny popisovače systému uvolňování paměti v aktuálním procesu.
+Následující příkaz zobrazí všechny popisovače systému uvolňování paměti v aktuálním procesu.
 
 ```
 !gcinfo 5b68dbb8
 ```
 
- Následující příkaz zobrazí `MethodTable` a `EEClass` struktur `Main` metody ve třídě `MainClass` v modulu `unittest.exe`.
+Následující příkaz zobrazí `MethodTable` a `EEClass` struktur `Main` metody ve třídě `MainClass` v modulu `unittest.exe`.
 
 ```
 !name2ee unittest.exe MainClass.Main
 ```
 
- Následující příkaz zobrazí informace o tokenu metadat na adrese `02000003` v modulu `unittest.exe`.
+Následující příkaz zobrazí informace o tokenu metadat na adrese `02000003` v modulu `unittest.exe`.
 
 ```
 !token2ee unittest.exe 02000003

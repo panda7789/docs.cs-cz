@@ -2,18 +2,13 @@
 title: Pole v jazyce Visual Basic
 ms.date: 12/06/2017
 f1_keywords:
-- vb.Array
+  - vb.Array
 helpviewer_keywords:
-- arrays [Visual Basic]
-- Visual Basic, arrays
+  - 'arrays [Visual Basic]'
+  - 'Visual Basic, arrays'
 ms.assetid: dbf29737-b589-4443-bee6-a27588d9c67e
-ms.openlocfilehash: f8bd0f3eed8599f7f9e316df8274e8204a69c48f
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149897"
 ---
+
 # <a name="arrays-in-visual-basic"></a>Pole v jazyce Visual Basic
 
 Pole je sada hodnot, které jsou označovány jako *prvky*, která jsou logicky vzájemně souvisí. Například pole může obsahovat počet studentů v každé třídě gymnázia; Každý prvek pole je počet studentů v jedné na podnikové úrovni. Podobně může obsahovat pole student získal známek pro třídy; Každý prvek pole je jeden na podnikové úrovni.
@@ -87,7 +82,7 @@ Můžete definovat velikost pole několika způsoby:
 
   [!code-vb[creating2](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#2)]
 
-Pokud máte existující pole, můžete změnit jeho velikost pomocí [ `Redim` ](../../../language-reference/statements/redim-statement.md) příkazu. Můžete určit, že `Redim` příkaz zachovat hodnoty, které jsou v poli, nebo můžete určit, že vytvoří prázdné pole. Následující příklad ukazuje různá použití `Redim` příkaz pro úpravu velikosti existujícího pole.
+Pokud máte existující pole, můžete změnit jeho velikost pomocí [ `ReDim` ](../../../language-reference/statements/redim-statement.md) příkazu. Můžete určit, že `ReDim` příkaz zachovat hodnoty, které jsou v poli, nebo můžete určit, že vytvoří prázdné pole. Následující příklad ukazuje různá použití `ReDim` příkaz pro úpravu velikosti existujícího pole.
 
 [!code-vb[redimensioning](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#3)]
 
@@ -209,7 +204,7 @@ Následující příklad používá celou řadu měsíců, jejichž každým prv
 
 [!code-vb[jagged-arrays](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/jagged.vb)]
 
-Předchozí příklad přiřazuje hodnoty vícenásobného pole na základě prvek po prvku pomocí `For...Next` smyčky. Můžete také přiřadit hodnoty prvků vícenásobného pole pomocí literál vnořeného pole. Ale pokusem o použití vnořené literály pole (například ```Dim valuesjagged = {{1, 2}, {2, 3, 4}}```) vygeneruje Chyba kompilátoru [BC30568](../../../,,/../misc/bc30568.md). Chcete-li opravit chybu, uzavřete literál vnitřní pole do závorek. Závorky vynutí vyhodnocení literálního výrazu pole a výsledné hodnoty se používají u vnějšího literálu, pole, jak ukazuje následující příklad.
+Předchozí příklad přiřazuje hodnoty vícenásobného pole na základě prvek po prvku pomocí `For...Next` smyčky. Můžete také přiřadit hodnoty prvků vícenásobného pole pomocí literál vnořeného pole. Ale pokusem o použití vnořené literály pole (například `Dim valuesjagged = {{1, 2}, {2, 3, 4}}`) vygeneruje Chyba kompilátoru [BC30568](../../../,,/../misc/bc30568.md). Chcete-li opravit chybu, uzavřete literál vnitřní pole do závorek. Závorky vynutí vyhodnocení literálního výrazu pole a výsledné hodnoty se používají u vnějšího literálu, pole, jak ukazuje následující příklad.
 
 [!code-vb[jagged-array-initialization](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/jagged-assign.vb)]
 
@@ -269,7 +264,7 @@ Můžete také kombinovat několik polí do jediného větší pole. K tomuto ú
 > [!NOTE]
 > Tato část neobsahuje informace o spojování pole řetězců do jednoho řetězce. Informace o spojování pole řetězců, najdete v článku <xref:System.String.Join%2A?displayProperty=nameWithType> metody.
 
-Před kopírováním prvky jednotlivá pole do nového pole, je nutné nejdříve zkontrolovat, že jste inicializovali pole tak, aby je dostatečně velký, aby accompodate nové pole. Toto lze provést jedním ze dvou způsobů:
+Před kopírováním prvky jednotlivá pole do nového pole, je nutné nejdříve zkontrolovat, že jste inicializovali pole tak, aby je dostatečně velký, aby vyhovoval nové pole. Toto lze provést jedním ze dvou způsobů:
 
 - Použití [ `ReDim Preserve` ](../../../language-reference/statements/redim-statement.md) příkaz dynamicky rozbalte pole před přidáním nových elementů do něj. Toto je nejjednodušší postup, ale může způsobit snížení výkonu a využití využívala příliš mnoho paměti při kopírování velké pole.
 - Vypočítá celkový počet prvků, které jsou potřebné pro nové velké pole a potom k němu přidat prvky pole každý zdroj.
@@ -299,9 +294,9 @@ Další informace o kolekcích najdete v tématu [kolekce](../../concepts/collec
 |Termín|Definice|
 |----------|----------------|
 |[Rozměry pole v jazyce Visual Basic](../../language-features/arrays/array-dimensions.md)|Popisuje pořadí a rozměry v polích.|
-|[Jak: Inicializace proměnné pole v jazyce Visual Basic](../../language-features/arrays/how-to-initialize-an-array-variable.md)|Popisuje, jak naplnit pole počátečními hodnotami.|
-|[Jak: Řazení pole v jazyce Visual Basic](../../language-features/arrays/how-to-sort-an-array.md)|Ukazuje, jak prvky pole seřadit podle abecedy.|
-|[Jak: Přiřazení jednoho pole ke druhému](../../language-features/arrays/how-to-assign-one-array-to-another-array.md)|Popisuje pravidla a postup pro přiřazení pole do jiné proměnné pole.|
+|[Postupy: Inicializace proměnné pole v jazyce Visual Basic](../../language-features/arrays/how-to-initialize-an-array-variable.md)|Popisuje, jak naplnit pole počátečními hodnotami.|
+|[Postupy: Řazení pole v jazyce Visual Basic](../../language-features/arrays/how-to-sort-an-array.md)|Ukazuje, jak prvky pole seřadit podle abecedy.|
+|[Postupy: Přiřazení jednoho pole ke druhému](../../language-features/arrays/how-to-assign-one-array-to-another-array.md)|Popisuje pravidla a postup pro přiřazení pole do jiné proměnné pole.|
 |[Řešení potíží s poli](../../language-features/arrays/troubleshooting-arrays.md)|Tento článek popisuje některé běžné problémy, které vznikají při práci s poli.|
 
 ## <a name="see-also"></a>Viz také:

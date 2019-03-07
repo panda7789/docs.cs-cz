@@ -2,12 +2,12 @@
 title: Kolekce (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
-ms.openlocfilehash: d81af633222961dfd9db49722f25c46a549413f9
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: 7fdafce071a77f344eb58e17c4be9d4f204e118d
+ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55739004"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57359351"
 ---
 # <a name="collections-visual-basic"></a>Kolekce (Visual Basic)
 U mnoha aplikací chcete vytvářet a spravovat skupiny souvisejících objektů. Existují dva způsoby, jak seskupit objekty: vytvořením polí objektů a vytvořením kolekcí objektů.  
@@ -227,7 +227,7 @@ End Class
  <xref:System.Collections.Specialized> Obor názvů obsahuje třídy specializované a typově silné kolekcí, jako je například kolekce pouze pro řetězce a propojené seznamy a hybridní slovníky.  
 
 <a name="BKMK_VisualBasic"></a> 
-###  <a name="visual-basic-collection-class"></a>Třída Collection v jazyce Visual Basic  
+### <a name="visual-basic-collection-class"></a>Třída Collection v jazyce Visual Basic  
  Můžete použít Visual Basic <xref:Microsoft.VisualBasic.Collection> třídy pro přístup položky kolekce pomocí numerického indexu nebo `String` klíč. Přidat položky do objektu kolekce s nebo bez udání klíče. Pokud chcete přidat položku bez klíče, musíte použít jeho číselný index k němu přistupovat.  
   
  Visual Basic `Collection` třída uchovává všechny prvky jako typ `Object`, takže můžete přidat položky libovolného datového typu. Neexistuje žádná ochrana proti přidání typů nevhodných dat.  
@@ -337,7 +337,7 @@ End Sub
 ```  
   
 <a name="BKMK_LINQ"></a> 
-##  <a name="using-linq-to-access-a-collection"></a>Přístup ke kolekci pomocí jazyka LINQ  
+## <a name="using-linq-to-access-a-collection"></a>Přístup ke kolekci pomocí jazyka LINQ  
  LINQ (Language-Integrated Query) lze použít pro přístup ke kolekci. Dotazy LINQ poskytují možnost filtrování, řazení a seskupování schopností. Další informace najdete v tématu [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md).  
   
  Následující příklad spustí dotaz LINQ v rámci obecného `List`. Dotaz LINQ vrátí jinou kolekci, která obsahuje výsledky.  
@@ -539,7 +539,7 @@ End Class
 ```  
   
 <a name="BKMK_Iterators"></a>
-##  <a name="iterators"></a>Iterátory  
+## <a name="iterators"></a>Iterátory  
  *Iterátoru* se používá k provedení vlastní iterace nad kolekcí. Iterátor může být metoda nebo `get` přistupujícího objektu. Iterátor používá [Yield](../../../visual-basic/language-reference/statements/yield-statement.md) příkaz k vrácení každého prvku kolekce jeden po druhém.  
   
  Můžete volat iterátor pomocí [For Each... Další](../../../visual-basic/language-reference/statements/for-each-next-statement.md) příkazu. Každá iterace `For Each` smyčky volá iterátor. Když `Yield` je dosažen příkaz v iterátoru, je vrácen výraz a je zachováno aktuální umístění v kódu. Provádění je restartováno z tohoto umístění při příštím volání iterátoru.  

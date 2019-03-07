@@ -1,14 +1,14 @@
 ---
 title: Vytvoření hry shoda seznamu aplikaci pomocí Infer.NET a probalistic programování
 description: Objevte, jak pomocí probalistic programování Infer.NET k vytvoření aplikace seznamu her zápasu založen na zjednodušené verzi TrueSkill.
-ms.date: 10/04/2018
+ms.date: 03/01/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: ceeb0f43e03c7ce93f105498f44bf243eec86bbf
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: d760c364d874ec9670823be0664005d62526ee93
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152462"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57473131"
 ---
 # <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Vytvoření hry shoda seznamu aplikaci pomocí Infer.NET a pravděpodobnostní programování
 
@@ -45,9 +45,9 @@ dotnet add package Microsoft.ML.Probabilistic.Compiler
 
 ## <a name="design-your-model"></a>Návrh modelu
 
-Vzorový příklad používá tenis tabulky nebo foosball shody přehrát v kanceláři. Máme účastníky a výsledek jednotlivých shod.  Chceme, aby k odvození hráče dovednosti z těchto dat. Budeme předpokládat, že oba hráči má obvykle distribuované latentní dovedností a výkonu v dané shoda je hlučného verzi této dovedností. Data omezí vítěze výkon a být větší než odstraněných výkonu. Toto je zjednodušenou verzi Oblíbené [TrueSkill](https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/) model, který podporuje také týmy, nakreslí a další rozšíření. [Rozšířená verze](https://www.microsoft.com/en-us/research/publication/trueskill-2-improved-bayesian-skill-rating-system/) tento model se používá pro matchmaking v nejprodávanějšího herních titulů Halo a Gears War.
+Vzorový příklad používá tenis tabulky nebo foosball shody přehrát v kanceláři. Máte účastníky a výsledek jednotlivých shod.  Chcete hráče dovednosti z těchto dat odvodit. Předpokládejme, že oba hráči má obvykle distribuované latentní dovedností a jejich výkon daného shoda je hlučného verzi této dovedností. Data omezí vítěze výkon a být větší než odstraněných výkonu. Toto je zjednodušenou verzi Oblíbené [TrueSkill](https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/) model, který podporuje také týmy, nakreslí a další rozšíření. [Rozšířená verze](https://www.microsoft.com/en-us/research/publication/trueskill-2-improved-bayesian-skill-rating-system/) tento model se používá pro matchmaking v nejprodávanějšího herních titulů Halo a Gears War.
 
-Seznam odvozené player dovedností, společně s jejich odchylky – míra nejistoty dovednosti, které potřebujeme.
+Seznam odvozené player dovedností, společně s jejich odchylky – míra nejistoty dovednosti, které potřebujete.
 
 *Herní výsledek ukázková data*
 
