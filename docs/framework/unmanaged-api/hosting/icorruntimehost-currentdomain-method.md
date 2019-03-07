@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3c62eba75759755f74e7b81393dced0d8433ba3b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c0230f2e313b6d84b2c249afb28f7c5fdf34fdd0
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54606277"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57479659"
 ---
 # <a name="icorruntimehostcurrentdomain-method"></a>ICorRuntimeHost::CurrentDomain – metoda
 Získá ukazatel rozhraní typu <xref:System.AppDomain?displayProperty=nameWithType> , která představuje doménu načten v aktuálním vláknu.  
@@ -35,7 +35,7 @@ HRESULT CurrentDomain (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pAppDomain`  
  [out] Ukazatel typu <xref:System.AppDomain?displayProperty=nameWithType> , který představuje aktuální domény aplikace vlákna. Je zadán ukazatel this `IUnknown`, takže obecně by měly volat volající `QueryInterface` získat ukazatel typu <xref:System._AppDomain>.  
   

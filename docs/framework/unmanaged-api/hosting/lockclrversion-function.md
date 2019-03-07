@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 95f61170d401161dcf217f139dbe6e4c6d3a0e0c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f3b263efa95936190ed771e811a84886b11be75b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54735036"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57465746"
 ---
 # <a name="lockclrversion-function"></a>LockClrVersion – funkce
 Umožňuje hostiteli zjistit, která verze modulu common language runtime (CLR) se použije v rámci procesu před explicitní inicializací modulu CLR.  
@@ -39,7 +39,7 @@ HRESULT LockClrVersion (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `hostCallback`  
  [in] Funkce, které jsou volány při inicializaci modulu CLR.  
   

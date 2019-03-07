@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d021eb2d8da8c85fe538f0c73527876482429718
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 440f2f7c542c697b3d817c988211303c60073979
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54656879"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492356"
 ---
 # <a name="iclrruntimeinfosetdefaultstartupflags-method"></a>ICLRRuntimeInfo::SetDefaultStartupFlags – metoda
 Nastaví příznaky spuštění a konfigurační soubor hostitele, který se použije ke spuštění modulu runtime. Tato metoda nahrazuje použití `startupFlags` parametr [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) a [corbindtoruntimehost –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md) funkce.  
@@ -35,7 +35,7 @@ HRESULT SetDefaultStartupFlags(
            [in]  LPCWSTR pwzHostConfigFile);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `dwStartupFlags`  
  [in] Příznaky spuštění hostitele nastavení. Použijte stejné příznaky jako se [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) a [corbindtoruntimehost –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md) funkce.  
   

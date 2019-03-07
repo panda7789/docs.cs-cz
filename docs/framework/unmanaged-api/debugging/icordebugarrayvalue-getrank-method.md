@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bdac5bc1d205184771388b13e9b5380ff42bfba8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 699c65aae205efd5b08f1d163b4ff9a223bbc217
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401924"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57468829"
 ---
 # <a name="icordebugarrayvaluegetrank-method"></a>ICorDebugArrayValue::GetRank – metoda
 Získá počet dimenzí v poli.  
@@ -35,12 +35,12 @@ HRESULT GetRank (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pnRank`  
  [out] Ukazatel na počet dimenzí v tomto `ICorDebugArrayValue` objektu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

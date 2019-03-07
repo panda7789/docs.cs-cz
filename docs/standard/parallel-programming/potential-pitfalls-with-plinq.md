@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 75a38b55-4bc4-488a-87d5-89dbdbdc76a2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e44fd3e6f806eef3805416dafd90a4855e79b3c7
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: d6a316fb7b17a4859fd4e69acf4422c3e4baffc4
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49121928"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57478008"
 ---
 # <a name="potential-pitfalls-with-plinq"></a>Potenciální nástrahy PLINQ
 V mnoha případech se může poskytnout PLINQ výrazné zlepšení výkonu přes sekvenčních LINQ to Objects dotazů. Paralelní provádění provádění dotazu však zavádí složitost, která může vést k problémům, které v sekvenčním kódu nejsou jako běžné nebo nejsou vůbec došlo k. Toto téma uvádí některé nedoporučované postupy při psaní dotazy PLINQ.  
@@ -42,19 +42,19 @@ V mnoha případech se může poskytnout PLINQ výrazné zlepšení výkonu pře
   
 -   Cílový systém jsou známy dostatek procesorů pro zpracování počet vláken, které budou vytvořeny paralelní provádění dotazu na `cust.Orders`.  
   
- Ve všech případech je nejlepší způsob, jak určit optimální tvar dotazu pro testování a měření. Další informace najdete v tématu [postupy: měření výkonu dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md).  
+ Ve všech případech je nejlepší způsob, jak určit optimální tvar dotazu pro testování a měření. Další informace najdete v tématu [jak: Měření výkonu dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md).  
   
 ## <a name="avoid-calls-to-non-thread-safe-methods"></a>Vyhněte se volání metody není bezpečné pro vlákna  
  Zápis do metody instance vláknově bezpečné PLINQ dotazu může vést k poškození dat, který může nebo nemusí pokračovat nezjištěné po ve svém programu. Může také vést k výjimkám. V následujícím příkladu by se pokoušet více vláken k volání `Filestream.Write` metoda současně, což není podporována třídou.  
   
 ```vb  
 Dim fs As FileStream = File.OpenWrite(…)  
-a.Where(...).OrderBy(...).Select(...).ForAll(Sub(x) fs.Write(x))  
+a.AsParallel().Where(...).OrderBy(...).Select(...).ForAll(Sub(x) fs.Write(x))  
 ```  
   
 ```csharp  
 FileStream fs = File.OpenWrite(...);  
-a.Where(...).OrderBy(...).Select(...).ForAll(x => fs.Write(x));  
+a.AsParallel().Where(...).OrderBy(...).Select(...).ForAll(x => fs.Write(x));  
 ```  
   
 ## <a name="limit-calls-to-thread-safe-methods"></a>Omezení volání metod bezpečným pro vlákno  

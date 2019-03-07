@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dfa4db00662ed3abffbfd01e6e36005cd272a271
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 675bf2ad36fe5006a44890f8ccd6e6197f264ac1
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54664587"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57484469"
 ---
 # <a name="efngetmanagedobjectfieldinfo-function"></a>_EFN_GetManagedObjectFieldInfo – funkce
 Získá posun od začátku objekt pole a hodnota pole pomocí ukazatele zadaného objektu a název pole.  
@@ -38,7 +38,7 @@ HRESULT _EFN_GetManagedObjectFieldInfo(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `Client`  
  [in] Ukazatel na klientovi ladění.  
   

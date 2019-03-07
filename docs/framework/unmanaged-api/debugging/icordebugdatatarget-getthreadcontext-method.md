@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 71d267eedf621a11f8ad21cc7148e1810955521c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c0d579ffe6bf0722365e789ba3a43ce1dce06fac
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54713428"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57502992"
 ---
 # <a name="icordebugdatatargetgetthreadcontext-method"></a>ICorDebugDataTarget::GetThreadContext – metoda
 Vrátí kontext aktuálního vlákna pro zadaný podproces.  
@@ -37,7 +37,7 @@ HRESULT GetThreadContext(
        [out, size_is(contextSize)] BYTE * pContext);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `dwThreadID`  
  [in] Identifikátor vlákna, jehož rámci má být načtena. Identifikátor je definován v operačním systému.  
   

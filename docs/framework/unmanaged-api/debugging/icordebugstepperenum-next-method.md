@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8bd62e4c5476aacf736f2ddfea008790861d931c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6ac3165ab17eb1b4bc55a4bee4d2d2b467f8aefe
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33419614"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57494594"
 ---
 # <a name="icordebugstepperenumnext-method"></a>ICorDebugStepperEnum::Next – metoda
-Získá zadaný počet instancí ICorDebugStepper z výčtu, počínaje na aktuální pozici.  
+Získá zadaný počet instancí icordebugstepper – z výčtu od aktuální pozice.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +38,18 @@ HRESULT Next(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet `ICorDebugStepper` instancí, které mají být načteny.  
+ [in] Počet `ICorDebugStepper` instancí, který se má načíst.  
   
  `steppers`  
- [out] Ukazatele, každý z nich odkazuje na pole `ICorDebugStepper` objektu.  
+ [out] Pole ukazatelů, každý z nich odkazuje na `ICorDebugStepper` objektu.  
   
  `pceltFetched`  
- [out] Ukazatel na počet `ICorDebugStepper` instancí vrácených ve skutečnosti. Tato hodnota může být null. Pokud `celt` je jedna.  
+ [out] Ukazatel na počet `ICorDebugStepper` skutečně vrácených instancí. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

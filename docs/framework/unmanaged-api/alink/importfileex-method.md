@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a0381ee61a0128a8ae303d44198f8d391b4531a9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6956fd0bd8217a3b0b44f48cabc80d0c95db8f36
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54660616"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57494360"
 ---
 # <a name="importfileex-method"></a>ImportFileEx – metoda
 Importy určili sestavení nebo nevázaného modulu.  
@@ -40,7 +40,7 @@ HRESULT ImportFileEx(
 ) PURE;  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pszFilename`  
  Plně kvalifikovaný název souboru, ze kterého se má importovat.  
   

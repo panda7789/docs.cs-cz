@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e67e3bc3477e078a4f1d963cdd768676503dc953
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c38aa9cc891514a7f37dba47402c168060ec3727
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54607660"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57486092"
 ---
 # <a name="icordebugmdagetosthreadid-method"></a>ICorDebugMDA::GetOSThreadId – metoda
 Získá identifikátor vlákna operačního systému (OS), na kterém pomocníka spravovaného ladění (MDA) reprezentovaný [icordebugmda –](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) provádí.  
@@ -35,7 +35,7 @@ HRESULT GetOSThreadId (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pOsTid`  
  [out] Ukazatel na identifikátor vlákna operačního systému.  
   

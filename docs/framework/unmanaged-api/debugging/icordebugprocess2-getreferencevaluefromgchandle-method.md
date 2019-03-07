@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 60624a5f6323399d06bda4e0280de8fbe861bd9b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 08bf4022f7cd7f85ffe7939c16fd47950e131a77
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33419582"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471521"
 ---
 # <a name="icordebugprocess2getreferencevaluefromgchandle-method"></a>ICorDebugProcess2::GetReferenceValueFromGCHandle – metoda
-Získá odkaz na ukazatel na zadaný spravovaný objekt, který je uvolnění paměti zpracovat.  
+Získá odkaz na ukazatel na zadaný spravovaný objekt, který má uvolňování paměti zpracovávají.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,23 +36,23 @@ HRESULT GetReferenceValueFromGCHandle (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `handle`  
- [v] Ukazatel na spravovaný objekt, který má kolekci popisovač uvolňování paměti. Tato hodnota je <xref:System.IntPtr> objektu a je možné načíst z <xref:System.Runtime.InteropServices.GCHandle> pro spravovaného objektu.  
+ [in] Ukazatel na spravovaný objekt, který má popisovač kolekce uvolnění paměti. Tato hodnota je <xref:System.IntPtr> objektu a je možné načíst z <xref:System.Runtime.InteropServices.GCHandle> pro spravovaný objekt.  
   
  `pOutValue`  
- [out] Ukazatel na adresu ICorDebugReferenceValue objekt, který reprezentuje odkaz na zadaný spravovaného objektu.  
+ [out] Ukazatel na adresu icordebugreferencevalue – objekt, který představuje odkaz na zadaný spravovaný objekt.  
   
 ## <a name="remarks"></a>Poznámky  
- Nezaměňujte hodnota vrácená odkazu s hodnotou odkaz na kolekci paměti.  
+ Nezaměňujte hodnotu vráceného odkazu s hodnotou odkaz kolekce uvolnění paměti.  
   
- Odkaz na vrácený se chová jako normální odkaz. Při provádění kódu pokračovat po zarážku je zakázaná. Životnost cílový objekt není ovlivněn životnost hodnota odkazu.  
+ Vrácený odkaz se chová jako normální odkaz. Při provádění kódu pokračuje po zarážku je zakázaný. Životnost cílový objekt nemá vliv životnost hodnota odkazu.  
   
 > [!NOTE]
->  `GetReferenceValueFromGCHandle` Metoda neověřuje popisovač. Proto `GetReferenceValueFromGCHandle` metoda může potenciálně dojít k poškození ladicího programu a kód laděné, pokud je předán neplatný popisovač.  
+>  `GetReferenceValueFromGCHandle` Popisovač metody nelze ověřit. Proto `GetReferenceValueFromGCHandle` metoda může potenciálně poškodit ladicího programu a kódu, který se právě ladí, pokud je předán neplatný popisovač.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ad25603f5acd32aa21192f86364976eb93d23540
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7ce72f46b4cfc6098a95c4eb4b403e38a294a004
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717542"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57472015"
 ---
 # <a name="iclrstrongnamestrongnamesignatureverificationex-method"></a>ICLRStrongName::StrongNameSignatureVerificationEx – metoda
 Získá hodnotu, která určuje, zda obsahuje manifest sestavení v zadané cestě podpis silného názvu.  
@@ -37,7 +37,7 @@ HRESULT StrongNameSignatureVerificationEx (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `wszFilePath`  
  [in] Cesta k přenositelný spustitelný soubor (.exe nebo .dll) soubor pro sestavení, který se má ověřit.  
   

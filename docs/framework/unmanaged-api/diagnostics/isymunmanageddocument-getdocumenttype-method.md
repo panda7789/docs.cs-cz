@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: adad8854052d76476076e5e1357f6d3e2dec1052
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 107039643e097ada1756054b2d14fcf0cbb71c00
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54629472"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57493372"
 ---
 # <a name="isymunmanageddocumentgetdocumenttype-method"></a>ISymUnmanagedDocument::GetDocumentType – metoda
 Získá typ dokumentu tohoto dokumentu.  
@@ -34,7 +34,7 @@ HRESULT GetDocumentType(
     [out, retval] GUID*  pRetVal);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pRetVal`  
  [out] Ukazovat na proměnnou, která přijímá typ dokumentu.  
   

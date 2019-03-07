@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 23d5e2f586f63cbd21dcb6e5da3445153f4a9db3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: de4e55c8e1a13daf07a8a75a19a44127779d5c05
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683386"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57481609"
 ---
 # <a name="iclrstrongnamestrongnamecompareassemblies-method"></a>ICLRStrongName::StrongNameCompareAssemblies – metoda
 Určuje, zda se dvě sestavení liší pouze v jejich podpisy se silným názvem.  
@@ -37,7 +37,7 @@ HRESULT StrongNameCompareAssemblies (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `wszAssembly1`  
  [in] Cesta k sestavení první.  
   

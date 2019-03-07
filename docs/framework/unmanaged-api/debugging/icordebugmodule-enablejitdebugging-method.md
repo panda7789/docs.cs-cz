@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 71722293bfb80a7e57393916560f922d970ea2ab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 642c4fd600d10ef89a08aa32bef5c8e7455552c7
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415639"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57473811"
 ---
 # <a name="icordebugmoduleenablejitdebugging-method"></a>ICorDebugModule::EnableJITDebugging – metoda
-Určuje, zda kompilátoru za běhu (JIT) uchovává informace o ladění pro metod v rámci tohoto modulu.  
+Určuje, zda kompilátor just-in-time (JIT) uchovává informace o ladění pro metody v rámci tohoto modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,18 +36,18 @@ HRESULT EnableJITDebugging(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `bTrackJITInfo`  
- [v] Nastavte hodnotu `true` povolení JIT kompilátoru zachovat informace o mapování mezi verze Microsoft (MSIL intermediate language) a verzí kompilována jednotlivých metod v tomto modulu.  
+ [in] Nastavte tuto hodnotu na `true` umožňující kompilátor JIT pro zachování informací o mapování mezi Microsoft intermediate language (MSIL) verze a verze zkompilovaný pomocí kompilátoru JIT jednotlivých metod v tomto modulu.  
   
  `bAllowJitOpts`  
- [v] Nastavte hodnotu `true` povolení JIT kompilátoru pro generování kódu s určitým optimalizace JIT specifické pro ladění.  
+ [in] Nastavte tuto hodnotu na `true` umožňující kompilátor JIT pro generování kódu pomocí některé optimalizace JIT specifické pro ladění.  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení pro všechny moduly, které jsou načteny, když je aktivní ladicí program je povoleno ladění JIT. Prostřednictvím kódu programu povolení nebo zakázání nastavení přepsání globální nastavení.  
+ Ve výchozím nastavení pro všechny moduly, které jsou načteny, když je aktivní ladicí program je povoleno ladění JIT. Programově povolení nebo zakázání nastavení přepíše globální nastavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

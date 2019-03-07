@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0741e5773b946186a452e191cc3ae987e6067c44
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f3d30603f16841a92013dd5cc2032799365e8c76
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54606884"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471885"
 ---
 # <a name="getcorversion-function"></a>GetCORVersion – funkce
 Vrátí číslo verze common language runtime (CLR), na kterém běží v aktuálním procesu.  
@@ -39,7 +39,7 @@ HRESULT GetCORVersion (
 );   
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pbuffer`  
  Ukazatel do vyrovnávací paměti, ve kterém CLR vrátí řetězec určující verzi modulu runtime, který je aktuálně načtená do procesu. Vrácený řetězec má stejného formuláře jako řetězce předané [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md), například "v1.0.1216". Pokud modul runtime nebylo načteno do procesu, funkce vrátí informace o příslušné adresáře pro nejnovější verzi modulu runtime nainstalovaného v počítači.  
   

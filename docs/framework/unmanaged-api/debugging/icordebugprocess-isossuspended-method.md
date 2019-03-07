@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b65a621541f2b4a800f6b3708a6b257374c5866
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 039dc0d9befb038e643abc4e2524c133234f460b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33419816"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492072"
 ---
 # <a name="icordebugprocessisossuspended-method"></a>ICorDebugProcess::IsOSSuspended – metoda
-Získá hodnotu, která určuje zadaný vlákno pozastavila v důsledku ladicí program ukončení tohoto procesu.  
+Získá hodnotu určující, zda zadaná vlákna se pozastavilo, v důsledku ukončení tohoto procesu ladicího programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,20 +35,20 @@ HRESULT IsOSSuspended(
     [out] BOOL  *pbSuspended);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `threadID`  
- [v] ID dotyčném pro přístup z více vláken.  
+ [in] ID vlákna nejistá.  
   
  `pbSuspended`  
- [out] Ukazatel na logickou hodnotu, která je `true` Pokud zadané vlákno byl pozastavený; jinak hodnota *`pbSuspended` je `false`.  
+ [out] Ukazatel na logickou hodnotu, která je `true` Pokud vlákna zadaného byl pozastavený, jinak *`pbSuspended` je `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud v důsledku ladicí program ukončení tohoto procesu se pozastavilo zadaný vlákno, zadaný vlákno Win32 pozastavit počet zvýší o jednu. Ladicí program uživatelské rozhraní (UI) chtít provést tyto informace do účtu, pokud se zobrazí operační systém (OS) pozastavit počet vlákno pro uživatele.  
+ Když zadaného vlákna se pozastavilo, v důsledku ukončení tohoto procesu ladicího programu, zadané vlákno Win32 pozastavit počet se zvýší o jedna. Uživatelské rozhraní (UI) ladicí program může být vhodné vzít v úvahu tyto informace pokud zobrazí operační systém (OS) pozastavit počet vláken pro uživatele.  
   
- `IsOSSuspended` Metoda má smysl pouze v kontextu nespravované ladění. Během spravované ladění vláken jsou spolupráce při pozastavenou spíše než pozastaveno operačního systému.  
+ `IsOSSuspended` Metoda má smysl pouze v kontextu ladění nespravovaného kódu. Při ladění spravovaných vláken jsou spolupráce při pozastavené, spíše než pozastaveno operačního systému.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

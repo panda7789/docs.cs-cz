@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c52795251b5cacebe749b1eedf918f8b20497796
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9e96d0d82b08449b4675ec7fd1517317006011ae
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402894"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57478333"
 ---
 # <a name="icordebugclassgetmodule-method"></a>ICorDebugClass::GetModule – metoda
 Získá modul, který definuje tuto třídu.  
@@ -35,12 +35,12 @@ HRESULT GetModule (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pModule`  
- [out] Ukazatel na adresu ICorDebugModule objekt, který představuje modul, ve kterém je definovaný tuto třídu.  
+ [out] Ukazatel na adresu icordebugmodule – objekt, který představuje modul, ve které tato třída je definována.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

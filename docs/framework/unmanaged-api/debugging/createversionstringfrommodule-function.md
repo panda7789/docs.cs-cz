@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0988b2c4471cb5449f7c7fac82c6e94bcd537b7e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3ed8b85475dc7327c1aac6f920aba627215e27c7
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33409277"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492020"
 ---
 # <a name="createversionstringfrommodule-function"></a>CreateVersionStringFromModule – funkce
-Vytvoří řetězec verze z běžných language runtime (CLR) cestu Cílový proces.  
+Vytvoří řetězec verze z společná cesta modulu runtime (CLR) jazyka v cílovém procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,45 +41,45 @@ HRESULT CreateVersionStringFromModule (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pidDebuggee`  
- [v] Identifikátor procesu, ve kterém je načtena cíl CLR.  
+ [in] Identifikátor procesu, ve které je cílem CLR načten.  
   
  `szModuleName`  
- [v] Úplná nebo relativní cesta k cílovému CLR, který je načten do procesu.  
+ [in] Úplná nebo relativní cesta k cíli CLR, který je načten do procesu.  
   
  `pBuffer`  
- [out] Vrátí velikost vyrovnávací paměti pro ukládání řetězec verze pro cíl CLR.  
+ [out] Vrátí vyrovnávací paměť pro ukládání řetězce verze pro cíl CLR.  
   
  `cchBuffer`  
- [v] Velikost `pBuffer`.  
+ [in] Velikost `pBuffer`.  
   
  `pdwLength`  
- [out] Délka řetězce verze vrácený `pBuffer`.  
+ [out] Délka řetězce verze vrácené `pBuffer`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Řetězec verze pro cíl CLR byla úspěšně vrácena v `pBuffer`.  
+ Řetězec verze pro cíl modulu CLR byla úspěšně vrácena v `pBuffer`.  
   
  E_INVALIDARG  
- `szModuleName` je null, nebo zadejte `pBuffer` nebo `cchBuffer` má hodnotu null. `pBuffer` a `cchBuffer` musí být null ani nesmí být nulová.  
+ `szModuleName` je null nebo buď `pBuffer` nebo `cchBuffer` má hodnotu null. `pBuffer` a `cchBuffer` musí být null nebo jinou hodnotu než null.  
   
  HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)  
- `pdwLength` je větší než `cchBuffer`. Pokud jste pro obě uplynulo hodnotu null. to může být očekávaný výsledek `pBuffer` a `cchBuffer`a dotaz velikost vyrovnávací paměti nezbytné pomocí `pdwLength`.  
+ `pdwLength` je větší než `cchBuffer`. Pokud jste u obou prošly hodnotu null, může dojít očekávaný výsledek `pBuffer` a `cchBuffer`, Power pivotu a dotazované nezbytné vyrovnávací paměť s použitím `pdwLength`.  
   
  HRESULT_FROM_WIN32(ERROR_MOD_NOT_FOUND)  
- `szModuleName` neobsahuje cestu k platný CLR v tento cílový proces.  
+ `szModuleName` neobsahuje cestu k platné CLR v cílovém procesu.  
   
- E_FAIL (nebo ostatní návratové kódy E_)  
- `pidDebuggee` neodkazuje na platný procesu nebo jiné chyby.  
+ E_FAIL (nebo jiné E_ návratové kódy)  
+ `pidDebuggee` neodkazuje na platný proces nebo jiné chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce přijímá CLR proces, který je určený podle `pidDebuggee` a řetězec cesty, která je zadána `szModuleName`. Řetězec verze se vrátí ve vyrovnávací paměti, `pBuffer` odkazuje na. Tento řetězec je plné krytí funkce uživateli; To znamená neexistuje žádný vnitřní význam v samotné řetězec verze. Se používá pouze v kontextu této funkce a [createdebugginginterfacefromversion – funkce](../../../../docs/framework/unmanaged-api/debugging/createdebugginginterfacefromversion-function-for-silverlight.md).  
+ Tato funkce přijme procesu CLR, který je identifikován `pidDebuggee` a řetězec cesty, která je zadána `szModuleName`. Řetězec verze je vrácen ve vyrovnávací paměti, která `pBuffer` odkazuje na. Tento řetězec je neprůhledný funkce uživatele. To znamená, že neexistuje žádný vnitřní význam v samotný řetězec verze. Používá se pouze v rámci této funkce a [createdebugginginterfacefromversion – funkce](../../../../docs/framework/unmanaged-api/debugging/createdebugginginterfacefromversion-function-for-silverlight.md).  
   
- Tato funkce by měla být volána dvakrát. Při volání ji poprvé, předat hodnotu null pro obě `pBuffer` a `cchBuffer`. Pokud jste to provést, velikost vyrovnávací paměti, která je potřebná pro `pBuffer` , vrátí se `pdwLength`. Můžete pak zavolejte funkci znovu a předávat vyrovnávací paměť v `pBuffer` a jeho velikost v `cchBuffer`.  
+ Tato funkce by měla být volána dvakrát. Při volání ji první, předat hodnotu null pro obě `pBuffer` a `cchBuffer`. Pokud to provedete, velikost vyrovnávací paměti pro `pBuffer` , vrátí se `pdwLength`. Můžete pak zavolejte funkci znovu a předejte vyrovnávací paměti v `pBuffer` a jeho velikost v `cchBuffer`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** dbgshim.h  
   

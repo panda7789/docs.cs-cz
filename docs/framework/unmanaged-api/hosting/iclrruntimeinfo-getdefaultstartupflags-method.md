@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a4615200bce3aa11401abc9e9c264ab8d8e797b6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b7ef61c8ae1d8c2e5cf1fee80d8900a0e0e7f73b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54720012"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57493424"
 ---
 # <a name="iclrruntimeinfogetdefaultstartupflags-method"></a>ICLRRuntimeInfo::GetDefaultStartupFlags – metoda
 Získá příznaky spuštění a konfiguračním souboru hostitele, který se použije ke spuštění modulu runtime.  
@@ -36,7 +36,7 @@ HRESULT GetDefaultStartupFlags(
      [in, out]  DWORD *pcchHostConfigFile);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pdwStartupFlags`  
  [out] Ukazatel na příznaky spuštění hostitele, které jsou aktuálně nastaveny.  
   

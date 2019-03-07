@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 739398d8c20f58d8b5e458e2de4cbb6f56c50fd8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 47db4313354b00514084ec1110710cbd174a3788
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54624158"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492618"
 ---
 # <a name="isymunmanagedscopegetendoffset-method"></a>ISymUnmanagedScope::GetEndOffset – metoda
 Získá koncové odsazení pro tento obor.  
@@ -34,7 +34,7 @@ HRESULT GetEndOffset(
     [out, retval] ULONG32* pRetVal);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pRetVal`  
  [out] Ukazatel `ULONG32` , která obdrží koncové odsazení.  
   

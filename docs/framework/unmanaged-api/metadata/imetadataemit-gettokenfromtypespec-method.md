@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d45f818c74204517a238e4c9d40ebd4fcd88b0f2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ff240a80d2910dcb050cc022257c6eba166bbdc5
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54641314"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57465930"
 ---
 # <a name="imetadataemitgettokenfromtypespec-method"></a>IMetaDataEmit::GetTokenFromTypeSpec – metoda
 Získá token metadat pro typ s podpisem Zadaná metadata.  
@@ -37,7 +37,7 @@ HRESULT GetTokenFromTypeSpec (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pvSig`  
  [in] Podpis je definována.  
   

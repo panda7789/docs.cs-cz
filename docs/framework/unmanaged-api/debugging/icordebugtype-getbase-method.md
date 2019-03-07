@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b96c6ab8fb9065e1a08ad45a7f4482ef0b32788b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1d04bc67013a2227f295ac3a41be027b9f9b04e2
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418880"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57478723"
 ---
 # <a name="icordebugtypegetbase-method"></a>ICorDebugType::GetBase – metoda
-Získá ukazatele rozhraní k ICorDebugType, který představuje základní typ, pokud takové existuje, typu představovaný to `ICorDebugType`.  
+Získá ukazatel rozhraní k ICorDebugType, který představuje základní typ, pokud existuje, typu představovaného tímto rozhraním `ICorDebugType`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT GetBase (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pBase`  
  [out] Ukazatel na adresu `ICorDebugType` objekt, který reprezentuje základního typu.  
   
 ## <a name="remarks"></a>Poznámky  
- Základní typ pro typ vyhledávání je užitečné k implementaci běžných funkce ladicího programu, například tisk na všechna pole objekt nebo její nadřazenou třídu.  
+ Základní typ pro typ hledání je užitečné implementovat běžné funkce ladicího programu, jako je například tisk si všechna pole objektu nebo její nadřazenou třídu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

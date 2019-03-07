@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 61aece9dd506d6e4af8718e45cc772d120a7d579
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5df5bed730211676acc4770c91cc6551bde0179b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401658"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57464721"
 ---
 # <a name="icordebugbreakpointisactive-method"></a>ICorDebugBreakpoint::IsActive – metoda
 Získá hodnotu, která určuje, jestli to `ICorDebugBreakpoint` je aktivní.  
@@ -35,12 +35,12 @@ HRESULT IsActive (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pbActive`  
- [out] `true` Pokud tato zarážek je aktivní, jinak hodnota `false`.  
+ [out] `true` Pokud tato zarážka je aktivní, jinak `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

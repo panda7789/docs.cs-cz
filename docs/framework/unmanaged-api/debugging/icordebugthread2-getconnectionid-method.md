@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c0e76b179854a380e66ac9daedffa8ccf4aa4ee
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7d51e21eab4ac1edc81b58171e5382ada170a57f
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422711"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57468946"
 ---
 # <a name="icordebugthread2getconnectionid-method"></a>ICorDebugThread2::GetConnectionID – metoda
 Získá identifikátor připojení pro tento objekt icordebugthread2 –.  
@@ -35,17 +35,17 @@ HRESULT GetConnectionID (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pdwConnectionId`  
- [out] A `CONNID` představující identifikátor připojení.  
+ [out] A `CONNID` , která představuje identifikátor připojení.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetConnectionID` Metoda vrátí hodnotu nula v `pdwConnectionId` parametr, pokud tohoto podprocesu není součástí připojení.  
+ `GetConnectionID` Metoda vrátí nulu v `pdwConnectionId` parametr, pokud toto vlákno není součástí připojení.  
   
- Pokud tento přístup z více vláken je připojen k instanci systému Microsoft SQL Server 2005 Analysis Services (SSAS), `CONNID` mapuje identifikátor procesu serveru (SPID).  
+ Pokud toto vlákno je připojen k instanci systému Microsoft SQL Server 2005 Analysis Services (SSAS), `CONNID` mapuje na identifikátor procesu serveru (SPID).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

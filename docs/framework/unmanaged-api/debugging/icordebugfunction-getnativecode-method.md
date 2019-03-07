@@ -17,14 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e1cb073c1f93c6d60d86e5160dcfb0cbdaf1cd33
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bb85c4b2c26c136a5f9fc05221a42c4bc99f37f9
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57470169"
 ---
 # <a name="icordebugfunctiongetnativecode-method"></a>ICorDebugFunction::GetNativeCode – metoda
-Získá nativní kód pro funkce, která je reprezentována tuto instanci ICorDebugFunction.  
+Získá nativní kód pro funkce, který je reprezentovaný touto instancí ICorDebugFunction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,15 +35,15 @@ HRESULT GetNativeCode (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppCode`  
- [out] Ukazatel na ICorDebugCode instanci, která reprezentuje nativní kód pro tuto funkci, nebo hodnota null, pokud je tato funkce Microsoft (MSIL intermediate language) kód, který nebyl v běhu (JIT) zkompilovat.  
+ [out] Ukazatel na ICorDebugCode instanci, která představuje nativní kód pro tuto funkci, nebo hodnota null, pokud je tato funkce Microsoft intermediate language (MSIL) kód, který nebyl just-in-time (JIT) zkompilována.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud funkce, která je reprezentována to `ICorDebugFunction` instance byl kompilována více než jednou, jako v případě obecné typy `GetNativeCode` vrátí objekt náhodných nativního kódu.  
+ Pokud funkce, která je reprezentována tímto objektem `ICorDebugFunction` instance byl zkompilován JIT Kompilátorem více než jednou, třeba v případě obecných typů `GetNativeCode` vrátí objekt náhodné nativního kódu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

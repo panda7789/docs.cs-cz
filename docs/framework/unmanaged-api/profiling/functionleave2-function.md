@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 874bbf46e74550b325631a00acc16f49d818dc61
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c9985b5a5547097c0474eb3a5797388d1444083e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54574934"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471582"
 ---
 # <a name="functionleave2-function"></a>FunctionLeave2 – funkce
 Profiler upozorní, že funkce je vracet volajícímu a poskytuje informace o zásobníku rámce a funkce návratová hodnota.  
@@ -37,7 +37,7 @@ void __stdcall FunctionLeave2 (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `funcId`  
  [in] Identifikátor funkce, která vrací.  
   

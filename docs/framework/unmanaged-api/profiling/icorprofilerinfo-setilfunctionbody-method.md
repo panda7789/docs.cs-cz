@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ff79f6e439f2bafd598d9d416cc6f7404f4c231d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8c640e565374adfdc2a409036910f1a7e0f6f8ba
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547329"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57472262"
 ---
 # <a name="icorprofilerinfosetilfunctionbody-method"></a>ICorProfilerInfo::SetILFunctionBody – metoda
 Nahrazuje tělo zadanou funkci v zadaném modulu.  
@@ -36,7 +36,7 @@ HRESULT SetILFunctionBody(
     [in] LPCBYTE     pbNewILMethodHeader);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `moduleId`  
  [in] ID modulu, ve kterém se funkce nachází.  
   

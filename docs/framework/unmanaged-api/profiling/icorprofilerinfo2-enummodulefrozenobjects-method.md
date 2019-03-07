@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e9c6d6c77f9609ba1a0762a744b28a93f068b862
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a325c3e1aa9c08e00dc2cc38e3f7833fa9f99897
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54513318"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57472574"
 ---
 # <a name="icorprofilerinfo2enummodulefrozenobjects-method"></a>ICorProfilerInfo2::EnumModuleFrozenObjects – metoda
 Získá enumerátor, který umožní iterace přes zmrazené objekty v zadaném modulu. Tato metoda je zastaralá.  
@@ -35,7 +35,7 @@ HRESULT EnumModuleFrozenObjects(
     [out] ICorProfilerObjectEnum** ppEnum);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `moduleID`  
  [in] ID modulu, který obsahuje zmrazené objekty, které chcete vytvořit výčet.  
   

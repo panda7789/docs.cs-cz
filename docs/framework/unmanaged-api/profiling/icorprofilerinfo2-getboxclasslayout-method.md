@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b9d775d5c386abeb100604250008ebf1bf377e8b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c2943a70f563b82d3578ed7fbd98b981282a1dd5
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54550809"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57472600"
 ---
 # <a name="icorprofilerinfo2getboxclasslayout-method"></a>ICorProfilerInfo2::GetBoxClassLayout – metoda
 Získá informace o tom, kde je zadanou hodnotu typu umístěn při je zabalená.  
@@ -35,7 +35,7 @@ HRESULT GetBoxClassLayout(
     [out] ULONG32 *pBufferOffset);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `classId`  
  [in] ID třídy, která popisuje typ hodnoty, který je v poli.  
   

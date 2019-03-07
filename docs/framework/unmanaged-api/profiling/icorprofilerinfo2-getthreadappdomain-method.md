@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: eeaf44f6fc34a1d14adf7fa8254ddb15cf6897b5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0b351c30c8eadd8c55543f664376cc4c7e5e73af
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54532068"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57481479"
 ---
 # <a name="icorprofilerinfo2getthreadappdomain-method"></a>ICorProfilerInfo2::GetThreadAppDomain – metoda
 Získá ID domény aplikace 00Z zadaného vlákna právě spouští kód.  
@@ -35,7 +35,7 @@ HRESULT GetThreadAppDomain(
     [out] AppDomainID *pAppDomainId);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `threadId`  
  [in] ID vlákna zadání.  
   

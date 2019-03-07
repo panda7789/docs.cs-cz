@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2a0fd1981e7da5af19cf3a422c6008d373e9ac92
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b436fa14322d444a6c8b515ba8e50698eecb95ba
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416589"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487015"
 ---
 # <a name="icordebugreferencevaluedereference-method"></a>ICorDebugReferenceValue::Dereference – metoda
-Získá objekt, který se odkazuje.  
+Získá objekt, na který odkazuje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT Dereference (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppValue`  
  [out] Ukazatel na adresu ICorDebugValue, který představuje objekt, na kterou odkazuje tento objekt ICorDebugReferenceValue.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICorDebugValue` Objektu je platná pouze tehdy, když jeho referenční nebyla dosud zakázána.  
+ `ICorDebugValue` Objektu je platná pouze tehdy, když svůj odkaz nebyl dosud bylo zakázáno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 95532d6721467b482b1d79d611f8055b606bb4a5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6e1edb1d25a62a9a689c397339740e563d986c8b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413505"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57478762"
 ---
 # <a name="icordebugheapvalueisvalid-method"></a>ICorDebugHeapValue::IsValid – metoda
-Získá hodnotu, která určuje, zda je objekt reprezentovaný rozhraním tento icordebugheapvalue – platný.  
+Získá hodnotu určující, zda objekt reprezentovaný rozhraním tento ICorDebugHeapValue je platný.  
   
  Tato metoda je zastaralá v rozhraní .NET Framework verze 2.0.  
   
@@ -37,17 +37,17 @@ HRESULT IsValid (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pbValid`  
- [out] Ukazatel na logickou hodnotu, která určuje, zda je tato hodnota v haldě platný.  
+ [out] Ukazatel na logickou hodnotu určující, zda je platný tuto hodnotu na haldě.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota je neplatná, pokud má bylo uvolněno modulem garbage collector.  
+ Hodnota není platná, pokud byl uvolněn systémem uvolňování.  
   
- Tato metoda je zastaralá. V rozhraní .NET Framework 2.0, všechny hodnoty jsou platné do [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) je volána, na kterých časové hodnoty jsou neplatné.  
+ Tato metoda je zastaralá. V rozhraní .NET Framework 2.0, jsou všechny hodnoty platné až do [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) je volán, na kterém jsou neplatné hodnoty.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

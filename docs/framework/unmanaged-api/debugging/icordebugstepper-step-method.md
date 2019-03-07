@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c2d282e27ec5068fa6fe7f58ba95458fdc219972
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 444390622ca68244661b91dc85814b05556b12a2
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33419221"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57493021"
 ---
 # <a name="icordebugstepperstep-method"></a>ICorDebugStepper::Step – metoda
-Způsobí, že tento ICorDebugStepper jedním krokem přes jeho obsahující vláken a volitelně můžete do pokračovat jedním procházení funkce, které se nazývají vlákna.  
+Způsobí, že tento icordebugstepper – jedním krokem prostřednictvím jeho nadřazeného vlákna a volitelně do pokračujte v jedné krokování funkcí, které jsou volány vlákna.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT Step (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `bStepIn`  
- [v] Nastavte na `true` k krokování s vnořením funkci, která je volána v rámci vlákno. Nastavte na `false` krok přes funkci.  
+ [in] Nastavte na `true` krok do funkce, která je volána v rámci vlákna. Nastavte na `false` krok přes funkci.  
   
 ## <a name="remarks"></a>Poznámky  
- V kroku dokončení, když modul common language runtime provede další instrukce spravované v rámci této krokovač. Pokud `Step` je volána na krokovač, který se nenachází ve spravovaném kódu, krok dokončí při další instrukce spravovaného kódu vlákno.  
+ Krok dokončí, když modul common language runtime provádí další instrukci spravované v rámci této krokovač. Pokud `Step` se volalo krokovač, která není v spravovaného kódu, krok dokončí další instrukci spravovaný kód je spuštěn metodou vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

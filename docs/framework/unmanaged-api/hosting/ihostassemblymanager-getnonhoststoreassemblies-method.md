@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b90ddefb082b9017246bf644b79aa63c5d7444b4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 85f74eb3c6f159cf2c8c8cbd186695dc97489504
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600177"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57469193"
 ---
 # <a name="ihostassemblymanagergetnonhoststoreassemblies-method"></a>IHostAssemblyManager::GetNonHostStoreAssemblies – metoda
 Získá ukazatel rozhraní k [iclrassemblyreferencelist –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) , která představuje seznam sestavení, které hostitele očekává, že modul CLR (CLR) pro načtení.  
@@ -35,7 +35,7 @@ HRESULT GetNonHostStoreAssemblies (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppReferenceList`  
  [out] Ukazatel na adresu `ICLRAssemblyReferenceList` , který obsahuje seznam odkazů na sestavení, která očekává hostitele CLR pro načtení.  
   

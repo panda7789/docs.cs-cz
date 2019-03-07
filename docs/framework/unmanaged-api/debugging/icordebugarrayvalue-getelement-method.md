@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 500e01955666c7a8e2bd1dcf9d34afe3aeb6b421
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1be7eaeccb53e8b180aeb9492cd887f952bbaea5
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403341"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57485301"
 ---
 # <a name="icordebugarrayvaluegetelement-method"></a>ICorDebugArrayValue::GetElement – metoda
-Získá hodnotu pro dané pole elementu.  
+Získá hodnotu prvku daného pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,14 +38,14 @@ HRESULT GetElement (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `cdim`  
- [v] Počet dimenzí tohoto `ICorDebugArrayValue` objektu.  
+ [in] Počet dimenzí tohoto `ICorDebugArrayValue` objektu.  
   
  Tato hodnota je také velikost `indices` pole, protože jeho velikost se rovná počet rozměrů `ICorDebugArrayValue` objektu.  
   
  `indices`  
- [v] Pole hodnot index, z nichž každý určuje pozici v rámci dimenze `ICorDebugArrayValue` objektu.  
+ [in] Pole hodnot indexu, z nichž každý určuje pozici v rámci dimenze sady `ICorDebugArrayValue` objektu.  
   
  Tato hodnota nesmí být null.  
   
@@ -53,7 +53,7 @@ HRESULT GetElement (
  [out] Ukazatel na adresu ICorDebugValue objekt, který představuje hodnotu zadaného prvku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - <value> XML tag
 - value XML tag
 ms.assetid: 0b84b02e-9e6d-41b5-a926-0d5dc76dacb5
-ms.openlocfilehash: 89a2daad1c47ea8e2a045b2e22a9569e54086e8a
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 7ab1f4a19793c408acfe1c4adf76aed5679fc696
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56970737"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57474264"
 ---
 # <a name="value-visual-basic"></a>\<Hodnota > (Visual Basic)
 Určuje popis vlastnosti.  
@@ -21,7 +21,7 @@ Určuje popis vlastnosti.
 <value>property-description</value>  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `property-description`  
  Popis pro vlastnost.  
   

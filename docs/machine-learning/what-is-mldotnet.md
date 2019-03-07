@@ -5,16 +5,19 @@ author: cjgronlund
 ms.custom: seodec18
 ms.topic: overview
 ms.date: 03/01/2019
-ms.openlocfilehash: 08e5f31502555ed1a04a6a4afa70bc98e8fd015a
-ms.sourcegitcommit: a532e8314c3a4b5b039656567fedff9787a31957
+ms.openlocfilehash: 6ba4719c830c8b0344a38dad4b86d38cc323e972
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57250959"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57466944"
 ---
 # <a name="what-is-mlnet-and-how-do-i-understand-machine-learning-basics"></a>Co je ML.NET a jak pochopit základní informace o Machine Learning?
 
 ML.NET je rozhraní zdarma, open source a multiplatformní machine learning, která umožňuje vytvářet řešení pro vlastním strojovým učením a integrovat je do vašich aplikací .NET. S rozhraními API sady ML.NET můžete AI začlenit do svých aplikací pomocí .NET dovednosti, které už máte a to aniž byste museli opustit .NET.
+
+> [!NOTE]
+> Tato dokumentace odkazuje na ML.NET, která je aktuálně ve verzi Preview. Materiál může být mohou změnit. Další informace najdete v tématu [ML.NET ÚVOD](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
 
 ## <a name="what-is-machine-learning"></a>Co je strojové učení?
 

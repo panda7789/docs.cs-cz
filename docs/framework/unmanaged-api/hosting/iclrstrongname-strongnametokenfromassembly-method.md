@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ffc1ed158caea1e3ddbc2dc1f4f828e0618c722e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 78c7ee4073357af09bdd3b0edd3d848458069da9
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54656775"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57484807"
 ---
 # <a name="iclrstrongnamestrongnametokenfromassembly-method"></a>ICLRStrongName::StrongNameTokenFromAssembly – metoda
 Vytvoří token silného názvu ze zadaného souboru sestavení.  
@@ -37,7 +37,7 @@ HRESULT StrongNameTokenFromAssembly (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `wszFilePath`  
  [in] Cesta k souboru (PE portable executable) pro sestavení.  
   

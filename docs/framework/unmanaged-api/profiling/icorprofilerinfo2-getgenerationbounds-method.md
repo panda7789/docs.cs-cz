@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 760c2d927409ef9f0a1f7a72c33efd3a7618f771
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ec0f953ecd0b578d25bcbe155f4bec97274e176c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54678617"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489837"
 ---
 # <a name="icorprofilerinfo2getgenerationbounds-method"></a>ICorProfilerInfo2::GetGenerationBounds – metoda
 Získá oblastí paměti, které jsou segmenty haldy, které společně tvoří různých generací kolekce uvolnění paměti.  
@@ -36,7 +36,7 @@ HRESULT GetGenerationBounds(
     [out, size_is(cObjectRanges), length_is(*pcObjectRanges)] COR_PRF_GC_GENERATION_RANGE ranges[]);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `cObjectRanges`  
  [in] Počet prvků přidělenou volajícím pro `ranges` pole.  
   

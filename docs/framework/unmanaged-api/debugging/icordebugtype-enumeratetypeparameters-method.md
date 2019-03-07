@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 12b002aaad65fd5f2a1207700c8de2ca8dd60eec
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b8fa39a54437e60737aa052c495f58422bc0d3fe
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421876"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57474446"
 ---
 # <a name="icordebugtypeenumeratetypeparameters-method"></a>ICorDebugType::EnumerateTypeParameters – metoda
-Získá ukazatele rozhraní k ICorDebugTypeEnum, který obsahuje <xref:System.Type> parametry třídy odkazuje tento ICorDebugType.  
+Získá ukazatel rozhraní icordebugtypeenum –, který obsahuje <xref:System.Type> parametry třídy odkazuje tento ICorDebugType.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,21 +35,21 @@ HRESULT EnumerateTypeParameters (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppTyParEnum`  
- [out] Ukazatel na adresu `ICorDebugTypeEnum` obsahující parametry typu.  
+ [out] Ukazatel na adresu `ICorDebugTypeEnum` , který obsahuje parametry typu.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít `EnumerateTypeParameters` Pokud je hodnota CorElementType vrácené [icordebugtype::gettype –](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) je ELEMENT_TYPE_CLASS, Typ ELEMENT_TYPE_VALUETYPE, který, ELEMENT_TYPE_ARRAY, ELEMENT_TYPE_SZARRAY, typu ELEMENT_TYPE_BYREF, typ ELEMENT_TYPE_ PTR, nebo ELEMENT_TYPE_FNPTR. Počet parametrů a jejich pořadí, závisí na typu:  
+ Můžete použít `EnumerateTypeParameters` Pokud vrácena hodnota corelementtype – [icordebugtype::gettype –](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) je za řetězcem ELEMENT_TYPE_CLASS, ELEMENT_TYPE_VALUETYPE, ELEMENT_TYPE_ARRAY, ELEMENT_TYPE_SZARRAY, ELEMENT_TYPE_BYREF, typ ELEMENT_TYPE_ PTR, nebo typ ELEMENT_TYPE_FNPTR. Počet parametrů a jejich pořadí závisí na typu:  
   
--   ELEMENT_TYPE_CLASS nebo Typ ELEMENT_TYPE_VALUETYPE, který: počet parametrů typů, které jsou součástí `ICorDebugTypeEnum` , tato metoda vrátí, bude záviset na počtu formální typ parametrů pro odpovídající třídu. Například, pokud je typ `class Dict<String,int32>`, pak `EnumerateTypeParameters` vrátí `ICorDebugTypeEnum` obsahující objekty, které představují `String` a `int32` v pořadí.  
+-   Za řetězcem ELEMENT_TYPE_CLASS nebo ELEMENT_TYPE_VALUETYPE: Počet parametrů typu, které jsou součástí `ICorDebugTypeEnum` , že tato metoda vrátí hodnotu, bude záviset na počtu parametrů formální typu pro třídu odpovídající. Například, pokud je typ `class Dict<String,int32>`, pak `EnumerateTypeParameters` vrátí `ICorDebugTypeEnum` , který obsahuje objekty, které představují `String` a `int32` postupně.  
   
--   ELEMENT_TYPE_FNPTR: Počet parametrů typů, které jsou součástí `ICorDebugTypeEnum` bude jeden větší než počet argumentů přijímány funkcí. První parametr typu obsažené v `ICorDebugTypeEnum` je návratový typ funkce a následné typ parametry jsou parametry funkce.  
+-   TYP ELEMENT_TYPE_FNPTR: Počet parametrů typu, které jsou součástí `ICorDebugTypeEnum` bude jeden větší než počet argumentů přijal funkce. První parametr typu obsažené v `ICorDebugTypeEnum` je návratový typ pro funkci a následné typové parametry jsou parametry funkce.  
   
--   ELEMENT_TYPE_ARRAY ELEMENT_TYPE_SZARRAY, typu ELEMENT_TYPE_BYREF nebo ELEMENT_TYPE_PTR: jeden typ parametr bude vrácen. Pokud typ je typ pole, jako například `int32[]`,`EnumerateTypeParameters` vrátí `ICorDebugTypeEnum` obsahující k objekt reprezentující `int32`.  
+-   ELEMENT_TYPE_ARRAY ELEMENT_TYPE_SZARRAY, ELEMENT_TYPE_BYREF nebo ELEMENT_TYPE_PTR: Vrátí se jeden parametr typu. Pokud typ je typ pole, jako například `int32[]`,`EnumerateTypeParameters` vrátí `ICorDebugTypeEnum` obsahující objekt představující `int32`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

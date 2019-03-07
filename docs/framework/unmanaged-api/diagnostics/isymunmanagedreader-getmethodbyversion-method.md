@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 531ed9a6d8805e22408f112c9e617705057468ff
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ebf2fea9f987818c93a1e865f2ed2ce33142050c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54624210"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57468660"
 ---
 # <a name="isymunmanagedreadergetmethodbyversion-method"></a>ISymUnmanagedReader::GetMethodByVersion – metoda
 Získá metodu čtečky symbolů daný token metody a číslo verze upravit a kopírovat. Čísla verzí začínají znakem 1 a jsou zvětšeny pokaždé, když metoda se změnilo v důsledku operace upravit a kopírovat.  
@@ -36,7 +36,7 @@ HRESULT GetMethodByVersion (
     [out, retval] ISymUnmanagedMethod** pRetVal);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `token`  
  [in] Token metody.  
   

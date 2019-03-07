@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7e953b43-1374-4bbc-814f-53ca1b6b52bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2284baf7057ec8c0c947325b1efeced7fdd4acbd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: eceff4380fa5965ef38fb98f4ead81b052da3460
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745919"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57496921"
 ---
 # <a name="certmgrexe-certificate-manager-tool"></a>Certmgr.exe (nástroj Certificate Manager)
 Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy důvěryhodných certifikátů (CTL) a seznamy odvolaných certifikátů (CRL).  
@@ -44,7 +44,7 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
 [/s[/r registryLocation]] [destinationStorename]  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
   
 |Argument|Popis|  
 |--------------|-----------------|  

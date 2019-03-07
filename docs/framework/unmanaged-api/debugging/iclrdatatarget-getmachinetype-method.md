@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 15890bb4052905ef448501ae759669f8a1dfd444
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5727142f55e143cf144dae842f95a36effb33c68
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54735594"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57482233"
 ---
 # <a name="iclrdatatargetgetmachinetype-method"></a>ICLRDataTarget::GetMachineType – metoda
 Získá identifikátor pro typ instrukční sadu, která používá cílového procesu.  
@@ -35,7 +35,7 @@ HRESULT GetMachineType (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `machineType`  
  [out] Ukazatel na hodnotu, která indikuje, že podle pokynů nastavte Cílový proces používá. Vrácený `machineType` je jednou z konstant IMAGE_FILE_MACHINE, které jsou definovány v souboru WinNT.h hlavičkový soubor.  
   

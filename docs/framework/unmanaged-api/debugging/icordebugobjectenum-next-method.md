@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5a5f21855ce83f5c1fb68637e3eeb6d3c831bce2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4db5b6c6d54729363cd734840926f97d89aa4bfa
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745151"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489290"
 ---
 # <a name="icordebugobjectenumnext-method"></a>ICorDebugObjectEnum::Next – metoda
 Získá relativních virtuálních adres (RVA) zadané počty objektů z výčtu od aktuální pozice.  
@@ -38,7 +38,7 @@ HRESULT Next (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `celt`  
  [in] Počet objektů, které se mají načíst.  
   

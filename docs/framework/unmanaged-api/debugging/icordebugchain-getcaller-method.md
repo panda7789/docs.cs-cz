@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1a0b5d702e9718ce6ac537beae67fc190b152b9f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fd65de77209f5a981c0a4c291f8573a61cf6335b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405140"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489550"
 ---
 # <a name="icordebugchaingetcaller-method"></a>ICorDebugChain::GetCaller – metoda
 Získá řetězec, který volá tento řetězec.  
@@ -35,17 +35,17 @@ HRESULT GetCaller (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppChain`  
- [out] Ukazatel na adresu ICorDebugChain objekt, který reprezentuje řetězu volání.  
+ [out] Ukazatel na adresa icordebugchain – objekt, který představuje řetěz volání.  
   
- Pokud se tento řetězec samovolně volala (protože by byl tento případ, pokud se tento řetězec nebo ladicího programu inicializovat zásobníku volání), `ppChain` bude mít hodnotu null.  
+ Pokud se tento řetězec byla volána samovolně (jako by tomu bylo-li tento řetězec nebo ladicí program inicializován zásobníku volání), `ppChain` bude mít hodnotu null.  
   
 ## <a name="remarks"></a>Poznámky  
- Řetězu volání může být v jiném podprocesu, pokud bylo volání zařazené napříč vlákny.  
+ Volání řetězce může být v jiném vlákně, pokud bylo volání zařazen napříč vlákny.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

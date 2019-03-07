@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a60d3bfc734480733f621c71a0141bb58a0eb71e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e3a6f98dca1c6665b312384721a8fb590f914175
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745293"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57468894"
 ---
 # <a name="imetadataemitdefinemethodimpl-method"></a>IMetaDataEmit::DefineMethodImpl – metoda
 Vytvoří definici pro implementaci metody zděděné z rozhraní a vrátí token k definici této implementace metody.  
@@ -37,7 +37,7 @@ HRESULT DefineMethodImpl (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `td`  
  [in] `mdTypedef` Token implementující třídu.  
   

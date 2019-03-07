@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6a6383761b878c7e916064f9a046641d00a1c6ba
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 86aa020b2fac6d1405d8f24488184f3f7dd618a1
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54734262"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471560"
 ---
 # <a name="iclrtaskgetmemstats-method"></a>ICLRTask::GetMemStats – metoda
 Získá informace o využití paměti statistické souvisejícím s úlohou, která aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance představuje.  
@@ -35,7 +35,7 @@ HRESULT GetMemStats (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pMemUsage`  
  [out] Ukazatel [cor_gc_thread_stats –](../../../../docs/framework/unmanaged-api/hosting/cor-gc-thread-stats-structure.md) instance, která obsahuje podrobnosti o využití paměti úlohy, včetně počtu bajtů přidělených.  
   

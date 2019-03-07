@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8edb16de4c02d2589ecfb9ae5becba22e10e6be6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1e367fc772c5b673795c8229f9084fac850d53a8
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54609327"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57474787"
 ---
 # <a name="iclrpolicymanagersettimeout-method"></a>ICLRPolicyManager::SetTimeout – metoda
 Nastaví hodnotu časového limitu pro danou operaci.  
@@ -36,7 +36,7 @@ HRESULT SetTimeout (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `operation`  
  [in] Jeden z [eclroperation –](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) hodnoty určující běžné operace jazyka runtime (CLR) pro kterou chcete nastavit vypršení časového limitu. Podporovány jsou následující hodnoty:  
   

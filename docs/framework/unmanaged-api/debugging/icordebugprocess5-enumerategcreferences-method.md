@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 44093f84ea644757a5f5c73da54ce5bcfa717a4e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 54e2648765d896c189cc2deb5590a0a2a9b3f410
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54728083"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57476478"
 ---
 # <a name="icordebugprocess5enumerategcreferences-method"></a>ICorDebugProcess5::EnumerateGCReferences – metoda
 Získá enumerátor pro všechny objekty, které mají být prováděno uvolnění paměti v procesu.  
@@ -36,7 +36,7 @@ HRESULT EnumerateGCReferences(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `enumerateWeakReferences`  
  [in] Logická hodnota, která určuje, zda slabé odkazy taky jsou pro provedení výčtu. Pokud `enumerateWeakReferences` je `true`, `ppEnum` enumerátor obsahuje odkazy na silné a slabé odkazy. Pokud `enumerateWeakReferences` je `false`, enumerátor obsahuje pouze silné odkazy.  
   

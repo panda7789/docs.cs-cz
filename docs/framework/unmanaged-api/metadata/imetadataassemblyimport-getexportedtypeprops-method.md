@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6e222f1a39276b6debc348bfb25e8db65cb648ba
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 930c78386eca5a2a9b8662129c1470f6170aed77
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54544637"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57478528"
 ---
 # <a name="imetadataassemblyimportgetexportedtypeprops-method"></a>IMetaDataAssemblyImport::GetExportedTypeProps – metoda
 Získá sadu vlastností exportovaný typ s podpisem Zadaná metadata.  
@@ -41,7 +41,7 @@ HRESULT GetExportedTypeProps (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `mdct`  
  [in] `mdExportedType` Token metadat, který představuje exportovaného typu.  
   

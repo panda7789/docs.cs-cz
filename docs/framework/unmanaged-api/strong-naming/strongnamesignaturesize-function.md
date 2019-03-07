@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b5e4e2a817abff7b0cf24223b7f245fc6f86c1d9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dac6f2ca813f3b8cbed48d540a991e6396edf679
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54544988"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57495218"
 ---
 # <a name="strongnamesignaturesize-function"></a>StrongNameSignatureSize – funkce
 Vrátí velikost položky podpis silného názvu. `StrongNameSignatureSize` se obvykle používá kompilátory k určení, kolik místa vyhradit v souboru při vytváření sestavení se zpožděným podpisem.  
@@ -38,7 +38,7 @@ BOOLEAN StrongNameSignatureSize (
 );   
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pbPublicKeyBlob`  
  [in] Strukturu typu [publickeyblob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) obsahující veřejnou část páru klíčů podpis silného názvu.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2881b1f420d8e177e093969b2cdd9f2ff36883f9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 695ce7f25813a191c74bec6563fc7f8ae8d1143d
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412514"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57496115"
 ---
 # <a name="icordebugfunctioncreatebreakpoint-method"></a>ICorDebugFunction::CreateBreakpoint – metoda
 Vytvoří zarážku na začátku této funkce.  
@@ -35,12 +35,12 @@ HRESULT CreateBreakpoint (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppBreakpoint`  
- [out] Ukazatel na adresu ICorDebugFunctionBreakpoint objekt, který představuje nový zarážek pro funkci.  
+ [out] Ukazatel na adresu icordebugfunctionbreakpoint – objekt, který reprezentuje novou zarážku funkce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

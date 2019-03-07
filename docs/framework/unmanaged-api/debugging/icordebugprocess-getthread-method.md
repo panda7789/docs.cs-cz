@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 008f945b5301894261ce1529cbd915dd614b919d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 36070d5374a11daf4b7800481c86d61057989631
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418952"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57470071"
 ---
 # <a name="icordebugprocessgetthread-method"></a>ICorDebugProcess::GetThread – metoda
-Získá tento proces vlákno, které má ID zadaný operační systém (OS) vlákna.  
+Získá tento proces vlákna, která má ID vlákna. Zadaný operační systém (OS)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT GetThread(
     [out] ICorDebugThread **ppThread);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `dwThreadId`  
- [v] ID podprocesu mají být načteny podprocesu operačního systému.  
+ [in] Operační systém vlákna ID vlákna, která se má načíst.  
   
  `ppThread`  
- [out] Ukazatel na adresu ICorDebugThread objekt, který reprezentuje vlákno.  
+ [out] Ukazatel na adresu icordebugthread – objekt, který představuje vlákno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

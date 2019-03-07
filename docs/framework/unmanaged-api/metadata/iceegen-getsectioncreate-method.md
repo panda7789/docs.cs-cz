@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 93e96e7804a3b5ecc64e9e50ce700435be83b77a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 03de69d51b520ae2d8be6c7f450f0541c52c36a2
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643361"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57472431"
 ---
 # <a name="iceegengetsectioncreate-method"></a>ICeeGen::GetSectionCreate – metoda
 Generuje a získá oddíl kódu pomocí zadaného názvu a hodnoty příznaku.  
@@ -39,7 +39,7 @@ HRESULT GetSectionCreate (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `name`  
  [in] Ukazatel na řetězec určující název oddílu, který se má vytvořit.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 06c020b9f6c074be11e3433939ce6898586123cd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 032c1e3dcfe50cd30953ca581ff9f0d83b78518d
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412604"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57488467"
 ---
 # <a name="icordebugframegetchain-method"></a>ICorDebugFrame::GetChain – metoda
 Získá ukazatel na řetězec, který je součástí tohoto rámce.  
@@ -35,12 +35,12 @@ HRESULT GetChain (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppChain`  
- [out] Ukazatel na adresu ICorDebugChain objekt, který představuje řetězec obsahující tento snímek.  
+ [out] Ukazatel na adresa icordebugchain – objekt, který představuje řetězec obsahující tento rámec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: a927e0ac-f110-426d-bbec-9377a29c8f17
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 24c3c46a1f347093061983b9185234cc9959b68d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3b60bad75cb6286bda026e5b67e0a4fa8e2347dd
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54656138"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487155"
 ---
 # <a name="icordebugprocess6getexportstepinfo-method"></a>ICorDebugProcess6::GetExportStepInfo – metoda
 Obsahuje informace o modulu runtime exportované funkce, které umožňují krokovat spravovaného kódu.  
@@ -23,7 +23,7 @@ HRESULT GetExportStepInfo(
     [out] CorDebugCodeInvokePurpose* pInvokePurpose);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  pszExportName  
  [in] Název exportu funkce modulu runtime, jak je uvedená v tabulce exportu PE.  
   

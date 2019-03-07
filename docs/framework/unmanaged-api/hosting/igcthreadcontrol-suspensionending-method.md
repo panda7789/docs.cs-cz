@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d77380e35d8f5eee1e50b1030493e0b17cbadfba
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ffee1550c64f1ce7c438580ce78a497aeeb99f3a
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54713285"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57468764"
 ---
 # <a name="igcthreadcontrolsuspensionending-method"></a>IGCThreadControl::SuspensionEnding – metoda
 Upozorňuje hostitele, že modul runtime obnovuje po uvolnění paměti nebo jiných pozastavení vlákna.  
@@ -35,7 +35,7 @@ HRESULT SuspensionEnding (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `Generation`  
  [in] Generování, na kterém byla provedena uvolňování paměti.  
   

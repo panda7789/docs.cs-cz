@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
-ms.openlocfilehash: 86aec7bbdc7b57b43e9b547aabd36f808d84d05e
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 9ea293a3c96f193285f45f8d70ac038e785f548a
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53146193"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57477659"
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (generování manifestu a nástroj pro úpravy)
 
@@ -28,17 +28,17 @@ Dvě verze *Mage.exe* a *MageUI.exe* jsou součástí sady Visual Studio. Chcete
 Mage [commands] [commandOptions]
 ```
 
-### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
 Následující tabulka ukazuje příkazy podporované *Mage.exe*. Další informace o možnostech podporovaných těmito příkazy naleznete v tématu [možnosti příkazu New a Update](#new-and-update-command-options) a [možnosti příkazu Sign](#sign-command-options).
 
 |Příkaz|Popis|
 |-------------|-----------------|
-|**-kopie ClearApplicationCache**|Odstraní všechny aplikace fungující pouze v režimu online z mezipaměti stažených aplikací.|
+|**-cc, ClearApplicationCache**|Odstraní všechny aplikace fungující pouze v režimu online z mezipaměti stažených aplikací.|
 |**-n, - nové** *fileType [newOptions]*|Vytvoří nový soubor daného typu. Platnými typy jsou:<br /><br /> -   `Deployment`: Vytvoří nový manifest nasazení.<br />-   `Application`: Vytvoří nový manifest aplikace.<br /><br /> Nezadáte-li s tímto příkazem žádné další parametry, bude vytvořen soubor odpovídajícího typu s odpovídajícími výchozími značkami a hodnotami atributů.<br /><br /> Použití **- ToFile** možnost (dle následující tabulky) a zadat název souboru a cestu nového souboru.<br /><br /> Použití **- FromDirectory** možnost (dle následující tabulky) k vytvoření manifestu aplikace se všemi sestaveními aplikace přidanými do \<závislost > části manifestu.|
 |**-u,-aktualizace** *[cesta] [volby pro aktualizaci]*|Provede jednu nebo více změn souboru manifestu. Typ upravovaného souboru není třeba zadávat. Nástroj Mage.exe soubor zkontroluje sadou heuristik a určí, zda jde o manifest nasazení nebo manifest aplikace.<br /><br /> Pokud jste se už zaregistrovali soubor s certifikátem, **– aktualizace** odebere blok s podpisem klíče. Důvodem je skutečnost, že podpis klíče obsahuje hodnotu hash souboru, která je úpravou souboru zneplatněna.<br /><br /> Použití **- ToFile** možnost (dle následující tabulky) a zadat nový název souboru a cestu, místo abyste přepsali tu stávající soubor.|
 |**-s,-Sign** `[signOptions]`|Použije k podpisu souboru pár klíčů nebo certifikát X509. Podpisy jsou do souboru vloženy jako prvky jazyka XML.<br /><br /> Musíte být připojeni k Internetu při podpisu manifestu určujícího **- TimestampUri** hodnotu.|
-|**-ver – ověření** *[název souboru manifestu]*|Ověřuje, jestli je správně podepsaný manifestu. Nelze kombinovat s jinými příkazy. <br/><br/>**K dispozici v rozhraní .NET Framework 4.7 a novějších verzích.**|
+|**-ver, -Verify** *[manifest-filename]*|Ověřuje, jestli je správně podepsaný manifestu. Nelze kombinovat s jinými příkazy. <br/><br/>**K dispozici v rozhraní .NET Framework 4.7 a novějších verzích.**|
 |**-h,-? –, pomáhají** *[podrobné]*|Popíše všechny dostupné příkazy a jejich možnosti. Zadejte `verbose` podrobnou nápovědu.|
 
 ## <a name="new-and-update-command-options"></a>Nové a aktualizovat možnosti příkazu
@@ -48,29 +48,29 @@ V následující tabulce jsou uvedeny možnosti podporované `-New` a `-Update` 
 |Možnosti|Výchozí hodnota|Platí pro|Popis|
 |-------------|-------------------|----------------|-----------------|
 |**-a-algoritmus**|sha1RSA|Manifesty aplikací.<br /><br /> Manifesty nasazení.|Určí algoritmus, jímž budou generovány přehledy závislostí. Hodnotou musí být „sha256RSA“ nebo „sha1RSA“.<br /><br /> Použijte s možností „-Update“. Při použití možnosti „-Sign“ je tato možnost ignorována.|
-|**-technologie appc, - AppCodeBase** `manifestReference`||Manifesty nasazení.|Vloží odkaz na adresu URL nebo cestu k souboru do souboru manifestu aplikace. Touto hodnotou musí být úplná cesta k manifestu aplikace.|
-|**-appm, - AppManifest** `manifestPath`||Manifesty nasazení.|Vloží do manifestu nasazení odkaz na manifest aplikace tohoto nasazení.<br /><br /> Soubor indikován `manifestPath` musí existovat nebo *Mage.exe* dojde k chybě. Je-li soubor odkazovaný parametrem `manifestPath` není manifest aplikace *Mage.exe* dojde k chybě.|
-|**-cf, - CertFile** `filePath`||Všechny typy souborů.|Určuje umístění x X509 digitálního certifikátu pro podpis manifestu nebo licenční soubor. Tato možnost se dá použít ve spojení s **– heslo** pokud certifikátu vyžaduje heslo pro soubory Personal Information Exchange (PFX). Od verze rozhraní .NET Framework 4.7, pokud soubor neobsahuje privátní klíč, kombinaci **- CryptoProvider** a **- KeyContainer** možnosti je povinný.<br/><br/>Od verze rozhraní .NET Framework 4.6.2, *Mage.exe* manifesty znaménka s CNG, jakož i CAPI certifikáty.|
-|**-ch, - CertHash** `hashSignature`||Všechny typy souborů.|Hodnota hash digitálního certifikátu uloženého v úložišti osobních certifikátů klientského počítače. Ta odpovídá řetězci kryptografického otisku digitálního certifikátu zobrazeného v Konzole certifikátů systému Windows.<br /><br /> `hashSignature` může být buď velká nebo malá písmena a může být zadán buď jako jeden řetězec, nebo kryptografický otisk odděleny mezer a kryptografický otisk uzavřený do uvozovek, jehož každý.|
-|**-csp, - CryptoProvider** `provider-name`||Všechny typy souborů.|Určuje název zprostředkovatele kryptografických služeb (CSP), který obsahuje kontejner soukromého klíče. Tato možnost vyžaduje **- KeyContainer** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
-|**-fd, - FromDirectory** `directoryPath`||Manifesty aplikací.|Naplní manifest aplikace popisy všech sestavení a souborů nalezených v `directoryPath`, včetně všech podadresářů, kde `directoryPath` je adresář obsahující aplikaci, kterou chcete nasadit. Pro každý soubor v adresáři *Mage.exe* rozhodne, zda je soubor sestavení nebo o statický soubor. Pokud je sestavení, přidá `<dependency>` značky a `installFrom` atribut k aplikaci s názvem, základem kódu a verzí sestavení. Pokud jde o statický soubor, přidá `<file>` značky. *Mage.exe* také použije jednoduchou sadu heuristik ke zjištění hlavního spustitelného souboru pro aplikaci a označí jako vstupní bod aplikace ClickOnce v manifestu.<br /><br /> *Mage.exe* se nikdy automaticky označit soubor jako soubor "data". To je zapotřebí provést ručně. Další informace najdete v tématu [jak: Zahrnutí datového souboru do aplikace ClickOnce](/visualstudio/deployment/how-to-include-a-data-file-in-a-clickonce-application).<br /><br /> *Mage.exe* také vygeneruje hodnotu hash pro každý soubor na základě jeho velikosti. Technologie ClickOnce těmito hodnotami hash zajišťuje, že se soubory nasazení nikdo od vytvoření manifestu nemanipuloval. Je-li změnit některý ze souborů ve vašem nasazení, můžete spustit *Mage.exe* s **– aktualizovat** příkazu a **- FromDirectory** možnost a aktualizuje hodnoty hash a sestavení verze všech odkazovaných souborů.<br /><br /> **-FromDirectory** zahrne všechny soubory ve všech podadresářích v rámci nebyl nalezen `directoryPath`.<br /><br /> Pokud používáte **- FromDirectory** s **– aktualizace** příkazu *Mage.exe* odebere všechny soubory v manifestu aplikace, která již existuje v adresáři.|
+|**-appc, -AppCodeBase** `manifestReference`||Manifesty nasazení.|Vloží odkaz na adresu URL nebo cestu k souboru do souboru manifestu aplikace. Touto hodnotou musí být úplná cesta k manifestu aplikace.|
+|**-appm, -AppManifest** `manifestPath`||Manifesty nasazení.|Vloží do manifestu nasazení odkaz na manifest aplikace tohoto nasazení.<br /><br /> Soubor indikován `manifestPath` musí existovat nebo *Mage.exe* dojde k chybě. Je-li soubor odkazovaný parametrem `manifestPath` není manifest aplikace *Mage.exe* dojde k chybě.|
+|**-cf, -CertFile** `filePath`||Všechny typy souborů.|Určuje umístění x X509 digitálního certifikátu pro podpis manifestu nebo licenční soubor. Tato možnost se dá použít ve spojení s **– heslo** pokud certifikátu vyžaduje heslo pro soubory Personal Information Exchange (PFX). Od verze rozhraní .NET Framework 4.7, pokud soubor neobsahuje privátní klíč, kombinaci **- CryptoProvider** a **- KeyContainer** možnosti je povinný.<br/><br/>Od verze rozhraní .NET Framework 4.6.2, *Mage.exe* manifesty znaménka s CNG, jakož i CAPI certifikáty.|
+|**-ch, -CertHash** `hashSignature`||Všechny typy souborů.|Hodnota hash digitálního certifikátu uloženého v úložišti osobních certifikátů klientského počítače. Ta odpovídá řetězci kryptografického otisku digitálního certifikátu zobrazeného v Konzole certifikátů systému Windows.<br /><br /> `hashSignature` může být buď velká nebo malá písmena a může být zadán buď jako jeden řetězec, nebo kryptografický otisk odděleny mezer a kryptografický otisk uzavřený do uvozovek, jehož každý.|
+|**-csp, -CryptoProvider** `provider-name`||Všechny typy souborů.|Určuje název zprostředkovatele kryptografických služeb (CSP), který obsahuje kontejner soukromého klíče. Tato možnost vyžaduje **- KeyContainer** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
+|**-fd, -FromDirectory** `directoryPath`||Manifesty aplikací.|Naplní manifest aplikace popisy všech sestavení a souborů nalezených v `directoryPath`, včetně všech podadresářů, kde `directoryPath` je adresář obsahující aplikaci, kterou chcete nasadit. Pro každý soubor v adresáři *Mage.exe* rozhodne, zda je soubor sestavení nebo o statický soubor. Pokud je sestavení, přidá `<dependency>` značky a `installFrom` atribut k aplikaci s názvem, základem kódu a verzí sestavení. Pokud jde o statický soubor, přidá `<file>` značky. *Mage.exe* také použije jednoduchou sadu heuristik ke zjištění hlavního spustitelného souboru pro aplikaci a označí jako vstupní bod aplikace ClickOnce v manifestu.<br /><br /> *Mage.exe* se nikdy automaticky označit soubor jako soubor "data". To je zapotřebí provést ručně. Další informace najdete v tématu [jak: Zahrnutí datového souboru do aplikace ClickOnce](/visualstudio/deployment/how-to-include-a-data-file-in-a-clickonce-application).<br /><br /> *Mage.exe* také vygeneruje hodnotu hash pro každý soubor na základě jeho velikosti. Technologie ClickOnce těmito hodnotami hash zajišťuje, že se soubory nasazení nikdo od vytvoření manifestu nemanipuloval. Je-li změnit některý ze souborů ve vašem nasazení, můžete spustit *Mage.exe* s **– aktualizovat** příkazu a **- FromDirectory** možnost a aktualizuje hodnoty hash a sestavení verze všech odkazovaných souborů.<br /><br /> **-FromDirectory** zahrne všechny soubory ve všech podadresářích v rámci nebyl nalezen `directoryPath`.<br /><br /> Pokud používáte **- FromDirectory** s **– aktualizace** příkazu *Mage.exe* odebere všechny soubory v manifestu aplikace, která již existuje v adresáři.|
 |**-if - IconFile**  `filePath`||Manifesty aplikací.|Určí úplnou cestu k souboru ikony .ICO. Tato ikona se zobrazuje vedle názvu aplikace v nabídce Start a v jejím záznamu v ovládacím panelu Přidat nebo odebrat programy. Není-li zadána žádná ikona, je použita ikona výchozí.|
-|**-ip, - IncludeProviderURL**  `url`|true|Manifesty nasazení.|Označuje, zda manifest nasazení zahrnuje hodnotu umístění aktualizace nastavenou **- ProviderURL**.|
+|**-ip, -IncludeProviderURL**  `url`|true|Manifesty nasazení.|Označuje, zda manifest nasazení zahrnuje hodnotu umístění aktualizace nastavenou **- ProviderURL**.|
 |**-i,-instalace** `willInstall`|true|Manifesty nasazení.|Označuje, zda by aplikace ClickOnce měla být nainstalována na místní počítač nebo spuštěna z webu. Instalace aplikace jí umožňuje mít zástupce v Windows **Start** nabídky. Platnými hodnotami jsou „true“ nebo „t“ a „false“ nebo „f“.<br /><br /> Pokud zadáte **- MinVersion** možnost a uživatel má verzi nižší než **- MinVersion** nainstalované, vynutí aplikaci pro instalaci, bez ohledu na hodnotu, kterou předat **– Nainstalujte**.<br /><br /> Tento parametr nelze použít s **- BrowserHosted** možnost. Pokus zadat obě možnosti pro stejný manifest vyústí v chybu.|
-|**-KeyContainer – kc,** `name`||Všechny typy souborů.|Určuje kontejner klíčů, který obsahuje název privátní klíč. Tato možnost vyžaduje **CyproProvider** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
+|**-kc, -KeyContainer** `name`||Všechny typy souborů.|Určuje kontejner klíčů, který obsahuje název privátní klíč. Tato možnost vyžaduje **CyproProvider** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
 |**-mv - MinVersion**  `[version]`|Verze uvedená v manifestu nasazení ClickOnce tak jak jsou určené **– verze** příznak.|Manifesty nasazení.|Minimální verze aplikace, kterou uživatel může spustit. Tento příznak učiní pojmenovanou verzi aplikace požadovanou aktualizací. Vydáte-li verzi produktu s aktualizací proti narušující změně nebo závažné bezpečnostní chybě, lze pomocí tohoto příznaku určit, že aktualizace musí být nainstalována a že uživatel nemůže nadále používat dřívější verze.<br /><br /> `version` má stejnou sémantiku jako argument **– verze** příznak.|
 |**-n, – název** `nameString`|Nasazení|Všechny typy souborů.|Název použitý pro identifikaci aplikace. Technologie ClickOnce použije tento název k identifikaci aplikace v **Start** nabídce (Pokud je aplikace nakonfigurována k instalaci) a v dialogových oknech zvýšení oprávnění. **Poznámka:**  Pokud aktualizujete existující manifest a nezadáte s touto možností název vydavatele *Mage.exe* aktualizuje manifest názvem organizace definovaným v počítači. Chcete-li použít jiný název, použijte tuto možnost a zadejte požadovaný název vydavatele.|
-|**-pwd, – heslo** `passwd`||Všechny typy souborů.|Heslo použité pro podepsání manifestu digitálním certifikátem. Je potřeba použít ve spojení s **- CertFile** možnost.|
+|**-pwd, -Password** `passwd`||Všechny typy souborů.|Heslo použité pro podepsání manifestu digitálním certifikátem. Je potřeba použít ve spojení s **- CertFile** možnost.|
 |**Procesor -p,** `processorValue`|Msil|Manifesty aplikací.<br /><br /> Manifesty nasazení.|Architektura mikroprocesoru, na níž bude distribuce spouštěna. Tato hodnota je vyžadována, pokud připravujete jednu nebo více instalací, jejichž sestavení byla předkompilována pro určitý mikroprocesor. Platné hodnoty jsou `msil`, `x86`, `ia64`, a `amd64`. `msil` je Microsoft intermediate language, což znamená, že sestavení jsou nezávislá na platformě a common language runtime (CLR) bude just-in-time jejich kompilace, když je vaše aplikace při prvním spuštění.|
 |**-pu,** **- ProviderURL** `url`||Manifesty nasazení.|Určuje adresu URL, na které technologie ClickOnce vyhledá aktualizace aplikace.|
-|**-pub,-vydavatele** `publisherName`||Manifesty aplikací.<br /><br /> Manifesty nasazení.|Přidá název vydavatele do prvku popisu v manifestu nasazení nebo manifestu aplikace. Pokud se použije pro manifest aplikace **- UseManifestForTrust** musí být také zadána s hodnotu "true" nebo "t"; v opačném případě tento parametr vyvolá chybu.|
+|**-pub, -Publisher** `publisherName`||Manifesty aplikací.<br /><br /> Manifesty nasazení.|Přidá název vydavatele do prvku popisu v manifestu nasazení nebo manifestu aplikace. Pokud se použije pro manifest aplikace **- UseManifestForTrust** musí být také zadána s hodnotu "true" nebo "t"; v opačném případě tento parametr vyvolá chybu.|
 |**-s, - SupportURL**  `url`||Manifesty aplikací.<br /><br /> Manifesty nasazení.|Určí odkaz, který se pro aplikaci ClickOnce objeví v ovládacím panelu Přidat nebo odebrat programy.|
-|**-ti, - TimestampUri** `uri`||Manifesty aplikací.<br /><br /> Manifesty nasazení.|Adresa URL služby vytváření digitálního časového razítka. Vytvoření časového razítka v manifestu umožňuje vyhnout se nutnosti znovu manifesty podepsat, pokud by digitální certifikát vypršel ještě před nasazením další verze aplikace. Další informace najdete v tématu [Windows Členové programu kořenového certifikátu](https://go.microsoft.com/fwlink/?LinkId=159000).|
-|**-t, - ToFile** `filePath`|-Nové:<br />-Nasazení: deploy.application<br />-Aplikace: application.exe.manifest<br />-Aktualizace:<br />-Vstupní soubor.|Všechny typy souborů.|Určí výstupní cestu vytvořeného nebo upraveného souboru.<br /><br /> Pokud **- ToFile** není zadán, pokud použijete **– nové**, výstup bude zapsán do aktuálního pracovního adresáře. Pokud **- ToFile** není zadán, pokud použijete **– aktualizace**, *Mage.exe* zapíše soubor zpět do vstupního souboru.|
+|**-ti, -TimestampUri** `uri`||Manifesty aplikací.<br /><br /> Manifesty nasazení.|Adresa URL služby vytváření digitálního časového razítka. Vytvoření časového razítka v manifestu umožňuje vyhnout se nutnosti znovu manifesty podepsat, pokud by digitální certifikát vypršel ještě před nasazením další verze aplikace. Další informace najdete v tématu [Windows Členové programu kořenového certifikátu](https://go.microsoft.com/fwlink/?LinkId=159000).|
+|**-t, -ToFile** `filePath`|-Nové:<br />-Nasazení: deploy.application<br />-Aplikace: application.exe.manifest<br />-Aktualizace:<br />-Vstupní soubor.|Všechny typy souborů.|Určí výstupní cestu vytvořeného nebo upraveného souboru.<br /><br /> Pokud **- ToFile** není zadán, pokud použijete **– nové**, výstup bude zapsán do aktuálního pracovního adresáře. Pokud **- ToFile** není zadán, pokud použijete **– aktualizace**, *Mage.exe* zapíše soubor zpět do vstupního souboru.|
 |**-tr, - TrustLevel** `level`|Dle zóny, v níž se adresa URL aplikace nachází.|Manifesty aplikací.|Úroveň důvěryhodnosti, která bude aplikacím udělena na klientských počítačích. Mezi hodnoty patří „Internet“, „Intranet“ a „FullTrust“.|
-|**-um, - UseManifestForTrust** `willUseForTrust`|False|Manifesty aplikací.|Určí, zda bude při spuštění aplikace na klientském počítači použit pro rozhodování o důvěryhodnosti digitální podpis manifestu aplikace. Hodnota „true“ nebo „t“ určí, že pro rozhodnutí o důvěryhodnosti bude použit manifest aplikace. Hodnota „false“ nebo „f“ určí, že bude použit podpis manifestu nasazení.|
-|**-v, – verze** `versionNumber`|1.0.0.0|Manifesty aplikací.<br /><br /> Manifesty nasazení.|Verze nasazení. Argument musí být platný řetězec verze ve formátu "*N.N.N.N*", kde"*N*" je 32bitové celé číslo bez znaménka.|
-|**– wpf, - WPFBrowserApp**  `isWPFApp`|false|Manifesty aplikací.<br /><br /> Manifesty nasazení.|Tento příznak použijte pouze tehdy, je-li aplikace aplikací Windows Presentation Foundation (WPF), která bude hostována v aplikaci Internet Explorer a není samostatně spustitelná. Platnými hodnotami jsou „true“ nebo „t“ a „false“ nebo „f“.<br /><br /> Pro manifesty aplikací vloží `hostInBrowser` atribut `entryPoint` elementu v manifestu aplikace.<br /><br /> Manifesty nasazení nastaví `install` atribut na `deployment` prvku na hodnotu false a uloží manifest s příponou .xbap. Zadání tohoto argumentu spolu s **– instalace** dojde k chybě, protože aplikace hostované prohlížečem nemůže být instalovanou offline aplikací.|
+|**-um, -UseManifestForTrust** `willUseForTrust`|False|Manifesty aplikací.|Určí, zda bude při spuštění aplikace na klientském počítači použit pro rozhodování o důvěryhodnosti digitální podpis manifestu aplikace. Hodnota „true“ nebo „t“ určí, že pro rozhodnutí o důvěryhodnosti bude použit manifest aplikace. Hodnota „false“ nebo „f“ určí, že bude použit podpis manifestu nasazení.|
+|**-v, -Version** `versionNumber`|1.0.0.0|Manifesty aplikací.<br /><br /> Manifesty nasazení.|Verze nasazení. Argument musí být platný řetězec verze ve formátu "*N.N.N.N*", kde"*N*" je 32bitové celé číslo bez znaménka.|
+|**-wpf, -WPFBrowserApp**  `isWPFApp`|false|Manifesty aplikací.<br /><br /> Manifesty nasazení.|Tento příznak použijte pouze tehdy, je-li aplikace aplikací Windows Presentation Foundation (WPF), která bude hostována v aplikaci Internet Explorer a není samostatně spustitelná. Platnými hodnotami jsou „true“ nebo „t“ a „false“ nebo „f“.<br /><br /> Pro manifesty aplikací vloží `hostInBrowser` atribut `entryPoint` elementu v manifestu aplikace.<br /><br /> Manifesty nasazení nastaví `install` atribut na `deployment` prvku na hodnotu false a uloží manifest s příponou .xbap. Zadání tohoto argumentu spolu s **– instalace** dojde k chybě, protože aplikace hostované prohlížečem nemůže být instalovanou offline aplikací.|
 
 ## <a name="sign-command-options"></a>Možnosti příkazu Sign
 
@@ -78,12 +78,12 @@ V následující tabulce jsou uvedeny možnosti podporované `-Sign` příkaz, k
 
 |Možnosti|Popis|
 |-------------|-----------------|
-|**-cf, - CertFile** `filePath`|Určí umístění digitálního certifikátu pro podpis manifestu. Tato možnost se dá použít ve spojení s **– heslo** pokud certifikátu vyžaduje heslo pro soubory Personal Information Exchange (PFX). Od verze rozhraní .NET Framework 4.7, pokud soubor neobsahuje privátní klíč, kombinaci **- CryptoProvider** a **- KeyContainer** možnosti je povinný.<br/><br/>Od verze rozhraní .NET Framework 4.6.2, *Mage.exe* manifesty znaménka s CNG, jakož i CAPI certifikáty.|
-|**-ch, - CertHash** `hashSignature`|Hodnota hash digitálního certifikátu uloženého v úložišti osobních certifikátů klientského počítače. Ta odpovídá vlastnosti kryptografického otisku digitálního certifikátu zobrazeného v Konzole certifikátů systému Windows.<br /><br /> `hashSignature` může být buď velká nebo malá písmena a může být zadán buď jako jeden řetězec, nebo kryptografický otisk odděleny mezer a kryptografický otisk uzavřený do uvozovek, jehož každý.|
-**-csp, - CryptoProvider** `provider-name`|Určuje název zprostředkovatele kryptografických služeb (CSP), který obsahuje kontejner soukromého klíče. Tato možnost vyžaduje **- KeyContainer** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
-|**-KeyContainer – kc,** `name`|Určuje kontejner klíčů, který obsahuje název privátní klíč. Tato možnost vyžaduje **CyproProvider** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
-|**-pwd, – heslo** `passwd`|Heslo použité pro podepsání manifestu digitálním certifikátem. Je potřeba použít ve spojení s **- CertFile** možnost.|
-|**-t, - ToFile** `filePath`|Určí výstupní cestu vytvořeného nebo upraveného souboru.|
+|**-cf, -CertFile** `filePath`|Určí umístění digitálního certifikátu pro podpis manifestu. Tato možnost se dá použít ve spojení s **– heslo** pokud certifikátu vyžaduje heslo pro soubory Personal Information Exchange (PFX). Od verze rozhraní .NET Framework 4.7, pokud soubor neobsahuje privátní klíč, kombinaci **- CryptoProvider** a **- KeyContainer** možnosti je povinný.<br/><br/>Od verze rozhraní .NET Framework 4.6.2, *Mage.exe* manifesty znaménka s CNG, jakož i CAPI certifikáty.|
+|**-ch, -CertHash** `hashSignature`|Hodnota hash digitálního certifikátu uloženého v úložišti osobních certifikátů klientského počítače. Ta odpovídá vlastnosti kryptografického otisku digitálního certifikátu zobrazeného v Konzole certifikátů systému Windows.<br /><br /> `hashSignature` může být buď velká nebo malá písmena a může být zadán buď jako jeden řetězec, nebo kryptografický otisk odděleny mezer a kryptografický otisk uzavřený do uvozovek, jehož každý.|
+**-csp, -CryptoProvider** `provider-name`|Určuje název zprostředkovatele kryptografických služeb (CSP), který obsahuje kontejner soukromého klíče. Tato možnost vyžaduje **- KeyContainer** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
+|**-kc, -KeyContainer** `name`|Určuje kontejner klíčů, který obsahuje název privátní klíč. Tato možnost vyžaduje **CyproProvider** možnost.<br/><br/>Tato možnost je k dispozici od verze rozhraní .NET Framework 4.7.|
+|**-pwd, -Password** `passwd`|Heslo použité pro podepsání manifestu digitálním certifikátem. Je potřeba použít ve spojení s **- CertFile** možnost.|
+|**-t, -ToFile** `filePath`|Určí výstupní cestu vytvořeného nebo upraveného souboru.|
 
 ## <a name="remarks"></a>Poznámky
 
@@ -121,23 +121,23 @@ Následující tabulky ukazují tyto funkce a omezení:
 ||Zavřít|OK|OK|
 ||Uložit|OK|OK|
 ||Znovu podepsat|OK|OK|
-||Nový|OK|Nepodporováno|
+||Nový|OK|Není podporováno|
 ||Aktualizovat (viz níže)|OK|OK|
 |Manifest pro aplikace cílené na rozhraní .NET Framework verze 4|Otevřít|OK|OK|
 ||Zavřít|OK|OK|
 ||Uložit|OK|OK|
 ||Znovu podepsat|OK|OK|
-||Nový|Nepodporováno|OK|
-||Aktualizovat (viz níže)|Nepodporováno|OK|
+||Nový|Není podporováno|OK|
+||Aktualizovat (viz níže)|Není podporováno|OK|
 
 |Verze manifestu|Podrobnosti o operaci Aktualizovat|Mage v2.0|Mage v4.0|
 |----------------------|------------------------------|---------------|---------------|
 |Manifest pro aplikace určené pro rozhraní .NET Framework verze 2.0 nebo 3.x|Upravit sestavení|OK|OK|
 ||Přidat sestavení|OK|OK|
 ||Odstranit sestavení|OK|OK|
-|Manifest pro aplikace cílené na rozhraní .NET Framework verze 4|Upravit sestavení|Nepodporováno|OK|
-||Přidat sestavení|Nepodporováno|OK|
-||Odstranit sestavení|Nepodporováno|OK|
+|Manifest pro aplikace cílené na rozhraní .NET Framework verze 4|Upravit sestavení|Není podporováno|OK|
+||Přidat sestavení|Není podporováno|OK|
+||Odstranit sestavení|Není podporováno|OK|
 
  Mage.exe vytváří nové manifesty, které se zaměřují [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Aplikace ClickOnce, které se zaměřují [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] mohou být spuštěny v rozhraní [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] a plnou verzi rozhraní .NET Framework 4. Pokud vaše aplikace cílí na plnou verzi rozhraní .NET Framework 4 a nelze je spustit na [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)], odeberte klienta `<framework>` element pomocí textového editoru a znovu podepište manifest.
 

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bfc4ac58785b766e74d836fa3cf3b1aca75f01d1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9a38de994575bf0191ff2ab5ce1c7b047540289f
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54521020"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57470585"
 ---
 # <a name="imetadataemitsetfieldrva-method"></a>IMetaDataEmit::SetFieldRVA – metoda
 Nastaví hodnotu globální proměnné pro relativní virtuální adresu pole odkazuje zadaný token.  
@@ -36,7 +36,7 @@ HRESULT SetFieldRVA (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `fd`  
  [in] Token pro cílové pole.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c1c22ee61769fdcbb92a73ca0dd55299ebbcf934
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: 798ef6a9b058d9d49019554feba63627360e6a0e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56305763"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57480036"
 ---
 # <a name="iappdomainbindingonappdomain-method"></a>IAppDomainBinding::OnAppDomain – metoda
 Volána modulem common language runtime (CLR), aby upozornil hostitele Vytvoření domény aplikace.  
@@ -35,7 +35,7 @@ HRESULT OnAppDomain (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pAppdomain`  
  [in] Ukazatel [IUnknown](/cpp/atl/iunknown) rozhraní objektu, který představuje nové aplikační doméně.  
   

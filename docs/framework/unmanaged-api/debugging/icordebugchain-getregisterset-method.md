@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bfdde1f29300fcdc0f4e267949fdc3f6fd9917ee
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f366a40e1e3cd196f480c5849c49419c7daeea9e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401405"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57480985"
 ---
 # <a name="icordebugchaingetregisterset-method"></a>ICorDebugChain::GetRegisterSet – metoda
-Získá zaregistrovat, nastavte pro aktivní součástí tohoto řetězce.  
+Získá do registru pro aktivní součástí tohoto řetězce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT GetRegisterSet (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppRegisters`  
- [out] Ukazatel na adresu [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) objekt, který reprezentuje rejstříku nastavit pro aktivní součástí tohoto řetězce.  
+ [out] Ukazatel na adresu [icordebugregisterset –](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) nastavit objekt, který reprezentuje do registru pro aktivní součástí tohoto řetězce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

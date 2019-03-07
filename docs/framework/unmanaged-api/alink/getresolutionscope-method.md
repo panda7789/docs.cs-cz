@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f8d230d5396c5a088fa76a7ca145b4a22d1e1d07
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bfe06c1300a22757b363236454f4f494dab1978a
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543354"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57486794"
 ---
 # <a name="getresolutionscope-method"></a>GetResolutionScope – metoda
 Načte oboru daného typu.  
@@ -37,7 +37,7 @@ HRESULT GetResolutionScope(
 ) PURE;  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `AssemblyID`  
  ID sestavení.  
   

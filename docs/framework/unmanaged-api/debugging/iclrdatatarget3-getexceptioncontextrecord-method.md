@@ -14,12 +14,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9ec7414b18b60a20eefcbf4ec742ddcc7b7a8f97
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.openlocfilehash: 0f5d50ce17b35eb8701fdf115bb5f3b47cba24e2
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55066100"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471235"
 ---
 # <a name="iclrdatatarget3getexceptioncontextrecord-method"></a>ICLRDataTarget3::GetExceptionContextRecord – metoda
 Je voláno common language runtime (CLR) data access services k získání záznamu o kontextu souvisejícím s cílovým procesem. Například pro cíl s výpisem paměti, jde ekvivalentní k záznamu o kontextu předané prostřednictvím `ExceptionParam` argument [MiniDumpWriteDump](/windows/desktop/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump) funkce ve Windows ladit knihovnu nápovědy (DbgHelp).  
@@ -34,7 +34,7 @@ HRESULT GetExceptionContextRecord(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `bufferSize`  
  [in] Velikost vstupní vyrovnávací paměti v bajtech. Toto musí být dostatečně velký, aby kontextového záznamu.  
   

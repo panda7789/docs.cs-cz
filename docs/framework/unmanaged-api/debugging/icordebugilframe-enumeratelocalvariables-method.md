@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6fd7694901534ad6897bbf78239081af6314e4bd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3cc9601105d05740e6db0a41bae521bd9a276d74
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415465"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471313"
 ---
 # <a name="icordebugilframeenumeratelocalvariables-method"></a>ICorDebugILFrame::EnumerateLocalVariables – metoda
-Získá enumerátor pro místní proměnné do tohoto rámce.  
+Získá enumerátor pro místní proměnné v tomto snímku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT EnumerateLocalVariables(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppValueEnum`  
- [out] Ukazatel na adresu ICorDebugValueEnum objekt, který je enumerátor pro místní proměnné do tohoto rámce.  
+ [out] Ukazatel na adresu icordebugvalueenum – objekt, který je enumerátor pro místní proměnné v tomto snímku.  
   
 ## <a name="remarks"></a>Poznámky  
- `EnumerateLocalVariables` Získá enumerátor, který může být uveden lokální proměnné, které jsou k dispozici v rámci volání, která je reprezentována tento objekt ICorDebugILFrame. V seznamu nemusí zahrnovat všechny lokální proměnné ve funkci spuštěné, protože některé z nich nemusí být aktivní.  
+ `EnumerateLocalVariables` Získá enumerátor, který můžete zobrazit seznam dostupných v rámci volání, která je reprezentována tímto objektem ICorDebugILFrame lokální proměnné. V seznamu nemusí obsahovat celou lokální proměnné ve funkci spuštěné, protože některé z nich nesmí být aktivní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

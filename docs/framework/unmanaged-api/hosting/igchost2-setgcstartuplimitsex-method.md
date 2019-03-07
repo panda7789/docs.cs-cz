@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f61f6ed5712f3c98f06f5fa76657f3fa7b70fe84
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 69976110a227f95cf157b19b270f25cc3808246e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54666329"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57484105"
 ---
 # <a name="igchost2setgcstartuplimitsex-method"></a>IGCHost2::SetGCStartupLimitsEx – metoda
 Nastaví velikost segmentu a maximální velikost pro 0. generace.  
@@ -36,7 +36,7 @@ HRESULT SetGCStartupLimitsEx (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `SegmentSize`  
  [in] Velikost segmentu používá systém uvolňování paměti kolekce.  
   

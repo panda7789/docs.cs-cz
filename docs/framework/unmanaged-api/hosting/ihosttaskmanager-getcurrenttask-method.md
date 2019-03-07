@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bd92b03d87672875661bb5e5241c6fa46f099ce6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f53227908f263cceeb8677739c0bf5b5ba30cd5e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54732463"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57473978"
 ---
 # <a name="ihosttaskmanagergetcurrenttask-method"></a>IHostTaskManager::GetCurrentTask – metoda
 Získá ukazatel rozhraní k úkolu, který aktuálně spouští ve vlákně operačního systému, ze kterého je provedeno toto volání.  
@@ -35,7 +35,7 @@ HRESULT GetCurrentTask (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pTask`  
  [out] Ukazatel na adresu [ihosttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance, která reprezentuje aktuálně prováděné úlohy nebo hodnota null, pokud je aktuálně spuštěny žádné úlohy.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ee8e0dec469c7389a69c70567d7b2cb98d3404e6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: da52d540266e2c5f9bfc7f1a83d2683fa765914b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54603908"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57478745"
 ---
 # <a name="imetadataemitdefinenestedtype-method"></a>IMetaDataEmit::DefineNestedType – metoda
 Vytvoří metadata podpis definici typu, vrátí `mdTypeDef` token pro daný typ a určí, že definovaný typ je členem typu odkazuje `tdEncloser` parametru.  
@@ -40,7 +40,7 @@ HRESULT DefineNestedType (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `szTypeDef`  
  [in] Název typu v kódování Unicode.  
   

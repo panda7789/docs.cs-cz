@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dfbf543deb98661ab9116e9dfcb6cb534d3ff13b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cbfa25300cbed83d36cc43d9a0dd0beb2520dea1
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54608346"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57475287"
 ---
 # <a name="iclrruntimeinfogetversionstring-method"></a>ICLRRuntimeInfo::GetVersionString – metoda
 Získá common language runtime (CLR) informace o verzi přidružené danou [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní.  
@@ -41,7 +41,7 @@ HRESULT GetVersionString(
     [in, out]  DWORD *pcchBuffer);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pwzBuffer`  
  [out] Kompilace rozhraní .NET Framework verze ve formátu "v*A*. *B*[. *X*] ". *A*, *B*, a *X* jsou desetinná čísla, která odpovídá hlavní verze, podverze a číslo sestavení. *X* je volitelný. Pokud *X* není k dispozici není žádné koncové tečky.  
   

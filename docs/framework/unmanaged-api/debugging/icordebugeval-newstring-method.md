@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e5eb86bb80aea5fc65a7362467b78b16a59794d7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: db609bdee7975b6c067271f99529e2cf2240f720
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412227"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57480179"
 ---
 # <a name="icordebugevalnewstring-method"></a>ICorDebugEval::NewString – metoda
-Přiděluje do nové instance řetězec s zadaný obsah.  
+Přidělí novou instanci řetězce se zadaným obsahem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT NewString (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `string`  
- [v] Ukazatel na obsah pro řetězec.  
+ [in] Ukazatel na obsah řetězce.  
   
 ## <a name="remarks"></a>Poznámky  
- Řetězec se vždy vytvoří v doméně aplikace, ve kterém je aktuálně spuštěných vlákno.  
+ Řetězec se vždy vytvoří v aplikační doméně, ve které vlákno právě probíhá.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

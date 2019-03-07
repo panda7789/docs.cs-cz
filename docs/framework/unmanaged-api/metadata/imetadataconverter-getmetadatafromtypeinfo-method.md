@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ae7007c4588724da7b3a67f924c981121d2c82bc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8619bf0e62752513b1ae03fa01d22be40f65e58e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54622218"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57468855"
 ---
 # <a name="imetadataconvertergetmetadatafromtypeinfo-method"></a>IMetaDataConverter::GetMetaDataFromTypeInfo – metoda
 Získá ukazatel [imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) instanci, která představuje podpis metadat knihovny typů odkazuje zadaný `ITypeInfo` instance.  
@@ -36,7 +36,7 @@ HRESULT GetMetaDataFromTypeInfo (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pITI`  
  [in] Ukazatel `ITypeInfo` objekt, který odkazuje na knihovnu typů.  
   

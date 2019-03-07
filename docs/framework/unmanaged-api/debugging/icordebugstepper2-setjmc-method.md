@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4ad05d2f6226d570fc854fb48575851dd718e410
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 129bf04a097b2019b080f813bf049d41b501f8fd
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418194"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57474212"
 ---
 # <a name="icordebugstepper2setjmc-method"></a>ICorDebugStepper2::SetJMC – metoda
-Nastaví hodnotu, která určuje, zda tento ICorDebugStepper kroky pouze prostřednictvím kód, který je vytvořená vývojáře aplikace. Tento proces se označuje také jako můj (dále jen SVK) ladění kódu.  
+Nastaví hodnotu, která určuje, zda tento icordebugstepper – provede pouze kód, který je vytvořený vývojářem aplikace. Tento proces se označuje také jako pouze můj kód (JMC) ladění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT SetJMC (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `fIsJMCStepper`  
- [v] Nastavte na `true` ke kroku pouze prostřednictvím kódu, která je vytvořená aplikace vývojáře, jinak hodnota nastavena na `false`.  
+ [in] Nastavte na `true` pouze krokovat kód, který je vytvořený vývojářem aplikace; v opačném případě nastavte na `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -1,16 +1,16 @@
 ---
-title: Překlad stromů výrazů
+title: Translating Expression Trees
 description: Zjistěte, jak chcete navštívit každý uzel ve stromu výrazů při sestavování upravenou kopii tohoto stromu výrazu.
 ms.date: 06/20/2016
 ms.assetid: b453c591-acc6-4e08-8175-97e5bc65958e
-ms.openlocfilehash: 6fe35983119bba443ed9132ff0c52361e1f07da8
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 4c14837c1d92845991d8ea9990b77eb9052757d8
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200532"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57490070"
 ---
-# <a name="translating-expression-trees"></a>Překlad stromů výrazů
+# <a name="translating-expression-trees"></a>Translating Expression Trees
 
 [Předchozí – Vytváření výrazů](expression-trees-building.md)
 
@@ -75,7 +75,7 @@ var addition = Expression.Add(one, two);
 var add2 = Expression.Add(three, four);
 var sum = Expression.Add(addition, add2);
 
-// Declare the delegate, so we can call it 
+// Declare the delegate, so we can call it
 // from itself recursively:
 Func<Expression, int> aggregate = null;
 // Aggregate, return constants, or the sum of the left and right operand.
@@ -93,7 +93,7 @@ Je hodně Zde uveďte kód, ale popsané koncepty se velmi přístupné.
 Tento kód navštíví podřízené objekty první hledání hloubku. Pokud se setká konstantního uzlu, návštěvníka hodnotu konstanty. Poté, co návštěvníka navštíví i podřízené položky, tyto podřízené objekty se vypočítat součet vypočítat pro dílčí stromové struktuře. Přidání uzlu můžete nyní výpočetní jeho součet.
 Jakmile navštívili všech uzlů ve stromu výrazu součet bude vypočítání. Sledování spuštění spuštěním ukázky v ladicím programu a trasování provádění.
 
-Pojďme usnadňují sledování, jak se analyzují uzly a jak se počítají součet tak, že travsersing stromu. Tady je aktualizovanou verzi agregační metoda, která obsahuje hodně trasovací informace:
+Pojďme usnadňují sledování, jak se analyzují uzly a jak se počítají součet tak, že procházení stromu. Tady je aktualizovanou verzi agregační metoda, která obsahuje hodně trasovací informace:
 
 ```csharp
 private static int Aggregate(Expression exp)

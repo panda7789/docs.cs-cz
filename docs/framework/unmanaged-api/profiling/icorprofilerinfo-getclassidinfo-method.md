@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 97465b5d39b3f6adbb6bccfc7b478ddad97066fc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 30c57130c2ea504cc94cfed9cdf99077b9a897f0
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54563727"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492943"
 ---
 # <a name="icorprofilerinfogetclassidinfo-method"></a>ICorProfilerInfo::GetClassIDInfo – metoda
 Získá nadřazený modulu a tokenem metadat pro zadanou třídu.  
@@ -36,7 +36,7 @@ HRESULT GetClassIDInfo(
     [out] mdTypeDef *pTypeDefToken);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `classId`  
  [in] ID třídy, pro které chcete získat informace o.  
   

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 552d2fa8a7c35066e32fb9f8e9455b3092b1e65b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8c639204fa207774b0e362f1ba8fe71937494ae2
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413277"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487683"
 ---
 # <a name="icordebugeval2newparameterizedarray-method"></a>ICorDebugEval2::NewParameterizedArray – metoda
-Přiděluje nový pole typu zadaného elementu a dimenze.  
+Přidělí nové pole typu zadaného elementu a dimenze.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,24 +38,24 @@ HRESULT NewParameterizedArray(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pElementType`  
- [v] Ukazatel na ICorDebugType objekt, který představuje typ elementu uložené v poli.  
+ [in] Ukazatel na objekt ICorDebugType, který představuje typ prvků uložených v poli.  
   
  `rank`  
- [v] Počet rozměrů pole. V rozhraní .NET Framework verze 2.0 tato hodnota musí být 1.  
+ [in] Počet rozměrů pole. V rozhraní .NET Framework verze 2.0 tato hodnota musí být 1.  
   
  `dims`  
- [v] Velikost v bajtech, každá dimenze pole.  
+ [in] Velikost v bajtech každého rozměru pole.  
   
  `lowBounds`  
- [v] Volitelný parametr. Dolní mez Každá dimenze pole. Pokud tato hodnota je vynechán, předpokládá se, že dolní mez 0 je pro každou dimenzi.  
+ [in] Volitelné. Dolní mez každé dimenze matice. Pokud je tato hodnota vynechána, předpokládá se pro jednotlivé rozměry dolní mez nula.  
   
 ## <a name="remarks"></a>Poznámky  
- Elementy pole může být instance obecného typu. Toto pole je vytvořen vždy v doméně aplikace, ve které je aktuálně spuštěný vlákno. V rozhraní .NET Framework 2.0, hodnota `rank` musí být 1.  
+ Prvky pole mohou být instancí obecného typu. Pole je vytvořen vždy v aplikační doméně, ve kterém je spuštěn podproces. V rozhraní .NET Framework 2.0, hodnota `rank` musí být 1.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

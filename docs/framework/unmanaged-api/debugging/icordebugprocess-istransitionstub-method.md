@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e06dc35998a2874ed1d2f76725078874817e94d8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 18084cb69d2c620fc892cc05e5a561e8fda3bc1c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420092"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57488185"
 ---
 # <a name="icordebugprocessistransitionstub-method"></a>ICorDebugProcess::IsTransitionStub – metoda
-Získá hodnotu, která určuje, zda je adresa uvnitř se zakázaným inzerováním, které způsobí přechod do spravovaného kódu.  
+Získá hodnotu, která určuje, zda je adresa uvnitř zástupnou proceduru, která způsobí, že s přechodem na spravovaný kód.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,20 +35,20 @@ HRESULT IsTransitionStub(
     [out] BOOL *pbTransitionStub);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `address`  
- [v] A `CORDB_ADDRESS` hodnotu, která určuje adresu nejistá.  
+ [in] A `CORDB_ADDRESS` hodnotu, která určuje dotyčný adresu.  
   
  `pbTransitionStub`  
- [out] Ukazatel na logickou hodnotu, která je `true` Pokud zadaná adresa je uvnitř se zakázaným inzerováním, které způsobí přechod do spravovaného kódu; v opačném případě *`pbTransitionStub` je `false`.  
+ [out] Ukazatel na logickou hodnotu, která je `true` Pokud zadaná adresa je uvnitř zástupnou proceduru, která způsobí, že s přechodem na spravovaný kód; v opačném případě *`pbTransitionStub` je `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- `IsTransitionStub` Metoda lze pomocí nespravovaného kódu taktování při rozhodování, kdy se vraťte do spravovaných krokovač taktování ovládacího prvku.  
+ `IsTransitionStub` Metoda umožňuje nespravovaným krokování kódem při rozhodování, kdy se vraťte do spravované krokovač krokování ovládacího prvku.  
   
- Můžete také zástupných procedur přechod identity prohlížením informace do přenosného spustitelného souboru (PE).  
+ Můžete také zástupné procedury přechod identity zobrazením informací do přenosného spustitelného souboru (PE).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

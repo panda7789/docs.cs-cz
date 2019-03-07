@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3bad6c052ec90c8cd3e47c4ec822fc2d5ae944af
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cf0aa035b78b582ede76f288443734c25e92a02c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54612161"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57466528"
 ---
 # <a name="loadlibraryshim-function"></a>LoadLibraryShim – funkce
 Načte zadanou verzi knihovny DLL, která je součástí Distribuovatelný balíček rozhraní .NET Framework.  
@@ -40,7 +40,7 @@ HRESULT LoadLibraryShim (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `szDllName`  
  [in] Ukončit nulou řetězec představující název knihovny DLL, který se má načíst z knihovny rozhraní .NET Framework.  
   

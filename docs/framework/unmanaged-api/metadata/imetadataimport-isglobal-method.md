@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 52a00496c3b4d5ccd96adaf569c25c64a5709a9a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7032e55d52804d559d1faed810ca7cccd6a9e628
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54717585"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57475637"
 ---
 # <a name="imetadataimportisglobal-method"></a>IMetaDataImport::IsGlobal – metoda
 Získá hodnotu označující, zda pole, metodu nebo typ zastoupený token metadat zadaného má globální obor.  
@@ -36,7 +36,7 @@ HRESULT IsGlobal (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pd`  
  [in] Token metadat, který představuje typ, pole nebo metoda.  
   

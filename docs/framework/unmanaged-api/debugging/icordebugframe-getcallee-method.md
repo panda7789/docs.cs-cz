@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d62f4f8a34123bcd3f0cbe56f1c1b958bcaa6ef2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a179b68e2196eeadc712ae8f7d023b2943533335
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413368"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471066"
 ---
 # <a name="icordebugframegetcallee-method"></a>ICorDebugFrame::GetCallee – metoda
-Získá ukazatel na objekt ICorDebugFrame v aktuální řetězec, který volá tento snímek.  
+Získá ukazatel na objekt ICorDebugFrame v aktuální řetězec, který volá tento rámec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT GetCallee (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppFrame`  
- [out] Ukazatel na adresu `ICorDebugFrame` objekt, který reprezentuje volané rámečku. Tato hodnota je null, pokud je volání rámečku nejvnitřnější rámečku v řetězu aktuální.  
+ [out] Ukazatel na adresu `ICorDebugFrame` objekt, který reprezentuje volané rámce. Tato hodnota je null, pokud volající snímek je vnitřní snímek aktuální řetězce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

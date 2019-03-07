@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1653913ca7410728f0f90a546f613a9d8b88be7a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 46852ed8ac53c3a7720edff4833f3dc3cce42bbb
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33414050"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57475785"
 ---
 # <a name="icordebugilframegetargument-method"></a>ICorDebugILFrame::GetArgument – metoda
-Získá hodnotu zadaného argumentu v této rámce zásobníku (MSIL intermediate language) společnosti Microsoft.  
+Získá hodnotu zadaného argumentu v tento rámec zásobníku Microsoft intermediate language (MSIL).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,18 +36,18 @@ HRESULT GetArgument (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `dwIndex`  
- [v] Index v rámci této MSIL zásobníku argumentu.  
+ [in] Index argumentu do tohoto rámce zásobníku jazyka MSIL.  
   
  `ppValue`  
- [out] Ukazatel na adresu ICorDebugValue objekt, který reprezentuje načtené hodnoty.  
+ [out] Ukazatel na adresu ICorDebugValue objekt, který představuje načtené hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetArgument` Metodu lze použít rámce zásobníku MSIL nebo v rámci kompilované v běhu (JIT).  
+ `GetArgument` Metodu je možné použít v rámci zásobníku jazyka MSIL nebo v rámci kompilované just-in-time (JIT).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

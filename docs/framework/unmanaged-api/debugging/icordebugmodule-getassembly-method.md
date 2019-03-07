@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 78bfc91bdd0f9fa68252c6a07e1362807eb507b4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ce1e42d74dc611032d941e833bb8f248a56488b4
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416020"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57486249"
 ---
 # <a name="icordebugmodulegetassembly-method"></a>ICorDebugModule::GetAssembly – metoda
 Získá obsahující sestavení pro tento modul.  
@@ -35,12 +35,12 @@ HRESULT GetAssembly(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppAssembly`  
- [out] Ukazatel na ICorDebugAssembly objekt, který reprezentuje sestavení obsahující tohoto modulu.  
+ [out] Ukazatel na objekt icordebugassembly –, který představuje sestavení obsahující tento modul.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7e160eddf667b542929c8dd3790de666a8e8bb77
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b8e7fcb4f44d6bdf6f18c93b1046b549331621a4
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413056"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57470793"
 ---
 # <a name="icordebugevalgetresult-method"></a>ICorDebugEval::GetResult – metoda
-Získá výsledky tohoto hodnocení.  
+Získá výsledky vyhodnocení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,17 +35,17 @@ HRESULT GetResult (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppResult`  
- [out] Ukazatel na adresu ICorDebugValue objekt, který představuje výsledky tohoto hodnocení, pokud vyhodnocení dokončení normálně.  
+ [out] Ukazatel na adresu ICorDebugValue objekt, který představuje výsledky hodnocení, pokud se obvykle dokončí hodnocení.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetResult` Metoda je platná pouze po dokončení vyhodnocení.  
+ `GetResult` Metoda je platná, až po dokončení hodnocení.  
   
- Za normálních okolností dokončení vyhodnocení `ppResult` určuje výsledky. Pokud ho ukončí s výjimkou, výsledkem je, že došlo k výjimce. Pokud pro nový objekt, který byl vyhodnocení, výsledkem je odkaz na nový objekt.  
+ Pokud se hodnocení dokončí za normálních okolností `ppResult` určuje výsledky. Pokud je ukončena výjimku, výsledkem je výjimka vyvolána. Pokud je hodnocení pro nový objekt, výsledkem je odkaz na nový objekt.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

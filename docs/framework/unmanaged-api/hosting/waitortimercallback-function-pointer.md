@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1d36ae3ef63c1324f77786ad55674bbdc257d984
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 24a2c3baec0d958302101c295966f945ae98fa78
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54607131"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57490707"
 ---
 # <a name="waitortimercallback-function-pointer"></a>WAITORTIMERCALLBACK – ukazatel na funkci
 Odkazuje na funkci, která upozorňuje hostitele, popisovače čekání (<xref:System.Threading.WaitHandle>) buď byl signalizován nebo vypršel časový limit.  
@@ -37,7 +37,7 @@ typedef VOID (__stdcall *WAITORTIMERCALLBACK) (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `lpParameter`  
  [in] Ukazatel na objekt, který obsahuje informace stanovené hostitelem.  
   

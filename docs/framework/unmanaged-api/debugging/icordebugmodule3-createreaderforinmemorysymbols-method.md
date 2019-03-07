@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 931a0cbd8dd15a62780a7bcf03d3d354f552232c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f553870399a8f2ddb78e01d27a7f7e5bd32d786b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54628341"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57473991"
 ---
 # <a name="icordebugmodule3createreaderforinmemorysymbols-method"></a>ICorDebugModule3::CreateReaderForInMemorySymbols – metoda
 Vytvoří čtečku symbolů ladění pro dynamický modul.  
@@ -35,7 +35,7 @@ HRESULT CreateReaderForInMemorySymbols (
       [out][iid_is(riid)] void **    ppObj  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  riid  
  [in] Identifikátor IID rozhraní COM se vraťte. Obvykle se jedná [isymunmanagedreader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md).  
   

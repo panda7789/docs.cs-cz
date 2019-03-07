@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9a09741ed778436f1cb35d094885bd3effa813a5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a682999c888a93cef94162a8179673c862dc43ce
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33411591"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57476643"
 ---
 # <a name="icordebugfunctiongetlocalvarsigtoken-method"></a>ICorDebugFunction::GetLocalVarSigToken – metoda
-Získá metadata pro místní proměnné podpis funkce, která je reprezentována tuto instanci ICorDebugFunction tokenu.  
+Získá metadata pro místní proměnné podpis funkce, která je reprezentovaný touto instancí ICorDebugFunction token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT GetLocalVarSigToken (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pmdSig`  
- [out] Ukazatel `mdSignature` tokenu pro místní proměnné podpis této funkce nebo `mdSignatureNil`, pokud je tato funkce nemá žádné místní proměnné.  
+ [out] Ukazatel `mdSignature` token pro místní proměnné podpis této funkce nebo `mdSignatureNil`, pokud tato funkce nemá žádné místní proměnné.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

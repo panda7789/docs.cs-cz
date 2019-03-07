@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0a4f0fd100397fc52ca917c54f0276598d714640
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2b6c29861faa469f03ca5f2d3cb18e95b3e78f52
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54642841"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489901"
 ---
 # <a name="imetadataassemblyemitsetassemblyrefprops-method"></a>IMetaDataAssemblyEmit::SetAssemblyRefProps – metoda
 Upraví zadaný `AssemblyRef` struktury metadat.  
@@ -42,7 +42,7 @@ HRESULT SetAssemblyRefProps (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ar`  
  [in] Token metadat, který určuje `AssemblyRef` struktury metadat má být upraven.  
   

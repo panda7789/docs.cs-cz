@@ -10,12 +10,12 @@ helpviewer_keywords:
 - states [WPF]
 - templates [WPF]
 ms.assetid: c19049bb-5ceb-492d-afd2-751dca0ed8e3
-ms.openlocfilehash: 36589b13fc336b78ec87cccba0a2790d8242f5d6
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: c5c33327c5a80a4e275d1eaa505c1d20d3d7ba4c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57373193"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57488835"
 ---
 # <a name="control-styles-and-templates"></a>Styly a šablony ovládacích prvků
 Ovládací prvky ve Windows Presentation Foundation (WPF) mít <xref:System.Windows.Controls.ControlTemplate> vizuálním stromu ovládacího prvku, který obsahuje. Úpravou můžete změnit strukturu a vzhled ovládacího prvku <xref:System.Windows.Controls.ControlTemplate> ovládacího prvku. Neexistuje žádný způsob, jak nahradit pouze část vizuálním stromu ovládacího prvku; Chcete-li změnit vizuálním stromu ovládacího prvku je nutné nastavit <xref:System.Windows.Controls.Control.Template%2A> vlastnost ovládacího prvku na jeho nové a kompletní <xref:System.Windows.Controls.ControlTemplate>.  
@@ -50,18 +50,18 @@ Ovládací prvky ve Windows Presentation Foundation (WPF) mít <xref:System.Wind
  [ListView – styly a šablony](listview-styles-and-templates.md)  
  [Styly a šablony nabídky](menu-styles-and-templates.md)  
  [NavigationWindow – styly a šablony](navigationwindow-styles-and-templates.md)  
- [PasswordBox – styly a šablony](passwordbox-syles-and-templates.md)  
+ [PasswordBox – styly a šablony](passwordbox-styles-and-templates.md)  
  [ProgressBar – styly a šablony](progressbar-styles-and-templates.md)  
  [RadioButton – styly a šablony](radiobutton-styles-and-templates.md)  
- [RepeatButton – styly a šablony](repeatbutton-syles-and-templates.md)  
+ [RepeatButton – styly a šablony](repeatbutton-styles-and-templates.md)  
  [ScrollBar – styly a šablony](scrollbar-styles-and-templates.md)  
  [ScrollViewer – styly a šablony](scrollviewer-styles-and-templates.md)  
  [Styly a šablony posuvníku](slider-styles-and-templates.md)  
  [StatusBar – styly a šablony](statusbar-styles-and-templates.md)  
  [TabControl – styly a šablony](tabcontrol-styles-and-templates.md)  
  [TextBox – styly a šablony](textbox-styles-and-templates.md)  
- [Jezdec – Styly a šablony](thumb-syles-and-templates.md)  
- [ToggleButton – styly a šablony](togglebutton-syles-and-templates.md)  
+ [Jezdec – Styly a šablony](thumb-styles-and-templates.md)  
+ [ToggleButton – styly a šablony](togglebutton-styles-and-templates.md)  
  [ToolBar – styly a šablony](toolbar-styles-and-templates.md)  
  [ToolTip – styly a šablony](tooltip-styles-and-templates.md)  
  [TreeView – styly a šablony](treeview-styles-and-templates.md)  

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b136f30b0c1ce9f83228f340ac5e147cc02002b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2c6b86c5ce3cc246af600d9b65d2fe12a0427f9f
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422026"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57485392"
 ---
 # <a name="icordebugtypegetstaticfieldvalue-method"></a>ICorDebugType::GetStaticFieldValue – metoda
-Získá ukazatele rozhraní ICorDebugValue objektu, která obsahuje hodnotu statické pole odkazovaná v zadaném poli token v rámci zadaného zásobníku.  
+Získá ukazatel rozhraní na ICorDebugValue objekt, který obsahuje hodnotu statické pole určené pole odkazuje tokenu v určeném zásobníku rámce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,28 +37,28 @@ HRESULT GetStaticFieldValue (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `fieldDef`  
- [v] `mdFieldDef` Token, který určuje statické pole.  
+ [in] `mdFieldDef` Token, který určuje statické pole.  
   
  `pFrame`  
- [v] Ukazatel ICorDebugFrame, který představuje rámce zásobníku.  
+ [in] Ukazatel na ICorDebugFrame, který představuje rámec zásobníku.  
   
  `ppValue`  
- [out] Ukazatel na adresu `ICorDebugValue` obsahující hodnotu statické pole.  
+ [out] Ukazatel na adresu `ICorDebugValue` , který obsahuje hodnotu statické pole.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetStaticFieldValue` Metoda může používat pouze v případě typ je ELEMENT_TYPE_CLASS nebo Typ ELEMENT_TYPE_VALUETYPE, který, jak [icordebugtype::gettype –](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) metoda.  
+ `GetStaticFieldValue` – Metoda může použít pouze v případě, že typ je za řetězcem ELEMENT_TYPE_CLASS nebo ELEMENT_TYPE_VALUETYPE, znázorněné [icordebugtype::gettype –](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-gettype-method.md) metody.  
   
- Pro typy neobecnou provádí operaci `GetStaticFieldValue` je stejný jako při volání [icordebugclass::getstaticfieldvalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-getstaticfieldvalue-method.md) ICorDebugClass objektu, který je vrácen [icordebugtype::getclass –](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getclass-method.md).  
+ Pro obecné typy, operace provedena `GetStaticFieldValue` je stejný jako volání [icordebugclass::getstaticfieldvalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-getstaticfieldvalue-method.md) ICorDebugClass objektu, který je vrácený [icordebugtype::getclass –](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getclass-method.md).  
   
- Pro obecné typy hodnotu statické pole bude relativně ke konkrétní vytváření instancí. Navíc pokud statické pole může být může být relativní vzhledem k vlákno, kontextu nebo doménu aplikace, pak rámce zásobníku pomůže ladicího programu určit správnou hodnotu.  
+ Pro obecné typy bude hodnota statické pole vzhledem ke konkrétní vytváření instancí. Navíc pokud statické pole může být může být relativní vzhledem k vlákno, kontext nebo doménu aplikace, pak rámce zásobníku pomůže ladicí program určit správnou hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetStaticFieldValue` lze použít pouze při volání `ICorDebugType::GetType` vrací hodnotu ELEMENT_TYPE_CLASS nebo Typ ELEMENT_TYPE_VALUETYPE, který.  
+ `GetStaticFieldValue` se dá použít jenom při volání `ICorDebugType::GetType` vrací hodnotu za řetězcem ELEMENT_TYPE_CLASS nebo ELEMENT_TYPE_VALUETYPE.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

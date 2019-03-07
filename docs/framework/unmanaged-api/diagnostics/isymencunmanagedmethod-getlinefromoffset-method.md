@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 98015af4a79a9fca4945708e6d0baeb61e46876f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 90d993bc6b947d309ce1a0fb10ad231a429be567
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54531223"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471911"
 ---
 # <a name="isymencunmanagedmethodgetlinefromoffset-method"></a>ISymENCUnmanagedMethod::GetLineFromOffset – metoda
 Získá informace o řádku, které jsou spojené s posunem. Pokud parametr offset (`dwOffset`) není bod sekvence, tato metoda získá informace o řádku spojené s předchozím posunu.  
@@ -39,7 +39,7 @@ HRESULT GetLineFromOffset(
      [out] ULONG32*  pdwStartOffset);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `dwOffset`  
  [in] A `ULONG32` obsahující posun.  
   

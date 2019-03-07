@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dcc7770f95c0cb7d416480145a430d781e093f6a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 729ae390d36f82cbafd46385b396d6513489628e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54599666"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57474779"
 ---
 # <a name="icorprofilerinfo2getobjectgeneration-method"></a>ICorProfilerInfo2::GetObjectGeneration – metoda
 Získá segment, který obsahuje zadaný objekt haldy.  
@@ -35,7 +35,7 @@ HRESULT GetObjectGeneration(
     [out] COR_PRF_GC_GENERATION_RANGE *range);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `objectId`  
  [in] ID objektu.  
   

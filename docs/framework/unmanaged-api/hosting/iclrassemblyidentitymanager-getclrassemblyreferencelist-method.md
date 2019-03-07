@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1bfb3e07504570f8cedceddb43410b48691c4695
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 65ec26384b88ba3048666f3b6e3affcb90d8f070
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595757"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57479308"
 ---
 # <a name="iclrassemblyidentitymanagergetclrassemblyreferencelist-method"></a>ICLRAssemblyIdentityManager::GetCLRAssemblyReferenceList – metoda
 Získá ukazatel rozhraní k [iclrassemblyreferencelist –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) instance ze zadaného seznamu identit částečného sestavení.  
@@ -37,9 +37,9 @@ HRESULT  GetCLRAssemblyReferenceList (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppwzAssemblyReferences`  
- [in] Pole zakončené znakem null řetězce ve tvaru ", name – vlastnost = hodnota...", které určují seznam identit částečného sestavení.  
+ [in] Řetězec zakončený null ve formě pole "název, vlastnost = hodnota..." které určují seznam identit částečného sestavení.  
   
  `dwNumOfReferences`  
  [in] Počet položek v `ppwzAssemblyReferences`.  

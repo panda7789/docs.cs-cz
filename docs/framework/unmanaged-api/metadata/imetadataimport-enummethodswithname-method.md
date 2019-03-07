@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 901603da64502c994f625be609f5a6e21a1db1c0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ab9a8a672095c31c5395251ce9af99667a7eea27
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54519239"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57498442"
 ---
 # <a name="imetadataimportenummethodswithname-method"></a>IMetaDataImport::EnumMethodsWithName – metoda
 Podává výčet metod, které mají se zadaným názvem a typem odkazuje zadaný token TypeDef, která jsou definována.  
@@ -40,7 +40,7 @@ HRESULT EnumMethodsWithName (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `phEnum`  
  [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
   

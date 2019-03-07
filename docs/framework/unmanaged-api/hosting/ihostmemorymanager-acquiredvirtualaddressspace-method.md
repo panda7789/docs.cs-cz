@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b6133b558e62d66cfaac201317f66d784aac264c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 67fc415f1569abd35819d7b3a59459052e3591ba
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54513708"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57486131"
 ---
 # <a name="ihostmemorymanageracquiredvirtualaddressspace-method"></a>IHostMemoryManager::AcquiredVirtualAddressSpace – metoda
 Upozorňuje hostitele, že modul CLR (CLR) získal zadaná paměťová z operačního systému.  
@@ -36,7 +36,7 @@ HRESULT AcquiredVirtualAddressSpace(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `startAddress`  
  [in] Počáteční adresa paměti.  
   

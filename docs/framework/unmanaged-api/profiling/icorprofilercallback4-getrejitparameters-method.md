@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 14c0da3192bb5488c71527a70ed47b03933c0ae1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7aae292daefe9333585a50d1d8c9ce49b1008cd9
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54721214"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57470780"
 ---
 # <a name="icorprofilercallback4getrejitparameters-method"></a>ICorProfilerCallback4::GetReJITParameters – metoda
 Umožňuje profileru kódu nastavit alternativní kód generování příznaky pro nové tělo překompilovanou metody.  
@@ -33,7 +33,7 @@ Umožňuje profileru kódu nastavit alternativní kód generování příznaky p
 HRESULT GetReJITParameters(     [in] ModuleID moduleId,     [in] mdMethodDef methodId,     [in] ICorProfilerFunctionControl *pFunctionControl);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `moduleID`  
  [in] Modul, který obsahuje metodu, pro které modul CLR musí parametry rekompilace JIT.  
   

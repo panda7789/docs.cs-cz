@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2b6dd32d63fc856b67f8e7d64be31dcbf107b10b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9878252fb61dabe3154df90265229f160bb80d10
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54531025"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57484417"
 ---
 # <a name="icorprofilercallback4movedreferences2-method"></a>ICorProfilerCallback4::MovedReferences2 – metoda
 Volá se, aby sestavy nové rozložení objektů v haldě jako výsledek komprimaci uvolňování paměti. Tato metoda je volána, pokud profiler implementoval [icorprofilercallback4 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) rozhraní. Nahradí tato zpětné volání [icorprofilercallback::movedreferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md) metody, protože ho může hlásit větší rozsah objektů, jejichž délky překročit, co lze vyjádřit v typu ULONG.  
@@ -37,7 +37,7 @@ HRESULT MovedReferences2(
     [in, size_is(cMovedObjectIDRanges)] SIZE_T    cObjectIDRangeLength[] );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `cMovedObjectIDRanges`  
  [in] Počet bloků souvislých objektů, které přesunout v důsledku komprimaci kolekce uvolnění paměti. To znamená, že hodnota `cMovedObjectIDRanges` je celková velikost `oldObjectIDRangeStart`, `newObjectIDRangeStart`, a `cObjectIDRangeLength` pole.  
   

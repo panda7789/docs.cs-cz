@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c8c61cc12e438c0786b6e093b8bb1ea288a42e3a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a27ea95ca78f7db8f67ec2a13f02767e67619e97
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401164"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57488055"
 ---
 # <a name="icordebugchainismanaged-method"></a>ICorDebugChain::IsManaged – metoda
-Získá hodnotu, která určuje, zda tento řetězec používá spravovaného kódu.  
+Získá hodnotu určující, zda tento řetězec používá spravovaný kód.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT IsManaged (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pManaged`  
- [out] `true` Pokud tento řetězec používá spravovaného kódu; jinak `false`.  
+ [out] `true` Pokud tento řetězec používá spravovaný kód; v opačném případě `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

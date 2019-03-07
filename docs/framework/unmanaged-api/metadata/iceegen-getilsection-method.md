@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e75f46d73e068c6bdaac6ae01740ecf589c97d42
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0e9d71edc580591b698ad039f8ee73e49c4e1d6a
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54635907"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489043"
 ---
 # <a name="iceegengetilsection-method"></a>ICeeGen::GetIlSection – metoda
 Získá části základu kódu IL odkazuje Zadaný popisovač.  
@@ -37,7 +37,7 @@ HRESULT GetIlSection (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `section`  
  [in] Popisovač oddílu, který má získat.  
   

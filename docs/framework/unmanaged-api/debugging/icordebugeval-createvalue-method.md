@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ad40087ca61f1b07c0e0e36e785d89b84132962a
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.openlocfilehash: 2c16f6d1334888fc389a7c39cf0a3865afca2085
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55759545"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471041"
 ---
 # <a name="icordebugevalcreatevalue-method"></a>ICorDebugEval::CreateValue – metoda
 Vytvoří hodnotu zadaného typu, s počáteční hodnotou nula nebo hodnotu null.  
@@ -39,7 +39,7 @@ HRESULT CreateValue (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `elementType`  
  [in] Hodnota [corelementtype –](../../../../docs/framework/unmanaged-api/metadata/corelementtype-enumeration.md) výčet, který určuje typ hodnoty.  
   

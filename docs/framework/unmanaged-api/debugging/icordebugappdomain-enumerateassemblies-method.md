@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 13137dcf7c2edd96397916cc7db905c9e48a3d0a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6ce95daaee3c74ac57b107ab8bcb23d41e42cabb
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401597"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57466645"
 ---
 # <a name="icordebugappdomainenumerateassemblies-method"></a>ICorDebugAppDomain::EnumerateAssemblies – metoda
 Získá enumerátor pro sestavení v doméně aplikace.  
@@ -35,12 +35,12 @@ HRESULT EnumerateAssemblies (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppAssemblies`  
- [out] Ukazatel na adresu ICorDebugAssemblyEnum objekt, který je enumerátor pro sestavení v doméně aplikace.  
+ [out] Ukazatel na adresu icordebugassemblyenum – objekt, který je enumerátor pro sestavení v doméně aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

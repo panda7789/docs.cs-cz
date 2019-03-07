@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 61285b3de76f556b498c9815508275989eb96807
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3de21f4bb91198a5eb77f94789d0389d97123b7a
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54630980"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57472483"
 ---
 # <a name="imetadataimportenumsignatures-method"></a>IMetaDataImport::EnumSignatures – metoda
 Vytvoří výčet tokenů podpisu představující samostatné podpisy v aktuálním oboru.  
@@ -38,7 +38,7 @@ HRESULT EnumSignatures (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `phEnum`  
  [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c05ebc819d5fdd40ec20e62ece9f556244d914c0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5632e6a68b5fcaf77885d67c64915fca5f8cf519
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54661032"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57502531"
 ---
 # <a name="icordebugprocess5enumerateheapregions-method"></a>ICorDebugProcess5::EnumerateHeapRegions – metoda
 Získá enumerátor pro oblasti paměti spravované haldy.  
@@ -35,7 +35,7 @@ HRESULT EnumerateHeapRegions(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppRegions`  
  [out] Ukazatel na adresu [icordebugheapsegmentenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md) rozhraní objektu, který je enumerátor pro oblasti paměti, ve kterém jsou umístěny objekty ve spravované haldě.  
   

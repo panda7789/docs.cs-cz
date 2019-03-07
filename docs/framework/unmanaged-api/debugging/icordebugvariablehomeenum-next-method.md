@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d383d4bf0f3d203c331ff00981885cbc6c0c35d8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8dd2d188b273d857ba92914f490e3448ba01601c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54519200"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492475"
 ---
 # <a name="icordebugvariablehomeenumnext-method"></a>ICorDebugVariableHomeEnum::Next – metoda
 Získá zadaný počet [icordebugvariablehome –](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instancí, které obsahují informace o lokálních proměnných a argumentů funkce.  
@@ -37,7 +37,7 @@ HRESULT Next(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `celt`  
  [in] Počet objektů, které se mají načíst.  
   

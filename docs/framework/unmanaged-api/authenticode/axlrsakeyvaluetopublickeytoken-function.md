@@ -10,12 +10,12 @@ api_type:
 ms.assetid: d60f19fe-7bec-47ba-b60e-ba9ce66abf8c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2a340af9ba196dbcd8618afdd83bcf7e56124bf7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 640940cea30b489683972debdd14b592d565ef4b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54529905"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57469688"
 ---
 # <a name="axlrsakeyvaluetopublickeytoken-function"></a>\_AxlRSAKeyValueToPublicKeyToken – funkce
 
@@ -31,7 +31,7 @@ HRESULT _AxlRSAKeyValueToPublicKeyToken (
 );  
 ```  
   
-### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pModulusBlob`  
  [in] Tento objekt blob s kódováním base64 numerického zbytku (z \<numerického zbytku > element).  Zobrazit [CRYPTOAPI_BLOB](/windows/desktop/api/dpapi/ns-dpapi-_cryptoapi_blob) struktury.  
   

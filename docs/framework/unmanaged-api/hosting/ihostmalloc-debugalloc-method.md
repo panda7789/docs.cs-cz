@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e3ce303e8bcf33d192dbc7e2447ea6737577dcc5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 00fa0fb7c257500eb0bc24c6c43bd0dd265bc00b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54554874"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57481635"
 ---
 # <a name="ihostmallocdebugalloc-method"></a>IHostMAlloc::DebugAlloc – metoda
 Požadavky, že hostitel přidělit zadaného množství paměti z haldy a také sledovat, kde byla přidělena paměť.  
@@ -39,7 +39,7 @@ HRESULT DebugAlloc (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `cbSize`  
  [in] Velikost v bajtech, aktuální požadavek na přidělení paměti.  
   

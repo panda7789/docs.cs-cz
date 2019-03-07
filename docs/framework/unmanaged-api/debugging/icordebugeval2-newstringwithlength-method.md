@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6b3b77a0ffc7af3b3640d1b255bd3be522f45a7a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b84a2fad53feda2996515781035c0eaad5828d54
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413547"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57473432"
 ---
 # <a name="icordebugeval2newstringwithlength-method"></a>ICorDebugEval2::NewStringWithLength – metoda
-Vytvoří řetězec na určenou délku zadaný obsah.  
+Řetězce zadané délky, vytvoří se zadaným obsahem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,20 +36,20 @@ HRESULT NewStringWithLength (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `string`  
- [v] Ukazatel na hodnotu řetězce.  
+ [in] Ukazatel na hodnotu řetězce.  
   
  `uiLength`  
- [v] Délka řetězce.  
+ [in] Délka řetězce.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je řetězec koncové znak hodnoty null musí být ve spravovaných řetězci volající `NewStringWithLength` metoda Ujistěte se, že obsahuje délku řetězce znakem null.  
+ Pokud je na konci řetězce znak null je očekávané ve spravované řetězce volající `NewStringWithLength` – metoda musíte zajistit, že obsahuje délku řetězce znakem null.  
   
- Řetězec se vždy vytvoří v doméně aplikace, ve kterém je aktuálně spuštěných vlákno.  
+ Řetězec se vždy vytvoří v aplikační doméně, ve které vlákno právě probíhá.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

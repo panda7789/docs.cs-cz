@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 15f85a6f5ab418692d747cc9ad415c637d7b96e2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dd24289f7e670684effa553f930af9aec92e5730
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54614362"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57469597"
 ---
 # <a name="isymunmanagedsymbolsearchinfogethresult-method"></a>ISymUnmanagedSymbolSearchInfo::GetHRESULT – metoda
 Získá hodnota HRESULT.  
@@ -34,7 +34,7 @@ HRESULT GetHRESULT(
     [out] HRESULT *phr);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `phr`  
  [out] Ukazatel na HRESULT.  
   

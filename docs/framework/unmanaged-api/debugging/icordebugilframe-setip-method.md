@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ed7de70c8ea26f46f44abb3e063c6e4c4b115666
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a25e52c6b858aaa602ffade0e407b1aaf6e5c67e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33414485"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471387"
 ---
 # <a name="icordebugilframesetip-method"></a>ICorDebugILFrame::SetIP – metoda
-Nastaví ukazatel instrukce do zadaného umístění posunu v kódu (MSIL intermediate language) společnosti Microsoft.  
+Nastaví ukazatele na instrukci do zadaného umístění posunu v kódu Microsoft intermediate language (MSIL).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,19 +35,19 @@ HRESULT SetIP (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `nOffset`  
- Umístění posunu v MSIL kódu.  
+ Umístění posunu v kódu MSIL.  
   
 ## <a name="remarks"></a>Poznámky  
- Volání `SetIP` okamžitě zneplatní všechny snímky a řetězy pro aktuální vlákno. Pokud ladicí program musí rámce informace po volání `SetIP`, je třeba provést nové trasování zásobníku.  
+ Volání `SetIP` okamžitě zneplatnit všechny rámce a řetězce pro aktuální vlákno. Pokud ladicí program potřebuje informace o snímcích po volání `SetIP`, je nutné provést nové trasování zásobníku.  
   
- [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) se pokusí uchovat rámce zásobníku v platném stavu. Ale i pokud rámečku není v platném stavu, stále může mít problémy, třeba neinicializovaných místních proměnných. Volající zodpovídá za zajištění integrita spuštěného programu.  
+ [Icordebug –](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) se pokusí uchovat rámce zásobníku v platném stavu. Ale i v případě, že rámec je příkaz v platném stavu, stále může existovat problémy, jako je neinicializovaných místních proměnných. Volající zodpovídá za to integrita spuštěný program.  
   
- Na 64bitových platformách, nelze jej přesunout ukazatel instrukce mimo `catch` nebo `finally` bloku. Pokud `SetIP` nazývá aby přesunu na 64bitové platformě, vrátí HRESULT udávající neúspěch.  
+ Na 64bitových platformách, ukazatele na instrukci nelze přesunout z celkového počtu `catch` nebo `finally` bloku. Pokud `SetIP` nazývá provést přesun na 64bitové platformě, vrátí HRESULT označující selhání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
