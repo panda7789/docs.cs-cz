@@ -17,38 +17,38 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0c4e2a094f018b4f77423b6dbfe990925632edf9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fbb4aa43757df86037d9c883e76ee38cef5eeb86
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683856"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57494425"
 ---
-# <a name="icorprofilerinfogetinprocinspectioninterface-method"></a><span data-ttu-id="fc66c-102">ICorProfilerInfo::GetInprocInspectionInterface – metoda</span><span class="sxs-lookup"><span data-stu-id="fc66c-102">ICorProfilerInfo::GetInprocInspectionInterface Method</span></span>
-<span data-ttu-id="fc66c-103">Získá objekt, který může být dotazována v rámci rozhraní "ICorDebugProcess".</span><span class="sxs-lookup"><span data-stu-id="fc66c-103">Gets an object that can be queried for an "ICorDebugProcess" interface.</span></span> <span data-ttu-id="fc66c-104">Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="fc66c-104">This method is obsolete in the .NET Framework version 2.0.</span></span>  
+# <a name="icorprofilerinfogetinprocinspectioninterface-method"></a><span data-ttu-id="1a116-102">ICorProfilerInfo::GetInprocInspectionInterface – metoda</span><span class="sxs-lookup"><span data-stu-id="1a116-102">ICorProfilerInfo::GetInprocInspectionInterface Method</span></span>
+<span data-ttu-id="1a116-103">Získá objekt, který může být dotazována v rámci rozhraní "ICorDebugProcess".</span><span class="sxs-lookup"><span data-stu-id="1a116-103">Gets an object that can be queried for an "ICorDebugProcess" interface.</span></span> <span data-ttu-id="1a116-104">Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="1a116-104">This method is obsolete in the .NET Framework version 2.0.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fc66c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fc66c-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1a116-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1a116-105">Syntax</span></span>  
   
 ```  
 HRESULT GetInprocInspectionInterface(  
     [out] IUnknown **ppicd);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="fc66c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="fc66c-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="1a116-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="1a116-106">Parameters</span></span>  
  `ppicd`  
- <span data-ttu-id="fc66c-107">[navýšení kapacity](/cpp/atl/iunknown) objekt, který je možné zadávat dotazy pro `ICorDebugProcess` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="fc66c-107">[out](/cpp/atl/iunknown) object that can be queried for an `ICorDebugProcess` interface.</span></span>  
+ <span data-ttu-id="1a116-107">[navýšení kapacity](/cpp/atl/iunknown) objekt, který je možné zadávat dotazy pro `ICorDebugProcess` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="1a116-107">[out](/cpp/atl/iunknown) object that can be queried for an `ICorDebugProcess` interface.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="fc66c-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fc66c-108">Remarks</span></span>  
- <span data-ttu-id="fc66c-109">Common language runtime (CLR) ladění v rozhraní API nepodporuje omezené vnitroprocesové ladění v rozhraní .NET Framework verze 1.0.</span><span class="sxs-lookup"><span data-stu-id="fc66c-109">The common language runtime (CLR) debugging API supported limited in-process debugging in the .NET Framework version 1.0.</span></span> <span data-ttu-id="fc66c-110">Vnitroprocesové ladění povolit profiler použití kontroly části rozhraní API pro ladění.</span><span class="sxs-lookup"><span data-stu-id="fc66c-110">In-process debugging enabled a profiler to use the inspection portions of the debugging API.</span></span> <span data-ttu-id="fc66c-111">V důsledku zpětné vazby od zákazníků vnitroprocesové ladění bylo odstraněno z rozhraní .NET Framework verze 2.0 a jsme nahradili sadou funkcí, které jsou více tato rozhraní API profilování.</span><span class="sxs-lookup"><span data-stu-id="fc66c-111">As a result of customer feedback, in-process debugging has been removed from the .NET Framework in version 2.0, and replaced with a set of functionality that is more in line with the profiling API.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="1a116-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1a116-108">Remarks</span></span>  
+ <span data-ttu-id="1a116-109">Common language runtime (CLR) ladění v rozhraní API nepodporuje omezené vnitroprocesové ladění v rozhraní .NET Framework verze 1.0.</span><span class="sxs-lookup"><span data-stu-id="1a116-109">The common language runtime (CLR) debugging API supported limited in-process debugging in the .NET Framework version 1.0.</span></span> <span data-ttu-id="1a116-110">Vnitroprocesové ladění povolit profiler použití kontroly části rozhraní API pro ladění.</span><span class="sxs-lookup"><span data-stu-id="1a116-110">In-process debugging enabled a profiler to use the inspection portions of the debugging API.</span></span> <span data-ttu-id="1a116-111">V důsledku zpětné vazby od zákazníků vnitroprocesové ladění bylo odstraněno z rozhraní .NET Framework verze 2.0 a jsme nahradili sadou funkcí, které jsou více tato rozhraní API profilování.</span><span class="sxs-lookup"><span data-stu-id="1a116-111">As a result of customer feedback, in-process debugging has been removed from the .NET Framework in version 2.0, and replaced with a set of functionality that is more in line with the profiling API.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="fc66c-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fc66c-112">Requirements</span></span>  
- <span data-ttu-id="fc66c-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fc66c-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1a116-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1a116-112">Requirements</span></span>  
+ <span data-ttu-id="1a116-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1a116-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="fc66c-114">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="fc66c-114">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="1a116-114">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="1a116-114">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="fc66c-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="fc66c-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="1a116-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="1a116-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="fc66c-116">**Verze rozhraní .NET framework:** 1.0</span><span class="sxs-lookup"><span data-stu-id="fc66c-116">**.NET Framework Version:** 1.0</span></span>  
+ <span data-ttu-id="1a116-116">**Verze rozhraní .NET framework:** 1.0</span><span class="sxs-lookup"><span data-stu-id="1a116-116">**.NET Framework Version:** 1.0</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fc66c-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fc66c-117">See also</span></span>
-- [<span data-ttu-id="fc66c-118">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fc66c-118">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a><span data-ttu-id="1a116-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1a116-117">See also</span></span>
+- [<span data-ttu-id="1a116-118">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1a116-118">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
