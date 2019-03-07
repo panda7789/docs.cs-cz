@@ -2,22 +2,19 @@
 title: Návrhář
 ms.date: 03/30/2017
 ms.assetid: bf28aae3-ddfb-4a86-b55d-1957f08c4e10
-ms.openlocfilehash: 7fa97d5e9d9f83a134e91b0d50f923d72d36f12b
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 28b7672a7b557bc9bbbf24d91a17716ab7e3f047
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840703"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492189"
 ---
 # <a name="designer"></a>Návrhář
-Tato část obsahuje ukázky, které ukazují, jak používat [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)].  
-  
-## <a name="in-this-section"></a>V tomto oddílu  
- [Odebrání stavu zobrazení, který návrhář přidá do souboru XAML](../../../../docs/framework/windows-workflow-foundation/samples/removing-the-view-state-the-designer-adds-to-an-xaml-file.md)  
- Ukazuje, jak vytvořit třídu, která je odvozena z <xref:System.Windows.Markup.XamlWriter> a odebere zobrazit stav ze souboru XAML.  
-  
- [Strom položek programovacího modelu](../../../../docs/framework/windows-workflow-foundation/samples/programming-model-item-tree.md)  
- Ukazuje, jak se orientovat <xref:System.Activities.Presentation.Model.ModelItem> stromové struktury pomocí deklarativní datové vazby ve stromovém zobrazení Windows Presentation Foundation (WPF).  
-  
- [Rozšiřitelnost mřížky vlastností](../../../../docs/framework/windows-workflow-foundation/samples/property-grid-extensibliity.md)  
- Ukazuje, jak přizpůsobit mřížkou, který se zobrazí při výběru v návrháři pro danou aktivitu.
+Tato část obsahuje ukázky, které ukazují, jak používat [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)].
+
+## <a name="in-this-section"></a>V tomto oddílu
+ [Odebírá se zobrazení stavu Návrhář přidá do souboru XAML](../../../../docs/framework/windows-workflow-foundation/samples/removing-the-view-state-the-designer-adds-to-an-xaml-file.md) ukazuje, jak vytvořit třídu, která je odvozena z <xref:System.Windows.Markup.XamlWriter> a odebere zobrazit stav ze souboru XAML.
+
+ [Strom položek programovacího modelu](../../../../docs/framework/windows-workflow-foundation/samples/programming-model-item-tree.md) ukazuje, jak se orientovat <xref:System.Activities.Presentation.Model.ModelItem> stromové struktury pomocí deklarativní datové vazby ve stromovém zobrazení Windows Presentation Foundation (WPF).
+
+ [Rozšiřitelnost mřížky vlastností](../../../../docs/framework/windows-workflow-foundation/samples/property-grid-extensibility.md) ukazuje, jak přizpůsobit mřížkou, který se zobrazí při výběru v návrháři pro danou aktivitu.

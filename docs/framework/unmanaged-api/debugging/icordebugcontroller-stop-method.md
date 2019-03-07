@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4cb5b091aadbdd503dd7988f713f40a00876a2dc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fbe0459824499aba86c908012f038256f9923513
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54608316"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57496680"
 ---
 # <a name="icordebugcontrollerstop-method"></a>ICorDebugController::Stop – metoda
 Provádí kooperativní stop na všech vláknech, na kterých běží spravovaný kód v procesu.  
@@ -35,7 +35,7 @@ HRESULT Stop (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `dwTimeoutIgnored`  
  Nepoužívá se.  
   

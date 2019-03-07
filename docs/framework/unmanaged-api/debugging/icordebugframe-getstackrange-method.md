@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5da87071bc23ac17a3077049cd77f0fb8611439f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 43532888d181adcb7a7e3760f2a5e3d8f664a35c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413017"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492280"
 ---
 # <a name="icordebugframegetstackrange-method"></a>ICorDebugFrame::GetStackRange – metoda
-Získá absolutní adresu rozsahu tento rámce zásobníku.  
+Získá absolutní adresu rozsahu tohoto rámce zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,18 +36,18 @@ HRESULT GetStackRange (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pStart`  
- [out] Ukazatel `CORDB_ADDRESS` určující počáteční adresa rámce zásobníku reprezentována to `ICorDebugFrame` objektu.  
+ [out] Ukazatel `CORDB_ADDRESS` určující počáteční adresu zásobníku představovaného tímto rozhraním `ICorDebugFrame` objektu.  
   
  `pEnd`  
- [out] Ukazatel `CORDB_ADDRESS` určující koncová adresa rámce zásobníku reprezentována to `ICorDebugFrame` objektu.  
+ [out] Ukazatel `CORDB_ADDRESS` , který určuje koncovou adresu zásobníku představovaného tímto rozhraním `ICorDebugFrame` objektu.  
   
 ## <a name="remarks"></a>Poznámky  
- Rozsah adres v zásobníku je užitečné pro piecing společně trasování prokládaná zásobníku získané z více ladění webů. Číselný rozsah poskytuje žádné informace o obsahu rámce zásobníku. Je smysl jenom pro porovnání umístění rámce zásobníku.  
+ Rozsah adres zásobníku je užitečné pro piecing společně trasování zásobníků shromážděných z více ladicí moduly. Číselný rozsah poskytuje žádné informace o obsahu tohoto rámce zásobníku. To má smysl pouze pro porovnání umístění rámce zásobníku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

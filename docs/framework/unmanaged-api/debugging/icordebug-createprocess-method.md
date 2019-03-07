@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5e9f5af0a79b36f879b75e331d614edfed7476eb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cf7480eaa0fa38651d139a2fa9d533b43dbdce1b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54509971"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57496466"
 ---
 # <a name="icordebugcreateprocess-method"></a>ICorDebug::CreateProcess – metoda
 Spustí proces a jeho primární vlákno pod kontrolu ladicího programu.  
@@ -46,7 +46,7 @@ HRESULT CreateProcess (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `lpApplicationName`  
  [in] Ukazatel na řetězec zakončený hodnotou null, který určuje modulu je spuštěn proces provést. Modul provádí v kontextu zabezpečení volajícího procesu.  
   

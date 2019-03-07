@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: acffd24ae9d5aad5f48058eec036f912ee016289
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c1af0f8f792c856c0b27b4d3d9ff557bcc5fce82
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415981"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57500067"
 ---
 # <a name="icordebugmodulegetfunctionfromtoken-method"></a>ICorDebugModule::GetFunctionFromToken – metoda
-Získá funkce, která je zadána token metadat.  
+Získá funkce, která je určená tokenem metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,18 +36,18 @@ HRESULT GetFunctionFromToken(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `methodDef`  
- [v] A `mdMethodDef` metadata token, který odkazuje na funkci metadata.  
+ [in] A `mdMethodDef` token metadat, který odkazuje na metadata funkce.  
   
  `ppFunction`  
- [out] Ukazatel na adresu objekt rozhraní ICorDebugFunction, který představuje funkci.  
+ [out] Ukazatel na adresu objektu rozhraní ICorDebugFunction, který představuje funkci.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetFunctionFromToken` Metoda vrátí CORDBG_E_FUNCTION_NOT_IL HRESULT, pokud je předaná hodnota `methodDef` neodkazuje na metodu (MSIL intermediate language) společnosti Microsoft.  
+ `GetFunctionFromToken` Metoda vrací hodnotu HRESULT CORDBG_E_FUNCTION_NOT_IL, pokud hodnota předaná v `methodDef` neodkazuje na metodu Microsoft intermediate language (MSIL).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

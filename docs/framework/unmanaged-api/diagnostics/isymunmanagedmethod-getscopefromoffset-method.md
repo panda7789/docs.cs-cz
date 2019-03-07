@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5422e781ab2f494e85f637219aa540bf4ac34cb8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b036c5cff5300377580fe22dc254911fbdd79715
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54629732"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57503122"
 ---
 # <a name="isymunmanagedmethodgetscopefromoffset-method"></a>ISymUnmanagedMethod::GetScopeFromOffset – metoda
 Získá nejvíce nadřazeného oboru lexikální v rámci této metody, které obklopuje dané posun. To je možné spustit místní proměnné vyhledávání.  
@@ -35,7 +35,7 @@ HRESULT GetScopeFromOffset(
     [out, retval] ISymUnmanagedScope**  pRetVal);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `offset`  
  [in] A `ULONG` obsahující posun.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fc4e8140485902e4677bca0228bc125c64b497f2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1064300d8bb3a9b03e1dfad1c30596c35ee1c941
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54671857"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57485197"
 ---
 # <a name="imetadataimportgetfieldprops-method"></a>IMetaDataImport::GetFieldProps – metoda
 Získá metadata spojená s polem odkazuje zadaný FieldDef token.  
@@ -45,7 +45,7 @@ HRESULT GetFieldProps (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `mb`  
  [in] FieldDef token, který představuje získat související metadata pro pole.  
   

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5e2d99d85a6e6b09558e5941d08a7f522aaf66cb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2016795e7b2c0588e2bd69e764fb96f7f90b24d0
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421814"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57480660"
 ---
 # <a name="icordebugthreadcreateeval-method"></a>ICorDebugThread::CreateEval – metoda
-Vytvoří objekt ICorDebugEval, který shromažďuje a zveřejňuje funkce této ICorDebugThread.  
+Vytvoří objekt icordebugeval –, který shromažďuje a zveřejňuje funkce tento ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT CreateEval (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppEval`  
- [out] Ukazatel na adresu `ICorDebugEval` objekt, který shromažďuje a zveřejňuje funkce z tohoto podprocesu.  
+ [out] Ukazatel na adresu `ICorDebugEval` objekt, který shromažďuje a zveřejňuje funkce pro toto vlákno.  
   
 ## <a name="remarks"></a>Poznámky  
- Objekt vyhodnocení předá řetěz nový ve vlákně před provedením jeho výpočtu. Přeruší výpočet právě provádí na vlákno až do dokončení vyhodnocení.  
+ Objekt vyhodnocení zařadí nový řetězec ve vlákně než přistoupíte k jeho výpočtu. Přeruší se výpočet aktuálně se provést ve vlákně, dokud se nedokončí hodnocení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

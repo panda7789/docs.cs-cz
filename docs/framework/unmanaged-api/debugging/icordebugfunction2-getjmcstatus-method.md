@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: acf0ba3938568524479e12b93ae8cebbcf52f909
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d23a0a489cfe13201b7798920feb3528db3b0709
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33411726"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57494607"
 ---
 # <a name="icordebugfunction2getjmcstatus-method"></a>ICorDebugFunction2::GetJMCStatus – metoda
-Získá hodnotu, která určuje, zda je funkce, která je reprezentována tento objekt ICorDebugFunction2 označen jako uživatelského kódu.  
+Získá hodnotu, která indikuje, jestli je funkce, která je reprezentována tímto objektem icordebugfunction2 – označený jako uživatelského kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT GetJMCStatus (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pbIsJustMyCode`  
- [out] Ukazatel na logickou hodnotu, která je `true`, pokud se tato funkce je označena jako uživatelský kód; jinak hodnota je `false`.  
+ [out] Ukazatel na logickou hodnotu, která je `true`, pokud se tato funkce je označená jako uživatelského kódu; v opačném případě hodnota je `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud funkci reprezentována to `ICorDebugFunction2` nemůžete ladit, `pbIsJustMyCode` bude vždy `false`.  
+ Pokud funkci představovaného tímto rozhraním `ICorDebugFunction2` nejde ladit, `pbIsJustMyCode` bude vždy `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

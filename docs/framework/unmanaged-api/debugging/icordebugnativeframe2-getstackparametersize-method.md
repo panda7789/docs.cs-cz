@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 60d1fafc1d5e718467b944276fc708ab34ddd782
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7f4baa58159760af12afca5b84cb6b1b66e46093
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54727830"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57485535"
 ---
 # <a name="icordebugnativeframe2getstackparametersize-method"></a>ICorDebugNativeFrame2::GetStackParameterSize – metoda
 Vrátí celková velikost parametry do zásobníku na x86 operačních systémů.  
@@ -33,7 +33,7 @@ Vrátí celková velikost parametry do zásobníku na x86 operačních systémů
 HRESULT GetStackParameterSize([out] ULONG32 * pSize)  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pSize`  
  [out] Ukazatel na souhrnná velikost parametry do zásobníku.  
   

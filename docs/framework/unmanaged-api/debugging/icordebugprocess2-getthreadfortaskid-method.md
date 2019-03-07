@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cd04e6d8bed86039b6f43985a8fb712b4612f76d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aa1f6852544dddcdf514b14710ade3949818c93e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418347"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487309"
 ---
 # <a name="icordebugprocess2getthreadfortaskid-method"></a>ICorDebugProcess2::GetThreadForTaskID – metoda
-Získá vláken, na kterém je prováděna úloha se zadaným identifikátorem.  
+Získá vlákno, na kterém je spuštěn úkol se zadaným identifikátorem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,18 +36,18 @@ HRESULT GetThreadForTaskID (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `taskid`  
- [v] Identifikátor úlohy.  
+ [in] Identifikátor úkolu.  
   
  `ppThread`  
- [out] Ukazatel na adresu icordebugthread2 – objekt, který představuje vlákno, které mají být načteny.  
+ [out] Ukazatel na adresu icordebugthread2 – objekt, který představuje vlákna, která se má načíst.  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitele lze nastavit identifikátor úlohy pomocí [iclrtask::settaskidentifier –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-settaskidentifier-method.md) metoda.  
+ Hostitele můžete nastavit pomocí identifikátor úkolu [iclrtask::settaskidentifier –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-settaskidentifier-method.md) metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

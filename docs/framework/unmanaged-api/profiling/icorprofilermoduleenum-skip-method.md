@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d34c88b52dcc8d07736b6866d467439654faa9a1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9472013dcbbeef51753980348652b74c34172ce5
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681843"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57499209"
 ---
 # <a name="icorprofilermoduleenumskip-method"></a>ICorProfilerModuleEnum::Skip – metoda
 Posune kurzor enumerátor z aktuálního umístění tak, aby zadaný počet prvků, které se přeskočí.  
@@ -33,7 +33,7 @@ Posune kurzor enumerátor z aktuálního umístění tak, aby zadaný počet prv
 HRESULT Skip([in] ULONG celt);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `celt`  
  [in] Počet prvků, které mají být přeskočeny.  
   

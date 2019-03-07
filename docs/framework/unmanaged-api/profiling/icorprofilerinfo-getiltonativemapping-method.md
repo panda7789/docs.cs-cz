@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ea471f5ebaab93c60847ad60ea0125baa01d8b3a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5ea179c679018f7bfd9c8948823628ddb5a38491
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54569021"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489758"
 ---
 # <a name="icorprofilerinfogetiltonativemapping-method"></a>ICorProfilerInfo::GetILToNativeMapping – metoda
 Získá mapování z Microsoft intermediate language (MSIL) kompenzuje do nativních posunů pro kód obsažený v zadané funkce.  
@@ -38,7 +38,7 @@ HRESULT GetILToNativeMapping(
         COR_DEBUG_IL_TO_NATIVE_MAP map[]);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `functionId`  
  [in] ID funkce, která obsahuje kód.  
   

@@ -18,12 +18,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8ba438fbd20bc2fdf8014005dc352f4610657cd9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 50bfe38bc4c4843ac0954a6c816e5dc06b5e0fed
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54558511"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57501952"
 ---
 # <a name="destroyiceefilegen-function"></a>DestroyICeeFileGen – funkce
 Zničí [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) objektu.  
@@ -38,7 +38,7 @@ HRESULT DestroyICeeFileGen (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ceeFileGen`  
  [in] `ICeeFileGen` Objekt ke zničení.  
   

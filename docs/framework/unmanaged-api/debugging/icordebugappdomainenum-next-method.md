@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 84ca240f937e210846e6eb9a17abfe70a280b87d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5fefc933cc84fede1f3dea16d4b13e09801a96e0
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403553"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57497350"
 ---
 # <a name="icordebugappdomainenumnext-method"></a>ICorDebugAppDomainEnum::Next – metoda
-Získá zadaný počet domén aplikací z kolekce, počínaje na aktuální pozici kurzoru.  
+Zadaný počet domén aplikace získá z kolekce, spouští se na aktuální pozici kurzoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +38,18 @@ HRESULT Next (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet domén aplikací, které mají být načteny.  
+ [in] Počet domén aplikace, který se má načíst.  
   
  `values`  
- [out] Pole ukazatele, každý z nich odkazuje na objekt ICorDebugAppDomain, který představuje domény aplikace.  
+ [out] Pole ukazatelů, každý z nich odkazuje na objekt ICorDebugAppDomain, který představuje doménu aplikace.  
   
  `pceltFetched`  
- [out] Ukazatel na počet domén aplikace ve skutečnosti vrátila. Tato hodnota může být null. Pokud `celt` je jedna.  
+ [out] Ukazatel na počet skutečně vrácených domény aplikace. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

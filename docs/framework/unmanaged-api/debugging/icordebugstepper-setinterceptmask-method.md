@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7654a91180dd0b4148cfb85b35bf1ce730764f28
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 25a9d287e6520f1fc7826d85dfbcd8e9a6da22f7
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422682"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57481057"
 ---
 # <a name="icordebugsteppersetinterceptmask-method"></a>ICorDebugStepper::SetInterceptMask – metoda
-Nastaví hodnotu, která určuje typy kód, který se stupeň do.  
+Nastaví hodnotu, která určuje typy kódu, které jsou vkročili.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,17 +35,17 @@ HRESULT SetInterceptMask (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `mask`  
- [v] Kombinace hodnot CorDebugIntercept – výčet, který určuje typy kódu.  
+ [in] Kombinace hodnot cordebugintercept – výčet, který určuje typy kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je nastaven bit pro interceptoru, krokovače dokončí, když je došlo k danému typu brání kódu. Pokud je bit není zaškrtnuto, bude přeskočen intercepting kódu.  
+ Pokud je nastaven bit pro zachycování, krokovače dokončí, když dochází k danému typu zachycení kódu. Pokud bit vymazán, prověřuje zachycovací kódu se přeskočí.  
   
- `SetInterceptMask` Metoda může mít nepředpokládaného interakce s [icordebugstepper::setunmappedstopmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) (z uživatele hlediska). Například pokud jenom viditelné (to znamená,-vnitřní) část kód inicializace třídy chybí informace o mapování a STOP_NO_MAPPING_INFO není nastavený (najdete v článku [icordebugstepper::setunmappedstopmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) metoda a CorDebugUnmappedStop – výčet), bude krokovače krok přes inicializaci třídy. Ve výchozím nastavení pouze INTERCEPT_NONE hodnotu `CorDebugIntercept` se použije výčet.  
+ `SetInterceptMask` Metoda může mít nepředvídatelné interakce s [icordebugstepper::setunmappedstopmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) (od uživatele pohledu). Například pokud viditelné jenom (to znamená, – vnitřní) část inicializační kód třídy chybí informace o mapování a není nastaven STOP_NO_MAPPING_INFO (naleznete v tématu [icordebugstepper::setunmappedstopmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) metoda a Cordebugunmappedstop – výčet) krokovače přesune se krokování přes inicializace třídy. Ve výchozím nastavení pouze INTERCEPT_NONE hodnotu `CorDebugIntercept` se použije výčet.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

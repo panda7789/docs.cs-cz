@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ea977b1ccecf9de5a04e1f1127658ca6c15043a4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 28d54becc2d7cd4359c78415f25f579b968cb3f4
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416537"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57482337"
 ---
 # <a name="icordebugprocessgetthreadcontext-method"></a>ICorDebugProcess::GetThreadContext – metoda
 Získá kontext pro dané vlákno v tomto procesu.  
@@ -37,25 +37,25 @@ HRESULT GetThreadContext(
     BYTE context[]);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `threadID`  
- [v] ID vlákna, pro které k načtení kontextu.  
+ [in] ID vlákna, pro které se mají načíst kontext.  
   
  `contextSize`  
- [v] Velikost `context` pole.  
+ [in] Velikost `context` pole.  
   
  `context`  
- [ve out] Pole bajtů, které popisují obsah podprocesu.  
+ [out v] Pole bajtů, které popisují kontext vlákna.  
   
- Kontext určuje architekturu procesoru, na kterém je prováděna vlákno.  
+ Kontext určuje architekturu procesoru, na kterém vlákno prováděno.  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program by měly volat tuto metodu, nikoli Win32 `GetThreadContext` metoda, protože vlákno ve skutečnosti může být ve stavu "napadenému", ve kterém jeho kontext dočasně změnit. Tato metoda by měla používá, pokud se vlákna v nativním kódu. Použití [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) pro vlákna ve spravovaném kódu.  
+ Ladicí program by měly volat tuto metodu, spíše než Win32 `GetThreadContext` metody, protože vlákno může být ve skutečnosti ve stavu "napadenému", ve kterém jeho kontext dočasně změnit. Tato metoda by měla sloužit pouze v případě vlákna v nativním kódu. Použití [icordebugregisterset –](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) pro vlákna ve spravovaném kódu.  
   
- S daty vrácenými je struktura kontext pro aktuální platformě. Stejně jako v Win32 `GetThreadContext` metoda, měli byste inicializovat volající `context` parametr před voláním této metody.  
+ Data vrácená je struktura kontext pro aktuální platformu. Stejně jako u Win32 `GetThreadContext` metodu, volající by měl inicializovat `context` parametr před voláním této metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

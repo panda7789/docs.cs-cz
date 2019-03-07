@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: caeb60c33580f7171a6959c3046cf7312868851b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e01f94e9574ebc032bc45490fd88ff92e9104aa3
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420551"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57482857"
 ---
 # <a name="icordebugthreadenumeratechains-method"></a>ICorDebugThread::EnumerateChains – metoda
-Získá ukazatele rozhraní na enumerátor ICorDebugChainEnum, který obsahuje všechny řetězy zásobníku v tomto objektu ICorDebugThread.  
+Získá enumerátor icordebugchainenum –, který obsahuje všechny řetězů zásobníku v tomto objektu ICorDebugThread ukazatel rozhraní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,25 +35,25 @@ HRESULT EnumerateChains (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppChains`  
- [out] Ukazatel na adresu `ICorDebugChainEnum` objekt, který umožňuje výčet všech zásobníku zřetězený v tohoto podprocesu počínaje řetězu aktivní (tedy nejnovější).  
+ [out] Ukazatel na adresu `ICorDebugChainEnum` zřetězí objekt, který umožňuje výčet všech zásobníku v tomto vláknu, začíná řetězec aktivní (to znamená, poslední).  
   
 ## <a name="remarks"></a>Poznámky  
- Řetězu zásobník představuje zásobníku volání fyzické pro vlákno. V těchto případech vytvoření hranice řetězu zásobníku:  
+ Řetěz zásobníku představuje fyzické volání zásobníku pro vlákno. V následujících případech vytvoření hranice řetěz zásobníku:  
   
--   Spravované na nespravované nebo nespravovaného do spravovaného přechod.  
+-   Spravované na nespravované nebo nespravovaného do spravovaného přechodu.  
   
--   Kontext přepínač.  
+-   Přepnutí kontextu.  
   
 -   A zneužití uživatelské vlákno ladicího programu.  
   
- V případě jednoduchého pro vlákno, které běží v kontextu jedné čistě spravovaného kódu, budou existovat souvislosti mezi vláken a řetězy zásobníku.  
+ V jednoduchém případě pro vlákno, na kterém běží v rámci jednoho čistě spravovaném kódu bude existovat shoda mezi vlákny a řetězů zásobníku.  
   
- Ladicí program chtít Změna uspořádání zásobníky volání fyzické všechny podprocesy do zásobníky logické volání. To by zahrnovat všechny vláken řetězy řazení podle jejich volající/volaný vztahů a přerozdělit je.  
+ Ladicí program může být vhodné ke změně uspořádání zásobníky fyzická volání všech vláken v logické zásobníky volání. To by vyžadovalo řazení řetězců všechna vlákna podle jejich vztahů volající/volaný a přerozdělit je.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 838f2df06f8875037edbe39d2db0411f31abe01f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7b18474aeaa79224de5371df3ff0cac5ed9bf4ff
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421360"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57475733"
 ---
 # <a name="icordebugsteppersteprange-method"></a>ICorDebugStepper::StepRange – metoda
-Způsobí, že tento ICorDebugStepper jedním krokem prostřednictvím jeho obsahující přístup z více vláken a vrátí, když dorazí do kódu nad rámec poslední zadaný rozsah.  
+Způsobí, že tento icordebugstepper – jedním krokem prostřednictvím jeho nadřazeného vlákna a vrátit se dosáhne kódu za poslední zadaný rozsah.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +37,25 @@ HRESULT StepRange (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `bStepIn`  
- [v] Nastavte na `true` k krokování s vnořením funkci, která je volána v rámci vlákno. Nastavte na `false` krok přes funkci.  
+ [in] Nastavte na `true` krok do funkce, která je volána v rámci vlákna. Nastavte na `false` krok přes funkci.  
   
  `ranges`  
- [v] Pole cor_debug_step_range – struktury, z nichž každý určuje rozsah.  
+ [in] Pole struktur cor_debug_step_range –, z nichž každý určuje rozsah.  
   
  `cRangeCount`  
- [v] Velikost `ranges` pole.  
+ [in] Velikost `ranges` pole.  
   
 ## <a name="remarks"></a>Poznámky  
- `StepRange` Metoda se dá použít jako [icordebugstepper::Step –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-step-method.md) metoda, s tím rozdílem, že dokud kód mimo zadaný rozsah nedokončí bylo dosaženo.  
+ `StepRange` Metoda se dá použít jako [icordebugstepper::Step –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-step-method.md) metody, s tím rozdílem, že nedokončí až do kódu mimo zadaný rozsah je dosaženo.  
   
- To může být efektivnější než krokování s jedné instrukce v čase. Rozsahy jsou zadané jako seznam dvojic posunutí od začátku krokovač rámce.  
+ To může být efektivnější než krokování jedné instrukce v čase. Rozsahy jsou zadané jako seznam dvojic posunu od začátku krokovač rámce.  
   
- Rozsahy jsou relativní vzhledem k kód Microsoft (MSIL intermediate language) metody. Volání [icordebugstepper::setrangeil –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setrangeil-method.md) s `false` aby rozsahy relativně k nativní kód metody.  
+ Rozsahy jsou relativní vzhledem k kód Microsoft intermediate language (MSIL) metody. Volání [icordebugstepper::setrangeil –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setrangeil-method.md) s `false` aby rozsahy vzhledem k nativního kódu metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

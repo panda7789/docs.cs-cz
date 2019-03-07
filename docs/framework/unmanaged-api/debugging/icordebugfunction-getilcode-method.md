@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ac34fbca56c8a0f00ee3a7e0f898b8ee03287b11
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f34a2fe2bb1f92e75f77c086b03776ec59495600
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412282"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57482096"
 ---
 # <a name="icordebugfunctiongetilcode-method"></a>ICorDebugFunction::GetILCode – metoda
-Získá instanci ICorDebugCode, která představuje kód Microsoft (MSIL intermediate language) přidružené k tomuto objektu ICorDebugFunction.  
+Získá instanci ICorDebugCode, který představuje kód Microsoft intermediate language (MSIL) asociovaném s tímto objektem ICorDebugFunction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT GetILCode (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppCode`  
- [out] Ukazatel `ICorDebugCode` instanci, nebo hodnotu null, pokud funkce nebyla zkompilovat do MSIL.  
+ [out] Ukazatel `ICorDebugCode` instanci, nebo hodnotu null, pokud funkce nebyla zkompilována do jazyka MSIL.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud k této funkci byl povolen upravit a pokračovat `GetILCode` metoda získá kód MSIL odpovídající této funkce upravenou verzi kód v common language runtime (CLR).  
+ Pokud u této funkce bylo povoleno upravit a pokračovat `GetILCode` metoda se zobrazí kód jazyka MSIL, který odpovídá této funkce upravenou verzi kódu v modulu common language runtime (CLR).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

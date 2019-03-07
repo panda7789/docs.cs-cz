@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b54f5bb47135bcf56c91cd07b916c959e75b9fb5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d3af185e8e30c840eebb22124ff0131d2cc1fc7c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745296"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57475720"
 ---
 # <a name="imetadataemit2definegenericparam-method"></a>IMetaDataEmit2::DefineGenericParam – metoda
 Vytvoří definici pro parametr obecného typu a získá token pro tento parametr obecného typu.  
@@ -41,7 +41,7 @@ HRESULT DefineGenericParam (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `tk`  
  [in] `mdTypeDef` Nebo `mdMethodDef` token, který představuje tato metoda nebo konstruktor, pro které chcete definovat obecný parametr.  
   

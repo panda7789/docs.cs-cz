@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b94ae83f2fb5f71abb8cb3a5c96aac9e268fc5db
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 25861b2635605042acc1bf81f3f7a4739e678522
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405285"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57493108"
 ---
 # <a name="icordebugassemblyenumnext-method"></a>ICorDebugAssemblyEnum::Next – metoda
-Získá zadaný počet sestavení z kolekce, počínaje na aktuální pozici kurzoru.  
+Získá zadaný počet sestavení z kolekce, spouští se na aktuální pozici kurzoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +38,18 @@ HRESULT Next (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `celt`  
- [v] Číslo sestavení, které mají být načteny.  
+ [in] Počet sestavení, který se má načíst.  
   
  `values`  
- [out] Pole ukazatele, každý z nich odkazuje na objekt ICorDebugAssembly, který představuje sestavení.  
+ [out] Pole ukazatelů, každý z nich odkazuje na objekt icordebugassembly –, který představuje sestavení.  
   
  `pceltFetched`  
- [out] Ukazatel na číslo sestavení, ve skutečnosti vrátila. Tato hodnota může být null. Pokud `celt` je jedna.  
+ [out] Ukazatel na počet skutečně vrácených sestavení. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

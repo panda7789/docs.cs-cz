@@ -2,17 +2,20 @@
 title: Machine learning Glosář - ML.NET
 description: Glosář důležité terminologie strojového učení, které jsou užitečné při vytváření vlastních modelů ML.NET.
 ms.custom: seodec18
-ms.date: 12/20/2018
-ms.openlocfilehash: 3dfa17e9264bf913465adb63ce0a90a9d196e617
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.date: 03/05/2019
+ms.openlocfilehash: 52f4aa7300edbbdabcc37d7710654dab455d27b0
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092433"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57498897"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Machine learning Glosář termínů důležité
 
 V následujícím seznamu je kompilace podmínek důležité machine learning, které jsou užitečné při vytváření vlastních modelů ML.NET.
+
+> [!NOTE]
+> Tato dokumentace odkazuje na ML.NET, která je aktuálně ve verzi Preview. Materiál může být mohou změnit. Další informace najdete v tématu [ML.NET ÚVOD](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
 
 ## <a name="accuracy"></a>Přesnost
 

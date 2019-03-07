@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aa558bf58f3033cc39a2b52d99e3a5329d9e99bd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 00e747e43f67533771665313f4d420e4725945cd
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413030"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57485347"
 ---
 # <a name="icordebugmodulegetglobalvariablevalue-method"></a>ICorDebugModule::GetGlobalVariableValue – metoda
-Získá hodnotu zadaného globální proměnné.  
+Získá hodnotu zadané globální proměnné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,15 +36,15 @@ HRESULT GetGlobalVariableValue(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `fieldDef`  
- [v] `mdFieldDef` Token, který odkazuje na metadat, která popisují globální proměnné.  
+ [in] `mdFieldDef` Token, který odkazuje na metadata popisující globální proměnnou.  
   
  `ppValue`  
- [out] Ukazatel na adresu ICorDebugValue objekt, který představuje hodnotu zadanou globální proměnnou.  
+ [out] Ukazatel na adresu objektu ICorDebugValue představující hodnotu zadanou globální proměnnou.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 020df45f7f18a029f8c098fcc4dea1c131da017c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 55a91d8ea0679a2ee82af48ffa276e35fe329725
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54706914"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57501939"
 ---
 # <a name="icordebugvalueenumnext-method"></a>ICorDebugValueEnum::Next – metoda
 Získá zadaný počet instancí "ICorDebugValue" z výčtu od aktuální pozice.  
@@ -38,7 +38,7 @@ HRESULT Next (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `celt`  
  [in] Počet `ICorDebugValue` instancí, který se má načíst.  
   

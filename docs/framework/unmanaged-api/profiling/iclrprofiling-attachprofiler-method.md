@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a3cfc222930359e1d7ab1a1720834e88c93c035e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7fcbc75d17f0c154671d5997d7e6cbb59ef8440e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54737254"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57468998"
 ---
 # <a name="iclrprofilingattachprofiler-method"></a>ICLRProfiling::AttachProfiler – metoda
 Připojí zadaný profiler do určeného procesu.  
@@ -39,7 +39,7 @@ HRESULT AttachProfiler(
   [in] UINT cbClientData);                          // optional  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `dwProfileeProcessID`  
  [in] Proces ID procesu, ke kterému by měl profiler připojen. Na 64bitovém počítači profilovaný proces bitové verze musí odpovídat počtu bitů aktivační proces, který volá `AttachProfiler`. Pokud uživatelský účet, pod kterým `AttachProfiler` nazývá má oprávnění správce, Cílový proces může být jakýkoli proces v systému. V opačném případě cílový proces musí být vlastněno stejným uživatelským účtem.  
   

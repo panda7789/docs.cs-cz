@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 15206fbd7724383b1ec6df123790d3171e58e9f7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e7a4e8c6fa91ee43c33fe0f99d50bd4b1af4a0fd
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33411915"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57481185"
 ---
 # <a name="icordebugframegetcode-method"></a>ICorDebugFrame::GetCode – metoda
-Získá ukazatel kódu přidružené k této rámce zásobníku.  
+Získá ukazatel na kód spojený s rámce zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT GetCode (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppCode`  
- [out] Ukazatel na adresu ICorDebugCode objekt, který představuje kód spojený s tohoto snímku.  
+ [out] Ukazatel na adresu ICorDebugCode objekt, který představuje kód spojený s tohoto rámce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 30610311d2c48f15ebd85910557892784c0cfe85
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b0cb64653df7b59703ef87610bcc686a66205e8b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54542493"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57485224"
 ---
 # <a name="strongnamekeygen-function"></a>StrongNameKeyGen – funkce
 Vytvoří nový pár veřejného a privátního klíče pro použití silným názvem.  
@@ -39,7 +39,7 @@ BOOLEAN StrongNameKeyGen (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `wszKeyContainer`  
  [in] Název požadovaný kontejner klíče. `wszKeyContainer` musí být neprázdný řetězec, nebo null, pokud chcete generovat dočasný název.  
   

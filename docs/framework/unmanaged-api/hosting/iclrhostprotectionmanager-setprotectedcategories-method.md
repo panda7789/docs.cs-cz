@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6e34c14ce9f063653c9d0018733f93e398641355
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 642d807fe7cb0cadb4d6fc5d8c390bf83f65d165
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54569846"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57496297"
 ---
 # <a name="iclrhostprotectionmanagersetprotectedcategories-method"></a>ICLRHostProtectionManager::SetProtectedCategories – metoda
 Určuje, které kategorie spravované typy a členy by měl být blokovaný spouštění v částečně důvěryhodným kódem.  
@@ -35,7 +35,7 @@ HRESULT SetProtectedCategories (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `categories`  
  [in] Kombinace [eapicategories –](../../../../docs/framework/unmanaged-api/hosting/eapicategories-enumeration.md) hodnoty, která kategorie spravované typy a členy, které by měl být blokovaný spouštění v částečně důvěryhodným kódem.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1062b3a74a9f10a6186ef320a97c08e6fab09545
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.openlocfilehash: 490d78cbc8724e12dff8ac24c81e499268e4ed6c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56303982"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487752"
 ---
 # <a name="corbindtocurrentruntime-function"></a>CorBindToCurrentRuntime – funkce
 Načte modul CLR (CLR) do procesu pomocí informací o verzi uložených v souboru XML. Formát souboru XML je Modelováno podle konfiguračního souboru standardní aplikace. Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../../docs/framework/configure-apps/file-schema/index.md).  
@@ -40,7 +40,7 @@ HRESULT CorBindToCurrentRuntime (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pwszFileName`  
  [in] Název konfiguračního souboru aplikace, která určuje verzi modulu CLR pro načtení. Pokud název souboru není plně kvalifikovaná, předpokládá se, že se ve stejném adresáři jako spustitelný soubor uskutečněním hovoru.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 43a895446e0070476bde3d15d332f010265176e7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5848a14a20b63ffbf806bb56886b75360323b698
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54515034"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57496180"
 ---
 # <a name="imetadataassemblyimportenumfiles-method"></a>IMetaDataAssemblyImport::EnumFiles – metoda
 Vytvoří výčet souborů odkazovat v aktuálním manifest sestavení.  
@@ -38,7 +38,7 @@ HRESULT EnumFiles (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `phEnum`  
  [out v] Ukazatel na enumerátor. Musí to být hodnota null pro první volání této metody.  
   

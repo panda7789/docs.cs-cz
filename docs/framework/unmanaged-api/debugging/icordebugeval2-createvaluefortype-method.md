@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 683457c249915708becadaeda9dec265666e2023
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b27e40618d6128c21e99745ca45e139a9c21c843
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412104"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57475031"
 ---
 # <a name="icordebugeval2createvaluefortype-method"></a>ICorDebugEval2::CreateValueForType – metoda
-Získá ukazatel na nové ICorDebugValue zadaného typu, s počáteční hodnotou nula nebo hodnotu null.  
+Získá ukazatel na novou ICorDebugValue zadaného typu, s počáteční hodnotou nula nebo hodnotu null.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,20 +36,20 @@ HRESULT CreateValueForType (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pType`  
- [v] Ukazatel na ICorDebugType objekt, který představuje typ.  
+ [in] Ukazatel na objekt, který představuje typ ICorDebugType.  
   
  `ppValue`  
  [out] Ukazatel na adresu `ICorDebugValue` objekt, který představuje hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- `CreateValueForType` Umožňuje zobecnit [icordebugeval::createvalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md) tím, že se k zadání typu libovolného objektu, včetně sestavený typy, jako `List<int>`. Jediným účelem: Tato metoda je ke generování hodnotu, která se dá předat do vyhodnocení funkce.  
+ `CreateValueForType` zobecňuje [icordebugeval::createvalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md) , neboť umožňuje určit typ libovolného objektu, včetně vytvořený typy, jako `List<int>`. Jediným účelem: Tato metoda se má generovat hodnotu, která může být předán vyhodnocení funkce.  
   
- Typ musí být třídu nebo typ hodnoty. Tuto metodu nelze použít k vytvoření hodnoty pole nebo hodnoty řetězce.  
+ Typ musí být třída nebo hodnotového typu. Tuto metodu nelze použít k vytvoření hodnoty pole nebo řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

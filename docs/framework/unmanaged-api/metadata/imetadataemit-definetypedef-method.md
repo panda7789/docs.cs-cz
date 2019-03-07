@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4a1da4015a202debe1d864f3c0135cc296ce6fce
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bf2ca9719cdf62637292bdb39437d36f4b3fcd49
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54605473"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57494401"
 ---
 # <a name="imetadataemitdefinetypedef-method"></a>IMetaDataEmit::DefineTypeDef – metoda
 Vytvoří definici typu pro společný typ modulu runtime jazyka a získá token metadat pro tuto definici typu.  
@@ -39,7 +39,7 @@ HRESULT DefineTypeDef (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `szTypeDef`  
  [in] Název typu v kódování Unicode.  
   

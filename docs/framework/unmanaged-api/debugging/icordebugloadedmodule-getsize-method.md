@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: aaa0e5c0-be9d-4fe1-8418-5295b9b184d6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e4c4888419bb13db43a4a15d98965cc8d3cb8e77
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ce937b28d705fc35165368fa81a376facce18a30
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54515576"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57476500"
 ---
 # <a name="icordebugloadedmodulegetsize-method"></a>Metoda ICorDebugLoadedModule::GetSize
 Získá velikost v bajtech načteného modulu.  
@@ -22,7 +22,7 @@ HRESULT GetSize(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pcBytes`  
  [out] Ukazatel na počet bajtů v načteného modulu.  
   

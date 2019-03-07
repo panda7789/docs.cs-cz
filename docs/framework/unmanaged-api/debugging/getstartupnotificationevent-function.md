@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3692471e0652a1a812b1d0cbed9e38cc32112ef4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8ed1db49be78d7d16648a9ef9735e79ef1b3ab98
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33404307"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487325"
 ---
 # <a name="getstartupnotificationevent-function"></a>GetStartupNotificationEvent – funkce
-Vytvoří nebo otevře popisovač události, který se bude dát signál při jakékoli modul common language runtime (CLR), se načítá v zadaný cílový proces.  
+Vytvoří nebo otevře popisovač události, která bude být signalizován při libovolné CLR (CLR), který se načítá do zadaného cílového procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,30 +38,30 @@ HRESULT GetStartupNotificationEvent
     );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `debuggeePID`  
- [v] Proces identifikátor tento cílový proces, ze kterého chcete dostávat oznámení spuštění CLR.  
+ [in] Zpracovat identifikátor cílového procesu, ze kterého chcete dostávat oznámení při spuštění modulu CLR.  
   
  `phStartupEvent`  
- [out] Ukazatel na popisovač, který bude signál pomocí modulu CLR při spuštění.  
+ [out] Ukazatel na popisovač, který bude signalizován pomocí modulu CLR při spuštění.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Byly úspěšně načteny popisovač událost upozornění na spuštění.  
+ Byly úspěšně načteny popisovač události oznámení při spuštění.  
   
  E_INVALIDARG  
- `phStartupEvent` má hodnotu null nebo `debuggeePID` neodkazuje na procesu, který je aktuálně spuštěna.  
+ `phStartupEvent` má hodnotu null nebo `debuggeePID` neodkazuje na proces, který aktuálně běží.  
   
- E_FAIL (nebo ostatní návratové kódy E_)  
- Nepodařilo se získat popisovač událost upozornění na spuštění.  
+ E_FAIL (nebo jiné E_ návratové kódy)  
+ Nepovedlo se získat popisovač události oznámení při spuštění.  
   
 ## <a name="remarks"></a>Poznámky  
- V operačním systému Windows `debuggeePID` mapuje operační systém zpracovat identifikátor.  
+ V operačním systému Windows `debuggeePID` mapuje na operační systém zpracovávat identifikátor.  
   
- Událost signalizace před spuštěním spravované, že je kód spuštěn pomocí modulu CLR, který signál události.  
+ Událost je signalizována před jakoukoli Spravované, že kód je proveden součástí CLR, který signál události.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** dbgshim.h  
   

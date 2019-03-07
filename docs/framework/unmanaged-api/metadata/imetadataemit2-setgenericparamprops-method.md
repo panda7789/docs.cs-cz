@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4c998d70fa5dd41ab4c1656f129bb77767a8ab97
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 406a8ea4600c1e5ef55c0d905ff3aa4a30d068e7
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54574622"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57485210"
 ---
 # <a name="imetadataemit2setgenericparamprops-method"></a>IMetaDataEmit2::SetGenericParamProps – metoda
 Nastavuje hodnoty vlastností pro obecný parametr definice odkazuje zadaný token.  
@@ -39,7 +39,7 @@ HRESULT SetGenericParamProps (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `gp`  
  [in] Token pro definice obecných parametrů, pro kterou chcete nastavit hodnoty.  
   

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c69d1f83a4591df4d2dcb7fb9724fa582ea28387
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 078dfd7162c250f0279b8bc372aeb39662aa0119
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413576"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57498533"
 ---
 # <a name="icordebugheapvalue2createhandle-method"></a>ICorDebugHeapValue2::CreateHandle – metoda
-Vytvoří zadaného typu pro hodnotu halda představuje tento objekt icordebugheapvalue2 – popisovač.  
+Vytvoří popisovač haldy hodnoty reprezentovaný tímto objektem icordebugheapvalue2 – zadaného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,20 +36,20 @@ HRESULT CreateHandle (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `type`  
- [v] Hodnota CorDebugHandleType – výčet, který určuje typ popisovače, který se má vytvořit.  
+ [in] Hodnota cordebughandletype – výčet, který určuje typ popisovače, který se má vytvořit.  
   
  `ppHandle`  
- [out] Ukazatel na adresu icordebughandlevalue – objekt, který představuje nový popisovač pro tuto hodnotu haldy.  
+ [out] Ukazatel na adresu icordebughandlevalue – objekt, který reprezentuje nový popisovač pro tuto hodnotu haldy.  
   
 ## <a name="remarks"></a>Poznámky  
- Popisovač budou vytvořeny v doméně aplikace, která je přidružená hodnota haldy a se zneplatní. Pokud doménu aplikace získá odpojen.  
+ Popisovač se vytvoří v aplikační doméně, která souvisí s hodnotou haldy a už nebudou platné, pokud získá uvolněné doméně aplikace.  
   
- Více volání této funkce pro stejnou hodnotu haldy vytvoří více obslužných rutin. Protože popisovače vliv na výkon systému uvolňování paměti, měli omezit ladicího programu samotné relativně malý počet popisovače (o 256), které jsou aktivní v čase.  
+ Více volání této funkce pro stejnou hodnotu haldy vytvoří více popisovačů. Protože popisovače vliv na výkon systému uvolňování paměti, ladicí program by měl omezit relativně malý počet popisovačů (přibližně 256), které jsou aktivní v čase.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d4326c6d8a3ee780cf63652badc8c527f55a075c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b374720bd7bdad48222da006b809702de6462a62
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420814"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57472782"
 ---
 # <a name="icordebugprocess2setunmanagedbreakpoint-method"></a>ICorDebugProcess2::SetUnmanagedBreakpoint – metoda
-Nastaví nespravované zarážek na posunu zadaný nativních bitových kopií.  
+Nastaví nespravované zarážku posunem zadaným nativních bitových kopií.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,24 +39,24 @@ HRESULT SetUnmanagedBreakpoint (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `address`  
- [v] A `CORDB_ADDRESS` objekt, který určuje posun nativních bitových kopií.  
+ [in] A `CORDB_ADDRESS` objekt, který určuje posun nativních bitových kopií.  
   
  `bufsize`  
- [v] Velikost v bajtech z `buffer` pole.  
+ [in] Velikost v bajtech, nástroje `buffer` pole.  
   
  `buffer`  
- [out] Pole, které obsahuje operační kód, který se nahrazuje zarážku.  
+ [out] Pole, která obsahuje operační kód, který se nahrazuje zarážku.  
   
  `bufLen`  
  [out] Ukazatel na počet bajtů vrácených v `buffer` pole.  
   
 ## <a name="remarks"></a>Poznámky  
- Je-li posun nativních bitových kopií je v rámci common language runtime (CLR), zarážce budou ignorovány. To umožňuje CLR, aby se zabránilo odeslání zarážku – out-of-band zarážce nastavena pomocí ladicího programu.  
+ Pokud nativních bitových kopií posun v rámci common language runtime (CLR), zarážka budou ignorovány. To umožňuje modulu CLR, aby odesílání out-of-band zarážky, pokud je nastavena zarážka ladicím programem.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

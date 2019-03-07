@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d725110dd6bae2047ff680b4caa02f5583903ed6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2204ee8adaf433152b203cbe93f8db9bb45de53c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54591403"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57498026"
 ---
 # <a name="functiontailcall3-function"></a>FunctionTailcall3 – funkce
 Oznámí profileru, že aktuálně prováděné funkce se chystá provést volání funkce tail do jiné funkce.  
@@ -32,7 +32,7 @@ Oznámí profileru, že aktuálně prováděné funkce se chystá provést volá
 void __stdcall FunctionTailcall3 (FunctionOrRemappedID functionOrRemappedID);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `functionOrRemappedID`  
  [in] Identifikátor aktuálně prováděné funkci, která se chystá provést tail volání.  
   

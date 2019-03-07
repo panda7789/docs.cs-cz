@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: b5382965-0053-47cf-b92f-862860275a01
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d5fe3d3b913724729bb7cc8582450dfb6f50ee53
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 19cccc5bcec82b04a337aa0d3913fede0a435ae8
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54223192"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492254"
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (linker sestavení)
 
@@ -33,7 +33,7 @@ V příkazovém řádku zadejte následující:
 al sources options
 ```
 
-#### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
 Můžete zadat jednu nebo víc z následujících `sources`.
 
@@ -69,12 +69,12 @@ Můžete zadat následující `options`; je nutné zadat **/out**.
 |**/ Platform:** `text`|Omezuje platformy, na kterých lze tento kód spustit. Musí být jedna z možností x86, Itanium, x64, anycpu (výchozí) nebo anycpu32bitpreferred.|
 |**/ produktu [uct]:** `text`|Určuje řetězec pro **produktu** pole v sestavení. Vložit do dvojitých uvozovek ("") Pokud `text` obsahuje mezery. Tento řetězec je vlastní atribut sestavení a lze ho zobrazit pomocí reflexe.<br /><br /> Pokud nezadáte **/win32res**, **/product** se zobrazí v Průzkumníku souborů jako Win32 **název produktu** prostředků.<br /><br /> Pokud je text prázdný řetězec, Win32 **název produktu** prostředek se zobrazí jako jedna mezera.<br /><br /> Pokud zadáte **/win32res**, **/product** neovlivní informace prostředků systému Win32.<br /><br /> Tuto možnost lze také nastavit jako vlastní atribut (<xref:System.Reflection.AssemblyProductAttribute>) ve zdrojovém kódu pro jakýkoli modul MSIL.|
 |**/ productv [erze]:** `text`|Určuje řetězec pro **verze produktu** pole v sestavení. Vložit do dvojitých uvozovek ("") Pokud `text` obsahuje mezery. Tento řetězec je vlastní atribut sestavení a lze ho zobrazit pomocí reflexe.<br /><br /> Pokud nezadáte **/win32res**, **/productversion** se použije jako Win32 **verze produktu** prostředků. Pokud nezadáte **/productversion**, Win32 **verze produktu** vyplněn prostředkem Win32 **verze souboru** prostředků.<br /><br /> Pokud zadáte **/win32res**, **/productversion** neovlivní informace prostředků systému Win32.<br /><br /> Tuto možnost lze také nastavit jako vlastní atribut (<xref:System.Reflection.AssemblyInformationalVersionAttribute>) ve zdrojovém kódu pro jakýkoli modul MSIL.|
-|**/t [arget]:** `lib[rary]` &#124; `exe`&#124; `win[exe]`|Určuje formát výstupního souboru: `lib[rary]` (kód knihovny), `exe` (konzolové aplikace), nebo `win[exe]` (aplikace založené na Windows). Výchozí hodnota je `lib[rary]`.|
+|**/t[arget]:** `lib[rary]` &#124; `exe` &#124; `win[exe]`|Určuje formát výstupního souboru: `lib[rary]` (kód knihovny), `exe` (konzolové aplikace), nebo `win[exe]` (aplikace založené na Windows). Výchozí hodnota je `lib[rary]`.|
 |**/ Template:** `filename`|Určuje sestavení, `filename`, ze kterého se dědí všechna metadata sestavení s výjimkou pole jazykové verze.<br /><br /> Sestavení, které vytvoříte pomocí **/Template** bude satelitní sestavení.|
 |**/ Title:** `text`|Určuje řetězec pro **název** pole v sestavení. Vložit do dvojitých uvozovek ("") Pokud `text` obsahuje mezery. Tento řetězec je vlastní atribut sestavení a lze ho zobrazit pomocí reflexe.<br /><br /> Pokud nezadáte **/win32res**, **/title** se zobrazí v Průzkumníku souborů jako Win32 **popis** prostředku, který slouží prostředí jako popisný název aplikace. Také se zobrazí na **otevřít v** podnabídky místní nabídku pro typ souboru, pro který existuje více podporovaných aplikací.<br /><br /> Pokud je text prázdný řetězec, Win32 **popis** prostředek se zobrazí jako jedna mezera.<br /><br /> Pokud zadáte **/win32res**, **/title** neovlivní informace prostředků systému Win32.<br /><br /> Tuto možnost lze také nastavit jako vlastní atribut (<xref:System.Reflection.AssemblyTitleAttribute>) ve zdrojovém kódu pro jakýkoli modul MSIL.|
-|**/Trade [označit]:** `text`|Určuje řetězec pro **ochranná známka** pole v sestavení. Vložit do dvojitých uvozovek ("") Pokud `text` obsahuje mezery. Tento řetězec je vlastní atribut sestavení a lze ho zobrazit pomocí reflexe.<br /><br /> Pokud nezadáte **/win32res**, **/trademark** se zobrazí v Průzkumníku souborů jako Win32 **ochranná známka** prostředků.<br /><br /> Pokud je text prázdný řetězec, Win32 **ochranná známka** prostředek se zobrazí jako jedna mezera.<br /><br /> Pokud zadáte **/win32res**, **/trademark** neovlivní informace prostředků systému Win32.<br /><br /> Tuto možnost lze také nastavit jako vlastní atribut (<xref:System.Reflection.AssemblyTrademarkAttribute>) ve zdrojovém kódu pro jakýkoli modul MSIL.|
+|**/trade[mark]:** `text`|Určuje řetězec pro **ochranná známka** pole v sestavení. Vložit do dvojitých uvozovek ("") Pokud `text` obsahuje mezery. Tento řetězec je vlastní atribut sestavení a lze ho zobrazit pomocí reflexe.<br /><br /> Pokud nezadáte **/win32res**, **/trademark** se zobrazí v Průzkumníku souborů jako Win32 **ochranná známka** prostředků.<br /><br /> Pokud je text prázdný řetězec, Win32 **ochranná známka** prostředek se zobrazí jako jedna mezera.<br /><br /> Pokud zadáte **/win32res**, **/trademark** neovlivní informace prostředků systému Win32.<br /><br /> Tuto možnost lze také nastavit jako vlastní atribut (<xref:System.Reflection.AssemblyTrademarkAttribute>) ve zdrojovém kódu pro jakýkoli modul MSIL.|
 |**/v [erze]:** `version`|Určuje informace o verzi pro toto sestavení. Formát řetězce verze je `major`.`minor`. `build`. `revision`. Výchozí hodnota je 0.<br /><br /> Pokud zadáte **/Version**, je nutné zadat `major`. Pokud zadáte `major` a `minor`, můžete zadat hvězdičku (\*) pro `build`. To způsobí, že `build` se rovná počtu dní od 1. ledna 2000, místního času a `revision` se rovná počtu sekund od půlnoci aktuálního dne, místního času, děleno 2.<br /><br /> Pokud zadáte `major`, `minor`, a `build`, můžete zadat hvězdičku pro `revision`. To způsobí, že `revision` se rovná počtu sekund od půlnoci aktuálního dne, místního času, děleno 2.<br /><br /> Platné řetězce verze jsou tedy tyto:<br /><br /> X<br /><br /> X.X<br /><br /> X.X.\*<br /><br /> X.X.X<br /><br /> X.X.X.\*<br /><br /> X.X.X.X<br /><br /> kde X je libovolná konstanta typu unsigned short s výjimkou 65535 (0–65534).<br /><br /> Pokud nezadáte **/win32res**, **/Version** se použije jako Win32 **verze sestavení** prostředků.<br /><br /> Pokud nezadáte **/win32res**, **/productversion**, a **/fileversion**, **/Version** se použije pro  **Verze sestavení**, verze souboru a **verze produktu** prostředků Win32.<br /><br /> Pokud zadáte **/win32res**, **/Version** neovlivní informace prostředků systému Win32.<br /><br /> Tuto možnost lze také nastavit jako vlastní atribut (<xref:System.Reflection.AssemblyVersionAttribute>) ve zdrojovém kódu pro jakýkoli modul MSIL.|
-|**/ win32icon:** `filename`|Vloží soubor .ico do sestavení. Soubor .ico dává výstupnímu souboru požadovaný vzhled v Průzkumníku souborů.|
+|**/win32icon:** `filename`|Vloží soubor .ico do sestavení. Soubor .ico dává výstupnímu souboru požadovaný vzhled v Průzkumníku souborů.|
 |**/ win32res:** `filename`|Vloží prostředek systému Win32 (soubor .res) do výstupního souboru. Soubor prostředků Win32 lze vytvořit pomocí nástroje Resource Compiler. Nástroj Resource Compiler je vyvolán při kompilaci programu Visual C++; soubor .res je vytvořen ze souboru .rc.|
 |`@filename`|Určuje soubor odpovědí, který obsahuje *Al.exe* příkazy.<br /><br /> Příkazy v souboru odpovědí se mohou objevit na samostatných řádcích nebo na stejném řádku, oddělené jednou nebo více mezerami.|
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|
@@ -176,7 +176,7 @@ al t2.netmodule /target:exe /out:t2a.exe /main:MyClass.Main
 ## <a name="see-also"></a>Viz také:
 
 - [Nástroje](../../../docs/framework/tools/index.md)
-- [*Sn.exe* (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)
+- [*Sn.exe* (Strong Name Tool)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)
 - [*Gacutil.exe* (nástroj globální mezipaměti sestavení)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)
 - [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

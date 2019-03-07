@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9d02a68e80e34be906e9fe09f3457a0f2214c6f0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 48650a370f7d15724e20850e9d3b47dc8215f960
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405064"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57498351"
 ---
 # <a name="icordebugchaingetreason-method"></a>ICorDebugChain::GetReason – metoda
-Získá důvod genesis toto volání řetězu.  
+Získá důvod genesis tento řetěz volání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT GetReason (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pReason`  
- [out] Ukazatel na hodnotu určující, důvod genesis toto volání řetězu CorDebugChainReason – výčet (bitovou kombinaci).  
+ [out] Ukazatel na hodnotu (bitová kombinace) cordebugchainreason – výčet, který označuje důvod genesis tento řetěz volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

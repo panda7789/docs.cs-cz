@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 580c7b4dcd63f83e113a5317c242b7e66cfb3f5a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 76100116f2ca3a9b9a99477ca2352d5fa1335ab2
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403413"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57502251"
 ---
 # <a name="icordebugarrayvaluegetelementatposition-method"></a>ICorDebugArrayValue::GetElementAtPosition – metoda
-Získá element na dané pozici, považuje pole jako pole jednorozměrná, počítáno od nuly.  
+Získá prvek na dané pozici, zpracuje pole jako pole s nulovým základem, jednorozměrné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,18 +36,18 @@ HRESULT GetElementAtPosition (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `nPosition`  
- [v] Pozice elementu, který chcete načíst.  
+ [in] Pozice prvku, který se má načíst.  
   
  `ppValue`  
  [out] Ukazatel na adresu ICorDebugValue objekt, který představuje hodnotu elementu.  
   
 ## <a name="remarks"></a>Poznámky  
- Rozložení pole s více dimenze odpovídá C++ styl rozložení pole.  
+ Rozložení multidimenzionální pole se řídí styl C++ pole rozložení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

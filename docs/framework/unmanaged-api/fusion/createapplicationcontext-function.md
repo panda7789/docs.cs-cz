@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 709769c336d875ee5ddd00b4e1cf919c61e2c394
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a6b5aa78efcc19f1fc50c8e9bfc5105f9afd7d50
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54746619"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57495205"
 ---
 # <a name="createapplicationcontext-function"></a>CreateApplicationContext – funkce
 Tato funkce podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.  
@@ -35,7 +35,7 @@ HRESULT CreateApplicationContext (
  );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pName`  
  [in] Ukazatel na popisný název.  
   

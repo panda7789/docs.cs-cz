@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: af02460f-2a45-496e-bc4e-a1ac4f80fe11
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 594fcb74988cadaa4801fc6f0bb2d05b27a7f441
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1136b01aba5f2143c6d26388568df0b60a5db123
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54563389"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492176"
 ---
 # <a name="icordebugdatatarget2enumeratethreadids-method"></a>ICorDebugDataTarget2::EnumerateThreadIDs – metoda
 Vrátí seznam hodnot aktivní vlákno ID.  
@@ -24,7 +24,7 @@ HRESULT EnumerateThreadIDs(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  cThreadIDs  
  [in] Maximální počet vláken, jejichž ID může být vrácen.  
   

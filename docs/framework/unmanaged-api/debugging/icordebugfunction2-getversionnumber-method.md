@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fdd2151c4886959647de4f9e27a20a93ffc07429
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6cc9c2af62184c83857b82445941f6087a05c2c3
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420050"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57497168"
 ---
 # <a name="icordebugfunction2getversionnumber-method"></a>ICorDebugFunction2::GetVersionNumber – metoda
-Získá verzi aplikace upravit a pokračovat v této funkce.  
+Získá verzi této funkce upravit a pokračovat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,21 +35,21 @@ HRESULT GetVersionNumber (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pnVersion`  
- [out] Ukazatel na celé číslo, které je funkce, která je reprezentována tento objekt ICorDebugFunction2 číslo verze.  
+ [out] Ukazatel na celé číslo, které je číslo verze, která je reprezentována tímto objektem icordebugfunction2 – funkce  
   
 ## <a name="remarks"></a>Poznámky  
- Modul runtime uchovává informace o počtu úprav, které byly provedeny na každý modul během ladicí relace. Číslo verze funkce je jedním více než počet zavedena funkce upravit. Funkce na původní verze je verze 1. Číslo je zvýšena pro modul pokaždé, když [icordebugmodule2::applychanges –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule2-applychanges-method.md) je volána v tomto modulu. Proto pokud byl nahrazen tělo funkce ve volání první a třetí `ICorDebugModule2::ApplyChanges`, `GetVersionNumber` může vrátit verze 1, 2 nebo 4 pro tuto funkci, ale verze 3. (Této funkce by měla mít žádná verze 3.)  
+ Modul runtime uchovává informace o počtu úpravy, které byly provedeny pro každý modul během relace ladění. Číslo verze funkce je jeden vyšší než počet úpravy funkce zavedena. Původní verze této funkce je verze 1. Počet se zvýší pro modul pokaždé, když [icordebugmodule2::applychanges –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule2-applychanges-method.md) je volána v tomto modulu. Proto pokud tělo funkce jsou nahrazené v první a třetí volání `ICorDebugModule2::ApplyChanges`, `GetVersionNumber` může vrátit verze 1, 2 nebo 4 pro tuto funkci, ale ne verzi 3. (Tato funkce nemá žádné verze 3.)  
   
- Číslo verze je nezávisle sledovaný pro každý modul. Ano Pokud provádíte čtyři úpravy v modulu 1 a žádná modulu 2, přidělí další úpravy v modulu 1 číslo verze 6 k všechny upravená funkce v modulu 1. Pokud stejný upravit úpravy 2 modulu, funkce v modulu 2 dostane číslo verze 2.  
+ Číslo verze je sledována samostatně pro každý modul. Proto pokud provádění čtyři úprav v modulu 1 a žádné v modulu 2, další úpravy na modulu 1 přiřadí číslo verze 6 všechny upravené funkce v modulu 1. Pokud stejný upravit dnešní 2 modulu, funkce v modulu 2 se číslo verze 2.  
   
- Číslo verze získat `GetVersionNumber` metoda může být nižší než získat [icordebugfunction::getcurrentversionnumber –](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getcurrentversionnumber-method.md).  
+ Získá číslo verze `GetVersionNumber` metoda může být nižší než, která získá [icordebugfunction::getcurrentversionnumber –](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-getcurrentversionnumber-method.md).  
   
- [Icordebugcode::getversionnumber –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getversionnumber-method.md) metoda provádí stejné operace jako `ICorDebugFunction2::GetVersionNumber`.  
+ [Icordebugcode::getversionnumber –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getversionnumber-method.md) metoda provede stejné operace jako `ICorDebugFunction2::GetVersionNumber`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

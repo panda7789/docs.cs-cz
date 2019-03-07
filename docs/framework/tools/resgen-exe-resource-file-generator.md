@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cbb939228791fa36ee64e499a2ba55dc7ce899ee
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b134b4c875a2360712d14bc0b6c11ad0e13a89e4
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54614573"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57477476"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe (generátor zdrojových souborů)
 Nástroj Resource File Generator (Resgen.exe) převádí textové soubory (.txt nebo .restext) a soubory ve formátu prostředků založeném na jazyce XML (.resx) na binární soubory modulu CLR (.resources), které mohou být vloženy do binárního spustitelného souboru modulu nebo satelitního sestavení. (Viz [vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).)  
@@ -69,7 +69,7 @@ resgen  [/define:symbol1[,symbol2,...]] [/useSourcePath] filename.extension  | /
 resgen filename.extension [outputDirectory]  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
   
 |Parametr nebo přepínač|Popis|  
 |-------------------------|-----------------|  
@@ -108,10 +108,10 @@ resgen filename.extension [outputDirectory]
   
 |Převod z|Na textový soubor|Na soubor .resx|Na soubor .resw|Na soubor .resources|  
 |------------------|------------------|-------------------|-------------------|------------------------|  
-|Textový soubor (.txt nebo .restext)|--|Žádné problémy|Nepodporováno|Žádné problémy|  
-|Soubor .resx|Obsahuje-li soubor neřetězcové prostředky (včetně odkazů na soubory), převod se nezdaří.|--|Nepodporováno|Žádné problémy|  
-|Soubor .resources|Obsahuje-li soubor neřetězcové prostředky (včetně odkazů na soubory), převod se nezdaří.|Žádné problémy|Nepodporováno|--|  
-|Sestavení .exe nebo .dll|Nepodporováno|Nepodporováno|Pouze řetězcové prostředky (včetně názvů cest) jsou rozpoznány jako prostředky|Nepodporováno|  
+|Textový soubor (.txt nebo .restext)|--|Žádné problémy|Není podporováno|Žádné problémy|  
+|Soubor .resx|Obsahuje-li soubor neřetězcové prostředky (včetně odkazů na soubory), převod se nezdaří.|--|Není podporováno|Žádné problémy|  
+|Soubor .resources|Obsahuje-li soubor neřetězcové prostředky (včetně odkazů na soubory), převod se nezdaří.|Žádné problémy|Není podporováno|--|  
+|Sestavení .exe nebo .dll|Není podporováno|Není podporováno|Pouze řetězcové prostředky (včetně názvů cest) jsou rozpoznány jako prostředky|Není podporováno|  
   
 ## <a name="performing-specific-resgenexe-tasks"></a>Provádění konkrétních úloh nástroje Resgen.exe  
  Resgen.exe lze použít různými způsoby: Chcete-li zkompilovat soubor prostředků založený na textu nebo založený na formátu XML do binárního souboru, k převodu mezi formáty souborů prostředků a ke generování třídy, která obaluje <xref:System.Resources.ResourceManager> funkce a poskytuje přístup k prostředkům. Tato část poskytuje podrobné informace o každém úkolu:  

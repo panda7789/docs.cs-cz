@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aec97ef36b73b1b789c819c4bca516d13ecf1051
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3983916f56e8451e7628db3902001bd13f503114
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54631201"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487925"
 ---
 # <a name="iceegengetsectiondatalen-method"></a>ICeeGen::GetSectionDataLen – metoda
 Získá délku zadaný oddíl.  
@@ -38,7 +38,7 @@ HRESULT GetSectionDataLen (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `section`  
  [in] Datové části, jehož délka budou načítat.  
   

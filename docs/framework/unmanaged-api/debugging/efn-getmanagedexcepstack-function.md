@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c1c05918965e40801757462ce53257bc36a5d8c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7e86a1d2dfeb0d36b369d3b6cd7ea985591b5959
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54587710"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57488393"
 ---
 # <a name="efngetmanagedexcepstack-function"></a>_EFN_GetManagedExcepStack – funkce
 Zadaný objekt na spravované výjimky adresu vrátí řetězec verzi obsažena v trasování zásobníku.  
@@ -37,7 +37,7 @@ HRESULT _EFN_GetManagedExcepStack(
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `Client`  
  [in] Klient, který se právě ladí.  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d85dcb462df0255ab5420db94f9d055cce2c78b5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5a26faf4f648107e7062a723663877b5b6a8e76e
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54616928"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57497155"
 ---
 # <a name="icorprofilercallbackthreadcreated-method"></a>ICorProfilerCallback::ThreadCreated – metoda
 Oznámí profileru, že vlákno vytvořil.  
@@ -34,7 +34,7 @@ HRESULT ThreadCreated(
     [in] ThreadID threadId);   
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `threadId`  
  [in] ID vlákna, který byl vytvořen.  
   

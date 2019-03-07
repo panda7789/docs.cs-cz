@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5a9e5a2f7baa1c15ac54950bf1bfc0d448d08f58
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6e887fb5f4f9667bed7eef4a84899f82cada0fcd
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54567788"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57489576"
 ---
 # <a name="imetadataimportisvalidtoken-method"></a>IMetaDataImport::IsValidToken – metoda
 Získá hodnotu označující, zda zadaný token obsahuje neplatný odkaz na objekt kódu.  
@@ -35,7 +35,7 @@ BOOL IsValidToken (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `tk`  
  [in] Token, který chcete zkontrolovat platnost odkazu pro.  
   

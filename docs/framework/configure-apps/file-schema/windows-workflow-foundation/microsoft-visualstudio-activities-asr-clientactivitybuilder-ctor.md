@@ -9,12 +9,12 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 6b44b13c-7a23-4df2-8f9f-45e2b1430002
-ms.openlocfilehash: b63f8917d7af21c165a16bd45a83e774bcec6e1c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: b44b20a83068278fb35345220f45051a7c4177f2
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54551602"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57498702"
 ---
 # <a name="microsoftvisualstudioactivitiesasrclientactivitybuilderctor"></a>Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder..ctor
 Vytvoří instanci [Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/microsoft-visualstudio-activities-asr-clientactivitybuilder.md) třídy.  
@@ -25,7 +25,7 @@ Vytvoří instanci [Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder]
 public ClientActivityBuilder(OperationDescription operationDescription, string configurationName, string proxyNamespace);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
   
 ## <a name="parameter-values"></a>Hodnoty parametru  
  *Popis operationDescription*  

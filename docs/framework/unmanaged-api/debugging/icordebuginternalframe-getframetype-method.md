@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3f7e5fceacc3fefa9267a9d7f989e745c392322e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a0b6f0550bad534379b562c3df9da9ab917f5270
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33414122"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57493034"
 ---
 # <a name="icordebuginternalframegetframetype-method"></a>ICorDebugInternalFrame::GetFrameType – metoda
-Získá typ této interní rámce.  
+Získá typ této vnitřní rámec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT GetFrameType (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pType`  
- [out] Ukazatel na hodnotu CorDebugInternalFrameType – výčet, který určuje typ interní rámce reprezentována to `ICorDebugInternalFrame` objektu.  
+ [out] Ukazatel na hodnotu cordebuginternalframetype – výčet, který označuje typ vnitřní rámec představovaného tímto rozhraním `ICorDebugInternalFrame` objektu.  
   
 ## <a name="remarks"></a>Poznámky  
- Typ interní rámce nebude nikdy STUBFRAME_NONE. Ladicí programy by měly řádně ignorovat nerozpoznané interní rámce typy.  
+ Typ vnitřní rámec již nikdy nebude STUBFRAME_NONE. Ladicí programy by měly řádně ignorovat nerozpoznaný snímek vnitřní typy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

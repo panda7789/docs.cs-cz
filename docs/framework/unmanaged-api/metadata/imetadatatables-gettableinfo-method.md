@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9bf3e5d427698673576f71e290fde54275b75317
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 876f74d7fe7555f71db0bd77e68f657dfc80b179
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54683453"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57478957"
 ---
 # <a name="imetadatatablesgettableinfo-method"></a>IMetaDataTables::GetTableInfo – metoda
 Získá název, velikost řádku, počet řádků, počet sloupců a index klíčový sloupec ze zadané tabulky.  
@@ -40,7 +40,7 @@ HRESULT GetTableInfo (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ixTbl`  
  [in] Identifikátor tabulky, jehož vlastnosti chcete vrátit.  
   

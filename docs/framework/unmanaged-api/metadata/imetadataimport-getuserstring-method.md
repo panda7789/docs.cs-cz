@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e806bae1911ea6ffc5bb6e9af76d99524636d39e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7d610385cfbfcb6a625e0e1893f97525f6f5430c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54491142"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57500600"
 ---
 # <a name="imetadataimportgetuserstring-method"></a>IMetaDataImport::GetUserString – metoda
 Získá reprezentována token metadat zadaného řetězcového literálu.  
@@ -38,7 +38,7 @@ HRESULT GetUserString (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `stk`  
  [in] Řetězec s tokenem pro vrácení přidružené řetězce pro.  
   

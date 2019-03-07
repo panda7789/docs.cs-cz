@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d1c3bcc0ed22fa970d92e2384277d0786016db19
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aeadcbd8f2d09320645c36fdc771cfb2cb976036
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402106"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471248"
 ---
 # <a name="icordebugassemblygetprocess-method"></a>ICorDebugAssembly::GetProcess – metoda
-Získá ukazatele rozhraní pro proces, ve kterém je spuštěna tato instance ICorDebugAssembly.  
+Získá ukazatel rozhraní k procesu, ve kterém je spuštěna tato ICorDebugAssembly instance.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT GetProcess (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppProcess`  
- [out] Ukazatel na ICorDebugProcess rozhraní, které představuje proces.  
+ [out] Ukazatel na icordebugprocess – rozhraní, která představuje proces.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

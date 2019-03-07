@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f050a3d9d37e43713c40896fb162bcf9932c6512
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ed5a7657affde335acf79952d77bbdb7ac42c7a0
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403367"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57490460"
 ---
 # <a name="icordebugchaingetcallee-method"></a>ICorDebugChain::GetCallee – metoda
-Získá řetězec, který byl volány tento řetězec.  
+Získá řetězec, který byl volán tento řetězec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT GetCallee (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppChain`  
- [out] Ukazatel na adresu ICorDebugChain objekt, který reprezentuje řetězu názvem. Pokud se tento řetězec je právě prováděných (tj. Pokud tento řetězec nečeká řetěz volané vrátit), `ppChain` bude mít hodnotu null.  
+ [out] Ukazatel na adresa icordebugchain – objekt, který představuje jen řetězce. Pokud se tento řetězec aktuálně spouští (to znamená, pokud se tento řetězec není čeká řetěz volané vrátit), `ppChain` bude mít hodnotu null.  
   
 ## <a name="remarks"></a>Poznámky  
- Tento řetězec bude čekat řetězu volané vrátit před obnoví spuštění. Řetězu názvem může být na jiné vlákno v případě Kódovaná volání mezi vlákny.  
+ Tento řetězec bude čekat volané řetězu vrátit předtím, než ji pokračuje v provádění. Volané řetězci může být v jiném vlákně, v případě zařazené volání mezi vlákny.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

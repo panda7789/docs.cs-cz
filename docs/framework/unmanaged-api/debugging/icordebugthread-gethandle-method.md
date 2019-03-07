@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 358597edc9fbc5203e5c00a5fb4d04019281060d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 900fece1dd29f73f77b85ff08e4deff1396f8aaf
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418269"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57484508"
 ---
 # <a name="icordebugthreadgethandle-method"></a>ICorDebugThread::GetHandle – metoda
-Získá aktuální popisovač pro aktivní součástí této ICorDebugThread.  
+Získá aktuální popisovač pro aktivní část této ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,17 +35,17 @@ HRESULT GetHandle (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `phThreadHandle`  
- [out] Ukazatel HTHREAD, který je popisovač active součástí tohoto podprocesu.  
+ [out] Ukazatel na HTHREAD, který popisovač aktivní součást toto vlákno.  
   
 ## <a name="remarks"></a>Poznámky  
- Popisovač může změnit, protože proces provede a mohou být různé pro různé části vlákno.  
+ Popisovač můžou změnit, protože proces spustí a může lišit pro různé části vlákna.  
   
- Tento popisovač je vlastníkem rozhraní API pro ladění. Ladicí program by měl duplicitní ho před jeho použitím.  
+ Tento popisovač vlastní rozhraní API pro ladění. Ladicí program by měl duplikovat před jeho použitím.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

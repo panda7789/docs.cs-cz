@@ -18,12 +18,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ec212bd999fe32e56a272c9bc3f39e19617a250
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6296a5c80587a6fd1a7b03e20ffdf7fd1316e9d2
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547762"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57502264"
 ---
 # <a name="createinstallreferenceenum-function"></a>CreateInstallReferenceEnum – funkce
 Získá ukazatel [iinstallreferenceenum –](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md) instanci, která představuje seznam aplikace odkazy na zadané sestavení.  
@@ -39,7 +39,7 @@ HRESULT CreateInstallReferenceEnum (
  );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppRefEnum`  
  [out] Vrácený `IInstallReferenceEnum` ukazatele.  
   

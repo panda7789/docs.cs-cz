@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 45d85be4e4987e5a5234ca2d57c85a56f9f544bc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a8602405a743f1ced6485d84a34a267771716d9b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54657022"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57469011"
 ---
 # <a name="imetadataemitmergeend-method"></a>IMetaDataEmit::MergeEnd – metoda
 Sloučení do aktuální obor oborů metadat zadán jeden nebo více předchozích volání [imetadataemit::merge –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-merge-method.md).  
@@ -33,7 +33,7 @@ Sloučení do aktuální obor oborů metadat zadán jeden nebo více předchozí
 HRESULT MergeEnd ();  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  Tato metoda nemá žádné parametry.  
   
 ## <a name="remarks"></a>Poznámky  

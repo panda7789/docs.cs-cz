@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 226f8c431b90d53366aa5e504101e7de581ec570
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ac40927ac9469e4a2fb74fb550287130b9bb9f83
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402467"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57481557"
 ---
 # <a name="icordebugchaingetstackrange-method"></a>ICorDebugChain::GetStackRange – metoda
 Získá rozsah adres segmentu zásobníku pro tento řetězec.  
@@ -36,18 +36,18 @@ HRESULT GetStackRange (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pStart`  
- [out] Ukazatel na `CORDB_ADDRESS` hodnotu, která je počáteční adresa segmentu zásobníku.  
+ [out] Ukazatel `CORDB_ADDRESS` hodnotu, která je počáteční adresu zásobníku segmentu.  
   
  `pEnd`  
- [out] Ukazatel na `CORDB_ADDRESS` hodnotu, která je koncová adresa segmentu zásobníku.  
+ [out] Ukazatel `CORDB_ADDRESS` hodnotu, která je koncová adresa segment zásobníku.  
   
 ## <a name="remarks"></a>Poznámky  
- Číselný rozsah má smysl pouze pro porovnání umístění rámce zásobníku. Nelze vytvořit žádný odhad o tom, co je ve skutečnosti uloženy v zásobníku.  
+ Číselný rozsah má smysl pouze pro porovnání umístění rámce zásobníku. Nemůžete nevyvozujte předpoklady o tom, co je ve skutečnosti uložené v zásobníku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f043fa541073402bee9fc4cf84e8151e6e0192f4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5b73a98542dfc6fa68e79655bc5538cf005e4636
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54549207"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492579"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (IL Assembler)
 
@@ -34,7 +34,7 @@ V příkazovém řádku zadejte následující:
 ilasm [options] filename [[options]filename...]
 ```
 
-#### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
 | Argument | Popis |
 | -------- | ----------- |

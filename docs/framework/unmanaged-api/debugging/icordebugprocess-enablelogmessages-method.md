@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d0dbac6570fc0af0452a0e44f838124afbf6a4fe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fe237ca01d409636f184930d26ca970d58e90437
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33419881"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57472949"
 ---
 # <a name="icordebugprocessenablelogmessages-method"></a>ICorDebugProcess::EnableLogMessages – metoda
-Povolí nebo zakáže přenos zpráv protokolu pro ladicí program.  
+Povolí nebo zakáže přenos zpráv protokolu v ladicím programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,15 +33,15 @@ Povolí nebo zakáže přenos zpráv protokolu pro ladicí program.
 HRESULT EnableLogMessages([in]BOOL fOnOff);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `fOnOff`  
- [v] `true` umožňuje přenos zpráv protokolu; `false` zakáže přenos.  
+ [in] `true` umožňuje přenos zprávy protokolu. `false` zakáže přenosu.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je platná pouze po [icordebugmanagedcallback::CreateProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) dojde k zpětného volání.  
+ Tato metoda je platná jenom po [icordebugmanagedcallback::CreateProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) vyvolá zpětné volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

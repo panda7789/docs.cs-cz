@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 184e578efb549a1dc2e9ec1e30a29ff289b68719
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ea71e984be42e3b1a7b4b9fa6df878aca911c412
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33411700"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57501185"
 ---
 # <a name="icordebugfunctiongetclass-method"></a>ICorDebugFunction::GetClass – metoda
-Získá objekt ICorDebugClass, který představuje třídu, ke které tato funkce je členem skupiny.  
+Získá ICorDebugClass objekt, který představuje třídu, tato funkce je členem skupiny.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT GetClass (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `ppClass`  
- [out] Ukazatel na adresu `ICorDebugClass` objekt, který reprezentuje třídu, nebo hodnotu null, pokud je tato funkce není členem třídy.  
+ [out] Ukazatel na adresu `ICorDebugClass` objekt, který představuje třídu nebo hodnota null, pokud tato funkce není členem třídy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

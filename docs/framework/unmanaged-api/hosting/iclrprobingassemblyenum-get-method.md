@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 54d0f4582805b140aafd5825e34c429992e9bbcc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 909e18fe9086fa954ffc389ffe1c6fe49217d2f5
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54707736"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492449"
 ---
 # <a name="iclrprobingassemblyenumget-method"></a>ICLRProbingAssemblyEnum::Get – metoda
 Získá identitu sestavení v zadaném indexu.  
@@ -37,7 +37,7 @@ HRESULT Get (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `dwIndex`  
  [in] Index založený na nule Identita sestavení vrátit.  
   

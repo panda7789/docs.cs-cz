@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d234e01e3d47a64b9a001591ee2b61074eea8afb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6ed6570e11008e52d4b1f97c2dc90e2ccbef2e35
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403390"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57471378"
 ---
 # <a name="icordebugclass2setjmcstatus-method"></a>ICorDebugClass2::SetJMCStatus – metoda
-Pro každou metodu třídy nastaví hodnotu, která určuje, zda je metoda kód definovaný uživatelem.  
+Pro každou metodu třídy nastaví hodnotu, která určuje, zda je metoda uživatelského kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,17 +35,17 @@ HRESULT SetJMCStatus (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `bIsJustMyCode`  
- [v] Nastavte na `true` označuje, že metoda uživatelem definované kód; jinak hodnota nastavena na `false`.  
+ [in] Nastavte na `true` k označení, že metoda je uživatelem definovaný kód; v opačném případě nastavte na `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Krokovač právě my kódu (dále jen SVK) přeskočí bez uživatelem definované kódu. Uživatelem definované kód musí být podmnožinou debuggable kódu.  
+ Krokovač just my kód (JMC) přeskočí bez uživatelem definovaný kód. Uživatelský kód musí být podmnožinou laditelný kód.  
   
- `SetJMCStatus` Vrátí hodnotu HRESULT S_FALSE, pokud se nepodaří nastavit hodnotu pro libovolnou metodu, i když úspěšně nastaví hodnotu pro všechny ostatní metody.  
+ `SetJMCStatus` Pokud se nezdaří nastavit hodnotu pro libovolnou metodu, i v případě, že úspěšně nastaví hodnotu pro všechny ostatní metody, vrátí hodnotu HRESULT S_FALSE.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

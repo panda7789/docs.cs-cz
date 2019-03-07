@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 11c08e59813014bf9a474e92d06c6bd2576dd7d5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 18b65eb3e733fa7970e4c0e7de09755598eaf149
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33404869"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57474979"
 ---
 # <a name="icordebugbreakpointenumnext-method"></a>ICorDebugBreakpointEnum::Next – metoda
-Získá zadaný počet instancí ICorDebugBreakpoint z výčtu, počínaje na aktuální pozici.  
+Získá zadaný počet instancí ICorDebugBreakpoint z výčtu od aktuální pozice.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +38,18 @@ HRESULT Next (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet `ICorDebugBreakpoint` instancí, které mají být načteny.  
+ [in] Počet `ICorDebugBreakpoint` instancí, který se má načíst.  
   
  `breakpoints`  
- [out] Ukazatele, každý z nich odkazuje na pole `ICorDebugBreakpoint` objekt, který reprezentuje zarážky.  
+ [out] Pole ukazatelů, každý z nich odkazuje na `ICorDebugBreakpoint` objekt, který představuje zarážku.  
   
  `pceltFetched`  
- [out] Ukazatel na počet `ICorDebugBreakpoint` instancí vrácených ve skutečnosti. Tato hodnota může být null. Pokud `celt` je jedna.  
+ [out] Ukazatel na počet `ICorDebugBreakpoint` skutečně vrácených instancí. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c44a150fa85ff0cbda4ff2b39acefb46045adad1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 088d5a86b8517949d82f64b2d1dbb192b1b8ff0c
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54500286"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57474992"
 ---
 # <a name="inotifysink2onsynccallenter-method"></a>INotifySink2::OnSyncCallEnter – metoda
 Získá vyvolána při vstupu do volání.  
@@ -38,7 +38,7 @@ HRESULT OnSyncCallEnter
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `in_CallID`  
  [in] ID volání zadání. Zobrazit [call_id – struktura](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
   

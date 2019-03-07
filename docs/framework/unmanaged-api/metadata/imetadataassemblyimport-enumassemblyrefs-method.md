@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7d10fb391953e924feb553ae4516fb7674345ed3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ba85ec920777189940a05864d19e4c24a65b4564
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54592007"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57499473"
 ---
 # <a name="imetadataassemblyimportenumassemblyrefs-method"></a>IMetaDataAssemblyImport::EnumAssemblyRefs – metoda
 Vytvoří výčet `mdAssemblyRef` instancí, které jsou definovány v manifestu sestavení.  
@@ -38,7 +38,7 @@ HRESULT EnumAssemblyRefs (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `phEnum`  
  [out v] Ukazatel na enumerátor. Musí se jednat s hodnotou null hodnotu v případě `EnumAssemblyRefs` je metoda volána poprvé.  
   

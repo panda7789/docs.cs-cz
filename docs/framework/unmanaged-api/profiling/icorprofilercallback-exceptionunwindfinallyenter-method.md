@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0e6109796d633c5facf5c0b07e0793cb8f7dc77e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: caf546798f3928a2cf809bfec63c4b3cd959ee75
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54549808"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57466463"
 ---
 # <a name="icorprofilercallbackexceptionunwindfinallyenter-method"></a>ICorProfilerCallback::ExceptionUnwindFinallyEnter – metoda
 Oznámí profileru, který fáze unwind výjimek zpracování přechází `finally` doložky zadanou funkci.  
@@ -34,7 +34,7 @@ HRESULT ExceptionUnwindFinallyEnter(
     [in] FunctionID functionId);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `functionId`  
  [in] ID funkce, která obsahuje `finally` klauzuli.  
   

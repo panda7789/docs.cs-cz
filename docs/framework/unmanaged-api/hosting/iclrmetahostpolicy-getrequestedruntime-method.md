@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1516b6661402ee71448e0d6987e4ed32a0ce5296
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 73d5c98500c510630b1f8d6081b654a6dbd88a5b
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371460"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57501692"
 ---
 # <a name="iclrmetahostpolicygetrequestedruntime-method"></a>ICLRMetaHostPolicy::GetRequestedRuntime – metoda
 
@@ -44,7 +44,7 @@ HRESULT GetRequestedRuntime(
     [out, iid_is(riid), retval] LPVOID *ppRuntime);
 ```
 
-#### <a name="parameters"></a>Parametry
+## <a name="parameters"></a>Parametry
 
 |Název|Popis|
 |----------|-----------------|

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fe587f6356eec861c39c9eb0aa0b6476e0b9a232
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3077e0494816a083d97839d66d06b18130e5dac8
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407516"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57487795"
 ---
 # <a name="icordebugassemblygetname-method"></a>ICorDebugAssembly::GetName – metoda
-Získá název sestavení, které to `ICorDebugAssembly` instance představuje.  
+Získá název sestavení, která to `ICorDebugAssembly` instance představuje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,21 +37,21 @@ HRESULT GetName (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `cchName`  
- [v] Velikost `szName` pole.  
+ [in] Velikost `szName` pole.  
   
  `pcchName`  
- [out] Ukazatel na celé číslo, které určuje skutečné délce název.  
+ [out] Ukazatel na celé číslo, které určuje skutečná délka názvu.  
   
  `szName`  
- [out] Pole, které ukládá název.  
+ [out] Pole uchovávající název.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetName` Metoda vrátí úplný název a cesta k souboru sestavení.  
+ `GetName` Metoda vrátí úplnou cestu a název souboru sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

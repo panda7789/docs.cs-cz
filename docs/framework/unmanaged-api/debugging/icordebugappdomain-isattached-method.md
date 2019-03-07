@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f0412089fee27e556c2f9230e9b34de3391b9bd4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fa9576f568ef1f6da3eef812abb9674aa0d81dfb
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402558"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57496375"
 ---
 # <a name="icordebugappdomainisattached-method"></a>ICorDebugAppDomain::IsAttached – metoda
-Získá hodnotu, která určuje, zda je ladicí program připojen do domény aplikace.  
+Získá hodnotu, která označuje, zda ladicí program je připojen k doméně aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT IsAttached (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pbAttached`  
- [out] `true` Pokud ladicího programu je připojené k doméně aplikace, jinak hodnota `false`.  
+ [out] `true` Pokud je ladicí program připojený do domény aplikace; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- ICorDebugController metody nemohou používat, dokud ladicí program připojí k doméně aplikace.  
+ Icordebugcontroller – metody nelze použít, dokud ladicí program připojí k doméně aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

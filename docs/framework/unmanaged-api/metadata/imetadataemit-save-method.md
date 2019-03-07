@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1a2be03e82d5be9bae64d7169709d16c40b66e37
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 90ddc540115a60154953ac6e8cb931103a650752
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54511875"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57492410"
 ---
 # <a name="imetadataemitsave-method"></a>IMetaDataEmit::Save – metoda
 Uloží všechna metadata v aktuálním oboru k souboru na zadané adrese.  
@@ -36,7 +36,7 @@ HRESULT Save (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `wzFile`  
  [in] Název souboru uložte. Pokud je tato hodnota null, kopie v paměti se uloží na poslední umístění, která byla použita.  
   

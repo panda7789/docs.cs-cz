@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 050bfb08dfd95e29b6534f69dbd35400d59e6099
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b80e0cc026ce80950c14436abb2e84548f9adb64
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33419601"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57499573"
 ---
 # <a name="icordebugthreadenumnext-method"></a>ICorDebugThreadEnum::Next – metoda
-Získá počet instancí ICorDebugThread zadaný z výčtu, počínaje na aktuální pozici.  
+Získá počet instancí zadané ICorDebugThread z výčtu od aktuální pozice.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +38,18 @@ HRESULT Next (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet `ICorDebugThread` instancí, které mají být načteny.  
+ [in] Počet `ICorDebugThread` instancí, který se má načíst.  
   
  `threads`  
- [out] Ukazatele, každý z nich odkazuje na pole `ICorDebugThread` objekt, který reprezentuje vlákna.  
+ [out] Pole ukazatelů, každý z nich odkazuje na `ICorDebugThread` objekt, který představuje vlákno.  
   
  `pceltFetched`  
- [out] Ukazatel na počet `ICorDebugThread` instancí vrácených ve skutečnosti. Tato hodnota může být null. Pokud `celt` je jedna.  
+ [out] Ukazatel na počet `ICorDebugThread` skutečně vrácených instancí. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 267a36fbbdf48472bc35581ce98af5cd7a9cef9c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 777d7bf51db3e6984f30e31c46ac115301d13faf
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54550367"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57478970"
 ---
 # <a name="imetadataimportfindmember-method"></a>IMetaDataImport::FindMember – metoda
 Získá ukazatel MemberDef token pro pole nebo metoda, která je uzavřena parametrem <xref:System.Type> a, který má zadaný název a metadata podpis.  
@@ -39,7 +39,7 @@ HRESULT FindMember (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `td`  
  [in] Token TypeDef pro třídu nebo rozhraní, který obklopuje členu, který chcete vyhledat. Pokud je tato hodnota `mdTokenNil`, vyhledávání se provádí pro globální proměnnou nebo globální funkce.  
   

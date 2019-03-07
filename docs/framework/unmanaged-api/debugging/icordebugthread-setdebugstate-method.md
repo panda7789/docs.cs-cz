@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ada120b9cb4100bfadff83d96e0226f911958bf7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d29f5cefd22592fa8949ff5361109c09c0972b24
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420762"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57499690"
 ---
 # <a name="icordebugthreadsetdebugstate-method"></a>ICorDebugThread::SetDebugState – metoda
-Nastaví příznaky, které popisují ladění stav této ICorDebugThread.  
+Sets flags that describe the debugging state of this ICorDebugThread.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT SetDebugState (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `state`  
- [v] Bitové kombinace hodnot výčtu CorDebugThreadState, které určují ladění stav tohoto podprocesu.  
+ [in] Bitová kombinace hodnot cordebugthreadstate – výčet, které určují stav ladění tohoto vlákna.  
   
 ## <a name="remarks"></a>Poznámky  
- `SetDebugState` Nastaví aktuální stav ladění vlákno. ("Aktuální ladění stavu" představuje stav ladění Pokud proces dál, nikoli skutečné aktuální stav.) Normální hodnota pro tento je THREAD_RUNNING. Pouze ladicí program může ovlivnit stav ladění vlákna. Ladění stavy poslední napříč pokračuje, takže pokud chcete zachovat vlákno THREAD_SUSPENDed přes více dál, můžete nastavit jednou a následně není nutné se obávat ho. Pozastavení vláken a proces obnovení může způsobit zablokování, když je obvykle nepravděpodobné. Toto je vnitřní kvalita vláken a procesů a podle návrhu. Ladicí program můžete asynchronně přerušení a obnovit vláken pro přerušení k zablokování. Pokud stav uživatele vlákna zahrnuje USER_UNSAFE_POINT, může blokovat vlákno uvolnění paměti (GC). To znamená, že pozastavené vlákno nemá mnohem vyšší možnost, že vzájemné zablokování. To nemusí ovlivnit ladění, které už ve frontě událostí. Ladicí program by měl proto vyprazdňování celá událost fronty (voláním [icordebugcontroller::hasqueuedcallbacks –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-hasqueuedcallbacks-method.md)) před přechodem do režimu spánku nebo obnovování vláken. Jinak obdržet události na vlákno, které dochází k závěru, že je již pozastaveno.  
+ `SetDebugState` Nastaví aktuální stav ladění vlákna. (The "current debug state" represents the debug state if the process were to be continued, not the actual current state.) Běžné hodnoty je THREAD_RUNNING. Pouze ladicí program může ovlivnit stav ladění vlákna. Ladění stavy poslední napříč bude pokračovat, pokud chcete zachovat vlákno pokračuje THREAD_SUSPENDed přes více, abyste mohli nastavit jednou a po tomto datu není nutné se starat o něm. Pozastavení vlákna a procesu obnovení může způsobit zablokování, když je nepravděpodobné, že by obvykle. Toto je vnitřní kvalitu vláken a procesů a podle návrhu. Ladicí program můžete asynchronně přerušit a pokračování vláken pro přerušení zablokování. Pokud je stav vlákna uživatele USER_UNSAFE_POINT, může zablokovat vlákno uvolňování paměti (GC). To znamená, že pozastaveného vlákna má mnohem vyšší pravděpodobnost způsobit zablokování. To nemusí ovlivnit ladění, které už ve frontě událostí. Proto by měl ladicí program vyprázdnění fronty celá událost (voláním [icordebugcontroller::hasqueuedcallbacks –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-hasqueuedcallbacks-method.md)) před pozastavování a obnovování vláken. Jinak se může zobrazit události na vlákně, které se domnívá, že již byla pozastavena.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

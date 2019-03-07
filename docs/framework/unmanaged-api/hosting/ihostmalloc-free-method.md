@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 719c963d1627250da5f3705af9801dc287e1bb19
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9cf60d4e711d0c88b5fb8b4c213b19bdea564324
+ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54507242"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57477826"
 ---
 # <a name="ihostmallocfree-method"></a>IHostMAlloc::Free – metoda
 Uvolnění paměti, která byla přidělena pomocí [alokační](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-alloc-method.md) funkce.  
@@ -35,7 +35,7 @@ HRESULT Free (
 );  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `pMem`  
  [in] Ukazatel na paměť k uvolnění.  
   
